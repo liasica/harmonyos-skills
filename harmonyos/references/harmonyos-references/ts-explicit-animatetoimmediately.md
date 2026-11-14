@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explic
 title: 显式动画立即下发 (animateToImmediately)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 显式动画立即下发 (animateToImmediately)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:bca46c5bcbdfc94ea01c82a3842d501096708d1bc67b0e7be7179111394c0758
+content_hash: sha256:56710840c7fe3724aba1a473607e1c1908dd483bf67ece54b51968b0a50ee8d5
 ---
 
 animateToImmediately接口提供[显式动画](ts-explicit-animation.md)立即下发功能。典型应用场景包括：页面切换时优先展示关键过渡效果、主线程耗时期间提前刷新可见区域UI等。同时加载多个属性动画的情况下，使用该接口可以立即执行闭包代码中状态变化导致的过渡动效。
@@ -102,4 +102,4 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/3prJ-5bhSa-3Hot3SRSHZA/zh-cn_image_0000002786521488.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2F0EEF4868FD90F124D5F7D06DA7CFDB2C4F2A9FA7A4D2187787AAAE36FCC8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/GiNH3KTxQ6KmdGyS6O03kQ/zh-cn_image_0000002788469236.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6E004ED3D76FE01CB0C7A9225C72B417696394A3E4161021881423D1E013156)

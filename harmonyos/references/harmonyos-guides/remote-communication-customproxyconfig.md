@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: ProxyConfiguration：定制代理
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 实现HTTP请求定制 > Configuration：高效实现定制功能 > ProxyConfiguration：定制代理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:34+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:b025a136f2941385d748c6126327358ac86717cfc033644f517cfce08e33a2e1
+scraped_at: 2026-11-14T08:47:37+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:a93b0bd61f1a92a7949d97bd2b0255ff82aa02887d070068ab5b7cc82a75c512
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:b025a136f2941385d748c6126327358ac86717cfc033644f517cfce08e3
 
 ## 约束与限制
 
-定制代理能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+定制代理能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 使用示例
 

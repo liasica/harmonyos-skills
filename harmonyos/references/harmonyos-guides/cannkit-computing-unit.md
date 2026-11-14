@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-compu
 title: 计算单元
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 基本概念 > 硬件架构 > 计算单元
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:37+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:93707c4bf2648fc810cd10a40099393f828878b3a965682401df255127764ca1
+content_hash: sha256:e0c658f4d5428afe0450de75eabbaa251d374a1f3d281a1ee827a6190f96074e
 ---
 
 计算单元是AI Core中提供强大算力的核心单元，包括三种基础**计算单元**：Cube（矩阵）计算单元、Vector（向量）计算单元和Scalar（标量）计算单元，完成AI Core中不同类型的数据计算。
@@ -18,7 +18,7 @@ Scalar负责各类型的标量数据运算和程序的流程控制。功能上�
 
 **图1** Scalar对指令和数据的访问
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/V64pDPZSTP-C3MsjtSnLCg/zh-cn_image_0000002786520606.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=C84DD43464D76220266F82C6BD522BF03CD3B8586951C6ED3B6108CFF002275A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/r2aWsaPYSlikX7PjJqxkDQ/zh-cn_image_0000002788468354.png?HW-CC-KV=V1&HW-CC-Date=20261114T004837Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F90A23EA51D3D6B7268E0A7E8397A22C601360EFAC582654D75B8E56936DDFC)
 
 ALU需要的代码段和数据段（栈空间）都来自于GM。ICache用于缓存代码段，缓存大小与硬件规格相关，比如为16K或32K，以2K为单位加载；DCache用于缓存数据段，大小也与硬件规格相关，比如为16K，以cacheline(64Byte)为单位加载。
 
@@ -30,7 +30,7 @@ Vector负责执行向量运算。向量计算单元执行向量指令，类似�
 
 **图2** 向量运算
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vJgod-M7TDmEJiwZ58CH_w/zh-cn_image_0000002786360678.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3333E415CD84E0258C9A1626E797BCE43A97172119060D8C6837E369FB5E073)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/y4_pgsalQuaWooGkeJg_Vw/zh-cn_image_0000002817507843.png?HW-CC-KV=V1&HW-CC-Date=20261114T004837Z&HW-CC-Expire=31536000000&HW-CC-Sign=E725DBF2B14E7F97EA9A520C770CAC30D2A894785B3FE8A4FC9E1627A602F7E9)
 
 Vector所有计算的源数据以及目标数据都要求存储在Unified Buffer中，Vector指令的首地址和操作长度有对齐要求，通常要求32字节对齐，具体对齐要求参考[API的约束描述](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/memory_vector_compute/data_move/DataCopy_GMAndUB_continuous.md)。
 
@@ -40,4 +40,4 @@ Cube计算单元负责执行矩阵运算。Cube一次执行可以完成A矩阵(M
 
 **图3** 矩阵运算
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/rDUfceQFQTmU-EKHaYVrNA/zh-cn_image_0000002815560099.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EBD8AA30211459F016E3C6345AF2135148D8CB9C9A46A0CE190790583EF561C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/OpGF3QyPQhG1nsGh12GpFA/zh-cn_image_0000002788308412.png?HW-CC-KV=V1&HW-CC-Date=20261114T004837Z&HW-CC-Expire=31536000000&HW-CC-Sign=20EC8971419DAA3A9923AAF37B9538AD9BFE17DE71CAF30658CE8C05FDE5FC32)

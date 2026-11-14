@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 代码签名信息查询场景（C/C++）
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 代码签名信息查询场景（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:28+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:88b9cfd13432b0c0f7c7bc7a26a47cc4295ef28bbe6378b6786c275a00a0f2e7
+content_hash: sha256:ab968525be92a6deaa326db7b3d28aa410be339f2bac2fa5fcead0475d220d97
 ---
 
 从6.1.1(24)开始，新增提供文件代码签名信息查询接口，可以获取设备上已签名的文件签名信息。
@@ -21,7 +21,7 @@ content_hash: sha256:88b9cfd13432b0c0f7c7bc7a26a47cc4295ef28bbe6378b6786c275a00a
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/AuV5jbPeTYWidnrtjt27Cw/zh-cn_image_0000002815399185.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=15F625B99FFE01036FEA28FC4AE41C9F9C60266013C5777F752E7BA8DD94A37B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/-T0C7FK0Qyqn6UaTxY0-wg/zh-cn_image_0000002817506845.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEE38718AAA8F01303C37A66CBB42A2C4C421C919D29D5C553CE2B2EAE3B6801)
 
 **流程说明：**
 

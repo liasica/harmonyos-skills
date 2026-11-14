@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Shape
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Shape
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:20+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:c3d0385bc96adf63a66d5afc529d45b56bb54dc6be0340b0f6b89a64616ade2e
+content_hash: sha256:fcca44ead23cbdc85f7d7b07544409f6ce09ece6dccef85d3c8ffd0d58e153d8
 ---
 
 绘制组件的父组件，描述所有绘制组件均支持的通用属性。
@@ -305,7 +305,7 @@ struct ShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/0_1fUnUNQZmcKfhaLGBr-Q/zh-cn_image_0000002786361540.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD3B342281729F390A9D41BDD0BF4AD4C53CE57F9D61FDAA38B0467C9E437154)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/e3ZX-0DlT1a4fXxR5yOeNg/zh-cn_image_0000002817508705.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9C42DF01BD514A1CD84FC8485BA508620DBB11FE9F6A450F4766E373A683575)
 
 ### 示例2（使用不同参数类型绘制图形）
 
@@ -348,7 +348,7 @@ struct ShapeTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/LMF_fUrjRgChiIo2lM4Reg/zh-cn_image_0000002815560961.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=753A04460210289A5EEED170B564BD2FB3B994370A0A12F26E297DDABD422BC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/f4Ks-wkCRXuqE--Xbiw_nA/zh-cn_image_0000002788309274.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=21122B30700548426DAB43540370C05BD83D418BC1F5DE749985145B23399F02)
 
 ### 示例3（使用attributeModifier动态设置Shape组件的属性）
 
@@ -392,7 +392,7 @@ struct ShapeModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/SWTOYbrOTKioJZlunjXK_w/zh-cn_image_0000002815401045.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=48E4E4EBFA5637CA6813A71223EF0B0B7E182ADEF0475FEEFA986EC5139CB1B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/oIHw1GcaSna-HVCq8M5s-Q/zh-cn_image_0000002817428637.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA534916CB33B7FD58D2D9013B11B98E3E929CA0DC7FD2A316961F9A02FA0BD5)
 
 ### 示例4（使用mesh实现图像局部扭曲）
 
@@ -436,4 +436,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vC8Cke6MS-ajLNI81gu5KQ/zh-cn_image_0000002786521470.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=758F40DDF512A1FDCCE8EE964A3D625B57190CA6EF50E954FB468C65D32DC5AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/HpJoMM2kSBu9zeypHq21FQ/zh-cn_image_0000002788469218.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2DB2B358793728926D250980F8CF38BE660A0DB0FFDB62882FFEEF1EFA7AC97)

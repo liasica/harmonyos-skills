@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 能力说明
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 定制构建 > 灵活定制编译选项 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:18+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:24c8d818d66b3fae4f01b9676bf9023ec929754765e0d66b038e265b471c7c7d
+content_hash: sha256:7167d4f5366b6b05ec24fed20610fa4812821f6a90a4407b902b376b2ac1af0b
 ---
 
 Hvigor支持灵活定制构建模式，当您创建新工程时，鸿蒙电脑DevEco Studio会自动创建"debug" 、"release"和"test" 构建模式。"test"模式虽然没有出现在工程级build-profile.json5配置文件中，但是用测试框架开启测试时，会自动使用"test"构建模式。
@@ -14,9 +14,9 @@ Hvigor支持灵活定制构建模式，当您创建新工程时，鸿蒙电脑De
 
 ### 界面设置
 
-DevEco Studio支持界面配置构建模式，点击界面上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/BeKEw9xcQvegX5q1WWNvog/zh-cn_image_0000002781471106.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCC20A64DC6730C846DE10D433629BF261D32CD2E73463E1A37DBE463C5017A4)右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/7E6L5IiORmeoNxHWht6EJg/zh-cn_image_0000002810630659.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=418ADC44F04E3ABAC15AB5CBABB1520DAC547955443301486DD2167561EFE704)，选择**Product配置**：
+DevEco Studio支持界面配置构建模式，点击界面上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/NRisaWvwQKKIsuyymKpplg/zh-cn_image_0000002781471106.png?HW-CC-KV=V1&HW-CC-Date=20261114T004917Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE255711F574E68F2BB81BD4672042902BC92A86B146D425248F0B40C0DC867C)右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/wVqnZOAITiWZQX_SeO6HKA/zh-cn_image_0000002810630659.png?HW-CC-KV=V1&HW-CC-Date=20261114T004917Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA3D60151AE8532051426C07ECA081C7DD857EE97EC0543EE8F50F88BAE4B913)，选择**Product配置**：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/WKfBx8raTJWSmmFUikZVsA/zh-cn_image_0000002810750765.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F1E22B2C83B910D9783DEDC536AE01218555A48BFEA6BC59D7AFD0DAB70BED1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/28LPgW7wSWCXD0yYvs18mw/zh-cn_image_0000002810750765.png?HW-CC-KV=V1&HW-CC-Date=20261114T004917Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2D18A2A99E65142CAA8C1CD297B6A6BD0D121DC47011C72DBA2298E07B751C2)
 
 内置两个选项：debug和release。
 
@@ -93,4 +93,4 @@ Hvigor支持定制构建模式，采用buildOption字段声明编译选项，并
 
 优先级：命令行配置>targets配置>buildOptionSet配置>buildOption配置>products配置>buildModeSet配置
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/wW6OzRpRRLuqOIbbSkFK8g/zh-cn_image_0000002781311170.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8C0ECB83948F7092CD7F951AD871A4ACD521B96A8C0D38F473474DD99578D4D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/lfem3rfFQpSOdFBCsLO6Yg/zh-cn_image_0000002781311170.png?HW-CC-KV=V1&HW-CC-Date=20261114T004917Z&HW-CC-Expire=31536000000&HW-CC-Sign=04FDC205110468E7A03E81658CC8D808D66951E8C5D67E2009D7C4CA07BF1442)

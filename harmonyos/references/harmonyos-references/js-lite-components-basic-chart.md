@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: chart
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > chart
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:34+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:178033eaf3729d92f011f83972326fed0a083ac11a9ce0d228c94ea1d27a468e
+content_hash: sha256:c6b4b63634bb32bf187af54361bed581bc467ffcedebe22bdb3471279dd12687
 ---
 
 图表组件，用于呈现线形图、柱状图界面。
@@ -207,7 +207,7 @@ content_hash: sha256:178033eaf3729d92f011f83972326fed0a083ac11a9ce0d228c94ea1d27
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/N5PJKl7IT_i3cHZ5H1V4gQ/zh-cn_image_0000002815561387.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F9DF96725E82BCA32FFD2F75C57EE658E84E9BC76E42A1D49D4E2B5FF64914A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/kztGV9QVT6ClQsBynei8KA/zh-cn_image_0000002788309700.png?HW-CC-KV=V1&HW-CC-Date=20261114T005033Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A1A344A5BE428EBD64C9AEBCB03EC9C4A96E9D535A45422173AE04AF3479F0C)
 2. 柱状图
 
    ```html
@@ -268,4 +268,4 @@ content_hash: sha256:178033eaf3729d92f011f83972326fed0a083ac11a9ce0d228c94ea1d27
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/BT2SPiTNQNKMtjtnyMK7HA/zh-cn_image_0000002815401471.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9BAD9F137A0C76165994FBA6219F55492DAE28135FE05F6385DAE2B61AF3A16)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/V0R0eyRUQAGvKHUtoCjNRg/zh-cn_image_0000002817429063.png?HW-CC-KV=V1&HW-CC-Date=20261114T005033Z&HW-CC-Expire=31536000000&HW-CC-Sign=5ADBB6ED9F68990C864F88F76955DE917D2CE49C5903106760A2B60821361AC9)

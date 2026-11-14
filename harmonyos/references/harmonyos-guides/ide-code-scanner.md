@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-scan
 title: Code Scanner代码检查（跨语言）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Scanner代码检查（跨语言）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:56+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d47a7be0af9a52040e5e6f5eeeed23085f8d2def92e20fd0e7c4a6d1bb6c645a
+content_hash: sha256:4e7bd9ef9ed2bf71b403a3996074aae93ff5edb63a6c0725e97fa9de36047fa6
 ---
 
 从26.0.0版本开始，DevEco Studio新增Code Scanner功能，用于检查整个项目的资源泄漏问题。开发者可根据扫描结果中的告警提示，手动修复代码缺陷，在代码开发阶段，确保代码质量。
@@ -28,10 +28,10 @@ content_hash: sha256:d47a7be0af9a52040e5e6f5eeeed23085f8d2def92e20fd0e7c4a6d1bb6
 
    对于ArkTS工程，需勾选ARKTS下的扫描规则；对于C++工程，需勾选CPP下的扫描规则。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/dlG0GkE4QS-2Hn6NG6rpGg/zh-cn_image_0000002808886199.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=6051817F56890F260E1C792297779A5101E79799A508159A38381EB4DD27B0C9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Gcol9rLQS4GNiPF1zrnOkA/zh-cn_image_0000002808886199.png?HW-CC-KV=V1&HW-CC-Date=20261114T004709Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE35DE6204258736F207B98392372F5C8599EEC72AC5C0FA8274D3AB675C6F23)
 2. 在菜单栏点击**Code > Code Scanner >** **Scan**，开始全量代码扫描。
 3. 扫描完成后，在底部工具面板查看检查结果。
 
    Severity统计了所有告警数量，点击**All**、**Fatal**、**Error**、**Warn**可分别查看对应告警级别的具体信息。点击**Filter by scene**下拉菜单，可以筛选不同规则的检查结果。单击告警文件可以查看告警信息和对应配置的规则。双击某条告警结果，可以跳转到对应代码缺陷位置；选中告警结果时，可以在右侧Execution Trace窗口查看告警原因和问题的来源到问题的发生点的可能的执行流。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/JXW1oJ9CQWuOnPq1dhO3bA/zh-cn_image_0000002808766119.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=305D2926414F2396DC6B3A1DD680BF65523E75405FDF8D6D3715CA0169A9F96F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/SWs3AG65Rguq0zwNvDpmfw/zh-cn_image_0000002808766119.png?HW-CC-KV=V1&HW-CC-Date=20261114T004709Z&HW-CC-Expire=31536000000&HW-CC-Sign=77CE09101DBF8CB87D4C33C0EC58E608579E346A0AB1B52C5AD994942FFC0133)

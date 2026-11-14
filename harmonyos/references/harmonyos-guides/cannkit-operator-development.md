@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: 快速入门
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 快速入门
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:37+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:bdc585950598bc003fd1e5c491253b3a2020da68a9a398664939af5b09603135
+content_hash: sha256:544a2874eedf3b6510c297ba929de1412af05f564997b84c9e6909c349c4be89
 ---
 
 本节以一个简单算子为例，带开发者体验从算子工程创建、代码编写、编译部署到运行验证的开发全流程，让开发者对算子开发工程有个宏观的认识，此处我们以输入是动态shape的Add算子实现为例，为了与内置Add算子区分，定义算子类型为AddCustom。
@@ -58,7 +58,7 @@ content_hash: sha256:bdc585950598bc003fd1e5c491253b3a2020da68a9a398664939af5b096
 
 **图1** 核函数调用关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/Yn8TJLrhRGCbSLszTdII4Q/zh-cn_image_0000002786520604.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=76926E1154BE587FB8A160C9930E7E992C3C9A76A10396025EE33A5552FDD3D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/2kVIk4r0TkaRBTLJbeYoFA/zh-cn_image_0000002788468352.png?HW-CC-KV=V1&HW-CC-Date=20261114T004836Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE159BFA740E3B7FBC1C51BBEA89D82D04EEAAD1CDC129091EA3FEA502D4C934)
 
 由此可见除了Init函数完成初始化外，Process中完成了对流水任务：搬入、计算、搬出的调用，开发者可以重点关注三个流水任务的实现。
 

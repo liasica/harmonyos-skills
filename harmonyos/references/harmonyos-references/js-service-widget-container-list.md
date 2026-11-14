@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: list
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > list
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:35+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0034c6644aff134ea836e7a94598c49ead8c2a7b7861093bd49c2a99b443723e
+content_hash: sha256:a9afe8f6784311edb6218a874ca6bc0fd36241b3e97cc4bd7e44620262bb9110
 ---
 
 列表包含一系列相同宽度的列表项。适合连续、多行呈现同类数据，例如图片和文本。
@@ -116,4 +116,4 @@ content_hash: sha256:0034c6644aff134ea836e7a94598c49ead8c2a7b7861093bd49c2a99b44
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/zfoDHWKLQymSFHd_keoYcg/zh-cn_image_0000002815401489.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=04D651BA311DA61C436A203A5CC4E6B338AF438AFECF202FA9B6040EDC92FA7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/egHLoGXSRyeVSdU3LsgGcQ/zh-cn_image_0000002817429081.png?HW-CC-KV=V1&HW-CC-Date=20261114T005035Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7205933018ED44AC81D73FBF67E59487E7F6839C71593277014312918197856)

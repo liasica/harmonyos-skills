@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 支持智慧手势输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持智慧手势输入事件
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:06+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c4ea3a2e1e53863f21b3239a5e3dcf1f026781c450241454939cf27c51a8163a
+content_hash: sha256:95c5b801619c68766f0b0b8951854ab1322a20cec2b73462b60c2b1cf0243272
 ---
 
 从API版本26.0.0开始支持智慧手势。智慧手势指用户通过设备上的“敲一敲”，“划一划”和“翻腕”的隔空手势，实现对界面组件的选中、点击、滚动、翻页和返回等交互动作的能力。系统会根据用户的操作意图自动推断目标组件和执行动作，开发者也可接收当前手势的默认动作处理并进行自定义干预。
@@ -333,7 +333,7 @@ struct Demo1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/3N9NM07dT2aROv-UxjBYJQ/zh-cn_image_0000002815398627.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E7679E52B64207D599CCF66697765F8FC2A182EA8F0BAF42DB4FD0108AA44F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/s61LRpXuTmiD0dtlpGFFsg/zh-cn_image_0000002817506285.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7A21121A8BFE095FFABD4829DD4F3C2F961598FFADE46B428D7AEFE5085B9F1)
 
 ### 长列表场景
 
@@ -479,7 +479,7 @@ struct Demo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/cmXrxet7SnWOW2TvncwXEA/zh-cn_image_0000002786519052.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEC1D7093E553CB9BA1512CB20AC74647A59F923699DEE9257CFE419408C04DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/bnJLmB_ZSVKmC9pvekUCPA/zh-cn_image_0000002788306856.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=5819E2750F91F7FCA002F77C00CB6E3600D008970BC4AEFF615DC9D2334F2898)
 
 ### 多组件类型场景手动控制选中态
 
@@ -664,7 +664,7 @@ struct Demo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/fUyC2g7zTLemZxUWO3Aa0g/zh-cn_image_0000002786359124.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=77E9E6BA877A6BD0326BA0307EB9B53471031BCA6CE9B3FC8EFA5D3B8C04EAA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/5vJu39QySCuCAxb5uBoqbw/zh-cn_image_0000002817426219.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F4EF3B6BF77A32C5780BEF09DBE545FC0A085508DBC2EE27AB2B614659FA4F0)
 
 ### Swiper组件翻页场景
 
@@ -866,4 +866,4 @@ struct Demo4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/_Kde6ocGQQa4BUX_sSeMXw/zh-cn_image_0000002815558545.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B037D595C2D23550A3C0823CC737C30E0039D739CFF8A256FF00A2C4CE2D4A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/NQqwTOl0QYyWlFg3I2w1tg/zh-cn_image_0000002788466800.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EC228DE2A574F1D08971C5E99FE109A191265B11DBDBE450AE0FBD9F385DCE3)

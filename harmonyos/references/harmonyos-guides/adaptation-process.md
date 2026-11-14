@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/adaptation-pr
 title: 适配流程
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 适配流程
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:16+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:aeee2b45ade03c8df9379010b2934b1803198261d044f67c50ea606d2282cedb
+content_hash: sha256:165f57ed5eb69b60f74fa2d56229eab165eb368fffad1e7d44799fccce8a04c4
 ---
 
 适配流程包括：适配准备、应用适配、开发者自验证、应用上架和端到端验证。
 
 **图1** 适配流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/N9niVfjOQSqBQL_9mMjTsA/zh-cn_image_0000002786359494.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=661027871ED5DC870B8AAC0DE13246C68034EB89DDA9541A386FC50C37CAAC2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/unrhARbOQumDzrw4fKZ6dA/zh-cn_image_0000002817426589.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A7CC8408E49180D9EE194F9B3741DB410EE4895DB9645652F135D9B22557224)
 
 ## 适配准备阶段
 
@@ -30,7 +30,7 @@ content_hash: sha256:aeee2b45ade03c8df9379010b2934b1803198261d044f67c50ea606d228
 
 后续HarmonyOS应用通过访问HarmonyOS应用沙箱获取应用的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/PnhzRe0PQISt85TfCAfZcQ/zh-cn_image_0000002815558915.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=89BA16293706E0C0AB6692ABDB18F05FCCABEE5F14663B32744FCC7AD41FF6B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/kW-Phvi6QS2XsNNHxz_spw/zh-cn_image_0000002788467170.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADB0115B8F7C672C991B67648EC32AAA2A487BB11B4217282A60D64D3D9E6D7D)
 
 备份恢复目录如下表中所示：
 

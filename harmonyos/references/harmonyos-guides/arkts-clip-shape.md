@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-clip-sh
 title: 形状裁剪（clipShape）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 几何图形绘制 > 形状裁剪（clipShape）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:03dec4c8e1be83df0dea21bc7445932bd14a2774645d464aaddf3eb2a65c87dc
+content_hash: sha256:e16577e563dc3d8c01abd3549aa30ae94fbc07a82bbe0ba604ebdff7fd09fd81
 ---
 
 可利用[clipShape](../harmonyos-references/ts-universal-attributes-sharp-clipping.md#clipshape12)接口将组件裁剪为所需的形状。调用该接口后，可以保留该形状覆盖的组件部分，同时移除组件的其余部分。裁剪形状本身是不可见的。
@@ -49,7 +49,7 @@ struct ClipShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/9O54X-vySUWaeUIZ1VxsGA/zh-cn_image_0000002815558521.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8060B1D8866813DC05E9A7D6F0F5B400D590469968CC7086DC71BF8B54F0A6A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/sP7yQp78T5iHiprWyCFepg/zh-cn_image_0000002788466776.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=564C6172CF00FC7310BB4EDA281B0E1F43E645372E78103E336D8F2A0426A2F8)
 
 ## 裁剪椭圆形
 
@@ -80,7 +80,7 @@ struct ClipShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/jKqi9b5gRX-UOclnW42EuA/zh-cn_image_0000002815398605.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=32D99A29B428DC9DD4E0DAD5F040253F0E3DA9D6E59C2505B526E495542902CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Y3MhX_7PSISTi1dfaDRERw/zh-cn_image_0000002817506263.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=438C3BA42752A803484BD89CBF4B9C4ACD01A0BAB50E56CA2E611FE2EACF6FF0)
 
 ## 裁剪矩形
 
@@ -111,7 +111,7 @@ struct ClipShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/jzkDe437QnCsr7-bVt6gmQ/zh-cn_image_0000002786519030.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=432D88636EE4F24BD4503347383D5009E93E305C224DB752DB04E816C5EEC1BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/wdZKNwa1QneHGJaA4bvq4g/zh-cn_image_0000002788306834.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B67D151F70C883C2165B53C3FDB3322D0F1253E7834A2C5A6259DFBED08B9F4)
 
 ## 裁剪不规则形状
 
@@ -141,4 +141,4 @@ struct ClipShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/EntWUw6zReu4SylFhdGHgg/zh-cn_image_0000002786359102.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=31A19032B29AA6CEE14E26EB7976977FEF10AEA9999E246B15A7D747FBBEE75E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/t3mVvycPQh-MxhtkxF6Kuw/zh-cn_image_0000002817426197.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=61B3699FB36C6FC8DE08E67087F0F1EADD8B65EF34B6FDE5F4286733A68293DB)

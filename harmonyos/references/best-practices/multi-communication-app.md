@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-communica
 title: 多设备即时通讯界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备即时通讯界面
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:a8d73145964d05a23e26ba20a6a187a4e16c62a8cec2778aef350cc2c7792799
+scraped_at: 2026-11-14T08:54:10+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6bea7aaab6f02cc38026e49156589694179c665d05651b38df4a3198806e42fd
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:a8d73145964d05a23e26ba20a6a187a4e16c62a8cec2778aef350cc2c77
 
 即时通讯应用的UX设计可参考社交通讯类多设备响应式设计指南的[社交通讯类](../design-guides/responsive-design-examples2-0000001793536901.md)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/oHLyzg49TeG9upUCuzPk4Q/zh-cn_image_0000002579689282.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=768582A3076BC1F1B4BEBA8CD5B8557CF65642E52C00EA09C4DF1773BADC1E39 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/eiOpwdWtTr-EpzqzQyuhJQ/zh-cn_image_0000002579689282.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=F94DC249A9A2102151F288C7D5067F1053F1FBA562C83200F50408F34D36CDD9 "点击放大")
 
 ## 工程管理
 
@@ -138,7 +138,7 @@ content_hash: sha256:a8d73145964d05a23e26ba20a6a187a4e16c62a8cec2778aef350cc2c77
 | 2 | 消息列表 | 使用响应式组件[List](../harmonyos-references/ts-container-list.md)实现。通过[响应式环境变量](../harmonyos-references/responsive-env-system-property.md)监听窗口尺寸布局断点（[WindowSizeLayoutBreakpointInfo](../harmonyos-references/js-apis-arkui-observer.md#windowsizelayoutbreakpointinfo22)）变化，动态调整列表边距。 |
 | 3 | 底部导航栏 | 使用响应式组件[HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)实现。通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
 | 4 | 消息详情 | 使用响应式组件[Scroll](../harmonyos-references/ts-container-scroll.md)实现。通过设置[layoutWeight](../harmonyos-references/ts-universal-attributes-size.md#layoutweight)属性，当设备高度小于内容高度时，可滑动查看消息信息。 |
-| 5 | 消息输入区域 | 使用沿水平方向布局容器组件[Row](../harmonyos-references/ts-container-row.md)嵌套媒体组件[image](../atomic-ascf/components-image.md)实现。通过设置[layoutWeight](../harmonyos-references/ts-universal-attributes-size.md#layoutweight)属性，消息输入框在不同断点下自适应拉伸。 |
+| 5 | 消息输入区域 | 使用沿水平方向布局容器组件[Row](../harmonyos-references/ts-container-row.md)嵌套媒体组件[image](../doccenter-atomic-service/components-image.md)实现。通过设置[layoutWeight](../harmonyos-references/ts-universal-attributes-size.md#layoutweight)属性，消息输入框在不同断点下自适应拉伸。 |
 
 ### 通讯录页
 
@@ -186,7 +186,7 @@ content_hash: sha256:a8d73145964d05a23e26ba20a6a187a4e16c62a8cec2778aef350cc2c77
 
 即时通讯应用消息页主要用于展示消息列表、消息详情，满足用户聊天需求。根据功能设计，将消息页相关内容划分为5个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ydIlKzFjRLKpItH8jiqT-g/zh-cn_image_0000002610129075.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F21E71AA639DF54F0821CE7C36649FDD4CD2C597CE363C8371507DC893671BB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/aCHv3E9MSb2FNHH5Vt-DOA/zh-cn_image_0000002610129075.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=18843DC4DD3B71CF5D42CCAA460B3A4A7033CC9A8B95ACA81AE55A50E49095CE "点击放大")
 
 **界面开发**
 
@@ -204,7 +204,7 @@ content_hash: sha256:a8d73145964d05a23e26ba20a6a187a4e16c62a8cec2778aef350cc2c77
 
 即时通讯应用通讯录页主要用于展示通讯录列表、联系人主页，满足查看联系人需求。根据功能设计，将通讯录页相关内容划分为5个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/Et__gfzvRTi3AaMTOe84Sg/zh-cn_image_0000002610209169.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0F3C2A26320F440C2A3A80BEC23A9F42D09D116966179D30D3F1D6F0847A148 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/TbV1Iy6PS-K9mvo0DsOqJA/zh-cn_image_0000002610209169.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=44AE0CA8B24A1F66C2BBDD392636BAA7E616553ACAF2158B6ACE432F79A08F1B "点击放大")
 
 **界面开发**
 
@@ -222,7 +222,7 @@ content_hash: sha256:a8d73145964d05a23e26ba20a6a187a4e16c62a8cec2778aef350cc2c77
 
 即时通讯应用朋友圈页主要用于展示朋友圈列表，满足查看朋友动态分享的需求。根据功能设计，将朋友圈页相关内容划分为4个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/GCqm8zy2S2y-sD6RdWcClw/zh-cn_image_0000002579689290.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7D1EDBD34DC36CF2BCAFB579C0DA38B950E79F9463CFF3492A5C5812279D8F2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/hb4HA4q3QpWz__4oEAN7KA/zh-cn_image_0000002579689290.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=92A732A7574C0260BB15EAD518809918D9657F1988B9F77A5E97ABBFDD7C6C8C "点击放大")
 
 **界面开发**
 

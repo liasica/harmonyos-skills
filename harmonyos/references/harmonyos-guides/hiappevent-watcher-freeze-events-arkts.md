@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅应用冻屏事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 应用冻屏事件 > 订阅应用冻屏事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:40+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:2c217a14ca96a2860e085a28c5ba59e268522e1f487e5a20f56bde597c94bb5c
+scraped_at: 2026-11-14T08:47:46+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:0e8a4ffb7e42840be1e6703828bc5c30e4647c956d6e4f68aa20d44ee52083cf
 ---
 
 ## 简介
@@ -33,113 +33,125 @@ content_hash: sha256:2c217a14ca96a2860e085a28c5ba59e268522e1f487e5a20f56bde597c9
    ```
 2. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，在onCreate函数中设置事件的自定义参数，示例代码如下：
 
-   ```ts
-    // 开发者完成参数键值对赋值
-    let params: Record<string, hiAppEvent.ParamType> = {
-      "test_data": 100,
-    };
-    // 开发者可以设置应用冻屏事件的自定义参数
-    hiAppEvent.setEventParam(params, hiAppEvent.domain.OS, hiAppEvent.event.APP_FREEZE).then(() => {
-      hilog.info(0x0000, 'testTag', `HiAppEvent success to set event param`);
-    }).catch((err: BusinessError) => {
-      hilog.error(0x0000, 'testTag', `HiAppEvent code: ${err.code}, message: ${err.message}`);
-    });
+   ```typescript
+   // 开发者完成参数键值对赋值
+   let freezeParams: Record<string, hiAppEvent.ParamType> = {
+     "test_data": 100,
+   };
+   // 开发者可以设置应用冻屏事件的自定义参数
+   hiAppEvent.setEventParam(freezeParams, hiAppEvent.domain.OS, hiAppEvent.event.APP_FREEZE).then(() => {
+     hilog.info(0x0000, 'testTag', `HiAppEvent success to set event param`);
+   }).catch((err: BusinessError) => {
+     hilog.error(0x0000, 'testTag', `HiAppEvent code: ${err.code}, message: ${err.message}`);
+   });
 
-    if (deviceInfo.sdkApiVersion >= 24) {  // API Version 24及以后版本，支持设置页面切换日志
-      // 配置页面切换日志
-      let switchLogPolicy : hiAppEvent.EventPolicy = {
-        "appFreezePolicy": {
-          "pageSwitchLogEnable": true
-        }
-      };
-      // 开发者可以设置应用冻屏日志配置参数
-      hiAppEvent.configEventPolicy(switchLogPolicy).then(() => {
-        hilog.info(0x0000, 'testTag', `HiAppEvent success to config event policy.`);
-      }).catch((err: BusinessError) => {
-        hilog.error(0x0000, 'testTag', `HiAppEvent code: ${err.code}, message: ${err.message}`);
-      });
-    }
+   if (deviceInfo.sdkApiVersion >= 24) {  // API Version 24及以后版本，支持设置页面切换日志
+     // 配置页面切换日志
+     let switchLogFreezePolicy : hiAppEvent.EventPolicy = {
+       "appFreezePolicy": {
+         "pageSwitchLogEnable": true
+       }
+     };
+     // 开发者可以设置应用冻屏日志配置参数
+     hiAppEvent.configEventPolicy(switchLogFreezePolicy).then(() => {
+       hilog.info(0x0000, 'testTag', `HiAppEvent success to config event policy.`);
+     }).catch((err: BusinessError) => {
+       hilog.error(0x0000, 'testTag', `HiAppEvent code: ${err.code}, message: ${err.message}`);
+     });
+   }
    ```
 3. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，在onCreate函数中添加系统事件的订阅，示例代码如下：
 
-   ```ts
-     hiAppEvent.addWatcher({
-      // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
-      name: "watcher",
-      // 开发者可以订阅感兴趣的系统事件，此处是订阅了应用冻屏事件
-      appEventFilters: [
-        {
-          domain: hiAppEvent.domain.OS,
-          names: [hiAppEvent.event.APP_FREEZE]
-        }
-      ],
-      // 开发者可以自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
-      onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
-        hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
-        for (const eventGroup of appEventGroups) {
-          // 开发者可以根据事件集合中的事件名称区分不同的系统事件
-          hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
-          for (const eventInfo of eventGroup.appEventInfos) {
-            // 开发者可以对事件集合中的事件数据进行自定义处理，此处是将事件数据打印在日志中
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.domain=${eventInfo.domain}`);
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.name=${eventInfo.name}`);
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.eventType=${eventInfo.eventType}`);
-            // 开发者可以获取到应用冻屏事件发生的时间戳
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.time=${eventInfo.params['time']}`);
-            // 开发者可以获取到应用冻屏事件发生时应用的前后台状态
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.foreground=${eventInfo.params['foreground']}`);
-            // 开发者可以获取到应用冻屏事件发生时应用的唯一关联id
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.app_running_unique_id=${eventInfo.params['app_running_unique_id']}`);
-            // 开发者可以获取到应用冻屏事件发生时应用的版本信息
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_version=${eventInfo.params['bundle_version']}`);
-            // 开发者可以获取到应用冻屏事件发生时应用的包名
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_name=${eventInfo.params['bundle_name']}`);
-            // 开发者可以获取到应用冻屏事件发生时应用的进程名称
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.process_name=${eventInfo.params['process_name']}`);
-            // 开发者可以获取到应用冻屏事件发生时应用的进程id
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.pid=${eventInfo.params['pid']}`);
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.uid=${eventInfo.params['uid']}`);
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.uuid=${eventInfo.params['uuid']}`);
-            // 开发者可以获取到应用冻屏事件发生的异常类型、异常原因
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.exception=${JSON.stringify(eventInfo.params['exception'])}`);
-            // 开发者可以获取到应用冻屏事件发生时日志信息
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.hilog.size=${eventInfo.params['hilog'].length}`);
-            // 开发者可以获取到应用冻屏事件发生时主线程未处理消息
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.event_handler.size=${eventInfo.params['event_handler'].length}`);
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.event_handler_size_3s=${eventInfo.params['event_handler_size_3s']}`);
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.event_handler_size_6s=${eventInfo.params['event_handler_size_6s']}`);
-            // 开发者可以获取到应用冻屏事件发生时同步binder调用信息
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.peer_binder.size=${eventInfo.params['peer_binder'].length}`);
-            // 开发者可以获取到应用冻屏事件发生时全量线程调用栈
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.threads.size=${eventInfo.params['threads'].length}`);
-            // 开发者可以获取到应用冻屏事件发生时内存信息
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.memory=${JSON.stringify(eventInfo.params['memory'])}`);
-            // 开发者可以获取到应用冻屏事件发生时的故障日志文件
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.external_log=${JSON.stringify(eventInfo.params['external_log'])}`);
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.log_over_limit=${eventInfo.params['log_over_limit']}`);
-            // 开发者可以获取到应用冻屏事件的自定义数据test_data
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.test_data=${eventInfo.params['test_data']}`);
-            // 开发者可以获取到应用冻屏事件的故障进程存活时间
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.process_life_time=${eventInfo.params['process_life_time']}`);
-            // 开发者可以获取到应用冻屏事件的回调日志信息
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.external_callback_log=${eventInfo.params['external_callback_log']}`);
-            // 开发者可以获取到应用冻屏事件的页面切换日志
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.page_switch_log=${JSON.stringify(eventInfo.params['page_switch_log'])}`);
-          }
-        }
-      }
-    });
+   ```typescript
+   // 添加应用冻屏事件观察者
+   hiAppEvent.addWatcher({
+     // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
+     name: "freezeEventWatcher",
+     // 开发者可以订阅感兴趣的系统事件，此处是订阅了应用冻屏事件
+     appEventFilters: [
+       {
+         domain: hiAppEvent.domain.OS,
+         names: [hiAppEvent.event.APP_FREEZE]
+       }
+     ],
+     // 开发者可以自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
+     onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+       hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
+       for (const eventGroup of appEventGroups) {
+         // 开发者可以根据事件集合中的事件名称区分不同的系统事件
+         hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
+         for (const eventInfo of eventGroup.appEventInfos) {
+           // 开发者可以对事件集合中的事件数据进行自定义处理，此处是将事件数据打印在日志中
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.domain=${eventInfo.domain}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.name=${eventInfo.name}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.eventType=${eventInfo.eventType}`);
+           // 开发者可以获取到应用冻屏事件发生的时间戳
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.time=${eventInfo.params['time']}`);
+           // 开发者可以获取到应用冻屏事件发生时应用的前后台状态
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.foreground=${eventInfo.params['foreground']}`);
+           // 开发者可以获取到应用冻屏事件发生时应用的唯一关联id
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.app_running_unique_id=${eventInfo.params['app_running_unique_id']}`);
+           // 开发者可以获取到应用冻屏事件发生时应用的版本信息
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_version=${eventInfo.params['bundle_version']}`);
+           // 开发者可以获取到应用冻屏事件发生时应用的包名
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_name=${eventInfo.params['bundle_name']}`);
+           // 开发者可以获取到应用冻屏事件发生时应用的进程名称
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.process_name=${eventInfo.params['process_name']}`);
+           // 开发者可以获取到应用冻屏事件发生时应用的进程id
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.pid=${eventInfo.params['pid']}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.uid=${eventInfo.params['uid']}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.uuid=${eventInfo.params['uuid']}`);
+           // 开发者可以获取到应用冻屏事件发生的异常类型、异常原因
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.exception=${JSON.stringify(eventInfo.params['exception'])}`);
+           // 开发者可以获取到应用冻屏事件发生时日志信息
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.hilog.size=${eventInfo.params['hilog'].length}`);
+           // 开发者可以获取到应用冻屏事件发生时主线程未处理消息
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.event_handler.size=${eventInfo.params['event_handler'].length}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.event_handler_size_3s=${eventInfo.params['event_handler_size_3s']}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.event_handler_size_6s=${eventInfo.params['event_handler_size_6s']}`);
+           // 开发者可以获取到应用冻屏事件发生时同步binder调用信息
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.peer_binder.size=${eventInfo.params['peer_binder'].length}`);
+           // 开发者可以获取到应用冻屏事件发生时全量线程调用栈
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.threads.size=${eventInfo.params['threads'].length}`);
+           // 开发者可以获取到应用冻屏事件发生时内存信息
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.memory=${JSON.stringify(eventInfo.params['memory'])}`);
+           // 开发者可以获取到应用冻屏事件发生时的故障日志文件
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.external_log=${JSON.stringify(eventInfo.params['external_log'])}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.log_over_limit=${eventInfo.params['log_over_limit']}`);
+           // 开发者可以获取到应用冻屏事件的自定义数据test_data
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.test_data=${eventInfo.params['test_data']}`);
+           // 开发者可以获取到应用冻屏事件的故障进程存活时间
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.process_life_time=${eventInfo.params['process_life_time']}`);
+           // 开发者可以获取到应用冻屏事件的回调日志信息
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.external_callback_log=${eventInfo.params['external_callback_log']}`);
+           // 开发者可以获取到应用冻屏事件的页面切换日志
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.page_switch_log=${JSON.stringify(eventInfo.params['page_switch_log'])}`);
+           // 开发者可以获取到应用冻屏事件的gc、io信息
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.application_gc_info=${JSON.stringify(eventInfo.params['application_gc_info'])}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.application_io_info=${JSON.stringify(eventInfo.params['application_io_info'])}`);
+         }
+       }
+     }
+   });
    ```
 4. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加按钮并在其onClick函数构造应用无响应场景，以触发应用冻屏事件，示例代码如下：
 
-   ```ts
-    Button("appFreeze").onClick(()=>{
-      // 在按钮点击函数中构造一个freeze场景，触发应用冻屏事件
-      setTimeout(() => {
-        let t = Date.now();
-        while (Date.now() - t <= 15000) {}
-      }, 5000);
-    })
+   ```typescript
+   Button('AppFreeze')
+     .type(ButtonType.Capsule)
+     .margin({
+       top: 20
+     })
+     .backgroundColor('#0D9FFB')
+     .width('80%')
+     .height('5%')
+     .onClick(() => {
+       // 在按钮点击函数中构造一个freeze场景，触发应用冻屏事件
+       setTimeout(() => {
+         let t = Date.now();
+         while (Date.now() - t <= 15000) {}
+       }, 5000);
+     })
    ```
 5. 点击DevEco Studio界面中的运行按钮，运行应用工程，然后在应用界面中点击按钮“appFreeze”，触发一次应用冻屏事件。
 

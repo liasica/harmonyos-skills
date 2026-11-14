@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 背景设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > 背景设置
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0461662da0132d7e90019e30e3b8c5a6c93c22ef2ec32973e038310b0957b24a
+content_hash: sha256:d09f8069575f3123fb492d323e8f0adad684869a6c6d74d60c938b406514ba38
 ---
 
 设置组件的背景样式。
@@ -789,7 +789,7 @@ struct BackgroundExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/YPkdi4RJS5iDJJrsusp4ew/zh-cn_image_0000002786520896.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DB9DFC826FD97F50DCA2E8F03D7CD021EDD63C5507DDC027127935F65D13D75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/3G2doXyOQS-EYoahk3SexA/zh-cn_image_0000002788468644.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8D7931F4D3185A31F361E0DC047D88D0AD4A001C439FA816731F049CD332AEC)
 
 ### 示例2（设置背景模糊样式）
 
@@ -820,7 +820,7 @@ struct BackgroundBlurStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/kQIjWEBfT5OqijnfBy6Y_w/zh-cn_image_0000002786360968.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=883A170D537E404346C3648682C24ABE51F9D00F771491BE3620EF43A6B542F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/SlFDsRYdQheiCgvOqu92BA/zh-cn_image_0000002817508133.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B361269527EF9C2530B7D5ABA2AF0D33FF0963139A65165AFC8AC8C966E877D)
 
 ### 示例3（设置组件背景）
 
@@ -855,7 +855,7 @@ struct BackgroundExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/ZC61uYFOSgK4IE_oJKVowA/zh-cn_image_0000002815560389.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=27D21F83EDB4914AED30CA04F38035D271DAD21CE01FD3ED48BDEB66AA5216BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/sH1N46LLTWqRZBNPueFUUg/zh-cn_image_0000002788308702.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C76CA5AC7EC73A49427F8978F650951EA2595E583D2567D52D12CE1D9F1571A)
 
 ### 示例4（设置组件背景提亮效果）
 
@@ -890,15 +890,15 @@ struct BackgroundBrightnessDemo {
 
 rate和lightUpDegree参数值为0.5,0.5：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/UJU6km_LR-Kn9FnqsibULw/zh-cn_image_0000002815400473.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=B24856F75906E88C5A4AF1B60FEB7C6BCF5C993ADF75AA456BB7F1332F5C154A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/0Mbi-e4eT9SctSoIQ-XjVw/zh-cn_image_0000002817428065.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=73199CCB9ACF672B29B6B4C4BE9DFEA8BC4144244FCF6C8319A7E829F4912259)
 
 修改rate和lightUpDegree参数值为0.5,-0.1：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/XNqZ65whQty-DscR3MOYOw/zh-cn_image_0000002786520898.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=4ADB8712BC05581F6289A7A9AFC7F0A023F4610B056B94BC5805BFC7F31F7E37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/6fVKs1ryTZyIktdWuYvyRw/zh-cn_image_0000002788468646.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1EEB06B3EDB588EF14D843DCE5E9B35F600D5D5B66B8B6B9F5F52BD3F980DF0)
 
 去掉backgroundBrightness的设置，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/wzpP7eXTRLSM7A3-yFeZ2g/zh-cn_image_0000002786360970.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C0CCF53E0D07496B3F8512BE335CC5E4C09D17397CC198AF8F64C7A5EF8698B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/3Xgmsd8jQny84_2xEx4nog/zh-cn_image_0000002817508135.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3D190D4FCE00AD88A0C8971853F61053012A01BEA2A2F70D53AC2D36E0BD39F)
 
 ### 示例5（设置模糊属性）
 
@@ -939,7 +939,7 @@ struct BlurEffectsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/0ngoOt99QVGlipcjoEGOig/zh-cn_image_0000002815560391.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F30106D220821015A3774C009286C019719CC936D98B2F1EA71946580F4C8AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/jDnOUSXJSly2I9lcpOGhgA/zh-cn_image_0000002788308704.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=976DA830B657512A1816CD10C4DA4939CA4C2194129469F846FE2E21397B086D)
 
 ### 示例6（设置文字异形模糊效果）
 
@@ -1039,7 +1039,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/aC1P3SuIQN28mYIqwfaDTA/zh-cn_image_0000002815400475.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3262390ED1369D01A3DAAC8272A6433E93362464962B60EC6EE9A91DAB8E84E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/-RvkKUD9SVqXIohzLRIAHQ/zh-cn_image_0000002817428067.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=F73B335DF60CE776DE51C0691A83A1EB5F452B03D6072A5F0BD0584B67D333A2)
 
 ### 示例7（模糊效果对比）
 
@@ -1096,7 +1096,7 @@ struct BackgroundBlur {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/l7wQQx6rQza4diFEAR4flw/zh-cn_image_0000002786520900.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AD6E561852190CE2060FF0DCA50EA6641EEDE27D3DE1BA338A159C069372E6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/sbzmwVyRRqGTpuIoZ4cyYQ/zh-cn_image_0000002788468648.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4916A8F0B0684F38DF7486CD04CCF48461B6CECD46D69B2261A6924EA4573C4)
 
 ### 示例8（设置P3色域背景效果）
 
@@ -1123,7 +1123,7 @@ struct P3BackgroundDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Ub62P1WIRbGZGcdmGAoVhg/zh-cn_image_0000002786360972.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0F7C3B7AEC07513D0224611686BC7CFC7413AC489623D79B9C5C75A753E2C80)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/0Qmr785GR4aXwAF9-yxt_g/zh-cn_image_0000002817508137.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=E72805814BF794C61A5EB1D6F9AD7956AFFC372847DFAA335248CC5FA3F3EA23)
 
 ### 示例9（设置组件背景扩展）
 
@@ -1176,4 +1176,4 @@ struct BackgroundExtension {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/vkr8Spj3SOepeabc6Q4R8w/zh-cn_image_0000002815560393.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=15D4FA5BBB5583445D1B72F3C266D74C0687C478D1299B0BEC30A5FAC171B65F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/KOb80U1MT7SMU0nmX6_Xbw/zh-cn_image_0000002788308706.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D18FD0349D874DAC3385B7709D37300F7C1B65C446AA6849983D1E7CDE74855)

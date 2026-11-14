@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: NavRouter
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > NavRouter
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:29+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c6f80abb7b4768319c92ad0c4ea2e794c8429f91b01dfea34e4739f142d209cb
+content_hash: sha256:11bea6118367447a4af4607507e38dcfadac03d42142165af1d410de5d2db4be
 ---
 
 导航组件，默认提供点击响应处理，不需要开发者自定义点击事件逻辑。
@@ -230,4 +230,4 @@ struct NavRouterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/M_XzXE0VSwafjUbRzRmWwA/zh-cn_image_0000002815401229.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D89A7AF83278898C9A98D43EB253450729A2056F5B6F9805BB95065F8CB8A9D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/NqgmU_eERSCFzVWp7qPXHA/zh-cn_image_0000002817428821.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBCB9325B467D1BD2FEC473AC0C4385F70BC22E997C4100E8B81DC1E4130CD84)

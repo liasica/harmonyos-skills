@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-external
 title: 密钥管理扩展介绍
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 密钥管理扩展 > 密钥管理扩展介绍
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:33+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:011bbedfc7086b48eb30d1098ef9a702bf46780c2ff5dc9709b59a720725b788
+content_hash: sha256:09d382c349370ba82c961deb657426e4b86805dd7332b81a7483ecae71b8811d
 ---
 
 应用在数字签名、证书认证等场景中需要使用外部密钥管理设备（如UKey）。不同厂商的外部密钥管理设备接口和实现差异较大，应用直接对接需要适配多种协议，开发成本高且难以维护。
@@ -21,7 +21,7 @@ HUKS框架保持设备无关，既支持UKey物理设备，也支持软件形态
 
 ## 整体框架
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/I7tugv34Qn-zCq4w9S6TnQ/zh-cn_image_0000002786519630.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=50BC98A6C3F0D9F4744B560EF0F9A0433B0068FAEFD972CB29FEA64FDB1A0B72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/QsjNE7FfQ5ma_p5GyEOlLQ/zh-cn_image_0000002788307434.png?HW-CC-KV=V1&HW-CC-Date=20261114T004553Z&HW-CC-Expire=31536000000&HW-CC-Sign=84DCCCBA7FFDD47A100B8861DB33ADC7D7477DC95610F2508930847ADA4BA78F)
 
 密钥管理扩展采用分层架构，自上而下划分为生态伙伴层、应用层、系统服务层与密钥管理扩展应用层，各层之间通过IPC协同。
 

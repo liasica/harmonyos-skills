@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-live
 title: 趣味交互类型互动卡片开发指导
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 互动卡片开发 > 趣味交互类型互动卡片开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:19+08:00
 doc_updated_at: 2026-04-17
-content_hash: sha256:ad9c82679ddd2ae282b6944e60cb2f98a86ac66237468f39729f897b6b90301a
+content_hash: sha256:19fef23ba6b5981ae935fdf1d8669e9c4a62c0324e3f40e91aa472c0316fa14f
 ---
 
 趣味交互类型互动卡片当前仅支持基于[快游戏](../quickApp-Guides/quickgame-interact-card-0000002045917828.md)开发的卡片小游戏，互动卡片默认处于非激活态，当用户点击卡片时，卡片切换为激活态，并开始游戏。在游戏过程中，用户可以点击“暂停”按钮进入暂停态。在暂停态，用户可以通过“继续游戏”和“停止游戏”按钮选择返回激活态继续游戏，或者结束游戏。
@@ -20,7 +20,7 @@ content_hash: sha256:ad9c82679ddd2ae282b6944e60cb2f98a86ac66237468f39729f897b6b9
 
 **图1** 趣味交互类型互动卡片激活态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/io-jN36FQDC0vQEmcjmB8Q/zh-cn_image_0000002786359548.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B1F3A82DC4E6E5E4F26B18E83C7AFA2C4977914A0B8C4A5944243ABABCB8716)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/KxFGJ_XPRz6dW2AdYMPA-Q/zh-cn_image_0000002817426643.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD584FA1F2886E391329A744104D66E6A48CEB7E03F7195F7560CD8F2FC8C533)
 
 ### 暂停态
 
@@ -28,7 +28,7 @@ content_hash: sha256:ad9c82679ddd2ae282b6944e60cb2f98a86ac66237468f39729f897b6b9
 
 **图2** 趣味交互类型互动卡片暂停态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/BAQHYK_vTESI-0VLbLM6rg/zh-cn_image_0000002815558969.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F50C08DCFCEEECBD85C6AA9BBFB3BA58D3354058C811A3660B0119C306C6FCF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/mIbKL9xHQvyIaU8ZoMFRBQ/zh-cn_image_0000002788467224.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B4B4D5D69C4C71D78CD2F2F62ADF3CF5FF1973DFCE4F2196DC69C56BE5DA968)
 
 ### 非激活态
 
@@ -36,7 +36,7 @@ content_hash: sha256:ad9c82679ddd2ae282b6944e60cb2f98a86ac66237468f39729f897b6b9
 
 **图3** 趣味交互类型互动卡片非激活态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/qYPfXARRSgStvirKaIIAIA/zh-cn_image_0000002815399053.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B2730D42446A7F55225BA2852B37B345B21AFE8731EA541E23B9B8B5E0AE688)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/nm_wCyWdTNKK2lvpcJULCA/zh-cn_image_0000002817506713.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CC52080721DF53D785697AFE40F6E2AFFF1B7F7BF2E4E93B580006C5AB252C6)
 
 ## 约束与限制
 

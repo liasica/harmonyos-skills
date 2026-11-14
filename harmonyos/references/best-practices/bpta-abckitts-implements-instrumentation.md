@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-abckitts-i
 title: 基于AbcKitTS实现字节码插桩
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 基于AbcKitTS实现字节码插桩
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-09
-content_hash: sha256:f794ab1b5927e17777d5ba8e689ed97624d4a93177433c425bcbeffb67a37103
+scraped_at: 2026-11-14T08:54:05+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:4d5190bfbd315008c9876e3bd550ae3de6d7a8707cdf0048bf9cf3fcd0573989
 ---
 
 ## 概述
@@ -71,7 +71,7 @@ IsaKit是AbcKitTS提供的核心指令操作工具，用于操作方法的Block�
 
 开发者要使用AbcKitTS对HarmonyOS工程进行插桩，需要完成两个步骤：**编写插桩代码**和**注册插件**。其中，插桩代码的编写会根据具体业务逻辑而有所不同，本文将在[场景示例](bpta-abckitts-implements-instrumentation.md#section21172491410)中根据不同业务场景详细介绍实现方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/2BJUC1j9RzqUeKFEQQOl-g/zh-cn_image_0000002568136792.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=69916A83E8A4F3F35204225BEBF22106C664165BAF85E2DB689536FC45AA95DB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/BwSjTrlrSOyG20faBqwkxw/zh-cn_image_0000002568136792.png?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD06427C6421574B90E31F5DB6FD17A91215CB04D7ED1580073302C2911921C2 "点击放大")
 
 ### 编写插桩代码
 
@@ -364,7 +364,7 @@ aboutToAppear(): void {
 
 开发者可以通过对函数定义点进行环绕插桩，定位源码中的性能问题。
 
-以下示例将对组件CompA中的aboutToAppear方法进行环绕插桩， 统计方法运行耗时。
+以下示例将对组件CompA中的aboutToAppear方法进行环绕插桩，统计方法运行耗时。
 
 ArkTS源码如下所示：
 

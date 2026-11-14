@@ -3,11 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-full-scena
 title: 典型全场景协同开发案例
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 典型全场景协同开发案例
 category: best-practices
-scraped_at: 2026-10-29T08:03:12+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:d285e8a6f4f00e9e79a673e6f6d672e150a53919774435c3180bb698a95ff199
+scraped_at: 2026-11-14T08:54:04+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:104b4889df6253c8c8aca27a3bd9e7409a96ab5b9d1df0ac80401793584337b8
 ---
 
-* **[办公编辑全场景协同最佳实践](bpta-collaboration-office.md)**
+* **[办公编辑全场景协同](bpta-collaboration-office.md)**
 * **[智能穿戴导航协同](bpta-smartwatchnavigation.md)**
-* **[社交通讯全场景协同最佳实践](bpta-continue.md)**
+* **[社交通讯全场景协同](bpta-continue.md)**

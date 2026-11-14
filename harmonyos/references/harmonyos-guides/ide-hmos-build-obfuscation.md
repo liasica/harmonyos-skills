@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-buil
 title: 混淆加固
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 混淆加固
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:19+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:bc0c255f77619f61e5447c0df8b8e97f0389c5d7f54246971b546682afba3f52
+content_hash: sha256:19da2aa4f2e2bbb8bdf382badd0a517a96eb3e4f258ac061dba733460f226ea2
 ---
 
 鸿蒙电脑DevEco Studio默认关闭源码混淆功能。如果在模块级build-profile.json5配置文件中开启源码混淆，则混淆规则配置文件obfuscation-rules.txt中默认开启推荐的混淆规则，包含-enable-property-obfuscation、-enable-toplevel-obfuscation、-enable-filename-obfuscation、-enable-export-obfuscation四个混淆选项，开发者可进一步在obfuscation-rules.txt文件中选择开启的混淆选项，关于混淆选项的介绍请查看[ArkGuard混淆配置选项](source-obfuscation-rule-options.md)。
@@ -78,7 +78,7 @@ content_hash: sha256:bc0c255f77619f61e5447c0df8b8e97f0389c5d7f54246971b546682afb
 
    当存在多个混淆规则文件时，规则合并以及合并后的作用范围可参考[混淆规则合并策略](source-obfuscation.md#混淆规则合并策略)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/6GzHqqT5Tjeq-ycmm_L5Ig/zh-cn_image_0000002781311240.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=576C2D906341212FFF43B4B61CBAF6E151337C0FF3F3EE31011F65EBBC521A5E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/wv4sdqO1TfeXSha5ZKOTyA/zh-cn_image_0000002781311240.png?HW-CC-KV=V1&HW-CC-Date=20261114T004918Z&HW-CC-Expire=31536000000&HW-CC-Sign=58C945A4C475D0110B02734196926B523ADE2519AF767451A52124D1978C6D64)
 
 ### HAR/HSP配置保留选项
 
@@ -113,4 +113,4 @@ content_hash: sha256:bc0c255f77619f61e5447c0df8b8e97f0389c5d7f54246971b546682afb
 
    当存在多个混淆规则文件时，规则合并以及合并后的作用范围可参考[混淆规则合并策略](source-obfuscation.md#混淆规则合并策略)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/bbsvEdrXTcuQGQoMid-6PA/zh-cn_image_0000002781471174.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=16D12D2BE02737C9F6E1485EA743BA17A9434C37D6201E318EC9F3EDCEE0B1B3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/kRTSwTpURXS0XXpB7jx2pg/zh-cn_image_0000002781471174.png?HW-CC-KV=V1&HW-CC-Date=20261114T004918Z&HW-CC-Expire=31536000000&HW-CC-Sign=39837F480352C19C902494CB5A3CCFCB9F4C5B924D181204D398082180D622B1)

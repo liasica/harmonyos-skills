@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-musi
 title: 多设备音乐界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备音乐界面
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:10+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:93cd4137ce6df8a03450f0dbaf43a7933274dc00d5e041108cac65990f0e3e78
+content_hash: sha256:da0ebe20d7465e733db124bfc6dffc99a1d0a2b20c2bd08b591c9650f404fe52
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:93cd4137ce6df8a03450f0dbaf43a7933274dc00d5e041108cac65990f0
 
 应用的UX设计可参考[音乐听书](../design-guides/responsive-design-examples1-0000001957369849.md#section12973333171715)的多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/r7SO7e9lSj6XSFJb95k15Q/zh-cn_image_0000002622170035.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF465BFA347A41F6FEE04E04F4CB2C668B47F9DD80DC94F3C2C9C141E4CB10D6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/LoiYeYt4Rha47H12xGinDA/zh-cn_image_0000002622170035.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C6FBF38958C3A3C77CC11E074FDB435B76E8C5B8FA96FBA2F978E445A779538 "点击放大")
 
 ## 工程管理
 
@@ -219,7 +219,7 @@ content_hash: sha256:93cd4137ce6df8a03450f0dbaf43a7933274dc00d5e041108cac65990f0
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/bayMDha2R1iEl7FKwXIu4w/zh-cn_image_0000002622249901.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=E24943E16F970D49976C079CD26167D94BA9361D165307F3920747FE4E627E5F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/tEjaKzivRHa92QJsmzCzWQ/zh-cn_image_0000002622249901.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2E2430979B1D684E7032306910942ED524BD8D866FA9EFA5E8AF6BFC39224BF "点击放大")
 
 **界面开发**
 
@@ -241,7 +241,7 @@ content_hash: sha256:93cd4137ce6df8a03450f0dbaf43a7933274dc00d5e041108cac65990f0
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/pa1sawUXTg6FAhvTrcfdog/zh-cn_image_0000002622170043.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=C15C11D9D90529AAF880A9D33E850C3D11581B15BABDBA52D48A5F7FE908B242 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/JU2ITfKyTmKvhQoV6QAmLw/zh-cn_image_0000002622170043.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=E95F93BD1FFFC524C74152DA916EFB10BC4406A21FD6753142214C8AAA3C972B "点击放大")
 
 **界面开发**
 
@@ -270,7 +270,7 @@ content_hash: sha256:93cd4137ce6df8a03450f0dbaf43a7933274dc00d5e041108cac65990f0
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/vp2SW_qUTxmb3aVwqlyBBQ/zh-cn_image_0000002591610438.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=94E808F370855C91032971DE753D04170BF2FF71A5540952CA0CEC5395314299 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/I0yuu9pzQ1S_pm0IMe-ueQ/zh-cn_image_0000002591610438.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=319C037BA573C251D91BCAD872FD3B39FF368F558E9D7C9FABD726F2C02C560C "点击放大")
 
 **界面开发**
 
@@ -289,7 +289,7 @@ content_hash: sha256:93cd4137ce6df8a03450f0dbaf43a7933274dc00d5e041108cac65990f0
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/yb-eshRRS4-7VyvKXM0ZhA/zh-cn_image_0000002591770364.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=A18953EA4AA04B2892C446B4FC7F0A876766E72DA5DF317D11A52446F214743B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/b_I8scrITD2IIONVoM_vOA/zh-cn_image_0000002591770364.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E12E1BAC45D8B54475AD3B8B098F457CE83AC66E66FE40A2FE05A7B2B92FC3A "点击放大")
 
 **界面开发**
 
@@ -313,7 +313,7 @@ content_hash: sha256:93cd4137ce6df8a03450f0dbaf43a7933274dc00d5e041108cac65990f0
 
 穿戴首页通过[ArcSwiper](../harmonyos-references/ts-container-arcswiper.md)实现首页与歌单列表的横向切换，并在首页显示当前播放的音乐以方便用户操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/P6DdA2jPT0O1ZdeeVTBoAg/zh-cn_image_0000002622249905.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EA74B958EC6C9666D5CB9E5E5140B1EA7D388C89E62AD8EF8D7F463D8E61B19 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/dHkqNWSMR4Gz9SQGO6SnDA/zh-cn_image_0000002622249905.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEE4B8BDC55D1C958035CC843B4E1E55BFCCDBACA8255C9F70D9243F1A670049 "点击放大")
 
 实现方案如下表：
 
@@ -328,7 +328,7 @@ content_hash: sha256:93cd4137ce6df8a03450f0dbaf43a7933274dc00d5e041108cac65990f0
 
 穿戴列表页主要展示歌曲列表内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/VpDCJIrHRKODhoGqD_MKWQ/zh-cn_image_0000002622170045.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=44BD39509A3A9322277BC6FE8E7EA8A851AB592B53CAED36BEBE3A4FFA0A0DA1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/LTr2M3yyQbi3Z67Q79QDsg/zh-cn_image_0000002622170045.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB9ABEBE5A45218723CEC082636515FBBD575D7D02C1458975BAC9EBB721EA45 "点击放大")
 
 实现方案如下表：
 
@@ -341,7 +341,7 @@ content_hash: sha256:93cd4137ce6df8a03450f0dbaf43a7933274dc00d5e041108cac65990f0
 
 穿戴播放页划分为三个区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/MXwgv024SPu2TPTeryweIA/zh-cn_image_0000002591610440.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CAEC265B4C36629758996497FCE46892CD4034452A6529BF82617C20D08EA34 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/8hc0esMNRgSt-THUkue3Og/zh-cn_image_0000002591610440.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=99136AE06CC47F60D1B3F6282347317FBCBE8F704AD54055A5DA618EA4D15D23 "点击放大")
 
 实现方案如下表：
 

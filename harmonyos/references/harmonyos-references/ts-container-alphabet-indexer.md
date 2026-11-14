@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: AlphabetIndexer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > AlphabetIndexer
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:18+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:fb463a1b9c71ca8700c21390a8ae1b326b1847bab92d4042ee791ae80de7f0e2
+content_hash: sha256:173476f0f4591b05eedb4b99bca730685dfb152ea0f8c273700e6854d5af57f9
 ---
 
 可以与容器组件联动用于按逻辑结构快速定位容器显示区域的组件。
@@ -729,7 +729,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/t_IayZw8RBqrrB2wB969DA/zh-cn_image_0000002815560863.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCB72A898971643863F82BCAF87442F85DE998DD72537C40A99D53D817910621)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/f8LIuJLXS0O8euG5MiaLxA/zh-cn_image_0000002788309176.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004816Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6DF84411C644D3F7453DDD927551508C052B56C22FCCC65856699D5C2B2BB79)
 
 ### 示例2（开启自适应折叠模式）
 
@@ -871,7 +871,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/bbzQeDfCSkynWxtw9BO1ww/zh-cn_image_0000002815400947.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F7FD17956EED5950F23FD5536849749074E17ED85E5171F5B525F81485EE060)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/SewOwmsiTIKuhcvP6okgYg/zh-cn_image_0000002817428539.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004816Z&HW-CC-Expire=31536000000&HW-CC-Sign=9299DA2138F75A0C771B1078C2FE324CBF7D5FB9AFA004C1B2100F903199922A)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
@@ -1002,7 +1002,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/sJ1m3sLOTPWhAY6wPi934g/zh-cn_image_0000002786521372.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E47D4A8CF1072E08A42F20D1D23A40D39F0875A9B7653B20B178455A96BB666F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/w3JOo199Ry65f22fM_oh1A/zh-cn_image_0000002788469120.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004816Z&HW-CC-Expire=31536000000&HW-CC-Sign=80152AC8873BE7CB88FD538B1A0ED77CF77969D65A4156BEF8144D27CAA22EB8)
 
 ### 示例4（设置提示弹窗的沉浸光感效果）
 

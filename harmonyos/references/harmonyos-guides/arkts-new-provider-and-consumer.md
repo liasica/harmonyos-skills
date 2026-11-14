@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-pro
 title: "@Provider装饰器和@Consumer装饰器：跨组件层级双向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Provider装饰器和@Consumer装饰器：跨组件层级双向同步
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:66bb1f3b7a54b89a31ff364da3fe688a7458cc6c111387e7c743dcbffe7600b2
+scraped_at: 2026-11-14T08:47:00+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:0b8ce6ae5863556ea2c0a3ec3488a899fa1d55d9c7c8ff49ec13af99926a394f
 ---
 
 [@Provider](../harmonyos-references/ts-state-management-provider.md#provider)和[@Consumer](../harmonyos-references/ts-state-management-consumer.md#consumer)用于跨组件层级数据双向同步，可以使得开发者不用拘泥于组件层级。
 
-@Provider和@Consumer属于状态管理V2装饰器，所以只能在[@ComponentV2](arkts-create-custom-components.md#componentv2)中才能使用，在[@Component](arkts-create-custom-components.md)中使用会编译报错。
+@Provider和@Consumer属于状态管理V2装饰器，所以只能在[@ComponentV2](arkts-create-custom-components.md#componentv2)中才能使用，在[@Component](arkts-create-custom-components.md#component)中使用会编译报错。
 
 @Provider和@Consumer提供了跨组件层级数据双向同步的能力。在阅读本文档前，建议提前阅读：[@ComponentV2](arkts-create-custom-components.md#componentv2)。常见问题请参考[组件内状态变量常见问题](arkts-state-management-faq-inner-component.md)。
 
@@ -30,7 +30,7 @@ content_hash: sha256:66bb1f3b7a54b89a31ff364da3fe688a7458cc6c111387e7c743dcbffe7
 
 @Consumer，即数据消费方，可以通过绑定同样的key获取其最近父节点的@Provider的数据，当查找不到@Provider的数据时，使用本地默认值。图示如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/V80wea_vT1Glozw2ZP9sdw/zh-cn_image_0000002815558045.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=97127D917B87CBF11DE88DC4C210B4D1861786BE767BC70F6F5B2A18A4DEF66B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/cIO8nuhvTmC0QZS8dX8dxA/zh-cn_image_0000002788466300.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=C98D366F2484E2EEC02C9A7324632E04523D6274DCFE5B4DAF83E279549F2A13)
 
 @Provider和@Consumer装饰的数据类型需要一致。
 
@@ -50,7 +50,7 @@ content_hash: sha256:66bb1f3b7a54b89a31ff364da3fe688a7458cc6c111387e7c743dcbffe7
 | @Consume(r) | 必须本地初始化，当找不到@Provider时使用本地默认值。 | API version 20以前，@Consume禁止本地初始化，当找不到对应@Provide的时候，会抛出异常；从API version 20开始，@Consume支持设置默认值，如果没有设置默认值，且找不到对应@Provide时，会抛出异常。 |
 | 支持类型 | 支持function。 | 不支持function。 |
 | 观察能力 | 仅能观察数据本身的变化，如果要观察嵌套场景，配合[@Trace](arkts-new-observedv2-and-trace.md)一起使用。 | 观察第一层变化，如果要观察嵌套场景，配合[@Observed和@ObjectLink](arkts-observed-and-objectlink.md)一起使用。 |
-| alias和属性名 | alias是唯一匹配的key，缺省时默认属性名为alias。 | alias和属性名都为key，优先匹配alias，匹配不到可以匹配属性名。 |
+| alias和属性名 | alias是唯一匹配的key，缺省时默认alias为属性名。 | alias和属性名都为key，优先匹配alias，匹配不到可以匹配属性名。 |
 | @Provide(r) 从父组件初始化 | 不允许。 | 允许。 |
 | @Provide(r)支持重载 | 默认开启，即@Provider可以重名，@Consumer向上查找最近的@Provider。 | 默认关闭，即在组件树上不允许有同名@Provide。如果需要重载，则需要配置allowOverride。 |
 
@@ -201,7 +201,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/jDmNmqInTQWn1MWlQw-uVg/zh-cn_image_0000002815398129.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C93667C6E63FEB9EC82DC15012F692ABC5381837D32CC7AEF0FAE629103AABA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ZB1IyeT-Soi4Of0VgMrSEQ/zh-cn_image_0000002817505787.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FC328668424D36B95D8D2218B8A7307BB9957F9970FEC17A96E2CC23393261C)
 
 **未建立双向绑定**
 
@@ -253,7 +253,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/fNBeHtqgQQq9l8P_TWDJ4w/zh-cn_image_0000002786518554.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=59E54EB2DCBCCFF2414B9515C981E1DC3100BCCCBB38C3133DCBC9BADBDFA89B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/SEWyvtY3Tzyjh2ZrBDVd4w/zh-cn_image_0000002788306358.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=607728A3A56AB821A5630576F769CA18DC58E3F9E849FE1203698BBD71557A00)
 
 ### 装饰Array类型变量
 
@@ -338,7 +338,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/LY1H9PlRTve6S4d8Ras-rQ/zh-cn_image_0000002786358626.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0907B0274D7AEBAE76DC82F839F723071B8C86B75D1396AE85EF512EC9709B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/I12q8EiUQ2C9ZSrNQgGiLQ/zh-cn_image_0000002817425721.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=1393E8CFC8F8F0EF448CA0A720BCBB22BDE4267DE9BF8939D98708C49047F857)
 
 ### 装饰Date类型变量
 
@@ -426,7 +426,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/gR-Gbp6STom0jJQp5CI2hA/zh-cn_image_0000002815558047.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=14E63D3DF7DE1293FFE7396B200B0F51E3D32A52F48452A06297C5ADA86F5D72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/gA_GkivBSy26sUQGv65EoA/zh-cn_image_0000002788466302.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=51E6022261E7FC29BEFC9ECBA18343274CDF89BDAE1E0C8989FBF5303C01FCD5)
 
 ### 装饰Map类型变量
 
@@ -540,7 +540,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/zJ0ZFRvQTSaJjG58Ak6jRA/zh-cn_image_0000002815398131.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=96EEBAD5BD5D92E53A8ED813535F35DDD406BF4974DD05A1DBA274E8EA83EB64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/LcXun0ASRzKBbrOKiC3ahQ/zh-cn_image_0000002817505789.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=13AC301ECC871783452CFBA2816B2D815E9D4788383946DDB12210B6039B5088)
 
 ### 装饰Set类型变量
 
@@ -640,7 +640,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/sOoAwu1YTG2Lpck_3Qt1Zw/zh-cn_image_0000002786518556.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=95C40EB209560DE5914E291D1D40F7815C32A3BC4D502F0EDBB2002D863E1968)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Air5h9ndTzeGU71eI1zHeQ/zh-cn_image_0000002788306360.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AD0B2F9C638A5CC986483488814E04128810C20983A436EEBDDB74237313804)
 
 ### @Provider和@Consumer装饰回调事件用于组件之间完成行为抽象
 
@@ -688,7 +688,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/cN46HRmjQpmIDewzmXt8mA/zh-cn_image_0000002786358628.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0DE52AF6380BBDEEF179502586C610BD7569FB257D75E9E48AF43B0D420B173)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/nyS_aES8SR6HfVK-_nzHfw/zh-cn_image_0000002817425723.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F6542505DED3F84842874E43D6BE0FF2F7B50BD74920AED1959BF2E4F69394D)
 
 ### @Provider和@Consumer装饰复杂类型，配合@Trace一起使用
 
@@ -763,7 +763,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/nUnd8venTW-5Qt0NoO6pNQ/zh-cn_image_0000002815558049.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=657E35450C5384EB7EDEF5647D44994A2BED2E2A5A8055C14C593B2DFF7FAB07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/aEVrTveuRmebKdaicALyhg/zh-cn_image_0000002788466304.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5BB380A9FF9DB4EE6A9E84B1EAFD11ED0BDC57C4E58076A1BAF135012FDA94A)
 
 ### @Provider重名时，@Consumer向上查找其最近的@Provider
 
@@ -814,7 +814,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/tQBK0CxmTOGRJwt0XMj3Ag/zh-cn_image_0000002815398133.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=539D05FFD02A9FB719EC86691C62390A69E4C4B6543E162AFDD849FB6B518225)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/sd41X09YSJCfcU0BNKijTg/zh-cn_image_0000002817505791.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=316044730B5B6D16632190798BC700759A34647E469756E13C34D7805C3206E9)
 
 上面的例子中：
 
@@ -887,7 +887,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/t5B4oCX7SR6b0Tfrnl48eg/zh-cn_image_0000002786518558.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F47D1246C0CE4EE8EAA0AF1DCCCF5BB1C490DDA146E632888BD02C9A26D7DE97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/cLqZbFO3R4OhQuL3Yb9c_g/zh-cn_image_0000002788306362.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CDE4361E8B66142EE10EBC70348DE74EE462505094AFD3218A878E4D0349D17)
 
 上面的例子中：
 
@@ -1044,7 +1044,7 @@ struct TestRemove {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/u1kupl8SSsWQ3pyyHC3k9g/zh-cn_image_0000002786358630.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0110B43A54C50ED6ADB20B1F275D5490C03B60703F248551E22C329952EECA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/SfF6bgdgRLepdid-9zxQ1w/zh-cn_image_0000002817425725.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=51FFC1FCA527345E989FBFAA8F09A794459089EEDA8B19DB4A19B29817F0EB38)
 
 上面的例子中：
 

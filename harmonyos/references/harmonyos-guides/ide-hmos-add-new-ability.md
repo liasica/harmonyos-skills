@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-add-
 title: 添加Ability
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 模块管理 > 添加Ability
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:11+08:00
 doc_updated_at: 2026-11-06
-content_hash: sha256:f6224cd2026e33647c436709e004799c5963c0ab1d6d166a770571468c454a4c
+content_hash: sha256:d379a1d3dab95df4f25941114ce5ce339911b1fec8328381791076d46469d3a8
 ---
 
 Ability是应用/元服务所具备的能力的抽象，应用的一个Module可以包含一个或多个Ability，元服务仅包含一个Ability。应用/元服务先后提供了两种应用模型：
@@ -18,7 +18,7 @@ Ability是应用/元服务所具备的能力的抽象，应用的一个Module可
 1. 在工程目录选中对应的模块，单击鼠标右键，选择**新建 > Ability** 。
 2. 设置**Ability名称**，单击**确认**完成创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/KCrBK1cqQD-6zzpBgauVhw/zh-cn_image_0000002781471186.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=F83B425036AECD750F190D85441935689CEF9E0DF4E63E1A3F469EB5E377CFBA "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/CxbfZO4XR8GjPafUThITVA/zh-cn_image_0000002781471186.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=A082F77D9E340DB29A6F4FCBD35D149F809561DF40E859913D19F35337999249 "点击放大")
 
 ## 在模块中添加Extension Ability
 
@@ -26,7 +26,7 @@ Ability是应用/元服务所具备的能力的抽象，应用的一个Module可
    * **Accessibility**：用于提供[辅助功能业务/无障碍](../doccenter-capabilities/accessibilitykit-overview.md)能力。
    * **InputMethod**：用于提供输入法功能业务的能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/-puIdgggQnu_ckcKGZHWtA/zh-cn_image_0000002781311254.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D2CD3BF569698D71961E518C5A4B4BD7CD977546F082EDB7008172CF72C64B5 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/P_D5CpjMSgayEp_DRiqmtg/zh-cn_image_0000002781311254.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=D91631E9624A1D75CBF8D70EF6AB6D544EB69928CED503EAC4069222446E5030 "点击放大")
 2. 设置**Ability名称**，单击**确认**完成Extension Ability创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/3bJt24yJQbuMMbwekUFSNw/zh-cn_image_0000002810630741.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=04F8ABFD6C7BFF8ADADABA755DF89904AF14A6F443E6314D4D420F48335C8F3E "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/GFJTpSaYQRyE4ni710Bg2w/zh-cn_image_0000002810630741.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=52111516F5DD54411F2C43EA15AFE8809B10915E619E9FF3ED4437D71E4EC1DD "点击放大")

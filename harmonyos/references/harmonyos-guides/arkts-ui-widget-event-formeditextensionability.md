@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片编辑
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片编辑
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:19+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1f0ea54cba5b73bf1c473b5cbfe2d8294fec7ccd5d9e7d3c0a0f52c5794435c1
+content_hash: sha256:a6eee2b3fd995ea8682bed4989e943655770641b112b66c97d7229a01f2b54a9
 ---
 
 ArkTS卡片提供卡片页面编辑能力，支持实现用户自定义卡片内容的功能，例如：编辑联系人卡片、修改卡片中展示的联系人、编辑天气卡片等。
@@ -18,7 +18,7 @@ ArkTS卡片提供卡片页面编辑能力，支持实现用户自定义卡片内
 
 ### 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/eOxDOUqfQiCr7xaTqE32NQ/zh-cn_image_0000002815399037.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBA4F47C216936F8DE07B9E5997C935A14B859493AF1BB1791DDB1E24B80AD2F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/HDmEkoseRDqmD4GW3nOx3g/zh-cn_image_0000002817506697.png?HW-CC-KV=V1&HW-CC-Date=20261114T004540Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DFA0D755848F74EA58E8325B3410AEB981A4935A3DA4DF44A0C5506401382B0)
 
 1. 长按卡片弹出菜单，此时桌面通过[formConfigAbility](arkts-ui-widget-configuration.md#配置文件字段说明)字段判断卡片是否支持卡片编辑能力来决定是否显示编辑按钮。
 2. 点击“编辑”菜单项，桌面通过formConfigAbility中的字段拉起对应的页面，进入一级编辑页。一级编辑页的编辑区域有限，用于比较简单的编辑布局。
@@ -630,13 +630,13 @@ ArkTS卡片提供卡片页面编辑能力，支持实现用户自定义卡片内
    ```
 6. 运行效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/xIyvIg6HTuOMShc0BZARmA/zh-cn_image_0000002786519462.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=02229E76BEA96858BFA204BEC9F29861EA2333E5A081367088F60F6863A60FB8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Zef4jTISR7qt2tEULHb5XQ/zh-cn_image_0000002788307266.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004540Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DE638920B04AAB39A85A0B69BDF8BD123C3BF338628C799F887EE2A28589A83)
 
 ## 全屏卡片编辑
 
 ### 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Do6TVjQWTEKfMANLWDOkyw/zh-cn_image_0000002786359534.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EFBA4C9103B41058F690F65882A645DF76934ACE516FD6BE476475C32FDC078)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/mLMpIFGURO6wi542aII5eA/zh-cn_image_0000002817426629.png?HW-CC-KV=V1&HW-CC-Date=20261114T004540Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFE7908662BC764134A5C52F76F597DA23426731DE61A8F03F36268FFB3E66D6)
 
 1. 长按卡片弹出菜单。桌面通过[formConfigAbility](arkts-ui-widget-configuration.md#配置文件字段说明)字段判断卡片是否支持卡片编辑能力来决定是否显示编辑按钮。
 2. 点击“编辑”菜单项进入全屏编辑页。桌面通过formConfigAbility字段的信息拉起卡片编辑页。
@@ -997,4 +997,4 @@ ArkTS卡片提供卡片页面编辑能力，支持实现用户自定义卡片内
    ```
 6. 运行效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/jCO4Q5f7RZ6zBBBNkRcbWQ/zh-cn_image_0000002815558955.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=375624024F9CAA239F1BA0228F7ACE9A65BFF8E87B54524A680227AC00C7E880)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/RfmBWOVLQk6p13FT64unpg/zh-cn_image_0000002788467210.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004540Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8F03954FA18A4742CC5F9149DE6A4FDF22CF8D9D834318E6FE0C2FA50159CF7)

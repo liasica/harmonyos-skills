@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-sh
 title: 基于SoundPool播放短音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于SoundPool播放短音频
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:07+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:299ba2139d4290885ca414779ca48049ddb8870d94e35782a1eb13731b4cb024
+content_hash: sha256:06bab0f6131f9a2724de474a47a51e26aac50400a269d2ddb325f7981a6d4c4e
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ SoundPool提供短音频的播放能力，当需要播放一些急促简短的�
 
 本文是音频播放系列文章的第5篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/JKtmiC_-T1qWpqQ3XYydtw/zh-cn_image_0000002555337527.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=403EFE63395D98CDAADE3A5A3F4D13FB8164EE7DCDE567CEF9B7D96D87334AB9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/k_JMYkcwQhevmDuj1oL9Eg/zh-cn_image_0000002555337527.png?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADD12E7E0C63E01CDB0304B80F950EF2FD4F0BD3E1B12ADE0537A809362E9768 "点击放大")
 
 ## 规格与限制
 

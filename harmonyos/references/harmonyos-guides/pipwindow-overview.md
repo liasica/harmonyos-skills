@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pipwindow-ove
 title: 画中画开发概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 画中画开发指导 > 画中画开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0936c261e75edfc6ed30db400e90e48a2ecb563570b255a2184eeab25aa0b251
+content_hash: sha256:4853b7e96d88a5998b3257a3216a2b3f055624068ff3f135d71d7577a333c642
 ---
 
 ## 场景介绍
@@ -90,7 +90,7 @@ content_hash: sha256:0936c261e75edfc6ed30db400e90e48a2ecb563570b255a2184eeab25aa
 
 **图1** 不同场景下画中画控制层的不同呈现
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/Bpf90_y-RiSovBvk5BkPvg/zh-cn_image_0000002815398889.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=A17DC5C3A12740548657E0CDB79A6FFC8506812D22DBEA1A8A14D56C08335F67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/pKRh9HSJR4-u2HBIMEB3VQ/zh-cn_image_0000002817506547.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0B0757F7EDA483A7C942C605E021859A8CE4DC3CD0E3F1B69F627816A7920A7)
 
 ## 配置画中画控制层可选控件
 
@@ -100,26 +100,26 @@ content_hash: sha256:0936c261e75edfc6ed30db400e90e48a2ecb563570b255a2184eeab25aa
 
   **图2** 视频播放场景配置控制层可选控件
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Pvhr692SRr2lj0XTsRKg9Q/zh-cn_image_0000002786519314.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C6F9992A7C21340506CB9B006BA47E9F81B71EEEB79EF9DF3BE8DA88D1893AF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/16qPb4vvSoysMuqHHuZnqg/zh-cn_image_0000002788307118.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCF7980AB6CF97C770E4237D19A422B5A2CAEAD9191E991E05FE191BFAAEDEC8)
 * 视频通话场景可通过配置[VideoCallControlGroup](../harmonyos-references/js-apis-pipwindow.md#videocallcontrolgroup12)来显示可选的控制层控件。示意图如下所示。
 
   **图3** 视频通话场景配置控制层可选控件
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/mMAxP29ARzqzqcDWgUYzpg/zh-cn_image_0000002786359386.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9CC87690D8C6565D34C09DE8A4724E971172B9F3150EA34A0E0AAF159114CD4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/1Xo1FGTaRvqv9EDq4dnLfQ/zh-cn_image_0000002817426481.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=242A96C07567EF38EA9A54E08B2CF792C92E2982DC96CA5E29AA79CBE6C5C371)
 
   若不配置，视频通话模版默认不存在任何按钮，点击画中画窗口即可启动还原（见下图左，未配置任何控件的操作示意图）。下图右为配置控件的操作示意图。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/2JrwSQofTyqFjMmVsTc0EA/zh-cn_image_0000002815558807.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=C83FEA0FD0366DB0F7293C19CAC2DF0852F51F4E3E0EF43218EA3B2DBA41B0D8) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/DO3DziPgRTa_6CXuTCzo0w/zh-cn_image_0000002815398891.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B57BC8A90E8B60A588B032491C4993ED75E07E67239ACD019DC3830DB3A8914)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/5wuRu-FDR1iEFwG3GTTLmw/zh-cn_image_0000002788467062.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=7502A1BD644837B1FB81DF824333C7FE9E74964AC91CC34498DF95DB3A2183A1) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/si5pvLs1TnmPLXYhpPcTCQ/zh-cn_image_0000002817506549.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=980FDB27960D8EE1D3010996AD872C10EE2FE90747FE491DCD0EE2D864C9EA55)
 * 视频会议场景可通过配置[VideoMeetingControlGroup](../harmonyos-references/js-apis-pipwindow.md#videomeetingcontrolgroup12)来显示可选的控制层控件。示意图如下所示。若不配置，视频会议模版默认不存在任何按钮，点击画中画窗口即可启动还原（与视频通话模版操作示意图一致）。
 
   **图4** 视频会议场景配置控制层可选控件
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/zB0vdIAwTwGqpJU3MHVhLg/zh-cn_image_0000002786519316.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=52E5E81B77629789EC9A42171AFE607DEE81FDD74556E8F6FC6BE07BD1DA7C70)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/xEjG5HfDTlKDi7D1ZfjY5Q/zh-cn_image_0000002788307120.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E579E72FEAC8B29E215A9A90CD547A73E4641EB9056C3723984E7C82294B434)
 * 直播场景可通过配置[VideoLiveControlGroup](../harmonyos-references/js-apis-pipwindow.md#videolivecontrolgroup12)来显示可选的控制层控件。示意图如下所示。
 
   **图5** 直播场景配置控制层可选控件
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/4WJHJhWlT7mwHBI4EKLmjg/zh-cn_image_0000002786359388.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=0563563E00F550BE183B03A06484982E0918A4C02C6117456BDC8B3CACD25AD0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/D6LRT5HgSYu2opRsmV7VJg/zh-cn_image_0000002817426483.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=530553B581F29CA73106D1C1DA6C4DE63A5F1D975088E6711F3E6F4755224F1B)
 
 ## 在画中画内容上方展示自定义UI
 
@@ -131,7 +131,7 @@ content_hash: sha256:0936c261e75edfc6ed30db400e90e48a2ecb563570b255a2184eeab25aa
 
 **图6** 在画中画内容上方显示自定义UI
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ITwjZy4FQjGP7JHes0wevQ/zh-cn_image_0000002815558809.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4DEE0F409D164F75DD4CE6F340121A52DA7D2909BC53BED667AC46137921F6B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/hGERWLfpRuu3stayouzQdQ/zh-cn_image_0000002788467064.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=87CC7C138DAC2CEE882217847D9A59218E14B4931074CEA7D8351A8C9086168D)
 
 ## 更新画中画控制面板控件状态
 
@@ -141,8 +141,8 @@ content_hash: sha256:0936c261e75edfc6ed30db400e90e48a2ecb563570b255a2184eeab25aa
 
 **图7** 更新控件功能状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Fqmz2LasRlq9Mhkpv0Lf7w/zh-cn_image_0000002815398893.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=B44D76CDAE5624EBBC80D25F257E8A3F4E59B142B7E7D92022C2836F5D668827)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/RT1byxDMROC-jPQZfIV80A/zh-cn_image_0000002817506551.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C1826E2C909BA35ABC0887358FB9B7120246C2B9E40F66F3C019D3F122BD3AD)
 
 **图8** 设置控件使能状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/2GiKyv3eT-mhooO1ZRAXGw/zh-cn_image_0000002786519318.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB6D1FA7C283A25127487FDE5E58F5D92E85C8CC7EDDADC62DE2BC34E974FAD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/ZMZLfT1MTG2Ll2Tu0TrrJw/zh-cn_image_0000002788307122.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA29DB16D80CCB758E97887CA9E529BD7D484C2488D706CD353C2676E8E45D77)

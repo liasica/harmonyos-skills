@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: AttributeUpdater
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > AttributeUpdater
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5ffdf48dbc936fda5a8c93aa355cc55271221c986f94b0f729d7f46e0fb4d769
+content_hash: sha256:ac0cb9ef47ec8509b98cb41fbc93bd193d34e7755602db2c2daec8aa20e416da
 ---
 
 将属性直接设置给组件，无需标记为状态变量即可直接触发UI更新。适用于需要在不定义状态变量的情况下动态更新组件属性的场景，如动态修改组件构造参数、避免为一次性属性更新定义状态变量等。
@@ -148,7 +148,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/GZ2wBm_2T9-vGS35hAjFeg/zh-cn_image_0000002786520874.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=1577E9A0749AC5414C553B9EF8177C3CF171CA1CE7BE18761585469BDF564FC0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/gk1zpmGXR-i7f9EUKpJVjw/zh-cn_image_0000002788468622.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004801Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFFA3FAC2B648ABAC74979E13B0C9D4F39445CE79700DE61354CEF612BF748D7)
 
 ### attribute
 
@@ -203,7 +203,7 @@ struct UpdaterDemo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/4IyMRvypSie7PE73QQOzuw/zh-cn_image_0000002786360946.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=549B26221CBBD44566D4754D802C2A28D3151FF357E2FFE90E2A66612E927841)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/CrjGwtacS3yaQnK6X2-f-w/zh-cn_image_0000002817508111.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004801Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C12C59CBAE876E850CED80A5FBA2F7AA03F4C70FD3F536083903269615A85D3)
 
 ### 属性
 
@@ -252,7 +252,7 @@ struct AttributeDemo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/4s5CLxdvSxyY-zcFqy5MLw/zh-cn_image_0000002815560367.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC0ABC8A7EF8149516478A6883D2E0920498424DB883121EC9133A3EDF087794)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/XkjOFZ7bRZmerzsrc-JqsQ/zh-cn_image_0000002788308680.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004801Z&HW-CC-Expire=31536000000&HW-CC-Sign=D65D0EAA364BAD569489BC12B3B53AE4DAB620AD9ECB7A1C799132DFE8DB366D)
 
 ### onComponentChanged
 
@@ -319,4 +319,4 @@ struct UpdaterDemo4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/G2G8tvXPTHiBU4zqEGY0ow/zh-cn_image_0000002815400451.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=10688E50D051020E9C70A8F9144DF4B43750387188E35A559F8F6F9B4119105D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Ce6YslOGQlyaUbY08awsGw/zh-cn_image_0000002817428043.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004801Z&HW-CC-Expire=31536000000&HW-CC-Sign=188072475EDA657303B7ACE9F2CA0C3D06F93B9CD9C998F72C24CCBCD2320DB5)

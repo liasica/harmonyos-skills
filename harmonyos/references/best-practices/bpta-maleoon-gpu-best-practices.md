@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-maleoon-gp
 title: 马良GPU渲染优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 马良GPU渲染优化
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:15+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:47b709fa4ad04da7f188ac8305ab06687cc7b82a1cea77c1576e0138e141aac5
+content_hash: sha256:61cf4ed3d89959bbda4d140dc5cef5ee413a3024dd4d0df97119c1378cd90998
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:47b709fa4ad04da7f188ac8305ab06687cc7b82a1cea77c1576e0138e14
 
 图形渲染的基本流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/TrA23Zq3RBSdHlK3hcgrZw/zh-cn_image_0000002229450553.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F1857A368AFFD46F1C6E6FBB366883B6D8D9FDDB24FDCBE12012D9BC030AB89 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/gl0XHwuAT5G1_y5acMNZIA/zh-cn_image_0000002229450553.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC908EA02F875431237282C6D8544BA35E26FC1FEEA94026CC7AEF4E02A45DC7 "点击放大")
 
 **说明** 
 
@@ -41,7 +41,7 @@ vkAllocateMemory为了避免分配的内存没有真正被渲染线程使用，�
 
 根据资源需求，选择最为匹配的内存类型进行内存分配，相同类型的memory按照用户实际需求一次分配大块size用于不同类型的资源（比如index buffer、vertex buffer及uniform buffer），可以提升内存申请的效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/6uZEJIY9TJ2MXAnRdm2Dtw/zh-cn_image_0000002229336081.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=C611C155C500CC057D67DD0FA0B2808F72D5295E8F57F06922E8616F4473F929 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/W05hFE7_T7a4djpgqZH4YA/zh-cn_image_0000002229336081.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAF4BFAB7B8B769EDF2AA106B06D62380CBDAAD7E9A4560A3AF593DE09C3B1A9 "点击放大")
 
 * vkFreeMemory一定要与vkAllocateMemory成对使用，避免内存泄漏。
 * 绑定的memory资源尽量分时复用。
@@ -953,7 +953,7 @@ vkCmdEndRenderPass()；
 
 Job的执行顺序如下图所示，可见graphics jobs之间存在较大空隙，compute和graphics jobs为串行执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/zKNxK4ycRlSztGwA56nmuA/zh-cn_image_0000002194010276.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=42F0086575900A75AE530CA53733332AEDDB72C6C872F221B49F1C1F20BBBEF8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/PvjFt0l3R_qltNdfTBOr9g/zh-cn_image_0000002194010276.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=7ADD31783EA24D16183B511E67B465005A8C39D0F095F8E02A258758B89D2A6D "点击放大")
 
 为了避免以上情况出现，compute执行时，尽量让可以并行的graphics任务与compute同时执行。API序列如下所示：
 
@@ -974,7 +974,7 @@ vkCmdEndRenderPass();
 
 Job的执行顺序如下图所示，此时compute和graphics jobs可以并发执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/DjRkSxenQiuo03xyJGJq3w/zh-cn_image_0000002193850692.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2D34E146624AB050B2EE2A86C73566FC7C5C56BA54F1C07BC2E15789E5F43BC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/lSv-SiMsRpGsiWU8S31Fyg/zh-cn_image_0000002193850692.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=19A509F70B3797F965B643038CA9792824E8612AF3847074E36F45B136D8E7D1 "点击放大")
 
 **【不推荐】**
 

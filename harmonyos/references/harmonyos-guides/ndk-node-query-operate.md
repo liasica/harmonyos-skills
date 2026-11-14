@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-node-quer
 title: 查询和操作NDK节点
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 查询和操作NDK节点
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:e8cb56520f58d74d448d7d50e30d73f1589a4bab63a87ee34876bf71606ecaad
+scraped_at: 2026-11-14T08:47:09+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:8eed81ce8cff1899471f71a72cde0934bebd1acca6eb117d9dfe44328a50db8e
 ---
 
 NDK提供一系列节点查询、遍历、操作能力，通过使用以下接口，开发者可以高效地访问和操控节点。
@@ -26,10 +26,10 @@ const unsigned int VALUE_3 = 50;
     {
         ArkUI_NativeNodeAPI_1* nodeAPI = NativeModuleInstance::GetInstance()->GetNativeNodeAPI();
         ArkUI_NodeHandle testNode = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-        ArkUI_NumberValue value[] = {VALUE_1};
+        ArkUI_NumberValue value[] = {{.f32 = VALUE_1}};
         ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-        value[0].f32 = VALUE_2;
         nodeAPI->setAttribute(testNode, NODE_WIDTH, &item);
+        value[0].f32 = VALUE_2;
         nodeAPI->setAttribute(testNode, NODE_HEIGHT, &item);
         struct IdList {
             int32_t id = -1;
@@ -44,7 +44,7 @@ const unsigned int VALUE_3 = 50;
         nodeAPI->setAttribute(button, NODE_HEIGHT, &item);
         nodeAPI->addChild(testNode, button);
         nodeAPI->registerNodeEvent(button, NODE_ON_CLICK, 1, &idl);
-        OH_LOG_Print(LOG_APP, LOG_WARN, LOG_PRINT, "GetNodeUniqueId", "GetNodeHandleByUniqueId success1");
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT, "GetNodeUniqueId", "Node initialized, waiting for button click");
         nodeAPI->registerNodeEventReceiver([](ArkUI_NodeEvent *event) {
             auto targetId = OH_ArkUI_NodeEvent_GetTargetId(event);
             if (targetId == 1) {
@@ -52,10 +52,12 @@ const unsigned int VALUE_3 = 50;
                 ArkUI_NodeHandle Test_Column;
                 auto ec = OH_ArkUI_NodeUtils_GetNodeHandleByUniqueId(idl->id, &Test_Column);
                 if (ec == 0) {
-                    OH_LOG_Print(LOG_APP, LOG_WARN, LOG_PRINT, "GetNodeUniqueId", "GetNodeHandleByUniqueId success");
+                    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT, "GetNodeUniqueId", "GetNodeHandleByUniqueId success");
                 }
             }
         });
+        return std::make_shared<ArkUINode>(testNode);
+    }
 ```
 
 ## 通过用户id获取节点信息
@@ -121,7 +123,7 @@ const unsigned int VALUE_3 = 50;
       ArkUI_NumberValue value[] = {480};
       ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
       nodeAPI->setAttribute(column, NODE_WIDTH, &item);
-      ArkUI_NumberValue column_bc[] = {{.u32 = 0xFFF00BB}};
+      ArkUI_NumberValue column_bc[] = {{.u32 = 0xFFFF00BB}};
       ArkUI_AttributeItem column_item = {column_bc, 1};
       nodeAPI->setAttribute(column, NODE_BACKGROUND_COLOR, &column_item);
       ArkUI_AttributeItem column_id = {.string = "Column_CAPI"};
@@ -290,138 +292,139 @@ const unsigned int VALUE_3 = 50;
 
    std::shared_ptr<ArkUIBaseNode> CreateMoveToExample()
    {
-    auto nodeAPI = NativeModuleInstance::GetInstance()->GetNativeNodeAPI();
+       auto nodeAPI = NativeModuleInstance::GetInstance()->GetNativeNodeAPI();
 
-    // 创建传入事件节点结构体
-    struct A {
-        ArkUI_NodeHandle node;
-        ArkUI_NodeHandle targetParent;
-    };
-    A* a = new A;
+       // 创建传入事件节点结构体
+       struct A {
+           ArkUI_NodeHandle node;
+           ArkUI_NodeHandle targetParent;
+       };
+       // 本示例只创建一个节点树，使用静态存储保证事件回调数据在节点销毁前仍然有效。
+       static A eventData{};
+       A* a = &eventData;
 
-    // 创建根节点Scroll
-    ArkUI_NodeHandle scroll = nodeAPI->createNode(ARKUI_NODE_SCROLL);
-    ArkUI_NumberValue length_value[] = {{.f32 = 480}};
-    ArkUI_AttributeItem length_item = {length_value, sizeof(length_value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(scroll, NODE_WIDTH, &length_item);
-    ArkUI_NumberValue length_value1[] = {{.f32 = 650}};
-    ArkUI_AttributeItem length_item1 = {length_value1, sizeof(length_value1) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(scroll, NODE_HEIGHT, &length_item1);
-    ArkUI_AttributeItem scroll_id = {.string = "Scroll_CAPI"};
-    nodeAPI->setAttribute(scroll, NODE_ID, &scroll_id);
+       // 创建根节点Scroll
+       ArkUI_NodeHandle scroll = nodeAPI->createNode(ARKUI_NODE_SCROLL);
+       ArkUI_NumberValue length_value[] = {{.f32 = 480}};
+       ArkUI_AttributeItem length_item = {length_value, sizeof(length_value) / sizeof(ArkUI_NumberValue)};
+       nodeAPI->setAttribute(scroll, NODE_WIDTH, &length_item);
+       ArkUI_NumberValue length_value1[] = {{.f32 = 650}};
+       ArkUI_AttributeItem length_item1 = {length_value1, sizeof(length_value1) / sizeof(ArkUI_NumberValue)};
+       nodeAPI->setAttribute(scroll, NODE_HEIGHT, &length_item1);
+       ArkUI_AttributeItem scroll_id = {.string = "Scroll_CAPI"};
+       nodeAPI->setAttribute(scroll, NODE_ID, &scroll_id);
 
-    // 创建Column
-    ArkUI_NodeHandle column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-    ArkUI_NumberValue value[] = {480};
-    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(column, NODE_WIDTH, &item);
-    ArkUI_AttributeItem column_id = {.string = "Column_CAPI"};
-    nodeAPI->setAttribute(column, NODE_ID, &column_id);
+       // 创建Column
+       ArkUI_NodeHandle column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
+       ArkUI_NumberValue value[] = {480};
+       ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
+       nodeAPI->setAttribute(column, NODE_WIDTH, &item);
+       ArkUI_AttributeItem column_id = {.string = "Column_CAPI"};
+       nodeAPI->setAttribute(column, NODE_ID, &column_id);
 
-    // 创建Row
-    ArkUI_NumberValue text_height[] = {50};
-    ArkUI_AttributeItem text_item1 = {text_height, sizeof(text_height) / sizeof(ArkUI_NumberValue)};
-    ArkUI_NumberValue margin[] = {10};
-    ArkUI_AttributeItem item_margin = {margin, sizeof(margin) / sizeof(ArkUI_NumberValue)};
-    ArkUI_NodeHandle row0 = nodeAPI->createNode(ARKUI_NODE_ROW);
-    ArkUI_NumberValue width_value[] = {{.f32=330}};
-    ArkUI_AttributeItem width_item = {width_value, sizeof(width_value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(row0, NODE_WIDTH, &width_item);
-    nodeAPI->setAttribute(row0, NODE_HEIGHT, &text_item1);
-    nodeAPI->setAttribute(row0, NODE_MARGIN, &item_margin);
+       // 创建Row
+       ArkUI_NumberValue text_height[] = {50};
+       ArkUI_AttributeItem text_item1 = {text_height, sizeof(text_height) / sizeof(ArkUI_NumberValue)};
+       ArkUI_NumberValue margin[] = {10};
+       ArkUI_AttributeItem item_margin = {margin, sizeof(margin) / sizeof(ArkUI_NumberValue)};
+       ArkUI_NodeHandle row0 = nodeAPI->createNode(ARKUI_NODE_ROW);
+       ArkUI_NumberValue width_value[] = {{.f32=330}};
+       ArkUI_AttributeItem width_item = {width_value, sizeof(width_value) / sizeof(ArkUI_NumberValue)};
+       nodeAPI->setAttribute(row0, NODE_WIDTH, &width_item);
+       nodeAPI->setAttribute(row0, NODE_HEIGHT, &text_item1);
+       nodeAPI->setAttribute(row0, NODE_MARGIN, &item_margin);
 
-    ArkUI_NodeHandle row1 = nodeAPI->createNode(ARKUI_NODE_ROW);
-    nodeAPI->setAttribute(row1, NODE_WIDTH, &width_item);
-    nodeAPI->setAttribute(row1, NODE_HEIGHT, &text_item1);
-    nodeAPI->setAttribute(row1, NODE_MARGIN, &item_margin);
-    a->targetParent = row1;
+       ArkUI_NodeHandle row1 = nodeAPI->createNode(ARKUI_NODE_ROW);
+       nodeAPI->setAttribute(row1, NODE_WIDTH, &width_item);
+       nodeAPI->setAttribute(row1, NODE_HEIGHT, &text_item1);
+       nodeAPI->setAttribute(row1, NODE_MARGIN, &item_margin);
+       a->targetParent = row1;
 
-    ArkUI_NodeHandle row2 = nodeAPI->createNode(ARKUI_NODE_ROW);
-    nodeAPI->setAttribute(row2, NODE_WIDTH, &width_item);
-    nodeAPI->setAttribute(row2, NODE_HEIGHT, &text_item1);
-    nodeAPI->setAttribute(row2, NODE_MARGIN, &item_margin);
+       ArkUI_NodeHandle row2 = nodeAPI->createNode(ARKUI_NODE_ROW);
+       nodeAPI->setAttribute(row2, NODE_WIDTH, &width_item);
+       nodeAPI->setAttribute(row2, NODE_HEIGHT, &text_item1);
+       nodeAPI->setAttribute(row2, NODE_MARGIN, &item_margin);
 
-    // 创建Stack
-    ArkUI_NodeHandle stack0 = nodeAPI->createNode(ARKUI_NODE_STACK);
-    ArkUI_NumberValue stack_value[] = {{.f32=50}};
-    ArkUI_AttributeItem stack_item1 = {stack_value, sizeof(stack_value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(stack0, NODE_WIDTH, &stack_item1);
-    nodeAPI->setAttribute(stack0, NODE_HEIGHT, &stack_item1);
-    ArkUI_NumberValue stack_bc[] = {{.u32 = 0xFFFFB6C1}};
-    ArkUI_AttributeItem stack_item2 = {stack_bc, 1};
-    nodeAPI->setAttribute(stack0, NODE_BACKGROUND_COLOR, &stack_item2);
-    a->node = stack0;
+       // 创建Stack
+       ArkUI_NodeHandle stack0 = nodeAPI->createNode(ARKUI_NODE_STACK);
+       ArkUI_NumberValue stack_value[] = {{.f32=50}};
+       ArkUI_AttributeItem stack_item1 = {stack_value, sizeof(stack_value) / sizeof(ArkUI_NumberValue)};
+       nodeAPI->setAttribute(stack0, NODE_WIDTH, &stack_item1);
+       nodeAPI->setAttribute(stack0, NODE_HEIGHT, &stack_item1);
+       ArkUI_NumberValue stack_bc[] = {{.u32 = 0xFFFFB6C1}};
+       ArkUI_AttributeItem stack_item2 = {stack_bc, 1};
+       nodeAPI->setAttribute(stack0, NODE_BACKGROUND_COLOR, &stack_item2);
+       a->node = stack0;
 
-    ArkUI_NodeHandle stack1 = nodeAPI->createNode(ARKUI_NODE_STACK);
-    nodeAPI->setAttribute(stack1, NODE_WIDTH, &stack_item1);
-    nodeAPI->setAttribute(stack1, NODE_HEIGHT, &stack_item1);
-    ArkUI_NumberValue stack_bc1[] = {{.u32 = 0xFF6495ED}};
-    ArkUI_AttributeItem stack_item3 = {stack_bc1, 1};
-    nodeAPI->setAttribute(stack1, NODE_BACKGROUND_COLOR, &stack_item3);
+       ArkUI_NodeHandle stack1 = nodeAPI->createNode(ARKUI_NODE_STACK);
+       nodeAPI->setAttribute(stack1, NODE_WIDTH, &stack_item1);
+       nodeAPI->setAttribute(stack1, NODE_HEIGHT, &stack_item1);
+       ArkUI_NumberValue stack_bc1[] = {{.u32 = 0xFF6495ED}};
+       ArkUI_AttributeItem stack_item3 = {stack_bc1, 1};
+       nodeAPI->setAttribute(stack1, NODE_BACKGROUND_COLOR, &stack_item3);
 
-    ArkUI_NodeHandle stack2 = nodeAPI->createNode(ARKUI_NODE_STACK);
-    nodeAPI->setAttribute(stack2, NODE_WIDTH, &stack_item1);
-    nodeAPI->setAttribute(stack2, NODE_HEIGHT, &stack_item1);
-    ArkUI_NumberValue stack_bc2[] = {{.u32 = 0xFF90EE90}};
-    ArkUI_AttributeItem stack_item4 = {stack_bc2, 1};
-    nodeAPI->setAttribute(stack2, NODE_BACKGROUND_COLOR, &stack_item4);
+       ArkUI_NodeHandle stack2 = nodeAPI->createNode(ARKUI_NODE_STACK);
+       nodeAPI->setAttribute(stack2, NODE_WIDTH, &stack_item1);
+       nodeAPI->setAttribute(stack2, NODE_HEIGHT, &stack_item1);
+       ArkUI_NumberValue stack_bc2[] = {{.u32 = 0xFF90EE90}};
+       ArkUI_AttributeItem stack_item4 = {stack_bc2, 1};
+       nodeAPI->setAttribute(stack2, NODE_BACKGROUND_COLOR, &stack_item4);
 
-    ArkUI_NodeHandle stack3 = nodeAPI->createNode(ARKUI_NODE_STACK);
-    nodeAPI->setAttribute(stack3, NODE_WIDTH, &stack_item1);
-    nodeAPI->setAttribute(stack3, NODE_HEIGHT, &stack_item1);
-    nodeAPI->setAttribute(stack3, NODE_BACKGROUND_COLOR, &stack_item2);
+       ArkUI_NodeHandle stack3 = nodeAPI->createNode(ARKUI_NODE_STACK);
+       nodeAPI->setAttribute(stack3, NODE_WIDTH, &stack_item1);
+       nodeAPI->setAttribute(stack3, NODE_HEIGHT, &stack_item1);
+       nodeAPI->setAttribute(stack3, NODE_BACKGROUND_COLOR, &stack_item2);
 
-    ArkUI_NodeHandle stack4 = nodeAPI->createNode(ARKUI_NODE_STACK);
-    nodeAPI->setAttribute(stack4, NODE_WIDTH, &stack_item1);
-    nodeAPI->setAttribute(stack4, NODE_HEIGHT, &stack_item1);
-    nodeAPI->setAttribute(stack4, NODE_BACKGROUND_COLOR, &stack_item3);
-    
-    ArkUI_NodeHandle stack5 = nodeAPI->createNode(ARKUI_NODE_STACK);
-    nodeAPI->setAttribute(stack5, NODE_WIDTH, &stack_item1);
-    nodeAPI->setAttribute(stack5, NODE_HEIGHT, &stack_item1);
-    nodeAPI->setAttribute(stack5, NODE_BACKGROUND_COLOR, &stack_item4);
+       ArkUI_NodeHandle stack4 = nodeAPI->createNode(ARKUI_NODE_STACK);
+       nodeAPI->setAttribute(stack4, NODE_WIDTH, &stack_item1);
+       nodeAPI->setAttribute(stack4, NODE_HEIGHT, &stack_item1);
+       nodeAPI->setAttribute(stack4, NODE_BACKGROUND_COLOR, &stack_item3);
+       
+       ArkUI_NodeHandle stack5 = nodeAPI->createNode(ARKUI_NODE_STACK);
+       nodeAPI->setAttribute(stack5, NODE_WIDTH, &stack_item1);
+       nodeAPI->setAttribute(stack5, NODE_HEIGHT, &stack_item1);
+       nodeAPI->setAttribute(stack5, NODE_BACKGROUND_COLOR, &stack_item4);
 
-    // 创建Button
-    ArkUI_NodeHandle bt0 = nodeAPI->createNode(ARKUI_NODE_BUTTON);
-    ArkUI_NumberValue btn_width[] = {150};
-    ArkUI_AttributeItem btn_item0 = {btn_width, sizeof(btn_width) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(bt0, NODE_WIDTH, &btn_item0);
-    nodeAPI->setAttribute(bt0, NODE_HEIGHT, &text_item1);
-    nodeAPI->setAttribute(bt0, NODE_MARGIN, &item_margin);
-    ArkUI_AttributeItem bt0_item = {.string = "MoveTo"};
-    nodeAPI->setAttribute(bt0, NODE_BUTTON_LABEL, &bt0_item);
-    nodeAPI->registerNodeEvent(bt0, NODE_ON_CLICK, 0, a);
+       // 创建Button
+       ArkUI_NodeHandle bt0 = nodeAPI->createNode(ARKUI_NODE_BUTTON);
+       ArkUI_NumberValue btn_width[] = {150};
+       ArkUI_AttributeItem btn_item0 = {btn_width, sizeof(btn_width) / sizeof(ArkUI_NumberValue)};
+       nodeAPI->setAttribute(bt0, NODE_WIDTH, &btn_item0);
+       nodeAPI->setAttribute(bt0, NODE_HEIGHT, &text_item1);
+       nodeAPI->setAttribute(bt0, NODE_MARGIN, &item_margin);
+       ArkUI_AttributeItem bt0_item = {.string = "MoveTo"};
+       nodeAPI->setAttribute(bt0, NODE_BUTTON_LABEL, &bt0_item);
+       nodeAPI->registerNodeEvent(bt0, NODE_ON_CLICK, 0, a);
 
-    // 注册事件
-    auto onClick = [](ArkUI_NodeEvent *event) {
-        auto nodeAPI = NativeModuleInstance::GetInstance()->GetNativeNodeAPI();
-        
-        if (OH_ArkUI_NodeEvent_GetTargetId(event) == 0) {  // MoveTo
-            ArkUI_NodeHandle eventNode = OH_ArkUI_NodeEvent_GetNodeHandle(event);
-            A* a = (A*)OH_ArkUI_NodeEvent_GetUserData(event);
-            if (a != nullptr) {
-                OH_ArkUI_NodeUtils_MoveTo(a->node, a->targetParent, 2);
-                nodeAPI->unregisterNodeEvent(eventNode, NODE_ON_CLICK);
-                delete a;
-            }
-        }
-    };
-    nodeAPI->registerNodeEventReceiver(onClick);
+       // 注册事件
+       auto onClick = [](ArkUI_NodeEvent *event) {
+           auto nodeAPI = NativeModuleInstance::GetInstance()->GetNativeNodeAPI();
 
-    // 节点添加
-    nodeAPI->addChild(scroll, column);
-    nodeAPI->addChild(column, row0);
-    nodeAPI->addChild(column, row1);
-    nodeAPI->addChild(column, row2);
-    nodeAPI->addChild(row0, stack0);
-    nodeAPI->addChild(row0, stack1);
-    nodeAPI->addChild(row0, stack2);
-    nodeAPI->addChild(row1, stack3);
-    nodeAPI->addChild(row1, stack4);
-    nodeAPI->addChild(row1, stack5);
-    nodeAPI->addChild(row2, bt0);
+           if (OH_ArkUI_NodeEvent_GetTargetId(event) == 0) {  // MoveTo
+               ArkUI_NodeHandle eventNode = OH_ArkUI_NodeEvent_GetNodeHandle(event);
+               A* a = (A*)OH_ArkUI_NodeEvent_GetUserData(event);
+               if (a != nullptr) {
+                   OH_ArkUI_NodeUtils_MoveTo(a->node, a->targetParent, 2);
+                   nodeAPI->unregisterNodeEvent(eventNode, NODE_ON_CLICK);
+               }
+           }
+       };
+       nodeAPI->registerNodeEventReceiver(onClick);
 
-    return std::make_shared<ArkUINode>(scroll);
+       // 节点添加
+       nodeAPI->addChild(scroll, column);
+       nodeAPI->addChild(column, row0);
+       nodeAPI->addChild(column, row1);
+       nodeAPI->addChild(column, row2);
+       nodeAPI->addChild(row0, stack0);
+       nodeAPI->addChild(row0, stack1);
+       nodeAPI->addChild(row0, stack2);
+       nodeAPI->addChild(row1, stack3);
+       nodeAPI->addChild(row1, stack4);
+       nodeAPI->addChild(row1, stack5);
+       nodeAPI->addChild(row2, bt0);
+
+       return std::make_shared<ArkUINode>(scroll);
    }
    } // namespace NativeModule
 
@@ -476,7 +479,7 @@ const unsigned int VALUE_3 = 50;
    ```
 4. 运行程序，点击按钮，Stack节点会移动到目标位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/WiRdgmtqQNenO5Bh1PC87Q/zh-cn_image_0000002815398783.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E252A00D8D80F609F2FEED3B39CA627735F85AFC594695381B4ADBDF52AA1629)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/VpZFK33bQXO0JVHX9D9akQ/zh-cn_image_0000002817506441.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004709Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F556ECAEC4EBB196C8F9CF06BE32F53C727D9F515C66EA9153D5C04271DBEC3)
 
 ## 在当前即时帧触发节点属性更新
 
@@ -668,7 +671,7 @@ const unsigned int VALUE_3 = 50;
    ```
 4. 运行程序，点击按钮，切换图片正常展示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/U6mriDtfRQuyPNTOas7Fig/zh-cn_image_0000002786519208.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBFD1055FC9A5D1F12CBC0A8CEB3522086152A5FAE2A450D4238930C60B6E21D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/ByguOiKRRd2LDVRVsxE-yg/zh-cn_image_0000002788307012.png?HW-CC-KV=V1&HW-CC-Date=20261114T004709Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EF57DCD97854CAC9F0DC3C05362DB685C9D776DEE5D313D69EA2C105D0365E9)
 
 ## 用不同的展开模式获取对应下标的子节点
 
@@ -946,18 +949,19 @@ NDK支持通过不同的展开方式获取目标节点下的有效节点信息�
 2. NDK侧通过[OH\_ArkUI\_NodeUtils\_GetAttachedNodeHandleById](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodeutils_getattachednodehandlebyid)接口获取ArkTS组件，并通过懒展开模式获取对应的子组件信息。
 
    ```c
-   ArkUI_NodeHandle childNode = nullptr;
-   OH_ArkUI_NodeUtils_GetAttachedNodeHandleById("N3", &childNode);
+       ArkUI_NodeHandle childNode = nullptr;
+       // ArkTS侧List已设置.id("LazyForEachList")。
+       OH_ArkUI_NodeUtils_GetAttachedNodeHandleById("LazyForEachList", &childNode);
        
-   uint32_t index = 0;
-   OH_ArkUI_NodeUtils_GetFirstChildIndexWithoutExpand(childNode, &index);
-   uint32_t index1 = 0;
-   OH_ArkUI_NodeUtils_GetLastChildIndexWithoutExpand(childNode, &index1);
-   ArkUI_NodeHandle child = nullptr;
-   auto result = OH_ArkUI_NodeUtils_GetChildWithExpandMode(childNode, 3, &child, 0);
-   OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager",
-       "firstChildIndex - lastChildIndex == %{public}d -- %{public}d, -- getResult = %{public}d",
-       index, index1, result);
+       uint32_t index = 0;
+       OH_ArkUI_NodeUtils_GetFirstChildIndexWithoutExpand(childNode, &index);
+       uint32_t index1 = 0;
+       OH_ArkUI_NodeUtils_GetLastChildIndexWithoutExpand(childNode, &index1);
+       ArkUI_NodeHandle child = nullptr;
+       auto result = OH_ArkUI_NodeUtils_GetChildWithExpandMode(childNode, 3, &child, ARKUI_LAZY_EXPAND);
+       OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager",
+           "firstChildIndex - lastChildIndex == %{public}d -- %{public}d, -- getResult = %{public}d",
+           index, index1, result);
    ```
 3. 查看日志打印的对应错误码返回是否正确，以此判断是否成功获取到对应子节点。
 
@@ -1136,4 +1140,4 @@ NDK支持通过不同的展开方式获取目标节点下的有效节点信息�
    ```
 4. 运行程序，点击change text visibility后打印text是否在渲染树上。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/zMy6pJSfSYWgTcM2AQ-fQA/zh-cn_image_0000002786359280.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDB505755D1BAE6930168F399DE1365477585B08FC1F107CF5A8C99FECC033BD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Qa7v1Q9ERvKx6AL-jNckRQ/zh-cn_image_0000002817426375.png?HW-CC-KV=V1&HW-CC-Date=20261114T004709Z&HW-CC-Expire=31536000000&HW-CC-Sign=967AA0BAF6DE582C3F8D2B6791932F5A5127B1C8F27FA36657247DE4DABF5566)

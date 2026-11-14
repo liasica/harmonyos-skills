@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-par
 title: "@Param装饰器：组件外部输入"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Param装饰器：组件外部输入
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:00+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3cdb71aeee88f204d84815ac9a96432baf44139e889deeaa4ffcbec5b1d6d4a3
+content_hash: sha256:5d3cf33a8514e6b9216e90a18b7b3254ee5fe1af53fa0d2c14184e6a83ea8804
 ---
 
 为了增强子组件接受外部参数输入的能力，开发者可以使用[@Param](../harmonyos-references/ts-state-management-param.md#param)装饰器。
@@ -105,7 +105,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/V4npu7JzTnCvj9O2JSI6kA/zh-cn_image_0000002815398121.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D87051522F0E36C4A6E62A4B44C85D3FADF20F79ACE20D1821EEAB5CCE0B288D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/gu2P6MgIRfCLytOBJlcqPg/zh-cn_image_0000002817505779.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=F74335A530F2F488F370C78B3FBF2A8DC8AE2E44163F7A1B893BC1E985CF6FC4)
 
 在上面的示例中，@State仅能在初始化时接收info的引用，改变info之后无法同步。@Prop虽然能够进行单向同步，但是对于较复杂的类型来说，深拷贝性能较差。@Link能够接受传入的引用进行双向同步，但它必须要求数据源也是状态变量，因此无法接受info中的成员属性region。@ObjectLink能够接受类成员属性，但是要求该属性类型必须为@Observed装饰的类。装饰器的不同限制使得父子组件之间的传值规则复杂、不易使用。因此推出@Param装饰器，表示组件从外部传入的状态。
 
@@ -195,7 +195,7 @@ struct Child {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/2GsLEwiKQDyg6FoLv0TfYg/zh-cn_image_0000002786518546.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=36A32C17B536161E894B53048C81F407F0743996074AAF2660F34FF6E51E9624)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/7FmVfahPQHyENHmR7EiaiQ/zh-cn_image_0000002788306350.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE69EF988270340AB928F65422E8008DDE0A1D6EC085CA4F5CC7FDD3D26F3BD9)
 * 当装饰的变量类型为类对象时，仅可以观察到对类对象整体赋值的变化，无法直接观察到对类成员属性赋值的变化，对类成员属性的观察依赖[@ObservedV2](arkts-new-observedv2-and-trace.md)和[@Trace](arkts-new-observedv2-and-trace.md)装饰器，也可以使用[makeObserved](arkts-new-makeobserved.md)将该对象变为可观察对象。
 
   ```typescript
@@ -275,7 +275,7 @@ struct Child {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/TR3619ZRTIGAoAUmJKqB1g/zh-cn_image_0000002786358618.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=106AA4DD3A8A31C5823F3168B5482F4B70776FE0B02A867D1D9F5B1F3DDF2C5B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/QmxI5yE0T4G9WDn9BJI87A/zh-cn_image_0000002817425713.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=D889E2E92BBD00E238E1EF9F09ACAB542E388202E8FA4E28A25B99D5E6504D1F)
 * 装饰的变量为简单类型数组时，可观察数组整体或数组项变化。
 
   ```typescript
@@ -357,7 +357,7 @@ struct Child {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/6zzbJc8nTWOJX2jcD9mPYA/zh-cn_image_0000002815558039.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B72E0664D00AE9B312CDB99EA33310BC94FB25DAFC085A99D2BF7F0ECD53427)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/Sm-3F0RfSBWeaEbk3PAydQ/zh-cn_image_0000002788466294.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=B01D177CEA1F435E8AC8B7FD23A689CE80BC7B8DDEFBB44FC9F5E1221FC79E6D)
 * 当装饰的变量是嵌套类或对象数组时，@Param无法观察深层对象属性的变化。对深层对象属性的观测依赖@ObservedV2与@Trace装饰器。
 
   ```typescript
@@ -472,7 +472,7 @@ struct Child {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/UkYSAUTMQfGju2gviIYf9A/zh-cn_image_0000002815398123.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0BFF000E89B662BAF816FA60AEB25DECE60A4B3EA2986E58249BA530AD892D9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/p8gfsk7CQI2aQMHTg64Fcw/zh-cn_image_0000002817505781.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B6C61E570C87ACC52792507FD1CD95CBD7F4260FAAB634804E04DB8F83E863E)
 * 装饰的变量为内置类型时，可观察变量整体赋值和API调用的变化。
 
   | 类型 | 可观测变化的API |
@@ -672,7 +672,7 @@ struct SubComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/mBM8-vQJQ1mVi7QEsodWrg/zh-cn_image_0000002786518548.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=9ED50AF2D86C65C49ECE6F741E1B42D45D0E2E102194E063EA36A90D81A3DB42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/CxJVUQdNS1aNTr5GEJB-3w/zh-cn_image_0000002788306352.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=B551B6523B8F32C003750038C9DE7F10F209615BFBA8BB77B834599889207BD6)
 
 ### 装饰Array类型变量
 
@@ -743,7 +743,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/c15TO3C8SGmFRjdlxOvwzA/zh-cn_image_0000002786358620.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=6342634D2C087042733CF2BCF61E3495E4E362EF748EC4B4AB78F133AE7D6B5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/GbNQZdkXTqGWWDNfgn0ZvA/zh-cn_image_0000002817425715.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CA3FADFFCF6F2317C1A37D595FB39B0CF83F5A4CA8D7711FFED2CADB09AB8D7)
 
 ### 装饰Date类型变量
 
@@ -810,7 +810,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/dFil1xthSVO-rSB-csFodA/zh-cn_image_0000002815558041.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DDC1AB0437CE84B73E14315E3F20921C9F02E229588546D281AE3F66F64C6AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/vZZiu-jmQ3uPvOoQoTpOUw/zh-cn_image_0000002788466296.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=1669839952CA5FBD4100E2F022A9FC58E52B4D6640CDC61E6941919ACD346AAA)
 
 ### 装饰Map类型变量
 
@@ -891,7 +891,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/98UlKFFYRQqhT-7kVmbJIw/zh-cn_image_0000002815398125.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C469FB163CCBAC694EAC761739131B6C1595CBD14354239732F3B36B6F5F222E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/CJ4n4QqZQtKw97XwAcSFnw/zh-cn_image_0000002817505783.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC97766496F8831C7149FEBE20AD11E5ADFCEEE0A605E0B7E9C62EBDEB0DAA60)
 
 ### 装饰Set类型变量
 
@@ -962,7 +962,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/7oK7NtrLSECX9atlfNl8Iw/zh-cn_image_0000002786518550.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D884355F62C571ED009D2BBE2C85FBCE486C4CFD3E2034DB621871F52D250214)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/BUqD4u2GTkKiqV1zGb9Tag/zh-cn_image_0000002788306354.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=19B3E761ADBB4FED0351095A9F38E49BC8F246208F1ED59A6349A2A77FC270DE)
 
 ### 联合类型
 
@@ -1004,4 +1004,4 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/SkAkIQO4RcCWXFIdX59G3w/zh-cn_image_0000002786358622.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEF124640CBC4A4AF5E1C55E04BE8170A29A4BB977DC24DCDF454753879D8C47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ZIGF0JsTR7ycAuGg2Lc4ZQ/zh-cn_image_0000002817425717.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=65547422B44128BACBD8AC32370301A425F19137F4CFEE67FD78EAED617E8642)

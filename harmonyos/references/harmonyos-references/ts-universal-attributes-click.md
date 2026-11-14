@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 点击控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > 点击控制
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:29+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:de457b04a18dbf0dba6f96dc241255b6c982bd690eb3f92469003e2f07c15e0e
+content_hash: sha256:94a2881f875f2a5e5b552b687359d34a6378712830181c2183632263a975cb92
 ---
 
 用于根据交互需求设置组件是否可以响应点击事件、触摸事件等手指交互事件，满足不同场景下对组件交互响应的控制需求。
@@ -68,4 +68,4 @@ struct TouchableExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/cXPpBPBWRpaHQ3bRj7_OKw/zh-cn_image_0000002786361726.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=55697696235DF36A7F0EC983A2101ECF9FAF052EC5A646CBE0F0B925B65FADBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Io1ZpE7sSOOKiiyVBxdIHA/zh-cn_image_0000002817508891.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EDE4F896BD5BAB419EF21C3F9E7A7F790D330BA1BFD086BE6E34262EA0B5D87)

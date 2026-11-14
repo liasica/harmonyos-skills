@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-application-continue-progess
-title: 常见接续最佳实践
-breadcrumb: 最佳实践 > 技术创新 > 全场景 > 跨端迁移 > 常见接续最佳实践
+title: 常见接续场景案例
+breadcrumb: 最佳实践 > 技术创新 > 全场景 > 跨端迁移 > 常见接续场景案例
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:a0972eaf77e35d8bdcd75c41e52f809c8e4cd66fc7aa8ca64cb3fa2a045c3e91
+scraped_at: 2026-11-14T08:54:04+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:eaf9e2ed77285175199bda6783f7285bd419637a2f19eee20d362a12ca79a7da
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:a0972eaf77e35d8bdcd75c41e52f809c8e4cd66fc7aa8ca64cb3fa2a045
 
 接续过程底层依赖分布式框架和软总线，开发者只需要启用接续、保存数据和恢复数据，具体运作机制可参考：[运作机制](bpta-continue-cast.md#section1218874218264)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/xA5O4QgmSYaonD3tCGnXGQ/zh-cn_image_0000002622048193.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=46FE172CFAEC5617A518CC13262F2042C925C303D7BDC23D1C403A58AE257457 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/_-xJRmHYRW-6eLukPKVBTw/zh-cn_image_0000002622048193.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FBC1F63EBC0D25033ACE70436186E76ED6050A13CD36D7B6363BA71899FD309 "点击放大")
 
 ## 开发流程
 
@@ -147,7 +147,7 @@ content_hash: sha256:a0972eaf77e35d8bdcd75c41e52f809c8e4cd66fc7aa8ca64cb3fa2a045
 
 在社交媒体、新闻资讯等应用中，用户经常需要浏览长列表内容。当用户滚动到列表的某个位置后，可能会切换设备，且切换后希望自动恢复到之前的滚动位置，避免重复操作。开发者可以利用接续能力提升此类场景的用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/JdX1mKvOTtKvu0za5QaElw/zh-cn_image_0000002591568722.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=E03DAABC655E5E628813A0EC8A8BD32D1A55D10E8984BDA87C7A3D472C5EFF3C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/K98UjUhLQ6SiLVHFSq3vqg/zh-cn_image_0000002591568722.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=3116590F88F82D13FE6CBAC94BADCC4A0935492BD7707E91C1FAEEFBA676A0D6 "点击放大")
 
 ### 实现原理
 
@@ -162,7 +162,7 @@ WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
 
 然而，该方法存在局限性，具体支持的场景和版本详见[分布式迁移标识](../harmonyos-references/ts-universal-attributes-restoreid.md)的说明。若需在开发中进行更多自定义设置以提升用户体验，可参考以下步骤。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/PHZ8dDOZSX2JGQ4m0leQkw/zh-cn_image_0000002622128325.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=06691282B402DEA82CDD72A95D73358B9F9AAB0F62ACB34984EB432183BC412E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/3qfXe89PR1qYpIJd7NGH5w/zh-cn_image_0000002622128325.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3A519D97438EBF5C48A35A06E58651DEDA0D394C0374060FC70291329F8AB8B "点击放大")
 
 ### 开发步骤
 
@@ -198,13 +198,13 @@ WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
 
 在视频播放场景中，用户可能会在观看视频的过程中切换至其他设备，例如从手机切换到平板/PC等大屏设备。用户切换设备后期望能从之前的播放位置继续观看而非重新开始播放。针对此类场景，开发者可以通过接续功能提升用户观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/XiF7M_LrQ5im2tpNTghlwQ/zh-cn_image_0000002591728656.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFC5D95EBACA8808435E26C26E5523F9305766F5749C5A643F9C8B7BB77B0609 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/YR7lNJROTrucy1qQvRjkmw/zh-cn_image_0000002591728656.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA3B32E533D68E47731F17C12D9EA3E4027212AA8FF0AEE99D3A35C90704F8BA "点击放大")
 
 ### 实现原理
 
 媒体播放接续的内容主要包括播放列表中的集数、播放状态和进度。此外，还可以接续其他播放设置，以进一步提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/j2LIBG4PT8GoL3LGFayZBA/zh-cn_image_0000002622048215.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D9D8726A664719447F83D077E65EDE3759A63279388E488B40C2CAF4542CDCE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/ACgBF96ZTkufiWynDK09tw/zh-cn_image_0000002622048215.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=A31960792EE249CE8F73FC518B8FCFC45D2C07B6846B7D93718129929FA290EB "点击放大")
 
 ### 开发步骤
 
@@ -238,13 +238,13 @@ WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
 
 在Web网页浏览场景中，用户可能会在浏览网页的过程中切换至其他设备。用户切换后期望能恢复到之前的网页URL和滚动位置，以保持浏览上下文的连续性。针对此类场景，开发者可以利用接续功能，进一步提升用户的浏览体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/pK8588xkRHukqO_WaYig8g/zh-cn_image_0000002591568746.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7FD5561357D3E1858BBEF0FD43591B48689949CE5793BD96CC55B0DE245BFE1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/euKobaCLRT68ghU2wUaSeQ/zh-cn_image_0000002591568746.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=89CD259D18DE0C6158974384C7BBF3E19DAF0339F75178BB45D807C58CFD339A "点击放大")
 
 ### 实现原理
 
 系统提供的Web组件用于在应用程序中展示Web页面内容。当Web组件加载大量信息时，保持浏览进度的连续性尤为重要。为了实现内容的连续展示，需要像处理长列表一样，通过传递当前的滚动位置来维持这一连续性。这可以通过使用[runJavaScript()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascript)接口来获取和恢复滚动位置来实现。具体步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/hSOz-0RbQxCmz8IsH9pLtQ/zh-cn_image_0000002622128349.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=B12FC0270EA7F2066D5823FC43634D424078165B3CD8249984FAC769682B810D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Rmg90VUTSAyRLcJaDWrygw/zh-cn_image_0000002622128349.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5A49454CB337206ADC2CD06E0186CBEAC4808458FCF8AC4AC5E537DE66013B6 "点击放大")
 
 ### 开发步骤
 

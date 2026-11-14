@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-always-on-market-watch
-title: 全链路盯盘开发实践
-breadcrumb: 最佳实践 > 场景创新 > 生产力 > 金融 > 全链路盯盘开发实践
+title: 全链路盯盘
+breadcrumb: 最佳实践 > 场景创新 > 生产力 > 金融 > 全链路盯盘
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:04318c1e4fb72ee47ce211705e192390ecd1bf79ef8e5d6ef3f4e4ef8757c999
+scraped_at: 2026-11-14T08:54:05+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:24722810b905def25a61cab64922066ec81d1b04eb917949eb8e57f86713d922
 ---
 
 ## 概述
@@ -19,7 +19,7 @@ content_hash: sha256:04318c1e4fb72ee47ce211705e192390ecd1bf79ef8e5d6ef3f4e4ef875
 
 全链路盯盘涉及多项系统能力的综合运用，各能力之间的协作关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/PtcUHBsNRjmzGrVoML8j0Q/zh-cn_image_0000002748611785.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6B0B80C640212609271119F9715CE486585D30010EDC168C02E21D65F7DA426 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/fxmLhRWEQ-aL-C9T4A5Cpg/zh-cn_image_0000002748611785.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9B0F7E54DFA63E98203C496E0F670130A143374BAED376E3D75CF8F14C55FAE "点击放大")
 
 本文主要内容如下：
 
@@ -31,15 +31,15 @@ content_hash: sha256:04318c1e4fb72ee47ce211705e192390ecd1bf79ef8e5d6ef3f4e4ef875
 
 [待机屏保盯盘](bpta-always-on-market-watch.md#section15695529141010)：介绍待机屏保卡片的配置与开发方式。
 
-## 约束与限制
+## 涉及系统能力
 
-| 能力 | API版本限制 | 设备限制 |
-| --- | --- | --- |
-| [@ohos.window.floatView (闪控窗)](../harmonyos-references/js-apis-floatview.md) | 26.0.0及以上 | 支持设备：直板机、双折叠（Mate X系列）、阔折叠、三折叠、平板。 |
-| [@ohos.window.floatingBall (闪控球窗口)](../harmonyos-references/js-apis-floatingball.md) | 6.0.0(20)及以上 |
-| [ArkTS锁屏卡片](../harmonyos-guides/arkts-ui-lockscreen-form-development.md) | 5.1.0(18)及以上 |
-| [待机屏保](../design-guides/system-features-service-widget-0000002087671904.md#section966618274556) | 6.1.0(23)及以上 | 需要设备上存在待机屏保设置选项。开发者可通过在设备上选择“设置 > 桌面和个性化 > 待机屏保设置”查看是否存在该选项。 |
-| [防窥保护](../harmonyos-guides/devicesecurity-dlpantipeep.md) | 6.0.0(20)及以上 | 需要设备上存在防窥保护选项。开发者可通过在设备上选择“设置 > 隐私与安全 > 防窥保护”查看是否存在该选项。 |
+| 系统能力 | 注意事项 |
+| --- | --- |
+| [@ohos.window.floatingBall (闪控球窗口)](../harmonyos-references/js-apis-floatingball.md) | 需申请ohos.permission.USE\_FLOAT\_BALL权限，并通过[floatingBall.isFloatingBallEnabled()](../doccenter-references/api/js-apis-floatingball.md#floatingballisfloatingballenabled)判断设备是否支持。 |
+| [@ohos.window.floatView (闪控窗)](../harmonyos-references/js-apis-floatview.md) | 需申请ohos.permission.FLOAT\_VIEW权限，并通过[floatView.isFloatViewEnabled()](../doccenter-references/api/js-apis-floatview.md#floatviewisfloatviewenabled)判断设备是否支持。 |
+| [防窥保护](../harmonyos-guides/devicesecurity-dlpantipeep.md) | 需要设备上存在防窥保护选项。开发者可通过在设备上选择“设置 > 隐私与安全 > 防窥保护”查看是否存在该选项。 |
+| [ArkTS锁屏卡片](../harmonyos-guides/arkts-ui-lockscreen-form-development.md) | 需在HarmonyOS开发者中心申请锁屏卡片开放能力并审批通过。 |
+| [ArkTS待机屏保卡片](../doccenter-capabilities/arkui-ui-standby-form-development.md) | 需要设备上存在待机屏保设置选项。开发者可通过在设备上选择“设置 > 桌面和个性化 > 待机屏保设置”查看是否存在该选项。 |
 
 ## 桌面盯盘
 
@@ -49,7 +49,7 @@ content_hash: sha256:04318c1e4fb72ee47ce211705e192390ecd1bf79ef8e5d6ef3f4e4ef875
 
 **闪控球**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/qw-9jQC7RWypLmOZDsjFyA/zh-cn_image_0000002718931886.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B8172613686E5A4E5BE7E9DEAFBFB4E4ACC6BCD8B5E691FB458C1F028A8BB04 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/95bisIfXQByb4EvxizTbYQ/zh-cn_image_0000002718931886.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=89406BDFFA41007AA665632D6EA6A22CE5EAC907486549DF590389EB2A83D1FD "点击放大")
 
 |  |  |  |
 | --- | --- | --- |
@@ -79,7 +79,7 @@ content_hash: sha256:04318c1e4fb72ee47ce211705e192390ecd1bf79ef8e5d6ef3f4e4ef875
 
 桌面盯盘的初始化流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/I2inItwURf2fWvF5AIGq7A/zh-cn_image_0000002748611789.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA7E393525AC021190959904E99D7B180656F0DA1B981B44610E01BD082FB706 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/dBqzqi--Rv6n7k5Rb8lcUw/zh-cn_image_0000002748611789.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE78596BBDB4829D10D8F5F864880B2E989B38FEDC12B5CBEB70D5608F3682FF "点击放大")
 
 ### 开发步骤
 
@@ -350,7 +350,7 @@ async startFloatPanel() {
 
 **防窥保护**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/HdLmcH-XRPeXCWZhK7jPpw/zh-cn_image_0000002718931890.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=43A3A2504E735A29EC586903F66429AD73E040FE930FC5625AF83FC74814FD80 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/B0-aaah6QSC7_8KX26S5fA/zh-cn_image_0000002718931890.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=54D3F9AFE00599BC46B701750A777CD30BE6B42C6B745140A024162AAA4C6DED "点击放大")
 
 ### 实现原理
 
@@ -368,7 +368,7 @@ async startFloatPanel() {
 
 防窥保护的监听流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/9fQbmezCS42pv_smV20fmw/zh-cn_image_0000002719091808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=E27FF8318210AACEABA50E5EFB998AE9191E2367CDDF12076568A81F6AF03536 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/u3lixi8nQaCEOYvWZJwUgA/zh-cn_image_0000002719091808.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EC1E87F1C3E67E4C285B42C9BD3E9D56C147F0E8F6AAFFD77A3DBF54B36A463 "点击放大")
 
 ### 开发步骤
 
@@ -508,7 +508,7 @@ private async handleAntiPeepStatus(status: dlpAntiPeep.DlpAntiPeepStatus) {
 
 **锁屏卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Ko9IdwyFSlilRNqnJePLWA/zh-cn_image_0000002748531717.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=80B3D36A852172EAE530192240C9EDE18AB990748C7EE4A3EDD6422EE590C267 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/AyWHy6_2T5uqLD7nDl7H7A/zh-cn_image_0000002748531717.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6B942A6FB291A2CF50AC18745044FCE8460943843DE453B8471F946A65C31DE "点击放大")
 
 ### 实现原理
 
@@ -623,7 +623,7 @@ struct LockScreenCard {
 
 当设备插入充电器或开启“不充电可显示”开关，设备横屏锁屏并与桌面夹角45°至90°稳定摆放（折叠机需切换为外屏；同时折叠机支持帐篷模式显示），即可进入待机屏保界面。用户可在待机屏保编辑界面添加全链路盯盘卡片，在充电待机状态下持续查看股票行情。待机屏保盯盘功能效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/WuqJbCTmTAGLzOUTE1EE6w/zh-cn_image_0000002748611791.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=97D3E86345C4FC799D3940F5AAB0E1209CC47CA39E273B8A9D639639A5DDFB00 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/EXx8hWYWR2WFp56y1yLJ6g/zh-cn_image_0000002748611791.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8718E8302BDD57009A93771215B1F87EF4FE339775166DA9603FE860A87419E "点击放大")
 
 ### 实现原理
 

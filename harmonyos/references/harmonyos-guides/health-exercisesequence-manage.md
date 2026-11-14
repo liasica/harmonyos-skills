@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-exercisesequence-manage
-title: 锻炼记录
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Phone/Tablet应用开发 > 管理运动健康数据 > 锻炼记录
+title: 管理锻炼记录数据
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Phone/Tablet应用开发 > 管理运动健康数据 > 管理锻炼记录数据
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:25+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-14T08:48:19+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:090f83aa88345012c376696498314a872e5a5da5d2b52f949ad63cd9933718c3
 ---
 

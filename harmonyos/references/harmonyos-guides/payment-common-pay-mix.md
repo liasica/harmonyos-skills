@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-commo
 title: 混合支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 混合支付场景
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6d177922894806c3d204d52b6b2ad12d62381065ff73c189bdefbee95c406a32
+content_hash: sha256:b428444f60f188bf6d77c2519740113c0598256e04f391ec2cd54cfb0caed6c1
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:6d177922894806c3d204d52b6b2ad12d62381065ff73c189bdefbee95c4
 
 通用收银台混合支付页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/LdkdBBwuRBWN-GX_wuPtKw/zh-cn_image_0000002815400005.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=18F28D3178A531E78FE67DD14DFD0916AF0DE5C0254D30C3829591D81C780861)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/Q3Kz8Q_QS5CfCAtFsw_tFA/zh-cn_image_0000002817507665.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=A836A04F5BD9D8AE4D28B6985570FE1F41C7356FC4C8399440BDD8111E8E242C)
 
 ## 接入流程
 
@@ -34,7 +34,7 @@ content_hash: sha256:6d177922894806c3d204d52b6b2ad12d62381065ff73c189bdefbee95c4
 
 混合支付模式，收银台上用户可选择华为支付或三方支付方式支付。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/dTpz7rU-TZaA5EsKKXfJgA/zh-cn_image_0000002786520430.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=40D8284FDB695B45E0A5FA2796F2960B104D384BB92FEDDF5243062700D5079B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/01Y_WZJgQi2kD9xcbCHjKA/zh-cn_image_0000002788308234.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8623CBA933B09C842E41E974AF7683A700717961801A8568079B847D1DB31ED)
 
 1. 商户客户端请求商户服务器创建订单。
 2. 商户服务器按照商户模型调用Payment Kit服务端[直连商户预下单](../harmonyos-references/payment-prepay.md)或[平台类商户/服务商预下单](../harmonyos-references/payment-agent-prepay.md)接口。

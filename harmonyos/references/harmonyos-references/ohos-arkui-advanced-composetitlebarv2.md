@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ComposeTitleBarV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ComposeTitleBarV2
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b715abd4a95e7c92bf42e48ef7ffbd266e3f8173f618e1e97c4c82eac8a2e3ae
+content_hash: sha256:0603fa90c1a6c86575a25c778af9d3400c58839e69e9979a07baba0fff16d508
 ---
 
 ComposeTitleBarV2组件是一种标题栏，支持设置标题、头像（可选）和副标题（可选），可用于一级页面、二级及其以上界面配置返回键。
@@ -239,7 +239,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/6YphEQ8qSl-FJIGVGvMfsw/zh-cn_image_0000002786521572.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=3518EE4463AB0F043C65683901BF442A3DDFA76167C2BBF593E72A7CA6642AA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/VU2wI_S5Tz-tviTDINlmpg/zh-cn_image_0000002788469320.png?HW-CC-KV=V1&HW-CC-Date=20261114T005024Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0D850112DEAE039646B30B770D0A5E1D450B4DAC4E57A1A084D084358C61306)
 
 ### 示例2（右侧自定义按钮播报）
 
@@ -340,7 +340,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/HuqyNxyQReafGBU1lEF6UQ/zh-cn_image_0000002786361644.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBFF1A16B51BE25B4BE7D245715ACF64302600A0DE50E98E7B0FD1E7DF363BFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/YM2sQZElSWyw7Wvnu0nxnQ/zh-cn_image_0000002817508809.png?HW-CC-KV=V1&HW-CC-Date=20261114T005024Z&HW-CC-Expire=31536000000&HW-CC-Sign=94AACC119D1907F24FC26B48E28C996413AC7F471AA1901A650ACD15B69268E2)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -428,4 +428,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/GaHhqu0LQOecVGKVLvAYxQ/zh-cn_image_0000002815561065.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D8796EB55B9119D1314403DE5EF68E7FD27F55DABF679AB2A85EEDEFDA9F0FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Z79SKaCIQ0mKoxkEGvjGKw/zh-cn_image_0000002788309378.png?HW-CC-KV=V1&HW-CC-Date=20261114T005024Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E42AA3FB638F555FB6A41FB46393AABC28883F52DD90544CB6277445FB7AC0A)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-netwo
 title: 网络结构搜索训练
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > CNN结构量化 > 网络结构搜索训练
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:36+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:9a24b0054200837ff15bd83f040052b21a374295d68b54a24a58a4755c1b1039
+content_hash: sha256:c89aa83b4fc5a1e0d5018971bb04726981e4abba44c946641afc5db478b9d87a
 ---
 
 网络结构搜索训练请按照如下步骤进行：
@@ -296,13 +296,13 @@ TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.y
 
 * loss-模型精度损失loss曲线
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/pjHxCqDyThGaOTpASEZNtg/zh-cn_image_0000002815560081.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=A66E8129D72FE603DA401EB55F2CBBE1717F47B5056E263223CAFC0AC4299E45)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/wkZZnA0iT8-B7KsxxDswmQ/zh-cn_image_0000002788308394.png?HW-CC-KV=V1&HW-CC-Date=20261114T004835Z&HW-CC-Expire=31536000000&HW-CC-Sign=11FFF8F9C3D64D95543C8FB3721BD3E5CAE34BBE09D1BD118FC360EC53A27D55)
 * lr-学习率变化曲线
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/-jTkb-KlSO-eauKQip-lIw/zh-cn_image_0000002815400165.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8AB322F7FCD694BF6882795271C3B215BF516F9F5ADBBBFF0707287C85B94D5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/9XBgXy3pQrGX9PpNSb2f6g/zh-cn_image_0000002817427757.png?HW-CC-KV=V1&HW-CC-Date=20261114T004835Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A1EE2F925BC452666797E5D093C3EA5915A070BB7C891552572E136AC13D01B)
 * pareto-帕累托前沿图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/k6D2rl8GSTCdROctRw7GNA/zh-cn_image_0000002786520590.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B7C8F78B5B7F941B9D6B69132AD1C59718C4991FA0599B54F66C2B76403DCB3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Gz8rWaDAS62KPBKV65tR-A/zh-cn_image_0000002788468338.png?HW-CC-KV=V1&HW-CC-Date=20261114T004835Z&HW-CC-Expire=31536000000&HW-CC-Sign=38D23534DDB59CA65842C4C8E28BC51887589641512AE89142F6D301B41CAACD)
 
 帕累托图横坐标为模型大小或计算量即约束项，纵坐标为结构搜索后的精度。图中的精度为搜索过程的评估结果，如果要获得更好的精度，建议对搜索结构进行充分训练。
 
@@ -312,7 +312,7 @@ TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.y
 
 搜索结束后，工具会自动将pareto图中模型结构保存在results目录，生成多个model\_arch\_result\_$NUM.py文件。其中$NUM文件编号与pareto图上的编号一致，头部有model\_param\_size和accuracy，开发者可根据TensorBoard中的pareto图或者这两个参数选择合适的网络结构，例如TensorFlow版本的搜索结果（PyTorch版本的搜索结果只是实现框架不同，不再赘述）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/m0aySwkJQdO7YzvmLof87A/zh-cn_image_0000002786360662.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AB3753C122F50DFF831CE208866387634422C0073849C3B9BB6DF775DAC5EBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/5Y-tkIBGRgW_mMjJEPWIMg/zh-cn_image_0000002817507827.png?HW-CC-KV=V1&HW-CC-Date=20261114T004835Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB66B1FC5EF12EDE4B73A2D793C3692D883F037C8942280791FB8E0B1F1122A6)
 
 开发者选定合适的模型结构文件，可以拷贝到results的上一级目录，并执行模型结构文件。
 
@@ -322,4 +322,4 @@ python3 model_arch_result_$NUM.py
 
 执行结束后，当前目录下会生成模型的pb文件和TensorBoard日志文件，开发者可通过TensorBoard查看模型的图结构。如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/yL6D5mVHTAmoW9l0S4hKeQ/zh-cn_image_0000002815560083.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=599CCAC8F51DF90F995A8A4C8E081FB7DAE866CEE4B01944563F4DFB34E1965A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/fzOEu_4UTheWMu3DK9L2CQ/zh-cn_image_0000002788308396.png?HW-CC-KV=V1&HW-CC-Date=20261114T004835Z&HW-CC-Expire=31536000000&HW-CC-Sign=5406F5B8CE3CEC67FC07236157AC873CA9355E96BD8DD46FFC6F17BD57CA8F03)

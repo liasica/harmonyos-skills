@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/images-get-pr
 title: 图片获取与保存实践
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 图片获取与保存实践
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:02+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:184e8d8a79b8718234b271af59c4164f4e99e24ddb601fd81a7923b995966e75
+content_hash: sha256:b5cedadd07b4bc6e7eb69b54ce543b16c29bfed0b33dd658e50376d0ebf63ab0
 ---
 
 ## 概述
 
 应用在业务流程中常需要获取设备图片用于编辑、分享等操作，可能还需要读取图片信息、将图像保存到本地等。本文介绍了HarmonyOS上几种常见的获取图片的方式、获取后读取图片信息、以及将图片保存在本地的操作，可供开发者学习和参考。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/CCApmpTsTJOfnlyzt_SAeg/zh-cn_image_0000002815399479.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3C4F40DE137F49390F31B13940E2C574D2C91E9895865EA0E09000FA4AFF0AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/J2xWlgxDQEGYXQGd_iVlJg/zh-cn_image_0000002817507139.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004802Z&HW-CC-Expire=31536000000&HW-CC-Sign=7296CD46A4C79553A9CB627CE326F586CE12C610AC30AED6290764DB25B24465)
 
 ## 获取图片
 

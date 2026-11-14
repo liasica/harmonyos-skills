@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-aspect-imp
 title: 基于Aspect插件库实现切面编程
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 基于Aspect插件库实现切面编程
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:22429de28dfa08ebb1faf196360520db2f4f2d077564de38f44bfdb1dcb0dba5
+scraped_at: 2026-11-14T08:54:05+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:42cbf28c7fd544e5b86526e02224b4cd6e03e84a580ede8ad0b6ebb12ca1ae95
 ---
 
 ## 概述
 
-[Aspect](https://gitcode.com/OpenHarmony-ApplicationTPC/aspect)是面向HarmonyOS应用工程的AOP（面向切面编程）插件库，允许开发者在不修改业务核心代码的情况下，对代码进行增强。在实际开发中，开发者可以使用Aspect来模块化实现生命周期函数插桩、事件监听、API调用替换等通用功能。本文主要以实际开发中的各项场景为例，介绍Aspect插件的最佳实践。如需了解如何安装配置与快速上手，可参考Aspect[快速开始](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/README.md#快速开始)。
+[Aspect](https://gitcode.com/OpenHarmony-ApplicationTPC/aspect)是面向HarmonyOS应用工程的AOP（面向切面编程）插件库，允许开发者在不修改业务核心代码的情况下，对代码进行增强。在实际开发中，开发者可以使用Aspect来模块化实现生命周期函数插桩、事件监听、API调用替换等通用功能。本文主要以实际开发中的各项场景为例，介绍Aspect插件的最佳实践。如需了解如何安装配置与快速上手，可参考Aspect[快速开始](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/README_zh.md#快速开始)。
 
 Aspect插件库底层对[AbcKit](https://gitcode.com/openharmony/arkcompiler_runtime_core/blob/master/libabckit/README_zh.md)方舟字节码工具库进行了封装，帮助开发者减少对字节码查找和修改细节内容的关注，提高插桩开发效率。其主要功能特性包括：
 
@@ -36,7 +36,7 @@ Aspect插件库底层对[AbcKit](https://gitcode.com/openharmony/arkcompiler_run
 
 开发者要使用Aspect插件对HarmonyOS工程进行插桩，需要进行编写切面类和注册切面类两个步骤。其中切面类的编写会因场景不同而略有差异，本文将在[不同应用场景的切面类开发](bpta-aspect-implements-aop.md#section7558828115214)中详细介绍。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/xnwcQ3JBQsS67b0IPq8_7Q/zh-cn_image_0000002583560435.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=F955286C79359B76A5AA8DC72B6A7F23E50DD7DAEB0CD436B982440F102BA568 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/ND-W11JARaquimgpRbONSg/zh-cn_image_0000002583560435.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DE8AECAA064DC4D624A67995A76870545384F2541C69D91FEEE0FC49DC218C7 "点击放大")
 
 ### 编写切面类
 
@@ -157,7 +157,7 @@ struct CompA {
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/ch_Tu4h_Rky0eZGaxp_U7A/zh-cn_image_0000002553040468.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB15B4A0DF6587C29F20EFDA178B9EBB3E4BC3E44DF51DC7006420F69B5A7523 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/F_LhoQj2RvWTa-aYeOgy2Q/zh-cn_image_0000002553040468.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=D885D6B978BF9DB527B05CAE61A35A3461403148B84FEA644A0FBD88A559037B "点击放大")
 
 1. 定义类MyDefinitionAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyDefinitionAspect中定义方法addBefore()，使用@Before将其标记为前置插桩切面方法。
@@ -224,7 +224,7 @@ getLocation(): void {
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/8OEnixzFStSlaknPdfVMZw/zh-cn_image_0000002583640531.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=A300DAC5864592AC571E1E4CBAA25D4B3AF5F6D3569BFAB673296B6EA19882B8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/L9mrt2FjRTC-xMDgI06Ztw/zh-cn_image_0000002583640531.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=420BD20F96CC00E42D9B7BCF43DABBEF0422BFF10E747B46D5133737815AF423 "点击放大")
 
 1. 定义类MyCallAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyCallAspect中定义方法addBefore()，使用@Before将其标记为前置插桩切面方法。
@@ -294,7 +294,7 @@ getLocationAddress(): void {
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Ym1QtZ5ZQ4G7vK6gDk5qrw/zh-cn_image_0000002552880850.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C1CB337A39BE15E3EA9629E669F857440014A73A67A188F8FAFA2331F6E3273 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/y2R_cBpRTC2qVmmMlRjvQA/zh-cn_image_0000002552880850.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=A520DAC61A4694D11F82BF7BEE2EF3324BFFB05015CDE3174C7A9DB6ED05D32A "点击放大")
 
 1. 定义类MyCallAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyCallAspect中定义方法replaceGetLocation()，使用@Replace将其标记为替换插桩切面方法。
@@ -368,7 +368,7 @@ getLocation(): void {
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/z43YI_dZTdS7TC6TDCiKUw/zh-cn_image_0000002583560605.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C2848E78E4C15A6756D41C18042ABFB43F6D16D0E5C319B67FC413485750105 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/ZdL-zQYvRi-1-Vh2dKsPMg/zh-cn_image_0000002583560605.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=B475CF0E78E9B6312CD71F3BBB0AAAE5C8787A7F1721544763F33D0C3A06B587 "点击放大")
 
 1. 定义类MyCallbackAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyCallbackAspect中定义方法getAddress()，使用@Replace将其标记为替换插桩切面方法。
@@ -447,7 +447,7 @@ Button($r('app.string.event_onclick'))
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/V2dmpTtnRFG9cRBjwFeDRA/zh-cn_image_0000002552881028.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=22F034A5BDD248A77DE298B5ED1260E55CF2139436BA753648F87775488281D8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/rOFpgNzkSIWZbnvVA4DuMQ/zh-cn_image_0000002552881028.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=65D600EC470AA6C1D08511CD0CE8F12839CD1FB9885E1ACDA5C7931F7B7458B7 "点击放大")
 
 1. 定义类MyEventCallbackAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyEventCallbackAspect中定义方法addBefore()，使用@Before将其标记为前置插桩切面方法，其中切面方法就是实际监听的业务代码。
@@ -488,9 +488,9 @@ Button($r('app.string.event_onclick'))
 
 本文主要介绍了开发者如何使用Aspect插件库，通过编写和注册切面类，实现不同场景下的字节码插桩。其核心在于根据不同场景的需要编写切面类、切面方法，并配置相应的装饰器入参。如需进一步了解如何使用Aspect插件库，可以参考以下文档：
 
-* [装饰器使用指南](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/docs/AnnotationGuide.md)
-* [常见问题](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/docs/FAQ.md)
-* [获取切入点上下文信息](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/docs/JoinPointGuide.md)
+* [装饰器使用指南](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/docs/AnnotationGuide_zh.md)
+* [常见问题](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/docs/FAQ_zh.md)
+* [获取切入点上下文信息](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/docs/JoinPointGuide_zh.md)
 
 ## 示例代码
 

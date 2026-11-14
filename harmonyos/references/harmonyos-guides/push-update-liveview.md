@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-update-l
 title: 推送实况窗消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送实况窗消息
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:29+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3ef27db5bdfe0ea323dff312058d9deb335c95586371086fa82103784fa7c22b
+content_hash: sha256:96efb0a780b1b919bcb77b08e6fc33a9791d1a2fed851b517cbb2667faee862c
 ---
 
 ## 场景介绍
@@ -24,7 +24,7 @@ content_hash: sha256:3ef27db5bdfe0ea323dff312058d9deb335c95586371086fa82103784fa
 
 **通过Live View Kit创建实况窗，Push Kit更新与结束实况窗**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/6MkJ6GrOSA6WmrFiZtWevg/zh-cn_image_0000002786360536.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CD9667AF82BB29CB9B252BE43F936616ED52A528907E0BC29DFA383CAD23D13)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/64j-e5CuQ_uZQUvVeptaNw/zh-cn_image_0000002817507701.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBDCB313274495D1E6F0EEF80B450B86192A94016DB44FD5363005E9B85D4186)
 
 1. 使用Push Kit，获取Push Token。
 2. 使用Live View Kit创建实况窗成功后，开发者需要将实况窗id、pushToken、实况窗场景event以及业务服务的相关的状态属性保存到业务服务端。
@@ -32,7 +32,7 @@ content_hash: sha256:3ef27db5bdfe0ea323dff312058d9deb335c95586371086fa82103784fa
 
 **通过Push Kit创建、更新、结束实况窗**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/7hoNYM98T0eIRH96Ssl4wQ/zh-cn_image_0000002815559957.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=B10758574D6565BE8DDAD8C20BC42B24CCD3CF06AC6F7F9B865F1AEBADBD8074)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/lVw6t2EjSeeDvPRWZRLhHg/zh-cn_image_0000002788308270.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF13ED57087841EEBDC0F999BB9510B2A0EE5D81A78DC9369D2D7BE7A6042AAF)
 
 1. 使用Push Kit，获取Push Token。
 2. 将Push Token保存到业务的服务端。
@@ -40,7 +40,7 @@ content_hash: sha256:3ef27db5bdfe0ea323dff312058d9deb335c95586371086fa82103784fa
 
 **实况窗更新效果示例图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/spGcwsilTRK9soTrN6LPYw/zh-cn_image_0000002815400041.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A89C01B890246EA4314835375922F8735084C4AB49D76A4C624454B61F86436)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/dEV7CL4IR7y0fhk4vyixTQ/zh-cn_image_0000002817427633.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A309D75AA3C94966AD8633E9A33F40AC772D96CE05FE774BAA45D61BE288141)
 
 **说明** 
 

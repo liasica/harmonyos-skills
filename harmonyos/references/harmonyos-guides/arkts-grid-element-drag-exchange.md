@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-grid-el
 title: Grid网格元素拖拽
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > Grid网格元素拖拽
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:02+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3e7068cc8fcc0d15e7031abfa19d59a4d903a7ebede91f876c43ed2df9061405
+content_hash: sha256:f77eca976a7fbb6d48ddadcd820e10afeec2834f4c250b38d4ec3d98b7e2687b
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ Grid网格元素拖拽交换功能在应用中经常会被使用，如当编辑�
 
 Grid网格布局一般由[Grid](../harmonyos-references/ts-container-grid.md)容器组件和子组件[GridItem](../harmonyos-references/ts-container-griditem.md)构建组成，Grid用于设置网格布局相关参数，GridItem定义子组件相关特征。网格布局中含有网格元素，当给Grid容器组件设置[editMode](../harmonyos-references/ts-container-grid.md#editmode8)属性为true时，可开启Grid组件的编辑模式。首先，开启编辑模式。然后，给[GridItem](../harmonyos-references/ts-container-griditem.md)组件绑定长按（[LongPressGesture](../harmonyos-references/ts-basic-gestures-longpressgesture.md)）、拖拽（[PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md)）等手势。最后，需要添加动画属性[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)，并设置相应的动画效果。最终，呈现出网格元素拖拽交换的动效过程，如下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/D0LaHDz7QHShvag1nCBxkg/zh-cn_image_0000002815398393.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7574E5B866DEEE11D7946B704163DCB060C1764C26BC1679424CD461D522538)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/0C_ZvVhwT1yStfuPYdLoZA/zh-cn_image_0000002817506051.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=657D11FA7F9CA46E8779073E027E51DAF77AD999634FA2167DFC650B6CC75392)
 
 ## 实现原理
 
@@ -46,7 +46,7 @@ Grid组件当前支持GridItem拖拽动画，通过给Grid容器组件设置[sup
 
 示意效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/F8To3PSbTI6A1kEaoyw-Vw/zh-cn_image_0000002786518818.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=1010219DAFC1E78E4DB5BFCE50815C01E05FA97C641A972FE79ADA7F281CE33A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/jgEdj_GISIyy7foM1yj5Cg/zh-cn_image_0000002788306622.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FE192818F7023E5995C9FF59CCDCF80981E44A624D95C616AB344C51BDC62FF)
 
 ### 开发步骤
 
@@ -110,7 +110,7 @@ Grid组件当前支持GridItem拖拽动画，通过给Grid容器组件设置[sup
 
 示意效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/dUkeNiHlSamCKKYJpBGvOQ/zh-cn_image_0000002786358890.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=426BE678FE4BB6F68C2AFE6B9E66C08772B666B20FA680A8EC954BE515F8C12F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/-VFsqAh_Q8uyZhZGbJfxwQ/zh-cn_image_0000002817425985.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=E11951370FC8BB932CD049A989E2C930E4770464D40716C9344F01FE731819EA)
 
 **说明** 
 
@@ -331,7 +331,7 @@ Grid组件当前支持GridItem拖拽动画，通过给Grid容器组件设置[sup
 
 示意效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/-CsEiAlVTC2wbZ4O4Wp0RQ/zh-cn_image_0000002815558311.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=34EC39F709277ADD95F3F6C3F8B8B5C37754E66BB48837BDDCAC8A2C1F6CC7FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/BECXYeGkTeWZpTIgHs4_fw/zh-cn_image_0000002788466566.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C54352741EE6DC9BE7DDDC8A51D220C3502DC42852766504F07EE997640E8A8)
 
 ### 开发步骤
 
@@ -541,7 +541,7 @@ Grid组件当前支持GridItem拖拽动画，通过给Grid容器组件设置[sup
 
 示意效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/PbAfxwN_S_-Rw_CZgg8SzQ/zh-cn_image_0000002815398395.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DE96E1FB4A4A12D24D2CD366DB51FDB8FBB9BB79E2B2612A339117871A36CF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/IaMdMTW0SF2rGcXgblF9XA/zh-cn_image_0000002817506053.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C58A6F2F9C224D07F19D8FED5A16A3D436DC21D329087A766F061BEDF884D16)
 
 ### 开发步骤
 

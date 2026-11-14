@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-safe-area
 title: 网页中安全区域计算和避让适配
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 网页中安全区域计算和避让适配
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:15+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ea5f54803ad67a1cca70a8d8db8db590831e8d6df24bf97beca50acc2f1546b0
+content_hash: sha256:31f2e0939be096c15c1dbc38ca0e3438de45ec244b144e8763993c388ced4247
 ---
 
 早期设备屏幕多为矩形，应用界面能够完整展示。随着全面屏、刘海屏等异形屏幕的普及，屏幕边缘可能出现圆角、摄像头或系统导航条，导致界面部分被遮挡。
@@ -130,7 +130,7 @@ safe-area-inset-\*是一组CSS环境变量，定义了安全区域与Web可视�
 
 **图1** safe-area-inset-\*示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/w7Y3YjI4RyGOi6oUIpFeOQ/zh-cn_image_0000002815398959.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB3420A314606463E652F29C95D2850E4F1DFE8DC89F90393D72DB72B8003872)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/6ZqnmmvuSvSJHPjSf9PFjw/zh-cn_image_0000002817506617.png?HW-CC-KV=V1&HW-CC-Date=20261114T004715Z&HW-CC-Expire=31536000000&HW-CC-Sign=C97D9FAC257B5F38AC6AEA776C05F97208AC5D87F73A57F86CA5623BB1CFF87E)
 
 当设置viewport-fit=cover时，ArkWeb内核将持续监测Web组件及系统非安全区域的位置与尺寸，根据两者的重叠部分计算网页在四个方向上需避让的具体距离，并设置给环境变量safe-area-inset-\*。在矩形显示器（如普通PC/2in1设备的屏幕）上，这些值为零。在非矩形显示器（如圆形表盘或移动设备屏幕）上，safe-area-inset-\*所界定的内矩形区域即为安全区域，网页内容在该区域内可完整显示，避免被非矩形显示区域裁剪。
 
@@ -166,7 +166,7 @@ Web组件启用沉浸式效果时，渲染内容可能与非安全区域重叠�
 
 **图2** Web组件开启沉浸式效果时网页元素被非安全区域遮挡
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/jFqVHnGiQwGYv3z2ZQ3uvw/zh-cn_image_0000002786519384.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=188716DA7449E03E238920B0481C778B583DF6D6AF3F90C7F6A11CD2F8C6E39A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/LsGNGDzkSMW-ROR2fMS9cA/zh-cn_image_0000002788307188.png?HW-CC-KV=V1&HW-CC-Date=20261114T004715Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A26A4EB80DB8A7EDBB062D77DDFC2ABBDD0D86BEBB7BD3CD93CD381DBC3E72B)
 
 ```html
 <!-- index.html -->
@@ -248,4 +248,4 @@ Web组件启用沉浸式效果时，渲染内容可能与非安全区域重叠�
 
 **图3** Web组件开启沉浸式效果时网页元素避让非安全区域
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/FfHg55X-SD-swcuEw9hv-Q/zh-cn_image_0000002786359456.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=86BFA5F141FDB2CA5223313775252492D8818CEE201F1A6E8277856D82F527E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/JD4V3QeFQjiDZjM5yDFfbg/zh-cn_image_0000002817426551.png?HW-CC-KV=V1&HW-CC-Date=20261114T004715Z&HW-CC-Expire=31536000000&HW-CC-Sign=0542E22CFFED35472D4E2CFBA9E66A1912E11596EBE1BAF606BC4EF49E7629AE)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 查询超级隐私模式状态
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 超级隐私模式 > 查询超级隐私模式状态
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:29+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e741540cf7d6a2fc8e1040dabdc991a23d4b9e378d0d81f08ff0a9d1a99c781e
+content_hash: sha256:c3d3b89e56206e85c186152a02794de21e8802274073be83257b611945abc072
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:e741540cf7d6a2fc8e1040dabdc991a23d4b9e378d0d81f08ff0a9d1a99
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/agcebTHWRAGDPRKDWpuDNg/zh-cn_image_0000002815399193.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC526EB0E442DA67DD58C8031BBE3A19CEED7EA241C6D0ECE4E4080CFC793D7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/YXUFs8NmRDOIbhYgv1-swQ/zh-cn_image_0000002817506853.png?HW-CC-KV=V1&HW-CC-Date=20261114T004549Z&HW-CC-Expire=31536000000&HW-CC-Sign=A17A6F102344565EA1A26033F1989D632E8FCCF8662EE0F1654F0DA8611E921F)
 
 **流程说明：**
 

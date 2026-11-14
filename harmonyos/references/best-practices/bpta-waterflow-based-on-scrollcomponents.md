@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-
 title: 基于ScrollComponents实现瀑布流
 breadcrumb: 最佳实践 > 布局与弹窗 > 基于ScrollComponents实现瀑布流
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:06+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:01c54e8ba226a72b8c762b6075e2805a5105e122010bb849ed94d9216a40902b
+content_hash: sha256:874265523c4146c465ca81fec2347a39758a2139616d24885d33ff9a2a08fb1f
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 如图1是RecyclerView整体流程图，当节点从可视区移除时，NodeAdapter会通知视图管理器将组件回收，经NodeFactory回收处理之后，组件最终被存入到组件复用池。当节点需要创建时，NodeAdapter通知视图管理器开始创建，NodeFactory会向复用池请求复用节点，获取到节点之后经过一系列更新组件、组件拼接之后返回，最后由NodeAdapter将节点添加到可视区。
 
 **图1** RecyclerView整体流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/pS2RJcHDQOa9Woj06TXwvA/zh-cn_image_0000002358395533.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD90391D7880203FF17DABAD807F078825598DD1D3DCB23C9E607B2E8D15B334 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/5bGxOwD8RtqdDMhg-hptnw/zh-cn_image_0000002358395533.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D88324244A8015AD6D92276605129B3B4ECBBB2423463958617FCFA3D27110B "点击放大")
 
 ### 开发流程
 
@@ -206,12 +206,12 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
       当组件将要被销毁时，会移出视图容器并进入到item复用池。当组件将要被创建时，会向item复用池获取item节点，当item节点和目标节点类型存在差异时，会先将差异部分即PartReuse中的组件回收到对应的组件复用池，然后将目标组件所需要的差异组件从对应组件复用池中取出，并和item节点拼接，成为目标组件，并进入到视图容器中。
 
       **图2** 可拆分组件复用创建流程图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/tm4pi1bdRDu9KbbZH7JZeg/zh-cn_image_0000002324516902.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=424000E520B2E05591C389A05E44E6C034EB636F9603DA3E1500C266447C7BF6 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/osDsG7pZRpqJD8cvv2YDPA/zh-cn_image_0000002324516902.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=06C51624FFFB481AFE02BF85B1C12AE572706745BD0E9CA498CBF8F0456C043E "点击放大")
 
       开发者可参考图3日志打印"generateItem reuse "表示复用，检验是否复用成功。
 
       **图3** 日志效果图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/otMVzxldS1-j3hilHEYI1A/zh-cn_image_0000002358435669.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFB27641626D111AF870784D8D6C175F339949E179AF53A52D2F79F5E17CF132 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/rLUj-g4vTYGkJpUbV1HZSg/zh-cn_image_0000002358435669.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=61D087C25637AABB908089E53D057A0D00D70F6BF4E509F124FAFADD61AA05E5 "点击放大")
 
       **说明** 
 
@@ -347,7 +347,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 开发者可能存在多个页面间复用WaterFlow，比如Tab栏切换。ScrollComponents提供了全局复用能力。
 
 **图4** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/NJwooSweQOqJ4mW8NMUu7A/zh-cn_image_0000002324357106.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=64B7982ED8BA534A9EABF2C89DFBE737AF05D3C4ACD188D2EC16A4A342334272 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/lawW2SMwTkylH2wN0FjkLA/zh-cn_image_0000002324357106.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=57580BE787EF8E2ADCD3E491E97C85B8AE3F8DEEE5902221994250FF3FBAFF42 "点击放大")
 
 ### 开发步骤
 
@@ -412,7 +412,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 冷启动后首次打开瀑布流页面，由于页面的图片或者视频等媒体资源过多，出现白屏或者白块，等好几秒才慢慢刷出内容。ScrollComponents库支持组件预创建，能打开页面后瞬间看到文字、图片骨架，减少卡顿。
 
 **图5** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/j0Wvl51iRBqOu2I6G7SfJg/zh-cn_image_0000002358395541.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=34543E3B5A06B6CDF884987A0FBFEED1921EAF9E3AB7EE2BD5825428CB8B4AC5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/bY13cH5rQxa5f-Ee9hS6ug/zh-cn_image_0000002358395541.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=66CB03854868D273C504C272C97DC7011B8B4DC29E45104AE3A81A1CC4481998 "点击放大")
 
 ### 开发步骤
 
@@ -440,12 +440,12 @@ public aboutToAppear(): void {
 @Reusable：网络请求期间主线程大段空闲，请求结束后首屏组件绘帧耗时较长。
 
 **图6** @Reusable测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/cxkSQF_VTPC-xXw7nCkn5g/zh-cn_image_0000002324516906.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=48DDA6B3CE9D8F11B159CADE727C653C14B854F83C717137BAF25EB390E4E9B1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/d3Iyd-vVQeauNZvyu87JXw/zh-cn_image_0000002324516906.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D50783D4F4200C0AD45DE4BEB332F1B6EDDF8CFAF24218A64D9B15C92983AB5 "点击放大")
 
 ScrollComponents：网络请求期间主线程空闲较少，请求结束后首屏组件绘帧耗时较短
 
 **图7** ScrollComponents测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/7fFPU5fgT6WyeyglP7TEvQ/zh-cn_image_0000002358435673.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DDB217A5C0D86BB90E4D2E787E8C37DD7F4446F38EBC4B29C245BDAA7BE30E4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/y3KBmnb5TGijuNJGAbkW1Q/zh-cn_image_0000002358435673.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=B20CE886E9632C24737A77D5C9F729CC9ECBBA04667822C1E85D9A9DA3B32A86 "点击放大")
 
 **表1** 首屏组件创建时间对比表
 
@@ -465,7 +465,7 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
 为了减少快速滑动过程中网络不好产生的白块，ScrollComponents内置了内容预取能力Prefetcher，支持动态自适应网络状态。通过提前下载图片或资源，确保资源在需要时立即显示，减少白块出现。动态预加载适用于数据请求耗时较长的场景，如滑动列表中包含大量图片资源。
 
 **图8** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/8Uh2jFwcTdGlXqv1eR0BTQ/zh-cn_image_0000002324357110.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=84D6F2920B025A4FE7E0EAD87DED3B204F012AF6810637984D12517BD050481E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/geh_6z3aSTm_tqTcOXiYcA/zh-cn_image_0000002324357110.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=16E4E248ED22FE1955B4FA4A1F63F258A3E29B348DC68C6949AAE3FA5F6BFCA6 "点击放大")
 
 ### 开发步骤
 
@@ -593,7 +593,7 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
 下拉刷新是提升用户体验的关键功能，既要保证数据无缝加载，又要维持流畅的交互效果。推荐使用懒加载刷新数据避免媒体资源加载造成UI渲染阻塞。实现逻辑可参考[示例6（实现下拉刷新上拉加载更多）](../harmonyos-references/ts-container-refresh.md#示例6实现下拉刷新上拉加载更多)。
 
 **图9** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/zxnLSeGGQ52XPSub3jRngg/zh-cn_image_0000002324708832.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=639DB9706BF2C5A876628B4B9D242E71837AFCDDE0EDECD4322D7E0A21F4C6B7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/DIapW-VKQKaA_FJXWcgJ1A/zh-cn_image_0000002324708832.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0703558953E938C8726B94040CFB0589F2C6FF12F0837DF4AEE1D941D0477C1 "点击放大")
 
 ### 开发步骤
 
@@ -641,7 +641,7 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
 当开发瀑布流页面涉及大量数据，需要进行分页请求时，结合ScrollComponents提供的懒加载能力实现上拉分页加载的效果。
 
 **图10** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/PQVtFWgqQgGoRbetWSZlTA/zh-cn_image_0000002358827425.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD5E95949223D40223CB8018A02428532F5AC43F1F44F149D242889E49E2B1A9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/yQOee1YJTv-pL7GYERjmjw/zh-cn_image_0000002358827425.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=36894292B2069B77E18122C004FEFF421120139DED1B2B1F486C0D4B6AF64A2D "点击放大")
 
 核心代码参考如下：
 
@@ -680,7 +680,7 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
 长按时显示删除按钮，点击按钮可以删除对应item。
 
 **图11** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/oVOOFbViRQGnR7yplIei2A/zh-cn_image_0000002358435681.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A81C75DF6C1D1277355B511EC3B251BBAB549CC594358E9E5992A50B39BDED6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/y5lWR5qpTPa7vsMMftOj9A/zh-cn_image_0000002358435681.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBC775513233E527026842C09AD5F9E12BAD093031E7473B08D65A5D86385C58 "点击放大")
 
 1. 绑定长按手势。
 
@@ -735,7 +735,7 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
 分组混排瀑布流中，不同区域展示不同的item效果，例如前三个每行一个item，中间每行两个item，每个item保持高度一致，后面的每行两个item，每个item高度不一致。瀑布流分组功能参考：[分组混合布局](../harmonyos-guides/arkts-layout-development-create-waterflow.md#分组混合布局)。
 
 **图12** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/0DI2qf69RFelIiO8cA3VTw/zh-cn_image_0000002324357118.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=F89D1AA7C9759AE5410261148F96C11602C75F5ABF27D659C585B800BA2955E8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/ZXw7F-uPQPWFf73Vujy3GQ/zh-cn_image_0000002324357118.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=529E79BE37A5EEC43AD92FCC8BD3E6453CA8BDA251F2AC2AF016F87E5F3B8EFD "点击放大")
 
 ### 开发步骤
 
@@ -834,7 +834,7 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
 向上滑动瀑布流，当横向列表组件滑动到顶部，达到吸顶效果时，其下方的瀑布流列表可以继续滑动。
 
 **图13** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/TTyApasFS7C7HcJfKkrRfQ/zh-cn_image_0000002358395549.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5559DD4566AD1253203367370CDDB6AEC30C27768645BBB6F787CBC629B23701 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/k7JJO6iBTJ-z0ep14Zj4OA/zh-cn_image_0000002358395549.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F6D642AF11905D7D33EEE9B6465AF3DDA8EC9604C5D06A553B771EDD7377B77 "点击放大")
 
 ### 开发步骤
 

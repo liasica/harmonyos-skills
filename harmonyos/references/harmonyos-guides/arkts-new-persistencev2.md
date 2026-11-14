@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-per
 title: "PersistenceV2: 持久化存储UI状态"
 breadcrumb: "指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理应用拥有的状态 > PersistenceV2: 持久化存储UI状态"
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:2e7c598cdcbf66ac9fb19391d7dcee23c74f8842e065a8c36694c30933858ed6
+scraped_at: 2026-11-14T08:47:00+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:872283310685998ef4f859978a0712d4b0db7a208ff6edbe7e9462eb9a8590f9
 ---
 
 为了增强状态管理框架对持久化存储UI的能力，开发者可以使用PersistenceV2存储持久化的数据。
@@ -22,7 +22,7 @@ PersistenceV2从API version 12开始支持。
 
 globalConnect从API version 18开始支持，行为和connect保持一致，唯一的区别为connect的底层存储路径为module级别的路径，而globalConnect的底层存储路径为应用级别，详细区别见使用场景[在不同的module中使用connect和globalConnect](arkts-new-persistencev2.md#在不同的module中使用connect和globalconnect)。
 
-globalConnect从API version 23开始支持[集合类型](arkts-new-persistencev2.md#globalconnect支持的集合类型)（Array、Map、Set、Date、collections.Array、collections.Map、collections.Set）的持久化，支持在UI线程持久化@Sendable类型的数据持久化，支持持久化循环引用的对象，支持持久化单个key超过8k的数据。目前建议开发者使用API version 23的新增的globalConnect接口。
+globalConnect从API version 23开始支持[集合类型](arkts-new-persistencev2.md#globalconnect支持的集合类型)（Array、Map、Set、collections.Array、collections.Map、collections.Set）和Date类型的持久化，支持在UI线程持久化@Sendable类型的数据，支持持久化循环引用的对象，支持持久化单个key超过8k的数据。目前建议开发者使用API version 23新增的globalConnect接口。
 
 ## 概述
 
@@ -156,7 +156,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/pO4SAYHFSVK--i7b9IfQNQ/zh-cn_image_0000002815558079.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED6BBC36F7E820DBA70E7E82CD0E7B9E23CB5759B9139F4443C158A78E2AAF4A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/EnwJ3RvVQM6F2H4dm3lLJw/zh-cn_image_0000002788466334.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8EFE3967C3316FF2A0377A1D3FF8AEE13343E8169ED0ECB3C0FBF3D21F1A38F)
 
    * globalConnect在持久化多个相同[集合类型](arkts-new-persistencev2.md#globalconnect支持的集合类型)时，需要提供不同的key来区分持久化数据。
 
@@ -184,145 +184,145 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
 3. 不支持非built-in类型，如[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)、NativePointer、[ArrayList](../harmonyos-references/js-apis-arraylist.md)等Native类型。
 4. 在API version 23以前，单个key支持数据大小约8k，过大会导致持久化失败。
 
-   * 在API version 23开始，解除单个key只能持久化8K数据的限制，读取和写入持久化存储的数据会在UI线程中同步进行，但开发者需要注意，不建议开发者在UI线程存储大量的持久化数据，会导致界面卡顿。
+   * 从API version 23开始，解除单个key只能持久化8K数据的限制，读取和写入持久化存储的数据会在UI线程中同步进行，但开发者需要注意，不建议开发者在UI线程存储大量的持久化数据，会导致界面卡顿。
 5. 在API version 23以前，持久化的数据必须是class对象，不支持容器类型（如Array、Set、Map），不支持built-in的构造对象（如String、Number），不支持持久化基本类型（如string、number、boolean）。如果需要持久化非class对象，建议使用[Preferences](preferences-guidelines.md)进行数据持久化。
 
-   * 在API version 23开始，支持持久化Class类型和容器类型（Array、Set、Map，Date）。支持built-in的构造对象类型（如String、Number）及基本类型（如string、number、boolean）作为class属性的持久化（String、Number是不可变的数据对象，没法直接作为[顶层数据类型](arkts-new-persistencev2.md#globalconnect顶层持久化数据类型及非顶层数据类型)进行持久化）。对于不支持的类型，会抛出运行时报错，从API version 23开始，将返回错误码[140103](../harmonyos-references/errorcode-statemanagement.md#section140103-appstoragev2和persistencev2使用不支持的数据类型)。
+   * 从API version 23开始，支持持久化Class类型、容器类型（Array、Set、Map）和Date类型。支持built-in的构造对象类型（如String、Number）及基本类型（如string、number、boolean）作为class属性的持久化（String、Number是不可变的数据对象，没法直接作为[顶层数据类型](arkts-new-persistencev2.md#globalconnect顶层持久化数据类型及非顶层数据类型)进行持久化）。对于不支持的类型，会抛出运行时报错，从API version 23开始，将返回错误码[140103](../harmonyos-references/errorcode-statemanagement.md#section140103-appstoragev2和persistencev2使用不支持的数据类型)。
 
-   如下为新增globalConnect支持Array<ClassA>类型的持久化示例：
+     如下为新增globalConnect支持Array<ClassA>类型的持久化示例：
 
-   ```typescript
-   import { PersistenceV2, UIUtils } from '@kit.ArkUI';
+     ```typescript
+     import { PersistenceV2, UIUtils } from '@kit.ArkUI';
 
-   @ObservedV2
-   class ClassA {
-     @Trace public propA: string = '';
-     @Trace public propB: string = '';
+     @ObservedV2
+     class ClassA {
+       @Trace public propA: string = '';
+       @Trace public propB: string = '';
 
-     public report(): string {
-       return `${this.propA} - ${this.propB}`;
-     }
-   }
-
-   @Entry
-   @ComponentV2
-   struct Comp {
-     // 持久化顶层数据类型为Array<ClassA>的数据
-     @Local arr: Array<ClassA> = PersistenceV2.globalConnect({
-       type: Array<ClassA>,
-       defaultCreator: () => UIUtils.makeObserved(new Array<ClassA>()),
-       // 添加defaultSubCreator，通知状态管理框架如何创建数组项
-       // 另外持久化的数据需要加上makeObserved，因为JSON对象本身没有观察能力，自动持久化会失败
-       defaultSubCreator: () => UIUtils.makeObserved(new ClassA())
-     })!;
-
-     build() {
-       Column() {
-         Repeat(this.arr)
-           .each(ri => {
-             Row() {
-               Text(`propA '${ri.item.propA}'`)
-                 .fontSize(20)
-                 .margin(10)
-               Text(`propB '${ri.item.propB}'`)
-                 .fontSize(20)
-                 .margin(10)
-               Text(`report?.() '${ri.item.report?.()}'`)
-                 .fontSize(20)
-                 .margin(10)
-             }
-           })
-         // 点击'add item',显示`propA 'a' propB 'b'report?.()'a - b'`, 杀掉应用，再次进入，会显示上次的结果
-         Button('add item')
-           .width(300)
-           .margin(10)
-           .onClick(() => {
-             let temp: ClassA = new ClassA();
-             temp.propA = 'a';
-             temp.propB = 'b';
-             this.arr.push(temp);
-           })
+       public report(): string {
+         return `${this.propA} - ${this.propB}`;
        }
      }
-   }
-   ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/LaUxhTL9QyiJNHnkynq50w/zh-cn_image_0000002815398163.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED1DDE5F963352CD9AD7979470DF3129F93474207594A1DB6A0D4C4F7F068EB7)
+     @Entry
+     @ComponentV2
+     struct Comp {
+       // 持久化顶层数据类型为Array<ClassA>的数据
+       @Local arr: Array<ClassA> = PersistenceV2.globalConnect({
+         type: Array<ClassA>,
+         defaultCreator: () => UIUtils.makeObserved(new Array<ClassA>()),
+         // 添加defaultSubCreator，通知状态管理框架如何创建数组项
+         // 另外持久化的数据需要加上makeObserved，因为JSON对象本身没有观察能力，自动持久化会失败
+         defaultSubCreator: () => UIUtils.makeObserved(new ClassA())
+       })!;
 
-   如下为globalConnect支持Date类型的持久化示例：
-
-   ```typescript
-   import { PersistenceV2, UIUtils } from '@kit.ArkUI';
-
-   @Entry
-   @ComponentV2
-   struct Page1 {
-     // 支持直接持久化Date类型的数据
-     @Local date: Date = PersistenceV2.globalConnect({
-       type: Date,
-       defaultCreator: () => UIUtils.makeObserved(new Date())
-     })!;
-
-     build() {
-       Column({ space: 40 }) {
-         Text(`date: ${this.date.toISOString()}`)
-           .fontSize(24)
-           .margin(10)
-         // 点击'date.setTime( Date.now() )', 杀掉应用，进入应用后，显示日期
-         Button('date.setTime( Date.now() )')
-           .margin(10)
-           .onClick(() => {
-             this.date.setTime(Date.now());
-           })
-           .fontSize(24)
-       }
-       .width('100%')
-     }
-   }
-   ```
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/fCZX89qSRFehREDy4sPxLA/zh-cn_image_0000002786518588.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D43B7C4E1A47DD35E68FCDF0C27D9079C89066B9A311D660D07552B7235D4DEB)
-
-   如下为globalConnect支持Number类型作为class子属性的持久化示例：
-
-   ```typescript
-   import { PersistenceV2 } from '@kit.ArkUI';
-
-   @ObservedV2 class NumberClass {
-     // Number类型不是顶层持久化数据类型，只能支持非顶层数据类型的持久化
-     @Trace public value: Number = new Number(Infinity);
-   }
-
-   @Entry
-   @ComponentV2
-   struct Page1 {
-     // Number类型只能作为NumberClass的子属性去持久化
-     @Local number: NumberClass = PersistenceV2.globalConnect({
-       type: NumberClass,
-       defaultCreator: () => new NumberClass()
-     })!;
-     output: string[] = [];
-
-     aboutToAppear(): void {
-       this.output.push(`this.number.value: ${this.number.value}, is instanceof Number ${this.number.value instanceof Number}`);
-       this.number.value = new Number(-this.number.value);
-     }
-
-     build() {
-       Column() {
-         Row() {
-           // 第一次打开应用，界面显示'this.number.value: Infinity, is instanceof Number true'
-           // 第二次打开应用，界面显示'this.number.value: -Infinity, is instanceof Number true'
-           Text(this.output.join('\n\n'))
-             .fontSize(24)
+       build() {
+         Column() {
+           Repeat(this.arr)
+             .each(ri => {
+               Row() {
+                 Text(`propA '${ri.item.propA}'`)
+                   .fontSize(20)
+                   .margin(10)
+                 Text(`propB '${ri.item.propB}'`)
+                   .fontSize(20)
+                   .margin(10)
+                 Text(`report?.() '${ri.item.report?.()}'`)
+                   .fontSize(20)
+                   .margin(10)
+               }
+             })
+           // 点击'add item',显示`propA 'a' propB 'b'report?.()'a - b'`, 杀掉应用，再次进入，会显示上次的结果
+           Button('add item')
+             .width(300)
+             .margin(10)
+             .onClick(() => {
+               let temp: ClassA = new ClassA();
+               temp.propA = 'a';
+               temp.propB = 'b';
+               this.arr.push(temp);
+             })
          }
        }
-       .width('100%')
      }
-   }
-   ```
+     ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/ChZ2e2a8T6uw8HzwE_a6tA/zh-cn_image_0000002786358660.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E0DA88D7F8EA038465C1B064E48A40243EBCFE03002340481501AE409D644CD)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/-DQ27Ok1TbSSlkE_OmWaOA/zh-cn_image_0000002817505821.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=E05E2AEA6FC27A3AE42AEC2E4DE37D2AF5F7195D4EF5CCBEB09EFE463F0E8A82)
+
+     如下为globalConnect支持Date类型的持久化示例：
+
+     ```typescript
+     import { PersistenceV2, UIUtils } from '@kit.ArkUI';
+
+     @Entry
+     @ComponentV2
+     struct Page1 {
+       // 支持直接持久化Date类型的数据
+       @Local date: Date = PersistenceV2.globalConnect({
+         type: Date,
+         defaultCreator: () => UIUtils.makeObserved(new Date())
+       })!;
+
+       build() {
+         Column({ space: 40 }) {
+           Text(`date: ${this.date.toISOString()}`)
+             .fontSize(24)
+             .margin(10)
+           // 点击'date.setTime( Date.now() )', 杀掉应用，进入应用后，显示日期
+           Button('date.setTime( Date.now() )')
+             .margin(10)
+             .onClick(() => {
+               this.date.setTime(Date.now());
+             })
+             .fontSize(24)
+         }
+         .width('100%')
+       }
+     }
+     ```
+
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/FY020f7LQoeQSscZoKQjHw/zh-cn_image_0000002788306392.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=E80864022DE670B4D20C015EB63EF61288FC85D3D6AE5A47294CE90D4F9A7C6D)
+
+     如下为globalConnect支持Number类型作为class子属性的持久化示例：
+
+     ```typescript
+     import { PersistenceV2 } from '@kit.ArkUI';
+
+     @ObservedV2 class NumberClass {
+       // Number类型不是顶层持久化数据类型，只能支持非顶层数据类型的持久化
+       @Trace public value: Number = new Number(Infinity);
+     }
+
+     @Entry
+     @ComponentV2
+     struct Page1 {
+       // Number类型只能作为NumberClass的子属性去持久化
+       @Local number: NumberClass = PersistenceV2.globalConnect({
+         type: NumberClass,
+         defaultCreator: () => new NumberClass()
+       })!;
+       output: string[] = [];
+
+       aboutToAppear(): void {
+         this.output.push(`this.number.value: ${this.number.value}, is instanceof Number ${this.number.value instanceof Number}`);
+         this.number.value = new Number(-this.number.value);
+       }
+
+       build() {
+         Column() {
+           Row() {
+             // 第一次打开应用，界面显示'this.number.value: Infinity, is instanceof Number true'
+             // 第二次打开应用，界面显示'this.number.value: -Infinity, is instanceof Number true'
+             Text(this.output.join('\n\n'))
+               .fontSize(24)
+           }
+         }
+         .width('100%')
+       }
+     }
+     ```
+
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/tdGyC3m5Q4WskdEs3aRoUA/zh-cn_image_0000002817425755.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=99A1F9239F6B4C35A5FA95E7B4732E0C87BB9D6F53FFE1589D376907AA24145F)
 6. 在API version 23以前，不支持循环引用对象的持久化。
 
    * 在API version 23开始，提供globalConnect接口支持循环引用的对象持久化。
@@ -391,7 +391,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/SVJlnOaVRRufFiulg2vZTA/zh-cn_image_0000002815558081.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=18D8A1474DBE7B6AB24C8794381946EF624801DE5AA1DBA1EB9E3DE2D5ECD3D4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/GDcdLwRMQaCeTtEb3VopNA/zh-cn_image_0000002788466336.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=A568DED5145C94B5F7B60D5325CE5CCDEC4FFA7B07DF5639B7ACBB68EE0E18EB)
 7. 只有[@Trace](arkts-new-observedv2-and-trace.md)的数据改变会触发自动持久化，如V1状态变量、[@Observed](arkts-observed-and-objectlink.md)对象、普通数据的改变不会触发持久化。
 8. connect和globalConnect不建议混用，如果混用，key不能一样，否则应用crash，从API version 23开始，将返回错误码[140105](../harmonyos-references/errorcode-statemanagement.md#section140105-persistencev2混用connect和globalconnect并使用相同的key)。
 9. PersistenceV2必须与UI实例关联，持久化操作需在UI实例初始化完成后调用（即[loadContent](../harmonyos-references/arkts-apis-window-windowstage.md#loadcontent9)回调触发后）。
@@ -422,7 +422,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
 12. globalConnect仅支持设置EL1-EL5加密级别，否则会抛出运行时异常，从API version 23开始，将返回错误码[140106](../harmonyos-references/errorcode-statemanagement.md#section140106-使用persistencev2存储数据到不支持的加密级别)，示例见[使用globalConnect存储数据](arkts-new-persistencev2.md#使用globalconnect存储数据)。
 13. 当存储数据的结构与当前数据的结构不一致时，可能会导致反序列化失败。在API版本26.0.0以前，开发者无法获取旧的序列化数据，进而无法判断自己的数据结构有哪些改变。
 
-    * 从API版本26.0.0开始，[PersistenceErrorCallback](../harmonyos-references/js-apis-statemanagement.md#persistenceerrorcallback)支持传入oldValue参数，开发者可通过该参数获取存于磁盘的旧的序列化数据，具体用例可见[通过notifyonerror获取旧的序列化数据](arkts-new-persistencev2.md#通过notifyonerror获取旧的序列化数据)。
+    * 从API版本26.0.0开始，[PersistenceErrorCallback](../harmonyos-references/js-apis-statemanagement.md#persistenceerrorcallback)支持传入oldValue参数，开发者可通过该参数获取存于磁盘的旧的序列化数据，具体用例可见[通过notifyOnError获取旧的序列化数据](arkts-new-persistencev2.md#通过notifyonerror获取旧的序列化数据)。
 14. 不支持在使用connect或globalConnect的类中使用[@Computed](arkts-new-computed.md)。@Computed为只读属性，不支持赋值操作，因此会导致反序列化失败。
 15. 在使用globalConnect持久化[集合类型](arkts-new-persistencev2.md#globalconnect支持的集合类型)（如Array、Map、Set、collections.Array、collections.Map、collections.Set）时，若容器内部元素类型为基础类型（如number、string、boolean），则不应声明defaultSubCreator，否则会导致编辑、编译报错。
 
@@ -444,12 +444,13 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
     })!;
     ```
 16. 不支持对持久化数据类的类名和属性名进行混淆，否则会导致已有数据无法读取或反序列化失败。应用需关闭混淆，或通过混淆配置保留相关类名和属性名，具体请参考[源码混淆保留选项](source-obfuscation-keep-options.md#保留选项汇总)和[字节码混淆保留选项](bytecode-obfuscation.md#已有保留选项汇总)。
+17. [通过意图装饰器开发标准意图](insight-intent-decorator-development.md#通过意图装饰器开发标准意图)场景中声明的后台意图（UI\_ABILITY\_BACKGROUND）的程序执行入口不涉及UI组件，不会初始化PersistenceV2模块，导致在onExecute函数中使用PersistenceV2无法持久化数据。建议开发者在后台意图场景下使用ArkData模块的[通过用户首选项实现数据持久化（ArkTS）](data-persistence-by-preferences.md)能力，向UI主程序同步持久化数据。
 
 ## globalConnect支持的类型
 
 ### globalConnect顶层持久化数据类型及非顶层数据类型
 
-在API version 23以前，持久化的顶层数据类型必须是用户自定义的class对象，不支持容器类型（如Array、Set、Map，Date）。在API version 23开始，持久化的顶层数据类型可以是用户自定义的class，也可以是容器类型。非顶层数据类型，是指定义在用户自定义class属性的类型。
+在API version 23以前，持久化的顶层数据类型必须是用户自定义的class对象，不支持容器类型（如Array、Set、Map）和Date类型。从API version 23开始，持久化的顶层数据类型可以是用户自定义的class，可以是容器类型，也可以是Date类型。非顶层数据类型，是指定义在用户自定义class属性的类型。
 
 如下示例中，Array<ClassA>是顶层持久化数据类型，可作为globalConnect的直接返回值类型，collections.Map是CollectionMapClass类中属性的类型，属于非顶层持久化的数据类型。
 
@@ -641,7 +642,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/pJJQJ0AMS6if0njjzAlQfw/zh-cn_image_0000002815398165.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=998E9CA3417DE46B173BAFFA7D61C809C59D817F9579D797E9AA5C0F2F3EE2F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/0WjVzhEvTTG9RRc8l805Ng/zh-cn_image_0000002817505823.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C0D684C6E62D2888B89CCBE3051B442E55042065A994237149C910F4BD76377)
 
 ## 使用场景
 
@@ -829,7 +830,7 @@ struct Page2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/BXTZBI8fQ8m3HcKnrE2LDQ/zh-cn_image_0000002786518590.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=009600657F5B58A470F13328DFFC84FCC5CBB4643C7A8EF9729D877FAD9D69AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/IJgx6R5FQe-Gnc9wRXRc8w/zh-cn_image_0000002788306394.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=9775CBDBFE16DE026D11FCF61229BEDB90E34ABFF582CE2165115E43909CCCBC)
 
 ### 使用globalConnect存储数据
 
@@ -992,7 +993,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/VBnM6UgdQciSNxnhGBmupQ/zh-cn_image_0000002786358662.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBDCDACC152160B3D2CD6C4DD9A52E0257D2FAF797D59DB1E9322A51FBC38036)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/qM7B3oa1TLqF9hzFvvOBYw/zh-cn_image_0000002817425757.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=A160A364EF1620291F231B921799C96044329E2E03E3EB81B1436619964B6AD6)
 
 ### 在不同的module中使用connect和globalConnect
 
@@ -1097,7 +1098,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/3-Fp5o89Q7CmL1H3EtT0aQ/zh-cn_image_0000002815558083.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=693E351AC264BC74060B05F4A4C34401109D812AF1054812D32FFDA639DB26D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/FpkXNCVQQFaVNiQdDmSM-A/zh-cn_image_0000002788466338.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3BAB1B32A89CA2D7F7F5F12B582CD0D25A8F1B57FAC8D8092DBC609A3D67FE7)
 
 ```typescript
 // 模块2
@@ -1157,7 +1158,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/jyqsHuBaRJCEFQESHFZ8sA/zh-cn_image_0000002815398167.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B60A2EDB89BAB06132EA45A46E13BAC6D92DBE90E75BFDBF8EC2525DADF8BFEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/bcoFFVOJQh6Sg_crFsIQLA/zh-cn_image_0000002817505825.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=E49853DAF87F5241A5BF6CCB7864AD156CA8608961E618403E903334B9D80644)
 
 当开发者对newModule使用不同启动方式会有以下现象：
 
@@ -1241,7 +1242,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/2-MujCx8QzG-iTnkowkVtA/zh-cn_image_0000002786518592.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E02EF91B3CBEDD6BB133781DD212828CF04663BA4A3D685A8AD4396DFD1E7481)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/MxPKtPj_TOCutOECqZDlQg/zh-cn_image_0000002788306396.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA0616BD517A2AA91ED2DDF92F8261BE8EB0776C7F5BF74BD6957A80A65A5B66)
 
 起始时，SampleChild中的childInfo变量类型为SampleInfo，正常存储后，将childInfo变量的类型切换为number，并赋值为1，之后再次启动程序，此时会由于存储数据的结构与当前数据的结构不一致，导致数据反序列化失败。此时会通过notifyOnError中写入的回调，将磁盘中存储的旧的序列化数据打印出来。即在Error日志中显示：
 
@@ -1315,7 +1316,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/GgT7-LyJRgKDbeCmbZn2bQ/zh-cn_image_0000002786358664.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E3F5478B41F03DACF08D2C06833AB3C446284503DC92BC089C71A2033CF293E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Ega1IzpMRmOZhpa1sQFRUg/zh-cn_image_0000002817425759.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=E12AA8B0185FE3D51360B4DEFC6D3EE0F45163FCDD2FACE7D67368191986D37D)
 
 ```typescript
 // 迁移到globalConnect
@@ -1399,7 +1400,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/uPDRO-fkQoiWoqs44Sf__A/zh-cn_image_0000002815558085.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB28DD8DF2E59C732EE476ED92B582A9D1A769C01F175CFF149EAA1DDDF77FC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/CkQrq10BRRegs3NGv3saPQ/zh-cn_image_0000002788466340.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=171AFBB80481B08029685BD8A9B284908CC55C78CD8FFC6D20D5108F58DFE465)
 
 connect向globalConnect迁移，需要将key绑定的value赋值给globalConnect进行存储，之后当自定义组件使用globalConnect连接时，globalConnect绑定的数据即为之前使用connect保存的数据，开发者可以自定义move函数，并将其放在合适位置迁移即可。
 
@@ -1457,7 +1458,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/_HlddeqQRoW6kN7FsDz0xw/zh-cn_image_0000002815398169.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=4816D0ABA5238E4D672178425D1075198EC18D90F24339AA3C6172A772223D32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/JaMdT4gcTOmt6ftW2j88TQ/zh-cn_image_0000002817505827.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=C87287DA45090ED6B7B46C4875DE5FF59BBCF2C65A7E79F21AC2DD6AE0680CA5)
 
 下表将结合样例，说明在变更数据结构时会触发notifyOnError的情形。
 

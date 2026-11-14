@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-access-
 title: 目标设备接收分享数据一步直达体验
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > Share Kit体验规范 > 目标设备接收分享数据一步直达体验
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:67bb053ee63a9714837d6048b73fbc5791f45d99d92c9e66f24e3c7006fc5d26
+scraped_at: 2026-11-14T08:48:32+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:8b2342bf1a0e02ea56cea61ad4aed5ad3476984f07e8683739cf1c927497a07e
 ---
 
 为保证华为分享目标设备接收体验更优，规范分享数据接收时的直达体验，目标设备接收到分享数据后，将按照如下规则处理：
@@ -44,7 +44,7 @@ content_hash: sha256:67bb053ee63a9714837d6048b73fbc5791f45d99d92c9e66f24e3c7006f
 * shareType：用于分组匹配，当发送端应用和接收端应用配置相同的shareType值时，匹配规则才可生效。仅支持配置一项，配置多项时，仅第一项生效。
 * shareBundleName：指定打开应用的包名，可配置多项。当shareType相同时，按数组排列顺序匹配第一个已安装且支持拉起（满足[隐式匹配原理](explicit-implicit-want-mappings.md#隐式want匹配原理)）的应用，并优先拉起该应用。
 
-```json
+```json5
 {
   "module": {
     "abilities": [

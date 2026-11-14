@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiretrieval-i
 title: 应用灰度采集介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 应用灰度采集 > 应用灰度采集介绍
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:48+08:00
 doc_updated_at: 2026-07-09
-content_hash: sha256:b0da5ed151674b4084c44a209e7ae14f29013e20d556648c3fc5fe2b2dc60cbe
+content_hash: sha256:d83100a185ff666086f90b6aa019cf4bececc7a633560d30ebdbec36d03a7b6d
 ---
 
 ## 简介
@@ -32,7 +32,7 @@ content_hash: sha256:b0da5ed151674b4084c44a209e7ae14f29013e20d556648c3fc5fe2b2dc
 
 ### 整体架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/LsHpwz_RTgemQzPGQXv89A/zh-cn_image_0000002815399319.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=715DF852828A47BCD8195E4E644AF7069A486401BF252DD21FB833A478603532)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/JGgPxqghTriBP7N2vodmKA/zh-cn_image_0000002817506979.png?HW-CC-KV=V1&HW-CC-Date=20261114T004607Z&HW-CC-Expire=31536000000&HW-CC-Sign=87AD93E6C637AD23F12ECF4663E1322EE9A2BF9052302DC8366FE372BFD20197)
 
 ### 集成步骤
 

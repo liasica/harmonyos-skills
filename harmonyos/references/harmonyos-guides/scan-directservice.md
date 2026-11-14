@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-directse
 title: 接入“扫码直达”服务
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 接入“扫码直达”服务
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:02+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:dc9e16c3aa2de4bdf71d8dcd6a6a1d29af0ca2d16a44059c2ff9c382177c5cdb
+content_hash: sha256:8aa15f2991fb3bb6c4fec4dbca96fe0470221afd396e7a1184ddc2c62fd2b58b
 ---
 
 **说明** 
@@ -24,7 +24,7 @@ content_hash: sha256:dc9e16c3aa2de4bdf71d8dcd6a6a1d29af0ca2d16a44059c2ff9c382177
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/MDJR6BbMSjK9FjuMHahutQ/zh-cn_image_0000002786359976.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BCC2035958B0141F87815003EBC63B37703329D05331AF1FA4498CA396C200F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/JG-KS1aQQomCYU35ViWY2g/zh-cn_image_0000002817427071.png?HW-CC-KV=V1&HW-CC-Date=20261114T004620Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0B13674C4939E76A501AF2FA5CBF14D8A82C7165BDD769800A8C6C9AC28A897)
 
 1. 开发者参考App Linking指导完成域名注册。
 2. 用户通过HarmonyOS扫码入口发起扫码请求。
@@ -125,7 +125,7 @@ content_hash: sha256:dc9e16c3aa2de4bdf71d8dcd6a6a1d29af0ca2d16a44059c2ff9c382177
 
 集成效果，以美团单车场景为例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/qeq8pw3NS7aVLyoNt5LD0Q/zh-cn_image_0000002815559397.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=60B1565DA80984F6D68DE65C19FE701B4739A4C54C3CAB18EB5EDDC9E2556E7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/6iyoBs0fTVuFbXHs5sTWMg/zh-cn_image_0000002788467652.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004620Z&HW-CC-Expire=31536000000&HW-CC-Sign=B72DE4E4B0916B670CDABE0EAFEACC0FAC3CFDC28667C845785ED57DD6AC7345)
 
 ## 开发后验证
 

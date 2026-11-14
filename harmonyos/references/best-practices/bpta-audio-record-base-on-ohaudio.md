@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于OHAudio录制PCM音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于OHAudio录制PCM音频（C++）
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:07+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:5783de6792692ec0f4176ec9d14d7858c528526215d25160af05c9d27b1c1932
+content_hash: sha256:eb42216a6b3d496bcca4dc56378125bc3d6228ed9dad2c0c8a38d1d315fab569
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:5783de6792692ec0f4176ec9d14d7858c528526215d25160af05c9d27b1
 
 基于OHAudio录制PCM音频（C++）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/h0f1KV7RR5u-wuFPfY32ng/zh-cn_image_0000002524221068.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=44E28F656687AECB978E3CFAB1E638D45D9CA6589F1B32BEA88FE432FDB0C76A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/xGgMJ86CShyOvFZfiGyzvw/zh-cn_image_0000002524221068.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1A18DB47B47873C52BCB01C36492BD19D40F8F2ABF41888028DEAB82A9840BC "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ OH\_AudioCapturer仅支持PCM格式，同时支持设置低时延通路、静音
 
 **图1** OHAudio音频录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/4EuUL3_STmGy9lsDsQcdmg/zh-cn_image_0000002555340937.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=A06E502385D4DEF10F0CD4472F32C618D308C7AC7B85DE1DE9241531AD42EEFC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/jpD2g6FEQlWGGxieyZWGrQ/zh-cn_image_0000002555340937.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFE3F23C9C04ABAE4BE29C8B3B5CA91336BDF12087FF4F810E8E1EC7C1DBDB6C "点击放大")
 
 ### 开发步骤
 

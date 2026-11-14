@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-three-ring-read
-title: 实时三环数据
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Phone/Tablet应用开发 > 管理运动健康数据 > 实时三环数据
+title: 读取实时三环数据
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Phone/Tablet应用开发 > 管理运动健康数据 > 读取实时三环数据
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:25+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-14T08:48:19+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:a181d35fb615cda7e8c105c8a8ad07cf10c16209331a45cf5e9b6446421bebd0
 ---
 

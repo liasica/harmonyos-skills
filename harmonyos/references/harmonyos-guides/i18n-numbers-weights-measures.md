@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-numbers-
 title: 数字与度量衡国际化
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 数字与度量衡国际化
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:28+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:870b74cb2b6919fc8b46c6dfb6a535b1404bec0225f47bc6540fb98af02c1b88
+scraped_at: 2026-11-14T08:47:20+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:335b2a4b2eff4de6567c6acce7973bfb553047e0ea6dfa1c5979206c33e0e1b5
 ---
 
 ## 功能介绍
@@ -36,7 +36,7 @@ unitConvert接口可以将原始单位转换为目标单位，并根据区域ID�
 
 以原始单位为美制单位cup，目标单位为公制单位liter，数字大小1000为例。
 
-**表1** 格式化使用的风格(style)
+**表1** 格式化使用的风格（style）
 
 | 取值 | 显示效果 |
 | --- | --- |

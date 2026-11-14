@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-termino
 title: Share Kit术语
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > Share Kit术语
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:33+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2a7531c6d742dcebf8dcdf7cb7574feb45969b4b860e55ebfa6b5aa3f259a34d
+content_hash: sha256:88dc610bc1266c481a759e8f8af4eec2d3645cd20a3e16bdce04d5d06baa2392
 ---
 
 ## C
@@ -42,7 +42,7 @@ content_hash: sha256:2a7531c6d742dcebf8dcdf7cb7574feb45969b4b860e55ebfa6b5aa3f25
 
 点击分享方式可跳转"分享详情页"。"分享详情页"由应用提供，用来完成分享数据的接收。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/rB7GLqh1Q36SQypnls60OQ/zh-cn_image_0000002786360610.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=4163E75EF0FC4AB389D2D0B42CD73831A3493490AEB8EC9152A94ED6825D0E6D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/uVgAdT9FQrG6GtEqgGerBg/zh-cn_image_0000002817507775.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=738375E02D0561490CB793FB811C4117380428870B652ACCBF7C1B27077FC3F3)
 
 ### Source device；源端设备
 

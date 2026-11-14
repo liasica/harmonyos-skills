@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: Remote Communication Kit简介
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > Remote Communication Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:ce842f34dcdb2052545e78677548116e28945886294d1cf2bd9e8a141dcd5ed6
+scraped_at: 2026-11-14T08:47:37+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:73326c27265ad850d39a204f91b0e7f9d9b8c3c04ec3e48995b7d68417d0192f
 ---
 
 ## 概述
@@ -59,7 +59,7 @@ HTTP请求是客户端向服务器发送请求的过程，包括以下基本概�
 
 ## 约束与限制
 
-支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；暂不支持Lite Wearable设备。
+支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备；暂不支持Lite Wearable设备。
 
 ## 模拟器支持情况
 

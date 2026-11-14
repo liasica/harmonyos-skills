@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: TransferConfiguration：定制数据传输
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 实现HTTP请求定制 > Configuration：高效实现定制功能 > TransferConfiguration：定制数据传输
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:35+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:20604030c98edce91661ec4b2e34640fba78eec2e69419b6101c9072b479355a
+scraped_at: 2026-11-14T08:47:37+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:fe2ec8923a4a1d385b7951a5ee72c5fe69ca75b5baa8279d826a275782ca1f8b
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:20604030c98edce91661ec4b2e34640fba78eec2e69419b6101c9072b47
 
 ## 约束与限制
 
-定制数据传输能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+定制数据传输能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 使用示例
 

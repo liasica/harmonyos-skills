@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-oper
 title: 网络连接中断播报
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 网络连接中断播报
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:51+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:bd1b2b2563bcc120c8d7abaf5da670995483d3f3e79ffae569142f833628714c
+content_hash: sha256:962d5005e0f4e7dc9ffc39c936b5fab6efc11ec08587072d54da7dad81cba18f
 ---
 
 ## 设计场景
 
 比如网络连接错误，或者其他警告信息，不能仅仅以颜色区分，需要实时告诉用户错误提示和改进方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/YvGholxAT5Si5uq3cOFqng/zh-cn_image_0000002786518368.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=B33CB676C11426E7ED2ABA123FB7679EE07A5DC13BD0E0C5281955785BA04173)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/4sgMgg8gSxCX5_E3tvJqMg/zh-cn_image_0000002788306172.png?HW-CC-KV=V1&HW-CC-Date=20261114T004514Z&HW-CC-Expire=31536000000&HW-CC-Sign=75629D6DA2FC8C73F3B45A0A4B05EEEDA0BA6F875D1D3D217DE92C56EBC473F0)
 
 ## 开发流程
 

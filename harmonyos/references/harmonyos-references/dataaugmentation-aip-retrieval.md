@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: aip_retrieval.h
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 头文件 > aip_retrieval.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:65e47d8f0508cd0b437aeaa20d174fae14240a8ee94af30b90dca54967727492
+scraped_at: 2026-11-14T08:51:09+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:0d5f36a6354ac9d4a6394d0cbd30754feb82e6f27a8fa2be37cbac10bc0acd7f
 ---
 
 ## 概述
@@ -44,7 +44,7 @@ content_hash: sha256:65e47d8f0508cd0b437aeaa20d174fae14240a8ee94af30b90dca549677
 
 | 名称 | 描述 |
 | --- | --- |
-| int [OH\_Retrieval\_CreateRetriever](dataaugmentation-capi-retrieval.md#oh_retrieval_createretriever) (const [OH\_Retrieval\_Config](dataaugmentation-capi-retrieval.md#oh_retrieval_config) \*config, [OH\_Retrieval\_Retriever](dataaugmentation-capi-retrieval.md#oh_retrieval_retriever) \*\*retriever) | 读取检索配置，初始化检索器。 |
+| int [OH\_Retrieval\_CreateRetriever](dataaugmentation-capi-retrieval.md#oh_retrieval_createretriever) (const [OH\_Retrieval\_Config](dataaugmentation-capi-retrieval.md#oh_retrieval_config) \*config, [OH\_Retrieval\_Retriever](dataaugmentation-capi-retrieval.md#oh_retrieval_retriever) \*\*retriever) | 读取检索配置，创建检索器。 |
 | int [OH\_Retrieval\_DestroyRetriever](dataaugmentation-capi-retrieval.md#oh_retrieval_destroyretriever) ([OH\_Retrieval\_Retriever](dataaugmentation-capi-retrieval.md#oh_retrieval_retriever) \*retriever) | 销毁通过[OH\_Retrieval\_CreateRetriever](dataaugmentation-capi-retrieval.md#oh_retrieval_createretriever)获得的检索器。 |
 | [OH\_Retrieval\_Config](dataaugmentation-capi-retrieval.md#oh_retrieval_config) \* [OH\_Retrieval\_CreateConfig](dataaugmentation-capi-retrieval.md#oh_retrieval_createconfig) () | 获取检索器配置。用于初始化检索器。 |
 | int [OH\_Retrieval\_DestroyConfig](dataaugmentation-capi-retrieval.md#oh_retrieval_destroyconfig) ([OH\_Retrieval\_Config](dataaugmentation-capi-retrieval.md#oh_retrieval_config) \*config) | 销毁通过[OH\_Retrieval\_CreateConfig](dataaugmentation-capi-retrieval.md#oh_retrieval_createconfig)获得的检索配置。 |

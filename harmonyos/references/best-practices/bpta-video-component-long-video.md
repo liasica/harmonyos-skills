@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-comp
 title: 基于Video组件播放长视频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于Video播放视频系列开发实践 > 基于Video组件播放长视频
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:07+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:041a241ebe60c2fffbd70aa963708c3a98fb82b4734cfe9d40dd9790d7102a64
+content_hash: sha256:b3979659420f5767a6d48ce622f42cb78e359b351691dda56df8d3be101e5209
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ Video组件可用于播放视频文件并控制其播放状态。本文针对市
 
 通过Video组件实现视频基础播放控制能力，包括播放视频、暂停播放等操作。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/nyF8i_rzStalZQpe6gTAAg/zh-cn_image_0000002555237888.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD71AA30A0161152D87EBEB6DE4BECEDD79E34B7D81862AB158DBD135E28DE9E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/YAOjnHsiSB6y19Bg-7ayjg/zh-cn_image_0000002555237888.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C2DA2DA44ED24894F20B46AB217DF67CA3BCFC4C9371BA5A84DB8CDF7526098 "点击放大")
 
 ### 实现原理
 
@@ -41,7 +41,7 @@ Video组件可用于播放视频文件并控制其播放状态。本文针对市
 
 Video组件的接口和状态变化关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/ZzZalWSRTEed7gkeusOAYQ/zh-cn_image_0000002555078262.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D905496FDB609F86B0DE4F46BDB2156B42CDD1DC8AAAFD3D37014A1600DFDB3C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/ujMgcLxQQ5WPotxBYAl9iQ/zh-cn_image_0000002555078262.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BCB564FB07FC1DE7402360630159B6010963C98A114E9BEF898D9D057E768B5 "点击放大")
 
 ### 开发步骤
 
@@ -60,7 +60,7 @@ Video组件和Video控制器的基础使用请参考：[视频播放 (Video)](..
 
 长视频未播放时，显示视频资源的首帧画面或特定画面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/V4C90NRQRPC_DsnF7y3wbA/zh-cn_image_0000002585797859.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A53E0C1D20C0DA92C76864FC7B6744056443ECF200577AB0CA8CFF9D026C74B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/qJZHyMyWT6yqo7ljVoqBNA/zh-cn_image_0000002585797859.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=347836C9FA377F52FE964C52D421D89F9652A33B48A456F547851C85F615CE72 "点击放大")
 
 ### 实现原理
 
@@ -101,7 +101,7 @@ previewUri使用示例请参考：[示例1（视频播放基础用法）](../har
 
 播放视频时，可通过点击全屏图标按钮实现全屏播放，或通过旋转设备进行横竖屏切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/TbUCVm7eS4GeXVLTuVFs_A/zh-cn_image_0000002585677821.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4433B943CA02CAA197B95ED3FD4458FC8953AC648B3C2E8644796A365160198 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/auJ4iurOSeicnbHFyVokeg/zh-cn_image_0000002585677821.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4E1CB4FD59EDAC86BD3811155C4CA35A0AA7B31243497A34DF4F6BDBEFC4881 "点击放大")
 
 ### 实现原理
 
@@ -188,7 +188,7 @@ previewUri使用示例请参考：[示例1（视频播放基础用法）](../har
 
 通过点击或拖动自定义进度条，实现视频跳转至指定时间进行播放功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/lbNBjobcSc6MXhWUCqetBw/zh-cn_image_0000002555237890.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAAFC3A4554F619CE86871738FF4D9B7A2EA685FE841118165E7038296E4CB36 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/NwlspvvjSI2IG_pk7tR1Rw/zh-cn_image_0000002555237890.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=35B7ECD3A497BECE35D144A080656FD18C17215F56D0A33736000FD6A93C03C5 "点击放大")
 
 ### 实现原理
 
@@ -230,7 +230,7 @@ Video组件自带的控制栏由[controls](../harmonyos-references/ts-media-comp
 
 播放视频时，向下滑动视频列表，Video组件从页面消失后，视频以小窗口模式进行播放，同时用户可以进行其它操作，提升使用体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/07kTPAHQS8e4tCC4R2xIDA/zh-cn_image_0000002555078264.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B3E0F8D7B104ED60AAE301EB2A5C1321CB80C4BBF7C3A5119359B0E825A1C33 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/Ziig2y0PRrSupoyoOgTHUA/zh-cn_image_0000002555078264.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=E68244B16CBE9F9E8F5BE7643AC83228CE16B60750CA11B92CC25A9B3549A39F "点击放大")
 
 ### 实现原理
 
@@ -310,7 +310,7 @@ Video组件不支持视频以画中画模式播放，如需使用画中画模式
 
 视频横屏时，通过点击按钮选择预设播放速度，实现视频倍速（1.0、1.25、1.75或2.0速度）播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/GZpUh0BHQhOLJUbEwckmmg/zh-cn_image_0000002585797861.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=67ED7A6491663C347771E320856933BD13032D30BD90EC4842ECB7FCF86B5CAD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/u2WqX4VDR5CzJANx4ZRtzw/zh-cn_image_0000002585797861.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3FCB66189E8F36A0EBE859FF27030295979D11E4AB14B7318E665EF782A1847 "点击放大")
 
 ### 实现原理
 
@@ -376,7 +376,7 @@ Video组件支持通过currentProgressRate参数（参考[VideoOptions对象说�
 
 视频横屏时，长按屏幕可实现2倍速播放，离手后视频恢复至默认1倍速播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/ioqJIVDYTyepuniNJxLRMQ/zh-cn_image_0000002585677825.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5770656ADA8215330844F998D3ABA629A6513EB04ED911170BB6F820E2A9B6C3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/8691tyZtQ9SIZXMJm41veA/zh-cn_image_0000002585677825.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=35A6BEF54C594791B43C407EE11AEF533CF69239B6F7D21364A1795E590E3FCC "点击放大")
 
 ### 实现原理
 
@@ -416,7 +416,7 @@ Video组件支持通过currentProgressRate参数（参考[VideoOptions对象说�
 
 视频播放结束后，立即重新开始播放，以实现无缝循环播放的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/yafWQzNNQtesl5Mq12Bbig/zh-cn_image_0000002555237894.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EAB02794DCC1D6C94E3EB727AD1D8496B4E936FC31A20674651D8DBD9CFD2D7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/RL2gyjzlTMiXNhhhnDp-jw/zh-cn_image_0000002555237894.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A83AC8BA297D9CF654643539AE65A9962377B17CFF7E3B4718E5013C88E825C "点击放大")
 
 ### 实现原理
 
@@ -445,7 +445,7 @@ Video({
 
 滑动调节音量是视频应用中的常见交互：在播放界面左侧上下滑动，即可快速调节音量，无需中断观看，从而提升用户的观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/GxCHpAYeQnyTKPYwGQF2BQ/zh-cn_image_0000002555078268.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AA4CCBA8CDE392B3F1E1AB3396FC6F322F9EF6F152C190C8266FCB269EB5667 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/xMlZZy4yS5KotnbCIQWFZg/zh-cn_image_0000002555078268.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=1253F34F386F05FD13241FB1334350E06C82A707171217DE9D6CB6BEF4CF0CA9 "点击放大")
 
 ### 实现原理
 
@@ -499,7 +499,7 @@ Video({
 
 Video组件播放视频时，可以通过控制中心，实现视频的播放、暂停、切换视频、跳转播放、点击拉起应用等功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/O2G-OR-_R6WNeL6PwKi1tg/zh-cn_image_0000002585797863.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3730C60C27E4075015CC69078A07BEFCA1E5899E7A4AC2D5FF1828BF1CB402D5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/bNtdlK0BQYKEkMsaLfoVIg/zh-cn_image_0000002585797863.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=46604824C5C44E1B3A03E54D2D45FBF3CB8C573F4EFE92C9CC166765FEFE0EF1 "点击放大")
 
 ### 实现原理
 

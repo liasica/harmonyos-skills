@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: DnsConfiguration：定制DNS
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 实现HTTP请求定制 > Configuration：高效实现定制功能 > DnsConfiguration：定制DNS
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0ca5e5cc55937af362658c35337f96df44fcbfb7c81448d81c1849514704470d
+scraped_at: 2026-11-14T08:47:37+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:614802ffe2c164294892865f8f2bfc85a7146e6a7b48488557f629d8f973bff7
 ---
 
 ## 场景介绍
@@ -29,7 +29,7 @@ content_hash: sha256:0ca5e5cc55937af362658c35337f96df44fcbfb7c81448d81c184951470
 
 ## 约束与限制
 
-定制DNS能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+定制DNS能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 使用示例
 

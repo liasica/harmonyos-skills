@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/connectivity-
 title: Connectivity Kit简介
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > Connectivity Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:30+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:33756a05985bcf744188fe9c91ab4ffae0452f641895ac4772a7475402a55f84
+scraped_at: 2026-11-14T08:47:34+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:baa95157ae09bfd63dc693f796348041b7c8eb86e64412483b83af278d75e101
 ---
 
 ## Connectivity Kit开发概述
@@ -33,29 +33,29 @@ content_hash: sha256:33756a05985bcf744188fe9c91ab4ffae0452f641895ac4772a7475402a
   提供基于低功耗蓝牙（Bluetooth Low Energy）技术的蓝牙能力，可支持发现设备、发送广播报文、发现服务和传输数据等功能。具体内容可参考API [@ohos.bluetooth.ble](../harmonyos-references/js-apis-bluetooth-ble.md)。
 * **SOCKET模块**
 
-  提供基于串口通信协议（Serial Port Profile，SPP）实现蓝牙设备间通信连接和传输数据的能力。具体内容可参考API [@ohos.bluetooth.socket](../harmonyos-references/js-apis-bluetooth-socket.md)。
+  提供基于串口通信协议（Serial Port Profile, SPP）实现蓝牙设备间通信连接和传输数据的能力。具体内容可参考API [@ohos.bluetooth.socket](../harmonyos-references/js-apis-bluetooth-socket.md)。
 * **A2DP模块**
 
-  提供基于增强音频分发协议（Advanced Audio Distribution Profile，A2DP）实现蓝牙设备间通信连接和传输高品质音频的能力。例如：手机与耳机、音响等设备间传输音频流，实现听音乐的场景。具体内容可参考API [@ohos.bluetooth.a2dp](../harmonyos-references/js-apis-bluetooth-a2dp.md)。
+  提供基于增强音频分发协议（Advanced Audio Distribution Profile, A2DP）实现蓝牙设备间通信连接和传输高品质音频的能力。例如：手机与耳机、音响等设备间传输音频流，实现听音乐的场景。具体内容可参考API [@ohos.bluetooth.a2dp](../harmonyos-references/js-apis-bluetooth-a2dp.md)。
 * **HFP模块**
 
-  提供基于免提协议（Hands-Free Profile，HFP）实现蓝牙设备间通信连接和免提通话的能力，可支持双向语音通话和控制等功能。具体内容可参考API [@ohos.bluetooth.hfp](../harmonyos-references/js-apis-bluetooth-hfp.md)。
+  提供基于免提协议（Hands-Free Profile, HFP）实现蓝牙设备间通信连接和免提通话的能力，可支持双向语音通话和控制等功能。具体内容可参考API [@ohos.bluetooth.hfp](../harmonyos-references/js-apis-bluetooth-hfp.md)。
 * **HID模块**
 
-  提供基于人机接口协议（Human Interface Device Profile，HID）实现蓝牙设备间通信连接、无线控制和传输的能力。例如：支持键盘、鼠标、游戏手柄等设备与主机（如手机、平板和PC）间的低延迟双向通信。具体内容可参考API [@ohos.bluetooth.hid](../harmonyos-references/js-apis-bluetooth-hid.md)。
+  提供基于人机接口协议（Human Interface Device Profile, HID）实现蓝牙设备间通信连接、无线控制和传输的能力。例如：支持键盘、鼠标、游戏手柄等设备与主机（如手机、平板和PC）间的低延迟双向通信。具体内容可参考API [@ohos.bluetooth.hid](../harmonyos-references/js-apis-bluetooth-hid.md)。
 * **PAN模块**
 
-  提供基于个人局域网协议（Personal Area Network，PAN）实现设备间网络共享的能力。例如：手机与PC间的互联网共享。具体内容可参考API [@ohos.bluetooth.pan](../harmonyos-references/js-apis-bluetooth-pan.md)。
+  提供基于个人局域网协议（Personal Area Network, PAN）实现设备间网络共享的能力。例如：手机与PC间的互联网共享。具体内容可参考API [@ohos.bluetooth.pan](../harmonyos-references/js-apis-bluetooth-pan.md)。
 * **MAP模块**
 
-  提供基于消息访问协议（Message Access Profile，MAP）实现设备间消息共享的能力。例如：手机与车载间的短信数据同步。具体内容可参考API [@ohos.bluetooth.map](../harmonyos-references/js-apis-bluetooth-map.md)。
+  提供基于消息访问协议（Message Access Profile, MAP）实现设备间消息共享的能力。例如：手机与车载间的短信数据同步。具体内容可参考API [@ohos.bluetooth.map](../harmonyos-references/js-apis-bluetooth-map.md)。
 * **PBAP模块**
 
   提供基于电话簿访问协议（Phone Book Access Profile）实现设备间电话簿数据共享的能力。例如：手机与车载间的联系人和通话记录的数据同步。具体内容可参考API [@ohos.bluetooth.pbap](../harmonyos-references/js-apis-bluetooth-pbap.md)。
 
 ### WLAN简介
 
-无线局域网（Wireless Local Area Networks，WLAN），是通过无线电、红外光信号或者其他技术发送和接收数据的局域网，用户可以通过WLAN实现结点之间无物理连接的网络通讯。常用于用户携带可移动终端的办公、公众环境中。
+无线局域网（Wireless Local Area Networks, WLAN），是通过无线电、红外光信号或者其他技术发送和接收数据的局域网，用户可以通过WLAN实现结点之间无物理连接的网络通讯。常用于用户携带可移动终端的办公、公众环境中。
 
 WLAN系统为用户提供接入WLAN网络功能（STA模式）、点对点的数据传输功能（P2P模式）和热点分享功能（AP模式），让应用可以通过WLAN和其他设备互联互通。
 

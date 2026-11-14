@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 形状裁剪
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 形状裁剪
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:05+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:02983b9866633d309e353649c23506adf88e2832d2ea10d817339c62c5d31814
+content_hash: sha256:0d394933cd21304d57f50b2ef64b9f241831f65146b32aef45dcad858d0e8621
 ---
 
 用于对组件进行裁剪、遮罩处理。
@@ -518,7 +518,7 @@ struct ClipAndMaskExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/KnlVuDVHRgKxOKoV_qTNbQ/zh-cn_image_0000002815400513.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F839E0528DBC103EAACD9FB832CB58D2160BCA3F8F6A6B0A044B2D685AB826C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/shKeV0z_R6W7yWR-4ox2IQ/zh-cn_image_0000002817428105.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=159C75D904D217735A42718DAFD30E183F6D4CEE6985ADA54475FF348F751417)
 
 ### 示例2（实现组件遮罩）
 
@@ -587,4 +587,4 @@ struct ProgressMaskExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/X67NSU8pSCWsCWEWzhVd6A/zh-cn_image_0000002786520938.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDCC92B7542CB4C12E242CED68AF7443804850B5D508594F2D25A4CA50A57AF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/vUDj-dUKSB2D6hCZKg8zpw/zh-cn_image_0000002788468686.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5637EAC3BF8DB7BEB9E16CA020F39191EA7ED93F6BFC01076E9419CAC0965BC)

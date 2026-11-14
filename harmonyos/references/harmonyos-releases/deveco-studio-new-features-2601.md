@@ -3,12 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-stud
 title: 新增和增强特性
 breadcrumb: 版本说明 > 最新版本(26.0.1) > 26.0.1 > DevEco Studio（Windows/macOS版） > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:49:54+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:f681de2cef127faf0d40d8e6a58536396b3a99f61653a6f20972b9e44e5344e0
+scraped_at: 2026-11-14T08:45:43+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6fd26c16b310c685b1b251572d0c5d490ce7f21e885e90b58161ba052f2c5e75
 ---
 
 当前为DevEco Studio最新版本说明文档，如需查看DevEco Studio其它历史版本的功能新增、变更情况，请在左侧文档目录中选择相应版本。
+
+使用Beta版本的DevEco Studio开发的应用无法上架应用市场，仅可用于本地开发调测。如有应用上架的诉求，请使用Release版本进行开发。
 
 ## DevEco Studio 26.0.1 Beta1（26.0.1.290）
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 流式传输
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 实现流式请求 > 流式传输
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:38f7453652d6f770f430a631316cd8dbcea660de4bf979b7b6bf6274ba0dea7d
+scraped_at: 2026-11-14T08:47:38+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:909349c8c34f258124fa3fcadccb4ae623a0167e4450765839c74a7cc28b314d
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ HTTP流式传输（Streaming）允许客户端与服务器之间以流的形式�
 
 ## 约束与限制
 
-流式传输能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+流式传输能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 基于缓冲区的流式传输
 

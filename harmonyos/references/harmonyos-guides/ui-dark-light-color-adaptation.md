@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-dark-light
 title: 应用深浅色适配
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 主题设置 > 应用深浅色适配
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:08+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f1c8d1c5cc46784de32513e0b976c1ce93b7c9aa530f10a16d8c7ad6425a7031
+content_hash: sha256:7cdbcb9820773f4c81d87a13d82e3c3dcca979829092beab206660940fa36974
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:f1c8d1c5cc46784de32513e0b976c1ce93b7c9aa530f10a16d8c7ad6425
 
      图1 resources目录结构示意
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/IbZqi4wuSfizfwOdm3vlBw/zh-cn_image_0000002786519164.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6592E03953C24A038FF3D190CCB465C37BCBCDD8B9AAF0A0E1B034F37BDB24D)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/8US0kv05TgiohhOGhAGCdw/zh-cn_image_0000002788306968.png?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=27AA12E01ADEFD931F26C907B5BEDC6C5F8897D0BBBC001C53CE61595B54B9CB)
 
      例如，开发者可在这两个color.json中定义同名配色定义并赋予不同的色值。
 
@@ -195,7 +195,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
    * 如果应用工程dark目录下有深色资源，则系统组件在深色模式下会自动切换成为深色。
    * 如果应用工程dark目录下没有任何深色资源，则系统组件在深色模式下仍会保持浅色体验。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/NDDmcvJsREq-_6rPgkypXQ/zh-cn_image_0000002786359236.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=5046BA4038742F1ECAF38DF50263D440370C78158FF5F037C1E6AE48B36E53CB)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/1nGrNqZFQymtbGfSD5Wl8g/zh-cn_image_0000002817426331.png?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=F506DE078D2C5ACDC251CB3EBD5CFBCC6F0CB16D7AFEBF5038CB63D972AF5227)
 
 如果应用全部都是由系统组件/系统颜色开发，且想要跟随系统切换深浅色模式时，请参考以下示例修改代码来保证应用体验。
 

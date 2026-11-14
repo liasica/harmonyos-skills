@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-a
 title: 不依赖UI组件的全局菜单 (openMenu)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 菜单 > 不依赖UI组件的全局菜单 (openMenu)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:04+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:4d28ade54421e070f801dd7f98693c0b79880ca3888747062d620c09a752338f
+content_hash: sha256:ab41192bd1b606c8f4d53ef7f6f9a2b6b3f8e842f00e6907680ebedb60e81f58
 ---
 
 [菜单控制 (Menu)](arkts-popup-and-menu-components-menu.md)在使用时依赖绑定UI组件，否则无法使用。从API version 18开始，可以通过使用全局接口[openMenu](../harmonyos-references/arkts-apis-uicontext-promptaction.md#openmenu18)的方式，在无UI组件的场景下直接或封装使用，例如在事件回调中使用或封装后对外提供能力。
@@ -27,7 +27,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/syYaf0DfRoeMeBA-Sa13cw/zh-cn_image_0000002786518998.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F869AA2FF954123A0B764480126E12B50E112FFD9363BDC1D700CCFBC79CCF5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/6p6EXkamRn-QmXh-_kND-w/zh-cn_image_0000002788306802.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FE3BCCF39C3F720F293B1F65771DD8E774B8E24CD046EAEFB2F815592393530)
 
 ### 创建ComponentContent
 
@@ -167,7 +167,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/0Q-kUGWlROuag2bDwUQBHg/zh-cn_image_0000002786518998.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=53DC13C00C0B0D57F378ABAFBB45896E26C7261CBFF5E316D5597F829CFCF95E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/su0SU_YZQBCmxoshljlrQw/zh-cn_image_0000002788306802.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5E7CE0E9D2CB2C06513C0A4E6DECE35DB7CB6CD43C00269944D6CD4BE662061)
 
 ## 关闭菜单
 
@@ -184,7 +184,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/2M3HOQv-SfGjXbVsv83PBw/zh-cn_image_0000002786518998.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=396D0923F1646832611585F6C7D39ADC33662490B2733972545006596687E979)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/T72SnrImR0WSxdV6lcYi2g/zh-cn_image_0000002788306802.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=C83034A9C8B94E4289D83CE41F63C8C2BE1845F2E6E5A9C2B615A426214C9F68)
 
 **说明** 
 

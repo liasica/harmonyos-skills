@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scen
 title: 请求体参数说明
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息推送 > 请求体参数说明
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:88c18d7d1f003c7db1dc52f6cda966d86fe631f2f05a9a399eebebf0ace44401
+scraped_at: 2026-11-14T08:53:49+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6b1bd6f1de20db0a776300afe03bce999e99d0e63daf2845ac226de0c4d17b68
 ---
 
 ## pushOptions
@@ -50,10 +50,11 @@ content_hash: sha256:88c18d7d1f003c7db1dc52f6cda966d86fe631f2f05a9a399eebebf0ace
 | inboxContent | 否 | Array [String] | 多行文本样式的内容，当style为3时，本字段必填，最多支持3条内容，每条最大长度1024且无法完全展示时以“...”截断。详情参见[inboxContent](push-scenariozed-api-request-param.md#inboxcontent示例) 。  **说明：**  Wearable不支持多行文本样式。 |
 | clickAction | 是 | [ClickAction](push-scenariozed-api-request-param.md#clickaction) Object | 点击消息动作，详情请参见[ClickAction](push-scenariozed-api-request-param.md#clickaction)结构体。 |
 | badge | 否 | [AlertBadge](push-scenariozed-api-request-param.md#alertbadge) Object | 通知消息角标控制参数，详情请参见[AlertBadge](push-scenariozed-api-request-param.md#alertbadge)结构体，不设置时应用不显示角标数字，若当前已存在角标，则角标数字不变化。  **说明：**  Wearable、TV不支持通知角标样式。 |
-| sound | 否 | String | 自定义消息通知铃声。此处设置的铃声文件必须放在应用的/resources/rawfile路径下。例如设置为**alert.mp3**，对应应用本地的**​/resources/rawfile/alert.mp3** 文件。支持的文件格式包括MP3、WAV、MPEG等，如果不设置，则用默认系统铃声。  当请求不携带**soundDuration**字段时，建议铃声时长不超过30秒，若超过30秒则截断处理；当请求携带**soundDuration**字段时，详情请参见**soundDuration**字段说明。  **说明：**  · Wearable、TV、PC/2in1不支持自定义铃声。  · 当category取值为MARKETING时，为静默通知，自定义铃声无效。 |
+| sound | 否 | String | 自定义消息通知铃声。此处设置的铃声文件必须放在应用的/resources/rawfile路径下。例如设置为**alert.mp3**，对应应用本地的**​/resources/rawfile/alert.mp3** 文件。支持的文件格式包括MP3、WAV、MPEG等，如果不设置，则用默认系统铃声。  当请求不携带**soundDuration**字段时，建议铃声时长不超过30秒，若超过30秒则截断处理；当请求携带**soundDuration**字段时，详情请参见**soundDuration**字段说明。  **说明：**  · Wearable、TV、PC/2in1、Car不支持自定义铃声。  · 当category取值为MARKETING时，为静默通知，自定义铃声无效。 |
 | soundDuration | 否 | Integer | 自定义消息通知铃声时长。需要配合sound字段使用，只有当请求同时携带sound字段，soundDuration字段才会生效。仅支持数字，单位：s，取值范围 [1, 60]。  sound字段传入的自定义消息通知铃声会播放至soundDuration字段值后停止，若自定义消息通知铃声对应的时长不足soundDuration字段值则会循环播放，在达到soundDuration字段值后停止。 |
 | foregroundShow | 否 | Boolean | 应用在前台时是否展示通知消息。  true：默认值，应用在前后台都展示通知消息，此时[receiveMessage](push-pushservice.md#pushservicereceivemessage)不会被触发，无法获取消息数据。  false：应用只在后台展示通知消息；应用在前台时，通知消息将不会展示，但可以通过[receiveMessage](push-pushservice.md#pushservicereceivemessage)接收通知消息自行完成业务处理，详情请参见[应用在前台时处理通知消息](../harmonyos-guides/push-send-alert.md#应用在前台时处理通知消息)。  **说明：**  foregroundShow字段仅对push-type为0的通知消息生效。 |
 | priorityScene | 否 | String | 消息的优先通知类型。取值如下：  · PRIMARY\_CONTACT：重要联系人消息  · AT\_ME：@我  · URGENT\_MESSAGE：加急消息  · SCHEDULE\_REMINDER：日程待办提醒  **说明：**  发送优先通知消息需要开通[优先通知权益](../harmonyos-guides/priority-notification-permission-guidelines.md)。 |
+| autoDeletedTime | 否 | number | 通知定时清除时间。设置该参数可在指定时间后自动清除通知。默认值为0。传入小于0的值或过去的时间值，该参数不生效。  数据格式：Unix时间戳。  单位：ms。  例如，希望某通知存留3秒（3000ms）后对其进行清除，则对应的清除时间为：设备当前系统时间戳 + 3000。  **说明：**  消息到达终端设备后，通知定时清除时间以设备的系统时间为基准。 |
 | notificationFlags | 否 | [NotificationFlags](push-scenariozed-api-request-param.md#notificationflags) Object | 描述通知标志位。应用可以使用notificationFlags按需削减通知的提醒方式。详见[NotificationFlags](push-scenariozed-api-request-param.md#notificationflags)结构体。 |
 
 ### inboxContent示例
@@ -326,7 +327,7 @@ content_hash: sha256:88c18d7d1f003c7db1dc52f6cda966d86fe631f2f05a9a399eebebf0ace
 
 ### Extend
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/3BqrhaZQQnG_aFsb7oV88g/zh-cn_image_0000002815401699.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=84F88B093CC63C75E1CAD3DF9805F2029F8D3C0C541FF51B09488D7A73005F87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/mpefkYTWRHWfAFDX-o-TdQ/zh-cn_image_0000002817429291.png?HW-CC-KV=V1&HW-CC-Date=20261114T005108Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D23EE4C308CC6C17EEB969D61AF9935F147007E0AC46FA25189618EE14B238D)
 
 * 1 实况卡片辅助区类型，对应type字段：
   + 当辅助区类型为1时，辅助区显示普通文本，使用API字段text传入文本内容。
@@ -345,7 +346,7 @@ content_hash: sha256:88c18d7d1f003c7db1dc52f6cda966d86fe631f2f05a9a399eebebf0ace
 
 ### Game
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/kZ2JPDnxRDepG0ZpfV8pkg/zh-cn_image_0000002786522124.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A96A949CE488B398FEB593C1C0B0A71312FB04975AE7F9E99ABF1D52DB112AEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/kn6RfUUPRUCwrDUA3UivSQ/zh-cn_image_0000002788469872.png?HW-CC-KV=V1&HW-CC-Date=20261114T005108Z&HW-CC-Expire=31536000000&HW-CC-Sign=48E3C44089E9C8DB14939316BC01984AD2BC8F69A8CF4E880CFE08977C15B42D)
 
 * 1 左侧队伍名称，对应host中的[name](push-scenariozed-api-request-param.md#team)字段。
 * 2 左侧队伍图标，对应host中的[icon](push-scenariozed-api-request-param.md#team)和[iconUrl](push-scenariozed-api-request-param.md#team)字段。
@@ -424,7 +425,7 @@ content_hash: sha256:88c18d7d1f003c7db1dc52f6cda966d86fe631f2f05a9a399eebebf0ace
 
 ### SingleTextBlock
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/pxJSQdbFTMOLZVvKWiAarg/zh-cn_image_0000002786362198.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=9711FE2E797E012D5393B79EE6D06DF52B2C1D4E2EFA5E3511D3F2984EFD064E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/wK3eL_PyQQSIYQQHyIkuaA/zh-cn_image_0000002817509363.png?HW-CC-KV=V1&HW-CC-Date=20261114T005108Z&HW-CC-Expire=31536000000&HW-CC-Sign=95A8D959E2369067E5781FA7F65F40FB85C1EE89CA7EBE6BC9C287E9B8B13343)
 
 * 1 辅助标记文本，对应firstLine字段。
 * 2 强调文本内容，对应secondLine字段。
@@ -439,7 +440,7 @@ content_hash: sha256:88c18d7d1f003c7db1dc52f6cda966d86fe631f2f05a9a399eebebf0ace
 
 ### FirstTextBlock
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/3zGWgpmUQUKqf38TjTbLJw/zh-cn_image_0000002815561619.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=75477C14943BA4036CBCF6606F1699393553EFD982B031EA3DAA1863FB4836AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/Hc4PNJZpR-ScUQICdIoNVw/zh-cn_image_0000002788309932.png?HW-CC-KV=V1&HW-CC-Date=20261114T005108Z&HW-CC-Expire=31536000000&HW-CC-Sign=338F5520008652D635FA31AF7ACB795E77863FA03D2CFE8962D4F2973A34A958)
 
 * 1 左侧首行文本，对应firstLine字段。
 * 2 左侧次行文本内容，对应secondLine字段。
@@ -454,7 +455,7 @@ content_hash: sha256:88c18d7d1f003c7db1dc52f6cda966d86fe631f2f05a9a399eebebf0ace
 
 ### LastTextBlock
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/RF5gx16dTMq-XKZXbqThkA/zh-cn_image_0000002815401703.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC3284C88CF43DEA04E736E3DE8030036B99FD2ABA2104B3192A8C8AF434ABDF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/uTF5NghgSLSWL4oGLNgv9A/zh-cn_image_0000002817429295.png?HW-CC-KV=V1&HW-CC-Date=20261114T005108Z&HW-CC-Expire=31536000000&HW-CC-Sign=5247EB3A76157FDCCBE446EAC63F892559857E0C8558A9BA8E2EBEBDACB07BE3)
 
 * 3 右侧首行文本，对应firstLine字段。
 * 4 右侧次行文本内容，对应secondLine字段。
@@ -474,7 +475,7 @@ content_hash: sha256:88c18d7d1f003c7db1dc52f6cda966d86fe631f2f05a9a399eebebf0ace
 
 ### RichProgress
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/UhlPQm01Ri6Z0rrYDI2PPw/zh-cn_image_0000002786522128.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8D08249AFF560AD933F5D99DAE267C866E8587545A06144A1601981FA4ECB01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/V_5n8W5ORraxW7n05tAs-w/zh-cn_image_0000002788469876.png?HW-CC-KV=V1&HW-CC-Date=20261114T005108Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE1E950226743D97FCBD66D137C3143A97F3BB41F230C6475BDD84F3821D9E62)
 
 * 1 进度百分比，对应progress字段。
 * 2 进度指示器左侧的进度点及节点图标的颜色，对应color字段。
@@ -502,7 +503,7 @@ content_hash: sha256:88c18d7d1f003c7db1dc52f6cda966d86fe631f2f05a9a399eebebf0ace
 
 ### ExternalData
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/9rwmtMZPScqfQny4xlAQTg/zh-cn_image_0000002786362200.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A1B924EF06346125F999505467FC1FBC5D8B60938CEC65336779D855B2BBA92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/a6KbUa4nRHqpV2it-Rfuxw/zh-cn_image_0000002817509365.png?HW-CC-KV=V1&HW-CC-Date=20261114T005108Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5290A5E1C8561B15C5C59D8BA3E91C9DEBE6BF323B99116E84133A16DCEA1E6)
 
 * 1 自定义的外屏通知标题，对应title字段。
 * 2 自定义的外屏通知内容，对应body字段。
@@ -540,3 +541,11 @@ content_hash: sha256:88c18d7d1f003c7db1dc52f6cda966d86fe631f2f05a9a399eebebf0ace
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | extraData | 是 | String | 传递给应用的数据，应用根据数据自行处理相关逻辑，展示应用内通话消息相关信息。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  extraData数据获取请参考[示例代码](https://gitcode.com/harmonyos_samples/push-kit-sample-code-clientdemo-arkts/blob/master/entry/src/main/ets/abilities/PushMessageAbility.ets)。 |
+
+## MdmPayload MDM消息
+
+请求体示例请见[MDM消息](push-scenariozed-api-request-example.md#mdm消息)。
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| data | 是 | String | 传递给应用的MDM管理指令数据。（消息体大小限制请参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |

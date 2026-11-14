@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-
 title: 实况窗Live View Kit与Push Kit的API字段关联
 breadcrumb: API参考 > 应用服务 > Live View Kit（实况窗服务） > ArkTS API > 实况窗Live View Kit与Push Kit的API字段关联
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:20+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:18353ede61c3c59a5022f0e9e120f6344975abaee7780d3a3cbd01f307d2ff59
+scraped_at: 2026-11-14T08:53:33+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:c3051ef66be325e75b94ec0c498065dc2e12a8ac5eec980a5f52fea05114c7f7
 ---
 
 针对开发者通过App调用Live View Kit在本地创建实况窗后，再使用Push Kit更新或结束实况窗的场景，开发者可参考Live View Kit与Push Kit的API字段关联表格，在项目中配置实况窗业务所需的API字段。
@@ -17,7 +17,7 @@ content_hash: sha256:18353ede61c3c59a5022f0e9e120f6344975abaee7780d3a3cbd01f307d
 | liveViewManager.startLiveView  liveViewManager.updateLiveView  liveViewManager.stopLiveView  liveViewManager.startLiveViewByTrigger  liveViewManager.stopLiveViewByTrigger | liveViewPayload.operation | liveViewManager.startLiveView对应云侧operation值为0。  liveViewManager.updateLiveView对应云侧operation值为1。  liveViewManager.stopLiveView对应云侧operation值为2。  liveViewManager.startLiveViewByTrigger对应云侧operation值为4。  liveViewManager.stopLiveViewByTrigger对应云侧operation值为6。 |
 | liveView | payload | NA |
 | liveView.id | payload.activityId | NA |
-| liveView.event | payload.event | 在创建实况窗时，云侧API仅支持FLIGHT、TAXI、TRAIN、DELIVERY、QUEUE、RENT、EXPRESS、CHECK\_IN、TRADE、SUBSCRIBE\_TIMER场景。 |
+| liveView.event | payload.event | 在创建实况窗时，云侧API仅支持FLIGHT、TAXI、TRAIN、DELIVERY、QUEUE、RENT、EXPRESS、CHECK\_IN、TRADE、SUBSCRIBE\_TIMER、SCHEDULE场景。 |
 | liveView.subEvent | payload.subEvent | NA |
 | NA | payload.status | 端侧API不支持实况活动状态字段。 |
 | liveView.sequence | payload.version | NA |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Polygon
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Polygon
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c2dad476aef6255bc673e982c79a9081efa13763f6fd19b3567d5b6053597a0d
+content_hash: sha256:c39135b62f900c0a8bae7e707572b3420b62574b4ba4fc0b7b463dbbdd0e7c25
 ---
 
 多边形绘制组件。该组件通过设置顶点坐标列表来定义多边形的形状，支持填充颜色、边框样式等属性配置。组件采用二维坐标系统，按照顶点顺序依次连接形成封闭多边形区域。适用于绘制三角形、四边形、五边形等自定义多边形形状，以及实现图表、图标等需要多边形元素的可视化场景。
@@ -138,7 +138,7 @@ struct PolygonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/W0yFe9B6QU2IRDGypAQuSA/zh-cn_image_0000002786361536.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EEBF856F07D7F0A9EF3C97AEFEBEFD0F4CEE5815D1F8048BE954A4DC3300346)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/-HbeH7W1QBaPRa3RhU_90A/zh-cn_image_0000002817508701.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=105B493AD45D02232C0D91B121AA86C91F524C4888368049D78F5BAB3A2C5F8C)
 
 ### 示例2（宽和高使用不同参数类型绘制多边形）
 
@@ -169,7 +169,7 @@ struct PolygonTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/wZNiff2qTgGajtiKNTZ9iQ/zh-cn_image_0000002815560957.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=90F69EDF3AF139EBE38622243E318ED263553ECFC80021E6727364AC71BE2191)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/NXyqLyolRaqKU9TjO-gynw/zh-cn_image_0000002788309270.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1ACE2469F05672F3BE39BDF15D0EDC9AF001494B0D2F7C0AC4B1FBC0E078188)
 
 ### 示例3（使用attributeModifier动态设置Polygon组件的属性）
 
@@ -212,4 +212,4 @@ struct PolygonModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/fMUCbDwkQH-UjOOt3BQDOA/zh-cn_image_0000002815401041.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=64825EB603A17A44C3CD91FD901B74CABC9EBCC817EFCE8A4ED58FC53EB939E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/8DVlTnbDQjSmTzben_uI_g/zh-cn_image_0000002817428633.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E27FC2AA252953B8E6F4D13EB4A0E0F92780C25A310250F8790A2371766D57B)

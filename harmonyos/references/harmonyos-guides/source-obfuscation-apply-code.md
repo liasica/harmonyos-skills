@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆实践指导
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆实践指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:57+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:416c3fb21424d46c3efac4a4c0527bc325759229329680f0930e943709bbd840
+content_hash: sha256:92f2ba9eace284bac71b54a5506f9cf675316886def966ef5d4ce8b77a9cabb4
 ---
 
 ## 概述
@@ -45,11 +45,11 @@ enable默认为false，默认不开启源码混淆功能（在DevEco Studio 5.0.
 
 **图 1** DevEco Studio选择release编译模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/60heUhT_RESj9DyE8uYbeg/zh-cn_image_0000002815557899.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=C683E3B3F9875FF76E295A0DBA266F57D8476BE15CCBDC912EC8AF6FDD0D1EFE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/vPSH-I_gRwGTBQ7DNJPlwA/zh-cn_image_0000002788466154.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAB1E87A30ACE4F3D1F75D01273715C6EF4658745D881D30A69C623A532268F5)
 
 **图 2** DevEco Studio指定模块编译
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/dgfMD6MUTle0VoOndDz55w/zh-cn_image_0000002815397983.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C7F91EE19C25BE26310A63077F152D36AB7238351ABF86801CB1276E5046B8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/SaSVfKHORcqpDED1Vz6-7g/zh-cn_image_0000002817505641.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6EA5850A7D2E79E0D6B51C1EE709785F86A47E992481CEC625E0486EDB20E5A)
 
 ## 混淆配置能力
 
@@ -65,13 +65,13 @@ enable默认为false，默认不开启源码混淆功能（在DevEco Studio 5.0.
 
 **图 3** 编译配置文件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Thq3x4-8R1CZXjnkoPwGWw/zh-cn_image_0000002786518408.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4400DD972A4117EF42467E6F91DB8D7B0A05243878FFBF11E249F90E14723CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/rT8KFY-KR2O1KM-e48d9Yw/zh-cn_image_0000002788306212.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=111C9C271F1A0D7196CC8A473B7A0E713B8C2BD7EDA17FFF414F3D3BAFDE6CDE)
 
 新建工程时，每个模块下都有obfuscation-rules.txt文件，用于配置混淆。
 
 **图 4** 混淆配置文件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/SQ-fQMNcT6WQmOlgf2NjRA/zh-cn_image_0000002786358480.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=2348F5501A83C140E6256AC71A6CCDE5EF749F2E0D494181128C31E95CFEDA49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Zpl7GwnFSjal_wgeoMsrHg/zh-cn_image_0000002817425575.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=6052F70AF28B7F337A2E5CE3EC41046768436C92CC5B969010C9D08C3817BDEC)
 
 在上图中，obfuscation-rules.txt文件中添加了-enable-property-obfuscation和-enable-toplevel-obfuscation开关，表示已启用属性混淆和顶层作用域名称混淆。
 
@@ -143,7 +143,7 @@ DevEco Studio混淆选项及功能描述如下：
 
     **图 5** DevEco Studio编译产物与缓存文件
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/6z46bse6QdShHsXApJYjRA/zh-cn_image_0000002815557901.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=318B54B5E6C228646EB9809131FFEC90186002D3CAA8F18288D4CC815A93AA5F)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/83vyh9-5RrmeNsHpwW1zTg/zh-cn_image_0000002788466156.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=715D5D7977F7CCBECF1659B9A47D4E9AF5FA178995848F1F1E9AD6AAC10FE623)
 
 ## 调试
 

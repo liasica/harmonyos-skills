@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 容器断点 (ContainerReader)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 容器断点 (ContainerReader)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:02+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:91ebbca423d7c0e9b464b6e59deeb05e7f7f225b1cae8b5fc6679c3be724864b
+content_hash: sha256:ef1763f8252989f4fa82b0c73d9530d909c5cb0d6dc2145067a1490d20d4cccd
 ---
 
 容器断点组件[ContainerReader](../harmonyos-references/ts-container-containerreader.md)是ArkUI提供的一种响应式布局解决方案，从API版本26.0.0开始，允许开发者基于容器尺寸而非窗口尺寸实现自适应布局。与传统的窗口断点相比，容器断点提供了更细粒度的布局控制能力，使得组件能够在不同的容器尺寸下呈现不同的布局效果。
@@ -67,7 +67,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/1VnSR7VqSUq4kSdA4utLqQ/zh-cn_image_0000002815398335.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C555EF0A8FFFF823C36717F5DF13F20B7549D490BCCDDD19287106AD0C08BB84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/f18IzlHeQ5uRCOyghCmEpw/zh-cn_image_0000002817505993.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=F26C95EC5B9820D3F6FDDF37CCDAFA60B3CEC9CF96382DE4F5BAC88269D83A3F)
 
 [ContainerReader](../harmonyos-references/ts-container-containerreader.md)作为Flex、Row或Column的子组件使用时，会优先为非ContainerReader类型的子组件测算尺寸，再结合父容器剩余空间与开发者设置为ContainerReader组件分配空间。这在固定内容与自适应内容并存的场景中较为适用。
 
@@ -109,7 +109,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/BruwhLILT12FHw_MDDqK6A/zh-cn_image_0000002786518760.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3414F33C4CF8AE03978E809F0B06AD74269FA8F08B76E0E13DDC22603C924E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/I822ybmZQhyzQ08z4XuUwg/zh-cn_image_0000002788306564.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF90E381B06FE76634A465546DF08CA5F1DFA3335565084EEF9053A3858222F7)
 
 当Flex、Row或Column容器中有多个[ContainerReader](../harmonyos-references/ts-container-containerreader.md)子组件时，按开发者书写顺序第一个ContainerReader会占满剩余空间，此时其余ContainerReader组件的主轴大小为0。但开发者可以通过layoutWeight属性使多个ContainerReader平分剩余空间。
 
@@ -173,7 +173,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/6Pe6AyYzQBuzJmFx1ASghw/zh-cn_image_0000002786358832.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8F4900F54F20422B7147E6079A2B93360BA221627AD99B8E1B9E04D3AE402A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/sXIt7_D_TkeV37bw65l_EA/zh-cn_image_0000002817425927.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BAE14EF3617FD76631FDBB9CDDDA4970E51CA9B41C44CD041DE9C7E15614FAC)
 
 ## 约束与限制
 
@@ -314,7 +314,7 @@ ContainerReader的主要接口包括ContainerReader和breakpointConfig。
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/asxxhiIOR2O34tnMjSgxlw/zh-cn_image_0000002815398335.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5578BB198C8F3835AD8C2EEE27A0367D868C41DDBDE1D1D319E834718D5E69B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/-0lFDDABQKq_iS-nPhtVHw/zh-cn_image_0000002817505993.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C3705771E5B82E2302F4F37DB5E21D2C935348362A0A1D0E984514319EDE144)
 
 ## 实现独立断点
 
@@ -377,7 +377,7 @@ struct MultiContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/t7bCkq4sSHmXm85o6pEGdw/zh-cn_image_0000002815558253.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3CC393C60C407C9A4702026B289531F33E77A86FCE2ADC310F1E09119791A8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/SMIEPSuRS0yRpCbSZUQ_sg/zh-cn_image_0000002788466508.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=884EEA2290B9D0545E30FC8122DA46E53C573F3D56E479C0B08C98B3A0389CC0)
 
 ## 网格组件根据自身容器断点设置列数
 
@@ -454,7 +454,7 @@ struct GridBreakpointExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/31cVxz2nTQmD19XOvIi-sw/zh-cn_image_0000002815398337.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C154340FDAC6E31D83BE03C1CED595CDCE0FC0EF8ABF8D779BE315D82F3299D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/HkOdxIkYS7G6IZ67CwHd9A/zh-cn_image_0000002817505995.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=E118184DBCD500C5E9D7B4CE40FBA5C4C9F2F7C069C8F142ED28A03A19C6212A)
 
 ## 自定义组件根据容器断点自适应布局
 
@@ -525,7 +525,7 @@ struct AdaptiveCardExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/teIQ_IJgTtOUyi_7bXtpDQ/zh-cn_image_0000002786518762.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CDFBDEFD762896385F8F5DAE932813DFFC9EA50AA862DB28176F8EBDF1857F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/a8_QYLqZR0S3QPLt4SGbdg/zh-cn_image_0000002788306566.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=920199A15D025C8AAB5C157C50AEC0F2F0FCB59FF362EBA0452B04F457C67496)
 
 ## 左右分栏布局自适应
 
@@ -642,8 +642,8 @@ struct SplitLayoutExample {
 
 窄屏时上下排列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/mxIwgPjBR5CBlU1kxzbPXw/zh-cn_image_0000002786358834.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=2812B49435F93BAEA8DB8B8EF25D1D44A6FBA37F9F56CDA3715D47864D238EC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/tt7QnRRZQwy-_Yc_XmtTgw/zh-cn_image_0000002817425929.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D2F40E7B71D47E861B1C78E4604233ED08A9968C5E5428900A8FE5CC9B76BB1)
 
 宽屏时左右排列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/vzQMnIaXT-e-SuM2y1U19w/zh-cn_image_0000002815558255.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9843129DC942F95A97651C28865089270EA0B5E70C890304615D0BC10F97BA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/GAUp6SlNRR6z5YFQOdnB4g/zh-cn_image_0000002788466510.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=82C41A25790FDB295780BCDF4417DACA3B8F887F0413D62644BA0B7B21E14516)

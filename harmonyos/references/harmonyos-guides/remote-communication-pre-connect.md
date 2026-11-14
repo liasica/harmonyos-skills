@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 通过预建连接提升HTTP传输性能
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 提升HTTP传输性能 > 通过预建连接提升HTTP传输性能
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:44+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:d0817e52de7f405273d61a9a444ce5d2686ebc0afea85cdb4b242ba3a1eaa902
+scraped_at: 2026-11-14T08:47:38+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:2636e804bfe5a059bacc62e811ac8f6da0729d77689abc961b8f1373a74d78bf
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ content_hash: sha256:d0817e52de7f405273d61a9a444ce5d2686ebc0afea85cdb4b242ba3a1e
 
 ## 约束与限制
 
-通过预建连接提升HTTP传输性能，支持Phone、PC/2in1、Tablet、Wearable、TV设备。
+通过预建连接提升HTTP传输性能，支持Phone、PC/2in1、Tablet、Wearable、TV设备。从API版本26.0.1开始，新增支持Car设备。
 
 ## 使用预建连接能力（ArkTS）
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 实现请求暂停、恢复与断点续传
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 文件上传下载 > 实现请求暂停、恢复与断点续传
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:863cdc081f9a2d9f8136437c002c1f3335182636ff38a8a71f690a7d8e52e001
+scraped_at: 2026-11-14T08:47:38+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:25ef9317b47d0ac7bea740e43f9867a649ebbf9e2dcdd428ad27565385de0144
 ---
 
 ## 约束与限制
 
-请求暂停、恢复与断点续传能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+请求暂停、恢复与断点续传能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 请求暂停、恢复
 

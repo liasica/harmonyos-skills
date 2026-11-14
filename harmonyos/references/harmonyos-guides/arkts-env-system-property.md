@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-env-sys
 title: "@Env：环境变量"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习响应式环境变量 > @Env：环境变量
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:cf7641eea7adb7f65e7f487d19b7f65bf5c08784ba4cd758d9bac2b266c602c9
+scraped_at: 2026-11-14T08:47:02+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:f781010e6e86f1e3092476de96bbc0d4a8474c78074ea6fcd71d776f44d65205
 ---
 
 在多设备开发的场景中，开发者可以使用[@Env](../harmonyos-references/ts-env-system-property.md)装饰器监听系统环境变量的改变，并根据系统环境变量来进行相应的场景判断，以减少不同设备间的适配逻辑和重复开发。
@@ -32,10 +32,10 @@ content_hash: sha256:cf7641eea7adb7f65e7f487d19b7f65bf5c08784ba4cd758d9bac2b266c
 * [ReadonlyEnvKey.WINDOW\_IS\_FOCUSED](../harmonyos-references/ts-env-system-property.md#属性-1)，用于获取当前自定义组件所在窗口是否处于获焦状态，从API版本26.0.0开始支持。
 * [ReadonlyEnvKey.WINDOW\_IS\_HIGHLIGHTED](../harmonyos-references/ts-env-system-property.md#属性-1)，用于获取当前自定义组件所在窗口是否处于高亮状态，从API版本26.0.0开始支持。
 * [WritableEnvKey.FONT\_SCALE](../harmonyos-references/ts-env-system-property.md#writableenvkey)，用于为后代组件提供局部字体缩放比例，从API版本26.0.0开始支持。
-* [WritableEnvKey.DIRECTION](../harmonyos-references/ts-env-system-property.md#writableenvkey)，用于获取窗口所在屏幕的布局方向，从API版本26.0.0开始支持。
+* [WritableEnvKey.DIRECTION](../harmonyos-references/ts-env-system-property.md#writableenvkey)，用于为后代组件提供布局方向，从API版本26.0.0开始支持。
 * 系统环境变量改变时，通知@Env装饰的变量更新，并触发@Env关联组件刷新，以实现界面内容的同步更新，@Env的参数为WritableEnvKey.FONT\_SCALE和WritableEnvKey.DIRECTION时，父组件可通过[WithEnv](../harmonyos-references/ts-container-with-env.md)中的[.env](../harmonyos-references/ts-container-with-env.md#env)方法向子组件中的@Env传值。
 * @Env装饰的变量不允许开发者初始化。
-  + 当@Env装饰的类型是复杂类型时，@Env会返回给开发者可观察的环境变量类（由[@ObservedV2](arkts-new-observedv2-and-trace.md)装饰，且其由属性[@Trace](arkts-new-observedv2-and-trace.md)装饰）的实例。开发者如果想监听环境变量的变化，可以使用[addMonitor](arkts-new-addmonitor-clearmonitor.md)，具体示例见[在@ComponentV2中使用@Env](arkts-env-system-property.md#在componentv2中使用env)。
+  + 当@Env装饰的类型是复杂类型时，@Env会返回给开发者可观察的环境变量类（由[@ObservedV2](arkts-new-observedv2-and-trace.md)装饰，且其属性由[@Trace](arkts-new-observedv2-and-trace.md)装饰）的实例。开发者如果想监听环境变量的变化，可以使用[addMonitor](arkts-new-addmonitor-clearmonitor.md)，具体示例见[在@ComponentV2中使用@Env](arkts-env-system-property.md#在componentv2中使用env)。
   + 当@Env装饰的类型是简单类型时，开发者可以在@Component中使用[@Watch](arkts-watch.md)，在@ComponentV2中使用@Monitor监听变化，具体示例见[@Watch与@Monitor监听@Env装饰的变量](arkts-env-system-property.md#watch与monitor监听env装饰的变量)。
 
 ## @Env支持参数
@@ -220,11 +220,11 @@ content_hash: sha256:cf7641eea7adb7f65e7f487d19b7f65bf5c08784ba4cd758d9bac2b266c
 
 流程图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/1TSuyupFTniqTqTznBiXCA/zh-cn_image_0000002786358742.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=720AD315BC72700AD1D2C2CF7AEF7EB64F5407600C628AB8334436C0A37B652A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/m-3le8yMQuS6F-zbxkDTcA/zh-cn_image_0000002817425837.png?HW-CC-KV=V1&HW-CC-Date=20261114T004523Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3FBA35D55D543FEB11073EF92175239F7206E1DE8C80B706962BFFC5083E487)
 
 基于上面流程，下面的示例中以@Env使用SystemProperties.BREAK\_POINT为例，各个组件中的初始化如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/DAZ5h9u4QJWI31CRAM9gaA/zh-cn_image_0000002815558163.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D71200C546553E37163D6EDF50EE6B0A111BB16F4EEC2B5A0D3016B31B3C715)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/6y5iAsy-SxGe8LNg1VAcRw/zh-cn_image_0000002788466418.png?HW-CC-KV=V1&HW-CC-Date=20261114T004523Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8F23837F4A1394B08464D837BF97AEE1E114DE26848848ACCDF9951AE29AC2C)
 
 1. Child1初始化@Env(SystemProperties.BREAK\_POINT)：
    * 递归查找直到父组件为空：向上查找父组件Index，没有@Env对应的SystemProperties.BREAK\_POINT实例。
@@ -733,7 +733,7 @@ struct SubWindow {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ALd_aRxaTZG_L6BldmiGNA/zh-cn_image_0000002815398247.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=72B4F23A38FEDF4041F0F6866F0F550500A2A2CAAE38544F4DF32707C957A2CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/eCrl6DQ8RRi-HCcBdhFO5w/zh-cn_image_0000002817505905.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004523Z&HW-CC-Expire=31536000000&HW-CC-Sign=51B0A0854D4252235F587419A2BF5D4AB7F107522641E0EF9B48555595235339)
 
 可以使用lambda闭包函数将ComponentUnderBuilderNode中的@Env向下传递。通过这种方式ComponentUnderBuilderNode中的@Env可以收集到子组件Comp内组件的依赖，在切换窗口实例的时候触发Comp内组件的刷新。
 
@@ -773,7 +773,7 @@ struct Comp {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/gBo0tDF5R_KBk8O2pEiL0w/zh-cn_image_0000002786518672.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=50E56F53B87412045C6B2EB295382760300A060A26EC8C0ADB4331F19A47149B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/C3MHXpOTQoayOGCJa2dWcQ/zh-cn_image_0000002788306476.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004523Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A1D52564A9162BBC9637CCABF8505DC627DAF03AF1AA4D086F3E54E32F53F2D)
 
 ### @Watch与@Monitor监听@Env装饰的变量
 
@@ -824,7 +824,7 @@ struct ChildV1 {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Vj4lu0l8RYWlEHKXRzCW-w/zh-cn_image_0000002786358744.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=39AD008F90CFAE57B0507FB3A3BB9B3463DF960CC0F0F9C5252A725D9A136C75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/cjO01an4TcmVuvBComxMnQ/zh-cn_image_0000002817425839.png?HW-CC-KV=V1&HW-CC-Date=20261114T004523Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A5A6E7A6B22DC14D753A4B78217286B5599FC1C3FBC30F0E39E7C5EC14D6A38)
 
 在@ComponentV2中，可通过@Monitor监听@Env装饰变量的变化。需要注意的是，仅当@Env装饰的变量被整体赋值时才会触发@Monitor监听回调，其内部属性的变化不会触发回调。
 
@@ -877,4 +877,4 @@ struct Child {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/v8Esq0yHRtip7KAOJvVpOg/zh-cn_image_0000002815558165.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EE40512A274C6C1539B811B99AA66BA1D5D377B9D5A2740F7DC9321CCFFA322)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/vY3n-Pv4TEehao41BqOAVw/zh-cn_image_0000002788466420.png?HW-CC-KV=V1&HW-CC-Date=20261114T004523Z&HW-CC-Expire=31536000000&HW-CC-Sign=59D01DFAF4CCA9338EC3CBC5C7102E9B8B7B4B1C6A1493FF9540AC7D92677F26)

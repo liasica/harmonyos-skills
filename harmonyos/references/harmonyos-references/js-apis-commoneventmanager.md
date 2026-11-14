@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.commonEventManager (公共事件模块)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > @ohos.commonEventManager (公共事件模块)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:35:07+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:dec12feb23b3d5ed4034888a996b24bf1c1233780b699cedf412505a3c820313
+scraped_at: 2026-11-14T08:52:00+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:887376d430970e79e8592e05e882010f4a3d9e284135a469f7ebc54e26a7c866
 ---
 
 本模块提供公共事件的发布、订阅、取消订阅等能力。公共事件是一种系统级的事件通知机制，允许应用在系统状态变化（如开机完成、电量变化、屏幕亮灭等）或业务自定义事件发生时，向订阅了该事件的应用发送通知，实现跨组件、跨应用的信息传递。
@@ -40,7 +40,7 @@ content_hash: sha256:dec12feb23b3d5ed4034888a996b24bf1c1233780b699cedf412505a3c8
 
 **说明** 
 
-本模块首批接口从API版本9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
@@ -58,7 +58,7 @@ publish(event: string, callback: AsyncCallback<void>): void
 
 发布公共事件。使用callback异步回调。
 
-**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -106,7 +106,7 @@ publish(event: string, options: CommonEventPublishData, callback: AsyncCallback<
 
 发布公共事件。使用callback异步回调。
 
-**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -162,7 +162,7 @@ createSubscriber(subscribeInfo: CommonEventSubscribeInfo, callback: AsyncCallbac
 
 创建订阅者。使用callback异步回调。
 
-**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -216,7 +216,7 @@ createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Promise<CommonEventSu
 
 创建订阅者。使用Promise异步回调。
 
-**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -266,7 +266,7 @@ createSubscriberSync(subscribeInfo: CommonEventSubscribeInfo): CommonEventSubscr
 
 同步创建订阅者的接口。
 
-**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -316,7 +316,7 @@ subscribe(subscriber: CommonEventSubscriber, callback: AsyncCallback<CommonEvent
 
 订阅公共事件。使用callback异步回调。
 
-**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -386,7 +386,7 @@ unsubscribe(subscriber: CommonEventSubscriber, callback?: AsyncCallback<void>): 
 
 取消订阅公共事件。使用callback异步回调。
 
-**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -475,7 +475,7 @@ subscribeToEvent(subscriber: CommonEventSubscriber, callback: Callback<CommonEve
 
 订阅公共事件，并返回订阅成功或失败信息。使用Promise异步回调。
 
-**元服务API：** 从API版本20开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -551,7 +551,7 @@ type CommonEventData = \_CommonEventData
 
 描述公共事件的数据。
 
-**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -565,7 +565,7 @@ type CommonEventSubscriber = \_CommonEventSubscriber
 
 描述公共事件的订阅者。
 
-**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -579,7 +579,7 @@ type CommonEventSubscribeInfo = \_CommonEventSubscribeInfo
 
 描述公共事件订阅者的信息。
 
-**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -593,7 +593,7 @@ type CommonEventPublishData = \_CommonEventPublishData
 
 描述公共事件内容和属性。
 
-**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 

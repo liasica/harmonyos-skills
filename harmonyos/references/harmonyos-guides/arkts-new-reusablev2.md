@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-reu
 title: "@ReusableV2装饰器：V2组件复用"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > @ReusableV2装饰器：V2组件复用
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:897d19b74b3e332c23278207d28f3b57022b18938800ddb606bc410da009df8c
+scraped_at: 2026-11-14T08:46:58+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:d880fc5e7781f48dfef34dfa7321ac7493ec7551c2253bd26d72d8600f1d904d
 ---
 
 为了降低反复创建销毁自定义组件带来的性能开销，开发者可以使用[@ReusableV2](../harmonyos-references/ts-custom-component-decorator-reusablev2.md#reusablev2)装饰[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件，达成组件复用的效果。
@@ -25,7 +25,7 @@ content_hash: sha256:897d19b74b3e332c23278207d28f3b57022b18938800ddb606bc410da00
 * @ReusableV2仅能装饰V2的自定义组件，即@ComponentV2装饰的自定义组件。并且仅能将@ReusableV2装饰的自定义组件作为V2自定义组件的子组件使用。
 * @ReusableV2同样提供了[aboutToRecycle](../harmonyos-references/ts-custom-component-lifecycle.md#abouttorecycle10)和[aboutToReuse](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoreuse18)的生命周期，在组件被回收时调用aboutToRecycle，在组件被复用时调用aboutToReuse，但与@Reusable不同的是，aboutToReuse没有入参。
 * 在回收阶段，会递归地调用所有子组件的aboutToRecycle回调（即使子组件未被标记可复用）；在复用阶段，会递归地调用所有子组件的aboutToReuse回调（即使子组件未被标记可复用）。
-* @ReusableV2装饰的自定义组件会在被回收期间保持冻结状态，即无法触发UI刷新、无法触发[@Monitor](arkts-new-monitor.md)回调，与[freezeWhenInactive](arkts-custom-components-freezev2.md)标记位不同的是，在解除冻结状态后，不会触发延后的刷新。
+* @ReusableV2装饰的自定义组件会在被回收期间保持冻结状态，即无法触发UI刷新、无法触发[@Monitor](arkts-new-monitor.md)回调，与[自定义组件冻结](arkts-custom-components-freezev2.md)freezeWhenInactive标记位不同的是，在解除冻结状态后，不会触发延后的刷新。
 * @ReusableV2装饰的自定义组件会在复用时自动重置组件内状态变量的值、重新计算组件内[@Computed](arkts-new-computed.md)以及与之相关的@Monitor。不建议开发者在aboutToRecycle中更改组件内状态变量，详见[复用前的组件内状态变量重置](arkts-new-reusablev2.md#复用前的组件内状态变量重置)。
 * V1和V2的复用组件可在一定规则下混用，详见[使用限制](arkts-new-reusablev2.md#使用限制)第二点。
 * 不建议开发者嵌套滥用@ReusableV2装饰器，这可能会导致复用效率降低以及内存开销变大。
@@ -278,7 +278,7 @@ struct ReusableV2Component {
 
 倘若该复用组件下有子组件时，会在回收和复用时递归调用子组件的aboutToRecycle和aboutToReuse（与子组件是否被标记复用无关），直到遍历完所有的孩子组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/r2k2FWgTTh23hUm9lve4dQ/zh-cn_image_0000002786518426.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=39EDD8EF5ACC56D731F7A548CD0475105A50F64237C6FFCE6288D1BCAB577E74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/gWo7RB2HRQuD1VNjEM3n9A/zh-cn_image_0000002788306230.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DA1BCB470C9806AF13924A89B023FA5B6DC9BBCFA46156B72F453135E4112EF)
 
 ## 复用阶段的冻结
 
@@ -364,7 +364,7 @@ struct ReusableV2Component {
 3. 点击Change value按钮，UI无变化，@Monitor不触发且onRender方法不被回调。
 4. 点击Reuse/Recycle按钮，此时调用aboutToReuse回调并输出aboutToReuse的日志，@Monitor触发并输出日志info.age change且onRender方法回调输出info.age onRender，UI发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/RhSnHRd_QnOmrTHCSP-Bdg/zh-cn_image_0000002786358498.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=0369B1BB38200E5339F03100D0D1ACFBB890B4B4BEC2F4EB1A87788BF326947F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/HtBAuBbRQ5q-X4sVKHDIyQ/zh-cn_image_0000002817425593.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=C42EBD992A3767DC1D761F83B33D1AD3488A3D07A5104CB7AAF6780238461BB4)
 
 如果去掉aboutToReuse方法中的自增操作，则上述第四步不会触发@Monitor回调。
 
@@ -551,7 +551,7 @@ struct ReusableV2Component {
 
 开发者可以尝试点击各个变量，并点击Recycle/Reuse按钮查看复用后的重置情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/E6hjV-ByQf20gkGevJ4hOg/zh-cn_image_0000002815557919.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A88D2181FEA708CF1DAE6333C22FF43E74F5EF9FAA7681B725250C3D47D5367)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/moY7fr4TSvqwXh6x2Y-7QA/zh-cn_image_0000002788466174.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=C91F5C07D89DA0F020D20913B1BBB7F500862647E619515756A06C085D0CAED1)
 
 需要注意的是，上面的例子中noDecoInfo未被重置，如果存在监听noDecoInfo.age的@Monitor，因为noDecoInfo本身未产生变化，所以该@Monitor也不会被重置，因此在后续第一次更改noDecoInfo.age时，IMonitorValue的before值将不会被重置，仍是复用前的值。
 
@@ -629,7 +629,7 @@ struct ReusableV2Component {
 2. 点击Recycle/Reuse两次，UI刷新为noDecoInfo.age: 35，@Monitor触发并输出日志age change from 31 to 35。
 3. 点击noDecoInfo.age: 35，UI刷新为noDecoInfo.age: 36，@Monitor触发并输出日志age change from 35 to 36。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/ss4Liz9uQN-9bWm9Pae4Xg/zh-cn_image_0000002815398003.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=CED9DC4635DBA3D3C3A67BA9F4B5851290BFB94A6AA152EF39D82AB7724C3152)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Ow1YyiAvTdigrQLII4MTXw/zh-cn_image_0000002817505661.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=354842AE205EA85A51E1D20201E89C8EE428427BB1053C41FF916D90E6DFBFB6)
 
 由于冻结机制的存在，在aboutToRecycle中赋值不会被@Monitor观察到。而在经历完变量重置后，变量又会被赋予新的值，因此对于组件内状态变量来说，在aboutToRecycle中赋值不会有明显的效果；而常量（例如上面的noDecoInfo）由于冻结机制的存在，在aboutToRecycle中更改age也不会被观察到，并且因为不会被重置，所以相关的@Monitor也不会被重置，即这里的age值本身未被重置，也就不会重置与之绑定的@Monitor。最终表现出来的现象即：第二步回调的@Monitor中，monitor.value()?.before得到的值为31，而非age的初始值30。
 
@@ -688,7 +688,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/L55AAbbISyuVwgoFRtTROA/zh-cn_image_0000002786518428.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=07AFC4DC951C472A917DEC13DAD9073FEEB11841F661DF7A13400F10D4E80BE5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Pe7zlHWqSR-zYBRsiCwwmA/zh-cn_image_0000002788306232.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=358C48E478471DD0333114A20FAA7B118C811B9EB8B7825C9CDD5AD1AF14B03F)
 
 ### 在Repeat组件中使用
 
@@ -770,7 +770,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/4Grp4p0CTOi9YGUWg7kjrQ/zh-cn_image_0000002786358500.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AB309DCF8244319726FB067DF608BCB84A7D1954A74089DA18D748AAECA988D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/xXwIihslTEmfwV8fkkS_9A/zh-cn_image_0000002817425595.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDF1040093F1A3D8A9BDF20C4F6693E49C7904CFF63A08EF60AB4A58F0FCD67C)
 
 ### 在Repeat组件非懒加载场景的each属性中使用
 
@@ -854,7 +854,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/ehmq6mYcQgGCrkpegDqVPQ/zh-cn_image_0000002815557921.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F096C141ADA40AB6D92E6564AD03938C8803A8C62BC2B0A939B8CC6EFE11014)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/0bwEwA30TW6rOH1-deHrBw/zh-cn_image_0000002788466176.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=81B8309D56BB29CC64401D6EE0A3C123F22CDB74B17CA19BFA04C3A6E7D0C5D0)
 
 ### 在ForEach组件中使用
 
@@ -898,15 +898,15 @@ struct ReusableV2Component {
   @Require @Param num: number;
 
   aboutToAppear() {
-    hilog.info(DOMAIN, TAG, 'ReusableV2Component aboutToAppear', this.num); // 创建时触发
+    hilog.info(DOMAIN, TAG, `ReusableV2Component aboutToAppear ${this.num}`); // 创建时触发
   }
 
   aboutToRecycle() {
-    hilog.info(DOMAIN, TAG, 'ReusableV2Component aboutToRecycle', this.num); // 回收时触发
+    hilog.info(DOMAIN, TAG, `ReusableV2Component aboutToRecycle ${this.num}`); // 回收时触发
   }
 
   aboutToReuse() {
-    hilog.info(DOMAIN, TAG, 'ReusableV2Component aboutToReuse', this.num); // 复用时触发
+    hilog.info(DOMAIN, TAG, `ReusableV2Component aboutToReuse ${this.num}`); // 复用时触发
   }
 
   build() {
@@ -917,7 +917,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/ivOgOQT-RxSVc-wXrqof_g/zh-cn_image_0000002815398005.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B288D352FE8DBAEE24591886EDD23ACDCCB96AF040E42E5BF781BB3F37E4542)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/zesKLuQPTaO97qLJI9AQKA/zh-cn_image_0000002817505663.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBBA129A7990A5FC311CF102FB7EFEAF32A379D2BD99C11257DF590CFFE71DD7)
 
 ### 在LazyForEach组件中使用
 
@@ -1062,19 +1062,19 @@ struct ChildComponent {
   @Require @Param data: string;
 
   aboutToAppear(): void {
-    hilog.info(DOMAIN, TAG, 'ChildComponent aboutToAppear', this.data);
+    hilog.info(DOMAIN, TAG, `ChildComponent aboutToAppear ${this.data}`);
   }
 
   aboutToDisappear(): void {
-    hilog.info(DOMAIN, TAG, 'ChildComponent aboutToDisappear', this.data);
+    hilog.info(DOMAIN, TAG, `ChildComponent aboutToDisappear ${this.data}`);
   }
 
   aboutToReuse(): void {
-    hilog.info(DOMAIN, TAG, 'ChildComponent aboutToReuse', this.data); // 复用时触发
+    hilog.info(DOMAIN, TAG, `ChildComponent aboutToReuse ${this.data}`); // 复用时触发
   }
 
   aboutToRecycle(): void {
-    hilog.info(DOMAIN, TAG, 'ChildComponent aboutToRecycle', this.data); // 回收时触发
+    hilog.info(DOMAIN, TAG, `ChildComponent aboutToRecycle ${this.data}`); // 回收时触发
   }
 
   build() {
@@ -1085,4 +1085,4 @@ struct ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/z1vdMjpES1O3TGQJ_8qFYg/zh-cn_image_0000002786518430.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BBAC62C18833C9E48D0B63E44D6AF14950A3D06B521EA9416CD08831CE5B50D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/3J8d6T1mTVyU9MG-zGWg5w/zh-cn_image_0000002788306234.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E0A9D437156FB2C183D6CEEA8A037743C61CDDA6B3674963D1CB2CE56ADE8BB)

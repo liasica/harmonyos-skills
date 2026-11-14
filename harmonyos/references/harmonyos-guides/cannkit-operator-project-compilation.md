@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: AscendC算子工程编译
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > AscendC算子工程开发 > AscendC算子工程编译安装 > AscendC算子工程编译
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:37+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:14e312eb13d42394ae9df450e99ff5106b7c022cf7a56aa881b5bdd17ec1f1a5
+content_hash: sha256:0a5e49755f82530ca99a4f9fa4c4d80e223544ed7158b240ff786cebb56a8f8c
 ---
 
 算子kernel侧和host侧实现开发完成后，需要对算子工程进行编译，将自定义算子部署到ATC工具中，详细的编译操作包括：
@@ -23,7 +23,7 @@ content_hash: sha256:14e312eb13d42394ae9df450e99ff5106b7c022cf7a56aa881b5bdd17ec
 
 **图1** 算子工程编译示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/tg08_XFbSn-2BH5coZbZWQ/zh-cn_image_0000002786360700.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF684CF601432C44E2241A8E21D191D10EDC9EF7BC2ECD6034CEB9D026A959A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/A-keG1BkSd-MUjAEnz043w/zh-cn_image_0000002817507865.png?HW-CC-KV=V1&HW-CC-Date=20261114T004652Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E7DA20A066A247D229CD5F97A87C25FB4135990A4150B77225F64D9F5A4C67B)
 
 ## 编译步骤
 

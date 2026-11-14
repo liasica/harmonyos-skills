@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-offscr
 title: OffscreenCanvasRenderingContext2D对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > OffscreenCanvasRenderingContext2D对象
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:32+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d262482a0335e3760de41b0f0fb374a4d25922aa7355502aba863f92817415fc
+content_hash: sha256:3c961a28bce710026cebb68ec413ab78d69e563ae70956f28e171500b72c5eca
 ---
 
 **说明** 
@@ -77,7 +77,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/v_8R58PuRkC9E3HJLd8rfw/zh-cn_image_0000002815401301.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=6541DD264DE94CAEC3F458A6D21D2BFE42A0A40D96A888DC087A192E2F722C9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/coLA_SqJTwiwkfKTMN1Rlg/zh-cn_image_0000002817428893.png?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA9F70C0AF783A64D22BE636EE6163234C717A42AE9559C147100A7B813385FF)
 
 ## 方法
 
@@ -158,7 +158,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/69lOQtsmRn2g6qhQNwTPsA/zh-cn_image_0000002786521726.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=414488316B601EC08C7255E6F39FD2D1C55ED1C4B29040F19946879E87CD531A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/Dh1wBjuySyqyioX4xnm-8A/zh-cn_image_0000002788469474.png?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=801A1CB8B42E776CAF445E4820BFAFB5EB6558267F57FD026485F308F12F79FA)
 
 ### isPointInStroke
 
@@ -235,7 +235,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/fkaKUJRMRSirw5hgkTskFg/zh-cn_image_0000002786361798.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E6104832EBE2626D9CA1A5676042C29B5CCA82D515007E1A7C49EE21A25A449)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/6sgXwMAEQpevXpGmFI9FcQ/zh-cn_image_0000002817508963.png?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F05C20BDD05B6ED9D9F8737BE46691202E35CC87027AAD5BA50148A9CB9722B)
 
 ### resetTransform
 
@@ -305,4 +305,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/50Y-EqtjSKiv5ulWzvvcKA/zh-cn_image_0000002815561219.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5E3751B29B2C3170364C8DB07C29B072780F8C5FCD6C765E4CA84A0AEB53ACA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/q5bJTWgFTsqsuRoaVo2UZQ/zh-cn_image_0000002788309532.png?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE3486E4A38B7A10A183B34B97CE13C39A4A8124FE85437F95E4D6EE6A9D1786)

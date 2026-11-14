@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-ove
 title: USB串口通信服务开发概述
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB串口通信服务 > USB串口通信服务开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:39+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:3bcf6692c0c782123d9c279e854cb115caf829cb82f3f06f5900a12cca4b6d63
+content_hash: sha256:f804259c2d3a1076408a59421172bfef23c58b21d219dfa0c7bee412eebfc129
 ---
 
 ## 简介
@@ -41,7 +41,7 @@ USB串口服务主要包括两个阶段：
 
 **图1** USB串口收发数据流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/axpyhQy6QTqEJawLrQm-8Q/zh-cn_image_0000002786519682.png?HW-CC-KV=V1&HW-CC-Date=20261112T233055Z&HW-CC-Expire=31536000000&HW-CC-Sign=D71F62A01A419FF3B4DFEECDE0D483EDC119E506C340503FC7FE12DF2C00FCF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/P_41d1HWT6Cf5JHuCvBcWg/zh-cn_image_0000002788307486.png?HW-CC-KV=V1&HW-CC-Date=20261114T004739Z&HW-CC-Expire=31536000000&HW-CC-Sign=639543AD2AA1BCAA998A81B6384D708048E2837D3930CC119E3370FB8F4624B6)
 
 ### 约束和限制
 

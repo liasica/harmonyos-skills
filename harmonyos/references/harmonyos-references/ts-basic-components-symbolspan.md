@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SymbolSpan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SymbolSpan
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:14+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:e09d7b4a90b535c3b12346b45c51e53abb2b4d9159af76a7c87b626a472aec01
+content_hash: sha256:c1d643eba73823a779a794b3d7d6b2d1562f53c5ae48e0be71ecac3c41a83c6b
 ---
 
 SymbolSpan作为Text组件的子组件，用于在文本中显示系统预置的图标小符号（Symbol图标）。支持设置颜色、大小、粗细、渲染策略和动效策略等属性，适用于需要在文本中嵌入图标符号的场景，如状态指示、功能标识等。SymbolSpan仅支持系统预置的symbol资源，可继承父组件Text的属性设置。
@@ -164,7 +164,7 @@ SINGLE表示单色渲染，适用于需要统一颜色的图标显示场景；MU
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/IeyBmihdTneFMo50xfT5IQ/zh-cn_image_0000002815400859.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBB6BB835B877543E6F280DC02A53E8A423E897370B7FE9CC4CA835B41B31CCA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/wpM8umw3QlaKCYQPkj7I7w/zh-cn_image_0000002817428451.png?HW-CC-KV=V1&HW-CC-Date=20261114T005013Z&HW-CC-Expire=31536000000&HW-CC-Sign=77FF0FCF76E44D79E2FFAB5955A03FC255B94B85BC5696A242EBD6B98C5E25CC)
 
 ### effectStrategy
 
@@ -319,7 +319,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/8BwbTf4vTwCRFtLkA3Y1HQ/zh-cn_image_0000002786521284.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7A99B3908460EC0321097D7F3F96315935FD2D2981BB623B1BD29C137322C5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/nKVWoEVTRyW6aupnSaQAMw/zh-cn_image_0000002788469032.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005013Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E5752EA8CA9D1321703758590BF641E20E77DCF1BDA0F027BDAEFEA7B33582E)
 
 ### 示例2（设置动态属性）
 
@@ -353,7 +353,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/XXXVjkm6TDyuwGZWzwrW9Q/zh-cn_image_0000002786361356.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D18A32E98E4307139D7E5A333C060A7D566236BD753D58B3D4CC5A5844976D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/2BAIsnaORW-Kklke4k_o2g/zh-cn_image_0000002817508521.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005013Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6AC591C304E87F826028D90C50A15F4E8E29B497681CA56D9A7EBF40CEA730D)
 
 ### 示例3（设置字体粗细）
 
@@ -425,4 +425,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/iRMYxKq_TDKyxdz2Nt0pjA/zh-cn_image_0000002815560777.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=2453B90D9A19E35C651C09A56C8DE9F55C49DC6E8C6C68E15FB4668533ECD349)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/c1EDYM5wQ5GKW_d_RbxRdQ/zh-cn_image_0000002788309090.png?HW-CC-KV=V1&HW-CC-Date=20261114T005013Z&HW-CC-Expire=31536000000&HW-CC-Sign=2394D3D25DC912D82239C0F5A1A45236569D61E9A5038E4D0CAD32A5F473D9E8)

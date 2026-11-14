@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 快速实现上传下载
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 文件上传下载 > 快速实现上传下载
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:3493395ae28eacae38d002c63cf2fa502e6c9dffd138754b427bd52711a2e661
+scraped_at: 2026-11-14T08:47:37+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:79de3a565443c847ab796e61edb927907cd7db841ef3448a3363e27a73bed27e
 ---
 
 Remote Communication Kit 结合 Core File Kit 可以实现基于文件、目录、对象的快速上传和下载功能。 Remote Communication Kit 提供了远程通信的功能，包括远程连接、数据传输等 API 接口。而 Core File Kit 则提供了文件管理的功能，包括文件读取、写入等 API 接口。结合起来使用，可以通过 Remote Communication Kit 实现文件、目录、对象的远程传输，并且由于 Core File Kit 的高效文件处理能力，可以实现快速的上传和下载功能。
 
 ## 约束与限制
 
-文件上传下载能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+文件上传下载能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 下载功能实现
 

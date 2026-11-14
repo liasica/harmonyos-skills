@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/transferabled
 title: Transferable对象 (NativeBinding对象)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Transferable对象 (NativeBinding对象)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:55+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e6f0df5c305b4412b572e46e2e37257f9b3430323af65c440411faf86f119cda
+content_hash: sha256:a32e8fe6c9ac03bb973de8207116b51cc3ca2aa6312ec5ac9b03ff9282ab16f4
 ---
 
 Transferable对象，也称为NativeBinding对象，是指绑定C++对象的JS对象，其主要功能由C++提供，JS对象壳则分配在虚拟机的本地堆（LocalHeap）中。跨线程传输时复用同一个C++对象，相比JS对象的拷贝模式，传输效率更高。因此，可共享或转移的NativeBinding对象被称为Transferable对象。开发者可以自定义Transferable对象，详细示例请参考[自定义Native Transferable对象的多线程操作场景](napi-coerce-to-native-binding-object.md)。
@@ -14,7 +14,7 @@ Transferable对象，也称为NativeBinding对象，是指绑定C++对象的JS�
 
 如果C++实现能够确保线程安全性，则NativeBinding对象的C++部分支持跨线程共享。NativeBinding对象跨线程传输后，只需重新创建JS壳即可桥接到同一个C++对象上，实现C++对象的共享。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/iSOGqrbmS7eSKfPpvnGrKg/zh-cn_image_0000002815397963.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DD61783CA22A85E3B9D7A39CCFD3AA0424AAA28C3567D0EB336E8E1B3E70C35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/fAr5zK7LS42Jlq0FJrikrg/zh-cn_image_0000002817505621.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=B273DD6DAFBFCFC4EC23226A649C16B86DF40930BE61FBC50BD71F1444FB17F3)
 
 常见的共享模式NativeBinding对象包括：应用上下文（[ApplicationContext](../harmonyos-references/js-apis-inner-application-applicationcontext.md)）等Context类型对象。这些上下文对象封装了应用程序组件的上下文信息，提供了访问系统服务和资源的能力，使得应用程序组件可以与系统进行交互。获取Context信息的方法可以参考[获取上下文信息](application-context-stage.md)。跨线程共享使用上下文的示例可参考[使用TaskPool进行频繁数据库操作](batch-database-operations-guide.md#使用taskpool进行频繁数据库操作)。
 
@@ -22,7 +22,7 @@ Transferable对象，也称为NativeBinding对象，是指绑定C++对象的JS�
 
 如果C++实现包含数据且无法保证线程安全性，则NativeBinding对象的C++部分需要采用转移方式传输。NativeBinding对象跨线程传输后，重新创建JS壳可桥接到C++对象上，但需移除原JS壳与C++对象的绑定关系。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/yhGMNH0oT_-Oji9V2C7Pvg/zh-cn_image_0000002786518388.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=954B334C159BFAA69CEC2F24967C11AE262509116427A13A847BB629AB1AEFAC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/u9dXckghRuywA_mfHeVyJg/zh-cn_image_0000002788306192.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3AAAEC938AAF95F313439E8407E345DA4C983C3115A4E2C3533A799F7CCF5F3)
 
 常见的转移模式NativeBinding对象包括[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)对象，它可以读取或写入图像数据，获取图像信息，常用于显示图片。
 

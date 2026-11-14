@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-perceived-
 title: 感知流畅优化
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 感知流畅优化
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:14+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:a334e2a95eb84471405522f8bd1cb8ec99b35f07918bf0fc42094c859a300aaa
+content_hash: sha256:11e56dc06c57f0fed87505910b7edf7110ad340f2dda8415dde5ebb5eb158ea6
 ---
 
 在应用开发中，动画可以为用户界面增添生动、流畅的交互效果，提升用户对应用的好感度。然而，滥用动画也会导致应用性能下降，消耗过多的系统资源，甚至影响用户体验。关于感知流畅度优化方法，请参阅[提升动画感知流畅度](../harmonyos-guides/arkts-animation-usage-guide.md#提升动画感知流畅度)。
@@ -17,7 +17,7 @@ content_hash: sha256:a334e2a95eb84471405522f8bd1cb8ec99b35f07918bf0fc42094c859a3
 开发者可以在用户交互动作开始时，添加动画元素，如单击效果、转场缩放、加载进度条和共享动画。这些动画可以告知用户当前状态已发生变化，应用程序正在快速运作。动画背后涉及数据计算、布局渲染和内容加载。当新界面渲染完成，动画元素可通过渐变消失或移出屏幕等友好的方式退出视觉区域。
 
 **图1** 应用响应的两个视角  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/UFRYlVTtRCaO7UOas5ltSQ/zh-cn_image_0000002194010988.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=F78FB46DBA74CCCF839494B53A48796610222CD545810DCC5A7BCC12B7DCF457)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/VcbMTKC1T-St1-txoWJsyA/zh-cn_image_0000002194010988.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C8DB406C0E162DA4177C1773CCBC7196D417E24ADF98CB7B988A6A5CD511A70)
 
 ## 转场场景动效感知流畅
 

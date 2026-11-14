@@ -3,15 +3,15 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.notification (通知消息)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > 已停止维护的接口 > @system.notification (通知消息)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:37:16+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:8a2d8be41ea3e44e15a84079a9a6ee6921e04025d64e66041591662bd7473422
+scraped_at: 2026-11-14T08:53:40+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:a939cb0f51ab00cc5a436e5bfc1660206896bdec3da41cc13904c66bbc4b5ec8
 ---
 
 **说明** 
 
-* 从API版本7开始，该接口不再维护，推荐使用新接口[@ohos.notification (Notification模块)](js-apis-notification.md)。
-* 本模块首批接口从API版本3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 从API version 7开始，该接口不再维护，推荐使用新接口[@ohos.notification (Notification模块)](js-apis-notification.md)。
+* 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
@@ -37,7 +37,7 @@ import notification from '@system.notification';
 | --- | --- | --- | --- |
 | contentTitle | string | 否 | 通知标题。 |
 | contentText | string | 否 | [通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)。 |
-| clickAction(deprecated) | [ActionResult](js-apis-system-notification.md#actionresult) | 否 | 通知被点击后触发的行为。  从API版本7开始不再维护。 |
+| clickAction(deprecated) | [ActionResult](js-apis-system-notification.md#actionresult) | 否 | 通知被点击后触发的行为。  从API version 7开始不再维护。 |
 
 ## notification.show
 

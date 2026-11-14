@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: HTTP缓存基本功能
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 提升HTTP传输性能 > 使用HTTP缓存功能提升资源获取性能 > HTTP缓存基本功能
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:30d7d0894f1235ba039a960419789c245cee6a68621fb44b3fc245688dbe8a69
+scraped_at: 2026-11-14T08:47:38+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:855d5ae9fae91955ff50d033ab46edd7a217765ef3b0ad50b92b59f35b824586
 ---
 
 从6.0.0(20)开始，支持HTTP缓存。
@@ -14,7 +14,7 @@ HTTP缓存是一种在客户端存储网络资源副本的机制，当后续请�
 
 ## 约束与限制
 
-HTTP缓存基本功能能力支持Phone、2in1、Tablet、Wearable、TV设备。
+HTTP缓存基本功能能力支持Phone、2in1、Tablet、Wearable、TV设备。从API版本26.0.1开始，新增支持Car设备。
 
 ## 使用HTTP缓存
 

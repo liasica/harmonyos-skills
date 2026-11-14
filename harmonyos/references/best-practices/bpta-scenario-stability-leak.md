@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: 资源泄漏类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 资源泄漏类问题案例
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:22+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:fcab6e5648a36eb2e0a4d9664c4e4269e11242ee8189c1c28a11e7567f673beb
+content_hash: sha256:67fd18f087cf4448133e416872edde7ee6bc3cc2886bf08e2338c362d1f7d87b
 ---
 
 本文按照[其他资源泄漏问题分析方法](bpta-stability-leak-way.md)的流程展开，以实际案例的形式指导开发者如何从泄漏维测日志出发，分析、定位具体泄漏点。开发者可阅读[Resource Leak（资源泄漏）检测](../harmonyos-guides/resource-leak-guidelines.md)了解系统检测资源泄漏问题的机制与日志规格。
@@ -24,7 +24,7 @@ content_hash: sha256:fcab6e5648a36eb2e0a4d9664c4e4269e11242ee8189c1c28a11e7567f6
 
 代码中定时器没有增加停止逻辑导致组件一直没有释放，出现泄漏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/JvYpJn5oTvSE-NVtX3cvvQ/zh-cn_image_0000002404125249.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBA42912B3E956D8F53B39534B10166CB096357B663B84EE50E0BD23F378C4DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/YrNx60aASWaHeAdsK1YRDA/zh-cn_image_0000002404125249.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E7238873820CB23EE44EFA0CAD7B62FEC9D5091B5315346642F279F5070C026)
 
 ### 分析思路
 
@@ -34,7 +34,7 @@ content_hash: sha256:fcab6e5648a36eb2e0a4d9664c4e4269e11242ee8189c1c28a11e7567f6
 
 某应用AppIconCalendar对象大量泄漏触发虚拟机OOM，打开heapdump（堆内存转储文件），按照RetainedSize排序后发现AppIconCalendarEvent.ts18对象存在307.54MB，该对象及其引用的内存占用81%内存**。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/gCGFwHP5QMeI5TXORzhUWQ/zh-cn_image_0000002370405704.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=25609624D229250F219F43DAD51B2FE09AF1A2F6380551421ED7C3DC6DDD948D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Cj9sI8vIQIC7RYb0No3xAw/zh-cn_image_0000002370405704.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BA5270E96E886DB4FA43A210BDA8766E72532CC312F2ED8BB8354EA35BED8B0 "点击放大")
 
 结合代码分析**：**这两个定时器没有停止逻辑导致组件对象一直未析构。
 
@@ -80,22 +80,22 @@ void DemoCase(int length)
 
 1. 某应用发生PSS泄漏，分析采样文件，发现峰值内存TopPssMemory为2.9GB左右，且内存一直增长。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/N78n77T7SyaROrLDtKFjGw/zh-cn_image_0000002404045437.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBFCB3365B72EDC7A5F420A69DAE8420336363AD7273BA3F3279E2BFBC2267BC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/PJkhn0yqRm6QeVhkQ4mi1g/zh-cn_image_0000002404045437.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=38978A8D4044C7BD973C3876C33F037FC0D153516B425BAE4B25D23693BF5F77)
 2. 分析smaps日志，发现本例当前应用jemalloc（内存分配器）大小2.6GB（Pss 1.5GB + SwapPss 1.1GB），占总内存的90%+，因此怀疑堆内存泄漏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/B6Cv5pbFTDO7c10XF1O_wA/zh-cn_image_0000002370565616.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F496759ADCC69EFE09CDAC971629EBD8ED3885D54D4F116C769BCDF2145EBC5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/ZnENX4spSSmMgTl25oF5sQ/zh-cn_image_0000002370565616.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1ADFA9A9003C76B7B144C3C755B49262EA40F286E81E29675824520396CF423D)
 3. 按照[其他资源泄漏问题分析方法](bpta-stability-leak-way.md)基于NMD（Native Memory Dump）和profiler继续分析：
 
    观察NMD信息发现，size=12582912字节的内存块占用最多（allocated值最大），优先怀疑该内存块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/14rHWKhJQ-2wFfAcgW6aFA/zh-cn_image_0000002404125253.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A27C59182BA4DFE58031DB3679BFAB1C1F0D43553A3CDEA771942E6009C4C6A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/gtsafg_pQDieONQ33pVnEw/zh-cn_image_0000002404125253.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=7588FBBE6EB970F193285E120F71495F4E71DCD54C6F3A58AB15BF0B2020E170)
 4. 分析profiler日志：
    * 方法一：将获取到的profiler文件导入DevEco Studio Profiler插件中进行分析，通过将profile框选All Heap，解析profiler，选择Created & Existing，内存块会按照占用比例排序，此处展开的栈中，存在内存占用比例为98%的可疑点，展开可疑点发现其中大头是“operator new(unsigned long)”申请了89次。此时，将步骤3中NMD找到的size=12582912字节的内存块乘以89再对齐是GB单位，大小恰好是1.04G左右，由此可确认进程的真正泄漏点。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CfJAH-XRSumNBuFJ10CQCg/zh-cn_image_0000002370405708.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=863BC1DF55C18611B4628D46B7D80A59D0444240E44E3B82B4E9DFFF28F01259 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/BjmGYgL5RIWygAruVuuv4w/zh-cn_image_0000002370405708.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5AA07B6AA9146B39110E2AC79C81A86B213EF9406EB3007557C80A7F554966D "点击放大")
    * 方法二：本地搭建[Smartperf-Host](https://gitcode.com/openharmony-sig/smartperf)环境，并导入profiler日志进行解析，框选All Heap，解析profiler，选择Created & Existing，在搜索框中搜索12582912字节，并查看调用栈，确认泄漏点。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/DG9q5R9ySSO2pEguedMzzg/zh-cn_image_0000002404045445.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8EE49A5865B8412E365487AE6A3AC43871EDB8C77E91C19663FC4DA92BFFA18)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Ghlh0_iARByekc3AvkElpg/zh-cn_image_0000002404045445.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=D316AD8DF05F38E5619FF24A56871A78E869A41C3929B6A348642B3C0A1C2C95)
 5. 分析代码：bitmapBuffer new后只在异常分支释放了内存，主分支未释放。
 
 ### 修复方法
@@ -120,13 +120,13 @@ void DemoCase(int length)
 
 1. 分析sample文件，可确认整机ION内存在16:37-16:52期间内存波动较明显。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/To_ss6kpT8ioX2zJxBlVnw/zh-cn_image_0000002370565620.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=A547897FEECF30B339F3F93ED42DA54844451BDA91FA46C446303864FA8D822D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/olH1WZ9LR-GrD0ZT5nwZTg/zh-cn_image_0000002370565620.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E2DDD6BA6932BC726C9090F4CF561710E07815F1377CF8E861D898F25ED1647)
 2. 根据memleak-kernel-[module]-0-[timestamp].txt中ION节点信息，看到上报进程process7的ION内存占用3.3G，基本可以确定第一步中的内存增长时间段就是process7进程泄漏时间段。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/uilUrO7dQFuURx3SB0prnw/zh-cn_image_0000002404125257.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=18BA7943F07F5939D165977CA9E78726FE72AF80D7720A82EF8F39C2F1908613)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/tNPJm5CxQbuNtjMYjRc21Q/zh-cn_image_0000002404125257.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB1DD768EB26F7158688BB99B3C1A52BF2D52DF7CA27379DD56EA669A4A38BBB)
 3. 进一步查看process7进程详细ION内存信息，主要是192512000和48128000 bytes大小的内存块占用，再结合内存增长时间段的日志，以及这些buffer都设定了pixelmap name，确认是ImageEditorCallback存在ION泄漏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ZcmhTo-2Q7eiV46rOBSkWA/zh-cn_image_0000002370405712.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=C77DAC44CBBEB238EB2DD4832C718CCE794A5855D81315AD9491CFF89961B52D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/zzGw79GcQnGlKLR5-nqXYQ/zh-cn_image_0000002370405712.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AF6CAC3AC73BC8E2F7C51B7943256364BC70C08F055D35BA3CB453A11351C89)
 4. 根据pixelmap name已确定创建pixelmap的位置（由于开发者已通过[setMemoryNameSync()](https://gitcode.com/openharmony/docs/blob/c897489afd3a7403adfff79f20b8596ca05f7bcf/zh-cn/application-dev/reference/apis-image-kit/js-apis-image.md#setmemorynamesync13)接口接入能力，所以能快速定位到pixelmap创建位置），查看相关代码确认问题根因：创建pixelmap后未关闭句柄。
 
 ### 修复方法
@@ -201,19 +201,19 @@ END
 3. 获取这些so的符号表（libfdleak\_tracker.so是维测用的so，可忽略），通过[llvm-symbolizer - convert addresses into source code locations](https://llvm.org/docs/CommandGuide/llvm-symbolizer.html)获取调用栈。
 4. 对应的代码调用顺序如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/InEVHkACRP6FBm4wSizTZw/zh-cn_image_0000002404045449.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=00C9A2BF34BA5E51D33587E6663CA036A32E2E9E8F990F22C02B60A18553B930)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/yZbtC7XJRLmoO7kPe_vHIQ/zh-cn_image_0000002404045449.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7C3838CD181E76F4FA1C2501DF7ED1BFE9BB38C10D43B1799C18F5A58633E15)
 
    dlopen获取的句柄的位置如下，fd存在saProfile，需要进一步查看saProfile的释放时机。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Ybsv620-TDOYlYNMQaKJqw/zh-cn_image_0000002370565624.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFF27D93C81C31F76D2AC2E36A20E9D585FAC74602C73E5B8584A9F4903BB170 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/kfgL0YMnQG-9MFv0tIqUPg/zh-cn_image_0000002370565624.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9B10F46781DDF5F1C010270ED1178DA4A21A09768AB0874D95A9E725CB6AB4D "点击放大")
 
    搜索saProfile的释放位置，发现只有在ParseUtil对象析构时才会释放fd资源。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/1v6u39poSmq6EcSZwNqjHw/zh-cn_image_0000002404125261.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=1791DA2B849F2AC9895409BCD7B268FE8C219F4E696D9D22A70C61657442769A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/OSCER3naSuSB_5k4zGLAxw/zh-cn_image_0000002404125261.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=52770D2A94684F714EA4DA8420F9875158D2FF01B61869B7B1F2EB4AF98E388A "点击放大")
 
    找到调用者的位置，发现定义了一个类内的私有变量，而这个类的对象一直没析构，导致profileParser\_一直没析构，从而导致fd资源一直未释放。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/eI3r5SUVQDmyw1LbiZy0AA/zh-cn_image_0000002370405716.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=E35E2CFEFACC8A2EDB4B560AAEFDF5D03F1F050B8A31C4E0DB87AD452C8BA9C5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/C0ax4zJSSUecVMEhK5A-qw/zh-cn_image_0000002370405716.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=3469F0F77C3505F03130CF51D141F5F90FB497E3A28E196E8B24DCC319A02E99)
 
 ### 修复方法
 
@@ -269,7 +269,7 @@ Top 10 Thread Name:
 1. HttpClient.getRequestSize()接口判断当前是否还有未结束的请求
 2. HttpClient.releaseHttpClient()接口释放线程
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/AZXQzIGkRha_0NgJpBJwNA/zh-cn_image_0000002404045453.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DB780A346795413CD9774800A96125403EF936B75E5E76CFA865B520141145E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/tFqWErR0Ts-Qnn8RMRcDHA/zh-cn_image_0000002404045453.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED94E8BCF25E472C0291F40940BA092595C58C56FB45DFCCC2B9E49B4232CC36)
 
 ### 建议与总结
 

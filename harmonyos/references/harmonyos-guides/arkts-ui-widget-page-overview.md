@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片界面开发概述
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片UI界面开发 > ArkTS卡片界面开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:18+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:a03d23d3e4c06afeb0fe2ffb4b43d459be0be2936e3c2aa6c76203703ce86812
+content_hash: sha256:314f390b6d25f0850ea3de0706a3e2df2479ee2032a15fde8de11992afb0af6f
 ---
 
 ArkTS卡片开发采用通用[ArkTS语言](learning-arkts.md)，开发者可以使用[ArkTS声明式开发范式](arkts-ui-development-overview.md)开发ArkTS卡片页面。
 
 如下卡片页面由DevEco Studio模板自动生成，开发者可以根据自身的业务场景进行调整。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/f5ZXzlwQTEOT0w869IpeKQ/zh-cn_image_0000002786519454.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5387BB58CF0046FCBBDFB937CD8AB2873522EA121E3C85644D36577BD27D668B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/XUik385NQ82rh4R1llA3Hw/zh-cn_image_0000002788307258.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEB02D89F02F38FD3057E20C0F0C67CC159F21D3599EB4696DEB9D8789B05A66)
 
 ## ArkTS卡片支持的页面能力
 
@@ -22,4 +22,4 @@ ArkTS卡片具备JS卡片的全量能力，并且新增了动效能力和自定�
 
 例如：以下说明表示CircleShape可在ArkTS卡片中使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/DjTQjPHLSTq4XWIJAhBn_A/zh-cn_image_0000002786359526.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=38849CD57A8D28C8E74BEE67181F4A41A28CE19D3155EEE2BD554FE446E82342)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/_K3MNQERRqGkWyqqKnFtDg/zh-cn_image_0000002817426621.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FAE0265CFDE890D9D25C7E801B1637EA24052D1E23C3BCFAF1E1BB441597922)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/outgoing-call
 title: 去电场景
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > 去电场景
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:32dd4d9b47f105c1b8b21ea356fb27c2d17b01c0531027b60189b51b1d20a285
+content_hash: sha256:b10fbe2774be1e601ecd984b0f08d596a2945c3ea1822db808a8c99b69af0d56
 ---
 
 ## 场景介绍
@@ -30,7 +30,7 @@ content_hash: sha256:32dd4d9b47f105c1b8b21ea356fb27c2d17b01c0531027b60189b51b1d2
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/v_0pvdsNTPO7n2Dh0EIazw/zh-cn_image_0000002815399731.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA1A1797A0D9600169B3A0D21512F508357F31E733831293C3820185AE9867E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/x50SCFaQSHO_QuUkIIcMBw/zh-cn_image_0000002817507391.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=465ECAD53DAD35EF5489198A3CED63291F7D59CA7E25EF8C37A29B3C2DA5B825)
 
 ## 接口说明
 

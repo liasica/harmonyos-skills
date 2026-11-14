@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-bluetooth-
 title: 低功耗蓝牙基础使用
 breadcrumb: 最佳实践 > 网络 > 低功耗蓝牙基础使用
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb917ff
+scraped_at: 2026-11-14T08:54:07+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:238950fca13d269487002e5761c06900935e899f1c5c58fd1f11e188bcd8232a
 ---
 
 ## 概述
 
-蓝牙（Bluetooth）是一种无线通信技术，被广泛应用于各种电子设备之间的短距离连接与数据传输。而低功耗蓝牙（Bluetooth Low Energy，简称 BLE）是一种能够在低功耗条件下进行通信的蓝牙技术，支持发起BLE扫描、发送BLE广播报文以及基于通用属性协议（Generic Attribute Profile，GATT）的连接与数据传输。与传统蓝牙相比，BLE功耗更低，适用于需要长时间运行的低功耗设备，例如智能手表、健康监测设备、智能家居等。
+蓝牙（Bluetooth）是一种无线通信技术，被广泛应用于各种电子设备之间的短距离连接与数据传输。而低功耗蓝牙（Bluetooth Low Energy，简称BLE）是一种能够在低功耗条件下进行通信的蓝牙技术，支持发起BLE扫描、发送BLE广播报文以及基于通用属性协议（Generic Attribute Profile，GATT）的连接与数据传输。与传统蓝牙相比，BLE功耗更低，适用于需要长时间运行的低功耗设备，例如智能手表、健康监测设备、智能家居等。
 
 本文针对BLE开发，以心跳监控仪场景为例，主要介绍蓝牙扫描管理、蓝牙连接状态管理和蓝牙设备特征值同步三个场景，并分别从服务端和客户端描述其相关实现。
 
@@ -23,11 +23,11 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
 3. 数据传输阶段：服务端订阅描述符写请求事件，准备数据（如心率值），通过特征通知机制向已连接客户端发送数据；客户端监听特征值变化事件，接收并解析数据内容，根据业务需求更新用户界面或执行相应逻辑。
 4. 断开连接阶段：服务端在连接状态回调中处理断开事件，可以停止广播并清理资源；客户端主动断开连接，关闭GATT客户端，注销监听器，重置连接状态，可选择将设备ID持久化以便后续自动重连。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/N2lB-QM0Q9WWEoy6oUMRlg/zh-cn_image_0000002492448638.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=39F0AD43D8F80B008BAA133B37EFA8DF256CEEB27C22746AE89EC0548F14617F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/kp1-HiDaRsyWY8K2Qqj5kQ/zh-cn_image_0000002492448638.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=8787CF4448FE8A4B94E7C7EB19BADA6C460C0810A45999CEB6FC4AAFE1B85A0B "点击放大")
 
 ### 关键技术
 
-实现BLE通信能力主要需要使用[@ohos.bluetooth.ble (蓝牙ble模块)](../harmonyos-references/js-apis-bluetooth-ble.md)、[@ohos.bluetooth.access (蓝牙access模块)](../harmonyos-references/js-apis-bluetooth-access.md)中提供的API能力，服务端主要使用[开启蓝牙](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)、[创建服务器实例](../harmonyos-references/js-apis-bluetooth-ble.md#blecreategattserver)、[发送BLE广播](../harmonyos-references/js-apis-bluetooth-ble.md#blestartadvertising)、[特征值变化通知](../harmonyos-references/js-apis-bluetooth-ble.md#notifycharacteristicchanged)等API；客户端主要使用[开启蓝牙](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)、[订阅BLE设备扫描结果](../harmonyos-references/js-apis-bluetooth-ble.md#bleonbledevicefind)、[BLE设备扫描](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)、[蓝牙连接](../harmonyos-references/js-apis-bluetooth-ble.md#connect)、[订阅蓝牙低功耗设备的特征值变化](../harmonyos-references/js-apis-bluetooth-ble.md#onblecharacteristicchange)、[订阅蓝牙低功耗设备的连接状态变化事件](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange)、[持久化存储蓝牙设备的虚拟MAC地址](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)等API。
+实现BLE通信能力主要需要使用[@ohos.bluetooth.ble（蓝牙ble模块）](../harmonyos-references/js-apis-bluetooth-ble.md)、[@ohos.bluetooth.access（蓝牙access模块）](../harmonyos-references/js-apis-bluetooth-access.md)中提供的API能力，服务端主要使用开启蓝牙（[access.enableBluetooth()](../doccenter-references/api/js-apis-bluetooth-ble.md#notifycharacteristicchanged)）、创建服务器实例（[ble.createGattServer()](../doccenter-references/api/js-apis-bluetooth-ble.md#blecreategattserver)）、发送BLE广播（[ble.startAdvertising()](../doccenter-references/api/js-apis-bluetooth-ble.md#blestartadvertising)）、特征值变化通知（[notifyCharacteristicChanged()](../doccenter-references/api/js-apis-bluetooth-ble.md#notifycharacteristicchanged)）等API；客户端主要使用开启蓝牙（[access.enableBluetooth()](../doccenter-references/api/js-apis-bluetooth-ble.md#notifycharacteristicchanged)）、订阅BLE设备扫描结果（[ble.on('BLEDeviceFind')](../doccenter-references/api/js-apis-bluetooth-ble.md#bleonbledevicefind)）、BLE设备扫描（[ble.startBLEScan()](../doccenter-references/api/js-apis-bluetooth-ble.md#blestartblescan)）、蓝牙连接（[connect()](../doccenter-references/api/js-apis-bluetooth-ble.md#connect)）、订阅蓝牙低功耗设备的特征值变化（[on('BLECharacteristicChange')](../doccenter-references/api/js-apis-bluetooth-ble.md#onblecharacteristicchange)）、订阅蓝牙低功耗设备的连接状态变化事件（[on('BLEConnectionStateChange')](../doccenter-references/api/js-apis-bluetooth-ble.md#onbleconnectionstatechange)）、持久化存储蓝牙设备的虚拟MAC地址（[access.addPersistentDeviceId()](../doccenter-references/api/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)）等API。
 
 ### 开发流程
 
@@ -35,20 +35,20 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
 
 **服务端**
 
-1. 检查蓝牙是否开启，若未开启则调用[enableBluetooth()](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)接口开启蓝牙；
-2. 调用[createGattServer()](../harmonyos-references/js-apis-bluetooth-ble.md#blecreategattserver)接口创建[GattServer](../harmonyos-references/js-apis-bluetooth-ble.md#gattserver)实例，即表示创建GATT连接中的服务端；
+1. 检查蓝牙是否开启，若未开启则调用[access.enableBluetooth()](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)接口开启蓝牙；
+2. 调用[ble.createGattServer()](../harmonyos-references/js-apis-bluetooth-ble.md#blecreategattserver)接口创建[GattServer](../harmonyos-references/js-apis-bluetooth-ble.md#gattserver)实例，即表示创建GATT连接中的服务端；
 3. 调用[addService()](../harmonyos-references/js-apis-bluetooth-ble.md#addservice)接口在服务端添加服务；
-4. 调用[startAdvertising()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartadvertising)接口开始发送BLE广播，向连接的客户端设备提供数据；
+4. 调用[ble.startAdvertising()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartadvertising)接口开始发送BLE广播，向连接的客户端设备提供数据；
 5. 调用[on('connectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onconnectionstatechange)方法在服务端订阅GATT profile协议的连接状态变化事件；
 6. 调用[notifyCharacteristicChanged()](../harmonyos-references/js-apis-bluetooth-ble.md#notifycharacteristicchanged)接口，在服务端特征值发生变化时，主动通知已连接的客户端设备。
 
 **客户端**
 
-1. 检查蓝牙是否开启，若未开启则调用[enableBluetooth()](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)接口开启蓝牙；
-2. 调用[ble.on('BLEDeviceFind')](../harmonyos-references/js-apis-bluetooth-ble.md#bleonbledevicefind)接口订阅BLE设备扫描结果上报事件，并调用[startBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)接口发起BLE扫描流程；
-3. 调用[createGattClientDevice(deviceId)](../harmonyos-references/js-apis-bluetooth-ble.md#blecreategattclientdevice)接口，基于扫描到的服务端的广播地址创建[GattClientDevice](../harmonyos-references/js-apis-bluetooth-ble.md#gattclientdevice)实例，即表示创建GATT连接中的客户端；
+1. 检查蓝牙是否开启，若未开启则调用[access.enableBluetooth()](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)接口开启蓝牙；
+2. 调用[ble.on('BLEDeviceFind')](../harmonyos-references/js-apis-bluetooth-ble.md#bleonbledevicefind)接口订阅BLE设备扫描结果上报事件，并调用[ble.startBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)接口发起BLE扫描流程；
+3. 调用[ble.createGattClientDevice()](../harmonyos-references/js-apis-bluetooth-ble.md#blecreategattclientdevice)接口，基于扫描到的服务端的广播地址创建[GattClientDevice](../harmonyos-references/js-apis-bluetooth-ble.md#gattclientdevice)实例，即表示创建GATT连接中的客户端；
 4. 调用[on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange)接口订阅GATT profile协议的连接状态变化事件，随后调用[connect()](../harmonyos-references/js-apis-bluetooth-ble.md#connect)接口发起连接远端BLE设备；
-5. 当[on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange)回调函数返回的连接状态为[STATE\_CONNECTED](../harmonyos-references/js-apis-bluetooth-constant.md#profileconnectionstate)时，调用[getServices()](../harmonyos-references/js-apis-bluetooth-ble.md#getservices)进行服务发现，获取服务端设备支持的所有服务；
+5. 当[on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange)回调函数返回的连接状态[ProfileConnectionState](../doccenter-references/api/js-apis-bluetooth-constant.md#profileconnectionstate)为STATE\_CONNECTED时，调用[getServices()](../harmonyos-references/js-apis-bluetooth-ble.md#getservices)进行服务发现，获取服务端设备支持的所有服务；
 6. [getServices()](../harmonyos-references/js-apis-bluetooth-ble.md#getservices)发现服务后，调用[setCharacteristicChangeNotification()](../harmonyos-references/js-apis-bluetooth-ble.md#setcharacteristicchangenotification)启用接收服务端特征值内容变更通知，并调用[on('BLECharacteristicChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onblecharacteristicchange)接口订阅蓝牙低功耗设备的特征值变化事件；
 7. 启用接收服务端特征值内容变更通知成功后，客户端调用[writeCharacteristicValue()](../harmonyos-references/js-apis-bluetooth-ble.md#writecharacteristicvalue)或[writeDescriptorValue()](../harmonyos-references/js-apis-bluetooth-ble.md#writedescriptorvalue)向指定的服务端特征值或描述符写入数据。
 
@@ -83,28 +83,28 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
 
 这种协同工作机制大幅提升了BLE连接效率。服务端的精准广播与客户端的智能过滤形成互补，避免了传统全量扫描带来的资源浪费。当用户在应用中看到设备列表时，背后已完成多层筛选：硬件层过滤掉非BLE设备，协议层过滤掉不匹配服务的设备，应用层进一步通过制造商数据确认目标设备身份。这种分层过滤策略不仅加速了设备发现过程，也显著降低了系统功耗，为后续的连接与数据传输奠定了高效基础。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/attjD1jTSIavdtYRX0r4OQ/zh-cn_image_0000002524568343.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=517C323D0FD3A5467C400A1E9CBEED1F1E5E40B98522DBF83BC066CF407E1520 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/oLUtKJ6ORl6LEDBh7WmKTA/zh-cn_image_0000002524568343.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=360AE4F09BC9A27C2AA93E4E0555A1D6DE77A2AE19A7FB924EEF7A12677B2158 "点击放大")
 
 **关键技术**
 
 服务端：
 
-1. 调用[access.getState()](../harmonyos-references/js-apis-bluetooth-access.md#accessgetstate)接口查询设备的蓝牙状态，根据返回的[BluetoothState](../harmonyos-references/js-apis-bluetooth-access.md#bluetoothstate)值判断蓝牙是否开启，若未开启则调用[enableBluetooth()](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)接口开启蓝牙；
-2. 调用[startAdvertising()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartadvertising11-1)接口，开启广播，只有服务端先开启广播，客户端才能搜索到设备；
-3. 完成广播后，调用[stopAdvertising()](../harmonyos-references/js-apis-bluetooth-ble.md#blestopadvertising)接口，停止广播。
+1. 调用[access.getState()](../harmonyos-references/js-apis-bluetooth-access.md#accessgetstate)接口查询设备的蓝牙状态，根据返回的[BluetoothState](../harmonyos-references/js-apis-bluetooth-access.md#bluetoothstate)值判断蓝牙是否开启，若未开启则调用[access.enableBluetooth()](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)接口开启蓝牙；
+2. 调用[ble.startAdvertising()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartadvertising11-1)接口，开启广播，只有服务端先开启广播，客户端才能搜索到设备；
+3. 完成广播后，调用[ble.stopAdvertising()](../harmonyos-references/js-apis-bluetooth-ble.md#blestopadvertising)接口，停止广播。
 
 客户端：
 
-1. 调用[access.getState()](../harmonyos-references/js-apis-bluetooth-access.md#accessgetstate)接口查询设备的蓝牙状态，根据返回的[BluetoothState](../harmonyos-references/js-apis-bluetooth-access.md#bluetoothstate)值判断蓝牙是否开启，若未开启则调用[enableBluetooth()](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)接口开启蓝牙；
-2. 调用[startBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)接口，通过[ScanOptions](../harmonyos-references/js-apis-bluetooth-ble.md#scanoptions)参数设置扫描参数配置，通过Array<[ScanFilter](../harmonyos-references/js-apis-bluetooth-ble.md#scanfilter)>参数设置扫描结果的过滤策略集合，进行扫描，同时调用[ble.on('BLEDeviceFind')](../harmonyos-references/js-apis-bluetooth-ble.md#bleonbledevicefind)方法订阅BLE设备扫描结果上报事件，处理扫描结果；
+1. 调用[access.getState()](../harmonyos-references/js-apis-bluetooth-access.md#accessgetstate)接口查询设备的蓝牙状态，根据返回的[BluetoothState](../harmonyos-references/js-apis-bluetooth-access.md#bluetoothstate)值判断蓝牙是否开启，若未开启则调用[access.enableBluetooth()](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)接口开启蓝牙；
+2. 调用[ble.startBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)接口，通过[ScanOptions](../harmonyos-references/js-apis-bluetooth-ble.md#scanoptions)参数设置扫描参数配置，通过Array<[ScanFilter](../harmonyos-references/js-apis-bluetooth-ble.md#scanfilter)>参数设置扫描结果的过滤策略集合，进行扫描，同时调用[ble.on('BLEDeviceFind')](../harmonyos-references/js-apis-bluetooth-ble.md#bleonbledevicefind)方法订阅BLE设备扫描结果上报事件，处理扫描结果；
 3. 调用[connect()](../harmonyos-references/js-apis-bluetooth-ble.md#connect)接口连接远端BLE设备；
-4. 调用[stopBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestopblescan)接口停止蓝牙扫描。开发者可根据具体业务需求，在适当时机停止蓝牙扫描，例如扫描到目标设备后或断开连接时。
+4. 调用[ble.stopBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestopblescan)接口停止蓝牙扫描。开发者可根据具体业务需求，在适当时机停止蓝牙扫描，例如扫描到目标设备后或断开连接时。
 
 ### 实现流程
 
 **服务端**
 
-1. 开启广播前，需要先查询蓝牙是否可用，根据返回结果[BluetoothState](../harmonyos-references/js-apis-bluetooth-access.md#bluetoothstate)的值来判断蓝牙是否开启，当取值是STATE\_ON 或STATE\_TURNING\_ON返回true，表示蓝牙已开启。
+1. 开启广播前，需要先查询蓝牙是否可用，根据返回结果[BluetoothState](../harmonyos-references/js-apis-bluetooth-access.md#bluetoothstate)的值来判断蓝牙是否开启，当取值是STATE\_ON或STATE\_TURNING\_ON返回true，表示蓝牙已开启。
 
    ```typescript
    /**
@@ -127,10 +127,10 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
    ```
 2. 如果蓝牙未开启，服务端设备需要调用[access.enableBluetooth()](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)接口开启蓝牙。
 
-   ```typescript
+   ```screen
    access.enableBluetooth();
    ```
-3. 调用[createGattServer()](../harmonyos-references/js-apis-bluetooth-ble.md#blecreategattserver)创建一个Gatt服务的实例，并调用[addService()](../harmonyos-references/js-apis-bluetooth-ble.md#addservice)接口，添加服务。服务添加成功后，调用[startAdvertising()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartadvertising)接口开始广播。
+3. 调用[ble.createGattServer()](../harmonyos-references/js-apis-bluetooth-ble.md#blecreategattserver)创建一个Gatt服务的实例，并调用[addService()](../harmonyos-references/js-apis-bluetooth-ble.md#addservice)接口，添加服务。服务添加成功后，调用[ble.startAdvertising()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartadvertising)接口开始广播。
 
    ```typescript
    /**
@@ -188,12 +188,12 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
 
    | 项 | 值 | 备注 |
    | --- | --- | --- |
-   | 服务 UUID（BLE\_SERVICE\_UUID） | 0000180D-0000-1000-8000-00805F9B34FB | 标准的Heart Rate Service（心率服务）UUID，用于心率监测设备。 |
-   | 特征 UUID（BLE\_CHARACTERISTIC\_UUID） | 00002A37-0000-1000-8000-00805F9B34FB | 标准的Heart Rate Measurement Characteristic（心率测量特征值）UUID，用于传输心率数据。 |
-   | 描述符 UUID（BLE\_DESCRIPTOR\_UUID） | 00002902-0000-1000-8000-00805F9B34FB | 标准的Client Characteristic Configuration Descriptor（客户端特征值配置描述符）UUID，用于控制客户端对服务端特征值通知（Notify）或指示（Indication）的订阅状态。 |
-   | 厂商 ID（CUSTOM\_MANUFACTURE\_ID） | 0x027D | 可自定义，在客户端发起BLE扫描时，该数据可用于配置扫描结果的过滤策略。 |
-   | 厂商数据 | [0x01, 0x02, 0x03, 0x04]（掩码 [FF,FF,00,00]） | 可自定义，在客户端发起BLE扫描时，该数据可用于配置扫描结果的过滤策略。 |
-4. 广播目的达成后（如被目标设备扫描到），调用[stopAdvertising()](../harmonyos-references/js-apis-bluetooth-ble.md#blestopadvertising)接口，停止广播。
+   | 服务UUID（BLE\_SERVICE\_UUID） | 0000180D-0000-1000-8000-00805F9B34FB | 标准的Heart Rate Service（心率服务）UUID，用于心率监测设备。 |
+   | 特征UUID（BLE\_CHARACTERISTIC\_UUID） | 00002A37-0000-1000-8000-00805F9B34FB | 标准的Heart Rate Measurement Characteristic（心率测量特征值）UUID，用于传输心率数据。 |
+   | 描述符UUID（BLE\_DESCRIPTOR\_UUID） | 00002902-0000-1000-8000-00805F9B34FB | 标准的Client Characteristic Configuration Descriptor（客户端特征值配置描述符）UUID，用于控制客户端对服务端特征值通知（Notify）或指示（Indication）的订阅状态。 |
+   | 厂商ID（CUSTOM\_MANUFACTURE\_ID） | 0x027D | 可自定义，在客户端发起BLE扫描时，该数据可用于配置扫描结果的过滤策略。 |
+   | 厂商数据 | [0x01, 0x02, 0x03, 0x04]（掩码 [FF, FF, 00, 00]） | 可自定义，在客户端发起BLE扫描时，该数据可用于配置扫描结果的过滤策略。 |
+4. 广播目的达成后（如被目标设备扫描到），调用[ble.stopAdvertising()](../harmonyos-references/js-apis-bluetooth-ble.md#blestopadvertising)接口，停止广播。
 
    ```typescript
    /**
@@ -218,9 +218,9 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
 
 **客户端**
 
-1. 客户端设备使用蓝牙功能时，同样需要开启蓝牙，开启方法与[服务端](bpta-bluetooth-low-energy.md#li384712431593)相同。
+1. 客户端设备使用蓝牙功能时，同样需要开启蓝牙，开启方法与服务端相同。
 
-   开启蓝牙后，调用[startBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)接口启动BLE扫描流程。扫描时，可通过配置过滤策略集合Array<[ScanFilter](../harmonyos-references/js-apis-bluetooth-ble.md#scanfilter)>和扫描参数[ScanOptions](../harmonyos-references/js-apis-bluetooth-ble.md#scanoptions)，主动扫描发现周围广播中特定类型的低功耗蓝牙设备。
+   开启蓝牙后，调用[ble.startBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)接口启动BLE扫描流程。扫描时，可通过配置过滤策略集合Array<[ScanFilter](../harmonyos-references/js-apis-bluetooth-ble.md#scanfilter)>和扫描参数[ScanOptions](../harmonyos-references/js-apis-bluetooth-ble.md#scanoptions)，主动扫描发现周围广播中特定类型的低功耗蓝牙设备。
 
    ```typescript
    /**
@@ -245,7 +245,7 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
    }
    ```
 
-   ```typescript
+   ```screen
    /**
     * Internal helper to start scanning using a custom filter.
     * @returns True if scan started successfully.
@@ -346,7 +346,7 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
    ```
 2. 扫描到设备后，用户选择对应的蓝牙设备进行连接。
 
-   ```typescript
+   ```screen
    /**
     * Internal helper to connect, set listeners, and update state to CONNECTING.
     * @param gattClientDevice Target GATT client device.
@@ -368,7 +368,7 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
      }
    }
    ```
-3. 根据具体业务需求，在适当时机调用[stopBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestopblescan)接口停止蓝牙扫描。
+3. 根据具体业务需求，在适当时机调用[ble.stopBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestopblescan)接口停止蓝牙扫描。
 
    ```typescript
    /**
@@ -412,15 +412,15 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
 
 服务端：
 
-1. 调用[on('stateChange')](../harmonyos-references/js-apis-bluetooth-access.md#accessonstatechange)方法订阅蓝牙设备开关状态事件；
+1. 调用[access.on('stateChange')](../harmonyos-references/js-apis-bluetooth-access.md#accessonstatechange)方法订阅蓝牙设备开关状态事件；
 2. 调用[on('connectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onconnectionstatechange)方法订阅GATT profile协议的连接状态变化事件。
 
 客户端：
 
-1. 调用[on('stateChange')](../harmonyos-references/js-apis-bluetooth-access.md#accessonstatechange)方法订阅蓝牙设备开关状态事件；
+1. 调用[access.on('stateChange')](../harmonyos-references/js-apis-bluetooth-access.md#accessonstatechange)方法订阅蓝牙设备开关状态事件；
 2. 调用[on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange)方法订阅GATT profile协议的连接状态变化事件；
-3. 当[on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange)方法返回的状态值为[STATE\_CONNECTED](../harmonyos-references/js-apis-bluetooth-constant.md#profileconnectionstate)时，调用[addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)方法持久化存储蓝牙设备的虚拟MAC地址；
-4. 当应用启动或者页面显示时，调用[getPersistentDeviceIds()](../harmonyos-references/js-apis-bluetooth-access.md#accessgetpersistentdeviceids16)方法获取应用持久化存储过的蓝牙虚拟MAC地址，并向对端设备发起连接。
+3. 当[on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange)方法返回的状态值[ProfileConnectionState](../doccenter-references/api/js-apis-bluetooth-constant.md#profileconnectionstate)为STATE\_CONNECTED时，调用[access.addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)方法持久化存储蓝牙设备的虚拟MAC地址；
+4. 当应用启动或者页面显示时，调用[access.getPersistentDeviceIds()](../harmonyos-references/js-apis-bluetooth-access.md#accessgetpersistentdeviceids16)方法获取应用持久化存储过的蓝牙虚拟MAC地址，并向对端设备发起连接。
 
 ### 实现流程
 
@@ -545,9 +545,9 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
      }
    }
    ```
-2. 使用[on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange)订阅GATT profile协议的连接状态变化事件，并调用[addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)方法持久化存储蓝牙设备的虚拟MAC地址。
+2. 使用[on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange)订阅GATT profile协议的连接状态变化事件，并调用[access.addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)方法持久化存储蓝牙设备的虚拟MAC地址。
 
-   客户端通过GattClientDevice实例监听连接状态变化，当连接成功时，将对端设备的虚拟MAC地址通过[addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)接口固化到系统存储中。这一步骤至关重要，它使应用在下次启动时无需重新扫描，可直接使用已保存的设备ID发起连接，显著提升连接效率。同时，客户端还将启用特征值通知功能，为后续数据传输做准备。
+   客户端通过GattClientDevice实例监听连接状态变化，当连接成功时，将对端设备的虚拟MAC地址通过[access.addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)接口固化到系统存储中。这一步骤至关重要，它使应用在下次启动时无需重新扫描，可直接使用已保存的设备ID发起连接，显著提升连接效率。同时，客户端还将启用特征值通知功能，为后续数据传输做准备。
 
    ```typescript
    /**
@@ -613,7 +613,7 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
        })
    }
    ```
-3. 使用[getPersistentDeviceIds()](../harmonyos-references/js-apis-bluetooth-access.md#accessgetpersistentdeviceids16)方法获取应用持久化存储过的蓝牙虚拟MAC地址，实现BLE自动重连。
+3. 使用[access.getPersistentDeviceIds()](../harmonyos-references/js-apis-bluetooth-access.md#accessgetpersistentdeviceids16)方法获取应用持久化存储过的蓝牙虚拟MAC地址，实现BLE自动重连。
 
    当应用启动或页面重新显示时，客户端会从系统获取所有持久化的设备ID，优先尝试与最近连接的设备建立连接。同时会自动处理连接超时和失败重试逻辑，并在UI上提供连接状态反馈。这一机制实现了快速回连体验，用户无需记忆上次连接的设备，也无需重复扫描配对操作，显著提升了应用的易用性。同时，连接失败时会自动清理无效的持久化ID，确保下次启动时不会尝试连接无效设备。
 
@@ -691,7 +691,7 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
 
 | 步骤 | 操作 | 依赖条件 | 未满足影响 |
 | --- | --- | --- | --- |
-| 1. 连接建立 | [on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange) -> [STATE\_CONNECTED](../harmonyos-references/js-apis-bluetooth-constant.md#profileconnectionstate) | 创建[GattClientDevice](../harmonyos-references/js-apis-bluetooth-ble.md#gattclientdevice)实例 | 后续操作均无法执行 |
+| 1. 连接建立 | [on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange) -> STATE\_CONNECTED | 创建[GattClientDevice](../harmonyos-references/js-apis-bluetooth-ble.md#gattclientdevice)实例 | 后续操作均无法执行 |
 | 2. 注册通知监听 | [setCharacteristicChangeNotification()](../harmonyos-references/js-apis-bluetooth-ble.md#setcharacteristicchangenotification) | 1. 需要先调用[getServices()](../harmonyos-references/js-apis-bluetooth-ble.md#getservices)，获取到server端所有支持的能力，且需包含指定的入参特征值UUID；  2. 异步回调结果返回后，才能调用下一次读取或者写入操作。 | 通知无法触发，操作阻塞 |
 | 3. 特征值或者描述符写入 | [writeCharacteristicValue()](../harmonyos-references/js-apis-bluetooth-ble.md#writecharacteristicvalue)或者[writeDescriptorValue()](../harmonyos-references/js-apis-bluetooth-ble.md#writedescriptorvalue) | 1. 已建立GATT连接；  2. 已成功注册特征值监听；  3. 依赖上一次异步操作完成，包括通知、读取、写入等接口；  4. 写入的数据格式正确。 | 通信失败或忽略配置 |
 
@@ -860,15 +860,15 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
 
 在API 16及后续版本中，HarmonyOS提供了无需配对即可将蓝牙虚拟MAC地址固化的API接口：[access.addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)。
 
-由于应用通过蓝牙扫描获取到的未配对或未固化（参考如下说明）的设备MAC地址为虚拟随机地址，若需该虚拟随机地址不发生改变，可调用[addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)接口持久化存储虚拟随机地址。
+由于应用通过蓝牙扫描获取到的未配对或未固化（参考如下说明）的设备MAC地址为虚拟随机地址，若需该虚拟随机地址不发生改变，可调用[access.addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)接口持久化存储虚拟随机地址。
 
 **说明** 
 
-1. 使用蓝牙虚拟MAC地址固化API需申请[ohos.permission.PERSISTENT\_BLUETOOTH\_PEERS\_MAC](../harmonyos-guides/restricted-permissions.md#ohospermissionpersistent_bluetooth_peers_mac)权限，并在[ACL](../app/agc-help-apply-acl-0000002394212138.md)权限审核通过后方可使用。
+1. 使用蓝牙虚拟MAC地址固化API需申请[ohos.permission.PERSISTENT\_BLUETOOTH\_PEERS\_MAC](../harmonyos-guides/restricted-permissions.md#ohospermissionpersistent_bluetooth_peers_mac)权限，并在[申请ACL权限](../app/agc-help-apply-acl-0000002394212138.md)审核通过后方可使用。
 2. 使用此接口时，开发者应明确该虚拟随机地址对应的对端蓝牙设备真实地址保持不变。若对端设备地址变更，持久化保存的地址信息也将失效，无法继续使用。
 3. 蓝牙虚拟MAC地址固化的API接口比喻：想象你常去的咖啡店会给熟客发放一张**专属会员卡**（虚拟MAC地址）。
    * **未固化场景**：每次进店，店员都会给你随机更换新卡（虚拟地址变化），你需要反复证明自己是熟客（重新扫描连接）。
-   * **固化后场景**：店员将你的会员卡号永久记录在系统中（[addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)）。今后进店，直接刷旧卡（原虚拟地址），系统自动识别你的身份（快速回连），无需重新办理会员卡（无需重复扫描）。
+   * **固化后场景**：店员将你的会员卡号永久记录在系统中（[access.addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)）。今后进店，直接刷旧卡（原虚拟地址），系统自动识别你的身份（快速回连），无需重新办理会员卡（无需重复扫描）。
 
 ### 蓝牙数据传输报错失败
 

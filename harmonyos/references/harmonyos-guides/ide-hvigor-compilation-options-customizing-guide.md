@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-co
 title: 能力说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 定制构建 > 灵活定制编译选项 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:edc61c521eb5c207a2f2ec66c4626d94e4af9e849be4213daec002dc07cd1fa9
+content_hash: sha256:b6d4d3fafa970bcef39cf42e2e51a88fa837d0eecea19433e297137f7a0937ba
 ---
 
 Hvigor支持灵活定制构建模式，当您创建新工程时，DevEco Studio会自动创建debug、release和test构建模式。test模式虽然没有出现在工程级build-profile.json5配置文件中，但是用测试框架开启测试时，会自动使用test构建模式。
@@ -14,9 +14,9 @@ Hvigor支持灵活定制构建模式，当您创建新工程时，DevEco Studio�
 
 ### 界面设置
 
-DevEco Studio支持界面配置Build Mode配置选项，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/A_9DF2lDQJurm0YuEOA-lg/zh-cn_image_0000002779567224.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A68EE5A7BBA24AC50FBD9593041A32BCEC5C1572DBA4448AFF2CFCEE7370815)图标选择构建模式：
+DevEco Studio支持界面配置Build Mode配置选项，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Xe773rk2QY2yDzaVmVdwJg/zh-cn_image_0000002779567224.png?HW-CC-KV=V1&HW-CC-Date=20261114T004715Z&HW-CC-Expire=31536000000&HW-CC-Sign=B57CEF609A10592550C4957361DC2FD884EFF97022D4B84A45926F2FAC7906FF)图标选择构建模式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/v-hWLHRMTb2vtEQ9UYOCLA/zh-cn_image_0000002808766805.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=39A7BF141BB8DFADF1413D650EE7D28EDC478F4CAA2313E6EA9C7CF3FD542AE3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/PrmDElXnSSuuYrvm-I0lOA/zh-cn_image_0000002808766805.png?HW-CC-KV=V1&HW-CC-Date=20261114T004715Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFD6E77BD8D35716B26A664E9C6C1610A63DBC5EA34248BED44A5D129A33FFA7)
 
 内置三个选项：<Default>，debug，release。
 
@@ -95,4 +95,4 @@ Hvigor支持定制构建模式，采用buildOption字段声明编译选项，并
 
 优先级：命令行配置>targets配置>buildOptionSet配置>buildOption配置>products配置>buildModeSet配置
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/EkVTfB3zSoSscbv6KJMJYQ/zh-cn_image_0000002808886885.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0D91625AA32DCAB11B003F2CCF060D70EBA687C572DCEC178FC1263BBE59865)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Olvbf83yRjuZ2kFd1ehhtw/zh-cn_image_0000002808886885.png?HW-CC-KV=V1&HW-CC-Date=20261114T004715Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B708AC2235F01A473A82D160098184CAD23BAF17D220F10F9492A1D61E26819)

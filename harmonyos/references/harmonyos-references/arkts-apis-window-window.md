@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Window)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interface (Window)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:c9b948155d8a5dd828425cda5de0dddc82eeec55c8193d5dd53a05f4b4685fcc
+scraped_at: 2026-11-14T08:50:03+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:00f8896bd013386f5fbd9d0ec455aa6732a6a71a89f1ae41017f3bc3ca999813
 ---
 
 当前窗口实例，窗口管理器管理的基本单元。
@@ -6321,7 +6321,7 @@ try {
 
 setWindowBackgroundColor(color: string | ColorMetrics): void
 
-设置窗口的背景色。
+设置窗口内容区域的背景色。
 
 未调用该接口时，窗口在浅色模式默认背景色为'#FFF0F0F0'，在深色模式默认背景色为'#FF1A1A1A'。
 
@@ -11889,7 +11889,7 @@ convertOrientationAndRotation(from: RotationInfoType, to: RotationInfoType, valu
 
 示意图和表格展示了直板机窗口方向、屏幕方向和屏幕角度的关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/K--9BVJQRued4oXDJCEqpQ/zh-cn_image_0000002786520876.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1FC7A153E13C29BF770572B08E0873F9075CDB1632F326AE4781003D1ADF9E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/4g3WWwxJRGC6a3Dg39qvyQ/zh-cn_image_0000002788468624.png?HW-CC-KV=V1&HW-CC-Date=20261114T004959Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B87E2683D00F93027A9E7568A2D5E3E85D3BFE45430B9CEC4B0422A18E9FAC3)
 
 | value | WINDOW\_ORIENTATION  （窗口方向） | DISPLAY\_ORIENTATION  （屏幕方向） | DISPLAY\_ROTATION  （屏幕角度） |
 | --- | --- | --- | --- |

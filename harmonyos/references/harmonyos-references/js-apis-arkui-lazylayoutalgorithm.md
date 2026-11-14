@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: LazyLayoutAlgorithm
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > LazyLayoutAlgorithm
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:51+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:95afb2330e09b47672024b9b15e8af31479ab120116d966b56cbab527bcebc09
+scraped_at: 2026-11-14T08:49:57+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:bd54ea4aaab2db060bf252a727c51267bc680b9e33399cb48dd26705f9d57b42
 ---
 
 [LazyDynamicLayout](ts-container-lazydynamiclayout.md)组件支持的懒加载布局算法，提供自定义子组件测量与排列、获取可视区域信息以及控制子组件激活状态等能力。
@@ -149,7 +149,7 @@ setAdjustedOffset(offset: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| offset | number | 是 | 设置的调整偏移量，往内容末尾端调整为正，往内容起始端调整为负。单位：px。 |
+| offset | number | 是 | 设置的调整偏移量，往内容末尾端调整为正，往内容起始端调整为负。单位：px。  该值应为整数。 |
 
 ### setChildrenInactive
 

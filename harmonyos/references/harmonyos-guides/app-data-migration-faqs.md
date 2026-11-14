@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-data-migr
 title: 常见问题与异常处理
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 常见问题与异常处理
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:17+08:00
 doc_updated_at: 2026-05-26
-content_hash: sha256:035dbe002f89b57fe0dec4c6bfadc1bb953c3efb151648939a027b159c58849f
+content_hash: sha256:ccf7daebc3476cbd12243175389e831358534c809de2e46c8ac3b4012caef4dd
 ---
 
 ## 应用数据迁移暂停
@@ -14,7 +14,7 @@ content_hash: sha256:035dbe002f89b57fe0dec4c6bfadc1bb953c3efb151648939a027b159c5
 
 在数据加载界面，应用数据迁移暂停。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/K-TjZHcjRjqKnL_ycaJkhQ/zh-cn_image_0000002786359504.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEB31772A0190A3EC8664F71D40A74420B502F5C1FF830C957C78342A36CD671)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/u0jjR_aJTG6Ff3_77RprwA/zh-cn_image_0000002817426599.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=358999C8C646B0F2F0B0C4024B09565DB438A6C2835D1062E72E93C8654431F9)
 
 **可能原因**
 
@@ -24,7 +24,7 @@ content_hash: sha256:035dbe002f89b57fe0dec4c6bfadc1bb953c3efb151648939a027b159c5
 
 单击“稍后连接WLAN加载”按钮，进入桌面后连接网络，终端设备网络可用后，恢复应用数据迁移。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/jgqTRK5MRYOPtLtCDxU7wA/zh-cn_image_0000002815558925.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8504D04B80DF87112BF77B254C77FC7E7536DA4F6D7B538A9809F3D60DB8919)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/B_RUr-xsRCehvxjD-9AtXw/zh-cn_image_0000002788467180.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC139A63A14B3DBC67520CAB8CCBA243A274C6ED78549E8F043B469D2ADC337F)
 
 **问题现象2**
 
@@ -32,7 +32,7 @@ content_hash: sha256:035dbe002f89b57fe0dec4c6bfadc1bb953c3efb151648939a027b159c5
 
 在应用加载界面，应用数据迁移暂停。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/P6-xtrhVTeSaFPSj4hE27g/zh-cn_image_0000002815399009.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0CEE510740E5B9CF166B504FCFDE93F72C983AD4B1E5A58943A3194C2245DF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/tcG3-OeLRsekg3On8I8JdQ/zh-cn_image_0000002817506669.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=866399BF02693F043766B254E77845A6EEAD48AEC4CA09C48AD5628551080273)
 
 **可能原因**
 
@@ -42,7 +42,7 @@ content_hash: sha256:035dbe002f89b57fe0dec4c6bfadc1bb953c3efb151648939a027b159c5
 
 单击“稍后连接WLAN加载”按钮，进入桌面后连接网络，终端设备网络可用后，恢复应用数据迁移。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/HXkPtbC_ScygKRq-hLNM-w/zh-cn_image_0000002786519434.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0421C178CF0B25961DC7EF56A4D6F93CC98E81527EC5C5942DABC807B605B79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/hqjhlYNBRWeeEHNga868PA/zh-cn_image_0000002788307238.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6A564085A5AAA722E9EE2157A544450EDA0005B36C324A9C4B9D37C5D83DC1F)
 
 ## 应用数据迁移执行十五分钟后失败
 
@@ -50,7 +50,7 @@ content_hash: sha256:035dbe002f89b57fe0dec4c6bfadc1bb953c3efb151648939a027b159c5
 
 应用数据迁移执行十五分钟后显示失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Z62s9m7CTPG9_UbXTocnpQ/zh-cn_image_0000002815399007.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9628C5E78A668FC97CDE8F6E0E4AB9522D0640AA18909E44E8F4BDDA5BB672F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/GM_yCQSER-6ZUC-SdhFFZA/zh-cn_image_0000002817506667.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=85D02B7651597F456E19D97A304BB9F35E29F0C623B8ADC3399EE6AC70953AF1)
 
 **可能原因**
 
@@ -70,7 +70,7 @@ content_hash: sha256:035dbe002f89b57fe0dec4c6bfadc1bb953c3efb151648939a027b159c5
 
 在迁移调试界面，输入应用包名后启动迁移按钮无法点亮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/u7xL6z3aQVy5KQNpw_U7gg/zh-cn_image_0000002786359506.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=83740256D7B2C3199B86E7373CEDFD6104CA00545A5BE22DA812B3D5F981460A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/015gN_C_RHWnPv1vRLuUXg/zh-cn_image_0000002817426601.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=D77E481CD1A5C16FCBA62D3F6D664E50BC515A15E978C07C241AB6876118A2E7)
 
 **可能原因**
 

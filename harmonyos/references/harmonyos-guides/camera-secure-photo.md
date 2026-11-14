@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-secure
 title: 安全相机(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 安全相机(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:57+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:076d37cc21f517f356a4e1424f860e170dbb124f2e34516c4d0bd25c41acd2ab
+content_hash: sha256:bc377ebc29254f1a04e17d33a77b369f5814644b2c8369d253e70d651fb8e0a3
 ---
 
 安全相机主要为银行等有活体检测等安全诉求的应用提供，安全相机的使用需要加密算法框架及可信应用服务。
@@ -21,7 +21,7 @@ content_hash: sha256:076d37cc21f517f356a4e1424f860e170dbb124f2e34516c4d0bd25c41a
 
 当前文档主要说明通过Camera Kit完成的步骤，证明会话相关步骤需通过Device Security Kit完成，具体可参考[可信应用服务-安全摄像头](devicesecurity-taas-securecamera.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/VHxWbLd9T9CMlhCG5eb64g/zh-cn_image_0000002815559347.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=24F1C47616D49C3CE8638232E52F4CFF1D06A9CD6E2A0C425C55F70C890F9961)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/C0dQKSxGT7GXolsscC1pRA/zh-cn_image_0000002788467602.png?HW-CC-KV=V1&HW-CC-Date=20261114T004757Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA973F3EFDF172714C38F3821C7E9124B3E6A05E3C582DC85B70B962E55BF3EE)
 
 ## 开发步骤
 

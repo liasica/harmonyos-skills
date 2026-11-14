@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-map-signa
 title: 信号路线
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 信号路线
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:24+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:310c866ac7c6100a5b9e4427b7e9499eb47f8f4f0a1efd323a42bd8fd54bb8a0
+content_hash: sha256:3653d96911025fbede8e6b40e3c99205362dc05e0f96b6091108f9fd281308d2
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:310c866ac7c6100a5b9e4427b7e9499eb47f8f4f0a1efd323a42bd8fd54
 
 信号路线是一条能够动态反映地图上信号强度的彩色折线。信号路线可预测路线中的弱信号或无信号路段，提前提醒用户下载离线地图、提升户外安全性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/ZKfweCJUT3Sfi_R4wSO9jg/zh-cn_image_0000002786360438.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=86002E80AB9B4C1C468036EB1370AB4F4B13F209B645D64F06C59FF103750168 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/ABeK9AcyR2SZvo3QejBp8w/zh-cn_image_0000002817427533.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C26313A6E29DD7E849A30F180DE337C30D7D0FC727624B5920F1DE41E6E3D6A "点击放大")
 
 ## 约束与限制
 
@@ -54,13 +54,13 @@ content_hash: sha256:310c866ac7c6100a5b9e4427b7e9499eb47f8f4f0a1efd323a42bd8fd54
 
 * 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/index.html#/home/)网站，在项目列表中找到需要开通“信号预测能力”的应用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/dHW7wa72QLaoBKEIZFmyTw/zh-cn_image_0000002815559859.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=08A2D08CFB3C0536522564C91792F8849B468BB68A96FDAE7B79AE9B02336201)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/2qDUCpFbS-C9z4CZsq_KzA/zh-cn_image_0000002788468114.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=A58CA4FF420B2E57A22F9754E2561E8C025F6E8DB4A30260D60734E8E92A6DD2)
 * 进入“开放能力管理”页签，找到“地图服务”开关下的“信号预测能力”，点击“申请”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/JIdgflNGQl6cMl5NrdVG7g/zh-cn_image_0000002815399943.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F74B1414F71DB0D2584D479544BAACD582A91B71CCEBCEB28B7F01C235A1319B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/QAsiJGVmRqG4q9Dy7Kuh7g/zh-cn_image_0000002817507603.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED427A59CAC2BFC33BDEB91FCFC368C4372AAD8BDB57AB6AB61BF2FFF4A246C5)
 * 确认您已满足开通信号预测能力的所有条件后，点击“下一步”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/4nlUIyYNQfKBr-Sqc1gHpg/zh-cn_image_0000002786520368.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECF6C7D34FB758440C2DBAC84F84521F9AF6ADAD1EEBF206D59F7A1AF104482A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Zie2Y5PSTvqI5hAKodVj5w/zh-cn_image_0000002788308172.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=24275E6CB625BC9446D584765F89BAA6C6780BA6302A1D6E2FB3592ACF0AD20C)
 * 填写申请原因。
 
   **说明** 
@@ -71,11 +71,11 @@ content_hash: sha256:310c866ac7c6100a5b9e4427b7e9499eb47f8f4f0a1efd323a42bd8fd54
   + **使用场景**：说明权限使用场景，例如在XXX场景下，需要使用XX能力。
   + **申请用途**：描述该权限的用途，例如用户使用XXX功能后，进行XXX操作，提供XXX服务。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/WL9tbD31QaSJax3bRsngyw/zh-cn_image_0000002786360440.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9532480908517FEAD5469E471AB84910B5E213E461C3EABD0D78EF62228C2EB9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/bIMu8X7zR0-6lhVSarJgqg/zh-cn_image_0000002817427535.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=3580C74D1DBE99027EA0FB340D5733A7CE2E0D9E75A454DAAD38CA8DF2D810B9)
 * 系统将推送消息到互动中心，请等待审核。3个工作日内审核结果会通过站内消息的形式发送到[互动中心](https://developer.huawei.com/consumer/cn/message-center/myMessage)，请注意查收。
 * 审核通过后，勾选“地图服务”和“信号预测能力”以完成配置。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/d3Tp7Cw2RgSXY3NiccGYLA/zh-cn_image_0000002815559861.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E96F5191CA6DA6BE44583B18EB2ADE9B812B861B2C1F32EE9F5EFFA3C0B7FD8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/4gKHGo3DSkG9Rutt-zHvIw/zh-cn_image_0000002788468116.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5B7C0DDDA3150629C81113A7271AC3AAC190BDA77239E401767627D4723DD39)
 
 ## 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: EmbeddedComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 渲染绘制 > EmbeddedComponent
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:20+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a0046bb2a85f7cf6e11404a6975a595b65416f82fe81d2cc9479a6116e9b4226
+content_hash: sha256:00811322f7cf1d2d158f0d0bf6ee07c56112cfe2bdf70e5faa5cb622f2399b20
 ---
 
 EmbeddedComponent用于支持在当前页面嵌入本应用内或满足跨应用权限条件的其他[EmbeddedUIExtensionAbility](js-apis-app-ability-embeddeduiextensionability.md)提供的UI。EmbeddedUIExtensionAbility在独立进程中运行，完成页面布局和渲染。
@@ -410,4 +410,4 @@ DPI跟随策略，用于设置DPI，使其能够跟随宿主或EmbeddedUIExtensi
   ```
 * 示例图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/rGi0-mtOQ2CSGy-3zVVkGw/zh-cn_image_0000002786361544.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=62855685517426C2BBA70C416046C3E38E9C42D2B7F0080C9DD816F775F26E48)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/g_KzdqTYQGqzBcc2fXVY_A/zh-cn_image_0000002817508709.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=9845B16CD9DFCE152A03620DDED7853D169024D8A9AFB2D2141460431A954DC9)

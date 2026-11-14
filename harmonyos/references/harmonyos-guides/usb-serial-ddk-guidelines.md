@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usb-serial-dd
 title: 开发适用串口协议的设备驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用串口协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:42+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e283f1bfb760adf107fd208cf5894678b297ab5d05b7c6722c6844d50907b2b0
+content_hash: sha256:82c33081e4f030bb47e0779f42d27b039fa6b9a2dbf5c5ea06d540312367439a
 ---
 
 ## 简介
@@ -41,7 +41,7 @@ content_hash: sha256:e283f1bfb760adf107fd208cf5894678b297ab5d05b7c6722c6844d5090
 
 **图1** USBSerialDDK调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/nu3BMOcrRfy24JWjcMvQkQ/zh-cn_image_0000002786359778.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=B57B046D32DC25DA4CD81F93AB8C5B703BF0C85AB7390C8B8E1559AD601EFD65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/WscGtXOsR7-ElWHKqr9iMw/zh-cn_image_0000002817426873.png?HW-CC-KV=V1&HW-CC-Date=20261114T004742Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9AD504150C8FB9E17A8F8CB61E72B1CC169148783F59FF41DA7A7BF0828CDDD)
 
 ### 约束与限制
 

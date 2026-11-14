@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.ble (蓝牙ble模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.ble (蓝牙ble模块)
 category: harmonyos-references
-scraped_at: 2026-10-29T08:00:54+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:0b4f3520c9b75e3ae8f2f6f7f99344be00e7ffb0a47c23aa42a330f7b605e518
+scraped_at: 2026-11-14T08:51:36+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6bd2737d2f479e88d5a689163393f7c3f9a78a84e4bdcacdd0d71f5719d43632
 ---
 
 本模块提供了基于低功耗蓝牙（Bluetooth Low Energy，[BLE](../harmonyos-guides/terminology.md#ble)）技术的蓝牙能力，支持发起BLE扫描、发送BLE广播报文、以及基于通用属性协议（Generic Attribute Profile，[GATT](../harmonyos-guides/terminology.md#gatt)）的连接和传输数据。适用于智能穿戴设备、健康监测、物联网设备互联等低功耗短距离无线通信场景，有助于降低设备功耗、延长续航时间。
@@ -250,9 +250,7 @@ getConnectedBLEDevices(profile: BleProfile): Array<string>
 * 若指定本机设备作为server端，则返回与本机设备连接的所有client端设备地址集合。
 * 若指定本机设备同时作为client端和server端，则返回与本机设备连接的所有client端和server端设备地址集合。
 
-**需要权限**：
-
-* API版本21-24：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-crea
 title: 创建一个新的工程
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 创建一个新的工程
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:10+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f47fd0a0c7273127d1e6217dc17ee8e7b1b040916bb21821a471aef07ebfa0c1
+content_hash: sha256:b87357d2e23a6e44a8e8c4bfffc5c4426b0e47fd802595f3965e549c713ef226
 ---
 
 当开发者开始开发一个应用/元服务时，首先需要根据工程创建向导，创建一个新的工程。工具会自动生成对应的代码和资源模板。
@@ -20,7 +20,7 @@ content_hash: sha256:f47fd0a0c7273127d1e6217dc17ee8e7b1b040916bb21821a471aef07eb
    * 如果当前未打开任何工程，可以在鸿蒙电脑DevEco Studio的欢迎页，选择**新建工程**。
    * 如果已经打开了工程，可以在菜单栏选择**新建 > 工程**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/iHj0GlnnS2Kcs-tmTK2muQ/zh-cn_image_0000002810630769.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFA982549E9556C02E35F8FB85166405CF775560A2F80105034E26910AC310E2 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/R6ptVZayQwSUwkb9ET9N3A/zh-cn_image_0000002810630769.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=70471BE69F0601CF0196191197F0000DE3C8778FAD16A3867DF1E0B08CC6168B "点击放大")
 2. 根据工程创建向导，在应用下所需的Ability工程模板，填写工程的基本信息。
    * **工程名**：工程的名称，可以自定义，由大小写字母、数字和下划线组成，必须由大小写字母开头，长度为1~200个字符。
    * **包名**：标识应用的包名，用于标识应用的唯一性。
@@ -38,12 +38,12 @@ content_hash: sha256:f47fd0a0c7273127d1e6217dc17ee8e7b1b040916bb21821a471aef07eb
    * **模块名**： 模块的名称。
    * **设备类型：**该工程模板支持的设备类型。设备类型说明请参考[deviceTypes标签](module-configuration-file.md#devicetypes标签)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/tusOhiX9TnGB2XGS9lXsKA/zh-cn_image_0000002781471218.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=30EAE43C04809457BE179D74AEC94C3F44AE02A715CF29E6941E676E9B2DD962 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/lyNacS-0RqCqH8ZM3e2aPw/zh-cn_image_0000002781471218.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD9FF5D9F5839ED84154D70A66DCB193D62312B5482BD9645C141FB5A0D4604D "点击放大")
 3. 单击**确认**，工具会自动生成示例代码和相关资源。
 
 ## 创建元服务工程
 
-1. 若首次打开DevEco Studio，请选择**新建工程**。若已经打开了一个工程，请在菜单栏选择**新建** > **工程**。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/qPo5QLvZQ-6x-9ZH56rsIw/zh-cn_image_0000002781471214.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=F20962669FC793AF287710F5F6D6D054D3756B53E7F1FA6FEEC1E2570846993B "点击放大")
+1. 若首次打开DevEco Studio，请选择**新建工程**。若已经打开了一个工程，请在菜单栏选择**新建** > **工程**。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/k_ESqTP5RVSFCK8ls80OIw/zh-cn_image_0000002781471214.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=2345BE1C4FA952060E24A8C6246909174FBD527A09DED0D17E708F66817B99FE "点击放大")
 2. 在元服务下选择所需的模板。
 
    选择**华为账号**后点击**登录**，登录华为开发者账号进行开发，或选择**访客模式**后点击**确认**。
@@ -54,7 +54,7 @@ content_hash: sha256:f47fd0a0c7273127d1e6217dc17ee8e7b1b040916bb21821a471aef07eb
 
    访客模式仅用于体验元服务开发功能。如需将访客模式下开发的元服务工程或历史元服务工程在真机上运行并安装，需在**AppScope > app.json5**文件中补充当前开发者账号下已在AppGallery注册且真实存在的包名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/OAQ4JoXQSIWBk2MaDeYkOw/zh-cn_image_0000002781311280.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=525DCA1741259C4E8486B08BACB6A786205E5938B11DF734016506E8FEBC22AC "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/gpT9izkqS7KuaauJwfJWcg/zh-cn_image_0000002781311280.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2E68957560229DB309E52D199194EFBC2FAA149B22E6D74D89F8A0E85B19562 "点击放大")
 3. 选择登录华为账号下已经在AppGallery中注册的应用ID。如您未在AppGallery中注册元服务应用，或者需要使用新应用ID时，请点击**注册应用ID**进行注册。
 
    **说明** 
@@ -63,14 +63,14 @@ content_hash: sha256:f47fd0a0c7273127d1e6217dc17ee8e7b1b040916bb21821a471aef07eb
 
    在AppGallery注册应用ID时应用分类请选择“元服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/0w6UfONsT7q4HCmzrsA4jA/zh-cn_image_0000002810630765.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5EDECA69E629CB46BC1EEB93E46E7FF4F5B98F7A0B5574AFD18D83822E67ECA "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/boxATaRFTjWySQNihql_Eg/zh-cn_image_0000002810630765.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF6C2C3F0333C4CEE76ECE55A89E42A502CDA6B7E2A8061193B4507A260A187A "点击放大")
 4. 点击**注册应用ID**，在弹窗中填写元服务的基本信息后，点击**确认**。
    * **项目**：项目名称。可以输入一个新项目名称，或在下拉框中选择已有项目。
    * **应用类型**：应用类型为元服务。此处不支持修改。
    * **应用名称：**元服务在华为应用市场详情页展示的名称。关于元服务名称要求请参考[为元服务创建APP ID](../doccenter-getting-started/agc-help-create-atomic-service-0000002247795706.md)。
    * **应用分类：**应用和游戏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/brCXmyQWREyZHUyeAxdAuw/zh-cn_image_0000002810750875.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AAADBACDDBA238AB1903E67CB02848E2CC59944A389CE72E4AD28993336CC75 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/c694gZdsS-mLXGdsVr_GIA/zh-cn_image_0000002810750875.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=F65745ED144C2D1B124AB6D13ABAFB80FA04D099CC6DE1ED0A76FDB62CE620D5 "点击放大")
 5. 完成注册后，返回DevEco Studio界面刷新，选择所需的应用ID。填写**工程名**，其他参数保持默认设置即可。点击**确认**，工具会自动生成示例代码和相关资源，等待工程创建完成。
 
    **说明** 

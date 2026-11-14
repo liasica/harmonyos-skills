@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 文本显示 (Text/Span)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 文本显示 (Text/Span)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:04+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c20d3f18ea42fc5606dd02b9873f0fa8baf53449b2d299d6f37b6b5dadf51350
+content_hash: sha256:b89379dd1cc5be0c4df188f3903b6668c33c9dda8b38000982a2e62875c3ef11
 ---
 
 Text是文本组件，用于展示用户视图，如显示文章的文字内容。该组件支持绑定自定义文本选择菜单，用户可根据需要选择不同功能。此外，还可以扩展自定义菜单，丰富可用选项，进一步提升用户体验。Span则用于展示行内文本。
@@ -24,7 +24,7 @@ Text可通过以下两种方式来创建：
   Text('我是一段文本')
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/R2Wmu76lQ-6-LhhUXvY-nw/zh-cn_image_0000002786518842.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CA7E2A46FC3AA1C54029AF907B00B2A6467E5D115E18B8AFA10F309B632205D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/ivIqDmPFR5uHTfrE-47KHg/zh-cn_image_0000002788306646.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=9832775EC987E4FE7CD180C51A316B5BBECBED329524304E58081EC0E94042D9)
 
 * 引用Resource资源。
 
@@ -51,7 +51,7 @@ Text可通过以下两种方式来创建：
     .width(300)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/3aDYMLnoStGnWNVherL5Vg/zh-cn_image_0000002786358914.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB0A870D76B07FDA2183F5689C1E1B211B598670CE9B2718CE7E6F096A0C4A69)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Mi7dtzerSU27uSMRR5LYzA/zh-cn_image_0000002817426009.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8D226D175F15A5563E28FE424891215075597B7FBBB9764F5604726CCCC760C)
 
 ## 添加子组件
 
@@ -71,7 +71,7 @@ Text可通过以下两种方式来创建：
   .borderWidth(1)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/bUPnUg5qQP-dwJYj95t_xQ/zh-cn_image_0000002815558335.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=30E0125EFB18602D1ABBAA63329878989EBF2FCAD0AE4E014D705250C3E1E6D6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/LMDp-cvBSDCh94x-ZxWXww/zh-cn_image_0000002788466590.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CBC065A9A22E3ACD0552291334BF8F2E981B4CB4BD9905D00A4348252B9F61C)
 * 设置文本装饰线及颜色。
 
   通过[decoration](../harmonyos-references/ts-basic-components-span.md#decoration)设置文本装饰线及颜色。
@@ -99,7 +99,7 @@ Text可通过以下两种方式来创建：
   .padding(10)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/W7hiedCURdGPOND1aBuu9g/zh-cn_image_0000002815398419.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=380E5941E405CCBB197E731CC3759AAB164428BEEA9BFFC07DCDAD6D4F9A1B4B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/vAOXtdimTKCmmzfhgfV_ow/zh-cn_image_0000002817506077.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=E533516AFE164B159E425C6E8126B1611D16D78C0B2A4DCE3CA987E03D641213)
 * 通过[textCase](../harmonyos-references/ts-basic-components-span.md#textcase)设置文字一直保持大写或者小写状态。
 
   ```typescript
@@ -111,7 +111,7 @@ Text可通过以下两种方式来创建：
   .padding(10)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/BO5Q8febSoGAwF0mEpy5ag/zh-cn_image_0000002786518844.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C5404393500A734ADE0E9378A0216B6092E6E44BCD4C64E2A5E4E0605C71EE0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/-i5C91PCRVqlzWXxq_XEyQ/zh-cn_image_0000002788306648.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=8893AF574640AF4600212D2DC4071BF7A9EB87A440A3EF43B812ABE6E98AB5BA)
 * 添加事件。
 
   由于Span组件无尺寸信息，仅支持添加点击事件[onClick](../harmonyos-references/ts-universal-events-click.md#onclick)、悬浮事件[onHover](../harmonyos-references/ts-universal-events-hover.md#onhover)。
@@ -157,7 +157,7 @@ Text可通过以下两种方式来创建：
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/B2irwKfXTtyRIwHxoZ3B_g/zh-cn_image_0000002786358916.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6431B72200F7D50836EC4F66A5DFE3A52C91F0E21E335552AA785431D5931786)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/oijrayrtQEWEc7oXBZNvWA/zh-cn_image_0000002817426011.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BAAB0AA5CD980CB831621D7FF904103DE435EDB8ABD1A50BE1170A8A735DB83)
 
 ## 创建自定义文本样式
 
@@ -223,7 +223,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .padding(10)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/KKEEDqXpTxyJxuYddEewRg/zh-cn_image_0000002815558337.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC779A8A30D2A8CB5A8C022CA4646762CFD7AA7EC07F881725D000E747D5E452)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/y7B52sYjRXelPz6azBcoBA/zh-cn_image_0000002788466592.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B48ABCED812AA530FAF7BA5F0E76CA9BB8A6360333696C0A6602E74BABBA125)
 * 通过[textOverflow](../harmonyos-references/ts-basic-components-text.md#textoverflow)属性控制文本超长处理，textOverflow需配合[maxLines](../harmonyos-references/ts-basic-components-text.md#maxlines)一起使用（默认情况下文本自动折行）。从API version 18开始，文本超长时设置跑马灯的方式展示时，支持设置跑马灯的配置项，比如开关、步长、循环次数、方向等。
 
   ```typescript
@@ -276,7 +276,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/hfX9tMohQGiobwqCB8gY1A/zh-cn_image_0000002815398421.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AACD5DB6D57AFCC4BC83CE881B824B4D7A924F12DB3E1F29A95689A2880B178)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/KpGwRliUQH-nAKuhb4c2pg/zh-cn_image_0000002817506079.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA4007EBCF6781AC91F9DE4627FAF10F725E9BFB85C998AECF0E948971608662)
 * 通过[lineHeight](../harmonyos-references/ts-basic-components-text.md#lineheight)属性设置文本行高。
 
   ```typescript
@@ -290,7 +290,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .lineHeight(20)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/qVmUVohJSU-NV96i6ErxXQ/zh-cn_image_0000002786518846.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD72FFE7E9F57C76A86F50691815A74808E718A294C0F1428A693DEDB0BC3A5D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/Gx2eXmS7T1GNKw1VD8unKw/zh-cn_image_0000002788306650.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=3566D2E3019812F3860C2F42B79AB63B8100036270F2E7D8FB19193FF5AC79C7)
 * 通过[decoration](../harmonyos-references/ts-basic-components-text.md#decoration)属性设置文本装饰线样式、颜色及其粗细。
 
   ```typescript
@@ -343,7 +343,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .borderWidth(1).padding(15).margin(5)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/7EVQWaX-QbOILoW4mGAxcw/zh-cn_image_0000002786358918.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=316EDD13A85E2A0F5B8BC301DC1FCB80D509C979572AD6854EF68D15B4317353)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/GdR-7OrMR42ZI8MdDmkCzQ/zh-cn_image_0000002817426013.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E56C32E9EA2D4D868CAD8D44CCFA73053DE044ADE8B865C01611F605B4F2925)
 * 通过[baselineOffset](../harmonyos-references/ts-basic-components-text.md#baselineoffset)属性设置文本基线的偏移量。
 
   ```typescript
@@ -370,7 +370,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .margin(5)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/u5mmKPhwQB6wcOD8HVPiYw/zh-cn_image_0000002815558339.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=394E03F1EFADECC7B506A16E5E26F595CC757C1F1CCA0309A6C51E1246FCE643)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/oBHRGGc-TxuuP_HcSQbFUw/zh-cn_image_0000002788466594.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=96345A0A1C93A191D0E132F5A408910DC0022F597A60A61B4E9E455A6CF8F114)
 * 通过[letterSpacing](../harmonyos-references/ts-basic-components-text.md#letterspacing)属性设置文本字符间距。
 
   ```typescript
@@ -397,7 +397,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .margin(5)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/KF56ZKMLT4ithZovfWontQ/zh-cn_image_0000002815398423.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EF39CF2CE152205425D5DF47DBF299A76E2C20853127EF7316B442447A8D837)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/bO83syjTRj-SUoOuBAW-cg/zh-cn_image_0000002817506081.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=16E87132C924504934FBC2D0EE07959ECF7E9CF854B9C91DCB319BBA11E3232A)
 * 通过[minFontSize](../harmonyos-references/ts-basic-components-text.md#minfontsize)与[maxFontSize](../harmonyos-references/ts-basic-components-text.md#maxfontsize)自适应字体大小。
 
   minFontSize用于设置文本的最小显示字号，maxFontSize用于设置文本的最大显示字号。这两个属性必须同时设置才能生效，并且需要与[maxLines](../harmonyos-references/ts-basic-components-text.md#maxlines)属性或布局大小限制配合使用，单独设置任一属性将不会产生效果。
@@ -449,7 +449,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .margin(5)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/lpBBq59lRKeVm8LMOmMnUQ/zh-cn_image_0000002786518848.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=9978BE2A7D839E25D4770B28167860D358B48B2319AB31DF6E3FF3275F1C0FAC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/bBNUJ6XhS3ehijfncb6Ixw/zh-cn_image_0000002788306652.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=B64236DA0B5E88391FC720CDA67E44D598FB7D1DCD3708C8E3894917B3BF0B59)
 * 通过[textCase](../harmonyos-references/ts-basic-components-text.md#textcase)属性设置文本大小写。
 
   ```typescript
@@ -474,7 +474,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .margin(5)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/GzpabXMuTZe90hp3MUb9wQ/zh-cn_image_0000002786358920.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=531E7C9D66E03D10532FE03039C84F6469561D8B098780CA9C43309556551758)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/ahLj4k5ySQCMEFTjO2TjAQ/zh-cn_image_0000002817426015.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=F141836A5410680793CED6D40ECFECB08E67B2B4C5F06DC6C89B30FB63A3C9F2)
 * 通过[copyOption](../harmonyos-references/ts-basic-components-text.md#copyoption9)属性设置文本是否可复制粘贴。
 
   ```typescript
@@ -484,7 +484,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .copyOption(CopyOptions.InApp)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/ykS2Nob-TNOMO2y5LGbfXw/zh-cn_image_0000002815558341.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9AAE50C21F3CF14C3D98596FD4C792759F5CC8C8E198A071AC136939365CAAE)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/OXtlRT-gTYi7LJVT_SH1Bg/zh-cn_image_0000002788466596.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DB5CD7368FC03695722C984A5872027FD574F18AF0E31B11D5501BF7BAFAD17)
 * 通过[fontFamily](../harmonyos-references/ts-basic-components-text.md#fontfamily)属性设置文本字体族。应用当前支持'HarmonyOS Sans'字体和[注册自定义字体](../harmonyos-references/js-apis-font.md)。
 
   ```typescript
@@ -493,7 +493,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
     .fontFamily('HarmonyOS Sans')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/1c8GmQ3LSQy4v3yjJNE5CA/zh-cn_image_0000002815398425.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=14A5C35F90E812F8BF8B7A3E968280556E0B1CC647E114BE491BE0E56993CFC5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/WdXBAd38SiqaIj9AJHW4EA/zh-cn_image_0000002817506083.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A0698B33FDC8E6BE8C521FC1F0F86F27AD1FFD11B7971398DB3B1F750049453)
 * 从API version 20开始，支持通过[contentTransition](../harmonyos-references/ts-basic-components-text.md#contenttransition20)属性设置数字翻牌效果。
 
   ```typescript
@@ -525,7 +525,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/G7hQJwXDRlCp6efCOXao2A/zh-cn_image_0000002786518850.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=051714405409D9839CF360018E25319EA8C69AA6FA22C686B6F5EA73146F1960)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/oodDqoInTSCdrvS2d_dptg/zh-cn_image_0000002788306654.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C53D9FB140B6F3DE09AAD094F6130DFB528C5D69227ED10EE051997A8D855A7)
 * 从API version 20开始，支持通过[optimizeTrailingSpace](../harmonyos-references/ts-basic-components-text.md#optimizetrailingspace20)设置是否在文本布局过程中优化每行末尾的空格，可解决行尾空格影响对齐显示效果问题。
 
   ```typescript
@@ -547,7 +547,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ZUlzN0vpTBCpnVhszVv5mA/zh-cn_image_0000002786358922.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=33636BB944B96DB7D666803CDEFBF03163E978D5AADA179D831A3D8523C7B791)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/EVtzGzeLQn-itx-20JAg_Q/zh-cn_image_0000002817426017.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F83ACA4179430A3FDB26D76AA06C2C39C87FAAF8C861C0D7AF9294EF323C3CC)
 * 从API version 20开始，支持通过[lineSpacing](../harmonyos-references/ts-basic-components-text.md#linespacing20)设置文本的行间距。当不配置[LineSpacingOptions](../harmonyos-references/ts-text-common.md#linespacingoptions20对象说明)时，首行上方和尾行下方默认会有行间距，当onlyBetweenLines设置为true时，行间距仅适用于行与行之间，首行上方无额外的行间距。
 
   ```typescript
@@ -578,7 +578,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/7776Fq9XSn68Wn_EgWO7Ww/zh-cn_image_0000002815558343.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAA8187854DEC3359575E95F6543780C8490D5B5227E0F8869903F90B6E0D746)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/jFdfbPBzSIayd-87DUI-mA/zh-cn_image_0000002788466598.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E4BD9E749412FE45D1DD3241775E1FF08DEA0AE3E2233B4B5074B724A7C8F6E)
 * 从API version 20开始，支持通过[enableAutoSpacing](../harmonyos-references/ts-basic-components-text.md#enableautospacing20)设置是否开启中文与西文的自动间距。
 
   ```typescript
@@ -632,7 +632,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/gYGwSv4WQTOL3Rh-9CSA7A/zh-cn_image_0000002815398427.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC758CE306153C317889021F75425AAE80E791296D0BA3A07EEAFB5DF634F2DC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/oA85qS4JQsWSgWBEi86V2g/zh-cn_image_0000002817506085.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=262067D764B551E23A379DB82D479B6E97326A2A75698DEF0E18F9925438DFE9)
 * 从API version 20开始，支持通过[shaderStyle](../harmonyos-references/ts-basic-components-text.md#shaderstyle20)设置渐变色。
 
   ```typescript
@@ -667,7 +667,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/-6fuSpWVSZahqpAY0nwPFg/zh-cn_image_0000002786518852.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F2ACDCA9943C916F6053004D27EC12982120C36EBD9B4B6F9C3EEC50916FBE6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/8gW7UU1ZQ9uCpPZtAE5IRw/zh-cn_image_0000002788306656.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FE6A38FF2DDE6161B693A206C85004FE0AD13B4E04612315F2858E6FBD667B6)
 
 ## 添加事件
 
@@ -709,7 +709,7 @@ struct GeneralEvents {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/lqUwGq3MT6y14ai4aXbE0Q/zh-cn_image_0000002786358924.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=68E47170E898FB40664775A76DADB7016E6F975E26631577BAAA7E6A19A5BA69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/bD55wR0BR9-D8x7CGIsOtA/zh-cn_image_0000002817426019.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D47246ECF6F2F2AB28F0B9ABB8F5194862F41680F88AF921474403FE61CC0D6)
 
 ## 设置垂直居中
 
@@ -730,7 +730,7 @@ struct GeneralEvents {
   .textVerticalAlign(TextVerticalAlign.CENTER)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/fgRyBz5DQbOMMcyZQaLvkw/zh-cn_image_0000002815558345.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A94C3ACE68C0412D4CB4D08A4A7C4DAC691D92E87619D1E013C0E786FA3DADD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/ikj6xriuS0C0YEylyghzxA/zh-cn_image_0000002788466600.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DEDE6E89D6A1B74CEA2004730B26A93228AE1153C53CA56EE37C08DC8C2B757)
 
 ## 设置选中菜单
 
@@ -747,7 +747,7 @@ struct GeneralEvents {
     .copyOption(CopyOptions.InApp)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/XEkypiZGTpeJcb8SDdDQvg/zh-cn_image_0000002815398429.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D9FD8F040710C2DA243B5F139A42E8F697D2A2ED90DF905645EA46E4E4D39E7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/Ad-fDUJ6T26iOxyDLLbJBA/zh-cn_image_0000002817506087.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AD18D6CEE9FC47725FD9DB9A475C8E3806BCD218612656A22F4DCAE94961C29)
 * Text组件通过设置[bindSelectionMenu](../harmonyos-references/ts-basic-components-text.md#bindselectionmenu11)属性绑定自定义选择菜单。
 
   ```typescript
@@ -797,7 +797,7 @@ struct GeneralEvents {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/IMjBY5HVSp6WYd5H8YN3DA/zh-cn_image_0000002786518854.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3D97CBE9242C07CE5B17BC624F97E369B49FB5B40409D9C815D43990E4EC2DD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/tOToWwN5QZ-h51CHgckz7w/zh-cn_image_0000002788306658.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=224E7054EF8E7DC6A524C945F17CF2E4BD40D1FACE0A286C110B7B8E15E14D57)
 * Text组件通过设置[editMenuOptions](../harmonyos-references/ts-basic-components-text.md#editmenuoptions12)属性扩展自定义选择菜单，可以设置扩展项的文本内容、图标以及回调方法。
 
   ```typescript
@@ -857,7 +857,7 @@ struct GeneralEvents {
   };
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/OEbhogeXSyuqqzQpAeEwCw/zh-cn_image_0000002786358926.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF830FA86A3EB155617D2A6A748B3655A8489B275AC1003003543E511D6B08B3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/QEiEyKQoRUKjiHUgF_zBLA/zh-cn_image_0000002817426021.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=941B7EBE32439253BBD8863ADF2763A93C3CD830D48E0B55B39667BCE1F5EFEE)
 
 ### 关闭选中菜单
 
@@ -906,7 +906,7 @@ struct GeneralEvents {
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/xPeLneiKRF-Y7dtR9XIAGw/zh-cn_image_0000002815558347.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=228C9E2F86AF3972EE3D364829A0D43F31859B8E8D6B866A3263475DFCE6904C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/dtjNHVgTTaa7cPjEEPvqWA/zh-cn_image_0000002788466602.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=55F0CBCEE91AE61D785EF565B905067A5116FC6AEC9F45A3D84368B47EB7A3C7)
 
 ### 屏蔽系统菜单回调和自定义扩展菜单
 
@@ -1044,7 +1044,7 @@ struct CustomAndBlockMenus {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/JGEj1mO2TXifAdebTw_z9A/zh-cn_image_0000002815398431.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=758A94CCAB6FA5F2E16891A7386169C26641AE2E01AA552798479DAE17DD2FF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/g8rAsu8ZSNenFoHlplGfiQ/zh-cn_image_0000002817506089.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=FACCD2E1BD9199101D6C124AA8744029DE5ABB0DEB6E7EAF5FF97FDB283C6A54)
 
 ### 屏蔽系统服务类菜单
 
@@ -1094,7 +1094,7 @@ struct CustomAndBlockMenus {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Bx9JrluhQhekhqv9-GTUfA/zh-cn_image_0000002786518856.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=53EC5306259D24FE110DE9D471102E595742A114E331B700A54C2D7F09F9AA2C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/lGX4fz4eT9y4ss_IqqpO2w/zh-cn_image_0000002788306660.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7CB92DA4A370BFA5BA47E864A2FB1EE4BCDE6C4571E20B53C3EA00B989315B7)
 * 从API version 20开始，支持通过[disableMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)屏蔽文本选择菜单内指定的系统服务菜单项。更多详见[disableMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)的API文档接口说明。以下示例只是完整示例工程中的一个示例，为了不影响工程其他页面示例效果，仅在页面的出现和消失生命周期中进行系统服务菜单的禁用和恢复，实际场景可自行选择其他时机，比如[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)和[onDestroy](../harmonyos-references/js-apis-app-ability-uiability.md#ondestroy)。
 
   ```typescript
@@ -1143,7 +1143,7 @@ struct CustomAndBlockMenus {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/oabnWLcsQmeMDuEuQqzfuA/zh-cn_image_0000002786358928.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=2690D3153DACE5541AB0434950622F3216167E5DC2EDA572C71CF1C2A5955D7E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/Zk8KiUn-RFOo1odrLt-ZQw/zh-cn_image_0000002817426023.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=A29108BFCAAF0268FA35A6D5772B400EA706838CAC418B15B47603D8B6CB56D3)
 
 ### 默认菜单支持自定义刷新能力
 
@@ -1228,7 +1228,7 @@ struct PrepareMenu {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/CcnmfK-_SYy0VmQB1Zt62A/zh-cn_image_0000002815558349.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=51A6FFE348633E90C967505CC9181C103691C264D5CE331DD3365CEA02AB6E35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/icI-a42NSXiED1RdWFFUOQ/zh-cn_image_0000002788466604.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=75199D2A9C0B36D5C1AEAB05691CB5A8B22C515D191BC0D26A7D80B1220C7812)
 
 ## 设置AI菜单
 
@@ -1260,7 +1260,7 @@ Text组件通过[enableDataDetector](../harmonyos-references/ts-basic-components
 * 如果需要调整识别出的样式，可以通过[dataDetectorConfig](../harmonyos-references/ts-basic-components-text.md#datadetectorconfig11)实现，具体可以参考[TextDataDetectorConfig](../harmonyos-references/ts-text-common.md#textdatadetectorconfig11对象说明)配置项。
 * 如果需要调整菜单的位置，可以通过[editMenuOptions](../harmonyos-references/ts-basic-components-text.md#editmenuoptions12)实现，具体可以参考示例[文本扩展自定义菜单](../harmonyos-references/ts-basic-components-text.md#示例12文本扩展自定义菜单)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/UepyCiXJSPmV6M_hvhnPug/zh-cn_image_0000002815398433.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=38DF8217511C0270E994D721B9D488FD11B6B88D1A23AC7A7DD86908D3A48601)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/0AWbUdQ5R12ssFx6BAhTIA/zh-cn_image_0000002817506091.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3875EB49BC02CB8822ED527A4F29FBBC9D30D40C9591FD4F9DE741E1117C85C)
 
 ## 跨节点选中
 
@@ -1337,7 +1337,7 @@ struct SelectionContainerDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/3KGn7k5UTz2D9YOmy0SE5w/zh-cn_image_0000002786518858.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A45C3A441B25B482D8F504A4F87AEB73E954F382DA260D975FA4D928CC5CA8C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/hkMkkfPmRP26066yqkF_Jw/zh-cn_image_0000002788306662.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE21093A49EE6B138B6622C955523B13304DEC1FB691ADC8B5925C9C6CF575CD)
 
 ### 配置跨节点文本拼接方式
 
@@ -1424,7 +1424,7 @@ struct SelectionContainerJoinStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/nwFTQ5PRSC-YFwj-1tV-Ng/zh-cn_image_0000002786358930.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E358B379E1E2FDF9ABD86AD96E7DEF97CF483B8E578BF1823686BA7A5C8C79A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/yDPCamtBQzCCNw_181xplw/zh-cn_image_0000002817426025.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=177C023EA9D7BD722E53B5A8E3CE6AACFEC70AB7EA02D879208303E58A37C06A)
 
 ### 绑定自定义选择菜单
 
@@ -1522,7 +1522,7 @@ struct SelectionContainerCustomMenu {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/zVPXZoPoR8a7yMaQkF0jWg/zh-cn_image_0000002815558351.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=43738BC53692F59606E32FA45944793AA42CB2CBC93EB925B10B1C415D85C8A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/LgtlW7WUSOuz4osGAqSw3A/zh-cn_image_0000002788466606.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=D17FD6A96E394C452A2E1807B4205309EA70674B2901EF80794E7176A8447214)
 
 ### 扩展系统菜单选项
 
@@ -1641,7 +1641,7 @@ struct SelectionContainerExtendMenu {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/0ca22wXSS2qW55LGudJtLQ/zh-cn_image_0000002815398435.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F4B1F5D93C38BAC974FF8FE05FF04E3132DE206A1915BB8B8717FDF5E27766C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/K-CyQkifRYqy6VeOCMXNZw/zh-cn_image_0000002817506093.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=083945B2643E59D1E841AFEBFEE14665A519407B9707EB0E659679F1F089B950)
 
 ### 通过控制器关闭菜单与清除选中
 
@@ -1710,7 +1710,7 @@ struct SelectionContainerControllerDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/V1vPw6TsQsWBgzGK-j8Ing/zh-cn_image_0000002786518860.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=106D8467E5DCF69F73272B4251C19D4D0A3354FE5C518CF90BEB2D3F5F158CDF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/baRxmWLaSNqLEr3Xzi58wg/zh-cn_image_0000002788306664.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=A95623EB9688F7419EDF078FCF539461DFCF644C186FA3BB98CAF80937F133A3)
 
 ## 实现热搜榜
 
@@ -1820,7 +1820,7 @@ struct TextHotSearch {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/B5ywA3X7Qqa815R6PtSgAA/zh-cn_image_0000002786358932.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=02398D9341C84E980E21FBB3812A2042A1716E25387C844DF3BF4D8AB0AF3156)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/jmvj3PE9Swa3UkJq3QST3A/zh-cn_image_0000002817426027.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=99D2AEA3823E98DCFED2BC645981F424A3D70C08FA14DA38F124321D3553D2A9)
 
 ## 示例代码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-add-new-a
 title: 添加Ability
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 添加Ability
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:48+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:36d77939a49ae868eefcf7bf49236b2f65216a3eaedb90745116729453acdb50
+content_hash: sha256:83785bf61b3a535dbde817fe60f2595bd4a2d33eaf07c84d5217f4054d8b8c1c
 ---
 
 Ability是应用/元服务所具备的能力的抽象，应用的一个Module可以包含一个或多个Ability，元服务仅包含一个Ability。应用/元服务先后提供了两种应用模型：
@@ -25,7 +25,7 @@ Ability是应用/元服务所具备的能力的抽象，应用的一个Module可
 1. 选中对应的模块，单击鼠标右键，选择**New > Ability**。
 2. 设置Ability名称，选择是否在设备主屏幕上显示该功能的启动图标，单击**Finish**完成Ability创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/vk6JZAjpRTqLKor8XckRPw/zh-cn_image_0000002779567354.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=7534E24A96F316A6A8C36B56E58B71C7B6DF6C6356D15AA9C26C17C593413A93)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/7RVq79STTnGG_9aiO0cg2g/zh-cn_image_0000002779567354.png?HW-CC-KV=V1&HW-CC-Date=20261114T004848Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3F98602D76255A6B76268326A8D974B1B181A82E7E1D9E60DD93D1FA7EC666D)
 
 ### 在模块中添加Extension Ability
 
@@ -46,10 +46,10 @@ Ability是应用/元服务所具备的能力的抽象，应用的一个Module可
      + **EmbeddedUIExtensionAbility**：用于提供[跨进程界面嵌入](embeddeduiextensionability.md)的能力。
      + **WorkScheduler**：用于提供[延迟任务](work-scheduler.md)的相关能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Cx0RyZp9RKCF5kWSKsyagw/zh-cn_image_0000002779567356.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=729A50106DA6F7D06CBA44B59FAECFE5689FD6AA7A5DE0BD9597CCCECA93D837)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ZrPTSHTISYOYH9Eo6mTMDg/zh-cn_image_0000002779567356.png?HW-CC-KV=V1&HW-CC-Date=20261114T004848Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E586D3E28BEAF34FC7E886F8F4ED7D12A16D2008A110F2C25149D060F472A94)
 2. 设置Ability名称，单击Finish完成Extension Ability创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/esfGDdJ_RNSXSTnY2rLUcQ/zh-cn_image_0000002779567352.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AD6D68C3811221ECE1DD53A5F119E1F696B94328BB053AF91DD9BF9329A3AC9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/tWjTQNqjRkqfIGqbYxy6fA/zh-cn_image_0000002779567352.png?HW-CC-KV=V1&HW-CC-Date=20261114T004848Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F13944E5FFB6981E364A331913F4C17BB42478218AE6251155C850C3869F666)
 
 ## FA模型添加Ability
 
@@ -57,7 +57,7 @@ Ability是应用/元服务所具备的能力的抽象，应用的一个Module可
 
 1. 选中对应的模块，单击鼠标右键，选择**New > Ability** ，然后选择对应的Data Ability/Service Ability模板。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/7OxC6wxHSJSApcZynKR4Jw/zh-cn_image_0000002779407374.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=1771D702ECB66647B12C206D05E165C44BA1A477D8ECC7A606CF6716AEBA65C1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/coCPI8wRSUCy4PXEBjES5g/zh-cn_image_0000002779407374.png?HW-CC-KV=V1&HW-CC-Date=20261114T004848Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD6FDFAAE071F390ABF843251F0EA84EB673EA36C2087735153FB011145554BB)
 2. 根据选择的Ability模板，设置Ability的基本信息。
    * **Ability name**：Ability类名称，由大小写字母、数字和下划线组成。
    * **Language**：该Ability使用的开发语言。
@@ -67,7 +67,7 @@ Ability是应用/元服务所具备的能力的抽象，应用的一个Module可
 
 1. 选中对应的模块，单击鼠标右键，选择**New > Ability** ，然后选择对应的Page Ability模板。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/sBnZ-4JiRYGQ0KDTs6RY9w/zh-cn_image_0000002779407376.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E15C95BE515505308E0141779DF01D2DE1A2AE4365DDB32C10D6E935CAEA70F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/aKsgUEXuTguf9Ajq48f1Nw/zh-cn_image_0000002779407376.png?HW-CC-KV=V1&HW-CC-Date=20261114T004848Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA6D4DF46F6904EE6E18298A1F3855817AEB259B45E610025209B53D7BEE14E4)
 2. 根据选择的Ability模板，设置Ability的基本信息。
    * **Ability name**：Ability类名称，由大小写字母、数字和下划线组成。
    * **Launcher ability**：表示该Ability在终端桌面上是否有启动图标，一个HAP可以有多个启动图标，来启动不同的FA。

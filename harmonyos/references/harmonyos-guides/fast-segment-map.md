@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-segment-
 title: 使用SegmentMap查询维护区间信息
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > 使用SegmentMap查询维护区间信息
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4532360593d50651dbf65dff96db1ed63d03c4dac5cb66e243ebd9890a9a2fed
+content_hash: sha256:c9ea3c1e31ceaeec47c03d4c80c8dff7e929ce5fb29fc7c0c60d59939925518e
 ---
 
 FAST Kit提供Segment Map用于查询维护区间信息，实现数据序列区间段的快速更新和快速查询。线段表（Segment Map）是一种用于高效处理区间段信息的数据结构，适用于需要频繁对数据序列的某个区间段进行统计或修改的场景。其典型操作包括单点修改、区间修改、区间查询等。
 
-线段表有多种实现方式，其中最常见的是使用二分树的方案，也被称为线段树（Segment Tree）。与直接遍历区间相比，线段表能将许多区间操作的时间复杂度从 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/xw9NHcVpTnWIV_1_FRO5Fw/zh-cn_image_0000002815559177.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B7FEF7A93F95C66FEF8EF4DE2ED1BEE31771E1F6FCA64DFAC1315BB7688B97C) 优化至![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Qzxq8If4Q9aDl-p43baAjg/zh-cn_image_0000002815399261.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E495E524A20D9C46C4E5F3B29A9303980131406976FC63DD0495E5727EDBC76)，在处理大规模数据时优势显著，为构建高性能、响应迅速的应用程序提供数据结构基础。
+线段表有多种实现方式，其中最常见的是使用二分树的方案，也被称为线段树（Segment Tree）。与直接遍历区间相比，线段表能将许多区间操作的时间复杂度从 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/pc2CP_cXTA2yErX3ITs-yg/zh-cn_image_0000002788467432.png?HW-CC-KV=V1&HW-CC-Date=20261114T004600Z&HW-CC-Expire=31536000000&HW-CC-Sign=E58A600C091A4094A190B3894BCEC9B7173EE48528AA524DCD5980A0BF5BDB76) 优化至![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/G_jcHhviTg-gkehgb6oa3A/zh-cn_image_0000002817506921.png?HW-CC-KV=V1&HW-CC-Date=20261114T004600Z&HW-CC-Expire=31536000000&HW-CC-Sign=4519CC0CC737C1C50038728423D7F1C0FA2DFEF98ED54A553DF518183E53E562)，在处理大规模数据时优势显著，为构建高性能、响应迅速的应用程序提供数据结构基础。
 
 ## 接口说明
 

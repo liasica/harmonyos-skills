@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-confi
 title: 申请账号权限
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 开发准备 > 申请账号权限
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:09+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f3deaeb562b15d9dffc3dc9c37283ae703f3cf9e8b066d5b149aea355e054645
+content_hash: sha256:35da22e8aab5e7d554c64d1d059b81ad6b9082df8f9a962535b0523f3985bc99
 ---
 
 请参考“[应用开发准备](application-dev-overview.md)”章节，创建应用、使用DevEco Studio创建应用工程。
@@ -85,7 +85,7 @@ content_hash: sha256:f3deaeb562b15d9dffc3dc9c37283ae703f3cf9e8b066d5b149aea355e0
 
 1. 在 AppGallery Connect（简称AGC）的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中，选择相应的项目，然后选择需要申请对应权限的HarmonyOS应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/t3M84wrPQ82iGpLORHMq6A/zh-cn_image_0000002815399633.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E9CB0948B6A9710022EB2BE96BD94E71F27B18AE8A6269AA4449B5FDB720B71)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/aS77WRkuR0mLB9Li4FtnCw/zh-cn_image_0000002817507293.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B62C109402B33DD8982E1FE596F5BC9311C5C78DA109E194D78C92E11CB4075)
 2. 在“开放能力管理”中，选择想要申请的账号权限，并点击“申请”。
 
    **说明** 
@@ -94,10 +94,10 @@ content_hash: sha256:f3deaeb562b15d9dffc3dc9c37283ae703f3cf9e8b066d5b149aea355e0
 
    图示仅为示例，不同应用类型展示不同权限，请以实际页面显示为准。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/oai-hEMtTdyBZA9_Qsnuqg/zh-cn_image_0000002786520058.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=E77C19FF254BF1168ADDA0A9F50D5045EFF1E4AD81E3D0872EBA34181567ACE4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/mPvxWXTRStCNbPI4Ry3odQ/zh-cn_image_0000002788307862.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=0097C675E379C0843F2A61E34E0FB052464C4F6A825E43C71D200BD84580FB33)
 3. 点击申请后，请根据应用实际情况填写“申请原因”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ugJ1j8ZYQwKoM-KA9w_qJA/zh-cn_image_0000002786360130.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=652BE97E52E19A94934F1D864C964E248A69D44AC43ADC446DE08B414904CF22)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/EVkzihseSfWjtmz-jScaTQ/zh-cn_image_0000002817427225.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=C67FB8CBAAFFC01F46748AA0FD9804213365C7C36805C7880BFA565B53216E59)
 
    **说明** 
 
@@ -148,8 +148,8 @@ content_hash: sha256:f3deaeb562b15d9dffc3dc9c37283ae703f3cf9e8b066d5b149aea355e0
 
    **图1** 修改前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/dPxBpJP2TaigKqOAhJpapg/zh-cn_image_0000002815559551.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBDB73250219FB67F590AF981C7C510D7F8CB8983437C92F2358D10BAAB61E69)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/xiI7Cq0-RamSMAbus3DCjw/zh-cn_image_0000002788467806.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=69079CF3D855CF12B7D4834582EA0B7493425921926029ACA150658199C5C8A2)
 
    **图2** 修改后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/Vdag-r1QRDmUocAnyEAphA/zh-cn_image_0000002815399635.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E8D3CECF62423D765A56C20AA50376771420B65F75359D4E20AA4050A3292D3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/PgaIEKy-ReOQnnml6xJLyw/zh-cn_image_0000002817507295.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF06AFD0D0798EAF07ADAB182C676187657FD9661AC1682BCCB99D6447535C9B)

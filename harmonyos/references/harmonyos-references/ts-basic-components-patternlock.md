@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: PatternLock
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > PatternLock
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:18+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:658b11d85a4c3c3a194b8a467d98be3abdda2b3a5a291353e73fd17211949966
+content_hash: sha256:3e71e1584df7f3d5c548ad75667ef9f346de87c00423c27333a4cd23c08c160a
 ---
 
 图案密码锁组件，以九宫格图案的方式输入密码，用于密码验证场景。组件支持自定义九宫格尺寸、圆点及连线样式、选中/激活状态颜色等外观属性，支持密码输入过程中的实时反馈以及密码验证结果（正确/错误）的状态设置。手指在PatternLock组件区域按下时开始进入输入状态，手指离开屏幕时结束输入状态完成密码输入。
@@ -387,7 +387,7 @@ struct PatternLockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/GwV63cMSQTasYbh9m2Kvig/zh-cn_image_0000002815400961.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0994C0D0D2581A64582F21306161837CBBE07164574267159DC8F04E278EE3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/nvpr_-5HSomOUXU6KfYCEA/zh-cn_image_0000002817428553.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8109410F30AE7FFCC5C7D0851BFF57A2CBF1A789B40AF3CBA43CF8974BCDD0A)
 
 ### 示例2（判断密码是否正确）
 
@@ -462,4 +462,4 @@ struct PatternLockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/3-SeUXtOS1GJAV5s8xjIpg/zh-cn_image_0000002786521386.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FD78776AD72F50786F421372B9E4CDE39D19F1B096008AABF1EF519D58A5C5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/_guZWJ4-RvCDdf-mn6PEiA/zh-cn_image_0000002788469134.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=DACC1C23FD11A4765889C6DE0655825135EC8038F9953AE96DD84FB418069AB2)

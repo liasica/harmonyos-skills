@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-integrate
 title: 接入购买
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 非续期订阅商品购买 > 接入购买
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:7deb4321fbe9674cf0dfdb0ecb7426da2a5df0364dc971c45a347832bf1ac570
+content_hash: sha256:04bd5ee6f4d93f32f84e923b39fc85c2ec1682ec721dc9667d92ee101b9d7040
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:7deb4321fbe9674cf0dfdb0ecb7426da2a5df0364dc971c45a347832bf1
 
 在接入非续期订阅商品购买能力前，需要提前[配置商品信息](iap-config-product.md)。用户在应用内购买时，应用拉起IAP Kit的收银台，收银台处会展示商品名称、商品价格等信息，用户根据需求完成商品购买。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/CovNG5TkQlqv_zNmbVwJgA/zh-cn_image_0000002786520256.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5095D9FBFF62B1E8EC77C99BDB40256C26BC7AEEA69D21E25A67025E36E2300C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Z38JI5seRZGjw_gMwmQwCw/zh-cn_image_0000002788308060.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=03103A7326DFF1EB2CD1094282FAD25B2E3F2E9ABF5BD58853EFA865756873D6)
 
 ## 提供优惠
 
@@ -37,7 +37,7 @@ content_hash: sha256:7deb4321fbe9674cf0dfdb0ecb7426da2a5df0364dc971c45a347832bf1
 
 如下业务流程对于单机应用同样适用。在单机应用中，应用服务器和应用客户端的交互放在应用客户端完成，应用服务器和IAP服务器交互的部分可不处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/rorYvDXiRYqOPpmcDS-Vhw/zh-cn_image_0000002786360328.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=0038D725AC3925D69ABEC15D1FC8A1E306F769CDA65150797994AE0E70B8C5E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/RbeTZlx-S6mMekc4bxDRww/zh-cn_image_0000002817427423.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=103B6B313E2558E415230D803B66600D445D194968AC252246244C9683F34A42)
 
 **展示商品**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Z序控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > Z序控制
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b367034d810e8e804256d758680d734a04c66228f16bd610f929545cb7418cb9
+content_hash: sha256:1382707ca40abeed739e5a47745abfa3db357565400a879f1b1f7c537a492fd6
 ---
 
 组件的Z序，设置同一容器中兄弟组件的堆叠顺序。
@@ -73,11 +73,11 @@ struct ZIndexExample {
 
 Stack容器内子组件不设置zIndex时，默认按照声明顺序显示，后声明的组件会覆盖在先声明的组件上方。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/O1iPLayMQ-SBmhyEpwNrlw/zh-cn_image_0000002815560395.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB5C7BAA3DE755AD1309F395DAC44BC9A60824889AEBF59276A0EC5C429156DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/RrTbRSmvRCGgCpUBtMi88Q/zh-cn_image_0000002788308708.png?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE05D03B2C4D926CBAD55760D624FC2165C96960FCB0226AE9ECBE9070ADA93F)
 
 Stack容器子组件设置zIndex后的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/sN7KvTHMTvGBa13lmOudqg/zh-cn_image_0000002815400479.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9811524AC2D3FB60AE01F3D1D08969B6C8A9F4E8D3186CD4BABC55D128FDF78)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/4rnHu0PGTR6Vqgj1jybYQw/zh-cn_image_0000002817428071.png?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=286E4A46350DD2AE1E7A2DAE1F9CC2D534EE904EDD4DA2C2AEA95B9B5A9ADFFC)
 
 ### 示例2（动态修改zIndex属性）
 
@@ -114,15 +114,15 @@ struct ZIndexExample {
 
 不点击Button修改zIndex值的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Uwja-DINTpmMwV4ZvAKPjA/zh-cn_image_0000002786520904.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=E231E6F025B4B1893929557192B856E723803E4F143502A7844A6F9FBD2AE6B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/GPmXEUejQnaSh9uJqztrQg/zh-cn_image_0000002788468652.png?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=66FD9414F4C40597CD3CB0433BCEC61B3488691916F4019E631D468D7210D008)
 
 点击Button动态修改zIndex，使Text1和Text2的zIndex相等，因为在点击Button前的层级顺序上根据zIndex进行稳定排序，层级顺序不发生改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/IAN_hfkFTi-w6JFqiMPbig/zh-cn_image_0000002786360976.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C8D0790B8B0AE1AC202B4896CA0818CD73A9EE930406DED42034B1D5D68F232)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/iQ0pZws3RJmeAi3eemnEVQ/zh-cn_image_0000002817508141.png?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=89348DAB53E91B6EA8670B1AAADA9C00B388F8595B4AD648C1C149E14883A102)
 
 点击Button动态修改zIndex，使Text2的zIndex大于Text1，层级顺序发生改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ywp4_AO3SwOTsTh-8Ll6Bg/zh-cn_image_0000002815560397.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A443A65FE401E0DE5E3734873F839C58D4CA315C5F355EB139831185E7C219BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/avgmjeJHSZKs50jUmW83Hw/zh-cn_image_0000002788308710.png?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=36B3E6341AB00AC3BB79EAA7C3FD3FAD4B2E44906CD10CCDA379F513A685328A)
 
 ### 示例3（设置不同容器内组件的zIndex属性）
 
@@ -158,4 +158,4 @@ struct ZIndexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/qFFni6dGRfmSjQEaJN1QMg/zh-cn_image_0000002815400481.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=185CBD0348FA0932CC88D2387F9ACD543C916BFC03EEA5EB14609BBE962308F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/IpSM3aquQOykD9So4bBPGw/zh-cn_image_0000002817428073.png?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8ED19E6644D57AE2F9A5406D2EFB82B3A759D20C0BA344F0FA2A56181BD003C)

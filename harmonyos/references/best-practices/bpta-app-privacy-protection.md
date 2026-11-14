@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-privac
 title: 应用隐私保护
 breadcrumb: 最佳实践 > 安全设计 > 应用隐私保护
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:22+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:966bc18092e47eb3c02c9493433a3e2fcea2df3bb665fa3635f793bf26985d1e
+content_hash: sha256:6a13d7284592b848d4a3a42fe918e63063ac5fe3e1023d60503fe5e02ceb85e0
 ---
 
 ## 概述
@@ -106,7 +106,7 @@ content_hash: sha256:966bc18092e47eb3c02c9493433a3e2fcea2df3bb665fa3635f793bf269
 
 **图1** 权限申请弹窗
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/PyNO5Mo2RAiiw_7mqnLmXA/zh-cn_image_0000002681797507.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD61C4223F1751904CB10EB8470427ACC496FD5C1C010B8CB1D8AFDE3C329507 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/RRftHgT3Q_iiq-yNuUrm3A/zh-cn_image_0000002681797507.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=E94C405645C8C5D3ADB354D3C5D1D7DBBC87B5D812653E989A7E1F76C41D3981 "点击放大")
 
 接下来介绍模糊位置申请的实现方法：
 
@@ -183,7 +183,7 @@ content_hash: sha256:966bc18092e47eb3c02c9493433a3e2fcea2df3bb665fa3635f793bf269
 
 用户往往不愿意授予应用对其所有照片和视频的访问权限。因此，HarmonyOS在API9版本之后引入了@ohos.file.picker (选择器)，以满足用户正常的数据访问需求，同时最小化应用的数据泄露风险。通过减少授权范围，降低授权的颗粒度，例如用户在发送图片时，仅允许应用访问用户选择的图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/MZ4WbQo4SeGKXIfm_42TuQ/zh-cn_image_0000002193851256.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=A87D4A4A69E56A5050A29D45A9F09882F399C020EDF9536214F0C7CDCD9D3E0D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/UwYfmQ1CQK6OQl8UM3lMjw/zh-cn_image_0000002193851256.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=924EB725D182D6EBDB915D50D47CE0C2183EB3E8184EE000AC2F023F7C2DCC6E "点击放大")
 
 示例代码如下：
 

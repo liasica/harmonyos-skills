@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-exte
 title: external_window.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > external_window.h
 category: harmonyos-references
-scraped_at: 2026-11-12T09:57:02+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:7c02df18cb2331687fc9542b03498bfc16f10eb0a88db389a99329367f1889f5
+scraped_at: 2026-11-14T08:53:10+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:e14cb615da6d89ad50d9a09ebf2dd57a1649dc9fe1af1fe4b5a6305495567130
 ---
 
 ## 概述
@@ -167,7 +167,7 @@ enum OHScalingModeV2
 
 **描述**
 
-渲染缩放模式枚举。
+渲染缩放模式枚举。下表各枚举项的显示效果均基于[ArkUI\_RenderFit](capi-native-type-visual-h.md#arkui_renderfit)的[ARKUI\_RENDER\_FIT\_RESIZE\_FILL](capi-native-type-visual-h.md#arkui_renderfit)枚举值实现。若设置为ArkUI\_RenderFit的其他枚举值，缓冲区的实际显示效果可能与下表描述存在差异。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeWindow
 

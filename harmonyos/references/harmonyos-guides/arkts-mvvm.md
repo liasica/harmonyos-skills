@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mvvm
 title: MVVM模式（V1）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > MVVM模式（V1）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:6f632b30d9bc5b5ec1fef77bf694f9811e6ec79a8a9e566163303128f02969e8
+scraped_at: 2026-11-14T08:46:58+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:d81db25b34d5b37d7fa35c6bacff4110b9e4d789ca9776ea23c08099270cda8c
 ---
 
 当开发者掌握了状态管理的基本概念后，通常会尝试开发自己的应用，在应用开发初期，如果未能精心规划项目结构，随着项目扩展和复杂化，状态变量的增多将导致组件间关系变得错综复杂。此时，开发新功能可能引起连锁反应，维护成本也会增加。为此，本文旨在介绍MVVM模式以及ArkUI的UI开发模式与MVVM的关系，指导开发者如何设计项目结构，以便在产品迭代和升级时能更轻松地开发和维护。
@@ -31,7 +31,7 @@ ArkUI的UI开发模式就属于MVVM模式，通过对MVVM概念的基本介绍�
 
 ArkUI的UI开发模式即是MVVM模式，而状态变量在MVVM模式中扮演着ViewModel的角色，向上刷新UI，向下更新数据，整体框架如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/zft1nTrWSoyR3rJk5FkY4Q/zh-cn_image_0000002815398063.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B28C92EB73B12C7E9E770F1DAB551927F96C917499740AC34417EFC9F4659DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/lAlsQkdeSA-5gQDqd6ehDw/zh-cn_image_0000002817505721.png?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAAF5E60824BE37C47A0CCA784720B1D15D0B634B032D4CB1AAD8CD9BBEFD0C7)
 
 ### 分层说明
 
@@ -119,7 +119,7 @@ struct StateIndex {
             .width(28)
             .height(28)
         }
-        // 请将$r('app.string.all_learn_advanced_math')替换为实际资源文件，在本示例中该资源文件的value值为"学习高数"
+        // 请将$r('app.string.learn_advanced_math')替换为实际资源文件，在本示例中该资源文件的value值为"学习高数"
         Text($r('app.string.learn_advanced_math'))
           .fontSize(24)
           .decoration({ type: this.isFinished ? TextDecorationType.LineThrough : TextDecorationType.None })
@@ -142,7 +142,7 @@ struct StateIndex {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/UgiIZFq5RIaqR_YIFeyZAg/zh-cn_image_0000002786518488.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=9562BD49053715C6CF6933B5AE2D5606D48E28AA33CE80C96A2969262546F9FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/GwvCQARjQXOrHAWOk9fk3A/zh-cn_image_0000002788306292.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=02120027E2C86DA966317F0948114464ACCABE06231761DFDD47B243B196956B)
 
 ### @Prop、@Link的作用
 
@@ -282,7 +282,7 @@ struct PropLinkIndex {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/aLFX-cVpTGm822Ab96E2cg/zh-cn_image_0000002786358560.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1422D858A4F18BB18A38EDB6726016C358A52907F4CA6AC67DF583CD67692C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/ff1yKWdWTua-DffcHsk2Kg/zh-cn_image_0000002817425655.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEC63C005D49CE7B70C31FC44D29B5D8BCACD4A654FAE6A6D8370E2ACE8A09BA)
 
 ### 循环渲染组件
 
@@ -416,7 +416,7 @@ struct ForEachIndex {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/j0VkslR5QKiI7XMbYVwM2Q/zh-cn_image_0000002815557981.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=98BC03D8A61706CC528E2A865179F45F8893C2453F5999EBE690D62A839D529E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/mq2V50TKQ0W4vLmQPup5Rw/zh-cn_image_0000002788466236.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=6086C64961566143FD6F8FD8258B87586E1B00951C5CC36B7C1AB626D5EDC710)
 
 ### @Builder方法
 
@@ -562,7 +562,7 @@ struct BuilderIndex {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/h1ud9qzDQbG3GiRhU8qMNg/zh-cn_image_0000002815398065.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B89E5E3F4646F7A1B487B065C21EDC11169E85129700B381A535C35DB40FE24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/GabcskCKRE2j6I9KWRZQgg/zh-cn_image_0000002817505723.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=94506D4E7B67A15FC15F4C36BD3CE8F78ECD3AB3D46E5477A044A153B60376B0)
 
 ### 总结
 
@@ -931,4 +931,4 @@ MVVM模式拆分后的代码结构更加清晰，模块职责更明确。新页�
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Ih4EN5n4TMiRzVNgTPe3vw/zh-cn_image_0000002786518490.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=95300EBF8F9482BE6935E8C7CDA32DCD7885AECC2B2828BD4D2BE44D7104BD6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/xI43mMTTTvm4imtWloyseg/zh-cn_image_0000002788306294.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=1939AD14C12E7EF9007B621E49E3DA998EB3BFD1A6987EAD90E62D5BDA1E2493)

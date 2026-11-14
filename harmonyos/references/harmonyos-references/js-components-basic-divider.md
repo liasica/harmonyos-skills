@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: divider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > divider
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:31+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:5889e6a719a17d727f9194afc6f3b99c210d62a001458188622b1bfddbade332
+content_hash: sha256:a9cccd06e57632dbd63846d897988b8599745da41509102d33e427ddaaaf4500
 ---
 
 **说明** 
@@ -96,4 +96,4 @@ content_hash: sha256:5889e6a719a17d727f9194afc6f3b99c210d62a001458188622b1bfddba
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/WuaCGYSXRkK1TlW8-fWcjQ/zh-cn_image_0000002815401253.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=73633715E6F10429AC606E97C7B2E162A5947CB8DEBC5FF257FCA35612EB372D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/4Bit8TWOTVKGw_IRr7P8wQ/zh-cn_image_0000002817428845.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004828Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A84E748D86FF3D25F316AF39BD079AF7C769BFEDAC94CA947F942F01223B955)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/open-permissi
 title: 手动设置授权
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 手动设置授权
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c3956862edc783fc1612e7e54191ee2f76c6b2f49783aabd651c160676fd9787
+content_hash: sha256:b82f9e6a8d6313d02d7630193b621573f897af88d8f646e43d7169db12086c6a
 ---
 
 当应用需要访问用户的隐私信息或使用敏感系统能力时，如拦截键盘输入事件，应向用户申请授权。这些权限属于[manual\_settings](app-permission-mgmt-overview.md#manual_settings手动设置授权)权限。
@@ -78,11 +78,11 @@ content_hash: sha256:c3956862edc783fc1612e7e54191ee2f76c6b2f49783aabd651c160676f
 
    路径一：设置 > 隐私和安全 > 权限类型（如键盘输入辅助） > 某个应用
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/f7-JegjYS7mHPeEt2-LEEw/zh-cn_image_0000002815559049.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=70FFE1725239CCE894F6816D18A8D6599AA23473546DAC2EE0451E04F97485BA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/woxonskcTwuEZovESWOYLw/zh-cn_image_0000002788467304.png?HW-CC-KV=V1&HW-CC-Date=20261114T004543Z&HW-CC-Expire=31536000000&HW-CC-Sign=49AE14BE6AAD3BA92B7B932C2E56B706DA3870130D956824EE4063BE2E668E07)
 
    路径二：设置 > 应用和元服务 > 某个应用 > 权限类型（如键盘输入辅助）
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/kfEbn9ofSBSXQCkjDp94lQ/zh-cn_image_0000002815399133.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E64EC01C9BE2540315AAD3DDA8D8BB077EE95FC2E94503A9C849323931CB7C4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/SNWxqSEwTIK9A4zAN78FPg/zh-cn_image_0000002817506793.png?HW-CC-KV=V1&HW-CC-Date=20261114T004543Z&HW-CC-Expire=31536000000&HW-CC-Sign=7006DEBADD63E2A54F676402F4944CC6933C87A9D2977DB4441D283E470E024F)
 
    应用在UIAbility的onWindowStageCreate()回调中调用[openPermissionOnSetting()](../harmonyos-references/js-apis-abilityaccessctrl.md#openpermissiononsetting22)方法引导用户跳转到“设置”，或根据业务需要在UI中引导用户跳转到“设置”。
 
@@ -90,7 +90,7 @@ content_hash: sha256:c3956862edc783fc1612e7e54191ee2f76c6b2f49783aabd651c160676f
 
    效果展示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/o0RjE_BjQ_WwGbWwqxbBLw/zh-cn_image_0000002786519558.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=157826077536A1AC6F131810824CD1DD54C6088F61AD8AA6F8EEA28734EDFF17)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/CAODnJmGT5-ovlAB0zi-PA/zh-cn_image_0000002788307362.png?HW-CC-KV=V1&HW-CC-Date=20261114T004543Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8ECD8F9765FB9023AE748A4F09D77BA2DB3F4880573BECF5B6A80C69AC8E198)
 
    * 在UIAbility中引导用户跳转到系统应用“设置”中的对应路径。
 

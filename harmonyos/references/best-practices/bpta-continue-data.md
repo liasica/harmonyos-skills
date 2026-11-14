@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-continue-d
 title: 应用接续数据迁移
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 跨端迁移 > 应用接续数据迁移
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:04+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:4ed8374728fb5a7af0e946d74833852f0d0cf0ee788752425e65cf5ac2ab5e8c
+content_hash: sha256:73ded3b7cda4e55c13366c891896ecdeb4982e140e3733faa5927c9dddd8b610
 ---
 
 ## 概述
@@ -19,7 +19,7 @@ content_hash: sha256:4ed8374728fb5a7af0e946d74833852f0d0cf0ee788752425e65cf5ac2a
 
 ## 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/uCMABQwbTjWVn9fNVARk1Q/zh-cn_image_0000002563683642.png?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AA084840987CD8612F395D540177B85DEBC58B32CA86C0059566C8F7DCEA3C3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/-vKdbHIwT8Gu431-HjHHAA/zh-cn_image_0000002563683642.png?HW-CC-KV=V1&HW-CC-Date=20261114T005120Z&HW-CC-Expire=31536000000&HW-CC-Sign=7389479066175C9CDFCAEE600140F18AA3B378B8C86D8DE1E6820C007D0C99EB "点击放大")
 
 实现原理见[运作机制](bpta-continue-cast.md#section1218874218264)。
 
@@ -27,7 +27,7 @@ content_hash: sha256:4ed8374728fb5a7af0e946d74833852f0d0cf0ee788752425e65cf5ac2a
 
 接入应用接续需要[启用应用接续能力](bpta-continue-cast.md#section15192222815)、[配置应用启动模式类型](bpta-continue-cast.md#section10604645308)、[源端保存迁移数据](bpta-continue-cast.md#section634613594303)和[对端恢复数据](bpta-continue-cast.md#section12346113618453)，具体开发流程见[应用接续概述](bpta-continue-cast.md)，本文只关注在不同场景下迁移数据方案的选择。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/9HC5yryJTtyb0WGzWesvjQ/zh-cn_image_0000002594323411.png?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=41AD55F069B085F90C64A4B28B8D927649895CA4138BB1638C0672E48ADF28E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/bm-TkhTYSzuOQg1_FqwD4Q/zh-cn_image_0000002594323411.png?HW-CC-KV=V1&HW-CC-Date=20261114T005120Z&HW-CC-Expire=31536000000&HW-CC-Sign=51D31AC82A8B85611142A19220E31A78F606044AFDF1416BA759E6121589F09E)
 
 ## 使用want.param数据迁移
 

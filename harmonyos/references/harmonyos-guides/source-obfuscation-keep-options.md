@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆保留选项
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆保留选项
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:57+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:70083d980ea9d02bf893f99541e4b6dafa8d9073478bfb2433ac3a5847920256
+content_hash: sha256:8cb68dff365b2c379b8225890882fb258ac3025f23ed707836d668eb5f052f35
 ---
 
 从API version 10开始，开启混淆后代码中的方法、属性或路径将被混淆。但在运行时，通过混淆前的原始名称访问已被混淆的方法、属性或路径，可能会导致功能失效。因此需要根据不同的场景配置相应的保留选项。
@@ -410,7 +410,7 @@ filepath仅支持相对路径，./和../为相对于混淆配置文件所在目�
 
 模块级oh\_modules和工程级oh\_modules在DevEco Studio中的目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/2KnupY6wR1aE_PBTGs5gww/zh-cn_image_0000002815397981.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C70102586F0EB6EFC0FFBAD8CCA6062B78EEAC365228E83546A8A8A0DEE3834)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/iEL64uWgQmOYJVUvZ2oWKA/zh-cn_image_0000002817505639.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=A88488E3A52FBA9225BC21DA06CCC7E21DE02D1BD6618C33DF9F51FBD38A8FF7)
 
 **使用该选项时，需要注意以下事项：**
 

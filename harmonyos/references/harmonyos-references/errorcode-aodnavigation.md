@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 系统 > 硬件 > AOD Navigation Kit（熄屏导航服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:15+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:0c134aca7bcb1eadcfa6f1401b9714e1c7590a337a9f21c87561badc4246ccb9
+scraped_at: 2026-11-14T08:52:19+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:f87043ba05cc9d343b33ebab465a020c021abe8dfe84ea4e1206210ac4b9efd3
 ---
 
 **说明** 
@@ -100,7 +100,7 @@ AOD导航开关未启用。
 
 **处理步骤**
 
-在“设置 > 桌面和个性化 > 熄屏显示 > 熄屏导航”中，选择打开开关。
+在“设置 > 桌面和个性化 > 熄屏显示设置 > 熄屏循迹导航”中，选择打开开关。
 
 ## 1028300006 AOD导航配置未设置
 

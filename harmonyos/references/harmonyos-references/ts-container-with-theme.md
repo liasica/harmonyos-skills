@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: WithTheme
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 主题 > WithTheme
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:22+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:cb01e164849a614b129a1a1d18e0eb3319d3cf44e08836110a2f6ed05e35f43d
+content_hash: sha256:fdae0d95119867a68954f57f3ccc47d33dac89f14cd1757e302f1a71ebb5ab5d
 ---
 
 WithTheme组件用于设置应用局部页面自定义主题风格，可设置子组件深浅色模式和自定义配色。
@@ -77,7 +77,7 @@ type CustomTheme = import('../api/@ohos.arkui.theme').CustomTheme
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/6nk1DiFuTbq6vdL_9sloSg/zh-cn_image_0000002815561029.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=F859F4FB6B7B933B00B7FE5DD6E93EA6153535F32A0E05C6417D2EF46F4BA01D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/amPiaMrzTvC4sVCDtI9-RA/zh-cn_image_0000002788309342.png?HW-CC-KV=V1&HW-CC-Date=20261114T005022Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FC64F839F8CA7099A410833B78783C953FF6F9DC1B62100429F4425F499BEF7)
 
 dark.json数据示例：
 
@@ -148,7 +148,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/D4L3pocBRJGSlMHyirSJ6A/zh-cn_image_0000002815401113.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DC8F96D12C1C53DE58E7B70EC619DCACCB164DD26262FF1421476267A178A52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/ekWFGiy1SWWGN0OOZEVAyg/zh-cn_image_0000002817428705.png?HW-CC-KV=V1&HW-CC-Date=20261114T005022Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD8E7BB2175F597EEBD9F74E1027C143EE91C7D752A56F961A9618AB0BA6E857)
 
 ### 示例2（自定义WithTheme作用域内组件缺省配色）
 
@@ -234,4 +234,4 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/ATH8C9gSR8WRqhdoUSyUaA/zh-cn_image_0000002786521538.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D66DE17B4761AEFCCDC073BD772A2A5027C1AFA9D6DCC5CFE9EB2B8B7710687)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/8tTIp-8ySQKzDCoarSMO_w/zh-cn_image_0000002788469286.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005022Z&HW-CC-Expire=31536000000&HW-CC-Sign=A149EF01158C56FE75FF8B92E3DEBAC2032A0F28232990255058A487AD96125B)

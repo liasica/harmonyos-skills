@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DataPanel
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > DataPanel
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:18+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:95762e92eaa2d7e960c7c18c1a27116a174dcddaa152dd6c99f6837fe07947fa
+content_hash: sha256:82424b6e7776d76c6f12de5c1c4bca58444ef07baf82f998f19e78022feca053
 ---
 
 数据面板组件，用于将多个数据占比情况使用占比图进行展示，支持环形和线性两种展示类型，可自定义颜色、阴影、底板等视觉效果，适用于存储容量、任务进度、资源占比等数据可视化场景，帮助用户直观了解数据分布情况。
@@ -300,7 +300,7 @@ struct DataPanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/tJQinQkQSKW7MhDgPXj6Dw/zh-cn_image_0000002786361448.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C24DFCFCEE8083260DC2AB423CBD69CB770B2842E357D8E66FA4E5BB108828B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/u2wipJWDS9eh17GDwivOBA/zh-cn_image_0000002817508613.png?HW-CC-KV=V1&HW-CC-Date=20261114T004816Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9B6335377F505987D24D91EC0B0CB9FCB7015DCCDE70399A1B6B6B900208EBE)
 
 ### 示例2（设置渐变色和阴影）
 
@@ -359,7 +359,7 @@ struct LinearGradientDataPanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/ncn7Hv8nSy-HMfGcWwS9Lw/zh-cn_image_0000002815560869.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3E10782198EA6EBF3D0080AA648AF39F48F07392F48F2BF4C2092BEB8D7C88A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/5lpqSwvtRrOs-pjr0PFPdQ/zh-cn_image_0000002788309182.png?HW-CC-KV=V1&HW-CC-Date=20261114T004816Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF2A1F803AD86985926141AA98B874391AF402361D7BE2655D0050E8EFDA5A14)
 
 ### 示例3（设置关闭动画和阴影）
 
@@ -400,7 +400,7 @@ struct LinearGradientDataPanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Tv1XyNa6TOmBZO_M7eywSg/zh-cn_image_0000002815400953.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCEBA9762891815BE6C4DF4BBE95358419A8977AB527587C9A373FAD4F583C94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/vt8IbjeQQvmEsWJ1rgjr6g/zh-cn_image_0000002817428545.png?HW-CC-KV=V1&HW-CC-Date=20261114T004816Z&HW-CC-Expire=31536000000&HW-CC-Sign=73D7B8F3E774FBA034157F7C9F89930CD2F070DA9C034E1DC3EBF8ABC4F99BC6)
 
 ### 示例4（设置定制内容区）
 
@@ -486,4 +486,4 @@ struct ChildItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Q3EyePp3S8iDexNsZZna8A/zh-cn_image_0000002786521378.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF1BDF158CCC63B4D681EAE37FB3B780E6575F861A4CC51308850B16F22E8E47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ekCAxazSRDSkuVlb2A90dg/zh-cn_image_0000002788469126.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004816Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A8FEC0D2FC10D385A93440988A68744F5EE062E793EFD3DDE973B6EE792B59A)

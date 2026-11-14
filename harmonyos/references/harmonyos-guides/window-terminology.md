@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-termin
 title: 窗口开发术语
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口开发术语
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:db1d2c4f426a2f37365f840da65140e3a093b28dd184c4e6be3cc92192752fe6
+scraped_at: 2026-11-14T08:47:13+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:f8ccb1d099cd01d9e908070c2e69ea4c973966d06dc97c8613beeb61d4d73969
 ---
 
 ## F
@@ -18,7 +18,7 @@ content_hash: sha256:db1d2c4f426a2f37365f840da65140e3a093b28dd184c4e6be3cc921927
 
   一般用于在已有全屏任务运行的基础上，临时处理另一个任务，或短时间多任务并行使用。如浏览网页的同时回复消息。
 
-  相关参考：[智慧多窗简介](multi-window-intro.md)、[智慧多窗最佳实践](../best-practices/bpta-multi-window-practice.md)。
+  相关参考：[智慧多窗简介](multi-window-intro.md)。
 * 全局悬浮窗是指一种特殊的应用辅助窗口，具备在应用主窗口和对应UIAbility退至后台后仍然可以在前台显示的能力。
 
   全局悬浮窗可以用于应用退至后台后，使用小窗继续显示UI。
@@ -44,7 +44,7 @@ content_hash: sha256:db1d2c4f426a2f37365f840da65140e3a093b28dd184c4e6be3cc921927
 
 部分Phone设备上，可通过下拉控制中心，点击“自由多窗”按钮开启自由多窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/wBN4RJm5T5Sb1Prt_nuYRw/zh-cn_image_0000002786519336.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4A83231533539797EF693C2F675ABD71CF01ACE3B6DE656BCA8A1A54BD5ADDF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/1jLnMIXcSGSQWvEm5PsK3A/zh-cn_image_0000002788307140.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=F912D3B2A7EB5D42A90E160DBFE3DB1F084F534153DE588606196E03CD473969)
 
 ### Freeform Window；自由窗口
 
@@ -58,7 +58,7 @@ content_hash: sha256:db1d2c4f426a2f37365f840da65140e3a093b28dd184c4e6be3cc921927
 
 自由窗口可以通过拖动窗口边缘调节窗口大小，可以通过拖动标题栏移动窗口位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/N87emW7TSZqcZa3KIDRRdg/zh-cn_image_0000002815398911.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A7B891C7F1A9603E2E34010E31C29955C9FB47601A53003C68E95B8F6CA7B9A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/rLE9g-PhSmmPh7qe6DJsHw/zh-cn_image_0000002817506569.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD5DF44784329EB70A960338794F0F832DB379AC3EE8E02644E22C7B6E6A4B6D)
 
 当前设备支持情况：
 
@@ -74,7 +74,7 @@ content_hash: sha256:db1d2c4f426a2f37365f840da65140e3a093b28dd184c4e6be3cc921927
 
 在该坐标系中，所有物理屏幕被映射到同一连续的虚拟坐标空间内，各类窗口操作、坐标转换及窗口矩形变化事件均基于该坐标空间进行计算和回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/gI4YzkgUQvmi69lnitgsPg/zh-cn_image_0000002815398925.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACC1A8A8BD12877EEDD64FD8D190C1255B7A60E67D6775F664FA612A00EEE7E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/EchmJly_SZWRAXFHNSNv4A/zh-cn_image_0000002817506583.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=66800BD59C8F8B916E587B33733568E6BD92C9BCD348B41D53639BA716913095)
 
 使用场景：
 
@@ -123,7 +123,7 @@ content_hash: sha256:db1d2c4f426a2f37365f840da65140e3a093b28dd184c4e6be3cc921927
 
   桌面模式适用于折叠屏设备半折叠状态下，窗口铺满整个屏幕并在上下半屏之间适配不同布局的场景，例如视频播放、阅读等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/RgXboqZ_R4Su85-NqdVW1A/zh-cn_image_0000002786519350.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=B69B752868A689FF6AD578F1BF98B1CDDFB03BA35EB4FF2D6957E5D5498A2907)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/qVxYi_oYQ8-__3l9y57zHw/zh-cn_image_0000002788307154.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=178835B64BA6435D5B000B0051FD6BDC90E5131C22C6A6BDA4DFC6D52088DF11)
 
 ### Window Privacy Mode；隐私模式
 

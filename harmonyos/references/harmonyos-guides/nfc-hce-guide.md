@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nfc-hce-guide
 title: HCE卡模拟开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > NFC > HCE卡模拟开发指南
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:43+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:5fa47eb069897745a891eff26a2d58bc3ba02b335a65fac852c4e251f91ca4df
+scraped_at: 2026-11-14T08:47:34+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:abef7e4ed2ca5f0d41d142e555fc970448c0c77cb794b19c696138b486390d32
 ---
 
 ## 简介
@@ -61,8 +61,8 @@ HCE应用开发者根据业务需要，可以选择实现前台刷卡或者后�
 * HCE应用后台刷卡
 
 1. 在配置文件module.json5中，需要静态声明NFC读卡器选择的应用ID（AID）。根据业务选择， 选择声明的AID是属于Payment类型，还是Other类型。
-2. 如果选择Payment类型，该HCE应用会在系统设置页面的NFC"默认付款应用"里出现。用户选择该HCE应用作为默认支付应用后，可实现后台无冲突刷卡功能。由于提供了默认支付应用的选项， 因此Payment类型的HCE应用，不会出现多个冲突的情况。
-3. 如果选择Other类型，该HCE应用不会出现在系统设置页面的NFC"默认付款应用"里，但是多个HCE应用如果都声明了相同的Other类型的AID时，会出现冲突的可能。
+2. 如果选择Payment类型，该HCE应用会在系统设置页面的NFC“默认付款应用”里出现。用户选择该HCE应用作为默认支付应用后，可实现后台无冲突刷卡功能。由于提供了默认支付应用的选项， 因此Payment类型的HCE应用，不会出现多个冲突的情况。
+3. 如果选择Other类型，该HCE应用不会出现在系统设置页面的NFC“默认付款应用”里，但是多个HCE应用如果都声明了相同的Other类型的AID时，会出现冲突的可能。
 4. HCE应用后台刷卡的实现，不需要调用接口start和stop。
 5. HCE应用后台刷卡建议使用单独专用的HceAbility实现，以减少[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)函数耗时。
 6. HceAbility的OnCreate函数中除了[hceService.on](../harmonyos-references/js-apis-cardemulation.md#on8)外，尽量减少其它操作。

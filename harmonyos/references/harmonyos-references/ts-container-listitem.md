@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ListItem
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ListItem
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:09+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:62940779ba0dd3aa99845ee5916cdf946751efa0854d5de1a04bc7a87a75469b
+content_hash: sha256:edb858121b4a3d72c1aff8c4adbd604f307c3969f5f45aea47e78693f509815a
 ---
 
 ListItem用于展示列表中的具体列表项，支持设置划出菜单、选中状态、鼠标框选和卡片样式等能力，必须配合List组件使用，适用于需要在列表中展示内容并对单个列表项进行交互操作（如滑动删除、选中标记）的场景。
@@ -443,7 +443,7 @@ struct ListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/sqBHI2xjQdeniAEStQe0hQ/zh-cn_image_0000002786521050.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EE8DA20166C216B26111293274EA68A8594445BB97BE25A86B69D936B1B9941)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/QXyFKV9TSxicXGWLZHB1JQ/zh-cn_image_0000002788468798.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004810Z&HW-CC-Expire=31536000000&HW-CC-Sign=15CB7BF4156DD17BD09FD5DCD91CF5F11E2448B01935F681C6428A4AD6CBCCCC)
 
 ### 示例2（设置划出组件）
 
@@ -525,7 +525,7 @@ struct ListItemExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/KIOIzNDbSgOvNyA0jfUj-w/zh-cn_image_0000002786361122.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=45C5DEEB592DA7C47EF47D79C1F2679928F3D12C19FE443E23F3FBDF9B9A61E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Ab2nldtuQT6sA3rFwiBYLQ/zh-cn_image_0000002817508287.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004810Z&HW-CC-Expire=31536000000&HW-CC-Sign=A59B87A6EE433F8E674A1E2E590A7500B850EA79706EB5907DF3FD3F8DED85E6)
 
 ### 示例3（设置卡片样式）
 
@@ -567,7 +567,7 @@ struct ListItemExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/G21s5UDWTZWd78DLxxxYrA/zh-cn_image_0000002815560543.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6EA29724ABAB968CEA9B3A6F140114835113377FF9DE4838E338048F02C1365)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/nRn6pjV6RLeMWlxMrsfS8g/zh-cn_image_0000002788308856.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T004810Z&HW-CC-Expire=31536000000&HW-CC-Sign=223384FC8B089C5FB3AAC35B497A21D0B8515F177D59142513F3253128A8AFAD)
 
 ### 示例4（通过ComponentContent设置划出组件）
 
@@ -688,7 +688,7 @@ struct ListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/jzXLQl5tSr-QhNC-_L2kcg/zh-cn_image_0000002815400627.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1599531682FECE8D59B9065F95CC6119912327D6D454CE6AEAED7AA0CE5C1C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/hmvZK0quTQGfZaHkixwyZg/zh-cn_image_0000002817428219.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004810Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E9149615D6659EB14607B2778BE522DAE022A4140E5D6F9807DAD8FD5237867)
 
 ### 示例5（通过ListItemSwipeActionManager管理划出菜单）
 
@@ -787,4 +787,4 @@ struct ListItemExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/JEWuv9QLQUq1G-yrFho-bw/zh-cn_image_0000002786521052.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=0222E93909CB430D84B9CAEDF2FF92B056CC75E8E2F1A55DFD4590AE669D0EEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/c4J8xDoyRQKbRCvah8LRTA/zh-cn_image_0000002788468800.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004810Z&HW-CC-Expire=31536000000&HW-CC-Sign=117AFF177E91183833B95C7189BFDF589ACE0A0407351E2A038D8D5360E8D171)

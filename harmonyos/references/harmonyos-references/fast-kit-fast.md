@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-
 title: FAST
 breadcrumb: API参考 > 系统 > 基础功能 > FAST Kit（算法加速服务） > C API > 模块 > FAST
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:52:06+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:913d927c76f582e987a61550262558df4fd672fbef36030b623e0200997f2c79
+content_hash: sha256:7e73989a0592001f564b33e4412634b0b89143bd86914c6d447689f40cb3c5e2
 ---
 
 ## 概述
@@ -297,7 +297,7 @@ typedef struct FAST_Poly FAST_Poly
 
 **描述**
 
-定义稀疏格式多项式的数据结构。多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/4uZrFLY7Tn2VoMv76ZMzlA/zh-cn_image_0000002815401611.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEB156A9A9A9AB084908D682FF0D7AF5CD40F96A02E047CCAAA0F22340B7197B)由系数数组coeff和指数数组pow共同描述，且需按指数升序排列。
+定义稀疏格式多项式的数据结构。多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/StfmFUDTSa-5HvbAjkyqrA/zh-cn_image_0000002817429203.png?HW-CC-KV=V1&HW-CC-Date=20261114T005204Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CC05B931ADD4E7FA53CBA6832F3DE6A036AE64BC0CD1CD7F25C594FD3D2200A)由系数数组coeff和指数数组pow共同描述，且需按指数升序排列。
 
 **起始版本：** 26.0.0
 
@@ -755,7 +755,7 @@ const uint32_t FAST_MAX_FFT_LOG2N = 16;
 
 **描述**
 
-FFT支持的最大点数N对应的以2为底的对数值。即FAST\_MAX\_FFT\_LOG2N=![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/RDKjeMddQqmt_sp-VLJdAQ/zh-cn_image_0000002786522036.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=C305F69BFBF424DAFA76C05C58965AFFE5F820DF5FB2BDD72DD8E4CED6267B22)，其中N为FFT支持的最大点数，例如该值为16时，最大点数为65536。
+FFT支持的最大点数N对应的以2为底的对数值。即FAST\_MAX\_FFT\_LOG2N=![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/B5_d9fqsSb-Utf_tvmNKBQ/zh-cn_image_0000002788469784.png?HW-CC-KV=V1&HW-CC-Date=20261114T005204Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEDD13388C055043D9C41BD61D2D077F0FE2B629C925DA9D23C04B51FCA59790)，其中N为FFT支持的最大点数，例如该值为16时，最大点数为65536。
 
 **起始版本**：26.0.0
 

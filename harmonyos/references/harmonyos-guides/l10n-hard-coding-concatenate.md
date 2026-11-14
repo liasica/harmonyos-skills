@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-hard-cod
 title: 避免硬编码与拼接
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用本地化 > 提升可翻译性 > 避免硬编码与拼接
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:aa03d7d2591466c136547d55c635ad261f8583a7f4ac3beec9a3023dcffdcae4
+scraped_at: 2026-11-14T08:47:20+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6863970bb5eb079aa341cf9d23724b509ba70ca6109aa66d1cbe1105e9443330
 ---
 
 ## 使用场景
 
 本地化的关键操作是资源文件的翻译，为提升翻译可行性在开发过程中应避免硬编码与拼接。
 
-例如，下图中将"Rain tomorrow"和"Bring an umbrella"两句直接拼接在一起，造成语句大小写问题。
+例如，下图中将“Rain tomorrow”和“Bring an umbrella”两句直接拼接在一起，造成语句大小写问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ZNJUw8bdSOKzKchGeMoPWg/zh-cn_image_0000002786519522.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=40FEDBAA6F3E7E01FAF5659EDAEE3907DB60F21AFC3FA7EED781F4FF9BE629DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/tetW4Mr5SriHaKDmeomw7g/zh-cn_image_0000002788307326.png?HW-CC-KV=V1&HW-CC-Date=20261114T004541Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AAC0E5522DFFB5641755B37789E9169A2FF8E97AB472199F65739F322A99999)
 
 ## 约束与限制
 

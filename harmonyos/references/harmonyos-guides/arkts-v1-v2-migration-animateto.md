@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: AnimateTo使用迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > AnimateTo使用迁移
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:e07ee19df0e439da011221969730cbbb753c07ef78a3d7e486b50a6ddea46629
+scraped_at: 2026-11-14T08:47:00+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:cef06c093db2d4a1ab22755a4a1f56ffde246d97d9549aedccfc2f418c6541fa
 ---
 
 在状态管理从V1迁移至V2的过程中，[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)执行动画前如需修改状态变量，可参考本文档的适配方案。
@@ -52,7 +52,7 @@ struct Index {
 
 预期动画效果：绿色矩形从长宽100变为200，字符串从Hello World变为Hello ArkUI。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/lhLE1bQ0SZ-D9nBiKU_uxg/zh-cn_image_0000002815558037.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3266944C3A78B4065CF5B2A3960D79CE9C49683FD7383A684DCABF4622E7790)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/_MmAJzJsTo-rIk99DsjLRQ/zh-cn_image_0000002788466292.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD658FB8219B0B5700AC0C7BC1B7C291565B5FF87327310563B262BC1A06A16A)
 
 **V1迁移V2**
 
@@ -94,13 +94,13 @@ struct Index {
 
 由于当前animateTo与V2的刷新机制不兼容，执行动画前的额外修改未生效，实际显示的动画效果如下图所示：绿色矩形从长宽50变为200，字符串从Hello变为Hello ArkUI。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/a-buiW0VRkOfEyWnUprN-w/zh-cn_image_0000002786358616.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0D4DC5550021A8DACA08672808F48DD74E152050266663C95297BC9A16302BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/NC0tkIxbQluvKgGefFwNKw/zh-cn_image_0000002817425711.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=96F7858CE6CE599CB3E9C4D687A7A389BBC1962ED8D239E25320A5038735ECC0)
 
 ## 迁移方案
 
 ### API version 22之前的迁移方案
 
-从API version 22之前，可以使用一个duration为0的[animateToImmediately](../harmonyos-references/ts-explicit-animatetoimmediately.md#animatetoimmediately)将额外的修改先刷新，再执行原来的动画达成预期的效果。
+在API version 22之前，可以使用一个duration为0的[animateToImmediately](../harmonyos-references/ts-explicit-animatetoimmediately.md#animatetoimmediately)将额外的修改先刷新，再执行原来的动画达成预期的效果。
 
 完整代码如下：
 

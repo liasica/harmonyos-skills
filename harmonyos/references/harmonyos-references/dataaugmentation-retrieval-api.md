@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: retrieval（智慧化数据平台）
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > ArkTS API > retrieval（智慧化数据平台）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:34+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a4642b94123a29a689eb65b3e4677b044acd9c4450b377f86893f7403533abd2
+scraped_at: 2026-11-14T08:51:10+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:f42df0e1008f9fe0e6869918992e1f1a5e79a91d7c98f2ba3af1c2f3e2510bc1
 ---
 
 智慧数据平台（ArkData Intelligence Platform，AIP）提供端侧的数据智慧化能力，实现数据和AI智能在端侧闭环。作为端侧智慧化能力底座，将支持以下能力：
@@ -233,7 +233,7 @@ retrieveRdb(query: string, condition: RetrievalCondition): Promise<RdbRecords>
 | [1021201007](errorcode-dataaugmentation.md#section1021201007-retrieval-invalid-recall-field-name) | Retrieval: There are invalid recall names in RecallCondition. |
 | [1021201008](errorcode-dataaugmentation.md#section1021201008-retrieval-vector-similarity-threshold-too-high) | Retrieval: The vector similarity threshold in VectorQuery is higher than the tiered threshold in VectorRerankParameter. |
 | [1021201009](errorcode-dataaugmentation.md#section1021201009-retrieval-rerankmethod-parameters-do-not-match-the-channel-type) | Retrieval: RerankMethod parameters do not match the channel type. |
-| [1021201010](errorcode-dataaugmentation.md#section1021201010-retrieval-empty-parameter-value) | Retrieval: There exists a parameter value that should not be empty but is actually empty |
+| [1021201010](errorcode-dataaugmentation.md#section1021201010-retrieval-empty-parameter-value) | There exists a parameter value that should not be empty but is actually empty. |
 | [1021200012](errorcode-dataaugmentation.md#section1021200012-unable-to-generate-embeddings) | Unable to generate embeddings. |
 
 **示例：**
@@ -348,7 +348,7 @@ async retrieve() {
     }
 
     let invidxWeights:Record<string, number> = {
-      "vectorRecall":0.5
+      "invIdxRecall":0.5
     }
 
     let vectorRerankParameter:retrieval.VectorRerankParameter = {
@@ -529,7 +529,7 @@ type RecallCondition = InvertedIndexRecallCondition | VectorRecallCondition
 | --- | --- | --- | --- | --- |
 | ftsTableName | string | 否 | 否 | 倒排检索所用的fts（Full-Text Search）数据表的名称，用于执行bm25函数输入。必须为存在的表名且不能为空字符串。 |
 | fromClause | string | 否 | 否 | 查询目标索引名。不能为空字符串。  fromClause指定的表中包含filters中涉及的所有字段，允许两种输入：  1. 和ftsTableName填一样的值，则倒排检索将仅局限在倒排表内进行检索。  2. 提供完整select...join语句的方式，来连接fts表之外的元素表，作为检索表（注意，使用此模式时，该select语句中必须有rowid字段且必须是fts表的rowid。例如当ftsTableName为“files”时，存在一个元素表metadata需要参与filters过滤，则应如下定义fromClause："SELECT files.rowid as rowid, \* FROM metadata JOIN files ON metadata.fileid = files.fileid"。） |
-| primaryKey | Array<[ColumnName](dataaugmentation-retrieval-api.md#columnname)> | 否 | 否 | 召回结果主键字段，会作为召回字段之一，作为多路召回文档聚合依据。一次查询中所有召回操作的主键字段数量之和必须和相等且不能为空。 |
+| primaryKey | Array<[ColumnName](dataaugmentation-retrieval-api.md#columnname)> | 否 | 否 | 召回结果主键字段，会作为召回字段之一，作为多路召回文档聚合依据。一次查询中所有RecallCondition的主键字段数量必须相等且不能为空。 |
 | responseColumns | Array<[ColumnName](dataaugmentation-retrieval-api.md#columnname)> | 否 | 否 | 需要额外召回的字段集合。Array<[ColumnName](dataaugmentation-retrieval-api.md#columnname)>中[ColumnName](dataaugmentation-retrieval-api.md#columnname)不得为空。 |
 | invertedIndexStrategies | Array<[InvertedIndexStrategy](dataaugmentation-retrieval-api.md#invertedindexstrategy)> | 否 | 是 | 召回策略列表，决定了倒排表应当如何打分。如果为空，则默认执行全表匹配。 |
 | recallName | [RecallName](dataaugmentation-retrieval-api.md#recallname) | 否 | 是 | 当前检索回路的名称，作为重排阶段识别依据。默认值为随机字符串。构造方法中可以不构建该参数，如果有这个参数则值不能为空字符串。 |
@@ -719,7 +719,7 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | vectorQuery | [VectorQuery](dataaugmentation-retrieval-api.md#vectorquery) | 否 | 否 | 用于向量检索的查询词向量。 |
-| fromClause | string | 否 | 否 | 查询目标索引名。不能为空字符串。  fromClause指定的表中包含filters中涉及的所有字段，接受两种输入：  1. 和ftsTableName填一样的值，则倒排检索将仅局限在倒排表内进行检索；  2. 提供完整select...join语句的方式，来连接fts表之外的元素表，作为倒排这一路的被检索表。（使用此模式时，该select语句中必须有rowid字段且必须定义为fts表的rowid。例如：当ftsTableName为“files”时，存在一个元素表metadata需要参与filters过滤，则应如下定义fromClause："SELECT files.rowid as rowid, \* FROM metadata JOIN files ON metadata.fileid = files.fileid"。）。 |
+| fromClause | string | 否 | 否 | 查询目标索引名。不能为空字符串。  fromClause指定的表中包含filters中涉及的所有字段，接受两种输入：  1. 和ftsTableName填一样的值，则倒排检索将仅局限在倒排表内进行检索；  2. 提供完整select...join语句的方式，来连接fts表之外的元素表，作为向量检索的被检索表。（使用此模式时，该select语句中必须有rowid字段且必须定义为fts表的rowid。例如：当ftsTableName为“files”时，存在一个元素表metadata需要参与filters过滤，则应如下定义fromClause："SELECT files.rowid as rowid, \* FROM metadata JOIN files ON metadata.fileid = files.fileid"。）。 |
 | primaryKey | Array<[ColumnName](dataaugmentation-retrieval-api.md#columnname)> | 否 | 否 | 召回结果主键字段，会作为召回字段之一，作为多路召回文档聚合依据。一次查询中所有RecallCondition的主键字段数量必须相等且不能为空。 |
 | responseColumns | Array<[ColumnName](dataaugmentation-retrieval-api.md#columnname)> | 否 | 否 | 需要额外召回的字段集合。ColumnName不得为空。 |
 | recallName | [RecallName](dataaugmentation-retrieval-api.md#recallname) | 否 | 是 | 当前检索回路的名称，作为重排阶段识别依据。默认值为随机字符串，不能为空字符串 |
@@ -754,9 +754,9 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| rerankType | [RerankType](dataaugmentation-retrieval-api.md#reranktype) | 否 | 否 | 重排算法，取值类型为枚举类[RerankType](dataaugmentation-retrieval-api.md#reranktype)，可选项为RRF、FUSED\_SCORE，分别指向rrf排序算法以及分数融合排序算法。默认值为RRF。 |
+| rerankType | [RerankType](dataaugmentation-retrieval-api.md#reranktype) | 否 | 否 | 重排算法，取值类型为枚举类[RerankType](dataaugmentation-retrieval-api.md#reranktype)，可选项为RRF、FUSION\_SCORE，分别指向rrf排序算法以及分数融合排序算法。默认值为RRF。 |
 | parameters | Record<[ChannelType](dataaugmentation-retrieval-api.md#channeltype), [RerankParameter](dataaugmentation-retrieval-api.md#rerankparameter)> | 否 | 是 | 每个召回回路对应的重排参数。如果上述检索参数RetrievalCondition中的存在的channelType未在parameters中配置重排参数，则会自动填充该channelType对应的重排参数默认值。倒排的重排参数默认值参考[InvertedIndexRerankParameter](dataaugmentation-retrieval-api.md#invertedindexrerankparameter)，向量的重排参数默认值参考[VectorRerankParameter](dataaugmentation-retrieval-api.md#vectorrerankparameter)。 |
-| isSoftmaxNormalized | boolean | 否 | 是 | FUSED\_SCORE模式下，是否使用softmax函数归一化计算重排最终得分。默认为false。true表示使用softmax函数归一化计算重排最终得分，false表示不使用。 |
+| isSoftmaxNormalized | boolean | 否 | 是 | FUSION\_SCORE模式下，是否使用softmax函数归一化计算重排最终得分。默认为false。true表示使用softmax函数归一化计算重排最终得分，false表示不使用。 |
 
 ## RerankType
 

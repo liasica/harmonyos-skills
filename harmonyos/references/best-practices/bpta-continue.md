@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-continue
-title: 社交通讯全场景协同最佳实践
-breadcrumb: 最佳实践 > 技术创新 > 全场景 > 典型全场景协同开发案例 > 社交通讯全场景协同最佳实践
+title: 社交通讯全场景协同
+breadcrumb: 最佳实践 > 技术创新 > 全场景 > 典型全场景协同开发案例 > 社交通讯全场景协同
 category: best-practices
-scraped_at: 2026-11-13T09:04:33+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:abcfe12ff1b992163ce89f8ccf72212fed020594bf2ae69ec352a93f970f7e74
+scraped_at: 2026-11-14T08:54:05+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:097490342b982022d9e3c8a2c68def3ca86ccc635bfa43aef2678a5a1931e7b4
 ---
 
 ## 概述
@@ -29,13 +29,13 @@ content_hash: sha256:abcfe12ff1b992163ce89f8ccf72212fed020594bf2ae69ec352a93f970
 |  |  |
 | --- | --- |
 | 特性 | 体验视频 |
-| 跨设备互通 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/9e/v3/Hc9cJ62NSC2vhd5x9Rpvhg/zh-cn_media_0000002623705755.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=2190DFC1B79A39DBE16A5F9C06CF816888BF6B79612D2756C0144E9ADF79A73B) |
-| 跨设备拖拽 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/6e/v3/1L5imfzdS_SWMQw9xbM4Rg/zh-cn_media_0000002623545867.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=919B8DA5ED16CA1E2C68FE08761C5329B43BF0420566451884665086C3968BAE) |
-| 跨设备剪贴 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/e7/v3/6mrkwg8RRgmznB8XawEArw/zh-cn_media_0000002593106340.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=E79B1A57871B4D64A9BB556D95AAC697510CD57C415629C555A6D1E863D0D6CA) |
-| 跨设备应用接续 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/08/v3/a7YQrnq6StCP-vZ-WO7jSw/zh-cn_media_0000002593266262.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F60BEABD3B093A122AFE608E80806DDC36D72F6CEB5E5A58042DD5E228F936E) |
-| 碰一碰插入图片 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/94/v3/Mkgv9PihRWOH33MxZuLqOw/zh-cn_media_0000002623705769.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BD677346EEFDEE492C4E547B528B545FD4EF9314860CF2CB8E2BCBD0E7A4A7D) |
-| 碰一碰分享页面 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c6/v3/lr5YxTpURCCoV_f8YnfXeA/zh-cn_media_0000002623545883.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=31EDBC3CC33B2B16599F9547B1FA77797E90CE1C7EB06D65D8355DE31A1A2004) |
-| 隔空传送分享页面 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/5/v3/3vD1GqBTTGS0SOFSPWxflw/zh-cn_media_0000002593106342.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEBE802446834A4F6B5F2AACDA3833401484521A0A64F3C9A74BF69BA1EF6E85) |
+| 跨设备互通 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/6f/v3/na5pQtetSbivkPG1vfIv0w/zh-cn_media_0000002623705755.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE80C37602FE94148057CA2D8BA562ACC99932D655E3C702393F9F57D1101733) |
+| 跨设备拖拽 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/63/v3/Ksh5V4EGSBOdTSLqJFcY3g/zh-cn_media_0000002623545867.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=72E5687827CDDB11459448E967E267D828377A38B18193CB0B511C530979B062) |
+| 跨设备剪贴 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/9d/v3/LSeexSZaSdibzTHjMuRGfw/zh-cn_media_0000002593106340.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=E151509E5A426F8F2ED16155DA3B86DDB09299DF8B38FB577A32DCAE1814F921) |
+| 跨设备应用接续 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/87/v3/a1bLqADYSx6JSza1ZLv6ag/zh-cn_media_0000002593266262.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DDA93BDBFA3A073EC6C420B53E844F7B2F3EDBBAB8FF3F001BB5C8FA8D424EB) |
+| 碰一碰插入图片 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/04/v3/nWutq1kCQzGUMqGM9PFzog/zh-cn_media_0000002623705769.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BAA4E8F0C4A1285A46F1206803A53D92540FE2A858B077DDEE7FF02ADE24235) |
+| 碰一碰分享页面 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/e6/v3/Zv4a9NOiTN-yJBFLqUp4oQ/zh-cn_media_0000002623545883.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB44A1F044465B90E47AA6346C192A45DD8BC42A75F690E443976476F1C75497) |
+| 隔空传送分享页面 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/ff/v3/GMiUZNuqRUmmGBtm6pfgFQ/zh-cn_media_0000002593106342.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=E222471FE9FFE0AA2099084646C5C8C54848E8267E7085611840D5ADAB679841) |
 
 ### 使用限制
 
@@ -67,7 +67,7 @@ content_hash: sha256:abcfe12ff1b992163ce89f8ccf72212fed020594bf2ae69ec352a93f970
 2. 系统将自动唤醒远端设备上的相机、图库或扫描，进入相应的界面。
 3. 使用远端设备完成拍照或选择图片/视频并确认，远端拍摄状态信息实时回传到本端，并将数据插入到本端设备的应用中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/0RgMr8UXQ8-j5e3gqyJiNQ/zh-cn_image_0000002593266264.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=4079F0DD53FAFB7777E0987E23FEEB4BDAA5AE9A0785E502EEFAD825B117F92D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/zzq3wycITTmB0A4L6_01_w/zh-cn_image_0000002593266264.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F218CA0A0557B94F75031DB9B805962582B2070663DD1D23D10E9A437DBBDE0 "点击放大")
 
 **关键技术**
 
@@ -182,7 +182,7 @@ content_hash: sha256:abcfe12ff1b992163ce89f8ccf72212fed020594bf2ae69ec352a93f970
 2. 在此过程中，系统自动处理跨设备的数据传输，开发者无需介入。
 3. 当用户释放鼠标时，触发拖拽松手事件，远端应用处理接收到的拖拽数据，并将其写入远端编辑页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/v4ftMyW4SvmACHVyUbjgWQ/zh-cn_image_0000002623705771.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=20B11096EE9BC551318D9025006AFB0617E37359299F48333AB778CDCBDDE518 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/SAq1p2PZTeOYU6FLiMsKKA/zh-cn_image_0000002623705771.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3ECA6B254B6D7A2088F311C937ED0D10D059F89E265671B4646FE385E2DE173 "点击放大")
 
 **关键技术**
 
@@ -306,7 +306,7 @@ content_hash: sha256:abcfe12ff1b992163ce89f8ccf72212fed020594bf2ae69ec352a93f970
 
 3. 用户在远端读取系统剪贴板内容，粘贴来自本端的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/nBcuuyGlRgCDvqkU7UN3kQ/zh-cn_image_0000002623545885.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A09C3D9C1AB4E7373886BDA2B70B3D39C359998E4956AE7931E2E1371BD06C5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/FdJP6bNdQCSxVAQyIAwvlQ/zh-cn_image_0000002623545885.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=030B862D80D356A8AB5CBD7DAA98BE63D649BA112CF1BA479192E7DA16B2A36B "点击放大")
 
 **关键技术**
 
@@ -397,7 +397,7 @@ content_hash: sha256:abcfe12ff1b992163ce89f8ccf72212fed020594bf2ae69ec352a93f970
 2. 用户点击远端设备Dock栏图标后，本端设备发起接续，数据进行传输。
 3. 远端设备接收接续数据并显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/QRzzjIF6T3OYcxH0BUnmzQ/zh-cn_image_0000002593106346.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D15698FCC79C41CB0C7F4AB3E48569422ADC155DDEA61EE9494276F1011E500 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/QtcDtPGBSqCtN0cWWXV1kQ/zh-cn_image_0000002593106346.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FB07EE0E300247DE260B72981A145A71EF89A866310B0B67E9616709A838F16 "点击放大")
 
 场景核心在于应用接续的过程中如何传递数据。对于文字信息可使用分布式数据对象保存，对于图片/视频可以拷贝到分布式文件目录下，使用分布式数据资产作为分布式数据对象的根属性保存。
 
@@ -686,7 +686,7 @@ content_hash: sha256:abcfe12ff1b992163ce89f8ccf72212fed020594bf2ae69ec352a93f970
 2. 基于图库的碰一碰分享功能，手机顶端轻触电脑屏幕拉起碰一碰分享界面后分享图片。
 3. 电脑端接收到分享的图片后，插入到应用页面中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/JO2BcSMnTniH6zQaqN5lAg/zh-cn_image_0000002593266266.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3E6CD03D6C483527C85508D51E7F037128A97F651BFC4D58ABE5DAE16CA4819 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/5Yy6VEiwSOKlBBBc8ZbKiQ/zh-cn_image_0000002593266266.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DB8B149D21858CC829EE00789D49286F012DA7BCABF3BE927E5560177FD9B93 "点击放大")
 
 具体流程可参考：手机与电脑碰一碰分享概述中[业务流程](../harmonyos-guides/knock-share-pc-phones-overview.md#业务流程)章节的“电脑设备作为数据接收端”部分。
 
@@ -870,7 +870,7 @@ content_hash: sha256:abcfe12ff1b992163ce89f8ccf72212fed020594bf2ae69ec352a93f970
 
 3.远端设备弹出接收面板，点击接收可以直达应用分享页面。若点击拒绝，则本端设备上会显示分享被拒绝的提示弹框。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/F3JrFov1RWW0IdDBMnXtrg/zh-cn_image_0000002623705773.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=F89DDD2E17EF2C4AC71AD22FAC64B9E37AA44A4423A9A4E18B9FF7ED1AA8F8E9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Ut-xNGDVRneljsPkb-J0TA/zh-cn_image_0000002623705773.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D69B7636FF7A0B3D95708EA259E10E7DDD84C798BDE7CE5E65AE6C92B8EC0E6 "点击放大")
 
 **关键技术**
 
@@ -1117,7 +1117,7 @@ export function getValueFromWant(want: Want, key: string): string {
 
 3. 远端设备识别成功后，可以直达应用分享页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/snJr-arAR46lMP9TfyKOVQ/zh-cn_image_0000002623545887.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC2612B4FC050F0447FD1C07B2739417368E689FC42A92A3E31327473A41BBCA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/CcMroGMmTDS2JWzFEex4bg/zh-cn_image_0000002623545887.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=73B50CC243AD25FBEBACAA424ABA07077F8D0C8EF937EF24EF9C93B891EDD186 "点击放大")
 
 **关键技术**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:01+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:29b4c55c9a5ec1dbbe4a1a7121ba4820bb7f56f1c9d7c2577059e83f3bb9b543
+content_hash: sha256:5a930df0d197423b1255b58c4ab1c8f652e83a50150c41f4072c24fae114c317
 ---
 
 **说明** 
@@ -141,7 +141,7 @@ content_hash: sha256:29b4c55c9a5ec1dbbe4a1a7121ba4820bb7f56f1c9d7c2577059e83f3bb
 
 示意图展示了leftRect、topRect、rightRect、bottomRect的含义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/f-SsSWOPQr6sFW4DPee_bw/zh-cn_image_0000002786360948.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=B85FB26F2F18BEDF52D97BC1891E8790E96B42D19B52A97030CC7B69034D8FA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/VVFYrZPLQzy0U0VraC-jqw/zh-cn_image_0000002817508113.png?HW-CC-KV=V1&HW-CC-Date=20261114T004959Z&HW-CC-Expire=31536000000&HW-CC-Sign=0871A36E0D0CE84A562204C0D02D85BDE88D606BE0E5087AC09E9D77F622FBAE)
 
 ## UIEnvAvoidAreaVP23+
 

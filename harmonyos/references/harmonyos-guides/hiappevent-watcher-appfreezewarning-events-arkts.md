@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅应用冻屏告警事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 应用冻屏告警事件 > 订阅应用冻屏告警事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:46+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:032563005e19bf44229fd234cbddd7ffe36e00129c775907d5e52db08ae95cc8
+scraped_at: 2026-11-14T08:47:46+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:4e82f6325d4073afaba543b6cc7a34b4d8319a85a87fdb36c783c8fd9989cc13
 ---
 
 ## 简介
@@ -27,15 +27,15 @@ content_hash: sha256:032563005e19bf44229fd234cbddd7ffe36e00129c775907d5e52db08ae
 
 1. 在DevEco Studio中，新建一个ArkTS应用工程，编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，导入依赖模块，示例代码如下：
 
-   ```ts
+   ```typescript
    import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，在onCreate函数中添加系统事件的订阅，示例代码如下：
 
-   ```ts
+   ```typescript
    hiAppEvent.addWatcher({
      // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
-     name: "watcher",
+     name: 'appFreezeWarningWatcher',
      // 开发者可以订阅感兴趣的系统事件，此处是订阅了应用冻屏告警事件
      appEventFilters: [
        {
@@ -89,32 +89,22 @@ content_hash: sha256:032563005e19bf44229fd234cbddd7ffe36e00129c775907d5e52db08ae
      }
    });
    ```
-3. 编辑工程中的“entry > src > main > ets > pages> Index.ets”文件，新增按钮触发冻屏告警事件。示例代码如下：
+3. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，新增按钮触发冻屏告警事件。示例代码如下：
 
-   ```ts
-     @Entry
-     @Component
-     struct Index {
-       build() {
-         RelativeContainer() {
-           Column() {
-             Button("appFreezeWarning", { stateEffect:true, type: ButtonType.Capsule})
-               .width('75%')
-               .height(50)
-               .margin(15)
-               .fontSize(20)
-               .fontWeight(FontWeight.Bold)
-               .onClick(() => {
-                // 在按钮点击函数中构造一个appFreezeWarning场景，触发应用冻屏告警事件
-                 const t = Date.now();
-                 while (Date.now() - t <= 6500) {}
-               })
-           }.width('100%')
-         }
-         .height('100%')
-         .width('100%')
-       }
-     }
+   ```typescript
+   Button("appFreezeWarning")
+     .type(ButtonType.Capsule)
+     .margin({
+       top: 20
+     })
+     .backgroundColor('#0D9FFB')
+     .width('80%')
+     .height('5%')
+     .onClick(() => {
+       // 在按钮点击函数中构造一个appFreezeWarning场景，触发应用冻屏告警事件
+       const t = Date.now();
+       while (Date.now() - t <= 6500) {}
+     })
    ```
 4. 点击DevEco Studio界面中的运行按钮，运行应用工程，然后在应用界面中点击按钮“appFreezeWarning”，触发一次应用冻屏告警事件。
 

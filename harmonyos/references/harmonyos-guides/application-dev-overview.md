@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-d
 title: 应用开发准备
 breadcrumb: 指南 > 应用开发准备 > 应用开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:76e2177315b48efc09623e4350e546d4a53ea0919db69ed8692c680733052342
+scraped_at: 2026-11-14T08:46:48+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:a0a1ab368192eaed11a151ca077e89214c085ae107026b6f28c8559b61bb1216
 ---
 
 在开始应用开发前，需要先完成以下准备工作。
 
 ## 注册成为开发者
 
-在华为开发者联盟网站上，[注册成为开发者](../start/registration-and-verification-0000001053628148.md)，并完成[实名认证](../start/rna-0000001062530373.md)，从而享受联盟开放的各类能力和服务。
+在华为开发者联盟网站上，[注册成为开发者](../doccenter-getting-started/hdc-registration-0000002723008096.md)，并完成[实名认证](../doccenter-getting-started/hdc-verification-0000002752527887.md)，从而享受联盟开放的各类能力和服务。
 
 ## 创建应用
 
-在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)（简称AGC）上，参考[创建项目](../app/agc-help-create-project-0000002242804048.md)和[创建应用](../app/agc-help-create-app-0000002247955506.md)完成**HarmonyOS**应用的创建，从而使用各类服务。
+在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)（简称AGC）上，参考[创建应用](../app/agc-help-create-app-0000002247955506.md)完成**HarmonyOS**应用的创建，从而使用各类服务。
 
 ## 配置安装DevEco Studio
 

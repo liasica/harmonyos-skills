@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-screensho
 title: 地图截图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 地图截图
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:24+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3fae0ad5ec6016bda30b495b6f7255b57e9b173c95f352492b7facc6c843fbc1
+content_hash: sha256:4dd10681793a66177071cf736f3e81d2b0b96aefc02bc413f7e25148a1fbc78f
 ---
 
 本章节将向您介绍如何实现地图截图功能。
 
 地图截图指对当前屏幕显示区域进行截屏，支持对地图、覆盖物、Logo进行屏幕截图。地图截图功能适用于需要将当前地图状态保存为图片的场景，如分享当前位置、生成导航路线图、记录特定视角的地图内容等。该功能可以帮助开发者快速实现地图内容的可视化输出，提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/DZXdvd4tTH-kAu2R1_a5GA/zh-cn_image_0000002815559849.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6BB075A931916EE4702A7AA41442902A64199921B6CEBA2DDE8DF3439AF3800 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Lza46RZ5T7KXRMXFBN_FUA/zh-cn_image_0000002788468104.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB4EFAE435AC71D6F6DA4E96579ADB8A6D4A98AC2D9B98EC8BEB8DB3FFF1B8F0 "点击放大")
 
 ## 接口说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-styled-
 title: 属性字符串 (StyledString/MutableStyledString)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 属性字符串 (StyledString/MutableStyledString)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:8b53d8cd643d8589945cba0ee4d5a4121dc16435f759c7c2590d98cfdfd22fdc
+content_hash: sha256:813913877b42d2f30140f287be67eb19207cb973dde9edb1650a638fe71f7a48
 ---
 
 属性字符串StyledString/MutableStyledString（其中MutableStyledString继承自StyledString，下文统称为StyledString），可用于在字符或段落级别上设置文本样式。将StyledString应用到文本组件上，可以采用多种方式修改文本，包括调整字号、添加字体颜色、使文本具备可点击性，以及通过自定义方式绘制文本等。具体使用方法请参考[属性字符串](../harmonyos-references/ts-universal-styled-string.md)的API文档。
@@ -55,7 +55,7 @@ struct styled_string_demo1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/9wyijIZSTFO0iRytm64OPg/zh-cn_image_0000002815558387.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D12E03DF00520391868901B581B2E67129D9CCFC8BCAC995A7BEF42C90AEDA9C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/i3ZFZmAURF6z6oz9GSkekw/zh-cn_image_0000002788466642.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=C21587BE115CE68DA45FDB3BBCABB459C48C64B9791F8C4F22FA70A75864EA26)
 
 ## 设置文本样式
 
@@ -113,7 +113,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/8-AWyzxVSLStWvmid6ytmQ/zh-cn_image_0000002815398471.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=911CC22CBF997D73BBFB282C8DA1D0D34ED3629CF16511D88CCA53BD7612BC45)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/J7gFHPDCS8yosiJIn1EI_g/zh-cn_image_0000002817506129.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=2532C9B5BD1804752DBD48600D822880F159CD996934598B56F06BB3A3806FBD)
 * 创建及应用文本阴影对象（TextShadowStyle）
 
   ```typescript
@@ -153,7 +153,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/9WCiCJcySC2GhoRLZ33mEw/zh-cn_image_0000002786518896.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0CE3687D2BA3CDA81522C0B6AE7C8C1959397CE78A3D879064C449B88A80CFE)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/XK38j7uCQrGOR3NXS45zfA/zh-cn_image_0000002788306700.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CB18964D49FB402FA5A3386EB15162CDA109C377BBD180B95D9806BA1C3A819)
 * 创建及应用文本装饰线对象（DecorationStyle）
 
   ```typescript
@@ -216,7 +216,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/eF94rEiPS6qCkFDmfeSvAQ/zh-cn_image_0000002786358968.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=964E5A55A6869B42A7A68500603645A115A064E465A62B68C34FC7B9CEAF3110)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/NFb1DFXSRietD3XCUn9ONg/zh-cn_image_0000002817426063.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=B93A9D23BFB23F90CB137FCC921F12B5968A01324CFF1047B37BC78E5833BA08)
 * 创建及应用文本基线偏移量对象（BaselineOffsetStyle）
 
   ```typescript
@@ -253,7 +253,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/NTzxiUQ8Rfy_wUBfJjb3DA/zh-cn_image_0000002815558389.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A131E11EC833943AC8EF5029E442B7677810F0C93062A61D1B2108E12D1327C7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/6W3kQUxsRd2iCx-loR9KiA/zh-cn_image_0000002788466644.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF144C1D9B5B44FF6C06F245FB673A2EA2471EF5EC2DF51D456720D29535AD50)
 * 创建及应用文本行高对象（LineHeightStyle）
 
   ```typescript
@@ -291,7 +291,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/lvTL956IT_2i8bRpYuOKDw/zh-cn_image_0000002815398473.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=737E6DE69250A35A41D86B245714444D5BF021A8B5EC039F94A4C4901275E0E2)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/vOSeOM8DTnCngghp4zZeNw/zh-cn_image_0000002817506131.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE55BE9EFAA1D310702BC72B587A1155BB60627FCD83E5E8EDB8D6E83BB1BB23)
 * 创建及应用文本字符间距对象（LetterSpacingStyle）
 
   ```typescript
@@ -327,13 +327,13 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/np7otp6VROOUgyk6NwbZKg/zh-cn_image_0000002786518898.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8819659952D2899A17CD08E840D8AA1255B93E94FB05E3C948D7A2BDCBD1337A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/YmpQYN24TeaF9srpOfzSjg/zh-cn_image_0000002788306702.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1523FEFFFAD9D0AD725B5DB2A1F96AC641EA359FE293F7268B9D2145B0274FE)
 
 ## 设置段落样式
 
 可通过[ParagraphStyle](../harmonyos-references/ts-universal-styled-string.md#paragraphstyle)设置段落样式布局。下图显示了如何分割文本中的段落，段落之间以换行符\n分隔。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/RwG81A0RTIu5G-jrK7ljgg/zh-cn_image_0000002786358970.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E73A0BF64079F9EB81856D88D745A813998FE6483823D477F869E6236D6301F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/4q54vzggQ9W80GjvN-tXLQ/zh-cn_image_0000002817426065.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=069B8FE6566B61040ACD17B621A2FA933464BC395993F3DFC8DB225E8912FE5F)
 
 以下代码示例展示了如何创建ParagraphStyle并应用。如果将ParagraphStyle附加到段落开头、末尾或之间的任何位置，均会应用样式，非段落区间内则不会应用样式。
 
@@ -401,7 +401,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/E-vIKUddTlaZkCSSFcYK4g/zh-cn_image_0000002815558391.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=6351B6229D9CA78B4B73B18C477968C8616077F8AEED31EFC8BD576410C9A808)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/JQcG7O4KRAWe6glt840Utw/zh-cn_image_0000002788466646.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC659406A30A7560F48DF44A88B26DA3F58C09D76262394692305C978C531B0D)
 
 除了可以在创建属性字符串时就预设样式，也可以后续通过[replaceStyle](../harmonyos-references/ts-universal-styled-string.md#replacestyle)清空原样式替换新样式，同时需要在附加的文本组件controller上主动触发更新绑定的属性字符串。
 
@@ -489,7 +489,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/wp7EX2zHQQ201ZbOIqXpmA/zh-cn_image_0000002815398475.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B61D44C00FB708A41308BAC31E0C5EEE57BC3A5AD056AB2E4A2567E628414D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/t5Cn27ikTHmArgLam9SRvA/zh-cn_image_0000002817506133.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1F6AB7EC66D5BE31A537CDACEB21FFC6153334CBC5D64234A407B93712BF8B5)
 
 ## 支持将属性字符串转换成Paragraph
 
@@ -705,7 +705,7 @@ struct Index {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/oPa5dV4_SgKWtW8j5CPBdQ/zh-cn_image_0000002786518900.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB88D55DFD0F7B72759998F58899E4EF2D808B7B9B8672C025E44AED65D0BB4C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/zgyp4wkwT6maUfO7sGwzkA/zh-cn_image_0000002788306704.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=D21BCFE48C17BADECDF4B13919DF3F92683764BF5B2920BF76341A42E548369E)
 
 ## 使用图片
 
@@ -891,7 +891,7 @@ struct StyledStringImageAttachment {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/KJoMxYBfQuOzOGlO_fpD5A/zh-cn_image_0000002786358972.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AB8E4EC00B2233030697476BC9B5B8C1E843E4124661D740D58D207F431B9A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/6eGjhDAhRkCgVQF0G0TcUw/zh-cn_image_0000002817426067.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=119E9D5D4C66325A227EB829C7AFD54A58E68BC1CD6971A81C2DE45AE13E801F)
 
 ## 设置事件
 
@@ -1050,7 +1050,7 @@ struct StyledStringGestureStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/QVZXJmPJTy6EqEfHYGgqbw/zh-cn_image_0000002815558393.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4898D40740736540CD7E0C47A122D28A5CE622D63BBA3FB502A3253C7E4F704)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/RFJvU6S1RnOVjvPBj1EAMg/zh-cn_image_0000002788466648.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDA0BDE7FAFF206DB7A60113F99A01E476A86BC6B60F0CD2A27F8830F1CF42F3)
 
 ## 格式转换
 
@@ -1146,7 +1146,7 @@ struct StyledStringHtml {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/9CTqRWN1Qq68ksQDLyGAhg/zh-cn_image_0000002815398477.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3D7FBB4524E42540437D7AFAA4A23003638651E2442131800C59E980B972019)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/PdGzxlwKSVeFB69NL77Bvg/zh-cn_image_0000002817506135.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF3F61AD415D80F0284065C9B7ACE615D362CD858CCE0E9BA07D53CA405B33B7)
 
 * 将HTML中<strong>、<b>、<a>、<i>、<em>、<s>、<u>、<del>、<sup>、<sub>标签及其style属性中的background-color转换为属性字符串并转回HTML。
 
@@ -1219,7 +1219,7 @@ struct StyledStringHtml {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/RbDgfLyVQ5mvwwROUry_sw/zh-cn_image_0000002786518902.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7456DEDF685F8FE27E09EF3A708D4A5E6A86C5529CFEB4BFE14EEEFF845B86A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/r77D8mWlTF-CNzezZPCfkQ/zh-cn_image_0000002788306706.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=C00C93D0393AFA8AC2393D29586E1F9DB748E32F87D6DBAB29DC9A7163D84ACA)
 
 ## 场景示例
 
@@ -1388,4 +1388,4 @@ struct StyledStringSceneExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/9MzVrfuHTRaikDZUp9j5xw/zh-cn_image_0000002786358974.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B292628148AB1A5C5668688A0A8682C6BE6670CA348700431E5D1EA70A34139D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/wRl9_OCpR46Ods2vjDJJYw/zh-cn_image_0000002817426069.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5FEB6BF2C48D11DE856344B11B0B36F53782428BF58FEE5DBE9152701E54DB1)

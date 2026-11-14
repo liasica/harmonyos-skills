@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-drag
 title: 使用Web组件的拖拽功能与网页交互
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > 使用Web组件的拖拽功能与网页交互
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:14+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:7841610f3955e455f6c72ec882a2cff967aa77ee58dc00517f2db52569900873
+content_hash: sha256:1588d15b157fc4074ae46f9d8adb6985975f2ffd63f77967aa85f2a5a387d5c9
 ---
 
 ArkWeb的拖拽功能使应用能够在网页中实现元素的拖放，用户可以长按可拖拽的元素，将其拖至可放置的元素上，然后松手完成放置。ArkWeb在网页内容中的拖拽功能满足H5标准。
@@ -207,11 +207,11 @@ H5示例:
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/LbijVRlxRdmNLpwSJUyojA/zh-cn_image_0000002786519368.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D97D770AF3C620607F0CF4CA003F60A97E84B1F0976E13CBA9457B091A33933)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/dYYEFTmOTQOad9_0Ga9aDQ/zh-cn_image_0000002788307172.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004535Z&HW-CC-Expire=31536000000&HW-CC-Sign=46F0B8DC0A0A2C2423332D2E407BDEBD66FF9699BCAA9440C1B92E0A6EE2BF6E)
 
 日志打印：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/4c-27aJ9QgOlOt3wQy14Yg/zh-cn_image_0000002786359440.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3C2D9DC59B9715228CC8893524CE4A92D37C39C01D24F31F6C3ECB2A12A48AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/9jQZVdADT0y8xKnIfd-Rbg/zh-cn_image_0000002817426535.png?HW-CC-KV=V1&HW-CC-Date=20261114T004535Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E47C2C260BE088F6706EE40C4E52EFC484EC38FAD408AFAD90D936E9367A45B)
 
 ## 常见问题
 
@@ -314,7 +314,7 @@ H5示例1:
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/pPlH8FuaR_OXpIcD_ph6ow/zh-cn_image_0000002815558861.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=075AA5909B5BD9793777018F75F11C3A6A673DCF733EE4264D7D8EFEF07CAC18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/998zN3SfQS2PeWc0vZScEA/zh-cn_image_0000002788467116.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004535Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0951A8EC326F67C92ADFF0CE86C32111BE54B0C58DC27CC6A10AA33AB566A98)
 
 html示例2:
 
@@ -351,7 +351,7 @@ html示例2:
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/8rKTteVsQgeMxMZEt7UddQ/zh-cn_image_0000002815398945.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=F05D22C690FDDC70BF290FF62E7C185C3B1B9B5792F53FC1B29C518DFC791FEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/wGj7rxO8R02fcEBTVyGGmw/zh-cn_image_0000002817506603.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004535Z&HW-CC-Expire=31536000000&HW-CC-Sign=5156F6EF2641BE77D1A4929FE9D246EA4E2C9683FDF9E85B8C77F6796CD4E5F4)
 
 ArkTS示例:
 

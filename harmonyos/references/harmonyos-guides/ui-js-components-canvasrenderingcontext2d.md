@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: CanvasRenderingContext2D对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > Canvas开发指导 > CanvasRenderingContext2D对象
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:11+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:dfacbfacd6f32cc26e5c58907bb4cd0741b5b04df58070e4a348ee50e947178a
+content_hash: sha256:8cdb530013eb3bfdc445e7b090a732a7fc85ddd4f9b6b4b74afd1861f47ee487
 ---
 
 使用CanvasRenderingContext2D在Canvas画布组件上进行绘制，绘制对象可以是图形、文本、线段、图片等。具体请参考[CanvasRenderingContext2D对象](../harmonyos-references/js-components-canvas-canvasrenderingcontext2d.md)。
@@ -206,7 +206,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/0YeotSrzTsO9t8tK2G7f9w/zh-cn_image_0000002786359338.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=152B9F84F31AC20B7FF0985BA308BC1F3A6C378986458E844DC3B764A62E4B87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Mdp2SjWURHCU46S7kiYw7w/zh-cn_image_0000002817426433.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDE3BA22BB508E72502E1849F8C793FC2BAB146DB3D6CBA7AE822730F8B505AF)
 
 ## 画边框
 
@@ -301,7 +301,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/V6FgK1cWRL6d59gkYqsvHA/zh-cn_image_0000002815558759.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=96D159BA7BAEF90DF28B297916D5B7684E815CA35EA44487B7B577ED1AB2BF62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/sKrqSJH6QsmOt-paU81IcQ/zh-cn_image_0000002788467014.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=123078271F3F9B7C12B8F7BAB4445478DD06E6D19F2653BDCC5BDB417ADC8B04)
 
 ## 填充渐变色
 
@@ -425,7 +425,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/v_H5zXs1RymB020GwYFrIA/zh-cn_image_0000002815398843.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB3983F6A5060985144D85A1D96024C5CEB62E9B66F5422629B6FC54C6EFBA14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/QU7f6S_tS0-6F1rDZEw-xw/zh-cn_image_0000002817506501.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC35856F75928EA1752332AD971AB775A25980D9B9EFBCD88941469E1D211BD3)
 
 ## 填充文字
 
@@ -555,7 +555,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/qERXAzZrS7y2HcWN0pIXBw/zh-cn_image_0000002786519268.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=292444625753C191AC93AD2C4DA30F4A3F22D82374738C3E4A8C0650507F130D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/3AYd1z80SOOkacTKCwClYA/zh-cn_image_0000002788307072.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=F33734D81D44229084CC4BCAD76837B5BD3736D9AA7F57113B09B70976D5EBAC)
 
 **说明** 
 
@@ -731,7 +731,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/hYD9mx6cSSGG-3TfMsnbow/zh-cn_image_0000002786359340.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=9657D3EC58F03491D572B1CD87CE2CAB943EC9F657D4CC12CCACF89145901359)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/CLP8nWS2QqalWuJP76jS4A/zh-cn_image_0000002817426435.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B236C09D26745A0DE4C88E0144DD1FC8B3285760601C19CEC7376A3C8883488)
 
 **说明** 
 
@@ -830,4 +830,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/VG1Xymc0RKqVTkbOuZn3Zg/zh-cn_image_0000002815558761.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F4AFCBF838588F2B4523BD7B4DB3290570E79F67B62F3746053F3CBF5809A8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/-tS5RZ6iSVa93186NZ0ssg/zh-cn_image_0000002788467016.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C4E1B35AC36A6905CC8E5A224246317933DB4E91290FA29451A98660901B50E)

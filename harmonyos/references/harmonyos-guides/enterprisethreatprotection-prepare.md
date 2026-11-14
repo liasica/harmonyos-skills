@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisethr
 title: 开发准备
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Threat Protection Kit（企业威胁防护服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:02+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:73bc436b1643baf07997f997d6aa4e5d966f66ea19d58be6adfd00768bd0711f
+scraped_at: 2026-11-14T08:47:30+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:9813f65311f281eb4faa57c8fea84b483cce686586b9b62b7e2380ad14b7bace
 ---
 
 ## 申请资质
 
 在开发应用前，需要在AppGallery Connect中配置项目和应用信息。包括：
 
-* [注册账号](../start/registration-and-verification-0000001053628148.md)和[企业开发者实名认证](../start/edrna-0000001062678489.md)。
-* [创建项目](../app/agc-help-create-project-0000002242804048.md)和[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
+* [注册账号](../doccenter-getting-started/hdc-registration-0000002723008096.md)和[企业开发者实名认证](../doccenter-getting-started/hdc-edrna-0000002752527889.md)。
+* [创建项目](../doccenter-getting-started/agc-help-create-app-0000002247955506.md)和[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
 * [申请企业应用发布证书](../app/agc-help-enterprise-cert-0000002248177978.md)和[申请企业应用发布Profile](../app/agc-help-enterprise-profile-0000002248181282.md)。
 
 ## 申请权限

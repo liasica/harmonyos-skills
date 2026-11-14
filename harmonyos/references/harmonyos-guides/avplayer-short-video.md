@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avplayer-shor
 title: 基于AVPlayer播放短视频实践
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放短视频实践
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:00+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:8e5dd30ce3c9ceee55f69e4af4c2b5e531fea149750967350c3170a6c6559af3
+content_hash: sha256:8bdf78ae60d7d85f694238ce5a58a82d08327224a153e3e41fc5355bb8cf8849
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ content_hash: sha256:8e5dd30ce3c9ceee55f69e4af4c2b5e531fea149750967350c3170a6c65
 2. 起点时间：松手时的时间。
 3. 终点时间：视频内容开始播放，画面首次变化的时间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/TzRxL_fTQ9SkIGO4kJ-RpQ/zh-cn_image_0000002815559373.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B2194CAB7765BBFA948D15DB87B6319B18336F7DA83B22E936AFCB4A0DB6BD0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/sjxlaGSTRCe5D8syQ8U8sQ/zh-cn_image_0000002788467628.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004618Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E51025D4376550DDA72649E700BA412488BF10629BCF5BC2A1CEAFA997D3F83)
 
 ### 场景体验指标
 
@@ -48,7 +48,7 @@ content_hash: sha256:8e5dd30ce3c9ceee55f69e4af4c2b5e531fea149750967350c3170a6c65
 
 **图 1** **流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/X4l2z39CQGWslLNN-FgL2w/zh-cn_image_0000002815399457.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBDED0419F105824071C1561AE195E2AC7C2BAF7365E2F9C32A832767C04593A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/lJtX2_vmQZuyo9_obX5TDA/zh-cn_image_0000002817507117.png?HW-CC-KV=V1&HW-CC-Date=20261114T004618Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D3770B7CE8C920FB780A87743AD8283F35224D7F14C1462A127CAD2A8935CA8)
 
 1. 使用视频播放框架AVPlayer可以将Audio/Video媒体资源（比如mp4/mp3/mkv/mpeg-ts等）转码为可供渲染的图像和可听见的音频模拟信号，并通过输出设备进行播放。
 2. 使用LazyForEach进行数据懒加载，设置cachedCount属性指定缓存数量，搭配组件复用能力。冷启动时创建并初始化AVPlayer到prepared阶段。
@@ -60,7 +60,7 @@ content_hash: sha256:8e5dd30ce3c9ceee55f69e4af4c2b5e531fea149750967350c3170a6c65
 
 **图 2** **异步加载示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/12s2kjm5TDWPM7aD8P3SYw/zh-cn_image_0000002786519882.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C27073E98DCBCAC6D02AC0ACE57221577A707448D01CB36B95982B94163042A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/UIss7QwVTkqWjRUXvyAgYQ/zh-cn_image_0000002788307686.png?HW-CC-KV=V1&HW-CC-Date=20261114T004618Z&HW-CC-Expire=31536000000&HW-CC-Sign=72534CB5D3F9B3CFF2EEF668BE03320A8469637838C44215136295BFFA5C6027)
 
 在缓存池中有多个播放器实例，播放视频A时，提前预加载视频B并进入prepare状态；切换短视频时，可以立即播放已预加载的视频B，减少切换时间。手势上下滑动的时候，在动画开始时就更新当前索引值，最终实现短视频快速切换，综合起播时间≤230ms。
 

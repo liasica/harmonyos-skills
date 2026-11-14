@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-3
 title: 一键登录场景下无法获取到匿名手机号如何解决
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > 一键登录场景下无法获取到匿名手机号如何解决
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:10+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b6e4927a840250b0f029fc3b0ab4520c253058c722c45cc62f1267515d3a78f5
+content_hash: sha256:f3bcc90610cf7931fe5ed5c663e159146f62b76eaff2cecc28490b20234074a6
 ---
 
 在华为账号一键登录场景下无法获取到匿名手机号时，建议通过以下步骤排查解决：
@@ -23,7 +23,7 @@ content_hash: sha256:b6e4927a840250b0f029fc3b0ab4520c253058c722c45cc62f1267515d3
 4. 使用华为账号一键登录服务的账号必须是中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）华为账号，否则会返回错误码[1001500003 不支持该scopes或permissions](../harmonyos-references/errorcode-account-kit.md#section1001500003-不支持该scopes或permissions)。
 5. 确认是否在AGC的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中申请华为账号一键登录权限。图示为未申请状态，未申请将返回错误码[1001502014 应用未申请scopes或permissions权限](account-faq-2.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/w2ex77m_QbaJu3EBR-A7hQ/zh-cn_image_0000002786520058.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=19147185638D5AB3456D55F76B29967395F80C75E4C34D5DC2C399ED9AA5FA6E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/qQFn_7VfSR69ySyF6ZFQeQ/zh-cn_image_0000002788307862.png?HW-CC-KV=V1&HW-CC-Date=20261114T004628Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B0C280387ABEFD655F32694D3A70672D721946A9CB33D197F3587FC6C019266)
 6. 申请的华为账号一键登录权限待审批或待生效，**权限申请后需要25小时后生效或将调试设备的系统时间向后调整25小时后重试。**
 7. 权限申请成功后，确认scope参数是否传入的是quickLoginAnonymousPhone，详情可参考一键登录[客户端开发](account-phone-unionid-login.md#客户端开发)。
 

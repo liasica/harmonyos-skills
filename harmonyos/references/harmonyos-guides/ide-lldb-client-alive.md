@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-lldb-clie
 title: Native调试启动加速
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > Native调试启动加速
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:00+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:07237f0894dc4e8b2cfc8dcd0d59354f4dfaaf8fdd3a95f9320deb450c5fcc08
+content_hash: sha256:8e74495a01899cd6da8004487f7e10aeae4de309a95cec574ca4319b8b1b94a6
 ---
 
 在大型工程中，Native调试的启动耗时较长。为提升开发调试效率，从26.0.0版本开始，新增Native调试启动加速功能。开启该功能后，首次调试完成时，调试服务器会保持活跃状态，后续再次启动调试时，可以大幅减少调试连接的耗时。
@@ -19,19 +19,19 @@ content_hash: sha256:07237f0894dc4e8b2cfc8dcd0d59354f4dfaaf8fdd3a95f9320deb450c5
 
 在**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build, Execution, Deployment > Debugger > C++ Debugger**中，勾选**Keep LLDB client alive**开启Native调试启动加速功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/lwK2zd4GSeKU8aTSv-aGZg/zh-cn_image_0000002808766573.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEA31E200983C68FC21F5FCF599FD7F854DBE24EF94AAFEDA3047A2A32B7BE32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/IbWieQZOTjGgnb7vmk2qMg/zh-cn_image_0000002808766573.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C5804BE53CAA22102E33BCC14E83B1F582432340CD5BA6C06512A6603E4B3CB)
 
 也可以通过调试窗口控制台的超链接跳转到设置中开启。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/cmJVbmvDQy-VfjLf8OlEaQ/zh-cn_image_0000002779566992.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=95F98082616EF8916E09A7CE186D13F2BA58078C9824B4595F45EAC7685D2429)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/T_TYTwa0Q92JXOYVBieRLA/zh-cn_image_0000002779566992.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAADA4ADE31C17E603621F67675D03CE84E3276C78A4A13A15AF685465784C61)
 
 开启开关并启动调试后，DevEco Studio底部会有调试服务器图标，调试过程中不能关闭服务器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/bzxkwm9RSPGY2bWLRTXIpw/zh-cn_image_0000002779407014.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CA8591675833EAA651DF697F9F896AADC9A91C33CBBD297FBFECD5431453B56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/--rhZ4D2TxWz-FtxyLp-Jw/zh-cn_image_0000002779407014.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4C67DAF1F650E7C6BFF82185F87C17B465FCB50E716CFC132960EE24726F294)
 
 同时，开启开关后会占用内存和磁盘空间，在不调试时，可手动释放资源。
 
 * 释放内存：点击DevEco Studio底部的调试服务器图标，关闭调试服务器释放内存。
 * 释放磁盘空间：点击**File >** **Invalidate Caches**，勾选**Clear LLDB caches**，点击**Invalidate and Restart**重启DevEco Studio以清理缓存数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/ICXKXrJ7QzCGE3orwiNgOQ/zh-cn_image_0000002808886653.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A70EA64C6BD03D2A6F0F1173C0B96AA181D739777FAC3CD43AED6821CBD0388)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/iB27nBA3SjmfIVEU_NpAwQ/zh-cn_image_0000002808886653.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=B435EEF0C634DC167670667032677F863A6F9F5F029E9A99DE86D6D593DD5D1F)

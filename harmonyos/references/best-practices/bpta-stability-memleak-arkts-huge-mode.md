@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 申请超大对象导致OOM故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ArkTS内存泄漏故障模式说明 > 申请超大对象导致OOM故障模式说明
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:19+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:8969253e933d690853dac376af6e90ace9c708d5cc4e722f32ca2768a5003ed3
+content_hash: sha256:78b9ba71a4c0f4de326f69df1a3dff649327df3f790e136ae7c71ae9f7a6a3dc
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ OOM故障根因是否为单次申请对象内存过大，无固定判定阈值�
 2. 查看jscrash日志中的Error message，若申请内存较大，则可能为一次性申请超大内存导致OOM。
 3. 查看崩溃日志中Stacktrace的ArkTS崩溃堆栈，定位到具体申请内存的代码位置。崩溃日志示例如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/d79XhudSSia7wmN17TBibA/zh-cn_image_0000002729584407.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A484DFE80CBD5EC861B58BE4A3AC4FC9239B2632B0543D293888B0CE7C861FF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/tOjppi-OTFuEnSiIE16o8g/zh-cn_image_0000002729584407.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=38BD808AF7F3B1A0C1126AE548E6291ADC755C2F02A126AFCBE2CD539F65C453)
 4. 开发者对申请内存的代码进行优化，避免一次性申请超大内存。
 
 ### 关键字
@@ -47,13 +47,13 @@ Error message：崩溃日志中Error message部分显示错误信息。若Error 
 
 在Index.ets文件中，前端按钮调用HugeObj()函数，在函数中一次性申请500MB内存触发应用进程OOM故障。问题代码如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/wyZbRhmJSYGiydOQWTjTfA/zh-cn_image_0000002699705188.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D1AD5E07011B40FCE03940710C79450BAD6EA11D3272271AFA162B88DFE74BE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/AnAqwxz4QEKzp3-pCHgrGA/zh-cn_image_0000002699705188.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=21B078676C953A6DE6C02ED22282A46CD001E6F7B41D690D46D7FBF01FB37501 "点击放大")
 
 **问题分析思路**
 
 1. 应用崩溃后，通过[OOM故障事件订阅方式](bpta-overview-of-arkts-memory-leaks-overview.md#section844818101813)获取崩溃日志，崩溃日志如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/nl8venpOSZO7oS1m2VHz4w/zh-cn_image_0000002729464451.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=52FD71D245809671286280C2486B38E7A188A2F33108DEF2EF59466ABA6E4B27)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/vCXkdhb0TyOlSi2w5OZYpg/zh-cn_image_0000002729464451.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5A3DC02DB280006A8FACDFE5366E909770B87DC5754017B6DA4CF5BFA2E8A64)
 
 2. 查看崩溃日志中的Reason字段为OutOfMemory，明确应用进程崩溃原因是OOM故障。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sheet-p
 title: 绑定半模态页面（bindSheet）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 绑定模态页面 > 绑定半模态页面（bindSheet）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:6ca6ef049f1f94ee799a0afb8ac8ce1668698278379076759eed22b9739ade56
+content_hash: sha256:5b3a3576c55032218d3007e72363a215d0090dbc4f1036cbc59af8c8fa2be949
 ---
 
 [半模态页面（bindSheet）](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)默认是模态形式的非全屏弹窗式交互页面，允许部分底层父视图可见，帮助用户在与半模态交互时保留其父视图环境。
@@ -119,7 +119,7 @@ struct SheetDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/slH4ApfyS2WVMchKPKsIFQ/zh-cn_image_0000002786519004.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=735EE181B2A71C845B3D94221E8AD58FCA92BD277B38699DC897E5A8E62A4254)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/P48FqRYtR02OkD4qYkLOpA/zh-cn_image_0000002788306808.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=87F4BEE32659D1DEBD9CD05E0C1DBC908AF62E20048DDF5EAC20E47E88E14EDF)
 
 ## 二次确认能力
 
@@ -201,7 +201,7 @@ struct OnWillDismiss_Dismiss {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/qYBDrUVwQYSd9XCzNRAzSA/zh-cn_image_0000002786359076.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B7A4719BB3A80E228702D3FDA9E6BBC33414B1759A30F24D8D0F415A2C09BCD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Kl_JWD2LShKH-c9xkR5XzA/zh-cn_image_0000002817426171.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDD59018FB9BF26C468A462EFEB2C864EE631EC6787E84E73CB42E4E82491B91)
 
 ## 屏蔽部分关闭行为
 
@@ -307,4 +307,4 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/EwNpvtFOT9ulm_U4mb8mpg/zh-cn_image_0000002815558497.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFCD7D5A6F35003515ECD8EC17CED84E530B5820ED27B14894B806BC24DC6966)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/cI1jeyj2SKONjBaX5pDpaw/zh-cn_image_0000002788466752.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=6086F409C85E276670F239240DC9CD571E61D8030FFDB3E1570811BC4D5196E5)

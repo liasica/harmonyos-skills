@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-config
 title: 应用间配置共享 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 跨应用数据共享 > 一对多跨应用数据共享 > 应用间配置共享 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:02+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:a8ecdea81b480505f29194f760357b0de28ebe5b11f324fd2ed6d14c8ec69ff2
+scraped_at: 2026-11-14T08:46:53+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:c92b9af2cc8ad9613fe284b61f0e580d0a815849bcb12322ef1806ad179b5ff5
 ---
 
 ## 场景介绍
@@ -55,7 +55,7 @@ API版本26.0.0之前，一个应用最多可以发布32个配置项；从API版
 
 ## 配置发布方
 
-### module.json5 配置
+### module.json5配置
 
 配置发布方需要配置module.json5文件中的crossAppSharedConfig字段，通过crossAppSharedConfig字段引用shared\_config.json文件，shared\_config.json为共享配置文件，定义了应用希望与其他应用共享的配置项。共享配置文件需放置在工程resources/base/profile目录下，并通过$资源访问方式引用。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataguard-pre
 title: 开发准备
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:38+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:8ded79d180953cc256a90d8655eb781997b7354fbcbc0e8f36a18a5f16695652
+scraped_at: 2026-11-14T08:47:29+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:49e9d6d10de5c22b91b8b8ff980187ab67ae9cdd1be74df5cfe1cb5ad5d4c1c8
 ---
 
 ## 环境准备
@@ -18,8 +18,8 @@ content_hash: sha256:8ded79d180953cc256a90d8655eb781997b7354fbcbc0e8f36a18a5f166
 
 在开发应用前，需要在AppGallery Connect中配置项目和应用信息。包括：
 
-* [注册账号](../start/registration-and-verification-0000001053628148.md)和[企业开发者实名认证](../start/edrna-0000001062678489.md)。
-* [创建项目](../app/agc-help-create-project-0000002242804048.md)和[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
+* [注册账号](../doccenter-getting-started/hdc-registration-0000002723008096.md)和[企业开发者实名认证](../doccenter-getting-started/hdc-edrna-0000002752527889.md)。
+* [创建项目](../doccenter-getting-started/agc-help-create-app-0000002247955506.md)和[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
 * [申请企业MDM应用发布证书](../app/agc-help-enterprise-mdm-cert-0000002283256801.md)和[申请企业MDM应用发布Profile](../app/agc-help-enterprise-mdm-profile-0000002248341094.md)。
 
 ## 申请权限

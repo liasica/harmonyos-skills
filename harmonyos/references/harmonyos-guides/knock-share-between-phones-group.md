@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-b
 title: 邀请组队
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与手机碰一碰分享 > 邀请组队
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-06-05
-content_hash: sha256:f86fa3af0fc4af02ebcd46d8f57e6c548c2d5548acdee40e3d93f41dbd17f029
+scraped_at: 2026-11-14T08:48:33+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:d578a17a13bda5aa94379d3ec93f481620d76b6cf5ce88aecc9e7b0f402b04c5
 ---
 
 ## 注册碰一碰事件
@@ -14,11 +14,11 @@ content_hash: sha256:f86fa3af0fc4af02ebcd46d8f57e6c548c2d5548acdee40e3d93f41dbd1
 
 **图1** 横屏应用示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/IutfxJ5OTO2vUxQaTZNfbw/zh-cn_image_0000002815400107.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=76C428163809105685ED3C65E52B2568F4EEE1BBC2BBA9538BF0C9ACC9A43465)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/j_sRwe9WQMOxhLnt6LwwkQ/zh-cn_image_0000002817427699.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=204B0973250C498E1B2CD681008A4D6A47B33B44BFBFF0E5848B45C200F084F5)
 
 **图2** 竖屏应用示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/swC5HA_iRYSlQ84W1aYj9Q/zh-cn_image_0000002786520532.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F9B30DEAC8AA0AABFCAA101E6732664D6BC3A6F0E7DA68AB617CAC52E0E1DDB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Wmb-yBv7RvKI6vcWdfxitw/zh-cn_image_0000002788468280.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=443D32477CD1E02D83AB29503D030F140F06B254D9BB016361F851B4BA576AA8)
 
 ## 注册单向分享能力
 
@@ -46,7 +46,7 @@ export default struct Index {
       let filePath = contextFaker.filesDir + '/exampleKnock1.jpg'; // 仅为示例 请替换正确的文件路径
       let shareData: systemShare.SharedData = new systemShare.SharedData({
         utd: utd.UniformDataType.HYPERLINK,
-        content: 'https://sharekitdemo.drcn.agconnect.link/ZB3p',
+        content: 'http://sharekit/example/hyperlink', // 仅为示例 使用时请替换为待分享的链接
         // 根据title,description,thumbnailUri会生成不同的卡片模板。
         thumbnailUri: fileUri.getUriFromPath(filePath),
         title: '碰一碰分享卡片标题',

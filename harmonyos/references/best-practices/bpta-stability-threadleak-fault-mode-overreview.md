@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 线程泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 线程泄漏故障模式说明 > 线程泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:e5ce984f9f6a14ec82af9bef552ff9b2689a37332753e907151e98dae271b6b4
+scraped_at: 2026-11-14T08:54:20+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:1cde4b7b67a38150047877aaa6c5c25bccde242a2b86b2b8d514a3163f9a6934
 ---
 
 系统监控应用申请的线程数量，当应用线程数量超过系统阈值时，会抓取维测信息，并对应用进行管控。本文旨在为开发者介绍系统的线程泄漏检测机制，并提供开发态与运维态的问题分析思路。此外，本文还提供线程泄漏问题分析与定位实践系列文章，旨在系统梳理线程泄漏常见根因与问题分析方法，引导开发者在编码中建立良好的线程使用习惯。文章如下：
@@ -35,15 +35,15 @@ content_hash: sha256:e5ce984f9f6a14ec82af9bef552ff9b2689a37332753e907151e98dae27
 
 在shell命令行或应用代码中读取/proc/self/status：
 
-|  |  |
-| --- | --- |
-| ``` 1 ``` | ``` cat /proc/self/status | grep Threads ``` |
+```screen
+cat /proc/self/status | grep Threads
+```
 
 开发者执行命令后得到应用进程中线程的数量：
 
-|  |  |
-| --- | --- |
-| ``` 1 ``` | ``` Threads:        39 ``` |
+```screen
+Threads:        39
+```
 
 ### 线程泄漏检测原理
 
@@ -64,9 +64,11 @@ content_hash: sha256:e5ce984f9f6a14ec82af9bef552ff9b2689a37332753e907151e98dae27
 
 开发者可以通过订阅[资源泄漏事件](../harmonyos-guides/resource-leak-events.md)获取到本次系统管控的线程维测信息。应用触发线程泄漏故障后，通过HiAppEvent收到如下hiappevent.event.RESOURCE\_OVERLIMIT事件回调，其中resource\_type的值为thread，其余更详细的故障参数可通过[params字段说明](../harmonyos-guides/hiappevent-watcher-resourceleak-events.md#params字段说明)进一步了解。
 
-|  |  |
-| --- | --- |
-| ``` 1 2 3 ``` | ``` HiAppEvent eventInfo.domain=OS HiAppEvent eventInfo.name=RESOURCE_OVERLIMIT HiAppEvent eventInfo={"domain":"OS","name":"RESOURCE_OVERLIMIT","eventType":1,"params":{"app_running_unique_id":"13544159712879771749","bundle_name":"com.example.dfx_test","bundle_version":"1.0.1","external_log":["/data/storage/el2/log/resourcelimit/RESOURCE_OVERLIMIT_1784269276384_15802.log"],"level":"warning","log_over_limit":false,"pid":15802,"resource_type":"thread","thread":{"num":1241},"time":1784269276371,"uid":20020212}} ``` |
+```screen
+HiAppEvent eventInfo.domain=OS
+HiAppEvent eventInfo.name=RESOURCE_OVERLIMIT
+HiAppEvent eventInfo={"domain":"OS","name":"RESOURCE_OVERLIMIT","eventType":1,"params":{"app_running_unique_id":"13544159712879771749","bundle_name":"com.example.dfx_test","bundle_version":"1.0.1","external_log":["/data/storage/el2/log/resourcelimit/RESOURCE_OVERLIMIT_1784269276384_15802.log"],"level":"warning","log_over_limit":false,"pid":15802,"resource_type":"thread","thread":{"num":1241},"time":1784269276371,"uid":20020212}}
+```
 
 ### 订阅应用终止事件
 
@@ -79,9 +81,9 @@ content_hash: sha256:e5ce984f9f6a14ec82af9bef552ff9b2689a37332753e907151e98dae27
 
 以ResourceLeak(ThreadLeak)管控原因为例，会收到应用终止事件，示例如下：
 
-|  |  |
-| --- | --- |
-| ``` 1 ``` | ``` HiAppEvent eventInfo={"domain":"OS","name":"APP_KILLED","eventType":2, "params":{"app_running_unique_id":"4861316576349011847","bundle_version":"1.0.1","foreground":false,"reason":"ResourceLeak(ThreadLeak)","time":1783932252439}} ``` |
+```screen
+HiAppEvent eventInfo={"domain":"OS","name":"APP_KILLED","eventType":2, "params":{"app_running_unique_id":"4861316576349011847","bundle_version":"1.0.1","foreground":false,"reason":"ResourceLeak(ThreadLeak)","time":1783932252439}}
+```
 
 其中，reason字段为ResourceLeak(ThreadLeak)，foreground字段为false，代表系统检测到该应用线程占用超过管控阈值，切后台之后管控此应用。开发者也可以通过[params字段说明](../harmonyos-guides/hiappevent-watcher-app-killed-events.md#params字段说明)了解更详细的故障参数说明。
 
@@ -110,30 +112,62 @@ content_hash: sha256:e5ce984f9f6a14ec82af9bef552ff9b2689a37332753e907151e98dae27
 1. 通过订阅[资源泄漏事件](../harmonyos-guides/resource-leak-events.md)，开发者在沙箱中接收到维测日志/data/storage/el2/log/resourcelimit/RESOURCE\_OVERLIMIT\_XXXX\_XXXX.log。
 2. 线程泄漏维测日志的“summary”字段记录了发生泄漏时进程内的线程总数，开发者可依据该进程实际使用的线程数量，评估线程泄漏严重程度。
 
-   |  |  |
-   | --- | --- |
-   | ``` 1 ``` | ``` summary: XXXX ``` |
+   ```screen
+   summary: XXXX
+   ```
 3. 线程泄漏维测日志的详细信息会按照线程名聚类统计，输出Top10的线程占用量、线程的启动时间、近20次页面切换等信息，支撑开发者识别定位。
    * 页面切换信息如下所示：通过APP\_PAGE\_HISTORY\_INFO信息获取应用近20次页面切换信息，初步分析可能导致线程泄漏的业务场景。
 
-     |  |  |
-     | --- | --- |
-     | ``` 1 2 3 4 5 6 7 8 9 ``` | ``` ***************************** APP_PAGE_HISTORY_INFO   15:04:19.740 :enters foreground   15:04:18.546 :leaves foreground   15:04:15.931 /ets/pages/threadleak   15:04:12.556 :enters foreground   15:04:00.083 :leaves foreground   15:03:57.669 :enters foreground ***************************** ``` |
+     ```screen
+     *****************************
+     APP_PAGE_HISTORY_INFO
+       15:04:19.740 :enters foreground
+       15:04:18.546 :leaves foreground
+       15:04:15.931 /ets/pages/threadleak
+       15:04:12.556 :enters foreground
+       15:04:00.083 :leaves foreground
+       15:03:57.669 :enters foreground
+     *****************************
+     ```
    * Top10泄漏线程信息如下所示：通过Top 10 Thread Name信息，可初步定位线程泄漏时Top占用的线程和对应的线程数量。
 
-     |  |  |
-     | --- | --- |
-     | ``` 1 2 3 4 5 6 7 ``` | ``` Top 10 Thread Name: 913	process1 3	gpu-work-client 2	OS_Actor_402 1	IPC_11_13795 1	IPC_12_13796 1	IPC_13_13797 ``` |
+     ```screen
+     Top 10 Thread Name:
+     913	process1
+     3	gpu-work-client
+     2	OS_Actor_402
+     1	IPC_11_13795
+     1	IPC_12_13796
+     1	IPC_13_13797
+     ```
    * 线程启动信息如下所示：通过线程启动信息获取线程创建时间，结合hilog流水日志进一步分析执行的业务。
 
-     |  |  |
-     | --- | --- |
-     | ``` 1 2 3 4 5 ``` | ``` ====================================================== tid	thread_name	start_time(jiffies) 221	process1	4688297 240	IPC_3_4318	3081382 …… ``` |
+     ```screen
+     ======================================================
+     tid	thread_name	start_time(jiffies)
+     221	process1	4688297
+     240	IPC_3_4318	3081382
+     ……
+     ```
 4. 日志留存了采样时间点的线程栈快照如下所示：通过快照数据即可判定线程此时的运行状态，日志中的\_\_pthread\_cond\_timedwait表示线程正在等待唤醒。开发者可结合业务流程，按照线程创建调用链路追溯，定位线程泄漏的具体位置。
 
-   |  |  |
-   | --- | --- |
-   | ```  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 ``` | ``` ====================================================== Result: 0 ( no error ) Timestamp:2024-06-27 03:45:20.000 Pid:41897 Uid:1013 Process name:process1 Tid:1527, Name:xxx #00 pc 00000000001b6464 /system/lib/ld-musl-aarch64.so.1(__timedwait_cp+192)(98dc7600a0fc62125e291b93ca336154) #01 pc 00000000001b8468 /system/lib/ld-musl-aarch64.so.1(__pthread_cond_timedwait+188)(98dc7600a0fc62125e291b93ca336154) #02 pc 00000000000c108c /system/lib64/libc++.so(std::__h::condition_variable::wait(std::__h::unique_lock<std::__h::mutex>&)+20)(9cbc937082b3d7412696099dd58f4f78242f9512) #03 pc 000000000024654c /system/lib64/platformsdk/xxx.so(mindspore::Worker::WaitUntilActive()+204)(534ce78b66262dc14658c35fa018662f) #04 pc 000000000023da14 /system/lib64/platformsdk/xxx.so(mindspore::ActorWorker::RunWithSpin()+256)(534ce78b66262dc14658c35fa018662f) #05 pc 000000000023edb0 /system/lib64/platformsdk/xxx.so(void* std::__h::__thread_proxy[abi:v15004]<std::__h::tuple<std::__h::unique_ptr<std::__h::__thread_struct, std::__h::default_delete<std::__h::__thread_struct>>, void (mindspore::ActorWorker::*)(), mindspore::ActorWorker*>>(void*)+60)(534ce78b66262dc14658c35fa018662f) #06 pc 00000000001baac0 /system/lib/ld-musl-aarch64.so.1(start+236)(98dc7600a0fc62125e291b93ca336154) …… ``` |
+   ```screen
+   ======================================================
+   Result: 0 ( no error )
+   Timestamp:2024-06-27 03:45:20.000
+   Pid:41897
+   Uid:1013
+   Process name:process1
+   Tid:1527, Name:xxx
+   #00 pc 00000000001b6464 /system/lib/ld-musl-aarch64.so.1(__timedwait_cp+192)(98dc7600a0fc62125e291b93ca336154)
+   #01 pc 00000000001b8468 /system/lib/ld-musl-aarch64.so.1(__pthread_cond_timedwait+188)(98dc7600a0fc62125e291b93ca336154)
+   #02 pc 00000000000c108c /system/lib64/libc++.so(std::__h::condition_variable::wait(std::__h::unique_lock<std::__h::mutex>&)+20)(9cbc937082b3d7412696099dd58f4f78242f9512)
+   #03 pc 000000000024654c /system/lib64/platformsdk/xxx.so(mindspore::Worker::WaitUntilActive()+204)(534ce78b66262dc14658c35fa018662f)
+   #04 pc 000000000023da14 /system/lib64/platformsdk/xxx.so(mindspore::ActorWorker::RunWithSpin()+256)(534ce78b66262dc14658c35fa018662f)
+   #05 pc 000000000023edb0 /system/lib64/platformsdk/xxx.so(void* std::__h::__thread_proxy[abi:v15004]<std::__h::tuple<std::__h::unique_ptr<std::__h::__thread_struct, std::__h::default_delete<std::__h::__thread_struct>>, void (mindspore::ActorWorker::*)(), mindspore::ActorWorker*>>(void*)+60)(534ce78b66262dc14658c35fa018662f)
+   #06 pc 00000000001baac0 /system/lib/ld-musl-aarch64.so.1(start+236)(98dc7600a0fc62125e291b93ca336154)
+   ……
+   ```
 
 ### 线程泄漏调用栈日志分析方法
 
@@ -146,7 +180,7 @@ content_hash: sha256:e5ce984f9f6a14ec82af9bef552ff9b2689a37332753e907151e98dae27
 5. 将抓取的线程栈按照Count列排序，筛选出申请次数异常的线程及其调用栈，如下图5、6处框选内容。
 6. 结合调用栈对代码进行分析，找到泄漏原因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Ksjvg8voShmJP96LOIR2Mw/zh-cn_image_0000002729597777.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A563CEF4AA2AED1FB7E1608BBB3DA93235A43E2E7DEF0DF0E9CE9B25B598EC9 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/YWY-XucUTbqpTRU7tcS3JA/zh-cn_image_0000002729597777.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=66B13B75F0EA0D45CC363DD16C5E367777282759D7DDCC53220E2584558E9D46 "点击放大")
 
 ## 开发态问题分析方法
 
@@ -156,9 +190,28 @@ content_hash: sha256:e5ce984f9f6a14ec82af9bef552ff9b2689a37332753e907151e98dae27
 
 * [hidumper](../harmonyos-guides/hidumper.md)：在分析线程泄漏问题的过程中，开发者可以使用[查询fd及线程信息](../harmonyos-guides/hidumper.md#查询fd及线程信息)中的 “hidumper -p <pid> --thread -v”命令获取指定进程的线程使用情况，辅助问题定位。
 
-  |  |  |
-  | --- | --- |
-  | ```  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 ``` | ``` # hidumper -p 48469 --thread -v Thread num: 32 Top 10 Thread Names: 11      V8 DefaultWorke 5       OS_GC_Thread 2       example.dfx_test 1       OS_FFRT_2_3 1       OS_FFRT_3_1 1       OS_FFRT_Delay 1       OS_EVENT_POLL 1       OS_IPC_0_48663 1       OS_AppEvent_Ls 1       OS_IPC_2_48666 tid     thread_name     start_time 48469   example.dfx_test 2363475 48663   OS_IPC_0_48663  2363555 48664   OS_IPC_1_48664  2363555 48665   OS_DfxWatchdog  2363555 48666   OS_IPC_2_48666  2363557 …… ``` |
+  ```screen
+  # hidumper -p 48469 --thread -v
+  Thread num: 32
+  Top 10 Thread Names:
+  11      V8 DefaultWorke
+  5       OS_GC_Thread
+  2       example.dfx_test
+  1       OS_FFRT_2_3
+  1       OS_FFRT_3_1
+  1       OS_FFRT_Delay
+  1       OS_EVENT_POLL
+  1       OS_IPC_0_48663
+  1       OS_AppEvent_Ls
+  1       OS_IPC_2_48666
+  tid     thread_name     start_time
+  48469   example.dfx_test 2363475
+  48663   OS_IPC_0_48663  2363555
+  48664   OS_IPC_1_48664  2363555
+  48665   OS_DfxWatchdog  2363555
+  48666   OS_IPC_2_48666  2363557
+  ……
+  ```
 * DevEco Profiler调优工具：开发者可使用DevEco Studio的Profiler调优功能，分析应用进程的线程申请趋势与线程申请的调用栈，定位线程泄漏点。更多功能可参考[DevEco Profiler调优工具简介](../harmonyos-guides/ide-profiler.md)。
 
 **说明** 
@@ -177,8 +230,8 @@ content_hash: sha256:e5ce984f9f6a14ec82af9bef552ff9b2689a37332753e907151e98dae27
    * 单击图6处开始执行录制。
    * 应用执行可能发生线程泄漏的业务，等待业务执行完成，停止录制，获得录制结果。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/G9t7FJ-vTDiCECkCnR1PEg/zh-cn_image_0000002699878452.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF08A1EB4675893F8FAF542048688F0D92BCC9C5F71967CAAF3B3F48BFDF199E "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/mmCeXROQT9-OmlNqH4g9HA/zh-cn_image_0000002699878452.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9E5CCACA1DD59DB941D9D10BE099B92AF776F1D3752BC4A09E13DC59CD3B742 "点击放大")
 2. 获得录制结果如下图所示：单击下图1处展开Threads泳道，再单击下图2处的Call Trees，即可在图3中查看线程数量。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/19MeZZadSdSTVzJdsduVdg/zh-cn_image_0000002699718588.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DCF5BF71B18D02991616AB4B280B1AB35C8E24E13B1AC2043979E268CAA7E27 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/KOVuvD-YR0uBNTD7DBgRRw/zh-cn_image_0000002699718588.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F9CBF0CC50F35BD452930D6EA88AE5904933C3025CB1DB8718F97AA738E9B8A "点击放大")
 3. 最后，发现线程数量异常，通过结合[线程泄漏调用栈日志分析方法](bpta-stability-threadleak-fault-mode-overreview.md#section19835127163117)定位线程泄漏点。

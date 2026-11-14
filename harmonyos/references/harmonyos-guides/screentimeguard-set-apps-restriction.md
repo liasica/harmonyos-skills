@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 设置应用访问限制
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 应用访问限制 > 设置应用访问限制
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:5646b7d223a88b282ff7cc77d2341044b01f8e81efda2c82f45493d934e45104
+scraped_at: 2026-11-14T08:48:32+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:f3d6b9b23169751c18b0d8d937aa21f4632c4060fb73a6b41697420666f216c7
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:5646b7d223a88b282ff7cc77d2341044b01f8e81efda2c82f45493d934e
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/nx0LoLQsR9GEiTd-iz80UQ/zh-cn_image_0000002815400093.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC1528697E595F576C47CEB74EB5FBCEAA1A42A447F33BCE8CDB7E517E347AD9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/1jF0LUPyT-6vcZLRWW3dIA/zh-cn_image_0000002817427685.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4395973B695381C28C94FE634584B675B3669D8D25522F52E6F2460FD4EE65E)
 
 流程说明：
 
@@ -27,21 +27,14 @@ content_hash: sha256:5646b7d223a88b282ff7cc77d2341044b01f8e81efda2c82f45493d934e
 
 | 接口名 | 描述 |
 | --- | --- |
-| [setAppsRestriction](../harmonyos-references/screentimeguard-guardservice.md#setappsrestriction)(appInfo: [AppInfo](../harmonyos-references/screentimeguard-guardservice.md#appinfo), restrictionType: [RestrictionType](../harmonyos-references/screentimeguard-guardservice.md#restrictiontype)): Promise<void> | 可根据传入的应用token数组，以及限制类型（禁用/许可清单），来决定是对应用数组做限制，还是对应用数组之外的应用做限制 |
+| [setAppsRestriction](../harmonyos-references/screentimeguard-guardservice.md#setappsrestriction)(appInfo: [AppInfo](../harmonyos-references/screentimeguard-guardservice.md#appinfo), restrictionType: [RestrictionType](../harmonyos-references/screentimeguard-guardservice.md#restrictiontype)): Promise<void> | 设置应用访问限制。限制类型为禁止清单时，对应用数组中的应用做限制；限制类型为许可清单时，对应用数组以外的应用做限制。 |
 
-**说明** 
+传入的应用数组为空时，接口行为如下：
 
-**定义释义：**
+* 限制类型为禁止清单时，不对任何应用做限制，该场景相当于没有开启有效管控。
+* 限制类型为许可清单时，对系统内置许可清单应用（电话、时钟、联系人、设置、未成年人模式等）、管控发起应用本身、已授权的管控应用之外的所有应用做限制。
 
-* 限制类型为禁用清单时，对应用数组中的应用做限制。
-* 限制类型为许可清单时，对应用数组以外的应用做限制。
-
-**边界场景：**
-
-* 如果传入的应用数组为空，限制类型为禁用清单，则不对任何应用做限制。该场景相当于没有开启有效管控。
-* 如果传入的应用数组为空，限制类型为许可清单，则对系统内置许可清单应用（电话、时钟、联系人、设置、未成年人模式等）、管控发起应用本身、已授权的管控应用之外的所有应用做限制。
-* 对同一个管控应用，如果反复调用该接口做限制（不管是许可清单还是禁用清单），均以最新的一次的限制来生效。
-* 传入的应用数组中如果包含无效token，则为参数错误。
+对同一个管控应用反复调用该接口做限制（不论许可清单还是禁止清单），均以最新一次的限制生效。传入的应用数组中如果包含无效token，则为参数错误。
 
 ## 开发前提
 

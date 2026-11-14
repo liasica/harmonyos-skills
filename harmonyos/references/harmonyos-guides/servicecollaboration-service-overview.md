@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/servicecollab
 title: 跨设备互通特性简介
 breadcrumb: 指南 > 系统 > 网络 > Service Collaboration Kit（协同服务） > 跨设备互通（ArkTS） > 跨设备互通特性简介
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:38+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2506e80b596a63f32c7721e14da8acbd628f6f1b4fa96021e87a016f5a9c5b08
+content_hash: sha256:43aa92b16f13472b406e8da258b6ff649bf1484aca7c214ac9ab454c3898fa13
 ---
 
 对于API 6.0.0(20)之前版本，仅支持匹配跨端拍照、文档扫描、图库选择器；对于API 6.0.0(20)及之后版本，支持匹配跨端拍照、文档扫描、图库选择器、视频选择器、图片和视频选择器；从API 6.1.0(23)开始，TV、Phone、Tablet或PC/2in1设备可调用具备如下能力的远程设备：支持拍照、扫描及图库（图片与视频）能力的Phone和Tablet，支持图库（图片与视频）能力的PC/2in1设备。
@@ -20,13 +20,13 @@ content_hash: sha256:2506e80b596a63f32c7721e14da8acbd628f6f1b4fa96021e87a016f5a9
 
 如果同一组网下有多台Phone或Tablet设备，用户可以选择不同的设备进行拍摄。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/0MVe4TDqSNqF64XZw-wHwQ/zh-cn_image_0000002815399241.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AD83CFC992E9540A2E25179792A443D05B309A77DA35815D1DBEAEC43D04F47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/IQaXtmFvTy6rJ3gujsUaag/zh-cn_image_0000002817506901.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004738Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FDD59EE0C8ECC40403D5912B4D71127DF5EFD412019B508F2780CD80F436642)
 
 ## 运作机制
 
 基于分布式协同框架面向跨设备拍照的业务场景，为您提供了[createCollaborationServiceMenuItems](../harmonyos-references/servicecollaboration-collaborationservice.md#createcollaborationservicemenuitems)（相机设备列表组件）和[CollaborationServiceStateDialog](../harmonyos-references/servicecollaboration-collaborationservice.md#collaborationservicestatedialog)（远端相机状态弹窗组件）两个组件。应用只需要调用这两个组件，即可完成跨端拍照，无需关注分布式场景下数据传输、指令控制等具体细节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/DYTBN8RdQAWBCkN4l5qC9A/zh-cn_image_0000002786519666.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E3DA4451EAAF4AD56B2DCCD5AFF926DF51931F7834A2A45DA4EF90DE9117027)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/V6WEo9sfQAiwszqCbpFaOw/zh-cn_image_0000002788307470.png?HW-CC-KV=V1&HW-CC-Date=20261114T004738Z&HW-CC-Expire=31536000000&HW-CC-Sign=8980DB3E1D7FE6787617CF1CEC4383CA48A84FD275074037107768C36F280214)
 
 跨设备互通-拍照的具体流程如上图所示。
 

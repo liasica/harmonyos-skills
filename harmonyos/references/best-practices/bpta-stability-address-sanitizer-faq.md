@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 适配常见问题
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 适配常见问题
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:17+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:6698eeccd40fd2e18261fb5eaebe24c91e4a0fd3bae3c5ccdf0932fff4d1eea8
+content_hash: sha256:e14dfe812783965276629ec5c8701d320c3e96e24a11c50b97e4edbf4e146d1c
 ---
 
 ## HWASan napi int64转换时存在精度丢失
@@ -35,7 +35,7 @@ Thread: T0 0x005a00002000 stack: [0x007ed30ba000,0x007ed38b9000) sz: 8384512 tls
 
 开启HWASan后，使用BinXO对无源码C/C++动态库进行插桩时，编译日志中可能出现BinXO相关告警，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ti1Ce289QZmaad2KMCUDvw/zh-cn_image_0000002797298753.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DAA85D20226648FF60217D225F182243B08B4D74E9D5CDABC573388A12E3B8F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/1zHyiAaKRlawCzawh97g9g/zh-cn_image_0000002797298753.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=0298C8B89034BBADB1ACCDFEFF0AC7F5084AFFCB66D45F39B6683AAA5C9DBE57 "点击放大")
 
 此类告警不会直接阻塞编译。对于无法完成插桩的动态库，工具会自动跳过该文件，不影响其他符合条件的动态库继续插桩。具体告警说明如下：
 

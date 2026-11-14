@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: 概述
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > 免密认证 > 通行密钥 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:30+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:aa09d858f28159eb0b7559470810bad299ab010cbb3083205c60308a0be54399
+content_hash: sha256:ff4440c99a5bf09b2bc356410ec82c0a9940cc0d51c767a89125dd88992c162c
 ---
 
 通行密钥（Passkey）是基于[FIDO2标准协议](https://fidoalliance.org/passkeys/)（见[网站链接免责声明](onlineauthentication-website-disclaimer.md)）实现的一种简单又安全的登录方式。借用通行密钥，用户可使用指纹、人脸或手机解锁PIN码登录应用或网页。相较于传统密码，通行密钥具有更便捷、安全的优势。更多关于FIDO的背景知识，可以参见[FIDO规范介绍](https://fidoalliance.org/specifications-overview/)（见[网站链接免责声明](onlineauthentication-website-disclaimer.md)）。
@@ -24,19 +24,19 @@ content_hash: sha256:aa09d858f28159eb0b7559470810bad299ab010cbb3083205c60308a0be
 
 需要提供方便、快速、安全的本地应用或网页登录方式时，可以使用通行密钥服务的通行密钥注册能力为用户创建通行密钥。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/qfU3mGRHQHC2bgsC6TxFSA/zh-cn_image_0000002815559113.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E8CCB738D2D4F839A844C780DF446E2B56762110D181CA19378D6AB6087052E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/758gSD9DQL6kYeS_qWW2oA/zh-cn_image_0000002788467368.png?HW-CC-KV=V1&HW-CC-Date=20261114T004551Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D985B3C6203BF6DDE3533842A453599CFB98DE3CE0694302F3A7DD0B7CF83B9)
 
 ### 使用通行密钥登录本设备的应用或网页账号
 
 用户在登录应用或者网页时，需要验证用户的身份，可以使用通行密钥服务的本地免密认证能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/ubejttMURj2tTDOxtm_Wxw/zh-cn_image_0000002815399197.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF6CCE6FDDC68F081E974F67AA4FE7EE5BE1D96250AF25810018E59FEA68733A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/U0bYtIeVQ-i8aWkkph9ZKw/zh-cn_image_0000002817506857.png?HW-CC-KV=V1&HW-CC-Date=20261114T004551Z&HW-CC-Expire=31536000000&HW-CC-Sign=08979876ED3B488EC3EF657950991E9DDCE382796231DC8902A5701510FF0BD2)
 
 ### 使用跨设备扫码登录其他设备的应用或网页账号
 
 用户在其他设备上登录应用或网页时，需要验证用户的身份，可以使用通行密钥服务的跨设备扫码认证能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/fdFcvebCTuOfUpe9AflHFw/zh-cn_image_0000002786519622.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C9E88CE6CB2FD280A7221CC5CC62EF009EC91FF4F6456D86D45DE04A2546CFF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/IXqBhfe6QZCkY0XlVNjNVQ/zh-cn_image_0000002788307426.png?HW-CC-KV=V1&HW-CC-Date=20261114T004551Z&HW-CC-Expire=31536000000&HW-CC-Sign=37661F5498444ACE7E12601B1EF76AF4E5BFC6D6C09DDD51972ACBD904EC3574)
 
 **说明** 
 

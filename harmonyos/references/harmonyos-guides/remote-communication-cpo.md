@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 通过配置Configuration优化传输性能
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 提升HTTP传输性能 > 通过配置Configuration优化传输性能
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:7deb257710618a0f61fc9d59f6f4f0cda3b65c865b217e67cf7e5b708247fbf6
+scraped_at: 2026-11-14T08:47:38+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:9955e3329a12429b9454045a298a1969374849b9e7737ad64725192b36944c6f
 ---
 
 ## 约束与限制
 
-通过配置Configuration优化传输性能能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+通过配置Configuration优化传输性能能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 导入模块
 

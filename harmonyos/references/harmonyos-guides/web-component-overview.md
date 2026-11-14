@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component
 title: ArkWeb简介
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > ArkWeb简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:22+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:de6713603aa5e57b4bb8738f9c924ca0aae6265962c711738918dbb9b02445a7
+scraped_at: 2026-11-14T08:47:13+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:0f8b25453b1409bd223e378105242695bff5d79c37802733fbcb69f4439d9c0f
 ---
 
 ## 使用场景
@@ -53,7 +53,7 @@ Web组件为开发者提供了丰富的控制Web页面能力。包括：
   | HarmonyOS 6.0 | M132（默认，推荐使用，请参考[M114->M132差异适配指南](https://gitcode.com/openharmony-tpc/chromium_src/blob/master/web/ReleaseNote/ArkWeb_114_132.md)）  M114（可选，若应用需切换为此内核，请参考[M114内核在HarmonyOS 6.0系统上的适配指导](https://gitcode.com/openharmony-tpc/chromium_src/blob/master/web/ReleaseNote/CompatibleWithLegacyWebEngine_6.0.md)） |
   | HarmonyOS 6.1 | M132 |
   | HarmonyOS 7.0 | M144（默认，推荐使用，请参考[M132->M144差异适配指南](https://gitcode.com/openharmony-tpc/chromium_src/blob/master/web/ReleaseNote/ArkWeb_132_144.md)）  M132（可选，若应用需切换为此内核，请参考[M132内核在HarmonyOS 7.0系统上的适配指导](https://gitcode.com/openharmony-tpc/chromium_src/blob/master/web/ReleaseNote/CompatibleWithLegacyWebEngine_7.0.md)） |
-* 为保障用户隐私安全，HarmonyOS内置了ArkWeb组件，旨在为全场景设备提供安全、可靠且一致的网页浏览体验。应用渲染网页需调用ArkWeb组件；元服务内嵌网页渲染则需使用官方提供的Webview组件。开发者可根据其元服务开发框架，选择使用[ASCF Webview](../atomic-ascf/develop-web-view.md)或[AtomicServiceEnhancedWeb](../atomic-guides/atomicserviceweb-guidelines.md#atomicserviceenhancedweb)组件。元服务内嵌页面内容需遵循元服务内嵌页面管理规范。
+* 为保障用户隐私安全，HarmonyOS内置了ArkWeb组件，旨在为全场景设备提供安全、可靠且一致的网页浏览体验。应用渲染网页需调用ArkWeb组件；元服务内嵌网页渲染则需使用官方提供的Webview组件。开发者可根据其元服务开发框架，选择使用[ASCF Webview](../doccenter-atomic-service/develop-web-view.md)或[AtomicServiceEnhancedWeb](../atomic-guides/atomicserviceweb-guidelines.md#atomicserviceenhancedweb)组件。元服务内嵌页面内容需遵循元服务内嵌页面管理规范。
 
 ## 模拟器支持情况
 

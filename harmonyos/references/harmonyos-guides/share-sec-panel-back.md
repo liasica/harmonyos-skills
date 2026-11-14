@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-sec-pan
 title: 分享详情页关闭分享面板
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 目标应用处理分享内容 > 分享详情页关闭分享面板
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:682e7e64a6ca4d4ca7c3cc516007c689dabceddc02210b60ef4c2cf9a39f6e0e
+scraped_at: 2026-11-14T08:48:32+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:d65343fedf6799e8ce3a2ef72a166173ec451586992303d8ec56ac0c2924ed09
 ---
 
 从分享详情页返回分享面板时，可通过设置resultCode值为特定的[ShareAbilityResultCode](../harmonyos-references/share-system-share.md#shareabilityresultcode)，以告知分享面板做出不同的处理，具体处理方式如下：
@@ -26,7 +26,7 @@ content_hash: sha256:682e7e64a6ca4d4ca7c3cc516007c689dabceddc02210b60ef4c2cf9a39
 
    ```typescript
    export default class TestShareAbility extends ShareExtensionAbility {
-     async onSessionCreate(want: Want, session: UIExtensionContentSession) {
+     onSessionCreate(want: Want, session: UIExtensionContentSession) {
        session.terminateSelfWithResult({
          resultCode: systemShare.ShareAbilityResultCode.CLOSE
        });

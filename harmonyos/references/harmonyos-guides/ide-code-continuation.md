@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-cont
 title: 代码续写
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 编辑区代码生成 > 代码续写
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:09+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:42198dd45d0ee2fff14098c113790d9d6003d75c40f66222e559e4f51caefb32
+content_hash: sha256:e6a5297f04d18d65c019cc9bb125d44f7f546abf703adb04a1b81693b495978e
 ---
 
 利用AI大模型分析并理解开发者在代码编辑区的上下文信息或自然语言描述信息，智能续写符合上下文的ArkTS代码片段，减少重复编码工作。
@@ -21,7 +21,7 @@ content_hash: sha256:42198dd45d0ee2fff14098c113790d9d6003d75c40f66222e559e4f51ca
 
 进入**File > Settings...**（macOS为**DevEco Studio > Preferences/Settings） > CodeGenie > Code Suggestion**，勾选**Enable Flow Editor**，点击**OK**或**Apply**，开启续写设置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/mOYrsoobS9u3ZadTZbTojA/zh-cn_image_0000002808887251.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=19E9F74D0A60F63F54DCB780D8E2C795B9437DF6929567BFFAA68FC101883ADF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/6F5LYvNuRFGKGOiKOezbKA/zh-cn_image_0000002808887251.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE2B188F681FBD7CA2C782E35C760DBB3014CE993761845863068319D887A327)
 
 ### DevEco Studio 6.1.0 Release及以上版本
 
@@ -46,7 +46,7 @@ CodeGenie为续写功能提供了内置的模型，也可使用三方模型和�
 * **Model**：选择代码续写的模型，模型内容请参考：[模型（Model）配置](ide-agent-model.md)。
 * **Prompt format**：提示词格式，此处列出了主流的FIM提示词格式，并自动与模型选项联动。设置时需要选择与模型匹配的提示词格式，续写才能正常工作，开发者可在模型官网或者模型技术报告获取提示词格式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/xEmtXWHYRQ-Jn0EayDOf-w/zh-cn_image_0000002779407614.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=816E00AE0051FC99529BE55F35FB55407C03E3D5B6F0A34E230482922F5D67C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/481WyU_4TrSJz_ux2TjAHw/zh-cn_image_0000002779407614.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5592DA91518B2C50256DF45F7D622207FAA4E683C82D3C2511069B4B86255B3)
 
 ### DevEco Studio 6.1.0 Beta2
 
@@ -71,7 +71,7 @@ CodeGenie为续写功能提供了内置的模型，也可使用三方模型和�
 * **Model**：选择代码续写的模型，模型内容请参考：[模型（Model）配置](ide-agent-model.md)。
 * **Prompt format**：提示词格式，此处列出了主流的FIM提示词格式，并自动与模型选项联动。设置时需要选择与模型匹配的提示词格式，续写才能正常工作，开发者可在模型官网或者模型技术报告获取提示词格式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/277mlXTiSp-2Rdq4yKPaJg/zh-cn_image_0000002808767165.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7E809D5CE6A72F416E76323DAFF1F08AD11660EDC1BB6BBB89430AF3D3E0AD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/uwdR-2xdSQ2ggyUI24SEnA/zh-cn_image_0000002808767165.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D9931C8F65E414BC3D3BF05D7E88FE4E9990F9B526B22B0C2385F12E01129C2)
 
 ### DevEco Studio 6.1.0 Beta2以下版本
 
@@ -79,7 +79,7 @@ CodeGenie为续写功能提供了内置的模型，也可使用三方模型和�
 
 同时，根据编码习惯，选择**Enable snippet generation**（片段续写）和**Enable inline generation**（行内续写），以及设置续写时延。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/gbeSv-sNSXC8hyuCUVNoxw/zh-cn_image_0000002779407612.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B5796AEDB5FCDF3E0B27B6ABFE32A97A56A025C3C87CE4FD28C808FAE6A6BA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/MR_zsbytSUSeLxHDVMZvxw/zh-cn_image_0000002779407612.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FF909B91934BD40AB29DA40A912BF9E1B1D74819710BA8DB9910A396499E497)
 
 ## 续写触发和采纳
 
@@ -95,13 +95,13 @@ CodeGenie为续写功能提供了内置的模型，也可使用三方模型和�
 
 Enable inline generation（行内续写）与Enable snippet generation（片段续写）合并为**Auto Suggestion**，取消了**Delay**设置项，通过设置**Frequency**调整自动续写的触发频次。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/2yvkonUzQRyEVUME5nSvxw/zh-cn_image_0000002779567590.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC641733D5D45C03208DEE2B9DD889CAFC671C81743ACD85FE8479859D586D3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/wZc43325QAuvaUMYs7fW6Q/zh-cn_image_0000002779567590.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0ADCA4527D5D5901D891ED7BA6E0F2ACAE5919B5136756E7D07A3C3C3F76826)
 
 **DevEco Studio 6.1.0 Beta2**
 
 Enable inline generation（行内续写）与Enable snippet generation（片段续写）合并为**Enable code auto completion**，取消了**Delay**设置项，通过设置**Frequency**调整自动续写的触发频次。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/4cHHbin4QiG2ly8gOQvzHg/zh-cn_image_0000002808887249.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2841414CB153D2E2CE12CADEFBB452BC0404F1B9D968DC565B4B41AA4F851CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/rmciAnqbSWKqi42U5cpPxA/zh-cn_image_0000002808887249.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=58275C33B9E16B8CC93807ED498C53EC46A45385CF566F378DE6E9099F6D1904)
 
 **DevEco Studio 6.1.0 Beta2以下版本**
 
@@ -109,7 +109,7 @@ Enable inline generation（行内续写）与Enable snippet generation（片段�
 * **Enable snippet generation**（片段续写）：输入回车，CodeGenie将根据上下文生成代码片段。
 * 在编辑区输入**Alt+C**快捷键（macOS上为**Option+C**）触发代码续写。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/wpWg5d7CSfSjon-4Zybq3A/zh-cn_image_0000002808767163.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE1F1544C98CCC0A6751AF786BF799D3EB21D121C2361DFF71CA839B983355A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/nUB3sSEbT6Gg6bIR0wLzPw/zh-cn_image_0000002808767163.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=82441333192BC6EB777A49D848082678070A5B833B0945238AC090EFD74B66F4)
 
 ### 续写触发和采纳快捷键
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbui
 title: wrapBuilder：封装全局@Builder
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > wrapBuilder：封装全局@Builder
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:c45509012052907bfe74e9891c4096c87416800e07610056b4031ec03eb28054
+scraped_at: 2026-11-14T08:46:58+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:3178dc57f35adc927f81b3d0a060ba83898139f6fb937e991319ec006074442d
 ---
 
 当在一个struct内使用多个全局@Builder函数实现UI的不同效果时，代码维护将变得非常困难，且页面不够整洁。此时，可以使用[wrapBuilder](../harmonyos-references/ts-universal-wrapbuilder.md)封装全局@Builder。
@@ -106,7 +106,7 @@ struct TestIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/2AXiIX8AT-ehctTo6ICP-g/zh-cn_image_0000002815557967.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CD91FCFC1B8B17CD2B9BD38BB25F9DC830FF124B013A1B4F72E7F5864404FFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/7ZM0-snUTha30MpAFnsKQg/zh-cn_image_0000002788466222.png?HW-CC-KV=V1&HW-CC-Date=20261114T004521Z&HW-CC-Expire=31536000000&HW-CC-Sign=E12D64C3C901AD2E73BE5823FB895F311D26435F6263749BCCB77BC9FF5DDE9D)
 
 ## @Builder方法赋值给变量在UI语法中使用
 
@@ -154,7 +154,7 @@ struct IndexItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/6HvDpFdwR3W3WUDaPpe_-A/zh-cn_image_0000002815398051.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F161733AB08482C0D81C7F8927C772315FC651E82A43E4D0C216F4A33CABB298)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/cHoXUGkeRiyJFxGKgxzIIA/zh-cn_image_0000002817505709.png?HW-CC-KV=V1&HW-CC-Date=20261114T004521Z&HW-CC-Expire=31536000000&HW-CC-Sign=C41C92BCC353830954753010A44D16E2ADF2D99F580D72CC6EF39E40999C7C26)
 
 ## @Builder方法赋值给类或者接口的属性
 
@@ -199,7 +199,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/7kUr5wmHSTCJXrDV26zORg/zh-cn_image_0000002786518476.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=74E37E59C0C4534C8A44AA02E38C2E809BCA5B39F7557B627EE5498D929CCFB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/gFdw1SN1TpCj5bdVYZhP9Q/zh-cn_image_0000002788306280.png?HW-CC-KV=V1&HW-CC-Date=20261114T004521Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F562507B896E72EF92807078DB8AB542C30284BD00381AEC5CBACC67D44A7D0)
 
 ## 引用传递
 
@@ -213,7 +213,7 @@ class Tmp {
 @Builder
 function overBuilder(param: Tmp) {
   Column() {
-    Text(`wrapBuildervalue:${param.paramA2}`)
+    Text(`wrapBuilder value: ${param.paramA2}`)
       .fontSize(20)
       .margin(10)
   }
@@ -243,7 +243,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/PQt_l-GFQQO2gIg4k97_nw/zh-cn_image_0000002786358548.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF133CEBE175D156E3D264AF198297557C4D65B91C14B30063F556CB1308C8A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/5JEeb73-TZKhLD0DTSfHSQ/zh-cn_image_0000002817425643.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004521Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A00AE83F8EA70B20F80D22D3CD563795D55C9F78FEFC17ACC88474942708CA9)
 
 ## 常见问题
 
@@ -295,4 +295,4 @@ struct TestBuilderIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/29UY-NSDTTSGOJmHsNRsMw/zh-cn_image_0000002815557969.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=630A7C500D94D4548DB5947E6B35473B1010CF18601A9B9A449E6AC96A0EF6F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/0Nw5yv3fTR2xigci37HDfA/zh-cn_image_0000002788466224.png?HW-CC-KV=V1&HW-CC-Date=20261114T004521Z&HW-CC-Expire=31536000000&HW-CC-Sign=939937CAD2A7DD767BC41177FD2377634A3A90CA8F6E87FE46857950BFFB7FD5)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Canvas)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Canvas)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:53:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:04cf417d0309df9670cc18d3629cefff7e145c66388d25214d2a3dfaafeefa2d
+content_hash: sha256:9cb1fec94cd710dcd9942215b2b9e8d3d70620b45a4c08696c2257dda1fae86a
 ---
 
 承载绘制内容与绘制状态的载体。Canvas提供矩形、圆形、椭圆、弧线、路径、文字、图片等多种图形的绘制能力，支持通过画笔和画刷设置绘制样式，支持画布裁剪、矩阵变换、画布状态保存与恢复等功能。
@@ -1335,7 +1335,7 @@ drawTextBlob(blob: TextBlob, x: number, y: number): void
 | x | number | 是 | 所绘制出的文字基线（下图蓝线）的左端点（下图红点）的横坐标，该参数为浮点数。单位为物理像素px。 |
 | y | number | 是 | 所绘制出的文字基线（下图蓝线）的左端点（下图红点）的纵坐标，该参数为浮点数。单位为物理像素px。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Mo9tnzrzSxetoBo96KMl8A/zh-cn_image_0000002786522072.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6443C1ADD2A6D689C4692B13BE21AD0FCA7272233B1C9EBA7646AA4B9DC6723)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/psOx2-0TTrCqNgkzNYCcPA/zh-cn_image_0000002788469820.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=537A12DD30EBEFB7C0FE7BD0AEE8D250E438B6F1C96A4DEBB907F2A673D1931D)
 
 **错误码：**
 
@@ -1442,7 +1442,7 @@ drawSingleCharacter(text: string, font: Font, x: number, y: number): void
 | x | number | 是 | 所绘制出的字符基线（下图蓝线）的左端点（下图红点）的x轴坐标，该参数为浮点数。单位为物理像素px。 |
 | y | number | 是 | 所绘制出的字符基线（下图蓝线）的左端点（下图红点）的y轴坐标，该参数为浮点数。单位为物理像素px。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/x1tx5keaS92hOxLwBFj-ww/zh-cn_image_0000002786522072.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=771BABE96577BC9088F95EECC13DFC06ED4DAA7BE4FB550725E683FA342AF16A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/DjUeuVn9TlynmW3PMXeouA/zh-cn_image_0000002788469820.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=54144F91B344747E1E6C0AC9CE6715DF0B412609C264596BAA14769B054550EE)
 
 **错误码：**
 

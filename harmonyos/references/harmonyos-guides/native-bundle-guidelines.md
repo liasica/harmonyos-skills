@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-bundle
 title: NativeBundle开发指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > 包管理 > NativeBundle开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:45+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:68cdbe981bc5052d9bf212d6593e023c887c28e53cc38806bf4dce8ca85e7881
+content_hash: sha256:cbdfb37cccab2e2f379e071da913daa0acc9cb032594beec60bfe16463b88bc6
 ---
 
 ## 场景介绍
@@ -31,7 +31,7 @@ content_hash: sha256:68cdbe981bc5052d9bf212d6593e023c887c28e53cc38806bf4dce8ca85
 
 **1. 创建工程**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/ZNXEvMw2TOG64cZgk-x0eg/zh-cn_image_0000002815400323.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB7327DFD8E0019AF60C1856B1BE8EA4864524872D8F72A6C34FA10A6B9115ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/BOPN3DysRhmSA7--rC02BQ/zh-cn_image_0000002817427915.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4E5A11AFDA1FC9C64120612D284A55AE89F4C48C3F7453EFA23C7A473059A5F)
 
 **2. 添加依赖**
 

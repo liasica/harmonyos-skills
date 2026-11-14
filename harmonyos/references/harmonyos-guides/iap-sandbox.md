@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-sandbox
 title: 沙盒测试
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 沙盒测试
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c92cc4e87257423cea696ece98ee2ca3040d0fb645e4cf8a0a45928d435d9a2e
+content_hash: sha256:1b13b81fb35b1a1df1937eb6fb98bbc9211cb0525b77fcbd06cf5b404e7524e3
 ---
 
 沙盒测试允许开发者在接入华为应用内支付调测过程中对订单进行虚拟支付。
@@ -25,10 +25,10 @@ content_hash: sha256:c92cc4e87257423cea696ece98ee2ca3040d0fb645e4cf8a0a45928d435
   1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)网站，选择“开发者管理 > 用户与访问”。
   2. 选择“沙盒测试账号”，点击“新增”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Si4X4MSVQZmCSmsqhNPIMQ/zh-cn_image_0000002815399833.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CB5852BB140AC24BD4B721A11EB46E18215CB2ABDC5FD749135B9633554BCA5)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/eymrHk3QQS6l7uBDZOwojg/zh-cn_image_0000002817507493.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE60DDD4A129854A6C90FD6670A9DDA39ECA06B8B2F528C9DD227DB0A8A0980B)
   3. 填写测试账号信息后，点击“确认”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/zzfKiJU-SDqqipXDbGTfDw/zh-cn_image_0000002786520258.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEBB23D2D4C54C8769AB9E228618CF01E250FA53152C3B6A96CB1A3167E57A46)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/zXRpQF5lQ0yEZ3lT5Qw7SA/zh-cn_image_0000002788308062.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8797AFDC59825F0ACD0414164AA02B84F7C9BC44F579AD711B2FD6A258BD091)
 
   **说明** 
 
@@ -62,7 +62,7 @@ content_hash: sha256:c92cc4e87257423cea696ece98ee2ca3040d0fb645e4cf8a0a45928d435
 
 如果未显示截图的提示页面，表示本次交易未进入沙盒测试环境，继续测试会实际扣费，请参照[沙盒测试能力未生效自检](iap-sandbox.md#沙盒测试能力未生效自检)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/Af3LS1aqRh-MEOXheDWGjw/zh-cn_image_0000002786360330.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CE5DC49A5C2D7F4874493639967B194A181574AACEA05095E1ECD0204D39ED5) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/VnL7bzzDR2Gp--jelJNeOw/zh-cn_image_0000002815559751.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=762438BB2FCB6C26F5FEA13C9599B6AF6105AF8917585E4DB8EE016D9010318E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/xZ1Gy6naTtO5ThGf9m3a6Q/zh-cn_image_0000002817427425.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=A33AA23830832DEB275F76D6B2F6EFD5E6CBA6F798B00D9D7B2957290482FB16) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/-BvDcDYVRTqvEogCgdVZgg/zh-cn_image_0000002788468006.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CF19041F4FEC9CC2AA992ED4ABC0C8B0B9917A00ECA2D745057CA375CCFEC99)
 
 ## 测试自动续期订阅商品
 
@@ -74,7 +74,7 @@ content_hash: sha256:c92cc4e87257423cea696ece98ee2ca3040d0fb645e4cf8a0a45928d435
 * 在沙盒测试环境下，用户发起订阅首期会自动续期五次（累计共六期），后续需用户手动操作以恢复订阅。若同时涉及[促销场景](iap-subscription-functions.md#提供优惠)，系统将优先完成优惠周期内的自动续期，再继续进行六次续期，此场景下总续期次数为优惠周期数与六次续期之和。
 * 沙盒测试拉起收银台时，会在收银台展示沙盒测试提示语，支付结果页也有沙盒环境的提示语，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/OvQBklkdRwiVrNNhdWnNQA/zh-cn_image_0000002815399835.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A78C2E41E8F9D29D4FEDE13D01987C9CF5A3CE58847C9609D844E66E7A17BA0) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/z9MAoyzySxKo-9elfBYzOQ/zh-cn_image_0000002786520260.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=79CCED3854D36326BEFD60B95E3477BB0ACD1EE62A15EF214AFEEE253BE93D51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/KzTytRKJSgCEQQ0Uc4rnMw/zh-cn_image_0000002817507495.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CF89A73A8B0D3D433E78D3F8F339DB9E8F6C6C01A0C9618B7E634CE9667C1B6) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/sym8UxJfR2CEFfKmR2r2Gg/zh-cn_image_0000002788308064.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=74CB917E71AE0CFD0E17741B6119DB7D92270E03D17DCCEF4E5099CF77DC4DD1)
 
 ## 测试非续期订阅商品购买
 
@@ -84,7 +84,7 @@ content_hash: sha256:c92cc4e87257423cea696ece98ee2ca3040d0fb645e4cf8a0a45928d435
 * IAP购买成功后的收据信息[PurchaseOrderPayload](../harmonyos-references/iap-data-model.md#purchaseorderpayload)中，会携带值为"SANDBOX"的environment字段，标识此次购买为沙盒测试的记录。
 * 沙盒测试拉起收银台时，会在收银台展示沙盒测试提示，结果页也有沙盒环境的标志，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/i25neEWyTRONQWtr5nyQ6A/zh-cn_image_0000002786360332.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=497346F75F4C983736E36352504521A2230E0AF3B5EB5C8A7F2D9502BA2061EA) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/a0POKYOmStGPwcESCJCb5Q/zh-cn_image_0000002815559753.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7B61D1C3BB26F743FABFD1784FE0091EF3CB24A1817CD57C4A1E18DE03DC08E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/K-OW9G4rSUeloOHozieOYQ/zh-cn_image_0000002817427427.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEBDCEC946C4A7022CD8574DDAEA2887FB567D5056152A24236DA694BDA09226) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/a26rJjXBRYegG0kpSfpjYw/zh-cn_image_0000002788468008.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=A168438BBBFB47AE22E2938F6EDA667F08EDF9FACCD7A25CBF7E46DDB22C5E5F)
 
 ## 测试退款请求
 
@@ -95,10 +95,10 @@ content_hash: sha256:c92cc4e87257423cea696ece98ee2ca3040d0fb645e4cf8a0a45928d435
 1. 在应用沙盒测试环境使用沙盒账号购买商品后，在测试设备上“手机设置 > 华为账号 > 付款与账单 > 购买记录”中会自动生成沙盒订单。
 2. 点击待测试退款请求的沙盒订单，跳转至详情页面，点击“对订单有疑问”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/h9YioisSSHmdOZYQiBcfmQ/zh-cn_image_0000002815399837.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=07FDFA5DE2ED9FC118F5E209AE87229B4AC3023A654BFE831CE5D2C310A081FD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/usXzd8qQRR6ikxkLI-ueAg/zh-cn_image_0000002817507497.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=95701CE8765A801100198F8FD1E432D2841C7DC0F9533D242205A58A493E783D)
 3. 在“对订单有疑问”页面，点击“申请退款”，选择任意的退款原因和填写任意必填资料后，提交退款申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/JNaW11baQj-MqmcW_mVdEw/zh-cn_image_0000002786520262.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E47F9B6A1CBCA493C0743494FE9F0CF84BB55FDB4C0D438462D7A7A1EB907A1)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/wsawF3hZT0Owgqj61dPthw/zh-cn_image_0000002786360334.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=90404F5D20A8E5C28582ABA65E485E0AE441DFE86D0DCC791AFA8E0D70A82C5D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/SN_4csHOQNOLrWs1A4874g/zh-cn_image_0000002788308066.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=681FA71C31342B5109E076CF0A7883023BB78AE9EEEA79EFE7FAAC9E7782F92B)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/21TQT6ksTA2iWcEBq6KiuA/zh-cn_image_0000002817427429.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BE6EA2695A16CE34D45E4A1A22EA6E2D8E7CEAF64FCECBA4376F9A060429A69)
 4. 退款申请提交后，IAP服务器默认跳过退款审核和款项原路退回流程，自动同意该笔退款申请，同时给开发者服务器发送退款成功事件通知（NotificationSubtype：REFUND\_TRANSACTION）。如果开发者配置了沙盒环境服务器地址，则该笔通知发送至沙盒环境服务器，详情请参考“[事件通知配置](../app/parameters-0000001931995692.md)”。
 5. 开发者收到退款成功事件通知后，在测试环境中模拟应用内对该沙盒账号进行权益回收等操作，以实现测试目的。
 
@@ -110,13 +110,13 @@ content_hash: sha256:c92cc4e87257423cea696ece98ee2ca3040d0fb645e4cf8a0a45928d435
 
 1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)网站，选择“开发者管理 > 用户与访问”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/GE6VINZ2SJirYDOXTB9ERw/zh-cn_image_0000002815559755.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=D43607C61123EBE71DE75BB39F80A99B2ABDD8B348FF3B6AE6A70431E119DC13)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/jqaEW318TU65DcHJA3yjtg/zh-cn_image_0000002788468010.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7E3476CA95996B5847AE5C687116EBB5863845DB91F7492952072AA23B5E2DB)
 2. 左侧导航栏选择“沙盒测试账号”，勾选对应的测试账号，点击右上角的“清除购买历史记录”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Q0B3-aXmRLq_CiWUIbDhUA/zh-cn_image_0000002815399839.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=D80397E681CC93B74E28DA7CE24C939216426C3181F2B1DBF922F56B2A0A518B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Ma8IOItHRtiVXcsaxgsXEg/zh-cn_image_0000002817507499.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD662B50E4FFE7ADA9B2A82FC3A4B1394E25F1F0F41C2339C9723E23286100E6)
 3. 在出现的提示弹窗中，点击“确认”按钮，随后该账号在沙盒环境中产生的购买历史记录将被清除，此操作无法被撤销。如果该沙盒账号的购买次数较多，则清除其购买历史记录可能需要更长时间。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/E3MAE_PqTSW4CtAofyFD1A/zh-cn_image_0000002786520264.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=D50C78056AFBA3032529E076DD62ADDC18F799F6331A6CC75F7526AE90820A4E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/LN2JediPR-q3HY3kA8IPlw/zh-cn_image_0000002788308068.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=6247EA5F21E2F7439FE3C4B9401CD3E41839CFD03943E9217F495E6FB0D528D1)
 
 ## 测试商品购买失败场景
 

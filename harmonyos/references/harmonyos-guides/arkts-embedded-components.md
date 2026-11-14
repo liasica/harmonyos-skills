@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-embedde
 title: 同应用进程嵌入式组件 (EmbeddedComponent)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 嵌入式组件 > 同应用进程嵌入式组件 (EmbeddedComponent)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:08+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:904acf4b90efcfca16a1138ed165bbb42353a562c77ff3de05c3a8fab537d494
+content_hash: sha256:c126ae4c57e138e39e333028f4439017530fb201b014158ce8cc3edc0a817c47
 ---
 
 EmbeddedComponent组件允许当前页面嵌入同一应用内其他EmbeddedUIExtensionAbility提供的UI内容，这些UI运行在独立进程中，提供更高的安全性和稳定性。
@@ -247,5 +247,5 @@ struct Extension {
 
 1. 在支持EmbeddedUIExtensionAbility的设备上启动应用；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Y0I8uL92S3-Vb5k6A9bFuA/zh-cn_image_0000002786359262.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=37FB6807E19497E08D253B079DCC176B91E773849DFE8BEEC42901EF6B4D2CE7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/kjTQxEdKTIG06uF1isEc4A/zh-cn_image_0000002817426357.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004529Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9898D07B4685702C8860AD32FD56C3ADF8F004D861605A75A799C7C8AA63335)
 2. 点击terminateSelfWithResult按钮，提供方内容消失，页面显示onTerminated信息。

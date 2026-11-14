@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wearengine_ap
 title: 申请接入Wear Engine服务
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 接入准备 > 申请接入Wear Engine服务
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:90c3a2689c8105ba6f0e50a6fe13860425ee7c1c1acf8a9e1de28c240d50c134
+scraped_at: 2026-11-14T08:47:44+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:4229de3e3f2fbab145b1d428da3f0eb707f81bd5a86b7de42d628804eeeab5be
 ---
 
 申请Wear Engine服务前，请先参考[应用开发准备](application-dev-overview.md)（开发者需实名认证为个人开发者或者企业开发者，认证前，请先了解二者的[权益区别](../start/dbiae-0000001336403980.md)），确认开发环境并完成创建项目、创建HarmonyOS应用等基本准备工作，再继续进行以下开发活动。
@@ -13,13 +13,13 @@ content_hash: sha256:90c3a2689c8105ba6f0e50a6fe13860425ee7c1c1acf8a9e1de28c240d5
 1. 登录[HarmonyOS开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/)，进入“开发者管理 > ID、证书和Profile > APP ID > 开放能力管理”页面，在应用列表下选择需要申请的应用。
 2. 点击“Wear Engine”对应的“管理”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/OSIt6eTYT8exZynJbdpOGw/zh-cn_image_0000002786359790.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AC250269CDB96AEFE6B111749CFB999F7E5367ABA75F1A57DF26E19DE6A2989)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/WPgmB-ExQveso5kPH3GGCw/zh-cn_image_0000002817426885.png?HW-CC-KV=V1&HW-CC-Date=20261114T004603Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F465B40C9700949141FAEC4E6184BAC062041C2B777DD368D949C9872033A92)
 3. 点击“申请Wear Engine服务”，同意协议后，进入权限申请页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/HLdHG942QHS3lqFQHRBS3A/zh-cn_image_0000002815559211.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=993242F3BE3517A9C5F488D246BCC841264D3587B07EA0A11AFE991E2BAA03EF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/NQvshvDrRB6aiGmAIg7k0A/zh-cn_image_0000002788467466.png?HW-CC-KV=V1&HW-CC-Date=20261114T004603Z&HW-CC-Expire=31536000000&HW-CC-Sign=60834788CCEFC1E9B040112A4D733F96D8F1972285B05D381871EE25130F4FAD)
 4. 点击“HarmonyOS应用”并选择产品后，勾选必需申请的权限（个人开发者当前只可申请设备基础信息、消息通知两个基本的权限）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/E0rANcSYQC-3bDznL3pGgQ/zh-cn_image_0000002815399295.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE1790ACD5F774D25EF53FDE1534B61ED10A6C6B9C8E8F9BDAB13CE6BB7B8CC1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Vp5ueYjgRiiVcJenwfP3UA/zh-cn_image_0000002817506955.png?HW-CC-KV=V1&HW-CC-Date=20261114T004603Z&HW-CC-Expire=31536000000&HW-CC-Sign=68495D591F833491F59BC0D0B1A3C801EFD3622337247E967A625BE5C9B4AC9E)
 
    **说明** 
 
@@ -34,7 +34,7 @@ content_hash: sha256:90c3a2689c8105ba6f0e50a6fe13860425ee7c1c1acf8a9e1de28c240d5
 
    * 穿戴设备状态管理
      + 穿戴设备基础信息查询：获取已配对穿戴设备列表并选定设备；支持查询穿戴设备可用空间。
-     + 穿戴设备基础信息查询：支持查询电量状态；订阅低电量告警；查询或订阅穿戴设备连接状态、设备模式、充电状态。
+     + 穿戴设备状态查询与订阅：支持查询电量状态；订阅低电量告警；查询或订阅穿戴设备连接状态、设备模式、充电状态。
    * 通信能力管理
      + 发送点对点消息/文件：手机侧“xxx(应用名)”向穿戴设备侧“xxx(应用名)”发送消息/文件。
      + 接收点对点消息/文件：手机侧“xxx(应用名)”接收穿戴设备侧“xxx(应用名)”消息/文件。

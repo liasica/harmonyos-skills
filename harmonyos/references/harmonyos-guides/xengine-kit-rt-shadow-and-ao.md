@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-r
 title: 光线追踪阴影和环境光遮蔽
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 光线追踪阴影和环境光遮蔽
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:09+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:0d30b1c5159b460a95ed1dd95b17f1f04aff707281a9cc60ce88b4d92b45bcd2
+content_hash: sha256:74daf49c148b84e4ff3624c08dda8f1a27842886875a977791d3567df7eb12bc
 ---
 
 从6.0.0(20) 版本开始，新增光线追踪阴影和环境光遮蔽特性。
@@ -34,7 +34,7 @@ XEngine Kit VisibleMask特性提供开箱即用的光线追踪阴影和环境光
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/4Hf1drorRVyhPPTIkv8RwQ/zh-cn_image_0000002815559547.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=50FBD2E76D0826FC7DADD6B2A5A2A876F7C999EFE920847FBAE7A908B4747038)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/LKwcBv6ASy2tyM0vqvPOvw/zh-cn_image_0000002788467802.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=460BBD4960D07112EECB8466FCC552AC2B05EE3FC9D9AE00FEBB1B64FE2DE1CC)
 
 1. 当用户进入游戏场景时，调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性列表。
 2. 检查返回列表中是否包含[XEG\_RT\_SHADOW\_AO\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_rt_shadow_ao_extension_name)。若不包含，则当前设备不支持此特性，流程终止。

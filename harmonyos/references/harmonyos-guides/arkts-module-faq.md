@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-module-
 title: 模块化常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 模块化常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:56+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:d182a79f589aaf42b2119e0aaa6a2551e205c7592e0c9f18cf16d1e1701d4a39
+content_hash: sha256:6ace43a2b9de088dc80ce6c76f7080f2624f0ed9b535e470bd237a06ae24fefb
 ---
 
 ## Object is not initialized
@@ -105,14 +105,14 @@ ModuleImportStack:
 
    若不一致，则为应用版本号降级导致更新失败，应用需要更新版本号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/VHYvEgOaRmKA7YHUWKWqTw/zh-cn_image_0000002815557893.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=58CB2D7120741DE1B21D20AC5051FBD81C92A10C1E6151B81F50D5B321CB7AF8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/zmdER6qqRGW1_z2QM5-ChQ/zh-cn_image_0000002788466148.png?HW-CC-KV=V1&HW-CC-Date=20261114T004519Z&HW-CC-Expire=31536000000&HW-CC-Sign=4219BEFFD0396C3EEEA1F38700CC556A7AE725F040914AA3F7F163969A309F03)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Ugja2B_TSLOOFCIqhVC0ig/zh-cn_image_0000002815397977.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF84BBB3D398D72F841B0931EC17165F917E1F108A3D02B1F18C43D552AC86ED)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/q8CYbjKlTeq9C_pIw4u1kg/zh-cn_image_0000002817505635.png?HW-CC-KV=V1&HW-CC-Date=20261114T004519Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB49BCF79E158277AA034809128B3BAAFB314A09C9768235A7919327A11AA357)
 3. 检查是否使用了normalized特性但未重启应用。
 
    查看反编译后的abc文件为normalized ohmurl格式。可以在文件内搜索@normalized：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/TQV3YQoyQs23duk3Q-rRKQ/zh-cn_image_0000002786518402.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=70FD3D0599DBF3F14C353F6B9A0170799D94FD314F2C900B74F7444BB350B7C9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/7VjDwg3aQGqLL2IXv7kFZw/zh-cn_image_0000002788306206.png?HW-CC-KV=V1&HW-CC-Date=20261114T004519Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C2E837DD0628BE2FC9408FE7AB63D44C91B45A0804616D3FD9FB4F598258E33)
 4. 重新启动应用，确保normalized特性生效。
 
 **参考链接**
@@ -141,13 +141,13 @@ ModuleImportStack:
 
    情况一：搜索不到完整的文件名，但可以搜索到相似的名字。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/WdTmNCczTcCn4KzAsDfG4Q/zh-cn_image_0000002786358474.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=1039B6EFBB95D055596A42D49C713B0EF795B7E356DD28B5CD6B2B27419E4FBD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/IIDS3XSSS5-Z9kKY9c916Q/zh-cn_image_0000002817425569.png?HW-CC-KV=V1&HW-CC-Date=20261114T004519Z&HW-CC-Expire=31536000000&HW-CC-Sign=50D3383BA5D45271D1E07F943F38A45091BD55A5D3FDCAFCCEE90A701ABB2DEC)
 
    解决办法：每行的第一个和第二个分号之间会有完整的名字，报错中的文件名和编译产物中的文件名需要修改为一致。
 
    情况二：filesInfo.txt搜索不到这个文件，在编译产物区域也找不到对应产物的文件生成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/FMGkY5U1TMGz6QEo7P6oWg/zh-cn_image_0000002815557895.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7FEECFC42755B7A67DFB8CC9675B8BCF31E98A36203DBF960EB760D9EF24C31)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/EWBs7v9cTO6g9nv6G-X3DQ/zh-cn_image_0000002788466150.png?HW-CC-KV=V1&HW-CC-Date=20261114T004519Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CCD1CAAA7C541651400DD74BAFA7E8E2568352BE7E2C1E4058B29C2265B7F97)
 
    解决方法：每个被打入abc的文件都会在编译产物中生成，如entry包、har包。开发者如果在对应路径没有查到该文件，则排查是否为动态加载文件。
 

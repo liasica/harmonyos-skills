@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 设置游戏触控区域（C/C++）
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选） > 开发指导（C/C++） > 设置游戏触控区域（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:17+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:4da636f54917de210befaca17b0a7228e3dd94789f3eb2c1e45e9998a845668a
+content_hash: sha256:614435ecb189f337157bcfb8f9c2ac4dbcd408ab10bd5a21c9a628e9872a15bc
 ---
 
 从API版本26.0.1开始，游戏场景感知服务支持触控区域优化设置触控区域能力。通过传入游戏触控区域信息，优化游戏跟手性，提升游戏触控响应速度。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/H__tdIFiTuOjIWso9Revsg/zh-cn_image_0000002815399799.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E95E951A01D5197A9024136AA3F6C4532D0E14C5F0C0EB4CC2D5C53C1FC1622)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/GSlQnkN1SkyG6uekR34RiQ/zh-cn_image_0000002817507459.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=A93EB81615A07C888A4AF5638D32E2CD6B23EF2E37ACDBDD7676FFFFE9E257FE)
 
 1. 游戏启动后调用[HMS\_GamePerformance\_Init()](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_init)接口对游戏场景感知进行初始化。
 2. 初始化成功后，游戏调用[HMS\_GamePerformance\_UpdateTouchInfo()](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_updatetouchinfo)接口向游戏场景感知上报游戏触控信息。
@@ -136,22 +136,22 @@ HMS_GamePerformance_DestroyTouchInfo(&touchInfo);
 1. 安装HiSmartPerf工具并完成准备工作，详情请参见[准备工作](../AppGallery-connect-Guides/smartperf-tool-preparation-0000001530990002.md)。
 2. 点击“游戏性能分析 > CPU Trace”，进入CPU Trace页面设置trace采集配置。设置完成后点击“开始采集”，分别采集设置触控区域前后，在游戏内点击相同区域时的trace信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/lFYvG86NTH6c_FdGqDZkeg/zh-cn_image_0000002786520224.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B6301AFE685D1411D8AAA490DBE6617F07AE248F5C443681F9FBB31F8BD2572)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/DwcDpO3cSDO4ykfE5_Bpow/zh-cn_image_0000002788308028.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=E143BDEF05DB9AED99AE5880B4C0D7CD27ABA6132975A512261FA6C2BCB0EE6C)
 3. 采集结束后，点击“查看Trace”查看采集的trace文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/54zLOdQoQmyybYXdKBiprg/zh-cn_image_0000002786360296.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=706AE27336D99B94181F915189DEA0E569AAB36DDD71462A56E56C701ABDC20D)
-4. 在trace文件内搜索“thp”，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/0ILffuSzTmCgXEpdBl7OgA/zh-cn_image_0000002815559717.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECDFE4EE90D3CD318957214C925AAF25A79D06185C6ADB92912B81B52AB53391)打开对应的进程，并点击thp旁的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/5ryrfNEyRLuO9Di9g85axg/zh-cn_image_0000002815399801.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=23511C8845E18C4C905E939CA4A97A345D153885B71D344CF8CAEF78AA461096)进行标记。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/vKYP9hvXRq-pc_4jYB4vWw/zh-cn_image_0000002817427391.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=13EE60E18F7EDE592870F0316DAFD8BA969E72A730ADD3BF36E340CC55E904B6)
+4. 在trace文件内搜索“thp”，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/EfFgtWs-SEuyvW3mUAvVIg/zh-cn_image_0000002788467972.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2C7DC0682442F3C09B087572A2673EB5EEF4CDEE092DDA6295894102311F57F)打开对应的进程，并点击thp旁的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/sgPkx1krQCiSHA59HPSMPg/zh-cn_image_0000002817507461.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=E426777E36356E27B51DF8F94929F4C1564C31BD5C7E00183F34345E0CAB08EC)进行标记。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/c2pXZV-rS4W8Md5Oh3yEjg/zh-cn_image_0000002786520226.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C77C889435EEB4C2C9345FFAB1026FBC3FBA255F8E32E3B8C912AB8B2CD1CF9)
-5. 在trace文件内搜索“aptouch\_daemon”，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/mEfsWk6gQoyMp7Gr1kcpXA/zh-cn_image_0000002815559717.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=6570F02DE82BCAED4DFFAC50F05B1CB79EA8018792AFE06C7AC29F4613FE8368)打开对应的进程，并点击aptouch\_daemon旁的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/UE4CufK8T5STyvSyDlDB1g/zh-cn_image_0000002815399801.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F1F8BD6F238A54063E3212F50B9082E7F78B1F585EBBCC3E2CB0F9BB1CEBCBE)进行标记。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/MczPCpWOSJyhlu5LdjW2Gw/zh-cn_image_0000002788308030.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=B02D606E6D95B96E355E38C659946F592EC30D25BACA6B58C9B23ED596895C36)
+5. 在trace文件内搜索“aptouch\_daemon”，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/DfkH3WMFS4CBSxsPnnk06w/zh-cn_image_0000002788467972.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CFF8BC8D94007D573D8BF6F41F8EF195001D1EE7F3A7A2C8AF7ED0B6BF87847)打开对应的进程，并点击aptouch\_daemon旁的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0GihZ7D7QcuOvwwvdt_2cA/zh-cn_image_0000002817507461.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=D17A4A82B3DA1EFA991D5D10076304326DE2E1109D21F8111C23A3025AB94CCF)进行标记。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/eaASjh0zTwmtiVduS34x3w/zh-cn_image_0000002786360298.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=F725DB811506BDB2B33EF3909F06295C02CD331546C0F3D3DAA737C21823CB8B)
-6. 在trace文件内搜索“mmi\_service”，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/F2jecCMGSNewe2wherD4MQ/zh-cn_image_0000002815559717.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B29F18065F4440305A284A3CD290AF8C5537AF3E4133A75C01DF80B2FB11F40A)打开对应的进程，并点击mmi\_service旁的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/GmgDUKGrTRSssUK9lWsLwg/zh-cn_image_0000002815399801.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B630134A6019F31E6AB955A989A4E2383A60DD49339D67BE62BB79EA0B1A053)进行标记。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/roe-xVk9Rh6GJ1wulFyCpw/zh-cn_image_0000002817427393.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DA74718C03E62DA6735FD29F00DEE53503A245D7CA50FEB3AC1FCD72F258DB5)
+6. 在trace文件内搜索“mmi\_service”，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/agEgp798RNuVAIJ6mJn7ZA/zh-cn_image_0000002788467972.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBFE372DAEA41950CC3BA45C87F35BFBD066E23AA434D7BFF78F5D39245FA133)打开对应的进程，并点击mmi\_service旁的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/JzdkKtnaQ3iLdgfLERgBzQ/zh-cn_image_0000002817507461.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=43BD590A35B3D22C3A2F421F49D2A8C4A827A31F00A3114CA7E18B210BC6FAFD)进行标记。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/El7uQDbkTzSO2RLobuYchQ/zh-cn_image_0000002815559719.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6FD50AA9AAC6629A0914BD0FBAC6768C4405615229D4D167B581227E4A1B20A)
-7. 展开测试游戏的包名，并点击游戏包名和touchEventDispatch旁的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/XaKOb5X3RBGsjX6A-mcR-Q/zh-cn_image_0000002815399801.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EF912CA8BFFF2B3F2F00BA0EDF5BDE5A2F2378A0E842A7EF6C6DA11C271E1B0)进行标记。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/8RlNMr7BTFOKBsaU4RyDrA/zh-cn_image_0000002788467974.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=6198F55FCC182A13C1BD1FC0D0D717E72154AB4B23981580488EB1DB1B26294C)
+7. 展开测试游戏的包名，并点击游戏包名和touchEventDispatch旁的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/eOE43oVhTE-Bz1uSw34htA/zh-cn_image_0000002817507461.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B37B41FB6C3547573082242790678E4C35E11CCE1CF70EA3E005591C3E606A7)进行标记。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/aEp_yGiKSI-p80ngPrwwFg/zh-cn_image_0000002815399803.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=2294F98D159C092B4A6F87B94BE4FB5ED3AF2B7FDF4DB54D96B4CB7A811B5079)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/FUSyjmxMTVOS9OcGznTGQQ/zh-cn_image_0000002817507463.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=9006887357263801CE8318D00C49CE71A107E1EFCC676B055BBC2774F28CB1EF)
 8. 通过对比设置触控区域前后从出现thp信号到mmi响应的时间，即可验证设置触控区域的效果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/DDbkOjTMQ3ma_tzbdgp_Zw/zh-cn_image_0000002786520228.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=78F60FFFC3A95539F9BEE55D4D65E7D1592321ECF10514338171A7EB0B4E6CD6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/uIMrEjxRQ5mEj5ha7ASoyA/zh-cn_image_0000002788308032.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=5664FC67186C5A37DE6487C60C59E88C7DC401637BEEBC739DD9F65BB424F04C)

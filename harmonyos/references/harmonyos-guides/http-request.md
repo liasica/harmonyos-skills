@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/http-request
 title: 使用HTTP访问网络
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用HTTP访问网络
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:44+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:9f4dc0c62769443e67b6a9cbfe4c76592f6c852e0ec622ca7c50770b38606085
+scraped_at: 2026-11-14T08:47:36+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:ab9aab5d3035642f5240ac8d7f00ae21a16459d3109e629015573b0fe7a74c29
 ---
 
 ## 场景介绍
 
-应用通过HTTP发起一个数据请求，支持常见的GET、POST、OPTIONS、HEAD、PUT、DELETE、TRACE、CONNECT方法。当前提供了2种HTTP请求方式，若请求发送或接收的数据量较少，可使用[HttpRequest.request](../harmonyos-references/js-apis-http.md#request)，若是大文件的上传或者下载，且关注数据发送和接收进度，可使用HTTP请求流式传输[HttpRequest.requestInStream](../harmonyos-references/js-apis-http.md#requestinstream10)。从API version 22开始，若是需要在"HTTP请求-响应"生命周期中的关键节点插入自定义逻辑，可以使用[HTTP拦截器](http-request.md#http拦截器)。
+应用通过HTTP发起一个数据请求，支持常见的GET、POST、OPTIONS、HEAD、PUT、DELETE、TRACE、CONNECT方法。当前提供了2种HTTP请求方式，若请求发送或接收的数据量较少，可使用[HttpRequest.request](../harmonyos-references/js-apis-http.md#request)，若是大文件的上传或者下载，且关注数据发送和接收进度，可使用HTTP请求流式传输[HttpRequest.requestInStream](../harmonyos-references/js-apis-http.md#requestinstream10)。从API version 22开始，若是需要在“HTTP请求-响应”生命周期中的关键节点插入自定义逻辑，可以使用[HTTP拦截器](http-request.md#http拦截器)。
 
 **说明** 
 
@@ -34,7 +34,7 @@ HTTP模块提供了标准的HTTP网络服务能力，Remote Communication Kit（
 | 证书验证 | 设置支持传输客户端证书 | 支持传输客户端证书，包括证书路径、证书类型、证书密钥路径和密码信息。 | API version 11 |
 | 基础功能 | 设置下载起始位置和结束位置 | 指定客户端要获取的数据范围，通常在下载文件时配置该参数。 | API version 11 |
 | 基础功能 | 设置需要上传的数据字段表单列表 | 设置多部分表单数据，通常用于上传文件。 | API version 11 |
-| DNS设置 | 设置使用HTTPS协议的服务器进行DNS解析 | 设置使用HTTPS协议的服务器进行DNS解析。参数必须根据以下格式进行URL编码:'https://host:port/path'。 | API version 11 |
+| DNS设置 | 设置使用HTTPS协议的服务器进行DNS解析 | 设置使用HTTPS协议的服务器进行DNS解析。参数必须根据以下格式进行URL编码：https://host:port/path。 | API version 11 |
 | DNS设置 | 设置指定的DNS服务器进行DNS解析 | 设置指定的DNS服务器进行DNS解析。可以设置多个DNS解析服务器，最多3个服务器。如果有3个以上，只取前3个。服务器必须是IPV4或者IPV6地址形式。 | API version 11 |
 | 基础功能 | 设置响应消息的最大字节限制 | 响应消息的最大字节限制。以字节为单位，默认值为5\*1024\*1024，最大值为100\*1024\*1024。 | API version 11 |
 | 证书验证 | 设置动态设置证书锁定配置 | 动态设置证书锁定配置，可以传入单个或多个证书PIN码。 | API version 12 |
@@ -294,7 +294,7 @@ HTTP流式传输是指在处理HTTP响应时，可以一次只处理响应内容
 
 ## 通过HTTP发起WebDAV请求
 
-从API version 23开始，HTTP请求支持WebDAV协议的文件访问，WebDAV是基于HTTP协议的扩展，支持对远程服务器上的文件进行创建、读取、更新、删除、移动、复制(MKCOL、GET、PUT、DELETE、MOVE、COPY)等操作。
+从API version 23开始，HTTP请求支持WebDAV协议的文件访问，WebDAV是基于HTTP协议的扩展，支持对远程服务器上的文件进行创建、读取、更新、删除、移动、复制（MKCOL、GET、PUT、DELETE、MOVE、COPY）等操作。
 
 完整示例代码见：[Http\_case](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/NetWork_Kit/NetWorkKit_Datatransmission/HTTP_case)
 
@@ -613,12 +613,12 @@ struct Index {
      + 系统预置证书。
      + 应用信任证书。
      + 本次请求指定的CA证书。
-   * 可通过相关API(请参考下方：**配置参考**)指定应用级和请求级信任证书。
+   * 可通过相关API（请参考下方：**配置参考**）指定应用级和请求级信任证书。
 3. 证书内容有效性验证
 
    * 证书有效期检查。
-   * 域名匹配验证：主题备用名称(Subject Alternative Name, SAN)、通用名称(Common Name, CN)与访问域名一致。
-   * 证书吊销状态检查：证书吊销列表(Certificate Revocation List, CRL)、在线证书状态协议(Online Certificate Status Protocol, OCSP)。
+   * 域名匹配验证：主题备用名称（Subject Alternative Name, SAN）、通用名称（Common Name, CN）与访问域名一致。
+   * 证书吊销状态检查：证书吊销列表（Certificate Revocation List, CRL）、在线证书状态协议（Online Certificate Status Protocol, OCSP）。
 
 验证结果
 
@@ -786,7 +786,7 @@ openssl dgst -sha256 -binary www.example.com.pubkey.der | openssl base64
 | domain-config | array | 指示每个域的安全配置。可以包含任意个item。item必须包含1个domains，可以包含0或者1个trust-anchors，可以包含0个或者1个pin-set。 |
 | trust-anchors | array | 受信任的CA。可以包含任意个item。item必须包含1个certificates。 |
 | certificates | string | CA证书路径。 |
-| domains | array | 域。可以包含任意个item。item必须包含1个name(string：指示域名)，可以包含0或者1个include-subdomains。 |
+| domains | array | 域。可以包含任意个item。item必须包含1个name（string：指示域名），可以包含0或者1个include-subdomains。 |
 | include-subdomains | boolean | 指示规则是否适用于子域。true：表示规则适用于该域名及其所有子域名；false：表示规则仅适用于该域名。默认为true。 |
 | pin-set | object | 证书公钥哈希设置。必须包含1个pin，可以包含0或者1个expiration。 |
 | expiration | string | 指示证书公钥哈希的过期时间。 |
@@ -863,7 +863,7 @@ openssl dgst -sha256 -binary www.example.com.pubkey.der | openssl base64
 
 ## HTTP拦截器
 
-从API version 22开始，HTTP拦截器模块提供了一种强大且可定制的机制，允许开发者在"HTTP请求-响应"生命周期中的关键节点插入自定义逻辑。通过拦截器，开发者可以无需修改核心网络代码即可实现修改请求头/体、缓存策略、重定向处理、网络监控、响应预处理等全局功能。
+从API version 22开始，HTTP拦截器模块提供了一种强大且可定制的机制，允许开发者在“HTTP请求-响应”生命周期中的关键节点插入自定义逻辑。通过拦截器，开发者可以无需修改核心网络代码即可实现修改请求头/体、缓存策略、重定向处理、网络监控、响应预处理等全局功能。
 
 ### 拦截点说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.pbap (蓝牙pbap模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.pbap (蓝牙pbap模块)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:30+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:97fd220e292eba74a8170311232760d2a16b1d75a5704d567f03131afd7b8004
+scraped_at: 2026-11-14T08:51:33+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:f1ad2d440099f26e59d5f7f2abf744a04b3a436f763d6b9f4da8952a3bb35bf8
 ---
 
 本模块提供基于电话簿访问协议（Phone Book Access Profile，[PBAP](../harmonyos-guides/terminology.md#pbap)）的蓝牙电话簿访问能力，支持创建[PSE](../harmonyos-guides/terminology.md#pse)服务端实例、获取设备间蓝牙电话簿服务连接状态等，适用于本端设备作为PSE对外提供电话簿访问服务的场景，可帮助开发者快速实现蓝牙电话簿的共享与连接管理功能。
@@ -40,7 +40,7 @@ createPbapServerProfile(): PbapServerProfile
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -48,14 +48,14 @@ createPbapServerProfile(): PbapServerProfile
 
 **错误码**：
 
-以下错误码的详细介绍请参见[蓝牙服务子系统错误码](errorcode-bluetoothmanager.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 
-**示例：**
+**示例**：
 
 ```js
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -80,13 +80,13 @@ createPbapClientProfile(): PbapClientProfile
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
 | PbapClientProfile | 返回PCE实例。  - 该类继承于[BaseProfile](js-apis-bluetooth-pbap.md#baseprofile)，因此可以使用其父类中的方法。  - 和该实例角色相对应的是[PSE](../harmonyos-guides/terminology.md#pse)角色。 |
 
-**错误码：**
+**错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)。
 
@@ -94,7 +94,7 @@ createPbapClientProfile(): PbapClientProfile
 | --- | --- |
 | 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
-**示例：**
+**示例**：
 
 ```js
 import { BusinessError } from '@kit.BasicServicesKit';

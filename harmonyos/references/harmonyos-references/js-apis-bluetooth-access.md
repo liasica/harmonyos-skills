@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.access (蓝牙access模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.access (蓝牙access模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8234b95e3cae2a2fcc509f1223633ec2ca9bdbe2af5b9a96384013b2bfd87f2c
+scraped_at: 2026-11-14T08:51:33+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:eb66776678e5490e7caa3ad0e4226cce0050d1920bed27327bec1896a8c8d661
 ---
 
 本模块提供了打开和关闭蓝牙、获取蓝牙开关状态以及其他相关方法。
@@ -541,7 +541,7 @@ try {
 
 convertUuid(uuid: string): string
 
-将指定格式的的UUID转换为128bit的UUID。
+将指定格式的UUID转换为128bit的UUID。
 
 常用的UUID格式主要包括16bit、32bit和128bit三种格式。蓝牙协议定义的128bit格式的基准UUID为：00000000-0000-1000-8000-00805f9b34fb。若输入16bit或者32bit的UUID，将基于蓝牙基准UUID进行转换。若输入128bit的UUID，将不做转换直接输出该UUID。
 

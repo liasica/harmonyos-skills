@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: AtomicServiceTabs
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > AtomicServiceTabs
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:5f12b543c79674c2dbaf1ea0fbf7c3daf56654cc0cbd19c1fc0f1d68cc5419dc
+content_hash: sha256:6487762cd9e14c1a5216e5dd9ffc6c89751816d03c7f91d603b23857c1684dc5
 ---
 
 AtomicServiceTabs高级组件，对Tabs组件中不需要暴露给用户进行自定义的属性进行简化，限制最多显示5个页签，固定页签的样式、位置和大小。
@@ -219,7 +219,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/nSVXuiYCQ3C7tSjQs1Rfug/zh-cn_image_0000002786521546.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D0CE190E609E1233F968A40D6C9B004D5EA0BD160486A86CAA4512D12D7F2B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/dlH8APdPSXe1K5dMqN5weQ/zh-cn_image_0000002788469294.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED1C1B6D756AD8B433A08ADACDABEA09979C8E1355738120766F781F97C0C131)
 
 ### 示例2(纯图标样式)
 
@@ -291,7 +291,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/S1u7auVPT5S6vaPF5Hhx-A/zh-cn_image_0000002786361618.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6A0DA45FFD7533C32371FAF103A5E3DF38EFB327A7C36968DB7EA53F87D8D1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/98KhU9R5QS2LmDsUyMrKzQ/zh-cn_image_0000002817508783.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=53E4E737405BF7F4586B3CEDD3BCB6F0312FE791E4BA0EE49E5708304C91EFFC)
 
 ### 示例3(图标加文本，自定义图文排布)
 
@@ -383,4 +383,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/MavBnK5QRXWcG696vTXE2A/zh-cn_image_0000002815561039.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB00C08CD2FAE445D252D2D19F5CA2AEF68A8CE0632E1A96092022C05275B7BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/ZHnlh25CTsabT00IEx66oA/zh-cn_image_0000002788309352.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BB919867F2696E5D0F01ED891F2A78A79A0C84BD09B063898E4573359224EB3)

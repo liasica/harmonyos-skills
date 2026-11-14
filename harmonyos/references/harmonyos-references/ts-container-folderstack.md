@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: FolderStack
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > FolderStack
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:978db4c39e8ac968dc7c6c0faeec05f7585322a1c0377f05f22108ee1016e36e
+content_hash: sha256:e4159f5892dd2d22610bb5a64d05f370004174ed85b3c129c5b2f9a44b93f234
 ---
 
 FolderStack继承自[Stack](ts-container-stack.md)（层叠布局）控件，新增了[折叠屏悬停](../best-practices/bpta-folded-hover.md)能力，通过在FolderStack的配置项[FolderStackOptions](ts-container-folderstack.md#folderstackoptions18对象说明)的upperItems数组上设置子组件id，使相应子组件自动避让折叠屏折痕区后移到上半屏。FolderStack适用于双折叠设备的悬停态场景，如视频播放、视频会议等应用，实现视频画面自动移至上半屏、控制面板保留在下半屏的布局。该组件能解决双折叠设备适配问题，带来提升用户体验、简化开发者布局适配工作的收益。
@@ -350,11 +350,11 @@ struct Index {
 
 **图1** 横屏展开
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/I2seh8tzQv2SGsgIq9sNgA/zh-cn_image_0000002815401161.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5352BF04556D75C232F7A73DBE4EC117E645F61D3FBF0E624E780E112A14E110)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/zcIqeE26SuWOyk07PjmBsw/zh-cn_image_0000002817428753.png?HW-CC-KV=V1&HW-CC-Date=20261114T005024Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A92D691BD8BFAFC36AD24E4B4A415667A42F3A20399FAFF892C2F3D992145B2)
 
 **图2** 横屏半折叠
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/CG4By4-QQn-1jZiEaM3Aiw/zh-cn_image_0000002786521586.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EA6825208108104043399ECCEF7715A69C8391E4425FF84F02B6D4432A4AF7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/QDzc3MSvSKqPeOuWqWTqPQ/zh-cn_image_0000002788469334.png?HW-CC-KV=V1&HW-CC-Date=20261114T005024Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3B245B21ACB719477C96031F0065EA13F81858C02FC37E3C3437B269B3A6852)
 
 ### 示例2（使用attributeModifier动态设置FolderStack组件的属性及方法）
 
@@ -454,7 +454,7 @@ this appRotation:3
 
 this windowStatusType:1
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/dOylXlMhQJyS5CNqT0yYcA/zh-cn_image_0000002786361658.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=818450C68F0BF7AE2FF3C1FDC0BD489106A31526AF350A7051B90DB56D904DCE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/7UDr0mILQW2lj9r2Zy98Mw/zh-cn_image_0000002817508823.png?HW-CC-KV=V1&HW-CC-Date=20261114T005024Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DDEECC1EB06B07044E7A002DB1495F9D72204AF23FBFDA80B32515CF6424D96)
 
 **图2** 横屏半折叠
 
@@ -470,4 +470,4 @@ this appRotation:3
 
 this windowStatusType:1
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/k4g5s9HvQ2K8-FhAyAYlKA/zh-cn_image_0000002815561079.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5086523EC935ADB0225EBCF5B92787764CF0062B580C80C25931968B6E8A4428)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/78daq8PnR7-4UtpWVyuSpA/zh-cn_image_0000002788309392.png?HW-CC-KV=V1&HW-CC-Date=20261114T005024Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CA01BD544CD52B978C6CF9DC17706FDE759D8CE380E0FDD342A26946712A795)

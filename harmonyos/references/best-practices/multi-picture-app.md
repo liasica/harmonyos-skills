@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-picture-a
 title: 多设备图片美化界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备图片美化界面
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:09+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:c4e8b188b916e0923ed513251f5f4114c6f98e7a56edd680e0afea20851fe258
+content_hash: sha256:10e01c2d0ddec6e82096208665fcbdcacfb5f0218b7815f54088cc13f9312011
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:c4e8b188b916e0923ed513251f5f4114c6f98e7a56edd680e0afea20851
 
 图片美化应用的UX设计可参考社交通讯类多设备响应式设计指南的[拍摄美化类](../design-guides/responsive-design-examples3-0000001746498074.md)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/CTYNldoXR1uLvlShooA9_g/zh-cn_image_0000002610145561.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F8630046942DF7C8513FD5B2BF97DE32871AB0728926DA542D5A8BD31A001EA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/UxbcD3B1RYOlfwGjL8xr7g/zh-cn_image_0000002610145561.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5E70BDDA978A6F938D4CCBF49EEFA712E21B4EA1812EB1D9F85E40D9F81EE55 "点击放大")
 
 ## 工程管理
 
@@ -158,7 +158,7 @@ content_hash: sha256:c4e8b188b916e0923ed513251f5f4114c6f98e7a56edd680e0afea20851
 
 在照片浏览页面，用户可通过双指缩放手势动态调整图片宫格布局的显示大小。双指向外张开时，宫格放大，每行图片数量减少；双指向内捏合时，宫格缩小，每行图片数量增多。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/CK3frVgSTKihPCFQOttJrQ/zh-cn_image_0000002579625672.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAA51138EF1A75EE5CE0BF74DFCCE1B5CB0E0C2E50999B5878CFE70D3548F24A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/JIry4eWvT1aqVwPFZtUMew/zh-cn_image_0000002788551508.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EB794A3522FD0C30460E1DAEAB97FDBE1151592040A959530FA8F0650BCBD73 "点击放大")
 
 使用[PinchGesture](../harmonyos-references/ts-basic-gestures-pinchgesture.md)实现双指捏合手势触发时，动态修改Grid组件的显示列数。开发详情请参考[手势事件](bpta-multi-interaction.md#section182814229423)或[示例代码](multi-picture-app.md#section23671643329)。
 
@@ -182,7 +182,7 @@ content_hash: sha256:c4e8b188b916e0923ed513251f5f4114c6f98e7a56edd680e0afea20851
 
 图片美化应用的照片浏览页主要用于展示照片及分类导航，以满足用户查看不同相册照片的需求。根据功能设计，将照片浏览页相关内容划分为3个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/O6fGUmKMR7CBU_w7U72iog/zh-cn_image_0000002754317059.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=15CB1AF4ACAAFD21F76C1F86F17A2DA3965FFBFA9F411A899675163CB84367FE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/UF1-W_UWQ1KHNuhqqMgt0w/zh-cn_image_0000002754317059.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1BC11256615EA080F82EABD9EA4833D4C5BE121D806985AB0DA65ADB5274CD3 "点击放大")
 
 **界面开发**
 
@@ -198,7 +198,7 @@ content_hash: sha256:c4e8b188b916e0923ed513251f5f4114c6f98e7a56edd680e0afea20851
 
 图片美化应用的照片编辑页主要用于一键套用预设滤镜，以满足用户的个性化表达需求。根据功能设计，将照片编辑页的相关内容划分为3个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/Of3PXriIRhWr699SdtG30Q/zh-cn_image_0000002610065459.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3219AEB93B65C3CBA479BFB9F89EA53F65CF65C8092986461489FA29B8E509CD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/IcRFNe2iRkGY1h6nzbCMCA/zh-cn_image_0000002610065459.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=37FDE384C4D27BFAE87F3B8E2304D5863E68330BEFBD20B438A164F1E10268CF "点击放大")
 
 **界面开发**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-fo
 title: 基于AVPlayer播放格式化音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于AVPlayer播放格式化音频（C++）
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:07+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:9f87dc977e62f0b00348470307cc1d84ab4a76bf587286a2447a9e7249fb5881
+content_hash: sha256:092274862e82cfeb6073af828bbc0d74edfc6b170603c2c2f48bc9d2ae177d95
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 本文是音频播放系列文章的第4篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/YFdm6a3IQ56OnQ_3vX3H5Q/zh-cn_image_0000002524217640.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=B13F19F86672072AD343E57509A11126C9DDC1584983D07625B0D87111929A5A "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/-gnV88SRSKi2355MCGHGkQ/zh-cn_image_0000002555337515.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DACD2D8FB16935E05500D45312690271F322BDCD5F6565D19A4015B0694E6E7 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/EkntFnyyRcKDDXNHbgo_jQ/zh-cn_image_0000002524057652.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=890A6B4264E0A4332EF4412ABC9CBC679544E1E61DEC164CEA14C92D79FCD541 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/QnWYOj0eTW2uw_QZqLipyQ/zh-cn_image_0000002524217640.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE66FBC7270B7F9FBDE3CDA4AACE5FA1A318762AA4E927D7D9AC481457706723 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/PMCgKvsNTCGZUJuml1NRWg/zh-cn_image_0000002555337515.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7C0E6BE7769AB4C724AA978C2B064B4DCFF3C0C50664443D8209AD0A003DF02 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/U2D7eNgTRC6Ke7GFj7-xqw/zh-cn_image_0000002524057652.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6E2DEAFE8E0D162D62E5C161A4A48C4E935A1C47974179DFC20C01B629EB55C "点击放大")
 
 ## 场景分析
 
@@ -36,7 +36,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 通过[avplayer.h](../harmonyos-references/capi-avplayer-h.md)中的接口实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/eEkrp-PmS5i7UfYr6pTP4w/zh-cn_image_0000002555217551.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A6DA0A27290741A6EA793F2BAFE95AC844C99E08D73C63AF7084ACEE6DD6CDA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/aHrxguPuTim2GEIrDwBv7w/zh-cn_image_0000002555217551.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D0EFB4F12115029D7394FB586C8B5C463D2BD9D9D4BE40A726869B621F005BC "点击放大")
 
 ### 实现原理
 
@@ -288,7 +288,7 @@ void AVPlayer::ReleasePlayer() {
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/0xsmDX-fRHa3iJDc0CNI2g/zh-cn_image_0000002524217654.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A31D48C525813D850937732FF20FFA9F3533072F8B177761F7118ED3BFCA9A9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/NCcTMWxcS5avJq1vFWMQHg/zh-cn_image_0000002524217654.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=2513891066CBE87D7E74ACB83D9EE2B5DA2777BCE448A959C4C2E47C3A73E5CD "点击放大")
 
 ### 实现原理
 
@@ -319,7 +319,7 @@ void AVPlayer::SeekPlaySong(uint32_t timeStamp) {
 
 通过界面按钮快捷切换音频播放静音状态，实现一键开启或关闭静音。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9myrTryWTqqthrZQWQFl7w/zh-cn_image_0000002555337523.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F64993A7AA0838C7D58455787C342D1B05E9CAB908D5BE121BA579D7D7A6F5B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/XrcBH3M_TqmIfEnkXaUY1w/zh-cn_image_0000002555337523.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=D22182402209AE02767B259EE32D9DA60C31E2C065324D5A65444179D3068151 "点击放大")
 
 ### 实现原理
 
@@ -352,7 +352,7 @@ void AVPlayer::SetSilentMode(bool isSilentMode) {
 
 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/5Ya5Nj82R-i9LA4ZLHRdaQ/zh-cn_image_0000002524057660.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=F08960F0E78BB71D935BAB1AA87252E2272D0EA02F9F152F5A3F1A6067FC0A45 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/6EAL85pBRpe-ioch8QBj1w/zh-cn_image_0000002524057660.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B39D27597F5EB50A26260763CA6250FF77ACE0C5B625D79FFA16E0C28006B01 "点击放大")
 
 ### 实现原理
 
@@ -436,7 +436,7 @@ void AVPlayer::LoadSongInfo(uint32_t songFd, uint32_t songFileSize, uint32_t son
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Q_tVQp-WRnGeEru3dLdERg/zh-cn_image_0000002555217553.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0FDC7211FA9E03ECF6D6AA63B4EE196875C34EF6CFC4F0A854F0839BBE56B9F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/aZVV31LqQwuHh6f8X4eojA/zh-cn_image_0000002555217553.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=2139E2DACCA8BFD4FF30F010B9BC5FA31424BF1AB9FE2CFE474FCA2A4DD826C5 "点击放大")
 
 ### 实现原理
 
@@ -497,7 +497,7 @@ void AVPlayer::SetPlayingSpeed(float speed) {
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/ufu3B7hnQxKAuxEF3Jy66w/zh-cn_image_0000002524217656.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=594FB13D9ACC4A582EFEF9F926F0CB5BA97D0D15CD42E20466FA68CF58CEC1B7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/3lP7VQKmTXqyFaVzQ-vs5A/zh-cn_image_0000002524217656.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DD737C8E863229A4C6A109F6F195A938DF1FF622889677368BF86F629FB67B4 "点击放大")
 
 ### 实现原理
 

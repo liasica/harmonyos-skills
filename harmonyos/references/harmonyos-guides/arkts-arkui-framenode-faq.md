@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-arkui-f
 title: 命令式节点常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 命令式节点常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:12+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:dfacb7303cf697d85a958f9d86889cb1c5228e2b0f2ad3b2bb3448f7a8616ce5
+content_hash: sha256:3bc464a55118ad556b0269db60a1799f4b7414b58d7d589d7bde8a04d3d79380
 ---
 
 本文档介绍命令式节点的常见问题并提供参考。
@@ -16,7 +16,7 @@ content_hash: sha256:dfacb7303cf697d85a958f9d86889cb1c5228e2b0f2ad3b2bb3448f7a86
 
 不规范地使用[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)后出现[JS Crash](jscrash-guidelines.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/2SvFoSfATRGNu-M0mvCBEw/zh-cn_image_0000002815398881.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD8541AD9B1052FE57C2CD786D86ABD85A7EB986635455AA7A1009C22D3B65DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/s8YftI_3Tk-Dk7XZgXgP0g/zh-cn_image_0000002817506539.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=71CDF12EEBE9CBD95C262280AD7A656A53F0EA7004F910069DA8356A62E76671)
 
 **解决措施**
 
@@ -53,7 +53,7 @@ struct FrameNodeTypeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/tKEcYP-JQhGe9SrGegGGKg/zh-cn_image_0000002786359378.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1D37CE0EE0D7A38D99218681C238DB818D32CC30F2A347FDF2349B8340A6EEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/cHn9giYZS4mFb1nXic-oxg/zh-cn_image_0000002817426473.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=C631E50CD8647F944710E8EAD55B9191BC7B20A4910FE60AB71C75B6084C939B)
 
 ## Native侧创建的ArkUI\_NodeHandle执行disposeNode后出现cppcrash
 
@@ -61,11 +61,11 @@ struct FrameNodeTypeTest {
 
 开发者对[ArkUI\_NodeHandle](../harmonyos-references/capi-arkui-nativemodule-arkui-node8h.md)执行[disposeNode](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md#disposenode)前，未清理节点相关的资源对象（如回调、捕获引用等），导致节点下树后高概率发生程序崩溃，崩溃原因为释放后使用（Use After Free）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/pv7VsDX6TBOm4zO2Tg-iDg/zh-cn_image_0000002815558799.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE5FD3F52141527E7422C086FE1DA2E58D2FA0AE5B04EA3E4C2E03BE8B248D33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/l8D3_bUeTceMMc-ZeisjJw/zh-cn_image_0000002788467054.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABC6D63217C76E4BB0F1257F57782E903AF98F3004119F871F7D2F110CB2AED7)
 
 下图为此类问题的典型故障日志，日志中的Reason:Signal字段为SIGSEGV(SEGV\_MAPERR)，表示崩溃地址不固定，可能提示野指针或空指针解引用。此时崩溃栈内各个栈帧基本均为系统栈，如DetachFromMainTree、~FrameNode等系统函数，此类系统函数多与disposeNode接口和节点下树析构相关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/BrePddmURUOnaYwLZFhZPQ/zh-cn_image_0000002815398883.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D41A987894F94E35E4EDA34B064392F25C3EBDC05CB35482AAFA7D5ACAAF9A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/QZxjeyliT8GUoBoYdrqWqA/zh-cn_image_0000002817506541.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F236C9CD4FC77FCC4D7976C6BAB242689AA163A8DE3489205FAD720898BE889)
 
 **解决措施**
 

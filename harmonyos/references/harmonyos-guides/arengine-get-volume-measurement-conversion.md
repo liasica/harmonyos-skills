@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 高精几何重建介绍
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 高精几何重建 > 高精几何重建介绍
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:04+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:22f7513b272788615b4cd305195fedb6c50d200c0a5a8b64974198f57b42489c
+content_hash: sha256:a609932019abe12b31157e6641ae289ca53dedb805f23173253a9df4ec8a5fb5
 ---
 
 AR Engine高精几何重建用于识别空间中的立方体物体或者嵌入式立方体空间，计算出被识别物体或空间的长、宽、高以及体积。体积测量可以用于测量立方体体积以及嵌入式空间的大小。
@@ -14,12 +14,12 @@ AR Engine高精几何重建用于识别空间中的立方体物体或者嵌入�
 
 **图1** 稠密点云绘制示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/xZgEOqU1TP6uKWNAZjRL2A/zh-cn_image_0000002786519918.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D37A78D9E8E56CCFF0DC63AEB7CB7B2F5926F97C9359DE2B08881D447732368)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Ifw68ovDT5eBEtFN0VNfdw/zh-cn_image_0000002788307722.png?HW-CC-KV=V1&HW-CC-Date=20261114T004621Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FE7F9FA22882D284BBA52F1A7FF7A7470CDA7B214EA261A7F2025F91333B533)
 
 **图2** 体积测量示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/nenQl1Y1SF-72PAQbN5VPQ/zh-cn_image_0000002786359990.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=65FA4391B200EC5554971D90A988420DB18CC62410845F936A9307FF017A271B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/XDTAcy7YSj6DwEs7C4xrzQ/zh-cn_image_0000002817427085.png?HW-CC-KV=V1&HW-CC-Date=20261114T004621Z&HW-CC-Expire=31536000000&HW-CC-Sign=478C5EE97D9A92982A8BB389CFA53F7C99594AC2648A551DE179EF44CED1B80D)
 
 **图3** 空间识别示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/Gn4pO-5vQKedaTSN2haDag/zh-cn_image_0000002815559411.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=36D7939DB0399E745500FCE68000BFACF7613873E887E7F4AF31252838762C6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/1JoWQprKQK28id2GxSeZuA/zh-cn_image_0000002788467666.png?HW-CC-KV=V1&HW-CC-Date=20261114T004621Z&HW-CC-Expire=31536000000&HW-CC-Sign=3283BAAB9C9F600953EFAF970B1E5EC76E025D995C460E051A518F65D7746738)

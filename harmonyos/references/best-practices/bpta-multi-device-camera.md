@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 相机硬件差异
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备功能开发 > 相机硬件差异
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:10+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:3d386e567e929069c897107dcf066eae49f1f51aa2cbff04fbcfa6df5e10957a
+content_hash: sha256:9bbbd3de663f00024046350453e6de4b39e06086717bd754b0115c0290cbdd7a
 ---
 
 ## 概述
@@ -190,10 +190,10 @@ content_hash: sha256:3d386e567e929069c897107dcf066eae49f1f51aa2cbff04fbcfa6df5e1
 
    * 在折叠态时CameraPosition为CAMERA\_POSITION\_FRONT，效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/e3GDsHJTS0OWoKbsE9fYfg/zh-cn_image_0000002355147089.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E0732E1AC5BE907BFD558354C1BB7A37BD07B7AB33AEBEDADEB9A7772F22298 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/_xcWjxTQTZqz2HJPU5FpLA/zh-cn_image_0000002355147089.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA42BB515AF90DA6BA6558E9F1A0A8FA73546CC7D89B911EE3E09B4668A2240E "点击放大")
    * 在展开态时CameraPosition为CAMERA\_POSITION\_BACK，效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/yW7-x2dWQXe3BV1N1RLrRg/zh-cn_image_0000002321148366.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB77D6639EB6249E25CCF0802C1DC00D0EC2CFDF9A7B786747EC84F2A681E57A "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/pxtDVE7WQMWlNrbtOBLwUQ/zh-cn_image_0000002321148366.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF6641444BA092091D89F76875FDCEDE382C27EE06822171C1F42332AB4A8AF8 "点击放大")
 2. 其他需要重置预览流的场景需要开发者单独处理。折叠状态切换（例如双折叠的折叠态切换至半折叠态），会导致显示屏幕变化，需要重新选择相机设备。所以在[display.on('foldStatusChange')](../harmonyos-references/js-apis-display.md#displayonfoldstatuschange10)中判断变化前后的折叠状态，并根据变化前使用的相机位置，选择变化后使用前置相机或后置相机。
 
    ```screen
@@ -456,7 +456,7 @@ capture(): void {
 
 悬停态对应折叠状态为FOLD\_STATUS\_HALF\_FOLDED。在进入悬停态时，可以设计特殊的用户体验，UX效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/X2EbNH6gQIu9mG90Zj5DuA/zh-cn_image_0000002355266965.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3777DD2816104A3DFBF3F6F81857AC9CFC23C3523CFA027AB187478BD35BE97 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/KM7rWzsFQS6kyKSvUhsA4A/zh-cn_image_0000002355266965.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=1925976E8CE5DCA172830F74926DC0A2B002720C1219545B7F99D94CE47CC469 "点击放大")
 
 ### 开发步骤
 

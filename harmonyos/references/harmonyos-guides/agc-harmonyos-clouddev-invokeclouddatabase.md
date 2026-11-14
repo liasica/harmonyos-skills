@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 在端侧访问云数据库
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发端侧工程 > 在端侧调用云侧代码 > 在端侧访问云数据库
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:49+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:f2ac02a8c1c6c10466b62ab2db4715397002d2fd17ae80200918a24fec17ecb4
+content_hash: sha256:d18c134a408d61a24838777d7147be912cee1c83481a2aba5c87affacecdf489
 ---
 
 ## 前提条件
@@ -27,7 +27,7 @@ content_hash: sha256:f2ac02a8c1c6c10466b62ab2db4715397002d2fd17ae80200918a24fec1
 
 参考[生成Client Model](agc-harmonyos-clouddev-modelclass.md#section1037851593420)生成云数据库对象类型的端侧模型，如下图初始化代码中的Client Model示例“ets/pages/CloudDb/Post.ts”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/yUn8fc6wS8ezqtZ9BXAY9A/zh-cn_image_0000002295988348.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=58DD0B57410AC7068AA4FE559E7D4AF0CC9E0C2FE41531DFD403E7C5BED5A82D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/zqTlJH4MTLCwlfZI0hfVRA/zh-cn_image_0000002295988348.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=39FB4D99B380B062C33D33AFAB3121A2E977B26194EB5DDC50285E70555EDEA8)
 
 ## 访问数据库
 

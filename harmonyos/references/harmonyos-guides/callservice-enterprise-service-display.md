@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/callservice-e
 title: 企业服务信息来去电页面显示
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > 企业服务信息来去电页面显示
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:14+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:93deb12a3f16e47963a92588b70a1da7ee3f58910e3813f9e7049744680bb122
+content_hash: sha256:6df82be899a7c4ebacfc931e7d5c82d38acc20053b6609f34ca22f35e9b5cda8
 ---
 
 从API版本6.1.1(24)开始，新增支持企业服务信息来去电页面显示。
@@ -39,10 +39,10 @@ content_hash: sha256:93deb12a3f16e47963a92588b70a1da7ee3f58910e3813f9e7049744680
 2. 在项目列表选择项目，并在应用列表下选择需要申请企业服务信息展示的应用。
 3. 进入“项目设置 > 开放能力管理”页面，点击“企业服务信息展示”对应的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/NvEy6TNKTt-x5UOhj_6NEg/zh-cn_image_0000002815559649.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DE337FFACB7930EB0FAD248FD9A4C3A72F4B36169C4E1C7A786724FD160B9A5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/_mrgJb_mS06S0etqFzqf6g/zh-cn_image_0000002788467904.png?HW-CC-KV=V1&HW-CC-Date=20261114T004631Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB1D8B49E24B991A430453F80D2CBF0D3F2204E5C2ABD6DF8A86BC8C695D81C8)
 4. 请根据实际业务需求在弹框中填写对应信息，完成后，点击右上角“提交”，提交后将在3个工作日内完成审核，审核结果请在[互动中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/interactive)查看。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/sltv3wwZQNakbzsbouWneA/zh-cn_image_0000002815399733.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADD67669D24131EA1CB80CDC896D662D4EB418A8BC914F805B660338E5786EEF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/1HFmkMSdT-a1Xyo_SX7y2A/zh-cn_image_0000002817507393.png?HW-CC-KV=V1&HW-CC-Date=20261114T004631Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB00FD414E1A11A81B914F80DBD9883606B337F72D4821083871607BFEAA58D6)
 
 ## 替换调试Profile
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-positionin
 title: 位置定位
 breadcrumb: 最佳实践 > 应用服务 > 位置定位
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:07+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:23a3ed01365b08f4755d431b8efde051412f62ed5b8ad7c2dab6d0949833bd24
+content_hash: sha256:f74842550f51fbf9c5ff326ad7ac9cb44e199af03bbdc7660a398d7da9cf83fb
 ---
 
 ## 概述
@@ -71,7 +71,7 @@ content_hash: sha256:23a3ed01365b08f4755d431b8efde051412f62ed5b8ad7c2dab6d094983
 5. 运行效果如下图所示
 
    **图1** 获取当前位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/FUr4a_1VRVKlnKO3b9VbiA/zh-cn_image_0000002193852028.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=58114201BBE72E243AF3B38431F564474A0944DEB4B7CFEEF66AAEB90BD78833 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/04gHAl0XRne_ecWEqjFBog/zh-cn_image_0000002193852028.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=01E32031DBCF24E6B395BE314CBF2BE77B262DFDF0237BF45789AEEAD37375A0 "点击放大")
 
 ## 实时位置定位
 
@@ -122,9 +122,9 @@ content_hash: sha256:23a3ed01365b08f4755d431b8efde051412f62ed5b8ad7c2dab6d094983
 6. 运行效果如下图所示
 
    **图2** 持续获取实时位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/ZzQibZtTTRKrkVFUC1ShZg/zh-cn_image_0000002194011616.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=165E2BD1882C92288D7FF1FA39DBC02E8C24D632FD04FBB671883960AF438C6A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/VsKBsuU_QyipkEdFxCujJQ/zh-cn_image_0000002194011616.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEB6E8E58C2280D3AB75E5CF50B02D93E226C143BE8008A07582701D01CD3BD3 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/_Y4PmG8MTAiDVSrR7drilA/zh-cn_image_0000002229451909.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B4530DC974C9FBDE3C2C413F34974F3C489F947EC98777798D54C0C0CA6B447)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/X6cxvlxnQYmojNjSJCJ5TQ/zh-cn_image_0000002229451909.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=525CD15F0CCB2CA505482F3B7E5111B0D4FB5F294C29947FE5D4D4588C79AB7C)
 
 ## 应用后台定位
 
@@ -268,9 +268,9 @@ content_hash: sha256:23a3ed01365b08f4755d431b8efde051412f62ed5b8ad7c2dab6d094983
 6. 运行效果如下图所示
 
 **图3** 在应用后台持续获取位置信息效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/BUzst1oMSn6k1xPROYTBvA/zh-cn_image_0000002229337413.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=C97000F5EC618F4EFCB412367705EF6C7B4A51DF8D2DCA2FB19C00B821D73EFC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/uEBCSomSQAOs7S_z5iFxZA/zh-cn_image_0000002229337413.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=12F57C9326BBBC69D2A48259DED131338B30A4076A9702A5020EA1379DB47DAA "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/QwgipJymRyCWf5Qzk8dnZw/zh-cn_image_0000002229451897.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=130F122FCA8B3A124C6A4CCA27A8BB08F1A2B88569921BFBD8B3FE7D965B2A48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/d19s2QQBQJaCVj9zD2JhUQ/zh-cn_image_0000002229451897.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=354EF4018C3CE9AC7365F49123B652BC7914C9A6996679F73D51F957016247D9)
 
 ## 历史定位获取
 
@@ -304,7 +304,7 @@ content_hash: sha256:23a3ed01365b08f4755d431b8efde051412f62ed5b8ad7c2dab6d094983
 4. 运行效果如下图所示
 
    **图4** 获取缓存位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/JhyyjLtnSpWo_CkAm7Sbng/zh-cn_image_0000002193852040.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDE741722F61345E068620C6C3F7F9EA287E489D92E8A55FBCC11577DC698CD8 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/LwZGfAwURCeVa6QhyGOaQA/zh-cn_image_0000002193852040.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E08F7F54A59E976D2FD479D29CA66BC489111E69AE89ED20BE3DC5147F38924 "点击放大")
 
 ## 常见问题
 

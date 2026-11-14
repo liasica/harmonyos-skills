@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-prop
 title: "@Prop装饰器：父子单向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Prop装饰器：父子单向同步
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:59+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:535d836d5d76c20d62cf2001bcedfdce7ea168660b93470dfcdea64509896180
+content_hash: sha256:21a62e69d3c4d6cb6a6ef3b3b07d08603025ad64421ff8287a161758d7eb7241
 ---
 
 [@Prop](../harmonyos-references/ts-state-management-prop.md#prop)装饰的变量可以和父组件建立单向同步关系。
@@ -46,7 +46,7 @@ content_hash: sha256:535d836d5d76c20d62cf2001bcedfdce7ea168660b93470dfcdea645098
 
 初始化规则图示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/8nybY4DKQ92a_lCOoCM-ow/zh-cn_image_0000002815557987.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBD556A32D727CCEF67F42EC4905D93129C5D97AEB6D6E17F4B2E7AFED8FF7CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/O_GOtHtfSJS-0oRgRYeOGA/zh-cn_image_0000002788466242.png?HW-CC-KV=V1&HW-CC-Date=20261114T004659Z&HW-CC-Expire=31536000000&HW-CC-Sign=24F52226D215661FF3F7FB19EBAAC1E3A67640A3F6552DA2313FF879C90B1855)
 
 ## 观察变化和行为表现
 
@@ -540,7 +540,7 @@ class Book {
 
 @Observed装饰的类的实例会被不透明的代理对象包装，此代理可以检测到包装对象内的所有属性更改。如果发生这种情况，此时，代理通知@Prop，@Prop对象值被更新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/aupeV3RCQZOicHmek7UfOQ/zh-cn_image_0000002815398071.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=11BC4EBDC99DB15170B89E3E296E4700E12032A7276D2CCFBD484415116BFC43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/EA-TZonrRP6g5_faMkuEoQ/zh-cn_image_0000002817505729.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004659Z&HW-CC-Expire=31536000000&HW-CC-Sign=3032B39B7826D1A51EE6DE1D0475ED09CC9D33663FEDA2EF2EFBBA0D38981078)
 
 ### @Prop本地初始化不和父组件同步
 
@@ -614,7 +614,7 @@ struct MainProgram {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/MRHI24aXQGS6LRmIuppR2Q/zh-cn_image_0000002786518496.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=758AFE5F9F80315A7A495FA380E7378C2B41BEBDE4DB8D29B14A63ADA68131BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/D_IBSP24RVe4wHRX6EinwA/zh-cn_image_0000002788306300.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004659Z&HW-CC-Expire=31536000000&HW-CC-Sign=2881209E67C6305AC5313B4C9B5D9896C518AC571745EFFE3FCBF5226CF9CB6A)
 
 ### @Prop嵌套场景
 
@@ -723,7 +723,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/KhbPztRYR3uvVVcdIuMxkA/zh-cn_image_0000002786358568.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C10B94583815DF521FD560483B693900B680D72885DDB974F5C26B64A500CA4A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/GN9jx4-TRLiuvjY4K8Rzyg/zh-cn_image_0000002817425663.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004659Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4E89009C64A849ECA3196355FA6D14A33ECB53B02338B7526462FE973195FB3)
 
 ### 装饰Array类型变量
 

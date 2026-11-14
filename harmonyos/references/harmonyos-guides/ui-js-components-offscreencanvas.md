@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: OffscreenCanvasRenderingContext2D对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > Canvas开发指导 > OffscreenCanvasRenderingContext2D对象
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:11+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:6a9f94e35e2db0120653c40a070956a2a1e9ccff90f58442b961156beec3b146
+content_hash: sha256:464badf4e0a2adfeb24a0b0fe107abd2cf5f9c96f490698556ff7d2f3237deb9
 ---
 
 使用OffscreenCanvas在离屏Canvas画布组件上进行绘制，绘制对象可以是矩形、文本、图片等。 离屏，即GPU在当前缓冲区以外新开辟的一个缓冲区。具体请参考[OffscreenCanvasRenderingContext2D对象](../harmonyos-references/js-offscreencanvasrenderingcontext2d.md)。
@@ -96,7 +96,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/MTNavcnlQVS463K6vxRhTQ/zh-cn_image_0000002786359342.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8357D9A7A935A2B938136D314E6A29D09B46BB822ACF98DB7214565885EA48F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/rT2H0G9MRmCmPd8TFyMD-A/zh-cn_image_0000002817426437.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=037F83EFC3E646324235E3C5A648CE55B0FC679B4BD74432C068FB7921840778)
 
 ## 判断位置
 
@@ -199,4 +199,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ixk3WslITTyhZ4k7x4n-mw/zh-cn_image_0000002815558763.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8F8598DD493625824A8FB60C45357E6462C73EEB631FB924C081AC1C7100DC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/y01xNfOSTpudh3JSI8_LMA/zh-cn_image_0000002788467018.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD38A3B40AD90CDC5E4385CE7C0FD4350DE60D58AA0BC05D0EC672453BB45304)

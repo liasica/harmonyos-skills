@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sensor-guidel
 title: 传感器开发指导(ArkTS)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 传感器 > 传感器开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:44+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:734b0e296895156567d657e0a34adb2e941d353c3e1fda18045f9580eb3dd4d4
+content_hash: sha256:1c23925faf8988a57bc576523aec3e59e138dac68c6b98d6ed8bfaba235c7f95
 ---
 
 ## 场景介绍
@@ -32,7 +32,7 @@ content_hash: sha256:734b0e296895156567d657e0a34adb2e941d353c3e1fda18045f9580eb3
 
 1. 新建一个工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/GMG_B1sqQj21mrk5qmmpHg/zh-cn_image_0000002786519712.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=106C02F858B10360A6AB133D09CBDEFC93D4EB4FCDCE3FCF38DB0384B10322D6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/YC9UYkP4QqyJXY490zrkmg/zh-cn_image_0000002788307516.png?HW-CC-KV=V1&HW-CC-Date=20261114T004603Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA319F3F0045647833568F16A6EDF8874A5AC182DE16FE9B756FE883192166E9)
 2. 配置加速度传感器权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```json5
@@ -75,7 +75,7 @@ content_hash: sha256:734b0e296895156567d657e0a34adb2e941d353c3e1fda18045f9580eb3
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/nYF8ziLsQ-u-e3quEF6qaQ/zh-cn_image_0000002786359784.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DAE069D5411640F83C0002493C08842FC154FBDC7FA56CCE7F25244494118D4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/q2BpA6iRQAWIU8XGSs0LOw/zh-cn_image_0000002817426879.png?HW-CC-KV=V1&HW-CC-Date=20261114T004603Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE35AA328992A596A13C9CF0069C295735444F23CD9F3FA5A63B2D8A4A880B6F)
 
    该传感器支持的最小采样周期为5000000纳秒，最大采样周期是200000000纳秒。不同传感器支持的采样周期范围也不同，interval应该设置在传感器支持范围内，大于最大值时以最大值上报数据，小于最小值时以最小值上报数据。设置数值越小数据上报越频繁，其功耗越大。
 
@@ -140,7 +140,7 @@ content_hash: sha256:734b0e296895156567d657e0a34adb2e941d353c3e1fda18045f9580eb3
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/_QPbE0iERSiSna7Z2BRh5w/zh-cn_image_0000002815559205.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=69C92AB484A2215689B92928331E6EF8814C9B8F42E001E9A958C6E66AC4269A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Yl5NZdBFQ9ynxalmvnWrDg/zh-cn_image_0000002788467460.png?HW-CC-KV=V1&HW-CC-Date=20261114T004603Z&HW-CC-Expire=31536000000&HW-CC-Sign=87E22CCDE45456A8AB3CD11FB06187FD7997571A9C51FF630F2A45C1248DC95C)
 
    通过once()接口，实现对传感器的一次监听。
 
@@ -156,7 +156,7 @@ content_hash: sha256:734b0e296895156567d657e0a34adb2e941d353c3e1fda18045f9580eb3
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/F44nwodSRPiBeExDcsgcZg/zh-cn_image_0000002815399289.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0204CD570F8B5DE1C9A6FB3735398EDAE1D7D2E806E479CDDD5720744F4022F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/eva6QUMnRRCuwdwYuELIoQ/zh-cn_image_0000002817506949.png?HW-CC-KV=V1&HW-CC-Date=20261114T004603Z&HW-CC-Expire=31536000000&HW-CC-Sign=511A3D24DF73EE223D5C0A529C56358A0D5FA8D211E3C367EDCBEF4F2359BE10)
 7. 取消持续监听。
 
    取消持续监听，此场景下未订阅而取消监听为异常行为，需处理异常。

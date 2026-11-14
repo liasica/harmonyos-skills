@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 常见瀑布流操作
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 常见瀑布流操作
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:03+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:027a1806c0ef8810793d51c7fc618282949664c9d1fb0524959cf29d517740a1
+content_hash: sha256:c15e0019da38dfdb292abadb63a272d4cf9604718e71911090b576b45c5ab634
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:027a1806c0ef8810793d51c7fc618282949664c9d1fb0524959cf29d517
 
 在瀑布流常见开发场景中，主要实现方式类似下图布局效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/p_pyNwlfSvCIZhDiqF83FQ/zh-cn_image_0000002786358894.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=10F2E8849E691DE9B5A386E5F9E6A503B5F3686B8806DAF9EEBF842D1132C425)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/soCnr5APTX2CKe2RI-5zVA/zh-cn_image_0000002817425989.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E178969F4BBC8BB2C534DF2EC8D22C556516B60D19A1F41ECDA1F97E532D6D8)
 
 为了实现上图中分组参差不齐的效果，首先需要创建多个SectionOptions，并重写其中的[onGetItemMainSizeByIndex()](../harmonyos-references/ts-container-waterflow.md#sectionoptions12对象说明)方法的返回值。完整代码如下：
 
@@ -165,7 +165,7 @@ export struct CustomItemHeightPage {
 
 在某些开发场景中，开发者可能希望WaterFlow向上滑动时，部分内容先跟随滑动，随后吸附于顶部。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/fEmx8SE8TBKc9OlSeA_Vng/zh-cn_image_0000002815558315.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=7890730EB72115BBDA4B4C6F72194203F0B348C4DDC90EE5BE53FC3710A45915)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/4GST6tlrTVq1Q8LKsUmNDg/zh-cn_image_0000002788466570.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=38D662DF8719C64AECB7B45F17E28D460319D2AA0A901995E5685D188B8E6CD2)
 
 为了实现上图效果，需在WaterFlow分组中需为吸顶的部分预留位置，并监听瀑布流滚动事件。吸顶部分依据瀑布流滑动后的偏移量设置位置，实现与瀑布流同步滚动；吸顶部分达到顶部后固定不动。完整代码如下：
 
@@ -262,7 +262,7 @@ export struct StickyPage {
 
 在某些开发场景中，开发者可能想要在瀑布流停止滑动时播放其中的视频，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/wThzhMRbSdyAmRjHEbjQQQ/zh-cn_image_0000002815398399.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F97234E62CC5BF1C87555FEC2F0FC9CC98D137269DFEF4C437A658EE9C4C3CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/19kJF033S4G-ADF-h9sY2A/zh-cn_image_0000002817506057.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C2DD0B0772A13DE73F826D050477798F083E2D7350BC2279E37896F7F88DBDD)
 
 若要实现上述效果，可利用组件的[onVisibleAreaChange()](../harmonyos-references/ts-universal-component-visible-area-change-event.md#onvisibleareachange)方法监听组件显示状态，以控制视频播放或暂停。完整代码如下：
 
@@ -326,7 +326,7 @@ struct FlowVideoItem {
 
 在某些应用场景中，开发者可能实现如下图所示的刷新效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/IchrtC5jRMqjZrKG7bQz5g/zh-cn_image_0000002786518824.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F88CB5FBE287A9AEE051E04AF2EEC185F15BE8486997BB6785579BBF27B555FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/SB3OJyBESF2cWpqkJZQA-A/zh-cn_image_0000002788306628.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AB2ACE4EA3713CE0DE20E37A59C955FE89C561DA6D35E0C6263440A92D9DF40)
 
 为了实现上述效果，开发者可通过Refresh组件实现瀑布流下拉刷新。通过Refresh组件进行页面下拉操作，并绑定显示刷新Loading动效的容器组件，以实现下拉刷新效果。随后，在[onRefreshing()](../harmonyos-references/ts-container-refresh.md#onrefreshing)事件中更新数据。完整代码如下：
 
@@ -565,7 +565,7 @@ struct FlowItemRemovePage {
 
 在某些场景，开发者可能想要删除WaterFlow中的数据后，并且界面还需要显示动画效果，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/PBMLyOKKR_eDmxC-J8sgRw/zh-cn_image_0000002786358896.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E25C9CC2A33ABA6616C067AEB4D9CBA33BDFE86CF936E7E047E183BB91DD3B34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Vm91MCBNT7K7uGiMA2FKdg/zh-cn_image_0000002817425991.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC1DC69B47DD76BD0747A5C3D6A9E569ACCD3812BB7CE41C3A31F0CE57F178CF)
 
 为了实现上图的效果，可通过配置FlowItem的[组件内转场 (transition)](../harmonyos-references/ts-transition-animation-component.md)属性并添加转场参数，使组件在插入和删除时显示过渡动画。同时，在删除时添加[显式动画 (animateTo)](../harmonyos-references/ts-explicit-animation.md)效果即可。完整代码如下：
 
@@ -630,7 +630,7 @@ struct FlowItemRemoveAnimationPage {
 
 在某些开发场景中，开发者可能需要瀑布流边缘具有渐隐效果，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/p6TEpwvTR66pOuzDvLO88g/zh-cn_image_0000002815558317.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3343F256DDF8F47351A127ED725E4B6694717FA29BD6D10050F2E9BCF847E3A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/y82Vb__4RcCT3TYa_Cm9hw/zh-cn_image_0000002788466572.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=54CCD29367E98AC8F1B0075B90584617F431869D96EBBB1D21B0ADA21B84CF57)
 
 该效果可通过WaterFlow组件的[fadingEdge](../harmonyos-references/ts-container-scrollable-common.md#fadingedge14)实现，并通过fadingEdgeLength参数设置边缘渐隐长度。具体代码参考：[设置边缘渐隐效果](../harmonyos-references/ts-container-waterflow.md#示例5设置边缘渐隐效果)。
 
@@ -662,13 +662,13 @@ struct FlowItemRemoveAnimationPage {
 
 最终效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/w4maOP63TNe6cam_KlPMRA/zh-cn_image_0000002815398401.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B7EA091BE2E9A546FA712E34E8D258B95417E2D9E85CEE56BF62F919E5617E3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/rcM5dptsTDCj4sOuEmjZfg/zh-cn_image_0000002817506059.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7E72702C61FAAB4512A561AFAC736BCCEFA5011259915365D8C57B3FEA119EE)
 
 ## 常见问题
 
 ### **如何将多个FlowItem强制显示到左上角位置**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/fpa2v5yLSQGWo1KEhFJK0Q/zh-cn_image_0000002786518826.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FCD6CA6BB5C6C6E3BAA56C3A31CE20AB42E7E682960E1C2C8F571CE6CD4FFB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/HkbL2vubQly4_oass-VMCw/zh-cn_image_0000002788306630.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=27C57F86AFE1B61D31B1587EA743C4AA0FD95B9975A336266CDDA271C155FFC6)
 
 通过在WaterFlow根节点添加FlowItem，将需要显示在左上角的元素放在此FlowItem内部即可，完整代码如下：
 
@@ -739,7 +739,7 @@ struct ForceShowOnTopLeftPage {
 
 ### **如何实现双瀑布流衔接效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/WkP6EbCnSLCRm69eK2Gp9g/zh-cn_image_0000002786358898.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E04288A476ADEC30C679339961BEF20BEA1FE0A09DC23CB0808F8E2FB755ADE1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/OWsrjsiqRe2-vjFo8VY9ww/zh-cn_image_0000002817425993.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=A58588C222612F776AFE168C27C1AD52E87F8F4647B49E94DAC4EBC0C3E65C26)
 
 通过WaterFlow的分组能力(SectionOptions)实现。在中间的FlowItem中预留位置显示 "分类信息" ，随后继续填充瀑布流数据。完整代码如下：
 
@@ -804,7 +804,7 @@ struct MergeDoubleWaterFlowPage {
 
 ### **如何实现双指缩放动态改变瀑布流列数**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/--wf4UGtR9qxgdXF8vvWWg/zh-cn_image_0000002815558319.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=5082F7D9C5E30BD1EA0AAFFF089B364274715214D667E4BB268B0BC5A108FBAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/b1C5O32QRZGcGFBwKyA9ug/zh-cn_image_0000002788466574.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=27462A152EB8E707F3ACE6BCE5FCF6C7A2925C242561C10F01CF8FE021621D58)
 
 通过监听用户捏合手势并配合缩放比例进行动态控制瀑布流列数。完整代码如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-app-sha
 title: 配置目标应用名单（仅对企业应用开放）
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 宿主应用发起分享 > 配置目标应用名单（仅对企业应用开放）
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:214f14dcaa1dae77d65955640a79ae36cb430cfc704f57bc9f1469b4d3040737
+scraped_at: 2026-11-14T08:48:32+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:559712da3816b2b97cb58d994b292fd4265273b0ccf6f02ae5595ab322c1d8de
 ---
 
 ## 场景介绍
@@ -28,7 +28,7 @@ content_hash: sha256:214f14dcaa1dae77d65955640a79ae36cb430cfc704f57bc9f1469b4d30
 
 1. 应用必须在module.json5配置文件的requestPermissions标签中声明权限。参考：[声明权限](declare-permissions.md)。
 
-   ```json
+   ```json5
    {
      "module": {
        // ...
@@ -49,13 +49,7 @@ content_hash: sha256:214f14dcaa1dae77d65955640a79ae36cb430cfc704f57bc9f1469b4d30
    import { uniformTypeDescriptor as utd } from '@kit.ArkData';
 
    @Component
-   export struct ShareAppTrustInfo {
-     build() {
-       Button('share').onClick(() => {
-         this.share();
-       })
-     }
-
+   export default struct Index {
      private share() {
        // 构造ShareData，需配置一条有效数据信息
        let data: systemShare.SharedData = new systemShare.SharedData({
@@ -71,6 +65,12 @@ content_hash: sha256:214f14dcaa1dae77d65955640a79ae36cb430cfc704f57bc9f1469b4d30
          previewMode: systemShare.SharePreviewMode.DEFAULT,
          selectionMode: systemShare.SelectionMode.SINGLE,
          appLaunchTrustInfo: ['5765880207853060000', '1171817433862770000'], // 此值仅为示例. 目标应用 appidentifier
+       })
+     }
+
+     build() {
+       Button('share').onClick(() => {
+         this.share();
        })
      }
    }

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-state-refr
 title: 状态刷新控制
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 状态刷新控制
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-09
-content_hash: sha256:4e770d6b1a3dc381ba0188b4b5d05af56b0e3317f5285993db9f124b4feaf5bb
+scraped_at: 2026-11-14T08:54:14+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:009e07133fb363dcca7ceee9bc0ff1c7d02562420522f3b7ad89f96406c02353
 ---
 
-在声明式UI编程范式中，UI是应用程序状态的函数，应用程序状态的修改会更新相应的UI界面。ArkUI采用了[MVVM](../harmonyos-guides/arkts-mvvm.md)MVVM模式作为UI范式，其中ViewModel将数据与视图绑定在一起，更新数据的时候直接更新视图。具体参考，[MVVM模式（V1）](../harmonyos-guides/arkts-mvvm.md)和[MVVM模式（V2）](../doccenter-capabilities/arkts-mvvm-v2.md)。
+在声明式UI编程范式中，UI是应用程序状态的函数，应用程序状态的修改会更新相应的UI界面。ArkUI采用了MVVM模式作为UI范式，其中ViewModel将数据与视图绑定在一起，更新数据的时候直接更新视图。具体参考，[MVVM模式（V1）](../harmonyos-guides/arkts-mvvm.md)和[MVVM模式（V2）](../doccenter-capabilities/arkts-mvvm-v2.md)。
 
-**图1** ArkUI的MVVM模式
+**图1** ArkUI的MVVM模式f
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/LBkgopnqT8OrJm05e78qNQ/zh-cn_image_0000002229336545.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF58710AD1BB2FA430D20551859A35A2985440CF81CB505482EE28EF84626F5E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Mn46Rro-QWinA6PWA5gIBA/zh-cn_image_0000002229336545.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FDFB02156241A239E6F57B3DDBAC0776D4D8DDE138D9615B2BDAE7AF641E0AC "点击放大")
 
 ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop装饰器：父子单向同步](../harmonyos-guides/arkts-prop.md)、[@Link装饰器：父子双向同步](../harmonyos-guides/arkts-link.md)、[@Provide装饰器和@Consume装饰器：与后代组件双向同步](../harmonyos-guides/arkts-provide-and-consume.md)、[LocalStorage：页面级UI状态存储](../harmonyos-guides/arkts-localstorage.md)等。当自定义组件内变量被装饰器装饰时变为状态变量，状态变量的改变会引起UI的渲染刷新。
 
@@ -21,7 +21,7 @@ ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop装饰器：
 * 状态变量的管理有一定的开销，应在合理场景使用，普通的变量用状态变量标记可能会导致性能劣化，应删除冗余的状态变量标记。
 * 通过使用临时变量的计算代替直接操作状态变量，可以使ArkUI仅在最后一次状态变量变更时查询并渲染组件，建议使用临时变量替换状态变量，减少不必要的行为，从而提高应用性能。
 
-具体参考[避免不必要的状态变量的使用](bpta-status-management.md#section2674939304)。
+具体参考[学习UI范式状态管理](../doccenter-capabilities/arkts-state-management.md)。
 
 ## 最小化状态共享范围
 

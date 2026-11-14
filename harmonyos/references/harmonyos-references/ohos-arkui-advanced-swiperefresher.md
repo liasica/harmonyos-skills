@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SwipeRefresher
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SwipeRefresher
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:26+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:d0655c956135d9a0b81b195a9374e54100a9fadd4d8408b09e82f9b3abedb857
+content_hash: sha256:be75634881bd5cbe085a2202b4f979a8c3bec5e39ed3ee7043b30d1d33b6cc69
 ---
 
 内容加载指获取内容并加载出来，常用于衔接展示下拉加载的内容。
@@ -74,4 +74,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/tUOqoD3uS1elK8RBItSGbQ/zh-cn_image_0000002815401195.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E4351FEC2EA5B5B3A3160EB7E6F1EA5DCA16D109652BE7DC49B659B0990DF92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ywBy9K9rTzuFfA5Sk6UGdw/zh-cn_image_0000002817428787.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=B73796A238A03FACA8D96EDF5126ABF5FC5D06CC1E53063A6120DBFDE4598A08)

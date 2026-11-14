@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d6d90227a24da7b5b5b42c77a0b56c064ce3dfc5dad456c909f2edbbf552d63e
+scraped_at: 2026-11-14T08:51:09+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:adfa9e5cf5795928e1d6448b68b12355be73dac2819536ae9a801fdd4c1f7375
 ---
 
 **说明** 
@@ -750,7 +750,7 @@ Retrieval: There is invalid recall name in RecallCondition.
 
 **错误描述**
 
-RecallCondition中的recallName字段相同。
+RecallCondition中存在无效的召回名称。
 
 **可能原因**
 

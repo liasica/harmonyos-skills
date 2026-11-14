@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-ligh
 title: 视频轻编辑开发实践
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 视频轻编辑开发实践
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:be339cf0e1d9d29aba11de04f2e677ac616a4a02e3bc046da2b800ee073a5e40
+scraped_at: 2026-11-14T08:54:12+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:d81b3aadb795bd7220b7646f4aed0fad2968b56344bf1672bf541e1ed0c00086
 ---
 
 ## 概述
@@ -28,13 +28,13 @@ content_hash: sha256:be339cf0e1d9d29aba11de04f2e677ac616a4a02e3bc046da2b800ee073
 
 视频编辑预览是视频编辑的核心功能之一，允许用户在编辑过程中实时查看视频效果。用户可以通过拉起图库选择单个视频文件后进入编辑页，编辑页上方约70%区域为视频预览区，下方30%为编辑操作区。视频导入后自动播放，预览过程中支持播放、循环播放等操作，同时支持在视频上方叠加贴纸和文字等元素。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/hU9Ox9CCS8ihdJ-_1hSM6w/zh-cn_image_0000002680339558.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C9CED1D15AA13A69A7E508A34A1291281EC3048B6F59ACCBE599ED8EAF2AE97 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/jaCV55XmRKKjkOcqpevpnw/zh-cn_image_0000002680339558.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=99D1B1FB217AE2CE25B5C781C47E6A742709B89368255F1E04B385242F66B751 "点击放大")
 
 ### 实现原理
 
 预览阶段采用解码直出+UI叠加的轻量方案，不经过IGLRenderEngine，与导出侧InSurface/OutSurface链路形成对照，从而在编辑过程中保持较低延迟。调用时序图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/B5cNSycYRF6GxnwHQWUmCw/zh-cn_image_0000002710019335.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=7486A5F9B90CD8F646A08376DBD4BAB23865A594B7CADB9532328FD0C9ED4C51 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/SrigTvOyQBiPCyOv89Hezg/zh-cn_image_0000002710019335.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF584678A9AC0CD5473BF97B1BAE35E7E883B8E7E4F1034F75AC7077A5804597 "点击放大")
 
 ### 开发步骤
 
@@ -275,17 +275,17 @@ content_hash: sha256:be339cf0e1d9d29aba11de04f2e677ac616a4a02e3bc046da2b800ee073
 
 用户点击按钮，显示文本输入面板，输入文字后点击添加按钮。文字显示在视频预览区上方，系统将文字渲染为图片，然后作为贴纸叠加到视频，支持单指移动、双指缩放与旋转，与贴纸共用手势逻辑。可叠加多段文字，按添加顺序决定层级。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/yNGBJAgbRnOssVPe4_kjMQ/zh-cn_image_0000002680179682.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=855495C6F017B672DED7DF5EABA31E4382C3EE5DED2BEC12993F75E705DD74AE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/b4gPoqkwTV-RUhOcqVSJKw/zh-cn_image_0000002680179682.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=254BDE8592556ABD711266A13A486DBB2390F0DE759A40445C47E1BBE2A715E3 "点击放大")
 
 ### 实现原理
 
 文字在预览与导出两端采用不同渲染路径、同一数据模型的策略：预览由ArkUI直接绘制，导出前将文字栅格化为PNG图像，复用贴纸/Image资产管线进入渲染引擎合成。调用时序（预览添加）图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/5W7uzsE6Q0OXeOk_K5PqFg/zh-cn_image_0000002709859481.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E41D4AE79C9668DFDD9A7B214C7FD8685A2343748429A6EE739404C0DC5CC9F7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/CyKAlEUeQwqCWnXibJn1Cw/zh-cn_image_0000002709859481.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=486C13FFF9D6E78C76B5F518FEFFDD2787AC955842EF71BC2FAB60C305A2FD6B "点击放大")
 
 导出合成的调用时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/9w60Y_MeSbKjHsNC_Dp9xQ/zh-cn_image_0000002680339560.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FC9DF9C943142E32D7F84AF778ECC57CCDC1D2CA37FCB3342BBCDAB13B94F6E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/tUZiVq9vQ9eoxBjJGzSnNQ/zh-cn_image_0000002680339560.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFA2BE914A9B8D4103F2ED188196FFAD402C48DE8FB0BF73B6D1D0D5B000FFEE "点击放大")
 
 ### 开发步骤
 
@@ -480,17 +480,17 @@ content_hash: sha256:be339cf0e1d9d29aba11de04f2e677ac616a4a02e3bc046da2b800ee073
 
 用户点击按钮，从图库选择单张图片作为贴纸叠加到视频上。贴纸支持单指拖动、双指缩放与旋转，用户可以添加多个贴纸，按添加顺序叠放层级。贴纸位置限制在视频可视区域内，可以删除不需要的贴纸。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/q7sTKep2Qy67HCDo3lu-4g/zh-cn_image_0000002710019337.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E0B6F4F8801033C656704E5934C3FF8A8AFD42165917F0F1E79E3916426E591 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/5Gu_VdBjTEuitZmedGM1BQ/zh-cn_image_0000002710019337.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B63774575BEBE7E57E1C2B5D6899096827C0E50EFAC96BAAD4ED97DC1E5EFD3 "点击放大")
 
 ### 实现原理
 
 图片与文字共用ImageAsset数据结构与NAPI接口，预览由Image组件叠加，导出由IGLRenderEngine + ImageManager在GPU侧合成。预览添加与手势的调用时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/3sVJNlBOQkm5SMRhqZYceA/zh-cn_image_0000002680179684.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=828F4D5CEFFD5D0748CF21723B755AF6E3FEE6A71CAE4846CFAD594C14363152 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/McoFiSQJQLy7QQcUp5rvgQ/zh-cn_image_0000002680179684.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=79811B2670DAF6126DCC16A6E4AAD31C0E7398927350E0A3976F3F0B6CD481E8 "点击放大")
 
 导出合成调用时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/1lp2-t4MQNO_qlT5agGW6A/zh-cn_image_0000002709859483.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=16F972A9D7A824EBD54F025DD8169C053A5B4D543E94D9F28A14E088087C5B45 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/kgbbnTweRnCTZLBeBxwx-Q/zh-cn_image_0000002709859483.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=D638D2E0C126A5C365771F6F2D3E45D2E8034038916A2415A2D6DBDF0153256B "点击放大")
 
 色彩空间要求：
 
@@ -703,7 +703,7 @@ content_hash: sha256:be339cf0e1d9d29aba11de04f2e677ac616a4a02e3bc046da2b800ee073
 
 在短视频编辑场景中，用户通常希望对视频的音频进行灵活控制：一方面可以选择保留或移除视频原声，另一方面可以叠加新的背景音乐。例如，为一段旅行视频配上轻快的配乐并关闭原声，或在保留环境音的同时叠加一段舒缓的背景音乐。用户可以从音频库选择音频文件，添加后会立即播放音乐。在导出时，音乐起点会与视频裁剪点对齐，音乐时长大于视频时长时进行裁剪，小于视频时长时循环填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/co6EJoImRby8QjnwoInzWA/zh-cn_image_0000002680339562.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=B91A301029616945DEE792F8D2FCBC4AB9B4D75F1C71B8F3043B673771789BB2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/wJzDsmsHReOS-uCwIljpLw/zh-cn_image_0000002680339562.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DFFEC65AEFC0221BA49D4D953AC6C4D3BAEA8BAC01B95E7756DEF2247EA9FE5 "点击放大")
 
 ### 实现原理
 
@@ -732,11 +732,11 @@ content_hash: sha256:be339cf0e1d9d29aba11de04f2e677ac616a4a02e3bc046da2b800ee073
 
 预览时序（原声控制 + 配乐叠加）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/xObWLzY_TKKgR5q_-zjlOQ/zh-cn_image_0000002710019339.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DFC01D7E734E7639C7D922DA8968ABF4601BA663893A2A3885CDE8DA5B76944 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/IOpYzaWlST2ZTCAwYfoV_Q/zh-cn_image_0000002710019339.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=3267B2ECCFA8F6DDF00BF4C061F789A1BEF7364446D2A15F7ACEF8042E6A9E82 "点击放大")
 
 导出时序（原声控制 + 配乐叠加）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/1mHavqqkQJGgjDsIdc0elQ/zh-cn_image_0000002680179686.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB108CB42C9016EC284D9AE99AB36E404583C3B05A672FEDC6BA3C1327FED4AF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/LWDoZLkpSH2u8KCsbnbZ_w/zh-cn_image_0000002680179686.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B56DF9CB576EBEB89443DDFC8EB93FF981B9C150A9B3E761280E7B2346C4CAC "点击放大")
 
 ### 开发步骤
 
@@ -1270,7 +1270,7 @@ content_hash: sha256:be339cf0e1d9d29aba11de04f2e677ac616a4a02e3bc046da2b800ee073
 
 视频裁剪功能允许用户通过拖动把手来裁剪视频的时长。拖动左把手设置视频从开头裁剪的长度，拖动右把手设置从尾部裁剪的长度。预览时视频从裁剪起点到裁剪终点循环播放，导出时视频从裁剪起点导出至裁剪终点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/P3kblho6RDq0t4aFFjjnYA/zh-cn_image_0000002709859485.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C58F7FAA1E48CBDF1489C340FD903254DF843D5BF3E7A0C40C9CB0DD27B0AB4B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/D7R_MyUySmahBlDvVkTOOg/zh-cn_image_0000002709859485.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=87BE82C0D924F3A0C7A659FF69A6FB9B38073707C4F0041A246AC203C9E5B3E8 "点击放大")
 
 ### 实现原理
 
@@ -1400,7 +1400,7 @@ content_hash: sha256:be339cf0e1d9d29aba11de04f2e677ac616a4a02e3bc046da2b800ee073
 
 视频编辑保存和导出功能是视频编辑器的最终输出环节。用户完成所有编辑操作后，点击"完成"按钮触发导出流程。界面显示半透明蒙层与进度条，暂停视频、原声与配乐播放，系统会将所有编辑效果（贴纸、文字、背景音乐、裁剪等）合成为一个新的视频文件，并保存到系统相册。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/PRB75E5YTryYDXMMZI7hTw/zh-cn_image_0000002680339564.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0CB2E5F1187ACBC63C5F3E61A10D0E02733D07865F14A101E1E8DDFB38B4557 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/HUiqDZjFQjWrYPy7oNJRQw/zh-cn_image_0000002680339564.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=76DC59533A59F2B1CCE11A1AEF41EFFBF99CB29B0EA2C8888AD9CEEC87C51460 "点击放大")
 
 ### 实现原理
 
@@ -1412,11 +1412,11 @@ content_hash: sha256:be339cf0e1d9d29aba11de04f2e677ac616a4a02e3bc046da2b800ee073
 
 因此PrepareExportEngine中的配置顺序为：Render（Create + SetViewParams + SetOutSurface + SetInVideoFormat）→ Encoder（Init + GetVideoInputWindow）→ Decoder（SetVideoOutputWindow + Init + AddAudio + AddImage）。调用时序（用户触发导出）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/PeNmNpv5QVCvwCUVa9aU7g/zh-cn_image_0000002710019341.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E85EBFC1669E61A9D3E116E6F64DB6E2B2149B9FBB2BA3117E048A3798D1188D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/XuCiuCAMT-GM5VAcSkSjbQ/zh-cn_image_0000002710019341.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=B78A0D6F7BAEB3E876E80182C30AA874C9DF050B99D7399ADB112DE1E0694F1F "点击放大")
 
 调用时序（引擎预配置PrepareExportEngine）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/4DNB349dTnutDIQp6YtC9w/zh-cn_image_0000002680179688.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F6071B1ABA5A053FB9CA5B025A58ACFB996A677DFC94CDDC57458D3A8B8454A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/WmX0MIm0RhemWLMlzikF8Q/zh-cn_image_0000002680179688.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0E493F761ACBB4F8401D66743C95B5C3B5AFC831563F7C8EE3D8305965F0F42 "点击放大")
 
 **启动顺序：** Render → Encoder → Decoder（与创建配置顺序不同，启动时先就绪下游再启动上游送帧）。
 
@@ -1655,28 +1655,29 @@ content_hash: sha256:be339cf0e1d9d29aba11de04f2e677ac616a4a02e3bc046da2b800ee073
    ```
 6. 当导出流程完成时，调用DestroyEditor()释放引擎资源，删除应用沙箱目录的文件路径和对应的文件。
 
-   ```typescript
+   ```screen
    // Exit the program directly after the export is completed.
    private completeCallback(): CallableFunction {
      clearInterval(this.state.exportInterval);
      return () => {
        this.state.isExporting = false;
-       this.saveFile()
-         .then(() => {
-           sdk.DestroyEditor();
-           //Delete the text and images in the application sandbox directory
-           if (this.state.wordFilePaths.length > 0) {
-             this.state.wordFilePaths.forEach(file => {
-               try {
-                 fs.unlink(file);
-                 Logger.info('delete success!')
-               } catch (err) {
-                 Logger.error(TAG, `delete failed, code is ${err?.code}, message is ${err?.message}`);
-               }
-             })
-           }
-           this.getUIContext().getRouter().replaceUrl({ url: 'pages/Index' });
-         });
+       this.saveFile().then(() => {
+         sdk.DestroyEditor();
+         // Delete the text and images in the application sandbox directory
+         if (this.state.wordFilePaths.length > 0) {
+           this.state.wordFilePaths.forEach(file => {
+             try {
+               fs.unlink(file);
+               Logger.info('delete success!');
+             } catch (err) {
+               Logger.error(TAG, `delete failed, code is ${err?.code}, message is ${err?.message}`);
+             }
+           })
+         }
+         this.getUIContext().getRouter().replaceUrl({ url: 'pages/Index' });
+       }).catch((err: BusinessError) => {
+         Logger.error(TAG, `Save file failed: ${err.code}, ${err.message}`);
+       });
      }
    }
    ```

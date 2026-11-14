@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-focu
 title: 音频焦点管理解决方案
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频焦点管理解决方案
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:2d8826c9f63c34d7c9fa5fcde0b7b60e0d02de4e20fd325685a3d69b4388b032
+scraped_at: 2026-11-14T08:54:08+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:037c772123be2cca6f7ed7a3d8bea93a25058b78cc8d02513fc20daf52559a54
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ content_hash: sha256:2d8826c9f63c34d7c9fa5fcde0b7b60e0d02de4e20fd325685a3d69b438
 
 不同应用可通过设置不同的音频焦点策略，以适配各种体验场景，满足用户良好的应用体验。同一应用内，则可通过调整焦点模式，适配不同体验场景，确保多音频播放的优质体验。同时本篇文章配套的sample覆盖了上述所有场景，效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/uMsCYHagQIaAjhM8Qja9Eg/zh-cn_image_0000002624617405.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABAF44FCD5A517704A26628B3AAF09CAB4600E2246B462CF36044C729B8B360D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Zw5xyEA3S9Kq2H-4sPJT7g/zh-cn_image_0000002624617405.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B8A4BFCD0CC99FDAFE186B502058AC9D5175059D5A7D467CA7694BF561633EA "点击放大")
 
 ## 实现原理
 
@@ -50,7 +50,7 @@ content_hash: sha256:2d8826c9f63c34d7c9fa5fcde0b7b60e0d02de4e20fd325685a3d69b438
 
 在详细了解音频焦点管理机制之前，开发者应先了解多音频流抢占焦点的时序流程。流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/SOYhztlKR_iTudO3UcQ3LQ/zh-cn_image_0000002531200167.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=032709D0EBDB2DB239B58A2F79AE25D6620CC3BB1357C792CEF3F39C15F7D9ED "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/dHsvgHZGQ-uUZRKgn-__KA/zh-cn_image_0000002531200167.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD43C6352D532818F9CB995D65A0B280B3FA632FF55237125801A01812A54D52 "点击放大")
 
 从上图可以看出系统音频焦点管理机制，开发者在开发音频相关功能时需要关注以下3点：
 
@@ -60,7 +60,7 @@ content_hash: sha256:2d8826c9f63c34d7c9fa5fcde0b7b60e0d02de4e20fd325685a3d69b438
 
 ### 音频流类型正确配置
 
-[音频流](../harmonyos-guides/audio-kit-intro.md#音频流介绍)类型是定义音频数据播放和录制方式的关键属性。
+音频流类型是定义音频数据播放和录制方式的关键属性。
 
 * **播放场景**
   + 音频播放场景的信息，可以通过[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage)进行描述。
@@ -79,11 +79,11 @@ content_hash: sha256:2d8826c9f63c34d7c9fa5fcde0b7b60e0d02de4e20fd325685a3d69b438
 
 系统根据先播和后播音频流类型，查询默认焦点策略。不同策略对应着不同的焦点处理方式，具体如下流程图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Kzn4uzT-SUiXKW-qBHW76Q/zh-cn_image_0000002499520260.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=75299312F41252915ED46D9725142ED77340001238F66F621121D1695B00CC95 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/2ygztTuDTM-BYCsACs8qyQ/zh-cn_image_0000002499520260.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1A6C77372C70B49213E63D118E88FE266E6197B19FBCB341AA7F62C2CC69D06 "点击放大")
 
 **音频流类型设置方法**
 
-应用可采用多种方法实现音频播放或录音功能，例如AudioRenderer、OHAudio、AVPlayer、SoundPool等。因此，设置音频流类型的方式也各不相同。比如，当开发者[使用AudioRenderer开发音频播放功能(ArkTs)](../harmonyos-guides/using-audiorenderer-for-playback.md)时，可以在调用[createAudioRenderer](../harmonyos-references/arkts-apis-audio-f.md#audiocreateaudiorenderer8)时，使用[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage)来设置音频流类型。具体开发细节可参考[使用AudioRenderer开发音频播放功能(ArkTs)](../harmonyos-guides/using-audiorenderer-for-playback.md)中的[完整示例](../harmonyos-guides/using-audiorenderer-for-playback.md#完整示例)。另外，更多正确设置音频流类型的方法和详细细节，可以参考指南[设置播放流类型](../harmonyos-guides/using-right-streamusage-for-playback.md#设置播放流类型)。其他方式可参考[推荐使用OHAudio开发音频播放功能(C/C++)](../harmonyos-guides/using-ohaudio-for-playback.md)、[使用AVPlayer播放音频(ArkTS)](../harmonyos-guides/using-avplayer-for-playback.md)、[使用SoundPool播放短音频(ArkTS)](../harmonyos-guides/using-soundpool-for-playback.md)。
+应用可采用多种方法实现音频播放或录音功能，例如AudioRenderer、OHAudio、AVPlayer、SoundPool等。因此，设置音频流类型的方式也各不相同。比如，当开发者[使用AudioRenderer开发音频播放功能(ArkTS)](../harmonyos-guides/using-audiorenderer-for-playback.md)时，可以在调用[audio.createAudioRenderer()](../harmonyos-references/arkts-apis-audio-f.md#audiocreateaudiorenderer8)时，使用[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage)来设置音频流类型。具体开发细节可参考[使用AudioRenderer开发音频播放功能(ArkTs)](../harmonyos-guides/using-audiorenderer-for-playback.md)中的[完整示例](../harmonyos-guides/using-audiorenderer-for-playback.md#完整示例)。另外，更多正确设置音频流类型的方法和详细细节，可以参考指南[设置播放流类型](../harmonyos-guides/using-right-streamusage-for-playback.md#设置播放流类型)。其他方式可参考[推荐使用OHAudio开发音频播放功能(C/C++)](../harmonyos-guides/using-ohaudio-for-playback.md)、[使用AVPlayer播放音频(ArkTS)](../harmonyos-guides/using-avplayer-for-playback.md)、[使用SoundPool播放短音频(ArkTS)](../harmonyos-guides/using-soundpool-for-playback.md)。
 
 **音频流类型与典型业务场景映射表**
 
@@ -116,16 +116,16 @@ content_hash: sha256:2d8826c9f63c34d7c9fa5fcde0b7b60e0d02de4e20fd325685a3d69b438
 
 AudioSession提供的四种会话策略（即自定义焦点策略），具体如下：
 
-1. **默认模式（CONCURRENCY\_DEFAULT）：**即系统默认的音频焦点策略。
-2. **并发模式（CONCURRENCY\_MIX\_WITH\_OTHERS）：**和其他音频流并发。
-3. **降低音量模式（CONCURRENCY\_DUCK\_OTHERS）：**和其他音频流并发，并且降低其他音频流的音量。
-4. **暂停模式（CONCURRENCY\_PAUSE\_OTHERS）：**暂停其他音频流，待释放焦点后通知其他音频流恢复。
+1. **默认模式（[AudioConcurrencyMode](../doccenter-references/api/arkts-apis-audio-e.md#audioconcurrencymode12)为CONCURRENCY\_DEFAULT）：**即系统默认的音频焦点策略。
+2. **并发模式（[AudioConcurrencyMode](../doccenter-references/api/arkts-apis-audio-e.md#audioconcurrencymode12)为CONCURRENCY\_MIX\_WITH\_OTHERS）：**和其他音频流并发。
+3. **降低音量模式（[AudioConcurrencyMode](../doccenter-references/api/arkts-apis-audio-e.md#audioconcurrencymode12)为CONCURRENCY\_DUCK\_OTHERS）：**和其他音频流并发，并且降低其他音频流的音量。
+4. **暂停模式（[AudioConcurrencyMode](../doccenter-references/api/arkts-apis-audio-e.md#audioconcurrencymode12)为CONCURRENCY\_PAUSE\_OTHERS）：**暂停其他音频流，待释放焦点后通知其他音频流恢复。
 
 **自定义策略原理**
 
 AudioSession的自定义焦点策略原理主要通过降低音频流优先级在系统默认策略上进行调整的。例如音频A stop 音频B，说明音频A优先级大于音频B优先级，此时开发者可以降低音频A优先级，自定义焦点策略为并发模式，使其能够与音频B进行并发播放。其原理流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/4LMsN3YATeO6aP8eyI4_OQ/zh-cn_image_0000002499360276.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9F09093B14227ECD3DF893387D87EE3518C2FB3E181069AA98FE024BC96641D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/zTrrEK61SNWW-mM3zniBgA/zh-cn_image_0000002499360276.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D7BFAB7DEEEF0FADD945D627869E03D138C518CA4D46F74A1831807B370C3D8 "点击放大")
 
 以上文的内嵌短视频播放中断后台音乐场景为例，短视频音频流类型为STREAM\_USAGE\_MOVIE，后台音乐音频流类型为STREAM\_USAGE\_MUSIC，系统默认策略为Stop模式，用户预期策略为Pause模式。
 
@@ -193,22 +193,22 @@ AudioSession自定义焦点策略的原则主要为以下2点：
 
 ### 应用内多音频流焦点处理
 
-针对同一应用创建的多个音频流，应用可通过设置[焦点模式（InterruptMode）](../harmonyos-references/arkts-apis-audio-e.md#interruptmode9)，选择由应用自主管控，或由系统统一管理。
+针对同一应用创建的多个音频流，应用可通过设置焦点模式（[InterruptMode](../harmonyos-references/arkts-apis-audio-e.md#interruptmode9)），选择由应用自主管控，或由系统统一管理。
 
 系统预设了两种焦点模式：
 
-* **共享焦点模式（SHARE\_MODE）**：同一应用创建的多个音频流共享一个音频焦点。这些音频流之间的并发规则由应用自行决定，音频焦点策略不会介入。仅当其他应用创建的音频流与该应用的音频流同时播放时，才会触发音频焦点策略的管理。
-* **独立焦点模式（INDEPENDENT\_MODE）**：应用创建的每个音频流均独立拥有一个音频焦点，多个音频流同时播放时，将触发音频焦点策略的管理。
+* **共享焦点模式（[InterruptMode](../doccenter-references/api/arkts-apis-audio-e.md#interruptmode9)为SHARE\_MODE）**：同一应用创建的多个音频流共享一个音频焦点。这些音频流之间的并发规则由应用自行决定，音频焦点策略不会介入。仅当其他应用创建的音频流与该应用的音频流同时播放时，才会触发音频焦点策略的管理。
+* **独立焦点模式（[InterruptMode](../doccenter-references/api/arkts-apis-audio-e.md#interruptmode9)为INDEPENDENT\_MODE）**：应用创建的每个音频流均独立拥有一个音频焦点，多个音频流同时播放时，将触发音频焦点策略的管理。
 
 应用可根据需求选择合适的焦点模式。在创建音频流时，系统默认采用共享焦点模式（SHARE\_MODE），多音频流间可以并发播放，若设置为独立模式，则音频流之前的打断策略使用系统默认焦点策略。应用可根据不同场景需求主动设置所需的焦点模式。下面以同应用内有两条音频流A和B为例，展示下在不同焦点模式下A和B的播放差异。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/uX9uDzraQKufGjMEccEVvA/zh-cn_image_0000002531280215.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=B96841A41401C0F25127258E9ADCC89B3487210B468D7B9357EF71133EEE82D4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/KKUj1oPaQIuxoCCDxzbVGA/zh-cn_image_0000002531280215.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=01D750A9CACC4858008D328F9F59A22E685770093C25DC7634656F12EF893878 "点击放大")
 
 设置焦点模式的方法：
 
 * 若[使用AVPlayer开发音频播放功能(ArkTS)](../harmonyos-guides/using-avplayer-for-playback.md)，则可以通过修改AVPlayer的[InterruptMode](../harmonyos-references/arkts-apis-audio-e.md#interruptmode9)属性进行设置。
 * 若[使用AVPlayer开发音频播放功能(C/C++)](../harmonyos-guides/using-ndk-avplayer-for-playback.md)，则可以调用[OH\_AVPlayer\_SetAudioInterruptMode](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setaudiointerruptmode)函数进行设置。
-* 若[使用AudioRenderer开发音频播放功能(ArkTs)](../harmonyos-guides/using-audiorenderer-for-playback.md)，则可以调用[setInterruptMode](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setinterruptmode9)函数进行设置。
+* 若[使用AudioRenderer开发音频播放功能(ArkTS)](../harmonyos-guides/using-audiorenderer-for-playback.md)，则可以调用[setInterruptMode](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setinterruptmode9)函数进行设置。
 * 若[使用OHAudio开发音频播放功能(C/C++)](../harmonyos-guides/using-ohaudio-for-playback.md)，则可以调用[OH\_AudioStreamBuilder\_SetRendererInterruptMode](../harmonyos-references/capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setrendererinterruptmode)函数进行设置。
 
 ## 不同应用间音频焦点冲突处理
@@ -240,19 +240,13 @@ async mediaPlay() {
 }
 ```
 
-```typescript
+```screen
 async activateAudioSession() {
   try {
     this.audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA)
     let concurrencyMode: audio.AudioConcurrencyMode = this.isMuted ?
       audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS :
       AppStorage.get(CommonConstants.KEY_AUDIO_CONCURRENCY_MODE) as audio.AudioConcurrencyMode;
-    // The default concurrency mode (system default focus policy) would interrupt the
-    // currently playing background audio, so it is mapped to mix with others to allow
-    // simultaneous playback.
-    if (concurrencyMode === audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT) {
-      concurrencyMode = audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS;
-    }
     let strategy: audio.AudioSessionStrategy = {
       concurrencyMode: concurrencyMode
     };
@@ -298,7 +292,7 @@ async mediaPause() {
 
 ### 实现原理
 
-可通过设置[焦点模式（InterruptMode）](../harmonyos-references/arkts-apis-audio-e.md#interruptmode9)，可以实现同应用内不同音频流之间的并发或中断效果，详细流程参考上文[应用内多音频流焦点处理](bpta-audio-focus-management.md#section168291861114)。
+可通过设置焦点模式（[InterruptMode](../harmonyos-references/arkts-apis-audio-e.md#interruptmode9)），可以实现同应用内不同音频流之间的并发或中断效果，详细流程参考上文[应用内多音频流焦点处理](bpta-audio-focus-management.md#section168291861114)。
 
 主要的开发步骤如下：
 
@@ -310,7 +304,7 @@ async mediaPause() {
 
 1. 定义播放实例类，每个实例类初始化时都需要创建一个单独的AudioRender实例，播放传入的音频流。
 
-```typescript
+```screen
 export class AudioItem {
   // ...
   public audioRenderController: AudioRenderController | undefined = undefined;
@@ -328,7 +322,7 @@ export class AudioItem {
 
 2. 初始化不同播放实例类，每个实例类传入不同对应音频流，保证一个AudioRender实例控制和渲染一条音频流。
 
-```typescript
+```screen
 @Component
 struct MultiAudioStreamPlayScene {
   private avSessionController: AVSessionController = new AVSessionController();
@@ -433,7 +427,7 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
    * 参考[音频流类型正确配置](bpta-audio-focus-management.md#section2888185819153)，选择正确的音频流类型。
    * 根据所用的音频开发方法，正确[设置播放流类型](../harmonyos-guides/using-right-streamusage-for-playback.md#设置播放流类型)。
 
-   ```typescript
+   ```screen
    initAVResource() {
      // Create an instance of AudioRenderer and set the audio stream type to STREAM_USAGE_VOICE_COMMUNICATION
      this.audioRenderController.createAndInitAudioRender(this.avSessionController, this.renderFileName,
@@ -605,19 +599,13 @@ async mediaPlay() {
 }
 ```
 
-```typescript
+```screen
 async activateAudioSession() {
   try {
     this.audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA)
     let concurrencyMode: audio.AudioConcurrencyMode = this.isMuted ?
       audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS :
       AppStorage.get(CommonConstants.KEY_AUDIO_CONCURRENCY_MODE) as audio.AudioConcurrencyMode;
-    // The default concurrency mode (system default focus policy) would interrupt the
-    // currently playing background audio, so it is mapped to mix with others to allow
-    // simultaneous playback.
-    if (concurrencyMode === audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT) {
-      concurrencyMode = audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS;
-    }
     let strategy: audio.AudioSessionStrategy = {
       concurrencyMode: concurrencyMode
     };
@@ -746,7 +734,7 @@ VoIP全屏专注通话场景具体实现：
 
 该问题主要是因为上下两个短视频保持焦点不连贯，导致在滑动间隙后台音频重新获取焦点恢复播放。上文提到的音频会话（AudioSession）机制除了能够自定义焦点策略以外，还具有延迟焦点释放的功能。原理流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/lmfDKJ_qRkurLol1Zjff4Q/zh-cn_image_0000002531200173.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1F9E8B0B75FD9752611274FECCEB7864290DEE3B674902B9BAF38085CFAF1F0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Ba1vdCv_S46KZ0kmWm3lqg/zh-cn_image_0000002531200173.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=26000A3CE122483C493F46BDEB44CB0FD5F3DE3E59A7A7CB2D8313C838351A5A "点击放大")
 
 1. 若AudioSession处于激活状态，应用的音频流全部停止时，不会立刻释放音频焦点，系统会保持音频焦点进入静默等待状态，直到音频会话停用或者该应用有新的音频流申请焦点。
 2. 若应用存在音频流处于运行状态，AudioSession停用后，不会立刻释放音频焦点，系统会保持音频焦点，直到应用所有音频流均停止。
@@ -762,7 +750,7 @@ VoIP全屏专注通话场景具体实现：
 
 * 根据业务需要，选择合适的[音频会话策略](../harmonyos-guides/audio-session-management.md#音频会话策略)以满足用户播放预期。针对该场景应当选择暂停模式（CONCURRENCY\_PAUSE\_OTHERS），同时监听短视频列表的滚动状态，在滚动时即使视频暂停，也不立刻释放焦点，滚动结束后再释放焦点，达到延时释放的效果。
 
-  ```typescript
+  ```screen
   Swiper(this.swiperController) {
     LazyForEach(this.source, (item: VideoData, index: number) => {
       VideoPlayer({
@@ -874,7 +862,7 @@ VoIP全屏专注通话场景具体实现：
 
 1. 当使用系统静音并发接口开发时，该接口让应用以静音状态开始播放音频（或视频），并且静音阶段不影响其他音频，当后续解除静音的时候，再以正常策略申请音频焦点。各类音频开发方法中的静音接口如下：
    * [使用AVPlayer播放音频(ArkTS)](../harmonyos-guides/using-avplayer-for-playback.md)，可以调用[setMediaMuted](../harmonyos-references/arkts-apis-media-avplayer.md#setmediamuted12)函数。
-   * [使用AudioRenderer开发音频播放功能(ArkTs)](../harmonyos-guides/using-audiorenderer-for-playback.md)，可调用[setSilentModeAndMixWithOthers](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setsilentmodeandmixwithothers12)函数。
+   * [使用AudioRenderer开发音频播放功能(ArkTS)](../harmonyos-guides/using-audiorenderer-for-playback.md)，可调用[setSilentModeAndMixWithOthers](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setsilentmodeandmixwithothers12)函数。
    * [推荐使用OHAudio开发音频播放功能(C/C++)](../harmonyos-guides/using-ohaudio-for-playback.md)，可调用[OH\_AudioRenderer\_SetSilentModeAndMixWithOthers](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_setsilentmodeandmixwithothers)函数。
 2. 当不使用系统静音接口开发时，则可以使用AudioSession自定义焦点策略为CONCURRENCY\_MIX\_WITH\_OTHERS（并发模式），并手动设置自身应用音量为0即可。具体参考[音频会话管理(ArkTS)](../harmonyos-guides/audio-session-management.md)进行业务实现。
 
@@ -921,7 +909,7 @@ VoIP全屏专注通话场景具体实现：
 3. **焦点中断事件处理解决方案**
    * 由于恢复事件属于非强制类型，系统不会自动恢复先播音频播放。先播应用收到中断提示为InterruptHint.INTERRUPT\_HINT\_RESUME（音频恢复）后，需要主动在相应的事件中调用播放接口完成恢复。具体操作参考[处理音频焦点变化](../harmonyos-guides/audio-playback-concurrency.md#处理音频焦点变化)。
 4. **焦点模式设置解决方案**
-   * 通过设置[焦点模式（InterruptMode）](../harmonyos-references/arkts-apis-audio-e.md#interruptmode9)，可以实现同应用内不同音频流之间的并发或中断效果。参考上文[应用内多音频流焦点处理](bpta-audio-focus-management.md#section168291861114)。
+   * 通过设置焦点模式（[InterruptMode](../harmonyos-references/arkts-apis-audio-e.md#interruptmode9)），可以实现同应用内不同音频流之间的并发或中断效果。参考上文[应用内多音频流焦点处理](bpta-audio-focus-management.md#section168291861114)。
 
 ### 后台长时任务与音频焦点管理的问题
 
@@ -933,7 +921,7 @@ VoIP全屏专注通话场景具体实现：
 
 **分析思路**
 
-后台长时任务的申请和取消具有一定的运行限制。应用若不遵守规范接入，则将会被系统管控，比如静音冻结、进程挂起等。长时任务具体使用场景和运行限制，请参考[后台长时任务使用场景和运行限制](../harmonyos-guides/continuous-task.md#使用场景)中的[使用场景](../harmonyos-guides/continuous-task.md#使用场景)和[约束与限制](../harmonyos-guides/continuous-task.md#约束与限制)。
+后台长时任务的申请和取消具有一定的运行限制。应用若不遵守规范接入，则将会被系统管控，比如静音冻结、进程挂起等。长时任务具体使用场景和运行限制，请参考[长时任务(ArkTS)](../doccenter-capabilities/continuous-task.md)中的[使用场景](../harmonyos-guides/continuous-task.md#使用场景)和[约束与限制](../harmonyos-guides/continuous-task.md#约束与限制)。
 
 **解决方案**
 
@@ -941,7 +929,7 @@ VoIP全屏专注通话场景具体实现：
 
 1. 应用执行的业务类型与长时任务的申请类型需要保持一致，否则系统会对应用进行管控，即应用退至后台会被挂起。如系统检测到应用只申请了AUDIO\_PLAYBACK（音视频播放），但实际上除了播放音乐（对应AUDIO\_PLAYBACK类型），还在进行录制（对应AUDIO\_RECORDING类型）。
 2. 应用申请长时任务后，需要执行相应的业务，否则系统会对应用进行管控，即应用退至后台会被挂起。如系统检测到应用申请了AUDIO\_PLAYBACK（音视频播放），但实际未播放音乐。
-3. 媒体播放类（流类型为STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE和STREAM\_USAGE\_AUDIOBOOK）和游戏类（流类型为STREAM\_USAGE\_GAME）应用申请后台长时任务播放时，必须接入媒体会话服务（[AVSession](../harmonyos-guides/avsession-overview.md)），且长时任务类型应当为AUDIO\_PLAYBACK。否则应用退至后台播放时会被系统静音并冻结，无法在后台正常播放，直到应用重新切回前台时，才会解除静音并恢复播放。
+3. 媒体播放类（流类型为STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE和STREAM\_USAGE\_AUDIOBOOK）和游戏类（流类型为STREAM\_USAGE\_GAME）应用申请后台长时任务播放时，必须接入媒体会话服务（AVSession，参考[AVSession Kit简介](../doccenter-capabilities/avsession-overview.md)），且长时任务类型应当为AUDIO\_PLAYBACK。否则应用退至后台播放时会被系统静音并冻结，无法在后台正常播放，直到应用重新切回前台时，才会解除静音并恢复播放。
 4. 用户主动点击音乐暂停播放时，应用需及时取消对应的长时任务；用户再次点击音乐播放时，需重新申请长时任务。
 5. 若音频在后台播放时被打断，系统会自行检测和停止长时任务，音频重启播放时，需要再次申请长时任务。
 6. 后台播放音频的应用，在停止长时任务的同时，需要暂停或停止音频流，否则应用会被系统强制终止。
@@ -957,14 +945,14 @@ VoIP全屏专注通话场景具体实现：
 
 如果后播视频进入后台暂停后，希望先播音频恢复，需要满足2个条件：
 
-1. 后播视频播放时需要先使用[音频会话管理](../harmonyos-guides/audio-session-management.md)设置焦点策略为暂停模式（CONCURRENCY\_PAUSE\_OTHERS）。
+1. 后播视频播放时需要先使用[音频会话管理(ArkTS)](../harmonyos-guides/audio-session-management.md)设置焦点策略为暂停模式（CONCURRENCY\_PAUSE\_OTHERS）。
 2. 当结束或者暂停播放时，需要使用停用音频会话以[释放音频焦点](../harmonyos-guides/audio-playback-concurrency.md#释放音频焦点)。
 
 **说明** 
 
-当应用[使用AudioRenderer开发音频播放功能(ArkTs)](../harmonyos-guides/using-audiorenderer-for-playback.md)或[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)，当暂停或者结束播放时，系统会自动为相应的音频流释放音频焦点。
+当应用[使用AudioRenderer开发音频播放功能(ArkTS)](../harmonyos-guides/using-audiorenderer-for-playback.md)或[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)，当暂停或者结束播放时，系统会自动为相应的音频流释放音频焦点。
 
-如果应用通过激活[音频会话管理](../harmonyos-guides/audio-session-management.md)申请过焦点，当暂停或者结束播放时，则需要结束AudioSession以释放焦点。
+如果应用通过激活[音频会话管理(ArkTS)](../harmonyos-guides/audio-session-management.md)申请过焦点，当暂停或者结束播放时，则需要结束AudioSession以释放焦点。
 
 因此，根据系统默认的焦点策略，当先播音频被后播视频打断，即使后播视频暂停，先播音频也不会恢复播放。如果需要先播音频恢复播放，需要设置后播视频焦点策略为暂停模式，并且在后播视频暂停时，需要及时释放音频焦点。
 

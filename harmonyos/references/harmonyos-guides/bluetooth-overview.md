@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bluetooth-ove
 title: 蓝牙服务开发概述
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 蓝牙服务开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:efa5ec20ebc9aca6aee4e0886390e87327acc99fdb32df6867cb579354f246e8
+scraped_at: 2026-11-14T08:47:34+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:687176fc2eca8a23afc299be90bf4a4e6ae711f0ab0f2e31cc222d3962424760
 ---
 
 ## 概述
 
 蓝牙技术是一种无线通信技术，可以在短距离内传输数据，该技术规范由蓝牙技术联盟（Bluetooth Special Interest Group, SIG）制定。可以用于连接手机、耳机、音箱、键盘、鼠标、打印机等各种设备。目前蓝牙有两种常见的技术分类：传统蓝牙（BR/EDR）和低功耗蓝牙（BLE）。
 
-蓝牙的实现原理是基于无线电技术的短距离通信协议，使用2.4GHz频段的无线电波进行通信，使用频率跳跃技术（Frequency Hopping Spread Spectrum，FHSS）来避免与其他无线设备的干扰。在通信过程中，蓝牙设备会发送和接收数据包，并且使用不同的蓝牙协议来控制通信流程和数据传输。
+蓝牙的实现原理是基于无线电技术的短距离通信协议，使用2.4GHz频段的无线电波进行通信，使用频率跳跃技术（Frequency Hopping Spread Spectrum, FHSS）来避免与其他无线设备的干扰。在通信过程中，蓝牙设备会发送和接收数据包，并且使用不同的蓝牙协议来控制通信流程和数据传输。
 
 ## 传统蓝牙
 
@@ -30,7 +30,7 @@ content_hash: sha256:efa5ec20ebc9aca6aee4e0886390e87327acc99fdb32df6867cb579354f
 
 在蓝牙服务开发过程中，涉及两种维度的地址类型定义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/l4V5ccv-Rz-jm1xQRrBi6A/zh-cn_image_0000002815399211.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=D89AF9CD12144D7EC1B87DA556D5E7F4650E855E42C95F840B902A81F3174E31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/AhwyHijZSpq0eE9OB2EZFg/zh-cn_image_0000002817506871.png?HW-CC-KV=V1&HW-CC-Date=20261114T004554Z&HW-CC-Expire=31536000000&HW-CC-Sign=440975D08D34ABA5360A7E90E7CD7217FD262B732C741A73A30C9C84AA76A00B)
 
 **图1** 蓝牙设备地址类型
 

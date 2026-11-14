@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: CalendarPicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > CalendarPicker
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:12+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9bf4853b3e32bf67bf05fa8d60ff04f76fc2754c0e01afdcde2c795cf2aa8a99
+content_hash: sha256:4def6f971e8e64c37821c95c9c7da17c8716a638ede62617d4225097001e8ac2
 ---
 
 日历选择器组件，提供下拉日历弹窗，用户可快速选择日期。适用于需要用户选择具体日期的场景，如预订系统、日程安排、日期筛选等，提供直观的日历视图，提升用户日期输入体验。
@@ -271,7 +271,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/FSI_Yl8_TU2I-aX_TebEoA/zh-cn_image_0000002786361228.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=75E0919DFD99F0C7FC72ED32ABB7F1698A245DACF20698B1D13B661A0B857109)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/YOtU4qPJSCKFndoTkpdE5A/zh-cn_image_0000002817508393.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE512275182E5FAAEF9007EF210B8AF0FECDC1552DA71D0BC258AC745FBE3F0B)
 
 ### 示例2（设置开始日期和结束日期）
 
@@ -304,7 +304,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/WRo36EW_RRG5g7zIwiFZ8g/zh-cn_image_0000002815560649.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF33991E0176D358E1F96B6BD6D4673CC0B1C76359B6F15D4190FE81BFF769BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/M29i1W5LTmKRq0sOn0Ul2A/zh-cn_image_0000002788308962.png?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=8156E55B08DBC9CD98864DFAD02D6BAD4A2A27AB3B6F9A309392E5BFADC0D91C)
 
 ### 示例3（设置日历选择器在系统当前日期时，保持高亮显示和禁用日期区间）
 
@@ -338,4 +338,4 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Rm27qXhiR_i9hfFFFxEdBQ/zh-cn_image_0000002815400733.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=B45EA01A611E9C4931B85C4F32FFB75349A1CAB791FB0CD07C3EC7BC4F047C87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/t4FVCrPsRuyIRkSj6Xzkiw/zh-cn_image_0000002817428325.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=03998CD9664FCD12729A4583F703D6D5B5C5ADDEA147A5AD82051533B6EEDA3E)

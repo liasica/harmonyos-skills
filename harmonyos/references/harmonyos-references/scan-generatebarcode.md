@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-gene
 title: generateBarcode (码图生成)
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API > generateBarcode (码图生成)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:56:53+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:1fc828dd862fe4ffb91a7b1fb6d24a0a5f7f64ab18e7fa88e18c93af439b62c9
+scraped_at: 2026-11-14T08:53:00+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:bb248bd4916cbd43779b03e2d3e5b5d941813f1968cff350b5fe6d2b4fd7a660
 ---
 
 ## 模块概述
@@ -77,6 +77,11 @@ import { generateBarcode } from '@kit.ScanKit';
 
   1. 生成QR Code、Data Matrix、Aztec类型的码图时，输入的width和height值相同且均大于等于200小于等于4096，单位：px，否则生成的码图过小会影响识别。
   2. 生成EAN-8、EAN-13、UPC-A、UPC-E、Codabar、Code 39、Code 93、Code 128、ITF-14、PDF417类型的码图时，建议输入的width和height值比例为2:1，并且width值需大于400，单位：px，否则生成的码图会过小影响识别。
+
+QR Code编码约束：
+
+* QR Code生成遵循ISO/IEC 18004标准。当码内容包含非ASCII字符（如中文、日文、表情符号等）时，码图会自动携带ECI（Extended Channel Interpretation）标识，并声明字符集为UTF-8；当码内容仅包含ASCII字符（如英文、数字）时，不携带ECI标识。
+* 部分老旧专用扫码设备不支持ECI标识解析，可能出现无法识别或内容解析错误的情况。
 
 **示例：**
 

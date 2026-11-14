@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsNavigation (导航根视图容器)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsNavigation (导航根视图容器)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:ad21aabb50dc59c5ac7c67e1543d089d24c5bafe3b3400c6c0f694a5825fa483
+scraped_at: 2026-11-14T08:51:19+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:70fba8625003422c8051b10b626c706e1f241666db553082b192e15585bf4224
 ---
 
 本模块提供导航组件的能力，默认支持标题栏随内容区滚动的动态模糊样式。6.0.0(20)及以上版本，推荐使用[bindToScrollable](ui-design-hdsnavigation.md#bindtoscrollable)、[bindToNestedScrollable](ui-design-hdsnavigation.md#bindtonestedscrollable)属性绑定导航组件和可滚动容器组件后，再使用导航组件滚动相关的功能，从而获得更优的体验。如滚动生效动态模糊样式，标题栏随内容区滚动动态显隐功能等。
@@ -54,7 +54,7 @@ HdsNavigation(pathInfos?: NavPathStack, homeDestination?: HomePathInfo)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pathInfos | [NavPathStack](ts-basic-components-navigation.md#navpathstack10) | 否 | 路由栈信息。 |
-| homeDestination | [HomePathInfo](ts-basic-components-navigation.md#homepathinfo20) | 否 | 主页NavDestination信息。  **起始版本：** 26.0.1 |
+| homeDestination | [HomePathInfo](ts-basic-components-navigation.md#homepathinfo20) | 否 | 首页对应的NavDestination配置信息。  **起始版本：** 26.0.1 |
 
 ## 属性
 
@@ -1431,7 +1431,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/HhWfiyMWR_aSW8Ah30ZihQ/zh-cn_image_0000002786362080.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=16913CBA988C2F74FA4DA018A208321A8A557752597886A684DBBEAAD5F88D7B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/tkaGZ6YuROSmv74J0mYT7Q/zh-cn_image_0000002817509245.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004905Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9B7C52321D50977C0CB4BC6D46CFB1166B406D1DF3615869CBCD38CA47BAD59)
 
 ### 设置菜单消息提醒
 
@@ -1495,7 +1495,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/tPtpJXIVQ6uWluBmofKp9Q/zh-cn_image_0000002815561501.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=120A24F3065FB98B6AD15CB5E24C6942CD1173EA9796A040BE61B0DB2A4FA1E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/HStrlVWMQZ6RcfjAPGa19w/zh-cn_image_0000002788309814.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004905Z&HW-CC-Expire=31536000000&HW-CC-Sign=05F33F61EC34354C9E52ED08C4619C8543DF47FEE467E95C6C7946250EE35A5B)
 
 ### 设置自定义区域
 
@@ -1583,7 +1583,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ztyGddOBRa2QY8_PGTnJVQ/zh-cn_image_0000002815401585.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=6295A75AADC35A30154E457C94F0C7A8904ACB1738C6FD021EEC11CDDFF431A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/Ry49e_IqTXaBOaS-_wAonA/zh-cn_image_0000002817429177.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004905Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C97CFD71FA61AFB787E1A078106181A0D68002A1F0A2A9F2F198A6323E5A156)
 
 ### 设置标题栏的动态显隐
 
@@ -1650,7 +1650,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Zv_mt1NoSUC-2gP7-M9xEg/zh-cn_image_0000002786522010.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=956272F81AC29DB489A927BF9EF7FF766E19C58D744AC72D17E1FD9F170E7430)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/kwn8ua3XS3mUYLA9MG0JXg/zh-cn_image_0000002788469758.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004905Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA2B604AAB34670B0AF2B2453268B5413236E296BB7EDF8C91680600981E4A2C)
 
 ### 设置标题栏图标样式
 
@@ -1726,7 +1726,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/drOewNXWSPqncUlsuNpJ-Q/zh-cn_image_0000002786362082.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=411680B3239D5656C9089031C4606B73625B479395814639ABB20E48398FDDD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/T0tBAq67QYiy5SB4y7iYqg/zh-cn_image_0000002817509247.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004905Z&HW-CC-Expire=31536000000&HW-CC-Sign=355510E7338CA336453A7124F5A8AD41193B33A6418F2ACCCACCA560C81B3278)
 
 ### 半模态标题栏样式
 
@@ -1819,7 +1819,7 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/lvuhu97iQhCAQQnCQLeo7A/zh-cn_image_0000002815561503.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC6AB00E6FFC9866E42088DA74E6AA57BA93A188EE51E4D771653ED1D99C710A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/86WMaefgTKKWJ7SS3Yjlrw/zh-cn_image_0000002788309816.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004905Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E2B65823666BE9E4D82E3C4C34CECBC0BDA49495DC8B7D055F762B5828FBD1F)
 
 ### 图标上绑定自定义menu
 
@@ -1912,7 +1912,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/O0Hx-gvdQaSzCiWo5wFfLg/zh-cn_image_0000002815401587.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FEAF831B914A7213C6A478332CE3914B9CC4B22C5A1D0E148C33143C7DF20E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/EERzVfr7T6yfhkwZ3e9CMQ/zh-cn_image_0000002817429179.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004905Z&HW-CC-Expire=31536000000&HW-CC-Sign=32E232D5A500102EFAFDA2DE463D94788FDF5A2BD12A100812D0BF47FC024F85)
 
 ### 设置应用内多窗图标
 
@@ -1965,7 +1965,7 @@ struct MultiWindowEntryInAPPTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/2aY3VRsgTWenCDdY5faN3w/zh-cn_image_0000002786522012.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFF3962D3663784AE9D0AEC8B2FC862BAE7AC522710876D8CFF3371D72593A80)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/oQcbI2N0RKejnB1tgCWSgw/zh-cn_image_0000002788469760.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004905Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EF1A220514CDFC6E3893B8C87C49147AFF37B6562C19C1BFF1F53660DC9AB67)
 
 ### 设置HdsNavigation双栏模式
 
@@ -2032,7 +2032,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/gYw2HvWNSBWW_io42kuROQ/zh-cn_image_0000002786362084.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF5414B725E03AA8E4DA5209C467A96245FB0AA373E9FC5D1CEA1AB16F41AA74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/KAUAhApPQqSAyVxVaTGvjQ/zh-cn_image_0000002817509249.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004905Z&HW-CC-Expire=31536000000&HW-CC-Sign=06CA5AC2AEAA10E294BBE9C696313A8C6B04AF63EFD26AD1C49AD7A102E05B5F)
 
 ### 设置标题栏沉浸式样式
 
@@ -2140,7 +2140,7 @@ struct Index {
 
 执行上述代码展示的效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/-X7rYUB5S-68_Qbcyj_Dxw/zh-cn_image_0000002815561505.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB335D1F2763E940064BDAE27DCFFC6F3504ECF6852850C4D81ADA5F79BEE8E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/OD89c-GZRUm_dolDwoV4fQ/zh-cn_image_0000002788309818.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004905Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8D5334C5C250C7821BB92CC569D53385FE0601ADC37B22C837E080B803AF4A2)
 
 ### 通过onReady获取栈
 
@@ -2281,4 +2281,4 @@ struct NavigationExample2 {
 
 执行上述代码，效果展示如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/e7nyc4SuS4Wrnvj1LTdlTw/zh-cn_image_0000002815401589.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=92B020D1D21632BDC76F20F076901CD4A0B40385E6730A004F8D61CA5709A093)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/2mmEOAlFRr6b9RhopBtiAw/zh-cn_image_0000002817429181.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004905Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F42416EA3DC0DCE65DF71B4B05B0FE74406EE509DB35BDE2375B8D4917C2DF6)

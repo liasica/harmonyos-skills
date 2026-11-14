@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-redirecti
 title: 管理页面跳转及浏览记录导航
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 管理页面跳转及浏览记录导航
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:15+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:328d73da7fbfe8b9bf3101ca138801716736e6b17f5a99f92e700c7026769688
+content_hash: sha256:e423e9bd0ee4cd3dcb61e48313508a2024a8adf7a1b2cfbb4455e7cbbfffb322
 ---
 
 为了提高页面访问速度，浏览记录导航允许用户通过“前进”和“后退”按钮在历史记录的页面之间切换。Web组件支持用户跳转到应用内其他页面或者进行跨应用跳转。
@@ -172,4 +172,4 @@ Web组件可以实现点击前端页面超链接跳转到其他应用。
   </html>
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/BliYH7lSQoeiFFwdnh5pXQ/zh-cn_image_0000002815398951.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BF28D7B1AAA3A3187D05804DE8127D54F650A95E747E6B175B428C86D54D2E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/PeMNiqwoSLWsheigfnBJmg/zh-cn_image_0000002817506609.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=39C0E2418103658D92BD940A2F5B02D911E20A9037E14B454CF498EF6FD693B8)

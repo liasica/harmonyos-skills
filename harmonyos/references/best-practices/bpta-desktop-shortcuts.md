@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-desktop-sh
 title: 桌面快捷方式
 breadcrumb: 最佳实践 > 应用框架 > 程序包结构 > 桌面快捷方式
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:04bdf3a5d047fc1b00b25dde114ddcfec03ceb8c1b2787cb9ffcb6eae9a34e97
+scraped_at: 2026-11-14T08:54:06+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:769196682aee787c40b97125d5a1224805eb13ce2db2fec2349d34b60fbdf363
 ---
 
 ## 概述
@@ -20,10 +20,10 @@ content_hash: sha256:04bdf3a5d047fc1b00b25dde114ddcfec03ceb8c1b2787cb9ffcb6eae9a
 
 * 点击快捷方式入口列表中的“回家”项，即可快速打开地图应用，开启从当前位置到家的导航路线选择。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/UGy2eq75Q8iOiTj-w40bOA/zh-cn_image_0000002229451729.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=149B43C566AE87DAEF9A05DF9DE7FCB02D61E44E037830EF3C08F1C124C7E4A8 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/_F6DkjSOSoGHOAjGCkOCBQ/zh-cn_image_0000002229451729.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C5E289F071BDE38D0C000443D06D37D8ACEE53573B6946DBE65102D6A3BF935 "点击放大")
 * 长按快捷方式入口列表中的“回家”项，可将其拖动至桌面，点击桌面对应图标，即可开启从当前位置到家的导航路线选择。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/G4BSUHGQQYWZuTXVPCiLgQ/zh-cn_image_0000002229451733.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=87AAA95CF0B2F5C58EB9C8524C58FB9F2B26DCE3E8328EAF78C2B6903C19A1FC "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/P7cWvl1PQz6vQ5uI83X2cg/zh-cn_image_0000002229451733.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=A37CEC8D06017378144BDE93AA853BF52D2D842B621B601C90AF93054CB3ED7F "点击放大")
 
 **说明** 
 
@@ -33,7 +33,7 @@ content_hash: sha256:04bdf3a5d047fc1b00b25dde114ddcfec03ceb8c1b2787cb9ffcb6eae9a
 
 ### 关键技术
 
-使用shortcuts（参考[shortcuts标签](../harmonyos-guides/module-configuration-file.md#shortcuts标签)）来配置应用的快捷方式，其配置值为数组，包含四个子标签shortcutId、label、icon、wants。
+使用[shortcuts标签](../harmonyos-guides/module-configuration-file.md#shortcuts标签)来配置应用的快捷方式，其配置值为数组，包含四个子标签shortcutId、label、icon、wants。
 
 * shortcutId：标识快捷方式的ID，取值为长度不超过63字节的字符串。
 * label：标识快捷方式的标签信息，即快捷方式对外显示的文字描述信息。取值为长度不超过255字节的字符串，可以是描述性内容，也可以是标识label的资源索引。
@@ -54,7 +54,7 @@ content_hash: sha256:04bdf3a5d047fc1b00b25dde114ddcfec03ceb8c1b2787cb9ffcb6eae9a
   | 单个path解析出的非move verb数 | 100,000 |
   | mask/filter/opacity累计设备像素消耗 | 500,000,000 |
   | 单个 `<feMerge>` 的输入数 | 10 |
-* wants：标识快捷方式内定义的目标wants信息集合，wants（参考[wants标签](../harmonyos-guides/module-configuration-file.md#wants标签)）中可配置如下参数：
+* wants：标识快捷方式内定义的目标wants信息集合，[wants标签](../harmonyos-guides/module-configuration-file.md#wants标签)中可配置如下参数：
 
   | 属性名称 | 含义 |
   | --- | --- |
@@ -63,11 +63,11 @@ content_hash: sha256:04bdf3a5d047fc1b00b25dde114ddcfec03ceb8c1b2787cb9ffcb6eae9a
   | abilityName | 表示快捷方式的目标组件名。 |
   | parameters | 表示拉起快捷方式时的自定义数据，仅支持配置字符串类型的数据。其中键值均最大支持1024长度的字符串。 |
 
-[shortcuts](../harmonyos-guides/module-configuration-file.md#shortcuts标签)配置完成后，还需要在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中配置metadata字段（参考[metadata标签](../doccenter-getting-started/module-configuration-file.md#metadata标签)）来指定应用的快捷方式配置文件，从而完成快捷方式的基本配置。
+shortcuts配置完成后，还需要在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中配置metadata字段（参考[metadata标签](../doccenter-getting-started/module-configuration-file.md#metadata标签)）来指定应用的快捷方式配置文件，从而完成快捷方式的基本配置。
 
 **说明** 
 
-通过在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中配置metadata字段的快捷方式是一种在系统中创建的可以快速访问应用程序或特定功能的链接，与卡片（参考[Form Kit简介](../harmonyos-guides/formkit-overview.md)）的区别在于：快捷方式只允许跳转至某个具体的UIAbility，无法直接跳转至非入口页面。
+通过在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中配置metadata字段的快捷方式是一种在系统中创建的可以快速访问应用程序或特定功能的链接，与卡片（参考[卡片使用场景](../doccenter-capabilities/formkit-overview.md#卡片使用场景)）的区别在于：快捷方式只允许跳转至某个具体的UIAbility，无法直接跳转至非入口页面。
 
 ### 实现流程
 
@@ -84,7 +84,7 @@ content_hash: sha256:04bdf3a5d047fc1b00b25dde114ddcfec03ceb8c1b2787cb9ffcb6eae9a
      ]
    }
    ```
-2. 在/resources/base/profile/目录下创建名为shortcuts\_config.json的文件，并在文件中定义应用快捷方式的相关配置。其中shortcutId表示快捷方式的ID、label表示快捷方式对外显示的文字描述信息、icon表示快捷方式的图标、[wants](../harmonyos-guides/module-configuration-file.md#wants标签)中则是快捷方式内定义的目标wants信息集合。通过wants中的parameters参数来指定拉起快捷方式时的自定义数据。
+2. 在/resources/base/profile/目录下创建名为shortcuts\_config.json的文件，并在文件中定义应用快捷方式的相关配置。其中shortcutId表示快捷方式的ID、label表示快捷方式对外显示的文字描述信息、icon表示快捷方式的图标、wants中则是快捷方式内定义的目标wants信息集合。通过wants中的parameters参数来指定拉起快捷方式时的自定义数据。
 
    ```json
    {

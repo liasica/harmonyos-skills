@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-canvas
 title: CanvasRenderingContext2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasRenderingContext2D
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:19+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2cff41430949f3bca9ff3b0e757c861c9572e914c7154eb861d80e9505cb222e
+content_hash: sha256:e149aa65563a879b64944d8d37e97d6c553d5f29d153ba2bc1cac5254a0d489f
 ---
 
 CanvasRenderingContext2D是Canvas组件的2D绘图上下文对象，用于在Canvas组件上进行自定义绘图。支持绘制形状（矩形、圆形、椭圆、路径等）、文本、图片、渐变、阴影等多种绘制类型，适用于数据可视化、游戏开发、图像编辑、自定义UI绘制等场景。通过该对象，开发者可以灵活控制绘制过程，实现复杂的2D图形效果。
@@ -109,7 +109,7 @@ struct LengthMetricsUnitDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/yR7QcOiqR5KB654Zt9ywnw/zh-cn_image_0000002815400979.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1854312430C83ECC248F39260739BDDC98128D8792807B5CCA29ADBA45072BF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/a4D98385QvSiaGBNmJi0vQ/zh-cn_image_0000002817428571.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=D232CE691BA6DBFCDCEFA13CE1C4AD6CA816526530B63A98CEDACBC69D82C81F)
 
 ## 属性
 
@@ -177,7 +177,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/PH7CnaR7Tw6zHar-Ewqdig/zh-cn_image_0000002786521404.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C40F39F10CF9DAFE78A30D84168656492AC3269E61E6AFCACF9415018FA201B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/4TRhBbdbSw69Wvhwj8sN_A/zh-cn_image_0000002788469152.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD40421A5516E7C6F8401AA9022EB5763FDDEB1729EE29D7BF803DE15BD598D0)
 
 ## on('onAttach')13+
 
@@ -402,7 +402,7 @@ struct AttachDetachExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/x9b3tSQbSkqfTSBGzq2iYQ/zh-cn_image_0000002786361476.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4F7F53DB29121B3D8CFCD8EF6B51BA97695E8EB26D4873CB5BA2C9967275C46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/0BVemXc5QHSO4Dd1ks_43Q/zh-cn_image_0000002817508641.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=185F50913FEFA49A1ADE0E665D6F9D4D315B8B3452BA4AC52A90E97FF5C0B24A)
 
 ## startImageAnalyzer12+
 
@@ -534,7 +534,7 @@ struct ImageAnalyzerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/63-5ZyfSSbW_pGzeckaJAg/zh-cn_image_0000002815560897.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=46909FBA7D13EECFCD8EEB37DE4F909C5B699808559FDDC75708039FE7DC7793)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/SGlkFa5bR3W-ZWgWRLmxDQ/zh-cn_image_0000002788309210.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=40BA38243D9459512A6B80C5CF51E562B1753CBD84AEA846118766F45E307DD1)
 
 ## getContext2DFromDrawingContext23+
 
@@ -602,7 +602,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/cNwje0IbS1S-4P9QD7-IoA/zh-cn_image_0000002815400981.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=79F9C9370EB52B700FA19F6B45B9E5EBF2BC9856DD64B5DEA9D9647C69252793)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/2IYtnmOsRGCpFoedAEVytg/zh-cn_image_0000002817428573.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=18D67E6EE7AF8E3F0D5B608ACAB1E338C88726EE6ECB90358DD227B1E2C39E6D)
 
 ## RenderingContextOptions23+
 
@@ -697,7 +697,7 @@ struct WidthExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/YHjgyFtIQSuHrr_NJHQnTQ/zh-cn_image_0000002786521406.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4103F6D32ADAB0CEE3CECA6C08610BA3CF1220716EB8552DF8596878CB64D77C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/1OWrH1rERQSthaqNwsHzsg/zh-cn_image_0000002788469154.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=554C9CBA248221C6F198FEA13B0FFB68744AE0206E7C8098471C4B9EA1E47EC0)
 
 ### 示例2（height属性用法）
 
@@ -726,7 +726,7 @@ struct HeightExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/N5Mtt7xST5mhX04yYk2dnA/zh-cn_image_0000002786361478.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=12AC3D33EE2A9854092252CFFFCF4A9831791EF05797B14CE084C7497C4142D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/4F8iWesgSCmKUyfDvJkzNA/zh-cn_image_0000002817508643.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E48D3E2E030A4B1B2EA5F00BFABCF92F0F8C5D7A589D8E635DE4F7E1F26CE15)
 
 ### 示例3（canvas属性用法）
 
@@ -770,4 +770,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/QaT5EX65QLiYz_FJnc9_-A/zh-cn_image_0000002815560899.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA9BC1ED796D17BFC87DEDC9B63787A7310CCC18B2591AF0AB31A3D809A52EDB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/zJ_ohEN2Qui0eFDKbNJr0Q/zh-cn_image_0000002788309212.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3B8963E44B7E3BA2A6EB08768BA37EDE602CE1EE5CBB2B6C197EC0AA9518983)

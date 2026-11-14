@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 设置游戏负载自适应（C/C++）
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选） > 开发指导（C/C++） > 设置游戏负载自适应（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:17+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c9a4ebec5ee700d471a811caca462c7353810c7f5ff61b4bebee31db001bc2a3
+content_hash: sha256:8e8dbf9c86f25be75aa12660bfe306e7b45a5adc7b989a4e9a23256a69870a10
 ---
 
 从5.0.0(12)版本开始，游戏场景感知服务支持负载自适应能力。
@@ -15,7 +15,7 @@ content_hash: sha256:c9a4ebec5ee700d471a811caca462c7353810c7f5ff61b4bebee31db001
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/nm6joiUUTYCTNfe66aRFqA/zh-cn_image_0000002815559721.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E5D116363D16256502A927797BD3C9AE0FFE6C96CA8E8B8DCC60E383688E166)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/IreyrRsZTa6tJVHDhTkx8A/zh-cn_image_0000002788467976.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=B305C1C7D97073F2D560CCA6547257FAE46D2E0EA728C4FEAD194E113E72D928)
 
 1. 游戏启动后调用[HMS\_GamePerformance\_Init()](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_init)接口对游戏场景感知进行初始化。
 2. 初始化成功后，游戏调用[HMS\_GamePerformance\_RegisterThermalLevelChangedCallback()](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_registerthermallevelchangedcallback)接口注册设备状态变化事件监听，订阅设备状态变化通知。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-no-networ
 title: 离线环境配置指导
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 离线环境配置指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:49+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:957731f2ca9d0e759b18d0c155f46fb6d3590e2299ff668442f440f9030aada5
+content_hash: sha256:6d8e43449eff405f0defa7592c68c8125f792d560d21b620d7fa9d6cb976ff8f
 ---
 
 如果开发者所使用的电脑处于完全无网络的离线环境中，需要先在一台可访问网络的电脑上准备好以下文件，将这些文件拷贝到无网络电脑中。
@@ -26,7 +26,7 @@ content_hash: sha256:957731f2ca9d0e759b18d0c155f46fb6d3590e2299ff668442f440f9030
 
 [配置环境变量并打开命令行工具](ide-commandline-get.md#section17776863449)，执行ohpm install命令，会生成oh\_modules文件夹和oh-package-lock.json5文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/hfVknpXHRlO_lWLpvoEnug/zh-cn_image_0000002779407304.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4214BA4430E69C8622BFBE27715C25E5CC1F544510927D2A9AD428C704395BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/lNk8dseDRySRfvnh7g0e2Q/zh-cn_image_0000002779407304.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2CCA72F5141732B38C5FCFB6CE83FAD6AAC8A1C19792C3C043C7ACF32A8F6B7)
 
 将oh\_modules文件夹和oh-package-lock.json5文件拷贝到无网络电脑的工程根目录下。
 
@@ -52,7 +52,7 @@ content_hash: sha256:957731f2ca9d0e759b18d0c155f46fb6d3590e2299ff668442f440f9030
 
   打开命令行工具，执行ohpm install命令，会生成oh\_modules文件夹和oh-package-lock.json5文件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/266zKV4PQASCUmJOYXfuFg/zh-cn_image_0000002779407306.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=F348C37ABB4E58A6F1DB1D069E736760A0053B4AA6C2C795DF15B5392A0225D7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/4rC0NUCWRX6Yd_1u6qjsWg/zh-cn_image_0000002779407306.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=16787A521E7DB1ED5CFC59A299BF1987F8848B94A21492BF8DC2CCB47A7493C8)
 
   将oh\_modules文件夹和oh-package-lock.json5文件拷贝到无网络电脑的工程根目录下。
 

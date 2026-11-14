@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 实现秒级启动
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏启动加速服务 > 秒级启动 > 实现秒级启动
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a93e583aede940569e222db45f03c97ab961a6fa4539071df98f1a078acf41d3
+content_hash: sha256:b1b535d2a0a167136f5f182a01aaa57501a36c9496b1e737ab2c158aa47ec84f
 ---
 
 ## 业务流程
@@ -16,7 +16,7 @@ content_hash: sha256:a93e583aede940569e222db45f03c97ab961a6fa4539071df98f1a078ac
 
 注意：团结引擎1.8.1～1.9.0版本在Tablet设备上存在未捕获异常的问题，详细信息请参见[本文FAQ](graphics-accelerate-launch-faq-11.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/vglQM7BNS-eFaQEByM8ZEw/zh-cn_image_0000002786520042.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E99D355EFDEDFB00F33897772A5EA1D566A892D56522B4EE45742DAB8289A48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/AyTCMPfDRruiBK5J2i7ecg/zh-cn_image_0000002788307846.png?HW-CC-KV=V1&HW-CC-Date=20261114T004625Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0AD1B7FA26DA480A9CFFAB4AE54CF8357BCCE0E5359CC92AB130BD03A872C17)
 
 1. 用户启动游戏。
 2. 游戏在onCreate生命周期中调用[setSupportedProcessCache](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextsetsupportedprocesscache12)接口，设置游戏支持缓存后快速启动。
@@ -40,7 +40,7 @@ content_hash: sha256:a93e583aede940569e222db45f03c97ab961a6fa4539071df98f1a078ac
 
 ## 生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/oj6NqRuwRq-VBwf_sZLAXw/zh-cn_image_0000002786360114.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFB62D866DCE551719D30E4006338EF5C0974A6DAECDF6DD39B48CA7C403CF18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/q65CLgLLTRWxTp5GFSq87w/zh-cn_image_0000002817427209.png?HW-CC-KV=V1&HW-CC-Date=20261114T004625Z&HW-CC-Expire=31536000000&HW-CC-Sign=89C09F24CA48012A2DE7DC5F8A8D66C85474A26A692EA2C51E108FC24F17FF99)
 
 * 游戏冷启动场景
 

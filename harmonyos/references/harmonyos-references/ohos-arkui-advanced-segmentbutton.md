@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SegmentButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SegmentButton
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:27+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:2bd449c529462db9518a715830c76ed9333047977f0aa490610ca39f98c2a080
+content_hash: sha256:0a206f241f410f5c5e057e2ddd2bf362a8c76c2eaa387698f26bea6e4fffc6c0
 ---
 
 分段按钮组件包含页签类分段按钮和胶囊类分段按钮。页签类分段按钮适用于页面或内容区域的切换场景；胶囊类分段按钮适用于单选或多选的选择场景，包含胶囊类单选分段按钮和胶囊类多选分段按钮。该组件支持自定义文本颜色、字体大小、字体粗细、背景色、图片尺寸、内边距、背景模糊材质等外观属性，支持仅文本、仅图标和图标+文本三种按钮样式，并提供无障碍朗读、布局方向镜像、自定义圆角、属性动画等能力，适用于需要快速构建符合设计规范的分段选择界面的场景。
@@ -760,7 +760,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/TEiti8FlSUye0zrLNnerlQ/zh-cn_image_0000002786361672.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB7126340E401531C8FC9C02FEEFCA433C342148A9B794C918C2AADF6F13DB29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/E6LWw0TdQKWZVrCl9S9AHA/zh-cn_image_0000002817508837.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0705024CB76AA2B71391BDD33BC8A642BB1B656C02D5B41B1CAB51665EC6241)
 
 ### 示例2（设置分段按钮样式）
 
@@ -868,7 +868,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/J91uwVmXTSu_K25VNqodsQ/zh-cn_image_0000002815561093.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D029D5F6F97AA37243DCED8A2B07AC97C40CE5F9CE1106895B524F425864D9A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/WMWQDNkITamyXfStCGzbPQ/zh-cn_image_0000002788309406.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D2AA1EEB895764CD7D52EACA610F1F53F090F7CB0B42F3C80F99129BEBA0FB4)
 
 ### 示例3（分段按钮数组处理）
 
@@ -945,7 +945,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/F48881SmT6a4_oWTI-zXeg/zh-cn_image_0000002815401177.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CE00D21330134126B2AF7240A1F1C90635EF6CCF9BB6DCFF98518EBAF2E9B80)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/RamyfwKqTI6uMC_BubE8ow/zh-cn_image_0000002817428769.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCB119560DD1E4AEAAA3E74A5D76F3E16E020C16C5D9F530F0DC0CFD72630040)
 
 ### 示例4（设置镜像效果）
 
@@ -1055,7 +1055,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/z3GJzIAMTNGglWwWw4eWwA/zh-cn_image_0000002786521602.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6CD9E69D7D5FEEE4060D535F51A755AD45E4380F8659DB2C3CB600F0C7AB94C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/_3Q2jNlHSdWyQHxZQOxSsQ/zh-cn_image_0000002788469350.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACC1ABD5134F1037CB5773661494BAB9286580B6D37BE68589D41DC3A32B6741)
 
 ### 示例5（设置无障碍朗读）
 
@@ -1202,7 +1202,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/VFlq-yByS7qU7IDmcHLmug/zh-cn_image_0000002786361674.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2AB75834D56C3B2D236E887266A4EB529410D7193BBD59E51600E5ED48C09E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/mnc8RADpTjS_SNlM-P3Kdw/zh-cn_image_0000002817508839.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=01F0C2CFAD6AA4023B52C73637AF6E4F79374AEE3F51589BC0A42E5E59FCB6BA)
 
 ### 示例6（设置自定义圆角）
 
@@ -1247,7 +1247,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/LDI6suIfSzmcAyqXFjTW2g/zh-cn_image_0000002815561095.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1272973EE78C18AD5720EE214853544C27F75182032C3C35CFFB121E5B109069)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/_57-GJfrQs2gJZAanVN5aw/zh-cn_image_0000002788309408.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2A20F0072CDD8E87C3C6D52CD50F9C241E2C2CB91BEDFB2DF2C0101222755CD)
 
 ### 示例7（开启SegmentButton的属性动画）
 
@@ -1323,7 +1323,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/2fwE4ah9Qq--QPQzCq0Ptg/zh-cn_image_0000002815401179.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AEF49227B9C5671725D4E4E7130E5C1BEE4D1283D5138312E3D165BC298A150)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/kpVqGlFjTfy2tX_zCUrzAg/zh-cn_image_0000002817428771.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CC47A7DE68F3BFF8648FB4E7F8D42197BAFB049024D0B75F9B1EAC996C9F9C6)
 
 ### 示例8（设置背景板材质）
 
@@ -1394,7 +1394,7 @@ struct Index {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ZCs6KwOISbS5r5HQsL64qg/zh-cn_image_0000002786521604.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8571C34062F775D638E413019E106DD19AFED662FD5EAAFD91592DF49BD6610)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/FRzvs2x_QHqPJisnFIJmhw/zh-cn_image_0000002788469352.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FF88B89FF3A4057EE38A281070BC7E80740BCB2B2E3021D72A5DB26E799FA56)
 
 ### 示例9（监听SegmentButtonOptions内属性的变化）
 
@@ -1458,4 +1458,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/JaccztvJTRqizc63Bpsqlw/zh-cn_image_0000002786361676.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=35BDAEEE482F32C1778FCD86FF388BA2426B226A54863B2A395E7DADF3ECEC3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/fWPhDubkRU2uOmoIPe6SVQ/zh-cn_image_0000002817508841.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B09629AF8A357DCABF36F41D5D58E647A7452700277D88C9BF301FA6777561A)

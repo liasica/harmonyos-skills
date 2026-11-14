@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ProgressButtonV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ProgressButtonV2
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:26+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:456f4fc5a3ca808dcc6a6284c158da5bace66142c7736644a7401f5a197bf84c
+content_hash: sha256:0bd11073937b78d69705fab73eb96bf7e8dea952ed52af68e6e6fc8e4db4c1a1
 ---
 
 文本下载按钮，可显示具体的下载进度。
@@ -178,4 +178,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/rnbaikpTSuS9Fluth00_TQ/zh-cn_image_0000002786521600.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F36665525BDA82D4AD5CCB0B9FB0891BC3DD7E7A1E2E0FFAECDBE6AE5D0276F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/EnFvUbDDR4amMJagSC3_TQ/zh-cn_image_0000002788469348.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005026Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFC36057FA65DD3A609D01D9496CF483CFDAE9CD76428BFAD57A21CDC34D7E37)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-
 title: 标准化数据类型 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 标准化数据定义 > 标准化数据类型 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:41cd39f204792810061b30902bc317145542c896ffde8c233b6aa446045d715f
+scraped_at: 2026-11-14T08:46:52+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:ffc2675942bbecd6672fee69586df3ac4c6c035b52703a57dd34c8b6c8a170aa
 ---
 
 ## 场景介绍
@@ -39,11 +39,11 @@ UTD中定义的标准化数据类型在设计原则上按物理和逻辑分为�
 
 **图1** 物理标准化数据类型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/YhcxRBRpRziBPEz5a4hlCA/zh-cn_image_0000002815397945.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8DDCCC5A02ED4BDA2FE940F15E28917CBEE31E848E3DE02DE403A915EB552B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/7TIwB20hSWuk0Dm-p6ePbA/zh-cn_image_0000002817505603.png?HW-CC-KV=V1&HW-CC-Date=20261114T004514Z&HW-CC-Expire=31536000000&HW-CC-Sign=985EEEA8212ABBD3AE9268165B1BDC97FC19ABD1C70136B7678E8C2D13859706)
 
 **图2** 逻辑标准化数据类型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/MzhKWrn4QaWJJWBcSp0P9Q/zh-cn_image_0000002786518370.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5C870626AFEC2988A8E5ADC0B074C54388240A4F9D6B663B1A9045542185B1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/i43--dYGRFaUyoyOqLNRXQ/zh-cn_image_0000002788306174.png?HW-CC-KV=V1&HW-CC-Date=20261114T004514Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4A8EF0ADEE56B03E6902F169242C6666CF96E64AA576981F51B05D9C4BB92E2)
 
 ## 标准化数据类型的定义
 
@@ -81,7 +81,7 @@ utd.json5文件需要在类型为entry的HAP中配置。
 
 针对自定义的类型描述各字段，有以下相关要求和限制：
 
-* **TypeId：** 定义标准化数据类型的ID，该ID具有唯一性，由应用bundleName + 具体类型名组成，不可缺省，允许包含数字、大小写字母、-和.。
+* **TypeId：** 定义标准化数据类型的ID，该ID具有唯一性，由应用bundleName和具体类型名组成，不可缺省，允许包含数字、大小写字母、-和.。
 * **BelongingToTypes：** 定义标准化数据类型的归属关系，即该标准化数据类型归属于哪个更高层级的类型，所属类型可以为多个，但是必须为已存在的数据类型（标准化数据类型预置类型或其他新增自定义数据类型），不能为应用自定义类型本身，不能为空，且与现有标准化数据类型、其他新增自定义数据类型不能形成环形依赖结构。
 * **FilenameExtensions：** 应用自定义标准化数据类型所关联的文件后缀。可以缺省；可以为多个，每个后缀为以.开头且长度不超过127的字符串。
 * **MIMETypes：** 应用自定义标准化数据类型所关联的多用途互联网邮件扩展类型。可以缺省；可以为多个，每个类型为长度不超过127的字符串。

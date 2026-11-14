@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-inputmeth
 title: 在自绘编辑框中使用输入法
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 在自绘编辑框中使用输入法
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:20+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b140272fb6bd8c08741ce8a2adb22ebec0a67d2ed4284c7d2dca424bc2fc7d8c
+content_hash: sha256:1139e62697d1a506dc8bf206e657ab18f4027accc569fb7910bf92b7e6365082
 ---
 
 在输入法框架中，可以通过[getController](../harmonyos-references/js-apis-inputmethod.md#inputmethodgetcontroller9)方法获取到[InputMethodController](../harmonyos-references/js-apis-inputmethod.md#inputmethodcontroller)实例来绑定输入法并监听输入法应用的各种操作，比如插入、删除、选择、光标移动等。这样就可以在自绘编辑框中使用输入法，并实现更加灵活和自由的编辑操作。
@@ -141,7 +141,7 @@ content_hash: sha256:b140272fb6bd8c08741ce8a2adb22ebec0a67d2ed4284c7d2dca424bc2f
 
    在应用的entry/src/main/resources/base/profile目录下创建配置文件easy\_go.json（示例文件名，可自行命名）。在[module.json5](module-configuration-file.md)配置文件中添加easyGo字段，并指向引用的easy\_go.json配置文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/TQr-nckmSR-nfC3-4fdYIg/zh-cn_image_0000002815399089.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FA7EA8595EAC04DAA762150689F3FE2DAD295455260D8A10937CA0A883ECB01)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/tgBYXsfCRTSkhpRX-9Mi_A/zh-cn_image_0000002817506749.png?HW-CC-KV=V1&HW-CC-Date=20261114T004540Z&HW-CC-Expire=31536000000&HW-CC-Sign=C352CD244A194C53405C6B93978DF2E567057E80AC097A1AA76BC711A2861752)
 2. 增加物理数字键转换配置
 
    在easy\_go.json配置文件中，配置自绘编辑框接收数字物理键盘输入能力相关属性。
@@ -210,4 +210,4 @@ easy\_go.json是一个标准的Object类型JSON文件，整体结构分为两层
 
 ## 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/8bLBqvgxQBG10aB0kJ6W1w/zh-cn_image_0000002786519514.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0992E06E5D26D4824C1EA25462794A23FC7C4DE2B7C227BED48EF6114E690AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/xG0OqJW1TO6zZKPEcdpjsg/zh-cn_image_0000002788307318.png?HW-CC-KV=V1&HW-CC-Date=20261114T004540Z&HW-CC-Expire=31536000000&HW-CC-Sign=81DAA7AE055349AE4CE542B191FDF9A9529F5D3E0D3F97B8D03CF670D30EAC7F)

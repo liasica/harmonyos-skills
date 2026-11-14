@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 保存媒体库资源
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 保存媒体库资源
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:08+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-14T08:48:01+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:f70e1ed1f67699cf4a7092c088649ef72c56143ef7eab98731541f9de6b13bbc
 ---
 

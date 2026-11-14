@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 应用内通知设置快捷入口开发指导
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 应用内通知设置快捷入口开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:fff53227c8f8d8f3a15ffbd66acf8e78c6d2cd6d2ee911f7048734fa623326d3
+content_hash: sha256:7a3987449c57c6bb566586f4031ffc2a9b0403293bee64208511c3e1d7d63929
 ---
 
 ## 使用场景
@@ -16,11 +16,11 @@ content_hash: sha256:fff53227c8f8d8f3a15ffbd66acf8e78c6d2cd6d2ee911f7048734fa623
 
 “设置 > 通知和状态栏 > XX应用”页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/-HHUTXdbSDCueiCKjjo4Xw/zh-cn_image_0000002815399979.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=61CE0E35451CA53312678C265092237DE9B6F078FEFF7256D42BAFFF8A908D9A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/zHUHTQYTQWmYi1_l-8-wAw/zh-cn_image_0000002817507639.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=298184839D4DEF263BD125687A2FEEC046BB98BA2C7842CCF1F80CA7CB2B420D)
 
 通知中心页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/JaeZHStYSPeql6Y886VhCA/zh-cn_image_0000002786520404.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F7B0B6D316FBD7271352236B680F92893229B5C2168611C52302B006365EEEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/D4yY1pq9ThiS0KJzVr0oRQ/zh-cn_image_0000002788308208.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FA7CD4BDB365B9E5D9AD5B3699A5507F379414975090C86A2F098E2419A4B45)
 
 ## 开发准备
 

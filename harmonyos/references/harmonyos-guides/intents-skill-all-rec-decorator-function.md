@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 基于函数的装饰器方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 任务执行类场景方案（装饰器接入方式） > 基于函数的装饰器方案
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:40+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:229eb07c11a2a9d4dcce28b4f50caa1467b1655fdd39fd45a1ec9f7fff7d9aa1
+content_hash: sha256:ddaaffa6065c3d7109801d4e9f5fd15ba045b930fa9fddc565dee6d9585b5d56
 ---
 
 ## 概述
@@ -86,25 +86,25 @@ content_hash: sha256:229eb07c11a2a9d4dcce28b4f50caa1467b1655fdd39fd45a1ec9f7fff7
 
    1. 打开CodeGenie插件：在DevEco Studio右侧边栏点击CodeGenie或输入快捷键Alt/Option+U，可以进入DevEco CodeGenie。若使用非最新版本的DevEco Studio，可通过[下载中心](https://developer.huawei.com/consumer/cn/download/deveco-codegenie)获取并使用相关功能，具体请参考[插件获取及安装](ide-codegenie.md#section18337533718)。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/UHRrwwJGR02EcZY4cSOYRw/zh-cn_image_0000002786360744.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9206640A5720F53FAC1EE1FF3183686F9FD00A8BC82F0E79AAB5C71060CA647)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/yeQF7i08SM2G3lGaun9I3w/zh-cn_image_0000002817507909.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EB20F2E6590926FACEC9449D3BC6C31738C5F82E0935C49926A9265EA20DF54)
    2. 框选想要接入意图框架功能的代码。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/6yNDcreaSNyivE2UaAvb6Q/zh-cn_image_0000002815560165.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=1881E3A47DDCD5F06B8AB47EDA8B4A94B154033ADC08B5A3373C2FA24F6D685D)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/sqN2NL29Snq5TIPj5llmeA/zh-cn_image_0000002788308478.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=76B5BF6981A70503B9D152C84BE6E5C70229C642F7230CCFEC36C47B4C50C5E2)
    3. 在选中的代码块上右键CodeGenie > Insight Intent，选择适合的装饰器。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/NMhYZVF0TcW8tSz6EQItag/zh-cn_image_0000002815400249.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4E0398989295ABC21DD0EFC5D13BBB0CDC64D1432721EB92B3A5B14AD3AEFA6)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Ni0Fhm9uRiubargoZqL_bg/zh-cn_image_0000002817427841.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=065199497D142F09A37D1AEE75D5905FC3C426448A953730F8B1F3452BAE5CC9)
    4. 在DevEco CodeGenie对话框中对意图定义，功能，参数等进行描述。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/bWt-F4x6QfWTbkYkV1hUnw/zh-cn_image_0000002786520674.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A26A3EB2079B871DB9D185DBA8EA3BC0A8D1C2B22832811BC8EC3557A02FE83)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/R5Y2ZBLRTFm7_VaUCiR8XA/zh-cn_image_0000002788468422.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=226EE23BF7C5D6ED1E19E7B1DFF039E04D270CB0489F098A79807D97082A865E)
    5. 回车或者点击发送按钮，即可生成对应的装饰器内容。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/GLpSqXm3SOOcABDb-hHn-A/zh-cn_image_0000002786360746.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=7581CC8C2F814B903D7EEDE909EFF2021362C469E770762D7A454B7490ED6056)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Q0AJFXqERs-l9XtrvBoLYw/zh-cn_image_0000002817507911.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E815E10704537766FA96F6ECD90D1C7BD5E7A4794C9F12E94956FBABA75B43A)
    6. 将光标放置于要插入装饰器的位置，点击插入图标，即可在对应位置插入装饰器。
 
    插入前：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/eG4YUxO5R2O4niZiPcwpTA/zh-cn_image_0000002815560167.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD560E3CE96F1DE7F863DBAC9FF7CDF76F3F26F8E39EABDB1734E636E7918D72)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZON0A9V2Rb6R9EKsGbnnQw/zh-cn_image_0000002788308480.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA39C0044FE3CBC5399D252FFDA1942832427A062E3B6F270D199BA559793418)
 
    插入后：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/XVZS01ZWRsWF4Ul7cK2HKA/zh-cn_image_0000002815400251.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=E419A8A12C3E62DC2A3E3674E1907325235B0C59449F6EDFB5EB5C05553F7EB2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/TIKFo6ITS4-qJsmn-WJdYw/zh-cn_image_0000002817427843.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=E616DDB27C7E3A8C82FC10ADE52799C7787433DAEF9E6D7448264572B2A4C4F4)

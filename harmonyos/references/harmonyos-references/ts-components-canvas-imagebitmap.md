@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: ImageBitmap
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > ImageBitmap
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:19+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:5aea666e008ba5485142d7fdcd0929440846bc4be8f4a496382816d5d0aef6ee
+content_hash: sha256:dc3d57b21ee82cf4ce908dcf72e69c449ff108fa579c6a584c2b91d76df4ef7b
 ---
 
 ImageBitmap对象可以存储canvas渲染的像素数据。从API version 11开始，当应用创建[Worker线程](../harmonyos-guides/worker-introduction.md)，支持使用postMessage将ImageBitmap实例传到Worker中进行绘制，并使用onmessage接收Worker线程发送的绘制结果进行显示。
@@ -197,7 +197,7 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/24GmG5VCQby_D7wtPZ0_wQ/zh-cn_image_0000002815560901.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA10E65ACEC0130B8D6B077DDD3CA289E4C92BBBD71194DA76E230A3BC91F142)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/LGajNav_TsCv_Ifw8Gzgwg/zh-cn_image_0000002788309214.png?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=86B96D32FE4E58E2774AF47EC66A1BC6F09DD462EB5F26270927765D513A6943)
 
 ### 示例2（创建ImageBitmap）
 
@@ -236,7 +236,7 @@ struct Demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Xbv2k8u2RUul7ZT51yKNjA/zh-cn_image_0000002815400985.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=17A654F2E7BB8716DB3D826DDA2390BD4C50F5E921B146B7AFDFB6931F168455)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/LgTpqpbGQZ6sNz5n9g-I7Q/zh-cn_image_0000002817428577.png?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD2B78C45422A294F2230AF4D0CA6E001FA64B897FDFF3EF166717F1196C213D)
 
 ### 示例3（支持并发线程绘制）
 
@@ -298,7 +298,7 @@ workerPort.onmessage = (e: MessageEvents) => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/YzK2JhlvTNSb5njXpgyX7g/zh-cn_image_0000002815560901.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=968A911C121F68A2F2F4B83D45C6972AB2758284D19D314AC461BA7D62CF2FBF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/IPi0UXLQQImEjYP4cP-DLw/zh-cn_image_0000002788309214.png?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AB3D6984D26C69E64BAC3863C8240D68B8356D28B7AF353CF1B8BABBEF73B09)
 
 ### 示例4（加载Resource图片）
 
@@ -333,4 +333,4 @@ struct ImageBitmapResourceExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/FQ4EiXqZTiut_xnAE8KUcw/zh-cn_image_0000002786521410.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=8470516398D94C1D16C620E88C8AF39A447AB6E8E4A47A2EA2B59FAE34469A0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/HFb_O-EHQGiWEMfw2saS0A/zh-cn_image_0000002788469158.png?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5282AA84BAFD21D944A6E020EE7E04A259B1965B2AD96D806DB73BE998ADDFD)

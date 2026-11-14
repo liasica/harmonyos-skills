@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/layered-image
 title: 配置应用图标和名称
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 配置应用图标和名称
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:47+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:fb91442e31f1d9bc3da4d6fffae4b07d575c6ebd6dc3d3fd7782fc8c91e25170
+content_hash: sha256:4466b204fa522aecd893273993d7a924998a60587bd5a89555fdc3f8a8b806bb
 ---
 
 本页面提供应用图标和名称的配置指导。应用图标分为单层图标和分层图标。单层图标包含一个图片，分层图标包含前景图和背景图。图标规范详见[图标资源规范](../design-guides/application-icon-0000001953444009.md#section634668113212)，应用上架审核时对应用信息有限制，请参考应用审核指南的[应用信息](../50104.md#section1729024510210)，确保应用信息符合相关限制规范，图标和名称配置约束详见[图标和名称配置](application-component-configuration-stage.md#应用图标和名称配置)。
@@ -18,7 +18,7 @@ content_hash: sha256:fb91442e31f1d9bc3da4d6fffae4b07d575c6ebd6dc3d3fd7782fc8c91e
 
 效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ESd0XXnMQwq2o5h1b1hmvA/zh-cn_image_0000002815557797.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=2182DC1FF3A57D2CA699FBA189DD1AEC88564C714A1AF3AA9899062581CE4B63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/gq-GPD6ZSliFkNgvdb_2lw/zh-cn_image_0000002788466052.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F7F05B52521C82F5BB7D70F143166873013958B713640A12EE05F4707EC4EAC)
 
 ## 配置优先级和生成策略
 

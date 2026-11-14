@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persiste
 title: 通过键值型数据库实现数据持久化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过键值型数据库实现数据持久化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:01+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:72ba802bed31ffbac8a5a1939fb170417dc2cd856c9774964e7654f572415dcc
+scraped_at: 2026-11-14T08:46:52+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:75fbaea61f2b2ebde54771b4bc016d2bd9bce512cc3e90b1d864a92546d8af22
 ---
 
 ## 场景介绍
@@ -14,8 +14,8 @@ content_hash: sha256:72ba802bed31ffbac8a5a1939fb170417dc2cd856c9774964e7654f5724
 
 ## 约束限制
 
-* 设备协同数据库，针对每条记录，Key的长度≤896 Byte，Value的长度<4 MB。
-* 单版本数据库，针对每条记录，Key的长度≤1 KB，Value的长度<4 MB。
+* 设备协同数据库，针对每条记录，Key的长度≤896Byte，Value的长度<4MB。
+* 单版本数据库，针对每条记录，Key的长度≤1KB，Value的长度<4MB。
 * 每个应用程序最多支持同时打开16个键值型分布式数据库。
 * 键值型数据库事件回调方法中不允许进行阻塞操作，例如修改UI组件。
 

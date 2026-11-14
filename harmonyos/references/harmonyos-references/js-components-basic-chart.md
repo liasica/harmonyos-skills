@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: chart
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > chart
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:31+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3eb548af98a2b2def79f466af377d8f688a46696d8c3d089f711f80d3a0f4fc1
+content_hash: sha256:9de75778b1ea11050e39bfc3babf43e929f3e1ce84a02b68c5141d382aa9be30
 ---
 
 **说明** 
@@ -257,7 +257,7 @@ content_hash: sha256:3eb548af98a2b2def79f466af377d8f688a46696d8c3d089f711f80d3a0
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/QtiUKCPHQLmrIBUWTdI40g/zh-cn_image_0000002815401251.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC718ABCEFD3919DEB99691C1CB9D7141F1918CD047176D8C3CE66233D13A8C7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/nGlLAjQaTpm1NkkHnpP-0Q/zh-cn_image_0000002817428843.png?HW-CC-KV=V1&HW-CC-Date=20261114T004828Z&HW-CC-Expire=31536000000&HW-CC-Sign=5138D483D6655A80E1D532D1E7E289E7FEEF4C7AE4551D4A577AC7F29266D3CA)
 2. 柱状图
 
    ```html
@@ -325,7 +325,7 @@ content_hash: sha256:3eb548af98a2b2def79f466af377d8f688a46696d8c3d089f711f80d3a0
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/U4RKy3O6Qvm9bfQIozdBQw/zh-cn_image_0000002786521676.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3DA19872CE3438DC28D76EFAA4E4C5F45CD36FC7CB539A9E9F34E04CAA904D9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/DFyU77S1R_u9qzuBwX63iA/zh-cn_image_0000002788469424.png?HW-CC-KV=V1&HW-CC-Date=20261114T004828Z&HW-CC-Expire=31536000000&HW-CC-Sign=0109C8E9E351BBF7209741D893DDF52701614A0164822A4AC3D07403E85B94F6)
 3. 量规图
 
    ```html
@@ -354,7 +354,7 @@ content_hash: sha256:3eb548af98a2b2def79f466af377d8f688a46696d8c3d089f711f80d3a0
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/RToYZq39QcanueV19HcSlA/zh-cn_image_0000002786361748.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7D717E89BB59F62E64B977EB6703407DC52E10E26D71ECABDB19761B096E896)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/wVOOaeGjR5CkAwtX-qhIXg/zh-cn_image_0000002817508913.png?HW-CC-KV=V1&HW-CC-Date=20261114T004828Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8AFD09903AB7BE97982767320AA827027D9BB8EDC7F3B75DA4275431C288DBF)
 4. 进度类、加载类、占比类圆形图表
 
    ```html
@@ -430,4 +430,4 @@ content_hash: sha256:3eb548af98a2b2def79f466af377d8f688a46696d8c3d089f711f80d3a0
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/CzsL-A4STD64KRX26SbD6g/zh-cn_image_0000002815561169.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA6B438C4ACDC1DAA3969DD966780CFB9F16643364E2676B509D5165DABF426F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/CPF4H59MSjyrMkfDXg1O9w/zh-cn_image_0000002788309482.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004828Z&HW-CC-Expire=31536000000&HW-CC-Sign=870848405FE2118DA71D1CC0DCB903049811DF123153025BAB35A640FBE6A8C2)

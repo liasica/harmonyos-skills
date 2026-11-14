@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SelectionMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SelectionMenu
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:26+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:90c0a3dba0c81c17f220608113d07b28a6015c3365b4572cbf9be9e536572673
+content_hash: sha256:223b34a3b6fc22d367abc6eda1943cf4cab31c1e565004ac1861ad97390627c0
 ---
 
 文本选择菜单，适用于[RichEditor](ts-basic-components-richeditor.md)组件通过[bindSelectionMenu](ts-basic-components-richeditor.md#bindselectionmenu)或[Text](ts-basic-components-text.md)组件通过[bindSelectionMenu](ts-basic-components-text.md#bindselectionmenu11)绑定自定义文本选择菜单，支持编辑菜单和扩展下拉菜单两种类型，可通过配置实现复制、粘贴、剪切、全选等内置功能，也可通过自定义菜单项和事件回调实现扩展功能。建议绑定鼠标右键或鼠标选中方式弹出，不支持作为普通组件单独使用。适用于富文本编辑场景，可为用户提供便捷的文本操作入口，提升文本编辑效率。
@@ -456,7 +456,7 @@ struct Index {
 
 示例图为鼠标操作触发的自定义菜单弹出效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/djoXaIPJRlGC3-u2HGROVg/zh-cn_image_0000002786521610.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0B788FF1F9AD62CC67002AB64FE1060A794F0C96906D5665FFE3D414EC1D8A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/CjqqtXhiR-iIg9VEJVBpiA/zh-cn_image_0000002788469358.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=BED348D3DE82D26CAA8AD5745A1F2F97C52693C1698D2176E518D974806AC099)
 
 ### 示例2（设置Symbol类型图标）
 
@@ -793,7 +793,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/cOSc0Kq-QKqtvX2b42QB0g/zh-cn_image_0000002786361682.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D71ABF4BF7FF1E88B6533DC8388122DF8B76BB2E86B8837F22F728D452CB826)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/hGcJcqXaRj-k7Z9uaOXytA/zh-cn_image_0000002817508847.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BE6FE32E21D9528F98ADBC94E140CAD52499012F06481E2F9355B08B3CFC6E6)
 
 ### 示例3（设置背景板材质）
 
@@ -909,8 +909,8 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/_ptimjVHRFO78B_hNkfMsg/zh-cn_image_0000002815561103.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C02D64FF0A6F3668D1943F970C8F12D9D3319A3271627A5749BAA9899DC70B9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/_U8FldLFQ0yKWRdfE37V9Q/zh-cn_image_0000002788309416.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=47F64A2BF5A824343D85CDC41C939A9CEE7FCA2B101890E9C819E30FA0828AA9)
 
 设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ae1pExcOSBaqORe8DrzTpw/zh-cn_image_0000002815401187.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A0AC1170FF4E03CA6FE62392E3DD5B8A3674202C52C17C6C53F2B29B284892A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/8Wima8cfQyiGNrA37iHi5Q/zh-cn_image_0000002817428779.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D178AB1AC9DB4FA780BB506D1239CB443988B51FEBEAF8E4895634A6877EBAC)

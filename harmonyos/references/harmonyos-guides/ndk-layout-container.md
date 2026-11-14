@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-layout-co
 title: 使用布局组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 构建布局 > 使用布局组件
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:08+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f2c559dc2bfaa2a5d0a307c9693031a0ee7805161789ca1204b7abd5063b8727
+content_hash: sha256:366c5b2f7a902d7ec9f45f91afcc7d809e19d820cf7a948525fa13912e788281
 ---
 
 从API version 12开始，ArkUI在NDK中提供了常用布局组件[Flex](../harmonyos-references/ts-container-flex.md)、[Row](../harmonyos-references/ts-container-row.md)、[Column](../harmonyos-references/ts-container-column.md)、[Stack](../harmonyos-references/ts-container-stack.md)对应的节点类型和属性设置接口。Flex用于弹性布局，Row和Column用于线性布局，Stack用于层叠布局，对应节点类型和属性设置枚举可参考[ArkUI\_NodeType](../harmonyos-references/capi-native-node-h.md#arkui_nodetype)。
@@ -99,7 +99,7 @@ inline std::shared_ptr<ArkUIFlexNode> CreateFlexWrapExample()
 
 此时，CreateFlexContainer()已将Flex组件的换行行为设置为ARKUI\_FLEX\_WRAP\_WRAP，因此当子组件总宽度超过容器宽度时，布局会自动换行；而第三个子组件调用SetAlignSelf()后，会按照自身的交叉轴对齐规则摆放，而不是使用容器设置的ARKUI\_ITEM\_ALIGNMENT\_CENTER。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/MwqSxiP2SjKtbakx3EHhAA/zh-cn_image_0000002815558685.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=98D114CFC1CCD13A2CE193896BE1D1992D81753335B75E81F691889407D6248E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/7FpbMihMSgSSmtkjrTyqhQ/zh-cn_image_0000002788466940.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004530Z&HW-CC-Expire=31536000000&HW-CC-Sign=D67929688377A866221A909DFBF3B01A9A2DC4E989EC9C35018558FFD4500E19)
 
 如果要将布局方向改为纵向，则可将direction改为ARKUI\_FLEX\_DIRECTION\_COLUMN。此时代码结构保持不变，主轴和交叉轴上的摆放逻辑也保持一致。
 
@@ -156,7 +156,7 @@ inline std::shared_ptr<ArkUIRowNode> CreateFlexGrowExample()
 
 示例中三个子组件的flexGrow值分别为1、2、1，因此在容器存在剩余空间时，中间子组件会占据更多宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/GCSo7HB8QkajCdaLcrk3FA/zh-cn_image_0000002815398769.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DCED40368951DB86076196651E06F5E0079F6D256E2A3005D966B170BA7055E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Zm3NWw1CSxWQNiOWeRSqNA/zh-cn_image_0000002817506427.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004530Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BF142214B15CB160B6C5A3DD0A348C8F58689BAC6AF1A909950CC8B6FDE8B89)
 
 ## 使用layoutWeight按比例分配空间
 
@@ -192,7 +192,7 @@ inline std::shared_ptr<ArkUIRowNode> CreateLayoutWeightExample()
 
 示例中三个子组件的layoutWeight值分别为1、2、1，因此中间子组件会分得更多主轴空间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/MIPmoSXPQE6DWdOEhu2sWw/zh-cn_image_0000002786519194.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=922F25768BDDE8364FB2CCEA7138BC095BE2979BD5E2DBD67F3B8CA9B3D91256)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/rOmzmRYLS0i7kfe127kKmg/zh-cn_image_0000002788306998.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004530Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAB8DF05BF44D5348212F7516FFBB3B4991E931A703E4F3431FB7E681DEDBCD4)
 
 ## 使用displayPriority控制显示优先级
 
@@ -231,4 +231,4 @@ inline std::shared_ptr<ArkUIRowNode> CreateDisplayPriorityExample()
 
 示例先设置了较窄的Row容器宽度，再分别设置3、2、1三个优先级。当空间不足时，优先级最低的第三个子组件会先隐藏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/bvmeD7uiQRivbA5xVuuTGw/zh-cn_image_0000002786359266.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=00F6380E09A4B721AF8378F1E074004E887794096AC1AC143C952E9DE5A05976)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/z1BgTwYfTeyFwfEVuxmkNg/zh-cn_image_0000002817426361.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004530Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8B1B0114D1D9CF1D7E43550D3B558E412456C3AD2DCAC8D4A4B4B1B99351578)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo pack
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo pack
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:47+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ab873ae71c4e18346555e3219e78460b8ffcc565aa9cd694d627eb43dbd1c447
+content_hash: sha256:bf336352e8bed5b059344d4085b4d8ffab53d8b71e3e57c29ef1995ecd92f3ae
 ---
 
 打包ohpm-repo部署目录文件。
@@ -49,4 +49,4 @@ ohpm-repo pack D:\ohpm-repo
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/PL__snY1RROhWSX6Z3AXag/zh-cn_image_0000002779565084.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EBA6C5F3F3F1873F6B3226253E2E43D74BEC5E205A28CB1933D53A36CE98043 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Pu0rb1TqRWWZV0o9Q94RWw/zh-cn_image_0000002779565084.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF40B98805F72B9A1513DBD4405EE5746354E55AEE27ED304FD88C74684064D3 "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-lazy-im
 title: 延迟加载 (lazy import)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 延迟加载 (lazy import)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:56+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:52b094f8cbbe3e35a4fbbe9604bd7f176452bf8758e6a7bf75acf965108e5386
+content_hash: sha256:4869de958916fb0db6107b38d79bc9e60ae07201c095fdc5eedda091f27dd27e
 ---
 
 随着应用程序功能的扩展，冷启动时间显著增加，主要是因为启动初期加载了大量未实际执行的模块。这不仅延长了应用的初始化时间，还浪费了资源。需要精简加载流程，剔除非必需的文件执行，优化冷启动性能，确保用户体验流畅。
@@ -340,7 +340,7 @@ ReferenceError: module environment is undefined
 
 子线程文件名：data/app/el2/100/base/com.example.myapplication/files/com.example.myapplication\_18089\_redundant\_file.txt
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/caQvQc3eQnS-lOLR8HjPDg/zh-cn_image_0000002786518396.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AFFBD6EA99DC8AD309630DDC6721E82445B4F8DCBE02F693BFC3E3185556CA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/RrC_Z8_0TO-h5bzK81qGpw/zh-cn_image_0000002788306200.png?HW-CC-KV=V1&HW-CC-Date=20261114T004519Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7C636B953EE0FED495F29B868B1A5CA4952D5D0BDC13A3312C69E15CC95E2EC)
 
 ### 检测原理
 
@@ -547,7 +547,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/cRtO1AfER_C0RSzirsTJsQ/zh-cn_image_0000002786358468.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AFD6F7C1AFBA78C8C3A891175E479B6E19BDD88403493B9F9BDF0335C80C4A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/W13kM0RMTbm4O-UbheNjTg/zh-cn_image_0000002817425563.png?HW-CC-KV=V1&HW-CC-Date=20261114T004519Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DD232E55C99A6B017EE272C48532DA20E2E8F42797C88C434BF1899BB50A98B)
 
 通过抓取Trace图查看调用栈，可以发现应用在冷启动时加载了A文件。
 
@@ -566,7 +566,7 @@ struct Index {
    ```
 4. 对上述示例代码获取到的文件进行分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/IgujBR_DRQe_-tlhGZqIhg/zh-cn_image_0000002815557889.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E18B6DE89FD7CBBD44F8F627F21285996A28B6D2632E0E01394AF9FE9E9280E6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/du6TkKyeQ7iDTkOKf_phlA/zh-cn_image_0000002788466144.png?HW-CC-KV=V1&HW-CC-Date=20261114T004519Z&HW-CC-Expire=31536000000&HW-CC-Sign=57589993F6420ABF12B02D872E227E0CC2E03190114D29F6C138631AC5DD33EC)
 
 **修改方式**
 
@@ -597,7 +597,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/VHZJQZooQg2xjSzwFRrdnw/zh-cn_image_0000002815397973.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2852BA8C308767FDE2174F039A1B2C48A73E453CE293C212B418C1FC97338D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/aoKsJ5ObSmWSbBc8gGIb2Q/zh-cn_image_0000002817505631.png?HW-CC-KV=V1&HW-CC-Date=20261114T004519Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D52FB2C6D93D2B9CC48BE069CD7E619F33E5E39011CE42FE1E3916583F39906)
 
 通过抓取Trace图查看调用栈可以发现，使用lazy-import标识后，应用在冷启动时不再加载A文件。
 

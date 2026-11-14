@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: Retrieval
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 模块 > Retrieval
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:34+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:40af9d74990209d9b3a9395fe81b6c809acae393eeb519c30ca6cfe606ae8402
+scraped_at: 2026-11-14T08:51:10+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:5a9a1e323ce82c93c49fe4e0f9e1c9bc5e22365f3bfcecbcee3f6b416aebef41
 ---
 
 ## 概述
@@ -52,7 +52,7 @@ content_hash: sha256:40af9d74990209d9b3a9395fe81b6c809acae393eeb519c30ca6cfe606a
 
 | 名称 | 描述 |
 | --- | --- |
-| int [OH\_Retrieval\_CreateRetriever](dataaugmentation-capi-retrieval.md#oh_retrieval_createretriever) (const [OH\_Retrieval\_Config](dataaugmentation-capi-retrieval.md#oh_retrieval_config) \*config, [OH\_Retrieval\_Retriever](dataaugmentation-capi-retrieval.md#oh_retrieval_retriever) \*\*retriever) | 获取检索器。 |
+| int [OH\_Retrieval\_CreateRetriever](dataaugmentation-capi-retrieval.md#oh_retrieval_createretriever) (const [OH\_Retrieval\_Config](dataaugmentation-capi-retrieval.md#oh_retrieval_config) \*config, [OH\_Retrieval\_Retriever](dataaugmentation-capi-retrieval.md#oh_retrieval_retriever) \*\*retriever) | 创建检索器。 |
 | int [OH\_Retrieval\_DestroyRetriever](dataaugmentation-capi-retrieval.md#oh_retrieval_destroyretriever) ([OH\_Retrieval\_Retriever](dataaugmentation-capi-retrieval.md#oh_retrieval_retriever) \*retriever) | 销毁通过[OH\_Retrieval\_CreateRetriever](dataaugmentation-capi-retrieval.md#oh_retrieval_createretriever)获得的检索器。 |
 | [OH\_Retrieval\_Config](dataaugmentation-capi-retrieval.md#oh_retrieval_config) \* [OH\_Retrieval\_CreateConfig](dataaugmentation-capi-retrieval.md#oh_retrieval_createconfig) () | 获取检索器配置。 |
 | int [OH\_Retrieval\_DestroyConfig](dataaugmentation-capi-retrieval.md#oh_retrieval_destroyconfig) ([OH\_Retrieval\_Config](dataaugmentation-capi-retrieval.md#oh_retrieval_config) \*config) | 销毁通过[OH\_Retrieval\_CreateConfig](dataaugmentation-capi-retrieval.md#oh_retrieval_createconfig)获得的检索配置。 |
@@ -394,7 +394,7 @@ int OH_Retrieval_CreateRetriever(const OH_Retrieval_Config *config, OH_Retrieval
 
 **描述**
 
-读取检索配置，初始化检索器。
+读取检索配置，创建检索器。
 
 **起始版本：** 6.0.0(20)
 
@@ -477,7 +477,7 @@ int OH_Retrieval_DestroyConfig(OH_Retrieval_Config *config)
 
 **描述**
 
-销毁通过OH\_Retriever\_CreateConfig获得的检索配置。
+销毁通过OH\_Retrieval\_CreateConfig获得的检索配置。
 
 **起始版本：** 6.0.0(20)
 
@@ -632,7 +632,7 @@ int OH_Retrieval_DestroySubCondition(OH_Retrieval_SubCondition *condition)
 
 **描述**
 
-销毁通过[OH\_Retrieval\_SubCondition](dataaugmentation-capi-retrieval.md#oh_retrieval_subcondition)。
+销毁[OH\_Retrieval\_SubCondition](dataaugmentation-capi-retrieval.md#oh_retrieval_subcondition)对象。
 
 **起始版本：** 6.0.0(20)
 
@@ -797,7 +797,7 @@ int OH_Retrieval_GetRecordLength(const OH_Retrieval_Record *record, uint32_t *le
 
 **描述**
 
-获取检索结果[OH\_Retrieval\_Record](dataaugmentation-capi-retrieval.md#oh_retrieval_record)中的数据库bucket数组。
+获取检索结果[OH\_Retrieval\_Record](dataaugmentation-capi-retrieval.md#oh_retrieval_record)中的数据库bucket数组长度。
 
 **起始版本：** 6.0.0(20)
 

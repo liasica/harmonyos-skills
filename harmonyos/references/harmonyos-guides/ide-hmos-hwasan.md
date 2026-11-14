@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hwas
 title: 使用HWASan检测内存错误
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用HWASan检测内存错误
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:17+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:e2e1bc7bb239d59af569e46cf3e3daf211b0a056a899a8b2073000a63e4d60bc
+content_hash: sha256:d1a28577e166e337486caa60ad8234d32faece7e3359662fa794a2c3ebc5c005
 ---
 
 HWASan（Hardware-Assisted Address Sanitizer）是一款类似于[Asan](ide-hmos-asan.md)的内存错误检测工具。与ASan相比，HWASan使用的内存减少很多，因而更适合用于整个系统的清理。关于HWASan的检测原理请参考[HWASan检测原理](../best-practices/bpta-stability-address-sanitizer-principle.md#section187526511146)。
@@ -21,12 +21,12 @@ HWASan（Hardware-Assisted Address Sanitizer）是一款类似于[Asan](ide-hmos
 
 ### 方式一
 
-1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/VJJUIycMTtqqNQY9uKq84A/zh-cn_image_0000002810750975.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E2AB980153669B1D5E986C972F3F5909C5BF38604BED0096E80F2926FB8A396)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/OatPS18zRDeLl0y9P8zE5Q/zh-cn_image_0000002781311376.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3ABE0AB3DB1948EFE5E80D6B28CC850F192CCD2AB035BDA6AEF8333880F1D8F "点击放大")按钮打开配置界面。
+1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/EcQD9dLkSi-7rbI4V0MI1Q/zh-cn_image_0000002810750975.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAE5E1FC032E93A3FF707900BF46C52C17A6B75D8B1BADE084F8C170C40881E2)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/DFXIFdpDR3K6OZHG0V2odQ/zh-cn_image_0000002781311376.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=65821A07A8DCFA6B33C9DB093D8621E8A7B677B76E59DE5B1331CF671ACE8000 "点击放大")按钮打开配置界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/Hnq8bLIVRjuyB9RLjeVlzg/zh-cn_image_0000002810630873.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C4ECDF07F8BB0ED3B5E1C4577B0CD16BC890C8B0747E8EB26D0541EBC295EA9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/tgn3yULYS2u0EbqElXhFmA/zh-cn_image_0000002810630873.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=52DFF61DF66D74CEE9F4FA8B46E31E983119AF4F4F70DEDD51EF38DE69F366E9)
 2. 在配置界面点击**故障分析**，勾选**硬件辅助地址检测**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/jcsm66iYQgu76AH5hJWX7A/zh-cn_image_0000002781471316.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D868036F7C4E478E41263BA05D9F80EF3740C1CE18632132E2A537C7CEF685B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/SdE9PZd4S-GMQ55CRunv3Q/zh-cn_image_0000002781471316.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D8EECA1E0C9CA072C1967D4AA964794ACA211B3856E9500EFDBAA9EC654B2E2)
 
 ### 方式二
 
@@ -50,4 +50,4 @@ HWASan（Hardware-Assisted Address Sanitizer）是一款类似于[Asan](ide-hmos
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出HWASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。日志中各字段的说明请参考[HWASan日志规格](address-sanitizer-guidelines.md#hwasan日志规格)，异常检测类型请参考[HWASan异常检测类型](../best-practices/bpta-stability-hwasan-detection.md#section207321025115510)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/OYqE19xbRFiPTfSfPA4JFQ/zh-cn_image_0000002810630861.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EA4C7DEC58A1EC3D02B2307BDB11DCCAB3AC22482AD4C824410B852D629E4C9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/fwIX2C1dRXS0gSomYv5sOA/zh-cn_image_0000002810630861.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=C12768CBD0A5F4DDECFAD3A3B601501BBD11A362F95A6D445FCA1CF8E5C37DF2)

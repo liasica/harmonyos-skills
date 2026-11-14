@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 多态样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 多态样式
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:06+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1a15eb65f4530e32643865180c77df856a9132f813590c413700020551476efb
+content_hash: sha256:03be45818a6944a243a299f95e24c7d3bd87179c29f1e6d166e93be2cecf3df1
 ---
 
 设置组件在不同状态下的样式，适用于需要根据各种交互状态动态切换组件样式的场景，帮助开发者统一管理组件状态样式。
@@ -217,7 +217,7 @@ struct StyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/MIamLGeqT5OxdP0sr-d44w/zh-cn_image_0000002815560461.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=37350AB705372936B592C8E85271D2FF21E1B1F9BA731ABF54DE16FF8B379D71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/JkAAw3M3T9KMCPHsn-Tlcw/zh-cn_image_0000002788308774.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=E75F9149379E316E35CF7F83C24B91E04BE3244D6C76487CD1EBF45B794003FB)
 
 ### 示例2（设置Radio多态样式）
 
@@ -283,7 +283,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/jWK-VHCPRQ-F2TkwY7aT5A/zh-cn_image_0000002815400545.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9ADE1E0189348FA5EEF15F3063356D5A8D07817BE796B1721CF4624EAB2C2DC1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/d5hcChEHQ-qYFsTtay9yMQ/zh-cn_image_0000002817428137.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE98EEDF55D2D0AC0A0B4A0F0F5F8203787516149587ED09DF36BCF2FC3F4448)
 
 ### 示例3（设置Builder多态样式）
 
@@ -344,4 +344,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/KoydTsNiReaeYmlfABtJMA/zh-cn_image_0000002786520970.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD6C5BB55796DABE6FEAA8D3E138BDB9FF0D6199D360C4AE4A6769FF2F419554)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/dGQNjFcGS-q1H6VgivpgWA/zh-cn_image_0000002788468718.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=69508319B441A82C07E3B2A839E1A58B4F83A7A740CCE5D76459940B43100E16)

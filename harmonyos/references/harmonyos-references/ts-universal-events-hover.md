@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 悬浮事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 悬浮事件
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:03+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b5e54f4921939cfc44e34a5673ae04bf2c19e08cf8eabece7d761fe761151556
+content_hash: sha256:d2836441c1b02d767524d6998adca2777f38c296ff7549d4261bc2ae0b379ae0
 ---
 
 光标滑动或手写笔在屏幕上悬浮移动扫过组件时触发，用于监听鼠标或手写笔进入、退出组件以及在组件上方悬浮移动等交互状态，适用于根据悬浮状态更新组件样式、展示位置信息等交互反馈场景。
@@ -125,11 +125,11 @@ struct HoverEventExample {
 
 未悬浮时的文本内容与背景颜色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/xM97D9uqS7izO-KTjljg-Q/zh-cn_image_0000002786520888.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AE4C0C14729D48C13EC8E3568E9C85ECCA35BF700723542C091BC0B206C9C7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/OONxMG7XQ-C-qBPl_azuRQ/zh-cn_image_0000002788468636.png?HW-CC-KV=V1&HW-CC-Date=20261114T004805Z&HW-CC-Expire=31536000000&HW-CC-Sign=84C4775F04E0BE48FE84E1ADF2D5644863EABAACB63BCDDE30598F54DBBB32CA)
 
 手写笔悬浮时改变文本内容与背景颜色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/3rNuFaE7Ssu1PDfFmBvIHw/zh-cn_image_0000002786360960.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=900CBC1411EDB9E1F0560EABAB8B41B3F617A904DCDEA8164EA9D4FC4D1BE8B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/62NGTPn_SbmBild6TJvbZw/zh-cn_image_0000002817508125.png?HW-CC-KV=V1&HW-CC-Date=20261114T004805Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE604234548A94B0C221660B1FACDC97B62D1463A25B670F4BC21C8BD99D1D93)
 
 ### 示例2（使用onHoverMove）
 
@@ -162,4 +162,4 @@ struct OnHoverMoveEventExample {
 
 手写笔悬浮在Button组件上时，UI不断刷新笔尖的位置信息：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/5-pf232uQlaa6IqgF_RNXg/zh-cn_image_0000002815560381.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEB88B6E14B50956A99C7E23C5AF308CC6BB99D3A6813022D6113C709E924D50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/W5lLU_WrQQKys60ZMVEpXQ/zh-cn_image_0000002788308694.png?HW-CC-KV=V1&HW-CC-Date=20261114T004805Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FC19C0E6FE6C0972BE3872CD629779094D39F52F568D086C73141D3AE17A84F)

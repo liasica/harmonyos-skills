@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-update
 title: 应用市场更新功能
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场更新功能
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:882536ef74b35299a628fc5e5a23323b323e69f9d6313909943ef4c2b0df7238
+scraped_at: 2026-11-14T08:48:12+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6bb722565923f7a0522846e57810e1c885cd5c934d5c77b4832def302f875ec3
 ---
 
 应用市场更新功能为已上架应用提供版本检测、显示更新提醒能力。开发者使用应用市场更新功能可以在应用内提醒用户及时更新到最新版本。
@@ -14,11 +14,11 @@ content_hash: sha256:882536ef74b35299a628fc5e5a23323b323e69f9d6313909943ef4c2b0d
 
 当应用启动完成或用户在应用中主动检查应用新版本时，开发者可以通过本服务，来查询应用是否有可更新的版本。如果存在可更新版本，您可以通过本服务为用户显示更新提醒。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/8NlAXzodT_ugflDDrzJ6pQ/zh-cn_image_0000002786520100.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DFC9E0DB55E58820A0165A9BBD7D4F949B9973F057ACF85CA0D6FBD8C5B98B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/wHSilGcyTOC4UWPMyPGmXw/zh-cn_image_0000002788307904.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E241C0D98AAACFB1D8DFF49B58EE3AF23456A19428685E29FBA5E3671499F92)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/w0i4gFHSRLm7yZ2wGXQCMQ/zh-cn_image_0000002786360172.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB319FFF4ABF6C79C6175C3D92429534DF96B6546789F5E37D480D742B528DE9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/qJoJv0L1SUK9yADoaH5Pxg/zh-cn_image_0000002817427267.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=26E37B86743DD284B8813F73807B012B55E91CA4BE3197339DD0D6D916330E0B)
 
 1. 应用调用检查更新接口。
 2. 升级服务API返回是否有新版本。

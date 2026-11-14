@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 查看车钥匙
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发场景 > 查看车钥匙
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:33+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:afbb66b796d0cb89ced31da2fb91d9540bb2e6d2b493418e109d014c75514b34
+content_hash: sha256:8986b263217e65cfb17978eb3eda634c8180d69b11a4167cd92ea8fed4e5f08f
 ---
 
 查询已开通车钥匙的状态并展示，用户可以点击跳转钱包车钥匙详情页，查看和使用更多功能。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/IilG3EgrQY6IlmCWqmeIZw/zh-cn_image_0000002815400123.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E28764AC0611569AB2563DE85F60C320F5AC59B47F01D3017B33629923DB9304)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/rPsXe8EmQeGokAoTDMyEQQ/zh-cn_image_0000002817427715.png?HW-CC-KV=V1&HW-CC-Date=20261114T004833Z&HW-CC-Expire=31536000000&HW-CC-Sign=48C78CC213AEC63FBCD75966B48C31F1B846B29C31F1036344BF734DF6960575)
 
 ## 客户端开发
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: Agent模式
 breadcrumb: 指南 > DevEco Code > DevEco Code TUI > Agent模式
 category: harmonyos-guides
-scraped_at: 2026-11-13T09:00:03+08:00
+scraped_at: 2026-11-14T08:49:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3c6d8ab96e71e5b47d15b96ee27a627a3249da0a6f48883fabb007fd8a9ccaf0
+content_hash: sha256:867014ea90de79ac46075c73eb9d967e5c35e53bf52d3ca778b2400b93b67ac5
 ---
 
 ## 功能概述
@@ -25,11 +25,11 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/oHLpJaPJRBiQl09VY9W_Gw/zh-cn_image_0000002779567392.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=C65D836101D0938118475938CB93367C6F38B4CD95D7BE7C9972C28E7FC26A21 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Jnv4OgDcSneU6lzK4hGf1A/zh-cn_image_0000002779567392.png?HW-CC-KV=V1&HW-CC-Date=20261114T004921Z&HW-CC-Expire=31536000000&HW-CC-Sign=21CEAC142DF71F0E70D39D1189DD11B41964E0312DA0917A29C460842EDE9D71 "点击放大")
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/07/v3/OLbv4sHyRDm2n1_gmuBdWQ/zh-cn_media_0000002808887057.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010003Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A7ACEA8B94C43123616FBA064284BFF8C5B65BFB0BD1C407464BCAD766D7537)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/2e/v3/hZJrQ_zzSLyEhc3NX2gPOw/zh-cn_media_0000002808887057.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A9DDB8D830CB0676D89A249F07DF5AA17412B9BA20C7C7155019F4CF4903CE0)
 
 ## Plan + Build模式
 
@@ -44,7 +44,7 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/7_eUsqcET8W3MKujbEOaAg/zh-cn_image_0000002808766971.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A2A7757BD7CE5C12F6DAA5B1F1E214A04941CAF986FE7AF4EF0DB3D8BDC121E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/W5vMjRtwTd20i9UEmREEkQ/zh-cn_image_0000002808766971.png?HW-CC-KV=V1&HW-CC-Date=20261114T004921Z&HW-CC-Expire=31536000000&HW-CC-Sign=1323C49E43B335D2CD26C8F376295FD9AC8B2A8AAECF5C22E747FAEF093D1788 "点击放大")
 
 Plan + Build模式实现流程分为三大阶段：
 
@@ -54,7 +54,7 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/68/v3/qld7SLtFRSezX7zEUZu-ew/zh-cn_media_0000002779567394.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010003Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC6DFFABFB5ED8AA34B5F667CF993BC8B9D54FE8A6D8255ED42507FB4387A9D5)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/af/v3/hhTa1H7kQXGlNeU_Ob64XQ/zh-cn_media_0000002779567394.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB0E59E41174FED78E7261ADF2AE8B8E006BEECBE51E7E9E0A72FB8C9C0ACA02)
 
 ## Goal模式
 
@@ -70,7 +70,7 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/iORykznEShKR7FQNdrXJNA/zh-cn_image_0000002779407414.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=64F030EAA7DBEB3C2C101105DE574E7BF77CE797D26A3431BF82A40685C5D69C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ewn_iHFcSQeEKkyZc5qMMA/zh-cn_image_0000002779407414.png?HW-CC-KV=V1&HW-CC-Date=20261114T004921Z&HW-CC-Expire=31536000000&HW-CC-Sign=427ABCC4E9906B743F1F09B5EC3301F2AA87E88C3F160C74863F568752B551D5 "点击放大")
 
 Goal模式实现流程分为两大阶段：
 
@@ -79,4 +79,4 @@ Goal模式实现流程分为两大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/2a/v3/xccSMU6oTlqGsL0tdfaw6A/zh-cn_media_0000002779407416.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010003Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF9715C306941CB0EC6ED00D755221C72BAA0888B4D6F010E234A5D7DC43FE1C)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/d7/v3/tWgNUHU-QI-byk2LuZAdfg/zh-cn_media_0000002779407416.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EEB1AAC63F74E3F02A989199D9BE16E5B18EC6B233350535DEC1F6D5A8B02F3)

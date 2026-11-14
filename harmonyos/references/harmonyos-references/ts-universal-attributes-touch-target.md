@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 触摸热区设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 触摸交互控制 > 触摸热区设置
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:06+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:8ce64c2c13fd9ccd8b19c3b5e3bfd9ee950a081b5aa81d1b13eab45afce70bc8
+content_hash: sha256:36635f6cec5bfd60952d42cf97f3bc12119c18db9fa66bcd11e312534e8c8325
 ---
 
 设置组件的触摸热区。在ArkUI开发框架中，处理触屏事件和鼠标事件时，会在事件触发前进行按压点与组件响应热区的[触摸测试](../harmonyos-guides/arkts-interaction-basic-principles.md#触摸测试)，以收集需响应事件的组件。基于测试结果，框架会分发相应的事件。影响[点击事件](ts-universal-events-click.md)、[触摸事件](ts-universal-events-touch.md)、[拖拽事件](ts-universal-events-drag-drop.md)、[鼠标事件](ts-universal-mouse-key.md)、[轴事件](ts-universal-events-axis.md)、[悬浮事件](ts-universal-events-hover.md)、[无障碍悬浮事件](ts-universal-accessibility-hover-event.md)和[手势事件](ts-gesture-settings.md)的分发。
@@ -203,7 +203,7 @@ struct TouchTargetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/J1Cb41v5SW-VwYxIiRQrag/zh-cn_image_0000002786520966.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=69C9410A7C34776A4F34335CF98CA7323BDEA6A0FEB60C9F9E0301AAEB785E48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/wJr53VWPRhaPZD6aSdwFGg/zh-cn_image_0000002788468714.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6F806334E1CC23E018D1CD9C984615560744632207F59D9FF43596B92613BB6)
 
 ### 示例2（通过responseRegionList接口设置触摸热区）
 
@@ -261,7 +261,7 @@ struct TouchTargetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/diOtrLfgQvuyk-oCXtTppg/zh-cn_image_0000002786361038.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=33FE82B7967A18C578F36BFAC57FB338E2A4A41487FE0BC6ACDAD2B98BB250FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Ls-dfOL8SSGZpN0sZe_I5w/zh-cn_image_0000002817508203.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD16417F1AF8CA464230B37F76C8E2241D16F296B024BFFCD459EF43032A94D4)
 
 ### 示例3（设置鼠标的触摸热区以响应点击事件）
 
@@ -353,4 +353,4 @@ struct MouseResponseRegionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/GhvKnqtVSMWMC_4cQrc8uw/zh-cn_image_0000002815560459.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B6ADB056C0FF9ED24EAF498030346523CCA13680E30D35DD72777E87FD6095F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/iNdvavYlQNeBDP4hpBtzSA/zh-cn_image_0000002788308772.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=8538F97F0AA527A7DED7FF27E29F4F21E5042111ECB9839924F9ACB2B78C93C6)

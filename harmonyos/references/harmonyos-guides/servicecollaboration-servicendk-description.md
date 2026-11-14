@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/servicecollab
 title: 跨设备互通NDK特性概述
 breadcrumb: 指南 > 系统 > 网络 > Service Collaboration Kit（协同服务） > 跨设备互通NDK（C） > 跨设备互通NDK特性概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:38+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e05039bf5b7b8bdc0929df5f29027d44995b73f4c43064ba9b279cc7ec6498b7
+content_hash: sha256:385d9ecdca624c7da015f406b9dcb85935fa43e584341fb836bbed27f1dbfbbd
 ---
 
 跨设备互通提供相机、扫描以及图库（图片和视频）的跨设备调用能力，TV、Tablet或PC/2in1设备可以调用Phone的相机、扫描、图库等功能。
@@ -18,7 +18,7 @@ content_hash: sha256:e05039bf5b7b8bdc0929df5f29027d44995b73f4c43064ba9b279cc7ec6
 
 如果同一组网下有多台Phone或Tablet设备，用户可以选择不同的设备进行拍摄。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/68HYuZQrQ6iZ79KCVDG_DQ/zh-cn_image_0000002815399241.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=C28D9014B2EFD2C7D6C357E724360ABB68354193C363346FAAE8C74858EB13A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/bv5CRrurSiCKL6HTAqwI6A/zh-cn_image_0000002817506901.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004558Z&HW-CC-Expire=31536000000&HW-CC-Sign=EECD1F58926C676CE3B3FD4AD308EA508CA647954B11115A3AC522F0AC26E270)
 
 ## 运作机制
 
@@ -28,7 +28,7 @@ content_hash: sha256:e05039bf5b7b8bdc0929df5f29027d44995b73f4c43064ba9b279cc7ec6
 
    a. 通过系统的分布式协同框架，同账号下的本端设备（PC/2in1设备/Tablet）与远端设备（Phone/Tablet）自动建立连接。系统将自动完成设备的发现、连接、认证等流程，通过[HMS\_ServiceCollaboration\_GetCollaborationDeviceInfos](../harmonyos-references/servicecollaboration-capi-module.md#hms_servicecollaboration_getcollaborationdeviceinfos)接口提供可用的具有相机、扫描和图库能力的远端设备信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/4DUtcfHVTUaH32tO4OELHQ/zh-cn_image_0000002786519670.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AD79A6D6AEC6EDB9CA019311AE4A5F8F1B8CE0A2776490169BC09B9B605E715)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/MDCGxjOqTbCIqcRzk_VErg/zh-cn_image_0000002788307474.png?HW-CC-KV=V1&HW-CC-Date=20261114T004558Z&HW-CC-Expire=31536000000&HW-CC-Sign=E59B383D11B2B6236EBE4125E5E19416FC800D8C366D4EBEC70D62B8A4FF6953)
 
    b. 通过[HMS\_ServiceCollaboration\_StartCollaboration](../harmonyos-references/servicecollaboration-capi-module.md#hms_servicecollaboration_startcollaboration)或者[HMS\_ServiceCollaboration\_StartCollaborationV2](../harmonyos-references/servicecollaboration-capi-module.md#hms_servicecollaboration_startcollaborationv2)拉起对应跨设备互通能力，通过[HMS\_ServiceCollaboration\_StopCollaboration](../harmonyos-references/servicecollaboration-capi-module.md#hms_servicecollaboration_stopcollaboration)终止跨设备互通能力。分布式协同框架会将远端拍摄状态信息实时回传到应用侧，应用侧会根据错误码做相关提示。
 

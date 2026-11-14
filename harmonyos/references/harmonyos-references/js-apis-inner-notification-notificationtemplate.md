@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: NotificationTemplate
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > notification > NotificationTemplate
 category: harmonyos-references
-scraped_at: 2026-11-04T08:37:16+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:054987ff62ea9d8f0d7ab21e6f90f7a160726ca976627182127ab20b1128b8a1
+scraped_at: 2026-11-14T08:53:40+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:cdd9a831ab336b07c2e966c2cd7da09b4b4e167150b682a4128052a43f876ebb
 ---
 
 通知模板。用于指定通知所使用的模板类型。
 
 **说明** 
 
-本模块首批接口从API版本8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 提供预定义模板支持。允许应用开发者使用系统预定义的通知模板，只需提供模板名称和相应的数据，系统会自动渲染出符合规范的通知样式。
 

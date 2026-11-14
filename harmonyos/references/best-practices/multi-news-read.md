@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-news-read
 title: 多设备新闻阅读界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备新闻阅读界面
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:0dcad3c4af4818ea8eed6ee020302a4415b31f2bb7a95489d95a2bab562b70d9
+scraped_at: 2026-11-14T08:54:09+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:4cc3b9378df39a575445d4dd474120f2b66f203576e852395501bdc6ce87fb2d
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:0dcad3c4af4818ea8eed6ee020302a4415b31f2bb7a95489d95a2bab562
 
 新闻阅读应用的UX设计可参考[新闻阅读类](../design-guides/responsive-design-examples4-0000001746657290.md)设计指南。应用在直板机上采用单列纵向布局，在折叠屏和平板上以双列栅格展示，在电脑上采用侧边栏加内容区的分栏布局。多设备新闻阅读界面在不同设备形态下的效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/0kqvIOOVQ7OpCTqWhvhwQw/zh-cn_image_0000002693047956.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D13586479C9EF0E3F7EE9AD35D3939648F37912CE4793F70C789D0424666E0A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/95MLgtYyQEerZXgr0SoH3w/zh-cn_image_0000002693047956.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=A13ACB27928A2B8E9833D6BACC22CA59ECDD9A2ED6BA7B9026189498D88C573D "点击放大")
 
 ## 工程管理
 
@@ -42,7 +42,7 @@ content_hash: sha256:0dcad3c4af4818ea8eed6ee020302a4415b31f2bb7a95489d95a2bab562
 
 HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特性层和公共能力层，为开发者构建了一个清晰、高效、可扩展的设计架构。更多详情请参考[分层架构设计](bpta-layered-architecture-design.md)的逻辑设计。
 
-新闻阅读应用根据一多推荐的common、features、products的“三层工程架构”划分目录。各层级设计如下：
+新闻阅读应用根据一多推荐的products、features、common的“三层工程架构”划分目录。各层级设计如下：
 
 * products层：新闻阅读应用需要适配的设备包括直板机、阔折叠、双折叠、三折叠、平板、电脑。由于电脑的界面布局与其他设备差异较大，因此在products层创建名称为"pc"的HAP包，作为电脑的应用入口。直板机、阔折叠、双折叠和平板的界面整体布局相似，部分差异可以通过“一多”的[自适应布局](bpta-multi-device-adaptive-layout.md)和[响应式布局](bpta-multi-device-responsive-layout.md)进行适配，因此在products层创建名称为"default"的HAP包作为这类设备统一的应用入口。
 
@@ -63,7 +63,6 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 │  │  └──src/main/ets
 │  │     ├──constants              // 推荐常量
 │  │     ├──model                  // 推荐数据
-│  │     ├──page                   // 推荐首页
 │  │     ├──view                   // 首页 UI 组件
 │  │     └──viewmodel              // 首页状态
 │  └──newsdetail                   // 新闻详情
@@ -102,7 +101,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 * 窗口沉浸式
 
-  为了更好的视觉观感，新闻阅读应用通常将顶部状态栏设置为全局沉浸。根据UX设计，需要实现不同窗口模式（全屏、分屏、悬浮窗）下窗口的沉浸式，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。全屏、分屏和悬浮窗的沉浸式均可通过[setWindowLayoutFullscreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)实现，并进行动态安全区避让。
+  为获得统一的视觉观感，新闻阅读应用通常将顶部状态栏设置为全局沉浸。根据UX设计，需要实现不同窗口模式（全屏、分屏、悬浮窗）下窗口的沉浸式，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。全屏、分屏和悬浮窗的沉浸式均可通过[setWindowLayoutFullScreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)实现，并进行动态安全区避让。
 
 ### 首页推荐页
 
@@ -117,20 +116,20 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 **界面开发**
 
-移动端首页推荐页页各区域介绍及实现方案如下表所示：
+移动端首页推荐页各区域介绍及实现方案如下表所示：
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 顶部页签及搜索框 | 使用[GridRow](../harmonyos-references/ts-container-gridrow.md)栅格组件实现，在不同横向断点下，通过设置GridCol的span和order，实现搜索框和页签的上下或左右布局：直板机设备搜索框占满整行在上、页签在下；puraX外屏或横向断点为md及以上时页签居左、搜索框居右。 |
+| 1 | 顶部页签及搜索框 | 使用[GridRow](../harmonyos-references/ts-container-gridrow.md)栅格组件实现，在不同横向断点下，通过设置GridCol的span和order，实现搜索框和页签的上下或左右布局：直板机设备搜索框占满整行在上、页签在下；PuraX外屏或横向断点为md及以上时页签居左、搜索框居右。 |
 | 2 | 热点要闻 | 使用[List](../harmonyos-references/ts-container-list.md)组件实现，通过lanes属性按断点分栏：横向断点为sm时1列、md时2列、lg/xl时3列。 |
 | 3 | 大图轮播 | 使用[Swiper](../harmonyos-references/ts-container-swiper.md)组件实现，通过displayCount按断点切换显示数量（横向断点下sm为1，md为2，lg/xl为3）。 |
 | 4 | 上文下图卡片 | 使用Column纵向排布标题和多张图片实现上文下图卡片。横向断点为sm/md时展示1条，lg/xl断点下通过Row并排展示2条。 |
 | 5 | 新闻列表 | 横向断点为sm时单列展示，md及以上断点使用[GridRow](../harmonyos-references/ts-container-gridrow.md)双列栅格展示。 |
-| 6 | 底部/侧边页签 | 使用[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)组件实现，配置[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)悬浮样式和沉浸光感材质，不支持该材质的设备自动降级。 |
+| 6 | 底部/侧边页签 | 使用[Tabs](../harmonyos-references/ts-container-tabs.md)组件实现，配置[barFloatingStyle](../harmonyos-references/ts-container-tabs.md#barfloatingstyle)悬浮样式和沉浸光感材质（通过[uiMaterial (系统材质)](../harmonyos-references/arkts-apis-uimaterial.md)创建），API 26及以上设备生效，低版本降级为经典底部页签栏。 |
 
 ### 新闻详情页
 
-新闻详情页包含文章正文和评论区两部分。在直板机设备上，正文与评论区需纵向排列；在大屏设备上，二者并排展示，评论区作为侧栏可独立滚动。底部悬浮工具栏在API 26及以上设备使用[沉浸光感](bpta-spatiality-immersive.md)，低版本降级为背景模糊。
+新闻详情页包含文章正文和评论区两部分。在直板机设备上，正文与评论区需纵向排列；在大屏设备上，二者并排展示，评论区作为侧栏可独立滚动。底部悬浮工具栏使用背景模糊材质悬浮展示。
 
 |  |  |  |  |  |
 | --- | --- | --- | --- | --- |
@@ -146,7 +145,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 | 1 | 新闻标题和作者区 | 使用Column纵向排布新闻标题和作者行，作者行使用Row横排头像、名称、发布时间和关注按钮，内边距按断点调整。 |
 | 2 | 内容区 | 正文图文使用[Scroll](../harmonyos-references/ts-container-scroll.md)承载滚动展示。小屏下与标题、评论区纵向堆叠统一滚动。 |
 | 3 | 评论区 | 使用List展示评论列表。横向断点为md及以上时置于[SideBarContainer](../harmonyos-references/ts-container-sidebarcontainer.md)右侧侧栏独立滚动；横向断点为sm时堆叠于正文下方。 |
-| 4 | 底部悬浮工具栏 | 使用Stack悬浮于内容上方。API 26及以上通过[systemMaterial()](../harmonyos-references/ts-universal-attributes-image-effect.md#systemmaterial)应用沉浸光感材质，低版本使用[backgroundBlurStyle()](../harmonyos-references/ts-universal-attributes-background.md#backgroundblurstyle9)背景模糊降级。 |
+| 4 | 底部悬浮工具栏 | 使用Stack悬浮于内容上方，通过[backgroundBlurStyle()](../harmonyos-references/ts-universal-attributes-background.md#backgroundblurstyle9)应用背景模糊材质。 |
 
 ## 电脑端页面
 
@@ -159,13 +158,13 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
   新闻阅读应用在电脑端上支持全屏和自由窗口两种模式，具体实现可参考[窗口模式](bpta-multi-device-window-mode.md)。应用内使用响应式组件，即可根据窗口大小，自动适配全屏和自由窗口模式下的布局。
 * 窗口沉浸式
 
-  根据UX设计规范，需要实现全屏和自由窗口下的沉浸式效果，具体实现可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。全屏模式下，通过[window.setWindowLayoutFullscreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)实现沉浸式。自由窗口模式下，通过[window.setWindowDecorVisible()](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏标题栏，仅保留右上角三键，使页面内容延伸至标题栏区域，实现沉浸式显示效果。
+  根据UX设计规范，需要实现全屏和自由窗口下的沉浸式效果，具体实现可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。全屏模式下，通过[window.setWindowLayoutFullScreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)实现沉浸式。自由窗口模式下，通过[window.setWindowDecorVisible()](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏标题栏，仅保留右上角三键，使页面内容延伸至标题栏区域，实现沉浸式显示效果。
 
 ### 首页推荐页
 
 电脑端首页推荐页的页签栏展示在左侧，右侧承载内容区。效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/dgPSuuzeTwWeZYermw2ypw/zh-cn_image_0000002722887399.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C169F564E2582EA6182E6A1FF255C293BB6D94639FB7F274945CE7F212E1DA8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/yc-MPuBFSxOh7RsZN35Lcg/zh-cn_image_0000002722887399.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=85C1D61001279896AC939076AE5ED8DBC70D23878157FC470D9F2619BB6BC541 "点击放大")
 
 **界面开发**
 
@@ -173,15 +172,15 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 沉浸式标题栏 | 通过[window.setWindowLayoutFullscreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)让内容占据标题栏区域，[window.setWindowDecorVisible()](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏默认装饰。使用Stack布局实现。左侧展示应用图标和名称，右侧依次放置顶部页签、加号按钮和搜索框，同时避让三键区。 |
-| 2 | 左侧tab栏 | 左侧[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)设置vertical(true)使页签栏竖向展示。 |
+| 1 | 沉浸式标题栏 | 通过[window.setWindowLayoutFullscreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullScreen9)让内容占据标题栏区域，[window.setWindowDecorVisible()](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏默认装饰。页面由标准Navigation/NavDestination承载，标题栏置于NavDestination的title槽位并设置BarStyle.STACK沉浸模式。左侧展示应用图标和名称，右侧依次放置顶部页签、加号按钮和搜索框，同时避让三键区。 |
+| 2 | 左侧tab栏 | 左侧[Tabs](https://link.gitcode.com/?target=https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs&from=https://gitcode.com/zhangyuming27_0/BestPractice/blob/dev/zh_CN/multi-device-development/develop-once-deploy-everywhere/multi-device-interface-development/multi-device-interface-development-cases/multi-news-read.md#%25E6%2596%25B0%25E9%2597%25BB%25E8%25AF%25A6%25E6%2583%2585%25E9%25A1%25B5-1&lang=zh&theme=white)组件设置vertical(true)使页签栏竖向展示。 |
 | 3 | 内容区 | 与xl断点下的移动端布局一致，实现方案可参考移动端[首页推荐页](multi-news-read.md#section197614546219)。 |
 
 ### 新闻详情页
 
 电脑端新闻详情页左侧为新闻内容、右侧展示评论区，底部嵌入工具栏。运行效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/l_OPlyIMTB2Pt81sSbvkxw/zh-cn_image_0000002693207824.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E574D6C71DED84813E9EAAA56EB32024C05056991170F53878CBFE424B16771 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/BXziVz_uQLWGKWe6i5M8-g/zh-cn_image_0000002693207824.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A99208C74FF445E820510C70760B2336A2DB3C3A64C47F76BA0E095A0DF03AA "点击放大")
 
 **界面开发**
 

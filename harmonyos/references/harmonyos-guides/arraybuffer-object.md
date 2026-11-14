@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arraybuffer-o
 title: ArrayBuffer对象
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > ArrayBuffer对象
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:55+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:99d8baeb4b2bc30443c17c8106f605a49c51564137f2b7cc7050a7036d5fb557
+content_hash: sha256:1290c3efffdd115d37137d8ca36a3b724ea25e24064b6ee2cadf8b0ec8bdebc4
 ---
 
 ArrayBuffer包含两部分：底层存储数据的Native内存区域，以及封装操作的JS对象壳。JS对象壳分配在虚拟机的本地堆（LocalHeap）中。跨线程传递时，JS对象壳需要序列化和反序列化拷贝传递，而Native内存区域可以通过拷贝或转移的方式传递。
 
 Native内存使用拷贝方式（递归遍历）传输时，传输后两个线程可以独立访问ArrayBuffer。此方式需要重建JS壳和拷贝Native内存，传输效率较低。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/LvX6-i1sSGSlpCNpnOCwew/zh-cn_image_0000002786518386.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5243168003DE281F948D0AB7B3786954E89E64C116971D6367267FFAE2008E3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/N2OuHnzWSlKSUk3NuXqd8w/zh-cn_image_0000002788306190.png?HW-CC-KV=V1&HW-CC-Date=20261114T004517Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA4528005038A81ED1C130D5BC86E1E720BF390EFEE66240716BC4A4CD5BF441)
 
 Native内存使用转移方式传输时，传输后原线程将无法使用此ArrayBuffer对象。跨线程时只需重建JS壳，Native内存无需拷贝，从而提高效率。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/I9bWiEAxQneGI8rmgfeTSg/zh-cn_image_0000002786358458.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DA81BFC54B262BF4DE75A4C29176F03ECF7291B8516179EEA2290A1B2C7B591)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/boq8yTvYStWKqZ8eJA8xsw/zh-cn_image_0000002817425553.png?HW-CC-KV=V1&HW-CC-Date=20261114T004517Z&HW-CC-Expire=31536000000&HW-CC-Sign=C69E1BE4EEA410B5BBBB6365C6FB9F1C7D8D0B7C1669EC79754AD71F286A2CD5)
 
 ArrayBuffer常用于表示图片等二进制资源，在应用开发中，处理图片（如调整亮度、饱和度、大小等）会比较耗时，为了避免长时间阻塞UI主线程，可以将图片传递到子线程中进行处理。采用转移方式传递ArrayBuffer可提高传输性能，但原线程将无法再访问该ArrayBuffer对象。如果两个线程都需要访问该对象，只能采用拷贝方式。反之，建议采用转移方式以提升性能。
 

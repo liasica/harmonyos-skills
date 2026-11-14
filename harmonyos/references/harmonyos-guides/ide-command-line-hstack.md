@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-command-l
 title: 堆栈解析工具（hstack）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 堆栈解析工具（hstack）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:07+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c3f9f0a59275d75c2d35120ccf3b96386624bac65f9ccac5196aed883680fe20
+content_hash: sha256:045320af13705b2b69c493da678c8fb2856bdbc9e925e79960ad754ecccb88c8
 ---
 
 ## 简介
@@ -45,23 +45,23 @@ options: 可选配置，请参考[表hstack命令行配置](ide-command-line-hst
 1. hstack工具在Command Line Tools的bin目录下，需要[将bin目录配置到PATH变量中](ide-commandline-get.md#section17776863449)。
 2. 如果需要对C++文件产生的异常进行解析，则需要将SDK中的native\llvm\bin目录配置到环境变量中，变量名设置为“ADDR2LINE\_PATH”，示例如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/lVCUiOAMSFCBXxPiyxrOjg/zh-cn_image_0000002779566858.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7192325F69597725E37324A341E7DAB5479B9C82091C35A544374EA6B4B031D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/BbIKDkAqQgKIgr_t5j9ZIg/zh-cn_image_0000002779566858.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8B160D21484A61E76944F6C441CA7BFB6D14F58D1F0BC8E2A13466E86221650)
 
 ## 使用示例
 
 1. 将应用产生的crash文件归档到crashDir目录下（或者-c指定一条crash堆栈），关于堆栈的获取方式请参考[崩溃检测](fault-detection-overview.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/6VqRiupdQsygg5cZCc0S2w/zh-cn_image_0000002779406880.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=438DE49AB0A3BA4B70AC87110D9815CF8D2AEBF97A2C19C6485CF2DE7544151A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/B2mEv1PcRX60oh7YjaVVbg/zh-cn_image_0000002779406880.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=27DAA202A1625EEA535BD9FEB02D865AA71EA4C91478A17877C4708971E7050B)
 2. 使用-o指定输出目录，当不指定时，会输出至-i指定的crashDir目录下（通过-c输入为crash堆栈时，可以使用-o指定一个输出文件，或不指定，直接将结果输出至控制台）。
 3. 使用-s指定工程对应sourceMap文件归档目录（可选，与shared object文件归档目录至少提供一项）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/8XDWFQAzRaGNopxJK2BDbg/zh-cn_image_0000002808886523.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=7175425DB72A96B2DCE1D5DC498127BE0CE026F51272F98E3CB6B40709F0EF0B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/pT9TiKHCSie_vVReSWnglg/zh-cn_image_0000002808886523.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=671C2C7BD03444A025B38681B96D4CAD67F51211F779C2334E108B059893F272)
 4. 使用--so指定shared object文件归档目录（可选，与sourceMap归档目录至少提供一项）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/a2yoj_15Ro-BkU16HVr_5A/zh-cn_image_0000002808766441.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=1453384E51F0CAC345BE1F3D9FA0C3EA21C64A4D9127928E870B6427A2F3C15D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/CPqidp-FSQKIQJDL2IvIRA/zh-cn_image_0000002808766441.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2A774D7C8435B562E61541F1BC3EE84ECE6625A9F638360C8A5DFD7885F4C81)
 5. 使用-n指定nameCache文件归档目录（可选）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/TiKU4laZTyGb-Hg2GIAPlA/zh-cn_image_0000002779566860.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFEDBD846A25D846FD541F89B8D434C3DC6FA7C0548CE5D69761D9CB77F5B2EF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/1Umla44HT764C7gSelSNYQ/zh-cn_image_0000002779566860.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F85513DB3C55B6807AC8DF87B66BFC43F57B31F64238689834E533A1A5E4DC2)
 6. 执行以下命令，可将release应用crash堆栈解析为源码对应堆栈。
 
    ```bash
@@ -71,11 +71,11 @@ options: 可选配置，请参考[表hstack命令行配置](ide-command-line-hst
    hstack -c "at anonymous (entry|entry|1.0.0|src/main/ets/pages/Index.ts:401:1)" -o D:\outputDir\out.txt -s D:\sourcemapDir --so D:\soDir -n D:\nameCacheDir
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/r45O9Nr5RumcAeA-7CWwoA/zh-cn_image_0000002779566856.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=D117D97BE593C44A1F1B268A02B6AE61BD0894CF3D825CAAA0285E017B368A22)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/ghdfFOx2TWWQeH2kuICK3w/zh-cn_image_0000002808766439.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3758EBA96204ABE760F39F7110E6B975646856BD8B840C7B3AC35C1F7C25424 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/FfBNx-qORlGaYrLPkSA8cQ/zh-cn_image_0000002779566856.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=99B2F2F3DBCD6911054910D402030365B6E6C45D55E32018EDBF11BA159CD84C)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/2f59ze38RuCuT-vtV0WIOA/zh-cn_image_0000002808766439.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB35558A92C3E94FDF585FA56FB97346663684DB1F3B20B1F6F38E275392D2B1 "点击放大")
 
    如果是指定crash文件归档目录，解析完成后，outputDir目录下会生成对应的解析结果，文件以原始crash文件名加“\_”前缀进行命名。crash堆栈中的C++日志以及ArkTS日志均已解析为源码对应的文件路径以及行列号，结果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/lldmQsEjT92X07PUUa1hZQ/zh-cn_image_0000002779406882.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=504FAA03F206A8B75C922E4FBEBDCD2E550B35EE93738B1B8BC82A5605EFFB3D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/4LZB-W2vRpSeTSOghw-_Bw/zh-cn_image_0000002779406882.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDE18A9E462E105C2438E40C37426B12DE69823F6911FA0FB383AF29BA242E42)
 
    在构建Release应用时，so文件是默认不包含符号表信息的，如果需要在构建Release应用时生成包含符号表的so文件，需要在工程的模块级build-profile.json5文件的buildOption属性中，配置如下信息：
 

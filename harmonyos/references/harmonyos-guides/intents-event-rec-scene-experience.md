@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-event
 title: 场景体验
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 事件推荐方案 > 场景体验
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4bfd68ae7f4169d949ce07321ee99d9432fb28847e84a167f968da69834a741b
+content_hash: sha256:8fe1d1480d5207d5ab34f2cb132c954e25ac8af77e44ecd03dfc3f39a45a6c03
 ---
 
 ## 典型场景
@@ -18,14 +18,14 @@ content_hash: sha256:4bfd68ae7f4169d949ce07321ee99d9432fb28847e84a167f968da69834
 
 各垂域也可根据垂域的实际情况定义具体的事件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/9SN1hfatTCSFrTbWh9rH_A/zh-cn_image_0000002786520660.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=7656312DD7354A3DD8FC52C05F23692CB0A1B714B9600867A3DF7595D086443F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/xV0sLa1DS1ewNsV3fqlixg/zh-cn_image_0000002788468408.png?HW-CC-KV=V1&HW-CC-Date=20261114T004839Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEC28317062492E98756A6CA1677A2D164C690BE203CA0D04B7CCD55807980E3)
 
 以电影开场提醒为例，用户在应用/元服务中购买了电影票，在电影开场前半小时（具体生效时间将根据具体垂域的情况和用户最佳体验确定），用户可在小艺建议入口看到电影取票提醒的卡片，点击卡片可跳转到应用/元服务的订单详情页，用户可在该页面完成电影取票。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/bkuG-X4zS6Ob0WMUQwXcBQ/zh-cn_image_0000002786360732.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=67255C29037CC3204CF5B8BFBAFFDB88E31B1493460306094B2F109F4D311AAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/r8B8LRjZTzOUhAsbIvAR_g/zh-cn_image_0000002817507897.png?HW-CC-KV=V1&HW-CC-Date=20261114T004839Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE9E95985C35D24AF77044522FEE3F566F5D7A4BDC60BEC0CAA094EE42004538)
 
 ## 卡片展示效果
 
 意图框架将提供系统标准的事件模板卡片，无需开发者开发，开发者只需按照具体垂域事件的[意图Schema](../service/intents-schema-0000001901962713.md)将事件推送至智慧分发平台服务器即可。各垂域事件卡片样式的示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/og5uxHvrSwSf7Xo8fCSrJA/zh-cn_image_0000002815560153.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADCAA0260304943639BAA557603A89D3ABC860678435A6CCB41E547272C3DECC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/3MAlSDQBSiC-yiM5D5WTaQ/zh-cn_image_0000002788308466.png?HW-CC-KV=V1&HW-CC-Date=20261114T004839Z&HW-CC-Expire=31536000000&HW-CC-Sign=072C7AC45CD990DB9FC360BAD9C402363286D2B9D59CE14F3C647929A241EA0E)

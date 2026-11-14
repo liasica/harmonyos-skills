@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-laye
 title: 视频场景图层低功耗建议
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 视频场景图层低功耗建议
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:16+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:5765b23fe1106ab4610c1834ccea26036f84e9ab23530175590827f628e46264
+content_hash: sha256:6cc63d47ff66a0259954d3ea50325e3968cf6151df95bb941e252acfddc0c44d
 ---
 
 ## 建议
@@ -27,6 +27,6 @@ XComponent({ id: 'XComponentId', type: 'surface', libraryname: 'entry' })
 
 图层抓取命令为**hdc shell hidumper -s 10 -a allInfo。**图层的信息如下，通过查看LayerInfo中的Surface个数，可以得出图层个数。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/gxEqfcwMQ8K7m4cYkZzYBw/zh-cn_image_0000002229336393.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=7918BD4C0D92EC04572F50A735147F47B8F5E75925704485277F20D3938A2138 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/3Hc8Wk5zRxGDVrLgtZgTig/zh-cn_image_0000002229336393.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=73667F4A3CEC96D196961145054606495A6C0682C0EAF5C346108E03E4F92331 "点击放大")
 
 上图所示为一个没有弹幕的视频场景，共有4个图层，其中系统的图层2个（RCDTopSurfaceNode和RCDBottomSurfaceNode），三方应用图层2个，符合三方应用图层个数要求。

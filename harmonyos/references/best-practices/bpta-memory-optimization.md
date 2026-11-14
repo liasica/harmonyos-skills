@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-memory-opt
 title: 应用内存占用优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 应用内存占用优化
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:14+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:9f401e00dbcef922edef9879581ef25c0caf05f2e538f996dc36ab7121176675
+content_hash: sha256:2c3243a3ddf96c3130fd08df8a6ee61b4ee50ef3e4334d5bcda74519a57332d2
 ---
 
 ## 概述
@@ -62,7 +62,7 @@ LRUCache是ArkTS中常用的缓存工具，基于LRU算法实现。它主要用�
 LRUCache通过LinkedHashMap来实现LRU。LinkedHashMap继承于HashMap，HashMap用于快速查找数据，LinkedHashMap双向链表用于记录数据的顺序关系。因此，对于get()、put()、remove()等操作，LinkedHashMap除了包含HashMap的功能，还需要实现调整Entry顺序链表的工作。其数据结构如下图所示：
 
 **图1** LRUCache的LinkedHashMap数据结构图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/25-07MNHR92ucWi24v0PrQ/zh-cn_image_0000002193852104.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BB76557B480B8485BA873A04ED314F9BA9A4268AA58D462693E0941C0D4EE5D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/G3DVRlLUTIO-1Q8Hwrb_Wg/zh-cn_image_0000002193852104.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=43FF78CBF146961C65E82E981B496D8D203EA7D2798B3C0A154A707C236BDF8D "点击放大")
 
 LruCache中将LinkedHashMap的顺序设置为LRU顺序，链表头部的对象为近期最少用到的对象。常用的方法及其说明如下所示：
 
@@ -400,12 +400,12 @@ struct Index {
 访问Purgeable内存的流程如下图所示。首先，判断Purgeable内存的数据是否已被回收。如果已回收，需重建数据。访问Purgeable内存时，其引用计数refcnt加1；访问结束后，refcnt减1。当refcnt为0时，Purgeable内存可被系统回收。
 
 **图2** Purgeable内存访问流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/pDCl4k5vR5GGOli8hax4wQ/zh-cn_image_0000002229451973.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=51B146DB2D1AD82FFA2E99D50C1F549472D8856A920B6B2BF09E30C7E9CFB83D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/QGl4z-B7RHyIXwXAHugH2Q/zh-cn_image_0000002229451973.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=6547BD81EEC828DDD5111513897583756124518719B681107432815A670C518F)
 
 Purgeable内存回收流程图如下所示。当引用计数为0时，丢弃Purgeable内存中的数据，并标记为已回收。
 
 **图3** Purgeable内存回收流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/39twf1DxT5a1gDrQxhfwSw/zh-cn_image_0000002194011688.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=C447D279C4C87E587C656094F0C3C3DE553ACAD0C09F982299EB2A8FAE5C8BCA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/169a6gA_TuivPLzvM0H9gA/zh-cn_image_0000002194011688.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC8ABA26F115EB0DD5635EAB92EF9AD0EC504234BD3936BF6C2B4F9FCC76344A)
 
 ### 参考案例
 
@@ -517,7 +517,7 @@ extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
 
 一张全屏的图片，不同分辨率的内存占用大小如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/P7j8JZFDSv6yHdly2COjbg/zh-cn_image_0000002193852108.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D0D454C31CE87699FDCC3BA758A561FE950F9976AF1760F57877ECF10C8D3ED "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/BNCUWgpuRO-QZoPylkm3bQ/zh-cn_image_0000002193852108.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F457C6A47B9AF9ACA6CD3931E053462BCC817F306CB0346328525D1D4920278 "点击放大")
 
 由上图可以看出，对于页面多、图片多、效果丰富的资源密集型应用，内存容易达到较高水平。当应用的内存占用超过系统设定的阈值（例如4GB，不同系统的阈值可能不同）时，系统可能会认为应用存在严重的内存问题，并可能强制终止该应用进程，以保证设备系统的稳定性和性能。为了避免应用被系统终止，开发者可以考虑以下两点：
 
@@ -542,7 +542,7 @@ Column() {
 
 组件实际需要的尺寸为500\*500，所需内存约为1M。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/cmX7Ubp9QXan6iFAsu_zfQ/zh-cn_image_0000002194011684.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=E71EBB55A1391D9181A0E413D6BB4AD78BC5E9D2B4CC78D619901589069FB61B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/LPuer2o3R2CY6Mcsu9iDwg/zh-cn_image_0000002194011684.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=76F73F1F6E38280C3121E456E40F4A3200BC0DFB4C815CBE691B85284377AF27 "点击放大")
 
 当图片尺寸超过控件显示区域时，图片会被裁剪或缩放。频繁的裁剪和缩放不仅会降低视图效果，还会浪费内存，增加功耗。为了节省内存，开发者可以手动调整源文件的尺寸，使其与组件大小一致。这样可以避免不必要的内存浪费，并提高应用程序的性能和效率。开发者可以使用图像处理工具来调整图像尺寸，进一步节省内存空间。
 

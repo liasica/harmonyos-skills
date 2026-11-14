@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracechain-
 title: 使用HiTraceChain打点（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 分布式调用链跟踪 > 使用HiTraceChain打点（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:55+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:394c213b44e1113ac2962d16def94c7ec3fbf7099bf2e817a85e440a0e4c1524
+scraped_at: 2026-11-14T08:47:48+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:9c837e32ba17f7a57353ebd5d810fcbd9ae1350d272111a0d15bf9640544ebe3
 ---
 
 ## 接口说明
@@ -76,6 +76,8 @@ HiTraceChain在ArkTS中的使用方法参考以下示例，开发者可参考[�
      hilog.info(0x0000, 'testTag', 'record with traceId at first task');
      test(10).then(()=>{
        hilog.info(0x0000, 'testTag', 'record with traceId at then function');
+     }).catch((err: Error) => {
+       hilog.error(0x0000, 'testTag', `test failed, code: ${err.message}`);
      })
      hiTraceChain.end(traceId);
      hilog.info(0x0000, 'testTag', 'hiTraceChain end in main thread');

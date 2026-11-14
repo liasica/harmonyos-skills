@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: CommonEventData
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > commonEvent > CommonEventData
 category: harmonyos-references
-scraped_at: 2026-11-04T08:35:10+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:96bbd64dafbf50eb55dea4afde9d763c04b53a13b227fa2a78de358a7616a6bc
+scraped_at: 2026-11-14T08:51:59+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:2d269b8d5d2e956f7d744969c6b35b71f0dd47c59f8060fa904e1e43658dbdb7
 ---
 
 表示公共事件的数据。CommonEventData用于在公共事件订阅场景中承载订阅者接收到的公共事件数据，包含事件名称、发布方包名、code数据、data数据及附加参数等信息，适用于应用订阅并处理公共事件、解析事件携带数据的场景。
 
 **说明** 
 
-本模块首批接口从API版本7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 属性
 
-**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 接入调试功能
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 接入调试功能
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:19+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-14T08:48:12+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:a01b733d5a1e8e877f821ec9bddde414146b2f62a0783700bb548a9812dba0aa
 ---
 

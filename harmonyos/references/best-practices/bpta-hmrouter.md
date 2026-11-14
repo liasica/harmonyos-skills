@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmrouter
 title: 基于HMRouter的页面跳转
 breadcrumb: 最佳实践 > 手势与导航 > 基于HMRouter的页面跳转
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:05+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:499e6cc95686e4aacdcad9fb0d06ea67b6e45e63dac7d16e48a28bf26fcdf27b
+content_hash: sha256:17484aa2a8d08c8629fc868173707f150849e7bde5a7f6f98d604487ecc28125
 ---
 
 ## 概述
@@ -87,7 +87,7 @@ HMRouterMgr.to('MainPage')
 ```
 
 **图1** 返回指定页面示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/LLCeq0o2ThGZDM4KsEKaXA/zh-cn_image_0000002505304640.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BF9080D8F327F4F0FBCD3E0E3B4236DCF1CA621DBB6F568E9378DFE0A1D7856 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/W9-EMnOgRmWcG5e97CWrjg/zh-cn_image_0000002505304640.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=81982F8F57C35413900926262CDB3686D6A8956AEE6A497B987347CED90ED140 "点击放大")
 
 ### 应用未登录，点击跳转登录页的校验场景
 
@@ -124,7 +124,7 @@ HMRouterMgr.to('MainPage')
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/s2Lxdz4rSL-9jQ_HYdcwCw/zh-cn_image_0000002229450657.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C4C87E6B1D1790C15D9F938BD45EA60B6E6F4BF546C57C8C19FC7740E8BBEEC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ZZnpaS8uT0aFNT72gaMi2w/zh-cn_image_0000002229450657.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=95E6D4BA213AC20AEAA80A3A57A22C4D69FFA3B142170C07E6ED3BBDDF90423F "点击放大")
 
 ### 实现单例页面的跳转
 
@@ -234,7 +234,7 @@ export struct PrivacyDialogDetail {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Z5UfRwl3T4y6dUWwRJbHZA/zh-cn_image_0000002193850796.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=55A5CC0262736C2D3781DC90FEA09FDF2AC927CF121B487782E5DE1059F80985 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/NL2-KeIrRzyBU5SGQCeOeA/zh-cn_image_0000002193850796.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=7453BDA32652D2065C1A60D676EBC95B1002E5C41EB43B0D2A2ABC8E4408050D "点击放大")
 
 ### 首页两次返回退出应用
 
@@ -270,7 +270,7 @@ export struct PrivacyDialogDetail {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/FxbVfbbYRS2jiZW3AzRUfg/zh-cn_image_0000002193850804.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=8770ABF5DAEAA470F446DF865D7A2A35ABB484D2B3DBD7E250CD818E5F8BEEA3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/xQWgmmoUTXiR3VKkO5TgJA/zh-cn_image_0000002193850804.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=050A519B2E2702D605C5250DF0725F56CAA1BB7825BBEE83D9E8C2F115E23D02 "点击放大")
 
 ## 转场动效场景
 
@@ -367,7 +367,7 @@ HMRouterMgr.to('ProductContent')
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/DaYNAP0PSUSXIz4bileLQg/zh-cn_image_0000002194010372.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=092EE4648ED508A2264031455D33F3F39710154A6EF203A79C5AC24ABB03DE66 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/6e8sqdjuTFW4QDiHaTOI1w/zh-cn_image_0000002194010372.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F9F0F21BD75AB8AB53653C68E00D15032510BC547EA5B307D3A1D2E93579C66 "点击放大")
 
 ### 根据条件呈现不同转场动效
 
@@ -463,7 +463,7 @@ export struct CommentInput {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/cichA7NLS1K2t1pMr6pUYA/zh-cn_image_0000002194010392.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AF784B63A4735653A5964671E06018A94E3D672851611E0C30B9F6663DFF474 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/OJgGDv9kRGynF6xd1JOYmQ/zh-cn_image_0000002194010392.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=2113A71A0A95541EE96647701099BA97DD96873DA53F91011030F04DB4E2AF3F "点击放大")
 
 ### 交互式转场
 
@@ -520,7 +520,7 @@ export class LiveInteractiveAnimator implements IHMAnimator {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/GjXeuidnT1KtrjjtYybMoA/zh-cn_image_0000002194010388.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1CB74BFB9289C6C6D00113C8EE35D86336831756106B1F4B5C85FB89A7C19BE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/RZUquIlrSF6HrE80Q-Jf-g/zh-cn_image_0000002194010388.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=83A889FD663200FB8B2EFB992D57E0A7FAB300A197531E27BFCC3D5FF29D81EC "点击放大")
 
 ## 数据加载场景
 
@@ -555,7 +555,7 @@ export class LiveInteractiveAnimator implements IHMAnimator {
 3. 关联生命周期与对应组件。将生命周期的lifecycleName作为@HMRouter注解的lifecycle参数进行传入完成关联。
 
 **图2** 数据请求预加载流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/ueNtM_fzS6iJVQNW4l068w/zh-cn_image_0000002428190130.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6871576A4AC6F8E151DBB56E75CF35C05C2B5B13F31F2D78268F613F9730284 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/0DfWzcgDQ2mCksBvFBlqUg/zh-cn_image_0000002428190130.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD58DB93FA082DFE8C359E605F4CEFAB98A801E5B9E747062C2526BE51A30949 "点击放大")
 
 ### 页面重开数据恢复
 
@@ -627,7 +627,7 @@ export class LiveInteractiveAnimator implements IHMAnimator {
    ```
 
 **图3** 页面重开数据恢复流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/UilLmKZ-RsylkEh1JjpQ7Q/zh-cn_image_0000002461709833.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCC91CE0825E196A832569AD9814C90D090FB5D21FF38D4616DD97AAFB4D1AE9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/BjAIYeACRD62SeCsKtP7aQ/zh-cn_image_0000002461709833.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9876702F95E05B471CA6FEBC1261BFDC21B0134F814756685F7FD59BCCDCA4D "点击放大")
 
 ## 维测场景
 
@@ -657,7 +657,7 @@ export class LiveInteractiveAnimator implements IHMAnimator {
 
 **图4** 页面埋点日志记录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/dydna6yJQGisOhjLexZOJw/zh-cn_image_0000002194010384.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FD54B2107FAFAA9787251276C4D535A2B019180B7F87F358CF8D16166363D91 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/7w7bUs8VS5WZgsTdJ3V4Dw/zh-cn_image_0000002194010384.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A89705341083194AA91B74C2C2C247B381DC1CB4606FFA99D0E467367D736D9 "点击放大")
 
 ## 示例代码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/changelog
 title: 最佳实践文档变更说明
 breadcrumb: 最佳实践 > 文档变更说明 > 最佳实践文档变更说明
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-09
-content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881e2019
+scraped_at: 2026-11-14T08:54:23+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:5cd6d3fb575fdc3e41810cc96ac181bc955f17b122db7e589d465224e2b3a5a0
 ---
 
 ## 2026年9月
@@ -910,7 +910,7 @@ content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881
 **变更效果**
 
 **图1** 最佳实践目录变更前后对比   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/dRXSlz_gTIm4SuQEf_7IIQ/zh-cn_image_0000002307192376.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=09735C4C0719E3AAC809AAADA56D18425F3A7BBC1543496242CEC977C0DE87DC "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/tr6nUiRQQAmHURrHBYgQIA/zh-cn_image_0000002307192376.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=E81409BE5B3C6E7556B5B1CD8C103E1AABA2CD0C0E7EB412E36E6E0C4EB24C23 "点击放大")
 
 ### 新增文档
 
@@ -1107,7 +1107,7 @@ content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881
 
 **图2** 最佳实践目录变更
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/-Xz8TKZNTxC9JOn8z4wQrQ/zh-cn_image_0000002318291885.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=88BCE2881C77A1A9020E3831FAE0B7692C02A67B7C122118468D9BB365C6A686 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/A5zVH3esSAWENOoQ1-rzsA/zh-cn_image_0000002318291885.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4ED347A6284E7C62CBF8E8C16053CBAB39B5C352F6C246F0458FCB479D37A85 "点击放大")
 
 ### 新增文档
 
@@ -1259,7 +1259,7 @@ content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881
 * 原“常见性能优化场景”章节更名为“性能场景优化案例”，修改文档标题，提升查找的准确性和效率。
 
   **图3** 最佳实践性能目录变更对比   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/-MjS5qtbR6e04WY5x0MgnA/zh-cn_image_0000002283692304.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=11A03487548214C1C2CC6E6DB07E5F93C4293162BD23CA03B824124BF459879B "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/tqES4VscR3qgYpotaPHaHw/zh-cn_image_0000002283692304.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=139A95534FCF222428CD6C8535FFFC98DD85FD6F460A82BFF260E3F8CADFFED2 "点击放大")
 
 ### 新增文档
 
@@ -1384,7 +1384,7 @@ content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881
 * [使用Swiper组件实现轮播图](bpta-carousel-graphic-works.md)：介绍如何通过Swiper组件来动态展示图片，实现图文作品合集轮播和实现轮播图片叠加的效果。
 * [评论回复弹窗](bpta-comment-reply-pop-up-window.md)：介绍弹窗组件的选型以及最终方案、软键盘和表情面板切换的适配、和编辑区域主要细节功能这三种评论列表上层弹出的场景实现。
 * [常见导航样式案例](bpta-multi-tab-practice.md)：介绍如何在应用程序中使用底部、顶部和侧边多标签功能，以提供更好的用户体验和功能。
-* [智慧多窗](bpta-multi-window-practice.md)：介绍悬浮窗/分屏布局适配方案，以及智慧多窗开发过程中的一些常见问题以及解决方案，来帮助开发者快速适配智慧多窗布局开发，提升用户使用体验。
+* 智慧多窗：介绍悬浮窗/分屏布局适配方案，以及智慧多窗开发过程中的一些常见问题以及解决方案，来帮助开发者快速适配智慧多窗布局开发，提升用户使用体验。
 * 网络管理与状态监听开发实践：介绍网络管理中网络连接管理、网络信息查询和网络状态监听等。帮助开发者了解网络管理中常用的查询方式和如何进行网络状态变化的监听。
 * 视频播放：介绍如何基于HarmonyOS能力快速实现视频播放应用。
 * 在线视频播放卡顿优化：介绍如何解决在线视频播放过程中可能遇到的卡顿问题。
@@ -1418,7 +1418,7 @@ content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881
 * [高负载场景分帧渲染](bpta-dispose-highly-loaded-component-render.md)：介绍如何在转场场景和滑动场景中实现高负载组件渲染的方法。包括实现原理、解决思路和开发步骤等。
 * [相机分段式拍照性能优化](bpta-camera-shot2see.md)：介绍如何在相机Shot2See场景中实现分段式拍照Shot2See的完成时延低于单段式拍照。
 * 音频播放交互场景：介绍在音乐播放器应用中，如何从应用与用户、播放设备以及其他应用的交互三方面入手，为应用带来灵活多样、符合用户直觉的交互体验的示例方案。
-* [Drawing自绘制性能提升](bpta-drawing-capability-improve-performance.md)：介绍如何通过绘图能力来提高性能的方法。文档中详细解释了绘图能力的重要性，以及如何使用绘图能力来优化应用程序的性能。
+* Drawing自绘制性能提升：介绍如何通过绘图能力来提高性能的方法。文档中详细解释了绘图能力的重要性，以及如何使用绘图能力来优化应用程序的性能。
 
 * [意图框架习惯推荐场景](bpta-intent-recommend-practice.md)：介绍如何通过意图接入来开发“音乐播放”场景。
 
@@ -1591,7 +1591,7 @@ content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881
 
 * [瀑布流加载丢帧优化](bpta-waterflow-performance-optimization.md)：介绍如何进行流水线性能优化的方法和技巧。文档中包含了详细的步骤和示例，帮助开发者在开发过程中提高应用程序的性能和效率。
 * [Grid组件加载丢帧优化](bpta-improve_grid_performance.md)：介绍如何提高网格性能的方法，包括减少布局层次、使用合适的布局管理器、使用ViewHolder模式、使用异步加载等。
-* [应用包体积优化](bpta-decrease_pakage_size.md)：介绍如何减小应用程序包的大小。包括使用资源压缩、代码混淆、资源合并等技术，以及减少不必要的依赖和资源文件等建议。
+* 应用包体积优化：介绍如何减小应用程序包的大小。包括使用资源压缩、代码混淆、资源合并等技术，以及减少不必要的依赖和资源文件等建议。
 
 **安全**
 
@@ -1603,7 +1603,7 @@ content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881
 
 **功能开发**
 
-* [ArkWeb渲染框架适配](bpta-arkweb_rendering_framework.md)：介绍ArkWeb渲染框架的特点、使用方法和最佳实践，帮助开发者更好地利用该框架进行Web应用开发。
+* ArkWeb渲染框架适配：介绍ArkWeb渲染框架的特点、使用方法和最佳实践，帮助开发者更好地利用该框架进行Web应用开发。
 
 ## 2024年3月
 
@@ -1699,7 +1699,7 @@ content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881
 
 * [ArkTS高性能编程](bpta-arkts-high-performance.md)：介绍开发过程中的一些高性能的写法和建议，包含变量声明、属性的访问、数值计算、数据结构的使用以及函数声明与使用等。
 * TaskPool和Worker对比：介绍TaskPool和Worker的概念、使用场景以及如何选择适合的方案。通过比较TaskPool和Worker的特点和优势，帮助开发者更好地理解和应用这两种技术，以提高工作效率和性能。
-* [状态管理最佳实践](bpta-status-management.md)：介绍状态管理的概念、原则和实施方法，包括状态管理的重要性、状态管理的基本原则、常见的状态管理模式和框架，以及实现状态管理的具体步骤和示例代码。
+* 状态管理最佳实践：介绍状态管理的概念、原则和实施方法，包括状态管理的重要性、状态管理的基本原则、常见的状态管理模式和框架，以及实现状态管理的具体步骤和示例代码。
 * [动画使用指导](bpta-fair-use-animation.md)：介绍合理使用动画的技巧和方法，包含了一些关于动画设计原则、性能优化、交互设计和可访问性等方面的建议和技巧。
 
 ## 2023年9月

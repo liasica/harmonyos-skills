@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-backup
 title: 数据库备份与恢复 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性 > 数据库备份与恢复 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:02+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:223d353960a0bc7e15df72734d9c431b1f0e0bf1ea0cdfbe732afba8433f87bb
+scraped_at: 2026-11-14T08:46:53+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:f37675a60d6237cffa5f6ccf523d9418b36cb66156a9476ea254355334478dde
 ---
 
 ## 场景介绍
 
 如果操作或存储的过程中出现问题，开发者可以使用恢复功能，将数据库恢复到之前的状态，重新对数据库进行操作。
 
-在数据库被篡改、删除、或者设备断电场景下，数据库可能会因为数据丢失、数据损坏、脏数据等而不可用，可以通过数据库的备份恢复能力将数据库恢复至可用状态。
+在数据库被篡改、删除或者设备断电场景下，数据库可能会因为数据丢失、数据损坏、脏数据等而不可用，可以通过数据库的备份恢复能力将数据库恢复至可用状态。
 
 当前仅支持使用关系型数据库（C/C++）进行备份与恢复。
 

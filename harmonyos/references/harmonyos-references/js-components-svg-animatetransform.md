@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: animateTransform
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > animateTransform
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:33+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:37c78bb994ca3d0d15ff8e170ac22a75b7182565630c9a724869b922ecc062fd
+content_hash: sha256:f31dbecd545a6c1005950bd691c4c8799db71de8ac00a594d583c8f5a22509fb
 ---
 
 **说明** 
@@ -93,7 +93,7 @@ transform动效，支持的组件范围：
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/8w2XvkZDRU2a_k7fa3tiXQ/zh-cn_image_0000002786361814.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=93077D12E617E80313ED9963DDBD2BAF0BF8A8906E763A4A489C2F97BF6FE3F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/kJ7BYF0PRpu2DuroGeQVKw/zh-cn_image_0000002817508979.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B30101EC28479D846C062FEBC78BBCB98F285BF9066D3EE7B1F6C8604D2A4DB)
 
 动画叠加
 
@@ -148,7 +148,7 @@ transform动效，支持的组件范围：
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/DEYgdt0gSzKlQYQcxZUpZg/zh-cn_image_0000002815561235.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=A28DFF2245122FD39B4E8CE1FC90D6228BF836C22EFA9AFCA3B993F82D4F1B4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/AcGMCuO2QMi64NU524Abdw/zh-cn_image_0000002788309548.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=D773CA480BD1181275A46EEF9EA56F87FCD3FE1E60CA0D3FD0A89F49226561AE)
 
 涉及组件示例
 
@@ -216,4 +216,4 @@ transform动效，支持的组件范围：
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/9pPFk7TIQi2DUh2Uv-SCJw/zh-cn_image_0000002815401319.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=25C45ED67D9D8534715E968BD3547520BF5B1663977E04BBAA957BEE7C1A92B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/1WLkGJpbS3OIgWJDhrxNfw/zh-cn_image_0000002817428911.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=73F6E5AF336F9513B8CF87A1DFB3838DF7CEA3D3ADE1083B66C00ABB91B3E68B)

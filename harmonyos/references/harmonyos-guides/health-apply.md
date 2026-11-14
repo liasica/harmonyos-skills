@@ -1,26 +1,26 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-apply
 title: 申请运动健康服务
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 开发准备 > 申请运动健康服务
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发准备 > 申请运动健康服务
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:af41f8d99d4516e388098f54d9ed76deea17059dac4c10d06991f779d6f82c35
+scraped_at: 2026-11-14T08:48:18+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:e49a2c8c75a0f20eb6a288202d17ab549bfcbf3e1f66b57661a312978f4021dd
 ---
 
-申请运动健康服务前，请先参考[应用开发准备](application-dev-overview.md)，确认开发环境并完成[创建项目](../app/agc-help-create-project-0000002242804048.md)、[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)、[添加公钥指纹](application-dev-overview.md#条件必选添加公钥指纹)等基本准备工作，再继续进行以下开发活动。
+申请运动健康服务前，请先参考[应用开发准备](application-dev-overview.md)，确认开发环境并完成[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)、[添加公钥指纹](application-dev-overview.md#条件必选添加公钥指纹)等基本准备工作，再继续进行以下开发活动。
 
 1. 登录[HarmonyOS开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/)，进入“开发者管理 > ID、证书和Profile > APP ID > 开放能力管理”页面，在应用列表下选择需要申请的应用。
 2. 点击**运动健康服务**对应的**管理**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/GNdk294QQD2rBg6t9_VePQ/zh-cn_image_0000002815559727.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A172A55E1EF7EA9E3022AD5AA5ED5E785B781A05D26BFF4F04F93B137F5DF8CD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/3NxNBXPeR3KVhBhGzh9jJg/zh-cn_image_0000002788308038.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=D385FB048EEE1A5405C515E46DB1875A64BC2C9C360DC5688F74A110A146B2D9)
 
    **说明** 
 
    * 暂不支持团队账号下的成员账号独立使用运动健康开发服务，详情请参见[团队账号](../start/team-account-guides-0000001053785552.md)。
 3. 单击**申请Health Service Kit服务**，同意协议后，进入数据权限申请页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Wt8YWdYvQ2aav512Av2FQw/zh-cn_image_0000002815399811.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=245140BFB6D40721B59AA2FF7FB3C88747B23469F8FAA3DDF80EC385450853CE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/XDL674B8Te6PQGjreiWSRQ/zh-cn_image_0000002817427401.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8DF3D6ADACBD8D1B681A38B8DBB091C1012D343AF3BBF450E53A324D61B8FE0)
 4. 产品类型选择**HarmonyOS应用**，并填写申请信息，勾选产品必需申请的数据权限。
 
    **说明** 
@@ -29,16 +29,16 @@ content_hash: sha256:af41f8d99d4516e388098f54d9ed76deea17059dac4c10d06991f779d6f
    * 在应用或服务发布后，华为会对权限使用情况进行不定期抽查，抽查形式包括但不限于对已发布的应用进行抽样检查、对API调用情况进行监控、派遣专员核查等。您可以通过在申请运动健康服务前签署的合作协议，了解核查标准以及核查后的处理方式。
    * 数据类型对应的OAuth权限请参见[权限说明](health-permission-description.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/w_hJHGeaSB-nXm6UIMqEPQ/zh-cn_image_0000002786520236.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FAD34D4C1D3B0A04E21D2C24FF010E75C683CD7FFA97291BFFBDA9C16663995)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/OATdE95QSGyvt-JHtVQucA/zh-cn_image_0000002788467982.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=90AA6E17D135BA8D8FD110550C78B79C891A69C649C301D6B22942E6BE28C9F6)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/uyn9mASpSLmZKRLWS5avMg/zh-cn_image_0000002786360308.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=650E5838795C71BEC3D1787AEF0932F696919A90C119F7F956FEF5FC32B40337)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/QJRI6qYuRnyuR_NI3-EPJw/zh-cn_image_0000002817507471.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=F434A7ADB1ED3ACF1BED73F22604E1C4A094D2F7A27608219F966E9FE3002661)
 5. 为保障用户隐私和数据安全，运动健康服务需要开发者反馈相关材料和信息，以确保应用向用户请求数据权限是合理的。
 
    **说明** 
 
-   请在提交材料前先阅读[申请被驳回的常见问题](health-apply.md#申请被驳回的常见问题)，以避免在您的申请材料中出现同类问题。
+   请在提交材料前先阅读[申请运动健康被驳回的常见问题](health-faqs.md#申请运动健康被驳回的常见问题)，以避免在您的申请材料中出现同类问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ulsXBDb1SJ-5BnV4Tyzrzw/zh-cn_image_0000002815559729.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA05E1DF4D862A06FE2BB604E0433A77EB9A04911256FF4500CF6F80E98CA09A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/bSbaRz02SCGQG1R0gucx2A/zh-cn_image_0000002788308040.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6C9B3C42AA43F392B037C732E2B3D23A12D30B6D92FD65321BE75126E1A6653)
 6. 申请开通测试权限。
 
    您提交的申请需要经过人工审核，审核周期约10个工作日，请耐心等待，审批结果将以短信和邮件的形式通知您。
@@ -52,79 +52,11 @@ content_hash: sha256:af41f8d99d4516e388098f54d9ed76deea17059dac4c10d06991f779d6f
      + 当前审核通过仅以开发测试为目的，测试阶段有用户数量的限制，仅前100位用户可使用您申请应用中的华为运动健康服务。为解除用户数量的限制，请在应用完成开发测试验证后提交验证申请，具体请参见[申请验证获取正式权限](health-verification.md)提交验证申请。
      + 测试权限开通后，请于一年内完成[申请验证获取正式权限](health-verification.md)操作，否则平台将关闭您已开通的测试权限。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/FAfKBiKBTAyjEab45H1Xbw/zh-cn_image_0000002815399813.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0289CEB9AEB7B9603AF83602E8BEB1220F3D3447A292E8E37255C37F94873A3)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/5KEdp2MPRguzVPBG2Xh4sg/zh-cn_image_0000002817427403.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=10A709719D95F754A57383064F91D4F819162E8744E653DE3D4EEAFF907261AD)
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/qh6f3s7bSrGCiSG3mazhdg/zh-cn_image_0000002786520238.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=36169890FE147CC1D0D1F838ACF3260CE7360E19D11E5076B2F853718819184B)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/8juyryfFTfqag1dizGheDg/zh-cn_image_0000002788467984.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDA6FF8740D92FB7A6978F425F3E86AF339463E5A5A0F684A9DB842E443FD815)
 7. 权限管理。
 
 若您的业务范围发生变动，需要修改相应的数据权限，您可以单击“管理”更新权限再次提交申请。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/rm6SnbzjRvmfhYqUB7C08g/zh-cn_image_0000002786360310.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F2FEB5A9BE8830F627C1EBD752A8788F2D87734AEF17FEEFCE838A79254D140)
-
-## 申请被驳回的常见问题
-
-以下为申请服务被驳回的高频典型问题，请您在申请前阅读以下内容以避免在您的申请材料中出现下述问题，若您已提交申请并被驳回，也可参考以下解决方案修改申请材料并重新提交。
-
-### 权限说明缺失
-
-要求：申请的每一个读/写数据权限都要在材料中说明。
-
-解决办法：您提交的申请材料页签1和页签2中说明的权限少于所申请的权限，请检查填写的权限与所申请的权限是否一一对应，在页签1和页签2中补齐所申请的每一项权限的使用说明。
-
-**说明** 
-
-如您申请的数据读/写权限的使用场景在应用开发过程中发生变化，请在申请验证前更新申请材料清单。
-
-### 图标使用不规范
-
-要求：图标的使用需遵循[标志使用规范](health-logo-usage-regulations.md)。
-
-解决办法：您提交的申请材料中涉及华为运动健康图标展示的场景，按照[标志使用规范](health-logo-usage-regulations.md)中要求的视觉效果进行呈现。
-
-### 必选内容未填写
-
-要求：申请材料中每个标注“必填”的页签都需要填写。
-
-解决办法：您提交的申请材料中存在未填写的页签，尤其是企业开发者需要填写“企业介绍”页签，若您为个人开发者，请填写“开发者信息”，并明确个人所在科研机构或大学等。
-
-### 企业、事业单位/政府机构、社会团体实缴注册资本不符合审核要求
-
-要求：
-
-* 企业申请资质要求：企业以实缴注册资本为准，申请访问开放等级为基础的用户数据，企业实缴注册资本不低于50万元；申请访问开放等级为高阶的用户数据，企业实缴注册资本不低于500万元。
-* 事业单位/政府机构申请资质要求：如果申请主体为事业单位或政府机构，可免除资金和成立年限要求。事业单位或政府机构委托的企业，需遵循企业申请资质要求。
-* 社会团体申请资质要求：社会团体以活动资金（注册资本）为准，申请访问开放等级为基础的用户数据，活动资金不低于50万元；申请访问开放等级为高阶的用户数据，活动资金不低于500万元。
-
-**说明** 
-
-* 以上企业实缴注册资本数据以[国家企业信用信息公示系统](https://shiming.gsxt.gov.cn/socialuser-use-rllogin.html)中最新年报数据为准。
-* 数据类型开放等级请参见[数据开放总览](health-data-overview.md)。
-
-解决办法：如您的资质不符合以上要求，需要由符合以上企业资质的公司作为保证人并提供《[担保函](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/protected/docTemplateZh/000/001/044/1000000000000001044.20250714003858.97794800280943716662489602627215:20750702004051:100005355:CBD4513F116D37E1E5BFE212973516547B1FE4DD61C5388E3248AC5086AEC255.docx)》。您需要通过**[hihealth@huawei.com](mailto:hihealth@huawei.com)**邮箱提供如下文件：
-
-* 载明保证人对外担保流程的公司[《章程》](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/plain/statutes/000/001/044/0000100000000001044.20240829085730.86499642368766203545820936006783:20740817085749:100005355:DBD975A8478DC681283B75DE2AD73917B3B11446827CA32763910C56B2011CE8.zip)。
-* 符合保证人章程要求的决策文件：
-
-  + 章程有要求的，按照章程要求提供决策文件，如[《股东（大）会决议》](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/protected/docTemplateZh/000/001/044/1000000000000001044.20250714004023.16343515928607914481291350148827:20750702004051:100005355:8B4E5C1B220B83172183582BD53C8BCCF57BC737EFA1CF4F4599FEBFAD555A87.docx)、[《董事会决议》](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/protected/docTemplateZh/000/001/044/1000000000000001044.20250714004003.08070939173044201994197977210474:20750702004051:100005355:48EA6076E27CA666DBABA8D928732D533089BF5EFF3B59659AA61450512C39BC.docx)等。
-  + 章程无要求的，提供过半数表决权股东签字/盖章的[《股东（大）会决议》](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/protected/docTemplateZh/000/001/044/1000000000000001044.20250714004023.16343515928607914481291350148827:20750702004051:100005355:8B4E5C1B220B83172183582BD53C8BCCF57BC737EFA1CF4F4599FEBFAD555A87.docx)。
-  + 公司为公司股东或者实际控制人提供担保的，必须经股东会或者股东大会决议，相关股东或受相关实际控制人支配的股东，不得参加表决，且表决由出席会议的其他股东所持表决权的过半数通过。
-  + 上市公司提供担保，需要公开披露。
-* 保证人盖章的《[担保函](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/protected/docTemplateZh/000/001/044/1000000000000001044.20250714003858.97794800280943716662489602627215:20750702004051:100005355:CBD4513F116D37E1E5BFE212973516547B1FE4DD61C5388E3248AC5086AEC255.docx)》。
-
-**说明** 
-
-《担保函》、《股东（大）会决议》文件中的“保证最高限额”，保留一个选项。
-
-### 个人开发者接入资质不符合审核要求
-
-要求：申请访问开放等级为基础的用户数据，个人开发者不得有个人信用不良记录。开放等级为高阶的用户数据暂不向个人开发者开放。数据开放等级请参见[数据开放总览](health-data-overview.md)。
-
-解决办法：将您的移动应用上架至华为应用市场，或重新注册企业开发者账号申请运动健康服务；申请运动健康服务时，仅勾选开放等级为“基础”的用户数据。
-
-若仍未解决您的申请被驳回的问题，您可以选择以下方式寻求帮助：
-
-1. 通过华为开发者联盟的[智能客服](https://developer.huawei.com/consumer/cn/customerService/#/bot-dev-top/faq-top/faq-talk-top)获取快速帮助。
-2. 通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取人工帮助。
-3. 通过华为开发者论坛的[运动健康](https://developer.huawei.com/consumer/cn/forum/block/huawei-hihealth)板块寻查答案或提问。
-
-提交问题后，通常会在1~2个工作日内收到回复。有时需要您进一步澄清问题，请及时关注进展并予以回复，以便更好地解决问题。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/U25DzEx-SNavqorKCHaNsg/zh-cn_image_0000002817507473.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E03EF069E316479B1F7B63ABFFB18667F8F7337D59A079275AA8A548990D1B8)

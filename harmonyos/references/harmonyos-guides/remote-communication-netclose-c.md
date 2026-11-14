@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 关闭会话（C++）
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 发起HTTP请求，获取响应 > 关闭会话（C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:455eaa272e18b7040222155de25002ed88d0c1d79efff0dc6c0da6a617814f2b
+scraped_at: 2026-11-14T08:47:37+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:dcd1593481090abae48601dfdda16870686fe58923c9373d5a58846caa5c1e5c
 ---
 
 当一个远场通信请求完成，即数据已经成功发送并收到确认，或者在某些情况下，由于超时或其他错误原因，通信尝试失败，此时应立即调用相应的“关闭会话”或“释放资源”方法。这一操作的主要目的是：
@@ -19,7 +19,7 @@ content_hash: sha256:455eaa272e18b7040222155de25002ed88d0c1d79efff0dc6c0da6a6178
 
 ## 约束与限制
 
-关闭会话能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+关闭会话能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 接口说明
 

@@ -3,10 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-communicat
 title: 通讯
 breadcrumb: 最佳实践 > 技术创新 > 通讯
 category: best-practices
-scraped_at: 2026-10-29T08:03:12+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:d52e1fa3d095c512a98e77ed779d28c42592789f01532291070c40cd75f3b5bd
+scraped_at: 2026-11-14T08:54:04+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:be3322e34c213738280c096488256e1fbb2063d9245d22d7b671c420101b0963
 ---
 
-* **[冷启网络预建链最佳实践](bpta-pre-connect.md)**
+* **[冷启网络预建链](bpta-pre-connect.md)**
 * **[弱网直播优化](bpta-live-streaming-optimization.md)**

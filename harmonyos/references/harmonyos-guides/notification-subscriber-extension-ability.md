@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 通知订阅扩展能力概述
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 通知订阅扩展能力 > 通知订阅扩展能力概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:25+08:00
 doc_updated_at: 2026-08-21
-content_hash: sha256:2345dee4537ce5a3154c2f6cf14d2836416964223cc9b549aa1a9ea15018d255
+content_hash: sha256:873de3927cb348a91ee4a55a2d2aee3da76b6852e791824096eef8f7f6d6c164
 ---
 
 ## 功能简介
@@ -32,4 +32,4 @@ content_hash: sha256:2345dee4537ce5a3154c2f6cf14d2836416964223cc9b549aa1a9ea1501
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/8IWodGvRQQ-b2lVSV4iJwg/zh-cn_image_0000002786360470.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A2C77C4A1C68F372EA9C83BF4A656522BEE6E2B911841870DF247AE217F78EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/jTmry24cRaegtBi97xvHiQ/zh-cn_image_0000002817427565.png?HW-CC-KV=V1&HW-CC-Date=20261114T004825Z&HW-CC-Expire=31536000000&HW-CC-Sign=5233C79B6A8395A74C6B253EC45DFC9FA90B7DA25F95E21B2042D5E6C87D4997)

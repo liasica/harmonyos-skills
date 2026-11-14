@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf
 title: udmf_meta.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > udmf_meta.h
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:47+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:c476b15171e8dadad64b5cfe3d1efcc12923c592fafb867a275d50d813488ea6
+scraped_at: 2026-11-14T08:49:43+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6944fc68bff1d7c38039646255f2013981adee196785f4a78b06da0d86e077ae
 ---
 
 ## 概述
@@ -160,7 +160,7 @@ content_hash: sha256:c476b15171e8dadad64b5cfe3d1efcc12923c592fafb867a275d50d8134
 | UDMF\_META\_POSTSCRIPT\_PFB\_FONT "com.adobe.postscript-pfb-font" | PostScript Font Binary字体类型，归属类型为FONT。  **起始版本：** 12 |
 | UDMF\_META\_POSTSCRIPT\_PFA\_FONT "com.adobe.postscript-pfa-font" | Adobe Type 1 字体类型，归属类型为FONT。  **起始版本：** 12 |
 | UDMF\_META\_OPENHARMONY\_HDOC "openharmony.hdoc" | 系统定义的备忘录数据类型，归属类型为COMPOSITE\_OBJECT。  **起始版本：** 12 |
-| UDMF\_META\_OPENHARMONY\_HINOTE "openharmony.hinote" | 系统定义的笔记数据类型，归属类型为COMPOSITE\_OBJECT。 |
+| UDMF\_META\_OPENHARMONY\_HINOTE "openharmony.hinote" | 系统定义的笔记数据类型，归属类型为COMPOSITE\_OBJECT。  **起始版本：** 12 |
 | UDMF\_META\_OPENHARMONY\_STYLED\_STRING "openharmony.styled-string" | 系统定义的样式字符串类型，归属类型为COMPOSITE\_OBJECT。  **起始版本：** 12 |
 | UDMF\_META\_OPENHARMONY\_WANT "openharmony.want" | 系统定义的Want类型，归属类型为OBJECT。  **起始版本：** 12 |
 | UDMF\_META\_GENERAL\_FILE\_URI "general.file-uri" | 文件地址类型，归属类型为TEXT。  **起始版本：** 13 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-generate
 title: 通过字节数组生成码图
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 码图生成 > 通过字节数组生成码图
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f6c64888c0270e0dde068669d615bbacb8df8a9582202b0c3443ecebde38cb86
+content_hash: sha256:6f503eb89a1037ed24fde2dd5556317697784f2b7b403a1f4392ddd90ccf7611
 ---
 
 码图生成能力支持将字节数组转换为自定义格式的码图。
@@ -23,7 +23,7 @@ content_hash: sha256:f6c64888c0270e0dde068669d615bbacb8df8a9582202b0c3443ecebde3
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/MKZn7RVHQBaWEI0ngJvsAQ/zh-cn_image_0000002815559401.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=2658C83D44C7201D8B97E04F4309DBA7D74AB5CF376DF3CD46DE038E1085961D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/H56oUA8NT-WE2q-UEySFMQ/zh-cn_image_0000002788467656.png?HW-CC-KV=V1&HW-CC-Date=20261114T004802Z&HW-CC-Expire=31536000000&HW-CC-Sign=3ADBD37AF2A07DCAA4D3C876AA3B2C73E7CE15E0B21660E66E065AE42DC8DC3B)
 
 1. 用户向应用发起生成码图请求后，传入需要生成的码图信息，包括码图的类型、宽高等。
 2. 应用通过调用Scan Kit的createBarcode()接口启动码图生成能力。

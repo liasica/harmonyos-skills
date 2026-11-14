@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-ext
 title: 扩展屏投播开发指导
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 分布式媒体会话 > 使用投播组件 > 扩展屏投播开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:55+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f9eddd548faaa07fa8dc6b1a5125af2791c395fdc3b19f95a402d786972f5a99
+content_hash: sha256:7b55bcb4fc68d55a480df29e2eecfce786f745e53e9b17e623fb29a755f340d9
 ---
 
 通过本节开发指导，可在系统镜像投屏后，获取投屏设备信息，实现扩展屏模式的投播，实现双屏协作的能力。
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/sytJNEirQc-PJFpVTTd8Tw/zh-cn_image_0000002815559311.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EA329CE8B370AC792F8EBC824E073C1E4F54CF91155F3E782A261ECA7D6FB02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/1DvUNq0KTIaBT82aQC-L-A/zh-cn_image_0000002788467566.png?HW-CC-KV=V1&HW-CC-Date=20261114T004614Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE1A2A623AEFA2720E1DE1D1D403E231A29F014C6C4492D7D6B5FDCF372D5FC1)
 
 * **虚拟扩展屏**
 

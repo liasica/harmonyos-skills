@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-adventures
 title: 户外探险
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 锻炼记录数据 > 户外探险
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Phone/Tablet应用开发 > 开放数据类型 > 锻炼记录数据 > 户外探险
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:27+08:00
+scraped_at: 2026-11-14T08:48:18+08:00
 doc_updated_at: 2026-07-09
 content_hash: sha256:9896a4174442347c4d6024fc98e3d863d926c09106fb1e23ceb49e8100d5280f
 ---

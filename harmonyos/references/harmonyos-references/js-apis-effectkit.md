@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.effectKit (图像效果)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.effectKit (图像效果)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:53:03+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:ce75d6be6c194350731390f90e41437d34bd78c0abe691e8cfd4bdc40313bde1
+content_hash: sha256:aaa9bea92e1579f43e2eb3fd8611350248f1206f45c2a38d22713c87d6542f7b
 ---
 
 图像效果模块提供了处理图像的基础能力，包括亮度调节、模糊化、灰度调节和智能取色等。effectKit用于离线处理图像（如pixelmap、png、jpeg）以获得视觉效果，而[@ohos.graphics.uiEffect (效果级联)](js-apis-uieffect.md)则实时接入渲染服务，针对屏幕帧缓存进行处理以获得动态视觉效果。
@@ -376,7 +376,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/6eJFUeeuSV-OgWBgFtUELg/zh-cn_image_0000002786362138.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9AFF1AA25A62283CBC0A11D7ADE725AE0195CFFF452407980A5B4FD68E5A939)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/-TCf_NPITSGHFpAKwZEp4g/zh-cn_image_0000002817509303.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=F12100DBC29978D9D1DF9E6361FB957405B94F18F69BB0942929465DA4EE7F38)
 
 ### getMainColorSync
 
@@ -424,7 +424,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/L4Ue4LoORC-5ItU4NN44jA/zh-cn_image_0000002786362138.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=49F9B857D55C5AFB2A6B8483A5B034E022D0CB0582DC95E851C8CF8E61EBA5B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/8gQq9_obRWSWNT5eADkg6g/zh-cn_image_0000002817509303.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=56B5AD5275C12EACB09E06E152472ECB048525F871C029F03C5614C4D3CBCED9)
 
 ### getLargestProportionColor10+
 
@@ -472,7 +472,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/g6bHf0t9T7yYhdrcKRz2_w/zh-cn_image_0000002815561559.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=456D935A915BD9BDC9AD81850206FDCBB17FC439D69621E617F916B7A09932D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/ie81Vm-jQ_OuSTUMLsLaHg/zh-cn_image_0000002788309872.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=39D35F5C3DA882EA02E22601891BA98910F5FA4C8279071BEA2B664011A98FE5)
 
 ### getTopProportionColors12+
 
@@ -530,7 +530,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/CFF8jXx8QZWJ8-PlZToXVg/zh-cn_image_0000002815401643.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D69366145150FAAC4A27D1F0F1EE232EE205EF945B5573F34B52A0521CEFF52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/vlWZ4s3yRNGR5cBY02e2eA/zh-cn_image_0000002817429235.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=28207CBDC20C4BEBE78EB307DFC66CE0E48D8A45F4FCA64DC2B9BFBC5A72EA8E)
 
 ### getHighestSaturationColor10+
 
@@ -578,7 +578,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/bzvc5VFxSsqudZtKW88EgA/zh-cn_image_0000002786522068.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4B36DEBA446FE16D59D6EAC7365340A6422D5277E1F5AF4CEB6D28B8514EA0B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/BIXD1QuNTcyFgDE60V3L3w/zh-cn_image_0000002788469816.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=17D71BC28383E6765571AFFFAFFF732BB2CD1B171792C2D24A35A7A372D4B0C2)
 
 ### getAverageColor10+
 
@@ -626,7 +626,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/-bu1UnXFRrKbeO0m0A3Guw/zh-cn_image_0000002786362140.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=78A80F533A82FA5AC2D184A6E28163CCEFA341DA0FD143CEAAF9B4FE4C14263F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/S-dWi9ywTS6qIXwpCWbS8w/zh-cn_image_0000002817509305.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3CD0B36DDE6E1A414150428EA4F5AFE1D5E16A62EEED9480A7778519A403125)
 
 ### isBlackOrWhiteOrGrayColor10+
 
@@ -789,7 +789,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/DwDXOjdwRhmtZ6hJgPRcPg/zh-cn_image_0000002815561561.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4A300C847EB9323F078E7EE1F36C8FA6F1C1329958EAC44ECA41E62D883B779)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/7uLhI3mCR-OcZ8LQYu5uCw/zh-cn_image_0000002788309874.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C83B99F3A6738C695F95FADD927B66F1F5B7900C9A084FF1595333A628B7AFF)
 
 ### blur14+
 
@@ -893,7 +893,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/2Q7uYTl8T8Gnu5SVN9IuHg/zh-cn_image_0000002815401645.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF12FEC81C56D91673492F880CC51948C3F26A5FF689331DDC5987F3F401F50F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/111L81epSCmJ_5i4kgW2Vw/zh-cn_image_0000002817429237.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3AE54B8940AF2913B1D4F49D8048144FCC22FAD4ABA4141E253F8B16B8BDB62)
 
 ### invert12+
 
@@ -985,7 +985,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/e-En78PAR1m92WcWSaYuqQ/zh-cn_image_0000002786522070.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=87DA6942BB9A7FBF1E4788F8CC39B32A983A14F9E47775C515A0BA143BFA5E26)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Kxz72SuyTpWpnsJ7vzlsZw/zh-cn_image_0000002788469818.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E09575B5006FAFD2D1880B0D1DCBBDAFD94C7F0E073917B47CB5D7A5E809E76)
 
 ### setColorMatrix12+
 
@@ -1097,7 +1097,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/fiFmxah3Q6mdZ3gjH_MOLg/zh-cn_image_0000002786362142.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2A16303FDFE00317F6649C0A161EB0314FEB486BF705EE8D3D7BBB051B7B6CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/y9lDXiLFR72VAzEXUxZ1xw/zh-cn_image_0000002817509307.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2E917D500073586F3AA33CF09DCE86EB7020A067B64A53C61D714400791A7E7)
 
 ### brightness
 
@@ -1200,7 +1200,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/DRyrajasRx2JQPG65hT7oQ/zh-cn_image_0000002815561563.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4BA5D7548A4C534A8391E11F98693F666B251A4F0AF9252DC75670259BA6C11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/yMH0aotdSEybGaAwA3o61g/zh-cn_image_0000002788309876.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A7AD18289A36E996F2EA8B53F27E460536DB28EF7327259D25DC41CDE995EE1)
 
 ### grayscale
 
@@ -1296,7 +1296,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/zmIZDew6QDeAZUcCuCdhUA/zh-cn_image_0000002815401647.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=751FA252286115B1018AD085A8C00C316409C99CF34DE97D3A110177185BCB98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/fCgmV8XxRgORAlOWMX8BGQ/zh-cn_image_0000002817429239.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=39694B1E115F45F38191475DE877ADEDE6896CAC9412E34CF52ECC46D41CCF06)
 
 ### getEffectPixelMap11+
 

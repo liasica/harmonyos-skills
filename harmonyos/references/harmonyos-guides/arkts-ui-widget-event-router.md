@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 卡片跳转到应用页面（router事件）
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面交互 > 卡片跳转到应用页面（router事件）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:19+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3ec9e923c123d8dc52dab5feeb36ce7e3152a79ab0a6efbfa81ae0866f4b1703
+content_hash: sha256:7f7d939b9b0bd67c359324ee681304548f7142238be995a3030ae43b994c6b3e
 ---
 
 在动态卡片中使用[postCardAction](../harmonyos-references/js-apis-postcardaction.md#postcardaction-1)接口的router能力，能够快速拉起动态卡片提供方应用的指定UIAbility(页面)，因此UIAbility较多的应用往往会通过卡片提供不同的跳转按钮，实现一键直达的效果。例如相机卡片，卡片上提供拍照、录像等按钮，点击不同按钮将拉起相机应用的不同UIAbility，从而提升用户的体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Gbn8YTPXR36Z-H71GgWxAg/zh-cn_image_0000002815399035.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=711BE57EF6E2612B5113408317420507AF9CCCD656D878D8C0D6DDE97685EC1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/FCSs7ec0R_Gs9sJIKvT3KA/zh-cn_image_0000002817506695.png?HW-CC-KV=V1&HW-CC-Date=20261114T004540Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5899E42C9A5532F68C70FD64796757E748E3B557E7DA10CE158772C810600D4)
 
 **说明** 
 
@@ -293,4 +293,4 @@ content_hash: sha256:3ec9e923c123d8dc52dab5feeb36ce7e3152a79ab0a6efbfa81ae0866f4
 
 ## 运行效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/HlzAeRQ-QbaKn7VOiiM3mQ/zh-cn_image_0000002786519460.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F66B1542F4CDBD41A5D34D600317078EA009D54BDC274D4D50D9E6ACD1D51885)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/fLRgVDujQaaHhUVCzjPoaw/zh-cn_image_0000002788307264.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004540Z&HW-CC-Expire=31536000000&HW-CC-Sign=51B66087F6348499FE25FC184830EA163038FEF8623C473955352C33ED887A00)

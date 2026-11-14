@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 窗口错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > 图形图像 > 窗口错误码
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:49+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:d79b41aaa6bbca952f9de05ca0062a8266f449bfcb3a92f40398869748fa98b0
+scraped_at: 2026-11-14T08:50:56+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:e56f4473cac9f8cbf08f5a31171a334c8b9bf58c8d4b423d6710b465619ddf0e
 ---
 
 **说明** 
@@ -814,11 +814,11 @@ Repeated PiP operation.
 
 不要重复启动/停止画中画。
 
-## 1300016 参数校验错误
+## 1300016 参数错误
 
 **错误信息**
 
-Parameter validation error.
+Parameter error.
 
 **错误描述**
 
@@ -1169,6 +1169,24 @@ This operation conflicts with other floating windows.
 **处理步骤**
 
 启动闪控窗前，请先停止闪控球窗口和画中画窗口。
+
+## 1300035 不允许创建子窗口
+
+**错误信息**
+
+Creating a subwindow is not allowed in the current context.
+
+**错误描述**
+
+当前上下文不允许创建子窗口。
+
+**可能原因**
+
+应用Ability继承自AgentUIExtensionAbility。
+
+**处理步骤**
+
+创建子窗口前，检查应用Ability是否继承自AgentUIExtensionAbility。
 
 ## 1001 窗口空指针异常(deprecated)
 

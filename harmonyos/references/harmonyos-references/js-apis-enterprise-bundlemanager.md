@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.bundleManager (包管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.bundleManager (包管理)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:56:06+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:755a0164e698e9288b55b63e9695f365d4e0d46f1c15aebfa13e3cd952e4be28
+scraped_at: 2026-11-14T08:52:10+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6fcda16554036764fd852b29d1053bf9bfe6c1417b3613e26423d4eb86459250
 ---
 
 本模块提供包管理能力，包括安装和卸载应用包，管理包安装允许名单、包安装禁止名单、包卸载禁止名单、可安装应用的分发类型等。在企业设备管理场景中，通过这些能力可以实现应用安装卸载的精细化管控，防止未授权应用的安装和卸载，保障企业设备安全，降低安全风险。
@@ -466,7 +466,6 @@ import { bundleManager } from '@kit.MDMKit';
 
 try {
   // 参数需根据实际情况进行替换
-  // 参数需根据实际情况进行替换
   let result: Array<string> = bundleManager.getDisallowedInstallBundlesSync(null, 100);
   console.info(`Succeeded in getting disallowed install bundles, result : ${JSON.stringify(result)}`);
 } catch (err) {
@@ -693,7 +692,6 @@ getDisallowedUninstallBundlesSync(admin: Want | null, accountId?: number): Array
 import { bundleManager } from '@kit.MDMKit';
 
 try {
-  // 参数需根据实际情况进行替换
   // 参数需根据实际情况进行替换
   let result: Array<string> = bundleManager.getDisallowedUninstallBundlesSync(null, 100);
   console.info(`Succeeded in getting disallowed uninstall bundles, result : ${JSON.stringify(result)}`);

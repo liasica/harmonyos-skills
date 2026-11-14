@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-thread-
 title: 多线程并发概述
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 多线程并发 > 多线程并发概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:0cf757be234f7939ff465bdee2ad79fd091679318e128ad91006bbaa7eded557
+scraped_at: 2026-11-14T08:46:54+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:574727ef18f234f03de32c20064ac98976ddafb34791521eccab4000a4e09b80
 ---
 
 多线程并发是指在单个程序中同时运行多个线程，通过并行或交替执行任务来提升性能和资源利用率的编程模型。在ArkTS应用开发中，多线程并发适用于多种业务场景，常见的业务场景主要分为以下三类，更详细的使用请参考[应用多线程开发概述](multithread-develop-overview.md)。
@@ -38,7 +38,7 @@ Actor并发模型中，不同Actor之间不共享内存，需通过消息传递�
 
 以下示例伪代码和示意图展示了如何使用内存共享模型解决生产者消费者问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/O8VwFatjSx6ToDl_DtFM2Q/zh-cn_image_0000002815557869.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DE983F8588A59CFDBEB848E872EA2F8243A09913F6046EFEEDE4D6BEE6CEDCF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Pofz82r2Q_-6ZKlOtAeF0Q/zh-cn_image_0000002788466124.png?HW-CC-KV=V1&HW-CC-Date=20261114T004517Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA544119E13AF419C9ED1FB65E573937B161F4C8DE8D070F723AAFAE1F5BC9BB)
 
 为了避免不同生产者或消费者同时访问同一块共享内存容器时产生脏读、脏写现象，同一时间只能有一个生产者或消费者访问该容器。即不同生产者和消费者需争夺使用容器的锁。当一个角色获取锁后，其他角色需等待该角色释放锁，才能重新尝试获取锁以访问该容器。
 
@@ -150,7 +150,7 @@ export function main(): void {
 
 以下示例简单展示了如何使用基于Actor模型的TaskPool并发能力来解决生产者消费者问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/v1v7HFTXSwW2fhkLWoe3lw/zh-cn_image_0000002815397953.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A6A3098C46BC4BCEB844B43862130F86B872AD44EDF43FE1D3FDAC4416C48B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/5FqHZnSYTjqyJH1pdAalFQ/zh-cn_image_0000002817505611.png?HW-CC-KV=V1&HW-CC-Date=20261114T004517Z&HW-CC-Expire=31536000000&HW-CC-Sign=78CC6DAC634BD95DD565402D7663EA43B973C3E96694D81D42F99F275E6C59F2)
 
 Actor模型中，不同角色之间并不共享内存，生产者线程和UI线程都有自己的虚拟机实例，两个虚拟机实例之间拥有独占的内存，相互隔离。生产者生产出结果后，通过序列化通信将结果发送给UI线程。UI线程消费结果后，再发送新的生产任务给生产者线程。
 
@@ -255,7 +255,7 @@ ArkTS提供了TaskPool和Worker两种并发能力供开发者选择，各自的�
   UI操作必须在主线程中执行。并发线程中操作UI可能导致界面异常或崩溃。
 * 数据传递需支持序列化/反序列化
 
-  并发任务间传递数据时，对象必须是可序列化的（如基本类型、普通对象等），或者可共享的（Sendable对象），不可传递函数、循环引用、特殊对象（如Promise、Error）等。已完成（fulfilled或rejected）状态的 Promise可以被传递，因为其结果是可序列化的。
+  并发任务间传递数据时，对象必须是可序列化的（如基本类型、普通对象等），或者可共享的（Sendable对象），不可传递函数、循环引用、特殊对象（如Promise、Error）等。已完成（fulfilled或rejected）状态的Promise可以被传递，因为其结果是可序列化的。
 * 合理控制并发粒度
 
   频繁创建和销毁并发任务（如Worker、Task）会带来额外性能开销，建议复用或使用任务池机制。

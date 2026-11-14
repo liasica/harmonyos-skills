@@ -1,21 +1,24 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-wearable-exercisesequence-manage
-title: 读取锻炼记录
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Wearable应用开发 > 管理运动健康数据 > 读取锻炼记录
+title: 管理锻炼记录数据
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Wearable应用开发 > 管理运动健康数据 > 管理锻炼记录数据
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:25+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:721a3c3a09a98fa4cf74e919fa748a79f4d76b8268696a978a22c11025e31bfc
+scraped_at: 2026-11-14T08:48:20+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:b78d44fddda3d872f2eb79311e4c1f8b8d6449fefc2807e3c23fb018b726d7c6
 ---
 
 ## 场景介绍
 
 从5.1.1(19) Release版本开始，支持读取最新一条锻炼记录。
 
+从26.0.1 版本开始，支持保存单条锻炼记录。
+
 ## 接口说明
 
 | 接口名 | 描述 |
 | --- | --- |
+| [saveData](../harmonyos-references/health-api-healthstore.md#healthstoresavedata-1)(exerciseSequence: [ExerciseSequence](../harmonyos-references/health-api-healthstore.md#exercisesequence)[] | [ExerciseSequence](../harmonyos-references/health-api-healthstore.md#exercisesequence)): Promise<void> | 保存锻炼记录，入参为单个[ExerciseSequence](../harmonyos-references/health-api-healthstore.md#exercisesequence)或[ExerciseSequence](../harmonyos-references/health-api-healthstore.md#exercisesequence)数组。 |
 | [readData](../harmonyos-references/health-api-healthstore.md#healthstorereaddata-1)<T extends [ExerciseSequence](../harmonyos-references/health-api-healthstore.md#exercisesequence)>(request: [ExerciseSequenceReadRequest](../harmonyos-references/health-api-healthstore.md#exercisesequencereadrequest)): Promise<T[]> | 查询最新一条锻炼记录。 |
 
 **说明** 
@@ -72,5 +75,15 @@ content_hash: sha256:721a3c3a09a98fa4cf74e919fa748a79f4d76b8268696a978a22c11025e
      });
    } catch (err) {
      hilog.error(0x0000, 'testTag', `Failed to read data. Code: ${err.code}, message: ${err.message}`);
+   }
+   ```
+4. 调用[saveData](../harmonyos-references/health-api-healthstore.md#healthstoresavedata-1)方法执行保存数据请求，并处理返回结果。
+
+   ```typescript
+   try {
+     await healthStore.saveData(runningSequence);
+     hilog.info(0x0000, 'testTag', 'Succeeded in saving data.');
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to save data. Code: ${err.code}, message: ${err.message}`);
    }
    ```

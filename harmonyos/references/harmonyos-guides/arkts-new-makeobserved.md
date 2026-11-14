@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-mak
 title: makeObserved接口：将非观察数据变为可观察数据
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口 > makeObserved接口：将非观察数据变为可观察数据
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:b03376ac21e230f9281ac9b6f2a18b1cc03e2549eae77b9d7a1b264a6056a26d
+scraped_at: 2026-11-14T08:47:00+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:9f92759d64bd46b3a5b3add30888bd30521eda210175a4e7b732f2134f0c9725
 ---
 
 为了将普通不可观察数据变为可观察数据，开发者可以使用[makeObserved接口](../harmonyos-references/js-apis-statemanagement.md#makeobserved)。
@@ -18,7 +18,7 @@ makeObserved可以在@Trace无法标记的情况下使用。在阅读本文档�
 
 ## 概述
 
-* 状态管理框架已提供[@ObservedV2/@Trace](arkts-new-observedv2-and-trace.md)用于观察类属性变化，makeObserved接口提供主要应用于@ObservedV2/@Trace无法涵盖的场景：
+* 状态管理框架已提供[@ObservedV2/@Trace](arkts-new-observedv2-and-trace.md)用于观察类属性变化，makeObserved接口主要应用于@ObservedV2/@Trace无法涵盖的场景：
 
   + class的定义在三方包中：开发者无法手动对class中需要观察的属性加上@Trace标签，可以使用makeObserved使得当前对象可以被观察。
   + 当前类的成员属性不能被修改：因为@Trace观察类属性会动态修改类的属性，这个行为在[@Sendable](arkts-sendable.md#sendable装饰器)装饰的class中是不被允许的，此时可以使用makeObserved。
@@ -110,7 +110,7 @@ makeObserved可以在@Trace无法标记的情况下使用。在阅读本文档�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/uQ4pYiifS6mu5jzk2esNKg/zh-cn_image_0000002786358668.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2D5B475985760364E6BC08D993EB8C396ABEA6B5494E2B22147ECFCA66A4619)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/uG7_rm2BRVaKOC2Zd9DNYA/zh-cn_image_0000002817425763.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E3A693AC30C919DC8DD120B781EA43B0A969587848272C48EBBDC372B2CC16C)
 
 ### makeObserved仅对入参对象进行深度观察
 
@@ -158,7 +158,7 @@ struct Page2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/N4k_5NYgQby9T21NR_Hofg/zh-cn_image_0000002815558089.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=0133C57610045AE4906F2F58A5B1953A3B5CC6A21F24418D5E2677D709E6B39B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/d82gk7pySeapwkIOLQTW-w/zh-cn_image_0000002788466344.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=2825F9D25E5B3CE364DA40C5308261788C52DD848D5AA59629707F01229982A4)
 
 ## 支持类型和观察变化
 
@@ -269,7 +269,7 @@ struct Page3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/pHPurGUISKKOxQ-98LlRNQ/zh-cn_image_0000002815398173.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE7881CDD7B6504E2008E6523425F87F796D4A20F2CC84DE47E920369FA953BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/xixqP91EQJuYz_z1wXM1CQ/zh-cn_image_0000002817505831.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AD86236BB54B22400B71A0D41323BEE33FE91AEAA8047968079C333B935AE74)
 
 需要注意：数据的构建和处理可以在子线程中完成，但有观察能力的数据不能传给子线程，只有在主线程里才可以操作可观察的数据。所以上述例子中只是将this.send的属性name传给子线程操作。
 
@@ -439,7 +439,7 @@ struct Page4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/0ZmST4eGRjiB94Go__-W2g/zh-cn_image_0000002786518598.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D51E9D900938B7F61C7F40E132F8A98C5E5AE6C5652EFACC325FFF57D9279109)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/dQWWGkNWQiqWx88X-0aEOw/zh-cn_image_0000002788306402.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9B2144EEECC0FB8A2D3703F48DF265EE9991DD753E819CAC88B971999CEFC4F)
 
 **collections.Map**
 
@@ -508,7 +508,7 @@ struct Page5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/3Dz2utOjTta3kMp6WA7IeQ/zh-cn_image_0000002786358670.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7E9D700A9958261A4C224296930E9846EE3C0FB534834D93E1E361049AE9943)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/LzliGeTqQtGXvUnWLzttmg/zh-cn_image_0000002817425765.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=98176ECBD8B1BEA04C10FD70DC4899EEC4D6BE1336CF1E88A231EFAD1ACF7F60)
 
 **collections.Set**
 
@@ -575,7 +575,7 @@ struct Page6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/FuwcRsyDQp-UHv8mnMFjOA/zh-cn_image_0000002815558091.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=39B4FC3B377AC348E37A33DF07900404F90B94EDA0BA1343814138553D77999A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/YB1adu16SXWq0sUmI7AodA/zh-cn_image_0000002788466346.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=52C61AE30C2C6D34FC085605E1D8203C84118415F4F2EEBBD7B7715CA8852FAD)
 
 ### makeObserved的入参为JSON.parse的返回值
 
@@ -628,11 +628,11 @@ struct Page7 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/_T9U42jrRNGPG_iyliEvqA/zh-cn_image_0000002815398175.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=922FA5465F4D2C51D8BD742EC6DEBBA6D75DE4ED3E43676A1A2637631A5089CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/GvohjNuYQxWpIDKw9JjFyA/zh-cn_image_0000002817505833.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E541F13119923171F5B4EC39581E53D8E958A3DFF73F34EBA8F13606D15D47B)
 
 ### makeObserved和V2装饰器配合使用
 
-makeObserved可以和V2的装饰器一起使用。对于[@Monitor](arkts-new-monitor.md)和[@Computed](arkts-new-computed.md)，因为makeObserved传入@Observed或ObservedV2装饰的类实例会返回其自身，所以@Monitor或者@Computed不能定义在class中，只能定义在自定义组件里。
+makeObserved可以和V2的装饰器一起使用。对于[@Monitor](arkts-new-monitor.md)和[@Computed](arkts-new-computed.md)，因为makeObserved传入@Observed或@ObservedV2装饰的类实例会返回其自身，所以@Monitor或者@Computed不能定义在class中，只能定义在自定义组件里。
 
 例子如下：
 
@@ -694,7 +694,7 @@ struct Page8 {
         .fontSize(30)
         .margin(5)
         .onClick(() => {
-          // 返回类实例本身，并赋值给message，触发@Computed和@Monitor
+          // 返回可观察对象，并赋值给message，触发@Computed和@Monitor
           this.message = UIUtils.makeObserved(new Info(200));
         })
       Child({ message: this.message })
@@ -716,7 +716,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/YaGbd2tYR8qWQNGgFQvlIw/zh-cn_image_0000002786518600.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9AE21EFEE807A70BD9E33CF2E852475F0E6654DC1410858BF2DF87ACA795A46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/2IYybCK-QOqcjM5jRtYvQg/zh-cn_image_0000002788306404.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF4AD1A1706AA8E9469A091957B908C35DDC32D3A7BC5B8DC6278B35DBE0FF91)
 
 ### makeObserved在@Component内使用
 
@@ -754,7 +754,7 @@ struct Page9 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/6dE5QV33T--gIDWcfmT9jw/zh-cn_image_0000002786358672.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=89F9675A6E25E6D0C6A03809FC1DF60EFD43264E15447E319C2D70F855E5E5A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/wZKVeQfWTBGXcsdVwb-6xw/zh-cn_image_0000002817425767.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=B126CC3709098C16999A162648BE3F1B3CC774360C8485425A271308D358F878)
 
 ## 常见问题
 
@@ -806,4 +806,4 @@ struct Page10 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/n90epmm2SaWhvdMxGvR2Og/zh-cn_image_0000002815558093.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA9B97B6986CEA66BAF4E8A9AC834679F4B4ACD76DB1B047B03937AFD4C66737)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/okNi4RM4R-e6HYNTsUBrqg/zh-cn_image_0000002788466348.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6ED9745CA4F0B957B24513EC347C995440B607FD012AD28A9956FD6EF4DB2E2)

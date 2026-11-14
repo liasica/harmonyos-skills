@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:33+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:246ed891d73838a97414ab0fa0d479ca12d0ba6f1e17d68fa5292797523c588c
+content_hash: sha256:740d07318844f16be23c8fdf9c2f31ed56725d78c135f23a4aa97befbac7f395
 ---
 
 华为数字车钥匙基于华为钱包"芯-端-云"一体化安全能力，集成SE、TEE等安全芯片能力，满足ICCE标准，支持NFC、蓝牙、星闪等多种连接方式，可将车钥匙功能数字化集成至移动终端，无需实体钥匙即可实现车辆开门、启动、无感解闭锁等功能。
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/KrNwB2LFTAKStL-j5GgmuQ/zh-cn_image_0000002815560031.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A7AADA0A01A40DE68EFF455976A611F3444EA7E8CCDE170041B752365EC59E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/KA4NGrZtSNq6LYyCdDtGXQ/zh-cn_image_0000002788308344.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=961ED1508D6E2701155ABACBAB559A33D73B7E6A0A2EBE880E568AD5B501D4C5)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -29,11 +29,11 @@ content_hash: sha256:246ed891d73838a97414ab0fa0d479ca12d0ba6f1e17d68fa5292797523
 
 ### 车钥匙开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/ZUL3iyZLQDOOz-kVZal0rQ/zh-cn_image_0000002815400115.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B2C30DDABBDE8C9823AEE325203C75844276D8F79EF9E2C3EBC2920BB8846C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/xaMdIzdORSCchhqOWfMkmQ/zh-cn_image_0000002817427707.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=765A975731A5EA859B2149B6DFB2245A94630B19A1299AC5FDD5D4666049B57A)
 
 ### 车钥匙展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/z3W3cKJkQUmPZRrDC-HcWQ/zh-cn_image_0000002786520540.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E454A63D9CB6BB0D7F44D947444344D1E6B66608E31088C944CA77ED9F980CB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/dv3rxEPgSNaxr-CXLG1hIw/zh-cn_image_0000002788468288.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE07DE720B0735872C0FEBF14E5568695C5AB10882D892B28391DA1DC4D03B13)
 
 ## 典型交互场景
 

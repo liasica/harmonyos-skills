@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: gamePlayer（基础游戏服务）
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > gamePlayer（基础游戏服务）
 category: harmonyos-references
-scraped_at: 2026-11-12T09:57:17+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:45f70e4710a1e392a9c7c058fbaa46fd8f671e334404c85bc57f903d3f592c85
+scraped_at: 2026-11-14T08:53:27+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:70b8f271956b4ecc357b848fe40071b2b34698eb50383644e268920acb0b046a
 ---
 
 本模块提供Game Service Kit（游戏服务）的基础游戏服务能力，包括游戏登录、华为账号实名认证、未成年人防沉迷等功能，让开发者聚焦游戏本身的业务能力。
@@ -440,7 +440,7 @@ struct UnionLogin {
       'isOnTop': true // 当前账号是否置顶显示，且仅会置顶第一个传入true的账号
     };
     let request: gamePlayer.UnionLoginParam = {
-      showLoginDialog: true, // 是否弹出联合登录面板。true表示强制弹出面板，false表示优先使用玩家上一次的登录选择，不弹出联合登录面板，若玩家首次登录或卸载重装，则正常弹出
+      showLoginDialog: true, // 是否弹出联合登录面板。true表示强制弹出面板，false表示优先使用玩家上一次的登录选择，不弹出联合登录面板。首次登录或切换账号时请传true，非首次登录请传false
       thirdAccountInfos: [
         thirdAccountInfo1 // 若游戏无官包或无官方账号体系，请传空数组
       ]

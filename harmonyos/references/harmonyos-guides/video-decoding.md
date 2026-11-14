@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-decodin
 title: 视频解码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频解码
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:54+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c6331709362d32bc7ccf5cfca8e1a751e430464c7a050e89379b84febd1e7330
+content_hash: sha256:237cfd63dd92b9d8bc1d84abd10281356d8e36c1640848a4e63f73ec2f4226bd
 ---
 
 视频解码是多媒体处理的核心环节，功能是将压缩的视频码流解码为原始像素数据。视频解码支持同步模式与异步模式两种运行机制，两者主要区别为buffer获取方式的同异步之分，开发者可根据自身业务选择适合的接口调用模式。
@@ -53,7 +53,7 @@ AVCodec支持的视频解码格式请参考[视频解码](avcodec-support-format
 
 **图1** 状态机调用关系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/Veyhya6FTIGrVz36pP6pxg/zh-cn_image_0000002786519790.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=83E84705B7385A3AB11A4309EDC8B7AFDCA676CC981690F41D56B5EC233DD335)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/es0sKaIQQiqS8wIVbzm_rA/zh-cn_image_0000002788307594.png?HW-CC-KV=V1&HW-CC-Date=20261114T004612Z&HW-CC-Expire=31536000000&HW-CC-Sign=96AB31902207296AD34A0EBEAD2931F466B5CD17744BE1947FB9D2D59EF68274)
 
 ## 开发指导
 
@@ -66,7 +66,7 @@ AVCodec支持的视频解码格式请参考[视频解码](avcodec-support-format
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/1-9HLAlrRPqJfEGUlAJN5w/zh-cn_image_0000002786519798.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FA7848EBFC359108BD1A8290D8F5DE9FEEC135237F2B1CC99BE3FF66BDB791B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/SYTiYobmSkqUO4HIahNkUA/zh-cn_image_0000002788307602.png?HW-CC-KV=V1&HW-CC-Date=20261114T004612Z&HW-CC-Expire=31536000000&HW-CC-Sign=A19E95636CE0052ED85DE10F6B064C5683B3B58A676A3F0FE44D3C39D8C0D695)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -1147,7 +1147,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
     * OH\_MD\_KEY\_VIDEO\_STRIDE表示wStride；
     * OH\_MD\_KEY\_VIDEO\_SLICE\_HEIGHT表示hStride。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/2KbX_IVURPKPp8e_upqAtA/zh-cn_image_0000002786359870.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=60E768579E41FD02ED18DB86C8DE1DBBDEA61C476FDF27B0CE4DBDA4E4D67107)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/jJ8eQ4LtQyS-W5xm_3K6jw/zh-cn_image_0000002817426965.png?HW-CC-KV=V1&HW-CC-Date=20261114T004612Z&HW-CC-Expire=31536000000&HW-CC-Sign=2445F8B4C4DF03CDE25BA7DF5842A39A0F2F665FF8472A9644B7D6940285AEA8)
 
     添加头文件。
 

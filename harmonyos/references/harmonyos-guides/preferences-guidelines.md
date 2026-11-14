@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preferences-g
 title: 通过用户首选项实现数据持久化 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过用户首选项实现数据持久化 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:01+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:ed2c6a45f19021c198ecc9c0021735622d750c3476bc9936b2eb9637e9b6a591
+scraped_at: 2026-11-14T08:46:52+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:61b1861a546177626922fc409f5850787b9c6a5282e756bb6ab83bd35fdd096d
 ---
 
 ## 场景介绍
@@ -37,11 +37,11 @@ content_hash: sha256:ed2c6a45f19021c198ecc9c0021735622d750c3476bc9936b2eb9637e9b
 | int OH\_Preferences\_RegisterDataObserver (OH\_Preferences \*preference, void \*context, OH\_PreferencesDataObserver observer, const char \*keys[], uint32\_t keyCount) | 对选取的Key注册数据变更订阅。订阅的Key的值发生变更后，在调用OH\_Preferences\_Close()后触发回调。 |
 | int OH\_Preferences\_UnregisterDataObserver (OH\_Preferences \*preference, void \*context, OH\_PreferencesDataObserver observer, const char \*keys[], uint32\_t keyCount) | 取消注册选取Key的数据变更订阅。 |
 | int OH\_Preferences\_IsStorageTypeSupported (Preferences\_StorageType type, bool \*isSupported) | 检查当前平台是否支持对应的存储模式。 |
-| OH\_PreferencesOption \* OH\_PreferencesOption\_Create (void) | 创建一个Preferences配置选项的OH\_PreferencesOption实例对象以及指向它的指针。 当不再需要使用指针时，请使用OH\_PreferencesOption\_Destroy销毁实例对象，否则会导致内存泄漏。 |
+| OH\_PreferencesOption \* OH\_PreferencesOption\_Create (void) | 创建一个Preferences配置选项的OH\_PreferencesOption实例对象以及指向它的指针。当不再需要使用指针时，请使用OH\_PreferencesOption\_Destroy销毁实例对象，否则会导致内存泄漏。 |
 | int OH\_PreferencesOption\_SetFileName (OH\_PreferencesOption \*option, const char \*fileName) | 设置Preferences配置选项OH\_PreferencesOption实例对象的文件名称。名称长度为0到255字节，其中不能包含'/'。 |
 | int OH\_PreferencesOption\_SetBundleName (OH\_PreferencesOption \*option, const char \*bundleName) | 设置Preferences配置选项OH\_PreferencesOption实例对象的包名称。 |
 | int OH\_PreferencesOption\_SetDataGroupId (OH\_PreferencesOption \*option, const char \*dataGroupId) | 设置Preferences配置选项OH\_PreferencesOption实例对象的应用组ID。 |
-| int OH\_PreferencesOption\_SetStorageType (OH\_PreferencesOption \*option, Preferences\_StorageType type) | 设置Preferences配置选项 OH\_PreferencesOption实例对象的存储模式。 |
+| int OH\_PreferencesOption\_SetStorageType (OH\_PreferencesOption \*option, Preferences\_StorageType type) | 设置Preferences配置选项OH\_PreferencesOption实例对象的存储模式。 |
 | int OH\_PreferencesOption\_Destroy (OH\_PreferencesOption \*option) | 销毁Preferences配置选项OH\_PreferencesOption实例。 |
 | const char \* OH\_PreferencesPair\_GetKey (const OH\_PreferencesPair \*pairs, uint32\_t index) | 获取KV数据中索引对应数据的键。 |
 | const OH\_PreferencesValue \* OH\_PreferencesPair\_GetPreferencesValue (const OH\_PreferencesPair \*pairs, uint32\_t index) | 获取KV数据数组中索引对应的值。 |

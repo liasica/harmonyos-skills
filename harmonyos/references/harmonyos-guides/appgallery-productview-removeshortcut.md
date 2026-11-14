@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 删除应用内快捷方式
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 应用内快捷方式 > 删除应用内快捷方式
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:8efc4fecf766a2dcbcc7309f5f7ed672c2343edb5917711ed4a42525a1c50a24
+scraped_at: 2026-11-14T08:48:12+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:bf7d4b75bf77d67366047f59fbbec926a29c07a1f5155669f245426525597d6c
 ---
 
 **说明** 
@@ -18,7 +18,7 @@ content_hash: sha256:8efc4fecf766a2dcbcc7309f5f7ed672c2343edb5917711ed4a42525a1c
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/DcbfTzccSV-FWdUesypOBA/zh-cn_image_0000002815399671.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC1E84FD7349095EE46942AC8201ECB6A21B2CB080590CDD843457690EE06227)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/FqDoome-SKaxLxYHN6i47w/zh-cn_image_0000002817507331.png?HW-CC-KV=V1&HW-CC-Date=20261114T004629Z&HW-CC-Expire=31536000000&HW-CC-Sign=4854B6819277D14AB9D101832A23C139CD2FF0C7F3713CBA1F59C3A0F95DC705)
 
 1. 用户需要删除桌面快捷方式。
 2. 应用调用[removePinShortcut](../harmonyos-references/store-productviewmanager.md#productviewmanagerremovepinshortcut)接口删除快捷方式。
@@ -46,19 +46,19 @@ content_hash: sha256:8efc4fecf766a2dcbcc7309f5f7ed672c2343edb5917711ed4a42525a1c
 
 1. 登录AppGallery Connect，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/lmVBP-Y6S-CRrSkAk8UZ6g/zh-cn_image_0000002786360164.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D8F582C86D47CB25742FCBECC1DD34B8CE05A58C2BA7AD7E5F15187882ACA62)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/bIQUsxVpRaOqF4xf2o8srQ/zh-cn_image_0000002817427259.png?HW-CC-KV=V1&HW-CC-Date=20261114T004629Z&HW-CC-Expire=31536000000&HW-CC-Sign=7143B7FC812874F54C59688921BACA222E47058BC269D719E4024847B2D3D71B)
 2. 在项目列表中找到您的项目，并点击选择需申请静默删除桌面快捷方式能力的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Xuyno66jSrWhxOAX6my7xA/zh-cn_image_0000002786520096.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B964503A20C0DB3CD7372832C8269855F485F0863D696D7CD5603F8B46A61D84)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/3_9KZFj-QtqlwOYdvV7mSg/zh-cn_image_0000002788307900.png?HW-CC-KV=V1&HW-CC-Date=20261114T004629Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B67C49AF5CD6C62B80EBD0E6AED4E00B3EFA94D2735ADBFD5320D75B3BEDF07)
 3. 在“开放能力管理”页面，点击静默删除桌面快捷方式对应的“申请”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/XCwnPy49RtKfIKDAgCROOA/zh-cn_image_0000002786360168.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDD2B6BF33215D5A8B890C94D91274B0F382A9D66075048EFDEDD1882E47560C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/xvOQzT1XTf6hcc2QnJS9gg/zh-cn_image_0000002817427263.png?HW-CC-KV=V1&HW-CC-Date=20261114T004629Z&HW-CC-Expire=31536000000&HW-CC-Sign=0891F86A0863A8FD59CE6099F1CAAB6129AB095F39D557FE66B3426F39F3C382)
 4. 在“新建业务申请”窗口填写申请信息，然后点击“提交”。申请原因：必填，包括应用介绍、使用场景，不超过256个字符。上传附件：必填，提供应用的使用场景录屏，录屏中需要体现应用自己的弹框以及在弹框中显示提示用户删除桌面快捷方式，仅可上传1个附件，大小不超过500MB。支持文本、表格、图片、视频、压缩包格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/79zHucxiT3C4zamlku-8hg/zh-cn_image_0000002815559589.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9A3D71BFA034DD65BC4D359F3EB2C740E183CF9CDC2CE150578F6E77C6DC59E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/cBiBeVE3ROSMl1sexT0_yQ/zh-cn_image_0000002788467844.png?HW-CC-KV=V1&HW-CC-Date=20261114T004629Z&HW-CC-Expire=31536000000&HW-CC-Sign=DED530E642B66D5A193B1B32129582634A564C33C720CB56997DCE0467A5F4AF)
 5. 返回“开放能力管理”页面，原“申请”按钮变为“申请中”，1-3个工作日反馈申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/U5vnJQeLTDqdq4dWgECycw/zh-cn_image_0000002815399673.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F34D8E0AFE92D08ADE83360EE1054E83A9B8917FF39957A61C5FEF146107AAC5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/lVA9MxFdRmeeSnFX5CQIzQ/zh-cn_image_0000002817507333.png?HW-CC-KV=V1&HW-CC-Date=20261114T004629Z&HW-CC-Expire=31536000000&HW-CC-Sign=552F1799A732E04366A6A726E602F18D94C5F2C335CD66BBD0167E8C2774EAF7)
 6. 申请审批通过后，互动中心会发送通知给您，同时“申请中”按钮会变为置灰显示的“申请”。
 7. 能力申请通过后，勾选删除桌面快捷方式的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。
 

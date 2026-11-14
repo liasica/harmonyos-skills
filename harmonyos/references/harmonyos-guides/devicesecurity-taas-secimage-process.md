@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 安全图像压缩、裁剪场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 安全图像压缩、裁剪场景
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:e11b2781745022395cc1dce7be10486148ab2060c0bd594ec36f43fd06ad7609
+scraped_at: 2026-11-14T08:47:28+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:1a07a1d8dbc48a0f296febe74de592f394e017a49398701380ab85a300217993
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:e11b2781745022395cc1dce7be10486148ab2060c0bd594ec36f43fd06a
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/yZ1AkOsTSfOabSiRZSAnZA/zh-cn_image_0000002786359668.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B13367D007138EDB583ACF6739DB07A7D4C149E102D81383B95610EAE6B01C77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/QgXajdLdS325O969Dx88Fw/zh-cn_image_0000002817426763.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004548Z&HW-CC-Expire=31536000000&HW-CC-Sign=74DA8ECD31126461C79711FD8AF85D2FCB7DFBB2C7B2ABF0BD87B60B1482CF9B)
 
 ## 接口说明
 
@@ -77,7 +77,7 @@ content_hash: sha256:e11b2781745022395cc1dce7be10486148ab2060c0bd594ec36f43fd06a
          hilog.info(0x0000, 'TrustedAppService', 'createAttestKey successfully');
        } catch (error) {
          const err = error as BusinessError;
-         hilog.error(0x0000, 'trustedappservice', `createattestkey failed, errCode: ${err.code}, errMsg: ${err.message}`);
+         hilog.error(0x0000, 'TrustedAppService', `createattestkey failed, errCode: ${err.code}, errMsg: ${err.message}`);
          throw new Error(err.message);
        }
      }
@@ -103,7 +103,7 @@ content_hash: sha256:e11b2781745022395cc1dce7be10486148ab2060c0bd594ec36f43fd06a
            properties: initProperties
          };
          let userData = 'trusted_app_service_default_userdata'; // 示例值，实际值请自行生成，长度在16到127 Bytes之间
-         // 初始化话证明会话
+         // 初始化证明会话
          const certChainResult = await trustedAppService.initializeAttestContext(userData, initOptions);
          if (certChainResult.certChains.length < 1) {
            throw new Error('empty returned cert chain');

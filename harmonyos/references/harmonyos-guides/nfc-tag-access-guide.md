@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nfc-tag-acces
 title: NFC标签读写开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > NFC > NFC标签读写开发指南
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:43+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:50c3a0d2b324fa612b0dceda41b0b6afa0dfc3f1ea7bfb66032192e9daf112b1
+scraped_at: 2026-11-14T08:47:35+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:5e06408d836a9b0651b42e8c9435168b2e999e56b6f5911f38d4f8fca98988a1
 ---
 
 ## 简介
@@ -274,7 +274,7 @@ export default class EntryAbility extends UIAbility {
 **说明** 
 
 1. 声明"actions"字段的内容填写，必须包含"ohos.nfc.tag.action.TAG\_FOUND"，不能更改。
-2. 声明技术时"uris"中"type"字段的内容填写，前缀必须是"tag-tech/"，后面接着NfcA/NfcB/NfcF/NfcV/IsoDep/Ndef/MifareClassic/MifareUL/NdefFormatable"中的一个。如果存在多个"type"时，需要分行填写。填写错误会造成解析失败。
+2. 声明技术时"uris"中"type"字段的内容填写，前缀必须是"tag-tech/"，后面接着"NfcA/NfcB/NfcF/NfcV/IsoDep/Ndef/MifareClassic/MifareUL/NdefFormatable"中的一个。如果存在多个"type"时，需要分行填写。填写错误会造成解析失败。
 3. 声明权限时"requestPermissions"中的"name"字段的内容填写，必须是"ohos.permission.NFC\_TAG"，不能更改。
 4. Wearable设备不支持后台读卡。
 

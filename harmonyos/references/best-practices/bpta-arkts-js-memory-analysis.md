@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkts-js-m
 title: 分析ArkTS/JS内存
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 分析内存占用问题 > 分析ArkTS/JS内存
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:14+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:7e72819d765b2fef8538e62d0720477920fa2ad5af1847675767490d43df3a6e
+content_hash: sha256:d6c2c1476763f9857891edd0a6bddf540d551051e97731add6fd2b45fa555bdf
 ---
 
 ## ArkTS/JS内存布局
@@ -14,7 +14,7 @@ content_hash: sha256:7e72819d765b2fef8538e62d0720477920fa2ad5af1847675767490d43d
 
 在多线程环境中，Local对象在各线程间是隔离的，每个线程拥有独立的线程虚拟机内存堆，而共享堆则供所有线程共同使用。为了提高内存管理的效率，线程虚拟机内存堆和共享堆的内存被划分为不同的内存空间（Space），具体划分如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Q0FqmVk9QIit_Srs3RVm7A/zh-cn_image_0000002404124985.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=A70166247455820F51AB0C1983A2A87523D2A39DCD6C5011B5599FE2B58EA333 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/lVCPx_lBSFqKPH9pYVVMJw/zh-cn_image_0000002404124985.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E1697DA82D0BA8443CB76A42B7019E44C936844DAE09BD226B52F92CC05D539 "点击放大")
 
 | space名称 | space介绍 |
 | --- | --- |
@@ -33,7 +33,7 @@ content_hash: sha256:7e72819d765b2fef8538e62d0720477920fa2ad5af1847675767490d43d
 
 **图1** **可达性树的快照**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/IgjC3AoiRGq_Lw_mPT45SQ/zh-cn_image_0000002370405436.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0BD810430744596B9C435A24A42EF85A109639A885F335F6341F64A77E78F81 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ASgZPGScSdySvkWtdlkiQg/zh-cn_image_0000002370405436.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B9BFCB4923D81664C91530EF64B512E724C4C2F39ED26C98E22A709EABB3EBF "点击放大")
 
 在ArkTS中，对象之间存在引用和被引用的关系。图1中的箭头指向的都是被引用的对象。所有存活的对象都直接或间接地被GC Root引用，从GC Root到被引用对象的路径构成了该对象的引用链。因此，分析内存占用的关键在于结合业务判断，在合适的位置断开对象的引用链，从而使垃圾收集器能够回收未挂载在树上的内存节点。
 
@@ -53,7 +53,7 @@ DevEco Studio中Profiler Snapshot模板支持采集堆内存快照和对比功�
 
 **图2** DevEco Studio中Snapshot模板录制流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/m2D7_rpkRIOWvI2Xn0mNEw/zh-cn_image_0000002404045157.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC75B1D63CDC3CFDA5782AF567A5515F7A297A63215ED9CA8A81FC14EAA1609A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/P1jgvG96QjC4FrWW7PcnPQ/zh-cn_image_0000002404045157.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=16958E2887B23D294D809C73686E38EF5647F688F0B90B7DBFDCD660AFFFCE39 "点击放大")
 
 内存占用分析整体步骤可以简单描述为:
 
@@ -62,7 +62,7 @@ DevEco Studio中Profiler Snapshot模板支持采集堆内存快照和对比功�
 3. 应用进行多次操作（最好是7次或11次这种特殊的次数），操作完后退回到初始的页面，再次拍摄一次内存快照；
 
    **图3** snapshot comparison特定场景对象抓取  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/_JhRcdJRQZSBXWGYnnsJhg/zh-cn_image_0000002370565328.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1941AE303152DC01236506A527A0F162CE1C71B3B48AB65F24C2BB84E398B9A3 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/5sR5yIgBRTG4Pr1nUO1mQw/zh-cn_image_0000002370565328.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2665D42F7B5D76205AA645E95EB57F6F6A64DDB4F104068C320B8CCCBBF130D "点击放大")
 4. 对比两次快照找出应该被回收但没被回收的对象。有多个对象在比较视图都存在时，可以重复多次步骤3的操作，分别和未进行操作时对比，观察是否存在对象和操作次数相同，进一步缩小内存占用对象的范围；
 5. 分析引用链，通过distance递减1的方式向上找出内存占用根因对象，断开引用链；
 6. 重复步骤1-5复测。
@@ -70,7 +70,7 @@ DevEco Studio中Profiler Snapshot模板支持采集堆内存快照和对比功�
 录制好的Snapshot如下图4，对象的reference层层展开就是一条引用链。这里建议阅读[案例：ArkTS内存泄漏分析](../harmonyos-guides/ide-arkts-memory-leak-analysis.md)，文中针对快照中的一些类型作出了说明，对于后续分析有很大帮助。
 
 **图4** **快照对比页面概览**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/4A8bnKeZTrmGgmTIp1cLYg/zh-cn_image_0000002404124989.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB47275E324C40D3A9D1446A3C734AC6F71FDEA2FBF7897DF475F4464CED9BC1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/II-CNENYRUSnk4CbBEtB9g/zh-cn_image_0000002404124989.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A249A5B9C7920A2EF9F8D7CC0C608D636BD5003DF0DE08123F87F60A4679455 "点击放大")
 
 在分析引用链时，应遵循distance递减1的原则来查找上层引用节点。当存在单一引用链时，逐级展开引用链即可找到距离根节点为1的节点，从而确定唯一的引用链。如果引用链较为复杂，Current节点同时被A、B、C、D四个节点引用，那么Current节点的references展开后会同时显示这四个节点。只有按照优先解决最短链路的原则，即distance递减1的原则来查找上层引用节点，才能确保找到一条完整的链路，否则可能会陷入循环引用等问题，导致无用功。
 
@@ -92,7 +92,7 @@ DevEco Studio中Profiler Snapshot模板支持采集堆内存快照和对比功�
 
 **图5** **snapshot分析流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/aI_Tcwe4ToywU_vzfchwRw/zh-cn_image_0000002370405440.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=51B911B1F898E7F2DD1EDCF6654584346C60644DE3504EB83D337A99E7761C47 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Oi1vQ9F7TMWKo0zt5dZk7w/zh-cn_image_0000002370405440.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=417D25EEE34B52E3C8DEC9E2387E2C460849B99748012367853AB5029F2D5199 "点击放大")
 
 总结：内存占用无法释放的根本原因是JS对象被native C++侧直接或间接持有，导致GC无法回收。解决方法是断开这些持有关系。如果native C++侧直接持有的GC Root节点在不断重复创建，需要释放这些Root节点对象。如果Root节点对象只有一个（nodeId相同）或无法释放，则应选择断开引用链。
 

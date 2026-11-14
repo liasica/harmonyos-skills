@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: 文件组织
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 文件组织
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ba184582e7ff343a8e694b218c61636346d6acdbffcd9a3bf81bc7b98f5fa931
+content_hash: sha256:c93a080b6b5474a468c2ed463f0b7ea797d2c4b97f9150a773d9397919b1d045
 ---
 
 ## 目录结构
@@ -14,11 +14,11 @@ JS FA应用的JS模块（entry/src/main/js/module）的典型开发目录结构�
 
 **图1** 目录结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/cpimhviySZWnSizaOfyDzw/zh-cn_image_0000002815398785.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD62F0E39A4A3C90736893523FDBA59AB6EC95498EBC1655CB14286D832E92B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/okk92x8yQNW0wxAij_qqyg/zh-cn_image_0000002817506443.png?HW-CC-KV=V1&HW-CC-Date=20261114T004531Z&HW-CC-Expire=31536000000&HW-CC-Sign=D331613F83A11253526B64C020F58F6637C4E40CEE49836E0A2B7F5C96463D92)
 
 **图2** [多实例](../lite-wearable-guides/pageability-launch-type.md)资源共享目录结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/TYjAz2aJSPSMXnI9emGFFA/zh-cn_image_0000002786519210.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B713EF47ACB7E3D7AEAF2F6AEA5E9B8B78E0CC85A13118854AB2A484B27CABA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/IxrM2h4VSW2U5pJWCsFFgA/zh-cn_image_0000002788307014.png?HW-CC-KV=V1&HW-CC-Date=20261114T004531Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF87B0673AD03C772B2F4BFFBA64C508CC0A196B929B15A2076AB7F69CC4A3AD)
 
 目录结构中文件分类如下：
 

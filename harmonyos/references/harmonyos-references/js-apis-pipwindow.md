@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.PiPWindow (画中画窗口)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.PiPWindow (画中画窗口)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:01+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:df96a0f608eb1b78a9c489ed8f19c5ce863a62bcf77c933934d0b0226a0e2b98
+scraped_at: 2026-11-14T08:50:01+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:930585cc86ab30067612624c01dd7a7d2d88e56b59b3265582aab77af9e61b59
 ---
 
 该模块提供画中画基础功能，包括判断当前设备是否支持画中画功能，以及创建画中画控制器用于启动或停止画中画等。支持用户在进行其他操作时以小窗形式继续观看视频内容，提升多任务处理效率。适用于视频播放、视频通话或视频会议场景。
@@ -417,7 +417,7 @@ type PiPControlGroup = VideoPlayControlGroup | VideoCallControlGroup | VideoMeet
 
 type PiPActionEventType = PiPVideoActionEvent | PiPCallActionEvent | PiPMeetingActionEvent | PiPLiveActionEvent
 
-画中画控制面板控件动作事件类型，支持以下四种。
+画中画控制面板控件动作事件类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

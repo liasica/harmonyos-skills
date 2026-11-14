@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/partneragent-
 title: 伙伴设备与HarmonyOS设备互通的开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 融合短距 > 伙伴设备与HarmonyOS设备互通的开发指南
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2206d3ec29d3f0c9810ca9f32bd353cfef9189045c6d34669c80dce4f8a5faf1
+scraped_at: 2026-11-14T08:47:35+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:2b99cdf50411cf17b451f9c720c78faaad435b7204058674ccb745fd87705d7d
 ---
 
 ## 简介
@@ -68,8 +68,7 @@ content_hash: sha256:2206d3ec29d3f0c9810ca9f32bd353cfef9189045c6d34669c80dce4f8a
   当不再使用服务且准备将该实例销毁时，触发该回调，回调中通知销毁该实例原因，开发者可以在该回调中清理资源，如解绑设备、设备丢失信息打印等。
 
   ```typescript
-  import { partnerAgent } from '@kit.ConnectivityKit';
-  import { PartnerAgentExtensionAbility } from '@kit.ConnectivityKit';
+  import { partnerAgent, PartnerAgentExtensionAbility } from '@kit.ConnectivityKit';
 
   export default class PartnerAgentAbility extends PartnerAgentExtensionAbility {
     onDeviceDiscovered(deviceAddress: partnerAgent.PartnerDeviceAddress): void {
@@ -176,8 +175,7 @@ if (isBound == true) {
    在PartnerAgentAbility.ets文件中，增加导入PartnerAgentExtensionAbility的依赖包，自定义类继承PartnerAgentExtensionAbility并加上需要的生命周期回调。
 
    ```typescript
-   import { partnerAgent } from '@kit.ConnectivityKit';
-   import { PartnerAgentExtensionAbility } from '@kit.ConnectivityKit';
+   import { partnerAgent, PartnerAgentExtensionAbility } from '@kit.ConnectivityKit';
 
    export default class PartnerAgentAbility extends PartnerAgentExtensionAbility {
      onDeviceDiscovered(deviceAddress: partnerAgent.PartnerDeviceAddress): void {
@@ -193,7 +191,7 @@ if (isBound == true) {
 
    EntryAbility中加载ets/pages/Index.ets绘制的页面，请求用户授予访问蓝牙权限。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/wtoDcVRbTSCZ8tGX0ib93w/zh-cn_image_0000002815399217.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=A67C3CBF303CBE16E8C3D3039EE9F53B1F40E2C615E25BB143D26EB4BFA01B25)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/eX7Z3hoFSsSY6DMUyGveXA/zh-cn_image_0000002817506877.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004734Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3E6AFFC8B383F3A6CE8CB9BEDF99BDC113092D7F81104A66C03AC3725FB5824)
 
    ```typescript
    import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
@@ -249,12 +247,11 @@ if (isBound == true) {
 
    调用注册设备等功能接口。Index.ets中输入要注册的设备蓝牙地址，注册输入的蓝牙设备，去注册输入的蓝牙设备、查询设备的绑定状态，获取本机绑定的设备列表等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Ev9ISyWYT7iYdfNJDElgGA/zh-cn_image_0000002786519642.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=0880A72C71309456FD65609C105892E198F4E483AC9DBBD51FE1455D29FBA146)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/OGOqBrFFTTSO7eNUj86iDQ/zh-cn_image_0000002788307446.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004734Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B91ED561590D7DD294DC005DCB05B2642DFBE0EDA225E82F74804FB74FAA2AD)
 
    ```typescript
    import { BusinessError } from '@kit.BasicServicesKit';
-   import common from '@ohos.bluetooth.common';
-   import partnerAgent from '@ohos.FusionConnectivity.partnerAgent';
+   import { common, partnerAgent } from '@kit.ConnectivityKit';
 
    @Entry
    @Component

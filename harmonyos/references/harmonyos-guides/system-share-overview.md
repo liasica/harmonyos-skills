@@ -3,27 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-share-
 title: 概述
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dce366b1e6d0fa05919348dc06dc6108f1af18ff48435ec4eab150da3379a650
+content_hash: sha256:201fcea366259aaef3c235d6b87e8fc9f3b36b3a831a2a5ac40cba5cc7740584
 ---
 
 ## 场景介绍
 
 在手机设备中，分享框通过模态弹窗方式被拉起，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/UpDFi_5JSASlI1ttXOGpYA/zh-cn_image_0000002815560013.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DD16D921ED226FEBD0798469A2969AB7D619DE130A20D2494BEAF005B262F36)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ElqOSvm9S2WaEOgoPpC2Hg/zh-cn_image_0000002788308326.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=600DA12EDAD36CA4A96FBF01ABD78B2517F8650B71BD2D89E695D2EB3B30C20F)
 
 在2in1设备上分享框通过Popup形式展示，效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/4x3J1UvyR8-buLY9nsKGBA/zh-cn_image_0000002815400097.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=39934C93F1494ED98FE3AF52C632559D1DD1451DE0BE9342DC5F55B128F608CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/dpOUGj-cQlCPY-w-FIUUtg/zh-cn_image_0000002817427689.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=392A4096C62EC146E49EEB5F167809BE5C6ACEBD74F10F750915B96404339F7E)
 
 1. 宿主应用可以分享一段文本、一个文件或一条备忘录到其他应用。
 2. 宿主应用可以分享多个内容，如文本、图片等到其他应用。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/9Aj4JZ9VROCziAUj0ERe6w/zh-cn_image_0000002786520522.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=57DE4B112CA9127E1BD63B637A81F3FF73403BBC05F5D4E913F17279AE219133)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/D0L_4ArRSUKTiRLQn0cuWA/zh-cn_image_0000002788468270.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5F2EF5A8763EF24AA77F21136C57C4EEF6218BB96A87BF8AE3BC54A0F9EC9B5)
 
 流程说明：
 

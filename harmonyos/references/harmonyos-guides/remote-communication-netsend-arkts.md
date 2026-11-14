@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 发送网络请求（ArkTS）
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 发起HTTP请求，获取响应 > 发送网络请求（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2878a5b596a1263be0b88b0f9ecec8f53c8c669986ff389d31791a857697cb91
+scraped_at: 2026-11-14T08:47:37+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:2056fcc219b6fe66c4a54141db0fa81cb2d67fdd69a1e4eea8e89d2e1babfd72
 ---
 
 ## 约束与限制
 
-发送网络请求能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+发送网络请求能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 如何使用FETCH发起网络请求
 

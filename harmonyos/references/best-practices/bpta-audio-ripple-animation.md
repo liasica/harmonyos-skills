@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-ripp
 title: 基于AudioRenderer和AudioCapturer实现音频波形动画
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于AudioRenderer和AudioCapturer实现音频波形动画
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:f15aa691c7dda7ea63dfd1fc556d32779158c4263592e955e88b9d4aaef86b10
+scraped_at: 2026-11-14T08:54:12+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:9d710fdb292cc52cb2baffa29c094e7ef98b74f1dbbbc53e3fe803c40d504fa3
 ---
 
 ## 概述
 
 音频波形动画是音频数据的线性波形显示，其中，水平X轴用于衡量时间，垂直Y轴用于衡量振幅，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/qBY5vsrjRj-f9hBaBRGXpA/zh-cn_image_0000002507968404.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=07B9E85156C9DD37BE7756B7DC2188C211D22FF11E7F9D6D4AA42E115B1087A0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/gjJZQ65KSViN2KMB7eJB8w/zh-cn_image_0000002507968404.png?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A252AF35DB725ABF4FB608F5E84FF1256DDDAA7CFCB50A987E0DC27A95A5D06 "点击放大")
 
 由于音频波形可以清晰地显示振幅变化，因此非常适合于直观显示声音、音乐等的音量大小变化，常用于用户在录音或播放录音过程中实时展示音量大小的场景。
 
@@ -25,7 +25,7 @@ content_hash: sha256:f15aa691c7dda7ea63dfd1fc556d32779158c4263592e955e88b9d4aaef
 
 dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示中，通常使用dBFS衡量数字音频中的信号强度。其计算公式如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/wDmoesCMTEia2d-XvLG3dw/zh-cn_formulaimage_0000002539808087.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FB29056931406E07FC6DFC7B3BEB284DB0C8765CBA628502D2DB92698A72D81 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/lkUsAwI3RzWou95ovhvoDA/zh-cn_formulaimage_0000002539808087.png?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=754E4B3D3FB9DADA40465AC045AF8C1E34E29C7F8AB400F838A7EF1484A07717 "点击放大")
 
 其中，A表示当前采样点的振幅值（即该时刻音频数据的瞬时数值）。Amax表示在当前位深下，系统所能表示的最大振幅值。
 
@@ -37,11 +37,11 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
 
 开发者在开发录音播放等场景时，为了体现当前播放音量的大小，需要实现音频播放波形，下面将介绍如何基于AudioRenderer实现音频播放波形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/zx5FUcCDQCKa6e0-OpTOjw/zh-cn_image_0000002539688123.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=D21A57008CF556CB885D77322CA8FB33BE6590BE7D78B15A2BA3B964F1AC22D7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/VxXwU2CmTYelCYZqfdaLbw/zh-cn_image_0000002539688123.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F3ECB956660706ABD8F1640AE97F9F083A2EB765A37F30BC512E4FA8ED3C606 "点击放大")
 
 ### 实现原理
 
-在基于AudioRenderer（[Interface (AudioRenderer)](../doccenter-references/api/arkts-apis-audio-audiorenderer.md)）实现音频播放波形场景中，需要定时计算获取音频的dBFS。因为需要定时绘制dBFS，所以需要计算这一段时间内的平均音频位深。然后，根据平均位深计算当前的dBFS，将对应高度的线条绘制到画布上。最后，通过动画移动画布，从而实现音频播放波形。
+在基于[Interface (AudioRenderer)](../doccenter-references/api/arkts-apis-audio-audiorenderer.md)实现音频播放波形场景中，需要定时计算获取音频的dBFS。因为需要定时绘制dBFS，所以需要计算这一段时间内的平均音频位深。然后，根据平均位深计算当前的dBFS，将对应高度的线条绘制到画布上。最后，通过动画移动画布，从而实现音频播放波形。
 
 ### 开发步骤
 
@@ -125,11 +125,11 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
 
 开发者在开发通讯软件的语音录制发送、音乐录制等场景时，为了体现当前录制音量的大小，需要实现音频录制波形。下面将介绍如何基于AudioCapturer实现音频录制波形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/iZY8vZZSR2aE3l3zzGEZ_Q/zh-cn_image_0000002507968406.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B62307B19FAA56500C511C182317FB81429DB5AA5C69426FBF4F0B9A60C024E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/8E2qMAUBRRSO10la-zATnQ/zh-cn_image_0000002507968406.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=76A5541F57FCD32F0DD7438F61B8E9B65B8ABC3096F0BC463D20B92E8870B5D5 "点击放大")
 
 ### 实现原理
 
-在基于AudioCapturer（[Interface (AudioCapturer)](../doccenter-references/api/arkts-apis-audio-audiocapturer.md)）实现音频录制波形场景中，需要在readData的回调函数中获取对应的位深，再计算对应的dBFS，其他实现步骤与基于AudioRenderer实现音频播放波形类似。
+在基于[Interface (AudioCapturer)](../doccenter-references/api/arkts-apis-audio-audiocapturer.md)实现音频录制波形场景中，需要在readData()的回调函数中获取对应的位深，再计算对应的dBFS，其他实现步骤与基于AudioRenderer实现音频播放波形类似。
 
 ### 开发步骤
 

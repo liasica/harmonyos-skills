@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-r
 title: 华为账号其他方式登录获取用户风险等级
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取风险等级 > 华为账号其他方式登录获取用户风险等级
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:10+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:7a5a8c781689cfe70fd7bf8edac02bb2eed3087dd1a141efe36dbabadafc6602
+content_hash: sha256:12157b43c6db3ef7624b377a4e233e45f1cce89ff7da890621fc91008c54e282
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:7a5a8c781689cfe70fd7bf8edac02bb2eed3087dd1a141efe36dbabadaf
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/J8S99SUSQTao51I0N_Ykxw/zh-cn_image_0000002815399651.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EB796EE63267A9E34BAF80FC3CCE2E185B0E3361A60BCA8BC91D54764724DE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/fykaF-u4Txyj_QMaDgel2g/zh-cn_image_0000002817507311.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC7145193EF57D6C03B31D3EEA7DA1375EF8F5ADD843BF3C59B5EDC3E223A928)
 
 流程说明：
 

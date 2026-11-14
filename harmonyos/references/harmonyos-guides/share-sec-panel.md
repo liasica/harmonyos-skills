@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-sec-pan
 title: 分享详情页处理分享内容
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 目标应用处理分享内容 > 分享详情页处理分享内容
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e915805ef86393e53c7aa8ed120a47a7131dc3664d0c277c90c340579970792d
+scraped_at: 2026-11-14T08:48:32+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:382a090e206d04aac3f717451e8cfd5b4aee07a83bb069f7580595d66d98fc98
 ---
 
 分享详情页能力基于[UIExtensionAbility](../harmonyos-references/js-apis-app-ability-uiextensionability.md)界面嵌入能力。目标应用可以通过[ShareExtensionAbility](../harmonyos-references/js-apis-app-ability-shareextensionability.md)构建接收分享内容的分享详情页，并将应用显示到分享面板应用推荐区内，通过分享详情页便捷的处理分享内容。开发时需要接入方实现[ShareExtensionAbility](../harmonyos-references/js-apis-app-ability-shareextensionability.md)并于module.json5中注册支持分享内容的能力。
@@ -61,7 +61,7 @@ content_hash: sha256:e915805ef86393e53c7aa8ed120a47a7131dc3664d0c277c90c34057997
    ```
 4. 构建完分享能力Ability，需要在应用配置文件（src/main/module.json5）的[skills](module-configuration-file.md#skills标签)配置中注册。配置actions为ohos.want.action.sendData，并且uris需穷举所有支持的数据类型。
 
-   ```json
+   ```json5
    "extensionAbilities": [
      {
        "name": "TestShareAbility",

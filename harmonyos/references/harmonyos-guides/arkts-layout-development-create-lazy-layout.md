@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建懒加载布局 (LazyColumnLayout/LazyVGridLayout/LazyVWaterFlowLayout)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 创建懒加载布局 (LazyColumnLayout/LazyVGridLayout/LazyVWaterFlowLayout)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e33d4b80dff7a809f190af89f150342262608e6e894308073f96c86fe9d026c5
+content_hash: sha256:08fe52c0ca45be6a299ae36c42c9c4b9b2aa8a2b7c45c84302fec3af53fad1aa
 ---
 
 ArkUI提供了[Scroll](../harmonyos-references/ts-container-scroll.md)、[List](../harmonyos-references/ts-container-list.md)、[Grid](../harmonyos-references/ts-container-grid.md)、[WaterFlow](../harmonyos-references/ts-container-waterflow.md)四种滚动类组件。其中，Scroll不支持懒加载，List、Grid、WaterFlow虽支持配合[LazyForEach](arkts-rendering-control-lazyforeach.md)实现懒加载，但各自仅支持特定的布局模式。在实际业务场景中，一个滚动页面往往需要混合使用多种布局模式。例如，电商首页可能同时包含多列网格分类入口、瀑布流商品卡片、线性列表推荐；社交应用信息流可能同时包含文本列表、九宫格图片、视频卡片。此时单一滚动组件无法灵活适配，存在一定局限性。
@@ -81,7 +81,7 @@ columnsTemplate属性值是一个由多个空格和'数字+fr'间隔拼接的字
 
 **图1** 列数占比示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/vdxeqfnySGK1T3-eVNdjBA/zh-cn_image_0000002815558321.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=67F0FA2DCECDEE8EA7F1EF0BC316D1D009407B06F7E2158C27219903E5F1DC8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/1QlQrFW8SJe42UfJ3ZeNlQ/zh-cn_image_0000002788466576.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAE5E481BAB4FF77AF81BEDD2EA11EB8053096F43879AF3901A882C7F326E002)
 
 如上图所示，构建的是一个三行三列的网格布局，其在水平方向上分为四等份，第一列占一份，第二列占两份，第三列占一份。只要将columnsTemplate设置为'1fr 2fr 1fr'，即可实现上述网格布局。
 
@@ -113,7 +113,7 @@ columnsTemplate还支持通过repeat关键字自动计算列数，格式为'repe
 
 **图2** 网格的行列间距示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/T_d8pGQEQjWOMavoliiNjQ/zh-cn_image_0000002815558307.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=85490E43EDDBCBE19030EFBFF75E12F68F0FE8F2CC5CCA6256806D50787BA96E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/H5c1ZZmwTmyDiXRwfwecgw/zh-cn_image_0000002788466562.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE196A9EE8FDE9D8E712683769C48F70633C44EF5AABAE217F77B34742DBC829)
 
 LazyVGridLayout组件提供了[rowsGap](../harmonyos-references/ts-container-lazyvgridlayout.md#rowsgap)和[columnsGap](../harmonyos-references/ts-container-lazyvgridlayout.md#columnsgap)属性分别设置行间距和列间距。默认值均为LengthMetrics.vp(0)，设置为小于0的值时按默认值显示。
 
@@ -523,7 +523,7 @@ export struct ListNestedLazyLayout {
 
 **图3** List嵌套懒加载布局容器效果示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/embm-ZMMQHy9F0BsZcyV6w/zh-cn_image_0000002786358864.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=40427071E7549A73D8E31363AB7B785650BE87F91E8F3A199E1D3B9F4916C9A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/1eVlW0eCQSq4yK3DyyLXYA/zh-cn_image_0000002817425959.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=77FA9AACA27F2446C73CCF3F8E2C118746ED0385A7752A2219611C8276C62D50)
 
 * 通过LazyColumnLayout嵌套组合多种懒加载布局容器
 
@@ -753,7 +753,7 @@ export struct LazyColumnLayoutNestedLazyLayout {
 
 **图4** LazyColumnLayout嵌套懒加载布局容器效果示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/HrgwATJCT2G0565bibX5EQ/zh-cn_image_0000002815398405.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3747448FCC952B08448CF702374D6927E5EDAA32FA1893BFDCCBE0E79A24147A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/wygjl9gcR1WGzBrL3tomow/zh-cn_image_0000002817506063.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=47C0A8C02675813922A39A1596D0ADD52246BCA54754DC6D21E4AC179401380A)
 
 ## 分组展示与粘性标题
 
@@ -1062,4 +1062,4 @@ export struct LazyLayoutGroup {
 
 **图6** 分组展示与粘性标题效果示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/dLvLcP8XSYSfYZWlJN4PfA/zh-cn_image_0000002815398407.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=73EBB8558A77C1695F62914A5787A82E70366C539E22D246C46F384F4E56420B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/XiksKTkTQbqv6s-sbxUvVw/zh-cn_image_0000002817506065.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1626905DA054607B26A23D9A8674E5953DF9DA3BC942C2081BBB50447C8A2D5)

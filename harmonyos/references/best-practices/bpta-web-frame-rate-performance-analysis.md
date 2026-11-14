@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-frame-
 title: Web帧率问题分析
 breadcrumb: 最佳实践 > 性能 > 性能分析 > Web帧率问题分析
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:13+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:e599b3ec22ba63a15eaa589ba66dc824db517ea3e73b2508f7ba6127842decf5
+content_hash: sha256:ccde8079d2195556e9687cc8b4d6c5f9c7239eeb4f397ce7d6f4d76537f8143d
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:e599b3ec22ba63a15eaa589ba66dc824db517ea3e73b2508f7ba6127842
 
 ## Web滑动渲染流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/tdDdOHd1TFK0FgS4Q2ZXdw/zh-cn_image_0000002598770531.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2C4A1A4B7F6263A788282A9AA33849048096EAEFEB80397477E55B0A1BF8F39 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/J3vZud8EQ9e0-cTtS5YN6A/zh-cn_image_0000002598770531.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=460658E53E50BB2B66C23738902C598B8A217C5F8268E4674264A09EDA96786D "点击放大")
 
 ArkWeb（HarmonyOS的Web引擎，负责Web页面的渲染、JS执行与交互处理）子泳道聚合了Web相关线程的trace信息，通过分析Web渲染过程关键函数的trace点，可以分析出每一帧的执行流程，图为[异步渲染模式](../harmonyos-guides/web-render-mode.md#异步渲染模式默认)异步渲染模式（默认）下ArkWeb滑动过程中的渲染流程图，其聚合的Web线程信息如下：
 
@@ -33,7 +33,7 @@ ArkWeb（HarmonyOS的Web引擎，负责Web页面的渲染、JS执行与交互处
 
 ## Web滑动丢帧分析方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/sARM_DreQayJdiH8Bri-6g/zh-cn_image_0000002568330974.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE8A92C07F35141005FF2F90FDB75A95D1A037E2316073807880E1B03748D735 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/RRwYyMdlQ4KdurrKZJZHZQ/zh-cn_image_0000002568330974.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=29F374AA17EC8A082F3C0ADC9F2D37F13FC7F18782BC9D8E710A3E3550422733 "点击放大")
 
 1. 确定是否存在丢帧问题：使用DevEco Profiler或录屏工具辅助分析，确认Web组件是否存在丢帧问题。若存在问题，则执行后续分析逻辑。
 2. 确认关键性能瓶颈：找到异常耗时trace点。
@@ -56,13 +56,13 @@ InputRouterImpl::FilterAndSendWebInputEvent | type=GestureScrollEnd代表终点�
 
 RenderWidgetHostInputEventRouter::DispatchTouchscreenGestureEvent | type=GestureFlingStart代表抛滑起始点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/XraayRVgRv2KoHeWYA8uWw/zh-cn_image_0000002568171322.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=084C5B9B790A5309AFC94EA0E7A2D1901DDBF2B9A9C4EF696B59557972601BCF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/xDgQlOIYS2q-IlidYn17kQ/zh-cn_image_0000002568171322.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=7502262AF8C9AA36B2557DDC8AE11B2E59EC9DD2BF7A57E2FCCF6D5E1A5F4AE4 "点击放大")
 
 ### 从最终结果倒推，找到丢帧时间点
 
 Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当VSyncGenerator生成RS信号时，若RosenWeb泳道标识的buffer个数为0，则说明发生丢帧；有缓存时则不视为丢帧。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/UnTG31YhR9Km98Mmd65k4Q/zh-cn_image_0000002598850589.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7361B0C0C4C36491F8CE5616D9447E3551350942F56A1C0BF1BD9FBA642C53D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/GEFOnuBnSJKsBSQIueayow/zh-cn_image_0000002598850589.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B94D56E845B6022F95CEFFF939ECA7204274EAE4EFD479B6A87D990BAA42325 "点击放大")
 
 ### 寻找丢帧原因
 
@@ -86,7 +86,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/BkCIDNQBRceDkv0cJCD9gw/zh-cn_image_0000002598770535.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=4670902B62FED765F1B32534CC20AA62FC06AF115BCD4707583B28C4A6648A1E "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/4BwEdCzSTWab8AkxK-c0dg/zh-cn_image_0000002598770535.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EC152DAE0EC27AB137E3881386E388C82F0F13EA8B0B33F20FBDFACE5979FDC "点击放大")
 
    **根因分析**
 
@@ -109,7 +109,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/WPDbmHI-TDybGud2pjqWiA/zh-cn_image_0000002568330976.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C53BAD6F37B000C95E947E454037E89A53779FDF6B2A084890E0D754DE22D2C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/3OPt1G02Tfy9Ah5dG66JmQ/zh-cn_image_0000002568330976.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E11748331ECEC5640A32F22F7E9019E40A82776DC1D1AAF07980294EE74A229 "点击放大")
 
    **根因分析**
 
@@ -134,7 +134,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/To9gxn5gRIimdG9E5eqq9Q/zh-cn_image_0000002568171324.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCD1107E86C041F17CCFE21CBC2376C400AF154D63454DE00123104102A59E14 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/n7WpZun-Qo2g5vj-zpyvcA/zh-cn_image_0000002568171324.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=62668E5ED9FCD26B5F5F1B0DE73379A9FCBE4648792A336A460EEE4E791B78CD "点击放大")
 
    **根因分析**
 
@@ -161,7 +161,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/qFZ_91dQQ6K6LXnT7WQtCQ/zh-cn_image_0000002598850591.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAA88B890DB2C646DDCD93C7D15B2708B1DF711E2B87224C9E2ED62587EB0646 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/YPSQE-Q7RfmhfIXM4v_08w/zh-cn_image_0000002598850591.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9AD0A86C1F72D0659CEAE472501D582D2D0F4FDCDBE0A497CD8E0C371A641E0 "点击放大")
 
    **根因分析：**
 
@@ -184,7 +184,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/BOklP07STVuGtiBCNGAusA/zh-cn_image_0000002598770537.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A1D09546D4D1E23BECD94F1CCE309A27C38675E97456D273BA4E3011F544453 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/nLWRDmx2SAqqHMqWcPD4lQ/zh-cn_image_0000002598770537.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=96436908A585B76ACBD2AE888CA58FB530213AB55D27CCE5FC0E29E7CEC3A125 "点击放大")
 
    **根因分析：**
 
@@ -207,11 +207,11 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
    某个web页面使用了一个超高精度的3D渲染，页面每次滑动经过这块动画区域就会卡顿掉帧。
 
    **图1**   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/lcOOnxDIQFKT-J8EO2hi8w/zh-cn_image_0000002568330978.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=671023A029F9C85C3DE434756059E4393E4880D70D3898A1B1127F6114526154)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/xAI-c7pcRYyOxsiAZV_aZg/zh-cn_image_0000002568330978.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF952ED8E3B6BAC791671D2F7BBEF62F121157C837A2036DF5C86B2A389CB28F)
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/tA7KyrYrTJikIWmtBblVgA/zh-cn_image_0000002568171326.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9136CE66322EEE9CB71652123DD80AE94D987D3DA3E937BD1C1FE810A65D920 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/0qGfPtVPQxePMnkgQXHaVQ/zh-cn_image_0000002568171326.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBDD25E91F2017DA60389A6E19C1AABDB06E5253A8874833976A2EA90C2C57D5 "点击放大")
 
    **根因分析**
 
@@ -234,7 +234,7 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/eyeFluyoS46IJFzlOYOAjQ/zh-cn_image_0000002598850593.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6063231FEA2FE7DE17BBE611AD08F3C985532A64BCB51546DAA4CDD74DC83253 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/bO0y1e4SSXimFuhuIapQjA/zh-cn_image_0000002598850593.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=578B1A3FA9DEFD088B9C15DC6C91EAE28675449FB03AF2BD04C4605157159A57 "点击放大")
 
    **根因分析**
 

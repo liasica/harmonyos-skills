@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-performanc
 title: 性能概览
 breadcrumb: 最佳实践 > 性能 > 性能概览
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:13+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:29b0077dd71e937e004df42a599dc39be663ef51176ed69f4ae98f88902302ba
+content_hash: sha256:b552d2e16a1770afd2b1eba421c5aeccdde723ca4bee2de26782f6086069a417
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/ZQ1kpIzWSGGFhWkrnX9LBg/zh-cn_image_0000002370405416.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9C62C3260316FCFA05F189708860A4D5FEF3C1006E96C856677AF2C33C5B85B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/xMVUBsa2Sv6FiLn8hvOW-w/zh-cn_image_0000002370405416.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=D94DD1B08430E772440640754D26640325F7678D93E1549EB808CBB48B9D2B64)
 
 性能调优贯穿于HarmonyOS应用开发的整个生命周期中。开发前有性能最佳实践和指南等赋能套件让开发者快速上手学习。开发过程中有性能工具开发套件覆盖应用开发各阶段。应用开发完成上架后有专业的性能测试工具检测应用性能指标。本文重点介绍应用开发过程中使用性能工具与性能优化文章定位分析性能问题流程，目前DevEco Studio主要集成了四种性能工具，在不同的开发阶段各有侧重，主要分为性能问题检测类工具和性能问题分析类工具。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/VIhVt8ToSYa-75ruW9t9ZA/zh-cn_image_0000002404045141.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=566B670475F8AB489FFA399318E90D4EA23F823B01E9D1B1FAB3477D73360CBA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/dltK4EtoSjuyNJ2xby9elA/zh-cn_image_0000002404045141.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=696E172074416B44609DF0C2CA13CC45C9F4F732188A3940C14A8B2E5092AC62)
 
 ## 性能工具集定位分析性能问题流程
 
@@ -20,7 +20,7 @@ content_hash: sha256:29b0077dd71e937e004df42a599dc39be663ef51176ed69f4ae98f88902
 
 体检工具和调试&调优工具联动：部分不能通过具体规则拦截的性能问题，跳转到调试&调优工具进行分析，分析并行化、组件耗时、页面层次等具体问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/EaunJ7EXQca3CnmqTeOkng/zh-cn_image_0000002370565312.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE6691EE97D9B7CAA7650CAA19E74CB875F5C262CAB733113D9AEFF9F0D7F4F8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/vIAFMExjQy6bSNZ4JYX9bg/zh-cn_image_0000002370565312.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3B7B1DE097CCD5B1B34D8669DFB5C252CE715D6167212744FE2BDDD491E965F "点击放大")
 
 1. 检测发现性能问题，在代码编辑阶段可以使用Code Linter代码检查工具对代码进行单个文件或者文件夹进行静态代码扫描；同时在应用功能开发完成后，在运行态可以使用应用体检工具检测应用运行过程中的性能问题。
 2. 以应用体检工具为主，对于动态运行检测发现的性能问题，提供三种修复问题的路径：
@@ -34,7 +34,7 @@ content_hash: sha256:29b0077dd71e937e004df42a599dc39be663ef51176ed69f4ae98f88902
 
 ### 滑动卡顿丢帧和时延类问题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/wmaLtUfySHyMg2doCJ9qAQ/zh-cn_image_0000002511986340.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=34D969FA3B5B23BDC9BD648065DB0C70324404230ECA88E9B66DB7FCFA2D8B0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/wcuXQRflSUSNICsU88DNqQ/zh-cn_image_0000002511986340.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A7DBFD297E851E34758581F085C6583C283E731EFC0601EA3FD2FCF92641B95)
 
 应用体检工具AppAnalyzer目前集成了场景化体检、规则体检和上架前体检，对于滑动卡顿丢帧和时延类性能问题，这类问题的定位思路如下：
 

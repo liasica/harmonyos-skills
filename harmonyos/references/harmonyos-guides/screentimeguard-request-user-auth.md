@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 请求用户授权
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 用户授权管理 > 请求用户授权
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8708c780520924c2d35436b7ddc2a0605c18c2a60ddfc91383e0c3f61e9ff122
+scraped_at: 2026-11-14T08:48:31+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:700bc334952d0e25dad78494e6597135b98aef80a21782090b02673a679b3292
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ Screen Time Guard Kit支持对用户设备的时间管理和应用限制，因�
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/rckjje2ITaSWRN29qK3p9Q/zh-cn_image_0000002815400083.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=709418EDD1206AB05466CF4AC6CC16E486A062EBDF5AA5D57D867D0AC1C9BE60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/9QPyGYriTbakfpsNrtG8mw/zh-cn_image_0000002817427675.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5D2B9DC0D1A786D4B57672B3BAD34A5494DADE2AC66B1B7D4DAC124F8580385)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/LwOrU1ifQDK-uEeIQPQ9vg/zh-cn_image_0000002786520508.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=7189A8A66DD078A32C9007219A438644B55277783D03DAEDE35F9DFAC504252C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/XRcgvfXtR0Csbq6Gdiudfw/zh-cn_image_0000002788468256.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5E7950E5A1DFDCB81F39BD9E840EF4AB422114B920336064CCA59C0708B3402)
 
 流程说明：
 
@@ -45,6 +45,7 @@ Screen Time Guard Kit支持对用户设备的时间管理和应用限制，因�
 1. 导入相关模块。
 
    ```typescript
+   import { common } from '@kit.AbilityKit';
    import { guardService } from '@kit.ScreenTimeGuardKit';
    // ...
    import { BusinessError } from '@kit.BasicServicesKit';

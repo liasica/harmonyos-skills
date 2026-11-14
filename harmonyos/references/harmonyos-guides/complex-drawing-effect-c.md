@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawi
 title: 复杂绘制效果（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 绘制效果 > 复杂绘制效果（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e5a48a54b53453aa2391e1d2e3e070dd42a36537ba0892f3b37d68c74f233c04
+content_hash: sha256:f07ce2dd53a5bdcce2c345925ea39587cf113caf5917e2b6eecd660294ef7d6a
 ---
 
 除了基础填充颜色、描边颜色和一些样式设置的绘制效果外，还支持通过画刷和画笔实现更多复杂的绘制效果。比如：
@@ -52,7 +52,7 @@ OH_Drawing_BrushDestroy(brush);
 OH_Drawing_PointDestroy(point);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Ew_k5i0mTfKV4QkF-fmBXA/zh-cn_image_0000002786519944.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D1C805A5C870388A33E89F107828EDA4419ED2F0C2F4866FC8E3A956369C9CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/TW_upV0bQKyT3gscS3qGig/zh-cn_image_0000002788307748.png?HW-CC-KV=V1&HW-CC-Date=20261114T004805Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC725AFBD1781BD83EE3ADB12CC7DE874579FEB1E7BDE70091D08E5042B6B53F)
 
 ## 路径效果
 
@@ -151,7 +151,7 @@ OH_Drawing_PointDestroy(endPt);
 
 此例绘制的具有线性渐变着色器效果的矩形如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/iz_hlEZ3QcKTNJzJJMEecw/zh-cn_image_0000002815399521.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=90A9B97176DBDE69AE629F94EE418DFCCFEBAA321E1AC227B3E1A1FF85FE188D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/nnp48ziNR0Gn69CKi1tumQ/zh-cn_image_0000002817507181.png?HW-CC-KV=V1&HW-CC-Date=20261114T004805Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC044402E11F6AD3F793985F718E96FB4C5E60B5776FC66071B58279DB610513)
 
 ### 径向渐变着色器效果
 
@@ -193,7 +193,7 @@ OH_Drawing_PointDestroy(centerPt);
 
 此例绘制的具有径向渐变着色器效果的矩形如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/tTpI1mtgTPSTDoR179Rs4A/zh-cn_image_0000002786519946.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=37A99E489A69916E5869BA3025ABDCFA431011EEB95FEA90350ABE2EBDFCEDFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/ikx9wKaESkmy7Je492ckmQ/zh-cn_image_0000002788307750.png?HW-CC-KV=V1&HW-CC-Date=20261114T004805Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BDF286040371876F32A072B34AE909E7DB40A16A0C34302D5C9B565ED9957DB)
 
 ### 扇形渐变着色器效果
 
@@ -233,7 +233,7 @@ OH_Drawing_PointDestroy(centerPt);
 
 此例绘制的具有扇形渐变着色器效果的矩形如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Izl7v00eRjemDIoibxSYZg/zh-cn_image_0000002786360018.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB354F1740148B49AC5EC37787E154EC2F727996D9764AED90A9B7A4E4ABE149)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/gveknpYURGeLhXojG_noug/zh-cn_image_0000002817427113.png?HW-CC-KV=V1&HW-CC-Date=20261114T004805Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A1EA2D2E315578E934EE756B094281DFAA9188AF93B8ABFB0A3326C30C08B7D)
 
 ## 滤波器效果
 

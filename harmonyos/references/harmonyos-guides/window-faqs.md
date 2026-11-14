@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-faqs
 title: 窗口开发常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口开发常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:18+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:5a71b6019ed1c40ea97da3a3587cfc75a65f3e8704402a7567abae843b4d7c16
+scraped_at: 2026-11-14T08:47:14+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:7b141acbed5c88635345bcdfcfcc157940072ae1c76e5df6380279ca3497f1dd
 ---
 
 ## 如何在应用A启动过程中拉起另一个应用B
@@ -268,30 +268,30 @@ export default class EntryAbility extends UIAbility {
 示例代码如下所示：
 
 ```ts
+import { UIAbility } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { ColorMetrics } from '@kit.ArkUI';
-import { window } from '@kit.ArkUI';
+import { ColorMetrics, window } from '@kit.ArkUI';
 
-let storage: LocalStorage = new LocalStorage();
-storage.setOrCreate('storageSimpleProp', 121);
-windowClass.loadContent("pages/page2", storage, (err: BusinessError) => {
-  let errCode: number = err.code;
-  if (errCode) {
-  console.error(`Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
-  return;
+export default class EntryAbility extends UIAbility {
+  // ...
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    windowStage.loadContent("pages/Index", (err: BusinessError) => {
+      if (err.code) {
+        console.error(`Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
+        return;
+      }
+      const windowClass = windowStage.getMainWindowSync();
+      try {
+        // 采用ARGB方式
+        windowClass.setWindowBackgroundColor('#0000FF33');
+        // 采用ColorMetrics方式
+        windowClass.setWindowBackgroundColor(ColorMetrics.numeric(0x00112233));
+      } catch (exception) {
+        console.error(`Failed to set the background color. Cause code: ${exception.code}, message: ${exception.message}`);
+      };
+    });
   }
-  console.info('Succeeded in loading the content.');
-  // 采用ARGB方式
-  let color1: string = '#0000FF33';
-  // 采用ColorMetrics方式
-  let color2: ColorMetrics = ColorMetrics.numeric(0x00112233);
-  try {
-    windowClass?.setWindowBackgroundColor(color1);
-    windowClass?.setWindowBackgroundColor(color2);
-  } catch (exception) {
-    console.error(`Failed to set the background color. Cause code: ${exception.code}, message: ${exception.message}`);
-  };
-});
+}
 ```
 
 ## 如何实现横竖屏切换

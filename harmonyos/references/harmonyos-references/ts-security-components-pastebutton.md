@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-securi
 title: PasteButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 安全 > PasteButton
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5319b99aa3be971262b5e33c25eb8cadd4eca4f30494db9834bdb15976331d48
+content_hash: sha256:c12a56e6b7cbe1abed95fd4f568a40bd5be81a469d5ff35929f6ad12e9a2201d
 ---
 
 安全控件的粘贴控件。用户点击粘贴控件，应用可以临时获取读取剪贴板权限。
@@ -239,4 +239,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/9pKveQCXTG-qf4F7ZXzIQQ/zh-cn_image_0000002815561027.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4B103EF9200C04E90EE191D60F95B9CAB55E82AC60C0282C8854BCE5108FD8E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/3JXf9eUYTZyYc66yOzXjYA/zh-cn_image_0000002788309340.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=31BE077DE6CB250ADD3F178052B3E64052238D43B95AD84582AB5E9ABD1A4155)

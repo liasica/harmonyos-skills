@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-asan
 title: 使用ASan检测内存错误
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用ASan检测内存错误
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:00+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:40e93e54307efd005d6dbef98f6e97dd8e0ad8a152b89cf5ed699c704774d4bc
+content_hash: sha256:359c8c05e5e36a9c08dfce168bdb0cb91bb45df132eb1a47db273808ce418d4a
 ---
 
 为追求C/C++的极致性能，编译器和OS(Windows/Linux/Mac)运行框架不会对内存操作进行安全检测。针对该场景，DevEco Studio集成ASan（Address-Sanitizer）为开发者提供面向C/C++的地址越界检测能力，并通过FaultLog展示错误的堆栈详情及导致错误的代码行。关于ASan的检测原理请参考[ASan检测原理](../best-practices/bpta-stability-address-sanitizer-principle.md#section159561141247)。
@@ -23,10 +23,10 @@ content_hash: sha256:40e93e54307efd005d6dbef98f6e97dd8e0ad8a152b89cf5ed699c70477
 
 1. 点击**Run > Edit Configurations >** **Diagnostics**，勾选**Address Sanitizer**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Zoehuyr-S2CHgoohrPaLlQ/zh-cn_image_0000002808766633.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E74B5B430491B4F770567FE8750888687DA35850F0974936A101F735BC88D7B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/xs9GDt5WRz221IQN1n8zvQ/zh-cn_image_0000002808766633.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=81F49259E8D7EF5382558DD89F2AD31941A6224E5396B96DE440D234D4AAEBDE)
 2. 如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_ASAN=ON”，表示以ASan模式编译so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/lWKKmZJ2TCGjTDkdv3r0FQ/zh-cn_image_0000002808766635.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C614223B744BBDA2D1CBFF6C07E7AC27DD2DEBEBF8518D526FAC095C4FE2B4F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/caem3nnXQ92Kl049Vsut3Q/zh-cn_image_0000002808766635.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEB4D436C2921CFCFEC6A6D0E43A539648259861077DFA9C7D5316A85F325FE2)
 
 ### 方式二
 
@@ -36,7 +36,7 @@ content_hash: sha256:40e93e54307efd005d6dbef98f6e97dd8e0ad8a152b89cf5ed699c70477
     "asanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/C8Xm1d4cQkiuMYkdVxY3zg/zh-cn_image_0000002808886717.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCD941365829FB993E91FAF9DB99131E02B06E2AB24A72C2DB9DD3603BA2094B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/pqdMqer5T8GggGgEskXgEQ/zh-cn_image_0000002808886717.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=99A6EA1D5B1EA2F603212A49E6E9FB5DFF99B241EFBECEDEA1CC4215D8230F92)
 2. 设置模块级构建ASan插桩。
 
    在需要开启ASan的模块中，通过添加构建参数开启ASan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
@@ -45,7 +45,7 @@ content_hash: sha256:40e93e54307efd005d6dbef98f6e97dd8e0ad8a152b89cf5ed699c70477
    "arguments": "-DOHOS_ENABLE_ASAN=ON"
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/BVL2BVe5QBuVCZ5e2FsvjA/zh-cn_image_0000002808886715.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3A3DF52666E10A964F4EDA989BCB134568E063EA7F46E6CC7758FD4CF2B0978)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/9ZOKX9-TThOUsnDzPGRh_A/zh-cn_image_0000002808886715.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=39C835731007149966AADEB0075CA96BA25A4D13B554C49295409EBFD3A5D1AE)
 
    **说明** 
 
@@ -60,4 +60,4 @@ ASAN\_OPTIONS用于在运行时配置ASan的行为，包括设置检测级别、
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出ASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。日志中各字段的说明请参考[ASan日志规格](address-sanitizer-guidelines.md#asan日志规格)，异常检测类型请参考[ASan异常检测类型](../best-practices/bpta-stability-asan-detection.md#section12508111110451)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/yPE1MdF9TteCP5iMHMonGw/zh-cn_image_0000002808886713.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DFF3912B0422D3639D0516C278357AC93729F56F4BBB53D464DE6D71BBFD3D8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Ii3wuA-9RMCg3eeG-OzpzQ/zh-cn_image_0000002808886713.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9633E2076E934C31278B53F648D9D9B29CD12EDF933217DD336C36ACFE2CB9F)

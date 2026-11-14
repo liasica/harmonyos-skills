@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdr-vivid-vid
 title: HDR Vivid视频播放与录制开发实践
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > HDR Vivid视频播放与录制开发实践
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:55+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:49d15cbb5c598e2f5ec21b3f8c6519fcd70477e0b2d6901892e6428cb188bb2f
+content_hash: sha256:0fa279a39d3c1e02dcc6b8c3fbfedc06e97169f410a6254becb5350d27fa4af1
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ HDR Vivid是高动态范围视频技术标准，中文名为“菁彩影像”�
 
 [AVPlayer](../doccenter-capabilities/media-kit-intro.md#avplayer)提供功能完善的一体化播放能力，应用只需提供流媒体来源，无需数据解析和解码，即可实现播放效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/XwfS0_EjREeeNf8MXVActw/zh-cn_image_0000002786519810.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B620C92657D0972015B00A03DA1057FFB4978BB7D0A72852D29CC78F4FEE64F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/1SuMelKbRtusW_82MtNWoA/zh-cn_image_0000002788307614.png?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8C1E4C99F6F9EE8D103EC7776D34C3C11806C7A2BB509F2ABCFDA36BBA3D508)
 
 ### 开发步骤
 
@@ -41,7 +41,7 @@ HDR Vivid是高动态范围视频技术标准，中文名为“菁彩影像”�
 
 [AVCodec](../doccenter-capabilities/avcodec-kit-intro.md)模块中[视频解码](video-decoding.md)的Native API接口，可以完成视频解码功能。解码后的YUV图像数据通过回调接口返回给应用，由应用侧自行控制送显。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/mUIXLM4nTc2TTspQ7FlgzQ/zh-cn_image_0000002786359882.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5940711A835763C104B804D5A5D9833DE7D6EFCE6223655448CEB5C24E60E457)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/nw4CjhbHSvy3rIDqHiZcaw/zh-cn_image_0000002817426977.png?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF2311102573A6CC7A9D7ABDC0832DB95F815411B3F0909057963EC304EB4F16)
 
 ### 开发步骤
 
@@ -157,7 +157,7 @@ HDR Vivid是高动态范围视频技术标准，中文名为“菁彩影像”�
 
 应用通过调用[AVRecorder](media-kit-intro.md#avrecorder)实现视频录制时，先通过Camera Kit接口调用相机服务，通过视频HDI捕获图像数据送显至应用，同时送至AVRecorder的录制服务，录制服务将图像数据编码后封装至文件中，实现视频录制功能。流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/mtxO2FCUSc2tjHit1Nh7RQ/zh-cn_image_0000002815559303.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=8516DAECDC9559BF3B4F19A0A3DD4B116C8FAE6296196FA60F0D9AD17B306462)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/cNTTAhJfR5aQL9xnh3FTvQ/zh-cn_image_0000002788467558.png?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=9864035B5320BBFC1917815A1174873E613D11E52D7829AC6C31A411754AE73B)
 
 **说明** 
 
@@ -378,7 +378,7 @@ AVRecorder不支持设置AVMetadata音视频元数据的HDR类型。
 
 应用通过调用AVCodec实现视频录制时，先通过Camera Kit接口调用相机服务，通过视频HDI捕获图像数据送显至应用，同时送至AVCodec的编码模块将图像数据编码后封装至文件中，实现视频录制功能。流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/QRtCO6qlStqZ-VujY35YTw/zh-cn_image_0000002815399387.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE02409C53A8C547048791AB8041493422AB51686933FAEB59F814B24FD9DEC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/zTC4QRhuRuSt0h998qdKwQ/zh-cn_image_0000002817507047.png?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=767A50B43C1E6C7EBB660D87913513D3F3A24626541D3E8A5FD701B3D0373DDD)
 
 使用[Interface (CameraManager)](../harmonyos-references/arkts-apis-camera-cameramanager.md)+AVCodec录制HDR Vivid视频，与录制普通视频两者在组件配置上存在如下差异：
 

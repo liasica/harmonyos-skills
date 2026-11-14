@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_midi.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_midi.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:20+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a369104d30db84059d07576bf1233dd270cb29971343c1836ab683c99887c7ec
+scraped_at: 2026-11-14T08:52:29+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:1122988f9925b8a8e80f9eecdb271985205e89eb5eabb8cf410e953757cd49d7
 ---
 
 ## 概述
@@ -272,7 +272,7 @@ OH_MIDIStatusCode OH_MIDIClient_CloseDevice(OH_MIDIClient *client, OH_MIDIDevice
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_MIDIStatusCode](capi-native-midi-base-h.md#oh_midistatuscode) | OH\_MIDI\_STATUS\_OK：操作成功。  OH\_MIDI\_STATUS\_INVALID\_CLIENT：客户端句柄无效。  OH\_MIDI\_STATUS\_INVALID\_DEVICE\_HANDLE：设备句柄无效。  OH\_MIDI\_STATUS\_GENERIC\_IPC\_FAILURE：IPC通信失败。 |
+| [OH\_MIDIStatusCode](capi-native-midi-base-h.md#oh_midistatuscode) | OH\_MIDI\_STATUS\_OK：操作成功。  OH\_MIDI\_STATUS\_INVALID\_CLIENT：客户端句柄无效。  OH\_MIDI\_STATUS\_INVALID\_DEVICE\_HANDLE：设备句柄无效。 |
 
 ### OH\_MIDIClient\_GetPortCount()
 
@@ -518,7 +518,7 @@ OH_MIDIStatusCode OH_MIDIDevice_SendSysEx(OH_MIDIDevice *device, uint32_t portIn
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_MIDIStatusCode](capi-native-midi-base-h.md#oh_midistatuscode) | OH\_MIDI\_STATUS\_OK：所有数据均已成功处理并写入。  OH\_MIDI\_STATUS\_INVALID\_DEVICE\_HANDLE：设备句柄无效。  OH\_MIDI\_STATUS\_INVALID\_PORT：端口索引无效，或未打开。  OH\_MIDI\_STATUS\_TIMEOUT：操作超时，无法在系统规定的超时时间内完成写入，可使用[OH\_MIDIDevice\_FlushOutputPort](capi-native-midi-h.md#oh_mididevice_flushoutputport)重置输出端口后重试。  OH\_MIDI\_STATUS\_GENERIC\_INVALID\_ARGUMENT：参数data为nullptr，或byteSize为0。  OH\_MIDI\_STATUS\_GENERIC\_IPC\_FAILURE：连接系统服务失败。 |
+| [OH\_MIDIStatusCode](capi-native-midi-base-h.md#oh_midistatuscode) | OH\_MIDI\_STATUS\_OK：所有数据均已成功处理并写入。  OH\_MIDI\_STATUS\_INVALID\_DEVICE\_HANDLE：设备句柄无效。  OH\_MIDI\_STATUS\_INVALID\_PORT：端口索引无效，或未打开。  OH\_MIDI\_STATUS\_TIMEOUT：操作超时，无法在系统规定的超时时间内完成写入，可使用[OH\_MIDIDevice\_FlushOutputPort](capi-native-midi-h.md#oh_mididevice_flushoutputport)重置输出端口后重试。  OH\_MIDI\_STATUS\_GENERIC\_INVALID\_ARGUMENT：参数data为nullptr，或byteSize为0。 |
 
 ### OH\_MIDIDevice\_FlushOutputPort()
 

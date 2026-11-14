@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Checkbox
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Checkbox
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:12+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a311ce8c2d3dfef2d30b828b6fb3dbd4c18f0315b65497a13d0b884efd477bba
+content_hash: sha256:8bf729bf2ad4faa1d8951b05d3b0434262497ffa91067ae5ac2b11f75c66cda0
 ---
 
 提供多选框组件，用于在多个选项中进行选择。
@@ -394,7 +394,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/XEAdW8ZTQcClG6JaFVjWHA/zh-cn_image_0000002786361218.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=17A67DA79AF6B76AB95B0CA9CD538B988091C4BB924434A56AC17E576FE64EE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/lGlJ5fWJQ_WeAoB-XjvSLQ/zh-cn_image_0000002817508383.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=6923C2D68F8920CAB5E797BB456684D3CEFFE7D276D69CA6ABE2B781DF2FCC54)
 
 ### 示例2（设置多选框颜色）
 
@@ -445,7 +445,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/BzUQk4H8Qm2fzmjeuUzjdA/zh-cn_image_0000002815560639.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4688E8C64BFE801332B0FA855E6BAB7D903EC2B22AA24C064757543CAE99A54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/sgpThojxRjuCOs0clrC-Sg/zh-cn_image_0000002788308952.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E610791B83ED64AAAD29CE977EA879DE585CABFF02C6C9F48D3B2A758B4AA32)
 
 ### 示例3（自定义多选框样式）
 
@@ -536,7 +536,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/NEu8dXHOSOOvY5rImuGw2A/zh-cn_image_0000002815400723.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C28E73881B8CF181CFDBF3F09D81DEB06E4870098928BAB8D351B5F6AD615DED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/VLKaqY8yR4eedSEda_xCOg/zh-cn_image_0000002817428315.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=766B989D3B8D0DAD62264DE214E13EC4759DC6328177B7E0C333CA8FA17C74D1)
 
 ### 示例4（设置文本多选框样式）
 
@@ -593,7 +593,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/EHzmNYauRySZh80JN3k_kw/zh-cn_image_0000002786521148.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=37AF16F10B5BE85CB92131721071AB0F2714A275ACDDEBDD1D1A925123CC8E5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/9wqINJIQRmSDVsqXQtiZ9A/zh-cn_image_0000002788468896.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0DEE2E47C665AC7A975220186C6323ACFF947713D67E0D9FF15B175448E08A9)
 
 ### 示例5（获取多选框选中信息）
 
@@ -753,7 +753,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/tqxuIGXHQX2kqW1q3oO10Q/zh-cn_image_0000002786361220.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=20357D4B26FB92640A2346A6FB36EE124B75DE2624E65FAB001CFE2D8CBA3A23)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/ZzA_SZrDRhqsr1TlxVHPgw/zh-cn_image_0000002817508385.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=4272619B40E25183958637E7380AC5BCC643BAC3D83EB30CE93C393BB4DD7415)
 
 ### 示例6（设置滑动多选）
 
@@ -966,4 +966,4 @@ enum SelectedState {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/FRpdpsVFQryafFjd0u_INA/zh-cn_image_0000002815560641.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F754B1CEE3967FBAB74ABE6E222791435DD35FA08DB9B71FD67A89DC8C784F3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/zUpisquQRUm4Tn7NOGPICA/zh-cn_image_0000002788308954.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FF1A5A4ED30EA1AD383DD4289C81451A2B4321B40B68081B2F9A93A8F419751)

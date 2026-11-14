@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer
 title: 查看ArkUI预览效果
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 界面预览 > 查看ArkUI预览效果
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:57+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:00a70f09efc855cc1ff182c205a8bccc35a123505cbd6b0438fa8916ed299b83
+content_hash: sha256:829c46c00b82236990b2b08ff289c10ee75b331aba7b917ae917df28c577519b
 ---
 
-ArkUI预览支持页面预览、组件预览、多断点预览和卡片预览，下图中左侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/9aPEIGd3RAKTWga_gx5Xdw/zh-cn_image_0000002779407218.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD8730B8B43AD9EAB2BA4F2064410411257B178102E3E28352502918EA3E1FE5)为页面预览，中间图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/WvLstOmJTcuRWZj-nu_9VQ/zh-cn_image_0000002779567198.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=10768CE6B637FDCD718CB243C32CA63EED9D9BA45ADD03A6EE0284B08D17494D)为组件预览，右侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/QrrZKAwBTvCF7PT5FeGWYw/zh-cn_image_0000002779407216.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=083F305D1AB8BB3F7A6999ADDD9290F80533A13C14557298F8A90CBB1E607E8D)为多断点预览，卡片预览在创建卡片文件后可直接预览。
+ArkUI预览支持页面预览、组件预览、多断点预览和卡片预览，下图中左侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/mpioxwePSJqn_Hqzd4E5gw/zh-cn_image_0000002779407218.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=59D566AC0A3F48DA95FD6D72C52FF675FFF6943FB44285F4BE9D3B075037ACAB)为页面预览，中间图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Wdi4xwuETmmnlKb6kbcd1g/zh-cn_image_0000002779567198.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAA946DEF39BBDD43FAC69918344F2F2DC2A0D6B1C9E33506F54169753969A9C)为组件预览，右侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/jduDXep_Q46AQWRP5OQCUQ/zh-cn_image_0000002779407216.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD1C6CFEE422E4BD2EC328F54EDEEA4DFE40863A1F03259F7A913A488A85A89C)为多断点预览，卡片预览在创建卡片文件后可直接预览。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/HIbe_ZJ4Sgucs2nc4DGDpg/zh-cn_image_0000002779567196.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=067CD53A1635ACA72B59F1D5AC4CAA2012106B5DA586881DFCB7FD20058BAD64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/NFEuNtimQvCafYX4i2zd1w/zh-cn_image_0000002779567196.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE7BD94A4789FFB20480736565989E9CA90B711838CAB4DE538E1CB81D804299)
 
 ## 页面预览
 
@@ -60,7 +60,7 @@ struct ContentTablePreview {
 
 以上示例的组件预览效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/iN4056eeSCijNZEq3_HFBg/zh-cn_image_0000002779407224.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AD436CB2B390A3DC7E282EFE88486004226470322E478AFDC4D011F7FA7888B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/j2nKd0gGROqxZ5itspBg-g/zh-cn_image_0000002779407224.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=12E27BBB2E4702DC42F32C466575D9624EF7BEDE8BFB99862AC78281F6F3011D "点击放大")
 
 组件预览默认的预览设备为Phone，若您想查看不同的设备，或者不同的屏幕形状，或者不同设备语言等情况下的组件预览效果，可以通过设置@Preview的参数，指定预览设备的相关属性。若不设置@Preview的参数，默认的设备属性如下所示：
 
@@ -130,9 +130,9 @@ struct Index {
 
 以上示例的多断点预览效果如下图所示，会展示8个典型档位断点下的预览效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/4z583SkxT4OnUKgjZR-EHQ/zh-cn_image_0000002779567200.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DA4BFDBEE0EB7088FADB4FA2D6C60665C8BFA9232EBB6ADF94DAE5FF9C64F5C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/rSxaAh5dRtS2N0DTIEoI_Q/zh-cn_image_0000002779567200.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=E19B1DF793DF1F0C717CC7AE8A69E8BB55EA93630F871730990E66DBF13B9C9D "点击放大")
 
-每个断点预览画面上均可点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/jyQniqPwRJqIRS6ohc6ATA/zh-cn_image_0000002808886863.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DAC7D0043DFB6D29D7490E065DB58D04D1015FA2F1FA0AF0FDC094413B1D39C)查看该断点档位下的组件树。
+每个断点预览画面上均可点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Z_v_qwb9QvyCRX_1keJbTg/zh-cn_image_0000002808886863.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE731B3643481BF2C17E78B02C6AA0C91C0711E45F65488C61C4651093653BB4)查看该断点档位下的组件树。
 
 支持代码编辑器、UI界面和组件树三者之间的联动：
 
@@ -141,10 +141,10 @@ struct Index {
 * 选中组件树中的组件，则对应的代码块和UI界面也会高亮显示。
 * 不支持修改属性面板上的组件属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/OzoEbHFOSXSBUwFBAACqtQ/zh-cn_image_0000002779567204.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=84BC1A541DF793B5F0D0BDDC0C3A0DAE8C497D95CF3AB821838BE1A248D58A9D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/kDWcp9GFTkGVrCCxtlO76A/zh-cn_image_0000002779567204.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EC55B5E2EE2F3BA047D6F90AF86C0F372B86FF551409C02294825882224E915 "点击放大")
 
 ## 卡片预览
 
 创建卡片并选中卡片文件后，点击右侧边栏**Previewer**按钮即可预览卡片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/bV8Jfn5EQ_eCMPDJlFzY7A/zh-cn_image_0000002779407220.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4D5026AE7B832014962D4B032759D47D31A51DA89F82E77D7E58B9FCF70F780 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/iXGLpZzHQFeKhVBnBqON1g/zh-cn_image_0000002779407220.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=16E280FAA977EDC248DB69E26CFF12F09ECB2F651B5533FE8D150FC87A73BBC1 "点击放大")

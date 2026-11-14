@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 点击回弹效果
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 点击回弹效果
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:cea2ad10daf5050a2b97f66c2ccafce687a48f80599bd02cfb82f4b609ce5f1e
+content_hash: sha256:a34125b3f39996321293b90ffc67b9daece7d125189cbc976334b0c409824473
 ---
 
 设置组件的点击回弹效果。
@@ -146,4 +146,4 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/EObP0pllSn275ucnm1xW1w/zh-cn_image_0000002815400521.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1591D80230EA5EB11D51342949A79E4D253E5B366ABF3A5A59851DDB08780D23)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/xrLTeyE0S6qIIL_-1h-LJg/zh-cn_image_0000002817428113.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A05446B86922FB52B32BAE8480079C31227C4234916461955F01DC2F4F9CF17)

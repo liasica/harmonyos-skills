@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-styled-st
 title: 使用属性字符串
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用文本 > 使用属性字符串
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:08+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:31f73187b64a299eaef94bb7352c2e186cc3e11a702161a0c5343269b839d7b8
+content_hash: sha256:920f262fa7b4edaf8b2146e83ae79ec3b2b7adb04fca40eef1d91e0bc4370ac5
 ---
 
 部分框架或应用具备自研的文字排版能力，在移植时，其文字排版能力会被对接到[方舟2D图形服务的文本引擎](complex-text-c.md)。为了避免开发者重复开发文本组件，Text组件可以通过[ArkUI\_NodeAttributeType](../harmonyos-references/capi-native-node-h.md#arkui_nodeattributetype)中的NODE\_TEXT\_CONTENT\_WITH\_STYLED\_STRING属性，使用格式化字符串对象设置文本内容属性，直接渲染方舟文本引擎生成的文本。
@@ -18,7 +18,7 @@ content_hash: sha256:31f73187b64a299eaef94bb7352c2e186cc3e11a702161a0c5343269b83
 
 下图展示了 NODE\_TEXT\_CONTENT\_WITH\_STYLED\_STRING 接口的主要使用流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/mzvMiPHXQNidqtxlkIzdRw/zh-cn_image_0000002815558691.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=43B54757DB5FDCBBBE8D7A2B9C24CC15B75D18D1E977D085D32166EEDEC256EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/GJD1y1fESg-KZTHwtNODdQ/zh-cn_image_0000002788466946.png?HW-CC-KV=V1&HW-CC-Date=20261114T004530Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5FB44D0C7352EBE73D4B9381494D4B095904005DA7021717DE5BA5D77CADC6A)
 
 ## 创建StyledString对象
 
@@ -98,7 +98,7 @@ OH_ArkUI_StyledString_AddText(styledString, "World!");
 OH_ArkUI_StyledString_PopTextStyle(styledString);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/lBc3vZuaS02RE9dEvbh5WA/zh-cn_image_0000002815398775.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=4930B30E6B46C8AE833523E9A9D253B142D770761E62FB29BC0E7AC71BDBA7D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/GBlphbwCQACmbUIjbn5pnQ/zh-cn_image_0000002817506433.png?HW-CC-KV=V1&HW-CC-Date=20261114T004530Z&HW-CC-Expire=31536000000&HW-CC-Sign=D08AABDF7966FD1BDD73FBCE95B8F6B7DF08F305F8D41EE0DC3635100109FE53)
 
 ## 添加占位符
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: background-position样式动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > CSS动画 > background-position样式动画
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:11+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b645cb2796a0ea3ca8f07606c94820bd396fb876bbc0d629f594e6ed44ae0661
+content_hash: sha256:a9b9bbe4f0de3c80550a033ddc67ee69d116d5376253fb2f26c88563b3ed5410
 ---
 
 通过改变background-position属性（第一个值为X轴的位置，第二个值为Y轴的位置）移动背景图片位置，若背景图位置超出组件则超出部分的背景图不显示。
@@ -88,4 +88,4 @@ content_hash: sha256:b645cb2796a0ea3ca8f07606c94820bd396fb876bbc0d629f594e6ed44a
 
 background-position仅支持背景图片的移动，不支持背景颜色（background-color）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/TAtMweK1SUSNTBVmFZMZ6A/zh-cn_image_0000002786519280.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=E24561973FAFDADB991F69218F56A5180A79D43836C04C5FD0552F8795F9B612)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/AG_YABugQzqiNLXRb6daIg/zh-cn_image_0000002788307084.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=52EBE4D974168A043670F32D9E0E3A59D60ACE32BC4FD36477ECFD9D3D1B1F5D)

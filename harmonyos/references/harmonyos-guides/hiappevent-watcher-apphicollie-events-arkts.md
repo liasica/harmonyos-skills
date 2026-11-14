@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅任务执行超时事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 任务执行超时事件 > 订阅任务执行超时事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:55+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-14T08:47:47+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:c6395885d9f4b93d1f04a57ee6e2ebff79ae462b25e9eea84271c1395346007c
 ---
 

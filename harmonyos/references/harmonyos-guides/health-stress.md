@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-stress
 title: 压力
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 采样数据 > 压力
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Phone/Tablet应用开发 > 开放数据类型 > 采样数据 > 压力
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:56+08:00
+scraped_at: 2026-11-14T08:48:18+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:7ec3f20aa23123b403fe497d73209fa947c727b39355c1633faca651b4f6aa2a
 ---

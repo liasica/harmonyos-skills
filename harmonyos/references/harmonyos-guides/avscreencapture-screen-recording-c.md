@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: 基于AVScreenCapture实现屏幕录制（C/C++）
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 基于AVScreenCapture实现屏幕录制（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:01+08:00
 doc_updated_at: 2026-10-26
-content_hash: sha256:ba693e9dec1e261f1a8227e197a1873d3b633d57c58d21d73954dab918677439
+content_hash: sha256:e49129a9bc3e6b7b486972241dbca87f5f32c5093888d1a307c873a7375ec198
 ---
 
 ## 概述
@@ -47,13 +47,13 @@ content_hash: sha256:ba693e9dec1e261f1a8227e197a1873d3b633d57c58d21d73954dab9186
 
 **案例展示图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/trmFfZUyRyC0hDYkr-v8kA/zh-cn_image_0000002815399469.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF61A4F93F778E8BA75DDB43FBE405B4B3F0CE837F80AC5A53DAFCDDE36BAA5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/SgOxbdT7Ty6rUdaBt4wtlA/zh-cn_image_0000002817507129.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004619Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8494BCBA2AE1B411E81D64509ACBD240ADCAA8784A543BE93920D71E9E3D513)
 
 ### 实现原理
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/ZL22_QeuQWaR-9-5O_u8Qg/zh-cn_image_0000002786519894.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DEBC6499B654D40D48A7C213A3287A723D01AFF7BC74025722F41071A59D40A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/qH7u49BPS7uEIiEWWiTXUg/zh-cn_image_0000002788307698.png?HW-CC-KV=V1&HW-CC-Date=20261114T004619Z&HW-CC-Expire=31536000000&HW-CC-Sign=74333C1781C992916ED15BBA5E6F50287AEAF8A6E3197AC5C4B55117B4181C49)
 
 当点击录制按钮时，会调用异步方法进行屏幕录制。关键过程如下：
 
@@ -394,13 +394,13 @@ content_hash: sha256:ba693e9dec1e261f1a8227e197a1873d3b633d57c58d21d73954dab9186
 
 **案例展示图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/3Lktl3MTSs-KMCZXDdoXyg/zh-cn_image_0000002786359966.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=085F6A8E19FF2E0F24D994080C8894BACB004B086B8FAF10601A9F0D8EAD863A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/PR4HSF_XT6Gjp_qczVWxYg/zh-cn_image_0000002817427061.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004619Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2F599070F138ABD5700C082002B2DE5FD6EBB3462314400A4AD561B71E02AD1)
 
 ### 实现原理
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/S_rCwCkjS2ym82WKyp4q5Q/zh-cn_image_0000002815559387.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D9CBFCD20961982F2C1BAB265D37A7F826F3ABE60F08BF26B5B0915B62B3CD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ibtcIpDqQrmvRT9494dLJA/zh-cn_image_0000002788467642.png?HW-CC-KV=V1&HW-CC-Date=20261114T004619Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9481A8018D5A55C984463008C9DA4D184F139D067511E11BB8307B5746C149F)
 
 当点击录制按钮时，系统会调用异步方法来执行屏幕录制。关键过程如下：
 

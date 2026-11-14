@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gestur
 title: 手势拦截增强
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 手势控制 > 手势拦截增强
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:09+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:8a40370ff485fcefb0253ddc9eadce657f42604c6c68b8bd2bb3ff8f628bc12e
+content_hash: sha256:24f4eb1314c0f73353ed3aa955cc267aa4e1292a152a9e93ec645d7ed0040b4f
 ---
 
 为组件提供手势拦截能力，适用于嵌套滚动、父子组件手势协同、手势冲突处理等场景。开发者可根据需要，将系统内置手势和比其优先级高的手势做并行化处理，并动态控制手势事件的触发，从而更精细地管理手势响应顺序和交互行为。
@@ -460,7 +460,7 @@ struct FatherControlChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Z9A22OPhQM6U3URRudOs2A/zh-cn_image_0000002815560511.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C38846BB41053547E24CE48AFFE8F4A3FB4F08DAA537AAF04B7A77CA95FD4303)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/tk184itXQsSdDeyuKacy9Q/zh-cn_image_0000002788308824.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4B39FAECCFD99D97B0553AA675A0375ECD56D3C8EC608F06494715CB4E5F8E5)
 
 ### 示例2（嵌套场景下拦截内部容器手势）
 
@@ -552,7 +552,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/L5GfyxrlS0KBGaeOOWqkRg/zh-cn_image_0000002815400595.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=08104E0A995E9BBCD74E799BD5E57846B2B9908DC370E0D493FD4CE2CDDFFA40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/mj8zF3iETZqFCSHVBru-Yw/zh-cn_image_0000002817428187.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8345564B0E1A3F584C20C4E34D043EC3937042F1AA65672232770B57722C8C7)
 
 ### 示例3（拦截手势获取属性）
 
@@ -636,7 +636,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/Mg8IJenfSvajQtihuLU14w/zh-cn_image_0000002786521020.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=41CEE571A26691649FA7B8A07C414165D94FF96297BEF69F09D47563905E2C0A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/YHkdiS7TQt-GhlmjoicwEw/zh-cn_image_0000002788468768.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9DC98E46439E60A0279BA1CD77A1C20F5CA87BD51641347ADF7E638091BFA9A)
 
 ### 示例4（手势触发成功时取消子组件上的Touch事件）
 
@@ -835,7 +835,7 @@ struct FatherControlChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/lx9_SCDGTbam5EiFqPI3qg/zh-cn_image_0000002786361092.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6598384B8434CB8B7047ED90208F7D1C227C709612C960D3433F839242BA0A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/NPE2St_LTACvFoDL7977xw/zh-cn_image_0000002817508257.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=42A4612B7DA80B10432694695004FC1FB5D05B312DF852E37EBA65590AB9CB27)
 
 ### 示例5（自定义手势识别器是否参与手势处理）
 
@@ -924,7 +924,7 @@ struct TouchTestDoneExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/y5_HbS6QQ_-5OmJqRZgMNQ/zh-cn_image_0000002815560513.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1EB6D7458FA56EC1C17CA819C90756EC8FEFAE3E0A4D724230DFD6DFD5EC34C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/8UAeWx2IT967J6KR6Q4Vww/zh-cn_image_0000002788308826.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=75281ED9A1A19362E9E246AA22E16653C2BDBE854FAD1F9232A2962E88BFE254)
 
 ### 示例6（自定义干预事件和手势的收集结果）
 
@@ -1007,11 +1007,11 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/A5mquewbRaSoFcWh1bYuxw/zh-cn_image_0000002815400597.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E0BF2D0A8EB6432734E5C802D37C2608E6A7A5AB6F5940D7518BBE183FDA64F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/wwRfq1ZHRMG7247wouFUBA/zh-cn_image_0000002817428189.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECF5D458402DF955E5220A6468D672F0FDD307697F1E3C618227C4B8B975ED66)
 
 示例对应的组件树如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/mJmG5g4qSbmATGO_UtiuQw/zh-cn_image_0000002786521022.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=267CA843E83A29FFED2FE3920D56BE630D65AEBDFAC96788FDF40298932088AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/YQQQ2IVCQfGc_qqyGud4rg/zh-cn_image_0000002788468770.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD312889CE9569661D15A8507A2259A1EA3626DC00BF4F0C3179CFE2A27FBC07)
 
 ### 示例7（非内置手势嵌套滚动）
 
@@ -1150,4 +1150,4 @@ struct FatherControlChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/EyoKp2x-TGmp5pcO5LZ7Hw/zh-cn_image_0000002815560511.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=891375469A08BDFAF4599C94AD9CE263DDDD3F5CD61F6977D30906B6C8522FFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/3E-lArNBSUKKsi88NdlFJQ/zh-cn_image_0000002788308824.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEF013D3CE8DDCE628033736A168253301288063E0F20A10FB3E3948554FDC42)

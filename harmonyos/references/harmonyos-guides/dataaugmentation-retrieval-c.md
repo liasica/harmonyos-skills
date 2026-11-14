@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataaugmentat
 title: 智慧化数据检索-C++
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > 智慧化数据检索-C++
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3620683b7646a60d5fb4d094a4be33871bfc676b6894be6406155e45a1ca924c
+scraped_at: 2026-11-14T08:47:18+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:3b7e8cb9bb4272a903fa6315515bf4ece208939860f363bd3305fd8084fab305
 ---
 
 ## 场景介绍
@@ -38,14 +38,14 @@ content_hash: sha256:3620683b7646a60d5fb4d094a4be33871bfc676b6894be6406155e45a1c
 
 | 名称 | 描述 |
 | --- | --- |
-| int [OH\_Retrieval\_CreateRetriever](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_createretriever) (const [OH\_Retrieval\_Config](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_config) \*config, [OH\_Retrieval\_Retriever](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_retriever) \*\*retriever) | 获取检索器。 |
+| int [OH\_Retrieval\_CreateRetriever](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_createretriever) (const [OH\_Retrieval\_Config](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_config) \*config, [OH\_Retrieval\_Retriever](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_retriever) \*\*retriever) | 创建检索器。 |
 | int [OH\_Retrieval\_DestroyRetriever](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_destroyretriever) ([OH\_Retrieval\_Retriever](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_retriever) \*retriever) | 销毁通过[OH\_Retrieval\_CreateRetriever](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_createretriever)获得的检索器。 |
 | [OH\_Retrieval\_Config](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_config) \* [OH\_Retrieval\_CreateConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_createconfig) () | 获取检索器配置。 |
 | int [OH\_Retrieval\_DestroyConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_destroyconfig) ([OH\_Retrieval\_Config](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_config) \*config) | 销毁通过[OH\_Retrieval\_CreateConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_createconfig)获得的检索配置。 |
 | [OH\_Retrieval\_DbConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_dbconfig) \* [OH\_Retrieval\_CreateDbConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_createdbconfig) () | 创建一个配置项以打开数据库。 |
 | int [OH\_Retrieval\_DestroyDbConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_destroydbconfig) ([OH\_Retrieval\_DbConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_dbconfig) \*dbConfig) | 销毁[OH\_Retrieval\_CreateDbConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_createdbconfig)创建的[OH\_Retrieval\_DbConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_dbconfig)。 |
 | int [OH\_Retrieval\_SetDbConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_setdbconfig) ([OH\_Retrieval\_DbConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_dbconfig) \*dbConfig, [OH\_Rdb\_ConfigV2](../harmonyos-references/capi-rdb-oh-rdb-configv2.md)\*rdbConfig) | 设置[OH\_Retrieval\_DbConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_dbconfig)中的数据库配置。 |
-| int [OH\_Retrieval\_AddConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_addconfig) ([OH\_Retrieval\_Config](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_config) \*config, [Retrieval\_Channel\_Type](../harmonyos-references/dataaugmentation-capi-retrieval.md#retrieval_channel_type) channelType, [OH\_Retrieval\_DbConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_dbconfig) \*dbConfig) | 设置[OH\_Retrieval\_Config](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_config)中的数据库配置。 |
+| int [OH\_Retrieval\_AddConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_addconfig) ([OH\_Retrieval\_Config](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_config) \*config, [Retrieval\_Channel\_Type](../harmonyos-references/dataaugmentation-capi-retrieval.md#retrieval_channel_type) channelType, [OH\_Retrieval\_DbConfig](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_dbconfig) \*dbConfig) | 添加[OH\_Retrieval\_Config](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_config)中的数据库配置。 |
 | int [OH\_Retrieval\_Retrieve](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_retrieve) (const [OH\_Retrieval\_Retriever](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_retriever) \*retriever, const [OH\_Retrieval\_Query](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_query) \*query, const [OH\_Retrieval\_Condition](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_condition) \*condition, void \*context, const [OH\_Retrieval\_Callback](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_callback) \*callback) | 执行检索。获得检索器句柄后，输入检索查询词，根据检索条件执行检索，得到检索结果。 |
 | [OH\_Retrieval\_Condition](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_condition) \* [OH\_Retrieval\_CreateCondition](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_createcondition) () | 创建检索条件，作为检索接口的入参。 |
 | int [OH\_Retrieval\_DestroyCondition](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_destroycondition) ([OH\_Retrieval\_Condition](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_condition) \*condition) | 销毁通过[OH\_Retrieval\_CreateCondition](../harmonyos-references/dataaugmentation-capi-retrieval.md#oh_retrieval_createcondition)获得的检索条件。 |
@@ -70,11 +70,13 @@ content_hash: sha256:3620683b7646a60d5fb4d094a4be33871bfc676b6894be6406155e45a1c
 
    ```cpp
    find_library(aip_retrieval_ndk libnative_aip_retrieval_ndk.z.so)
+   find_library(rdb_ndk libnative_rdb_ndk.z.so)
    target_link_libraries(
        entry
        PUBLIC
        libace_napi.z.so
        ${aip_retrieval_ndk}
+       ${rdb_ndk}
        )
    ```
 2. 导入头文件。
@@ -151,7 +153,7 @@ content_hash: sha256:3620683b7646a60d5fb4d094a4be33871bfc676b6894be6406155e45a1c
    // 创建关系型数据库的配置
    OH_Rdb_ConfigV2 *rdbConfig = OH_Rdb_CreateConfig();
    // 设置关系型数据库配置的目录
-   int ret = OH_Rdb_SetDatabaseDir(rdbConfig, RDB_TEST_PATH);
+   int ret = OH_Rdb_SetDatabaseDir(rdbConfig, RETRIEVE_RDB_TEST_PATH);
    // 设置关系型数据库配置的数据库名
    ret = OH_Rdb_SetStoreName(rdbConfig, "vector_test.db");
    // 设置关系型数据库配置的应用包名
@@ -178,28 +180,26 @@ content_hash: sha256:3620683b7646a60d5fb4d094a4be33871bfc676b6894be6406155e45a1c
    OH_Retrieval_Query *query = OH_Retrieval_CreateQuery();
    // 设置检索词
    const char *question = "how old are you";
-   int ret = OH_Retrieval_SetOriginalQuestion(query, question);
+   ret = OH_Retrieval_SetOriginalQuestion(query, question);
    // 创建检索条件
    OH_Retrieval_Condition *condition = OH_Retrieval_CreateCondition();
    // 创建向量检索条件
    OH_Retrieval_SubCondition *subCondition = OH_Retrieval_CreateVectorCondition();
    // 在检索条件中，设置向量检索结果数量上限
-   int ret = OH_Retrieval_SetVectorRecallLimit(subCondition, 10);
+   ret = OH_Retrieval_SetVectorRecallLimit(subCondition, 10);
    // 在检索条件中，设置向量检索的相似度阈值
    ret = OH_Retrieval_SetSimilarityThreshold(subCondition, 0.35);
    // 把向量检索条件添加到检索条件中
    ret = OH_Retrieval_AddSubCondition(condition, subCondition);
-   // 创建检索结果
-   OH_Retrieval_Record *records = AipRetrievalRecordBuilder::CreateAipRetrievalRecord();
    // 定义检索完成返回结果的回调函数
-   static void Callback(void *context, OH_Retrieval_Record *record)
+   static void Callback(void *context, OH_Retrieval_Record *record, int errCode)
    {
        // 获取Record长度
        uint32_t length = 0;
        int ret = OH_Retrieval_GetRecordLength(record, &length);
 
        // 获取Record
-       OH_Retrieval_RecordItem *item = nullptr;
+       const OH_Retrieval_RecordItem *item = nullptr;
        ret = OH_Retrieval_GetRecordItem(record, 0, &item);
 
        // 根据字段名获取Item size
@@ -214,7 +214,8 @@ content_hash: sha256:3620683b7646a60d5fb4d094a4be33871bfc676b6894be6406155e45a1c
 
    // 执行检索
    // 进行检索，入参依次为上面创建的检索器retriever，检索词query，检索条件condition，以及检索完成返回结果的回调函数Callback
-   int ret = OH_Retrieval_Retrieve(retriever, query, condition, &Callback);
+   OH_Retrieval_Callback callback = Callback;
+   ret = OH_Retrieval_Retrieve(retriever, query, condition, nullptr, &callback);
    ```
 6. 销毁相关资源。
 
@@ -283,7 +284,7 @@ void test() {
 
         ret = OH_Retrieval_GetRecordItem(record, 0, &item);
         
-        std::string fieldName = "subject";
+        std::string fieldName = "filename_text";
 
         ret = OH_Retrieval_GetItemSize(item, fieldName.c_str(), &g_size);
 

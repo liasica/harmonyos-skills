@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: hdsEffect (hds高级视效)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > hdsEffect (hds高级视效)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:51:18+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:036458577c31cfc70949d9dafaeedce234ab457fe97cb0910368c655be1d3cf4
+content_hash: sha256:ee5439e7ddfcb294f3e48378afb9a2bf05b9b25f392da3beb521d3cec9a2372b
 ---
 
 本模块提供组件的拓展视效能力，包括组件点光源效果、按压光效、动画控制。
@@ -127,7 +127,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/K_fKsVz6TKeie7YDmrb8fw/zh-cn_image_0000002815561499.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FEACE766AA521AE7DF242E451D6C6D0ABD5BB9C3CCE67B21B1B81DA732CC386)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/eRgF2FSZTFmUdS8c0XBfmg/zh-cn_image_0000002788309812.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=8886F23638EFFF2EDCC97859F0912775A0669AF747053E51C97D2C82DF7CDBAE)
 
 ### pressShadow
 
@@ -202,7 +202,7 @@ struct PressShadowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/5TXvbFQATLqhHsoq09T3rQ/zh-cn_image_0000002815401583.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=41681DF5E356CF7E5F52E53F9D0133C332241DBAFE6611E403680F1E4764EDB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/lPKl4U3SStKSVRyjASuBMw/zh-cn_image_0000002817429175.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=697328E43CE92E7892A4814645D7F1C8D6742D8492DA03E5294A758D1163948F)
 
 ### shaderEffect
 
@@ -304,7 +304,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ALZoEEiMQBiMJnDYg9US-w/zh-cn_image_0000002786522008.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C48F95D7EF6BF53C3B159392E0FA274533DA26FE3F439FC983663738F4AF1FF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/GMrmo4MDQLKeIlEGZ12QJw/zh-cn_image_0000002788469756.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=931360F1E3BC665665FD90526B3BC87D98E3ABAFA50A0A15BBDF872E1E31430F)
 
 ### buildEffect
 

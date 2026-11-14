@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-connectio
 title: 管理网络连接
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 管理网络连接
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:44+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:3463528a6641bb15d82f1ca45ba2847ba2de452c1ecd2411993b972d5f04c172
+scraped_at: 2026-11-14T08:47:36+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:7554160fb6d78af65241d035bba861cc2fd5dfd68d72fcf74fe0db8e9a06723e
 ---
 
 ## 简介
@@ -131,8 +131,8 @@ content_hash: sha256:3463528a6641bb15d82f1ca45ba2847ba2de452c1ecd2411993b972d5f0
 2. 在蜂窝网络状态差的情况下，默认网络可能会切换到Wi-Fi。
 3. 关闭Wi-Fi后，默认网络可能会切换到蜂窝网络。
 4. 关闭蜂窝网络后，默认网络可能会切换到Wi-Fi。
-5. 在Wi-Fi弱信号的情况下，默认网络可能会切换到其他Wi-Fi(存在跨网情况)。
-6. 在蜂窝网络状态差的情况下，默认网络可能会切换到其他蜂窝(存在跨网情况)。
+5. 在Wi-Fi弱信号的情况下，默认网络可能会切换到其他Wi-Fi（存在跨网情况）。
+6. 在蜂窝网络状态差的情况下，默认网络可能会切换到其他蜂窝（存在跨网情况）。
 
 本节旨在介绍监控默认网络的变化后，应用报文能够快速迁移到新默认网络上，具体做法如下。
 
@@ -259,7 +259,7 @@ function socketTest() {
    此权限级别为normal，在申请权限前，请保证符合[权限使用的基本原则](app-permission-mgmt-overview.md#权限使用的基本原则)。然后参考[访问控制-声明权限](declare-permissions.md)声明对应权限。
 2. 查询默认网络或指定网络连接信息代码示例
 
-   通过调用[getDefaultNet](../harmonyos-references/js-apis-net-connection.md#connectiongetdefaultnet)方法，获取默认的数据网络(NetHandle)；调用[getNetCapabilities](../harmonyos-references/js-apis-net-connection.md#connectiongetnetcapabilities)方法，获取该NetHandle对应网络的能力信息。能力信息包含了网络类型(蜂窝网络、Wi-Fi网络、以太网网络等)、网络具体能力等网络信息。也可以调用[getConnectionProperties](../harmonyos-references/js-apis-net-connection.md#connectiongetconnectionproperties)方法，获取该NetHandle对应网络的连接信息。
+   通过调用[getDefaultNet](../harmonyos-references/js-apis-net-connection.md#connectiongetdefaultnet)方法，获取默认的数据网络（NetHandle）；调用[getNetCapabilities](../harmonyos-references/js-apis-net-connection.md#connectiongetnetcapabilities)方法，获取该NetHandle对应网络的能力信息。能力信息包含了网络类型（蜂窝网络、Wi-Fi网络、以太网网络等）、网络具体能力等网络信息。也可以调用[getConnectionProperties](../harmonyos-references/js-apis-net-connection.md#connectiongetconnectionproperties)方法，获取该NetHandle对应网络的连接信息。
 
    ```typescript
    // 从@kit.NetworkKit中导入connection命名空间。
@@ -330,7 +330,7 @@ function socketTest() {
    ```
 3. 查询所有网络连接信息代码示例
 
-   通过调用[getAllNets](../harmonyos-references/js-apis-net-connection.md#connectiongetallnets)方法，获取所有处于连接状态的网络列表(Array<NetHandle>)。然后遍历获取到的NetHandle数组，分别调用[getNetCapabilities](../harmonyos-references/js-apis-net-connection.md#connectiongetnetcapabilities)方法，获取该NetHandle对应网络的能力信息，能力信息包含了网络类型(蜂窝网络、Wi-Fi网络、以太网网络等)、网络具体能力等网络信息。也可以调用[getConnectionProperties](../harmonyos-references/js-apis-net-connection.md#connectiongetconnectionproperties)方法，获取该NetHandle对应网络的连接信息。
+   通过调用[getAllNets](../harmonyos-references/js-apis-net-connection.md#connectiongetallnets)方法，获取所有处于连接状态的网络列表（Array<NetHandle>）。然后遍历获取到的NetHandle数组，分别调用[getNetCapabilities](../harmonyos-references/js-apis-net-connection.md#connectiongetnetcapabilities)方法，获取该NetHandle对应网络的能力信息，能力信息包含了网络类型（蜂窝网络、Wi-Fi网络、以太网网络等）、网络具体能力等网络信息。也可以调用[getConnectionProperties](../harmonyos-references/js-apis-net-connection.md#connectiongetconnectionproperties)方法，获取该NetHandle对应网络的连接信息。
 
    ```typescript
    // 从@kit.NetworkKit中导入connection命名空间。

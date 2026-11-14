@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 多网并发网络加速
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移（多网并发） > 多网并发网络加速
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:37+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c74034b5b771a8ae44f8f40c960c75466afe47907151cf303f479a2e60210d29
+content_hash: sha256:9bb6c26a729ff769e31dcfa8fd97ac3c2260599b1b5b32f21b6b03ac47e44503
 ---
 
 ## 概述
@@ -55,7 +55,7 @@ content_hash: sha256:c74034b5b771a8ae44f8f40c960c75466afe47907151cf303f479a2e602
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/ex3lTwQSShqEMBREUiJIbQ/zh-cn_image_0000002815399239.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B6BAA91EE2DFDE66B62D3507D5140FDCD8EDD07547543BEBA5DB4D600AFA012)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/NtT6wVHrTGa2dL03AhqpPQ/zh-cn_image_0000002817506899.png?HW-CC-KV=V1&HW-CC-Date=20261114T004736Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CCBBB114E81127D0182B553EE855595F0925E0EAAD61863DBA65B5517B890FC)
 
 ### 代码实现
 
@@ -559,7 +559,7 @@ content_hash: sha256:c74034b5b771a8ae44f8f40c960c75466afe47907151cf303f479a2e602
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/rlgYBJ8wSgG7jJIU72hgGA/zh-cn_image_0000002786519664.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0D3B1B517064AE348F51F253318A166E449D271D7D18A4008643A667ECF0308)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/oYmT4-u5STqHHwfCwW9baA/zh-cn_image_0000002788307468.png?HW-CC-KV=V1&HW-CC-Date=20261114T004736Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A465AB646DA26F87454E946A3404AAC24B028E8F3166ADBC6C776CBFA0F14C3)
 
 ### 代码实现
 

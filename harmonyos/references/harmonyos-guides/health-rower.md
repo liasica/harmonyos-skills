@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-rower
 title: 划船机
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 锻炼记录数据 > 划船机
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Phone/Tablet应用开发 > 开放数据类型 > 锻炼记录数据 > 划船机
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:56+08:00
+scraped_at: 2026-11-14T08:48:19+08:00
 doc_updated_at: 2026-07-09
 content_hash: sha256:3c1c1ede85108be5831f94779ca1c1d5be4db8f08414b36448ed33a46260f4da
 ---

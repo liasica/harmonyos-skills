@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scen
 title: 请求示例
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息推送 > 请求示例
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:29cad1433c04e132430f8b2c42fde4dc9f333fff43e37f2d15a09a2c7769c7b8
+scraped_at: 2026-11-14T08:53:49+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:50cd47f296e2fb835f6434176af9fb2eba5924d2a7e1e87e1cfe0ce9930b9fc3
 ---
 
 ## 通知消息
@@ -881,6 +881,28 @@ push-type:10
     "token": [
       "MAAALgE4G98BAAAAst************jq"
     ]
+  }
+}
+```
+
+## MDM消息
+
+```json5
+// Request URL
+POST "https://push-api.cloud.huawei.com/v3/3158882***52863/messages:send"
+
+// Request Header
+Content-Type: application/json
+Authorization: Bearer eyJr*****OiIx---****.eyJh*****iJodHR--***.QRod*****4Gp---****
+push-type:11
+
+// Request Body
+{
+  "payload": {
+    "data": "携带的MDM管理指令数据"
+  },
+  "target": {
+    "token": ["MAAALgE4G98BAAAAst************jq"]
   }
 }
 ```

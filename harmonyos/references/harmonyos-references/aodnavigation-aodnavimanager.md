@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/aodnaviga
 title: aodNaviManager (熄屏导航服务)
 breadcrumb: API参考 > 系统 > 硬件 > AOD Navigation Kit（熄屏导航服务） > ArkTS API > aodNaviManager (熄屏导航服务)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:26:52+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:a7289c356f3d7a2e7140591190305188e38c336522cbdac9a8bb4a36c93b9ad4
+scraped_at: 2026-11-14T08:52:19+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:993523823018e2808a9873696fef262a347f51121829bbe98b2219c9b84bf28d
 ---
 
 本模块提供AOD Navigation Kit的基础能力，包括检查设备是否支持熄屏导航服务、检查熄屏导航开关状态、获取熄屏导航扩展能力集、熄屏导航初始化配置、规划路线设置、更新熄屏导航视图数据及数据同步等核心功能。
@@ -698,13 +698,13 @@ hilog.info(0x0000, 'aodNavigationSample', 'Succeeded in unsubscribing from altit
 | --- | --- | --- | --- | --- |
 | timestamp | number | 否 | 否 | 导航数据时间戳。单位：秒。值应为整数。 |
 | lastBroadcastTimestamp | number | 否 | 是 | 上次广播时间戳。单位：秒。值应为整数。 |
-| distance | number | 否 | 是 | 距离。单位：km。值保留两位小数。 |
+| distance | number | 否 | 是 | 里程。单位：km。值保留两位小数。 |
 | steps | number | 否 | 是 | 步数。 |
 | cadence | number | 否 | 是 | 步频。单位：步/分钟。值应为整数。 |
-| overallElapsedTime | number | 否 | 是 | 总用时。单位：秒。 |
-| sportElapsedTime | number | 否 | 是 | 运动用时。单位：秒。 |
+| overallElapsedTime | number | 否 | 是 | 全程耗时。单位：秒。 |
+| sportElapsedTime | number | 否 | 是 | 运动耗时。单位：秒。 |
 | currentSpeed | number | 否 | 是 | 当前速度。单位：km/h。 |
-| overallAvgSpeed | number | 否 | 是 | 总平均速度。单位：km/h。 |
+| overallAvgSpeed | number | 否 | 是 | 全程平均速度。单位：km/h。 |
 | sportAvgSpeed | number | 否 | 是 | 运动平均速度。单位：km/h。 |
 | currentPace | number | 否 | 是 | 当前配速。单位：分钟/km。 |
 | avgPace | number | 否 | 是 | 平均配速。单位：分钟/km。 |

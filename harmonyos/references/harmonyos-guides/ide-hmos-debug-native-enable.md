@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: 启动调试
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 启动调试
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:16+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:1b6bca12f877e67e7d4d70d6073d9730790baee1ace3a3603fc83a944f06d5c6
+content_hash: sha256:3e2ee6016cf1aa16bf528d20103d0dd53b97ea2d18cde412163ecd950f99e0bc
 ---
 
 支持debug模式启动调试，启动调试前选择对应的设备进行调试，可参考[debug启动调试](ide-hmos-debug-arkts-debug.md)。
 
-在启动调试前，点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/dx40oIprQPaeF1oo1uLJtA/zh-cn_image_0000002781311356.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CD80AAE010866479923FAF7886DA62D0C548610B781015D9A7D3D01A4AFA66F "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/q9ZLmtFDSxuGndYhLT1rsQ/zh-cn_image_0000002781311358.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AC5131F2EA09EAAD635C517C523DEFF0434DDB65F764018497A9D37A9CE85EC)按钮打开配置界面。在**调试器**中选择**调试类型**为Dual (ArkTS/JS + Native) 、Native 或Detect Automatically，设置调试代码类型为C/C++。
+在启动调试前，点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/nfHAf0E5R8etZKUHKtdYXw/zh-cn_image_0000002781311356.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=4637FC1CD804965C8BE3F1AEC1DA598D125E5E6435B34EF509257558B9791BBE "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/zrBX43xEQkCzBpHzRJVnhA/zh-cn_image_0000002781311358.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=665FF8C8E81B0F8D463C5B805A70A4D16578509F812E08530BC2735EDC519EE9)按钮打开配置界面。在**调试器**中选择**调试类型**为Dual (ArkTS/JS + Native) 、Native 或Detect Automatically，设置调试代码类型为C/C++。
 
 **说明** 
 
 Detect Automatically类型会根据当前工程是否为Native工程判断是否启动Native调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/VZ9L76CUTtulBdWT_xNLYg/zh-cn_image_0000002810750951.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A21CE4FD20E992CD6A60DA86AB5288702363C206E32C6E1B1C88DE65FE25C73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/ZhKiCG2ARgKmWkug2BA75A/zh-cn_image_0000002810750951.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=83326C39308DED518E28FB178904437566B399A7A3E7F28C4B59CDD6E87914B9)
 
 **调试器**中还支持自定义以下配置：
 

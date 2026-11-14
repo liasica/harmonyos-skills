@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 自定义缓存拦截器
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 提升HTTP传输性能 > 使用HTTP缓存功能提升资源获取性能 > 自定义缓存拦截器
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a41dfcc3fcaa9c71b2f94c5ffb1726f25d28534ac1f35b0586a6080bbfbdf199
+scraped_at: 2026-11-14T08:47:38+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:182081ded789634f15c036f1dc8ef98a863b5f7aa49264efc9be534bc0b93fe9
 ---
 
 从6.0.0(20)开始，支持自定义缓存拦截器。
@@ -14,7 +14,7 @@ Remote Communication Kit模块提供了[拦截器](remote-communication-intercep
 
 ## 约束与限制
 
-自定义缓存拦截器能力支持Phone、2in1、Tablet、Wearable、TV设备。
+自定义缓存拦截器能力支持Phone、2in1、Tablet、Wearable、TV设备。从API版本26.0.1开始，新增支持Car设备。
 
 ## 使用自定义缓存拦截器
 

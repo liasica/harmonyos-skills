@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.restrictions (限制类策略)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.restrictions (限制类策略)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:56:06+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:7ec411b172491d6fda398f93f3366da92854ace6b3df6be0d16cc4656b394a67
+scraped_at: 2026-11-14T08:52:12+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:ee87d36cfdbd8c4b8f2d41e44ebb93442cd56cbaf7c74c27d5132172642d7b7f
 ---
 
 本模块提供设置通用限制类策略能力。可以全局禁用和解除禁用蓝牙、HDC、USB、Wi-Fi、蜂窝数据、相机、麦克风等特性。
@@ -849,7 +849,7 @@ setDisallowedPolicy(admin: Want, feature: FeatureForDevice, disallow: boolean): 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| feature | [FeatureForDevice](js-apis-enterprise-restrictions.md#featurefordevice24) | 是 | 指定要禁用或允许的设备特性。  **说明：** 应用申请权限ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS并通过[startAdminProvision](js-apis-enterprise-adminmanager.md#adminmanagerstartadminprovision15)激活为[BDA](../harmonyos-guides/mdm-kit-term.md#byod-device-admin-bdabyod设备管理员)，可以使用此接口设置以下特性：[FeatureForDevice.WIFI\_P2P](js-apis-enterprise-restrictions.md#featurefordevice24)。 |
+| feature | [FeatureForDevice](js-apis-enterprise-restrictions.md#featurefordevice24) | 是 | 指定要禁用或允许的设备特性。  **说明：** 应用申请权限ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS并通过[startAdminProvision](js-apis-enterprise-adminmanager.md#adminmanagerstartadminprovision15)激活为[BDA](../harmonyos-guides/mdm-kit-term.md#byod-device-admin-bdabyod设备管理员)，可以使用此接口设置以下特性：[FeatureForDevice.BLUETOOTH](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.HDC](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.MICROPHONE](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.USB](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.WIFI](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.TETHERING](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.CAMERA](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.SCREEN\_SHOT](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.SCREEN\_RECORD](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.NEAR\_LINK](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.RESET\_FACTORY](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.WIFI\_P2P](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.MTP\_SERVER](js-apis-enterprise-restrictions.md#featurefordevice24)。 |
 | disallow | boolean | 是 | true表示禁止使用，false表示允许使用。 |
 
 **错误码**：
@@ -902,7 +902,7 @@ getDisallowedPolicy(admin: Want | null, feature: FeatureForDevice): boolean
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| feature | [FeatureForDevice](js-apis-enterprise-restrictions.md#featurefordevice24) | 是 | 指定要查询的设备特性。 |
+| feature | [FeatureForDevice](js-apis-enterprise-restrictions.md#featurefordevice24) | 是 | 指定要查询的设备特性。  **说明：** 应用申请权限ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS并通过[startAdminProvision](js-apis-enterprise-adminmanager.md#adminmanagerstartadminprovision15)激活为[BDA](../harmonyos-guides/mdm-kit-term.md#byod-device-admin-bdabyod设备管理员)，可以使用此接口获取以下特性状态：[FeatureForDevice.BLUETOOTH](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.HDC](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.MICROPHONE](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.USB](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.WIFI](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.TETHERING](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.CAMERA](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.SCREEN\_SHOT](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.SCREEN\_RECORD](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.NEAR\_LINK](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.RESET\_FACTORY](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.WIFI\_P2P](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.MTP\_SERVER]。 |
 
 **返回值：**
 

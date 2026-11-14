@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: DMA内存泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > DMA内存泄漏故障模式说明 > DMA内存泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-09
-content_hash: sha256:55449c3e98744f35e7b43c5f44208c707e09e313f5d03db6e71f9c2ba9f224ad
+scraped_at: 2026-11-14T08:54:20+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:a6100a1ce6c25eab7fc1602b9968247e558d198fc6667ff261310e96521bb239
 ---
 
 ## 概述
@@ -145,9 +145,8 @@ DMA内存维测中，一行代表申请的一个DMA内存的句柄，ino是dma\_
 
 开发者可以先排查size\_bytes较大或者存在大量重复size\_bytes的DMA内存，筛选出可疑的内存块。系统会按既定规则为每块DMA内存打上内存名（buf\_name）和内存类型（leak\_type）标签，开发者参照下表即可确定可疑内存块与组件的对应关系。为进一步缩短问题定位路径，建议开发者通过相关接口自定义内存名称或类型，并将其与具体的文件、页面或显示组件关联，以便在应用发生泄漏时快速追溯至对应的业务模块。
 
-|  |  |  |  |
-| --- | --- | --- | --- |
 | **组件/特性** | **内存名（buf\_name）** | **内存类型（leak\_type）** | **应用自定义方法** |
+| --- | --- | --- | --- |
 | [XComponent](../harmonyos-references/ts-basic-components-xcomponent.md) | / | xcomponent-type-id  注：type取s(surface)、t(texture)，id取xcomponent id  示例：  xcomponent-s-nodeId\_237  xcomponent-t-nodeId\_238 | [XComponent](../harmonyos-references/ts-basic-components-xcomponent.md#xcomponent10)自定义参数：  示例：在文件file1中，有页面page1，其中组件component1使用了XComponent   ```screen XComponent(value: {id: 'file1_page1_component1', type: XComponentType.SURFACE, libraryname?: 'libxx.so', controller?: ctrl}) ```   则leak\_type显示为xcomponent-s-file1\_page1\_component1 |
 | [Image](../harmonyos-references/ts-basic-components-image.md#image-1) | 宽x高-url  覆盖如下三种图片路径：  本地 file://data/xxx/xxxxxx/xxx.png  网络 https://xxxx/xxxxx.png  资源 resource://xxxxxxx.png  示例：  72x72-resource://xxx.webp  72x72-https://xxx.png | pixelmap | 使用Image组件的id自定义：  示例：在文件file1中，有页面page1，其中组件component1使用了Image   ```screen Image(pixelmapDesc).id('file1_page1_component1') ```   则buf\_name显示为id:file1\_page1\_component1。 |
 | Web（详见[ArkWeb简介](../harmonyos-guides/web-component-overview.md)） | / | web-type-组件id  注：type为surface和texture、组件id默认为内部的nodeid  示例：  web-surface-1  web-texture-2 | 使用Web组件的id自定义：  示例：在文件file1中，有页面page1，其中组件component1使用了Web   ```screen Web({ src: 'https://xxx/', controller: ctrl }).id('file1_page1_component1') ```   则buf\_name显示为web-surface-file1\_page1\_component1。 |
@@ -183,7 +182,7 @@ com.example.dfx_test  28812   	67      	130965504	7899    	28812   	xample.dfx_t
 5. 找到异常申请的内存及其调用栈，如下图5、6处框选的内容。这里建议将Bytes从大到小排序，按照申请大小顺序排查内存调用栈，分析可疑的内存泄漏点。
 6. 结合调用栈对代码进行分析，找到泄漏根因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Ieznz02KRseLnQ7EaLQalw/zh-cn_image_0000002729491141.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=60B3132038E52EA42DDD3C62640286148A60EC2061D28F862F2AB89F86D7E8AA "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ERAWa3n2Q9SHgoVfIb96Cg/zh-cn_image_0000002729491141.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD57B670507C5D4F0841015AD2476CBFB81A41A512360B734843C26CC2D1A808 "点击放大")
 
 ## 开发态问题分析方法
 
@@ -259,12 +258,12 @@ hidumper命令行工具更多用于实时观察应用的内存占用和DMA内存
 
 开发者在调试过程中，如果遇到应用闪退或者后台冷启问题，可以在DevEco Studio中找到日志组件如下图1处，再选择应用终止如下图2处，单击3选择应用进程名，筛选出调试应用的历史退出原因，如果原因为“ResourceLeak(IonLeak)”如下图4所示，说明应用在调试过程中发生了DMA内存泄漏故障。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Snxh9SxhRKCJp4gnsHD_xw/zh-cn_image_0000002729611101.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C98B2D554E5F8B049AA8021C0824F8C94BE78E6A2F55A49EBEABC68299BDA668 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Gp-O4WxyRLGO_l8mko4uYw/zh-cn_image_0000002729611101.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF0B71E093DCADA325CE72F67B31671377F7115E0AA7A7A5015B834563476653 "点击放大")
 
 确认问题为DMA内存泄漏后，推荐开发者使用DevEco Studio的Profiler工具中的Allocation功能进行分析，使用方法可参考[基础内存：Allocation分析](../harmonyos-guides/ide-insight-session-allocations.md)。具体分析步骤如下：
 
 1. 启动录制前先在Allocation的配置页中执行如下图所示的准备工作：单击下图1处录制设置按钮，单击下图2处打开JS栈记录开关，单击下图3处打开异步回栈开关。由于NativeHeap的Malloc频率非常高，可以单击取消勾选4处的Malloc复选框，不抓取应用Malloc内存分配栈，减少对DMA内存分析的影响。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/AXjD7_BUTGeIFwJW8XoqDw/zh-cn_image_0000002699891774.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=33A70AF92BC4227398C359482F8E9E77D8105A74B4EFB7B322DDE35BEF81430A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/4oBfCCi3T2y7GcbWv8oURw/zh-cn_image_0000002699891774.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA246C02C71CE3C91C6B030F63C592FCEEB5A3B24797FC75BCC7FFACC31AD404 "点击放大")
 2. 启动抓取后，可做正常的用户操作，遍历可疑的泄漏场景。
 3. 抓取完成后，结合[内存栈日志分析方法](bpta-stability-dmaleak-fault-mode-overreview.md#section94641340515)定位内存泄漏点。

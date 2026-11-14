@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅应用终止事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 应用终止事件 > 订阅应用终止事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:47+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9e031bc0a0b842cf09845082b894ee643d501526b2d86dd81e70f1877e987417
+scraped_at: 2026-11-14T08:47:47+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:81c8f71821ceb813706093a53e62acd029fccf995ad8606ccc6f51e78c015675
 ---
 
 ## 应用终止事件规格说明
@@ -27,15 +27,15 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 1. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，导入依赖模块：
 
-   ```ts
-   import { hiAppEvent } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，在onCreate函数中添加系统事件的订阅，示例代码如下：
 
-   ```ts
+   ```typescript
    hiAppEvent.addWatcher({
      // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
-     name: "watcher",
+     name: 'appKilledWatcher',
      // 开发者可以订阅感兴趣的系统事件，此处是订阅了应用终止事件
      appEventFilters: [
        {
@@ -67,92 +67,92 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
      }
    });
    ```
-3. 以下为故障注入功能，需要使用C++代码实现，编辑"napi\_init.cpp"，新增以下代码：
+3. 以下为故障注入功能，需要使用C++代码实现，编辑工程中的“entry > src > main > cpp > napi\_init.cpp”文件，新增头文件引用：
 
    ```
    #include <thread>
+   ```
+4. 编辑工程中的“entry > src > main > cpp > napi\_init.cpp”文件，新增NativeLeak和Leak方法：
 
+   ```
    static void NativeLeak()
    {
-       constexpr int leak_size_per_time = 500000;
+       constexpr int leakSizePerTime = 500000;
+       constexpr int sleepTimeMs = 10;
        while (true) {
-           char *p = (char *)malloc(leak_size_per_time + 1);
+           char *p = (char *)malloc(leakSizePerTime + 1);
            if (!p) {
                break;
            }
-           memset(p, 'a', leak_size_per_time);
-           std::this_thread::sleep_for(std::chrono::milliseconds(10));
+           memset(p, 'a', leakSizePerTime);
+           std::this_thread::sleep_for(std::chrono::milliseconds(sleepTimeMs));
        }
    }
 
-   static napi_value Leak(napi_env env, napi_callback_info info) {
-    std::thread t1(NativeLeak);
-    t1.detach();
+   static napi_value Leak(napi_env env, napi_callback_info info)
+   {
+       std::thread t1(NativeLeak);
+       t1.detach();
        return {};
    }
    ```
-4. 编辑"napi\_init.cpp"文件，将Leak注册为ArkTS接口：
+5. 编辑工程中的“entry > src > main > cpp > napi\_init.cpp”文件，将Leak注册为ArkTS接口：
 
    ```
    static napi_value Init(napi_env env, napi_value exports)
    {
        napi_property_descriptor desc[] = {
-           { "leak", nullptr, Leak, nullptr, nullptr, nullptr, napi_default, nullptr }, // 新增这行
+           // ...
+           { "leak", nullptr, Leak, nullptr, nullptr, nullptr, napi_default, nullptr},
+           // ...
        };
        napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
        return exports;
    }
    ```
-5. 编辑"index.d.ts"文件，定义ArkTS接口：
+6. 编辑工程中的“entry > src > main > cpp > types > libentry > Index.d.ts”文件，定义ArkTS接口：
 
-   ```ts
+   ```typescript
    export const leak: () => void;
    ```
-6. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，在build下增加OnClick功能，并调用Leak接口的示例代码：
+7. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，新增@State变量：
 
-   ```ts
-   import { hilog } from '@kit.PerformanceAnalysisKit';
-   import testNapi from 'libentry.so';
+   ```typescript
+   @State message: string = 'Start To Leak';
+   ```
+8. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，在build下增加OnClick功能，并调用Leak接口的示例代码：
 
-   const DOMAIN = 0x0000;
-
-   @Entry
-   @Component
-   struct Index {
-     @State message: string = 'Start To Leak';
-
-     build() {
-       Row() {
-         Column() {
-           Text(this.message)
-             .fontSize($r('app.float.page_text_font_size'))
-             .fontWeight(FontWeight.Bold)
-             .onClick(() => {
-               if (this.message != 'Leaking') {
-                 this.message = 'Leaking';
-                 hilog.info(DOMAIN, 'testTag', 'Start leaking');
-                 testNapi.leak();
-               }
-             })
-         }
-         .width('100%')
+   ```typescript
+   Button(this.message)
+     .type(ButtonType.Capsule)
+     .margin({
+       top: 20
+     })
+     .backgroundColor('#0D9FFB')
+     .width('80%')
+     .height('5%')
+     .onClick(() => {
+       if (this.message != 'Leaking') {
+         this.message = 'Leaking';
+         hilog.info(0x0000, 'testTag', 'Start leaking');
+         testNapi.leak();
        }
-       .height('100%')
-     }
-   }
+     })
    ```
-7. 点击DevEco Studio界面中的运行按钮，运行应用工程，点击屏幕中间的“Start To Leak”按钮，等待2-3分钟，待触发RssThresholdKiller类型的管控终止。
-8. 应用被终止后，重新打开应用，会触发终止事件上报，系统会回调应用的onReceive函数，可以在Log窗口看到对系统事件数据的处理日志。
+9. 点击DevEco Studio界面中的运行按钮，运行应用工程，点击屏幕中间的“Start To Leak”按钮，等待2-3分钟，待触发RssThresholdKiller类型的管控终止。
+10. 应用被终止后，重新打开应用，会触发终止事件上报，系统会回调应用的onReceive函数，可以在Log窗口看到对系统事件数据的处理日志。
 
-   应用终止事件采样栈示例：
+    应用终止事件采样栈示例：
 
-   ```text
-   HiAppEvent eventInfo.domain=OS
-   HiAppEvent eventInfo.name=APP_KILLED
-   HiAppEvent eventInfo.params.time=1717597063727
-   HiAppEvent eventInfo.params.reason="RssThresholdKiller"
-   HiAppEvent eventInfo.params.foreground=true
-   HiAppEvent eventInfo.params.app_running_unique_id=207544
-   HiAppEvent eventInfo.params.bundle_version=1000000
-   HiAppEvent eventInfo.params.last_exit_detail_info={"exit_msg":"THREAD_BLOCK_6S","kill_reason":"ThreadBlock6S","pid":"28549","process_name":"com.samples.freezedebug","process_state":"2","pss":"0","rss":"0","timestamp":"1785743803766","uid":"20020204"}
-   ```
+    ```text
+    HiAppEvent eventInfo.domain=OS
+    HiAppEvent eventInfo.name=APP_KILLED
+    HiAppEvent eventInfo.params.time=1792739581978
+    HiAppEvent eventInfo.params.reason="RssThresholdKiller"
+    HiAppEvent eventInfo.params.foreground=true
+    HiAppEvent eventInfo.params.calling_pid="43"
+    HiAppEvent eventInfo.params.calling_process_name="wk:0/0/1/12"
+    HiAppEvent eventInfo.params.app_running_unique_id=8778602711597370439
+    HiAppEvent eventInfo.params.bundle_version=1.0.1
+    HiAppEvent eventInfo.params.last_exit_detail_info={"exit_msg":"","kill_reason":"RssThresholdKiller","pid":"17248","process_name":"com.example.dfx_test","process_state":"2","pss":"227764","rss":"227764","timestamp":"1792739581947","uid":"20020207"}
+    ```

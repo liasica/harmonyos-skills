@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 渐变样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 渐变样式
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:29+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:bbf573034503878374841f5496791d0306fe526944bc175830386b9f0639080c
+content_hash: sha256:ffca42d6d13c67d29d3d5fd24c2db3a20080359e2f0dcacfcad5d1d61f7b9157
 ---
 
 **说明** 
@@ -58,7 +58,7 @@ background: repeating-linear-gradient(direction/angle, color, color, ...);
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/-7YJpc1bT8yuKuDPDT0KIA/zh-cn_image_0000002815401237.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=05525A6F6F894D50261D07081D85E91B6A4DAFA6725A47F854B4670A88AF4D9E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/1J2VRw_DTTynWe0NJxOCdg/zh-cn_image_0000002817428829.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=C26577C961A2FFE877BE4033A6CAD3783F19901AC8BFE6C5B1AC0D889F31500F)
 2. 45度夹角渐变。
 
    ```css
@@ -66,7 +66,7 @@ background: repeating-linear-gradient(direction/angle, color, color, ...);
    background: linear-gradient(45deg, rgb(255,0,0),rgb(0, 255, 0));
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/F72P0KwWTgKDahU9ef0G8Q/zh-cn_image_0000002786521662.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDAE6C53135F13BCB5D611C0CA9833C53B1338D210099CDDE5518F610F7EA6B5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/9__XosZBRnWbIAqkO6h-qA/zh-cn_image_0000002788469410.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F7F493EF78359E411C7C4262B5484FA96DE51DAA6FEDFF0231839C71105799A)
 3. 设置方向从左向右渐变。
 
    ```css
@@ -74,7 +74,7 @@ background: repeating-linear-gradient(direction/angle, color, color, ...);
    background: linear-gradient(to right, rgb(255,0,0) 90px, rgb(0, 255, 0) 60%);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/9o5q09wnQQeIMWRG7QnVfA/zh-cn_image_0000002786361734.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAE5FD8346576BFF6FC70C333658B9A1E23123441A40EF143F96B7381428B412)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/1F8PTvJrS4mSaCn9HPMVrw/zh-cn_image_0000002817508899.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=BABE63FD853BE1B02E197770E19DC8032016AC1FE848CB10807ED851EB5E3136)
 4. 重复渐变。
 
    ```css
@@ -82,4 +82,4 @@ background: repeating-linear-gradient(direction/angle, color, color, ...);
    background: repeating-linear-gradient(to right, rgba(255, 255, 0, 1) 30px,rgba(0, 0, 255, .5) 60px);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/_jPPr4sKTFKpy9foAZqNLA/zh-cn_image_0000002815561155.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E7B20DD02C6A2679F21BD9D4C719609552008C6B9068DBB656AFA57C1964856)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/6Zm2emQRQBqCGYon3xNawg/zh-cn_image_0000002788309468.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE2CC0E94A4BF6A35F35C03E0F689A491FE368F2BD96E069555069D8C7DC55E0)

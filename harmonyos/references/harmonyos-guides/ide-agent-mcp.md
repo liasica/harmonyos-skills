@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-agent-mcp
 title: 模型上下文协议（MCP）配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 模型上下文协议（MCP）配置
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:09+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:b30cda28ad57c0442adb9d3dc8d2772c9fac5d1c77cfcad50210490d458c590c
+content_hash: sha256:e401f36cccca87b78d9b07901205371db5abeaee83728077e43c061cfd1ec8b4
 ---
 
 ## 功能介绍
@@ -23,12 +23,12 @@ content_hash: sha256:b30cda28ad57c0442adb9d3dc8d2772c9fac5d1c77cfcad50210490d458
 
 ## 操作步骤
 
-1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/NAdhUuFvRtC6SZ1vh-TXAA/zh-cn_image_0000002779566794.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=890295C365661B601032A4322F5B5D67A32BADADF3073FEAB26C92218FFFA7B1 "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/YJP-4kZlRq-zH01-tpMsgA/zh-cn_image_0000002779406806.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFA2BDCAB1B14A33F7F4AA3C6A41026EDE0930CB915D12479E29B8437CD89DD9)按钮，选择**MCP**，进入配置页面。
+1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/7bkHxJ7qTu27gVLKEiKOsA/zh-cn_image_0000002779566794.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F165FAF4BBDCDB1BF03688D1F053147E1F97D6FC31C55D4BD3BF20814BAFA4F "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/nbjH3qbOSruYU3vCy57t2g/zh-cn_image_0000002779406806.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEA7AFB0B14A8C16AA59B28F5B1A6E8AD07E9A30DDAA52F445E9AC0B8825278B)按钮，选择**MCP**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/5gHJP6AhRoS1X6Iy59d9eQ/zh-cn_image_0000002779406816.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF6276A4F113AF21138FB1C633C2E2A9F85D7A0BBBA9528832D34F722CD55E7F "点击放大")
-2. 添加MCP工具。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/17DzSK8TSiapcOxVfIleRg/zh-cn_image_0000002779566792.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=30644CD288EF95E1E99882BAA9B7E2610D2BFFA4D4E7E29131CED713F358560A "点击放大")按钮或**Add Manually**手动添加，点击**MCP Market**或**Add from MCP Market**从MCP Market添加。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/HDGu_xbjSVK0I-Ax9ADZEA/zh-cn_image_0000002779406816.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=38508435250CDA0955A777DF669EE2341D9595D39EF072301B49106DCCD74AC5 "点击放大")
+2. 添加MCP工具。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/yM0Lcy3vQYm0_0OKSouZ0Q/zh-cn_image_0000002779566792.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=48724A322BBEFCF46C34B04D1B004CA173E100E5FB056A32106667C3EBB750B0 "点击放大")按钮或**Add Manually**手动添加，点击**MCP Market**或**Add from MCP Market**从MCP Market添加。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/GH_pyHDpT_ignd3xw81VfQ/zh-cn_image_0000002808766381.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=25FCCCEE97BE2957EF54893E0ECE3A91BCE9907198E1C8643B5C01ECEF807B48 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Xnn-8Z8XReu-uAbPPOADbg/zh-cn_image_0000002808766381.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=7094C131C8D236713B2C12B042FB635F39D9A97BB2619C656ECAFDEA87868267 "点击放大")
 
    * **手动添加**：在编辑框中填写MCP工具的配置信息，填写完成后点击**Add**。
 
@@ -38,13 +38,13 @@ content_hash: sha256:b30cda28ad57c0442adb9d3dc8d2772c9fac5d1c77cfcad50210490d458
 
      Stdio方式支持配置cmd、args和env字段，SSE和Streamable HTTP方式支持配置url字段。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/trwPvBe9QS-8U5wbatByvQ/zh-cn_image_0000002808886459.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEE6B99E25978545002896521DDE968DDCB58718DC82C8A1FF0CCF605C02BF08 "点击放大")
-   * **从MCP Market添加**：在搜索框中搜索目标MCP工具，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/rv-LfvhxTfepu1636bsJMw/zh-cn_image_0000002779406814.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=724EE2DF5565D047B7AF3FC06EA5A747F10DA2E22007228571DDD758FE0C5832 "点击放大")按钮添加。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/6gxs8L52QQ2U1LshNK8PMw/zh-cn_image_0000002808886459.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=4978FF2F1367BB2149CA534EE78B388866ED803E904BA3DDB6C66BBBF48F3585 "点击放大")
+   * **从MCP Market添加**：在搜索框中搜索目标MCP工具，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/pf04XspeRS2oXePy8z18cQ/zh-cn_image_0000002779406814.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBE261D9E7653DB617234C529D1C5B1DBDC8964BFC0EDC460AA791ED940E79D3 "点击放大")按钮添加。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/B8R_S2hWQIiWEtoYm2Ib0Q/zh-cn_image_0000002779566800.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A3BFC4CED0E2B06B20A0665FDFBE16002255726C77C820D3696ECB7FBE0AE51 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/gg3H8LGcSQuFV0I3OS-QQg/zh-cn_image_0000002779566800.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC73639AA17F01523AE71F1D9745F865D42AB4C3468574C22E093E77417C0A14 "点击放大")
 3. 在**MCP Tools**列表中，展示所有MCP工具信息，包括名称、连接状态、启用状态。同时，将鼠标悬浮在工具上会显示三个操作按钮：刷新、编辑和删除，方便开发者管理工具。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/P-kdc3opQ_-vomFTY6O0-g/zh-cn_image_0000002779406820.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=667DE5B125A974D2163407E7E823355B1ED74B6BAF8A19F1754D5E06AF96AB30 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/ju9QfU5GQTCuadnJ6HHdEA/zh-cn_image_0000002779406820.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=42C33E83FF24821A9C195DA882C633FEC816808645DEB93FC9EC1905AC7E9E7E "点击放大")
    * 名称：MCP工具名称，如time。
    * 连接状态：工具连接状态，包括“成功”、“失败”和“连接中”三种状态。
    * 启用状态：工具是否已启用。

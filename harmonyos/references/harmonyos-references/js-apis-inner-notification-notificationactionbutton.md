@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: NotificationActionButton
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > notification > NotificationActionButton
 category: harmonyos-references
-scraped_at: 2026-11-04T08:37:15+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:c5c60578be8552ca243046037ea900703914fc5a0227f3ae8d00c940e39e26ea
+scraped_at: 2026-11-14T08:53:40+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:0042d63db3cb6792d8578227375a5a607eba958a59570471214eca3dd50d06f8
 ---
 
 NotificationActionButton模块定义了通知中显示的操作按钮，用于在[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)中添加交互式操作按钮，让用户通过点击按钮触发WantAgent动作。当开发者需要在通知中提供交互式操作按钮（如"回复"、"标记已读"等）时使用此模块。
 
 **说明** 
 
-本模块首批接口从API版本7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## NotificationActionButton
 

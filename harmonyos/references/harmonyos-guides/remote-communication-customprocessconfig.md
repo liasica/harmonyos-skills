@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: ProcessingConfiguration：定制处理行为
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 实现HTTP请求定制 > Configuration：高效实现定制功能 > ProcessingConfiguration：定制处理行为
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:a0e7c4fa9a25a4c69425afa5127a2a2d3c93bdf878ce2f3b34b60efd48ae2ef6
+scraped_at: 2026-11-14T08:47:37+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6738cc8199389d25e28804c8ce1bc18cea2448dc31c8217917af960cc7edd14b
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ ProcessingConfiguration 是 Remote Communication Kit 中用于定制响应处理
 
 ## 约束与限制
 
-定制处理行为能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+定制处理行为能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 使用示例
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-native-me
 title: 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:12f6d789d91f4806ad1b9b1541fb9ffda154528000950d3588ce783da330789d
+scraped_at: 2026-11-14T08:47:15+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:fa837bc27d231389f6bc7e68cd444e660b5841dc2ea154541f69e4aa110254fe
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:12f6d789d91f4806ad1b9b1541fb9ffda154528000950d3588ce783da33
 
 浏览器扩展通过[WebExtensions runtime API](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions/API/runtime)连接WebNativeMessagingExtensionAbility，双方通信是通过共享pipe文件描述符后调用IO接口实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/2aHkGmTuTNiDLUD_8w3SWg/zh-cn_image_0000002815558893.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=06E6A6F45595A38CC14A0BC3BD9598D0F3A626ACD3668E7AADB506D0043E65D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/d4AH2mFzRCyaaoHRTuuxxg/zh-cn_image_0000002788467148.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=422893C55B256308397DC8F5D8E5AD92348C06C316A4B3D0B689DA72A45F8FF5)
 
 **说明** 
 
@@ -44,7 +44,7 @@ NativeMessaging面向两类开发者：应用开发者和浏览器应用开发�
 
 ### 整体流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/bwn5yLn5TfW0wtnkLfqFaw/zh-cn_image_0000002815398977.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=010BE3441572689FF8B0670044DAE70AE82041AD8A1A6C66442EC022FBF8C102)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/JVKhsf_zTlCYWbf6Q-Td6g/zh-cn_image_0000002817506637.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=C48BA87116B291779032F12CE9D19F61C04B286BD3C94B965DAB627A7DEDC31A)
 
 * **流程：**
 
@@ -90,7 +90,7 @@ extension配置格式：
 }
 ```
 
-extension配置通过[dataShare配置项](share-config.md#modulejson5-配置)向浏览器应用暴露，具体的配置方式可参考下方[实现一个WebNativeMessagingExtensionAbility（应用开发者）](web-native-messaging.md#实现一个webnativemessagingextensionability应用开发者)中步骤6。其中，uri为固定格式：datashareproxy://[包名]/browserNativeMessagingHosts，value字段填写上述extension配置的JSON字符串，allowList字段填写允许访问该配置的浏览器应用的appIdentifier。
+extension配置通过[dataShare配置项](share-config.md#modulejson5配置)向浏览器应用暴露，具体的配置方式可参考下方[实现一个WebNativeMessagingExtensionAbility（应用开发者）](web-native-messaging.md#实现一个webnativemessagingextensionability应用开发者)中步骤6。其中，uri为固定格式：datashareproxy://[包名]/browserNativeMessagingHosts，value字段填写上述extension配置的JSON字符串，allowList字段填写允许访问该配置的浏览器应用的appIdentifier。
 
 ### WebNativeMessagingExtensionAbility生命周期管理
 

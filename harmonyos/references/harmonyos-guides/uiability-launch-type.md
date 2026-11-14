@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-lau
 title: UIAbility组件启动模式
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > UIAbility组件启动模式
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:48+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:eea3890094209c6bc66c242ebf63a2d2b20d8065bc8694f8cb3d4a6044cc0649
+content_hash: sha256:1485d7aa4b3bec8c50ebd81cdbb8df26b7b179b603e11ba9642bb46d24edfbb3
 ---
 
 [UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)的启动模式是指UIAbility实例在启动时的不同呈现状态。针对不同的业务场景，系统提供了三种启动模式：
@@ -26,7 +26,7 @@ singleton启动模式为单实例模式，也是默认情况下的启动模式�
 
 **图1** 单实例模式演示效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/sWTtgMrQSTWc_8B8VfWlyA/zh-cn_image_0000002815397895.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=F08366F62893504908E39821A060A0D86627036527ADC07CF675B5956F7E48CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/ED-QqNVkSZSQLQbtcAuW-A/zh-cn_image_0000002817505553.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=B81DFD72EB2EBEEEBAA4AD55ACFAE2518B0FD33EAC71907C9A75FD690C910449)
 
 **说明** 
 
@@ -56,7 +56,7 @@ multiton启动模式为多实例模式，每次调用[startAbility()](../harmony
 
 **图2** 多实例模式演示效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/469nRBCGSHOughtrRqHpOw/zh-cn_image_0000002786518320.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=66B69E5B3ADB2380B2998ED61EDB9E0FD6501747343E3AD98665416B29A80DA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/vi9RWFtDT32lrPhqaNq2Lg/zh-cn_image_0000002788306124.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=000340C6F81AA99BD6DE75585012ECA584B52F93FC09CB02CF4029D5E027E980)
 
 multiton启动模式的开发使用，在[module.json5配置文件](module-configuration-file.md)中的launchType字段配置为multiton即可。
 
@@ -82,7 +82,7 @@ specified启动模式为指定实例模式，针对一些特殊场景使用（�
 
 **图3** 指定实例启动模式原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/m8UXQw9DScmBJZnt-7m1NA/zh-cn_image_0000002786358392.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=914386F9FF9CC80357F44853A829045101A0D75D666AB75C874EC0B498130FE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/WHtbWTfSSZCSqdrGrDidkg/zh-cn_image_0000002817425487.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBAEDAEE6EC09548D53C325DF1BC7ABDA56EDA2EE2FDA67575B084FBF9593E5E)
 
 假设应用有两个[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)实例，即EntryAbility和SpecifiedAbility。EntryAbility以specified模式启动SpecifiedAbility。基本原理如下：
 
@@ -94,7 +94,7 @@ specified启动模式为指定实例模式，针对一些特殊场景使用（�
 
 **图4** 指定实例模式演示效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/67SbZck-SIyI8bIH14iKyA/zh-cn_image_0000002815557813.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7647B89B8EE06E84A76CB09090B70A7A463A88E19DFA2293D891C2D1BC5364A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/-zEcbhEFS7O80fI0Cf2Img/zh-cn_image_0000002788466068.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1870846E003A91D742CA7F21011A44AA4820643C685F019810E2DE505613564)
 
 1. 在SpecifiedAbility中，需要将[module.json5配置文件](module-configuration-file.md)的launchType字段配置为specified。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: Enterprise Space Kit简介
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > Enterprise Space Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:022026fd65001290e3df6bb28045f9db1159d2608e57ce003e3dfad728b68f94
+scraped_at: 2026-11-14T08:48:16+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6b935d6e0c9935838641d109544e38cd6138d51fdb1503d2fc4d090987f523ce
 ---
 
 Enterprise Space Kit（企业数字空间服务）为企业[MDM](mdm-kit.md)应用提供[企业数字空间](enterprisespace-introduction.md#企业数字空间基础特性)的空间管控、空间互传管控等API，助力企业依托MDM应用实现集中管理与远程配置，确保企业数字空间适配企业业务场景，同时满足数据传输安全管控要求。
@@ -16,11 +16,11 @@ Enterprise Space Kit（企业数字空间服务）为企业[MDM](mdm-kit.md)应�
 
 **空间互传：** 企业数字空间专属应用，支持跨空间文件共享。企业可自主管控数据流转，保障数据安全，实现高效共创。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/_7H3X_aCQQGn8RseTPtP9A/zh-cn_image_0000002815399779.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=17BEDBF18D9400922D59F7A10216CD3AE91B0783F385F9859BC1554BAE0C6FA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/7-ziHXjsSOOJZiWfwQIH5w/zh-cn_image_0000002817507439.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004633Z&HW-CC-Expire=31536000000&HW-CC-Sign=551A33AF8772D512DA39CB82CE4725ED8C9C5B7B99C2B53131082E115C883670)
 
 **空间切换：** 通过四指横滑、快捷键等多种便捷方式在两个空间之间丝滑切换，切换时身份、网络、数据整体切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/jxA-BYHnRfWAR-uDGPdwqw/zh-cn_image_0000002786520204.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E787A5F34F7B914E156A197B5985FECF73D4379D289BBE260D61DEFE61168C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ilk1fzaGQ6-0VjdFn1kNPw/zh-cn_image_0000002788308008.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004633Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E124B91F5B73637EA9F45561B266F1BB34BCD6868295EB03673CF18D28E72BF)
 
 **空间开启：** 企业可通过HEM或MDM开启企业数字空间。HEM开启的具体操作步骤请参考[PC企业版配置](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-devices-ot-0000002307766441#section1177603005511)。
 
@@ -29,7 +29,7 @@ Enterprise Space Kit（企业数字空间服务）为企业[MDM](mdm-kit.md)应�
 Enterprise Space Kit提供以下功能，满足在企业数字空间的开发需求：
 
 * [文件外发管控](enterprisespace-file-transfer-control.md)：提供设置审批信息、获取审批信息、配置空间互传单双通策略的能力。
-* [工作空间管理](enterprisespace-lifecycle-management.md)：提供开启双空间功能并创建、查询、删除工作空间等能力。
+* [工作空间管理](enterprisespace-lifecycle-management.md)：提供开启企业数字空间特性、创建、查询、删除工作空间等能力。
 * [工作空间配置](enterprisespace-workspace-configuration.md)：提供设置工作空间信息、资料照片、本地名称、状态栏图标等能力。
 * [空间事件订阅](enterprisespace-event-subscription.md)：提供订阅和取消订阅空间事件的能力。
 * [进程访问限制](enterprisespace-process-access-restriction.md)：提供设置系统服务进程不可访问后台用户数据，获取、新增和删除不可访问后台用户数据的系统服务进程列表等能力。

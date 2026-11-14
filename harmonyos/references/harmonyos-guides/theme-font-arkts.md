@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-font-ar
 title: 使用主题字体（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 使用主题字体（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:06+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:afd0c72144a52394c20de6ed0e5a81522a9e28d423ad0eb018f8c1efcca11ad3
+content_hash: sha256:751ebb68d2dc57cdfab44327eae996890bc57d011f6945cbea6468186ece6abc
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:afd0c72144a52394c20de6ed0e5a81522a9e28d423ad0eb018f8c1efcca
 
 **图1** 主题字体的切换和使用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/CM7tgxxKR8GWfHnb_6pUsw/zh-cn_image_0000002815399547.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=3733927049CA62B88AA029927F719349F43103E3FB83E50438D8372AE164E06A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/RPjlFJXLRkmMNm9Kitjpyw/zh-cn_image_0000002817507207.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004805Z&HW-CC-Expire=31536000000&HW-CC-Sign=5963BA9B521BD367A44564EE4C5650B64887A87B5BD7C149F693E6C69D99FAEB)
 
 针对主题字体的切换使用，应用方应确保订阅主题字体变更事件，当接收到字体变更事件后，由应用方主动调用页面刷新才能实现主题字体的切换，否则主题字体只能在重启应用后才生效。
 
@@ -163,8 +163,8 @@ content_hash: sha256:afd0c72144a52394c20de6ed0e5a81522a9e28d423ad0eb018f8c1efcca
 
 **图2** 主题字体1的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/sKUgPLjmTaavlj3k5SHhfA/zh-cn_image_0000002786519972.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCF6762C17B4B0A41CB46463FEA16C374F454BA5A4636989A18912AEFF92541D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/bGN2tbDtSmCgN7mEJWUPdQ/zh-cn_image_0000002788307776.png?HW-CC-KV=V1&HW-CC-Date=20261114T004805Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6FD6D8BF3F6093569D8EB2AB69EA701495850DEE4EA9CC2F787E9E90EC0ACD0)
 
 **图3** 主题字体2的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/HXrr6pz3TAmISlOfepOyYw/zh-cn_image_0000002786360044.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A015DCFFA211C28F8C2BCF0E285953E551D1AD6773A81EFC01F18FBEA2D9574)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/EtWoeCcKShGmF49GsshnBA/zh-cn_image_0000002817427139.png?HW-CC-KV=V1&HW-CC-Date=20261114T004805Z&HW-CC-Expire=31536000000&HW-CC-Sign=68EED93D6C775463ECD6643BCD2BC476DB4CDBE9C14B0002CC2A70BC3F0190C2)

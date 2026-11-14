@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-
 title: functionalButtonComponentManager(场景化融合Button组件管理)
 breadcrumb: API参考 > 应用服务 > Scenario Fusion Kit（融合场景服务） > ArkTS组件 > functionalButtonComponentManager(场景化融合Button组件管理)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:28429366f851bece4d25fb8d69f765aea8cb4d40a729749d874df429b4068475
+scraped_at: 2026-11-14T08:53:52+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:f27ed0047655162fda3d84ae834c29da9cd4dc910ac3ea20ddde11c083f9ce13
 ---
 
 本模块提供Button组件的逻辑管理，辅助HarmonyOS应用和元服务通过Button组件完成相应功能。
@@ -1622,6 +1622,7 @@ struct Index {
               }
               // 成功日志处理。
               hilog.info(0x0000, 'testTag', 'succeeded in choosing location');
+              // 获取地图选点信息。
               let name: string = data.name;
               let address: string = data.address;
               let longitude: number = data.longitude;
@@ -3105,4 +3106,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/kC6CWFNjSOeU817KrwysDA/zh-cn_image_0000002786522132.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D56F4D5CE55AAABD554B330889DB2961AD3EC3E8B51C09A37C74F5A94F1AF2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/h2JgZtEmRnyQQ43bYpbMhg/zh-cn_image_0000002788469880.png?HW-CC-KV=V1&HW-CC-Date=20261114T005109Z&HW-CC-Expire=31536000000&HW-CC-Sign=51C5568F973DE042C6C40F3693B4F518B9E25DFFF12B0150F0E76E0700A18145)

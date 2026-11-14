@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-controls-
 title: 控件交互
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 控件交互
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:24+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:75aeb17be3e3cdcda76cf0471a08242ad7dbd5d86bfd373aab6b5a75aa5b2dcc
+content_hash: sha256:5898f30abfc7436011d29994c9b5f853ec859460ca74af846ed5b26dc24b9d2f
 ---
 
 ## 场景介绍
@@ -14,9 +14,9 @@ content_hash: sha256:75aeb17be3e3cdcda76cf0471a08242ad7dbd5d86bfd373aab6b5a75aa5
 
 本章节将向您介绍如何使用地图的控件。
 
-控件是指浮在地图组件上的一系列用于操作地图的组件，例如缩放按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/_0cdm782Q3SWtuywsOr4sQ/zh-cn_image_0000002815559841.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F7DB611142ABB246B4F39E67DAAB76F467445EB363252AEB47B2DB6B96F6819)、定位按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Hg0AmfB5Tca-ED_Z9lnMpw/zh-cn_image_0000002815399925.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=857C02A47F83147BA8A526BADB3E17BEBFAD7D5D9E1BBDEEDDEDD604A32F2C62)、比例尺![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/O6TUbVqHRZS7FcXLAnHWUA/zh-cn_image_0000002786520350.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A57A78A2043F8A9E62F13BB096E6C6D53BAE1AC1153829C877DD535C4CBA090)等。
+控件是指浮在地图组件上的一系列用于操作地图的组件，例如缩放按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/GM1OOu0JQtuvlc1LOSe18A/zh-cn_image_0000002788468096.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AC8D7498532D7A5ECE2AAF3C837797669C008D3A774107D5543E55465A08288)、定位按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Yvm6XgDMSc6nKkBdIZhMFA/zh-cn_image_0000002817507585.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B375A57A5B6B7C4BA7CD80EF9D95185F992811E618032C52E56BF2D5FDA8D3F)、比例尺![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/pJ07s99sRx-h4URHIumt8g/zh-cn_image_0000002788308154.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=A96BB6547FD6804213D606F518AABC023E2F918F6ED80B1C66F4AEDE8E28260F)等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/AULSsYhjS_yHbgiRjgH3_w/zh-cn_image_0000002786360422.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BE7EF0ACAC3CAFE4DCC65DC5FBD6889B5FE322E20CE2A85E376E5B119BAE57A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/SBnonPuWRFCH5CNcBoDQBA/zh-cn_image_0000002817427517.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=8956660AD62153F818A0B57F03A51D92EDBC70FD31AA2DC005A89F10B86B7A1F "点击放大")
 
 ## 接口说明
 
@@ -50,7 +50,7 @@ Map Kit提供了内置的缩放控件，默认情况下是开启的。
 this.mapController.setZoomControlsEnabled(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/B74yxUOFTVa1WVC79NOVdw/zh-cn_image_0000002815559843.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AC301F615FB35CDC80E8F08FCEE5EF10D410ED5428442A6831A11DB90789023 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/7jwN9vrRT32cH0LMJFwhIA/zh-cn_image_0000002788468098.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=4708992110F6AB3E1C82553FC4E33A5E55E07841DD6BF110FE68C905AE516A26 "点击放大")
 
 ### 比例尺
 
@@ -61,7 +61,7 @@ Map Kit提供了内置的比例尺控件，默认情况下是关闭的。
 this.mapController.setScaleControlsEnabled(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/BcOUMmPaQme7dJibx0YrpA/zh-cn_image_0000002815399927.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA85F1FE3728D3EE1E6B48BEC3507A638DAF40809C78E9047F87FE4612352B82 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/iM56A0TSQ9-i4xCPSagVxA/zh-cn_image_0000002817507587.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=030B323A5CEB52BA7833F477BB02790867187CA3CC969592452D0EAC39804455 "点击放大")
 
 **调整比例尺位置：**
 
@@ -77,7 +77,7 @@ let point: mapCommon.MapPoint = {
 this.mapController.setScalePosition(point);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/2sXpoEBQSOygrLqN-njwYg/zh-cn_image_0000002786520352.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4C473354CE674EF7BECB98220F392EB21BD4D9EA38F122CD6CDF8BBF876C73C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/2ybgfrj7RBmdCDOee_Vj3Q/zh-cn_image_0000002788308156.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F771A3000B4E73CC3544ED5B91D1E0362285B043A56DA3232189208259840DD "点击放大")
 
 **获取当前层级的比例尺大小：**
 
@@ -118,7 +118,7 @@ Map Kit提供了内置的指南针控件，默认情况下是开启的，控件�
 this.mapController.setCompassControlsEnabled(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/0bFvYv8BQli-0KNQ7VjWOQ/zh-cn_image_0000002786360424.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB216C8BA1724EF4E753C6D99768A6E809A03E267648D60C1CBDF83C03D9430C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/hnLBhOJxQkqaHHBDlDAlWQ/zh-cn_image_0000002817427519.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=F429DB1F520615581A03A8BF673C2269661D366E21E1FB596B0BE79D0E4C2388 "点击放大")
 
 **调整指南针位置：**
 
@@ -134,7 +134,7 @@ let point: mapCommon.MapPoint = {
 this.mapController.setCompassPosition(point);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/xFXuUJjeS0avAdjz0JuzbQ/zh-cn_image_0000002815559845.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BBD71D6019158E4421E3347D529603BEDFE65AC87ED9D00F322799E93AD91A5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/wzHUf67sRQaU82agw6KNAQ/zh-cn_image_0000002788468100.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADB2AB86D01C975A5D3FF9BC05F7D4173189E1CCB109D4B487313B1A77F6C78E "点击放大")
 
 ### 地图Logo
 
@@ -151,7 +151,7 @@ let padding: mapCommon.Padding = {
 this.mapController.setLogoPadding(padding);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/XQRtU5JVQWGe-fTZdT5jLg/zh-cn_image_0000002815399929.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=01894E142572370206F0BB3A1660B076FF7F6C22F0AF224AA1A5FD84FF9C0C79 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/bspRLiFYS1K9mKaOE8kVcw/zh-cn_image_0000002817507589.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=A124AF8047E82B2A2CD538FFA2C67A9DBFB649D7232F3DC390B544D0945C6504 "点击放大")
 
 ### 审图号
 
@@ -164,4 +164,4 @@ Map Kit通过方法[setApproveNumberEnabled](../harmonyos-references/map-map-map
 this.mapController.setApproveNumberEnabled(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/bLKtnWglQ6KA286ycAbE2A/zh-cn_image_0000002786520354.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E81B0E3167E8F08BFB9DB8187FE961984512D610AD5762D2782B123C0EEF7A5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/mMVmVRbuRKCWuNKOmOZ-vA/zh-cn_image_0000002788308158.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=6980803777601F5A09A411D464271221163E427C72D0EAEAB85E0E2403403A48 "点击放大")

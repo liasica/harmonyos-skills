@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 拦截页跳转至管控应用
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 拦截页跳转至管控应用
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:43e37f72da53a2c95626aad6b1873e0c2c275591ee8db8996b3ff6754084abfd
+scraped_at: 2026-11-14T08:48:32+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:179d355054b78e4be5b6cb1c900d3fffb2b1a1d294e69d8030cd5339207c17a0
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ Screen Time Guard Kit支持用户通过被管控应用拦截页跳转至当前�
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Tsqv7LcTQyG1Ku2fjSlfqg/zh-cn_image_0000002815560007.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=A70AFBB0D21E4D34E191558AD7F71552AC02076607C238FB2A736F04FBAC4442)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/186DPkchSkmOV2YAtmixJA/zh-cn_image_0000002788308320.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=063B53A563CE3D121CEFB10DD5E53D138166062664D1091EE70AC3A986596011)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/jOoGcfOdSu6iEAokf8c9dw/zh-cn_image_0000002786360590.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=C80EB065605A369EEBAB38CB3E1E6B5D3ABD9206B13B14927DCABEA87421288E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/CZ9-wuPMRbGLTa9PBb9bBw/zh-cn_image_0000002817507755.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=95CBFAB46386928079E809D02E5C9E51325C70A3FB56CAD5FA0D94DF8FEEB32B)
 
 流程说明：
 
@@ -48,8 +48,6 @@ want自定义参数如下表所示：
    ```typescript
    import { UIAbility, Want } from '@kit.AbilityKit';
    import { hilog } from '@kit.PerformanceAnalysisKit';
-   import { window } from '@kit.ArkUI';
-   import Utils from '../utils/Utils';
    ```
 2. 在onCreate和onNewWant回调中接收并解析want参数，获取当前管控规则相关信息。
 

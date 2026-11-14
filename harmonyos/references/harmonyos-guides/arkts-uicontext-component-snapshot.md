@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-uiconte
 title: 使用组件截图（ComponentSnapshot）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 使用组件截图（ComponentSnapshot）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:16+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:e3ddfbdf2716089c7acf6305fb668fae25ffec0705ffe57d599852a05c00677b
+scraped_at: 2026-11-14T08:47:08+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:1ad0c03c82d9e48717954711d7f00ac6f044e74fe1bc5e2197a83d1bce5f7a43
 ---
 
 ## 能力介绍
@@ -14,7 +14,7 @@ content_hash: sha256:e3ddfbdf2716089c7acf6305fb668fae25ffec0705ffe57d599852a05c0
 
 **说明** 
 
-组件截图依赖UI上下文，需要在具备明确上下文的环境中调用，因此请优先使用UIContext的getComponentSnapshot接口返回的[ComponentSnapshot](../harmonyos-references/arkts-apis-uicontext-componentsnapshot.md)对象的接口，不建议直接使用从@kit.ArkUI导入的componentSnapshot接口。
+组件截图依赖UI上下文，需要在具备明确上下文的环境中调用，因此请优先使用UIContext的[getComponentSnapshot()](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)接口返回的[ComponentSnapshot](../harmonyos-references/arkts-apis-uicontext-componentsnapshot.md)对象的接口，不建议直接使用从@kit.ArkUI导入的componentSnapshot接口。
 
 ### 对挂树组件截图
 

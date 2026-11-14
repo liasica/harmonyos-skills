@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation跨包路由
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation跨包路由
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:02+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:089168ecb83421247453b0e0e806d3dd8f6e9c69369cfe9f937701c4f873ae37
+content_hash: sha256:f47c5c995f41dcafac37d97cf2b83f337e3022f79c77fdcd52beebfb317881f3
 ---
 
 Navigation提供[系统路由表](arkts-navigation-cross-package.md#系统路由表)和[自定义路由表](arkts-navigation-cross-package.md#自定义路由表)两种实现方式，通过路由表的配置可以完成本包和跨包的页面跳转。
@@ -348,7 +348,7 @@ export struct pageOneTmp {
 
    **图1** HSP、HAR编译产物示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/3loz39RMQC-hxwHquuKg1Q/zh-cn_image_0000002815558181.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BEABBF0E2596C34BEC67E5F27542649E10AA9922F56819EC1708A6847C4EAFB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/dKARHfY4TcGk5hT6-Gy3Tg/zh-cn_image_0000002788466436.png?HW-CC-KV=V1&HW-CC-Date=20261114T004524Z&HW-CC-Expire=31536000000&HW-CC-Sign=3137E7B98C8D3B737796A1773A5CFED8938EE00318044277DDA38EA8423252C0)
 
    在HAP的oh-package.json5配置文件中配置对HAR与HSP的依赖。
 
@@ -371,4 +371,4 @@ export struct pageOneTmp {
 
    **图2** Navigation跨包跳转示例
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ielrEtPJSzKsad5oP2tB4Q/zh-cn_image_0000002815398265.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=159DD13223090845816D9E0C5C69BFC710A16DCC3E788974CF1ED32369D09C53)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/9rER30b-TZ6IWRR0DZkREQ/zh-cn_image_0000002817505923.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004524Z&HW-CC-Expire=31536000000&HW-CC-Sign=44C0874BE8BAEB68CB966045A8AE7505EB3A2D814E9C8DB67C30481205FC5F35)

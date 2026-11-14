@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-design-
 title: 目标应用设计规范
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 目标应用处理分享内容 > 目标应用设计规范
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cca3bcb1bf78bb820a69f98fa1eafbe48fe38fe76ba0eca73fce2ded0854024a
+scraped_at: 2026-11-14T08:48:32+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:1a3c293c789f3448ae2ebe4841fe6433dadcd8dfb65847ce6b35abb0ab77f773
 ---
 
 本章节主要介绍目标应用接入系统分享面板时，所涉及的设计规范要求。具体参见：[设计指南-分享方式区](../design-guides/share-0000001957076313.md#section132401520173711)
@@ -20,7 +20,7 @@ content_hash: sha256:cca3bcb1bf78bb820a69f98fa1eafbe48fe38fe76ba0eca73fce2ded085
 
 示例：
 
-```json
+```json5
 "abilities": [
   {
     "name": "TestUIAbility",

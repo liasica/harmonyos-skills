@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: 空间事件订阅
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > 空间管理 > 空间事件订阅
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:00+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:dfe6e3d212db713e037cffcde0a654c1b365e9a213d32e85fe63085a03f5daf0
+scraped_at: 2026-11-14T08:48:16+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:1fe127550d1e6e9d820f4d8dca211b5d83529f588f8a88bb209fd268158b7c7b
 ---
 
 从API版本6.0.0(20)开始，支持订阅和取消订阅空间事件的能力。
@@ -25,123 +25,120 @@ Enterprise Space Kit为应用提供订阅空间事件的能力。订阅空间切
 
 ## 开发步骤
 
-1.导入空间事件订阅API模块相关依赖。
+1. 导入空间事件订阅API模块相关依赖。
 
-```typescript
-import { AsyncCallback } from '@kit.BasicServicesKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { spaceManager } from '@kit.EnterpriseSpaceKit';
-import { ErrCode } from '../../common/ErrCode';
-```
+   ```typescript
+   import { AsyncCallback } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { spaceManager } from '@kit.EnterpriseSpaceKit';
+   import { ErrCode } from '../../common/ErrCode';
+   ```
+2. 空间事件订阅API接口封装。
 
-2.空间事件订阅API接口封装。
+   ```typescript
+   const TAG = '[Sample_SpaceManagerSample]';
+   const DOMAIN = 0xF811;
 
-```typescript
-const TAG = '[Sample_SpaceManagerSample]';
-const DOMAIN = 0xF811;
+   export class SubscribeSpaceEventApi {
+     static subscribeEvent(eventIds: spaceManager.EventType[], callback: AsyncCallback<spaceManager.EventData>): number {
+       try {
+         const subscribeId = spaceManager.subscribeEvent(eventIds, callback);
+         hilog.info(DOMAIN, TAG, `Succeeded in subscribing event. subscribeId: ${subscribeId}`);
+         return ErrCode.OK;
+       } catch (err) {
+         hilog.error(DOMAIN, TAG, `Failed to subscribe event. Code: ${err.code}, message: ${err.message}`);
+         return ErrCode.ERR;
+       }
+     }
 
-export class SubscribeSpaceEventApi {
-  static subscribeEvent(eventIds: spaceManager.EventType[], callback: AsyncCallback<spaceManager.EventData>): number {
-    try {
-      const subscribeId = spaceManager.subscribeEvent(eventIds, callback);
-      hilog.info(DOMAIN, TAG, `Succeeded in subscribing event. subscribeId: ${subscribeId}`);
-      return ErrCode.OK;
-    } catch (err) {
-      hilog.error(DOMAIN, TAG, `Failed to subscribe event. Code: ${err.code}, message: ${err.message}`);
-      return ErrCode.ERR;
-    }
-  }
+     static unsubscribeEvent(subscribeId: number): void {
+       try {
+         spaceManager.unsubscribeEvent(subscribeId);
+         hilog.info(DOMAIN, TAG, 'Succeeded in unsubscribing event');
+       } catch (err) {
+         hilog.error(DOMAIN, TAG, `Failed to unsubscribe event. Code: ${err.code}, message: ${err.message}`);
+       }
+     }
+   }
+   ```
+3. 导入空间事件订阅业务实现相关依赖。
 
-  static unsubscribeEvent(subscribeId: number): void {
-    try {
-      spaceManager.unsubscribeEvent(subscribeId);
-      hilog.info(DOMAIN, TAG, 'Succeeded in unsubscribing event');
-    } catch (err) {
-      hilog.error(DOMAIN, TAG, `Failed to unsubscribe event. Code: ${err.code}, message: ${err.message}`);
-    }
-  }
-}
-```
+   ```typescript
+   import { router } from '@kit.ArkUI';
+   import { spaceManager } from '@kit.EnterpriseSpaceKit';
+   import { SubscribeSpaceEventApi } from '../api/SubscribeSpaceEventApi'
+   import { ErrCode } from '../../common/ErrCode';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```
+4. 空间事件订阅业务相关实现。
 
-3.导入空间事件订阅业务实现相关依赖。
+   ```typescript
+   const TAG = '[Sample_SpaceManagerSample]';
+   const DOMAIN = 0xF811;
 
-```typescript
-import { router } from '@kit.ArkUI';
-import { spaceManager } from '@kit.EnterpriseSpaceKit';
-import { SubscribeSpaceEventApi } from '../api/SubscribeSpaceEventApi'
-import { ErrCode } from '../../common/ErrCode';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-```
+   @Entry
+   @Component
+   struct SubscribeSpaceEventPage {
+     subscribe() {
+       let eventIds: spaceManager.EventType[] = [spaceManager.EventType.EVENT_WORKSPACE_SWITCHED];
+       let callBack = (error: BusinessError, data: spaceManager.EventData) => {
+         if (error) {
+           hilog.error(DOMAIN, TAG, `error info:${error?.code}, err message:${error?.message}`);
+         } else {
+           hilog.info(DOMAIN, TAG, `event: ${data.event},currentWorkSpaceId: ${data.currentWorkspaceId}`);
+           // 处理事件
+         }
+       };
+       if (SubscribeSpaceEventApi.subscribeEvent(eventIds, callBack) !== ErrCode.OK) {
+         // 订阅失败处理
+         hilog.error(DOMAIN, TAG, 'Failed to subscribe event!');
+         return;
+       }
 
-4.空间事件订阅业务相关实现。
+       // 订阅成功处理
+     }
 
-```typescript
-const TAG = '[Sample_SpaceManagerSample]';
-const DOMAIN = 0xF811;
+     unSubscribe() {
+       let subscribeId = 100; // 由订阅空间事件得到的订阅ID。
+       SubscribeSpaceEventApi.unsubscribeEvent(subscribeId);
+     }
 
-@Entry
-@Component
-struct SubscribeSpaceEventPage {
-  subscribe() {
-    let eventIds: spaceManager.EventType[] = [spaceManager.EventType.EVENT_WORKSPACE_SWITCHED];
-    let callBack = (error: BusinessError, data: spaceManager.EventData) => {
-      if (error) {
-        hilog.error(DOMAIN, TAG, `error info:${error?.code}, err message:${error?.message}`);
-      } else {
-        hilog.info(DOMAIN, TAG, `event: ${data.event},currentWorkSpaceId: ${data.currentWorkspaceId}`);
-        // 处理事件
-      }
-    };
-    if (SubscribeSpaceEventApi.subscribeEvent(eventIds, callBack) !== ErrCode.OK) {
-      // 订阅失败处理
-      hilog.error(DOMAIN, TAG, 'Failed to subscribe event!');
-      return;
-    }
+     build() {
+       Column() {
+         Row() {
+           Button($r('app.string.subscribe'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               this.subscribe();
+             })
+         }
 
-    // 订阅成功处理
-  }
+         Row() {
+           Button($r('app.string.unSubscribe'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               this.unSubscribe();
+             })
+         }
 
-  unSubscribe() {
-    let subscribeId = 100; // 由订阅空间事件得到的订阅ID。
-    SubscribeSpaceEventApi.unsubscribeEvent(subscribeId);
-  }
+         Row() {
+           Button($r('app.string.back'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               router.back();
+             })
+         }
+       }
+     }
+   }
 
-  build() {
-    Column() {
-      Row() {
-        Button($r('app.string.subscribe'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            this.subscribe();
-          })
-      }
-
-      Row() {
-        Button($r('app.string.unSubscribe'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            this.unSubscribe();
-          })
-      }
-
-      Row() {
-        Button($r('app.string.back'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            router.back();
-          })
-      }
-    }
-  }
-}
-
-@Extend(Button)
-function buttonCommonStyle() {
-  .width(200)
-  .height(50)
-  .backgroundColor('#6366F1')
-  .fontColor('#FFFFFF')
-  .fontSize(14)
-  .margin({ left: 20, bottom: 5 })
-}
-```
+   @Extend(Button)
+   function buttonCommonStyle() {
+     .width(200)
+     .height(50)
+     .backgroundColor('#6366F1')
+     .fontColor('#FFFFFF')
+     .fontSize(14)
+     .margin({ left: 20, bottom: 5 })
+   }
+   ```

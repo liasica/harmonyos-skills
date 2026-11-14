@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 添加策略
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 添加策略
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:7958f10c407d1f7e7def6ecc95e819ae5db8fed57c6e962ee3bbb00669f3b416
+scraped_at: 2026-11-14T08:48:32+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:c0e7e99f4a30c9c2a6dff8369e51e8653b5de6ca32667790513c3234801bfd9a
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:7958f10c407d1f7e7def6ecc95e819ae5db8fed57c6e962ee3bbb00669f
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/4IOcyt5-SiK40CfsRUhQLQ/zh-cn_image_0000002786360584.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=81F12443C3B17FD13CD69B3C8A3B2AB8380798A397ADBFD69BA09CCD839AF5DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/932LATtAQluJlS65XIibWg/zh-cn_image_0000002817507749.png?HW-CC-KV=V1&HW-CC-Date=20261114T004831Z&HW-CC-Expire=31536000000&HW-CC-Sign=43C3C58035CBB12C90449F5E711B1EA5B3FB24FFB5FA28596E1C84F2FA2F9D38)
 
 流程说明：
 
@@ -24,9 +24,9 @@ content_hash: sha256:7958f10c407d1f7e7def6ecc95e819ae5db8fed57c6e962ee3bbb00669f
 
 **说明** 
 
-1. 管控策略可以设置为起止时间策略，表示策略在一天内配置的起始时间和结束时间内生效；也可以设置为总时长策略类型，表示一天内策略生效的总时长；也可以设置为共享时长策略类型，表示策略关联的所有应用共享同一可用时长配额。具体可参考[TimeStrategyType](../harmonyos-references/screentimeguard-guardservice.md#timestrategytype) 。
-2. 管控策略可以设置限制类型，按允许清单做限制表示对传入的应用之外的应用进行管控，按禁止清单做限制表示对传入的应用进行限制。具体可参考[RestrictionType](../harmonyos-references/screentimeguard-guardservice.md#restrictiontype) 。
-3. 管控策略可以设置一周内重复执行时间，支持填写含有1-7数字的number数组，表示在周一到周日的某些天重复执行。若不设置重复执行时间，则策略只执行一次。具体可参考[TimeStrategy](../harmonyos-references/screentimeguard-guardservice.md#timestrategy) 。
+1. 可设置时间策略类型[TimeStrategyType](../harmonyos-references/screentimeguard-guardservice.md#timestrategytype)：起止时间策略表示策略在一天内配置的起始时间和结束时间内生效；总时长策略表示一天内策略生效的总时长；共享时长策略表示策略关联的所有应用共享同一可用时长配额。
+2. 可设置限制类型[RestrictionType](../harmonyos-references/screentimeguard-guardservice.md#restrictiontype)：按许可清单限制时，管控传入应用之外的应用；按禁止清单限制时，管控传入的应用。
+3. 可设置一周内重复执行时间[TimeStrategy](../harmonyos-references/screentimeguard-guardservice.md#timestrategy)：支持填写1~7的number数组，表示策略在周一到周日的某些天重复执行；若不设置，则策略只执行一次。
 
 ## 接口说明
 

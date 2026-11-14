@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch
 title: "@Watch装饰器：状态变量更改通知"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Watch装饰器：状态变量更改通知
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:066fe3a8c80c5a881db85bb97dede9f918e5daf2d7133252578b021bdb19f311
+scraped_at: 2026-11-14T08:46:59+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6c91bc26e4971f49910c94a413f8ccb3bf6a0b00f0f0047a86b1cdf9d569a39f
 ---
 
 [@Watch](../harmonyos-references/ts-state-management-watch.md#watch)应用于对状态变量的监听。如果开发者需要关注某个状态变量的值是否改变，可以使用@Watch为状态变量设置回调函数。
@@ -48,8 +48,8 @@ content_hash: sha256:066fe3a8c80c5a881db85bb97dede9f918e5daf2d7133252578b021bdb1
 
 ## 限制条件
 
-* 建议开发者避免无限循环。循环可能是因为在@Watch的回调方法里直接或者间接地修改了同一个状态变量引起的。为了避免循环的产生，建议不要在@Watch的回调方法里修改当前装饰的状态变量；
-* 开发者应关注性能，属性值更新函数会延迟组件的重新渲染（具体请见上面的行为表现），因此，回调函数应仅执行快速运算；
+* 建议开发者避免无限循环。循环可能是因为在@Watch的回调方法里直接或者间接地修改了同一个状态变量引起的。为了避免循环的产生，建议不要在@Watch的回调方法里修改当前装饰的状态变量。
+* 开发者应关注性能，属性值更新函数会延迟组件的重新渲染（具体请见上面的行为表现），因此，回调函数应仅执行快速运算。
 * 不建议在@Watch函数中调用async/await，因为@Watch设计的用途是为了快速的计算，异步行为可能会导致重新渲染速度的性能问题。
 * @Watch参数为必选，且参数类型必须是string，否则编译期会报错。不建议开发者传入undefined，传入后编译不会报错，相当于传入“undefined”。
 
@@ -141,7 +141,7 @@ struct CountModifier {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/gsuWn0yUSHySCwMGG6wdiA/zh-cn_image_0000002786518520.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9CE20D13F0A25E66D874DA5E39B0174ECD84EE0E6E87BCEA90CA746B13EF0C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/APSHNhhvTOewHRa9iykcUw/zh-cn_image_0000002788306324.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004521Z&HW-CC-Expire=31536000000&HW-CC-Sign=011B602FD14AB618D9AC4673B386121B38302592C9515657BB7CEC890B5E2779)
 
 处理步骤：
 
@@ -223,7 +223,7 @@ struct BasketModifier {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/PbjRwqoURGmrAKadjHDG9Q/zh-cn_image_0000002786358592.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=159AE6B5018200A5F401301E988CD43945C8CD341F971E1617679FAC07AD2584)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/hNYudAF5QPepmMLgXKQuvw/zh-cn_image_0000002817425687.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004521Z&HW-CC-Expire=31536000000&HW-CC-Sign=2041914E7A921F536B2C93A74EACA5584F63BC76EDFB13DB67E7D23B6D6FAAC6)
 
 ### @Watch的触发时机
 
@@ -342,7 +342,7 @@ struct ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/cXBG7wvoTSK5U88218KgAg/zh-cn_image_0000002815558013.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E11B177F8AA7DCBBC4004BFA57B99552986701FE3C6419C97BB5E09F05196318)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/hn_37D_AQwyeRo6g18vtLA/zh-cn_image_0000002788466268.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004521Z&HW-CC-Expire=31536000000&HW-CC-Sign=895C9BB22F0596B4FB07B7734F518A5633F2DCD1305387F745485B051B8DD952)
 
 处理步骤如下：
 
@@ -406,7 +406,7 @@ struct UsePropertyName {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Ggwp_5-BS0i8J9CMFnNcuQ/zh-cn_image_0000002815398097.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=42C1292BD2BF7E4B52E4AB0CA27B362C068237F6DF054DAAD00072AAB75EA6C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Ihi55ZZeS1qEQ0q9jmIelA/zh-cn_image_0000002817505755.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004521Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BAC6D3A07D4ADC812AEBBF167035E39D954ACC72EE3805506CD5D0BF5C337E5)
 
 处理步骤如下：
 

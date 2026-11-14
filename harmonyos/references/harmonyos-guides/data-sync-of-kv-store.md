@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-
 title: 键值型数据库跨设备数据同步 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用跨设备数据同步（分布式） > 键值型数据库跨设备数据同步 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:53+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a670fe093b17f4eebaea6cfb6879e6f3f1b9761cff6c3b03436f703a0d46ef4a
+content_hash: sha256:bed873d8d94ee306f6d5aeb202495926d1276e0aeeb0e15a6a380f38132082f3
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:a670fe093b17f4eebaea6cfb6879e6f3f1b9761cff6c3b03436f703a0d4
 
 单版本是指数据在本地是以单个条目为单位的方式保存，当用户修改时，直接在这个条目上进行修改。在数据端端同步后多个设备全局只保留一份数据，多个设备的相同记录（主码相同）会按时间最新保留一条记录，数据不分设备，设备之间修改相同的key会覆盖。端端同步也以此为基础，按照它在本地被写入或更改的顺序将当前最新一次修改逐条同步至远端设备，常用于联系人、天气等应用存储场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/LHzn77ZDSHOlzCVErKMoZg/zh-cn_image_0000002815397947.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AD0279E8E90286CA9217A67D2A99D752EDFF38ACD68C1E4BBCE18C135C9E621)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/VhQZWPE0QsqfG7m-wR219A/zh-cn_image_0000002817505605.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004515Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5EB4E45BE1F7CD2B99852630E94B95CB79C955F1BA476E3855931620ADF3A84)
 
 ### 多设备协同数据库
 
@@ -28,7 +28,7 @@ content_hash: sha256:a670fe093b17f4eebaea6cfb6879e6f3f1b9761cff6c3b03436f703a0d4
 
 底层按照设备的维度管理这些数据，多设备协同数据库支持以设备的维度查询分布式数据，但是不支持修改远端设备同步过来的数据。需要分开查询各设备数据的可以使用设备协同版本数据库。常用于图库缩略图存储场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/GP_8gzukSZmPv1HPDE_nfA/zh-cn_image_0000002786518372.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=962BDF440F53C676212162D8ED5097A941780F02C61459E950B33AAB73BAF0F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/yaN5-I8VRX2I_pwyYRE8yQ/zh-cn_image_0000002788306176.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004515Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9E9F87013B0CDA549F0FE4A6425E877802FF0A56F279EB82BD0DDBC2E830063)
 
 ## 端端同步方式
 
@@ -48,7 +48,7 @@ content_hash: sha256:a670fe093b17f4eebaea6cfb6879e6f3f1b9761cff6c3b03436f703a0d4
 
 ### 数据跨设备端端同步机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/esDLwZ8oQq6lI4V_oi6GIw/zh-cn_image_0000002786358444.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2845723623D09AA4F40F3CDDAE238D66000A130ED1FC3BEAC102417300CA319)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/_VUlWnwARJCfpY1rDvDN3w/zh-cn_image_0000002817425539.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004515Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CE2CB0453742865FC03535CB3B2BE4E1F402AE9042C5D7F9F1C36D840B19BA5)
 
 如图所示，通过put、delete接口触发自动端端同步，将分布式数据通过通信适配层发送给对端设备，实现分布式数据的自动端端同步。
 
@@ -86,7 +86,7 @@ content_hash: sha256:a670fe093b17f4eebaea6cfb6879e6f3f1b9761cff6c3b03436f703a0d4
 
 此处以单版本键值型数据库跨设备数据端端同步的开发为例。以下是具体的开发流程和开发步骤。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/tcPTVMnDQ1-seU42q1NHig/zh-cn_image_0000002815557865.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=79BAE4A83BDC90FC269BBC860F1E26CBF7D5819DE5BA6A672DEC5F436B40A813)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/71syZfP0RZqerMEjAgMntg/zh-cn_image_0000002788466120.png?HW-CC-KV=V1&HW-CC-Date=20261114T004515Z&HW-CC-Expire=31536000000&HW-CC-Sign=54A273BF72FB3E8F913343F08AFB791C53F8A9A924032743AFFFC5EB7FE00BD3)
 
 **说明** 
 

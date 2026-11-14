@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 内容搜索方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 本地搜索方案 > 接入方案 > 内容搜索方案
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:40+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:8b118e43e63fcbe3487efcaa051dffe992eb2f415e1daa7daadf5aa7405c38c3
+content_hash: sha256:4cc58e2d1fca0f30c16a64218f786d0846157d48d8000fa947b7a7928b2cefb9
 ---
 
 ## 方案概述
 
 当用户使用应用/元服务时，开发者可以按照标准意图Schema（具体意图详见[各垂域意图Schema](../service/intents-schema-0000001901962713.md)）向系统共享数据（数据包含用户行为和内容实体），并实现意图调用（空调用与传参调用）。已实现用户点击卡片后，可后台执行功能（例如播放指定歌曲）或跳转至指定内容页面（例如指定的歌曲播放页面）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/VGL4Zf3zR2ifAJhCrIGLiA/zh-cn_image_0000002815400261.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=405D56502666509061A8BABC47676B8963FC4917F931A2336FDBB9117AA221A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/OYyauT_tRdG9Rv7bTckddw/zh-cn_image_0000002817427853.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B67F41772772F483C3696FDF712492B864D75039AACD297E38054118E468D49)
 
 ## 意图声明
 

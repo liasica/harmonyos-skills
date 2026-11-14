@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 屏幕类型布局场景
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 界面布局响应式变化 > 屏幕类型布局场景
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:09+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba23790e
+content_hash: sha256:8c9458798a0d15863a3a6117d9d395bd12845a8479292f99f412229dc303afcc
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 * [小方形屏](bpta-multi-device-screen-layout.md#section1395830175918)
 * [圆形屏](bpta-multi-device-screen-layout.md#section1298815351411)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/iGEmia4YSiWBJYCDOSzYsQ/zh-cn_image_0000002743971815.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D243D6BBED199CEAFF39B4C2070CEF3980311B2291ED28894FFA2136A4B122A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/o_qeQp89T3iP_40asimlYA/zh-cn_image_0000002743971815.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDDDE2BFDF61FE375905B762824FD33701EC53DA3AF91CA84C2E00B05A3C8FE9 "点击放大")
 
 上图清晰地展示了各个设备在不同屏幕形态下的断点，这为本文后续的深入探讨提供了坚实的基础。
 
@@ -47,7 +47,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
 超大屏横屏设备横向分辨率通常超过1440vp，具备更强的多任务处理能力，可同时展示多个应用或复杂布局，提升工作效率。典型设备应用开发参考[电脑应用开发](bpta-pc-guide.md)等。适用于文档处理、数据分析、编程开发、内容创作等生产力场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/uBl9A1EBQKOk1_niwczTJQ/zh-cn_image_0000002321148150.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=161CB2A09DE2B66EB55184349BA983BC3FA9B6E6E1F6C251376744A84E1F37D6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/xw0LVIKGQL2TsWzk7873dA/zh-cn_image_0000002321148150.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=4178D21B25B55F6D7963E1F28732D3677B11ECB841F5F3347BC9DC861718B16A "点击放大")
 
 ### 断点判断
 
@@ -69,7 +69,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/vH9sVbL7QSqcuyhyhfXLsA/zh-cn_image_0000002714532878.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=5232D93B2F21469212523B626C0A4D29626D8A46B04AD64439DCDF5FB391561B "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/7fDumPIhRDqYtSH0GHjOvQ/zh-cn_image_0000002714532878.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=009A1F8DFAC300C6B8D146FAA8193682950F44C9A45DC7A11557666BAA1C3ACC "点击放大")
 * 网格
 
   布局建议：当页面中需要展示较多元素内容时，建议采用重复布局，结合网格实现结构化与多样化的排布方式。
@@ -78,7 +78,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/R7QXtL8aRBSV7vib-239fA/zh-cn_image_0000002321307946.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=C24C956C753809E544BEAB24AB291FF0DED5766CF80426D52E9FEE57C33C029D "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/5NstRWxESm639RZ1qNyVXA/zh-cn_image_0000002321307946.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A56DEBC99E2159659592C26A53AF434587CB1359D0CCD64F21A820D99B7B05C "点击放大")
 * 列表
 
   布局建议：为了提高屏幕利用率，在大屏上展示更多的内容信息，可以根据断点展示更多列数实现重复布局。
@@ -87,7 +87,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/LFt_wAQSRDKi_xdqvHNvwA/zh-cn_image_0000002355146809.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=9998AF3007D2063C1B88202193CC9BEE98525334C2BCB05D6B093C7ADFA748AA "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WxLkqP0iS3SU1ILQmoY0vQ/zh-cn_image_0000002355146809.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=E75C0014CD245E0F49BC8AA5692F54BDA0F0020E648E5C4EC94FAF9626F6AC66 "点击放大")
 * 三分栏
 
   布局建议：在超大屏横屏设备上，面对具有多级属性的内容，建议采用分栏布局，以清晰展现层级结构，同时提升信息展示密度和用户操作效率。
@@ -96,7 +96,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/dLdSy8GARQe7d4DXaM0uVg/zh-cn_image_0000002321148158.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=127B922247DFBBC30D461FA7FAE75C1B641613D06DFAABAAD23F89E38C79EEAE "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/puRSA3BqQICTUAiKhDFRTg/zh-cn_image_0000002321148158.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACADC7DF06E8290CDCD4D158B65D96153236603740A29B6F7D13D023EF54BF03 "点击放大")
 
 ## 大屏横屏
 
@@ -104,7 +104,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
 这类屏幕拥有高分辨率，还具备出色的显示细腻度和广阔的可视区域，适合展示更加丰富和多层次的内容。在学习、娱乐或办公等多种应用场景中，这些屏幕能为用户提供更清晰的文字、更完整的界面布局以及更流畅的视觉体验，从而有效提升信息获取效率和使用舒适度，增强工作与学习的专注力及完成效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/d-Zp07qbTBWNw5eSo1Fylg/zh-cn_image_0000002577262247.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=8123855982AD620F2F4236D38F6BA434BE6AFB54AE5AFA3A30ACDA0DFBF3113F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/YmetvsBERumcP5W61aIVqg/zh-cn_image_0000002577262247.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=C385C512BF788CE04F6B7050212C8096EA0BE1D097ED247EE14CF136A042EF89 "点击放大")
 
 ### 断点判断
 
@@ -133,7 +133,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/w-ifbpROTyG7ybjw5viCXA/zh-cn_image_0000002744131779.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=33C0A9E10F62C23DF19E0E8206450E9DB8A32A72BBA59E2F4CFAE152AE3318AE "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/vPpwXtXdSQWnQODhOA5Sdg/zh-cn_image_0000002744131779.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=B47CBCB5E4A60D0511ABBC34553FF8A3B62CD19E5B68DEBB2DF91D91AA86AB27 "点击放大")
 
 * 瀑布流
 
@@ -143,7 +143,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/ihXlAKvkRLuo4qXJlIveIQ/zh-cn_image_0000002355146833.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0AE0ABF5C6E202FDE35353E66B301A9E9E59E3BF110DB8FAFB95C0515E62095 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ZGf1T-MDRUmXKL3-ISa1fw/zh-cn_image_0000002355146833.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=04E37ABC51C2894986BEE13553574805BFF006A00D3EB11BF4C6D79FC15F7D5F "点击放大")
 * 轮播图
 
   布局建议：多张图片展示的场景下，建议使用轮播图展示图片，采用重复布局的方式，展示重复的元素。
@@ -152,7 +152,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/mFPQJmIWS1iitnXXmtOO6w/zh-cn_image_0000002714372914.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A705AC5928ECF1689536D10A82499532EB7E3E7EA5D96773440F496C5FFE87E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/OXmWvI5-Q66P3fhAElPq1g/zh-cn_image_0000002714372914.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=94D81FFCBE2A80BD89C9B23FADF4E2ECA6D6885792DC7BDAAEEA9BFC83508976 "点击放大")
 * 网格
 
   布局建议：页面中重复内容（如卡片、商品项、文章列表等）的展示方式应根据可用空间进行动态调整。建议采用重复布局，根据不同设备的显示特性自动调整列数、间距与排列方向。
@@ -161,7 +161,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/WbdERuxDRaqRtOu5J74p7w/zh-cn_image_0000002743971817.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F662315A9014FC8EAC2FA42DC22181E26465EA9DBD5364E2CEDEEEEA82A184C "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/xbDz8i2-QxmlidEq5mGW9w/zh-cn_image_0000002743971817.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4A5454C2CDF608EBBB3B880A41EA3251A0075783514CECB14C3087AB501E414 "点击放大")
 * 列表
 
   布局建议：当面临大量重复内容（如商品列表、文章卡片、用户评论等）需要有序展示时，建议采用重复布局，通过统一的样式模板对内容进行结构化排列。
@@ -170,7 +170,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/RQzaMi2-T1aJb1Ldt4Jijg/zh-cn_image_0000002714532880.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7F85FC837CF2875A5F14B5621F34E7ED9795C5DDC7C5DEFB9D461BE1A9E5F0D "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/9JMkUJMJQcKGPOY079WB6g/zh-cn_image_0000002714532880.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=388518C89F99F892A9CC8578590649FB95A28437D4717C63C794A5B84ACEA096 "点击放大")
 * 侧边栏
 
   布局建议：为充分发挥大屏设备在空间展示上的优势，提升信息密度与用户操作效率，建议采用分栏布局，合理划分主内容区与侧边栏区域。
@@ -179,7 +179,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/GBZLeEpIRoyEztO35k_9Xw/zh-cn_image_0000002355146849.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BEB826805157FC9555843BE77A351A70387EF92E12F9510196A7A13D4D5BEEC "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/fda3zyoIRsWIZ8Ju9pfXjg/zh-cn_image_0000002355146849.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E58DF75D74ED232692135C7A96D766A854070419847C7AC3AE00012D2F088D8 "点击放大")
 
 * 三分栏
 
@@ -189,7 +189,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Jd_7nVuqTL-gZkn9PSBPTw/zh-cn_image_0000002744131781.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1202105EAA9B7B228811F818693CE26ADEDADCDA5FCD9FDD3AFA911DDF71C73 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/GRTbA7FCRg2Qc3g_jkl0Yw/zh-cn_image_0000002744131781.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0D7CDE3E79CA3272B82A1194B005E1303A37CEA59F3FA1102AE8E776631C94C "点击放大")
 * 插图和文字组合布局
 
   布局建议：在需要图文并茂展示的场景下，推荐采用挪移布局，将图片与文字设置为左右分布的形式，使信息传递更加高效直观。
@@ -198,7 +198,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Fh1KspiITYyxYFdnj-pJww/zh-cn_image_0000002355266693.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=06BA2E2EDDC87BB5586A9AAA6695DD9D05C3A3521F605B348B26BD8980F68B45 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/qdiecyyNTjOIgGCOAN1sew/zh-cn_image_0000002355266693.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FC24D757CA7AB1BD8185A990CA1192FEC6531E953214851E77C6F2F305D5F1F "点击放大")
 
 ## 大屏竖屏
 
@@ -206,7 +206,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
 竖屏模式便于用户聚焦内容流并进行滚动、点击等基础操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/7w4lVUL5SXyVrL8UqnkwSQ/zh-cn_image_0000002546822098.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=1032C500D85F9A88B3A97DA416C268E6E52B737758FD40119ABE7427652003FA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/kd8xj0YUTY6JMhCATIZMrw/zh-cn_image_0000002546822098.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=966CB1592309B58A96A5D2F0AA2588662E4D21E0831212EDCBE679A2338AD85D "点击放大")
 
 ### 断点判断
 
@@ -228,7 +228,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/IOspbnGISvCDa1FPmq-GNw/zh-cn_image_0000002714533084.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5358A2835C75584E30EF09E569C32C56D707C0CC268291937D3EF043E031A71 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/uYiyiaBKQu-tGLt8zfVAPw/zh-cn_image_0000002714533084.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5A9577CFA8894E5CF5D62ACFB425F0F8E583529F5E24D538BCEF6D3509FA0E1 "点击放大")
 * 轮播图
 
   布局建议：在大屏竖屏场景下，由于屏幕宽度较大，推荐采用重复布局，多张图片轮播，提升内容密度与用户的浏览效率。
@@ -237,7 +237,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/pUtBBJg2T6G6PhHUuG8-Dg/zh-cn_image_0000002744131967.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA68A9F8DA8B6263D2B39557C6538AE01DE3FD6DBBBBB9ACEECF283F137385B3 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/MfVKmEiUSTyEpYnAoX6dcA/zh-cn_image_0000002744131967.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=210A0B1C77D1F05FE2EAC7693825B45C7CAAE2F2476FF2AFB4F97F304D73F50A "点击放大")
 * 列表
 
   布局建议：大屏竖屏相较于直板机竖屏具有更大的展示内容区，建议采用重复布局，设置为一行多列或一列多行展示。
@@ -246,7 +246,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/gygccUuHQxuvhr2_eUtsaQ/zh-cn_image_0000002714373112.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=52304F2A2D813274B510F5C348CDE17A1C48937CA933A2103EAB3A41CF074A6A "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/_C9zxwjxQ2qemBFsmGlNCw/zh-cn_image_0000002714373112.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=218F5C8B639D7C05F1DD803212DF3594ABCADF62D5D6C1BF7883C6C14BF93EA6 "点击放大")
 * 网格
 
   布局建议：大屏竖屏相较于直板机竖屏具有更大的展示内容区，支持设置布局为多行多列展示。
@@ -255,7 +255,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/6BKq1lewSROzvHDYEWpirw/zh-cn_image_0000002743972013.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=18AF674414AED2487367A58F549488BFCCE111D7A79E8EB01815B1FD962B70D0 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/NW1uYtS3Q_iAcPXT2RM5Kg/zh-cn_image_0000002743972013.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7425018AAD39C484C339247C203101348CECC101B0022D9C7D58B4D1F14E1F2 "点击放大")
 
 ## 大方形屏
 
@@ -263,7 +263,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
 此类屏幕非常适合多任务处理、内容分屏展示以及创作类应用，能够显著提升用户的操作效率与交互体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/eJwF2nfPTk-ajSB2XoHMOg/zh-cn_image_0000002355146881.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5E36D4EA6FC81B959763EE7DB8BD62E4FD9D066DBE9DF83C006838547E84E84 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/Y4lfDi07Sp-uY4tCgw8jvg/zh-cn_image_0000002355146881.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=729760D7102E599A980A88EED297892441FA7D5B483512FF0749F498F96B681B "点击放大")
 
 ### 断点判断
 
@@ -284,7 +284,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/xkhAbpNHSReLbGNrsX-fmw/zh-cn_image_0000002321148206.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C7E325E0FC183E72FB6A039597255802607F88128F8F918692D7F059C4411BE "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/tvXiGRoCRWucDkFjQdp8KA/zh-cn_image_0000002321148206.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4F1F8A04A02E67924733EA91E73903BB112EE73503EABC3442464EB9D0223E5 "点击放大")
 * 瀑布流
 
   布局建议：小尺寸屏幕上的单列瀑布流，在大方形屏上采用重复布局，变为多列瀑布流布局，可以提升宽屏设备上的阅读体验。
@@ -293,7 +293,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/85BS_vgER9-n77oundtu1w/zh-cn_image_0000002355266729.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=C61B3511E3321A9AABCAB78A1649BB426D8AB835E9D1E584F4216E27860FDADF "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/zdMQ4PNIS8erJQNvHrzyQw/zh-cn_image_0000002355266729.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE46B7AD6E1BB6BD82AAADFD01D7EFDDCD29842A1820EA50F1CE574E107771FB "点击放大")
 * 网格
 
   布局建议：大方形屏推荐使用重复布局，以多行多列的形式展示重复性信息元素，充分发挥大屏空间优势，提升信息密度与展示效率。
@@ -302,7 +302,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/VQb0pBpLQN2uDRCYnlYsQw/zh-cn_image_0000002321308006.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAFA4FF9B0429849ED5A761D3257E41B39F16C102A0D28F9CF0580BB1A1D990D "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/_jbFysctT2usrIujat9T6g/zh-cn_image_0000002321308006.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=B92BE34E14D9FEB66EE7F59B2704AC5A2EAB2A98095F7385C9A85F52780B1F6A "点击放大")
 * 列表
 
   布局建议：在大方形屏上，建议使用重复布局，通过“一行多列”或“一列多行”的排布方式展示更多内容，提升信息密度和界面利用率。
@@ -311,7 +311,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/-CUqyEDHSs6ZemiQq7LI1A/zh-cn_image_0000002355146889.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=50E85F19CC0A66BD9BCE16A2BCE60C904DFA5E257C69F505AE1031C0DD0E2B81 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/uMu8BA-GTNKa2q8-qphqCQ/zh-cn_image_0000002355146889.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2971B4552CF774D137626D3AD4FDCA9EF0D573F922E8BF992CB9298E41E4C25 "点击放大")
 * 双栏
 
   布局建议：大方形屏建议采用分栏布局，利用横向空间优势，清晰展示具有层级关系的内容，提升界面组织性和用户操作效率。
@@ -320,7 +320,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/AU5S7ZHzQnySvpypzYXraQ/zh-cn_image_0000002744293955.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=C62F3A01980BD682C63C17D502BEDAE4EC4FDC6E4996099B65D3CBC54AD05339 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/cjHzTpPJRCyuqRdZ0d3kqA/zh-cn_image_0000002744293955.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB66DBAA503D7953A90220087491116D1EB9A6E448A6E22F8C47C40E08DF0E6A "点击放大")
 * 侧边栏
 
   布局建议：由于大方形屏横向空间充裕，在需要展示更多信息时，建议采用分栏布局，添加侧边栏，以提升界面组织性与信息展示效率。
@@ -329,7 +329,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/JMurao1mQdSoE-26IJWN_g/zh-cn_image_0000002355266749.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=49632DCF3F2C763EAE164948E40F7AE541C73BA108A6CC084DDE7D15922997B2 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/_uuzqoTNR5OEHO_RNgFrvQ/zh-cn_image_0000002355266749.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=D329A9A26D48A395605FDFD9BEE07C531A54B54F02FE4663D733B65FC3DB12E3 "点击放大")
 * 插图和文字组合布局
 
   布局建议：在部分小屏上下显示的场景，大方形屏时推荐采用挪移布局，左右分布。
@@ -338,7 +338,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/8Q-ROIWLTUaXlDnnDRLWoQ/zh-cn_image_0000002321308038.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=9255E1A35EF75DAC1E2754D9AEFD74E07C795AEFDEAC36287B836EA554C53A1C "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/dgngOLdoQkyPirm2dRTP7g/zh-cn_image_0000002321308038.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=E33B6E71ACD7E751738141F5147E4D359E57FB7F8FF9B566FDE1EEBDFCFEEC16 "点击放大")
 
 ## 阔形屏
 
@@ -352,7 +352,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 | --- | --- |
 | 横向断点sm，纵向断点lg | 阔直板（竖向）、Pura X（展开态竖向）、Pura X Max（折叠态竖向） |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Z1KUerlrSUqgGIxMyJpmnQ/zh-cn_image_0000002714376816.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=4482D20AD6DE8F2FA445182C7EBDE0601E1836E33E83AFE0C80ABB8C5149BC80)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/GBtAVykWRmayx-YWxXxGiw/zh-cn_image_0000002714376816.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFBDC4A63B1EFB41A795E7FB7E4D62588D079967067CBC149241C61854A75D07)
 
 ### 布局设计与实现
 
@@ -364,28 +364,28 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   实现原理：通过[Grid](../harmonyos-references/ts-container-grid.md)组件实现。设置列数（columnsTemplate）属性为3，即可呈现网格的多列效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/P-RVNguSSoKeCF9fDSkLig/zh-cn_image_0000002714535860.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=B94803F3DB15A7897A0D31CC91DE85661D3386625A29A74656AFA4F464FCE0E4 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/bbYu_CgESoeJmHfKmOBptA/zh-cn_image_0000002714535860.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=688946FF5E303CCCAC40EC3743F6E41469832EA6C18C100A4F62AACDD6C78477 "点击放大")
 * 瀑布流
 
   布局建议：阔形屏上横向显示空间充足，建议瀑布流布局2列或3列展示，充分利用更宽的横向宽度。
 
   实现原理：通过[WaterFlow](../harmonyos-references/ts-container-waterflow.md)组件实现。修改列数（columnsTemplate）属性为2，即可呈现瀑布流的多列效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/PHzlFX7ZQS2Rp6yCxcxtuw/zh-cn_image_0000002744294759.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=45899AA98F7AC787FD9353DE06307D47B5C464846AF284A9DE343040C0F38110 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/Y8BhZCPYSXuXdpZtgCa76g/zh-cn_image_0000002744294759.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=089CBB2970F6293698408F8702D433F280C633BAC808D7A7C8EA58D1B0DF018F "点击放大")
 * 轮播图
 
   布局建议：阔形屏上横向显示空间充足，建议横向显示更多banner（广告图）。
 
   实现原理：通过[Swiper](../harmonyos-references/ts-container-swiper.md)组件实现。设置nextMargin后边距和prevMargin前边距，露出前后banner的一部分。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/hAlVbojjSDywjeWNFtWYwA/zh-cn_image_0000002714375906.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDA4D09C12D57DC2EE4D523C6DC674229E3E5CF01E0B627F1309D591F463A68C "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/dBb_ZbuZQXm_bX883VFCAQ/zh-cn_image_0000002714375906.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=91C535F8DE3699E38435EF6EBBEEB00E5A5AACAE72B3373223F35AC1606E4C08 "点击放大")
 * 沉浸式浏览（滑动隐藏）
 
   布局建议：上滑时隐藏不必要的标题栏、页签栏等界面元素，实现全屏内容浏览。下滑时，标题栏和页签栏将通过动画逐渐恢复显示。详情可参考小方形屏-[布局设计与实现](bpta-multi-device-screen-layout.md#section13926555601)。
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/fU6v2719RFavjvabc7KHNA/zh-cn_image_0000002744134791.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B86644B2CD600614CC8C941CA51FD3636FB8B46CDF6E37940F26F22A0FDC9F1 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/mcXaBqm1SRmivvHeA3FVSA/zh-cn_image_0000002744134791.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=255C568F2E40496D51C9ABF1B297EE3213F2D40CFE687759FB060E1FDDE44230 "点击放大")
 
 **说明** 
 
@@ -397,7 +397,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
 这种屏幕形态特别适合社交应用、新闻阅读、即时通讯、短视频播放等高频交互场景。由于高度适应移动设备的使用习惯，开发者在设计界面时能够更容易地实现内容的垂直排列和层次展示。此外，直板机竖屏在响应式布局中表现出良好的兼容性，能够灵活适应不同分辨率和设备尺寸，在多设备协同开发中发挥着承上启下的重要作用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/tuxib-bhStOEsaEs0OJn4g/zh-cn_image_0000002714535862.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACD20A889D4F4ECFBD3F4F53D29903E0ACC2430EFB532020B390138CA6797257)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/N-rjSI_KQ4ylaFr9XcxAxA/zh-cn_image_0000002714535862.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=62062C56AF62F0F25F5627110343FF0454FA905F002CB66214D42DC16A6E30F4)
 
 ### 断点判断
 
@@ -420,7 +420,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/_hPHAgBFTmS00E_LN3qdPA/zh-cn_image_0000002321148234.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=60317649D1E06C1D8741F31299E14F02144E9633C5CB0104E00565B4C2B4A517 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/-0wnIe8jRyiPTQmfwik94Q/zh-cn_image_0000002321148234.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=89445F85AAEF2275696ED1C34A6B8AF3DC909C96F5AAC8030E07D3EBB7A88AA3 "点击放大")
 * 瀑布流
 
   布局建议：直板机竖屏设备推荐使用重复布局，提升内容展示密度与滚动浏览体验，适用于图集、商品列表、动态卡片等内容密集型场景。
@@ -429,7 +429,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/nWM-Vk6OTcWzVAbRxIT6_w/zh-cn_image_0000002355266757.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=78A559C774DB24228252FAD08B5B012D6260ED5ACBECDC9A631A6B1904DD58EE "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/qEqK90yoQmOWeP3LUWELHA/zh-cn_image_0000002355266757.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DFB7E102969759AD4EC7A38EF5E78DD78649A6537ACD777D91D94C64450177B "点击放大")
 * 插图和文字组合布局
 
   布局建议：插图和文字组合场景在直板机竖屏设备上推荐使用上下布局，按内容优先级从上至下排列，适配小屏显示需求，提升可读性与操作便利性。
@@ -438,7 +438,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/uOsp3MOQQdqPhpG5uxhgcw/zh-cn_image_0000002321308050.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B20C282D327A84949B66FE92F5E899AAAC00C069B9B2545AD5500F6A8FBFA4E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/-v469sbwSAm4z0wjo0-U5w/zh-cn_image_0000002321308050.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=C28A6C01456473B48BD99EFBDF95A3B40AE7F7D3C34C9C18228E9A99F2BF4B13 "点击放大")
 * 单栏
 
   布局建议：直板机竖屏设备推荐使用单栏布局，按内容顺序垂直排列，提升界面简洁性与用户操作效率。
@@ -447,7 +447,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/7U3adUxuTw2pymxUYhLbCA/zh-cn_image_0000002355146929.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A7F7E58BF9E1058B0E004E7851ED61C2985B7C728A6601B878F15F5BD0362B0 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ibiQT9UKQAmA9yx7cyy6Ig/zh-cn_image_0000002355146929.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=0444D5544EB0D977B7D46DEEC8E41EC3A1C1D4FB20DC986FB12E95ED70EEDA6B "点击放大")
 
 ## 直板机横屏
 
@@ -455,7 +455,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
 在这些设备上，当用户从竖屏切换到横屏模式时，界面布局会自动调整以适应新的屏幕方向，提供更加沉浸的观看体验或更适合阅读和编辑的工作环境。例如，观看电影或电视剧时，横屏模式可以最大化屏幕宽度的使用，减少黑边，增加画面比例；而在编辑文档或电子表格时，横向布局允许同时查看更多的列数据或文本内容，从而提高工作效率。通过这种方式，直板机横屏不仅增加了设备的实用性，也为用户提供了更加灵活多样的使用体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/hjFifTAvTF-jfJ1MIaX2xg/zh-cn_image_0000002744294917.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=46EDF55C2CCFDA04A5379B6D593935D52ADC5CDD15F207BF8E6E74248AD8B71E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/uRsVEwtaRSqSUwnDp1xseA/zh-cn_image_0000002744294917.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D98C63F1BFD10977AAA50A87030938E7C50E1C06DE51A2485C17ACB2535D1A6)
 
 ### 断点判断
 
@@ -485,7 +485,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/MRWe-LBDRL-tp1YcqeRjRw/zh-cn_image_0000002355266777.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=70F9CCA515C66FCF633B28CE54F2345960368194E150F8FAB8518735CB4B8E8F "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ZZq4kPGrRd-3Q2wsHyOcwA/zh-cn_image_0000002355266777.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDC1A22E18B1100C2E8FB4B67250AB1AD16FF802EAAD701401499A70059C666E "点击放大")
 * 插图与文字组合布局
 
   布局建议：直板机横屏推荐采用挪移布局，将图片与文字左右排列，合理利用横向空间，提升信息展示效率与界面美观性。
@@ -494,7 +494,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/Ldb-VuGJSayZKb5Syt0C2Q/zh-cn_image_0000002321308074.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF7D968668AB844808388132C790947F024501636E5D2A59948A0C0C700A0A4A "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/TujF_8n5RDGAiPQQYj9-xw/zh-cn_image_0000002321308074.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=8552AC7D8E35A2D23519D8A85A050B6A66469F36FF3144AD487CF1AE734064A9 "点击放大")
 * 双栏
 
   布局建议：直板机横屏设备推荐使用分栏布局，将界面划分为左右两部分，充分利用横向空间展示更多信息，提升用户操作效率。
@@ -503,7 +503,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/6dnlREE1TXuoJe3tQSYE3w/zh-cn_image_0000002355146953.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=066471B9745668C57E8D9E15212F263C2E9FFE8BDFBC3168BE927CEE913FFAE7 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/0Pe665rkRCWRGleMpH2lBQ/zh-cn_image_0000002355146953.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=F56B3B8CFF21DD3DF109ED31F51FA8BBDF02108B2697A209191B7F146823FDE6 "点击放大")
 
 **说明** 
 
@@ -517,7 +517,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
 由于1:1的屏幕比例和小尺寸屏幕，带来了一定的基础功能适配工作。在实际适配时，主要考虑如何充分利用屏幕空间，提供最佳的用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ePAFvFiOS621DM8m9OP1NA/zh-cn_image_0000002552883100.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=288E8963DF405C878095EC6862F4FDD33B5651AE31072171AE038B63EAAA83BE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/8w4tox0bQZe-rsh-GXUwLw/zh-cn_image_0000002552883100.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=617F6846A9F4C22CE0BDA2C701333471EBFFB23AC36AE58419CCBE4DA12FD63B "点击放大")
 
 ### 断点判断
 
@@ -535,14 +535,14 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/iuptG6bMRTi2D1lo6t1FIg/zh-cn_image_0000002355266801.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=35A2197D4981FFF78DA6AF1107A05F8061ECE3482C0FDBC051F5EA8401050ECE "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/OMkJv9vUSrC_DJTFCt5cEQ/zh-cn_image_0000002355266801.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=16C5C175DD320F4CF8CF43BECBA1AF824C98ED03FF3A4E236A86FFE62AC6C5AF "点击放大")
 * **短视频播放页面完整显示，侧边控件支持滑动显示，侧边控件支持滑动**
 
   布局建议：小方形屏展示短视频播放页面，背景图片（视频）需等比例缩放并上下沉浸，上方沉浸至顶部标题栏，下方沉浸至底部页签栏。侧边控件支持滑动，确保页面内容完整显示。
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/kmr36SY6TaeGiovq0-6Evw/zh-cn_image_0000002445121925.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D37AD32C53CCF9BA9F8B30916F9FAB6241801350F9EC20560D78454DB68BB0D "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/B3wByFR2QpKO0dVYPlg5DA/zh-cn_image_0000002445121925.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF7DA63D3CB162D0A89D63AC51C3415A4D608BD88217E4992792CDCDA7B8A64C "点击放大")
 
   实现原理：使用Stack组件控制页面内容显示层级，背景图片上下沉浸，且互相不影响交互事件。[Z序控制](../harmonyos-guides/arkts-layout-development-stack-layout.md#z序控制)从下到上分别是背景图片（视频）区、底部页签区、短视频描述区、侧边控件区、顶部页签区。顶部和底部页签设置内边距padding为topAvoidHeight或bottomAvoidHeight，避让系统规避区。侧边控件区使用Scroll组件自动控制滑动，使用[Blank](../harmonyos-references/ts-basic-components-blank.md)组件和[displayPriority](../harmonyos-references/ts-universal-attributes-layout-constraints.md#displaypriority)属性控制侧边控件区上下两侧的留白，容器高度足够时上下留白，容器高度不足时自动隐藏。
 
@@ -618,7 +618,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_eIaKdN-TT23WLYz6kd9Eg/zh-cn_image_0000002321308094.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD5514A89DA1F5BFCEA8685D9EE77282B9D97B714D222F5B9D971980C18FDD2E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/thnmVtw9TS6sJp4iIk95Pw/zh-cn_image_0000002321308094.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=912B83400CB5BC33199C876ADA919C13CCC9EC2D1787DCA75C6C730217F8B5CD "点击放大")
 
   实现原理：弹框内容区使用scroll组件包裹，且使用[constraintSize](../harmonyos-references/ts-universal-attributes-size.md#constraintsize)约束其高度最大不超过父组件的90%，避免弹框内容截断。
 
@@ -640,7 +640,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/qNcKuU_wTt2G1xX1AKBLuQ/zh-cn_image_0000002445161793.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CE325E6EBAFBBB434ECE038EFC180C52DF25E8705F3B79EEAE5E8A49653CADA "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/RMwBocI7RlC0_hCLAislCw/zh-cn_image_0000002445161793.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=535AA556804D671E0FD20EAA9767D4BA0DCA950C0C77C641811F9EEA1E2C9121 "点击放大")
 
   实现原理：监听滚动行为，滚动时动态调整页面组件的高度和透明度，达到视觉上逐渐显示和隐藏的效果。具体为以下步骤：
 
@@ -814,7 +814,7 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
 轻量级交互：在同一应用程序中，智能穿戴设备应利用其便携性，作为大型屏幕设备的补充和扩展，而不是替代。具体设计时，应考虑智能手表的屏幕尺寸和使用环境，进行简洁界面的定制，确保使用过程顺畅和操作便捷。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/yk3dWzXUT0ui3sGI2gb8ig/zh-cn_image_0000002321148278.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FB7CBF437A41A9A8CD77A98E18B1271D5213FF9D3BC76552C36B11B7E82404F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/TLiih5NHRn2CycRwlGFOFQ/zh-cn_image_0000002321148278.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=191466F68A2698917B21247D8BE8226647946ABC50078D3039DFCF4F6F2D32B3 "点击放大")
 
 ### 断点判断
 
@@ -834,11 +834,11 @@ content_hash: sha256:711347ae08431c0463775250628587005fae2dc4912a0de3d094308cba2
 
 当显示的内容量超过单屏范围时，为确保用户能够方便、完整地查看所有信息，建议采用横向切屏和垂直切屏的布局策略。通过横向切屏，内容可沿水平方向分布，用户可通过左右滑动浏览额外信息，特别适用于内容宽度较大的情况。此外，垂直切屏允许信息在垂直方向扩展，用户可通过上下滚动访问更多信息，非常适合展示长列表或详细说明。综合应用这两种切屏方法，不仅可有效避免因内容拥挤而引起的视觉混乱，还可提升界面的美观度和用户交互体验，确保每部分内容都能清晰、有序地展示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/J7UUTYcGRfaR7EU-8UhKDw/zh-cn_image_0000002355266833.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C92F6E841F7DC60CD2C753039D0A462F2EFD9E4B6B0D4C9FAC41D2035FC23C5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/fCfT9vw6S4SMpKVY1fojKQ/zh-cn_image_0000002355266833.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=518DEC8DC723F413D7FB8FACC82F3F8898B6A2F704C27CE6015D63A693425EA7 "点击放大")
 
 横向切屏，把更多内容切换至下一屏进行独立布置，以防止内容平铺导致的圆形屏幕边缘的信息丢失。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/eIIK4qUdQYKs48dffhgYdg/zh-cn_image_0000002321308130.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8C034214F643A753C57AEE57E5275BD69753B4B02A607686C126A7D6C2E4BF1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/vprZyZ62QFyw-WRe5aOM7w/zh-cn_image_0000002321308130.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=B551C2BFBD00DA6C9ABC97F7DA433CEFD6E887117344C8107298102261A2020F "点击放大")
 
 垂直切屏，拓展了手表上下信息承载的空间，增强了信息展示的连贯性。
 
@@ -876,11 +876,11 @@ build() {
 
 内容通常需要居中，保证在圆表屏幕下能够正常显示，示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/3pF8OpxWQD6qC1QFR17qWA/zh-cn_image_0000002494502253.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=C369904688C4CF697BDD72941BB0515F433489619936CE53D834C5939725C838 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/KC_gZFCdTYqKLhr1_aQ1yg/zh-cn_image_0000002494502253.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FF9DCFDC333BC90019D0409F8FF49049916571204476362E61F3018C93C98F8 "点击放大")
 
 智能手表页面设计通常包含上下滑动或左右滑动实现页面切换的场景，建议使用手表特有组件ArcSwiper组件，实现手表上页面滑动切换的效果，效果示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/cVMoMxn1QcSw04paFXkwfg/zh-cn_image_0000002461462726.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F7BBEDB0ADD39DBE7CC2B1EB7C6FD43FB6691EB45644840337AF3F4F201DCF4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/oiXRgIThTxyL7DZ_1QW6fQ/zh-cn_image_0000002461462726.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0C0355C19DA6F986E95654216526554E3C3BFBC6B942755A54BE77C03CC2B09 "点击放大")
 
 ```screen
 ArcSwiper() {

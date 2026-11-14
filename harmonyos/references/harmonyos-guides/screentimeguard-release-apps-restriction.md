@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 解除应用访问限制
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 应用访问限制 > 解除应用访问限制
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:89f55b8c01a45180d12d382ca1b5060c2d7a18daca7e01fd7c0db359ff2ff038
+scraped_at: 2026-11-14T08:48:32+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:b771d068c6df8c587d67293efb517ff0e36c0951bdf2d8cb000f5a61cff65a5a
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:89f55b8c01a45180d12d382ca1b5060c2d7a18daca7e01fd7c0db359ff2
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/shph4iIBRd2vZ9LHOqHANw/zh-cn_image_0000002786520518.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=73E906C83CCF2B4E4EE8D568D2D062B20C3B3D98472099C29173F8E831DD444C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/cs77h_GFTKu7oPkfVsmhkg/zh-cn_image_0000002788468266.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=3429EA62B4A0C3BD1D8E4727DC0FA580223041C3AD5FD1303FA6F4B8FD2B83FF)
 
 流程说明：
 
@@ -29,21 +29,17 @@ content_hash: sha256:89f55b8c01a45180d12d382ca1b5060c2d7a18daca7e01fd7c0db359ff2
 
 | 接口名 | 描述 |
 | --- | --- |
-| [releaseAppsRestriction](../harmonyos-references/screentimeguard-guardservice.md#releaseappsrestriction)(appInfo: [AppInfo](../harmonyos-references/screentimeguard-guardservice.md#appinfo), restrictionType: [RestrictionType](../harmonyos-references/screentimeguard-guardservice.md#restrictiontype)): Promise<void> | 可根据传入应用token数组，以及限制类型（许可/禁用清单），来解除对应应用的访问限制 |
+| [releaseAppsRestriction](../harmonyos-references/screentimeguard-guardservice.md#releaseappsrestriction)(appInfo: [AppInfo](../harmonyos-references/screentimeguard-guardservice.md#appinfo), restrictionType: [RestrictionType](../harmonyos-references/screentimeguard-guardservice.md#restrictiontype)): Promise<void> | 解除应用访问限制。限制类型为禁止清单时，对应用数组中的应用做解除限制；限制类型为许可清单时，对应用数组以外的应用做解除限制。 |
 
-**说明** 
+传入的应用数组为空时，接口行为如下：
 
-**定义释义：**
+* 限制类型为禁止清单时，不对任何应用做解除限制。
+* 限制类型为许可清单时，对系统内置许可清单应用（电话、时钟、联系人、设置、未成年人模式等）、管控发起应用本身、已授权的管控应用之外的所有应用做解除限制。
 
-* 限制类型为禁用清单时，对应用数组中的应用做解除限制。
-* 限制类型为许可清单时，对应用数组以外的应用做解除限制。
+解除限制需与此前的限制匹配使用，接口行为如下：
 
-**边界场景：**
-
-* 如果传入的应用数组为空，限制类型为禁用清单，则不对任何应用做解除限制。
-* 如果传入的应用数组为空，限制类型为许可清单，则对除了系统内置许可清单应用（电话、时钟、联系人、设置、未成年人模式等）、管控发起应用本身、已授权的管控应用之外的所有应用做解除限制。
-* 同一个管控应用的限制和解除限制需对称使用，即解除限制必须和其限制的类型匹配上，如不匹配，则为参数错误；如果之前没有做过setAppsRestriction管控，也为参数错误。
-* 如果要对之前用禁用清单方式做限制的应用做解除限制，则传入的应用数组需包含所有的禁用清单应用，才可全部解除。
+* 解除限制的类型必须与此前的限制类型匹配，否则为参数错误；此前未调用setAppsRestriction做过限制时，也为参数错误。
+* 若要对此前以禁止清单方式限制的应用全部解除限制，传入的应用数组需包含所有此前限制的应用。
 * 传入的应用数组中如果包含了限制时传入的应用数组以外的应用（或包含无效token），则为参数错误。
 
 ## 开发前提

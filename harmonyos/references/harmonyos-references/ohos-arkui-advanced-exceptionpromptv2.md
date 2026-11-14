@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ExceptionPromptV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ExceptionPromptV2
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7edd0c2bb4c29ee66596d3297b3aedda5c814dfcf5518407dc4ed20f76556d1c
+content_hash: sha256:400d9910a0d849bc3f7c755d55ec84f8f99636c4db5e8bea9ba13de23f97a142
 ---
 
 异常提示V2组件，适用于有异常需要提示异常内容的情况。
@@ -217,7 +217,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Dh3STbMpS6K1eX9VpK-47A/zh-cn_image_0000002815401159.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C86F8CE7C83860575EBE5F8ECF6E5A706F7730964D094B52BD7600DD51C770AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/Qcbi44zQQKWBZli7TwdqUQ/zh-cn_image_0000002817428751.png?HW-CC-KV=V1&HW-CC-Date=20261114T004822Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FD8C7D22228CF6256006DD6408B4A0962968C38F8EF36FC43340CCDE5A82FCC)
 
 ### 示例2（设置弹窗类型的异常提示）
 
@@ -340,7 +340,7 @@ struct Index1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Q1zpbW8kQGizJU7HcsgD3w/zh-cn_image_0000002786521584.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB2A73AAFCCE009898DB9B94BFA899AD063D503909628C4BA6DA11B7162FE6A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ug7zGKwDQFm71bmOEhdbZA/zh-cn_image_0000002788469332.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004822Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E9EA75DDE382DF5EB3EDF34E867F8AE79176E66AE7671FD2A42F714774B435C)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -384,4 +384,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/BMPdpvOXQRy1bONxQT8h2Q/zh-cn_image_0000002786361656.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=66D96C867A665A38702036D56376C75E1EE631BBCDFE0EEAE1AB6B10B1EBADEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/x_kMAXvaQiOcHgy7AxNN8w/zh-cn_image_0000002817508821.png?HW-CC-KV=V1&HW-CC-Date=20261114T004822Z&HW-CC-Expire=31536000000&HW-CC-Sign=07BDB5FD7D2389C6DE67AF7606C353DE38D5128A41578D68E02E6B823D4EF527)

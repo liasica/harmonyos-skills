@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-task-visu
 title: 任务可视化与执行
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 任务可视化与执行
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:04+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:9f0b1996b2b6f77fb1fbdded7562603b6d3bea32491bf90d9c2a0bc4544d444b
+content_hash: sha256:92a3ec95334667da3a25d2f093b72f1f6248245752afd67764bd08b19b7bb98c
 ---
 
 从DevEco Studio 6.1.0 Beta1版本开始，Hvigor提供任务可视化窗口，用于展示工程和各个模块常用的构建任务，便于快速执行。
@@ -17,5 +17,5 @@ content_hash: sha256:9f0b1996b2b6f77fb1fbdded7562603b6d3bea32491bf90d9c2a0bc4544
 
    其中工程级和模块级的任务，build和help目录下是Hvigor的默认任务，other目录下是开发者[自定义的任务](ide-hvigor-task.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/taoy0SjrRzKD-XWrREr1hA/zh-cn_image_0000002779407076.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=7922E48CD2050998B12868CBA062CA583C51FC6DB6DF42EF354CD5E7CFAD6BFE)
-2. 可以通过鼠标双击、鼠标右键或Enter键快速执行一个选中的任务，也可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/EljnQNWUSLCTkIvXTBzDDw/zh-cn_image_0000002779567054.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=84C3ADDBCBC63F8FDCF9CF4F75D93B7575EB10135B30D110A2A142F908047994)打开Run Anything窗口，搜索任务并双击执行。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/Fhx2jGQJSDy3kAxeXzqjNw/zh-cn_image_0000002779407076.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=C164C1964E6F352CA0E55937EEBFF785C8BA2DCE2AF97FCD8422C30FE7044A24)
+2. 可以通过鼠标双击、鼠标右键或Enter键快速执行一个选中的任务，也可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/fJXMt1ChShSG58t_B4cEPg/zh-cn_image_0000002779567054.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E19B25426784745EDCA216932E1DF5ABF5E650639508A8FDFF3A273C3C836F5)打开Run Anything窗口，搜索任务并双击执行。

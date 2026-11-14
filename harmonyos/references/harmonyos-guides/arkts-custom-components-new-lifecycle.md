@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-
 title: 自定义组件生命周期（推荐）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件生命周期（推荐）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:58+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3cd36f368cf664d65e25c1aafab043f075d6dc17cb8d8a406a089de4f728e4da
+content_hash: sha256:4db94b7a3cf95bcdb8f2e423edbe055b6468d34e347d46c2a1a8eb25126e75b3
 ---
 
 ## 概述
@@ -25,7 +25,7 @@ content_hash: sha256:3cd36f368cf664d65e25c1aafab043f075d6dc17cb8d8a406a089de4f72
 
 自定义组件生命周期受状态机限制，每个生命周期回调函数仅在特定的状态转换阶段才会被调用，比如@ComponentReuse的限制条件是从CustomComponentLifecycleState.RECYCLED到CustomComponentLifecycleState.BUILT阶段触发，@ComponentAppear仅在组件处于CustomComponentLifecycleState.INIT状态时触发，流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/pAYrP1ooRNywSbL3QflQIw/zh-cn_image_0000002786518420.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D06C8EDD882BC7BDE1264621363F3E70A05B54A2A638E6EC42FD95A001F169B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/uXI2pXY0RduF_sfKVmnrqQ/zh-cn_image_0000002788306224.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=94852FBE759A2DB5BD81CA91FAB20332C2B043E9C15CE8C3270703199CCCAA48)
 
 ### 自定义组件的创建和渲染流程
 
@@ -122,7 +122,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/DImlzehtRYSfYP83QwoP6A/zh-cn_image_0000002786358492.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB67DB2170631A3A0C729A7397E3C3D749CB6EF61CCE1437E3D154DE83142D19)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/fLot4uOQR4iAcvbyslY8ng/zh-cn_image_0000002817425587.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=27E23F31164D2AC8265B3FD411F430355278C6E96461CAA7A2DBB43CBED149AA)
 
 上述代码建议按以下步骤执行。
 
@@ -364,7 +364,7 @@ struct TabsComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/t2UGPKcfTI6C0ovJCk_xWQ/zh-cn_image_0000002815557913.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E988837A0098E02D9962222A4A2D8870CF9C967E22F6FF7BAA499ABD9A05FAED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/9F-9Mu9JT5qQ0OFtxiD91Q/zh-cn_image_0000002788466168.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDFA6740EE2896A61AED04C3AEAE3A22FAA01BA24D420494D762A1544BB28037)
 
 **场景说明与日志输出：**
 
@@ -521,7 +521,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Lb7uXwM4QXGddnD4Y0ptOQ/zh-cn_image_0000002815397997.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=83FA329FA026C835CDECC25D838772FD6A58C2B8CFCE5A04C8C9EEB7E98A1D50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/BeyWLZDFSAiyxtEBVr423A/zh-cn_image_0000002817505655.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FBEE6042C8640E98A7380E0C88582FDBC7F26D16E53C4C1E6B81DEF40A2CD49)
 
 **场景说明与日志输出：**
 
@@ -582,7 +582,7 @@ struct MyActiveSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/S_4nbqlCQ5yGXDdmmn-7UQ/zh-cn_image_0000002786518422.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EE40B38C56A20BF69C9A0C5069D85FB2C80E6EA920003C5510B0216E2E22120)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/pZjy5iz8Q9CqoXN1zL6IWg/zh-cn_image_0000002788306226.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E7436E474B754B9C04AB262D75985DE22CFC9997D3A5F89D8E5672A4EA4A11D)
 
 **场景说明与日志输出：**
 
@@ -714,7 +714,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/1H4jSFh6QOevRyaO1tdXwg/zh-cn_image_0000002786358494.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E927EB5A748998E9278DE5D496DAC953E1F80A629BB8C27786BB98B44D448077)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/rj7Lf1HvRi2PSCDIx30iFw/zh-cn_image_0000002817425589.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBD0D9F53BFC8C82C02D84DE997C471B31C781235CDE1382511D5888466EDB54)
 
 以上示例中，Index页面包含两个自定义组件，一个是Parent，一个是Child，Parent及其子组件Child分别声明了各自的自定义组件生命周期装饰器装饰的函数（myAppear / myBuilt / myDisappear）。
 
@@ -753,7 +753,7 @@ Child myBuilt
 
 当showChild为默认值true时，该示例的生命周期流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/u_qtDADoR6KZNjCuCNaHpA/zh-cn_image_0000002815557915.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=519242B9FAAB1C8143542342EB06555DFD10E96F23B171F65B12DDB48890C9DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Rex62pK-RBejdhLKJHuJjA/zh-cn_image_0000002788466170.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=F72129A87532A7A2776122A789EC0A0CD1D5FD05D589698D90CDDD70F067BA66)
 
 ### 自定义组件回收复用
 
@@ -900,7 +900,7 @@ struct GrandChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/5_UHQeNuTxKnU2C6pZPRZA/zh-cn_image_0000002815397999.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CC068ECF0CE19489D819C34FDC05EB096A4C95DCBA443188D634D97116C71E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/_6K_pyKpQVi4__6cLoYBSw/zh-cn_image_0000002817505657.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=6ED462C561999BE04FB50B6CDA886B836AA89136862436898D3E7B72420F5A9F)
 
 以上示例中，Index页面包含自定义组件Child，Child组件包含自定义组件GrandChild。Child和GrandChild分别声明了各自的自定义组件生命周期装饰器装饰的函数（myInit / myAppear / myBuilt / myRecycle / myReuse / myDisappear）。
 
@@ -1015,7 +1015,7 @@ export function unRegisterObserver(lifeCycle: CustomComponentLifecycle) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/GfhZ1ZigT9G8VXP_DUTRcw/zh-cn_image_0000002786518424.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=75BBC610CBBF865C19924791D54E59E6E9C60105407640E68F3920BD8C9CEB9C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Y1ofmYKFQGKTG1lBCm0eSQ/zh-cn_image_0000002788306228.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BA8B0E1A944D84C1FD0CCA54D0860454507C834A418FF08B4C7FED33E154BA9)
 
 在@ComponentDisappear装饰的函数中解除注册监听，所以监听器无法监听到aboutToDisappear。
 
@@ -1194,7 +1194,7 @@ export struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/5kTjSd5HQ32DxgJcRDmj0A/zh-cn_image_0000002786358496.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DCF0E8D9F34F04849DC6F4FA04C9E9E0F2DD3CB367CD463AF6B4EF82FB4E0D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/786OgQZxSQOIHPNndglD0A/zh-cn_image_0000002817425591.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=984C742CD4543E539EF1F254DEBE21BEF6702C93D7E7D578636BC7CC921EBE8A)
 
 启动程序后，先按start按钮，此时只有Swiper缓存的五个节点开始执行aboutToAppear和myAppear，非缓存的节点未触发aboutToAppear和myAppear。
 
@@ -1322,7 +1322,7 @@ struct ReusableComp3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/8hg8ij6MR6u7EcSNdeI2NA/zh-cn_image_0000002815557917.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=4965EFC7F9D4A0B90096294CFC526D68DB700BC0395EA9845C41657D42F40308)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/TEj_uOz-S_Cg3ZKZ6rQO_g/zh-cn_image_0000002788466172.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=46D486EE7C7C3073571D60226F10B67A63A232BD2F3AB28EC646551F191CFADE)
 
 按下change flag 1按钮，此时ReusableComp2进入回收状态，再按下change flag 2按钮，此时ReusableComp3第一次被创建，此时日志输出信息如下：
 

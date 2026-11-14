@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-proj
 title: 工程目录结构介绍
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 工程目录结构介绍
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:10+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:81d93ec6ae903534e66024861edb9cc19bcaa14316bea570cec2a1ed4c784f1c
+content_hash: sha256:ba521c8feb2e4c327dd665ff3ba28b9d12ad6d83a704c7ddcf54bf54c8a39195
 ---
 
 ## ArkTS工程目录结构
 
 工程目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/ycakjWAJRhmo21sjXXYkjA/zh-cn_image_0000002810630639.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=255CD22646867145D2562459494D1984C6A70B55FBF72E76AC048B90FDAB99F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/dzILn_8zRnOprhsyDfVnmw/zh-cn_image_0000002810630639.png?HW-CC-KV=V1&HW-CC-Date=20261114T004910Z&HW-CC-Expire=31536000000&HW-CC-Sign=022514AF7E877489CCE061F0908AD864CC8AE1206EE279C193FF36095260A13B)
 
 * **AppScope > app.json5**：应用/元服务的全局配置信息。
 * **entry：**应用/元服务模块，编译构建生成一个HAP。
@@ -39,7 +39,7 @@ content_hash: sha256:81d93ec6ae903534e66024861edb9cc19bcaa14316bea570cec2a1ed4c7
 
 工程目录结构如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/0R_9xPfEQ7Wk7XZheKnD6Q/zh-cn_image_0000002810750745.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=C20E59961CE0551BCE503150800E0AB22C192DCE6CCCB9B6B7EA12F9CB50B10F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/q0i0FO41R8ipj6v1yi6NyA/zh-cn_image_0000002810750745.png?HW-CC-KV=V1&HW-CC-Date=20261114T004910Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAF6E2A025D404D36995489AFC7623E58F5AE3A091FABEC0FA73EEC90EDF4456 "点击放大")
 
 * **entry**：应用/元服务模块，编译构建生成一个HAP。
   + **src > main > cpp > types**：用于存放C++的API接口描述文件。

@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-skiing
 title: 滑雪
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 锻炼记录数据 > 滑雪
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Phone/Tablet应用开发 > 开放数据类型 > 锻炼记录数据 > 滑雪
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:56+08:00
+scraped_at: 2026-11-14T08:48:19+08:00
 doc_updated_at: 2026-07-09
 content_hash: sha256:f7b4336da9cc59f5a6ddf1c48980cf44e16d33c50688c4c2ecabbbad598357e6
 ---

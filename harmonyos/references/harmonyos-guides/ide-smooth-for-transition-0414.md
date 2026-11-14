@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-smooth-fo
 title: 转场操作流畅
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 转场操作流畅
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:01+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:51604cd265693c1071da8a10031010d1b25bee8fcc44da8605d62960b24d2050
+content_hash: sha256:1d2ae30ec7a6b0669af6616791130b306a09ed73046692139d09442c58bea5a0
 ---
 
 ## 规则详情
@@ -29,20 +29,20 @@ content_hash: sha256:51604cd265693c1071da8a10031010d1b25bee8fcc44da8605d62960b24
 
   H:APP\_TABS\_FLING
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/n9YNA6qzSBqksb65Vhuy7w/zh-cn_image_0000002808766611.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8A14D9C0D694C0AF2F9ED821A4D32B0708186B2DE9076EFBD7CA97BCC6D212F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/r631iMtQRe2yU2CkLa8U5Q/zh-cn_image_0000002808766611.png?HW-CC-KV=V1&HW-CC-Date=20261114T004901Z&HW-CC-Expire=31536000000&HW-CC-Sign=8734A232CA42ED4DB122E13AE1B0EDCC1AF3E29E08316A74649B6ED4715DB1DB)
 
 * 总时长(s)：【最后一个“H:Waiting for Present Fence xxxx” 时间（如图标记2）】 - 【第一个“H:Waiting for Present Fence xxxx” 时间（如图标记1）】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/VhSob0LIS6GhIXDMUBvzxQ/zh-cn_image_0000002808886687.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=749C6715B9701B65AC64BFBAEB3840F4DA75B34F6B91B4136D083F630950FE1B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/EZ58CkzRSTOb5hfrY2FNeg/zh-cn_image_0000002808886687.png?HW-CC-KV=V1&HW-CC-Date=20261114T004901Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3E37A5BDC1874C0C1400FCD5AB679C51FB13DB035A19F31CB703AA1798C4F2B)
 
 * 每帧时长(ms)：1000ms / 刷新率。
 * 刷新率：在泳道范围内查找关键词H:RSHardwareThread::CommitAndReleaseLayers rate，如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/rTKhqJMQRUesKER-f-627A/zh-cn_image_0000002779407048.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FC07066C11FD0DFBEB0CB9F092A43E22535F92846ED80092468C8B985DC230F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/enuBfZrrQ9et_p_w6jvq4w/zh-cn_image_0000002779407048.png?HW-CC-KV=V1&HW-CC-Date=20261114T004901Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB68C2AC29992B85BF742436D4C7711B23BCBFE9ACB870F6D8862B0A9489F558)
 
 * 每帧渲染实际耗时(ms)：【下一个H:Waiting for Present Fence xxxx的起始时间】 - 【当前H:Waiting for Present Fence xxxx的起始时间】如下图 【标记2 - 标记1】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Ax3pFHuETBWEDlhRZWmy5w/zh-cn_image_0000002779407050.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=127AE0B99C74DE3FAA59EB304BF3EADD62E9443BF2F3336CCFE768AEC4AA35CD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/D_CYHXAzTN-KwGBi-rd-sg/zh-cn_image_0000002779407050.png?HW-CC-KV=V1&HW-CC-Date=20261114T004901Z&HW-CC-Expire=31536000000&HW-CC-Sign=08D2024F42C572DDC75C32D063403179C71081246133987C4AFF65584868A370)
 
 * 每帧丢帧时间(ms)：max（【每帧渲染实际耗时(ms)】- 【每帧时长(ms)】 \* 1.5, 0）；即每帧耗时大于标准耗时1.5倍时则判定为丢帧。
 

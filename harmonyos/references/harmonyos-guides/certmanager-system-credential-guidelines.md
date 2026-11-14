@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/certmanager-s
 title: 系统证书凭据开发指导
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书管理服务 > 系统证书凭据开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:27+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:add47e6bf36bac622160c65f526cbebf08ef6cf8a86f034bd8da08e08e33cea8
+content_hash: sha256:d171ae645e76c1c032728c95645063bc27642ddc3a7bc0d334fc3fcbcf841bd4
 ---
 
 系统证书凭据用于系统服务（如WLAN、VPN服务）连接服务器时，服务器对接入设备进行身份认证。系统证书凭据功能提供了系统级别的证书凭据（包含证书链和私钥）的安全存储和签名能力。系统证书凭据的公私钥对存储在[Universal Keystore Kit](huks-overview.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/LgPFJLGIQZO9UcVurj9j4Q/zh-cn_image_0000002786519586.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8C0DAFF15874EB1ADF0ECB823C31FDF44ECA3E6AF7388439582422741DDA917)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/lFz2Gu4lQ0iGyfeCsw36JA/zh-cn_image_0000002788307390.png?HW-CC-KV=V1&HW-CC-Date=20261114T004548Z&HW-CC-Expire=31536000000&HW-CC-Sign=76E7057E040912261F1302B577D0DC948342B6014F65DC99997CBB7D1759C8BA)
 
 系统证书凭据可以由设备的用户进行安装和管理，也可以由应用通过API拉起证书管理服务的对话框，引导用户完成安装。
 

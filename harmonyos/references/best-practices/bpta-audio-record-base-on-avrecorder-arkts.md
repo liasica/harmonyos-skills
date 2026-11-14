@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVRecorder录制格式化音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVRecorder录制格式化音频（ArkTS）
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:07+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:19f048dbc2a3a649e08df607016fb2f07844ea3ee55f8c56be720afc74dac13a
+content_hash: sha256:8769cf2b125c92a65d2560294e03870128429fdee8dcef7fa2dd59a12167cd3d
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:19f048dbc2a3a649e08df607016fb2f07844ea3ee55f8c56be720afc74d
 
 基于[Interface (AVRecorder)](../harmonyos-references/arkts-apis-media-avrecorder.md)录制格式化音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/OCgUI0-_TuOa9QacNtp4Rg/zh-cn_image_0000002524061074.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1BE7246BE3665E4F215A98FDB04F59346231509CF7FA682AC77B11D5D986B41 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/F0Ukj0-pT4Cqh0j2vaIE0g/zh-cn_image_0000002524061074.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B9E7C9B53779CB022E4DD4F2976E9D1C252450F822BB86A498D2B1BA2EA4BFB "点击放大")
 
 本文的主要内容如下：
 
@@ -30,7 +30,7 @@ content_hash: sha256:19f048dbc2a3a649e08df607016fb2f07844ea3ee55f8c56be720afc74d
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/GWgIQQd9QA-WOfaPgq3Jqw/zh-cn_image_0000002555220983.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC86113EAAEE724BD86F91B3C3ADADB0100C824D391A4D8019AC8C5312AE5838 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/XgZD5C25RduocF6tXwYonQ/zh-cn_image_0000002555220983.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6B17B0C5D7EC837B9A04EA46D5F0561B80966DBE1D677551F501F15A6C10AB6 "点击放大")
 
 ### 开发步骤
 

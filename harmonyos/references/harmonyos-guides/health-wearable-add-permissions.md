@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-wearable-add-permissions
 title: 管理用户授权
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Wearable应用开发 > 管理用户授权
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Wearable应用开发 > 管理用户授权
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:17+08:00
+scraped_at: 2026-11-14T08:48:20+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:694a7f9e26ee396395248b5568fdcb28182e323c6b560c65679e835e982451cd
 ---

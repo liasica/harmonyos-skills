@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-agent-mod
 title: 模型（Model）配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 模型（Model）配置
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:09+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:23930422afd9b3c5af4578f0edde260bda1fa7757728ae3a4a2538bf4f37d63a
+content_hash: sha256:dc95242fe30b5b55c6f4031d80a8b1ceb986d2029f25fc5a79cc0b52c19e366b
 ---
 
 CodeGenie支持通过Gemini-API和OpenAI-API协议接入第三方模型，为自定义Agent提供多样化的模型选择。
@@ -18,10 +18,10 @@ CodeGenie支持通过Gemini-API和OpenAI-API协议接入第三方模型，为自
 
 ## 操作步骤
 
-1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/aKYbkEi_T0mwxx685SSGwg/zh-cn_image_0000002808766565.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=78C0FC0435EF49D63A2E60AEE8E27F2A7A4B981B1F226BE6609FC2D211401FF9 "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/8FhjhJ8rTXebDGhyPp1fiA/zh-cn_image_0000002808766563.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=13F0714E050EAE1BB48AF029541A3BAB76DE12C79092B4D3754A4B6BCB2F0CEA)按钮，选择**Model**，进入配置页面。
+1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/n2E_gmwNRqejwCE2wk_-Gg/zh-cn_image_0000002808766565.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=594A6E2F095C58E98E15E75CEB756ABC4B66E4BE4B1533EFDDFDD06C31667313 "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/44RmpbuSSNCNZNeKlac53Q/zh-cn_image_0000002808766563.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E502247C368FAF091522377804480B3627498ACDE3EB52275D5DB2617D0A2E2)按钮，选择**Model**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/4CZ5rcu-SWiyzUjx8u5QMA/zh-cn_image_0000002808886645.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD147B62C7F84B628BF14E0AF50EEB479928364E6B9BFC4AF69A6580C91C19DC "点击放大")
-2. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/lHMJXbIhTMO9vjotDVAIXg/zh-cn_image_0000002779566988.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F621CDF0EE91E0DFF20385AAD66F2AB4DEB11FB53CA199ECF8DA624C3D4B94A "点击放大")按钮添加模型，当前支持通过Service Provider（服务提供商）和URL两种方式添加，推荐使用Service Provider方式。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/LiYPhKiMR-iikbgBfBsSRQ/zh-cn_image_0000002808886645.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5651586056E703B254DE816138E324C7CE4D789FB5498C7B40E173E0800FC07 "点击放大")
+2. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/5dFItG8LSRevhdoBejDbcw/zh-cn_image_0000002779566988.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9F24458D5F9EA80AA2E7B473D65BAB61DC81E92BA71D236E69F4599C8A6D7FB "点击放大")按钮添加模型，当前支持通过Service Provider（服务提供商）和URL两种方式添加，推荐使用Service Provider方式。
    * 通过服务提供商添加。CodeGenie已预置主流模型服务商的配置信息，填写API Key即可快速接入。
 
      填写**Name**、**Provider**、**API Key**、**Model**字段后，点击**Add**，校验成功后模型将被添加到列表中。
@@ -30,7 +30,7 @@ CodeGenie支持通过Gemini-API和OpenAI-API协议接入第三方模型，为自
      + **API Key**：模型的访问密钥，在提供商网站申请。
      + **Model**：模型的标识。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/B6yH5dbnQPKk1OTEg0bEDg/zh-cn_image_0000002808886647.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=C25AAA08094DC3DA40E30FD7B87524A4C12B7AEE8A646960460D1E5A9C2D79A3 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/wMOIRgzLQJWfdcfJ4q2bhQ/zh-cn_image_0000002808886647.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=34C74F25465C553794EC83AAB6640BE26BF00A20905A9C0B3EA61589CDB1D899 "点击放大")
 
      不同Service Provider的API Key和支持的模型如下：
 
@@ -50,14 +50,14 @@ CodeGenie支持通过Gemini-API和OpenAI-API协议接入第三方模型，为自
      + **API Key**：模型的访问密钥，在提供商网站申请。
      + **Model**：模型的标识。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/CvwoWTx-QiWNNOGIlpERYw/zh-cn_image_0000002779566986.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A878A38CAB51795DA0DBEE4CEF725022109E88EF284905DB336DAC20B507A8D "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/N2gIhjoyTmi4fso-RoMt0Q/zh-cn_image_0000002779566986.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=8906E394B6940D794AAE07B1D142E386C77A45ACDD1C72F2D9B6D03A8DA15BA0 "点击放大")
 
      **说明** 
 
      配置说明、URL配置示例等内容请参考[通过URL添加模型](ide-agent-model.md#section1684210554158)。
 3. 在**All Models**下展示所有添加成功的模型，Built-in Models为内置模型，Custom Models为三方模型（自定义模型）。将鼠标悬浮在三方模型上会显示两个操作按钮：编辑、删除，方便开发者管理三方模型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/dIMsbNaBTeqeFuf2YCncQw/zh-cn_image_0000002779407008.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=969E76E4EC4BD299F5C00569EBD37EC9C58031A532D0877F7685AEA5984D9E25)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/NZjUJoXERQCxD92EWZKhyg/zh-cn_image_0000002779407008.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F67417E4F2E1540566B8182CE2DF3A9DFD660E220466F2F07FBB95E03374098)
 
 ## 附录
 
@@ -81,8 +81,8 @@ CodeGenie支持通过Gemini-API和OpenAI-API协议接入第三方模型，为自
 
 * 添加本地Ollama部署的模型
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/K6nTHSe-S-ymIs95PR3vsw/zh-cn_image_0000002808766569.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=667AF8D45E6B3D8C6A2F7DE94C22C803905AC5849BAED70093E7776A6D04CB00)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/UrnBJIkqQRCyC3Kp1LiiQg/zh-cn_image_0000002808766569.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBC063F20E657C3FD20C5C5A0BD538641C49BE2803A0AC4DCFACDA5EBE2E3779)
 
 * 添加DeepSeek模型（OpenAI协议）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/VjuRC4ZfRf2b_W3fOH_z9w/zh-cn_image_0000002808886649.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E09DE45EDA9E5C9C55A5FC005A01483B964CE60093C18782740966E36AE5055)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/G8Cc6uiIR4eRX3cXzjd8zg/zh-cn_image_0000002808886649.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD37270E7279926516E215F848F80B11429176D01AB26A13AD81ECBBFE34103B)

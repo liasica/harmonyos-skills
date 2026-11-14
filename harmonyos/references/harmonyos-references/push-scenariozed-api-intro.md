@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scen
 title: 功能介绍
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息推送 > 功能介绍
 category: harmonyos-references
-scraped_at: 2026-10-11T07:28:36+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:29c0cdaba0f20a70a341351efe46cd53a4f498cfc5835f458382c125b60bf419
+scraped_at: 2026-11-14T08:53:49+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:05290988ff97519a5cddb5aad7d0880863ba38e434cb20e7dca0a83025c0b1b2
 ---
 
 对典型推送场景按类型进行拆分，并为不同场景定义独立的**push-type**，提供基于场景的消息发送、治理及差异化能力，有效提升消息触达效果与用户使用体验。
@@ -20,6 +20,7 @@ content_hash: sha256:29c0cdaba0f20a70a341351efe46cd53a4f498cfc5835f458382c125b60
 | 6 | 后台消息 | 如果应用进程在前台则将消息内容传给应用；如果应用进程不在前台则缓存消息，等待应用启动后再传给应用。 | - |
 | 7 | 实况窗消息 | 实况窗创建、更新或结束。 | 需[申请实况窗权益](../harmonyos-guides/liveview-rights.md) |
 | 10 | 应用内通话消息 | 应用内通话消息。 | 需[申请推送应用内通话消息权益](../harmonyos-guides/push-apply-right.md#申请推送应用内通话消息权益) |
+| 11 | MDM消息 | MDM（Mobile Device Management）消息，用于设备管理场景。 | 需[申请推送MDM消息权益](../harmonyos-guides/push-apply-right.md#申请推送mdm消息权益) |
 
 ## 使用约束
 

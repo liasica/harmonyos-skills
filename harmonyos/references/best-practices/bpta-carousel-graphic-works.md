@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-carousel-g
 title: 使用Swiper组件实现轮播图
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 使用Swiper组件实现轮播图
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:9396cd265ebeed7dd31c2a98a1aa0b56c4c0389e8aa809a78fa75424fa27469b
+scraped_at: 2026-11-14T08:54:12+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:14da7c88ab4ff04729332829e6c4bb3b840d95dc0c54e5df54c78a98d70b0ba5
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ content_hash: sha256:9396cd265ebeed7dd31c2a98a1aa0b56c4c0389e8aa809a78fa75424fa2
 
 效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/sx5AZix_RbmTMjK2u5tt2Q/zh-cn_image_0000002396390305.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=705A19E19C7A9F3893027257132FBAC022A2D283407F998621A9B1F47781D671 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ZRpmkXEhRKeP3Yn2M-Uf1A/zh-cn_image_0000002396390305.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C6C4227D994222C19E38BB503ADF43CBFD483544AA3DCC57A35258582B6438B "点击放大")
 
 ### 实现原理
 
@@ -38,7 +38,7 @@ content_hash: sha256:9396cd265ebeed7dd31c2a98a1aa0b56c4c0389e8aa809a78fa75424fa2
 图片区域需要使用[Swiper](../harmonyos-references/ts-container-swiper.md)组件来实现。将图片合集的数据传入Swiper组件后，需要对Swiper组件设置一些属性，来完成图片自动轮播效果。
 
 1. 通过设置[loop](../harmonyos-references/ts-container-swiper.md#loop)属性控制是否循环播放，该属性默认值为true。当loop为true时，在显示第一页或最后一页时，可以继续往前切换到前一页或者往后切换到后一页。如果loop为false，则在第一页或最后一页时，无法继续向前或者向后切换页面。
-2. 通过设置[autoPlay](../harmonyos-references/ts-container-swiper.md#autoplay)属性，控制是否自动轮播子组件。该属性默认值为false。autoPlay为true时，会自动切换播放子组件。
+2. 通过设置[autoPlay](../harmonyos-references/ts-container-swiper.md#autoplay)属性，控制是否自动轮播子组件，该属性默认值为false。autoPlay为true时，会自动切换播放子组件。
 3. 通过设置[interval](../harmonyos-references/ts-container-swiper.md#interval)属性，控制子组件与子组件之间的播放间隔。interval属性默认值为3000，单位毫秒。
 4. 通过设置[indicator](../harmonyos-references/ts-container-swiper.md#indicator)属性为false，来关闭Swiper组件自带的导航点指示器样式。
 
@@ -68,7 +68,7 @@ content_hash: sha256:9396cd265ebeed7dd31c2a98a1aa0b56c4c0389e8aa809a78fa75424fa2
 
    示意效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ymKvlI17SCOy3DQWqVcU1g/zh-cn_image_0000002362872296.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D94A434C7C269ABFAF2617DF386CBC49A27C1E978C6E82663215D16EC383157)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/dKxIJHb6TVOEUQwulg3RsA/zh-cn_image_0000002362872296.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AB8604F02EC95FF72EA9CA3BBEB775F85152DC79EBD51672EC829534488A14F)
 2. 创建进度条自定义组件progressComponent。代码中，this.progressData为图片集合的数组，this.currentIndex为当前播放的图片在图片集合数组中的索引，index为进度条对应的图片在图片集合数组中的索引。当this.currentIndex > index时，表示图片集合数组中索引0-index的进度条都是已完成状态。
 
    ```typescript
@@ -104,7 +104,7 @@ content_hash: sha256:9396cd265ebeed7dd31c2a98a1aa0b56c4c0389e8aa809a78fa75424fa2
 
    示意效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/fNFaST3PRFyyhO35QIwApA/zh-cn_image_0000002396272325.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=F75BFF1AEBF5A9290BA2774CFA92FF40A0BAA6CC633F49EC68109C2C6139014F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/sZkvFThgTbaUnou4D4ELWg/zh-cn_image_0000002396272325.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=33AB51B01632A33FD7D7FC014C0CBD22B6A0AE750BA42B1B28552EA5A8E47C0D)
 3. 设置autoPlay属性为.autoPlay(this.slide ? false : true)，滑动切换图片后，关闭自动轮播与循环轮播。此时，开发者需要给Swiper组件添加[onGestureSwipe](../harmonyos-references/ts-container-swiper.md#ongestureswipe10)事件，来判断页面是否跟手滑动。其中slide为布尔值，用来判断页面是否跟手滑动。默认值为false，当页面跟手滑动时，slide的值为true。当进行滑动切换时，autoPlay、loop属性的取值为false，即关闭自动轮播与循环播放功能。若想实现滑动图片后仍自动循环轮播，直接去掉slide相关代码片段即可。
 
    ```screen
@@ -121,7 +121,7 @@ content_hash: sha256:9396cd265ebeed7dd31c2a98a1aa0b56c4c0389e8aa809a78fa75424fa2
 
    示意效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/yMLMq8jGRRm9xcAqh3BRnQ/zh-cn_image_0000002362712392.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B779296F293A463A7C32A1D633CCC69AC253C2CB52CB329CE39607B9E36C931 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/F_Ls678GTXeo3NMZlj0Kbw/zh-cn_image_0000002362712392.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6210AF62EB98A1892C25EA976F058D53AF2EE81AF7332CF65FD2EAAE93CAEC8 "点击放大")
 4. 适配折叠屏，在aboutToAppear生命周期函数中获取设备是否可折叠，并且同时获取折叠状态，通过设备类型以及折叠状态设置Swiper的宽高值。同时绑定change回调事件，当页面变化时，触发回调实时刷新折叠状态值。
 
    ```typescript
@@ -166,7 +166,7 @@ content_hash: sha256:9396cd265ebeed7dd31c2a98a1aa0b56c4c0389e8aa809a78fa75424fa2
 
 效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/nmId_OS9Q3eg8b6Ox2cMNA/zh-cn_image_0000002362716188.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=15FE7E00357857180B45F1D67ADDA690805BB77E3AB4D29A7C627CFFEF7757DB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/aE1vTce4RR6lXVvn11N9Cg/zh-cn_image_0000002362716188.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=359F899B809C663734CEFB91E617DECCBDDF27617F9515C40BBDEF6EC7FA1126 "点击放大")
 
 ### 实现原理
 
@@ -280,7 +280,7 @@ content_hash: sha256:9396cd265ebeed7dd31c2a98a1aa0b56c4c0389e8aa809a78fa75424fa2
 
 例如，在onGestureSwipe()回调中，判断下标以及偏移量，当偏移量超过一定距离时填充数据。
 
-```typescript
+```screen
 @Entry
 @Component
 struct MySwiper {
@@ -298,14 +298,14 @@ struct MySwiper {
   build() {
     Column({ space: 5 }) {
       Swiper(this.swiperController) {
-        ForEach(this.list, (item: string) => {
+        ForEach(this.list, (item: number) => {
           Text(item.toString())
             .width('90%')
             .height(160)
             .backgroundColor(0xAFEEEE)
             .textAlign(TextAlign.Center)
             .fontSize(30)
-        }, (item: string) => item)
+        }, (item: number) => item.toString())
       }
       .cachedCount(2)
       .index(1)

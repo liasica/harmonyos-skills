@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.UdmfComponents (内容卡片)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS 组件 > @ohos.data.UdmfComponents (内容卡片)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:4ff26bb9d97b137660eb042040ce7501d6900246b720a36d51c0313e2abed696
+scraped_at: 2026-11-14T08:49:40+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:8c1f15e5b8eb7223256b8baddca2e3e4b2dca94d19d60516fba2887b9337cf7d
 ---
 
 针对[ContentForm](js-apis-data-uniformdatastruct.md#contentform14)标准数据结构的内容卡片，支持设置标题（必选）、描述、应用图标、应用名称、跳转链接、内容图片。用户点击卡片时，执行传入的回调事件函数，若设置的跳转链接不为空，则跳转到指定的页面。
@@ -99,9 +99,9 @@ struct Index {
       this.contentForm = {
         uniformDataType: 'general.content-form',
         title: 'Content form title',
-        thumbData: appIcon,
+        thumbData: thumbImage,
         description: 'Content form description',
-        appIcon: thumbImage,
+        appIcon: appIcon,
         appName: 'com.test.demo'
       };
     } catch (err) {
@@ -139,4 +139,4 @@ struct Index {
 
 本例效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/6vHRbAWiTYKsH5g1vkT7MQ/zh-cn_image_0000002786360860.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF6F4945E0EB9874C3DDF00F072BE2C94056178386BA9E67F76CB2993145991F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/OZue7DkmQV668ca0WIaFfg/zh-cn_image_0000002817508025.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T004748Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9D881AF71DB991B5CDC7AA9909D7DED11C4ABCB108792345B86DA27BC74C711)

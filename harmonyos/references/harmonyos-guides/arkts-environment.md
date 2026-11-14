@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-environ
 title: Environment：设备环境查询
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理应用拥有的状态 > Environment：设备环境查询
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:59+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a25f76784403e202de8639975bfaa6cf1d1cb2a615fbfbe56bb702c8cad6bfdc
+content_hash: sha256:92581a754114ba5bfeebdf392d077a6d94c39efe010e69a0e2a0cd3113a03bcd
 ---
 
 如果开发者需要获取应用程序运行设备的环境参数（如多语言、深浅色模式等）以进行不同的场景判断，可以使用Environment设备环境查询。
@@ -96,7 +96,7 @@ struct UiEnvironment {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/hOUTB8zrSRWddOZeYrBa2A/zh-cn_image_0000002815558033.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C851129D4567A811DFF28ECC2ADA08D1B762B23C10219EE3ADCAB09DD4CE63F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/3icIOb9wTS6oMRX4Yoeezg/zh-cn_image_0000002788466288.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=48A1489C4A9AD4A2C26090C22589102D40AB6086DF16578028342A9F41E9C628)
 
 ### 应用逻辑使用Environment
 

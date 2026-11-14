@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-dimensi
 title: 视频编解码宽高、跨距与裁剪信息说明
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > AVCodec Kit常见问题 > 视频编解码宽高、跨距与裁剪信息说明
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:55+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:25ec8ba719af798d1ffbf35e4d2052ba42e2e29bf62860bedcc174d675330d90
+content_hash: sha256:e7fa4aca6b98d23fa591abc6c0513733bb48090f83553bb868a875f220bbc224
 ---
 
 ## 概述
@@ -102,7 +102,7 @@ sliceHeight = height + padding_height        （垂直方向）
 
 **图1** NV12格式图像的内存布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/vpW28EDYQdO8dEX0vrB6_A/zh-cn_image_0000002815559283.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EDFB5297902D83D8215366846B45ACDDB333E1A6669E6152951F4AFF294D5D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/uBg5vJBQSlu829fjiel06w/zh-cn_image_0000002788467538.png?HW-CC-KV=V1&HW-CC-Date=20261114T004755Z&HW-CC-Expire=31536000000&HW-CC-Sign=B93B0AF8D986B111E40B235E20C85AEFC64AF3B8FA3647B2C5990C63887A8790)
 
 图1中各参数含义：
 
@@ -119,7 +119,7 @@ sliceHeight = height + padding_height        （垂直方向）
 
 **图2** 解码器输出Buffer的内存布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/pvp2qMBMRye4wwxdxBASuw/zh-cn_image_0000002786359870.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5F12B996DACB75B047D648434E5D7AB03BD2B48A261712C42E8241C4AD600EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/pH2JWG4SSQuR_6cO38Vbfg/zh-cn_image_0000002817426965.png?HW-CC-KV=V1&HW-CC-Date=20261114T004755Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2508D2358FA08E71C5F73FBFB8B6ECB21CB7E01A70C992EC6A040152BBE209D)
 
 图2中各参数含义：
 
@@ -138,7 +138,7 @@ sliceHeight = height + padding_height        （垂直方向）
 
 **图3** 含crop信息时解码器侧内存布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/iHpQ8dAsTt2nHAwHksg0Xg/zh-cn_image_0000002815559309.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=542CAC441359305C13315A78D636B4FF62A30CFDC4A5EAA5D24E8460C2FD9604)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/0llWdrtXToCjFUvwnUlqdw/zh-cn_image_0000002788467564.png?HW-CC-KV=V1&HW-CC-Date=20261114T004755Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC7AC00D180159540C4F8502AE88A335D6B3EF17F308F77AF9476AAD9F0CFC3D)
 
 解码器特有的4个裁剪参数定义了**有效显示区域**的矩形范围。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite
 title: 音频编创开发概述(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 音频编创开发概述(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:53+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0b8bb1dc640341b29b16b7002fbc8eb69c8008872886c731e4cc8cab8d58d6b9
+content_hash: sha256:140528cd96bfa07f7778fa078ddf6cc5af288223f8b7f4398eea3a702880d068
 ---
 
 从API version 22开始，支持音频编创（[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)）功能。音频编创是一款提供专业级音频效果处理的开发接口，旨在帮助开发者高效构建各种音频创作应用。该套件提供高品质、低延迟、智能化的音频处理能力，集成了降噪、均衡器、人声分离等丰富音效功能。开发者可以根据具体的应用场景，轻松地将所需音频功能集成到应用中。
@@ -14,7 +14,7 @@ content_hash: sha256:0b8bb1dc640341b29b16b7002fbc8eb69c8008872886c731e4cc8cab8d5
 
 **图1**：音频编创实现原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/fqY6s_zySwqu_zKP3G_zGg/zh-cn_image_0000002786519780.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=1713A6FC333D45DB7ADF8FB21B08EEC6DB5F003C730BFC2A508761280FFAF1A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/iH0xZ4rtQLGpu4Qq7VJS0A/zh-cn_image_0000002788307584.png?HW-CC-KV=V1&HW-CC-Date=20261114T004752Z&HW-CC-Expire=31536000000&HW-CC-Sign=C185ED05DACDEB4D4038B12DFDEE1049E280C243ADCE9B1B09D57D2A252E3EFD)
 
 ## 引擎
 
@@ -54,7 +54,7 @@ content_hash: sha256:0b8bb1dc640341b29b16b7002fbc8eb69c8008872886c731e4cc8cab8d5
 
 **图2**：管线运行状态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/NJZJ9_ZgR2qbrFBAfmKyvg/zh-cn_image_0000002786359852.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E88279C3D1BF02BE859010C0004C5A1A75E9D2D3B77DABC8E0C3CC99212E82D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/K-WpwuBhT_Gw0fmCkUUyoQ/zh-cn_image_0000002817426947.png?HW-CC-KV=V1&HW-CC-Date=20261114T004752Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C7124219AB9CF7E7645744CF836ECA9209315DFD16E9BBB3E24B5DF285BEF1F)
 
 状态的功能如下表所示。
 

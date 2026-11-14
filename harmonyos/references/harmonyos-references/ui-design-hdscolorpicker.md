@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsColorPicker (颜色选择器组件)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsColorPicker (颜色选择器组件)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:51:18+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5b383a87f7af01e919f57e6a5399a9cd8cfd07bee3d4a0a6bf33786e7d2d7e64
+content_hash: sha256:08f46116024e9e251bd36aabb67433b7850539e73651d06ac16d05d10c898ab9
 ---
 
 提供颜色选择与收藏管理功能的组件，支持网格、光谱和滑块三种颜色选择模式。
@@ -218,4 +218,4 @@ struct ColorPickerExample {
 
 执行上述示例中的代码，进行颜色选择，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/r5rrS0eTQteU4QV8Kj_Gdw/zh-cn_image_0000002786522022.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5D152F40708C44A06B20CF8E737AA9D7582A373E70DD13B57A11EBB1F3FF48C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/89qRRFkASjGErH431vtBAw/zh-cn_image_0000002788469770.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004906Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DE5DF2594E819B5953A8F20DB7E3034E80A704F42CDEDC19E6CE8E80E8CAEFB "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bluetooth-hci
 title: 如何抓取蓝牙HCI日志
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 蓝牙常见问题 > 如何抓取蓝牙HCI日志
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:34+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:fc3c6f162b08e867e3891305e7a5ea1e0c1ed8da94fb08b89bb0586b5a30e6ce
+content_hash: sha256:81700385c9e92aa5fad9e4fc6e8158a9e91e521ebe3af446c61aedfab385f7b9
 ---
 
 ## 简介
@@ -29,21 +29,21 @@ Release版本出于数据安全与隐私保护，会屏蔽HCI日志中蓝牙报�
 
 在调测手机上进入开发者模式，开启方法请参考 **[开启开发者选项](ide-developer-mode.md#section530763213432)**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/lN_6Au6PRTSyybqi_HeanA/zh-cn_image_0000002815399213.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=50EE3ED3AB02AAB4C2B5B8081F9E47EC73BAC848FB244F53AD98E6D679186527)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/FKk0Pab2QYm6cUaYHj6qzw/zh-cn_image_0000002817506873.png?HW-CC-KV=V1&HW-CC-Date=20261114T004734Z&HW-CC-Expire=31536000000&HW-CC-Sign=B843DE158267962AE1336098C2C5D018DA03F42FA9130CA75463BF024A4391EE)
 
 ### 步骤二：连接蓝牙设备进行调试
 
 开启手机蓝牙，连接需要调试的蓝牙外设，进行设备连接调试或问题复现操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/kKR4F19QRXeVDDyB8wYMWw/zh-cn_image_0000002786519638.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=E52A88098F3D18F197EB1BF7C651EDA29894FD36856D1384DEF867380F9FC2F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/g6TlWfRyRnGZ_GkeuTK55w/zh-cn_image_0000002788307442.png?HW-CC-KV=V1&HW-CC-Date=20261114T004734Z&HW-CC-Expire=31536000000&HW-CC-Sign=B94BEC2124E6C51117E4D4EEB014E05D36A17E1264497784C0E23A9585C96DED)
 
 ### 步骤三：一键采集HCI日志
 
 连接调试操作完毕后，下拉通知栏，点击**开发者模式**卡片，卡片下方会显示**收集**按钮，点击即可一键采集HCI日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/fVvXThb7R3WMVhNm7qvIQQ/zh-cn_image_0000002786359710.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=3206C5F02D420730E20D9A1383843812B8CB8F73F52345ABFC71AD93801DB4D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/HEaLaYlET-yuRnSNL4XzAw/zh-cn_image_0000002817426805.png?HW-CC-KV=V1&HW-CC-Date=20261114T004734Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBE06066BCC3194D790CD11173E47F3DB0DD73C6D1F10369FB48F7BCE2C23872)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/aY9WdwJzRp2Y3RNsTZo0lg/zh-cn_image_0000002815559131.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CDC60882AF3A57403C842A5120188A523DAD986479D04BAF2F99582234FB8A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/jLplTUBqS4mCkeE9KOnCwA/zh-cn_image_0000002788467386.png?HW-CC-KV=V1&HW-CC-Date=20261114T004734Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBC9B8CDC6AA06A1F171C813B4BC61F4995926F64FB12B1413EF93E9615C1244)
 
 **说明** 
 
@@ -55,13 +55,13 @@ Release版本出于数据安全与隐私保护，会屏蔽HCI日志中蓝牙报�
 
 采集完成后，进入手机文件管理，选择**我的手机**，点击**Documents**目录，即可找到日志压缩包
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/DfIve96zSxanrNKRjhNzjw/zh-cn_image_0000002815399215.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5D4B187211A6346BB78D59F17817914C1B222331D311C4B217C18940AD0F45A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/BtnEbKoeROq36Z8_qWjxmw/zh-cn_image_0000002817506875.png?HW-CC-KV=V1&HW-CC-Date=20261114T004734Z&HW-CC-Expire=31536000000&HW-CC-Sign=A47347CC901C1F594669495F40D780CE15325F586E887C8A63991784E8587719)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/9eGScgXrRFeO6HzQXxzWxw/zh-cn_image_0000002786519640.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EDAF35CE0F160C893D653AC2E4F703C7A17F47AF70952F6EFCE81FEDCEFEAA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/zWiFcWIaSxWt_fzveaOPLQ/zh-cn_image_0000002788307444.png?HW-CC-KV=V1&HW-CC-Date=20261114T004734Z&HW-CC-Expire=31536000000&HW-CC-Sign=F63FCF48349CEF55A68B3951ED951574E2E370AB9D5F8950C92DED632E50589C)
 
 通过**华为分享**、**三方应用**等方式，将日志压缩包分享到PC侧。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/CT1HTCauTmSOnr5DGmq3PA/zh-cn_image_0000002786359712.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C855D1732345EDE909785C21E483B46FD75A62A539DA5AF60FD0049BA1E4E76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/zWm53tU-RFmfOKbI5pDSCw/zh-cn_image_0000002817426807.png?HW-CC-KV=V1&HW-CC-Date=20261114T004734Z&HW-CC-Expire=31536000000&HW-CC-Sign=828F950AFBB2B11993FB638448F602C043B8D772AF6CFA3874380FF2CA0A3DB7)
 
 **说明** 
 

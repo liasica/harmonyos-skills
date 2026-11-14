@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hopping
-title: 自由流转概述
-breadcrumb: 最佳实践 > 技术创新 > 全场景 > 自由流转概述
+title: 概述
+breadcrumb: 最佳实践 > 技术创新 > 全场景 > 概述
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:8947768cb0a447128d7763373807e129c94f2149097ffbe035104640f00120ab
+scraped_at: 2026-11-14T08:54:02+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:44c81264be7e940a747d0f8a3b72112fe20ffcdba08ed9d337ed3ea6189aa561
 ---
 
 ## 概述
@@ -44,7 +44,7 @@ content_hash: sha256:8947768cb0a447128d7763373807e129c94f2149097ffbe035104640f00
 
 自由流转依赖于HarmonyOS提供的分布式运行环境，底层依托分布式软总线，解决设备发现、连接、组网等痛点，打通1+8+N互联互通能力，对外提供硬件、数据、应用三个维度的跨设备访问能力，应用开发只需遵循框架并适配应用层提供的API，就能实现设备之间的跨端迁移和多端协同。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/wb2sjABuSqi5dsCNGdW0Qg/zh-cn_image_0000002563685202.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1D090A0A92F7376151E694710D8B51D8237C9516A4DA789AC264247E2405A6B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/ob17UUCsRByUYTPi5tryRg/zh-cn_image_0000002563685202.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E1A8B7D412997660945AC86898E28BBAAA1A5361B9E3CB2045006C4A0E628FB "点击放大")
 
 ### 特性
 

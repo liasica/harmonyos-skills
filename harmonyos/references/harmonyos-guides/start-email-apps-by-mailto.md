@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-email-a
 title: 拉起邮件类应用（mailto方式）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起邮件类应用（mailto方式）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:48938e00912b0c0366ea76b2b67bb2b99bd9b0037e9f775b9a87c85f1332b630
+content_hash: sha256:3bed42fdc3a7254c701ed63f7f5d1eaeecf0af0f2651a3eb98b0c925daa9ede0
 ---
 
 ## 使用场景
@@ -70,7 +70,7 @@ mailto:someone@example.com?key1=value1&key2=value2
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/-22FdHAVTwqOHaRgckvXBA/zh-cn_image_0000002815557837.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=28BDB62D390A360AAC3DFFD6D03FC1CD0BCFE9737B1B05BA6FFC7A5FD7BE483E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/XsQJNRc2Tau9MF__rYQeVw/zh-cn_image_0000002788466092.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BF70332794E5086F8F4CC8B4FC1427EE01E9D48162C8AAA59098136FCC14296)
 
 ### 从应用拉起
 
@@ -99,7 +99,7 @@ struct Index {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/_gQjLQYPRU212jniH1-3eQ/zh-cn_image_0000002815397921.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FBC0FA5A0A291633F42F9BC823876BE5B37FBFF43CC49147BF6D6D3C1981254)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/P9yaSD6iR8y0Wp-3Qw6zPQ/zh-cn_image_0000002817505579.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A8D52700373F2375135720B29D7F370461F3A7BAFC4135E46F2BCA040F04C94)
 
 ## 目标方开发步骤
 

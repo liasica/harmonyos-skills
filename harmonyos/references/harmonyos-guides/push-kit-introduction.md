@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-kit-intr
 title: Push Kit简介
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:91f2d8b5c0b836920828fc366ac7f6d7c1342ec7eac745eda730e7e10a40ed66
+scraped_at: 2026-11-14T08:48:29+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:98c2fa93ab4b772f4b4db403fb7a0fa455be14a9ac159f778833e494e9fe3802
 ---
 
 Push Kit（推送服务）是华为提供的消息推送平台，建立了从云端到终端的消息推送通道。所有HarmonyOS应用可通过集成Push Kit，实现向应用实时推送消息，使消息易见，构筑良好的用户关系，提升用户的感知度和活跃度。
@@ -30,7 +30,7 @@ Push Kit（推送服务）是华为提供的消息推送平台，建立了从云
 
 推送消息指的是应用**通过Push Kit发送的**，在华为终端设备上显示的通知消息。显示场景主要包括通知中心、锁屏、横幅、桌面图标角标与通知图标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/69apvrAjSnqpQvHAMjn8AA/zh-cn_image_0000002815559937.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=156016BBD4AB505528BE9E975194A1259BADF847D15C81B7065CC4D193A26EFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/6-bJLJ_3Tg2pUbfL_OXBfQ/zh-cn_image_0000002788468192.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004644Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2A0349BB68AD999AB5AA90EC531757B1934C94371D5C07FB72829424287A277)
 
 有关各场景的详细说明请参见[通知提示场景](../design-guides/system-features-notification-0000001793074217.md#section162699204401)。
 
@@ -47,10 +47,11 @@ Push Kit支持以下消息类型：
 | [实况窗消息](push-update-liveview.md) | 应用服务端向Push Kit服务端发送创建或更新实况窗的请求，创建实况窗，或更新实况窗内容。  常见场景：赛事比分更新，出行打车状态更新等。 |
 | [应用内通话消息](push-voip.md) | 支持应用实现网络音视频通话的能力。  常见场景：网络音视频通话。 |
 | [角标刷新消息](push-send-badge.md) | 角标刷新消息用于设置应用角标数字，提醒用户查看消息更新。  常见场景：即时通讯类应用的多端角标同步。 |
+| [MDM消息](push-mdm.md) | MDM消息用于设备管理场景，支持向终端设备下发管理指令。MDM应用在后台时仍能接收MDM消息。  常见场景：企业IT部门下发远程操作指令等。 |
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/ViZ4PjRERuSksiCGdneAOg/zh-cn_image_0000002815400021.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=81DE53725472995C19ADB2AEE278C4F4D507A37B6C13341C5618F36EF147661A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/mv_3ynhNRz2gffaSQABeRw/zh-cn_image_0000002817507681.png?HW-CC-KV=V1&HW-CC-Date=20261114T004644Z&HW-CC-Expire=31536000000&HW-CC-Sign=33853E9019438CA25209CE1B3FA8F6FC95B57E562D2ED14B500E1CB4D4EE3377)
 
 使用Push Kit的主要业务流程如下：
 

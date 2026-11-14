@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-nested-sc
 title: Web组件嵌套滚动
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web组件嵌套滚动
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:14+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5a2223b1f561f27ec072b0480c3ad4339167f1c60ae9f39e2f83b0c5390a90e3
+content_hash: sha256:0ad77cddb708342b2e73ad9d18836dbc228a0e4d92edce4ddf5551487540a745
 ---
 
 Web组件嵌套滚动的典型应用场景为，在页面中，多个独立区域需进行滚动，当用户滚动Web区域内容时，可联动其他滚动区域，实现上下左右全方位滑动页面的嵌套滚动体验。内嵌于可滚动容器（[Grid](../harmonyos-references/ts-container-grid.md)、[List](../harmonyos-references/ts-container-list.md)、[Scroll](../harmonyos-references/ts-container-scroll.md)、[Swiper](../harmonyos-references/ts-container-swiper.md)、[Tabs](../harmonyos-references/ts-container-tabs.md)、[WaterFlow](../harmonyos-references/ts-container-waterflow.md)、[Refresh](../harmonyos-references/ts-container-refresh.md)、[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)）中的Web组件，接收到滑动手势事件后，需要设置ArkUI的[NestedScrollMode](../harmonyos-references/ts-appendix-enums.md#nestedscrollmode10)枚举属性，实现Web组件与ArkUI可滚动容器的嵌套滚动。
@@ -104,7 +104,7 @@ struct NestedScroll {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/afO6F1ciT0mk80PIH91GHg/zh-cn_image_0000002815398935.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D164404A660AB542D0B5B198F55526FEEDA2E9D5CD852FF9B5349AECF492097)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/QXp02rlXQ8aMeQuFI-k32A/zh-cn_image_0000002817506593.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004535Z&HW-CC-Expire=31536000000&HW-CC-Sign=44B775C0205853DBC595AD8DDAD4D791C4AA6CE3D5CBA4433636DC4453402942)
 
 ## 使用nestedScroll常见问题
 
@@ -337,7 +337,7 @@ struct Index {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/-HTp0Po_SpqBao9ea0mrVA/zh-cn_image_0000002786519360.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=931183F405BA57623E1104AF4441725DDF3FB50730FD62871DCE5017BA426C65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/za8KDWklTjqf3uUM3SuNvQ/zh-cn_image_0000002788307164.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004535Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACE6EF44AA55D0F6B787A234718E89E55A82EAF597C17C67DB0B25D1255DFAFF)
 
 ## 示例代码
 

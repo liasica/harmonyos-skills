@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-multi-pro
 title: 性能/内存优化：多目标编译优化实践
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实践说明 > 性能/内存优化：多目标编译优化实践
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:04+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:ce12055c9ce891216c17fd284887220f71c6c9de873683d17ce561993a89cc16
+content_hash: sha256:f3635e0f32e5cd7fb936eaf90bb2494b5d26bc8eb0101dc5cf3633b9c473cf01
 ---
 
 ## 概述
@@ -42,7 +42,7 @@ hvigorw assembleHap -p product=default
 
 由于default target会被默认应用到default product，并且工程级build-profile.json5中没有显式指定test target的applyToProducts，test也被默认应用到default product，导致两个target都被编译。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/7LeVDXz6S-eaFOaH5xooKg/zh-cn_image_0000002808886977.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=1ACB707E981068A5559157EB2F116599CE1EF2061D5817F2607A07E38E864164)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/8dh8qQVQQ3Cv3kGbh90PTQ/zh-cn_image_0000002808886977.png?HW-CC-KV=V1&HW-CC-Date=20261114T004903Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BE74B9E7595DC09A3886212EB59F756AE90A77594B83F17F5C7DE209F45EEEE)
 
 ### 优化方案
 
@@ -113,7 +113,7 @@ entry(default2) → har2(default2)
 
 可以看到，har2有2个target(default、default2)参与构建，但是由于entry(default2)直接依赖的是har2(default2)，因此最终是har2(default2)参与打包，har2(default)并不会被打包。但是在打包前，har2(default)相关的任务（如:har2:default@PreBuild）也会被执行，这些任务属于冗余任务，会导致不必要的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/mS-HtNB5TFic2gcSQElb4w/zh-cn_image_0000002808766897.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=46FF9F58DD7EBE4186D2958C90427AE0FDE2C2F648EFF6F9ED33861835AB0A22)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/_wkERRoaSi2afUoztNw1aA/zh-cn_image_0000002808766897.png?HW-CC-KV=V1&HW-CC-Date=20261114T004903Z&HW-CC-Expire=31536000000&HW-CC-Sign=0332D78F4CCF7A2170F2B30DAC4403CFC107D49AFCFF3032099F278ACCD83AB4)
 
 ### 优化方案
 

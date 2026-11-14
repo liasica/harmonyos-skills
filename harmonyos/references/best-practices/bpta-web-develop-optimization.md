@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-develo
 title: Web加载性能优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > Web性能优化 > Web加载性能优化
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:15+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:32bdbed9f211d40d377af68b78b346db3d2412f904656a3d3478b651ca251605
+content_hash: sha256:af6f80618d81f3595148a09f75985d962f17a46060b2d1a39598cd71a53ae0bb
 ---
 
 ## 概述
@@ -41,7 +41,7 @@ Web页面加载流程包括网络连接、资源下载（包括等待网络资�
 * 资源拦截替换加速：支持ArrayBuffer格式的入参，开发者可直接使用ArrayBuffer格式的数据进行拦截替换，无需在应用侧进行格式转换。
 
 **图1** Web页面加载流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/wv5Pg_bXTPuJjOsfQ63oJA/zh-cn_image_0000002229451093.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=A58FDC51FABC0D124D9B41114512DE2B7E964F421DC0192D73EFD2EB4B5CAA96 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/MEMlj9uARo-ATl2jp7oQtQ/zh-cn_image_0000002229451093.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BC7A376E513CA8CF07AB4FA67116F6152F393616109AE9F3C222125D6DD6AC4 "点击放大")
 
 **由于所有的关键点都是建立在预处理的思路上，因此如果用户实际并未打开预处理的Web页面，将会造成额外的资源消耗。**下表列出了各优化方法的具体效果、代价和适用场景对比。
 
@@ -69,7 +69,7 @@ Web页面加载流程包括网络连接、资源下载（包括等待网络资�
 建议在Web页面启动前执行预启动Web渲染进程，例如在应用冷启动阶段或广告展示阶段。如果无法在冷启动期间预启动Web渲染进程，建议在系统空闲时间进行预启动。
 
 **图2** 预启动Web渲染流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/M2HlMZrJSuGYrWZXO1R1nA/zh-cn_image_0000002229451109.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=9179FECC5ABE447A1A5928AFA69A1983CAE1DB6D852603F7B2497918111B438A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/bS-tvwCiTSuLTvx2UyfFDg/zh-cn_image_0000002229451109.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C2C1CF11AA804F52617D8DEDC60EA2BF8BE3323007AF0F9751EDC23EFFA2E37 "点击放大")
 
 **说明** 
 
@@ -155,7 +155,7 @@ export struct Second {
 
 点击“加载测试页面”按钮，页面加载完成耗时82ms，具体如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/XeSfFKzCQFWSrqqfCIKlWA/zh-cn_image_0000002229336649.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5E7A96F083AA40DA8E55D6CD38BA70C0DA6D72B17BCE6ECFA891D4F2E0CDA95 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/jDNmnxE3Q5WFYX4S0FmENg/zh-cn_image_0000002229336649.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=6567AA08395A46F84FA4B8188F515F24006100A6E445B8507875F7FFA0ABC5E7 "点击放大")
 
 【推荐用法】
 
@@ -372,7 +372,7 @@ export struct Second {
 
 点击“加载测试页面”按钮，页面加载完成耗时44ms，具体如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/YA5SDVcyTFOlPn6MqYTjtw/zh-cn_image_0000002229336617.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=35EAF5D481D7A7D089C4FA11445BEB919E8BC23F0531C4C668F74B14648CF115 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/dsjhfUxRR0SlUkOcPJZ-QQ/zh-cn_image_0000002229336617.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=F710DD5531B8D48B7920C570E8B7423C72D7E97BEB6D14FBC84E2B138AC27B04 "点击放大")
 
 **说明** 
 
@@ -396,7 +396,7 @@ export struct Second {
 * 如下图中c节点所示，页面加载完成后，设置用户下一步可能点击页面的URL，进行预解析和预连接，推荐在onPageEnd()及后续时机执行。
 
 **图3** 预连接优化原理图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/H4xtmjoJT8GwzbWM1LnLQA/zh-cn_image_0000002194010808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF74470E4C016D7BE7AFFD54FD72EC559B62FF85117A093020AE063D5DAC449C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/0ialkBrgQTWcZxCc98rK-A/zh-cn_image_0000002194010808.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=4703F90AF57CDFCB6D049E85296A328DD98F00FBDB8044B9C209BD72DD48EA18 "点击放大")
 
 **说明** 
 
@@ -493,7 +493,7 @@ struct WebComponent {
 如下图所示，ArkWeb组件运行包含onAppear()、load()、onPageBegin()、onPageEnd()。开发者可以在onPageEnd()设置下一步访问的URL，提前下载所需资源。这种方式适用于Web页面启动和跳转场景，例如，在引导流程完成后，预下载需要跳转的页面。创建ArkWeb组件实例后，可以在当前页面加载完成后，设置URL并进行预下载。本方案可以消除资源下载耗时及资源下载导致的页面DOM解析、JS代码编译执行的阻塞耗时，预估收益在数百毫秒（具体时间依赖当前网络环境）。
 
 **图4** 预下载优化原理图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/RKrvJ15fREynvXn3Tzxkmw/zh-cn_image_0000002194010844.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B11E75C8C449B04A82C074E4947F7590701B5564567FA228300B298645485DE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/oHZ2AFy1RWKt4c8a1tnoxQ/zh-cn_image_0000002194010844.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=C44B4FA5D83406C86B45F3F17830F4603BF071215DDFDB5EAB11EBFEB6C97158 "点击放大")
 
 **说明** 
 
@@ -541,7 +541,7 @@ prefetchPage会缓存下载的资源，缓存时效为5分钟。
 3. 绑定[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)组件：与NodeController绑定，实现动态页面显示。
 
 **图5** 预渲染优化原理图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/jYnBWMYvTa-Ej9TY7QB8sg/zh-cn_image_0000002194010800.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB46ED3AE2812B94FFC0AEB2B4CB8A2452DDEDFE5F0F77FD0983046D274125F8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/ZGWTU2iWRoC9YtkYNY5PMg/zh-cn_image_0000002194010800.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB19D21AD175003F7205146813B898F2F7CF01DACAC727A07A950ED53699E6EB "点击放大")
 
 **说明** 
 
@@ -1000,7 +1000,7 @@ struct Index {
 
 通过[HiTraceMeter](../harmonyos-references/js-apis-hitracemeter.md)在Web页面加载前后添加性能打点，点击“加载页面”按钮，[查询自定义打点信息](../harmonyos-guides/ide-insight-session-time.md#section1977218292919)获取的Trace数据如下，getMessageData进程中的Duration为加载页面开始到结束的耗时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/z7VvScCMS6G5YXEwR_2G9Q/zh-cn_image_0000002193851232.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=549D5758371C572352944234BE8473C94E3FC8298EEC3BBCEFA9D240CBDFAA47 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/AgzBLBJvRualTB7YF4HWNA/zh-cn_image_0000002193851232.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA04D6EB42DD394747500B6400D3BE5D38EEE415CB3A32784158A56425321554 "点击放大")
 
 **说明** 
 
@@ -1069,7 +1069,7 @@ JavaScript的编译时间受文件大小和逻辑复杂度的影响。
 
    点击“加载页面”按钮，性能打点数据如下：getMessageData进程中的Duration表示加载页面从开始到结束的耗时。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/WqfOiTHdRQifg0kJBYh86g/zh-cn_image_0000002229336625.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCDC8B069BEE50528D939C04331B0EFC29290A4A2B5F1283463B0A00EC323419)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Z24M85ToT_2PNc4fyT-PwQ/zh-cn_image_0000002229336625.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=434FFCD3EF67EC10A182EE733B2DD022678BA698ED81464C17320597013C823E)
 
    **说明** 
 
@@ -1096,11 +1096,11 @@ JavaScript的编译时间受文件大小和逻辑复杂度的影响。
 
 **图6** JS资源编译执行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/6DPVSRC-SJmLWQUm8Ru-tw/zh-cn_image_0000002193851224.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=074DBDB23D6C456CA8B15854493F2017BA9F507E20C1BA9C80AA10B0E1EBEFF0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/4du66nXIS16tbVTbfysNpA/zh-cn_image_0000002193851224.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=183E07AB9078A3D9E52C4676C7BD6EAD0EDB24386DA83219D53DF9227B5F0BBA "点击放大")
 
 **图7** 资源拦截替换后JS资源编译执行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/gxN4hDAvQSqPFTLI77SjUA/zh-cn_image_0000002194010828.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E9A00379D522926CB69AB735F3205438A9A5E2CD376BDC82CD928616775F523 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/8NZbmm2VRrCf0ye0tkm6yg/zh-cn_image_0000002194010828.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=A789A370AD1D9858B211D066B039AB4643F34D55F90317ECD0A425A235827C99 "点击放大")
 
 Web组件默认支持HTTP协议和自定义协议的JavaScript生成字节码缓存。具体步骤如下：
 
@@ -1191,7 +1191,7 @@ ResponseData为JavaScript内容，ResponseDataID用于区分内容是否变更�
 
 打开应用后关闭，重复两次，然后查看第三次页面加载的耗时。性能打点数据如下：getMessageData进程中的Duration表示页面加载从开始到结束的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/u0OYAIoDS9e8L2J8IrkT4w/zh-cn_image_0000002229451101.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=36FDC35BD2D5EE26011936E3EA59E8E9294C1CF7B809C756109ED0A05DC674D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/G8qTmkPPQbiiKPc4WSBB6Q/zh-cn_image_0000002229451101.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C68D34295347E052ABEF83639C42AB69C5ED5A0FC9C851B2A36377F8BFF3359)
 
 【推荐用法】
 
@@ -1244,7 +1244,7 @@ struct Index {
 
 打开应用后关闭，重复两次，然后查看第三次页面加载的耗时。性能打点数据如下：getMessageData进程中的Duration表示页面加载从开始到结束的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/0hkxfzdTR-W3ynAEuLcQjQ/zh-cn_image_0000002193851248.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E9C93BE1A47B1035DFCB09D30496A88C23C54D706AE2116D58D72F24AC6F6F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/Agwdas5WQGuXGvYXI8U60A/zh-cn_image_0000002193851248.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E836E72683904F22B57A7140250AEC6EB17F47E30292D90E8393F0232185D29)
 
 案例二：调用ArkTS接口customizeSchemes()，在注册自定义协议的情况下，实现JavaScript生成字节码缓存，具体步骤如下：
 
@@ -1394,7 +1394,7 @@ struct Index {
 
    性能打点数据如下，getMessageData进程中的Avg Wall Duration为两次加载页面开始到结束的平均耗时：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/mEKOmTnzSEmKnhPVH7-MUw/zh-cn_image_0000002193851216.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB388DC7851490D5844C2A3163631A5A23C97DCCE4755B59116B25357349F25C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/IwK4veVdRW2jEv3lDTAFcw/zh-cn_image_0000002193851216.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BA67088333BDB763602E2690BD9A898640EB3D70C4097661CB9FA633B668337 "点击放大")
 
 **总结****（以拦截替换HTTP协议的JavaScript生成字节码缓存场景性能数据举例）**
 
@@ -1458,7 +1458,7 @@ struct Index {
 
 性能打点数据如下，getMessageData进程中的Duration为加载页面开始到结束的耗时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/XAT_lAUdQJ-9kJqnmkgRkQ/zh-cn_image_0000002229336641.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBFE7FD3DFEB0B243761C839492E9FD1CE27BC1CB53F19C300195AA4BE674517)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/sHRXL3i-Sky1k1HAGSfbSg/zh-cn_image_0000002229336641.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=29CE1071F7CFABA39F5DCB736D6FCBF3A4A9FF492C42A457232A2F309B92CFA9)
 
 案例二：使用资源免拦截注入加载Web页面，请参考以下步骤：
 
@@ -1568,7 +1568,7 @@ struct Index {
 
    性能打点数据如下：getMessageData进程中的Duration表示加载页面的总耗时。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/MqtholXFTAGCHHgCm_qCyg/zh-cn_image_0000002229451121.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=B24BBABCB3AD0F9CC4E0681B9F12C81CD3AB7523FED8032059D437FFD3E282E6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/cd1a6nmBQXW8BNphP9_w_A/zh-cn_image_0000002229451121.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE5073EF621182B5217B01174154D4AB5D1D77997CAA8C8F01D57462BA7A882B)
 
 **总结**
 
@@ -1653,7 +1653,7 @@ struct Index {
 
 资源替换耗时如图所示。getMessageData和someFunction的执行时间表示页面加载资源的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/1r34BowwSlORGH-5Pn2aAQ/zh-cn_image_0000002194010852.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEDBC0C81FE3268DE1CB3A39343D139A8BD5C38ADD6ACFA7BA706764F596EC21 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/G-TrXFbXRpuUO3NpeBr7OA/zh-cn_image_0000002194010852.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA30B2AEBCC771E9CACDBEF47C1823B319A7F1F1F02BF733DD7181CEF1DA1369 "点击放大")
 
 案例二：使用ArrayBuffer格式的数据做拦截替换。
 
@@ -1784,7 +1784,7 @@ struct WebComponent {
 
 资源替换耗时如图所示。getMessageData和william someFunction的执行时间表示页面加载资源的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/tstyfzmwQ_eOKVXE836dyQ/zh-cn_image_0000002229451125.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FE512B442AAED7CA765F8D2EC8F95C2A6E050CE2656C04E225C771344336F45 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/0EZN1v95TOa3MzyVLh7d0g/zh-cn_image_0000002229451125.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=61FDE5E82DCB2EA53185C53BDE8ECF9F582B12909F2039BA4B31CB0D9D6417A5 "点击放大")
 
 **总结**
 
@@ -1803,11 +1803,11 @@ struct WebComponent {
 
 应用使用ArkTS或C++语言混合开发，或应用架构接近小程序架构，自带C++环境，推荐使用ArkWeb在Native侧提供的ArkWeb\_ControllerAPI和ArkWeb\_ComponentAPI实现JSBridge功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/a6BYjkh7RGqnBdy2VpQLAw/zh-cn_image_0000002458691281.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0A4F947A659DA5725BB2F429611C5909E82C4198CAA34FE6CA4C6D8C740860F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/K18CSuI1Tp6h4bv-AKT6Mg/zh-cn_image_0000002458691281.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=424474758043F54F56B6A6B68DDDF24AE2F0043E8040EBA0C0EB90DD04E6403D "点击放大")
 
 上图展示了小程序的一般架构，逻辑层使用自带的JavaScript运行时，现有C++环境通过Native接口直接与视图层（ArkWeb渲染器）通信，无需返回ArkTS环境调用JSBridge接口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/7JIJDHfzSC6goPYKdq1CDg/zh-cn_image_0000002229451137.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=48AC48577DFB0A8DB17EDAE70E00F6DFCF1D7EBE7E12A08DFFE00821858E524C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/O22ePc_qR8OoB3gMPG-Lhg/zh-cn_image_0000002229451137.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C6E6B619F9A33713E5C1F8165BCD3901059FD7F66B0B591E07347A83F4942D3 "点击放大")
 
 Native JSBridge方案解决ArkTS环境的冗余切换，允许回调在非UI线程上报，避免UI阻塞。
 
@@ -1882,7 +1882,7 @@ struct WebComponent {
 
 点击runJavaScript按钮后，触发h5页面的htmlTest()方法，页面内容将变更为当前时间戳。如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/hEkZVEkFSzWwiBlbtwdZkQ/zh-cn_image_0000002420463960.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC455DD19F060EEB0C5593BD25ED5FB91F352F04F74D9D1DC338D8AABC795BBD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/q4glB4abQS-krMiD7HGRKQ/zh-cn_image_0000002420463960.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=20F2C17AD3A51DCC4BD5D7A2CA0C0BFEA57433A40F37D22955E11CF52D1E86A3 "点击放大")
 
 经过多轮测试，从点击ArkTS侧的Button到触发H5侧的htmlTest()方法，耗时7到9毫秒。
 
@@ -2271,7 +2271,7 @@ runJS.html作为应用前端页面：
 
 点击“runJS hello”按钮后，触发H5页面的runJSRetStr()方法，页面内容更新为当前时间戳。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/DQp5mPNNRLypJf3lRC136Q/zh-cn_image_0000002229336597.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=92702244263357A87C99548F43C3979C1C880720CC4FE0B0E3B193DA1D787BCB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/F2nRK0w4TFio0yUemJowSw/zh-cn_image_0000002229336597.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C2B47F8A832045531E5BAAF4DF1E701F932DC1579B98F207940F981607D38FE "点击放大")
 
 经过多轮测试，从点击ArkTS侧的Button到触发H5侧的runJSRetStr()方法，耗时2到6毫秒。
 

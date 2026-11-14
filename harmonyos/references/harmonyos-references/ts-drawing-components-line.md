@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Line
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Line
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:76a5212ad78d7767a844380bb349a213a6a83bd75c356d09edb21fdca44004b9
+content_hash: sha256:c64bcd470fe55e599a0906533b8ff8f0856d34e663760b10665c74f9abbbedc2
 ---
 
 Line组件用于在应用界面中绘制直线，支持自定义直线的起点、终点、颜色、宽度、透明度、虚线样式、端点样式等属性。适用于绘制分隔线、装饰性线条、图表中的坐标轴或连接线、自定义图形边框等场景。
@@ -179,7 +179,7 @@ struct LineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/dAajSCLFRwKMuKI4ZCqFKA/zh-cn_image_0000002786361532.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD7DA2DC1C320B489857203ACF20068E38ED81E13BA492AE01A3E0DA662C4BD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/OCemPKAYR82BPOs6VHm3xA/zh-cn_image_0000002817508697.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=08F90DA00C83B994294C6610A4763EBDCF0FC78B6DDC1C5A4B5D8A26ED8F0D5D)
 
 ### 示例2（线条端点绘制）
 
@@ -228,7 +228,7 @@ struct LineExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/6v_b_36nREazWKm4Vi5_pA/zh-cn_image_0000002815560953.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBC3B81EAD0951C61829C349D654F02968ED2B3AF0F802A177B9E6D541949B04)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/sYClfMtbTta7n4EA1xw59w/zh-cn_image_0000002788309266.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=27FE5EF63323A68297338EF091E2D5E944A0F260EC09D67A6FC9ECBE209681E5)
 
 ### 示例3（线条间隙绘制）
 
@@ -289,7 +289,7 @@ struct LineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/py7nSzPGQo2wpT1aErnHig/zh-cn_image_0000002815401037.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBE3AA8C2B9ADE9E26C70CD648709415FEF59270649911141F645389D8275C3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/L2q7L04FSX2utRG99dO_eA/zh-cn_image_0000002817428629.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=2512DED556475921A2911E7733BC62678E991D84B240AF2DB1D2EB291B6320BF)
 
 ### 示例4（宽和高使用不同参数类型绘制直线）
 
@@ -331,7 +331,7 @@ struct LineTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/15l44_C_SAqsl9Dj3i6IhA/zh-cn_image_0000002786521462.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=B68A3A7B5A545BB56C7F1500C2CC5476545C30026BB60F8676A448C9FC44CC6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Kq8xvLPgRpKc_WxUqcY9dw/zh-cn_image_0000002788469210.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDC4FEB7BFC4EEF3E43A6B024B1C391BF85EA898355CC9699021C24699C921AD)
 
 ### 示例5（使用attributeModifier动态设置Line组件的属性）
 
@@ -369,4 +369,4 @@ struct LineModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/RupHFaL9TjynOLnWvNlWwg/zh-cn_image_0000002786361534.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B0CFC45E3E6C4C9F48360FE9CCEF6DCEB2E40002868F47CD5E02699A5CDCF8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/549IkNQeSBiYXCE45bipaA/zh-cn_image_0000002817508699.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=B227E4FD48D220BB6F84810DC394D072D7BB0E6D869CFD89342887EFC0C2F463)

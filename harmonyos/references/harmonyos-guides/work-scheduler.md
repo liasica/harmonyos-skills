@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/work-schedule
 title: 延迟任务(ArkTS)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 延迟任务(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:907e8bbcd69e8e4024beffeaecf27bf28287b52855efd5b3afd7d4fb0bcceabc
+scraped_at: 2026-11-14T08:47:16+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:a12b257be79549ab7bed9bbf649380af90cc4028ec05014130730a58042e1fd8
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:907e8bbcd69e8e4024beffeaecf27bf28287b52855efd5b3afd7d4fb0bc
 
 **图1** 延迟任务实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/6G3ioFMTQXaeER9iI6MhdQ/zh-cn_image_0000002815558903.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=257EF720B8E0676BB47DCFF4126177DBED963698403EC917FBE4523357E72BE9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/VX2nPjzOR-OLVeXV8w19Ng/zh-cn_image_0000002788467158.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F8833E004C5C508D19CE8461F3B7A0B7440E162F632321755E361B694B784CB)
 
 应用调用延迟任务接口添加、删除、查询延迟任务，延迟任务管理模块会根据任务设置的条件（通过[WorkInfo](../harmonyos-references/js-apis-resourceschedule-workscheduler.md#workinfo)参数设置，包括网络类型、充电类型、存储状态等）和系统状态（包括内存、功耗、设备温度、用户使用习惯等）统一决策调度时机。
 
@@ -53,7 +53,7 @@ content_hash: sha256:907e8bbcd69e8e4024beffeaecf27bf28287b52855efd5b3afd7d4fb0bc
 | --- | --- |
 | [startWork(work: WorkInfo): void](../harmonyos-references/js-apis-resourceschedule-workscheduler.md#workschedulerstartwork) | 申请延迟任务。 |
 | [stopWork(work: WorkInfo, needCancel?: boolean): void](../harmonyos-references/js-apis-resourceschedule-workscheduler.md#workschedulerstopwork) | 取消延迟任务。 |
-| [getWorkStatus(workId: number, callback: AsyncCallback<WorkInfo>): void](../harmonyos-references/js-apis-resourceschedule-workscheduler.md#workschedulergetworkstatus) | 获取延迟任务状态（Callback形式）。 |
+| [getWorkStatus(workId: number, callback : AsyncCallback<WorkInfo>): void](../harmonyos-references/js-apis-resourceschedule-workscheduler.md#workschedulergetworkstatus) | 获取延迟任务状态（Callback形式）。 |
 | [getWorkStatus(workId: number): Promise<WorkInfo>](../harmonyos-references/js-apis-resourceschedule-workscheduler.md#workschedulergetworkstatus-1) | 获取延迟任务状态（Promise形式）。 |
 | [obtainAllWorks(callback: AsyncCallback<Array<WorkInfo>>): void](../harmonyos-references/js-apis-resourceschedule-workscheduler.md#workschedulerobtainallworks10) | 获取所有延迟任务（Callback形式）。 |
 | [obtainAllWorks(): Promise<Array<WorkInfo>>](../harmonyos-references/js-apis-resourceschedule-workscheduler.md#workschedulerobtainallworks) | 获取所有延迟任务（Promise形式）。 |
@@ -174,7 +174,7 @@ content_hash: sha256:907e8bbcd69e8e4024beffeaecf27bf28287b52855efd5b3afd7d4fb0bc
 
 ### 延迟任务调度功能验证
 
-确认延迟任务WorkSchedulerExtensionAbility回调方法onWorkStart、onWorkStop实现是否正确、是否可以成功回调
+确认延迟任务WorkSchedulerExtensionAbility回调方法onWorkStart、onWorkStop实现是否正确、是否可以成功回调。
 
 延迟任务申请成功之后，需要等到条件满足后才可以执行延迟任务回调，为了快速验证延迟任务回调功能是否正确，可以通过以下[hidumper命令](hidumper.md)手动触发延迟任务执行回调。
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-utd-lin
 title: 分享链接
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 常见分享场景 > 分享链接
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:4c07b387215922a4d476e09156b7c576c9b90d1005a930dcf1d7275289540bdb
+scraped_at: 2026-11-14T08:48:32+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:3bbc2716ace277b9a7bdc361b77718d688b1e4ba09e62d4db34bdb26e5575d3e
 ---
 
 ## 分享App Linking直达应用
 
 使用App Linking分享应用，目标设备接收后可直达应用，参见：[使用App Linking实现应用间跳转](app-linking-startup.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/e4Ft_M0ISXCR5w-UG2ZmqA/zh-cn_image_0000002815400099.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBE3AF890FBBE70D26E83AEDF4D0EC40946DCE71F5DC0647D61675117778A631)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/UGtgYtNZSAG8KnN7lFd2OQ/zh-cn_image_0000002817427691.png?HW-CC-KV=V1&HW-CC-Date=20261114T004832Z&HW-CC-Expire=31536000000&HW-CC-Sign=11ED8987E8C1BA93110AB4DA209E00B29D8E952BF5EF2971F58213E828BAB805)
 
 ### 开发步骤
 
@@ -47,7 +47,7 @@ content_hash: sha256:4c07b387215922a4d476e09156b7c576c9b90d1005a930dcf1d72752895
        let shareData: systemShare.SharedData = new systemShare.SharedData({
          utd: utd.UniformDataType.HYPERLINK,
          // App Linking链接 仅为示例
-         content: 'https://sharekitdemo.drcn.agconnect.link/ZB3p',
+         content: 'http://sharekit/example/hyperlink', // 仅为示例 使用时请替换为待分享的链接
          title: '应用名称', // 不传title时 显示链接
          description: '应用描述', // 不传则不显示描述内容
          thumbnail: new Uint8Array(buffer) // 推荐传入应用图标 不传则显示默认html图标
@@ -88,7 +88,7 @@ content_hash: sha256:4c07b387215922a4d476e09156b7c576c9b90d1005a930dcf1d72752895
          .onClick(() => {
            let uiContext: UIContext = this.getUIContext();
            let context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
-           let link: string = "https://www.example.com/programs?action=showall";
+           let link: string = 'http://sharekit/example/hyperlink'; // 仅为示例 使用时请替换为待分享的链接
            let openLinkOptions: OpenLinkOptions = {
              appLinkingOnly: false
            };
@@ -129,7 +129,7 @@ content_hash: sha256:4c07b387215922a4d476e09156b7c576c9b90d1005a930dcf1d72752895
    // 构造ShareData，需配置一条有效数据信息
    let shareData: systemShare.SharedData = new systemShare.SharedData({
      utd: utd.UniformDataType.HYPERLINK,
-     content: 'https://www.vmall.com/index.html?cid=128688', // 仅为示例 使用时请替换为自己的链接
+     content: 'http://sharekit/example/hyperlink', // 仅为示例 使用时请替换为待分享的链接
      title: '华为商城',
      description: '华为手机',
      // thumbnail: new Uint8Array() // 推荐传入适合的缩略图 不传则显示默认html图标
@@ -140,7 +140,7 @@ content_hash: sha256:4c07b387215922a4d476e09156b7c576c9b90d1005a930dcf1d72752895
    ```typescript
    shareData.addRecord({
      utd: utd.UniformDataType.HYPERLINK,
-     content: 'https://www.vmall.com/index.html?cid=128688', // 仅为示例 使用时请替换为自己的链接
+     content: 'http://sharekit/example/hyperlink', // 仅为示例 使用时请替换为待分享的链接
      title: '测试链接',
      description: '测试描述',
    });

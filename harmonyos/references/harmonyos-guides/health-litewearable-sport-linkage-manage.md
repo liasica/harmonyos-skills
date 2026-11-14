@@ -1,28 +1,28 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-litewearable-sport-linkage-manage
-title: 运动联动管理
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > LiteWearable应用开发 > 运动联动管理
+title: 管理运动
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > LiteWearable应用开发 > 管理运动
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:25+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:ac32932e35d114138d05e091394bab9e6060e37c09c13d557c3154f764de0848
+scraped_at: 2026-11-14T08:48:21+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:11800a293907b136275279fe458733fe82b24c10050e14fec7f657c27284dee1
 ---
 
 ## 场景介绍
 
-从6.1.1(24) 版本开始，支持运动联动管理。
+从6.1.1(24) 版本开始，支持运动管理。
 
-运动联动管理包含运动联动的配置、开启、暂停、恢复、停止，数据订阅、取消订阅和下发融合数据，以及锻炼记录的读写。
+运动管理包含运动的配置、开启、暂停、恢复、停止，数据订阅、取消订阅和下发融合数据，以及锻炼记录的读写。
 
 ## 接口说明
 
 | 接口名 | 描述 |
 | --- | --- |
-| [config](../harmonyos-references/health-api-healthservice-lite.md#workoutconfig)(workoutConfig: WorkoutConfig): void | 运动联动配置。 |
-| [start](../harmonyos-references/health-api-healthservice-lite.md#start)(): StartResult | 开启运动联动。 |
-| [pause](../harmonyos-references/health-api-healthservice-lite.md#pause)(): void | 暂停运动联动。 |
-| [resume](../harmonyos-references/health-api-healthservice-lite.md#resume)(): void | 恢复运动联动。 |
-| [stop](../harmonyos-references/health-api-healthservice-lite.md#stop)(): void | 停止运动联动。 |
+| [config](../harmonyos-references/health-api-healthservice-lite.md#config)(workoutConfig: WorkoutConfig): void | 运动配置。 |
+| [start](../harmonyos-references/health-api-healthservice-lite.md#start)(): StartResult | 开启运动。 |
+| [pause](../harmonyos-references/health-api-healthservice-lite.md#pause)(): void | 暂停运动。 |
+| [resume](../harmonyos-references/health-api-healthservice-lite.md#resume)(): void | 恢复运动。 |
+| [stop](../harmonyos-references/health-api-healthservice-lite.md#stop)(): void | 停止运动。 |
 | [onData](../harmonyos-references/health-api-healthservice-lite.md#ondata)(dataType: undefined, listener: Callback<[SampleReal](../harmonyos-references/health-api-healthservice-lite.md#samplereal)[]>): void | 订阅所有类型的数据。 |
 | [offData](../harmonyos-references/health-api-healthservice-lite.md#offdata)(dataType: undefined, listener?: Callback<[SampleReal](../harmonyos-references/health-api-healthservice-lite.md#samplereal)[]>): void | 取消订阅所有类型的数据。 |
 | [sendData](../harmonyos-references/health-api-healthservice-lite.md#senddata)(sampleReal: [SampleReal](../harmonyos-references/health-api-healthservice-lite.md#samplereal)[]): void | 下发融合数据。 |
@@ -32,7 +32,7 @@ content_hash: sha256:ac32932e35d114138d05e091394bab9e6060e37c09c13d557c3154f764d
 ## 开发前检查
 
 * 完成[申请运动健康服务](health-apply.md)。
-* 需先通过[用户授权](health-litewearable-add-permissions.md)接口引导用户授权，用户授权应根据[权限说明](health-permission-description.md#lite-wearable)中要求来打开锻炼记录读/写和联动接口控制权限。
+* 需先通过[用户授权](health-litewearable-add-permissions.md)接口引导用户授权，用户授权应根据[数据权限总览](health-litewearable-permission-description.md)中要求来打开锻炼记录读/写和运动接口控制权限。
 * 常见问题请参考[Health Service Kit常见问题](health-faqs.md)。
 
 ## 开发步骤
@@ -43,7 +43,7 @@ content_hash: sha256:ac32932e35d114138d05e091394bab9e6060e37c09c13d557c3154f764d
    import healthService from '@hms.health.service';
    import healthStore from '@hms.health.store';
    ```
-2. 配置联动。
+2. 配置运动。
 
    ```javascript
    function config() {
@@ -64,7 +64,7 @@ content_hash: sha256:ac32932e35d114138d05e091394bab9e6060e37c09c13d557c3154f764d
      }
    }
    ```
-3. 开启联动。
+3. 开启运动。
 
    ```javascript
    function start() {
@@ -75,10 +75,10 @@ content_hash: sha256:ac32932e35d114138d05e091394bab9e6060e37c09c13d557c3154f764d
      }
    }
    ```
-4. 暂停/恢复联动。
+4. 暂停/恢复运动。
 
    ```javascript
-   function pause() { // 暂停联动
+   function pause() { // 暂停运动
      try {
        healthService.workout.pause();
      } catch (err) {
@@ -86,7 +86,7 @@ content_hash: sha256:ac32932e35d114138d05e091394bab9e6060e37c09c13d557c3154f764d
      }
    }
 
-   function resume() { // 恢复联动
+   function resume() { // 恢复运动
      try {
        healthService.workout.resume();
      } catch (err) {
@@ -105,9 +105,9 @@ content_hash: sha256:ac32932e35d114138d05e091394bab9e6060e37c09c13d557c3154f764d
      try {
        healthService.workout.onData(undefined, callback);
      } catch (e) {
-       if (e.code === 1009104001) { // 联动已开启其他应用已调用start开启联 动
+       if (e.code === 1009104001) { // 运动已开启其他应用已调用start开启联 动
          // 回到准备界面
-       } else if (e.code === 1009104003) { // 在当前状态下，指令非法。请先 开启运动联动
+       } else if (e.code === 1009104003) { // 在当前状态下，指令非法。请先开启运动
          // 回到准备界面
        }
      }
@@ -160,7 +160,7 @@ content_hash: sha256:ac32932e35d114138d05e091394bab9e6060e37c09c13d557c3154f764d
        endTime: 1695769200000,   // 2023-9-27 7:00:00
        timeZone: '+0800',
        modifiedTime: 1695769200000,
-       exerciseType: healthStore.exerciseSequenceHelper.badminton. EXERCISE_TYPE,
+       exerciseType: healthStore.exerciseSequenceHelper.badminton.EXERCISE_TYPE,
        duration: 1800000,
        summaries: {
          avgShotSpeed: 25.5,
@@ -193,7 +193,7 @@ content_hash: sha256:ac32932e35d114138d05e091394bab9e6060e37c09c13d557c3154f764d
      const sequenceReadRequest = {
        startTime: startTime,
        endTime: endTime,
-       exerciseType: healthStore.exerciseSequenceHelper.badminton. EXERCISE_TYPE,
+       exerciseType: healthStore.exerciseSequenceHelper.badminton.EXERCISE_TYPE,
        count: 1,
        sortOrder: healthStore.SortOrder.DESC,
        readOptions: {
@@ -212,7 +212,7 @@ content_hash: sha256:ac32932e35d114138d05e091394bab9e6060e37c09c13d557c3154f764d
      }
    }
    ```
-10. 停止联动。
+10. 停止运动。
 
     ```javascript
     function stop() {

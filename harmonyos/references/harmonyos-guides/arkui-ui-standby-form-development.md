@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkui-ui-stan
 title: ArkTS待机屏保卡片
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS待机屏保卡片
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e99bb0b2f1bf05c34800e1e26d32212b19de7179bd0ce87cc240086131d5783e
+content_hash: sha256:332b25ee6fe771e2f4fb230484464c213c32e30db6231010c4356f658799e5d1
 ---
 
 从API version 23开始，Form Kit提供在设备待机屏保界面（即横屏充电锁屏状态下显示的界面）上显示卡片的能力，用以展示重要信息，旨在待机下也可陪伴用户。待机屏保卡片用于展示天气、日历等信息，并支持用户个性化定制。
@@ -32,7 +32,7 @@ content_hash: sha256:e99bb0b2f1bf05c34800e1e26d32212b19de7179bd0ce87cc240086131d
 
 待机屏保功能在系统上默认是开启的，功能开关路径“设置>桌面和个性化>待机屏保设置”，开关界面如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/uyqu_aQbTNKQpNJ6LnVEMg/zh-cn_image_0000002815558963.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB726E8BCC0F8E24BBC80FBE1EB54BEA03E4465F5506C8629AFD0FBB36B26FA0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/-aohLQOISh-TXH7rg28QAw/zh-cn_image_0000002788467218.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=56C728F024D87D7B7A874192084CA5520DDDE1BD951395B8EF2D7B6B01ED0185 "点击放大")
 
 ## 使用步骤
 
@@ -40,22 +40,22 @@ content_hash: sha256:e99bb0b2f1bf05c34800e1e26d32212b19de7179bd0ce87cc240086131d
 
 1. 进入待机屏保界面：插入充电器或开启“不充电可显示” 开关，设备横屏锁屏并与桌面夹角45°~90°稳定摆放（折叠机需切换为外屏；同时折叠机支持帐篷模式显示），即可进入待机屏保界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/UqU5uC0BRt-gjAwUL38FVA/zh-cn_image_0000002815399047.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=95FD6C12283E0B21C27B23F8CE62E7DD9B5B547DF5916C6B0CCEA06261BDEF11 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/FIMHYo8MQTS6Zx7jqIAa3w/zh-cn_image_0000002817506707.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3AE4FC82F044F97139F63C2550BF7C9EEB8578371E23DC6257ECCC59A1ED2BD "点击放大")
 2. 进入待机屏保编辑界面：在待机屏保界面长按或双指捏合即可进入编辑界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/z6Dcmd4JRa2w0gw7aQwLfw/zh-cn_image_0000002786519472.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D84E05F83A60390D52E9E525F6A097AA1A162DD1DE95F4334BE1B28C82A37E6 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/r0ZXFhu6Q0aUpPopJ6fgMw/zh-cn_image_0000002788307276.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=50CAF6A405FC6BDAC94A2EC1E7782C57F660D422EE107817D05775311183585E "点击放大")
 3. 进入待机屏保卡片中心界面：在待机屏保编辑界面，上滑左侧或右侧列表至最后，点击“+”弹出卡片管理页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/7_l2TMueTv-1cGlIGRPwfg/zh-cn_image_0000002786359544.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB09B18DF8BC9D5C531B10992A6A6DA31067B96BD7947D2BEA4B36B089E1142C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/sds_HfEPQai1c7xhDBs-xA/zh-cn_image_0000002817426639.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B27A82C4D29FE755B607C29886D5798978514FC9961D66FE80E75BCFC120151 "点击放大")
 4. 进入待机屏保卡片管理页面：在待机屏保卡片中心点击“建议”会显示推荐的卡片，或者点击应用列表中的应用，弹出对应的卡片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/f3Wa_3sDRCa3wEAK0CZoYQ/zh-cn_image_0000002815558965.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=1461BF960B60B570C8968AB7576C328E7C6CB24C50FAB9C68B34D2FDEAFCF281 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/oRdYBOceR_e1MeDwCbrWYA/zh-cn_image_0000002788467220.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=5854A9C3542AFE52A24129E536F35E23A1877A1ECC9D9D6A8DAD26072B64E471 "点击放大")
 5. 添加卡片：在待机屏保卡片管理页面，选择好卡片后，点击“添加”按钮即可添加到待机屏保界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/oHaAvwHdQbuMQO2oj9BYLQ/zh-cn_image_0000002815399049.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DA332301EE4E9C55D5168ABFDAAB86C4A44F6F08CBAFAE91FBFF9A695804B0E "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/EjnJjMo1TT6khI4w_YRDHw/zh-cn_image_0000002817506709.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DC24B0DE7A3BFC8A82D0B7E4EF79A5AFD53861DBAA72C816A0D143E7404467C "点击放大")
 6. 移除卡片：进入待机屏保编辑界面，点击卡片右上角的“-”即可移除卡片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/mzbF9fJgRgaBknKqfqM_kg/zh-cn_image_0000002786519474.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8C5BA59B0DBEB91D083852EC7EC9E7AE89DEB40EDCB1FA6B27C990B0DB5D588 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/YHf8Gk0QToG02bHuLneF0g/zh-cn_image_0000002788307278.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FF7CB693164DD610427AECD72C27A1F8A220C187609FE723481736516AAF7F3 "点击放大")
 
 ## 开发准备
 
@@ -67,23 +67,23 @@ content_hash: sha256:e99bb0b2f1bf05c34800e1e26d32212b19de7179bd0ce87cc240086131d
 
 1. 登录AppGallery Connect，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/WhPZFNAKTCKXQMaQbbhCfA/zh-cn_image_0000002815558959.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=56FE3459C91031084F180ED996A7D05E75976EF7F2AC52F8F985795FAE19131D "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/68RWt1QITGavOa_8gie2WA/zh-cn_image_0000002788467214.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CFBBF8AEAC22615CED5681FBFE23F4F23FD4342557AC8E661ACAB6F19CAC219 "点击放大")
 2. 在项目列表中找到您的项目，并点击选择需开启开放能力的应用/元服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/cmfgJaFHQKyVaen5jxMN9w/zh-cn_image_0000002815399043.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0141A454CFC257865345181C91BFA1D9EAC5D1CB622CC5B4E013FDBAF379BCE "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/kyZJZgMAQDKVYr0AGdO8vQ/zh-cn_image_0000002817506703.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3ED3ECCE7FA4A7ED7986081EDCB7CA223CFD32828BFC58204259BD087ED33EE "点击放大")
 3. 在“开放能力管理”页面，点击待机屏保卡片对应的申请按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/seqYYrO1SdilLuR9jEjSJw/zh-cn_image_0000002786359546.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF1F66405B386470E0A9F050B8586FA37DB2EB3B5543912F596421B5DA0D3424 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/4OWnWMq4Ry6wn7_vYv86Gw/zh-cn_image_0000002817426641.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=5287B6C175290CA29AA42E8288890658AAEE079164AB5C00795A2815A015D747 "点击放大")
 4. 在“新建业务申请”窗口填写申请信息，然后点击“提交”。
 
    申请原因：必填，包括应用介绍、使用场景、申请用途，不超过512个字符。
 
    上传附件：选填，提供对应卡片UI设计释义材料，仅可上传1个附件，大小不超过500MB。支持文本、表格、图片、视频、压缩包格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/EXuGTFBhQoKLiGBp07H2MA/zh-cn_image_0000002815558967.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=01C68D9916164DE04F365AF57F6EE108BFB7C5429F1A2B8F81A6649B25D6F489 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/mYNSKEW3RyKlTu6JMZRd7g/zh-cn_image_0000002788467222.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC3313E9B7E8643944296C0F415DFF39B842F926722E2172D52364686F3E42F5 "点击放大")
 5. 返回“开放能力管理”页面，原“申请”按钮变为置灰显示的“申请”，待机屏保卡片的能力开关已勾选。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/E1wuXak-SrOEMx-GioERDQ/zh-cn_image_0000002815399051.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C14058A5A5A69C7B236131F7658916E800BBDEA187DCF7674CB820FB80F19F3A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/UpAq3fAqR22c-tOjbBJF3A/zh-cn_image_0000002817506711.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=F65F35B1C5728296EC118F089A9B67C308B8BD5B00F9103BB4DAAC9933054599 "点击放大")
 
    至此，您的应用已成功开通待机屏保开放能力。
 

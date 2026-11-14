@@ -3,27 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pc-guide
 title: 电脑应用开发
 breadcrumb: 最佳实践 > 多设备体验进阶 > 电脑 > 电脑应用开发
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:c2f6add2c0b7d96fde5867e85f7cdf0466014d4167f2bec31cc0da413a1f9569
+scraped_at: 2026-11-14T08:54:11+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:9862a497fdf2bb060f45217456635570933b32c2f2056a05d9c59f9a45ff5a4c
 ---
 
 ## 概述
 
 电脑设备在日常生活中发挥重要作用，是HarmonyOS 1+8设备全场景一体化体验中不可或缺的部分。
 
-电脑设备有以下明显特点：
+电脑设备包含笔记本和台式机两种形态，有以下明显特点：
 
-* 电脑设备拥有高分辨率的大屏幕，且尺寸、比例的跨度较大，适合展示更多内容，提高学习、娱乐和办公效率。
+* 笔记本自带屏幕，台式机无内置屏幕、需外接显示器作为显示输出。电脑屏幕普遍分辨率高，且尺寸、比例跨度大，适合展示更多内容，提高学习、娱乐和办公效率。
+* 电脑设备支持键鼠交互，笔记本支持触控板。
 * 电脑支持全屏、分屏、自由窗口显示应用。
-* 电脑设备支持触控板、鼠标和键盘交互。
 
-当前电脑产品主要为MateBook Pro系列和MateBook Pro S系列。
+当前电脑产品主要为MateBook Pro系列、MateBook Pro S系列和擎云HM650系列。
 
 | 产品名称 | 示意图 |
 | --- | --- |
 | **MateBook Pro系列** |  |
 | **MateBook Pro S系列** |  |
+| **擎云HM650系列** |  |
 
 **说明** 
 
@@ -37,17 +38,21 @@ content_hash: sha256:c2f6add2c0b7d96fde5867e85f7cdf0466014d4167f2bec31cc0da413a1
 
 以MateBook Pro设备为例，其效果图、分辨率以及横纵断点等参数如下表所示：
 
-|  |  |  |
-| --- | --- | --- |
 |  | MateBook Pro（笔记本形态） | 外接显示器 |
+| --- | --- | --- |
 | **效果图** |  |  |
 | **屏幕ID** | 0 | 主显示器：0  外接显示器：与连接的MateBook Pro端口有关 |
 | 屏幕方向([Orientation](../harmonyos-references/js-apis-display.md#orientation10)) | 横屏LANDSCAPE | NA |
-| **分辨率(px**) | 3120\*2080 | 主显示器：3120\*2080  外接显示器：取决于外接显示器的分辨率 |
+| **分辨率(px)** | 3120\*2080 | 主显示器：3120\*2080  外接显示器：取决于外接显示器的分辨率 |
 | **分辨率(vp)(向下取整)** | 1642\*1094 | 主显示器：1642\*1094  外接显示器：取决于外接显示器的分辨率 |
 | 屏幕可用宽高(px) | 3120\*1955 | 主显示器：3120\*1955  外接显示器：取决于外接显示器的分辨率 |
 | 屏幕可用宽高(vp)(向下取整) | 1642\*1028 | 主显示器：1642\*1028  外接显示器：取决于外接显示器的分辨率 |
 | **横纵断点** | 横向断点xl，纵向断点sm | 主显示器：横向断点xl，纵向断点sm  外接显示器：取决于外接显示器的分辨率 |
+
+**说明** 
+
+* 台式机无内置屏幕，需外接显示器作为显示输出；笔记本也可外接显示器扩展显示。
+* 台式机外接显示器（以擎云HM650系列为例）可支持的分辨率范围为1024\*768<=分辨率<=3840\*2160，DPI范围为136<=DPI<=400。
 
 ### 相机硬件信息
 
@@ -55,23 +60,25 @@ content_hash: sha256:c2f6add2c0b7d96fde5867e85f7cdf0466014d4167f2bec31cc0da413a1
 
 对于MateBook Pro等仅搭载前置摄像头的电脑设备，其相机镜头安装角度及预览流旋转角度如下：
 
-|  |  |  |  |  |
-| --- | --- | --- | --- | --- |
 | 屏幕旋转角度（rotation） | 0(0度) | 1(90度) | 2(180度) | 3(270度) |
+| --- | --- | --- | --- | --- |
 | 示意图 |  | NA | NA | NA |
 | 前置相机镜头安装角度 | 0° | NA | NA | NA |
 | 前置相机[预览旋转角度](../harmonyos-guides/camera-rotation-term.md#预览旋转角度) | 0°+0°=0° | NA | NA | NA |
 
 部分电脑产品（如MateBook Pro S），同时搭载了前置摄像头和后置摄像头，其相机镜头安装角度和需要设置的预览流旋转角度如下：
 
-|  |  |  |  |  |
-| --- | --- | --- | --- | --- |
 | 屏幕旋转角度(rotation) | 0(0度) | 1(90度) | 2(180度) | 3(270度) |
+| --- | --- | --- | --- | --- |
 | 示意图 |  | NA | NA | NA |
 | 前置相机镜头安装角度 | 0° | NA | NA | NA |
 | 前置相机[预览旋转角度](../harmonyos-guides/camera-rotation-term.md#预览旋转角度) | 0°+0°=0° | NA | NA | NA |
 | 后置相机镜头安装角度 | 0° | NA | NA | NA |
 | 后置相机[预览旋转角度](../harmonyos-guides/camera-rotation-term.md#预览旋转角度) | 0°+0°=0° | NA | NA | NA |
+
+**说明** 
+
+* 台式机默认无内置摄像头。
 
 ## 创新与体验提升
 
@@ -101,56 +108,56 @@ content_hash: sha256:c2f6add2c0b7d96fde5867e85f7cdf0466014d4167f2bec31cc0da413a1
 
   ```typescript
   async createFloatWindowBackground() {
-    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-    try {
-      window.getLastWindow(context, (err: BusinessError, topWindow) => {
-        const errCode: number = err.code;
-        if (errCode) {
-          hilog.error(DOMAIN, TAG, '%{public}s',
-            `Failed to obtain the top window. Cause code: ${err.code}, message: ${err.message}`);
-          return;
-        }
-        topWindow.minimize().catch((err: BusinessError) => {
-          hilog.error(DOMAIN, TAG, '%{public}s',
-            `Failed to minimize the window. Code: ${err.code}, message: ${err.message}`);
-        });
-        hilog.info(DOMAIN, TAG, '%{public}s',
-          `Succeeded in obtaining the top window. Window id: ${topWindow.getWindowProperties().id}`);
-        setTimeout(() => {
-          this.createFloatWindow();
-        }, 5000);
-      });
-    } catch (err) {
-      hilog.error(DOMAIN, TAG, '%{public}s',
-        `Failed to obtain the top window. Cause code: ${err.code}, message: ${err.message}`);
-    }
+   let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+   try {
+     window.getLastWindow(context, (err: BusinessError, topWindow) => {
+       const errCode: number = err.code;
+       if (errCode) {
+         hilog.error(DOMAIN, TAG, '%{public}s',
+           `Failed to obtain the top window. Cause code: ${err.code}, message: ${err.message}`);
+         return;
+       }
+       topWindow.minimize().catch((err: BusinessError) => {
+         hilog.error(DOMAIN, TAG, '%{public}s',
+           `Failed to minimize the window. Code: ${err.code}, message: ${err.message}`);
+       });
+       hilog.info(DOMAIN, TAG, '%{public}s',
+         `Succeeded in obtaining the top window. Window id: ${topWindow.getWindowProperties().id}`);
+       setTimeout(() => {
+         this.createFloatWindow();
+       }, 5000);
+     });
+   } catch (err) {
+     hilog.error(DOMAIN, TAG, '%{public}s',
+       `Failed to obtain the top window. Cause code: ${err.code}, message: ${err.message}`);
+   }
   }
 
   async createFloatWindow() {
-    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-    let floatWindowName = 'floatWindow';
-    let config: window.Configuration = {
-      name: floatWindowName,
-      windowType: window.WindowType.TYPE_FLOAT,
-      ctx: context
-    };
-    try {
-      let floatWindow: window.Window = await window.createWindow(config);
-      let storage: LocalStorage = new LocalStorage();
-      await floatWindow.moveWindowTo(250, 200);
-      await floatWindow.resize(1800, 600);
-      await floatWindow.setWindowCornerRadius(50);
-      floatWindow.setWindowShadowRadius(50);
-      await floatWindow.loadContent('pages/Index', storage);
-      floatWindow.showWindow().catch((err: BusinessError) => {
-        hilog.error(DOMAIN, TAG, '%{public}s', `Failed to show the window. Code: ${err.code}, message: ${err.message}`);
-      });
-      this.floatWindow = floatWindow;
-      storage.setOrCreate('name', floatWindowName);
-    } catch (err) {
-      hilog.error(DOMAIN, TAG, '%{public}s',
-        `Failed to create the window. Cause code: ${err.code}, message: ${err.message}`);
-    }
+   let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+   let floatWindowName = 'floatWindow';
+   let config: window.Configuration = {
+     name: floatWindowName,
+     windowType: window.WindowType.TYPE_FLOAT,
+     ctx: context
+   };
+   try {
+     let floatWindow: window.Window = await window.createWindow(config);
+     let storage: LocalStorage = new LocalStorage();
+     await floatWindow.moveWindowTo(250, 200);
+     await floatWindow.resize(1800, 600);
+     await floatWindow.setWindowCornerRadius(50);
+     floatWindow.setWindowShadowRadius(50);
+     await floatWindow.loadContent('pages/Index', storage);
+     floatWindow.showWindow().catch((err: BusinessError) => {
+       hilog.error(DOMAIN, TAG, '%{public}s', `Failed to show the window. Code: ${err.code}, message: ${err.message}`);
+     });
+     this.floatWindow = floatWindow;
+     storage.setOrCreate('name', floatWindowName);
+   } catch (err) {
+     hilog.error(DOMAIN, TAG, '%{public}s',
+       `Failed to create the window. Cause code: ${err.code}, message: ${err.message}`);
+   }
   }
   ```
 * 移动悬浮窗
@@ -158,30 +165,30 @@ content_hash: sha256:c2f6add2c0b7d96fde5867e85f7cdf0466014d4167f2bec31cc0da413a1
   通过[startMoving()](../harmonyos-references/arkts-apis-window-window.md#startmoving14)接口实现拖拽移动悬浮窗的场景。
 
   ```typescript
-  .onTouch((event: TouchEvent) => {
-    if (event.type === TouchType.Down) {
-      try {
-        let windowClass: window.Window = window.findWindow('floatWindow');
-        if (!windowClass) {
-          hilog.error(DOMAIN, TAG, '%{public}s', 'Failed to find window.');
-          return;
-        }
-        windowClass.startMoving().then(() => {
-          hilog.info(DOMAIN, TAG, '%{public}s', 'Succeeded in starting moving window.')
-        }).catch((err: BusinessError) => {
-          hilog.error(DOMAIN, TAG, '%{public}s',
-            `Failed to start moving. Cause code: ${err.code}, message: ${err.message}`);
-        });
-      } catch (err) {
-        hilog.error(DOMAIN, TAG, '%{public}s',
-          `Failed to start moving window. Cause code: ${err.code}, message: ${err.message}`);
-      }
-    }
-  })
+   .onTouch((event: TouchEvent) => {
+     if (event.type === TouchType.Down) {
+       try {
+         let windowClass: window.Window = window.findWindow('floatWindow');
+         if (!windowClass) {
+           hilog.error(DOMAIN, TAG, '%{public}s', 'Failed to find window.');
+           return;
+         }
+         windowClass.startMoving().then(() => {
+           hilog.info(DOMAIN, TAG, '%{public}s', 'Succeeded in starting moving window.');
+         }).catch((err: BusinessError) => {
+           hilog.error(DOMAIN, TAG, '%{public}s',
+             `Failed to start moving. Cause code: ${err.code}, message: ${err.message}`);
+         });
+       } catch (err) {
+         hilog.error(DOMAIN, TAG, '%{public}s',
+           `Failed to start moving window. Cause code: ${err.code}, message: ${err.message}`);
+       }
+     }
+   })
   ```
-* 在悬浮窗中拉起主窗
+* 在悬浮窗中拉起主窗口
 
-  使用[startAbility()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startability-1)指定want内容，拉起主窗。
+  使用[startAbility()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startability-1)指定want内容，拉起主窗口。
 
 ### 手写笔适配
 
@@ -201,12 +208,12 @@ content_hash: sha256:c2f6add2c0b7d96fde5867e85f7cdf0466014d4167f2bec31cc0da413a1
 
 手机/平板应用以兼容模式在电脑端运行时，窗口默认显示规则如下：
 
-* 若应用支持横屏，将以固定大小的横屏窗口展示（窗口高度为屏幕高度的2/3，宽度比为1:1）。
+* 若应用支持横屏，将以固定大小的横屏窗口展示（窗口高度为屏幕高度的2/3，宽高比为1:1）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/kBjjGWFaQ1eHdGCeFO5geQ/zh-cn_image_0000002585466864.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=53ACBDAAB28248E21A724E2D830882680764EC10F48D7484BF384212F9303A90 "点击放大")
-* 若应用仅支持竖屏，则以固定大小的竖屏窗口展示（窗口高度为屏幕高度的2/3，宽度比为9:18）。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/s7jbUxTBTAmI_pr8brRzEQ/zh-cn_image_0000002789073566.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0A6C1001AED71B006A56177CF33614308F0B4B2E5E30099AB017EB1A91E7221)
+* 若应用仅支持竖屏，则以固定大小的竖屏窗口展示（窗口高度为屏幕高度的2/3，宽高比为9:18）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/et8tdffqSYyI225QJBEzIg/zh-cn_image_0000002585626808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B5C3C654C9B7892A474DBC99A6368E80BCFB62EBEE7BF1B868778CCCE9A2CC8 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/3Wh0tfCiT9iUoV5YVC_yZg/zh-cn_image_0000002818072977.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9D62E76BE75CC584910AA5ED8186F50652FD87E0A365F9141154E77499378D9)
 
 **说明** 
 
@@ -214,13 +221,13 @@ content_hash: sha256:c2f6add2c0b7d96fde5867e85f7cdf0466014d4167f2bec31cc0da413a1
 
 **窗口模式的白名单策略**
 
-操作系统中预置了白名单功能，用于管控应用默认显示比例，包括9:18、1:1和全屏铺满。
+操作系统中预置了白名单功能，用于管控应用默认显示比例，包括18:9、1:1和全屏铺满。
 
 ### 兼容运行工程配置
 
 已适配手机/平板的应用在电脑上兼容运行时，需在应用Entry Module的module.json5中移除对2in1设备的支持：
 
-```screen
+```json5
 "deviceTypes": [
     "default",
     "tablet",
@@ -238,13 +245,13 @@ Entry Module所依赖的module同名配置文件也需要同步修改。
 
 应用安装后，可进入设置->显示和亮度->应用显示布局，将应用显示比例调整为原始比例，即可退出兼容模式，方便开发者调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/TdfO-Rp9TPuSsPvim1L0Kw/zh-cn_image_0000002615986525.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0CA76E0888D25220789199D456E157A36861884715DB5CA1646BDE16B0154B1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/fUQziR5DTvKWwRGcVGnrmQ/zh-cn_image_0000002788913636.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=5746D2F64F8A48BD7EEADE046987616502900918CA877B3521140FCC90EFF829)
 
 ### 兼容运行上架配置
 
-应用上架基本信息中，有关兼容分发的说明内容如下图所示：
+应用上架时，在基本信息中勾选“兼容分发到PC/2in1的AppGallery”选项，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/RlkYYKKmTPGn5xQXVPCG6w/zh-cn_image_0000002780926409.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFF723DAA6A36F014B21EB189D3CAE0DC9F981E14CC616A412FEF87F83D70D4D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/yjYWxnpzSdaqEWViNJrL1g/zh-cn_image_0000002817953051.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD4F984CA140023BA7F8D323513E1C7D4696E96E46538EC4D541939A8546109B)
 
 **说明** 
 
@@ -276,7 +283,7 @@ Entry Module所依赖的module同名配置文件也需要同步修改。
 
   由于手机与电脑操作方式存在差异，部分页面未提供返回按钮：手机端可通过屏幕边缘向内滑动返回上一页，电脑端无该手势操作。为此电脑系统在应用窗口界面增设返回键，模拟边缘侧滑返回的交互效果，效果如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/9XIHnfrBQ5eEDPZeFjVqAg/zh-cn_image_0000002585466874.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=598ADC4CECF938E504BCA35A888DB0E947D8BFA1655DD5956116A79E13488D12 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/nHbXoVHBSO2ynkey9xiSBA/zh-cn_image_0000002789073568.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=93CCDB32EE0A83717B4D4CA99359C9B2F5019F1FF729B7D438A5D3EDA7DF3C18)
 * 安全键盘的差异
 
   电脑设备自带物理键盘，在安全登录场景中，若应用基于私有安全键盘SDK开发，用户通过物理键盘输入密码时，可能出现密码明文显示、无法输入、输入后无法提交等问题。对于上述情况，建议采用如下方案进行优化。
@@ -301,6 +308,7 @@ Entry Module所依赖的module同名配置文件也需要同步修改。
   对于PhotoPicker体验差异，建议采用如下方案进行适配。
 
   应用对媒体库进行访问或保存操作时，可继续使用PhotoPicker；若应用需要访问或保存媒体库以外的文件，建议使用FilePicker。
+
   + 查看文件：FilePicker支持访问公共目录文件及媒体库（图库）中的图片和视频。
   + 保存文件：应用可通过FilePicker的save模式，由用户自主选择公共目录完成文件保存。
 
@@ -309,13 +317,13 @@ Entry Module所依赖的module同名配置文件也需要同步修改。
   | 用户在应用内新建文本或文档后，单击应用提供的保存按钮/选项。 | 使用FilePicker由用户选择保存路径以及文件名。 | 创建DocumentViewPicker文件选择器实例，调用save()接口拉起FilePicker界面完成文件保存；若应用后续需再次访问该文件，应调用文件持久化接口对授权文件执行持久化操作。 |
   | 用户在应用内单击打开文件按钮，对文件进行查看或编辑操作。 | 使用FilePicker由用户选择需要打开的文件。 | 创建DocumentViewPicker文件选择器实例，调用select()接口拉起FilePicker界面供用户选择文件；用户选定文件后，系统将授予应用该文件的读写权限。 |
   | 应用内打开预制3D目录下的文件（**仅限平板和电脑**）。 | 使用3D目录预授权，用户同意后，应用可访问对应文件夹下的文件。 | 调用相应系统接口：下载目录使用"ohos.permission.READ\_WRITE\_DOWNLOAD\_DIRECTORY"；文档目录使用"ohos.permission.READ\_WRITE\_DOCUMENTS\_DIRECTORY"。 |
-  | 当应用获取文件/文件夹的URI但无访问权限时，申请单文件/文件夹授权（**文件夹授权仅限****平板和电脑**）。 | 使用FilePicker授权模式，同时传递URI。 | 创建DocumentViewPicker文件选择器实例，调用select()接口并传入authMode、defaultFilePathUri参数，拉起FilePicker界面完成文件选择；该授权为临时授权，应用需额外申请文件/文件夹持久化权限。 |
+  | 当应用获取文件/文件夹的URI但无访问权限时，申请单文件/文件夹授权（**文件夹授权仅限平板和电脑**）。 | 使用FilePicker授权模式，同时传递URI。 | 创建DocumentViewPicker文件选择器实例，调用select()接口并传入authMode、defaultFilePathUri参数，拉起FilePicker界面完成文件选择；该授权为临时授权，应用需额外申请文件/文件夹持久化权限。 |
   | 应用选择指定目录保存文件。 | 使用FilePicker由用户选择保存路径。 | 创建DocumentViewPicker文件选择器实例，调用select()接口并将参数DocumentSelectMode设为FOLDER，拉起FilePicker界面选择文件夹；该授权为临时授权，应用需主动申请文件夹持久化权限。 |
 * 使用KIT和传感器的排查
 
   电脑硬件规格与手机存在差异（如Modem、GPS、后置摄像头等），导致应用在电脑端使用部分Kit能力时与手机端表现不同，具体分为三类情况：
 
-  + 不支持但可兼容运行：应用可通过[canIUse()](../harmonyos-references/js-apis-syscap.md#caniuse)接口检测对应Kit是否可用，按需执行逻辑或屏蔽功能；若未做适配，相关 API 可正常调用但不会实际生效，保障应用稳定运行。
+  + 不支持但可兼容运行：应用可通过[canIUse()](../harmonyos-references/js-apis-syscap.md#caniuse)接口检测对应Kit是否可用，按需执行逻辑或屏蔽功能；若未做适配，相关API可正常调用但不会实际生效，保障应用稳定运行。
   + 模拟支持(Sensor)：应用可枚举此类Sensor，接口调用正常，返回固定数据。
   + 有限支持：如导航定位，通过WIFI定位代替GPS定位，定位精度会有所损失。
 
@@ -333,7 +341,7 @@ Entry Module所依赖的module同名配置文件也需要同步修改。
   | Car Kit | 不支持，可兼容运行 | 接口可调用，但不执行。建议屏蔽相关功能入口。 |
   | Graphics Accelerate Kit | 不支持，可兼容运行 | 接口可调用，但不执行。建议屏蔽相关功能入口。 |
   | NFC | 不支持，不兼容 | 不可调用，建议使用前先做设备能力判断，并非所有设备均支持NFC功能。 |
-  | Camera | 仅支持前置摄像头 | 建议屏蔽后置摄像头相关功能，优先使用前置摄像头。 |
+  | Camera | 仅支持前置摄像头，部分电脑设备（如matebook pro s）支持后置摄像头 | 建议屏蔽后置摄像头相关功能，优先使用前置摄像头。 |
   | Vision Kit | 不支持，可兼容运行 | 接口可调用，但返回失败。建议屏蔽相关功能入口。 |
 
 ## 设备常见适配问题
@@ -364,32 +372,29 @@ Entry Module所依赖的module同名配置文件也需要同步修改。
 
 * 调用[display.getDisplayByIdSync()](../harmonyos-references/js-apis-display.md#displaygetdisplaybyidsync12)，根据displayId主动获取对应可用区域的[Display](../harmonyos-references/js-apis-display.md#display)对象。
 * 调用display.[getAvailableArea()](../harmonyos-references/js-apis-display.md#getavailablearea12)，主动获取当前设备屏幕的可用区域。
-
 * 注册[on('availableAreaChange')](../harmonyos-references/js-apis-display.md#onavailableareachange12)监听，实时监听设备屏幕可用区域的变化。
 
 **自由多窗适配电脑设备窗口异常问题**
 
 问题描述：自由多窗适配电脑设备时，可能出现以下问题：
 
-* 窗口大小不合适；
-* 窗口拖动至过小尺寸后，页面布局错乱；
+* 窗口大小不合适。
+* 窗口拖动至过小尺寸后，页面布局错乱。
 * 窗口拖动场景逻辑不清晰，实现难度较高。
 
 解决措施：
 
 * 若窗口尺寸适配不合理，开发者可主动配置窗口大小，具体可参考[主动调节窗口大小](bpta-multi-device-window-mode.md#section323513274320)实现方案。
-
 * 针对窗口被拖动缩至过小导致布局异常的问题，可参考[如何限制自由窗窗口尺寸](bpta-multi-device-window-mode.md#section6754152523715)，确保页面正常显示。
-
 * 电脑端自由多窗支持鼠标点击或手指触控拖动窗口，默认标题栏的窗口由系统提供高性能拖动能力；无标题栏或自定义标题栏的窗口，需开发者调用系统拖动能力接口实现，具体可参考[如何设置窗口拖拽热区](bpta-multi-device-window-mode.md#section1758193815438)。
 
 **窗口启动时应用闪跳**
 
-可能原因：module.json5配置文件中metadata标签设置的窗口位置、大小，与[onWindowStageCreate()](../harmonyos-guides/uiability-lifecycle.md#onwindowstagecreate) 中布局设置的窗口参数不一致。
+可能原因：module.json5配置文件中metadata标签设置的窗口位置、大小，与[onWindowStageCreate()](../harmonyos-guides/uiability-lifecycle.md#onwindowstagecreate)中布局设置的窗口参数不一致。
 
-解决措施：保持module.json5的metadata配置与[onWindowStageCreate()](../harmonyos-guides/uiability-lifecycle.md#onwindowstagecreate) 中窗口位置、大小参数一致。
+解决措施：保持module.json5的metadata配置与[onWindowStageCreate()](../harmonyos-guides/uiability-lifecycle.md#onwindowstagecreate)中窗口位置、大小参数一致。
 
-```json
+```json5
 "abilities": [
   {
     "name": "EntryAbility",
@@ -456,3 +461,24 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
   });
 }
 ```
+
+### 台式机音频输入与录音适配
+
+问题描述：台式机默认无外接音箱与耳麦，不具备音频输入设备（麦克风），应用中的录音、语音通话、语音输入等功能无法正常使用。
+
+解决措施：
+
+* 检测音频输入设备可用性：通过AudioRoutingManager.[getDevices()](../doccenter-references/api/arkts-apis-audio-audioroutingmanager.md#getdevices9)获取音频设备列表，台式机无外接麦克风/耳麦时，录音功能入口需置灰禁用。
+* 用户点击已置灰的录音功能时，弹窗提示“当前未检测到音频输入设备”，引导用户连接耳麦或外接麦克风。
+* 监听设备热插拔：通过AudioRoutingManager.[on('deviceChange')](../doccenter-references/api/arkts-apis-audio-audioroutingmanager.md#ondevicechange9)监听音频设备状态变化，外接麦克风/耳麦热插拔时动态更新功能可用状态。
+
+### 台式机相机适配
+
+问题描述：台式机默认无内置摄像头，涉及相机的功能（拍照、摄像、扫码等）若无相机硬件支持无法正常使用。
+
+解决措施：
+
+* 检测相机可用性：通过CameraManager.[getSupportedCameras()](../doccenter-references/api/arkts-apis-camera-cameramanager.md#getsupportedcameras)获取可用列表，台式机默认无相机，涉及相机的功能入口（拍照、录像、扫码等）需置灰禁用。
+* 用户点击已置灰的相机功能时，弹窗提示“当前未检测到相机硬件”，引导用户连接外接相机。
+* 监听相机热插拔：通过onCameraManager.[on('cameraStatus')](../doccenter-references/api/arkts-apis-camera-cameramanager.md#oncamerastatus)监听相机连接/断开，相机连接后，自动恢复相机功能入口的可用状态，断开后重新置灰。
+* 扫码功能在无可用相机场景下，建议提供文件导入作为替代方案。

@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-ark
 title: 打印表达式
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > 打印表达式
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:59+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:0916cdb86f8aec90a5994ac9d624cfc79ad757cce89bd0dcea8dc0c339ce5ff3
+content_hash: sha256:ad1c2520cc4817fe238c91e14632d3a620ac845eefdb66bf7ebd8052f3ab25a6
 ---
 
 开发者可以通过Evaluate and log能力在代码执行到断点行时打印开发者指定的表达式。
 
 1. 在需要打印表达式结果的地方设置断点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/5G4bcr08RzmixowGK9Oo5w/zh-cn_image_0000002779566804.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=496BC80BB52310057ED179B8655E5ADFDB9EE506FE4043D6D3DD9AF9657CF225)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/3vbkdytvQWuftmHfxbOy8Q/zh-cn_image_0000002779566804.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=174022A53BA5F79B173E47E99EB3993FA9411EE1088365541C4669D9190AF39E)
 2. 右键断点，然后点击**More**按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/fT8yBaoyT16O7inaWCq5_g/zh-cn_image_0000002808766389.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6B8C19C6D07565964DA5483DDEC0AF90836C4D56075236F5F7917EBDDC7BB15)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/4fLvqOOBQ4-tDCf429Y7KA/zh-cn_image_0000002808766389.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=B50A984D94DDC84F2B98F1E843F36308585B55415096ED7FDB3A0450FF8DE829)
 3. 勾选**Evaluate and log**复选框，并在下方输入框输入要打印的表达式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/xRRAjEklRjy8JZxgSDYO0g/zh-cn_image_0000002779566806.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=678FEC4185FCBB5669F2A797274E9AFC4039FC774428AEC2FA9966981D3E9A13)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/mDkJZT4eSYu5T8YjVSbXlA/zh-cn_image_0000002779566806.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=E47F7D3FF07C9695D80988546A33A3DF3D782B0FD31273E2DF76E4F11E7E834F)
 4. 启动调试，程序运行到断点时，切换到调试的Console窗口，表达式的打印结果将在这里展示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/xUKaIYGlRneJKdVPvTqVXQ/zh-cn_image_0000002779406828.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=53719AE7B434D60D3C4C5B44FF30A0A64F7761E84310056D818EDB7CDF393BC1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/bVpNzG6OTNCZb2u4919rQA/zh-cn_image_0000002779406828.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFDF4B1C634651A6ED6F14BDE19BDFA2E1D8EDEC3518B2678451A587E84A7FE5)

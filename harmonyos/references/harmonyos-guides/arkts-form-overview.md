@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-form-ov
 title: ArkTS卡片概述
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:18+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:52f5e67f18449e0f95c90d7b93d55954ac9862b512515bee025125f84d2994c4
+content_hash: sha256:bfff504742f44283117840e66637feea0ce1993f28fa2539f5bb3a3936208db8
 ---
 
 以下内容介绍基于ArkTS声明式开发范式语言开发卡片。
@@ -18,7 +18,7 @@ content_hash: sha256:52f5e67f18449e0f95c90d7b93d55954ac9862b512515bee025125f84d2
 
    **图1** 卡片工程结构对比
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/RjE74n6DSFix0CYJPB4zxQ/zh-cn_image_0000002815558939.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC88FA2B316AFCB0FD393ACEC63D337E7B28B111FEACE16DBB3B55C41F0D8530)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/Ocl0wrNsRned19jB8ZzsIg/zh-cn_image_0000002788467194.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AAEE3AA8BA8F8162B1F92A6A08100CC90A75B6B9C1D3C9BDCE6B3F3A5118133)
 2. 卡片能力增强
 
    * 新增了动效的能力：ArkTS卡片开放了[属性动画](../harmonyos-references/ts-animatorproperty.md)和[显式动画](../harmonyos-references/ts-explicit-animation.md)的能力，使卡片的交互更加友好。
@@ -34,11 +34,11 @@ content_hash: sha256:52f5e67f18449e0f95c90d7b93d55954ac9862b512515bee025125f84d2
 
 **图2** ArkTS卡片实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/rGle4xImRy6BwQ2ozbQ-DA/zh-cn_image_0000002815399023.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1903D98FF54D701CB8962765D4A9AB04611E64E230B7F5FFC9484DF725D2BBD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/GLiSIp2MQpWfPgpFGRx7ew/zh-cn_image_0000002817506683.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=97750EFC9B3583E7EAFDA89C3EF5E8CA3A32B21F78441A01DFBBEFD5AA0F8119)
 
 **图3** ArkTS卡片渲染服务运行原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/4QAqehEMSzGEdbNPD8D4jw/zh-cn_image_0000002786519448.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B0E08858308B35E29910CB032D96A10E84F0B16A4690E06A506EB2505B60491)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/x3hVzqgwSs26kc4RC1lw7g/zh-cn_image_0000002788307252.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=E25175A0018AD024C574C8001896F3B9D4D8B28735F4F5833E04F10F50402AFF)
 
 与JS卡片相比，ArkTS卡片支持在卡片中运行逻辑代码，为确保ArkTS卡片发生问题后不影响卡片使用方应用的使用，ArkTS卡片新增了卡片渲染服务用于运行卡片页面代码widget.abc，卡片渲染服务由卡片管理服务管理。卡片使用方的每个卡片组件都对应了卡片渲染服务里的一个渲染实例，同一卡片提供方的渲染实例运行在同一个ArkTS虚拟机运行环境中，不同卡片提供方的渲染实例运行在不同的ArkTS虚拟机运行环境中，通过ArkTS虚拟机运行环境隔离不同卡片提供方卡片之间的资源与状态。开发过程中需要注意的是globalThis对象的使用，相同卡片提供方的卡片globalThis对象是同一个，不同卡片提供方的卡片globalThis对象是不同的。
 
@@ -60,7 +60,7 @@ ArkTS卡片中提供了[postCardAction](../harmonyos-references/js-apis-postcard
 
 **图4** ArkTS事件交互实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/U6_U75sNQOCiUMiO9zay5Q/zh-cn_image_0000002786359520.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=339AD1902E89AFFF114FF7F901E450F0AABD0736DE72CCFA1043DD0CF198CEE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/wMj7HqD6T0GxwNKy9dhmOA/zh-cn_image_0000002817426615.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B7A5A2A46E1D0EC39BA9D1BF14DF6CF469C25EBB6819E179F5A9EDFC0E5BB84)
 
 动态卡片事件的主要使用场景如下：
 

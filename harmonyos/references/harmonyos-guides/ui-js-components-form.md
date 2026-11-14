@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: form开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > form开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:10+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:72b652bbc1fd052611f4dbf5c87182a65942e45e59cd022bce41f1afbd72a9d4
+content_hash: sha256:62c8b2e9487b0d1fab95cd8aa447f2c548a8f28705a7760f7b2088d7460a50ca
 ---
 
 form是一个表单容器，支持容器内[Input](../harmonyos-references/js-components-basic-input.md)组件内容的提交和重置。具体用法请参考[form API](../harmonyos-references/js-components-container-form.md)。
@@ -35,7 +35,7 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/jh70gMpEQ8WNtxqG1HaxWA/zh-cn_image_0000002786519224.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=B37BED89CC17BAAA83C7128C32C9A8D89F6DBF1552E3655A02F062300B9802CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/AB0IrozrScSrsrVUTfqNQQ/zh-cn_image_0000002788307028.png?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=627325F78FAF293E37875E8C3A05306454BD96C4B1376DE70B6B717243D5A080)
 
 ## 实现表单缩放
 
@@ -72,7 +72,7 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/EaKluAenQvOZkgB4BljgYg/zh-cn_image_0000002786359296.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF1754E1EE702A39B089DD0265204544DAF214284BA52263F8EE2C6BEF338F82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/lG8aGGaDQZORco9rHijI_A/zh-cn_image_0000002817426391.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA7D66947B2C0006DB8C7DD8D2E7567D2A79B776AC72065EA13DE03D13966F77)
 
 ## 添加响应事件
 
@@ -134,7 +134,7 @@ export default{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/vdu4GKMlRmK4ySbkAT1kIg/zh-cn_image_0000002815558717.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=565BB95F3F565693773A9D63FE606444DC56D699A2FFA0DD0EB2D455C311FDDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/9SuUxEYQT4O96IYFkhyUFQ/zh-cn_image_0000002788466972.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=E73ECFF2840B7978DC7282B1BC5A2286AA6950B1ABB0796686EA26015628840A)
 
 ## 场景示例
 
@@ -213,4 +213,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Xp1LNJS1RVGMmmYFgm3y1Q/zh-cn_image_0000002815398801.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=5628F31738B7C4F9260E54E13ED87EFC259B8A041677B518495586126E5B5B99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/LAELI8hQRISqABeIi9nUuw/zh-cn_image_0000002817506459.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A5BF97E67F3AA63A5C2D58002D221B94C68B34466E3D70FE48326574BE36E5F)

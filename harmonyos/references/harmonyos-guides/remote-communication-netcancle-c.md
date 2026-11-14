@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 取消网络请求（C++）
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 发起HTTP请求，获取响应 > 取消网络请求（C++）
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:44+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:c65e0cd4fd3b07bbaaea82d4283e3910d29b265cb447c025c093f485c9fdc069
+scraped_at: 2026-11-14T08:47:37+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:e613dc225ddf84d81bc973bb9ecd417aa0690563fba59370058f3361feb516b0
 ---
 
 在远场通信服务的框架中，使用HMS\_Rcp\_CancelSession方法可以取消传入session的所有正在进行的网络请求。如果开发者需要取消特定的一个网络请求，可以使用HMS\_Rcp\_CancelRequest方法，并传入需要取消的请求，以实现这一目标。开发者们可以根据具体需求，灵活地管理和控制网络请求的执行。总之，HMS\_Rcp\_CancelRequest方法的灵活运用，不仅能够优化网络资源的使用，还能提升应用程序的用户体验。
 
 ## 约束与限制
 
-取消网络请求能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+取消网络请求能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 接口说明
 

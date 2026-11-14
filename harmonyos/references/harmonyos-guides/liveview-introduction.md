@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-intr
 title: Live View Kit简介
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > Live View Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:28+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:38e82cbcbbb386b7786bcdf5ca4453a4a616a0450c22ce7c6e4b7a77c132aaf5
+scraped_at: 2026-11-14T08:48:23+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:e703f458e50763d892ead91c5e0ac4f8da93944b8b0c01348a33a652c38e97a8
 ---
 
 Live View Kit（实况窗服务）支持应用将订单或者服务的实时状态信息变化在设备的关键界面展示，并对展示信息的生命周期、用户界面UI效果等进行管理。
@@ -87,6 +87,7 @@ Live View Kit（实况窗服务）支持应用将订单或者服务的实时状�
 | 快递 | EXPRESS | 用户存在待取件快递时，提醒用户取件。 | **适用范围**：  适用于快递取件场景。  **不适用场景案例**：  未接入实况窗地理围栏的快递信息推送。 |
 | 进度类型 | PROGRESS | 用户手动开启的上传/下载文件、音视频编辑导入/导出资源等场景下展示任务完成度。 | **适用范围**：  适用于用户手动开启的上传/下载、资源导入/导出等场景下的任务进度提醒、AI任务，工具类应用。  **不适用场景案例**：  文件在后台自动上传/下载、资源在后台自动导入/导出、应用内资源下载等。 |
 | 金融交易 | TRADE | 在用户证券交易进入买五至卖五核心交易区间通过实况窗展示交易变化如价格、挂单、成交等有效信息。 | **适用范围**：  适用于股票、基金交易等场景下的成交进展提醒。 |
+| 课程提醒 | SCHEDULE | 用户在校园学习期间，向用户展示当前正在进行或即将开始的课程信息，包括课程名称、上课地点、授课教师、上课时间段及课程状态（即将开始/进行中/已结束）等关键信息，帮助用户快速了解下一节课程安排。 | **适用范围**：  适用于中小学、高校、职业院校、培训机构的课程表提醒场景，包括单节课即将开始提醒、课程进行中状态展示、课间切换提醒等。 |
 
 ## 受限说明
 
@@ -111,7 +112,7 @@ Live View Kit（实况窗服务）支持应用将订单或者服务的实时状�
 
 ### 通过Push Kit创建和更新实况窗的约束限制
 
-* [通过Push Kit创建实况窗](push-update-liveview.md)当前仅支持FLIGHT、TAXI、TRAIN、DELIVERY、QUEUE、RENT、EXPRESS、CHECK\_IN、TRADE、SUBSCRIBE\_TIMER场景。
+* [通过Push Kit创建实况窗](push-update-liveview.md)当前仅支持FLIGHT、TAXI、TRAIN、DELIVERY、QUEUE、RENT、EXPRESS、CHECK\_IN、TRADE、SUBSCRIBE\_TIMER、SCHEDULE场景。
 * 实况窗可以通过Push Kit进行更新，保证实况窗不依赖应用进程的存活。利用Push Kit的推送服务，实况窗能够实现生命周期内的正常更新和结束。
 * 通过Push Kit更新实况窗时，单个实况窗消息，出行打车与赛事比分场景每个设备每5分钟最多更新30次，每小时最多更新180次。其余场景每个设备每5分钟最多更新10次，每小时最多更新60次。超过频次部分将丢弃不下发。
 

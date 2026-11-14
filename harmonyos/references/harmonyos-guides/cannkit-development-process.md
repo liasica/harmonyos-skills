@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-devel
 title: 开发流程
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子部署 > AscendC算子入图（GE图）开发 > 开发流程
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:38+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:09459822a6d92dd77e4ab194c7b3865be722f813b7f82d640d75b937ae9dcfa5
+content_hash: sha256:64607c5fbc33d026e0e9e632c400e2f15ec48990180347054394ef1c6d6143ed
 ---
 
 该开发流程以[工程化算子开发](cannkit-overview-of-engineering-operator.md)为基础，除了需要提供[算子实现](cannkit-operator-prototype-definition.md)中的算子实现文件外，还需要额外交付算子入图的代码文件。本节仅提供算子入图代码文件的开发指导。
@@ -16,7 +16,7 @@ content_hash: sha256:09459822a6d92dd77e4ab194c7b3865be722f813b7f82d640d75b937ae9
 
 **图1** shape与datatype推导示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/xz2KMubpQEmk2Sv-Cluhug/zh-cn_image_0000002815400205.png?HW-CC-KV=V1&HW-CC-Date=20261112T233224Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9C403130CA0B342E93B63C4F946CBAF3C5CA397C4DFC52CFF6E0A234FBBE282)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/I2kbJ1qST_qGZ03XqjN2zA/zh-cn_image_0000002817427797.png?HW-CC-KV=V1&HW-CC-Date=20261114T004838Z&HW-CC-Expire=31536000000&HW-CC-Sign=73EF82274083663059FCBD741605DD6B49490C356118054B32841824A36D4164)
 
 除了tiling实现外，算子入图时需要额外提供的实现代码有以下几种：
 

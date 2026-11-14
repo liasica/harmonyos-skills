@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-identity
 title: 用户身份认证访问控制简介
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 访问控制 > 用户身份认证访问控制简介
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f27c51074b8439a4e99337c1545809ac3296a12f111b96a712741c147cc7762e
+content_hash: sha256:e510adc7400d103992333275509cffa9e1bf6ad8841e90be0b55ed16f0977b38
 ---
 
 HUKS提供了完备的密钥访问控制能力，以保证存储在HUKS中的密钥被合法正确地访问：
@@ -70,7 +70,7 @@ HUKS提供了完备的密钥访问控制能力，以保证存储在HUKS中的密
 
 * **根据AuthToken进行访问控制**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/xRdfMDYsQrG30Uh5t8ijLQ/zh-cn_image_0000002786359698.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4661C810F0D8B286F173CDC0E8E3687477AEFDFC94A556F03FD06DD9ADEDBE8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/EG4V09pMQkWa6IzGq0cUaA/zh-cn_image_0000002817426793.png?HW-CC-KV=V1&HW-CC-Date=20261114T004731Z&HW-CC-Expire=31536000000&HW-CC-Sign=774B6BA3D7ED968B6A23C3F9CB22F095C67871C5C86ECE46CADC8640ABB2F526)
 
   用户身份认证访问控制流程如上图所示。
 

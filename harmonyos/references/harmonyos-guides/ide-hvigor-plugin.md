@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-pl
 title: 开发Hvigor插件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 扩展构建能力 > 开发Hvigor插件
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:04+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:a78a6e0119f87aa812ee4a11f3f1d2ca920ba9f7aea129cfcdf15d870d03f1c6
+content_hash: sha256:5e850116bd6f345d86ec7a957813c1ff79c80ba64d895222e4c8b606359b6767
 ---
 
 Hvigor允许开发者实现自己的插件，开发者可以定义自己的构建逻辑，并与他人共享。
@@ -26,7 +26,7 @@ Hvigor主要提供了两种方式来实现插件：基于hvigorfile脚本开发�
 
 若开发者需要创建新的构建脚本，推荐将这些脚本统一放在工程或模块的scripts目录下，以便与应用代码进行隔离，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Hll_b-MLTzS5YgOo8JAPNg/zh-cn_image_0000002779566838.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=23C7F9CACEC0A03BEE56CE8D8B5DF5253E2C4F311F433A6CB7362E8528F357F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/5CYGYo6bQ2C0lYiESA2IEQ/zh-cn_image_0000002779566838.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EEF6997B918726E76B908EBCD9D63D8657F17808EC0D9A0DB12BA385B1A6D66)
 
 以工程级hvigorfile.ts脚本为例，开发步骤如下。
 
@@ -66,7 +66,7 @@ Hvigor主要提供了两种方式来实现插件：基于hvigorfile脚本开发�
 
    执行Hvigor命令时，在Hvigor生命周期配置阶段执行插件中的apply方法。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/1E0S-tmzQxO6KYaTFJgVQg/zh-cn_image_0000002808766425.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=95DA062F5D98A69CB0950A8D07BDBEAE69FDF4D660DF00563523958706608428)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/q4f-mwFgR7OOAodE_b4hrg/zh-cn_image_0000002808766425.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C1888A33CD8330C89725C9FCC661F652AF773101AD5065A7C21C79F71222DA9)
 
 ## 基于typescript项目开发
 
@@ -100,7 +100,7 @@ Hvigor主要提供了两种方式来实现插件：基于hvigorfile脚本开发�
    tsc --init
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/Ty3ox6yPQTey8qMxGin48g/zh-cn_image_0000002779406864.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F324D89374BB59E89E3F1D24A523B544E0521781FE336F97E128DB737362A57)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/1VwKz8xzRPOtK8BSadl9Sg/zh-cn_image_0000002779406864.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=41F732314B615DDFD61B7CD7CFB02F7E0746A0114E84F22A1FD367D17838C1BA)
 5. 删除verbatimModuleSyntax字段。
 
    检查tsconfig.json文件是否存在verbatimModuleSyntax字段，如果存在且配置为true，会导致无法使用ESM语法，编译时会报错，因此需要删除该字段。
@@ -187,7 +187,7 @@ typescript项目本质上是一种npm项目，插件发布流程遵循npm发布�
 
    如果编译时报以下错误，请检查初始化项目时是否[删除了verbatimModuleSyntax](ide-hvigor-plugin.md#li88369101451)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/f-Gt1NKZTwqH_5hhEvw9qw/zh-cn_image_0000002808886503.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=820BA272CFAB9C9B465EC5ABEC8DA2B68BB3C60731F966987B40C6532DD18690)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/xNe7gxaIRqev5AnBzJwgSA/zh-cn_image_0000002808886503.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEAF5536429C25A67B8D94F54C22B600CCA0BBB80AFBE66E3550643C4A0B7D3D)
 4. 发布npm包。
 
    执行如下命令，将npm项目打包并发布至镜像仓库。

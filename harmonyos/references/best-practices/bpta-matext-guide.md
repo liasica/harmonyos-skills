@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-matext-gui
 title: 三折叠应用开发
 breadcrumb: 最佳实践 > 多设备体验进阶 > 手机 > 三折叠应用开发
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:11+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:f36718725616282ba6306ebf8d81d80ec1ab87039f44599e9aee6ea3efacec48
+content_hash: sha256:5af501a5fa033278ace843df5b4742f179fce577be194735a2d8753ef36a9ccf
 ---
 
 ## 概述
@@ -139,25 +139,25 @@ Mate XTs的双屏态（M态）及Mate XT 2的RM态下，前置相机功能可用
 
 1. **智感握姿**：系统提供感知用户当前握持手信息的能力，应用可依据获取的手部信息，自适应调整核心交互组件的显示位置，有效提升用户单手操作便捷性。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/KK2CCZAJReKp1-B5G2zDew/zh-cn_image_0000002585626656.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFFADF7540D3522B6D411139117EC401AD2FB913C8E4B806FFBEC58FC8A1FFAC "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/WW8MpuYUSyucy6Gtmo3_tg/zh-cn_image_0000002585626656.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCD8104301750A1820DED93FEC1F1A61FB48E5736D8299C4506ADCC8D9A44483 "点击放大")
 
    通过订阅握持手状态变化感知事件[motion.on('holdingHandChanged')](../harmonyos-references/js-apis-awareness-motion.md#motiononholdinghandchanged-20)，获取到握持手信息后，更改组件的显示位置。
 2. **跟手弹框**：为了减少用户操作路径过长的情况，在双屏态和三屏态可通过跟手弹窗进行展示，弹出框的弹出位置离手更近，以便用户能够快速操作。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/CR2ZQZCAQXWjvarDzfn0SA/zh-cn_image_0000002615986371.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=A71B0DAC593E0551228EB2D70A40BE7BF2A3FDD5D5D781AF7FD53E9260D58BA4 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/nl5PLNPHSA-MPK4j2PZpQw/zh-cn_image_0000002615986371.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA8E6F051EA122DA0CC92FE7509201578EE8C9C4177D0E8960677C6074131076 "点击放大")
 
    构建UI布局时，可通过条件表达式判断：当横向断点为sm时，使用普通居中弹框；否则，使用跟手弹框[PopoverDialog](../harmonyos-references/ohos-arkui-advanced-dialog.md#popoverdialog14)，提升大屏设备的操作效率。
 3. **跟手半模态**：在单屏态，半模态窗口通常从屏幕底部弹出；在双屏态，建议窗口居中显示；而在三屏态，可以考虑跟手半模态窗口或者居中半模态窗口显示，具体根据业务需要选择。
 
    使用[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)绑定半模态转场时，设置半模态属性preferType为[SheetType](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheettype11枚举说明).POPUP。设置该属性后，窗口宽度小于600vp的设备将默认显示底部弹窗，其他设备则自动适配为跟手弹窗。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/-4Ep6uYJTiWSugUSoLAcUA/zh-cn_image_0000002616066471.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C6136328B6AE861E30816FC110B901787A0BDCE8EF02AA6156F719B7EEC1708 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/OQg_JMonQqGdxreBJBHFbw/zh-cn_image_0000002616066471.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=F506A902A7FC334BDF1CD84FC7BF40EF0842DA4CD74C31999A1301D7522FA977 "点击放大")
 
 ### 悬停态适配
 
 Mate XT系列在双屏态下可切换至悬停态。悬停态支持设备平稳放置于桌面，实现免手持体验，常用于视频通话、视频播放、拍照、听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并对上下两个界面进行悬停态布局适配。悬停态的实现方案可参考[折叠屏悬停态](bpta-folded-hover.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/jQXM224RSDGHvjUxOQtMyQ/zh-cn_image_0000002585466742.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CD6DAA9D44AD1BC7C47F565D31F21B119662518D76E2DC955AF20E2AD310D9E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/TcuszxGTQ8m3T2reJYe6ZQ/zh-cn_image_0000002585466742.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=91FECBF21C5B638956A4F96457E7468063580AD8DCFFE2219D397B85B954946E "点击放大")
 
 **说明** 
 
@@ -171,13 +171,13 @@ Mate XT系列在双屏态下可切换至悬停态。悬停态支持设备平稳�
 
 三折叠设备具备单屏、双屏、三屏三种形态，借助[HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)组件的[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性实现悬浮导航栏，可适配各类形态切换场景，充分释放屏幕可视区域；通过悬浮材质参数[SystemMaterialParams](../harmonyos-references/ui-design-hdstabs.md#systemmaterialparams)配置透明磨砂材质效果，提升界面通透感，适配沉浸式浏览体验。搭配[HdsTabsMiniBar](../harmonyos-references/ui-design-hdstabs.md#hdstabsminibar)可扩展迷你标签栏，拓展多维度快捷入口，适配双屏态和三屏态的分区操作，同时保障单屏、双屏、三屏形态下交互逻辑统一，降低用户切换成本，有效提升操作效率与使用体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/AONo1O4_SvSHrUB8ghpGkA/zh-cn_image_0000002585626678.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB2E752D1CA037D3080377CD27BC103853E41F8169A498A7F35662180918E264 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/q-fy3HNsRGiGZLhMZD7p9g/zh-cn_image_0000002585626678.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B60F6AE9B6E23E2F8A25F220E05BA8AEA688391D866DC89D2747F8F7C700DF7 "点击放大")
 
 ### 视频自适应沉浸
 
 三折叠设备具备单屏、双屏、三屏三种形态，为避免视频播放画面在形态切换时出现拉伸、裁剪、显示比例错乱等问题，可采用自适应沉浸全屏播放方案，精简界面元素、减少视觉干扰，让用户聚焦视频画面，充分利用大屏开阔视野，有效提升观看体验。具体实现方案，可参考[视频适配不同尺寸屏幕](bpta-multi-device-screen-diff.md#section1452572513130)章节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/MHnujZU2Qpe_7wBFiKf9xg/zh-cn_image_0000002615986397.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBDEFB29DCAC9F13A247B800A45FE3559A490B180A45572D0238713951015C2A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/GHN7UK5CT-6d3YDWJmRA1w/zh-cn_image_0000002615986397.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E533039430435C47D152DB8A42B4A9255E875E9710B9F8B3E4D1196F4198905 "点击放大")
 
 ### 手写笔适配
 
@@ -185,7 +185,7 @@ Mate XT系列在双屏态下可切换至悬停态。悬停态支持设备平稳�
 
 Mate XTs及Mate XT 2产品搭载手写笔，支持无感连接与低延迟传输，开盒即用，适用于全局批注、提笔速记及按键遥控等功能场景，实现流畅自然的书写与交互体验。系统提供的[Pen Kit](../harmonyos-guides/pen-introduction.md)能力，可助力开发者灵活接入手写套件、全局取色、一笔成形等接口，提升书写交互的扩展性与创作效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/2SYHZICfQnqBvx7GEjgY8g/zh-cn_image_0000002616066493.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C24EA46903081B3E0AF9F5E7912E54E49CC6EE0ADEB54553C91E9566CE8C142 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/LxuB-gkNSlitXKrmLBKhpw/zh-cn_image_0000002616066493.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=D26E4C98822B4F8A25ADA8AE756D9A6ABFF53105FCE3B4A69F051D536ED10954 "点击放大")
 
 ### 键鼠适配
 
@@ -210,7 +210,7 @@ Mate XTs及Mate XT 2产品搭载手写笔，支持无感连接与低延迟传输
 
 [全景多窗](../harmonyos-guides/multi-window-intro.md#全景多窗)旨在帮助用户高效处理多个任务。通过全景多窗，用户可以突破物理屏幕局限，在同一屏幕内并行运行多款应用，实现应用间快捷切换，提升操作效率。以Mate XTs产品为例，该产品三屏态横屏状态下拥有更大的显示视野，具备更强的信息展示与内容承载能力。可依托全景多窗能力，充分利用大屏空间优势，最高支持三个窗口同屏并行运行，助力用户一边浏览资讯、一边编辑内容、一边沟通办公，多任务同步处理、互不冲突，实现办公、娱乐、日常操作一站式协同。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/q8AJ3IkdQq6-34z9SlvfHA/zh-cn_image_0000002585466754.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0FE1B21A7A812460BFF883166B72FFCF1A072CA5B87BE239829B1FE3275CAD3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/J5o8p3VlT6yFGMd5QHRphA/zh-cn_image_0000002585466754.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=E703CF6A5B48A7CA8E535F0F44F64D9E5FB2D306FD7CC4A2489D11E2638C0552 "点击放大")
 
 ## 设备常见适配问题
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 键盘判断事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 键盘判断事件
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:03+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:688c9e5e167ac0d8ffcb3ce7a970fe61b0bbddd3a13f8965338c2381e6588ff6
+content_hash: sha256:60c71f37e2b278cd52f964317d6be4001432568a9199888c8a3f6563e8068a38
 ---
 
 当组件获得焦点时，获焦组件触发该事件，用于在焦点切换时灵活控制软键盘的显示与隐藏。系统会根据该事件回调函数返回值，判断是否需要键盘。主要适用于键盘接续场景，帮助开发者避免键盘频繁收起和拉起，优化用户交互体验。
@@ -103,4 +103,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/tXIePQTpT6K7bQ5lXF5Xfg/zh-cn_image_0000002786360962.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3B1F300F058BF3B17BD475249355C12AD4472F266EC1DA79CC42CD7AE1B1806)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/DDtA6TTTSn2wnhZt_AbgAw/zh-cn_image_0000002817508127.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005003Z&HW-CC-Expire=31536000000&HW-CC-Sign=729C3C77361D920354900EC2D257D3020326C17A210C74052CDF7386E4923E15)

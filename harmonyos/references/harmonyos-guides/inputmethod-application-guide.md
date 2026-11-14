@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inputmethod-a
 title: 实现一个输入法应用
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 实现一个输入法应用
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:20+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:0aca61ba4d0ec9a4a98ac786ef1bff0045a25b49aed007922312caa097811215
+content_hash: sha256:248f15dc5c04ff42cf5e21e8b47c61f5b54e363eb7ad8ba788db2aea0dffeb4d
 ---
 
 [InputMethodExtensionAbility](../harmonyos-references/js-apis-inputmethod-extension-ability.md)提供了onCreate()和onDestroy()生命周期回调，根据需要重写对应的回调方法。InputMethodExtensionAbility的生命周期如下：
@@ -71,7 +71,7 @@ content_hash: sha256:0aca61ba4d0ec9a4a98ac786ef1bff0045a25b49aed007922312caa0978
    ```
 2. KeyboardController.ets文件。KeyboardController中除创建输入法窗口，设置输入法事件监听，实现文本插入、删除之外，还可以使用Panel对象的[getSystemPanelCurrentInsets](../harmonyos-references/js-apis-inputmethodengine.md#getsystempanelcurrentinsets21)获取输入法键盘与系统面板的偏移区域，输入法系统面板在不同设备上存在差异，当设备有系统面板时，输入法软键盘相对系统面板的偏移区域如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/yxBHC98nTUOpbqHIybQYRw/zh-cn_image_0000002786359584.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7E5F35CD5C1266D25883B800ED12C14C69C2CCB7EE3E21F03A402CEC00C7F5F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/0LrBq1GSRxuDZfZvzbSSuA/zh-cn_image_0000002817426679.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=068E1449E16BE83E2BF87189B8192AB3CFC0CA19DDA12C90D554B52AF1AC8027)
 
    ```typescript
    // 定义输入法的两个子类型
@@ -954,4 +954,4 @@ content_hash: sha256:0aca61ba4d0ec9a4a98ac786ef1bff0045a25b49aed007922312caa0978
 
 ## 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/hLByjB1LRUGl-I4ly1RVgA/zh-cn_image_0000002815559005.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=8361460EC5F7EC9338284D8F23D9A1B8DF725F3C817CB8C615736C2FA33C03F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/9UF5k2E5T5CACN823I8pIQ/zh-cn_image_0000002788467260.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6A5DBDB5106681A180B46217A3B81F26D6DEF9D5865C0D338A2B4D402527FBE)

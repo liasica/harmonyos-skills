@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 拉起许可应用跳转页
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 应用选择页 > 拉起许可应用跳转页
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:57503e16a99001b5549d5f333407ea00ec60e2c021d55a405fc93c6d4b5d313e
+scraped_at: 2026-11-14T08:48:32+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:68aff566e7132965e09a584be30f95632cea12bf4914c34d4a0c71bbbc7fe835
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:57503e16a99001b5549d5f333407ea00ec60e2c021d55a405fc93c6d4b5
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/fxePwsDASFqS8seCXsqoKQ/zh-cn_image_0000002815400087.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=35F36B99A6C0F828071157571C079EFAAB858C1FF51B304A25744B5DAD3D04D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/6YYdTuUmQsOxvBlavDzGiw/zh-cn_image_0000002817427679.png?HW-CC-KV=V1&HW-CC-Date=20261114T004831Z&HW-CC-Expire=31536000000&HW-CC-Sign=97DDAA860969247E93616C6E8687D9CBEBB7B888BE26829D36070A35472D305B)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/OWhJn9KMQtm4OzQtYDBLMw/zh-cn_image_0000002786520512.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=B49CFF0B8EEC59077A7C10676E1208263F4F00DCEA77F7368552727F566AF357)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/PMb6azUIQD6VOGpAgYukYQ/zh-cn_image_0000002788468260.png?HW-CC-KV=V1&HW-CC-Date=20261114T004831Z&HW-CC-Expire=31536000000&HW-CC-Sign=340B1DBEFB58350B8348DF4D1C7B52225EA115F4F4179E86770A77D614B41C70)
 
 流程说明：
 
@@ -52,6 +52,8 @@ content_hash: sha256:57503e16a99001b5549d5f333407ea00ec60e2c021d55a405fc93c6d4b5
    ```typescript
    private async jumpToOtherApp(selectedAppTokens: string[], subtitle: string): Promise<void> {
      try {
+       // appTokens为在许可应用跳转页中展示应用对应的token数组，可通过调用startAppPicker接口获取
+       // subtitle为许可应用跳转页的子标题，可根据业务需求设置
        await appPicker.startAppForm(
          this.getUIContext().getHostContext(), { appTokens: selectedAppTokens }, subtitle, true);
      } catch(error) {

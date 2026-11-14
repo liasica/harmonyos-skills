@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持触控板输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持触控板输入事件
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c914e6ed71894368fa8c0918a3bc430cbc2271770b18b3aa6d0411b162c23ba4
+content_hash: sha256:dbb0cf3b605d5b9cc14138214902dabf1325b6ee938bc842f75824172b6e0f37
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/WRMViNywRqis3nXB3W_SJg/zh-cn_image_0000002786519044.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7ABB6C1D82342F1C15044DB9A10ECF7252CBAD0BB5A1B86279D8CCB3737BCF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/JfTNkaVeQFyNWg1n0DbMzg/zh-cn_image_0000002788306848.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=858BA4F0F23EC0A789360E78EB3A3A8DA26AE4C4ABCF127D241DB0A2A8D16ED9)
 
 当用户使用触控板时，会根据不同的操作方式生成相应的事件。单指点触会产生鼠标左键点击事件，单指轻触移动会产生不按键的鼠标移动事件；双指点触会产生鼠标右键点击事件，双指轻触移动会产生轴事件。
 
@@ -18,7 +18,7 @@ content_hash: sha256:c914e6ed71894368fa8c0918a3bc430cbc2271770b18b3aa6d0411b162c
 
 ## 单指操作
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/nmzfWgfgQTCQ_SgNmjEbWg/zh-cn_image_0000002786359116.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=166411B0A12036FCF798DCFE833A308045C69C97872CE3F8317669B5B7A15C75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/38_xmM_uRUG6Qnw9YhuxGQ/zh-cn_image_0000002817426211.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=92CA26AD6A1E9A031C5EA2029C89E0876B61D028B434A53515F42252BDF27172)
 
 单指操作触控板与操作鼠标的方式相同。例如，轻触后滑动会产生鼠标移动事件，而重按则会产生鼠标左键按下事件。若需判断鼠标事件是来自触控板还是鼠标设备，可以通过[sourceType](../harmonyos-references/ts-gesture-settings.md#sourcetype枚举说明8)和[sourceTool](../harmonyos-references/ts-gesture-settings.md#sourcetool枚举说明9)信息进行区分。
 
@@ -26,7 +26,7 @@ content_hash: sha256:c914e6ed71894368fa8c0918a3bc430cbc2271770b18b3aa6d0411b162c
 
 ## 双指滑动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/m_gWb9fgTkyH0DrSjXTR1A/zh-cn_image_0000002815558537.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=04B0F1E03773FE29760EF565F66039ED8E6140DB866A9CF96F7355D641957E1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/gd6ddFImQ6mK_SEWXQuCHA/zh-cn_image_0000002788466792.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=0770CEA52A3712150370C2979A7E5DF82B8E4A54174EB076485E9037E60B0C4A)
 
 与鼠标滚轮不同，触控板上双指滑动产生的轴事件上报的数值单位并非角度，而是位移像素，为了区分该点，在处理轴值之前，可以通过sourceType及sourceTool来区分。
 
@@ -40,6 +40,6 @@ content_hash: sha256:c914e6ed71894368fa8c0918a3bc430cbc2271770b18b3aa6d0411b162c
 
 ## 双指捏合
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/12ux-KAfQ6W9jFnet6WIjA/zh-cn_image_0000002815398621.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A15ACF276D1D36CC3A872F4DD676ED8824387FF246EBC6FD009A125C9D8B57D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/elN16owtQiOoGRZRjgXqrQ/zh-cn_image_0000002817506279.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=12DFB24E684153785E712F9F0B5A4F717441E8B84D146FD2AD9BFBEB5A537D73)
 
 在触控板上通过双指捏合，可以产生捏合缩放值上报。该值表示一个相对缩放比例，可用于实现UI缩放效果。系统上报的数值为一个scale比例，其以双指开始捏合的那一刻（此时为1.0）为基准参考。当双指往外扩张时，scale逐渐从1.0增大；当双指往内合并时，scale逐渐减小。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 配置Skill
 breadcrumb: 指南 > DevEco Code > DevEco Code Plugin > 操作指南 > 配置Skill
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:34a32544d463adc12e291d42aec092c56e6ab0f3683bae17b20c41ad92c6129b
+content_hash: sha256:64dfaa5f2d6a954bbe1d944cfcb200e2b41606fe6c07fd951a26a3da3b523b55
 ---
 
 在日常工作中，我们经常需要处理重复性任务，如调整文档结构、撰写周报告等，每次都需要输入格式要求、偏好、操作流程，这种模式不仅耗时，也容易遗漏关键细节。Skill是一份标准化的操作指导教程，用于规范DevEco Code处理任务时的思考方式、执行步骤、输出格式及注意事项。开发者只需要定义一次，DevEco Code便能在后续的每次对话中自动识别并应用，实现“一次定义，长期稳定复用”。
@@ -60,15 +60,15 @@ metadata:选填
 
 ## 操作步骤
 
-1. 点击DevEco Code界面**Menu**中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/JFulxBVMSpa-4ydplEDc_g/zh-cn_image_0000002779407322.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=70E7DA56A7F98A72282A5056942D88255FF9CA55679F8FC08DB208399D0FF871 "点击放大")Skill卡片，或点击菜单栏**File > Setti**n**gs > AI > Skills**，进入配置页面。
+1. 点击DevEco Code界面**Menu**中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/GgWn-le5RGyuHyWLbSysKA/zh-cn_image_0000002779407322.png?HW-CC-KV=V1&HW-CC-Date=20261114T004733Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C5D346CDC14EBFA133ECFADA97842D80BAF7E89E3279EEB5CFC737E0A0F2CF2 "点击放大")Skill卡片，或点击菜单栏**File > Setti**n**gs > AI > Skills**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/1CeXHfFLRMOjESbsmc453Q/zh-cn_image_0000002779567296.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FF1E8C2443164E7BCD9E05123FE8A16A2E40DC50B1076B1296F7BECD42F710A "点击放大")
-2. 在**Global Skills**或**Project Skills**下，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Jge_m8KPR9aYRlWK4XzG7g/zh-cn_image_0000002808886959.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=33B6A43DECAB5AF7EF7DD566AB49C9B7A318DE71EAA88F1E71AE87E8721EFEF6)导入Skill文件夹或文件夹的压缩包（.zip格式），点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Qcj-3H7JQxWc2KU0hafTUA/zh-cn_image_0000002808766879.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEE17FA03A792081927BAE346A6B8075D0307994043F8D63B895AD6708BE828D)删除。SKILL.md的父目录为技能根目录。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/sYk1rzpKRs2PJvBhfyS8CA/zh-cn_image_0000002779567296.png?HW-CC-KV=V1&HW-CC-Date=20261114T004733Z&HW-CC-Expire=31536000000&HW-CC-Sign=615D07D3D660349FE6E20743A3182CA016BE2FEBA72F2277BFE62C10721B1AB8 "点击放大")
+2. 在**Global Skills**或**Project Skills**下，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/le__ZYxsS6e-D2ZW3_IW3A/zh-cn_image_0000002808886959.png?HW-CC-KV=V1&HW-CC-Date=20261114T004733Z&HW-CC-Expire=31536000000&HW-CC-Sign=79BFD3510B056B222EBEA74D3A464079AA64B4FB8A7A9A2845F9507B34CE1DA3)导入Skill文件夹或文件夹的压缩包（.zip格式），点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/0XZAAp3mRfan-SK7xrt07w/zh-cn_image_0000002808766879.png?HW-CC-KV=V1&HW-CC-Date=20261114T004733Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E61AF030F5BAD7E6200AB086F0FD4C287C316226A600AD78468F3670EBC474B)删除。SKILL.md的父目录为技能根目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/PunY_l9oT2yave4fqcFkOg/zh-cn_image_0000002808886961.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A87E399CC8A6DD50B7643C9651E6CDDE4578345FE0A7AE1E955FC8F96E2E39B "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/y5iQ33gCRq2pZ2vIZWZi3A/zh-cn_image_0000002808886961.png?HW-CC-KV=V1&HW-CC-Date=20261114T004733Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E50CDD81EABE1AE720D109D666DE3E6CB8263B4770AD9CAED453824378E3F09 "点击放大")
 3. 在**Global Skills**和**Project Skills**列表中，显示已导入的技能信息，包括启用状态、技能名称、描述信息（最多显示60字符）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/p2CMEd7LS-Km763k8t_GPw/zh-cn_image_0000002808886957.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0889946E9450762EF7BC3ED8139056C8DECD361D31B9F6FDD2FECF7614FBC8D "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Ig6yz4gZS72nEsU32Ls-sw/zh-cn_image_0000002808886957.png?HW-CC-KV=V1&HW-CC-Date=20261114T004733Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CB98BCC7162EE58C0C53AC150E51B56EF150CD3A2C0A16BD3085F0BE0E1E7F7 "点击放大")
 4. 返回DevEco Code，在输入框输入"**/**"可以查看所有的Skills，选择对应Skill后进行问答。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/6PeL9NV6TTWptA-Xg_hUKw/zh-cn_image_0000002808766877.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=2546CFD49678FA8E495FE8196D722722FFC753BC0BB1F3F6A2C6738783DCCC67 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/zrGMqAl-QSytUD61NKwiBw/zh-cn_image_0000002808766877.png?HW-CC-KV=V1&HW-CC-Date=20261114T004733Z&HW-CC-Expire=31536000000&HW-CC-Sign=70E71F559A28FF414E281C93D32C66FC49C41A9B49D573331B6E69B108B5EE06 "点击放大")

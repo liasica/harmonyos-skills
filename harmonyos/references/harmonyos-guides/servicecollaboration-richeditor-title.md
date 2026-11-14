@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/servicecollab
 title: 跨设备互通（RichEditor控件）
 breadcrumb: 指南 > 系统 > 网络 > Service Collaboration Kit（协同服务） > 跨设备互通（RichEditor控件）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:38+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:3747957409030595bd9dfdd64652e31af58a49cf55b3a7eee49e971316e104ac
+content_hash: sha256:87d0524d98037406e856e0fac1ff318149a6ab1c13f19ed50e8ebb9b4fd5e501
 ---
 
 富文本控件[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)已集成跨设备互通能力。在Tablet或PC/2in1设备上，用户可通过其右键菜单调用Phone的相机、扫描及图库（访问图片）功能。
@@ -77,19 +77,19 @@ struct Index {
 
 1.在富文本区域右键。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/A9oOMzdJTW2BtUWm1oJgBg/zh-cn_image_0000002786359742.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1D57D76D0FDA5DCF2740A96A44F3117FC61137DB51BC2FD37EE90B9DDC7D063)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/sGT23hkqT9WiQPFk6S5b8g/zh-cn_image_0000002817426837.png?HW-CC-KV=V1&HW-CC-Date=20261114T004558Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C35236C2C7B4EC3448205E1D12F24D2A7BFE806A0C38BA01FF941A925719F57)
 
 2.选择想要使用的能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/V8gcOib1QA-NJIzbA0Mvuw/zh-cn_image_0000002815559163.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=22FDE412D955D30602A32DF2D2F4D44D4070B368BFF29B69FEBA5B61862FBFEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/fcdxctGNQMCINsVNZ9EGbQ/zh-cn_image_0000002788467418.png?HW-CC-KV=V1&HW-CC-Date=20261114T004558Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E8710C5D5DF86515B60A8DC298B4811FAC1FC486C2BEE7006D954F7F71789B5)
 
 3.等待对端设备拍照回传。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/RrF78wdxSJC2n4YZaDZmBQ/zh-cn_image_0000002815399247.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E1F0DADBBB7650BFEF51B7A3F3BF0B7561E82E2BCAC50B6EC88043B78A1D1BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/U80HmTNFQqiQGLwd8Je_Qg/zh-cn_image_0000002817506907.png?HW-CC-KV=V1&HW-CC-Date=20261114T004558Z&HW-CC-Expire=31536000000&HW-CC-Sign=7ACA905361EFA6B10DE0B74169C99745662DB9BC7EA587249DC160A90DAFDBD4)
 
 4.图片回传后，在光标后面已嵌入一张图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/idpMOwZCRDWLOHvOy3Nocw/zh-cn_image_0000002786519672.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC75A7D6A42152EA8FA72D0BB88D113B2BE4C30C351708D66A87F84839F3EDF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/8ZBu0YrXQI6NPnebJ5XZFQ/zh-cn_image_0000002788307476.png?HW-CC-KV=V1&HW-CC-Date=20261114T004558Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE3ABD19672C42D96C82E4F1B7513CE36E2BF60F768F93C402A685DC5E61D805)
 
 ## 关闭富文本跨设备互通能力
 

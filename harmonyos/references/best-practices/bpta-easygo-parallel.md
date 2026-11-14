@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-easygo-par
 title: 平行视界
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 兼容方案 > 平行视界
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-09
-content_hash: sha256:4e5693756e935269ccdaae8b1c8132b60b0db8048171f60f02fd7b5fc1bd6b71
+scraped_at: 2026-11-14T08:54:08+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:bdc7a40e0854e254ffec29cf2a1e68ee402bc14662a56749d7092f8ab6b2d503
 ---
 
 ## 概述
 
 平行视界是针对应用在未适配[分栏布局](bpta-multi-device-page-layout.md#section11897247142110)的场景下，通过标准化配置实现宽屏、大屏设备分栏显示的系统级兼容方案。开启平行视界并分栏显示时，应用会在一个窗口中同时显示两个页面，默认情况下，两页按1:1平分窗口，如下图所示。从API版本23开始，支持开发者自配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/Q3rItZhmTKqKJ29dxn4VRA/zh-cn_image_0000002693538162.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=A89CC09CAA6990C87A4860B3FFEBED43D60E346695BA80B0CC444AE7267B84B7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/-NLiW0DsQ9apQBcHEC435w/zh-cn_image_0000002693538162.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=A131A7C8B2298F088450A5131E12523681D50C39972ABA4AE1080176358764B9 "点击放大")
 
 平行视界适用于办公、邮箱、IM即时通讯、电商等需要频繁切换页面的应用。当前平行视界支持两种路由模式：导航模式和购物模式。以购物类应用在双折叠上运行为例：
 
@@ -42,7 +42,7 @@ content_hash: sha256:4e5693756e935269ccdaae8b1c8132b60b0db8048171f60f02fd7b5fc1b
 
    在profile目录下创建兼容方案的配置文件easy\_go.json（示例文件名，可自行命名）。在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中添加easyGo字段，并指向引用的easy\_go.json配置文件。当前仅支持在entry模块下配置，配置后应用级生效。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/ORjqUOQgTOio_jUlUYjgZQ/zh-cn_image_0000002693698030.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=C225CDCCFFCE963DA8068EBBA3AEDE883166A9310F6F5E85CE80E6DD7D4F5277 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/DPKdtGvJRWqjBeZv8eN0zw/zh-cn_image_0000002693698030.png?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=4393985D84D998361FD14F649E2898EF980A74E9B2E0677B6CE1A93EB7DBEDBC "点击放大")
 2. 在easy\_go.json配置文件中，配置平行视界的相关属性，详情可参考[配置内容说明](bpta-easygo-parallel.md#section9181949173215)。
 
 ## 配置内容说明
@@ -104,6 +104,7 @@ routerSplitOptions/navigationSplitOptions内部可包含的字段说明：
 | splitDividerColor | 分割线颜色，支持配置深浅色模式，包含可选字段：light和dark。  从API版本26.0.0开始，支持该标签。 | 对象 | 是 |
 | drawableRectHook | [WindowProperties](../harmonyos-references/arkts-apis-window-i.md#windowproperties).drawableRect是否开启页面级容器能力，默认值为false  - false：Window.drawableRect将使用原始尺寸进行计算。  - true：Window.drawableRect将使用原始尺寸的缩小比例，按照右侧页面尺寸计算。  从API版本26.0.0开始，支持该标签。 | 布尔值 | 是 |
 | enableInSplitScreen | 是否支持在窗口分屏场景进入平行视界，默认值为false。  - false：分屏时始终不进入平行视界。  - true：分屏时窗口宽高若满足条件则进入平行视界。  从API版本26.0.0开始，支持该标签。 | 布尔值 | 是 |
+| disableSplitByDefault | 平行视界开关的初始状态是否为关闭，默认值为false。  - false：平行视界开关的初始状态为开启，应用启用平行视界分栏效果。  - true：平行视界开关的初始状态为关闭，应用不启用平行视界分栏效果。  **说明：**  平行视界开关是系统提供的平行视界功能控制开关，用于控制应用是否开启平行视界分栏效果，用户可在“设置-显示和亮度-平行视界”中开启或关闭。开发者可通过disableSplitByDefault字段配置开关的初始状态，如果用户在设置中手动调整过平行视界的开关，那么以手动调整的状态为准。  从API版本26.0.1开始，支持该标签。 | 布尔值 | 是 |
 
 navigationSplitOptions中可额外包含如下几个字段：
 
@@ -117,8 +118,8 @@ wideSplit/squareSplit内部字段说明：
 
 | 字段名 | 说明 | 数据类型 | 可选 |
 | --- | --- | --- | --- |
-| ratio | 左右页面比例，数据格式为"正整数 | 正整数"，范围限制在1:2到2:1之间，未配置时默认为1:1，配置超出范围时默认为范围边界值。  从API版本26开始，支持该标签。 | 字符串 | 是 |
-| isDraggable | 是否开启分栏拖拽功能，默认值为false。  - false：不开启分栏拖拽功能。  - true：开启分栏拖拽功能。开启后ratio字段失效，默认分栏比例为1:1，使用三档吸附，在1:2、1:1和2:1之间可以进行拖动。  从API版本26.0.0开始，支持该标签。 | 布尔值 | 是 |
+| ratio | 左右页面比例，数据格式为"正整数 | 正整数"，范围限制在1:2到2:1之间，未配置时默认为1:1，配置超出范围时默认为范围边界值。  从API版本26.0.0开始，支持该标签。 | 字符串 | 是 |
+| isDraggable | 是否开启分栏拖拽功能，默认值为false。  - false：不开启分栏拖拽功能。  - true：开启分栏拖拽功能。开启后不可同时配置ratio字段，否则DevEco Studio会编译报错。默认分栏比例为1:1，使用三档吸附，在1:2、1:1和2:1之间可以进行拖动。  从API版本26.0.0开始，支持该标签。 | 布尔值 | 是 |
 
 pagePairs内部可以包含多对from和to字段，两个字段必须成对出现：
 
@@ -276,7 +277,7 @@ splitDividerColor内部字段说明：
 
 购物类应用中，用户浏览路径通常层层深入，即从商品分类进入商品列表进行筛选比较，最终进入商品详情页完成商品挑选。相比左侧主页保持不变的导航模式，在购物模式下，页面路由跳转时右侧页面始终向左推入，屏幕右侧展示路由栈栈顶页面，左侧展示路由栈次栈顶页面，更贴合“层层深入、随时回退”的浏览体验。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Z3YuuR2pQjyWUjboGWzUeA/zh-cn_image_0000002723337523.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BB64870F77588D626433B0D547F8917AB01FD0B23E5A2220332C51A567F8518 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/T9ZkLB0QS3WW9S72f-pQMA/zh-cn_image_0000002723337523.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1CAA4E0AAC4D1DF828FFF1642443660212D727BFDC703D2FFA6D1644B579C9E "点击放大")
 
 **实现原理**
 
@@ -308,7 +309,7 @@ splitDividerColor内部字段说明：
 
 购物模式下，页面路由跳转时右侧页面始终向左推入，屏幕右侧展示路由栈栈顶页面，左侧展示路由栈次栈顶页面。但是由于某些页面（如地址编辑页）属于临时编辑操作，将此类页面固定在右侧显示，左侧分栏内容保持不变，交互体验更连贯。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/kgJA8DGZRaKPfSy02FMeXg/zh-cn_image_0000002693698032.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=33B4F09254BB89F120D4DE5F5FE4E3689871FD28452DDCA29AB320921ECDF688 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ZXeC3UxTQyauALCN01qgiw/zh-cn_image_0000002693698032.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=A68032B5F8D649B01A967E9A72B33942300581AA267B6391E7F8353587DC95D5 "点击放大")
 
 **实现原理**
 
@@ -340,7 +341,7 @@ splitDividerColor内部字段说明：
 
 在商品详情页，为清晰呈现商品细节，点击商品图片后，需将图片全屏展示。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/XzBB-BtSRIOniK4F_FvlIg/zh-cn_image_0000002693538166.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=232D85EDC184380B63F75F300A2D9D940A58A2FFA0DB96F8F34F64F8CBADD1B1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/o28oltE9RaSD5B8sczUrmg/zh-cn_image_0000002693538166.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=E34ED11D3E24BA22562AA2F263B7FAEC6A8A895C65345278622E59D1DF21306A "点击放大")
 
 **实现原理**
 
@@ -370,7 +371,7 @@ splitDividerColor内部字段说明：
 
 在商品详情页中，“参数对比”、“配置表”类图片往往需要横屏展示，以解决竖屏模式下文字过小等问题。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/MgzvQl0mQoK7YvJTKKpN8Q/zh-cn_image_0000002723217603.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FDB2BA32FA3995A2EF349187274F930FDEEE001774CC149E1C6DDA3137570C6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/qmlJkyFpSbmY48BHirFXwQ/zh-cn_image_0000002723217603.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=F59EE2C4F53DCB88C78386D2A3EE1CA5552EC931A8699209C0364190DBF18424 "点击放大")
 
 **实现原理**
 
@@ -420,7 +421,7 @@ splitDividerColor内部字段说明：
 
 在平板或三折叠三屏态（G态）等大屏设备上，当应用已进入平行视界分栏显示（左侧主页、右侧商品详情页）时，若用户希望在浏览商品详情的同时，打开其他页面进行比价、查询物流等操作，可以在商品详情页顶部提供分屏入口。用户点击后以主窗口形式进入系统窗口分屏，并在分屏窗口中继续保持平行视界效果，实现应用内的多任务体验。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/32ugDcinS824hTTnSKRnTw/zh-cn_image_0000002723337525.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEB2B55C2D979760D244F399C05998EE0EC8233B68F4D2C1EEE8E8651344A5D1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/8RPO-TymRAi_gy5Xjc2e5w/zh-cn_image_0000002723337525.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2E7B5A4E391AE2BA48737FAA08F83546706A01A5E00D449B372AA68DA57F0F0 "点击放大")
 
 **实现原理**
 
@@ -456,7 +457,7 @@ splitDividerColor内部字段说明：
    .visibility(this.mainWindowInfo.windowStatusType !== window.WindowStatusType.SPLIT_SCREEN &&
      this.getUIContext().isEasySplit() ? Visibility.Visible : Visibility.None)
    ```
-3. 在按钮点击事件中，调用[startAbility](../harmonyos-references/js-apis-inner-application-appserviceextensioncontext.md#startability)()接口拉起应用新的实例，并指定窗口分屏模式及主窗口占比，使应用以主窗口形式进入系统分屏。
+3. 在按钮点击事件中，调用[startAbility](../doccenter-references/api/js-apis-inner-application-uiabilitycontext.md#startability-2)()接口拉起应用新的实例，并指定窗口分屏模式及主窗口占比，使应用以主窗口形式进入系统分屏。
 
    ```typescript
    private startSplitScreen(): void {
@@ -488,7 +489,7 @@ splitDividerColor内部字段说明：
 
 开启平行视界并分栏显示时，页面内的元素超出页面范围，导致被截断，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/EmAyECwQSMCiXj8hZQ6hpg/zh-cn_image_0000002693698036.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A1D270AA067BC69E26272BD4EC82E48F49654454F421C256069ADE2DF2C831C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/zfrutFcgSgSxowF-K2NxxQ/zh-cn_image_0000002693698036.png?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1AD3CF2B50AA02E2062803831C5DC7C161037ECF71B5370FFC0B55C64D200F8 "点击放大")
 
 **原因分析**
 
@@ -516,7 +517,7 @@ splitDividerColor内部字段说明：
 
 左右两个分栏页面中，同一资源只在一页面中显示，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/7V5go8V3QbOWnXTuuI6AxA/zh-cn_image_0000002693538168.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=338E966295C01445E3235A67F4474B594245A3D43140A7592E8F315B972CEF5F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/T_Yx7fRqTm2aKiAjgcKoLQ/zh-cn_image_0000002693538168.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C26480F11C0166B1F67CE2F82B847F6E0BE3C5C247F2BF91F45ABE0EA74173E "点击放大")
 
 **原因分析**
 

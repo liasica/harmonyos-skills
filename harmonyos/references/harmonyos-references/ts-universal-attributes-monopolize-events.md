@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 事件独占控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 触摸交互控制 > 事件独占控制
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:06+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:88678e323badcb366b606892f8af878b84a490aba507c7de2fded9e8f20b4719
+content_hash: sha256:3d33dace79dfa885d66cb2e61440cd361c00ab010c9ab42c5077f93b86f4b794
 ---
 
 设置组件是否独占事件，事件范围包括组件自带的事件和开发者自定义的点击、触摸、手势事件。
@@ -117,4 +117,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/5MD1vz00RTGDye39n1afXg/zh-cn_image_0000002815400543.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=4747E72DB5C109F8CF1601A88C8B01342D3CB2B2110AA809314FE8AD60D79F63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Yh-VHBmhTSS1xPf9fyEcAg/zh-cn_image_0000002817428135.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=C25085A0E9B2A7EF45EFDAEFFC01DDB6B1C8798B0DDA23C07F25682E0279A1FF)

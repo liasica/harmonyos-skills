@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkweb-ndk-pa
 title: 建立应用侧与前端页面数据通道(C/C++)
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 建立应用侧与前端页面数据通道(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:14+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c0fa781e161c5bf5d744be01f11effb1fa466d20818016ca8cbf8cfe60ca4341
+content_hash: sha256:7c5c19d588ab0d77af2f26afe23ac8b23fbf7b4b088ea884612ecf4f22c23000
 ---
 
 前端页面和应用侧之间可以使用Native方法实现两端通信（以下简称Native PostWebMessage），可解决ArkTS环境的冗余切换，同时允许发送消息、回调在非UI线程上运行，避免造成UI阻塞。当前只支持string和buffer数据类型。
@@ -14,13 +14,13 @@ content_hash: sha256:c0fa781e161c5bf5d744be01f11effb1fa466d20818016ca8cbf8cfe60c
 
 应用使用ArkTS、C++语言混合开发，或本身应用架构较贴近于小程序架构，自带C++侧环境，推荐使用ArkWeb在Native侧提供的[ArkWeb\_ControllerAPI](../harmonyos-references/capi-web-arkweb-controllerapi.md)、[ArkWeb\_WebMessageAPI](../harmonyos-references/capi-web-arkweb-webmessageapi.md)、[ArkWeb\_WebMessagePortAPI](../harmonyos-references/capi-web-arkweb-webmessageportapi.md)实现PostWebMessage功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/KORHFGaHRj281lF5cXa8sA/zh-cn_image_0000002786519358.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EB1C225A44B8A88F266FCAA5CBA5EE48FA9804F241A33FB047A2E5D8FF8AD10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/9zhgiV4cRd2ZAJahEETNoA/zh-cn_image_0000002788307162.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=02AA19D84EF5B136307630EF13BE5C08A0B089A905E8F521DE97D34A9FD70F90)
 
 上图展示了具有普遍适用性的小程序的通用架构。在这一架构中，逻辑层依赖于应用程序自带的JavaScript运行时，该运行时在一个已有的C++环境中运行。通过Native接口，逻辑层能够直接在C++环境中与视图层（其中ArkWeb充当渲染器）进行通信，无需回退至ArkTS环境使用ArkTS PostWebMessage接口。
 
 左图是使用ArkTS PostWebMessage接口构建小程序的方案，如红框所示，应用需要先调用到ArkTS环境，再调用到C++环境。右图是使用Native PostWebMessage接口构建小程序的方案，不需要ArkTS环境和C++环境的切换，执行效率更高。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/xGSzzinRSEqXjRpM_ziWaw/zh-cn_image_0000002815558851.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=079948DAB26D1FD43AFD749B13A130F973EFEDD4ED64B0EDC7EE2A7F66F1535F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/8jfzHR4RS4W6cXEEt8_BEw/zh-cn_image_0000002788467106.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAAD30664D20A9FC5E2EC979ECC04AABD7E761025187BB1FFA7F92D89C69CFCC)
 
 ## 使用Native接口实现PostWebMessage通信
 

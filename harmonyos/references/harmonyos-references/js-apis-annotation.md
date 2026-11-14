@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.annotation (注解)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 其他 > @ohos.annotation (注解)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:54:00+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:6e436e7524a1c9fcea3c09f50c29b31c785e6ccc12623bc6bbf1d59efefe0118
+scraped_at: 2026-11-14T08:51:59+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:3ea48268bf99c0014e7a6d2bbf39b75f6843ced58cdc090a8d71326ccb5b4035
 ---
 
 本模块定义了HarmonyOS ArkTS API的注解类型，如生命周期最小可用版本、API告警屏蔽等，用于帮助开发者标识和管理API的兼容性、告警抑制等特性。该模块解决了开发者在跨版本开发、第三方SDK集成等场景中遇到的版本兼容性告警、权限告警、多设备适配告警等问题，通过注解方式抑制不必要的告警干扰，提高代码的可维护性和开发效率。
@@ -204,4 +204,4 @@ async function savePhotoToGallerySuppress(context: common.UIAbilityContext) {
 | --- | --- | --- |
 | COMPATIBILITY | compatibility | 支持消除兼容性告警。当调用API的起始版本高于工程设置的兼容SDK版本时产生的告警。建议在已做版本判断或兼容性处理时使用，避免盲目抑制告警导致低版本设备运行异常。 |
 | SYSCAP | syscap | 支持消除多设备告警。当调用API的系统能力在目标设备上不支持时产生的告警。 |
-| PERMISSION | permission | 支持消除权限告警。当调用需要权限的API但未在配置文件中声明相应权限时产生的告警。  **起始版本：** 26.0.0 |
+| PERMISSION | permission | 支持消除权限告警。当调用需要权限的API但未在配置文件中声明相应权限时产生的告警。  **起始版本：** 26.0.0  **卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |

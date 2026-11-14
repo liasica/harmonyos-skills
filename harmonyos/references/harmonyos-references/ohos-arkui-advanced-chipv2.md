@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipV2
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:25+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:1b8d0fc017e9cc7bdc2555e0ddd08d5fcf4474d286f250ac972385e13e171749
+content_hash: sha256:ce82a7d50f67f84a019f3743788c2f8203367785ffc685db391046c5dcbffd8e
 ---
 
 ChipV2是提供丰富样式和交互能力的操作块组件，支持前缀图标、后缀图标、激活状态、关闭按钮等特性，支持Symbol和Image两种图标类型，并提供完善的无障碍访问能力。该组件适用于搜索历史记录、邮件发送列表、标签选择、过滤器、联系人展示等场景。
@@ -1015,7 +1015,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/KOlypWYbQvyReKFc7eHfOw/zh-cn_image_0000002815561051.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=251A2AAEECD6F7E16F6B09A22882B8B51E1170573807B6F39D7ED261443C082D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/k-vzKF9IQEaaMHxb9cNjVQ/zh-cn_image_0000002788309364.png?HW-CC-KV=V1&HW-CC-Date=20261114T005024Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D769B8C9703E6261E822C603033350AF08F100FEFA7A791E81599FCB9FEC35A)
 
 ### 示例2（设置ChipV2激活状态）
 
@@ -1080,7 +1080,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/w701iOmsQwKkY-6CFzDeXA/zh-cn_image_0000002815401135.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=87A9347781A376D6063E64ED23E603ED2098634FB21DEF3CD00D052BA235E309)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/IvrrdJXtREqAfAr8RSoV4w/zh-cn_image_0000002817428727.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005024Z&HW-CC-Expire=31536000000&HW-CC-Sign=32431E3D6EE52C0E6C7BA78E3791554A23B62CA8349DA1390631EA70A25CEDD6)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -1139,7 +1139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/6UMS-SsvS7SrElH5YFjm4w/zh-cn_image_0000002786521560.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A66250366414FA7D6712D15110CEC6ED630A3AD2A463D5921243ECAC2547A749)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/vCnLzll7Qg-plrWSOvZmPw/zh-cn_image_0000002788469308.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005024Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5D5998D4C98B02DA7C7E030F0836CF9E65117AB263D2D5ED791682B801ED590)
 
 ### 示例4（监听ChipV2Options内对象类型属性的内部属性变化）
 
@@ -1182,7 +1182,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/OK0xhpefTJKzDoOqyRNuaA/zh-cn_image_0000002786361632.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=0945FBCB1FD3560BCC23F1DC136446FEDB679BED48974F642B0144C66FECB972)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/CUhMYt_SRiu6YVVmIunMtg/zh-cn_image_0000002817508797.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005024Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0BDE218F4A95EA1EAE5373CFE501146FF1B734CB0C58EDC94B5EF02E16BB4C9)
 
 ### 示例5（设置系统材质样式）
 
@@ -1241,4 +1241,4 @@ struct Index {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/i3bpq1b0SZa5o4Yqy97Iag/zh-cn_image_0000002815561053.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9CE249DDF934B25302FF637380C8D576340B5FC7C97CAB651E1C6D3EB3F6094)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/fZNv6qzOQr2hIYIOEcc1WA/zh-cn_image_0000002788309366.png?HW-CC-KV=V1&HW-CC-Date=20261114T005024Z&HW-CC-Expire=31536000000&HW-CC-Sign=F992169AECE25F8276BB15F2E9758EC885F5FB47D84E2BC281E41CFCDE79BD7E)

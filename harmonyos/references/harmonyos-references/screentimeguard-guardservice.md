@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/screentim
 title: "@hms.utilityApplication.screenTimeGuard.guardService（屏幕时间守护服务）"
 breadcrumb: API参考 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > ArkTS API > @hms.utilityApplication.screenTimeGuard.guardService（屏幕时间守护服务）
 category: harmonyos-references
-scraped_at: 2026-09-25T07:14:33+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:d89b8651a29fbf343c5fea9ae74dda3d0ff8d6e95603383c5201e417bc3a4949
+scraped_at: 2026-11-14T08:53:51+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:ca44b31bc536076b02204abb492813995710891539f2020ef0011d994cc2f681
 ---
 
 ## 模块概述
@@ -319,8 +319,13 @@ import { guardService } from '@kit.ScreenTimeGuardKit';
 function testGetUserAuthStatus() {
    guardService.getUserAuthStatus()
       .then((status) => {
-         const statusToMsg = ['AUTH_INIT', 'AUTH_GRANTED', 'AUTH_DENIED'];
-         console.info('getUserAuthStatus invoke success. ' + statusToMsg[status + 1]);
+         let statusMsg: string = 'AUTH_INIT';
+         if (status === guardService.AuthStatus.AUTH_GRANTED) {
+            statusMsg = 'AUTH_GRANTED';
+         } else if (status === guardService.AuthStatus.AUTH_DENIED) {
+            statusMsg = 'AUTH_DENIED';
+         }
+         console.info('getUserAuthStatus invoke success. ' + statusMsg);
       });
 }
 ```
@@ -508,7 +513,7 @@ updateGuardStrategy(strategyName: string, guardStrategy: GuardStrategy): Promise
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| strategyName | string | 是 | 待更新的时间守护策略名称。长度为1~64个字符，仅支持字母、数字和下划线。 |
+| strategyName | string | 是 | 待更新的守护策略名称。长度为1~64个字符，仅支持字母、数字和下划线。 |
 | guardStrategy | [GuardStrategy](screentimeguard-guardservice.md#guardstrategy) | 是 | 新的时间守护策略。  **说明**：  如想修改策略名称，可以在guardStrategy的name属性中传入新名称。但不能是已存在的名称，如果名称已存在则返回401错误码。 |
 
 **返回值：**

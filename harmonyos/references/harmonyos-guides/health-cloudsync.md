@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-cloudsync
-title: 手动数据同步
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Phone/Tablet应用开发 > 手动数据同步
+title: 运动健康App数据云同步
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Phone/Tablet应用开发 > 运动健康App数据云同步
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:17+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-14T08:48:19+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:7a3dec7dd51ae9c2b635e5f379c951646ccd5f85fcf849ca6d4d119fc5daca00
 ---
 

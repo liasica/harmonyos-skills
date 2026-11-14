@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-real-
 title: 人脸核身实人验证场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 用户身份验证服务 > 人脸核身实人验证场景
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:27+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1e62ede3ebe94f2cd0ff0e71c8fe5bc7cddb6354fd1f227f0b610f371a44f2f7
+content_hash: sha256:1c146944187eadb7b906020a24f1af7b2b81a81f2b71ba3c9fbcd32859ee1276
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:1e62ede3ebe94f2cd0ff0e71c8fe5bc7cddb6354fd1f227f0b610f371a4
 
 人脸核身实人验证页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/yAdvWPj-QzmHh_VlXexO4w/zh-cn_image_0000002815400009.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9041F4C6399E934E920BA6ADFE39A93DC998D3E7A2775F48CEEB67BDB6859B4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ghcfVwaJRw60I9Y_jZALWA/zh-cn_image_0000002817507669.png?HW-CC-KV=V1&HW-CC-Date=20261114T004643Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACD5880961826DD8B47E947E315342522C9A3A49C6E9286AC59C915D6908333F)
 
 ## 约束与限制
 
@@ -39,7 +39,7 @@ content_hash: sha256:1e62ede3ebe94f2cd0ff0e71c8fe5bc7cddb6354fd1f227f0b610f371a4
 
 开发者通过接入人脸核身实人验证能力，可以简便快捷的实现用户信息验证及本人操作的验证。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/wteB0hjETo-hcW7WcrSZtQ/zh-cn_image_0000002786520434.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=00639E0473C46025220501626E731F39C31AEB1F034590892FE9E3C0FAB849D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/5MA-R1T9ScKKIcq3SvhtPw/zh-cn_image_0000002788308238.png?HW-CC-KV=V1&HW-CC-Date=20261114T004643Z&HW-CC-Expire=31536000000&HW-CC-Sign=29EECB2E7FABCF433F0F0702B6B6B3A2ED11FBE16CD9EF639E00278FFD27C5A3)
 
 1. 开发者客户端收集用户实名信息加密后请求开发者服务端发起人脸核身实人预验证。
 2. 开发者服务端请求Payment Kit服务端[人脸核身实人预验证](../harmonyos-references/payment-api-common-face-verifactaion-preverify.md)接口获取预验证ID（preVerifyId）。

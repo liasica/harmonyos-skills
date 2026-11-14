@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅CPU高负载事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > CPU高负载事件 > 订阅CPU高负载事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:55+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-14T08:47:47+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:165b3a2150e5bf1e11a9ff516d2cf2743fa2ed0c7b591fe12f85b551c1cad0cc
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aodnavigation
 title: AOD Navigation Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > AOD Navigation Kit（熄屏导航服务） > AOD Navigation Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:108f223236ffdedfaa49f7bf2f7df30e8c094440460de0ddb94bc55962dc9d86
+scraped_at: 2026-11-14T08:47:45+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:448644d51a4b4122e09af5314694a770bbe196426dd16d00f650686da2626301
 ---
 
 从API版本26.0.0开始，新增AOD Navigation Kit（熄屏导航服务）。
@@ -29,9 +29,9 @@ AOD（Always On Display，熄屏显示）界面实时显示当前导航状态和
 **接入方式一：熄屏导航状态下应用休眠**
 
 1. 此种接入方式下，熄屏导航场景功耗对比设备解锁亮屏场景下应用导航功耗预计收益50%。
-2. 能力约束：熄屏导航时不支持联网功能、无法连接wearable设备数据、仅提供固定范围数据项代理能力。当前代理数据能力支持：里程、步数、步频、全程耗时、运动耗时、累计爬升、累计下降、当前速度、全程均速、运动均速、当前配速、平均配速。
+2. 能力约束：熄屏导航时不支持联网功能、无法连接wearable设备数据、仅提供固定范围数据项代理能力。当前代理数据能力支持：里程、步数、步频、全程耗时、运动耗时、累计爬升、累计下降、当前速度、全程平均速度、运动平均速度、当前配速、平均配速。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/eecldD5WR5mCpdGHXOEuRA/zh-cn_image_0000002815559217.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=54C014D6CAB8417705B9E254255F03106FA805952527048AD840F313AA714075)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/PTpwoTvJQBalOD3qtftvQQ/zh-cn_image_0000002788467472.png?HW-CC-KV=V1&HW-CC-Date=20261114T004604Z&HW-CC-Expire=31536000000&HW-CC-Sign=A64F51EFC7CAA0893CDB93EA5EFB42DB75F6AA93F080F9958F98140B33F0076D)
 
 说明：
 
@@ -45,7 +45,7 @@ AOD（Always On Display，熄屏显示）界面实时显示当前导航状态和
 1. 此种接入方式下，熄屏导航时应用不进入休眠状态，熄屏导航场景功耗对比设备解锁亮屏下导航功耗预计收益20%。
 2. 无能力约束，熄屏导航数据依旧来源于应用，熄屏导航时开发者仍可支持联网功能、可支持连接wearable设备数据（如步数、心率等）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/sgfFl2kaRbKIOoEWTfgLsw/zh-cn_image_0000002815399301.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7C37DA9FC51291BAE2B0D746FAF7EFA316111417FA846A7D54B6C598A052CCD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/8oRjpoqlTtWMvNvqAb-KvA/zh-cn_image_0000002817506961.png?HW-CC-KV=V1&HW-CC-Date=20261114T004604Z&HW-CC-Expire=31536000000&HW-CC-Sign=56ADBDAC3C8C749F3FA715E1443F9592215676D27EF0CFEB21043C9D94889842)
 
 说明：
 
@@ -57,7 +57,7 @@ AOD（Always On Display，熄屏显示）界面实时显示当前导航状态和
 ## 能力范围
 
 * 熄屏显示页面地图绘制能力：支持在熄屏显示页面绘制离线地图信息、预设轨迹线、实时轨迹线、关键导航过程信息。
-* 数据项低功耗代理计算：里程、步数、全程耗时、运动耗时、累计爬升、当前速度、平均速度、运动均速、当前配速、平均配速。
+* 数据项低功耗代理计算：里程、步数、步频、全程耗时、运动耗时、累计爬升、累计下降、当前速度、全程平均速度、运动平均速度、当前配速、平均配速。
 * 语音播报数据项下沉计算：里程播报、时间播报、偏航事件播报、GPS定位播报事件、累计爬升播报事件、累计下降播报事件、速度播报事件、标记点播报。
 
 ## 亮点/特征

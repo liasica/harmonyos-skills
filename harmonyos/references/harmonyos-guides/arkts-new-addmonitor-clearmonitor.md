@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-add
 title: addMonitor/clearMonitor接口：动态添加/取消监听
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口 > addMonitor/clearMonitor接口：动态添加/取消监听
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:09+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:67a3d12bc8b6f114ba8ccfc465329ef213fde951f4d91ec0f8d2aa1fedc8c901
+scraped_at: 2026-11-14T08:47:00+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:7b6db79769f9e7d0ffbe15728e24cfe685aeec2b88d55dada2c9898fa3cf8c85
 ---
 
 为了动态添加或删除状态管理V2的状态变量的监听函数，开发者可以使用[addMonitor](../harmonyos-references/js-apis-statemanagement.md#addmonitor20)或[clearMonitor](../harmonyos-references/js-apis-statemanagement.md#clearmonitor20)。
@@ -190,7 +190,7 @@ struct Page {
 
 * clearMonitor可以删除path对应的状态变量的监听函数，开发者可以通过传入监听回调函数来指定删除具体的监听函数，也可以不指定具体的监听函数，删除当前path对应状态变量的所有监听回调函数。
 
-  需要注意：当调用clearMonitor时，如果发现当前回调函数没有在path对应的状态变量上注册过，或者当前状态变量没有任何监听函数，都会打印告警日志提示开发者删除失败。
+  需要注意：当调用clearMonitor时，如果发现当前回调函数没有在path对应的状态变量上注册过，或者当前状态变量没有任何监听函数，都会打印错误日志提示开发者删除失败。
 
   监听函数被删除后，状态变量的改变不会再回调对应的监听函数。
 

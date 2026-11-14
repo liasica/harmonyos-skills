@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-sys
 title: systemShare（分享）
 breadcrumb: API参考 > 应用服务 > Share Kit（分享服务） > ArkTS API > systemShare（分享）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:45+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bf16c62f7a8a1e4856eb14432e0e566542ee4cf064b21156f1ff30c67175b54e
+scraped_at: 2026-11-14T08:53:51+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:abae143980e703988d0ba5aff0b1dcde98f68cc1ead714c4dd22dd67c95ffca8
 ---
 
 本模块提供分享数据创建及分享面板拉起的功能，提供多种系统标准分享服务，例如分享数据给其他应用、复制、打印等。
@@ -412,7 +412,7 @@ let shareData: systemShare.SharedData = new systemShare.SharedData({
 try {
   shareData.addRecord({
     utd: utd.UniformDataType.HYPERLINK,
-    content: 'https://www.vmall.com/index.html?cid=128688',
+    content: 'http://sharekit/example/hyperlink', // 仅为示例 使用时请替换为待分享的链接
     title: 'Huawei Vmall',
     description: 'Phone',
     label: 'Huawei Vmall',
@@ -500,7 +500,7 @@ constructor(data: SharedData)
 ```typescript
 let shareData: systemShare.SharedData = new systemShare.SharedData({
   utd: utd.UniformDataType.HYPERLINK,
-  content: 'https://www.vmall.com/index.html?cid=128688',
+  content: 'http://sharekit/example/hyperlink', // 仅为示例 使用时请替换为待分享的链接
   title: 'Huawei Vmall',
   description: 'Phone',
 });
@@ -552,7 +552,7 @@ export default struct LinkScenario {
   private async share() {
     let shareData: systemShare.SharedData = new systemShare.SharedData({
       utd: utd.UniformDataType.HYPERLINK,
-      content: 'https://www.vmall.com/index.html?cid=128688',
+      content: 'http://sharekit/example/hyperlink', // 仅为示例 使用时请替换为待分享的链接
       title: 'Huawei Vmall',
       description: 'Phone',
     });

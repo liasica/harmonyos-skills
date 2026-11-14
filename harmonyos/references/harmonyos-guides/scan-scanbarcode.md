@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-scanbarc
 title: 默认界面扫码
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 默认界面扫码
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d7fda881cf2e4bc447411ff8daff86f69e4b6e7edcd415f08bdda547323dc63f
+content_hash: sha256:8eab8fad88f1125c104459503da12d9b9203733c04ab0c39d1e5d63c38fadf11
 ---
 
 默认界面扫码能力提供系统级体验一致的扫码界面，包含相机预览流，相册扫码入口，暗光环境闪光灯开启提示。Scan Kit默认界面扫码对系统相机权限进行了预授权且调用期间处于安全访问状态，无需开发者再次申请相机权限。适用于不同扫码场景的应用开发。
@@ -20,7 +20,7 @@ content_hash: sha256:d7fda881cf2e4bc447411ff8daff86f69e4b6e7edcd415f08bdda547323
 
 默认界面扫码UX：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/nXyI1m1DRWiJWfs6Ut_V-A/zh-cn_image_0000002815399481.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EA4D211A71F3048BD32A7BFD9C369BCF09AA480694B6280E7091D02C79538BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/QEV6uUMMTHCFa7gg6EKHkQ/zh-cn_image_0000002817507141.png?HW-CC-KV=V1&HW-CC-Date=20261114T004620Z&HW-CC-Expire=31536000000&HW-CC-Sign=B00C03F5DBD8C225D9984199AE47B18605A3DFFB1D23ED153660EF8656789665)
 
 **说明** 
 
@@ -48,7 +48,7 @@ content_hash: sha256:d7fda881cf2e4bc447411ff8daff86f69e4b6e7edcd415f08bdda547323
 
 使用默认界面扫码的主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/m8jmbIXOT56yiVB__i7sFw/zh-cn_image_0000002786519906.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=53AE5046DA5BE5D319ACB426EE2A1086C6AED41A91D3DD6CC631A6A97EE9DCE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/6f4CCsEJQyOe5KqVVbrwQw/zh-cn_image_0000002788307710.png?HW-CC-KV=V1&HW-CC-Date=20261114T004620Z&HW-CC-Expire=31536000000&HW-CC-Sign=E98DC8D3496B41610D3B33D85255399D28BF05B66A314B393E2695830C1F0FA7)
 
 1. 用户向开发者的应用发起扫码请求。
 2. 开发者的应用通过调用Scan Kit的startScanForResult()接口启动扫码界面。

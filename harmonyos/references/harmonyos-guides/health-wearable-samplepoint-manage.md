@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-wearable-samplepoint-manage
-title: 读取运动健康采样数据
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Wearable应用开发 > 管理运动健康数据 > 读取运动健康采样数据
+title: 读取采样数据
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Wearable应用开发 > 管理运动健康数据 > 读取采样数据
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:17+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-14T08:48:20+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:6ef745bab552488cc0fc4129f568892d38bfc899b3f6632ac5e083da67aba704
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: OS新增和增强特性
 breadcrumb: 版本说明 > 最新版本(26.0.1) > 26.0.1 > OS平台能力 > OS新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:49:53+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:27b8a5963213ced68d5cfda27cc811844b4912ce1cb7b6edb66eb8f03e385e4b
+scraped_at: 2026-11-14T08:45:41+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:106a5d4c1309e7dcccd7f1d9177492aa55025b684bbb0a23322f10a72061359c
 ---
 
 ## 26.0.1 Beta1
@@ -61,13 +61,6 @@ content_hash: sha256:27b8a5963213ced68d5cfda27cc811844b4912ce1cb7b6edb66eb8f03e3
 ### CANN Kit
 
 新增支持Car设备。（[指南](../doccenter-capabilities/cannkit-introduction.md#约束与限制)）
-
-### Car Kit
-
-* 新增支持查询与设置车辆控制状态，车辆控制状态包括氛围灯状态、方向盘角度、油门或制动踏板位置以及剩余油量。（[指南](../doccenter-capabilities/car-carcontrol.md)、[API参考](../doccenter-references/api/js-apis-car-service-car-control.md)）
-* 新增车载音频控制能力，可以查询车机支持的音频能力、控制不同的K歌场景、设置座舱空间音频，为车辆用户提供更好的座舱体验。（[指南](../doccenter-capabilities/car-audio-control-service.md)、[API参考](../doccenter-references/api/js-apis-car-service-audio-control.md)）
-* 新增支持应用在中控屏和副驾屏贯穿显示。（[指南](../doccenter-capabilities/car-seamless-show.md)、[API参考](../doccenter-references/api/js-apis-carservice-mdcsseamlessservice.md)）
-* 新增支持Car设备。（[指南](../doccenter-capabilities/car-introduction.md#支持的设备)）
 
 ### Core File Kit
 
@@ -169,10 +162,6 @@ KeyCode定义中新增云台设备的相关按键定义。（[ArkTS API参考](.
 ### Media Kit
 
 屏幕录制的C API能力新增支持创建虚拟扩展屏幕并对其内容进行录制。（[指南](https://gitcode.com/openharmony/docs/blob/weekly_20261012/zh-cn/application-dev/media/media/avscreencapture-c-basic-process.md#录制虚拟扩展屏幕)）
-
-### Multimodal Awareness Kit
-
-新增车辆感知模块的接口能力，支持隔空手势交互、实时天气识别、补能状态识别等功能。（[API参考](../doccenter-references/api/js-apis-awareness-carawareness.md)）
 
 ### PDF Kit
 

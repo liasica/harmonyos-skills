@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aodnavigation
 title: 接入熄屏导航
 breadcrumb: 指南 > 系统 > 硬件 > AOD Navigation Kit（熄屏导航服务） > 接入熄屏导航
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:5c1057e64e9a3a0fc8aeab08f247717261a4332418ced99909bcb5539c7eb3d5
+scraped_at: 2026-11-14T08:47:45+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6ab1416569b6dd38bfad7cb6d209c7029f2137c86fd1e02bf6bb654489b875b2
 ---
 
 ## 概述
@@ -16,11 +16,11 @@ content_hash: sha256:5c1057e64e9a3a0fc8aeab08f247717261a4332418ced99909bcb5539c7
 
 接入熄屏导航能力的应用可在设备熄屏后，在设备熄屏界面实时展示行进路线、运动轨迹、里程及耗时等核心信息。应用可自定义显示的数据项，当前支持12种数据选项供灵活配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/T01MxAG3QmSM-7aN564ILw/zh-cn_image_0000002815559221.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=98E26B85177BCFD0C5CBCDFC72FD891B4A0514E975356A830DC005DA50BB9386)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/yhrsNV7TRD-jjvT-4cjy1A/zh-cn_image_0000002788467476.png?HW-CC-KV=V1&HW-CC-Date=20261114T004745Z&HW-CC-Expire=31536000000&HW-CC-Sign=E49BB7452B3739911F59B011971AD18CA425A79D5264CAA2310A34A0B5F6746C)
 
 ### 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/SAQlTsWGQ_KpluDqM7osgw/zh-cn_image_0000002815399305.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA4407F7BBB28A79FE3DEF151290EB7FBABABB7EC8EE265BCB561660C11D773F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/i2jmjs7VRnWOSMgO7jTTfQ/zh-cn_image_0000002817506965.png?HW-CC-KV=V1&HW-CC-Date=20261114T004745Z&HW-CC-Expire=31536000000&HW-CC-Sign=72C5D916C32B461E92025A2659CD89B525FD78BC0F841B0EFC8D18C507729791)
 
 流程说明：
 
@@ -73,7 +73,7 @@ content_hash: sha256:5c1057e64e9a3a0fc8aeab08f247717261a4332418ced99909bcb5539c7
         aodNaviManager.getAodNaviExtendCapabilities();
       hilog.info(0x0000, 'aodNavigationSample', 'Succeeded in getting AOD navigation extend capabilities, capabilities: %{public}s', JSON.stringify(capabilities));
       ```
-3. 调用[isAodNaviSwitchEnabled](../harmonyos-references/aodnavigation-aodnavimanager.md#aodnavimanagerisaodnaviswitchenabled)接口判断熄屏导航功能开关（操作路径：“设置 > 桌面和个性化 > 熄屏显示设置 > 熄屏导航”）是否开启。
+3. 调用[isAodNaviSwitchEnabled](../harmonyos-references/aodnavigation-aodnavimanager.md#aodnavimanagerisaodnaviswitchenabled)接口判断熄屏导航功能开关（操作路径：“设置 > 桌面和个性化 > 熄屏显示设置 > 熄屏循迹导航”）是否开启。
 
    ```typescript
    // 检查熄屏导航开关是否已启用
@@ -125,33 +125,6 @@ content_hash: sha256:5c1057e64e9a3a0fc8aeab08f247717261a4332418ced99909bcb5539c7
 5. 调用[onAodNaviEvent](../harmonyos-references/aodnavigation-aodnavimanager.md#aodnavimanageronaodnavievent)接口注册熄屏导航事件监听，系统会将具体事件信息[AodNaviEventInfo](../harmonyos-references/aodnavigation-aodnavimanager.md#aodnavieventinfo)回调给应用，应用根据系统回调事件信息进行对应任务处理。回调事件类型详见[AodNaviEventType](../harmonyos-references/aodnavigation-aodnavimanager.md#aodnavieventtype)。
 
    ```typescript
-   try {
-     aodNaviManager.onAodNaviEvent((eventInfo: aodNaviManager.AodNaviEventInfo) => {
-       hilog.info(0x0000, 'aodNavigationSample', 'Received AOD navigation event: eventType: %{public}d, eventId: %{public}s', eventInfo.eventType, eventInfo.eventId);
-       switch (eventInfo.eventType) {
-         // 进入熄屏导航事件回调
-         case aodNaviManager.AodNaviEventType.AOD_NAVI_ENTER:
-           this.handleNaviEnter(eventInfo);
-           break;
-         // 退出熄屏导航事件回调
-         case aodNaviManager.AodNaviEventType.AOD_NAVI_EXIT:
-           this.handleNaviExit(eventInfo);
-           break;
-         // 语音播报事件回调
-         case aodNaviManager.AodNaviEventType.AOD_NAVI_VOICE_BROADCAST:
-           this.handleVoiceBroadcast(eventInfo);
-           break;
-         // 数据缓存事件回调
-         case aodNaviManager.AodNaviEventType.AOD_NAVI_DATA_CACHE:
-           this.handleDataCache(eventInfo);
-           break;
-       }
-     });
-     hilog.info(0x0000, 'aodNavigationSample', 'onAodNaviEvent success.');
-   } catch (error) {
-     hilog.error(0x0000, 'aodNavigationSample', 'onAodNaviEvent error: %{public}d %{public}s', error.code, error.message);
-   }
-
    // 处理进入熄屏导航事件
    async handleNaviEnter(eventInfo: aodNaviManager.AodNaviEventInfo) {
      let historyRoutes: aodNaviManager.HistoryRoute[] = [
@@ -206,6 +179,33 @@ content_hash: sha256:5c1057e64e9a3a0fc8aeab08f247717261a4332418ced99909bcb5539c7
    // 处理数据缓存事件
    async handleDataCache(eventInfo: aodNaviManager.AodNaviEventInfo) {
      hilog.info(0x0000, 'aodNavigationSample', 'handleDataCache');
+   }
+
+   try {
+     aodNaviManager.onAodNaviEvent((eventInfo: aodNaviManager.AodNaviEventInfo) => {
+       hilog.info(0x0000, 'aodNavigationSample', 'Received AOD navigation event: eventType: %{public}d, eventId: %{public}s', eventInfo.eventType, eventInfo.eventId);
+       switch (eventInfo.eventType) {
+         // 进入熄屏导航事件回调
+         case aodNaviManager.AodNaviEventType.AOD_NAVI_ENTER:
+           this.handleNaviEnter(eventInfo);
+           break;
+         // 退出熄屏导航事件回调
+         case aodNaviManager.AodNaviEventType.AOD_NAVI_EXIT:
+           this.handleNaviExit(eventInfo);
+           break;
+         // 语音播报事件回调
+         case aodNaviManager.AodNaviEventType.AOD_NAVI_VOICE_BROADCAST:
+           this.handleVoiceBroadcast(eventInfo);
+           break;
+         // 数据缓存事件回调
+         case aodNaviManager.AodNaviEventType.AOD_NAVI_DATA_CACHE:
+           this.handleDataCache(eventInfo);
+           break;
+       }
+     });
+     hilog.info(0x0000, 'aodNavigationSample', 'onAodNaviEvent success.');
+   } catch (error) {
+     hilog.error(0x0000, 'aodNavigationSample', 'onAodNaviEvent error: %{public}d %{public}s', error.code, error.message);
    }
    ```
 6. 调用[setPlanRouteToAod](../harmonyos-references/aodnavigation-aodnavimanager.md#aodnavimanagersetplanroutetoaod)接口下发规划轨迹路线至AOD Navigation Kit用于熄屏界面显示。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ContainerSpan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > ContainerSpan
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:14+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:dcd7977d19da7c01cd3b23a5c2c5f89500cf80c06dc324e4cc0228c432789eca
+content_hash: sha256:9d1ec8848785df32d4d9e1086adbb380267c41b05f50079f99e78776504d3c05
 ---
 
 [Text](ts-basic-components-text.md)组件的子组件，用于统一管理多个[Span](ts-basic-components-span.md)、[ImageSpan](ts-basic-components-imagespan.md)的背景色及圆角弧度，适用于需要为文本片段和图片组合设置统一背景样式的场景。
@@ -108,7 +108,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/LlgjfdRpSiyk_Mpk-ROvbQ/zh-cn_image_0000002786361352.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1234B30769851947FB86FEE230934895D51A6647D4E3019CDB1E2E49A44DADA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/2Nbof1oyQF247LHJIKdV7A/zh-cn_image_0000002817508517.png?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBFEB0591B6FF14EC7E03B7319ABA9F9EB72B069AB3132835F592AE5441DC9A5)
 
 ### 示例2（通过attributeModifier设置背景样式）
 
@@ -146,4 +146,4 @@ struct ContainerSpanModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Gufcg-B4Q0KEmT_JHgh_Mw/zh-cn_image_0000002815560773.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=355B47D9D356C28C74209E8F7F9677E27481D07A4FFEE8E43804DD8DFC889232)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/2EFJJPf8TN27jHkvHnaBtw/zh-cn_image_0000002788309086.png?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=697F7896E0660F1FC698CD792FC004EFE1955B67CE99D5794BF938FA85D23316)

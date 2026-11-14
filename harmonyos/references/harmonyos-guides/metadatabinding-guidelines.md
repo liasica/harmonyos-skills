@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/metadatabindi
 title: 元数据绑定开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 元数据绑定开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:43+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d07ccd01d053492ead5a3b7e46327e7daadd1c8b266cce9075cc934d8ab3d99a
+content_hash: sha256:31d21fbf600fd0e4961353023132c6ff7c339b556c7ccbc1e7b6ccb7b1acab73
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ MetadataBinding（元数据绑定）指由第三方应用提供[鸿蒙App Linkin
 
 ## 演示示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/kNFP8nuiRdqzx5yG9ZituQ/zh-cn_image_0000002815559199.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B9C4F61D51A28018B22ACB6F4CA1C38618D1A018AE008FB8FEF8A1E9875DBF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/h_7R6SgrQUaKw42JHQXIrQ/zh-cn_image_0000002788467454.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004602Z&HW-CC-Expire=31536000000&HW-CC-Sign=027FB388E81CC05EB7A8ED9B30DA57356179CD5F2F335FFD419E761BEEB6D18D)
 
 ## 接口说明
 

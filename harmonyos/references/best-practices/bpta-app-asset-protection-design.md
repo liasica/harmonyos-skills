@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-asset-
 title: 应用资产保护设计
 breadcrumb: 最佳实践 > 安全设计 > 应用资产保护设计
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:22+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:42478f184b9ba75bd172fdaa342e74168037e56d31a2c112a9c36241f1867616
+content_hash: sha256:1239236bf6f248ce312a184601a82dc0550a4052f3fcd664c396b238bde04ea9
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ HarmonyOS应用资产包括代码、用户数据、安全密钥。数据库资�
 
 HarmonyOS安全能力全景图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/hHNA1w0ET7KIA5fUXeXLpQ/zh-cn_image_0000002194010336.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EA2B8767CB5CD4CCAD29C0C9C27387AE1354435D13F471A79334BFAD5F5723F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/kV_zvcFqQcCpQ8KALAHj4g/zh-cn_image_0000002194010336.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E9E6EA2A7D5B7040DB1752C00F278669040F09C54C6931288849F8B0E6A8C59 "点击放大")
 
 **系统安全：**
 
@@ -51,7 +51,7 @@ HarmonyOS应用是自身应用资产的责任方。应用需要按需使用Harmo
 
 移动应用的代码安全非常重要。DevEco Studio默认提供代码混淆能力。混淆后的JS、TS、ArkTS代码难以逆向分析。混淆功能支持对类、方法等名称进行混淆。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/GOVz21FqSPi7fq_vCkiChw/zh-cn_image_0000002193850752.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=A04213972098851BBAA1232234C7B17EB861D47B0D3A81CC6BECA63062BD46D2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/ITW3K8JBTzindEr0-2piiA/zh-cn_image_0000002193850752.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9404B608700C48A33DEEEEFCB5E4F293C1EF514EA94BB45CE787FF39111CE39 "点击放大")
 
 代码混淆方案基于源码混淆。源码转换为抽象语法树（AST），在AST上进行作用域和符号分析。混淆名称和属性，移除日志打印代码，合并语句，压缩代码体积。这些操作在保证运行时性能不变的前提下，有效保护开发者核心知识产权。
 
@@ -91,7 +91,7 @@ console['log']('' + getAgeInfo());
 
 HarmonyOS系统提供端到端的应用代码保护机制。该机制以系统安全为基础，构建内核级应用生命周期内的代码安全保护能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/WGr61pB9TcKaYzimKjDExQ/zh-cn_image_0000002193850744.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=38A404AF9FE04E800B5918655AF5FBDD707197DE34B25CBC7179F071A5EDF178 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/i6zR1wF4QuKgrKjlMz6_jA/zh-cn_image_0000002193850744.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C31ABFDBCE3D91E26631A90C8F908132A21CA14A7BC589B5A6C095226935670 "点击放大")
 
 开发者向应用市场提交上架申请。应用市场审核后，对上架应用进行代码加密。应用在设备上安装时，安装文件仍处于加密状态，有效保护应用程序。应用程序启动时，内核加载的文件按页解密执行。应用加密采用标准AES加密算法，提高应用程序的安全性。
 
@@ -111,7 +111,7 @@ HarmonyOS系统使用根CA对应用程序安装包进行签名校验，应用安
 
 关键资产存储（Asset Store）提供关键敏感隐私数据的本地加密存储。应用可以将高安全敏感的关键资产短数据（如APP账号密码、银行卡号等）在本地加密存储。加密密钥存储在安全的隔离区，只有合法应用才能访问并解密这些数据。具体的架构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/Pcf0mKGSSbyD5bDuz1cVIA/zh-cn_image_0000002193850760.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E59DCAF451EA51171343914EFF9E081DB95E0B90BF98D19CB89DDE5280931C7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/_4qxeEYhTXSwqw-VLoImZQ/zh-cn_image_0000002193850760.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CD62F6CE5FEF9A93E57CD90B3D111FA484544A6EEC506B9D59917C912F0B1D2 "点击放大")
 
 除此之外，关键资产存储还支持以下安全措施：
 
@@ -133,7 +133,7 @@ HUKS的核心安全设计如下：
 
 密钥会话是HUKS中承载密钥使用的基础，主要用于初始化密钥信息和缓存业务数据。数据的密码学运算和密钥密文的加解密都在HUKS Core中进行，以确保密钥明文和运算过程的安全。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/jgiN7rQlQzCORMoNu-RoWQ/zh-cn_image_0000002229336137.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=89A5F2C48869D6C5EBC614BBB157B11B0984B164DADCD4D7A62E7330A76AE262 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/J-FmQcZ9S4i5OqxuU4NyYA/zh-cn_image_0000002229336137.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=38381A12154ADA8922D5B0A20F16B3FC081163B9ED0C762E22D09C45BA6194D4 "点击放大")
 
 ## 应用资产保护设计
 
@@ -228,7 +228,7 @@ HarmonyOS在系统提供的应用代码保护机制之外，同时也兼容三�
 
 在HarmonyOS系统中，普通用户数据通过每个应用独立的应用沙箱进行隔离。应用沙箱保护机制确保应用无法访问除自身文件目录之外的其他应用或用户的数据。此外，所有应用的目录可见范围均经过权限隔离，仅自身和部分系统进程有权限访问，未授权的第三方应用无法访问。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/J8VkYbeoR06NcLMDiB00CA/zh-cn_image_0000002194010332.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EB167AEA2138245331B39F796D8BA7C732C639B930FC4B55599A454BBAEC3AC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Leqy_MBER0uE67LAEzrkUw/zh-cn_image_0000002194010332.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDD8585FDE876F63652AE051C52EB3AB9BFC0769496B3CE7B53E97E9AA8D094F "点击放大")
 
 除此之外，对于一些更加敏感的用户数据，如用户口令、身份证号、银行卡号等，HarmonyOS系统还提供关键资产存储服务，关键资产的安全存储，依赖底层的TEE可信执行环境。具体来说，关键资产的加/解密操作以及访问控制校验，都在安全环境中完成，即使系统被攻破，也能保证用户敏感数据不发生泄露。详细方案可以参考[Asset Store Kit简介](../harmonyos-guides/asset-store-kit-overview.md)。
 

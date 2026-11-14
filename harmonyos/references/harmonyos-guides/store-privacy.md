@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy
 title: 隐私管理服务
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 隐私管理服务
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:f74e687bf89e73272543d5b77b27b998b82e520ced426b91eb5e55d1391eaef8
+scraped_at: 2026-11-14T08:48:13+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:66bc81d8e625430c432e3eade20530e9c6d52a2e967e30304da20a9c1591cc46
 ---
 
 隐私管理服务为使用[标准化隐私声明托管服务](../app/agc-help-privacy-policy-0000002316794885.md)的应用/元服务提供查询隐私链接、查询隐私签署状态、撤销同意记录和拉起标准化隐私弹框请求用户同意功能。
@@ -31,7 +31,7 @@ content_hash: sha256:f74e687bf89e73272543d5b77b27b998b82e520ced426b91eb5e55d1391
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/SBTo4kcVQRi8S5cxWP-meg/zh-cn_image_0000002786360182.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A29168CFFCF3FD3750B8E8B8D7C4CB35F3479099A9BE27DE2895177AACFF1CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/3BXl5aEAQGm3sC92FGQLyA/zh-cn_image_0000002817427277.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F8DEF94000C1830A0016EDAFDFC2A6722AD2EC5BA124FDA3F527444D1B241A7)
 
 ### 查询隐私链接信息
 
@@ -181,7 +181,7 @@ content_hash: sha256:f74e687bf89e73272543d5b77b27b998b82e520ced426b91eb5e55d1391
 
 弹框样式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/S9VF27kcRWyKJCHydoQMhQ/zh-cn_image_0000002815559603.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=181AAB2AFAC67F4579A4904C8CA05CB107D4B2C070DA1AB686D2965E3D0788C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/KIXyhg3lR12_OjYN3PRb1Q/zh-cn_image_0000002788467858.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=A125B33A73463538DF5D34D86A8AE198071995F255B1A82257ACDA3C8B7E16CC)
 
 用户点击同意隐私弹框，应用市场会发送隐私弹框签署结果公共事件。应用可通过监听该事件，感知用户隐私签署结果。
 

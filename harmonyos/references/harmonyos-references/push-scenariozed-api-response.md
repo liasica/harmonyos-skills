@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scen
 title: 响应参数
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息推送 > 响应参数
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:dd83725bfefec4222c3ed8a85f6d22c8a3fd3aa27f1234d9879594fea840c3f5
+scraped_at: 2026-11-14T08:53:49+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:2108877302e1bada49b6d8b7a2d289883574440d1d690153a807a9ccd63639ca
 ---
 
 ## Response Body
@@ -104,10 +104,10 @@ Check Parameter Partial Success.
 
 请根据响应消息中的提示，排查失败的Token是否存在以下情况：
 
-1. noPushTypeRight：请开通请求头中push-type对应场景的权益，语音播报消息（push-type为2）权益申请可参考[申请推送语音播报消息权益](../harmonyos-guides/push-apply-right.md#申请推送语音播报消息权益)，应用内通话消息（push-type为10）权益申请可参考[申请推送应用内通话消息权益](../harmonyos-guides/push-apply-right.md#申请推送应用内通话消息权益)。
+1. noPushTypeRight：请开通请求头中push-type对应场景的权益，语音播报消息（push-type为2）权益申请可参考[申请推送语音播报消息权益](../harmonyos-guides/push-apply-right.md#申请推送语音播报消息权益)，应用内通话消息（push-type为10）权益申请可参考[申请推送应用内通话消息权益](../harmonyos-guides/push-apply-right.md#申请推送应用内通话消息权益)，MDM消息（push-type为11）权益申请可参考[申请推送MDM消息权益](../harmonyos-guides/push-apply-right.md#申请推送mdm消息权益)。
 2. noRight：请检查生成Push Token的应用是否属于请求url中projectId对应的项目，即确保请求URL（https://push-api.cloud.huawei.com/v3/**[projectId]**/messages:send）中的**projectId**与[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站中该应用所属的“项目ID”一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/SJUb-DhUQiSTfoE0KpFmvA/zh-cn_image_0000002815561621.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5A82B616CFAC9FE5C5A188177793C19DB1EE6B3CFCBA77E54E0A7CA26A7112C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/ENaRYOWBQzuQBktidAXfDg/zh-cn_image_0000002788309934.png?HW-CC-KV=V1&HW-CC-Date=20261114T005349Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D9390C2703BD96377501F2746C159CCDB5C2D5882D643ACE766DD8639C05609)
 3. atomicUnableSendUnsubscribedMsg：元服务**仅支持**发送授权订阅消息、卡片刷新消息，请排查消息体内容。
 4. tokenFormatError：请检查Push Token格式是否错误，并重新[申请Push Token](../harmonyos-guides/push-get-token.md)。
 5. countryNotSupport：请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
@@ -295,10 +295,10 @@ All the tokens are invalid.
 
 请根据响应消息中的提示，排查失败的Token是否存在以下情况
 
-1. noPushTypeRight：请开通请求头中对应push-type场景的权益，语音播报消息（push-type为2）权益申请可参考[申请推送语音播报消息权益](../harmonyos-guides/push-apply-right.md#申请推送语音播报消息权益)，应用内通话消息（push-type为10）权益申请可参考[申请推送应用内通话消息权益](../harmonyos-guides/push-apply-right.md#申请推送应用内通话消息权益)。
+1. noPushTypeRight：请开通请求头中对应push-type场景的权益，语音播报消息（push-type为2）权益申请可参考[申请推送语音播报消息权益](../harmonyos-guides/push-apply-right.md#申请推送语音播报消息权益)，应用内通话消息（push-type为10）权益申请可参考[申请推送应用内通话消息权益](../harmonyos-guides/push-apply-right.md#申请推送应用内通话消息权益)，MDM消息（push-type为11）权益申请可参考[申请推送MDM消息权益](../harmonyos-guides/push-apply-right.md#申请推送mdm消息权益)。
 2. noRight：请检查生成Push Token的应用是否属于请求url中projectId对应的项目，即确保请求URL（https://push-api.cloud.huawei.com/v3/**[projectId]**/messages:send）中的**projectId**与[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站中该应用所属的“项目ID”一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/69Ej9gUWSC63Y2TjhOZT0g/zh-cn_image_0000002815401705.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD02409978C9F504AE35D33C78249744EB74A32982D004EB6E05EFF87D2ABFD4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/MIC0l6tPQkqJo1LkdZ-faA/zh-cn_image_0000002817429297.png?HW-CC-KV=V1&HW-CC-Date=20261114T005349Z&HW-CC-Expire=31536000000&HW-CC-Sign=2491622DE65C83790D2BB4B4BB50A3B1679F8DEBC76E4EAFC08FE9189390EF29)
 
    若终端设备升级至HarmonyOS NEXT版本后，需重新生成对应的Push Token（建议您在应用启动时调用getToken接口，若设备的Push Token发生变化，及时上报到您的应用服务器更新Push Token）。并使用[请求体参数说明](push-scenariozed-api-request-param.md)、V3版本的请求URL（https://push-api.cloud.huawei.com**/v3**/[projectId]/messages:send）发送REST API请求。
 3. atomicUnableSendUnsubscribedMsg：元服务**仅支持**发送授权订阅消息、卡片刷新消息，请排查消息体内容。

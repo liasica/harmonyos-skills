@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/client-server
 title: 客户端和服务端交互流程
 breadcrumb: 指南 > 应用框架 > Content Embed Kit（内容嵌入服务） > 客户端和服务端交互流程
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:16+08:00
 doc_updated_at: 2026-04-30
-content_hash: sha256:41c076a43322e9c01c9c479a125967aaee49925f1f3ceff8928607bdfcd3c400
+content_hash: sha256:39215f94200c3f55ec22b1f65be98b4890137ba4d5004be030b83d2af12fa26e
 ---
 
 [OE](content-embed-kit-terminology.md#oe)框架采用ExtensionAbility机制进行扩展，主要架构元素包括：[OE Extension](content-embed-kit-terminology.md#oe-extension)和[OE SA](content-embed-kit-terminology.md#oe-sa)。外部依赖元素包括：[AMS](content-embed-kit-terminology.md#ams)和[BMS](content-embed-kit-terminology.md#bms)。
 
 以下是OE客户端和服务端交互流程：客户端依赖服务端的OE Extension执行文档的嵌入与编辑操作；服务端则负责OE Extension的统一注册与管理。在运行时，服务端依据客户端请求，**动态启动**相应的OE Extension实例，以响应文档处理需求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/327ibi1pQs2n93HJBi789w/zh-cn_image_0000002786359486.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBDEFDEDFDBBC088EA47F26F832A38B22B47CE701A37EEAD78521B26C0E90094)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/zBi_5Q4UQ_69WQnfFaJDwA/zh-cn_image_0000002817426581.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=A10E9A4BD40DC5C1B8308CD1A677BEF3D83869AB1D3EAC76C198E9052F96F1D4)
 
 下图为应用间内容嵌入与协同编辑开发时序图。
 
 客户端和服务端开发步骤详见：[客户端应用开发](content-embed-client-guidelines.md)和[服务端应用开发](content-embed-server-guidelines.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/tWb1FkvkQeGeEbqOpZ4FLQ/zh-cn_image_0000002815558907.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAE7C2356442F28B7F8A4C38DDDB992ADFBED187CED8347E507225ED16ECE438)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/pETZzU01QP-78uMlfTI1lQ/zh-cn_image_0000002788467162.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=70DD1D2542B6EC5012165FC9DF047A7F391CAA4D7482B49FFAE1451862D41526)
 
 1. 创建[OE文档](content-embed-kit-terminology.md#oe文档)：客户端创建OE文档有三种方式：基于[OEID](content-embed-kit-terminology.md#oeid)创建OE文档，基于文件创建OE文档，基于[OE格式文件](content-embed-kit-terminology.md#oe格式文件)加载OE文档。
 2. 创建[客户端OE对象](content-embed-kit-terminology.md#客户端oe对象)：客户端基于OE文档创建客户端OE对象，实现OE文档与客户端OE对象的关联，并用于与服务端通信。创建客户端OE对象完成后需注册该对象回调以响应OE服务端通知。

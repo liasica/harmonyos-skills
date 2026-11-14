@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 开发预加载资源接口
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 预加载 > 开发预加载资源接口
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:16+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:7bbbef721d1a893700a04b4e5e2fcb7de0568649367a48bd9eabcde0782a0b11
+content_hash: sha256:99e638fb27f8380d228d7d91cf528d0941b3bd4a43ebad2a32771e79e091a582
 ---
 
 使用预加载服务之前，开发者需要完成云侧接口的开发，以提供预加载所需的资源数据。华为提供两种方式供开发者选择：云函数和开发者服务器，开发者可根据实际业务需要进行选择。
@@ -14,7 +14,7 @@ content_hash: sha256:7bbbef721d1a893700a04b4e5e2fcb7de0568649367a48bd9eabcde0782
 
 开发者需要先按照云函数接口规范开发函数，然后在AGC云端创建函数，并可测试函数运行是否正常。流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/2ww1nWg9Q-q_2BIVRZCwsg/zh-cn_image_0000002815559685.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=790BFB31657CFF0636F45BFF828160F6189E50AA5C7F919A6268BFC5FD272EBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/g6ftW57VRWC5ukEzlreJfA/zh-cn_image_0000002788467940.png?HW-CC-KV=V1&HW-CC-Date=20261114T004815Z&HW-CC-Expire=31536000000&HW-CC-Sign=0277CB904E5D434D7192CA42DB2753366E28CE4B3889FE3B3EE567833171F2BA)
 
 1. [开发函数](cloudfoundation-develop-function-nodejs.md)：按照云函数接口规范开发函数。
 2. [创建函数](cloudfoundation-create-and-config-function.md)：函数业务代码开发完成后，即可在AGC云端创建函数。

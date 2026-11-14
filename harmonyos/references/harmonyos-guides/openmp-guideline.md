@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/openmp-guidel
 title: OpenMP应用构建和运行指南
 breadcrumb: 指南 > NDK开发 > 代码开发 > OpenMP支持 > OpenMP应用构建和运行指南
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:45+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:51a8f07999d43345e559aa5db0ca5ac094a85aa30b6ee61d820f47f2f837d7e7
+content_hash: sha256:b24ce0470c751821c1f86c7f1eadc09fecb9bc7fa4ad885c63bcf5585eb24f30
 ---
 
 HarmonyOS NDK中提供了OpenMP的动态库和静态库文件，支持开发者在Native应用中使用OpenMP。本文用于指导开发者在[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/)中调用库文件使用OpenMP的并行化能力，更详细的使用示例和API标准请查看官方文档[clang-OpenMPSupport](https://clang.llvm.org/docs/OpenMPSupport.html)。
@@ -155,10 +155,10 @@ struct Index {
 
 运行前请检查设备连接并配置好[Signature](../doccenter-deveco-studio/ide-signing-auto.md)信息。直接点击右上角运行按钮，应用启动后设备进入“Hello OpenMP”界面，点击“Hello OpenMP”标签，打开DevEco Studio下方“Log”查看页面，即可看到并行打印的“Hello OpenMP！”消息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Dmun54DMRRi2lYnqH81Q3g/zh-cn_image_0000002786360818.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5EAFFE6A88D425D87802D079581983BF044BE3703ADDE9BDCD7704BC6E0AB95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/TfRA9mDNTiqfiv2wpH16_Q/zh-cn_image_0000002817507983.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5541A83E5BAC2B3F39FBEA33591F2F31723E0F5737BE70BBB5406266E5BBAEE)
 
 **注意** 
 
 OpenMP程序运行时，HiLog中会输出“dlopen\_impl load library header failed for libarcher.so”的报错信息（如下图）。该报错信息中提到的libarcher.so，在OpenMP程序开启Tsan检测时才需要使用。目前HarmonyOS未支持OpenMP程序的Tsan检测能力，因此该错误信息可忽略，不影响程序正常运行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/equzYZKOQGyIBpOaOajdEg/zh-cn_image_0000002815560239.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8FE94974EBF1CBEC1DBE559EF7492FAAD3A23A2F9B70A96058D095A5A4D29FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/7HbY_ZqgRimQ8LRt91d9KA/zh-cn_image_0000002788308552.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F12EB080466985C8A476EC4E4BD333A80774B44B0ABCDE3D84411CC80E27AC0)

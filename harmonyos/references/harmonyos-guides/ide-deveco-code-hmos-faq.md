@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 鸿蒙电脑版DevEco Code常见问题
 breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 常见问题 > 鸿蒙电脑版DevEco Code常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:88cefa01c236f9427e4cc19f11ae8dc0cfcf5ea73fae349b61be13dc46315763
+content_hash: sha256:42b706b4a5d403191e2e4d5286d5a58d5bc722ef5ee39e5aac91e5bfdcef07f8
 ---
 
 ## 在鸿蒙电脑版DevEco Code执行命令时，提示“Permission denied：node”
@@ -14,7 +14,7 @@ content_hash: sha256:88cefa01c236f9427e4cc19f11ae8dc0cfcf5ea73fae349b61be13dc463
 
 执行安装命令或检验环境搭建等命令时，提示没有node权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/b7r95pxTSYGyrg_IssDjwQ/zh-cn_image_0000002808886377.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=21F1DF8170810269134997CA89B195FA9331877A373B853BB9D86A141230BE5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/o1gHaiAeSyCenX9BoIVhdg/zh-cn_image_0000002808886377.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=B364795E50B7F02F12A64F54E05C2971DB37092CBFB1E108FD68AA5EB3890E2F)
 
 **可能原因**
 
@@ -32,7 +32,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 **问题现象**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/hMfIz9sLRESrU39Lq2OrtQ/zh-cn_image_0000002808766297.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=B94040EE69700411F9AE3C020D4E1F6830427B1100D6B492B0EA13F37D7BD00E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/sJabtdoJRiGtMfJ7LePrAw/zh-cn_image_0000002808766297.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B97220FA623D1B31BA5FB1A6E976B95763722CF0CD0EB1BCD7D23427FBC3DC5)
 
 **可能原因**
 
@@ -64,7 +64,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 在鸿蒙电脑上执行npm install -g @deveco/deveco-code@stable命令安装DevEco Code时，有报错提示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Dd2KImefQfejOyGcFZJKqA/zh-cn_image_0000002808766301.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=E22C3F80D56DC59E5F7D4F8B8A6F3AC33D2D83C74C297E004521D1ABEED27F87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/YnDv8jmCTRS1C8XrrKDttg/zh-cn_image_0000002808766301.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7C997F7FD0EF6BB6D25FF402B8661356CC073B7FAB37FB79752CD9EC14D6177)
 
 **可能原因**
 
@@ -80,7 +80,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 在鸿蒙电脑DevEco Studio中安装DevEco Code时，弹窗提示“无法运行来自非应用市场的扩展程序”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/mDTE9LShSAqquUq78yBLdw/zh-cn_image_0000002808766293.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=81760D63DD8F85ABE6103B6C2F9F42658CF5509E6FE27A9D8FA22717321EBB44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/KsvPfe3MSYG-mEOCS9Gb0Q/zh-cn_image_0000002808766293.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=D232EA99EAA9B70809DD0261224861F9DDDC033994F1AB3CD0C162019687B231)
 
 **可能原因**
 
@@ -90,7 +90,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 点击弹窗中的**去设置 >** **隐私和安全**，开启**运行来自非应用市场的扩展程序**后，重新安装DevEco Code。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/MTZg_QiJTniCtRYlsR2DXw/zh-cn_image_0000002808886379.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFB1C43750C1CAA5DD3035AE1783F0486DF4709CFE4C9A6137260C100DA82289)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/TEFy3He-Tbu1a6Q1BVIZuw/zh-cn_image_0000002808886379.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=D60505FAF03D7C42DCAA5BA8E53871CAA41FAAF135409A1CF68832286940087B)
 
 ## 在鸿蒙电脑DevEco Studio中安装DevEco Code时，提示“由于网络问题，DevEco Code安装失败，请调整网络后再次尝试”
 
@@ -98,7 +98,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 在鸿蒙电脑DevEco Studio中安装DevEco Code时，报安装失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/TBpgcnOeQPmZGW9J2GAvgQ/zh-cn_image_0000002808886381.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=41FD27EFD7AC1D64BAF72918B7BE3A1282AFFAADB70B3EB38E31AE8C749298A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/IIIPZkB1QW-t3MajMO-vFA/zh-cn_image_0000002808886381.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E7327AB24FC132306E432D2BC6D487F82194B90CC05F2C6C1DC0EFE10AD7CFA)
 
 **可能原因**
 
@@ -129,10 +129,10 @@ npm install -g @deveco/deveco-code
 
 * 升级：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/dI32HjspSGW1cjGKKY088g/zh-cn_image_0000002808886383.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=613924BC8C8834B3E8A9AA005F17A4C84E6E491C2EB5293855D7ADC7A8F03A08)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/73hagyj-SaejZpmmrg6IGA/zh-cn_image_0000002808886383.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A6C26452336DA7240132781B22D24FF08FAB22A1106693684044E1DA112D508)
 * 卸载：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/eDrCbRO7R1ibUajyfgHG-g/zh-cn_image_0000002808766295.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=16EB6017B2D8FEBF8202CABE9D15E02648112BFEC5805DB2E6B7881E6F60486B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/U30AiP3BT2Cp_yA-jKjdPA/zh-cn_image_0000002808766295.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=87789856294D21281C7F65AF8C9A66C3E77399ED89627C5529B740F73126EA32)
 
 **可能原因**
 

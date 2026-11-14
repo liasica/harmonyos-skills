@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/socket-connec
 title: 使用Socket访问网络
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用Socket访问网络
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:44+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:b75cbb4132150a643f1b58d47eee455ca72cc351e4805c7bb335c13d0e28a826
+scraped_at: 2026-11-14T08:47:36+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:23e26f838e80b6d6ab2c20c909f6da35f167dc76f9611082a01b40abfc6a0e1f
 ---
 
 ## 简介
@@ -19,23 +19,23 @@ Socket连接主要是通过Socket进行数据传输，支持TCP/UDP/Multicast/TL
 ## 基本概念
 
 * Socket：套接字，就是对网络中不同主机上的应用进程之间进行双向通信的端点的抽象。
-* TCP：传输控制协议(Transmission Control Protocol)，是一种面向连接的、可靠的、基于字节流的传输层通信协议。
-* UDP：用户数据报协议(User Datagram Protocol)，是一个简单的面向消息的传输层，不需要连接。
+* TCP：传输控制协议（Transmission Control Protocol），是一种面向连接的、可靠的、基于字节流的传输层通信协议。
+* UDP：用户数据报协议（User Datagram Protocol），是一个简单的面向消息的传输层，不需要连接。
 * Multicast：多播，基于UDP的一种通信模式，用于实现组内所有设备之间广播形式的通信。
-* LocalSocket：本地套接字，IPC(Inter-Process Communication)进程间通信的一种，实现设备内进程之间相互通信，无需网络。
-* TLS：安全传输层协议(Transport Layer Security)，用于在两个通信应用程序之间提供保密性和数据完整性。
+* LocalSocket：本地套接字，IPC（Inter-Process Communication）进程间通信的一种，实现设备内进程之间相互通信，无需网络。
+* TLS：安全传输层协议（Transport Layer Security），用于在两个通信应用程序之间提供保密性和数据完整性。
 
 ## 场景介绍
 
 应用通过Socket进行数据传输，支持TCP/UDP/Multicast/TLS协议。主要场景有：
 
-* 在TCP/UDP传输的客户端（UDP本身并没有客户端和服务器端的明确区分，此处描述UDP传输的客户端是指主动向服务器发送数据的一方），应用通过TCP/UDP Socket进行数据传输
-* 在TCP传输的服务器端，应用通过TCP Socket Server进行数据传输
-* 多播通信场景，应用通过Multicast Socket进行数据传输
-* 同一台主机上不同进程之间传输的客户端，应用通过Local Socket进行数据传输
-* 同一台主机上不同进程之间传输的服务器端，应用通过Local Socket Server进行数据传输
-* 数据加密传输时，客户端侧通过TLS Socket进行加密数据传输
-* 数据加密传输时，服务器侧通过TLS Socket Server进行加密数据传输
+* 在TCP/UDP传输的客户端（UDP本身并没有客户端和服务器端的明确区分，此处描述UDP传输的客户端是指主动向服务器发送数据的一方），应用通过TCP/UDP Socket进行数据传输。
+* 在TCP传输的服务器端，应用通过TCP Socket Server进行数据传输。
+* 多播通信场景，应用通过Multicast Socket进行数据传输。
+* 同一台主机上不同进程之间传输的客户端，应用通过Local Socket进行数据传输。
+* 同一台主机上不同进程之间传输的服务器端，应用通过Local Socket Server进行数据传输。
+* 数据加密传输时，客户端侧通过TLS Socket进行加密数据传输。
+* 数据加密传输时，服务器侧通过TLS Socket Server进行加密数据传输。
 
 **说明** 
 
@@ -352,7 +352,7 @@ UDP与TCP流程大体类似，下面以TCP为例：
    // 创建一个LocalSocket连接，返回一个LocalSocket对象。
    let client: socket.LocalSocket = socket.constructLocalSocketInstance();
    ```
-3. 注册LocalSocket的消息(message)事件，以及一些其它事件(可选)。
+3. 注册LocalSocket的消息（message）事件，以及一些其他事件（可选）。
 
    ```typescript
    client.on('message', (value: socket.LocalSocketMessageInfo) => {
@@ -740,7 +740,7 @@ UDP与TCP流程大体类似，下面以TCP为例：
    import { BusinessError } from '@kit.BasicServicesKit';
    import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-2. 参考[应用 TCP/UDP 协议进行通信](socket-connection.md#应用tcpudp协议进行通信)，创建一个TCPSocket连接。
+2. 参考[应用TCP/UDP协议进行通信](socket-connection.md#应用tcpudp协议进行通信)，创建一个TCPSocket连接。
 
    ```typescript
    // 创建一个TCPSocket连接，返回一个TCPSocket对象。

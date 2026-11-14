@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-embedde
 title: 页面级弹出框
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 页面级弹出框
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:04+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:352e2ee38b4dff21a8792e0504c048eebdcbaf0d9426bfa3362b5f37a84a2aff
+content_hash: sha256:3795d6ab2eb083a3ab5338e8a54798a027baf0e7e882b18d977475c84af14db7
 ---
 
 ArkUI的弹出框默认设置为全局级别，弹窗节点作为页面根节点的子节点，显示层级高于应用中的所有路由/导航页面。当页面内进行路由跳转时，如果应用未主动调用close方法关闭弹出框，弹出框不会自动关闭，并且会在下一个跳转页面上继续显示。
@@ -187,7 +187,7 @@ struct Next {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/wz7wQEQRQnenMPOHKM81_A/zh-cn_image_0000002815558481.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=69AA6592D83A8C0C1601616958EE10E5D00A847FC7807F41FD80C2528755D702)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/GTLHaUV3QrqnJMZbT8Re3w/zh-cn_image_0000002788466736.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1BC4E717B6EFCE1AE38290DA6CE79C28F6B05A917EB5E8CC2C9ADB3559E34DB)
 
 下述示例为基于Navigation导航模式下的页面级弹出框。使用本示例前需要参考[Navigation使用NavDestination作为导航页](../harmonyos-references/ts-basic-components-navigation.md#示例16navigation使用navdestination作为导航页)文档完成Index首页和router\_map.json的创建与配置。并使用下述示例代码中的PageLevelDialogInNavigation和PageLevelDialogInNavigationTestTwo组件替换Navigation参考文档中的PageHome和PageOne组件。
 
@@ -289,4 +289,4 @@ export struct PageLevelDialogInNavigationTestTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/2sL1l3pbTWaJJDQ1otU2GA/zh-cn_image_0000002815398565.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCC9D575554BC32017125275289EA8A59C9C3056849E6B61922CC46BA99AF8D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/vzVseABZQhaOgwblkgvbBQ/zh-cn_image_0000002817506223.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=0495D28360EE9D8430F98AEC0CD3D22AEEBFC0905C818809D4CBCDC8EB3DE19B)

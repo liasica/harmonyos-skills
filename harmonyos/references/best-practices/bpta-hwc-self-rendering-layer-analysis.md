@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hwc-self-r
 title: 自渲染图层未使用硬件合成问题分析
 breadcrumb: 最佳实践 > 功耗 > 应用功耗分析 > 自渲染图层未使用硬件合成问题分析
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:15+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:98c9dc1bbd3ed93cb268b85f46cb9a95353ffbaa2771ed142dda9cbd01911074
+content_hash: sha256:7b9fceb223c7a304714a95d2683c16f33074ab399ec5b294018ba9f296a72484
 ---
 
 ## 自渲染图层使用硬件合成介绍
@@ -34,7 +34,7 @@ content_hash: sha256:98c9dc1bbd3ed93cb268b85f46cb9a95353ffbaa2771ed142dda9cbd019
 
 7. 在Details栏的Anomaly Reason中可以看到影响功耗的原因，如自渲染图层设置透明度属性有120帧，这些帧都会使用GPU合成。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/1ulf8VQbSfGitSJO-4kR4Q/zh-cn_image_0000002586174361.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D05C4321579AD2B227E6C511D0E6894D4A852F8F24896C771D2597F8262651D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/wonnp2-4QiiiwddHEow5Ew/zh-cn_image_0000002586174361.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=77853120C038C7C96BADE8C8D7B936C28C4AD2599FB7A9E02506BC8EE51688E3 "点击放大")
 
 ### 基于Trace分析
 
@@ -48,13 +48,13 @@ content_hash: sha256:98c9dc1bbd3ed93cb268b85f46cb9a95353ffbaa2771ed142dda9cbd019
 
 5. 开始录制&结束录制：点击④开始录制/结束录制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/xlDxg_KfRVektb5wc0VywA/zh-cn_image_0000002555774396.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=11BB46E50D8FFE2C71A9DDB04528D9B064408B0272871200AA39AA99B0345DF5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ULZ_gk1NQsyuUtQl6Spbcg/zh-cn_image_0000002555774396.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD950C9246871DE2A755817981E71C26D424B54819C5F1D78B91F247803ED24D "点击放大")
 
 6. 等待解析完成，点击展开render\_service进程。
 
 7. 在搜索框搜索DrawImage(GPU)，按下回车，如果搜索数量为0，且在展开的render\_service进程中的RSUniRenderThre线程中没有DrawImage(GPU)打点，则表明该场景使用HWC硬件合成；否则，如果搜索数量不为0，并且在展开的render\_service进程中的RSUniRenderThre线程中有DrawImage(GPU)打点，则表明该场景使用GPU合成。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/b-aCB0hASyKz_mfxYfORqA/zh-cn_image_0000002586294323.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=41F922D7CDE8CCDE680712B2937148F7B098344B1D6EFBB943B9CC2DE1B933AE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/AEglahvPStKnP81aoZQXwA/zh-cn_image_0000002586294323.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEBC9B8C0B4DEF2B2F8229B376661BECB4E50E10ABD2751363FF87927F51DF08 "点击放大")
 
 ## 常见问题根因
 
@@ -64,7 +64,7 @@ content_hash: sha256:98c9dc1bbd3ed93cb268b85f46cb9a95353ffbaa2771ed142dda9cbd019
 
 当存在透明自渲染图层时，由于RS节点遍历中，自绘制节点不知道其透明区域是否可以被下方不透明的UI节点填充，因此必须使用GPU叠加，避免显示问题。 示例图如下所示，红色区域表示自渲染图层，蓝色表示UI图层。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/MBZRkVOzReSsOfMdcsOS4A/zh-cn_image_0000002555614774.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=A960ED890C547A2EC238B5FCC88998F4206C466880F012F4C12D08371AA72A67 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/uz86tlqTT-K-QGEfln_NVA/zh-cn_image_0000002555614774.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=66A5B9C691E43EEDDAC85526E040FB2356CCA38208163D7121620445ABA413BA "点击放大")
 
 如果自渲染图层设置了透明度，使用GPU合成，为了达到更优的性能功耗，在非必要的情况下，建议开发者去除自渲染图层的透明度。示例见：[场景三：避免UI控件上方自渲染图层设置透明度](bpta-utilize-hwc-efficiently.md#section1547428193417)。
 
@@ -72,6 +72,6 @@ content_hash: sha256:98c9dc1bbd3ed93cb268b85f46cb9a95353ffbaa2771ed142dda9cbd019
 
 如下图，ArkUI控件使用模糊等高阶视效并与自渲染图层区域交叠，RS在绘制该控件时，需读取自渲染图层内容以正确绘制。相比无高阶视效的情况，此时需要额外读取内容，并直接使用GPU载入自渲染图层进行渲染。此过程会带来额外的CPU、GPU、DDR开销，导致功耗增加和性能下降。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/C2S03af6SZeVypZlL0cqBw/zh-cn_image_0000002586174363.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=622596ABE345AD3241503213AF116B141C502FB3FF10037551A4F65CF848E637 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/44ysfGrtRH6rD8ipttqsMw/zh-cn_image_0000002586174363.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD7D37E4F328F3F874D198D1DF7B335079BC05AA17261ABEC008B1C16E5DD6D1 "点击放大")
 
 因此，建议开发者合理评估UI界面的视效需求，通过移除模糊等高阶视效或调整控件位置等方式，避免非必要高阶视效控件与自渲染图层交叠。去除UI控件的模糊效果后使能HWC合成，从而优化场景功耗。示例见：[场景一：在视频区域上方合理使用模糊控件](bpta-utilize-hwc-efficiently.md#section137998513411)。

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 取消网络请求（ArkTS）
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 发起HTTP请求，获取响应 > 取消网络请求（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4b1970d0ab9bf4a1711e511eb2ea8b6e8c018446d8277ca417804dd2f433b4a6
+scraped_at: 2026-11-14T08:47:37+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:5d51d5e18af9d04d88690fd5c5187bb0d183557b39f74d040b43e70fb2244288
 ---
 
 在远场通信服务的框架中，没有明确指定任何request的情况下，通过调用session.cancel，可以取消所有正在进行的网络请求。当开发者需要取消特定的一个网络请求时，可以使用session.cancel方法，并传入需要取消的请求，以实现这一目标。这样，开发者们就能根据具体需求，灵活地管理和控制网络请求的执行。
 
 ## 约束与限制
 
-取消网络请求能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+取消网络请求能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 接口说明
 

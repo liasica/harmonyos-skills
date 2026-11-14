@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 相对布局 (RelativeContainer)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 相对布局 (RelativeContainer)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:02+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:eca76008d60438cc3f4ff7da5eeb0fd20177528e96d6cdc8ba2926eb187dbc96
+content_hash: sha256:9fe3bfcb72aad26acb93f678e4c5919d3742bb2918f4cebf989d5c70917b91b2
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 **图1** 相对布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/uYrz29L9TR66xiDEmsg87Q/zh-cn_image_0000002815558229.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A78F9FE9746F64075EF7FBD65C57B2BD600EECE39039A50E5C3ADC13983D51F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/IFeJ8BsUSwupp9VzD-bdsw/zh-cn_image_0000002788466484.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=115BE8BCB4C7FE0CE3893B516E6D84E0C0052312BE3DD1B5B5776FE94F1F0166)
 
 子元素并不完全是上图中的依赖关系。比如，Item4可以以Item2为依赖锚点，也可以以RelativeContainer父容器为依赖锚点。
 
@@ -37,10 +37,10 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 * 在水平方向上，可以按照起始（left）、居中（middle）或尾端（right）的组件边界与锚点对齐。当设置三个边界时，仅起始（left）和居中（middle）的边界设置生效。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/FtD9SqgeTmSm49EUtp8zFA/zh-cn_image_0000002815398313.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=22AE9591C09EA6A6887F97AC880F6380BF96FE430606EB4EEF98A31D038D5DAB)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/BaOlfvEATyiq6oQB-HAfIQ/zh-cn_image_0000002817505971.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=78C640438D1DAD10AA5E8C46876DAAC484F005ABF77E5E196AC9E21BB3255D8F)
 * 在垂直方向上，可以设置组件边界与锚点对齐，具体包括顶部（top）、居中（center）和底部（bottom）。当设置三个边界时，仅顶部（top）和居中（center）生效。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/DlCLkkzYQiCpEDxNWFfFmA/zh-cn_image_0000002786518738.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=860117BB32282455A72CD9D24CFB54D4EF8E91DAF2819E4C473BB994751C7B59)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/rOYuv8mYQHy1MgQU9eTl7w/zh-cn_image_0000002788306542.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CDA693D2E04C40847A856C86569F3B1C325A6FAA97180EDD8AFF12991F466C8)
 
 ### 设置锚点
 
@@ -98,7 +98,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/LSQnCuEfSDW4XCyoA4VgAQ/zh-cn_image_0000002786358810.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=20F4C0519DA1824EEF94799E701CF8A398C57D8870304249D3C93A4E98186721)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/q-_hMXoNRXK2c_crx_voFw/zh-cn_image_0000002817425905.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A525F2276F394C54EE21FF3AB03E6173E33AC52AF6312209EF39D739A26275E)
 * 以兄弟元素为锚点。
 
   ```typescript
@@ -144,7 +144,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/849Sx2XLQCiiywrW5dAAZw/zh-cn_image_0000002815558231.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBAF5439F12B6398D1A724A63F9C31A9A07D7B75F90DF4B97229FD4E658075F2)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/AigjnkV5QamefARQS15wgQ/zh-cn_image_0000002788466486.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=8748BC513F51F2C4A5AEFF6CEAE110F95A8CE1860CA8EADEBDAAB9E824535D58)
 * 子组件锚点可以任意选择，但需注意不要相互依赖。
 
   ```typescript
@@ -214,7 +214,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/EfsZ39d8Sc6Q7pb1ZHvP_w/zh-cn_image_0000002815398315.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EC84C18F98FE7E289122AFB7F91C8EBABD59F7D7BE0333BF024CC079C6981AF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/EDez0GvkR-SbkJkhCfTx-g/zh-cn_image_0000002817505973.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=B09CC4E5240786271A30FE9D58B008302B7ACC0878881AF6800E0B91DB31C571)
 
 ### 设置相对于锚点的对齐位置
 
@@ -222,11 +222,11 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 在水平方向上，对齐位置可以设置为HorizontalAlign.Start、HorizontalAlign.Center、HorizontalAlign.End。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/q9t6B1kOQEagZQV44OEDsA/zh-cn_image_0000002786518740.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A4BD9E21077489A003AEA12C7546A64CA944577DBEF4D2746D926A1D06B01FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/FCR39pxuQtaIwwKXC_3y4A/zh-cn_image_0000002788306544.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEB7E4AB296CEF21AF7FB41A6F3FD0E0AFF575E2902FEC867BC10D25BDD4B8C2)
 
 在垂直方向上，对齐位置可以设置为VerticalAlign.Top、VerticalAlign.Center、VerticalAlign.Bottom。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/_sH1WrfHTfifnneEeZZbGg/zh-cn_image_0000002786358812.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=43F29C43236E59CEE2031F985F8CFF94AFE405C14485755549E0DDEB1EADC548)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/6YH9YbjoSHiOmCfrqTVqBg/zh-cn_image_0000002817425907.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EFE06BB283E6147555D4BEB694BE85FCE2E21EF61DF742C760CC333F9312E50)
 
 ### 子组件位置偏移
 
@@ -348,7 +348,7 @@ struct ChildComponentOffsetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/m9zcZqkKSgWRMKo4zqAg8g/zh-cn_image_0000002815558233.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A240554D1FF5BED641051ACF29D6BD85D8FF91E2AC6C562287C48D28C577B03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/VhUow7r9R063qSj9K9WCZg/zh-cn_image_0000002788466488.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E40E25AB26878352FC779BF593D0B7F560CB3791F0D8165C9977C7CD2D86D02)
 
 ## 多种组件的对齐布局
 
@@ -425,7 +425,7 @@ struct RelativeContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/i66IljzzS86-dhAcSnWaYg/zh-cn_image_0000002815398317.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=27879F0CFCCBD18D66283CF8395B9383D3CBD7550FA30C56E6544B602B3B291B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Kj73f28hQT6N0XkTiO0HIg/zh-cn_image_0000002817505975.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=980DA65BD87F9181639B53D775F3A5D1D2DD1ED30C9A6F23319A1D1C9CED0B88)
 
 ## 组件尺寸
 
@@ -530,7 +530,7 @@ struct RelativeAlignRulesExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/WiPr7c9zS9KaqJ4C2gcdyA/zh-cn_image_0000002786518742.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9A43BE8EA8741A711A352A29B2FFBBB164C9832F2AC1C0DA7F0E6A0D7274957)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/2Z0XGQY2Q_y0E3ajZO5ddQ/zh-cn_image_0000002788306546.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=181499435B679BFE26A3AC3A61662C4D924EDD7FC82BCC618527824E1F8E850F)
 
 ## 多个组件形成链
 
@@ -686,7 +686,7 @@ struct RelativeChainModeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/dJbKoSYXQ_ON6rTu_zAvyQ/zh-cn_image_0000002786358814.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=287B48558E10FF2EEC7E4BC79F0F8AFFBF9547830059E50A34FFBE365DB98B92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/XLkXpHPSSdatTVoapVyDOw/zh-cn_image_0000002817425909.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=37C7ADD757E2A4156D217965985BD41BFBE8594E9EE2EC1EAF6711B7D06F83D3)
 
 ## 使用辅助线辅助定位子组件
 
@@ -728,7 +728,7 @@ struct RelativeGuideLineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/v1XXqsmkQWGqc299Lt-YFA/zh-cn_image_0000002815558235.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=52715A24550417C0FB847B3F5E6AA59F465A6D3CF43E586DDED0E5B4566EDA73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/zrbazzOcRVWuWWgpYtbpYw/zh-cn_image_0000002788466490.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=4176184016324552695443B3519E45C4EA140954A8B3BFD8863AE405129D6652)
 
 ## 多个组件的屏障
 
@@ -856,4 +856,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/eS82zcQXRMancWH4dNZyMA/zh-cn_image_0000002815398319.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BB38FC6DB6A3F61FEEEFEF74F1CEB898A4751D97DF2467BA27FAA590D37CB4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/9yb54TzdQamWRo8xuCOmnw/zh-cn_image_0000002817505977.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9EF8E705F4DE5B1295889892F72E61BBEBF40B9921ACFFB136DFCD2CE2721CC)

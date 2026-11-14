@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hyperstartup-
 title: 应用快启
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动 > 应用快启
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:dd3678ac0f6f0a4e2ce81de1205967bbb77e940f67efea438b2a1b31690186d4
+scraped_at: 2026-11-14T08:46:49+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:a7e7751c6ef5354041def92bd61044c9a70aa07656228045cfd4a9f4348fedae
 ---
 
 ## 概述
@@ -43,13 +43,13 @@ content_hash: sha256:dd3678ac0f6f0a4e2ce81de1205967bbb77e940f67efea438b2a1b31690
   1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“开发与服务”。
   2. 在项目列表选择项目，并在应用列表下选择需要申请“应用快启”功能的应用。
   3. 进入“项目设置 > 开放能力管理”页面，点击“应用快启”对应的“申请”。
-* 应用配置快启后，实际是否进行快启以及具体的快启时机，均由系统根据用户习惯等信息来综合决定。开发者无法对此进行干预。
+* 从API版本24开始，应用配置快启并调用[setHyperSnapEnabled()](../harmonyos-references/js-apis-app-ability-hypersnapmanager.md#hypersnapmanagersethypersnapenabled)接口，仅表示应用声明并开启了快启能力。系统最终会结合用户使用习惯、资源可用性及系统策略，自主决定是否触发快启以及具体的快启时机，开发者无法对此进行人工干预。
 
 ## 实现原理
 
 快启技术会提前完成启动流程中可复用部分的初始化工作。应用启动时，可复用相关初始化结果，从而跳过这部分启动流程，达到启动加速的目标。如下图所示，快启相较于普通启动可跳过启动过程中的部分阶段，从而减少启动时延：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/FP5Hp2_yQ5G842FVRjCnDQ/zh-cn_image_0000002786518338.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=523BC82E176CD439743B25C04146E8334C84F3A58376DDD752EC2D27CF6C5D59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/M3IOnFpPR5CpbCjIw4eQ5g/zh-cn_image_0000002788306142.png?HW-CC-KV=V1&HW-CC-Date=20261114T004512Z&HW-CC-Expire=31536000000&HW-CC-Sign=C78B102CBF6C0FBD0350005BBC1DB0A6CED1BCD5A0F3711529A1296BF940D931)
 
 **包含在快启点内的流程有**：AbilityStage模块加载、[AbilityStage.onCreate](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)和UIAbility模块加载。其中，在[模块加载](arkts-module-side-effects.md)过程中将执行部分代码，包括顶层代码（top level）、so的constructor和类静态变量初始化等。
 

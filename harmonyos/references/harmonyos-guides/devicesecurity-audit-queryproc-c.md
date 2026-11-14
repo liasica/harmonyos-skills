@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 进程信息查询场景（C/C++）
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 进程信息查询场景（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:28+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:7fffc0ca870084ed9073d2dfa5ef7c8e0344c0496ef4cef716b98d21a927bd53
+content_hash: sha256:8a94bd1014f77ebc2f9040c409a7a58524b82a8aef3b4c277b8763f6c66f0ca7
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:7fffc0ca870084ed9073d2dfa5ef7c8e0344c0496ef4cef716b98d21a92
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/g3Ku4Jo1RoGpGF_-g5VhcQ/zh-cn_image_0000002815559101.png?HW-CC-KV=V1&HW-CC-Date=20261112T233045Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCAFF5949B243A5B6D3890B75628C44AE6587DCDECB5DB54CADED8A06A55B8F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/G969lV24QZmN_hgLKoVPzQ/zh-cn_image_0000002788467356.png?HW-CC-KV=V1&HW-CC-Date=20261114T004549Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADA265A722601DC0A57213CA523D9F3F897AFF9280D829FF2CC2EFDCA063E5B0)
 
 **流程说明：**
 

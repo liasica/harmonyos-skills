@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 应用冻屏事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 应用冻屏事件 > 应用冻屏事件介绍
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:40+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:97722e3c2ffe8d02d3915ad4bebe46918791611ad5b89407944ad12c7f5d3522
+scraped_at: 2026-11-14T08:47:46+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:2ac366906a68fbea19ea772bf03868ff8a9028d29244eae74e6a637979e0f09b
 ---
 
 ## 简介
@@ -45,13 +45,17 @@ content_hash: sha256:97722e3c2ffe8d02d3915ad4bebe46918791611ad5b89407944ad12c7f5
 
 **参数设置示例**
 
-```ts
-import { BusinessError } from '@kit.BasicServicesKit';
-import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
+导入头文件。
 
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
+```
+
+```typescript
 let policy: hiAppEvent.EventPolicy = {
-    "appFreezePolicy" : {
-      "pageSwitchLogEnable": true // 启用页面切换日志
+    'appFreezePolicy' : {
+        'pageSwitchLogEnable': true // 启用页面切换日志
     }
 };
 hiAppEvent.configEventPolicy(policy).then(() => {

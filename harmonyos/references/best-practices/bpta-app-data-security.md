@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-data-s
 title: 应用数据安全
 breadcrumb: 最佳实践 > 安全设计 > 应用数据安全
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:22+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:d55cf365f965a6b8a68471246d7347665e8edf9ea5cf5e9cbcd66c5c45199be9
+content_hash: sha256:87e089558ca039869a13fb908a0711a888f1bee69c70a32a40750546bae682a6
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 根据设备安全能力，如是否有TEE和安全存储芯片等，将设备安全等级分为SL1、SL2、SL3、SL4和SL5五个等级。例如，智能穿戴设备通常为低安全的SL1设备，手机和平板通常为高安全的设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/i7z68Vm5SU-fa8kTjMEk3Q/zh-cn_image_0000002229450445.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=81496BA0AD452609A182A61997F3E7602C25A40D7066FF3B4FFFF45D6AD5FFEC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Rugtcyk0RfedIk_o0XHyvA/zh-cn_image_0000002229450445.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=322FFAA4C7C7441B991AEA1AC1BD4E53BDD1FC6F246E94EF1D8EEFB4E761FCB1 "点击放大")
 
 设备从SL1到SL5分级，在完整性保护、加密及数据保护、权限及访问控制、可信执行环境和漏洞防利用这几个维度对应的安全能力要求逐渐提高。
 
@@ -63,7 +63,7 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 除了对数据进行内容分类，开发者还需遵守相关法律法规，例如通用数据保护条例（GDPR）和个人信息保护法，以保护用户隐私和数据安全。具体的数据分类图如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/fOizGVdtRWmO9-1CD8mlXg/zh-cn_image_0000002229335969.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=634704E11728D240B11AD36D581D11E3DC7958295D1BFC66C25944C48C18A244)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/tmqbNkfWRcyfZWuAxKLaXw/zh-cn_image_0000002229335969.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F688333E813010EB892ADF40C74AB1CE690BF7E7B2E50F8E3A96B25C1D2F2F3)
 
 按照个人数据分类分级规范要求，可将数据分为S1、S2、S3、S4四个安全等级。
 
@@ -158,7 +158,7 @@ getEl1Path(): void {
 
 **图1** 场景设计图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/HOuKk5-XQfuFEtk8GUrIBg/zh-cn_image_0000002651598502.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0FDB6D9D7DB2710CF54B28B56B8DF75A2B431C2ED09E30AAD0F371D697CF1AE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/ebffjP0-QnS8UOCTvNfMHw/zh-cn_image_0000002651598502.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=26F9659C33EC6C7EB8F0E8A0061A3FCEE9D0AD90C92884293901E4F58415568E "点击放大")
 
 ### 场景开发
 

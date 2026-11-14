@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-live-form-development-practice
-title: 互动卡片开发实践
-breadcrumb: 最佳实践 > 技术创新 > 多窗 > 互动卡片开发实践
+title: 互动卡片
+breadcrumb: 最佳实践 > 技术创新 > 多窗 > 互动卡片
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f95fe0
+scraped_at: 2026-11-14T08:54:05+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:f0e940c02c0831686ce758f88c3b0b0e761101a18289eab0f81c2a4321dac51d
 ---
 
 ## 概述
@@ -41,7 +41,7 @@ content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f
 
 **效果预览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/BDl5LHGfTAK1RjaOyxzBfw/zh-cn_image_0000002623694219.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=85CD92994E8B5EC7C909409D6BCA2E749E960491EAA43E7883BD289BE634DC83 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/HBW1wmNvSSidNcuI_XXQLw/zh-cn_image_0000002623694219.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DF2479C9896E176A3FD285D853898820CD905830A498551D1DEF1C3038D42FA "点击放大")
 
 ### 快递卡片
 
@@ -55,7 +55,7 @@ content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f
 
 **效果预览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/1qlxCd5jSeqgeUpvp2whEw/zh-cn_image_0000002623534345.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=F11E7B4A764EFE87B83D256D292BB913DC5335CEE2B295A33E83CEC65E848859 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/sU8yPjbTRIiNiKAoTDOl9g/zh-cn_image_0000002623534345.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=1232F7BD6DEBF7794D98C0ABC8DA5BB095F5714F65C0021E0F9C699B7B16B561 "点击放大")
 
 ### 运动卡片
 
@@ -72,10 +72,10 @@ content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f
 
 * 开始运动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ss4Zc1znRmKSwJgUVRM8jw/zh-cn_image_0000002593094810.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=A235F383FC560E6053B7F5FBAF58E006FE3550512CF7DC234D91711B0CA5D4B9 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/XcMdmzpARn2uvQ-dPEqTiA/zh-cn_image_0000002593094810.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=B78712163E8746B577B653E379032AB622E264986A2B7C7C58549969CF51D15E "点击放大")
 * 结束运动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/TMNVcEzeQkqXpEJfiwp6LQ/zh-cn_image_0000002593254736.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AC8ABDE9B187CF3AFFE1B3EAC440034D3E0CCC3A589AD186A8321D4F84E3A17 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZdQkYnB5Qt6bHKkgDHfebQ/zh-cn_image_0000002593254736.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E7BAEC133E63D3E852622E725F20D4DFEFF7956EBF74334A7F87AC05A39040E "点击放大")
 
 ### 音乐卡片
 
@@ -92,10 +92,10 @@ content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f
 
 * 播放：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/RyKeV8uHQjG62Mauh_UWUg/zh-cn_image_0000002623694221.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=977DEEB344F3BDA2F7666593DA6BB12F2A6AF1186656252FB4FE41FCE9DEBBB5 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/7Z_w7_ceQsa2YIvCQ7q5KQ/zh-cn_image_0000002623694221.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=412B2176E189E1431560B3046BB1D8CB568263D29229D16915224ADFDA3814F6 "点击放大")
 * 切歌：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/sWx6TNojTl6OYxrKjyR9tA/zh-cn_image_0000002623534347.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=99D6364CF25769F1154A9A4E552B46438D454996B8C57BBA31ECDA42BFEDCC03 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/BJAIjikCR9SdLxqWlrSJaA/zh-cn_image_0000002623534347.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B6BD46FBB8330931E2C7782C18DDF04771DAD23BF6173DC75ADCE9B13475766 "点击放大")
 
 ## 整体方案
 
@@ -124,7 +124,7 @@ content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f
 
 3. 触发方式
 
-互动卡片支持两种触发方式：
+本文使用了互动卡片的两种触发方式：
 
 * 点击触发：用户点击卡片时，卡片通过[postCardAction](../harmonyos-references/js-apis-postcardaction.md)(MESSAGE)发送requestOverflow消息到FormExtensionAbility，FormExtensionAbility调用[formProvider.requestOverflow](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderrequestoverflow20)激活互动卡片。
 * 摇一摇触发：在form\_config.json中通过sceneAnimationParams.triggerTypes增加"shake"字段，系统自动监听摇动事件并激活LiveFormExtensionAbility。
@@ -154,10 +154,10 @@ content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f
 | 动态卡片 → 应用(EntryAbility) | 页面跳转 | [postCardAction](../harmonyos-references/js-apis-postcardaction.md)(ROUTER) | 点击卡片跳转到应用页面 |
 | 动态卡片 → 应用(EntryAbility) | 方法调用 | [postCardAction](../harmonyos-references/js-apis-postcardaction.md)(CALL) | 通过[Callee](../harmonyos-references/js-apis-app-ability-uiability.md#callee)监听调用应用方法 |
 | 动态卡片 → FormExtensionAbility | 发送消息 | [postCardAction](../harmonyos-references/js-apis-postcardaction.md)(MESSAGE) | 通过[FormExtensionAbility.onFormEvent](../harmonyos-references/js-apis-app-form-formextensionability.md#formextensionabilityonformevent)接收处理消息 |
-| 应用 → 动态卡片 | 数据推送 | [formProvider.updateForm](../harmonyos-references/js-apis-application-formprovider.md#formproviderupdateform) + [formBindingData](../harmonyos-references/js-apis-app-form-formbindingdata.md#formbindingdata) | 键值对自动映射到[@LocalStorageProp](../harmonyos-guides/arkts-localstorage.md#localstorageprop) |
+| 应用 → 动态卡片 | 数据推送 | [formProvider.updateForm](../doccenter-references/api/js-apis-app-form-formprovider.md#formproviderupdateform) + [formBindingData](../harmonyos-references/js-apis-app-form-formbindingdata.md#formbindingdata) | 键值对自动映射到[@LocalStorageProp](../harmonyos-guides/arkts-localstorage.md#localstorageprop) |
 | 应用 → 互动卡片 | 数据持久化 | [@ohos.data.preferences (用户首选项)](../harmonyos-references/js-apis-data-preferences.md)/ [@ohos.data.relationalStore (关系型数据库)](../harmonyos-references/js-apis-data-relationalstore.md) / 文件存储 | 跨进程通信，[LiveFormExtensionAbility](../harmonyos-references/js-apis-app-form-liveformextensionability.md#liveformextensionability)读取 |
 | 互动卡片内部 | 共享存储 | [LocalStorage](../harmonyos-references/ts-state-management.md#localstorage9) | 同一进程内，[LiveFormExtensionAbility](../harmonyos-references/js-apis-app-form-liveformextensionability.md#liveformextensionability)→ 互动卡片UI |
-| 互动卡片 → 动态卡片 | 数据回推 | [formProvider.updateForm](../harmonyos-references/js-apis-application-formprovider.md#formproviderupdateform) | 互动卡片状态变化回推到动态卡片 |
+| 互动卡片 → 动态卡片 | 数据回推 | [formProvider.updateForm](../doccenter-references/api/js-apis-app-form-formprovider.md#formproviderupdateform) | 互动卡片状态变化回推到动态卡片 |
 
 各卡片使用的通信方式如下：
 
@@ -175,7 +175,7 @@ content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f
 
 以快递卡片为例，演示完整的互动卡片开发流程。快递卡片需要实现点击触发出框动画、陀螺仪交互驱动憨憨移动、摇一摇激活等功能。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/qggpH6WGRcy9ej04hUc8Pg/zh-cn_image_0000002593094812.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF11AAD732D9C4E41FFCD50B54E95C287E5FA7CB83979DEBCFFCFE124ADBE717 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/1DSEhgsmTQG-F6MyY3-bug/zh-cn_image_0000002593094812.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=841AF381886828207DC650AB936A3298C67616A49E08AF3F85E431E7817D0B51 "点击放大")
 
 ### 实现原理
 
@@ -249,7 +249,7 @@ struct DeliveryCard {
           .width(this.formWidth * 0.2 + 'px')
           .height(this.formHeight * 0.2 + 'px');
         Text($r('app.string.delivery_in_transit'))
-          .fontSize('21.55f')
+          .fontSize(16)
           .fontColor('#646166')
           .fontFamily('HarmonyOS Scans SC');
       }
@@ -316,22 +316,27 @@ onLiveFormCreate(liveFormInfo: LiveFormInfo, session: UIExtensionContentSession)
 
    ```screen
    onFormEvent(formId: string, message: string): void {
-     const params: Record<string, Object> = JSON.parse(message);
-     if (!params || typeof params.message !== 'string') {
-       return;
-     }
-     let shortMessage: string = params.message as string;
+     try {
+       const params: Record<string, Object> = JSON.parse(message);
+       if (!params || typeof params.message !== 'string') {
+         return;
+       }
+       let shortMessage: string = params.message as string;
 
-     if (shortMessage === 'requestOverflow') {
-       let widthRatio: number = Math.min(Math.max(params.widthRatio as number || 0, 0), LIVE_CARD_RATIO);
-       let heightRatio: number = Math.min(Math.max(params.heightRatio as number || 0, 0), LIVE_CARD_RATIO);
-       let duration: number = Math.min(Math.max(params.duration as number || 0, 0), LIVE_CARD_DURATION);
-       // ...
+       if (shortMessage === 'requestOverflow') {
+         let widthRatio: number = Math.min(Math.max(params.widthRatio as number || 0, 0), LIVE_CARD_RATIO);
+         let heightRatio: number = Math.min(Math.max(params.heightRatio as number || 0, 0), LIVE_CARD_RATIO);
+         let duration: number = Math.min(Math.max(params.duration as number || 0, 0), LIVE_CARD_DURATION);
+         // ...
 
-       this.requestOverflow(formId, widthRatio, heightRatio, duration);
-       return;
-     } else if (shortMessage === 'updateRequestOverflowState') {
-       updateRequestOverFlowState(formId, true);
+         this.requestOverflow(formId, widthRatio, heightRatio, duration);
+         return;
+       } else if (shortMessage === 'updateRequestOverflowState') {
+         updateRequestOverFlowState(formId, true);
+       }
+     } catch (err) {
+       let error = err as BusinessError;
+       Logger.error(TAG, `onFormEvent err. code is: ${error.code}, msg is ${error.message}.`);
      }
    }
    ```

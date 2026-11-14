@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: Session间缓存共享
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 提升HTTP传输性能 > 使用HTTP缓存功能提升资源获取性能 > Session间缓存共享
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e92cfea7b81a29fbab3f0d20c1dc7aa7691a35befc1a1000ed677d399066de65
+scraped_at: 2026-11-14T08:47:38+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:65f4fe0058c85a39f0214c33d18761ca4af2423c1b80dfb0d243b43d36da2f72
 ---
 
 从6.0.0(20)开始，支持Session间缓存共享。
@@ -17,7 +17,7 @@ Session之间数据是隔离的，当业务场景需要实现跨Session访问缓
 
 ## 约束与限制
 
-Session间缓存共享能力支持Phone、2in1、Tablet、Wearable、TV设备。
+Session间缓存共享能力支持Phone、2in1、Tablet、Wearable、TV设备。从API版本26.0.1开始，新增支持Car设备。
 
 ## 引用相同HTTP响应缓存实例
 

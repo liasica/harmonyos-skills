@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-faq-12
 title: 如何更换回执服务器证书的问题
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit常见问题 > 如何更换回执服务器证书的问题
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:30+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:107da112fd610ec1aa0597dc9301fec982b318a4e76b1b37d413e9d74ab85bbd
+content_hash: sha256:45bcad86a399ee5ae1540946e5a81c0b36395dccd8e14454c8d620b9b189c542
 ---
 
 * 场景1：新旧证书均为商用CA签发证书或自签证书但CA未改变。
@@ -21,7 +21,7 @@ content_hash: sha256:107da112fd610ec1aa0597dc9301fec982b318a4e76b1b37d413e9d74ab
   2. 选择需要修改回执的应用，点击“修改”应用回执状态。
   3. 在“选择回执”页面，选择需要更换证书的回执，点击“修改”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/zUGkQBjTRZyhb7DnNB2B9w/zh-cn_image_0000002815559975.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=2153E3CA07F2DA5899F936D9531993BC3D48B70544E4183A1B9CDB3BFBE25FE1)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/yEKd5MSDRaiulFj4jhd30A/zh-cn_image_0000002788308288.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F563772C37DE0AC499F9DA707D80943738FEC9BC95FD7B8AAC38C02607268D6)
   4. 在“回执配置”页面，回执服务会检测最新的证书信息，您无需做任何修改。
   5. 点击“提交”，保存回执信息。
   6. 点击“确定”，返回“配置”页面。
@@ -36,7 +36,7 @@ content_hash: sha256:107da112fd610ec1aa0597dc9301fec982b318a4e76b1b37d413e9d74ab
   1. 参考场景2，进入“回执配置”页面。
   2. 在“回执配置”页面，点击“设置备用证书”，填入新证书信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/mLC1lY3yRDSpWW0lDf8oFw/zh-cn_image_0000002815400059.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD165DA0A2A7597C20F09FA60363BD9D4F553F94FEAF809CC34298AFEE8B7076)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Tsldlq7lTLGypMJLviYNOg/zh-cn_image_0000002817427651.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1C0B58BC18168AFF324AE9716ACDBA800B7F6BB0A78B7557A86FA56E450A6C2)
   3. 点击“提交”，保存回执信息。
   4. 点击“确定”，返回“配置”页面。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-lifecy
 title: 窗口生命周期
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口基础能力 > 窗口生命周期
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:13+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c564727bb20deb908a0b216c78c5d608a29b0e6a960c7422df8e4f694bd5d7aa
+content_hash: sha256:58bcc84d6c2abba5df9ba97eb2f30604540fce73925e5908e80b6c7a0d9b2b0c
 ---
 
 ## 生命周期概述
@@ -14,7 +14,7 @@ content_hash: sha256:c564727bb20deb908a0b216c78c5d608a29b0e6a960c7422df8e4f694bd
 
 Stage模型下，一个UIAbility对应一个WindowStage，一个WindowStage对应一个应用主窗（MainWindow），UIAbility、WindowStage和应用主窗三者之间的关系如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/dkhHrwgaS8WPxbO1kbq46A/zh-cn_image_0000002786359410.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=30C7DD87BCA955681D814C2A1F0F18D5E349497E306B57776CC2316C275DE07D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/xnI5sKXOTYSHVfJehxD2-A/zh-cn_image_0000002817426505.png?HW-CC-KV=V1&HW-CC-Date=20261114T004534Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CA7115F7D50BC150A47EF45A82418BB48CE536D7C527A5B09F33F99D5387C32)
 
 每个UIAbility实例都会与一个WindowStage实例绑定。WindowStage是应用进程内的窗口管理器，负责管理主窗口的生命周期和显示逻辑。主窗口是ArkUI的绘制区域，可以加载不同的ArkUI页面，为用户提供交互界面。
 
@@ -52,7 +52,7 @@ RESUMED和PAUSED状态分别在窗口切换至前台和切换至后台时触发�
 
 应用主窗口生命周期事件流转关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/BcNHRFQTRVOg-Y5Jrj44DA/zh-cn_image_0000002815558831.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=305DB8446907A52BB897ABB7FBBDF88C7B5E284117A48983F695F1FFFF678629)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Sa93UyfwQ6m3MAsr04YJ3A/zh-cn_image_0000002788467086.png?HW-CC-KV=V1&HW-CC-Date=20261114T004534Z&HW-CC-Expire=31536000000&HW-CC-Sign=28FEEE4ED754A858236CD797ED7C219A81CD9A007A9F9A803A53DD09637C48E4)
 
 ### 监听应用主窗的生命周期状态变化
 

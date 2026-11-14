@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/rawfile-guide
 title: Rawfile开发指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > 资源管理 > Rawfile开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:46+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:320047ee9224179fc873d0ff928dd0bab8c11712f019c948e2eca4c37b23789f
+content_hash: sha256:eef9ed7155cb34a99e3b7ad47cf6793eca814c87ebee638a71d286232b9e12a2
 ---
 
 ## 场景介绍
@@ -39,7 +39,7 @@ content_hash: sha256:320047ee9224179fc873d0ff928dd0bab8c11712f019c948e2eca4c37b2
 
 **1. 创建工程**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/q6mOSpEvTSeFimBSMcGe1w/zh-cn_image_0000002815400323.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=7160296F7BEC634EC56BA6D2F8950C2585F119781712BE13B88B5D3FB9124CB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/u7FAApMkTrqzs-89PzQp-A/zh-cn_image_0000002817427915.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0DD9B2966E9766C3F488E684D0513CA7D21DB50068F3772FF7B3423EE7B3E8E)
 
 **2. 添加依赖**
 

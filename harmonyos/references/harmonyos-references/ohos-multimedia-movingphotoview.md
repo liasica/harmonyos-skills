@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-mult
 title: "@ohos.multimedia.movingphotoview (动态照片)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.multimedia.movingphotoview (动态照片)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:52:58+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a6b0a88c849d5a334fea1839c2967b2668c1fd52c7cd023ed6504bd30cb175a9
+content_hash: sha256:50ce6f59d34bc143840c2c63dcd0eda0eb52e4f49426187210b48b7b0cf953e8
 ---
 
 用于播放动态照片文件并控制其播放状态的组件。
@@ -483,7 +483,7 @@ class MediaDataHandlerMovingPhoto implements photoAccessHelper.MediaAssetDataHan
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/RXMQLAXNQTqY4dJGkShGdQ/zh-cn_image_0000002786362136.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6657FF4B36D410994E6DFBCA60E46367F5000414B2803B28A9BE9BE9EB9928E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Nspjsg5LTh-Im6K4KTHeZQ/zh-cn_image_0000002817509301.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005258Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7A16ABC8FF285B1882149A64FD68D72BF9A09AC229774EFF6F0D9561646978A)
 
 ## 示例2：在元服务中使用动态照片
 
@@ -579,7 +579,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/XR62XSEBTRmIFuhdV7ipXw/zh-cn_image_0000002815561557.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF2AFD1D94CCA4C50C85A1BB08AB4D0B163EE79B14EA5C2A965BD36E65DDD431)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/UI5f53VtTeiv6bhbYlqtZQ/zh-cn_image_0000002788309870.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005258Z&HW-CC-Expire=31536000000&HW-CC-Sign=03DEF9AA89364C954011B2A9B12F9E166EB56F1102883AF8E71EF00FA43E325B)
 
 ## 示例3：图像分析功能使用
 
@@ -735,4 +735,4 @@ class MediaDataHandlerMovingPhoto implements photoAccessHelper.MediaAssetDataHan
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/7VZR_h-RSGyzsW7mrMfFbQ/zh-cn_image_0000002815401641.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=00C4C6152D894B6FFA0D23DFB84D9F08477B4C560C0E2D1A9528F663F712E56F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/rDnDuDPRSwynLH7IIPSvNw/zh-cn_image_0000002817429233.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005258Z&HW-CC-Expire=31536000000&HW-CC-Sign=38EBCD779EC2D2DFB4910787C37C38E8958624B05101257EC9E3C998D3A9635E)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-interfa
 title: 应用内处理分享内容
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 目标应用处理分享内容 > 应用内处理分享内容
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:915845e9942ace0b1ca32447c8835f28f2184c521b85e7afbdc5bf10631bdb7e
+scraped_at: 2026-11-14T08:48:32+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:38ab0717bc8382e6e7f9fe30e0aa13d1dfe3b1ed8c9c40aab167dfccc5615ec1
 ---
 
 目标应用可以通过[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)构建接收分享内容的界面，并将应用显示到分享面板应用推荐区内，以实现将分享内容传递到目标应用内进行处理。开发时需要接入方实现[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)并于module.json5中注册支持分享内容的能力。
@@ -61,7 +61,7 @@ getSharedData接口用于从want中获取分享数据；getContactInfo接口用�
    ```
 3. 构建完UIAbility，需要在应用配置文件（src/main/module.json5）的[skills](module-configuration-file.md#skills标签)配置中注册。配置actions为ohos.want.action.sendData；uris需穷举所有支持的数据类型。
 
-   ```json
+   ```json5
    "abilities": [
      {
        "name": "TestUIAbility",

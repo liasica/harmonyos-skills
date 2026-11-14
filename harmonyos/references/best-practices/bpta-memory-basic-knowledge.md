@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-memory-bas
 title: 内存基础知识
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 分析内存占用问题 > 内存基础知识
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:13+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:a20782ef4c8bbc6317f5067e6b59a07cb27bb599defbddfa205e588852cb45c3
+content_hash: sha256:a31f6bd2a81b9ec22fe2fcda7edb958748eb8a5eca0da55b4c9063e3e220dbe0
 ---
 
 ## 基本概念
 
 **内存组成关系图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/ba1zvbwhSJO3TFK26wtlWA/zh-cn_image_0000002404124981.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0EE4934312D6D300A01A61CF61600F697ED4634292EF98B70A7310A3F66654D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/dtrjIRKnTnuz8giOsr8cCA/zh-cn_image_0000002404124981.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D023B53DFC250A7ED4B9DBD99A18E5E7434548D658ACBEAC88F3C6F6C3DE188 "点击放大")
 
 上图展示了内存基础的组成部分（RSS，PSS，VSS，物理内存，Swap）之间的关系,下表对内存各组成部分进行详细介绍。
 
@@ -47,7 +47,7 @@ content_hash: sha256:a20782ef4c8bbc6317f5067e6b59a07cb27bb599defbddfa205e588852c
 
 **应用内存组成图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/kjFjnojkTOG-nRpKfH0keg/zh-cn_image_0000002370405428.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED84B9E46E6AB4343EAF50BD27E3132A090BCEF6B4843A053A27368764ED46A2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ljnZ7MmqQqOyUaulHOYA5w/zh-cn_image_0000002370405428.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=C57BC42E91F2CBDC8BCFAF7EBD6AB0C1566E94DB83D2AD8E91D7444780F479AF "点击放大")
 
 上图展示了应用进程映射的虚拟内存空间基本的组成部分，下表对内存各组成部分进行详细介绍。
 

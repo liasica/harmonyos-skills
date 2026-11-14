@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 资源泄漏类问题优化建议
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 资源泄漏类问题优化建议
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:22+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:483d670cd620aafa091955bb6dcf89809f8265e608cd86dbfd88513ca79c11c4
+content_hash: sha256:5477dfcc27b129ae74b35c7392d7dabdb546085aff321e2f013c63a49caa2025
 ---
 
 ## 内存泄漏问题优化建议
@@ -158,15 +158,15 @@ NATIVE层API：**[OH\_PixelmapNative\_SetMemoryName()](../harmonyos-references/c
 
 修改方法示例**：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/NzL7L4LDS4yu-7i9Qzx9fQ/zh-cn_image_0000002370405688.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD0E17E8A51C8E4D7512028FF35C5BF90F9DC3BDB3008CA54E22C7146BA9181F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/9kKbALm7Qe6ZG0DB63ylaw/zh-cn_image_0000002370405688.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=D37CC42914D52C5D31AF98F2D072D14D3D3A393B6076B081D50B6A49872ED16A "点击放大")
 
 ashmem日志结果示例展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/RLpItCN8S6yTdbdGegwxiw/zh-cn_image_0000002404045417.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F751FD2CCA11F5CBB5F03227568F2B2E1649CC7FBF43D8848FC7EB4FBBD7AA5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/8gNsLo-DT5mUgAZjDcR33g/zh-cn_image_0000002404045417.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=10D2FCBD27640BD429EF8B74454DD3F0FE1C33DFF29E29547342807C292672DB "点击放大")
 
 ION日志结果示例展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/mHUCT1WbSUOxVY58bdBXYA/zh-cn_image_0000002370565600.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=555C6C1FDD77EE8DD752A8B694B8FB50846C187F020B31D8F5CC1A12ED759D5C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/4RtDP5PoTHmbKJjA0ENtbw/zh-cn_image_0000002370565600.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=58E7E7178CE7D51160EEBA7F7AC93718D737DEEBAF5773525DB74DDAF4F78626 "点击放大")
 
 ## 句柄泄漏问题优化建议
 

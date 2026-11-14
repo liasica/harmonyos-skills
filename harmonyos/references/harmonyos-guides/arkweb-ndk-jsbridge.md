@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkweb-ndk-js
 title: 应用侧与前端页面的相互调用(C/C++)
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 应用侧与前端页面的相互调用(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:14+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:101af456f3f80ea39163195e67d37168a89925e4e019a96aaaf9252ed22fd956
+content_hash: sha256:8797af1b56fe1d7cf42afb91d6d28ef27f573b39136bef182d3fe8fc23d534e0
 ---
 
 本指导适用于ArkWeb应用侧与前端网页通信场景，开发者可根据应用架构选择使用ArkWeb Native接口完成业务通信机制（以下简称Native JSBridge）。
@@ -16,13 +16,13 @@ content_hash: sha256:101af456f3f80ea39163195e67d37168a89925e4e019a96aaaf9252ed22
 
 应用使用ArkTS、C++语言混合开发，或本身应用架构较贴近于小程序架构，自带C++侧环境，推荐使用ArkWeb在Native侧提供的[ArkWeb\_ControllerAPI](../harmonyos-references/capi-web-arkweb-controllerapi.md)、[ArkWeb\_ComponentAPI](../harmonyos-references/capi-web-arkweb-componentapi.md)实现JSBridge功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Io79I613RMSa38gB181_IQ/zh-cn_image_0000002786519358.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B296A94C6165FB2288BE38A8632048F322BCCD2E713EFF58B8D53512996FFA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/NxV1YwtjT5290CRF63y0nQ/zh-cn_image_0000002788307162.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=65B878C592C1588100B9D257985E44403829B687739B3D59BFA641C1E8DAB03C)
 
 上图展示了具有普遍适用性的小程序的通用架构。在这一架构中，逻辑层依赖于应用程序自带的JavaScript运行时，该运行时在一个已有的C++环境中运行。通过Native接口，逻辑层能够直接在C++环境中与视图层（其中ArkWeb充当渲染器）进行通信，无需回退至ArkTS环境使用ArkTS JSBridge接口。
 
 左图是使用ArkTS JSBridge接口构建小程序的方案，如红框所示，应用需要先调用到ArkTS环境，再调用到C++环境。右图是使用Native JSBridge接口构建小程序的方案，不需要ArkTS环境和C++环境的切换，执行效率更高。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/sm_mAr5KRym7Y2G98Snffw/zh-cn_image_0000002786359430.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=799D3AB8060235A612BD0D848E746756BEDE39B6C90071BD6D0AA9690165757F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/xqXxaOI3SLi9C0tFxMXtMA/zh-cn_image_0000002817426525.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=8283ACC6CCB08BC931225BB2EBA8ADD159347EDD40A8E59171B87603A06CAE0C)
 
 Native JSBridge方案解决了ArkTS环境的冗余切换，同时允许回调在非UI线程上运行，避免造成UI阻塞。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: 工作空间配置
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > 空间管理 > 工作空间配置
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:c16c9782d03b82cf96ee057930e9983d970ba53e383d8c06c0a4c866a9dddc07
+scraped_at: 2026-11-14T08:48:16+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:ee5fe995e04310b29f2c4719c82b8878d9a1125b34dd8f896e7aaf56ef00199c
 ---
 
 从API版本6.0.0(20)开始，支持设置工作空间信息、资料照片的能力。
@@ -16,7 +16,7 @@ content_hash: sha256:c16c9782d03b82cf96ee057930e9983d970ba53e383d8c06c0a4c866a9d
 
 ## 场景介绍
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/KkiFhwwUSh-v9Bz5Ksgy3w/zh-cn_image_0000002815559697.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=06138B7437A8592C68D951E61748A0D687A3465C8F9CE2480DB23D392E228F0B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/DTXD1pwCQFitzDsErl8e_Q/zh-cn_image_0000002788467952.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004633Z&HW-CC-Expire=31536000000&HW-CC-Sign=104A9F90A3EB425659C3AE0DC47075A93F46DA4B827964D259E0C1407F40B2DA)
 
 Enterprise Space Kit为应用提供自定义工作空间显示属性的能力。企业可以设置工作空间的域信息、资料照片、本地名称和状态栏图标，以满足企业个性化定制需求。
 
@@ -35,286 +35,283 @@ Enterprise Space Kit为应用提供自定义工作空间显示属性的能力。
 
 ## 开发步骤
 
-1.导入工作空间配置API模块相关依赖。
+1. 导入工作空间配置API模块相关依赖。
 
-```typescript
-import { spaceManager } from '@kit.EnterpriseSpaceKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { ErrCode } from '../../common/ErrCode';
-```
+   ```typescript
+   import { spaceManager } from '@kit.EnterpriseSpaceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { ErrCode } from '../../common/ErrCode';
+   ```
+2. 工作空间配置API接口封装。
 
-2.工作空间配置API接口封装。
+   ```typescript
+   const TAG = '[Sample_SpaceManagerSample]';
+   const DOMAIN = 0xF811;
 
-```typescript
-const TAG = '[Sample_SpaceManagerSample]';
-const DOMAIN = 0xF811;
+   export class WorkspaceConfigurationApi {
+     static async setWorkspacePolicy(workspaceId: number, key: string,
+       value: spaceManager.LockdownModePolicy): Promise<number> {
+       try {
+         await spaceManager.setWorkspacePolicy(key, value, workspaceId);
+         hilog.info(DOMAIN, TAG, 'Succeeded in setting workspace policy.');
+         return ErrCode.OK;
+       } catch (err) {
+         hilog.error(DOMAIN, TAG, `Failed to set workspace policy. Code: ${err.code}, message: ${err.message}`);
+         return ErrCode.ERR;
+       }
+     }
 
-export class WorkspaceConfigurationApi {
-  static async setWorkspacePolicy(workspaceId: number, key: string,
-    value: spaceManager.LockdownModePolicy): Promise<number> {
-    try {
-      await spaceManager.setWorkspacePolicy(key, value, workspaceId);
-      hilog.info(DOMAIN, TAG, 'Succeeded in setting workspace policy.');
-      return ErrCode.OK;
-    } catch (err) {
-      hilog.error(DOMAIN, TAG, `Failed to set workspace policy. Code: ${err.code}, message: ${err.message}`);
-      return ErrCode.ERR;
-    }
-  }
+     static async getWorkspacePolicy(workspaceId: number, key: string): Promise<number | undefined> {
+       try {
+         const value: number = await spaceManager.getWorkspacePolicy(key, workspaceId);
+         hilog.info(DOMAIN, TAG, `Succeeded in getting workspace policy. value: ${value}`);
+         return value;
+       } catch (err) {
+         hilog.error(DOMAIN, TAG, `Failed to get workspace policy. Code: ${err.code}, message: ${err.message}`);
+         return undefined;
+       }
+     }
 
-  static async getWorkspacePolicy(workspaceId: number, key: string): Promise<number | undefined> {
-    try {
-      const value: number = await spaceManager.getWorkspacePolicy(key, workspaceId);
-      hilog.info(DOMAIN, TAG, `Succeeded in getting workspace policy. value: ${value}`);
-      return value;
-    } catch (err) {
-      hilog.error(DOMAIN, TAG, `Failed to get workspace policy. Code: ${err.code}, message: ${err.message}`);
-      return undefined;
-    }
-  }
+     static async setWorkspaceInfo(workspaceId: number, domainInfo: spaceManager.WorkspaceDomainInfo): Promise<number> {
+       try {
+         await spaceManager.setWorkspaceInfo(workspaceId, domainInfo);
+         hilog.info(DOMAIN, TAG, 'Succeeded in setting workspace info');
+         return ErrCode.OK;
+       } catch (err) {
+         hilog.error(DOMAIN, TAG, `Failed to set workspace info. Code: ${err.code}, message: ${err.message}`);
+         return ErrCode.ERR;
+       }
+     }
 
-  static async setWorkspaceInfo(workspaceId: number, domainInfo: spaceManager.WorkspaceDomainInfo): Promise<number> {
-    try {
-      await spaceManager.setWorkspaceInfo(workspaceId, domainInfo);
-      hilog.info(DOMAIN, TAG, 'Succeeded in setting workspace info');
-      return ErrCode.OK;
-    } catch (err) {
-      hilog.error(DOMAIN, TAG, `Failed to set workspace info. Code: ${err.code}, message: ${err.message}`);
-      return ErrCode.ERR;
-    }
-  }
+     static async setWorkspaceProfilePhoto(workspaceId: number, photo: string): Promise<number> {
+       try {
+         await spaceManager.setWorkspaceProfilePhoto(workspaceId, photo);
+         hilog.info(DOMAIN, TAG, 'Succeeded in setting workspace profile photo');
+         return ErrCode.OK;
+       } catch (err) {
+         hilog.error(DOMAIN, TAG, `Failed to set workspace profile photo. Code: ${err.code}, message: ${err.message}`);
+         return ErrCode.ERR;
+       }
+     }
 
-  static async setWorkspaceProfilePhoto(workspaceId: number, photo: string): Promise<number> {
-    try {
-      await spaceManager.setWorkspaceProfilePhoto(workspaceId, photo);
-      hilog.info(DOMAIN, TAG, 'Succeeded in setting workspace profile photo');
-      return ErrCode.OK;
-    } catch (err) {
-      hilog.error(DOMAIN, TAG, `Failed to set workspace profile photo. Code: ${err.code}, message: ${err.message}`);
-      return ErrCode.ERR;
-    }
-  }
+     static async setWorkspaceStatusBarIcon(workspaceId: number, icons: spaceManager.StatusBarIcon): Promise<number> {
+       try {
+         await spaceManager.setWorkspaceStatusBarIcon(icons, workspaceId);
+         hilog.info(DOMAIN, TAG, `Succeeded in setting workspace status bar icon`);
+         return ErrCode.OK;
+       } catch (err) {
+         hilog.error(DOMAIN, TAG, `Failed to set workspace status bar icon. Code: ${err.code}, message: ${err.message}`);
+         return ErrCode.ERR;
+       }
+     }
 
-  static async setWorkspaceStatusBarIcon(workspaceId: number, icons: spaceManager.StatusBarIcon): Promise<number> {
-    try {
-      await spaceManager.setWorkspaceStatusBarIcon(icons, workspaceId);
-      hilog.info(DOMAIN, TAG, `Succeeded in setting workspace status bar icon`);
-      return ErrCode.OK;
-    } catch (err) {
-      hilog.error(DOMAIN, TAG, `Failed to set workspace status bar icon. Code: ${err.code}, message: ${err.message}`);
-      return ErrCode.ERR;
-    }
-  }
+     static async setWorkspaceLocalName(workspaceId: number, localName: string): Promise<number> {
+       try {
+         await spaceManager.setWorkspaceLocalName(localName, workspaceId);
+         hilog.info(DOMAIN, TAG, 'Succeeded in setting workspace local name');
+         return ErrCode.OK;
+       } catch (err) {
+         hilog.error(DOMAIN, TAG, `Failed to set workspace local name. Code: ${err.code}, message: ${err.message}`);
+         return ErrCode.ERR;
+       }
+     }
+   }
+   ```
+3. 导入工作空间配置业务实现相关依赖。
 
-  static async setWorkspaceLocalName(workspaceId: number, localName: string): Promise<number> {
-    try {
-      await spaceManager.setWorkspaceLocalName(localName, workspaceId);
-      hilog.info(DOMAIN, TAG, 'Succeeded in setting workspace local name');
-      return ErrCode.OK;
-    } catch (err) {
-      hilog.error(DOMAIN, TAG, `Failed to set workspace local name. Code: ${err.code}, message: ${err.message}`);
-      return ErrCode.ERR;
-    }
-  }
-}
-```
+   ```typescript
+   import { router } from '@kit.ArkUI';
+   import { spaceManager } from '@kit.EnterpriseSpaceKit';
+   import { image } from '@kit.ImageKit';
+   import { util } from '@kit.ArkTS';
+   import { resourceManager } from '@kit.LocalizationKit';
+   import { ErrCode } from '../../common/ErrCode';
+   import { WorkspaceConfigurationApi } from '../api/WorkspaceConfigurationApi'
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```
+4. 工作空间配置业务相关实现。
 
-3.导入工作空间配置业务实现相关依赖。
+   ```typescript
+   const TAG = '[Sample_SpaceManagerSample]';
+   const DOMAIN = 0xF811;
 
-```typescript
-import { router } from '@kit.ArkUI';
-import { spaceManager } from '@kit.EnterpriseSpaceKit';
-import { image } from '@kit.ImageKit';
-import { util } from '@kit.ArkTS';
-import { resourceManager } from '@kit.LocalizationKit';
-import { ErrCode } from '../../common/ErrCode';
-import { WorkspaceConfigurationApi } from '../api/WorkspaceConfigurationApi'
-import { hilog } from '@kit.PerformanceAnalysisKit';
-```
+   @Entry
+   @Component
+   struct WorkspaceConfigurationPage {
+     async setWorkspacePolicy() {
+       const key: string = 'lockdown'; // 需由用户传入
+       const value: spaceManager.LockdownModePolicy = spaceManager.LockdownModePolicy.OFF;
+       const workspaceId: number = 100; // 需由用户传入
 
-4.工作空间配置业务相关实现。
+       if (await WorkspaceConfigurationApi.setWorkspacePolicy(workspaceId, key, value) !== ErrCode.OK) {
+         // 异常处理
+         hilog.error(DOMAIN, TAG, 'Failed to set workspace policy!');
+         return;
+       }
+       // 处理后置逻辑
+     }
 
-```typescript
-const TAG = '[Sample_SpaceManagerSample]';
-const DOMAIN = 0xF811;
+     async getWorkspacePolicy() {
+       const key: string = 'lockdown'; // 需由用户传入
+       const workspaceId: number = 100; // 需由用户传入
+       const value: number | undefined = await WorkspaceConfigurationApi.getWorkspacePolicy(workspaceId, key);
+       if (value === undefined) {
+         // 异常处理
+         hilog.error(DOMAIN, TAG, 'Failed to get workspace policy!');
+         return;
+       }
+       // 处理后置逻辑
+     }
 
-@Entry
-@Component
-struct WorkspaceConfigurationPage {
-  async setWorkspacePolicy() {
-    const key: string = 'lockdown'; // 需由用户传入
-    const value: spaceManager.LockdownModePolicy = spaceManager.LockdownModePolicy.OFF;
-    const workspaceId: number = 100; // 需由用户传入
+     async setWorkspaceLocalName() {
+       const localName: string = 'localName'; // 需由用户传入。
+       const workspaceId: number = 100; // 需由用户传入。
+       if (await WorkspaceConfigurationApi.setWorkspaceLocalName(workspaceId, localName) !== ErrCode.OK) {
+         // 异常处理
+         hilog.error(DOMAIN, TAG, 'Failed to set workspace local name!');
+         return;
+       }
+       // 处理后置逻辑
+     }
 
-    if (await WorkspaceConfigurationApi.setWorkspacePolicy(workspaceId, key, value) !== ErrCode.OK) {
-      // 异常处理
-      hilog.error(DOMAIN, TAG, 'Failed to set workspace policy!');
-      return;
-    }
-    // 处理后置逻辑
-  }
+     async setWorkspaceStatusBarIcon() {
+       const context: Context | undefined = this.getUIContext().getHostContext();
+       if (!context) {
+         hilog.error(DOMAIN, TAG, 'get host context fail!');
+         return;
+       }
+       const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
 
-  async getWorkspacePolicy() {
-    const key: string = 'lockdown'; // 需由用户传入
-    const workspaceId: number = 100; // 需由用户传入
-    const value: number | undefined = await WorkspaceConfigurationApi.getWorkspacePolicy(workspaceId, key);
-    if (value === undefined) {
-      // 异常处理
-      hilog.error(DOMAIN, TAG, 'Failed to get workspace policy!');
-      return;
-    }
-    // 处理后置逻辑
-  }
+       // 创建white pixelMap，使用资源rawfile文件夹中预置CustomWhite.jpg图片
+       let whiteFileData = await resourceMgr.getRawFd('CustomWhite.jpg');
+       const whiteImageSource: image.ImageSource = image.createImageSource(whiteFileData);
+       const whitePixelMap: image.PixelMap = await whiteImageSource.createPixelMap();
 
-  async setWorkspaceLocalName() {
-    const localName: string = 'localName'; // 需由用户传入。
-    const workspaceId: number = 100; // 需由用户传入。
-    if (await WorkspaceConfigurationApi.setWorkspaceLocalName(workspaceId, localName) !== ErrCode.OK) {
-      // 异常处理
-      hilog.error(DOMAIN, TAG, 'Failed to set workspace local name!');
-      return;
-    }
-    // 处理后置逻辑
-  }
+       // 创建black pixelMap，使用资源rawfile文件夹中预置CustomBlack.jpg图片
+       let blackFileData = await resourceMgr.getRawFd('CustomBlack.jpg');
+       const blackImageSource: image.ImageSource = image.createImageSource(blackFileData);
+       const blackPixelMap: image.PixelMap = await blackImageSource.createPixelMap();
 
-  async setWorkspaceStatusBarIcon() {
-    const context: Context | undefined = this.getUIContext().getHostContext();
-    if (!context) {
-      hilog.error(DOMAIN, TAG, 'get host context fail!');
-      return;
-    }
-    const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+       // 构建图标信息
+       const icons: spaceManager.StatusBarIcon = {
+         white: whitePixelMap,
+         black: blackPixelMap
+       };
+       const workspaceId: number = 100;
+       if (await WorkspaceConfigurationApi.setWorkspaceStatusBarIcon(workspaceId, icons) !== ErrCode.OK) {
+         // 异常处理
+         hilog.error(DOMAIN, TAG, 'Failed to set workspace status bar icon!');
+         return;
+       }
+       // 处理后置逻辑
+     }
 
-    // 创建white pixelMap，使用资源rawfile文件夹中预置CustomWhite.jpg图片
-    let whiteFileData = await resourceMgr.getRawFd('CustomWhite.jpg');
-    const whiteImageSource: image.ImageSource = image.createImageSource(whiteFileData);
-    const whitePixelMap: image.PixelMap = await whiteImageSource.createPixelMap();
+     async setWorkspaceInfo() {
+       const workspaceId: number = 100; // 需由用户传入
+       const domainInfo: spaceManager.WorkspaceDomainInfo = {
+         domain: 'test1',
+         workspaceName: 'test2',
+         accountId: 'test3',
+         isAuthenticated: false,
+         serverConfigId: 'test4',
+         enterpriseWorkspaceName: 'default' // 企业空间名称，由用户配置
+       };
+       if (await WorkspaceConfigurationApi.setWorkspaceInfo(workspaceId, domainInfo) !== ErrCode.OK) {
+         // 异常处理
+         hilog.error(DOMAIN, TAG, 'Failed to set workspace info!');
+         return;
+       }
+       // 处理后置逻辑
+     }
 
-    // 创建black pixelMap，使用资源rawfile文件夹中预置CustomBlack.jpg图片
-    let blackFileData = await resourceMgr.getRawFd('CustomBlack.jpg');
-    const blackImageSource: image.ImageSource = image.createImageSource(blackFileData);
-    const blackPixelMap: image.PixelMap = await blackImageSource.createPixelMap();
+     async setWorkspaceProfilePhoto() {
+       const workspaceId: number = 100;
+       const context: Context | undefined = this.getUIContext().getHostContext();
+       if (!context) {
+         hilog.error(DOMAIN, TAG, 'get context fail!');
+         return;
+       }
+       const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+       const photoData = await resourceMgr.getRawFileContent('CustomWhite.jpg');
+       const base64Helper = new util.Base64Helper();
+       const base64Img: string = base64Helper.encodeToStringSync(photoData);
+       const photo: string = JSON.stringify({ type: 0, defaultImg: `data:image/jpeg;base64,${base64Img}` });
+       if (await WorkspaceConfigurationApi.setWorkspaceProfilePhoto(workspaceId, photo) !== ErrCode.OK) {
+         // 异常处理
+         hilog.error(DOMAIN, TAG, 'Failed to set workspace profile photo!');
+         return;
+       }
+       // 处理后置逻辑
+     }
 
-    // 构建图标信息
-    const icons: spaceManager.StatusBarIcon = {
-      white: whitePixelMap,
-      black: blackPixelMap
-    };
-    const workspaceId: number = 100;
-    if (await WorkspaceConfigurationApi.setWorkspaceStatusBarIcon(workspaceId, icons) !== ErrCode.OK) {
-      // 异常处理
-      hilog.error(DOMAIN, TAG, 'Failed to set workspace status bar icon!');
-      return;
-    }
-    // 处理后置逻辑
-  }
+     build() {
+       Column() {
+         Row() {
+           Button($r('app.string.setWorkspacePolicy'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               this.setWorkspacePolicy();
+             })
+         }
 
-  async setWorkspaceInfo() {
-    const workspaceId: number = 100; // 需由用户传入
-    const domainInfo: spaceManager.WorkspaceDomainInfo = {
-      domain: 'test1',
-      workspaceName: 'test2',
-      accountId: 'test3',
-      isAuthenticated: false,
-      serverConfigId: 'test4',
-      enterpriseWorkspaceName: 'default' // 企业空间名称，由用户配置
-    };
-    if (await WorkspaceConfigurationApi.setWorkspaceInfo(workspaceId, domainInfo) !== ErrCode.OK) {
-      // 异常处理
-      hilog.error(DOMAIN, TAG, 'Failed to set workspace info!');
-      return;
-    }
-    // 处理后置逻辑
-  }
+         Row() {
+           Button($r('app.string.getWorkspacePolicy'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               this.getWorkspacePolicy();
+             })
+         }
 
-  async setWorkspaceProfilePhoto() {
-    const workspaceId: number = 100;
-    const context: Context | undefined = this.getUIContext().getHostContext();
-    if (!context) {
-      hilog.error(DOMAIN, TAG, 'get context fail!');
-      return;
-    }
-    const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
-    const photoData = await resourceMgr.getRawFileContent('CustomWhite.jpg');
-    const base64Helper = new util.Base64Helper();
-    const base64Img: string = base64Helper.encodeToStringSync(photoData);
-    const photo: string = JSON.stringify({ type: 0, defaultImg: `data:image/jpeg;base64,${base64Img}` });
-    if (await WorkspaceConfigurationApi.setWorkspaceProfilePhoto(workspaceId, photo) !== ErrCode.OK) {
-      // 异常处理
-      hilog.error(DOMAIN, TAG, 'Failed to set workspace profile photo!');
-      return;
-    }
-    // 处理后置逻辑
-  }
+         Row() {
+           Button($r('app.string.setWorkspaceLocalName'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               this.setWorkspaceLocalName();
+             })
+         }
 
-  build() {
-    Column() {
-      Row() {
-        Button($r('app.string.setWorkspacePolicy'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            this.setWorkspacePolicy();
-          })
-      }
+         Row() {
+           Button($r('app.string.setWorkspaceStatusBarIcon'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               this.setWorkspaceStatusBarIcon();
+             })
+         }
 
-      Row() {
-        Button($r('app.string.getWorkspacePolicy'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            this.getWorkspacePolicy();
-          })
-      }
+         Row() {
+           Button($r('app.string.setWorkspaceInfo'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               this.setWorkspaceInfo();
+             })
+         }
 
-      Row() {
-        Button($r('app.string.setWorkspaceLocalName'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            this.setWorkspaceLocalName();
-          })
-      }
+         Row() {
+           Button($r('app.string.setWorkspaceProfilePhoto'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               this.setWorkspaceProfilePhoto();
+             })
+         }
 
-      Row() {
-        Button($r('app.string.setWorkspaceStatusBarIcon'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            this.setWorkspaceStatusBarIcon();
-          })
-      }
+         Row() {
+           Button($r('app.string.back'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               router.back();
+             })
+         }
+       }
+     }
+   }
 
-      Row() {
-        Button($r('app.string.setWorkspaceInfo'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            this.setWorkspaceInfo();
-          })
-      }
-
-      Row() {
-        Button($r('app.string.setWorkspaceProfilePhoto'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            this.setWorkspaceProfilePhoto();
-          })
-      }
-
-      Row() {
-        Button($r('app.string.back'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            router.back();
-          })
-      }
-    }
-  }
-}
-
-@Extend(Button)
-function buttonCommonStyle() {
-  .width(200)
-  .height(50)
-  .backgroundColor('#6366F1')
-  .fontColor('#FFFFFF')
-  .fontSize(14)
-  .margin({ left: 20, bottom: 5 })
-}
-```
+   @Extend(Button)
+   function buttonCommonStyle() {
+     .width(200)
+     .height(50)
+     .backgroundColor('#6366F1')
+     .fontColor('#FFFFFF')
+     .fontSize(14)
+     .margin({ left: 20, bottom: 5 })
+   }
+   ```

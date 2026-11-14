@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wearengin
 title: wearEngine（穿戴设备能力开放）
 breadcrumb: API参考 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > ArkTS API > wearEngine（穿戴设备能力开放）
 category: harmonyos-references
-scraped_at: 2026-11-04T08:35:35+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:ad324e4bcc78ad1b78a0ae9f2cf735a67e3df6e0f03032432a374273bd2c3128
+scraped_at: 2026-11-14T08:52:19+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:7b86828e47e304cce7cd13ae81ffe762c5532e3d8f262ebf952f0cae2ef5c279
 ---
 
 本模块提供手机与穿戴设备侧的交互能力。应用可调用模块内接口实现如下功能：
@@ -698,7 +698,7 @@ queryStatus(deviceRandomId: string, item: MonitorItem): Promise<MonitorData>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次查询的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次查询的目标设备。 |
 | item | [MonitorItem](wearengine_api.md#monitoritem) | 是 | 可查询的设备状态枚举，用于指定本次查询的状态。 |
 
 **返回值：**
@@ -771,7 +771,7 @@ subscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback<Mo
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅指定状态变化事件的目标设备。 |
 | type | [MonitorEvent](wearengine_api.md#monitorevent) | 是 | 可订阅的设备状态枚举，用于指定本次订阅监听的设备状态。 |
 | callback | Callback<[MonitorEventData](wearengine_api.md#monitoreventdata)> | 是 | 回调函数，返回设备对应状态变化后的信息。  状态发生变化后执行，建议保证回调函数的生命周期延长至取消监听时。 |
 
@@ -852,7 +852,7 @@ unsubscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback<
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次取消订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次取消订阅指定状态变化事件的目标设备。 |
 | type | [MonitorEvent](wearengine_api.md#monitorevent) | 是 | 可订阅的设备状态枚举，用于指定本次取消订阅监听的设备状态。 |
 | callback | Callback<[MonitorEventData](wearengine_api.md#monitoreventdata)> | 是 | 回调函数，返回设备对应状态变化后的信息。  此处需保证传入的对象与调用[subscribeEvent](wearengine_api.md#subscribeevent)接口时传入的回调函数为同一个对象。 |
 
@@ -1062,7 +1062,7 @@ isRemoteAppInstalled(deviceRandomId: string, remoteBundleName: string): Promise<
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次安装检查的目标设备。 |
 | remoteBundleName | string | 是 | 待查询的设备侧指定应用名称。 |
 
 **返回值：**
@@ -1147,7 +1147,7 @@ getRemoteAppVersion(deviceRandomId: string, remoteBundleName: string): Promise<n
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次版本查询的目标设备。 |
 | remoteBundleName | string | 是 | 待查询版本号的设备侧应用名称。 |
 
 **返回值：**
@@ -1233,7 +1233,7 @@ startRemoteApp(deviceRandomId: string, remoteBundleName: string, transformLocalB
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次通信的目标设备。 |
 | remoteBundleName | string | 是 | 待拉起的设备侧应用名称。 |
 | transformLocalBundleName | boolean | 否 | 是否需要将本地包名和指纹转换为兼容应用在云端存储的包名和指纹。默认值：false。  true：转换，false：不转换。  待兼容应用设置请参考[申请接入Wear Engine服务](../harmonyos-guides/wearengine_apply.md)。 |
 
@@ -1321,7 +1321,7 @@ startRemoteApp(deviceRandomId: string, remoteApp: AppInfo, startConfig: StartCon
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次通信的目标设备。 |
 | remoteApp | [AppInfo](wearengine_api.md#appinfo) | 是 | 待拉起的对端设备的应用信息。 |
 | startConfig | [StartConfig](wearengine_api.md#startconfig) | 是 | 待拉起的对端设备应用的配置参数。 |
 
@@ -1329,7 +1329,7 @@ startRemoteApp(deviceRandomId: string, remoteApp: AppInfo, startConfig: StartCon
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[P2pResult](wearengine_api.md#p2presult)> | Promise对象，返回[P2pResult](wearengine_api.md#p2presult)对象。  其属性中的code字段表示本次消息发送的结果。其中，返回203表示[entryName](wearengine_api.md#startconfig)不符合规范要求。 |
+| Promise<[P2pResult](wearengine_api.md#p2presult)> | Promise对象，返回[P2pResult](wearengine_api.md#p2presult)对象。  其属性中的code字段表示本次拉起应用的结果。其中，返回203表示[entryName](wearengine_api.md#startconfig)不符合规范要求。 |
 
 **错误码：**
 
@@ -1404,7 +1404,7 @@ sendMessage(deviceRandomId: string, appParam: P2pAppParam, message: P2pMessage):
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次通信的目标设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 指定的设备侧应用参数。 |
 | message | [P2pMessage](wearengine_api.md#p2pmessage) | 是 | 需要传输的消息内容，取值范围：(0，4096]，单位Byte。 |
 
@@ -1504,7 +1504,7 @@ transferFile(deviceRandomId: string, appParam: P2pAppParam, file: P2pFile, callb
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次通信的目标设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 指定的设备侧应用参数。 |
 | file | [P2pFile](wearengine_api.md#p2pfile) | 是 | 需要传输的文件。 |
 | callback | AsyncCallback<[P2pResult](wearengine_api.md#p2presult)> | 是 | 回调函数，向对端设备的指定应用发送文件成功，err为undefined，data为返回P2p通信的结果；否则为错误对象。 |
@@ -1632,7 +1632,7 @@ cancelFileTransfer(deviceRandomId: string, appParam: P2pAppParam, file: P2pFile)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次通信的目标设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 指定设备侧应用参数。 |
 | file | [P2pFile](wearengine_api.md#p2pfile) | 是 | 需要传输的文件。 |
 
@@ -1739,7 +1739,7 @@ registerMessageReceiver(deviceRandomId: string, appParam: P2pAppParam, callback:
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅消息接收事件的目标设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 设备侧应用参数。 |
 | callback | Callback<[P2pMessage](wearengine_api.md#p2pmessage)> | 是 | 回调函数，返回对端设备应用发送的消息。  接收到设备侧应用发送的消息后执行的回调函数。 |
 
@@ -1837,7 +1837,7 @@ registerFileReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: Ca
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅文件接收事件的目标设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 设备侧应用参数。 |
 | callback | Callback<[P2pFile](wearengine_api.md#p2pfile)> | 是 | 回调函数，返回对端设备应用发送的文件。  接收到设备侧应用发送的文件后执行的回调函数。 |
 
@@ -1937,7 +1937,7 @@ registerFileReceiverWithProgress(deviceRandomId: string, appParam: P2pAppParam, 
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅文件及传输进度接收事件的目标设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 设备侧应用参数。 |
 | callback | Callback<[P2pFile](wearengine_api.md#p2pfile)> | 是 | 回调函数，返回对端设备应用发送的文件类。  接收到设备侧应用发送的文件或者传输进度后执行的回调函数。 |
 
@@ -2038,7 +2038,7 @@ unregisterMessageReceiver(deviceRandomId: string, appParam: P2pAppParam, callbac
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次取消订阅消息事件的目标设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 设备侧应用参数。 |
 | callback | Callback<[P2pMessage](wearengine_api.md#p2pmessage)> | 是 | 回调函数，返回对端设备应用发送的消息。  需要同订阅监听时的回调函数为同一个对象。 |
 
@@ -2141,7 +2141,7 @@ unregisterFileReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: 
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次取消订阅文件接收事件的目标设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 设备侧应用参数。 |
 | callback | Callback<[P2pFile](wearengine_api.md#p2pfile)> | 是 | 回调函数，返回对端设备应用发送的文件。  需要同订阅监听时的回调函数为同一个对象。 |
 
@@ -2425,7 +2425,7 @@ notify(deviceRandomId: string, options: NotificationOptions): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次查询的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次发送通知的目标设备。 |
 | options | [NotificationOptions](wearengine_api.md#notificationoptions) | 是 | 模板化通知配置参数类。 |
 
 **返回值：**
@@ -2720,7 +2720,7 @@ getSensorList(deviceRandomId: string): Promise<Sensor[]>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次查询可用传感器列表的目标设备。 |
 
 **返回值：**
 
@@ -2792,7 +2792,7 @@ subscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback<Sen
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的目标设备。 |
 | type | [SensorType](wearengine_api.md#sensortype) | 是 | 传感器类别，用于指定本次订阅的传感器。 |
 | callback | Callback<[SensorResult](wearengine_api.md#sensorresult)> | 是 | 回调函数，返回传感器上报结果。  用于处理传感器上报的数据。 |
 
@@ -2879,7 +2879,7 @@ unsubscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback<S
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次取消订阅的设备。 |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次取消订阅的目标设备。 |
 | type | [SensorType](wearengine_api.md#sensortype) | 是 | 传感器类别，用于指定本次取消订阅的传感器。 |
 | callback | Callback<[SensorResult](wearengine_api.md#sensorresult)> | 是 | 回调函数，返回传感器上报结果。  需要同订阅监听时的回调函数为同一个对象。 |
 

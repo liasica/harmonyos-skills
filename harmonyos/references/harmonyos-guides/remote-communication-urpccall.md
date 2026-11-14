@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 使用URPC进行远程程序调用
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > URPC场景 > 使用URPC进行远程程序调用
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:35+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:cfe73a9d0c147ed93701ea3ab77324bc4f05a5892126f255ee710097b397e802
+scraped_at: 2026-11-14T08:47:38+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:d247dc647213ea24d43abf903337f19bc589ab7d2ff4765413d67d9ec004e797
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:cfe73a9d0c147ed93701ea3ab77324bc4f05a5892126f255ee710097b39
 
 ## 约束与限制
 
-* 使用URPC进行远程程序调用能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+* 使用URPC进行远程程序调用能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 * 此功能需要配合部署远程服务器。如有需要，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)的方式与我们联系。
 
 ## 使用示例

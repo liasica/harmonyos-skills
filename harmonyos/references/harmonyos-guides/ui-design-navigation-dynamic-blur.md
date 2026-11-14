@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 设置动态模糊样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 设置动态模糊样式
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:21+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a3a0fec10c0df605b3d6d7ec15405a837b6be9ff783e0896d0542628d5f0c67b
+content_hash: sha256:ee33fb865293716961e0a320de9ccbb7dcc0c9f60fc629bb73484a3ff7761de4
 ---
 
 ## 场景介绍
@@ -22,19 +22,19 @@ content_hash: sha256:a3a0fec10c0df605b3d6d7ec15405a837b6be9ff783e0896d0542628d5f
 
 对组件背景进行均匀的模糊处理，模糊强度一致，边界清晰，用于强调控件与内容的层级分隔。滑动内容进入/离开标题栏区域过程中，模糊背板和分割线透明渐变出现/消失。此方式适用于非沉浸式场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/biprHksETz6cugRb6jODmQ/zh-cn_image_0000002815559025.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D6D5EC7144A10B55E50C9D1C36C8DB1ECF9DC134395D7C6E20448808D7136F6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Rs10MRgqRDW4XKL2vOmwJw/zh-cn_image_0000002788467280.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004720Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D6BF46A811BBDD88EAF532CD0B7D19F23DD120004DA3BD005C62CA72A62F3F4 "点击放大")
 
 ### 过渡模糊样式
 
 对组件背景进行均匀的模糊处理，模糊强度一致，边界清晰，用于强调控件与内容的层级分隔。滑动时标题栏内容发生颜色/状态变化，滑动过程中，随滑动距离，标题栏样式线性变化。此方式仅适用于沉浸式页面，随内容区滚动修改标题栏样式的场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/wZ7NyP2yQOeOn5khn63URg/zh-cn_image_0000002815399109.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4F5C1161E991E00F5342BE2FD7E06AFE8069789312082266E7F67C0C164559F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/9AbFOpzTSv-z2IRhENkOQg/zh-cn_image_0000002817506769.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004720Z&HW-CC-Expire=31536000000&HW-CC-Sign=66BDE812379C7CC34CAC262BD3732C2F40F0EEE015DDF27C440628C31B494C98 "点击放大")
 
 ### 渐变模糊样式
 
 模糊效果在空间维度上呈现逐渐增强/减弱的变化，模糊边界柔和，用于增强页面沉浸感。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/GIIPkwBMRe2fTp9OdJ5tfQ/zh-cn_image_0000002786519534.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD7C30D49FEC9C456FA57EC81A4F9FCF02ADB070A2D69A989F3E4DAEF5C14CCB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/he3BmliyTH6MA1y9m05lAg/zh-cn_image_0000002788307338.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004720Z&HW-CC-Expire=31536000000&HW-CC-Sign=180B94ACE69D622611A270952A8D4636E1798334195FA1071F6571449B1D9678 "点击放大")
 
 ## 开发步骤
 

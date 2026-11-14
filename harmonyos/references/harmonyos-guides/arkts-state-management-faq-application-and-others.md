@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 应用内状态管理和其他常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理常见问题 > 应用内状态管理和其他常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:09+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:71038163fe03b979765c9c68de254012fd1bf44e0b10cf0e87b68a6c6c0b2d26
+scraped_at: 2026-11-14T08:47:01+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:fdce365e5a82cf22ef9c63778819a17eb65e76baf896d289d89997d9ca0abf09
 ---
 
 本文将介绍应用内状态管理的常见问题以及其他常见问题。
@@ -14,7 +14,7 @@ content_hash: sha256:71038163fe03b979765c9c68de254012fd1bf44e0b10cf0e87b68a6c6c0
 
 ### 懒加载包含装饰器的文件
 
-状态管理装饰器仅限于在UI线程使用，不允许在未加载ArkUI框架的[并发线程](multi-thread-concurrency-overview.md)中使用。由于并发线程未加载完整的ArkUI框架逻辑，因此框架中定义的状态管理装饰器也不会被加载到并发线程中。若在并发线程中使用状态管理装饰器，将出现ReferenceError: xxx is not defined。在如下示例中，尽管并发线程并未实际使用[@Observed](arkts-observed-and-objectlink.md)装饰的类，但仍会打印ReferenceError: Observed is not defined的报错信息。这是因为并发线程在逐层解析文件依赖时，最终会加载到使用@Observed装饰器的Observed.ets文件，从而触发该错误。
+状态管理装饰器仅限于在UI线程使用，不允许在未加载ArkUI框架的[并发线程](multi-thread-concurrency-overview.md)中使用。由于并发线程未加载完整的ArkUI框架逻辑，因此框架中定义的状态管理装饰器也不会被加载到并发线程中。若在并发线程中使用状态管理装饰器，将出现ReferenceError: xxx is not defined。在如下示例中，尽管并发线程并未实际使用[@Observed](arkts-observed-and-objectlink.md)装饰的类，但仍会打印ReferenceError: Observed is not defined的报错信息。这是因为并发线程在逐层解析文件依赖时，最终会加载到使用@Observed装饰器的LazyImportObservedNeg.ets文件，从而触发该错误。
 
 【反例】
 

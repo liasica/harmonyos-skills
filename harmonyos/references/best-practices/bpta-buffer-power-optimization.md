@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-buffer-pow
 title: Buffer低功耗优化
 breadcrumb: 最佳实践 > 功耗 > 功耗场景优化案例 > Buffer低功耗优化
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:16+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:379c6ed23887aead4adec92d05af28741a0ef8a54fedadb110768aa2b4f989d0
+content_hash: sha256:d2beaa3f6ea6ac0a5f585e798163ed5b3328cfd53c9a98969db0aca286244542
 ---
 
 ## 概述
 
 在HarmonyOS中，Buffer是承载自绘制内容循环渲染的主要载体，有别于Vsync统一执行的思想，自绘制内容的生产不依赖于系统事件，而是由三方主导控制。Buffer在渲染过程中通过BufferQueue来进行轮转，采用了生产者与消费者的设计思想，应用将作为生产者将生产好的渲染内容准备好后，从BufferQueue中获取并Flush Buffer，而RS则作为消费者可以通过AcquireBuffer接口获取Buffer，让该Buffer作为自绘制Surface中的一帧在屏幕上显示，并将使用后的Buffer调用ReleaseBuffer释放进入轮转池。相关的流转逻辑可以参考下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/-DG-Jc6nSYOV-zVbXAooyw/zh-cn_image_0000002427647038.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1060038D4A2DC941E6AA470B0B3FE6EDBE46404B9F00E3D7F4AD64E65A6528DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/YD52MyBDTY60nZ8jSgImCQ/zh-cn_image_0000002427647038.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=28B51A900C6565207E440C2165F384481F5D959A5D60CBFD01DA36E55B931E3C)
 
 开发者可以通过Profiler的Trace工具分析Buffer的流转过程，可按照下图所示的顺序将相关进程置顶排列。其中OS\_IPC中包含了render\_service的跨进程通信信息，开发者可参考下图虚线所示，根据binder找到对应的生产者进程，详细的Trace点含义如下：
 
@@ -21,7 +21,7 @@ content_hash: sha256:379c6ed23887aead4adec92d05af28741a0ef8a54fedadb110768aa2b4f
 3. “H:AcquireBuffer with PresentTimestamp name: xxx queueId: 6631429506443”：位于render\_service线程泳道，表明名为xxx的Surface此时在rs收集该帧的绘制诉求时，rs作为消费者请求了这个Buffer，用于后续的帧绘制。如果成功获取到了该Buffer，会在子Trace中额外打印“H:acquire buffer sequence: 97784886”。
 4. “H:ReleaseBuffer name: xxx queueId: 6631429506443 seq: 97784892”：位于RSHardware或RSUniRenderThrea线程泳道，该信息通常出现在RSHardwareThread一帧中的最末尾，表明消费者已成功使用该Buffer，并释放该Buffer块，交还给BufferQueue。反之，如果ReleaseBuffer在RSUniRender中出现，则表明此时Buffer无需渲染在屏幕上，属于Buffer空跑问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/f25-Y1mWT-icWgwTCPklLw/zh-cn_image_0000002411919048.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CBA8EAC168F0B558B5728E1EA6042BA5A97E9E08CBC203741351A5EDAD74ACA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/8flEs7xNSRmrwzHwFhxTKA/zh-cn_image_0000002411919048.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D40560B2B1082F130827F122CB0E2CBD8D277C942A43FBDA12D8C77264F325A "点击放大")
 
 ## 分析思路
 
@@ -29,15 +29,15 @@ content_hash: sha256:379c6ed23887aead4adec92d05af28741a0ef8a54fedadb110768aa2b4f
 
 * 在RSHardwareThread泳道中搜索“H:ReleaseBuffer”：如图所示，在选定的时间段内RosenWeb和DisplayNode均释放了一定次数，开发者可以根据右侧的Occurrence统计其出现次数。由于BufferQueue具有循环复用的机制，同一seq会多次复用，如图中RosenWeb由5个Buffer循环复用而成。DisplayNode是应用进程下发绘制指令并经渲染后得到的统一绘制图层，大部分ArkUI组件的刷新也在DisplayNode中体现。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/pLavF9UWT3egiZnFUKITqw/zh-cn_image_0000002445438225.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=663F4DD76BA64353446F5F9F4724FDCBF78DB17A16A45B8C370F82621B92B20B "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/jc8SSFtwT26Oprwu3BKqPg/zh-cn_image_0000002445438225.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDF3DD3CB9CFCD09E7097C977D23CBE33C612F91F6CE37BACBCDC0BFB84CC9E1 "点击放大")
 
 * 在RSUniRenderThre中搜索“H:ReleaseBuffer”：RSUniRenderThre中也会出现Buffer释放的流程，如下图所示，有一块RosenWeb的BufferQueue在框选时间内循环了174次，该Buffer并未实际造成显示效果，造成了Buffer空跑问题。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/5Zrxt83fT2-4n0pv78lSxQ/zh-cn_image_0000002445518321.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=621508EF7242DD59360A43F66C23FEB35308B02E07D69A29B88778DEFDD3EE11 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/DgW7R7A_SpmhVovk1PMNpQ/zh-cn_image_0000002445518321.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9C0A676AD5FAA186B4151A999AA85F1A6B77CBF09417E0280ED22405B4A1F86 "点击放大")
 
 * 在render\_service泳道中搜索“seq = [空跑Buffer id]”：发现一个空跑的BufferQueue时，可以从中找到一个Buffer id，例如100151309，并在render\_service中进行搜索。搜索结果如下，在“H:RsDebug surfaceHandler(id:xxx)”中，开发者可以确认到该Buffer所对应的RS树node id。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/DIVVfCyCQWqzydEx8ARBpg/zh-cn_image_0000002411759188.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=4142C6C7D8ABB5518D878B17C3A4976111DC96AFC359D9D99DB2BEC5EA2A2084 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/BLH1xHLOQ9up-6xnuQU3kg/zh-cn_image_0000002411759188.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2655D604E4473CE4EDA3E19658FAA2A9BDF044C17162B48A8C98DA44366E7BD "点击放大")
 
 开发者可使用HiSmartPerf工具，在“整机测试-RS树可视化展示”处展开RS树，通过id查找的方式找到此BufferQueue对应的rs节点位置，定位到导致空跑问题的自绘制内容。如下图，开发者在TabIndex为0的home页面抓取Trace发现了Buffer空跑问题，通过RsDebug找到问题node id后通过id搜索，在切换至yellow页面时，发现是此处的web buffer预渲染导致的空跑问题。
 
@@ -45,7 +45,7 @@ content_hash: sha256:379c6ed23887aead4adec92d05af28741a0ef8a54fedadb110768aa2b4f
 
 能够造成空跑问题的Buffer通常并不会在屏幕上显示，所以往往并不会在当前页面被发现，开发者在使用该工具时可以结合页面逻辑，上下滚动、左右切换，以及根据问题复现的步骤依次回溯路径页面来寻找有问题的RS node。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/rBJ73k-PTaiwp46KE4XUyg/zh-cn_image_0000002411919056.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=0192E81DF4EAB775379B8A127A00153D3B05F0CD36C39AA5D28B997F34F6A213 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/gCppJj7VR12qy-tSNe0PQw/zh-cn_image_0000002411919056.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D1213C6CB16D6114F490E30E3670A361DB27666E5757223C7AA8A074A0D248C "点击放大")
 
 ## Web预渲染优化案例
 
@@ -53,11 +53,11 @@ content_hash: sha256:379c6ed23887aead4adec92d05af28741a0ef8a54fedadb110768aa2b4f
 
 [预渲染优化](bpta-web-develop-optimization.md#section172031338172719)是一种广泛使用的性能优化手段，让Web组件在挂载之前完成渲染可以有效减少Web初次加载时的时延表现，但处理不当也同样可能引起Buffer类空跑问题。在Web类应用中，对于预加载的离线Web节点，开发者需要确保这些后台的Web处于冻结状态，不会产生持续性的冗余Buffer影响正常场景的功能。下图展示了一个在非Web首页通过Tab预加载两个Web页面的Trace，分析Buffer的Release情况，发现Trace中RSUniRenderThre的帧率表现高于实际的显示帧率，表明空跑问题存在。进一步观察发现，RSUni中有两处ReleaseBuffer，来自两个不同的queueId，由此可以推断该页面可能存在两个离线的Web组件正在后台渲染，带来冗余负载。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/JJDe2ZvYRcW3SPLEtWSE3A/zh-cn_image_0000002445438233.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AA7EBD091A06F0436894AD1C12107E9AFB5F91E598234A66460D9B19E8370A1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/XwsfEGmySymW-YK95DTkAA/zh-cn_image_0000002445438233.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=257282FFC64B56B998EA43C9BCB9BFF198A8BF7FA943A04A8BFDF6CF98ABA084 "点击放大")
 
 开发者可以通过HiSmartPerf的RS树工具定位Buffer位置，除此之外，推荐开发者充分利用Web DevTools工具，参考[使用DevTools工具调试前端页面](../harmonyos-guides/web-debugging-with-devtools.md)，开发者可以通过端口投射的方式展示当前页面中所有的Web页面加载情况。如下图所示，端口投射成功后“1”处填写投射端口，“2”处将显示所有创建成功的web对象，点击其中的两个网页可查看其当前活跃状态，如“3”“4”则分别对应了处于冻结状态和活跃状态的页面，点击inspect观察表现情况。这种活跃/冻结状态可以调用WebController.onActive/onInactive来控制，原则上，并非在屏幕显示范围内的Web不应处于活跃状态，避免带来Buffer空跑问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/2ZzzHU07TtqJU4n3AvmU2w/zh-cn_image_0000002445518329.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A0B30C053CB583A1824300BEDD6A43CC9A95BB5B9214C6AAF20D2F09A0BAB05 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/J0EJ07DFSvSIE1Nt4RrmVQ/zh-cn_image_0000002445518329.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=D946867FFD8BB91A6855D941169D2725B53AAE1670C3ECC85F682C3DCF2C55DC "点击放大")
 
 ### 优化思路
 
@@ -100,7 +100,7 @@ Tab是一种较为特殊的加载结构，Tab默认的切换动效会将路径�
 
 ### 问题现象
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/WgFYvGLcSb-o6PRvjhATAw/zh-cn_image_0000002411759192.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF9D606212666D7847F773070AF8B1C90EE790AFD2F6411DBAA33FD366709790 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/HPoPvwqfRSOYJdQBqRtmug/zh-cn_image_0000002411759192.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EE51BCB99AEA509B13BFC24AC67570741B3EF7C0D4AB7E1187E37E20D567259 "点击放大")
 
 上图展示了一个位于可滑动列表中的Video组件从屏幕外滑动至屏幕内的应用场景。其中“1”处的信息代表页面滑动的时机，“2”处的信息表明，视频的硬解码进程一直持续着产生。观察“3”“4”两处的差异可以发现，当Video组件位于屏幕外时，由于Buffer的持续生产造成了RSUni持续ReleaseBuffer，引发空跑问题。原则上，开发者所使用的自绘制图层需要对其ArkUI载体（如Video、XComponent等）添加充分的事件监听，确保其不再需要显示时，从Buffer生产的源头上停止。
 
@@ -150,7 +150,7 @@ export struct MyVideoComponent {
 
 ### 问题现象
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/bzjQ2cHLTqCLOkvta9tpBA/zh-cn_image_0000002411919060.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F09BA39EF53DE36F494AE7A8818EACE330B93EDE2670F13D5A7449E1DAF4A56 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/qdCdMTxVRg2D_KRpNK5y_Q/zh-cn_image_0000002411919060.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=52C2E702641625448FE23DBF7DACC1B85D7980A6A9589FF00952DED9466CA665 "点击放大")
 
 对于使用了自绘制图层的应用页面而言，开发者还需要考虑该自绘制图层与当前页面中已有的图层如DisplayNode之间的交叠关系。理想情况下，自绘制图层完成生产后，如果无需与其他图层产生更多叠加计算时，无需交由RSUniRender线程重新处理，可直接交由RSHardware显示，这种显示方式可称之为“直通”。反之，如果开发者对承载自绘制组件的容器设定了一些图形绘制效果，例如模糊、透明、提亮等，那么RSUniRender需要将已经渲染好的Buffer，与作为背景的DisplayNode进行交叠计算。在这种情况下，自绘制图层不得不在RSUniRender中提前释放Buffer，将自绘制图层的内容由GPU进行重绘，并重新作为DisplayNode的一部分，再交由RSHardware进行显示，这种现象可称之为“GPU重绘”问题。
 
@@ -166,7 +166,7 @@ GPU重绘问题对功耗的影响巨大，且多数情况下，开发者所设�
 
 ### 问题定位
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/JjL_SdQQQOKI2URm5qEqwA/zh-cn_image_0000002445438237.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E9B447668DDFFBC3151A46B64529F7104123D330503E7B36A5BABA38A1F1B7C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/k5cyXqjPTyaT10burICO3Q/zh-cn_image_0000002445438237.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F853A80CCCA49B260D9822DCB7F514E950C3E307150B82B665BBD90B97EABE7 "点击放大")
 
 开发者可以搜索“DrawImage”判断有无GPU重绘问题产生，如上图，给一个纯净的适配播放图层设置了一个透明度，进而引发GPU重绘问题发生，开发者可根据以下几个Trace点定位问题：
 
@@ -181,7 +181,7 @@ GPU重绘问题对功耗的影响巨大，且多数情况下，开发者所设�
 
 ### 优化思路
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/mVK9jr9YSnqzdrS9haRWqg/zh-cn_image_0000002445518333.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCD73C777427EB947DEE98A02D9A39CA8E15D6B7FA3945319C220C57DC26B94E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Z_KTAveQSZ2HYsqfdaimnQ/zh-cn_image_0000002445518333.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4B91AFF95A577C35958A156FF3A9E065E88CA7F40B138B22F5DC8278D0F9560 "点击放大")
 
 如上图，开发者可以使用HiSmartPerf的RS树工具查看可疑节点，在OtherModifier位置可以查看到来自pid进程58867，为该节点添加了一个0.4的Alpha透明度，结合该信息可进一步定位到对应的代码片段，如下图代码，注释掉透明度效果后问题不复现。
 
@@ -211,7 +211,7 @@ export struct MyVideoComponent_opacity {
 
 修改好的Trace表现如下图所示，在直通情况下，自绘制图层在图中“1”处获取Buffer，“2”处释放Buffer，无需交由RSUniRender进行重绘计算，也没有DisplayNode的刷新显示，达到预期的低功耗效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/aU5hYFqWS3WwptlXhGQrtQ/zh-cn_image_0000002411759196.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=4318D085B3481BE20E156CC830867C06A43DABDA417D1C7986594D23EEF651F4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Zl5ukHZiTCyUhnuCBoz2AA/zh-cn_image_0000002411759196.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=1901916EE15F6E57047E4E64A2D8F8199000C0CAC8BBD97685DF35A6620F197F "点击放大")
 
 **说明** 
 

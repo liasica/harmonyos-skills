@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: Matrix2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > Matrix2D
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:19+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:4d552bbeeaa2ce43ccceb33a70b1c754b170fb884ba33f9de64524a19dcf079e
+content_hash: sha256:cef0f4c65ae9d5c8d8f1d54aa5a68d6dfdffae06e0dd3f6da09bc1dee11833f4
 ---
 
 用于[CanvasRenderingContext2D](ts-canvasrenderingcontext2d.md)、[OffscreenCanvasRenderingContext2D](ts-offscreencanvasrenderingcontext2d.md)、[CanvasPattern](ts-components-canvas-canvaspattern.md)和[Path2D](ts-components-canvas-path2d.md)图形变换的矩阵对象，可以对矩阵进行缩放、旋转和平移等变换。
@@ -110,7 +110,7 @@ struct Parameter {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/RCoz-IaEQrmOhUkB5dzmgg/zh-cn_image_0000002815560903.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=20DF61A48664922F3E1A2D9E9CB09FEE3A231C8FF01BAFC91479F7779C7049F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/uaW3AfpkRhO9Ziy63FsCtw/zh-cn_image_0000002788309216.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AAE63CEE1BEFCE1BA880EEABA15D457CEA8CA6BE3658805AF895FE96DED3CEF)
 
 ## identity
 
@@ -160,7 +160,7 @@ struct Identity {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/40kDJ1M4Toysii8ZchTY6Q/zh-cn_image_0000002815400987.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=49065320A4E637F18B909557C2AFAD9FB223D5390A7BE3D4A6934EED2985B5AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/uc0z_FpFR2WNrwt7zkbKfg/zh-cn_image_0000002817428579.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CE3A345852440605F87E5F92EDB4E803201BE2D931AA715242A3F73B153DB25)
 
 ## invert
 
@@ -216,7 +216,7 @@ struct Invert {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/AaFcyJIzQJO4TDSStkQvKQ/zh-cn_image_0000002786521412.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=14EAACABE07E7D020CA936EB23F835EE14437FC1CBC95C48B0163FB9930BC534)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/8FUZFgbxTByMgSDy8s4VAg/zh-cn_image_0000002788469160.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=118E3C4D2277F608564A3D1404F3C87BE269EECF7F8E348E89BBE4EA1B2D1DBE)
 
 ## multiply(deprecated)
 
@@ -301,7 +301,7 @@ struct Rotate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Qq0tXcxuQDKYG63ULE_vLg/zh-cn_image_0000002786361484.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AB6764EEBE52450C02298E43938D4CF62250066FE38FE7CA8390CEA2E5114CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/qLmC586vTceKPuUOGystrg/zh-cn_image_0000002817508649.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=90A343B00E15D07BC70F985932F9A9183E0C0447383E92831BCB677B37B712F9)
 
 ## rotate10+
 
@@ -369,7 +369,7 @@ struct Rotate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/O0KLDVGsSfOf5ZIxyHOm6g/zh-cn_image_0000002815560905.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=643560AD7F0CD3E7CF06694C425D481927559BA92674433201DB2C9A9F110573)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/23xm2hjRQ-S9bBtPh68kxQ/zh-cn_image_0000002788309218.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFEAED5F5299EBD9FBF1685D881A8700735A785FB676CCF97D5105E8B06A4C3E)
 
 ## translate
 
@@ -432,7 +432,7 @@ struct Translate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/yIO9FRwgQR-iQk5OVGvR_Q/zh-cn_image_0000002815400989.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE74F8739072C0F464EBBF1F745C5051C233460258474AA002214805F333BB43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/rjPgbr4DSa-KS0H5E7zEAQ/zh-cn_image_0000002817428581.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=94D9B9BFA51C650B2184B80213EB2F39CD4F058D8E30B8FE75753BCB2297F45C)
 
 ## scale
 
@@ -495,4 +495,4 @@ struct Scale {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/jLrpckyDQF-cclWU264Qcw/zh-cn_image_0000002786521414.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=926D0DA60B3CC4A63CD1BCCBADEEC966E1460106648F047C3B60154BC82510E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/1AWt5lgiRWyz5-91ARcv9w/zh-cn_image_0000002788469162.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=A892421D86561B93C02FF4AA49CAF02D23DA917A5D941AE693105EB947E0F217)

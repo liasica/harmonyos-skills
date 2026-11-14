@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TextTimer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > TextTimer
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:19+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:52c2d3f8bb51c3fcaf3644cf46fd78f6eb71561a116c39470aa057fee63114a1
+content_hash: sha256:5a568698ac61e48f988558a6460a8af2c546f6fd865f34c4fb31f7f103e857f9
 ---
 
 TextTimer是通过文本显示计时信息并控制其计时器状态的组件，支持正向计时与倒计时两种模式，可自定义显示格式，适用于秒表、活动倒计时等需要展示时间流逝的场景。常用于倒计时场景，如考试倒计时、限时活动、运动计时等。
@@ -347,7 +347,7 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/l_SFcTRNTzKfYM07tqTwNg/zh-cn_image_0000002786361466.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=685ED1E25DA1F050E1C798D39EC1C32E489E74C8971A9A41942FD4F47D6B32CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/LMsYqm8zTqy0yW09tZlM8w/zh-cn_image_0000002817508631.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA1E412941F4773844CF0AA3096146314107FEE9144A8C99D090AB0BCE4BED19)
 
 ### 示例2（设定文本阴影样式）
 
@@ -393,7 +393,7 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/kFpwXQM4SX-4Iqdy-zrfoQ/zh-cn_image_0000002815560887.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=56F272BB4FCF6A26FFD62E8D0D550A44043BA81D474CDB6C2E706AE97A52EDA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Q35zTEoTQ7S5lsRzBIIt_Q/zh-cn_image_0000002788309200.png?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=659FA215A17E55D6D653D0FF98409F09D79532BA1B6300A093422BCA1BD1BD68)
 
 ### 示例3（设定自定义内容区）
 
@@ -472,7 +472,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/sAAF5HW6QuyqXJva5MyDkQ/zh-cn_image_0000002815400971.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC8B76DEE1B958B1CE0788D60F29A5BE77BF222E35DC6E35766FA2EB106F9C52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/_xymMZGoQVSoIcivIazppQ/zh-cn_image_0000002817428563.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=89AE7FDFEFF025A23AA97D641AAC6ACDE18C4C850935BA99927D9FE238D6EDD2)
 
 ### 示例4（创建之后立即执行计时）
 
@@ -506,7 +506,7 @@ struct TextTimerStart {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/W63pv4E3TdCNs9Kihbs41A/zh-cn_image_0000002786521396.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=142AC374C4A2BC7F664861E9E8486DC009BADF5C151E4013E1EC223BAF984621)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/kIIR09fUSBajXbxb-YBF4A/zh-cn_image_0000002788469144.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7C6B2D10A66E94090319C4A8E51F7E23193866F3671730B7F6C28D6CCEAEF82)
 
 ### 示例5（设置文本样式）
 
@@ -560,7 +560,7 @@ struct TextTimerDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/2T18WYqeQ_aHedYwkY5rsQ/zh-cn_image_0000002786361468.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A45AFCB1647CF5F7218F4569CAAFBC1481E8E7A176FA5CFB885E0DC1F2DB5FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/atsUe3QYSnK1dn4FQUP7ug/zh-cn_image_0000002817508633.png?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CD752698678D3FD83BD40265F91B73CB8ADBD178CF09D454A21600E448087C7)
 
 ### 示例6（设置初始计时时间）
 
@@ -601,4 +601,4 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/g0mEQUj6TT6BwZ8t_ahvWg/zh-cn_image_0000002815560889.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC3EB38080C4E1D18B74A68CC0C6319EF47216F12B9DF9D897646FAAF1804FB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/JLI1GSGpSqmL71auYHIU2A/zh-cn_image_0000002788309202.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=54D9CDADBC89F23578854EBB9248681BF57FEAE725F9CC2878F4569025EBDC40)

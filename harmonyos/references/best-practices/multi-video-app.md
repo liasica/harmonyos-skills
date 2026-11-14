@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-video-app
 title: 多设备长视频界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备长视频界面
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:09+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:78094c5c28333aad5337cf0028fb52e713415604a819af9c1905dcc7513ff472
+content_hash: sha256:1d518c6b7e24e48968ac098e3e7adc489cf708d55b9727c2a17f8ab3fc9dd41a
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:78094c5c28333aad5337cf0028fb52e713415604a819af9c1905dcc7513
 
 长视频应用的UX设计可参考影音娱乐类多设备响应式设计指南的[长视频](../design-guides/responsive-design-examples1-0000001957369849.md#section10309114311327)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/O-rZBvx_RjS3-fe0zOxW3A/zh-cn_image_0000002579786808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D86D14B257138BDD30E80A86A02C6598EA912599E29A54BFBF26E8A8708F266E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/nHdwx0YITf2dY5c0tehtyg/zh-cn_image_0000002579786808.png?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=088291FC6FEBBCC2AEFA85D68DC4E78AB616C5600C683704FE8DC3E8DF6C9B51 "点击放大")
 
 ## 工程管理
 
@@ -255,7 +255,7 @@ content_hash: sha256:78094c5c28333aad5337cf0028fb52e713415604a819af9c1905dcc7513
 
   2. 悬停态页面布局：视频画面移至屏幕上半部分显示；屏幕中间设置为折叠屏折痕避让区；进度条及其他可操作组件统一排布在屏幕下半部分。效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/DlfVMKXITHWtWmlno9gBFg/zh-cn_image_0000002610146917.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C592F23BD36BDC4EEF654B455076679472B330AE6AB1B6097985F7357E9C22E3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/JcSUHTk3Q7yrVg2GHwQczQ/zh-cn_image_0000002610146917.png?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C32C41292A5CD964D2EE2E859C3CD9DB2B432B8D8B581C8110434C9E14EF34B "点击放大")
 
 **说明** 
 
@@ -288,7 +288,7 @@ content_hash: sha256:78094c5c28333aad5337cf0028fb52e713415604a819af9c1905dcc7513
 
 电脑端推荐页与移动端功能定位一致，按照功能设计划分为6个区域，效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/k-vdNfMQT2yvxdELW7fRcw/zh-cn_image_0000002579627030.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B800ED0D4C920B79296E171479B601BE79C1F0790779423201EA6714C76EA5C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/gILUo0m2RbuFQyGfA2k32Q/zh-cn_image_0000002579627030.png?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1963E2579EBAC9E94B405C3983DA04525C47470968F8F79F48456B8AF2D63E3 "点击放大")
 
 **界面开发**
 
@@ -307,10 +307,10 @@ content_hash: sha256:78094c5c28333aad5337cf0028fb52e713415604a819af9c1905dcc7513
 
 * 社区页签沉浸式设计
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/mBJn3E3iRxqu3plpPveLVg/zh-cn_image_0000002579786936.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD417DFD8CBE998E43CAA4A303D2AAF71E78ACACFB7F26FB3978140A4AD330E8 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/0Mboz72rTmuiyhMFpr4pRg/zh-cn_image_0000002579786936.png?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4457E7DD5BC780148876F93C2273F9165094341D8EF2D9EE5E71788ECD1094F "点击放大")
 * Banner图创新排版
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/q-edBgyJSCy-ydCs8IMldA/zh-cn_image_0000002610066823.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CC3FCBEE48EED23A6B531A634E6EE73070371D5593166D319FF09C8550276E4 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/D2bQj6gWQUCpGwbVt3xGlw/zh-cn_image_0000002610066823.png?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D16C08415CC15D0162B7CE3652D955994DC2C0F7D30F9F452AF37F47F7471E6 "点击放大")
 
 **交互开发**
 
@@ -357,7 +357,7 @@ content_hash: sha256:78094c5c28333aad5337cf0028fb52e713415604a819af9c1905dcc7513
 
 边看边评页按照功能设计划分为5个区域，效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/KxEYs5upRDGdUsLyFngEJw/zh-cn_image_0000002579627036.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=225733FEA594D54C086CDF67CF037C87A72F3820E0049543636786D5F9197D15 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/sl1Ey7-rTRSK_gCwK4hEHg/zh-cn_image_0000002579627036.png?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A58B78F5A4FB414744D426B021EB28AF3AB0597366D6F480C500C7C2DB7235F "点击放大")
 
 **界面开发**
 
@@ -412,7 +412,7 @@ content_hash: sha256:78094c5c28333aad5337cf0028fb52e713415604a819af9c1905dcc7513
 
 智慧屏端推荐页与移动端功能定位一致，按照功能设计划分为6个区域，效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/uyVX1VAdT5ixJD7RECloMg/zh-cn_image_0000002610146927.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D54480ABB1F77896D519F7C585CD38AE83994AFC84B3066FC786E573EBE5D33F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/kD51etn1R7S0wNtD0UpETA/zh-cn_image_0000002610146927.png?HW-CC-KV=V1&HW-CC-Date=20261114T005408Z&HW-CC-Expire=31536000000&HW-CC-Sign=E73EB05E04C7B430EA2FD2FB7446214E5C22EFAE590A021741CBD22F80CC22BA "点击放大")
 
 **界面开发**
 

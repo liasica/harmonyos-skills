@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cross-languag
 title: 跨语言调用复杂参数传递
 breadcrumb: 指南 > NDK开发 > 编译工具链 > 跨语言调用复杂参数传递
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:46+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:91af3044d1d87f1a713575ea6df0103e0761a3259361865b39d4e3886eac4469
+content_hash: sha256:b74a626adcb01fd8e945990ab9530ec9da5262d34c3b4f5442ac9bcec047310e
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:91af3044d1d87f1a713575ea6df0103e0761a3259361865b39d4e3886ea
 
 **图 1** 新建Napi模块
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/oFCVa2nfRJSemJFz-ZqmcQ/zh-cn_image_0000002786360838.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=F61B50ABF3F4CD739F9B756EBC658EF261FEFB6873CD5E0AF0F99CB342E6C007)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/_3PK-D-MTPS0lNEFt3m-jg/zh-cn_image_0000002817508003.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=9432542D4E8B4B7EE71339550DB4C3280D3AC1FEF2D44AEA01E145D3D457D17A)
 
 ## 场景案例
 
@@ -171,7 +171,7 @@ ArrayBuffer是一种用于表示通用的、固定长度的原始二进制数据
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/0o4Ax1mLQtiNb8QTPUf2jw/zh-cn_image_0000002815560259.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9EB6EDA7DE1F218508CDF5B54A5DC20BEB0757D1CBB0D7201501B0FA71D0181)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/5roh-jWrQy-8KKBGJE5-Jw/zh-cn_image_0000002788308572.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=84499B6865BF6B6ACB96D5DB253583059A0802B249E31DFD2AC6C7A140DA2C4F)
 
 ### object类型数据交互
 
@@ -278,7 +278,7 @@ Object类是所有其他类型的基类。在C++侧接收该类型参数时一�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Joj6eLBfTmCZ7G1aFTT0Lg/zh-cn_image_0000002815400343.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=6272A35A1986EB0D72A9DF6DEDCBE1587DF63404C2D5FC61A1F15F2EB2507806)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/ri8f4vzvROGcAJ5ifhT2YQ/zh-cn_image_0000002817427935.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=93B3CD567B55B74525DE5E2D04A2331107B239ACFE074B1F0BFC1D877432AF8A)
 
 ### hashMap类型数据交互
 
@@ -436,7 +436,7 @@ hashMap是一种基于哈希表的Map接口实现的数据结构。在C++侧接�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/QQalbLZFTEGUB3Hi26lgig/zh-cn_image_0000002786520768.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E2F1822A5CD4D7013A7784C2D030E7D6527B00C719AFA15CB0D74F7E5682068)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/X1aFgSGIQdigdS71Dl8D4A/zh-cn_image_0000002788468516.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=79C781E299BC3AD110840DA1BA6826DC813181C0A74B39C707347F09D3E785E3)
 
 ### pixelMap类型数据交互
 
@@ -552,7 +552,7 @@ PixelMap是一种用于显示图像的数据结构。在C++侧接收该类型参
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/TJGBAsBcSGeJQorEZtqsXA/zh-cn_image_0000002786360840.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF1EE4675BB528B182BF91E80CA435B13DF7C437EDBC8EBB452D88730169EA1E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/jhAfm3awTa6sHxWr30slUw/zh-cn_image_0000002817508005.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=59C1ECB36E2BFCA2E3B8243263B53078614C6E756FC7A15378433AB3961E7D39)
 
 ### class类型数据，ArkTS传递至C++
 
@@ -652,7 +652,7 @@ ArkTS语言中，class（类）是用于定义对象的模板，并拥有特有�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/MxeKJafpSxqvgZiRvaETZQ/zh-cn_image_0000002815560261.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=747EE8DE7782B3A6E39E0AF737B62A8EFF7EADD6C36FB70E3802ED0F9965FB15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/YjFdrPDoSfKb7Fa3H2IOSA/zh-cn_image_0000002788308574.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B4FA26FBE8F53030380E7E9044542D570BDCB40EA9CB45402824BD061C1AC7C)
 
 ### class类型数据，C++传递至ArkTS
 
@@ -862,7 +862,7 @@ ArkTS语言中，class（类）是用于定义对象的模板，并拥有特有�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/V9LxX4B5QBKc1z8dBxjgCQ/zh-cn_image_0000002815400345.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=A46EB5E4674AF10A9E798551C204D640E9596B857AD0D4A32214C3A1044A0DA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/TpJDqqzARBOmR9curil3qA/zh-cn_image_0000002817427937.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B55A8FDABBCC8AB7DD77227A752553DC76C0F30FAB56159960EFAFC4B9CC344)
 
 ## 示例代码
 

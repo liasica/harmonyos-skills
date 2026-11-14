@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-short-vide
 title: 全屏短视频自适应缩放和沉浸
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 全屏短视频自适应缩放和沉浸
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:11+08:00
 doc_updated_at: 2026-09-15
-content_hash: sha256:997172dca2b8bd35157b365453ec99c5ac55ffd934ecaf6abc57c3c4fbb2e0d6
+content_hash: sha256:cfb3fff3f7128316d6f154a7feb394fb4df5951b57c89a2cbe7d6f0ad755ba03
 ---
 
 ## 概述
@@ -74,7 +74,7 @@ content_hash: sha256:997172dca2b8bd35157b365453ec99c5ac55ffd934ecaf6abc57c3c4fbb
 
 按照上述沉浸规则进行适配后，视频的沉浸效果图如下（红色部分为视频可用区域）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/mMqJ6bEJStyMC1qicRoQsw/zh-cn_image_0000002724382497.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=9361C2353CF6A1487CB55DBEA7A112FDE77202FB7D3EB04A856D01F7437B4495 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/rI7FpK0bRumrvzG4_IfJ_w/zh-cn_image_0000002724382497.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF3CF9C886F84CAC51A2EB4544202893BEF536A835777E9D52B029086F399D88 "点击放大")
 
 ### 视频自适应层
 
@@ -106,7 +106,7 @@ OVERSCAN模式中采用了固定的宽度放大系数，使得视频在水平方
 
 视频宽高比处于9:16区间的短视频在不同可用宽高比区域的显示效果图如下（红色部分为视频显示区域，但超出可用区域即灰色区域时，会发生裁剪）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/N6gnyfWHSaepk3sb2qiYkg/zh-cn_image_0000002724502423.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=F79FC49A6A3FF24513E403C977A1CDB3036CBB7589CD898EEB350CE96B04DD99 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/po8LANmKRyKmIrBko13dIg/zh-cn_image_0000002724502423.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=D21687AD8F6F47128E698FA7257784DC3DE4E6977882E596F6A34BC9A7607CE8 "点击放大")
 
 ## 短视频自适应旋转
 

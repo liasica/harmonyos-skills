@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkweb-ren
 title: ArkWeb Render进程卡死故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 应用冻屏故障模式说明 > ArkWeb Render进程卡死故障模式说明
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:19+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:003cb124f624ecf7cf8e85467be5e87cea0d7dcbd587687fbb391d6183f4bfcd
+content_hash: sha256:3472598c35841484fd14fbae8bdc05e37bb39bcfb73f3a8e7fbb51224a87d5de
 ---
 
 ## 概述
@@ -54,7 +54,7 @@ Main handler dump end time: 2026-02-04 11:29:31.124
 
 trace分析如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/-DTYrEH_Qki-tF2e2iUD9w/zh-cn_image_0000002666120049.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=372A53C2CD654DF5D11E50624EAE3DBF91DD0EEEDCFA2EDB5944DA93B37C7243 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/7D4v4X_rQBqD5ZDq3-N2RQ/zh-cn_image_0000002666120049.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=7623E9CFC0A45810F29B2AB26FD07E2FC1E7EA78DC4FD63FD36B233E41C5623B "点击放大")
 
 在业务代码中搜索任务名称，可确定抛出任务过多的位置，从而减少抛出此类任务的数量。
 
@@ -76,7 +76,7 @@ trace分析如下图所示：
 
 本案例通过构造一个可以触发耗时JS操作的应用来进行问题说明。案例如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/c2UbXzoUSoi21in8erAyWQ/zh-cn_image_0000002635680956.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C8C525E7FF5A48A4426B75D06874F23C283A2A0B953C396B2593A3D06530323 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/az3JA_AXTryMrvQVwIi6TA/zh-cn_image_0000002635680956.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=3589BB9CA47C936FAA9AB3D41B3EA8E67BD8C46AF3A655575B6B8CC50C92F384 "点击放大")
 
 **问题现象**
 
@@ -94,7 +94,7 @@ trace分析如下图所示：
 
 查看对应的JS代码可知耗时代码如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/8VAHFRceS6KD34X6IDyP2g/zh-cn_image_0000002635840876.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FFECE4608763ACA4AFF8FCDB09721A1B3B7BB9AC670AB0F74AF6BEBC0F10514)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/gorYrC4aTkOKTY6Jun0FRg/zh-cn_image_0000002635840876.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=A48E46B0A3B7D15CD10AFD6682A6B0635F80FF54A8164E0ADFF11474B245835D)
 
 **排查建议**
 

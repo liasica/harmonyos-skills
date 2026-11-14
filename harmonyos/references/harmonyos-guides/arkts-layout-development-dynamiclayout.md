@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 动态布局 (DynamicLayout)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 动态布局 (DynamicLayout)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:dae148fc936e8786c9f442fa95b9be7920b08a4a5ee02210065c02be2194c145
+content_hash: sha256:3d680692644165b89e241bc87cdd5967f72cb58490ef02156cd522a9d62d0685
 ---
 
 ## 概述
@@ -64,7 +64,7 @@ struct CreateDynamicLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/yBFrDFxMTqC4W_wqo11sXg/zh-cn_image_0000002786358824.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AA355E5642B784DF0CFF9960602B39E9BF2F963C5EDA9E000F567BFCDA4682E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/WLbjAWkPTxa77UpBajBp9w/zh-cn_image_0000002817425919.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=E83CDE8C849EFE1F187F8A584D75323F05999C84E4B8881254D50B465C92D57E)
 
 ## 内置布局算法
 
@@ -145,7 +145,7 @@ struct RowLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/HGtk_licQnGBXN4yGI-_XQ/zh-cn_image_0000002815558245.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=67DA03760A4B406DCE954EFE133A7AE2C1128DC7671B7CF43AFD994E6EB564C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/vvGuDOdwQdqcq7Qc2p5NFA/zh-cn_image_0000002788466500.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8AFC11BDB40BE65FEA59247CB36DA7741C33D8E28EBD27DDC64FD0F2FF3C8C2)
 
 ### ColumnLayoutAlgorithm
 
@@ -222,7 +222,7 @@ struct ColumnLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/2fKotR99TkaOeRWyDPWsTw/zh-cn_image_0000002815398329.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=096B766938513C40E5E72E5F55BAB9892A13B4BFA8223ACA9B9813966DD8AE08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/heAsTjTMRvGp240jV8TzCA/zh-cn_image_0000002817505987.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC9C010C7FF64571286E87206864C03B2E4E9D9537D62F8DFF0A7770D5B9BDBA)
 
 ### StackLayoutAlgorithm
 
@@ -293,7 +293,7 @@ struct StackLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ncDug7AkTPOwk7KUlWZuIQ/zh-cn_image_0000002786518754.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CFCF517D48CE14F4BC2732D16179D14C76DE95C6EE3C452CD1F5921D19DA9BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/FqTDC_CgRAmURCNWGqwNBA/zh-cn_image_0000002788306558.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=70F7F7DBC2BDEDFD4A80D61E3D624BA20FDCE49DFFCACF9F0B076A46512E4610)
 
 ### GridLayoutAlgorithm
 
@@ -399,7 +399,7 @@ struct GridLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/W1-3xsC5TBCZ2ocFyGIIOg/zh-cn_image_0000002786358826.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=32B2EEB57EE09F66D2ABE23F6D3889FC1FB6B543D9ACC8AAC6FED03768EBFC16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/cpu3RWNaSKKfU7Odg61f-g/zh-cn_image_0000002817425921.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEF4EF6A485C53D8A52A20CB5EB96C67EDE3C68390243D095F35078B8BB25B77)
 
 ## 自定义布局算法
 
@@ -501,7 +501,7 @@ struct CustomLayoutBasic {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/N8_-d7kSRLuoWRPPPJAXBw/zh-cn_image_0000002815558247.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FD63CF8F3788CF61A4E93DEF108C19A9D0E64E9299BB77A1062758456AF1A42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/TmeI72EcTJGGYh-lBqq6BQ/zh-cn_image_0000002788466502.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=C10F6FA795CA1926EF5596DC994770DFA09CC85829B22CDD5314F1506E914405)
 
 ### 瀑布流布局
 
@@ -664,7 +664,7 @@ interface Product {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/NGwnG3npREKpIpnLR3CItw/zh-cn_image_0000002815398331.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=22D716E908EF27E50ECC0C87B7CDE9B3BCBFF214322A75DD7055988B108249D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/7wc1DzjZRi6mWN5-QgScpg/zh-cn_image_0000002817505989.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=64216D501E86B97E71D5E244A8346FE010B6A95E2AE7B90583C1F1BB64BD76BC)
 
 ### 网格布局
 
@@ -819,7 +819,7 @@ struct GridLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/0OBvyvz_TL6iZViRyLQ6fw/zh-cn_image_0000002786518756.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B31EE60385B921121DF38701638E9A28BC2A804B8937A3B89D52620A915F808F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/JoZqPhuZR3WU_8kbK5oZuw/zh-cn_image_0000002788306560.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C3CA2ACBD98FBB412E13DE1FEF13096A484A6C65ADE8115ED696C66A6A47D98)
 
 ### 标签云布局
 
@@ -968,7 +968,7 @@ struct TagCloudExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/0fNeVkSeTP2-P9ide9fK6Q/zh-cn_image_0000002786358828.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=1859C98D8284C08E7995711C9DA97E4694B85BE133CB872B25D4F091F531737D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/sDs-pAXpQZ2gAQlBF4EFdg/zh-cn_image_0000002817425923.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=73489AAFD532039C99EA0F238B1A91F6C992D458226BB3951DDC70325FBED3CA)
 
 ## 切换布局算法
 
@@ -1107,7 +1107,7 @@ struct StatePreservationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/BLI9DuyfRJqYY-x1H50iHA/zh-cn_image_0000002815558249.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B6B17B1593D7F0A0EF66464EAFBF456E4C236FC7A23940BAEB0C19CAA3DAC55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Wb-U1aPwR9GVryypPHiscA/zh-cn_image_0000002788466504.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=37671226F71FD353B82148E0EA994F5AFF7E15403D4804253209072CB069EC1F)
 
 DynamicLayout支持以下几种方式触发重新布局：
 
@@ -1223,7 +1223,7 @@ DynamicLayout支持以下几种方式触发重新布局：
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/pcxPL1r1Tj6z-YVN_qntCg/zh-cn_image_0000002815398333.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A566DA2E53239FCFF772EFBF2B9B182512F4D8679C5AA69877091064BBC1B000)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/fjyVRA5STy2X_N5bK7w_XA/zh-cn_image_0000002817505991.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=423DEA2F3AED7A2955FC522D2EB6EEEC232DD048FCD989D80E3FE1BDA1356D14)
 * 通过条件运算符切换布局算法。
 
   开发者可以使用条件运算符，根据状态变量的值选择合适的布局算法。
@@ -1276,7 +1276,7 @@ DynamicLayout支持以下几种方式触发重新布局：
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/vQywqCIRR-ajAp-bb1se2A/zh-cn_image_0000002786518758.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0678573FD29AF6F943BFCC57B6726D717F0CDC4E6209DB4E9C97D61C6BBDFEB0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/QPAFaBZVTj-K_aHs38ktTA/zh-cn_image_0000002788306562.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=E32E5682B41025310B9D0C679E4C53F2795A831719570462451C720132C02E82)
 * 通过修改算法属性触发重新布局。
 
   布局算法类使用[@ObservedV2](arkts-new-observedv2-and-trace.md)装饰，布局算法成员属性使用[@Trace](arkts-new-observedv2-and-trace.md)装饰，修改属性值可以触发DynamicLayout组件重新布局。
@@ -1344,7 +1344,7 @@ DynamicLayout支持以下几种方式触发重新布局：
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/OuVZ3l0WSGaThTShgZUMhw/zh-cn_image_0000002786358830.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3F5DF70966CB6BF40BA617CBFEB8BFBD00D12262922573E9A08254B070BE001)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/kNbtemT2RP-mcdd607oboA/zh-cn_image_0000002817425925.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=F49C9B69B62D115FDF9C783FE54C75B4DF37441A21C68E0B6168F9DE05F9BB6A)
 * 响应式布局算法切换。
 
   开发者可以结合[mediaquery](../harmonyos-references/arkts-apis-uicontext-mediaquery.md)接口监听屏幕方向变化，自动切换商品列表的布局方式。竖屏时使用列表视图（每行一个商品），横屏时使用网格视图（2x2网格布局）。
@@ -1495,4 +1495,4 @@ DynamicLayout支持以下几种方式触发重新布局：
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Df3LbZcBRyuPWQtNtmpgBQ/zh-cn_image_0000002815558251.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DA321481B0EB50A36244732F838338C9EADFC7BC8C855CFFB48C156F55AF5A2)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/O9VSqsrVTYqBpnEgYiofew/zh-cn_image_0000002788466506.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=90AF5175E30E3C6C309B76E2AF818B1E217EB3BB875BCFD23796C35F984A556A)

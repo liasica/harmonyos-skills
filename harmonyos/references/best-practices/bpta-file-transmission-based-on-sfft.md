@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-file-trans
 title: 基于SFFT的大文件高速并发传输
 breadcrumb: 最佳实践 > 网络 > 基于SFFT的大文件高速并发传输
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:07+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:e910d1c0a0937c90b21bdf83dc83cd1258a1d2d3d9288709039773df4de02700
+content_hash: sha256:476653062910d01a557a4373eb17c028157df00de28f30cb1e8deccb8a565b7d
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:e910d1c0a0937c90b21bdf83dc83cd1258a1d2d3d9288709039773df4de
 
 多线程下载是一种通过同时开启多个线程，并行下载文件不同部分的文件传输特性，能够充分利用带宽资源，显著提升下载速度，尤其适用于下载大文件或在网络带宽受限的环境下下载文件。其核心原理是将文件分割为多个小块，由多个线程同时下载这些部分，并发写入到本地文件中，从而实现高效、稳定的下载。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/47Z3GIkTTnKRxgw1rE_btg/zh-cn_image_0000002236694464.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=496603178F075D7A0C585F1EEDB9C96EDB7C00F995D4467A8BBE1A2CC6287176 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/zGAB2bOWSuSV8ja91G3MbA/zh-cn_image_0000002236694464.png?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=67930BC7D75CEC75C164566D23B5F84B5BA128C7670B32DEE26D70EA4F1E5007 "点击放大")
 
 ### 实现原理
 
@@ -71,7 +71,7 @@ SFFT三方库使用RCP发送HTTP请求，因此使用了以下权限。权限设
 
 当使用SFFT进行大文件多线程下载时，下载速率相比于单线程下的普通下载，可以得到明显地提升。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/38I6Fl-GTOG83vbhNwFnSw/zh-cn_image_0000002271813645.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=737286E10D84D90CA07577B36C4A46B817DAD8BB4940582A852076F98A9ACB80 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/RHCOhwdGS4690uix6QRDzg/zh-cn_image_0000002271813645.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=87105C9D57038ACB6F11ED1B06A245106AD5ED2CA0CB73A8A8FCACAECD277B18 "点击放大")
 
 ## 分片上传
 
@@ -79,7 +79,7 @@ SFFT三方库使用RCP发送HTTP请求，因此使用了以下权限。权限设
 
 分片上传是一种将本地大文件分成多个小块（分片）后，分别上传的特性，可提升传输效率并减少网络波动的影响。若某个分片上传失败，只需重传该分片，无需重新上传整个文件。结合断点续传技术，即使传输被中断也能继续上传，确保上传过程的稳定性，特别适合复杂的网络环境。分片上传需要服务端支持将多个小文件合并成完整文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/_F6unJCUS32GkphS5Whg5g/zh-cn_image_0000002271853533.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=E15821B2EA7E5C5663B56C7BE315DF495BA74C24D02C66C8D0F426906A0E54E9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/BtK8qIcUQA6PNzZOJSXw4w/zh-cn_image_0000002271853533.png?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=51FE65BD69B68DC23F7A7BF44852140356847AF103DA3F8CDDA1487900DDE45C "点击放大")
 
 ### 实现原理
 
@@ -120,7 +120,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 当使用SFFT进行大文件分片上传时，上传速率相比于不使用分片上传，可以得到明显地提升。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/EJqy9TJdSDG_xkec_aJmVQ/zh-cn_image_0000002236854260.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC60C43A3BB9D7097464CFCD60578DEE53110496127564758F447A56459062C0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/rWzYI0HMSBSX1WsBQVhQnA/zh-cn_image_0000002236854260.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC221F40791020F9B511F946BE66C9166FFD4ABE19E81113136026969078DD26 "点击放大")
 
 ## 断点续传/断点续下
 
@@ -136,7 +136,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 在SFFT中，断点续下基于上述多线程下载原理，结合关系型数据库[@ohos.data.relationalStore(关系型数据库)](../harmonyos-references/js-apis-data-relationalstore.md)实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/h7-AZGIgRCOpOeL1nNXNvg/zh-cn_image_0000002236694468.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=B15AC18CDEE8EC5F5628E3B33775E8E5073F7D362BB368B1DBE0080F5E7277CE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Gvp_1wT0TQqcbr6s0lw9aA/zh-cn_image_0000002236694468.png?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=1345E87DB06A4C01D7A2665F0EAB6BFB32908D164902693D82C95AEE7A435F46 "点击放大")
 
 当使用断点续下时：
 
@@ -149,7 +149,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 在SFFT中，断点续传基于上述分片上传原理，结合RDB实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/TxPvps3NQDat25o3E4WV0A/zh-cn_image_0000002271813649.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=58B5FD089F954FBBB7B9E6D32919B041F11AC9B93D82268F3ADA49380E1379CE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/-sV4HcKXQrqkmPMv1Kc0Qg/zh-cn_image_0000002271813649.png?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9BDD8A6FC18B0BEC86541B9A4E3E91F57587350ED4D0314596893AF082B01B0 "点击放大")
 
 当使用断点续传时：
 
@@ -244,7 +244,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 当使用SFFT进行大文件传输时，应用能在网络条件恢复时自动重新连接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/9sZt7LZwQMuxjzWYxagFyA/zh-cn_image_0000002236694472.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DEE34256D893B1007203B6000DA6AADAAE530A2998979A983C041EE714351CD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/pEAjHK_CQ4WoM3QloE01_A/zh-cn_image_0000002236694472.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=D92208E01D66BD05BE0A898C293F99D16706B8E4D422026A70A3A3D1F56E5498 "点击放大")
 
 ## 服务端要求
 

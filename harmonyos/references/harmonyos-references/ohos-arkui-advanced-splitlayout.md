@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SplitLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SplitLayout
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:26+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:de8860ce31d4aa081268121df4d0d690ff73ed9da9c392ed263236d0ee05a0f1
+content_hash: sha256:6a09c00cf339b251f196cc5750393b34d335e9cea520c6932c0d20ff72604336
 ---
 
 SplitLayout组件提供了常用的页面布局样式，主要用于展示图片、标题和内容容器的组合布局，适用于需要自适应不同屏幕尺寸的分栏展示场景（如详情页、设置页等）。支持自适应不同屏幕宽度（小于等于600vp、大于600vp且小于等于840vp、大于840vp三种布局），解决了在不同尺寸设备上需要展示不同布局样式的需求，提升页面适配性和用户体验。
@@ -81,12 +81,12 @@ struct Index {
 
 小于等于600vp布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/H5B6-pq4QIefEZKGydgB1Q/zh-cn_image_0000002786521612.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DE0E343863FE2C4E34B55E22B6CF898BC0D4A860F0842EA7398DEE8FEB8BFB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/ODJB7NFXTgyhxcPvWi2Vmw/zh-cn_image_0000002788469360.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=86BF441222A6986B74E75CD7C3E60F40A6962D8A8D75F77559B8186CA1AD709C)
 
 大于600vp且小于等于840vp的布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/AQJ_eo8xQG-SCWu6hT8PGw/zh-cn_image_0000002786361684.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D6E216D2EFD45151BC25CB2786AA86E942F1448202DD7269F0FE066F56E936B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/f5a-Xr52Qg2fHFA9-bSGqQ/zh-cn_image_0000002817508849.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=89AD79DE2D78DA6B396FE2417B9CA15C32C0E78FCB79F1368796755155D9F203)
 
 大于840vp布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/2_AigFJPStO1paIDBfK_IA/zh-cn_image_0000002815561105.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABB6903CB58DEDB5A1911517AA3583576EB12F6BE636C3C3266F62B686980FB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/-W0_kWINTXe4ry0vmBtcmA/zh-cn_image_0000002788309418.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=F14E89825AF432DA94D4DA6A73A092A43BA3AF6AE62FC69564D768E8214C2498)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 半模态转场
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 模态转场设置 > 半模态转场
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:07+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:12275e6ca5968d869a1d3c0585fb112f1ad40be5725f0dfcce65a5cbe8d6b222
+content_hash: sha256:78e77c0b8ca49926887e866c924afccbd971bbe190fed5d6eee20040efdee79f
 ---
 
 通过bindSheet属性为组件绑定半模态页面，支持底部、居中、跟手、侧边、全屏等多种弹窗样式，在组件插入时可通过设置自定义或默认的内置高度确定半模态大小（侧边弹窗和全屏弹窗不支持自定义高度）。
@@ -431,7 +431,7 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/fykHDz7XSxSFo3_-Bb--Bw/zh-cn_image_0000002815560487.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7887290F6C5D0AB1BD7115C506E5FD03E92308FFB53CB58ADB8B5CCF172E969C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ykAYGMgKT9mrAudx9yNmHg/zh-cn_image_0000002788308800.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=544C54DD329BF4F32AD1B4670DD72E97B62A8640F0EE587ACDAB7C508733D4BF)
 
 ### 示例2（设置三个不同高度的挡位）
 
@@ -484,7 +484,7 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/e40E5AH5QgKQY0nLojeh_A/zh-cn_image_0000002815400571.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=610339A7FE1E717B1BFAC1ABDFC8E41C58B67DAAABE2D914D25E59FE55B28949)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/n9_HEabAQzuLKuVlBZw5ng/zh-cn_image_0000002817428163.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=4508C27B1A6BDC2BA166634A86B9EBBBE63DEA968518BFBDE19475E21D0D111E)
 
 ### 示例3（使用边框宽度和颜色）
 
@@ -540,11 +540,11 @@ struct SheetTransitionExample {
 
 从左至右显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/9xgXlN4eSYKLu1vbttpAZg/zh-cn_image_0000002786520996.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=BED103D3077E758A433125F99F685F88203F27B66533C6D3D887222991CC0198)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/t_2okmffRvqLg2EMPbodTQ/zh-cn_image_0000002788468744.png?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B1BABD0D09B17341510DF0CD08F33933BAB675C81F2429D562BE661709FD5B8)
 
 从右至左显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/2E44pQccSw-gvnqoL2rjeA/zh-cn_image_0000002786361068.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A097A09981C3952917D50E8F624A8F161806E4E32CAA2DF77DDE190493EA5D24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/IjBu-cAoTWG2zJMOAYia3Q/zh-cn_image_0000002817508233.png?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=069FBE8EF1492E090BC4B6B0014D77CE104F9C285823B74B7F3398637D272F73)
 
 ### 示例4（使用关闭回调函数）
 
@@ -598,7 +598,7 @@ struct BindSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/AM-zuAE-TPuZLD2OGNJ9WA/zh-cn_image_0000002815560489.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E361ACD1487A11599BE834A3A4824FA4391CF7ED5DE47114D300B7B2BD8D678)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/4OzYPb_ARUaJAZiKWCLiqg/zh-cn_image_0000002788308802.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C2602162BE2511133FE57A10806193104C70AA1B1C9EE12E30431EAE1122FDE)
 
 ### 示例5（设置内容区刷新时机）
 
@@ -651,11 +651,11 @@ struct Index {
 
 跟手触发挡位切换时，松手才触发面板内容高度刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/VqfvgkMrQKqoB0L1RIt3kg/zh-cn_image_0000002815400573.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=61436EBCAA8C75040FB228DFBCD57EECCFD244A56B962F74D02BF7C2FFCE89E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ISA-LW4qSEySLgiHCNZNNw/zh-cn_image_0000002817428165.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BB54BD98D0ED3B1201D173FAC3FE9347DAE47E2F94CCAE9A8D43508AE1F8FC3)
 
 跟手触发挡位切换时，跟手时期就会触发面板内容高度刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/T0h-bT37QIG5_36a0c9Dwg/zh-cn_image_0000002786520998.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=260A0229996756A8EEECA25AAAE1240BE8D27F31820906462F82BDFAC93980FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/co1Pv-xyRX6XgCHhS7c1_g/zh-cn_image_0000002788468746.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=B621C2EDB5B1982F76C5855EB293A99B48598C7D40998B940E2476FDB109750D)
 
 ### 示例6（设置压缩模态内容）
 
@@ -771,7 +771,7 @@ struct ListenKeyboardHeightChange {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/-vK_SwqfQE-Is6-4q6Xt6g/zh-cn_image_0000002786361070.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=542909F61388AF560C2F18C49E53F4897A117482A44697A3EABF3817ACAE4853)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/4fv65oJKR9ec4BYycZfVbw/zh-cn_image_0000002817508235.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=282F1B760CDBF332F91A954ABE0B721509ECE8E4FE69278D5D733FD0438609B5)
 
 ### 示例7（镜像场景下如何设置圆角属性）
 
@@ -824,11 +824,11 @@ struct SheetTransitionExample {
 
 从左至右显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/85w7ySxqQUm8ZEoVssqVQw/zh-cn_image_0000002815560491.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD53ED19788F1C54EA027A7928156F17B359C2DC9567DB027714B29364755DF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/GMz63_QATb6pQqT5LWm-nQ/zh-cn_image_0000002788308804.png?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F7B661938C6B59510DD503EBEEF8143B76010BE5999C403FAC7BFBDC46C9D39)
 
 从右至左显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/bUuqRN7DTTWd0hFy3skHgw/zh-cn_image_0000002815400575.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=066CA5E1D7C98264ECDEC2A565B87E66D5B0B6BD38D7B67EF17A1070C252DB15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/CSH_b0sLR8i0n0JRnNvDiw/zh-cn_image_0000002817428167.png?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=10CF1ADA93E8F1F878D95E9EEC68319447703C85E97B81F059C6ED284B023356)
 
 ### 示例8（半模态Side侧边样式）
 
@@ -930,7 +930,7 @@ struct SheetSideExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/qVsLSHVES_C6FAEh7GswRA/zh-cn_image_0000002786521000.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=30AE9F75EB31E11C24ABD9763B966AE8155C99907B757290A6BF68D5D10EF3FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/YXylf2KhSneyvNQjlOacvg/zh-cn_image_0000002788468748.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3D5FDC04A81CBC31BC5CC9A502040009C9AB207CDFDC956F2F7F77A8C7D5141)
 
 ### 示例9（半模态ContentCover全屏样式）
 
@@ -992,7 +992,7 @@ struct ContentCoverExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/cZQIeyUwQR6b7K4ncxpnNA/zh-cn_image_0000002786361072.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A034013AE2EF19773DAB6F9DB9D6132F2D55F1DBB13FFDFDBD4484A2BEF31B81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/pKrVfBh8ThqOGcxbqD5zLw/zh-cn_image_0000002817508237.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFA89D0C7C817727A25FD056AB42BD19FEE26364549F4F88C5D15C145721A100)
 
 ### 示例10（半模态设置系统材质）
 
@@ -1055,7 +1055,7 @@ struct SheetMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/WaJvaWpITViNfuSJoVfBCw/zh-cn_image_0000002815560493.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8534F8C7D49E5A8CDE0BDAFB1861787EF24DBA90A024E62BAB19B0CB43D3C4C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/gs9-7esOS8uBILw4uLQlqw/zh-cn_image_0000002788308806.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DBA6E1C44BF957D1DBF3A0DE8521A09B2CAC6EC2B1D858E935D262D07464CD6)
 
 ### 示例11（半模态设置标题栏悬浮模式）
 
@@ -1124,7 +1124,7 @@ struct SheetMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/gOXr6MWGQAOtXkAF4pnoXg/zh-cn_image_0000002815400577.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF8AD90A3B7BC8DFCE59D80E397E49462255F6F96F0030F5E369FD0129FCEE45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/6rXkLCXWRsOV7I1mnJW7rA/zh-cn_image_0000002817428169.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCFC162406F87D0A1BCBF75A5E61745FB651F995593A75B8469C8CEBA795D638)
 
 ### 示例12（半模态自定义滚动条状态）
 
@@ -1210,4 +1210,4 @@ struct SheetMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/_kUelsLqTgWxDcnDxqK9Rg/zh-cn_image_0000002786521002.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAE291ABC9DEEC1B136414812F9A700059B1517616D1CAE33C494B73B66E4AD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/m-AyhMU3T42_FmE51D7hZA/zh-cn_image_0000002788468750.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DBDA949F194FA265298FD1A775E58378628197CB662941322EDC866D2CE108D)

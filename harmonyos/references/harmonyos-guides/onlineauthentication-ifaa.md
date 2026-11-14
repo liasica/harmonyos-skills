@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: IFAA免密认证
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > 免密认证 > IFAA免密认证
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b2341b4f3b3e7918945d71e882c70c6cc285636dced1ba5afb142ff8937cf766
+content_hash: sha256:0ea590febf2b5368c3e954587701a6538c2ffb9fea430fa7b9e479e0322f5c11
 ---
 
 ## 场景介绍
@@ -39,7 +39,7 @@ content_hash: sha256:b2341b4f3b3e7918945d71e882c70c6cc285636dced1ba5afb142ff8937
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/wTaIhvYSRFa1hHEn4lF0xw/zh-cn_image_0000002786519620.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6ADF68D8AEE3B929742552CBD2590038526A8AD18433D27600DE2F66322AA1E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/PA6eCKrWQRCQyDDg86tFNQ/zh-cn_image_0000002788307424.png?HW-CC-KV=V1&HW-CC-Date=20261114T004551Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F76778A86066928269A6251ED5521396C35A0DCAC00EA4E1DD019DD6CD2E07B)
 
 **注册流程说明：**
 

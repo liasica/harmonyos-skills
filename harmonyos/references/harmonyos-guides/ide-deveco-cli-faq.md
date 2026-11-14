@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cl
 title: 常见问题
 breadcrumb: 指南 > DevEco CLI > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:22+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:d4dc5a9d46ad6aad8b7d0db08b7a47ef9a6b3d3c5701d0f8f5a670beafc6b4ad
+content_hash: sha256:a864006ba05397aa6df91238fc0e51ae1b00abe39ea0a018e7da0203b9729542
 ---
 
 ## 在鸿蒙电脑执行DevEco CLI命令时，提示"Signal 5（core dumped）"
@@ -14,7 +14,7 @@ content_hash: sha256:d4dc5a9d46ad6aad8b7d0db08b7a47ef9a6b3d3c5701d0f8f5a670beafc
 
 DevEco CLI命令执行错误，提示"Signal 5（core dumped）"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/FAZBbNMYQT64L-aBJDK6yA/zh-cn_image_0000002779566638.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=94E0E503F88E96D2878200F1554FCE51B9AB87B9A3041919AB1E67B5B4CC364A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/7PGd8TevTFC3fF_H2W4QiQ/zh-cn_image_0000002779566638.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=93D58C59DB7C18B2DD318A65877A06D5B22CCE283D4C73BC6EA5CB38E3877365 "点击放大")
 
 **可能原因**
 
@@ -30,7 +30,7 @@ DevEco CLI命令执行错误，提示"Signal 5（core dumped）"。
 
 执行安装命令或检验环境搭建等命令时，提示没有node权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/EfMQXF4lTH2LNVmU9i28pQ/zh-cn_image_0000002808886303.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7B52C19DD192CE86478657DD1F09ABC329F35F2E5D8F8208A123D1D298D3A18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/xwVS3u-RT5ST7m_bitGf7w/zh-cn_image_0000002808886303.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=996581D3A8752F9A01886191791084BEEE89537CB0B917D345353B24C6FEE0F2)
 
 **可能原因**
 
@@ -50,7 +50,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 在鸿蒙电脑上执行npm install -g @deveco/deveco-cli@stable命令安装DevEco CLI时，有报错提示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/qqw-FHbJSEeXqvi0JC7svw/zh-cn_image_0000002808766217.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=09139D538CF29451D6929CCA5A541EFA9430859E33613C20DC2B1D599BE3B291)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/lY9N1zNYSASUXfuZztdtEQ/zh-cn_image_0000002808766217.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=A52F3CF0AE9EA33E2844058B7F2686546674B76986AA4E9A44D874FCE9865E04)
 
 **可能原因**
 

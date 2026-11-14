@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-track
 title: "@Track装饰器：class对象属性级更新"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理数据对象的状态 > @Track装饰器：class对象属性级更新
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:59+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e45d967134f610ded2e77d6e8b8a130039a5531e77f55105fbf377625c3aa3d8
+content_hash: sha256:e30a7cb8154b48ff63da162d35d8d1a47e2d865b0e294af7eb12848cd73789cd
 ---
 
 [@Track](../harmonyos-references/ts-state-management-track.md#track)应用于class对象的属性级更新。@Track装饰的属性变化时，只会触发该属性关联的UI更新。
@@ -81,7 +81,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Scz-0GSqTtuvW2VCuRUMkQ/zh-cn_image_0000002786518522.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=37304CF482D622D3B69E999DDFF2950A54F5C703E26E0AD08A0B5553A38BD1DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/TzBtRZLVSzujGa4Sn6JoXg/zh-cn_image_0000002788306326.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004521Z&HW-CC-Expire=31536000000&HW-CC-Sign=888319E1C1DC8B0C37C87674C36D9BE38BDEA5DCF536AE31A7D56BEBB9D3E85C)
 
 **说明** 
 
@@ -202,7 +202,7 @@ struct AddLog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/nAJNaG-UTDmVWFUlnZXOmQ/zh-cn_image_0000002786358594.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FA0911196EBF42BFAC0D31E50380AAC0EBA8887C40AB262864D03725C52C907)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/3QJxDSXCRgmis8RgL4zbtw/zh-cn_image_0000002817425689.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004521Z&HW-CC-Expire=31536000000&HW-CC-Sign=00AB435240C728643A7F9BEA3CA92C3F4420DCCF64CB503E9991B9017D5B8E15)
 
 在上面的示例中：
 
@@ -282,7 +282,7 @@ struct AddLog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/n3nEMPSgT7OczMhejL_trA/zh-cn_image_0000002815558015.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1DFD21F9C07B4BDBE90E2D4E2BBBC7E579DBFD5308BF6A39A6E3D951B2E3AD0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/J1-XzRgTQxKn5QjrMCGDIg/zh-cn_image_0000002788466270.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004521Z&HW-CC-Expire=31536000000&HW-CC-Sign=F78AB73E5424F25940761AF2239FC513DCF137A618AEA8E22D791EB848218865)
 
 处理步骤：
 

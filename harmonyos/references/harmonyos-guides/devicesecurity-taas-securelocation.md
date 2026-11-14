@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 安全地理位置场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 安全地理位置场景
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:9210d2e0727ae4fed206aaa48d78ee9de256d4fd336a048dfb7955722bc9558c
+scraped_at: 2026-11-14T08:47:28+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:dbf37b7bdc8c7624040798b3d4354423b0b65dcfa9e37fcfa20d8c5d479db0e5
 ---
 
 ## 场景介绍
@@ -38,7 +38,7 @@ try {
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/lAhYxKNWTXSxrSMS6h0obg/zh-cn_image_0000002786519596.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=399576FAFB681780BACE9D53FA8D5D04ECAC68AFE825EB08640F186683556B0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/bp_TXO7ZTVyC8G2U53au8w/zh-cn_image_0000002788307400.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004727Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF276DEB5A971A645BD9D0B04B791C4D22F44EBCBF7CF2376784A00DBFFB1EB0)
 
 应用获取安全地理位置的优先级策略有两种，分别是精度优先和速度优先。如果选择精度优先策略，可信应用服务会优先返回GPS的结果，GPS获取超时后返回网络地理位置；而如果选择速度优先策略，可信应用服务会返回从二者中最先获取到的结果。
 
@@ -93,7 +93,7 @@ try {
          hilog.info(0x0000, 'TrustedAppService', 'createAttestKey successfully');
        } catch (error) {
          const err = error as BusinessError;
-         hilog.error(0x0000, 'trustedappservice', `createattestkey failed, errCode: ${err.code}, errMsg: ${err.message}`);
+         hilog.error(0x0000, 'TrustedAppService', `createattestkey failed, errCode: ${err.code}, errMsg: ${err.message}`);
          throw new Error(err.message);
        }
      }
@@ -119,7 +119,7 @@ try {
            properties: initProperties
          };
          let userData = 'trusted_app_service_default_userdata'; // 示例值，实际值请自行生成，长度在16到127 Bytes之间
-         // 初始化话证明会话
+         // 初始化证明会话
          const certChainResult = await trustedAppService.initializeAttestContext(userData, initOptions);
          if (certChainResult.certChains.length < 1) {
            throw new Error('empty returned cert chain');

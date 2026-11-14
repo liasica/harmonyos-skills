@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-
 title: "@Monitor：状态变量修改监听"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 状态管理与渲染控制 > 状态管理V2装饰器 > @Monitor：状态变量修改监听
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:30+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:0373f77407313105ed68243dcadf911d37611a2b59e4b5043620fab7854df8a7
+scraped_at: 2026-11-14T08:50:28+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:f80898b0659f2517eafa53d1582c5101109ffff19911b96593f2e76f178b2c8f
 ---
 
 @Monitor装饰器在[状态管理V2](../harmonyos-guides/arkts-state-management-overview.md#状态管理v2)中用于监听状态变量修改，使得状态变量支持深度监听。适用于需要在状态变量或其嵌套属性发生变化时执行自定义逻辑（如数据同步、UI刷新、日志记录等）的场景。相比[状态管理V1](../harmonyos-guides/arkts-state-management-overview.md#状态管理v1)的[@Watch](ts-state-management-watch.md)，@Monitor支持深度监听嵌套对象属性的变化，并从API版本26.0.0开始支持通配符能力，可更灵活地匹配状态变量路径。
@@ -103,8 +103,6 @@ struct Index {
 ## MonitorDecoratorOptions
 
 @Monitor装饰器的配置选项。
-
-### 属性
 
 **起始版本：** 26.0.0
 
@@ -214,8 +212,6 @@ struct Index {
 ## IMonitorValue<T>
 
 @Monitor监听状态变量变化的具体信息，通过IMonitor的value接口获取。T为状态变量类型。
-
-### 属性
 
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 

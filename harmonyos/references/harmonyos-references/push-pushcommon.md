@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-push
 title: pushCommon（推送服务公共信息）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > pushCommon（推送服务公共信息）
 category: harmonyos-references
-scraped_at: 2026-10-15T07:12:42+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:9b9817c636a4fbdaedffd3c3150cfb9c34169ecb2b1cac3e9e09e5136f15be6b
+scraped_at: 2026-11-14T08:53:47+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:e492927cc30ba29d10ec3ad76e281b2cc5cf045f2906f869f7f46f248bf7a86e
 ---
 
 本模块定义推送服务相关公共接口与枚举，为账号绑定、消息接收、通知内容替换等核心能力提供支撑。
@@ -49,7 +49,7 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| type | string | 否 | 否 | 传递给Ability的消息类型，取值范围：  'IM'：语音播报消息  'VoIP'：应用内通话消息  'BACKGROUND'：后台消息  'EMERGENCY'：紧急事件消息（该类型的消息仅对系统应用开放，暂不对外开放申请，开发者无需处理）  'ALERT'：通知消息 |
+| type | string | 否 | 否 | 传递给Ability的消息类型，取值范围：  'IM'：语音播报消息  'VoIP'：应用内通话消息  'BACKGROUND'：后台消息  'ALERT'：通知消息  'MDM'：MDM消息（该类型消息仅对MDM应用开放）。从API版本26.0.1开始支持MDM消息类型。 |
 | data | string | 否 | 否 | 传递给Ability的数据。详见[data取值样例](push-pushcommon.md#data取值样例)（格式化后）。 |
 
 ### data取值样例
@@ -110,6 +110,16 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
           "actionType": 0
         },
         "image":"https://lf*******246.png"
+      }
+  }
+  ```
+* type为 'MDM'时，data取值样例（格式化后）：
+
+  ```json5
+  {
+      "data": "data", // 详情参考MdmPayload.data
+      "header": {
+          "token": "MA**"
       }
   }
   ```

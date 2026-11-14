@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.faultLogger (故障日志获取)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > 已停止维护的接口 > @ohos.faultLogger (故障日志获取)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:54:19+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:5bc2331015ef3a6964ecaa899b335e6c9f9a79380fbd3c48941d94b4f25ccfa7
+scraped_at: 2026-11-14T08:52:20+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:ae002102688d1c7d6b92468ed3ef993e99a9aed59bb511728876f82a8168d873
 ---
 
 应用可以使用faultLogger接口查询系统侧缓存的当前应用的故障日志。接口以应用包名和系统分配的UID作为唯一键值。
@@ -37,9 +37,9 @@ import { FaultLogger } from '@kit.PerformanceAnalysisKit';
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO\_SPECIFIC | 0 | 不区分故障类型。 |
-| CPP\_CRASH | 2 | C++程序故障类型。 |
+| CPP\_CRASH | 2 | Native运行时异常。 |
 | JS\_CRASH | 3 | JS程序故障类型。 |
-| APP\_FREEZE | 4 | 应用程序卡死故障类型。 |
+| APP\_FREEZE | 4 | 应用程序冻屏故障类型。 |
 
 ## FaultLogInfo
 
@@ -71,7 +71,7 @@ query(faultType: FaultType, callback: AsyncCallback<Array<FaultLogInfo>>) : void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | faultType | [FaultType](js-apis-faultlogger.md#faulttype) | 是 | 输入要查询的故障类型。 |
-| callback | AsyncCallback<Array<[FaultLogInfo](js-apis-faultlogger.md#faultloginfo)>> | 是 | 回调函数，在回调函数中获取故障信息数组。  - value拿到故障信息数组；value为undefined表示获取过程中出现异常，error返回错误提示字符串。 |
+| callback | AsyncCallback<Array<[FaultLogInfo](js-apis-faultlogger.md#faultloginfo)>> | 是 | 回调函数，在回调函数中获取故障信息数组。  value拿到故障信息数组；value为undefined表示获取过程中出现异常，error返回错误提示字符串。 |
 
 **错误码：**
 
@@ -133,7 +133,7 @@ query(faultType: FaultType) : Promise<Array<FaultLogInfo>>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array<[FaultLogInfo](js-apis-faultlogger.md#faultloginfo)>> | Promise实例，可以在其then()方法中获取故障信息实例，也可以使用await。  - value拿到故障信息数组；value为undefined表示获取过程中出现异常。 |
+| Promise<Array<[FaultLogInfo](js-apis-faultlogger.md#faultloginfo)>> | Promise实例，可以在其then()方法中获取故障信息实例，也可以使用await。  value拿到故障信息数组；value为undefined表示获取过程中出现异常。 |
 
 **错误码：**
 
@@ -192,7 +192,7 @@ querySelfFaultLog(faultType: FaultType, callback: AsyncCallback<Array<FaultLogIn
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | faultType | [FaultType](js-apis-faultlogger.md#faulttype) | 是 | 输入要查询的故障类型。 |
-| callback | AsyncCallback<Array<[FaultLogInfo](js-apis-faultlogger.md#faultloginfo)>> | 是 | 回调函数，在回调函数中获取故障信息数组。  - value拿到故障信息数组；value为undefined表示获取过程中出现异常，error返回错误提示字符串。 |
+| callback | AsyncCallback<Array<[FaultLogInfo](js-apis-faultlogger.md#faultloginfo)>> | 是 | 回调函数，在回调函数中获取故障信息数组。  value拿到故障信息数组；value为undefined表示获取过程中出现异常，error返回错误提示字符串。 |
 
 **示例：**
 
@@ -244,7 +244,7 @@ querySelfFaultLog(faultType: FaultType) : Promise<Array<FaultLogInfo>>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array<[FaultLogInfo](js-apis-faultlogger.md#faultloginfo)>> | Promise实例，可以在其then()方法中获取故障信息实例，也可以使用await。  - value拿到故障信息数组；value为undefined表示获取过程中出现异常。 |
+| Promise<Array<[FaultLogInfo](js-apis-faultlogger.md#faultloginfo)>> | Promise实例，可以在其then()方法中获取故障信息实例，也可以使用await。  value拿到故障信息数组；value为undefined表示获取过程中出现异常。 |
 
 **示例：**
 

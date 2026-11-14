@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-impor
 title: 引用及管理共享包
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布和管理共享包 > 引用及管理共享包
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:46+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d90d5487455514ce7a8d579b629b8392ab1995067000575271df09e831877466
+content_hash: sha256:b62fd21092a81df76925ec0392d59f614ef84e8736f5bc689be41eaacfbe7516
 ---
 
 引用三方HAR/HSP包（以下简称三方包），包括从ohpm仓库进行安装、从本地文件夹和本地压缩包中进行安装三种方式。
@@ -127,14 +127,14 @@ ohpm install
 1. 在菜单栏点击**Tools >** **OHPM Index**，进入OpenHarmony三方库中心仓。
 2. 在左侧搜索框可查询三方包名称，或点击目录树，根据分类查看不同分类下推荐的依赖包信息。选定所需要安装的三方包，点击右上角蓝色按钮**Install**进行安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/asjf93YHRdeHm_LN7dVTBQ/zh-cn_image_0000002808886415.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=F944707B5522FF615BE2B30D9DA067FC851C82FCBB6974E8C4181305D7731D33)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/jrwOpIeEQB28Mx8AUujDxA/zh-cn_image_0000002808886415.png?HW-CC-KV=V1&HW-CC-Date=20261114T004846Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDF1DFEB0CE9DCED3D7760D4A25335EEB76BB551E32C292575CD34FF796E4A6C)
 3. 安装过程中，如出现下方弹窗，点击**Add**按钮，将OpenHarmony三方库中心仓地址添加到.ohpmrc文件中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/6e2hGTp3SmujQqAiJtV0kA/zh-cn_image_0000002808886419.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=48DA8C5B3144F77679DDC526B92EDFFF7B1059024E35736D68AAA33810EDD059)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/vzDj78lMQEeOxYe0bwCoHA/zh-cn_image_0000002808886419.png?HW-CC-KV=V1&HW-CC-Date=20261114T004846Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E70C4DFA82EC7DF531C397B2C53C42D7E368D2942081DD0BBA2C6F07B5108B5)
 4. 三方包安装完成后，在工程级oh-package.json5文件中可以看到已安装的三方包名称及版本信息，oh\_modules中将同时添加该三方包。
-5. 点击页面左上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/EaH9BR4ZRe-AfIRCiguZKA/zh-cn_image_0000002808766331.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5391360D88D28AAC8A8CBF2E3D7539BE038E511EA9B7DD0EFC05F121C4F26AA6 "点击放大")图标，展示当前已安装的三方包信息。若当前三方包非最新版本，可以点击右上角**Update**按钮，更新至最新版本；点击**Delete**按钮，可以删除当前已安装的三方包。
+5. 点击页面左上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/zV14Qh8sQAiFt4GfyabH7g/zh-cn_image_0000002808766331.png?HW-CC-KV=V1&HW-CC-Date=20261114T004846Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A14B8D8AD45689B9A49D549875EB028674E3666A2A004CB2A94251F34AD58CA "点击放大")图标，展示当前已安装的三方包信息。若当前三方包非最新版本，可以点击右上角**Update**按钮，更新至最新版本；点击**Delete**按钮，可以删除当前已安装的三方包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/w5rvPzJnTC20F1cRc6Xi7Q/zh-cn_image_0000002779406774.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=F254B3182E6676D2BFAFC975EFC0E02776ADCDF84880DC6478FAC948DFE9EF73)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/YGvtdMi8Qq-XxBGSyyJc1Q/zh-cn_image_0000002779406774.png?HW-CC-KV=V1&HW-CC-Date=20261114T004846Z&HW-CC-Expire=31536000000&HW-CC-Sign=92D961073307C5F534DD0FA3F1C6BDCFE3F4B4485E311B94C3C8B8AA131B91E9)
 6. 若对于已使用的三方包依赖存在推荐的同类三方包，可点击编辑界面中黄色灯泡图标，在弹框中选择**Replace selected with recommended library**，将当前依赖替换为推荐的三方包依赖；或选择**Replace all with recommended libraries**，一键替换当前文件中所有同类推荐三方包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/ZjYXor3mT4ycp4I2325sOQ/zh-cn_image_0000002808766335.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=312C159903E85D4E2E2C2A70354B5A7E0C476F0DBEDF54262536E2F9E8F38667)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/uT6A4LACS_SflgE0qxMd3Q/zh-cn_image_0000002808766335.png?HW-CC-KV=V1&HW-CC-Date=20261114T004846Z&HW-CC-Expire=31536000000&HW-CC-Sign=028B03C3831365F2F72BBB043277F8AAD35A5362C51228F46DAC0BE287DCFDA5)

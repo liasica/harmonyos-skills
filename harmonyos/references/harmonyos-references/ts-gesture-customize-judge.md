@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gestur
 title: 自定义手势判定
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 手势控制 > 自定义手势判定
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:08+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:104241990aeeb83b75dcb385296cff005ca30926c0f6c7dba102b3161e28c131
+content_hash: sha256:43da88ee6fd27bad1afb2f3bfbbbc1972d791dc3f0409195e2a172ca6a4473c6
 ---
 
 为组件提供自定义手势判定能力。开发者可根据需要，在手势识别期间，结合手势类型、触点位置等信息决定是否响应手势，适用于需要自定义组件手势响应逻辑、按区域控制手势响应或过滤特定手势的场景。
@@ -139,7 +139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/H84Qn8SOTkK-jqig9F_Vfw/zh-cn_image_0000002815400593.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CADDD40CBAD1DE714A74D05934D8A57E2C02CE59A9FAFB3A0B4702A2CD957518)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/Wv8fDGhIQZalRzjxj1o2Cg/zh-cn_image_0000002817428185.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005008Z&HW-CC-Expire=31536000000&HW-CC-Sign=885E46EF22FD7E70B4BDC210C5FD946DEF52CDD9EFBD0E0475CD4B6F886806AE)
 
 ### 示例2（自定义区域手势判定）
 
@@ -217,7 +217,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/mTtyMNWvShCCGlMeeROIZg/zh-cn_image_0000002786521018.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DD00BAB5B617C8C3D79BC5DD693073F57463F3E0A753616615E6966C705C3CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/-qqhLARkQdGcyODf-VIWbw/zh-cn_image_0000002788468766.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005008Z&HW-CC-Expire=31536000000&HW-CC-Sign=539D6E0D36881319AE2251BEE15B0F5AF2E3DA083D7716276FF160D0FE1AFE29)
 
 ### 示例3（实时监测参与手势的有效触点的数量及其简要信息）
 
@@ -304,4 +304,4 @@ struct GestureDetectorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/_tmsvPppSsKp2l9SqE07Kg/zh-cn_image_0000002786361090.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C8AC7712D4B558A777B97ACCBEDF855BF1C20128D262A859ADCC068A0D05592)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/eUJghNmcRC2PuxMIaG5llw/zh-cn_image_0000002817508255.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005008Z&HW-CC-Expire=31536000000&HW-CC-Sign=94B7BE3BAC651BB303AC7FF72B41D0951EE364AEB34580BE5CB56F1AC2305348)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/debug-lldb
 title: LLDB高性能调试器
 breadcrumb: 指南 > NDK开发 > 调试和性能分析 > LLDB高性能调试器
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e53e80a57869680c845cc3ce7a4da1d10141b58d4e8fea21659141a4e0dc4c68
+scraped_at: 2026-11-14T08:48:46+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:3eaaf6100a7ec0e48fe3f1693b2fdd16cb353558a97c65d37cc213a634f53041
 ---
 
 ## 概述
@@ -91,7 +91,7 @@ lldb-server在运行时会对自身进行数字签名验证，只有通过华为
 
 ## 功能列表
 
-此处列举LLDB调试器支持的部分功能，更多命令参考：[LLDB工具使用指导](https://gitcode.com/openharmony/third_party_llvm-project/blob/master/lldb/README_zh.md)和[LLDB官网手册](https://lldb.llvm.org/use/map.ditamap)。Windows、Linux x86\_64和Mac平台的LLDB工具有些许差异，以实际应用为准。
+此处列举LLDB调试器支持的部分功能，更多命令参考：[LLDB工具使用指导](https://gitcode.com/openharmony/third_party_llvm-project/blob/master/lldb/README_zh.md)和[LLDB官网手册](https://lldb.llvm.org/use/map.html)。Windows、Linux x86\_64和Mac平台的LLDB工具有些许差异，以实际应用为准。
 
 * 记录日志
 
@@ -224,7 +224,7 @@ lldb-server在运行时会对自身进行数字签名验证，只有通过华为
       ```
     - PC上准备lldb，如windows系统则使用**lldb.exe**, 稍后将使用lldb与OH设备上的lldb-server远程连接进行调试。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/N70-JYgiSuC5y7dGdXsI7Q/zh-cn_image_0000002786520772.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=B620A96FA639FA14927B41CABB1A4240AE2C0F76DBC6BA14127CF08A66EABBD8)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/YNCzwKMQT6SneJFReMzgzA/zh-cn_image_0000002788468520.png?HW-CC-KV=V1&HW-CC-Date=20261114T004846Z&HW-CC-Expire=31536000000&HW-CC-Sign=9095A0156C33D7A7BE2AAC9E5F9A95ECB62DC32C70CA66F862365C0F243C2680)
   + 设备状态与调试支持矩阵（分三种情况）：
 
     | 设备状态 | 调试支持范围 | lldb-server部署路径 |
@@ -549,9 +549,7 @@ int main() {
 
 ## FAQ
 
-* 当在LLDB调试环境中执行run命令时，若控制台返回"error: 'A' packet returned an error: 8"或类似错误代码，此问题通常表明调试器无法创建调试进程。
-
-  该异常现象主要由权限不足引发，建议通过以下步骤排查：
+* 当在LLDB调试环境中执行run命令时，若控制台返回"error: 'A' packet returned an error: 8"或类似错误代码，此问题通常表明调试器无法创建调试进程。该异常现象主要由权限不足引发，建议通过以下步骤排查：
 
   1）验证目标设备是否已开启调试授权；
 

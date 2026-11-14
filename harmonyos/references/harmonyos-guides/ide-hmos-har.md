@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-har
 title: 开发静态共享包
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布与管理共享包 > 开发静态共享包
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:11+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:8624355c2b13f1e7aebaa5f1116e12b738fe3ed4135a825f9a39fa7ac874a538
+content_hash: sha256:f9bbfa96d16a2e3af275d898cb9739ba05810b91ef895ba5c9b3f398a4b26163
 ---
 
 HAR（Harmony Archive）是静态共享包，可以包含代码、C++库、资源和配置文件。通过HAR可以实现多个模块或多个工程共享ArkUI组件、资源等相关代码。HAR不同于HAP，不能独立安装运行在设备上，只能作为应用模块的依赖项被引用。
 
 接下来，将简单介绍库模块的工程结构，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/As3Mr3--TbSpAt9C991UQw/zh-cn_image_0000002810750969.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2998BA69C379BC895BD619B9D1D12006E3901E5CB65BB2F4425F61E3CF05E27 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Vxpf68aBSbajIFZwpF2L_w/zh-cn_image_0000002810750969.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FEDD4DEAA07288F3B33AC8030FFD2A5AECA0B1D5CD4BB624CDE6A12D5722BD8 "点击放大")
 
 相关字段的描述如下，其余字段与Entry或Feature模块相关字段相同，可参考[C++工程目录结构](ide-hmos-project-structure.md#section181711599584)。
 
@@ -31,17 +31,17 @@ HAR（Harmony Archive）是静态共享包，可以包含代码、C++库、资�
 1. 点击菜单栏选择**新建 > 模块**，在工程中添加模块。
 2. 在**新建模块**界面中，选择**Static Library。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/PX5eoNkbQhOTyNrQ2DauVQ/zh-cn_image_0000002810630857.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CCC80C633C5241D8441BBE4043B319B355EC1E6A659B8662F2ACAC9D26F8E92 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ODamqVZbQdW3p3nejLnVdg/zh-cn_image_0000002810630857.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=854D21121F0E276E8DAFDB1DF85C50567207E7A022928457567769CC6E7A117E "点击放大")
 3. 在**模块信息**界面中，设置新添加的模块信息，设置完成后，单击**确认**完成创建。
    * **模块名**：新增模块的名称。
    * **设备类型**：支持的设备类型。
    * **Enable Native**：是否创建一个用于调用C++代码的模块，勾选表示创建，未勾选表示不创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/QZMPevh-SmO59A-UVkXkHw/zh-cn_image_0000002810750967.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=A99B1EBA0A8275C2EE462795576699F1060C7EF4527E4B5B6882C2E851F74BC4 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Nn5JfRqYTAqL8qJ2VSx3mg/zh-cn_image_0000002810750967.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAD40FBD9DC4186B3F641E675B943E6732493965E3BC77EAEC6628D6EE2F4356 "点击放大")
 
    创建完成后，会在工程目录中生成库模块及相关文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/0T1MvOcaR5aHzEd9ls_VgA/zh-cn_image_0000002781471306.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=060E4C99A094A9E009EF44A4B3C35CDB4B965C1B21C90892AABD7A93AAFE4ABE "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/7HjCkdZfTwOUlh5EzYA03g/zh-cn_image_0000002781471306.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC21F50B4B99F630332CAED5F44552F23E93A28342C89311E953009948F580AB "点击放大")
 
 ## 编译HAR模块
 
@@ -49,11 +49,11 @@ HAR（Harmony Archive）是静态共享包，可以包含代码、C++库、资�
 
 HAR可用于工程其它模块的引用，或将HAR上传至ohpm仓库，供其他开发者下载使用。若部分源码文件不需要打包至HAR中，可通过[创建.ohpmignore文件](ide-hmos-hvigor-build-profile.md#section1744183710558)，配置打包时要忽略的文件/文件夹。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/zEgcW0FkTpS2mVhYAV7uCQ/zh-cn_image_0000002781311370.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=15FE7E41EFC30ED4FAE2E3A3E67519C83EB64DC286885A8F52973CBC49EA3903 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/mb_BsfwgQ6SlSXCsDoDrMA/zh-cn_image_0000002781311370.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=D69DD44D570B688BB800D8E7CAEAC47B1403ECA0D09FE5552593DEE421456A87 "点击放大")
 
 编译构建的HAR可在模块下的build目录下获取，包格式为\*.har。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/dM5xJpe6RmatSyyx_IiGoA/zh-cn_image_0000002781471308.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=791ED7F5BA7DC53C8C56CB167BF5FF3993CFE8AEE60D669401F0112EBA306276 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/s90_pVGPTs-X0-fWnFWuhA/zh-cn_image_0000002781471308.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=793693135FBA411F4FC48E2AC6B6E45CB04646D1EDA466C07A6BAEF8E735F70A "点击放大")
 
 在编译构建HAR时，请注意以下事项：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverdevelop
 title: Driver Development Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > Driver Development Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:43+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:19b37d2571e68f1666971c8bc561ee06e8330f0ad883307dcbf709bf6fbef6ff
+content_hash: sha256:639f54368c8ea89dd6431a6e3a4204dae6e499d937e5a459a80ee24e69e145a3
 ---
 
 Driver Development Kit（驱动开发套件）为外设驱动开发者提供高效、安全、丰富的扩展外设驱动开发解决方案ArkTS-API和C-API，支持外设驱动开发者为消费者带来外设即插即用的极致体验。
@@ -46,7 +46,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图1** 扩展外设驱动原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/_RPv1OqqRhuJ9sZtHr6_Ow/zh-cn_image_0000002786359776.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5BD18D813E9AF31C82A60BD127E65417093A4858499D1C99A7035305BD338E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/CM7LXbk0Qfq_Q312zqJNxQ/zh-cn_image_0000002817426871.png?HW-CC-KV=V1&HW-CC-Date=20261114T004602Z&HW-CC-Expire=31536000000&HW-CC-Sign=89B629BFB1BD5FFAA6C81A3A2C15D741A5C46C76C3DAEBC94FC3FA1569C753DD)
 
 ### 运作流程
 
@@ -54,13 +54,13 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图2** 非标外设与对应扩展外设驱动应用匹配的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/WBng86hGRcG1z2H7Ai9xyA/zh-cn_image_0000002815559197.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=42BF078AC381C46D9C238341D028D0AFE7A14BA15C7E42ADE43BF197F0D1922C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Y97iGyKXRmKljlwceVfqQA/zh-cn_image_0000002788467452.png?HW-CC-KV=V1&HW-CC-Date=20261114T004602Z&HW-CC-Expire=31536000000&HW-CC-Sign=B691DA0B37134134507F32729AD3B3C8E4011EA1C109627FE189B8BB2EA20AB9)
 
 用户使用扩展外设驱动客户端时，扩展外设驱动客户端与扩展外设驱动的绑定流程如图3所示。
 
 **图3** 扩展外设驱动客户端与扩展外设驱动绑定的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/T1V-2iA4SUK_2r1fyDh52A/zh-cn_image_0000002815399281.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=81E841574B3905973494FA54B4BCCF4C87E2FD48845D9F53CD6D133F98BCA1C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/sfnLzt6ASIm0yBNN2yl4-A/zh-cn_image_0000002817506941.png?HW-CC-KV=V1&HW-CC-Date=20261114T004602Z&HW-CC-Expire=31536000000&HW-CC-Sign=80EBFB6FAD2513C7B9B5A507704F4FF934441C92EBDDDFE0F62635DA2FEBAFC5)
 
 ## 约束与限制
 

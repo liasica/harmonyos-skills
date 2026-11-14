@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-g
 title: 空域GPU超分
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 空域GPU超分
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:09+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5f579d7dbb54296eea0de625a9891058a62ee524b6fb286893ffaf562aa4b596
+content_hash: sha256:468c4bd7e9e662ba1955ccde37077d275ff73b250750f74d36bdb07ae42b8246
 ---
 
 XEngine Kit提供空域GPU超分特性，其基于单帧输入图像，使用空间邻域信息实现超采样，开销较小同时收益可观，建议使用超分倍率为[1.2, 1.5]。
@@ -45,7 +45,7 @@ XEngine Kit提供空域GPU超分特性，其基于单帧输入图像，使用空
 
 * 下面是基于OpenGL ES图形API平台集成空域GPU超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/8VrkBfISTLGIs72OUzSFcg/zh-cn_image_0000002815399625.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=467EAD3EF712ECFA8B8C07083D13EEFD1E5EC16AAB27C0CC74CCFA4234E8C3CE)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Oy7oYsX1QlGV38kxkGo_ag/zh-cn_image_0000002817507285.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC91C3C57F39AE1D4F598097193F58656D1143713988DDE7264FA6FE15686AD1)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_SPATIAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_spatial_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_SpatialUpscaleParameter](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_spatialupscaleparameter)接口配置超分参数。
@@ -56,7 +56,7 @@ XEngine Kit提供空域GPU超分特性，其基于单帧输入图像，使用空
 
 * 下面是基于Vulkan图形API平台集成空域GPU超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/2xVUWtUiRjSvNmjmvsENdA/zh-cn_image_0000002786520050.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=212FCA8D88FCE1036C3751B11E7A7735F56A7FE1A37F6E181C1A0C565754F054)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/e2t2HempRTeEx2tnpF0l5Q/zh-cn_image_0000002788307854.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CC532B70D60A31ECB725FA0186D6367DCD68DD5D9D4E0C148B4F1C9576497E8)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_SPATIAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_spatial_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_CreateSpatialUpscale](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_createspatialupscale)接口创建超分实例。

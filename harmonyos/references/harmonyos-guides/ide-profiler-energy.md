@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 能耗诊断：Energy分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 能耗诊断：Energy分析
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:06+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:622124d1663542c7fccd4500259f9f865dbb74dd3993374e458049019186616f
+content_hash: sha256:a055699c77b6532deb15ccd7e40b9b2fb62c1a449bca7a1ab2bbcdfe91e7f87f
 ---
 
 ## 功能介绍
@@ -33,14 +33,14 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
 
 * 将鼠标悬浮于泳道上，可以查看空跑的渲染帧数（RS Empty Run）、不能正常调用动态系统合成器（DSS）合成而直接使用GPU进行渲染导致能耗恶化的帧的次数（GPU Consumption）、UI空跑次数（UI Empty Run）、CPU高负载异常次数（High CPU Load）。下方**Details**区域，可以看到所选范围内的能耗异常类型、开始时间、结束时间、能耗异常信息、能耗异常原因、能耗异常数量。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/QSr4VzSQSAGgcGjzXsExjw/zh-cn_image_0000002808766345.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=754AEB88DBE4C2C6B6263A7812C4F404DF946E66E3E8F71A55102DDA199EAF29 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/XHGhqPxiT3WgmcQvEYEGVA/zh-cn_image_0000002808766345.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=CADBB4CB1ED7C523D70164BE62241432905A6514ED963B89445DFB8BA0B2C973 "点击放大")
 
 * 点击对应的异常类型数据（**RS Empty Run**、**UI Empty Run**、**GPU Consumption**），右侧**More**区域展示该异常帧信息，包括VSyncId、帧持续时间。点击异常类型数据为RS Empty Run和GPU Consumption中的跳转按钮可以跳转到Frame泳道中对应的具体帧，可以参考[Frame页面布局信息](ide-insight-session-frame.md#section1784351123920)查看页面组件的布局情况，和识别存在能耗问题的组件。点击类型为UI Empty Run中的跳转按钮可以跳转到Callstack泳道。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/q2zNEALnRzSjkIMwMxVFZg/zh-cn_image_0000002808766341.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=17EC74561A904BFA9DCCFF6940873E67DFBFB614D49BE1FF5B54BA5F739871EE "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/SBu6nOvyQwi0EDxyQOwHTA/zh-cn_image_0000002808766341.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=9939C4BC64A346F93FFEEA9981725443C83F89B1A41BF7484585A44155E98371 "点击放大")
 * 点击**CPU高负载**异常数据，右侧**More**区域展示该异常帧信息，包括进程ID、线程ID、负载值，点击跳转按钮可以跳转到对应线程调用栈。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/YSo3zswCS1q-Ihf_haLyWg/zh-cn_image_0000002808886425.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=15888F52B51AC35C6B14F81D6F89036BC828D5E8EBB66727EF68F5720C372ACD "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/ryf-sixzRI-vE904CHEoIQ/zh-cn_image_0000002808886425.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=039A6A2A62239EB5257DCF8CDE6543AC92BC61DD7AA3804E7A217EA98942739D "点击放大")
 
 **Temperature泳道**
 
@@ -48,7 +48,7 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
 
 * 将鼠标悬浮于泳道上可以查看对应时间范围的温度、温度等级，帮助用户明确温度是否有明显上升，从而进行进一步的能耗定位。下方**Detail****s**区域，可以看到所选范围内的最大温度、最小温度、平均温度。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/z-JgOZ14RxafeY8MD3ZrPg/zh-cn_image_0000002808886427.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FF686D069293803FB577EC9DD64CDF36D06E191C581B99185BCE1A18CEF4FF6 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/y5x-WS1CSni_Haljh0SZYg/zh-cn_image_0000002808886427.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=23E782199EF556C5E3DEFAAA129A09F658DEB7224223900D891D3822150F7ADD "点击放大")
 
 **Energy泳道**
 
@@ -57,4 +57,4 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
 * 可在Energy泳道中查看录制范围内具体器件消耗的电量，器件包含：CPU、\*Display（屏幕显示耗电量）、GPU、Location（定位模块耗电量）、Camera（相机耗电量）、Bluetooth（蓝牙功能耗电量）、Flashlight（闪光灯功能耗电量）、Audio（声音模块耗电量）、Wifi（无线功能耗电量）、Modem（信号模块耗电量）。\*Device表示整机电流消耗情况。
 * 框选Energy泳道数据，**Energy Detail**中呈现框选时间段内的详情信息，根据不同器件的消耗可结合Callstack泳道的调用栈信息进行进一步分析。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/0UuAeZqiQSOhHc9pA8c8eQ/zh-cn_image_0000002779566760.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1DAA72B01696CAE8F1BAC5B725A48A95B6E73750370725014E38554DC879AE2 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Uvc_osyERSmFNXddtfOtCg/zh-cn_image_0000002779566760.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=972C576475F4B0A7668CC9BE56363B37755C2AF253D123BFEDF45FD6AB27F2C1 "点击放大")

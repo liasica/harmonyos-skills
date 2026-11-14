@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.unifiedDataChannel (标准化数据通路)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.unifiedDataChannel (标准化数据通路)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:42+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:734e8c6d7e5e61f326a8a102efaef98dd82321444e66198a06ff57b81c1c1cab
+scraped_at: 2026-11-14T08:49:40+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:7450beda4e14435d103406f63443b0e428e968280cef614dd880c6fe3778d90e
 ---
 
 本模块为统一数据管理框架（Unified Data Management Framework，UDMF）的组成部分，针对多对多跨应用数据共享的不同业务场景提供了标准化的数据通路，提供了标准化的数据接入与读取接口。同时对文本、图片等数据类型提供了标准化定义，方便不同应用间进行数据交互，减少数据类型适配的工作量。
@@ -352,8 +352,7 @@ let link = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformDat
 unifiedData.addRecord(link);
 
 let records = unifiedData.getRecords();
-for (let i = 0; i < records.length; i++) {
-  let record = records[i];
+records.forEach((record: unifiedDataChannel.UnifiedRecord) => {
   let types = record.getTypes();
   if (types.includes(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT)) {
     let plainText = record.getEntry(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) as unifiedDataChannel.PlainText;
@@ -362,7 +361,7 @@ for (let i = 0; i < records.length; i++) {
     let hyperlink = record.getEntry(uniformTypeDescriptor.UniformDataType.HYPERLINK) as unifiedDataChannel.Hyperlink;
     console.info(`linkUrl: ${hyperlink.url}`);
   }
-}
+});
 ```
 
 ### hasType12+

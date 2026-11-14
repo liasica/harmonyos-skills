@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: FIDO免密认证
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > 免密认证 > FIDO免密认证
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8ac3e643967c43ae4c2cd9c45fb7d72963383b54ec31aec560fe95f48c05220f
+content_hash: sha256:f79233f7ab1c85d945870d59abd15c6cab8cddd54f95d88dcf7538ffa24311a4
 ---
 
 ## 场景介绍
@@ -40,7 +40,7 @@ content_hash: sha256:8ac3e643967c43ae4c2cd9c45fb7d72963383b54ec31aec560fe95f48c0
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/12tQ4u6TT82tNjIBRpWxNg/zh-cn_image_0000002815399195.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC10DB125A7561E14C768E83E918B61FAEF4E71A86CBACAB4B53336109F3F0EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/xzYvj8ToQjum7QimIqr-8w/zh-cn_image_0000002817506855.png?HW-CC-KV=V1&HW-CC-Date=20261114T004551Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA9F81E02FF89127EA5E5D0A1E671E2213C9056C5E468701BFBFD100CA422374)
 
 **注册流程说明：**
 

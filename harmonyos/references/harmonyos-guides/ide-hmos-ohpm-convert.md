@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm convert
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm convert
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:21+08:00
 doc_updated_at: 2026-11-06
-content_hash: sha256:53c28e5c544199f2eb434d6a5250fd2d4946891d96b7597ede8d723474d4df51
+content_hash: sha256:3bcede4716248a532f02001513b0f472246c46beab63a1ce3b4d02447947043f
 ---
 
 将npm三方库转换为ohpm三方库。因为语法差异，转换时仅对文件进行格式转换，不修改原npm包的代码逻辑。若HAR包在转换后出现代码不兼容的报错，开发者需修改原npm包的代码做适配。
@@ -100,13 +100,13 @@ ohpm INFO: A total of 9 packets are converted successfully.
 ohpm INFO: Converted packages are saved to the "/storage/Users/currentUser/Documents/DevEcoStudioProjects/MyApplication01/convert_1774947993178" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Lhbof1dpQ7q91aOai_pJYQ/zh-cn_image_0000002781471256.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=91A8FFFD6149CA72AE05291EBCA5BD3361DFF91FF22CB411F1790FD713F462F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Zp4jFfxHTKOn0PrIZpmOcA/zh-cn_image_0000002781471256.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3E7909E5B6090F311DA8180B3E5D1CEA09299E46733D1AC1F22B950926B73EC)
 
 **转换本地node\_modules目录中的包**
 
 执行npm install uuid后，转换本地node\_modules目录中的包，执行以下命令：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/WANTOqOERDyKVkyD54C0-g/zh-cn_image_0000002810630807.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DB03F55A8B8D9B112024B3D29858B95ADAE28B8CB14E67E993EEFE917AFEB0D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/gOuuvt2hQFGrf_dFrh4Tjg/zh-cn_image_0000002810630807.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=F773551A46D74AE50B82E10A932EDC332E02DD8ADD23AAF84D13302D2EDC9697)
 
 ```screen
 ohpm convert ./node_modules
@@ -122,4 +122,4 @@ ohpm INFO: A total of 1 package(s) are converted successfully.
 ohpm INFO: Converted packages are saved to the "/storage/Users/currentUser/xxxxx/convert_1774948851809" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/usuzw-bARCiIBl9GjbO2cg/zh-cn_image_0000002781471258.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=63553B83F727EDAD0C15877E4E277256A2D1D398AEF520B236F142BFE34F700F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/2Uom-Pg6TRyBdCX45TO_0A/zh-cn_image_0000002781471258.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=172272AAD76937C92928415D08A94105AAB45D70534AE9787A08A5619C5ADDEE)

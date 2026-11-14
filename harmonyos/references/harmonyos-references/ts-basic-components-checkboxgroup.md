@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: CheckboxGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > CheckboxGroup
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:12+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b3090ddb123768f7521aa2358e97d8e5cfcf87e7a87d720467adac6224ca199d
+content_hash: sha256:5af335e2aeede42fbda197a560e6e5f9b2a648638a7d89d892ce655a62c44eb7
 ---
 
 多选框群组，用于控制多选框全选或取消全选状态。适用于需要批量管理多个Checkbox选择状态的场景，如列表项批量选择、表单全选等，可简化用户操作，提升交互体验。
@@ -448,7 +448,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/uKgFxGMmS5GEdRuAlo-xZQ/zh-cn_image_0000002815400725.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=849CF5CCC613FA83FC0DD5C52395B5F128C025AA53FB7CC2C9F29C1463DF8B31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/tz1xDhkxT8GocExdKhkUwA/zh-cn_image_0000002817428317.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=84A7D656EC1A9DD9FE30FAD4472322EE561C94F33A42D9FDBD6BD722484EDADC)
 
 ### 示例2（自定义勾选样式）
 
@@ -527,7 +527,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/6ixVBt7lR6iEs8cgKuv7Nw/zh-cn_image_0000002786521150.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F21E1349CBF99E7E9CB8C27388472364DBDCD4B443E53E005F8397F3D833DE81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/4jZVGyeeSdWqRPYyN-ahpQ/zh-cn_image_0000002788468898.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7CD2347073AF0597D3E93CF756BB4EAF0640EC07D5C0D1232B4CF1AC7311A2C)
 
 ### 示例3（自定义多选框样式）
 
@@ -649,7 +649,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/g73oZVY6TyCn6lSfvwaSnQ/zh-cn_image_0000002786361222.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=891D93E0E9983066BE6E4429FEA83F8F716301392BBECDF002122B7DB99D502E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/plUXLVBRSzm3RPajBjCSmQ/zh-cn_image_0000002817508387.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=01BB52E3CD9C68041558848F6378C5A7C0DA40025ADA19122ABF554F92D1D1EA)
 
 ### 示例4（设置全选）
 
@@ -806,4 +806,4 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/SlIOpFj5TBujgQ0uamsCJw/zh-cn_image_0000002815560643.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=8541EFDA9FBA58D113CB45230ADA5ACB85BD3861F7D67F0EBA3F684352B24C68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9fSz1pTZTyO7wYT_Z-Rstw/zh-cn_image_0000002788308956.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA3FAC71DA91A4B5B7700FB21EE3622F95C453C95F47BCE6CF551A30D79BBB9C)

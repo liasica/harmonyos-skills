@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: text
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > text
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:32+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b617931ba8d2c572b02956cd939ae2e239b6904a6a305ecffebec66241ddcdfb
+content_hash: sha256:9f50a8deee28935a75adb7c0a0a0cb7449e54ca1ccabcb5d8e19cd38b280b9d4
 ---
 
 **说明** 
@@ -134,4 +134,4 @@ content_hash: sha256:b617931ba8d2c572b02956cd939ae2e239b6904a6a305ecffebec66241d
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/LaVpk5CPS7yNHrcLoF1QNA/zh-cn_image_0000002786521690.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=207686B2B4D7EF9C2827B0EF26E56C3F0C49F1F0D9014FC01AF8F0D7BFFF6969)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/pJsjhDyrSoiWkAjMHsBBOg/zh-cn_image_0000002788469438.png?HW-CC-KV=V1&HW-CC-Date=20261114T005031Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E2A33DB8FFFACC2DC2227089771F3D3ED78D1DE4B9CE7713DC6BE882EFED174)

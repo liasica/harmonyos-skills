@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 业务概述
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏启动加速服务 > 游戏预启动 > 业务概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:08+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:2c11b7d41f6a161b9632dce4e719b594bb978e777e21beeb0527b629a8603ee6
+content_hash: sha256:8a0822915c2562ef6920ac881162bad8ba13197048847fbf1a5f9afdc80a5b69
 ---
 
 从API版本26.0.0开始，支持游戏预启动能力。
@@ -22,7 +22,7 @@ content_hash: sha256:2c11b7d41f6a161b9632dce4e719b594bb978e777e21beeb0527b629a86
 
 * 游戏预启动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/np4nNnWpS9K3c6mNblqvWQ/zh-cn_image_0000002815559535.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5DFCD655E97CCC5C092D9EDF2682AB7023F3F3F9D2E3E622B93146A9C2348D3 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/ES12ggQsThSFuA_eqmoSCQ/zh-cn_image_0000002788467790.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFF5CE2CBCE4CB9B1D1B4F1164EF0FC03A0D48D115E6087E88C9CCF97D05ABF8 "点击放大")
 * 游戏未预启动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/KIRa1jLIQiGbSBxLNR2iAA/zh-cn_image_0000002815399619.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F8E7423BBF3A89DC2E2804AB2A9A9850DCDA8D96E49EC5BCD3AEA19DB79789A "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/hKTeFB5yQfmvsRfWBvAIwQ/zh-cn_image_0000002817507279.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EF3F516A31E7DCF74F3FAB377D9B7EF8F943D612B177435F277794BD0F7E67F "点击放大")

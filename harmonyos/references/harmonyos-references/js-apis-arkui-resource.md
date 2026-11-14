@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: Resource
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > Resource
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f43ed9059700f275b26fb4e0cda5c57b9e2b96346aefbd41e450e3ba6be06eec
+scraped_at: 2026-11-14T08:49:59+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:903c578912ba80a8a803c5a8d4a215967c6f662f21392466a26f2298497dd464
 ---
 
 提供获取应用资源或系统资源信息的接口。应用资源及系统资源的介绍及使用方法可参考[资源分类与访问](../harmonyos-guides/resource-categories-and-access.md)。
@@ -82,6 +82,8 @@ $rawfile(value: string): Resource
 | 类型 | 说明 |
 | --- | --- |
 | [Resource](js-apis-resource-manager.md#resource9) | 资源相关信息，包括应用包名、应用模块名、资源id等。 |
+
+**示例：**
 
 ```ts
 // src/main/resources/rawfile目录下添加startIcon.png。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyColumnLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyColumnLayout
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:11+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:8ff4673b465a89aba9036dd0d73373698bdd82d7ac6e502aa0f11c9b3ea8a713
+content_hash: sha256:4b78076b9312d665f4742f0caa458cffa77aa23b6ce2f2672e5dd14247868396
 ---
 
 该组件用于实现支持懒加载的垂直线性布局，其父组件仅限于[List](ts-container-list.md)、[Scroll](ts-container-scroll.md)、[WaterFlow](ts-container-waterflow.md)或[FlowItem](ts-container-flowitem.md)，并支持使用[自定义组件](../harmonyos-guides/arkts-create-custom-components.md)或[NodeContainer](ts-basic-components-nodecontainer.md)组件封装后应用在上述组件中。
@@ -341,7 +341,7 @@ struct LazyColumnLayoutSample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/0ssVPKXKTq6f7JzW6hOm1g/zh-cn_image_0000002786361164.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=51A74B84BB9BA7313D4B9960B589F7CD1A4CA9153ADED5F3FA16201DA9880ACD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/U_PgyjDyQIuNqzub39egvA/zh-cn_image_0000002817508329.png?HW-CC-KV=V1&HW-CC-Date=20261114T005010Z&HW-CC-Expire=31536000000&HW-CC-Sign=32EFB55C99D820BBE50FD1B1BF96F8E75AA8A69C8C921579BB393A6C831EBB48)
 
 ### 示例2（设置头部组件或尾部组件及吸附效果）
 
@@ -512,4 +512,4 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/yt94nzl7SWCBrZ8_p_tccg/zh-cn_image_0000002815560585.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF5BB8CFEB1C18C06A2EA27D4E10497334066F03A9A360914273E19A7715E7B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/H4LLKKnvRda-Cajb6_OdWA/zh-cn_image_0000002788308898.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005010Z&HW-CC-Expire=31536000000&HW-CC-Sign=860B517AF61FD50283A488160FD3ABC39BAF401314ECD3BB036E78A03647437F)

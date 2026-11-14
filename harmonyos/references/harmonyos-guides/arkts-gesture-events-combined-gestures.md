@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 组合手势
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 组合手势
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:9d6aeeb445a321bf2acc967c81cb4f16f421ab2a8aaf7e3097e5fa9495eefe63
+content_hash: sha256:9a82f4f062ebf8cb6b221ac715109955eaa1d9d52c71c8ac50247885319c6dc0
 ---
 
 组合手势由多种单一手势组合而成，通过在[GestureGroup](../harmonyos-references/ts-combined-gestures.md)中使用不同的[GestureMode](../harmonyos-references/ts-combined-gestures.md#gesturemode枚举说明)来声明该组合手势的类型，支持[顺序识别](arkts-gesture-events-combined-gestures.md#顺序识别)、[并行识别](arkts-gesture-events-combined-gestures.md#并行识别)和[互斥识别](arkts-gesture-events-combined-gestures.md#互斥识别)三种类型。
@@ -100,7 +100,7 @@ struct sequenceIdentification {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/RwFbBhLeTAOsKtV1I0a3eg/zh-cn_image_0000002786519058.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=10226BE81C2DDC7CA21FC89A7789DC45F178B0324BD862E877CB5B0D56B3F2F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/JxndO2g4QU6kEnbp-yv6Pg/zh-cn_image_0000002788306862.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9BE183C707870BD237BDA71421AA014E6192305D74C8EE42AEA84D1AD65A3F6)
 
 **说明** 
 
@@ -145,7 +145,7 @@ struct parallelRecognition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/8FWCcUH1QW2tVv3OPYkzTg/zh-cn_image_0000002786359130.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3C15A70763BBCF348D613E5C4B3AF37A280C2ADAA6499915C45F7253633A095)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/z7zZjKmaSyyUF09Hk1InJw/zh-cn_image_0000002817426225.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=B900E4B57B7E4C3E97EB9AEB3CAE5F64F6BC778EB672177AF9C5D2012ECDBDD3)
 
 **说明** 
 
@@ -193,7 +193,7 @@ struct MutualExclusion {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/zvFQPzmwSoGWXyCs0AyFQQ/zh-cn_image_0000002815558551.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=90ED1975632E78FFC13CE3B07F4AD77C69673CE7E9891BD9C47F7A0301DBD4F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/lcMURmFOTBCFzVpLzI9XVQ/zh-cn_image_0000002788466806.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=108EDD918B7D2D1F7A092108618146DE870018F0088B9C148448C252EA79132B)
 
 **说明** 
 
@@ -266,4 +266,4 @@ struct CombinedGestureDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/zZub-sgMRGWfua2ZDsE-iw/zh-cn_image_0000002815398635.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D788FC29737A63E984D3095BC256CF3B64734DA6DF03C696644B89F3DC520DC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/WATzORAFTI-T9z2GcaqguQ/zh-cn_image_0000002817506293.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C2729ED36C10CF195D3564215C280F9404E32FC01D1DBADE6B4A943F7F79D19)

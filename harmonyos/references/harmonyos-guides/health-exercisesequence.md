@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-exercisesequence
 title: 锻炼记录数据
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 锻炼记录数据
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Phone/Tablet应用开发 > 开放数据类型 > 锻炼记录数据
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:15+08:00
-doc_updated_at: 2026-10-10
+scraped_at: 2026-11-14T08:48:18+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:67ad2b8e85a3e246d4c4e0706a13da79155a3c4e38905901edb3f7c3494e6e45
 ---
 

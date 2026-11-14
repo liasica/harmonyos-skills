@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-at
 title: 标准化事件及应用归因签名
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 附录 > 标准化事件及应用归因签名
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:53+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-11-14T08:48:13+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:85fcab50752858601c9ada094546ab98ba1b0771761a1e80ac0f99069a31ac7d
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: RSS内存泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > RSS内存泄漏故障模式说明 > RSS内存泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:20+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:0210fdabc77b3c45fd86bdea3d32c819b63132a18e652d9a741ac69a9e4609f9
+content_hash: sha256:b68da76413922ac6a98745c5a52a4e866b0c6d08617f9907eb75d2a017ffee1b
 ---
 
 系统会监控应用RSS内存的使用情况，如果应用RSS内存使用超过阈值并且整机处于低内存状态时，系统会抓取维测数据并对应用进行管控。本文旨在为开发者介绍系统的RSS内存泄漏检测机制，并提供开发态与运维态的问题分析思路。
@@ -255,7 +255,7 @@ RSS内存泄漏的运维态维测仅包含轻量化Smaps作为基础维测，如
 * 单击④处选择Created & Existing，筛选申请并且未释放的内存及其调用栈。
 * 找到内存申请异常的内存及其调用栈，如下图⑤、⑥处框选的内容。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/YuhP7tctSC6yus0d7Gmg4w/zh-cn_image_0000002680624004.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0FA8B73CC821EF65F5D80F579854CEE26EF208D6ED244807E2561CE79B866C1 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/6vPkKCBuQ9iEbZAmt5fCrg/zh-cn_image_0000002680624004.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2B50FE9E5CD019B35F6BB169C47AD2AC5F86EFA6BB401E7F66688BFBEB4C877 "点击放大")
 * 结合调用栈对代码进行分析，找到泄漏根因。
 
 ## 开发态问题分析方法
@@ -353,11 +353,11 @@ RSS内存泄漏的运维态维测仅包含轻量化Smaps作为基础维测，如
 
 * 开发者在调试过程中，如果遇到应用闪退问题，可以在DevEco Studio中找到日志组件如下图①处，再选择应用终止如下图②处，单击③选择应用进程名，筛选出调试应用的历史退出原因，如果原因为“RssThresholdKiller”如下图④所示，说明应用在调试过程中发生了RSS内存泄漏故障。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/BHyZ3-u5SPyfKSPFsTvr2w/zh-cn_image_0000002710303775.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AD38B62010F8D68817AECE5B637FDA0ED3C1B9DA522CB847F8E64F8862D70BB "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/2wdCVLQ-Q_KrwyAltHhu-Q/zh-cn_image_0000002710303775.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=8990B872CE076F4F5B614BA1854029F6CC6787910A29308DB7828E7B499CCEC9 "点击放大")
 * 确认问题为RSS内存泄漏后，开发者可以使用DevEco Studio中Profiler工具的Allocation功能进行分析，使用方法可参考[基础内存：Allocation分析](../harmonyos-guides/ide-insight-session-allocations.md)。如果发现应用内存占用超出开发者预期，那么可以初步断定存在内存泄漏问题。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/NxvVHU3STfGnMzql7AUjPw/zh-cn_image_0000002680464136.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AF3581BDC2D7B3CDFCF8BCBC639F7CBB0DB48C5CD9DD3C7758B5B81231D61BC "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/TkeZDHRTTYOgnKYy1KxgYQ/zh-cn_image_0000002680464136.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=7597B5A4E102D3F93A3C03AD4545180793984F60E2C9C01D6124334DB8EEF7C1 "点击放大")
 * 展开Memory泳道，如果发现Native Heap、AnonPage Other、Dev、Guard、.so、.ttf、Stack等泳道增长明显，那么可以初步定界为RSS内存泄漏问题，并且能精确到是哪种二级根因。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/HlYlnHQcQ8u1azcfo8ptJQ/zh-cn_image_0000002710143951.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=47302056AD05A6D8E01D691A930C150306FBF28DCAFF00B50E966463491578AC "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/FPD9PFCvTeS6UDVm5Xsyfg/zh-cn_image_0000002710143951.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E6CB783480204191D9027707079A8538284E382A5A1024C19CA88238D0A826E "点击放大")
 * 最后根据二级根因，结合[内存栈日志分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section94641340515)定位内存泄漏点。

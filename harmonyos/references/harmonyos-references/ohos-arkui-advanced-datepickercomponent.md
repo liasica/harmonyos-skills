@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: DatePickerComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > DatePickerComponent
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:27+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:057b3b4815a312742d42f0b095964be133f485146b14295ee581411aac732381
+content_hash: sha256:c37a4e4a869e4c40c8da1043196cbbc9bb5ad66599919f256e0aeb65029ea0ff
 ---
 
 DatePickerComponent组件用于选择日期（年月日）和时间（时分秒）。
@@ -293,7 +293,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/0Dw8mtqyRdyNDfVHSd64lQ/zh-cn_image_0000002815401203.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=10845E29EC102FB09147234758A88A891C083F96EADC907D6FA9111485F6E34C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/1uUch5SSTHS8-i0Jf5t8kw/zh-cn_image_0000002817428795.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005026Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC1325D42623E0B02726B6777532B13263DBF9ABB2C786D2E38B4464F99D3440)
 
 ### 示例2（时间选择器）
 
@@ -330,7 +330,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/H1BhtMZsR7a98BlvD4CbRA/zh-cn_image_0000002786521628.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=45E9B0DA47BEC417B8A6E62B96794FD1FF630D5D3BBE04192F1302D61E3E437E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/bBlhyiebTgWzANqrIBRaWQ/zh-cn_image_0000002788469376.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005026Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF81C259C07AB1311C142CF2D69CA75AE46B7E4A5460CBF928AC77CECAC717C3)
 
 ### 示例3（日期时间选择器）
 
@@ -377,7 +377,7 @@ struct DateTimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/OuVPdsjNSYSj4i52d88_8g/zh-cn_image_0000002786361700.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=B78ABE691EBCBBFBE7FE52089EF4B20507E1A02CB527FE9077675F35D1FB7F95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/lTq1bg0UTnC__NH85OiJXQ/zh-cn_image_0000002817508865.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005026Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B5F5F45907FCF685C961B9619E6A497D1C2A026C68ADEE3B34B499A7A855946)
 
 ### 示例4（关闭循环模式）
 
@@ -413,4 +413,4 @@ struct NoLoopPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/NKbfpEB7S8ap7lIXvd4sZQ/zh-cn_image_0000002815561121.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=235EB40431438BEC2C37B6D09462560295F5EE63314F9EFCDE67B6A33F70964E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/4fqffoRsSAmBGy1Y9GreeQ/zh-cn_image_0000002788309434.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005026Z&HW-CC-Expire=31536000000&HW-CC-Sign=46A77C64FD10AEC07255CB5B0A81A8ABBBA8FFE1FD696A9D363466395BF21265)

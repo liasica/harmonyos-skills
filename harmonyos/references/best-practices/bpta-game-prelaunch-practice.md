@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-game-prelaunch-practice
-title: 游戏预启动开发实践
-breadcrumb: 最佳实践 > 场景创新 > 游戏 > 游戏预启动开发实践
+title: 游戏预启动
+breadcrumb: 最佳实践 > 场景创新 > 游戏 > 游戏预启动
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:eb41222d694118328d69b6d74662670c2e23241c92f51ebc27477de7ca9da91f
+scraped_at: 2026-11-14T08:54:05+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:1dc745e7e7ddece8cf0d135f36577c8bd0b969264c0fc0cf9374563f82a473fc
 ---
 
 ## 概述
@@ -22,11 +22,11 @@ content_hash: sha256:eb41222d694118328d69b6d74662670c2e23241c92f51ebc27477de7ca9
 
 冷启动效果如图所示。用户点击图标后，需依次经过Logo展示、健康游戏公告展示和资源加载等流程才能进入登录界面，启动时间约12s。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/7pI4iB_8Reilvdyg7NFuLQ/zh-cn_image_0000002594529170.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=39290AE3EA59E7D3A35D109E59F591E245F4CB870F9B24CFDB551CD4BF1816B5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/kFATqOOfTCie8VdOzg8zCw/zh-cn_image_0000002594529170.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=3836C77E3C941D0108FACDBB9E1C4DBD82EFBFAB2E208917110EA599184706B7 "点击放大")
 
 预启动效果如图所示。用户点击游戏后，展示健康游戏公告后直接进入登录界面，并提示“启动加速中”，启动时间约3s。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/B1M4ed5USdamNrftE3zkFg/zh-cn_image_0000002624889501.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BAC860C3176423776D0B3B4C8887DE0A9DBFC7DB78C1E6644B32F57FE6CF1C7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/mDFsxG23RaOe-4wR37-fnA/zh-cn_image_0000002624889501.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=250F3F17E9766CAF221239B90771155B2570F9B7A397C6DD2841D0E107BC196E "点击放大")
 
 ## 开发步骤
 

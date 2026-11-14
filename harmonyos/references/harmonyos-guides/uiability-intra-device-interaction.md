@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-int
 title: 启动应用内的UIAbility组件
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > 启动应用内的UIAbility组件
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:48+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:13a05e2b3012556f77fbd761e8eb4a72b46a7fe2656b764a61d5978e0b50f6e6
+content_hash: sha256:308976b956c865c74a5d2c6892d5e99787129448636dfed2009b36a2335cf41d
 ---
 
 [UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)是系统调度的最小单元。在设备内的功能模块之间跳转时，会涉及到启动特定的UIAbility，包括应用内的其他UIAbility、或者其他应用的UIAbility（例如启动三方支付UIAbility）。
@@ -442,7 +442,7 @@ export default class ColdStartAbility extends UIAbility {
 
 图1 目标UIAbility热启动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/OdbhK2NvTWmWjlBL8SgTCg/zh-cn_image_0000002815397897.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C95DB3B3D9C15FF3697946F1FC0DFD569EE9EDFFB693ACB616EFEB424B950B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/1ORnyP6ES2iGxSfPo6-Vsw/zh-cn_image_0000002817505555.png?HW-CC-KV=V1&HW-CC-Date=20261114T004511Z&HW-CC-Expire=31536000000&HW-CC-Sign=C588C4DF6C8BB7D1671D0BEFC866409F5CF20245CB97ADF6531DB24FE34987BF)
 
 开发步骤如下所示。
 

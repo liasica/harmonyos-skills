@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-mix-langu
 title: 性能优化：混合语言工程Sync优化实践
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实践说明 > 性能优化：混合语言工程Sync优化实践
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c66d5a849521475aecbc830d02f34183f94a64bc5b33a52ac7e308f10b5402d1
+content_hash: sha256:1ac64e62f7f6b8fc26bbf7ad1e101cf195e2e68bda63048ce04d8531749894bc
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:c66d5a849521475aecbc830d02f34183f94a64bc5b33a52ac7e308f10b5
 
    **开启方式：**点击**File >** **Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build, Execution, Deployment > Build Tools > Hvigor**，勾选**Enable ohpm execution by hvigor**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/0_LJxUMrSfmfE--j0c1T_g/zh-cn_image_0000002779567242.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=40C87E2E12E6B438EF87AEC2399232B934DB7E28620169B8FA6D11DB80281E51)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/jGXmkBGYSzyoqoTwJAPfEQ/zh-cn_image_0000002779567242.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA93485D2B4D21F82A41BD53E5DE82E97B0E3A52D75AFD8AEEDCC9337191D584)
 
 ## 优化措施二：启用C++并行同步编译
 
@@ -37,10 +37,10 @@ content_hash: sha256:c66d5a849521475aecbc830d02f34183f94a64bc5b33a52ac7e308f10b5
 
 * 场景一：多个C++模块之间无依赖关系，则是并行编译，构建窗口中只有一个syncNative的Tab页，对应了多个模块的编译日志，如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/a5UzEFvbQq6IdXf6_A4Yrw/zh-cn_image_0000002779407262.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DE410EFE66BF19CEABEFFCF7B4EA3DD2B53C2EA6F1455AD448D7CB6733FA9D1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/USWEHIpQS-uacuQ_3w1i6w/zh-cn_image_0000002779407262.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F7DB7639BF0B510DD22B8BA9F70CC83FEBD6CCF9A839F50E6017D3C3B04E40A)
 * 场景二：多个C++模块之间有依赖关系，比如entry依赖hsp1，hsp1依赖hsp，hsp依赖har和har1模块，则会先执行被依赖的模块，如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/GPpnFI-USnGNlBKPTS_Gyw/zh-cn_image_0000002779407260.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=D767356701A9DA91F2C9E35620119D2BF38ECA7149FF440A53F238787975878F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/QorJoS4qTg-msDZmF4XwMA/zh-cn_image_0000002779407260.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=A27C91B56B159D4368F3979D7EBD5A6C69BAEB90E201BD9BB269B8DB3EAE4E3A)
 
 **可能影响**：如果在hvigorfile.ts脚本的compileNative任务阶段有自定义插件或任务，开启开关后，由于compileNative任务不会被执行，会导致自定义插件或任务未执行。
 
@@ -65,7 +65,7 @@ add_library(MyProject SHARED ${PROJECT_SOURCE})
 
 从26.0.0版本开始，新增Refresh C++ Project功能，允许开发者主动触发CMake重新配置项目，确保动态生成的源码列表与当前文件系统状态同步。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/IfZyFiywTq-jOVpQf-G_Yw/zh-cn_image_0000002779567240.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=82CB4860B45AD606E25C4E10206A4AA4F019F061DD70D2D838B90D6BDEB2E869)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/RZk378b_Q1O5lxZ58Xjwjg/zh-cn_image_0000002779567240.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1420919DDB9963725817327365D8B40FAAC7BD851871107642DF67F02C58C26)
 
 ## 优化措施四：修改代码索引模式
 

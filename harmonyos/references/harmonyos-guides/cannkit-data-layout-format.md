@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-data-
 title: 数据排布格式
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 附录 > Tensor基础知识参考 > 数据排布格式
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:38+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:393278964553e1322a65df7ce702813f564e0c227df5bb5d9a20fa84e57e6cf4
+content_hash: sha256:2c76814825933d7f1b3c352fb12c4956fae3a0fed6c175526aa2e9c1ff0119c8
 ---
 
 Format为数据的物理排布格式，决定了如何解读数据的维度，比如1D，2D，3D，4D，5D等。
@@ -23,7 +23,7 @@ Format为数据的物理排布格式，决定了如何解读数据的维度，�
 
 如下图所示，以一张格式为RGB的图片为例，NCHW中，C排列在外层，实际存储的是“RRRRRRGGGGGGBBBBBB”，即同一通道的所有像素值顺序存储在一起；而NHWC中C排列在最内层，实际存储的则是“RGBRGBRGBRGBRGBRGB”，即多个通道的同一位置的像素值顺序存储在一起。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/afQ1QKFhTnyJl7qURiS5Pw/zh-cn_image_0000002786360702.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E7CDCC482D486D241B4D38D4A15D29C41ACACCD04F3B3728EC2493BF957A903)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/61p4Dcr_RPmLvvyUn_jPZg/zh-cn_image_0000002817507867.png?HW-CC-KV=V1&HW-CC-Date=20261114T004838Z&HW-CC-Expire=31536000000&HW-CC-Sign=2113A1549B015694F95620DA00FEDB54F365D770243D3446F2E668F79070D500)
 
 尽管存储的数据相同，但不同的存储顺序会导致数据的访问特性不一致，因此即便进行同样的运算，相应的计算性能也会不同。
 
@@ -35,7 +35,7 @@ C1=(C+C0-1)/C0。如果结果不整除，向上取整。
 
 NHWC/NCHW -> NC1HWC0的转换过程为：将数据在C维度进行分割，变成C1份NHWC0/NC0HW，再将C1份NHWC0/NC0HW在内存中连续排列成NC1HWC0，其格式转换示意图如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/FFc3OKTlQaG8nU2hbNJFZw/zh-cn_image_0000002815560123.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D03297388C1BC350C0B14FC9AB8CE978414D0213D935D64190093A4E3E212B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ah3Xz2bGSf26aKh5bg3K6w/zh-cn_image_0000002788308436.png?HW-CC-KV=V1&HW-CC-Date=20261114T004838Z&HW-CC-Expire=31536000000&HW-CC-Sign=28516E7695E3FF8C984DF33C326FB23712189162BE4CC4EDF79D15E560F37FF0)
 
 * NHWC -> NC1HWC0的转换公式如下。
 
@@ -52,7 +52,7 @@ NHWC/NCHW -> NC1HWC0的转换过程为：将数据在C维度进行分割，变�
 
 FRACTAL\_NZ是分形格式，如Feature Map的数据存储，在cube单元计算时，输出矩阵的数据格式为NW1H1H0W0。整个矩阵被分为（H1\*W1）个分形，按照column major排布，形状如N字形；每个分形内部有（H0\*W0）个元素，按照row major排布，形状如z字形。考虑到数据排布格式，将NW1H1H0W0数据格式称为Nz（大N小z）格式。其中，H0,W0表示一个分形的大小，示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/tmjFQ0i3SmKJhcv93nfvTA/zh-cn_image_0000002815400207.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D92C41B2758A74BD116EBCAA87FF4867803886095D81A7791FF6FF473E0F25C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/AiBvE5spS0O5Cc6BHUursg/zh-cn_image_0000002817427799.png?HW-CC-KV=V1&HW-CC-Date=20261114T004838Z&HW-CC-Expire=31536000000&HW-CC-Sign=8ECAF8228BE3BEC772B8A3C4D4DC85C95F5BEADF023CD8E9BE4CD506DCEEF726)
 
 ND –> FRACTAL\_NZ的变换过程为：
 
@@ -66,7 +66,7 @@ FRACTAL\_Z是用于定义卷积权重的数据格式，由FT Matrix（FT：Filte
 
 数据有两层Tiling，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/hoMhv1OwQweJfybi56gjsg/zh-cn_image_0000002786520632.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=492D65CB880F48B428D81CC0BE451B4CD28DD95646B4C5F766B5F9D3B876AE86)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/qxmv31fxRpSQz6gBXW2pGg/zh-cn_image_0000002788468380.png?HW-CC-KV=V1&HW-CC-Date=20261114T004838Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFAA77DCA876C50050A3FC3B65E011B8683C22E6676D0A73EB1D1B244F47555C)
 
 第一层与Cube的Size相关，数据按照列的方向连续（小n）；第二层与矩阵的Size相关，数据按照行的方向连续（大Z）。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/incoming-call
 title: 来电场景
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > 来电场景
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b332b2d76acdb647ff2c94649af1da1cbb98c6eb9bface765210a8d5f1e90aea
+content_hash: sha256:072caede683476fb4322a079d0230a2dbb490cde38fcb10049e419970e886168
 ---
 
 ## 场景介绍
@@ -28,11 +28,11 @@ content_hash: sha256:b332b2d76acdb647ff2c94649af1da1cbb98c6eb9bface765210a8d5f1e
 
 ### 来电场景：接听流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/gmUwXeOfS5GbQ-b7LOWCUA/zh-cn_image_0000002786360222.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C6038AE1E842B3FD0C4CBB9D4CEEC435533CD133AAF36598E17225597CDC562)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/glLqJhkpSCy7QVYr8vliGA/zh-cn_image_0000002817427317.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD549FE0FB37AE693FEF9996DA648B34B6B1088E6AA4585F8BA4494BCBD2C2D3)
 
 ### 来电场景：拒接流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ZZPaMxVfRJSVOct2mXAVnw/zh-cn_image_0000002815559643.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=D83D47EA65514F7F341189179402C01225CF09ED7382D4FA2B35BDA958AD2C71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/dCNplouwR8evgECkTBo0Ng/zh-cn_image_0000002788467898.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FE402D076DC1C0EC811858F3F04B3C63F3F1E38B59A6F267E0EA395D52CD089)
 
 ## 接口说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidebug-guide
 title: HiDebug能力概述
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 系统调试信息获取 > HiDebug能力概述
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:8d78ae754b7b8ffec6f910cfe814dc58e91c2516e83e091f802f22d922753f59
+scraped_at: 2026-11-14T08:47:49+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:2179180c14edc6c88984982396eaa83c8c25bc425905ff3fc1fcd3c2e215adff
 ---
 
 HiDebug可用于获取系统或应用进程的内存、CPU和GPU等数据，以及开启进程Trace采集。
@@ -37,7 +37,7 @@ HiDebug可用于获取整机内存、应用进程内存占用、应用线程内�
 | hidebug.getAppNativeMemInfoAsync | 异步方式获取应用进程内存信息。  **说明**：从API version 20开始，支持该接口。 |
 | hidebug.getAppNativeMemInfoWithCache | 获取应用进程内存信息（该接口存在缓存机制以提高接口性能）。  **说明**：从API version 20开始，支持该接口。 |
 | hidebug.getSystemMemInfo | 获取系统内存信息。读取/proc/meminfo节点的数据。 |
-| hidebug.getAppMemoryLimit | 获取应用程序进程内存限制，其中rsslimit由getrlimit 接口获取到的RLIMIT\_RSS资源值，vsslimit由getrlimit接口获取到的RLIMIT\_AS资源值。 |
+| hidebug.getAppMemoryLimit | 获取应用程序进程内存限制，其中rsslimit由getrlimit接口获取到的RLIMIT\_RSS资源值，vsslimit由getrlimit接口获取到的RLIMIT\_AS资源值。 |
 | hidebug.getRssInfo | 获取应用进程使用的物理内存信息。读取/proc/{pid}/status节点的数据。  与hidebug.getAppNativeMemInfo相比，该接口开销小更加轻量。  **说明**：从API version 24开始，支持该接口。 |
 
 ### 接口说明（C/C++）
@@ -47,7 +47,7 @@ HiDebug可用于获取整机内存、应用进程内存占用、应用线程内�
 | OH\_HiDebug\_GetSystemMemInfo | 获取系统内存信息。读取/proc/meminfo节点的数据。 |
 | OH\_HiDebug\_GetAppNativeMemInfo | 获取应用进程内存信息。读取/proc/{pid}/smaps\_rollup和/proc/{pid}/statm节点的数据。 |
 | OH\_HiDebug\_GetAppNativeMemInfoWithCache | 获取应用程序进程的内存信息，该接口存在缓存机制以提高性能。  **说明**：从API version 20开始，支持该接口。 |
-| OH\_HiDebug\_GetAppMemoryLimit | 获取应用程序进程内存限制，其中rsslimit由getrlimit 接口获取到的RLIMIT\_RSS资源值，vsslimit由getrlimit接口获取到的RLIMIT\_AS资源值。 |
+| OH\_HiDebug\_GetAppMemoryLimit | 获取应用程序进程内存限制，其中rsslimit由getrlimit接口获取到的RLIMIT\_RSS资源值，vsslimit由getrlimit接口获取到的RLIMIT\_AS资源值。 |
 
 ## 获取显存信息
 
@@ -81,7 +81,7 @@ hiview进程每10秒获取一次当前CPU的运行数据并缓存，作为CPU使
 
 1. 系统CPU使用数据：
 
-   /proc/stat节点包含了自系统启动以来CPU 运行数据的统计信息，可在终端中使用以下命令查看该节点信息：
+   /proc/stat节点包含了自系统启动以来CPU运行数据的统计信息，可在终端中使用以下命令查看该节点信息：
 
    ```text
    cat  /proc/stat
@@ -89,7 +89,7 @@ hiview进程每10秒获取一次当前CPU的运行数据并缓存，作为CPU使
    ...
    ```
 
-   CPU 指标字段含义：
+   CPU指标字段含义：
 
    CPU的统计信息从左到右分别代表以下含义（其中cpu为所有cpu运行数据的总和，单位：jiffies）：
 
@@ -217,7 +217,7 @@ ARM64架构函数栈帧的结构如下图所示：
 
 **图1**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/b8ppB_NLSBOjxVqCtNe_Sw/zh-cn_image_0000002815399317.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D4372FDFC3D2A5D2FA7A9692834B33EDAEE018DFFCACBF5127F76A3942B0824)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/4DHF9W6nTMOm6ff9HOPurA/zh-cn_image_0000002817506977.png?HW-CC-KV=V1&HW-CC-Date=20261114T004607Z&HW-CC-Expire=31536000000&HW-CC-Sign=0317C22A172C35BA4F2F573C8332C75B072B8098DAED858F423A0E147B544BAF)
 
 FP：栈顶指针，指向一个栈帧的顶部，当函数发生跳转时，会记录当时的栈的起始位置。
 

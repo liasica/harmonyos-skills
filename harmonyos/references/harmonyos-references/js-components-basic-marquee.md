@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: marquee
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > marquee
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:31+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:979df1196ab6af81d0e6884595118cdda8b53aa8f4ce63476777936205cdc8ac
+content_hash: sha256:159e057e46e46e32b878fa182fb366ed7be30b8f8dc76192457e1c195da54e8f
 ---
 
 **说明** 
@@ -144,4 +144,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/hxqgOVsKRPSTXG1QRqPaqA/zh-cn_image_0000002815401257.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CB78C18AAC6867E0B80BD9850035BBF5FE909641DA15C6639D9E72A03E32262)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Hr3U85grQeC9aRVvdm6K2Q/zh-cn_image_0000002817428849.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004828Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB7585344E3799BD4A9CED4E7CE7DE7D4C191E452BA0E427182373A8C5D783EB)

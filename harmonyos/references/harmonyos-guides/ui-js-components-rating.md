@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: rating开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > rating开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:233be8a3ec9a5c85ba336eecd36977669a925cb2f53650edf24dee680e4290d8
+content_hash: sha256:ad441334df6dd85a6185af7138c01386ba512e55952e1e4203260a90d09ecd94
 ---
 
 rating是评分组件，用于展示用户对某项内容的评价等级。具体用法请参考[rating](../harmonyos-references/js-components-basic-rating.md)。
@@ -37,7 +37,7 @@ rating是评分组件，用于展示用户对某项内容的评价等级。具�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/7lM3iUVYQUa2DvX4IkxMnw/zh-cn_image_0000002786359318.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C59AFFA4828306488543FBF8E7844CDD8ABD7069A6965DBDC80CBFF844AEE99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/sdMUkYHsRvaRBm25iDwWuw/zh-cn_image_0000002817426413.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=94D4769E462873E2B76BA389D759597BBE9ACB52B27BD93C6A1B588E9D9862CD)
 
 ## 设置评分星级
 
@@ -67,7 +67,7 @@ rating组件通过设置numstars和rating属性设置评分条的星级总数和
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/a6T20CW4Q_Cl7XqP9Jf0cw/zh-cn_image_0000002815558739.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=394C3B7CA24EC8152BEDC306ACA847D2C9AE3122656F0F767B99B79639D43A29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/ZpqvOm87QsGpXufj5nV1nQ/zh-cn_image_0000002788466994.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D020BE923D0A380F1FB91813E160CE4615ACE6815B8A79AEC84C01AA3E7AC05)
 
 ## 设置评分样式
 
@@ -111,7 +111,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/UTEkRIQ_T-6pM2jYEC1QQw/zh-cn_image_0000002815398823.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC44979CA9F11AD987F2C9637E79D15F03A84E095044CF6E95C1FED3D69CD5DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/h9c3o5F7Rv2tXBMUtzFYrw/zh-cn_image_0000002817506481.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=F597AC620E812D1142C845F060C612060E6937D4B93C0AF73FB7D8C77408636F)
 
 **说明** 
 
@@ -156,7 +156,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/DMlIVnakTSWLMSWrxAmdNw/zh-cn_image_0000002786519248.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=D978782517677164711D0B18407D957D8EC60323999DBD927216E927CBEE7241)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/7GJe6LCTSLeadlSZKB5k3A/zh-cn_image_0000002788307052.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=556D43D0B4E387ECFD2F7A9ED73EEF0F708B28758056C7BD7AB70161A893B93E)
 
 ## 场景示例
 
@@ -241,4 +241,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/nKsu6xWGTcCgUXixGZXmVA/zh-cn_image_0000002786359320.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=297DF514C3754D13C1CD5C102FC4FC178577DFD58DD69C6F00DDE10C7D364630)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/a_C3gaoaTra5C86WyY0anA/zh-cn_image_0000002817426415.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=398AB17727EA78A8445A98DA6F64406817369B88175D4BD12CA2325249356FCB)

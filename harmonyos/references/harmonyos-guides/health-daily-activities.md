@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-daily-activities
 title: 日常活动
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 采样数据 > 日常活动
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Phone/Tablet应用开发 > 开放数据类型 > 采样数据 > 日常活动
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:18+08:00
+scraped_at: 2026-11-14T08:48:18+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:eb1ffef2ac5492092805b2a03c09e3daa6b7fa496c9368a98eae74638700c36e
 ---

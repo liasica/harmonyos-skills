@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-
 title: 瀑布流加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 瀑布流加载丢帧优化
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-09
-content_hash: sha256:b336874791ab043aedd00d81806b8f9925330fa72d45de5533743b59b94f7e42
+scraped_at: 2026-11-14T08:54:14+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:e0dfbbe01dd6a6c69ff943166a6d63a1e605f88fa00be2f8cd7f2b89c1e16d73
 ---
 
 ## 概述
@@ -85,7 +85,7 @@ build() {
 
 **瀑布流组件加载流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/SJLwbBN3T8i163ecIb4L3Q/zh-cn_image_0000002194010900.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BFA526A02071CC28CF20F5BCDDE37F88ABF94E2F98780C0931EB1A1114096B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Tngbb6CTRfy2rn175WASzQ/zh-cn_image_0000002194010900.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=A997A5F757945E5B219BBCFF4C782197BDCA2F626BC9C06C3408FEB68563C3CD)
 
 示例如下：
 
@@ -135,7 +135,7 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 
 **图1** 瀑布流页面卡片宽高计算逻辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/C6eJFitqTSWYyvA8yU4WQA/zh-cn_image_0000002194010908.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF7BF069FCA56FA9B04797401FE94BF3B99073E9680312C4D31C74BD243CAFA2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/1kl5Z1aYQdCZFddf-7Z4EA/zh-cn_image_0000002194010908.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D55D9DC4369AA42C8F29D0CC22F11FC56D5342394D856AE48C3EBB1DEDFA41B "点击放大")
 
 如上图所示，两列瀑布流卡片的宽度 = （屏幕宽度 - 2 \* 组件外边距（margin） - 瀑布流组件内边距（gap））/ 2。
 
@@ -162,7 +162,7 @@ getTitleHeight(title: string): number {
 
 **整体效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/B86ttCzbRMShuPhLncMcIg/zh-cn_image_0000002194010904.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFBAF02191C03A9A4DE62D238F14F4F859FC05B503448CDA6522E7DF66B7F2EE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/i40UW6oFQWq9ITWPFXlmDQ/zh-cn_image_0000002194010904.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C45B99696E77B4CF42A793B6F9F09B9BE6C56D6379AF4BFDEA295E479CE80AA "点击放大")
 
 下表为通过网络请求500条数据加载渲染，测试获得的数据（数据测试方式采用技术从左向右累加测试的）：
 
@@ -187,7 +187,7 @@ getTitleHeight(title: string): number {
 | 组件复用 | 适用于瀑布流中存在大量结构相同的组件频繁创建与销毁导致性能瓶颈的场景。 | [自定义组件复用开发实践](../doccenter-capabilities/arkts-component_reuse.md) |
 | 固定宽高 | 适用于瀑布流页面组件高度不一的场景。 | [利用布局边界减少布局计算](../harmonyos-guides/arkts-layout-optimization-guidance.md#利用布局边界减少布局计算) |
 | 布局优化 | 错误的布局方式可能会导致组件树和嵌套层数过多，在创建和布局绘制阶段产生较大的性能开销，所以可以通过布局优化提升性能。 | [合理使用布局组件](../harmonyos-guides/arkts-layout-optimization-guidance.md#合理使用布局组件) |
-| 状态管理 | 在ArkUI的开发过程中，如果没有选择合适的装饰器或合理的控制状态更新范围，会导致非必要的UI视图刷新，造成性能浪费。 | [状态管理最佳实践](../doccenter-capabilities/arkts-state-management.md) |
+| 状态管理 | 在ArkUI的开发过程中，如果没有选择合适的装饰器或合理的控制状态更新范围，会导致非必要的UI视图刷新，造成性能浪费。 | [学习UI范式状态管理](../doccenter-capabilities/arkts-state-management.md) |
 
 ## 示例代码
 

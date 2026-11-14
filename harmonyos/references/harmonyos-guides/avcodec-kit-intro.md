@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avcodec-kit-i
 title: AVCodec Kit简介
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > AVCodec Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:53+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d406c3d00192fd1e493417f10ea4d3055d6ce1461cdc3035b56c63c1ef7c3675
+content_hash: sha256:c7ff27ddf5aa00693fe0631d86180073bf4239eb1fc26cfb92f6387d5eaf51c1
 ---
 
 AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装）是媒体系统中的音视频的编解码、媒体文件的封装、解封装、媒体数据输入等原子能力。
@@ -54,7 +54,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
   视频编解码的逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/d-jO2XgNSxirf3C8aFP82g/zh-cn_image_0000002786359856.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=50F3C4AD68F8E773067E41E1A0D9934F86FC9E8003FD85A2012E5E9E23A3BC0A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ku89PQZrT-SMh45VMdSpIA/zh-cn_image_0000002817426951.png?HW-CC-KV=V1&HW-CC-Date=20261114T004753Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DF6BC98B1E78B5BF8F79EB0E0B27A2F2E5789BEE4B07F5AAEF78D2BC9014669)
 
   具体开发指导请参考[视频解码Surface模式](video-decoding.md#surface模式)、[视频编码Surface模式](video-encoding.md#surface模式)。
 * 音频编解码
@@ -65,7 +65,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
   音频编解码逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/h7d_VelFQyKz2-ph4z0cXQ/zh-cn_image_0000002815559277.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB9B3E9DD4278463DE631A1EEBFE84762C14A06C9D3FB0E49B6556ED33293485)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/kwRtWXU_TQOa5nLcKxQncw/zh-cn_image_0000002788467532.png?HW-CC-KV=V1&HW-CC-Date=20261114T004753Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D1ACC563262AFCFAC16A00370A013FEFFA7B97481942C4424F93BAEEF2ECB4D)
 
   具体开发指导请参考[音频解码](audio-decoding.md)、[音频编码](audio-encoding.md)。
 * 文件封装与解封装
@@ -76,7 +76,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
   文件封装、解封装逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/I0_YA6yaTVmKDAATGXQrgA/zh-cn_image_0000002815399361.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4E309E2BE05784B027E13E226E7F68B8320ADD8C032749BCE7B6E501BB73250)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/GCkRuymfTUq7gmjwJWpDLg/zh-cn_image_0000002817507021.png?HW-CC-KV=V1&HW-CC-Date=20261114T004753Z&HW-CC-Expire=31536000000&HW-CC-Sign=6422EC2C9A95C44CE417627DDE0A2B19A0EC7E0772FA143BF0A381850F3670B5)
 
   具体开发指导请参考[媒体数据封装](audio-video-muxer.md)和[媒体数据解封装](audio-video-demuxer.md)。
 

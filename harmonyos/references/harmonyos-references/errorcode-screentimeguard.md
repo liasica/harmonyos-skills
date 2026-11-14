@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:39+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:e69ce7b09aa541a70e339bdab4bc9a1f864e80192946a8cc44a71680c0387162
+scraped_at: 2026-11-14T08:53:50+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:42bbade6db4debe07c79510912801dd0ed1790a9d3a3612a522111d8890c7731
 ---
 
 **说明** 
@@ -176,7 +176,7 @@ This strategy has not been started yet.
 
 **错误信息**
 
-Parameter error. Possible causes:1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
 
 **错误描述**
 

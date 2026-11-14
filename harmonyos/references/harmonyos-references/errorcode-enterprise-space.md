@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-25T07:13:58+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:5274a1989d1c0f102d949108531e56ec3c227df269d268131bf8409bb8959637
+scraped_at: 2026-11-14T08:53:24+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:0614c31dbde8a64b62f6377b822e948e80b7b7f38f27824e59159d4edf7b4571
 ---
 
 **说明** 
@@ -180,11 +180,11 @@ Enterprise workspace not enabled.
 
 **可能原因**
 
-企业管理员未使能企业空间功能。
+企业管理员未开启企业数字空间特性。
 
 **处理步骤**
 
-企业管理员请按照[enableWorkspace](enterprisespace-spacemanager.md#enableworkspace)使能双空间特性。
+企业管理员请按照[enableWorkspace](enterprisespace-spacemanager.md#enableworkspace)开启企业数字空间特性。
 
 ## 1020400008 账号名或密码无效
 

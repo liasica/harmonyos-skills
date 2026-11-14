@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animato
 title: 帧动画（ohos.animator）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 帧动画（ohos.animator）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:07+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f2bdfe1211ee2222a51e759919985b6f80eca83fe3e72869bda901fd822bf242
+content_hash: sha256:d6fa0921b0d9ea480aae805f20aa2ee06a4ec127a7b9b3f55335464da48f4588
 ---
 
 帧动画具备逐帧回调的特性，便于开发者在每一帧中处理需调整的属性。通过向应用提供[AnimatorResult](../harmonyos-references/js-apis-animator.md#animatorresult)的onFrame属性逐帧回调，帧动画使开发者能够在应用的每一帧设置属性值，从而实现组件属性值变化的自然过渡，营造出动画效果。帧动画接口详情可参考[@ohos.animator (动画)](../harmonyos-references/js-apis-animator.md)。
@@ -19,9 +19,9 @@ content_hash: sha256:f2bdfe1211ee2222a51e759919985b6f80eca83fe3e72869bda901fd822
 
 如图所示，帧动画在动画过程中即可实时响应，而属性动画按最终状态响应。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/WmjW1ZE3RQSxsL--3SQ2aA/zh-cn_image_0000002786519116.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BFB289FF84E645CB6469AEC5A3BA9CD993C4697E2FA79CB1AC0E061DC486113)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/RijF9vYYTxu6O0v_u3q92w/zh-cn_image_0000002788306920.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=66B34D16EB52C06F8A9802368F9EB29016DC0014B44610697E033A0270107B62)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/fHh40-6aQV-ZOlqSXY4FYg/zh-cn_image_0000002786359188.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2FF22158604E514661BB9A454B861FAA79EF48D602D41EEFA15640CABD656EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/U2XnR4HOSmyoxjo6fUcWJw/zh-cn_image_0000002817426283.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=80A29745BB080181067025A57E0114881300E10E4913F3C42CE2123161962562)
 
 ## 使用帧动画实现动画效果
 
@@ -242,4 +242,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/rBlS7DL5T7qQs1LCLA1Hzw/zh-cn_image_0000002815558609.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=06BF016511F765F7BE9263043F32CF879770AA2C3146CCCC0EE5346CCF5EF078)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/26J5G8DRTDKizWWvaHRA0Q/zh-cn_image_0000002788466864.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BA935CD8FE030AD58044488EE7A4759BBFB207F4E02DA0C45123B15616A495A)

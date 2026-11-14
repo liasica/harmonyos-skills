@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-scenes-s
 title: 推送场景化消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > 推送场景化消息
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:951627d59c1b24553b07700cb90e12f9b31c44f5c997502d49580d4652e95a3c
+scraped_at: 2026-11-14T08:48:29+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:64354a1b27621f972d88753a1c8c3879303cab19e0a1596513b4fa83fa2ddd57
 ---
 
 ## 场景介绍
@@ -22,6 +22,7 @@ Push Kit支持您使用HTTPS协议接入云侧，使用场景化V3接口发送�
 | 6 | 后台消息 |
 | 7 | 实况窗消息（TV、PC/2in1、Car不支持） |
 | 10 | 应用内通话消息（Wearable、TV、PC/2in1不支持） |
+| 11 | MDM消息（Wearable、TV、Car不支持） |
 
 有关场景化消息的更详细说明，请参见REST API-[场景化消息API接口](../harmonyos-references/push-scenariozed-api-intro.md#场景介绍)。
 
@@ -89,15 +90,15 @@ Push Kit提供了基于Java语言的服务端示例代码（包括申请鉴权�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，点击“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/UmDzw_7CScWsMM6PGfkDPA/zh-cn_image_0000002815559961.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=7630AD843E7755FE091A7EFA0A92BC2D44B889F95A9C3703FD606643F6FF3BCD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/nqGVOrefQ-2t_5YVXdSS5Q/zh-cn_image_0000002788308274.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A8E477EFB1F0051E00A597315829B0DC5C3BDAE44FCFE5A9755E0D3ED893FDD)
 2. 在项目列表中找到您的项目，通过“增长 > 推送服务 > 推送通知（V3 Beta）”导航到“推送通知（V3 Beta）”页签。在该页签下点击“添加推送通知”新建推送任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/DcJn-j8jQ5Cym3uHjtlsIQ/zh-cn_image_0000002815400045.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D77D4AFA5932B26038CE6E7BFB79D4E681155FB3B83BB15163F5D4F0917A897)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/OjkKvrEPQTKoD_GlE5tBhg/zh-cn_image_0000002817427637.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB34568E2C68A35C3232988309BC8BE5BED1175EF83D8BC8FD60F480475E5C10)
 3. 这里以Alert消息举例，配置参数如下。
 
    * **配置推送任务**
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/hIs6hInVQl65xCZslG6YLg/zh-cn_image_0000002786520470.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5D2AD1B79CE7B588267BD99186562F04A74B5B9191B809E5BC6F496B39787AB)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/zvuYp1xpQjC9NiUyA93CSg/zh-cn_image_0000002788468218.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F666B7B361D560F2EBE49BB99F68E22AD1F46E3EAC6BCBAE3567F33BDB12288)
 
      | 字段值 | 说明 |
      | --- | --- |
@@ -106,7 +107,7 @@ Push Kit提供了基于Java语言的服务端示例代码（包括申请鉴权�
      | 场景化类型 | 场景化消息类型，**当前仅支持Alert消息**。 |
    * **配置推送内容-通用参数**
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/9YaVQgg1TLCWeu5xBcwz2w/zh-cn_image_0000002786360542.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9B562F376A1A682746C6A8D0FF0FED562B01E270E9A50E31BDFC8807EEF2D67)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/S9CYqleVQxS4aMYQrF_z0Q/zh-cn_image_0000002817507707.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3F359964C9C06AAE3E92E0AA0ACF2D17AC63F09FDC2183A77127711CF4E8E39)
 
      | 字段值 | 说明 |
      | --- | --- |
@@ -117,14 +118,14 @@ Push Kit提供了基于Java语言的服务端示例代码（包括申请鉴权�
      | 回执ID (receiptId) | 对应场景化接口中的receiptId参数，此字段为可选字段。  回执ID指定本次下行消息的回执地址及配置。该回执ID可以在[配置回执参数](push-msg-receipt.md#配置回执参数)中查看。 |
    * **配置推送内容-发送目标设备**
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/C05POs1yQ5ytUbEeZB7ssw/zh-cn_image_0000002815559963.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E20C52DB1DB1A720718B09B0D7D7D45214F8E3C9BD294910F77EE631D1D38B9)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/jGR3iqP1R7W2P8jq3yaa4Q/zh-cn_image_0000002788308276.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=0929692D1DBBBE674BEE01B42F1EC75AE790D0D21B926280794F9C8496C66473)
 
      | 字段值 | 说明 |
      | --- | --- |
      | 设备Token (token) | 对应场景化接口中的token参数，此字段为必填字段。  按照Token向目标用户推送消息。  **样例：MAMzL\*\*\*\*\*\*\*** |
    * **配置推送内容-消息内容**
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/zvYn2FRSS0qUg9GnxbO9UA/zh-cn_image_0000002815400047.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EF23FBCE1F1D8BCA6C589422D56522A0587B1B78606401F085C4E58E3E489D7)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/b8VZYBI2R5mJ-Zh8mV8GJg/zh-cn_image_0000002817427639.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=46BEEB15A6CC5A74A0BABBB042E6C0A8B76D00D74AB9AE97962555E54122EACE)
 
      | 字段值 | 说明 |
      | --- | --- |
@@ -134,7 +135,7 @@ Push Kit提供了基于Java语言的服务端示例代码（包括申请鉴权�
      | 点击通知动作 (actionType) | 对应场景化接口中的clickAction中actionType参数，此字段为必填字段。  点击消息后触发的动作，可选择打开应用首页、自定义action页面或自定义intentUri页面。 |
 4. 当您完成上述步骤后，点击右上方“提交”按钮即可推送消息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/6TOtpMKZQ0ipqIPSFCyrBQ/zh-cn_image_0000002786520472.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAA100FA658FA2B8AE554DB55307FEE6428033FEF6B42F66B16681BDD1E31C99)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ZoXiHddkTCmgPH-DpdGVuw/zh-cn_image_0000002788468220.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE611A9B0020A6C9ACED71CBE74B81C18E2E76E9AB3A72C4AA52B6A0CE7B93DD)
 
    **说明** 
 

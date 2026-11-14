@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅24h功耗器件分解统计事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 24h功耗器件分解统计事件 > 订阅24h功耗器件分解统计事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:55+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-14T08:47:47+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:a76de5114b3f6e04e23930d11a7f3756fbbb92b09e4d1a999360306222200186
 ---
 

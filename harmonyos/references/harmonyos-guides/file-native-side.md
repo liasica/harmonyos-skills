@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-native-s
 title: Native侧实现文件访问
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 文件基础服务开发实践 > Native侧实现文件访问
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:0eff56b69fbd4913cfd217da01b33ca5ad5e895d1ead143ac64715bd27ea4d04
+scraped_at: 2026-11-14T08:47:17+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:491a5c76f4b38c3dace95b8744d7a2066c37e7b1f82041df4c84574d85716273
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:0eff56b69fbd4913cfd217da01b33ca5ad5e895d1ead143ac64715bd27e
 
 **图 1** ArkTS侧获取沙箱路径传递给Native侧访问文件示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/NOi8J0QWQmSgTN66hWEVzA/zh-cn_image_0000002786359510.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B014CD71144F995CEEE51BEF0A9221611A735F5BD5512EA77755030C54D15062)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/7cEy0UVbRzCGBS4ZuMYh7Q/zh-cn_image_0000002817426605.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CF3730A7C0806A9F6BC90766686692D4E250BDFD7A77DFEE1F898EAB1E49A69)
 
 **实现方案**
 
@@ -62,7 +62,8 @@ content_hash: sha256:0eff56b69fbd4913cfd217da01b33ca5ad5e895d1ead143ac64715bd27e
        size_t argc = 2;
        napi_value argv[2] = {nullptr};
        napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
-       // Convert the sandbox path and the contents of the text to be written into C-side variables through the Node-API interface.
+       // Convert the sandbox path and the contents of the text to be written into C-side variables
+       // through the Node-API interface.
        size_t pathSize, contentsSize;
        char pathBuf[BUFFER_SIZE], contentsBuf[BUFFER_SIZE];
        napi_get_value_string_utf8(env, argv[0], pathBuf, sizeof(pathBuf), &pathSize);
@@ -112,15 +113,15 @@ content_hash: sha256:0eff56b69fbd4913cfd217da01b33ca5ad5e895d1ead143ac64715bd27e
 
 **图 2** ArkTS侧传递沙箱路径到Native侧方案效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/h_38vmBGRaycQ-dfNV3Rxg/zh-cn_image_0000002815558931.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B839C6395248F969C63455ED17E3D3C7E23F76C2DDB40DBCFFAA5ED0E44DE47C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/j0ZO8GEGRVC7nbfPVKlmaA/zh-cn_image_0000002788467186.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC277291535E8949D868C2DA404FCB18D1E97D4B998D5EDF8554069BEB45118D)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/q-tJbRrySJ2RGSbgdPm6jQ/zh-cn_image_0000002815399015.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F4C0CFE03CE3593C2377381723AF11A1D08B034D3329310A660303AD5C48BDA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/0VR2beB9QdCbT14KQVb4Yg/zh-cn_image_0000002817506675.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E25C15D729AA2EE56B9BA454B67CC3C2704DC3F80D2FEF9110928544B52EC8D)
 
 ### 方案二：Native侧直接拼接沙箱路径访问文件
 
 **图 3** Native侧直接拼接沙箱路径访问文件示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/sUScOHEbS_qC9sP4E-9YUw/zh-cn_image_0000002786519440.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=06FD51BC6B18BF6CEA10876188C6C1A8CF0AAD16A942833FCEB84C5DF1D8E4CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/X_MH4232SLCn8IF3DxC0HA/zh-cn_image_0000002788307244.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A7E498DC6D83B89A3CCEB3E014B6075EE2FD462B9D6CC05FE736B17136C895A)
 
 **实现方案**
 
@@ -205,9 +206,9 @@ content_hash: sha256:0eff56b69fbd4913cfd217da01b33ca5ad5e895d1ead143ac64715bd27e
 
 **图 4** Native侧拼接沙箱路径方案效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/e0rc6Hk6Rwm-ggNxtrKShw/zh-cn_image_0000002786359512.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=C00CA30A25046AB73E0F3032DC59D2639A592DCEDD16D2DE7C8A778F8E0ABA73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/yIDFNBuDQoG1wfpcde7mPA/zh-cn_image_0000002817426607.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=967C8CF072922A35C33975C790F76C42F0BE51E37808564765513007B4C589F6)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/kC2XM_ZVSVOQKSRyX561EA/zh-cn_image_0000002815558933.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E84E8D047EBE83352841EBA73DA99CB664349B851A9BB55577B03460CA83152)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/CqGDl-a5Rui_NGyP4KPVnQ/zh-cn_image_0000002788467188.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=D308DB09FA01342F0CB3291F838D453B99D7729A0FCC4445A8B77BEE81FA8CD9)
 
 ## 访问公共目录文件
 
@@ -224,7 +225,7 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
 
 **图 7** Native侧写入公共目录文件场景示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/4QuJLWaOReaEstO2dxCX4A/zh-cn_image_0000002815399017.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFF0BC1575A0EB43DF56C0A7BB17CBF83B7925BD37F81DE781CB8F4054F8CEB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/gneXkhgvQ-CkbMWAGxjlgQ/zh-cn_image_0000002817506677.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=76A6352B63EBD6B2DFCA8D4EE62B990EEBF416A5CD31DE8E680F2AA8C8058DDC)
 
 **实现方案**
 
@@ -247,9 +248,10 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
    ```
 3. 根据write函数的返回值判断操作是否成功。
 
-   ```cpp
+   ```
    std::string res;
-   // According to the return value of the write function, judge whether the operation returns the result successfully.
+   // According to the return value of the write function, judge whether
+   // the operation returns the result successfully.
    napi_value contents;
    if (buffSize == -1) {
        res = "Write File Failed!";
@@ -263,7 +265,7 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
    ```
 4. 完整代码如下所示：
 
-   ```cpp
+   ```
    static napi_value WriteFileUsingPickerFd(napi_env env, napi_callback_info info) {
        size_t argc = 2;
        napi_value argv[2] = {nullptr};
@@ -279,7 +281,8 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
        // Write a file using the file operation function of the C standard library.
        size_t buffSize = write(fd, contentsBuf, contentsSize);
        std::string res;
-       // According to the return value of the write function, judge whether the operation returns the result successfully.
+       // According to the return value of the write function, judge whether
+       // the operation returns the result successfully.
        napi_value contents;
        if (buffSize == -1) {
            res = "Write File Failed!";
@@ -307,7 +310,7 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
    ```
 2. 在ArkTS侧拉起picker选择文件并将文件描述符传入Native接口中。
 
-   ```ts
+   ```typescript
    async function WriteFileByPicker(contents: string): Promise<string> {
      // Configure picker Selection Information
      const documentSelectOptions = new picker.DocumentSelectOptions();
@@ -322,10 +325,10 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
        let uri: string = uris[0];
        let path: string = new fileUri.FileUri(uri).path;
        Logger.info(`Open The File path is [${uri}]`);
-       let file = fs.openSync(path, fs.OpenMode.WRITE_ONLY);
+       let file = fileIo.openSync(path, fileIo.OpenMode.WRITE_ONLY);
        // Call the native method to write a file
        let res = FileAccess.writeFileUsingPickerFd(file.fd, contents);
-       fs.closeSync(file.fd);
+       fileIo.closeSync(file.fd);
        return res;
      }).catch((error: BusinessError) => {
        Logger.error(`Open The file failed, error code is [${error.code}], error message is [${error.message}]`);
@@ -340,9 +343,9 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
 
 **图 8** Native侧写公共目录文件场景方案效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/wfOp95nMRw6Vr49NewJA5g/zh-cn_image_0000002786519442.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=FADD09BA918304A0D067C09E86D9E8B75C12CCF1670643CE3CE2B731032E9BE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/cyDGz4qIQbC8cXj9AtPzMw/zh-cn_image_0000002788307246.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B98A225CC4125AAA6C88FCD0B2C5AC5997E49782C9BC0DA988F22BAFCFEBFA8)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/5XxQ6wXOQ12ah1LUxcMG-A/zh-cn_image_0000002786359514.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE3C82F7E983C99BE1E0EECC9F10A5FE392035BAD49C7BE39CD4B33CA0DBFD30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/OE_vZDV6Q0KSd6iZhOBdtA/zh-cn_image_0000002817426609.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=7242E006DD5035CA0470668702CD7CF5A90856DAB1D839BCC6DFC6BF644E40B0)
 
 ### 场景二：从公共目录文件中读取数据
 
@@ -352,7 +355,7 @@ ArkTS侧通过文件picker选择文件，并传递文件描述符到Native侧，
 
 **图 9** Native侧读取公共目录文件场景示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/dzTshRnYSMymxy72ogk7SA/zh-cn_image_0000002815558935.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7E5840F66A1A6679F7154DA5C583C100B7223F306A0F5541FEA916D5C017D0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/MvGNbcdrRyq1oj-fB6N_7g/zh-cn_image_0000002788467190.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CB56C110F64EFEF4BF064BC61D217AC909D2CEE6482F622C9FFF9340D47999B)
 
 **实现方案**
 
@@ -427,7 +430,7 @@ ArkTS侧通过文件picker选择文件，并传递文件描述符到Native侧，
    ```
 2. 在ArkTS侧拉起picker选择文件并将文件描述符传入Native接口中。
 
-   ```ts
+   ```typescript
    async function ReadFileByPicker(): Promise<string> {
      // Configure picker Selection Information
      const documentSelectOptions = new picker.DocumentSelectOptions();
@@ -441,10 +444,10 @@ ArkTS侧通过文件picker选择文件，并传递文件描述符到Native侧，
        let uri: string = uris[0];
        let path: string = new fileUri.FileUri(uri).path;
        Logger.info(`The Opened File path is [${uri}]`);
-       let file = fs.openSync(path, fs.OpenMode.READ_ONLY);
+       let file = fileIo.openSync(path, fileIo.OpenMode.READ_ONLY);
        // Call the native method to read the file.
        let res = FileAccess.readFileUsingPickerFd(file.fd);
-       fs.closeSync(file.fd);
+       fileIo.closeSync(file.fd);
        return res;
      }).catch((error: BusinessError) => {
        Logger.error(`Open The file failed, error code is [${error.code}], error message is [${error.message}]`);
@@ -459,9 +462,9 @@ ArkTS侧通过文件picker选择文件，并传递文件描述符到Native侧，
 
 **图 10** Native侧读公共目录文件场景方案效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/K0GlUTYlSGC_VxaqOvQsyw/zh-cn_image_0000002815399019.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA257212E6F480ED42A91D09EB298D0FD9105A748CF6DC785EF68E5EB16C8E8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/UuMmRwOXRZmOvPgrpzcdMQ/zh-cn_image_0000002817506679.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=F77DC29E74BFC6D05A24B0F1DA35A4C836523699A3ACC190E05DF28FC2A33E7A)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/s9wpw4VoSNGDeBIKVwapQQ/zh-cn_image_0000002786519444.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=1871508EF60E689A9A76B84D1DC7A1095FC387DC1E19D49A995084D594029DE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/1ch3ipemQuGaTFY8J6mhCw/zh-cn_image_0000002788307248.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=D636822B9AE7ADEC9E059CB42504C8555E5FA3BBBB55E22D05CB6933132B5395)
 
 ## 示例代码
 

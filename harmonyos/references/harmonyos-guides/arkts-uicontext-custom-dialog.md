@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-uiconte
 title: 不依赖UI组件的全局自定义弹出框 (openCustomDialog)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 不依赖UI组件的全局自定义弹出框 (openCustomDialog)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:04+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1287d9e84ac0486a8cd85b41de3b53fb60d41d6ff7387461a2f8d21ca6c0baa6
+content_hash: sha256:c35c126b598c4f5a730e7d90eb64c441e44bf0e253fb4d57ccb3af2269f14d8f
 ---
 
 在广告、中奖、警告、软件更新等与用户交互响应操作的场景下，可以使用UIContext中获取到的PromptAction对象提供的[openCustomDialog](../harmonyos-references/arkts-apis-uicontext-promptaction.md#opencustomdialog12)接口来实现自定义弹出框。相较于[CustomDialogController](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontroller)优势点在于页面解耦，支持动态刷新[update](../harmonyos-references/js-apis-arkui-componentcontent.md#update)。
@@ -187,7 +187,7 @@ export struct CustomDialogComponentWithTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/3SBIl7eGQ7el5WZ2ehP4aw/zh-cn_image_0000002815558471.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E7E898310D0CB73924967786B17F1B8B6ECA1F086E93A16A93EC10301CB9B3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/GSp6Aie8QH2uPbeVYEBCcg/zh-cn_image_0000002788466726.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=117AAD90E99E2D6377502902412AE519D2E361EE7C40599607984BDF749C84EE)
 
 ## 设置弹出框避让软键盘的距离
 
@@ -244,7 +244,7 @@ export struct CustomDialogWithKeyboardAvoidDistance {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/cun_CBQXQ-ixjiF9zCkeJQ/zh-cn_image_0000002815398555.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=82D678FDA5569C810AEF77DB8DE5A948A8892F653FDA61A1CF5C203C5E7085EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/zeCIZrLGRNuKoNob-C8mWg/zh-cn_image_0000002817506213.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=05F8BC3F8205A100952FEFDBB6D002B8A6EA856A8DF5CCD054344753E741E59D)
 
 ## 完整示例
 
@@ -396,4 +396,4 @@ export struct OpenDialogAndUpdate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/gjSn_YTJRwiWvpal8UNhAw/zh-cn_image_0000002786518980.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8879E6E2E3C5EAB3B78F7FCAA9C9E7926BD038092CFF428112CF350DA288DBEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/qpVel8cITb-mDauHNS8prg/zh-cn_image_0000002788306784.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBB945E861C065534C2DA7589BA954C8AF36E1DA84AA4FAD867A0783480B8C58)

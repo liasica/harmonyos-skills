@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Rect
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Rect
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6fcd0d19ffc23a173c6113bc5eb80126bb8f9d92491789cc3f87f4bb5beb6b51
+content_hash: sha256:8780db974675c3cbf8399108df50060fb4c5470360175422c8e18fba34b79b06
 ---
 
 矩形绘制组件，用于在界面中绘制矩形图形，支持设置填充颜色、边框样式、圆角等属性。
@@ -211,7 +211,7 @@ struct RectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/3MEJvWkFTX-sJzuqyXIrhg/zh-cn_image_0000002786361494.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=99DDAEB7974B19965234FD1EA428CA1327E137B923893682B2A455160FC11432)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/6M8ceaxyS96_ds05PZW7XA/zh-cn_image_0000002817508659.png?HW-CC-KV=V1&HW-CC-Date=20261114T004819Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D1ED8A9532F6E874A97D7A5E081F6F89D481F2278A9B0BB8046FE15BBB562FA)
 
 ### 示例2（绘制渐变色矩形）
 
@@ -252,7 +252,7 @@ struct RectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Ni6NTd-YRmCqI7C-uyf0EA/zh-cn_image_0000002815401019.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A47651366B352D66132E036F9461708D7ABE0F8DD2F41E32D504C8F76942DBB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/mO0E9-ivTJC59MldlD1Vug/zh-cn_image_0000002817428611.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T004819Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4451A95BEBD317B306E7A032270C42C68CB86BF34E16B6D505743B6053DA085)
 
 ### 示例3（使用不同参数类型绘制矩形）
 
@@ -287,7 +287,7 @@ struct RectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/CEnl5YUARlCDHPqNHkMBmw/zh-cn_image_0000002815401043.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDF8A508269B51BABA1050B9F30F810ED767562A689691175DA94FF5B0B78F47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Nk8MHO6wQMa_fMcAewSZkQ/zh-cn_image_0000002817428635.png?HW-CC-KV=V1&HW-CC-Date=20261114T004819Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A05B55C6BC1D11A606603917C6837A3BD1063A12D761AB89CD35633E171BF2B)
 
 ### 示例4（使用attributeModifier动态设置Rect组件的属性）
 
@@ -329,4 +329,4 @@ struct RectModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/hdq0o1tWQ2ODjegjGAo-Zg/zh-cn_image_0000002786521468.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4A44DD6EF06D207289A3AE7F26A0DE77385165D080FD70580AD2CA78A07AFC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/gvfrdaoFTOaZeCSgHlu9Vg/zh-cn_image_0000002788469216.png?HW-CC-KV=V1&HW-CC-Date=20261114T004819Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DDF30DB087084126DEE1F722F5159C2FF52D459AB965ADF66A173F5A0C75893)

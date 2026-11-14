@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: SecurityConfiguration：定制安全传输行为
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 实现HTTP请求定制 > Configuration：高效实现定制功能 > SecurityConfiguration：定制安全传输行为
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:63320b51a9d716875048b108dc380029050598e060a67a7c92dfa7dcc00dfec0
+scraped_at: 2026-11-14T08:47:38+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:788af045553e62b8683ac72527c6933b84c9c75e1f1f0b52137649b72fe1c5ef
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:63320b51a9d716875048b108dc380029050598e060a67a7c92dfa7dcc00
 
 ## 约束与限制
 
-定制安全传输行为能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+定制安全传输行为能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 客户端校验服务端证书
 

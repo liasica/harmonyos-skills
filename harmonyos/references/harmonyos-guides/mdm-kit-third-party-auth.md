@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-third
 title: 三方自定义身份认证
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 三方自定义身份认证
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:42+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:9797ec5acceb344928b1a811ca474ce9ce3a554aeaa002908a459b6bf7ba1ba7
+content_hash: sha256:8ef48e8919a7931b4a38ac5a7533104afcbd1039abdcd360deb949c5a368c94d
 ---
 
 从API版本26.0.1开始，系统支持扩展三方自定义认证能力，用于设备解锁登录。锁屏提供USB Key解锁登录界面，支持三方自定义的USB Key身份认证。
@@ -92,7 +92,7 @@ MDM（Mobile Device Management，移动设备管理）应用支持为账号添�
 4. MDM应用调用closeSession关闭会话，凭据添加完成。
 5. （可选）调用setUnlockPolicy配置设备解锁策略。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/_fwe3NTARxWEuj-5bIQNEw/zh-cn_image_0000002786359772.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=6ABA43025B5E9BBAFCCD511697BCC5C71056BBBBDB9A20263079FC7327C47D0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/bkRM03MjShyyw_qjepz9Hg/zh-cn_image_0000002817426867.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=02A7004173B082227FD8E092B6A4BBED10B55E421D8AB2E59F8A35CB67792509)
 
 **说明** 
 
@@ -195,7 +195,7 @@ export async function bindUsbKey(uiContext: UIContext): Promise<string> {
 5. MDM应用调用closeSession关闭会话，凭据删除完成。
 6. （可选）调用setUnlockPolicy将设备解锁策略重置为系统内置认证方式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/0RkXNe_gQ8uulW1JU8tOSg/zh-cn_image_0000002815559193.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C00FF44EA13DCBBBE53B2DB2FD49E1A75F1F1CC78A2DE763F28E25779543E6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/zFsOmEDVSz-s84kA_UL10g/zh-cn_image_0000002788467448.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=25E3CF6A3E9498AA0D224F08BBD510B048ED784AFF85866BC2FCD0AB3DD95AB1)
 
 **说明** 
 

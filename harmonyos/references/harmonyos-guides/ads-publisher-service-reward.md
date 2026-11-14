@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher
 title: 激励广告
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服务开发 > 激励广告
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:11+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:1b3728e951412ddf52dc4bf05e179952fee94c17729ce1af683ee7fd3d89690e
+content_hash: sha256:645a45b771116ef12d98210a6017635ac82aaa7e41e7385d7aaab544ba0f737a
 ---
 
 ## 场景介绍
 
 激励广告是一种全屏幕的视频广告，用户可以选择点击观看，以换取相应奖励。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/vvfjAqO5QDOhparW3dNtDA/zh-cn_image_0000002786520084.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=65C6AD3601FC22A31161D7D2151A65B842F216B3F49893A5C0D36B013C281307)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/wTMo5nCOTsa7b_DF_Hevmw/zh-cn_image_0000002788307888.png?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=28B9CDFE517A216F27391251AE3199CA42512453AB9E0A68BB871D1703D6D683)
 
 ## 约束与限制
 
@@ -315,7 +315,7 @@ content_hash: sha256:1b3728e951412ddf52dc4bf05e179952fee94c17729ce1af683ee7fd3d8
 
 服务端验证回调是指鲸鸿动能平台发送给媒体服务器的网址请求，其中带有特定的查询参数，用来通知媒体服务器某位用户因为与激励视频广告互动而应予以奖励，从而规避欺骗的行为。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/eMv7EWDrQ_-OWX280QjL0A/zh-cn_image_0000002786360156.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=9540C57158A0C89BBDDD7A313BB8BB366E3DF1A36811F8D72A16F91989D7A3C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ir7J-R19R7OvFDlY8YIkRg/zh-cn_image_0000002817427251.png?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1225707AE6E0A41012D7B3D0AC7B11B4EE25E75C14CC44ABFD10F079D9ABF05)
 
 ### 奖励用户
 
@@ -332,7 +332,7 @@ App上架至华为应用市场（AppGallery）时间超过12小时才可以收�
 
    您在[鲸鸿动能媒体服务平台](https://developer.huawei.com/consumer/cn/service/ads/publisher/html/index.html?lang=zh)上申请激励视频广告位时选择“媒体管理（点击媒体名）> 新增展示位 > 选择激励视频（点击下一步，进入编辑页面）”，设置奖励类型和奖励数量，并点击“高级设置”，设置服务器端验证的URL。如下图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/eF15KJpURhWB34dCBDfjNw/zh-cn_image_0000002815559577.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F6E4AB5809B0FE5436B3D421263AED956E43F277E1CFE1B4C178708D5DEBE2B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/571rq12dSq26yuEOBg_XlQ/zh-cn_image_0000002788467832.png?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADD956A40D48F212D2E9EC6D0322CA336A786AFCF1E3A4C88861A11AACCCBEC8)
 2. （可选）设置自定义数据customData和userId。
 
    您在[展示广告第2点](ads-publisher-service-reward.md#展示广告)之前可以设置自定义数据customData和userId。示例代码如下所示：
@@ -444,11 +444,11 @@ App上架至华为应用市场（AppGallery）时间超过12小时才可以收�
 
    a. 在[鲸鸿动能媒体服务平台](https://developer.huawei.com/consumer/cn/service/ads/publisher/html/index.html?lang=zh)上查看对应的账户信息时选择“账户”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/v8uobdbcTuWzE1OpEqt5jA/zh-cn_image_0000002815399661.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=617D96BB3CBB4A5EF7B9CE4ECD3A468D1FD7F5A58F8F454185831499C8E99154)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/MjydfOEjToCnxT663Ypsrg/zh-cn_image_0000002817507321.png?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD8AFB8E213CE87EA35C863CBCC9C9113E9FCCD2F9A4CDEF50AB2F20997C937B)
 
    通过点击上图所示的“获取密钥”按钮弹出如下所示的弹框，获取“开发者ID”和“密钥”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/4cD-UoE6RMSrTLAf6WqVag/zh-cn_image_0000002786520086.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=52FF9C40B7EFDE08BF99EFAD3BFCC3E86C9103DF7512B628205312DC2A238DD1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/epewEbahQXilqDg79MTcDw/zh-cn_image_0000002788307890.png?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFB6C1A8B1C324D1D3745C4F7474EE34CEF988F2D1EBE976B32EBA5E05504881)
 
    b. 您根据应用分发区域不同，需要使用对应站点的接口URL去获取公钥列表，不同站点对应的接口URL如下所示：
 

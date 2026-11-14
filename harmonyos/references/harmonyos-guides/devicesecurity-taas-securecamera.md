@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 安全摄像头场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 安全摄像头场景
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:7ffb7681b0d7c1eeb18888fff7f222a66b0966347fd271cf3e6967a9adbacc7d
+scraped_at: 2026-11-14T08:47:28+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:f84b4d13f1da549bcd085528f674af8609d6037b98757a51432292cdd923b6af
 ---
 
 ## 场景介绍
@@ -43,7 +43,7 @@ private getSecureCameraDevice(cameraManager: camera.CameraManager): camera.Camer
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/1vHmfqDZSMuS4KtpEgkUjw/zh-cn_image_0000002815399171.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=96B2547CA1ECC061FD03A6877A27D0DAF13D1B7C864A02F8D1B2E04C684ACC06)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/nLi4p2BYQl2XF1mGJqiY-w/zh-cn_image_0000002817506831.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004548Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C33288C3DC31C4BE8D873DD71658F6B06450E9E3CE9D8BF42A13E6F7D2F80E4)
 
 ## 接口说明
 
@@ -112,7 +112,7 @@ private getSecureCameraDevice(cameraManager: camera.CameraManager): camera.Camer
          hilog.info(0x0000, 'TrustedAppService', 'createAttestKey successfully');
        } catch (error) {
          const err = error as BusinessError;
-         hilog.error(0x0000, 'trustedappservice', `createattestkey failed, errCode: ${err.code}, errMsg: ${err.message}`);
+         hilog.error(0x0000, 'TrustedAppService', `createattestkey failed, errCode: ${err.code}, errMsg: ${err.message}`);
          throw new Error(err.message);
        }
      }

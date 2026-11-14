@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ltpo-descr
 title: 基于LTPO的低功耗设计
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 基于LTPO的低功耗设计
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:16+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:affd7f39a14c10b40aaccf267f34c5fc1b314b0156f999b882fb05907b9bf0cf
+content_hash: sha256:fcbb010cdbadc7ccfdc70f798ab99d3915ede3981e9b1b17498591639ef35e62
 ---
 
 ## 概述
@@ -52,7 +52,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 打开开发者模式中的"显示刷新频率"开关。具体操作：设置中搜索"开发者" -> "显示刷新频率"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Oz1IfvtUR5GkHr3xkSmMDQ/zh-cn_image_0000002194009772.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=4810176C558BA34D5C450A7BC1DEDC7E841E008E100736B7240BE3F134EB5083) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/lujozV4vQ1OKMLxp9iy0Tw/zh-cn_image_0000002229335585.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAF18B1FB4373859D4E13542111F053147FD1D37AA7FA999B4330B545D631B27)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/XVLNsRFQQD2ik7hXFgwueQ/zh-cn_image_0000002194009772.png?HW-CC-KV=V1&HW-CC-Date=20261114T005415Z&HW-CC-Expire=31536000000&HW-CC-Sign=95143BBAB5CC18F2CC3015B5C56F4A8CB72BE8BC52363B5CC49242BFAB781792) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/HIbn_FAxTaOpeAxx5Bn_mA/zh-cn_image_0000002229335585.png?HW-CC-KV=V1&HW-CC-Date=20261114T005415Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D2A3F22C6D96C8BB5F01C17820EF2B9897EA7A796F446EFF316DD736BDEECA0)
 
 ### Profiler工具测试手机功耗
 
@@ -60,7 +60,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 2. 打开工具Profiler，并按图示选择需要监控的设备、app、进程。未启动app会出现设备、app等选项为空的情况，此时不能进行Profiler性能分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/JPN2_GJZTgm_rwyjBBbwZQ/zh-cn_image_0000002229335569.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=B927BD819FFF6BD157635CEDE55C13EC3A69307E57A750D50692F6BE709A07FA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/7sKBBTaCSuK-8sqruV8_cA/zh-cn_image_0000002229335569.png?HW-CC-KV=V1&HW-CC-Date=20261114T005415Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC643BF5B2C4A140DA81DA61D14D27F2256C2B05489E00D6E31CE85E83521AE2 "点击放大")
 
 图中的黄色折线展示整机的电量消耗，斜率为正表示设备耗电，斜率为负表示设备充电。
 
@@ -68,7 +68,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 4. 将鼠标悬浮在关注的泳道数据上时，界面上会显示当前时间点的时间标线和详细数据的Tooltips。当鼠标悬浮在时间轴上时，实时监控页面内的所有泳道均会以Tooltips显示该时刻的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/rdJ3ADOTTemI-UGe6xOfGg/zh-cn_image_0000002194009788.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=07B4E2ED5C064B0A20784B5D944F9DE024640DB763452D810FEB04233D1C3F78 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/k-QpKQYhShS5OvhWWuDxGA/zh-cn_image_0000002194009788.png?HW-CC-KV=V1&HW-CC-Date=20261114T005415Z&HW-CC-Expire=31536000000&HW-CC-Sign=57FFEAC97DA053A2EC05850E12222DB55D3B6199D823A8FC0A9C6F033BFDE3BC "点击放大")
 
 本文采用的测试方式是让应用运行30秒，每3秒记录一次功耗数据，取设备从第6秒到第21秒的5个节点的平均功耗。此时设备已平稳运行，功耗也趋于稳定。
 
@@ -96,7 +96,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 **效果展示**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/gVlEQjIcRV6ExBhoMchHSQ/zh-cn_image_0000002229335581.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=20E123884A4477CC58CF7DD0ECEC94F2F3002A9F6FF5C9D73B9C8BD8012603A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/VFUO9YsHRWa0SOI5G3AyfA/zh-cn_image_0000002229335581.png?HW-CC-KV=V1&HW-CC-Date=20261114T005415Z&HW-CC-Expire=31536000000&HW-CC-Sign=80BB81CECC904CB8817CA4C40C985A1869FF0AB2F42BE8B6F023A81F2963EC23)
 
 **功耗对比**
 
@@ -108,7 +108,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 打开手机屏幕刷新率设置，可以查看刷新率变化。使用Profiler工具，可以查看功耗变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/6TodZ35oRySbwf7Yfp7Vmw/zh-cn_image_0000002229450069.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=4123CD5EC54BC50FC55077CDB513EE5766BBCBBE393D95C535683A93A3005875 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/Y9pbTlSITouVIrteUq4RMQ/zh-cn_image_0000002229450069.png?HW-CC-KV=V1&HW-CC-Date=20261114T005415Z&HW-CC-Expire=31536000000&HW-CC-Sign=47F93F1E0FBCE8D24CD2299393B6ABA10C6E37D7AC68544B516D634B291DA6CF "点击放大")
 
 从图中可以发现，当屏幕刷新率降低时，功耗也会降低。
 
@@ -263,7 +263,7 @@ this.backDisplaySyncSlow.setExpectedFrameRateRange(range); // Setting the frame 
 
 **效果展示**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/aNvQ9_B5QzWxcwh81hUA-w/zh-cn_image_0000002193850184.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB12FA07D20C8DC643C9878DBCD1772F670829295BDCAB7765A17B5ED48E7D44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/wNDATcjeSSadHuQV70AMwQ/zh-cn_image_0000002193850184.png?HW-CC-KV=V1&HW-CC-Date=20261114T005415Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E6DD0BD62E0315BD57C63E1AE1A914A9E4954516BE5769CD3F5768B98C0785C)
 
 **功耗对比**
 
@@ -275,7 +275,7 @@ this.backDisplaySyncSlow.setExpectedFrameRateRange(range); // Setting the frame 
 
 开启手机帧率设置，查看帧率变化；使用Profiler工具，查看功耗变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ml1mlq_ySaCBvady3yo6dg/zh-cn_image_0000002229450057.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DF993D6EDA770EAFA93C15963398C94813E6745359D3056407F4B0061642E4F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/u1I6H__oQ_eNjelY1IAaHw/zh-cn_image_0000002229450057.png?HW-CC-KV=V1&HW-CC-Date=20261114T005415Z&HW-CC-Expire=31536000000&HW-CC-Sign=35BB508C65E11231CE93F78C23B2EC2705199B7B177DF8CF55734976505F37D5 "点击放大")
 
 屏幕刷新率降低时，功耗也会降低。
 

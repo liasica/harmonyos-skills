@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-b
 title: 内容分享
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与手机碰一碰分享 > 内容分享
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:752dfa3cecd742fcfd7f8a64c34ac16f11b97496a5772a0a66923896cdbe1f3e
+scraped_at: 2026-11-14T08:48:33+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:7c5a44d91d54594b94d2593b50f581d477d84e7aa0e5ed59ba7f5fc83083de73
 ---
 
 ## 注册碰一碰事件
@@ -16,10 +16,10 @@ content_hash: sha256:752dfa3cecd742fcfd7f8a64c34ac16f11b97496a5772a0a66923896cdb
 
 * 文本提示**可碰一碰分享至 HarmonyOS 5 及以上版本手机**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/UEoI84UTSKaeZVrJmHfKwg/zh-cn_image_0000002786360598.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=96D1B6AE14C12121CA3EA781DC7F3A47A843458BD718B6258ADBC7567ED45701)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ybiIglFVQWSAprp20DZ-mA/zh-cn_image_0000002817507763.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CDD9B28AFAC2C9D13840B1FBF8853800E20896019744221F1A474E842154090)
 * 动图提示**可碰一碰分享**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/_ZLpJhnMTIaDLTsFXy7MjA/zh-cn_image_0000002815560019.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=1352139674B0920BF54EEC479A40363531B3EB0E855C8AACD9775748E04F848C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/7RV3N7f7TKi77cfDXBBZvQ/zh-cn_image_0000002788308332.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=33E732D5305F891DDA047895403C83092B20FA46866AD3332080C0848884C6DA)
 
   Share Kit提供统一的动图资源文件以方便应用接入。
 
@@ -73,7 +73,7 @@ export default struct Index {
     harmonyShare.on('knockShare', capabilityRegistry, (sharableTarget: harmonyShare.SharableTarget) => {
       let shareData: systemShare.SharedData = new systemShare.SharedData({
         utd: utd.UniformDataType.HYPERLINK,
-        content: 'https://sharekitdemo.drcn.agconnect.link/ZB3p',
+        content: 'http://sharekit/example/hyperlink', // 仅为示例 使用时请替换为待分享的链接
         // 根据title,description,thumbnailUri会生成不同的卡片模板，具体可参考设置配套的卡片样式。
         title: '碰一碰分享卡片标题',
         description: '碰一碰分享卡片描述'
@@ -138,7 +138,7 @@ import { harmonyShare, systemShare } from '@kit.ShareKit';
 import { fileUri } from '@kit.CoreFileKit';
 
 @Component
-export struct HarmonyShareScenes {
+export default struct Index {
   // Entry Component 代码片段
   onPageHide(): void {
     let uiContext: UIContext = this.getUIContext();
@@ -173,7 +173,7 @@ export struct HarmonyShareScenes {
     let filePath = contextFaker.filesDir + '/exampleKnock1.jpg'; // 仅为示例 请替换正确的文件路径
     let shareData: systemShare.SharedData = new systemShare.SharedData({
       utd: utd.UniformDataType.HYPERLINK,
-      content: 'https://sharekitdemo.drcn.agconnect.link/ZB3p',
+      content: 'http://sharekit/example/hyperlink', // 仅为示例 使用时请替换为待分享的链接
       // 根据title,description,thumbnailUri会生成不同的卡片模板，具体可参考设置配套的卡片样式。
       thumbnailUri: fileUri.getUriFromPath(filePath),
       title: '碰一碰分享卡片标题',
@@ -208,7 +208,7 @@ export struct HarmonyShareScenes {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/vVxL01jkT_WjnOZRgbWygA/zh-cn_image_0000002815560023.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B8022931C029BEB29FD1E91A7452289940214FA7E9527F18FE3E4589F292663)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/_hMWU0wtTT2XW4yRzvKNLw/zh-cn_image_0000002788308336.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=26FA8A26AC81CEFE177FD10EFA8CE1BA1A3C64DA29F5002F584717E0A4DD56B4)
 
 示例代码：
 

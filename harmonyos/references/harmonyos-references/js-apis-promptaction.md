@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.promptAction (弹窗)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.promptAction (弹窗)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:57+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:6d395d1239b72b820776ef83fd1064a03f612dc27f94a773f9621b2c1f0b3a3b
+content_hash: sha256:f4ee54a2fd4cad2fe8dba227649ecddb7c265eb7028c7f79d31ff14647caad61
 ---
 
 创建并显示即时反馈、对话框和操作菜单，适用于系统通知、交互确认、菜单选择等场景。
@@ -107,7 +107,7 @@ struct toastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/xTOqDdgHS4yqvOVN0-G0Ag/zh-cn_image_0000002786360908.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=23ACA8E5E3654F42AA64B78DE057BDAD2F0BCE0538B9562ACEAEDA596D732FC6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/RTB2Z_gwRnaTv3ix3DDizg/zh-cn_image_0000002817508073.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=46EA898993FBE81F818E369837B92B752ADC1127AFD6B835B22B0F2615B09267)
 
 ## promptAction.closeToast18+
 
@@ -795,11 +795,11 @@ struct toastExample {
 
 API version 11及之前Toast样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/7jYNNz-ZRQizYIsBZX3vPw/zh-cn_image_0000002815400413.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=20EF99D2A9DC693E9345384B76617683386E038517538B206F54EC1D69C333CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/tKTR5bE1TQ6PCArrJKIaVg/zh-cn_image_0000002817428005.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D59D953A4AFC39FA5B9A17B7E7211A5F9FF9974731C9AADC796BC453088B3F8)
 
 API version 12及之后Toast样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/fzV4L5PuRoqd12HZAdRE6Q/zh-cn_image_0000002786520838.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7C7CC6441D7B0E8455BF1097673DBF0DDD4C85556804195E00B94BE44435D5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/PISdjZ9KTTOeSnRO5DWHvQ/zh-cn_image_0000002788468586.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C7CA714431014D1F60D08DA730ACEB6F8547041D123B3CB587E5B8FA3016C18)
 
 ## promptAction.showDialog(deprecated)
 
@@ -864,7 +864,7 @@ promptAction.showDialog({
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/c2d19T0ZRhyNXbBhFMexKw/zh-cn_image_0000002786360910.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0325FB14A5B9854C10DD1D7F73928CFA1523252CB323801561DBC60F4A7D178)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/SMRF4YCYQ5WRzLJUzfcL8Q/zh-cn_image_0000002817508075.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F0413BE2ACF216BF1947744913DEC7A9E09D520062D3949E1F0BA8829AEAC66)
 
 ## promptAction.showDialog(deprecated)
 
@@ -931,7 +931,7 @@ try {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/GRIR1BQuSRCfSTeSc1ki1A/zh-cn_image_0000002815560331.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=63C07CD8AE831729721C46CDA9AA3A68146CE2F38DA3438D4CC6534CA3C4DB9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/-AD6zfP8Tz6UFNzMHjbg9Q/zh-cn_image_0000002788308644.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=25902AC0BBA65DB7BCB3C4CE9D1A673965B6124A618CCB999221AD9B43515B0C)
 
 当弹窗的showInSubWindow属性为true时，弹窗可显示在窗口外。
 
@@ -969,7 +969,7 @@ try {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/7NUnH9uyT2aNu6PPhDUQeg/zh-cn_image_0000002815400415.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=47FD9A2402C7CA171825106B6CE8B444E8A5E5416803329BF3907581D82D0A85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/lKaSv5pMQ-yaMVqNRxvUPQ/zh-cn_image_0000002817428007.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=8408C48AF5E9F681D5947093F1B687FCC619F3502DA07168DC591CFA3E35E4BE)
 
 从API version 19开始，该示例通过调用[ShowDialogOptions](js-apis-promptaction.md#showdialogoptions)中的onDidAppear、onDidDisappear、onWillAppear和onWillDisappear属性展示了弹窗生命周期的相关接口的使用方法。
 
@@ -1032,7 +1032,7 @@ struct DialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/nz4sjJTeQT6YBD-oKWY2Tw/zh-cn_image_0000002786520840.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=954B4A80B508CDD84F2C65484F585AE40D228D33A4D0082205F2424ACEB257F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/YHxevDgBTGeAlVxpmJ3zmg/zh-cn_image_0000002788468588.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=47DE5EC6A483D216BC31A5E30BBD49EE4D565D87C9CE781073DD24EAC61E6436)
 
 ## promptAction.showActionMenu(deprecated)
 
@@ -1098,7 +1098,7 @@ try {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/X35zK-wPTKKg8HPB1hE6hw/zh-cn_image_0000002786360912.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=880869761A4D0A2FCD676183717CDBE72C1E791B2A5C0A73F6E55C2AC2C92F2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/M5-WqEBZTFGc_BCjw-MNgw/zh-cn_image_0000002817508077.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DEBB1B2AFD96F55E948FF9483F979FB140EC135EB95D8DDA5610F68AFAC9239)
 
 **示例：2**
 
@@ -1173,7 +1173,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/kLn0jjy6R8yjs2WyFmlkdw/zh-cn_image_0000002815560333.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=F73233449C975C3BD7885D962E27DE3FD1D102DAE5DFFC692235157C49514F72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/zSlxdB2TSBmTCsiXLsBHiQ/zh-cn_image_0000002788308646.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD5DD249C54E8EA4CA64910344A036DC38D3BF12F7EF625BCEFE28B9124A8417)
 
 ## promptAction.showActionMenu(deprecated)
 
@@ -1237,7 +1237,7 @@ promptAction.showActionMenu({
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/nWEm89UCQnCU0g1G8o7WCw/zh-cn_image_0000002815400417.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDD73FB62E4AE76BF1599CBCC77933F05FA9EE710D3E56F110300CA1D22BA76D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/y9x-TWk4TqOvKII0LDYRLQ/zh-cn_image_0000002817428009.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F998B540CF97C9E0462A0D0FA85C658D7EA820BADE1CB126CBB8388BCED47E4)
 
 ## promptAction.openCustomDialog(deprecated)
 
@@ -1433,7 +1433,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/4ebayKYaQFa4Su3XALmUYQ/zh-cn_image_0000002786520842.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=84DD74A0E7E537CFFF092AEB10AD601A8A8DBE3855ED5AA99CA3E9D67E7E3490)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/p6PhRffeQFWjJVtD1bUiNQ/zh-cn_image_0000002788468590.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=2750BBFE6E6B2F075E72BC462B81852F0823C34DE871E47ABDF40A5D60EB2D2E)
 
 该示例实现了一个页面内的弹窗。
 
@@ -1523,7 +1523,7 @@ struct Next {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/20xcZg_rSW62hk8n5CsVig/zh-cn_image_0000002786360914.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=60D7AFD395144598203130275439FFDC3C0F31545323BF6FD57BF26E76831CB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/6eMi-g6rS4CamFK3MWYfIA/zh-cn_image_0000002817508079.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=80242DD2BED9FF81EC9199991424916E42D68E40079AE3CA957CAA74964207A4)
 
 ## promptAction.closeCustomDialog(deprecated)
 

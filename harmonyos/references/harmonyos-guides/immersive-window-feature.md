@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/immersive-win
 title: 窗口沉浸式
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口基础能力 > 窗口沉浸式
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:13+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:b2772089c93e2891652d035f4c7360043dcba16edb7e58d73f901a373eebd4e9
+content_hash: sha256:8d876e7437c9a6ab47c300c6a51e5f19f5890dbfad60ba6fe0136bafc0ce3564
 ---
 
 ## 场景介绍
@@ -28,7 +28,7 @@ content_hash: sha256:b2772089c93e2891652d035f4c7360043dcba16edb7e58d73f901a373ee
 
 典型全屏应用窗口包括系统界面元素和应用界面。其中系统界面元素包含状态栏和导航区域，通常在[沉浸式布局](immersive-window-feature.md#沉浸式布局)下称为避让区域，避让区域之外的区域称为安全区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/rsxvofnrS1WZ37KF9w7FSA/zh-cn_image_0000002815398915.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=A89174676239AD49FDD43B464DE43283FA83EC60CCBEB99411C02AA35E439002)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/tQZm6iugQ5iwOL5LwWvUgQ/zh-cn_image_0000002817506573.png?HW-CC-KV=V1&HW-CC-Date=20261114T004406Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA6AFED552D7296B74C03D91AF750D0BE278990F67AC5C15A1BBAAEE6BB00434)
 
 ### 沉浸式布局
 
@@ -125,13 +125,13 @@ interface Rect {
 
 在避让区域的计算中，将窗口按照对角线分为四个三角形区域，当对应系统界面元素的位置（矩形中心点）落于某个方向上的三角形区域时，提供的避让区域将在对应的Rect中。如下图所示整个矩形为窗口区域，以窗口左上角为原点，水平向右为X轴正方向，垂直向下为Y轴正方向，窗口矩形的两条对角线将整个矩形划分为四个方向上的Rect区域，用以表示避让区域相对窗口的几何位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/6IVWMOftRO-EbMK2HyZ1OQ/zh-cn_image_0000002786519342.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CD8D100DE8C0F16F705C6E0C3521B8E0D10C95093311361B492DF485FD9ABD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/S23N4_KvR3mxfSn8ALpw5Q/zh-cn_image_0000002788307146.png?HW-CC-KV=V1&HW-CC-Date=20261114T004406Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8E6CAD2994AB5B8F86F2179221FDECF3D7055B480346D1DBC56FC0DED4B1032)
 
 其中每个Rect为(X, Y, Width, Height)构成的四元组，表示以**窗口左上角为原点**的唯一矩形区域。
 
 如下图，挖孔区域表示为 **[topRect, (x1, y1, w1, h1)]** ，底部导航区域表示为 **[bottomRect, (0, H-h2, W, h2)]** 。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/tBg3Yz2-QPuosEmEjdUxZg/zh-cn_image_0000002786359414.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=2500C28B2541588BF192687791F64A4B0C4D801C70039064437A26D7740D434F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/AYwytU3ARA-JEA6HrMtt5g/zh-cn_image_0000002817426509.png?HW-CC-KV=V1&HW-CC-Date=20261114T004406Z&HW-CC-Expire=31536000000&HW-CC-Sign=8682A49245E901A3E7372D1D2118AC9BF13BA99B5611F681E9AE705F97D56DD4)
 
 ## 隐藏系统界面元素实现沉浸式效果
 
@@ -141,7 +141,7 @@ interface Rect {
 
 [setSpecificSystemBarEnabled()](../harmonyos-references/arkts-apis-window-window.md#setspecificsystembarenabled11)、[setWindowSystemBarEnable()](../harmonyos-references/arkts-apis-window-window.md#setwindowsystembarenable9)等控制系统界面元素显示的接口仅非[自由窗口](freeform-window-overview.md#自由窗口)状态下的主窗口支持调用，在[辅助窗口](window-type-overview.md#辅助窗口)中调用或[自由窗口](freeform-window-overview.md#自由窗口)状态下调用不生效。在主窗口非全屏/非最大化模式时调用不会立即生效，应用在进入全屏/最大化模式后配置生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/MHYt3wR_TuGcb-08DGsugw/zh-cn_image_0000002815558835.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=40BB0E6BA6B4DCA9626217043CAF00F93DADBDBDFDC306207989D2BB6ED9472B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Wi9lGQXkQeukTBX1umHZTw/zh-cn_image_0000002788467090.png?HW-CC-KV=V1&HW-CC-Date=20261114T004406Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CD39EC16C4F6C8E5CD7DDA46DD3EE89D59C9D6E306FF715A272D0F0F5979E3B)
 
 1. 调用[setWindowLayoutFullScreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)接口设置窗口进入沉浸式布局。
 2. 调用[setSpecificSystemBarEnabled()](../harmonyos-references/arkts-apis-window-window.md#setspecificsystembarenabled11)隐藏状态栏。

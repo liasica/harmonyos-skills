@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-silen
 title: 静默登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 静默登录
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:10+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5986d91242af0781cdec5fe5bc65863033b8d3a66e76eb344ff160e9101193d0
+content_hash: sha256:d44188f6f2dd45af2cf52c27f4e0ba9dadf814698d0599f4d8532fc92dbad520
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:5986d91242af0781cdec5fe5bc65863033b8d3a66e76eb344ff160e9101
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/5tW994f6SKOvFOEo9_d4Gw/zh-cn_image_0000002815559561.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDEF705D9A48B508E863A438FEB8461FB1D5333C002DC702497F09C40DDAF244)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/0_gcwjwfR6a8cWb-ylY6EQ/zh-cn_image_0000002788467816.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=31875FE608DE98E3D04A330B797010A7A70F2ED220563E0A8CA6A352A8DB5CCB)
 
 流程说明：
 

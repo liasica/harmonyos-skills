@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hicollie-sett
 title: 使用HiCollie监控函数执行时间超长问题（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 业务线程超时检测 > 使用HiCollie监控函数执行时间超长问题（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:56+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-14T08:47:48+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:65e194ea635dcd188d610d212c6fa2af47252886f897dbe402718b0f7438ca81
 ---
 

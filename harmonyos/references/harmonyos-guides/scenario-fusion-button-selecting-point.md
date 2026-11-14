@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 地图选点Button
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化Button > 地图选点Button
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:40761cb3b1e65f4e3d4fff183933687311b92372c722bfedd0acef1f3f924cca
+scraped_at: 2026-11-14T08:48:31+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:0b1d4cef111f914f7d9f15796d4bd7c9f234bb05919f7572fa7b10a1814c81e1
 ---
 
 ## 场景介绍
@@ -69,6 +69,7 @@ content_hash: sha256:40761cb3b1e65f4e3d4fff183933687311b92372c722bfedd0acef1f3f9
                  }
                  // 成功日志处理。
                  hilog.info(0x0000, 'testTag', 'succeeded in choosing location');
+                 // 获取地图选点信息。
                  let name: string = data.name;
                  let address: string = data.address;
                  let longitude: number = data.longitude;

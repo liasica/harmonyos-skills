@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsTabs (底部页签)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsTabs (底部页签)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:51:19+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:496ffef144db8ecadf3ffb06299070a995e7ab3a9535f3553a432117e934d717
+content_hash: sha256:202b74697f2cd762228980649af2d675a52937b0de1e4142aff449df580e4a3c
 ---
 
 本模块提供Tabs容器组件的分割线样式，模糊样式和页签侧边栏半屏居中对齐样式的效果。
@@ -1234,7 +1234,7 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/t6gfVQhST9ameB5pt4vgig/zh-cn_image_0000002786522018.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C18F865E3293844DA4B5EA459938D801B2F46953670BB9808148BA011DDD040A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/-kIbYzttQVyC-sEiUFGnJA/zh-cn_image_0000002788469766.png?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=1052BD98F429DC712600C5C191F35925C64229D834B7BD53C5FDD0663909542A)
 
 ### 支持出血效果
 
@@ -1283,7 +1283,7 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/MrSCFFhESh2NMWspcOoOYA/zh-cn_image_0000002786362090.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=708489F67BAB5B1ABD7AE16F871E01FCC2154E03D1383AFCE0D373A6DFD5A7B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/PICNdanUR-aoWSU5KtXDRQ/zh-cn_image_0000002817509255.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D31C76503CF935F6F2D6366531878E50121C7C22B96B066343B50925AB0EDE3)
 
 ### 页签半屏居中对齐布局
 
@@ -1329,7 +1329,7 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/rEMdamy6T0yykDE3CPdCsQ/zh-cn_image_0000002815561511.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=4496F8DC49B4A3106D90C97AC8915788EB68E233550B96E8FDF9933B07FCB8A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/8_paJW0USXCpb_6NbmOcuw/zh-cn_image_0000002788309824.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=8145F2EB0086824B36519BEEE9F19DF205AA2833147F3077DAE098F115019A58)
 
 ### 页签栏悬浮样式
 
@@ -1415,4 +1415,4 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/e4khh30jRnKopflmyOVRyg/zh-cn_image_0000002815401595.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EA81670BD91B147427778BF1E07545F9CA0F785A8CCAE5530349EB5EC8545AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/cPWZgd4OSbeyQ2H6qKZuMA/zh-cn_image_0000002817429187.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD3F89A0E6B202DA7AC3BA2F999B7418E1E3F72DD64144060CEDED5B5BF4C090)

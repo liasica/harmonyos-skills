@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataaugmentat
 title: 智慧化数据检索-ArkTS
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > 智慧化数据检索-ArkTS
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3c7d7c9b29cf345b889c18a57668250857ba07a1846888977647347c17f0ea15
+scraped_at: 2026-11-14T08:47:18+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:642f6c383b492c59ca622b6f9ae4f79d08f058ece4fc57fbbdfe950de0e95896
 ---
 
 ## 场景介绍
@@ -70,7 +70,7 @@ content_hash: sha256:3c7d7c9b29cf345b889c18a57668250857ba07a1846888977647347c17f
 
 以多路召回结果作为输入，基于RRF算法实现多路召回结果的重排，并支持多路召回的每路进行权重配置。RRF算法通常会根据元素在各个召回策略中的排名来计算RRF得分。例如，对于一个元素在不同召回策略中的排名分别为 \_r\_1,\_r\_2,⋯,r\*\*n，其 RRF得分可以通过以下公式来计算。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/jn7expxaSaSa52F3jF0qyg/zh-cn_image_0000002815399021.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE4635822A8E4F2B33CC1FE35F9A06FACFC3A0A5821C6D44568F0D787CB5ED0A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/TnzHAmawQe24-XcKkb4q6g/zh-cn_image_0000002817506681.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3DF2DC15D7B79392E45C4DEFF81493C435E6FC74A60BF96056489F17795B03F)
 
 其中\_k\_是一个常数，用于调整排名的影响程度。通过计算每个元素的RRF得分，将元素根据得分进行排序，得到结果列表。
 
@@ -285,7 +285,7 @@ content_hash: sha256:3c7d7c9b29cf345b889c18a57668250857ba07a1846888977647347c17f
    }
 
    let invidxWeights:Record<string, number> = {
-     'vectorRecall':0.5
+     'invIdxRecall':0.5
    }
 
    let vectorRerankParameter:retrieval.VectorRerankParameter = {

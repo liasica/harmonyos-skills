@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/build-with-nd
 title: 使用命令行CMake构建NDK工程
 breadcrumb: 指南 > NDK开发 > 构建NDK工程 > 使用命令行CMake构建NDK工程
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:42+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:adfc19a79b89bc82b250bf194ff54c951c21e569fbb4ceb656b3255c8984bf3e
+content_hash: sha256:88f206ea1c25abf78df5f48da1ea421f143c8d9e30109856163a2f1be73742da
 ---
 
 在很多复杂应用工程中，C++代码工程是通过CMake等构建系统以命令行方式来编译构建的，接下来介绍如何把已有的CMake工程切换到HarmonyOS工具链中，从而使用命令行CMake构建该工程。
@@ -49,11 +49,11 @@ content_hash: sha256:adfc19a79b89bc82b250bf194ff54c951c21e569fbb4ceb656b3255c898
 
      右键点击我的电脑，在下拉框中选择【属性】，然后点击【高级系统设置】，进入【环境变量】，找到【Path】并点击【编辑】，接着点击【新建】添加路径，保存后退出。最后打开cmd（若下一步不能够实现，请重启电脑尝试）。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/iFlzak_6RJus3L_Xn77uEg/zh-cn_image_0000002786520712.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=643EA82EC50EB3CC559584402266740032FBB939E5F08B6EC83BA0D77EF26A23)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/j7t9tEOjQ12Jw4JVC2rlnw/zh-cn_image_0000002788468460.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DF146F307EB19AEB5A6D64B0FACF51D474B8F5B5E8DF8B672602B26D09D7893)
 
      打开命令框，输入cmake.exe -version，命令行正确回显cmake的版本号，说明环境变量配置完成。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/58V6198sRVCHTIUc1tSvgQ/zh-cn_image_0000002786360784.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FEB3CC5206C8CE643CB34DE30532429BC8C67F2C626A0DD1BF244B041032B77)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/PYvZHG8mRH2eH8eVQeiV5Q/zh-cn_image_0000002817507949.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=87E49A74240A2777998C77CC32452752FDD7B13B608C7DF3F4C0BB57363808E5)
 2. 查看CMake默认路径。
 
    * linux 和 mac 系统环境下
@@ -193,11 +193,11 @@ int sum(int a, int b)
 
 在windows下使用cmake进行编译，与linux下不同的是，使用cmake要加入参数 -G 选择使用的生成器，直接回车会列出下面的生成器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/CPtquvgUSYi-4EbZ3ykQuA/zh-cn_image_0000002815560205.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB75F5FF2C38CE70C1EA55A08E997D82B10C29B2522A4E1C573E275420DB2854)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/lWCu_2eeRX6hFP9ylWqLcQ/zh-cn_image_0000002788308518.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=D163280688D327091478D9C9017E63E8345A62D5216373B7C57ABA24D8FAAEFC)
 
 这里使用的是cmake .. -G "Ninja" 引号里面跟的参数就是上图查看的环境所支持的生成器，这里ndk中自带的生成器是Ninja。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/7fa6-aN8Q6yuK8o0a4VLPw/zh-cn_image_0000002815400289.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7C2D5A931D954BC9EA6E663AE193F879B6BFE57265821CA2315BA888688EDD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/GG6W8G97TaeTtKUGgeVf_Q/zh-cn_image_0000002817427881.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=E45A363684C96022FC3B1CCD6A50FA6004A01BC55BB3D875EDF4946C4CFCD09E)
 
 Step 1. 同样在工程目录的模块目录下创建 build 文件夹，进入build目录并执行以下指令：
 
@@ -211,16 +211,16 @@ Step 1. 同样在工程目录的模块目录下创建 build 文件夹，进入bu
 
 执行结果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ereperpySK2OZvTbRW2_9g/zh-cn_image_0000002786520714.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC6740240AF71A6620F7B5862FB3EA8D88D32727B8F820AE959DEB0C48552BBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/-Rtd_k__SECnjVv8ZNobwg/zh-cn_image_0000002788468462.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1C7D0685C3931B00FF1FE503485F23401E7293DF6DE213DE0A426AC8A15AC7D)
 
 这里生成的build.ninja文件就是我们需要的。
 
 Step 2. 让我们用ninja指令来编译生成目标文件，其位置如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/OdqhVHSNQ6-thFaLPmO9tw/zh-cn_image_0000002786360786.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=C44EF1C21C14F06AA89653AAB5CDC58FDFC65A258593CBBAB3C901B2C554D572)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/2MB3MkocRROZOu9Qc614Fw/zh-cn_image_0000002817507951.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=4464134DE6740B641BA7E00DB4D3DD776871A42DA9E393CD4E3683AB9915AC05)
 
 ninja -f build.ninja 或者用 cmake --build . 执行结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/H2R8oT06RWSgCKZ-_evvRg/zh-cn_image_0000002815560207.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=70041091270E1CD07F46FE8C7BB6B6547C5DE9F9C317AC0F9997F4E9DDB38CF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/xqqEO3DrRS6kygOdhER1tw/zh-cn_image_0000002788308520.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F7873A961B3EF2A5B4D8E453F4C546B95224FF05D71E52CD52BF505DBCB7CAB)
 
 编译生成的可执行文件位于创建的build目录下的src目录中。

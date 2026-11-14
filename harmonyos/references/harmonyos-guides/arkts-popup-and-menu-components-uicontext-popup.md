@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-a
 title: 不依赖UI组件的全局气泡提示 (openPopup)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 气泡提示 > 不依赖UI组件的全局气泡提示 (openPopup)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:9e5b59ebed8eb49aa94a89e9860a60d38171f0a0f7c8aab810acab39829bda3d
+content_hash: sha256:4e096ca48ebf210ec767c67c8358f6ddadb2190ddd2b898ea6b6b7249647b6a3
 ---
 
 [气泡提示（Popup）](arkts-popup-and-menu-components-popup.md)在使用时依赖绑定UI组件，否则无法使用。从API version 18开始，可以通过使用全局接口[openPopup](../harmonyos-references/arkts-apis-uicontext-promptaction.md#openpopup18)的方式，在无UI组件的场景下直接或封装使用，例如在事件回调中使用或封装后对外提供能力。
@@ -329,4 +329,4 @@ export struct OpenPopup {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/5iu3soj4QrGKGqikQuln9g/zh-cn_image_0000002786359074.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5A484DFC377E9FC8EFAEE885B5805D56125DB469912461730F121BB91DC0167)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Epm0HvRWT12dWNuCOsWp-w/zh-cn_image_0000002817426169.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C08C3FAAFE6A109D9A15F6DD7A1354296F99B4D4DC052D2C062640307D45F29)

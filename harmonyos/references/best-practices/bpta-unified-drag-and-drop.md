@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-unified-dr
 title: 统一拖拽
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 统一拖拽
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:04+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:9e8503d480d2b969dfb9a4d9bbb1e20d779b9c2dcdf905dad981ec4f7adb432d
+content_hash: sha256:4e279fc80c278e1f88783c8733b8677bc51d2737a9ea123f8a6169ed655295e2
 ---
 
 ## 概述
@@ -157,7 +157,7 @@ Column() {
 **运行效果**
 
 **图1** 拖拽图片增加水印  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/hNCwZMgBTUOpxkD7JVknJQ/zh-cn_image_0000002315615638.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B3559B4F31783F1BF79853360AD8DF5BFCD6CE6DA107E558570D9C0167C0717 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/RC_GPkiITy6psinG3blRfA/zh-cn_image_0000002315615638.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD6E3A4961BFE2F727D317F3CD9CB6E7B9B1B50E9EA1F721F12FC029920503C6 "点击放大")
 
 **实现原理**
 
@@ -275,7 +275,7 @@ Column() {
 **运行效果**
 
 **图2** 自定义拖拽背板  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/phP-0ZJlSR6Bj_4JtuNfSQ/zh-cn_image_0000002349574333.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C0A71F38B8AA5183B6825439FB48C235D199E6DAB7C3F8867FF32A3FCE44425 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/d2J7URcJQsuHZRwR6eTWKg/zh-cn_image_0000002349574333.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D6CEF2C5A6F0BD4F6823136702F970506771DCD567B431C2B0B34ED4942B860 "点击放大")
 
 **实现原理**
 
@@ -363,7 +363,7 @@ Column() {
 **运行效果**
 
 **图3** AI识别拖拽内容  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/wFWVJumiQjOUECoaGJ2Xrg/zh-cn_image_0000002349614541.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D978DB90DE4F1BB4B25C2E7B7ABF98A4F24BF6401AEC4943FDA9CDA85434D183 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/DAZaur4OR2OesSsi2ojXww/zh-cn_image_0000002349614541.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=92114F525FDB46BDA8BB445CE692C1692D4C9F0A4CDCF1541DF458011F25BC17 "点击放大")
 
 **实现原理**
 
@@ -509,7 +509,7 @@ Column() {
 **运行效果**
 
 **图4** 在线图片拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/X6Uw6d0ITaCeyybdA7LNmw/zh-cn_image_0000002315775454.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D4E7B599EB36FA397E19BD93BD41E3BA681910ABB71B2CEC9E3EB3CDB30D4AF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/vUuUuTNQRcWGo94QjpI3Ew/zh-cn_image_0000002315775454.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DE65351DAAE25405B9D1620F19B830359E450873D9AC108D46AF8049C878053 "点击放大")
 
 **使用说明**
 
@@ -622,7 +622,7 @@ Column() {
 **运行效果**
 
 **图5** 本地视频拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/gvzPE7ruSAiQ2zctdSkQ3A/zh-cn_image_0000002315615654.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF1042C156CA4055AA1AFBF63FBD557A5D728B2C7E7AF1C182A2ACF57774DD9A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/YdkNMiQQRvmJk_P8wVV6fw/zh-cn_image_0000002315615654.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACC0CEF6F47024FD4FED00DB32A1550F78E4F97A5992AB9C3A4396E5DE297A94 "点击放大")
 
 **实现原理**
 
@@ -735,7 +735,7 @@ Column() {
 **运行效果如下所示**
 
 **图6** Text组件图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/3UqB_zcLQvSJGqqx9PnceA/zh-cn_image_0000002349574337.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=7865B7C55A530E9E2647FB0B5D10207CF94361A3214969D07202C6CFFEAE9964 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/3sFMXRVgQHCWegxvxLU_eg/zh-cn_image_0000002349574337.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEBD6E3FF88F2A65D4ACD83CE33DFCF7D7D0F71E23C3FDC5CD1E90C92C3DCEFC "点击放大")
 
 **实现原理**
 
@@ -794,7 +794,7 @@ Column() {
 **运行效果展示**
 
 **图7** RichEditor组件图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/vegLXlMGQ2mJdsouXq0HrA/zh-cn_image_0000002349614553.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=576B8BCDCA2688AB84F1E2FC3B7B87E318098DE4E8D4924CE831BD64E663685C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/jBzDbIgEQe2gzB606Y0awQ/zh-cn_image_0000002349614553.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=67402870614F14C15BF83C05D79B914338334217E7EC2990CFF68936DD8B5F3A "点击放大")
 
 **实现原理**
 
@@ -878,7 +878,7 @@ async receiveDragData(event: DragEvent) {
 **运行效果如下所示**
 
 **图8** 多Entry图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/uKKh-VulT0-m__QkJwuY4w/zh-cn_image_0000002315775466.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A674309DBC20092310D87003ADA045ECCEA0C9481F95D057B64F331E5059497 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/XEM4k8ohTtG3x3v49YWLlw/zh-cn_image_0000002315775466.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F5E9EE622BBDD9A9C5762EAC72A640EAAAC15BADA5FEB6D49A6E7B44A6B193D "点击放大")
 
 **实现原理**
 
@@ -1122,7 +1122,7 @@ async receiveDragData(event: DragEvent) {
 **运行效果如下图所示**
 
 **图9** 分屏拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/TkFaStS-RBypmJvpl8hq3w/zh-cn_image_0000002315615670.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=90A34F954A6240DF59C8FCC908E3E68B6D1E363A035779AFAC08838A23CFAAB1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/941RreMoS32xRaUIQgUG9w/zh-cn_image_0000002315615670.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=D43238137C5E6A171FD3C6F407AFC7D664153025F112561F94E00890C858E98C "点击放大")
 
 ## 跨设备拖拽
 
@@ -1135,7 +1135,7 @@ async receiveDragData(event: DragEvent) {
 **结果展示**
 
 **图10** 跨设备拖拽效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/H_22YvO1SdikdTc4xHSZLw/zh-cn_image_0000002349574349.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C79138ED970E1388043A9C13FB805E8E9EBDE50FCE42D00DE64C6F2175F3464D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/w0zYQ58hR82nyD0UV1w0QA/zh-cn_image_0000002349574349.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FC00A828C2F5B144AB33465FC7D015DAC15C279E9AF4FB2AD663376A5EDF0D1 "点击放大")
 
 ## 拖入小艺和中转站
 
@@ -1148,10 +1148,10 @@ async receiveDragData(event: DragEvent) {
 **运行效果如下图所示**
 
 **图11** 将数据拖入小艺  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/GsR1791aQ-24VHGROQFaKg/zh-cn_image_0000002349614565.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBE86424C52FC2DC007CCCF1B14AA650FCCCCCE765AD4B45AA59F97FEA5C8F34 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/s7lAae7nTZqBZcmp-S55gQ/zh-cn_image_0000002349614565.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F225A5F82A398975019C41AE5F561E995520FAC7D3F7514BECD583DDF7B78DE "点击放大")
 
 **图12** 将数据拖入中转站  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/d-392SL_R_y8_zpRzCQEyw/zh-cn_image_0000002315775482.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B569789EA33070A8999E3F65A64DE91A2286D768A8E64DC98B533BCDB2C56FF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/rxjBSq8_Rze9VyRq4zUGFg/zh-cn_image_0000002315775482.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=42C90FD12FFE77194B4C222864604BEB8F2968362E362200CABFA1531F3C5FE6 "点击放大")
 
 ## 常见问题
 

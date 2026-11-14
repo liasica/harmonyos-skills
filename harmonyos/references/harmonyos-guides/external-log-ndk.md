@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/external-log-
 title: external_log日志清理（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 通用日志 > external_log日志 > external_log日志清理（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:53+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-14T08:47:45+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:3ff6481f0f5cae220f9e8c35c5e62942654cc07da08540aa07298cae1ca19688
 ---
 

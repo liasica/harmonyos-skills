@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-re
 title: 版本说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 版本说明
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:02+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:bc5e9844204253fad1e0a081c40d77245c5d77b495cdc62f5e118ff9fcf8dbcb
+content_hash: sha256:4033e14444516c4ad0c4dde7e1788d289f90da250ed1cf740ea83e6a2e0c85f6
 ---
 
 ## DevEco Studio 26.0.0 Release
@@ -198,7 +198,7 @@ content_hash: sha256:bc5e9844204253fad1e0a081c40d77245c5d77b495cdc62f5e118ff9fcf
 
 如果历史工程的工程级build-profile.json5文件中signingConfigs下的name字段为空字符串，编译时会报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/fYD524xZSOWqdCqZDY7gig/zh-cn_image_0000002808766909.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7D0666F65EF0CFB7D6D78033DDC0E8E7763475B3564ECE01F8563AE528DBEB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/0hTY9rBhRMKWbdIl6Q86_Q/zh-cn_image_0000002808766909.png?HW-CC-KV=V1&HW-CC-Date=20261114T004902Z&HW-CC-Expire=31536000000&HW-CC-Sign=4971A40E23A204D1A32CA74A00ACFBE2CEBBA83C5BC9A53146316E20FCE9D957)
 
 **适配指导**
 
@@ -225,7 +225,7 @@ content_hash: sha256:bc5e9844204253fad1e0a081c40d77245c5d77b495cdc62f5e118ff9fcf
 
 如果历史工程使用了Form卡片并且在卡片页面文件（form\_config.json文件src字段对应的值）中直接或间接引用了HSP模块，则编译会报错，并提示相关文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/UlF5GMuiRBuag54h9V2IUA/zh-cn_image_0000002808886989.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=02D3F50F15E84EACB018846A6613BF847963091AB6520ED429ECCB74698F14A7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/4rysiHN8R3i_Kw0TssgcYg/zh-cn_image_0000002808886989.png?HW-CC-KV=V1&HW-CC-Date=20261114T004902Z&HW-CC-Expire=31536000000&HW-CC-Sign=653CF30E08DD7374ADD6B3F2A655C12E9B6BFEEA49385401710926D9B6F974D2 "点击放大")
 
 **适配指导**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-spatiality
 title: 沉浸光感
 breadcrumb: 最佳实践 > 技术创新 > 空间化 > 沉浸光感
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:04+08:00
 doc_updated_at: 2026-11-10
-content_hash: sha256:b57c18c93ef57a01a598fdc215611f307ac782c6c6bb352f7f4462e4f8337641
+content_hash: sha256:41909c784e8c8d6f45685b6b83e19b701577bf4baedfc3794130a0542e1c317a
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:b57c18c93ef57a01a598fdc215611f307ac782c6c6bb352f7f4462e4f83
 
 [沉浸光感](../harmonyos-guides/arkts-immersive-light-sense.md)是空间化视觉的基石，为组件（标题栏、导航栏、工具栏等）提供三种视觉效果：内容相关的毛玻璃模糊、按压状态的弹性光效反馈、以及滑动过程的透明度渐变。悬浮组件则是空间化的交互载体，底部导航栏从传统的贴底色块变为悬浮圆角胶囊，配合MiniBar折叠展开、智感握姿左右跟随等能力，让交互更加自然流畅。空间化的效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/zCB_0xRhRuK_7qq1QXkYVw/zh-cn_image_0000002594475428.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=F48CD885DBC3326BAF37484EF62F722346894EEF9913A4B52E8A635DA8E7EA9E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/sQFNfUDxSS2q45aqAV9_3w/zh-cn_image_0000002594475428.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E6D90DA2253A10B55870F6FCF4BC814CB817F6BA9D4684165E88F861E8CB2E6 "点击放大")
 
 本文将从沉浸光感的基础概念切入，重点围绕首眼沉浸光感、自适应悬浮导航与智感握姿智能交互三大应用场景，系统介绍如何在HarmonyOS应用中快速接入沉浸光感能力。
 
@@ -35,7 +35,7 @@ content_hash: sha256:b57c18c93ef57a01a598fdc215611f307ac782c6c6bb352f7f4462e4f83
 
 沉浸光感视觉示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/25j7I5LBRIKB0X3nrvN7ww/zh-cn_image_0000002594053198.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7FA49AFBF5F92C079E3B4C10707B16C225A5B3F4FC2AC51A1D978F4DA589DB3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/wMwY_9OzSsaU_IiD6GVzsQ/zh-cn_image_0000002594053198.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=535E66FC06600420138E0CBF1B14E209B7E4AB3BCC96054C88A0BA8E6E1108E3 "点击放大")
 
 ### 沉浸光感的档位
 
@@ -105,7 +105,7 @@ content_hash: sha256:b57c18c93ef57a01a598fdc215611f307ac782c6c6bb352f7f4462e4f83
 
 标题栏是沉浸光感最直观的体现。沉浸光感标题栏示意图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/G65udeI5SOe9e5ulGzfGsQ/zh-cn_image_0000002624492723.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A511EFA2CD1EA8BA9EF5755F6BD964DFDBE2C75D0E32F706A8603E5CDAF0C27 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/XmQw6MxkRDSxE_fcydi8tg/zh-cn_image_0000002624492723.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=78DCFD2F9D998DC591DAE13E74E043936E7324E6505EDA6ADF17D0A4FDC57DA4 "点击放大")
 
 * 标题栏使用材质
 
@@ -143,14 +143,14 @@ content_hash: sha256:b57c18c93ef57a01a598fdc215611f307ac782c6c6bb352f7f4462e4f83
 
   悬浮导航示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/A5HKzUMcQG2v-m-dsdOS8A/zh-cn_image_0000002594213114.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A493D5A20401AF41F106CDE379D4EA07529105392BAFEA02DDA371515234E02 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/4p4GVFfbSFumgnI4I3e_GQ/zh-cn_image_0000002594213114.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA92C1718DFE349FA60FCF165ECA7CF49AD5902718CDB6F8D9AFD4F2E9260695 "点击放大")
 * 设置沉浸光感效果
 
   悬浮导航栏的沉浸光感效果可通过barFloatingStyle中的systemMaterialEffect属性进行配置，其中materialType用于定义材质风格，materialLevel则控制材质强度。
 
   沉浸光感示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/5hq8rn5iTpSMXsraLjCYXg/zh-cn_image_0000002624612573.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=C18EE13E92BA63ECF63BDD0D988FF5745B77BA825CD415761738D33ACD422486 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/DKReEEehQTe7oFzmxXxGWw/zh-cn_image_0000002624612573.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=07C6686AB375C72A9AEDC75CE0D412ABC3511BEFB99AAE8DFD4E0C81158FDF51 "点击放大")
 * 沉浸式MiniBar
 
   针对悬浮导航的多功能场景，例如音乐播放等需同时展示底部导航和播放控制的场景，HdsTabs提供了MiniBar能力，即在底部导航栏中嵌入一个可折叠展开的[迷你栏](../harmonyos-guides/ui-design-hds-tabs-bar-floating.md#迷你栏)。
@@ -160,7 +160,7 @@ content_hash: sha256:b57c18c93ef57a01a598fdc215611f307ac782c6c6bb352f7f4462e4f83
 
   MiniBar示意图如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/BYJfsPtiSeGPor8tRpsgFQ/zh-cn_image_0000002594053200.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=213330B8B1AE0CD07A700BC2CB1918F95649CCFBE5AA952B23568B237C4D3897)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/jbcinbcJQO-OVInJmyW2Mg/zh-cn_image_0000002594053200.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=C39C61455F298447DC6C2C91BD79741BCC99F9CF92130F031D7EE8D18B236203)
 
 ### 内容区域组件适配
 
@@ -176,7 +176,7 @@ content_hash: sha256:b57c18c93ef57a01a598fdc215611f307ac782c6c6bb352f7f4462e4f83
 
 效果示意图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/G1G3e_eRRx-gm3GPRFQNaw/zh-cn_image_0000002624492725.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=308461D8FB4E91222CD12F8DC814169F066373299E8B33971FDF476F061D9529)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/3bfeeqsGRzSXrUiTItbtCw/zh-cn_image_0000002624492725.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=15A55D1B4D834E18B68ABC72F5ACCE448F225986E99D1AC713A7C43276E46B82)
 
 ## 场景一：应用首眼沉浸光感
 
@@ -310,7 +310,7 @@ content_hash: sha256:b57c18c93ef57a01a598fdc215611f307ac782c6c6bb352f7f4462e4f83
 
 菜单栏沉浸光感适配的核心是通过封装版本兼容的材质工具类，实现API级别的平滑过渡。菜单栏沉浸光感效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/746z8u3IQDCAjG49XWzWUg/zh-cn_image_0000002624951609.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8DB7FEB2904110FEBD04259554838E88BEF8B745BF2C9E9E3293A68F84FFF82 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/6bqrMBcpQYa6plODS0ebtA/zh-cn_image_0000002624951609.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AAEC86A14D8013B2F5E083D40934493316C4AC171035230A8C0BEBB31669402 "点击放大")
 
 * 材质工具类封装
 

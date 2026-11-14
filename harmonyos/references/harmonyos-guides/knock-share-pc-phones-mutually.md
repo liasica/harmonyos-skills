@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-p
 title: 手机与PC/2in1、手机与Tablet间相互分享
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与PC/2in1碰一碰分享 > 手机与PC/2in1、手机与Tablet间相互分享
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:33+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:1bdb0b902f7acaed30008fe0b7757ace2e3213233add2f65c96250a9ea726102
+scraped_at: 2026-11-14T08:48:33+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:fc8d976c19fb7c08f2d3993c574c30c12590e02575316548d570c51dc1c9465e
 ---
 
 Phone与PC/2in1设备间相互分享，可参考：[手机间内容分享](knock-share-between-phones-content.md)。
@@ -23,7 +23,7 @@ import { fileUri } from '@kit.CoreFileKit';
 import { common } from '@kit.AbilityKit';
 
 @Component
-export default struct KnockShareScreen {
+export default struct Index {
   @State knockShareScreenX: number | undefined = undefined;
   @State knockShareScreenY: number | undefined = undefined;
   @State dataReceiveScreenX: number | undefined = undefined;

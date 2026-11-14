@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-certif
 title: Device Certificate Kit简介
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > Device Certificate Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:27+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:5f6bfcc35fcf054fc39263033a01cc39caac38490083844669fd0aabd2c2eb44
+content_hash: sha256:547271809ee3a719dc244e3cb4a9faccec799a97c47726d9930423cd1b6d9149
 ---
 
 使用Device Certificate Kit（设备证书服务）来对应用的数字证书进行管理和校验。总体而言，Device Certificate Kit支持如下两个特性：
@@ -31,7 +31,7 @@ content_hash: sha256:5f6bfcc35fcf054fc39263033a01cc39caac38490083844669fd0aabd2c
 
 证书管理服务在对数字证书凭据的安装和使用时，依赖[Universal Keystore Kit](huks-overview.md)的密钥存储和管理能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/j5nyUAKDR2-lWwUmxr6lYw/zh-cn_image_0000002786519580.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E30A272465EDD719C616AAC0C28E530196AEADE80E1C515414AF7EB5D367EE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/SisPFYiHRzWn6i99kK1z4w/zh-cn_image_0000002788307384.png?HW-CC-KV=V1&HW-CC-Date=20261114T004726Z&HW-CC-Expire=31536000000&HW-CC-Sign=14FDBCA1182F6CE11550A3E9C75A639FBBFEBC79CE596D6DB04544E4396A2696)
 
 **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-add-page
 title: 添加Page
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 添加Page
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:48+08:00
 doc_updated_at: 2026-04-30
-content_hash: sha256:29410b996d21c0506722d28aa7d2c0523dac0d86c7538b9e31021fab8a9be260
+content_hash: sha256:4162b54d2a2fc96c5dd33538e76d017d91457352256d9388c09270bc5e52e959
 ---
 
 在ArkTS语言的工程中，支持添加Page。Page是表示应用/元服务的一个页面。应用/元服务可以设计为多个功能页面，每个页面进行单独的文件管理，并通过路由API实现页面的调度管理，以实现应用内功能的解耦。ArkTS语言的工程添加Page后，会在pages文件夹下生成一个新的ets文件。
@@ -20,11 +20,11 @@ content_hash: sha256:29410b996d21c0506722d28aa7d2c0523dac0d86c7538b9e31021fab8a9
    * Payment Page：创建一个支付页面，可以实现点击按钮唤起支付弹窗，当前仅支持在Phone和Car设备中使用；
    * Iap Page：IAP Kit场景化模板，支持快速创建应用内支付购买虚拟数字商品相关代码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/WJdY-UvsSEqu_8WTHcX6MQ/zh-cn_image_0000002779407176.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=2461153C29BDE080D415A3A41D5100C7B0ADBC0A1692A9CC1AA0D0A692365122)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/TUqMnwOpRniFt5vY5R2_Vw/zh-cn_image_0000002779407176.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=71C82B8830E5ED11489E7BCE8371A213EED015B2EA76038957C6EE9323CC7A1F)
 
    **说明** 
 
    API 10工程中仅支持创建Page，展示基础的Hello World功能；如需使用场景化Page模板，请将工程切换为API 11及以上后进行开发。
 2. 输入Page name（由大小写字母、数字和下划线组成），单击**Finish**完成添加。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/u5hfPL0DTN-Lxjvz6UNrKA/zh-cn_image_0000002808766737.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD5ED93C161073817577999A27B70E95B19283F7238D4BF335FEA22EC2D69B9F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/bNwTyABrSua2A34LpCSAKw/zh-cn_image_0000002808766737.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA9CEDB6DFEE7085D8EEA36CA2111E889B77FCEC447F45F274AF171E41C98F1E "点击放大")

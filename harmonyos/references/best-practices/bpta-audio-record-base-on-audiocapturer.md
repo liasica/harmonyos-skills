@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AudioCapturer录制PCM音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AudioCapturer录制PCM音频（ArkTS）
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:07+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:67f12045d14f7ed58cfc30f8d42785ced932df6e430f2c278c8dddeb784de1ed
+content_hash: sha256:3772b53dd99d40f7265839f74e1cb894c88415905d4870aa0b04093a679980c4
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AudioCapturer（[Interface (AudioCapturer)](../doccenter-references/api/arkts-ap
 
 基于AudioCapturer录制PCM音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ROt2uffSQeyRBjcjVD0brQ/zh-cn_image_0000002524061072.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFD96E1C9D7A498DC4DE5C55981750E637B0AD1C6537437CAAB2E285AEE1A153 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/yaF4lkiOTYycrdebKbQGgQ/zh-cn_image_0000002524061072.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEFCF5364CFFB60C399F4C997BD842D929900CBD46463E868E4D997688F9B007 "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ AudioCapturer可以录制PCM（Pulse Code Modulation）音频数据，能够快�
 
 **图1** AudioCapturer状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/ZHsyBLKXQ_6hDVL5HHbVIQ/zh-cn_image_0000002555220981.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4E87184FCF4B829A5A0F333A180DF3486F9D23F590849EE3FBE2B575AB82C4D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/zjP5yHNdTmCDbT15mg9-6w/zh-cn_image_0000002555220981.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=D737EEDEC3D203F56ED650A2E7451A3B75560D03E0AD4077D1F2C592B2056B0C "点击放大")
 
 ### 开发步骤
 

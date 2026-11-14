@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.notificationManager (NotificationManager模块)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > @ohos.notificationManager (NotificationManager模块)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:37:12+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:3376955ed79bf512598e35105aa2ea8a1a0a71c666951055e3d3a3fd073e16d2
+scraped_at: 2026-11-14T08:53:41+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:6e144155237863cc166e532c9c6d30580e6eefc4689e6a59c8c6926ff7cd4834
 ---
 
 本模块提供通知管理的能力，应用可使用本模块完成通知的完整生命周期管理。其中涉及通知的发布、更新与取消，[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)的创建与查询、通知能力授权状态的查询与申请、应用角标的设置、[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)存量通知的查询等操作。
@@ -23,7 +23,7 @@ content_hash: sha256:3376955ed79bf512598e35105aa2ea8a1a0a71c666951055e3d3a3fd073
 
 **说明** 
 
-本模块首批接口从API版本9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
@@ -1598,7 +1598,7 @@ requestEnableNotification(callback: AsyncCallback<void>): void
 
 **说明** 
 
-从API版本9开始支持，从API版本12开始废弃，建议使用有context入参的[requestEnableNotification](js-apis-notificationmanager.md#notificationmanagerrequestenablenotification10)替代。
+从API version 9开始支持，从API version 12开始废弃，建议使用有context入参的[requestEnableNotification](js-apis-notificationmanager.md#notificationmanagerrequestenablenotification10)替代。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1644,7 +1644,7 @@ requestEnableNotification(): Promise<void>
 
 **说明** 
 
-从API版本9开始支持，从API版本12开始废弃，建议使用有context入参的[requestEnableNotification](js-apis-notificationmanager.md#notificationmanagerrequestenablenotification10-1)替代。
+从API version 9开始支持，从API version 12开始废弃，建议使用有context入参的[requestEnableNotification](js-apis-notificationmanager.md#notificationmanagerrequestenablenotification10-1)替代。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1686,7 +1686,7 @@ isDistributedEnabled(callback: AsyncCallback<boolean>): void
 
 **说明** 
 
-从API版本9开始支持，从API版本26.0.0开始废弃。
+从API version 9开始支持，从API版本26.0.0开始废弃。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1732,7 +1732,7 @@ isDistributedEnabled(): Promise<boolean>
 
 **说明** 
 
-从API版本9开始支持，从API版本26.0.0开始废弃。
+从API version 9开始支持，从API版本26.0.0开始废弃。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1970,7 +1970,7 @@ notificationManager.isGeofenceEnabled().then((data: boolean) => {
 
 [通知内容类型](../harmonyos-guides/notification-glossary.md#content-type通知内容类型)。
 
-**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -2006,7 +2006,7 @@ notificationManager.isGeofenceEnabled().then((data: boolean) => {
 
 不同类型对应不同的[SlotLevel](js-apis-notificationmanager.md#slotlevel)，决定通知的提醒行为。
 
-**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Notification.Notification
 

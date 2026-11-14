@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-catalo
 title: 获取目录列表
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容解析 > 获取目录列表
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:30+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:62db693f5a56f1955f678139ceedac195e84360ef5e295edafb49c20db2df840
+content_hash: sha256:1993377e2d879b8a615a49b831c8bd64805aba7e0a86394fd0f6cde831395dd3
 ---
 
 当应用需要展示书籍目录列表时，开发者可通过解析能力获取目录节点列表，实现目录列表中章节名称按顺序、层级的展示。当用户点击目录节点时，开发者也需要获取目录位置及资源信息，用于跳转到指定位置。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/1ORcJFF1SjW1NWpW3yiLEQ/zh-cn_image_0000002815559977.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=84E15C22D24A89CF8EC3EE125F01180A7D73575EC586B4A34A0597ACF3448BB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/5_716_m7SuORl6ztcHnEYQ/zh-cn_image_0000002788308290.png?HW-CC-KV=V1&HW-CC-Date=20261114T004830Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A57137591248631A4573C70BB35D8F443A3EAA5CC2A2D6C0D79BE48F4AAD8DE)
 
 ## 接口说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片为组件添加动效
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片UI界面开发 > ArkTS卡片为组件添加动效
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:18+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a8654695ee4385adcf9687f047fa864a046f45bbb3afebf6fd79b6dd1b7622cd
+content_hash: sha256:46f835d9bb8dfefdf225c52042aa4721b5df76e1359c2a6b933fc503683a50e6
 ---
 
 ArkTS卡片开放了使用动画效果的能力，支持[显式动画](../harmonyos-references/ts-explicit-animation.md)、[属性动画](../harmonyos-references/ts-animatorproperty.md)、[组件内转场](../harmonyos-references/ts-transition-animation-component.md)能力。ArkTS卡片使用动画效果时具有以下限制：
@@ -27,7 +27,7 @@ ArkTS卡片开放了使用动画效果的能力，支持[显式动画](../harmon
 
 以下示例代码使用[animation](../harmonyos-references/ts-animatorproperty.md)接口实现了按钮旋转的动画效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/AvOMFJk0QqOBgnqzdQVTCg/zh-cn_image_0000002815558947.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D68B1518F9A8048D7FF04747812A45B2207699DB4D365917C34BCA389BA3D6AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/bTp5CQh0QvaUdYNj3M4fCw/zh-cn_image_0000002788467202.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004539Z&HW-CC-Expire=31536000000&HW-CC-Sign=F86AC3F99834B21B25CC66E8E61F3F31EF4D49BD143E1771716F452191C3AE06)
 
 ```typescript
 @Entry
@@ -59,7 +59,7 @@ struct AnimationCard {
 
 以下示例代码使用[transition](../harmonyos-references/ts-transition-animation-component.md)接口实现了在卡片内图片出现与消失的动画效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/450Q8PkwTRmv5ThBInJ6VA/zh-cn_image_0000002815399031.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8571CC48BC28A615140ABB98069BAF060394AE7B9BA01D0CABEFB9BD91767A71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/O-hebs2GSmiwSV6TI4_V7w/zh-cn_image_0000002817506691.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004539Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B9C8BE05A1FCED9F339878487551A43A8F40DA4B60CFD89E2C082A413D4994C)
 
 ```typescript
 // entry/src/main/ets/widget/pages/TransitionEffectExample1.ets

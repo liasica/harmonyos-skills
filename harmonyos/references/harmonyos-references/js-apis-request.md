@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.request (上传下载)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.request (上传下载)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:26:28+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:4742755beeb1505e1881bc7aa11dc5be104e64279e42fa27ab33d521f68adabe
+scraped_at: 2026-11-14T08:51:59+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:9d8d2d189b091a7db7c47f9b0218685a5980b67ce6b4b8560779286bc60677e2
 ---
 
 request模块给应用提供上传下载文件、后台代理传输的基础功能，支持HTTP/HTTPS协议，提供任务进度监控、断点续传、后台任务管理、网络类型选择等能力，适用于应用内文件上传下载、后台持续传输等场景。
@@ -2496,8 +2496,6 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 **说明** 
 
 API version 12及以下版本，只支持串行地尝试连接域名相关IP，且不支持单个IP的连接时间控制，如果DNS返回的首个IP是阻塞的，可能会导致握手超时，进而引发TIMEOUT错误。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

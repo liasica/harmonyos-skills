@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (WindowStage)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interface (WindowStage)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:38+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:8441f650e262df7ddfd66d774290a15c5e80bed02657c92a2a12af9b730b6946
+scraped_at: 2026-11-14T08:50:00+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:53cec0d630b0c7ed094dcb65a185ff28894305f9330dcac1f47aa01b2dd0bfe4
 ---
 
 **说明** 
@@ -1127,7 +1127,7 @@ export default class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     console.info('onWindowStageCreate');
-    windowStage.loadContent('page/Index', (err) => {
+    windowStage.loadContent('pages/Index', (err) => {
       if (err.code) {
         console.error(`Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
         return;

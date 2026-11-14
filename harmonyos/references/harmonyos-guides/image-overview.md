@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-overvie
 title: Image Kit简介
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > Image Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:58+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6d62615bc7cdd9f9a36f1639bd7cb69f2339848fd67d4edbd638aa1e14e2cb2b
+content_hash: sha256:bcc92ce737afa40c52c6adba0701d03506603edc735530b0385365442dc09821
 ---
 
 开发者通过调用Image Kit（图片处理服务）提供的接口，可以实现图片的解码、编码、编辑、元数据处理和图片接收等功能。
@@ -51,11 +51,11 @@ Image Kit还提供了读取和[编辑图片EXIF信息](image-tool.md)的能力�
 
 **图1** 图片解码流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/RuCtNkGISBeeV_QlPgc0XA/zh-cn_image_0000002786359932.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=304413DA0167476506DC4A7E8676FEC902B9E58702A48FC5EA3C42F475D4CEB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/MoCLjsE7Sxm7b4x3SSGo6g/zh-cn_image_0000002817427027.png?HW-CC-KV=V1&HW-CC-Date=20261114T004616Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EAF528F7365B015D81D743B6FC938F4ABF3661274D8FDB6DBEAD6D934AA4EE2)
 
 **图2** 图片编码流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/HLHNLl6JRRaD6I9KQYip8g/zh-cn_image_0000002815559353.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=B68C820E464D0EE0277A46C683112D5003993F3A7C18CF694A1A8A33C52E1C83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/CewLi3v3RdGpXaJW84xHiQ/zh-cn_image_0000002788467608.png?HW-CC-KV=V1&HW-CC-Date=20261114T004616Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D259C8D99895A7531196F97440F852552EBE695CC37B8EBC89CC395EAD4D561)
 
 ## 约束与限制
 

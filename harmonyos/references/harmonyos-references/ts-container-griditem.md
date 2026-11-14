@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: GridItem
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > GridItem
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0f7818b42a2b882f65c2ce0f7c0f004cd948b5efa9be2b4dded355597d4db40b
+content_hash: sha256:43bda7a6a1c455e0f3159c53d277e666cb9e5cd33a22f1f891437350874ae236
 ---
 
 网格容器中单项内容容器。
@@ -286,7 +286,7 @@ struct GridItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/jEwTPgqpQBCl5MR77PGRGQ/zh-cn_image_0000002815400645.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=31806169F27AB5585BF1247F30F924491B7C589D7F6BE6AE381B3AFD89B96120)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/XrLsvtYnQK2sjlfysJZ2cQ/zh-cn_image_0000002817428237.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004810Z&HW-CC-Expire=31536000000&HW-CC-Sign=BED2F440C38D05D95124838F3DA0BE3B353ABA2C7AD00BE2FCF7F2C42172A39A)
 
 ### 示例2（设置GridItem样式）
 
@@ -353,4 +353,4 @@ struct GridItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/K9omes83Rf2_xeKEPIMGYA/zh-cn_image_0000002786521070.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A27EB626900DA923AA9C9914E225249EC24DBAFBBC2A9A88B861879222A20234)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Is_2ja_xRQmAStAooTjkYw/zh-cn_image_0000002788468818.png?HW-CC-KV=V1&HW-CC-Date=20261114T004810Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECEABA5EF525883536E2F9A25735578D466579F593C13D463B56DD84D6EFCAE4)

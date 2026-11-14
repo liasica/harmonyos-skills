@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: 跨空间消息提醒
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > 空间管理 > 跨空间消息提醒
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:00+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:7d9adcbf098ebbadd29e2a59b82ba9589bb5a1398aa796f1c471aa6e31c8c2ff
+scraped_at: 2026-11-14T08:48:16+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:057aa9a92f77af0ca2976cf62ff682af4b982c00bcf5b7cc9d3860f2781274bf
 ---
 
 从API版本26.0.0开始，支持跨空间消息提醒的能力。
@@ -27,130 +27,127 @@ Enterprise Space Kit为应用提供跨空间消息提醒的能力，支持企业
 
 ## 开发步骤
 
-1.导入跨空间消息提醒API模块相关依赖。
+1. 导入跨空间消息提醒API模块相关依赖。
 
-```typescript
-import { spaceManager } from '@kit.EnterpriseSpaceKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { ErrCode } from '../../common/ErrCode';
-```
+   ```typescript
+   import { spaceManager } from '@kit.EnterpriseSpaceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { ErrCode } from '../../common/ErrCode';
+   ```
+2. 跨空间消息提醒API接口封装。
 
-2.跨空间消息提醒API接口封装。
+   ```typescript
+   const TAG = '[Sample_SpaceManagerSample]';
+   const DOMAIN = 0xF811;
 
-```typescript
-const TAG = '[Sample_SpaceManagerSample]';
-const DOMAIN = 0xF811;
+   export class NotificationConfigApi {
+     static async setNotificationConfig(configs: spaceManager.NotificationConfig[]): Promise<number> {
+       try {
+         await spaceManager.setNotificationConfig(configs);
+         hilog.info(DOMAIN, TAG, 'Succeeded in setting notification config.');
+         return ErrCode.OK;
+       } catch (err) {
+         hilog.error(DOMAIN, TAG, `Failed to set notification config. Code: ${err.code}, message: ${err.message}`);
+         return ErrCode.ERR;
+       }
+     }
 
-export class NotificationConfigApi {
-  static async setNotificationConfig(configs: spaceManager.NotificationConfig[]): Promise<number> {
-    try {
-      await spaceManager.setNotificationConfig(configs);
-      hilog.info(DOMAIN, TAG, 'Succeeded in setting notification config.');
-      return ErrCode.OK;
-    } catch (err) {
-      hilog.error(DOMAIN, TAG, `Failed to set notification config. Code: ${err.code}, message: ${err.message}`);
-      return ErrCode.ERR;
-    }
-  }
+     static async getNotificationConfig(): Promise<spaceManager.NotificationConfig[] | undefined> {
+       try {
+         const configs: spaceManager.NotificationConfig[] = await spaceManager.getNotificationConfig();
+         hilog.info(DOMAIN, TAG, `Succeeded in getting notification config. configs: ${JSON.stringify(configs)}`);
+         return configs;
+       } catch (err) {
+         hilog.error(DOMAIN, TAG, `Failed to get notification config. Code: ${err.code}, message: ${err.message}`);
+         return undefined;
+       }
+     }
+   }
+   ```
+3. 导入跨空间消息提醒业务实现相关依赖。
 
-  static async getNotificationConfig(): Promise<spaceManager.NotificationConfig[] | undefined> {
-    try {
-      const configs: spaceManager.NotificationConfig[] = await spaceManager.getNotificationConfig();
-      hilog.info(DOMAIN, TAG, `Succeeded in getting notification config. configs: ${JSON.stringify(configs)}`);
-      return configs;
-    } catch (err) {
-      hilog.error(DOMAIN, TAG, `Failed to get notification config. Code: ${err.code}, message: ${err.message}`);
-      return undefined;
-    }
-  }
-}
-```
+   ```typescript
+   import { router } from '@kit.ArkUI';
+   import { spaceManager } from '@kit.EnterpriseSpaceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { ErrCode } from '../../common/ErrCode';
+   import { NotificationConfigApi } from '../api/NotificationConfigApi'
+   ```
+4. 跨空间消息提醒业务相关实现。
 
-3.导入跨空间消息提醒业务实现相关依赖。
+   ```typescript
+   const TAG = '[Sample_SpaceManagerSample]';
+   const DOMAIN = 0xF811;
 
-```typescript
-import { router } from '@kit.ArkUI';
-import { spaceManager } from '@kit.EnterpriseSpaceKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { ErrCode } from '../../common/ErrCode';
-import { NotificationConfigApi } from '../api/NotificationConfigApi'
-```
+   @Entry
+   @Component
+   struct NotificationConfigPage {
+     async setNotificationConfig() {
+       const configs: spaceManager.NotificationConfig[] = [
+         {
+           workspaceId: 100, // 空间ID，由用户配置
+           appIdentifier: '691867************', // 应用的唯一标识，请根据实际情况进行替换。
+           notificationState: spaceManager.NotificationSwitch.ON,
+           visibilityState: spaceManager.NotificationVisibilitySwitch.NOTIFICATION_VISIBLE,
+           allowVisibilityChange: spaceManager.NotificationVisibilityControl.ALLOW_CHANGE,
+         }
+       ];
+       if (await NotificationConfigApi.setNotificationConfig(configs) !== ErrCode.ERR) {
+         // 处理后置逻辑
+       } else {
+         // 异常处理
+         hilog.error(DOMAIN, TAG, 'Failed to set notification config!');
+         return;
+       }
+     }
 
-4.跨空间消息提醒业务相关实现。
+     async getNotificationConfig() {
+       const configs: spaceManager.NotificationConfig[] | undefined =
+         await NotificationConfigApi.getNotificationConfig();
+       if (configs === undefined) {
+         // 异常处理
+         hilog.error(DOMAIN, TAG, 'Failed to get notification config!');
+         return;
+       }
+       // 处理后置逻辑
+     }
 
-```typescript
-const TAG = '[Sample_SpaceManagerSample]';
-const DOMAIN = 0xF811;
+     build() {
+       Column() {
+         Row() {
+           Button($r('app.string.setNotificationConfig'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               this.setNotificationConfig();
+             })
+         }
 
-@Entry
-@Component
-struct NotificationConfigPage {
-  async setNotificationConfig() {
-    const configs: spaceManager.NotificationConfig[] = [
-      {
-        workspaceId: 100, // 空间ID，由用户配置
-        appIdentifier: '691867************', // 应用的唯一标识，请根据实际情况进行替换。
-        notificationState: spaceManager.NotificationSwitch.ON,
-        visibilityState: spaceManager.NotificationVisibilitySwitch.NOTIFICATION_VISIBLE,
-        allowVisibilityChange: spaceManager.NotificationVisibilityControl.ALLOW_CHANGE,
-      }
-    ];
-    if (await NotificationConfigApi.setNotificationConfig(configs) !== ErrCode.ERR) {
-      // 处理后置逻辑
-    } else {
-      // 异常处理
-      hilog.error(DOMAIN, TAG, 'Failed to set notification config!');
-      return;
-    }
-  }
+         Row() {
+           Button($r('app.string.getNotificationConfig'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               this.getNotificationConfig();
+             })
+         }
 
-  async getNotificationConfig() {
-    const configs: spaceManager.NotificationConfig[] | undefined =
-      await NotificationConfigApi.getNotificationConfig();
-    if (configs === undefined) {
-      // 异常处理
-      hilog.error(DOMAIN, TAG, 'Failed to get notification config!');
-      return;
-    }
-    // 处理后置逻辑
-  }
+         Row() {
+           Button($r('app.string.back'))
+             .buttonCommonStyle()
+             .onClick(() => {
+               router.back();
+             })
+         }
+       }
+     }
+   }
 
-  build() {
-    Column() {
-      Row() {
-        Button($r('app.string.setNotificationConfig'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            this.setNotificationConfig();
-          })
-      }
-
-      Row() {
-        Button($r('app.string.getNotificationConfig'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            this.getNotificationConfig();
-          })
-      }
-
-      Row() {
-        Button($r('app.string.back'))
-          .buttonCommonStyle()
-          .onClick(() => {
-            router.back();
-          })
-      }
-    }
-  }
-}
-
-@Extend(Button)
-function buttonCommonStyle() {
-  .width(200)
-  .height(50)
-  .backgroundColor('#6366F1')
-  .fontColor('#FFFFFF')
-  .fontSize(14)
-  .margin({ left: 20, bottom: 5 })
-}
-```
+   @Extend(Button)
+   function buttonCommonStyle() {
+     .width(200)
+     .height(50)
+     .backgroundColor('#6366F1')
+     .fontColor('#FFFFFF')
+     .fontSize(14)
+     .margin({ left: 20, bottom: 5 })
+   }
+   ```

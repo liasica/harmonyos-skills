@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-scenes
 title: 推送场景化消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:22+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:b49b73790fbc69f15e47bd2b6144a0ffbee0cac59c826961ee733d0847012c05
+scraped_at: 2026-11-14T08:48:29+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:932b1f147ed83158c0f08a2c8a21c51c1a82da5ce5359a53336c7cb6cc2a51ff
 ---
 
 * **[推送通知消息](push-alert.md)**
@@ -15,3 +15,4 @@ content_hash: sha256:b49b73790fbc69f15e47bd2b6144a0ffbee0cac59c826961ee733d08470
 * **[推送后台消息](push-background.md)**
 * **[推送实况窗消息](push-update-liveview.md)**
 * **[推送应用内通话消息](push-voip.md)**
+* **[推送MDM消息](push-mdm.md)**

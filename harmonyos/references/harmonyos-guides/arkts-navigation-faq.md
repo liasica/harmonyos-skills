@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > Navigation常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:11+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:865252cd458842ee86085156ee8d1dacc98ef7961f3a78e227eb0af5778f0d6a
+content_hash: sha256:fe802c1c8ee943b2251878036707c64b08c3be82a4af2978a772ef8f6f56843c
 ---
 
 ## Dialog类型NavDestination蒙层动画不流畅
@@ -16,10 +16,10 @@ content_hash: sha256:865252cd458842ee86085156ee8d1dacc98ef7961f3a78e227eb0af5778
 
 * 将蒙层背景色设置在页面上：pop页面的时候蒙层没有马上消失，而是等内容下滑退出后才消失。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/MtJ-kdedRfOh2_50TCtC8Q/zh-cn_image_0000002815558789.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=3938660B3B96E6C89DC3B55605C6A4BBB4911624A67300F7F05F6DF38C13E7A4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/1vga0k1iTXO89hZ6fOuBQg/zh-cn_image_0000002788467044.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E3EB55F16FC9DD1687436B731A666C8D959FF3241C3A0B0C1CC7972C74FD8BD)
 * 将蒙层背景色设置在内容区域：蒙层一起从上向下退出。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/YLt7hNynTEWPHeRjnbsc0Q/zh-cn_image_0000002815398873.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=92C49CE1597A2EB9A01DE5418FA6F9F07C60C8B11C982942D5A6C6AE6B7640A1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/tgVSRNsvSV2hNAmIUeSQyw/zh-cn_image_0000002817506531.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0027151D001028081D9A2EE07D9AD99B429364F2694A508CC8A9A566D5B26A7)
 
 期望退出时蒙层渐隐，同时内容区域向下退出。
 
@@ -67,7 +67,7 @@ export struct DialogNavDestination {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/v472cZwfRAerErdliokpaQ/zh-cn_image_0000002786519298.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=14AAF4185217F184208A2EE414977682B31F45E4000BFAB1F65FFC53E188CCBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/lp1nwDezSM-ZRIWqyQy1rg/zh-cn_image_0000002788307102.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D2C781E5E32069868E84028AEA4870D4DC78BBF85199E16C4E7832366BF03C9)
 
 ## router、navigation动画冲突
 

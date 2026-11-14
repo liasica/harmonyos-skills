@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-sleeprecord
 title: 睡眠
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 健康记录数据 > 睡眠
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Phone/Tablet应用开发 > 开放数据类型 > 健康记录数据 > 睡眠
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:47+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:fa45f462575f83c4555424cd04400274fc960eef456fec858ba9b95744674aab
+scraped_at: 2026-11-14T08:48:19+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:23444385ec773a215c962a0a69f11811644a513fc53175e1ff109006cf1db181
 ---
 
 ## 夜间睡眠
@@ -24,7 +24,7 @@ content_hash: sha256:fa45f462575f83c4555424cd04400274fc960eef456fec858ba9b957446
 
 ### 夜间睡眠数据类型
 
-* 字段定义：[healthSequenceHelper.sleepRecord.Fields](../harmonyos-references/health-api-healthsequencehelper.md#fields)
+字段定义：[healthSequenceHelper.sleepRecord.Fields](../harmonyos-references/health-api-healthsequencehelper.md#fields)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 | 单位 | 取值范围 |
 | --- | --- | --- | --- | --- | --- |
@@ -52,7 +52,7 @@ content_hash: sha256:fa45f462575f83c4555424cd04400274fc960eef456fec858ba9b957446
 
 ### 关联的明细数据说明
 
-* 字段定义：[healthSequenceHelper.sleepRecord.DetailFields](../harmonyos-references/health-api-healthsequencehelper.md#detailfields)
+字段定义：[healthSequenceHelper.sleepRecord.DetailFields](../harmonyos-references/health-api-healthsequencehelper.md#detailfields)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |

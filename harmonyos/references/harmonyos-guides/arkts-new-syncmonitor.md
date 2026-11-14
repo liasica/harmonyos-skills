@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-syn
 title: "@SyncMonitor装饰器：状态变量修改同步监听"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @SyncMonitor装饰器：状态变量修改同步监听
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:08+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:a55257f7a758d1ac907ab53b79434d90da6dd61ac303e7053b1f727ab47f76f9
+scraped_at: 2026-11-14T08:47:00+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:d7c29180da8bd9c174e031a8675bd21bf449cd86d1af2e525aedc863ba4d7181
 ---
 
 为了增强状态管理框架对状态变量变化的监听能力，开发者可以使用[@SyncMonitor](../harmonyos-references/ts-state-management-syncmonitor.md#syncmonitor)装饰器对状态变量进行监听。
@@ -28,7 +28,7 @@ content_hash: sha256:a55257f7a758d1ac907ab53b79434d90da6dd61ac303e7053b1f727ab47
 
 * @SyncMonitor装饰器支持在类中与[@ObservedV2、@Trace](arkts-new-observedv2-and-trace.md)配合使用，不允许在未被@ObservedV2装饰的类中使用@SyncMonitor装饰器。未被@Trace装饰的属性无法被@SyncMonitor监听到变化。当观测的属性变化时，@SyncMonitor装饰器定义的回调方法将被调用。判断属性是否变化使用的是严格相等（===），当严格相等判断的结果是false（即不相等）的情况下，就会立即触发@SyncMonitor的回调。同一事件内，当被观察的属性多次改变时，回调函数将在每次属性改变时被调用。
 * 单个@SyncMonitor装饰器能够同时监听多个属性的变化，当这些属性在一次事件中共同变化时，只会触发一次@SyncMonitor的回调方法。 当@SyncMonitor监听整个数组时，更改数组的某一项不会被监听到。
-* 在继承类场景中，可以在父子类中对同一个属性分别定义@SyncMonitor进行监听，当属性变化时，父子组件中定义的@SyncMonitor回调均会被调用。
+* 在继承类场景中，可以在父子类中对同一个属性分别定义@SyncMonitor进行监听，当属性变化时，父子类中定义的@SyncMonitor回调均会被调用。
 * @SyncMonitor装饰器具有深度监听的能力，能够监听嵌套类、多维数组、对象数组中指定项的变化。对于嵌套类、对象数组中成员属性变化的监听要求该类被@ObservedV2装饰且该属性被@Trace装饰。
 * @SyncMonitor可以观察内置类型Map、Set、Date以及Array类型API调用引起的数据变化，详情参见[通用监听能力](arkts-new-syncmonitor.md#通用监听能力)。
 * @SyncMonitor装饰器新增[通配符('\*')](arkts-new-syncmonitor.md#监听路径中通配符的说明)支持一层模糊监听，便于@Watch装饰器向@SyncMonitor装饰器迁移。
@@ -1751,7 +1751,7 @@ struct Index {
     Column() {
       Button('change age')
         .onClick(() => {
-          this.info.age = 25; // 状态变量age改变
+          this.info.age = 25; // age改变
         })
     }
   }

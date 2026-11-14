@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-augmenta
 title: 知识加工
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > 知识加工
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:20+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:7ecb8526436291968cf7bf1a841bb3bcc3ce296ecd9a43ae639494509229a140
+scraped_at: 2026-11-14T08:47:18+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:c1ffb9a354f5cd2517b3eae0b28c5097128c328515d50e2fa164352dc51128a9
 ---
 
 知识加工是指根据实际业务数据生成知识库的能力，主要包含以下两个方面：
@@ -233,7 +233,7 @@ content_hash: sha256:7ecb8526436291968cf7bf1a841bb3bcc3ce296ecd9a43ae63949450922
 
    // relationalStore开库参数配置
    let knowledgeConfig: relationalStore.StoreConfig = {
-     name: 'test.db',// 已触发知识加工的数据库名
+     name: 'testmail_store.db',// 已触发知识加工的数据库名
      securityLevel: relationalStore.SecurityLevel.S1,
      vector: false,
      tokenizer: relationalStore.Tokenizer.CUSTOM_TOKENIZER,
@@ -260,14 +260,12 @@ content_hash: sha256:7ecb8526436291968cf7bf1a841bb3bcc3ce296ecd9a43ae63949450922
          .then((retriever:relationalStore.RdbStore) => {
            sourceDbStore = retriever;
          });
-       let createSourceTable = 'CREATE TABLE IF NOT EXISTS mail (' +
-         'id INTEGER PRIMARY KEY,' +
-         'subject TEXT,' +
-         'content TEXT' +
-         ');';
+       let createSourceTable = 'CREATE TABLE IF NOT EXISTS email(id integer primary key, subject text, ' +
+         'content text, image_text text, attachment_names text, inline_files text, sender text, ' +
+         'receivers text, received_date text);';
        await sourceDbStore.executeSql(createSourceTable);
        let sqlInsert =
-         'INSERT INTO mail (subject, content) VALUES ("运动直播场景", "content");';
+         'INSERT INTO email (subject, content) VALUES ("运动直播场景", "content");';
        await sourceDbStore.execute(sqlInsert);
        console.info('InitModel success');
      } catch (err) {

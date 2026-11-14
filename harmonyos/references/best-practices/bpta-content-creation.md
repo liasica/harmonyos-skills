@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-content-cr
 title: AI辅助图文内容编创
 breadcrumb: 最佳实践 > 行业场景解决方案 > 社交通讯 > AI辅助图文内容编创
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:12+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:cb4cd1d6b16f640149f12fb973413e5aa00540d1b3ecc81a35f7b2d4d0e6a01a
+content_hash: sha256:a2c7c4b689ecc1735d08268f3c19e5f93c11105da3b9ddadea5e9f79b42039f3
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:cb4cd1d6b16f640149f12fb973413e5aa00540d1b3ecc81a35f7b2d4d0e
 
 图文编创操作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/n77J5pMiRDWzZTtUpa6Kig/zh-cn_image_0000002229451385.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD4483BCFC6827D97EEF747A26065E11E24CB4D635E62158A4A371318F4E57F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/UIA2lboVRW6fd6-2U-TYcA/zh-cn_image_0000002229451385.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=840E66EEC8E4B9630781DF4AB93D8D95D187F7DFEB86EB33C9A7C1DE50F56976)
 
 ## 场景适用说明
 
@@ -102,7 +102,7 @@ photoViewPicker.select(photoSelectOptions).then((photoSelectResult: photoAccessH
 
 长按图片可识别文字并实现物体抠图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/GWBkn_svSLqjNW7KGCL69A/zh-cn_image_0000002229336901.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0200FF19DEAAB5B54DB6CD320DA8B2A96D8D45FC774D677342935EF2E58C58B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/7GtDCjx-QNy48nTIJDCl0Q/zh-cn_image_0000002229336901.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8652590540A15E610DCE29041E656CD032AEB2D1A8F423087E091221F0295C9)
 
 ### 关键点说明
 
@@ -353,7 +353,7 @@ build() {
 
 跨端相册获取新的图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/VzlOd3c2Q4yVQaRlxsRgSQ/zh-cn_image_0000002730181338.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B668B5F226037F30B269239CE2194480A5543F3EFCA558179C1E9D1D147D2A6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/1otQFdObRp2SrXxRZLSWJA/zh-cn_image_0000002730181338.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=F55595F58EC029BB911F0DCBDEFEC1885E9010858FB32019AF3DF00F968C7849 "点击放大")
 
 ### 子场景描述
 
@@ -447,7 +447,7 @@ private doInsertPicture(stateCode: number, bufferType: string, buffer: ArrayBuff
 
 自由流转，接续编辑图文内容的功能已启用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/cctqoh68TTm7lMi_6dVoxg/zh-cn_image_0000002730021622.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6C90FD8585F2D77AAAD6EAF1DEE5516F63724525B6A7D6D9669443EFA4481EF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/lUEegkLlTB64MAUv1jPIVA/zh-cn_image_0000002730021622.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FF6EDF38D4D23C1E4126AB3761EAAD4CB189F4D13BAD2E00A1AAB501FBB6A7D "点击放大")
 
 ### 关键点说明
 

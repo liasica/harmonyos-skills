@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-add-
 title: 添加和删除模块
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 模块管理 > 添加和删除模块
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:11+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:8dafb2de8242685a8a736b3b933e688663c78526da15b64fe5128a5466f48843
+content_hash: sha256:590233607849bd3a86e9dec20c10066fb520ebb27a9c11d96e4ca0ad392b9f31
 ---
 
 模块（Module）是应用/元服务的基本功能单元，包含了源代码、资源文件、第三方库及应用/元服务配置文件。每一个模块都可以独立进行编译和运行。一个应用/元服务通常会包含一个或多个模块。因此，可以在工程中创建多个模块。模块支持entry、feature、har、shared四种类型，具体请参考[module.json5配置文件](module-configuration-file.md#配置文件标签)。
@@ -33,7 +33,7 @@ content_hash: sha256:8dafb2de8242685a8a736b3b933e688663c78526da15b64fe5128a5466f
      + 勾选（true）：可以被其它应用/元服务调用。
      + 不勾选（false）：不可以被其它应用/元服务调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/fgL9HdjNTOqv25Y7qbDOiw/zh-cn_image_0000002810630667.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4FEAA0286A44F72B563A747D0216C61ABF3C032347FD3A30F303660754915AC "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/WxfwuVbWTh6BbsEE6nH7AA/zh-cn_image_0000002810630667.png?HW-CC-KV=V1&HW-CC-Date=20261114T004910Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AE8071EE3AAA13A7A447BEDD210247F564346C3FF7B7F772B2B43F5B1E9FF87 "点击放大")
 3. 单击**确认**，等待创建完成后，可以在工程目录中查看和编辑新增的模块。工程中所包含模块的信息可以在[build-profile.json5](ide-hvigor-build-profile-app.md)中modules字段进行配置。
 
 ## 删除模块

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.deviceInfo (设备信息管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.deviceInfo (设备信息管理)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:24+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:2a5e5a9e8528981cc5d72fe6453200763507a66305b35aa97f7b545aba21e60b
+scraped_at: 2026-11-14T08:52:09+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:100d0ee1ae839e8d5825b7b97fa681d82e12102ab36894c330a28c3c363875a0
 ---
 
 本模块提供企业设备信息管理能力，支持获取设备序列号、设备名称、SIM卡信息等。企业管理员可通过此模块查询设备详细信息，实现设备资产的统一管理和追踪。
@@ -48,7 +48,7 @@ getDeviceInfo(admin: Want, label: string): string
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件，用于指定具有设备管理能力的目标应用。Want对象中必须包含abilityName（扩展能力名称）和bundleName（应用包名）两个必填字段。 |
-| label | string | 是 | 支持获取的设备信息标签。  - deviceName：设备名称。  - deviceSerial：设备序列号。  - simInfo：SIM卡信息。  - disk：硬盘信息。  - memory：内存信息，当前仅支持PC/2in1设备使用。 |
+| label | string | 是 | 支持获取的设备信息标签。  - deviceName：设备名称。  - deviceSerial：设备序列号。  - simInfo：SIM卡信息。  - disk：硬盘信息。  - memory：内存信息，当前仅支持PC/2in1设备使用。  - developerModeState：开发者模式。返回on，表示开发者模式打开；返回off，表示开发者模式关闭。 |
 
 **返回值：**
 

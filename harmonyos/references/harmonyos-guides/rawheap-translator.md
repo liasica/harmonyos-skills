@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/rawheap-trans
 title: rawheap-translator工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 命令行工具 > rawheap-translator工具
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:51+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7bd61dd1a106045763c18d43c4ff1d2333214e5164968dcf9764f10a8c57d40f
+scraped_at: 2026-11-14T08:47:51+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:7a27763943b360a9d2e9526745291e9881c409a7739159162b6a02998acb7694
 ---
 
 ## 使用场景
@@ -178,7 +178,7 @@ rawheap文件的大小和生成耗时与当前ArkTS堆内存大小及存活对�
 
 **问题现象**
 
-工具解析时，提示：open file failed
+工具解析时，提示：open file failed。
 
 ```bash
 [INFO ] ParseVersion            current metadata version is 1.0.0

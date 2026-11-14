@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/medialibrary-
 title: 使用PickerController将编辑后的图片替换原图
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 使用PickerController将编辑后的图片替换原图
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:02+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c9bbadc6a74b5160e34519dc1990cdbc77c8ab8956b749b6f184606ea4062f93
+content_hash: sha256:32d1861bff052ced251d1ec48593897efb6cfccb06d29ba5e788459ecd6dfb60
 ---
 
 ## 替换PhotoPicker中显示的图片/视频
@@ -14,7 +14,7 @@ content_hash: sha256:c9bbadc6a74b5160e34519dc1990cdbc77c8ab8956b749b6f184606ea40
 
 效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/rIsKLJRKTw-tPOCiQs5eog/zh-cn_image_0000002786519900.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233126Z&HW-CC-Expire=31536000000&HW-CC-Sign=24FAB755FAFC8DDCEDB14D25FEA3344B25B4F1022CC6F9518C507AA6FEF38311)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/59pDt2SPSWWOUQ-__790ew/zh-cn_image_0000002788307704.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004619Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0C7731ABA9245C5E3E0CE9894DBFD17BA98B8F785E9E99773BFA6571F8E9FFD)
 
 ### 开发步骤
 
@@ -45,7 +45,7 @@ content_hash: sha256:c9bbadc6a74b5160e34519dc1990cdbc77c8ab8956b749b6f184606ea40
 
 效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/HpsePiehQmCCIBm7q5donA/zh-cn_image_0000002786359972.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233126Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CB9CF9663190BB8496C7266E98F6E69CC41C369221F4B948B8625C500A61F41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/5i4CvmqaREq8SQhNoN6P-A/zh-cn_image_0000002817427067.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004619Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4496F7E18BD902EA49F40EDCA3F3D2706F0661E4867FE9E6BA5A927A1D29E7F)
 
 ### 开发步骤
 

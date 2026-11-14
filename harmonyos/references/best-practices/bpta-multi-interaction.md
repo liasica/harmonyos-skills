@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-inte
 title: 多设备交互
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备交互 > 多设备交互
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:a6bab7db5432654c9435b6b63758583915754bac14b0a9a72c4fbe07a327ae95
+scraped_at: 2026-11-14T08:54:09+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:74747f649b2ff7bdaa9fd068051a0ae17fd7165cb9dbd643218938a305c90597
 ---
 
 ## 概述
 
-在开发“一多”应用时，除了需要针对手机、平板、电脑、穿戴设备、智慧屏等设备的硬件差异进行适配外，还应关注其在交互方式上的差异性。不同设备的用户交互依赖于各异的输入设备，从而形成不同的交互方式，例如：手机/平板通过手指触控屏幕、电脑通过鼠标控制光标、智慧屏通过灵犀指向遥控控制光标。为确保应用在各类设备上均具备自然流畅的可用性，开发时需系统性关注并差异化适配相应的交互事件。
+在开发“一多”（参考[一次开发，多端部署概览](../doccenter-multi-device/bpta-multi-device-overview.md)）应用时，除了需要针对手机、平板、电脑、智能穿戴、智慧屏等设备的硬件差异进行适配外，还应关注其在交互方式上的差异性。不同设备的用户交互依赖于各异的输入设备，从而形成不同的交互方式，例如：手机/平板通过手指触控屏幕、电脑通过鼠标控制光标、智慧屏通过灵犀指向遥控控制光标。为确保应用在各类设备上均具备自然流畅的可用性，开发时需系统性关注并差异化适配相应的交互事件。
 
 ## 多设备交互
 
@@ -18,7 +18,7 @@ content_hash: sha256:a6bab7db5432654c9435b6b63758583915754bac14b0a9a72c4fbe07a32
 
 * 手机：单击屏幕。
 
-  通过触屏事件触发播放/暂停逻辑，主要依赖手指触碰触摸屏输入。
+  通过触屏事件触发播放/暂停逻辑，主要依赖手指触碰触控屏输入。
 * 平板：单击屏幕、外接鼠标单击左键、外接键盘按下空格键。
 
   支持多模态输入，可响应触屏点击事件；当连接外接鼠标时，支持鼠标左键点击事件；连接外接键盘时，可通过监听键盘事件（如空格键）实现快捷控制。
@@ -28,9 +28,9 @@ content_hash: sha256:a6bab7db5432654c9435b6b63758583915754bac14b0a9a72c4fbe07a32
 * 智慧屏：灵犀指向遥控单击OK键、灵犀悬浮触控单击触控板。
 
   智慧屏独特的输入设备，灵犀指向遥控实现光标定位后，按下OK键触发点击逻辑；配有灵犀悬浮触控，点击触控板触发点击逻辑。
-* 穿戴设备：单击屏幕。
+* 智能穿戴：单击屏幕。
 
-  通过触屏事件触发播放/暂停逻辑，主要依赖手指触碰触摸屏输入。
+  通过触屏事件触发播放/暂停逻辑，主要依赖手指触碰触控屏输入。
 
 多设备交互开发需针对触屏、鼠标、键盘、遥控器等不同输入设备进行交互适配，在保证功能一致性的基础上，遵循各设备的交互规范，实现自然流畅的应用体验。
 
@@ -39,7 +39,7 @@ content_hash: sha256:a6bab7db5432654c9435b6b63758583915754bac14b0a9a72c4fbe07a32
 交互归一是一种面向多设备输入的响应框架，通过将不同输入设备的交互行为抽象为同一事件，来简化开发逻辑，例如：触屏点击、触控板点击、鼠标左键单击、遥控器OK键确认等统一抽象为点击事件；遥控器功能键、键盘快捷键抽象为按键事件。交互归一实现对多样化输入源的统一处理，确保组件在不同交互场景下具备一致的行为逻辑与用户体验。
 
 **图1** 输入设备  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/qYWFUcc4RRSZyLlA7Ba2hg/zh-cn_image_0000002499409917.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDD4C6A01DC9387585FCBC6970A81F87064BB380518706428481087BE20BF94B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/DSiMweffROWQGZkhEqFxnQ/zh-cn_image_0000002499409917.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=2403CDDAF9D61FE0C9CE7A0CFC126EFC1B9531F40D3EC062B9BB4BD0A51CFBE4 "点击放大")
 
 交互归一并非将所有输入方式简单合并为单一事件或通过一个API处理，而是通过对不同设备的几十种底层交互事件进行语义抽象与归类，在保证交互差异可控的前提下，大幅减少事件类型数量。最终形成的是一组标准化的交互API集合，开发者仍需根据具体场景选择并适配相应的抽象事件，以实现跨设备的一致性与灵活性兼顾的交互体验。
 
@@ -47,16 +47,16 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 
 ### 基础输入事件
 
-当用户使用输入设备（如触摸屏、键盘、鼠标或触控板）进行交互时，设备驱动层会检测并生成相应的原始信号。操作系统捕获这些底层信号，并将其封装为标准化的“基础事件”，随后传递给上层应用程序进行处理。
+当用户使用输入设备（如触控屏、键盘、鼠标或触控板）进行交互时，设备驱动层会检测并生成相应的原始信号。操作系统捕获这些底层信号，并将其封装为标准化的“基础事件”，随后传递给上层应用程序进行处理。
 
 根据基础事件特点总体上分为两类，指向性与非指向性事件。从“事件的目标如何确定”来理解指向性事件和非指向性事件：
 
-* 指向性事件：交互动作第一次开始时（比如手指按下、鼠标点击），用户的手指或鼠标指针碰到了屏幕上的哪个组件。这个被“命中”的组件就成为了整个交互过程（包括后续的移动、抬起）的接收目标。包括：[触摸事件](../harmonyos-references/ts-universal-events-touch.md)，[鼠标事件](../harmonyos-references/ts-universal-mouse-key.md)，[轴事件](../harmonyos-references/ts-universal-events-axis.md)，[手写笔事件](../harmonyos-references/pen-api.md)。
+* 指向性事件：交互动作第一次开始时（比如手指按下、鼠标点击），用户的手指或鼠标指针碰到了屏幕上的哪个组件。这个被“命中”的组件就成为了整个交互过程（包括后续的移动、抬起）的接收目标。包括：[触摸事件](../harmonyos-references/ts-universal-events-touch.md)，[鼠标事件](../harmonyos-references/ts-universal-mouse-key.md)，[轴事件](../harmonyos-references/ts-universal-events-axis.md)，手写笔事件（参考[Pen Kit（手写笔服务）](../doccenter-references/api/pen-api.md)）。
 
   场景案例：使用手写笔在屏幕上书写，当手写笔在屏幕的某个位置第一次点击的位置（例如画板），当前画板组件就是交互的目标。
 
   **图2** 手写笔套件效果图  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/fhxC7RSiSbWRkGObpULGcQ/zh-cn_image_0000002513308069.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=82124E024DB1FCFF8A728A9EE3C809E897DF154D6C07B2B8B200F71586F1E74D "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/kDghc4SFSUGDXUtr9YBRbw/zh-cn_image_0000002513308069.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD5CF01DCF0EA4A14201BD17B7471DEC2000A38966B087DE116E3F313052802F "点击放大")
 
   手写笔套件的示例代码如下所示：
 
@@ -83,7 +83,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 
   **说明** 
 
-  鼠标左键的事件响应，推荐使用[onClick](../harmonyos-references/ts-universal-events-click.md#onclick12)点击事件，其他按键通过[鼠标事件](../harmonyos-references/ts-universal-mouse-key.md)处理。
+  鼠标左键的事件响应，推荐使用[onClick()](../harmonyos-references/ts-universal-events-click.md#onclick12)点击事件，其他按键通过[鼠标事件](../harmonyos-references/ts-universal-mouse-key.md)处理。
 
   ```typescript
   .onKeyEvent((event?: KeyEvent) => {
@@ -109,13 +109,13 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
   下图为常见基础输入事件，在不同输入设备上的触发方式。
 
   **图3** 输入设备基础输入事件触发方式一览表  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/R_VJamSEQdOd2l1a849xEQ/zh-cn_image_0000002545929217.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=23E2574FF0A9150D998915EFAA800E9A676B543798ECE11D4473C1D487B20DAA "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/DFbfQJR8QJqUD9h10Q7nYg/zh-cn_image_0000002545929217.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=D070BA89B4ADABDA75FC2CD3DD7CCD3DFEC5CBBC971F6D6C5B49B9E67BAF82A9 "点击放大")
 
   **说明** 
 
   onKeyEvent事件默认是冒泡的，在onKeyEvent事件的回调函数中，若事件已被处理，建议开发者返回true，表示已消费该事件。这可以阻止事件继续冒泡，避免上层节点重复响应，从而防止按键事件被触发多次。
 
-  灵犀手写笔不响应[onHover](../harmonyos-references/ts-universal-events-hover.md#onhover)事件，上表数据仅适用于其他型号的手写笔设备。
+  灵犀手写笔不响应[onHover()](../harmonyos-references/ts-universal-events-hover.md#onhover)事件，上表数据仅适用于其他型号的手写笔设备。
 
 ### 手势事件
 
@@ -130,7 +130,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 下图为常见手势事件在不同输入设备上的触发方式。
 
 **图4** 输入设备手势事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/ksh7ySDoS8aRMbLMXCTBMQ/zh-cn_image_0000002518761840.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=B773A659985AEC236284323D77AF9AC37E42E1D0811D0F7C65C471FA283738AA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/QbhOAkmISIyxhWGTF7yU7w/zh-cn_image_0000002518761840.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=C918DC7CA2F8BBE651AF844660DA9BD9418D0C77AF15D343795F6BA4B430D654 "点击放大")
 
 如下是旋转手势的示例代码：
 
@@ -204,16 +204,16 @@ Grid() {
 
 使用键盘、电视遥控器、车机摇杆或旋钮等非指向性输入设备与应用程序进行间接交互时，建议将页面中可操作元素设置为可获焦状态，并配置获焦视觉效果，以保证交互体验。
 
-* 获焦/失焦：通过[onFocus](../harmonyos-references/ts-universal-focus-event.md#onfocus)和[onBlur](../harmonyos-references/ts-universal-focus-event.md#onblur)事件来监听组件的焦点变化。组件获焦时，遵循子组件优先原则。若子组件需获焦，其所有祖先组件均需可获焦。容器组件需获焦时，其子组件应不可获焦，并配置点击事件。
+* 获焦/失焦：通过[onFocus()](../harmonyos-references/ts-universal-focus-event.md#onfocus)和[onBlur()](../harmonyos-references/ts-universal-focus-event.md#onblur)事件来监听组件的焦点变化。组件获焦时，遵循子组件优先原则。若子组件需获焦，其所有祖先组件均需可获焦。容器组件需获焦时，其子组件应不可获焦，并配置点击事件。
 
   部分组件默认可获焦，如Button、TextInput等基础组件和Column、Row等容器组件。若组件有获焦能力但默认不可获焦，如Text、Image等组件，可设置通用属性focusable(true)使其可获焦。部分组件为无交互行为的组件，通常不可获焦，例如Blank、Circle组件。组件的获焦能力总览可参考[组件获焦能力说明](../harmonyos-guides/arkts-common-events-focus-event.md#组件获焦能力说明)。
 * 走焦：触发走焦时，系统遍历组件树中可走焦的组件。当前焦点框架支持三种走焦算法：线性走焦，按照子节点在节点树中的挂载顺序进行焦点导航；投影走焦，适用于容器内子组件尺寸不一的场景，通过空间位置关系计算最佳焦点目标；此外，开发者还可通过 [tabIndex](../harmonyos-references/ts-universal-attributes-focus.md#tabindex9)和[nextFocus](../harmonyos-references/ts-universal-attributes-focus.md#nextfocus18)灵活自定义走焦逻辑，满足复杂交互需求。详情可参考[走焦规范](../harmonyos-guides/arkts-common-events-focus-event.md#走焦规范)和[走焦算法](../harmonyos-guides/arkts-common-events-focus-event.md#走焦算法)。
 
   **图5** 使用键盘走焦  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/O3LKFpEEQPucj218U8TVVQ/zh-cn_image_0000002728977626.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF158E29469968637F410884B5096FF01D2034F5EB83026510C3C8597960AA44 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/FwWB1qVDTIGiSWiFRH6ZeA/zh-cn_image_0000002728977626.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EFE70A2CEE8DC4DBC038A8D1C909435D3AB24C97F82F043D654A34B383D565C "点击放大")
 
 **图6** 走焦样式指引案例  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/vWtoeoM5RyyCRtMnkVE4lQ/zh-cn_image_0000002499449901.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFFB137C91C24A86E5F35504F145205CE7B40DEF93AD7477A5AD5D5963EF66DE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/OVhkJ0BETSKN5NhCMpD_YQ/zh-cn_image_0000002499449901.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8F249276DD7851F588F291FE56FEE26C05D35A89AEDD4E3327A678C1DD27587 "点击放大")
 
 更多焦点事件的能力和规范请参考[支持焦点处理](../harmonyos-guides/arkts-common-events-focus-event.md)。
 
@@ -230,7 +230,7 @@ Grid() {
 下图为不同输入设备上支持触发焦点事件的方式。
 
 **图7** 输入设备焦点事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/V5265aoDQnubusKNLbOzvQ/zh-cn_image_0000002545901089.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECC42024412C6C58B47307B78C5D86FE4E6BD3F3612650DE304A9DBB35676BCB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/YyyhnS3NSkegUNTG3xiScA/zh-cn_image_0000002545901089.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC648444A52FC2A6B2ED059087F36165FC38E1D853F96D90B6325CFEC829B9E0 "点击放大")
 
 ### 拖拽事件
 
@@ -247,16 +247,16 @@ Grid() {
 
 | 名称 | 功能描述 |
 | --- | --- |
-| [onDragStart](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart) | 绑定A组件，触控屏长按/鼠标左键按下后移动触发 |
-| [onDragEnter](../harmonyos-references/ts-universal-events-drag-drop.md#ondragenter) | 绑定B组件，触控屏手指、鼠标移动进入B组件瞬间触发 |
-| [onDragMove](../harmonyos-references/ts-universal-events-drag-drop.md#ondragmove) | 绑定B组件，触控屏手指、鼠标在B组件内移动触发 |
-| [onDragLeave](../harmonyos-references/ts-universal-events-drag-drop.md#ondragleave) | 绑定B组件，触控屏手指、鼠标移动退出B组件瞬间触发 |
-| [onDrop](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop) | 绑定B组件，在B组件内，触控屏手指抬起、鼠标左键松开时触发 |
+| [onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart) | 绑定A组件，触控屏长按/鼠标左键按下后移动触发 |
+| [onDragEnter()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragenter) | 绑定B组件，触控屏手指、鼠标移动进入B组件瞬间触发 |
+| [onDragMove()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragmove) | 绑定B组件，触控屏手指、鼠标在B组件内移动触发 |
+| [onDragLeave()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragleave) | 绑定B组件，触控屏手指、鼠标移动退出B组件瞬间触发 |
+| [onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop) | 绑定B组件，在B组件内，触控屏手指抬起、鼠标左键松开时触发 |
 
 下图为不同输入设备上触发拖拽事件的方式。
 
 **图8** 输入设备拖拽事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/aFDI19-UTge8OwUN3aifCA/zh-cn_image_0000002545813259.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=13D90FC3FB2AAB00E5EB289AB9B147D5EBF7081A65B5F870560589EFB9448B86 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/J80y7BzYTMinMYqjJ_W1lA/zh-cn_image_0000002545813259.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DD53846902AD992C2D6DA596AA3863A5D0905F275BB94B93EA098E2CBA9F9F4 "点击放大")
 
 如下是图片拖拽的示例代码：
 
@@ -308,7 +308,7 @@ Grid() {
 | 折叠屏 | 触控屏 |
 | 阔折叠 | 触控屏、手写笔（Pura X Max） |
 | 三折叠 | 触控屏、手写笔（Mate XTs、Mate XT 2） |
-| 平板 | 触摸屏、鼠标、键盘、手写笔 |
+| 平板 | 触控屏、鼠标、键盘、手写笔 |
 | 电脑 | 触控屏、触控板、鼠标、键盘、手柄 |
 | 智慧屏 | 灵犀指向遥控、灵犀悬浮触控、灵犀手写笔、键盘、鼠标 |
 | 智能穿戴 | 触控屏、表冠 |
@@ -317,7 +317,7 @@ Grid() {
 
 1. 首先，明确长视频类应用的目标适配设备为手机、平板、电脑及智慧屏。
 2. 根据[设备支持的输入设备一览表](bpta-multi-interaction.md#table87765613332)可知手机、平板、电脑和智慧屏支持的输入设备包括：触控屏、触控板（部分设备）、鼠标、键盘、手柄、灵犀指向遥控、灵犀悬浮触控（智慧屏）。
-3. 在实现播放/暂停功能时，需根据不同输入设备的交互方式，适配相应的事件处理机制。根据[输入设备手势事件触发方式一览表](bpta-multi-interaction.md#fig171915584482)可知：对于触控屏、鼠标和 灵犀指向遥控，均可通过响应[onClick](../harmonyos-references/ts-universal-events-click.md)点击事件来触发操作；根据[输入设备基础输入事件触发方式一览表](bpta-multi-interaction.md#fig181131199359)可知，使用键盘时，则需监听[特定按键](../harmonyos-references/js-apis-keycode.md#keycode)（如空格键、回车键）的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md)按键事件，识别后执行对应逻辑。
+3. 在实现播放/暂停功能时，需根据不同输入设备的交互方式，适配相应的事件处理机制。根据[输入设备手势事件触发方式一览表](bpta-multi-interaction.md#fig171915584482)可知：对于触控屏、鼠标和灵犀指向遥控，均可通过响应[onClick()](../harmonyos-references/ts-universal-events-click.md)点击事件来触发操作；根据[输入设备基础输入事件触发方式一览表](bpta-multi-interaction.md#fig181131199359)可知，使用键盘时，则需监听[特定按键](../harmonyos-references/js-apis-keycode.md#keycode)（如空格键、回车键）的[onKeyEvent()](../harmonyos-references/ts-universal-events-key.md)按键事件，识别后执行对应逻辑。
    * 触控屏：单击屏幕。鼠标：点击左键。灵犀指向遥控：单击OK键。
 
      ```screen
@@ -326,17 +326,19 @@ Grid() {
      }) {
        Column() {
          // ...
+       }
+       // ...
      }
      .width('100%')
      .onClick(() => {
        // ...
      })
      ```
-   * 键盘：键盘按下空格键。空格键的键码为KEYCODE\_SPACE，其他按键的键码可通过[keyCode](../harmonyos-references/js-apis-keycode.md#keycode)枚举查询，例如回车键对应KEYCODE\_ENTER。应用可根据实际交互需求，灵活适配不同按键。
+   * 键盘：键盘按下空格键。空格键的键码为KEYCODE\_SPACE，其他按键的键码可通过[KeyCode](../harmonyos-references/js-apis-keycode.md#keycode)枚举查询，例如回车键对应KEYCODE\_ENTER。应用可根据实际交互需求，灵活适配不同按键。
 
      ```screen
      .onKeyEvent((event?: KeyEvent) => {
-       //If the key type is pressed, the subsequent code will not be executed,
+       // If the key type is pressed, the subsequent code will not be executed,
        // and the specific key logic will be executed when released.
        if (!event || event.type !== KeyType.Down) {
          return;
@@ -345,15 +347,15 @@ Grid() {
        if (event.keyCode === KeyCode.KEYCODE_SPACE) {
          this.avPlayerUtil?.playerStateControl();
        } else if (event.keyCode === KeyCode.KEYCODE_ESCAPE) {
-         //Press ESC to exit full screen.
+         // Press ESC to exit full screen.
          if (this.isFullScreen) {
            this.exitFullScreen();
          }
        } else if (event.keyCode === KeyCode.KEYCODE_DPAD_RIGHT) {
-         //Right-click fast forward
+         // Right-click fast forward
          this.avPlayerUtil?.fastForward();
        } else if (event.keyCode === KeyCode.KEYCODE_DPAD_LEFT) {
-         //Left click to go back quickly
+         // Left click to go back quickly
          this.avPlayerUtil?.rewind();
        } else {
          return;

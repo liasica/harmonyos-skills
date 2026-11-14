@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 图标小符号 (SymbolGlyph/SymbolSpan)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 图标小符号 (SymbolGlyph/SymbolSpan)
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:8d1958e803eb9c794bfc1e55a517d1e03f740c797870fb5bc66198d6c49fd062
+content_hash: sha256:c21426b1f1757cd9670221d28e8ab582a14454110d05db7b7baf5b462afe6e7b
 ---
 
 SymbolGlyph是图标小符号组件，便于使用精美的图标，如渲染多色图标和使用动效图标。SymbolSpan作为Text组件的子组件，可在文本中穿插显示图标小符号。具体用法请参考[SymbolGlyph](../harmonyos-references/ts-basic-components-symbolglyph.md)和[SymbolSpan](../harmonyos-references/ts-basic-components-symbolspan.md)组件的API文档。
@@ -23,7 +23,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   .fontColor([Color.Black, Color.Green, Color.White])
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/P3mtic_HSqeWq6eLEK5_fw/zh-cn_image_0000002815398463.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5B51A62BC565674069E099DDC14E30A448C05102C335D28E7EF5EEB72674F9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/tGWbVO7WTsaHJ5snlId8QA/zh-cn_image_0000002817506121.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=17799A97EC2811FFAB44AED3BA8A6C936E53A89E0DF3C87EB5F9A23C4C7904EF)
 
 ## 添加到文本中
 
@@ -41,7 +41,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/2I745VDWSuq8nCXVyN4NNA/zh-cn_image_0000002786518888.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=81FE2D311D757ABC09366C1CF54A0D610E53B28DBE6D0C6749BD5504E5CCD0C6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/enAUdCh5TtGEw7iNbrbLTg/zh-cn_image_0000002788306692.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC843A010D68019E6EED9039C2C68DF354F3FB5AC9D2D21957F3D0CCA7D16982)
 * 通过[fontSize](../harmonyos-references/ts-basic-components-symbolspan.md#fontsize)属性设置SymbolSpan的大小。
 
   ```typescript
@@ -78,7 +78,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ME1SehnDQzOmNFMHnhuQrg/zh-cn_image_0000002786358960.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=633867A6E474E9FD0B516F8EFA31FDA12C25CE4B028887773D325D36B89F8E8D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/CfIr7y3QToiEawfF9-0lRA/zh-cn_image_0000002817426055.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=C37ABA60E6ED9840EB19DDA4DA37DDBB5847CC616C6EBCEBA604E0BDFCDD0511)
 * 通过[fontWeight](../harmonyos-references/ts-basic-components-symbolspan.md#fontweight)属性设置SymbolSpan组件的粗细。
 
   ```typescript
@@ -112,7 +112,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/3A5EjgStTJ68tPMMgiMfMQ/zh-cn_image_0000002815558381.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD2CB68C6CF2D9F7758D0C30C25CB30DA0ACB6E52AC4CB95CF38F2EC5FE2F6A1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/qCqDH8R6TOaUxJDGDAdxIw/zh-cn_image_0000002788466636.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DCEA25E5B34B634F911DA4F9E68D84F48F1D423130B1D476AF8F7F7483EEFDC)
 * 通过[fontColor](../harmonyos-references/ts-basic-components-symbolspan.md#fontcolor)属性设置SymbolSpan的颜色。
 
   ```typescript
@@ -146,7 +146,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/aG6tyh0ySUWS2PFdgLe2jA/zh-cn_image_0000002815398465.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=813BC1113C28494E0A17F56A7BCDF77230EAB2176FC8056F055797EA73292429)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Hf2AWkoZQgqccQTbCgWv0Q/zh-cn_image_0000002817506123.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=7579860F43A9928A552B86B2541816F253DC8088C4AA75654BF42DAE2EA91C5B)
 * 通过[renderingStrategy](../harmonyos-references/ts-basic-components-symbolspan.md#renderingstrategy)属性设置SymbolSpan的渲染策略。
 
   ```typescript
@@ -186,7 +186,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/6k1ktOOaRvuaJVwM6SoKJw/zh-cn_image_0000002786518890.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=12D630E88C8B50AB49B92BB135A8AF3F03B01818AAD2A85A8BB5735A944FF212)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Xm9wM8qoQsu_o-gwcqNDng/zh-cn_image_0000002788306694.png?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=17E9D734C7ECEDF567CE13C8DDE8FD37D5AB7D829E6187E854BAE7C74F8748D5)
 * 通过[effectStrategy](../harmonyos-references/ts-basic-components-symbolspan.md#effectstrategy)属性设置SymbolSpan的动效策略。
 
   ```typescript
@@ -223,7 +223,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/05vO6LupQUGOnPStlkkYTg/zh-cn_image_0000002786358962.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E786D98158AA102B1824562EB4E06C3670DF0542DE467E1FFBA545739C1ACD2F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/lJsJlPT2S7aXBJMFT2w2VQ/zh-cn_image_0000002817426057.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE64FF43A4EB1A33CFCCFF66DEC8465EDCC9DA022B0CFF57D70EC5BAC99ABA66)
 * SymbolSpan不支持通用事件。
 
 ## 自定义图标动效
@@ -253,7 +253,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/4ndmTkLKRj6-wQddPyYn3w/zh-cn_image_0000002815558383.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=86448E6B8C377372126F348BA9124E7F9EAA097FC750D6DF3C83E66D47FFF0A2)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Cj7D6t8TSeqp6QvocjaIKQ/zh-cn_image_0000002788466638.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=94462599ED93DFED2D43E7DA4BF61D7112D66173F4D5BE40A7D07A13C3A5EE06)
 * 通过设置symbolEffect属性，可以同时指定SymbolGlyph的动画效果策略及其播放触发条件。
 
   ```typescript
@@ -275,7 +275,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/P4E4mIdiSraPqCtZje_2Tg/zh-cn_image_0000002815398467.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFCE692F557FF5B6CE35FC17B7DD3646328720EA0EFF0264E34589D3F48325A5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/WnIFNH6bRP6CvV-OIay5uQ/zh-cn_image_0000002817506125.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=2060865F88CB962E48FFD997FF25ABFA36B76C0900E1D8CD97E784577DE4DFA8)
 * 从API version 20开始，支持通过设置symbolEffect属性为[ReplaceSymbolEffect](../harmonyos-references/ts-basic-components-symbolglyph.md#replacesymboleffect12)，设置[ReplaceEffectType](../harmonyos-references/ts-basic-components-symbolglyph.md#replaceeffecttype20枚举说明)为ReplaceEffectType.SLASH\_OVERLAY，可以指定SymbolGlyph的禁用动画效果及其播放触发条件。
 
   ```typescript
@@ -300,7 +300,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/6mpp5AggTfKcXk8kOdUWWw/zh-cn_image_0000002786518892.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B465D2366E1BECCB4531AF4B44E2CDE56583D6B6B848AF7C405D522CAC8AA79B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/64Dzdcp9SxmOGG1CDB64UQ/zh-cn_image_0000002788306696.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=C78C16D67B47C7A2EB5D5BCDD294933178B0DCA53DABB9BBC2A60D7B7B34A46B)
 * 从API version 20开始，支持通过设置symbolEffect属性为[ReplaceSymbolEffect](../harmonyos-references/ts-basic-components-symbolglyph.md#replacesymboleffect12)，设置[ReplaceEffectType](../harmonyos-references/ts-basic-components-symbolglyph.md#replaceeffecttype20枚举说明)为ReplaceEffectType.CROSS\_FADE，可以指定SymbolGlyph的快速替换动画效果及其播放触发条件。
 
   ```typescript
@@ -323,7 +323,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/McVqkdamRfSNoqtXdLkcMg/zh-cn_image_0000002786358964.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=5059B35B796BDCDE2C4B09DDBD1428B787E0035A1C47B3784749D7BEC0C83EE1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/IIfw0k0iTbWOQw7YeeiowQ/zh-cn_image_0000002817426059.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=C20FC4353F2B54012A20C7DEEFBAA3773D873DA13AA64A506973346B388527BD)
 
 ## 设置阴影和渐变色
 
@@ -356,7 +356,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/EJF_rtjDT3OEnLo0HaTe7Q/zh-cn_image_0000002815558385.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4FEE41CDC3F785247700CADCF8430E03DD3208692FA6B561058C86AC97A863B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/ss190ZolSxWnwA2MaNvt0w/zh-cn_image_0000002788466640.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9AA3130B6E3744F370A87A025A6EB496E41C3FCDCA7E8FD989D6AC039368299)
 * 从API version 20开始，支持通过[shaderStyle](../harmonyos-references/ts-basic-components-symbolglyph.md#shaderstyle20)接口为SymbolGlyph组件设置渐变色效果。
 
   ```typescript
@@ -381,7 +381,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/5-LKyIOnTYyxYzcbZUMRtA/zh-cn_image_0000002815398469.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=117EC729B059AD8ABFB70D975111CA4753268F8C0F555A43A096AC4AECCDAE34)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/eFDg05KWQF2-gZq7U3baXA/zh-cn_image_0000002817506127.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=208BEF8D221CB8C4B284A347CFCF9616589BCE8B255AFB1723BCD284025A7948)
 
 ## 添加事件
 
@@ -400,7 +400,7 @@ SymbolGlyph($r('sys.symbol.ohos_wifi'))
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/V8yGuw8ZQOquiBWwcFbLCQ/zh-cn_image_0000002786518894.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9D49262A10B6B4429DBEF60C6CF3A5959E00D07080A7D91DE0DC73BC10B4AE3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/oTX8a--oT7e6M3kAkRh9MA/zh-cn_image_0000002788306698.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1B45731077FAB1459A2B4A7B5A15D846F32E64DE89E6AC97BB6EC05A4588574)
 
 ## 场景示例
 
@@ -624,4 +624,4 @@ struct SymbolMusicDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/PORpf2_aToCIrlg9u06ZWA/zh-cn_image_0000002786358966.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1D97EAA1A6889057D749539DBE02C876C3407FB391861BA6131CF314B224022)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/WaoVZNOoRq6cCzUqUEUQ1g/zh-cn_image_0000002817426061.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004525Z&HW-CC-Expire=31536000000&HW-CC-Sign=0112799AA17DDFD39BBF7AC79C67546DA6C72A1CD887A2E1FD88E37C2CE9B3C7)

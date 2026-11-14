@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-kit-l
 title: 意图标准协议上架指导
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 意图框架上架配置指导 > 意图标准协议上架指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:40+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:1673b9ee29b9203fc5fad30247a56d84eafaccd4a3fadbadfada1fac8befb956
+content_hash: sha256:8a12f29619ed5c657b547de4ccce82db95413a01e0a6e518b9ca58456ca3ea40
 ---
 
 该配置需开发者完成自测后，先将携有对应意图信息的App在AppGallery Connect（以下简称AGC）完成应用上架，具体操作步骤参见[应用开发准备](application-dev-overview.md)。
@@ -16,41 +16,41 @@ content_hash: sha256:1673b9ee29b9203fc5fad30247a56d84eafaccd4a3fadbadfada1fac8be
 
    1. 登录[华为开发者联盟](https://developer.huawei.com/consumer/cn/) ，选择“管理中心 > 生态服务 > 智慧服务 > 小艺开放平台”，在管理中心找到小艺开放平台。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/bouwm8c3TX2bGXBe9Pwp-A/zh-cn_image_0000002786360758.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=16E32116015F093ED4690F096377CC00AAA28D7F29896174627A75A99054137C)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/vSaarH3yRsuZpzhjsodQqw/zh-cn_image_0000002817507923.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F1C78D171F2AB4F72F75F2310714187FBA8F06FEBCE9FF1A535C64498DFCC27)
    2. 点击“立即体验”按钮，进入项目管理页面。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/hUWieQuYR6KgeKkcJFzimg/zh-cn_image_0000002815560179.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F142797E5B26A36732E1A01C9C0915E3D64D175261884B90E53F0A893CDA790)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Egv50SceSQm4b6ycQIQ2NQ/zh-cn_image_0000002788308492.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDEAA3E4A0648F3A6287299FAC5A8A49EAEADFDF8AB9505F358E4CADD64C181F)
    3. 在资源库中点击“意图框架”页签，即可到达意图注册配置操作入口。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/lDOIHGcRTsaijTGQMl7y6A/zh-cn_image_0000002815400263.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF1E74B0877532E3CF39D3E63162BC8FBC6B8F6630662AB797E3E1302570B22E)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/nzW4LLOnQiqIJ4f8dcxGEQ/zh-cn_image_0000002817427855.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0575982F5302353C06E1D56DBF5232EDA8AF980185A741D297A18659F0BC3F1)
 2. 选择意图集：携有意图声明文件的应用在AGC**正式上架**后可**自动生成**一条草稿态的记录，记录中包含开发者在意图配置文件中声明的所有**端侧意图**。如果本次接入意图框架也涉及到使用**云侧意图**，则需要在意图集内手动进行云侧意图的配置（配置方式参考下文意图配置部分）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/PcxfLXr_RhCCcLvrRFp5MA/zh-cn_image_0000002786520688.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E7032F3FBE8D38EEC020FB5D3EE50EEEB449F2BDFEBF00224DEAF6D39D882B3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/CiR1hFRQRzqVJ_PIbsYglg/zh-cn_image_0000002788468436.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFD59377C74129BB3B60D6C814400FCD4A155149FEAE9ECDE62BAA422B523D57)
 3. 基本信息编辑：点击对应的意图集记录的“编辑”按钮，进入基本信息编辑页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/elnHeQCPTnK0twWuN2wzMQ/zh-cn_image_0000002786360760.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FFCEF6FEF28F3BFA897721F5CB7DD6F97847D23DCA5ECF68E775C15F75E5C18)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/P6RzyH4mQZqUzQZ6VzgL2g/zh-cn_image_0000002817507925.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BF82B75DE9C8C70CFADDD8E251F74C8BA8D0FD8579068BF8231F3F1BC4D84E9)
 
    此处的版本号和版本描述为智慧分发配置的版本信息，用于开发者记录和识别智慧分发配置版本变更，与APP软件包版本无关，意图注册名称与APP名称保持一致。开发者补充完基本信息后点击“保存”即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/pSTuhzasRSW2Cyywql5-lA/zh-cn_image_0000002815560181.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=436A2916688135291681DA4AE03FEE753FA509D18C58A60F916BAAC2D5921604)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/U1eGcK5GSzeYH_JoUqGD2Q/zh-cn_image_0000002788308494.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D98956CF2F516DF3AE83D1D6FD86D9770DC5206235F22D0E4FC84C9C5C62274)
 4. 意图配置：切换至“意图”页签，点击“保存”会触发刷新，需检查接入特性所依赖的全量意图是否在此页面都已列出。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/owo911tBTxqbj6UmePviXA/zh-cn_image_0000002815400265.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE6C0AD48EA594D1FE9A37EFD780DBFF234D8593554CEC5F652693145D2FA982)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/asYScr-HRI-UOzYWMTwhng/zh-cn_image_0000002817427857.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E9AB6CE23C3066AF53FFF46D33FE29AE711B517B2866D1C477CFBAB32C0A087)
 
    * 端侧意图：“端云类型”为端侧的意图，在APP软件包中定义，此处会自动呈现。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/dRiHruxFSvajANvRZqjbqA/zh-cn_image_0000002786520690.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CF3B0F5BE62DB152FC775695F303E5590E8B05B8376146617259C8A5CFA6E1D)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/_0T97QYNQXCyKQxr85Tm3g/zh-cn_image_0000002788468438.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=E73B1B60D9D2ED92594CBD8A77B7B68D54260D5327441B69CA16656E4E46C17C)
    * 云侧意图：“端云类型”为云侧的意图，需在此页面手动添加。可参照如下步骤配置：
 
      1. 点击“添加”，进行意图新增。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/aG4NvqT-Tt2onYrd3T0Byg/zh-cn_image_0000002786360762.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=B057F9D2749FD87E8000029183C283CC412716F95FF0946FECDC51B4C5812F5F)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/Xk9wmyLuRo-TBHidMkjWIw/zh-cn_image_0000002817507927.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC5A158DD1E25D2647AC505D54B82C9C4C1A9676C152335D7076A6BD189F6E63)
      2. 选择云侧意图分类，搜索意图名称，勾选所需意图进行添加。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/dgzGqP4tRwy_Ta88BSVuMg/zh-cn_image_0000002815560183.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9A25329A2A59D017FE48EEA0767DB73E6265E94DB1FBA20DEBB903EE5071304)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/YHFnBIqiRT6WTeY9mf2Tqw/zh-cn_image_0000002788308496.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE044A46A614964B5FD78F082ECBB2313FAAC581A4530AA66147EF24E09F9154)
      3. 添加完成后，需录入接口信息配置，具体信息如下：
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/mqCa0Kh0TKm0U1X2gKO_zQ/zh-cn_image_0000002815400267.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5C17198B68489F1A439195DC2E51B740032E04CAB4F14C9854D6B6BF1E9D79B)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/n30ioeUjSsifkshCrLvqsA/zh-cn_image_0000002817427859.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=2689A325D7B603C5DBD729D0CC6A39C886752DA04A81AE4DD91C972CF4288D29)
 
         + API：即开发者的URL地址信息，供华为侧服务器进行云侧意图调用。
         + 认证方式：如果涉及接口鉴权，则选择认证方式（例如AK/SK认证）并配置密钥信息；如果不涉及则选择不认证。
@@ -63,8 +63,8 @@ content_hash: sha256:1673b9ee29b9203fc5fad30247a56d84eafaccd4a3fadbadfada1fac8be
    * 如果正确会同时生成特性以及abilityId，若开发者接入特性的方案涉及此参数（例如事件推荐场景），则意图共享中请求字段的abilityId参数需要填写当前界面的abilityId值。特性检查无误后，点击“提交审核”。
    * 若提示特性undefined，则说明华为意图框架后台未配置该特性。如需使该特性生效，请按照[Intents Kit接入流程](intents-access-flow.md)中的能力申请步骤，表述意图使用的场景提交审核。审核成功后，根据审核成功的反馈提示，重新操作该特性的配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/4B7sUIFHTuagjiFPPnBKhw/zh-cn_image_0000002786520692.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=83ADE5034D7AFCFEBD14229AADA9B17BA674A888C93688C47299131C766DB435)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/CK5YedlCQnO4sGRaD3_ElQ/zh-cn_image_0000002788468440.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C4D8219C4CE225C373A9E39E5B51183345719D19DDDE92933AF24094E811341)
 7. 审核：提交审核后，该条记录状态变为“上架审核中”，一般审核周期为3-5个工作日，审核通过后状态变为“已上架”，至此意图标准协议上架配置已完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/AkgjXLFZQCefMtzFJ2n_dw/zh-cn_image_0000002786360764.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B34311F63F416EF910C668099AE9AFC04C9AE4CE62A20362B663A9C8E48E728)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/1LukaZkYR5GjCgrWszC0Ow/zh-cn_image_0000002817507929.png?HW-CC-KV=V1&HW-CC-Date=20261114T004840Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DCBC32D73812EBD86BA0E91CFD7F35681497457339720580465F9FA3A13EF14)
 8. 若开发者后续有新意图上架，可在同一条意图记录上进行编辑后提交，操作流程同上述步骤，未提交审核不影响已经注册的意图。

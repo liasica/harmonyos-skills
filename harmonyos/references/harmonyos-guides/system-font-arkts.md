@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-font-a
 title: 系统字体的信息获取和使用（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 系统字体的信息获取和使用（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:4b8df0b6cc9167e4a0131372ff037c9ed63ac8b3b75147455f41b65c05ddd539
+scraped_at: 2026-11-14T08:48:06+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:75eb435e0d42871bf82f874e0d749f3cb525d2f0f1647f170856297cd99da283
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ content_hash: sha256:4b8df0b6cc9167e4a0131372ff037c9ed63ac8b3b75147455f41b65c05d
 
 | 接口名 | 描述 |
 | --- | --- |
-| getUIFontConfig() : UIFontConfig | 获取系统字体配置。 |
+| getUIFontConfig(): UIFontConfig | 获取系统字体配置。 |
 
 ## 获取系统字体信息
 
@@ -62,7 +62,7 @@ content_hash: sha256:4b8df0b6cc9167e4a0131372ff037c9ed63ac8b3b75147455f41b65c05d
 
 以下打印的示例为应用设备系统对应的部分系统字体配置信息情况，不同设备系统配置信息可能不同，此处仅示意。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/5nXBly0QTG68dgejYzb-0w/zh-cn_image_0000002786519974.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=69A7626DB0028076AA4C517AC4A9AD5E38D28C7A8245FDBF9670ACC96DDD0558)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/Cuh4TWCOQyaqtWMzuDAUWw/zh-cn_image_0000002788307778.png?HW-CC-KV=V1&HW-CC-Date=20261114T004623Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E404F25C890A5A7B7B5E80A279CA3BE72780FA722643DC1230D280DA16D2DB1)
 
 ## 使用或切换系统字体
 
@@ -126,4 +126,4 @@ content_hash: sha256:4b8df0b6cc9167e4a0131372ff037c9ed63ac8b3b75147455f41b65c05d
 
 效果展示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/HFzcLMyzR66l-RCy9aynbg/zh-cn_image_0000002786360046.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=92A5EC076C97ADB9CD653EA1D31915B7414C4CBD89F0F26AC1DAABA313B49291)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/-VqrCND5QV6Xr5SgaN19dA/zh-cn_image_0000002817427141.png?HW-CC-KV=V1&HW-CC-Date=20261114T004623Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7035372C5788A07361651B7C293B5C6897185150DDA64381451FB349DB88AA5)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-imagea
 title: AI识图
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > AI识图
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:41+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:8c2a1e0c22a13f574eba21be95abe2ec0e2b437e0fcc87fef71b0a5dd9a8bf33
+content_hash: sha256:059e07ea5fc487c25f3725ca99f1f258e4511c9ee5edf7a0c51610ced43eb73a
 ---
 
 ## 场景介绍
@@ -34,7 +34,7 @@ AI识图是通过聚合OCR（Optical Character Recognition）、主体分割、�
 
 **图1** AI识图示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/NAKX3k98Qhm1YC5YFll7WQ/zh-cn_image_0000002815560201.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B7280BB2505FD0394AC43BF12F5BEE032F78207DECE9DBC2E3B2231C4DE386B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/SwV1vtTbSKSWVf5jSmnR9w/zh-cn_image_0000002788308514.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FF27403D0C19AA8A6D72179C24110E447676AF2CC1C62F2C2FD2D92B580D06B)
 
 ## 约束与限制
 

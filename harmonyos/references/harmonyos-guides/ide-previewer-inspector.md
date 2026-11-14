@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer
 title: Inspector双向预览
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 界面预览 > Inspector双向预览
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:58+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:0537a95951b1d7aba2ca199e13d4d0f96ff763c136865072d9479236a513076c
+content_hash: sha256:822252f399dba6c7c0bc2628e2c9b8d2b9c0731937f7bdf168d2ad5c8d662650
 ---
 
-DevEco Studio提供HarmonyOS应用/元服务的UI预览界面与源代码文件间的双向预览功能，支持ets文件与预览器界面的双向预览。使用双向预览功能时，需要在预览器界面单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/KYqWdlu5TCaneg6GKcP6rg/zh-cn_image_0000002808886511.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD90305FEEA821E67C5850BB3D463A6D3CD783A5E3A694484FDF19BBEB176CE1)图标打开双向预览功能。
+DevEco Studio提供HarmonyOS应用/元服务的UI预览界面与源代码文件间的双向预览功能，支持ets文件与预览器界面的双向预览。使用双向预览功能时，需要在预览器界面单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Cl-h2Tn8Qa2GlNL3JQSGtQ/zh-cn_image_0000002808886511.png?HW-CC-KV=V1&HW-CC-Date=20261114T004858Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC4186BAF953FE4F89E21D25313F12FBFD2EEE39A568ECE3D4FF72AF9F5F2EDE)图标打开双向预览功能。
 
 **说明** 
 
 不支持服务卡片的双向预览功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/yIgKUoBZQfajgbBrUeD4kA/zh-cn_image_0000002808886509.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=76B0F116DF852296EFDE7D58D888D0A067AF54F982916C5AB8B171927DB3BEAB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/9N6bC8UsQoy0B7n490MvMg/zh-cn_image_0000002808886509.png?HW-CC-KV=V1&HW-CC-Date=20261114T004858Z&HW-CC-Expire=31536000000&HW-CC-Sign=18CCF0EA13AF48D5A79DD3E78178066A8690F16949D93A1380CD71D221413DA4 "点击放大")
 
 开启双向预览功能后，支持代码编辑器、UI界面和组件树三者之间的联动：
 
@@ -22,7 +22,7 @@ DevEco Studio提供HarmonyOS应用/元服务的UI预览界面与源代码文件�
 * 选中布局文件中的代码块，则在UI界面会高亮显示，组件树上的组件节点也会呈现被选中的状态。
 * 选中组件树中的组件，则对应的代码块和UI界面也会高亮显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/8zXXWX5IRAC7XndhCOt1fA/zh-cn_image_0000002808766429.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=8752A99F94D8DF61E9879B127348742A7982582166D4CB804077F40B4ED7E43C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/mHpZi-dmRECHvKWlyXTIIQ/zh-cn_image_0000002808766429.png?HW-CC-KV=V1&HW-CC-Date=20261114T004858Z&HW-CC-Expire=31536000000&HW-CC-Sign=84244541CF71179B391B598CFCC18633275726330B112535750AAA1E659DDCB1 "点击放大")
 
 在预览界面还可以通过组件的属性面板修改属性或样式，修改后，预览器会自动同步到代码编辑器中修改源码，并实时刷新UI界面；同样的，在代码编辑器中修改源码，也会实时刷新UI界面，并更新组件树信息及组件属性。
 

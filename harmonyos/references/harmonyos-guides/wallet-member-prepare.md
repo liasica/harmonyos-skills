@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-member
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 会员卡 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:34+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:c898aff869b122e7408a23fa485b920142fd94f369d75aa330f783018a1b0bf6
+content_hash: sha256:367c708ffe3eabbfbfcb4b1f864e9c045043aa659bfef2b46db00cb92eb7fd38
 ---
 
 ## 创建Wallet Kit服务
@@ -14,21 +14,21 @@ content_hash: sha256:c898aff869b122e7408a23fa485b920142fd94f369d75aa330f783018a1
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，点击“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/TPKXAMW3Tru9dr-DfgkBMw/zh-cn_image_0000002786520542.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=1697CA0BF0B112E5158A5AF50FB4E84E1316D3517E0F571483D8F8D3DB5230FF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/KI6ouNydRiyXaHUoQ_TgfA/zh-cn_image_0000002788468290.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FE2D5FD0CB87CB3C41176C0CC857F3195E6BE416C430ED3F71FEE0360919409)
 2. 选择对应项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/KJUXXRKGRX271qAcxKo_Lg/zh-cn_image_0000002786360614.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6481584A3664869B3F09B4FA50ED5CF45CF7986F50EB407E7DDBD46E06753BF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/qVVubsjzR3WFlk65qRqyYA/zh-cn_image_0000002817507779.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBDDCE4CC3E949F7304B652EF320FAFC7CFF4B9A5B7F91F2C9A197FDEE4B8DC1)
 3. 选择“钱包服务”，点击“申请服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/q8ec6QkMSbuuOpuctl49Fw/zh-cn_image_0000002786360616.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B36C777DA1780674D2DA173AB0CACA9355516E0E419976FE7458C64B11EF735)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/2ZjdsNuYSEqeF73PVy__LA/zh-cn_image_0000002817507781.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=08A6316E3BE59008EFE0D4F542C1A26DCFC30CA1BEDEDABAF5641DA1E8CB4D57)
 4. 点击“点击申请”，并选择新版本。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/_MszAKz-RxmtJv-d5g8QxA/zh-cn_image_0000002815560037.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=42C391C8665CAC5859C713D8C91D87681EE1A8840142EBE7D756EBE2863624B5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/0j8HL-sTROODbDJWkQnJVA/zh-cn_image_0000002788308350.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBB5A64BCDAC4DFBBE5ADC6772F29B38F86B6554F7ED1E43719759766A7D610F)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/yxo2X7x5S42TUG5m-oGyKg/zh-cn_image_0000002786360626.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=91374B90899E46D592BB15D33CC27914099E6AF8DEE273073CB7A966E6537BAE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/ze4k5QegRHSwsm-DHKz6FA/zh-cn_image_0000002817507791.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6A7D9470B606E558BEEF2162F54BC4D4E3866907E2DD692EEF79A6B5970133F)
 5. 配置Wallet Kit服务参数：服务类型选择卡，服务子类型选择会员卡，服务项目按需选择，并指定服务号、开发者服务公钥及开发者云侧服务地址前缀后，点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/pgwnXxm9TUKbmkmM0fsgUg/zh-cn_image_0000002815560047.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A0B3B3F186A9E7AB2180D2FCD4E3389313CAB2653C2A58A0B72BB9DC120D26D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/jsS0d23-QXOzXEhjrX03JQ/zh-cn_image_0000002788308360.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BE265E3E87A1D027F095FBDD84960468388FCA6896D2E290D17FA235B910B5A)
 
    | **参数** | **说明** |
    | --- | --- |
@@ -42,7 +42,7 @@ content_hash: sha256:c898aff869b122e7408a23fa485b920142fd94f369d75aa330f783018a1
    | 服务器地址前缀 | 开发者服务器地址，用于Wallet Kit服务器在开卡或删卡成功后回调开发者。如果不需要回调结果，可以不填该字段。 |
 6. 配置NFC&二维码参数：按需选择卡片激活设备限制，默认选择开通NFC能力，开通NFC能力，同时需要配置应用ID和文件参数，按需选择二维码配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Y5YpwaC-Rd2bazyQof64gg/zh-cn_image_0000002815560055.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=97D32AC2141B8BDA4FA0D51DE901A71F82DD2DCC250E794725B56B2502123173)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Gk7FERx8TGaHoqsk1mJf_w/zh-cn_image_0000002788308368.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAB282023EBE09C452AC484AEC1244BB62A78073036BCC08D7ADA2B175C4F27E)
 
    | **参数** | **说明** |
    | --- | --- |
@@ -57,12 +57,12 @@ content_hash: sha256:c898aff869b122e7408a23fa485b920142fd94f369d75aa330f783018a1
    | 刷卡页是否默认展码 | 用于控制刷卡页是否默认展码。 |
 7. 配置添加预览信息：按要求上传卡面底图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/-Aw8ODllTNKR6yQuAhZDgw/zh-cn_image_0000002815400139.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E040B71CABBCA75C18A8A69DCD48C30D6EE13E41695724D767CF6F557782E825)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/ffbxgLhcTgqObbfjebd5xA/zh-cn_image_0000002817427731.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EF82643DC6B9529E440709622646197BCF2C1133F4ADB3F385B78D277BED9AE)
 8. 配置卡详情页信息：按需配置卡面个性化信息，功能区，运营区以及官方App/元服务跳转。
 
    个性化信息配置：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/sju8kPQwSeSl1QkT96MJ0g/zh-cn_image_0000002786520564.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD8FADB182E8E6C270CAA315BDC42C0901FEBD53DBBA90CEF4E5C72F9CCC0399)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/O8GnIq-1R1uyBhhiSBLFYA/zh-cn_image_0000002788468312.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC088544EC786B32476C6BB0457CA65616DCDF9E084B8F8F08AC1B8D041BB14D)
 
    | **参数** | **说明** |
    | --- | --- |
@@ -73,7 +73,7 @@ content_hash: sha256:c898aff869b122e7408a23fa485b920142fd94f369d75aa330f783018a1
 
    功能区配置：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/f2ZjBg6PRP6CQyoC9xFSiQ/zh-cn_image_0000002786360636.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DA2BCFF94BC3C494449BA7C2DA762DC534D0CF7BCC865C2AC3E217741ECB0FF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/22WGWiC1R62VKnFIA4fxBQ/zh-cn_image_0000002817507801.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=9742BC1E6AA576A3C984766EC94A65A023C18A563F554DB5BFDCF352BB84DD99)
 
    | **参数** | **说明** |
    | --- | --- |
@@ -82,7 +82,7 @@ content_hash: sha256:c898aff869b122e7408a23fa485b920142fd94f369d75aa330f783018a1
 
    运营区配置：可以按需配置服务菜单（最多支持5个），是否提供使用记录查看链接，选择后按照提示配置即可，右边可以查看配置的预览效果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/C9K4toDrT4iWz-A939f71g/zh-cn_image_0000002815560057.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=53C06542F86CFEED22FF0CAB711F969263084B743C1D3F7AB491E63E53ABD145)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/RNSSc0RBQuOgr76BQq0G2A/zh-cn_image_0000002788308370.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EFC47AA16A63D9F3D4E79112B5148ACFAE37EA36F50D35FC0967CF3A47F64D8)
 
    | **参数** | **说明** |
    | --- | --- |
@@ -92,7 +92,7 @@ content_hash: sha256:c898aff869b122e7408a23fa485b920142fd94f369d75aa330f783018a1
 
    官方App/元服务跳转配置：按需配置官方App/元服务跳转，如果选择是，需要按需配置跳转链接，右边可以查看配置的预览效果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/fHS-_y_9TYmaPVgEVK15Xg/zh-cn_image_0000002815400141.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA4E751E945B96C205242A33FA56011BBB2FFFB366F08E0F8B0B65F35EB4425A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Ac4sG7axRGmbCWKYhCprcA/zh-cn_image_0000002817427733.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=052D8EA523073488AC970B615620396830DFCC894EF218F074E3661C9C8720D4)
 9. 提交前进行信息核对及预览，确认无误后，点击“提交”完成会员卡Wallet Kit服务接入配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Omkv3YYgSFmEvApx98BPjQ/zh-cn_image_0000002786360630.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1D588E10138396EC610D8048018512F52FAA9B120D375B1945D2BB412802636)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/uVc9IobbSuSQG9HjENdfJA/zh-cn_image_0000002817507795.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=628C101561994B8BFABE30D813901766A545195A2BB85BACEA197801A372E8DA)

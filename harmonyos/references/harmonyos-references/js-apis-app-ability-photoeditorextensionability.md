@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.PhotoEditorExtensionAbility (支持图片编辑能力的ExtensionAbility组件)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.PhotoEditorExtensionAbility (支持图片编辑能力的ExtensionAbility组件)
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:26+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:f8f4d9851d01ebe3afcd7ae5c501317cb9b0d275d4704e98fd5b03cebe300016
+content_hash: sha256:fa3345f6305a62ae66dbae00bec243707e5b41b5a648c2a4db6f6fd72cae7f24
 ---
 
 PhotoEditorExtensionAbility继承自[ExtensionAbility](js-apis-app-ability-extensionability.md)，开发者可通过PhotoEditorExtensionAbility实现图片编辑扩展页面。应用通过[startAbilityByType](js-apis-inner-application-uiabilitycontext.md#startability)拉起图片编辑类应用扩展面板后，由用户在面板上选择实现了PhotoEditorExtensionAbility的图片编辑扩展页面并拉起该页面。
@@ -20,7 +20,7 @@ PhotoEditorExtensionAbility继承自[ExtensionAbility](js-apis-app-ability-exten
 
 下图为通过PhotoEditorExtensionAbility实现的图片编辑扩展页面示意图，页面的布局与功能可以根据实际需要开发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/ZIpNme_8T6-tyTjyOXTCyg/zh-cn_image_0000002815560275.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=50D6085DF8A20DE76E2A0EB4DB63EE56AB07F69014711882A909063C3CB0F17B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/uWvGISgtQ36ojMNSKEGb9w/zh-cn_image_0000002788308588.png?HW-CC-KV=V1&HW-CC-Date=20261114T004925Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D297C7AEDBED8FCBF5817B4009E20BAFD3C2B7AEF81488573460153D6229789)
 
 ## 导入模块
 

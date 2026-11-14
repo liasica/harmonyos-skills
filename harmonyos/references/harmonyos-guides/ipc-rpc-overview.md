@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ipc-rpc-overv
 title: IPC Kit简介
 breadcrumb: 指南 > 应用框架 > IPC Kit（进程间通信服务） > IPC Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:21+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:569221b9dc736774a9334dc280b54505ee96a56debb367dd1c55064e2012ed42
+scraped_at: 2026-11-14T08:47:20+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:15e36da80f871a0854c68a4399cb0e119418d565f6ab3934bd8a247fcee41028
 ---
 
 ## 基本概念
@@ -31,7 +31,7 @@ IPC和RPC采用客户端-服务端（Client-Server）模型。在使用时，Cli
 
 ## 约束与限制
 
-* 单个设备上跨进程通信时，传输的数据量最大为200KB。超过200KB的数据量传输可以使用[匿名共享内存](../harmonyos-references/js-apis-rpc.md#ashmem8)。
+* 单个设备上跨进程通信时，传输的数据量最大为200KB。超过200KB的数据量传输可以使用[Ashmem](../harmonyos-references/js-apis-rpc.md#ashmem8)匿名共享内存。
 * 不支持在RPC中订阅匿名Stub对象（没有向SAMgr注册的Stub对象）的[死亡通知](subscribe-remote-state.md)。
 * 不支持把跨设备的Proxy对象回传到该Proxy对象指向的Stub对象所在的设备。
 * 指向远端设备Stub的Proxy对象不能在本设备内二次跨进程传递。

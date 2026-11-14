@@ -3,23 +3,23 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/edm-tool
 title: edm工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > edm工具
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:49+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:4424f379f5cf3d01ff33e541c279e3c2f4e7141b06926b5ca23c5302023f95f5
+scraped_at: 2026-11-14T08:47:49+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:853900f351c7a6a26127b9e3eaed5bfd9fa0739c954e36ab74dbf22dcf947cbb
 ---
 
 Enterprise Device Manager（企业设备管理工具，简称为edm），为设备管理应用提供调试和测试能力，例如激活企业设备管理拓展能力、解除激活企业设备管理拓展能力。
 
 ## 环境要求
 
-在使用本工具前，开发者需要先获取hdc工具，执行hdc shell。
+在使用本工具前，开发者需要先获取，执行hdc shell。
 
 ## edm工具命令列表
 
 | 命令 | 描述 |
 | --- | --- |
 | help | 帮助命令，用于查询edm支持的命令信息。 |
-| enable-admin | 激活命令，用于激活企业设备管理拓展能力，目标组件必须为[enterpriseAdmin类型的ExtensionAbility](mdm-kit-admin.md)。 |
+| enable-admin | 激活命令，用于激活企业设备管理拓展能力，目标组件必须为[EnterpriseAdminExtensionAbility](mdm-kit-admin.md)。 |
 | disable-admin | 解除激活命令，用于解除激活企业设备管理拓展能力。 |
 
 ## 帮助命令（help）

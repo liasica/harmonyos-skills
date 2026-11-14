@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-commands
 title: 自定义指令（Commands）配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 自定义指令（Commands）配置
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:09+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:251c61a33122942d5c7030b2d420e5cab0bd513854b49056ebcfed2f0207775a
+content_hash: sha256:5e3c840ca337c3205b31b5181b5277d8569fdbc424016497c4a8c447b91e3b0e
 ---
 
 ## 功能介绍
@@ -29,16 +29,16 @@ content_hash: sha256:251c61a33122942d5c7030b2d420e5cab0bd513854b49056ebcfed2f020
 
 1. 点击界面右上方**Settings**按钮，选择**Commands**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Gku8oUQpTLSeAJukSOWLWg/zh-cn_image_0000002779567128.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=93C3667AF11D56A6C7E22476F8C069E80B29C8148FDA78A717F2CF08CB3A4469)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/mopJn4GzQ9qC_PUZiSx3Zg/zh-cn_image_0000002779567128.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCAC9FF1642E1BAC5F95296B1321AD5D2449B94BCF5605BFBAAD395EC13CCCB9)
 2. 在**Global Commands**或**Project Commands**下，点击**Create Command**或手动在存储目录下创建指令文件（.md），文件名仅可包含小写字母、数字、中划线，且不以中划线结尾；点击**Import Command**上传指令文件。文档以创建指令文件为例说明。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/wT_Sz2VUTDOUVOoWqCz3bg/zh-cn_image_0000002808886791.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7CF638AEE5D521D5D7F0EAAFD4FA9E8EEAC9FFA8707FD00CA6226E7AA8626A9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/1FE15SjTSR-z0Gu47DZ0Ww/zh-cn_image_0000002808886791.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=232179D34E25469D462DD8A79AEEE755EB2EFF5D8262155582B04CCB248F6D0A)
 3. 在代码编辑区填写完整的指令内容后，点击**√**保存。
 
-   点击指令文件的开启和关闭按钮，控制是否使用；将鼠标悬浮在指令文件上会显示编辑、删除操作按钮，方便开发者管理。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/vSktEoAWTkKPQhAvLbs8mg/zh-cn_image_0000002779407148.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=25E22A4DD1FD030616300DCFE63C4B0BEAA1DE70B3C6FC33402C90EDF14B9D87)
+   点击指令文件的开启和关闭按钮，控制是否使用；将鼠标悬浮在指令文件上会显示编辑、删除操作按钮，方便开发者管理。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/NGtqwzZeQJaq6mhdxTLNBQ/zh-cn_image_0000002779407148.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=60FC49014471CFB7ED456B232A15A540C49037A7F9E1DF6752B4D3478479E307)
 4. 返回会话，选择**HarmonyOS Ack**智能体或自定义智能体，在对话框内输入`/`指令（如test-test）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/q9TKdfGiSPaxpgF-6uxetQ/zh-cn_image_0000002779407150.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=287946E92413CB0486E5F57B815CC256FBE491A4C3B1238DFD979847C5808646)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Er-TIboUQW-wSFi_sfsk2g/zh-cn_image_0000002779407150.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF0FC9848D7915077FE3766A93C7B211EF5D631A38DDC5A5DB171BBEC7D4E10B)
 
 ## 指令文件示例
 

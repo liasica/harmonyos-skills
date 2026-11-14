@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 关闭会话（ArkTS）
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 发起HTTP请求，获取响应 > 关闭会话（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b3b7fc0b4f60e1811a29c81d2afc261d0850ee51993e454b17c874824044aa95
+scraped_at: 2026-11-14T08:47:37+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:546901ace8f8570a9fc809742517699171c7d004b5edb1eaca2dd72fa49dffba
 ---
 
 当一个HTTP请求完成，即数据已经成功发送并收到确认，或者在某些情况下，由于超时或其他错误原因，通信尝试失败，此时应立即调用相应的“关闭会话”或“释放资源”方法。这一操作的主要目的是：
@@ -19,7 +19,7 @@ content_hash: sha256:b3b7fc0b4f60e1811a29c81d2afc261d0850ee51993e454b17c87482404
 
 ## 约束与限制
 
-关闭会话能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
+关闭会话能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 接口说明
 

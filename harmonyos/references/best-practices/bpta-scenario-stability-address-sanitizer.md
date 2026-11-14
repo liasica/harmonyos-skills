@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: 地址越界类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 地址越界类问题案例
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:22+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:69cf1ccd4fc294ddb5dd03b4958ab2a193c0325ba8763edc7c25d9b8f3ba7e93
+content_hash: sha256:ee3644dc004295c27d34140c9984c4c6f3900c6d6de81ae5f54f18e43e975290
 ---
 
 本文按照[地址越界类问题分析方法](bpta-stability-address-illegal-way.md)的流程展开，以实际案例的形式指导开发者如何从CppCrash日志出发，分析、定位，修复地址越界问题。开发者可阅读[地址越界类问题检测](bpta-stability-ram-detection.md)了解系统检测地址越界问题的原理和机制。
@@ -62,7 +62,7 @@ lr:0000005af25e9480 sp:0000007fba087420 pc:0000005af07df83c
 
 首先从日志可以看到这是一个SIGSEGV(SEGV\_MAPERR)的问题，这表示进程试图访问一个不存在的内存地址，或者试图访问一个没有映射到进程地址空间的内存地址。这种情况通常是由于程序中的指针错误或内存泄漏引起。接下来就要解栈初步定位出问题的代码行，根据llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，定位到具体业务代码行反编译#00号栈，可以看到该栈对应下图中黄色高亮代码行，该代码行在对裸指针做类型转换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/nKVwwGdURFCnHRCmMVvo0Q/zh-cn_image_0000002404125237.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=411CC4C2EDABAC0596EA8B21D9C3F09C0B9DCCA8137A8F50E78E4396BBA15DF1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Mh4PaAV0RS-JUlFjLwAdiw/zh-cn_image_0000002404125237.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=2133AD231B85A6633AA39049DBC4A21900B2772713F2CD6524D9C548499966C2 "点击放大")
 
 用llvm-objdump工具解该栈的地址，发现出问题的是x8寄存器，从当前指针里面取其中的第一个成员（虚表地址）取到了一个异常地址，从中偏移-80取内容的时候挂了。
 
@@ -83,15 +83,15 @@ lr:0000005af25e9480 sp:0000007fba087420 pc:0000005af07df83c
 
 前方的代码如下，从fnode指针中获取其成员时出现故障，通过汇编和代码初步定位可能是地址中的内存被覆盖。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/5MQg80MyTqadlMcxH_8euQ/zh-cn_image_0000002370405692.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=71BF93870A64E70A73DABE9E46DA8B07B6CB5C03A266D5AC94F996A6554B42D3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/35nyJy4-QOStLZfRzmuKeg/zh-cn_image_0000002370405692.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC6F9F7474922C7DA2E53ABC53AF3F888DB4E4F3AB47647FB128351F455CB856 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/YH4qLXt1QCiLWLlj2LyV1w/zh-cn_image_0000002404045421.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=8ADBA21E33EC3C8B6A69C570756F13224DFA33AD597AC0F41169D0631A666B00 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/zSSWNN9RSz2WY-akK2iCKg/zh-cn_image_0000002404045421.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=951E095BAD83578ED607E3F38FF275A55C3B5308C570A1A88A09EB4FF4970536 "点击放大")
 
 **第二步：场景分析**
 
 通过走读代码，发现可疑点，几个地址越界问题的流水日志都有一个共同点，存在设置声音的操作。最终决定增加设置声音的测试用例进行压测。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/9Rp2jRuqTbqjeyZ8KMJj-g/zh-cn_image_0000002370565604.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=73A8B7C0B510FA5CA9C26721DD5B61107F33A38C8750CD4AB1AB326E04D3F7EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/XnjjRabFQl-sniT0rbmanQ/zh-cn_image_0000002370565604.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=8949E04E4BFDE83EE615EAC0FEE043C054033C534423AC91AEE4BCF03438CCEB)
 
 **第三步：内存特征分析**
 
@@ -122,11 +122,11 @@ lr:0000005af25e9480 sp:0000007fba087420 pc:0000005af07df83c
 
 从指令add x0, x0, #864可以看出，在执行bl跳转之前，x0寄存器的值被偏移了864字节，目的是定位到类中的某个成员变量。为确定该偏移对应的具体成员，可通过gdb的ptype /o命令查看类的内存布局。如图所示，864字节的偏移恰好对应NG::FrameNode结构体中的成员变量accessibilityProperty\_的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/IzoHI78yTPGwuK7bgbnNEQ/zh-cn_image_0000002552638491.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=675C4145658F1964177A3B3F5948BBCBF07F9CFBA9DC151CD9DE0221E72E6CE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/dLQVYx8wQBSGGuTw2nuwtQ/zh-cn_image_0000002552638491.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BE07ED0AED4368AAF98B9C2285459B2D06973A224B44BB4497378D3DCCE5057)
 
 因此可判断，此时的x0指向的就是accessibilityProperty\_成员的地址。紧随其后的bl指令跳转至0xa5f814（DynamicCast），该函数会以x0为实参，对其执行虚表查找，并尝试进行向下类型转换。看x0的内存布局，和FrameNode结构体内存大小也能对上。说明FrameNode是正常的，但是里面的这个成员的指针指向的内容异常了，如下图所示5c3eb6ad68地址的值异常，可能是accessibilityProperty\_这个指针本身被踩，也可能是这个对象的内容被踩。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/JWaJT3yQQWChEGsD4KVuMg/zh-cn_image_0000002370405696.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=89634F1BB86BA2C9FF25F15078D6584B53EE9F0567CDDADFC4D7DE8B4C6A3456)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/Dyep1_86T4GhlmXFwB_JGA/zh-cn_image_0000002370405696.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=03E7C5D2CF555E064B4A26986FDAE38C488D4C1680C7FA31E68933B51816BBB7)
 
 **第四步：用例部署**
 
@@ -193,18 +193,18 @@ Tid:3609, Name:ohos.sceneboard
 
 看汇编hwasan抓到tag不对了，从汇编看就是x0寄存器不对，也就是dest的指针有问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/fgO6C37hRwWyPSHaCjcPPg/zh-cn_image_0000002404045425.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=205A51F15B7A043A9A8E7E01DD229FFB340C9461395C107B8E546539F154E896 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/vKnLF7NESZ2lj8f4WIzMpg/zh-cn_image_0000002404045425.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CD470A872A6555C844AB1171E32DE584D65D51CEB89E4583F53505BFEEFAB3E "点击放大")
 
 向前回栈看：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/hy6FHzL9SxSYrzF5Gi-4aw/zh-cn_image_0000002370565608.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=B91372D16FF2CEF8670F04DAE261BE57EDA35DD1DDF96566E45B50F13802EDCD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/55c-gY1VQ8mesBgkDJKpjQ/zh-cn_image_0000002370565608.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=8171F7DA4572A5CCBA463AEEFF70512E469A6DB7350BE8A50731B89FBC95B2E1 "点击放大")
 
 结合反编译第一个参数，是音频audiorenderer传过来找soundpool要数据填充的目的地址，看是否提前释放导致野指针了。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/7exc3jlQS3eWElj1KWbmEA/zh-cn_image_0000002370405700.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=999AE395B6618840D3B58228678AB60347661C704A8F05893BDE1C78868855D1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/Z62qgvorReigU6FwdxToQw/zh-cn_image_0000002370405700.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F56E13F7869706D7EC66C910A0D35E745C570B992BC9CE58AC919F25405084A "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/pVZXpGPGRxmOytI_pFdcsA/zh-cn_image_0000002404045429.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=581F29D8351658423BE8CD3DFC04288E17640ED6EEF681AC1085A57FE45F61CE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/HiMqIcdRQqeCxKcQ0GpfTw/zh-cn_image_0000002404045429.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=8ED642D212AA9126DC1AC1953ABD03BF8EC46CD34B2809243279C1723E1DB14E "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/S6fv59P6T_mXtTIp8XVaUA/zh-cn_image_0000002370565612.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9FCAFC5C550AF3745FA592CB6157C803C8D42A34A405F5E779038EC76AFDCEB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Z074x9eCTZuu_KAMyveatA/zh-cn_image_0000002370565612.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BFCD352E26CC50A5F76EEA9BE7F3625FF5B7895C6C34BB237A362BD4CCCCEA5 "点击放大")
 
 问题已明确是Use-After-Free问题，GetBufferDesc函数将cbBuffer\_的裸指针返回出去，另一个线程将RendererInClientInner销毁了，生命周期不一致导致了Use-After-Free问题。

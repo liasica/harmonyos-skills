@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 申请通知横幅默开权益
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 申请通知横幅默开权益
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:26+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2b0ebe160c9f1345059d3697d85b04c28790214fd9813756441dc5d0cbf78b6b
+content_hash: sha256:14d34f77d7c9ea77f5667015ab052a6d30d883c786653cd3613c9532eb814c58
 ---
 
 应用的横幅通知开关默认开启。
@@ -30,21 +30,21 @@ content_hash: sha256:2b0ebe160c9f1345059d3697d85b04c28790214fd9813756441dc5d0cbf
 
 1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/index.html)，选择“应用管理”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/0IWoR6ELSJ2DWLf7U_CU5w/zh-cn_image_0000002786360476.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=6711BB29CFA08DF7A801D946A71D2300AEBAA985173E07969B7FB85B8199FF6C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/k4SWHTfjQw6LTbZvy3khEQ/zh-cn_image_0000002817427571.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=65E270B4A31455CAA678BEFD9C98440CDE5FCB3887A4F8A07D9988F3ED70679A)
 2. 切换至正确的项目，在项目下的应用列表中选择需要申请通知横幅默开权益的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/uVK-7ec1QBO7G6eFc1IXrw/zh-cn_image_0000002815559897.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4FD37F0D36EEDA23EF38F9C5E8D12D70526141396D96B30DAC2499DBFEA74E8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/oTCiwYmDSyG3uJwsZ9XRfQ/zh-cn_image_0000002788468152.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5A182383F11F2648FB6DD9D57565706DED6BC08268E27C32352C47105D4AAA8)
 3. 进入“开放能力管理”页面，点击“通知横幅默开”的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/58TWZES7TO66znD3bKGmUg/zh-cn_image_0000002815399981.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=0766A3DB404507F062004D6FD9DD3C1E0235F401A8FB317F1570ED9ABF7CB957)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/ZsUY3u4LQzyzWiZtVZn3Cg/zh-cn_image_0000002817507641.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D910842EFC26E74FCB360F768C4763208D335C8AC47082143A7709F3521122E)
 4. 开发者可参考“申请原因”中的模板，提供申请必须的相关信息，包括应用介绍、使用场景、申请用途、附件、承诺信息，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Dx30hS50QPK9e53kSZvELA/zh-cn_image_0000002786520406.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D9EB664CB236341C832A932CD7D5EC77CBAC2BD0C53F8958291A780CA42F5DB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/vvr-qECsRx-q9ofrJKc0RQ/zh-cn_image_0000002788308210.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B61D927C98A25D4CAB854FC291F1830AD5F344407FC180FF3086D808C47562B)
 5. 开发者可通过互动中心的“服务申请”消息获取通知横幅默开权益申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/x97KM8kyQ7-67e-78iBR-w/zh-cn_image_0000002786360478.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDE7A066F8ADFC4C475AACFB3B9FE95FEBFE21E42985042E3C29BCB8AA151B84)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/orEU6oLARhGPNaHgV1zsMQ/zh-cn_image_0000002817427573.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1509EA0A45FF00E36BF3AAB5C106AED8ED0624E9E1AD5848878F1A04CB9DF19)
 6. 通知横幅默开权益申请通过后，须在“开发者管理”页签下左侧树形菜单的“ID、证书和Profile"->“Profile”菜单，点击“添加”重新生成Profile文件，并下载Profile文件到本地，然后在“[发布应用](ide-publish-app.md)”时，须将该Profile打包到应用包中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NYL53zzvT0aWy4XJtrywqg/zh-cn_image_0000002815559899.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCDBE985189354621AA86945E99D300E70F32C79887D81A058F343AC6ECAFB73)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/JEpkxEJ6QMiqmWMRZyeSsw/zh-cn_image_0000002788468154.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=5ACB9359844CF3DADF8DE7491CEB52853BBCAD9346E45829A3E902BD31004E5F)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/teh2E1LHSr-dFm9CAtyj_g/zh-cn_image_0000002815399983.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B49D493ECAF3A64A4EF04134E54674423D4E2F16354A94CBD2727650F5F8933D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/3o3IzG6LQrm6jc9jM_BXqg/zh-cn_image_0000002817507643.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC5A4C2A0913490B275EBA0859C4561840ECADCD2924974F5FF7C8AAF21F8CF2)

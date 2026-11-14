@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-cross-
 title: Native侧跨HAR/HSP模块接口调用
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > Native侧跨HAR/HSP模块接口调用
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:46:47+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:50dc19aaa84b7cb8cdcaace3195dec99c27f6efa69c04e3305cbc3b63916bfb8
+content_hash: sha256:37c9dcdf4d6e3d60fd87c4f9d7e39444b37168fd0e7b17c905810a0162aad20d
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:50dc19aaa84b7cb8cdcaace3195dec99c27f6efa69c04e3305cbc3b6391
 
 **图 1** Native侧跨HAR/HSP模块调用原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/zAlq4VNzTfWFQCQMeahkmQ/zh-cn_image_0000002815557799.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=63A5322B719883D1F80322F4191E0D39A18CB6571A11C2270306B6041573ACD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/CG-HnTttS1CSXUdwwmbPBw/zh-cn_image_0000002788466054.png?HW-CC-KV=V1&HW-CC-Date=20261114T004510Z&HW-CC-Expire=31536000000&HW-CC-Sign=44170F46D3A2EE7C3CC08C1280271762140A4606932FE8A797A1D21053C4F4EC)
 
 ## Native侧跨HAR/HSP模块调用Native方法
 
@@ -36,7 +36,7 @@ content_hash: sha256:50dc19aaa84b7cb8cdcaace3195dec99c27f6efa69c04e3305cbc3b6391
 
 **图 2** Native侧跨HAR/HSP模块调用Native方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/slTS_O-iQ5Sl_RiC3pdMMw/zh-cn_image_0000002815397883.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF9DB63E893E8CA4A80FA89D73788B932102F13825A209E3A26ACF68AC01E555)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/BqC1EkfDQxOUsqLEFlDnlg/zh-cn_image_0000002817505541.png?HW-CC-KV=V1&HW-CC-Date=20261114T004510Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5AE26327EBCBE4B85226A3146E378902FC0F9C0B3225B1260FDE5A69B15073A)
 
 ### 开发流程
 
@@ -166,7 +166,7 @@ Native侧跨HAR/HSP模块调用Native方法时，需要实现Module1（HAP）的
 
 **图 3** Native侧调用HAR模块的Native方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/PQ303ek8R1S2abkjV0jxiA/zh-cn_image_0000002786518308.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C78A35579C57DC1969B987D73AA38637A7602B3C8484DF716FB6A10DC746DFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/EarlIkW-St-ZzCkDouNAeg/zh-cn_image_0000002788306112.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004510Z&HW-CC-Expire=31536000000&HW-CC-Sign=31808741B455A48E9F38FBE63DADB3CC9961586C0317A52E03C393909524677E)
 
 ## Native侧跨HAR/HSP模块调用ArkTS方法
 
@@ -174,7 +174,7 @@ Native侧跨HAR/HSP模块调用Native方法时，需要实现Module1（HAP）的
 
 **图 4** Native侧跨HAR/HSP模块调用ArkTS方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/CU5AC0YBRt6Tho8Hf5Df7Q/zh-cn_image_0000002786358380.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=479E6FEE12F69D49C0B9BC7B9E04F4749251E69F793329651828C6D724F35936)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/m68rPhVgSbiflDmcL__EdQ/zh-cn_image_0000002817425475.png?HW-CC-KV=V1&HW-CC-Date=20261114T004510Z&HW-CC-Expire=31536000000&HW-CC-Sign=2216D55C21F0DBD45E78863DC13887A0D951359D2D9C2E534EB6676167885D2B)
 
 ### 开发流程
 
@@ -319,7 +319,7 @@ Native侧跨HAR/HSP模块调用ArkTS方法具体实现方法如下所示。
 
 **图 5** Native侧调用HAR模块的ArkTS方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/mu4OrKopR7iRMkg8dlepLw/zh-cn_image_0000002815557801.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=679A4749FBC8F0A9362723FE71EC108D91B60DFFCE7B0CAC554628E78DE1DBDE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/uNc5nZahS2aL1wos9b6rYQ/zh-cn_image_0000002788466056.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004510Z&HW-CC-Expire=31536000000&HW-CC-Sign=3874B878DE3F0B7D52FE0280C9AB7390515C98C4A57A03E4BD701F2607186132)
 
 ## 示例代码
 

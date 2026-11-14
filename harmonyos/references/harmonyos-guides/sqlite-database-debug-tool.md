@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sqlite-databa
 title: SQLite调试工具指导
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > SQLite调试工具指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:e79b234e32808fe99a527b29a71ed4c4f664ae677cbb601df14f00d1069ff64c
+scraped_at: 2026-11-14T08:46:53+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:b1a317f07e72110a48cea423f466dda6168ce3bbf4abaafc43c2a7270196cca7
 ---
 
 SQLite是一款轻量级、嵌入式、无服务器的关系型数据库管理系统，其核心优势在于将整个数据库存储于单一文件中，无需独立服务器进程，支持跨平台运行，被广泛应用于移动应用、嵌入式设备和桌面软件等场景。
@@ -101,7 +101,7 @@ sqlite>.q
 | .tables | 列出当前数据库中的所有表。 |
 | .show | 查看SQLite命令提示符的默认设置。 |
 | .schema | 获取表的完整信息。 |
-| .quit 或 .exit | 退出SQLite命令行界面。 |
+| .quit或.exit | 退出SQLite命令行界面。 |
 | .schema [TABLE] | 显示表的创建SQL语句（或所有表的结构）。 |
 
 ## 注意事项
@@ -236,7 +236,7 @@ sqlite>.tables
 
 ### 查询数据
 
-在sqlite>提示符下，可通过 SELECT查询数据，支持以下几种数据查询：
+在sqlite>提示符下，可通过SELECT查询数据，支持以下几种数据查询：
 
 * 可通过SQL语句SELECT \* FROM 表的名称查询所有数据
 

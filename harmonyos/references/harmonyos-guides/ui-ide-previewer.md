@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-ide-previe
 title: UI预览
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI预览
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:12+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f1b9b15e570fd330d86f7dacb8cc9177485c36763da9e76ccef434b899d1a66c
+content_hash: sha256:02b727fe125c476e6e3969cb189d93fed86403d5e7481d93e219a30b9523b254
 ---
 
-DevEco Studio为开发者提供了UI预览功能，方便查看UI效果并随时调整页面布局。预览支持页面预览和组件预览。图1中左侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/NzF_gwCoS-6B8P9t_lObbg/zh-cn_image_0000002786359362.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC745BE6E3FDAF9C86D9C269C8FF1559F2B758653B6CF609FE2EE5B1D603A868)表示页面预览，右侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/CaYhttNHSfKUm581MUUJ5A/zh-cn_image_0000002815558783.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=723D090FBE1D58146DAE52C82DF3F6F53FB986A276D55C6BAA5050288BD4828A)表示组件预览。
+DevEco Studio为开发者提供了UI预览功能，方便查看UI效果并随时调整页面布局。预览支持页面预览和组件预览。图1中左侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/C9aOWfYmSH-28G5uaSKTWg/zh-cn_image_0000002817426457.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE44FA1658A930230EE5E380D39BF30DE4D4434A3E784DE2D62C3C5D47ACFD65)表示页面预览，右侧图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/LhP9Tke_RLicPuPqCE-IhA/zh-cn_image_0000002788467038.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFCAA132B30E2BE336BCDAE0B40B55A6D9CFD43E6D56AE12C4D37FEC7C40C8A3)表示组件预览。
 
 **说明** 
 
@@ -16,7 +16,7 @@ DevEco Studio为开发者提供了UI预览功能，方便查看UI效果并随时
 
 **图1** 预览图标
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/A7HkXrSkSLO5XZJ-q_DX3A/zh-cn_image_0000002815398867.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4AA3936EF19D94BFF69C60EF0632C20BE7E351B448F843554A9FF353AC86B51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/R6XEYgL4QrCDg2ajfdo-JA/zh-cn_image_0000002817506525.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=765932E466F3F14D2E466C1376E1F4FC691B9B37883198B5EB06A79E7A02828F)
 
 ## 页面预览
 
@@ -30,7 +30,7 @@ ArkTS应用/元服务均支持页面预览。页面预览通过在工程的ets�
 
 ### 极速预览
 
-支持在修改组件的属性时，无需使用Ctrl+S进行保存，可以直接观察到修改后的预览效果。极速预览默认开启，若需关闭，点击预览器右上角按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/4ARYyPz0SeGKzqPbdR1S7Q/zh-cn_image_0000002786519292.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=E216D410775904F6D4B910AE0A5464725B9FECCF7F2AC4F5A164A5B619CB12E0)即可。
+支持在修改组件的属性时，无需使用Ctrl+S进行保存，可以直接观察到修改后的预览效果。极速预览默认开启，若需关闭，点击预览器右上角按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/zOg7zgs4RPCszEIx2nAUiQ/zh-cn_image_0000002788307096.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=948476C5186C7AC2DD2BEC7F17478283BD12ECC8C0D4FE2B2BA83C7C14777332)即可。
 
 **注意** 
 
@@ -47,11 +47,11 @@ ArkTS应用/元服务均支持页面预览。页面预览通过在工程的ets�
 
 **图2** 极速预览演示图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/2IaU-Rb5SzigSrXx2af1Iw/zh-cn_image_0000002786359364.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=D00CC5DE8852B6DD780CAC848E0C4AEAC1C376EA832FF2CB956D510567786CCA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/6DtTM3VgTUuOAreXPLGdcA/zh-cn_image_0000002817426459.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=B50D3904B6589F8A3CDA86E59D2852C3D61AECDE2B13C196F647FCBD554A0D4F)
 
 ### Inspector双向预览
 
-支持ets文件与预览器的双向预览。使用时，点击预览器界面图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/9FfN95wSQXOGZsKqd_O9bw/zh-cn_image_0000002815558785.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9FC2E6C5DEBF43DEA3DADC46B143A3C1C1D99B59676EAC4F0620A2FAA9077F9)开启双向预览功能。
+支持ets文件与预览器的双向预览。使用时，点击预览器界面图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/6UAX6ChDQDKmfZp4KO43_Q/zh-cn_image_0000002788467040.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=E839D396D12F49E0D9CE986528299BDCC25E98F3332FA2A7972D409B813A70CC)开启双向预览功能。
 
 开启双向预览功能后，支持代码编辑器、UI界面和组件树之间的联动：
 
@@ -64,13 +64,13 @@ ArkTS应用/元服务均支持页面预览。页面预览通过在工程的ets�
 
 **图3** Inspector双向预览演示图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/f7ASuUGqSPCM5GjDxpvPkA/zh-cn_image_0000002815398869.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=1503D51AFDCE59127B4E10EDC3C2CBA062BA60A56554544F1277EA8C8DE8CDF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/iIirkcniRuqxC6rSHIGyZQ/zh-cn_image_0000002817506527.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABF520BFB5BA8A0BD42513C948D8F41B6B0EFF3A6EDEE61DEB07641625661704)
 
 ## 组件预览
 
 ArkTS应用/元服务支持组件预览功能。组件预览通过在自定义组件前添加[@Preview装饰器](../harmonyos-references/ts-universal-component-previewer.md#preview装饰器)装饰器实现。在单个源文件中，最多可以使用10个@Preview装饰自定义组件。启动方式：
 
-* 当组件被@Entry和@Preview装饰时，点击右侧侧边栏的Previewer按钮，启动页面预览，页面加载成功后，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/vucu63kfQ6iZIwJ2TUzpgQ/zh-cn_image_0000002815558783.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=B40C3229782D6B48742DE30925374A4290E1705E0534BC74680C9C3AD3B1D223)，切换到组件预览。
+* 当组件被@Entry和@Preview装饰时，点击右侧侧边栏的Previewer按钮，启动页面预览，页面加载成功后，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/jAooYUmaQtWsZbzIP0Oecg/zh-cn_image_0000002788467038.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BF1767D610AA4DAB60400EAC78D5E9B248E00C8FCB8DCD806064C58CE1D88ED)，切换到组件预览。
 * 当组件仅被@Preview装饰时，点击右侧侧边栏的Previewer按钮，则默认为组件预览。
 
 组件预览时，使用@Preview装饰器的默认属性（请参考[PreviewParams](../harmonyos-references/ts-universal-component-previewer.md#previewparams9)）进行效果显示。可以通过设置@Preview的参数，指定预览设备的相关属性，包括设备类型、屏幕形状等。
@@ -117,14 +117,14 @@ struct ComponentPreviewTwo {
 
 **图4** 组件预览效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/ztu0WK3AQwC_ZSx5jbEoTA/zh-cn_image_0000002786519294.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=6482D7403A50AD4449E7C13D3F082B65FD54434B677016B12C946DE75902E6BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/TdpmbnRdRaqCD5CNXdJlWw/zh-cn_image_0000002788307098.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C9F8C35D42B242EAC39EBCA44946DCB24A59E80A7426D3B5E61DA1F06EC55CE)
 
 ## 动态修改分辨率
 
-同一个应用/元服务可以运行在多个设备上，因不同设备的屏幕分辨率、形状、大小等不同，开发者需要在不同的设备上查看应用/元服务的UI布局和交互效果。预览支持动态修改分辨率，方便开发者随时查看不同设备上的页面显示效果。启动方式：启动页面预览后，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/mVOtVEj3T4Cdy_M0nM1oew/zh-cn_image_0000002786359366.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1FCA41350C3216F62BC6A81BA4B80D035047DC457BD0FE464A8C361C248027C)，即可拖动页面选中框动态修改当前设备的屏幕大小。
+同一个应用/元服务可以运行在多个设备上，因不同设备的屏幕分辨率、形状、大小等不同，开发者需要在不同的设备上查看应用/元服务的UI布局和交互效果。预览支持动态修改分辨率，方便开发者随时查看不同设备上的页面显示效果。启动方式：启动页面预览后，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/tgczOsneSIGoeh3OMtjXOQ/zh-cn_image_0000002817426461.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2604B8B165E6ACB352FFF5E86E0685DF7D36C2273AD341C2F10613A9C9A444F)，即可拖动页面选中框动态修改当前设备的屏幕大小。
 
 效果如图5所示：
 
 **图5** 动态修改分辨率效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/uxgCS426RfSUoxzcoTKExQ/zh-cn_image_0000002815558787.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=5316335966FFA39E1E7255DF186A8B151655CD943A55E772B8C3B6A8BFCF3A36)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/UNmwHzvOREKXM2LziicHTA/zh-cn_image_0000002788467042.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B0CF358D2316F2AF121CEB9601C1F1E3616D87486E2B018333F56408E74F6F6)

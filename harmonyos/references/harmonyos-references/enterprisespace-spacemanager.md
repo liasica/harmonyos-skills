@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/enterpris
 title: "@hms.enterpriseSpaceService.spaceManager(空间管理)"
 breadcrumb: API参考 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > ArkTS API > @hms.enterpriseSpaceService.spaceManager(空间管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:53+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:62b9853a40be7fb5ad65d4bd3948e278d14f2e2f7112adcc6069bf2f17729d31
+scraped_at: 2026-11-14T08:53:24+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:62dcaf5dd25c856cd701f2b59d14c6ca40f7b0459a90afed17606932eca1f9fa
 ---
 
 空间管理服务提供统一的空间管理能力，包括创建工作空间、移除工作空间、订阅空间事件等功能，满足用户空间使用和企业对空间的管理诉求。
@@ -308,7 +308,7 @@ createWorkspace(localName: string, workspaceType: WorkspaceType, params?: Create
 从6.1.0(23)开始，在创建工作空间时，增加如下校验：
 
 * 最多可创建2个工作空间。
-* 企业管理员设置禁止添加账号或者关闭全盘解密后，无法创建工作空间。
+* 企业管理员设置禁止添加账号或者关闭全盘加密后，无法创建工作空间。
 
 **起始版本：** 6.0.0(20)
 
@@ -365,14 +365,14 @@ console.info(`Succeeded in creating workspace. workspaceInfo: ${JSON.stringify(w
 
 enableWorkspace(enable: boolean): Promise<void>
 
-使能双空间特性。双空间分别为企业空间和个人空间，企业空间为完全受企业管控的通用办公空间，个人空间为因工作需要对外交流、作业、开源开发等用途的空间。使用Promise异步回调。
+开启企业数字空间特性。企业数字空间包含企业空间和个人空间，企业空间为完全受企业管控的通用办公空间，个人空间为因工作需要对外交流、作业、开源开发等用途的空间。使用Promise异步回调。
 
 **说明** 
 
-从6.1.0(23)开始，使能双空间特性时，增加以下校验：
+从6.1.0(23)开始，开启企业数字空间特性时，增加以下校验：
 
 * 当前工作空间个数不超过2个。
-* 企业管理员设置关闭全盘解密后，无法使能双空间特性。
+* 企业管理员设置关闭全盘加密后，无法开启企业数字空间特性。
 
 **起始版本：** 6.0.0(20)
 
@@ -386,7 +386,7 @@ enableWorkspace(enable: boolean): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | boolean | 是 | 双空间特性是否启用。参数的默认值为false。  - true：支持双空间特性  - false：不支持双空间特性 |
+| enable | boolean | 是 | 企业数字空间特性是否开启。参数的默认值为false。  - true：开启企业数字空间特性  - false：不开启企业数字空间特性 |
 
 **返回值：**
 

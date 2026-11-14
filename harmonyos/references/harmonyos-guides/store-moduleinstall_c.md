@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-modulei
 title: 产品特性按需分发(C/C++)
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 产品特性按需分发 > 产品特性按需分发(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:19+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-14T08:48:12+08:00
+doc_updated_at: 2026-11-13
 content_hash: sha256:a3b02b8f40403fe98be357b891985e483885c02d6bb1009de6e7c7680b8a6255
 ---
 

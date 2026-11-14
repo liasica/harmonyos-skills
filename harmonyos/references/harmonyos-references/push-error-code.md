@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-erro
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-11-12T09:57:39+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:801d006b728109d07774a86edbd335cdef34c47aba9540527d623e77c3ee7b75
+scraped_at: 2026-11-14T08:53:49+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:39e645df52ad819e109f76412211236a1b3b62ab0e32e70164f60158499884dc
 ---
 
 **说明** 
@@ -325,11 +325,11 @@ The device does not support current operation.
 
 **可能原因**
 
-元服务基于账号订阅时，该设备非Phone、Tablet、PC/2in1，或者订阅时元服务不在前台。
+元服务基于账号订阅时，该设备非Phone、Tablet、PC/2in1、Car，或者订阅时元服务不在前台。
 
 **处理步骤**
 
-元服务基于账号订阅时，检查订阅时应用是否处于前台。检查设备订阅设备是否为Phone或Tablet或PC/2in1。
+元服务基于账号订阅时，需检查应用是否处于前台。检查订阅设备是否为Phone或Tablet或PC/2in1或Car。
 
 ## 1000900018 请求频次超限
 

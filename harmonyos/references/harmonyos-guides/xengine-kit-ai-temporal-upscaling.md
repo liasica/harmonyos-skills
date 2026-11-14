@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-a
 title: 时域AI超分
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 时域AI超分
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:09+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:301d4403ad686072db07deda6ee64db2224f04076dddac94db3a1234d2aa99f3
+content_hash: sha256:dafaca5de7b88d855e6ee6dee276ce3cb001971de92e37d00c937f5cce7b0ef1
 ---
 
 从6.0.0(20) 版本开始，新增支持OpenGL ES协议。
@@ -47,7 +47,7 @@ XEngine Kit提供时域AI超分特性，利用相机的抖动获取不同位置�
 
 * 下面是基于OpenGL ES图形API平台集成时域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/V6z5TZhcTf-n-4TmapYYtw/zh-cn_image_0000002786360122.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0FF3FD02028268980D229D8EA02FD5A2958E099B50829974F211F56E8F8CF98)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/0Ld_gFnJQ3OAKw3g2TWesg/zh-cn_image_0000002817427217.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=C76638D8E829E765B6A7BAD8A8EA4B3BEE91FA774952F30E6290803503C989D5)
 
 1. 在游戏初始化阶段，调用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)接口查询XEngine Kit支持的特性列表。检查返回列表中是否包含[XEG\_TEMPORAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_temporal_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_TemporalUpscaleParameter](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_temporalupscaleparameter)接口配置超分相关参数。
@@ -58,7 +58,7 @@ XEngine Kit提供时域AI超分特性，利用相机的抖动获取不同位置�
 
 * 下面是基于Vulkan图形API平台集成时域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/iT-cz-9cSGaLhYUhMEbtkg/zh-cn_image_0000002815559543.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=A56C3947FF1C14A1525BA2F5411D4F4F0DE5EB5564EBEECF8D581C267485EAD7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Q_uPX4JRSni9t9Egd1sUfQ/zh-cn_image_0000002788467798.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=A25AFF08F41B3A23A0FF48DE06E42012ADF1DEE9CF0897314D1D2F7479DC3681)
 
 1. 用户进入游戏初始化场景时，调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性列表。检查返回列表中是否包含[XEG\_TEMPORAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_temporal_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_CreateTemporalUpscale](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_createtemporalupscale)接口创建时域AI超分实例。

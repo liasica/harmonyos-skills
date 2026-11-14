@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/certmanager-u
 title: 用户证书凭据开发指导
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书管理服务 > 用户证书凭据开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:27+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a750463987212f871d016293cadef861cdc9ce2dcef9788ce1559af57b63339f
+content_hash: sha256:200d062c1e043dab880ca3091ee4a44ae13bff85bfe4175fa976159e5d2f79f5
 ---
 
 如果您的应用在访问应用服务器时，应用服务器要求使用设备用户的证书凭据对用户进行身份认证，则您的应用可以使用本功能进行用户证书凭据的安装和使用，如您的应用通过双向HTTPS登录企业内部的应用服务器。
 
 用户证书凭据功能提供了用户级别的证书凭据（包含证书链和私钥）的安全存储、授权管理和签名能力。用户证书凭据的公私钥对存储在[Universal Keystore Kit](huks-overview.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/BCAs0RqqRwWcRYGvRG8VSA/zh-cn_image_0000002815399161.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5B105C54F383DD8F33D6906392AEF5CE7F848B4A0F7A8BB972A194D715A7FC0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/hmhEfJAKTqmqsk3mHD34AQ/zh-cn_image_0000002817506821.png?HW-CC-KV=V1&HW-CC-Date=20261114T004548Z&HW-CC-Expire=31536000000&HW-CC-Sign=40616C34CCBE692AA1AE66C647206C41F90A06A204CBB4ACD2829211F4DB735A)
 
 用户证书凭据归属于设备的用户，可以由设备的用户通过系统设置应用进行安装和管理，应用也可以通过API拉起证书管理服务的对话框，引导用户完成安装。
 

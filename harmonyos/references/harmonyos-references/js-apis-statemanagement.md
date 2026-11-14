@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.arkui.StateManagement (状态管理)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.StateManagement (状态管理)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:59+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:d3b5985c4ec45ab31deec1dbc437e186a7406a36ca28a474025c645c337a4409
+scraped_at: 2026-11-14T08:49:57+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:ec39431fc64b574c22fb31129787c9aca8a2ee09ebb3755743357fa6be429e2f
 ---
 
 状态管理模块具备应用数据存储、持久化管理以及UIAbility（包含用户界面的应用组件）数据存储能力，同时覆盖环境状态、工具和UI状态同步等场景，从而帮助开发者简化状态管理逻辑，提升应用的响应能力和数据一致性。
@@ -243,7 +243,7 @@ type: ConnectOptionsCollections<T, S> | ConnectOptions<T>
 
 ): T | undefined
 
-将键值对数据存储在应用磁盘中。支持集合类型[Array，Map，Set，collections.Array，collections.Map，collections.Set类型的持久化](../harmonyos-guides/arkts-new-persistencev2.md#globalconnect支持的集合类型)。注意在持久化Array<ClassA>类型的数据时，需要调用[makeObserved](js-apis-statemanagement.md#makeobserved)使返回的对象被观察到。不支持多个嵌套集合，例如不支持Array<Array<ClassA>>的持久化。
+将键值对数据存储在应用磁盘中。支持[集合类型](../harmonyos-guides/arkts-new-persistencev2.md#globalconnect支持的集合类型)（Array、Map、Set、collections.Array、collections.Map、collections.Set）和Date类型的持久化。注意在持久化Array<ClassA>类型的数据时，需要调用[makeObserved](js-apis-statemanagement.md#makeobserved)使返回的对象被观察到。不支持多个嵌套集合，例如不支持Array<Array<ClassA>>的持久化。
 
 **说明** 
 
@@ -711,8 +711,7 @@ static canBeObserved<T extends object>(source: T): ObservedResult
 **示例：**
 
 ```ts
-import { UIUtils } from '@kit.ArkUI';
-import { DecoratorInfo, ElementInfo } from '@ohos.arkui.StateManagement';
+import { UIUtils, DecoratorInfo, ElementInfo } from '@kit.ArkUI';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const TAG = 'CanBeObserved';
@@ -1275,7 +1274,7 @@ class ObservedClass {
 
   constructor() {
     // 给当前ObservedClass的实例this添加对属性age的监听回调this.onChange
-    UIUtils.addMonitor(this, 'age', this.onChange);
+    UIUtils.addMonitor(this, 'age', this.onChange, { isSynchronous: true });
   }
 }
 
@@ -1718,7 +1717,6 @@ new(...args: any): T
 import { PersistenceV2 } from '@kit.ArkUI';
 
 @ObservedV2
-  // TypeConstructorWithArgs 指的是 SampleClass
 class SampleClass {
   @Trace id: number = 0;
   count: number = 1;
@@ -1730,6 +1728,7 @@ class FatherSampleClass {
 }
 
 // 将key为FatherSampleClass、value为new FatherSampleClass()对象的键值对持久化，并赋值给source
+// TypeConstructorWithArgs指的是FatherSampleClass
 const source: FatherSampleClass | undefined = PersistenceV2.connect(FatherSampleClass, () => new FatherSampleClass());
 
 @Entry

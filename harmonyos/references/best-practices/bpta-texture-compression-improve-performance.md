@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-texture-co
 title: 图片资源加载优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 图片资源加载优化
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:15+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:3bd7ea5245f7f90055719d853304b281ef8eb687b50510eda086aa8383ece1da
+content_hash: sha256:2d052869c0c50fb8af50ce0139f0c01865326cbcfcb8520ee93cfb7b0950aba3
 ---
 
 ## 概述
@@ -24,13 +24,13 @@ content_hash: sha256:3bd7ea5245f7f90055719d853304b281ef8eb687b50510eda086aa8383e
 
 预置图片在不使用纹理压缩时，需要先经CPU解码生成PixelMap，再上传给GPU生成纹理。此过程耗时较长。开发者可使用纹理压缩技术，在编译构建阶段提前完成CPU解码和纹理生成，以减少CPU处理图片的时间。纹理压缩需在编译文件中配置相关属性，构建时根据配置找到预置图片，转换生成纹理码流，并进行超压缩编码生成超压缩码流。编译完成后进入运行态，进行超压缩解码生成纹理码流，GPU读取纹理码流后进行渲染显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/l7nj_576R4SDV0MQoAlohg/zh-cn_image_0000002484161165.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F5CB233502300709DC5EF301B26729CF1CAA1C159729BDBD195FCB99EE5034B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/vpdam-MUThCRdHDC_kqWIg/zh-cn_image_0000002484161165.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=58A71AF3D7876DCE6E68573843D3D934BDF1CCB884F879E7FA394081A1835350 "点击放大")
 
 纹理压缩在编译构建中对预置图片进行处理。首先在编辑器的编译文件中配置纹理压缩参数。根据配置参数，hvigor读取待压缩的文件资源，构造[restool](../harmonyos-guides/restool.md)命令解析并生成资源文件列表。然后遍历文件列表，将待转换文件转码为纹理格式。已转换的资源文件不再打包到构建产物中。最后将纹理文件和未转换的文件一起构建生成资源产物。
 
 编译构建资源文件开启纹理压缩时序图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/KAYWMHnbRemPA9hXfoI_WQ/zh-cn_image_0000002484041709.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3273C7A909C58373C52276AF54BD507DE7170900FAD11EBF3D59E6D7B8A5CAD4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/bTCE-FybSM2qGjT2AjBfaQ/zh-cn_image_0000002484041709.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=789A538CE05DC898E7329CCB9FD8C35A84C6790FED1B33F8168917D1762AF3A5 "点击放大")
 
 **说明** 
 
@@ -40,7 +40,7 @@ content_hash: sha256:3bd7ea5245f7f90055719d853304b281ef8eb687b50510eda086aa8383e
 
 由于图片格式无法直接被GPU渲染，需要CPU解码后上传到GPU，这会消耗一定时间。当一个页面同时渲染一定数量的预置图片时，可能会导致图片完成时延增加。以下是一个Tab栏切换的示例，当向右滑动切换到tab2页面时，新页面通过横列布局加载40张.png格式和40张.jpg格式的预置图片。对比开启和关闭纹理压缩两种情况，图片完成时延有显著差异。未开启纹理压缩情况下切换过程的效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/qzGePkAORQ2NW-3OY-8CzQ/zh-cn_image_0000002451514896.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7BED0F945E650D7C0EA9643B8F275FB5FEA609E06487B7ADC8EC922A0591BDC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Hs3n3pnSSeS9k0SiygWGXA/zh-cn_image_0000002451514896.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DFBD3999E5D94527E6ACAD0809D0460C0E97429AE222034BFC64D8C1EEACCD9 "点击放大")
 
 在不使用纹理压缩的情况下，当向右滑动切换到tab2页面时，由于新页面包含多张预置图片需要加载，可能会导致部分图片加载延迟，出现显示白块的情况。
 
@@ -114,13 +114,13 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 
 按分辨率匹配时，匹配分辨率的宽高值是二维数组。下图左侧表示分辨率小于2048×2048的所有图片，右侧表示分辨率小于1024×1024的图片和分辨率大于1024×1024且小于2048×2048的图片。虽然两种写法看似相同，但其取值范围并不一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/2cXz0h-VT_eGMaS-qq0XNw/zh-cn_image_0000002474118625.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1850713BD330B5016435172D511C470D3FE85D442170332FE559968B38C0342D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/rZ1fFzM8R9KoRWKtHk_U5Q/zh-cn_image_0000002474118625.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CFF5494150B62CD5F83D5F18ED8A9AD2436AF49BA8F04193D4A9D025E4E302C)
 
 **编译执行**
 
 配置相关参数后，执行项目编译构建。编译过程中，hvigor根据配置参数获取预置图片，通过转码部件进行纹理压缩并打包。纹理压缩后的Tab栏切换效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/nMfnGjO3TV2Y1t7ZnqWLOw/zh-cn_image_0000002484595545.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CA97955F37363BFF76C02E67514914E64CE0F39E08967267A23D47F7EFEA2D9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/7xn4L6KcT9irhXJjyOlewQ/zh-cn_image_0000002484595545.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=1798177371212D120D654717E6B3B753F9AE183C8710482E89816132CD42DA1D "点击放大")
 
 通过效果图可以看出，使用纹理压缩时，切换到tab2页面后，图片立即显示，没有延迟或白块出现。
 
@@ -132,7 +132,7 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 
 纹理压缩的主要收益是将预置图片转换为纹理格式，直接被GPU读取，降低CPU和DDR的负载，加快图片加载速度。在Tab栏切换示例中，预置图片分别以原图（.png）、纹理超压缩（.sut）和自适应可变纹理压缩（.astc）三种方式测试，图片读取耗时如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Pxxgaaz-S1GF5PppmAoTDA/zh-cn_image_0000002651423776.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=52846E79921F0F4BBBF72FE3A01D1EC4750260D3C8E0D658F1472167545785FA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/YsuauF_GRSqbRZj4Xu7sAg/zh-cn_image_0000002651423776.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=38E1BFEDB6C9C12C496008DC7CB52146A8F9D27128998A136B8AFCB98EFDCCEC "点击放大")
 
 统计以上H:CreateImagePixelMap的耗时得到下表：
 
@@ -146,11 +146,11 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 
 在对比加载图片的耗时后，使用Tab栏切换示例测试内存大小，查看纹理压缩前后的内存占用情况。相关数据如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/S8QU5XNvT5-CRWWEWOYWNg/zh-cn_image_0000002474038453.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=12FD8C1B09926FA88DD3C0629F37C6D863DC27917DE0A189C379FD6F65C667BD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/k9VwTb8CQQ6--vDJbPPBXw/zh-cn_image_0000002474038453.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=07F8835F4FDE1194C2EFCCD6D008195A7CA8268C7C04CA7E785B957C5BE3FDA0 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/b0XXEKP3SJisJ64W0bxFwg/zh-cn_image_0000002474118629.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EF5A17022C169C8514A3E239C8B0EA55DC2C68A081D944910B97627A0C7C73E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/hQ-MfoDeTWipjWS8CUHeIg/zh-cn_image_0000002474118629.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6351A9BB9F3157E70D2303A32510A1DF3BDB65C545564E6A489D45BECAB37BD "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/oZEyvyMSSBeePOCaJKZd1w/zh-cn_image_0000002440558608.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECB109133BC6D1EF7DF3EEE7E7A7B2659A8CF18DA72ACAB71E08BFA191C6027F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/4UK8hbhBSkq7jon2Xfj1Lg/zh-cn_image_0000002440558608.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=75D8956ACF47FC2031DD4DA6930B538F9E1FF4CF205F8644B957829E27579050 "点击放大")
 
 统计纹理压缩开启前后的内存占用大小数据如下表：
 
@@ -235,13 +235,13 @@ ffmpeg -i input.gif -vf "scale=90:-1" -y output.gif
 
 例如，在网页或App中有一个头像显示区域，大小为80\*80px，此时有一张4180\*4180的大图，若直接通过代码缩放到80\*80显示，会出现内存占用高、解码慢、滚动卡顿的问题；正确的做法是，提前将图片压缩并缩放为80\*80的小图，然后再进行加载显示。对比压缩前和压缩后两种情况，图片完成时延有显著差异。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/wBznVzEQQnuWxhqcDcmOWg/zh-cn_image_0000002651583686.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A840CE34A2117157C3842C0897A5D78980FCA94E25B90D0BB5FDA77617C9E57 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/o6WpwfPeSbONIt9Vybql8w/zh-cn_image_0000002651583686.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=2675C8E578E9ED2A79DF3D635C09AF75F6FA8BEF37C67AAAF39D067ABB202EDB "点击放大")
 
 **耗时对比**
 
 点击切换示例测试耗时时长，查看压缩前后的图片读取耗时情况。相关数据如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/ND62tjB5SiK_Zi4-BvmtJQ/zh-cn_image_0000002474038457.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=112BBDBAEA5C558E4B2FD90E0E92FBF3C55FC116DDE3F1C71875717B656FB2E5 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/xtDaIrogTam4TRQYI7MHsA/zh-cn_image_0000002474118633.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CEB3D71CFF7CBA70D483063B83D8A496BE22C8B629B57ED6336E8F4B3A7C8D5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/2KQpuXpLROOMoVIeVspGUQ/zh-cn_image_0000002474038457.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C593AA51A8CEA2D9FBEE8A34D9AB5B58B8302B4873914EDAD4D3EA0D89EB276 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ZBtg1nUZTAK2GSgKgAvwLQ/zh-cn_image_0000002474118633.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB07EEB76D17D733BFAC812B707D3656F2BD6DA5CC4D0DDEA8876993BE13671B "点击放大")
 
 统计预压缩到实际UI尺寸前后的图片解码耗时数据如下表：
 
@@ -256,9 +256,9 @@ ffmpeg -i input.gif -vf "scale=90:-1" -y output.gif
 
 点击切换示例测试内存大小，查看压缩前后的内存占用情况。相关数据如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/OJAG8UKgSVeeVymiA6lVGw/zh-cn_image_0000002440558612.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DC42828ECB7E1050CBF8062C1B1B50D0D791215E42C51CA6421130A5F57ADA8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/LwBfLAn-QgaNSAllT_U8Ew/zh-cn_image_0000002440558612.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=61AC9C96BBE69E27491E07449FDC7D53630EDCDB4649D5F0A56B0C473E9F597D "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/i9ctxYo6ScGowp2atQw58w/zh-cn_image_0000002440718516.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D9CFAF3F5AC16885EAEDF87949569593EBF248BFEDB1B66837E0837DC541937 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/SmEBQETBT3-H6gt30cmEiQ/zh-cn_image_0000002440718516.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=985B57D2137C29542622ED447EE593918B44EFD883555F61A3E2D3C422D20D8A "点击放大")
 
 统计预压缩到实际UI尺寸前后的内存占用大小数据如下表：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/priority-noti
 title: 申请优先通知权益
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 申请优先通知权益
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:939e98fd4d00b391042b8e8e7369f2b0b573b3639ec661d385d8335bf13865fe
+content_hash: sha256:d451ad3b625fe5306969a26de10b48f81b3dfb948f4bf33cc7e6533b60935f97
 ---
 
 当用户终端收到携带[priorityNotificationType](../harmonyos-references/js-apis-inner-notification-notificationrequest.md)字段的通知消息时，系统会将其识别为优先通知并优先显示。
@@ -24,25 +24,25 @@ content_hash: sha256:939e98fd4d00b391042b8e8e7369f2b0b573b3639ec661d385d8335bf13
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/R_9WIaXrQxaC-_XP11gPCA/zh-cn_image_0000002815559891.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1B42C2CB937C2BB26F95C562FF8DE4A541B9CDEC048DA98087AFD0C9F2E142F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/3mUS2ByfQtqzjidnvS59Eg/zh-cn_image_0000002788468146.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B3C7C60DE1F7669CB518AA6F5F167D3D4AE80ECA68A5B9106262DCF4D058080)
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要申请优先通知权益的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/-Ne6MUd1QUSDfFcQu-1JiQ/zh-cn_image_0000002815399975.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=4ADA9D4134746468C16D43861DC254ADD07830ED4C0692958BD751E7132968D1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/5m01wm6MTKepMFHXlHKYaA/zh-cn_image_0000002817507635.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0978966BC80D9FE00D44FA0FC773F03955804BF5737F935541945D94CB9FE30)
 3. 进入“项目设置 > 开放能力管理”页面，点击“优先通知”的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/t3E4A9rpQBOYiCklxnHN8A/zh-cn_image_0000002786520400.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CD4D26D6357FFF2BEDEE565149E0AF8FF6BF0B8319871024EC0CD64915195C1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/EGJxcfo0TeqOu476C5Ij1Q/zh-cn_image_0000002788308204.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=C393020B6B47FF378ED3E5D3054A0E6FBC31D94AF449AFABA6958C66FC855301)
 4. 开发者可参考“申请原因”中的模板，提供申请必须的相关信息，包括应用介绍、使用场景、申请用途、附件、承诺信息，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/NxB-VP7WR4OdZT4fBES74Q/zh-cn_image_0000002786360472.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E80A730A2E8C51176354C9FADFE062764A45A54AEA7D8D7E341BC3DFC8584DC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/NDo_r9NYR2KdQtPqt7jc8Q/zh-cn_image_0000002817427567.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B32D1CA4F837B2B3C172F669243DE16CDC64A96DF14482717B2789EA422BA7F)
 5. 开发者可通过互动中心的“服务开通申请”消息获取优先通知权益申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/37GP_ymtRGGRfQ1V1dAWlw/zh-cn_image_0000002815559893.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FCC07AAC72B68451AA5EA621F35B747F07A385E90BC832A0FE7612F8D73958C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/WFmcExLIRk2zeeOOPdOVcQ/zh-cn_image_0000002788468148.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=334A1AE13E1D15EABC2C1C1CF18961C8E091DBD5EEA186A1392EBC8EA55460A8)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/loMYZ9x9S5qGvOfO-ftpog/zh-cn_image_0000002815399977.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9C7B6B0EE720321D3D685866CE8AF0631170BE80455689DF9B0F9FF25B28F55)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/0bIZDjh8TDKOq89QL2tZvQ/zh-cn_image_0000002817507637.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=463E5000EB4B3DAFE1C26E9256D1042B8CE3ACD683443CAC024096CCE5EBE665)
 6. 优先通知权益申请通过后，须在“证书、APP ID和Profile”页面下左侧树形菜单的“Profile”页签，点击“添加”重新生成Profile文件，并下载Profile文件到本地，然后在“[发布应用](ide-publish-app.md)”时，须将该Profile打包到应用包中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/v94XjIcKTveTSiV8gR9-Pw/zh-cn_image_0000002786520402.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=D49F7A6499E050D9F88F346EE3CEC616270E4FB6FDC5C8F16E403345279A5E77)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/XDgAkXT5SmyrhHe729F6Xg/zh-cn_image_0000002788308206.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FE51FEBE9B6F612A2C665A62C2052E99C241F55D1B4E973FDE5B7222DA3DA87)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/HhU4V9FNRmedUmdIBx2isg/zh-cn_image_0000002786360474.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=A87FA07D994D18DA5204E534144C636ECF5378AF6282DB4D1BCA0696D76EFD35)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/URtx7vd8Q56ZLgnvITaIzg/zh-cn_image_0000002817427569.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=63E99B94B616E2005397E47580D36FFD7EE6D7C5DA33A3DF29CF49B1E14F4CE0)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/3LumFVikRIOcg9pg-kpHag/zh-cn_image_0000002815559895.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3690ACCDAD5F96C143BE53762E79C1B224558CE6D17D42BD0EAE3349768B842)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/fcG-90CKTRKnPDBmQ5gc8A/zh-cn_image_0000002788468150.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=57E48D4ACC94D85AE1B7A65EE7E64E96386B5362B8B53569E0E5DED9C35CC539)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 配置CPP
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 配置构建流程 > 配置CPP
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:49:18+08:00
 doc_updated_at: 2026-11-06
-content_hash: sha256:62146a8ed1749dd4b3b0f4331027fa3b38130c6d19c496c7fba057a93339bd33
+content_hash: sha256:fcd2eeb1412da9d27ef3344d46752fc4e6b55b5e5bfcfbaee7be1abbde290405
 ---
 
 Hvigor集成CMake、Ninja为cpp代码的构建工具。在初始状态下，无需额外配置，您也可以添加以下自定义配置，定制cpp代码编译。
@@ -67,7 +67,7 @@ filter是Native 库（.so）文件的筛选选项。配置后优先级高于[nap
   + 三方包（包括远程三方包及本地har包）的优先级高于本地依赖模块的优先级。
   + 按照广度优先的遍历方式来收集依赖，如下图，优先级顺序为current > library0 > library1 > library5 > library2 > library3 > library4。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/W_tZH_PoS7-YqPk24yPlzg/zh-cn_image_0000002810750645.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EC5A6C138BB280E59DE5F21FA8B3A3580876D5BC20A3B20CDE307FC2CD3D6EC "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/wkPtVo_wR1OisEMqHf5w2A/zh-cn_image_0000002810750645.png?HW-CC-KV=V1&HW-CC-Date=20261114T004917Z&HW-CC-Expire=31536000000&HW-CC-Sign=A31E44CCDF4FBFDA303F18473BD4B1466093E8C834852D827A807E3463250A8F "点击放大")
 * **select**
 
   **表4** select字段说明

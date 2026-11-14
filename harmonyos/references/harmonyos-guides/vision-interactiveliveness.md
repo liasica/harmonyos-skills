@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-intera
 title: 人脸活体检测
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 人脸活体检测
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:48:41+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:16015d17b2c2ad85aee82d7ce3373d47c25580c35cd7d29754721bcbdcde97f2
+content_hash: sha256:06dbcd06c46d6e956fe263602d5aca761c556537eecc77962ab13ddab0976852
 ---
 
 ## 场景介绍
@@ -22,11 +22,11 @@ content_hash: sha256:16015d17b2c2ad85aee82d7ce3373d47c25580c35cd7d29754721bcbdcd
 
 **图1** 权威认证**增强级**检测报告
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/c0YCePBoQzir5oEngTg8lw/zh-cn_image_0000002815400283.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=08C61E719CC765F9817CE1F39D954BCECEB5402A1BAB6DEF039557F9AA702372)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/iLg-AgAcTG2UwIzRHv1XKQ/zh-cn_image_0000002817427875.png?HW-CC-KV=V1&HW-CC-Date=20261114T004841Z&HW-CC-Expire=31536000000&HW-CC-Sign=395488162529F841F9B31742868C378DA9F2FEEA0586A15D396370001E6375C1)
 
 **图2** 活体检测示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/LxX2n19MQmKHf5e-YmF1HQ/zh-cn_image_0000002786520708.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A9E31355FDC73D1AFDAABAE3E6AECF9871D166CFFC5FA994FE8D7958827CA53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/K9aLPntlSnePGNKKysbCbA/zh-cn_image_0000002788468456.png?HW-CC-KV=V1&HW-CC-Date=20261114T004841Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CE55DFAF884C6519144D782CB9F6003BAEE5B763A80454F5DBA6B5BE16EC748)
 
 ## 约束与限制
 

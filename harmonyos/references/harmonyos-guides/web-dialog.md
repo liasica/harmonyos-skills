@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-dialog
 title: 使用Web组件显示网页弹框
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > 使用Web组件显示网页弹框
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:14+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c3619adf39afc0c83698976d156f20da9f50f6a042b4648d711742004345aace
+content_hash: sha256:411cd7637378dfcc051adc25094456c51a7f6b99e3789e8791515f2c5bcc588b
 ---
 
 在HTML中，可以使用JavaScript创建三种类型的弹框：警告框window.alert(message)、确认框window.confirm(message)和提示框window.prompt(message, defaultValue)。这些弹框可以用于向用户传递信息、确认操作或请求输入。
@@ -175,7 +175,7 @@ window.alert()用于显示一个包含可选信息的对话框。警告框用于
   </html>
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/PebLA9FdQfqz0vBeCQ9KBg/zh-cn_image_0000002786359438.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BA67B60684B4D34CEA6F5E0C03519F44A4FCB5C9ABB8D5BB7975BD157753C74)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/wB-byTeDT8CR1308aepENw/zh-cn_image_0000002817426533.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5FC3004DC50A5591CFD0A0763ED4360BE7F43EBBA3A9BD73AEA1AF0B99997FD)
 
 ## 实现Confirm弹框
 
@@ -372,7 +372,7 @@ window.confirm()用于显示一个包含可选消息的对话框，并等待用�
   </html>
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/uov1rLGASSaaItm6ItID5A/zh-cn_image_0000002815558859.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E274436141CC3C277229E552C657A61C9B83C61E0F3CD489316663F685186FA4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/YXIAkQ0wQ5m0CLSF40gu0w/zh-cn_image_0000002788467114.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA30AFBD953EFFAB71E0B1E4E886B08C9D3E929509EE3D2BDB4EFDE166CE60F5)
 
 ## 实现Prompt弹框
 
@@ -530,4 +530,4 @@ window.prompt()用于显示一个对话框，并等待用户提交文本或取�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/aaSpOZFLQB6d0uLseAspcA/zh-cn_image_0000002815398943.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3F20382BED915F688B04985D360B87A58CDA49F57CF21AB17B51B6C44928C30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/j5sAuRfeRVqQMxvRSlKaDQ/zh-cn_image_0000002817506601.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A396707F075B94A0BFA97DC404022B039D0972540B25A0AC16AEB9B6915E333)

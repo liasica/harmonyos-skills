@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request_user_
 title: 请求用户授权
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发 > 请求用户授权
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:44+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3c688c4bef1b91b8625c788d128ca9f38fce610f996c36990a130d064e42ce05
+content_hash: sha256:f5619438003f91ffe73a1b563aaa60d148cee3ce13bbd9b16a4778be2e140e1b
 ---
 
 为保护用户隐私，Wear Engine的API需要用户授权才可以正常访问。建议开发者在用户首次调用Wear Engine开放能力的时候执行本章节操作。
@@ -14,7 +14,7 @@ content_hash: sha256:3c688c4bef1b91b8625c788d128ca9f38fce610f996c36990a130d064e4
 
 应用拉起华为账号登录和授权界面，由用户授权相应的数据访问权限。用户可以自主选择授权的数据类型，可以只授权部分数据权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Ih4KUG7JSV6Ad0_xDNJ4fw/zh-cn_image_0000002786359792.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=839861E7A844ACF67E4B440452EEB2AD0D98EE9BF4EC87F91D1325B6A9365130)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/wkwGVHuoTpamdJN3VccXLQ/zh-cn_image_0000002817426887.png?HW-CC-KV=V1&HW-CC-Date=20261114T004604Z&HW-CC-Expire=31536000000&HW-CC-Sign=D40E871A1DBBD5C10428D2ADAE3EF8A3936635FFEF30FFAAA2B15EC5484DED01)
 
 1. 应用调用[wearEngine](../harmonyos-references/wearengine_api.md)中的[getAuthClient](../harmonyos-references/wearengine_api.md#wearenginegetauthclient)方法，获取[AuthClient](../harmonyos-references/wearengine_api.md#authclient)对象。
 2. 定义需要用户授权的权限请求类[AuthorizationRequest](../harmonyos-references/wearengine_api.md#authorizationrequest)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkweb-oom
 title: JS对象长期被JS持有导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ArkWeb OOM故障模式说明 > JS对象长期被JS持有导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:20+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:a6c2bb516b7d7ac5c4158181b78e758e7ed4e0f5fae7962476fd84eb06d9463f
+content_hash: sha256:4a22203cc01b09a689321466abb79ec4f86a03f3e2d0f81946642a9c3e03dad2
 ---
 
 ArkWeb V8引擎通过GC机制保证JS代码执行结束后释放JS对象占用的内存，如需在JS代码执行过程中及时释放内存，则依靠开发者对JS对象生命周期的管理。本文通过两种场景分析JS对象内存占用过高导致引擎OOM的问题，并通过堆快照文件展示相关堆内存特征。
@@ -57,15 +57,15 @@ msgEl.innerHTML = 'JS execute finish.';
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/YAJEUaRvQI6Z_KzDqDo4Jw/zh-cn_image_0000002677818392.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7EB0C5AE987FADC1F29C9A5332B60CF4868E274B514695E8F62FE4D5B2A1CD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/FFqln3l2RI-MdXc9JsIU_w/zh-cn_image_0000002677818392.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=5784269C4FF33241A6D05021CED614636BEEDBB9FB2A333533BDF67353743A4A)
 
 3. 打开后默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见98%的内存分布在Array对象中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/o7lgQHlKQbKvEbH0Jj0UXg/zh-cn_image_0000002707578253.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=83F7A83D48F494F9F7CE86C8FB9D1E3A4C9B5BEB0073B6865BD035258EB61675)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/ebIewKumSTKR9zNECYi_jw/zh-cn_image_0000002707578253.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBC8C255240137C631819591AA706C2347629192B40A11D269B805EB4E57FDB5)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，大致估算每个节点的Retained size累计值，找到累计值最大的节点，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/S-2oxNw4QMmDtocEBxzzmg/zh-cn_image_0000002677658544.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=79647DA9B2CEA58828D823445D2D5A2314BE74389260426E47114F4CD2CB9ADD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/5w3O9caNRdWvvR_EeCHiaw/zh-cn_image_0000002677658544.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=279E140E80546E0C4644DB18E1CBC3DC6695C79FE1F4AF684C99CBC33AAE2A1F)
 
 可见大量内存被Stack roots引用，表明当前内存分布主要集中在栈上局部变量。
 
@@ -116,15 +116,15 @@ msgEl.innerHTML = 'JS execute finish.';
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/JCqxf6x-QLyafI3BxaG2aA/zh-cn_image_0000002707458405.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF9DFF0634D20505908A3D700C86E1917F7E3DEF7C528531F48B46C4B09DD9AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/k72nqXsGSiekEssGYimLpA/zh-cn_image_0000002707458405.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDC6F835A4A5719FD97A9696DB6476733A3137A7AFAF649F476E9722F4DF1D8F)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见97%的内存被bigObject占用，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/fmOVSF6aQJarnL0mzucUrQ/zh-cn_image_0000002677818394.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAAB4FE71F76829C1E49199A8700FC6FBAF3888C8FC18B5007AA5D855049B151)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/YkM5braKR_2MGrEif2NUNA/zh-cn_image_0000002677818394.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=06E9C55E6307EF8EE966E3FF2815540801A6CE22B8DCBCC30FC1B8D3ACA99929)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/7YGLLT_pQwSL9wG0YeMF1Q/zh-cn_image_0000002707578255.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1278310C8DFA6F5231B353E0898D74AA3058D344C426501DF0621579F2ACC7BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/XYtGfJF5TGmQn3FxDrhkxA/zh-cn_image_0000002707578255.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5961C0D69A6B8DFA484C77D2ECB84E24A210CF55105826717361EFAA84FDA53)
 
 可见大量内存被Micro tasks引用，表明当前内存分布集中于微任务所引用的变量。
 

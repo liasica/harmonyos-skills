@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animati
 title: 动画衔接
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画衔接
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:47:06+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e851e28b1ad6ca11ddf55fdcab6140646b14e4b86ae568ddfb7a68abb51b03a1
+content_hash: sha256:fe6ef82ff4008f61c51e7d990e03f0e813422966617fe8bb7e8cc0ee0618a302
 ---
 
 UI界面除了运行动画之外，还承载着与用户进行实时交互的功能。当用户行为根据意图变化发生改变时，UI界面应做到即时响应。例如用户在应用启动过程中，上滑退出，那么启动动画应该立即过渡到退出动画，而不应该等启动动画完成后再退出，从而减少用户等待时间。对于桌面翻页类从跟手到离手触发动画的场景，离手后动画的初始速度应继承手势速度，避免由于速度不连续导致停顿感的产生。针对以上场景，系统已提供动画与动画、手势与动画之间的衔接能力，保证各类场景下动画平稳光滑地过渡的同时，尽可能降低开发难度。
@@ -65,7 +65,7 @@ struct AnimationToAnimationDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/vex4OrCIS7CjHuth1i0JJg/zh-cn_image_0000002786359172.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E954FD9252460DA28F2A32701EB27589A12E896ED562A6593EA8859C543776D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/aC5OIFR9QjG7xptzVsYbVw/zh-cn_image_0000002817426267.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4CC702D52BFB74D6E9F5EEA99C59354A1AF4F707CE83672C99D31943C27C9FA)
 
 ## 手势与动画的衔接
 
@@ -141,4 +141,4 @@ struct SpringMotionDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/XLr6Pm7DRbKcPJo-eOgsyA/zh-cn_image_0000002815558593.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F3AC065A04CF12FEC7678660351CB14774D4B05E2979274325484FAEDB93D16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/DjclHDDMQQuSigag5ZfQVQ/zh-cn_image_0000002788466848.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=613228B94C4169D5FF6362F1DE04BB5BC3012475526274810A758970F609C4AB)

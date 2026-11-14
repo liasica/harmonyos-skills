@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-frontend-i
 title: 前台不可见动效问题分析
 breadcrumb: 最佳实践 > 功耗 > 应用功耗分析 > 前台不可见动效问题分析
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:54:16+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:102cd7a351b5a3b9b010761c302165b639317a61c2374eb810c552ec9ff1d985
+content_hash: sha256:60006ec791395b16c34cbb981a367c34e8c9d201302d10ae72b886e0993bd30a
 ---
 
 当开发者进行应用[功耗基础质量测试](bpta-power-basic-quality-test.md)或提交应用上架审核时，若遇到应用存在不可见动效的问题，可参考以下步骤进行分析。
@@ -52,7 +52,7 @@ hdc shell "hilog | grep 'Node skip'"
    点击Profiler工具，选择要分析的应用进程，创建一个Energy Session，按照复现路径操作应用进行测试。观察Energy Anomaly泳道，标注红色异常则为识别到的空跑异常。
 2. 分析Trace信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/tCfSF05XQFu3tQDcVMyUSg/zh-cn_image_0000002523823376.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=869C8E09CE4CD00485BB44805DCCFA7F74DCFA79726BFE286CB7EB6DF18840F5 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/3fGJ1SQ_TsqiOsI4GyJGUg/zh-cn_image_0000002523823376.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=67E24D3D0D4EE014960B0622CB122F765541982FF91D115482EDFB14F55E2F94 "点击放大")
    1. 点击Energy Anomaly泳道红色区域，查看上报异常的详细信息，如上图所示，部分关键信息已用数字标号标记
 
       ①：上报的异常信息
@@ -67,9 +67,9 @@ hdc shell "hilog | grep 'Node skip'"
    2. 点击Details的其中一个异常列会展示More信息
    3. 选择其中一帧，点击跳转箭头，跳转到当前空跑帧的详细信息
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/hKN50AcBTsyY8-y7gVlUAg/zh-cn_image_0000002554743265.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B6462BB7561DF7F09827C18874D86FDDDB161747605F2E8C2292A1CD08B89D0)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/h7R0wU_EQSiDNau1lmEibA/zh-cn_image_0000002554743265.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C68B41506A7E9C908703B2FDDD1C019295A4A735315547F36223806CD0B26D5)
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/U4TkULEvRcqRkS4vBCrvzg/zh-cn_image_0000002523663382.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FB3BC9F11AD76A865CF7E3D4FA22AA0869EB9FE7598627E3AB31F10B6717D28 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/t2b14G8kRTaG3WzAlkh8vQ/zh-cn_image_0000002523663382.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E453C42D87B9873DF00D93956551FBCF7A2005105F6A6C4E3AAF86431D108FC "点击放大")
    4. 在空跑帧界面，点击Details模块下的Open Layout打开布局信息展示
    5. 在Component Tree展开布局组件，左边有感叹号图标的则为当前空跑帧的组件
 
@@ -81,7 +81,7 @@ hdc shell "hilog | grep 'Node skip'"
 
 2、通过trace分析确认问题是否成功复现。Trace抓取后展开render\_service进程，重点关注子线程render\_service（负责UI绘制指令的统一、动画的执行等）、RSUniRenderThre（负责图层绘制、多图层效果合成）以及CompThread（负责屏幕显示）。如下图所示，若发现RSUniRenderThre中含“H:DisplayNode skip”(对应图层是ScreenNode)，意味着当前帧已生成好的统一绘制图层ScreenNode，此时无需进行屏幕显示（通常是由于屏幕内容实际无变化），此时开发者需排查UI组件是否存在空刷问题。若ScreenNode图层成功显示，可在CompThread中找到“H:ReleaseBuffer name: ScreenNode”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/t6Lxv-2vT5O_BWF6feIGIQ/zh-cn_image_0000002523673422.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=93A0CF3C72C51EE438EB4E0B9D271EB4E274B1ACF4836399F659781B2F389CF3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/1fFI6PqwSxSPPWI6wTb5lA/zh-cn_image_0000002523673422.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=44F049FE827B06D4F06286DD71211517721E300BFDC8605165535E58C850E04A "点击放大")
 
 3、ScreenNode作为HarmonyOS提供的统一绘制图层，若由UI下发的绘制指令在实际绘制完成后，并不会带来页面的实际刷新时，系统会触发ScreenNode skip，避免重复的页面在屏幕上刷新造成硬件功耗。故而ScreenNode skip问题的解决，依赖开发者通过Trace分析结合实际在代码中的组件刷新相关业务，分析其合理性和必要性找到问题组件。
 
@@ -93,7 +93,7 @@ hdc shell "hilog | grep 'Node skip'"
 
 通过DevEco的Profiler工具Energy模板分析，可直接看到异常的组件和异常类别信息，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/AzoSZdBmSFGIGcta2Z-b-Q/zh-cn_image_0000002523883870.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FA2ACCACA34EB623AC25101CF0D32B37F2D22998A02E4E6349934F6A79CC83B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/ieiOF_2JSIio-teQZUNTEQ/zh-cn_image_0000002523883870.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=65A93DD3E6255B604E071247D7F0F454B297DB40E015402D27CFD748F2ACF8E9 "点击放大")
 
 在Energy Anomaly泳道，点击红色异常时间点，在Details栏，出现RS empty run且Anomaly Reason为“应用下发绘制指令”，表示此处出现应用进程下发的冗余绘制指令导致的Render Service进程空跑问题，Anomaly Information展示的组件信息（图中组件为Canvas，组件的ArkUI Id为152），More栏显示具体的动画空跑帧。
 
@@ -101,7 +101,7 @@ hdc shell "hilog | grep 'Node skip'"
 
 通过DisplayNode skip找到空跑的故障帧，在render\_service线程的trace中找到接收处理应用下发绘制指令请求的trace点，查找关键字RSMainThread::ProcessCommandUni，如下图所示表示处理来自进程40912进程的绘制指令，正在执行序列号为1532的指令内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/lfOlhUt3S7eDE611JPuKtw/zh-cn_image_0000002554923797.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=1499F9DC5D251ADEC9FE6325BB163D11293860A5E043A5364DD53453D44B8465 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/JhazxUwSQROQUlB_2WsltQ/zh-cn_image_0000002554923797.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EC8BD415D08436E2F022939DD613E139AFEEBBCB5EA383B74DC6C245ED84CE9 "点击放大")
 
 开发者可以根据这一信息搜索[40912,1532]，找到Trace点信息H:MarshRSTransactionData cmdCount: 2, transactionFlag:[40912,1532]，该Trace点在此帧中有2个（cmdCount）绘制指令由应用下发给RS。可以继续通过关键字“H:FlushRenderTask”或“H:CustomNodeUpdate”查看具体的ArkUI节点信息。
 
@@ -113,7 +113,7 @@ hdc shell "hilog | grep 'Node skip'"
 
 通过DevEco的Profiler工具Energy模板分析，可直接展示异常的组件和异常类别信息，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/KDFlJVGCQpSnNFE03R0yAQ/zh-cn_image_0000002523723880.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0180641964DAFCDF6023219FCFC3B1D7E79AF0EDEF973B4F517A62B98DBCA82 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/oooIgy3wT7eviPPdikCmTg/zh-cn_image_0000002523723880.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=51347C47BC23AEB30DF36B3C5C9F91A7BBD74D6EBA4D57044183E48D660A5596 "点击放大")
 
 在Energy Anomaly泳道，点击红色异常时间点，在Details栏，出现了RS empty run且Anomaly Reason为“冗余动画”，表示此处出现不可见动画导致的Render Service进程空跑问题，More栏显示具体的动画空跑帧，其中Anomaly Information展示的组件信息（图中组件为Text，组件的ArkUI Id为131），More栏显示具体的动画空跑帧。
 
@@ -121,11 +121,11 @@ hdc shell "hilog | grep 'Node skip'"
 
 在应用指令绘制下发的模式中，ProcessCommandUni主要满足组件即时刷新需求，除此之外，应用还可以通过Animate方式刷新DisplayNode。应用设置好动画的持续时间（dur）、执行次数（repeat）、动画接口（animateType）等参数后，其第一帧通过应用UI线程下发动画的绘制指令（ProcessCommandUni），如下图所示，动画的详细执行过程，可以在Frame泳道查看，后续的动画帧均可在render\_service线程内请求Vsync。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Fm2FkGzvTYSjM0uhhYTnZw/zh-cn_image_0000002554803761.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=33B622E9B79D74B92B45D4A305F1E4B8AE103A0C3A8CD433E3C66E07AB6B26DA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/jIFCuEbcQ2KSRyTNaI0pfA/zh-cn_image_0000002554803761.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=5750DD69A01A90FF3207E6AEED2DD7D447CED3F8AA42E9201AE979EC255CB07C "点击放大")
 
 如下图，开发者可以在H:Animate中查找找到动画下发的线程（标志1所示，来自进程40980），以及动画的执行信息（标志2所示），其中标志2会打印出animation node，该node id可在ArkUI树上找到。对于Animate类问题，由于duration和repeat属性存在，动画往往会在render\_service中自请求Vsync持续一段时间，若这段时间里动画节点被隐藏或销毁时，可能会导致H:Animate空跑问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/_NN3cb6CTHOErp8_iC1y2A/zh-cn_image_0000002523883872.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=126FE333338AA9BC1ABD083A07692A6C11E6536CAAE51A456DFE0ACAFB3B31A3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/7LOr_nDHRkimSl0cK2jdLQ/zh-cn_image_0000002523883872.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=39EFF0A85518B8E32D23C9DC72021997883BDE101B9DF7450BE3EF6640EBDAFD "点击放大")
 
 开发者可根据此渲染节点的ID，从ArkUI的树状结构（ArkUI Tree）信息（txt格式）中查找对应组件在ArkUI中的ArkUI ID，通过以下示例代码导出ArkUI树。
 
@@ -137,7 +137,7 @@ hdc shell "hidumper -s WindowManagerService -a '-w %windowId% -default -c'" > ar
 
 将上面的代码保存为bat文件，点击执行即可，在输入栏输入“Focus window:”的ID（表示此窗口的ID），就能生成ArkUI树的txt格式文件（注意：这个命令因为安全的限制，需要debug签名的应用才能正常展示）。开发者可在ArkUI树文件中通过搜索动画node，找到该node对应的ArkUI组件ID。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ylhQD7dRTHSwnXALYIW45Q/zh-cn_image_0000002554923799.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=F747515EFFB0762944F2BB811603CDBB86FCC6F242A91949BD4B95772DE17202 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/jap9O2wfQdepqGh1YnJ9hg/zh-cn_image_0000002523723882.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F0D2D408B032D4D50E9EDD32355F08D1EBB650FC5CC4B7869ED5D5C77F721AA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/fn2-7NkSQ5qkyaUm6-0wzg/zh-cn_image_0000002554923799.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FA1AE0C60DA5B05B96BAAD4235241B35079FBE54B70B7F7FF4849D0BAFD93D0 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/CTYF2tZ1Sq-VA1sA9vkRyw/zh-cn_image_0000002523723882.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D60EE715244C1451B2E50292FB700A4E80063086F239EDF3B4123E2F79951F0 "点击放大")
 
 3、优化建议：
 
@@ -152,25 +152,25 @@ hdc shell "hidumper -s WindowManagerService -a '-w %windowId% -default -c'" > ar
 
 通过DevEco的Profiler工具Energy模板分析，可直接看到异常的组件和异常类别信息，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/KaWBmYSoQ_uJSjn6O1iBjw/zh-cn_image_0000002554803763.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=3668DE872C265416C8E4B856B8038BBEC489235E7B947B1908541B6E14451D31 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/2YKs3UPARQGamT4T9QgTSA/zh-cn_image_0000002554803763.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=396BA46B71E5AFAD44D77AE8E84863B4A462E1C1985746EDD1F26E2FBF10579A "点击放大")
 
 在Energy Anomaly泳道，点击红色异常时间点，在Details栏，出现RS empty run且Anomaly Reason为“冗余自绘制buffer”，表示此处出现冗余自绘制buffer导致的Render Service进程空跑问题，其中Anomaly Information展示的组件信息（图中组件为Web，组件的ArkUI Id为193），More栏显示具体的动画空跑帧。
 
 2、Trace分析
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/VsqSgXMuQ22zw8v6Ob1IYQ/zh-cn_image_0000002523883874.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=8585CE6EB65AAA4BAE31B285D377128CB5CA13B31AAD517EF9735693A762B698 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/SkyFcOxMQ4STsz9C7Jowcw/zh-cn_image_0000002523883874.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A75E525D4EFBCA8FA0CF9A89FB37C0A3209C4BE43FC9A1B549D03F298142A41 "点击放大")
 
 在上图Trace中，分别在RSHardware和RSUni中搜索“H:ReleaseBuffer name:”，如果Buffer内容成功在屏幕上显示，Release将出现在RSHardware进程的末尾位置，表明Buffer在使用完成后释放，重新回到BufferQueue。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/byFvip1jQm2cC7BTKZMopA/zh-cn_image_0000002554923801.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=08229EC27CC3BD1753C2DA3957905379C343F50929EAB71F85AAA852F87F2C15 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/VKFrNWeQQImBLUukRIgDQw/zh-cn_image_0000002554923801.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=B885C1CDFAE6F9D947391FA7E459E1B7376A86C1EF02EAFF8B21DC8BE26FDEAA "点击放大")
 
 如果Buffer未实际显示，ReleaseBuffer将在RSUni中进行，表明此帧Buffer触发系统兜底，无需在RSHardware中显示，该Buffer从生产到传输过程中的负载均无法体现在显示效果上，属于冗余负载。在打印信息H:ReleaseBuffer name: xxx queueId: 6631429506443 seq: 97784892中，开发者可确认该空跑Buffer的序列id为97784892。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/Dmu7SkHITO68r36idX-9Qg/zh-cn_image_0000002523723884.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6E2BF9474FD2BCB55F7795D142E1B97C2394C4B82C07900D65A5088CFED5180 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/32cb3oWySgmdJ2g2Q6PUbg/zh-cn_image_0000002523723884.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=D693A7D2ED721F63A0F853F4F9E30262D006652CE6C01661169EE533436B7311 "点击放大")
 
 进一步定位，在render\_service中搜索“seq = 【空跑Buffer id】”：当开发者在RSUniRenderThre中发现一个空跑的BufferQueue，可从中找到一个Buffer id，如100151309在render\_service中搜索。搜索结果Trace会显示出该Buffer在申请完成后，其位置所在RS树的node id与其父组件的node id。随后开发者可以参考场景2中的方法，通过ArkUI树，搜索找到该Buffer对应的ArkUI组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/YauvzkUHS3adp47V3O8rsw/zh-cn_image_0000002554803765.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=930E152EDF7271F86E27B2C6FD7D0830A60018D2C2892D8A71A6E14350604BC6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/QgOXfDpPSga5RElJtGjUEQ/zh-cn_image_0000002554803765.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=4022CF54F0BBCFE400DB4F15C87B283D7B6335ADD36719B0652ECB6473F85319 "点击放大")
 
 3、优化建议
 
@@ -184,4 +184,4 @@ hdc shell "hidumper -s WindowManagerService -a '-w %windowId% -default -c'" > ar
 2. 组件结构：排查该组件是否有被遮挡的可能性，与当前显示节点是否有父子兄弟关系，是否属于下拉、弹窗类动效，在未被拉起时提前创建，导致空跑。
 3. 父子组件的Attribute变量：右侧搜索框会显示组件封装时的各个变量状态，开发者可排查与播放控制相关的自定义变量是否符合预期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/H9FB7xJXRBmIzE9Y0lIJQQ/zh-cn_image_0000002408582749.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=D49E669EBABC1C91B20ED81E31A818067F808BDB4D399F90C5AF705B03DC1A1A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/VZGPSxLiQAuBCnlv77WqEA/zh-cn_image_0000002408582749.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BF24C39B67AF62490E0B21196D73A149A64B117C3A0075112106391DF614D6F "点击放大")

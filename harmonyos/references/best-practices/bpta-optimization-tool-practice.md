@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-optimizati
 title: 性能分析
 breadcrumb: 最佳实践 > 性能 > 性能分析
 category: best-practices
-scraped_at: 2026-10-16T07:06:45+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:bf6a0b36510c91a2330537e8cd3f9a30202bb67472546afffcafd6d7f2fac03e
+scraped_at: 2026-11-14T08:54:13+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:81e7b6660bd200163271a4a997c4bca8dd267144480b5a2182c29909d817f330
 ---
 
 * **[性能分析简介](bpta-optimization-overview.md)**
@@ -18,3 +18,4 @@ content_hash: sha256:bf6a0b36510c91a2330537e8cd3f9a30202bb67472546afffcafd6d7f2f
 * **[跨线程序列化耗时问题分析](bpta-threads-serialization-timeout-analysis.md)**
 * **[分析内存占用问题](bpta-analyze-memory-problem.md)**
 * **[分析任务执行超时问题](bpta-permission-timeout-analysis.md)**
+* **[文件IO性能问题定位指导](bpta-io-performance-issue-localization.md)**

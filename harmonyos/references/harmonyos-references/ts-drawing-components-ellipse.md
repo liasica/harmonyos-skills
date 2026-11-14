@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Ellipse
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Ellipse
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:5520812e1601bedd0bcd364671889ff19a864c803ca6d586695477f4e9df2484
+content_hash: sha256:4bcba153dcae4de0679a6bf45637cd2a6a82f2f38f9496bae174cf8797be85dc
 ---
 
 椭圆绘制组件。该组件通过设置宽度和高度属性绘制椭圆形状，在给定的矩形区域内渲染椭圆轮廓和填充区域。
@@ -108,7 +108,7 @@ struct EllipseExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/GpXVuTPBTjGp1RKX1vZGgQ/zh-cn_image_0000002786521422.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=58D6A4AC38D7CAF690CBA499CD669E0689574A7A896C522752828CD183DABCCA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/FRDEAXmKTfmnfvrtNlWe6w/zh-cn_image_0000002788469170.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4716E6826AABE5255F577B0E1376241B196FB84256A37E856545A6C894F931F)
 
 ### 示例2（宽和高使用不同参数类型绘制椭圆）
 
@@ -132,7 +132,7 @@ struct EllipseTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/qHdjnReCRoWuxTA9PIDVcQ/zh-cn_image_0000002815401035.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=66BC469B14D9F2E678833D4E704AF62FAB093EAD3367202876E5593F21265C34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/59Q7voxoTt2vfxz6v013HQ/zh-cn_image_0000002817428627.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE59846DB3169FAD5D9968BEC2363F87953FA1EBB47FC65F04410F89DC9E4B3D)
 
 ### 示例3（使用attributeModifier动态设置Ellipse组件的属性）
 
@@ -170,4 +170,4 @@ struct EllipseModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/38Z_6miLT82dOM6jdYQN7g/zh-cn_image_0000002786521460.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADB06949E84787B874EDCD40F9EB530E4190AAD4BDA69BCB4F912668DA97AA9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/3sqX2CLzT36Imt2QMoBFFA/zh-cn_image_0000002788469208.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=874F2F9914A76EE4F5B8CF0801AED06FE4AA36D14AF7A8EFF3E7BAAC0C2950B2)

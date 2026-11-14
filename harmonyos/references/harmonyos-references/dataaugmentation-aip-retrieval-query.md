@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: aip_retrieval_query.h
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 头文件 > aip_retrieval_query.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ee95b7d96f83ebd61de949e2d75851dc875006525854773e1381f1299d1bdcaa
+scraped_at: 2026-11-14T08:51:09+08:00
+doc_updated_at: 2026-11-13
+content_hash: sha256:f98648fbe7102ae1a05050088836b104b58f7d8761e44b732e85c134bac75992
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:ee95b7d96f83ebd61de949e2d75851dc875006525854773e1381f1299d1
 
 | 名称 | 描述 |
 | --- | --- |
-| typedef struct [OH\_Retrieval\_Query](dataaugmentation-capi-retrieval.md#oh_retrieval_query) [OH\_Retrieval\_Query](dataaugmentation-capi-retrieval.md#oh_retrieval_query) | 定义检索词，当前只支持纯文本检索。 |
+| typedef struct [OH\_Retrieval\_Query](dataaugmentation-capi-retrieval.md#oh_retrieval_query) [OH\_Retrieval\_Query](dataaugmentation-capi-retrieval.md#oh_retrieval_query) | 定义检索词，当前只支持纯文本检索，不支持图片、视频等。 |
 
 ### 函数
 

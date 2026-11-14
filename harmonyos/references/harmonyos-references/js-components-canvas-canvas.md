@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: canvas组件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > canvas组件
 category: harmonyos-references
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-14T08:50:32+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a40a47dfa1c21b16c8a0fa2afa4dcb2619f3e0e3bdb0449483bcf9cdeaf52c02
+content_hash: sha256:06bede0ae13e5141bd08ffda21f7dc4a3a856000625405e03c037109c6161b92
 ---
 
 **说明** 
@@ -108,4 +108,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/JixN-nOkRAe-IzqOwIwbfQ/zh-cn_image_0000002786361764.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=132051BD5041708B492D3FB04D9793E49DB014B0BBD7451C13C31A59B4CC56B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/cMkiCDVHR1qu-IkFPZqKeg/zh-cn_image_0000002817508929.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7BB94C4992BF07BB8D7C83B6C82C9F518E3BD6A45D247E3924FABB46C447A09)
