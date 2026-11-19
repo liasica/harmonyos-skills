@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preload-appli
 title: 应用预加载
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动 > 应用预加载
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:49+08:00
+scraped_at: 2026-11-19T09:47:26+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:69406b28e40f14a22e885af969b56a1c9ceb4a60a587469805ddfec8baf228fc
+content_hash: sha256:7f414f7847028fd2fd4c71188609c4a3cab4a5e1b41dda5888eb00842b06846c
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:69406b28e40f14a22e885af969b56a1c9ceb4a60a587469805ddfec8baf
 * abilityStageCreated：[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)创建完成阶段。开发者配置此阶段后，预加载机制会创建空进程并初始化Application，随后触发entry模块[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)的[onCreate](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)回调。
 * windowStageCreated：[WindowStage](../harmonyos-references/arkts-apis-window-windowstage.md)创建完成阶段。开发者配置此阶段后，预加载机制会创建空进程并初始化Application，随后触发entry模块[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)的[onCreate](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)回调。接着会拉起entry模块的入口UIAbility，并触发其[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)回调和[onWindowStageCreate](../harmonyos-references/js-apis-app-ability-uiability.md#onwindowstagecreate)回调。开发者可以在UIAbility的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)回调中，通过[launchParam.launchReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#launchreason)的枚举值获取启动原因。枚举值为CALL表示当前UIAbility通过[startAbilityByCall](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startabilitybycall)接口启动，此时结合[application.getAppPreloadType()](../harmonyos-references/js-apis-app-ability-application.md#applicationgetapppreloadtype22)获取的预加载类型，可判断当前UIAbility是否由预加载机制启动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/_yul-QXwRbS4emm9jLOa1Q/zh-cn_image_0000002817425503.png?HW-CC-KV=V1&HW-CC-Date=20261114T004512Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD6E7B845AC5ABC8773BE2C674958F7516D672737C05365C79DB2C41D36422FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/jeWPMLMJSW6HThaPzbl2lg/zh-cn_image_0000002791724440.png?HW-CC-KV=V1&HW-CC-Date=20261119T014726Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB096A751703D9D96F36174D887E42766CA4764255C4D27B0D00FAC13D0088EE)
 
 ## 应用预加载状态识别与判断
 
@@ -87,7 +87,7 @@ export default class MyAbilityStage extends AbilityStage {
 
   用户点击应用启动到前台时，系统会依次触发UIAbility.onNewWant()、UIAbility.onForeground()生命周期回调，走完前台启动流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/qfXTcmRaQt2JWq4gCiLmFQ/zh-cn_image_0000002788466084.png?HW-CC-KV=V1&HW-CC-Date=20261114T004512Z&HW-CC-Expire=31536000000&HW-CC-Sign=E34AF56F4F588EFE46C7575E63A21A8710F1810ADE32777D505E2A62704D4863)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/XTSMBtnsTV2dxCrVcJXb0g/zh-cn_image_0000002791564468.png?HW-CC-KV=V1&HW-CC-Date=20261119T014726Z&HW-CC-Expire=31536000000&HW-CC-Sign=59CE1B3810A91A2FC9B0797241012DCCC10E89441EE43AB14BC2BA0895926AFC)
 * 支持PC/2in1且不支持Phone的应用：加载至隐藏窗口前台初始状态
 
   此类应用在UIAbility生命周期中无后台状态，详见[不同设备UIAbility生命周期的差异化行为](window-lifecycle.md#不同设备uiability生命周期的差异化行为)。
@@ -96,7 +96,7 @@ export default class MyAbilityStage extends AbilityStage {
 
   用户点击应用启动到前台时，系统会依次触发UIAbility.onNewWant()、UIAbility.onForeground()生命周期回调，走完前台启动流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/kxFlP0ESQ3WeUvqxJN419Q/zh-cn_image_0000002817505571.png?HW-CC-KV=V1&HW-CC-Date=20261114T004512Z&HW-CC-Expire=31536000000&HW-CC-Sign=56BE4F640563FE724C4522E1215D4655BA7F82F116EE629ADED8960A3BE4545F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/otDcuTSyRLm9a7L25ml7SQ/zh-cn_image_0000002820524419.png?HW-CC-KV=V1&HW-CC-Date=20261119T014726Z&HW-CC-Expire=31536000000&HW-CC-Sign=453108BEC855118A93EBB4FB8D96305F5F0FDC22FC1BA927AF2739297301B179)
 
 ## 开发步骤
 

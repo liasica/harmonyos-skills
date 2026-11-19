@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: transform样式动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > CSS动画 > transform样式动画
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:11+08:00
+scraped_at: 2026-11-19T09:47:49+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:12fab42e0e86eb2ac6919754ee4a11bdac6bb8a2d4437e9ee80217ee99af1649
+content_hash: sha256:0408f14a3c5864ad09562fbfa235005576b0cf34049435661b9561735e08fa28
 ---
 
 设置transform属性对组件进行旋转、缩放、移动和倾斜。
@@ -96,7 +96,7 @@ content_hash: sha256:12fab42e0e86eb2ac6919754ee4a11bdac6bb8a2d4437e9ee80217ee99a
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/oWghs2CDRc-yxrPcGFmpig/zh-cn_image_0000002788467024.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=946C2AD6DAFAE620BE2D4ADE48AD354B2B90CB3082EB003E058CDD29D50F3589)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/8v9W__Z_R86A6Lh1WySFpw/zh-cn_image_0000002791565408.png?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=A73D5EDD2B057D7A1D94F787E07A4468D3B813AF2C6B3FE40BA34E44A297551E)
 
 ## 设置平移动画
 
@@ -174,7 +174,7 @@ content_hash: sha256:12fab42e0e86eb2ac6919754ee4a11bdac6bb8a2d4437e9ee80217ee99a
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/SNRVE5ltRyaL2dILFwjJpg/zh-cn_image_0000002817506511.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=364F2ED9F71859C7BD7579D59F58CEA5D9AB7899788F40B4FA2878B2DDD353F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/XYod3S6YTYe--WF92A8CkA/zh-cn_image_0000002820525361.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA3264C1E3F6C48683F81DE7D00AF7B90B81D3ED91CFDD8A57BB0706ABB99B06)
 
 ## 设置旋转动画
 
@@ -306,7 +306,7 @@ content_hash: sha256:12fab42e0e86eb2ac6919754ee4a11bdac6bb8a2d4437e9ee80217ee99a
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/-l45H9oATnSpa2HrfJFv-A/zh-cn_image_0000002788307082.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E400167EF29AD75160AAC662261791FF794A129B9E573317BB08AEDFF55DFBD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/5XBL9jSfSMC9ihLSOBjLvw/zh-cn_image_0000002820405361.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=8ECC35A47F0A8C2536CB8D6B1E6FA62E14C75F0C048A0E69CA226E6D4FED31CA)
 
 **说明** 
 
@@ -418,7 +418,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/XPBKJ6LdSKyrZy9TQT9RAA/zh-cn_image_0000002817426445.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=268B0122E46374C04517CCEDA4090293BE13A4F45E99764E0030469BF9F63AA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/O0JoFJkVSYiVtPmQsVMfsA/zh-cn_image_0000002791725382.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6616EC0CF8778130F15EEF1D213FFC7EA87D629AB36C482875253A363E27BC1)
 
 **说明** 
 
@@ -466,7 +466,7 @@ matrix是一个参数为六个值的矩阵，6个值分别代表：scaleX, skewY
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/00WL-NEKRG6MJhiX3qXvIw/zh-cn_image_0000002788467026.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C9E521B8BBDA482AF3239909CFEA1AB42B6C12D5E7A6EB891BE8C6C12B53A3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/dR4azHI4RiC8fgeyEHM6bQ/zh-cn_image_0000002791565410.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C980D909ABED541A50FB4C5B0F7A26AE8C37CD8D1F43BDC924CC2F6FC6081AC)
 
 ## 整合transform属性
 
@@ -575,7 +575,7 @@ transform可以设置多个值并且多个值可同时设置，下面案例中�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/MNN2hdbAQfCIOapeCvZXDQ/zh-cn_image_0000002817506513.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF1242E59D30BB2BE0CA744886F33FB1FE86AE68225C67F70114886B6E7DB607)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/yhBCesjxSUm1phAaIQ73kw/zh-cn_image_0000002820525363.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AD9465E75510F69AECFA7F7F3B82E8C5E6A14C99E6BB43E97C3B9E1D7A0F4C9)
 
 **说明** 
 

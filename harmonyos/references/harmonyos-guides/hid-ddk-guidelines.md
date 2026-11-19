@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hid-ddk-guide
 title: 开发适用HID协议的设备驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用HID协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:43+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:920f9216bb737d6a705d3d3e58f20f3878b5bb492c19a6e137ae20f6def50c36
+scraped_at: 2026-11-19T09:48:22+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:fc16cd3052b526e90d3f6f35fbce902566c31db5f3d443f09b9ef2e4816a8177
 ---
 
 ## 简介
@@ -31,7 +31,7 @@ HidDdk（HID Driver Development Kit）是为开发者提供的HID设备驱动程
 
 **图1** HidDdk调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/qsVR-ScISyK-4iS8q0DlmA/zh-cn_image_0000002817426873.png?HW-CC-KV=V1&HW-CC-Date=20261114T004602Z&HW-CC-Expire=31536000000&HW-CC-Sign=316EC41671216C5C3ECA50FD7A3AABEBC3F9C7128452B0CDDF762A7E20F92D29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/dTDOvVDFRgmcR4Cgxg5tYQ/zh-cn_image_0000002791725812.png?HW-CC-KV=V1&HW-CC-Date=20261119T014729Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA3AF39D4CABCCAFB1C3FA3ACF38620F4C4868A3586A2EF49885E3A7747F51BF)
 
 ## 约束与限制
 
@@ -43,24 +43,24 @@ HidDdk（HID Driver Development Kit）是为开发者提供的HID设备驱动程
 
 | 名称 | 描述 |
 | --- | --- |
-| OH\_Hid\_CreateDevice(Hid\_Device \*hidDevice, Hid\_EventProperties \*hidEventProperties) | 创建HID设备。请在设备使用完后使用OH\_Hid\_DestroyDevice销毁设备。 |
-| OH\_Hid\_EmitEvent(int32\_t deviceId, const Hid\_EmitItem items[], uint16\_t length) | 向指定deviceId的HID设备发送事件。 |
-| OH\_Hid\_DestroyDevice(int32\_t deviceId) | 销毁指定deviceId的HID设备。 |
+| int32\_t OH\_Hid\_CreateDevice(Hid\_Device \*hidDevice, Hid\_EventProperties \*hidEventProperties) | 创建HID设备。请在设备使用完后使用OH\_Hid\_DestroyDevice销毁设备。 |
+| int32\_t OH\_Hid\_EmitEvent(int32\_t deviceId, const Hid\_EmitItem items[], uint16\_t length) | 向指定deviceId的HID设备发送事件。 |
+| int32\_t OH\_Hid\_DestroyDevice(int32\_t deviceId) | 销毁指定deviceId的HID设备。 |
 | int32\_t OH\_Hid\_Init(void) | 初始化HidDdk。 |
 | int32\_t OH\_Hid\_Release(void) | 释放HidDdk。 |
 | int32\_t OH\_Hid\_Open(uint64\_t deviceId, uint8\_t interfaceIndex, Hid\_DeviceHandle \*\*dev) | 打开deviceId和interfaceIndex指定的设备。 |
 | int32\_t OH\_Hid\_Close(Hid\_DeviceHandle \*\*dev) | 关闭设备。 |
 | int32\_t OH\_Hid\_Write(Hid\_DeviceHandle \*dev, uint8\_t \*data, uint32\_t length, uint32\_t \*bytesWritten) | 向设备写入报告。 |
-| int32\_t OH\_Hid\_ReadTimeout(Hid\_DeviceHandle \*dev, uint8\_t \*data, uint32\_t buffSize, int timeout, uint32\_t \*bytesRead) | 在指定的超时时间内从设备读取报告。 |
-| int32\_t OH\_Hid\_Read(Hid\_DeviceHandle \*dev, uint8\_t \*data, uint32\_t buffSize, uint32\_t \*bytesRead) | 从设备读取报告，默认为阻塞模式（阻塞等待直到有数据可读取），可以调用OH\_Hid\_SetNonBlocking改变模式。 |
-| int32\_t OH\_Hid\_SetNonBlocking(Hid\_DeviceHandle \*dev, int nonblock) | 设置设备读取模式为非阻塞。 |
+| int32\_t OH\_Hid\_ReadTimeout(Hid\_DeviceHandle \*dev, uint8\_t \*data, uint32\_t bufSize, int timeout, uint32\_t \*bytesRead) | 在指定的超时时间内从设备读取报告。 |
+| int32\_t OH\_Hid\_Read(Hid\_DeviceHandle \*dev, uint8\_t \*data, uint32\_t bufSize, uint32\_t \*bytesRead) | 从设备读取报告，默认为阻塞模式（阻塞等待直到有数据可读取），可以调用OH\_Hid\_SetNonBlocking改变模式。 |
+| int32\_t OH\_Hid\_SetNonBlocking(Hid\_DeviceHandle \*dev, int nonBlock) | 设置设备读取模式为非阻塞。 |
 | int32\_t OH\_Hid\_GetRawInfo(Hid\_DeviceHandle \*dev, Hid\_RawDevInfo \*rawDevInfo) | 获取设备原始信息。 |
-| int32\_t OH\_Hid\_GetRawName(Hid\_DeviceHandle \*dev, char \*data, uint32\_t buffSize) | 获取设备原始名称。 |
-| int32\_t OH\_Hid\_GetPhysicalAddress(Hid\_DeviceHandle \*dev, char \*data, uint32\_t buffSize) | 获取设备物理地址。 |
-| int32\_t OH\_Hid\_GetRawUniqueId(Hid\_DeviceHandle \*dev, uint8\_t \*data, uint32\_t buffSize) | 获取设备原始唯一标识符。 |
+| int32\_t OH\_Hid\_GetRawName(Hid\_DeviceHandle \*dev, char \*data, uint32\_t bufSize) | 获取设备原始名称。 |
+| int32\_t OH\_Hid\_GetPhysicalAddress(Hid\_DeviceHandle \*dev, char \*data, uint32\_t bufSize) | 获取设备物理地址。 |
+| int32\_t OH\_Hid\_GetRawUniqueId(Hid\_DeviceHandle \*dev, uint8\_t \*data, uint32\_t bufSize) | 获取设备原始唯一标识符。 |
 | int32\_t OH\_Hid\_SendReport(Hid\_DeviceHandle \*dev, Hid\_ReportType reportType, const uint8\_t \*data, uint32\_t length) | 向设备发送报告。 |
-| int32\_t OH\_Hid\_GetReport(Hid\_DeviceHandle \*dev, Hid\_ReportType reportType, uint8\_t \*data, uint32\_t buffSize) | 获取设备报告。 |
-| int32\_t OH\_Hid\_GetReportDescriptor(Hid\_DeviceHandle \*dev, uint8\_t \*buf, uint32\_t buffSize, uint32\_t \*bytesRead) | 获取设备报告描述符。 |
+| int32\_t OH\_Hid\_GetReport(Hid\_DeviceHandle \*dev, Hid\_ReportType reportType, uint8\_t \*data, uint32\_t bufSize) | 获取设备报告。 |
+| int32\_t OH\_Hid\_GetReportDescriptor(Hid\_DeviceHandle \*dev, uint8\_t \*buf, uint32\_t bufSize, uint32\_t \*bytesRead) | 获取设备报告描述符。 |
 
 详细的接口说明请参考[HidDdk](../harmonyos-references/capi-hidddk.md)。
 

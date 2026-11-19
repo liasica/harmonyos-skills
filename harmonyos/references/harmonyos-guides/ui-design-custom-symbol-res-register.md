@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-cus
 title: 应用加载自定义Symbol
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 应用加载自定义Symbol
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:21+08:00
+scraped_at: 2026-11-19T09:47:59+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9adc5ca2d94fa9cabc38247cef55f2ff4aca6e6f0821b25aae1571597adc7213
+content_hash: sha256:903adc7a4d6a010113004b98b0ed6b172919749a037c8a3442ebbbadaee67600
 ---
 
 ## 场景介绍
@@ -22,10 +22,10 @@ content_hash: sha256:9adc5ca2d94fa9cabc38247cef55f2ff4aca6e6f0821b25aae1571597ad
 
 1. 将Symbol图标资源（TTF文件，设计规范参见[图标设计文档](../design-guides/system-icons-0000001929854962.md#section26702397263)）与动效参数资源（JSON文件）放入entry/src/main/resources/rawfile目录下，可在此目录下新建子目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/eQFf0LdxQbmEYxz1ahGkfw/zh-cn_image_0000002788307354.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=728476AE09DA2490893EBFF92A67439F52A757285A0D209E1EC6551B0A007040)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/7o65asP7TdyejxFpCkBxPg/zh-cn_image_0000002820405633.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=723DC4AF41BA901805DC4FF3F9E76EF699257AA4FED64FA5033C5D7959E17EBD)
 2. 多语言场景，在entry/src/main/resources目录中对应语言目录下的string.json文件中配置对应的Symbol图标Unicode值。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/AK-peHhlRXietvGGS1cEIg/zh-cn_image_0000002817426717.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=86335569188410CEA42D8FCB644298975026DD7ACB85B680E48A99FC5A58C031)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/D1kP8EBjRHyRHgYN0D1rKQ/zh-cn_image_0000002791725654.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=295B0C316A79C6C038FEF2A42D35F1D2D979EFF687CAE1796984C6F2E73FAF66)
 
    ```json
    {
@@ -68,4 +68,4 @@ content_hash: sha256:9adc5ca2d94fa9cabc38247cef55f2ff4aca6e6f0821b25aae1571597ad
    }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/bSQX0j_eQYGW9InHQQtp6Q/zh-cn_image_0000002788467298.png?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=924F8225CEE46119D613D712E2FFCF3D2FBE754CEC212C313E95052ECDCDBDCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/50cjWY0qTgCp72mlZGRsIg/zh-cn_image_0000002791565682.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=76897A133E6E45830CCB85E2F3A524D7C95432447DAA9286EAA50F8CCF492B35)

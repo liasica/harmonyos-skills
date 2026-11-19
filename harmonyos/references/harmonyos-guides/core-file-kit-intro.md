@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-file-kit
 title: Core File Kit简介
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > Core File Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:16+08:00
+scraped_at: 2026-11-19T09:47:54+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:0b93940c03af9fa47279648443dcff71d923ac6eca896a962826360f71f5c5ef
+content_hash: sha256:a23da64488a6bb3ada04ac69fdd816e101fa5c14aad8829235c38c801df62afd
 ---
 
 Core File Kit（文件基础服务）为开发者提供一套访问和管理应用文件和用户文件的能力。帮助用户更高效地管理、查找和备份各类文件，使用户能够轻松应对各种文件管理的需求。
@@ -26,7 +26,7 @@ Core File Kit（文件基础服务）为开发者提供一套访问和管理应�
 
 **图1** 文件分类模型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/fKO_cflyRb2v0L-pdoy7Ig/zh-cn_image_0000002788307220.png?HW-CC-KV=V1&HW-CC-Date=20261114T004537Z&HW-CC-Expire=31536000000&HW-CC-Sign=B41F230164544D0D9E6089A9A646E130D4F7A7983BA0C5BB4B65EFE21E8CD598)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/CzyeRGtJTzC-ZNta6GdBug/zh-cn_image_0000002820405499.png?HW-CC-KV=V1&HW-CC-Date=20261119T014754Z&HW-CC-Expire=31536000000&HW-CC-Sign=A186766588A939AE0231EC1C3F17835D365C1630E76C4D8CA75656045A1F445C)
 
 在Core File Kit套件中提供高性能的[压缩解压缩能力](archive-overview.md)，按照使用场景的不同分为以下类型：
 
@@ -95,7 +95,7 @@ Core File Kit常见的使用场景：
 
 **图2** 用户文件访问框架示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/pk2czWFlQJGOggSuB6QknA/zh-cn_image_0000002817426583.png?HW-CC-KV=V1&HW-CC-Date=20261114T004537Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1DCF555E92503B9BBEBE31C536B945AF44FAE764B4C71A7A0C0B5B763B00E0D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/vACpmNzPQPGo08h4thBuYA/zh-cn_image_0000002791725520.png?HW-CC-KV=V1&HW-CC-Date=20261119T014754Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA3A15EF6B3213CDCDA4729E8A1108DB13C0998C33AA5B6996422CFE6ADBE723)
 
 * 系统应用或三方应用（即图中的文件访问客户端）若需访问用户文件，如选择一张照片或保存多个文档等，可以通过拉起“文件选择器应用”来实现。
 * FilePicker：系统预置应用，提供文件访问客户端选择和保存文件的能力，无需配置权限。FilePicker的使用指导请参见[选择用户文件](select-user-file.md)。

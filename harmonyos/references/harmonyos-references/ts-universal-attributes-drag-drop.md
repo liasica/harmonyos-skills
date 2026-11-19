@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 拖拽控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 拖拽控制
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:07+08:00
+scraped_at: 2026-11-19T09:50:53+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:06bb6398aac678b28b54016771852ca36717037862b406e8651859d03c8108fa
+content_hash: sha256:26499ce9e7d0d84da91cbe2c729c1999fc73ff21058ffda68b77a6696c85a732
 ---
 
 组件提供了一些属性和接口，可用于配置组件对拖拽事件的响应行为，或影响系统对拖拽事件的处理方式，包括配置组件拖拽和落入行为、数据类型、预览图样式及交互效果。
@@ -355,7 +355,7 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/hyykOijbQ4Oua_PUPIWPRg/zh-cn_image_0000002788308762.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=78577BAEE48E08C363BCB7475E4774D52E1DFEF22037AFC5FD83093CE906BC59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/x89l-zgUSJuRm805o9wkNA/zh-cn_image_0000002820407043.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B2877403217BC67F6F7A17D93EA0AA80BD2E8A3FE40816C0781D37C34BD6DDB)
 
 ### 示例2（设置预览图）
 
@@ -423,7 +423,7 @@ struct DragPreviewDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/tdKVLyvqRy2K0X2xtreWDw/zh-cn_image_0000002817428125.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=0880B4ECFB251EBA38A6CC80CD3DBC8F2D75E5959FBB6FC3F2FF55862398DB48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Xx7MlBYQRbKm7XDD9pueCA/zh-cn_image_0000002791727064.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=713C0620166F215DC696FDE0AFF3414F4A499AF4FB186E3A3E54FE927A095836)
 
 ### 示例3（设置背板图样式）
 
@@ -471,7 +471,7 @@ struct DragPreviewOptionsDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/630XyAxPQBuGqoSAKA28KA/zh-cn_image_0000002788468706.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=054861D570F666C49F9A2361A11AC55B91641999508E27DF2F48861030DEC40B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/9LXy05ynQIyre5UNi3BWew/zh-cn_image_0000002791567092.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1C381A69B1DB1D29CA4B0A2806104428B3D620A710981FCF9DF96C6D0E9EBCB)
 
 ### 示例4（设置多选拖拽）
 
@@ -512,7 +512,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/St5aich6Tv-VLEm5xhPidg/zh-cn_image_0000002817508195.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=683EEBFE30277AB1F822F2769613EFE9C7F9956024BF20BF2D3DEEFF00E70AF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/1yZnS6kbTzS5cm4REB8lnw/zh-cn_image_0000002820527045.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7629EDDE11033792DAC253928A2F3080FB845FFBE9BADC3F89ECDE20A11C9F4)
 
 ### 示例5（设置默认点按效果）
 
@@ -553,7 +553,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/VUQnAKHhT-ejHqffxH9tdw/zh-cn_image_0000002788308764.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A715BD49EA7EF08F6185B3A35E810DE140C11FE395737E5CE5829E6AE9B34BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/CjkImnZ4T36-YiYe1fDcUA/zh-cn_image_0000002820407045.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=33A47DC2DA791930B9904A2C2F00B971A978A6BC385C172EB11C6380186896B0)
 
 ### 示例6（自定义背板图样式）
 
@@ -599,7 +599,7 @@ struct DragPreviewOptionsDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/mHQnQGCcQDui_GEy4IV1LQ/zh-cn_image_0000002817428127.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=96F783C52E94B2D5C68EAE557055D82BC90E98798939D9C3CC208D502E10F024)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/PWhveG9_SuyLEXoh0SaDNQ/zh-cn_image_0000002791727066.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A27B1515C1141B3F6734CBBC22C691C185A0C401AA9237F8738B791DB8B73D9)
 
 ### 示例7（图片拖拽设置）
 
@@ -829,7 +829,7 @@ struct ImageDrag {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/tK4WnyDTQW-5kiEZlfQQ1w/zh-cn_image_0000002788468708.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B0D3BFEC2CD80559393F34CD0DED0F15B5F45DBC7A387B257F8886EFB8BCD27)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/fIQWdTXqS4qQrbVrDNs1qA/zh-cn_image_0000002791567094.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8587F9AEE8F61A4069E7A0FD539B932C5BBEF62E2AC53D79DA2CB17CB138A2B)
 
 ### 示例8（设置图片拖拽震动）
 
@@ -983,11 +983,11 @@ struct LiftingExampleDemo {
 
 自定义预览图用于浮起效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ur1qJJs8T8iI2DL7wvOtWw/zh-cn_image_0000002817508197.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=0796DF1E4EA21D453FFF85FC669D73B4FC6E1453C42147473EB6A9309E26E448)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/7KW9xz1zQQeL68E8UxiXsw/zh-cn_image_0000002820527047.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D5684029B9B7E1374F863BEC53AD869D1966CE6E02E8B383B8F26BC09504902)
 
 自定义预览图禁用浮起效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/JwNFDYVKRTCeqa2_Pj74Bg/zh-cn_image_0000002788308766.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=42396F08EF3F81CFA0A0C1A1CC279556390D781840C69D14D2039443ACF8E610)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/8ShFLMulS2a1B_j13i83hw/zh-cn_image_0000002820407047.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=029FBB7DE9EFAA34E859EA37C85A8EE5D70F33345B326D4578A05D1FE1159700)
 
 ### 示例10（以拖拽预览图初始尺寸计算跟手点位置）
 
@@ -1074,7 +1074,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/R8Q7UGRfRIyWnqFqQNyj4w/zh-cn_image_0000002817428129.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=5181EA7675E69AE8613D84097113CF21C7E92BA3E55109A5CC5B9DB922458AA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/wrdhXsWrSUOGvNfVFzRCcA/zh-cn_image_0000002791727068.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=46A23F11120E439BF20FB871EF04F333AC4DB836A4707288E75836AA0C25FB6D)
 
 ### 示例11（长按浮起预览图与拖拽预览图过渡动效）
 
@@ -1161,7 +1161,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/4WtybvRiSFy2GMEdVIzTzw/zh-cn_image_0000002788468710.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4888E8D40FBC577B71EC0A237CF09035FF081C72B1EB5FAA7C2CC42DE5ED66D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/09zV1BguTHK2UUX9A2PInQ/zh-cn_image_0000002791567096.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BECA904B37ACB691A7EFE435192941EF857D241328E3A9360BE55E3F48B7B91)
 
 ### 示例12（设置自定义组件落入）
 
@@ -1292,7 +1292,7 @@ struct CustomCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/pkjuH1S7RMusTUCfId2ExQ/zh-cn_image_0000002817508199.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=86401E61D3D0DE8EB5698E39A45120583F96071B6B78D0D6872710EF104787FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/zddP3S5HSF-MhId3OmoaVQ/zh-cn_image_0000002820527049.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BC4E9688C4F53B734605B69056DD86FC7B2463CC8C55B277A3A11F17D6A1F6F)
 
 ### 示例13（设置背板图材质效果）
 
@@ -1380,4 +1380,4 @@ struct DragPreviewMaterialDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ypKeD-zBT8yJzeVB8vcaGQ/zh-cn_image_0000002788308768.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFFFCA7093216705CAD2118E2F92269BF4A82FF3353ED8CB232531CA015634B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/jsthMsc1RwarBrnYfO6_mg/zh-cn_image_0000002820407049.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A9D52C0458B614671C9B179F877F1DA3C11DF0137953F2262688E7F9C9CB14E)

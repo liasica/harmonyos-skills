@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-
 title: 使用UI上下文接口操作界面（UIContext）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 使用UI上下文接口操作界面（UIContext）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:08+08:00
+scraped_at: 2026-11-19T09:47:45+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:69df914ce2810c4014cbe4973bb5c9579aa4ef2dc6f4f46992e92fdbc87c8e59
+content_hash: sha256:cfb586767d471bdaf4ffafd6e591206465978d628579046861692b230b72a4eb
 ---
 
 本文主要介绍了多UI实例涉及的概念，以及使用[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)的方法替换全局接口的原因，并提供了相应的替换方案。
@@ -29,7 +29,7 @@ content_hash: sha256:69df914ce2810c4014cbe4973bb5c9579aa4ef2dc6f4f46992e92fdbc87
 
 **图1** 调用作用域原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ZGfVF70mTVm3XfDMCfd6Rg/zh-cn_image_0000002817426351.png?HW-CC-KV=V1&HW-CC-Date=20261114T004529Z&HW-CC-Expire=31536000000&HW-CC-Sign=20902A767537BDC8C845EF328D52F8CBF468DBC6B38D32BA9B6DA78BA89C2DF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/xOI4-EYZT-qqBXYJHXYxDQ/zh-cn_image_0000002791725288.png?HW-CC-KV=V1&HW-CC-Date=20261119T014654Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F96DE51A0D6410F5C2268374C0A683F5B15658B9C311CF4061FEBEC30423944)
 
 ## UI上下文不明确
 
@@ -45,7 +45,7 @@ UI上下文不明确是指调用ArkUI全局接口时，调用点无法明确识�
 
 **图2** 多实例关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/gj5u9t8cQGOVwbHrULdRDw/zh-cn_image_0000002788466932.png?HW-CC-KV=V1&HW-CC-Date=20261114T004529Z&HW-CC-Expire=31536000000&HW-CC-Sign=67B1D772377987E69BC887A3DC85E0F7A325A654899DB40F10DC0CD92AF7F2DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/0Sqns9YaTI-ocWFFcz5rmw/zh-cn_image_0000002791565316.png?HW-CC-KV=V1&HW-CC-Date=20261119T014654Z&HW-CC-Expire=31536000000&HW-CC-Sign=F20033C422F23B61BE0EDDB191ABBC5E10C7F93C3C0853ECE90E3A20975F17F2)
 
 ## UIContext接口替换全局接口的关系
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-si
 title: 使用RSA密钥对签名验签(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > 使用RSA密钥对签名验签(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:34+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:a0be1047ac397da470d75b63d487aac8fbc3c46ecb684dcd4610a8d407d89f3d
+scraped_at: 2026-11-19T09:48:04+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:1f698f1dcec42d9df42b2b39737b67fad26186e9cdc583670356fd26603b41ab
 ---
 
 对应的算法规格请查看[签名验签算法规格：RSA](crypto-sign-sig-verify-overview.md#rsa)。
@@ -108,7 +108,7 @@ bool DoTestRsaSignature()
 
    当前单次update长度没有限制，开发者可以根据数据量判断如何调用update，如果数据量较小，可以直接调用OH\_CryptoVerify\_Final接口一次性传入。
 
-   * 当待签名的数据较短时，可以在init完成后直接调用[OH\_CryptoVerify\_Final](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptoverify_final)。
+   * 当待验签的数据较短时，可以在init完成后直接调用[OH\_CryptoVerify\_Final](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptoverify_final)。
    * 当数据量较大时，可以多次调用update，即[分段验签](crypto-rsa-sign-sig-verify-ndk.md#使用rsa密钥对pkcs1模式分段签名验签)。
 4. 调用[OH\_CryptoVerify\_Final](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptoverify_final)，对数据进行验签。
 

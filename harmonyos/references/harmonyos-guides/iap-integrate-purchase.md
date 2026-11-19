@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-integrate
 title: 接入购买
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 消耗型/非消耗型商品购买 > 接入购买
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:21+08:00
+scraped_at: 2026-11-19T09:49:02+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1ad8057e0cebca0d4dc5540541542017a4a637b899a0c9fdcdc01ed56672557c
+content_hash: sha256:c66583c01fbed1583bef16fb4b4bb9c31b8f910a1927bbe113115cc781abf1ec
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:1ad8057e0cebca0d4dc5540541542017a4a637b899a0c9fdcdc01ed5667
 
 在接入消耗型/非消耗型商品购买能力前，需要提前[配置商品信息](iap-config-product.md)。用户在应用内购买时，应用拉起IAP Kit的收银台，收银台处会展示商品名称、商品价格等信息，用户根据需求完成商品购买。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/wUgHhtrVQZWWbIMVH3Xwdg/zh-cn_image_0000002788308054.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=60E01CFFD11298CE66D709952E35BEA2FFF47B6157090E15C1F5BACC339B49BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Z5BctbQIQSS5JsoMevfkiQ/zh-cn_image_0000002820406335.png?HW-CC-KV=V1&HW-CC-Date=20261119T014808Z&HW-CC-Expire=31536000000&HW-CC-Sign=A43990649EC9417B92E926FDF49BD02D0ECCB5DFE68793BC90A9D990FEAD31D8)
 
 ## 提供优惠
 
@@ -37,7 +37,7 @@ content_hash: sha256:1ad8057e0cebca0d4dc5540541542017a4a637b899a0c9fdcdc01ed5667
 
 如下业务流程对于单机应用同样适用。在单机应用中，应用服务器和应用客户端的交互放在应用客户端完成，应用服务器和IAP服务器交互的部分可不处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/1wpwRrXISyeUJgLnDfQMsQ/zh-cn_image_0000002817427417.png?HW-CC-KV=V1&HW-CC-Date=20261114T004638Z&HW-CC-Expire=31536000000&HW-CC-Sign=03C727E6B5D8D9AC09BC667C78406BA89233308534FF7D3F39FED05BDAF876C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/3jtRzHatT36hXV-sVHJ8MQ/zh-cn_image_0000002791726356.png?HW-CC-KV=V1&HW-CC-Date=20261119T014808Z&HW-CC-Expire=31536000000&HW-CC-Sign=A72EC8B091171FD44A5D5A47DCBDB24EA66CE7DA8FA9486BC63AEF213792577A)
 
 **展示商品**
 

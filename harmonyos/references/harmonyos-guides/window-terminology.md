@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-termin
 title: 窗口开发术语
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口开发术语
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:13+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:f8ccb1d099cd01d9e908070c2e69ea4c973966d06dc97c8613beeb61d4d73969
+scraped_at: 2026-11-19T09:47:51+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:b2d3a2d4dd05fb737ae095370c7e80d377d779862336eb27e3da913f89a0c071
 ---
 
 ## F
@@ -44,7 +44,7 @@ content_hash: sha256:f8ccb1d099cd01d9e908070c2e69ea4c973966d06dc97c8613beeb61d4d
 
 部分Phone设备上，可通过下拉控制中心，点击“自由多窗”按钮开启自由多窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/1jLnMIXcSGSQWvEm5PsK3A/zh-cn_image_0000002788307140.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=F912D3B2A7EB5D42A90E160DBFE3DB1F084F534153DE588606196E03CD473969)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/fa-7PpfhRveypUZMr4tsiQ/zh-cn_image_0000002820405419.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=863BA3E51AFF1BEDE836A03C18D2799E76F106ED4BC84174192FA88494203363)
 
 ### Freeform Window；自由窗口
 
@@ -58,7 +58,7 @@ content_hash: sha256:f8ccb1d099cd01d9e908070c2e69ea4c973966d06dc97c8613beeb61d4d
 
 自由窗口可以通过拖动窗口边缘调节窗口大小，可以通过拖动标题栏移动窗口位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/rLE9g-PhSmmPh7qe6DJsHw/zh-cn_image_0000002817506569.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD5DF44784329EB70A960338794F0F832DB379AC3EE8E02644E22C7B6E6A4B6D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/FyuuixYtRB-1t9chMpnsgg/zh-cn_image_0000002820525419.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F855BF1C34989C2B68E419AD3C7278798005E1D641AF7EF0121B9686AD88DDC)
 
 当前设备支持情况：
 
@@ -74,7 +74,7 @@ content_hash: sha256:f8ccb1d099cd01d9e908070c2e69ea4c973966d06dc97c8613beeb61d4d
 
 在该坐标系中，所有物理屏幕被映射到同一连续的虚拟坐标空间内，各类窗口操作、坐标转换及窗口矩形变化事件均基于该坐标空间进行计算和回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/EchmJly_SZWRAXFHNSNv4A/zh-cn_image_0000002817506583.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=66800BD59C8F8B916E587B33733568E6BD92C9BCD348B41D53639BA716913095)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/1JFzzDfHQHeHd7vAMTr_0w/zh-cn_image_0000002820525433.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=7278EC1BDBB713B44C38D1B24DF2981F58A4A727A5893BB15C858AD99E7F8D32)
 
 使用场景：
 
@@ -86,6 +86,12 @@ content_hash: sha256:f8ccb1d099cd01d9e908070c2e69ea4c973966d06dc97c8613beeb61d4d
 ### Immersive Layout；沉浸式布局
 
 让应用可布局区域拓展至整个窗口显示区域的状态。沉浸式布局下，应用内的可用布局区域延伸到整个窗口大小，此时应用界面的布局内容可与系统UI界面重叠显示，但系统界面元素层级始终高于应用界面内容。
+
+## L
+
+### Level-1 Subwindow；一级子窗
+
+以主窗口为直接父级的子窗口，不包含其他二级及更深层次的子窗口。
 
 ## M
 
@@ -105,12 +111,6 @@ content_hash: sha256:f8ccb1d099cd01d9e908070c2e69ea4c973966d06dc97c8613beeb61d4d
 
 应用冷启动时显示的首个页面，在应用进程没有运行或者应用内容没有加载完成前都将显示启动页。启动页承载了应用展示品牌特性的功能，应用可以根据自己的设计配置资源，用于展示产品独特的标识。
 
-## L
-
-### Level-1 Subwindow；一级子窗
-
-以主窗口为直接父级的子窗口，不包含其他二级及更深层次的子窗口。
-
 ## W
 
 ### Window Posture Mode；窗口姿态模式
@@ -123,7 +123,7 @@ content_hash: sha256:f8ccb1d099cd01d9e908070c2e69ea4c973966d06dc97c8613beeb61d4d
 
   桌面模式适用于折叠屏设备半折叠状态下，窗口铺满整个屏幕并在上下半屏之间适配不同布局的场景，例如视频播放、阅读等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/qVxYi_oYQ8-__3l9y57zHw/zh-cn_image_0000002788307154.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=178835B64BA6435D5B000B0051FD6BDC90E5131C22C6A6BDA4DFC6D52088DF11)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/tpSfAk41RUCsLXnZgOVT5Q/zh-cn_image_0000002820405433.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8F5B923E0F01709A50CCD131BA8551E99B2881CC2A45D409A5D625B7B10A47E)
 
 ### Window Privacy Mode；隐私模式
 

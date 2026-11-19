@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-spring-
 title: 弹簧曲线
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画曲线 > 弹簧曲线
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:06+08:00
+scraped_at: 2026-11-19T09:47:43+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:532769fc28e16ad64470177eb24704e04cb5d65e3ce70dac9f20166381fa58f2
+content_hash: sha256:6719be6f989ec765e2999b7f7b5fd5d7f19db91336e04cb63c03867cde6a9710
 ---
 
 阻尼弹簧曲线（以下简称弹簧曲线）对应的阻尼弹簧系统中，偏离平衡位置的物体一方面受到弹簧形变产生的反向作用力，被迫发生振动。另一方面，阻尼的存在为物体振动提供阻力。除阻尼为0的特殊情况，物体在振动过程中振幅不断减小，且最终趋于0，其轨迹对应的动画曲线自然连续。
@@ -141,4 +141,4 @@ export struct SpringCurve {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/GX2fGXURSA6TJKgltyjmuw/zh-cn_image_0000002788306904.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=31C1F6DB1E3E65648863A63511B0E0CEA66414A0894900024157E5789675FE59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/f1WOOvc0R9Gz9j-659ZEFg/zh-cn_image_0000002820405183.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014653Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9378FA62D666A80A5F073AD8E21050938043591F434DB036F1EF1DA409AC4DB)

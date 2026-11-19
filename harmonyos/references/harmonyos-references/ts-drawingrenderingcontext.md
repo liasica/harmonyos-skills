@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: DrawingRenderingContext
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > DrawingRenderingContext
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:21ab960bbeb33eb5b78470c7ae228cc69a14b5ebf93017b26e67214b1912e8e9
+scraped_at: 2026-11-19T09:51:08+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:0e41254f7075b374839a7cdde21da4d493586b57a1d9c39d7f5d5e4f790ca2fd
 ---
 
 DrawingRenderingContext对象与Canvas组件绑定后，可在Canvas组件上进行绘制，绘制对象可以是形状、文本、图片等。绑定方式：通过Canvas组件构造函数传入DrawingRenderingContext对象建立绑定关系。绘制流程：通过canvas属性获取DrawingCanvas对象，调用drawing模块接口执行绘制操作，最后调用invalidate()方法触发重新渲染。适用于需要高性能图形绘制、自定义图表、图像编辑等场景，相比CanvasRenderingContext2D提供了更灵活的绘制接口。
@@ -118,9 +118,9 @@ DrawingRenderingContext的尺寸信息。
 该示例实现了如何使用DrawingRenderingContext中的方法绘制图形。
 
 ```ts
+// xxx.ets
 import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-// xxx.ets
 @Entry
 @Component
 struct CanvasExample {
@@ -169,20 +169,20 @@ struct CanvasExample {
 
 图1 绘制圆心为(200, 200)，半径为100的圆，填充色为RGBA(39, 135, 217, 255)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/_ApRuMDGQLiR5Nv9cIz65w/zh-cn_image_0000002817428575.png?HW-CC-KV=V1&HW-CC-Date=20261114T005019Z&HW-CC-Expire=31536000000&HW-CC-Sign=07E4E67100BB5D6F539284D39DFBB5EC2FF5EA8B3E2EDA2E0542C49D27A0A959)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/daLcsZlhR1acoO3UN_TaPw/zh-cn_image_0000002791567542.png?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8BAC53F9EFBF58268F95D6BDB68728E64E29AF0C4B8E86563DCB2A720FE26F2)
 
 图2 点击Clear按钮清空画布
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/xjqDZX76R5G5ljlxhMRmtw/zh-cn_image_0000002788469156.png?HW-CC-KV=V1&HW-CC-Date=20261114T005019Z&HW-CC-Expire=31536000000&HW-CC-Sign=E950BCBB19AD4270D1FCF4DE517733C3E406A6D9483FE7AC48EADE4AC3FAAD81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/gXFn_JBNQb6URoxplrgocA/zh-cn_image_0000002820527495.png?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9A54313F511D43C9A743EA5DB8BD17535F1D52029260230EF23A7533E796426)
 
 ### 示例2（绘制文本）
 
 该示例实现了通过[makeFromRawFile](arkts-apis-graphics-drawing-typeface.md#makefromrawfile18)（从API version 18开始）加载自定义字体。并使用[drawTextBlob](arkts-apis-graphics-drawing-canvas.md#drawtextblob)绘制文本，drawing接口绘制自定义文字时，不需要调用this.uiContext.getFont().[registerFont](arkts-apis-uicontext-font.md#registerfont)或者fontCollection.[loadFontSync](js-apis-graphics-text.md#loadfontsync)提前注册字体，而是通过drawing.Typeface.[makeFromRawFile](arkts-apis-graphics-drawing-typeface.md#makefromrawfile18)（从API version 18开始）传入rawfile目录下的自定义字体文件。
 
 ```ts
+// xxx.ets
 import { drawing } from '@kit.ArkGraphics2D';
 
-// xxx.ets
 @Entry
 @Component
 struct CanvasExample {
@@ -215,4 +215,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/QWgtZCbYTxCHsghudEbT5g/zh-cn_image_0000002817508645.png?HW-CC-KV=V1&HW-CC-Date=20261114T005019Z&HW-CC-Expire=31536000000&HW-CC-Sign=B511FF7F17B5A875FDC2E8F4D34988C459EDF8865C7DC4317318FC78DA3F267F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/KHnte2FoRAyaKAeuF06ZuA/zh-cn_image_0000002820407497.png?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=02A10E66144A41D802D16D75C088AC92786654AEC07C26D13372D4A0DC4EE459)

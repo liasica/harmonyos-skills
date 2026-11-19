@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (MediaKeySession)
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > ArkTS API > @ohos.multimedia.drm (数字版权保护) > Interface (MediaKeySession)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:54:40+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:1bef97b38145969dd7897cb780ce6f7a3ae91a20440443505416a4bd40ef64ac
+scraped_at: 2026-11-19T09:53:44+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:d28c9d6927014f44e5baa1567cfa25e9ef2bd07a5be1d06229d37891707d20e6
 ---
 
 支持媒体密钥管理。在调用MediaKeySession方法之前，必须使用[createMediaKeySession](arkts-apis-drm-mediakeysystem.md#createmediakeysession)获取一个MediaKeySession实例。
@@ -36,7 +36,7 @@ generateMediaKeyRequest(mimeType: string, initData: Uint8Array, mediaKeyType: nu
 | --- | --- | --- | --- |
 | mimeType | string | 是 | 媒体类型，DRM解决方案名称，可通过[isMediaKeySystemSupported](arkts-apis-drm-f.md#drmismediakeysystemsupported-1)查询。 |
 | initData | Uint8Array | 是 | 初始数据，即加密流中的PSSH box中的实际PSSH数据。可通过监听AVPlayer的'mediaKeySystemInfoUpdate'事件（[on('mediaKeySystemInfoUpdate')](arkts-apis-media-avplayer.md#onmediakeysysteminfoupdate11)）获取DRM信息，从中提取pssh字段生成initData。具体开发流程可参考[基于AVPlayer播放DRM节目(ArkTS)](../harmonyos-guides/drm-avplayer-arkts-integration.md)。 |
-| mediaKeyType | number | 是 | 媒体密钥类型。取值范围为[0, 1]。0表示在线，1表示离线。  传入指定范围外的参数会导致参数校验失败，抛出错误码401。 |
+| mediaKeyType | number | 是 | 媒体密钥类型。取值范围为[0, 1]。1表示在线，0表示离线。  传入指定范围外的参数会导致参数校验失败，抛出错误码401。 |
 | options | [OptionsData[]](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-drm-i#optionsdata) | 否 | 可选数据。默认值为空数组。 |
 
 **返回值：**

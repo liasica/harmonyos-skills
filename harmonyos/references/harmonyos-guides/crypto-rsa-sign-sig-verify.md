@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-si
 title: 使用RSA密钥对签名验签(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > 使用RSA密钥对签名验签(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:34+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:a0a440369930e7b22cf38e6be112462d2c38354752de904dd505fa1170c23abc
+scraped_at: 2026-11-19T09:48:04+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:a6dd5596e534d31f3586a2520de957104ed1f5bb7d0999a05260b8178e1869aa
 ---
 
 对应的算法规格请查看[签名验签算法规格：RSA](crypto-sign-sig-verify-overview.md#rsa)。
@@ -35,7 +35,7 @@ content_hash: sha256:a0a440369930e7b22cf38e6be112462d2c38354752de904dd505fa1170c
 
    当前单次update长度没有限制，开发者可以根据数据量判断如何调用update。
 
-   * 当待签名的数据较短时，可以在init完成后直接调用verify。
+   * 当待验签的数据较短时，可以在init完成后直接调用verify。
    * 当数据量较大时，可以多次调用update，即[分段签名验签](crypto-rsa-sign-sig-verify.md#使用rsa密钥对pkcs1模式分段签名验签)。
 4. 调用[Verify.verify](../harmonyos-references/js-apis-cryptoframework.md#verify-1)，对数据进行验签。
 

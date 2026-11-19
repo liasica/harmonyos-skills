@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animati
 title: 动画概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:06+08:00
+scraped_at: 2026-11-19T09:47:43+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0db5708ddc808e143d95f30e1485425ca361bf439911bc8cc19978e00b1d3dec
+content_hash: sha256:ca7d32db409d42421b4ea4bdcd3ddbd9b67387e1627f4730902a5e493f061fcd
 ---
 
 UI（用户界面）是用户与设备进行交互的界面，包含各种可视化组件（如按钮、列表等）。属性作为接口，用于控制组件的行为，属性值的变化会引起UI的变化。动画可在UI发生改变时，添加流畅的过渡效果，使属性值从起始状态逐渐变化到终点状态，避免因瞬间变化造成的突兀感，保持用户的视觉焦点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/WSnLcfgoSq2SRNHjj0QVPg/zh-cn_image_0000002817426245.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A6465D17E6548A5B1C27185B4783C322E965063623F90F3AC37582A78C423B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/Win41U6RTCWJkui0UkQEiQ/zh-cn_image_0000002791725182.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=9579E49DC24644A1318454595C5F7E157FD47F6D93B0BF9F3BE75A16571E2307)
 
 动画的目的包括：
 

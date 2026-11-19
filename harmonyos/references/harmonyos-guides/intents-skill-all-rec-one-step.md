@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 功能一步达场景方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 功能一步达场景方案
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:41+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-11-19T09:49:21+08:00
+doc_updated_at: 2026-11-18
 content_hash: sha256:ca0a5a2458029422e10cfd369b8028ee23652c824c90b1ebafe0496c6bc5c622
 ---
 

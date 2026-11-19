@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-cons
 title: Sendable使用规则与约束
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > Sendable使用规则与约束
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:03+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:5d71f0b620390baf894a4d234688fdb21c942844051c44f45c9098052c238ef6
+scraped_at: 2026-11-19T09:47:32+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:8db29f55ec68e6a91d15be816c298d5a84ce86da9e91a68433a3ca59b273389f
 ---
 
 ## 继承规则
@@ -490,6 +490,32 @@ let a2: SendableA = new A() as SendableA; // 编译报错
 ## 函数规则
 
 ### 箭头函数不可标记为Sendable
+
+箭头函数不支持@Sendable装饰器，因此它是非Sendable函数，不支持共享。
+
+**正例：**
+
+```typescript
+// 正例：
+@Sendable
+type SendableFuncType = () => void;
+
+@Sendable
+function sendableFunc() {
+  console.info('Sendable func');
+}
+
+@Sendable
+class SendableClass {
+  constructor(f: SendableFuncType) {
+    this.func = f;
+  }
+
+  func: SendableFuncType;
+}
+
+let sendableClass = new SendableClass(sendableFunc);
+```
 
 **反例：**
 

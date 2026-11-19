@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-promo
 title: 领券场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 运营工具 > 平台券 > 领券场景
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:27+08:00
+scraped_at: 2026-11-19T09:49:08+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:27bc2ae9a5490c3d9573cd368e4284e6ee575989da72d5dd56e910cc1033af10
+content_hash: sha256:428f9c8976515d59623da23e89f49ff46f37c2853e2a6d754e9ac418287c2bee
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ content_hash: sha256:27bc2ae9a5490c3d9573cd368e4284e6ee575989da72d5dd56e910cc103
 
 领券场景展示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Gvubed7kTe-btjgIabuQkw/zh-cn_image_0000002788468184.png?HW-CC-KV=V1&HW-CC-Date=20261114T004827Z&HW-CC-Expire=31536000000&HW-CC-Sign=56DD32866305B03BCAA078D3D708FD3BD57812A9A387B25B19E65891BA61DA29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/axoqIxGqTUCvmX48R06VQg/zh-cn_image_0000002791566570.png?HW-CC-KV=V1&HW-CC-Date=20261119T014813Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA5FF3A8684C3DFD7CCADB5FE46E4C66787DB93FFED4565F55C7DB776DF969AC)
 
 ## 接入流程
 
@@ -35,7 +35,7 @@ content_hash: sha256:27bc2ae9a5490c3d9573cd368e4284e6ee575989da72d5dd56e910cc103
 
 关于领券场景的业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/8qxKLU0lR1q0QqV_x5SNRg/zh-cn_image_0000002817507673.png?HW-CC-KV=V1&HW-CC-Date=20261114T004827Z&HW-CC-Expire=31536000000&HW-CC-Sign=948F3D2249CB77DC4B221A188DC28A7848331CFAD828B2723559682A7B415922)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/pxL-CHIwSf6ShGaR1wuhqA/zh-cn_image_0000002820526523.png?HW-CC-KV=V1&HW-CC-Date=20261119T014813Z&HW-CC-Expire=31536000000&HW-CC-Sign=25B5DEE23206EB496784DC59DEC9AE02835EF6F7854F2C6B80F89AC62DE4FDC4)
 
 1. 用户进入商户服务。
 2. 商户客户端调用Payment Kit客户端的[startPromotionEntryDialog](../harmonyos-references/payment-promotionservice.md#startpromotionentrydialog)拉起活动入口组件。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-native-me
 title: 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:15+08:00
+scraped_at: 2026-11-19T09:47:53+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:fa837bc27d231389f6bc7e68cd444e660b5841dc2ea154541f69e4aa110254fe
+content_hash: sha256:834b84c565f2bc069636759d02e5170d519fdbbb504b245094060f657c42359a
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:fa837bc27d231389f6bc7e68cd444e660b5841dc2ea154541f69e4aa110
 
 浏览器扩展通过[WebExtensions runtime API](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions/API/runtime)连接WebNativeMessagingExtensionAbility，双方通信是通过共享pipe文件描述符后调用IO接口实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/d4AH2mFzRCyaaoHRTuuxxg/zh-cn_image_0000002788467148.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=422893C55B256308397DC8F5D8E5AD92348C06C316A4B3D0B689DA72A45F8FF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/uEIdZWhiRyq86-ZTdkkpdA/zh-cn_image_0000002791565532.png?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=40FE0E74701C3FA36353106A318598CF235FAEFF3345E72FB1753F2E75DF8AC3)
 
 **说明** 
 
@@ -44,7 +44,7 @@ NativeMessaging面向两类开发者：应用开发者和浏览器应用开发�
 
 ### 整体流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/JVKhsf_zTlCYWbf6Q-Td6g/zh-cn_image_0000002817506637.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=C48BA87116B291779032F12CE9D19F61C04B286BD3C94B965DAB627A7DEDC31A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/3CWN8IaUQXupDp7IGourDA/zh-cn_image_0000002820525485.png?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3177810D7B09EAF2AA76EC1DAAD9858AC98B3F499A75A2A6544F2BE7A76E9D8)
 
 * **流程：**
 

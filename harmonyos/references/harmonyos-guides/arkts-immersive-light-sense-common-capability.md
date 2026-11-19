@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸式系统材质视效
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 沉浸式系统材质视效
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:05+08:00
+scraped_at: 2026-11-19T09:47:42+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c4a5b548e4d7f9adb592671efdda18e4175d8fb12f2c82f7e2363460703e909b
+content_hash: sha256:6c9a24acadfeae77249d05452b4a7cd20d17003c6b544c7e8860cd699ff10dc2
 ---
 
 本文介绍如何按场景定制沉浸式系统材质的视效，包括设置沉浸式系统材质反色、为沉浸式系统材质赋色、设置沉浸式系统材质交互效果以及设置沉浸式系统材质阴影效果。
@@ -84,7 +84,7 @@ struct PageMaterialReverse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/BNiRi1VhTPSUtsCVK7WoeA/zh-cn_image_0000002788306820.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=A54CEF3435852DE65BF07E80A9AED2DF32668A8AC5A27AE9B07BE4D9599FD7F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/ROwpXVwDQ3WZ2k1eoRmDdQ/zh-cn_image_0000002820405099.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=720BD73B4B0B58DFD2ED244E7FEDE9A3461090421DB24A6486F8B4F2DB940B2D)
 
 ## 为沉浸式系统材质赋色
 
@@ -143,7 +143,7 @@ struct MaterialColorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/jqE5oTqlQMmFCKDrjgghLw/zh-cn_image_0000002817426183.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2EC2BEA7A62BDBFBF3D40AE6F5F79410CCA34987A97393810DF44406417ABCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/_iNYoJzhSAO-wygdfUu-_w/zh-cn_image_0000002791725120.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFC963EA45739692C8C2A22767D8965A8AF70FE79ABB44FE1BEEB16EA70C3737)
 
 ## 设置沉浸式系统材质交互效果
 
@@ -201,7 +201,7 @@ struct MaterialInteractiveLightExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Yt0zK4jjSSu5Z9_BLT216g/zh-cn_image_0000002788466764.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=E56775E3519863FE05FC68F75DB1AE72761A83ACB1F3054D24F5E8FF0623E3FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/OSdsmWevQ3K7bqk_CaXglg/zh-cn_image_0000002791565148.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=8ECFC3A0AC6CC2C9B1C1D4B6007E1A402958A21B71764407E86158FA006193A5)
 
 ## 设置沉浸式系统材质阴影效果
 
@@ -257,4 +257,4 @@ struct CustomShadowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/WbpyRaP4R0eHAPtWfQ0s9A/zh-cn_image_0000002817506251.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=7041996458DF781619846B079D5F16BD1818CAD64A10559798B7CA91592CD021)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/6G5Rfq-ySLG9BH0V6LwL2w/zh-cn_image_0000002820525101.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=236E9846DCD342F3A6627DFADBBB6428E490B3101655AC439DF6A6717B48752E)

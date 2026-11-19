@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/plugin-packag
 title: 开发与使用应用插件（PC/2in1）
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 开发与使用应用插件（PC/2in1）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:48+08:00
+scraped_at: 2026-11-19T09:47:24+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d2e22a52d45ae3d90fa802633fed47e4190c295d0a8edbbf5f29db70a19bf1af
+content_hash: sha256:c5a661ca89be6bdabfa4a32e503330e0a0338d1a8961c471cac962ecb90870e4
 ---
 
 插件包是基于[HSP](in-app-hsp.md)的共享包组件，用于扩展宿主应用（加载并运行插件的应用程序）的功能。插件通常由第三方开发者或宿主应用开发者创建，旨在为宿主应用提供额外的特性或服务，例如专业设计软件通过插件为不同行业提供定制能力。插件运行依赖系统能力，例如调用ArkTS接口、使用Ability组件等。若插件自身不依赖系统能力，则可沿用应用原有的插件打包方式，无需采用HSP形式。插件不能独立运行，必须依赖宿主应用提供的运行环境和功能支持。
@@ -30,7 +30,7 @@ content_hash: sha256:d2e22a52d45ae3d90fa802633fed47e4190c295d0a8edbbf5f29db70a19
 
 1. 插件包本质上是动态共享包HSP，参考[创建HSP模块](ide-hsp.md#section79378499185)在工程中创建插件模块plugin。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/mDirz9uDQUarlBV6zJ1dvw/zh-cn_image_0000002817505543.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=88BB5BBA898BDCBB07046792948762B4B2A3DA0C20AFAFB183F1DCB6F6B5FFF7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/KpfIFdytSDa7DqqWpmKfFQ/zh-cn_image_0000002820524391.png?HW-CC-KV=V1&HW-CC-Date=20261119T014632Z&HW-CC-Expire=31536000000&HW-CC-Sign=B016B8F50D0EFF9541F5E3EB6D97FCB41C5963E13CC394EAEB4A66992E742C53)
 2. 在[app.json5](app-configuration-file.md)中配置bundleType字段为appPlugin，该字段表示当前包为应用的插件包，bundleName为插件的包名。
 
    ```json5
@@ -49,16 +49,16 @@ content_hash: sha256:d2e22a52d45ae3d90fa802633fed47e4190c295d0a8edbbf5f29db70a19
    ```
 3. 选择DevEco Studio菜单栏中的File > Project Structure，在Signing Configs页面勾选Automatically generate signature。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/8pOxBZHLSLesKgdtoj32bA/zh-cn_image_0000002788306114.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCBE01CFD3B8DEEE3B443EE9872DBFAFAD635656716A4067BAC68D2303338D7D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/lDMqgQx6T_-uwsOwVoXvMA/zh-cn_image_0000002820404391.png?HW-CC-KV=V1&HW-CC-Date=20261119T014632Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7FC9186FA94BFEC479F3DA306CDE31C8E03FCE5B9E0524C6B25276A25459584)
 
 ### 编译打包
 
 1. 选中工程目录中插件模块的文件目录，通过DevEco Studio菜单栏的Build > Make Module ${libraryName}进行编译构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/bTwGRK2XTESO6GcgJt9J0w/zh-cn_image_0000002817425477.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=99F48522F033A270637D895461A26A0974C18BC43D66426900F1F2CF100824F2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Gub-uaF8RMSdHgW8ZPbIKw/zh-cn_image_0000002791724414.png?HW-CC-KV=V1&HW-CC-Date=20261119T014632Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5EF2C86210A41D94D15CEE5CC507602F29B315F6FCF62BF868CC2B0C7759143)
 2. 编译完成后，会在工程目录中生成对应的产物。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/erwFxIrARNe_nZP019dFXg/zh-cn_image_0000002788466058.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF05610703743594F4C28E1E813667DB0D014C92FC4689DF0F5E0CED02116258)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/MtJOINYhRLeQbZEHaFRztw/zh-cn_image_0000002791564442.png?HW-CC-KV=V1&HW-CC-Date=20261119T014632Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD446243C18395CF31C5C49E09D939F6604E6CF8037C53BD36611342BF614E2D)
 
 ## 使用应用插件
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-confi
 title: 申请账号权限
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 开发准备 > 申请账号权限
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:09+08:00
+scraped_at: 2026-11-19T09:48:50+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:35da22e8aab5e7d554c64d1d059b81ad6b9082df8f9a962535b0523f3985bc99
+content_hash: sha256:1dc9e88e061671ae1a3c2e90c5c60f84760bd984ffb2ae849a565dd66d78c7ae
 ---
 
 请参考“[应用开发准备](application-dev-overview.md)”章节，创建应用、使用DevEco Studio创建应用工程。
@@ -85,7 +85,7 @@ content_hash: sha256:35da22e8aab5e7d554c64d1d059b81ad6b9082df8f9a962535b0523f398
 
 1. 在 AppGallery Connect（简称AGC）的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中，选择相应的项目，然后选择需要申请对应权限的HarmonyOS应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/aS77WRkuR0mLB9Li4FtnCw/zh-cn_image_0000002817507293.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B62C109402B33DD8982E1FE596F5BC9311C5C78DA109E194D78C92E11CB4075)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/N9-AmsjIQJ28433Sbrbykw/zh-cn_image_0000002820526143.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=38C5CC42BBB7340D4770B20FFE0B955448347BABCE41A7030DB112B09F321223)
 2. 在“开放能力管理”中，选择想要申请的账号权限，并点击“申请”。
 
    **说明** 
@@ -94,10 +94,10 @@ content_hash: sha256:35da22e8aab5e7d554c64d1d059b81ad6b9082df8f9a962535b0523f398
 
    图示仅为示例，不同应用类型展示不同权限，请以实际页面显示为准。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/mPvxWXTRStCNbPI4Ry3odQ/zh-cn_image_0000002788307862.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=0097C675E379C0843F2A61E34E0FB052464C4F6A825E43C71D200BD84580FB33)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/-JbJJQl1Q2qKtCOeitCs4A/zh-cn_image_0000002820406143.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C49A4FE98586011BE51E372778C0ECBE1D9D518309E5073142D0BBA9538DF50)
 3. 点击申请后，请根据应用实际情况填写“申请原因”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/EVkzihseSfWjtmz-jScaTQ/zh-cn_image_0000002817427225.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=C67FB8CBAAFFC01F46748AA0FD9804213365C7C36805C7880BFA565B53216E59)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/tx6wBdtfRtW-h2_8lyJogQ/zh-cn_image_0000002791726164.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=65FAEBB04E00DA329F58ACCAC1F0EB66EF952892C86A877E9A66F6A71649F336)
 
    **说明** 
 
@@ -148,8 +148,8 @@ content_hash: sha256:35da22e8aab5e7d554c64d1d059b81ad6b9082df8f9a962535b0523f398
 
    **图1** 修改前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/xiI7Cq0-RamSMAbus3DCjw/zh-cn_image_0000002788467806.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=69079CF3D855CF12B7D4834582EA0B7493425921926029ACA150658199C5C8A2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/ilufqP-0TuGxKJf6F4lYaA/zh-cn_image_0000002791566192.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E8C187928CF07481E8D834AE3CCF2801806E99F67621090DF67658CBAEB9DF1)
 
    **图2** 修改后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/PgaIEKy-ReOQnnml6xJLyw/zh-cn_image_0000002817507295.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF06AFD0D0798EAF07ADAB182C676187657FD9661AC1682BCCB99D6447535C9B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/eqyJ0J5gRIOwkanS-9yY9Q/zh-cn_image_0000002820526145.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=D39AA43CBE4614AA38C8336991CF26A07374D5647A00B6C0E9BF54835A5B50C6)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-geometr
 title: 绘制几何图形 (Shape)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 几何图形绘制 > 绘制几何图形 (Shape)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:05+08:00
+scraped_at: 2026-11-19T09:47:43+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:84f126519247cf80d9eba77b506dea6211db42db05aef417624f48ef62564aa2
+content_hash: sha256:a71c96b92ab3a43ff62670e16a3168115fbbb4c31c0f353b293cf329c2cc3952
 ---
 
 绘制组件用于在页面绘制图形，Shape组件是绘制组件的父组件，包含所有绘制组件的通用属性。具体用法请参考[Shape](../harmonyos-references/ts-drawing-components-shape.md)。
@@ -39,7 +39,7 @@ content_hash: sha256:84f126519247cf80d9eba77b506dea6211db42db05aef417624f48ef625
   Circle({ width: 150, height: 150 })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/4ZXP4UagTY2_Sxp6JLi-og/zh-cn_image_0000002817506255.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=D92BEFB0089F659D06CC3DE41B39D7BA8DF8FF560B68453B98FF4C8515BD7D07)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/9iaq4h8xRlKEVcV0dpciGw/zh-cn_image_0000002820525105.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=357B5B0BCCB019E24BC920AA1D3414CD85AB16D117DAE747E53D666B49CCD085)
 
 ## 形状视口viewPort
 
@@ -119,7 +119,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/k5AAF-U8RvifJapwo9WGzw/zh-cn_image_0000002788306826.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=603B6B7FD3C0F8B3A448B838795369B6243C97F1A8A14CD7005A3EA4919993D1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/DBdfJKlBRH2ZnEMxcOpwfQ/zh-cn_image_0000002820405105.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D2FE093290E856B1F289EC487F54D4EE0373CA58F21E049965C4081A3DE431D)
 * 创建一个宽高都为300的shape组件，背景色为黄色，创建一个宽高都为300的viewPort。用一个蓝色的矩形来填充viewPort，在viewPort中绘制一个半径为75的圆。
 
   ```typescript
@@ -150,7 +150,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ZyuKUQArT7i5eUgQoKqeOQ/zh-cn_image_0000002817426189.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=2457A9EA2C0BFD21690E39EE91466F6958478ADC14FFEFD1F8BF151067DA51A5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/EKPR3FMNTcy73EeeqsY0LA/zh-cn_image_0000002791725126.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A22D4393E09313BC6FC2300CF041E24EFB58D270B1FD329BCEA3A29A0CE8CAC)
 * 创建一个宽高都为300的shape组件，背景色为黄色，创建一个宽高都为300的viewPort。用一个蓝色的矩形来填充viewPort，在viewPort中绘制一个半径为75的圆，将viewPort向右方和下方各平移150。
 
   ```typescript
@@ -181,7 +181,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/rUgbVa08RnKvS5jUxqvCwg/zh-cn_image_0000002788466770.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AB42FD8A1E56E9B08E998DD7041B07F4B753251C49D72718A02CC4DFE9C693F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/5odpXol7TpOvGHfqieFf3g/zh-cn_image_0000002791565154.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AC58C686A9BFF1007B7FE525CD99661DF5F3E8D5AD64689B07708DC9390DF0A)
 
 ## 自定义样式
 
@@ -202,7 +202,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .strokeWidth(0)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/sv-SJPEOS-6AuDNNY-Vk1w/zh-cn_image_0000002817506257.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FA4305CF0BBD4BE093B57CDF338804F111198D62455A23204DD621D8C40CE08)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/NQ9_cRQVTp6sb0c1n2L3Bg/zh-cn_image_0000002820525107.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA27844AF7BDEDC75331B8B56A86AAF2D8881982B18B93AEFA676B56DE5DFA2D)
 * 通过[stroke](../harmonyos-references/ts-drawing-components-common.md#stroke)可以设置组件边框颜色。
 
   ```typescript
@@ -214,7 +214,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .stroke(Color.Red)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/-McW5B7eRPicsmfVNUjzHg/zh-cn_image_0000002788306828.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=278C9045FF7BA5111BC0CD091279B4BE145ACBE495088FAD666844A692E8B00D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/MERCy_S8S1e0-r15yLSjxQ/zh-cn_image_0000002820405107.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F2FA4D11168EE375DF129C1B31A42B0C14F018DFDB7889BAF3CEF38501ABD98)
 * 通过[strokeOpacity](../harmonyos-references/ts-drawing-components-common.md#strokeopacity)可以设置边框透明度。
 
   ```typescript
@@ -228,7 +228,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .strokeOpacity(0.2)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/Aeznz6XhQHmIjHeDgVwcqQ/zh-cn_image_0000002817426191.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=17387D0C598255A6052BC37313B914E075233D349BFB6D9E90797D34C69E9665)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/88JreYVARI6cp1yZdz2_VA/zh-cn_image_0000002791725128.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E792834293B3E1D2B0705EAC969019AF9A726837A1565E7D317E3BB3F947EAC)
 * 通过[strokeLineJoin](../harmonyos-references/ts-drawing-components-common.md#strokelinejoin)可以设置线条拐角绘制样式。拐角绘制样式分为Bevel(使用斜角连接路径段)、Miter(使用尖角连接路径段)、Round(使用圆角连接路径段)。
 
   ```typescript
@@ -243,7 +243,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .strokeLineJoin(LineJoinStyle.Round)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/xvOfPqBJShiH0It7I3xY7g/zh-cn_image_0000002788466772.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=C38E9E81A5239B68F1352A0BA3136C38E32C10EBFAF6C41EBB7DD36655D676C8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/h8wFahD7ShOp-7LhibDmpg/zh-cn_image_0000002791565156.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCC942FF1B015E985E9F85FDF27428DA24CC531D131D6A93596DE1B6A85C4CC8)
 * 通过[strokeMiterLimit](../harmonyos-references/ts-drawing-components-common.md#strokemiterlimit)设置斜接长度与边框宽度比值的极限值。
 
   斜接长度表示外边框外边交点到内边交点的距离，边框宽度即[strokeWidth](../harmonyos-references/ts-drawing-components-common.md#strokewidth)属性的值。
@@ -273,7 +273,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .strokeMiterLimit(1.42)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/CID_ubD1ReS9ytGZL2768Q/zh-cn_image_0000002817506259.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=C17886146B5EE7C9E80092AA2455E104DB087216E6B9240B5398D0B8782CDC28)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/N4VPsiieSDKMIPIlNWlQwA/zh-cn_image_0000002820525109.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=036F4D1DEFE5F661B024992937EA5EEFBC6471A8879F29F4681BBA6EA75BDEA7)
 * 通过[antiAlias](../harmonyos-references/ts-drawing-components-common.md#antialias)设置是否开启抗锯齿，默认值为true（开启抗锯齿）。
 
   ```typescript
@@ -286,7 +286,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .stroke(Color.Black)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/NRKOorPgTEGwUuouFGsaow/zh-cn_image_0000002788306830.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E854E3378DE0B68AF68B84F1B33F59446FBD51E6A93A03EDA19409159D24B04)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/b-J29HnxQA-iwybEo9uDJA/zh-cn_image_0000002820405109.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B10F37426B4FE02DAAA84710CA24C1AA78F8804BF9E0F50E21EB3DCAA62ACD4)
 
   ```typescript
   // 关闭抗锯齿
@@ -299,7 +299,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .antiAlias(false)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Zp22YAxqTX-MlJ6TgWnN2Q/zh-cn_image_0000002817426193.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F973FD3E511DA054E84886E25278D3349415F6ED0CCA88422DA5B8B93E461F2)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/MOMN-QTYQkCBqVBdAXZzhA/zh-cn_image_0000002791725130.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=D323CC7C0F0422179C5EF940800DDA8640952C388D7DE9364FD0990C52735B50)
 * 通过[mesh](../harmonyos-references/ts-drawing-components-shape.md#mesh8)设置网格效果，实现图像局部扭曲。
 
   **说明** 
@@ -452,7 +452,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/uEf7sAPAQOyMc5tjpKmpbw/zh-cn_image_0000002788466774.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EEB0B2007E5D4AB90C492E51C4A596277981E9F0B64DF708E0DA7EB3875DF5E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/vFvrzgUoQreBFIgT-ivc_A/zh-cn_image_0000002791565158.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A30F9B74A06020FB2BD6E7A080D53AC77B60BE862BE32604D34C76C3FCED16F)
 
 ## 场景示例
 
@@ -489,7 +489,7 @@ struct ShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/BpMSRxKNQ9KvS3k6Lcyv5A/zh-cn_image_0000002817506261.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EA2C22CC6BB0E3E1810280CD5E1273246F5AEAF8BB841AA08523297B9256619)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/iSYehEw9Qny-2lazLlg1mQ/zh-cn_image_0000002820525111.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=294247B73F56D4F663AEE8429AB4E5132B74B5709D6A2679FCF9DFDA5ECF12C2)
 
 ### 绘制圆和圆环
 
@@ -521,7 +521,7 @@ struct CircleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/xxYafEcBSn6cSKEWtVgZlg/zh-cn_image_0000002788306832.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=6829C8E244BEAD8178469EF29D994A13E60CADCBC05405694C3C277541A9C028)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Ftb75EtfSLmX2a-PJq8dQA/zh-cn_image_0000002820405111.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB45E9E91A775DF6353A084EFC54A70FA89F1B60196E6B29751F1DCF6D1FF46A)
 
 ### UI视觉属性作用效果
 
@@ -546,4 +546,4 @@ struct CircleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/TaKjUh3pS2yUBBXumeilbw/zh-cn_image_0000002817426195.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=7426C6FB5B3B7FD678A053C26B9D366C467F81E3D063A33712981FFA5ECCD1B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/vzEu3dA-TjSvGjjoK6iTQQ/zh-cn_image_0000002791725132.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=F185872866762F9F3D331BAA738ED303FA7C08D0894AD8BC0CA0E6DF7E1FA8FD)

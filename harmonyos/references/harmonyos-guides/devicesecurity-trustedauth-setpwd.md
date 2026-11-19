@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 设置数字盾密码
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 数字盾密码管理 > 设置数字盾密码
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:28+08:00
+scraped_at: 2026-11-19T09:48:07+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:7133cb7e3ff0b9a1e5265aadd6189ba5cf310d882d453496e60b759af8861c32
+content_hash: sha256:8256747afa54c95ecc8f4d5885eebb5a442a46315a0ea2a4c3b7460d66954de7
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:7133cb7e3ff0b9a1e5265aadd6189ba5cf310d882d453496e60b759af88
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/gOvziDMbRAq8IJM68Zs4yg/zh-cn_image_0000002788307402.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004548Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AEC68EB440FB2F7066B381AD0C6379D8245EFE18E7F5146E3FFF7AFED57FDC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/jla29MZcRs26ihuNEb7izw/zh-cn_image_0000002820405681.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014806Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFE77E1D6C63C39CA49DC505F00B5F76D37A2A82ABB79FB78EA1E71ECC228036)
 
 数字盾开通时，需由应用服务器、应用客户端、Universal Keystore Kit和Device Security Kit共同协作完成。流程如下：
 
@@ -46,7 +46,7 @@ content_hash: sha256:7133cb7e3ff0b9a1e5265aadd6189ba5cf310d882d453496e60b759af88
 
 下图为开通数字盾服务时对应的TUI（Trusted User Interface）界面示例，其中密码长度、对应TUI应用图标以及当前应用场景说明均由开发者调用接口时传入，当设置盾密码长度不符合要求、密码强度低、两次密码设置不一致时，均会有对应失败报错提醒。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/JJ_oKGzDS3GvCvsdYkUT1A/zh-cn_image_0000002817426765.png?HW-CC-KV=V1&HW-CC-Date=20261114T004548Z&HW-CC-Expire=31536000000&HW-CC-Sign=39FC6702CF508E03E805DBD14FBCFE201D3B6EF4EC545A133DEA3EB32C9F8CD9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/DyocBxtkRhiJgard7xNnvg/zh-cn_image_0000002791725702.png?HW-CC-KV=V1&HW-CC-Date=20261119T014806Z&HW-CC-Expire=31536000000&HW-CC-Sign=E705D465C0FCE9126AED22AB0BBE87C6203CD232DBAEEE4CA8FE75BD7A3EBE49)
 
 ## 开发步骤
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-overvie
 title: 开发准备
 breadcrumb: 指南 > 基础入门 > 快速入门 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:46+08:00
+scraped_at: 2026-11-19T09:47:23+08:00
 doc_updated_at: 2026-06-16
-content_hash: sha256:cf705765867892c610710a77890708f87956c11f9d5f2140840e6dddae6c5f7e
+content_hash: sha256:e5f832e393949a51ecd68d998f23cf8f4bb375b7f2cccb295cf1810aa36e37c4
 ---
 
 本文档适用于HarmonyOS应用开发的初学者。通过构建一个简单的具有页面跳转/返回功能的应用（如下图所示），快速了解工程目录的主要文件，熟悉HarmonyOS应用开发流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/JTae5K6JTyKYCVM7HwEVdw/zh-cn_image_0000002788306098.png?HW-CC-KV=V1&HW-CC-Date=20261114T004646Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCE949D3FB0C306F3ECD628931D4398BBD486E71E5CD35D2378B979010657E79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/xGm03yhiQdi9NWp5VKft1Q/zh-cn_image_0000002820404375.png?HW-CC-KV=V1&HW-CC-Date=20261119T014631Z&HW-CC-Expire=31536000000&HW-CC-Sign=0896221C4F357AC68E315C97C4ADA251BD6DD9C4CD38A1B74C8FB12BBA10C5A1)
 
 在开始之前，您需要了解有关HarmonyOS应用的一些基本概念：UI框架的简单说明、应用模型的基本概念。
 

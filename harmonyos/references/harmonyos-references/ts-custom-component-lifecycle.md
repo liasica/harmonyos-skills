@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: 自定义组件的生命周期
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件的生命周期
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:24+08:00
+scraped_at: 2026-11-19T09:51:12+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:69d0cdf904e9151b2ae9281dda46d82f9b1b693f413f695dcbe79724bb86820c
+content_hash: sha256:047a90ca9d3546bf875e45f50c6e5b7a1f27b41fa64af0ea87c6e2abf15ee88c
 ---
 
 自定义组件的生命周期回调函数用于通知用户该自定义组件的生命周期，这些回调函数是私有的，在运行时由开发框架在特定的时间进行调用，不能从应用中主动调用。通过这些回调，开发者可以在组件创建时初始化数据和状态变量，在组件销毁时释放资源，在页面显示和隐藏时更新页面状态、刷新数据或暂停恢复任务，在组件复用时传递参数与更新状态等，从而实现组件的精细化管理。不要在多个窗口复用同一个自定义组件节点，其生命周期可能会紊乱。
@@ -148,7 +148,7 @@ struct IndexComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/dUHo9Ne-RfOVOBkCkdRXQQ/zh-cn_image_0000002817428717.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005023Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE6D3F3DFEFBB760E9F0792E6D7958A1EEBA0BE8180F3FEB874913C00DC30502)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/xgQIgA0RSaW4cb7oTXnILg/zh-cn_image_0000002791567684.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015111Z&HW-CC-Expire=31536000000&HW-CC-Sign=545D94C8A8E21CE18C8B32DB18D45EB9FE4B3E847A5D9AC2EC713B9C9BA6C111)
 
 ## onNewParam19+
 
@@ -558,7 +558,7 @@ struct IndexComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/j5-qsz-eRBqhDUTXFGKelw/zh-cn_image_0000002788469298.png?HW-CC-KV=V1&HW-CC-Date=20261114T005023Z&HW-CC-Expire=31536000000&HW-CC-Sign=2829D7380D58888FDDC9CA4E4549889B8A23B1C45BB7D29EAF26426D6EF1C9F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/Th6NSn_qTCOI03zAONKOGA/zh-cn_image_0000002820527637.png?HW-CC-KV=V1&HW-CC-Date=20261119T015111Z&HW-CC-Expire=31536000000&HW-CC-Sign=570B64230B45127ED2C812881A85741BEECCD9E89824D80E3D004B2BBAFAA4BC)
 
 V2：
 
@@ -631,7 +631,7 @@ struct IndexComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/mjyZgsIKQQmydMEK6pIwYQ/zh-cn_image_0000002817508787.png?HW-CC-KV=V1&HW-CC-Date=20261114T005023Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D2060F26A47094AB716E6E553AEDE368343ACAEE84C4A75CF95BA3D1B09CFF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/fTN7FfaiSEuC1NoRciOBHA/zh-cn_image_0000002820407639.png?HW-CC-KV=V1&HW-CC-Date=20261119T015111Z&HW-CC-Expire=31536000000&HW-CC-Sign=D234B748A6AAF666920F145432B826FA60293A56732BF68BC9914507BE6FBE0F)
 
 ## pageTransition9+
 

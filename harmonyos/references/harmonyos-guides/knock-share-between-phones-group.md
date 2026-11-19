@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-b
 title: 邀请组队
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与手机碰一碰分享 > 邀请组队
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:33+08:00
+scraped_at: 2026-11-19T09:49:13+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:d578a17a13bda5aa94379d3ec93f481620d76b6cf5ce88aecc9e7b0f402b04c5
+content_hash: sha256:30fd729fb8f64392bd55ea9d71356fff101214e47b7f770f5f04cd4a9d9934cc
 ---
 
 ## 注册碰一碰事件
@@ -14,11 +14,11 @@ content_hash: sha256:d578a17a13bda5aa94379d3ec93f481620d76b6cf5ce88aecc9e7b0f402
 
 **图1** 横屏应用示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/j_sRwe9WQMOxhLnt6LwwkQ/zh-cn_image_0000002817427699.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=204B0973250C498E1B2CD681008A4D6A47B33B44BFBFF0E5848B45C200F084F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/vGccFiW-RzSpbsdkMG61TA/zh-cn_image_0000002791726638.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B59B5DEF6B6F215D103F2E32A9B2730F75AA828126C9E57E967A4AF80FC51C6)
 
 **图2** 竖屏应用示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Wmb-yBv7RvKI6vcWdfxitw/zh-cn_image_0000002788468280.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=443D32477CD1E02D83AB29503D030F140F06B254D9BB016361F851B4BA576AA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/oPupv8aDR_eVgD2CwjvIag/zh-cn_image_0000002791566666.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD37DECEAA7A010497A9AF59171A6069EB051380B3EC6C5B5577F7250FA0B0A9)
 
 ## 注册单向分享能力
 

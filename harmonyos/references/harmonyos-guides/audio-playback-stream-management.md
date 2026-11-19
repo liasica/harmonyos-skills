@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playbac
 title: 音频播放流管理
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 音频播放流管理
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:52+08:00
+scraped_at: 2026-11-19T09:48:32+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:9027c6cb389097aae4c73224d49834c294af78153c3e106aaca8363744da77db
+content_hash: sha256:a5cd25215441cbc42b46fe467f1b63b46958f5a1e25ee160ec3e6136ccd81f76
 ---
 
 对于播放音频类的应用，开发者需要关注该应用的音频流的状态以做出相应的操作，比如监听到状态为播放中/暂停时，及时改变播放按钮的UI显示。
@@ -43,7 +43,7 @@ content_hash: sha256:9027c6cb389097aae4c73224d49834c294af78153c3e106aaca8363744d
 
 如下为音频流管理调用关系图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/A_b0l99CQ3mMxiwx4Gq7xQ/zh-cn_image_0000002817507009.png?HW-CC-KV=V1&HW-CC-Date=20261114T004610Z&HW-CC-Expire=31536000000&HW-CC-Sign=B25DD04C7012E0D59262E33E82A0FEC6314CE15260D84397B20F80BD118D9B1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/VUZo5YyZRT2p1IgVDPUuJA/zh-cn_image_0000002820525859.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=529D439828345E715D14C3E2B33B912BC2B030569DF56FD98A369609AC883603)
 
 在进行应用开发的过程中，开发者需要先调用[getStreamManager](../harmonyos-references/arkts-apis-audio-audiomanager.md#getstreammanager9)创建AudioStreamManager实例，进而通过该实例管理音频流。
 

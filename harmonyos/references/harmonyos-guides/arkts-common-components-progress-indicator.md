@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 进度条 (Progress)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加组件 > 进度条 (Progress)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:04+08:00
+scraped_at: 2026-11-19T09:47:41+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:45e6073affb22ec41717a8ad7f04826f421e3c68e776f8d4699e85b17e3a520c
+content_hash: sha256:0a4a635bdbacfb67776ea2e0a6bc768dccefb25a0a2f53be6ebd49bf63a5fe28
 ---
 
 Progress是进度条显示组件，显示内容通常为目标操作的当前进度。具体用法请参考[Progress](../harmonyos-references/ts-basic-components-progress.md)。
@@ -24,7 +24,7 @@ Progress(options: {value: number, total?: number, type?: ProgressType})
 Progress({ value: 24, total: 100, type: ProgressType.Linear }) // 创建一个进度总长为100，当前进度值为24的线性进度条
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/5hx2oTucRp6eO3hdQi91WA/zh-cn_image_0000002817426139.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCE62CB6F034E7EC38B18174A4727E7663176530EA6AE3CCA51709D4D13E374A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/mPd3y85OQDCWrVm4xlBSVQ/zh-cn_image_0000002791725076.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=2107F9B95DDFC4ED428D22F10610E295A21AAA19DC3CCDB2161E0B8640EFF16E)
 
 ## 设置进度条样式
 
@@ -41,7 +41,7 @@ Progress有5种可选类型，通过[ProgressType](../harmonyos-references/ts-ba
   Progress({ value: 20, total: 100, type: ProgressType.Linear }).width(50).height(200)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/7w-yrEI-TTiIo4UbLvUXFw/zh-cn_image_0000002788466720.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF384F98D295B8A342D7DCC0E01B55A585DBA56D1FEF63ABC8470DC4B50DC91B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/RinRu09URlGme75krWBrMw/zh-cn_image_0000002791565104.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBA5B16BD5E84017BF242EB39A4B851BD4B93BDB3E4EF93A1B84B0E9966933E8)
 * 环形无刻度样式进度条
 
   ```typescript
@@ -53,7 +53,7 @@ Progress有5种可选类型，通过[ProgressType](../harmonyos-references/ts-ba
     .style({ strokeWidth: 15})    // 设置strokeWidth进度条宽度为15vp
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/yiNeX3ZoT0uQwjxWlBg9Kw/zh-cn_image_0000002817506207.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB11F714716E896BE3822944A2D5BA9479A67974F2D90482230AEF2097A18151)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Nxn3TpNPS4uIXVC7pScQOQ/zh-cn_image_0000002820525057.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=78C5DB4A4F8D7C5054D509CA58A7353E82AD3EA8CF6DF87AD421ECF225757BA2)
 * 环形有刻度样式进度条
 
   ```typescript
@@ -68,7 +68,7 @@ Progress有5种可选类型，通过[ProgressType](../harmonyos-references/ts-ba
     .style({ strokeWidth: 15, scaleCount: 20, scaleWidth: 3 })    // 设置环形有刻度进度条宽度15vp，总刻度数为20，刻度宽度为3vp
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/-XXIG3FvTmWL-hMZLPynAg/zh-cn_image_0000002788306778.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=252186F33A35EF1D67AB538636F10937CBA23A71A8B03131969E8747FFE1E9F1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/4IiD5Rv_TvebVkPkkj5gjQ/zh-cn_image_0000002820405057.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DCE96CF8999A913AB8E31BAC91D39756EFBC68ECF56E07308599DC98670A9D1)
 * 圆形样式进度条
 
   ```typescript
@@ -78,7 +78,7 @@ Progress有5种可选类型，通过[ProgressType](../harmonyos-references/ts-ba
   Progress({ value: 20, total: 150, type: ProgressType.Eclipse }).color(Color.Grey).width(100).height(100)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Ssar6EMUTUSrG6aWExZiDQ/zh-cn_image_0000002817426141.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8BB6ECE4E4883B107353E62327CBF80B180B85677BA88B5BC806918163C8EB5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/BRZ82jKTQqqUgzaaemlWVw/zh-cn_image_0000002791725078.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F4277B1B9A7E0E0E98C880A082E7B0102FF45014D55679A87C860568F193A17)
 * 胶囊样式进度条
 
   **说明** 
@@ -93,7 +93,7 @@ Progress有5种可选类型，通过[ProgressType](../harmonyos-references/ts-ba
   Progress({ value: 50, total: 150, type: ProgressType.Capsule }).width(50).height(100).color(Color.Blue).backgroundColor(Color.Black)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/JM2DOGziSp-tEAM9ndcwDQ/zh-cn_image_0000002788466722.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=822000C439ACBA332F99F2D0EC0E93F17E96E299ECCD8822B8CA2D7581EE1FE0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/avOMP2KdQDG1LOuxQfk-PQ/zh-cn_image_0000002791565106.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=90576E9829131AC8708CD6BD22782DE0F05A68CEB81CA0F2C13BC66BF4829723)
 
 ## 场景示例
 
@@ -123,4 +123,4 @@ struct ProgressCase1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/MRhONAUoTaOk_jxxKZto-w/zh-cn_image_0000002817506209.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D472B165C9A316A91445BB49A1ADFAF19244F189D5E1CB7021A85AAC9E247B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/zHl6KjDdT7-6zSHLYenw9w/zh-cn_image_0000002820525059.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=58A19359BA0BDE3FD5E8A7BDD963D8E9BD59D9228E083D2A1A7796CD433514AB)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-crea
 title: 构建本地实况窗
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > 开发实况窗场景 > 构建本地实况窗
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:23+08:00
+scraped_at: 2026-11-19T09:49:04+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:25697afd1eb83244d9ed2c1118d389d91928174fcfa25d3b4beee08ae7af4a87
+content_hash: sha256:2f04a56571200e2c44a2766e57308d4e8e5f45ee7f03cec700954ed4a5f2e5b7
 ---
 
 ## 简介
@@ -42,13 +42,13 @@ export class LiveViewController {
 
 进度可视化模板适用于打车、外卖等场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/56ikc2npRnuAz3fpxMYBNQ/zh-cn_image_0000002817507543.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=F624CA963D977B15D2FFF4F3C15B8204213B70F37D534B891F6FAA11F74213AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/O_v0cPneSdu0j_XHLuH3VA/zh-cn_image_0000002820526393.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED5EAB2233B9DB4113E55259298F84B59572F716F5150215F8E9566674D957A2)
 
 从6.0.2(22)开始，实况窗卡片进度可视化模板支持显示雨、雪天气动效背景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/ySm7yqHaT6Gk_QTEouWkvQ/zh-cn_image_0000002788308112.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD1C945F60C9529A04FF512A634FD650684C03F3674AEA3E431038E42ADF9315)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/IQK6LZ6WRyeJ7s4RSyGm0Q/zh-cn_image_0000002820406393.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5D712A00D2A57F173201E1F4D3565D16234D1D146A07BEB95AA45C38C363A34)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/XNDeikMuSaiXnhK2DfHH2w/zh-cn_image_0000002817427475.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=582F1353E232C8C12B506E7A21158E58C6CFDD5CE74347AED86BE57436A8CD07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/wyUNlDFsSZ6r-IApQVNm-Q/zh-cn_image_0000002791726414.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DE39F844C122A80066E0E65DCB9AE761BCAFBB0151D18D1DB7FABC6FB83BF01)
 
 示例代码如下：
 
@@ -181,13 +181,13 @@ export class ContextUtil {
 
 强调文本模板适用于取餐、排队等场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/Rtd31DCBQlyPFJwfItN-9g/zh-cn_image_0000002788468056.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=F35A19B1715931D79834D2CFC242924B1089D2518B58E513209C378A5884084A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/rjXFwdXBS-ehjtux6Ccnzw/zh-cn_image_0000002791566442.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CD275415D1D9BD3A108261F826F41039B80AC0B6D2FE786EC1E59AB7809F2BD)
 
 从6.0.2(22)开始，实况窗卡片强调文本模板支持显示雨、雪天气动效背景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/a-diGS6jTTWJ2ZYMCLdTWw/zh-cn_image_0000002817507545.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=F722DC704569841C0EB150E53522A640F4714F79D7DC5C66D9EBEFC141A06AB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/SiVAxzFhRouGvPHJOIFUfg/zh-cn_image_0000002820526395.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C54D8B6AEBA5C9397644A1C772FB1A6DE81D2651E32D64E79B22D7C687A5571)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/tVUa8F-mTKScR4m7DKw1tQ/zh-cn_image_0000002788308114.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AEF35BE5CC5D2D709BA4C544220A651F52680A6924A98B31E7486B751FF033E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/94y4xaknTE25v99wtH5C9A/zh-cn_image_0000002820406395.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DEE2B9587A0B17B4D6FB4671771CB09FD90D1BA10B04D1274C20C11FDCEC97F)
 
 示例代码如下：
 
@@ -315,11 +315,11 @@ export class ContextUtil {
 
 左右文本模板适用于高铁、航班等场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/5e5sx3RNSxeJO1QEfllSIA/zh-cn_image_0000002817427477.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=21B60152EB2E9C019F00575FD8700F3F4BD708E1BA25CD09DF8FF633329115FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/t6HY7p25SpmixT-8Dxq_ag/zh-cn_image_0000002791726416.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=68AB48915A3E97E1CB871CC99578080D00BEBA1793BD84F7BDF2C16F95F36738)
 
 从6.0.0(20)开始，实况窗卡片左右文本模板支持显示雨、雪天气动效背景或夕阳、赏月氛围背景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/BOOxNdVyRTSzXDfk6Pl-JQ/zh-cn_image_0000002788468058.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=9419B35228D1734BCBAA54D7676F54F6F3C7FC0E7EDD5CC38E8088BD26E52233)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/rJ0CdPonSqCyZcsxUKR4GQ/zh-cn_image_0000002791566444.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C6DB7BE10CAF87A910F85DC98012C6CB261AEB78FDCD2BE2ED2EC072D405014)
 
 示例代码如下：
 
@@ -463,7 +463,7 @@ export class ContextUtil {
 
 赛事比分模板适用于赛事场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/4MVUynZYRF2iTycqEEo35w/zh-cn_image_0000002817507547.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1E317216210C39D1613FDE22FB18D90DE7755CAF1ACD88ECB771FD78D1027DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/9f_synepSoOVjuZ9zn6NtQ/zh-cn_image_0000002820526397.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD1B2B5E4B02B723DCD0A391A3B37EBB1E6F536EEA317150538541D8C7F9E4D2)
 
 示例代码如下：
 
@@ -597,7 +597,7 @@ export class ContextUtil {
 
 导航模板适用于出行导航场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/kvG0WAkcSwWmNbHsA40w0A/zh-cn_image_0000002788308116.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=E06FA53668D398B560298986223E5DF1DA8E8FF7D9D4B38BD878DBAC5570B4BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/pLtNvQykTPe4zO_AdUYz9g/zh-cn_image_0000002820406397.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=635A123A040C5F0D6C4540E7AF6368BF79036968D1B563C0CCA93F4B9CC6E149)
 
 示例代码如下：
 
@@ -1281,7 +1281,7 @@ export class ContextUtil {
 
 ### 实况胶囊
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/rXYiBERUSkSCn9QNcfl40g/zh-cn_image_0000002817427479.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=59A9B63F7A05EA3C3CC00DDCB1702CA9D91F9DC682D6178113EE94B2635203AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/nhV_xH76T6C8bLErA12R-A/zh-cn_image_0000002791726418.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EE6D5F5667B4FB176B9D1D468CD12000B1077C378C6C3D6DF31DA353127948F)
 
 **说明** 
 
@@ -1419,7 +1419,7 @@ export class ContextUtil {
 
 ### 小折叠外屏实况窗
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/60ae3ldFTbaZo-Bms3wEVQ/zh-cn_image_0000002788468060.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D4C43E3C33F9A9D8CF3070FA2F8C4E62702648AA1149928E19E7F5612F8F1E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/vpeCrNK6RBKF097pBUartA/zh-cn_image_0000002791566446.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=D307112DD006AD09352F47B5DF59667CC5D8FDE5ADA0F509BB1FF80F9C8A9107)
 
 外屏实况窗适用于在小折叠屏的外屏显示实况窗的简要信息，方便用户可以在折叠状态便捷查看。
 
@@ -1561,7 +1561,7 @@ export class ContextUtil {
 
 例如：固定区的文本内容中使用占位符，系统将替代占位符为实况窗计时器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/mFjv1YOfSC2dauRqkSFhDg/zh-cn_image_0000002817507549.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DBA8BE2B78F1425CA77B2B6F15F2076F87D7920E95C54FA9BCD4B9DB4CB6097)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/UX0bOlx4SJOu2GZHj2wjzw/zh-cn_image_0000002820526399.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3F92759CDE4F6B495ADD00D6E516BD9583624346953E96EEC62CC90B8621075)
 
 示例代码如下：
 

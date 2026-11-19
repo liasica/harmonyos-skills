@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-avcodec-i
 title: 基于AVCodec播放DRM节目(C/C++)
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > 基于AVCodec播放DRM节目(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:05+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:77524de0fe79c83f49758cb686b20fc8f294a644c0dfa807f4fd557f46afac52
+scraped_at: 2026-11-19T09:48:38+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:440bf32552f021973d91ba2ff64d699d1ae9f873ede98ec861c1fa6e42a46bfe
 ---
 
 ## 功能介绍
@@ -36,7 +36,7 @@ content_hash: sha256:77524de0fe79c83f49758cb686b20fc8f294a644c0dfa807f4fd557f46a
 
 在应用开发过程中，开发者应按一定顺序调用方法，执行对应操作，否则系统可能会抛出异常或生成其他未定义的行为。具体顺序可参考下列开发步骤及对应说明。
 
-### 在 CMake 脚本中链接动态库
+### 在CMake脚本中链接动态库
 
 ```cmake
 target_link_libraries(sample PUBLIC libnative_drm.so)

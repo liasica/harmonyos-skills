@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-hdr-sh
 title: HDR Vivid相机拍照(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > HDR Vivid相机拍照(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:16+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:b944ca9f830f2ac17db34e4cd88bbb45d83845918d2585e7dba11a2f097c7334
+scraped_at: 2026-11-19T09:48:37+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:798368204d32b716e8ed9d16f6381ead306b01bc3ac7a9b5e8a959cfe7f2c763
 ---
 
 HarmonyOS支持调用接口拍摄HDR Vivid照片，可以拍出层次表现更细腻、光影细节更丰富的画面，提升画面质感，呈现更卓越的视觉效果。
@@ -18,7 +18,7 @@ HarmonyOS支持调用接口拍摄HDR Vivid照片，可以拍出层次表现更�
 
 1. 导入接口。
 
-   ```ts
+   ```typescript
    import { camera } from '@kit.CameraKit';
    import { colorSpaceManager } from '@kit.ArkGraphics2D';
    import { image } from '@kit.ImageKit';
@@ -28,8 +28,8 @@ HarmonyOS支持调用接口拍摄HDR Vivid照片，可以拍出层次表现更�
    ```
 2. 查询支持的色彩空间。
 
-   ```ts
-   function getSupportedColorSpaces(session: camera.PhotoSession): Array<colorSpaceManager.ColorSpace> {
+   ```typescript
+   getSupportedColorSpaces(session: camera.PhotoSession): Array<colorSpaceManager.ColorSpace> {
      let colorSpaces: Array<colorSpaceManager.ColorSpace> = [];
      try {
        colorSpaces = session.getSupportedColorSpaces();
@@ -44,8 +44,8 @@ HarmonyOS支持调用接口拍摄HDR Vivid照片，可以拍出层次表现更�
 
    如果是SDR拍照色彩空间需要设置为SRGB，如果是HDR拍照色彩空间需要设置为DISPLAY\_P3。具体参考[setColorSpace](../harmonyos-references/arkts-apis-camera-colormanagement.md#setcolorspace12)。
 
-   ```ts
-   function setColorSpaceBeforeCommitConfig(session: camera.PhotoSession, isHdr: boolean): void {
+   ```typescript
+   setColorSpaceBeforeCommitConfig(session: camera.PhotoSession, isHdr: boolean): void {
      let colorSpace: colorSpaceManager.ColorSpace = isHdr? colorSpaceManager.ColorSpace.DISPLAY_P3 : colorSpaceManager.ColorSpace.SRGB;
      let colorSpaces: Array<colorSpaceManager.ColorSpace> = getSupportedColorSpaces(session);
      let isSupportedColorSpaces = colorSpaces.indexOf(colorSpace) >= 0;
@@ -63,7 +63,7 @@ HarmonyOS支持调用接口拍摄HDR Vivid照片，可以拍出层次表现更�
 
    在提交会话配置前执行步骤3设置色彩空间，其余流程按照正常拍照流程开发。
 
-   ```ts
+   ```typescript
    async function savePicture(buffer: ArrayBuffer, img: image.Image, context: Context): Promise<void> {
      let accessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
      let options: photoAccessHelper.CreateOptions = {

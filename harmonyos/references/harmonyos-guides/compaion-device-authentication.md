@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/compaion-devi
 title: 伴随设备认证
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 伴随设备认证
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:34+08:00
+scraped_at: 2026-11-19T09:48:12+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:55765bae566c447d126afacba74a79da7498393cd4b8ac12d3d1210809cc9e11
+content_hash: sha256:45a1c8341aa8b94189b928763d21aace150c3c56de0ce3d11bd56e2f7c4ea6f2
 ---
 
 从API版本26.0.0开始，用户认证服务新增伴随设备认证方式。用户可通过佩戴的伴随设备完成身份认证。
@@ -25,7 +25,7 @@ content_hash: sha256:55765bae566c447d126afacba74a79da7498393cd4b8ac12d3d1210809c
 
 发起伴随设备认证前需先在主设备上“设置->生物识别与密码->协同认证”页面添加伴随设备。具体流程如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/S1NX5K_IQGKTCmVj4P0oiA/zh-cn_image_0000002788467378.png?HW-CC-KV=V1&HW-CC-Date=20261114T004733Z&HW-CC-Expire=31536000000&HW-CC-Sign=53FE24471FCB7C9AD183516A802472FCC79605E6BE8984064FE0AB1C7C941EBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/1mmOqEE1Szm8Cc4EHC1XMw/zh-cn_image_0000002791565762.png?HW-CC-KV=V1&HW-CC-Date=20261119T014721Z&HW-CC-Expire=31536000000&HW-CC-Sign=B92DD26FFBEBAC1B4CC1D1DDBDAED8E50BD6EC2B261CDBAB7AFE360664C6C314)
 
 **说明** 
 

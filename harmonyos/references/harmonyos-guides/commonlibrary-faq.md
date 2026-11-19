@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/commonlibrary
 title: 基础库常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > 基础库常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:03+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:90b8466846cf2117f5701fc4a0a5c7eeb0e83f5170c7952721452ee2dbe89846
+scraped_at: 2026-11-19T09:47:31+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:7fde47dec8387806f73032b0f035acbee33be6b83cb25b789db35e09672a8a1f
 ---
 
 ## 解析大文件xml发生内存溢出（Out of Memory）
@@ -19,7 +19,7 @@ content_hash: sha256:90b8466846cf2117f5701fc4a0a5c7eeb0e83f5170c7952721452ee2dbe
 3. **编写解析代码**：使用libxml2提供的API实现流式解析逻辑。
 4. **XML对象处理**：当XML文件大小超过100MB时，建议在Native侧处理。
 
-关于如何在ArkTS侧引用编译生成的三方so库，请参考文档：[如何在ArkTS侧引用其他三方so库](../harmonyos-faqs/faqs-ndk-21.md)。
+关于如何在ArkTS侧引用编译生成的三方so库，请参考文档：[如何在ArkTS侧引用其他三方so库](../harmonyos-faqs/ndk-development-faq-0003.md)。
 
 libxml2库支持的回调函数主要如下所示：
 

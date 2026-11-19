@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inputmethod-a
 title: 实现一个输入法应用
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 实现一个输入法应用
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:20+08:00
+scraped_at: 2026-11-19T09:47:57+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:248f15dc5c04ff42cf5e21e8b47c61f5b54e363eb7ad8ba788db2aea0dffeb4d
+content_hash: sha256:1b5fb7e1f5518212e64f28797539360ea51c53f21af444eab8e1ff09da85919d
 ---
 
 [InputMethodExtensionAbility](../harmonyos-references/js-apis-inputmethod-extension-ability.md)提供了onCreate()和onDestroy()生命周期回调，根据需要重写对应的回调方法。InputMethodExtensionAbility的生命周期如下：
@@ -71,7 +71,7 @@ content_hash: sha256:248f15dc5c04ff42cf5e21e8b47c61f5b54e363eb7ad8ba788db2aea0df
    ```
 2. KeyboardController.ets文件。KeyboardController中除创建输入法窗口，设置输入法事件监听，实现文本插入、删除之外，还可以使用Panel对象的[getSystemPanelCurrentInsets](../harmonyos-references/js-apis-inputmethodengine.md#getsystempanelcurrentinsets21)获取输入法键盘与系统面板的偏移区域，输入法系统面板在不同设备上存在差异，当设备有系统面板时，输入法软键盘相对系统面板的偏移区域如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/0LrBq1GSRxuDZfZvzbSSuA/zh-cn_image_0000002817426679.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=068E1449E16BE83E2BF87189B8192AB3CFC0CA19DDA12C90D554B52AF1AC8027)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/TtKymiKySVSmqmKMbllL-g/zh-cn_image_0000002791725616.png?HW-CC-KV=V1&HW-CC-Date=20261119T014757Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA421ED3F372849CE2FF66AF235E405BFB00C5C2B01214F5912185E687077FD9)
 
    ```typescript
    // 定义输入法的两个子类型
@@ -954,4 +954,4 @@ content_hash: sha256:248f15dc5c04ff42cf5e21e8b47c61f5b54e363eb7ad8ba788db2aea0df
 
 ## 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/9UF5k2E5T5CACN823I8pIQ/zh-cn_image_0000002788467260.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6A5DBDB5106681A180B46217A3B81F26D6DEF9D5865C0D338A2B4D402527FBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/fTveVhJ9QtyaMV5cC6wiEg/zh-cn_image_0000002791565644.png?HW-CC-KV=V1&HW-CC-Date=20261119T014757Z&HW-CC-Expire=31536000000&HW-CC-Sign=75DAC4801DC4A0637F6A41FE3DE62651F8F2F6B62DEC8B2FD248AB2191B31999)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usb-serial-dd
 title: 开发适用串口协议的设备驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用串口协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:42+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:82c33081e4f030bb47e0779f42d27b039fa6b9a2dbf5c5ea06d540312367439a
+scraped_at: 2026-11-19T09:48:22+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:35d4d9cf2c470df1a88ff0e1187e12dff455c1b5ff41e0b40949cb7d91ebe2f0
 ---
 
 ## 简介
@@ -41,7 +41,7 @@ content_hash: sha256:82c33081e4f030bb47e0779f42d27b039fa6b9a2dbf5c5ea06d54031236
 
 **图1** USBSerialDDK调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/WscGtXOsR7-ElWHKqr9iMw/zh-cn_image_0000002817426873.png?HW-CC-KV=V1&HW-CC-Date=20261114T004742Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9AD504150C8FB9E17A8F8CB61E72B1CC169148783F59FF41DA7A7BF0828CDDD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/gAnNQXmjSjGU-_EGS7oMIA/zh-cn_image_0000002791725812.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=653B63684B9EFA7EEADFF46B4054BB0B0F5B59E49AE436FF98BEC9E0016D53DE)
 
 ### 约束与限制
 
@@ -59,19 +59,19 @@ content_hash: sha256:82c33081e4f030bb47e0779f42d27b039fa6b9a2dbf5c5ea06d54031236
 
 | 名称 | 描述 |
 | --- | --- |
-| OH\_UsbSerial\_Init(void) | 初始化USBSerialDDK。 |
-| OH\_UsbSerial\_Release(void) | 释放USBSerialDDK。 |
-| OH\_UsbSerial\_Open(uint64\_t deviceId, uint8\_t interfaceIndex, UsbSerial\_Device \*\*dev) | 通过deviceId和interfaceIndex打开USB串口设备。请在设备使用完后调用OH\_UsbSerial\_Close()关闭设备，否则会造成内存泄漏。 |
-| OH\_UsbSerial\_Close(UsbSerial\_Device \*\*dev) | 关闭USB串口设备，请在设备使用完后关闭设备，否则会造成内存泄漏。 |
-| OH\_UsbSerial\_Read(UsbSerial\_Device \*dev, uint8\_t \*buff, uint32\_t bufferSize, uint32\_t \*bytesRead) | 从USB串口设备读取数据到缓冲区。 |
-| OH\_UsbSerial\_Write(UsbSerial\_Device \*dev, uint8\_t \*buff, uint32\_t bufferSize, uint32\_t \*bytesWritten) | 将buff中的数据写入USB串口设备。 |
-| OH\_UsbSerial\_SetBaudRate(UsbSerial\_Device \*dev, uint32\_t baudRate) | 设置USB串口设备的波特率。如果USB串口设备的参数为默认值（数据位为8，停止位为1，数据传输无校验），则只需要调用该接口设置波特率即可。 |
-| OH\_UsbSerial\_SetParams(UsbSerial\_Device \*dev, UsbSerial\_Params \*params) | 设置USB串口设备的参数，包含波特率、数据位、停止位、校验设置。 |
-| OH\_UsbSerial\_SetTimeout(UsbSerial\_Device \*dev, int timeout) | 设置读取USB串口设备上报数据的超时时间，默认时间为0。 |
-| OH\_UsbSerial\_SetFlowControl(UsbSerial\_Device \*dev, UsbSerial\_FlowControl flowControl) | 设置流控参数。 |
-| OH\_UsbSerial\_Flush(UsbSerial\_Device \*dev) | 写入完成后清空输入和输出缓冲区。 |
-| OH\_UsbSerial\_FlushInput(UsbSerial\_Device \*dev) | 刷新输入缓冲区，缓冲区中的数据会被立刻清空。 |
-| OH\_UsbSerial\_FlushOutput(UsbSerial\_Device \*dev) | 刷新输出缓冲区，缓冲区中的数据会被立刻清空。 |
+| int32\_t OH\_UsbSerial\_Init(void) | 初始化USBSerialDDK。 |
+| int32\_t OH\_UsbSerial\_Release(void) | 释放USBSerialDDK。 |
+| int32\_t OH\_UsbSerial\_Open(uint64\_t deviceId, uint8\_t interfaceIndex, UsbSerial\_Device \*\*dev) | 通过deviceId和interfaceIndex打开USB串口设备。请在设备使用完后调用OH\_UsbSerial\_Close()关闭设备，否则会造成内存泄漏。 |
+| int32\_t OH\_UsbSerial\_Close(UsbSerial\_Device \*\*dev) | 关闭USB串口设备，请在设备使用完后关闭设备，否则会造成内存泄漏。 |
+| int32\_t OH\_UsbSerial\_Read(UsbSerial\_Device \*dev, uint8\_t \*buff, uint32\_t bufferSize, uint32\_t \*bytesRead) | 从USB串口设备读取数据到缓冲区。 |
+| int32\_t OH\_UsbSerial\_Write(UsbSerial\_Device \*dev, uint8\_t \*buff, uint32\_t bufferSize, uint32\_t \*bytesWritten) | 将buff中的数据写入USB串口设备。 |
+| int32\_t OH\_UsbSerial\_SetBaudRate(UsbSerial\_Device \*dev, uint32\_t baudRate) | 设置USB串口设备的波特率。如果USB串口设备的参数为默认值（数据位为8，停止位为1，数据传输无校验），则只需要调用该接口设置波特率即可。 |
+| int32\_t OH\_UsbSerial\_SetParams(UsbSerial\_Device \*dev, UsbSerial\_Params \*params) | 设置USB串口设备的参数，包含波特率、数据位、停止位、校验设置。 |
+| int32\_t OH\_UsbSerial\_SetTimeout(UsbSerial\_Device \*dev, int timeout) | 设置读取USB串口设备上报数据的超时时间，默认时间为0。 |
+| int32\_t OH\_UsbSerial\_SetFlowControl(UsbSerial\_Device \*dev, UsbSerial\_FlowControl flowControl) | 设置流控参数。 |
+| int32\_t OH\_UsbSerial\_Flush(UsbSerial\_Device \*dev) | 写入完成后清空输入和输出缓冲区。 |
+| int32\_t OH\_UsbSerial\_FlushInput(UsbSerial\_Device \*dev) | 刷新输入缓冲区，缓冲区中的数据会被立刻清空。 |
+| int32\_t OH\_UsbSerial\_FlushOutput(UsbSerial\_Device \*dev) | 刷新输出缓冲区，缓冲区中的数据会被立刻清空。 |
 
 详细的接口说明请参考[USBSerialDDK](../harmonyos-references/capi-serialddk.md)。
 

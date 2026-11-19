@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mutable
 title: mutableBuilder：实现全局@Builder动态更新
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > mutableBuilder：实现全局@Builder动态更新
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:59+08:00
+scraped_at: 2026-11-19T09:47:36+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:fcb27c7c6ab3b3032829df165490c9fc4d71b4b83723615f2a5175f495cfe133
+content_hash: sha256:602c7a91633ad70d7d857407b66cb0b29da3690f05143824bec379960d904cc9
 ---
 
 当在一个自定义组件内使用多个全局[@Builder](arkts-builder.md)函数实现UI的不同效果时，代码维护将变得非常困难，且页面不够整洁。此时，可以使用[wrapBuilder](arkts-wrapbuilder.md)封装全局@Builder。但是wrapBuilder不支持动态切换@Builder，引入[mutableBuilder](../harmonyos-references/ts-universal-mutablebuilder.md)实现全局@Builder的动态切换。
@@ -216,7 +216,7 @@ struct MyApp {
 
 点击Button，可将textBuilder动态更改为buttonBuilder，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/vNoC03h5R_S9MgqfpBW2PQ/zh-cn_image_0000002817505711.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=05F4EB95929BA26D1C187E815225B587B37E5277B947C7859091BBF5371BFF76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Nk1LP5TrSsGNZERkiJsz_A/zh-cn_image_0000002820524559.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=4287DE1AC895BB5A6437CE329E2159F3332E07F7D452773D140E270F97DB4808)
 
 ## 使用mutableBuilder显示弹出菜单
 
@@ -318,6 +318,6 @@ struct MyApp {
 
 点击Click to change按钮，可将textBuilder动态切换为buttonBuilder，this.message将自动加B，界面会显示initB按钮。点击initB按钮，buttonBuilder中的p.value将自动加b，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/eYmf7EgiSwWX55R5Wpl1bA/zh-cn_image_0000002788306282.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8C8472199E0FB31C58442B2B49B06016DDDBB5CCC6B49A14F2D0AD30942977C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Y6LSdNjhQ9eSNmPdHt-_pw/zh-cn_image_0000002820404559.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4A1DC47DEC392CBD126AF6F83124621BE9DB44FFCDEF8215169A8B2E78F6AE4)
 
 点击Click to change按钮将textBuilder动态切换为buttonBuilder时，@Monitor将监听到全局@Builder的变化，并打印日志Builder changed. is buttonBuilder: true。

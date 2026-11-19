@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Enums
 category: harmonyos-references
-scraped_at: 2026-11-12T09:56:20+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:3a7e921183b3dab34518884ee2a3f012e90a9c11d0978019da685c43bb309c30
+scraped_at: 2026-11-19T09:53:25+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:60c50425a3ae7e73258167ed7093ea2151e5a59370a94c0fbef039af831deb7e
 ---
 
 **说明** 
@@ -466,7 +466,7 @@ content_hash: sha256:3a7e921183b3dab34518884ee2a3f012e90a9c11d0978019da685c43bb3
 | --- | --- | --- |
 | PRIVACY\_TYPE\_PUBLIC | 0 | 表示音频流可以被其他应用录制或屏幕投射，不包含隐私类型的流。 |
 | PRIVACY\_TYPE\_PRIVATE | 1 | 表示音频流不可以被其他应用录制或屏幕投射。 |
-| PRIVACY\_TYPE\_SHARED21+ | 2 | 表示音频流可以被其他应用录制或屏幕投射，包含隐私类型的流。  例如，在PRIVACY\_TYPE\_PUBLIC策略下，[STREAM\_USAGE\_VOICE\_COMMUNICATION](arkts-apis-audio-e.md#streamusage)类型音频流不会被其他应用录制或屏幕投射。  然而，在PRIVACY\_TYPE\_SHARED策略下，这些音频流将会允许被其他应用录制或屏幕投射。 |
+| PRIVACY\_TYPE\_SHARED21+ | 2 | 表示音频流可以被屏幕投射，包含隐私类型的流。  例如，在PRIVACY\_TYPE\_PUBLIC策略下，[STREAM\_USAGE\_VOICE\_COMMUNICATION](arkts-apis-audio-e.md#streamusage)类型音频流不会被屏幕投射。  然而，在PRIVACY\_TYPE\_SHARED策略下，这些音频流将会允许被屏幕投射。 |
 
 ## ChannelBlendMode11+
 

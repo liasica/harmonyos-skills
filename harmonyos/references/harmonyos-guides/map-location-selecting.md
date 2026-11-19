@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location-
 title: 地点选取
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > 地点选取
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:25+08:00
+scraped_at: 2026-11-19T09:49:06+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1d470ac94d95f2180f9987e7198695584f1b817b8623f3d1361605311ca9300a
+content_hash: sha256:adcd2855851f1d7af33687cde0799aea3828e217a9074091c94c60c8296de8cb
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:1d470ac94d95f2180f9987e7198695584f1b817b8623f3d1361605311ca
 
 **图1** 地点选取页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/CwhudAz3RMqna4CltcuI6w/zh-cn_image_0000002788308186.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2273E9B7DA61335408A6B81D83D67D280330FE32C868C0244FE6F792891950A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/JhlEckPFQG2VtpUyNHDRuA/zh-cn_image_0000002820406467.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B83B81CCF44DA3098A51F18000DEDE29C53AB7D69828E85728DCA2E03BE5199 "点击放大")
 
 **图2** 地点选取
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/r-mCIHasQiSE27W3oLo1cg/zh-cn_image_0000002817427549.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EBB5A298A7135F6231AFC8738EF9B30C76B58F9B6F5C16ECF99A6AAEF251C48 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/dK0J4a3oTQqOQDgWabRrEA/zh-cn_image_0000002791726488.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=205E28351C1085064C5B4DB075269DFDFF5B35B3FED636E7F587DB5764F6A930 "点击放大")
 
 ## 约束与限制
 

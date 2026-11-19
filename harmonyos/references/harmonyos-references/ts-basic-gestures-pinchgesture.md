@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: PinchGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > PinchGesture
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:08+08:00
+scraped_at: 2026-11-19T09:50:55+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:10247c7a273845ee56eb00db8b03891f1dbf4cc06c90597d7fa4a646750d0360
+content_hash: sha256:33027c2e22b7f3c395155e09b8207c725bf24346f81cc6b13d2b345ed655c357
 ---
 
 用于触发捏合手势，常用于实现图片、页面内容等对象的缩放交互。最少需要2指，最多5指，最小识别距离为5vp。在支持鼠标和键盘输入的设备上，通过“Ctrl+鼠标滚轮”也可以触发捏合手势。
@@ -193,7 +193,7 @@ struct PinchGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Q_cOHHsIRaayGQybYoC__w/zh-cn_image_0000002817508251.png?HW-CC-KV=V1&HW-CC-Date=20261114T005008Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E65B3945451F19386C7A9075000EDD766D32990A82C2D5737EEF2803FD34E5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/A9xXPrwIQcuuoTI1mH9p3A/zh-cn_image_0000002820527101.png?HW-CC-KV=V1&HW-CC-Date=20261119T014959Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DE67D4FB216ACB3B735AE0574F108088D64181DE1DB4BE2E589A28A1A4E987D)
 
 ### 示例2（实现图片跟手缩放）
 
@@ -291,4 +291,4 @@ struct PinchGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/NfeIycp0QjiVEqKF2kXXWg/zh-cn_image_0000002788308820.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005008Z&HW-CC-Expire=31536000000&HW-CC-Sign=B01007DBDB7B44869195F6E473FEFF52765490B792753D77631522AD86A10A99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/CXh3E1AGQZe4HpDtXnAyQw/zh-cn_image_0000002820407101.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014959Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCCBE8284931FCC25DD8048922CDC4E9723764C40CE768714440662E02EF601E)

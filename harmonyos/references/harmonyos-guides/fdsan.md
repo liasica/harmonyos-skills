@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fdsan
 title: fdsan使用指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > C/C++标准库 > fdsan使用指导
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:42+08:00
+scraped_at: 2026-11-19T09:49:23+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:bfa8bd9d793db30882caba76b5c121741e2e19adb6e37f83a7a26a7dbcdac00b
+content_hash: sha256:7c1844b1b541284f03efb7341a5f9c674053b7157a30617999f260d5bc1bca25
 ---
 
 ## 功能介绍
@@ -24,7 +24,7 @@ value用于标识实际的owner tag。
 
 tag构成图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/kj-s2r6KTlKd30TfpFgdvg/zh-cn_image_0000002788468476.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B641AE2808640988769E6FBF88A5E2B7CAEFCD51CFAC01840FC138A68027724)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/mLk4iMtUQdaQkrnADKZ8-Q/zh-cn_image_0000002791566862.png?HW-CC-KV=V1&HW-CC-Date=20261119T014828Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADB127A218B1737737784F1A26A9AF97C1C694FD0B3192650B45FF4546440B10)
 
 ## 接口说明
 
@@ -223,7 +223,7 @@ int main()
 
 上述代码中的good\_write函数会打开一个文件并写入一些字符串，而bad\_close函数中也会打开一个文件同时包含double-close问题，这两个线程同时运行执行情况如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/DGHrULnvQrm5ypkGKbIFHA/zh-cn_image_0000002817507965.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD6C0D3E768C74981974045BD45C8E5BD24FF47C10182EEB0E5B5CACD04A3957)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/N0iKv0ywQrinnnLJA8IumQ/zh-cn_image_0000002820526815.png?HW-CC-KV=V1&HW-CC-Date=20261119T014828Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1D8245FDE75B25C4E5E67BA9D5D15ED0B0B83C3D2ABFE0BFB3D10A5A65BB530)
 
 由于每次open返回的文件描述符（fd）是顺序分配的，进入主函数后第一个可用的fd是43。在bad\_close 函数中，第一次open返回的fd也是43。关闭之后，43变成可用的fd。在good\_write函数中，open返回了第一个可用的fd，即43。然而，由于bad\_close函数中存在重复关闭问题，错误地关闭了另一个线程中打开的文件，导致写入失败。
 

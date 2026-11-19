@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:25+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6e200c08759057f64638129b69ac57d607e38f5c5b9d893bf0ced6ef7a44c19d
+scraped_at: 2026-11-19T09:48:56+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:5a911c97ef88fcac3180c1cf8f7ea695dec57808cb81418d3770393928b8da9a
 ---
 
 ## 环境准备
@@ -18,8 +18,8 @@ content_hash: sha256:6e200c08759057f64638129b69ac57d607e38f5c5b9d893bf0ced6ef7a4
 
 在开发应用前，需要在AppGallery Connect中配置项目和应用信息。包括：
 
-* [注册账号](../start/registration-and-verification-0000001053628148.md)和[企业开发者实名认证](../start/edrna-0000001062678489.md)。
-* [创建项目](../app/agc-help-create-project-0000002242804048.md)和[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
+* [注册账号](../doccenter-getting-started/hdc-registration-0000002723008096.md)和[企业开发者实名认证](../doccenter-getting-started/hdc-edrna-0000002752527889.md)。
+* [创建项目](../doccenter-getting-started/agc-help-create-app-0000002247955506.md)和[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
 * [申请企业MDM应用发布证书](../app/agc-help-enterprise-mdm-cert-0000002283256801.md)和[申请企业MDM应用发布Profile](../app/agc-help-enterprise-mdm-profile-0000002248341094.md)。
 
 ## 申请接口所需权限

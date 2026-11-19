@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-developm
 title: Wi-Fi扫描开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > WLAN > Wi-Fi扫描开发指南
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:13+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:40e5c5e6ccd9ec63eb8fafb73e81f17fcb1d7c7f31a0cc9a4599da0dee899d9e
+scraped_at: 2026-11-19T09:48:13+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:aa6ec9f3ed4057ed22e240a92d2c92ef7f032595a59e377d8bebd6472fa3dd89
 ---
 
 ## 简介
@@ -38,7 +38,7 @@ Wi-Fi扫描是指设备（如手机、电脑、路由器等）搜索周围可用
 1. 导入需要的Wi-Fi模块。
 2. 需要SystemCapability.Communication.WiFi.STA系统能力。
 3. 需要权限ohos.permission.GET\_WIFI\_INFO。
-4. 开启设备的Wi-Fi。
+4. 开启设备的Wi-Fi，开启之前您可以调用[wifiManager.isWlanSupported](../harmonyos-references/js-apis-wifimanager.md#wifimanageriswlansupported)查询设备是否支持Wi-Fi。
 5. 示例代码：
 
    **说明** 

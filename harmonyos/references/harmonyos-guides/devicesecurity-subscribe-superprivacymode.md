@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 订阅超级隐私模式状态改变事件
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 超级隐私模式 > 订阅超级隐私模式状态改变事件
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:29+08:00
+scraped_at: 2026-11-19T09:48:08+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:7c5c5cb7f72fe80cb84e847f0e3552703a7d51d0d520c63b547d8fcb041157e6
+content_hash: sha256:09e3b7956b719a33e56bf512eee2fe5bc54f23157404f4ccc5196b0a04294f8a
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:7c5c5cb7f72fe80cb84e847f0e3552703a7d51d0d520c63b547d8fcb041
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/YID_Zlk6Rv-W1_n2TRvxvw/zh-cn_image_0000002817426785.png?HW-CC-KV=V1&HW-CC-Date=20261114T004549Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D8E0A465694FE6AED5572FFBABB25BDAF845B3508E7D9BDB10D3946175E7C17)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/CRszp7DrSc-7CQRKg0lJLQ/zh-cn_image_0000002791725722.png?HW-CC-KV=V1&HW-CC-Date=20261119T014716Z&HW-CC-Expire=31536000000&HW-CC-Sign=35F576F84982D99F7B7ABA977DAA33CA086C524B4BF14A875ACB4FB8AC9648EE)
 
 **流程说明：**
 

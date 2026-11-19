@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-spmd-
 title: SPMD模型
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 基本概念 > 编程模型 > SPMD模型
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:37+08:00
+scraped_at: 2026-11-19T09:49:18+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:576f8e8df7c0224f67472a98eb9135d1c585d8fa787810c280c3b6ab7e1dcc8e
+content_hash: sha256:d23338c36ea4399938522c619e67398ec3e3f811813698a4b65a803a8e980c20
 ---
 
 AscendC算子编程是SPMD(Single-Program Multiple-Data)编程，SPMD是一种常用的并行计算的方法，是提高计算速度的有效手段。
@@ -14,13 +14,13 @@ AscendC算子编程是SPMD(Single-Program Multiple-Data)编程，SPMD是一种�
 
 **图1** SPMD数据并行示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/fIuwxCvdTQex_5FmrC3LNQ/zh-cn_image_0000002788468356.png?HW-CC-KV=V1&HW-CC-Date=20261114T004652Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FB6EF64849F1C41F5207307B9D07DD1EBF75FA0154FED24CF3B2B514BD4E838)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/kHYv-BXoSV2mfYxxaIwa4Q/zh-cn_image_0000002791566742.png?HW-CC-KV=V1&HW-CC-Date=20261119T014917Z&HW-CC-Expire=31536000000&HW-CC-Sign=992229EFB7FF363D9F2A8B613D3B472A23CC8C01619B6BC7C9467238058D2C3B)
 
 具体到AscendC编程模型中的应用，是将需要处理的数据拆分并同时在多个计算核心（类比于上文介绍中的多个进程）上运行，从而获取更高的性能。多个AI Core共享相同的指令代码，每个核上的运行实例唯一的区别是block\_idx不同，每个核通过不同的block\_idx来识别自己的身份。block的概念类似于上文中进程的概念，block\_idx就是标识进程唯一性的进程ID。并行计算过程如下图所示。
 
 **图2** SPMD并行计算示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/f6M3vHN2QP6HFy8KwhC-NQ/zh-cn_image_0000002817507845.png?HW-CC-KV=V1&HW-CC-Date=20261114T004652Z&HW-CC-Expire=31536000000&HW-CC-Sign=56A7367DBFE9D24E75E9D06D05F565B72E7643303AD0CFC612C18A7A006DF835)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/kNlz-neuSU2DGSJw1KN9fw/zh-cn_image_0000002820526695.png?HW-CC-KV=V1&HW-CC-Date=20261119T014917Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B3FC42DBA66D78AA9FEB8F23554151C37AF9C9442301393A2ED8C63E9BBCD03)
 
 下面的代码片段取自于AscendC Add算子的实现代码，算子被调用时，所有的计算核心都执行相同的实现代码，入口函数的入参也是相同的。每个核上处理的数据地址需要在起始地址上增加[GetBlockIdx](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)\*BLOCK\_LENGTH（每个block处理的数据长度）的偏移来获取。这样也就实现了多核并行计算的数据切分。
 

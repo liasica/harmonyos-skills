@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appfreeze-gui
 title: AppFreeze（应用冻屏）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > AppFreeze（应用冻屏）检测
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:46+08:00
+scraped_at: 2026-11-19T09:48:25+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:06baf1f475ab6745110def7ccc8a08d3c8bf86c222c785da631de05c8bcdfa8f
+content_hash: sha256:be13fd650407a41645ab176073cc076d9902bcad039ed62aeb70c51270874403
 ---
 
 ## 简介
@@ -46,7 +46,7 @@ content_hash: sha256:06baf1f475ab6745110def7ccc8a08d3c8bf86c222c785da631de05c8bc
 
 **图1**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/OiD1vgvmT4SU7EphDd6n4w/zh-cn_image_0000002817426897.png?HW-CC-KV=V1&HW-CC-Date=20261114T004604Z&HW-CC-Expire=31536000000&HW-CC-Sign=80EA033E3B4ABE8FC2767D973BF396FA14CB8C7F4928BD00FEA370ADDFEE94F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/zWVvPsnpT16lqf4ucpt8MQ/zh-cn_image_0000002791725836.png?HW-CC-KV=V1&HW-CC-Date=20261119T014824Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8CEB3EAF0B64620CE6F5E5B85AAA6592FAF6A7D5A06A4FEB2D577438DC17B1A)
 
 ### APP\_INPUT\_BLOCK用户输入响应超时
 
@@ -62,7 +62,7 @@ content_hash: sha256:06baf1f475ab6745110def7ccc8a08d3c8bf86c222c785da631de05c8bc
 
 **图2**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/RN6n9_RxT8e_hdIR0V8Ccw/zh-cn_image_0000002788467478.png?HW-CC-KV=V1&HW-CC-Date=20261114T004604Z&HW-CC-Expire=31536000000&HW-CC-Sign=0500C58973047A4E8A0B43FBB3989370767B9F491BC9BC508366C0195BDD281D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/POL4s2sBSzC3o4OopxBtoQ/zh-cn_image_0000002791565864.png?HW-CC-KV=V1&HW-CC-Date=20261119T014824Z&HW-CC-Expire=31536000000&HW-CC-Sign=F124009DCD43383D3634A6B3C8938940E92FFAFC673E36B2525CC1334F987A68)
 
 ### LIFECYCLE\_TIMEOUT生命周期切换超时
 
@@ -98,7 +98,7 @@ content_hash: sha256:06baf1f475ab6745110def7ccc8a08d3c8bf86c222c785da631de05c8bc
 
 **图3**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/tyx3tNtMQemKwAjsRohuKQ/zh-cn_image_0000002817506967.png?HW-CC-KV=V1&HW-CC-Date=20261114T004604Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D8540D094F06835C69C3038BB0ADBFC00AAC4038010536C4D3E1F7FC3A27873)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Ig2YCeJfRVymdlnTjyc6jA/zh-cn_image_0000002820525817.png?HW-CC-KV=V1&HW-CC-Date=20261119T014824Z&HW-CC-Expire=31536000000&HW-CC-Sign=51AD21337BA3B54FB34768B7B1ED48059DF1CD3D8AD4A5086F2DF5C71B8A7623)
 
 ## 日志获取
 

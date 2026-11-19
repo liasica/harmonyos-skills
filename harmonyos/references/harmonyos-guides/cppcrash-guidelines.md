@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cppcrash-guid
 title: Cpp Crash（进程崩溃）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 崩溃检测 > Cpp Crash（进程崩溃）检测
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:46+08:00
+scraped_at: 2026-11-19T09:48:25+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:0f5175733f9ddc76830adc9941f7741592b93c9c3ea853cc7d08f2f61ac744c6
+content_hash: sha256:8856b6f69314a3b3238e4e8f77e65d403280e3b8c3e9a19725a69705dc730897
 ---
 
 ## 简介
@@ -569,7 +569,7 @@ pstate:0000000060001000 esr:0000000000000000
 
 原理示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/AuG8seBbQZCuHbgGsNtM3Q/zh-cn_image_0000002788307534.png?HW-CC-KV=V1&HW-CC-Date=20261114T004604Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1696DC0781675D947559F91D3E166207501BBAD1D7BCFDD34603588BF156D1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/kZfW8YL-RiyteO43hWG7bQ/zh-cn_image_0000002820405815.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=687A65028A6F78026B25737603FE5D2CD25CEC02A23D0D6DCDA8AFD10FAD99C7)
 
 1. 提交线程搜集自身的调用栈信息，保存至进程特定区域内存的异步栈表中。
 2. 记录保存后，异步栈表返回唯一标识stackId。

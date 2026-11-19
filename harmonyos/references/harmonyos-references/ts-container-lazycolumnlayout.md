@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyColumnLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyColumnLayout
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:11+08:00
+scraped_at: 2026-11-19T09:50:57+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:4b78076b9312d665f4742f0caa458cffa77aa23b6ce2f2672e5dd14247868396
+content_hash: sha256:73029ef6955282bf1e60840e14e17ef62ba8f34508ccf5567611a85dd60a9792
 ---
 
 该组件用于实现支持懒加载的垂直线性布局，其父组件仅限于[List](ts-container-list.md)、[Scroll](ts-container-scroll.md)、[WaterFlow](ts-container-waterflow.md)或[FlowItem](ts-container-flowitem.md)，并支持使用[自定义组件](../harmonyos-guides/arkts-create-custom-components.md)或[NodeContainer](ts-basic-components-nodecontainer.md)组件封装后应用在上述组件中。
@@ -341,7 +341,7 @@ struct LazyColumnLayoutSample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/U_PgyjDyQIuNqzub39egvA/zh-cn_image_0000002817508329.png?HW-CC-KV=V1&HW-CC-Date=20261114T005010Z&HW-CC-Expire=31536000000&HW-CC-Sign=32EFB55C99D820BBE50FD1B1BF96F8E75AA8A69C8C921579BB393A6C831EBB48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/tjYb3DG6Ss-3A94XXuC0Kw/zh-cn_image_0000002820527179.png?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=92A60F56F022797DA94399CF5D08945A3BDC654279ED9FAB0B849ACD6BEF9A87)
 
 ### 示例2（设置头部组件或尾部组件及吸附效果）
 
@@ -512,4 +512,4 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/H4LLKKnvRda-Cajb6_OdWA/zh-cn_image_0000002788308898.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005010Z&HW-CC-Expire=31536000000&HW-CC-Sign=860B517AF61FD50283A488160FD3ABC39BAF401314ECD3BB036E78A03647437F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/sXoilaJvR0CgeqjHRQ4FaQ/zh-cn_image_0000002820407179.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=E45FD594578E44B6F46ADFA9667C4A507880D83685255A63B93B9230181E8A9B)

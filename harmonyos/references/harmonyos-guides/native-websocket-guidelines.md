@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-websoc
 title: 使用WebSocket访问网络(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用WebSocket访问网络(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:36+08:00
+scraped_at: 2026-11-19T09:48:15+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2b8c2e1cdab31bf35727cbdf53572f610641cace9cf7aa689b208edb5ec2af13
+content_hash: sha256:6460bd6b32ff2b65c857aa29bbb5382db867d14a64ef5a9466469f3d569c49bc
 ---
 
 ## 场景介绍
@@ -333,7 +333,7 @@ libnet_websocket.so
 
    注意：如图所示，在add\_library中的entry是工程自动生成的modename，若要做修改，需和步骤3中.nm\_modname保持一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/VblPtJ-iQBKxduQCKRin4Q/zh-cn_image_0000002817506879.png?HW-CC-KV=V1&HW-CC-Date=20261114T004736Z&HW-CC-Expire=31536000000&HW-CC-Sign=521046AAD624E2FC39CA6967E18479457D11D3DF3AA7D7F99D0A87C8DBA74F13)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/bRqpFttlTSKLYE7n9aSgiA/zh-cn_image_0000002820525727.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=E90654EAF0DF20D861C5291E07AC580F338E93E2E1A477B83B5E803BCAC2C760)
 7. 调用WebSocket C API接口要求应用拥有ohos.permission.INTERNET权限，在module.json5中的requestPermissions项添加该权限。
 
    经过以上步骤，整个工程的搭建已经完成，接下来就可以连接设备运行工程进行日志查看了。
@@ -343,7 +343,7 @@ libnet_websocket.so
 1. 连接设备，使用DevEco Studio打开搭建好的工程。
 2. 运行工程，设备上会弹出以下图片所示界面：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/h4JuSNQVSais3YkmkVLq9w/zh-cn_image_0000002788307448.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004736Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C6A279D32B60548A74688023DF98D4132465CE00014985F3B99A7B7FE8FDD38)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/CWHfwy3KQ3Wbumj2SdjoJA/zh-cn_image_0000002820405727.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=839C1CF103BB1F6C40DE533F76E902651F308474B1478E9F36FCD147F81000A6)
 
    简要说明：
 
@@ -352,6 +352,6 @@ libnet_websocket.so
    * 在Content输入框里输入要发送给服务器的内容，点击Send按钮发送。如果服务器返回消息，会触发onMessage回调，打印日志。
    * 点击Close按钮，WebSocket连接释放，可以重新输入新的WebSocket URL。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/8hp5heMHTvetwkZN-XB0Iw/zh-cn_image_0000002817426811.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004736Z&HW-CC-Expire=31536000000&HW-CC-Sign=A215E1D5B0D4E5933BA12A8EFA9B461D303D898DBB8B6B5B33AF873B11CA3F24)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/VA-b8UbORcS8ps10VTCzgQ/zh-cn_image_0000002791725748.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D87003FD09EB73D58C6F7EF94B3D2D2DEF0CC9C7F89A1AFE50ECFD038F086F9)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/SXibZHGORE6o9wvLcpf6gA/zh-cn_image_0000002788467392.png?HW-CC-KV=V1&HW-CC-Date=20261114T004736Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE3763B6CD4CF81CD1A6A56ACF2B461B600972B14F823F1F72B241B19CE4AC85)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/kOn7K7XeQDCc6Jf9IzfU1g/zh-cn_image_0000002791565776.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C4A76412654BB361C3091361C4766774A809B4C6E7F6BFB3D9BA96832CF8E9F)

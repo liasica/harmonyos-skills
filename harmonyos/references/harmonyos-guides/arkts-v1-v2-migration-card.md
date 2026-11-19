@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 卡片状态变量迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 卡片状态变量迁移
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:01+08:00
+scraped_at: 2026-11-19T09:47:38+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a287e72c29ccc9e04aa716390cd11f36a1f60e43b1d4345b6e2e106773e8d78a
+content_hash: sha256:7d0661e808b5d77a760e4f2ef85a1c77be91b688fe2ded659276fd20705f61a7
 ---
 
 从API version 23开始，ArkTS卡片支持使用状态管理V2开发，建议开发者使用[V2装饰器](arkts-state-management-overview.md#装饰器总览-1)替代[V1装饰器](arkts-state-management-overview.md#装饰器总览)进行状态管理，以获得更优的组件渲染性能和状态同步能力。
@@ -165,7 +165,7 @@ onFormEvent(formId: string, message: string) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/NoJEYpgPQFmMAq84ZzFpgw/zh-cn_image_0000002817505855.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=207856E3C2697B320BB0718AE260E67E5E76781A119F8ABB893AB988CF311DD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/bMdUsYETTJiFJ0F_HgJgkw/zh-cn_image_0000002820524705.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB94EAD33D01CF1421D3BCC6B3FC75DC2A4B19EC8041FA55CDA1A02C09DC998C)
 
 ## 卡片跨组件数据共享迁移
 
@@ -296,4 +296,4 @@ struct ChildComp {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/F_m7p-3BQDKYdvFk_B4DIQ/zh-cn_image_0000002788306426.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=38DE905BEDC05E28D980E2ABEFB97E403CB6EE20CE01BECBAE75F28513262164)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/hwQUNrfZScSeXZP2RQrjqg/zh-cn_image_0000002820404703.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E2A492E121C98E9F247D637A4750728BE1CFB0C0FB53D5329D276526F94DE8A)

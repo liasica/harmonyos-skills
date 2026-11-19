@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-cu
 title: 自定义组件生命周期
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件生命周期
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:57+08:00
+scraped_at: 2026-11-19T09:47:35+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1aaf3fd3a5ab55fbcb33d1bffb09915058e470ced7025eee402964eac63dce07
+content_hash: sha256:d13c8a1a4c134204f136857c219daa42e5a527c9b2d655721068efd6bf80ab16
 ---
 
 自定义组件生命周期，即用[@Component](arkts-create-custom-components.md#component)或[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件的生命周期，提供以下生命周期接口：
@@ -20,7 +20,7 @@ content_hash: sha256:1aaf3fd3a5ab55fbcb33d1bffb09915058e470ced7025eee402964eac63
 
 自定义组件生命周期流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/ilAbG7ouRO6h6ZVZaklpsw/zh-cn_image_0000002817425585.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=E28A8EEA5D4B246793ABCE87D86A70179C69808080C45BECF64606EE1604B26C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/wcdFTO61S66A90-q-KHnzw/zh-cn_image_0000002791724522.png?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2A9A0A739B64A1A296A5AB2FF59A5CBAA9C73AA6B53093091C9FC0A2AE32B7D)
 
 根据上面的流程图，接下来从自定义组件的初始创建、重新渲染和删除来详细说明。
 
@@ -126,7 +126,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/s-4ACU2DQKKz8yaOFINbxQ/zh-cn_image_0000002788466166.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E7E431DAAA01DADF9FB154CC617FA39D34057572AC8F2B9BE448C3F50AD694B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/562ujI8ASuuoN1mmqjd7mw/zh-cn_image_0000002791564550.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2EA7E3D861BA8ECCDB10877C895317769FCF107F3737EB474D3DE7D0205E58A)
 
 以上示例中，Index页面包含两个自定义组件，一个是Parent，一个是Child，Parent及其子组件Child分别声明了各自的自定义组件生命周期函数（aboutToAppear / onDidBuild / aboutToDisappear）。
 
@@ -165,4 +165,4 @@ Child onDidBuild
 
 当showChild为默认值true时，该示例的生命周期流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/O6ncLKfJSp2r6qMwMKK67w/zh-cn_image_0000002817505653.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=73E19D68F120BA0398415650CCB92E9F039D82C97A04200025FBA14D45FF1AF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/nx6luqGVRFmtBmOLlPoZ1A/zh-cn_image_0000002820524501.png?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9043F18A6A650D5AB9D730B6E95D605F2686012C500397894D2CDA977AE11CE)

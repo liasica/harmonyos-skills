@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.observer (无感监听)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.observer (无感监听)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:49+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:942b798f02da2a93ebc3cc32c2a0f6b986d5f6ae67973a83e9ae54310cd33784
+scraped_at: 2026-11-19T09:50:40+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:3b77f322398be038eb20dd75dc2d980adade18da7d41608460bc57dcbe3b1e17
 ---
 
 本模块提供UI组件行为变化的无感监听能力，包括监听页面状态、滚动事件、页面路由、屏幕像素密度、布局和绘制、页面切换以及TabContent状态变化等。适用于需要在不侵入组件业务逻辑的情况下感知UI状态变化的场景。推荐使用[UIObserver](arkts-apis-uicontext-uiobserver.md)进行组件监听。
@@ -600,7 +600,7 @@ on(type: 'routerPageUpdate', context: UIAbilityContext | UIContext, callback: Ca
 **示例：**
 
 ```ts
-// used in UIAbility
+// 在UIAbility中使用
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { UIContext, window, uiObserver } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -629,7 +629,7 @@ export default class EntryAbility extends UIAbility {
     });
   }
 
-  // ... other function in EntryAbility
+  // EntryAbility中的其他函数
 }
 ```
 
@@ -654,7 +654,7 @@ off(type: 'routerPageUpdate', context: UIAbilityContext | UIContext, callback?: 
 **示例：**
 
 ```ts
-// used in UIAbility
+// 在UIAbility中使用
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { uiObserver, UIContext } from '@kit.ArkUI';
 
@@ -674,7 +674,7 @@ export default class EntryAbility extends UIAbility {
     }
   }
 
-  // ... other function in EntryAbility
+  // EntryAbility中的其他函数
 }
 ```
 
@@ -992,7 +992,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
+    // 主窗口已创建，为该Ability设置主页面
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err, data) => {
@@ -1005,17 +1005,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+    // 主窗口已销毁，释放UI相关资源
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+    // Ability已切换至前台
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+    // Ability已切换至后台
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
 }
@@ -1145,7 +1145,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
+    // 主窗口已创建，为该Ability设置主页面
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err, data) => {
@@ -1158,17 +1158,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+    // 主窗口已销毁，释放UI相关资源
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+    // Ability已切换至前台
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+    // Ability已切换至后台
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
 }

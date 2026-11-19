@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/c-cpp-overvie
 title: C/C++标准库机制概述
 breadcrumb: 指南 > NDK开发 > 代码开发 > C/C++标准库 > C/C++标准库机制概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:42+08:00
+scraped_at: 2026-11-19T09:49:23+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:b5e0f3dda5c18d7b6bf19821a8b386098a8d34b49e5ca3979d4bccad32b9dac2
+content_hash: sha256:a6de7e724869c2c77c0043b9f575fd2b869ee178d6c52edad2f003419a4531e4
 ---
 
 HarmonyOS NDK提供业界标准库[libc标准库](../harmonyos-references/musl.md)、[c++标准库](../harmonyos-references/cpp.md)，本文用于介绍C/C++标准库在HarmonyOS中的机制，开发者了解这些机制有助于在NDK开发过程中避免相关问题。
@@ -46,7 +46,7 @@ HarmonyOS中动态库加载namespace配置的情况
 1. default ns和ndk ns可以互相访问全部so，不能访问app ns的so。
 2. app ns能访问ndk ns的全部so，不能访问default ns的so。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/O6d3-aAbSfC9E59C7cmAaQ/zh-cn_image_0000002788308532.png?HW-CC-KV=V1&HW-CC-Date=20261114T004841Z&HW-CC-Expire=31536000000&HW-CC-Sign=E901E88956094FB7FA3366EEAC7846D3A0F3320AC7EC616272FB41F272D7B705)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/UnjttCGORuiJHrgYTHd0yg/zh-cn_image_0000002820406813.png?HW-CC-KV=V1&HW-CC-Date=20261119T014922Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F8C0D4C0CF15E0E44DC305F33D0DE517870CA3604B7419D50557BB4D4E25206)
 
 ### rpath机制
 
@@ -61,7 +61,7 @@ SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 SET(CMAKE_INSTALL_RPATH "\${ORIGIN}/module")
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/PMUhXV5MRDmMRwXmiO9tcA/zh-cn_image_0000002817427895.png?HW-CC-KV=V1&HW-CC-Date=20261114T004841Z&HW-CC-Expire=31536000000&HW-CC-Sign=1780A7D3379994B5D358FBCCE307E7B08334EB3B871EA4DA3283754F5F97D036)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/gGNo-H-_ReSL3Q3cGfr_AA/zh-cn_image_0000002791726834.png?HW-CC-KV=V1&HW-CC-Date=20261119T014922Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFFD8342F36F4378E3EA22B23B1D220C6B86B74B961DB72C989377F17DE85660)
 
 ### 支持dlclose
 

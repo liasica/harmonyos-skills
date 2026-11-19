@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-s
 title: 搜索关键字
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 搜索关键字
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:28+08:00
+scraped_at: 2026-11-19T09:49:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0c167da11ef8bb1bf3c987be0ac69137f799f0d373064c95a5937ae33f5b41c0
+content_hash: sha256:838aea8aa5a2a9e73ef5ef757526ae35af474e042a9604908e7884495aa669db
 ---
 
 预览PDF文档时，可以对页面的关键词（英文字符不区分大小写）进行搜索并高亮显示，同时使用[setSearchIndex](../harmonyos-references/pdf-arkts-pdfviewmanage.md#setsearchindex)方法高亮显示指定的搜索结果。
 
 使用[getSearchIndex](../harmonyos-references/pdf-arkts-pdfviewmanage.md#getsearchindex)方法获取当前高亮的索引，可以使用[clearSearch](../harmonyos-references/pdf-arkts-pdfviewmanage.md#clearsearch)方法清除所有搜索结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/sE-ftC9TRV2pac-SgGnVkg/zh-cn_image_0000002817507679.png?HW-CC-KV=V1&HW-CC-Date=20261114T004828Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FC3DC918AB38990C8DB1DF78B6F4C6F2EB40FA5485EF785D7EEAE34CC6E1C51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/WApctxa7QkOVZWKyoWst4w/zh-cn_image_0000002820526529.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E97C6D83C7E6E421E932F6F5518B9F3F40B6683DEC17E3C52FC61E5452102D8)
 
 ## 接口说明
 

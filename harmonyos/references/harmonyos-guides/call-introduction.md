@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/call-introduc
 title: Call Service Kit简介
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > Call Service Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:14+08:00
+scraped_at: 2026-11-19T09:48:54+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c427242cea0a9f91e173492e41d29c8417a461d7291ede0e73b5187f5f4bb4a6
+content_hash: sha256:20d69459be074477e34ce0a2d391ef0e9a4dc84a5ce86a3bbca9a7c7951c7343
 ---
 
 Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通话管理服务。
@@ -39,7 +39,7 @@ Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通�
 
    业务流程如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/gFsk1IWyR7GEn-5o08Ouww/zh-cn_image_0000002788467894.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004631Z&HW-CC-Expire=31536000000&HW-CC-Sign=D76FCF4DE0AC1FE7619BCF6D6ED99A5D1EE44792570E20DDAFD67D35118C3169)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/EKN5kJhPSAydPFX60Kbqgw/zh-cn_image_0000002791566280.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014854Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A6FC04871F6154CCB130E13739C03D6880707A186C6CDE09B078F8BDBB63F91)
 2. 来去电时，通过对端手机号隐私查询对应的企业服务信息，依赖[Data Protection Kit](dlp-overview.md)提供的隐私查询能力，保证查询号码以及返回数据的隐私和安全。
 
 ## 约束和限制

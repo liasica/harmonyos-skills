@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-butt
 title: 按钮标注
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 按钮标注
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:51+08:00
+scraped_at: 2026-11-19T09:47:28+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a8386d8eaa550a4affafe4fdd7bd417f4c02f5295e487c9b1730ac16c54fd60b
+content_hash: sha256:629b58e77ff752b9faebb877ffa3c59bd0f3e9af8fde0a9183e88fa09b7ceb07
 ---
 
 ## 设计场景
 
 对于用户可点击等操作的任何按钮，如果不是文本类控件，则须通过给出标注信息，包括用户自定义的控件中的虚拟按钮区域，否则可能会导致屏幕朗读用户无法完成对应的功能。此类控件在进行标注时，标注文本不要包含控件类型、“单指双击即可打开”之类的字符串，此部分指引由屏幕朗读根据控件类型、控件状态，并结合用户是否开启了“新手指引”自动追加朗读。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/XiRpt9h_SXmblYAFp87Mmg/zh-cn_image_0000002788306168.png?HW-CC-KV=V1&HW-CC-Date=20261114T004514Z&HW-CC-Expire=31536000000&HW-CC-Sign=B774B7611DE80AD7B7D0C64507488B6B60FB957ED7DB7F9B7746DACD3E3BD8E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/P_FjJEwfRzmycxN-p1x_Ig/zh-cn_image_0000002820404445.png?HW-CC-KV=V1&HW-CC-Date=20261119T014637Z&HW-CC-Expire=31536000000&HW-CC-Sign=35F74236D2B4430F4091B9C5FFAFCA2CFC790A56FAB50ADB9B040AEAA8D11F58)
 
 ## 开发流程
 

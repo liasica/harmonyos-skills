@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component
 title: ArkWeb进程
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > ArkWeb进程
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:13+08:00
+scraped_at: 2026-11-19T09:47:51+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b34a4857698e9672e70b810a3a8df462606fb47b6460ea2d678282e1908f5343
+content_hash: sha256:70bfd3f9362e58384b4becede138f9185aa0e2b065f78d2077d53736fbfaaa95
 ---
 
 ArkWeb是多进程模型，分为应用进程、Web渲染进程、Web GPU进程、Web孵化进程和Foundation进程。
@@ -16,7 +16,7 @@ Web内核对内存大小的申请无限制约束。
 
 **图1** ArkWeb进程模型图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/fiiv9TwzRmqvq3TupH-8JQ/zh-cn_image_0000002788467098.png?HW-CC-KV=V1&HW-CC-Date=20261114T004534Z&HW-CC-Expire=31536000000&HW-CC-Sign=F18E6EE1A49AC9437416DD820664BB7B31F5D54C514356E1F9ABC3A34C905B22)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/_4CJD5oqQKSsJdo7iViGZw/zh-cn_image_0000002791565482.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=60244A480AEA75FD0792E6E360725E117414A206C72823DE39A05E53A392C6F3)
 
 * 应用进程中Web相关线程（应用唯一）
 

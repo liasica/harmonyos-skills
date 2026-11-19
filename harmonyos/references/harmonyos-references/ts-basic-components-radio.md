@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Radio
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Radio
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:13+08:00
+scraped_at: 2026-11-19T09:51:01+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:537c56c353225231c35dc4327fcdbcddd3a7b6f3278e6f866c1d61eaddf562d1
+content_hash: sha256:12e5a5a94bca1fe90da8dd86a83935da0fae09d3fa86429e9bbf483a3ad6a822
 ---
 
 单选框，提供单选类型的用户交互选择项。
@@ -319,7 +319,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/4mc4AQQ8TiCUlS8us_EbOw/zh-cn_image_0000002788308974.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B5C7E10501AEFA50ACC432733C0DAF6874FA29CFA29093C5F0FF6C4C24E7A87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/1w7O_vYuQGucWs4vvvpslQ/zh-cn_image_0000002820407257.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=E99BCF1CB082781F3E45A6D6B6ED6785D8753077E2A11C93AC3BD4B6388FD1B2)
 
 ### 示例2 （设置选中样式）
 
@@ -376,7 +376,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/es2Ak_OcQIa_aDZ0I-VXRA/zh-cn_image_0000002817428337.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD04EA0B6EEABD8CD562173F59AF3C30FFA74E7BC85DB5E1E7245E414F7D2E60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/5j8zp_V9SHeN8Cz749niOA/zh-cn_image_0000002791727276.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5EC271D2A7C4F08604A053D47556AB95CFB7D6DA251AD6BCF8239D6E2E8BEED)
 
 ### 示例3（设置自定义样式）
 
@@ -442,4 +442,4 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/nQ79xXlqSFOLoVXRL-PMGQ/zh-cn_image_0000002788468918.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF4E7D167C1DFA8C1EE91755CE8211D59C5837AF3272E4527052FC11809C21AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/s32YpX1bSnaNfJfV3vOiqg/zh-cn_image_0000002791567304.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=99E950DB89C34B4C5B53980540A118ACA606D4FD4E76B741A52F04C69CEA4D3C)

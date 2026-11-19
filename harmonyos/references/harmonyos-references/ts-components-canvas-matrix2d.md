@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: Matrix2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > Matrix2D
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:19+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:cef0f4c65ae9d5c8d8f1d54aa5a68d6dfdffae06e0dd3f6da09bc1dee11833f4
+scraped_at: 2026-11-19T09:51:08+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:f40962435ffb986b8938838da41089f306eaaf06cace6cbebf71517390b1fcda
 ---
 
 用于[CanvasRenderingContext2D](ts-canvasrenderingcontext2d.md)、[OffscreenCanvasRenderingContext2D](ts-offscreencanvasrenderingcontext2d.md)、[CanvasPattern](ts-components-canvas-canvaspattern.md)和[Path2D](ts-components-canvas-path2d.md)图形变换的矩阵对象，可以对矩阵进行缩放、旋转和平移等变换。
@@ -110,7 +110,7 @@ struct Parameter {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/uaW3AfpkRhO9Ziy63FsCtw/zh-cn_image_0000002788309216.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AAE63CEE1BEFCE1BA880EEABA15D457CEA8CA6BE3658805AF895FE96DED3CEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/9C_WoiTqTp6ex1bY00D3RA/zh-cn_image_0000002791727518.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE90CC61D17BDE19951F23A0C56C89E9C1069288232E67B084B0038EFDCBDF06)
 
 ## identity
 
@@ -160,7 +160,7 @@ struct Identity {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/uc0z_FpFR2WNrwt7zkbKfg/zh-cn_image_0000002817428579.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CE3A345852440605F87E5F92EDB4E803201BE2D931AA715242A3F73B153DB25)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/uRhYUz98TtuKmXmZmZr67g/zh-cn_image_0000002791567546.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D428A72AAF30DA90858147C25C3726A380D3F766A7979F62C3CECA9D561288F)
 
 ## invert
 
@@ -216,7 +216,7 @@ struct Invert {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/8FUZFgbxTByMgSDy8s4VAg/zh-cn_image_0000002788469160.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=118E3C4D2277F608564A3D1404F3C87BE269EECF7F8E348E89BBE4EA1B2D1DBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/uvy9P9INTsarshj6kpI4hQ/zh-cn_image_0000002820527499.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=402ED7CA6B4FC226E4000F0E0462C3A62CA3AB8CC487CABEBA51FDCD9527002E)
 
 ## multiply(deprecated)
 
@@ -301,15 +301,13 @@ struct Rotate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/qLmC586vTceKPuUOGystrg/zh-cn_image_0000002817508649.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=90A343B00E15D07BC70F985932F9A9183E0C0447383E92831BCB677B37B712F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/o9L-yTEtRza-GjT3krrv0A/zh-cn_image_0000002820407501.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=E277F390DA897F76014E19CBE67E878B5777EBA224650B7F91343F298B3A9F18)
 
 ## rotate10+
 
 rotate(degree: number, rx?: number, ry?: number): Matrix2D
 
 以旋转点为中心，对当前矩阵进行左乘旋转运算。常用于图形旋转动画或图片旋转处理等场景。
-
-**模型约束：** 此接口仅可在Stage模型下使用。
 
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
@@ -369,7 +367,7 @@ struct Rotate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/23xm2hjRQ-S9bBtPh68kxQ/zh-cn_image_0000002788309218.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFEAED5F5299EBD9FBF1685D881A8700735A785FB676CCF97D5105E8B06A4C3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/XMubFjRCT_6Svfg159hvRQ/zh-cn_image_0000002791727520.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9CFE29E2EFD25F157723EB2C28E80D3ED5E24514C3038D0A84EEEC61669CABE)
 
 ## translate
 
@@ -432,7 +430,7 @@ struct Translate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/rjPgbr4DSa-KS0H5E7zEAQ/zh-cn_image_0000002817428581.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=94D9B9BFA51C650B2184B80213EB2F39CD4F058D8E30B8FE75753BCB2297F45C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Zu0w30tJS7-L19lalGZSHA/zh-cn_image_0000002791567548.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=1094D1E9FCA10888539835DBC69D967D7153C769EF7B700201E076AF0504214D)
 
 ## scale
 
@@ -495,4 +493,4 @@ struct Scale {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/1AWt5lgiRWyz5-91ARcv9w/zh-cn_image_0000002788469162.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=A892421D86561B93C02FF4AA49CAF02D23DA917A5D941AE693105EB947E0F217)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/p4_-Lu09TK206Ff2-tmuUA/zh-cn_image_0000002820527501.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=3288880344C9FC99DA892F152F9783E20D29AAC97D5D917866B1F6010410BAAC)

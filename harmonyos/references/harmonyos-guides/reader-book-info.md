@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-book-i
 title: 获取书籍信息
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容解析 > 获取书籍信息
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:30+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:3c931895a677b094a8af679c603eebb6414bb394089558710a03b07f9f3b693a
+scraped_at: 2026-11-19T09:49:11+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:bdf089de4938a634be99c56e4230e51e6890312125063e73a57bee7a3c9d6772
 ---
 
 在导入本地书籍到书架时，开发者需通过[DocumentViewPicker](../harmonyos-references/js-apis-file-picker.md#documentviewpicker)先将书籍文件导入到[应用沙箱目录](app-sandbox-directory.md)，然后利用解析能力获取书籍信息，包括书封、书名及作者等，以完成书架内容的展示。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/8tv-t-YlQcu5_vAUuE7-4g/zh-cn_image_0000002817507721.png?HW-CC-KV=V1&HW-CC-Date=20261114T004646Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6C33FF4761E14D627136488D712F984C1B2ED024462F132B97BDACFEB5A3C6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/rlWWoGRqSBSuWOGmwqpufA/zh-cn_image_0000002820526571.png?HW-CC-KV=V1&HW-CC-Date=20261119T014911Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D7F5EAAD84388553E5163D28AA5CC7218FE57A154749D4D30B1AFC69D75881D)
 
 ## 接口说明
 
@@ -33,6 +33,7 @@ content_hash: sha256:3c931895a677b094a8af679c603eebb6414bb394089558710a03b07f9f3
    import { bookParser } from '@kit.ReaderKit';
    import { hilog } from '@kit.PerformanceAnalysisKit';
    import { image } from '@kit.ImageKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 通过提前导入到[应用沙箱目录](app-sandbox-directory.md)中的书籍文件，初始化书籍解析器。
 
@@ -41,6 +42,8 @@ content_hash: sha256:3c931895a677b094a8af679c603eebb6414bb394089558710a03b07f9f3
 
    aboutToAppear(): void {
      this.init().then(() => {
+     }).catch((error: BusinessError) => {
+       hilog.error(0x0000, 'ReaderLog', `init failed, Code: ${error.code}, message: ${error.message}`);
      });
    }
 
@@ -64,6 +67,8 @@ content_hash: sha256:3c931895a677b094a8af679c603eebb6414bb394089558710a03b07f9f3
    aboutToAppear(): void {
      this.init().then(() => {
        this.getBookInfo();
+     }).catch((error: BusinessError) => {
+       hilog.error(0x0000, 'ReaderLog', `init or getBookInfo failed, Code: ${error.code}, message: ${error.message}`);
      });
    }
 

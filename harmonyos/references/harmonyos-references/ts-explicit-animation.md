@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explic
 title: 显式动画 (animateTo)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 显式动画 (animateTo)
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:21+08:00
+scraped_at: 2026-11-19T09:51:10+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:467c46580b4a99a035e6c649b14ae51eb4044147a523c7533cec222a9bceba86
+content_hash: sha256:e0123944a22ed43bd66c0d9c7c43a7d2ff1dfb040c18ac4fc44807a8be5573b3
 ---
 
 提供全局animateTo显式动画接口，为闭包内的状态变化添加过渡动效。与属性动画相同，对于改变布局类属性（如宽高）的动画，内容通常会直接跳转到最终状态，例如文字或[Canvas](ts-components-canvas-canvas.md)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](ts-universal-attributes-renderfit.md#renderfit)属性进行配置。
@@ -214,7 +214,7 @@ struct AnimateToExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/Qu-F57mhRSK8x79Bkes-tQ/zh-cn_image_0000002817508713.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004819Z&HW-CC-Expire=31536000000&HW-CC-Sign=974A3967BA84937DBD5F5134A06EAB8A6C2C207D1F3F7F512A4315766E5EDC39)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/6PLROnlsQmSbtmvvh44wMA/zh-cn_image_0000002820407565.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=18DAA56A7BB364E9D36B5C010892B8A447793C73072584D172123F94292FF326)
 
 ### 示例2（动画执行结束后组件消失）
 
@@ -269,4 +269,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/BIuOLuoVTaKABKwCkaTlnQ/zh-cn_image_0000002788309282.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004819Z&HW-CC-Expire=31536000000&HW-CC-Sign=979FDFC7296F3FC2409E851147F6DD09B022BDC2DC9FD5D8203CB3CE5AAD4CD9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/r29l-xZSSeurSlVQ-NmMxw/zh-cn_image_0000002791727584.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC864D37E7CA71C350C6A87CCA3CE779B714C723F27EE48BEC744316E425EDF9)

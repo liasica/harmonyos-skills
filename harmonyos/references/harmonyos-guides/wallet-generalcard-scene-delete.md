@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-genera
 title: 删除通用凭证
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 通用凭证 > 开发场景 > 删除通用凭证
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:34+08:00
+scraped_at: 2026-11-19T09:49:15+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:8f2c132ff5a66402ee07cb6e1bbbec195a5938b182ea13ab572e4028fd89731e
+content_hash: sha256:eaea3a5a2a935a2ac43618330af6369318905204a6c8b10229a1ac83265ec36f
 ---
 
 用户主动删除，将通用凭证从钱包中移除。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/B5qWdBjNRPG1o5lSpcz03g/zh-cn_image_0000002817427735.png?HW-CC-KV=V1&HW-CC-Date=20261114T004650Z&HW-CC-Expire=31536000000&HW-CC-Sign=37A386BB63E14AE78D08614076001F83813897B59FB423AF119EBFE3568652C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/3f7LlBGKQS-qL_YBPabeZA/zh-cn_image_0000002791726674.png?HW-CC-KV=V1&HW-CC-Date=20261119T014915Z&HW-CC-Expire=31536000000&HW-CC-Sign=08C342166CD888002AC069EC04AB09EE418A9A2BE9043B264D82F87836161E49)
 
 ## 服务端开发
 

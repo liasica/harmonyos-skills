@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 按钮 (Button)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 按钮与选择 > 按钮 (Button)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:04+08:00
+scraped_at: 2026-11-19T09:47:41+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d0cdd0c54751d753de9be4261889687bcdd5997523db46dc6d3223e10c7f39e1
+content_hash: sha256:c1a492cf36778dd6b476db7bdfcdcccf7f2155247a01f50bab5bfb255c92b83d
 ---
 
 Button是按钮组件，通常用于响应用户的点击操作，其类型包括胶囊按钮、圆形按钮、普通按钮、圆角矩形按钮。Button作为容器使用时可以通过添加子组件实现包含文字、图片等元素的按钮。具体用法请参考[Button](../harmonyos-references/ts-basic-components-button.md)。
@@ -30,7 +30,7 @@ Button通过调用接口来创建，接口调用有以下两种形式：
     .height(40)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/j3CWkWarQHyVedMkdyY4vA/zh-cn_image_0000002788466702.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFCAF34EC840DE91F77A78ABE981E6511B210ADB066F0CEB353DCE94241C0E72)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/CYoe-RtfRI-uMjIgEYvQlw/zh-cn_image_0000002791565086.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7DF5E048F3C7F4C20E2B5061BD7C19F7C6875E086723A0BF59DEE7826B4F75F)
 * 通过[ButtonOptions](../harmonyos-references/ts-basic-components-button.md#buttonoptions对象说明)创建包含子组件的按钮。以ButtonOptions中的type和stateEffect为例。
 
   ```ts
@@ -49,7 +49,7 @@ Button通过调用接口来创建，接口调用有以下两种形式：
   }.borderRadius(8).backgroundColor(0x317aff).width(90).height(40)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/PiCy4Ah3T2KfqZYAO5Hnmg/zh-cn_image_0000002817506189.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=36F03C1EB842CF1E9955B4B7B582AF4D54F2EAA867EE22243843332B2E4BB9CD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/vkoH5oL5SICtYshI_U2n8A/zh-cn_image_0000002820525039.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F52850B80107BDC76C102CB8ABF604EF651160AB453C3D584187EE9CCA42E89)
 
 ## 设置按钮类型
 
@@ -66,7 +66,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
     .height(40)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/YaJG1NMqRPuF7k1QKZRFtw/zh-cn_image_0000002788306760.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A8CBC0B25AB68B50177899E8B310653826EEA51EE5F9E344ECF923556189766)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/8As3ufaqQTu9_2-EZ_8Ldw/zh-cn_image_0000002820405039.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CD0E9A98B37630A38C5025ACFA10D6BC6875AD6497B43FF2385E8B1D389E197)
 * 圆形按钮。
 
   此类型按钮为圆形，不支持通过borderRadius属性重新设置圆角。
@@ -78,7 +78,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
     .height(90)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/v2X9TjO3TkicK2VZlaWPqQ/zh-cn_image_0000002817426123.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=23ED2AB1132D87747060E804924D17BF5C5BF55CD0A32AC110D13BE79C792242)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/cojRKUWWR56kUKVIUw_-Iw/zh-cn_image_0000002791725060.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AB93A3F485521AD61A0800871A67E4723CBA9F4557D02D14F4D2D74C469DA4B)
 * 普通按钮。
 
   此类型的按钮默认圆角为0，支持通过borderRadius属性重新设置圆角。
@@ -91,7 +91,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
     .height(40)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/IMbNn9khRkyTDjQTMfMNwg/zh-cn_image_0000002788466704.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6DA07D588A59345DA655238DDC3CB1E9C0EF930D56936B77C94F996513C4534)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/VEX05j-vRUank3KTk4ObRg/zh-cn_image_0000002791565088.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3454E84CF9E612F94410D66625B72E2D7ABD7CF07055FD8D9556FF3BA0785BB)
 * 圆角矩形按钮。
 
   当[controlSize](../harmonyos-references/ts-basic-components-button.md#controlsize11)为NORMAL时，默认圆角大小为20vp，[controlSize](../harmonyos-references/ts-basic-components-button.md#controlsize11)为SMALL时，圆角大小为14vp，支持通过borderRadius属性重新设置圆角。
@@ -103,7 +103,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
     .height(40)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/5Xy-Hw6OTJ2D8MV6urZrbA/zh-cn_image_0000002788306760.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=E654336BBCCF09EFAE99B017C3C8590EF20315B51AACFC8EBF70FA1FA6632478)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ldS1X_lGQ6aLd4MapncgrA/zh-cn_image_0000002820405039.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AFAB4FC040D01E622F566E105210DE8355E8A3641D4DF1187918853C04BD13E)
 
 ## 自定义样式
 
@@ -117,7 +117,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
     .height(40)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/izB5XoKwQCKitr_ji58-VQ/zh-cn_image_0000002817506191.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=B841EABAA1CA33DE8D2DA470F71FC54A5DB9755ED50A1A12D278AFEB7AFDE0FE)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/ZVEoCvZxShC3edem29C_KA/zh-cn_image_0000002820525041.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=05841EB87B47EF6F6F4C0FB8217D0A26693196BA416217E50CBF3B3E1A191112)
 * 设置文本样式。
 
   通过添加文本样式设置按钮文本的展示样式。
@@ -129,7 +129,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
     .fontWeight(800)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/IH3Lwby9Qc-OXCjMck1Rtg/zh-cn_image_0000002788306762.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=5120F43A8F15E075312F7E02BB459338A4CCBC8FEA57432CE47A8F1F1940A570)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/nXnb7mMgRyCjcLJ7orPegg/zh-cn_image_0000002820405041.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=51941EE32184AC14CDDDEB15897CD9BA33233946F75F48B56AEEE740F056A0E3)
 * 设置背景颜色。
 
   添加backgroundColor属性设置按钮的背景颜色。
@@ -138,7 +138,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
   Button('background color').backgroundColor(0xF55A42)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/c7SgWpU2TgWwKGTv50c_IA/zh-cn_image_0000002817426125.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FB44C37770E00AAF2477E86D1919D77F7250BFE52E6802E277F5E7C574DE201)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/yZD0poXTTVm5FvbL6iwOAg/zh-cn_image_0000002791725062.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8A5701C9E6F7872CC98851FAA83727EFD623F6964721A5A8B5E63EF4D630826)
 * 创建功能型按钮。
 
   创建删除操作的按钮。
@@ -150,7 +150,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
   }.width(55).height(55).margin({ 'left': 20 }).backgroundColor(0xF55A42)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/w3PXiqFHSHaQ0is_Xbj6Ag/zh-cn_image_0000002788466706.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=5587FA345E09342566B1133C80302909F28FA5B32904B9115C92B54D5A9FF682)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/a3yNHeV0TyKXR_ssELUITg/zh-cn_image_0000002791565090.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D94DF2844DA6F78F4189CA67A3DB417AE4359EA464BAB9B703A1942889D6EBE)
 
 ## 添加事件
 
@@ -294,7 +294,7 @@ Button('Ok', { type: ButtonType.Normal, stateEffect: true })
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/04WFHd4QRhC5E26lYjqz6w/zh-cn_image_0000002817506193.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AFAB3BA9B918DC881C1EA945C563A4E57E41DA08E0A5292A11398F23EA6E5E5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/xiknM_GhS-GplYE08GtQqw/zh-cn_image_0000002820525043.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F8145A0B04796CB187B0C5B3B02D073252EEE9B75F8B521755F3F196DECC356)
 * 用于提交表单。
 
   在用户登录/注册页面，使用按钮进行登录或注册操作。
@@ -321,7 +321,7 @@ Button('Ok', { type: ButtonType.Normal, stateEffect: true })
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/90sQKgnkQqSSNuxGB4VWyQ/zh-cn_image_0000002788306764.png?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A3956478B5226B5EF6EF85F413E88408256CADE1375349502340C67A02E6241)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/gKhGNVv2TI-bdxhAPDDN6A/zh-cn_image_0000002820405043.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B04A24D631082970E9EADE9A71D5B5ED86839042A113E3206E9399C98B85035)
 * 悬浮按钮。
 
   在可以滑动的界面，滑动时按钮始终保持悬浮状态。
@@ -372,4 +372,4 @@ Button('Ok', { type: ButtonType.Normal, stateEffect: true })
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/AyB-TecgSmuBsi2Y24hi_A/zh-cn_image_0000002817426127.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=C55839A336C32A774A834DC9A5AB033F7DBE29DDEDDC8AFC5A206984350EC357)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/b9i8xSujTzGc4xrNEuAlpA/zh-cn_image_0000002791725064.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=862E01DEF1DE8A5680F9A6E9EFF31D08A2F412E9A1EA37C7B341C176DAC075BF)

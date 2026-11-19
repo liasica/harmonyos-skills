@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 单一手势
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 单一手势
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:06+08:00
+scraped_at: 2026-11-19T09:47:43+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3449a781e0a481e8f8d5a49ed9111c5ce7a62b1494d50690616635edc0e84520
+content_hash: sha256:b28688b6c7449e33aaf786a3c7dee8604cd92e498a40d2293c0d1eaa104b99de
 ---
 
 ## 点击事件（onClick）
@@ -117,7 +117,7 @@ export struct Tap {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/zj3ANp24Re2oh57kyDbWRg/zh-cn_image_0000002788466802.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=C014C6EA0086E922CC2A35BBAFDB7BD9D43F23EA37D13C44F8B7311462DC3C3F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/fARuGsGZTL6EFerrbpaF1A/zh-cn_image_0000002791565186.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=489A7159229EEE9561A164237F3E15063BAA3E42A75DB6EEC85D0FEF842F415F)
 
 ## 长按手势（LongPressGesture）
 
@@ -172,7 +172,7 @@ export struct LongPress {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/eqotaSVgQMu4uwOp-7xNBw/zh-cn_image_0000002817506289.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=74E7D105381A6A33EA061C7FC169069E161A07A1599FD0FBC13331F17DECC550)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/GDDOwVwlSryozHpHqVMPjw/zh-cn_image_0000002820525139.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=077EB3F0E11154510B4738E3AF374E830D59493C87606CAEFEE8ED2F7B06EE83)
 
 ## 滑动手势（PanGesture）
 
@@ -273,7 +273,7 @@ export struct VolumeControlDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/boub-xlhQYKEJ5q1UNNNiA/zh-cn_image_0000002788306860.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=A84CD26B82957F38627B87617B428B0FEF1B8E7413DBA220C81C35EFFF89C2AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/zIrW1cqbSBGc0aCdzzDdVA/zh-cn_image_0000002820405139.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=307F8ADDDD2433E6A4EC749D09A36ACCD621A83DF8D4471B16510DA85DF23CCF)
 
 **说明** 
 
@@ -345,7 +345,7 @@ export struct Pinch {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/pP8RwB9ETtmxJ2IpbCcxtw/zh-cn_image_0000002817426223.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=50A03FD88E10C13323201ECEAAAC83CAC0AA8802B8C5DC0180E46F0226F38A43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/p_hqVnA2Qkuk4JUrOr13tA/zh-cn_image_0000002791725160.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=97A95893ECA717AB07EDB90E00C9E2D6B7B3D3150B11DA800E23DB75E05769B7)
 
 ## 旋转手势（RotationGesture）
 
@@ -410,7 +410,7 @@ export struct Rotation {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/mkiui354SamcG7nCyQ8ubw/zh-cn_image_0000002788466804.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FD64A0281938BD6A87390986E53BBD1B45511323377F34D6223CC0ADD897A01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/H2BYXnhZSgqhqssE8sprXQ/zh-cn_image_0000002791565188.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F98BB3C6898FBB4655DF41B4A8E02B274CEE9D9A83D5EF26B278806C224C3AE)
 
 ## 快滑手势（SwipeGesture）
 
@@ -467,7 +467,7 @@ export struct Swipe {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/CYCfaNKLQuWinBHexqF-iQ/zh-cn_image_0000002817506291.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3390B74198B1687BE0911F434AB2193191B6A9187CF009EC4149EBA5CBFA61C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/4G9G-BkSTVmBlUNprCTHYA/zh-cn_image_0000002820525141.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4DC7444E1FDE53A8C88C1FAC6A3FA309F0520F950096047D577FDF98B173CB6)
 
 **说明** 
 

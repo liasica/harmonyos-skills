@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 基于TracingConfiguration实现性能维测
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 提升HTTP传输性能 > 基于TracingConfiguration实现性能维测
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:38+08:00
+scraped_at: 2026-11-19T09:48:16+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:eb731fb6a51286dc44721158d90c70c11437719902a66a255055d4bc80a81d77
+content_hash: sha256:6087718695dbe92e5f858a57134a4fbf94ff20145788e53fde38f7da3c3ea041
 ---
 
 ## 约束与限制
@@ -86,7 +86,7 @@ content_hash: sha256:eb731fb6a51286dc44721158d90c70c11437719902a66a255055d4bc80a
 
 下面，我们将通过图片、时间线及一段示例代码，详细解析请求过程中的关键时间点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/AL4giRgmQKWI6ARZZmEY9A/zh-cn_image_0000002788467412.png?HW-CC-KV=V1&HW-CC-Date=20261114T004737Z&HW-CC-Expire=31536000000&HW-CC-Sign=26F0A0730DFCC48B7ADA2010A803D722A026F1396A59478F3252ECAECE6C944C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/2pIUR40oScmbIz67Hu1e6w/zh-cn_image_0000002791565796.png?HW-CC-KV=V1&HW-CC-Date=20261119T014701Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AC2BA08A4860CDDE4D1121494DB81A6DBBA39D68509BA94FB7C08468FD34EAB)
 
 从图中可以看到HTTP请求过程的基本过程，并且有一些关键的时间点，下面将以时间线的方式对其进行说明：
 

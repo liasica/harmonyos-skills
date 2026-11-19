@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-acc
 title: 应用接入AVSession场景介绍
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话 > 应用接入AVSession场景介绍
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:03+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:e4f3c6d5d8883d1e896ec4239694eee02b172d040961b269d38d48351b22b366
+scraped_at: 2026-11-19T09:48:36+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:2c809c283016ef24b220b197c0a4f68d86feb0f92d2cd7a30f47eddb4a4d9f77
 ---
 
 音视频应用在实现音视频功能的同时，需要接入媒体会话即AVSession Kit，本文结合典型案例，介绍接入AVSession的展示与控制场景，为开发者提供适配参考。
@@ -380,9 +380,10 @@ async function setListener(context: Context) {
 
 当应用接入歌单功能后，用户在系统播控中心界面可以播放应用的歌单，也可以在应用进程释放后，通过系统播控中心再次冷启动应用后台播放。
 
-* 用户触发歌单播放时，系统会将歌单的唯一标识id传回应用，应用可以在意图调用接口中，通过解析意图参数(intentParam)中的entityId，获取到歌单的id，实现对应歌单的播放。
-* 用户触发播控冷启动播放时，系统会在意图参数(intentParam)的包含空歌单id，即解析出得的entityId为空字符串，**由应用来决定播放内容**，可以实现为续播上一次的播放内容。
-* **系统会在后台冷启动应用的播放，需要在播放前先设置[AVMetadata](../harmonyos-references/arkts-apis-avsession-i.md#avmetadata10)，注册[播控控制回调](avsession-access-scene.md#控制命令的处理)，并申请播音长时任务。**
+* 用户触发歌单播放时，系统会将歌单的唯一标识id传回应用，应用可以在意图调用接口中，通过解析[意图参数（intentParam）](../doccenter-references/api/js-apis-app-ability-insightintentexecutor.md#onexecuteinuiabilitybackgroundmode)中的entityId，获取到歌单的id，实现对应歌单的播放。
+* 用户触发播控冷启动播放时，系统会在[意图参数（intentParam）](../doccenter-references/api/js-apis-app-ability-insightintentexecutor.md#onexecuteinuiabilitybackgroundmode)中包含空歌单id，即解析出的entityId为空字符串，**由应用来决定播放内容**，可以实现为续播上一次的播放内容。
+* **系统会在后台冷启动应用的播放，应用需要在播放前先设置[AVMetadata](../harmonyos-references/arkts-apis-avsession-i.md#avmetadata10)，注册[播控控制回调](avsession-access-scene.md#控制命令的处理)，并申请播音长时任务。**
+* 从API版本26.0.1开始，Car设备场景下支持播放歌单中当前音乐、上一首或下一首音乐。系统通过[意图参数（intentParam）](../doccenter-references/api/js-apis-app-ability-insightintentexecutor.md#onexecuteinuiabilitybackgroundmode)中startPlayInfo里的controlCommand（'play'：播放、'playNext'：下一首、'playPrevious'：上一首）将控制命令传递给应用，由应用实现对应内容的播放。
 
   ```typescript
   import { insightIntent, InsightIntentExecutor } from '@kit.AbilityKit';

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: ArkGuard字节码混淆常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > ArkGuard字节码混淆常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:57+08:00
+scraped_at: 2026-11-19T09:47:35+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:611116f82ccf30d39e212ca29b7f8d8d30a35e372dd70255fcb018d511038f3e
+content_hash: sha256:410ec19a99ebda2af622d1a1c86fda60e9baf1bdf6389c0a256428651d7541d0
 ---
 
 ## 字节码混淆与源码混淆差异
@@ -25,7 +25,7 @@ content_hash: sha256:611116f82ccf30d39e212ca29b7f8d8d30a35e372dd70255fcb018d5110
 
 **目录差异**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/cSjR8vKrTaiJRe-8mvYnwQ/zh-cn_image_0000002788466158.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=55A572A84655B8C61C07F34109CA9A5177D35DC037AF708C5F133A2B8A2B2E85) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/N8ZnYIaATo6gyBvTv-K2ag/zh-cn_image_0000002817505645.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EDBDD63E45ACC48E0D7B9887941B527D2257712F9AC700CB3523B70CE84BF1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/_Xc7K1gTQFGdy7ZWjmSLuA/zh-cn_image_0000002791564542.png?HW-CC-KV=V1&HW-CC-Date=20261119T014734Z&HW-CC-Expire=31536000000&HW-CC-Sign=F082596651E7E2DB5E8A5B5A2DBB9F5E8477DCD9D1A1748C4B048D232E619FF6) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/dvBbMz-iTiCpbKfHko0kTg/zh-cn_image_0000002820524493.png?HW-CC-KV=V1&HW-CC-Date=20261119T014734Z&HW-CC-Expire=31536000000&HW-CC-Sign=0367A86D3373A0DDCCFF0F33F241589EA76EF92C21A8662B442A3485CC7463D7)
 
 字节码混淆后，obfuscation目录中多了obf、origin文件夹和config.json文件，具体详见[混淆效果](bytecode-obfuscation-guide.md#查看混淆效果)。
 
@@ -221,7 +221,7 @@ callargs2 0x2e, v2, v3
 * 混淆后的文件目录：build/default/[...]/release/obfuscation/obf。
 * 混淆名称映射表及系统API白名单目录：build/default/[...]/release/obfuscation。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/wf89JbATSFyv9DcCCDcKvw/zh-cn_image_0000002788306214.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5D07BDCF79668154FADD5D30EE8477789426E436EAFB98649B05399027911BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/KNttUGsYSp-rtsWY7lkQDQ/zh-cn_image_0000002820404491.png?HW-CC-KV=V1&HW-CC-Date=20261119T014734Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD904D7063F1A21EEBD44C7BE2A7925A1E507951B3E1BF21E09A0E2312F22AC8)
 
 * 名称映射表文件：nameCache.json，该文件记录了字节码名称混淆的映射关系。
 * 系统API白名单文件：systemApiCache.json，该文件记录了SDK中的接口与属性名称，与其重名的源码不会被混淆。
@@ -514,7 +514,7 @@ city1
 
 HSP需要将给其他模块用的方法配置到白名单中。因为主模块里也需要配置相同的白名单，所以推荐将HSP配置了白名单的混淆文件（假设名称为hsp-white-list.txt）添加到依赖它的模块的混淆配置项里，即下图files字段里。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/1b7RXupKSvOFp8czQOx3pA/zh-cn_image_0000002788306216.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=46A79C4D2A5C8661EED866AF52938900A0CEA2E5E8042CF6675D6C9A01B939FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/dlHrQS7eRCmsBOWWOFcP_g/zh-cn_image_0000002820404493.png?HW-CC-KV=V1&HW-CC-Date=20261119T014734Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE64FF3C2F6C5613C24327461C16FDE808367B6A090E204896B77179C447535A)
 
 **案例一：动态导入某个类，类定义的地方被混淆，导入类名时却没有混淆，导致报错**
 
@@ -706,7 +706,7 @@ person["m"] = 20;
 
 工程的目录结构如下图所示，模块library1的外层还有目录"directory"，开启文件名混淆后，"directory" 被混淆为f12，导致路径找不到。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/brBO8SQIQOql9fYnngv20Q/zh-cn_image_0000002817425579.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC61E056C4F7AE31F0C051D1A5BEEB6EB4EBEA83922B0766A71379C90F99BF1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/DW3WlPZOT4WDDM09iLM72g/zh-cn_image_0000002791724516.png?HW-CC-KV=V1&HW-CC-Date=20261119T014734Z&HW-CC-Expire=31536000000&HW-CC-Sign=76F53A395CFE95F5A2BEBFA06F3896E4BDDAE476F27A92F8BF2CA49921CDFFEE)
 
 **解决方案**：
 

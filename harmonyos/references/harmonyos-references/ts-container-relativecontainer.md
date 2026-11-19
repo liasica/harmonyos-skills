@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: RelativeContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > RelativeContainer
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:09+08:00
+scraped_at: 2026-11-19T09:50:56+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:919feff8a41bb92b18c8bd7b4f711880667f8218ada031554d45ea959f568501
+content_hash: sha256:6687c3eaaa44862db4f52075058924f9b191e82572f3c6ef4c94fe116c6c9f4a
 ---
 
 相对布局组件，用于复杂场景中元素对齐的布局。通过设置子组件的对齐规则，实现子组件相对于容器或其他子组件的对齐，适用于需要灵活布局、减少嵌套层级的复杂界面。
@@ -284,7 +284,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/8EndlesyROmUy6HkEiDJGg/zh-cn_image_0000002817508265.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D7E8D4EAA72943E1ED8B5BE63944ACF6352BE7AA01190C63F6F17F10B32833F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/6ZV5srtCQDScCP91iZFOFA/zh-cn_image_0000002820527115.png?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=E659AE0432206B12BA893EF133AEE04122C33A4FA7DE6321DD2814E20F6A5453)
 
 ### 示例2（子组件设置外边距）
 
@@ -360,7 +360,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/4xv0r1FEQfWcZi8iv3H_9g/zh-cn_image_0000002788308834.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=F24DB356B9EBADCDC5A098A323C03F7761F57D3AA4B1D4DCCF8DCC588F563A1A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/QgUSIAY5QHCPwsn8VZtNXw/zh-cn_image_0000002820407115.png?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AD081C8FEE32B5745481ADBCD03E1F5B05D7B18C1D68176ED69CAEA5E634DA1)
 
 ### 示例3（设置容器大小自适应内容）
 
@@ -430,7 +430,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/doeJ1PJrTXWWeFFHFqlXtA/zh-cn_image_0000002817428197.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=26E64B9625A0AE0BB8FA6FBF394924CD09E4A934A053B3A94DDAFE4B5F5A21F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/7kwTy95tSoGSuEAVOx9S2Q/zh-cn_image_0000002791727136.png?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3D552826048D56A12250463BEF59BB62F4A59D970377B4C4C3A626F42B633F8)
 
 ### 示例4（设置偏移）
 
@@ -465,7 +465,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/UO_ZbRPLR5WSVft0Ol-kBg/zh-cn_image_0000002788468778.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=79AFF2B7C1743F7672888715E6D172874F966473DF879B264188EC8EE609CAEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/yP5rXhyWRb2XP8_lTKCE8A/zh-cn_image_0000002791567164.png?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2ABF22DFA1EC98B025FCF66F7B9FD7DA556C1949761A325C52D819759C544A0)
 
 ### 示例5（设置辅助线）
 
@@ -500,7 +500,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/eYCylbj7S5-HXn5BSTAaMw/zh-cn_image_0000002817508267.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD2E62F85E1C787733D69CD710AAE86238560D585DAD52FAB56C8B822A03ADE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Iu6XxKNATb-KcWT_AIODig/zh-cn_image_0000002820527117.png?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=E613D53DB74007AF51527607F0441CE12FADC48DD39945161C57052798D297EF)
 
 ### 示例6（设置屏障）
 
@@ -573,7 +573,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/GsXyvfPmRp265sKxke_CGQ/zh-cn_image_0000002788308836.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=46ECED8CEEA98597765E379DCC5063477CE49B114D36432648E6AC9D826A9211)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/30a4BP_5R7GSbZ7mlnl2kQ/zh-cn_image_0000002820407117.png?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=B531DCB4D88D17F4774A70106094114FBE9AD92A95CF8951B27BD8772D74C391)
 
 ### 示例7（设置链）
 
@@ -724,7 +724,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/qgQDINVCRY6gjyxyl56Qxg/zh-cn_image_0000002817428199.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6617E75AA806A46E806D1292054F12D2FC402DEB166EB8AC188841C201FF3BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/JVcBcHnQTwOjxb6rHRSuBw/zh-cn_image_0000002791727138.png?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D4DF39E4C860BDF8A748D7521BE185CE59BB16314BB98323D22AEC36B3BEEBB)
 
 ### 示例8（链中设置偏移）
 
@@ -790,7 +790,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/HeA76NweQxS2s8DWmxAAJw/zh-cn_image_0000002788468780.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1F3C8DFA59EE0DD58D6B19502EB196983FC2CE1F2ABD623ABFBE5A33B5F050D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/0gQ2lqAtR0mpEL0o4-Fj_Q/zh-cn_image_0000002791567166.png?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7AEBAD98D31D8931B707C266675F73E333799F6BDE1A75BCE6EC066CD1D4143)
 
 ### 示例9（设置镜像模式）
 
@@ -864,7 +864,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/CLDVA3JeTlWPGTZmbjqqqQ/zh-cn_image_0000002817508269.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=A470FF9E77361BF30E29ACF0BEE55204EE0D1D85B531E5CF2E674B273E92E968)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/Xz62mn_8QkKvQNeu3Es2WA/zh-cn_image_0000002820527119.png?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0CC2B6B75F23E778A7162D69E5AA7C938B9442FB63BAB563F32361CA025BE05)
 
 ### 示例10（设置链中节点权重）
 
@@ -933,4 +933,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/d0bKc6mRQ_mt9RtV54Hn8Q/zh-cn_image_0000002788308838.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=820ADAEEC385F1EE832677481636B2A947E6C8E4700A7A26DED10CADC3EFFE04)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/iXkTMXJqS4mnV2YL_14n3w/zh-cn_image_0000002820407119.png?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=22336EA0E9396083749E32F32078B969E1027627C10A97D31C2116AC9AD94954)

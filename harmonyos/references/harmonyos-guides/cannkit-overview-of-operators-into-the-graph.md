@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-overv
 title: AscendC算子入图概述
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子部署 > AscendC算子入图（GE图）开发 > AscendC算子入图概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:38+08:00
+scraped_at: 2026-11-19T09:49:18+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:957c1555b2f1da65b842c186886ce04c42dcd9eb0326428beae232524dea1b8a
+content_hash: sha256:d553384ca77c5b3e91bb24bb38238271d2af3be4ff6a91b2e60fccfa51439a83
 ---
 
 图模式是神经网络模型的一种运行模式，在图模式下开发者首先将模型的计算过程构造成一张图，然后通过GE将图下发到Kirin硬件执行。相对于单个算子依次下发的方式，图模式下，GE可以通过计算图优化、多流并行、内存复用、模型下沉等技术手段，加速模型执行效率，减少模型内存占用。
 
 算子入图的开发流程如下图所示，算子工程创建完成后，基于工程代码框架完成算子原型定义、Kernel侧算子实现、Host侧Tiling实现并完成算子入图开发，通过工程编译脚本完成算子的编译部署，之后即可基于图IR执行算子，比如单算子模型执行或者IR构图的方式调用自定义算子。该开发流程以[工程化算子开发](cannkit-overview-of-engineering-operator.md)为基础，除了需要提供[算子实现](cannkit-operator-prototype-definition.md)中的算子实现文件外，还需要额外交付算子入图的代码文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/RdeulY46QZqyxLbFeYEg7g/zh-cn_image_0000002788308434.png?HW-CC-KV=V1&HW-CC-Date=20261114T004652Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A6D5F6C58CB4026569B7549CB71C8CFF16049E37592E2BAB79831337BBC5C05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ZO-ajHAAS8G8puY57fvKnQ/zh-cn_image_0000002820406715.png?HW-CC-KV=V1&HW-CC-Date=20261119T014824Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1E533ED450C787598F1BFB565F54C8835F1689C1EE6854A7CB4CF4093F264CB)
 
 1. 环境准备。
 

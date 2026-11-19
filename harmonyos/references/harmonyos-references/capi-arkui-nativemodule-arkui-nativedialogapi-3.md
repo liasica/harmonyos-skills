@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_NativeDialogAPI_3
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_NativeDialogAPI_3
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:23b6dc52598beeaf4e3288fb796bb5800f402fe044bc95343e22f6eeeb376cc8
+scraped_at: 2026-11-19T09:51:41+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:4eec4358c12756bcfa6e7f20406bb5f36279fdd2cb4fb9ede95ed43319517325
 ---
 
 ```c
@@ -108,7 +108,7 @@ registerOnWillAppear方法需要在调用[show](capi-arkui-nativemodule-arkui-na
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
 | void\* userData | 用户自定义数据。 |
-| void (callback)(void userData) | 自定义弹窗显示之前的回调函数。 |
+| void (\*callback)(void\* userData) | 自定义弹窗显示之前的回调函数。 |
 
 **返回：**
 
@@ -138,7 +138,7 @@ registerOnDidAppear方法需要在调用[show](capi-arkui-nativemodule-arkui-nat
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
 | void\* userData | 用户自定义数据。 |
-| void (callback)(void userData) | 自定义弹窗显示之后的回调函数。 |
+| void (\*callback)(void\* userData) | 自定义弹窗显示之后的回调函数。 |
 
 **返回：**
 
@@ -168,7 +168,7 @@ registerOnWillDisappear方法需要在调用[show](capi-arkui-nativemodule-arkui
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
 | void\* userData | 用户自定义数据。 |
-| void (callback)(void userData) | 自定义弹窗关闭之前的回调函数。 |
+| void (\*callback)(void\* userData) | 自定义弹窗关闭之前的回调函数。 |
 
 **返回：**
 
@@ -198,7 +198,7 @@ registerOnDidDisappear方法需要在调用[show](capi-arkui-nativemodule-arkui-
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
 | void\* userData | 用户自定义数据。 |
-| void (callback)(void userData) | 自定义弹窗关闭之后的回调函数。 |
+| void (\*callback)(void\* userData) | 自定义弹窗关闭之后的回调函数。 |
 
 **返回：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: rag（检索增强生成）
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > ArkTS API > rag（检索增强生成）
 category: harmonyos-references
-scraped_at: 2026-11-14T08:51:09+08:00
+scraped_at: 2026-11-19T09:52:00+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:baf48a3a80594aa585b8470810a8fd24181f7ae90d1952d12516d10042e3ea1e
+content_hash: sha256:3f010d07b3866a2c12ffaa80439ce3eb00c3f2934cb12f9bbb9873bc8bf8035c
 ---
 
 本模块提供创建和关闭会话（[RagSession](dataaugmentation-rag-api.md#ragsession)）、流式请求大语言模型（[ChatLLM](dataaugmentation-rag-api.md#chatllm)）以及流式问答（[streamRun](dataaugmentation-rag-api.md#streamrun)）的能力。
@@ -37,7 +37,7 @@ RAG（Retrieval-Augmented Generation，检索增强生成）模块提供基于�
 
 ### UML类图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/k1dkDgrgSly7nFwxpxp56A/zh-cn_image_0000002817509241.png?HW-CC-KV=V1&HW-CC-Date=20261114T005108Z&HW-CC-Expire=31536000000&HW-CC-Sign=5374AEC132566395C044E992F25D7D8CF620977D2001B44F6B55FD6A1DCD4632)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/xocz8MN4QIWKz5BVO5Rt9A/zh-cn_image_0000002820408093.png?HW-CC-KV=V1&HW-CC-Date=20261119T015159Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FF6371F60288FBD947A602C929A4B2F530961C1EE7ABE2847D9D3E3E48ACB8E)
 
 ## 导入模块
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 拦截器：更丰富、更高阶的定制能力
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 实现HTTP请求定制 > 拦截器：更丰富、更高阶的定制能力
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:37+08:00
+scraped_at: 2026-11-19T09:48:16+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:c61ff8a9658fe47e09c4b275c479322d6b81aca4506fc3dfe6ad7c8a84b4a0ad
+content_hash: sha256:9b7c12435b91615e7f195f692e8d6632bd6a6d2167ec8ccf80c3240953ee7b26
 ---
 
 使用拦截器可以便捷地对HTTP的请求与响应进行修改，您可以创建拦截器链，按需定制一组拦截器对网络请求/响应进行修改。Remote Communication Kit模块提供了拦截器能力，在[SessionConfiguration](../harmonyos-references/remote-communication-rcp.md#sessionconfiguration)中添加interceptors参数，传入自定义的拦截器，即可在HTTP请求和响应的过程中添加拦截器功能。
@@ -18,7 +18,7 @@ content_hash: sha256:c61ff8a9658fe47e09c4b275c479322d6b81aca4506fc3dfe6ad7c8a84b
 
 在客户端发送HTTP请求到达目标服务器之前，可以使用拦截器对请求进行修改。如下图，定义了RequestUrlChangeInterceptor链式拦截器（下文以拦截器1代替）和ResponseHeaderRemoveInterceptor链式拦截器（下文以拦截器2代替）。拦截器1会将请求先拦截，该拦截器可以实现当网络质量差时，通过修改HTTP请求中的URL，来调整请求资源的大小。然后经过拦截器2，最后到达Internet。当请求到达目标服务器，服务器返回请求响应的结果给客户端之前，可以使用拦截器对HTTP的响应进行修改。响应先被拦截器2拦截，在响应返回给应用前检查和修改服务器的响应头。然后经过拦截器1，最后客户端接收响应结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/7cI_m-VQQsC-skBmKymNYA/zh-cn_image_0000002817426831.png?HW-CC-KV=V1&HW-CC-Date=20261114T004558Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CFA723C760A181B3573067EC5E894011E0A5948B13EC67AE34C94C31252EC0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/bm9-tGaQSsaGsOF9NLOBIw/zh-cn_image_0000002791725768.png?HW-CC-KV=V1&HW-CC-Date=20261119T014816Z&HW-CC-Expire=31536000000&HW-CC-Sign=88B93EE3ACCC9C4A965E7E8A2F4B8BB33A3DB9366F15C3A6AC3E86D69163CF32)
 
 **说明** 
 

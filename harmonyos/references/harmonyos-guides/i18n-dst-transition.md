@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-dst-tran
 title: 夏令时跳变
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 时区与夏令时国际化 > 夏令时跳变
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:20+08:00
+scraped_at: 2026-11-19T09:47:58+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:cc1e1799b1f93873082cf8da68ab58751e133375daa5151aa27f7bddff9cb0bc
+content_hash: sha256:6903f0abdb12a7ae99953b173e02f35ce79b7a091f585304357d140f7e5e7b39
 ---
 
 ## 功能介绍
@@ -45,7 +45,7 @@ content_hash: sha256:cc1e1799b1f93873082cf8da68ab58751e133375daa5151aa27f7bddff9
 
 在夏令时内，本地时间显示建议添加夏令时标识。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/_qXaOJCbQDuY9C7CAyofkQ/zh-cn_image_0000002817506757.png?HW-CC-KV=V1&HW-CC-Date=20261114T004541Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AB97E9E233FA00643F1334A783C5C32D8478D4ABBFCF12D7D8FD1A54B41B242)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/zd4A8BXmTjeaQFv40q0CKQ/zh-cn_image_0000002820525605.png?HW-CC-KV=V1&HW-CC-Date=20261119T014758Z&HW-CC-Expire=31536000000&HW-CC-Sign=411E4ADD85320F88381AC64093FA2E948B37F1DFCC95B53940180C53420FB0CD)
 
 ### 存储和传输时间数据
 

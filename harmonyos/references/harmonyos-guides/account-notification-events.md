@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-notif
 title: Account Kit通知事件
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit通知事件
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:11+08:00
+scraped_at: 2026-11-19T09:48:51+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:64d5dc19a140b1b6890830efa0c2a8464142ce3a489556a6a5ab686b0d415bc3
+content_hash: sha256:296ee327347d8d0f9dc5a39de02a8b3bb3da3d474658aeb4bef61b5add6d9c03
 ---
 
 ## 概述
@@ -184,16 +184,16 @@ content_hash: sha256:64d5dc19a140b1b6890830efa0c2a8464142ce3a489556a6a5ab686b0d4
 
 1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，进入“开发者管理”页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/LnWwEb6HRAuuoUaJ8uau5g/zh-cn_image_0000002788307884.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB360C337CC0B82646F0E1C34C8BF3038DFD98394E165F244E0120D4D0C06158)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/xvRKWZjgRde-t1N063GxeQ/zh-cn_image_0000002820406165.png?HW-CC-KV=V1&HW-CC-Date=20261119T014850Z&HW-CC-Expire=31536000000&HW-CC-Sign=F560DE05C63FE491DF3ADD0B150822358C1FED60DC440DBC852A303EEFB0A702)
 2. 左侧导航栏选择“ID、证书和Profile > APP ID”，页面中选择“HarmonyOS”，点击“开放能力管理”页签；选择需要订阅用户信息变更事件的应用，找到“RISC”并勾选，点击“保存”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/RVELuigFR9KFrM-eQAnzlQ/zh-cn_image_0000002817427247.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=6227FF98B17AA5F13A00FE2148B2D268AF74503324FD6E661C97E0E9C403E009)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/VqhJVM2DQVO2iQQQr4lykQ/zh-cn_image_0000002791726186.png?HW-CC-KV=V1&HW-CC-Date=20261119T014850Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CD6F71583AA61E462655ECC3AE525C99DA903814D84A930EF8F0CAFE9DC89D1)
 3. 点击“RISC”对应的“管理”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/pIiZkkcrSIie9HOCN_eITw/zh-cn_image_0000002788467828.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C7D190904FF26145E7D51CC4D494B23A4EEBFB845CC1117E361710E18EC1C03)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/yS2MbueCTJuSNbBW1ciIxQ/zh-cn_image_0000002791566214.png?HW-CC-KV=V1&HW-CC-Date=20261119T014850Z&HW-CC-Expire=31536000000&HW-CC-Sign=06B5D09CB27CD12A54E6A7DF3A5DCCB4F57D1835C226F5A72E53888B1F9CCB3B)
 4. 在弹窗中配置“回调地址”及“订阅范围”，然后点击“提交”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/n7354_lOR6yWXspum9Zyxg/zh-cn_image_0000002817507317.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=9225ACBB3A5AF6562579C5721D45691AC7A009D7F066FF2BEA41E99243A46734)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/6_AMbnjsS6CrXH3eq4IowA/zh-cn_image_0000002820526167.png?HW-CC-KV=V1&HW-CC-Date=20261119T014850Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8A7664CAFA7502449968B2695C2677145421B250C8174D09B89FB6ACEE066F8)
 
    **说明** 
 

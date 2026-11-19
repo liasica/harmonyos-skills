@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typescript-to
 title: 从TypeScript到ArkTS的适配规则
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 从TypeScript到ArkTS的适配指导 > 从TypeScript到ArkTS的适配规则
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:57+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:311abdadbe54de19b7145f0ab147676562e94f7c66149fa0b4368a473ec59f9a
+scraped_at: 2026-11-19T09:47:26+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:6680991e3d5087f2dac395c5bf7853a78c3b0458cae5214baad65ad2b8c2dc83
 ---
 
 ArkTS规范约束了TypeScript（简称TS）中影响开发正确性或增加运行时开销的特性。本文罗列了ArkTS中限制的TS特性，并提供重构代码的建议。ArkTS保留了TS大部分语法特性，未在本文中约束的TS特性，ArkTS完全支持。例如，ArkTS支持自定义装饰器，语法与TS一致。按本文约束进行代码重构后，代码仍为合法有效的TS代码。
@@ -388,10 +388,10 @@ let valueO2: Object = 42;
 
 在以下上下文中不支持使用字面量初始化类和接口：
 
-* 初始化具有any、Object或object类型的任何对象
-* 初始化带有方法的类或接口
-* 初始化包含自定义含参数的构造函数的类
-* 初始化带readonly字段的类
+* 初始化具有any、Object或object类型的任何对象。
+* 初始化带有方法的类或接口。
+* 初始化包含自定义含参数的构造函数的类。
+* 初始化带readonly字段的类。
 
 **例子1**
 
@@ -1080,6 +1080,40 @@ foo();
 
 由于ArkTS不支持动态改变函数对象布局，因此，不支持对函数声明属性。
 
+**TypeScript**
+
+```typescript
+function logNumber(value: number): void {
+  console.info(value.toString());
+}
+
+logNumber.add = (left: number, right: number) => {
+  return left + right;
+};
+
+logNumber.sub = (left: number, right: number) => {
+  return left - right;
+};
+```
+
+**ArkTS**
+
+```typescript
+class NumberUtils {
+  static logNumber(value: number): void {
+    console.info(value.toString());
+  }
+
+  static add(left: number, right: number): number {
+    return left + right;
+  }
+
+  static sub(left: number, right: number): number {
+    return left - right;
+  }
+}
+```
+
 ### 不支持Function.apply和Function.call
 
 **规则：**arkts-no-func-apply-call
@@ -1090,6 +1124,28 @@ foo();
 
 ArkTS不允许使用标准库函数Function.apply和Function.call，因为这些函数用于显式设置被调用函数的this参数。在ArkTS中，this的语义仅限于传统的OOP风格，函数体中禁止使用this。
 
+**TypeScript**
+
+```typescript
+function sumValues(a: number, b: number): number {
+  return a + b;
+}
+
+let args: number[] = [2, 3];
+let result: number = sumValues.apply(null, args);
+```
+
+**ArkTS**
+
+```typescript
+function sumValues(a: number, b: number): number {
+  return a + b;
+}
+
+let args: number[] = [2, 3];
+let result: number = sumValues(args[0], args[1]);
+```
+
 ### 不支持Function.bind
 
 **规则：**arkts-no-func-bind
@@ -1099,6 +1155,38 @@ ArkTS不允许使用标准库函数Function.apply和Function.call，因为这些
 **错误码：10605140**
 
 ArkTS禁用标准库函数Function.bind。标准库使用这些函数显式设置被调用函数的this参数。在ArkTS中，this仅限于传统OOP风格，函数体中禁用使用this。
+
+**TypeScript**
+
+```typescript
+class ValueHolder {
+  value: number = 42;
+
+  printValue() {
+    console.info(this.value.toString());
+  }
+}
+
+let holder = new ValueHolder();
+let boundPrintValue = holder.printValue.bind(holder);
+boundPrintValue(); // 42
+```
+
+**ArkTS**
+
+```typescript
+class ValueHolder {
+  public value: number = 42;
+
+  printValue(): void {
+    console.info(this.value.toString());
+  }
+}
+
+let holder = new ValueHolder();
+let boundPrintValue = () => { holder.printValue(); };
+boundPrintValue(); // 42
+```
 
 ### 不支持以#开头的私有字段
 
@@ -1361,6 +1449,30 @@ c3.foo(); // Extra foo
 **错误码：10605149**
 
 在ArkTS中，class声明的是一个新类型，不是值。因此，不支持将class用作对象，例如将其赋值给一个对象。
+
+**TypeScript**
+
+```typescript
+function classDecorator(constructor: Function) {}
+
+class MyClass {
+  constructor() {}
+}
+
+// 将类作为对象传递给函数
+classDecorator(MyClass);
+```
+
+**ArkTS**
+
+```typescript
+class MyClass {
+  constructor() {}
+}
+
+// 使用类的实例而非类本身
+let myInstance = new MyClass();
+```
 
 ### 使用class而非具有call signature的类型
 
@@ -1798,6 +1910,24 @@ type YI<Item, T extends Array<Item>> = Item;
 
 ArkTS不支持索引访问类型。
 
+**TypeScript**
+
+```typescript
+class Point {
+  x: number = 0;
+}
+
+// 通过索引访问类型
+type PointXType = Point['x'];
+```
+
+**ArkTS**
+
+```typescript
+// 直接使用对应的类型，而非通过索引访问
+type PointXType = number;
+```
+
 ### 不支持structural typing
 
 **规则：**arkts-no-structural-typing
@@ -2033,6 +2163,61 @@ ArkTS仅支持Partial、Required、Readonly和Record，不支持TypeScript中其
 对于Partial<T>类型，泛型参数T必须为类或者接口类型。
 
 对于Record类型的对象，通过索引访问到的值的类型是包含undefined的联合类型。
+
+**TypeScript**
+
+```typescript
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+}
+
+// 使用Pick选择部分属性
+type TodoPreview = Pick<Todo, 'title' | 'completed'>;
+
+const todo: TodoPreview = {
+  title: 'Clean room',
+  completed: false,
+};
+
+// 使用Omit省略部分属性
+type TodoInfo = Omit<Todo, 'completed' | 'description'>;
+
+const todoInfo: TodoInfo = {
+  title: 'Pick up kids',
+};
+```
+
+**ArkTS**
+
+```typescript
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+}
+
+// 直接定义所需接口，替代Pick
+interface TodoPreview {
+  title: string;
+  completed: boolean;
+}
+
+const todo: TodoPreview = {
+  title: 'Clean room',
+  completed: false,
+};
+
+// 直接定义所需接口，替代Omit
+interface TodoInfo {
+  title: string;
+}
+
+const todoInfo: TodoInfo = {
+  title: 'Pick up kids',
+};
+```
 
 ### 不支持as const断言
 
@@ -3151,6 +3336,35 @@ interface Document {
 
 ArkTS只支持Symbol.iterator。
 
+**TypeScript**
+
+```typescript
+const uniqueId = Symbol('userId');
+const user = {
+  [uniqueId]: 'abc123',
+  name: 'Alice',
+};
+
+console.info(user[uniqueId]); // abc123
+```
+
+**ArkTS**
+
+```typescript
+class User {
+  public userId: string = 'abc123';
+  public name: string = 'Alice';
+}
+
+let user = new User();
+console.info(user.userId); // abc123
+
+// ArkTS支持Symbol.iterator
+let arr: number[] = [1, 2, 3];
+let iterator = arr[Symbol.iterator]();
+let result = iterator.next();
+```
+
 ### 不支持globalThis
 
 **规则：**arkts-no-globalthis
@@ -3194,6 +3408,37 @@ let x = M.abc;
 **错误码：10605132**
 
 ArkTS没有原型的概念，因此不支持new.target。此特性不符合静态类型的原则。
+
+**TypeScript**
+
+```typescript
+class Logger {
+  constructor() {
+    if (!new.target) {
+      throw new Error('Logger must be called with new');
+    }
+    console.info('Logger instantiated with new');
+  }
+}
+
+new Logger();
+```
+
+**ArkTS**
+
+```typescript
+class Logger {
+  constructor() {
+    // 使用instanceof替代new.target
+    if (!(this instanceof Logger)) {
+      throw new Error('Logger must be called with new');
+    }
+    console.info('Logger instantiated with new');
+  }
+}
+
+new Logger();
+```
 
 ### 限制使用标准库
 
@@ -3240,6 +3485,41 @@ handler.getOwnPropertyDescriptor()、handler.getPrototypeOf()、
 handler.has()、handler.isExtensible()、handler.ownKeys()、
 
 handler.preventExtensions()、handler.set()、handler.setPrototypeOf()
+
+**TypeScript**
+
+```typescript
+interface Target {
+  a: number;
+  b: number;
+}
+
+interface Source {
+  b: number;
+  c: number;
+}
+
+const target: Target = { a: 1, b: 2 };
+const source: Source = { b: 4, c: 5 };
+// 使用Object.assign合并对象
+const returnedTarget = Object.assign(target, source);
+```
+
+**ArkTS**
+
+```typescript
+class TargetClass {
+  public a: number = 0;
+  public b: number = 0;
+  public c: number = 0;
+}
+
+// 逐个赋值替代Object.assign
+let target: TargetClass = new TargetClass();
+target.a = 1;
+target.b = 4;
+target.c = 5;
+```
 
 ### 限制使用ESObject类型
 

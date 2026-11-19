@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 添加标题行和文本区域
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 构建布局 > 添加标题行和文本区域
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:10+08:00
+scraped_at: 2026-11-19T09:47:47+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:a6b17b0cf34505e7d35b8079055320cf631dc0ac37b280ed5c7b72b2b30ab6e3
+content_hash: sha256:36094ba6c01ea21375f919fdc186e2eeecdd1be821a27e87c9090211bff2bc86
 ---
 
 实现标题和文本区域最常用的是基础组件text。text组件用于展示文本，可以设置不同的属性和样式，文本内容需要写在标签内容区，完整属性和样式信息请参考[text](../harmonyos-references/js-components-basic-text.md)。在页面中插入标题和文本区域的示例如下：
@@ -52,4 +52,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/v2_tjWucT12bS_FmBApElA/zh-cn_image_0000002788466964.png?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E42A5E1FCB5529D72936B49F177BC3599E396BA40D7CD103F945B1344112288)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/BVlXG4UvRMmBU34RGnUhPw/zh-cn_image_0000002791565348.png?HW-CC-KV=V1&HW-CC-Date=20261119T014656Z&HW-CC-Expire=31536000000&HW-CC-Sign=5866CC753C6BCF37B66C619A08887EF5C00AE762741ABB18176B7E586B3D7935)

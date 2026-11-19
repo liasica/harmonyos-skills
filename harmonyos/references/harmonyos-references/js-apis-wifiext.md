@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.wifiext (WLAN扩展接口)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 已停止维护的接口 > @ohos.wifiext (WLAN扩展接口)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:51+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2f61fe0ab4da318de6386bb0a80498efdbc29882faf27a6c29fd7d61f9853f55
+scraped_at: 2026-11-19T09:52:34+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:7c33ad207adbe8aa965feee54b577893fc86aa880aa12eed5ec90e8858c9050d
 ---
 
 该模块主要提供Wi-Fi扩展接口，供非通用类型产品使用。
@@ -30,6 +30,8 @@ enableHotspot(): boolean;
 
 启用Wi-Fi热点。
 
+调用此接口前，您可以调用[wifiManager.isWlanSupported](js-apis-wifimanager.md#wifimanageriswlansupported)查询设备是否支持Wi-Fi。
+
 **说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManagerExt.enableHotspot](js-apis-wifimanagerext.md#wifimanagerextenablehotspotdeprecated)替代。
@@ -49,6 +51,8 @@ enableHotspot(): boolean;
 disableHotspot(): boolean;
 
 禁用Wi-Fi热点。
+
+调用此接口前，您可以调用[wifiManager.isWlanSupported](js-apis-wifimanager.md#wifimanageriswlansupported)查询设备是否支持Wi-Fi。
 
 **说明** 
 
@@ -70,9 +74,11 @@ getSupportedPowerModel(): Promise<Array<PowerModel>>
 
 获取支持的功率模式。使用Promise异步回调。
 
+调用此接口前，您可以调用[wifiManager.isWlanSupported](js-apis-wifimanager.md#wifimanageriswlansupported)查询设备是否支持Wi-Fi。
+
 **说明** 
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManagerExt.getSupportedPowerModel](js-apis-wifimanagerext.md#wifimanagerextgetsupportedpowermode)替代。
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManagerExt.getSupportedPowerMode](js-apis-wifimanagerext.md#wifimanagerextgetsupportedpowermode)替代。
 
 **需要权限：** ohos.permission.GET\_WIFI\_INFO
 
@@ -122,6 +128,8 @@ getPowerModel(): Promise<PowerModel>
 
 获取功率模式，使用Promise异步回调。
 
+调用此接口前，您可以调用[wifiManager.isWlanSupported](js-apis-wifimanager.md#wifimanageriswlansupported)查询设备是否支持Wi-Fi。
+
 **说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManagerExt.getPowerMode](js-apis-wifimanagerext.md#wifimanagerextgetpowermode)替代。
@@ -142,6 +150,8 @@ getPowerModel(callback: AsyncCallback<PowerModel>): void
 
 获取功率模式。使用callback异步回调。
 
+调用此接口前，您可以调用[wifiManager.isWlanSupported](js-apis-wifimanager.md#wifimanageriswlansupported)查询设备是否支持Wi-Fi。
+
 **说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManagerExt.getPowerMode](js-apis-wifimanagerext.md#wifimanagerextgetpowermode-1)替代。
@@ -161,6 +171,8 @@ getPowerModel(callback: AsyncCallback<PowerModel>): void
 setPowerModel(model: PowerModel) : boolean;
 
 设置功率模式。
+
+调用此接口前，您可以调用[wifiManager.isWlanSupported](js-apis-wifimanager.md#wifimanageriswlansupported)查询设备是否支持Wi-Fi。
 
 **说明** 
 

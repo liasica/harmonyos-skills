@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-univers
 title: 无障碍开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 无障碍与适老化 > 无障碍开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:16+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:91ca5041170b7e78b43652b1f9e7be936d5392918e8b5928a3e4982edf2104b0
+scraped_at: 2026-11-19T09:47:45+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:c6b93eb3b572bf9e2ba57dde4896f15b80a657cc949d352a94fa5f3e03071082
 ---
 
 ## 概述
@@ -675,7 +675,7 @@ export struct AccessibilityFocusDrawLevelCase02 {
 ```typescript
 @Entry
 @Component
-struct MailItem {
+export struct MailItem {
   @State private mailTitle: string = '重要通知';
   @State private mailContent: string = '这是一封重要的邮件内容';
   @State private isRead: boolean = false;
@@ -691,6 +691,7 @@ struct MailItem {
     }
     .padding(16)
     .backgroundColor(this.isRead ? Color.Gray : Color.White)
+    .accessibilityGroup(true)
     .accessibilityCustomActions([
       {
         name: '标记为已读',
@@ -715,11 +716,11 @@ struct MailItem {
 ```typescript
 @Entry
 @Component
-struct MailItem {
+export struct MailItem {
     @State private value: number = 70;
     private gradientColor: LinearGradient = new LinearGradient([
-        { color: "#87BDF9", offset: 0.5 },
-        { color: "#3662F0", offset: 1.0 }
+        { color: '#87BDF9', offset: 0.5 },
+        { color: '#3662F0', offset: 1.0 }
     ])
 
     build() {
@@ -734,7 +735,7 @@ struct MailItem {
                 type: ProgressType.Linear
             })
             .width(100)
-            .style({ strokeWidth: 20})
+            .style({ strokeWidth: 20 })
             .color(this.gradientColor)
             .accessibilityCustomActions([
                 {
@@ -743,7 +744,7 @@ struct MailItem {
                         this.value += 10;
                         // 其他业务能力实现
                     }
-                }，
+                },
                 {
                     name: 'DecreaseValue',
                     onAction: () => {

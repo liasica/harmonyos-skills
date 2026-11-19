@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: clock
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > clock
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:35+08:00
+scraped_at: 2026-11-19T09:51:25+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:8d5a7ea169646764e41f15d8199eebb54ba519cbb29c9a525e96ab4ba9fbfb06
+content_hash: sha256:df501c647477799a19bc12843f83b8bad27e1800a0adc20eb84d2e37d2e28891
 ---
 
 时钟组件，用于提供时钟表盘界面。
@@ -45,7 +45,7 @@ content_hash: sha256:8d5a7ea169646764e41f15d8199eebb54ba519cbb29c9a525e96ab4ba9f
 | digitRadiusRatio | number | 0.7 | 否 | 表盘数字中心到表盘中心距离 / 表盘资源边长的一半。  - 有效范围为(0, 1]。  - 该参数用于计算表盘数字在表盘上距离圆心的位置。  - 该参数可以保证同一套表盘资源在不同组件尺寸下都有同样的相对位置，而不需要针对每个组件尺寸都重新调整数字位置。  - 该参数设为1时数字会有部分区域超出表盘，建议结合表盘区域合理设置digitRadiusRatio。 |
 | digitSizeRatio | number | 0.08 | 否 | 表盘数字尺寸/表盘资源边长。  - 有效范围为(0, 0.142]。  - 该参数用于计算表盘数字相对表盘尺寸的大小。  - 该参数可以保证同一套表盘资源在不同组件尺寸下都有同样的相对大小，而不需要针对每个组件尺寸都重新调整字号。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/CkF6vrNRTqWT7Zk8BHIrTg/zh-cn_image_0000002817429085.png?HW-CC-KV=V1&HW-CC-Date=20261114T005035Z&HW-CC-Expire=31536000000&HW-CC-Sign=483DE41C859CD12564DC3D9F85EF64EFDADE1B5556581CD65C18E6BA47434449)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/yd76ovaxS0O6It3VDkenbQ/zh-cn_image_0000002791568052.png?HW-CC-KV=V1&HW-CC-Date=20261119T015030Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3A97235E1BE6909A4C109B2C62368CB008F37417AEB3CDAF482456C7858787A)
 
 ## 样式
 
@@ -122,4 +122,4 @@ clock组件会保持显示区域的宽高比为1，最终正方形显示区域�
 
 **2\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/i7-1S2ozRsi8jcZmIFPEYg/zh-cn_image_0000002788469666.png?HW-CC-KV=V1&HW-CC-Date=20261114T005035Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA718504FD8543F76D382D40BD7476127FF4DC88974C3C69C7A84D1D2D8A62A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/Mh5CW9eQT6qXnxOoNVBenA/zh-cn_image_0000002820528005.png?HW-CC-KV=V1&HW-CC-Date=20261119T015030Z&HW-CC-Expire=31536000000&HW-CC-Sign=A45620F9568F2C6B1DFFD95045975B24140872D04FD1A3560B7686D4FF5D75A9)

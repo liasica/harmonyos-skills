@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-get-re
 title: 画布的获取与绘制结果的显示（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 画布的获取与绘制结果的显示 > 画布的获取与绘制结果的显示（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:05+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:7d51af0ae60aa5a17b06836a743f1a1b23f16c18d373302a71df6adb84ba16bf
+scraped_at: 2026-11-19T09:48:45+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:03895b2adfc968730aaf9bedc41fe4c965a50043991781b11d17a49b4b2cd3e1
 ---
 
 ## 场景介绍
@@ -144,6 +144,7 @@ Canvas是图形绘制的核心，本章中提到的所有绘制操作（包括�
    import { UIContext, NodeController, FrameNode, RenderNode, DrawContext} from '@kit.ArkUI';
    import { image } from '@kit.ImageKit';
    import { taskpool } from '@kit.ArkTS';
+   import { BusinessError } from '@kit.BasicServicesKit';
    import { drawing } from '@kit.ArkGraphics2D';
    ```
 2. 添加自定义RenderNode。
@@ -202,6 +203,8 @@ Canvas是图形绘制的核心，本章中提到的所有绘制操作（包括�
        taskpool.execute(task).then((pixel:Object)=>{
          this.myRenderNode.setPixelMap(pixel as image.PixelMap);
          this.myRenderNode.invalidate();
+       }).catch((err:BusinessError)=>{
+         console.error(`Failed to create pixelMap. Code is ${err.code}, message is ${err.message}`);
        })
      }
 

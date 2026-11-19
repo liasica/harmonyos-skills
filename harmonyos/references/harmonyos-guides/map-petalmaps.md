@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-petalmaps
 title: 通过地图应用实现导航等能力
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 通过地图应用实现导航等能力
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:25+08:00
+scraped_at: 2026-11-19T09:49:06+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:281a710494a3f05d2b51a5bf1334c0c2d283be1cff919c28c41bcdec056b3382
+content_hash: sha256:7cdfcc026a36428d3b3fad3d15b23c1c2f88939a54a47eba66a57b88a4870e6a
 ---
 
 ## 场景介绍
@@ -71,7 +71,7 @@ try {
 
 **图1** 打开地图应用首页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/drTC8QgxRJqyQZ52h-gfFw/zh-cn_image_0000002788468132.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=41ED49217E4003D858491D6D1B79721A173A9322A372388F1FA6A2F23C7E9A2D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Xknih5AmSVeah6ae2neQqw/zh-cn_image_0000002791566518.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAC32CCC07B4DD7FCAA156A9B48BB15A069E621D883EDDF7488AA55DB1777BBD "点击放大")
 
 ### 打开地图应用进行地点搜索
 
@@ -90,7 +90,7 @@ try {
 
 **图2** 打开地图应用进行地点搜索
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/at9N2oH4TKK6cq194ue3Gg/zh-cn_image_0000002817507621.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B74F7836A85EBBFF24B072FDEDF8E9F3F61D531F021CDC1966298DE6A4A2F38 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/mmWTWhe8QWqgqpv8lV86eQ/zh-cn_image_0000002820526471.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4FDA992DAA4B2EE63420FD62D59B537ECE5ECA605E5F7DACA22C9212DE8BD87 "点击放大")
 
 ### 打开地图应用查看地点详情
 
@@ -117,7 +117,7 @@ try {
 
 **图3** 打开地图应用查看地点详情
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/lGbsTUIDTU-mPv2SX5IVQA/zh-cn_image_0000002788308190.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DD5D6D53982A9AD407385FB716D1D3D0C43624E27C1F76DA417AB65E60A45F3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/yfh5zzEuRDOrdKvb4YD_xQ/zh-cn_image_0000002820406471.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF8F0AC04242980CA1FE473AE4FFE28FD6C0666BF98C334DBF709BDB5F8D45D2 "点击放大")
 
 ### 打开地图应用规划路线
 
@@ -139,7 +139,7 @@ try {
 
 **图4** 打开地图应用规划路线
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Y5ujPuDWQKGSlLuTSuF_8Q/zh-cn_image_0000002817427553.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1A02247DC36A95417CDF9E2B02F9E86D08F1A572115FE1F2122BA428787AFBB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/zd7ItRHtSbejZyDzcuwcag/zh-cn_image_0000002791726492.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3EC8F7E86E50681A6D2A2EB42EACC6A06D3E84CAA4AE78F0B1436D95018DAA8 "点击放大")
 
 ### 打开地图应用进行导航
 
@@ -161,7 +161,7 @@ try {
 
 **图5** 打开地图应用进行导航
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/P_scx_I7Ty6gihDyemyycw/zh-cn_image_0000002788468134.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=23A948F65CC9A24F913C0980D7607D8120842E4658901F45309FC0C7B57DE12F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/FCSwndM7Q4yE5_lH2xowsQ/zh-cn_image_0000002791566520.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC3F80FC208C59DDF860E1980663EADF563B6D55B1891A8C29E9B547BD698E15 "点击放大")
 
 ### 打开地图应用打车页面
 
@@ -183,7 +183,7 @@ try {
 
 **图6** 打开地图应用进行打车
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Xru3ew3uSWK7bdfNTm00OQ/zh-cn_image_0000002817507623.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7AA8049061816790AC4448FB710A41565943837648D84B874C410085AA49E15 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/TTsYybanRFGO3lLHWxIbMA/zh-cn_image_0000002820526473.png?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EC662A290B9513672FB056C534C1F035B85213A7CA6C0FE82FD5E02F3134AE9 "点击放大")
 
 ### 打开地图应用离线地图管理页面
 
@@ -227,12 +227,12 @@ try {
 
 **图7** 打开地图应用手表离线地图管理页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/kX-f-C25QLW-zD11PfZq5A/zh-cn_image_0000002788308192.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=2397597516E2AD30C3C665BA8856A7395D863B2D2EB8518FFD32C9933390C5EB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/H9F7Td7MTIGG5E7IX4-jXg/zh-cn_image_0000002820406473.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=32AD8F97425F0C71BACE91BFEBDB997DBDFDECE9A7C9B8526BA9F07DEB1A274E "点击放大")
 
 **图8** 打开地图应用地图资源（手机离线地图）管理页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/VDE_L0FVQTGvGvrmPaBsmQ/zh-cn_image_0000002817427555.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB7663CE29A4469304B22CE100C893DE09F48E684483B9BCE4B65AC2C62F245F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ScY1PP7xR9iaLwtLNcAeoQ/zh-cn_image_0000002791726494.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4101E03DE3BC7CFB5ACDBA27AE0CCEB11CE2278B6060F1113D4724EDBBA711F "点击放大")
 
 **图9** 打开地图应用导航语音管理页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/u6TiDDfCRgCcGPmxkkSlqw/zh-cn_image_0000002788468136.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF22958360105A14AA388F73FC1C595E00963BB9BA70B3C69F712D3FDA80BEDC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/cYciD_uwTFm_ZQcmjjtLLA/zh-cn_image_0000002791566522.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9B741D7E9E94DC4A62C0BEE0AC0F24CD3B6A9E3D2459C4F45AB4F12A414957E "点击放大")

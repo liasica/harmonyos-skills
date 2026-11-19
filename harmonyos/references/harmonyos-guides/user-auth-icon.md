@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-auth-ico
 title: 使用嵌入式用户身份认证控件
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 使用嵌入式用户身份认证控件
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:34+08:00
+scraped_at: 2026-11-19T09:48:12+08:00
 doc_updated_at: 2026-08-07
-content_hash: sha256:99e7f1b770cd6d59968cb64bd4c9397a5c7d5d556d3ac9778d3b0ebb89d6d52c
+content_hash: sha256:2d7d420c225026df1f3c1e7df7552f5f9288ed0c33fc6e6a7e4410599373dc3d
 ---
 
 提供应用界面上展示的人脸、指纹认证图标，功能包括：
@@ -24,7 +24,7 @@ content_hash: sha256:99e7f1b770cd6d59968cb64bd4c9397a5c7d5d556d3ac9778d3b0ebb89d
 
 以指纹认证为例，控件使用效果如图所示。应用集成嵌入式用户身份认证控件后，用户点击左图中的指纹图标（即嵌入式用户身份认证控件），系统将自动拉起右图中的系统身份认证控件，完成身份认证。开发者无需通过接口发起身份认证请求，简化了认证流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Gt0IiCgPQUSnsE-4Y7-ixA/zh-cn_image_0000002817506869.png?HW-CC-KV=V1&HW-CC-Date=20261114T004733Z&HW-CC-Expire=31536000000&HW-CC-Sign=74525EDFD6C23BA92361CD1B6B20F48E1B7C5BF1C2A915446A6AEFA176E0C5CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/WfyA4ykYSgun7TrEnTqNEA/zh-cn_image_0000002820525717.png?HW-CC-KV=V1&HW-CC-Date=20261119T014812Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7FDD72845887CF86A513A43EFE7339BC9ADF679C9B8768C87DB15E5C3851E6B)
 
 ## 示例
 

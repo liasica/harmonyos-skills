@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 拦截页跳转至管控应用
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 拦截页跳转至管控应用
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:32+08:00
+scraped_at: 2026-11-19T09:49:13+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:179d355054b78e4be5b6cb1c900d3fffb2b1a1d294e69d8030cd5339207c17a0
+content_hash: sha256:0222661c454a89570eda0d6f629b607960139054843dd336dfc6dec61ed485f2
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ Screen Time Guard Kit支持用户通过被管控应用拦截页跳转至当前�
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/186DPkchSkmOV2YAtmixJA/zh-cn_image_0000002788308320.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=063B53A563CE3D121CEFB10DD5E53D138166062664D1091EE70AC3A986596011)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/TnKh2DuySbShLh6Pi8MFSg/zh-cn_image_0000002820406601.png?HW-CC-KV=V1&HW-CC-Date=20261119T014818Z&HW-CC-Expire=31536000000&HW-CC-Sign=05999025EF998BAB194150524054FC29038C5DEFBFCCF78C1EE6C99A84E8DA31)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/CZ9-wuPMRbGLTa9PBb9bBw/zh-cn_image_0000002817507755.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=95CBFAB46386928079E809D02E5C9E51325C70A3FB56CAD5FA0D94DF8FEEB32B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/KhDEKkceQ5ucewv3tr72Sw/zh-cn_image_0000002820526605.png?HW-CC-KV=V1&HW-CC-Date=20261119T014818Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2033AF2EEB05D7FEE7211FB76F65103AE024070880193F3D2DA28F145BB6575)
 
 流程说明：
 

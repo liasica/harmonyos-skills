@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-frequent
 title: JSVM-API常见问题
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API开发规范 > JSVM-API常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:17+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:d5c9934367f8e623185efd6d0a335476eaba835677a8d8eb7912270f2b2ccaec
+scraped_at: 2026-11-19T09:49:25+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:91ee2df31b398ef6a0b15ff4804d3054704ab0468a765a63568badb56565fdc0
 ---
 
 ## 定位方法
@@ -120,6 +120,49 @@ content_hash: sha256:d5c9934367f8e623185efd6d0a335476eaba835677a8d8eb7912270f2b2
    c) 若使用任务队列来进行js任务执行，出现了先抛出destroy env的任务，后抛出普通js任务的情况，此时也可能导致该报错。针对这个情况，可以参考a情况做法，为JSVM实例添加thread\_local\_flag，若任务取出时thread\_local\_flag为true，则队列中剩余的任务需要全部跳过。
 
    如需获取更详细信息，请参考[使用JSVM-API实现JS与C/C++语言交互开发流程](use-jsvm-process.md)。
+7. Q：在调用JSVM-API时，出现如下报错：
+
+   ```txt
+   Reason:Signal:SIGTRAP(TRAP_BRKPT)
+   #00 pc 0000000000a5c7b4 /system/lib64/libv8_shared.so(int v8::internal::Deserializerv8::internal::Isolate::ReadSingleBytecodeDatav8::internal::SlotAccessorForHeapObject(unsigned char, v8::internal::SlotAccessorForHeapObject)+1472)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #01 pc 0000000000a5b7dc /system/lib64/libv8_shared.so(v8::internal::Deserializerv8::internal::Isolate::ReadObject(v8::internal::SnapshotSpace)+640)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #02 pc 0000000000a61c64 /system/lib64/libv8_shared.so(int v8::internal::Deserializerv8::internal::Isolate::ReadNewObjectv8::internal::SlotAccessorForHeapObject(unsigned char, v8::internal::SlotAccessorForHeapObject)+176)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #03 pc 0000000000a5b7dc /system/lib64/libv8_shared.so(v8::internal::Deserializerv8::internal::Isolate::ReadObject(v8::internal::SnapshotSpace)+640)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #04 pc 0000000000a61c64 /system/lib64/libv8_shared.so(int v8::internal::Deserializerv8::internal::Isolate::ReadNewObjectv8::internal::SlotAccessorForHeapObject(unsigned char, v8::internal::SlotAccessorForHeapObject)+176)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #05 pc 0000000000a5b7dc /system/lib64/libv8_shared.so(v8::internal::Deserializerv8::internal::Isolate::ReadObject(v8::internal::SnapshotSpace)+640)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #06 pc 0000000000a61c64 /system/lib64/libv8_shared.so(int v8::internal::Deserializerv8::internal::Isolate::ReadNewObjectv8::internal::SlotAccessorForHeapObject(unsigned char, v8::internal::SlotAccessorForHeapObject)+176)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #07 pc 0000000000a5b7dc /system/lib64/libv8_shared.so(v8::internal::Deserializerv8::internal::Isolate::ReadObject(v8::internal::SnapshotSpace)+640)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #08 pc 0000000000a61c64 /system/lib64/libv8_shared.so(int v8::internal::Deserializerv8::internal::Isolate::ReadNewObjectv8::internal::SlotAccessorForHeapObject(unsigned char, v8::internal::SlotAccessorForHeapObject)+176)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #09 pc 0000000000a5b7dc /system/lib64/libv8_shared.so(v8::internal::Deserializerv8::internal::Isolate::ReadObject(v8::internal::SnapshotSpace)+640)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #10 pc 0000000000a61c64 /system/lib64/libv8_shared.so(int v8::internal::Deserializerv8::internal::Isolate::ReadNewObjectv8::internal::SlotAccessorForHeapObject(unsigned char, v8::internal::SlotAccessorForHeapObject)+176)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #11 pc 0000000000a5b7dc /system/lib64/libv8_shared.so(v8::internal::Deserializerv8::internal::Isolate::ReadObject(v8::internal::SnapshotSpace)+640)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #12 pc 0000000000a61c64 /system/lib64/libv8_shared.so(int v8::internal::Deserializerv8::internal::Isolate::ReadNewObjectv8::internal::SlotAccessorForHeapObject(unsigned char, v8::internal::SlotAccessorForHeapObject)+176)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #13 pc 0000000000a5b7dc /system/lib64/libv8_shared.so(v8::internal::Deserializerv8::internal::Isolate::ReadObject(v8::internal::SnapshotSpace)+640)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #14 pc 0000000000a61c64 /system/lib64/libv8_shared.so(int v8::internal::Deserializerv8::internal::Isolate::ReadNewObjectv8::internal::SlotAccessorForHeapObject(unsigned char, v8::internal::SlotAccessorForHeapObject)+176)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #15 pc 0000000000a5b7dc /system/lib64/libv8_shared.so(v8::internal::Deserializerv8::internal::Isolate::ReadObject(v8::internal::SnapshotSpace)+640)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #16 pc 0000000000a61c64 /system/lib64/libv8_shared.so(int v8::internal::Deserializerv8::internal::Isolate::ReadNewObjectv8::internal::SlotAccessorForHeapObject(unsigned char, v8::internal::SlotAccessorForHeapObject)+176)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #17 pc 0000000000a5b7dc /system/lib64/libv8_shared.so(v8::internal::Deserializerv8::internal::Isolate::ReadObject(v8::internal::SnapshotSpace)+640)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #18 pc 0000000000a61c64 /system/lib64/libv8_shared.so(int v8::internal::Deserializerv8::internal::Isolate::ReadNewObjectv8::internal::SlotAccessorForHeapObject(unsigned char, v8::internal::SlotAccessorForHeapObject)+176)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #19 pc 0000000000a5b7dc /system/lib64/libv8_shared.so(v8::internal::Deserializerv8::internal::Isolate::ReadObject(v8::internal::SnapshotSpace)+640)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #20 pc 0000000000a5bd64 /system/lib64/libv8_shared.so(int v8::internal::Deserializerv8::internal::Isolate::ReadSingleBytecodeData<v8::internal::SlotAccessorForHandlev8::internal::Isolate>(unsigned char, v8::internal::SlotAccessorForHandlev8::internal::Isolate)+452)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #21 pc 0000000000a5bb78 /system/lib64/libv8_shared.so(v8::internal::Deserializerv8::internal::Isolate::ReadObject()+48)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #22 pc 0000000000a66cb4 /system/lib64/libv8_shared.so(v8::internal::ObjectDeserializer::Deserialize()+60)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #23 pc 0000000000a66c40 /system/lib64/libv8_shared.so(v8::internal::ObjectDeserializer::DeserializeSharedFunctionInfo(v8::internal::Isolate*, v8::internal::SerializedCodeData const*, v8::internal::DirectHandlev8::internal::String)+152)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #24 pc 0000000000a57170 /system/lib64/libv8_shared.so(v8::internal::CodeSerializer::Deserialize(v8::internal::Isolate*, v8::internal::AlignedCachedData*, v8::internal::DirectHandlev8::internal::String, v8::internal::ScriptDetails const&, v8::internal::MaybeDirectHandlev8::internal::Script)+548)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #25 pc 00000000005c10f4 /system/lib64/libv8_shared.so(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #26 pc 00000000005c17a8 /system/lib64/libv8_shared.so(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #27 pc 000000000053744c /system/lib64/libv8_shared.so(v8::ScriptCompiler::CompileUnboundInternal(v8::Isolate*, v8::ScriptCompiler::Source*, v8::ScriptCompiler::CompileOptions, v8::ScriptCompiler::NoCacheReason)+864)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #28 pc 00000000005376a4 /system/lib64/libv8_shared.so(v8::ScriptCompiler::Compile(v8::Localv8::Context, v8::ScriptCompiler::Source*, v8::ScriptCompiler::CompileOptions, v8::ScriptCompiler::NoCacheReason)+68)(526548cedc841e47a5a57ff82e92f1e83c11ef0e)
+   #29 pc 0000000000039cb0 /system/lib64/ndk/libjsvm.so(OH_JSVM_CompileScriptWithOrigin+916)(f14c93e72b2d368d627313dd32710a9a)
+   ```
+
+   A：这类错误可能指向同一类问题，即应用侧js/wasm code cache可能出现文件落盘损坏、与源码不匹配、与引擎版本不匹配等问题，导致code cache在反序列化过程中匹配失败而断言拦截。用户可清理应用缓存，重新启动应用，查看问题是否消失。该错误表现为以下三点：
+
+   a) 信号为SIGTRAP(TRAP\_BRKPT)，为v8内部断言主动crash。
+
+   b) 栈顶在libv8\_shared.so的Deserializer反序列化流程中，中间出现ReadObject/ReadNewObject等数据读取动作，底层为jsvm compile调用，如OH\_JSVM\_CompileScriptWithOrigin。
+
+   c) 发生在应用升级/系统OTA等更新场景，进程存活时间很短，拉起很快即crash。
 
 ## JSVM-API执行失败类
 

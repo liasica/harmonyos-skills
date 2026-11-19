@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sensor-guidel
 title: 传感器开发指导(C/C++)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 传感器 > 传感器开发指导(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:44+08:00
+scraped_at: 2026-11-19T09:48:23+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:db600130bfc030af15aed6023a84a0214be3892e59959e2d58ec32142f44e720
+content_hash: sha256:04f67f9463348cfccf178c65aa1c52628635675b53a244586077e8b190ce1f49
 ---
 
 ## 场景介绍
@@ -49,7 +49,7 @@ content_hash: sha256:db600130bfc030af15aed6023a84a0214be3892e59959e2d58ec32142f4
 
 1. 新建一个Native C++工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/pQJL9htgSsOpKMqRTg7_6g/zh-cn_image_0000002788307518.png?HW-CC-KV=V1&HW-CC-Date=20261114T004743Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EFC1ED9BC44FDB7446F711C8BAD1B9B139B81CC9A856C3A0482FC6A98774C95)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/oPK16vVZQn6QG0nR8dal2Q/zh-cn_image_0000002820405799.png?HW-CC-KV=V1&HW-CC-Date=20261119T014822Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA1686D5308924953A007A11E6F63EC7A94480EC1A5A2E2BC5AB41DAA9A48CD0)
 2. 配置加速度传感器权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```json5

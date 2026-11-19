@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: text开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > text开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:10+08:00
+scraped_at: 2026-11-19T09:47:48+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1c0c65a1a946ee8ef1646c66ea0051301321f6dd760e4603cfc6f41053b64d33
+content_hash: sha256:c6a9d9c579314491412bb8506603881278629594e30fca57d34027772ff5594a
 ---
 
 text是文本组件，用于呈现一段文本信息。具体用法请参考[text](../harmonyos-references/js-components-basic-text.md)的API文档。
@@ -33,7 +33,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/llKPDz__T7mNf2yOLTkAYw/zh-cn_image_0000002788466980.png?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=6975A52F1C604F2B95F048B83ED3C705BF70F6140B49CAA4EFAFDFEC5E2D988D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/2sy2pWq0QA-wylLVaQyEXA/zh-cn_image_0000002791565364.png?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=40865B27AC2FBA0FD1E7380CAB79EC21DBCDE065C650C426CF9A62A778939010)
 
 ## 设置text组件样式和属性
 
@@ -66,7 +66,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/Jtee7By-QfO_z6y6Un6Tow/zh-cn_image_0000002817506467.png?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB35062B9E600FF9B57582D1B174D08AE5378F53B10A549C3BB795CD6FAA7767)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/lpEnDwidTrukURBymY4rmg/zh-cn_image_0000002820525317.png?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=D65D7C8D7FA93A3D991685FC1AF96343AD07983AFF4D795E56EA6BF0FAE75BC4)
 * 添加划线
 
   设置text-decoration和text-decoration-color属性为文本添加划线和划线颜色，text-decoration枚举值请参考text自有样式。
@@ -97,7 +97,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/e84Qp-WNSb--U1ZHAwN_eQ/zh-cn_image_0000002788307038.png?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAC9B0397ED53B92AB040647ECAE61B7ED317B9B7FB3C19939DCAC9E47FB8E7A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/EmUlllxnQHGnKCZY9Tzpaw/zh-cn_image_0000002820405317.png?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC2DD449AEED6D4518BA32F9D96DC64F3ABCC30D547E97C231C2E011F3B04A2E)
 * 隐藏文本内容
 
   当文本内容过多而显示不全时，添加text-overflow属性将隐藏内容以省略号的形式展现。
@@ -133,7 +133,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
   + text-overflow样式需配合max-lines样式使用，在设置了最大行数的情况下才会生效。
   + max-lines属性设置文本最多可以展示的行数。
 
-  ​ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/emLDwmTESza_imWlKFYR-A/zh-cn_image_0000002817426401.png?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F514A106FD8BCA0A66A572069423F2CA7FE74CB29A3DD7CC4DB6D2EA7DF2B7B)
+  ​ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/j_9QqDilS76bRkYZF5oo8A/zh-cn_image_0000002791725338.png?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEB35E5FEE68B3537089082D0BFADCE2EA319517EBBEA736F831339BA8A0138A)
 * text组件支持[span](../harmonyos-references/js-components-basic-span.md)子组件
 
   ```html
@@ -151,7 +151,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
   </div>
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/yBnDxbgMRxCZwfM2alNofA/zh-cn_image_0000002788466982.png?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=80285F07EE70B52FDF82C3E1EECBB4ED471B501FBC3071D76E4CF353047A4549)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/JP7wqRgOTkGHa_0sA2FvoA/zh-cn_image_0000002791565366.png?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=647407CBCE88D18E3C29A39A42103A8148EDF68CF3F7FE5E57E7C725412BDC3D)
 
   **说明** 
 
@@ -213,4 +213,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/U76czH3HRU2YKC4pnBNy0A/zh-cn_image_0000002817506469.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=83508D7FA2776846FFD2350F672CAE0F9378AEB20E748BE4898F2009D5FCBB6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/m3BGYHNDQzSTSstEVjaDYw/zh-cn_image_0000002820525319.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1E36BD4EDA4BA662EBA784B206C408158AABCD5697366F29E50F9E406712467)

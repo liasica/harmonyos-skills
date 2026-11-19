@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-ren
 title: Repeat：可复用的循环渲染
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式渲染控制 > Repeat：可复用的循环渲染
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:01+08:00
+scraped_at: 2026-11-19T09:47:39+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:82645dc13a3cd074e2040356189fd16bb9d44f02096479c3ec363e60e319c741
+content_hash: sha256:94b2c873f933f0858edd8ee743f6f75c99fae728ef61dafabddb4e1f3023415b
 ---
 
 **说明** 
@@ -97,7 +97,7 @@ struct RepeatExample {
 
 运行后界面如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/gs5pqEdlR0mQaAS621nSTA/zh-cn_image_0000002817425825.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=C692643D63CF0726476B7C8CB04CB8C310B3246985E05A1220157A2F63928217)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/g_ZTyG6JRvSAHvXBZnCFBw/zh-cn_image_0000002791724762.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FFA009E154272339E93CE5CD9E15A5CEC874EF436E7686E8021171BC3C4104E)
 
 **多种类型子组件**
 
@@ -161,7 +161,7 @@ struct RepeatExampleWithTemplates {
 
 运行后界面如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/iTDQUBJ6TISGymrOhl4HHw/zh-cn_image_0000002788466406.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=35769190F52F906309B7A82278B9F3F30A9293C8792DFA7A36B7A503678EA03B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/zdG3O8NFQ46EopG1EOo3FA/zh-cn_image_0000002791564790.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=716C17BD867903D48417D54F2F4424C5CFE8CD62E8713865D59D81575AC070DA)
 
 ### 键值生成规则
 
@@ -232,7 +232,7 @@ Repeat加载子节点具有懒加载和全量加载两种模式。开发者可�
 
 使用Repeat的.virtualScroll()属性，即可使能懒加载能力。在懒加载模式下，Repeat根据当前的容器组件显示区域和预加载区域范围，按需加载子组件。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/_tt46qN2R6Sjn4c9AqJFgw/zh-cn_image_0000002817505893.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=B325065DCEC3911E8717B6501526FC49693DB1871E2F45FD198C4174DC11FB08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/cH0Tre9bSlSTQ4wAwx8-gA/zh-cn_image_0000002820524743.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C08A13C849A70872BB35F95FC7CD43DE51DF4C4076909448075018FBBCF2962)
 
 **说明** 
 
@@ -282,7 +282,7 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
    首次渲染时列表的节点状态如下图所示（template type在图中简写为ttype）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/KiIwP9i_RE6ORys3PrEiLQ/zh-cn_image_0000002788306464.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=21EA061E7FFC78753C0BB92B9B9709A2FDBF195062238845338F2E6CA962D53A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/Nsq2xVMMSsyNTFctuXzphw/zh-cn_image_0000002820404741.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=82410D5C7B0A008EEDFC0F8B8DC881DE1A76A7A1C86CAF2BD833613A6D48A2A3)
 2. 滑动场景。
 
    将列表向下滑动一个节点的距离，Repeat会复用缓存池中的节点。
@@ -293,7 +293,7 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
    3）其余节点仍在容器显示区域和预加载区域范围，均只更新索引index。如果对应template type的缓存池已满，Repeat会在UI主线程空闲时销毁掉多余的节点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/LGQkdvQBRBWHc6DhRH-H4A/zh-cn_image_0000002817425827.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=73838DE4D3E3783CE846372F88BF877CDD853CECFB23083402032935D76B471F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/BFOPNxYVTMabX6sLlQnFlg/zh-cn_image_0000002791724764.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=F791F8142CD1EFF7731653240AB2B3C4A404A7EF75AB9D2A35E9F87EAEF2F3CE)
 3. 数据更新场景。
 
    在上一小节的基础上做如下的数组更新操作，删除index=4的节点，修改节点数据07为new。
@@ -304,7 +304,7 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
    3）对于节点数据从07变为new的情况，页面监听到数据源变化将会触发重新渲染。Repeat数据更新触发重新渲染的逻辑是比较当前索引处节点数据item是否变化，以此判断是否进行UI刷新，仅改变键值不改变item的情况不会触发刷新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/hCtAKNYxQOmxVNlBkjhcvA/zh-cn_image_0000002788466408.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=06E704293BE622B2DD3914E9435D1A0ADEDE09C2E235505AAE26111A3E736C49)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/OfmL44fUQcGvRM6_zedgaw/zh-cn_image_0000002791564792.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=878AE5A019FA2E6FE56055ED58EA07FE999720082AD9C44A3BC9B066950D3E1D)
 
 **全量加载模式下的节点更新/复用**
 
@@ -320,11 +320,11 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
 最后，如果新数组键值遍历结束后，deletedKeys非空，则销毁集合中的键值所对应的节点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/N7mmtDlHQDa-Ufs_xl6g_w/zh-cn_image_0000002817505895.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=A00F311988EB728C56F7121679FDABE157C5AA149CDB2ACD0403190B1AEC00B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/_m5OgM5bRIyuCosFRHGi4w/zh-cn_image_0000002820524745.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E1F54EEFC4A765169E1D80047D65CED8D05C9A07844EA5DC2757E8B97DB4013)
 
 以下图中的数组变化为例，图中的item\_X表示数据项的键值key。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/8dLhro7AQ0O3jzEm8GO5lA/zh-cn_image_0000002788306466.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=C54F12C185A6B97A300F8ED511B336A5A30CDBC8269C603B7691BCF06F322C32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/yYXKSAoJRzmUuiAVi0qioQ/zh-cn_image_0000002820404743.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=13A65D670659477F7C534832D8D577F52F82667EF5F4FD2549A6EA4BC2DE4FB1)
 
 根据上述判断逻辑：item\_0没有变化，item\_1和item\_2只更新了索引，item\_n1和item\_n2分别由item\_4和item\_3进行节点更新获得，item\_n3为新创建的节点。
 
@@ -382,7 +382,7 @@ struct ChildItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/5CDt1aR2SGipIVB54OIyhg/zh-cn_image_0000002788466388.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E9FDB087B0846620E27FF7BB441DD87073870AE38CB8ABFA1A8D2DED6CC0390)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/nQ_rcaVpTm6eefLyqHMm7A/zh-cn_image_0000002791564772.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBB2FA245157567FE12DADB9A5BAA579CF9B5615574A623D8C31E8D8724A5FD2)
 
 点击红色字体，第三个数据项发生变化（直接使用旧的组件节点，仅刷新数据）。
 
@@ -390,7 +390,7 @@ struct ChildItem {
 
 查看节点是否为复用可以使用[DevEco Testing](deveco-testing.md)工具进行查看，进入DevEco Testing工具后，选择实用工具，界面如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/LoEECvDZSuCL5eA8gSoV3g/zh-cn_image_0000002817425829.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=94D0EFB5F725471D2BF9716E22CC6D83D328EC29752CBA369FBF2E02DF040FAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/IApSduURTaythb6R2qyTnQ/zh-cn_image_0000002791724766.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=771B489A86075B527244971FAF0E30E2F3B0942104EC790056C4681E8D781DC8)
 
 在实用工具中选择UIViewer，该工具可以获取设备快照、控件树信息及控件节点属性，在右侧的控件树中选择Repeat子节点，右下方的节点属性会显示节点ID等信息，可以通过节点ID是否相同，判断组件复用或者新建的情况。
 
@@ -455,7 +455,7 @@ struct RepeatLazyLoadingLongData {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/sIUNVZXfRYyh1Rr9CDysvA/zh-cn_image_0000002788466410.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FDA4C9FC365F84865FB7BDC7F8916B49E99BC29649C12DF3725A77AD805ACB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/628gCm7VRkuQaoBTAlEAWw/zh-cn_image_0000002791564794.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=212220B9E97E265CCB0C4CCA69CBE15DE4656B11E8C4D50B1CDFD439F765CAF6)
 
 **示例2**
 
@@ -503,7 +503,7 @@ struct RepeatLazyLoadingSync {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/-kOV-CdcTU6BYALJ_OR2TA/zh-cn_image_0000002817505897.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=0692AF8A15052938BF3B1858E42734FE3CD91297190A8B8E4F8324C2ED3C643C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/NOGnAX1bS3eO29VDesWDRg/zh-cn_image_0000002820524747.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0ADEB3C9D5E839C087B44B5D2CD324081F7900EC68D1A8DAF30391069D61090)
 
 **示例3**
 
@@ -561,7 +561,7 @@ struct RepeatLazyLoadingInfinite {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/e2gOsgWQRQmQ0JS2v6hKGQ/zh-cn_image_0000002788306468.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=E125CF5F3EB555C3A87B6DAF6A9ECA496BDD3B68E992D0C36F2B68DE3DC5271E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/4MWO_dD-RYCZ6SW9Q68x2w/zh-cn_image_0000002820404745.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=A03B0EB849E774476162D508B849F05FD4EA01C80540F93DB075A4C89826318C)
 
 ### 拖拽排序
 
@@ -623,7 +623,7 @@ struct RepeatVirtualScrollOnMove {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/SuZ4un57RtmTLF9ZIpEAjg/zh-cn_image_0000002817425831.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBDA220D4A01847607458677084D4674ED593D02BDD4E366C81F72BA442F208E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/78k-ywVYQo6_KMBoEZzY2g/zh-cn_image_0000002791724768.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=83F5DFC066B033BFF06E6E800EC6E6276C544A77B114EBE5A185F53BFEC00EE6)
 
 ### 数据前插保持
 
@@ -695,7 +695,7 @@ struct PreInsertDemo {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/suQNZgbDSSC4HN5ZEyeKSQ/zh-cn_image_0000002788466412.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=8346E0A56637F802566B0D7A7713F23413353DFDBC9430E3791E8597139EA7B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/SHUxtnepQH6zrR52O_s4cw/zh-cn_image_0000002791564796.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=54A75C0CA3AE3B53DE56B0189124A26890BBCFB0AE44ABC050DBDB79E008DA5D)
 
 ### animateTo动效
 
@@ -802,7 +802,7 @@ class ItemInfo {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/KueOO7FPTYCl-3U2-DKPmg/zh-cn_image_0000002817505899.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3BCC245677D9D84172CAC86A96F1E9214E9FA54AAA747C5050683ABA7134B7B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/deEctY8JSRKA_95gpflEYA/zh-cn_image_0000002820524749.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=E75647C953381FF0448A2AA4370132C39F329C896E1BD486C64D342AB870D085)
 
 ## 常见使用场景
 
@@ -954,7 +954,7 @@ struct RepeatVirtualScroll {
 
 该示例代码展示了100项自定义类Repeat006Clazz的message字符串属性，[List](../harmonyos-references/ts-container-list.md)组件的[cachedCount](../harmonyos-references/ts-container-list.md#cachedcount)属性设为2，模板'odd'和'even'的空闲节点缓存池大小分别设为3和1。运行后界面如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ODAHaS4CQU-adt0IpkWk8w/zh-cn_image_0000002788306470.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=C14A67A216F11FDB25A744F906D53CC9E92A6E697024ACFAF4329F21D5EBDF49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/nLlYQZfgSxqRqvr9QivnEQ/zh-cn_image_0000002820404747.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=34F457BB115B5F728812A1002A9360C7314A07B826F47C2C2F774A4111B99657)
 
 ### Repeat嵌套
 
@@ -1022,7 +1022,7 @@ struct NestedRepeat {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/_zWiBythQ2qKcspDXDBtyg/zh-cn_image_0000002817425833.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=8147A0799289104866E354433FF75C0FEF7EA86E2E2C85D9D6162ED99F3C7039)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/0jDvMAbHQIOsT630unmSHw/zh-cn_image_0000002791724770.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4DFC2F09315EAB1F824364671C211AEE3B14D514D29B6E55FDF77A1358CEE01)
 
 ### 父容器组件应用场景
 
@@ -1129,7 +1129,7 @@ struct DemoList {
 
 右滑并点击按钮，或点击底部按钮，可删除视频卡片：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/_RUIC_bQQlenbA32Q1Z-VA/zh-cn_image_0000002788466414.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=1119CAFC43CCE99A9AC5470F24D9AA77D9E4012D76C2B72A91A6A8C9D582F93E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/ImcjlklaSoCVwagN13C6IA/zh-cn_image_0000002791564798.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=50A54292051B806339961524DBD91C82E66B145AAB2E62878AA778B6429A84B1)
 
 **与Grid组合使用**
 
@@ -1261,7 +1261,7 @@ struct DemoGrid {
 
 下拉屏幕，或点击刷新按钮，或点击“先前浏览至此，点击刷新”，可加载新的视频内容：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/8j1YOJ88Qg6jT_iuzmMxMQ/zh-cn_image_0000002817505901.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=290C0BF7E55C8B4B4DB201DD187E1DD879164DC729797EB49C5257DD0BD07B32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/JGEsm2cWTAu1-4LXy1PAWw/zh-cn_image_0000002820524751.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1D323DDF36047DD009EACE08DFD5755C104A5551AE881D83A95D8B9C203E062)
 
 **与Swiper组合使用**
 
@@ -1338,7 +1338,7 @@ struct DemoSwiper {
 
 定时1秒后加载图片，模拟网络延迟：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/IBLFnP4NS7-FM71Lq1x8Og/zh-cn_image_0000002788306472.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=7592D75396B152CEB22E4D7E43903E38990920E486F8CFE1EA7BD64B60B8C2EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/mPizX_FyTBWFfzWAGZTnYQ/zh-cn_image_0000002820404749.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9EE5661ED665CF990EA41330E0CCD9996DC65035D6E3204C13FA283D63F16F5)
 
 ## 常见问题
 
@@ -1407,7 +1407,7 @@ struct RepeatTemplateSingle {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/pkYfgySVTHyiOIxph3HQYA/zh-cn_image_0000002817425835.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=A781B63952DCFEFB876CA68F917A9A95312A169816D159CCDF0C85E786B4FC47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/qp6nnMe9QNSywitFHvHwvA/zh-cn_image_0000002791724772.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=159236414D0055C3084A1014B0E312E7DE1F8DC34E6268F7536C1F08FD7547B5)
 
 以下为修正后的示例：
 
@@ -1487,7 +1487,7 @@ struct RepeatSingle {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/11Bvxye7SCilnmOELDAz3g/zh-cn_image_0000002788466416.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A9EA97C406AEC7F9FC074AAB8A4919BFFC6BC4C979260DB1385A3F0FB139DAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/LIiBZw0pQziglpM8cO-dhg/zh-cn_image_0000002791564800.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4130ABC3E2D9F8743AAC918453BDBAA80037A491B82817D130DD00CA089117D)
 
 ### totalCount值大于数据源长度
 
@@ -1586,7 +1586,7 @@ struct EntryCompSucc {
 
 示例代码运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/s-ixOfU3T0qqAUHOKQqfZg/zh-cn_image_0000002817505903.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=1ACFF0975F84CE5F806DD674952ED64BA3BEFD3E5B605E9B0CAD3160573592ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/L2UJFJawSCKC9_CWJ3KKOg/zh-cn_image_0000002820524753.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F59BCA0411D444FAAAB390F59C9476EABFEABD500FEE6BC7D5720646F973004)
 
 ### 与@Builder混用时状态变量未刷新
 
@@ -1661,7 +1661,7 @@ struct RepeatBuilderPage {
 
 @Builder传参方式依次为makeBinding()、引用传递和值传递，界面展示如下图，进入页面后点击按钮改变数据。在@Builder构造函数中使用值传递传参不会引起函数内的UI刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/nF5VWYrmTk-4NGBm0953BA/zh-cn_image_0000002788306474.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B192329B822DDC2AEB64298D9C9D9D8853F580FF2C16B7BB9EA12DED1A4BD9C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/5Rjyhl94TGmdIk_Y9IkxUA/zh-cn_image_0000002820404751.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEE10DA68CEAF058595CC1A12E21CE1D674F1E0AC7E7ECA55DED2DB30080CF56)
 
 ### expandSafeArea属性失效
 

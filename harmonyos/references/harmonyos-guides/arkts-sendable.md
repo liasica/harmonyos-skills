@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendabl
 title: Sendable对象简介
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > Sendable对象简介
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:55+08:00
+scraped_at: 2026-11-19T09:47:32+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ce58cba0a65b3b0d5867bd0e5642aa8014cd801554d606c1daa8ec621495322c
+content_hash: sha256:9b3d7d327693221444c55b00560e029550ef6724865b426167b9d3db23a4c51e
 ---
 
 在传统JS引擎中，要优化对象的并发通信开销，唯一的方法是将实现下沉到Native侧，通过[Transferable对象](transferabled-object.md)的转移或共享来降低开销。然而，开发者仍有大量对象并发通信的需求，这个问题在业界JS引擎中尚未解决。
@@ -14,7 +14,7 @@ ArkTS提供了Sendable对象类型，它是一种可在ArkTS并发实例间安�
 
 Sendable对象可共享，跨线程前后指向同一个JS对象。如果Sendable对象通过调用Napi接口与一个Native对象绑定，当共享传递Sendable对象时，其绑定的Native对象也会一并共享传递。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/lNCgJtOgSki-1kUnRVRyqA/zh-cn_image_0000002817425555.png?HW-CC-KV=V1&HW-CC-Date=20261114T004654Z&HW-CC-Expire=31536000000&HW-CC-Sign=E512A7E40EFB0D1A8E432B25BABA075B5958360A552AFEBF0322A75B3F82D38F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/3DB6131KQwGQiS_w0JJerQ/zh-cn_image_0000002791724492.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=93D8DB51F27F774C45356280DABFFB8616796B493C95785612F34A0EEC9C6004)
 
 与其它ArkTS数据对象不同，符合Sendable协议的数据对象在运行时应为类型固定的对象。
 
@@ -160,7 +160,7 @@ struct enumusage {
 
 **SharedHeap与LocalHeap关系图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/vcGfv4pBScq6MmbsMnVCBw/zh-cn_image_0000002788466136.png?HW-CC-KV=V1&HW-CC-Date=20261114T004654Z&HW-CC-Expire=31536000000&HW-CC-Sign=14A10A763A1C0B705E757D5CBB82DA79FD1AAC90E0DC1143A023407F1582682E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/oC4Tssp0QeCGl9LZfVe9ww/zh-cn_image_0000002791564520.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8A4AD6F6E3AA37BD20631AEC9D893ACBEF27EAC68D47388BA1CDBD3F96D50F6)
 
 各个并发实例的LocalHeap是隔离的。SharedHeap是进程级别的堆，可以被所有并发实例共享，但SharedHeap不能引用LocalHeap中的对象。
 

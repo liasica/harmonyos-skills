@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-msg-rece
 title: （可选）开发消息回执
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > （可选）开发消息回执
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:29+08:00
+scraped_at: 2026-11-19T09:49:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e11c108f501019d90fabc3fd3854788adedb8614ee0be20df0670da68028d44e
+content_hash: sha256:5eea1905c9f25164243e0b18f2d0876150362fe85e0e0f18a4e0496b1e862402
 ---
 
 ## 场景介绍
@@ -22,22 +22,22 @@ content_hash: sha256:e11c108f501019d90fabc3fd3854788adedb8614ee0be20df0670da6802
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/Dznhu-zdR3SugNFv4OIhZA/zh-cn_image_0000002817507709.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D6A871D6CF8596DBA7DF314A65E57418B255A44ADB3FD72562EE882F26E32AB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/hj-JhLX_SwOgBktg0wYFag/zh-cn_image_0000002820526559.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE5ECA6C15E131BB1C7B0C16A60C6AB874A6BAC0F2AB47906C7A13C0980299F5)
 2. 在项目列表中找到您的项目，通过“增长 > 推送服务 > 配置”导航到“配置”页签。在该页面可以选择配置项目级回执或者应用级回执，需要注意的是项目级回执消息接收URL地址，对该项目下所有应用生效。如果您同时配置了项目级回执和应用级回执地址，则优先获取应用级回执地址信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/rPXh-oB8QXWMfuxVJvBvvA/zh-cn_image_0000002788308278.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=130DE70AACCE2DA080DA10A6A670EC4DFB2A9C322E90B5CC5FF4A46B7C352FA3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/2O6C2TvlT06Y1_bJ2YXjWQ/zh-cn_image_0000002820406559.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E5C41AB8061982853D0560119F91E542268912FF81A6E7A9627E0C7FC83B590)
 3. 这里以应用级回执举例，选择需要配置回执的应用，点击“开通”应用回执状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/z6vVlQxZTnuFxEidgIWaWQ/zh-cn_image_0000002817427641.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE296F11049249E62A1D95B08F26FF2E264D84357AD780872AFB024E95DFE794)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ry9wLfMNS2CJ7I0J7kOngw/zh-cn_image_0000002791726580.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E59E0D04EB88F8DCE57BFBE042281DAA20036F42ADC353360151B2D9A592195)
 4. 进入回执参数配置，可以选择已有回执或者新建回执。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/QRJOjt6lRgys1fctIbALLQ/zh-cn_image_0000002788468222.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=87F94875E6DDD7E2350AB699E66E87B676C7EED2F0A90B8833EDB8B9DCD244A5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/wTUIzy89TTOCXQpm8Fr-tg/zh-cn_image_0000002791566608.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=15BFE4F77BC41B6BF21A1265B87B855DF5002668C8CB67692DA0A060EFCF4A27)
 
 ## 配置回执参数
 
 点击“新建回执”后，需要配置如下参数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/LZ92Dp9MS3-oyxPxvwmdWg/zh-cn_image_0000002817507711.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FE27A15797F8240D7C1C4E11131F205FFBA8FCE89CA9C80D6AC3EF855D06FF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/KlLNz3DKTgmy_IVFt5OzyA/zh-cn_image_0000002820526561.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=3690C764B6CD01DF0E3DDD8AE1B3F7DDEB0CB08488A91ECF1A32EB7AF503E57C)
 
 1. 配置消息回执的名称和回调地址。
 
@@ -45,10 +45,10 @@ content_hash: sha256:e11c108f501019d90fabc3fd3854788adedb8614ee0be20df0670da6802
 
    * 商用CA提示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Np2kD7OwTYmBw3ZV4koY8A/zh-cn_image_0000002788308280.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=3212F4EAEA543ED2A4CB277277FA38E4F4D4BB803530F6DFA788B843B199ECA0)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/q19X-TQLTRGJwctylkqBKg/zh-cn_image_0000002820406561.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=12B53FB83B816C3B8215C7E485FFE1B58D0BC77C91FF9A8E4D65B37957DF0226)
    * 自签CA提示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/D2V8Rj8QQRa8BzimtGHLDg/zh-cn_image_0000002817427643.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FEDCF3734D18E360EFED11FE4EFB78EA5071A1D2ABB8FAD97F87E096AC7C24C)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/SyiZ58r6QEKZjuVXvTG1WA/zh-cn_image_0000002791726582.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E9EDFB33418AEFAB294466A419689B6C5E1B1DD3244221E52D11057F0316E4C)
 
    **说明** 
 
@@ -90,7 +90,7 @@ content_hash: sha256:e11c108f501019d90fabc3fd3854788adedb8614ee0be20df0670da6802
       ```
 3. 配置回执支持版本
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/6gGI2rMEQpOxoGygMEwH7A/zh-cn_image_0000002788468224.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8AE996A8DA74A93E61EA602B328D73912A85F680E7194CE687ED02ECC1FA943)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/S5yLsD2iQ9q9kDreQ19WJw/zh-cn_image_0000002791566610.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FAF127573CADF24561011EF81758233194E9B05BE7979DE17C2956615D12F76)
 
    V1回执不支持场景化消息发送，请使用V2回执。
 4. “测试回执”可以对回执地址进行功能测试，点击“提交”完成回执的创建。

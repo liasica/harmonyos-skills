@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-comp
 title: 组件动态创建
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 组件动态创建
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:07+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:1bbf2852197ebdf02300cf4eb38ee0ef99d54c62fd9b9d15887c90c7c98e252b
+scraped_at: 2026-11-19T09:47:44+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:ec90803848285a505652fb88c2c527d84a4e27ca57c477d6c43e5e058cfa01c3
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:1bbf2852197ebdf02300cf4eb38ee0ef99d54c62fd9b9d15887c90c7c98
 
 **图 1** 组件预创建原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/mXnS4kwvTOqdN9w9YjohjA/zh-cn_image_0000002817426309.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=D06FD141511AF42508D68B74DF96324073D42C693EEEE72153CB89692164E3F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/v4ceuiAyR02f5Ag7hqV--A/zh-cn_image_0000002791725246.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=35D175AF9A0BF59D01FAE930EC2E300B341F06D9A5E87A090417156C2321DBE9)
 
 ## FrameNode自定义节点在动态布局场景下的优势
 
@@ -36,13 +36,13 @@ content_hash: sha256:1bbf2852197ebdf02300cf4eb38ee0ef99d54c62fd9b9d15887c90c7c98
 
 在动态布局类框架的更新场景中，通常存在一个由树形数据结构ViewModelA创建的UI组件树TreeA。当需要使用新的数据结构ViewModelB来更新TreeA时，尽管声明式开发范式可以实现数据驱动的自动更新，但这一过程中却伴随着大量的diff操作，如下图所示。对于ArkTS引擎而言，在对一个复杂组件树（深度超过30层，包含100至200个组件）执行diff算法时，几乎无法在120Hz的刷新率下保持满帧运行。然而，使用ArkUI的FrameNode扩展，框架能够自主掌控更新流程，实现高效的按需剪枝。特别是针对那些仅服务于少数特定业务的动态布局框架，利用这一扩展，可以实现快速的更新操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/VpNTIV7mSeSY3hGcmMOR4g/zh-cn_image_0000002788466890.png?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=1927F5A95C89512D4FD78ED58D8B180C53B2D53E957DC3E4E83494D9CA77C29F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/-9lpAO9HS8ORe_jF86UuIQ/zh-cn_image_0000002791565274.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=F925FAA8E5BC72E46C0C006CEF25B0D93C292B6978480B784C2823C1D06A4634)
 
 ### 直接操作组件树
 
 使用声明式开发范式还存在组件树结构更新操作困难的痛点，比如将组件树中的一个子树从当前子节点完整移到另一个子节点，使用声明式开发范式无法直接调整组件实例的结构关系，只能通过重新渲染整棵组件树的方式实现上述操作。而使用ArkUI的FrameNode扩展，则可以通过操作FrameNode来很方便的操控该子树，将其移植到另一个节点，这样只会进行局部渲染刷新，性能更优。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/hMRnSxVJQpephb-xjKavQw/zh-cn_image_0000002817506377.png?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=31E2F42CB4A26DEAA1CC56E0D701F352649021EC47D40FE46B432223D5A4CFD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/DYMDyG9sTvKUUtW3TN7yVg/zh-cn_image_0000002820525227.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=337427E6E3199302A00CAB48114E611E45D584EC6578E78CCA3E67682FA3F51D)
 
 ## 组件动态添加、更新和删除：
 
@@ -299,7 +299,7 @@ App广告有一种场景是列表流广告，即在应用的列表流中穿插�
 
 这种广告的布局和内容在开发阶段不确定（可能是图文、视频等形式中的一种），其通常是在运行阶段，依赖服务器下发的数据进行逻辑映射后，再执行布局的构建、内容的加载显示。所以在实际的开发中，应用需要使用动态创建组件的能力去实现该列表流广告。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/gYkSDwztQ2eyCz_ELNLpJA/zh-cn_image_0000002788306948.png?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC00401D7372D2D6387BDE8F015CB4E06FE51CAA615F6658002D474985AC1131)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/9HEbRPnpQ6KmPbZT3v2waQ/zh-cn_image_0000002820405227.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB80AAF51A335E3E4DF22A6FC1BFE874C1702B1C16FE1DA90D1D9C6523924884)
 
 ### 实现方案
 
@@ -445,7 +445,7 @@ App广告有一种场景是列表流广告，即在应用的列表流中穿插�
    .height($r('app.string.percent_100'))
    .cachedCount(5)
    ```
-6. 关闭/屏蔽广告功能：广告组件需要提供关闭功能，当点击确认屏蔽按钮后，通过node.remove()通知AdNodeController标记该广告移除，设置this.isRemove为true，再通过node.rebuild()接口触发组件重绘，此时系统会再次执行makeNode接口，根据this.isRemove标记返回null结点，实现广告组件下树。
+6. 关闭/屏蔽广告功能：广告组件需要提供关闭功能，当点击确认屏蔽按钮后，通过node.remove()通知AdNodeController标记该广告移除，设置this.isRemove为true，再通过node.rebuild()接口触发组件重绘，此时系统会再次执行makeNode()接口，根据this.isRemove标记返回null结点，实现广告组件下树。
 
    ```ts
    Button($r('app.string.text_dialog_shield'))
@@ -586,10 +586,10 @@ App广告有一种场景是列表流广告，即在应用的列表流中穿插�
 
 1. 以上示例场景在声明式开发范式下的完成时延为13.7ms（根据设备和场景不同，数据会有差异，本数据仅供参考），如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/bCVMQ81KRPG7T5QN-SFZZg/zh-cn_image_0000002817426311.png?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=9064C4F93572D890DC9FE974D5FC4F525C84450722647B6E2AE247DF898ADE89)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/PQDKUNhhTISE3S-0jToNZA/zh-cn_image_0000002791725248.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E0B437CE178362620C0EC98FAC4BAD44A4F75D2F95887A33B88559F2D60CBFC)
 2. 以上示例场景在FrameNode扩展模式下的完成时延为6.1ms（根据设备和场景不同，数据会有差异，本数据仅供参考），如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/zvigaBgzTjiwW-3HnN-01g/zh-cn_image_0000002788466892.png?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=4767775E7E89118EF7D2B273F4AE70E2C1EAF2FF9A8F0B7475029AB7D9328B84)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/KWL5ja4NTYynGKxBNtUAHw/zh-cn_image_0000002791565276.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=A997812B53C0137C46E261AF80504213EC8A2841F9711F6B2E292EF8356F54A0)
 
 ## 示例代码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-font-c
 title: 使用主题字体（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 使用主题字体（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:06+08:00
+scraped_at: 2026-11-19T09:48:46+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c52a96fd13aa3541bad7832c40e1435eb077d56921ef80fda0bebbe3361ccf31
+content_hash: sha256:490c8f242ae12727d174b07148782a246c19c6b741e46725b3c4d2b52f9fec2f
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:c52a96fd13aa3541bad7832c40e1435eb077d56921ef80fda0bebbe3361
 
 **图1** 主题字体的切换和使用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/uxnir58sSouacqyAQURZog/zh-cn_image_0000002817507207.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004623Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A0CB0019FC33228B5D76B19A4C71B334D616F126310CA5A5E6F4ACA85525229)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/05ITthknTlS_ml7sPGX7oA/zh-cn_image_0000002820526057.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014845Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A0D36F0C78F897E02BB430C2572B97D8880D8620B353B8489437D0EA900C3B9)
 
 针对主题字体的切换使用，应用方应确保订阅主题字体变更事件，当接收字体变更事件后，由应用方主动调用页面刷新才能实现主题字体的切换，否则主题字体只能在重启应用后才生效；主题字体的绘制需要使用OH\_Drawing\_GetFontCollectionGlobalInstance来获取全局字体集对象，仅该接口返回的对象拥有主题字体信息。
 
@@ -97,8 +97,8 @@ content_hash: sha256:c52a96fd13aa3541bad7832c40e1435eb077d56921ef80fda0bebbe3361
 
 **图2** 主题字体1的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/bg4MAlYmT1KupXwBlfg78A/zh-cn_image_0000002788467722.png?HW-CC-KV=V1&HW-CC-Date=20261114T004623Z&HW-CC-Expire=31536000000&HW-CC-Sign=92BE7300C7704ACD48C8BB24201D53512A564D286FE11C8761AEC5F42B790046)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Ih9OUt0AR9i0Me5aiESkcA/zh-cn_image_0000002791566108.png?HW-CC-KV=V1&HW-CC-Date=20261119T014845Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B2C0CF244913CEBAC2983345E9CFFE9912963DB2DCD5A78DFC408DD8B18C1E6)
 
 **图3** 主题字体2的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/uZcAonxVTRqaykoOMQK9WA/zh-cn_image_0000002817507211.png?HW-CC-KV=V1&HW-CC-Date=20261114T004623Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FCEEB7C1984BF79951713ECE79F73350AE5108900D55F081739B52D19E24108)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/xJytSZmpR2CHSwu7xVLogQ/zh-cn_image_0000002820526061.png?HW-CC-KV=V1&HW-CC-Date=20261119T014845Z&HW-CC-Expire=31536000000&HW-CC-Sign=51E14C46AC12984E23961F46E89344C5BFA935DCD4FAC1691CDDF581ED1C7169)

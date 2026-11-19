@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-get
 title: getTarget接口：获取状态管理框架代理前的原始对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口 > getTarget接口：获取状态管理框架代理前的原始对象
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:00+08:00
+scraped_at: 2026-11-19T09:47:37+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:528126822163cbb609163d9758c3e7124c2aca99527bee7b3fc255c01be440cc
+content_hash: sha256:4a0159cd2f12d53ef0b0daea7d3449c17afe265e60a6375a1636dc80b9da9f5d
 ---
 
 为了获取状态管理框架代理前的原始对象，开发者可以使用[getTarget接口](../harmonyos-references/js-apis-statemanagement.md#gettarget)。
@@ -86,7 +86,7 @@ content_hash: sha256:528126822163cbb609163d9758c3e7124c2aca99527bee7b3fc255c01be
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/6gsYcRl6TpSoePFywGa0zA/zh-cn_image_0000002788306398.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=A148625C812E162914F414BB452CBDA6A2A713518FF40B7607DF434FB4EAE364)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/qiAwwxMkRWiElGZYtm0ffQ/zh-cn_image_0000002820404675.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2FF6EFD7AD779EAF96CEEAB9C63B6223448451942A4C67140D11D5DA7C55660)
 
 ## 使用场景
 
@@ -144,7 +144,7 @@ struct GetTargetNoChange {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/ajy9USd8TBCI6Uht-QlsNQ/zh-cn_image_0000002817425761.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF669B569BE75A4CEDF0CFA3E23E42AF72A4B0AE32EF4DF42E60C7228A88797A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/AR0sZ610TriHxOHi78Njdg/zh-cn_image_0000002791724698.png?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=9705D66E5B4914E95C660850F21DDF38AA597CA5F71B85AF89127384031979B0)
 
 使用UIUtils.getTarget接口可以获取代理前的原始对象。
 
@@ -205,7 +205,7 @@ struct GetTargetAgent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/R1AhzfJISJufnU68tcdKRg/zh-cn_image_0000002788466342.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0DFAF834D5999B8FE557A21DF903ECF3F321A799B1CF2479D14EB939B937E42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/-_MKiITjRYOpA5IJsEMs-g/zh-cn_image_0000002791564726.png?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0FB5F0246638416FA1786664BBF49CDC9DE0521573161DEA5D3F5A6457C1753)
 
 ### 获取状态管理V2代理前的原始对象
 
@@ -244,7 +244,7 @@ struct GetAgentObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/RhkD5hExQkC8eGR6AWafsg/zh-cn_image_0000002817505829.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6B9C4BBCE4FBC2D4AEA65472DE6CBDB7358541C8F653F513BA08A1FB6A1FA53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/a0R8DNDTTYCKtIN8UpMESA/zh-cn_image_0000002820524679.png?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=36BFE466EA8E0B3A662532A4738A54484A14BE2F627B34A362B9F83B1278EB46)
 
 使用UIUtils.getTarget接口可以获取代理前的原始对象。
 
@@ -296,7 +296,7 @@ struct GetBeforeAgent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/u09NkEv8TbSI35NuGUd3Xw/zh-cn_image_0000002788306400.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=58617AC4933DC749E28AAFAC579EA292AB8BD15164557E84774C18A02C1C05D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/0RcPl0XRTIKegibB2ArO-g/zh-cn_image_0000002820404677.png?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB82058E885859ACDBA1F0EFB0C50EECB0A1CA4C890942A19C47B6D0C3852845)
 
 状态管理V2装饰器会为装饰的变量生成getter和setter方法，同时为原有变量名添加"\_\_ob\_"的前缀。出于性能考虑，getTarget接口不会对V2装饰器生成的前缀进行处理，因此向getTarget接口传入@ObservedV2装饰的类对象实例时，返回的对象依旧为对象本身，且被@Trace装饰的属性名仍有"\_\_ob\_"前缀。
 

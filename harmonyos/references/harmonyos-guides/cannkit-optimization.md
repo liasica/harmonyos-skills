@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-optim
 title: NPU异构部署
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 部署性能优化 > NPU异构部署
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:36+08:00
+scraped_at: 2026-11-19T09:49:17+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:676f6e50493b6d72390de32f226983b777790c088329a46f417bf05e4a518124
+content_hash: sha256:adc5d9acdb9d2bd279ce99d8cd6af756427f867b4c9961d40af327ed25cdca26
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:676f6e50493b6d72390de32f226983b777790c088329a46f417bf05e4a5
 
 异构的原理如下图所示，指定OP1、OP2、OP5~OPn在CPU上进行推理，OP3、OP4在NPU上进行推理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/FGRg1lIeQ6y_MGOBY34Wig/zh-cn_image_0000002817507837.png?HW-CC-KV=V1&HW-CC-Date=20261114T004836Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B254A001A90841ACD74BC6AB104250D29AD06593BA69514090C9B946E477179)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/SksqmzqnSyeWfDAAlZmSiA/zh-cn_image_0000002820526687.png?HW-CC-KV=V1&HW-CC-Date=20261119T014822Z&HW-CC-Expire=31536000000&HW-CC-Sign=68A96C53CF4B1C5DC1906CAE72FBC5E10F0E44A86D7E8652407E0A292D6DF3B6)
 
 实现异构可以通过在线调优方式，以下为在线调优参数设置接口，接口使用见[在线调优开发步骤](cannkit-optimization.md#在线调优开发步骤)。如要使用更丰富的设置和查询接口，请参见[API参考](../harmonyos-references/cannkit.md)。
 

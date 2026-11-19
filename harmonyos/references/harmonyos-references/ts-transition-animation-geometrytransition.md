@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transi
 title: 组件内隐式共享元素转场 (geometryTransition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 组件内隐式共享元素转场 (geometryTransition)
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:21+08:00
+scraped_at: 2026-11-19T09:51:10+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:a41e63ec985e2f61ea80b581c5fd9169c0bb95df508dcd8f5cc72b61164a0167
+content_hash: sha256:3853cb0d79dd5e9c21b1fb884a2241b1b41810358c1e6057f4c95ed1efec12cc
 ---
 
 在视图切换过程中提供丝滑的上下文衔接过渡。通用transition机制提供了opacity、scale等转场效果。geometryTransition通过安排绑定的in/out组件（in指新视图、out指旧视图）的frame、position，使得原本独立的transition动画在空间位置上发生联系，将视觉焦点由旧视图位置引导到新视图位置。in/out组件需要配合transition使用，以保证组件离场不被立即析构并提供转场效果；若不配合transition使用，out组件离场时将被立即析构，共享元素转场动画可能无法正常呈现。
@@ -139,7 +139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/lKGGSn0dTCK-53lHsmGbdA/zh-cn_image_0000002817508719.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005021Z&HW-CC-Expire=31536000000&HW-CC-Sign=4230F3DDC38994DB7C2F00E48A04A7D31EB57539809A41FF90F828CBD729DB03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/wxGIga6zRDu577gV5l8n-Q/zh-cn_image_0000002820407571.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=271D4EA301C817F988B95A3A7E430AA9BD8ED9092653262F1CEF6B87A1CC7C98)
 
 ### 示例2（if范式下使用follow实现跟随效果）
 
@@ -225,4 +225,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/CmPwB76NRMuzKehYjS2IrQ/zh-cn_image_0000002788309288.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005021Z&HW-CC-Expire=31536000000&HW-CC-Sign=81F498F28ADB92BB74A628DAF7F800D709E6F49F12F20F772B099BBDBC763E38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/OkQDF81tQ8C-3eJe_9-hxA/zh-cn_image_0000002791727590.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AC0F6B50A7E2F26C89364C43DE168ED5D5F79B0BD68F8B324C1B8CAC9C613FE)

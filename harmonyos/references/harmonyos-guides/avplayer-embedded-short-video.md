@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avplayer-embe
 title: 基于AVPlayer播放嵌入式短视频实践
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放嵌入式短视频实践
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:01+08:00
+scraped_at: 2026-11-19T09:48:41+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:80ffe83b570e13898ddee028e0016bf740ddbed42eb8136451269d63f5af7884
+content_hash: sha256:6c8a9681ea140671d10e30097c24476adc01128837c730cba67bbefe0cbd65c8
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:80ffe83b570e13898ddee028e0016bf740ddbed42eb8136451269d63f5a
 
 用户浏览视频列表时自动播放视频，在用户滑动视频列表时自动切换至首个完全可见的视频播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/eF18VQn8TGmo8-HHja8HEQ/zh-cn_image_0000002817427049.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004618Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A859088F5C9FE5D084DDA897A578E86BA2CBFE11B660D58642E4A6E67C4884A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/FApt1-LVTIGNt7_t-7dpsw/zh-cn_image_0000002791725988.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D32845E39D3AEF70C9885E2E3596147E1C03AB22253E36AB7BD1A6AA798C320)
 
 ### 实现原理
 
@@ -31,7 +31,7 @@ content_hash: sha256:80ffe83b570e13898ddee028e0016bf740ddbed42eb8136451269d63f5a
 
 逻辑如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/ZD2vn_r0SxqFndMqJQXV8Q/zh-cn_image_0000002788467630.png?HW-CC-KV=V1&HW-CC-Date=20261114T004618Z&HW-CC-Expire=31536000000&HW-CC-Sign=A88D6EEB8E831D3ECEF705D49218FA7DF4260A890B3F1BC08A8EFE3E33D1E936)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/SIf3OvFkTT67GBzLvYdMLQ/zh-cn_image_0000002791566016.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EC548173E7F34ED50C0C344E7F1946CE3AF46608AE4392CE50B0904920404F0)
 
 ### 开发步骤
 
@@ -231,7 +231,7 @@ content_hash: sha256:80ffe83b570e13898ddee028e0016bf740ddbed42eb8136451269d63f5a
 
 视频播放无缝转场是影音娱乐类应用中的典型场景之一，如视频列表中自动播放的热门视频，点击当前播放视频跳转至视频详情页后继续播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/AnWCadNJS1WJwQjhK9tUlQ/zh-cn_image_0000002817507119.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004618Z&HW-CC-Expire=31536000000&HW-CC-Sign=12A224790152AB566C374C3B188974B67A726D1D79034B127FD02AA36BC38DAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/awG0pkP1Q56q5aUjuUSbBA/zh-cn_image_0000002820525969.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB242D8D5EF70C234585968ED9F591BDEFC8CB515A56B7FF6EC12195A16C33D8)
 
 ### 实现原理
 
@@ -243,7 +243,7 @@ content_hash: sha256:80ffe83b570e13898ddee028e0016bf740ddbed42eb8136451269d63f5a
 
 逻辑如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/yuOsdjmpSPG-xHgJnXdxJQ/zh-cn_image_0000002788307688.png?HW-CC-KV=V1&HW-CC-Date=20261114T004618Z&HW-CC-Expire=31536000000&HW-CC-Sign=D75CCD206566448162B7EEF599198FC35308DCDD9B0832C746EBD1C6C68D7C5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/-v6HYQHYR6-dtwy5zH2G3g/zh-cn_image_0000002820405969.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=E13E2E1A7671135AF62B61782D14A0801C686E9B827AE35D6EC5871DF992071C)
 
 ### 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-express
 title: 拉起快递类应用（startAbilityByType）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起快递类应用（startAbilityByType）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:50+08:00
+scraped_at: 2026-11-19T09:47:27+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:5c11c2ae7e3caf82b1825e2b94721d0af2bf8c500c0b502849805b7c9f058e07
+content_hash: sha256:d4df914cc71c643cd3c4b8a2e07a640717014146f886197449a35d59c1e2c388
 ---
 
 本章节介绍如何拉起快递类应用扩展面板。
@@ -76,7 +76,7 @@ startAbilityByType接口中type字段为express，支持查询快递意图，对
 
    效果示例图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/CIEuqZHWRQaX9RAo6F1ERA/zh-cn_image_0000002788466094.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=B397BA1CDB08231A75AF0C102FF089F11B97974132F3C67F41FD4A6C7E7CCB11)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/axx6Y2N_RSCVi1fdmoskZA/zh-cn_image_0000002791564478.png?HW-CC-KV=V1&HW-CC-Date=20261119T014636Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FF7F38339C5A602E9EF184914B96AE2399D4BEF607E920C5CC8E54C999631CE)
 
 ## 目标方开发步骤
 

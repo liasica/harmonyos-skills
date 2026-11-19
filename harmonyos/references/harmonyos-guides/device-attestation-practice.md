@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-attest
 title: 验证应用请求真实性集成设计实践
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明 > 验证应用请求真实性集成设计实践
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:32+08:00
+scraped_at: 2026-11-19T09:48:11+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c32d1597c543378a1f0be574b82791a584691098e492b1dfcf7c235284e73bb6
+content_hash: sha256:1c1463fd2d7ec96ed14bea7c750935008e0dce6a756ea03ab43b8f6df5b7f26d
 ---
 
 本文档提供了验证应用请求真实性的集成设计方案实践。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/WUQeYjWgTsKvjR3BCJzvWA/zh-cn_image_0000002817506865.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A8AC4A0184FF3FA9C52F80B75B8A96D1613EDC831156460E8FAAA662A2FB99C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/D44dbsTsQm2WtCMVq1NObA/zh-cn_image_0000002820525713.png?HW-CC-KV=V1&HW-CC-Date=20261119T014811Z&HW-CC-Expire=31536000000&HW-CC-Sign=21D9824163728EE14A9E50F450B93BFEE67ADD26E1CCFE0E2ED290B7F67C6B3F)
 
 ## 创建密钥确立可信凭证流程
 

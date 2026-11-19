@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-impo
 title: 密钥导入介绍及算法规格
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥生成/导入 > 密钥导入 > 密钥导入介绍及算法规格
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:31+08:00
+scraped_at: 2026-11-19T09:48:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f91b8079a765df1b4bce144e07cd449b04fedb1f7b9bedea31ffed4a3b6d0dbd
+content_hash: sha256:ded5a77cf474827ac7c1ce56eac5443f800cdb44f2e52964ec7b2d2f9ef01270
 ---
 
 如果业务在HUKS外部生成密钥（比如应用间协商生成、服务器端生成），业务可以将密钥导入到HUKS中由HUKS进行管理。密钥一旦导入到HUKS中，在密钥的生命周期内，其明文仅在安全环境中进行访问操作，不会传递出安全环境。
@@ -37,7 +37,7 @@ content_hash: sha256:f91b8079a765df1b4bce144e07cd449b04fedb1f7b9bedea31ffed4a3b6
 
 下图为安全导入密钥开发时序图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Up5LYIUyT0K881P8PZjb6A/zh-cn_image_0000002817506861.png?HW-CC-KV=V1&HW-CC-Date=20261114T004731Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E12C5D0A286AFEED57573CD27FEA8CBFDD7CAC7908978D6FC16855F5E93F735)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/FxfPzWuHTDeXoQjdQs4x2Q/zh-cn_image_0000002820525709.png?HW-CC-KV=V1&HW-CC-Date=20261119T014718Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC1F2C9EE1E25AE4ADFEFBB4BD74EDE46747D5F4A0D2DB3ECF6FF5453C9DBFF7)
 
 根据开发流程，在安全导入密钥过程中，需要依次调用HUKS的能力包括：
 
@@ -90,7 +90,7 @@ content_hash: sha256:f91b8079a765df1b4bce144e07cd449b04fedb1f7b9bedea31ffed4a3b6
 
 下图为数字信封导入密钥开发时序图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/_KaPlxiqRVyi6qt7IuhaXg/zh-cn_image_0000002788307430.png?HW-CC-KV=V1&HW-CC-Date=20261114T004731Z&HW-CC-Expire=31536000000&HW-CC-Sign=07CF3C57E9A18D9A4634E82A4E0F54AD80CBEE62A3ECC4F6B0A13AC2B415FC0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/1yI0FVzgRzS6p7D3VgvxKw/zh-cn_image_0000002820405709.png?HW-CC-KV=V1&HW-CC-Date=20261119T014718Z&HW-CC-Expire=31536000000&HW-CC-Sign=A991A822CA9174D2A6308D599B3EE7C969E15E24C92C55BBE100BE5FE1D5D83C)
 
 根据业务流程，导入数字信封时需要调用HUKS的能力。
 

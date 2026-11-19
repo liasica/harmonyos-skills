@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-skill
 title: Account Kit Skill能力开放
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit Skill能力开放
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:17+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:38af7a922ba70c51624d0b2d31982c9865a881f59def1d08f5eb5768e917a992
+scraped_at: 2026-11-19T09:48:50+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:0ef0964fb9c7f0a370a5ca95167eb3be78ad375baedafc4324c58a46507bb8e6
 ---
 
 ## 概述
@@ -27,7 +27,7 @@ Account Kit接入Skills，旨在帮助开发者快速集成Account Kit开放能�
 ## 快速开始
 
 1. 下载并配置Skill：请在[能力覆盖范围](account-skill.md#能力覆盖范围)章节中点击对应Skill的超链接进行下载，并放到AI编码工具（如OpenCode、Claude Code等）的Skill配置目录下（不同工具规范不一致，按工具要求处理）。
-2. 配置DevEco CLI（服务端Skill无需此项配置）：在终端执行以下命令安装DevEco CLI，更多详情请参考[DevEco CLI](ide-deveco-cli.md)官方文档。
+2. 配置DevEco CLI（服务端Skill无需此项配置）：在终端执行以下命令安装DevEco CLI，更多详情请参考[DevEco CLI](../doccenter-deveco-studio/ide-deveco-cli-overview.md)官方文档。
 
    ```json5
    npm install -g @deveco/deveco-cli@latest

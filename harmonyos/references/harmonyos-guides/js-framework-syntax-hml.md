@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: HML语法参考
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 语法 > HML语法参考
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:10+08:00
+scraped_at: 2026-11-19T09:47:47+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b00a03ed54ef3d81c87210e50d555195a1d59258d67863fa28f120508a67a737
+content_hash: sha256:5477c6503e2f22c91a1d35f4b2c1a78ed9ec351a008f321001c8df8634f4ccad
 ---
 
 HML是一套类HTML的标记语言，通过组件，事件构建出页面的内容。页面具备数据绑定、事件绑定、列表渲染、条件渲染和逻辑控制等高级能力。
@@ -55,7 +55,7 @@ export default {
 * 针对数组内的数据修改，请使用splice方法生效数据绑定变更。
 * hml文件中的js表达式不支持ES6语法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/UaiQ-JUzT3GVDDFKNJozeQ/zh-cn_image_0000002817426377.png?HW-CC-KV=V1&HW-CC-Date=20261114T004709Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5557C33C96C42EE6EF20BF34C98E4C7AED4CAFAF4A2AD94968C6262AFE0BA86)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/AjoC2srcQBK6zObeLby0kA/zh-cn_image_0000002791725314.png?HW-CC-KV=V1&HW-CC-Date=20261119T014656Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7A3AFA89727E353947DFF81172CE0CABAE99E6CC8FE0616CD6FF6D038D5FECD)
 
 ## 普通事件绑定
 
@@ -133,7 +133,7 @@ export default {
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/hTv0WSeARp6kPrxBhrOkOQ/zh-cn_image_0000002788466958.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004709Z&HW-CC-Expire=31536000000&HW-CC-Sign=C99E3C3A6A487B78558616A24C0CDFD9014809DF187C086BF5CB6285C89E465E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/n4VgT-v4RmyLup_fT77gxA/zh-cn_image_0000002791565342.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014656Z&HW-CC-Expire=31536000000&HW-CC-Sign=64F25304627F07B11A7DB11701C21CC1E03C8A86E0A24992C5A51A63A4851633)
 
 ## 冒泡事件绑定5+
 
@@ -264,7 +264,7 @@ tid属性主要用来加速for循环的重渲染，旨在列表中的数据有�
 * 数组中被tid指定的属性要保证唯一性，如果不是则会造成性能损耗。比如，示例中只有id和name可以作为tid字段，因为它们属于唯一字段。
 * tid不支持表达式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/hPhuUzHKQvadTM5v7zp7vw/zh-cn_image_0000002817506445.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004709Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE90420B0EBD7162BC89B74EAB4854077DDCCD2D1EB71B8D0D3F47FED039D6C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/k8qXAFs8SMmvb7MkNBZmkA/zh-cn_image_0000002820525295.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014656Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8C6D381561D022AE5643BC0F850E65E4A2EF1A4D8B04E3D134C887D174920C5)
 
 ## 条件渲染
 
@@ -310,7 +310,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/nhkJMThmQ6aQKuztMK4xaA/zh-cn_image_0000002788307016.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004709Z&HW-CC-Expire=31536000000&HW-CC-Sign=10F55EDCC331CA954038F812A5833AEFEE35E03EC8874D6D14D47A1CFB23A174)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/PHaXrA4IT6ymvMaBzcSWfA/zh-cn_image_0000002820405295.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014656Z&HW-CC-Expire=31536000000&HW-CC-Sign=530EE7834A6C5C98F40A17DCFA361123E75E75EA9B84E8419DE6EA660BA1B1E6)
 
 优化渲染：show方法。当show为true时，节点正常渲染；当为false时，仅仅设置display样式为none。
 
@@ -351,7 +351,7 @@ export default {
 
 禁止在同一个元素上同时设置for和if属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/TjH9xGJxRe2Hpy1DkR_i5g/zh-cn_image_0000002817426379.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004709Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABC3C8E954EC9044DB5D0E8FE2D1A39AC2AD6C73C363B38C9A711C117E7084E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/WikyD8CUTKKdzDDWJARmxw/zh-cn_image_0000002791725316.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014656Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8A27D8615FD085467B2065F02B0653DA47862CB536586A89E8A99E9C0A0FC5E)
 
 ## 逻辑控制块
 
@@ -385,7 +385,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/CaNZ-A1lSD68_TdeWZahRw/zh-cn_image_0000002788466960.png?HW-CC-KV=V1&HW-CC-Date=20261114T004709Z&HW-CC-Expire=31536000000&HW-CC-Sign=8151D676C87DED693C3A77FBC2C9367CBE8B21634B2B3D0C0BFE10A34D2D085E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/GZhRNj7QQA-XPMEMRC3u_w/zh-cn_image_0000002791565344.png?HW-CC-KV=V1&HW-CC-Date=20261119T014656Z&HW-CC-Expire=31536000000&HW-CC-Sign=D130AF072B24A747B530F70B326CDA8338F81FC6C68EB687D4B21448274AC2E9)
 
 ## 模板引用
 

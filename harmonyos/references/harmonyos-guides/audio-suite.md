@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite
 title: 音频编创开发概述(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 音频编创开发概述(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:140528cd96bfa07f7778fa078ddf6cc5af288223f8b7f4398eea3a702880d068
+scraped_at: 2026-11-19T09:48:33+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:1124f5d30ee003ddb20fe9ba9ffb60f4cbd1b4b561287ac2c9820284263e72de
 ---
 
 从API version 22开始，支持音频编创（[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)）功能。音频编创是一款提供专业级音频效果处理的开发接口，旨在帮助开发者高效构建各种音频创作应用。该套件提供高品质、低延迟、智能化的音频处理能力，集成了降噪、均衡器、人声分离等丰富音效功能。开发者可以根据具体的应用场景，轻松地将所需音频功能集成到应用中。
@@ -14,7 +14,7 @@ content_hash: sha256:140528cd96bfa07f7778fa078ddf6cc5af288223f8b7f4398eea3a70288
 
 **图1**：音频编创实现原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/iH0xZ4rtQLGpu4Qq7VJS0A/zh-cn_image_0000002788307584.png?HW-CC-KV=V1&HW-CC-Date=20261114T004752Z&HW-CC-Expire=31536000000&HW-CC-Sign=C185ED05DACDEB4D4038B12DFDEE1049E280C243ADCE9B1B09D57D2A252E3EFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/BpJBbqpvQiGEd_JVESnvcQ/zh-cn_image_0000002820405865.png?HW-CC-KV=V1&HW-CC-Date=20261119T014832Z&HW-CC-Expire=31536000000&HW-CC-Sign=80CEB879F719FFE2617A96B7848B6F59C47E42364C9E64AE1CC79345E7A9AA72)
 
 ## 引擎
 
@@ -43,7 +43,7 @@ content_hash: sha256:140528cd96bfa07f7778fa078ddf6cc5af288223f8b7f4398eea3a70288
 * 输入节点负责处理PCM音频数据输入，从应用侧获取数据。
 * 输出节点负责处理PCM音频数据输出，开发者可以设置音频数据的输出格式。
 * [离线编辑(C/C++)](audio-suite-manual-rendering.md)场景支持均衡器、音源分离、声场效果、降噪、声音美化、环境效果、混音等音效节点。
-* [实时预览(C/C++)](audio-suite-real-time-rendering.md)场景支持均衡器音效节点。
+* [实时预览(C/C++)](audio-suite-real-time-rendering.md)场景在API版本23之前，仅支持均衡器效果节点；在API版本23及以后，支持所有效果节点。
 * 均衡器、音源分离、声场效果、降噪等音效节点支持对应的音效处理功能和多音频混音操作，最终输出的PCM音频数据支持格式设置（如[OH\_Audio\_SampleFormat(位深度)](../harmonyos-references/capi-native-audio-suite-base-h.md#oh_audio_sampleformat)、[OH\_Audio\_SampleRate(采样率)](../harmonyos-references/capi-native-audio-suite-base-h.md#oh_audio_samplerate)和[OH\_AudioChannelLayout(声道数)](../harmonyos-references/capi-native-audio-channel-layout-h.md#oh_audiochannellayout)等）。
 
 ## 管线
@@ -54,7 +54,7 @@ content_hash: sha256:140528cd96bfa07f7778fa078ddf6cc5af288223f8b7f4398eea3a70288
 
 **图2**：管线运行状态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/K-WpwuBhT_Gw0fmCkUUyoQ/zh-cn_image_0000002817426947.png?HW-CC-KV=V1&HW-CC-Date=20261114T004752Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C7124219AB9CF7E7645744CF836ECA9209315DFD16E9BBB3E24B5DF285BEF1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/nbDwyn-TS2Ojt6WAcG2D-A/zh-cn_image_0000002791725886.png?HW-CC-KV=V1&HW-CC-Date=20261119T014832Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA778BD31D521187401BED99D131E88FD51E395081D6DE375BA51B0E4DF583E1)
 
 状态的功能如下表所示。
 

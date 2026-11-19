@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: RenderNode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > RenderNode
 category: harmonyos-references
-scraped_at: 2026-11-14T08:49:58+08:00
+scraped_at: 2026-11-19T09:50:44+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a156e6d19f603551f94049bcc640cf1fb358c8ad1c5ff937279a7aeb262b0f6a
+content_hash: sha256:ff8c3935b97a230df1c0976e92ee5ad7a6fb81d3df81169a35ee5881a3703a4f
 ---
 
 提供自绘制渲染节点RenderNode，支持开发者通过C API进行开发，完成自定义绘制需求。RenderNode还支持渲染节点树管理（添加、删除、查询子节点）、背景色与不透明度等视觉属性设置、变换（缩放、旋转、平移、变换矩阵）、阴影、边框、遮罩与裁剪、模糊效果等能力，适用于在Stage模型下进行自定义渲染与节点树管理的场景。
@@ -1898,7 +1898,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/UjeWuI9PQBOwxijDTqrItw/zh-cn_image_0000002817508107.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2E363BCD1248B34299A6A8D253785685E2D3AC380881CE55120C072D40B1213)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/jyobVhSLS5Sqnv9vgOrxLg/zh-cn_image_0000002820526957.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=0184F03FC36AF4F10654149B0BD286B5D53ADF31B7A93E0D9667CB4F0512A074)
 
 ### shadowRadius
 
@@ -1980,7 +1980,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/ohCBd2x2SjyDZao-9YCXSA/zh-cn_image_0000002788308676.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=262375573332F778F28A47C219C186CACB87CD92D0FCCF3DD27740955987CDFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/s3AlolC0SP60vCd-58WjPg/zh-cn_image_0000002820406957.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=AACEC7B4CC973BE350C3797BA36D9ED947722AECD2A5AFEA2F85221006FB779B)
 
 ### draw
 
@@ -2815,7 +2815,7 @@ set markNodeGroup(isNodeGroup: boolean)
 
 标记是否优先绘制节点及其子节点。若设置为true，则透明度等属性将在节点绘制完毕后再进行合成，适用于多个半透明节点重叠且需要正确合成透明度效果的场景。设置效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/EiRZOg_qRVKe9mfmt14AbA/zh-cn_image_0000002817428039.png?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=934C9806E782BF80B3CBE6A22364D73F02C9F8736639D05E3ED0C2F357C8C3E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/d5wS4O48TRu6Vqojk3GwXA/zh-cn_image_0000002791726978.png?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=48FA27DA9A2550808D389C965C5E9F2F42FA1A97E9F02247AE6B150B46AF1711)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3085,7 +3085,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/h1z5Z6qDSCOPqKUZ4ug9IA/zh-cn_image_0000002788468620.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=3713984DD326884C614A2837368D634B6F06A20071F903F69024FC3C82E47D40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/R1JaeI51TfGU0zO56a2GaQ/zh-cn_image_0000002791567006.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=B016330F060D441D66F17FFC9A28CF07302D8EFD6A713572775285F202B391BD)
 
 ### backgroundBlur
 
@@ -3209,7 +3209,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/TGLn0AeeSr-IvnCwFzh1-g/zh-cn_image_0000002817508109.png?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=57E1E5B7F2C3BCBCF1464A84E3700F41BE65C92498317160825769A3305054D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/id0kx5UJRryhGRV9W3R5_A/zh-cn_image_0000002820526959.png?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=A07A5704EB8446525703262BD8A887FA888592B5853F753819B97E5FEBF07864)
 
 ### contentBlur
 
@@ -3333,7 +3333,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/YvQn-1SdTfWmNzTA_xKtQA/zh-cn_image_0000002788308678.png?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=B26DFEB6E3A9395D360AE50491338099F88A9529E98AE6BFD4B567D2CC898D8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/6Y0TATv2SnCW0EJddqxuxA/zh-cn_image_0000002820406959.png?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=389C1A0EBE4382E92A2205861168B5E0C8C333E565770F65B0EA0812AF51FBE0)
 
 ### foregroundBlur
 
@@ -3456,4 +3456,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/9PcWj2l4QUO3VTWtcxQqYQ/zh-cn_image_0000002817428041.png?HW-CC-KV=V1&HW-CC-Date=20261114T004956Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C744B6B86263BC20B68735E05A38C4A387B1B603BA86308DC37FC41A4B511AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/w7RHjvMVQ0qZonF8fZjYAg/zh-cn_image_0000002791726980.png?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=C71496B4DBCDFDE5C222F8DA4A7C4396ED211A7128849FA2C65C2F4D484A7EF5)

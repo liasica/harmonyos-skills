@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 属性修改器 (AttributeModifier)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > Modifier机制 > 属性修改器 (AttributeModifier)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:08+08:00
+scraped_at: 2026-11-19T09:47:45+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:609e74fd32e7f463c12715961f1e91ac5b93811e0bcbc863776612a1d14e1cd5
+content_hash: sha256:9d24cde0ea35d06a600759df66117e16ee6f846bf35ad9c16b5789bc6301c78a
 ---
 
 ## 概述
@@ -129,7 +129,7 @@ struct Button1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/ZyLJnUvlQJqaALWpnEIcgA/zh-cn_image_0000002788306960.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004529Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6B6D8396B380FC9CB1ACFCC98309722541A0177AA70F0968FB8D87E33D8D214)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/S8B6WaF0SBiBRvczXSskAw/zh-cn_image_0000002820405239.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014654Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF57335C4D76082D3F8A6C333955471DA00503E75F72A28422FB7E8CA1D182F2)
 
 ```typescript
 export class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
@@ -183,7 +183,7 @@ struct Button2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/d8MCYIZRSDKzJ7KnYBJVAA/zh-cn_image_0000002817426323.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004529Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AA12D8A517E930A9C3124ACCB6F123C66A2C51895AEC13CA67DEF7977CD745F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/3HHZqhxATp-0zMOBQ2YDnQ/zh-cn_image_0000002791725260.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014654Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0D743AA49D07A748AE85EC16E9FB7C143366967B3FCA8F8FEED4785E5E6490A)
 
 当一个组件上多次使用applyNormalAttribute设置不同的Modifier实例时，每次状态变量刷新均会按顺序执行这些实例的方法属性设置，遵循属性覆盖原则，即后设置的属性生效。
 
@@ -254,7 +254,7 @@ struct Button3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/rkL1bOkgRlaw12JmLkcDWw/zh-cn_image_0000002788466904.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004529Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5CDFFDA954FA342C90D238DFF042DEF6E1C6A2886C7FE1F392422717B17DA2C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/DNDpu8BYRxqBhyDg5_N3jQ/zh-cn_image_0000002791565288.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014654Z&HW-CC-Expire=31536000000&HW-CC-Sign=E79A108F34F63C12AD511B6EB2B92CC0C390B79302091CF3F151D78B6E4377DA)
 
 ## 设置多态样式、事件
 
@@ -300,7 +300,7 @@ struct Button4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Z8IsgsKzTLKOW-5lMmE5Tw/zh-cn_image_0000002817506391.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004529Z&HW-CC-Expire=31536000000&HW-CC-Sign=30F9162F72DD341238F0CF7BCBDDF5504372D470E57F34BCAE54B4AE3FBC7628)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/u-_pUu-gQzuo0r8XULESqQ/zh-cn_image_0000002820525241.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014654Z&HW-CC-Expire=31536000000&HW-CC-Sign=C77C093CEE4F818F8DBB5614A0478B6FE40F4D4FCA960F47D3DF72BCB36F9DBE)
 
 ## 属性或事件对attributeModifier的支持情况
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Tips控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 弹窗控制 > Tips控制
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:06+08:00
+scraped_at: 2026-11-19T09:50:53+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:79c8e4fd3d8c7258028865d3abcf99d5481c24f0be382d40324e3976bc8b16c3
+content_hash: sha256:ec8dc65830874de4e6f52ea000c156d85d0d29caa61da8de034a689957dd1ee2
 ---
 
 为组件绑定Tips悬浮气泡，当鼠标悬浮在组件上时，自动显示提示信息；鼠标离开组件时，悬浮气泡自动隐藏。
@@ -106,7 +106,7 @@ struct TipsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/EQ1tZsJLQlGTmTGf1mIz8g/zh-cn_image_0000002817508213.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A21BCCD8A555F0ED0D9C4259B4FDBC801BBA1CCDD5BFD41EBCF4E8EE82CE53F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/72i_JPJMQIqfqxHC1GUmQQ/zh-cn_image_0000002820527063.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014958Z&HW-CC-Expire=31536000000&HW-CC-Sign=A61D258AA2FE59544ADF4E7D1DED36F772DEA839CC015C334BCBBC68BE7D7330)
 
 ### 示例2（多个悬浮气泡的显示和消失）
 
@@ -145,7 +145,7 @@ struct TipsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/SbuD2-82Tn2OWcoKjrUKaw/zh-cn_image_0000002788308782.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DC975D44F1B8699D85D2BDDA0461E7201D2034D4B48E570049715DF6F4A4EDF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/IBTr1J4eQUKGyWgIzzeOAg/zh-cn_image_0000002820407063.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014958Z&HW-CC-Expire=31536000000&HW-CC-Sign=C02717605B526E53E70C7EB4228D4133F4732D9A1221507F9AF918182036547F)
 
 ### 示例3（设置悬浮气泡的沉浸光感视效）
 
@@ -182,8 +182,8 @@ struct TipsExample {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/2ySpd_GvRNSnqpfnLF64jg/zh-cn_image_0000002817428145.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=613854F4C15776CE54F9F89CA45E1393D831A53D7F45E9A429FE19F7B84B45BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/b5-e6WsjQwGrql4AWpo7Mw/zh-cn_image_0000002791727084.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014958Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF42FBBBA8A593D5695BA156C167EEBAE07939E2C464DFA88AAC4415643B297A)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/_iSKfQxtRgaOm4fx9rnkPA/zh-cn_image_0000002788468726.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=317A846BDD06A73533170B121BD0EE9D658A92B8183D92E3812A5821A246A165)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/BQ3IVZzyT2KTyeLh6MigQg/zh-cn_image_0000002791567112.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014958Z&HW-CC-Expire=31536000000&HW-CC-Sign=B242EC35CC2D64C84975323F4A7FF9719469E1902D23E0643C916814E43BC3AA)

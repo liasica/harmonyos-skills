@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (MediaKeySystem)
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > ArkTS API > @ohos.multimedia.drm (数字版权保护) > Interface (MediaKeySystem)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:54:40+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:0714eb065f6f391b5d127373a56c9bc59dade3c54f37f1d26b9ee22f6501ecde
+scraped_at: 2026-11-19T09:53:44+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:50f43e24151674e6ff1469465b399058b418935ab3f93c32ce0964b33ab5c31b
 ---
 
 支持MediaKeySystem实例管理、设备证书申请与处理、会话创建、离线媒体密钥管理、获取DRM度量记录、设备属性等。在调用MediaKeySystem方法之前，必须使用[createMediaKeySystem](arkts-apis-drm-f.md#drmcreatemediakeysystem)创建一个MediaKeySystem实例。
@@ -484,7 +484,7 @@ let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession(
 
 createMediaKeySession(): MediaKeySession
 
-创建DRM解决方案默认内容保护级别的MediaKeySession实例。
+创建默认内容保护级别的MediaKeySession实例。
 
 **元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 

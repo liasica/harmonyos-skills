@@ -1,6 +1,6 @@
 # 指南（harmonyos-guides）
 
-共 5568 篇文档。
+共 5569 篇文档。
 
 - [24h功耗器件分解统计事件](24-hour-battery-usage-event.md)
 - [aa工具](aa-tool.md)
@@ -1595,6 +1595,7 @@
 - [绘制效果](drawing-effect.md)
 - [Driver Development Kit（驱动开发服务）](driver-development-kit.md)
 - [Driver Development Kit简介](driverdevelopment-overview.md)
+- [外设驱动访问权限](driverextensin-permission-request.md)
 - [开发无UI界面基础驱动](driverextensionability.md)
 - [数字版权保护(ArkTS)](drm-arkts-dev-guide.md)
 - [基于AVCodec播放DRM节目(C/C++)](drm-avcodec-integration.md)
@@ -5264,7 +5265,7 @@
 - [使用音频模板](using-avsession-avmusictemplate.md)
 - [媒体会话控制方](using-avsession-controller.md)
 - [媒体会话提供方(ArkTS)](using-avsession-developer.md)
-- [使用AVTranscoder实现视频转码(ArkTS)](using-avtranscoder-for-transcodering.md)
+- [使用AVTranscoder实现音视频转码(ArkTS)](using-avtranscoder-for-transcodering.md)
 - [使用Node-API实现ArkTS/JS与C/C++语言交互](using-napi-interaction-with-cpp.md)
 - [使用AVImageGenerator获取视频帧(C/C++)](using-ndk-avimagegenerator-for-video.md)
 - [使用AVMetadataExtractor获取元数据(C/C++)](using-ndk-avmetadataextractor-for-media.md)
@@ -5273,7 +5274,7 @@
 - [使用AVPlayer播放视频(C/C++)](using-ndk-avplayer-for-video-playback.md)
 - [使用AVRecorder录制音频(C/C++)](using-ndk-avrecorder-for-audio-recording.md)
 - [使用AVRecorder录制视频(C/C++)](using-ndk-avrecorder-for-video-recording.md)
-- [使用AVTranscoder实现视频转码(C/C++)](using-ndk-avtranscoder-for-transcodering.md)
+- [使用AVTranscoder实现音视频转码(C/C++)](using-ndk-avtranscoder-for-transcodering.md)
 - [使用LPP播放器播放视频 (C/C++)](using-ndk-lpp-for-playback.md)
 - [使用MediaAssetManager请求媒体资源(C/C++)](using-ndk-mediaassetmanager-for-request-resource.md)
 - [推荐使用OHAudio开发音频播放功能(C/C++)](using-ohaudio-for-playback.md)

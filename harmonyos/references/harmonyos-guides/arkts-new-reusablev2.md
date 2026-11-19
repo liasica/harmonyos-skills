@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-reu
 title: "@ReusableV2装饰器：V2组件复用"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > @ReusableV2装饰器：V2组件复用
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:58+08:00
+scraped_at: 2026-11-19T09:47:36+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:d880fc5e7781f48dfef34dfa7321ac7493ec7551c2253bd26d72d8600f1d904d
+content_hash: sha256:63dab9e2c3a26218bd5bc9c9afe662c13ed66da5199d37a22c674540fe9a43e8
 ---
 
 为了降低反复创建销毁自定义组件带来的性能开销，开发者可以使用[@ReusableV2](../harmonyos-references/ts-custom-component-decorator-reusablev2.md#reusablev2)装饰[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件，达成组件复用的效果。
@@ -278,7 +278,7 @@ struct ReusableV2Component {
 
 倘若该复用组件下有子组件时，会在回收和复用时递归调用子组件的aboutToRecycle和aboutToReuse（与子组件是否被标记复用无关），直到遍历完所有的孩子组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/gWo7RB2HRQuD1VNjEM3n9A/zh-cn_image_0000002788306230.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DA1BCB470C9806AF13924A89B023FA5B6DC9BBCFA46156B72F453135E4112EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/n3nFvpJFRay6E5l1TBMMGA/zh-cn_image_0000002820404507.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=436CD53F279F58A67574028D0139FB72FD065A6DA9CE1A309851A37E39A88E47)
 
 ## 复用阶段的冻结
 
@@ -364,7 +364,7 @@ struct ReusableV2Component {
 3. 点击Change value按钮，UI无变化，@Monitor不触发且onRender方法不被回调。
 4. 点击Reuse/Recycle按钮，此时调用aboutToReuse回调并输出aboutToReuse的日志，@Monitor触发并输出日志info.age change且onRender方法回调输出info.age onRender，UI发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/HtBAuBbRQ5q-X4sVKHDIyQ/zh-cn_image_0000002817425593.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=C42EBD992A3767DC1D761F83B33D1AD3488A3D07A5104CB7AAF6780238461BB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/vh4AFdoURuaKbrpVFtzcLQ/zh-cn_image_0000002791724530.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6DC556B206C1B46CD2EA657308799A01FBD098F47D508F1AABBAD04AE55D295)
 
 如果去掉aboutToReuse方法中的自增操作，则上述第四步不会触发@Monitor回调。
 
@@ -551,7 +551,7 @@ struct ReusableV2Component {
 
 开发者可以尝试点击各个变量，并点击Recycle/Reuse按钮查看复用后的重置情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/moY7fr4TSvqwXh6x2Y-7QA/zh-cn_image_0000002788466174.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=C91F5C07D89DA0F020D20913B1BBB7F500862647E619515756A06C085D0CAED1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/pN_LsKXcSsm0SqTkr8bbyA/zh-cn_image_0000002791564558.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D17290346823860294D17992D3052EE3D5D639889801E6558A3CE808244369C)
 
 需要注意的是，上面的例子中noDecoInfo未被重置，如果存在监听noDecoInfo.age的@Monitor，因为noDecoInfo本身未产生变化，所以该@Monitor也不会被重置，因此在后续第一次更改noDecoInfo.age时，IMonitorValue的before值将不会被重置，仍是复用前的值。
 
@@ -629,7 +629,7 @@ struct ReusableV2Component {
 2. 点击Recycle/Reuse两次，UI刷新为noDecoInfo.age: 35，@Monitor触发并输出日志age change from 31 to 35。
 3. 点击noDecoInfo.age: 35，UI刷新为noDecoInfo.age: 36，@Monitor触发并输出日志age change from 35 to 36。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Ow1YyiAvTdigrQLII4MTXw/zh-cn_image_0000002817505661.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=354842AE205EA85A51E1D20201E89C8EE428427BB1053C41FF916D90E6DFBFB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/9SPs6SG3RoOxTekmowMi1A/zh-cn_image_0000002820524509.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC72B84B563D2E1004EC0AD8FF507E571C4FCCEEC11773A2A89B40214FDC5D1E)
 
 由于冻结机制的存在，在aboutToRecycle中赋值不会被@Monitor观察到。而在经历完变量重置后，变量又会被赋予新的值，因此对于组件内状态变量来说，在aboutToRecycle中赋值不会有明显的效果；而常量（例如上面的noDecoInfo）由于冻结机制的存在，在aboutToRecycle中更改age也不会被观察到，并且因为不会被重置，所以相关的@Monitor也不会被重置，即这里的age值本身未被重置，也就不会重置与之绑定的@Monitor。最终表现出来的现象即：第二步回调的@Monitor中，monitor.value()?.before得到的值为31，而非age的初始值30。
 
@@ -688,7 +688,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Pe7zlHWqSR-zYBRsiCwwmA/zh-cn_image_0000002788306232.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=358C48E478471DD0333114A20FAA7B118C811B9EB8B7825C9CDD5AD1AF14B03F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Tc10bMUrTuy2Oy5OCwCzUg/zh-cn_image_0000002820404509.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D3073F88D3E6052C92C7EA618B10F038FFD89A1F911549AC63B6F1B064821B3)
 
 ### 在Repeat组件中使用
 
@@ -770,7 +770,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/xXwIihslTEmfwV8fkkS_9A/zh-cn_image_0000002817425595.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDF1040093F1A3D8A9BDF20C4F6693E49C7904CFF63A08EF60AB4A58F0FCD67C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/fnyHtmIISjmx1ladxuoUoQ/zh-cn_image_0000002791724532.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4ADCB84963A9425A51AA4481FAA67525F0073DBA2415E571B69178DD9D1BDA4)
 
 ### 在Repeat组件非懒加载场景的each属性中使用
 
@@ -854,7 +854,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/0bwEwA30TW6rOH1-deHrBw/zh-cn_image_0000002788466176.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=81B8309D56BB29CC64401D6EE0A3C123F22CDB74B17CA19BFA04C3A6E7D0C5D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/gerpshVYQFi8tVjxp0wz6A/zh-cn_image_0000002791564560.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=08BBD7BDB5FA3A9D6254AB3D141441F62C1D3B4DFF28A14054852D8C0F55CEAD)
 
 ### 在ForEach组件中使用
 
@@ -917,7 +917,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/zesKLuQPTaO97qLJI9AQKA/zh-cn_image_0000002817505663.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBBA129A7990A5FC311CF102FB7EFEAF32A379D2BD99C11257DF590CFFE71DD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Rz_nqP4BQVGv5bu4VgpjSw/zh-cn_image_0000002820524511.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3B7E2EF9529CC61DFDFF434C9E001EB3D702257ECA135DFA7A93804D5408A62)
 
 ### 在LazyForEach组件中使用
 
@@ -1085,4 +1085,4 @@ struct ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/3J8d6T1mTVyU9MG-zGWg5w/zh-cn_image_0000002788306234.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E0A9D437156FB2C183D6CEEA8A037743C61CDDA6B3674963D1CB2CE56ADE8BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/fQpeH5NeR5STy-ivFQlmKg/zh-cn_image_0000002820404511.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=B01E9A9176D3D89828664ABD1C5673088F3F346A331F347F00476C5D074B5462)

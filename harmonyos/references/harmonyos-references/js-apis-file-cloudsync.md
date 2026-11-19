@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.cloudSync (端云同步能力)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.cloudSync (端云同步能力)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:05+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:328bb1c188e5662884fbe7ea91fdc78fd4ca429853d11ca5c4a6a7ee4812e5e0
+scraped_at: 2026-11-19T09:51:56+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:99ab725ff2ed9caaa8d4058c6be591c29b3755c5cd16b14a9c86a1f10ccf9e0f
 ---
 
 该模块向应用提供端云同步能力，包括启动/停止端云同步以及启动/停止原图下载功能。
@@ -1051,7 +1051,6 @@ cleanAllFileCache(): Promise<void>
 
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
-import { fileUri } from '@kit.CoreFileKit';
 
 let fileCache = new cloudSync.CloudFileCache();
 

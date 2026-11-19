@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault
 title: 密码自动填充服务概述
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 密码自动填充服务概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:22+08:00
+scraped_at: 2026-11-19T09:48:00+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:aefc7dfc9df008a4b0f8a328ec13feb7859bc6c3d0da55921f517ace4a79d983
+content_hash: sha256:7996f16a57885c9b1017539aafe9ef87c215bd77fdd40a77fdac6992f1c60639
 ---
 
 ## 功能简介
@@ -36,7 +36,7 @@ content_hash: sha256:aefc7dfc9df008a4b0f8a328ec13feb7859bc6c3d0da55921f517ace4a7
 
 **图1** 密码保险箱功能架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/GvBczoiCSkqvlO069Kc1-w/zh-cn_image_0000002817426727.png?HW-CC-KV=V1&HW-CC-Date=20261114T004543Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0BCC47772254F707DC13F0F15E823B9877A78906C70E8D83B89BC75E54F60BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/m51ZMvQTTBiecFHASD9MiA/zh-cn_image_0000002791725664.png?HW-CC-KV=V1&HW-CC-Date=20261119T014709Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD53BD5324C8062FCB62EE2F7E7BC61478501957FEE6513720C79ED7B9B7617B)
 
 ## 模拟器支持情况
 

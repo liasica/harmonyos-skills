@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.usbManager (USB管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.usbManager (USB管理)
 category: harmonyos-references
-scraped_at: 2026-11-14T08:51:56+08:00
+scraped_at: 2026-11-19T09:52:55+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f9065f3bb477f6fa47d1e7fc51011b05d261864e4d373617e9af29e79cc90a1f
+content_hash: sha256:96bff13c20e5759e48e25862058825c6165530f1fcd53ae6e6248bf89625c4c9
 ---
 
 本模块主要提供管理USB设备的相关功能，包括主机端的查询USB设备列表、批量数据传输、控制命令传输、权限控制等；设备端的端口管理、功能切换及查询等。适用于需要与USB设备进行数据交互、管理USB设备权限、动态切换USB设备模式等场景。
@@ -36,7 +36,7 @@ import { usbManager } from '@kit.BasicServicesKit';
 
 **图1** usbManager接口使用流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/jBhQ186aTR2tYVREquVW9A/zh-cn_image_0000002817429199.png?HW-CC-KV=V1&HW-CC-Date=20261114T004935Z&HW-CC-Expire=31536000000&HW-CC-Sign=C63B5DC1251985AAC48708D7FD3E9C6441FC17E29758622B0912CC351EA652BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/bvyrQKk9R1Kd53Fiuesshg/zh-cn_image_0000002791568166.png?HW-CC-KV=V1&HW-CC-Date=20261119T015158Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBCDC3ADE1A6B2D6D580CCEF82059B214FD1CB5D2C8F4C577FB6AA14BFD0EE52)
 
 ## usbManager.getDevices
 
@@ -1724,7 +1724,7 @@ type字段决定协议层打包数据时所采用的传输特性，包括数据�
 
 **图2** USB端点示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/cPz94m7QTQmuoVPCP3J3Ig/zh-cn_image_0000002788469780.png?HW-CC-KV=V1&HW-CC-Date=20261114T004935Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6177A29AC9065453C0A688D566D96A7E25035DE148F8C245A0AB4301DA65011)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/tFzFsO-kQ9u9YHAMpMzthg/zh-cn_image_0000002820528119.png?HW-CC-KV=V1&HW-CC-Date=20261119T015158Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF39CDF77438885C57D7599096BF5DD71F2E6C0AA692F4754EC44A5A9A095912)
 
 **系统能力：** SystemCapability.USB.USBManager
 

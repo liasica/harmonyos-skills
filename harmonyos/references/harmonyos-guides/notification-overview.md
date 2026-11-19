@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: Notification Kit简介
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > Notification Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:26+08:00
+scraped_at: 2026-11-19T09:49:06+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:79667c459894117a59936d761cad13f86d2764d701420672fbfce6a9d1616243
+content_hash: sha256:180cf91e351c01a52323b45c2a54fcdbc54f72cc1f870264c0a3cff1c5059b29
 ---
 
 Notification Kit（[用户通知服务](notification-glossary.md#notification-kit用户通知服务)）为开发者提供[本地通知](notification-glossary.md#local-notification本地通知)发布通道，开发者可借助Notification Kit将应用产生的通知直接在客户端本地推送给用户，本地通知根据通知类型及发布场景会产生对应的铃声、振动、横幅、锁屏、自动亮屏、状态栏图标和[通知中心](notification-glossary.md#notification-center通知中心)的显示。
@@ -27,11 +27,11 @@ Notification Kit支持的能力主要包括：
 * 查询应用自身通知开关状态。
 * 应用通知用户的能力默认关闭，开发者可拉起授权框，请求用户授权发布通知。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/sF7ung6-S82caMx-93ahdw/zh-cn_image_0000002817507629.png?HW-CC-KV=V1&HW-CC-Date=20261114T004825Z&HW-CC-Expire=31536000000&HW-CC-Sign=B55A6D7BEC3E4365C70836A0362EDA77230533AFA6D3237A68603718E12E83CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/xcL8gVKZS2CSBWDgZnHArQ/zh-cn_image_0000002820526479.png?HW-CC-KV=V1&HW-CC-Date=20261119T014906Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C84FB37E7FF215A2DB3DA8B287E7A410A198246056EDFA3CF064BD337FA4530)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/iYLmnsavTvWlxEscvZFQCA/zh-cn_image_0000002788308198.png?HW-CC-KV=V1&HW-CC-Date=20261114T004825Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A48EFC230C1156967D6ED45755B65C7930B695A5ECEE39BC631EEF60A10B46D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/5H7cCX_3TiOm5lDF6m-YxQ/zh-cn_image_0000002820406479.png?HW-CC-KV=V1&HW-CC-Date=20261119T014906Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB1787434AC7C364972AB0D3F9454F34B5B0017FAA2EA670CBC1DBA83E9A4FB9)
 
 使用Notification Kit的主要业务流程如下：
 

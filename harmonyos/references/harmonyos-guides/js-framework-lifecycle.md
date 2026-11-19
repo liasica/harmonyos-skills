@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: 生命周期
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 生命周期
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:10+08:00
+scraped_at: 2026-11-19T09:47:47+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:d314861e3c95e461199eb3876d82da0de8d28d4b1d6f9ed5152ca097154e3dbb
+content_hash: sha256:ff7d0bac0bbbb3375801a4ff5cfab8a7b0285ee030d288479e459657f567cbec
 ---
 
 ## 应用生命周期
@@ -39,7 +39,7 @@ content_hash: sha256:d314861e3c95e461199eb3876d82da0de8d28d4b1d6f9ed5152ca097154
 
 **图1** 生命周期函数调用顺序图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/fgxo-6xaTg6w43qOgSEW9A/zh-cn_image_0000002817506449.png?HW-CC-KV=V1&HW-CC-Date=20261114T004531Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B6DA70EF9E00153E9440832654293F294816C51CB480F0E9C59CE06FD664C9A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/pvKbHUQLRBOZohvJBi-Zqw/zh-cn_image_0000002820525299.png?HW-CC-KV=V1&HW-CC-Date=20261119T014747Z&HW-CC-Expire=31536000000&HW-CC-Sign=760FC2118E48FF9B721BF57409577AA6B08BC34CBFEB735B2F0F5C083A92E0F1)
 
 ## 示例代码
 

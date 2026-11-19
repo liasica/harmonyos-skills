@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-examp
 title: CNN模型轻量化示例
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > CNN结构量化 > CNN模型轻量化示例
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:36+08:00
+scraped_at: 2026-11-19T09:49:16+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f817c3bce8746a21cb7dc7ddbe9c587337103be295e2dffd1abe7093266479aa
+content_hash: sha256:226d7ac4aa8c094d5f0012f3c21ae0f2328eee658359a37249fd84c1fb45c9f3
 ---
 
 ## TensorFlow Quant\_INT8-8无训练量化Demo
@@ -29,7 +29,7 @@ content_hash: sha256:f817c3bce8746a21cb7dc7ddbe9c587337103be295e2dffd1abe7093266
 
 "dopt\_tf\_py3/demo/quant8-8/notrain/tensorflow\_mnist"中存有量化后的pb模型和量化配置文件，运行demo后生成的文件如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/gMhmHN8JQ_KXjGgQ7U2M1A/zh-cn_image_0000002817427759.png?HW-CC-KV=V1&HW-CC-Date=20261114T004835Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC26E0D129A2D01BC4A6984DC6DC60916431EF4E3C81023B5CEB30385C9AAAD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/jfrlzMb7RYW6Tfa_Psi3FA/zh-cn_image_0000002791726698.png?HW-CC-KV=V1&HW-CC-Date=20261119T014916Z&HW-CC-Expire=31536000000&HW-CC-Sign=E17D80BBF533B1E3774F3604A15F28C4E5A671464A91CD828C623A1C0E5286BB)
 
 ## PyTorch Quant\_INT8-8无训练量化Demo
 
@@ -54,7 +54,7 @@ content_hash: sha256:f817c3bce8746a21cb7dc7ddbe9c587337103be295e2dffd1abe7093266
 
 "dopt\_pytorch\_py3/demo/quant8-8/notrain/pytorch\_mnist/"中存有PyTorch无训练量化示例文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/iU08Z34PSR2WB62cjtjDsw/zh-cn_image_0000002788468340.png?HW-CC-KV=V1&HW-CC-Date=20261114T004835Z&HW-CC-Expire=31536000000&HW-CC-Sign=169143E7683A247272FA8B7DA5F10F12A6E6A6594CFBE836B91474DC68A21E25)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/-63EfHSrSIm0SZ5j1KhI_A/zh-cn_image_0000002791566726.png?HW-CC-KV=V1&HW-CC-Date=20261119T014916Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2F6A45F60A0729DFDA9610E8DE05063BB8369394051806DD441F6514AE4A170)
 
 ## ONNX Quant\_INT8-8无训练量化Demo
 
@@ -270,7 +270,7 @@ if __name__ == "__main__":
 
 分类网络Demo位于tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_cls\_imagenet，包含5个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/UbNe-JDaRrK_giQ8bH991g/zh-cn_image_0000002817507829.png?HW-CC-KV=V1&HW-CC-Date=20261114T004835Z&HW-CC-Expire=31536000000&HW-CC-Sign=680C20C3F9B2D5F665B2A0923D73E6902AD9D90826FA84A7A14A89E141289FE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/T7FMDtX-SaOu-Asn0vNECw/zh-cn_image_0000002820526679.png?HW-CC-KV=V1&HW-CC-Date=20261119T014916Z&HW-CC-Expire=31536000000&HW-CC-Sign=9359AC8B896D2E553228743580AE33F703012C7AD42E57108B4797D9471E4002)
 
 * blocks.so：搜索空间文件
 * readme.md：搜索训练指导文件
@@ -333,7 +333,7 @@ if __name__ == "__main__":
 
 检测网络Demo位于"tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_det\_coco"，包含6个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/HN8fMjZpQSuXXKHi-FNZnA/zh-cn_image_0000002788308398.png?HW-CC-KV=V1&HW-CC-Date=20261114T004835Z&HW-CC-Expire=31536000000&HW-CC-Sign=295844C7746385B7573467B48DCBA1EDCF77745CACCB1F4BFFA2969AF553F3F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/EXXaoBAPTze3Z3EFEaJ7aQ/zh-cn_image_0000002820406679.png?HW-CC-KV=V1&HW-CC-Date=20261119T014916Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3F6C67CF95B18166BF0A2A6E1E7F678B6C71163A4886E1D3E48B0EB1648AC0C)
 
 * blocks.so：搜索空间文件。
 * pre\_train.yaml：预训练的配置项。
@@ -411,7 +411,7 @@ if __name__ == "__main__":
 
 分割网络Demo位于tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_seg\_voc，包含 6个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/nIHZge1RSNGna4uGCow0QA/zh-cn_image_0000002817427761.png?HW-CC-KV=V1&HW-CC-Date=20261114T004835Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9149B915FC976D6A59FA71C258CCB95E1232A1397A39932BBEBE1923632DC81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/uVglujCgSeyP3HYoA0f8Ww/zh-cn_image_0000002791726700.png?HW-CC-KV=V1&HW-CC-Date=20261119T014916Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8E0B4D5BB4A86B0D0C0146BA50A5F515F01244694917E2F1A9FCE8085B9B5DB)
 
 * blocks.so：搜索空间文件。
 * pre\_train.yaml：预训练的配置项
@@ -503,7 +503,7 @@ if __name__ == "__main__":
 
 分类网络Demo位于tools\_dopt/dopt\_pytorch\_py3/demo/nas\_ea/ea\_cls\_imagenet\_pytorch，包含5个文件，如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/IgAFsBNdQS255vedxZaZBQ/zh-cn_image_0000002788468342.png?HW-CC-KV=V1&HW-CC-Date=20261114T004835Z&HW-CC-Expire=31536000000&HW-CC-Sign=3ECDE2EAF2978029D9D4307493C123132CE3C58EFBA3F15E4A9B5054D80036CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/nC4QI-bgTuOTEEWtMAatfQ/zh-cn_image_0000002791566728.png?HW-CC-KV=V1&HW-CC-Date=20261119T014916Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5226897A9E2D6F21941497811E89C5EFE9BB3E23BF4C7AB407987A45A779868)
 
 * blocks.so：搜索空间文件
 * readme.md：搜索训练指导文件
@@ -523,7 +523,7 @@ if __name__ == "__main__":
 
 分割网络Demo位于tools\_dopt/dopt\_pytorch\_py3/demo/nas\_ea/ea\_seg\_voc\_pytorch，包含 6个文件，如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/tv6vg0jhTa6tKdgkiz2JOQ/zh-cn_image_0000002817507831.png?HW-CC-KV=V1&HW-CC-Date=20261114T004835Z&HW-CC-Expire=31536000000&HW-CC-Sign=D50F75788B44F7331F126F811C8E496DA2528758CCCC0B7D6649C5B9E2BE29A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/LQBKKvg0QgmK5TTn7eO9_w/zh-cn_image_0000002820526681.png?HW-CC-KV=V1&HW-CC-Date=20261119T014916Z&HW-CC-Expire=31536000000&HW-CC-Sign=39A953CFD6B8D2627C64C41AF7FB25A512CFED906AA251C1E912F7F7EBED4FC3)
 
 * blocks.so：搜索空间文件
 * pre\_train.yaml：预训练的配置项

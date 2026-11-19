@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-suppor
 title: 获取支持的编解码能力
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 获取支持的编解码能力
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:54+08:00
+scraped_at: 2026-11-19T09:48:34+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:6b850372e1888a69f901a89a28b5f9d9619a8fe53986cde6763e21ccc34af42e
+content_hash: sha256:7b48f7bd3c42da728b996947736f865b91c1a1de1c48f0f02d12b890d3569bb0
 ---
 
 因来源、编解码协议及设备能力的不同，导致不同设备上可用的编解码器及其能力存在差异。
@@ -579,7 +579,7 @@ bool isSupported = OH_AVCapability_AreProfileAndLevelSupported(capability, AVC_P
 
 根据视频高度计算最大视频宽度的公式如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/FvoHIaZcTW6KolmE_d41Xg/zh-cn_image_0000002788307590.png?HW-CC-KV=V1&HW-CC-Date=20261114T004612Z&HW-CC-Expire=31536000000&HW-CC-Sign=B12BF8D0E09A5088A2F6CC3D77D5826060931A533401AB3693ADCA722D9250E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/rISKFq-5TnmRoj4aMkx-og/zh-cn_image_0000002820405871.png?HW-CC-KV=V1&HW-CC-Date=20261119T014833Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE4EC358A421C980ABDDA3FD9B35DC48A4B34631873BE8D7C0B6F2181D6952A6)
 
 MaxMBsPerFrameLevelLimits表示协议限定的编解码器最大每帧宏块数，MaxMBsPerFrameSubmit表示编解码器上报的最大每帧宏块数，实际生效的每帧最大宏块数（MaxMBsPerFrame）取这两者的最小值。在此基础上，结合给定的视频高度（height）以及单个宏块的宽和高（MBWidth和MBHeight，通常为16），即可推算得出该高度下所支持的最大视频宽度（maxWidth）。
 
@@ -687,7 +687,7 @@ if (ret != AV_ERR_OK || widthRange.maxVal <= 0) {
 
 根据视频的宽度和高度，计算最大帧率的公式如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/_T_qr6i4RQ2mPvQDa-fiOw/zh-cn_image_0000002817426953.png?HW-CC-KV=V1&HW-CC-Date=20261114T004612Z&HW-CC-Expire=31536000000&HW-CC-Sign=95E1006AED6C69DFA7DC6486B77746734BE3643E4F63E6678533AFE3BC026EB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/f3KGDR7UQde8LjyMuG9g1Q/zh-cn_image_0000002791725892.png?HW-CC-KV=V1&HW-CC-Date=20261119T014833Z&HW-CC-Expire=31536000000&HW-CC-Sign=34F9A6A3A5181A7829584D3DCDD58696D0487AD45946B6004EDECD97BFF15868)
 
 MaxMBsPerSecondLevelLimits表示协议限定的编解码器最大每秒宏块数，MaxMBsPerSecondSubmit表示编解码器上报的最大每秒宏块数，实际能力取这两者的最小值。
 

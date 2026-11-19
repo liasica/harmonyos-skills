@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-compone
 title: 组件动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 组件动画
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:06+08:00
+scraped_at: 2026-11-19T09:47:43+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5605c0cfab86332d8a3f26f1df6b43c09ad5432904581c949f1e32b643a7c940
+content_hash: sha256:c9251761b485ddddf506f14b53435faaab2b5b5cc01e00d2173c437998c78945
 ---
 
 ArkUI为组件提供了通用的属性动画和转场动画能力的同时，还为一些组件提供了默认的动画效果。例如，[List](../harmonyos-references/ts-container-list.md)的滑动动效、[Button](../harmonyos-references/ts-basic-components-button.md)的点击动效，是组件自带的默认动画效果。在组件默认动画效果的基础上，开发者还可以通过属性动画和转场动画对容器组件内的子组件动效进行定制。
@@ -40,7 +40,7 @@ struct ComponentDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/wlcJUwJxRV2QPqRFtz4gjw/zh-cn_image_0000002788306902.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004706Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C8349DE83C6D0223C6A9D0F82282203060B57A55F99399D1C22F2F918D69FFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/jISTxvfARFqbtWhrSE33iQ/zh-cn_image_0000002820405181.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0FC7927C2DAE1E07108635A16A522AEBA03C0DAEB54DA353362F6A5939F962F)
 
 ## 打造组件定制化动效
 
@@ -352,7 +352,7 @@ export struct TaskSwitchMainPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/WVy9uwO_SaeSqAcvjaDsBQ/zh-cn_image_0000002817426265.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004706Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC47C8F74258803AA883EF39613EF9BBAFF3CC62201C1D7A07FC588BC8CDD5E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/72JV5aiMRkysP3E63FwBCg/zh-cn_image_0000002791725202.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=C50BB615167070A96921B9DC2B2E1DFCA269147CFBD11C36C77D658B78BF590A)
 
 通过animateTo可以实现将List中指定的Item替换到首位，List中其余Item依次向下排列。定制List组件动态替换动效的示例代码和效果如下。
 
@@ -528,7 +528,7 @@ struct ListAutoSortExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Bsf-W7mHSBaZuOqP5X9WMg/zh-cn_image_0000002788466846.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004706Z&HW-CC-Expire=31536000000&HW-CC-Sign=E56B838FB6A48CA05986FB4C7CDE5D7CF85790CC51FBB0A93C2EE7E563EB0236)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/NeKoXUoYQhmPkdL_WBljcA/zh-cn_image_0000002791565230.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=FECFAC58A78726664D41FA48F391A2E75BF0FCD463A1F44327D22F2DC1F9AAF1)
 
 ## 示例代码
 

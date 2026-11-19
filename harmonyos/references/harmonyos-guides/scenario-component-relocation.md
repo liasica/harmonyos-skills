@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-comp
 title: 控件位置调整
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 控件位置调整
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:51+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:823e1098bb7c0e330bba6743ef26df42d9af5f67d6fcf9f567d5a4829e8f0f82
+scraped_at: 2026-11-19T09:47:28+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:f0ee0e31dad4150ece942f4ae759247441ce6b5451f092cacd240be4e21e1598
 ---
 
 ## 设计场景
@@ -16,7 +16,7 @@ content_hash: sha256:823e1098bb7c0e330bba6743ef26df42d9af5f67d6fcf9f567d5a4829e8
 
 例如，当前展示的网页书签被托起时，会播报”华为专区已托起”，移动的过程中，根据即将放置的位置播报“移动到华为手机服务|华为官网上面”。应用可调用主动播报的接口来进行主动播报。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/DMG1qvTERQ6mdKie7nnoUw/zh-cn_image_0000002788466114.png?HW-CC-KV=V1&HW-CC-Date=20261114T004651Z&HW-CC-Expire=31536000000&HW-CC-Sign=12AF4AC6444D99B9525B895A8B9E53C60A14BDFBD7F2010DD8C32ACA6766AC98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/MskH71BDTBi3whFkhXnKdQ/zh-cn_image_0000002791564498.png?HW-CC-KV=V1&HW-CC-Date=20261119T014728Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC7376D9F4A6559CE5BEAE72AB585C69E01371DBAC0313411166BC2323002C89)
 
 ```typescript
 import { accessibility } from '@kit.AccessibilityKit'
@@ -44,6 +44,9 @@ export struct Rule_2_1_11 {
           .onClick(() => {
             accessibility.sendAccessibilityEvent(this.eventInfo).then(() => {
               console.info(`Succeeded in send event, eventInfo is ${JSON.stringify(this.eventInfo)}`);
+            }).catch((error: BusinessError) => {
+              // 捕获事件发送失败（rejected）的异常。
+              console.error(`Failed to send event, code: ${error.code}, message: ${error.message}.`);
             });
           })
         Blank()

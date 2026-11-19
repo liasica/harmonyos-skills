@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 鼠标光标控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 鼠标光标控制
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:06+08:00
+scraped_at: 2026-11-19T09:50:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c2cdedd58675a40380f65f613f012937bc7d0515bf8c2cb33f7c56d2e437ec91
+content_hash: sha256:e164a358ee136fd1025c0be92001f9e3fcc233a4daf2c0457fd4bf0f1e1c09ee
 ---
 
 鼠标光标控制用于控制鼠标光标的显示样式，适用于需要根据组件状态或交互区域切换光标样式的场景，帮助提升用户的交互识别和操作反馈体验。
@@ -111,8 +111,8 @@ struct CursorControlExample {
 
 当鼠标悬浮在蓝色区域时，显示：向西箭头光标样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/GKSGMEwkRaq4h1rFHHrWig/zh-cn_image_0000002788468716.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B0055E6696C0F619BAF3CDA51661ED43F6E7AE397E95F9E85B77750801CBFF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/s2AcVCeRTKCb4cbEO9TsVw/zh-cn_image_0000002791567102.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=260A3B89539623B34B87B0AD72D5A863B37C3F1433D0B52FE6046FAD90AA892A)
 
 当鼠标悬浮在绿色区域时，显示：向东箭头光标样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/7Rd2kMnwRGesehJHZfyzeQ/zh-cn_image_0000002817508205.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004808Z&HW-CC-Expire=31536000000&HW-CC-Sign=8ECA64BEC36CED7B47EDCA340F23E86A2C7A80B69F0F8D28692454C93AE2A8C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/LgU2r9ppTkaJrj2K4WYKuA/zh-cn_image_0000002820527055.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=24319CF325832D1AC481D2C6E1406B60F1A5F6001DC63C1522FE92D8E8C80804)

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 状态管理概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:59+08:00
+scraped_at: 2026-11-19T09:47:36+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4500cba898793e6be36f63ffda02fd3bc0ccd146cd3f81f39678d9950dffffa5
+content_hash: sha256:15691e6ad2c34c361fe862ea195ccb224d683256b62c324b4c79ea903f01ccdc
 ---
 
 在前文的描述中，构建的页面主要为静态界面。如果要构建一个动态的、有交互的界面，就需要引入“状态”的概念。
 
 **图1** 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/TJ-8CskWQpqCehlnnhVKNw/zh-cn_image_0000002788306218.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=30B5A7EF2BC1868A4DE0ECC3914657C5FB787BA7CC2CF31B8003670CD8B1B7DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/jTourEd9RtOPas49gsdr0w/zh-cn_image_0000002820404495.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=016DC3EB67BA898A26FA276FF652CD4464FBEC2AC06DA0D02F29E3590F2DD413)
 
 上面的示例中，用户与应用程序的交互触发了文本状态变更，状态变更引起了UI渲染，UI从“Hello World”变更为“Hello ArkUI”。
 
@@ -20,7 +20,7 @@ content_hash: sha256:4500cba898793e6be36f63ffda02fd3bc0ccd146cd3f81f39678d9950df
 
 自定义组件中的变量，必须使用装饰器装饰，才能成为状态变量，状态变量的改变会引起UI的渲染刷新。如果不使用状态变量，UI只能在初始化时渲染，后续将不会再刷新。下图展示了State和View（UI）之间的关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/3XgksgnLS0CtM3xKWYoAWA/zh-cn_image_0000002817505717.png?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DB02AF7D06508FD08B82EDC591EEC53B964F739EC05B6B12478CD594C89F32A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/NDSWRpKCTk6o8tbDgNz-5A/zh-cn_image_0000002820524565.png?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=229EE4544E7E2A9A30EA78CD26A90C9F12CEBAAE2BA03C3DEEB77D9C841E461F)
 
 * View(UI)：UI渲染，指将build方法内的UI描述和@Builder装饰的方法内的UI描述映射到界面。
 * State：状态，指驱动UI更新的数据。通过触发组件的事件方法，改变状态数据。状态数据的改变，引起UI的重新渲染。
@@ -54,7 +54,7 @@ ArkUI状态管理V1提供了多种装饰器，通过使用这些装饰器，状�
 
 图示如下，具体装饰器的介绍，可详见[管理组件拥有的状态](arkts-v1-component-state-management.md)和[管理应用拥有的状态](arkts-v1-application-state-management.md)。开发者可以利用这些能力来实现数据和UI的联动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/RRy98p8eQgW4BDj2UzATkA/zh-cn_image_0000002788306288.png?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB4AA5DAB23023778BEF6C2AE263724B426A305FF69AC83625FC32DCBB818844)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Q6-5MuawSh6htOrJArrlAA/zh-cn_image_0000002820404565.png?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=43779C6720178287A3D90AC9B6E2D76D27B891FAC8A9A76E2AF2FD1B8FB35709)
 
 上图中，Components部分的装饰器为组件级别的状态管理，Application部分为应用的状态管理。开发者可以通过[@StorageLink](arkts-appstorage.md#storagelink)/[@LocalStorageLink](arkts-localstorage.md#localstoragelink)实现应用和组件状态的双向同步，通过[@StorageProp](arkts-appstorage.md#storageprop)/[@LocalStorageProp](arkts-localstorage.md#localstorageprop)实现应用和组件状态的单向同步。
 
@@ -96,7 +96,7 @@ ArkUI状态管理V1提供了多种装饰器，通过使用这些装饰器，状�
 * 在更改对象中属性以及更改数组中元素的场景下存在冗余更新的问题。
 * 装饰器间配合使用限制多，不易用。组件中没有明确状态变量的输入与输出，不利于组件化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/F7qlfQxES5-C9dpNwmoUhA/zh-cn_image_0000002817425651.png?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A281A695DEF8F3CEA8FB3EE2DBA7E61A449FDD6A6187F16F268818904B3E474)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/zsaC8p2vS8mbxksKd_rb8w/zh-cn_image_0000002791724588.png?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=01F700CB2E2E9C7876E65702C1C6D8387AC223F8F79756D02DF788B87A6BDF58)
 
 状态管理V2增强了数据的观察能力，使数据本身可观察。更改数据时，会触发相应视图的更新。相较于状态管理V1，状态管理V2有如下优点：
 
@@ -105,7 +105,7 @@ ArkUI状态管理V1提供了多种装饰器，通过使用这些装饰器，状�
 * 支持对象中属性级精准更新及数组中元素的最小化更新。
 * 装饰器易用性高、拓展性强，在组件中明确输入与输出，有利于组件化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/y_sQOfoETFSwsk4km4rhXw/zh-cn_image_0000002788466232.png?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6CB5A95D9173722228ABBA5583DBAF8E84BBB30ACD191928D5AFFC738BA32ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/5YXqmEbyQXeXQyjzoSKREw/zh-cn_image_0000002791564616.png?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=C59FF92DA993B96EFE3B842C74C4DE613143AA51394938EBA21A115CAA711E4B)
 
 ### 装饰器总览
 

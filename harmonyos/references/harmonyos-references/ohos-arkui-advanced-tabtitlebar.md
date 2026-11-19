@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: TabTitleBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > TabTitleBar
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:26+08:00
+scraped_at: 2026-11-19T09:51:15+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d76408a478024807266db66beccd4a29530f476443f0c69426b25cd743e1357d
+content_hash: sha256:20b8c12cf627cf16f65083fce97d421323f59332b9d20d976b95a4fa6291ba80
 ---
 
 页签型标题栏，用于页面之间的切换。仅一级页面适用。
@@ -176,7 +176,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/gfe6Rzd8TPusNvVQSyiSFg/zh-cn_image_0000002817508857.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A43F971B23EB29B63FBCC5929A39E6DEAB012BC45168E75A10BF50B7D7E71B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/uTdM7ZGLSByD5kQjrwD59Q/zh-cn_image_0000002820407709.png?HW-CC-KV=V1&HW-CC-Date=20261119T015115Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0B8B688B1D44BF0BC8EC94F438AB3D323F5EC828BCE12BBF199BF7A4564FAB7)
 
 ### 示例2（右侧自定义按钮播报）
 
@@ -284,7 +284,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/CDTRoXoSQ5285CGXIqtK7g/zh-cn_image_0000002788309426.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=28410CBCBA67E8850388D1D0A4B9E277C5B6C8B6FDB40B1DF8D5CB7EB770C994)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/gsKaZtKaRVChXD1Yuw8MVg/zh-cn_image_0000002791727728.png?HW-CC-KV=V1&HW-CC-Date=20261119T015115Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAFEA076ED38EEA8CC1F80D3A4A3C3CAFE7D13DC7CBC5C5FE0B1603286783081)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -399,4 +399,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/vd3__lPuQ3C28WtHXd5GHg/zh-cn_image_0000002817428789.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D6B99338C5B4DCC8ECD541D730D1C99218CFC5B0CA85597554C297257365BBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/rtUnGjL_QTKQBrrI8xL0iQ/zh-cn_image_0000002791567756.png?HW-CC-KV=V1&HW-CC-Date=20261119T015115Z&HW-CC-Expire=31536000000&HW-CC-Sign=3666B854D9F5D45751134FE32307EFF7F4954F7AEB4F6DDE48A0EFEF379FDC46)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 基于Surface模式进行视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > 基于Surface模式进行视频编码
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:55+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:c1912f2b4c9d322cbf9249b69f04be80d34d3f686984b8455450981865702d46
+scraped_at: 2026-11-19T09:48:35+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:ca399f0b64b3e0f14085fc4fca3d2dcba7da5033d8676a10d3871779c539c2d6
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ Surface分为生产者ProducerSurface和消费者ConsumerSurface。NativeWindow�
 
 Surface轮转流程如下所示，生产者先申请到一块Buffer，填充数据后将Buffer返回给BufferQueue。在触发回调函数后，通知消费者Buffer已经被生产者填充好数据。之后，消费者可以获取填充好数据的Buffer，直到不再需要该Buffer后，释放对应的Buffer。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/QlJZU02TSfqTXLGPf5Yzog/zh-cn_image_0000002817507051.png?HW-CC-KV=V1&HW-CC-Date=20261114T004755Z&HW-CC-Expire=31536000000&HW-CC-Sign=7041D669F17784EB3F555D75EF2EDDEEB8F60DA85B1F7038C5C1E2DE5654BE97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/TbI82aAaTKWun0nsFW7bxg/zh-cn_image_0000002820525901.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=86D3E929E50F40924147DFB358E6EC7A878334B0C30B9FBBCAC2F2C7AE768D8D)
 
 视频编码器提供了获取NativeWindow的接口，通过NativeWindow可以将相机产生的数据与视频编码器进行对接。视频编码器作为消费者，将Buffer数据进行消费编码，从而实现视频编码的操作。下面我们将通过相机录制和屏幕录制，介绍基于Surface模式进行视频编码。
 
@@ -50,7 +50,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 6. 创建并启动编码输出子线程。
 7. 将从编码器中获取的NativeWindow对象设置给AVScreenCapture，启动屏幕录制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/a4h0vGH7Sd-9r61ztihZBA/zh-cn_image_0000002788307620.png?HW-CC-KV=V1&HW-CC-Date=20261114T004755Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AC5F18346CB90DF6F137855BE7F6F2209E33151795B5CEDA58DB81816CA3605)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/5YnZwLWPRomRSmSCW4Rbwg/zh-cn_image_0000002820405901.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE272A2238B7EBAF1A17F56EAD7A6EEF8D8145FF7C383703A1E070D5ECED8F4D)
 
 ### 开发步骤
 
@@ -308,7 +308,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 5. 启动视频编码器。
 6. 创建并启动编码输出子线程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/dSFo2G8sTSyU_Ocaud3DnQ/zh-cn_image_0000002817426983.png?HW-CC-KV=V1&HW-CC-Date=20261114T004755Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EE6B96BEFAE3FC7CD7D1410D842A85A53F8F6F6E46F87AECAD932A68C3921DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/CcLyIzR5Tx67viDkFaNZ2Q/zh-cn_image_0000002791725922.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D9186247C85F2303E866EAB6391C4E70FF26DFD845A4933FE97AA491F2BB055)
 
 ### 开发步骤
 
@@ -350,7 +350,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
      videoSession.addOutput(encoderVideoOutput);
    } catch (error) {
      let err = error as BusinessError;
-     Logger.error(TAG, `Failed to add encoderVideoOutput. error: ${JSON.stringify(err)}`);
+     Logger.error(TAG, `Failed to add encoderVideoOutput. Code: ${err.code}, message: ${err.message}`);
    }
    ```
 
@@ -360,7 +360,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
    // Start the video output stream
    encoderVideoOutput.start((err: BusinessError) => {
      if (err) {
-       Logger.error(TAG, `Failed to start the encoder video output. error: ${JSON.stringify(err)}`);
+       Logger.error(TAG, `Failed to start the encoder video output. Code: ${err.code}, message: ${err.message}`);
        return;
      }
      Logger.info(TAG, 'Callback invoked to indicate the encoder video output start success.');

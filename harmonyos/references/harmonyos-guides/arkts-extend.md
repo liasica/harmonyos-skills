@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-extend
 title: "@Extend装饰器：定义扩展组件样式"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Extend装饰器：定义扩展组件样式
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:59+08:00
+scraped_at: 2026-11-19T09:47:36+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:d123e5cf5f3a3a61c97bff4970acdbdc76bbc768366081779d3c6a3b0909e081
+content_hash: sha256:2e50e7c6725e87e732df7dc2d1b30454a1c3b35100d71134dc364405ca57fe84
 ---
 
 在前文的示例中，可以使用[@Styles](arkts-style.md)复用样式，在@Styles的基础上，我们提供了[@Extend](../harmonyos-references/ts-custom-component-decorator-extend.md#extend)，用于扩展组件样式。
@@ -139,7 +139,7 @@ content_hash: sha256:d123e5cf5f3a3a61c97bff4970acdbdc76bbc768366081779d3c6a3b090
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/uUpWFtfzTPmvHH535-b-XQ/zh-cn_image_0000002817505713.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=8919A087E54CF7996835453A64B43BEE18C19EE01088D798DCB63A3B451287EA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/W5ZvyYpLRCmKDLkpgEJjtw/zh-cn_image_0000002820524561.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2E7B5047A977BBBB9662E9800AFD959167675783828A728690AE15E93A6ED1A)
 
 ## 限制条件
 
@@ -307,7 +307,7 @@ struct FancyUse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/x_tVlKB2Qe-yinCxZC139A/zh-cn_image_0000002788306284.png?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEBB9B89DBADE1F952520C84903CEE29A94B7852BB22D1013FD80AD4E754868C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/JiIz3JOzRC6hNuxpjRjDoQ/zh-cn_image_0000002820404561.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=7383EAC7686AFDB5AC759C04BAC4A58B1EE2B04D225614FE7940839ED94686FE)
 
 使用@Extend将样式组合复用，示例如下。
 

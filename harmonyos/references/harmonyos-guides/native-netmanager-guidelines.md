@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-netman
 title: 管理网络连接(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 管理网络连接(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:36+08:00
+scraped_at: 2026-11-19T09:48:15+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5bf26759eaca71725a3d7e9fdde5cce850b7acab4590c9cbd818455c7fbd291e
+content_hash: sha256:02b7e146356de2fedb961b59eb084aa98d5ebf8d90b5d7e4146641e4e6601862
 ---
 
 ## 场景介绍
@@ -229,7 +229,7 @@ libnet_connection.so
 
    如图所示，在add\_library中的entry是工程自动生成的modname。若要做修改，需和步骤3中.nm\_modname保持一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/vnklovOYQAOB0GGvstjhUQ/zh-cn_image_0000002788467402.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAD8F8564D20082A2AE04386B49AA73B4C76362C345479A1606DAE92D451E45D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/pjC3W2NPTY2qO4jdIlPaJg/zh-cn_image_0000002791565786.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=77BAAA0DE8029D63C9B072B8019DBE5797C3A3A201148D0D99DCFA618989207E)
 
 经过以上步骤，整个工程的搭建已经完成，接下来就可以连接设备运行工程进行日志查看了。
 
@@ -241,10 +241,10 @@ libnet_connection.so
    * 点击GetDefaultNet时获取的是默认网络ID。
    * 点击codeNumber时获取的是接口返回的响应状态码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/xSNjPPQ9R1K0bs9biMnVWw/zh-cn_image_0000002817506891.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=F916D456856FACB68022F8CBDBC9464D3884221E86091C266E7B4C405791268B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/5sRf00dqR2y185Wux5V3-Q/zh-cn_image_0000002820525739.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF165026F2303BD57E3D34BEEDA2168120E05A44403231C736D71E30C744A6FF)
 3. 点击GetDefaultNet按钮，控制台会打印日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/a1gv4423S6eWG5Yb1RnW7g/zh-cn_image_0000002788307460.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6558B7888C5936DE45D5A6FF968EFC161BA941827A13F24F07CAC0820CBE3B4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/cTkHzn_eTcaozTeeBKPT5g/zh-cn_image_0000002820405739.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=4820026AD5F85EBD19D61AF23AC316C53DDB1794E12527B71C371C19220FDCE7)
 4. 点击codeNumber按钮，控制台会打印相应的响应状态码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/gCv1LnnWTEmlEIrBo-k6Hg/zh-cn_image_0000002817426823.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=D28D6719A14575E345FDEED38A4B29B99051AF3D33E84245B789331E7623CF9C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/T8uA_yD2TwC90bywJ5oeQA/zh-cn_image_0000002791725760.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=4221CA2D5134A74424A6DC08E3DB4658181E8178F86A90C0E59176B06171EEA6)

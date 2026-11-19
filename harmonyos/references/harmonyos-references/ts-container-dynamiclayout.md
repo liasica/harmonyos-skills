@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: DynamicLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > DynamicLayout
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:08+08:00
+scraped_at: 2026-11-19T09:50:55+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:e3937b31346a5119782c59dd838042e2b790c08adcb98f7c872b89e582595ac1
+content_hash: sha256:44b382347e02a0431b0f5f352cce3926bffca390c1da7c4efd9cbe8fdd6c0eaa
 ---
 
 动态布局容器组件，支持在运行时动态切换不同的布局算法，不改变子组件的状态。使用DynamicLayout可以提升布局灵活性，简化界面适配和多视图切换的开发流程。适用于响应式布局（适配不同屏幕尺寸）、多视图模式切换（如列表/网格/瀑布流切换）、用户自定义布局等场景。
@@ -234,7 +234,7 @@ interface Product {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/pWm6HpKvQPCXSH_Vn5qsGA/zh-cn_image_0000002817428201.png?HW-CC-KV=V1&HW-CC-Date=20261114T005008Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B7CA8F823CFE71F3D2479EE597B809A800DF142E913EA9FEC4695111A7343FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/nJtIiIVfRx2IAjPaZ0vHiw/zh-cn_image_0000002791727140.png?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=94297A7FC2ED49C56D99E0887BF67B96CDF065D1A0DA21EAC637DE020116C13E)
 
 ### 示例2（切换布局算法）
 
@@ -355,7 +355,7 @@ struct LayoutSwitchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/ed7injgQSyaSoA5JVAl9GA/zh-cn_image_0000002788468782.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005008Z&HW-CC-Expire=31536000000&HW-CC-Sign=9069E84C54B67DA89CB4A1A36D8D28C6BA4DEC4DDD7ED101F41A79B0ED5BBB8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/HSfihc70QL6Au-jhHVOz_A/zh-cn_image_0000002791567168.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF7A087C37C04FBA5B6744ED9E0FD04D5805E85DE493166812E145AF839EB328)
 
 ### 示例3（修改布局算法属性）
 
@@ -425,4 +425,4 @@ struct PropertyChangeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/8A90uth-Q3ebsemAGsTQFA/zh-cn_image_0000002817508271.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005008Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BCD5B88401B0EFE541EBA29DB76699AE1D246EBD5B4004F9CA3A51C74226197)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/lNMKxjTGQlWRav7hF3TwZw/zh-cn_image_0000002820527121.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015055Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1F09FB2F03C978EA8651C904AEB3941A91632E3BC08A57BBBCB6E78132F43E2)

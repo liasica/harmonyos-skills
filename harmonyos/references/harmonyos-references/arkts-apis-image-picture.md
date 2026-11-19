@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Picture)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interface (Picture)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:30+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1c307855b61c96ab3e2a99187a12bf5efce15fde1e3f085ba057e891cc13d56a
+scraped_at: 2026-11-19T09:53:45+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:75ac23dc4173ff0112a4226b23b1349cf83af7e94462a30bfafc972827632882
 ---
 
 Picture类，一些包含特殊信息的图片可以解码为Picture（也可以称为多图对象）。多图对象一般包含主图、辅助图和元数据。其中主图包含图像的大部分信息，主要用于显示图像内容；辅助图用于存储与主图相关但不同的数据，展示图像更丰富的信息；元数据一般用来存储关于图像文件的信息。多图对象类用于读取或写入多图对象。在调用Picture的方法前，需要先通过[image.createPicture](arkts-apis-image-f.md#imagecreatepicture13)创建一个Picture实例。
@@ -548,17 +548,8 @@ release(): void
 **示例：**
 
 ```ts
-async function Release(pictureObj : image.Picture) {
-  let funcName = "Release";
-  if (pictureObj != null) {
-    pictureObj.release();
-    if (pictureObj.getMainPixelmap() == null) {
-      console.info(funcName, 'Succeeded in releasing a picture.');
-    } else {
-      console.error(funcName, 'Failed to release a picture.');
-    }
-  } else {
-    console.error('Picture object is null.');
-  }
+function Release(pictureObj: image.Picture): void {
+  pictureObj.release();
+  console.info('Succeeded in releasing a picture.');
 }
 ```

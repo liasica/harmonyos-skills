@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher
 title: 贴片广告
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服务开发 > 贴片广告
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:11+08:00
+scraped_at: 2026-11-19T09:48:52+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:9cadde2c6e7ee82712eaefe15b139dec1918504decd42f146c6663acd0515984
+content_hash: sha256:878f0190840de47a2248a24549437d296589f1b4d6b3574e6349634fff69c4ad
 ---
 
 ## 场景介绍
 
 贴片广告是一种在视频播放前、视频播放中或视频播放结束后插入的视频或图片广告。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/icqlKi9cSouiXbxHTdDzRA/zh-cn_image_0000002817507323.png?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A1BD84C22D3740D0A5DAD3811F080514B59547F524A721CD8C60C00CB97847F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/4VB7fgjJStiCt9tuOUaKVQ/zh-cn_image_0000002820526173.png?HW-CC-KV=V1&HW-CC-Date=20261119T014851Z&HW-CC-Expire=31536000000&HW-CC-Sign=B81581CB7E4AA70443068A0CC6EF679C612D3BF8F377F2E92F40A5C3F9F368DA)
 
 ## 约束与限制
 

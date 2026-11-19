@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-com
 title: "@Computed装饰器：计算属性"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @Computed装饰器：计算属性
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:59+08:00
+scraped_at: 2026-11-19T09:47:37+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:9ee15aecb436aec8555badf2db00b7d4156f65d506fa54b6d7a82b97cf66e90b
+content_hash: sha256:ba8c213f59df67ed00ed13f665104823094a47ab3139cee8ec7e740229c491ca
 ---
 
 当开发者使用相同的计算逻辑重复绑定在UI上时，为了防止重复计算，可以使用[@Computed](../harmonyos-references/ts-state-management-computed.md#computed)计算属性。计算属性中依赖的状态变量变化时，只会计算一次。这解决了UI多次重用该属性导致的重复计算和性能问题。如下面例子。
@@ -118,7 +118,7 @@ get varName(): T {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/pq-PH-CSQvy5v1fei3CXyQ/zh-cn_image_0000002817425749.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B646A0A49223BE1541D090962CFBE1FC1B946F9281E9D825BB5E0FB9B4C0713)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/w0QbMoYbTIKVYeHaRsiMeQ/zh-cn_image_0000002791724686.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=459730BD6C1DAC9C206A9C8F76A26580493867E1ADA7934975907B65C692827B)
 * 在@Computed装饰的getter方法中，不能改变参与计算的属性，以防止重复执行计算属性导致的appfreeze。
 
   在下面例子中，计算fullName1时触发了this.lastName的改变，this.lastName的改变，触发fullName2的计算，在fullName2的计算中，改变了this.firstName，再次触发fullName1的重新计算，从而导致循环计算，最终引起appfreeze。
@@ -258,7 +258,7 @@ get varName(): T {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/qq7Ks0fRTiStAJalztbMeQ/zh-cn_image_0000002788466330.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AEF5CA2D9E5FCA2DC832C3608B4D4BD5484B69C9D37B74DE615598392091D67)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/olF60dA7TMaZwdE73Zcp2Q/zh-cn_image_0000002791564714.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=8ACA9DAABC1992BE28EF41D0674A662758E7CBAD5D7F1E037720618DC1756569)
 
 ## 使用场景
 
@@ -325,7 +325,7 @@ get varName(): T {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/cnii_kv_R926BmMA6yhmxQ/zh-cn_image_0000002817505817.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6B126E4995F419EB99EE910370F2CECC6461F57A2398A62F4EEC628651E541F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/gitQ2DGtRgK7vW2nIPQ1wQ/zh-cn_image_0000002820524667.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C635C97868A93D4D640B0EB69F97814869F880311877F6A8879B8C38234977E)
 
    计算属性本身会带来性能开销，在实际应用开发中需要注意：
 
@@ -382,7 +382,7 @@ get varName(): T {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/kVnMTPEuRB2RFTptIqwdiQ/zh-cn_image_0000002788306388.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=73FD3708A8406FD4AF06CB8526096931FCF15367996BBB4560FDAEA999E9A3DB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/70E62J9vRlG-eBWLqO-P7w/zh-cn_image_0000002820404665.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA5615E98E6F70A0BE648FA05B75D14D90CE9BFD6EA243B9BC7BD9499AFAA087)
 
 ### @Computed装饰的属性可以被@Monitor监听变化
 
@@ -446,7 +446,7 @@ get varName(): T {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/a_lWV60GTLijYnPZ_rk2PQ/zh-cn_image_0000002817425751.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=C765876FF52316494305D99F22D5E1AF43718557D3293652D7D43A375FA093EF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/R_COxt_AQJqFoDH0Us1y6w/zh-cn_image_0000002791724688.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=87EB8768CF5C6530050E1D37B10B6D8BA7FDA3408C03E27A9B4C03B0AC5A9F92)
 
 ### @Computed装饰的属性可以初始化@Param
 
@@ -537,4 +537,4 @@ get varName(): T {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/GZf9gE4uQZugoRR6YmWjjQ/zh-cn_image_0000002788466332.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC7731275625A6F430C4E87674C5D65C88432C613D990E9B906D37BCA7811B2E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/JNNsDh_OSJSAn20t-2TYxw/zh-cn_image_0000002791564716.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B0E5ABBA163B8E5B095F49D24645A443D1D68AB1F62C2CE19327770952A2C12)

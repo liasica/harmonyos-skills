@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DatePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > DatePicker
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:13+08:00
+scraped_at: 2026-11-19T09:51:00+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3e5a044bc577651cc407b72cbf98ba1bda86b5a01ff38df9d010c0ed55bcfff8
+content_hash: sha256:f69cfdbac7e7abe312d71841e9a453f9e8af67171c79ee8fb58576b93d26f91d
 ---
 
 DatePicker是滑动选择日期的组件，支持公历和农历切换，可配置日期范围、选择模式和文本样式。用于需要用户选择日期的应用场景，提供统一的日期选择交互体验，能够提升用户体验，减少开发工作量。
@@ -442,7 +442,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/6hJhfKRiS2a9OA0f4aZ9rg/zh-cn_image_0000002788468906.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=27394A75FAFB784ECEC6141BE62C52C94E9887F2169F1B82DB8E58B7FDCC0762)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/2OWecZoSRmiwh6fUU0cSAg/zh-cn_image_0000002791567292.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015004Z&HW-CC-Expire=31536000000&HW-CC-Sign=91F0C8D18664C9B3112A9E2FADD01EA52C1C30728F10EFED90C23E6071F435B9)
 
 ### 示例2（设置文本样式）
 
@@ -475,7 +475,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/gFlQtopZTwumvocIl1qYTw/zh-cn_image_0000002817508395.png?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=81508E069925513FE70AF90226CE58D90ED3D3FCBB704D3DB81981872FE06C8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/8tg6P46wQNeOHW5tWHddWA/zh-cn_image_0000002820527245.png?HW-CC-KV=V1&HW-CC-Date=20261119T015004Z&HW-CC-Expire=31536000000&HW-CC-Sign=E968B40B0D9F43A7CC57DCD90568AD83222C1A19BE3F3F7BC940B2291A9F3542)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -528,7 +528,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/XsZgq58lRASubKCxFU17zA/zh-cn_image_0000002788308964.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=9120FA5A63E40910078B3B5B5D64D54A117E7FDCA2CD9BDE152D4C54769DB066)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/fAgAOINVT_i8N0eRB5bnDg/zh-cn_image_0000002820407247.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015004Z&HW-CC-Expire=31536000000&HW-CC-Sign=429B3ED6D0C1C1BD48945E68BB60BAFF9E2907EDC94BF3D4C67DC3FC79E8B7CE)
 
 ### 示例4（设置循环滚动）
 
@@ -566,4 +566,4 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/0Bt3W1X4SwuH8_XMa4a4gg/zh-cn_image_0000002817428327.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=39FF69416E5F39AFC618B75B10A7315048B6DDEE166E08C5575D2CE1DABC3E6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/mUb3_RRQSiShfmfK5cW4wQ/zh-cn_image_0000002791727266.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015004Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7DBB21B688C8ED0E681F173880646BA89DFF13EABD8524DD9BD68704A85DFC0)

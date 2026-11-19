@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: toolbar开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > toolbar开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:10+08:00
+scraped_at: 2026-11-19T09:47:48+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:3e6dc84844ee494dda404e0bd060cee5785ce17fe8c592b42d44026e2e6b0c1b
+content_hash: sha256:ff16d350a7cb9eb828f310aa6e26bc3f64c36978c5248510fd5680daeb987cce
 ---
 
 toolbar为页面工具栏组件，用于展示针对当前界面的操作选项，可作为页面的一级导航。具体用法请参考[toolbar](../harmonyos-references/js-components-basic-toolbar.md)。
@@ -39,7 +39,7 @@ toolbar-item{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/_YkO9fxEQ16rUOPnh8EYcw/zh-cn_image_0000002817426421.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=43DF1845AD787CF1AF06B70EE6AB932CD605C2EFDB3C76AAD592B63A48237116)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/qg_gbWqmRxOr0CMQyTXwgg/zh-cn_image_0000002791725358.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=32CADA3DBB8662FC315C7B6171E454367416AA937E2B3C988CBE4DCD6D6EC607)
 
 ## 添加子组件
 
@@ -74,7 +74,7 @@ toolbar-item{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/O2k_ZqXrTY21gFddOtIiuw/zh-cn_image_0000002788467002.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BA8A953B2E22CE3ACD05901A9CB8E3DDC559E34CD5B0714EA18E760B076EFA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/bVzR8NB-Qbmrp-5GgTqJnA/zh-cn_image_0000002791565386.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5C2577C344943BB230EABA735A1D25898981F1CC3B6DE39A02C24CECBC45C56)
 
 ## 设置样式
 
@@ -107,7 +107,7 @@ toolbar-item{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/YdCOk7SDSwKCtH8HbTXv5w/zh-cn_image_0000002817506489.png?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CB20BA033720D105CD585B31BEC045F7228A367071B7B546383CDEE7267FA44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/c3GS_0VtRAKDFSL2bTWI0A/zh-cn_image_0000002820525339.png?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=656222DC8B19C5963CE2D728E175A482A31535309146CD92283758F3A7C214E1)
 
 ## 绑定事件
 
@@ -157,7 +157,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/HlkYgbEtTkuk101XGZaarQ/zh-cn_image_0000002788307060.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=20ECD52A8B3BC86D353BCB2BAEBE0474EB51E8CE0E4CCA07A4468542971A7C82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/qd2bdIaUSBCXxiycF7FBmw/zh-cn_image_0000002820405339.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C7ECAEAE3602E9794CB917DA8C4CD1A64C25EA9F738CDF4F48A1EB6B45C4B4E)
 
 **说明** 
 
@@ -212,4 +212,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/hM-6pkpESkCxWlWtjQZhzQ/zh-cn_image_0000002817426423.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABC078A27D4A7261FCA4CCAC235B604788B09D8C774EBA71778D77AE89EACC45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/BmjFvEp4QO2yzdGAvpbHqQ/zh-cn_image_0000002791725360.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=498BDE0DA2FE8315B0F85E72415324D17892BFCF876318D97268C8B4679EE47E)

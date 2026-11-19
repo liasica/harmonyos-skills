@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-overvie
 title: 端侧A2A框架概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 端侧A2A框架开发指导 > 端侧A2A框架概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:50+08:00
+scraped_at: 2026-11-19T09:47:27+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b053add045e5e1d78c095607730d2001d7d2f4145c75f9bfe718f92ec2c41e0f
+content_hash: sha256:0256a0414fee1a8f3857dadd33dc2779f172b3eb5592090cf4b25b3eaa0bd06f
 ---
 
 ## 场景介绍
@@ -40,4 +40,4 @@ content_hash: sha256:b053add045e5e1d78c095607730d2001d7d2f4145c75f9bfe718f92ec2c
 
 **图1** 智能体架构示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/MMsovrNzQ5myEW-UW3wdcQ/zh-cn_image_0000002788306166.png?HW-CC-KV=V1&HW-CC-Date=20261114T004650Z&HW-CC-Expire=31536000000&HW-CC-Sign=82DF3329A77D042D0AFF692CFDE19C0E372CE2F3C21FC4FFA28742E4450AA9D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/hjCuAIwDSDiblWQJG0ePHg/zh-cn_image_0000002820404443.png?HW-CC-KV=V1&HW-CC-Date=20261119T014637Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A7B840587B0E056D2ECBEAA31DF9A69D6ABCF3D6D44A208DA0C826DB81BCFE7)

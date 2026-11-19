@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vecto
 title: 矢量编程
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > 矢量编程
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:37+08:00
+scraped_at: 2026-11-19T09:49:18+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e6c4e89967e406680bbe14133c8dfc7f7bdbf672ce638f2cf2038854cfe63c07
+content_hash: sha256:ba221efcad41469751f47230941e8493aecb2f3e49f036d73c6755270550b711
 ---
 
 ## 算子实现流程概述
@@ -14,7 +14,7 @@ content_hash: sha256:e6c4e89967e406680bbe14133c8dfc7f7bdbf672ce638f2cf2038854cfe
 
 **图1** 矢量算子实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Ii5rkLc0TFWX9edfTQT1dQ/zh-cn_image_0000002788308424.png?HW-CC-KV=V1&HW-CC-Date=20261114T004837Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EC9FA4CA29FCBA15B3C8A33C1DCB8F05345F435147251A7974AF3570666AF73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/u_DneYhoTYS3kpDu4TPakQ/zh-cn_image_0000002820406705.png?HW-CC-KV=V1&HW-CC-Date=20261119T014823Z&HW-CC-Expire=31536000000&HW-CC-Sign=922B4EAB4F15DAA9CB4ADCB32D506813E97A835C146496AD3F24E28F572D1363)
 
 * 算子分析：分析算子的数学表达式、输入、输出以及计算逻辑的实现，明确需要调用的AscendC接口。
 * 核函数定义：定义AscendC算子入口函数。
@@ -38,7 +38,7 @@ content_hash: sha256:e6c4e89967e406680bbe14133c8dfc7f7bdbf672ce638f2cf2038854cfe
 
    **图2** 算子计算逻辑
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/4nRxqsTmShOm451VOjGQyg/zh-cn_image_0000002817427787.png?HW-CC-KV=V1&HW-CC-Date=20261114T004837Z&HW-CC-Expire=31536000000&HW-CC-Sign=948C2EB0AD3950A58C1110B7E326894FDC8B36379CA85628587CF1EEB1BD53B2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/BOUGYPXtTEarDgaRgeAgPw/zh-cn_image_0000002791726726.png?HW-CC-KV=V1&HW-CC-Date=20261119T014823Z&HW-CC-Expire=31536000000&HW-CC-Sign=93B23E5423D2795F8FCE87934E83EFE11ED1187F8B27BE2B6AAABAC2BDDDB815)
 2. 明确输入和输出。
 
    * Add算子有两个输入：x与y，输出为z。
@@ -105,7 +105,7 @@ content_hash: sha256:e6c4e89967e406680bbe14133c8dfc7f7bdbf672ce638f2cf2038854cfe
 
 **图3** Add算子实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/lYVGMMDfS_qbzIYxIFSYRg/zh-cn_image_0000002788468368.png?HW-CC-KV=V1&HW-CC-Date=20261114T004837Z&HW-CC-Expire=31536000000&HW-CC-Sign=78C40954B410E5889F8DFAFBC23D3899431ADCDF8962630DB2B93CF1F22991D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/IbR3CSQdSIGznb1BLwG3-A/zh-cn_image_0000002791566754.png?HW-CC-KV=V1&HW-CC-Date=20261119T014823Z&HW-CC-Expire=31536000000&HW-CC-Sign=190AC19EED099C41A2B300BD5BF457D3C65C355AAFCD86B7A277335AF59E36D0)
 
 算子类中主要实现上述流程，包含对外开放的初始化Init函数和核心处理函数Process，Process函数中会对上图中的三个基本任务进行调用；同时包括一些算子实现中会用到的私有成员，比如上图中的Global Tensor和VECIN、VECOUT队列等。KernelAdd算子类具体成员如下。
 
@@ -152,7 +152,7 @@ private:
 
   **图4** 多核并行处理示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/IxcxgpdxTo2tEZ9T1VzdnA/zh-cn_image_0000002817507857.png?HW-CC-KV=V1&HW-CC-Date=20261114T004837Z&HW-CC-Expire=31536000000&HW-CC-Sign=36B0FD50F8E2A84FEB673CBD8A89730EFE012F53EE00E7EC053E42B9BB5EB2B0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/aQqcI6GGTTefoatctbbEMA/zh-cn_image_0000002820526707.png?HW-CC-KV=V1&HW-CC-Date=20261119T014823Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7D29E45BCA2CF7ED7B540F67B366B785B8AF5786B792061AF3B84851B041BC1)
 * 通过Pipe内存管理对象为输入输出Queue分配内存。
 
   比如，为输入x的Queue分配内存，可以通过如下代码段实现：
@@ -167,7 +167,7 @@ private:
 
   **图5** 单核数据切分示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/7Vu-miPURvK0eqMJNVNXZw/zh-cn_image_0000002788308426.png?HW-CC-KV=V1&HW-CC-Date=20261114T004837Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF30C6A7A005B99DC5BB1C6F82CC2B34489231AF97821F0FC92B59F1CBAF66A1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/BGNNJhjiR7ip9vg_O3-KPg/zh-cn_image_0000002820406707.png?HW-CC-KV=V1&HW-CC-Date=20261119T014823Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7746138E10EC216888DF125B5D4C01AD8A178BDA237C77E40D523C7FD1F4555)
 
 Kirin9020/Kirin9030/KirinX90系列处理器支持的核数为1（Kirin9050系列支持的核数为4），具体的初始化函数代码如下。
 

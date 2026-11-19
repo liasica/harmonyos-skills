@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 内容修改器 (ContentModifier)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > Modifier机制 > 内容修改器 (ContentModifier)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:07+08:00
+scraped_at: 2026-11-19T09:47:44+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a164395fb2dff0a08cb7783bae7981b8fe9be326d52f16f741ae031655865b43
+content_hash: sha256:914516c46cd1080e5358a4972e66da88f12773a9a93df2d420c75188030c71e1
 ---
 
 当开发者期望自定义组件的内容区时，比如Checkbox的内部显示一个五角星等场景时，可以使用此功能。
@@ -104,4 +104,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/_A_RFhoCS6KftBZ6m-U9hQ/zh-cn_image_0000002817506389.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004529Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A375763586D8EF7DA4881E3F068A29D1A858B82F3AC9940D8EB2C135CB65DEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/p1LycuZiTEunpduGXwmzOA/zh-cn_image_0000002820525239.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014654Z&HW-CC-Expire=31536000000&HW-CC-Sign=06C4DB923B5E264D7A5D7E869BDA44673D3E0C28F35CF4AF74639C1F9C2F9E71)

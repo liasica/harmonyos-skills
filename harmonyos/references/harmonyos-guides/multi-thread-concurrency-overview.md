@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-thread-
 title: 多线程并发概述
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 多线程并发 > 多线程并发概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:54+08:00
+scraped_at: 2026-11-19T09:47:31+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:574727ef18f234f03de32c20064ac98976ddafb34791521eccab4000a4e09b80
+content_hash: sha256:34401a4a9b4160b129261ecbbf6eb077e23bbfcb5faa1401062dbe251abbd303
 ---
 
 多线程并发是指在单个程序中同时运行多个线程，通过并行或交替执行任务来提升性能和资源利用率的编程模型。在ArkTS应用开发中，多线程并发适用于多种业务场景，常见的业务场景主要分为以下三类，更详细的使用请参考[应用多线程开发概述](multithread-develop-overview.md)。
@@ -38,7 +38,7 @@ Actor并发模型中，不同Actor之间不共享内存，需通过消息传递�
 
 以下示例伪代码和示意图展示了如何使用内存共享模型解决生产者消费者问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Pofz82r2Q_-6ZKlOtAeF0Q/zh-cn_image_0000002788466124.png?HW-CC-KV=V1&HW-CC-Date=20261114T004517Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA544119E13AF419C9ED1FB65E573937B161F4C8DE8D070F723AAFAE1F5BC9BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/xoravUpETIeFwKvY6C9ehg/zh-cn_image_0000002791564508.png?HW-CC-KV=V1&HW-CC-Date=20261119T014731Z&HW-CC-Expire=31536000000&HW-CC-Sign=1839F215C981CE92E41B8AA71A17DF30D01ABD9ECAE47AC83BE6D999B654C380)
 
 为了避免不同生产者或消费者同时访问同一块共享内存容器时产生脏读、脏写现象，同一时间只能有一个生产者或消费者访问该容器。即不同生产者和消费者需争夺使用容器的锁。当一个角色获取锁后，其他角色需等待该角色释放锁，才能重新尝试获取锁以访问该容器。
 
@@ -150,7 +150,7 @@ export function main(): void {
 
 以下示例简单展示了如何使用基于Actor模型的TaskPool并发能力来解决生产者消费者问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/5FqHZnSYTjqyJH1pdAalFQ/zh-cn_image_0000002817505611.png?HW-CC-KV=V1&HW-CC-Date=20261114T004517Z&HW-CC-Expire=31536000000&HW-CC-Sign=78CC6DAC634BD95DD565402D7663EA43B973C3E96694D81D42F99F275E6C59F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/7uFg9y6TRBa2le_OBJUuJQ/zh-cn_image_0000002820524459.png?HW-CC-KV=V1&HW-CC-Date=20261119T014731Z&HW-CC-Expire=31536000000&HW-CC-Sign=E67EB20935789AE6110BDE9CD4B97E4C8B54B9DF75537CD6C79C3F2B0D5658EF)
 
 Actor模型中，不同角色之间并不共享内存，生产者线程和UI线程都有自己的虚拟机实例，两个虚拟机实例之间拥有独占的内存，相互隔离。生产者生产出结果后，通过序列化通信将结果发送给UI线程。UI线程消费结果后，再发送新的生产任务给生产者线程。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-
 title: 分布式数据对象跨设备数据同步 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用跨设备数据同步（分布式） > 分布式数据对象跨设备数据同步 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:53+08:00
+scraped_at: 2026-11-19T09:47:30+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1d8452502cc26b639c5bb5318e08870f478b3e35bf9441c6a8550e9e2bd6fab9
+content_hash: sha256:61f1592d31694e9a9a33def2dd8a70434c5dbb9b8ae3a8e233c8e77c038165f3
 ---
 
 ## 场景介绍
@@ -33,7 +33,7 @@ content_hash: sha256:1d8452502cc26b639c5bb5318e08870f478b3e35bf9441c6a8550e9e2bd
 
 **图1** 分布式数据对象运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/459V3CITTdSo5IugMFtypA/zh-cn_image_0000002788466122.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004653Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2A9316A9DBCDFBC0F453026BAB6C74092E6AF4C4C60728AE7B77A3D1EE9B0AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/04hEgZZGTkqqUcw-G6YLNQ/zh-cn_image_0000002791564506.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014639Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC87A8EE3A81A73EE5C66A5B0E6B29B9D50BDCDADF32776538A6A3B1DBCA9A00)
 
 分布式数据对象生长在分布式内存数据库之上，在分布式内存数据库上进行了JS对象型的封装，能像操作本地变量一样操作分布式数据对象，数据的跨设备同步由系统自动完成。
 
@@ -51,7 +51,7 @@ content_hash: sha256:1d8452502cc26b639c5bb5318e08870f478b3e35bf9441c6a8550e9e2bd
 
 **图2** 对象的同步关系
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/7O9x3eL3RQmimjRk7S7jEg/zh-cn_image_0000002817505609.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004653Z&HW-CC-Expire=31536000000&HW-CC-Sign=5613A8585B14D72ED000F33B2A97507A9EE05303C55E2E39BBE8298AEE07F552)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/WyypYZ0BRlicZMFf7E8ONA/zh-cn_image_0000002820524457.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014639Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDC9F9FA5049ED266DB0A1952FE50DC5E2BD1C47F1C25BEFE94D95748AE9B190)
 
 一个同步关系中，一个设备只能有一个对象加入。比如上图中，设备A的“分布式数据对象1”已经加入了session1的同步关系，所以设备A的“分布式数据对象2”就加入失败了。
 
@@ -78,7 +78,7 @@ dataObject['parents']['mom'] = "amy"; // 不支持的修改
 
 **图3** 数据同步视图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/w0Qfq_wPQRCabGj-sSEsrw/zh-cn_image_0000002788306180.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004653Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C134217B47CDDF39912875B504C123AF0EC95FCDE265A52FF2C17D0E38E3316)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/dLxNxE7jTlW2WIKkqAb2wg/zh-cn_image_0000002820404457.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014639Z&HW-CC-Expire=31536000000&HW-CC-Sign=046AEE44AC61D186A6A492577F900791EA72D05DF11F373A2794E36D69DDC66B)
 
 ### 对象持久化缓存机制
 

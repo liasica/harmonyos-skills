@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:29+08:00
+scraped_at: 2026-11-19T09:51:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b00f7ab080b59d95d8d0d90de4d33df8547e1d4f9da4c03a1ef0ea9aceb73d19
+content_hash: sha256:86560436104e02e3c06546ae814be198a224049ed85b39b239a9a8c1c4460649
 ---
 
 **说明** 
@@ -111,7 +111,7 @@ content_hash: sha256:b00f7ab080b59d95d8d0d90de4d33df8547e1d4f9da4c03a1ef0ea9aceb
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/IZ2fLt-MQN-08-8r1P-NfA/zh-cn_image_0000002817428827.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0E308EBC8213F7D32A2E7B0BA557984905BB9A10732F615BC581152D63B684F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/U74oM8WgSsml5k47r88nqQ/zh-cn_image_0000002791567794.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015119Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F0A916E36B84D0150A2DFA9B3050989D9036EF4CC237D947A1C26618F2523D2)
 
 ```html
 <!-- xxx.hml -->
@@ -159,7 +159,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/-Jir9CbuRMSsfLzZm_jgxQ/zh-cn_image_0000002788469408.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=35EA026F8D89EA9FCB16B515DE9A9BBE8F923A9711DC67B4BB9337A89EB8D4A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/2EevU2m_Rayd1gleW000lQ/zh-cn_image_0000002820527747.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015119Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FE77C8AAB3D30994BDF6FCC8F166CBE61B232A483B6E01E085E1D85C2F48297)
 
 ```html
 <!-- xxx.hml -->
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/1p9-4KDhRHi6xlYW7yvBxQ/zh-cn_image_0000002817508897.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE73D1FA8C61FC8FAB90789017E410DA634C9F6F0DD13899DA631BEBBC55C84C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/l63gmKnJSWauRyies4ImXw/zh-cn_image_0000002820407749.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015119Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AD2BF6052177DCB5E7828E0362B1B887207F8AB6DF9C83DE889A60E6529B06E)
 
 **说明** 
 
@@ -225,4 +225,4 @@ export default {
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/XII9wa4nTlGlRcn2Iq89cg/zh-cn_image_0000002788309466.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDA7E80FCAF2BCEF46C7A7A290E9FAF6C4627104DCA91EF4927C0B3F1F232AD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/NRcWhg8SRW-mIkSk--mpIg/zh-cn_image_0000002791727768.png?HW-CC-KV=V1&HW-CC-Date=20261119T015119Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF6BE57A0D8A48F6281A6387FBB30CC19F15853D48037FCDE9D082C87CC174AA)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 单选框 (Radio)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 按钮与选择 > 单选框 (Radio)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:04+08:00
+scraped_at: 2026-11-19T09:47:41+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b9b992a68a598c8cf86ae3b19110bf9d0c480bac4a74921d7f4926337995e381
+content_hash: sha256:a098e8724bfb8c355fcccc9cdf7d0dab990ad40d7b2b358b7535afe512e80360
 ---
 
 Radio是单选框组件，通常用于提供相应的用户交互选择项，同一组的Radio中只有一个可以被选中。具体用法请参考[Radio](../harmonyos-references/ts-basic-components-radio.md)。
@@ -29,7 +29,7 @@ Radio({ value: 'Radio2', group: 'radioGroup' })
   .checked(true)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/VhhCuA-xS--O4HznBJUWVw/zh-cn_image_0000002817426131.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=80F5B8102E8992651BD7DDDA6CA11C79181AE58822FA3E06369052DBAB4F00C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/ZzH71sWkSBu47i_ctDrR2w/zh-cn_image_0000002791725068.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0B60BEC3E1EEBCE7842017D0A8C170A0037D780285509253130E72D25B1256B)
 
 ## 添加事件
 
@@ -126,7 +126,7 @@ export struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/berrq8zwRUqNK-0bVOldkA/zh-cn_image_0000002788466712.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F32D765F18A1F25BCA37F5CE8356E4B6503F04460E12129FB4C1F7CD2465FF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/H0f3FNA8REO2atO6isuFEw/zh-cn_image_0000002791565096.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=798056A399F8535FA484696B6EC8C44E38F4E5C8E4AABEAF7D0431D44FAB0531)
 
 为不同Swiper页中的Radio设置独立的group值，实现各季节活动选项的隔离与独立选择。
 
@@ -202,4 +202,4 @@ export struct RadioSwiperSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/2NoxWaNpR2KyPzrHRsfRNw/zh-cn_image_0000002817506199.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D6797393108B0DEE48A3A247959B3DFC8B7808433FEEEE16AA8D488E378D3BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/vxoF4XpFTfurrF7Hhru0BA/zh-cn_image_0000002820525049.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD1B2CE334B3BE9BE753D880A972546508C485AFCAD819412FC7F34E40895E33)

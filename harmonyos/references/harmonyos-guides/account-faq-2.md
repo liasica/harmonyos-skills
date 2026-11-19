@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-2
 title: 1001502014 应用未申请scopes或permissions权限的可能原因和解决方法
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > 1001502014 应用未申请scopes或permissions权限的可能原因和解决方法
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:10+08:00
+scraped_at: 2026-11-19T09:48:50+08:00
 doc_updated_at: 2026-07-03
-content_hash: sha256:cc035745151ad53de69132d44bca6f6559a59f2dc43fd855c959e960d3d5450e
+content_hash: sha256:2d3a1a91a49298df51effc8fded263d34e0a06038140373bd299701833c19e95
 ---
 
 **问题现象**
@@ -22,14 +22,14 @@ content_hash: sha256:cc035745151ad53de69132d44bca6f6559a59f2dc43fd855c959e960d3d
 
 1. 申请对应权限，请见[申请账号权限](account-config-permissions.md)章节。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/hD6Jjp1BRRmwYRXUAvw1LA/zh-cn_image_0000002788307862.png?HW-CC-KV=V1&HW-CC-Date=20261114T004810Z&HW-CC-Expire=31536000000&HW-CC-Sign=B442DCC01AC78FB589B1552F6A49DF797E2056EFACF11C889D2201740980AB19)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/GtlRe4d5RfS1OFK9uz4KpA/zh-cn_image_0000002820406143.png?HW-CC-KV=V1&HW-CC-Date=20261119T014757Z&HW-CC-Expire=31536000000&HW-CC-Sign=5956D865E6911C7454EF4FE6C3F308E25DA2F41C5B67298C7CAA6774FB2947AA)
 2. 权限申请通过后，您可通过修改应用工程 > app.json5中的versionCode触发权限生效。
 
    **图1** 修改前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/qZDkOb16S_6C_Qo3tUIlyg/zh-cn_image_0000002788467806.png?HW-CC-KV=V1&HW-CC-Date=20261114T004810Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAA088FA92DCFA9F8E4FEF03C5C1142C61D3D8862F139BF73CB6654A972EB2A1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Z7YFJMgUTvCzFc0f81ZEcA/zh-cn_image_0000002791566192.png?HW-CC-KV=V1&HW-CC-Date=20261119T014757Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A3D1705B502DEC7BE57687DB7F134D3AF02C8614D43CB6E4EC4AE09301FD6C7)
 
    **图2** 修改后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/LFFEfk0CSB2DB0nUdtb9iA/zh-cn_image_0000002817507295.png?HW-CC-KV=V1&HW-CC-Date=20261114T004810Z&HW-CC-Expire=31536000000&HW-CC-Sign=F600B2F4AF7CC769DA0BC93F3AA4794C51DF06B996FF1974FFE691F27F1149C8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/5qYfjcJBSjGyy8FWDmIVQQ/zh-cn_image_0000002820526145.png?HW-CC-KV=V1&HW-CC-Date=20261119T014757Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFAEEBCC3E2436761B2E3085673735481A04BA41CF7387C18A642E53E4768F53)
 3. 确认是否需要使用获取风险等级能力，如需使用，请参考[获取风险等级](account-get-risklevel-introduction.md)申请对应权限。

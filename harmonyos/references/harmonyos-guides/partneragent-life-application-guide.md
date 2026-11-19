@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/partneragent-
 title: 伙伴设备与HarmonyOS设备互通的开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 融合短距 > 伙伴设备与HarmonyOS设备互通的开发指南
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:35+08:00
+scraped_at: 2026-11-19T09:48:13+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:2b99cdf50411cf17b451f9c720c78faaad435b7204058674ccb745fd87705d7d
+content_hash: sha256:08c7509b0acd402bfde94d0d2c8a98099a2a0b7a467e399916f66cfad907a918
 ---
 
 ## 简介
@@ -191,7 +191,7 @@ if (isBound == true) {
 
    EntryAbility中加载ets/pages/Index.ets绘制的页面，请求用户授予访问蓝牙权限。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/eX7Z3hoFSsSY6DMUyGveXA/zh-cn_image_0000002817506877.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004734Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3E6AFFC8B383F3A6CE8CB9BEDF99BDC113092D7F81104A66C03AC3725FB5824)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/dfgWCj1pQ4OI2IIVtqKEjQ/zh-cn_image_0000002820525725.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014813Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF5F38C2E8AC2903F7314A358E7498E33783548770E8A32E305617BD81555FAA)
 
    ```typescript
    import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
@@ -247,7 +247,7 @@ if (isBound == true) {
 
    调用注册设备等功能接口。Index.ets中输入要注册的设备蓝牙地址，注册输入的蓝牙设备，去注册输入的蓝牙设备、查询设备的绑定状态，获取本机绑定的设备列表等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/OGOqBrFFTTSO7eNUj86iDQ/zh-cn_image_0000002788307446.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004734Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B91ED561590D7DD294DC005DCB05B2642DFBE0EDA225E82F74804FB74FAA2AD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/MxQQ_PMBSi6kbcuxYPIImg/zh-cn_image_0000002820405725.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014813Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BC0CEC12FA3F49B15F2CA40A700406E47FFCF10BD65F43A4CC2129694DBE94C)
 
    ```typescript
    import { BusinessError } from '@kit.BasicServicesKit';

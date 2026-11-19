@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-mul
 title: 应用内多窗
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 应用内多窗
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:21+08:00
+scraped_at: 2026-11-19T09:47:59+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:1b460876580215174ddfdfac0f15cae741be1cd5966a5193030958e16a53e465
+content_hash: sha256:4a7acbf95d068304485ada7e5ee39c16472b6ca612b75364d8e806d8906c30ce
 ---
 
 ## 场景介绍
@@ -76,4 +76,4 @@ content_hash: sha256:1b460876580215174ddfdfac0f15cae741be1cd5966a5193030958e16a5
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/dHVX0EAKSVeOKHd9yIxNDg/zh-cn_image_0000002788307358.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004542Z&HW-CC-Expire=31536000000&HW-CC-Sign=A46ED68CF7AFF06FB9D3071A71FA293DED35980C946410E36E372F556BCEE826)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/d3cUDGIRRdmTmi6eQqoyTg/zh-cn_image_0000002820405637.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=55CCF94EC3D0C2DCACE13A5ECC6E2FF8D22481A4B9F14EEDB2C6EC0366DC4AD8)

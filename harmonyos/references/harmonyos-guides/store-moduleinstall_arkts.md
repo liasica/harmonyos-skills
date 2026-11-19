@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-modulei
 title: 产品特性按需分发(ArkTS)
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 产品特性按需分发 > 产品特性按需分发(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:12+08:00
+scraped_at: 2026-11-19T09:48:52+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:2fa75b716efbed685e5de11fa16bf9f63d510191353f8244a4eead6dba55b66e
+content_hash: sha256:a27b899d77845d3197f1f27ae9c36aa97124b06a35a28e11d262a7d59e51c84e
 ---
 
 **说明** 
@@ -22,7 +22,7 @@ content_hash: sha256:2fa75b716efbed685e5de11fa16bf9f63d510191353f8244a4eead6dba5
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/f9aAZKxwTqinxs3F2jaszw/zh-cn_image_0000002788307902.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=964A859D669CFAE8FE8CC5A4798AD6444607FD2D6F8A1DA4726D54A9C6C294E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/91PNxwBBSC22L1kt742YfA/zh-cn_image_0000002820406183.png?HW-CC-KV=V1&HW-CC-Date=20261119T014758Z&HW-CC-Expire=31536000000&HW-CC-Sign=48950F415C64CB4AC21C08619A301BFDE0FFB74E2D7E16D26B1AA50499BCCEC5)
 
 1. 用户下载A应用的基础包。
 2. 用户使用增强功能。
@@ -480,7 +480,7 @@ entry中主要实现如下：
 
 运行结果效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/7M1CbJwZQaKODWlJoUkgHg/zh-cn_image_0000002817427265.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDE6E3D715F159F5781769F7CF915330FD44B9B2F024B37985D361F7642D984F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/sUMK45abSx2rV9yK7zCfvg/zh-cn_image_0000002791726204.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014758Z&HW-CC-Expire=31536000000&HW-CC-Sign=76A4EA19D0FDB45562CA1CB2A0BCB9B46E5D6FECF17AE1804613A5A16A33BD07)
 
 ### 接入调试功能
 
@@ -494,5 +494,5 @@ entry中主要实现如下：
 2. 打开[开发者调试模式](ide-developer-mode.md#section530763213432)：进入设置 -> 机型 -> 关于手机，连续点击软件版本7次，弹出“开启“开发者模式””，点击“确认开启”。
 3. [访问设备沙箱路径](ide-device-file-explorer.md#section48216711204)，在[应用el2级别加密数据目录](app-sandbox-directory.md#应用沙箱路径和真实物理路径的对应关系)下，创建cache/moduleinstall/<ModuleName>目录（这里<ModuleName>是AModulelib），将模块调试包AModulelib.hsp上传至对应模块目录下（请确保模块调试包文件应有读写权限）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/eBw2LApzT9uu-oT_vK-NJg/zh-cn_image_0000002788467846.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0A266B3E36F0D792D207A788F1D9A1084A1B3D8504F4E8B73FD91CA4C16AE93)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/b-23pVmmQSSxUYIOsLAkAw/zh-cn_image_0000002791566232.png?HW-CC-KV=V1&HW-CC-Date=20261119T014758Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B5904CD81EFC0683BECDBF2E0DBA0B6BAECC8A1CD581A94F7D2A74FCFE6EFA6)
 4. 按照[创建按需加载的请求实例](store-moduleinstall_arkts.md#创建按需加载的请求实例)、[请求按需加载的接口](store-moduleinstall_arkts.md#请求按需加载模块)、[取消下载任务](store-moduleinstall_arkts.md#取消下载任务)、[恢复下载任务](store-moduleinstall_arkts.md#恢复下载任务)和[使用动态模块](store-moduleinstall_arkts.md#使用动态模块)，无需改动参数即可安装好模块调试包，实现取消及恢复下载任务。监听到安装成功后，对应模块目录下的文件会被自动删除。

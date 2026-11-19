@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyVWaterFlowLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyVWaterFlowLayout
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:11+08:00
+scraped_at: 2026-11-19T09:50:57+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:eb51a145dc976cea49f9dd7bdabab1ace3ad72510d892d0e09220a1364a45878
+content_hash: sha256:b3d20def9537afe0eb446b844dfa0538fbf7496309b34edd829c1ec6d008a1fa
 ---
 
 LazyVWaterFlowLayout用于实现支持懒加载的瀑布流布局，适用于展示大量高度不一的列表项场景，如图片墙、商品列表等。通过懒加载机制，该组件仅加载可视区域及附近内容，减少内存占用和渲染开销，提升滚动流畅度。该组件应位于竖直方向的[List](ts-container-list.md)、[Scroll](ts-container-scroll.md)或[WaterFlow](ts-container-waterflow.md)组件下，并支持通过[FlowItem](ts-container-flowitem.md)、[LazyColumnLayout](ts-container-lazycolumnlayout.md)、[自定义组件](../harmonyos-guides/arkts-create-custom-components.md)或[NodeContainer](ts-basic-components-nodecontainer.md)组件封装后使用。
@@ -446,7 +446,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/kypcWjVWQKSo3p1XV0ztAg/zh-cn_image_0000002788308896.png?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=A65114C9CC7C7F8EF01B01142BBC80A996C0DD7C1E78F8E202EBB20A1E10EA05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Z5Frbx-1SxKRzyugxtKusA/zh-cn_image_0000002820407177.png?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7F4D038C806A0119E40BE7A0BACA0A2269081956BD243C723DC6E07914E5157)
 
 ### 示例2（设置头部组件或尾部组件及吸附效果）
 
@@ -555,7 +555,7 @@ struct LazyVWaterFlowLayoutStickyDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/CNSJJWLYQ-u3tD-unH5Unw/zh-cn_image_0000002817428259.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=C08188775158AB65E137EBBF0DCA790B11934C64E6AF29BDF9DDC7AE91BE9046)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/-u8cRZoiTheYf7cygupHEg/zh-cn_image_0000002791727198.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=47689734028089C671E959198FAB5037F4C748C88D3A874ED86B1EC7E10D25C2)
 
 ### 示例3（设置自适应列数）
 
@@ -685,4 +685,4 @@ struct LazyVWaterFlowLayoutColumnsTemplateDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/ie47e7LxT4mPhwwNoAUj3Q/zh-cn_image_0000002788468840.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=688F94B4A54C63948BEA6DAFA5DBBF4F462654EEA1394E95316BA38E5F8622F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/uo_aMG7eRw6VlJKxS7Qs2w/zh-cn_image_0000002791567226.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=79D37E437D768A9BB907E21FF9C4176904E9D26FDFCB1B8BD2032E2C6A63CC22)

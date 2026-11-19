@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audio_stream_manager.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audio_stream_manager.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:20+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:09af5c105c4916c2050fe5590d8fd311d81165c5151946916e3cb911620a20cc
+scraped_at: 2026-11-19T09:53:26+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:30375e037cfca784a11fa6ec7099583c3b8eac33d2882740349b50e71195a1fa
 ---
 
 ## 概述
@@ -123,7 +123,7 @@ OH_AudioCommon_Result OH_AudioStreamManager_IsAcousticEchoCancelerSupported(OH_A
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AudioCommon\_Result](capi-native-audio-common-h.md#oh_audiocommon_result) | AUDIOCOMMON\_RESULT\_SUCCESS = 0 ：函数执行成功。  AUDIOCOMMON\_RESULT\_ERROR\_INVALID\_PARAM = 6800101 ：  1.参数audioStreamManager为nullptr；  2.参数sourceType无效；  3.参数supported为nullptr。 |
+| [OH\_AudioCommon\_Result](capi-native-audio-common-h.md#oh_audiocommon_result) | AUDIOCOMMON\_RESULT\_SUCCESS = 0 ：函数执行成功。  AUDIOCOMMON\_RESULT\_ERROR\_INVALID\_PARAM = 6800101 ：  1.参数streamManager为nullptr；  2.参数sourceType无效；  3.参数supported为nullptr。 |
 
 ### OH\_AudioStreamManager\_IsFastPlaybackSupported()
 

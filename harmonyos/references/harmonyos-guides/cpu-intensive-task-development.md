@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cpu-intensive
 title: CPU密集型任务开发指导 (TaskPool和Worker)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 耗时任务并发场景 > CPU密集型任务开发指导 (TaskPool和Worker)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:55+08:00
+scraped_at: 2026-11-19T09:47:32+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:858d851de22ba3837f9cd6024814c601051f75069f3245b8a7753de14a7fef0a
+content_hash: sha256:342211f38983c165f1144a9d5d1a322620a64d762ba0dc3aff341342101d0547
 ---
 
 CPU密集型任务是指需要占用系统资源进行大量计算的任务，这类任务需要长时间运行，会阻塞线程中其他事件的处理，因此不适合在UI主线程中执行。例如图像处理、视频编码、数据分析等。
@@ -87,7 +87,7 @@ struct Index {
 
 1. DevEco Studio提供了Worker创建的模板，创建一个Worker线程，例如命名为“MyWorker1”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/bRXeGHJjQgG309vzmJJsNg/zh-cn_image_0000002817505623.png?HW-CC-KV=V1&HW-CC-Date=20261114T004518Z&HW-CC-Expire=31536000000&HW-CC-Sign=30501AF5693A6220765BDDCBA396FB30044391362F85F8019610468C2309254B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/_3bkr-ytS1SN08T_Wlg6dg/zh-cn_image_0000002820524471.png?HW-CC-KV=V1&HW-CC-Date=20261119T014642Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0BE812CC53264970A3635DFC9AFE9F4DF7D8DAD401D0B2EA50A2E28F013EC23)
 2. 在宿主线程中首先调用ThreadWorker的[constructor()](../harmonyos-references/js-apis-worker.md#constructor9)方法创建Worker对象；然后通过注册[onmessage()](../harmonyos-references/js-apis-worker.md#属性)回调接收Worker线程发送过来的消息；最后通过调用[postMessage()](../harmonyos-references/js-apis-worker.md#postmessage9)方法向Worker线程发送消息。
 
    例如，向Worker线程发送训练和预测的消息，并接收Worker线程发送回来的消息。

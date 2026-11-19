@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-displa
 title: 使用OH_DisplayManager实现屏幕基础信息查询和状态监听 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 屏幕管理 > 使用OH_DisplayManager实现屏幕基础信息查询和状态监听 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:22+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:04530fec7934ec8ec40fc214e8a307c4fecd146ed628fc5d8b4112f0c626811d
+scraped_at: 2026-11-19T09:47:51+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:15bf2b638f69bc94b4a918e4684718b612cb6e946b9bd1ed84b24bcc71c161c1
 ---
 
 ## 场景介绍
@@ -68,7 +68,7 @@ target_link_libraries(nativedisplay PUBLIC libnative_display_manager.so)
        } else {
            napi_value errorCode;
            napi_create_int32(env, errCode, &errorCode);
-           OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DMSTest",
+           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "DMSTest",
                "GetDefaultDisplayRotation errCode=%{public}d", errCode);
            return errorCode;
        }
@@ -81,7 +81,7 @@ target_link_libraries(nativedisplay PUBLIC libnative_display_manager.so)
    {
        NativeDisplayManager_CutoutInfo *cutOutInfo = NULL;
        NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo(&cutOutInfo);
-       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DMSTest", "GetDefaultCutoutInfo errCode=%{public}d", errCode);
+       OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "DMSTest", "GetDefaultCutoutInfo errCode=%{public}d", errCode);
        if (errCode == NativeDisplayManager_ErrorCode::DISPLAY_MANAGER_OK) {
            if (cutOutInfo != NULL && cutOutInfo->boundingRectsLength != 0) {
                OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DMSTest",
@@ -139,7 +139,7 @@ static napi_value RegisterDisplayChangeListener(napi_env env, napi_callback_info
     uint32_t listenerIndex;
     NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_RegisterDisplayChangeListener(
         DisplayChangeCallback, &listenerIndex);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DMSTest",
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "DMSTest",
         "RegisterDisplayChangeListener listenerIndex =%{public}d errCode=%{public}d.", listenerIndex, errCode);
     if (errCode == NativeDisplayManager_ErrorCode::DISPLAY_MANAGER_OK) {
         napi_value registerIndex;
@@ -163,7 +163,7 @@ static napi_value UnregisterDisplayChangeListener(napi_env env, napi_callback_in
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DMSTest",
         "UnregisterDisplayChangeListener listenerIndex =%{public}d.", listenerIndex);
     NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_UnregisterDisplayChangeListener(listenerIndex);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DMSTest",
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "DMSTest",
         "UnregisterDisplayChangeListener errCode=%{public}d.", errCode);
     napi_value errorCode;
     napi_create_int32(env, errCode, &errorCode);
@@ -198,7 +198,7 @@ static napi_value UnregisterDisplayChangeListener(napi_env env, napi_callback_in
        uint32_t listenerIndex = 0;
        NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_RegisterFoldDisplayModeChangeListener(
            FoldDisplayModeChangeCallback, &listenerIndex);
-       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DMSTest", "listenerIndex =%{public}d errCode=%{public}d.",
+       OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "DMSTest", "listenerIndex =%{public}d errCode=%{public}d.",
            listenerIndex, errCode);
        if (errCode == NativeDisplayManager_ErrorCode::DISPLAY_MANAGER_OK) {
            napi_value registerIndex;

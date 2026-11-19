@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-data-migr
 title: 应用数据迁移适配指导
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 应用数据迁移适配指导
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:17+08:00
+scraped_at: 2026-11-19T09:47:55+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4d0005cff0ecc8b8ccdaba8ed86f107df418f8ba3fdaa301e7def57bac55f797
+content_hash: sha256:fb245bacb4377c608bb6570fa345496a53e95a13c6f4974ec8fa613ef8d27972
 ---
 
 ## 环境准备
@@ -36,10 +36,10 @@ content_hash: sha256:4d0005cff0ecc8b8ccdaba8ed86f107df418f8ba3fdaa301e7def57bac5
 
 1. 在**entry/src/main/ets/**目录下，点击 **New > Directory** 创建**backupExtension**目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/o5JxI4RtTDywX6yfPqTJ9g/zh-cn_image_0000002817506659.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB2E6E0A0CED5C8D46F2EA37A620AD61048E55519D437B19A9A58339BDE70CC6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/LkRVEeWjR52bP9X-HEGDdA/zh-cn_image_0000002820525507.png?HW-CC-KV=V1&HW-CC-Date=20261119T014703Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFAF20056C9E2D2B6EDFC35FE881D4DF7243C86283817B10B939CB8DFA4804D2)
 2. 点击**entry/src/main/ets/backupExtension/**目录，点击 **New > File** 创建**BackupExtension.ets**文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/6sYey5YtTn6Vr5_HU996EA/zh-cn_image_0000002788307228.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=9858DD395B55B0960871AAC2C2A1BCD5120578E6D23A6C4D43C84A373490578B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/L09jiRPuSw25KoY1rVbKtA/zh-cn_image_0000002820405507.png?HW-CC-KV=V1&HW-CC-Date=20261119T014703Z&HW-CC-Expire=31536000000&HW-CC-Sign=9484F2F1329BDEC59DC19884222F5FE2C709E58B81382FCFF773376C04F3018C)
 3. 参考示例代码实现BackupExtensionAbility，应用的数据转换和迁移逻辑，请在指定位置填充实现。
 
    终端设备从HarmonyOS升级到HarmonyOS NEXT中，会将原有APK应用沙箱目录中文件放置到HarmonyOS备份恢复目录。对应关系详见[APK应用沙箱目录与备份恢复目录映射关系](app-data-migration-adaptation.md#apk应用沙箱目录与备份恢复目录映射关系)。

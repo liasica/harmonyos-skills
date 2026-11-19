@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-cloud-sy
 title: 同应用端云数据同步概述
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用端云数据同步（分布式） > 同应用端云数据同步概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:53+08:00
+scraped_at: 2026-11-19T09:47:30+08:00
 doc_updated_at: 2026-06-09
-content_hash: sha256:0673d3e707ca6a4cffa1be6272aec598746598771ce0fb982716d7e9fd19fe19
+content_hash: sha256:6a7fc555c2dfe6bb9f7c1c9ca92955857eabf75ad1570f306519457c5c0afa0c
 ---
 
 ## 场景介绍
@@ -32,7 +32,7 @@ content_hash: sha256:0673d3e707ca6a4cffa1be6272aec598746598771ce0fb982716d7e9fd1
 
 ### 端云同步机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/dtLpgO7tR6mktkI7dmzOYw/zh-cn_image_0000002817425543.png?HW-CC-KV=V1&HW-CC-Date=20261114T004515Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDC2A7E668E5FE8151D568E17B7AA24B9E383DB0D825B3ED0D3E73D3C26A50DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/FPMUMDfdSx-pPBkGA_g6vg/zh-cn_image_0000002791724480.png?HW-CC-KV=V1&HW-CC-Date=20261119T014344Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCAEDB6DD073CD4920D1AC4A7DE2526B9E2B18824664C168E03330464F911566)
 
 端云同步机制是以云为中心，采用中心化的数据同步模型，这意味着数据不是在端-端之间两两同步，而是端-云-端的方式进行数据同步。云端既是一个数据备份中心，也是一个数据中转中心。通过端-云-端的数据同步，来实现多端数据的一致性。
 

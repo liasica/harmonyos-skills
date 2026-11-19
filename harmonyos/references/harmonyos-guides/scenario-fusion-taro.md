@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: Taro框架+H5接入智能填充
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 三方框架+H5接入智能填充 > Taro框架+H5接入智能填充
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:31+08:00
+scraped_at: 2026-11-19T09:49:12+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:7efa2750591843d84e754781eea0eda738262c5e90904492e2ace5b9c96328e9
+content_hash: sha256:cde9613163953bdaa451814a4f1b427a0d4fac4ff5e00e8dffd38a0872d1a2ec
 ---
 
 **说明** 
@@ -27,7 +27,7 @@ Taro及HarmonyOS版工程的搭建请参考官方文档[Harmony Hybrid | Taro �
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/s1chaHq4TKSSPzVruhVDkg/zh-cn_image_0000002788468252.png?HW-CC-KV=V1&HW-CC-Date=20261114T004831Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B7394F209A653E780E1FECF1586ECDFB6B4E86C793CB8E494F1F70265A66305)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/IWmaT8ElQfihougzxeKIEg/zh-cn_image_0000002791566638.png?HW-CC-KV=V1&HW-CC-Date=20261119T014817Z&HW-CC-Expire=31536000000&HW-CC-Sign=5905DD007B92484BE48C11F14E0FEAE598B501C43B9149AB6C8A7F9E751F9E09)
 
 ## 示例代码
 

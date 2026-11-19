@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-bin
 title: "!!语法：双向绑定"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 语法糖 > !!语法：双向绑定
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:00+08:00
+scraped_at: 2026-11-19T09:47:38+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a03297ca88507c7bfde9fe7a323da11b621b12674ac586449e6a956e4f0df8e3
+content_hash: sha256:2e7cad922b71ccf90baba62bb7f8fc4900e617702e232b734fb855f5e27cdd00
 ---
 
 在状态管理V1中，推荐使用[$$](arkts-two-way-sync.md)实现系统组件的双向绑定。
@@ -177,7 +177,7 @@ struct BindMenuInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/IPCeWIWuTGa0w1BoWuLqeA/zh-cn_image_0000002817505837.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=28B691D9CD0B1F7E233C91215783637E21013349DE43FA33399E1055C2687975)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/IMl7wDESS6C06fppgcy_NQ/zh-cn_image_0000002820524687.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7F8B2CB2714C58960404413F37AB0B48BC9B0191B67CD6132526340C4765D38)
 
 **使用规则**
 

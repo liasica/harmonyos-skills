@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dynamic
 title: 动态加载
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 动态加载
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:56+08:00
+scraped_at: 2026-11-19T09:47:34+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5950e80bdf953796550937f857346a7d1e4577be1ed5e501a3b57c3ead8e068d
+content_hash: sha256:4e48a3b37bc2ecb7d20527e00b20f4fd0aca3444547519e6883488490c9bd1ef
 ---
 
 动态import支持条件延迟加载，支持部分反射功能，可以提升页面的加载速度；动态import支持加载HSP模块/HAR模块/ohpm包/Native库等，并且HAR模块之间可通过变量动态import来访问彼此导出的内容，可避免编译期强依赖，实现模块解耦。
@@ -694,11 +694,11 @@ import(packageName).then((ns: ESObject) => {
 
 当应用包含多个HAR包，HAR包之间的依赖关系比较复杂。在DevEco Studio中配置依赖关系时，可能会形成循环依赖。这时，如果HAR之间的依赖关系中仅有变量动态import，可以将HAR包之间直接依赖关系转移到HAP/HSP中配置，HAR包之间无需配置依赖关系，从而达到HAR包间依赖解耦的目的。如下示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Svti3CfiTTaBLN5aS_zyBA/zh-cn_image_0000002788466142.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EB51FF741BFE688FF865B8E6E595B99A16AC91D86AB56413EC1AB873C314D69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/gLdcmRF2ThyjZSR6zX8bUg/zh-cn_image_0000002791564526.png?HW-CC-KV=V1&HW-CC-Date=20261119T014642Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E6D16B46E985AE179F7A776BD70B1FA007FDBC684D8F8C6C830A21A72ACBD6A)
 
 HAR之间的依赖关系转移至HAP/HSP后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/wwxpKHLCRuCKUlsT7Oy_Tw/zh-cn_image_0000002817505629.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5EA9C6DFC3FFFE3E3BD75F39FE0E024DCAC713F85C9903AD40C66C40C311AF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/ULxx1w7GR0Oec7nywg2Cng/zh-cn_image_0000002820524477.png?HW-CC-KV=V1&HW-CC-Date=20261119T014642Z&HW-CC-Expire=31536000000&HW-CC-Sign=D13B6EFB2E23344C7DF10B7247300023013A67D459C8D8CE413AC34F74002A65)
 
 **使用限制**
 
@@ -713,7 +713,7 @@ HAR之间的依赖关系转移至HAP/HSP后：
 
 下面的实例通过在单向依赖HAP->HAR1->HAR2->HAR3之上增加依赖HAR2->HAR1、HAR3->HAR1，形成了循环依赖。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/7juJJbYbS2WGt1wmOeRZRg/zh-cn_image_0000002788466142.png?HW-CC-KV=V1&HW-CC-Date=20261114T004656Z&HW-CC-Expire=31536000000&HW-CC-Sign=0323601AAD41F027B46E251C46E91F477C2E5CEDD64A22F9439A7669B85E8869)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/rvQXvQA0TMeyzIUmkSr26g/zh-cn_image_0000002791564526.png?HW-CC-KV=V1&HW-CC-Date=20261119T014642Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D05F7E2B47BB9D2AEE75A4CE7052337B35E9B6F8AC69D8C21847541B8708667)
 
 ```typescript
 // HAP's src/main/ets/pages/Index.ets

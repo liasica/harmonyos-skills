@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-refund
 title: 退款
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 售后 > 退款
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:22+08:00
+scraped_at: 2026-11-19T09:49:02+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:dd5edc81ae3703b345c755c3c0cc37717bcef7bf23c6e2fd3bd279094e4b4d64
+content_hash: sha256:c0b1bc3f2d87893c6928bfef4591441f8fa6bcd32f52c1e846c8f64cdc175802
 ---
 
 当[用户申请退款](iap-refund.md#用户申请退款)时，对于非游戏类应用，开发者可以在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)上审核退款订单，实现用户的退款。
@@ -23,27 +23,27 @@ content_hash: sha256:dd5edc81ae3703b345c755c3c0cc37717bcef7bf23c6e2fd3bd279094e4
 
 1. 开发者登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，点击“应用管理”，在左上角应用卡片处选择待处理退款订单的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/KfpYo1HdTZG4smnc99l1rQ/zh-cn_image_0000002817427431.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=95D3814C95262E1A6B5D7C202B251ED2BA196F139FF3B3C99CB498F6BE4AAD66)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/6BifZJnaSVKygc1DpMBRCA/zh-cn_image_0000002791726370.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD43A8F12394844606CDA0C5315040957FC9D7516AF68495AE9BC50AF275AC4F)
 2. 在“推广运营”页签下，点击“产品运营 > 退款管理”，查看用户提交的退款申请，处理退款订单。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/aUO9DOXTRLqqbLq-PilGiQ/zh-cn_image_0000002788468012.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=C44409744E5BA4F409032D9F08A43A928001174608092B11835BC7D0489DEB02)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/x-VPScp-TvGmyuuv_JDcDg/zh-cn_image_0000002791566398.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=D214BF04C03A4EC767733B5A7B2886A6D7E1BCCCD2CFC5160432AB607F550DE0)
 3. 审核或查询退款订单。
 
    **同意退款**：如果开发者同意退款，可在“退款金额”下输入可退款金额，点击“同意”。在弹窗中点击“确认”，即可完成退款。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/uANo1JLNQwKu2corxL3Cmw/zh-cn_image_0000002817507501.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDFA4B5EAC62BE3C8A583DFD5E0BACFB5AA9AAC49FA6C5BD8BB035334E6A1B6D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/JbnYyNWsSBu8O9sINV4FPA/zh-cn_image_0000002820526351.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1EC0391DC7890703603BAA035B92516751376FDBE25DB5249082563650B075D)
 
    **驳回退款**：开发者不同意退款，可点击“驳回”，输入驳回原因，点击“确认”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/eFXokmsiQrW7yPXjugqX2A/zh-cn_image_0000002788308070.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EA22610F457FCCEFCF54F28F90A0BB2801D5CFC72DF1B33D434E31F83A21177)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/qseRlq_BQOCUilHhJwd_BQ/zh-cn_image_0000002820406351.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=6887800610D32C9DD3F46BB1BD7140B9DF6CC9F7FDC4941115BD65D8AC416161)
 
    **退款详情页面审核退款**：开发者也可以在退款详情页面审核退款，输入退款金额后选择“同意”或“驳回”，点击提交，完成审核。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/3U6kIc5pTlS4q74DQG1UWw/zh-cn_image_0000002817427433.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=016802CCF03E13EB69C7C9C66B7BA9E11C869A91ADEAE4346C0DF6646E057650)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/kfXG-L8KR0S7ChK1ltd4pw/zh-cn_image_0000002791726372.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=D788BAC18151B6580A45256E782012BCDFC41EA35BCCD9AD19B43FFF14B2941D)
 
    **查询退款订单**：点击“已完成”页签，开发者可以按退款单的“申请时间”由新到旧或者由旧到新的排序，展示已处理的退款单。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZOwt1WBnS0SiPdWjlV7cOg/zh-cn_image_0000002788468014.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBE8C5F985A3C1CF8A1AF7C03C9845B5E650B78B76E9AF131055F1BB1B0A537A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/GuUp5CZoQF2vKYgjFqsptA/zh-cn_image_0000002791566400.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDB6CEDCD6E7D3011DDAADE1EC4EA7B7FF9C30688C8357BDBD7137DC869FDE3C)
 
    退款订单状态如下：
 
@@ -68,14 +68,14 @@ content_hash: sha256:dd5edc81ae3703b345c755c3c0cc37717bcef7bf23c6e2fd3bd279094e4
 
 1. 在“手机设置 > 华为账号 > 付款与账单 > 购买记录”中点击待退款的订单，跳转至详情页面，点击“对订单有疑问”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/z3NSauouSKeaaEpk_hI99w/zh-cn_image_0000002817507503.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5FF1F04B2800B49327A78019A93AB1198F8F8F428A89BE5384D140C5CEDBFBF)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/GNqTWA9nTXq7ERTrSczvhQ/zh-cn_image_0000002788308072.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2C335D935A372F73C9298595C2A432D17AE9A9CBE8433F67536C6F12FD19166)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/VEAk3iKIQky910FXY0s6uw/zh-cn_image_0000002820526353.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=905B838CAF8B937F27E191AFAC2FD4F65D5E9174B02E783F95E9A3AF309047DB)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/djlb1Xs-QI-yptNfFMxf9g/zh-cn_image_0000002820406353.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2B3B41D2A340372377E7B4AC3EF8FBC76CF023ADDB278ADB2D3CAD910D96F06)
 2. 在“对订单有疑问”页面，点击“申请退款”，选择退款原因后，提交退款申请，提交后等待应用审核。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/CtVu0KlYRjKIy6DFZQf54Q/zh-cn_image_0000002817427435.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=56CBE822E747AFC35FF238A44FC65F977814296654D0EA34E43A12BE9E0B5846)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/xVSl5ADgTsa8Z22h5Q9eQQ/zh-cn_image_0000002788468016.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E339CA108FE2E783FB05412272F485DAB3EA0B32C500B4B8707B438BB89718D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/ekYS8qqUQ0Kaia9Tnm9C-A/zh-cn_image_0000002791726374.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D78A6926D957A2A851B482B1E8DA3AA983CB3DE860C8F66679488D498C599AE)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Hk7-Rik1S0CIoW4C3m18AA/zh-cn_image_0000002791566402.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=A54FDC0E3DCD69C3C2691C0F49946925BB292C949C823F0D0604E78ED8B5BCF1)
 
    用户提交退款后，可点击“查看退款记录”，在“退款记录”查看所有退款订单的退款状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/2BNfQTcqSi2uM2Px0hkVFA/zh-cn_image_0000002817507505.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2D7325BEFC3A6DD071BDB00A6A804B18D2CCEF47B02BEF1CC57FFD2CFC5964F)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/D9m2qMDfQLGKa3ODNcXSdQ/zh-cn_image_0000002788308074.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B7EA9931DC6684C289040323019A660AAF23B3058D60A6198D0CDB7C7636208)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/FHnhmMD5Rsa-Gwng7D4HZA/zh-cn_image_0000002820526355.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E98718A32DCDEA3480DD5EC416BCD987E0573859765B337EDB9ABAED89FBE52)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/BmGbYAILTzurERHnwgj1uw/zh-cn_image_0000002820406355.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=C113C29532F954E26AD86732802F4ADD182DE04BC87DD4E676289ABCED4E9EFD)
 
 ## 应用内接入退款入口
 

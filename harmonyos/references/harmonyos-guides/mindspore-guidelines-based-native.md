@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-gui
 title: 使用MindSpore Lite实现图像分类 (C/C++)
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 使用MindSpore Lite实现图像分类 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:41+08:00
+scraped_at: 2026-11-19T09:49:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:9ed37e8a2e61eccbe69abf21fd38ef0621e19b4666bc5c242b797c7b8e66fc12
+content_hash: sha256:aa5fe869e1ef7cef5802cf7dd9b624b3404777728c0a8372c3b372fe21e10879
 ---
 
 ## 场景说明
@@ -563,9 +563,9 @@ struct Index {
 
 在设备上，点击photo按钮，选择相册中的一张图片，点击确定。在图片下方显示此图片占比前4的分类信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/l3PNgss1R6G5Z_A6pUOmqA/zh-cn_image_0000002817427871.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=55E787AF1C03C68B244F37151B8F8C435FF8E161959A7CF2230F743FF9E9F6DE) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/NHABkkkDQnq8cVCRRmf-Tw/zh-cn_image_0000002788468450.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2B34D91CC564E25AC96CA9EDB7B0C940A3C16EDDBD7EDEC34101E9660EA616F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/sayfjEjZT0CCZBK3UTTEfw/zh-cn_image_0000002791726810.png?HW-CC-KV=V1&HW-CC-Date=20261119T014921Z&HW-CC-Expire=31536000000&HW-CC-Sign=7ABC41C546DF2B33B7386965765C07C40E4BBD896FEC0A21C4690E9D2A5C4EBD) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/is_XQAinTGyavfit-Q_-_A/zh-cn_image_0000002791566836.png?HW-CC-KV=V1&HW-CC-Date=20261119T014921Z&HW-CC-Expire=31536000000&HW-CC-Sign=5653A32F5E337716621410A909FD4CD8626FE7B43FEBDAE597A4AFEBB0EA787D)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/k-xX4Y-hRAOA0tnAvMkmCw/zh-cn_image_0000002817507939.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A9CEED0433E3CB4BF4C81F3FDEE72B07BEE94C7590CBADC33B7D183C8C0E0D6) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/qFaqJ6LrSxiVidZk2RumuA/zh-cn_image_0000002788468452.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FFF52E7EC7D28E9B7DA55BBE02E3EC43B5E624AAB0A87B2BBA66924BCD00B7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/2IljB_ZiRhyMlSshxgUCcA/zh-cn_image_0000002820526789.png?HW-CC-KV=V1&HW-CC-Date=20261119T014921Z&HW-CC-Expire=31536000000&HW-CC-Sign=25501B74527C7DECC9C233C2B0307F14B9F6CDF988AA2DBC9FA2832B370A519C) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Uafr2oY2QdeQ21kdLHIFAQ/zh-cn_image_0000002791566838.png?HW-CC-KV=V1&HW-CC-Date=20261119T014921Z&HW-CC-Expire=31536000000&HW-CC-Sign=16AB6B8DF5BA1DF6C7BDECD6A708DBB67E05AADDE42B874888594826798DB177)
 
 ## 示例代码
 

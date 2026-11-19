@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-lif
 title: UIAbility组件生命周期
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > UIAbility组件生命周期
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:48+08:00
+scraped_at: 2026-11-19T09:47:25+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:fd4fb6856b177c8c2ee19abafc8a1de232f87bd5748dda7c405b38839c4bd4af
+content_hash: sha256:0542bcb434bdba09449ea113c84699e4ed1b0338facae7ca538db4c9d52e657a
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:fd4fb6856b177c8c2ee19abafc8a1de232f87bd5748dda7c405b38839c4
 
 UIAbility的生命周期示意图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Ucpcpw2jQGCy20XCryWI0g/zh-cn_image_0000002817425485.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4D7F039396B5ABD958486EFC4DDCC369E9DE96E3A32A5D67F89713CF32C6B79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/J6XX1qA-QZu3t87sE4fPzA/zh-cn_image_0000002791724422.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=D74AFB0D1A742F7CA4A8DB9E3AF8F2619CD67C2AAD52821D354F461E3F2F8649)
 
 以下是UIAbility启动到前台和后台两种场景说明，以及生命周期回调流程讲解。
 
@@ -28,7 +28,7 @@ UIAbility的生命周期示意图如下所示。
   1. 当用户通过[UIAbilityContext.startAbilityByCall()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startabilitybycall)接口启动一个UIAbility到后台时，系统会依次触发onCreate()、onBackground()（不会执行onWindowStageCreate()生命周期回调）生命周期回调。
   2. 当用户将UIAbility拉到前台，系统会依次触发onNewWant()、onWindowStageCreate()、onForeground()生命周期回调。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Oo4HKFlORd6Xl-yMsQ29Og/zh-cn_image_0000002788466066.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD945016812D28ADD5460190FBDD7C457A8B8915F472D786EDE9D6F04930D5E6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/YlBq2MTsQzqOWlfLbXSsoA/zh-cn_image_0000002791564450.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E63A01EC7BCC95DBFBB59AB4D6236557C36E49A0B2223E67A9650B3214AF32D)
 
 ## 生命周期回调
 

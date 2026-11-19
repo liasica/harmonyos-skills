@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multimedia-de
 title: 媒体开发概览
 breadcrumb: 指南 > 媒体 > 媒体开发概览
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:51+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:cb9d6c2e45b0ad4afdba13acd48390367f2d9a9b74c1efcad5b69443040c83ce
+scraped_at: 2026-11-19T09:48:32+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:9e66b8b7227c187aee0bd07055404663b1809d8a69bd7558a276558db69b058b
 ---
 
 HarmonyOS提供丰富的一站式媒体业务开放能力，开发者能够在系统上快速开发主流的媒体业务，满足常规高频使用场景，并提供优秀的性能表现。
 
 ## 媒体系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/XaIeFWFvT1yyOj88sxjZeA/zh-cn_image_0000002788467516.png?HW-CC-KV=V1&HW-CC-Date=20261114T004609Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3B76C02A9B7DACB543C484D8C2D8041EFD693888531DE176ACF53001DE9E328)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/QZzOUn5EQmaUbrfSWhcOng/zh-cn_image_0000002791565902.png?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=82D46169CE038BEE666968319A213B7A1842EB415C1ABB5B5032E77D9246003D)
 
 媒体系统架构提供用户视觉、听觉信息的处理能力，例如音视频信息的采集、编码存储、解码播放等。操作系统实现中，根据不同的媒体信息处理内容，将媒体划分为不同的模块，包括音频、视频、图片等。
 
@@ -121,7 +121,6 @@ AVPlayer提供功能齐全的一体化播放能力，支持多种音视频格式
 
 * [实现视频播放功能](https://gitcode.com/HarmonyOS_Samples/video-play)
 * [实现视频边缓存边播放功能](https://gitcode.com/HarmonyOS_Samples/video-cache)
-* [实现视频流畅播放且支持后台与焦点打断功能](https://gitcode.com/HarmonyOS_Samples/video-player)
 * [基于系统能力获取视频缩略图](https://gitcode.com/HarmonyOS_Samples/VideoThumbnail)
 * [实现流畅切换短视频](https://gitcode.com/HarmonyOS_Samples/SmoothSwitchShortVideos)
 * [实现音画同步播放效果](https://gitcode.com/HarmonyOS_Samples/AudioToVideoSync)

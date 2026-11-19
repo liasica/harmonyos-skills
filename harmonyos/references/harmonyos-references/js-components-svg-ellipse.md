@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: ellipse
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > ellipse
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:32+08:00
+scraped_at: 2026-11-19T09:51:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:50fc48b160204fd0d3cc21c59783543231e88ed9f8fa9256da1abfc651c3be5e
+content_hash: sha256:d6374488782a53165b74278161b9b7637e6ca6a3b54e526e271fbcd1b0543f8f
 ---
 
 **说明** 
@@ -46,4 +46,4 @@ content_hash: sha256:50fc48b160204fd0d3cc21c59783543231e88ed9f8fa9256da1abfc651c
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/FijRVCalQBi6FM8ApKZH0A/zh-cn_image_0000002788469478.png?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=A82B29B6840F05B162B22E58BCD73A56DB4590BE8D06A5CA9E9ACE44D19B116E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/XOUN9ev7QfGQHbKzopiyfQ/zh-cn_image_0000002820527817.png?HW-CC-KV=V1&HW-CC-Date=20261119T015027Z&HW-CC-Expire=31536000000&HW-CC-Sign=324A979CF8E511156D8842BB18CFE1F73DD60CEEB3517390942EDF8244869B87)

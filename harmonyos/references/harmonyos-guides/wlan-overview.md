@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wlan-overview
 title: WLAN服务开发概述
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > WLAN > WLAN服务开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:34+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:f23f87594df463ad3f2ecdae70679696c27ae00a07bb0133c511f72b9eadda1c
+scraped_at: 2026-11-19T09:48:13+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:e99a2c817b428b9a8c60c00c92cd8a38e600bfc1fedabc0cac8904d9d551db66
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ WLAN的实现原理是通过无线电磁波在空间中传输信息，当前使�
 ## 模式介绍
 
 * STA模式（工作站模式）：STA模式即工作站模式，可以理解为某网络中的一个工作站即客户端。当某设备具备该功能时，它可以连到另外的一个路由网络中，如家用路由器，通常用于提供网络的数据上行服务。详情请参考[@ohos.wifiManager (WLAN)](../harmonyos-references/js-apis-wifimanager.md)文档。
-* P2P模式（Wi-Fi直连）：P2P模式也为Wi-Fi Direct；Wi-Fi Direct 是一种点对点连接技术，它可以在两台 STA 之间直接建立 TCP/IP 链接，并不需要AP的参与；其中一台STA会起到传统意义上的AP的作用，称为Group Owner（GO），另外一台station则称为Group Client（GC），像连接AP一样连接到GO。详情请参考[@ohos.wifiManager (WLAN)](../harmonyos-references/js-apis-wifimanager.md)文档。
+* P2P模式（Wi-Fi直连）：P2P模式也为Wi-Fi Direct；Wi-Fi Direct是一种点对点连接技术，它可以在两台STA之间直接建立TCP/IP连接，并不需要AP的参与；其中一台STA会起到传统意义上的AP的作用，称为Group Owner（GO），另外一台station则称为Group Client（GC），像连接AP一样连接到GO。详情请参考[@ohos.wifiManager (WLAN)](../harmonyos-references/js-apis-wifimanager.md)文档。
 * AP模式（热点模式）：AP模式为加入无线局域网的成员设备（即客户端）提供下行数据业务，它提供以无线方式组建无线局域网WLAN，相当于WLAN的中心设备。详情请参考[@ohos.wifiManager (WLAN)](../harmonyos-references/js-apis-wifimanager.md)文档。
 
 ## 模拟器支持情况

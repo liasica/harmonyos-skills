@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义事件分发
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互事件分发控制 > 自定义事件分发
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:03+08:00
+scraped_at: 2026-11-19T09:50:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:191549b90cda9c01bbed35039de4a8d69834cd714bff4d828b57ff1e104f305b
+content_hash: sha256:1cb765ecda5f1a2b39509c9754ae7d52ae4dde396107786ba48cf6dcc801d224
 ---
 
 在处理触屏事件时，ArkUI会在触屏事件触发前进行按压点和组件区域的[触摸测试](../harmonyos-guides/arkts-interaction-basic-principles.md#触摸测试)，收集需要响应触屏事件的组件，再基于触摸测试结果分发相应的触屏事件。在父节点，可以通过onChildTouchTest决定子节点的触摸测试方式，影响子组件的触摸测试，从而影响后续的触屏事件分发。具体影响参考[TouchTestStrategy](ts-universal-attributes-on-child-touch-test.md#touchteststrategy11枚举说明)枚举说明。
@@ -181,7 +181,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/PNmMAO4lTHeZRN78PEbf2A/zh-cn_image_0000002788308696.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005003Z&HW-CC-Expire=31536000000&HW-CC-Sign=070B6432BCD3C44CC8D682D3D3AE9405EAF1B64302FA38FD0E4C37D25B114E6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/x6pDkzTUTlquWJv_q2OCOw/zh-cn_image_0000002820406977.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BB185299475366E8E9435A0969758BC937C683719E3ABDDF144C4EC882317CE)
 
 ### 示例2（设置事件派发策略为FORWARD）
 
@@ -256,7 +256,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/mKIymdOhTsexjpg2hbl_QQ/zh-cn_image_0000002817428059.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005003Z&HW-CC-Expire=31536000000&HW-CC-Sign=10C3FAA4B6D21B2CE289268F0EF995EA594CB125DEAAB3AEEE43C10EF02436BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/tx--LITNTaWZ460sg3FQgA/zh-cn_image_0000002791726998.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=C94D5E6B0B93C29F8C7ABDBDEC98D02C9048CA8BEE383D7C4D446A099541C896)
 
 ### 示例3（设置事件派发策略为DEFAULT）
 
@@ -326,4 +326,4 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Tf7b7XrYQ-Ory_0HnJ6olA/zh-cn_image_0000002788468640.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005003Z&HW-CC-Expire=31536000000&HW-CC-Sign=06DCE8D5A9FFE2F03E7E595975F48555F3FC3721C8947A98C7779665E5BCDAB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/vj41uE1tS_WYBHivdzoUjw/zh-cn_image_0000002791567026.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2DB02FA8D64CC1A980507E6A82E573D5F6B3AB7B9B2E5B0D3A110AC0C290BC1)

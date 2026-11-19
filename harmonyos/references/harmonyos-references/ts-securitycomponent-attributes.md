@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-securi
 title: 安全控件通用属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 安全 > 安全控件通用属性
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:23+08:00
+scraped_at: 2026-11-19T09:51:12+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4d0e8392526aa3881bbb6407058219c783bae1020dae160cd9b433d775935fa8
+content_hash: sha256:4031598b707ad3e56ecf0af94342068eab3972a656822b380685c411eb0223e4
 ---
 
 安全控件通用属性模块，提供安全控件的布局、尺寸、文字、图标、颜色、边框和交互等通用属性的统一配置能力。
@@ -1102,7 +1102,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/sXKGB7bAST-pZdPrlYudbw/zh-cn_image_0000002788309338.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=C196FAEE4111A10FBB9A872717E5364BADAA068D42BB8A153A0F44E132EFC8C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/adv2UTK_SuyEw9UtPZa7TQ/zh-cn_image_0000002791727640.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=151B5D47556BD09D48C98A37902CD07C28818C34D8732541AEC6D5A70C1B800C)
 
 ### 示例2
 
@@ -1179,7 +1179,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/omACnn1VRjufuaN3uFnMAA/zh-cn_image_0000002817428701.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA2833C5B66DA32FC56E6BBABE8F4036363D9F9448F5ABFD6593C251B0F7C2F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/Oo7vNgbeR9Gv2F8KFp8qCw/zh-cn_image_0000002791567668.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FF3C1871D73ACCE57CF26A3B8B9DB244193AFA5E31C134A2EB04CEF0DA1E3E8)
 
 ### 示例3
 
@@ -1520,7 +1520,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/DH-ZrEF_TsC9wNQ8Z47B8g/zh-cn_image_0000002788469282.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB208000E870B071ED3CD9195F8AC0C4AA899936EB56322FDD419E67C855A98C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Q3dMp6GeRiWq2UfD-vD2xQ/zh-cn_image_0000002820527621.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BB5A496751B1A46408C000D93F3319B60E00539137ACEA16EB9DCA013688A72)
 
 ### 示例4
 
@@ -1591,7 +1591,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/KW4MNOPDSBeQXjsCUpcv2g/zh-cn_image_0000002817508771.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA808F122866ABEC3547900E03B9AF0B303166D34495725B3C8DB2237291CBD2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/gizIK_EmRtqi1MaAGXC3Yg/zh-cn_image_0000002820407623.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=36C192076D9EDF53D98A97F06C34422BCD132041F789B373F1C8634B493485F8)
 
 ### 示例5
 

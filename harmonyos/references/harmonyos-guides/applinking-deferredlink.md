@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-de
 title: 通过延迟链接跳转至应用详情页
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过延迟链接跳转至应用详情页
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:14+08:00
+scraped_at: 2026-11-19T09:48:54+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f324712829a20eb15120c59116e126b02829266674d567eb5a152dc57a84d8a5
+content_hash: sha256:b8cfd911df6cff0c36516c7f83581e8e98d56e69398ca18813215c1a1d6da541
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:f324712829a20eb15120c59116e126b02829266674d567eb5a152dc57a8
 
 例如：华为阅读结合App Linking Kit延迟链接能力，实现了即使用户未安装应用，点击链接完成下载并首次打开时，仍能直接跳转至预设页面（如书籍详情页）。与传统方式（需先打开APP再手动定位内容）相比，操作步骤减少了43%。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/OfFYrYfATIq_f6ZdaBY81w/zh-cn_image_0000002788307930.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004813Z&HW-CC-Expire=31536000000&HW-CC-Sign=1592A8DBBEA88B5E375B8B8227E993536751F656A41C172D87D35E40E3D89229)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/KMY9SohXR028SjRxTBJfHA/zh-cn_image_0000002820406211.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014854Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C2B13EDF585784CFF4B9BC61BB869B919D09F0BC782D5905782A7A786FA8352)
 
 ## 原理机制
 

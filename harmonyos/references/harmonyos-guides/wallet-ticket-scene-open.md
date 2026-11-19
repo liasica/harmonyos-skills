@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-ticket
 title: 开通活动/景点门票
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 活动/景点门票 > 开发场景 > 开通活动/景点门票
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:34+08:00
+scraped_at: 2026-11-19T09:49:15+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:1cd871fda8f9bd86ae779bb946df15b3e60cd69ac72df29c3ab9296d8dcac6b7
+content_hash: sha256:32fa58b1ca050b735d304929af65c2c9d8354470e8fb1afdd960818bf3a4e52e
 ---
 
 用户购买门票后，可以将电子门票添加至钱包，刷手机快速验票入场，提升验票体验和运营效率。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/pBUdd7BfQwewDiRhHuIkEw/zh-cn_image_0000002788468314.png?HW-CC-KV=V1&HW-CC-Date=20261114T004650Z&HW-CC-Expire=31536000000&HW-CC-Sign=817BAF4A595A1795D6C882CD1B76A14CEF1261D4857C7C625414A2B70D5C79B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/u73XtSxiR9qj1aBJeDUsUg/zh-cn_image_0000002791566700.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=764F050D032D16232C89F5A73790752D5F8BCC86C08AD52C735EAE684D0DE81B)
 
 ## 开发流程
 

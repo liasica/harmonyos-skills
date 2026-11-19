@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: tspan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > tspan
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:32+08:00
+scraped_at: 2026-11-19T09:51:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2a605beea6ed587fb02333bb3701b8ae64024b94b029638c747bbcf0f08a08ba
+content_hash: sha256:9926abfd2d4ee7d62587d2feb3d7ee85e1eebd8801a4dec6d6fdfd8a44dde52d
 ---
 
 添加文本样式。
@@ -77,7 +77,7 @@ content_hash: sha256:2a605beea6ed587fb02333bb3701b8ae64024b94b029638c747bbcf0f08
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/34aXcUv8S3C85pelyYykeA/zh-cn_image_0000002817508971.png?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=42B69FD454971292854FE2A140451DEECF9E338E2266DB0FA29B86485933C406)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/sjelMWDhRNa1PReMpuDLFQ/zh-cn_image_0000002820407823.png?HW-CC-KV=V1&HW-CC-Date=20261119T015122Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AC9132A1F5B6626F164BD2C9039F97B4A7A94E117464EEEEA3502C673EB9918)
 
 属性动画示例
 
@@ -115,7 +115,7 @@ content_hash: sha256:2a605beea6ed587fb02333bb3701b8ae64024b94b029638c747bbcf0f08
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/ooMjKU3pQouhaMzoePVsAw/zh-cn_image_0000002788309540.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=A96F80C7436D782F6C6478AA7DDD4621A78E9FD4C2C586CCD2D4CE8BD748BFFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/LOvC6kkvR7OGnFpALz8xFA/zh-cn_image_0000002791727842.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015122Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F320396BBA3FB9BD0235EC93D5AA5E7B2396202CAD4D14E124B59B4AE467890)
 
 ```html
 <!-- xxx.hml -->
@@ -132,7 +132,7 @@ content_hash: sha256:2a605beea6ed587fb02333bb3701b8ae64024b94b029638c747bbcf0f08
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/xqtHxl63Qiy20hesPvpK_A/zh-cn_image_0000002817428903.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A171B777C26BF699EB207B7A8F7608A47736C97420723B3F6915E1C207F522C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/sf6yI8UhTjquldJEevGfeQ/zh-cn_image_0000002791567870.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015122Z&HW-CC-Expire=31536000000&HW-CC-Sign=22571E12B57E7D166A9DE246B885D10E0EAC5A78887FD83CC1DFA4B3C7F0625D)
 
 ```html
 <!-- xxx.hml -->
@@ -148,7 +148,7 @@ content_hash: sha256:2a605beea6ed587fb02333bb3701b8ae64024b94b029638c747bbcf0f08
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/nm_SVibXSQec0PHbP5PyJg/zh-cn_image_0000002788469484.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=58AFA0D55BE633E4E9D6298529F064C0F4D95784507A4CA9385D7124A2C0BC00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/p-NFCH4OS4iZmjSB6Gt5iw/zh-cn_image_0000002820527823.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015122Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAD28771864411B0FF5DF9FAD3E7E59EDCFEEF683860DD135C12D87D2D01164D)
 
 ```html
 <!-- xxx.hml -->
@@ -171,4 +171,4 @@ content_hash: sha256:2a605beea6ed587fb02333bb3701b8ae64024b94b029638c747bbcf0f08
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/x9mRD4IkRpue_ImqWrHlnA/zh-cn_image_0000002817508973.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CE84B4BFA89FA26A080A82159A4C04C74EC04A58CE00E3D5D953EC6675DAFF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/c7zEx-EuTeaiuoLYToSpcQ/zh-cn_image_0000002820407825.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015122Z&HW-CC-Expire=31536000000&HW-CC-Sign=8921B62FB63F22A0FF5079B8C0DCFB46268E46DF2A9D9537D88B25CBCDD9281C)

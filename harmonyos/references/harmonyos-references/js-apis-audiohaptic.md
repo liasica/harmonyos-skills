@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.multimedia.audioHaptic (音振协同)"
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audioHaptic (音振协同)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:00+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c255547177f5f96d64560de7b20aa3ff4aaa1fa0a33e7f36e6f105736530ae38
+scraped_at: 2026-11-19T09:53:24+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:34b52a796291d7e14e67ef0d3a11987241eb777a9316663b5650b7ee0d99bd93
 ---
 
 本模块提供音振协同能力，包括音频和振动资源的精确同步播放、普通时延和低时延两种播放模式、音频/振动静音控制和音量调节等。当开发者需要在来电通知、消息提醒、游戏音效等场景下增强用户感知体验时，使用本模块接口完成音振协同播放，可有效提升用户对通知和提醒的感知效果。
@@ -228,8 +228,6 @@ unregisterSource(id: number): Promise<void>
 **示例：**
 
 ```ts
-import { BusinessError } from '@kit.BasicServicesKit';
-
 let id = 0; // 需要通过registerSource或registerSourceFromFd方法获取。
 
 audioHapticManagerInstance.unregisterSource(id).then(() => {
@@ -266,8 +264,6 @@ setAudioLatencyMode(id:number, latencyMode: AudioLatencyMode): void
 **示例：**
 
 ```ts
-import { BusinessError } from '@kit.BasicServicesKit';
-
 let id = 0; // 需要通过registerSource或registerSourceFromFd方法获取。
 
 let latencyMode: audioHaptic.AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_FAST;

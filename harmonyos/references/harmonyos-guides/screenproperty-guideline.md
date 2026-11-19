@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screenpropert
 title: 使用Display实现屏幕属性查询及状态监听 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 屏幕管理 > 使用Display实现屏幕属性查询及状态监听 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:22+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:3a3a3dcf8e484661dfeb9eacc053c6d1626b3505f99d952fb45a9d61b892929e
+scraped_at: 2026-11-19T09:47:51+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:ce7102f6b9e19de7903da5f2dfbaf9b260a6b61c48cdb5ab9189aca9beb7a864
 ---
 
 ## 场景介绍
@@ -221,10 +221,10 @@ try {
 
      // 关闭单个callback监听
      display.off('foldStatusChange', callback);
-     hilog.info(DOMAIN, 'DisplayTest', `unregister all foldStatusChange success`);
+     hilog.info(DOMAIN, 'DisplayTest', `unregister foldStatusChange success`);
      // 关闭所有callback监听
      display.off('foldStatusChange');
-     hilog.info(DOMAIN, 'DisplayTest', `unregister foldStatusChange success`);
+     hilog.info(DOMAIN, 'DisplayTest', `unregister all foldStatusChange success`);
    } catch (exception) {
      hilog.error(DOMAIN, 'DisplayTest',
        `Failed to register/unregister callback. Code: ${exception.code}, message: ${exception.message}`);

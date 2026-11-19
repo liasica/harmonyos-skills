@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 通过API展示关注组件
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化API > 通过API展示关注组件
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:31+08:00
+scraped_at: 2026-11-19T09:49:12+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:da4115b04d1875e7aa6ced935df08bea7987d9001ff5f896a3afa6d1454533d2
+content_hash: sha256:928e4732d28868857943023c2e2f2e8c99edcade7ad787267dea67b088cfa31c
 ---
 
 ## 场景介绍
@@ -17,7 +17,7 @@ Scenario Fusion Kit提供服务号关注组件功能，调用该接口可以在�
 * 用户关注服务号成功，按钮会变为已关注并置灰，在1.5秒后关注组件会自动消失。
 * 用户关注服务号失败，则会出现错误提示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/4l9qe6GyTASIkrp7NdelFA/zh-cn_image_0000002788468236.png?HW-CC-KV=V1&HW-CC-Date=20261114T004830Z&HW-CC-Expire=31536000000&HW-CC-Sign=4720EF5DD12918E08DC42295AE98A08D0B81A972F03287E8B31C4E172BC9F14C) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/X8bqAN_uTeqUmoFaMe90PA/zh-cn_image_0000002817507725.png?HW-CC-KV=V1&HW-CC-Date=20261114T004830Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4D5797D228D4F2101D610CD77277113F1E0A0880E0B513391D0936A69BF6675)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Mghb-12KSheFTq-n6Np80Q/zh-cn_image_0000002791566622.png?HW-CC-KV=V1&HW-CC-Date=20261119T014911Z&HW-CC-Expire=31536000000&HW-CC-Sign=5346266F9E5A5DC371BEA727EF59F692CA148C3793B82103B83EA4E106927414) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/jdgiDs-WRwa_8xWOBDoAag/zh-cn_image_0000002820526575.png?HW-CC-KV=V1&HW-CC-Date=20261119T014911Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B121C18F51CB107D99ED71A875E53ACBF7D0682F9A8C6C3B6C4A4DDD52025DD)
 
 ## 前提条件
 

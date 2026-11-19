@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 转场样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 转场样式
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:29+08:00
+scraped_at: 2026-11-19T09:51:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e150d871877b217e72047545835e503b8c224f1b5871592542fc36a148d46a26
+content_hash: sha256:88c33f1d01b4882cc74759124633e4a3fecf6746142295ee6513d1fa20727277
 ---
 
 **说明** 
@@ -35,7 +35,7 @@ content_hash: sha256:e150d871877b217e72047545835e503b8c224f1b5871592542fc36a148d
 
    **图1** 共享元素转场默认效果
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/itGgDL35T8y0TMrY_v0XlQ/zh-cn_image_0000002817428831.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=9435B67B646A753BFCACDD69AF0660CC071567BCF6FE2E19A6C772E5FD524A08)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/MYfRaMkcRqOVsnXVUvh0UA/zh-cn_image_0000002791567798.png?HW-CC-KV=V1&HW-CC-Date=20261119T015119Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8387526382CCD7F8393635672337E404970CC0D9A6345AED273ED46AD97E44E)
 3. 共享元素动画对元素的边框、背景色不生效。
 4. 共享元素转场时，由于页面元素会被隐藏，故页面元素配置的动画样式/动画方法失效。
 5. 动态修改shareid5+：若组件A的shareid被组件B的shareid覆盖，组件A的共享元素效果将失效。即使后续修改组件B的shareid，组件A的共享元素效果也不会恢复。
@@ -213,7 +213,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/W2yVyaQ5Qh6Kf4LsNJdudA/zh-cn_image_0000002788469412.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=5553BEEA01EF2A1339C2041F1CD7D25A8CB04539912349F3C370029A601FC4A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/37lIm1vJTE6qIEMi0vq0Gw/zh-cn_image_0000002820527751.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015119Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A9E29E2B59D038B3A3517B65F5FB259A58D84910A47C827C45AC477EBB36F90)
 
 ## 页面转场样式
 
@@ -234,11 +234,11 @@ export default {
 
    a. push场景下：进入页面栈的Page2.js应用transition-enter描述的动画配置；进入页面栈第二位置的Page1.js应用transition-exit描述的动画配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/L_aCdj60QSWDuqfx_W7NQg/zh-cn_image_0000002817508901.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=2818D08D133CAE171841BC78E41C6D544F115BEF97A3B3518A281FAF7736D0E6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/hSmng7wgSJyM2XV88YS1Iw/zh-cn_image_0000002820407753.png?HW-CC-KV=V1&HW-CC-Date=20261119T015119Z&HW-CC-Expire=31536000000&HW-CC-Sign=3972D54634C6ABD0303F586762D5A561444E1B53C52EF8DCCA39C67DCF105BB0)
 
    b. back场景下：退出页面栈的Page2.js应用transition-enter描述的动画配置，并进行倒播；从页面栈第二位置进入栈顶位置的Page1.js应用transition-exit描述的动画配置，并进行倒播。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/6AqjtH9cR767Eo8t7LSc7Q/zh-cn_image_0000002788309470.png?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A241B322BE6AA69BF625F4C21CFC1C929691A7DF8C3CA557B22EE0B4F0EFC44)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/P0xhVNYrTryUWV7Tiy7q9Q/zh-cn_image_0000002791727772.png?HW-CC-KV=V1&HW-CC-Date=20261119T015119Z&HW-CC-Expire=31536000000&HW-CC-Sign=4326937A7DA8FE710DE9D56F266FC000E6D418A6C862C384008AA744F0D42276)
 
 ### 示例
 
@@ -377,4 +377,4 @@ Page1有一个不透明盒子，点击盒子会跳转到Page2，当点击Page2�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/3FJRER5qQCuwRrBPrRJ8qw/zh-cn_image_0000002817428833.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005029Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF20EF7D0B61EAB031430C74B18A225EF4B36CEF3650CEE2978A0E135AB2F88C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/WhW-ClNQRvm0xnnchE0JKg/zh-cn_image_0000002791567800.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015119Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B8351CAD0AB4292DF30F5E65D26652144BF82F0B80D80A43A0C07A7E85F7EFB)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Span
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > Span
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:14+08:00
+scraped_at: 2026-11-19T09:51:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:05610dcfb062818f478dc2bd1a99ecee1f7b17e2e1d74eab962cec78c504e0b8
+content_hash: sha256:864577f31db6c02a86e2849ae0456b98b133c7a2b8f3167f7f466597080bbe80
 ---
 
 作为[Text](ts-basic-components-text.md)、[ContainerSpan](ts-basic-components-containerspan.md)组件的子组件，用于显示行内文本，支持对文本的字体、颜色、大小等样式进行细粒度设置。适用于在同一行文本中混合显示不同样式的场景，如不同字体颜色的文本、添加装饰线或阴影效果等。
@@ -576,7 +576,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/8DK31xyHQbGknWT9w17o5A/zh-cn_image_0000002817508511.png?HW-CC-KV=V1&HW-CC-Date=20261114T005013Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE9C227A37CDD4BBA0D4694B6D6C8117F735C08EFBBA5FFB304369051E7AC910)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/jE-MbSL6Sc6Z4jdoXdozjg/zh-cn_image_0000002820407363.png?HW-CC-KV=V1&HW-CC-Date=20261119T015102Z&HW-CC-Expire=31536000000&HW-CC-Sign=656EEE6C6709A81B1DFE4FB5DA3ACE2BA85E3CA3FA708B5449A4AE99B0243BC5)
 
 ### 示例2（设置文本阴影）
 
@@ -630,7 +630,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/soonG2dbTbuv64TqW8K4yw/zh-cn_image_0000002788309080.png?HW-CC-KV=V1&HW-CC-Date=20261114T005013Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF30E4993D3D9810D51197C9915F753AAE69A9FF4E2268607BC4934FD5306123)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/iU0v36hNQ_aD1MIP4TDS-w/zh-cn_image_0000002791727382.png?HW-CC-KV=V1&HW-CC-Date=20261119T015102Z&HW-CC-Expire=31536000000&HW-CC-Sign=9205A43AF27B633A62F51DD119C4AE4CD666F3D35EB8D3F1E6054B1F173C77C8)
 
 ### 示例3（设置背景样式）
 
@@ -654,7 +654,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Xh43OMidRKCR_SfxowPTSw/zh-cn_image_0000002817428443.png?HW-CC-KV=V1&HW-CC-Date=20261114T005013Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BBB37A2C4EBEAEC3DCCC9CCE018C19CF14EF0BC4E00545AD230E5F7B20C7BF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/zXhwRyMTTqGeXv9VOETk2w/zh-cn_image_0000002791567410.png?HW-CC-KV=V1&HW-CC-Date=20261119T015102Z&HW-CC-Expire=31536000000&HW-CC-Sign=1310012F3D2D78D81BC0341F9FB551018188A9D183FEB042DF382C9CB5C4523A)
 
 ### 示例4（设置文本基线偏移量）
 
@@ -691,7 +691,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/ygtd0l0pQrq2nwj_mQ2Zlw/zh-cn_image_0000002788469024.png?HW-CC-KV=V1&HW-CC-Date=20261114T005013Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B7A2400CD309A7C603C73371DF83394317D6F3F33307A3E7F6E8C33DA3CAAD9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/a41pHBuqREeuDCQndUdP9w/zh-cn_image_0000002820527363.png?HW-CC-KV=V1&HW-CC-Date=20261119T015102Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFF7D0F22A8C3E7AFD8DE34CF5B0F23521CF6EB7C80897A371622C8579D826D9)
 
 ### 示例5（设置文本可变字体的属性）
 
@@ -724,4 +724,4 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/mgGAGCLQRAC1Nh5sLWLjMQ/zh-cn_image_0000002817428367.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005013Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E9BCF62FC5A2018A1D2DC3850B8D97CE5723AC7484D8680254B3480CF25C219)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/0_uPhiQAR2O8B9g7RxWR0Q/zh-cn_image_0000002791567334.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015102Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6C0FE0497EBCFDC496C04E59A260B516C94D87DD8C1ED1753A88BE66D0D69B4)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-augmenta
 title: 知识问答
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > RAG > 知识问答
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:18+08:00
+scraped_at: 2026-11-19T09:47:56+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9ad6f96bb00a1ef671bde60f589cfd61d31649b6dfa13fcee757bf01b649de13
+content_hash: sha256:52369f1ebe025837b962661cc33a81ca0bb6c31bc0edf73ded4ba737521a0a74
 ---
 
 知识问答是通过检索增强生成（RAG）技术，从数据源中精准提取信息并生成答案的智能交互方式。可用于企业客服、医疗辅助、IT支持等领域。
@@ -356,4 +356,4 @@ RAG关键接口如下表所示，具体API说明详见[API参考](../harmonyos-r
 
 ## 流式问答调用流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/Zc8UUjF_QhywEJT2u53Q9w/zh-cn_image_0000002788467192.png?HW-CC-KV=V1&HW-CC-Date=20261114T004717Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BC237BBB98672672DD0F2772EB74D8A7440AF173F524851AA7084CD4D68683B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/NvYSfVR_RFm84CgM2kvZDw/zh-cn_image_0000002791565576.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=6973967639E0C136D467E4C180D758A0C15005CE7600AB5D36DB0B557252FDAE)

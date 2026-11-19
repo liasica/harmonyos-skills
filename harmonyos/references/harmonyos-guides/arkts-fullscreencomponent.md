@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-fullscr
 title: 全屏启动元服务 (FullScreenLaunchComponent)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 嵌入式组件 > 全屏启动元服务 (FullScreenLaunchComponent)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:08+08:00
+scraped_at: 2026-11-19T09:47:45+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1dcf8c2666f750983c744ef55334b6a1b1081e23ec0a102e3874a46bc3cf0d2b
+content_hash: sha256:5b1db4322d1bcb4694150d0d69eeebc3054b0b9f4eb0bdf64bc5f8d06df718e3
 ---
 
 FullScreenLaunchComponent允许开发者以全屏方式拉起元服务，使得应用能够提供更友好的用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/1I5Rf0QhQlKj9UXCdSsBzg/zh-cn_image_0000002817506423.png?HW-CC-KV=V1&HW-CC-Date=20261114T004708Z&HW-CC-Expire=31536000000&HW-CC-Sign=1728A243D0325739C73DCB700BADBE0323567DABBA3395E13A3BF7EF0D74E445)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/YkwId-5tQMqjDS_iGt5orQ/zh-cn_image_0000002820525273.png?HW-CC-KV=V1&HW-CC-Date=20261119T014655Z&HW-CC-Expire=31536000000&HW-CC-Sign=A322466735174F03A25B3ADBFE60946A83902171C13BF9A49DBE9D21188ACF62)
 
 ## 基本概念
 
@@ -27,7 +27,7 @@ FullScreenLaunchComponent提供的一种全屏启动元服务的能力。需要�
 
 跳出式运行元服务是指，非组件化的方式拉起EmbeddableUIAbility，交互体验接近独立窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/OoZhQoe5TiKjA1mGlOPBLQ/zh-cn_image_0000002788306994.png?HW-CC-KV=V1&HW-CC-Date=20261114T004708Z&HW-CC-Expire=31536000000&HW-CC-Sign=0367C506EE808C8C52A1C532296B95D669847FF7D5A1FA5CFB09E535D6AB6C64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/QyNs64-WRWO9F5ONWAdKfg/zh-cn_image_0000002820405273.png?HW-CC-KV=V1&HW-CC-Date=20261119T014655Z&HW-CC-Expire=31536000000&HW-CC-Sign=13280F3FF9B8ACB12B7CFE37402F2570B3221D6FD6FC2F373C13C99061355E2A)
 
 ## 能力范围
 

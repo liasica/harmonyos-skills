@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.batteryInfo (电量信息)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.batteryInfo (电量信息)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:01+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5c3b0daa0cb6386575128aaf4ffc9eec823dbb27a5ee51a2e64642b2c8c90f84
+scraped_at: 2026-11-19T09:52:50+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:b58e890783456a178a55815604d5f58c21bd1f0ef8c83207be9b3063e5f32b7e
 ---
 
 该模块主要提供电池状态和充放电状态的查询接口。
@@ -35,7 +35,7 @@ import {batteryInfo} from '@kit.BasicServicesKit';
 | voltage | number | 是 | 表示当前设备电池的电压，单位微伏。 |
 | technology | string | 是 | 表示当前设备电池的技术型号。 |
 | batteryTemperature | number | 是 | 表示当前设备电池的温度，单位0.1摄氏度。 |
-| isBatteryPresent7+ | boolean | 是 | 表示当前设备是否支持电池或者电池是否在位。true表示支持电池或电池在位，false表示不支持电池或电池不在位，默认为false。 |
+| isBatteryPresent7+ | boolean | 是 | 表示当前设备是否支持电池或者电池是否在位。true表示支持电池或电池在位，false表示不支持电池或电池不在位，默认为true。 |
 | batteryCapacityLevel9+ | [BatteryCapacityLevel](js-apis-battery-info.md#batterycapacitylevel9) | 是 | 表示当前设备电池电量的等级。 |
 | nowCurrent12+ | number | 是 | 表示当前设备电池的电流，单位毫安。 |
 

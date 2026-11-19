@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-si
 title: 使用SM2密钥对签名验签(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > 使用SM2密钥对签名验签(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:34+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:84a667366d0a82ecb2e7d94dcb795bff6101e1cd484ac10dc31210314327e75d
+scraped_at: 2026-11-19T09:48:04+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:178824002be49ca9df9e9bc38d95bf038be8a3a715a3803f9621cf5c98045640
 ---
 
 对应的算法规格请查看[签名验签算法规格：SM2](crypto-sign-sig-verify-overview.md#sm2)。
@@ -25,69 +25,71 @@ target_link_libraries(entry PUBLIC libohcrypto.so)
 5. 调用[OH\_CryptoSign\_Destroy](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_destroy)释放内存。
 
 ```
-#include "CryptoArchitectureKit/crypto_common.h"
-#include "CryptoArchitectureKit/crypto_asym_key.h"
-#include "CryptoArchitectureKit/crypto_signature.h"
+#include "signing_signature_verification.h"
 
-static OH_Crypto_ErrCode doSm2Test() {
-   OH_CryptoAsymKeyGenerator *keyCtx = nullptr;
-   OH_CryptoKeyPair *keyPair = nullptr;
-   OH_CryptoSign *sign = nullptr;
+static const uint8_t g_plainText[] = {
+    0x96, 0x46, 0x2e, 0xde, 0x3f, 0x47, 0xbf, 0xd6, 0x87, 0x48, 0x36, 0x1d, 0x75, 0x35, 0xbd, 0xbc,
+    0x6b, 0x06, 0xe8, 0xb3, 0x68, 0x91, 0x53, 0xce, 0x76, 0x5d, 0x24, 0xda, 0xdc, 0xc4, 0x9f, 0x94,
+};
 
-   uint8_t plainText[] = {
-      0x96, 0x46, 0x2e, 0xde, 0x3f, 0x47, 0xbf, 0xd6, 0x87, 0x48, 0x36, 0x1d, 0x75, 0x35, 0xbd, 0xbc,
-      0x6b, 0x06, 0xe8, 0xb3, 0x68, 0x91, 0x53, 0xce, 0x76, 0x5d, 0x24, 0xda, 0xdc, 0xc4, 0x9f, 0x94,
-   };
-   Crypto_DataBlob msgBlob = {
-      .data = reinterpret_cast<uint8_t *>(plainText),
-      .len = sizeof(plainText)};
+static void CleanupSm2SignResources(OH_CryptoAsymKeyGenerator *keyCtx,
+    OH_CryptoKeyPair *keyPair, OH_CryptoSign *sign)
+{
+    if (sign != nullptr) {
+        OH_CryptoSign_Destroy(sign);
+    }
+    if (keyPair != nullptr) {
+        OH_CryptoKeyPair_Destroy(keyPair);
+    }
+    if (keyCtx != nullptr) {
+        OH_CryptoAsymKeyGenerator_Destroy(keyCtx);
+    }
+}
 
-   OH_Crypto_ErrCode ret = OH_CryptoAsymKeyGenerator_Create((const char *)"SM2_256", &keyCtx);
-   if (ret != CRYPTO_SUCCESS) {
-      return ret;
-   }
-   ret = OH_CryptoAsymKeyGenerator_Generate(keyCtx, &keyPair);
-   if (ret != CRYPTO_SUCCESS) {
-      OH_CryptoAsymKeyGenerator_Destroy(keyCtx);
-      return ret;
-   }
+OH_Crypto_ErrCode DoTestSm2Sign()
+{
+    OH_CryptoAsymKeyGenerator *keyCtx = nullptr;
+    OH_CryptoKeyPair *keyPair = nullptr;
+    OH_CryptoSign *sign = nullptr;
+    Crypto_DataBlob msgBlob = {.data = const_cast<uint8_t *>(g_plainText), .len = sizeof(g_plainText)};
 
-   OH_CryptoPrivKey *privKey = OH_CryptoKeyPair_GetPrivKey(keyPair);
-   ret = OH_CryptoSign_Create((const char *)"SM2_256|SM3", &sign);
-   if (ret != CRYPTO_SUCCESS) {
-      OH_CryptoAsymKeyGenerator_Destroy(keyCtx);
-      OH_CryptoKeyPair_Destroy(keyPair);
-      return ret;
-   }
-   ret = OH_CryptoSign_Init(sign, privKey);
-   if (ret != CRYPTO_SUCCESS) {
-      OH_CryptoSign_Destroy(sign);
-      OH_CryptoAsymKeyGenerator_Destroy(keyCtx);
-      OH_CryptoKeyPair_Destroy(keyPair);
-      return ret;
-   }
+    OH_Crypto_ErrCode ret = OH_CryptoAsymKeyGenerator_Create((const char *)"SM2_256", &keyCtx);
+    if (ret != CRYPTO_SUCCESS) {
+        return ret;
+    }
+    ret = OH_CryptoAsymKeyGenerator_Generate(keyCtx, &keyPair);
+    if (ret != CRYPTO_SUCCESS) {
+        CleanupSm2SignResources(keyCtx, keyPair, sign);
+        return ret;
+    }
 
-   ret = OH_CryptoSign_Update(sign, &msgBlob);
-   if (ret != CRYPTO_SUCCESS) {
-      OH_CryptoSign_Destroy(sign);
-      OH_CryptoAsymKeyGenerator_Destroy(keyCtx);
-      OH_CryptoKeyPair_Destroy(keyPair);
-      return ret;
-   }
+    OH_CryptoPrivKey *privKey = OH_CryptoKeyPair_GetPrivKey(keyPair);
+    ret = OH_CryptoSign_Create((const char *)"SM2_256|SM3", &sign);
+    if (ret != CRYPTO_SUCCESS) {
+        CleanupSm2SignResources(keyCtx, keyPair, sign);
+        return ret;
+    }
+    ret = OH_CryptoSign_Init(sign, privKey);
+    if (ret != CRYPTO_SUCCESS) {
+        CleanupSm2SignResources(keyCtx, keyPair, sign);
+        return ret;
+    }
 
-   Crypto_DataBlob signBlob = {.data = nullptr, .len = 0};
-   ret = OH_CryptoSign_Final(sign, nullptr, &signBlob);
-   if (ret != CRYPTO_SUCCESS) {
-      OH_CryptoSign_Destroy(sign);
-      OH_CryptoAsymKeyGenerator_Destroy(keyCtx);
-      OH_CryptoKeyPair_Destroy(keyPair);
-      return ret;
-   }
-   OH_CryptoSign_Destroy(sign);
-   OH_CryptoAsymKeyGenerator_Destroy(keyCtx);
-   OH_CryptoKeyPair_Destroy(keyPair);
-   OH_Crypto_FreeDataBlob(&signBlob);
-   return CRYPTO_SUCCESS;
+    ret = OH_CryptoSign_Update(sign, &msgBlob);
+    if (ret != CRYPTO_SUCCESS) {
+        CleanupSm2SignResources(keyCtx, keyPair, sign);
+        return ret;
+    }
+
+    Crypto_DataBlob signBlob = {.data = nullptr, .len = 0};
+    ret = OH_CryptoSign_Final(sign, nullptr, &signBlob);
+    if (ret != CRYPTO_SUCCESS) {
+        CleanupSm2SignResources(keyCtx, keyPair, sign);
+        return ret;
+    }
+    CleanupSm2SignResources(keyCtx, keyPair, sign);
+    OH_Crypto_FreeDataBlob(&signBlob);
+    return CRYPTO_SUCCESS;
 }
 ```
 

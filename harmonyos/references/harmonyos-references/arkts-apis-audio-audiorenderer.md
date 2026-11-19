@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioRenderer)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioRenderer)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:afda854f174abbf377e062c22168799f20c853e229a6985f5a5f524f326473a2
+scraped_at: 2026-11-19T09:53:25+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:bc03939fd40c873c935362f5bdeb9448b0cd4bb5a1638264fc7b43fb0e0c6d69
 ---
 
 提供音频渲染的相关接口。
@@ -1538,16 +1538,16 @@ audioRenderer.getCurrentOutputDevices((err: BusinessError, deviceInfo: audio.Aud
   if (err) {
     console.error(`getCurrentOutputDevices Fail: ${err}`);
   } else {
-    for (let i = 0; i < deviceInfo.length; i++) {
-      console.info(`DeviceInfo id: ${deviceInfo[i].id}`);
-      console.info(`DeviceInfo type: ${deviceInfo[i].deviceType}`);
-      console.info(`DeviceInfo role: ${deviceInfo[i].deviceRole}`);
-      console.info(`DeviceInfo name: ${deviceInfo[i].name}`);
-      console.info(`DeviceInfo address: ${deviceInfo[i].address}`);
-      console.info(`DeviceInfo samplerate: ${deviceInfo[i].sampleRates[0]}`);
-      console.info(`DeviceInfo channelcount: ${deviceInfo[i].channelCounts[0]}`);
-      console.info(`DeviceInfo channelmask: ${deviceInfo[i].channelMasks[0]}`);
-    }
+    deviceInfo.forEach((device) => {
+    console.info(`DeviceInfo id: ${device.id}`);
+    console.info(`DeviceInfo type: ${device.deviceType}`);
+    console.info(`DeviceInfo role: ${device.deviceRole}`);
+    console.info(`DeviceInfo name: ${device.name}`);
+    console.info(`DeviceInfo address: ${device.address}`);
+    console.info(`DeviceInfo samplerate: ${device.sampleRates[0]}`);
+    console.info(`DeviceInfo channelcount: ${device.channelCounts[0]}`);
+    console.info(`DeviceInfo channelmask: ${device.channelMasks[0]}`);
+  });
   }
 });
 ```
@@ -1572,16 +1572,16 @@ getCurrentOutputDevices(): Promise<AudioDeviceDescriptors>
 import { BusinessError } from '@kit.BasicServicesKit';
 
 audioRenderer.getCurrentOutputDevices().then((deviceInfo: audio.AudioDeviceDescriptors) => {
-  for (let i = 0; i < deviceInfo.length; i++) {
-    console.info(`DeviceInfo id: ${deviceInfo[i].id}`);
-    console.info(`DeviceInfo type: ${deviceInfo[i].deviceType}`);
-    console.info(`DeviceInfo role: ${deviceInfo[i].deviceRole}`);
-    console.info(`DeviceInfo name: ${deviceInfo[i].name}`);
-    console.info(`DeviceInfo address: ${deviceInfo[i].address}`);
-    console.info(`DeviceInfo samplerate: ${deviceInfo[i].sampleRates[0]}`);
-    console.info(`DeviceInfo channelcount: ${deviceInfo[i].channelCounts[0]}`);
-    console.info(`DeviceInfo channelmask: ${deviceInfo[i].channelMasks[0]}`);
-  }
+  deviceInfo.forEach((device) => {
+    console.info(`DeviceInfo id: ${device.id}`);
+    console.info(`DeviceInfo type: ${device.deviceType}`);
+    console.info(`DeviceInfo role: ${device.deviceRole}`);
+    console.info(`DeviceInfo name: ${device.name}`);
+    console.info(`DeviceInfo address: ${device.address}`);
+    console.info(`DeviceInfo samplerate: ${device.sampleRates[0]}`);
+    console.info(`DeviceInfo channelcount: ${device.channelCounts[0]}`);
+    console.info(`DeviceInfo channelmask: ${device.channelMasks[0]}`);
+  });
 }).catch((err: BusinessError) => {
   console.error(`Get current output devices Fail: ${err}`);
 });
@@ -1608,16 +1608,16 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
   let deviceInfo: audio.AudioDeviceDescriptors = audioRenderer.getCurrentOutputDevicesSync();
-  for (let i = 0; i < deviceInfo.length; i++) {
-    console.info(`DeviceInfo id: ${deviceInfo[i].id}`);
-    console.info(`DeviceInfo type: ${deviceInfo[i].deviceType}`);
-    console.info(`DeviceInfo role: ${deviceInfo[i].deviceRole}`);
-    console.info(`DeviceInfo name: ${deviceInfo[i].name}`);
-    console.info(`DeviceInfo address: ${deviceInfo[i].address}`);
-    console.info(`DeviceInfo samplerate: ${deviceInfo[i].sampleRates[0]}`);
-    console.info(`DeviceInfo channelcount: ${deviceInfo[i].channelCounts[0]}`);
-    console.info(`DeviceInfo channelmask: ${deviceInfo[i].channelMasks[0]}`);
-  }
+  deviceInfo.forEach((device) => {
+    console.info(`DeviceInfo id: ${device.id}`);
+    console.info(`DeviceInfo type: ${device.deviceType}`);
+    console.info(`DeviceInfo role: ${device.deviceRole}`);
+    console.info(`DeviceInfo name: ${device.name}`);
+    console.info(`DeviceInfo address: ${device.address}`);
+    console.info(`DeviceInfo samplerate: ${device.sampleRates[0]}`);
+    console.info(`DeviceInfo channelcount: ${device.channelCounts[0]}`);
+    console.info(`DeviceInfo channelmask: ${device.channelMasks[0]}`);
+  });
 } catch (err) {
   let error = err as BusinessError;
   console.error(`Get current output devices Fail: ${error}`);

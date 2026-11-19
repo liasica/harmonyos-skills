@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: div
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > div
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:35+08:00
+scraped_at: 2026-11-19T09:51:25+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:90708ba9ee61829ac1234cfab85cd776d1f262c4f888ee59d82496dfac59b1ff
+content_hash: sha256:8478d50366c259ba7b227198b522cc67fa3d6677c12a8095d2118d81dce080dd
 ---
 
 基础容器，用作页面结构的根节点或将内容进行分组。
@@ -93,7 +93,7 @@ content_hash: sha256:90708ba9ee61829ac1234cfab85cd776d1f262c4f888ee59d82496dfac5
 
    **2\*4卡片**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/UVOOsnicSeqnR8P5cTplng/zh-cn_image_0000002817509149.png?HW-CC-KV=V1&HW-CC-Date=20261114T005035Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A2A8B52DB69E93363195FB875AF89B7D1FE0D28558511035F06F7676A0130A4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/Z82N-DmURuaHpdyzESw08Q/zh-cn_image_0000002820408001.png?HW-CC-KV=V1&HW-CC-Date=20261119T015030Z&HW-CC-Expire=31536000000&HW-CC-Sign=48D76BA3F73D663E3A00C46920901B00338BD04C7102E407AAF29915926B9B5D)
 2. Flex Wrap样式
 
    ```html
@@ -142,4 +142,4 @@ content_hash: sha256:90708ba9ee61829ac1234cfab85cd776d1f262c4f888ee59d82496dfac5
 
    **4\*4卡片**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/54Dly-1mRT-R9cieT-dLJw/zh-cn_image_0000002788309718.png?HW-CC-KV=V1&HW-CC-Date=20261114T005035Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCDA1F752A7F9D29415ADD86D3B8041224BDECA4D830342EA26FE48293D3BA24)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/DSImbRf9SS-enb7I8KpOgg/zh-cn_image_0000002791728020.png?HW-CC-KV=V1&HW-CC-Date=20261119T015030Z&HW-CC-Expire=31536000000&HW-CC-Sign=98F1DA8F6DA0E0F0C2B276ACBD4B4D41CC336898F1573BB3CE16917231247BDE)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-mak
 title: makeObserved接口：将非观察数据变为可观察数据
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口 > makeObserved接口：将非观察数据变为可观察数据
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:00+08:00
+scraped_at: 2026-11-19T09:47:38+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:9f92759d64bd46b3a5b3add30888bd30521eda210175a4e7b732f2134f0c9725
+content_hash: sha256:a88e25f23d0e3564caf1e577cfcbfa120fac67ebe09c3bb41dd28046a49147c9
 ---
 
 为了将普通不可观察数据变为可观察数据，开发者可以使用[makeObserved接口](../harmonyos-references/js-apis-statemanagement.md#makeobserved)。
@@ -110,7 +110,7 @@ makeObserved可以在@Trace无法标记的情况下使用。在阅读本文档�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/uG7_rm2BRVaKOC2Zd9DNYA/zh-cn_image_0000002817425763.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E3A693AC30C919DC8DD120B781EA43B0A969587848272C48EBBDC372B2CC16C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Z1tj-JxoRNW8vHqvOsR95A/zh-cn_image_0000002791724700.png?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EEF120B4A57E218307604F0D044993D2AD4DECE929DFB08A9D54F6C2A4C8BEF)
 
 ### makeObserved仅对入参对象进行深度观察
 
@@ -158,7 +158,7 @@ struct Page2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/d82gk7pySeapwkIOLQTW-w/zh-cn_image_0000002788466344.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=2825F9D25E5B3CE364DA40C5308261788C52DD848D5AA59629707F01229982A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/sIDLN0OOQoaZgix-LKrD-g/zh-cn_image_0000002791564728.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=F901FA21FB17E7F6D828B26E3D730F32B0963CD8B9E6937089D35C3F1FDBCE6B)
 
 ## 支持类型和观察变化
 
@@ -269,7 +269,7 @@ struct Page3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/xixqP91EQJuYz_z1wXM1CQ/zh-cn_image_0000002817505831.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AD86236BB54B22400B71A0D41323BEE33FE91AEAA8047968079C333B935AE74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/ui6888ZqR5iON3SsoBcB9g/zh-cn_image_0000002820524681.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=56BF665D498C0392FD3EF71D21F3F167019A94C41AF57A4CBC9A4FC700217574)
 
 需要注意：数据的构建和处理可以在子线程中完成，但有观察能力的数据不能传给子线程，只有在主线程里才可以操作可观察的数据。所以上述例子中只是将this.send的属性name传给子线程操作。
 
@@ -439,7 +439,7 @@ struct Page4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/dQWWGkNWQiqWx88X-0aEOw/zh-cn_image_0000002788306402.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9B2144EEECC0FB8A2D3703F48DF265EE9991DD753E819CAC88B971999CEFC4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/EcRnfWFBTUCOAL-GzgbxiQ/zh-cn_image_0000002820404679.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED933D2A6173E16E51507BCED2231AABB8087FEB1C65AE98B17E46991E386DB0)
 
 **collections.Map**
 
@@ -508,7 +508,7 @@ struct Page5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/LzliGeTqQtGXvUnWLzttmg/zh-cn_image_0000002817425765.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=98176ECBD8B1BEA04C10FD70DC4899EEC4D6BE1336CF1E88A231EFAD1ACF7F60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/HDN1hMKQT6yX4WE0eBTSMA/zh-cn_image_0000002791724702.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=8764721A8AFF694992120300B5642EC739548D9A86AC9E0AB7826008B1CB4CB4)
 
 **collections.Set**
 
@@ -575,7 +575,7 @@ struct Page6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/YB1adu16SXWq0sUmI7AodA/zh-cn_image_0000002788466346.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=52C61AE30C2C6D34FC085605E1D8203C84118415F4F2EEBBD7B7715CA8852FAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/-00Fd1RASSynSIlreRqo5w/zh-cn_image_0000002791564730.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=88A8359800F7AE369A4CAEFDC5ECEB67EFDF376977B6A600DF47F101F26221A9)
 
 ### makeObserved的入参为JSON.parse的返回值
 
@@ -628,7 +628,7 @@ struct Page7 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/GvohjNuYQxWpIDKw9JjFyA/zh-cn_image_0000002817505833.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E541F13119923171F5B4EC39581E53D8E958A3DFF73F34EBA8F13606D15D47B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/HlHfXO9gT8SocftQNCVy2A/zh-cn_image_0000002820524683.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B66C896DEEFEAC5F4AE88AF3228C31A254C4ED67E16F933A6D9261B2B4342DA)
 
 ### makeObserved和V2装饰器配合使用
 
@@ -716,7 +716,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/2IYybCK-QOqcjM5jRtYvQg/zh-cn_image_0000002788306404.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF4AD1A1706AA8E9469A091957B908C35DDC32D3A7BC5B8DC6278B35DBE0FF91)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/dihXpkOuTwWCY_YT3-lgKA/zh-cn_image_0000002820404681.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=67C46219599E07004055BE8C94A798FAD44FF1022B95CA353282CCE435C0606F)
 
 ### makeObserved在@Component内使用
 
@@ -754,7 +754,7 @@ struct Page9 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/wZKVeQfWTBGXcsdVwb-6xw/zh-cn_image_0000002817425767.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=B126CC3709098C16999A162648BE3F1B3CC774360C8485425A271308D358F878)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VjmySKMMSsCpC5Bu4C308g/zh-cn_image_0000002791724704.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=8972190EED2019A46DA61C6DA14FF6362FC333460656FCFFF4E7D8941EA0EC24)
 
 ## 常见问题
 
@@ -806,4 +806,4 @@ struct Page10 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/okNi4RM4R-e6HYNTsUBrqg/zh-cn_image_0000002788466348.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6ED9745CA4F0B957B24513EC347C995440B607FD012AD28A9956FD6EF4DB2E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/JqM2yIEQTT6Fi1gknlHxtQ/zh-cn_image_0000002791564732.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCD712E66AF61C8213BFCE6845FC277435AFCC5063A15E93E5188971C8F72E20)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: hdsDrawable (图标处理)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > hdsDrawable (图标处理)
 category: harmonyos-references
-scraped_at: 2026-11-14T08:51:17+08:00
+scraped_at: 2026-11-19T09:52:10+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:8b20f51da77d49b6614f317801603e342ea9d82d6402506a80d24a7cb7f7a1a7
+content_hash: sha256:f6fce6c2074acfdb470be40816417cd3eb4ed31be34bfa9f39c5d09653e9e320
 ---
 
 本模块提供图标处理能力，包括对前后景合成、剪切、缩放、描边处理，支持分层图标和单层图标处理。
@@ -91,7 +91,7 @@ try {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/pV9JAmo0TDuqgAZ13DRRbg/zh-cn_image_0000002817429173.png?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC9A741AA17EFD884A67E96DF3FCD687D2C1095740D7B17069F57702453D52C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/pA09o2zHS3OpuFpRuZ9rqA/zh-cn_image_0000002791568140.png?HW-CC-KV=V1&HW-CC-Date=20261119T015209Z&HW-CC-Expire=31536000000&HW-CC-Sign=8729B90FCC6239C3ADBF948FA9290B73CB33B1EE1412FB84735A9B4DC8920708)
 
 ## hdsDrawable.getHdsLayeredIconAsync
 
@@ -156,7 +156,7 @@ hdsDrawable.getHdsLayeredIconAsync(bundleName, layeredDrawableDescriptor, 48, tr
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/6NzyWbTOQwmXkmA-K6rxQQ/zh-cn_image_0000002817429173.png?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=520A7FFD2CAFD39B6306CE6188465D245D50589F2AE737385149D298FAB5973B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/MhwizPTlRg2KM0rVy-yrpQ/zh-cn_image_0000002791568140.png?HW-CC-KV=V1&HW-CC-Date=20261119T015209Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF72593D98301B337B1B7A38EFBB198B347EF119239D306FFDA88CC15E3776C4)
 
 ## hdsDrawable.getHdsIcon
 
@@ -228,7 +228,7 @@ try {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/oZ3cpn7ORwmkSoMIMM8LcQ/zh-cn_image_0000002788469754.png?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=95974F60C71111634A033C775FE9C7E839E2498D309F10F544C62BB46486F7DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/EHpyTFMITpSyDftTzAduJQ/zh-cn_image_0000002820528093.png?HW-CC-KV=V1&HW-CC-Date=20261119T015209Z&HW-CC-Expire=31536000000&HW-CC-Sign=A67BCAB98A95D83014AB8C3429B3EAA4E92F49377784A309A54422E83DAFD245)
 
 ## hdsDrawable.getHdsIconAsync
 
@@ -303,7 +303,7 @@ try {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/8VQ8iA0KReSDDyRwaXGRTw/zh-cn_image_0000002788469754.png?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=92387EC89EE5074CEF021FAFB68C4C849ACE0347640DF008CFA8CBD885467561)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/abqTueAWSEeI-hrLne64mw/zh-cn_image_0000002820528093.png?HW-CC-KV=V1&HW-CC-Date=20261119T015209Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0110376A33EF9523BAADA22BD7A7C5332220B8D24DBEE3230C388C945F35A47)
 
 ## hdsDrawable.getHdsLayeredIcons
 
@@ -386,7 +386,7 @@ try {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/beuh004eS_C6X58CEv9mwQ/zh-cn_image_0000002817429173.png?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BEFFF692816085B300ED23ED21DDD6300963630AA4CC6EA3BE173C1D9E4373A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/K-XgbkGGSTeQxWEoTr9Pww/zh-cn_image_0000002791568140.png?HW-CC-KV=V1&HW-CC-Date=20261119T015209Z&HW-CC-Expire=31536000000&HW-CC-Sign=28860CDEB35C9AF17080D17EE7A398B476468AD271A52129FB3325966FC226BC)
 
 ## hdsDrawable.getHdsIcons
 
@@ -473,7 +473,7 @@ try {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/4RStDMR3SkapR1MoS-2Upg/zh-cn_image_0000002788469754.png?HW-CC-KV=V1&HW-CC-Date=20261114T005117Z&HW-CC-Expire=31536000000&HW-CC-Sign=14AE7EB2BB6E5C7802423C87A2028E15D09BDACE10C89716FE5CF112B31F3FF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/8zIfdr-wT-qGMsaM8mWZGA/zh-cn_image_0000002820528093.png?HW-CC-KV=V1&HW-CC-Date=20261119T015209Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A934B8C219E3BDA3885117B3AC5848DD832CFE3423B2B4A39A01BE493B9EE5A)
 
 ## LayeredIcon
 

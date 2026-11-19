@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/getting-start
 title: 从Swift到ArkTS的迁移指导
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 面向其他语言的ArkTS迁移指导 > 从Swift到ArkTS的迁移指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:57+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:6c1cc8a5f1acad1f133f214abf0ea9f1e7a31da007780f18288f0be170a5a011
+scraped_at: 2026-11-19T09:47:25+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:e0ae9a1932beefbf84071110625a05ce2939dd637d9f4e10012160ba365dd70d
 ---
 
 对于熟悉Swift的开发者而言，ArkTS作为新的开发语言，带来了全新的开发体验与机遇。ArkTS在语法和编程范式上不仅继承了现代语言的特性，还针对生态进行了深度优化。理解Swift与ArkTS的差异和共性，能够帮助开发者快速上手应用开发，避开常见的编程误区。
@@ -130,8 +130,8 @@ ArkTS的类系统在语法层面与Swift相似，但在高阶特性上展现出�
 
 | 特性 | Swift实现方式 | ArkTS实现方式 | 说明 |
 | --- | --- | --- | --- |
-| 命名空间组织 | 嵌套结构/内部类 | namespace关键字或模块文件结构。 | 支持显式命名空间与模块化组织的混合模式。 |
-| 类继承机制 | 基于类的继承体系 | 基于原型链的继承机制。 | 语法相似但底层机制不同。 |
+| 命名空间组织 | 嵌套结构/内部类。 | namespace关键字或模块文件结构。 | 支持显式命名空间与模块化组织的混合模式。 |
+| 类继承机制 | 基于类的继承体系。 | 基于原型链的继承机制。 | 语法相似但底层机制不同。 |
 | 类成员可见性 | public/private/internal | public/private/protected | Swift使用internal控制模块内可见性，ArkTS使用protected控制类及子类可见性，并通过模块导出控制可见范围。 |
 
 **命名空间管理**

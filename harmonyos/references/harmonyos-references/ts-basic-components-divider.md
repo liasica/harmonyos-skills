@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Divider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 空白与分隔 > Divider
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:18+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d2e3578ec98acff66e3b075a353edb5711598fdd835809f9224262e683c8e876
+scraped_at: 2026-11-19T09:51:07+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:b6f55126c0af16132814d85f627a3d9dc749ca306d42a3ac33e1620d095a842a
 ---
 
 提供分割线组件，分割不同内容块/内容元素。
@@ -95,7 +95,7 @@ strokeWidth(value: number | string)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | 是 | 分割线宽度。  默认值：1px  非法值：按默认值处理。  单位：vp |
+| value | number | string | 是 | 分割线宽度。  默认值：1px  非法值：按默认值处理。  默认单位：vp |
 
 ### lineCap
 
@@ -195,7 +195,7 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/zNThdcjKQd6t9rLK_tzsdg/zh-cn_image_0000002788309204.png?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=781BDC354C604883CAFE1B830B8D77838BE90B4CD5B39B9929CD1E420DF5C8F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/NWnclk3LRq6IaKybe2A9MA/zh-cn_image_0000002791727506.png?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0AC0F6D7776C9DDB6FF71846A37AD086BA92D95968262687467D27C674AF7A5)
 
 ### 示例2（定义Divider的lineCap样式）
 
@@ -234,4 +234,4 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Bj1ciOGjQCuzg4oJffXi-A/zh-cn_image_0000002817428567.png?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=F149E89EBE27D0E89AB6F94BC8C7167F575A7CBCBE797A0D239646788EE8083A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/i42BYYewQTKiw-_pApeAcA/zh-cn_image_0000002791567534.png?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=E28C16C4FE83D47E7692B43AA118F9E5437FDC605CC93AED9BCFA93A07F8C568)

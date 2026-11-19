@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persiste
 title: 通过关系型数据库实现数据持久化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过关系型数据库实现数据持久化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:52+08:00
+scraped_at: 2026-11-19T09:47:29+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:da1fc553c0096a3cad69749d5549e991354b1cbc20bf631104b49c2327b46147
+content_hash: sha256:d7b243ea801253b4b0f9c100c3f9e38983f2ef47f77329fa4e18cd3120294d48
 ---
 
 ## 场景介绍
@@ -30,7 +30,7 @@ content_hash: sha256:da1fc553c0096a3cad69749d5549e991354b1cbc20bf631104b49c2327b
 
 **图1** 关系型数据库运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/-R3JpliBSdqcRJNpDBuMpA/zh-cn_image_0000002788466118.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004652Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BFF66B815F091350E8258FE544D4629B6C1DF599B64AB53925D5AE8EFE9699F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/DWdWN28MQ5uzDS4A_t-8rg/zh-cn_image_0000002791564502.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014729Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE62DDF3FD69B0F3B9B3919C2E660D8F6FA0A0D42D42B83C4ACAD60B4237D160)
 
 ## 约束限制
 

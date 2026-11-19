@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stationary-gu
 title: Stationary开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > Stationary开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:51+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:8747566141fa233865707772f1ab4842e812f4953631263674c7f73abf77f150
+scraped_at: 2026-11-19T09:48:22+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:c4c52285fcff156a831404d82575ae7d7ca00ce0da7c98ef9b16a479518dffd0
 ---
 
 ## 场景介绍
@@ -48,7 +48,7 @@ content_hash: sha256:8747566141fa233865707772f1ab4842e812f4953631263674c7f73abf7
 
 设备需要支持加速度传感器。
 
-目前只提供了算法框架，API接口测试框架的调用返回结果为:data={"type":3,"value":-1};
+目前只提供了算法框架，API接口测试框架的调用返回结果为：data={"type":3,"value":-1};
 
 如需相对静止和绝对静止能力，则具体算法需要开发者自己在device\_status/libs/src/algorithm实现，可参考案例如下：
 

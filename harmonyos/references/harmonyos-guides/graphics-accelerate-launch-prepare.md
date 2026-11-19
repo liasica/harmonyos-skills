@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 开发准备
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏启动加速服务 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:07+08:00
+scraped_at: 2026-11-19T09:48:48+08:00
 doc_updated_at: 2026-06-16
-content_hash: sha256:4517aed69de12e558c2f4d0b9601aab55df9c5f6bfbe68c7e2c5cccd05984ff4
+content_hash: sha256:7a2cb3ebe97d9bb9d522b34497ebabdfc4fb89e97cf63a30ca50d6b269cf48fc
 ---
 
 请先参考[应用开发准备](application-dev-overview.md)完成基本准备工作，再继续以下开发准备项。
@@ -26,15 +26,15 @@ content_hash: sha256:4517aed69de12e558c2f4d0b9601aab55df9c5f6bfbe68c7e2c5cccd059
 3. 进入“项目设置 > 开放能力管理”页面。
 4. 点击“游戏启动加速服务”对应的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/Vrqc9udbR8u1jx0cCQoPWQ/zh-cn_image_0000002788467786.png?HW-CC-KV=V1&HW-CC-Date=20261114T004625Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8BDF4CB3C028E3DC07B54F87FBB73F36DE8233997D249283231D5E37B082790)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/5-daB97TS1-141S_ICcsDw/zh-cn_image_0000002791566172.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=423E39CCB022F634C34449A7F1F224BD07B6CD98A31300A0650B017780B01B27)
 5. 参考“申请原因”中的模板，提供申请必需的相关信息，包括应用介绍、使用场景、申请用途，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/m9MdQ-PORNu0ZCCAAxtpgQ/zh-cn_image_0000002817507275.png?HW-CC-KV=V1&HW-CC-Date=20261114T004625Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B585FD2128BF8432B3C1AD49FB9B7F0C663B21597FBFAF280051F8FE98D0595)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/f2GAdMMuRM6QSJ5t3fQRtQ/zh-cn_image_0000002820526125.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F265DD64A763B39545CD2784D2636A2416095216C5C59C63952971C156EC844)
 
    返回“开放能力管理”页面，申请状态显示“审核中”，1~3个工作日内反馈申请结果，请留意互动中心的“服务开通申请”信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/c3FUNAfVQoST4ty7iWzCEw/zh-cn_image_0000002788307844.png?HW-CC-KV=V1&HW-CC-Date=20261114T004625Z&HW-CC-Expire=31536000000&HW-CC-Sign=6840315D7E8259D4A0C59ED8BD210B9BCB98E2EA1FC4CD5C831E7F1B438CBA6A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/MjTIiXLATq62RvuLi8Okcg/zh-cn_image_0000002820406125.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=B27A83C29B07FFDF43428347A993B0D2D87877B846636D5530D1666918A913DD)
 
    申请通过后，互动中心会发送通知给您，同时申请状态显示“已通过”，至此，应用已成功开启游戏启动加速服务开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/lh3bdXoLQ8iB1WVg8p53lA/zh-cn_image_0000002817427207.png?HW-CC-KV=V1&HW-CC-Date=20261114T004625Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2280B1FF864A287BCE6E8E1ACF6E639DC42CEC8425A3E7B6BFEC55B32C2E2FC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/LfJkEYvnSO-MjP0Z0AXh5g/zh-cn_image_0000002791726146.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=586FF6298FD544897655470DE9741BB58AC617DFD2AC7DAA2727E512E04A7AB4)

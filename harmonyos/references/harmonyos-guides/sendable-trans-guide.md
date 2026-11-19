@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-tran
 title: Sendable对象改造实践
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > Sendable对象改造实践
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:04+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:683f7c964bfdf4cbd30f03093212aa0226d0e42ee88237c63c7d7f09f775aa50
+scraped_at: 2026-11-19T09:47:33+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:fbf325a947c784e721f53a553981657184ed4b50d8f4fdb3590d45b2ee8a1646
 ---
 
 ## 简介
@@ -270,11 +270,11 @@ content_hash: sha256:683f7c964bfdf4cbd30f03093212aa0226d0e42ee88237c63c7d7f09f77
      return obj;
    }
 
-   function testencode(obj: test_pb) {
+   function testEncode(obj: test_pb) {
      return test_pb.encode(obj);
    }
 
-   function testdecode(data: ArrayBuffer | collections.ArrayBuffer) {
+   function testDecode(data: ArrayBuffer | collections.ArrayBuffer) {
      let obj = test_pb.decode(data);
      console.info(`expect value_int32 ${obj?.value_int32} = 1`);
      console.info(`expect value_double ${obj?.value_double} = 12`);
@@ -285,9 +285,9 @@ content_hash: sha256:683f7c964bfdf4cbd30f03093212aa0226d0e42ee88237c63c7d7f09f77
 
    export function testProtobuf(): test_pb {
      let obj = testCreate();
-     let buf = testencode(obj);
+     let buf = testEncode(obj);
      if (buf) {
-       testdecode(buf);
+       testDecode(buf);
      }
      return obj;
    }

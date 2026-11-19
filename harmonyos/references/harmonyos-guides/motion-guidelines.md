@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/motion-guidel
 title: 获取用户动作开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 获取用户动作开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:51+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:c31cec8b70bcb1c7016875f59fffdc455bd18466d5bab5267c7f4619dc412d4c
+scraped_at: 2026-11-19T09:48:22+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:8ac7fb6ea5c2bfda3d0dba353b659a4220b2f266f8d02f514756a516c7358f5e
 ---
 
 ## 场景介绍
@@ -66,14 +66,14 @@ content_hash: sha256:c31cec8b70bcb1c7016875f59fffdc455bd18466d5bab5267c7f4619dc4
    import { motion } from '@kit.MultimodalAwarenessKit';
    import { BusinessError } from '@kit.BasicServicesKit';
    ```
-2. 定义回调函数接收操作手结果
+2. 定义回调函数接收操作手结果。
 
    ```ts
    let callback:Callback<motion.OperatingHandStatus> = (data:motion.OperatingHandStatus) => {
      console.info('callback succeeded' + data);
    };
    ```
-3. 订阅操作手感知
+3. 订阅操作手感知。
 
    ```typescript
    try {
@@ -86,7 +86,7 @@ content_hash: sha256:c31cec8b70bcb1c7016875f59fffdc455bd18466d5bab5267c7f4619dc4
      // ...
    }
    ```
-4. 取消订阅操作手感知
+4. 取消订阅操作手感知。
 
    ```typescript
    try {
@@ -99,7 +99,7 @@ content_hash: sha256:c31cec8b70bcb1c7016875f59fffdc455bd18466d5bab5267c7f4619dc4
      // ...
    }
    ```
-5. 获取最新操作手状态
+5. 获取最新操作手状态。
 
    ```typescript
    try {
@@ -156,14 +156,14 @@ content_hash: sha256:c31cec8b70bcb1c7016875f59fffdc455bd18466d5bab5267c7f4619dc4
    import { motion } from '@kit.MultimodalAwarenessKit';
    import { BusinessError } from '@kit.BasicServicesKit';
    ```
-2. 定义回调函数接收握持手结果
+2. 定义回调函数接收握持手结果。
 
    ```typescript
    let callback:Callback<motion.HoldingHandStatus> = (data:motion.HoldingHandStatus) => {
      console.info('callback succeeded' + data);
    };
    ```
-3. 订阅握持手感知
+3. 订阅握持手感知。
 
    ```typescript
    try {
@@ -176,7 +176,7 @@ content_hash: sha256:c31cec8b70bcb1c7016875f59fffdc455bd18466d5bab5267c7f4619dc4
      // ...
    }
    ```
-4. 取消订阅握持手感知
+4. 取消订阅握持手感知。
 
    ```typescript
    try {

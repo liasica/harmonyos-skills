@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Navigator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > Navigator
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:29+08:00
+scraped_at: 2026-11-19T09:51:18+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7a7705835d79998ee49e9503de5e71b50de3904a8944168a4341b9d1e2c8e2ff
+content_hash: sha256:c1957f89a84c6a66747b94b91acf54f96ddfcf9d53c95aecc3f3295ae765ba7a
 ---
 
 路由容器组件，提供路由跳转能力。
@@ -232,4 +232,4 @@ struct BackExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/hniwTGltQYaQNhDBPw3iHw/zh-cn_image_0000002788469402.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005028Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CA42363F96AC49AF0BE913E7B56A874D3645B8C477235A064B76D3BC61F9DA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/syUwD5ZnSIqz90VmVCbx2A/zh-cn_image_0000002820527741.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015118Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE9E7D6EED01305BF311F102F01BF02FCBAB477C051BB85F4C5FC3B1C2297E86)

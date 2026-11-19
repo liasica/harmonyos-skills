@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-and-ta
 title: Worker常驻线程通过TaskPool进行多任务并发处理
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > Worker常驻线程通过TaskPool进行多任务并发处理
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:04+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:99edca581f960bf303c5a13cf6d15d101e8ae29a1bec63535ba5bde15c81ab75
+scraped_at: 2026-11-19T09:47:33+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:24733b4f6d184c6f53ae56f5468d0795a51296ab7d97ee99db70c02f41e29734
 ---
 
 ArkTS应用开发过程中，可以选择TaskPool或Worker线程进行多任务并发处理，也可以两种并发能力都选择。
@@ -62,8 +62,7 @@ ArkTS应用开发过程中，可以选择TaskPool或Worker线程进行多任务�
 
    ```typescript
    // Worker.ets
-   import { MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
-   import { taskpool } from '@kit.ArkTS';
+   import { MessageEvents, ThreadWorkerGlobalScope, worker, taskpool } from '@kit.ArkTS';
 
    const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
    workerPort.onmessage = async (e: MessageEvents) => {

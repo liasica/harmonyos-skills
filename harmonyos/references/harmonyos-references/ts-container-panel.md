@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Panel
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > Panel
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:29+08:00
+scraped_at: 2026-11-19T09:51:19+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:7913f085578d07626302ca13d4c585eb51ba24516c1bc64cfb035426e93bec7a
+content_hash: sha256:38a5f52154a917f162626c1bd0f4b53087e6b3b3af9f2e46998ceab2b3619b22
 ---
 
 可滑动面板，提供一种轻量的内容展示窗口，方便在不同尺寸中切换。
@@ -385,4 +385,4 @@ struct PanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/dFIS0vZcRnqrO1wBwqARiA/zh-cn_image_0000002788309458.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFC8413BAEF496A0AB4FB79B77E9319ECB7982FE2C2EC6D13CC6D932E80ADD8E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/XWVXV8L2RzWXqICvB_U6-A/zh-cn_image_0000002791727760.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015023Z&HW-CC-Expire=31536000000&HW-CC-Sign=9936109F52B9C4D2CB5465137486E74CAA7CAAE66E3F53A4F5D1E516E918CB4C)

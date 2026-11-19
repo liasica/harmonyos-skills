@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (UIObserver)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (UIObserver)
 category: harmonyos-references
-scraped_at: 2026-11-14T08:49:57+08:00
+scraped_at: 2026-11-19T09:50:43+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:95d5b84986a043c3e375c6fefa3c0ea50fd1f5f13acf82324e900219ba6dcabb
+content_hash: sha256:f4f5036a7aa7296cbccad5ef3c0ceab96562c8ee1e6efa1f75cf0939f1b93260
 ---
 
 UIObserver提供UI组件行为变化的无感监听能力。无感监听是指开发者注册回调函数后，无需手动轮询或主动查询组件状态；当目标组件状态变化时，系统会自动触发回调并返回变化信息。UIObserver支持监听Navigation页面状态变化（NavDestination）、滚动事件、路由页面状态、屏幕像素密度变化、绘制与布局完成情况、点击事件、手势触发信息、文本变化及组件内容切换等UI行为，适用于页面生命周期监控、滚动事件处理和渲染性能优化等场景。
@@ -2258,7 +2258,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/VqEQC3oZT92wpDXLbiVWdA/zh-cn_image_0000002788468564.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004759Z&HW-CC-Expire=31536000000&HW-CC-Sign=F551267A9C6D2B388C86640A91CFFE46381C7A6C44731782EEBE728C615D300E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/B5rBtQK_QVm0o0UoyOc-BQ/zh-cn_image_0000002791566950.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=198D29A7DFF755FE54173DF003518C24430D5D5ECCD838D8CFC6CB5389E55AE5)
 
 ## off('nodeRenderState')20+
 
@@ -2479,7 +2479,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/M6AqNAaVQvOnvwsnfEE_lQ/zh-cn_image_0000002817508053.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004759Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A1FF9034A5993F3B4CFFDE37E68BB175DA59248FFB3261D4A8FB2B9D27E87E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/pnYudBzKR5-d119w849L4A/zh-cn_image_0000002820526903.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=911EF6A98D04CEB0C74F3C7B3AE429F2CC5EA42CB9145443300D7823245A315D)
 
 ## removeGlobalGestureListener20+
 

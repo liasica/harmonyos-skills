@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-hdr-re
 title: HDR Vivid相机录像(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > HDR Vivid相机录像(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:05+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:55f7b5338b6e542cdde72d8e6c21a089a1ba7a6ed390b99410fd4d8134da56d8
+scraped_at: 2026-11-19T09:48:37+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:0d566884a7477f78668bf1b6b4aa9d1fb4cb66a534e83d560361be8a473a115a
 ---
 
 HarmonyOS支持调用接口，录制HDR Vivid视频，可以拍出层次表现更细腻、光影细节更丰富的画面，提升画面质感，呈现更卓越的视觉效果。
@@ -18,7 +18,7 @@ HarmonyOS支持调用接口，录制HDR Vivid视频，可以拍出层次表现�
 
 1. 导入接口。
 
-   ```ts
+   ```typescript
    import { camera } from '@kit.CameraKit';
    import { colorSpaceManager } from '@kit.ArkGraphics2D';
    import { BusinessError } from '@kit.BasicServicesKit';
@@ -35,8 +35,8 @@ HarmonyOS支持调用接口，录制HDR Vivid视频，可以拍出层次表现�
 
    预览流与录像输出流的分辨率的宽高比要保持一致，如果设置XComponent组件中的Surface显示区域宽高比为1920:1080 = 16:9，则需要预览流中的分辨率的宽高比也为16:9，如分辨率选择640:360，或960:540，或1920:1080，以此类推。
 
-   ```ts
-   function getPreviewProfile(previewProfiles: Array<camera.Profile>, size: camera.Size): undefined | camera.Profile {
+   ```typescript
+   getPreviewProfile(previewProfiles: camera.Profile[], size: camera.Size): undefined | camera.Profile {
      let previewProfile: undefined | camera.Profile = previewProfiles.find((profile: camera.Profile) => {
        return profile.format === camera.CameraFormat.CAMERA_FORMAT_YCRCB_P010 &&
          profile.size.width === size.width && profile.size.height == size.height
@@ -44,7 +44,7 @@ HarmonyOS支持调用接口，录制HDR Vivid视频，可以拍出层次表现�
      return previewProfile;
    }
 
-   function getVideoProfile(videoProfiles: Array<camera.VideoProfile>, size: camera.Size): undefined | camera.VideoProfile {
+   getVideoProfile(videoProfiles: camera.VideoProfile[], size: camera.Size): undefined | camera.VideoProfile {
      let videoProfile: undefined | camera.VideoProfile = videoProfiles.find((profile: camera.VideoProfile) => {
        return profile.format === camera.CameraFormat.CAMERA_FORMAT_YCRCB_P010 &&
          profile.size.width === size.width && profile.size.height == size.height
@@ -56,13 +56,13 @@ HarmonyOS支持调用接口，录制HDR Vivid视频，可以拍出层次表现�
 
    HDR录像需要支持视频防抖。
 
-   ```ts
-   function isVideoStabilizationModeSupported(session: camera.VideoSession, mode: camera.VideoStabilizationMode): boolean {
+   ```typescript
+   isVideoStabilizationModeSupported(session: camera.VideoSession, mode: camera.VideoStabilizationMode): boolean {
      let isSupported: boolean = false;
      try {
        isSupported = session.isVideoStabilizationModeSupported(mode);
      } catch (error) {
-       // 失败返回错误码error.code并处理
+       // 失败返回错误码error.code并处理。
        let err = error as BusinessError;
        console.error(`The isVideoStabilizationModeSupported call failed. error code: ${err.code}`);
      }
@@ -71,8 +71,8 @@ HarmonyOS支持调用接口，录制HDR Vivid视频，可以拍出层次表现�
    ```
 4. 设置视频防抖。
 
-   ```ts
-   function setVideoStabilizationMode(session: camera.VideoSession): void {
+   ```typescript
+   setVideoStabilizationMode(session: camera.VideoSession): void {
      let mode: camera.VideoStabilizationMode = camera.VideoStabilizationMode.AUTO;
      // 查询是否支持视频防抖
      let isSupported: boolean = isVideoStabilizationModeSupported(session, mode);
@@ -95,8 +95,8 @@ HarmonyOS支持调用接口，录制HDR Vivid视频，可以拍出层次表现�
    ```
 5. 查询支持的色彩空间。
 
-   ```ts
-   function getSupportedColorSpaces(session: camera.VideoSession): Array<colorSpaceManager.ColorSpace> {
+   ```typescript
+   getSupportedColorSpaces(session: camera.VideoSession): Array<colorSpaceManager.ColorSpace> {
      let colorSpaces: Array<colorSpaceManager.ColorSpace> = [];
      try {
        colorSpaces = session.getSupportedColorSpaces();
@@ -111,8 +111,8 @@ HarmonyOS支持调用接口，录制HDR Vivid视频，可以拍出层次表现�
 
    如果是SDR录像色彩空间需要设置为BT709\_LIMIT，如果是HDR录像色彩空间需要设置为BT2020\_HLG\_LIMIT。具体参考[setColorSpace](../harmonyos-references/arkts-apis-camera-colormanagement.md#setcolorspace12)。建议在提交会话配置之前调用[setColorSpace](../harmonyos-references/arkts-apis-camera-colormanagement.md#setcolorspace12)。
 
-   ```ts
-   function setColorSpaceBeforeCommitConfig(session: camera.VideoSession, isHdr: boolean): void {
+   ```typescript
+   setColorSpaceBeforeCommitConfig(session: camera.VideoSession, isHdr: boolean): void {
      let colorSpace: colorSpaceManager.ColorSpace = isHdr? colorSpaceManager.ColorSpace.BT2020_HLG_LIMIT : colorSpaceManager.ColorSpace.BT709_LIMIT;
      let colorSpaces: Array<colorSpaceManager.ColorSpace> = session.getSupportedColorSpaces();
      let isSupportedColorSpaces = colorSpaces.indexOf(colorSpace) >= 0;
@@ -140,8 +140,8 @@ HarmonyOS支持调用接口，录制HDR Vivid视频，可以拍出层次表现�
 
    如需在提交会话配置后，设置视频防抖模式和色彩空间，为避免相机输出流配置异常，请先通过[setVideoStabilizationMode](../harmonyos-references/arkts-apis-camera-stabilization.md#setvideostabilizationmode11)方法4. 设置视频防抖后，再通过[setColorSpace](../harmonyos-references/arkts-apis-camera-colormanagement.md#setcolorspace12)方法完成6.设置色彩空间。
 
-   ```ts
-   async function cameraHdrRecordingCase(context: common.Context, surfaceId: string): Promise<void> {
+   ```typescript
+   async cameraHdrRecordingCase(context: common.Context, surfaceId: string): Promise<void> {
      // 创建CameraManager对象
      let cameraManager: camera.CameraManager = camera.getCameraManager(context);
      if (!cameraManager) {

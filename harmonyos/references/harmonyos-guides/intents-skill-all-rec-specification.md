@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 自定义意图相关信息定义规范
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 任务执行类场景方案（装饰器接入方式） > 自定义意图相关信息定义规范
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:44+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-19T09:49:21+08:00
+doc_updated_at: 2026-11-18
 content_hash: sha256:dbbc773361f0a578433620171d9396d1105c653fc697f5948ccefd79400a85c1
 ---
 

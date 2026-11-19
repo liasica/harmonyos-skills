@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-d
 title: 应用沙箱目录
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用沙箱目录
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:16+08:00
+scraped_at: 2026-11-19T09:47:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:326f540ad6d1dfdeaad15fcbf7c9122c5627c0d3d2a326776835fda945f48143
+content_hash: sha256:828fae5e83008e3cff7e8dc5bcb3c03614a41adbdc6119cfc672c3b1e4d4a1dc
 ---
 
 应用沙箱是一种以安全防护为目的的隔离机制，避免数据受到恶意路径穿越访问。在这种沙箱的保护机制下，应用可见的目录范围即为“应用沙箱目录”。
@@ -18,7 +18,7 @@ content_hash: sha256:326f540ad6d1dfdeaad15fcbf7c9122c5627c0d3d2a326776835fda945f
 
 **图1** 应用沙箱文件访问关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/VN1B4UG7RvKjwRiiuI9r-Q/zh-cn_image_0000002788467164.png?HW-CC-KV=V1&HW-CC-Date=20261114T004537Z&HW-CC-Expire=31536000000&HW-CC-Sign=065C9A61569842D8B2418C68401F761027EBDE98F8F3FC6FA1476C0AA5117B91)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/BP-vWPZ_S12r9LhJundQgw/zh-cn_image_0000002791565548.png?HW-CC-KV=V1&HW-CC-Date=20261119T014703Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFEF7004F29A34C84D6FF9231423BD4E61327E1A4B9A2691C7FC5941BDD1B891)
 
 ## 应用沙箱目录与应用沙箱路径
 
@@ -30,7 +30,7 @@ content_hash: sha256:326f540ad6d1dfdeaad15fcbf7c9122c5627c0d3d2a326776835fda945f
 
 **图2** 应用沙箱路径（不同权限与角色的进程下可见的文件路径不同）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/dAuJ83jsSsGuRqpUVrZP9Q/zh-cn_image_0000002817506653.png?HW-CC-KV=V1&HW-CC-Date=20261114T004537Z&HW-CC-Expire=31536000000&HW-CC-Sign=D279980C5E99C225475972BA2A04C417C7C81C47EFDF3786FC0CB08D7F715FBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/fviKdUOMRYqsfmQDy0IHXQ/zh-cn_image_0000002820525501.png?HW-CC-KV=V1&HW-CC-Date=20261119T014703Z&HW-CC-Expire=31536000000&HW-CC-Sign=B53EFA83554757DCD85FFE62B3D44EEED71858EC4D20C66EEE7976E4870E85D5)
 
 ## 应用文件目录与应用文件路径
 
@@ -42,7 +42,7 @@ content_hash: sha256:326f540ad6d1dfdeaad15fcbf7c9122c5627c0d3d2a326776835fda945f
 
 **图3** 应用文件目录结构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/n76eoYG1T-6L0289QK9vPw/zh-cn_image_0000002788307222.png?HW-CC-KV=V1&HW-CC-Date=20261114T004537Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B25E248FA841B74BFD20E9FC8C32711256ED74B6DECC9B4455453DC2F79786A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/UhzU2VYhSaWkwzsuXT6UKg/zh-cn_image_0000002820405501.png?HW-CC-KV=V1&HW-CC-Date=20261119T014703Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD0384781922DAECBB61D8399FBE4A378FAA460691E3F5BB03A8D8C111387CEF)
 
 **说明** 
 

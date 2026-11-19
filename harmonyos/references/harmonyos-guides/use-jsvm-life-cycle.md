@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-life
 title: 使用JSVM-API接口进行生命周期相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行生命周期相关开发
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:49+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:3a834c474d5abde511bd27082b7c9a0266471eb2614fbd7478ba579ff1b252f4
+scraped_at: 2026-11-19T09:49:26+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:dedd6a4a6c7a43362be89e74ac95d60ed6381fddb2990dfd6f0f1f44aa6048d9
 ---
 
 ## 简介
@@ -46,7 +46,7 @@ JSVM-API提供了一组功能，使开发人员能够在JSVM-API模块中创建�
 | OH\_JSVM\_DeleteReference | 释放由OH\_JSVM\_CreateReference创建的引用，确保对象在不再被使用时能够被正确地释放和回收，避免内存泄漏。 |
 | OH\_JSVM\_ReferenceRef | 增加由OH\_JSVM\_CreateReference创建的引用的引用计数，以确保对象在有引用时不会被提前释放。 |
 | OH\_JSVM\_ReferenceUnref | 减少引用计数，用于管理引用计数。 |
-| OH\_JSVM\_GetReferenceValue | 减少由OH\_JSVM\_CreateReference创建的引用的引用计数，以确保没有任何引用指向该对象时能正确地释放和回收。 |
+| OH\_JSVM\_GetReferenceValue | 获取由OH\_JSVM\_CreateReference创建的引用所关联的值。 |
 | OH\_JSVM\_AddFinalizer | 为对象添加JSVM\_Finalize回调，以便在JavaScript对象被垃圾回收时调用来释放原生对象。 |
 
 ## 使用示例

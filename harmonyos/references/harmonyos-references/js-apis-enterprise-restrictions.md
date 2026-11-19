@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.restrictions (限制类策略)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.restrictions (限制类策略)
 category: harmonyos-references
-scraped_at: 2026-11-14T08:52:12+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:ee87d36cfdbd8c4b8f2d41e44ebb93442cd56cbaf7c74c27d5132172642d7b7f
+scraped_at: 2026-11-19T09:53:07+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:bf876ac2680319ca1d1e32bdf6e9bb459235a8eb82362b102f2736d5df9882a8
 ---
 
 本模块提供设置通用限制类策略能力。可以全局禁用和解除禁用蓝牙、HDC、USB、Wi-Fi、蜂窝数据、相机、麦克风等特性。
@@ -849,7 +849,7 @@ setDisallowedPolicy(admin: Want, feature: FeatureForDevice, disallow: boolean): 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| feature | [FeatureForDevice](js-apis-enterprise-restrictions.md#featurefordevice24) | 是 | 指定要禁用或允许的设备特性。  **说明：** 应用申请权限ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS并通过[startAdminProvision](js-apis-enterprise-adminmanager.md#adminmanagerstartadminprovision15)激活为[BDA](../harmonyos-guides/mdm-kit-term.md#byod-device-admin-bdabyod设备管理员)，可以使用此接口设置以下特性：[FeatureForDevice.BLUETOOTH](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.HDC](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.MICROPHONE](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.USB](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.WIFI](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.TETHERING](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.CAMERA](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.SCREEN\_SHOT](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.SCREEN\_RECORD](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.NEAR\_LINK](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.RESET\_FACTORY](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.WIFI\_P2P](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.MTP\_SERVER](js-apis-enterprise-restrictions.md#featurefordevice24)。 |
+| feature | [FeatureForDevice](js-apis-enterprise-restrictions.md#featurefordevice24) | 是 | 指定要禁用或允许的设备特性。  **说明：** 应用申请权限ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS并通过[startAdminProvision](js-apis-enterprise-adminmanager.md#adminmanagerstartadminprovision15)激活为[BDA](../harmonyos-guides/mdm-kit-term.md#byod-device-admin-bdabyod设备管理员)，可以使用此接口设置[FeatureForDevice](js-apis-enterprise-restrictions.md#featurefordevice24)中“BYOD”列标记为“√”的特性。 |
 | disallow | boolean | 是 | true表示禁止使用，false表示允许使用。 |
 
 **错误码**：
@@ -902,7 +902,7 @@ getDisallowedPolicy(admin: Want | null, feature: FeatureForDevice): boolean
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| feature | [FeatureForDevice](js-apis-enterprise-restrictions.md#featurefordevice24) | 是 | 指定要查询的设备特性。  **说明：** 应用申请权限ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS并通过[startAdminProvision](js-apis-enterprise-adminmanager.md#adminmanagerstartadminprovision15)激活为[BDA](../harmonyos-guides/mdm-kit-term.md#byod-device-admin-bdabyod设备管理员)，可以使用此接口获取以下特性状态：[FeatureForDevice.BLUETOOTH](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.HDC](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.MICROPHONE](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.USB](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.WIFI](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.TETHERING](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.CAMERA](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.SCREEN\_SHOT](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.SCREEN\_RECORD](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.NEAR\_LINK](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.RESET\_FACTORY](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.WIFI\_P2P](js-apis-enterprise-restrictions.md#featurefordevice24)、[FeatureForDevice.MTP\_SERVER]。 |
+| feature | [FeatureForDevice](js-apis-enterprise-restrictions.md#featurefordevice24) | 是 | 指定要查询的设备特性。  **说明：** 应用申请权限ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS并通过[startAdminProvision](js-apis-enterprise-adminmanager.md#adminmanagerstartadminprovision15)激活为[BDA](../harmonyos-guides/mdm-kit-term.md#byod-device-admin-bdabyod设备管理员)，可以使用此接口获取[FeatureForDevice](js-apis-enterprise-restrictions.md#featurefordevice24)中“BYOD”列标记为“√”的特性状态。 |
 
 **返回值：**
 
@@ -1300,62 +1300,66 @@ try {
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-| 名称 | 值 | 说明 |
-| --- | --- | --- |
-| WIFI\_P2P | 0 | Wi-Fi P2P（点对点连接），允许设备在没有接入点的情况下直接相互连接。禁用后，设备无法通过Wi-Fi P2P进行点对点连接，影响文件传输、游戏联机、屏幕共享等需要直接Wi-Fi连接的应用功能。 |
-| X\_KEY | 1 | X键能力。禁用后将无法使用X键直达应用或服务（例如开启相机、手电筒、计算器等）。  **起始版本：** 26.0.1 |
-| LOCAL\_INPUT | 2 | 本地输入（包含键盘、鼠标、触控板、触摸屏等）被禁用后，无法通过本地输入进行操作。重启设备可解除禁用。在息屏状态下禁用会导致屏幕无法唤醒，若禁用后屏幕自动息屏，同样会导致无法唤醒屏幕。  **起始版本：** 26.0.0 |
-| PACKET\_FILTERING | 3 | 网络报文过滤管控策略，即按预设规则决定网络数据包的放行或丢弃，详见[net\_trafficfilter.h](capi-net-trafficfilter-h.md)。禁用后，通过[OH\_TrafficFilter\_AddPacketRule](capi-net-trafficfilter-h.md#oh_trafficfilter_addpacketrule)接口添加的报文过滤规则仍可添加成功，但不再生效。取消禁用之后可恢复使用。当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.1 |
-| SUDO | 4 | 设备级SUDO管控策略。当前仅支持PC/2in1设备使用。禁用后，无法使用sudo命令。当已经通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount)设置了某用户禁用sudo能力时，再启用sudo能力，会报策略冲突。  **起始版本：** 26.0.1 |
-| TRAFFIC\_REDIRECTION | 5 | 网络流量重定向管控策略，即按预设规则将匹配的TCP流量转发到其它端口，详见[net\_trafficfilter.h](capi-net-trafficfilter-h.md)。禁用后，通过[OH\_TrafficFilter\_AddRedirectRule](capi-net-trafficfilter-h.md#oh_trafficfilter_addredirectrule)接口添加的重定向规则仍可添加成功，但不再生效。取消禁用之后可恢复使用。当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.0 |
-| CORE\_DUMP | 6 | 创建文件转储。禁用后，无法通过任务管理器创建文件转储。当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.0 |
-| RS232 | 7 | RS-232串口管控策略。禁用后，无法通过RS-232串口传输数据。当前仅支持PC/2in1设备使用（部分设备不支持RS-232串口）。  **起始版本：** 26.0.0 |
-| DISK\_ERASURE | 8 | 磁盘擦除能力。禁用后，"磁盘擦除"入口将被置灰。当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.0 |
-| BLUETOOTH | 9 | 设备蓝牙能力。当已经通过[addDisallowedBluetoothDevices](js-apis-enterprise-bluetoothmanager.md#bluetoothmanageradddisallowedbluetoothdevices20)接口或者[addAllowedBluetoothDevices](js-apis-enterprise-bluetoothmanager.md#bluetoothmanageraddallowedbluetoothdevices)接口设置了蓝牙设备禁用名单或者允许名单，再禁用设备蓝牙能力，会优先生效禁用设备蓝牙能力。直到设备蓝牙能力启用后，禁止或允许名单才会生效。  **起始版本：** 26.0.0 |
-| MODIFY\_DATE\_TIME | 10 | 设备修改系统时间能力。  **起始版本：** 26.0.0 |
-| PRINTER | 11 | 设备打印能力。禁用了设备打印能力时，通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount)接口开启某用户的打印能力，该用户下的打印能力仍然被禁用。  **起始版本：** 26.0.0 |
-| HDC | 12 | 被其他设备通过hdc连接、调试的能力。设置禁用后，其他设备无法通过hdc连接、调试此设备。  **起始版本：** 26.0.0 |
-| MICROPHONE | 13 | 设备麦克风能力。  **起始版本：** 26.0.0 |
-| FINGERPRINT | 14 | 设备指纹认证能力。当已经通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount)设置了某用户禁用设备指纹认证能力时，再启用设备指纹认证能力，会报策略冲突。  **起始版本：** 26.0.0 |
-| USB | 15 | 设备USB能力。禁用后外接的USB设备无法使用，即在当前设备为HOST模式时，无法外接其他DEVICE设备。  以下六种情况再禁用设备USB能力，会报策略冲突。  1）通过[addAllowedUsbDevices](js-apis-enterprise-usbmanager.md#usbmanageraddallowedusbdevices)接口添加了USB设备可用名单。  2）通过[setUsbStorageDeviceAccessPolicy](js-apis-enterprise-usbmanager.md#usbmanagersetusbstoragedeviceaccesspolicy)接口设置了USB存储设备访问策略为只读/禁用。  3）通过[addDisallowedUsbDevices](js-apis-enterprise-usbmanager.md#usbmanageradddisallowedusbdevices14)接口添加了禁止使用的USB设备类型。  4）通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount)接口禁用了某用户USB存储设备写入能力。  5）禁用USB转串口（[USB\_SERIAL](js-apis-enterprise-restrictions.md#featurefordevice24)）。  6）通过[setExternalStorageInterceptEnable](js-apis-enterprise-usbmanager.md#usbmanagersetexternalstorageinterceptenable)接口启用了外置存储设备挂载拦截。  **起始版本：** 26.0.0 |
-| WIFI | 16 | 设备Wi-Fi能力。  **起始版本：** 26.0.0 |
-| TETHERING | 17 | 网络共享能力（设备已有网络共享给其他设备的能力，即共享热点能力）。  **起始版本：** 26.0.0 |
-| INACTIVE\_USER\_FREEZE | 18 | 非活跃用户运行能力。禁用后，非UIAbility进程一般不会被冻结，UIAbility申请短时任务、长时任务、延迟任务或能效资源等后台运行任务也不会被冻结。当前仅支持PC/2in1设备使用。企业空间场景下，系统切换到企业空间用户，个人空间用户属于非活跃用户。  **起始版本：** 26.0.0 |
-| CAMERA | 19 | 设备相机能力。  **起始版本：** 26.0.0 |
-| MTP\_CLIENT | 20 | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。在配置此特性之前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount)设置了某用户禁用MTP客户端写入能力时，再禁用MTP客户端能力，会报策略冲突。  **起始版本：** 26.0.0 |
-| MTP\_SERVER | 21 | MTP服务端能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
-| SAMBA\_CLIENT | 22 | samba客户端能力，当前仅支持PC/2in1设备使用。samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Message Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。  **起始版本：** 26.0.0 |
-| SAMBA\_SERVER | 23 | samba服务端能力，当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.0 |
-| BACKUP\_AND\_RESTORE | 24 | 备份和恢复能力，禁用后设备的"设置--系统--备份和恢复"、"设置--云空间"置灰，当前仅支持手机、平板使用。如果要完全禁用设备的备份和恢复能力，建议同时调用[applicationManager.addDisallowedRunningBundlesSync](js-apis-enterprise-applicationmanager.md#applicationmanageradddisallowedrunningbundlessync)接口禁止具备备份和恢复能力的应用运行，如备份和恢复、手机助手、云空间应用。  **起始版本：** 26.0.0 |
-| MAINTENANCE\_MODE | 25 | 设备维修模式能力。  **起始版本：** 26.0.0 |
-| MMS | 26 | multimedia messaging service，设备接收、发送彩信的能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
-| SMS | 27 | short messaging service，设备接收、发送短信的能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
-| MOBILE\_DATA | 28 | 蜂窝数据能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
-| AIRPLANE\_MODE | 29 | 飞行模式能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
-| VPN | 30 | Virtual Private Network（虚拟专用网络），VPN能力。  **起始版本：** 26.0.0 |
-| NOTIFICATION | 31 | 设备通知能力。禁用后，由系统应用和第三方应用发出的通知将不会显示，而系统服务通知能力不受影响。当此设备已经通过[addAllowedNotificationBundles](js-apis-enterprise-applicationmanager.md#applicationmanageraddallowednotificationbundles)设置了应用通知允许名单之后，再禁用设备通知能力，会抛出错误码9200010。  **起始版本：** 26.0.0 |
-| NFC | 32 | Near Field Communication（近距离无线通信），NFC能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
-| PRIVATE\_SPACE | 33 | 创建隐私空间能力，当前仅支持手机、平板使用。对已创建的隐私空间无效。  **起始版本：** 26.0.0 |
-| TELEPHONE\_CALL | 34 | 设备通话能力，禁用后电话无法呼入和呼出。当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
-| APP\_CLONE | 35 | [应用分身能力](../harmonyos-guides/app-clone.md)，禁用后无法创建应用分身。对已创建的应用分身无效。  **起始版本：** 26.0.0 |
-| EXTERNAL\_STORAGE\_CARD | 36 | 外置存储能力，禁用后设备无法使用外置存储，并且当前已连接的外置存储会被卸载。如果外置存储卸载时有文件正在被使用，可能会导致卸载失败，返回9200013错误码。  外置存储禁用后重新启用，需要手动重新连接外置存储。  **起始版本：** 26.0.0 |
-| RANDOM\_MAC | 37 | Wi-Fi连接时使用随机MAC能力，设置禁用后，连接Wi-Fi仅能使用设备物理MAC。  **起始版本：** 26.0.0 |
-| UNMUTE\_DEVICE | 38 | 设备媒体播放声音能力，设置禁用后，设备媒体播放将静音，[蜂窝通话](../harmonyos-guides/audio-call-overview.md)能力不受影响。  **起始版本：** 26.0.0 |
-| HDC\_REMOTE | 39 | 设备通过hdc调试其他设备的能力，当前仅支持PC/2in1设备设置。设置禁用后，无法通过hdc调试手机、平板、PC、智能手表等设备。  **起始版本：** 26.0.0 |
-| VIRTUAL\_SERVICE | 40 | 设备虚拟化服务能力，即利用硬件资源的冗余，以虚拟化方式运行其他平台（如Linux、Windows）的能力。设置禁用设备虚拟化服务能力时，建议同时卸载与虚拟化服务相关的应用，并禁止其再次安装。  **起始版本：** 26.0.0 |
-| USB\_SERIAL | 41 | 设备USB转串口能力。禁用后外接的USB转串口设备无法使用。以下两种情况再禁用设备USB转串口能力，会报策略冲突。  1）通过[addAllowedUsbDevices](js-apis-enterprise-usbmanager.md#usbmanageraddallowedusbdevices)接口添加了USB设备可用名单。  2）禁用设备USB能力（[USB](js-apis-enterprise-restrictions.md#featurefordevice24)）。  **起始版本：** 26.0.0 |
-| SCREEN\_SHOT | 42 | 截屏能力，禁用后无法进行截屏操作。  **起始版本：** 26.0.0 |
-| SCREEN\_RECORD | 43 | 录屏能力，禁用后无法进行录屏操作。  **起始版本：** 26.0.0 |
-| DISK\_RECOVERY\_KEY | 44 | 恢复[密钥导出](../harmonyos-guides/huks-export-key-arkts.md)能力，当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.0 |
-| NEAR\_LINK | 45 | 星闪（NearLink）能力。  **起始版本：** 26.0.0 |
-| DEVELOPER\_MODE | 46 | 开发者模式，禁用后设备重启生效。  **起始版本：** 26.0.0 |
-| RESET\_FACTORY | 47 | 恢复出厂设置能力。  **起始版本：** 26.0.0 |
-| REMOTE\_DESK | 48 | 远程桌面能力。  **起始版本：** 26.0.0 |
-| REMOTE\_DIAGNOSIS | 49 | 远程诊断能力。  **起始版本：** 26.0.0 |
-| OTA\_UPDATE | 50 | 公网系统升级能力。  **起始版本：** 26.0.0 |
-| SYSTEM\_ROLLBACK | 51 | 系统回退能力，禁用后无法回退系统版本。当前仅支持手机、平板设备使用。  **起始版本：** 26.0.1 |
-| SATA\_ODD\_BURN | 52 | 内置光驱刻录能力。禁用后无法通过内置光驱进行刻录。当前仅支持PC/2in1设备使用；其他设备调用设置接口返回801错误码，调用查询接口返回默认值。  **起始版本：** 26.0.1 |
-| SUPER\_PRIVACY | 53 | 超级隐私模式。禁用后无法打开超级隐私模式。当前仅支持手机、平板设备使用。  **起始版本：** 26.0.1 |
+| 名称 | 值 | BYOD | 说明 |
+| --- | --- | --- | --- |
+| WIFI\_P2P | 0 | √ | Wi-Fi P2P（点对点连接），允许设备在没有接入点的情况下直接相互连接。禁用后，设备无法通过Wi-Fi P2P进行点对点连接，影响文件传输、游戏联机、屏幕共享等需要直接Wi-Fi连接的应用功能。 |
+| X\_KEY | 1 | × | X键能力。禁用后将无法使用X键直达应用或服务（例如开启相机、手电筒、计算器等）。  **起始版本：** 26.0.1 |
+| LOCAL\_INPUT | 2 | × | 本地输入（包含键盘、鼠标、触控板、触摸屏等）被禁用后，无法通过本地输入进行操作。重启设备可解除禁用。在息屏状态下禁用会导致屏幕无法唤醒，若禁用后屏幕自动息屏，同样会导致无法唤醒屏幕。  **起始版本：** 26.0.0 |
+| PACKET\_FILTERING | 3 | × | 网络报文过滤管控策略，即按预设规则决定网络数据包的放行或丢弃，详见[net\_trafficfilter.h](capi-net-trafficfilter-h.md)。禁用后，通过[OH\_TrafficFilter\_AddPacketRule](capi-net-trafficfilter-h.md#oh_trafficfilter_addpacketrule)接口添加的报文过滤规则仍可添加成功，但不再生效。取消禁用之后可恢复使用。当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.1 |
+| SUDO | 4 | × | 设备级SUDO管控策略。当前仅支持PC/2in1设备使用。禁用后，无法使用sudo命令。当已经通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount)设置了某用户禁用sudo能力时，再启用sudo能力，会报策略冲突。  **起始版本：** 26.0.1 |
+| TRAFFIC\_REDIRECTION | 5 | × | 网络流量重定向管控策略，即按预设规则将匹配的TCP流量转发到其它端口，详见[net\_trafficfilter.h](capi-net-trafficfilter-h.md)。禁用后，通过[OH\_TrafficFilter\_AddRedirectRule](capi-net-trafficfilter-h.md#oh_trafficfilter_addredirectrule)接口添加的重定向规则仍可添加成功，但不再生效。取消禁用之后可恢复使用。当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.0 |
+| CORE\_DUMP | 6 | × | 创建文件转储。禁用后，无法通过任务管理器创建文件转储。当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.0 |
+| RS232 | 7 | × | RS-232串口管控策略。禁用后，无法通过RS-232串口传输数据。当前仅支持PC/2in1设备使用（部分设备不支持RS-232串口）。  **起始版本：** 26.0.0 |
+| DISK\_ERASURE | 8 | × | 磁盘擦除能力。禁用后，"磁盘擦除"入口将被置灰。当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.0 |
+| BLUETOOTH | 9 | √ | 设备蓝牙能力。当已经通过[addDisallowedBluetoothDevices](js-apis-enterprise-bluetoothmanager.md#bluetoothmanageradddisallowedbluetoothdevices20)接口或者[addAllowedBluetoothDevices](js-apis-enterprise-bluetoothmanager.md#bluetoothmanageraddallowedbluetoothdevices)接口设置了蓝牙设备禁用名单或者允许名单，再禁用设备蓝牙能力，会优先生效禁用设备蓝牙能力。直到设备蓝牙能力启用后，禁止或允许名单才会生效。  **起始版本：** 26.0.0 |
+| MODIFY\_DATE\_TIME | 10 | × | 设备修改系统时间能力。  **起始版本：** 26.0.0 |
+| PRINTER | 11 | × | 设备打印能力。禁用了设备打印能力时，通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount)接口开启某用户的打印能力，该用户下的打印能力仍然被禁用。  **起始版本：** 26.0.0 |
+| HDC | 12 | √ | 被其他设备通过hdc连接、调试的能力。设置禁用后，其他设备无法通过hdc连接、调试此设备。  **起始版本：** 26.0.0 |
+| MICROPHONE | 13 | √ | 设备麦克风能力。  **起始版本：** 26.0.0 |
+| FINGERPRINT | 14 | × | 设备指纹认证能力。当已经通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount)设置了某用户禁用设备指纹认证能力时，再启用设备指纹认证能力，会报策略冲突。  **起始版本：** 26.0.0 |
+| USB | 15 | √ | 设备USB能力。禁用后外接的USB设备无法使用，即在当前设备为HOST模式时，无法外接其他DEVICE设备。  以下六种情况再禁用设备USB能力，会报策略冲突。  1）通过[addAllowedUsbDevices](js-apis-enterprise-usbmanager.md#usbmanageraddallowedusbdevices)接口添加了USB设备可用名单。  2）通过[setUsbStorageDeviceAccessPolicy](js-apis-enterprise-usbmanager.md#usbmanagersetusbstoragedeviceaccesspolicy)接口设置了USB存储设备访问策略为只读/禁用。  3）通过[addDisallowedUsbDevices](js-apis-enterprise-usbmanager.md#usbmanageradddisallowedusbdevices14)接口添加了禁止使用的USB设备类型。  4）通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount)接口禁用了某用户USB存储设备写入能力。  5）禁用USB转串口（[USB\_SERIAL](js-apis-enterprise-restrictions.md#featurefordevice24)）。  6）通过[setExternalStorageInterceptEnable](js-apis-enterprise-usbmanager.md#usbmanagersetexternalstorageinterceptenable)接口启用了外置存储设备挂载拦截。  **起始版本：** 26.0.0 |
+| WIFI | 16 | √ | 设备Wi-Fi能力。  **起始版本：** 26.0.0 |
+| TETHERING | 17 | √ | 网络共享能力（设备已有网络共享给其他设备的能力，即共享热点能力）。  **起始版本：** 26.0.0 |
+| INACTIVE\_USER\_FREEZE | 18 | × | 非活跃用户运行能力。禁用后，非UIAbility进程一般不会被冻结，UIAbility申请短时任务、长时任务、延迟任务或能效资源等后台运行任务也不会被冻结。当前仅支持PC/2in1设备使用。企业空间场景下，系统切换到企业空间用户，个人空间用户属于非活跃用户。  **起始版本：** 26.0.0 |
+| CAMERA | 19 | √ | 设备相机能力。  **起始版本：** 26.0.0 |
+| MTP\_CLIENT | 20 | × | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。在配置此特性之前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount)设置了某用户禁用MTP客户端写入能力时，再禁用MTP客户端能力，会报策略冲突。  **起始版本：** 26.0.0 |
+| MTP\_SERVER | 21 | √ | MTP服务端能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
+| SAMBA\_CLIENT | 22 | × | samba客户端能力，当前仅支持PC/2in1设备使用。samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Message Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。  **起始版本：** 26.0.0 |
+| SAMBA\_SERVER | 23 | × | samba服务端能力，当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.0 |
+| BACKUP\_AND\_RESTORE | 24 | × | 备份和恢复能力，禁用后设备的"设置--系统--备份和恢复"、"设置--云空间"置灰，当前仅支持手机、平板使用。如果要完全禁用设备的备份和恢复能力，建议同时调用[applicationManager.addDisallowedRunningBundlesSync](js-apis-enterprise-applicationmanager.md#applicationmanageradddisallowedrunningbundlessync)接口禁止具备备份和恢复能力的应用运行，如备份和恢复、手机助手、云空间应用。  **起始版本：** 26.0.0 |
+| MAINTENANCE\_MODE | 25 | × | 设备维修模式能力。  **起始版本：** 26.0.0 |
+| MMS | 26 | × | multimedia messaging service，设备接收、发送彩信的能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
+| SMS | 27 | × | short messaging service，设备接收、发送短信的能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
+| MOBILE\_DATA | 28 | × | 蜂窝数据能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
+| AIRPLANE\_MODE | 29 | × | 飞行模式能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
+| VPN | 30 | × | Virtual Private Network（虚拟专用网络），VPN能力。  **起始版本：** 26.0.0 |
+| NOTIFICATION | 31 | × | 设备通知能力。禁用后，由系统应用和第三方应用发出的通知将不会显示，而系统服务通知能力不受影响。当此设备已经通过[addAllowedNotificationBundles](js-apis-enterprise-applicationmanager.md#applicationmanageraddallowednotificationbundles)设置了应用通知允许名单之后，再禁用设备通知能力，会抛出错误码9200010。  **起始版本：** 26.0.0 |
+| NFC | 32 | × | Near Field Communication（近距离无线通信），NFC能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
+| PRIVATE\_SPACE | 33 | × | 创建隐私空间能力，当前仅支持手机、平板使用。对已创建的隐私空间无效。  **起始版本：** 26.0.0 |
+| TELEPHONE\_CALL | 34 | × | 设备通话能力，禁用后电话无法呼入和呼出。当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
+| APP\_CLONE | 35 | × | [应用分身能力](../harmonyos-guides/app-clone.md)，禁用后无法创建应用分身。对已创建的应用分身无效。  **起始版本：** 26.0.0 |
+| EXTERNAL\_STORAGE\_CARD | 36 | × | 外置存储能力，禁用后设备无法使用外置存储，并且当前已连接的外置存储会被卸载。如果外置存储卸载时有文件正在被使用，可能会导致卸载失败，返回9200013错误码。  外置存储禁用后重新启用，需要手动重新连接外置存储。  **起始版本：** 26.0.0 |
+| RANDOM\_MAC | 37 | × | Wi-Fi连接时使用随机MAC能力，设置禁用后，连接Wi-Fi仅能使用设备物理MAC。  **起始版本：** 26.0.0 |
+| UNMUTE\_DEVICE | 38 | × | 设备媒体播放声音能力，设置禁用后，设备媒体播放将静音，[蜂窝通话](../harmonyos-guides/audio-call-overview.md)能力不受影响。  **起始版本：** 26.0.0 |
+| HDC\_REMOTE | 39 | × | 设备通过hdc调试其他设备的能力，当前仅支持PC/2in1设备设置。设置禁用后，无法通过hdc调试手机、平板、PC、智能手表等设备。  **起始版本：** 26.0.0 |
+| VIRTUAL\_SERVICE | 40 | × | 设备虚拟化服务能力，即利用硬件资源的冗余，以虚拟化方式运行其他平台（如Linux、Windows）的能力。设置禁用设备虚拟化服务能力时，建议同时卸载与虚拟化服务相关的应用，并禁止其再次安装。  **起始版本：** 26.0.0 |
+| USB\_SERIAL | 41 | × | 设备USB转串口能力。禁用后外接的USB转串口设备无法使用。以下两种情况再禁用设备USB转串口能力，会报策略冲突。  1）通过[addAllowedUsbDevices](js-apis-enterprise-usbmanager.md#usbmanageraddallowedusbdevices)接口添加了USB设备可用名单。  2）禁用设备USB能力（[USB](js-apis-enterprise-restrictions.md#featurefordevice24)）。  **起始版本：** 26.0.0 |
+| SCREEN\_SHOT | 42 | √ | 截屏能力，禁用后无法进行截屏操作。  **起始版本：** 26.0.0 |
+| SCREEN\_RECORD | 43 | √ | 录屏能力，禁用后无法进行录屏操作。  **起始版本：** 26.0.0 |
+| DISK\_RECOVERY\_KEY | 44 | × | 恢复[密钥导出](../harmonyos-guides/huks-export-key-arkts.md)能力，当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.0 |
+| NEAR\_LINK | 45 | √ | 星闪（NearLink）能力。  **起始版本：** 26.0.0 |
+| DEVELOPER\_MODE | 46 | × | 开发者模式，禁用后设备重启生效。  **起始版本：** 26.0.0 |
+| RESET\_FACTORY | 47 | √ | 恢复出厂设置能力。  **起始版本：** 26.0.0 |
+| REMOTE\_DESK | 48 | × | 远程桌面能力。  **起始版本：** 26.0.0 |
+| REMOTE\_DIAGNOSIS | 49 | × | 远程诊断能力。  **起始版本：** 26.0.0 |
+| OTA\_UPDATE | 50 | × | 公网系统升级能力。  **起始版本：** 26.0.0 |
+| SYSTEM\_ROLLBACK | 51 | × | 系统回退能力，禁用后无法回退系统版本。当前仅支持手机、平板设备使用。  **起始版本：** 26.0.1 |
+| SATA\_ODD\_BURN | 52 | × | 内置光驱刻录能力。禁用后无法通过内置光驱进行刻录。当前仅支持PC/2in1设备使用；其他设备调用设置接口返回801错误码，调用查询接口返回默认值。  **起始版本：** 26.0.1 |
+| SUPER\_PRIVACY | 53 | × | 超级隐私模式。禁用后无法打开超级隐私模式。当前仅支持手机、平板设备使用。  **起始版本：** 26.0.1 |
+
+**说明** 
+
+"BYOD"列标识对应特性是否支持BYOD（Bring Your Own Device）场景：标记为"√"表示支持，标记为"×"表示不支持。
 
 ## FeatureForAccount
 

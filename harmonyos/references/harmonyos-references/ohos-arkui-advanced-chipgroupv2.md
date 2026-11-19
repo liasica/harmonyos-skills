@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipGroupV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipGroupV2
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:24+08:00
+scraped_at: 2026-11-19T09:51:14+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:50a9eb4c63b506ca291ac1f2bf3ddba21fed7055c9fe6a47cc8c1581b7f5a9d6
+content_hash: sha256:16f605d667c6617fffa65962a65dd6a5844daaa3e269d8731eac3c345054942a
 ---
 
 ChipGroupV2组件提供操作块群组容器，支持单选或多选、自定义样式和间距、以及尾部自定义内容。该组件适用于文件或资源内容的分类、标签选择、筛选等场景，可帮助开发者快速构建美观且交互丰富的标签组界面。
@@ -621,7 +621,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/IufGzmQBQz-IsnEYYjnDsw/zh-cn_image_0000002788309370.png?HW-CC-KV=V1&HW-CC-Date=20261114T004822Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F8918C4E5D9C56C22A7DFDC4A70CC137B0F806439168ECAA073C5EBC10138D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/iL8HHzwHTpyx8scgO0LkVg/zh-cn_image_0000002791727672.png?HW-CC-KV=V1&HW-CC-Date=20261119T015018Z&HW-CC-Expire=31536000000&HW-CC-Sign=0599C756781663AE2DBCB7435EFA6190C913E7D35590ABBADF0C815122D7C831)
 
 ### 示例2（ChipGroupV2设置最右侧自定义组件）
 
@@ -719,7 +719,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/OiRqMHRzRhembOD0ho_Jkg/zh-cn_image_0000002817428733.png?HW-CC-KV=V1&HW-CC-Date=20261114T004822Z&HW-CC-Expire=31536000000&HW-CC-Sign=301139E2E30DC11FA5E72D660A8FE10F8FFC498682FD63A1F7637A54023CB0DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/7D8qCFpLSU2e2775LTCLCQ/zh-cn_image_0000002791567700.png?HW-CC-KV=V1&HW-CC-Date=20261119T015018Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCFEBE4CFF6514E4F374E6B95CE8FB64658E987147A4E301D7EB08CFE985DEDC)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -821,7 +821,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/7ZCTFPGCTaGYSn9xDczBlA/zh-cn_image_0000002788469314.png?HW-CC-KV=V1&HW-CC-Date=20261114T004822Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB4159CF3269F4BB10F48278233F5AB350989898E01963375ABC12DCC471050F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/rsUUqh8qQN2cQchtU-T4pQ/zh-cn_image_0000002820527653.png?HW-CC-KV=V1&HW-CC-Date=20261119T015018Z&HW-CC-Expire=31536000000&HW-CC-Sign=C28379B409F8245E9365B35850F9448FCF7EB197004B5F2726EB30C13F864069)
 
 ### 示例4（监听ChipGroupV2内对象类型属性的内部属性变化）
 
@@ -898,7 +898,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/vgdUeSWDThW4Fzn2lQz_NQ/zh-cn_image_0000002817508803.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004822Z&HW-CC-Expire=31536000000&HW-CC-Sign=E93B69355C48D2D248EAE5DA13ABCB3116B8378D7774C44F4E167BF6F15F99C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/ElELsk9FTQ-78gcyb76Pjg/zh-cn_image_0000002820407655.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015018Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A837F63B8AA614822D4D18E2C1BAB4B9409AA75569C75C43DCB2C0B6424ED52)
 
 ### 示例5（设置系统材质样式）
 
@@ -988,4 +988,4 @@ struct Index {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/90mSIytqSzSwCvNOjPt4Yw/zh-cn_image_0000002788309372.png?HW-CC-KV=V1&HW-CC-Date=20261114T004822Z&HW-CC-Expire=31536000000&HW-CC-Sign=15FCE84380C91541E078E8AAA74326D97BDBFC3B2FA82E3236185826125CE2C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/08OeBj-TQG6pxqTfAo0E3Q/zh-cn_image_0000002791727674.png?HW-CC-KV=V1&HW-CC-Date=20261119T015018Z&HW-CC-Expire=31536000000&HW-CC-Sign=07B210B798B4ECA64525C1E0728A096CF0B2A6C418554CD7BBEC1F40C5C112BB)

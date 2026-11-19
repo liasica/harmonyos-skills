@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SymbolGlyph
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SymbolGlyph
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:14+08:00
+scraped_at: 2026-11-19T09:51:03+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:e9f0672e443e42d64be725d06f3ed0c32e7384e40ee31d9133121d43b6c730a2
+content_hash: sha256:807166c2554da2552fee77c9e5828888e17e1798b2d80e861e3ef1f4ebb64ced
 ---
 
 SymbolGlyph组件用于显示系统预置的图标小符号，支持设置颜色、大小、粗细、渲染策略、动效策略等样式属性，适用于需要在应用中展示系统图标的场景，如导航栏图标、按钮图标、状态指示图标等。相比使用图片资源，SymbolGlyph具有体积小、可动态着色、支持动效等优势。相关资源可参考[系统图标](../design-guides/system-icons-0000001929854962.md)。
@@ -182,7 +182,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/EVoiBMEqRB2zUuQKvDtJNA/zh-cn_image_0000002817428451.png?HW-CC-KV=V1&HW-CC-Date=20261114T005014Z&HW-CC-Expire=31536000000&HW-CC-Sign=05B0FB389C466711FD229EFF3A7CA8B27D3707A82B52B78303FE3EBC410C834D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/hEWAhTCaT9WYvpmOe-oQ3A/zh-cn_image_0000002791567418.png?HW-CC-KV=V1&HW-CC-Date=20261119T015102Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B51872B310CAA427A6AEFFDB09816192C31DAE792C5F862A31D7E84B58B32EA)
 
 ### effectStrategy
 
@@ -750,7 +750,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/PzpIdr4HTOCjV56A6nrttA/zh-cn_image_0000002817428453.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005014Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF840C053D83142BB90DE1DA9018049A7674CF61B4FFB1243A99E0707F0BE4D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/JjSYKjufT_CrRSakT1ogew/zh-cn_image_0000002791567420.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015102Z&HW-CC-Expire=31536000000&HW-CC-Sign=424E59313CD0AD8D0868FCCF95D2CC0B2BA7AFA096AFFC654F79EBFB0CE20887)
 
 ### 示例2（设置动效和阴影）
 
@@ -854,7 +854,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/RWPCqMuJTtm6j5hx0WfYbA/zh-cn_image_0000002788469034.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005014Z&HW-CC-Expire=31536000000&HW-CC-Sign=98435315C80AC424B609383B405031944A64D7B73C7DCDD62A7920A032DB75AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/bsetkVPFQ_KrGI-maIucwQ/zh-cn_image_0000002820527373.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015102Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4AA147265C3F669B095A49EDCFE349EEBD7FB8221A2C8109FAA511D8EB3C5D9)
 
 ### 示例3（设置颜色渐变）
 
@@ -994,7 +994,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/tsOTRW2vT5uweO4dy7nESQ/zh-cn_image_0000002817508523.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T005014Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F0D1B8B2E3FD9206CCF00BE8ED027C5DB0F759ECA0080FE7F95641E109C7603)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/lOjGeivoRZuOQhOh1j_XLg/zh-cn_image_0000002820407375.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T015102Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7D454EE39ED68899EBF946F90A84D51EDE9DDD536D2FDE56714312AFDF71C7C)
 
 ### 示例4（设置SymbolGlyph颜色）
 
@@ -1045,7 +1045,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/cG7R3jmNToeNAskPjfBNRg/zh-cn_image_0000002788309092.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T005014Z&HW-CC-Expire=31536000000&HW-CC-Sign=689AF6EA1BB31F857682DC3D14E693E976AF078E3259D7ED5B40ADF80DB7D075)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/a39lS2UWRT-Z8sitK577aw/zh-cn_image_0000002791727394.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T015102Z&HW-CC-Expire=31536000000&HW-CC-Sign=65A52AA3A4352333CC2845D5784458549BC8AA4921C665394F4AEF8488702F70)
 
 ### 示例5（设置字体粗细）
 
@@ -1109,4 +1109,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/4zQKSMDpTOyi1Or-Xdpa6w/zh-cn_image_0000002817428455.png?HW-CC-KV=V1&HW-CC-Date=20261114T005014Z&HW-CC-Expire=31536000000&HW-CC-Sign=42D85753DF21E0C2674225717E7520E198E4C812E4E93A8E5B83CCC64C2C97CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/7NLyd2nyTfCb3o_hjGg95A/zh-cn_image_0000002791567422.png?HW-CC-KV=V1&HW-CC-Date=20261119T015102Z&HW-CC-Expire=31536000000&HW-CC-Sign=978E4918EBE2A64BF8D4BF03C917DFB35C1E6ECB2DE368CE3CC9F22AFFA31E43)

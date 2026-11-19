@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 支持统一拖拽
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 支持统一拖拽
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:06+08:00
+scraped_at: 2026-11-19T09:47:44+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:841b9732580ff5facc5a6c977d8418bc539618c72e8f0cacaf72002994e19800
+content_hash: sha256:92c2d2a8e61053f1a602b6fcfc8499663114e45c7fbb44c14bc42b258012cf23
 ---
 
 统一拖拽提供了一种通过鼠标或手势触屏传递数据的机制，即从一个组件位置拖出（drag）数据并将其拖入（drop）到另一个组件位置，以触发响应。在这一过程中，拖出方提供数据，而拖入方负责接收和处理数据。这一操作使用户能够便捷地移动、复制或删除指定内容。
@@ -29,7 +29,7 @@ content_hash: sha256:841b9732580ff5facc5a6c977d8418bc539618c72e8f0cacaf72002994e
 
 手势拖拽（手指/手写笔）触发拖拽流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/BcQkYjgYQiGKSSoGTIIpZQ/zh-cn_image_0000002788466810.png?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=708A4B9037A28C7EA23C900CB7C59C72CB49E5DA832BE6168998A2E2EA614A9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/o9OAdb24SBSS721uC2qxAA/zh-cn_image_0000002791565194.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D38E543E66BEDDF7AD8F21D438646FEC7F313E1B870D91409AF9C12BD6932F4)
 
 ### ​鼠标拖拽
 
@@ -90,7 +90,7 @@ content_hash: sha256:841b9732580ff5facc5a6c977d8418bc539618c72e8f0cacaf72002994e
 
 拖拽背板图当前支持设置透明度、圆角、阴影和模糊，具体用法见[拖拽控制](../harmonyos-references/ts-universal-attributes-drag-drop.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/O1jaeV7YRRKLrcOS1d510Q/zh-cn_image_0000002817506297.png?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=B680F737CA226875C1B8C6CFB173C4B07CDE8D57F8600928DA6A00CDFCEEFDFF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/3No7Tj5oTS6OzKU8mh9qrw/zh-cn_image_0000002820525147.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B0A5F3EBE2F87DD80E00ABB85DF0152C4D202A0BBE9DD1F300CD5AA9B4BFC2B)
 
 **约束限制：**
 
@@ -466,7 +466,7 @@ export struct DefaultDrag {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/lh6sxcEvS8mEaLxAjkSFNw/zh-cn_image_0000002788306868.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=61002CD730A96E708CF304B037B8D6626E7CBD1E5B604D092E23C0CBF481174A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/cjsqElvRRpqQkT8bQr9q-A/zh-cn_image_0000002820405147.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=B22B556EBFEE7F1081F4E9BC958CFDF60C681730406560498CA6A174760542F1)
 
 ### 多选拖拽适配
 
@@ -751,7 +751,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/k8S9lIf-SDCXFuKw_4J8Qw/zh-cn_image_0000002817426231.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=92DAE0C28625D8EF0B7FBD07FD571816A0585C3F345AB01395678960373AFEA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/9ccnFEfhSFGx8ddPErKmeA/zh-cn_image_0000002791725168.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=A92C0742CC576DA2C2DF41FDA50AEDC6B2EFF8CAF42334136E726D0896A3D94F)
 
 ### 适配自定义落位动效
 
@@ -903,7 +903,7 @@ export struct DropAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/8Q2RhP2vROeiBQPNPriKUA/zh-cn_image_0000002788466812.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=53FF08EE79D091A92D859DE026F38DF301822D9B319158E28E16BCF9EFC77DCB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/4xYrgM0-RLGEwnHtr-KYiQ/zh-cn_image_0000002791565196.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=87E64C614A951D63E9B973B2A87209BFD8C94FA8CE7048966B3A6C5565722F04)
 
 ### 处理大批量数据
 
@@ -1198,7 +1198,7 @@ struct GridEts {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/RoIqSipERhKsROwkIwWlgQ/zh-cn_image_0000002817506299.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBC3C34D693A29B6715D074E1CB96B6C686D44800DB7BD32090601BA0D4A82AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/0uESWAICQOiQ5jOU3b5SOA/zh-cn_image_0000002820525149.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=4097DAE43B030B470903C10E319619ED67795A26C11BB144A2237A72E5ADC6B0)
 
 ## 支持悬停检测
 
@@ -1213,7 +1213,7 @@ Spring Loading，即拖拽悬停检测（又叫弹簧加载）是拖拽操作的
 
 除了实现视图切换跳转功能，该能力也可用于特定视图的激活。例如，在用户将一段文本拖拽至按钮上停留后，可激活一个文本输入框。用户随后可将所拖拽文本移动至该输入框上方释放，触发搜索结果展示，实现单手高效完成整个操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/efagYMBwSN6T2fptazgOJg/zh-cn_image_0000002788306870.png?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=7393FDC38B8AE47947517980E4DE164585C4E6CA19D9FE4C68202A3F2366EADB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/1_hu4SK4S3Sh5hxLQnuZ5w/zh-cn_image_0000002820405149.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D443F9A87F13F27929A2E2C02F0B576AC90807E45683F978CDD79422388A8AE)
 
 ### 触发原理
 
@@ -1221,7 +1221,7 @@ Spring Loading，即拖拽悬停检测（又叫弹簧加载）是拖拽操作的
 
 Spring Loading的整个过程包含三个阶段：悬停检测 -> 回调通知 -> 结束。在结束之前，如果用户重新开始移动，会自动中断Spring Loading，并通知应用取消。如果在悬停检测期间移动，且尚未进入Spring Loading状态，则不会触发取消通知。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/dyGuNgeBSammBuqvpxCt_Q/zh-cn_image_0000002817426233.png?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=022D305574D375F2B01AE889F340AB8EADE9AB1FE67A28CD72F5B259FAD3BD27)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/E329AWrtQeOJ672draBjvw/zh-cn_image_0000002791725170.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=E742F2EC87CE7DADF7DE680E63BC50E03F41CCB8124681B53EACE4B01633C3C2)
 
 应用通过回调接收当前的状态，动态改变UI显示，从而达到用户提醒的效果。
 
@@ -1553,7 +1553,7 @@ export struct SpringLoadingPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/NlkBTQU8RZGex2FPbnRqhg/zh-cn_image_0000002788466814.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB18943A2A708F4507A828FF45605BBDED7D3359DA63965D63085D12DE2B85AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/F0yFgXf2RaOi8zOIuePObA/zh-cn_image_0000002791565198.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=7690E9F81EECCC6B85D5C19383616E10BCDF95F362261EDFECF981FF6666CD51)
 
 ## 示例代码
 

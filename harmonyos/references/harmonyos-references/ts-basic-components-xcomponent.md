@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: XComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 渲染绘制 > XComponent
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:20+08:00
+scraped_at: 2026-11-19T09:51:10+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:8b125228bcee10d9f6bae779cfffd9c1532e8875a6e3a6145e70462d71346342
+content_hash: sha256:c864eaf9aeac9a5c7511a7dafb97bec7f545cfd331a54d5c8741cadee603c2d6
 ---
 
 提供用于图形绘制和媒体数据写入的Surface，XComponent负责将其嵌入到视图中，支持应用自定义Surface位置和大小。同时支持AI图像分析、HDR视频亮度调节、防截屏录屏隐私保护、画布自绘制等能力，适用于视频播放、相机预览、游戏渲染、图像AI识别等需要高性能自绘制和媒体内容展示的场景。具体指南请参考[自定义渲染（XComponent）文档](../harmonyos-guides/napi-xcomponent-guidelines.md)。
@@ -917,7 +917,7 @@ struct XComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/mCLyvwv7SbKPSbBO2qt9lw/zh-cn_image_0000002817508707.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=6715FAE91F947C921445BAEC4D72BB30589ADF2BE7A25FDFCD4CCF4520A8D6C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/QK31StH2QA6wS1hU31xL1A/zh-cn_image_0000002820407559.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015109Z&HW-CC-Expire=31536000000&HW-CC-Sign=66B202FA0C209D8FCE1265BAA4D2EA371546A3F9D07F40A1EE8446255C689748)
 
 ### 示例2（在Surface旋转过程中锁定）
 
@@ -1032,7 +1032,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/e7juaRcNQLSc3tBGVBNeZg/zh-cn_image_0000002788309276.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EC812BB1F5F3A3D18BE64E0D040A2D346B7D25D0093EF03AACC6DC1DE1C6C91)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/D9aFm_WwT3eZTnZWjMlQkA/zh-cn_image_0000002791727578.png?HW-CC-KV=V1&HW-CC-Date=20261119T015109Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F38F121CED1C2177A99F3514F746836B1F94888457F4931657BF92E23B606BF)
 
 ### 示例4（XComponent实现沉浸式效果）
 
@@ -1079,7 +1079,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/VPMw8gSTQwm4-ux9u7q5hA/zh-cn_image_0000002817428639.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0CF420EA27DE2D9DFBAD93029842CDBD7157B5CB6EEEB4A0F0CA96CB3AFC695)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/GoAESY97RoaQDG5guh2RoQ/zh-cn_image_0000002791567606.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T015109Z&HW-CC-Expire=31536000000&HW-CC-Sign=12EF4FF897DFE99E95B9A1B2D52A1B1873000FEE55127108ACFEE2D87983E88B)
 
 ### 示例5（设置XComponent持有Surface在渲染时是否需要被视为不透明）
 
@@ -1183,4 +1183,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/7Pfm2BjKQi6Q6ezMDUVAKA/zh-cn_image_0000002788469220.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BC69F9FB7C77BAEDD9D23A401F21A6D7238D13F5C0F9D998984F62AA1D8E2D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/7P9l03_dTcy4jeMNctkbAg/zh-cn_image_0000002820527559.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T015109Z&HW-CC-Expire=31536000000&HW-CC-Sign=65B33C5776E7DC30FAE6853F8408831A87A4F625E6D32612A27BC37442605563)

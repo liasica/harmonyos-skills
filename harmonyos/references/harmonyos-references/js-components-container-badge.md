@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: badge
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > badge
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:30+08:00
+scraped_at: 2026-11-19T09:51:19+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:8b7945dde49a4fdd4b3c210af299a6cc0d3fcf428a558372e16c33a7f76da9d3
+content_hash: sha256:3770b33fa84e2ed7b4153c7739a405413a59e88e3e72cb4d2865691df9f84ec2
 ---
 
 **说明** 
@@ -111,4 +111,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/WeF5PhkVTjGpvMAmWMwl2w/zh-cn_image_0000002788469414.png?HW-CC-KV=V1&HW-CC-Date=20261114T004827Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8F76AC7AE5DEB1605418E7C46CBD9D40A0AFC3E7474613094ECD8AE780213E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/62KNMHmdT7me03Qm_dT6Sg/zh-cn_image_0000002820527753.png?HW-CC-KV=V1&HW-CC-Date=20261119T015119Z&HW-CC-Expire=31536000000&HW-CC-Sign=95FCF03A4B39EA7C2C946A280D296439D21BBFC7C1D6964082697EDA738A2CE6)

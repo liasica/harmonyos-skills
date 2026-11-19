@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: "@ohos.thermal (热管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.thermal (热管理)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:35:03+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:cab475c50e95e5d199a1e0ea659c70a9928bba086e9933f46b68fef3c62a5c4f
+scraped_at: 2026-11-19T09:52:52+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:fcd9c44a16b2300141eac3b62e22660b488138918b0273584b961ca53da6f16a
 ---
 
 该模块提供热管理相关的接口，包括热档位查询及注册回调等功能。
@@ -107,7 +107,7 @@ getLevel(): ThermalLevel
 
 | 类型 | 说明 |
 | --- | --- |
-| [ThermalLevel](js-apis-thermal.md#thermallevel) | 热档位信息。 |
+| [ThermalLevel](js-apis-thermal.md#thermallevel) | 当前设备的热档位等级，反映设备的温度状态，可用于指导业务的热控策略调整。返回枚举值以外的值时表示获取当前设备的热档位失败。 |
 
 **示例：**
 

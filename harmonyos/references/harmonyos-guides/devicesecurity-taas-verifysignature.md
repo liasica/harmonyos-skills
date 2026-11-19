@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 验证签名
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 签名验证 > 验证签名
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:28+08:00
+scraped_at: 2026-11-19T09:48:07+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:c6e90d817e758832bfd85ea54bd0f9d4cdafd5b5d70f4d044294bde9d4a3f7e8
+content_hash: sha256:8459cb46a19258b99c37c9c4078207526a397836c79040ac5fa7ea330b53fea4
 ---
 
 如果需要在端侧校验安全图像数据或安全地理位置数据签名的有效性，可以使用[Crypto Architecture Kit](crypto-architecture-kit-intro.md)，使用方法请参考“[使用ECDSA密钥对签名验签](crypto-ecdsa-sign-sig-verify.md)”章节。
@@ -30,7 +30,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 安全图像数据的结构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/LXOdAwpKSFeqJKAAF-49sg/zh-cn_image_0000002788467344.png?HW-CC-KV=V1&HW-CC-Date=20261114T004548Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE0CBE5DD243E441362223DF731A274A5EC8931DC9100BBE82801815ADD84C4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Gxv2_No7Qq6mXmc9ueEXXA/zh-cn_image_0000002791565728.png?HW-CC-KV=V1&HW-CC-Date=20261119T014806Z&HW-CC-Expire=31536000000&HW-CC-Sign=43DCACE576D64DFEE4CC20B32763E744B1C34B1F60FC2D13C4C36B8AB6B0AEEA)
 
 其中，用户数据和图像数据为被签名的原始数据，图像数据长度固定为460800字节，签名数据是Base64编码的签名结果，开发者需要解析出这些数据用来验证安全图像数据签名。参考代码如下：
 
@@ -53,7 +53,7 @@ const signature = base64Helper.decodeSync(signatureString);
 
 压缩、裁剪处理后返回的安全图像数据的结构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Mvhf5hyKQUOZlbcY2F5abQ/zh-cn_image_0000002817506833.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004548Z&HW-CC-Expire=31536000000&HW-CC-Sign=55324C8453DD070EDC2F57F2018FDF2D608B9774FE11BE26C455FB5D3DA86A9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/WW9M7r_YTzWwD-HLlJkYdw/zh-cn_image_0000002820525681.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014806Z&HW-CC-Expire=31536000000&HW-CC-Sign=2200AEC57320AC183F862210F1DC37E57030445FF19EC78C360111D0B9F95754)
 
 返回的处理后安全图像数据具体包含：
 

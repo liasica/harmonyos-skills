@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-im
 title: visionImageAnalyzer（AI识图控件）
 breadcrumb: API参考 > AI > Vision Kit（场景化视觉服务） > ArkTS API > visionImageAnalyzer（AI识图控件）
 category: harmonyos-references
-scraped_at: 2026-11-14T08:53:58+08:00
+scraped_at: 2026-11-19T09:55:06+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d77c27b5f4d3404f8d9d379a29c281ed28f2dc3995ad325559f58eb2f14464fd
+content_hash: sha256:9f01ef52387148891091a9503b29d3624d39f2751d4e081f04d21555ae7cd1f3
 ---
 
 AI识图是通过聚合OCR（Optical Character Recognition，光学字符识别，指通过图像处理和模式识别技术将图像中的文字转换为机器编码的技术）、主体分割、实体识别、多目标识别等AI能力，提供场景化的文本识别、主体分割、识图搜索功能。
@@ -258,7 +258,7 @@ struct ImageDemo {
 
 示例图如下，AIButton离底部300vp
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/qn1_6g1ORE2ZK4m0Xuz9Eg/zh-cn_image_0000002788469884.png?HW-CC-KV=V1&HW-CC-Date=20261114T005357Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C4BA031AF43C4AB8C1456F6BAC84F02F12901F24356D83513A60CF06F0DF20A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/LuHmG8OZTHKlr9rmnBBArQ/zh-cn_image_0000002820528223.png?HW-CC-KV=V1&HW-CC-Date=20261119T015505Z&HW-CC-Expire=31536000000&HW-CC-Sign=39E6A41787DFAB9DBB23232F39CD217102B064D2C0B482DF110A29EA7BD7929A)
 
 ### setAIButtonVisibility
 
@@ -309,7 +309,7 @@ struct ImageDemo {
 
 AIButton可见时如下图所示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/9Q1rt3N3Ta2hO2nu9AwMUA/zh-cn_image_0000002817509373.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005357Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F316C3152805604ED249C5183B14E26D11B314B972C650A76A80E9C94674DC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/AG1t3QefT5aXh9H4UGi_mQ/zh-cn_image_0000002820408225.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015505Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4F5A73572295022A8C2C3852473AC582289EC315EBA89374B79644A1A69D8DD)
 
 ### setCustomTextMenuItems
 
@@ -368,7 +368,7 @@ struct ImageDemo {
 
 示例如下图所示，菜单右侧增加自定义菜单项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/_OKN-3KSTjOqa7MKXx4RzA/zh-cn_image_0000002788309942.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005357Z&HW-CC-Expire=31536000000&HW-CC-Sign=13D5D4F3F301B0BD5C081294398EC4EACAC3927DF86612AE42D1A4627DEE0714)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/1HjKcu7cTPimrdgDozaKdQ/zh-cn_image_0000002791728244.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015505Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5214FCC4B042073E91EC327AFE0B1419257D15FF629FBE26BFE2F1910DB4BD7)
 
 ### startSubjectAnalyzer
 

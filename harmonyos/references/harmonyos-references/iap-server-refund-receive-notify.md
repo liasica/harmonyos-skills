@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: 接收退款申请事件通知
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 退款申请通知与处理 > 接收退款申请事件通知
 category: harmonyos-references
-scraped_at: 2026-11-14T08:53:32+08:00
+scraped_at: 2026-11-19T09:54:36+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:7dc934f48faab3eb4b81f7177acc7117e4e229f9449677b9071fa16976c56ee0
+content_hash: sha256:951e60fa20f7e121f9c88079745137be3b90f0a9e5babba4b8829a3492be9be6
 ---
 
 ## 功能介绍
@@ -22,7 +22,7 @@ content_hash: sha256:7dc934f48faab3eb4b81f7177acc7117e4e229f9449677b9071fa16976c
 
 关键事件通知处理流程建议如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/GFL1Ct-7QNOO3EyD7w9bVA/zh-cn_image_0000002788309914.png?HW-CC-KV=V1&HW-CC-Date=20261114T005053Z&HW-CC-Expire=31536000000&HW-CC-Sign=74F91B6B49A35D50A225F6D6304F9CA3FA798475224A851ADEFFE474C2FCB3F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/tZ7bj4PuQdSHS3GGFJ0dfQ/zh-cn_image_0000002791728216.png?HW-CC-KV=V1&HW-CC-Date=20261119T015436Z&HW-CC-Expire=31536000000&HW-CC-Sign=F495500CF12F7319A08F2E5C807DBFD334DE4271404FC14BFE88C825AE64EC98)
 
 1. IAP服务器发送退款请求关键事件通知。
 2. 应用服务器收到通知请求后，从通知中获取用户申请的退款信息，决策该笔退款订单的处理方式。

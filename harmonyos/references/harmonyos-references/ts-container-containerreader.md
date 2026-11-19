@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ContainerReader
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > ContainerReader
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:08+08:00
+scraped_at: 2026-11-19T09:50:55+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:101b48dc925cd9ffd66a13a9f792bdf64fc5270a22d49ae833ca36013091980d
+content_hash: sha256:84961fe3b08e3ab2e5f1a4e408dde3af9463e9a798e3da83719e088d47c76d4f
 ---
 
 ContainerReader是容器断点组件，用于在动态场景下根据容器尺寸获取断点信息并进行响应式布局。该组件通过[双向绑定](../harmonyos-guides/arkts-new-binding.md#系统组件参数双向绑定)实时返回容器的尺寸和断点，使开发者能够基于容器大小进行差异化的组件创建和布局。
@@ -191,7 +191,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/wm-CbqZoTj2mXXMJPgKfqQ/zh-cn_image_0000002788308840.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=95A23F6F46558144D7444A94D789078429F56BFCF13977990950BB1C7F74C287)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/ux_KCIaPQzqCnUW4XZsgng/zh-cn_image_0000002820407121.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015000Z&HW-CC-Expire=31536000000&HW-CC-Sign=290F03461F484DD5C5141176E01885A463FEAD03C6B28D414EC6BDC4909574E1)
 
 ### 示例2 （自定义断点配置）
 
@@ -266,7 +266,7 @@ struct Index {
 
 通过单击按钮改变父容器的宽度，返回不同的宽度断点值，从而调整布局方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/mHgUCLXzQdec6CSQbcZhkw/zh-cn_image_0000002817428203.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4A5556C719E704401FADFCA88B42F4A383C2E5F3E74503DC565E50C012E4BB1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/hDD8S1ceQJaaSUYckJsbjw/zh-cn_image_0000002791727142.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015000Z&HW-CC-Expire=31536000000&HW-CC-Sign=B59F1323BA58F8171AF69F437A384ECF5B6E8E0A7FA72482C9F9B71FCDB4009A)
 
 ### 示例3 （利用宽度断点动态调整列数）
 
@@ -351,4 +351,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/vNDXYtaXSTWz283_S6VpDQ/zh-cn_image_0000002788468784.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF732DCA407149B7C2F075A4D5A90CB57E1B25868311559F50F1B64FBCE709FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/O9vzaskJSFiz9aBrSyxTIA/zh-cn_image_0000002791567170.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015000Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EEA3315EA4174F1AE191F30DB2E4C8943CEFA0EA33D9B4D4183C7DC149DAF34)

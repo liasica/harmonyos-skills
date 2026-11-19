@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-tr
 title: 页面转场动画 (不推荐)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 页面转场动画 (不推荐)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:06+08:00
+scraped_at: 2026-11-19T09:47:43+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:51454a36d7b1431ab9d02451cc9719ef7c8f64c862c058779f38835e2c3f57b9
+content_hash: sha256:0e07969118ad6140ec0778c69db75d0eb88e482cf76fa0db6ede8e7722b91e65
 ---
 
 为了实现更好的转场效果，推荐使用[Navigation转场动画](arkts-navigation-animation.md)和[模态转场](arkts-modal-transition.md)。
@@ -243,7 +243,7 @@ struct PageTransitionDst1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/wcbv0EIPTq66hQq_aVatdA/zh-cn_image_0000002817426261.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CCE06A10872704C274B0ED33509C5ADE040FBB89240FA2AA83480466F216903)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/XQeZ4v4WT9i-XOadyq7IbQ/zh-cn_image_0000002791725198.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CC435728D047700A9CA56CC2EB930E414BBFE1843E5777E33A89B6A6BC889D9)
 
 下面介绍使用了type为None的页面转场动画示例。
 
@@ -335,4 +335,4 @@ struct PageTransitionDst2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/30hiqljsR46RlC9r5cJxlg/zh-cn_image_0000002788466842.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=85D1E5AAC8BF8956030F40E093685F92A02AEC6090336211582D7E435F8938A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/0MLP6dR7SlGonW0ltSjSaA/zh-cn_image_0000002791565226.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E52BA2C6C74E8A32A7B144B78CF44A3C9EDE19ED45EDB53E7B045F3CF436858)

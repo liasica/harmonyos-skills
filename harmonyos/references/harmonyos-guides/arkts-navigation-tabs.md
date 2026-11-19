@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: 选项卡 (Tabs)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 选项卡 (Tabs)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:03+08:00
+scraped_at: 2026-11-19T09:47:40+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5c243149944ecee09c9b71bafa55068703534b6041f7855bbcee5e2618498f81
+content_hash: sha256:26dbd2340365ed72f9c8d5e125f6cdf87a6b5d404c9ced8de5e4f9078d76f4ca
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:5c243149944ecee09c9b71bafa55068703534b6041f7855bbcee5e26184
 
 Tabs组件的页面组成包含两个部分，分别是[TabContent](../harmonyos-references/ts-container-tabcontent.md)和[TabBar](../harmonyos-references/ts-container-tabcontent.md#tabbar)。TabContent是内容页，tabBar是导航页签栏，页面结构如下图所示，根据不同的导航类型，布局会有区别，可以分为底部导航、顶部导航、侧边导航，其导航栏分别位于底部、顶部和侧边。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/G0A9e6qzRASwPT4_R2oylQ/zh-cn_image_0000002817505997.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0CCD6ECA5DAC545894606E294A113FBB179FF68C80BF16A0EEB4385648E8CE1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/-ocpauyjTPqW1xTne2Wxbw/zh-cn_image_0000002820524847.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=B44B656D353D2D7284442CD8B084CA94C7F06976F0433FE7EBAB6F47594FE83A)
 
 **说明** 
 
@@ -35,7 +35,7 @@ Tabs组件的页面组成包含两个部分，分别是[TabContent](../harmonyos
 
 Tabs使用花括号包裹TabContent，如图，其中TabContent显示相应的内容页。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/HTpEJAFOTDugQ1pAP_H2Mw/zh-cn_image_0000002788306568.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=7256AE9702236886352B6967057BAADC85CD7A875E969BFA5F1940B790AF2EC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/WjsCm5JUQDKmyxVHYe50jw/zh-cn_image_0000002820404845.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=144BA534D6C508F3A4CB1EABD6E352A4E2B8D8CCD7087A908C508BB454ABC66B)
 
 每一个TabContent对应的内容需要有一个页签，可以通过TabContent的tabBar属性进行配置。在如下TabContent组件上设置tabBar属性，可以设置其对应页签中的内容，tabBar作为内容的页签。
 
@@ -93,7 +93,7 @@ Tabs() {
 
 **图3** 底部导航栏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/dnWVzKXkRbiSIDSMZizdHA/zh-cn_image_0000002817425931.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B6D5D36E5E66F4CD901703E35D0E8A0B446192815BE1E782BC297A67268D223)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/oHPsgZM5RrWJcMbW-gvIKQ/zh-cn_image_0000002791724868.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A7028FBD584B4D6CD8B1B472E20EB7F40E6D209E562E81BE3C65F4ADA345321)
 
 导航栏位置使用Tabs的[barPosition](../harmonyos-references/ts-container-tabs.md#tabsoptions15)属性进行设置。默认情况下，导航栏位于顶部，此时，barPosition为BarPosition.Start。设置为底部导航时，需要将barPosition设置为BarPosition.End。
 
@@ -112,7 +112,7 @@ Tabs({ barPosition: BarPosition.End }) {
 
 **图4** 顶部导航栏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/q2d6aNMUSX6Dvd5um6EIDg/zh-cn_image_0000002788466512.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACA33B25D6DCBBC77135D1B8554402AF3E06E8A63A7E2C4ABED98D6E8A0B29F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/HLatVoy2TFqzxF-cWWKwvg/zh-cn_image_0000002791564896.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEC008D3C6180049EBE64ADA6154F974E6EF9B6AC12C84396C5ABD5AC8636D97)
 
 ```typescript
 Tabs({ barPosition: BarPosition.Start }) {
@@ -127,7 +127,7 @@ Tabs({ barPosition: BarPosition.Start }) {
 
 **图5** 侧边导航栏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/BfqGsKavRQuBE7RmkMEH5g/zh-cn_image_0000002817505999.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A5260B3032E9E636EED63B63EF70EF90C25FB717EC14612A701F8691F0F5D8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ZG2nMcM-RXmhpBUyD6JLKA/zh-cn_image_0000002820524849.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F8EAA8BD5B17EC8B70C3E0912021795B7F85BB794D901E12F1EC48AEAF6554B)
 
 实现侧边导航栏需要将Tabs的[vertical](../harmonyos-references/ts-container-tabs.md#vertical)属性设置为true，vertical默认值为false，表明内容页和导航栏垂直方向排列。
 
@@ -155,7 +155,7 @@ Tabs({ barPosition: BarPosition.Start }) {
 
 当页签数量不足，无法铺满屏幕宽度或高度，或者铺满后影响到UI美观时，Tabs提供了自定义导航条页签对齐方式的API。例如，在应用的二级导航中，如果页签较少，可以考虑将页签居左对齐。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Rq2kRsreRze58oSo0JOp_w/zh-cn_image_0000002788306570.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E19B7F04CCA6903FDBC344C61BE28BF46AAB0CFC99BEF66EFD6D0FF54FFEF20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/MvIV48oPTFaUkpAzP4CYsQ/zh-cn_image_0000002820404847.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=53A3C85EC4E66E62A66C7B9A66E4F2220308C32538767092A948E9FDEC641E75)
 
 **实现原理**
 
@@ -199,7 +199,7 @@ export default struct InTabsComponent {
 
 对于底部导航栏，通常用于应用主页面的功能区分。为了更好的用户体验，开发者通常会自定义页签样式。开发者可以使用Tabs组件提供的定制页签样式的API，将页签自定义为图标加文字标题的形式，并且在选中和非选中的状态下，提供不同的样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/WDNVEkp9TDa_4OxqIpNwYQ/zh-cn_image_0000002817425933.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AD478DEEEFBC8E46CCB7D7C7C217105167664A7F1C0324CB215749934D5FB07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/fM5EWqUgQCusY5wpIYBccg/zh-cn_image_0000002791724870.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=C893BDB68B5BB63EA280FC18B6C3BEFD04806275DE93334EB83A77C40BD48A68)
 
 **实现原理**
 
@@ -262,7 +262,7 @@ Tabs组件的[tabBar](../harmonyos-references/ts-container-tabcontent.md#tabbar)
 
 在一些二级导航栏页面中，二级页签的内容上方通常会放置一些banner位或其他优先级较高的内容，并且在向上滑动时会退出显示区域。为了提供更好的用户体验，建议在上划的过程中，导航条能够吸附在顶部，便于用户进行内容切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/1mC7gCgGT2qucaFUsiNzKQ/zh-cn_image_0000002788466514.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5ECAF7E7831788895D66EA1E06235DE99AF4D94AD100D02B399970A1D23D463)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/cb2u-mQ0S-SfTz0pK6rpXQ/zh-cn_image_0000002791564898.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB57190C2E8BC570C55847A955B0629FB1A9FDFD77A82769CB307FFD670B5043)
 
 **实现原理**
 
@@ -330,7 +330,7 @@ Scroll() {
 
   底部导航栏覆盖在内容上方，并具有毛玻璃效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/2Rc7BDUCSJ6D1oWr8uLQfQ/zh-cn_image_0000002817506001.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD9311DA36D0BDD7267FAF0DDA62A06A2B80F692769F9F5641F0EC5333B0A2A4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/SRMBX8P9T-OoNM6WL_bOeQ/zh-cn_image_0000002820524851.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=82B68A5D2158BD13E6B88C8E6489D9638212BBA1EEC3ABE9AD375F663A9A5DE4)
 * 通过[barModifier](../harmonyos-references/ts-container-tabs.md#tabsoptions15)设置tabBar的clip属性，实现页签超出tabBar区域显示效果。详情请参见[示例15（页签超出TabBar区域显示）](../harmonyos-references/ts-container-tabs.md#示例15页签超出tabbar区域显示)。
 
   ```ts
@@ -365,7 +365,7 @@ Scroll() {
 
   底层导航栏图标可超出导航条范围。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/eIOZQ-WXQp-jF1LJiMIScQ/zh-cn_image_0000002788306572.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=137FE87CB2A8CFF9D577829BB83FD570AE8D46F4D439A09DFCE920B287D1F8A1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/HyOojRNbQqyBMXfZNGvS2w/zh-cn_image_0000002820404849.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=95CFC4DD425B31B414E28C0A192BDBBA4CA4C12EEA137B80B06C703225E83EAC)
 * 通过配置[fadingEdge](../harmonyos-references/ts-container-tabs.md#fadingedge10)(true)实现TabBar边缘渐隐。详情请参见[示例5（设置TabBar渐隐）](../harmonyos-references/ts-container-tabs.md#示例5设置tabbar渐隐)。
 
   ```ts
@@ -377,7 +377,7 @@ Scroll() {
 
   顶部导航栏页签靠近两侧会模糊化。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/PPMu65k8Ty6SljKX-aYW_A/zh-cn_image_0000002817425935.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECBF4713026320E05FF067D0D29650826B1929E370693BF1D410882C411F9FFC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/yd73aNBhQsihhxpuGCAyYw/zh-cn_image_0000002791724872.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D2FAB92C1B5242358E70526D52ADB54D6ECF6554CA7B3CCC85E3820C52DD27B)
 * 通过TabsController的[setTabBarTranslate()](../harmonyos-references/ts-container-tabs.md#settabbartranslate13)、[setTabBarOpacity()](../harmonyos-references/ts-container-tabs.md#settabbaropacity13)方法可以设置TabBar偏移量及透明度。详情请参见[示例12（设置TabBar平移距离和不透明度）](../harmonyos-references/ts-container-tabs.md#示例12设置tabbar平移距离和不透明度)。
 
   ```ts
@@ -406,7 +406,7 @@ Scroll() {
 
   顶部导航栏位置向左下偏移，并且呈现半透明效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/28WwOlKsREm-W90czuotPA/zh-cn_image_0000002788466516.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D40888058DA635AFAC9EF0AF376A33AEF90D3E3754389E29F637FD64125A85F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/RFUOgaK4S1uETHoG0uRdqg/zh-cn_image_0000002791564900.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA1744EC5634F44BD323C085650CE1445E2E22ADB86D8CEE27B4CBB241C222A7)
 
 **说明** 
 
@@ -420,7 +420,7 @@ Tabs组件在用户交互方面提供了丰富的特性，其中与滑动动作�
 
 当内容分类较为固定且不具有拓展性时，例如底部导航内容分类一般固定，分类数量一般在3-5个，此时使用固定导航栏。固定导航栏不可滚动，无法被拖拽滚动，内容均分tabBar的宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/dbDIps_sSGybGG37pnetPA/zh-cn_image_0000002817506003.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=092C42CAE070533FB566072FBB4D9A0EC22392132B298062EFB74C9A50F3B6D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/xtxmnbVbRlWB6ljY8lPP2Q/zh-cn_image_0000002820524853.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=78EA1310D0A592C6B66B3CC037CB890FCAD9F63D9C3ABF4998CBB3133C979BD9)
 
 Tabs的[barMode](../harmonyos-references/ts-container-tabs.md#barmode10)属性用于控制导航栏是否可以滚动，默认值为BarMode.Fixed。
 
@@ -436,13 +436,13 @@ Tabs({ barPosition: BarPosition.End }) {
 
 在应用开发中，开发者经常遇到多层Tabs嵌套使用的场景。如果父子Tabs组件均需滑动切换时，开发者需要对父子Tabs的滑动切换行为进行约束，以避免冲突。通常做法是，让滑动操作优先切换子Tabs页签，当子Tabs页签切换到最后一个后，再触发父Tabs的页签切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/d54wfwX0RQqryckTdiCAWw/zh-cn_image_0000002788306574.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=291AE3DE497758093BDADDE382BD227AFE4242B05B87C829C113E1D2A0CDCC4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/v2mxJxmLSDKZoE7Mx2m92g/zh-cn_image_0000002820404851.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=C69114B65731096FC7607F15DB4E5E58BA40B6B59A56822B518B5638E4921603)
 
 **实现原理**
 
 可以通过[PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md)结合[TabsController](../harmonyos-references/ts-container-tabs.md#tabscontroller)的changeIndex()方法实现双层Tabs的切换。具体操作为：开启子Tabs的滑动切换功能，同时关闭父Tabs的滑动切换。在子Tabs的第一个或者最后一个页面上添加PanGesture事件处理函数，用于判断滑动方向，并根据滑动方向使用TabsController的changeIndex()方法切换到父Tabs的相应页签。这样一来，子Tabs的中间页签滑动时，仅会触发子Tabs页签的切换，而最后一个页签的滑动则会通过changeIndex()方法间接触发父Tabs页签的切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/FFxqozN-QpiRaqKVk6x6dw/zh-cn_image_0000002817425937.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=E463BA424A5C6E4C624BED349549F3203E4CB9B84F2DA45B23C2329EDAA1567C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/MvW4urdsTD-1ceUX5cgJsA/zh-cn_image_0000002791724874.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=C27333F01AA07E6DAC6A2DA4E0F9D6823D17286F7444E8782B0109A6B29190FF)
 
 **开发步骤**
 
@@ -524,7 +524,7 @@ Tabs({ barPosition: BarPosition.End }) {
 
 可滚动页签栏通常设置在顶部或侧边导航栏，当内容分类较多，屏幕显示区域无法完全展示所有分类页签时，该页签栏允许用户通过滚动来访问隐藏的页签内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/Px42POYoSV-iBTn3FgUxNQ/zh-cn_image_0000002788466518.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=792FE364D77063B033A4CD7666E4532A65C5807C6A5F459F98E1AA3514ECBE20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/fUaC3a_YQxetNiP-MfG0oA/zh-cn_image_0000002791564902.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE6E039E706495C7E155C319D7DAED787908C4CEF494D0D7619CDFBF6CC455D6)
 
 **实现原理**
 
@@ -600,7 +600,7 @@ build() {
 
 Tabs组件的TabContent默认在首次切换到该标签页时加载。如果TabContent中的内容或初始化逻辑较为复杂，加载速度较慢，则会影响标签页切换的流畅性，进而影响用户体验。此时，如果应用能在切换前预加载相应的标签页，将显著提升使用流畅度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/xyHMLJGBSbG5shaVmLHFBg/zh-cn_image_0000002817506005.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFC84E66D6EFD0AFA00776679091BC740719ED09AFBC506AAF76E39E3D583259)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/GguDNmJcQaK-GGm6Ke09KA/zh-cn_image_0000002820524855.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=2669E3449C001E660ABA4E162EBBE04D3E95AC8DCF078D23F4E08F5ECD12E6FD)
 
 **实现原理**
 
@@ -647,7 +647,7 @@ export default struct InTabsComponent {
 
 在不使用自定义导航栏时，默认的Tabs会实现切换逻辑。在使用了自定义导航栏后，默认的Tabs仅实现滑动内容页和点击页签时内容页的切换逻辑，页签切换逻辑需要自行实现。即用户滑动内容页和点击页签时，页签栏需要同步切换至内容页对应的页签。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/-rB-ojNzR32DHly3btN3vA/zh-cn_image_0000002788306576.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DD92DF1E3C50566922731631BD81A1A7D6546A3437DB9117BE3755C2F0FB928)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/qJNSm-VvT_e-d14NktzegQ/zh-cn_image_0000002820404853.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=97730981D01DF7E02566F2F84FC3EC591C41F50DB22C75D6380FD0BB033E2C1E)
 
 从API version 18开始，支持使用Tabs提供的[onSelected](../harmonyos-references/ts-container-tabs.md#onselected18)事件方法，监听索引index的变化，并将选中元素的index值传递给selectIndex，实现页签的切换。
 
@@ -713,7 +713,7 @@ export struct ContentPageNoAndTabLinkage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/1TCKu261TsO1f8aMKHZJWw/zh-cn_image_0000002817425939.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=940B8841D75D766B3F135B373B75528FA56EE87CE6CA5FA206EA1DB5176C0086)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/F5au49vZQ2OvfG5DX0HOgg/zh-cn_image_0000002791724876.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=45DF529A5B3E0D9D8FD3DD49ED1363681A79D66600AA4436EF58D32C7BCCA46F)
 
 若希望不滑动内容页和点击页签也能实现内容页和页签的切换，可以将currentIndex传给Tabs的index参数，通过改变currentIndex来实现跳转至指定索引值对应的TabContent内容。也可以使用[TabsController](../harmonyos-references/ts-container-tabs.md#tabscontroller)，TabsController是Tabs组件的控制器，用于控制Tabs组件进行内容页切换。通过TabsController的changeIndex方法来实现跳转至指定索引值对应的TabContent内容。
 
@@ -763,7 +763,7 @@ export struct ContentPageNoAndTabLinkage {
                 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/EAhtR7RXQHCqI2FAFqhx2Q/zh-cn_image_0000002788466520.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0DACB3EFE2D2F9C12271216F1D218EF4D1C454127A6C2564B8066FE94847784)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/b0gdPObKS82LXuhS0R8c3g/zh-cn_image_0000002791564904.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=511E227F2E3859901B2E3B25999D3131ECEDD2847F0A0970155E50C92DD2BE31)
 
 开发者可以通过Tabs组件的[onContentWillChange](../harmonyos-references/ts-container-tabs.md#oncontentwillchange12)接口，设置自定义拦截回调函数。拦截回调函数在下一个页面即将展示时被调用，如果回调返回true，新页面可以展示；如果回调返回false，新页面不会展示，仍显示原来页面。
 
@@ -780,19 +780,19 @@ Tabs({ barPosition: BarPosition.End, index: this.currentIndex, controller: this.
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/DM2qS0l2TgCdUcEPS-npHw/zh-cn_image_0000002817506007.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=B28341B72E3337EEC6712ADB317D2EFEF8495EDAE76B6FD069FD9EECE6115194)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/0lyt5USGShaoj9mIeYFakg/zh-cn_image_0000002820524857.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=09BE33ECFE78F4D4C9A3EA83A9DF26FFE9606CE2C01E21CFF8FF26E4ED3B978B)
 
 ### 增删Tabs页签
 
 在日常的应用开发中，经常需要实现用户自定义选择频道的功能。通常，这些自定义选择的频道会通过Tabs组件来展示，因此需要动态地更新Tabs的页签。本示例设计了一对父子组件来演示这一功能。父组件负责显示页签及其内容，并在页签栏的最右侧设置一个“更多”按钮。点击此按钮会弹出一个窗口，供用户选择需要显示的页签。该弹窗内容由子组件提供，关闭弹窗后，父组件的页签将被更新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/7nwNlqTgRBmiI5rokBHFhQ/zh-cn_image_0000002788306578.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1FC737C2D54C79288FCF9590ACBB148602973BC8AD9D4782E9C14129D03731B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/pzbmyO_BR7a4PY9hwz7UrQ/zh-cn_image_0000002820404855.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4A0E262EE6806BFEA605CEF44F36DBEBC473DE87CA11A790970BB91FDBF69A0)
 
 **实现原理**
 
 定义selectTabsViewModel对象，其中的数组allTabs表示所有可选择页签，数组selectedTabs表示选中的需要显示的页签，并通过[@Link](arkts-link.md)绑定到父组件InTabComponent和子组件SelectTabsComponent中。子组件SelectTabsComponent作为一个弹窗用于选择需要显示的页签。选择完成后，关闭弹窗并更新 selectTabsViewModel对象中的选中页签数组 selectedTabs，以触发父组件InTabComponent的页签更新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/DP_IDD0OTSyTWl38XTmkRQ/zh-cn_image_0000002817425941.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8BDAD7D74B27EF3F135C51450A6874F0601826AB758061A98FF34D24FA66F40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/OeTzfndLTnaEIyEVuSAA8Q/zh-cn_image_0000002791724878.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=D46D21FEAAABC42657DABADE70C78C179738C5AE7B3E55F80DE56DE2FBB0948C)
 
 **开发步骤**
 
@@ -941,7 +941,7 @@ Tabs({ barPosition: BarPosition.End, index: this.currentIndex, controller: this.
 * TabsCacheMode枚举值为CACHE\_LATEST\_SWITCHED时，缓存当前显示的子组件和最近切换过的子组件。
 * 存在翻页动画时，从页面1直接切换到页面3，翻页动画会包含页面2，页面2也会被加载，如果此时页面2不在缓存范围内，页面切换完成后会立马释放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/LW3qaoPHQF2SqHsyysBoYg/zh-cn_image_0000002788466522.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=3766B68729F89B76A42E90125AB1A8A4CC0C60F1B21F639373D34DA0C1DE2C39)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Ro_pV1rNR-W9N9TKVn6gFg/zh-cn_image_0000002791564906.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2152CF2D298A56AABC537714699E864F8B685048517D8116D51CB17D0E99D8F)
 
 ```typescript
 // 如需作为页面入口，请取消@Entry的注释并删除export关键字
@@ -1004,16 +1004,16 @@ struct MyComponent {
 
 1. 如图所示，使用默认翻页动画，CACHE\_BOTH\_SIDE模式，n设置为2，点击TabBar切换到yellow页，TabContent1~3被缓存。再切换到red页，TabContent1、2释放，TabContent3~5被缓存。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/x3AgnNu5RXaWKW2OcxmN1g/zh-cn_image_0000002817506009.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=17B3909BE0FFD3751FAB44F3E7D012F7F6D9DAA8442721821FEE388462EE00F9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/puSusPxUSnS4qJcBGKS2BQ/zh-cn_image_0000002820524859.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=30072D0B06F029E27F37A445E544292BDC4C400BA25E7C174F39CF5C7A7D2C4F)
 2. 如图所示，使用默认翻页动画，CACHE\_LATEST\_SWITCHED模式，n设置为2，点击TabBar切换到yellow页，TabContent1、3被缓存，TabContent2释放。再切换到red页，TabContent1、3、5被缓存，TabContent4释放。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/xTsfYCLASaa_7Pxn6egJ_w/zh-cn_image_0000002788306580.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3B3CDB24F7FAFAB4C90AAE516ED432690B660F8ED084BAC0882DBB1025790C5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Hipyw-KnQJy1ohwdqNfmpQ/zh-cn_image_0000002820404857.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=C987D6E67B6C2818C95DF6BE344F173947C1088C620D028657A0329276B9FCCD)
 3. 如图所示，关闭翻页动画，CACHE\_BOTH\_SIDE模式，n设置为2，点击TabBar切换到yellow页，TabContent1、3被缓存。再切换到red页，TabContent3、5被缓存，TabContent1释放。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/8R0IEKwOS0CXZzdjQhCAng/zh-cn_image_0000002817425943.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCAFEE333EFDEEAA9C69A3056F467B592C98644CB3791DEA05E78DFE356BB63A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/zPTOWVNJSVSp91GjKC-2Xw/zh-cn_image_0000002791724880.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=29EBFDEE06BA9643F91D00DA6D66C86BE34673AD6173D4FE2D17A38BFAFFDE5B)
 4. 如图所示，关闭翻页动画，CACHE\_LATEST\_SWITCHED模式，n设置为2，点击TabBar切换到yellow页，TabContent1、3被缓存。再切换到red页，TabContent1、3、5被缓存。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/1Csf2cWiRVqjKSr5rzfenA/zh-cn_image_0000002788466524.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=D52FAC1C8401732FFACB0D06E3B478E057C8A030423B9D2538DCE5B653D815F0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/AVu-FVkXQH6YUL_Kir_24w/zh-cn_image_0000002791564908.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5B0E27A45559676D16F64639725B16A908AA9FB5D6D52D40553470914708BC0)
 
 ## Tabs切换动效
 
@@ -1021,13 +1021,13 @@ struct MyComponent {
 
 Tabs 自带的页签切换动画为平移动画。若开发者需实现更高级的动画效果，可通过Tabs提供的API实现自定义动画。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/qMxolLpHQvqJbapKr25_AA/zh-cn_image_0000002817506011.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3B1AF7548282493C75B9173E889AE45BA5956953B1454D284B2CAAA6BFFDA41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/QoaUUiJ6Q9uPYzXb_Q9q1g/zh-cn_image_0000002820524861.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=751CBAAE2590407C5499AB50C7956761A9CD9EF64D3C8343F5E51071AECF9092)
 
 **实现原理**
 
 使用[customContentTransition](../harmonyos-references/ts-container-tabs.md#customcontenttransition11)()函数来自定义Tabs页面的切换动画。本场景采用属性动画实现，开发者可以定义由@State修饰的可动画属性，并在build()方法中将这些属性绑定到对应的页签上。这里，淡入淡出动画选用了TabContent的尺寸属性scale和透明度属性opacity作为生成动画属性。然后，在[customContentTransition](../harmonyos-references/ts-container-tabs.md#customcontenttransition11)()函数中，设置动画的起始帧和结束帧对应的可动画属性值，系统将自动补全中间帧从而生成动画。关于属性动画详情可参考：[实现属性动画](arkts-attribute-animation-apis.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/hPdfYJnBTGO8R1WGfZR88Q/zh-cn_image_0000002788306582.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=21A900604DCF221C5645C95FC43917879D3B03FFCED8372BE46AAB8543F3D9BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ImitVqWOTFa1kLS_SNMwCA/zh-cn_image_0000002820404859.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=80229736C25387A1E0A66ED0B597D0AA3B1E2EC056059CD56BDB80DED4669323)
 
 **说明** 
 
@@ -1127,7 +1127,7 @@ Tabs 自带的页签切换动画为平移动画。若开发者需实现更高级
 
 在自定义页签样式中，页签的选中和非选中状态显示样式不同时，页签的样式依赖于Tabs组件的切换动作。这种情况下，需要实现Tabs页签的联动，页签切换时，页签样式自动变更。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/pUdKPh8QRBO67zLNu9fnRA/zh-cn_image_0000002817425945.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=793508DC10739BF4BCF99B12B2B898F3A4DA590E790A9F036857AE4CA0D543E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/iIbfBpG-QkiBsnS1JTF2wg/zh-cn_image_0000002791724882.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=E73BE30D0165E3A8D62373CE3415F57AE1AFB8D1348D8E78F894F835ED72FFE3)
 
 **实现原理**
 
@@ -1183,7 +1183,7 @@ export default struct OutTabsComponent {
 
 弹窗只适用于底部页签[BottomTabBarStyle](../harmonyos-references/ts-container-tabcontent.md#bottomtabbarstyle9)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/0RmlqhDvS9aayEMuMcj6ZQ/zh-cn_image_0000002788466526.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFFD0F56F652D165A65DA3081A4B29733B08FCBADF27D458810828BC207B9255)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/ThLGJ7vUQaOU4tEe09R5ZA/zh-cn_image_0000002791564910.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=9131886331B6B351B15A1AF080B47B634FE4DFC84DAC57EAF44355D099B9E84E)
 
 ```typescript
 // 如需作为页面入口，请取消@Entry的注释并删除export关键字
@@ -1229,7 +1229,7 @@ export struct AgeFriendlyTabs {
 
 Tabs页面不支持懒加载。 若要实现页面懒加载效果，可以通过自定义TabBar与[Swiper](arkts-layout-development-create-looping.md)组件结合[LazyForEach](arkts-rendering-control-lazyforeach.md)来实现页面的懒加载和释放。在使用Tabs组件时，仅保留TabBar，TabContent部分留空，用Swiper组件替代TabContent以显示内容。定义一个数值属性currentIndex，利用[TabsController](../harmonyos-references/ts-container-tabs.md#tabscontroller)、[SwiperController](../harmonyos-references/ts-container-swiper.md#swipercontroller)及onchange函数，使其同时绑定Tabs组件和Swiper组件，从而实现联动。这是因为Swiper组件内支持LazyForEach组件，而原生Tabs组件不支持。在Swiper中利用LazyForEach显示内容，以实现Tabs的懒加载效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/foZO_caCQr6jNPFVnR3NbQ/zh-cn_image_0000002817506013.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4867C6EAA414BEAE2A7EF5D537AB0E734D63B057F4706041F18DF9F996F8E35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/33Y7LNVCSwuiStmzrEAweA/zh-cn_image_0000002820524863.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=30DD35F9EB31233E0CA2758C280CA43D8D009B7BAA7BBBBC60EBF12AD2F09040)
 
 详情请参见[页面懒加载和释放](../harmonyos-references/ts-container-tabs.md#示例13页面懒加载和释放)。
 

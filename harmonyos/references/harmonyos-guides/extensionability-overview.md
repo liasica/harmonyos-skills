@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionabil
 title: ExtensionAbility组件
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > ExtensionAbility组件
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:49+08:00
+scraped_at: 2026-11-19T09:47:25+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:68633e490955087cc0130c0ef9a5fb3345e4577568b781ef69174803a02aafee
+content_hash: sha256:3f04265c3888ff77b56db4673d69b2fe7fece1c92a46506f5f9d226ae4ba988f
 ---
 
 [ExtensionAbility](../harmonyos-references/js-apis-app-ability-extensionability.md)组件是一种面向特定场景的应用组件。每一个具体场景对应一个不同类型的ExtensionAbility，例如用于卡片场景的[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)，用于输入法场景的[InputMethodExtensionAbility](../harmonyos-references/js-apis-inputmethod-extension-ability.md)，用于延时任务场景的[WorkSchedulerExtensionAbility](../harmonyos-references/js-apis-workschedulerextensionability.md)等。开发者通过使用不同类型的ExtensionAbility组件，可以扩展和丰富应用功能，更好地与其他应用或系统开展交互。
@@ -76,7 +76,7 @@ content_hash: sha256:68633e490955087cc0130c0ef9a5fb3345e4577568b781ef69174803a02
 
 **图1** 使用InputMethodExtensionAbility组件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/1AJZF1d-QbCw83MC5C4EBA/zh-cn_image_0000002817425489.png?HW-CC-KV=V1&HW-CC-Date=20261114T004511Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AB06900462ED92A97BA6C3F00CCA739EB5E7783463DA8EC6960D2D737C40B45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/TF9oR-N1R-KqPZb9mqqoYw/zh-cn_image_0000002791724426.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE625C53EB7BF4D8B48FBDF614B105DEDA283C17F0DAD2B1F342BA0C7F937D72)
 
 ## 实现指定类型的ExtensionAbility组件
 
@@ -84,7 +84,7 @@ content_hash: sha256:68633e490955087cc0130c0ef9a5fb3345e4577568b781ef69174803a02
 
 卡片FormExtensionAbility实现方不用关心使用方何时去请求添加、删除卡片，FormExtensionAbility实例及其所在的[ExtensionAbility](../harmonyos-references/js-apis-app-ability-extensionability.md)进程的整个生命周期，都是由卡片管理系统服务FormManagerService进行调度管理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/J6rqBYxjR_G_Cq496iketg/zh-cn_image_0000002788466070.png?HW-CC-KV=V1&HW-CC-Date=20261114T004511Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A742C03A0A0F6A003050451B7E76D31834DC94BEFEBCA21230D5D60DD6AD2D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/d-B8dhYtSlyknN55LeHiuw/zh-cn_image_0000002791564454.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=38B3EB197CD3DC72CCFBF512E28311EA52DA7104BD2BE4242254A607EE825B0A)
 
 * **[EmbeddedUIExtensionAbility](embeddeduiextensionability.md)**
 * **[使用AppServiceExtensionAbility组件实现后台服务](app-service-extension-ability.md)**

@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdr-vivid-vid
 title: HDR Vivid视频播放与录制开发实践
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > HDR Vivid视频播放与录制开发实践
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:55+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:0fa279a39d3c1e02dcc6b8c3fbfedc06e97169f410a6254becb5350d27fa4af1
+scraped_at: 2026-11-19T09:48:35+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:b80fb35b8c7695599b12ea9003709a0e4ffe9f9536cde2230f71662f6c2e272b
 ---
 
 ## 概述
 
 HDR Vivid是高动态范围视频技术标准，中文名为“菁彩影像”。该标准旨在提供更丰富的色彩、更高的亮度和更深的对比度，从而为观众带来更加逼真的视觉体验。与传统的SDR（标准动态范围）视频相比，HDR Vivid视频能够展示更广泛的亮度范围和更细腻的色彩层次，使得画面更加生动和真实。它受亮度、对比度、色深、色域等因素影响，是一种提高画面亮度及对比度的画面处理技术。 其技术特点与优势包括：
 
-* \*\*高动态范围：\*\*HDR Vivid通过更广的色域和更高的动态范围，使得画面能够容纳更多的细节和色彩层次。与传统的SDR相比，HDR Vivid的高光亮度是SDR的40倍，它能够同时呈现更深的黑色和更亮的白色，让画面的亮部和暗部细节更加清晰。
-* \*\*色彩丰富：\*\*HDR Vivid支持10bit/12bit的色深，使得色彩过渡更加平滑，色彩表现更加细腻。色域面积相对BT.709标准增加了70%，色域越大证明能显示的颜色越多，HDR Vivid能够呈现更加真实的色彩，让用户感受到更加丰富的视觉体验。
-* \*\*智能优化：\*\*作为一种动态HDR标准，HDR Vivid能够根据显示硬件和视频场景，逐帧动态优化画面的亮度、对比度和色彩。HDR Vivid使用动态元数据和智能映射引擎，将母版颜色容积映射到显示设备上，这种映射使得创作者的意图在不同显示设备上都得以保留，并且呈现最优画质效果，解决了传统制作和显示过程中色彩信息和亮度细节丢失的问题。
+* **高动态范围：** HDR Vivid通过更广的色域和更高的动态范围，使得画面能够容纳更多的细节和色彩层次。与传统的SDR相比，HDR Vivid的高光亮度是SDR的40倍，它能够同时呈现更深的黑色和更亮的白色，让画面的亮部和暗部细节更加清晰。
+* **色彩丰富：** HDR Vivid支持10bit/12bit的色深，使得色彩过渡更加平滑，色彩表现更加细腻。色域面积相对BT.709标准增加了70%，色域越大证明能显示的颜色越多，HDR Vivid能够呈现更加真实的色彩，让用户感受到更加丰富的视觉体验。
+* **智能优化：** 作为一种动态HDR标准，HDR Vivid能够根据显示硬件和视频场景，逐帧动态优化画面的亮度、对比度和色彩。HDR Vivid使用动态元数据和智能映射引擎，将母版颜色容积映射到显示设备上，这种映射使得创作者的意图在不同显示设备上都得以保留，并且呈现最优画质效果，解决了传统制作和显示过程中色彩信息和亮度细节丢失的问题。
 
 基于系统不同的能力，本文给开发者提供了以下场景：
 
@@ -29,7 +29,7 @@ HDR Vivid是高动态范围视频技术标准，中文名为“菁彩影像”�
 
 [AVPlayer](../doccenter-capabilities/media-kit-intro.md#avplayer)提供功能完善的一体化播放能力，应用只需提供流媒体来源，无需数据解析和解码，即可实现播放效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/1SuMelKbRtusW_82MtNWoA/zh-cn_image_0000002788307614.png?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8C1E4C99F6F9EE8D103EC7776D34C3C11806C7A2BB509F2ABCFDA36BBA3D508)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/WPIJTSGYSGOA7Z7eeONSFA/zh-cn_image_0000002820405895.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD932EEDF342589B7252DEFAB4BEB4BB91348D1E3818AD97BA39BCBC213624C7)
 
 ### 开发步骤
 
@@ -41,7 +41,7 @@ HDR Vivid是高动态范围视频技术标准，中文名为“菁彩影像”�
 
 [AVCodec](../doccenter-capabilities/avcodec-kit-intro.md)模块中[视频解码](video-decoding.md)的Native API接口，可以完成视频解码功能。解码后的YUV图像数据通过回调接口返回给应用，由应用侧自行控制送显。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/nw4CjhbHSvy3rIDqHiZcaw/zh-cn_image_0000002817426977.png?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF2311102573A6CC7A9D7ABDC0832DB95F815411B3F0909057963EC304EB4F16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/k9bfVzFzQEGuId70PMKJOA/zh-cn_image_0000002791725916.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1D2250E24D5450BD46F228296BD0381C67BD9F5717748D9D14A4EBAD87B7F71)
 
 ### 开发步骤
 
@@ -157,7 +157,7 @@ HDR Vivid是高动态范围视频技术标准，中文名为“菁彩影像”�
 
 应用通过调用[AVRecorder](media-kit-intro.md#avrecorder)实现视频录制时，先通过Camera Kit接口调用相机服务，通过视频HDI捕获图像数据送显至应用，同时送至AVRecorder的录制服务，录制服务将图像数据编码后封装至文件中，实现视频录制功能。流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/cNTTAhJfR5aQL9xnh3FTvQ/zh-cn_image_0000002788467558.png?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=9864035B5320BBFC1917815A1174873E613D11E52D7829AC6C31A411754AE73B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/_kkuBlbtTV6Qey63VRMUlw/zh-cn_image_0000002791565944.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=49DB86DBC1A01D77ECD2EBF42727652255960CD647672710E74A5156389BF0CE)
 
 **说明** 
 
@@ -194,7 +194,7 @@ AVRecorder不支持设置AVMetadata音视频元数据的HDR类型。
    let videoSize: camera.Size = {
      width: 1920,
      height: 1080
-   }
+   };
 
    let videoProfile: undefined | camera.VideoProfile = videoProfilesArray.find((profile: camera.VideoProfile) => {
      return profile.size.width === videoSize.width && profile.size.height === videoSize.height;
@@ -249,7 +249,7 @@ AVRecorder不支持设置AVMetadata音视频元数据的HDR类型。
      this.videoOutput = this.cameraManager.createVideoOutput(videoProfile, videoSurfaceId);
    } catch (error) {
      let err = error as BusinessError;
-     Logger.error(TAG, `Failed to create the videoOutput instance. error: ${JSON.stringify(err)}`);
+     Logger.error(TAG, `Failed to create the videoOutput instance. error: ${err.message}`);
    }
    ```
 4. 创建并配置普通录像模式（[Interface (VideoSession)](../harmonyos-references/arkts-apis-camera-videosession.md)）的相机会话。
@@ -293,7 +293,7 @@ AVRecorder不支持设置AVMetadata音视频元数据的HDR类型。
    let isSupported: boolean = false;
    try {
      isSupported = this.captureSession.isVideoStabilizationModeSupported(mode);
-     Logger.info(TAG, `isVideoStabilizationModeSupported: ${JSON.stringify(isSupported)}`);
+     Logger.info(TAG, 'isVideoStabilizationModeSupported.');
    } catch (error) {
      let err = error as BusinessError;
      Logger.error(`The isVideoStabilizationModeSupported call failed. error code: ${err.code}`);
@@ -305,8 +305,8 @@ AVRecorder不支持设置AVMetadata音视频元数据的HDR类型。
        Logger.info(`activeVideoStabilizationMode: ${activeVideoStabilizationMode}`);
      } catch (error) {
        let err = error as BusinessError;
-       Logger.warn(TAG,
-         `setVideoStabilizationMode or getActiveVideoStabilizationMode failed, code=${err.code}, message=${err.message}`);
+       Logger.error(TAG, `setVideoStabilizationMode or getActiveVideoStabilizationMode failed.
+          Code: ${err.code}, message: ${err.message}`);
      }
    } else {
      Logger.error(`videoStabilizationMode: ${mode} is not support`);
@@ -351,7 +351,7 @@ AVRecorder不支持设置AVMetadata音视频元数据的HDR类型。
    ```typescript
    this.videoOutput.start((err: BusinessError) => {
      if (err) {
-       Logger.error(TAG, `Failed to start the video output. error: ${JSON.stringify(err)}`);
+       Logger.error(TAG, `Failed to start the video output. Code: ${err.code}, message: ${err.message}`);
        return;
      }
      Logger.info(TAG, 'Callback invoked to indicate the video output start success.');
@@ -366,7 +366,7 @@ AVRecorder不支持设置AVMetadata音视频元数据的HDR类型。
          await this.avRecorder.start();
        } catch (error) {
          let err = error as BusinessError;
-         Logger.error(TAG, `avRecorder start error: ${JSON.stringify(err)}`);
+         Logger.error(TAG, `avRecorder start error. Code: ${err.code}, message: ${err.message}`);
        }
      }
    }
@@ -378,7 +378,7 @@ AVRecorder不支持设置AVMetadata音视频元数据的HDR类型。
 
 应用通过调用AVCodec实现视频录制时，先通过Camera Kit接口调用相机服务，通过视频HDI捕获图像数据送显至应用，同时送至AVCodec的编码模块将图像数据编码后封装至文件中，实现视频录制功能。流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/zTC4QRhuRuSt0h998qdKwQ/zh-cn_image_0000002817507047.png?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=767A50B43C1E6C7EBB660D87913513D3F3A24626541D3E8A5FD701B3D0373DDD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/HNxuJD23RLG2UaF2pup-8g/zh-cn_image_0000002820525897.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDF3BED558ECC0D34B320E75C24061EFB365EF3A64C10FDED1AC36485E2F43BF)
 
 使用[Interface (CameraManager)](../harmonyos-references/arkts-apis-camera-cameramanager.md)+AVCodec录制HDR Vivid视频，与录制普通视频两者在组件配置上存在如下差异：
 
@@ -552,7 +552,7 @@ AVRecorder不支持设置AVMetadata音视频元数据的HDR类型。
      videoSession = cameraManager.createSession(camera.SceneMode.NORMAL_VIDEO) as camera.VideoSession;
    } catch (error) {
      let err = error as BusinessError;
-     Logger.error(TAG, `Failed to create the session instance. error: ${JSON.stringify(err)}`);
+     Logger.error(TAG, `Failed to create the session instance. Code: ${err.code}, message: ${err.message}`);
    }
    // ...
 

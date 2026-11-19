@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurre
 title: Function Flow Runtime图依赖并发(C++)
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发样例(C++) > Function Flow Runtime图依赖并发(C++)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:41+08:00
+scraped_at: 2026-11-19T09:48:20+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:27015336e7eb252b07c9ebb5f6e220dbdb97696e12986cca0428983c3b31d9f6
+content_hash: sha256:1eb698a03f378e7b98fdb1ffc8f53a0f1ff59453391bf8afe6eba08889a4c618
 ---
 
 ## 概述
@@ -65,7 +65,7 @@ task4(OUT A);
 task5(OUT A);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Q51e5GePTDismU5Isll4EQ/zh-cn_image_0000002817506929.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AB32D238343CE88AF883BB371DC3B12754C02820F7671911D05EC159DDC5C15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/gjLBYVqmQ-GOGC7buA3Ozg/zh-cn_image_0000002820525777.png?HW-CC-KV=V1&HW-CC-Date=20261119T014728Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA703586746FA6E114B0DDD6208E52EE789694ADCBC4AB83FB52F0F5DC7C458F)
 
 为表述方便，本文中的数据流图均以圆圈表示Task，方块表示数据。
 
@@ -79,7 +79,7 @@ task5(OUT A);
 
 用户上传视频到流媒体平台，处理步骤包含：视频解析A、视频转码B、视频缩略图生成C、视频水印添加D和视频发布E，其中步骤B和步骤C可以并行执行。任务流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/jGXDZMsRTYWvRVyqPlzbTw/zh-cn_image_0000002788307498.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=83180A521F63120CF7C3002B5E51B7537E52CDB622AA5D54FBC60156BCDB3344)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/jW8csZ4kTT-_dOottfZoNw/zh-cn_image_0000002820405777.png?HW-CC-KV=V1&HW-CC-Date=20261119T014728Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD49CCE1C1E87035426826B89ED2842D6189EBECB984E989D0049F96054C0A75)
 
 借助FFRT提供的图依赖并发范式，可以描述任务依赖关系，同时并行化上述视频处理流程，代码如下所示：
 
@@ -173,7 +173,7 @@ Fibonacci(5) is 5
 
 各个任务在FFRT内部形成了一棵调用树：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/F8MbcnuiTb6wMyLl2sQJbg/zh-cn_image_0000002817426861.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=B59EE2800BC292CB46A3E029F7641EF896A3D768BEEE7A139F19D506CC5D9A71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Ex38QaFTRMW5_peXMoqA4w/zh-cn_image_0000002791725798.png?HW-CC-KV=V1&HW-CC-Date=20261119T014728Z&HW-CC-Expire=31536000000&HW-CC-Sign=9662AD30D686BAAC1EBC710F9F6476EBF62B9B59486BF1E232416FDCA777AF53)
 
 ## 接口说明
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-singl
 title: 单算子应用
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 单算子应用
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:37+08:00
+scraped_at: 2026-11-19T09:49:18+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:04cf5f6a92b6748e6ecd1376c1fa50de9c42197ddd8a0ec53f763b8d7f27855e
+content_hash: sha256:6bfc856190b62ae146109eebde362f8814c7ef2f662cbed63fabeb7d77aa164f
 ---
 
 ## 概述
 
 CANN Kit提供独立的算子创建和计算通路，三方框架可以在模型加载、推理过程中，将卷积、深度卷积等算子通过单算子对接的方式迁移至NPU，经过硬件平台的加速计算，与整网模式对比灵活度更高，相比于整网CPU计算性能更优。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/6Q8VXYAkQQadcPUh_K2ZUA/zh-cn_image_0000002788308408.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004651Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F532EA8D911DE628AB8483FC519D6924EB9D0650D7468FE9D130167D13521EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/KBQ-Gat5RSShZzCBkyHmVg/zh-cn_image_0000002820406689.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014917Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9C3ED9C7A9780B7257E2AAEED7BBDB94BB333F87D6904C5865B6BE6771B2637)
 
 以下为单算子Tensor创建，单算子执行器创建、加载、执行接口，接口使用请参见[开发步骤](cannkit-single-operator-application.md#开发步骤)。如要使用更丰富的设置和查询接口，请参见[API参考](../harmonyos-references/cannkit.md)。
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 更新车钥匙
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发场景 > 更新车钥匙
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:33+08:00
+scraped_at: 2026-11-19T09:49:14+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:021f7ff219920aede6fcabd1bc129ce4ddc5b26de1aa0e9fd5dbab2e3a7146b8
+content_hash: sha256:b8449ae3286ce37aa267d539a4f0b232359ec2a35a3a991c7dac2493cd2790d7
 ---
 
 当车钥匙信息发生变化时，车主App通知钱包更新实例数据，完成移动端数字车钥匙更新。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/6wFUQ5GgRDGwEMsoW3H1uw/zh-cn_image_0000002788468296.png?HW-CC-KV=V1&HW-CC-Date=20261114T004833Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EFAFE791F7EC289E7C78F838FD7072EB68A39253A79683CC8F869FBD12361BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/hpFAI6XwQ4a1JdNigTvo0g/zh-cn_image_0000002791566682.png?HW-CC-KV=V1&HW-CC-Date=20261119T014914Z&HW-CC-Expire=31536000000&HW-CC-Sign=13B77A6ECFF1A0EF1C7EA75D044F36100313DCCA628D8832652D248222463985)
 
 ## 服务端开发
 

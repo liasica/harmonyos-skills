@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-data-dete
 title: 使用Web组件的智能分词能力
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 使用Web组件的智能分词能力
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:15+08:00
+scraped_at: 2026-11-19T09:47:53+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1d36eb8cba04dbf67956cbce3a345c5c6520b18b51b381cfdc9117f0381e2b9a
+content_hash: sha256:af387c9df672998992e8867b12ff43c6dd824812f599126c633279bd683ee566
 ---
 
 从API version 20开始，ArkWeb提供了H5页面内的文本分词识别功能，支持文本分词高亮、分词长按预览及文本选择菜单扩展等。这些功能需将[enableDataDetector](../harmonyos-references/arkts-basic-components-web-attributes.md#enabledatadetector20)设置为true，默认为false。
@@ -82,13 +82,13 @@ struct Index {
 
 点击实体文本，弹出对应的操作菜单，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/eq_2fOs1Swuv51gNSzNyDQ/zh-cn_image_0000002788307194.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004715Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C9AD87301BF7B5A01E432228C7A4E9AC9125A32BD3D8FACB1202BF035CD3FCB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/WUZqUdwHQG6hCiyV7qNgFw/zh-cn_image_0000002820405473.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=61E53C1E92EF3BDCA2428B898EC4F87283A7096E7A83B13FAA2F913A27E7902F)
 
 鼠标右键点击、鼠标拖拽将触发超链接的默认行为。
 
 接口[dataDetectorConfig](../harmonyos-references/arkts-basic-components-web-attributes.md#datadetectorconfig20)未被使用，或其参数[TextDataDetectorConfig](../harmonyos-references/ts-text-common.md#textdatadetectorconfig11对象说明)的enablePreviewMenu设置为false时，长按、拖拽将触发超链接的默认行为，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/wfL_uQaLTSecq63YuzlfVQ/zh-cn_image_0000002817426557.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004715Z&HW-CC-Expire=31536000000&HW-CC-Sign=57ADF5DC2948E78F2BE80AA46D887055A964AC50D5C6E31EF60F083C2299CCFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/09M_Gp18R3GirFdoo95Glw/zh-cn_image_0000002791725494.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5BE4A6EA1483787C07E9F5334BF27BF878C7981079E6CCA44B6C3DC3C99020E)
 
 页面文本元素的计算样式存在user-select:none时，实体菜单中“选择文本”的选项无效，但在[copyOptions](../harmonyos-references/arkts-basic-components-web-attributes.md#copyoptions11)不为CopyOptions.None时，仍可以复制实体文本。
 
@@ -110,7 +110,7 @@ controller: this.webController
 
 在[copyOptions](../harmonyos-references/arkts-basic-components-web-attributes.md#copyoptions11)不为CopyOptions.None时，长按被高亮的实体文本，会弹出预览菜单，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/ndU1k_jnTbeCwDqwzS2t5A/zh-cn_image_0000002788467138.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004715Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB3F24ED6F3EB406648991FCF29D9B80A89FE78CB7355CB156E80558B34601EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/3GG6GknjT0W9bjaZr10bpA/zh-cn_image_0000002791565522.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A6EF7AE3F40E74029C3B2947F1C4A2E8B9EF3AB33093762AF268AF686971BC0)
 
 通过[bindSelectionMenu](../harmonyos-references/arkts-basic-components-web-attributes.md#bindselectionmenu13)绑定的[自定义菜单](web-menu.md#自定义菜单)与分词长按预览菜单互不影响。长按被高亮的分词超链接不会弹出自定义超链接菜单，长按普通超链接也不会弹出分词预览菜单。
 
@@ -124,6 +124,6 @@ controller: this.webController
 * 选中文本中仅包含一个匹配识别类型的实体（可通过[dataDetectorConfig](../harmonyos-references/arkts-basic-components-web-attributes.md#datadetectorconfig20)配置支持的识别类型）。
 * 不处于“全选”操作状态下的文本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/HzJI4XNhS8-_VX2xCbb_Xw/zh-cn_image_0000002817506625.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004715Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9DF6032F8E6EF59A578F201D592239F8ECD4738E2A2F2834C42EFEA056D8DF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Fl5WHWmlSHCJHMwwJtxGRA/zh-cn_image_0000002820525475.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=608027C50CCD07CA7DE4FC8E2853EA1221BDD79EBB368A34C33613E932B036BE)
 
 AI菜单项的出现与是否选中高亮的实体文本无关，只要满足上述条件，AI菜单项就会显示。

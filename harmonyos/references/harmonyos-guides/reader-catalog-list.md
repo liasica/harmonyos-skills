@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-catalo
 title: 获取目录列表
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容解析 > 获取目录列表
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:30+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:1993377e2d879b8a615a49b831c8bd64805aba7e0a86394fd0f6cde831395dd3
+scraped_at: 2026-11-19T09:49:11+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:7b086c26be965847eca7dc7125f4b55521d1a22cac9e38988ae69827b2a03ffd
 ---
 
 当应用需要展示书籍目录列表时，开发者可通过解析能力获取目录节点列表，实现目录列表中章节名称按顺序、层级的展示。当用户点击目录节点时，开发者也需要获取目录位置及资源信息，用于跳转到指定位置。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/5_716_m7SuORl6ztcHnEYQ/zh-cn_image_0000002788308290.png?HW-CC-KV=V1&HW-CC-Date=20261114T004830Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A57137591248631A4573C70BB35D8F443A3EAA5CC2A2D6C0D79BE48F4AAD8DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/g90uCK-yTVufYuo93II71w/zh-cn_image_0000002820406571.png?HW-CC-KV=V1&HW-CC-Date=20261119T014816Z&HW-CC-Expire=31536000000&HW-CC-Sign=814E291B49B02B2006D3CFA01525E40045A2F750EA8668558787C71AEAD36F5A)
 
 ## 接口说明
 
@@ -33,6 +33,7 @@ content_hash: sha256:1993377e2d879b8a615a49b831c8bd64805aba7e0a86394fd0f6cde8313
    import { common } from '@kit.AbilityKit';
    import { bookParser } from '@kit.ReaderKit';
    import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 通过提前导入到[应用沙箱目录](app-sandbox-directory.md)中的书籍文件，初始化书籍解析器。
 
@@ -41,6 +42,8 @@ content_hash: sha256:1993377e2d879b8a615a49b831c8bd64805aba7e0a86394fd0f6cde8313
 
    aboutToAppear(): void {
      this.init().then(() => {
+     }).catch((error: BusinessError) => {
+       hilog.error(0x0000, 'ReaderLog', `init failed, Code: ${error.code}, message: ${error.message}`);
      });
    }
 
@@ -62,6 +65,8 @@ content_hash: sha256:1993377e2d879b8a615a49b831c8bd64805aba7e0a86394fd0f6cde8313
    aboutToAppear(): void {
      this.init().then(() => {
        this.getCatalogList();
+     }).catch((error: BusinessError) => {
+       hilog.error(0x0000, 'ReaderLog', `init or getCatalogList failed, Code: ${error.code}, message: ${error.message}`);
      });
    }
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-presentin
 title: 显示地图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 显示地图
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:24+08:00
+scraped_at: 2026-11-19T09:49:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2041e688b02bbd3b4affa353e41c1022f26e6ee7b7a2ba1c1b9de698722d525f
+content_hash: sha256:dd60b306ca57f74f337615e54d540a323b6fe3c891af93d6ebd595431de68050
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:2041e688b02bbd3b4affa353e41c1022f26e6ee7b7a2ba1c1b9de698722
 
 本章节将向您介绍如何使用地图组件[MapComponent](../harmonyos-references/map-mapcomponent.md#mapcomponent)和[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)呈现地图，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/x79AR2TkSDq_f64G1BfbYw/zh-cn_image_0000002788308136.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0F4791EBD223A095853441EA758E6C390CB8035066911B108C547C7B864E800 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/6bGoLG4-QsWbWAjqbahmpw/zh-cn_image_0000002820406417.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=61151193FE48293666D20343DCA6E29AE53E5A29A604C32C11FD0640A62B0C2F "点击放大")
 
 ## 接口说明
 
@@ -112,7 +112,7 @@ content_hash: sha256:2041e688b02bbd3b4affa353e41c1022f26e6ee7b7a2ba1c1b9de698722
 
    如果没有成功加载地图，请参见[地图不显示](map-faq-1.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/fev7PyyTR1Gs-vHQTBgc_Q/zh-cn_image_0000002817427499.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=754C872D93E65F6B49803AE1E77DB753C296D0C0396CAC43B6AE9E012D16A2F1 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/yJozIIsRSgqvSihE9fC9zA/zh-cn_image_0000002791726438.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DEE66AB94880E2308D9C739AD914A6FD34F5BC83B0C00DE3204D23F3312C132 "点击放大")
 
 ### 设置地图属性
 
@@ -145,7 +145,7 @@ content_hash: sha256:2041e688b02bbd3b4affa353e41c1022f26e6ee7b7a2ba1c1b9de698722
 1. 设置mapType，[切换地图类型](map-type.md)章节中有详细讲解。
 2. 设置myLocationControlsEnabled，展示我的位置按钮。
 
-   在mapOptions中设置myLocationControlsEnabled属性为true，可展示我的位置按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/IkK_JVrISVyU1sSlWVA-3w/zh-cn_image_0000002788468080.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=C130BF30B58D6009D5492C414312D8939486A4BF8C992A40B32FB046696CA57C)，显示效果如下图所示。
+   在mapOptions中设置myLocationControlsEnabled属性为true，可展示我的位置按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/4tjGoQ_TQ_y4JMIEW1kDQg/zh-cn_image_0000002791566466.png?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=58184738F7C3B35D0EB537BE67DE4EDF2DA3D10605F768DE9110EDFC9958E54D)，显示效果如下图所示。
 
    也可通过调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的方法展示我的位置按钮，详情见[显示我的位置](map-location.md)章节。
 
@@ -162,7 +162,7 @@ content_hash: sha256:2041e688b02bbd3b4affa353e41c1022f26e6ee7b7a2ba1c1b9de698722
    };
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/PjQvgsFUSTmjZvGhrFcLgA/zh-cn_image_0000002817507569.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2778C5D89EF5AE55DA7758A726B60E49C41FA5A53B318FF305ADADA332656B5 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/5DrOKngHSIqh99IFSBk1vA/zh-cn_image_0000002820526419.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E51D867AF6255F15481721F1CA6C87D8EA1CB2503AB9D6CEEF7253D8AE52BA0 "点击放大")
 3. 展示比例尺。
 
    在mapOptions中设置scaleControlsEnabled属性为true，可展示比例尺，显示效果如下图所示。
@@ -180,7 +180,7 @@ content_hash: sha256:2041e688b02bbd3b4affa353e41c1022f26e6ee7b7a2ba1c1b9de698722
    };
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/uELKNIvKTMu1iCgoNMam1Q/zh-cn_image_0000002788308138.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5AF99FB20DDCEE5117482369FBA5E81571174F8617DD38FBEC4D07EEFF1DFB9 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/aC3pH5y0T0mvM2av5MeKDw/zh-cn_image_0000002820406419.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEEFAB2E0DBCB67F1AEB17F094132AA4A2F926B3303CA5B30E041A8C223CB075 "点击放大")
 
 ### 开启3D建筑图层
 
@@ -192,7 +192,7 @@ this.mapController.setBuildingEnabled(true);
 
 显示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/b-_vKQcARei1keQRlg-BBQ/zh-cn_image_0000002817427501.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=73DF72198AC7003149249B65806F1C0592790DB614344EE16F5A327FBBE97C55 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/JhBaxAjlTSCvSLLGH8eAgw/zh-cn_image_0000002791726440.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=A28E9E3E6A38213309A418B466E63A1A86C41F9C4400C892AAB8BE44F2EEB4FF "点击放大")
 
 ### 地图前后台切换
 
@@ -245,7 +245,7 @@ this.mapOptions = {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/ZScJp5lfRlS9rD5WSr5D4w/zh-cn_image_0000002788468082.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5F8F4B0B8A4A55883756DCD2275FC80194732EEA6C858D0307056BA9FE86A1C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Mim-t2p5RJqZtrKTIf0sCg/zh-cn_image_0000002791566468.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=198EBBF8AE8F6595D2EADA0FF4C2101FC00028D45FC5B393726ED7A8CC001EEA "点击放大")
 
 方式二：创建地图后
 
@@ -280,7 +280,7 @@ this.mapOptions = {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/I4atZ9hPQHGliVAvQVxzzA/zh-cn_image_0000002817507571.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=439B1C14E5D3B4D6B5FF20FD809C7B2FCC1FEAB7E4383B18FCF5D241C54F5F9F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/6tUQ0R2FRfSJdsVmO-GCNQ/zh-cn_image_0000002820526421.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=500D79F953BD4AA35396A13BEBB252F0F48D4F7F2327E30B7076DD69077BA7F4 "点击放大")
 
 方式二：创建地图后
 
@@ -395,13 +395,13 @@ let result: boolean = this.mapController.isSphereEnabled();
 
 显示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/8BzICgzOQKeOxP-AJxRgJw/zh-cn_image_0000002788308140.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=3894838872A8DB5062E4A5AC637F63D47F5A71AEF43496294804EAC95FCD8DB8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/LJIswr2UQhK7_bFhxlTOWg/zh-cn_image_0000002820406421.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BB15F4AD5FA9007275711828CD57E98DD8AC46EEE2C5FB11E837C3431E8E60B "点击放大")
 
 ### 开启城市灯光效果
 
 调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的[setSphereEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#setsphereenabled-2)(enabled: boolean, animateDuration: number, cityLight: boolean)方法开启城市灯光效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/EHrHwp3dTlS1qZEXzpYjtQ/zh-cn_image_0000002817427503.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=213765FFFF85522B551C0669973FD951B1E57667A19BC9B394CF09DFD2B7FD46 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/0VNTHgMSQ5u908YrCH_B9A/zh-cn_image_0000002791726442.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E4802008C19A1BEA359E17B659A34E2C76F6BC480043617EA5F9EF23F452901 "点击放大")
 
 ### 3D地球背景替换
 
@@ -424,4 +424,4 @@ let mSphereOptions: mapCommon.SphereParams =
 await this.mapController.setSphereMapEnabled(true, mSphereOptions);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/xphrITSqRVOHYV2um15HZQ/zh-cn_image_0000002788468084.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C9B88D1D2580301792FFD0BB6726C1B7A2FA5AF59C1368AA4B3DE1C7969A88B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/knwS-s0qTMWFWwABB8F22Q/zh-cn_image_0000002791566470.png?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D55BF0261EF15012499AD5FC08A2A6982FE6DDF279D2A4F5103A787AE987115 "点击放大")

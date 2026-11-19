@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/developme
 title: 开发说明
 breadcrumb: API参考 > API参考概述 > 开发说明
 category: harmonyos-references
-scraped_at: 2026-11-14T08:49:25+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:030e415f34b188f480d29e3c9f1a896c0c22296425d5830f7fc2deee6416dd3f
+scraped_at: 2026-11-19T09:50:07+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:1091b8141ef55f4964dc360b6ab33c2dada963a094686b59d03bda385ff63026
 ---
 
 API参考主要用于开发者查阅应用开发相关的各类API说明。为了方便开发者使用API文档，对文档描述中的常用字段进行说明。
@@ -23,7 +23,7 @@ API参考采用两种方式标记组件或接口开始支持的版本号：
 
 建议开发者同步勾选"只看筛选内容"，查阅当前使用的SDK支持的API接口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/s9IWDPlRRKO_mckJxjmynQ/zh-cn_image_0000002817508013.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004735Z&HW-CC-Expire=31536000000&HW-CC-Sign=86F047EB990E4615F7B44CC08AB868867C80AD3C8B2AD7CB5C646C841148675A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/NBaSr4VMQUS9R2EIHWk0xw/zh-cn_image_0000002820526863.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014911Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D30D2AB115BEEB909522F0D3E7266035C2D0A9104314BA52552931F1078B7B8)
 
 ## 支持设备说明
 
@@ -37,7 +37,7 @@ API参考采用两种方式标记组件或接口开始支持的版本号：
 
 建议开发者同步勾选"只看筛选内容"，查阅对应设备支持的API接口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/duldKx8JTpe2svKeP5UHjg/zh-cn_image_0000002788308582.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004735Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AE2431A6702962C2065B92EBF937EF55A664EE9E7CB330CAA7B5D81F53A98CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/o3A_Q_diRgaREH8s4fm5ng/zh-cn_image_0000002820406863.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014911Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDFA02EFA318A050AF9DA0C2CF0CB6B75C74A9BFC345309B37A1279D0A6535C3)
 
 ### 接口在各设备类型的起始版本标记
 
@@ -45,7 +45,7 @@ API参考采用两种方式标记组件或接口开始支持的版本号：
 
 标记示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/ZvONBOlrRWCKdLjD-g7CQg/zh-cn_image_0000002817427945.png?HW-CC-KV=V1&HW-CC-Date=20261114T004735Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE1069B3C4A2EDE330884B597B55BA766D80CC5D8B89DD0882CE1F4A22D30538)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/tFhYCaA-RoKKvZT_uQaxXA/zh-cn_image_0000002791726884.png?HW-CC-KV=V1&HW-CC-Date=20261119T014911Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0F77EC7B8AA2242C5E4A7C8309BE44845056A092D603A6C8DD3323F7F0ACBD6)
 
 **标记适用范围说明：**
 
@@ -101,9 +101,9 @@ HarmonyOS SDK提供的开放能力（接口）需要在导入声明后使用。S
 
 ## 权限说明
 
-默认情况下，应用只能访问有限的系统资源。但某些情况下，应用为了扩展功能的诉求，需要访问额外的系统或其他应用的数据（包括用户个人数据）、功能。具体可参考[访问控制开发概述](../harmonyos-guides/app-permission-mgmt-overview.md)。
+默认情况下，应用只能访问有限的系统资源。但某些情况下，应用为了扩展功能的诉求，需要访问额外的系统或其他应用的数据（包括用户个人数据）、功能。具体可参考[应用权限管控概述](../harmonyos-guides/app-permission-mgmt-overview.md)。
 
-当调用接口访问这些资源时，需要申请对应的权限。申请方式可参考[访问控制开发指导](../harmonyos-guides/determine-application-mode.md)。
+当调用接口访问这些资源时，需要[申请对应的权限](../harmonyos-guides/determine-application-mode.md)。
 
 * 如果应用需要具备某个权限才能调用该接口，会在具体的接口描述中说明：**需要权限**：ohos.permission.xxxx
 * 如果应用不需要任何权限即可调用该接口，则不做特殊说明。

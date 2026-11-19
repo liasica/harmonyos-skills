@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 使用车钥匙
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发场景 > 使用车钥匙
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:33+08:00
+scraped_at: 2026-11-19T09:49:14+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:83d55f8ebaebf8805893e1e643df0820d23ab911d1a16d5622d1d5e8a546411b
+content_hash: sha256:57eedf9c382e8ffd4e982533ac2f02cd431ca97de14a53a81f3c49e070eded0e
 ---
 
 用户可在车主App中查看钥匙连接状态，执行开锁、闭锁、开启后备箱等远程车控操作。车控操作的超时时间由车主App自行控制。
@@ -21,7 +21,7 @@ content_hash: sha256:83d55f8ebaebf8805893e1e643df0820d23ab911d1a16d5622d1d5e8a54
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/gmZ1NE-JSPmrWAwAvmFglw/zh-cn_image_0000002817507785.png?HW-CC-KV=V1&HW-CC-Date=20261114T004833Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF357066F0CEA501413703A26711795DF910B95E27A18902632943F1D2E5FB74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/xtcPYO-_SueJgc7_Hnj6rA/zh-cn_image_0000002820526635.png?HW-CC-KV=V1&HW-CC-Date=20261119T014914Z&HW-CC-Expire=31536000000&HW-CC-Sign=E79554E13E87376F6E59E29F5619223D657EC0EB8A16F3F2D691B248E96ED32F)
 
 ## 开发流程
 

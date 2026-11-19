@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/p2p-developme
 title: P2P模式开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > WLAN > P2P模式开发指南
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:43+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:039a1f432cfdec547dbbc2feffcfc449eda301e45a6a6e41372a341c1694a9d9
+scraped_at: 2026-11-19T09:48:14+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:302b95442a2b665c0d5c0cb42ccc1dd4957c62aec8d7acfe1890042e84c9df81
 ---
 
 ## 简介
@@ -49,7 +49,7 @@ P2P模式，主要提供了WLAN设备的一种点对点连接技术，它可以�
    ```typescript
    import { wifiManager } from '@kit.ConnectivityKit';
    ```
-2. 开启设备的Wi-Fi。
+2. 开启设备的Wi-Fi，开启之前您可以调用[wifiManager.isWlanSupported](../harmonyos-references/js-apis-wifimanager.md#wifimanageriswlansupported)查询设备是否支持Wi-Fi。
 3. 需要SystemCapability.Communication.WiFi.P2P系统能力。
 4. 创建/删除P2P群组。
 
@@ -128,7 +128,7 @@ P2P模式，主要提供了WLAN设备的一种点对点连接技术，它可以�
    ```typescript
    import { wifiManager } from '@kit.ConnectivityKit';
    ```
-2. 开启设备的Wi-Fi。
+2. 开启设备的Wi-Fi，开启之前您可以调用[wifiManager.isWlanSupported](../harmonyos-references/js-apis-wifimanager.md#wifimanageriswlansupported)查询设备是否支持Wi-Fi。
 3. 需要SystemCapability.Communication.WiFi.P2P系统能力。
 4. 注册"p2pPeerDeviceChange"事件回调，并在回调实现中执行P2P连接。
 
@@ -236,7 +236,7 @@ P2P模式，主要提供了WLAN设备的一种点对点连接技术，它可以�
 ### 获取对端IP以及Socket通信
 
 1. import需要的Wi-Fi模块。
-2. 开启设备的Wi-Fi。
+2. 开启设备的Wi-Fi，开启之前您可以调用[wifiManager.isWlanSupported](../harmonyos-references/js-apis-wifimanager.md#wifimanageriswlansupported)查询设备是否支持Wi-Fi。
 3. 需要SystemCapability.Communication.WiFi.P2P系统能力。
 4. 通过[wifiP2pLinkedInfo.connectState](../harmonyos-references/js-apis-wifimanager.md#p2pconnectstate)获取P2P连接状态，确保连接状态为CONNECTED。
 5. 通过[wifiP2pGroupInfo.goIpAddress](../harmonyos-references/js-apis-wifimanager.md#wifip2pgroupinfo)获取群组IP地址，以便Socket通信。

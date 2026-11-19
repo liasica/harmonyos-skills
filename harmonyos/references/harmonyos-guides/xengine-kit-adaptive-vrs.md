@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-a
 title: 自适应VRS
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 自适应VRS
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:09+08:00
+scraped_at: 2026-11-19T09:48:49+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2e958bd9de38c484af6a521637e5ef3bc728835f2683207a189b60bf53c2329b
+content_hash: sha256:016ed5509e96eff189c8e0820a485a5815f96374ff2116d68140432a60b1e324
 ---
 
 XEngine Kit提供自适应VRS特性，利用实时图像分析结果动态识别并区分画面内容，在高细节区域保持高着色率以保障清晰度，在简单区域降低着色率以提升效能。这种基于内容的精细调控，能在人眼不易察觉画质损失的前提下，降低GPU负载，提升帧率与能效比。
@@ -39,7 +39,7 @@ XEngine Kit提供自适应VRS特性，利用实时图像分析结果动态识别
 
 * 下面是基于OpenGL ES图形API平台集成自适应VRS的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/IiRGdtcOS72YZCu9yCA2aA/zh-cn_image_0000002817427219.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004626Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA3F51D1E06B45515A05BA7586D9B643A6C8A3809F7322792B8C4B277277C309)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/AdHkCYcxTCu1MXBT-Ix_eQ/zh-cn_image_0000002791726158.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014849Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD384D6B0C785F291A6DEAAAC87E3BECB4ADC2AE882188C5A36DA8487E738CB2)
 
 1. 当用户在进入游戏初始化场景时调用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_AdaptiveVRSParameter](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter)接口配置自适应VRS参数。
@@ -51,7 +51,7 @@ XEngine Kit提供自适应VRS特性，利用实时图像分析结果动态识别
 
 * 下面是基于Vulkan图形API平台集成自适应VRS的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Zay-dAk3TEasuCEbC6WEjw/zh-cn_image_0000002788467800.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004626Z&HW-CC-Expire=31536000000&HW-CC-Sign=95D320DC84CC9C5A796F1CE30A4C76C36F22550B67CE96DF0E75FFE19115D0EA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/_IjHouc-TbuKdsvAWRiy_A/zh-cn_image_0000002791566186.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014849Z&HW-CC-Expire=31536000000&HW-CC-Sign=62344F139CA0BA0EE67D310A80C90996E10702BA4D6E58C9D2A41D9ADB2F27D6)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_CreateAdaptiveVRS](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_createadaptivevrs)接口创建自适应VRS实例。

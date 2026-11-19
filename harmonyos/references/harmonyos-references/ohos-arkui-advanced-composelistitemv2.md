@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ComposeListItemV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ComposeListItemV2
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:25+08:00
+scraped_at: 2026-11-19T09:51:14+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:59791dfff4df80cb120890750cb8766c7b02c5921cc5759096f0dcdf9c34bcff
+content_hash: sha256:7068ceb446d10fe86fafd8bb22371fe60aeb800151e25e1059b2cac13d876892
 ---
 
 该组件用于展示一系列宽度相同的列表项，适用于展示连续、多行的同类数据组合（如图片与文本）。
@@ -525,7 +525,7 @@ struct ComposeListItemV2Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/SWx6kVDfTNyBkyFJeWBBaQ/zh-cn_image_0000002788309374.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004822Z&HW-CC-Expire=31536000000&HW-CC-Sign=F04E997EFC636D374091D9191BD710DF4C63CF909E041637DD85F725B7CAF608)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Sp2K7qHOTKOBkmss5GnS4g/zh-cn_image_0000002791727676.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FB67373899B2D577BFD030BA84C4FDB98969D26B89134061A118EEEF2050D3D)
 
 ### 示例2(设置列表项右侧不同元素自定义播报)
 
@@ -617,7 +617,7 @@ struct ComposeListItemV2Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/y19XWNGBTAW9I_DJjuXtiA/zh-cn_image_0000002817428737.png?HW-CC-KV=V1&HW-CC-Date=20261114T004822Z&HW-CC-Expire=31536000000&HW-CC-Sign=606AC7D47A06C3084357CF817103ED78A685A125B965699749B7A4424164C969)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/JOxrVUvvRS2g9agAuvOMMA/zh-cn_image_0000002791567704.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=81662112409327CF092E791C6E89479EF71EEF382EFCAE6C7F12550234876B0F)
 
 ### 示例3(设置Symbol类型图标)
 
@@ -700,4 +700,4 @@ struct ComposeListItemV2Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/u2TIKeNlQZ-WbqklxIBuEw/zh-cn_image_0000002788469318.png?HW-CC-KV=V1&HW-CC-Date=20261114T004822Z&HW-CC-Expire=31536000000&HW-CC-Sign=43A124B634DFA36C818D48E15374B8EC94DE1F8ABAC0B7AF3C80DDDFB43DEF47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/7Z5h1NaDTmyIIzu7IItzzA/zh-cn_image_0000002820527657.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=A28036355809553859FE0AD9D4994E464F26CB8F9CC186E5E097FFD25F7861E2)

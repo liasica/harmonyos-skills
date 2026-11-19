@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.componentSnapshot (组件截图)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.componentSnapshot (组件截图)
 category: harmonyos-references
-scraped_at: 2026-11-14T08:49:53+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:8a1ace809b6ce94856e736b4488fc6b1ce8be8caa20b215caef8536a4d667c1a
+scraped_at: 2026-11-19T09:50:39+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:37ef426cc56486bcbeaa82a210c6fccf6458b32efffa60f408277907e5038707
 ---
 
 本模块提供获取组件截图的能力，包括已加载的组件的截图和没有加载的组件的截图。组件截图只能够截取组件大小的区域，如果组件的绘制超出了它的区域，或子组件的绘制超出了父组件的区域，这些在组件区域外绘制的内容不会在截图中呈现。兄弟节点堆叠在组件区域内，截图不会显示兄弟组件。
@@ -108,7 +108,7 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/blgjtXK_R7C87LoTkaysJw/zh-cn_image_0000002817508027.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004952Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B14A066CAA4971C0A5ED8B102B57916266E81443765A4BD6B240376B6536C9A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/cUduqW-8SaacscDBLzDyog/zh-cn_image_0000002820526877.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=33FFF64150993ED5F747627504DBB6D10A9D3509CC842CB6286128178FB3C285)
 
 ## componentSnapshot.get(deprecated)
 
@@ -194,7 +194,7 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/aR-x6QjjQvmcKz6fwqZ96g/zh-cn_image_0000002817508027.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004952Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAA788AF7FC244E548FA243942D9F5206C8B387CF74210FDDB23D09E95FB9DE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/bJUoub3PRICXHadjlGvKFg/zh-cn_image_0000002820526877.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=89375F27ED91401905245DDD589590E6B3E02FE024C2E88F7CF9639C580C67AC)
 
 ## componentSnapshot.createFromBuilder(deprecated)
 
@@ -300,7 +300,7 @@ struct OffscreenSnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/2Icg6-gvRDinCVZUvKRXVg/zh-cn_image_0000002788308596.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004952Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB4E436235A2576E58E736F5F9956EA0ED2D13E549A9872ECE300524359C267B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/XHlrjGNCTNWdJl4Z4r-V-Q/zh-cn_image_0000002820406877.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEB01891B69347705770D9F640801AFB3E9017D63B2FB627C705DF276E2E86D9)
 
 ## componentSnapshot.createFromBuilder(deprecated)
 
@@ -409,7 +409,7 @@ struct OffscreenSnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/MifSEMz_QfKetmhNaZKk4g/zh-cn_image_0000002788308596.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004952Z&HW-CC-Expire=31536000000&HW-CC-Sign=E533C3E41E9CAD234C98E6EF5812400F18FB1172A0C82515F2837F3C756469EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/hYPjVPLzRt6WshauLpLcEw/zh-cn_image_0000002820406877.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA3E7C3916475319B116E4BA8C43C54E7C6E860A491ECCB5988FE0B182E13799)
 
 ## componentSnapshot.getSync12+
 
@@ -495,7 +495,7 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/whRjIH-SRXSAkocfY1-Vbg/zh-cn_image_0000002817508027.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004952Z&HW-CC-Expire=31536000000&HW-CC-Sign=44F42ED938D47A009646D4DD3016E98DBD37D488417D8C6232B817FFF4703384)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ntVvMYBHSJeyyF3YiaEjjw/zh-cn_image_0000002820526877.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA3AB2609E4237FABEF8313212DB51CDA5701A8C640DBE52B15EFAC8815A5C9C)
 
 ## SnapshotSizeLimitation
 
@@ -511,8 +511,8 @@ struct SnapshotExample {
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| maxWidth | number | 否 | 否 | 组件截图的最大宽度限制。  取值范围：(0, +∞)。异常值为-1，表示查询组件截图尺寸限制失败。  单位：px |
-| maxHeight | number | 否 | 否 | 组件截图的最大高度限制。  取值范围：(0, +∞)。异常值为-1，表示查询组件截图尺寸限制失败。  单位：px |
+| maxWidth | number | 否 | 否 | 组件截图的最大宽度限制。  取值范围：[0, +∞)。异常值为-1，表示查询组件截图尺寸限制失败。  单位：px |
+| maxHeight | number | 否 | 否 | 组件截图的最大高度限制。  取值范围：[0, +∞)。异常值为-1，表示查询组件截图尺寸限制失败。  单位：px |
 
 ## SnapshotOptions12+
 
@@ -590,7 +590,7 @@ struct SnapshotColorModeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/x7aflWVWQNGe3fyjRUP5qg/zh-cn_image_0000002817508027.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004952Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3953D8189F0850CF79A351BB70B5B60EA7C3EE4D5429EABAA4E1E26ADA5BBE5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/QQf6OW80SoywN_9VczW4Rw/zh-cn_image_0000002820526877.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=488696E48B6EA18D5AFFB14117AA67C8C1A17C0C236D2782A1C3BF8BA01D6714)
 
 ## DynamicRangeModeOptions23+
 
@@ -653,7 +653,7 @@ struct SnapshotDynamicRangeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/BR5ktZovQomfAMmFWoE0Gg/zh-cn_image_0000002817508027.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004952Z&HW-CC-Expire=31536000000&HW-CC-Sign=C66DE41850D507EF905983348A21E10772A461AE8635A8ED51F2699D0A552552)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/w8YYnALzQoGFe4ekkksMBQ/zh-cn_image_0000002820526877.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B14AE3775732C1EF0F43E5F55B64A73B0E79F0F94EAD207AF372727056E4F62)
 
 ## SnapshotRegionType15+
 
@@ -771,4 +771,4 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/epUyJ_whSeGGMLnWbf_ujw/zh-cn_image_0000002817427959.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004952Z&HW-CC-Expire=31536000000&HW-CC-Sign=0047D9631A05B5CC6E8529F0ABFF9B9043E7B6DE70A0B8DB593379504EE8599C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/CiT4n6cgRHCD-5u0uj7G1A/zh-cn_image_0000002791726898.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=629596626CC73EB7DCB71BC833874549D4FC4AC6E7FC750196C73887C3984009)

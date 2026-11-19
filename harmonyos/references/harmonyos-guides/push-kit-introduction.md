@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-kit-intr
 title: Push Kit简介
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:29+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:98c2fa93ab4b772f4b4db403fb7a0fa455be14a9ac159f778833e494e9fe3802
+scraped_at: 2026-11-19T09:49:09+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:585ab0f33b044e6df03fab3155874ba2cf4c304b6b68cce7c5195a101b4a73c6
 ---
 
 Push Kit（推送服务）是华为提供的消息推送平台，建立了从云端到终端的消息推送通道。所有HarmonyOS应用可通过集成Push Kit，实现向应用实时推送消息，使消息易见，构筑良好的用户关系，提升用户的感知度和活跃度。
@@ -30,7 +30,7 @@ Push Kit（推送服务）是华为提供的消息推送平台，建立了从云
 
 推送消息指的是应用**通过Push Kit发送的**，在华为终端设备上显示的通知消息。显示场景主要包括通知中心、锁屏、横幅、桌面图标角标与通知图标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/6-bJLJ_3Tg2pUbfL_OXBfQ/zh-cn_image_0000002788468192.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004644Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2A0349BB68AD999AB5AA90EC531757B1934C94371D5C07FB72829424287A277)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/GYOgzpfkQyapAPf0ZXeupw/zh-cn_image_0000002791566578.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014815Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DC8479A46C60086623898191A60D79AA3A9BC32FA2AFD725A3C57AA205D7F75)
 
 有关各场景的详细说明请参见[通知提示场景](../design-guides/system-features-notification-0000001793074217.md#section162699204401)。
 
@@ -51,7 +51,7 @@ Push Kit支持以下消息类型：
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/mv_3ynhNRz2gffaSQABeRw/zh-cn_image_0000002817507681.png?HW-CC-KV=V1&HW-CC-Date=20261114T004644Z&HW-CC-Expire=31536000000&HW-CC-Sign=33853E9019438CA25209CE1B3FA8F6FC95B57E562D2ED14B500E1CB4D4EE3377)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/tWQlcyeEQOifAzNazVc_lA/zh-cn_image_0000002820526531.png?HW-CC-KV=V1&HW-CC-Date=20261119T014815Z&HW-CC-Expire=31536000000&HW-CC-Sign=1210937DB95D0FEBCB07FF12DAF2DFB329624BD4BD86B3A10C765A23C1FCBF4D)
 
 使用Push Kit的主要业务流程如下：
 
@@ -104,7 +104,7 @@ Push Kit当前[支持的设备](push-kit-introduction.md#支持的设备)中Wear
 
 ### 支持的设备
 
-Push Kit相关能力支持Phone、Tablet、PC/2in1、Wearable、TV设备。
+Push Kit相关能力支持Phone、Tablet、PC/2in1、Wearable、TV、Car设备。
 
 **说明** 
 

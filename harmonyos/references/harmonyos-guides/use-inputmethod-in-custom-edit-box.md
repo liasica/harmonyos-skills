@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-inputmeth
 title: 在自绘编辑框中使用输入法
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 在自绘编辑框中使用输入法
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:20+08:00
+scraped_at: 2026-11-19T09:47:57+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1139e62697d1a506dc8bf206e657ab18f4027accc569fb7910bf92b7e6365082
+content_hash: sha256:fc2169ff9518983047c20ac1e88ee996085eb3f42d7d58bb9d9b97d8c1de0695
 ---
 
 在输入法框架中，可以通过[getController](../harmonyos-references/js-apis-inputmethod.md#inputmethodgetcontroller9)方法获取到[InputMethodController](../harmonyos-references/js-apis-inputmethod.md#inputmethodcontroller)实例来绑定输入法并监听输入法应用的各种操作，比如插入、删除、选择、光标移动等。这样就可以在自绘编辑框中使用输入法，并实现更加灵活和自由的编辑操作。
@@ -141,7 +141,7 @@ content_hash: sha256:1139e62697d1a506dc8bf206e657ab18f4027accc569fb7910bf92b7e63
 
    在应用的entry/src/main/resources/base/profile目录下创建配置文件easy\_go.json（示例文件名，可自行命名）。在[module.json5](module-configuration-file.md)配置文件中添加easyGo字段，并指向引用的easy\_go.json配置文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/tgBYXsfCRTSkhpRX-9Mi_A/zh-cn_image_0000002817506749.png?HW-CC-KV=V1&HW-CC-Date=20261114T004540Z&HW-CC-Expire=31536000000&HW-CC-Sign=C352CD244A194C53405C6B93978DF2E567057E80AC097A1AA76BC711A2861752)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Qxydvxc6SienCvud7-vgNA/zh-cn_image_0000002820525597.png?HW-CC-KV=V1&HW-CC-Date=20261119T014757Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE7FE5C484E12BB1C171B123171635B70B695006E7BA2757739191F908991ED8)
 2. 增加物理数字键转换配置
 
    在easy\_go.json配置文件中，配置自绘编辑框接收数字物理键盘输入能力相关属性。
@@ -210,4 +210,4 @@ easy\_go.json是一个标准的Object类型JSON文件，整体结构分为两层
 
 ## 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/xG0OqJW1TO6zZKPEcdpjsg/zh-cn_image_0000002788307318.png?HW-CC-KV=V1&HW-CC-Date=20261114T004540Z&HW-CC-Expire=31536000000&HW-CC-Sign=81DAA7AE055349AE4CE542B191FDF9A9529F5D3E0D3F97B8D03CF670D30EAC7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/S_2ylMHzTYev2S6PE3JwTg/zh-cn_image_0000002820405597.png?HW-CC-KV=V1&HW-CC-Date=20261119T014757Z&HW-CC-Expire=31536000000&HW-CC-Sign=5323B2276056D53A52A9CFF2283C76DF2EF8454F98E3BE2305B234C75B630A27)

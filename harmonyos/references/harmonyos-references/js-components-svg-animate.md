@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: animate
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > animate
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:33+08:00
+scraped_at: 2026-11-19T09:51:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ddd2fb7022740af6307a2e157ba855c8ca2d7f7b754b416a4e17c92d897a118b
+content_hash: sha256:892488c27b110e045c4a46355537f1a41bdca33680ef34dd772d9cd66ee3944d
 ---
 
 **说明** 
@@ -55,7 +55,7 @@ content_hash: sha256:ddd2fb7022740af6307a2e157ba855c8ca2d7f7b754b416a4e17c92d897
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/XNORDS42RTOq1SSK1YVewA/zh-cn_image_0000002788309546.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0D36364815C95B203A3B8241854A1D334DAAA7518AEE7DFA343951DEED4E2CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/l7hp-OKVTmmw2GdqmfMM5w/zh-cn_image_0000002791727848.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015027Z&HW-CC-Expire=31536000000&HW-CC-Sign=D37BAEEFA566EFAFEC0D1415CDB6C6A1AEA9AA31745838A129124313960A3694)
 
 ```html
 <!-- xxx.hml -->
@@ -69,7 +69,7 @@ content_hash: sha256:ddd2fb7022740af6307a2e157ba855c8ca2d7f7b754b416a4e17c92d897
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/EFqrDITcSmKyxxUpczZuWg/zh-cn_image_0000002788309464.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=8689E39DC0439186348053A8AC0FA7456D47305546794FDF76369CEACD831C69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/XNnJTc7fRIyf5rFcgp_62Q/zh-cn_image_0000002791727766.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015027Z&HW-CC-Expire=31536000000&HW-CC-Sign=47A1F19778AC3063D20379B8372266E7CF08C3771C2B186F8191BA8D5AFF722D)
 
 ```html
 <!-- xxx.hml -->
@@ -82,7 +82,7 @@ content_hash: sha256:ddd2fb7022740af6307a2e157ba855c8ca2d7f7b754b416a4e17c92d897
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/BAIliDJHRvm61Ie2J6VQzA/zh-cn_image_0000002817428909.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2D8C164598E74D2C976E89695F0186CDFA06C5B57A7BAB3F11A665A0405E6F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/SQQpZCqDSJ2-ZjvyBK5xIw/zh-cn_image_0000002791567876.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015027Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB6F3CE1A64092A9F63DC4ACA203D1AC95C724B4F0D330D8BA468FA27C251FEC)
 
 ```html
 <!-- xxx.hml -->
@@ -114,4 +114,4 @@ content_hash: sha256:ddd2fb7022740af6307a2e157ba855c8ca2d7f7b754b416a4e17c92d897
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/JQI94GdcQL6K5ESH-xRpNQ/zh-cn_image_0000002788469490.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3214E6B4DB897A3F32EB9DECB3EB941AAC0CAD6625B7F03412A245900235080)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/7wQNYn2oQTuzYgoqvQ6XNg/zh-cn_image_0000002820527829.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015027Z&HW-CC-Expire=31536000000&HW-CC-Sign=D49BA48A162ED23BC471578306B861989299A9E5915308A1D9EE8E1B559439C6)

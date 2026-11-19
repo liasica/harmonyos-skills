@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/password-shar
 title: 应用与网页共用账号密码
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用与网页共用账号密码
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:23+08:00
+scraped_at: 2026-11-19T09:48:01+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2e315f8d80bcd53e411ffefdf8c98f1a8b6d1a84b3ee78c3dca518d49e5bcb0c
+content_hash: sha256:19323c0c932a40060ccff74862b339b75b58f8a8ef1b447621ec97f2bf108ee8
 ---
 
 ## 简介
@@ -16,7 +16,7 @@ content_hash: sha256:2e315f8d80bcd53e411ffefdf8c98f1a8b6d1a84b3ee78c3dca518d49e5
 
 同时，选择密码时也会将关联网站/应用的密码展示为推荐密码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/1KwdFxNuQR25hk9GOeoUrg/zh-cn_image_0000002817506809.png?HW-CC-KV=V1&HW-CC-Date=20261114T004544Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C5F8D95806C8F5AAA8ACC24F6479547B0C3D32B064301B198B3F1A6C971B79D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/2JIPZ5dvSAqd8NvVDdzPvg/zh-cn_image_0000002820525657.png?HW-CC-KV=V1&HW-CC-Date=20261119T014800Z&HW-CC-Expire=31536000000&HW-CC-Sign=C32722B16D108745B29E2BAAB92CE41420FFE36AA47E75C181DC2481D19F77A1)
 
 ## 适用场景
 
@@ -24,7 +24,7 @@ content_hash: sha256:2e315f8d80bcd53e411ffefdf8c98f1a8b6d1a84b3ee78c3dca518d49e5
 
 ## 接入方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ezkoDAjoTUyEJglhI1bypg/zh-cn_image_0000002788307378.png?HW-CC-KV=V1&HW-CC-Date=20261114T004544Z&HW-CC-Expire=31536000000&HW-CC-Sign=91533D0247CF30BC65708879174A5CEFE0D16C05873E5B1ACD63E316621159D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/bHrYPomeSjSBNpQ3oU9AKA/zh-cn_image_0000002820405657.png?HW-CC-KV=V1&HW-CC-Date=20261119T014800Z&HW-CC-Expire=31536000000&HW-CC-Sign=4839D8406A648CD431FC9A34946DD0AD3A21CFA2102A925238F1CF3613283FF9)
 
 应用及网页接入App Linking后绑定关联关系，密码保险箱将基于这个关系完成识别。
 

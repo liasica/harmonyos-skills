@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: stepper开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > stepper开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:10+08:00
+scraped_at: 2026-11-19T09:47:48+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e4005e4ea11f6aee1af17951c54082bd205c6320278a793b69db537877301a47
+content_hash: sha256:9ad13f30e619d76d5118fd414806859b386fa3f08a09df99de3c7a3c8f1da13b
 ---
 
 当一个任务需要多个步骤时，可以使用stepper组件展示当前进展。具体用法请参考[stepper API](../harmonyos-references/js-components-container-stepper.md)。
@@ -45,7 +45,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/p8XYSkRMRiak9H-N99_DXg/zh-cn_image_0000002788307030.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8AE73B71A54527A43DA107C503066C1DF5D796FD6A22C7E433C2DC0E7FFFB9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/RQDMJOZZTaax-RTa31lZ2w/zh-cn_image_0000002820405309.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AAA5A1CBB36CA67762F7DFC4829AC3B73DC3F02098BF653695424C878B641F7)
 
 ## 设置index和label属性
 
@@ -83,7 +83,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/PAfU-u4OScSpW-brcSQXFw/zh-cn_image_0000002817426393.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FC3A409358B7101A82ECC31DCDB6002260DDC3B38546DB0AAA7A3049F1837F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/MVQHLtuvSyWDB0t3P6ufbA/zh-cn_image_0000002791725330.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=66F8C169EE30008B5695B17B06A9A2055678D0821C293D196BB600F643BD5C3C)
 
 通过设置label属性，自定义stepper-item的提示按钮。
 
@@ -144,7 +144,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/SDMIAgsZQy-EH9SkcsWJJQ/zh-cn_image_0000002788466974.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=85155352211234ADF3ABB697B73D3DC63E81649F89F31FE4B88D8D8E2FA8DB5A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/miKLdawHSV6yACM5bdnhFw/zh-cn_image_0000002791565358.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5BAD083EEE7FF250590F29D676347F73BF5BEBB8035F31BA2EFAA3A29DB9340)
 
 ## 设置样式
 
@@ -188,7 +188,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/4TLsmuzUSsaS3yHdyy1lIA/zh-cn_image_0000002817506461.png?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=A395D5E8C05B3C2C37EAAA9F468BBD4B17B7F0539AB9E5B3A463D528C147B3AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/aiTIBXYxTC-M5LpzS88LdQ/zh-cn_image_0000002820525311.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCFD66A441E176381929C51D23E25CD5FD9D0E12AB128ED2747AD39AEF3324DD)
 
 ## 添加事件
 
@@ -288,4 +288,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/61U_D9l9QLC9_lR5ad7w6Q/zh-cn_image_0000002788307032.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=58CE5FC3746A61B79C9D3E4A4CB8F4AF575EBF30D5C8DF8DE0A35F830FDF53C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/qtw9H1FASZC8eG2zwCk1tg/zh-cn_image_0000002820405311.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=818FCD3A4D0F061B9755086202E3BAC18CAE483F6EFBFE9ACC896B7320A03F00)

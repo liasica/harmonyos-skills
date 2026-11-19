@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.rpc (RPC通信)"
 breadcrumb: API参考 > 应用框架 > IPC Kit（进程间通信服务） > ArkTS API > @ohos.rpc (RPC通信)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:46:11+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:360ba95c7b258f99288752c813ff59262722f165620a5732d7045be881c5ecd1
+scraped_at: 2026-11-19T09:52:07+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:54d84eae3df53b07a0d27e28882b151a921a749d62c3d0c203d3514c2e79e597
 ---
 
 本模块提供进程间通信能力，包括设备内的进程间通信（IPC）和设备间的进程间通信（RPC），前者基于Binder驱动，后者基于软总线驱动。
@@ -3214,7 +3214,7 @@ readRemoteObjectArray(): IRemoteObject[]
 
 | 类型 | 说明 |
 | --- | --- |
-| [IRemoteObject](js-apis-rpc.md#iremoteobject)[] | 返回IRemoteObject对象数组；当写入的是空数组时，返回的是nullptr。 |
+| [IRemoteObject](js-apis-rpc.md#iremoteobject)[] | 返回IRemoteObject对象数组；当写入的是空数组时，返回的是null。 |
 
 **错误码：**
 

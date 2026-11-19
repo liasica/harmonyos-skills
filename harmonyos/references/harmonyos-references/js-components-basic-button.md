@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: button
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > button
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:31+08:00
+scraped_at: 2026-11-19T09:51:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6bdb350958817a629f8aeff229d11c685829fca9ce8a44db463c1cb566631aee
+content_hash: sha256:363df477f99f81039d3269ed7a82f0075ddb3cbc09ba1af2caf8f9a06fadb2f4
 ---
 
 **说明** 
@@ -150,4 +150,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/b9uK_s37SL2ILwja7Tfp8A/zh-cn_image_0000002788309480.png?HW-CC-KV=V1&HW-CC-Date=20261114T005031Z&HW-CC-Expire=31536000000&HW-CC-Sign=F713324FE85278D59D8BC7841EBCAAE681822E16F79319A16B8451BB77471180)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/P5Bwcic4QN2s1l_8fw2xSQ/zh-cn_image_0000002791727782.png?HW-CC-KV=V1&HW-CC-Date=20261119T015120Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F76BD108D5194A08274157BF3DC0C2016A4409A96D52EB578A5C6B1F4B2B277)

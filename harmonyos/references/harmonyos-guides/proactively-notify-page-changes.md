@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/proactively-n
 title: 主动通知页面变化
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 主动通知页面变化
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:00+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:ce5030119334a8d41e8660fac9a628a2f39cc00d653ca1ec4ba4d2ea271b14f8
+scraped_at: 2026-11-19T09:47:28+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:6a5a614003652539168bba0a8b69da062416e33241332fab89a55f55a8eb826e
 ---
 
 ## 设计场景
@@ -68,6 +68,9 @@ export struct Rule_2_1_16 {
             // 发送主动通知页面变化的事件。
             accessibility.sendAccessibilityEvent(eventInfo).then(() => {
               console.info(`pageActive event send Successed, customId=Layer_${this.topLayer}.`); // 发送成功日志。
+            }).catch((error: BusinessError) => {
+              // 捕获事件发送失败（rejected）的异常。
+              console.error(`Failed to send pageActive event, code: ${error.code}, message: ${error.message}.`);
             });
           })
       }

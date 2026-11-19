@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-avplayer-
 title: 基于AVPlayer播放DRM节目(ArkTS)
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > 基于AVPlayer播放DRM节目(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:05+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:d2e3cfb0b65cccdf9d5c14b54ce0ebfcc07da9410b9c608483dbaef2d298a14a
+scraped_at: 2026-11-19T09:48:38+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:4d12bb72cd4f25424dc28740e00bcf545be7b7e2d370de602e4b5b6c037e64c4
 ---
 
 开发者可以调用DRM Kit和Media Kit的ArkTS接口实现AVPlayer播放器，完成DRM节目播放。
@@ -23,7 +23,7 @@ content_hash: sha256:d2e3cfb0b65cccdf9d5c14b54ce0ebfcc07da9410b9c608483dbaef2d29
    ```typescript
    import { BusinessError } from '@kit.BasicServicesKit';
    ```
-3. 调用[createAVPlayer](../harmonyos-references/arkts-apis-media-f.md#mediacreateavplayer9)，创建AVPlayer实例并设置DRM信息监听事件。
+3. 调用[media.createAVPlayer()](../harmonyos-references/arkts-apis-media-f.md#mediacreateavplayer9)，创建AVPlayer实例并设置DRM信息监听事件。
 
    ```typescript
    private playerHandle?: media.AVPlayer;
@@ -42,7 +42,7 @@ content_hash: sha256:d2e3cfb0b65cccdf9d5c14b54ce0ebfcc07da9410b9c608483dbaef2d29
      });
    }
    ```
-4. 调用[createMediaKeySystem](../harmonyos-references/arkts-apis-drm-f.md#drmcreatemediakeysystem)和[createMediaKeySession](../harmonyos-references/arkts-apis-drm-mediakeysystem.md#createmediakeysession-1)根据DRM信息中的uuid创建MediaKeySystem和MediaKeySession实例。
+4. 调用[drm.createMediaKeySystem()](../harmonyos-references/arkts-apis-drm-f.md#drmcreatemediakeysystem)和[createMediaKeySession()](../harmonyos-references/arkts-apis-drm-mediakeysystem.md#createmediakeysession-1)根据DRM信息中的uuid创建MediaKeySystem和MediaKeySession实例。
 
    ```typescript
    private mediaKeySystem?: drm.MediaKeySystem;
@@ -75,7 +75,7 @@ content_hash: sha256:d2e3cfb0b65cccdf9d5c14b54ce0ebfcc07da9410b9c608483dbaef2d29
      this.setDecryptionConfig();
    }
    ```
-5. 调用[generateMediaKeyRequest](../harmonyos-references/arkts-apis-drm-mediakeysession.md#generatemediakeyrequest)生成媒体密钥请求，并调用[processMediaKeyResponse](../harmonyos-references/arkts-apis-drm-mediakeysession.md#processmediakeyresponse)处理媒体密钥响应。
+5. 调用[generateMediaKeyRequest()](../harmonyos-references/arkts-apis-drm-mediakeysession.md#generatemediakeyrequest)生成媒体密钥请求，并调用[processMediaKeyResponse()](../harmonyos-references/arkts-apis-drm-mediakeysession.md#processmediakeyresponse)处理媒体密钥响应。
 
    ```typescript
    async processMediaKey(pssh: Uint8Array, mimeType: string): Promise<void> {
@@ -100,7 +100,7 @@ content_hash: sha256:d2e3cfb0b65cccdf9d5c14b54ce0ebfcc07da9410b9c608483dbaef2d29
      }
    }
    ```
-6. 调用[requireSecureDecoderModule](../harmonyos-references/arkts-apis-drm-mediakeysession.md#requiresecuredecodermodule)和[setDecryptionConfig](../harmonyos-references/arkts-apis-media-avplayer.md#setdecryptionconfig11)，在处理媒体密钥响应成功后设置解密session。
+6. 调用[requireSecureDecoderModule()](../harmonyos-references/arkts-apis-drm-mediakeysession.md#requiresecuredecodermodule)和[setDecryptionConfig()](../harmonyos-references/arkts-apis-media-avplayer.md#setdecryptionconfig11)，在处理媒体密钥响应成功后设置解密session。
 
    ```typescript
    setDecryptionConfig(): void {

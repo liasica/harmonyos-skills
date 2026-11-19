@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-blur-stutt
 title: 模糊卡顿问题定位与指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 模糊 > 模糊卡顿问题定位与指导
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:06+08:00
+scraped_at: 2026-11-19T09:47:44+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:204a808651d6123561d3ee26bf9b04516e4f500a1f83082760593d3c614b970a
+content_hash: sha256:c6df2407e6f9bb7c5f81baf8637700a375fe1f98d8c5dcdfb9274ab37931cc2a
 ---
 
 ## 概述
@@ -19,10 +19,10 @@ content_hash: sha256:204a808651d6123561d3ee26bf9b04516e4f500a1f83082760593d3c614
 1. 在DevEco Studio中启动AppAnalyzer工具，详细请参见[AppAnalyzer](../best-practices/bpta-performance-detection.md#section135451444171)。
 2. 默认选择场景化体检，点击任一手动性能体检项（页面间转场、页面内转场、页面滑动）即可进入对应体检界面。本文以“手动性能页面间转场体检”为例进行说明。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/oOkAaq52T9iQE7Qx_j2e1A/zh-cn_image_0000002788306918.png?HW-CC-KV=V1&HW-CC-Date=20261114T004706Z&HW-CC-Expire=31536000000&HW-CC-Sign=887ADA3C0E82DC31DD329D3AA412B6F4B0944610B78E113B557151DC008DF930)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/19rceOo3RTezllurtM3PbA/zh-cn_image_0000002820405197.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=76FB097168E6A7E2FBDD7532978773BAD53EBF67F509E13AD7A6F3E4C4B216CA)
 3. 完成体检后，打开体检报告并点击展开“转场卡顿率”部分。如果检测结果显示黄色或红色警告，且提示“可能故障原因”为“动态模糊绘制丢帧诊断”，则表明存在图像模糊性能问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/vuXGrtGSTg-SaXRxZc2sug/zh-cn_image_0000002817426281.png?HW-CC-KV=V1&HW-CC-Date=20261114T004706Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFC192CD5A3CBF8C5F0C41235827355B7190F1D0464CB3AF513527FCF2457F5F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/-Neqz0LlQLukhAxgOAWHpA/zh-cn_image_0000002791725218.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=259D007B4CAEFF55ADD1658C3C1634FBBA800E384D8EB193D5EBEBF1AAB07600)
 
 在检测出的图像模糊报告中，若“可能故障原因”为“动态模糊绘制丢帧诊断”，可参考以下两点建议进行优化：
 
@@ -35,7 +35,7 @@ content_hash: sha256:204a808651d6123561d3ee26bf9b04516e4f500a1f83082760593d3c614
 
 在使用动态模糊对图片组件进行处理时，若检测结果异常，动态模糊绘制过程中出现丢帧情况。建议改用静态模糊，以优化图片模糊性能。动态模糊与静态模糊的概念及使用场景，请参阅相关文档：[使用场景](ui-dynamic-vs-static-blur-examples.md#使用场景)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/owrThUA5TJm3QfOF62FFFw/zh-cn_image_0000002788466862.png?HW-CC-KV=V1&HW-CC-Date=20261114T004706Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A7D110F0BA2E6F7289BC91A115272BAC67ADEC5CE0948DF8262246B5757C6FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/c_UyG4UmQSOD7Z5rCiqn7w/zh-cn_image_0000002791565246.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=99BEBE0E61D1CDC44A7EB8A7E905A76892B477E7CED13970866D9FECFAA9A55B)
 
 例如，从检测报告中的可能故障原因中，点击组件所在源码文件，可跳转定位至TestStructPage.ets页面中的Column组件处。在示例代码中，使用了[blur](../harmonyos-references/ts-universal-attributes-image-effect.md#blur)动态模糊API对图片组件进行模糊处理，导致在检测中总耗时过长和丢帧。
 
@@ -188,7 +188,7 @@ export struct StaticBlur {
 
 在对非图片组件（如Text组件）或不适用静态模糊的场景（如Gif动图）使用模糊时，若检测结果显示动态模糊绘制时出现丢帧异常，可以考虑缩小模糊半径，以优化图片模糊性能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/pSdZuuYMTK2YnnMmopHpXw/zh-cn_image_0000002817506349.png?HW-CC-KV=V1&HW-CC-Date=20261114T004706Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EDB52D273D44394D59E2EC84862F392FD65B54DE5A014BE34C82A1EA0E0A7D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/NkNP5z_3RzWdlEC4knTacg/zh-cn_image_0000002820525199.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC2120DFEBEA960897D3D657FDCE34B7E8E85D5ACD819C26042EEB060537D995)
 
 例如，从检测报告中可能故障原因中，点击组件所在源码文件，可跳转定位至ReduceBlurRadius.ets页面中的Text组件处。在示例代码中，使用了[backdropBlur()](../harmonyos-references/ts-universal-attributes-background.md#backdropblur)对Text组件进行背景模糊，其模糊半径为2。
 

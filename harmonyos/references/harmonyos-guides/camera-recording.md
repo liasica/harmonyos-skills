@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-record
 title: 录像(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 录像(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:04+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-19T09:48:36+08:00
+doc_updated_at: 2026-11-18
 content_hash: sha256:465c6b928b67d5d39d873a3087cf861379f4c83910dad47176af847d6ad74e2f
 ---
 

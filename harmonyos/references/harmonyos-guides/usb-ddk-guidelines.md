@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usb-ddk-guide
 title: 开发适用USB协议的设备驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用USB协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:43+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:cdb77ac48531b379764380c792b3c4e7226ff58955486aec04afd6ab6e785cf7
+scraped_at: 2026-11-19T09:48:22+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:af855fc4a7c84e4aed651b5863389ed66a622ebf9560a3e393f8e023f27a4a31
 ---
 
 ## 简介
@@ -31,7 +31,7 @@ UsbDdk（USB Driver Development Kit）是为开发者提供的USB驱动程序开
 
 **图1** UsbDdk调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/eVthRUBBTeSXDS2v0k35GQ/zh-cn_image_0000002817426873.png?HW-CC-KV=V1&HW-CC-Date=20261114T004742Z&HW-CC-Expire=31536000000&HW-CC-Sign=309DF38F932444FDDB6309E4C8318A66B42A7D292AEBF30F47CC45CA38012B36)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/NhoTNm0fReOXiMGb_nSB7Q/zh-cn_image_0000002791725812.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBEC15394E2D5125C03341F7BC845B11654D036B47912FB5BF6E7664CF9FDBD8)
 
 ## 约束与限制
 
@@ -49,21 +49,25 @@ UsbDdk（USB Driver Development Kit）是为开发者提供的USB驱动程序开
 
 | 名称 | 描述 |
 | --- | --- |
-| OH\_Usb\_Init(void) | 初始化DDK。 |
-| OH\_Usb\_Release(void) | 释放DDK。 |
-| OH\_Usb\_GetDeviceDescriptor(uint64\_t deviceId, struct UsbDeviceDescriptor \*desc) | 获取设备描述符。 |
-| OH\_Usb\_GetConfigDescriptor(uint64\_t deviceId, uint8\_t configIndex, struct UsbDdkConfigDescriptor \*\*const config) | 获取配置描述符。请在描述符使用完后使用OH\_Usb\_FreeConfigDescriptor()释放描述符，否则会造成内存泄漏。 |
-| OH\_Usb\_FreeConfigDescriptor(const struct UsbDdkConfigDescriptor \*const config) | 释放配置描述符，请在描述符使用完后释放描述符，否则会造成内存泄漏。 |
-| OH\_Usb\_ClaimInterface(uint64\_t deviceId, uint8\_t interfaceIndex, uint64\_t \*interfaceHandle) | 声明接口。 |
-| OH\_Usb\_SelectInterfaceSetting(uint64\_t interfaceHandle, uint8\_t settingIndex) | 激活接口的备用设置。 |
-| OH\_Usb\_GetCurrentInterfaceSetting(uint64\_t interfaceHandle, uint8\_t \*settingIndex) | 获取接口当前激活的备用设置。 |
-| OH\_Usb\_SendControlReadRequest(uint64\_t interfaceHandle, const struct UsbControlRequestSetup \*setup, uint32\_t timeout, uint8\_t \*data, uint32\_t \*dataLen) | 发送控制读请求，该接口为同步接口。 |
-| OH\_Usb\_SendControlWriteRequest(uint64\_t interfaceHandle, const struct UsbControlRequestSetup \*setup, uint32\_t timeout, const uint8\_t \*data, uint32\_t dataLen) | 发送控制写请求，该接口为同步接口。 |
-| OH\_Usb\_ReleaseInterface(uint64\_t interfaceHandle) | 释放接口。 |
-| OH\_Usb\_SendPipeRequest(const struct UsbRequestPipe \*pipe, UsbDeviceMemMap \*devMmap) | 发送管道请求，该接口为同步接口。中断传输和批量传输都使用该接口发送请求。 |
-| OH\_Usb\_CreateDeviceMemMap(uint64\_t deviceId, size\_t size, UsbDeviceMemMap \*\*devMmap) | 创建缓冲区。请在缓冲区使用完后，调用OH\_Usb\_DestroyDeviceMemMap()销毁缓冲区，否则会造成资源泄漏。 |
-| OH\_Usb\_DestroyDeviceMemMap(UsbDeviceMemMap \*devMmap) | 销毁缓冲区。请在缓冲区使用完后及时销毁缓冲区，否则会造成资源泄漏。 |
-| OH\_Usb\_GetDevices(struct Usb\_DeviceArray \*devices) | 获取USB设备ID列表。请保证传入的指针参数是有效的，申请的设备ID数组的大小建议不超过128，以避免过度占用内存。在使用完结构之后，释放成员内存，否则造成资源泄漏。获取到的USB设备ID，已通过驱动配置信息中的vid进行筛选过滤。 |
+| int32\_t OH\_Usb\_Init(void) | 初始化DDK。 |
+| void OH\_Usb\_Release(void) | 释放DDK。 |
+| int32\_t OH\_Usb\_ReleaseResource(void) | 释放USB DDK。在不再使用USB DDK功能时使用以正确释放资源，需在调用OH\_Usb\_Init()完成初始化后使用。该接口返回一个整数值，可用于判断执行结果。 |
+| int32\_t OH\_Usb\_GetDeviceDescriptor(uint64\_t deviceId, struct UsbDeviceDescriptor \*desc) | 获取设备描述符。 |
+| int32\_t OH\_Usb\_GetConfigDescriptor(uint64\_t deviceId, uint8\_t configIndex, struct UsbDdkConfigDescriptor \*\*const config) | 获取配置描述符。请在描述符使用完后使用OH\_Usb\_FreeConfigDescriptor()释放描述符，否则会造成内存泄漏。 |
+| void OH\_Usb\_FreeConfigDescriptor(struct UsbDdkConfigDescriptor \*const config) | 释放配置描述符，请在描述符使用完后释放描述符，否则会造成内存泄漏。 |
+| int32\_t OH\_Usb\_ClaimInterface(uint64\_t deviceId, uint8\_t interfaceIndex, uint64\_t \*interfaceHandle) | 声明接口。 |
+| int32\_t OH\_Usb\_SelectInterfaceSetting(uint64\_t interfaceHandle, uint8\_t settingIndex) | 激活接口的备用设置。 |
+| int32\_t OH\_Usb\_GetCurrentInterfaceSetting(uint64\_t interfaceHandle, uint8\_t \*settingIndex) | 获取接口当前激活的备用设置。 |
+| int32\_t OH\_Usb\_SendControlReadRequest(uint64\_t interfaceHandle, const struct UsbControlRequestSetup \*setup, uint32\_t timeout, uint8\_t \*data, uint32\_t \*dataLen) | 发送控制读请求，该接口为同步接口。 |
+| int32\_t OH\_Usb\_SendControlWriteRequest(uint64\_t interfaceHandle, const struct UsbControlRequestSetup \*setup, uint32\_t timeout, const uint8\_t \*data, uint32\_t dataLen) | 发送控制写请求，该接口为同步接口。 |
+| int32\_t OH\_Usb\_ReleaseInterface(uint64\_t interfaceHandle) | 释放接口。 |
+| int32\_t OH\_Usb\_SendPipeRequest(const struct UsbRequestPipe \*pipe, UsbDeviceMemMap \*devMmap) | 发送管道请求，该接口为同步接口。中断传输和批量传输都使用该接口发送请求。 |
+| int32\_t OH\_Usb\_SendPipeRequestWithAshmem(const struct UsbRequestPipe \*pipe, DDK\_Ashmem \*ashmem) | 基于共享内存发送管道请求，该接口为同步接口。中断传输和批量传输都使用该接口发送请求。 |
+| int32\_t OH\_Usb\_CreateDeviceMemMap(uint64\_t deviceId, size\_t size, UsbDeviceMemMap \*\*devMmap) | 创建缓冲区。请在缓冲区使用完后，调用OH\_Usb\_DestroyDeviceMemMap()销毁缓冲区，否则会造成资源泄漏。 |
+| void OH\_Usb\_DestroyDeviceMemMap(UsbDeviceMemMap \*devMmap) | 销毁缓冲区。请在缓冲区使用完后及时销毁缓冲区，否则会造成资源泄漏。 |
+| int32\_t OH\_Usb\_GetDevices(struct Usb\_DeviceArray \*devices) | 获取USB设备ID列表。请保证传入的指针参数是有效的，申请的设备ID数组的大小建议不超过128，以避免过度占用内存。在使用完结构之后，释放成员内存，否则造成资源泄漏。获取到的USB设备ID，已通过驱动配置信息中的vid进行筛选过滤。 |
+| int32\_t OH\_Usb\_ControlTransfer(uint64\_t deviceID, const struct UsbControlRequestSetup \*setupPacket, uint8\_t \*data, uint32\_t timeout) | 执行USB控制传输，该接口为同步接口。 |
+| int32\_t OH\_Usb\_GetNonRootHubs(struct Usb\_NonRootHubArray \*nonRootHub) | 查询并返回非根集线器列表。请保证传入的指针参数是有效的，申请的非根集线器ID数组的大小建议不超过128，以避免过度占用内存。在使用完结构体之后，需释放成员内存，否则会造成资源泄漏。 |
 
 详细的接口说明请参考[UsbDdk](../harmonyos-references/capi-usbddk.md)。
 

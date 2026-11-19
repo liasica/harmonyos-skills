@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap
 title: 系统能力SystemCapability使用指南
 breadcrumb: API参考 > API参考概述 > 系统能力SystemCapability使用指南
 category: harmonyos-references
-scraped_at: 2026-11-14T08:49:25+08:00
+scraped_at: 2026-11-19T09:50:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:aa0a66f8fb94a31283d84c8652e8de83830da42b9fd677c7e5830ca8d04d2075
+content_hash: sha256:bc052f816794d0e0e1360993c4a41a7e858a59f3006bd30c4683e435d590e571
 ---
 
 本文将系统阐述SystemCapability（SysCap）的定义、用途，以及在单设备与多设备应用开发场景下的适配开发策略。
@@ -14,7 +14,7 @@ content_hash: sha256:aa0a66f8fb94a31283d84c8652e8de83830da42b9fd677c7e5830ca8d04
 
 SystemCapability，下文统一简称为SysCap，用于标识一组实现特定开放能力的API集合，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/FmL0YGgYR0mwGgCIkv-pDw/zh-cn_image_0000002788468526.png?HW-CC-KV=V1&HW-CC-Date=20261114T004735Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB635183D6FECE8B4905AA178FC6FBAC0CAD37C93BB2D800C9DE5608F7BC0280)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/RK9awEO4QgiVXJpA831Ndw/zh-cn_image_0000002791566912.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC1733E3C53FC2F601B6E2CF4042C07B6BBC0EA3EB715246523A6AF399F6EC14)
 
 以名为SystemCapability.Communication.Bluetooth.Core的蓝牙SysCap为例，它代表了一组蓝牙能力相关的API，包括：
 
@@ -44,7 +44,7 @@ SysCap的用途：
 
 SysCap与SDK、Kit形成结构化、层级化结构，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/GkCatMCpS9uAIc7q1HJ2PA/zh-cn_image_0000002817508015.png?HW-CC-KV=V1&HW-CC-Date=20261114T004735Z&HW-CC-Expire=31536000000&HW-CC-Sign=30B22F21EAC17AF24E2C200BCE5FA85C5C71995D2058CF3BEF60B43B71542A0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/TDyVgMc0Q6-ETH-uADBpxQ/zh-cn_image_0000002820526865.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=82B4C8C0BE94AE6F1763B6B1F33AE5D3A9CC96FB9FFDDEEC5DF130E1F3E50AF8)
 
 1. SDK由多个功能独立的Kit组成；
 2. 每个Kit包含一个或多个SysCap，且每个SysCap仅属于一个 Kit；
@@ -54,7 +54,7 @@ SysCap与SDK、Kit形成结构化、层级化结构，如下图所示：
 
 以Tablet设备为例，如果开发者在.ets文件上导入以“a”开头的某个模块的具体内容（例如：接口、类、函数、变量、对象等），DevEco Studio会联想出所有支持在Tablet上可用的某个模块的具体内容，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/OnGIN5LoT7O85juGN5U4hA/zh-cn_image_0000002788308584.png?HW-CC-KV=V1&HW-CC-Date=20261114T004735Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6FA291464898539DDE29FED9D7EDF4EAD12D097678BA17E4F74B524741717EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/LdcRAXvKT7q9114CxhHnYg/zh-cn_image_0000002820406865.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7D3619D3959917E7E9891C5773669F0F5C214F47F5F0F109D01947E6EFA64EB)
 
 ## SysCap与Device type的关系
 
@@ -64,15 +64,15 @@ SDK的“device-define”文件夹可在DevEco Studio左侧项目栏的“外部
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/K9LNjvIpQ5eE8VnTDYJvrg/zh-cn_image_0000002817427947.png?HW-CC-KV=V1&HW-CC-Date=20261114T004735Z&HW-CC-Expire=31536000000&HW-CC-Sign=6178CCB7E01037BAFB2D6DFB04FAAF26D17CF83A1AEEFCCEAFF45A18DA66BA63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZMcb5_sqQB2nneOtsQQbgA/zh-cn_image_0000002791726886.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=A833B59266FBB9FAF09AD114B995E12CEEB5F178106931510E12C91428D76F4A)
 
 开发者在DevEco Studio创建工程时，需要选择应用的设备类型Device type：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/IXvnobR5Qo-aRQRu27wpHQ/zh-cn_image_0000002788468528.png?HW-CC-KV=V1&HW-CC-Date=20261114T004735Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABE48C8794555C72E9FC90D03A4F4F3DA65A4AE30685DDFFA9D1C8637AFDCD5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/UJSmrCY8TqW3l8Mv71YSYg/zh-cn_image_0000002791566914.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=246756D5D16340657742B22C1962B85A4BEF58DBC65F539C387B078F3344AE07)
 
 也可在新建工程后，通过修改module.json5文件中的[deviceTypes](../harmonyos-guides/module-configuration-file.md#devicetypes标签)指定应用支持的设备类型：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/XA5hEVFGQJS6POSoZt42Qg/zh-cn_image_0000002817508017.png?HW-CC-KV=V1&HW-CC-Date=20261114T004735Z&HW-CC-Expire=31536000000&HW-CC-Sign=94E7C06826043839ACEEB4E1DFB6FC22038446CF9FC3550F044DE54DB76F66B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/1ayj7eEgTIGDdBbfmcuRAg/zh-cn_image_0000002820526867.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEEC6DC0531DE6F2AB1E25645296B07CE30DFA38B4F5C502C3248666445BF8C4)
 
 DevEco Studio自动识别项目中的设备类型，定位SDK“device-define”下对应的SysCap集合，进而提取该设备支持的API，用于智能提示与自动联想，助力开发者精准、高效地调用所需接口。
 
@@ -226,7 +226,7 @@ registerCameraStatus(cameraManager: camera.CameraManager): void {
 
 单设备应用开发时，DevEco Studio只识别到一种设备类型，适配开发过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/N_xHAPZHQKKRwmUeZTbHTA/zh-cn_image_0000002788308586.png?HW-CC-KV=V1&HW-CC-Date=20261114T004735Z&HW-CC-Expire=31536000000&HW-CC-Sign=D65DC227E96575AAB1896FF682DAECA3C4DEB063CF48F9B335D03F60AC4559A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/3yM0R226TnK_ZuQ2fHCAUw/zh-cn_image_0000002820406867.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA67325EC727E15F1D7BB45E21D5914EA2FCCB434CEFC5B82CEB3BCD00DDCD1F)
 
 1. 如果存在API在同一设备类型下的不同设备型号存在能力不一致的情况，需使用能力查询接口判断接口能力可用性（注意：此处的能力查询机制并非canIUse，请参见[使用能力查询接口判断API是否可用](syscap.md#使用能力查询接口判断api是否可用)）；
 2. 为了避免调用接口出现的异常情况，需要开发者进行错误码异常处理。
@@ -235,7 +235,7 @@ registerCameraStatus(cameraManager: camera.CameraManager): void {
 
 多设备应用开发时，DevEco Studio需同时识别多种设备类型，适配开发过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/KXWK00-jSIGgsGEj-B4IEQ/zh-cn_image_0000002817427949.png?HW-CC-KV=V1&HW-CC-Date=20261114T004735Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAAFDF4693FC11F5EA77978A6E18CA388E90C50235526E438681D2A7D1CFE1E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/DcObK_g1TeCjVcYzPY-I6Q/zh-cn_image_0000002791726888.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=F60C54EE672701D7E10404A46B9755DC9B36ED8D40A289F1CC51EEAFD2E4FBB5)
 
 1. 使用canIUse判断并集内交集外的SysCap集合是否可用；
 

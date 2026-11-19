@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-operat
 title: 画布操作及状态处理（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 画布操作及状态 > 画布操作及状态处理（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:05+08:00
+scraped_at: 2026-11-19T09:48:45+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a84c4db459add311f9aa2db8879f8376dbed0a5347d3bbdebc88879951bbf1b7
+content_hash: sha256:0a5d7359a54a22886051f114366311858311cb151a5afb59a9479990086e79ca
 ---
 
 ## 场景介绍
@@ -235,7 +235,7 @@ OH_Drawing_PointDestroy(point);
 OH_Drawing_MatrixDestroy(matrix);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/7cfWY7M5T-yWCnUuWRNMTA/zh-cn_image_0000002788307738.png?HW-CC-KV=V1&HW-CC-Date=20261114T004622Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AC43FBF2BE25240C84B7DE17B6127B2A1FB85061B33C4BDE13D2F3B588A97FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/-4du4dk3RiO6eC2oLnKPxQ/zh-cn_image_0000002820406019.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=99875CB3549D0C257F71F779E9CAD6C461B7CDDB8303CECE546896EE382F2B01)
 
 ## 示例代码
 

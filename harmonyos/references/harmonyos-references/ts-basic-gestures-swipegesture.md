@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SwipeGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > SwipeGesture
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:08+08:00
+scraped_at: 2026-11-19T09:50:54+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:cd369a511394e0f231245b25e41071542d9f49832ba48abc0633ca35db8d0667
+content_hash: sha256:619395bfa5333bbf5887945409118a48cd0688907b9a4f12127658be168b5aa9
 ---
 
 用于触发快滑手势，适用于快速翻页、轮播图切换、列表项快速切换等需要识别快速滑动操作的场景，滑动速度需大于速度阈值，默认最小速度为100vp/s。
@@ -125,4 +125,4 @@ struct SwipeGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/X-k4H1PFTCiU3n1YQVWP8A/zh-cn_image_0000002788468764.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDAC307586B1912DE3075D121178821381FA7143859163A2DDAFC80621E18BB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/-XCTcaY_RY24FtXFkdpTBg/zh-cn_image_0000002791567150.png?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2301D9837CC3ABEE69539AD31D1CA41210297C98C5520F4975CBAB8840D1B81)

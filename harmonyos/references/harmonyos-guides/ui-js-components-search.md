@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: search开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > search开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:11+08:00
+scraped_at: 2026-11-19T09:47:48+08:00
 doc_updated_at: 2026-07-09
-content_hash: sha256:108feb7bc81b428f1cacb0057bf8a99ccca60a9862dde1724b625d7edd9e7b05
+content_hash: sha256:30ca979db86c9b88a3ca687168771b678c149e63e249fe65e46efbb28f99be45
 ---
 
 提供搜索框组件，用于提供用户搜索内容的输入区域，具体用法请参考[search](../harmonyos-references/js-components-basic-search.md)。
@@ -33,7 +33,7 @@ content_hash: sha256:108feb7bc81b428f1cacb0057bf8a99ccca60a9862dde1724b625d7edd9
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/bFoJ8OesSzOyWPx_MoPxoA/zh-cn_image_0000002817426429.png?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=E22D2A65CB101E1385228418853FED0F000D3BECBFD82164802D5AA0BB0ABD01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/HVdoEqkrShOw51lXMdd_sg/zh-cn_image_0000002791725366.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=35BC52D1EEA9C289216567D24AD394E306E83142448496162166E7B03141DA60)
 
 ## 设置属性
 
@@ -58,7 +58,7 @@ content_hash: sha256:108feb7bc81b428f1cacb0057bf8a99ccca60a9862dde1724b625d7edd9
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/qedyaHSpQXiuzIXNic9eIg/zh-cn_image_0000002788467010.png?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DEAF483EE27030588DA3C22C0711E6126D0F89BA2D3D634AD7B38028C8D9062)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/-N-rSJbLQVWBOnMD77tBHQ/zh-cn_image_0000002791565394.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=F80EC83DBD04F3189D5F2DC135E73FFEAC8E8B4E63D018A9F9C3382799053356)
 
 ## 添加样式
 
@@ -88,7 +88,7 @@ search{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/o055PZvqREWwcx517Kz0lw/zh-cn_image_0000002817506497.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB91BDDC6D4F85E83C37FCEFA6A9BB62A2EBBEAF64777AE604EE410AABD62C98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/9jILdWy0Q0qk__jWjpXQ2w/zh-cn_image_0000002820525347.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=E41B90BF129C5825478996FFAA8FD797E772BE3A9890BB262E624DF87DBBA266)
 
 ## 绑定事件
 
@@ -161,7 +161,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/kC0nxLF1T0iHluaBDxXKxQ/zh-cn_image_0000002788307068.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=3525526147E890341B6CD5BF9CB9C844A57A0A7BBD6C81A92229987DFB4B2347)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/qDuTq6zIQOyFjP0P5dGAFg/zh-cn_image_0000002820405347.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=4134B6B7293F9588B86FDE506E8A1BC04D240059777BF77211221F21D406626D)
 
 ## 场景示例
 
@@ -247,4 +247,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/GVojCmJURC-KB2HEw3RAng/zh-cn_image_0000002817426431.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8A943CB793376E17B23C714CD437FA969520B1D0E7D30276C501480D1D857EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ygIgBEkHTPOV79vjit7SVg/zh-cn_image_0000002791725368.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=2722F0CE7DA6DDFBC8FA268E69A9A5641928E65D2A41CCCC996FB927050ABE59)

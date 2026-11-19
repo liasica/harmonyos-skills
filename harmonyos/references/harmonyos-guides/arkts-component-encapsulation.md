@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-compone
 title: 组件封装
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件封装
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:58+08:00
+scraped_at: 2026-11-19T09:47:35+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:83caf49be5a375c6194c4172f25084687b79961e84b5fb56e4716a2cb7bbe36c
+content_hash: sha256:b237757357ea564f1a6c003ef3747c7f877f10ae55299c4c82b95a3c99663e9c
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ content_hash: sha256:83caf49be5a375c6194c4172f25084687b79961e84b5fb56e4716a2cb7b
 
 在开发不同的业务功能时，可能需要使用相同样式的组件。例如，登录页面的登录按钮与购物页面的结算按钮，二者在同一应用中且表示确认操作，可能会采用相同的UI样式。这时可以抽取按钮Button组件的公共样式，封装后实现全局复用。下图是一个在默认态、按压态两种不同情况下的Button按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/_Tr0lPsLTbGDVCO2_U0kdQ/zh-cn_image_0000002817505691.png?HW-CC-KV=V1&HW-CC-Date=20261114T004520Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1756B12F2FFD28E09C2A4EE086FFEE9C53DFE8FAC8469D89B70930D6C8C8023)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/XNTEeG9QQIO-GkGpRrlV6A/zh-cn_image_0000002820524539.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB12A37A2334E9D60BC306816AA14D03C720C984BCD32F8B0D3484106A35C610)
 
 ### 实现原理
 
@@ -101,7 +101,7 @@ content_hash: sha256:83caf49be5a375c6194c4172f25084687b79961e84b5fb56e4716a2cb7b
 
 应用开发中，除了UI样式，布局、逻辑等也可能需要复用，这时可以考虑将相同功能或样式的UI内容封装成一个自定义组件。例如，下图是一个包含图片文字的自定义组件，由Image组件和Text组件纵向排列实现，其中Image和Text的样式可由使用方修改。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/goHuDdXOS7OqqzGmhB21fQ/zh-cn_image_0000002788306262.png?HW-CC-KV=V1&HW-CC-Date=20261114T004520Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD0D858A32434A88BEA7894D0E77726D12DCFFA67EF0B824A3677BC282865F10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/_Pu41EiTT-SQmJtUPfJfpQ/zh-cn_image_0000002820404539.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BAB248216201FC3128F4D2B3DE442E2C5D741F06CBEDC0425364969770A407F)
 
 ### 实现原理
 
@@ -211,7 +211,7 @@ content_hash: sha256:83caf49be5a375c6194c4172f25084687b79961e84b5fb56e4716a2cb7b
 
 如下图所示，团队A实现了一个组件工厂类，其中封装了多个组件。业务团队B在不同的开发场景下，希望通过组件名从工厂类实例中获取对应的组件。例如，当B团队向实例中传入参数"TextInput"或"Radio"，可以分别获取TextInput或Radio组件模板。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/425NtlqcS_O9Tv41M9aWEg/zh-cn_image_0000002817425625.png?HW-CC-KV=V1&HW-CC-Date=20261114T004520Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB70BCBF18E9AEAC73ACA9649DE0DA2A34EF4BC2442AD8B96247627BE140F2A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/WBSWLqktRySYJWWMHW9J3A/zh-cn_image_0000002791724562.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=09CCE0BF3842709865E75AA1D7F81E6F8FCB8BCF580B6DBBFEB03638B7838E1F)
 
 ### 实现原理
 

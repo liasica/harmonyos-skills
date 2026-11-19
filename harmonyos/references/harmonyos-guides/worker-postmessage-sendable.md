@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-postme
 title: 多级Worker间高性能消息通信
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信场景 > 多级Worker间高性能消息通信
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:03+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:22c04512aec6468502c783c5bb72d4ebb51f870b7f048e750202938a18f348e2
+scraped_at: 2026-11-19T09:47:32+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:5c7ed052aab2eab2b3e082fb61a71e5dc1e5ce8809d0d051e00fe434dc87b230
 ---
 
 多级[Worker](worker-introduction.md)（即通过父Worker创建子Worker的机制形成层级线程关系）间通信是一种常见的需求，由于Worker线程生命周期由用户自行管理，因此需要注意多级Worker生命周期的正确管理，建议开发者确保销毁父Worker前先销毁所有子Worker。
@@ -134,7 +134,6 @@ content_hash: sha256:22c04512aec6468502c783c5bb72d4ebb51f870b7f048e750202938a18f
 3. 在UI主线程页面，创建父Worker并准备克隆任务所需的数据，准备完成后将数据发送给父Worker。
 
    ```typescript
-   // Index.ets
    import { worker, collections } from '@kit.ArkTS';
    import { CopyEntry } from '../Sendable/CopyEntry';
 

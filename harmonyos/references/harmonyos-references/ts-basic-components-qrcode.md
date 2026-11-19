@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: QRCode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > QRCode
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:18+08:00
+scraped_at: 2026-11-19T09:51:07+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c7ee3d234c235052c38ebc66ab5f3255fafc32d4ce9514ff038203da0dadbc05
+content_hash: sha256:2fc747fe17b7964536e53a64ad4da558488bb150f8027930513940725b212f9e
 ---
 
 QRCode组件用于显示单个二维码，支持自定义二维码颜色、背景颜色及内容不透明度，适用于需要展示二维码以供扫描获取字符串信息的场景。
@@ -134,7 +134,7 @@ struct QRCodeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/aaqcu3q-QVejDlkikSZZCA/zh-cn_image_0000002788309196.png?HW-CC-KV=V1&HW-CC-Date=20261114T005017Z&HW-CC-Expire=31536000000&HW-CC-Sign=902BCD6D53A1239AEEC9B104DF9104C1AB729956C4F66BB9EB4D0F86C0EB6185)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/UL3jWiJqRhukF7cYjr-nSg/zh-cn_image_0000002791727498.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=E00DA9D3388468D6528119EA5C4B7B52F40FC20806B87060EA9BEF28E81297F9)
 
 ### 示例2（设置背景颜色为透明）
 
@@ -160,4 +160,4 @@ struct QRCodeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/E5gxhcUbRSGAp44dY7RrRw/zh-cn_image_0000002817428559.png?HW-CC-KV=V1&HW-CC-Date=20261114T005017Z&HW-CC-Expire=31536000000&HW-CC-Sign=69765A83DA32E144B6E220AAA48C85278F9B0F90EA61E99EDBD78A57C1F08FB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Tw9IZB_lSkmeBW5ky1zs8g/zh-cn_image_0000002791567526.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=314D187AC921DBC3F9FBDCA218B9B739CA9F8570E351F29B832BB96E6E68DA37)

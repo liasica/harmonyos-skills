@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-shooti
 title: 拍照(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 拍照(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:04+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-19T09:48:37+08:00
+doc_updated_at: 2026-11-18
 content_hash: sha256:a1479b132686e25820d162d65c254efd71e0f2f4efeb7bfff628c88c4e93952d
 ---
 

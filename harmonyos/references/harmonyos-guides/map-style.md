@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-style
 title: 显示自定义地图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 显示自定义地图
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:25+08:00
+scraped_at: 2026-11-19T09:49:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:751a2e303957d5a33f9d521bdd837dd33969bec56653a86bef3893ccd78834d0
+content_hash: sha256:f9cff9fab5ad554900eda5e5bf104f36c3d3b2eb64b2710ca56b2aa3ef165f87
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何在应用中添加自定义样式的地图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/OiGtikqjT4mEWdcUQBKwkw/zh-cn_image_0000002788308148.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=46081AFE09AAFFC0DD2E7CDC0B4D9FEEA4B7F1C1C815E89ADD5B163F59869511 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/-lfVXGjGT3KqAL2xeAVyhg/zh-cn_image_0000002820406429.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DA8AE0997AD369B510EE220E563D9E2A717B45EE6FAF4F89C81392A7F126433 "点击放大")
 
 ## 接口说明
 
@@ -42,25 +42,25 @@ Map Kit提供两种方法设置自定义地图样式：
 
    a.登录[Petal Maps Studio](https://developer.petalmaps.com/console/studio/)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/4boLOIFtRoiXkOzL2V9-7g/zh-cn_image_0000002817427511.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=11E30D0EF98DEC181D90B8FD9E36E8B1CFD4C3398AE70C353D37D9EB296C2914)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/g_NyJJQJTBOYzC_kR7iaTg/zh-cn_image_0000002791726450.png?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F56226759DCFB9E5E58E693C010A39038184D2261D12E43AD318B20384C2F2A)
 
    b.点击“Create map”创建自定义样式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/vli1CujtTmW1bhsav2pPFw/zh-cn_image_0000002788468092.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8653E0F0816D58D6EA67877048EACE04516DBABE83B4FEFE32F2655C46A9088)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/RCdbeZuHSfuI-ZZApQrxUA/zh-cn_image_0000002791566478.png?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=C280F4C7D1F1B5CB71B1694263AD4EA4DFAE4E7B31BB6C8250892C9A7061F041)
 
    c.导入JSON样式文件，点击“Import”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/hBvaSwuuTlaI-SdPHngtMg/zh-cn_image_0000002817507581.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D8BF5775DDC9469130C92AC14530694BF7513948CE9F9EA07648683EED9871D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/dFVSsDu8Tne1k9YbrCWkNg/zh-cn_image_0000002820526431.png?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF0B5E623722EB1CD6E5BE4327A73046838660F65EF0118D072C6A9343393CD9)
 
    d.在编辑器里修改样式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/CSrsHhmvQvqnSncRmsV-cg/zh-cn_image_0000002788308150.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7A7CB23567D7290C729F355FD2707DBAF359D87C6E887104478AF3E0BF11160)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/FH0jsK9TRkqrgZSVuIlaVw/zh-cn_image_0000002820406431.png?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=682E47915904AF542CA2B376900D990A2D1BC5898B219497A4692A5018D88B87)
 
    e.点击“SAVE”生成预览ID，预览ID在编辑样式时会重新生成，您可以通过预览ID测试样式效果。点击“PUBLISH”发布生成样式ID，样式ID是唯一ID，一旦发布生效不会变化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/WCdI-GAuTOmF5KXVN49Afw/zh-cn_image_0000002817427513.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=485DB10FD29EA8242639D666C380B9FD0DB7415E41E4B731D2FAC6193CA3FA66)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/KHPb8x-xSiOKEcITA9o79g/zh-cn_image_0000002791726452.png?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=50914EDA386CC74C55D598562093B8E8904568EB96C4A8C307FD5CB34A75769C)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/zmag60iVQvOyTpGWkDxBdg/zh-cn_image_0000002788468094.png?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=D975A3842F983341721CDB64C393ABE5039A571FF8F09ED1A3C2D701C51DB4B6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/65os4tvKTaS9Gy_ElhlGOQ/zh-cn_image_0000002791566480.png?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAC699F273CAFBD319A7A8B762FE4FCB53A60D05334FBCC6E013D4336487AB6F)
 3. Map Kit提供两种方法设置样式ID：
 
    * 在创建地图后设置样式ID
@@ -179,7 +179,7 @@ Map Kit提供两种方法设置自定义地图样式：
 
      设置样式ID之后效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/vyaYiVquT6S52IJuav6zXA/zh-cn_image_0000002817507583.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF646FF3D0939271A6766EFBBDF40A58730120C4134E627D5183CEB3A2DC4C69 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/MZHSfAUnSpiAnzFPNDP73w/zh-cn_image_0000002820526433.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D8742A3BCBE789CF50CE4FC1D3261E5E1B981592FB1D88D84EDAB51A9C6745F "点击放大")
 
 ### 设置样式内容
 
@@ -251,7 +251,7 @@ Map Kit提供两种方法设置自定义地图样式：
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/69VVYGDeQzy-bIaSNRGojg/zh-cn_image_0000002788308152.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004640Z&HW-CC-Expire=31536000000&HW-CC-Sign=96B35C2D1B10192C68BC61E4EC5D99B0B55B0E29327C2289A3B98E8D37C74235 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/n-iFO_gbQLmi49FSfLuEoA/zh-cn_image_0000002820406433.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=05EA581B78EEA2BBB9F3432DC0D27D0A061E008E36DF9C0D67D94EDFD14B1C27 "点击放大")
 
 ### 样式参考
 

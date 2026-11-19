@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/explicit-impl
 title: 显式Want与隐式Want匹配规则
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 信息传递载体Want > 显式Want与隐式Want匹配规则
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:49+08:00
+scraped_at: 2026-11-19T09:47:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:39f32275662e7bd68fe3e900518984ff85ce4adbbeee43c898659ccc6d662849
+content_hash: sha256:60ef533cc013d446080ec0a605a0abc7e0c25631d53e0ce2f94776a97a983a7c
 ---
 
 在启动目标应用组件时，会通过显式[Want](../harmonyos-references/js-apis-app-ability-want.md)或者隐式[Want](../harmonyos-references/js-apis-app-ability-want.md)进行目标应用组件的匹配，这里说的匹配规则就是调用方传入的[want](../harmonyos-references/js-apis-app-ability-want.md)参数中设置的参数如何与目标应用组件声明的配置文件进行匹配。
@@ -68,7 +68,7 @@ content_hash: sha256:39f32275662e7bd68fe3e900518984ff85ce4adbbeee43c898659ccc6d6
 
 **图1** want参数的action匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/4XODfbf8TkCIFeJECsZzEQ/zh-cn_image_0000002788466072.png?HW-CC-KV=V1&HW-CC-Date=20261114T004512Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7137E5A8F0174BE7A88DE9C486553F3B019FD4873D418688C6F29B0062F5EE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/FXkdCQirQVKOxpte5JWNXA/zh-cn_image_0000002791564456.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F160C5822303F1A64E70874CE820789363658860380793D290E55E7FA43DEA7)
 
 ### want参数的entities匹配规则
 
@@ -82,7 +82,7 @@ content_hash: sha256:39f32275662e7bd68fe3e900518984ff85ce4adbbeee43c898659ccc6d6
 
 **图2** want参数的entities匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/3QfxkTF7RSKpJNZIMrz57g/zh-cn_image_0000002817505559.png?HW-CC-KV=V1&HW-CC-Date=20261114T004512Z&HW-CC-Expire=31536000000&HW-CC-Sign=734E54F366C98D3CAECBB16C171861AF2F4164F0435DED64FF6324EA62EAA308)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/DdHUxB2xTI-Ez5GCsSECRw/zh-cn_image_0000002820524407.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9CAE5C984F6EC17FB1E1456FBAF164A48B573A30B88FB3E018207933D8DBD3C)
 
 ### want参数的uri和type匹配规则
 
@@ -113,7 +113,7 @@ content_hash: sha256:39f32275662e7bd68fe3e900518984ff85ce4adbbeee43c898659ccc6d6
 
 **图3** want参数中uri和type皆不为空时的匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/NOjNRUDVSzSAIJkC2GXBpw/zh-cn_image_0000002788306130.png?HW-CC-KV=V1&HW-CC-Date=20261114T004512Z&HW-CC-Expire=31536000000&HW-CC-Sign=492200BA16C81F68D61D9A3262784CDF929DDE6706C71D8DAAC54113F85A18B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ddcJ-ZiWRByak5XEbw4vRg/zh-cn_image_0000002820404407.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DE81DD28A94C01599F1433DAAD68D972DEBF71DD3BF93061F7F19C1508F4C9B)
 
 为了简化描述：
 
@@ -122,7 +122,7 @@ content_hash: sha256:39f32275662e7bd68fe3e900518984ff85ce4adbbeee43c898659ccc6d6
 
 **图4** want参数中uri和type的具体匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/S_9d83eVQ0mAauQ2-IEyYg/zh-cn_image_0000002817425493.png?HW-CC-KV=V1&HW-CC-Date=20261114T004512Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D409BAF97ED46F293C0DA0F8BAFC2852DE2DF33F95EBFB677CC211C4DF3A79B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/6sCYqP1xQ-qj4UorAjhPsA/zh-cn_image_0000002791724430.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=368BA9DA5DE4902DCAE304D8A4AF5F6D7A5272D1639A27C781CD0A91BD646413)
 
 ### uri匹配规则
 
@@ -154,7 +154,7 @@ content_hash: sha256:39f32275662e7bd68fe3e900518984ff85ce4adbbeee43c898659ccc6d6
 
 **图5** want参数中uri的匹配规则示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/P24H9rn3R1-uVkx09ORY8A/zh-cn_image_0000002788466074.png?HW-CC-KV=V1&HW-CC-Date=20261114T004512Z&HW-CC-Expire=31536000000&HW-CC-Sign=B650887BB0E9BF248C93C5DE7F47F0A2CFB44BAD7EBD41E67F9048E036B93ECE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/XIppZM-dQDeY7DjHybSGoA/zh-cn_image_0000002791564458.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=159819676E71653D4B1C2C399B3B150249367696B9D059DADAD8E7C6990E87EB)
 
 ### type匹配规则
 
@@ -182,6 +182,6 @@ content_hash: sha256:39f32275662e7bd68fe3e900518984ff85ce4adbbeee43c898659ccc6d6
 
 **图6** want参数中linkFeature具体匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/C805ubsFTyyY_NfFUeD6Fw/zh-cn_image_0000002817505561.png?HW-CC-KV=V1&HW-CC-Date=20261114T004512Z&HW-CC-Expire=31536000000&HW-CC-Sign=122C4742EBCDCEA0191AC1A5DBD2C83D507FA5F93645956C5EA5C77A6DD9707F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/bmMHeK1XT12l1tZym0uu2w/zh-cn_image_0000002820524409.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7064ABB2BD6CC44AFE5672DE4BFC163F1E9183A1D10BE9D2FD637BB2E226FE7)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/JTiodtYNRbuixVl9wmwXGQ/zh-cn_image_0000002788306132.png?HW-CC-KV=V1&HW-CC-Date=20261114T004512Z&HW-CC-Expire=31536000000&HW-CC-Sign=42AA759375AD563680AA4DE4484503974241459FE0C9BE95BBE7798B49BC94A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/P5B9X6qRQWWWbf81Un0fjg/zh-cn_image_0000002820404409.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6DA3DF17E515516A76CD38F68960F85B1F2A29A4A20AC12FDED9FDBB4095785)

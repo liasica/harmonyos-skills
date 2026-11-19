@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pageswitch-lo
 title: 页面切换日志
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 通用日志 > 页面切换日志
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:45+08:00
+scraped_at: 2026-11-19T09:48:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1018be7f89c0333baa5b5da4f10eaae605b641aa6ec9db0c37b52b51be88f65c
+content_hash: sha256:4daaf4613f83d270b88711c16a749e24e3537d5fbc31366e6da3e3adf4f887a8
 ---
 
 ## 简介
@@ -16,7 +16,7 @@ content_hash: sha256:1018be7f89c0333baa5b5da4f10eaae605b641aa6ec9db0c37b52b51be8
 
 三方应用通过订阅故障事件和使能记录页面切换日志来获取故障发生时的页面切换日志信息，其实现原理如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/qA4j3UxPQCyrC5fGPSD_uw/zh-cn_image_0000002788467484.png?HW-CC-KV=V1&HW-CC-Date=20261114T004745Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E62ECB411CD25E78CB8C0790C03F0A6473436F940D271C170BF47412BFAAA1D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/j0o0WEFiRU2UZ2d2lcER_Q/zh-cn_image_0000002791565870.png?HW-CC-KV=V1&HW-CC-Date=20261119T014824Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E6420CF93CFCD8284A4238F814CA5AF6FDDB6D1E91C30F31C69E6B67DCD8B69)
 
 详细步骤如下：
 

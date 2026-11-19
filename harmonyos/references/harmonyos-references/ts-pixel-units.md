@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-
 title: 像素单位
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 公共定义 > 像素单位
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:29+08:00
+scraped_at: 2026-11-19T09:51:18+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2fac7acba9cf0b96fdfeb87ebb8520b398296136d8d998764af176e62c5284a7
+content_hash: sha256:e30a9a98667b381126353ed7c70a0af1b4a232581591ca013f7086537a902722
 ---
 
 ArkUI为开发者提供4种像素单位，采用vp为基准数据单位。
@@ -281,4 +281,4 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/fD3Xqm_kR8uLW42wGF_m_g/zh-cn_image_0000002817428799.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAF1745E87569929A735C1CBCE5E86BA30CB36E63169FF217053DCBC017AC4F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/7snkEqZmQRu2zf7BD1Kk8A/zh-cn_image_0000002791567766.png?HW-CC-KV=V1&HW-CC-Date=20261119T015118Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5DF8C3E4DC9EB57B3371593E8C1F2487797A6F1595140419D59070098E9E803)

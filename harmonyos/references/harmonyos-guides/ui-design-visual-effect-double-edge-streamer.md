@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-vis
 title: 双边边缘流光
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 视效 > 双边边缘流光
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:22+08:00
+scraped_at: 2026-11-19T09:47:59+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0ac3718341b7302603a6639e2b791a76375071a80510824a728ed4bdcf6bf922
+content_hash: sha256:3e9ddd9b3f3eedd967344059c94e13f1c59330ef01abb9c0846692ef7ecbd30b
 ---
 
 ## 场景介绍
@@ -73,4 +73,4 @@ content_hash: sha256:0ac3718341b7302603a6639e2b791a76375071a80510824a728ed4bdcf6
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/-CqB8_ysT1Kt5OxgdShZyA/zh-cn_image_0000002817426719.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004721Z&HW-CC-Expire=31536000000&HW-CC-Sign=595079D3C8107ED012EF3BCB3354A94222F96A66BC31842BF8A24A2FF938EAB5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/AqHs90mtTtu-bmVvOuqXbA/zh-cn_image_0000002791725656.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0CBB4E5765FA8E74EAA7EB71C26041A7614636C086A0BB0D8AE996A52AE0D80)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component
 title: Web组件拦截能力的使用
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > Web组件拦截能力的使用
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:15+08:00
+scraped_at: 2026-11-19T09:47:53+08:00
 doc_updated_at: 2026-10-26
-content_hash: sha256:fa44b90ae01858dd7f109ab505ca13f521186d6e0332d7efa9f091f0c137ac58
+content_hash: sha256:3049ca0ed44fb7a1e9d2fdb56c59fe3e146deb58e00245ee835ffefe70362f55
 ---
 
 ## 概述
@@ -77,7 +77,7 @@ Web组件在加载URL前会触发[onLoadIntercept](../harmonyos-references/arkts
 
 **图 1** 基于onLoadIntercept()的请求拦截流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/SVI9MWIbQlqlG9qUIEcOtw/zh-cn_image_0000002788467118.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=4088E919C5ACD3CF63A546305878CD70886B4405694D645E3E025974960D48D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/EmuWKdo6SJSCFv6YBjUakg/zh-cn_image_0000002791565502.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3692E19A5D6056EBFDC4250BD42917F6A7CB3C29FDE9B054C291DAE6BD80D17)
 
 ### 请求重定向
 
@@ -87,7 +87,7 @@ Web组件在加载URL前会触发[onLoadIntercept](../harmonyos-references/arkts
 
 **图 2** 请求重定向
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/76dd2So5S62GfChkyiojRA/zh-cn_image_0000002817506605.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=F99158F4D19F7B66E6B99D86FC5D00674662277D7AC2EA176F1AB7F7FDF51E1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/tXfxI2niTpOA5W7F75Xkrw/zh-cn_image_0000002820525455.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBC10CBDB4227792BD9FD7C09A6F612CEDFC2EAB445F49EBE122BCF1EC457972)
 
 **实现原理**
 
@@ -175,7 +175,7 @@ Web组件在加载URL前会触发[onLoadIntercept](../harmonyos-references/arkts
 
 **图 3** 页面白名单配置
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/xPfwMKonSU24n2ZWTlf6Mw/zh-cn_image_0000002788307176.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=681814F6C1F41D310BE38250A345C03ECE3B34893A3E2B18619B8974A713D03B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/AIrMjqXiRsC5UDETbkm7KQ/zh-cn_image_0000002820405455.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0F3233B8AB1CF38F548A00ECD1A0AAD61889CFF8B855F2BA51492BED2CF3C36)
 
 **实现原理**
 
@@ -300,7 +300,7 @@ Web组件在加载URL之前会触发[onInterceptRequest](../harmonyos-references
 
 **图 4** 基于onInterceptRequest()的请求拦截流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/hgrj0PDDRH6XyoxT1XHeDQ/zh-cn_image_0000002817426539.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FC52CE64E067AD69FFC132AC4200B0BEC0BD6610BA843D1F2210291D591F095)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/_sfwKo_mQlG4QDc1d7SFqw/zh-cn_image_0000002791725476.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CD83880792534F3D1C491218A143C275CC3FA112ADACFAB2DECCD960659D6E7)
 
 ### 本地资源替换
 
@@ -310,7 +310,7 @@ Web组件在加载URL之前会触发[onInterceptRequest](../harmonyos-references
 
 **图 5** 本地资源替换
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ENX335efSqGY21umpXBQrQ/zh-cn_image_0000002788467120.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=05F1072A14A0C2964E8BAF45C1C6BAAFDA49379CE4969BE9F0923F4D6B2CF897)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/WXEyQqr-QVO604GTwejjOw/zh-cn_image_0000002791565504.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=22B4E97CE3862B5D8493D75C78C17D0FB57E58D9928299497A3160142B6ACA55)
 
 **实现原理**
 
@@ -467,11 +467,11 @@ Web组件在加载URL之前会触发[onInterceptRequest](../harmonyos-references
 
 **图 6** Wi-Fi网络环境下加载图片资源
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/ESoZY2LfTIKKuKkqrpDbtA/zh-cn_image_0000002817506607.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=B925DD7DF4E1A58FE7BACCB5507018F9AF69B501F4FDE5E9262F1E8E9BC5BBCA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/MHtCGu0pQyCltDJnv9_a9A/zh-cn_image_0000002820525457.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=65FC735E96C3F7791D8B3A194E06A9E15648A459F2AADF5262DC185EE5F8D526)
 
 **图 7** 非Wi-Fi网络环境下加载本地占位图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/aEJR2ig3S4mSwD67a_d-dw/zh-cn_image_0000002788307178.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=56975F49C02B1904AE355AB8BEF249D9AAF95B66B666F2D84EEC77F351881307)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/9lTRSbm7QGmKJQ1ocaJ4WQ/zh-cn_image_0000002820405457.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=056D32CDD153B84C1B8161D895676C0A1B2AFF3372BE64DC11337FB6B5A8FF6C)
 
 **实现原理**
 
@@ -595,7 +595,7 @@ Web组件在加载URL之前会触发[onInterceptRequest](../harmonyos-references
 
 **图 8** 基于WebSchemeHandler的请求拦截流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/NI6ZKpkFRge45CuRuoK8GQ/zh-cn_image_0000002817426541.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=F051BDE5434DD25E5E2B4F416D39725D032783F4CB82F49311575B1A069FA492)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/BjAkEACMRPOFCSF5FSNbNw/zh-cn_image_0000002791725478.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A0909985B0275CEEA2827A19095340FC7EC24DB13085D19B2084EA1221AA4B0)
 
 ### 配置公共请求头
 
@@ -605,7 +605,7 @@ Web组件在加载URL之前会触发[onInterceptRequest](../harmonyos-references
 
 **图 9** 配置公共请求头
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Ca3N0tSmRZiFXfAEf84tVQ/zh-cn_image_0000002788467122.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0A6DF02623FD6685D354B2086D3ECA92AD4D8901EDB8054181FEF28AAAA5C98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/Ujd8zVO1TAO27xi0oJ0mig/zh-cn_image_0000002791565506.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6ED0F9B5659C5561F3CBAFC3813CBA5D0C7DCFC8D2DA481A544CF76A22F0ACA)
 
 **实现原理**
 

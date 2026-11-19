@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-aipp-
 title: AIPP参数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转换 > AIPP转换后数据预处理 > AIPP参数
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:36+08:00
+scraped_at: 2026-11-19T09:49:18+08:00
 doc_updated_at: 2026-07-03
-content_hash: sha256:501f438ded7ba7b1d8e68d9e30a31639553b4e91bb6d37ddbfc52761c79b8ffc
+content_hash: sha256:ee0bbecd4a885682a7ef3525990d380b46fb1c6ffdcd097211543ad3cd022fa0
 ---
 
 AIPP分为静态AIPP和动态AIPP，两者使用严格区分，静态AIPP模型不能接收模型推理时传入的AIPP参数，不兼容动态AIPP场景，静态与动态AIPP区别详见下表。
@@ -97,22 +97,22 @@ RB/UV通道交换丰富了输入图片的格式，开启RB/UV通道交换后，A
 
 * YUV转BGR
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Nzyot_r2RiWImZk71iGdSQ/zh-cn_image_0000002817507833.png?HW-CC-KV=V1&HW-CC-Date=20261114T004651Z&HW-CC-Expire=31536000000&HW-CC-Sign=191C924F9B0A318D02C6B6C65A97E80F7C80FC2216F17394E1BCF87F5249A7BD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/TjnDd1UxRzOs4tAT34MwNQ/zh-cn_image_0000002820526683.png?HW-CC-KV=V1&HW-CC-Date=20261119T014822Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1A726EBB8890563E5F3523BA896093684E5E66530CD144DA54AAE6C14628CB6)
 * BGR转YUV
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/JMlc5Cs6Sp6K0XqamfHiyA/zh-cn_image_0000002788308402.png?HW-CC-KV=V1&HW-CC-Date=20261114T004651Z&HW-CC-Expire=31536000000&HW-CC-Sign=935BB0FF461E558E586F4F7914E5044E27E89C3F3FE3CB85A839C3F1BAE90A58)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/3UngkQ4VSYOW08MmxnZXMA/zh-cn_image_0000002820406683.png?HW-CC-KV=V1&HW-CC-Date=20261119T014822Z&HW-CC-Expire=31536000000&HW-CC-Sign=87E156C7042D59BD9B9D37E538E3A3DCF2CC13F01455546B35BE17698D7DC53C)
 
 参考2：BT-601 narrow、JPEG和BT-709 narrow三种类型图片的转换公式。
 
 * BT-601 narrow
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/e99xA-VmRu6uMp3JbWSfqw/zh-cn_image_0000002817427765.png?HW-CC-KV=V1&HW-CC-Date=20261114T004651Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B9DD2FDA0390BA2D475C59EE47391F8E01782D4426FBC3E442AD8160B70F894)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/54FsDQIySiWxCLVKTuweeg/zh-cn_image_0000002791726704.png?HW-CC-KV=V1&HW-CC-Date=20261119T014822Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB92ECB21E13D1D5BFF41272B92896A1D11E66813D8810134FC142C5D674C951)
 * JPEG
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/kmOuMq31R9uQmzYNq4M_bQ/zh-cn_image_0000002788468346.png?HW-CC-KV=V1&HW-CC-Date=20261114T004651Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF4D27751076CD2E0341F04FD214A7F8F97EDCEE1F0484E1ED526FF11C49D8B4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/az_Yk9sZQ8WUrNR10UoHIw/zh-cn_image_0000002791566732.png?HW-CC-KV=V1&HW-CC-Date=20261119T014822Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CD00FACC5D5E8B3FCCEDA16EE243DD29487DDAAE9C01182FEBA7812DE5FA514)
 * BT-709 narrow
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/hiupoFYrSyu1V8TJowBYtQ/zh-cn_image_0000002817507835.png?HW-CC-KV=V1&HW-CC-Date=20261114T004651Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7CE55C3FDEEF54A3CD21B1E29924ED5DB8B60D91CBAC7F7F803A18C308112EC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/j9hySlX8SCqs25Hr1ypmnA/zh-cn_image_0000002820526685.png?HW-CC-KV=V1&HW-CC-Date=20261119T014822Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7CA117C60CC0E3AE14F9DC745119C15305DF946980611F55599025303D5F0F3)
 
 使用配置文件生成静态AIPP模型时，需要根据以上的公式配置CSC矩阵以及"input\_bias"或者"output\_bias"的值。使用IR定义AIPP CSC功能算子，以及使用CANN Kit接口配置CSC参数时，支持传入目标类型，由系统来填充CSC配置参数。
 

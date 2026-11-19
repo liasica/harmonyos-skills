@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-push
 title: pushService（推送服务基础能力）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > pushService（推送服务基础能力）
 category: harmonyos-references
-scraped_at: 2026-11-14T08:53:48+08:00
+scraped_at: 2026-11-19T09:54:54+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:5ad77e2dd7b71d4a879f37936172657aa7f374f24511bb0452dcd02ba0731385
+content_hash: sha256:e3f3d9a3836910d9cd929b179cc9561b1f1a00f103b24a931551e4d46cf445e2
 ---
 
 本模块作为HarmonyOS消息推送的基础模块，提供Push Token管理、应用内多账号消息推送及消息接收等核心能力。
@@ -14,7 +14,7 @@ content_hash: sha256:5ad77e2dd7b71d4a879f37936172657aa7f374f24511bb0452dcd02ba07
 
 Push Token是Push Kit为应用分配的推送令牌，每台设备上每个应用的Push Token具有唯一性。开发者获取Push Token后需上报到应用服务器，用于向终端设备推送消息，Push Cloud将根据消息体中携带的Push Token，将消息下发至目标设备的目标应用。推送消息流程图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/8j2RFNA1SDCO9spT_yin5A/zh-cn_image_0000002817509359.png?HW-CC-KV=V1&HW-CC-Date=20261114T005347Z&HW-CC-Expire=31536000000&HW-CC-Sign=C25396ED800A276906FD296AC8F4D0866EE9AE78B4CF77F9B4FFE64A55465FF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/LQQVBTLpRH2vqLGJ5dU_FQ/zh-cn_image_0000002820408211.png?HW-CC-KV=V1&HW-CC-Date=20261119T015453Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC7DDA20D0F271BE26CB98D18FBFD785F251A5DA9656204128372F2F4A50435F)
 
 若应用服务器未及时更新Push Token，将影响消息的正常推送。
 
@@ -49,7 +49,7 @@ Push Token是设备与应用实例的唯一标识，与应用内账号无关。�
 
 接收消息流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/32KCe9J-SnOK4rpZc-LtoA/zh-cn_image_0000002788309928.png?HW-CC-KV=V1&HW-CC-Date=20261114T005347Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BF88D798DA15B4DF9EBB93970C5763354F7E0C278A00B8F10811DC4C87AC706)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/YM2mAYudRzSmghG3s0JKKw/zh-cn_image_0000002791728230.png?HW-CC-KV=V1&HW-CC-Date=20261119T015453Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE8D22CB8946C04B55ADA5E04A4BCF8130A68923728C2DAAB3DFF67E3092957E)
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

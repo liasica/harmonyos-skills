@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/background-re
 title: 实现后台录音
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发麦克风录制(外录)功能 > 实现后台录音
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:59+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:3f628951252c1ead1039bff46a1bd394fb4da503ec7bd0e689ecfdbbdb52f71f
+scraped_at: 2026-11-19T09:48:32+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:8b161e1dd861928750c8b13c1df58371f52a51ee4e7574162f74aab3708bd4da
 ---
 
 从API version 9开始，支持后台长时任务开发功能。应用配置后台长时任务可以支持应用后台录音。
@@ -59,8 +59,8 @@ content_hash: sha256:3f628951252c1ead1039bff46a1bd394fb4da503ec7bd0e689ecfdbbdb5
 
    ```typescript
    import { BusinessError } from '@kit.BasicServicesKit';
-   import { backgroundTaskManager } from '@kit.BackgroundTasksKit'
-   import { wantAgent, WantAgent } from '@kit.AbilityKit'
+   import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
+   import { wantAgent, WantAgent } from '@kit.AbilityKit';
    // ...
 
      // 开启长时任务。

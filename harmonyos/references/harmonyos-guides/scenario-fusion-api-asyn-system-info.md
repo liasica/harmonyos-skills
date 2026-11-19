@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 通过API异步获取系统信息属性
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化API > 通过API异步获取系统信息属性
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:35+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-19T09:49:11+08:00
+doc_updated_at: 2026-11-18
 content_hash: sha256:55cb94f2493e909663ce0a62828f8d7392f90f3370de4ec4070ff8e800f6fc0c
 ---
 

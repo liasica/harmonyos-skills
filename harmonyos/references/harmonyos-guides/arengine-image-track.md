@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-imag
 title: 图像跟踪（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 图像跟踪 > 图像跟踪（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:02+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:7c81dad8dea09f8c5a72d2b3569ee248758d80542c81d74bafe1d52dc5067f96
+scraped_at: 2026-11-19T09:48:45+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:b147032dce94fc08c0ba9595ce6586647652c397741559afd29dd132b60cc875
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -226,6 +226,8 @@ struct ARImage {
                  this.initARView();
                  this.isSaveDatabase = true;
                }
+             }).catch((err: BusinessError) => {
+               logger.warn(`Failed to addImage. Code is ${err.code}, message is ${err.message}`);
              })
            }).catch((err: BusinessError) => {
            logger.warn(`Failed to create database. Code is ${err.code}, message is ${err.message}`);

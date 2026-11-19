@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audiorenderer.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audiorenderer.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:20+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:971c8991c66d1112c29a530bcb61cbc3892e602caecee06ad55cd03e5e42960b
+scraped_at: 2026-11-19T09:53:26+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:46066e8fce5b25cfab72d6896adc7a066cf3b715038258b4740ddd0b3974a75c
 ---
 
 ## 概述
@@ -851,7 +851,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetSilentModeAndMixWithOthers(OH_AudioRen
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AudioStream\_Result](capi-native-audiostream-base-h.md#oh_audiostream_result) | AUDIOSTREAM\_SUCCESS：函数执行成功。  AUDIOSTREAM\_ERROR\_INVALID\_PARAM：参数renderer为nullptr。 |
+| [OH\_AudioStream\_Result](capi-native-audiostream-base-h.md#oh_audiostream_result) | AUDIOSTREAM\_SUCCESS：函数执行成功。  AUDIOSTREAM\_ERROR\_ILLEGAL\_STATE：不允许设置当前音频流的静音模式。 |
 
 ### OH\_AudioRenderer\_GetSilentModeAndMixWithOthers()
 
@@ -876,7 +876,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetSilentModeAndMixWithOthers(OH_AudioRen
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AudioStream\_Result](capi-native-audiostream-base-h.md#oh_audiostream_result) | AUDIOSTREAM\_SUCCESS：函数执行成功。  AUDIOSTREAM\_ERROR\_INVALID\_PARAM：参数renderer为nullptr。 |
+| [OH\_AudioStream\_Result](capi-native-audiostream-base-h.md#oh_audiostream_result) | AUDIOSTREAM\_SUCCESS：函数执行成功。  AUDIOSTREAM\_ERROR\_SYSTEM：系统错误。 |
 
 ### OH\_AudioRenderer\_SetDefaultOutputDevice()
 

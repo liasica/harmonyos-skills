@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: grid-col
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 栅格组件 > grid-col
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:32+08:00
+scraped_at: 2026-11-19T09:51:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9bc5e52593956836d4cfa48295be302c275ecee15dd0057c0133d8a4664856b5
+content_hash: sha256:2584eaad17ee37ceca17d6df2b47282e527647963c67ca63b6078721f05352e1
 ---
 
 **说明** 
@@ -117,4 +117,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/K0WJV09-QdegFmt6lL3-hg/zh-cn_image_0000002788469476.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005032Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE822BCD52FFB7ED91B6B9668DA3E235C5CF39B87B4F7E560E6CE4E80F1F7973)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/s1QqtAfvRb22eJ1cbYoC3A/zh-cn_image_0000002820527815.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015027Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D4A25DCC2CABDEA848F52D63A7E7533EE146211EF73B8E2FB69CED93C392CE3)

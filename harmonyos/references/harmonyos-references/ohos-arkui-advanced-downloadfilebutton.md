@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: DownloadFileButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > DownloadFileButton
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:24+08:00
+scraped_at: 2026-11-19T09:51:14+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f6288936d96bd2ad18cd979593f3d18364aecc5a24b78e69fcd06344dee71cc9
+content_hash: sha256:2fabfe25012f1a28842fa90afe186fe812fb2c610961e9a387839653a80d9f3b
 ---
 
 下载文件按钮，在下载文件场景中提供统一样式的下载按钮。
@@ -196,4 +196,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/1DQ2ApZASHmQV6VYtSx8qQ/zh-cn_image_0000002817428741.png?HW-CC-KV=V1&HW-CC-Date=20261114T004822Z&HW-CC-Expire=31536000000&HW-CC-Sign=32A70096F4F8D6D433327DC73FA3A5DC35B485BD7AD444700285A7BDFD9119C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/AJpeO-C6QBmcNgtn98fBHQ/zh-cn_image_0000002791567708.png?HW-CC-KV=V1&HW-CC-Date=20261119T015019Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5DDDD37A0D983EDC0D6F026056160C0607621E4A21ED1A941895A9E0B555ECD)

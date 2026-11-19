@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 交易信息密码认证
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 交易信息密码认证
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:28+08:00
+scraped_at: 2026-11-19T09:48:07+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:656a4a9fffeb2a2c05d858f054ebe0aa0edef36a096c797b1838821985b2b53b
+content_hash: sha256:c63d28cf98ecf4b11437e52b58ec32a5dafb811f67d1238be7590b33d99583c7
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:656a4a9fffeb2a2c05d858f054ebe0aa0edef36a096c797b1838821985b
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/yjgYSv_UTx6pxwm3xjZXgw/zh-cn_image_0000002817506837.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA7A1ED32D70228429C1F06C8B6870C1D6A50A8B9E47073A1BAFE896F6F7A247)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/_Xkb0y9dTpOGznWGMNqu8A/zh-cn_image_0000002820525685.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014806Z&HW-CC-Expire=31536000000&HW-CC-Sign=E98D7862050CD201E89150A94B517D56CA71EDEE88D20F95589A7087E88157CB)
 
 ## 接口说明
 
@@ -37,15 +37,15 @@ content_hash: sha256:656a4a9fffeb2a2c05d858f054ebe0aa0edef36a096c797b1838821985b
 
 **图1** 无翻页密码认证
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/3fjah8scReGL880i0mkv3Q/zh-cn_image_0000002788307406.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6FD963F5F00DC2425AC83031AD465BB2FD7A30E52A4AB60F06D607DC8BD71E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/QjYgmIGqRzWkTQMEa2QxyQ/zh-cn_image_0000002820405685.png?HW-CC-KV=V1&HW-CC-Date=20261119T014806Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3CFB2060A576854815935F011BDBAB735B5040178671D5D5B8A490F9149E117)
 
 **图2** 翻页密码认证-1
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/EQtT6flBQaGk5xlRD1pqaQ/zh-cn_image_0000002817426769.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AAC412C18B3E32BC9DB6A7488F59A0927D96DBA26691EA5469FF6C511E92E15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/ibh6IuINQoOGhc6uzUEqYw/zh-cn_image_0000002791725706.png?HW-CC-KV=V1&HW-CC-Date=20261119T014806Z&HW-CC-Expire=31536000000&HW-CC-Sign=51852DDB2A5C0FC53D0B2AE69F85288879C79BF00F0DDF89D7A23BA7B0C8026B)
 
 **图3** 翻页密码认证-2
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/qHcOegzVRVqfaiAS85hN9g/zh-cn_image_0000002788467350.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C15E6DF55BE53AB9AA479EE0A934943DCF8F4293C506F1866B53E773389A95F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/PYuTM3z4QFmmzJCcUzhOSA/zh-cn_image_0000002791565734.png?HW-CC-KV=V1&HW-CC-Date=20261119T014806Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C47ABA7FC8B4D523A8274D1308AC6E5A9B2E5A1A39410F9A6F2BD5E30E8E16D)
 
 交易信息格式说明如下：
 
@@ -71,7 +71,7 @@ content_hash: sha256:656a4a9fffeb2a2c05d858f054ebe0aa0edef36a096c797b1838821985b
 
 如图为PC端使用数字盾密码进行交易认证时对应的TUI界面示例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/PZYaUOg6SYefnLns2YnjcQ/zh-cn_image_0000002817506839.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DED51DE2D39D0CC5EDCD5835A51EB7F12FBD1906878A6362EC86340063C3625)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/JGBg2cgzQ-KkmqsAmo8jDg/zh-cn_image_0000002820525687.png?HW-CC-KV=V1&HW-CC-Date=20261119T014806Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C6BC5A80B7D2A1241A9FF031805277E44508561C2016A1F17893093A05FC22D)
 
 PC场景数字盾规格说明如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audiostream_base.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audiostream_base.h
 category: harmonyos-references
-scraped_at: 2026-11-12T09:56:22+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:9ab8cfc853b6f54c4548781fc3c6a6fe819651ff621e69bc5dfb93b2f5737088
+scraped_at: 2026-11-19T09:53:27+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:21b50c8ac768ddd134968d6288ca5daa1a6e9642609b3b9f1edccaf479bcc483
 ---
 
 ## 概述
@@ -440,7 +440,7 @@ enum OH_AudioStream_PrivacyType
 | --- | --- |
 | AUDIO\_STREAM\_PRIVACY\_TYPE\_PUBLIC = 0 | 表示音频流可以被其他应用录制或屏幕投射，不包含隐私类型的流。 |
 | AUDIO\_STREAM\_PRIVACY\_TYPE\_PRIVATE = 1 | 表示音频流不可以被其他应用录制或屏幕投射。 |
-| AUDIO\_STREAM\_PRIVACY\_TYPE\_SHARED = 2 | 表示音频流可以被其他应用录制或屏幕投射，包含隐私类型的流。  例如，在PRIVACY\_TYPE\_PUBLIC策略下，[AUDIOSTREAM\_USAGE\_VOICE\_COMMUNICATION](capi-native-audiostream-base-h.md#oh_audiostream_usage)类型音频流不会被其他应用录制或屏幕投射。然而，在PRIVACY\_TYPE\_SHARED策略下，这些音频流将会允许被其他应用录制或屏幕投射。  **起始版本：** 21 |
+| AUDIO\_STREAM\_PRIVACY\_TYPE\_SHARED = 2 | 表示音频流可以被屏幕投射，包含隐私类型的流。  例如，在PRIVACY\_TYPE\_PUBLIC策略下，[AUDIOSTREAM\_USAGE\_VOICE\_COMMUNICATION](capi-native-audiostream-base-h.md#oh_audiostream_usage)类型音频流不会被屏幕投射。然而，在PRIVACY\_TYPE\_SHARED策略下，这些音频流将会允许被屏幕投射。  **起始版本：** 21 |
 
 ### OH\_AudioData\_Callback\_Result
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mvvm
 title: MVVM模式（V1）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > MVVM模式（V1）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:58+08:00
+scraped_at: 2026-11-19T09:47:37+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:d81db25b34d5b37d7fa35c6bacff4110b9e4d789ca9776ea23c08099270cda8c
+content_hash: sha256:2d21bd8df66acca4aecb544854904b537967162c7c4965eaf0992addd67a01e1
 ---
 
 当开发者掌握了状态管理的基本概念后，通常会尝试开发自己的应用，在应用开发初期，如果未能精心规划项目结构，随着项目扩展和复杂化，状态变量的增多将导致组件间关系变得错综复杂。此时，开发新功能可能引起连锁反应，维护成本也会增加。为此，本文旨在介绍MVVM模式以及ArkUI的UI开发模式与MVVM的关系，指导开发者如何设计项目结构，以便在产品迭代和升级时能更轻松地开发和维护。
@@ -31,7 +31,7 @@ ArkUI的UI开发模式就属于MVVM模式，通过对MVVM概念的基本介绍�
 
 ArkUI的UI开发模式即是MVVM模式，而状态变量在MVVM模式中扮演着ViewModel的角色，向上刷新UI，向下更新数据，整体框架如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/lAlsQkdeSA-5gQDqd6ehDw/zh-cn_image_0000002817505721.png?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAAF5E60824BE37C47A0CCA784720B1D15D0B634B032D4CB1AAD8CD9BBEFD0C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/hmpp8BnLSa2VPAxdfurouQ/zh-cn_image_0000002820524569.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=8701C9CF98DD2F2AB2442A49D09639D571DFBD58673B17D4D0480F2886C0FEF0)
 
 ### 分层说明
 
@@ -142,7 +142,7 @@ struct StateIndex {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/GwvCQARjQXOrHAWOk9fk3A/zh-cn_image_0000002788306292.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=02120027E2C86DA966317F0948114464ACCABE06231761DFDD47B243B196956B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/g-4ZtcAqQQyWhe5R80Jqbg/zh-cn_image_0000002820404569.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD1F5B9C6820C0242774286EBBF35B159CBE0A8CE5A5DDF3C1A927E587FC1847)
 
 ### @Prop、@Link的作用
 
@@ -282,7 +282,7 @@ struct PropLinkIndex {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/ff1yKWdWTua-DffcHsk2Kg/zh-cn_image_0000002817425655.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEC63C005D49CE7B70C31FC44D29B5D8BCACD4A654FAE6A6D8370E2ACE8A09BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/GpaTWSiYQoiHQrvcvJPmzQ/zh-cn_image_0000002791724592.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BA5C10DC027550F109AA83095FB08F98EA17E9172A4B64533A4E4E307CEE14B)
 
 ### 循环渲染组件
 
@@ -416,7 +416,7 @@ struct ForEachIndex {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/mq2V50TKQ0W4vLmQPup5Rw/zh-cn_image_0000002788466236.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=6086C64961566143FD6F8FD8258B87586E1B00951C5CC36B7C1AB626D5EDC710)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/JVOQevmtRxCLC3NkNS-EBA/zh-cn_image_0000002791564620.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=1078556C1D64DC18A94CACAB24C27E2B5B00A404EF49977A71A94B211FD56E96)
 
 ### @Builder方法
 
@@ -562,7 +562,7 @@ struct BuilderIndex {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/GabcskCKRE2j6I9KWRZQgg/zh-cn_image_0000002817505723.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=94506D4E7B67A15FC15F4C36BD3CE8F78ECD3AB3D46E5477A044A153B60376B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/uRn8pbRIQFaAUJ7uV5DLaw/zh-cn_image_0000002820524571.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D54509D7E2AF7A0F2D1812DD8FFDB4B35E1D9E75F01A6505EB9752F7C9772FE)
 
 ### 总结
 
@@ -931,4 +931,4 @@ MVVM模式拆分后的代码结构更加清晰，模块职责更明确。新页�
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/xI43mMTTTvm4imtWloyseg/zh-cn_image_0000002788306294.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004658Z&HW-CC-Expire=31536000000&HW-CC-Sign=1939AD14C12E7EF9007B621E49E3DA998EB3BFD1A6987EAD90E62D5BDA1E2493)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/Vx2tSBCrTEWoxL56N_FPVA/zh-cn_image_0000002820404571.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=08BCC32078BAB1B0AAAB7361A836587AAE63D2DBE2BD9AF4CF9EE0DDB7376747)

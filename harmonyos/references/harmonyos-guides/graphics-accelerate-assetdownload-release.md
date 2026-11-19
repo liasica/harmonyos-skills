@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 发布资源包下载任务
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 发布资源包下载任务
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:08+08:00
+scraped_at: 2026-11-19T09:48:48+08:00
 doc_updated_at: 2026-06-03
-content_hash: sha256:21a87dc0b32da4c10b24cc0fbaf405c36e544e29013ee63c3934fae6b38f09f3
+content_hash: sha256:81369b8263c4b49bc31585653bd425f09f6f4cf36c95ad54dcdbfdc455107e33
 ---
 
 在AppGallery Connect支持创建“使用华为CDN”或“使用三方CDN”的游戏资源包下载任务。
@@ -32,7 +32,7 @@ content_hash: sha256:21a87dc0b32da4c10b24cc0fbaf405c36e544e29013ee63c3934fae6b38
 
 资源包下载任务的状态说明请参见[下载任务状态说明](graphics-accelerate-assetdownload-release.md#下载任务状态说明)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/0GWrevvxRsuHRA8aNLknFA/zh-cn_image_0000002817507267.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=D250B542F5ABD53B61ED6ED4088742C78FD95838B0E0807C561B3B113CC4E7FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/vUfEnB5tRqm-TiHiUby84g/zh-cn_image_0000002820526117.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=348C4FEC3945C82F472B8D09CD0277717C14491D9A5469708B4D551D4E50B094)
 
 ## 创建下载任务
 
@@ -44,7 +44,7 @@ content_hash: sha256:21a87dc0b32da4c10b24cc0fbaf405c36e544e29013ee63c3934fae6b38
 
 在“资源包后台下载申请”页面填写资源包信息后，点击“提交申请”，提交资源包下载任务。若暂不提交该任务，点击“保存草稿”，允许继续编辑后再提交申请。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/HNfRVtlSQ0OKWrP_5LcZkQ/zh-cn_image_0000002788307836.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6B1266CD7E03AE644EF867D84FFA876A94C6B7EE6FF95194E62509F4B21C70E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/hTCoHt6GRdyrRRFxrIF_JA/zh-cn_image_0000002820406117.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=C83F0A5C2625CD8612DBB5A0AB58680439E3EDBFFB1831F694E1111B27015113)
 
 | 配置项 | 是否可选 | 填写说明 |
 | --- | --- | --- |
@@ -63,7 +63,7 @@ content_hash: sha256:21a87dc0b32da4c10b24cc0fbaf405c36e544e29013ee63c3934fae6b38
 
 在“资源包后台下载申请”页面填写资源包信息，具体步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/6BmqwVmoTi-8sQmnjbbc2g/zh-cn_image_0000002817427199.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=49AD89B2575D59F26C637F01481BB4D5BDEFF945AABE75AAC28E712BD11C5CA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/JgXPzDK8SAKZkyqlVvB9Gw/zh-cn_image_0000002791726138.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=F965F64CAB934B6CC5E59215A0D9B2262D69C804790D8B9D1F7F8806F6307465)
 
 1. 请选择“下载类型”。建议根据应用自身是否内置下载器进行选择。
 
@@ -113,7 +113,7 @@ content_hash: sha256:21a87dc0b32da4c10b24cc0fbaf405c36e544e29013ee63c3934fae6b38
 
    开发者可以通过hotversion版本号指定下一级文件的存储路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/CUz7IcXnRuK30jNaoWgvgQ/zh-cn_image_0000002788467780.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=579D9A03E5871F08E6FB5FCAF22AFD9C66A75FD9ECE65C3D5FB5ABF591D8B37C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/AnBqNW8nTPmRPuX-SdB0VA/zh-cn_image_0000002791566166.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=0329C02D318668F923C725F1449E889EB6A084DE99D6CACC3C47D8D3B2E7927A)
 
    例如，资源包版本号为2.1，hotversion为2.1.0，资源包文件的存储路径如下：
 
@@ -144,10 +144,10 @@ content_hash: sha256:21a87dc0b32da4c10b24cc0fbaf405c36e544e29013ee63c3934fae6b38
 
 1. 在任务列表中找到“草稿”状态的任务，点击“操作”列中的“编辑”进入申请详情页。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Hd0NDQUkQnyW4dA6ZlfYJg/zh-cn_image_0000002817507269.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=58FABD87C293C174E831F6DACC4B5A8EA712D0588359B8EC258B973CF676C2D4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/wCtuwD-kSi6Xery9UrQ_cA/zh-cn_image_0000002820526119.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4BCC7FE3E2A984FF88AA0C0D95991B5F76F2B40895350484D05A9CECBA815DB)
 2. 在申请页填写资源包信息，填写要求请参见[创建下载任务](graphics-accelerate-assetdownload-release.md#创建下载任务)。完成后，点击“提交申请”提交资源包下载任务，当前任务状态变更为“预上线”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/MMa293mhTAKmv1KW5O1ViQ/zh-cn_image_0000002788307838.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=54E1B98F964D4086E587F534906BD90BB0A2E16CAFB397EDDF374C81BD556127)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/x_ha1f87Q0-Acb6KwlNMfA/zh-cn_image_0000002820406119.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=126D7102A294F5D0BE88036B3F004D1965971CA476C2243737F2BC58D7C0B55F)
 
 ## 测试下载功能
 
@@ -157,7 +157,7 @@ content_hash: sha256:21a87dc0b32da4c10b24cc0fbaf405c36e544e29013ee63c3934fae6b38
 
 请在HarmonyOS 5.1.0及以上版本测试设备的“游戏中心”客户端打开“我的 > 设置 > 服务管理 > 游戏服务”，打开“允许资源包自动更新”开关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Ucg7M_Q4TGm9N2I_yOX3YQ/zh-cn_image_0000002817427201.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=A45323642A65B5220E69B51D21D140DF2BE2465DA38A78D45FC1A074393AC409 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/gw4a7_oISjGQ5Y0rKodlIQ/zh-cn_image_0000002791726140.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=34D0D25422E662E31E40A94229ACB13568AF89416B61AD99348E4AB56C3AAB09 "点击放大")
 
 ### 配置设备号
 
@@ -167,13 +167,13 @@ content_hash: sha256:21a87dc0b32da4c10b24cc0fbaf405c36e544e29013ee63c3934fae6b38
    hdc shell bm get --udid
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/zlIiX_D0RMGxPB1N6nqANQ/zh-cn_image_0000002788467782.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D46173D238AC9CDD0D86897820919BDC473CCC2E84B5F8CAE0408470F1931B8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/WMLLy4L8SKuOc_Lbz8x6Cg/zh-cn_image_0000002791566168.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E463D81C3216987FFA4DFD6A601ED3030253F6F46863078BA3F78DCB1E67652)
 2. 在AppGallery Connect页面点击“测试设备”后的“编辑”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/3lrchVHuSXGuDRtUKg--Mg/zh-cn_image_0000002817507271.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=99FAB906BA1E61AA978CC4786055188BFFDD2EC9940EFF37167346730E70507A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Fj1cvcTsT0evzSbPgRipHQ/zh-cn_image_0000002820526121.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C8B7C937561B7C34049CF0E7AA91D8C8FEE1227C1ED7813D4F0D6E5535E1D35)
 3. 在输入框中最多添加10台测试设备的设备号，且使用英文逗号（,）间隔开，完成后点击“保存”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/ThZXte1MRimxcd68dwnU5A/zh-cn_image_0000002788307840.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9BB184114C65C95753361443318181BF4D52271CAC06F890CADD48FEDF1FBDC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/xN1yZHowTsOZLQ7YzTi1OA/zh-cn_image_0000002820406121.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD23C714CA43C1D59B881FF55860FC040996E9CDA729583008ECD6EE1C693559)
 
 ### 验证方式
 
@@ -192,24 +192,24 @@ content_hash: sha256:21a87dc0b32da4c10b24cc0fbaf405c36e544e29013ee63c3934fae6b38
    ```
 3. 验证以上两个场景是否触发系统后台下载资源包：查看测试设备的通知栏出现下载任务，则系统后台下载资源包功能验证通过。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/sIJ-rlwjQyaMyCvrL1zdgA/zh-cn_image_0000002817427203.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=363F2A8A10DB80CC90564C745E064494DD93D07DA0F0FAF72BD2F5F0F8DF94C6 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/zMC05hiaTJW42q33Fs3p6A/zh-cn_image_0000002791726142.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=E37BDE025A41C6D22A5B24FB1C5C2B269564671ACB3B4004CE2B1262833303CF "点击放大")
 
 ## 发布下载任务
 
 1. 在任务列表找到“预上线”状态的任务，点击“操作”列中的“发布”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/o0dBdv_EQYqntbP-2uZQrQ/zh-cn_image_0000002788467784.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=449EAA11BAA4DBE8469C0A5A2BA9504E68E849295297BAB21EB618557A57965B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/UjnEdTgUTLqHtx3AxcLcrA/zh-cn_image_0000002791566170.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=609C6C2A887056CECF72993C46432BAADB9033BFC3345DD64000A0EC7E81DA95)
 
    在弹出的提示窗中点击“确认”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/3DfEJc42SBOMmyzPHqRZaA/zh-cn_image_0000002817507273.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B32AD0AC2AE60936CBA67FE03C95E1BA0371BCF4273E288A84C84BB2D3BC187)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/gXLEzLkoRUW9RyQyYgZP7Q/zh-cn_image_0000002820526123.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F85EB716FC6A5CBE1DE4955B1B4CBF5E2AF4D5684D4C3BC73BDB3786EDC3CAB)
 
    发布该任务后，华为运营人员将在1~3个工作日内完成审批，请耐心等待。
 
    任务通过审批后，游戏资源包将在指定时间内向满足条件的用户设备进行推送。
 2. 若需要终止已发布的任务，可以在任务列表中主动点击“终止”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/0GQrmBKHRLuUNFklcreV-Q/zh-cn_image_0000002788307842.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=0390F23A17D1A7EDF5D399358774726556CF1FA7A71B09D54C3B3DBE5B122502)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/EV2RJFKSSeOqvHdVlz8a6w/zh-cn_image_0000002820406123.png?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3393AD7763893C4893BF84EC908BB3B782E26E29BF93B0F00A8C3EEFCB9695D)
 
    此时，系统将不再对该资源包进行自动下载。对于用户设备上已开始下载的游戏资源包不会立刻删除，而是在下一次启动自动更新时，删除下载时间大于7\*24小时的游戏资源包。
 

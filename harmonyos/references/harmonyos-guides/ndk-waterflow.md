@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-waterflow
 title: 使用瀑布流
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用列表与网格 > 使用瀑布流
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:08+08:00
+scraped_at: 2026-11-19T09:47:46+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c532494e0beeec65232381134dd755ad48f517ce797fd6bec573da81567e56cf
+content_hash: sha256:202ec195abc7a321dc9192787754f2a230e162485b90655bf964e66ae42344cc
 ---
 
 ArkUI开发框架在NDK接口提供了瀑布流容器组件，通过瀑布流自身的排列规则，将不同大小的"项目"自上而下如瀑布般紧密布局。
@@ -406,4 +406,4 @@ inline std::shared_ptr<ArkUIWaterflowNode> CreateWaterflowExample(napi_env env)
 #endif // MYAPPLICATION_CREATEWATERFLOWEXAMPLE_H
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/kRyzmDgnSUKe-pvJAefMXg/zh-cn_image_0000002817506431.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004708Z&HW-CC-Expire=31536000000&HW-CC-Sign=718C8BAD49B41A7BE1F317B3D51B055A8CE0A3DC3FF93C6DD15DD982E27624B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/pBpjN-isQEKw-YH208ZhOQ/zh-cn_image_0000002820525281.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014655Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7CF4C3ACDC153664D458A35C9786557E4BAA28C0B72E5653446B896B1ED7F56)

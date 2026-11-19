@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-introduct
 title: Pen Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > Pen Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:43+08:00
+scraped_at: 2026-11-19T09:48:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:9339b24e39c00aab6c11e2ec1fb433573e9ea67ba0b052aed73b1aca8fe7fd1b
+content_hash: sha256:22e9a2770b5161b48b2f2eb2ca34b1e2db636804d2b69c9665da856d49084ccc
 ---
 
 Pen Kit（手写笔服务）是华为提供的一套手写套件，提供笔刷效果、笔迹编辑、报点预测、一笔成形、全局取色和手写交互的功能。Pen Kit可以为产品带来优质手写体验，为您创造更多的手写应用场景。
@@ -28,13 +28,13 @@ Pen Kit（手写笔服务）是华为提供的一套手写套件，提供笔刷�
   + 手写波轮：从API版本26.0.0开始，新增环形工具栏，支持笔刷、笔宽、颜色、不透明度等属性的快速调节。通过轻捏手写笔笔身，隐藏原本工具栏，展开环形工具栏，再次轻捏笔身，隐藏环形工具栏。
   + 其他功能：撤销、重做、禁止手指书写。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/35JKxI6uTqaTRBuVxRwetw/zh-cn_image_0000002817506943.png?HW-CC-KV=V1&HW-CC-Date=20261114T004743Z&HW-CC-Expire=31536000000&HW-CC-Sign=B899AD0B5915B30BD8C08AF61ECF8883E2F2B0A1333C0A77A3E4B5E38E2BA07F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/gWrvOxWyTRWDtTXccJKbOA/zh-cn_image_0000002820525793.png?HW-CC-KV=V1&HW-CC-Date=20261119T014730Z&HW-CC-Expire=31536000000&HW-CC-Sign=75B8264DF14211D4A980815D2ABD5C6C89E7168E4571DDB85BA7CF879CA9F597)
 
 ## 报点预测
 
 根据书写轨迹预测报点提前进行绘制，提高手写跟手性，手写套件已默认开启报点预测，您也可以在应用中单独集成报点预测功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/yWiggtiQRQam278-ri5Xlg/zh-cn_image_0000002788307512.png?HW-CC-KV=V1&HW-CC-Date=20261114T004743Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF00C33BBBB7E0E6D88F17034A24D6443A394ED38964C28960A1E13B5E2F62E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/I-FC3IcNShawM1phnIocSQ/zh-cn_image_0000002820405793.png?HW-CC-KV=V1&HW-CC-Date=20261119T014730Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD8C875A7A59377180F3988295B66B06ECCC30023C46EBE39117B559ABD90738)
 
 ## 一笔成形
 
@@ -47,13 +47,13 @@ Pen Kit（手写笔服务）是华为提供的一套手写套件，提供笔刷�
 | 多边形 | 三角形、矩形、平行四边形、菱形、正五边形、五角星形 |
 | 曲线 | 抛物线、带箭头抛物线（单向、双向） |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/UL5AEprdTjyUnJ6au8HMug/zh-cn_image_0000002817426875.png?HW-CC-KV=V1&HW-CC-Date=20261114T004743Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BFE897788A7B581FA20F7FBB8EC8BA8487D04DAC5B66463CCC85C3433A2D582)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/VlFKqlVeQaGgnetfX2YM7g/zh-cn_image_0000002791725814.png?HW-CC-KV=V1&HW-CC-Date=20261119T014730Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBE549A77DB345F271F2C812E0F9A2DFE4D95515DD76FF0BEB909C70E8B66019)
 
 ## 全局取色
 
 提供全屏取色基础能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/hFD6gaYaTPSWK8CPwOJM5Q/zh-cn_image_0000002788467456.png?HW-CC-KV=V1&HW-CC-Date=20261114T004743Z&HW-CC-Expire=31536000000&HW-CC-Sign=7953673844AD1464BA486C4C5E919DF5476161F96D000E49A858D5EE781D5761)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/qqhPNf2LQk6VYKpVU4CtAQ/zh-cn_image_0000002791565842.png?HW-CC-KV=V1&HW-CC-Date=20261119T014730Z&HW-CC-Expire=31536000000&HW-CC-Sign=460A794DF4A4EC649BF4AC247ACE658B74D68962DD5510D8F532A649ABD7E6EB)
 
 ## 手写交互
 

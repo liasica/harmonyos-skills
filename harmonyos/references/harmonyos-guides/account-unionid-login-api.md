@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-union
 title: 使用自定义按钮登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 华为账号登录（获取UnionID/OpenID） > 使用自定义按钮登录
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:09+08:00
+scraped_at: 2026-11-19T09:48:50+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:4298498a9e85ddc2b1f286eebcc7511c01ee8b9182c9f0e95637b6df04180228
+content_hash: sha256:3af7cc3bc5ff797e29fd83cf8c1090b8116fa7d2dfd7f4d80ddab7c673055266
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:4298498a9e85ddc2b1f286eebcc7511c01ee8b9182c9f0e95637b6df041
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/9b20CXR6SqiY8u7uDkZ2_g/zh-cn_image_0000002817427235.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=33E0AC0C62A1C69277C06141C44DE120A1A00E25690098DDF61765DB46886413)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/in3erQ-eTnKCvVMmtJ-4YA/zh-cn_image_0000002791726174.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=D14BE24330398CA2AF6463CDB6BE27AA8086EE27C43DD3509553289563B915AB)
 
 流程说明：
 

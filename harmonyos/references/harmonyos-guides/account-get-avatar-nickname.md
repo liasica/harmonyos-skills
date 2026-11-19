@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-a
 title: 获取头像昵称
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取头像昵称
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:09+08:00
+scraped_at: 2026-11-19T09:48:50+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:31aa792f2407b8afc43c059282d55752ac13a3733e882b541d54b783a7a20a20
+content_hash: sha256:c00343d106c380914142ead228e8397cc12bcf356eac14c916df9a078b4fa63a
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:31aa792f2407b8afc43c059282d55752ac13a3733e882b541d54b783a7a
 
 **图1** 手机端获取头像昵称（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/dIxZMOpwQLuoIqtnTeW1PQ/zh-cn_image_0000002788307874.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=30489E87D6802ED67A0CBF098A590EE3C65C68A9F0EFB38E6B58886A76E4C61B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/sxx62vbnTmuo_Tk61NIFJQ/zh-cn_image_0000002820406155.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=649078FD01DFB45DEC65C67CAC78386403460CB48F8EA23511D9A17E3B86E727 "点击放大")
 
 **图2** Wearable设备获取头像昵称（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/c-Uln1RxTM664OLClqx45A/zh-cn_image_0000002817427237.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=25BB6EAB5A45A7AC5C5F2B2BA81DEE712CA7A8E6F69AD53506D76D252447BD7E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/q-olOH5HQW2pOK6WWqjIeg/zh-cn_image_0000002791726176.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BAAF47643E14C1D81E03F5DCA0922A034CC0583CF3B6E6AC9DAD7838C33C49A "点击放大")
 
 ## 约束与限制
 
@@ -26,7 +26,7 @@ content_hash: sha256:31aa792f2407b8afc43c059282d55752ac13a3733e882b541d54b783a7a
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/MLq-y7EZSUC1oJwFgADXBQ/zh-cn_image_0000002788467818.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C18460DB2F51F49E6D95969D0DED46499ACDECF643EEDDE154A97E7498370E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/X8GpiZY6TG2-ykepuSUH_A/zh-cn_image_0000002791566204.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC07FF8C9A8FB6320A85520C3A84C8762D45644B80B7B38E5D3799F3E2C013D3)
 
 流程说明：
 

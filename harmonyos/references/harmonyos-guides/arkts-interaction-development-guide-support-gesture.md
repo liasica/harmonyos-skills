@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 添加手势响应
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:06+08:00
+scraped_at: 2026-11-19T09:47:43+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:775f5eb214459477ed140fd175a7f68d28e2a49a8c936cefd56097568a62bf1c
+content_hash: sha256:05acf99f007adb94ade918f5fb5aee338254147fcad5725876be1c4af49055c2
 ---
 
 当用户的操作符合某个手势的特征时，系统会将其识别为该手势，这一过程称为手势识别。为了响应某一个手势，需在组件上添加对应的手势对象，以便系统可以收集并进行处理。
@@ -36,19 +36,19 @@ content_hash: sha256:775f5eb214459477ed140fd175a7f68d28e2a49a8c936cefd56097568a6
 
 **场景1:**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/QpZbTzmSQJqPUXF7QulaEQ/zh-cn_image_0000002817506287.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DAFB8D92B0DACB44E603AF66D403BF8DE82525B82406D99CDA7F886BAD36F9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/sGO6qn4fQ9Cf7iYTQMDaAw/zh-cn_image_0000002820525137.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9E97B7E2B6B936AA60E97A756EE502D7A461B989BA7E5AC410687CA7A34C555)
 
 Pan A与Pan B为相同阈值条件的滑动手势，Pan B为子组件上的，因此优先级高于父组件上的Pan A，Pan B优先响应成功；
 
 **场景2:**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/SStCUcMkTJGqub0cXvelBA/zh-cn_image_0000002788306858.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=60A8313B222339CF4996F57C41F8BB610FFA009A483F0990308D4310F657A4EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/EsLUn91yS6ydi0smpjhvuA/zh-cn_image_0000002820405137.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC5D703D079C2E5809EB0645110121A6BCFBEBAE2CBE6E1821F6E865B0899CAD)
 
 Pan A与 Pan B为不同阈值条件的滑动手势，Pan B为子组件上的，优先级高于父组件上的Pan A，但由于Pan A的阈值小，因此在相同的报点序列情况下，Pan A会优先判定成功；但要注意的是，如果移动速度特别快，那么同一个报点的间距可能都可以使Pan A和Pan B成功，那么这时候就会是Pan B竞争成功，因为是B先处理报点。
 
 **场景3:**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Ax-fDBrfRuC4JgtyBMflyA/zh-cn_image_0000002817426221.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=313F7E31D98F54F210C77E4377616D83D123FBE575337C293C816AACB3A0C0CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/slJ7SK2ET_uTadEHmV1SAw/zh-cn_image_0000002791725158.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1965BC5C1BC9A2DFBA4A03E25AB8723B3BA40596FC3C8637B6F7071B69253A3)
 
 以实际操作能够响应的手势为准；
 

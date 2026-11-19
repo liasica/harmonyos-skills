@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: NodeContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义占位组件 > NodeContainer
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:23+08:00
+scraped_at: 2026-11-19T09:51:12+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:92942c176a3785c93fdec1547341cb5440d6c5d01dbaa8094fbc7da4563ded70
+content_hash: sha256:63573045bf53a4448dd9c486c6a087f76ce371341fad9cd9d3a95cd16cfd65e7
 ---
 
 基础组件，用于挂载自定义节点（如[FrameNode](js-apis-arkui-framenode.md)或[BuilderNode](js-apis-arkui-buildernode.md)中获取的根节点FrameNode），并通过[NodeController](js-apis-arkui-nodecontroller.md)动态控制节点的上树和下树，适用于需要在组件树中动态插入、移除自定义节点以实现UI按需加载与节点复用的场景，可提升页面渲染效率并降低节点创建开销。组件不支持尾随添加子节点，接受一个[NodeController](js-apis-arkui-nodecontroller.md)实例，需与NodeController组合使用。
@@ -113,4 +113,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/IhhjKx4XThOe3xL4qq9euA/zh-cn_image_0000002788309354.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=EECC6271E4B5A3525E87E04305B38081A9708B245BACC6E19BF1E4F97561DCCD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/S7NPs0CgQ62NGJFvjw1ByA/zh-cn_image_0000002791727656.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015017Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAD81D291763C4B8EF19742B6460B78AF54CBA0F3F2E813E934300E480FF41BE)

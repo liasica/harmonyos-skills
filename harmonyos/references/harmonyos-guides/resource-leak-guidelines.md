@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-leak
 title: Resource Leak（资源泄漏）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > Resource Leak（资源泄漏）检测
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:46+08:00
+scraped_at: 2026-11-19T09:48:25+08:00
 doc_updated_at: 2026-10-26
-content_hash: sha256:6ade6a5588d878c5753788463d27af5616e0321825eda2f03f0922f10dfab474
+content_hash: sha256:640d4603dad3d58d0f161d2733390779ebeeed18e42a1be30d5543d5f86206b6
 ---
 
 ## 简介
@@ -78,7 +78,7 @@ content_hash: sha256:6ade6a5588d878c5753788463d27af5616e0321825eda2f03f0922f10df
 
   DevEco Studio的profiler模块提供[Allocation](ide-insight-session-allocations-memory.md)（获取native调用栈profiler）和 **[Snapshot](ide-arkts-memory-leak-analysis.md)** （获取JS层heapdump）两种采集方式：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Vi25yFYeRjC9_S5f0GwOeQ/zh-cn_image_0000002788307536.png?HW-CC-KV=V1&HW-CC-Date=20261114T004745Z&HW-CC-Expire=31536000000&HW-CC-Sign=9447FA392FB041AD0CF0427BCA7E1485EA79353CEC42DED261541E70DB6E0793)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/f7IzChhMR72un0C_BS9euQ/zh-cn_image_0000002820405817.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BA88C6E5B9C6EB0018C4D07F54AFFE3118D6DACCAF512FB4F53618091FC912A)
 * 方式三：通过HiAppEvent接口订阅。
 
   HiAppEvent对外提供故障订阅接口，可以订阅各类故障打点，详见[HiAppEvent介绍](hiappevent-intro.md)，其中资源泄漏的订阅方式详见[资源泄漏事件介绍](hiappevent-watcher-resourceleak-events.md)。资源泄漏故障日志存于/data/storage/el2/log/resourcelimit/路径，日志名统一为RESOURCE\_OVERLIMIT\_[TIMESTAMP]\_[PID].log，可根据日志内容区分文件类型。
@@ -595,7 +595,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
 * 检测到泄漏后抓取**15min内的进程内存trace**，可将日志如下图通过Open File加载到DevEco Studio进行解析。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/tAqnUTWlQJSLIaK_qLEsqg/zh-cn_image_0000002817426899.png?HW-CC-KV=V1&HW-CC-Date=20261114T004745Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F0D3D6600B33B31CF7E5DFF82319B90CB4C2848627670AE31643A17D08B2FCE)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/QahFIWYpRHGO1kk-c8zVYw/zh-cn_image_0000002791725838.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=43F56EA0D2F43F3257F96D9412A90D88DC86D9822D808B986AD7A8380382BD3B)
 
   **注意** 
 
@@ -604,7 +604,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
   点击Call Trees可以查看抓取进程的调用栈，筛选“Created & Existing”，根据没有释放的内存占比排序，展开可查看详细进程调用信息，优先排查内存占用较高的堆栈。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/--xvfdA3R3-L3mQ49WYq9g/zh-cn_image_0000002788467480.png?HW-CC-KV=V1&HW-CC-Date=20261114T004745Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F2BAE9981268E4F9E5CC974A756887409AED60375EC8D8DEE715BEA2637B800)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/BfuhEJMgRMeoxzFP7c2fhQ/zh-cn_image_0000002791565866.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=F087D207D56DCA79251733B8D15E93C75F86EC9015515E57E949F421F0D1B0BA)
 
   **说明** 
 
@@ -613,7 +613,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
   同样选择“Created & Existing”，表示在hook抓取内存申请未释放的。长度越长代表在剩余内存中占用越多，优先排查。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/KqEYw5brTbS_Le28tX5O1A/zh-cn_image_0000002817506969.png?HW-CC-KV=V1&HW-CC-Date=20261114T004745Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF97AE18F129971139A6F80919FC693E1F60DA627409F9E524531143044368DA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/PhJTyg7QSm-yVcfZg-VuYw/zh-cn_image_0000002820525819.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=B60E8D6D514690D59716E52F4D6948C4035BDAEC71181726EFB78A9A2991AAAC)
 
 ### native泄漏聚类规则
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/certificate-f
 title: 证书算法库框架概述
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书算法库框架概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:27+08:00
+scraped_at: 2026-11-19T09:48:05+08:00
 doc_updated_at: 2026-06-16
-content_hash: sha256:9dbdd0a632200efcdbbc8d30d995cc9efbfd1a804fda0f6d8eb05b3a09648581
+content_hash: sha256:50922644627efe7069f81075a25cd4b1bf3d20e1ba08a9c62d0cd7adadd0b79d
 ---
 
 证书算法库框架是一个屏蔽了第三方算法库实现差异的证书算法框架，向应用提供证书、证书扩展域段、证书吊销列表的创建、解析及校验能力，此外还提供了证书链的校验能力。
@@ -38,19 +38,19 @@ content_hash: sha256:9dbdd0a632200efcdbbc8d30d995cc9efbfd1a804fda0f6d8eb05b3a096
 
 ### X.509证书的基本结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/nMkoJcUzQP6R5f_4v3EBtw/zh-cn_image_0000002817426747.png?HW-CC-KV=V1&HW-CC-Date=20261114T004547Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D48FF551889E134FC9B2C9DDC7A37201077D4725423EB875AA451897757221C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/qOD19U5US_269sfsXBvx1w/zh-cn_image_0000002791725684.png?HW-CC-KV=V1&HW-CC-Date=20261119T014805Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D79FD15B42703929FA07181EFC363710E9020241896FCAF011ACBFA37714F51)
 
 样例证书文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/esY2qb2vTJiJrkfITLS64g/zh-cn_image_0000002788467328.png?HW-CC-KV=V1&HW-CC-Date=20261114T004547Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FC134C239558C2135D3F6E8E236EBC45557F64CD992197198587486CAA8504D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/xdaAcs-bTl2lscyFxgzzhQ/zh-cn_image_0000002791565712.png?HW-CC-KV=V1&HW-CC-Date=20261119T014805Z&HW-CC-Expire=31536000000&HW-CC-Sign=401E73F3915866789EA7D8CCD2E2CBCCAE94A48A6C1ABD3FAD25C953648D10E9)
 
 ### X.509证书吊销列表（CRL）基本结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/3TXc2FjrSOKu54PCz3FHng/zh-cn_image_0000002817506817.png?HW-CC-KV=V1&HW-CC-Date=20261114T004547Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C4A4D34765925937936ED6A19EAE828B9DDBC0053FAFB3859C5EE66B2716A10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/DgGgJFK2TPyIJmfqS-XS0Q/zh-cn_image_0000002820525665.png?HW-CC-KV=V1&HW-CC-Date=20261119T014805Z&HW-CC-Expire=31536000000&HW-CC-Sign=C14D72D238EF16ACF9A1FA07DF7411C4B9E6A26D018981DBC37A1FED686D406A)
 
 样例CRL文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/OvoKRQZiRZ2XB6k0rYZHcw/zh-cn_image_0000002788307386.png?HW-CC-KV=V1&HW-CC-Date=20261114T004547Z&HW-CC-Expire=31536000000&HW-CC-Sign=622DBE39CE40DDF258C2002A35D19C47894222BC9956748B031D4D1AEB59608B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/s5b1CbtFRpCvm8FLhlOBXw/zh-cn_image_0000002820405665.png?HW-CC-KV=V1&HW-CC-Date=20261119T014805Z&HW-CC-Expire=31536000000&HW-CC-Sign=F11FDE55118316D9C8FC507ABCB2F0A3F55EC428DAB386EE44569A42299A402D)
 
 ## 约束与限制
 

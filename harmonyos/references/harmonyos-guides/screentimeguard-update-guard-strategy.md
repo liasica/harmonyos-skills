@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 修改策略
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 修改策略
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:32+08:00
+scraped_at: 2026-11-19T09:49:13+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a9add8cbb4b28f5407afcf0df1b08fd34822a5f93e5a695b0d4c65221388094b
+content_hash: sha256:c6b18ad1fcd7ba15b93ccb46d904cf31bff739c4bbf4bad81ce58a009183b828
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:a9add8cbb4b28f5407afcf0df1b08fd34822a5f93e5a695b0d4c6522138
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/5TY29NxCQpWzwuMjB0THlg/zh-cn_image_0000002788308318.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=375415CE1E311C71391D415F55B87D7205EC9309935CAFCE9003FF53ED0E1EB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/rih88bClQt2FjROooiVZlA/zh-cn_image_0000002820406599.png?HW-CC-KV=V1&HW-CC-Date=20261119T014912Z&HW-CC-Expire=31536000000&HW-CC-Sign=F36D256B7752718A858B4A392D5046D864EB9093093FBA8F55D7F8A4162C8588)
 
 流程说明：
 

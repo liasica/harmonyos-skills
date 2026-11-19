@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/enterpris
 title: "@hms.pcService.enterpriseDeployRestore (企业场景下的数据备份与还原)"
 breadcrumb: API参考 > 系统 > 基础功能 > Enterprise Foundation Kit（企业办公开发服务） > ArkTS API > @hms.pcService.enterpriseDeployRestore (企业场景下的数据备份与还原)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:59+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:f5a61a00f9bc9c38ccc8bf8a54aca7d87cf5b8df7b1f811213a1f2638f1a317b
+scraped_at: 2026-11-19T09:53:01+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:dda026660ab9bfa94b8d67494b5e53fa0ef73dc9c671fde6f32e05f5bd0b08a2
 ---
 
 本模块提供企业批量部署还原能力，包括用户数据备份、用户数据还原、应用沙箱数据备份、应用沙箱数据还原等。
@@ -140,7 +140,7 @@ backupUserData(dest: string, progressCallback: BackupRestoreProgressCallback):Pr
 
 ```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
-import enterpriseDeployRestore from '@hms.pcService.enterpriseDeployRestore';
+import { enterpriseDeployRestore } from '@kit.EnterpriseFoundationKit';
 
 // “/userData”为示例目标目录，根据实际情况进行替换
 let destPath = context.filesDir + "/userData";
@@ -202,7 +202,7 @@ restoreUserData(src: string, progressCallback: BackupRestoreProgressCallback, op
 
 ```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
-import enterpriseDeployRestore from '@hms.pcService.enterpriseDeployRestore';
+import { enterpriseDeployRestore } from '@kit.EnterpriseFoundationKit';
 
 // “/userData”为示例源目录，根据实际情况进行替换
 let srcPath = context.filesDir + "/userData";
@@ -211,7 +211,15 @@ let progressCallback: enterpriseDeployRestore.BackupRestoreProgressCallback =
     console.info(`Progress: ${progressInfo.progress}`);
 };
 
-enterpriseDeployRestore.restoreUserData(srcPath, progressCallback).then(() => {
+// 还原配置项：排除"文档"目录和"下载"目录
+let options: enterpriseDeployRestore.RestoreUserDataOptions = {
+    excludeDirIdentifiers: [
+        enterpriseDeployRestore.DirectoryIdentifier.DOCUMENTS,
+        enterpriseDeployRestore.DirectoryIdentifier.DOWNLOAD
+    ]
+};
+
+enterpriseDeployRestore.restoreUserData(srcPath, progressCallback, options).then(() => {
     console.info('Succeeded in restoring user data.');
 }).catch((err: BusinessError) => {
     console.error(`Failed to restore user data. Code: ${err.code}, Message: ${err.message}.`);
@@ -253,7 +261,7 @@ getUserBackupDataSize():Promise<number>
 
 ```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
-import enterpriseDeployRestore from '@hms.pcService.enterpriseDeployRestore';
+import { enterpriseDeployRestore } from '@kit.EnterpriseFoundationKit';
 
 enterpriseDeployRestore.getUserBackupDataSize().then((totalSize: number) => {
     console.info(`Size: ${totalSize}`);
@@ -296,7 +304,7 @@ getAllowedBackupAndRestoreBundleList():Promise<BundleInfo[]>
 
 ```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
-import enterpriseDeployRestore from '@hms.pcService.enterpriseDeployRestore';
+import { enterpriseDeployRestore } from '@kit.EnterpriseFoundationKit';
 
 enterpriseDeployRestore.getAllowedBackupAndRestoreBundleList().then((result: Array<enterpriseDeployRestore.BundleInfo>) => {
     console.info('Succeeded in getting backup and restore bundle list.');
@@ -351,7 +359,7 @@ backupBundles(bundleList: string[], dest: string, progressCallback: BackupRestor
 
 ```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
-import enterpriseDeployRestore from '@hms.pcService.enterpriseDeployRestore';
+import { enterpriseDeployRestore } from '@kit.EnterpriseFoundationKit';
 
 let bundleInfoList: enterpriseDeployRestore.BundleInfo[] =
   await enterpriseDeployRestore.getAllowedBackupAndRestoreBundleList();
@@ -420,7 +428,7 @@ restoreBundles(bundleList: string[], src: string, progressCallback: BackupRestor
 
 ```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
-import enterpriseDeployRestore from '@hms.pcService.enterpriseDeployRestore';
+import { enterpriseDeployRestore } from '@kit.EnterpriseFoundationKit';
 
 let bundleInfoList: enterpriseDeployRestore.BundleInfo[] =
   await enterpriseDeployRestore.getAllowedBackupAndRestoreBundleList();
@@ -484,7 +492,7 @@ getBundlesBackupDataSize(bundleList: string[]):Promise<number>
 
 ```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
-import enterpriseDeployRestore from '@hms.pcService.enterpriseDeployRestore';
+import { enterpriseDeployRestore } from '@kit.EnterpriseFoundationKit';
 
 let bundleInfoList: enterpriseDeployRestore.BundleInfo[] =
   await enterpriseDeployRestore.getAllowedBackupAndRestoreBundleList();
@@ -534,7 +542,7 @@ cancelBackupRestore():Promise<void>
 
 ```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
-import enterpriseDeployRestore from '@hms.pcService.enterpriseDeployRestore';
+import { enterpriseDeployRestore } from '@kit.EnterpriseFoundationKit';
 
 enterpriseDeployRestore.cancelBackupRestore().then(() => {
     console.info('Succeeded in cancelling backup or restore.');

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide
 title: MDM Kit开发指南
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > MDM Kit开发指南
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:50+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:906570fc4e8e29c034f4eef7b8bf199bebe387469f18734256e8f915a1761dcf
+scraped_at: 2026-11-19T09:48:20+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:87f9b85a9960507d944f72ec84bbb3794a5af4d3a7144237e034e94924d036ad
 ---
 
 ## 功能介绍
@@ -28,7 +28,7 @@ MDM Kit为[MDM应用](mdm-kit-term.md#mdm应用)提供设备管理能力，包�
 
 在开发应用前，需要在AppGallery Connect中配置项目和应用信息。包括：
 
-* [注册成为企业开发者](../start/registration-and-verification-0000001053628148.md)。
+* [注册成为企业开发者](../doccenter-getting-started/hdc-registration-0000002723008096.md)。
 * [创建项目](../app/agc-help-createproject-0000001100334664.md)和[创建应用](../app/agc-help-createapp-0000001146718717.md)。
 * [申请MDM应用的证书](../app/agc-help-enterprise-mdm-cert-0000002283256801.md)和[Profile](../app/agc-help-enterprise-mdm-profile-0000002248341094.md)。
 

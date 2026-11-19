@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-takeovers
 title: 托管网页中的媒体播放
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒体 > 托管网页中的媒体播放
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:15+08:00
+scraped_at: 2026-11-19T09:47:53+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:632cfe5db897cdafd5566fe6cf9b5f5a1e8fd6fc33f9c1011fb96f9c8dd1e438
+content_hash: sha256:39f14a1ee52a4beafa1fc8daa72abb3158a841bebc20da4fadc1e23ebaa18508
 ---
 
 Web组件提供了应用接管网页中媒体播放的能力，用来支持应用增强网页的媒体播放，如画质增强等。
@@ -26,7 +26,7 @@ Web组件提供了应用接管网页中媒体播放的能力，用来支持应�
 
 不开启该功能时，ArkWeb内核的播放架构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/XXR_6mnLToafby_CxjwYYA/zh-cn_image_0000002788307184.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=92AAF7166C441168075F8729DB323A825ABD280CDEEA6F564DDF70D3054E57A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Jz4wxYGxTVKOdrodkwomuw/zh-cn_image_0000002820405463.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CBAB72BF64DB23DD8B7EB3215303FD92F6441853AFB85FE6BBBC9873F57D9F3)
 
 **说明** 
 
@@ -35,7 +35,7 @@ Web组件提供了应用接管网页中媒体播放的能力，用来支持应�
 
 开启该功能后，ArkWeb内核的播放架构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/KH1o8Jo9Rza1a5x_3E6RtQ/zh-cn_image_0000002817426547.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B0AF7DCA411B06FAEECA68F71FD48BA4E03E47F938F194937D00DA63C54F0B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/v_6UI6fdSHyB_4A1gg5_sA/zh-cn_image_0000002791725484.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=324F9B1C5C8F63273BEE47F3824302FA5C0208528A2F80A91D33DF08495E1A7B)
 
 **说明** 
 
@@ -44,7 +44,7 @@ Web组件提供了应用接管网页中媒体播放的能力，用来支持应�
 
 ### ArkWeb内核与应用的交互
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/lBrX-GSTR5W3bnl8CckD_Q/zh-cn_image_0000002788467128.png?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C7E9C1521904D0A2C76A42FED22F405BFCAF261469253D0B22056100465AB03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/vI_5jpTcRHmOXDOKVbAajQ/zh-cn_image_0000002791565512.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E0D15840FDA7E09EB001F62BC8FF0549540A00328E892193482AF3C9873F8CC)
 
 **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/es2abc-faq
 title: 方舟字节码生成常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > 方舟字节码 > 方舟字节码生成常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:07+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:182e0055d843bb9fb3e0973df17f2a44e562ee3ea40b1cdc66deacb422be01e8
+scraped_at: 2026-11-19T09:47:34+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:18e267d13aaea0ffd8de256fc73255dd5f10bea43ef1744b24015aa981fb7b50
 ---
 
 ## 字节码生成流程
@@ -124,7 +124,7 @@ es2abc在某些情况下会直接异常退出而不产生日志。
 
 **说明** 
 
-由于此类异常与代码结构和运行环境相关，目前无法提供完整列表；如上述情况均无法解释，可结合崩溃日志或使用[GDB](cannkit-gdb.md)/[LLDB](debug-lldb.md)进一步定位。
+由于此类异常与代码结构和运行环境相关，目前无法提供完整列表；如上述情况均无法解释，可结合崩溃日志或使用[GDB](../hiai-Guides/cannkit-gdb-0000002122163408.md)/[LLDB](debug-lldb.md)进一步定位。
 
 **栈溢出场景示例及排查方法**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SelectionContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SelectionContainer
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:14+08:00
+scraped_at: 2026-11-19T09:51:02+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f739454111dfdba0b44f1b0d819a4cbf1381fec018ebb92a22fb5db2e3c3ee02
+content_hash: sha256:d1c30d394b36bfb3039e3773288528f83217c75051dd205e4d59985f01819e71
 ---
 
 SelectionContainer组件用于为多个文本节点提供跨节点文本选中、复制及菜单扩展能力，支持统一配置选中文本的手柄颜色和高亮颜色，支持灵活的文本拼接策略，支持自定义选择菜单和扩展菜单选项。适用于需要跨多个Text组件实现文本连续选中、统一复制、样式自定义及菜单扩展的场景，解决了多Text组件场景下文本选择体验割裂的问题，提升了用户在复杂文本布局中的交互体验。
@@ -492,7 +492,7 @@ struct SelectionContainerExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/B4bm-0e8TrqtYEN-UgKYZg/zh-cn_image_0000002817428449.png?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=0822E91BC825ACDEE854F63D807A9FD6C72F7FFE12F423D385962BBAC31F14B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/6QqzlkfgRlC4Z2Iae5alog/zh-cn_image_0000002791567416.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BC29745104E40F9F19E03BCA304887E1D5CB31A24EC93351A7CC57B41BADEDB)
 
 ### 示例2（绑定自定义选择菜单）
 
@@ -591,7 +591,7 @@ struct SelectionContainerExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/jbQHYkK1S4qJHWUOC9VJNQ/zh-cn_image_0000002788469030.png?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1B1C3C19801587D27C21FF0AB85065C48F2CAACFA5CBD5A3399355D75A57188)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/SC12RU4bQrqNJpB-Be44gA/zh-cn_image_0000002820527369.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFA89E02B866A244A0855288BB2E174BF1C18CCE550BCEC7B9287BA4F08C9967)
 
 ### 示例3（扩展菜单选项）
 
@@ -734,7 +734,7 @@ struct SelectionContainerExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/eFhfX44pR6GrmtAKvsewCA/zh-cn_image_0000002817508519.png?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=1830FA5A3E32CCF79B33CA7A9A63FF0F5A3BF771AD5BD3735D71A42CF6E9E06A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/x3_ECShvR1atPjswB78D6A/zh-cn_image_0000002820407371.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC41FD3EF2B8A062A2812D45556813B5B311F45B9EEEAAC295FE0EEC2D843B4F)
 
 ### 示例4（通过控制器关闭选择菜单与清除文本选中）
 
@@ -791,4 +791,4 @@ struct SelectionContainerControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/2COx6pVvR4ixi3j7J6d2bA/zh-cn_image_0000002788309088.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2C31B5C2F061FB08223F1397AACD65A0EF1C63C84EF1721B4FAEBF8710F092F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/BskMeCm_Q0qqEeqDG_oR5A/zh-cn_image_0000002791727390.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=38D488E4F902B2A2C0D6B73F901E8437F23B429F46D07EC818123111D9033EB5)

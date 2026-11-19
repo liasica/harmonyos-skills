@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-2
 title: 1001502003 输入参数值无效的可能原因和解决办法
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > 1001502003 输入参数值无效的可能原因和解决办法
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:11+08:00
+scraped_at: 2026-11-19T09:48:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0733263ad90af3247c31018d6bca954c419d9005bc81d2082f3b754eb2b50b99
+content_hash: sha256:2ed266845a3c033c2f18471f8abe5461b79259b501605a1a4289adf620f1fd19
 ---
 
 **问题现象**
@@ -23,7 +23,7 @@ content_hash: sha256:0733263ad90af3247c31018d6bca954c419d9005bc81d2082f3b754eb2b
 
 1. 在 AppGallery Connect（简称AGC）的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中，选择对应的项目和对应的应用，在“常规 > 应用 ”下，找到**应用**的Client ID和APP ID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/tZACAJl5QsS50_n2XiXIqA/zh-cn_image_0000002817507297.png?HW-CC-KV=V1&HW-CC-Date=20261114T004810Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEDD644930693145ACEBCE71CDBC50461FA3544F48054EE63493A032CAD83572)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/66sJ3OofQCOZDAiuEBXbQQ/zh-cn_image_0000002820526147.png?HW-CC-KV=V1&HW-CC-Date=20261119T014851Z&HW-CC-Expire=31536000000&HW-CC-Sign=75960238456E3B265BE81F62CC1478DC274CCF2CAA4D9E16035FF53CA6102F76)
 
    * 若Client ID和APP ID不同：请检查module type为entry的模块下module.json5中的client\_id是否配置或配置的值是否正确，参考[配置Client ID](account-client-id.md)。
    * 若Client ID和APP ID相同：可无需配置Client ID。

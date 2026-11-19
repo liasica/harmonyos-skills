@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: Path2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > Path2D
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:19+08:00
+scraped_at: 2026-11-19T09:51:09+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2812bd5f11bb421976aab4ce8843c71157b9726214f53395aaffa987abdd110f
+content_hash: sha256:185205c2fc8d66765c8a781814ff0fd47cdaa239d8f5e90d9efd0b73eec0e583
 ---
 
 路径对象，支持通过对象的接口进行路径的描述和组合，并通过Canvas的stroke接口或者fill接口进行绘制。Path2D支持复用路径、组合多个路径、基于SVG路径字符串创建路径等功能，适用于需要多次绘制相同路径、动态组合复杂图形或基于SVG路径数据绘制图形的场景。
@@ -178,7 +178,7 @@ struct AddPath {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/rXq6so_ZTnSJS3Su6T6ryw/zh-cn_image_0000002788469166.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEC793C2D30369A9090EC6FD3EB8EB6D24F0E329CB4633B810D857B6CE4E1B06)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/-P2erv3aSbmlK0KAfo3jZA/zh-cn_image_0000002820527505.png?HW-CC-KV=V1&HW-CC-Date=20261119T015108Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE472AFC6DA0F564F446EF5E7AF0D5B512F8AED4CCDE2FA8E9462F84F2FA91C6)
 
 ### closePath
 
@@ -223,7 +223,7 @@ struct ClosePath {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/huVqwoMKR-qrcdjp1A_slA/zh-cn_image_0000002817508655.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=132C349241E4771CAA223C0316817218B5CF5CE15440A8C82706C92CD9CB1AF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/va5mQ_Z4Td2wzNpZl0pVmw/zh-cn_image_0000002820407507.png?HW-CC-KV=V1&HW-CC-Date=20261119T015108Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C4A9DE3BB1D2295020C38A1FB2E9D77ED3B0652F5793123295ED093A2C854A7)
 
 ### moveTo
 
@@ -280,7 +280,7 @@ struct MoveTo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/gAO6HdIlQvK7-e3Jt17_Zg/zh-cn_image_0000002788309224.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F3AB1FB24AD402A8394503EBC1FF9BBD86CE5512D84FE68C8FD9F9BBAFF0BC0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/WGFtYwTRT3WJixr-8Cq8Tg/zh-cn_image_0000002791727526.png?HW-CC-KV=V1&HW-CC-Date=20261119T015108Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA691665C858C853181EB4BFB50203454B70228C6FD7A45A8E0D7FEF340D211F)
 
 ### lineTo
 
@@ -333,7 +333,7 @@ struct LineTo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/eKWylSL8R9el8VvfXhk4ww/zh-cn_image_0000002817428587.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=7385987E726039AF40FCA90B4D1E02FAF1A035F5641E5A1704DCA1227071ACED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/zTWih4G8Q8-YXXZVhMInGA/zh-cn_image_0000002791567554.png?HW-CC-KV=V1&HW-CC-Date=20261119T015108Z&HW-CC-Expire=31536000000&HW-CC-Sign=C39186E469D6C52490C919E2AA0C6F4BED29E66E6284CE7D30C30DA39EB9AA6F)
 
 ### bezierCurveTo
 
@@ -387,7 +387,7 @@ struct BezierCurveTo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/AxyLRc-CSPSDoscbcyCkPg/zh-cn_image_0000002788469168.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCBCAFC8417D52565646468242F19E7D0335D5726928F83989198264F656C78E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/sDumtuu-QOmMPwlGWeER0w/zh-cn_image_0000002820527507.png?HW-CC-KV=V1&HW-CC-Date=20261119T015108Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C84CF2C97C6511D223172F71EC2DA1199F0A528F3F6EBBD3EFBB0118318A5CC)
 
 ### quadraticCurveTo
 
@@ -439,7 +439,7 @@ struct QuadraticCurveTo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/sKq9gqihR2Gl1SSup1yQnw/zh-cn_image_0000002817508657.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F2D20659A689390BE00D062A8C4CDA560A64B9785E134D03CD7049DF89EF02F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/OutDTcC3SS-lsmPA1mLoLA/zh-cn_image_0000002820407509.png?HW-CC-KV=V1&HW-CC-Date=20261119T015108Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3BAB121644CB6AA9E38F2639B9B0A7100AAA0AC513E82DB283E585E0392DB68)
 
 ### arc
 
@@ -492,7 +492,7 @@ struct Arc {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/N4lw5Xd0SgGcVWoPdgxr_w/zh-cn_image_0000002788309226.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=174FD1A5DB4533588A1F17794A377C37E51037ABEFFDEFC2AA876F9E3F6E8336)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/dcAxLNcLSoGXefe07unphg/zh-cn_image_0000002791727528.png?HW-CC-KV=V1&HW-CC-Date=20261119T015108Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D8CDD7D6D1E5DBD1D7F218923D9D624664AAFF8AE4B49E05069868D60AAB197)
 
 ### arcTo
 
@@ -545,7 +545,7 @@ struct ArcTo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/J-elPiotT72fd1PAUD4JCg/zh-cn_image_0000002817428589.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DF7318CE8385AB36EFB00008F8667DF1B9798634AA98022C5E54E553105D7B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/BxkCjuVqRvyo9wExJiimpQ/zh-cn_image_0000002791567556.png?HW-CC-KV=V1&HW-CC-Date=20261119T015108Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB10B91DF98C148736401034CE9ECD59608A69721DE898A63F78F25C4A437FA4)
 
 ### ellipse
 
@@ -600,7 +600,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/eTWt6UMuTYuwiHkg-l_JHg/zh-cn_image_0000002788469170.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BEB3D66EA8F4D0B373C0B3B0FC5981BE22B11041C8F3D058A11BD4C14970CAC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/cBOfcoEtSxKQgFBI_pQHxg/zh-cn_image_0000002820527509.png?HW-CC-KV=V1&HW-CC-Date=20261119T015108Z&HW-CC-Expire=31536000000&HW-CC-Sign=12E0C798583B13C3D21D740DD84F5A2227BB1EF09CAFAF19661A6FF2F11DC9BE)
 
 ### rect
 
@@ -655,7 +655,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/4FquFFChRXO4cFIdjdMoeQ/zh-cn_image_0000002817508659.png?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3C070BC2F63783D8ACA9450BF06B1431383403E7C5557CA9C1C5AA9A9D7A5FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/oSNUXaGIRuGSDml2FzK88A/zh-cn_image_0000002820407511.png?HW-CC-KV=V1&HW-CC-Date=20261119T015108Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FBCEF164348662F8D7EBE26971AE493D5783966613F8C49D59F37D552C269CA)
 
 ### roundRect20+
 
@@ -747,4 +747,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/WtFsT-dtSQOseMHIE3G31A/zh-cn_image_0000002788309228.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T004818Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6CA1C633C449E5745DF19FF63A5C438FEA364E189E75FFB6780D6ACC1A1593A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/SV954aBgQsK2JlXSyK_07Q/zh-cn_image_0000002791727530.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T015108Z&HW-CC-Expire=31536000000&HW-CC-Sign=A24BAA9B03F8265F3819CF1E1D64BE0BE719229E4774AC6A5B6297ADB4337B32)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-aggregate
 title: 点聚合
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 点聚合
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:24+08:00
+scraped_at: 2026-11-19T09:49:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e363597488ab6d4eb743b69955aa5bf8df48b2bf3d3ad59717c40d0a6dcab39f
+content_hash: sha256:2240f99529fdac7d06ef4cc6b3a2f3ef8d20ffc76dae889ca57acb75333dd2ab
 ---
 
 ## 场景介绍
@@ -24,7 +24,7 @@ content_hash: sha256:e363597488ab6d4eb743b69955aa5bf8df48b2bf3d3ad59717c40d0a6dc
 
 5.0.3(15)开始，支持聚合标记点击事件监听功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/vuEpneS-TFqEcPrUH9V9ZA/zh-cn_image_0000002817507611.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C56736F984F005D1961072C3C919819A05A0F5DD444E2D31BA6E8C4C1DC0A29 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/6Sxvq7fFQam1OokgyrD5aQ/zh-cn_image_0000002820526461.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFFC0FAAE37B1023A06D4A4428ECD3FA37B02001AC709AF0CEF2D82F3AFD2293 "点击放大")
 
 ## 接口说明
 

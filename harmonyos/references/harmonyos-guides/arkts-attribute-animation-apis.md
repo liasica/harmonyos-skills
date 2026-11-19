@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-attribu
 title: 实现属性动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 属性动画 > 实现属性动画
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:06+08:00
+scraped_at: 2026-11-19T09:47:43+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:acd21361e875af3537edd8dc6cb196e1ebc0711302cf37034cae733d39638ab5
+content_hash: sha256:7b34a76799638ec4e86cf5daf225c7ba4e6490d5e15f9a8d57b6b321627ae440
 ---
 
 通过可动画属性改变引起UI上产生的连续视觉效果，即为属性动画。属性动画是最基础易懂的动画，ArkUI提供三种动画接口[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)、[animation](../harmonyos-references/ts-animatorproperty.md)和[keyframeAnimateTo](../harmonyos-references/ts-keyframeanimateto.md)驱动组件属性按照动画曲线等动画参数进行连续的变化，产生属性动画。
@@ -87,7 +87,7 @@ struct attrAnimateToDemo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/-ijvbMuBQ2eEHurM3SHNRA/zh-cn_image_0000002788466826.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADCAC54F1FF36594510BCE6BCDC241E4096E880A477DFF25A52CA904362DA040)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Or7m-Zg3SresU0aIl2dgyQ/zh-cn_image_0000002791565210.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3A1BADB973EF13764BB5E47B5A5CC4C77C8CD6DF1A4545F8EF8E435A807CED5)
 
 ## 使用animation产生属性动画
 
@@ -150,7 +150,7 @@ struct attrAnimationDemo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/3Qq0S7YWRFOqUPic3vVElA/zh-cn_image_0000002817506313.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=04B0C1BB966A72E8A2ACD77F4AC09CD2215988339DE55B38426388AFBBD984E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/ArA3Pp6cRQaHrO4KCG8GWQ/zh-cn_image_0000002820525163.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C5F62210FFF91C9BD00DC94424AF51F8A901EDAFDC08FC44F6B7DDD99959A96)
 
 ## 使用keyframeAnimateTo产生属性动画
 
@@ -227,7 +227,7 @@ struct KeyframeAnimateToDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/nenYbv0NR5aZVR9rDJWjVA/zh-cn_image_0000002788306884.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF17C5DDB58A43B7CB3FDEE1AD71C187841DFBBA9FEAA97DCC643BB16E30FC31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/_1aqnbvpRDmSLaW7-8Okyw/zh-cn_image_0000002820405163.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=05506A2156B5C86788A82771BA7AB4267B6E0CDAB47C74C478F959446910F625)
 
 **说明** 
 

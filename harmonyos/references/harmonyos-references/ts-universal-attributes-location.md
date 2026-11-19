@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 位置设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 位置设置
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:05+08:00
+scraped_at: 2026-11-19T09:50:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cfdda9761dbc7959a1f4ed3569995f8acc4738670ff0b0981c60a49809097cad
+content_hash: sha256:9713dece29ff799c62e04e22a4427756a60b7dce52393a441704f78d8b8250b7
 ---
 
 设置组件对齐方式、布局方向及显示位置。
@@ -479,7 +479,7 @@ struct PositionExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/PdsKKosBR5KHHHIjGF7JDw/zh-cn_image_0000002788308716.png?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=A73D8374C489BC6FF061FCC4DA8C274D791A7E5A80EA96078C7C5E3300C05B73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/yhQdQOuXTR27G_HKAHiwdg/zh-cn_image_0000002820406997.png?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D9B06034A18ED06E2F8AC6E17B3A6901E5EA92E3282F5835D1130F1AF564806)
 
 ### 示例2（位置偏移）
 
@@ -568,7 +568,7 @@ struct PositionExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Isd60zzIQhKQPSKbV4bCkQ/zh-cn_image_0000002817428079.png?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5A75A495543A773E57E2C5C15FFEA49C7DF2F5A656B951CDDEF7A9D57CC12D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/EWSDJ5aMSQK7KIXIrfB-0g/zh-cn_image_0000002791727018.png?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC2664683C6D9735CA16DEF2E5393691ACB14C4C028B1FA3CEF116311D8CE167)
 
 ### 示例3（绝对定位和相对偏移）
 
@@ -647,7 +647,7 @@ struct Example3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/BFhEhcQxRjaY3HYY_8VGQw/zh-cn_image_0000002788468660.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BE040FD6BD90DD6483FE889C3B98AE1586DEFDF92C94231F865E8B9D7710086)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/Nu9Ukpl9RPez9UJ6MiRTFg/zh-cn_image_0000002791567046.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=49D3EBBF5584DDEF16569363BC13007F1B286F9EBC25E9C8EDD43FF279733F09)
 
 ### 示例4（镜像效果）
 
@@ -749,11 +749,11 @@ struct Example4 {
 
 镜像前效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/5dhonPHMRjKAo4IhPRQI6g/zh-cn_image_0000002817508149.png?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A345862CF8B4F64FAF1334759A449E18986070406BF8A7F2A08B10E7F07A18D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/6UaRGAukShumFf8CAhP14g/zh-cn_image_0000002820526999.png?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A68E96C734E50D9CF04FB337D10C68BDB8DB86A78C06BC4448A2764A1795F40)
 
 镜像后效果如下，镜像生效条件请参考[使用镜像能力](../harmonyos-guides/arkts-internationalization.md#使用镜像能力)：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/XnqXHIu2ShWkzFM7CnAuBQ/zh-cn_image_0000002788308718.png?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=1186C03439CA8E2E93B131F829FF8EBB08B00D2B77C416D5AE32DB45E539F526)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/VDzW5ZbfRBSK0cygNwEAVg/zh-cn_image_0000002820406999.png?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=5298BC10CDDB0714BB11B938BFFB56410CFE2C5DE8D228F4C625B692DAF47042)
 
 ### 示例5（align属性适配镜像特性）
 
@@ -822,7 +822,7 @@ struct buttonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Bb_Xt8SfSaqKSA6P400ENw/zh-cn_image_0000002817428081.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C584D8F14313CE35CED880D1E3056760BFC381AA38763E002B66B56B6E9449F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/zkUPciwgQqKZmswV1o8XLA/zh-cn_image_0000002791727020.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A2CC2A18291BE0F6987B18C83BB3454CD1488870A6D9EB00EC49B0B63824048)
 
 ### 示例6（layoutGravity属性单独设置Stack组件中子组件的对齐规则）
 
@@ -884,4 +884,4 @@ struct Index5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/SDRdPN31TJObBCstd9caFQ/zh-cn_image_0000002788468662.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005004Z&HW-CC-Expire=31536000000&HW-CC-Sign=E98C280174EAE85429FA6D3B8005119DA93F219517BF4D963F818677C5CF0270)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/7YPl3RxIQeiE2KXND62auQ/zh-cn_image_0000002791567048.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=58D05F381E7887D292823D136A66D95ED7FF66C6952EE10A071B40207F6E296F)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-f
 title: 人脸比对
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 人脸比对
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:39+08:00
+scraped_at: 2026-11-19T09:49:20+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b277d814a17134eee35e1b667c4d48899cd2e7b3797b788e70deaea5e233dcf9
+content_hash: sha256:bb3ca1c238d04f7d577e6cba273223c1b9a4ceded89da894398905cc651ce198
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:b277d814a17134eee35e1b667c4d48899cd2e7b3797b788e70deaea5e23
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/eBF1Oz3hRyyjENAlVz8hLA/zh-cn_image_0000002817427817.png?HW-CC-KV=V1&HW-CC-Date=20261114T004839Z&HW-CC-Expire=31536000000&HW-CC-Sign=9194514604BD45822E321C266A97B9EE780E4F913A66017F96AF0A9A06A64493)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/HL1zCktVRzOWxWWrUmxegQ/zh-cn_image_0000002791726756.png?HW-CC-KV=V1&HW-CC-Date=20261119T014920Z&HW-CC-Expire=31536000000&HW-CC-Sign=6863F5275F7C2D10C02B16A2D49BFE8CB2BABD28D6B27EA8FFA79BB5A3632AD0)
 
 ## 开发步骤
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-r
 title: 获取实名年龄段
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取实名年龄段
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:10+08:00
+scraped_at: 2026-11-19T09:48:50+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:36be5fb6e4a528487a5a3f702a2b230383ff28818947e9ea9cfaaaf4b0963594
+content_hash: sha256:cad31c4575bd256b103349802e22b480d0e89ecaf7e1cf408fcf0578565800b8
 ---
 
 ## 场景介绍
 
 当应用需要获取用户实名年龄段信息时，可使用Account Kit的年龄段授权能力。用户授权后，应用可快速获取实名年龄段信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/YnjOnBTORnef2_46L-sMGA/zh-cn_image_0000002788307880.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC8FE8BFB64A85048A3B5F35BFEBB7A8718AB09AFD38AE9EECBC7D4F688B2FAE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/-S3gfWU0Rg-bNmw6WdWVuA/zh-cn_image_0000002820406161.png?HW-CC-KV=V1&HW-CC-Date=20261119T014850Z&HW-CC-Expire=31536000000&HW-CC-Sign=26180E1070FF3DF50804825B5A2C6F6FB14BAF68144FF211C93C691F7AD4B0BC "点击放大")
 
 ## 约束与限制
 
@@ -20,7 +20,7 @@ content_hash: sha256:36be5fb6e4a528487a5a3f702a2b230383ff28818947e9ea9cfaaaf4b09
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/m_p8hwX7QNGbPd_AVUtsGA/zh-cn_image_0000002817427243.png?HW-CC-KV=V1&HW-CC-Date=20261114T004627Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7DC669448F676D291BA1BCC9703713EE069B3AA75AA1FFA52FD44DD905DD7F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/nmreIUrvQ_uYezAHovgVpw/zh-cn_image_0000002791726182.png?HW-CC-KV=V1&HW-CC-Date=20261119T014850Z&HW-CC-Expire=31536000000&HW-CC-Sign=154229BECACC123A8384E10C7F24D108F55027CC66645C7A71B029A6DA798821)
 
 流程说明：
 

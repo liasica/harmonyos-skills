@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-skill-sc
 title: 场景化消息开发Skill
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > （可选）接入Skill > 场景化消息开发Skill
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:29+08:00
+scraped_at: 2026-11-19T09:49:10+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:7bcac558fa6beec5ca2cc67b23038e58fd42454a6741349ada83997781cdb43e
+content_hash: sha256:974d0d3907733ecbc4386aff3365ba128173c1e1257bedc182d090e59224a39a
 ---
 
 ## 概述
@@ -38,16 +38,16 @@ content_hash: sha256:7bcac558fa6beec5ca2cc67b23038e58fd42454a6741349ada83997781c
 
 1. 打开[DevEco Studio](https://developer.huawei.com/consumer/cn/download/)之后，在右侧工具栏点击CodeGenie，详情见[DevEco CodeGenie工具概述](ide-codegenie.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/jCoYaze2QMapJEfh0g-xAg/zh-cn_image_0000002788468228.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=35E165F15BB053C616C3FBEB372145888B2AD00E797B90EA9F5C07A80D2C2CDE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/_IIb0jzqQASJ6TlrgojVwg/zh-cn_image_0000002791566614.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=E56732895F7527E1FB2132449A12148F41FF5DAECBC719D7B6267F385CAFBC0C)
 2. 参考[操作步骤](ide-skills.md#section20151122814121)导入Skill。如图所示，选择在[下载并配置Skill](push-skill-scenes.md#下载并配置skill)中下载的Skill，需要导入名为hmos-push-kit的文件夹，以及4个子文件夹。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/50CKBwARTFyAg9G19g2RRg/zh-cn_image_0000002817507717.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=910942F9B508FF596F00A91B18E92687D0869858C48BEF60F8BD2E7808B3DDDF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/6dLlA52HQ_SduRgvAzRP0Q/zh-cn_image_0000002820526567.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FF47E5FD25D8D03B83BC8A3274DD631405C136BD466D059994EB61AC7AF4391)
 3. 全部导入成功后，如图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/KeqHETBQRD6ZeKOwa4bEJw/zh-cn_image_0000002788308286.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F19E4BF503D33EAF1854CEEB1E2C9F43093A78E9786BEFB4EF4E19AC69EADA6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/C6tduV06THSw2gp7cm9wZw/zh-cn_image_0000002820406567.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=E89B46FF8E1CB40FCDB655C1E889EC321B4CC9D12A2DA8B1EAEE0D0059E62184)
 4. 回到对话页面，选择**HarmonyOS Act**以及合适的模型，并按需求输入提示词。如图所示，CodeGenie调用对应技能接入Push Kit。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/qaN1xKRvTQ6VeHjZeD5r2g/zh-cn_image_0000002817427649.png?HW-CC-KV=V1&HW-CC-Date=20261114T004645Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4D93304EF223EBE36B5066EE7B75052A72A067D4BA03A42756567997BFB5A80)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/jGZGshgJSTePZxK8F7Ebbw/zh-cn_image_0000002791726588.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=898E12AA879835790AF127CBE7697A0ED3B5C81E5527C9DFA49090284CA4E928)
 5. 接入完成后，CodeGenie会提示需要开通推送服务等注意事项。
 
 ### 触发Skill

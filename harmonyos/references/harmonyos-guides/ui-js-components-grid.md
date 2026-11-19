@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: 栅格布局
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 栅格布局
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:11+08:00
+scraped_at: 2026-11-19T09:47:48+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:087d6e79dea2cdb55243c16450289cd7e27fe5d375e71762eead6cf138e2f954
+content_hash: sha256:3d867a937a106c51ea7792d9678f1c6b75f969aee5ab303fcd71b8fa258e8ead
 ---
 
 栅格布局容器根节点，使用grid-row与grid-col进行栅格布局。API具体描述请参考[grid-container](../harmonyos-references/js-components-grid-container.md)。
@@ -37,7 +37,7 @@ content_hash: sha256:087d6e79dea2cdb55243c16450289cd7e27fe5d375e71762eead6cf138e
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/JdVrHGbSRuiIqAanskgQ7w/zh-cn_image_0000002817506505.png?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4C11788222D1A5EC510D917918DF935C9FFE519D9B95A708EDA1EDD42FF44B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/X50HbKbrQGqJxR1n_u4WBg/zh-cn_image_0000002820525355.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=073EA2BDDB2A12B0BA633129E03F0BB733144E83737D105C8513D7BFD2FE90DD)
 
 **说明** 
 
@@ -106,7 +106,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/9j2SjtUaS2SNeMXC-WQAng/zh-cn_image_0000002788307076.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5050B5A708BA013B995E7855C6C8B04DFA7F4875868F19DCFEECB29975DCAA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/8KzkekGsQnWE3eEPDiuTxA/zh-cn_image_0000002820405355.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=61F54BA18C0993ED8068B3813F4D3CCC91A1498BA07A0855A766516BA2E0FFEF)
 
 ## 添加grid-col
 
@@ -162,7 +162,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/hvyxudeaRkKm1UEwQvLqaQ/zh-cn_image_0000002817426439.png?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B6453E537651190077B9ADEDB640E138C1CF3AD8EF5053396D2E3011FC140B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/4olgaKLcTUqU9wJE4Xej1g/zh-cn_image_0000002791725376.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=28E5E419784D00CDC4B1F5458C3389237FC3430E8F09A7D60C22EB8198D45AD8)
 
 **说明** 
 
@@ -237,4 +237,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/USLtGRKTQX2HTZZXQlsMOg/zh-cn_image_0000002788467020.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=81995778CC3C70A9FB52E028F0A49F3D783233543B2CA0DD9FDF5C9EA2DEB330)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Xd0GGt_dR4afWjMMrwtUKw/zh-cn_image_0000002791565404.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=06FE73DE2EAA455A138AF2C6FDF77B5B5674E6AD62AAA2C00EDABDD230F4968B)

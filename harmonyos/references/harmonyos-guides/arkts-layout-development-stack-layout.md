@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 层叠布局 (Stack)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 层叠布局 (Stack)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:02+08:00
+scraped_at: 2026-11-19T09:47:39+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:edde421dc83a7da799ec61d09d0eb9c4a8dfc265a23dcf50188e96e42acaa180
+content_hash: sha256:dbb198d96755b174d706c925da0a8e2d7e5df9b3a65db538cc7329124a834394
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:edde421dc83a7da799ec61d09d0eb9c4a8dfc265a23dcf50188e96e42ac
 
 **图1** 层叠布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/HyD6K67FTDGwVOh0U9keIw/zh-cn_image_0000002817505951.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC2211BDDFB670D1B83D305372174BFA8FA66BD39559DC8F17615AA44B3C47AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/pXaTASp1QuK_iMIQ9nFLKg/zh-cn_image_0000002820524801.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=726EAFAB23E9EF65E9C8AAEAEDD6D8FAFC5BE5FABE017AB54EE35EA12F4459AF)
 
 **说明** 
 
@@ -47,7 +47,7 @@ struct StackLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/pnOhPaxJRGWg8yhT1rwZ2g/zh-cn_image_0000002788306522.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=30EBD494587138226A609CDD881D1CBF227F1CF0BA55A3748DEF0283C3D3EB9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/XWyeVEO4TEGmNfH0BN6UcA/zh-cn_image_0000002820404799.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DEBDC8F112141FD3FE7C3B3D2A726ED01567AA623534BC3CA28E1C66EBBC8AD)
 
 ## 对齐方式
 
@@ -55,7 +55,7 @@ Stack组件通过[alignContent参数](../harmonyos-references/ts-container-stack
 
 **图2** Stack容器内元素的对齐方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/rGqK_RfMQcCAuMRxR79qJQ/zh-cn_image_0000002817425885.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FD82EE9B50DB87CC5C7B6C5F0081CFC7985D5C2B3BA29D1C15F7A83E6573D49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/yHz5dRzjQWWOVy7qqqniGQ/zh-cn_image_0000002791724822.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=040725060D02087314393C975A37EBDF731FD910B00D6F6952C47886FC71D37D)
 
 ```typescript
 // xxx.ets
@@ -97,7 +97,7 @@ Stack({ alignContent: Alignment.BottomStart }) {
 }.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/XRR9VGPvRUqw0NyAsowWMw/zh-cn_image_0000002788466466.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=B82691D0A2B3238E0A6C5645E5D3B907170849E5981B92E92FB76D7A13157AD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/kX8PnPnQQ--WsBgdIb-8-w/zh-cn_image_0000002791564850.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0F43CC361FD5F27472EF019D64D830E742CDB0D798CC52B701744D152EC6F0D)
 
 上图中，最后的子元素3的尺寸大于前面的所有子元素，所以，前面两个元素完全隐藏。改变子元素1、子元素2的zIndex属性后，可以将元素展示出来。
 
@@ -120,7 +120,7 @@ Stack({ alignContent: Alignment.BottomStart }) {
 }.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/UxQ67MvHRKWOiYq8pA7rpg/zh-cn_image_0000002817505953.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=15BA5D2482F72740A555D4DC002322DC5E8362643B8E0F1AA451099ED9455F06)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/FaMF-hmfQRSGy8CIo9WUpQ/zh-cn_image_0000002820524803.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEF098EE9174BB64033867D529E25273FCD5E99250D9C072B5175BA028D1EA28)
 
 ## 场景示例
 
@@ -165,7 +165,7 @@ struct StackSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/qrYHLaTlSwO1v1HzKnlMkg/zh-cn_image_0000002788306524.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2DDDAF06FC0FEE64E4A2115001998E9A217C43D4E14A2C99FD26AA904D5A7DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/osCtMgxeRy61V0sTVTSwRg/zh-cn_image_0000002820404801.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=05781771D2E334D9AE6C40C5DE11CFF76DB7E78C65A653CBE4AFC1BE621528B4)
 
 ## 示例代码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_NativeDialogAPI_1
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_NativeDialogAPI_1
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:11+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:47d3e4464caaff3aa25c5b2a5d3e88418af5e26a3561644abbea3e0adc42aaa6
+scraped_at: 2026-11-19T09:51:41+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:7e119c9128ca7e912d2d85d85ef15cab43f2ed706f21dd5f9f50a0d5e4e17923
 ---
 
 ```c
@@ -499,7 +499,7 @@ int32_t (*registerOnWillDismissWithUserData)(ArkUI_NativeDialogHandle handle, vo
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
 | void\* userData | 用户自定义数据指针。 |
-| void (callback)(ArkUI\_DialogDismissEvent event) | 监听自定义弹窗关闭的回调事件。  - event: 回调函数的入参，捕获关闭原因。 |
+| void (\*callback)(ArkUI\_DialogDismissEvent\* event) | 监听自定义弹窗关闭的回调事件。  - event: 回调函数的入参，捕获关闭原因。 |
 
 **返回：**
 

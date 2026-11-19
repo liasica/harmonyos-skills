@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: JS语法参考
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 语法 > JS语法参考
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:10+08:00
+scraped_at: 2026-11-19T09:47:47+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b8aed75cb41f06b8b5a284b79bdb6ae50357cabd7eb8acdd7831da4ab99c72da
+content_hash: sha256:e8bd65de074d1156ad944f34f9efca4862bf73c0b4f8e4b2d91c5aef6732379b
 ---
 
 JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语言。基于JavaScript语言的动态化能力，可以使应用更加富有表现力，具备更加灵活的设计能力。下面讲述JS文件的编译和运行的支持情况。
@@ -224,7 +224,7 @@ JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语�
    };
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/dxiJEDt7SnG8bHrEutNvTA/zh-cn_image_0000002788307018.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004531Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E5C6F980DB4BD987FD79078FE897B1BCE458FA204092FFE30585CE143AE433D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/a7ZRDr_gQ8WCeCcGrRR1cw/zh-cn_image_0000002820405297.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014747Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E27C0BDEAC5A0E35AD742051BCA63202A6E43F53EC5F7652CB0C769E0F12B10)
 
 ## 获取ViewModel
 
@@ -250,7 +250,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/NwAU6ZKITM6E7GfGSVT5Pw/zh-cn_image_0000002817426381.png?HW-CC-KV=V1&HW-CC-Date=20261114T004531Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EE9307CCAABAC568260ECD78C2A77DDF280E455A7A46F538ABF9DCA4C11B973)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Yr8nDZacTEm2vPFqS68nkQ/zh-cn_image_0000002791725318.png?HW-CC-KV=V1&HW-CC-Date=20261119T014747Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAEB7AB31FD66B3B2C25C4C5903B90BBE8DDC147CCFFCC0A624884198A0B2B73)
 
 自定义parent组件：
 
@@ -308,4 +308,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/rC939fFlRM-PqYFcnRDyXQ/zh-cn_image_0000002788466962.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004531Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE8683C8D78490BEE7F7477334A0C1DC8DDE9B4BDB0199D2FA796A57E0BCCEE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/NfXPi4SDSni8d-TB4jZnJg/zh-cn_image_0000002791565346.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014747Z&HW-CC-Expire=31536000000&HW-CC-Sign=687269E6DEA2EEBFA4E3253E90628373804E2B929B9EB2F18422B085351E159D)

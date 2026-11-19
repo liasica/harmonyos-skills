@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义渲染节点 (RenderNode)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 自定义渲染节点 (RenderNode)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:07+08:00
+scraped_at: 2026-11-19T09:47:44+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b4bbf1e24789c962c91211ea3f0257f1b8fef72d8d96a72eb7fd6afcb91c6ace
+content_hash: sha256:68eefe80d97bf6da1455048fca7e4d1ed52074c40ba0cc3f49fc50c8ad850d95
 ---
 
 ## 概述
@@ -111,7 +111,7 @@ export struct OperationNodeTree {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/B-9HzeKcQpiloleV_arWXg/zh-cn_image_0000002817506365.png?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=786408F35F6936E332F2DB08660D92BC092A60835BFC7D3F3FF02B8047A33D24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/72wqZ_KpQneG9zAaZUzmJQ/zh-cn_image_0000002820525215.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=73362DCCF83FD4636583CF19C54C7C7618F687FB9C8FD57EFA7FB0D6C6F15A5A)
 
 ## 设置和获取渲染相关属性
 
@@ -328,7 +328,7 @@ export struct RenderingProperties {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/asGHVr4pQbyCEIQbB4MKOQ/zh-cn_image_0000002788306936.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9D9A937C0D44BB7D361A7D519B3A8574D9F36B0757033326E7C5FD200287CB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/b0tW8vUVR9GwhnWeQZ2xJg/zh-cn_image_0000002820405215.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFCB9063D83B4CA5E84BB489250C15502B3186039B3771E8E41DAB94827B843F)
 
 ## 自定义绘制
 
@@ -431,7 +431,7 @@ export struct CustomDraw {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Zi0EzduWRdaRwDM3NZGrdg/zh-cn_image_0000002817426299.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=B16F22D6D579BDA6AF147F9CAD1BABDAFC365C0A35207BFD312DD73D606795F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/oLKZ124QTzyOiJTztsATsA/zh-cn_image_0000002791725236.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=4904F8497BB5B67F2FFBF25856D350594943CB782BA4471EB205DB72A6B62B19)
 
 ## 调整自定义绘制Canvas的变换矩阵
 
@@ -586,7 +586,7 @@ export struct CustomDrawCanvas {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/XubsqDEURfWbgy_wJJsFkg/zh-cn_image_0000002788466880.png?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=80A6D88FF0B5C7469E927F0E4302CD179D5E050539DE4B0B8A77EC5DFAE84E33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/uedylJhYTuC-rXrNLzcykg/zh-cn_image_0000002791565264.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=88AAFC726DFF495FCAAA3230297FA7EB99909F20B6589C5ACB3D3A2A0B01CD76)
 
 **Node-API调用示例：**
 
@@ -760,7 +760,7 @@ export struct CustomDrawCanvasNative {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/YXnoWdlJRJG2Gg7I5Z3uKw/zh-cn_image_0000002817506367.png?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5D97F214CA7DC248931B3C81789CA080677502DA9E22ADE999082A1D38CA953)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/wtcfFL2vQSCD7Vn1u9tWYA/zh-cn_image_0000002820525217.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E8BFE64766EE2639275B37D0DA74069D80022E20BB2AE44FAE286FE70F98C16)
 
 ## 设置标签
 
@@ -815,7 +815,7 @@ export struct SetLabel {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/bGojEJIUQ9GEi4sDxEhKGg/zh-cn_image_0000002788306938.png?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CD65D3410D9AD9691F5BB27CB0E05B11BF58EB007067C529FA5877CB72F640B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/t6Yln6L8SuWatPyaIfURdA/zh-cn_image_0000002820405217.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=48A0CA05AE981AA295D60891005329857EA47B0070AC3DD1040848E8EC1E2D7D)
 
 ## 查询当前RenderNode是否解除引用
 
@@ -893,4 +893,4 @@ export struct CheckRenderNodeDisposed {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/LRNk3rV3Q5eEm-nTfJvkQQ/zh-cn_image_0000002817426301.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004707Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A99530BE7175968FF637AF2FBD71F2BBE905CDB4F49229D319D1EFB1D212F66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/SSCzi0xGQrOrE8-g_N2W4Q/zh-cn_image_0000002791725238.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A460EA4AC8264166C800FEE06DE2EAF0878588DCED3FC0AF66CDB9B4757951E)

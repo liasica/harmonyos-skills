@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: 滚动组件通用接口
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > 滚动组件通用接口
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:11+08:00
+scraped_at: 2026-11-19T09:50:58+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:856414a00a1a11caee22d59045f1e5553ef68c8b45a9f2fd3e0a6a0d73cf3453
+content_hash: sha256:e7e810626644b6d98cfbea0ab55fba389c1e44edab711af96dff78df27699a70
 ---
 
 滚动组件通用接口目前只支持[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)和[WaterFlow](ts-container-waterflow.md)组件，提供滚动条样式、边缘滑动效果、嵌套滚动、摩擦系数控制、内容裁剪等通用属性，以及滚动开始、停止、到达边界等事件回调。开发者可通过这些接口统一管理各类滚动组件的行为，适用于列表展示、网格布局、瀑布流排列和页面滚动等场景。
@@ -976,7 +976,7 @@ List/Grid组件编辑模式选项属性参数对象。
 
 下图是组件配置了边距属性后的示意图，可理解每种枚举对应的裁剪区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/dJr7fxUbR-ezLolwTAw6Ow/zh-cn_image_0000002788308906.png?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD6C7FA49F9AAEC9EB15682AAF834A106965A3B1BFEF78388E3CB9ADA559E9E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/HP2-k9J1RRKrlHXSGYJMYg/zh-cn_image_0000002820407187.png?HW-CC-KV=V1&HW-CC-Date=20261119T015056Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0987271CBE17FBC3C64A677BAA893BC4C4229B5F58E542DBFEE07C8DBD10653)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1467,7 +1467,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/iS6ShoA0TCWx2Yma1MwQSQ/zh-cn_image_0000002788468788.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=4817882A199C6F14A1886FFFB2C378532092407A739371AC27354ED50B2AD0A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/lY0COd0SQuyka5jHtqGvgg/zh-cn_image_0000002791567174.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015056Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1182391044AA277E6CE98E1350106D4277D516A398638F90DEC6C8C5AA50640)
 
 ### 示例2（设置边缘渐隐）
 
@@ -1512,7 +1512,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/ijVBhCMoRjSeehlfKZ-6Kg/zh-cn_image_0000002788308848.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=F017B6D0535718929DD74488DFBBB36B755A5436B88861ED01CFE26F747C2A68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/3dpR0P2zSFqYeL_C65E-pw/zh-cn_image_0000002820407129.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015056Z&HW-CC-Expire=31536000000&HW-CC-Sign=430582B1CEBDB1D015F21573F6C0E3711C25AA320FE73F3749059C1F095918C3)
 
 ### 示例3（设置裁剪区域）
 
@@ -1573,7 +1573,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/SxvVsIAuR_-31gv8bq9L7w/zh-cn_image_0000002817428269.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECE5D53EE5F0BE1E18AA2826B348863A3399C42EDC171DFF354476BD6414D020)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/3Vd27poiSECFr5FnNuwfFg/zh-cn_image_0000002791727208.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015056Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFBBCD5EADEB19AE1C5B7A2825D1B702DC38083D5B76C07CB150F1064BFC992B)
 
 ### 示例4（设置滚动条边距）
 
@@ -1630,4 +1630,4 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/bCOiDWN0Tb-qVqAqWuQN-A/zh-cn_image_0000002788468850.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FFD2DFAF6E2BC2CA1E4D17888D359FC79E2D47A6FE693008D0545B53E7B56FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/h_hpee9RQByPfzEftiELeA/zh-cn_image_0000002791567236.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015056Z&HW-CC-Expire=31536000000&HW-CC-Sign=C46C2004D553BC06ABCDB3077ED7525DB7D64947F63E3077186435D9B9C75BF3)

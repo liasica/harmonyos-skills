@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-set-dark-
 title: Web深色模式适配
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > Web深色模式适配
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:14+08:00
+scraped_at: 2026-11-19T09:47:51+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2bf1b7c60f4ff651605146b22984d2c67211d124464d3935d29a634ea27d9f6d
+content_hash: sha256:bab95fdc734a19d4510f131f909524fae28ee772075ebc8b542677866884be4b
 ---
 
 系统提供浅色和深色的主题模式供用户选择。深色模式在低光环境下能够降低屏幕亮度，减少光线刺激，改善阅读体验。Web组件根据网页样式进行渲染。若网页未适配深色模式，会造成与系统主题的割裂感。网页开发者应考虑用户的主题偏好，适配深色模式，以保证用户体验的一致性。
@@ -65,7 +65,7 @@ ArkWeb提供灵活控制Web组件深色模式的能力，支持独立于系统�
 
   **图1** color-scheme效果图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/sk7OvkMBT1iy48ewdHZ-kw/zh-cn_image_0000002788307156.png?HW-CC-KV=V1&HW-CC-Date=20261114T004535Z&HW-CC-Expire=31536000000&HW-CC-Sign=603BFB3665C1D5334590FFD1CA225462BE751FD022590AB5D7134E353BAFB882)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/LgRp8j5LTcy4fwjAwqhWCg/zh-cn_image_0000002820405435.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=C45A9F585CB493AB305C7D2F58EF7AE2080C652193EC07FB75907438919F3557)
 * prefers-color-scheme是CSS中的一个媒体查询功能，可以检测系统的主题颜色。网页开发者可以通过该特性，为不同的系统主题颜色定义不同的网页CSS样式，以适应用户的主题偏好。使用样例如下：
 
   ```html
@@ -100,7 +100,7 @@ ArkWeb提供灵活控制Web组件深色模式的能力，支持独立于系统�
 
   **图2** prefers-color-scheme效果图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/fs7ZiaP8Spqpn1TisyzWnA/zh-cn_image_0000002817426519.png?HW-CC-KV=V1&HW-CC-Date=20261114T004535Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F6842E1DEE1DF1BA15B37EF4A8ADC6774366FBD8846F75CE5CD2B5EEA3D1885)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/0Pk30d8sQiWfXIuPcMtyvA/zh-cn_image_0000002791725456.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=3769ACE4C5227EAC5E61D7E7A67D8F65F1479D8D6720BB7C91C021C846D73241)
 
 ## Web深色模式设置
 
@@ -175,7 +175,7 @@ darkModePage.html页面在深色模式关闭、深色模式开启及强制深色
 
 **图3** Web深色模式和强制深色模式效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/QYwDgNcXRL2TIxgYGc7T6A/zh-cn_image_0000002788467100.png?HW-CC-KV=V1&HW-CC-Date=20261114T004535Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C1261118E8970B2A2F8EB439F4CF021E6C1FE0C8C46C90D5B4DD0B202DDBB29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/eRRj1yjmTSCI5nuBGj59pA/zh-cn_image_0000002791565484.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FAA4702E27B11E50484D935A82624217F1EEFDE52E9626165ACB67A47CF4394)
 
 ## Web组件背景色适配
 

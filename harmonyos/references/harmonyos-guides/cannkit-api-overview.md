@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-api-o
 title: 接口概述
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 基本概念 > 编程API > 接口概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:37+08:00
+scraped_at: 2026-11-19T09:49:18+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:af0c1fa13be8818b73d478acf70421200277d86f8d1f7ca57674018eeb2a1f54
+content_hash: sha256:4ec950284b8563249af777eb0dd20565e528eb400fb0de11696d3789ee43b08e
 ---
 
 AscendC算子采用标准C++语法和一组类库API进行编程，开发者可以根据自己的需求选择合适的API。AscendC编程类库API示意图如下所示，AscendC API的操作数都是Tensor类型：GlobalTensor和LocalTensor；类库API分为基础API和高阶API。
@@ -15,7 +15,7 @@ AscendC算子采用标准C++语法和一组类库API进行编程，开发者可�
 
 **图1** AscendC编程类库API示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/JFZkz2RmRBW_-Vi5IRcqLA/zh-cn_image_0000002817427785.png?HW-CC-KV=V1&HW-CC-Date=20261114T004652Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F6BAF40498B0FD76E583EEEFAF6AA8E895717CAFF834898D2C29FEDCB4CEAAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/UaCb0fAjRi-KFOfMhmK8Tw/zh-cn_image_0000002791726724.png?HW-CC-KV=V1&HW-CC-Date=20261119T014918Z&HW-CC-Expire=31536000000&HW-CC-Sign=E78F2416675BA426E74E1055297DF55B54A8FDEF00B59D40E6643694B8853861)
 
 对于基础API，主要分为以下几类：
 
@@ -38,4 +38,4 @@ AscendC算子采用标准C++语法和一组类库API进行编程，开发者可�
 
 **图2** 计算API几种计算方式的特点
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Xv84N08ATRugmPnpcveGuA/zh-cn_image_0000002788468366.png?HW-CC-KV=V1&HW-CC-Date=20261114T004652Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2D91A540E9B217C0BF3D2A336216344B0D15680200A1AD2FE1295BA9D7ABA4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/xBYpl6aHTV-br_hKcUcoPA/zh-cn_image_0000002791566752.png?HW-CC-KV=V1&HW-CC-Date=20261119T014918Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BD13FC598811BC88D9F26F62D51F4377FA9212F5890F22F2CAFFCCBF2515341)

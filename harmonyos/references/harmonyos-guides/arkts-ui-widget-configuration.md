@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 配置ArkTS卡片的配置文件
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 配置ArkTS卡片的配置文件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:27+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:7e4fb64a91308b29bb1314c3b776e5d2e5b83e42c1636cd7d74e239de10ad384
+scraped_at: 2026-11-19T09:47:56+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:3bef2f96867f5bf55a8a817013f056598f70a2614e3b37d2d79c6a82fcfa98fa
 ---
 
 卡片相关的配置文件包括[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)配置和卡片配置。如果是[独立卡片包](arkts-ui-widget-creation.md#方式二独立包方式创建卡片)，还会包含[独立卡片包配置](arkts-ui-widget-configuration.md#独立卡片包配置)。
@@ -152,8 +152,8 @@ content_hash: sha256:7e4fb64a91308b29bb1314c3b776e5d2e5b83e42c1636cd7d74e239de10
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | abilityName | 字符串 | 否 | 趣味交互场景LiveFormExtensionAbility名称，默认为空。 |
-| targetBundleName | 字符串 | 是 | 趣味交互场景[主包包名](../quickApp-Guides/quickgame-independent-subpackage-0000002076341729.md)。 |
-| subBundleName | 字符串 | 否 | 趣味交互场景[独立分包名](../quickApp-Guides/quickgame-independent-subpackage-0000002076341729.md)，默认为空。 |
+| targetBundleName | 字符串 | 是 | 趣味交互场景[主包包名](../doccenter-games/games-quickgame-independent-subpackage-0000002351933645.md)。 |
+| subBundleName | 字符串 | 否 | 趣味交互场景[独立分包名](../doccenter-games/games-quickgame-independent-subpackage-0000002351933645.md)，默认为空。 |
 | keepStateDuration | 数值 | 否 | 趣味交互场景无交互时，激活态保持时长。默认值为10000，单位ms。取值为(0,60000]的整数，超过取值范围则取最大值60000。  **说明：** 在API版本26.0.0之前该字段为(0,10000]的整数，超过取值范围则取默认值10000。 |
 
 ```json5

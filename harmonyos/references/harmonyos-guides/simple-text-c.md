@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/simple-text-c
 title: 简单文本绘制与显示（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 简单文本绘制与显示（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:06+08:00
+scraped_at: 2026-11-19T09:48:46+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:5e3d805de48e3876ada534d3e939a8b1b90a2c98e40c89dea91e926fd817a710
+content_hash: sha256:136b9fe9f19361f09014b7f8e88bd356aa9b4c0f6e2e137413b800d5d2c5312c
 ---
 
 ## 场景介绍
@@ -80,4 +80,4 @@ content_hash: sha256:5e3d805de48e3876ada534d3e939a8b1b90a2c98e40c89dea91e926fd81
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/RE5ODu7jTkGZtcLT01YSng/zh-cn_image_0000002817427163.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=11F0EC99E561AA0418992E5B5440789E0B93C7814B6AE60D27A3BDC541D551EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/_Y4NR-mfSQ2KDOmyDHeBNw/zh-cn_image_0000002791726102.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=13589D32AA398531B8C98725F64FD4E357E3595D23258116CD2C8CB409D4F02E)

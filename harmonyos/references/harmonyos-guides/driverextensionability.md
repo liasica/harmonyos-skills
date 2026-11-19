@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverextensi
 title: 开发无UI界面基础驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设基础驱动开发 > 开发无UI界面基础驱动
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:50+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:bf1ba7980757f4711befa9ba57098cdad0d07dd6217d2b00ab54f60cdf205951
+scraped_at: 2026-11-19T09:48:22+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:6e1cb52f46237e7c18b56f4104edbf071bcc75cb873b1966ceee50013bea9a1d
 ---
 
 ## 场景介绍
@@ -47,13 +47,17 @@ content_hash: sha256:bf1ba7980757f4711befa9ba57098cdad0d07dd6217d2b00ab54f60cdf2
      // 接收应用传递过来的消息处理，以及将处理的结果返回给客户端。
      onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence,
        option: rpc.MessageOption) {
-       if (code === REQUEST_CODE) {
-         // 接收应用传递过来的数据。
-         // 应用使用多次调用data.writeString()写入多个数据时，驱动可以通过多次调用data.readString()方法接收对应的数据。
-         let optFir: string = data.readString();
-         // 驱动将数据的处理结果返回给应用。
-         // 示例中为接收了"Hello"，并将"Hello World"返回给应用。
-         reply.writeString(optFir + ` World`);
+       try {
+         if (code === REQUEST_CODE) {
+           // 接收应用传递过来的数据。
+           // 应用使用多次调用data.writeString()写入多个数据时，驱动可以通过多次调用data.readString()方法接收对应的数据。
+           let optFir: string = data.readString();
+           // 驱动将数据的处理结果返回给应用。
+           // 示例中为接收了"Hello"，并将"Hello World"返回给应用。
+           reply.writeString(optFir + ` World`);
+         }
+       } catch (err) {
+         console.info('testTag', `onRemoteMessageRequest error code is: ${err.code} with info: ${err.message}`);
        }
        return true;
      }
@@ -101,6 +105,9 @@ content_hash: sha256:bf1ba7980757f4711befa9ba57098cdad0d07dd6217d2b00ab54f60cdf2
        "requestPermissions": [
          {
            "name": "ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER" // 此处为扩展外设相关权限，必须配置。
+         },
+         {
+          "name": "ohos.permission.ACCESS_DDK_DRIVERS"
          }
        ],
        "deliveryWithInstall": true,

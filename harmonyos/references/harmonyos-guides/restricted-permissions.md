@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-pe
 title: 受限开放权限
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限列表 > 受限开放权限
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:23+08:00
-doc_updated_at: 2026-11-13
+scraped_at: 2026-11-19T09:48:01+08:00
+doc_updated_at: 2026-11-18
 content_hash: sha256:1f6a6800135e164fbf5b65537f036069851738dd57f6b8b4a7dd32b0bdf6c614
 ---
 

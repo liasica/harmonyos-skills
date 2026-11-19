@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 拖拽排序
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 拖拽排序
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:06+08:00
+scraped_at: 2026-11-19T09:50:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e08bf302310fa1381335d67b943f3356d920a9ffe0105e21d65202cdd17e9fd8
+content_hash: sha256:f7e71b655da1e7f15b44188ab2b20b86cdb5d5de26882325a40e8f3a0711bb75
 ---
 
 拖拽排序用于实现列表条目或网格条目的手动排序，适用于待办列表排序、歌单管理等需要用户自定义条目顺序的场景。在List或Grid组件下使用ForEach/LazyForEach/Repeat，并设置onMove事件，每次迭代生成一个ListItem或GridItem时，可以使能拖拽排序。拖拽排序离手后，如果数据位置发生变化，将触发onMove事件，上报数据移动起始索引号和目标索引号。在onMove事件中，需要根据上报的起始索引号和目标索引号修改数据源。确保数据仅顺序发生变化，才能正常执行落位动画。
@@ -260,7 +260,7 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/yVxEOTUvRziJJyEf4W0wCw/zh-cn_image_0000002817428131.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF75FB7A2CED6B582DE583B63E1DA96A222C2326DA076A71C602189D20F9F1A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/iAYr-6g5RbCwr0b9Hf-NiA/zh-cn_image_0000002791727070.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD6228A139479FD273E8413B0C577F2FECD9298D530C17DC50D6C17E3E95BB19)
 
 ### 示例4（Grid不规则布局使用ForEach的onMove进行拖拽，并设置拖拽事件回调）
 
@@ -404,7 +404,7 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/NKpqmgM1QK2hFczibqUvOg/zh-cn_image_0000002788468712.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=495A385CF9EE168FBD920F2C17860619030C04A4A3DC05CB1387754C4849B10F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/9DHnChP7RGOexMEKsOAiKw/zh-cn_image_0000002791567098.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4FA655E6900CB5C8CB5F9F908CD9D17659B004642949B6CA8AAB5D9C89C3A51)
 
 ### 示例5（Grid不规则布局使用LazyForEach的onMove进行拖拽，并设置拖拽事件回调）
 
@@ -617,7 +617,7 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/dWDUyAwhQN2EOsUqFoU0WA/zh-cn_image_0000002817508201.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7E83B10957D2B252A7B7B938C91DE8C821AF62234B162C94B8D9013B275C8B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/tpQoyYSLR4WDZ5AplJlYfw/zh-cn_image_0000002820527051.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=197FBEFE1379DE46DF162140C39C5D60D2920AE38BD4503E9616BEB30F5B4D03)
 
 ### 示例6（Grid不规则布局使用Repeat的onMove进行拖拽，并设置拖拽事件回调）
 
@@ -778,4 +778,4 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/H4Yx4bntTxipn_0-iwkqXg/zh-cn_image_0000002788308770.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E092F461B7980032D1EBBBD17E02D9B83209478B9EC87A299C193846B4EF528)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/fsCf6GaURMK6s5bfEhF_RQ/zh-cn_image_0000002820407051.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3ED3B6041C2D4BC8FAA114ED543B931B37C25C3A6F4D0E5E77DB344378B8CB7)

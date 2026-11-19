@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-marker
 title: 标记
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 标记
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:24+08:00
+scraped_at: 2026-11-19T09:49:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:eb1d3f6a6dd3de78c3b9ae01dd78a91526360563304b788393e3648957fb691b
+content_hash: sha256:72e68ec9550f27ad3e29c549c7e6e488bfa333960ae497eba479d1ac93cbdbff
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ Marker有默认风格，同时也支持自定义。由于内容丰富，以下�
 
 6.1.1(24)开始，支持监听Marker长按事件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/9pY21AkiTgKGbgP_7ticfQ/zh-cn_image_0000002817507593.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=00F4775133CD81264252C9DA0B825D64503CCC063607908E0D6F8C6B834EB368 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/aEDc29XyRqK4yHH2x2Eawg/zh-cn_image_0000002820526443.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE9C02BF2B6BF48A7FF0178156B6C880B945D094E6CFEB80912C9B7E7ED97152 "点击放大")
 
 ## 接口说明
 
@@ -113,7 +113,7 @@ Marker有默认风格，同时也支持自定义。由于内容丰富，以下�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/CYX047OARbqN8NWtTXo6qQ/zh-cn_image_0000002788308162.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7C0CE1662335294A832C5467CB7B15823371B1ADC22422697775148120D6583 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/WJ8aRkbMQZW-fB9FRs9OrQ/zh-cn_image_0000002820406443.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=7987F3D8E28AE8FB002124EE3B18B386143522CAA782DE83EB29508520CBE3ED "点击放大")
 3. 在添加标记之后，修改已经设置的标记属性。
 
    ```typescript
@@ -148,7 +148,7 @@ let markerOptions: mapCommon.MarkerOptions = {
 this.marker = await this.mapController.addMarker(markerOptions);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/_Rmft3POR4253yYzl2xXeA/zh-cn_image_0000002817427525.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=F76A395C064A37FA372E79D7DCAC4D509B97E18B874CE13F5D0743791F25B8BD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/MRw3MS5YTlynvJJjaRFlFg/zh-cn_image_0000002791726464.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=27CB999EB5327B5E219A7E031C0E74072E4BA9619C7E214E0A529CBF6964AF9A "点击放大")
 
 ### 控制Marker文字显隐
 
@@ -189,11 +189,11 @@ console.info(`isAnnotationVisible is: ` + isAnnotationVisible);
 
 **图1** 隐藏Marker文字之前
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/X24Nr4EFS6ufBjtDzGmXuQ/zh-cn_image_0000002788468106.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB18AE59486F0425BEE87C1A18ADBB6F6498A7188FA014DBDC9D1D6D41E80923 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/FSrVlDauSVCYb-84_W8oHQ/zh-cn_image_0000002791566492.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=6647E70C608C2BE28D8D4AE2E13B1607117AB3E4472BDD09159A28B62A4135FE "点击放大")
 
 **图2** 隐藏Marker文字之后
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/svnyF-oYTBy_DFsEVKVgyg/zh-cn_image_0000002817507595.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C55F093A8603C7544376F618ABEDB42FDFCE1B4DB3AB27DEB7CFFD390E5480A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/cBULqzH1S3uVxixByiIw6A/zh-cn_image_0000002820526445.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE329A071DC629282C17B09923EDC24DD01CAEFEB6400B73D91E22AEBA5B9CC7 "点击放大")
 
 ### 碰撞检测
 
@@ -230,7 +230,7 @@ let markerOptions: mapCommon.MarkerOptions = {
 this.marker = await this.mapController.addMarker(markerOptions);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/nKfTvR4YRAi6yR128zTRMg/zh-cn_image_0000002788308164.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC94DD3A652C53CECF4B273B6EBF2EA62C08DB5B7E5EF88B685E6C302FE3C612 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/Fx_ryfdVRGK-6EFyKaH0hg/zh-cn_image_0000002820406445.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=E70712555AC05DCFCFCE856B441F3E1F6CF2D246DBBC2B2A7389C36237A3C80D "点击放大")
 
 ### 设置监听标记点击事件
 
@@ -305,7 +305,7 @@ this.marker.setInfoWindowAnchor(1, 1);
 this.marker.setInfoWindowVisible(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/q_l6j1HgSN-g6BYQ-wZ0FA/zh-cn_image_0000002817427527.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=39C9DB0C785B22DD9D6063FF0CCE02A1CB0EA5FD1962FDC5EDBD84D135BD3A49 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/2BWmPQ4XRJOoNySsPiA0sw/zh-cn_image_0000002791726466.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=2ABD631FB361FD290BF64D4AA38DA5BF56636185C233494DC3A0E4DB8255AF2A "点击放大")
 
 ### 自定义信息窗
 
@@ -392,7 +392,7 @@ struct MapMarkerDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/F6wV3PLzTreDjhWd3v5wgg/zh-cn_image_0000002788468108.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2015B7A635ED2E9504C71B7F8F5F36FAD33ACFD3F74BCC6524C2719998F8E53 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/8O_Yxb89RjuT5tHR2EnPtA/zh-cn_image_0000002791566494.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=014BC9157A445112298DCB04B294F885409BB1058B4C6438519747CA81428458 "点击放大")
 
 ### 标记动画
 
@@ -494,7 +494,7 @@ struct MapMarkerDemo {
 
 展示效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/5msa0jYTSYuN5Cf4ODeeZA/zh-cn_image_0000002817507597.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=E73BE8220A77751BB6B8768B9E77C1409892448F74D5ADCA43B84974F1175DE9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/nx7CkJQdTVKTPSie2UlsjQ/zh-cn_image_0000002820526447.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AC3E1A8FCB348431A6E84712E416A580D5607816ED34D4EBC5CE492EE70C413 "点击放大")
 
 ### 图片动画播放
 
@@ -601,7 +601,7 @@ struct MapMarkerDemo {
 
 展示效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/GDpiZZQaS5WhuRfKV_D4hg/zh-cn_image_0000002788308166.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D94EF9A44340ADA4CFB86EB6264A6395C5E6F224000DEC644CDD197E8969F36 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/y4noNiLCQJOTRddZoIXH8g/zh-cn_image_0000002820406447.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA7E27426CEDD8DDE643B198A8833E57C878CD3002902F3A7FEC4F3F6DCAEB5C "点击放大")
 
 ### 自定义组件实现marker图标
 
@@ -677,4 +677,4 @@ struct MapMarkerDemo {
 
 展示效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/XFB06kOkS5GtYHLYjU_KQw/zh-cn_image_0000002817427529.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CB8118344BBF7BEBA8475168CAA82E155476E2CA41D6D62E03F93EBDD2CE781 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/3nfGTYo4S5-vqLgMkplp8Q/zh-cn_image_0000002791726468.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014904Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBC78FDBCF9602F267E01A4066EB4755CE1678EF1A46F680BA49585BCC7DB596 "点击放大")

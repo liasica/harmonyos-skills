@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: button开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > button开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:10+08:00
+scraped_at: 2026-11-19T09:47:48+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:7788a08b8b229f98a9bb7323219da614fdaddf9d92dbb574ca4770e1e986f338
+content_hash: sha256:2da7b0ea75da4266682cd1fcd75d9ed92aff98a729988d00b804dcef1f62b27d
 ---
 
 button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按钮、弧形按钮、下载按钮。具体用法请参考[button API](../harmonyos-references/js-components-basic-button.md)。
@@ -33,7 +33,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/TCHzHCG8SRuGlibW55hJoA/zh-cn_image_0000002817426405.png?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5719AF28A192F94CA05D2CBA0B2436EF57CE1EB8B88E2E2205A002F8E8D3575)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Pr5r2ZqgRLC6mXJenuuR2Q/zh-cn_image_0000002791725342.png?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=F93536A8D14544EEF836C94E9F4216F144EC3437EEB7C55209551F23229010D3)
 
 ## 设置button类型
 
@@ -73,7 +73,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/oRKFbNnbSRSZP9-CMXddrA/zh-cn_image_0000002817426123.png?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=17F9C27602EBAC13C0EF8F20EB158D7E2F28C31377796481A598F0099F7006AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/SAZDmgbfRhi9MJWlBZ2PxQ/zh-cn_image_0000002791725060.png?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=99F9FC4EA00AAC7A0E24EE576EB3707C258F7209B29BD8BEAAFC1547ABB186FB)
 
 **说明** 
 
@@ -166,7 +166,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/JGqU2Fk0Tq22w1zQOHFV4Q/zh-cn_image_0000002788466986.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B224116576F15A29890E9C57E97C1FC280521A138A4A353822CF16B8E301D45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/BX-J2PNCT4G68F4oD4nMKg/zh-cn_image_0000002791565370.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2A4650303AF7FBB968AC3A178606A1343F95A4E47D64E8D8EED2A16C158AF36)
 
 **说明** 
 
@@ -273,4 +273,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/nL81ZgBrRdWwF-AHqjapWA/zh-cn_image_0000002817506473.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=10661D0FDDA992109AC97C70EA16ED6E34828E6F2877798A66962AAFCDE86328)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/paQnYR2cQMCyGr3o5rnOMg/zh-cn_image_0000002820525323.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B9B623EC88B6EAC70C4492BCE1BD8DBC1371C5F4FBE79D9E687ADC456BB2614)

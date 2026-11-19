@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: Enterprise Space Kit简介
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > Enterprise Space Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:16+08:00
+scraped_at: 2026-11-19T09:48:56+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:6b935d6e0c9935838641d109544e38cd6138d51fdb1503d2fc4d090987f523ce
+content_hash: sha256:bd50270118984a6d645812149b0082451ac0a6b36a74fa7b96b028311f24c588
 ---
 
 Enterprise Space Kit（企业数字空间服务）为企业[MDM](mdm-kit.md)应用提供[企业数字空间](enterprisespace-introduction.md#企业数字空间基础特性)的空间管控、空间互传管控等API，助力企业依托MDM应用实现集中管理与远程配置，确保企业数字空间适配企业业务场景，同时满足数据传输安全管控要求。
@@ -16,11 +16,11 @@ Enterprise Space Kit（企业数字空间服务）为企业[MDM](mdm-kit.md)应�
 
 **空间互传：** 企业数字空间专属应用，支持跨空间文件共享。企业可自主管控数据流转，保障数据安全，实现高效共创。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/7-ziHXjsSOOJZiWfwQIH5w/zh-cn_image_0000002817507439.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004633Z&HW-CC-Expire=31536000000&HW-CC-Sign=551A33AF8772D512DA39CB82CE4725ED8C9C5B7B99C2B53131082E115C883670)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/fXQLqgVYSCyKRKhmthbwfQ/zh-cn_image_0000002820526289.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014856Z&HW-CC-Expire=31536000000&HW-CC-Sign=3730136CFC48CF71D6845449D908D9225A393016A80F621C205D602C4CF4694B)
 
 **空间切换：** 通过四指横滑、快捷键等多种便捷方式在两个空间之间丝滑切换，切换时身份、网络、数据整体切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ilk1fzaGQ6-0VjdFn1kNPw/zh-cn_image_0000002788308008.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004633Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E124B91F5B73637EA9F45561B266F1BB34BCD6868295EB03673CF18D28E72BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/kmdslEz8Sj6FE32zeST1vw/zh-cn_image_0000002820406289.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014856Z&HW-CC-Expire=31536000000&HW-CC-Sign=22CE903C0CC216917B2F6A4C365F8D6264685A43A62A6460384739ACF7589A42)
 
 **空间开启：** 企业可通过HEM或MDM开启企业数字空间。HEM开启的具体操作步骤请参考[PC企业版配置](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-devices-ot-0000002307766441#section1177603005511)。
 

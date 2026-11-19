@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-withh
 title: 签约代扣场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 免密支付接入 > 签约代扣场景
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:27+08:00
+scraped_at: 2026-11-19T09:49:07+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3ad9b00bdef73bcb35c6b8ea713e246b9e8e3e58efab257a0cd303bd1cd3c2dd
+content_hash: sha256:03723c99202aac575eee56dc76f517336b3116c6b3bf331b0e7cdad148a583dc
 ---
 
 ## 场景介绍
@@ -18,13 +18,13 @@ content_hash: sha256:3ad9b00bdef73bcb35c6b8ea713e246b9e8e3e58efab257a0cd303bd1cd
 
 华为支付签约页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/xhJ_38GMTiiWNCU0Rp5BtA/zh-cn_image_0000002788468174.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=19067B31AAF106DC5BD88E2DA2B86D4215152255872A44EE27D5197564795FE9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/GbXdJ4atSzi9Vmdir0uCDw/zh-cn_image_0000002791566560.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC6E8AFF764EACDEA2442167DC8557D43B73BA0239AE2C9DF75A0B93BE3172B6)
 
 ## 业务流程
 
 开发者通过接入Payment Kit 签约代扣能力，在获取用户签约授权的前提下，可以向用户的华为支付账户发起支付扣款，无需用户输入支付密码就可以优先使用签约的支付方式完成扣款。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/62WE-hwfQQOfjJVZMlreNA/zh-cn_image_0000002817507663.png?HW-CC-KV=V1&HW-CC-Date=20261114T004642Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1A7E6B9AEF6E5EAF843CA545C8F6FD3A92FE8C108D1B4ABA801071B39F4887F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/xfjsxHceTKGg2Q7zUackig/zh-cn_image_0000002820526513.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0FB49754DFD9F4E447A006E33505D1A8D60F5E0BC3450DB44BD5DBA39868E6F)
 
 1. 商户客户端请求商户服务端创建签约订单。
 2. 商户服务端按照商户模型调用Payment Kit服务端[直连商户预签约](../harmonyos-references/payment-withhold-presign.md)或[服务商预签约](../harmonyos-references/payment-partner-withhold-presign.md)接口。

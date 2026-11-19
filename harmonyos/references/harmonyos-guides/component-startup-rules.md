@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-sta
 title: 组件启动规则
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 组件启动规则
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:49+08:00
+scraped_at: 2026-11-19T09:47:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a4b6432129fbf70dfdbf7a67a83e4cd71a4f0ee6383408c9bb54f6ca7a2caa7f
+content_hash: sha256:92345ea840f4ce2acf288878b7fc05f139205f2da479e9b53cae3abfb7e4972a
 ---
 
 启动组件是指一切启动或连接应用组件的行为：
@@ -50,7 +50,7 @@ content_hash: sha256:a4b6432129fbf70dfdbf7a67a83e4cd71a4f0ee6383408c9bb54f6ca7a2
 
 下图中的BACKGROUND权限是指ohos.permission.START\_ABILITIES\_FROM\_BACKGROUND，CALL权限是指ohos.permission.ABILITY\_BACKGROUND\_COMMUNICATION。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/a069_1CVTd6cj6etRk2omg/zh-cn_image_0000002817425495.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8D1B51984505B4A955A43B29D4295792A69C28B6156D1E8018C8C37E048F54B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/J3o03MGARQu6RyQKoLMoRg/zh-cn_image_0000002791724432.png?HW-CC-KV=V1&HW-CC-Date=20261119T014725Z&HW-CC-Expire=31536000000&HW-CC-Sign=5945BA76D29E77E9288C210C43FD0739EF45381C4EF5848EAFBF98D1A8303943)
 
 ## 分布式跨设备组件启动规则
 
@@ -64,4 +64,4 @@ content_hash: sha256:a4b6432129fbf70dfdbf7a67a83e4cd71a4f0ee6383408c9bb54f6ca7a2
 
 下图中的BACKGROUND权限是指ohos.permission.START\_ABILITIES\_FROM\_BACKGROUND，DATASYNC权限是指ohos.permission.DISTRIBUTED\_DATASYNC。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/RpeA94gFTECxmDPc0UO9dQ/zh-cn_image_0000002788466076.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=110765E280D4E1F856CB3E4C1AD0F1D6FB81C4E93F17742E87C0074CC19B4460)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/NwKtWnL_SR67tMl0qtzqVw/zh-cn_image_0000002791564460.png?HW-CC-KV=V1&HW-CC-Date=20261119T014725Z&HW-CC-Expire=31536000000&HW-CC-Sign=C94216D285586E22177596F6F78EDD56C7451E9C27A54202432B9ABCE649ABC1)

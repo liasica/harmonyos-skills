@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-build-ui-
 title: 基于NDK构建UI概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 基于NDK构建UI概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:08+08:00
+scraped_at: 2026-11-19T09:47:46+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2468743281115a1e851eaabc5ee56936ce8529fd4701b29da8a20083f7d52c0d
+content_hash: sha256:f1a64ca5e2ddc870a23b8de7581480c5df115edd17fbfab9f8d1471605fddea6
 ---
 
 ArkUI开发框架提供了一系列[NDK接口](ndk-development-overview.md)，能够在应用中使用C和C++代码构建UI界面，这些接口包括UI组件创建、UI树操作、属性设置和事件监听等。面向通用UI界面开发场景，建议使用ArkTS代码和ArkUI声明式开发框架。然而，如果需要实现以下一个或多个目标，那么ArkUI NDK接口就能派上用场：
@@ -35,11 +35,11 @@ ArkUI NDK接口能力主要包括：
 
 **图1** NDK接口和ArkTS声明式关系架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/UF4uhCQTT0u1UGpxCF7AkA/zh-cn_image_0000002788466938.png?HW-CC-KV=V1&HW-CC-Date=20261114T004708Z&HW-CC-Expire=31536000000&HW-CC-Sign=35920DA79324E724F6880D8E9F9BBDF4959BED2FBA2092459D6A26BABB3AE449)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/HfdeNNlsSGaDhr4H5l-pSA/zh-cn_image_0000002791565322.png?HW-CC-KV=V1&HW-CC-Date=20261119T014745Z&HW-CC-Expire=31536000000&HW-CC-Sign=94CAF5B01FBC4C7AD499674242E7A94BD027AE6FDD47595D36C43C70E48F2800)
 
 **图2** 通过NDK接口创建的组件挂载示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/kPL5tftsQh-oJ_xnDL57fQ/zh-cn_image_0000002817506425.png?HW-CC-KV=V1&HW-CC-Date=20261114T004708Z&HW-CC-Expire=31536000000&HW-CC-Sign=5969317AFD701D8FEC9FA016F6D102EFFD20ACF88CC52E2CE1D9784EAFB0B0B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/59pIuXKAQDysShwtD0nmig/zh-cn_image_0000002820525275.png?HW-CC-KV=V1&HW-CC-Date=20261119T014745Z&HW-CC-Expire=31536000000&HW-CC-Sign=A243E2DB07886DC2BD116C26D68B7399419046633D3578BB74DF4650566112E5)
 
 * ArkTS声明式UI前端和NDK接口都是针对ArkUI底层实现的接口暴露，NDK接口相比于ArkTS声明式UI前端，除了剥离状态管理等声明式UI语法外，还精简了组件能力，将ArkUI组件核心功能通过C接口进行封装暴露。
 * NDK创建的UI组件需要通过ArkTS层的占位组件进行挂载显示，挂载后，NDK创建的组件和ArkTS创建的组件位于同一个UI树上，相关布局渲染和事件处理遵循相同规则。

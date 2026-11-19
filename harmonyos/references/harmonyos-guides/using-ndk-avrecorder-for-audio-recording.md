@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avr
 title: 使用AVRecorder录制音频(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 使用AVRecorder录制音频(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:01+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:a14720f1781359acf64f8b0611f66c33d915b9b6f36ecdecff999a5605cc1bd9
+scraped_at: 2026-11-19T09:48:41+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:819438123732d6af999408738813466d3ce7e8161a7cec967fda7f8e1c2d07a8
 ---
 
 AVRecorder支持开发音频或视频单独录制，集成了音频捕获、音频编码、视频编码、音视频封装功能，适用于实现简单音视频录制并直接得到本地媒体文件的场景。
@@ -16,7 +16,7 @@ AVRecorder支持开发音频或视频单独录制，集成了音频捕获、音�
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/6YG9IpKCT1-8Bv4NRoSlww/zh-cn_image_0000002788307676.png?HW-CC-KV=V1&HW-CC-Date=20261114T004800Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5636E3D25B75D148F135D69DDAE411B73B8E032FB31667B243B1C7CA6A0A585)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ncdW95GvRuWTmgpqhWLaPA/zh-cn_image_0000002820405957.png?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AD48536AEF31A4E1C968C82714F913996183C10E60D2EA4B9C1CE3568ACC817)
 
 状态的详细说明请参考[OH\_AVRecorder\_State](../harmonyos-references/capi-avrecorder-base-h.md#oh_avrecorder_state)。
 
@@ -180,7 +180,7 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so)
        g_outputFd = open((avrecorderRoot + "/audio_example.m4a").c_str(), O_RDWR | O_CREAT, FILE_PERMISSIONS);
        std::string fileUrl = "fd://" + std::to_string(g_outputFd);
        config.url = strdup(fileUrl.c_str());
-       OH_LOG_INFO(LOG_APP, "config.url is: %s", config.url);
+       OH_LOG_INFO(LOG_APP, "config.url is: %{public}s", config.url);
 
        OH_AVErrCode err = OH_AVRecorder_Prepare(g_recorder, &config);
        free(config.url);
@@ -362,7 +362,7 @@ static napi_value PrepareAudioRecorder(napi_env env, napi_callback_info info)
     g_outputFd = open((avrecorderRoot + "/audio_example.m4a").c_str(), O_RDWR | O_CREAT, FILE_PERMISSIONS);
     std::string fileUrl = "fd://" + std::to_string(g_outputFd);
     config.url = strdup(fileUrl.c_str());
-    OH_LOG_INFO(LOG_APP, "config.url is: %s", config.url);
+    OH_LOG_INFO(LOG_APP, "config.url is: %{public}s", config.url);
 
     OH_AVErrCode err = OH_AVRecorder_Prepare(g_recorder, &config);
     free(config.url);

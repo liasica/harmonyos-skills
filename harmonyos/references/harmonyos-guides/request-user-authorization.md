@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-
 title: 向用户申请授权
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 向用户申请授权
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:22+08:00
+scraped_at: 2026-11-19T09:48:00+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:05f9318aaac982dc3dfbd36c3d92cb66aaa04b4b7ad5e0a8f295aedcda7920a1
+content_hash: sha256:7d0b9d7c20b3be4c784cbf674b5ed2a5c41de95dc50481e9758ab1d95a8592f3
 ---
 
 当应用需要访问用户的隐私信息或使用系统能力时，如获取位置信息、访问日历、使用相机拍摄照片或录制视频等，应向用户申请授权。这些权限属于user\_grant权限。
@@ -46,7 +46,7 @@ content_hash: sha256:05f9318aaac982dc3dfbd36c3d92cb66aaa04b4b7ad5e0a8f295aedcda7
 
 效果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/PeLuZ88cSNG8MxR6iQDd-w/zh-cn_image_0000002788467302.png?HW-CC-KV=V1&HW-CC-Date=20261114T004543Z&HW-CC-Expire=31536000000&HW-CC-Sign=326882F86441B160C49571CB506CE893EE095F9F8BAF3CCBF5A60816F29D748C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/VQt9fUvnQnWBnbg6hLiLNQ/zh-cn_image_0000002791565686.png?HW-CC-KV=V1&HW-CC-Date=20261119T014800Z&HW-CC-Expire=31536000000&HW-CC-Sign=65DFF769A7DEF69C5EF96DB03E18BC6C289FFFB2C550E667CE30F2755F99E6E8)
 
 1. 申请ohos.permission.LOCATION、ohos.permission.APPROXIMATELY\_LOCATION权限，配置方式请参见[声明权限](declare-permissions.md)。
 2. 校验当前是否已经授权。

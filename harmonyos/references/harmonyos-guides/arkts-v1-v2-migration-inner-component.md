@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 组件内状态变量迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 组件内状态变量迁移
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:01+08:00
+scraped_at: 2026-11-19T09:47:38+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:06303a1dfabd11605b3ee082ea28e40c04475b1190c4c8460c1c6cc5e437fbf5
+content_hash: sha256:0f1f90030835c06dd9a425cc126b3adbfec423fdb06c4ebb4a5075200f4deaf2
 ---
 
 本文档主要介绍组件内的状态变量的迁移场景，包含以下场景：
@@ -85,7 +85,7 @@ struct Child {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/ledvDFeuRkiLhgFZOoTceQ/zh-cn_image_0000002788306408.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A6FE5230A0EA1EB4A142D5BFD50E14C71C02E94FD53E0828B34402CF81202E3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/oSIs7vjTRaWomughHOZWQQ/zh-cn_image_0000002820404685.png?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFAB58A7BAD6B103BBEB88DE4C4B0C47B91094220BBDFD1F67C24828A631D65B)
 
 **复杂类型**
 
@@ -158,7 +158,7 @@ struct Example {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/9FXR2uHwR9SiS7PuU4t8nQ/zh-cn_image_0000002817425771.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=36DC0DC12658251C558269CF46943BB0AB089400B1C0D2EC46D602DCFAA36E73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/KthFvW70Tmu7BapY7SCo8g/zh-cn_image_0000002791724708.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=91A71C1EF9D51646A33C5F14C48B70E09C215D8E0A0BED0AD3AB39CEE632966D)
 
 **外部初始化状态变量**
 
@@ -220,7 +220,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/hmmxQF0yRYiHYB-El_Ybfg/zh-cn_image_0000002788466352.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC6D7AF24BD6A1E7E72BD5993D4026332A411618D85104DABCA43076D57918BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/kA9N2XiRTyW56Se4mSeYBA/zh-cn_image_0000002791564736.png?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DA794E12A926696218384F07F2C2112E20CC904858A743A2E6D7368AC1EA9A1)
 
 ### @Prop -> @Param
 
@@ -294,7 +294,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/1HAEQp1VRvG0kSVpOLaU9Q/zh-cn_image_0000002817505839.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8D3208C22C4B0ED5A2801349261EFA92ECF0E3EF4799E12206C034D3B7BDE43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Ji9zc6vAROyfhRg7L1x9lw/zh-cn_image_0000002820524689.png?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB976E2EFA851801BF4B9138217AA6DDBACB5C617A556BA01F61191A926A85A3)
 
 **复杂类型的单向数据传递**
 
@@ -432,7 +432,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/dbNUmCaOSIOl4bhlO1BHEA/zh-cn_image_0000002788306410.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=20FB93CB9E964811A0D1C774FCF1B5E244CF9A0FD57FB81242265E579F25F753)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/jOGqAM0HTAarNG0whuQbyA/zh-cn_image_0000002820404687.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=D05C629C0283E35EDC95CDD043E5FDBCF2BF5F8B4C4FA8A1CAA1E11FB8951FB4)
 
 **子组件修改变量**
 
@@ -512,7 +512,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/lH0TxrlGT2WxrebLCA5_nw/zh-cn_image_0000002817425773.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8EC2BBF8E5488764C3D69DA3C79F61AE04511CD9E376A0B44BEDA133900D15E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/WfkQr-PrSGicpQ9hxicUQg/zh-cn_image_0000002791724710.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=22336ACBEDA449C8ABF883076BF7AE397CCC0A1312C0C42F7D4F4BC666A06E0F)
 
 在V1中，子组件可以修改@Prop的变量，且只会在本地更新，不会同步回父组件。父组件数据源更新时，会通知子组件更新，并覆写子组件本地@Prop的值。
 
@@ -632,7 +632,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/33rzzBCBSkqyc49pmUP_yA/zh-cn_image_0000002788466354.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFB96F7F0B1DF4E685C9E29E4B8BCA9C8243E0956CBE41414782BE3EA7D887FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/_m6Iohc-RDePue0RB5PLQg/zh-cn_image_0000002791564738.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA7A20461A9868ADC9285E65FB16A795F652A78FF77AA95B392307E3664FC7C4)
 
 ### @Link -> @Param/@Event
 
@@ -731,7 +731,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/XYMNYCjJSeWJ59WaxVu8xA/zh-cn_image_0000002817505841.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=B55F20641AAA4E5A0C3020F50FFBB1648A991AAD8559DA14BCFA969382872976)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/_LCm6UApQoWLI517u8teHQ/zh-cn_image_0000002820524691.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=40EF61FCC4CEBE28C15B7349F5EB8F70ABA2761CA9FD7E6F075DFE4DF1523519)
 
 ### @ObjectLink -> @Param
 
@@ -861,7 +861,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/wrgpxqFMQp-r40DMVvQUGA/zh-cn_image_0000002788306412.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD997130647B450465F02CEC9DC658BFF38D48EDBCC1BB1B092787837D5F5796)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/GA8Cbqo4Snug7EkJYzXjJw/zh-cn_image_0000002820404689.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD6ACB3F4FF19C41F5049C53414AE97485CDB5977623DC7F290EE3B432BEAA58)
 
 ### @Provide/@Consume -> @Provider/@Consumer
 
@@ -957,7 +957,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/FJ4OxCVWS0SVdZ1ef4NiFw/zh-cn_image_0000002817425775.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=1023DD29B1EBD137CF9C09F2607A2D20968578393AAAB1F94F61F2962CDB13D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/F9uM4uNmSu6-RLOgMN5ZCQ/zh-cn_image_0000002791724712.png?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=74337BBBAECA86E494E10A3B14D1C67C410092864712E5CE92728650D4911F97)
 
 **V1的@Consume不支持本地初始化，V2支持**
 
@@ -1021,7 +1021,7 @@ struct Parent {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/GczF-3SLS8WSl_7Gj4QeIw/zh-cn_image_0000002788466356.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CB9D110E6623AF4187AD36EEC74C11F389AF523A95430565B2EE8EFD9881BEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/biTwId8yTFyCmmzFCxZm7g/zh-cn_image_0000002791564740.png?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=D46EB9B4FE12694FBDAED220A0541EDD6BF257FAC9B77470917411D003490EAA)
 
 **V1的@Provide可以从父组件初始化，V2不支持**
 
@@ -1098,7 +1098,7 @@ struct Child {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/nrIOUMDsQ_Ke48P5cBnBew/zh-cn_image_0000002817505843.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1D7E468A64EA0F955F986FFC27A6E7D98ABC0D1A9C693D7BB80B641EEE1DF5A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/4EdkMDskRk-7KBkHr8gpbg/zh-cn_image_0000002820524693.png?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E5E4766E583D1C6EAFCFCC19965684EAE8655DAF70D01463F6A080394C518ED)
 
 **V1的@Provide默认不支持重载，V2默认支持**
 
@@ -1188,7 +1188,7 @@ struct Child {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/F7ESTJ0RRhS-jy4EvbEiIQ/zh-cn_image_0000002788306414.png?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAF5BC92100CB88E798BCE4C01BB0413DFCC73833396AA802292F758A48EA2CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/C_Gc8vhSQZCGUAn2T0S87g/zh-cn_image_0000002820404691.png?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B581D06C6041FDBD0E8BFF746EF550FA34A3DCB2162921273B3EF1F60561C66)
 
 ### @Watch -> @Monitor
 
@@ -1278,7 +1278,7 @@ struct MonitorExample {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/IcJN5v0dQmuTcr_VA6YgJA/zh-cn_image_0000002817425777.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=B06CE7821455E32FAEFCE0BA98A5955FC720013B634B092EF63DDD7FDC54B6A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/o6m_GCQSSx2PFctJ_y7fmw/zh-cn_image_0000002791724714.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAF499B8A70707722B50BFAD64A848AF064D85CBD1DE9E3302B3BAE3A467AD10)
 
 **多变量监听**
 
@@ -1383,7 +1383,7 @@ struct MonitorExample {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/ZKGTEbxrTcyAO7P00jpW0A/zh-cn_image_0000002788466358.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=35FB085621B6686A15F62906BFC9C811D6EC9A4A26DE68A81425DE3968A86731)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/TVLWXi0-R82OObTrpQ434A/zh-cn_image_0000002791564742.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCF398A885E1D9C5897FDB025EE5E31107332220FAB1A8670F28849486A1C03D)
 
 ### 重复计算 -> @Computed计算属性
 
@@ -1462,7 +1462,7 @@ struct Index {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/947E1p1eRaak-1RcuU38Cg/zh-cn_image_0000002817505845.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=88E14A518948BE65EE563083DA79D4B50AB2143BD9829083C59BEAE0BCB8A5DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/2ztyFqGWTMKeEySTq9rXnA/zh-cn_image_0000002820524695.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=2039ECF4303419458CF1E0973791130290A04245FCC4D2B2C2F75D3801A7C794)
 
 ### 双向绑定由$$迁移!!
 
@@ -1534,4 +1534,4 @@ struct TextInputExampleV2 {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/cCf6OV1vS-W_97qIAA2pPQ/zh-cn_image_0000002788306416.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004700Z&HW-CC-Expire=31536000000&HW-CC-Sign=95BC01EFE36E0A093D955DA1CAEBE9DA179D4684A54100FE97D8AB4D985D9C77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/9qlfZGgLReuoKfwDIm7VSA/zh-cn_image_0000002820404693.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DCDA5759A66A9B5206163147FE656DAA2860D012D55C2A7617CCC3AFDC5A2FA)

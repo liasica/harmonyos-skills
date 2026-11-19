@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-processi
 title: 拉起文件处理类应用（startAbility）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起文件处理类应用（startAbility）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:50+08:00
+scraped_at: 2026-11-19T09:47:27+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:21c15552282b91f0215808c4ff2f9bd57b0b64738ee9013661c9c2b5f3d2cf74
+content_hash: sha256:604763bc63f5a098d2cd037105882fdcde55588a0521578013c5e2b4a7eae5df
 ---
 
 ## 使用场景
@@ -16,7 +16,7 @@ content_hash: sha256:21c15552282b91f0215808c4ff2f9bd57b0b64738ee9013661c9c2b5f3d
 
 图1 效果示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/lJo_sS2HRlu3svP-lnlB3A/zh-cn_image_0000002788306152.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T004513Z&HW-CC-Expire=31536000000&HW-CC-Sign=571D79E38858CF9982369563869A6F1CCE9EF8282A22F5D24859E76384807711)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/lygYeoGyRiOOiMsvHJQUbQ/zh-cn_image_0000002820404429.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T014636Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5FDB36648830A697C7E57295CD49BC37213926B9953E3131084B27797F00968)
 
 ## 接口关键参数说明
 

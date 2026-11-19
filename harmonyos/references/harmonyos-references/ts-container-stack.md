@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Stack
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > Stack
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:08+08:00
+scraped_at: 2026-11-19T09:50:55+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:98144f3043acc147f4b64575806f97195a91e4d8319db16cf5efb7de65034f83
+content_hash: sha256:83c4b94cee13b9446e59f7113f58693178a0b731dfb8e9aded6e0cddd17c84f7
 ---
 
 堆叠容器，子组件按照顺序依次入栈，后一个子组件覆盖前一个子组件。堆叠顺序基于子组件在父容器中的声明顺序，后声明的子组件具有更高的渲染层级，在视觉上覆盖前面的子组件。适用于需要层叠布局的场景，如页面上的悬浮按钮或提示信息、图片或视频上覆盖文字标签、多层叠加的弹窗或对话框等。相比使用多个容器嵌套实现层叠效果，Stack提供了更简洁高效的解决方案。
@@ -134,4 +134,4 @@ struct StackExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/2xV6po6zReiKkRGMyOpBqQ/zh-cn_image_0000002788468776.png?HW-CC-KV=V1&HW-CC-Date=20261114T005008Z&HW-CC-Expire=31536000000&HW-CC-Sign=47D46E6DBA03304583F094C3B289E6FEDD4C4B7728CD3AC19E927B27874087C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/7K6Dpq1dRKq7HedLhjporw/zh-cn_image_0000002791567162.png?HW-CC-KV=V1&HW-CC-Date=20261119T015000Z&HW-CC-Expire=31536000000&HW-CC-Sign=39A6B6652A4A7DC4061E465D5E5604121926CDCD9BF438984D97C0433C84BD94)

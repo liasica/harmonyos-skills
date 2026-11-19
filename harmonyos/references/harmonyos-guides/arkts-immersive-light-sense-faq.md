@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:05+08:00
+scraped_at: 2026-11-19T09:47:42+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d3e2149e4ac638d09667e2ed27e0ac4cd80ad29b57f2fc5b92abad5e0437c149
+content_hash: sha256:745e485f6bb9eef6b23e4ae0278a266bc2cda0914e19449df460d62d8dba1faa
 ---
 
 本文提供沉浸光感开发过程中的常见问题及解决措施。沉浸光感的完整能力介绍及开发指导，请参见[沉浸光感简介](arkts-immersive-light-sense-overview.md)。
@@ -150,7 +150,7 @@ struct MaterialScopeAdaptExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Uc5m4c6pQE--LLNQgGOfgQ/zh-cn_image_0000002788306822.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=38B6AAE47F60B979334BAF7A87089D90EF41B408C9D1A74373E6E2C329FDEFD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/RLycD-NkSfCmdYx8HNJMNg/zh-cn_image_0000002820405101.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=70A12D91C68DA3304275A6897E4568839D1DE1FA74E78FDD5D22026A0FAC07C7)
 
 ### 背景色或背景模糊遮挡材质效果
 
@@ -468,13 +468,13 @@ Column() {
 
 * Checkbox可视区域为40\*40的圆形，材质渲染区域为40\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Ar_uCJAXTPemcpOuOQSwbQ/zh-cn_image_0000002817426185.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D7FB6EA25AEAE5A6A38DEB34521C3B4A4BF3F4BAB1422ADF5EB82C2C9EB0070)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/BapddOKjQkim7fU2IWItYQ/zh-cn_image_0000002791725122.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB9D7841FF4407B206C4631FB3764403BB52543BB8B4F52F903219CB7427CDDD)
 * Text组件可视区域为文本内容，材质渲染区域为100\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/CjCL2oJTTK6CV26q78v7cw/zh-cn_image_0000002788466766.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=69EB13DBB84FC98B5A28714FE7533583EB8B346C3944CDE824A1EB690704E482)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/yd2Fm4bRQW6cTL1AJUuOgg/zh-cn_image_0000002791565150.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD0668BDCF3C3A378EB5C38EDB87B80F9912607D495365C1FA1F87F83FC27A6E)
 * Progress组件可视区域为胶囊形，材质渲染区域为100\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/rnVRDe5wSh-7qI_ZNr1Tyw/zh-cn_image_0000002817506253.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BACCC42ACA99F71E12737E1699A471DF774B5A246F08C8582A75534DD38EF6B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/E_HwCNRyRwOAqieQs8QDsw/zh-cn_image_0000002820525103.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=B45B592C187F8B55B263CFB7C2EF8BB0BB5197F825F44585239471FDEEF58EA0)
 
 **可能原因**
 
@@ -550,7 +550,7 @@ Row() {
 
 同时给组件设置沉浸式系统材质和背景色，材质效果被遮盖。例如TextArea组件设置背景色后，会遮盖材质效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/4gdKQynSSBSi7vMeridv9w/zh-cn_image_0000002788306824.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F931E721043435AC5876AF5A3CCEE1CD2E114BF955F0864154D17DA5121388F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/eZauMwy8SS6U2qVTLYbpAA/zh-cn_image_0000002820405103.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7F601C1A626B0E50C0CB0B4D8C366B8D0D2AC808CF22E8F49FCDF98117E231A)
 
 **可能原因**
 

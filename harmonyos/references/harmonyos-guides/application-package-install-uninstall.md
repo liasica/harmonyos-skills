@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-p
 title: 应用安装卸载与更新开发指导
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础知识 > 应用程序包安装卸载与更新 > 应用安装卸载与更新开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:46+08:00
+scraped_at: 2026-11-19T09:47:23+08:00
 doc_updated_at: 2026-04-29
-content_hash: sha256:74810dc57fef6ce9e16738e811831bb01d243d69cdd919280fc37fc1d599d0ca
+content_hash: sha256:4638772d7af1a3ab177b180673292752550cc2b9f730859e273cdd8d78df67c6
 ---
 
 本章节介绍应用程序包的安装卸载流程和两种更新方式。
@@ -16,13 +16,13 @@ content_hash: sha256:74810dc57fef6ce9e16738e811831bb01d243d69cdd919280fc37fc1d59
 
 **图1** 应用程序包安装和卸载流程（开发者）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/QvjFclXSRXS-GYciSBan6g/zh-cn_image_0000002817505535.png?HW-CC-KV=V1&HW-CC-Date=20261114T004646Z&HW-CC-Expire=31536000000&HW-CC-Sign=A198CD5EE21AAF364ED4190873C0C0D5E2D747475EC2F379C82C67FACF12CE93)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/w4Db8H4DRee6bG2tbiwNTw/zh-cn_image_0000002820524383.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D2398895F3E17F3768A701FCDE23153FB514F1BD082783C25F779B164A71849)
 
 应用上架应用市场后，终端设备用户可在设备上通过应用市场安装应用。
 
 **图2** 应用程序包安装和卸载流程（终端设备用户）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/RtYey5SLQ5WnCIfqpUtfRQ/zh-cn_image_0000002788306106.png?HW-CC-KV=V1&HW-CC-Date=20261114T004646Z&HW-CC-Expire=31536000000&HW-CC-Sign=0701E7237CD39D9AA063595795F623AF513986128A40482D86EB2824A1B6F7B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/mHBLO57JRPWEfnpuMXPG0Q/zh-cn_image_0000002820404383.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBA09009F868AA41C69C87BBC45EEBC93A1914828FE4868310E3CCC89A61E0F2)
 
 ## 应用程序包的更新
 

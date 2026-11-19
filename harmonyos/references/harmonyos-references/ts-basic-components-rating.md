@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Rating
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Rating
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:13+08:00
+scraped_at: 2026-11-19T09:51:01+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:eb06325f633fbf0bacbb8f3764256e26cc21dcbfe0f4fdbc4aec93249e3159ab
+content_hash: sha256:88fb2f7a911b39c7a55ae18654f12a295a35760e366db2d0fe2512c296fc977c
 ---
 
 提供在给定范围内选择评分的组件，通常用于商品评价、内容打分等应用场景。
@@ -395,7 +395,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/-SJmWzMHT9GM35nys5Y2bw/zh-cn_image_0000002817508407.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=68521F12BCE0C6DC1B7BCB0CB16F9C2B82C2F9C168C02E46563DA1555BAEE8AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/9ywarwDcQcyx0UKhFpxv-Q/zh-cn_image_0000002820527257.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015005Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC48A006473319EE4A67E4B1D2C0320D34DA0B48932E4073D105DBE70172169B)
 
 ### 示例2（自定义评分条）
 
@@ -601,7 +601,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/7MjyelPCQmOGAsOG7nMzaQ/zh-cn_image_0000002788308976.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0B0010BDA8A5D8A4F650324AA36D3EC4D503CF1C5F22719FFBA38171A624F4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/pFgq1TkZQWWxORpkWb_Mcw/zh-cn_image_0000002820407259.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015005Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5C51C9D9DEE377F17FF7BD7E94AF48BD507035E211D9F5F26107BCC64B76B60)
 
 ### 示例3（通过Resource资源设置评分的样式）
 
@@ -639,7 +639,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/O0R0pPEQQ-muSi3eDoqpAg/zh-cn_image_0000002817428339.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=248CA7A070064DE0A03E3287251F3DE9784ABBAACA1FFCD18A8569C0AB3CE59E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/YgVmFH5DQ0aSXRMo2jhutg/zh-cn_image_0000002791727278.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015005Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BA75DF1DFFE021075BDB8EA9513ED6B37279B7578CEC40B92B6FCB7C99D9900)
 
 ### 示例4（设置评分的样式）
 
@@ -680,4 +680,4 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/2KieDb1NQZC2hPjwO-qjeA/zh-cn_image_0000002817428339.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005012Z&HW-CC-Expire=31536000000&HW-CC-Sign=40FF8C5EDD0412E5E28E41942C82209C033AE261F7B0366AF3678D69832F48ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/So1wkYfeTpuf4WToz_7tVw/zh-cn_image_0000002791727278.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015005Z&HW-CC-Expire=31536000000&HW-CC-Sign=E94C8EB43965267ED8E56DD8F5D65A4ECEA7AEDD40B9CDAFA9A095355737594C)

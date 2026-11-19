@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 管理归因角色
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 开发准备 > 管理归因角色
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:12+08:00
+scraped_at: 2026-11-19T09:48:52+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f672c710d7560f09061c38d93896ca3656dc764dc0f3d62d04a82bd34353c169
+content_hash: sha256:4e5d0c9db8a78330905490b3bcd07243869b2afefe4d2345078798995fcf5371
 ---
 
 应用生态伙伴通过应用归因服务云端管理台注册归因角色及配置信息，包括：角色、名称、回传地址（用于接收归因结果回传的URL）、公钥。注册成功后平台生成归因角色ID。
@@ -51,7 +51,7 @@ content_hash: sha256:f672c710d7560f09061c38d93896ca3656dc764dc0f3d62d04a82bd3435
 3. 点击“生态服务 > 应用服务 > 开发服务”下的“应用市场服务”卡片，进入应用归因云端管理台。
 4. 点击右上角“去注册”，进入“归因注册”信息填写页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/HopyF0t5R32mi6SyWwUbNw/zh-cn_image_0000002817507337.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=20114F17EC0484B9F424548BF10642A6F7603B2EC8726DC30EA0A467B5E21293)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/e3Ui6QaYSru2uCybi97hVA/zh-cn_image_0000002820526187.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FC6392987464E4B8578848C85CC3773934A72653989FE7F828E9796AE98A40E)
 
    参数填写说明如下：
 
@@ -63,7 +63,7 @@ content_hash: sha256:f672c710d7560f09061c38d93896ca3656dc764dc0f3d62d04a82bd3435
    | 回传地址 | 填写用于接收华为应用归因回传归因结果的URL，推荐使用HTTPS协议。 |
 5. 注册信息填写完毕后，点击“提交”，生成一条状态是“新建待审核”的注册信息，后台运营人员进行审核，审核生效后，完成注册。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/DdJ_6DiDS1eCO3h34IHUiQ/zh-cn_image_0000002788307906.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=B011A403397B01D12715A7209122AF0E850915AD71825A6C3E490C6B5984F92A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/ezmytV24T1qiBqKM-RSFHw/zh-cn_image_0000002820406187.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=28088B201B874ABB793D4A1CB6111C7FFFD896BF4678333A9E03B2F5F2B2269F)
 
    **说明** 
 
@@ -74,4 +74,4 @@ content_hash: sha256:f672c710d7560f09061c38d93896ca3656dc764dc0f3d62d04a82bd3435
    状态为驳回，表示未完成注册。编辑该条注册信息，需要重新提交运营人员审核；删除该条注册信息，无需审核。
 6. 注册成功后，平台生成合作伙伴唯一标识（归因角色ID，用于归因过程中，标识相应的归因角色），在注册列表页展示已注册的信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/d04JHBCzQyOZNwV6sbCecQ/zh-cn_image_0000002817427269.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDB029C73568670F4F1CA598B9C40AE523FBD5E69F856F124EAB65BC8BC93E9D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/IvlO1wpHTCGyeD3Lz-XG5w/zh-cn_image_0000002791726208.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9CCE5F9F7E565BC19C6C957ED2A0C5AE6E4BFCDBF4AFDAB47F4C49EB5A04E09)

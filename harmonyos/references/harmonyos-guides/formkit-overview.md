@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/formkit-overv
 title: Form Kit简介
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > Form Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:18+08:00
+scraped_at: 2026-11-19T09:47:56+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:6de9ee8eda6e04eb5cdc78d7f3c08a83c8cd89b3f7669ac6c5d2c9f8b7984749
+content_hash: sha256:840f67ac1d39b834d1a92104af2a3937ced6991d4155fd610b4f93dc081cc9a9
 ---
 
 Form Kit（卡片开发服务）提供了一种在桌面、锁屏等系统应用上嵌入显示应用信息的开发框架和API，可以将应用内用户关注的重要信息或常用操作抽取到服务卡片（简称“卡片”）上，通过将卡片添加到桌面、锁屏等系统应用上，以达到信息展示、服务直达的便捷体验效果。后续统一使用英文名“Form Kit”进行表述。
@@ -23,13 +23,13 @@ Form Kit（卡片开发服务）提供了一种在桌面、锁屏等系统应用
 
 **图1** 卡片常见使用步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/T_dGfL1sRfWZfp9A28rBqw/zh-cn_image_0000002788307250.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=111D0B6DD9FFFB2E8DC7887DF49C0F7E499B74C8856940B9E74764347EEC4ED9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/-VHdoQasQ0-nsQQe0SAUVA/zh-cn_image_0000002820405529.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=072CD51A067BF682175D17C4E6AAEFEEFCB28659B55D043FAF94DDA1F9259373)
 
 ## 服务卡片架构
 
 **图2** 服务卡片架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Rab5pSe5QzK81gL-6rSH9g/zh-cn_image_0000002817426613.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE70071EBE3A3B21CF588B3D6CDA3F538D489339FCD386164A711B552A5E6F79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/1oZyuMP7R--pelAIfcDLCA/zh-cn_image_0000002791725550.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=382ACA8758B62F10D14B283341B7F06834E4B4A5E08221F63C81370E32A60C95)
 
 **卡片场景中涉及到的基本概念**
 

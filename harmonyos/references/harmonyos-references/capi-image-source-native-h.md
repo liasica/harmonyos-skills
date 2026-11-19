@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_source_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_source_native.h
 category: harmonyos-references
-scraped_at: 2026-09-24T06:54:45+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:314d0129884e5595c59569b6c0ae983e736411c13cdca70c262fb8c9f1d78f90
+scraped_at: 2026-11-19T09:53:49+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:18156d8af9fc77053fafe556b12d56e5c3c051f452e9de73af1dd57832398e8c
 ---
 
 ## 概述
@@ -304,7 +304,7 @@ Image_ErrorCode OH_ImageSourceInfo_GetMimeType(OH_ImageSource_Info *info, Image_
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_ImageSource\_Info](capi-image-nativemodule-imagesource-info.md) \*info | OH\_ImageSource\_Info指针。 |
-| [Image\_MimeType](capi-image-nativemodule-image-string.md) \*mimeType | 图片源的MIME类型。 |
+| [Image\_MimeType](capi-image-nativemodule-image-string.md) \*mimetype | 图片源的MIME类型。 |
 
 **返回：**
 

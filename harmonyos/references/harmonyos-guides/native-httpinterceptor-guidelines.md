@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-httpin
 title: 使用HTTP全局拦截器 (C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用HTTP全局拦截器 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:36+08:00
+scraped_at: 2026-11-19T09:48:15+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:663321e76fbe42b01d4e81725d2881c9f469dd35a2781e01c8dced736c1c9c95
+content_hash: sha256:e0483cfe0f47785d1f70d6255c17382e79f0406370f9778ad3d2bed355a34dd6
 ---
 
 ## 场景介绍
@@ -808,7 +808,7 @@ libhttp_interceptor.so
 
    注意：如图所示，在add\_library中的entry是工程自动生成的module name，若要做修改，需和步骤 3 中.nm\_modname保持一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/cJ3buFtvSsSryl_u8Yk4yw/zh-cn_image_0000002817506881.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=E564D46F30D46CD614604673AB9B76198494F36F02A24A0E17CFA4F9EA5CF379)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/wOH10yuDQPubITk3nRM_8g/zh-cn_image_0000002820525729.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEFA003EE4CA32B038BC2319C2FEB35E3731743ED81E0E10F7F127B78C0D5996)
 7. 调用HTTP全局拦截器C API接口要求应用拥有ohos.permission.INTERNET权限，在module.json5中的requestPermissions项添加该权限。
 
 完成上述步骤后，工程搭建已全部完成，后续可连接设备运行工程并查看日志。
@@ -818,70 +818,70 @@ libhttp_interceptor.so
 1. 连接设备，使用DevEco Studio打开搭建好的工程。
 2. 运行工程，设备上会弹出以下图片所示界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/s50qcDAtQlqBzzdpY172Cg/zh-cn_image_0000002788307450.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC40C44129992DB25941D260A243D987EF88ED6B371D8DD7E0010C31DDFA1763)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/MX3YZaRPQY2N27_QJFNgwg/zh-cn_image_0000002820405729.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBF4AE988F4F2D6E5DEEBACB57D060C8BA07175AA4ECFA91C0E1022CDF90B0CD)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/B-KF_ktHS3mO0404KeEilQ/zh-cn_image_0000002817426813.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=84C83FB9732FEE6E970A1344132EC1E0E489B915FF34B9A3848DD9CE7489DFEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/zsz0nXkBRyuXrFrBN4T1nA/zh-cn_image_0000002791725750.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FA85C7AF55EF6C6B6309B19EDD932B822AD4DAF30B48908F0F03EEC1DE64F08)
 
 * 点击Add Read Only Response Interceptor按钮，添加一个HTTP全局只读响应拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Ni0T2M9sTTGx740c9tymKw/zh-cn_image_0000002788467394.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FD3C497FB7C2EA1E489C55FE8BD9AFE4B521A7BBD088D65C8A9BBC3A4041F96)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/QW1i1xgWToG7F_Y3kA4ejg/zh-cn_image_0000002791565778.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=71EB6530E5744D41FFD903065918A293B9DFC13EA1AE5DAA26EC01A7C7D74647)
 
 * 点击Start Read Only Response Interceptors按钮，启用组ID为1的所有只读响应拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Bp3kM2OuSI-jhUbGgUwPZg/zh-cn_image_0000002817506883.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=6696D13B2EC64B9E30A928411DBD8F8862168D1DDD23FD33668080F0B29FA311)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/jD6yJqQoTOug67UHB0iMMQ/zh-cn_image_0000002820525731.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CC62963B88EF2C6A692EFA269E71BC63B2626A103B342243C5E8B4365599989)
 
 * 点击Add Modify Request Interceptor按钮，添加一个HTTP全局可修改请求拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/k8op-I0KROSsiYEmENoNZQ/zh-cn_image_0000002788307452.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=45328551C4D2B312B28B2A55330366681607D949EEB5539E655E7E5CF63740BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/3SlFF-xnQneI67KE8fO71Q/zh-cn_image_0000002820405731.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE6EB754F5688DF8A6B70544B0E90F6003C43D0A2501842C02280019BDEF4A75)
 
 * 点击Start Modify Request Interceptors按钮，启用组ID为2的所有可修改请求拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/-rcOQxZ1RRmDSPmxSU4UTQ/zh-cn_image_0000002817426815.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA1988D37EDEEFE22F899A8148DB3E021820AD211D35957929CB82155E11A332)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/vTo0HzBOTlmYuC2MX2UXtg/zh-cn_image_0000002791725752.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=378C82E78028D68F8775A43A4FE915440453FB4DDCC8A13EDFA0C809413922FD)
 
 * 点击Add Modify Response Interceptor按钮，添加一个HTTP全局可修改响应拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/pajaw_a2SyGW8A_7uHRN3w/zh-cn_image_0000002788467396.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=137A57DF5EE6216077F13DEA23FA4A09AB6AC9961EAD1C189F8454B9A9B19D10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/FA8rYlo5SvytNOi-GHToBQ/zh-cn_image_0000002791565780.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=0ACCC9C704C7B7BB9E9CD2CBDE96A8BB4305B9FDE07B323CCFD2C097A8366578)
 
 * 点击Start Modify Response Interceptors按钮，启用组ID为3的所有可修改响应拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/WHS2wkiVQFKuFFgMe5QtCw/zh-cn_image_0000002817506885.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=7051E0BF8C027246F0F5E799553801C6FA4892F75F32CFF5F3F43E4974897A4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/B_Tn8RKUR1G3ksmG3IHPBw/zh-cn_image_0000002820525733.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C41307B6F16D990BBEB4E1729D8B96F1D78FC1F67AA40F51FE385555D075BF2)
 
 * 点击Send HTTP Request按钮，拦截器会捕获响应并打印相关信息到日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/XdTRpH4uQSyFj3BaI43k9Q/zh-cn_image_0000002788307454.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C8F6996AB548B4E38F63ACA4A86960CF653C2B8B401AFBEEDB75603CA083319)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/cY1h_ml0TR2FQhJQnJHY2g/zh-cn_image_0000002820405733.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=82C1692F2A48FAD0FAD668B876C2D31CC2E7CAC41CEB5A6A196879CA81F89789)
 
 * 点击Stop Read Only Response Interceptors按钮，停用组ID为1的只读响应拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/0lVCYlx6S-a0LIyJZ1skDg/zh-cn_image_0000002817426817.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE67DC7F0B48DEB6964143FFA97B87E819B7A8C16D73AE8AB150693225010D3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/MzHH8nFBQVW0rdDtdL7Ohw/zh-cn_image_0000002791725754.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2234853AE1FEE058340A30B821621061BEBEC56FBF6A8D8154C2361BD8A16B1)
 
 * 点击Stop Modify Request Interceptors按钮，停用组ID为2的可修改请求拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/PZZn-BzQQ9iUicQfC4FdXg/zh-cn_image_0000002788467398.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=501D5AA18E0BD1C790F15F3B0132601193E38877BF4C2775EE6EA42C34CA302C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/dw5NKG07RAumyIofsRew-Q/zh-cn_image_0000002791565782.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=48FAF86D7986C648427C51BA7B99EB27C698477E561AE21AD492F38D3C8AF92C)
 
 * 点击Stop Modify Response Interceptors按钮，停用组ID为3的可修改响应拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/5xbjTiBAToexBJkYVmMG-A/zh-cn_image_0000002817506887.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=452CD6E8AF0B9A06D19A2742452B4EB37BC48471556C56545E2FDCE21D89198B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/VG7bwYdPTo2yEkwGKQt5vQ/zh-cn_image_0000002820525735.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=752550896944536AE6081740EA5DC6E6473A9559766B8D9BC61894851EDB72DF)
 
 * 点击Remove Read Only Response Interceptor按钮，移除之前添加的只读响应拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/aeiyKk3TQoq9d0mnSltVGA/zh-cn_image_0000002788307456.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=85C89E85713C9AF7D03B04D873BAFFC4D6F8F2D56041272E040BF1F4D8DE3EDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/h8qSSnwgRIydzc3GIvS0Yw/zh-cn_image_0000002820405735.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A897FEB2DCA69078F42B8ED448A0714710758814C30B2B26F39E36E5F67F096)
 
 * 点击Remove Modify Request Interceptor按钮，移除之前添加的可修改请求拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/-fmIhp55S6Ka5P_BsUiz8A/zh-cn_image_0000002817426819.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB392A8B311EB2B51DEF5834A5AF9863A772F6701CC7BD4E0894F6C8AB67158B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/J_tK1mw0RB6L3_IK844AdQ/zh-cn_image_0000002791725756.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD2C2391FFE9397F3EFDF0FBA6284D78803227C92CC97F945AC92A29E5E46995)
 
 * 点击Remove Modify Response Interceptor按钮，移除之前添加的可修改响应拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/S1_OyexPTRuGnMZt3MzXTg/zh-cn_image_0000002788467400.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=A13FC0E052F2E4B18A130E507275E493896FB766373AAD75CE4A01FCE3F38676)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/frNXHZKQSkqeGAVHNsRwtA/zh-cn_image_0000002791565784.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EF4C096F826D38988DF3B6D65E5001E0B4532F2B3278AD7A5FF09911933CA72)
 
 * 点击Remove All Read Only Response Interceptors按钮，移除组ID为1的所有只读响应拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/GhsPinYeSgG1CDHknn5lkA/zh-cn_image_0000002817506889.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF0B8B0885D276F70939596153A5813828050EC08B65A20AB5B4EFC9DAF6C2AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/DZriaakjR9ywdPSj3KFWkQ/zh-cn_image_0000002820525737.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE683C30C9E4D3CA9AD2D34E3C0150B2264B5662086F059777EFEE00F0945AA8)
 
 * 点击Remove All Modify Request Interceptors按钮，移除组ID为2的所有可修改请求拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/3uhRo0hRSw2hFj_WjBBwrg/zh-cn_image_0000002788307458.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB8E224D92D93758963C3580DB13331E734E1D2E75F50850EA166E02BECBFB99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/-dYyRasTQ4KfMfiG4K9DhQ/zh-cn_image_0000002820405737.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=49503FFD0EAB53E74F4214D62024EC33FD26066C64EB0474D3E09CC94D901763)
 
 * 点击Remove All Modify Response Interceptors按钮，移除组ID为3的所有可修改响应拦截器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Akwnv-jYQaKNnCuadXyl3A/zh-cn_image_0000002817426821.png?HW-CC-KV=V1&HW-CC-Date=20261114T004556Z&HW-CC-Expire=31536000000&HW-CC-Sign=46EC3AE2808682B8E848E72E738143D439A8B6041FACB5BC62E0E155B84C587D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/fpXlowN3Qb2s6E_jr6kNCw/zh-cn_image_0000002791725758.png?HW-CC-KV=V1&HW-CC-Date=20261119T014814Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B4D907EE1C1AD93B604CE82790FA6C7712BB9A4E8EAF3841286B02E0932F2DC)

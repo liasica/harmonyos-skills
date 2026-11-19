@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-appear
 title: 控制窗口外观 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 其他开发场景 > 控制窗口外观 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:13+08:00
+scraped_at: 2026-11-19T09:47:51+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:4255c53f7c31d33462efa6a1c90c7e927d07743d327f0f6ebcadb5f26ea1ed4a
+content_hash: sha256:eadaa80bb62fa57cb457509f634a9baacb58c25e5b2ddd3990377877cbc7a182
 ---
 
 ## 场景介绍
@@ -31,12 +31,12 @@ content_hash: sha256:4255c53f7c31d33462efa6a1c90c7e927d07743d327f0f6ebcadb5f26ea
 
   掩码仅支持取值为整数0和整数1的二维数组输入，数组行数对应窗口高度，列数对应窗口宽度。整数0代表对应像素透明且不可交互，整数1代表对应像素不透明且可交互。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/9OvfbPGCSfCpck1c6rWZ1Q/zh-cn_image_0000002817506579.png?HW-CC-KV=V1&HW-CC-Date=20261114T004534Z&HW-CC-Expire=31536000000&HW-CC-Sign=81ED70EA44385451EC28DA4A45670F45B184E6D9A1DBEAD3D08B4E23D089B423)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/gMN9tcbrT8Ojz7hRupt6Vg/zh-cn_image_0000002820525429.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=256BF808BA69E01152132CE5AD5F942D9A77110719B3F1C057E62E0DF92ACE9B)
 * 从API版本26.0.0开始，支持使用[setWindowMaskWithAlpha()](../harmonyos-references/arkts-apis-window-window.md#setwindowmaskwithalpha)接口设置异形窗口的掩码。
 
   掩码支持取值在[0, 255]范围的数组输入，数组长度等于窗口宽度乘以窗口高度。整数0代表对应像素透明且不可交互，整数255代表对应像素不透明且可交互，0~255之间代表对应像素部分透明且可交互。此接口性能优于[setWindowMask()](../harmonyos-references/arkts-apis-window-window.md#setwindowmask12)，推荐使用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/JvQ90d1eR8ChZB2NvOgtLw/zh-cn_image_0000002788307150.png?HW-CC-KV=V1&HW-CC-Date=20261114T004534Z&HW-CC-Expire=31536000000&HW-CC-Sign=E89772841BC3E4743913668A10BD5678D79404F57401E663D74514DD41DBEC9F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/kxdr4ZGzQSu2IcIjPHVmYQ/zh-cn_image_0000002820405429.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=8904D3B2EA83B472AE004F9ABE481D69A2B24722DB50D8C7A1D65A03C8B3F6C1)
 
 此处以设置子窗口的异形窗口为例。此例主要实现以下效果：
 
@@ -99,7 +99,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/nU1hwFGkQd2roczf1rG1xA/zh-cn_image_0000002817426513.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004534Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3FC2608BF4C72F311F597342E343CE76D07569E023E7185BB5E785D442E7D70)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/P_NZDgvwTfK2_81D3qemCg/zh-cn_image_0000002791725450.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=32876B6CC1905A29B65D4DD67F9F8F3E802A5FCCCF983D99596AE99D16C38AC0)
 
 ## 窗口阴影
 
@@ -130,7 +130,7 @@ struct Index {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/zRavVLE6R5CgTWuDWKGKyg/zh-cn_image_0000002788467094.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004534Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C242C5950C6591C7AD1A63179554EF3D76252FA29D42D4C2A3B5B8F84973E24)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/pTO6YI8VSCGaYiPHpE5RFA/zh-cn_image_0000002791565478.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=4794D23092EC8ADCDAA01ED17A65EBF3699D2AFC8FF8F9E789904A8738466165)
 
 ## 设置窗口圆角
 
@@ -159,7 +159,7 @@ struct Index {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/K5AmzGUmT7SH0JXJcv0bBA/zh-cn_image_0000002817506581.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004534Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B29BBEACAB409B8D9C95E072184B7D1269CF4FEA92C25135CFC236347CEDD25)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/tGYn55KPToy3OtX_RKt-8A/zh-cn_image_0000002820525431.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=7725C541EF418133E620EA89B42C81FC3ED72DB25FE248FB2837A8DA400C45BB)
 
 ## 窗口背景色
 
@@ -177,7 +177,7 @@ struct Index {
 * 未调用[setWindowContainerColor()](../harmonyos-references/arkts-apis-window-window.md#setwindowcontainercolor20)或[setWindowContainerModalColor()](../harmonyos-references/arkts-apis-window-window.md#setwindowcontainermodalcolor)接口设置窗口容器区域背景色时，容器区域背景色默认跟随系统颜色模式：浅色模式下为'#FFF0F0F0'，深色模式下为'#FF1A1A1A'。
 * 需要在[loadContent()](../harmonyos-references/arkts-apis-window-window.md#loadcontent9-1)或[setUIContent()](../harmonyos-references/arkts-apis-window-window.md#setuicontent9-1)调用生效后才能设置背景色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/eHZXN8c-ThufLNfrFLnsxw/zh-cn_image_0000002788307152.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004534Z&HW-CC-Expire=31536000000&HW-CC-Sign=E033DF2AA08FD4BCB5E92E2B2DF4235FE1F82F86CD4934678EC90C9F78CB7DFE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/y5J10hWwSFWi59hr2WJoFQ/zh-cn_image_0000002820405431.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A6205D304721466BCB91A72F03EC8C438328E3FCBDF1483672BAD10815A6B9C)
 
 此处以使用[setWindowBackgroundColor()](../harmonyos-references/arkts-apis-window-window.md#setwindowbackgroundcolor9)设置窗口内容区域背景色为例：
 

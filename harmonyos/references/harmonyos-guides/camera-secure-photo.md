@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-secure
 title: 安全相机(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 安全相机(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:57+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bc377ebc29254f1a04e17d33a77b369f5814644b2c8369d253e70d651fb8e0a3
+scraped_at: 2026-11-19T09:48:37+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:6049d0702b2a5bfca35dfff2397735891bcf5b08fbc5966dce8046769bb4365b
 ---
 
 安全相机主要为银行等有活体检测等安全诉求的应用提供，安全相机的使用需要加密算法框架及可信应用服务。
@@ -21,7 +21,7 @@ content_hash: sha256:bc377ebc29254f1a04e17d33a77b369f5814644b2c8369d253e70d651fb
 
 当前文档主要说明通过Camera Kit完成的步骤，证明会话相关步骤需通过Device Security Kit完成，具体可参考[可信应用服务-安全摄像头](devicesecurity-taas-securecamera.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/C0dQKSxGT7GXolsscC1pRA/zh-cn_image_0000002788467602.png?HW-CC-KV=V1&HW-CC-Date=20261114T004757Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA973F3EFDF172714C38F3821C7E9124B3E6A05E3C582DC85B70B962E55BF3EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/emNoCiHaSAiK0VN0qZp2hQ/zh-cn_image_0000002791565988.png?HW-CC-KV=V1&HW-CC-Date=20261119T014837Z&HW-CC-Expire=31536000000&HW-CC-Sign=5797C20B375B84CD584C85C6AD4764A4AC2604B2F4CD3841C95F5962F4664F22)
 
 ## 开发步骤
 
@@ -29,9 +29,10 @@ content_hash: sha256:bc377ebc29254f1a04e17d33a77b369f5814644b2c8369d253e70d651fb
 
 1. 导入依赖，需要导入相机框架相关领域依赖。
 
-   ```ts
+   ```typescript
    import { camera } from '@kit.CameraKit';
    import { image } from '@kit.ImageKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 选择支持安全相机的设备。
 
@@ -39,28 +40,27 @@ content_hash: sha256:bc377ebc29254f1a04e17d33a77b369f5814644b2c8369d253e70d651fb
 
    当前安全相机仅支持手机前置镜头。
 
-   ```ts
-   function isSecureCamera(cameraManager: camera.CameraManager, cameraDevice: camera.CameraDevice): boolean {
-     let sceneModes: Array<camera.SceneMode> = cameraManager.getSupportedSceneModes(cameraDevice);
+   ```typescript
+   isSecureCamera(cameraManager: camera.CameraManager, cameraDevice: camera.CameraDevice): boolean {
+     let sceneModes: camera.SceneMode[] = cameraManager.getSupportedSceneModes(cameraDevice);
      const secureMode = sceneModes.find(mode => mode === camera.SceneMode.SECURE_PHOTO);
      if (secureMode) {
-       console.info('current device support secure camera!');
+       console.info(`current device support secure camera!`);
        return true;
      } else {
-       console.info('current device not support secure camera!');
+       console.info(`current device not support secure camera!`);
        return false;
      }
    }
 
-   let secureCamera: camera.CameraDevice;
-
-   function getSecureCamera(cameraManager: camera.CameraManager): void {
-     let cameraArray: Array<camera.CameraDevice> = cameraManager.getSupportedCameras();
+   getSecureCamera(cameraManager: camera.CameraManager): camera.CameraDevice | undefined {
+     let cameraArray: camera.CameraDevice[] = cameraManager.getSupportedCameras();
      for (let index = 0; index < cameraArray.length; index++) {
-       if (isSecureCamera(cameraManager, cameraArray[index])) {
-         secureCamera = cameraArray[index];
+       if (this.isSecureCamera(cameraManager, cameraArray[index])) {
+         return cameraArray[index];
        }
      }
+     return undefined;
    }
    ```
 3. 查询相机设备在安全模式下支持的输出能力。
@@ -69,11 +69,11 @@ content_hash: sha256:bc377ebc29254f1a04e17d33a77b369f5814644b2c8369d253e70d651fb
 
    当前安全相机仅支持输出预览流，推荐预览流使用640 \* 480分辨率。
 
-   ```ts
-   function getSupportedOutputCapability(cameraManager: camera.CameraManager, secureCamera: camera.CameraDevice): void {
+   ```typescript
+   getSupportedOutputCapability(cameraManager: camera.CameraManager, secureCamera: camera.CameraDevice): void {
      let outputCap: camera.CameraOutputCapability =
        cameraManager.getSupportedOutputCapability(secureCamera, camera.SceneMode.SECURE_PHOTO);
-     let previewProfilesArray: Array<camera.Profile> = outputCap.previewProfiles;
+     let previewProfilesArray: camera.Profile[] = outputCap.previewProfiles;
    }
    ```
 4. 创建设备输入输出。
@@ -87,19 +87,19 @@ content_hash: sha256:bc377ebc29254f1a04e17d33a77b369f5814644b2c8369d253e70d651fb
 
      安全数据流没有单独的数据类型，同属于预览流，输出能力与预览流保持一致，创建ImageReceiver仅支持JPEG格式。
 
-   ```ts
-   async function createInputAndOutputs(cameraManager: camera.CameraManager,
-                                        secureCamera: camera.CameraDevice,
-                                        previewProfile: camera.Profile,
-                                        previewSurfaceId: string): Promise<void> {
-     // 创建输入流
+   ```typescript
+   async createInputAndOutputs(cameraManager: camera.CameraManager,
+     secureCamera: camera.CameraDevice,
+     previewProfile: camera.Profile,
+     previewSurfaceId: string): Promise<void> {
+     // 创建输入流。
      let cameraInput: camera.CameraInput = cameraManager.createCameraInput(secureCamera);
-     // 创建普通预览输出流
+     // 创建普通预览输出流。
      let previewOutput: camera.PreviewOutput = cameraManager.createPreviewOutput(previewProfile, previewSurfaceId);
-     // 创建安全数据输出流
+     // 创建安全数据输出流。
      const receiver: image.ImageReceiver =
        image.createImageReceiver({ width: previewProfile.size.width, height: previewProfile.size.height },
-                                 image.ImageFormat.JPEG, 8);
+         image.ImageFormat.JPEG, 8);
      const secureSurfaceId: string = await receiver.getReceivingSurfaceId();
      let secureOutput: camera.PreviewOutput = cameraManager.createPreviewOutput(previewProfile, secureSurfaceId);
    }
@@ -110,8 +110,8 @@ content_hash: sha256:bc377ebc29254f1a04e17d33a77b369f5814644b2c8369d253e70d651fb
 
    仅当isSecureEnabled为true时，才会打开安全相机，并有安全序列号返回。
 
-   ```ts
-   async function openCamera(cameraInput: camera.CameraInput) {
+   ```typescript
+   async openCamera(cameraInput: camera.CameraInput) {
      const seqId: bigint = await cameraInput.open(true);
    }
    ```
@@ -120,43 +120,55 @@ content_hash: sha256:bc377ebc29254f1a04e17d33a77b369f5814644b2c8369d253e70d651fb
 
    创建安全相机模式的会话，将输入流、输出流加入会话，需要将安全数据流通过[SecureSession](../harmonyos-references/arkts-apis-camera-securesession.md)的[addSecureOutput](../harmonyos-references/arkts-apis-camera-securesession.md#addsecureoutput12)方法标记成安全输出。
 
-   ```ts
-   async function openSession(cameraManager: camera.CameraManager,
-                              cameraInput: camera.CameraInput,
-                              previewOutput: camera.PreviewOutput,
-                              secureOutput: camera.PreviewOutput): Promise<void> {
+   ```typescript
+   async openSession(cameraManager: camera.CameraManager,
+     cameraInput: camera.CameraInput,
+     previewOutput: camera.PreviewOutput,
+     secureOutput: camera.PreviewOutput): Promise<void> {
      try {
        let secureSession: camera.SecureSession = cameraManager.createSession(camera.SceneMode.SECURE_PHOTO);
        if (secureSession === undefined) {
-         console.error('create secureSession failed!');
+         console.error(`create secureSession failed!`);
+         return;
        }
        secureSession.beginConfig();
        secureSession.addInput(cameraInput);
        secureSession.addOutput(previewOutput);
        secureSession.addOutput(secureOutput);
-       secureSession.addSecureOutput(secureOutput); // 把secureOutput标记成安全输出
+       secureSession.addSecureOutput(secureOutput); // 把secureOutput标记成安全输出。
        await secureSession.commitConfig();
        await secureSession.start();
      } catch (err) {
-       console.error('openSession failed!');
+       console.error(`openSession failed!`);
      }
    }
    ```
 8. 安全模式会话正常启动后，预览流和安全数据流数据逐帧上报，安全数据流每帧数据可以通过[ImageReceiver](../harmonyos-references/arkts-apis-image-imagereceiver.md)注册[imageArrival](../harmonyos-references/arkts-apis-image-imagereceiver.md#on9)回调获取。
 
-   ```ts
-   function onBuffer(receiver: image.ImageReceiver): void {
+   ```typescript
+   onBuffer(receiver: image.ImageReceiver): void {
      receiver.on('imageArrival', () => {
-       // 从ImageReceiver读取下一张图片
-       receiver.readNextImage().then((img: image.Image) => {
-         // 从图像中获取组件缓存
-         img.getComponent(image.ComponentType.JPEG).then((component: image.Component) => {
-           // 安全数据流内容，应用通过解析该buffer内容完成签名认证
-           const buffer = component.byteBuffer;
-           console.info('Succeeded in getting component byteBuffer.');
+       // 从ImageReceiver读取下一张图片。
+       receiver.readNextImage()
+         .then((img: image.Image) => {
+           // 从图像中获取组件缓存。
+           return img.getComponent(image.ComponentType.JPEG)
+             .then((component: image.Component) => {
+               // 安全数据流内容，应用通过解析该buffer内容完成签名认证。
+               const buffer = component.byteBuffer;
+               console.info(`Succeeded in getting component byteBuffer, size: ${buffer.byteLength}.`);
+             })
+             .catch((error: BusinessError) => {
+               console.error(`getComponent failed, err code: ${error.code}.`);
+             })
+             .finally(async () => {
+               await img.release();
+             });
          })
-       })
-     })
+         .catch((error: BusinessError) => {
+           console.error(`readNextImage failed, err code: ${error.code}.`);
+         });
+     });
    }
    ```
 

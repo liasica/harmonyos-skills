@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 焦点控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 焦点控制
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:06+08:00
+scraped_at: 2026-11-19T09:50:53+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c307e772958e1a4572ee30cfc20c04398d3d739001c233e04cc6daaca9f4fc5e
+content_hash: sha256:3406b4912dd9c6cc12c3ba4957700871a54a21a8fdd16c00df95563139462676
 ---
 
 焦点控制用于管理组件的获焦能力和焦点移动行为，支持设置组件是否可获焦、默认焦点、点击获焦、焦点框样式、焦点组与获焦优先级、Tab键和方向键走焦顺序、走焦停留规则，以及通过接口主动请求焦点和自定义走焦逻辑，适用于键盘、遥控器等非触控交互场景，帮助提升复杂页面的焦点导航效率。
@@ -348,7 +348,7 @@ tabStop(isTabStop: boolean): T
 
 **描述走焦时的按键以及获焦组件**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/v9fR7jSWTRKFba18zkflcA/zh-cn_image_0000002788308752.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=0821DEC0862593C3626171DD019075E94052ABE415BC9534469A8EF1DF1D2B62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/lE2elEEiTE268ExKaVf3qA/zh-cn_image_0000002820407033.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=76A40EF6AA80CA80161CE501A4D670EB26B9ECF8BDB255C6A642A16179D6AFB9)
 
 如果当前焦点停留在button2上，按下Tab键将会走焦到Column3，再按下Tab键会循环走焦到button1。
 
@@ -536,23 +536,23 @@ struct FocusableExample {
 
 首次进入时，焦点默认在defaultFocus绑定的TextInput组件上：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ey4jkPx_SAeuVw6qR0D71w/zh-cn_image_0000002817428115.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=45FCCCF8668D1DB9670943DBCA630C2F88213D56050F7E6AFF34B02A9B94F0CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/R8Nuvzc5RcKO7oUq6hTmig/zh-cn_image_0000002791727054.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=385AA468797D0B40BE71F66ACF2069A38FC5784DB055677EE45F43593B6120A5)
 
 首次按Tab键，焦点切换到tabIndex(1)的容器上，且自动走焦到内部第一个可获焦组件上：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/fko6cM7wSf6METGhkPfJzw/zh-cn_image_0000002788468696.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B794434C9828F6D512C8540F72F7D4B974AE79092045E015F55A5F862926CCB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Hubjuol0RbqIRpt6XdtizA/zh-cn_image_0000002791567082.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=7593455914ACA152A571B92024A4BD98C41299F53C410D00BB31369FFA34406E)
 
 第二次按Tab键，焦点切换到tabIndex(2)的容器上，且自动走焦到其内部的groupDefaultFocus绑定的组件上：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/4tQzy42oSoeyV6YMbsVWWQ/zh-cn_image_0000002817508185.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0B73B5253DDAD1389D997CFFAA443028E6FD1FB8503CF3A486F6C7D0AD590A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/T6ECMe2_Qhi86izooPZslg/zh-cn_image_0000002820527035.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5222A2911011730B554D5B747712D617860B9FDFF99EC1C59037B769D536C3E)
 
 第三次按Tab键，焦点切换到tabIndex(3)的容器上，且自动走焦到内部配置了defaultFocus的组件上：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/eaCnhZ3xRouiU1tRvIpDuw/zh-cn_image_0000002788308754.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=0538B5B9D5E92FD16B6222D64151765718EC40D10BE9432AF9ED53D5BB07D044)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/D-A5arn3QVyuv7ymg5PSAA/zh-cn_image_0000002820407035.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=947F3A0AA51BC358C3815A5C494856FF58F0D3003E110515C14357ADD675D9E7)
 
 点击绑定了focusOnTouch的组件，组件自身获焦，焦点框被清除，再按下Tab键后，显示焦点框：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/0sUX0zzPSx2OORBW33MrTg/zh-cn_image_0000002817428117.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=0379117FC34F12C251AE1628953D8F2FCC2C4C2A279FF436AF76CA7F87A137F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/YUeO7HuISTGOns5P3Alq-A/zh-cn_image_0000002791727056.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A53AAFD5B1899C51D68EC62AEBA79D6ED1F8D8BBBBB3A98C0517B7D07C5B229)
 
 ### 示例2（设置指定组件获焦）
 
@@ -633,15 +633,15 @@ struct RequestFocusExample {
 
 申请不存在的组件获焦：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/gbXa5YvRTHGP1Rou9zrMnQ/zh-cn_image_0000002788468698.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=07B3E5297D50D50DF9C01E2913B79C7C76073379716B7BA51CE5C4CCC779CDEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/5qBOhjw6TeyPnpjwLWpxCQ/zh-cn_image_0000002791567084.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=A74897E1D19F77479230F48BE02302B60D48DCA9F5523ABF42E64D113826F091)
 
 申请不可获焦的组件获焦：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/GX73XInoQ7KR_f5RL8KpiA/zh-cn_image_0000002817508187.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED08B22D30B758F53BE9DFEAFF49C8B67E36CF2289E79FEE1291F323D121CC11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/pws8X8fJShiAdrBvsWdhbg/zh-cn_image_0000002820527037.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=94F790451DADFC8CFF889E13D243E9B722A719843CA83F8FD993724B4B6A94C9)
 
 申请存在且可获焦的组件获焦：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/vVc-HwVqQFm6rXZgPq-abw/zh-cn_image_0000002788308756.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=81FDEEDE28ACF955FDE06BF9159194979DE99CD0BF4C986F25E7A2A683D89B45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/xzaJ1vToSYmmO1x8rfbqpw/zh-cn_image_0000002820407037.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB3CFA228AAF646B41D1E82C2C0ACFD5A414EDE9F077C9BB35F986CF333E58C2)
 
 ### 示例3（设置焦点框样式）
 
@@ -673,7 +673,7 @@ struct FocusBoxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/9APL1gIfTYuVxQOSynGrYQ/zh-cn_image_0000002817428119.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=772603FDB5732910F8719236F760EDB20276A1FF904B6B29D192790050DCB8A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/HqbwjV8_SF2HsPaC-v-YAw/zh-cn_image_0000002791727058.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=47F3E4BAB61381429B25170106A4BCE112B2F23EC4586C9205DACFF81B08E027)
 
 ### 示例4（设置焦点组走焦）
 
@@ -812,23 +812,23 @@ struct FocusableExample {
 
 首次按下Tab键时，焦点转移到容器1中绑定focusScopePriority的组件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/GIATWpuIR02yiyyB2es7ow/zh-cn_image_0000002788468700.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3EEF31815EBC7F2B01813F290AD2855E98FD5D26A37C52BD0352175D0588CF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/on4sF0IWT3yyyyLnRQM-mw/zh-cn_image_0000002791567086.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=71F7DC6BABE33D0334DA663A1B332D9C9781A976FE625B879B1E6401ED754747)
 
 继续按下Tab键，焦点转移到容器1下一个组件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/9WN67jUwSvi3GwQLe-iZnw/zh-cn_image_0000002817508189.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB98D8C091C5D90D00AF1E22BEE62990792382AA46894615F51B821757ADEFE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/ndh17oUySpiA0ZB16Y8Btg/zh-cn_image_0000002820527039.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=2ECC24778DCB278A24165E927E4EC3BCE29BF22101203D40A77F02642772227D)
 
 再次按下Tab键，焦点转移到容器1下一个组件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/w-qRDcBvSSqvjbfS6pNEiw/zh-cn_image_0000002788308758.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=972542D166729502CADE71F4991264A9384335E033B0243F1FA17C753D4CA2C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/rDcuNj2KRu-4ZNrbHs4iHg/zh-cn_image_0000002820407039.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B0D4F882EC27D9CB02D4D443E1107CB0C334ECDC2522BC15EECF309776FA2A4)
 
 继续按下Tab键，焦点转移到容器2中配置了focusScopePriority的组件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/_T-jLpqIR2OT0kDgJJibIg/zh-cn_image_0000002817428121.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=4830F71AA6BC299C53689AD04AFE28F1944F9F539D337DE610F4D6ABD5B76A63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/oAokYzRLQn29jaGK2-416g/zh-cn_image_0000002791727060.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCD1A70A64BC5C5A5454AA6E4772F330C5B2671DB11F7E209269A496B74BBBB5)
 
 继续按下Tab键，焦点转移到容器1中名为Group1的组件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/v7bqdrDITsSygPFsZ0NdJA/zh-cn_image_0000002788468702.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=45BCCD83804B38582C7906A9502EFF91F834083E9E70A1B701E78A0ABF7DAD31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/vu0xABGtRiS76gMU4iOJ_w/zh-cn_image_0000002791567088.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=D99397D11F0CE54CE62B43FDD78991E89BDB6651C8B86F844EC3FB8E086B6FA5)
 
 ### 示例5（设置Tab走焦停留）
 
@@ -902,23 +902,23 @@ struct TabStop {
 
 连续按下两次Tab键，焦点转移到button2上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/IkAaclz4QoaMD4cTClrqcA/zh-cn_image_0000002817508191.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=C43D78D9B39A69FD9077C5A7B70FFB4C4DADA45D2535A41585F0F8C84C2DCD96)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/AZNlDhFaSxuxg3bfP7rnMg/zh-cn_image_0000002820527041.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=62E906B4D7B3926F051F8B2A3549EB4C3744351B6B37C05C5F76915487CDCE18)
 
 接着按下Tab键，焦点转移到配置了tabStop的组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/8TyxjgL6RgaFXt90h2jZug/zh-cn_image_0000002788308760.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=C385B6BBCFAB632E5AB7C4DE64E655921B3467517AF2B8CFEFD867A0DD0115AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/jbN_G_c0QnORWyzAWT4BTw/zh-cn_image_0000002820407041.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=14C93635E0F748C7012790CE9F30A1D6F17984310610B56638F882C89615A56C)
 
 再按下Enter键，焦点转移至内部button3上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/7qs6iZWhQLGKqWEJMQG_Hg/zh-cn_image_0000002817428123.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF80D6740494A52FCAD58C0DB51EDE6D9A92D2ABA3B01D2E84BFD5CF1FEDA54F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/IoYMwl-LQAqRzH91sLi15w/zh-cn_image_0000002791727062.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=914D8677DE8A66174214E2BC0E4F08D10E144F70DB17943BE57B96BB273D868C)
 
 再按下ESC键，焦点转移到配置了tabStop的组件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/oyAu0hQeRheDTc9G-UFfDA/zh-cn_image_0000002788308760.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4F92A00893FEEC191B33F42638DBF4B346A0B3C10467920DDEBE3F6D082A44A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/br-hvoYPQhmmKsoipCnStA/zh-cn_image_0000002820407041.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB47A8D2BF266FD67C19FB3FACE52A7D7AD0E45EC985C3A10FA164A1F9375EC3)
 
 再按下Tab键，焦点循环走焦到button1上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/JhWuAGtVS2CymXN1xB4dDA/zh-cn_image_0000002788468704.png?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=865BF00894BD29D3497BF8DFEB6389F6DE90B2F3F2ABF2CEA445FDF93AA26151)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/cd2HBD-yQJeMtmSCVPpxOQ/zh-cn_image_0000002791567090.png?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=D498DC1C44AB656E9C31F6EE279B3510FBDC0418FDEFCA8447F5C27B5F6A10B5)
 
 ### 示例6（设置自定义走焦）
 
@@ -979,4 +979,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/RAXq92z8Q1-NOOk1OwQb-g/zh-cn_image_0000002817508193.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005006Z&HW-CC-Expire=31536000000&HW-CC-Sign=D59A6E22EB4C735395FC75B248DA5E1877538B6BFF2F9B85EBBE73E0817D2409)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/fd5LzyK4QVC8Q60VizbbZw/zh-cn_image_0000002820527043.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014957Z&HW-CC-Expire=31536000000&HW-CC-Sign=5151DAB881BF9BBBBA3FD0F08F27C3DF6C917CDCA602B4557DC296471FEF5F63)

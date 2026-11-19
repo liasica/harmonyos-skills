@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Toggle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Toggle
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:13+08:00
+scraped_at: 2026-11-19T09:50:59+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:7b06b32e9ef5b02cd3432ccf20118034d2026ac1fa4aa60c45583eb3437ec82e
+content_hash: sha256:9a474ee08ac8c7abb4b888add627ccb8566b5b3ec72d151b1ae4a85f1033cca9
 ---
 
 组件提供勾选框样式、状态按钮样式和开关样式，适用于需要快速切换状态或进行单选确认的场景，能够有效提升交互体验与界面的直观性。
@@ -293,7 +293,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/O2RcX6U8ThSegld3FblLcg/zh-cn_image_0000002788468892.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=42DCCA8DAA932D9226D6BD258D05D75AEDE2AB1948A9936D824DD11DD65B74D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/SSxU1IEfRWaRueOGM6zrVg/zh-cn_image_0000002791567278.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015004Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC3F72F987EAB954CF5B89FDDAB8B778CB7709B35EFE24FB428504BAAA318C11)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -335,7 +335,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/vKXQA0h_T2u25yPp0oX2xw/zh-cn_image_0000002817508381.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6307B14858BEA4D2E974E0EC8B261D659C66DA9570053992249C7D24EE11321)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/G6_2fX4PSmSryjACiLbTXQ/zh-cn_image_0000002820527231.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015004Z&HW-CC-Expire=31536000000&HW-CC-Sign=545F48747BF5C3CC5F1F68763F0F5BCCDC23B2CE0233404590D5AFEC1277C3EB)
 
 ### 示例3（自定义Toggle样式）
 
@@ -395,7 +395,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/8kqSaNmXT669s4CMDCNNug/zh-cn_image_0000002788308950.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8C9B20AA8EE86CB04C47B8FCE3B4833A598DE46FF034F4B5B86B42626C41A85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/kBKKVOLdQQ2QYO3T3H05rg/zh-cn_image_0000002820407233.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015004Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6AD83D03F56E3942161ABA73894E71286090A90C54A99F9A525D8E46C2566BD)
 
 ### 示例4（Toggle沉浸光感效果）
 
@@ -430,8 +430,8 @@ struct ToggleMaterialTest {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/oUpZgUIUQvaYPZpfxKe3uw/zh-cn_image_0000002817428313.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=B809FF180A67F1A19C2815877BB21EA393D2816756E460E98EA881EFD7246539)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/2OpZDqrJRJuip2PN-Z3Ogw/zh-cn_image_0000002791727252.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015004Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D3ADFCAD0C012E89BD0EC426F6C34576397599B1284CE2DAE435FCD8D20BF22)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/-EY_UaRMRwGwW9xZ0fa0KA/zh-cn_image_0000002788468894.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004811Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E20ACDA8B7796DE1F734839D54595A3141968C88C7E5249559CEA06B554ADBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/nF9tp4MKQ3K_V4DHQEAl1w/zh-cn_image_0000002791567280.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015004Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9CB1FE5F54F2FCEE291711C3F0D7499B27087D39165937A22C0D7E960EE841F)

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-flip-p
 title: 手动触发翻页
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容交互 > 手动触发翻页
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:30+08:00
+scraped_at: 2026-11-19T09:49:11+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0bac474e9ea24f85761b7c0f1ccb9b920879c6a13f7ec7b6b4eab2fee4eb088b
+content_hash: sha256:4776cadebc177b854ca896852c64deed0d8cfbe694e0173479d47aa234fa266e
 ---
 
 Reader Kit的交互能力已经集成了手指点击和触摸滑动翻页，如果开发者需要增加其它翻页场景时（如：耳机播控翻页），可使用手动翻页接口实现自定义翻页场景。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/JI_WUDfvSvO2pF7Y4UV3Yw/zh-cn_image_0000002788308292.png?HW-CC-KV=V1&HW-CC-Date=20261114T004830Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEEB8D5BE287B02458FED53389E91DD05A7CD6DD8788183C80504AB8BDA84FFE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/qDOefnpARXOhOZVyeeGGhA/zh-cn_image_0000002820406573.png?HW-CC-KV=V1&HW-CC-Date=20261119T014911Z&HW-CC-Expire=31536000000&HW-CC-Sign=241D21177C87773D0E1C18B6B36E616F821D2B2BD7765CADDB6C516A1320CCAD)
 
 ## 接口说明
 

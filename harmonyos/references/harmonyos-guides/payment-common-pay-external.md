@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-commo
 title: 纯外部支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 纯外部支付场景
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:26+08:00
+scraped_at: 2026-11-19T09:49:07+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:67f8e9b9ad7d327a1fa75c37a81f95f4574c7ee390193c37bfbf2d610fd527da
+content_hash: sha256:b227ac6394fabe6a9b08a7067709e29bcd76f250b798752fcb300de2f95fb06c
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:67f8e9b9ad7d327a1fa75c37a81f95f4574c7ee390193c37bfbf2d610fd
 
 通用收银台纯外部支付页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/os9MkmuaTdmVFgfTi-7ayA/zh-cn_image_0000002817427597.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9ACA176D29C787B8982F265E4463BF2489EF8C03D24A2D248B14E2F0FDDFBD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/dw4yJpNNQkyS8p1Afppazw/zh-cn_image_0000002791726536.png?HW-CC-KV=V1&HW-CC-Date=20261119T014813Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D3D3CB41EC9960F7679F1ADD95CCABED609B5D16BF4342826065FC411F9D376)
 
 ## 接入流程
 
@@ -34,7 +34,7 @@ content_hash: sha256:67f8e9b9ad7d327a1fa75c37a81f95f4574c7ee390193c37bfbf2d610fd
 
 纯外部支付模式下，收银台仅支持第三方平台支付，用户无法使用华为支付。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Z43vNVuTTaiZqHeDEjr4Hg/zh-cn_image_0000002788468178.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D39DD6B858DFEC9C707F5FA64A549E118B4269EA8CF948B057565395A5A0FF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/86rCxyM-Q_6PNXoSlqKWPA/zh-cn_image_0000002791566564.png?HW-CC-KV=V1&HW-CC-Date=20261119T014813Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9ED4508B6C67ED1CE059D9BEFD5ECFF73656253F97ACF3B60F1DDF67930DA0C)
 
 1. 商户客户端根据商户已开通的支付模式构建[PaymentInfo](../harmonyos-references/payment-paymentservice.md#paymentinfo)参数调用[cashierPicker](../harmonyos-references/payment-paymentservice.md#cashierpicker)接口拉起Payment Kit通用收银台。
 2. Payment Kit通用收银台展示可用的三方支付方式，用户选择三方支付方式并确认支付。

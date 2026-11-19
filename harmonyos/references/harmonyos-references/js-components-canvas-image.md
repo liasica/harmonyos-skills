@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: Image对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > Image对象
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:32+08:00
+scraped_at: 2026-11-19T09:51:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6e830be19dd0d6b95f869abaf550e7a8b3a0608031f8e08d68d5437fd6551837
+content_hash: sha256:72e9f6872ceda89eee8840a00a11859b572c2ebdfa3c14dd3b1db87ec5060213
 ---
 
 **说明** 
@@ -53,4 +53,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/JRosD25yQoS07n5uCsDwqw/zh-cn_image_0000002788309524.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=67E94D834EE6F3A0EBB8DF2A1BF475FFC8138C97BF00947CCEFD784826E7C5FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/rHJj2ko0R2qTiLpYrwH_Ag/zh-cn_image_0000002791727826.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FB315BE66CC7B2B1987B01F810B790A2736F751091EB71E915B1696133A9398)

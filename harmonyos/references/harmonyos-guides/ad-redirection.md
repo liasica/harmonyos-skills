@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ad-redirectio
 title: 广告跳转
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 应用间跳转典型场景 > 广告跳转
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:50+08:00
+scraped_at: 2026-11-19T09:47:27+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d7edbe93c440a6b126ed2779c33dd361897ad0e874cecf860ab1e170c3327d89
+content_hash: sha256:da9df74f7ec727ea94f170f824eedbb158bc03f80f2f6a953275c46bf04b17dc
 ---
 
 ## 概述
@@ -25,7 +25,7 @@ content_hash: sha256:d7edbe93c440a6b126ed2779c33dd361897ad0e874cecf860ab1e170c33
 
 广告跳转的流程图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/o39TQiggRuKF88rbT1SLWA/zh-cn_image_0000002788306160.png?HW-CC-KV=V1&HW-CC-Date=20261114T004513Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFB72695865BFBBED41993F41AD175589445D73F2BC0644A2672D60D07C7900A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/6JVqc41tSFWTK6k4VffqkQ/zh-cn_image_0000002820404437.png?HW-CC-KV=V1&HW-CC-Date=20261119T014727Z&HW-CC-Expire=31536000000&HW-CC-Sign=34E9AB787D2028C122AC8A69CA2CBAFB186651B973A66BA1840486B0FA02A4A7)
 
 跳转过程基于App Linking能力，分为几种情况：
 

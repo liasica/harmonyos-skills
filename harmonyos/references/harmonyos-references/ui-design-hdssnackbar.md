@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsSnackBar (即时操作)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsSnackBar (即时操作)
 category: harmonyos-references
-scraped_at: 2026-11-14T08:51:18+08:00
+scraped_at: 2026-11-19T09:52:11+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2441dc2c95d67965ccfc6b34537a9d044bbab0aa755a0533dfa72c0df1068d97
+content_hash: sha256:4ebdc2519150c959a0731b0d3ee9012afe10f3aa7237bf25ddc8912426fb8885
 ---
 
 提供简短通知的非模态弹窗，其内部默认包含了图标区、内容区和操作区。
@@ -266,4 +266,4 @@ struct TestSnackBar {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/ltz52tkTT5aZz4l4EHTGig/zh-cn_image_0000002788309820.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004906Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5F412A4AF64803BC28293698784660A77A7B6317189B96C401516E0A40EF688)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/XloEzxD2RbmGi6_5vYJYQg/zh-cn_image_0000002791728122.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015116Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE85AA740CF863D073E37CAFE488B822D57DA688A2382A50599FD40359D133B0)

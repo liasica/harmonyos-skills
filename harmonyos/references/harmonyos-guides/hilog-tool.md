@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-tool
 title: hilogtool
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hilogtool
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:50+08:00
+scraped_at: 2026-11-19T09:48:29+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:28a9fbb88cc18ef2557adcbaf1c1a01bdad8ee72c9d9daa5eacfa44f9a327a82
+content_hash: sha256:c2321ef6580a4866d5b21faa10dffa0bfd9b6ae4119fad290431e607e72f60b4
 ---
 
 ## 使用场景
@@ -102,19 +102,19 @@ hilogtool parse --input xxx --output xxx --dict xxx
 
 在当前日志所在目录，通过cmd进入shell窗口，在shell窗口直接执行hilogtool parse，即可进行解析操作，如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/-3MS_FsuQdiu0dPyrVX8eA/zh-cn_image_0000002817506995.png?HW-CC-KV=V1&HW-CC-Date=20261114T004608Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F4A0C1217DA488DE470DA42EA1C7D60BE32E1C1CF25CD80EA9DC4970CC45560)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/U3PxytLFQsyVtxZR9sxeMg/zh-cn_image_0000002820525845.png?HW-CC-KV=V1&HW-CC-Date=20261119T014828Z&HW-CC-Expire=31536000000&HW-CC-Sign=825C535AE41CEDA3296C7AF2124A7896CAD9FEE52EF62724C540EFA193D166BA)
 
 ### 解析指定目录下的hilog文件
 
 hilogtool parse -i D:\09-temp\dict-test -d D:\09-temp\dict-test
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Ma9oCTkRTv2uE9Za-5hcoQ/zh-cn_image_0000002788307564.png?HW-CC-KV=V1&HW-CC-Date=20261114T004608Z&HW-CC-Expire=31536000000&HW-CC-Sign=64EAD86D64160759B92D752BBEB369EF019E32B24C85CF2941E12E94E5CF1BA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/k6xKCC8LQ6-eenc6JnGiwg/zh-cn_image_0000002820405845.png?HW-CC-KV=V1&HW-CC-Date=20261119T014828Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F4A5964404ECB1497BF43145167BF9D72682BC748890D197081531D8073A5AB)
 
 ### 解析单个hilog文件
 
 hilogtool parse -i D:\09-temp\dict-test\hilog.025.20231020-154659.gz -d D:\09-temp\dict-test
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/0eytK11eQCG-E2rid_aZ7w/zh-cn_image_0000002817426927.png?HW-CC-KV=V1&HW-CC-Date=20261114T004608Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF48EFA81521B9BA230AC222CCC75B7729842227215326DD1352255803D37C42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/eHwm16sxT0umh9ddnO8sTw/zh-cn_image_0000002791725866.png?HW-CC-KV=V1&HW-CC-Date=20261119T014828Z&HW-CC-Expire=31536000000&HW-CC-Sign=48B3B657FA57FE5EA20D5EB98AFCD0C177E42BBDBED6E190C973071A581C42BD)
 
 ## 自动化脚本
 
@@ -136,7 +136,7 @@ pause
 
 脚本运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/joCni97PTSinDauEvUTyAw/zh-cn_image_0000002788467508.png?HW-CC-KV=V1&HW-CC-Date=20261114T004608Z&HW-CC-Expire=31536000000&HW-CC-Sign=78B332D9DE1AFBBD984AF4E6F8E8A03624D97282E572ED7A6683F64E7309697B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/3n1NaN6MQOWOqGhjqif2uw/zh-cn_image_0000002791565894.png?HW-CC-KV=V1&HW-CC-Date=20261119T014828Z&HW-CC-Expire=31536000000&HW-CC-Sign=51CF45D81AF8F12FBBEC86E0845757EDD781631D7D2111CC723E79BCA85133A0)
 
 ### mac平台脚本
 

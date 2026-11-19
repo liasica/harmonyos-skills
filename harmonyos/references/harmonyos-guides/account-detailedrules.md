@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-detai
 title: 开发者使用Account Kit的登录能力的管理细则
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 开发者使用Account Kit的登录能力的管理细则
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f1b03a684444be1c5de862cd6727e9938293f6d0ef7a571cc38f815fa0b36a8d
+scraped_at: 2026-11-19T09:48:49+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:6ac91c1da086ba99e7ede20931758714a585296ec03eedf81aba424949db3c3c
 ---
 
-为了保护用户隐私信息，确保用户获得良好的登录体验，根据[《华为开发者服务协议》](../start/agreement-0000001052728169.md)、[《华为APIs使用协议》](../app/20209.md)、[《应用审核指南》](../app/50104.md)、[《元服务审核指南》](../app/50129.md)等相关协议条款及现行法律法规，平台制定了华为账号登录管理细则，使用华为账号登录的应用请遵照执行，具体要求如下：
+为了保护用户隐私信息，确保用户获得良好的登录体验，根据[《华为开发者服务协议》](../doccenter-getting-started/hdc-agreement-service-0000002765328539.md)、[《华为APIs使用协议》](../doccenter-getting-started/hdc-agreement-apis-0000002765328543.md)、[《应用审核指南》](../app/50104.md)、[《元服务审核指南》](../app/50129.md)等相关协议条款及现行法律法规，平台制定了华为账号登录管理细则，使用华为账号登录的应用请遵照执行，具体要求如下：
 
 ## 上架审核要求
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: chart开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > chart开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:11+08:00
+scraped_at: 2026-11-19T09:47:48+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:948e796965b925baf296ab0d07e3a8363ec74acc0c7e134f37dbce96f8f28cfa
+content_hash: sha256:191dde406d091fbf58692d07a1282ae6ceecb1c00e336ea6ca7b8789306c6d14
 ---
 
 chart为图表组件，用于呈现线形图、柱状图和量规图界面。具体用法请参考[chart](../harmonyos-references/js-components-basic-chart.md)。
@@ -67,7 +67,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/egkmWseMSnKmjecy0dGXuQ/zh-cn_image_0000002817506485.png?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=6393B65BA29A6E6DC7ADDD3C143CF6BD646FDB4CA93AB0DBFC02EA8E090E537B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/gsjsZcRcS_OEwb2XAFld_w/zh-cn_image_0000002820525335.png?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E22ACFC668C450713CB026AC5AFCEBE4C617AC239AC3A1CC3685CA7F983E482)
 
 ## 设置图表类型
 
@@ -210,7 +210,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/HEccGcPORSSaqs-UBLkhxA/zh-cn_image_0000002788307056.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=C124A12C886E8862A2884DE454A8C727804C6604D5DE17D07FDAC86DEB445491)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/pE1fgcPWSoyYkQUL1Notpg/zh-cn_image_0000002820405335.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E5A71728B1CCA36671A5BDE5D75FA55CBD53BA35A1DB967F484DDAB5403F70B)
 
 **说明** 
 
@@ -512,4 +512,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/VflUpUTpS_-2EKp8XsWYyw/zh-cn_image_0000002817426419.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=296AB7F283A72F4268B980D3C42E72F603F419550C5A593120BD5015940AC2CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/dFqdcE7FSCWngVgpaq4SUw/zh-cn_image_0000002791725356.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=436C20A82E7E44C8FAB9DB17840F15F87A56F2B7A600F918E4D4F72D374573C8)

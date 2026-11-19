@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-focu
 title: 重新设置新焦点位置
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 重新设置新焦点位置
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:59+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:5489a36e5eca5014a91354089b4e362d7da7146c8850dcf408c84c318b7385dc
+scraped_at: 2026-11-19T09:47:28+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:616d8cabfb06ca7a6546a8b2d93a428437f508675009fdf39e9f7937d4bef9f8
 ---
 
 ## 设计场景
@@ -52,6 +52,9 @@ export struct Rule_2_1_12 {
             this.eventInfo.customId = 'button2';
             accessibility.sendAccessibilityEvent(this.eventInfo).then(() => {
               console.info(`Succeeded in send event, eventInfo is: ${JSON.stringify(this.eventInfo)}`);
+            }).catch((error: BusinessError) => {
+              // 捕获事件发送失败（rejected）的异常。
+              console.error(`Failed to send event, code: ${error.code}, message: ${error.message}.`);
             });
           })
         Blank()

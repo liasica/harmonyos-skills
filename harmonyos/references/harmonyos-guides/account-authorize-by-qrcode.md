@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-autho
 title: 扫码授权登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 扫码授权登录
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:10+08:00
+scraped_at: 2026-11-19T09:48:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:db941016248a162a283cebf01ad45ecbb87d1dc4503e811db808cac4e76bcce3
+content_hash: sha256:495f1568700b6d70f67cd7093cbbca4f818c88b8a6088268022d51a7b356c537
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:db941016248a162a283cebf01ad45ecbb87d1dc4503e811db808cac4e76
 
 扫码授权登录的整体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/sYU4ksAfT7eGYFeA2Bvl3g/zh-cn_image_0000002817507305.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEC877E1E98111ECA1AE1B88276B0E7FAB5980EFFAE2EEF5FF4F39452A915103)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/OcIHn4nUQCy1C9ThEYdUUA/zh-cn_image_0000002820526155.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=52D3F69E340C315B293C2CEC5835201AC169D6FA5C4E862C1061F3C9B4F20159)
 
 ### 步骤说明
 

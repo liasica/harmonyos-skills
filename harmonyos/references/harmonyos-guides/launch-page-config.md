@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/launch-page-c
 title: 配置应用启动页
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 应用启动页的配置与使用 > 配置应用启动页
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:13+08:00
+scraped_at: 2026-11-19T09:47:51+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a59f112da516991cb4b4d48b2792193b42a42b1b4ada5bf2351ebe0a266462e2
+content_hash: sha256:8fd65655d8025d016c60d2e5f55b749f940545cc01d3516bc4ac5ac7be0530a7
 ---
 
 ## 启动页的分类和实现方式
@@ -38,7 +38,7 @@ content_hash: sha256:a59f112da516991cb4b4d48b2792193b42a42b1b4ada5bf2351ebe0a266
 
 **图1** 默认启动页示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/zibklV73RIKKR75cx8yLDw/zh-cn_image_0000002817426515.png?HW-CC-KV=V1&HW-CC-Date=20261114T004534Z&HW-CC-Expire=31536000000&HW-CC-Sign=00FF4FD1BAA96C1E824108E5AEBC54FC619DB1DE3FB10B3079B57ABC513664B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/6gMopD2xTHaK5B62jmooYQ/zh-cn_image_0000002791725452.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A590462B2A11AEA92EB38E75CFB3F52CE9F05591779F455891CF5DA52119BCA)
 
 开发者可以根据应用需要，配置使用自定义设计的图标资源和颜色资源。
 
@@ -77,7 +77,7 @@ startWindow字段提供了增强的启动页配置能力，可用于元素更复
 
 **图2** 增强启动页示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/sfbpu8TWSEiLSbmv_inDBw/zh-cn_image_0000002788467096.png?HW-CC-KV=V1&HW-CC-Date=20261114T004534Z&HW-CC-Expire=31536000000&HW-CC-Sign=D38C8303BE58291EFBB77A6AE2C4C121BDADD9191D0FB3AAC0F54AAB17E166F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/TETbAJTgTn69HKciD9vEEA/zh-cn_image_0000002791565480.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB9F78C7B33457A851605A1D3A14EA7BC91392D155201C456B8E075DC6A6D7C1)
 
 示例如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurre
 title: Function Flow Runtime图依赖并发(C)
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发样例(C) > Function Flow Runtime图依赖并发(C)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:41+08:00
+scraped_at: 2026-11-19T09:48:20+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:6c54d4ace531a93a7978b2e78f80ec844af099694229f74fc6235d9b6b49dacc
+content_hash: sha256:b1fd9c55487a015497fb0c2d5fe453782bece2ecf31fb401dde8ec32d99d0af1
 ---
 
 ## 概述
@@ -65,7 +65,7 @@ task4(OUT A);
 task5(OUT A);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/1gYeiL7GSOmCC2mZ0b6pMQ/zh-cn_image_0000002817506929.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=62FBDF0EC833D450890792A988A0624FF849A5890C04D04CF828086A0E1F6EFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/EWtK1qNiRK-DpK1rzV1mLw/zh-cn_image_0000002820525777.png?HW-CC-KV=V1&HW-CC-Date=20261119T014728Z&HW-CC-Expire=31536000000&HW-CC-Sign=C69399AE556D2EC481732DB7F1AC224F148139C2A603B6A9E51E1C7836C43950)
 
 为表述方便，本文中的数据流图均以圆圈表示Task，方块表示数据。
 
@@ -79,7 +79,7 @@ task5(OUT A);
 
 用户上传视频到流媒体平台，处理步骤包含：视频解析A、视频转码B、视频缩略图生成C、视频水印添加D和视频发布E，其中步骤B和步骤C可以并行执行。任务流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/3W24aGRZRHiobFqeN38ewA/zh-cn_image_0000002788307498.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F6A36557D13919122652491A6172B95622939ECADAEAA9742042D239EF69907)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/eLKTv8MeRwq_qcWCb3DbeQ/zh-cn_image_0000002820405777.png?HW-CC-KV=V1&HW-CC-Date=20261119T014728Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F43D7E6BF609B4BD49A2E775C9AF8765FAAABB5DD1C1FB5879CBD90D0F909FA)
 
 借助FFRT提供的图依赖并发范式，可以描述任务依赖关系，同时并行化上述视频处理流程，代码如下所示：
 
@@ -253,7 +253,7 @@ ffrt\_submit\_f接口可以接收裸函数指针任务作为参数，如果任�
 
 各个任务在FFRT内部形成了一棵调用树：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/6GOCa01rS8qwQTSZj3LgMg/zh-cn_image_0000002817426861.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=835F1B9D8B4631B8DAEF43A7F929707E593C67C37E6189BE8937B4A71FFA6A07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/HZTLqT1RQRSgjAoqlrusvw/zh-cn_image_0000002791725798.png?HW-CC-KV=V1&HW-CC-Date=20261119T014728Z&HW-CC-Expire=31536000000&HW-CC-Sign=19830B790AF9A29295B409F9B95B7BF0712EB55D54F0EA717EA09D68C3E7444F)
 
 ## 接口说明
 

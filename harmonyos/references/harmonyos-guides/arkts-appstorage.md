@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-appstor
 title: AppStorage：应用全局的UI状态存储
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理应用拥有的状态 > AppStorage：应用全局的UI状态存储
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:59+08:00
+scraped_at: 2026-11-19T09:47:37+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:e7c8da099064c0baa3eccce45fab774def57e6aedbc9874b6802513a11032857
+content_hash: sha256:2362099a5c4ac8b428e5f839b88a3ba69c176476842db832e5de2e4043f39bb9
 ---
 
 在阅读本文档前，建议提前阅读：[状态管理概述](arkts-state-management-overview.md)，从而对状态管理框架中AppStorage的定位有一个宏观了解。
@@ -58,7 +58,7 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 **图1** @StorageProp初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/fX5GAYmVSxqhaHDnnzRTDA/zh-cn_image_0000002788466280.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E89A3D6D1C9993B94A72519E59308B520218DB43DDE0CDFC02CB6F48E9A8D2C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/LXt53J3xS9WjHWg5SVp8ZQ/zh-cn_image_0000002791564664.png?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=8052B4447533D5BA74F6EE3EAC3360D320BD6F64435B105430D977A58FAAEBB7)
 
 ### 观察变化和行为表现
 
@@ -104,7 +104,7 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 **图2** @StorageLink初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/pVSlO72lRguoHiTtWmpZOA/zh-cn_image_0000002817505767.png?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=C135584A679F92933D6F61EA5B7358966F989BE053481EE932579691002B8B95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Bpg7DXgOT_u8HMKTZaH-wg/zh-cn_image_0000002820524615.png?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A732F368F34FEEA52145CC617D0A01578111DA7F170A0AE460CE19B471732BC)
 
 ### 观察变化和行为表现
 
@@ -267,7 +267,7 @@ struct TestStorageProp {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/CMqlc8KYTve3BNBeNzhrcA/zh-cn_image_0000002788306338.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB982A0B2527EA90CDDD1ACEAD4933C2A4FBB75DCF3AA208C8FB250BBD868D6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/jqdtSwx-Qv6n99WIr7hSOw/zh-cn_image_0000002820404615.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDB7A378C2CE0093230ACD4AD3EF9C0598EC6AF3217AF996AA68BDAA84A5CBF7)
 
 ### AppStorage支持联合类型
 
@@ -347,7 +347,7 @@ struct TestPageStorageLink {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/OzWyoNdRSEGJ9w-YNWGp4g/zh-cn_image_0000002817425701.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F09C3C552C5C5D66C9B5ADF5F225281E3CB5AF876E6D814316AC97D8308CF37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/SVz2QRDHQg-P6nHc-gj0Ig/zh-cn_image_0000002791724638.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=9436DB662DD34FF0F050D5E6D687ED6C98D3DDA3A8004E24D915F2BE2DEA6E10)
 
 ### 装饰Array类型变量
 
@@ -400,7 +400,7 @@ struct ArraySample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/HjyfdGVcSR-Cc5OERCkwrA/zh-cn_image_0000002788466282.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F53196A0F80A8E9230891ED4C2F46A0762ED89C82AC3EF1347EE7D3806ED272)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/V9hyOUcYSA6KrzEJtbHJvQ/zh-cn_image_0000002791564666.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=B24FDFECC84D35BDCE4BC83779179F03F0E64135DE6E7B8CF647013CE69F3820)
 
 ### 装饰Date类型变量
 
@@ -453,7 +453,7 @@ struct DateSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Dwv0WLuAT9ClcjprghkvRA/zh-cn_image_0000002817505769.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F26410343B1802271FE6FA3987058A2CBB348D414257EEC143D35839C19A9F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/6u3Qqa5vQpGyRUg0zBLhqA/zh-cn_image_0000002820524617.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=218B70FB4C5FEE0C182CCF957152119D66FF9FBAC01718E00B498B6447A8B13B)
 
 ### 装饰Map类型变量
 
@@ -520,7 +520,7 @@ struct MapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/VvBgthlYScWi0Avs00LPIg/zh-cn_image_0000002788306340.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=B90B5F553F62FE9490C2BD463C7BEEC6FCD341328545CB48978973E9797AEE26)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/msyT4gGsQP6_2lYH270z6A/zh-cn_image_0000002820404617.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFD356C268B0A3A5EE78B5E2A33553F62F33ED1C4EB1CD2F91A2925DE05F979B)
 
 ### 装饰Set类型变量
 
@@ -578,7 +578,7 @@ struct SetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/npZbUdmmQhiqUkkZzukciQ/zh-cn_image_0000002817425703.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=D531A073F11244C802B0DD265D15F2DE571E4C8F50978426C68784D4B494FF82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/425p3elqQqWtUcGdI4BYqw/zh-cn_image_0000002791724640.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6BA8E82387FCBADBBC7E4D9BB958D19B7424115F2180D83A8CF8F840E3A5A10)
 
 ### AppStorage在多页面中共享使用
 
@@ -709,7 +709,7 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/4ORD6eVWTpyM5wFGB39fkg/zh-cn_image_0000002788466284.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=558959A50367C7711D5AB88199036A1C5851EE9E0A468D597493C84B2A0EE36E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/_4G-dBnZQ8OA5fIQw8Wh9A/zh-cn_image_0000002791564668.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9118FC0134A7567B3F6D7874DCC470E3D610CC5BD278B7E357770C4886674B6)
 
 ## AppStorage使用建议
 
@@ -1039,7 +1039,7 @@ struct PageStorageProp {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/yt9mCwdrTv2PSQMGlX0yCQ/zh-cn_image_0000002817505771.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=0052934B62168B1F8EB8750F453C6DB5C21145E364F7A63FCBD7DEB7F5A381AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/ZnecW7FISUON5v2Q0DkKrA/zh-cn_image_0000002820524619.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=390C2F480FA5ABE53DCE4FC6DFB5B45E3B79507127D7FC31ABD466A76D1B9145)
 
 上述示例，在点击事件之前，propA的值已经在本地被更改为true，而AppStorage中存的值仍为false。当点击事件通过setOrCreate接口尝试更新propA的值为false时，由于AppStorage中的值为false，两者相等，不会触发更新同步，因此@StorageProp的值仍为true。
 

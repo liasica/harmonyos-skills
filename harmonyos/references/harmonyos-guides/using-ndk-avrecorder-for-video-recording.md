@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avr
 title: 使用AVRecorder录制视频(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 使用AVRecorder录制视频(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:01+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:5f11c67cab6388b3d5393e6dfcff9dd4b5fd8e8fb17bb7d1dd42429e2b20f301
+scraped_at: 2026-11-19T09:48:41+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:dae9b2fc696b76c64bd2f4d3867ea34904fc9478388b48f88c7108d330f2c14e
 ---
 
 AVRecorder支持开发音视频录制，集成了音频捕获、音频编码、视频编码、音视频封装功能，适用于实现简单视频录制并直接得到本地媒体文件的场景。
@@ -16,7 +16,7 @@ AVRecorder支持开发音视频录制，集成了音频捕获、音频编码、�
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/hT79SRW7Rzuq6Azc0SB1Vg/zh-cn_image_0000002817427039.png?HW-CC-KV=V1&HW-CC-Date=20261114T004801Z&HW-CC-Expire=31536000000&HW-CC-Sign=72937F7805624067E20162FBB51130AB59E7EBC894530498D3522C8FEBD68DE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/YN6HP8XGRCeskA_upA-7FQ/zh-cn_image_0000002791725978.png?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9D017B217A317DF2E4992E0244DA98C940F92CC2CA518E10041E72DCBBB09CA)
 
 状态的详细说明请参考[OH\_AVRecorder\_State](../harmonyos-references/capi-avrecorder-base-h.md#oh_avrecorder_state)。
 
@@ -167,10 +167,10 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so)
            }
            MediaLibrary_ImageFileType imageFileType = MEDIA_LIBRARY_FILE_VIDEO;
            int32_t result = OH_MediaAssetChangeRequest_SaveCameraPhoto(changeRequest, imageFileType);
-           OH_LOG_INFO(LOG_APP, "result of OH_MediaAssetChangeRequest_SaveCameraPhoto: %d", result);
+           OH_LOG_INFO(LOG_APP, "result of OH_MediaAssetChangeRequest_SaveCameraPhoto: %{public}d", result);
 
            int32_t resultChange = OH_MediaAccessHelper_ApplyChanges(changeRequest);
-           OH_LOG_INFO(LOG_APP, "result of OH_MediaAccessHelper_ApplyChanges: %d", resultChange);
+           OH_LOG_INFO(LOG_APP, "result of OH_MediaAccessHelper_ApplyChanges: %{public}d", resultChange);
 
            OH_MediaAsset_Release(asset);
            OH_MediaAssetChangeRequest_Release(changeRequest);
@@ -226,7 +226,7 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so)
        g_outputFd = open((avrecorderRoot + "/video_example.mp4").c_str(), O_RDWR | O_CREAT, FILE_PERMISSIONS);
        std::string fileUrl = "fd://" + std::to_string(g_outputFd);
        config.url = strdup(fileUrl.c_str());
-       OH_LOG_INFO(LOG_APP, "config.url is: %s", config.url);
+       OH_LOG_INFO(LOG_APP, "config.url is: %{public}s", config.url);
 
        OH_AVErrCode err = OH_AVRecorder_Prepare(g_recorder, &config);
        free(config.url);
@@ -374,10 +374,10 @@ void OnUri(OH_AVRecorder *recorder, OH_MediaAsset *asset, void *userData)
         }
         MediaLibrary_ImageFileType imageFileType = MEDIA_LIBRARY_FILE_VIDEO;
         int32_t result = OH_MediaAssetChangeRequest_SaveCameraPhoto(changeRequest, imageFileType);
-        OH_LOG_INFO(LOG_APP, "result of OH_MediaAssetChangeRequest_SaveCameraPhoto: %d", result);
+        OH_LOG_INFO(LOG_APP, "result of OH_MediaAssetChangeRequest_SaveCameraPhoto: %{public}d", result);
 
         int32_t resultChange = OH_MediaAccessHelper_ApplyChanges(changeRequest);
-        OH_LOG_INFO(LOG_APP, "result of OH_MediaAccessHelper_ApplyChanges: %d", resultChange);
+        OH_LOG_INFO(LOG_APP, "result of OH_MediaAccessHelper_ApplyChanges: %{public}d", resultChange);
 
         OH_MediaAsset_Release(asset);
         OH_MediaAssetChangeRequest_Release(changeRequest);
@@ -476,7 +476,7 @@ static napi_value PrepareVideoRecorder(napi_env env, napi_callback_info info)
     g_outputFd = open((avrecorderRoot + "/video_example.mp4").c_str(), O_RDWR | O_CREAT, FILE_PERMISSIONS);
     std::string fileUrl = "fd://" + std::to_string(g_outputFd);
     config.url = strdup(fileUrl.c_str());
-    OH_LOG_INFO(LOG_APP, "config.url is: %s", config.url);
+    OH_LOG_INFO(LOG_APP, "config.url is: %{public}s", config.url);
 
     OH_AVErrCode err = OH_AVRecorder_Prepare(g_recorder, &config);
     free(config.url);

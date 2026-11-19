@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/simple-text-a
 title: 简单文本绘制与显示（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 简单文本绘制与显示（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:06+08:00
+scraped_at: 2026-11-19T09:48:46+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:8c4724f058655286ca8f729b20387548bd5cb9e744354b0c1833bbdd4a000afb
+content_hash: sha256:a5479303fe4173abd5c18974a63d213c6c866b015bd714b5f3d2ebe55d00ed82
 ---
 
 ## 场景介绍
@@ -72,4 +72,4 @@ content_hash: sha256:8c4724f058655286ca8f729b20387548bd5cb9e744354b0c1833bbdd4a0
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/fMflBWS7QYayppdxQG8Pyw/zh-cn_image_0000002817427143.png?HW-CC-KV=V1&HW-CC-Date=20261114T004623Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CF6F54748C07F2B9262D2D4809E968D6779068DF238C1F542D87BC72322F5F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/hylCXjBLSBWf2DQ3kMrP2g/zh-cn_image_0000002791726082.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED4DED176A4F5C11E772DC9DE74A7D847060FCD6B0AE90B03057700FF4D12F69)

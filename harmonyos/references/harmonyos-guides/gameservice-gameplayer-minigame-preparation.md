@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 小游戏 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:17+08:00
+scraped_at: 2026-11-19T09:48:57+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:3bafc3349812dd53e4fd9fdf92bf6f1b570e9152fcea4e0cb4379374e9b62a8d
+content_hash: sha256:098fd11dbe7dceda5830b88adab5b1d48c01bf64ce1444e73b46b69053fc6f90
 ---
 
 ## 创建小游戏
@@ -50,7 +50,7 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“开发与服务”下选择项目及项目下的小游戏，获取“应用”下的APP ID和Client ID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/b6gdupurTvunr_DqomHQkg/zh-cn_image_0000002788308022.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=85B00A464BA258898A57194EC5A92AB3E8CBAED05FDA606F858E8E3F6EBA7AAB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/-wss0xPhRE2Gq-w8YRPmnQ/zh-cn_image_0000002820406303.png?HW-CC-KV=V1&HW-CC-Date=20261119T014857Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D2DE65F5287C6B1D9C71BF5D173E633E5933056AFBBE31D2E5C4A5317C1F248)
 2. 在工程的entry模块module.json5文件中，新增metadata并配置client\_id和app\_id，同时新增requestPermissions以配置ACL权限和开放能力。如下所示：
 
    ```typescript
@@ -87,14 +87,14 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“开发与服务”下选择项目及项目下的小游戏，左侧菜单选择“构建 > 游戏服务”，在右侧点击“新增配置”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/2VZLDZt7RZmb8x9UBV2eew/zh-cn_image_0000002817427385.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D16F8D8B11307E3C630EA4C910071EF8072B0213C8D1CD30513C0CF67DB9201)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/La-f7ZFtT62QLAzRafo_6g/zh-cn_image_0000002791726324.png?HW-CC-KV=V1&HW-CC-Date=20261119T014857Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E458EA2D57C10AF5AF32BBDB9A87725C83CA287CFF6EB9A74CA5104130CAE2F)
 2. 在弹出的“新增配置信息”窗口中填写信息，完成后点击“下一步”。
 
    **说明** 
 
    请正确配置HAP小游戏与RPK快游戏的映射关系。若开发者配置错误类型的游戏，将会提示重新选择游戏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/uVUhcG3bRK--mt-FJu4pTA/zh-cn_image_0000002788467966.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=649C0B5855BA33031B4C34F7ACFBF1FBDE5F1D22C7C96F0BE79FE98CFB13EAA2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Wvgd23jlT4uG6R0NHtMc4A/zh-cn_image_0000002791566352.png?HW-CC-KV=V1&HW-CC-Date=20261119T014857Z&HW-CC-Expire=31536000000&HW-CC-Sign=310E9372D0F28E8CCC486BA3E0EA4DD59A864AA03EFB8EB6517B1C3D526BF809)
 
    | 信息项 | 说明 |
    | --- | --- |
@@ -102,14 +102,14 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
    | HarmonyOS 4及以下游戏 | 请选择已上架或草稿态的RPK快游戏。 |
 3. （可选）填写开发者服务器的回调地址，完成后点击“确定”提交APP ID映射关系的审批申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/Bloswy8nSMOgcfqyiwseRw/zh-cn_image_0000002817507455.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0A24DF59BDADAA59FB766A03B68FF8E989B63CBBF63B059F9913B05719761ED)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/hg3WKmYPSdqlZ22zIqT9Aw/zh-cn_image_0000002820526305.png?HW-CC-KV=V1&HW-CC-Date=20261119T014857Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE8E4EABF19E459F486CA6ABAEF79FD3FD9E781FC6C93737BF4E04B10CCCBDBE)
 4. 若出现异常情况（例如在架状态不符合要求），将在提示框以红字提醒，建议点击“取消”并重新配置映射关系。若忽略异常情况点击“确定”继续提交申请，可能会造成映射关系审批不通过。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/1BCsu0KSSouAMPOGIipytw/zh-cn_image_0000002788308024.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=D987440918ADBCE088068BAA855976A13EB9A24897EC0506B152302A6A22048C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/5LwzD3PZTsyfHn23UJHVNw/zh-cn_image_0000002820406305.png?HW-CC-KV=V1&HW-CC-Date=20261119T014857Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAAD4FF8415258C5BFCC2E6E6F03911438275B495C7B8888F3F07CD08526F4A1)
 5. 提交申请后，华为工作人员完成审核需要1-3个工作日，请耐心等待。APP ID映射关系生效后如需重新配置，请先提交映射关系的删除申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/Iq24LDdJQLGNByM_WHHEpg/zh-cn_image_0000002817427387.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7202D0D2C44E80216C7085C120ACC7E582D2079180E793CA9629E6CEB31F6B3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/0Gl-OdsMTKGvU1DhReQFvQ/zh-cn_image_0000002791726326.png?HW-CC-KV=V1&HW-CC-Date=20261119T014857Z&HW-CC-Expire=31536000000&HW-CC-Sign=F14D978F40EDBB4A45B53DA62C38A9E5A19DDEC404AFBB9AE6986F13169D0E24)
 
    配置/删除APP ID映射关系的审核结果将通过互动中心或邮件进行通知。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/9gHBs0F0SbGAWynkLCBRAQ/zh-cn_image_0000002788467968.png?HW-CC-KV=V1&HW-CC-Date=20261114T004634Z&HW-CC-Expire=31536000000&HW-CC-Sign=33FB8D70BD1F1C81F959B4F72BE3BCA9417914004EB589EE32CA4D3CA53F1235)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/lkJX5imtQmebVPxhJejM6Q/zh-cn_image_0000002791566354.png?HW-CC-KV=V1&HW-CC-Date=20261119T014857Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BF03B6B189AE7F9E4C08E34E9BC00B8FA5BEBFF2D18D546166CB7BC31244F33)

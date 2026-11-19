@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-window-
 title: 应用声明支持智慧多窗
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 智慧多窗应用开发指导 > 应用声明支持智慧多窗
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:12+08:00
+scraped_at: 2026-11-19T09:47:50+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:0c27731892a37501148b41f2db9ba8c11d0aa4c1fed8d624f591c4d1453a38bb
+content_hash: sha256:cee8d715e8b80c27b1652ac996d49eb43355383a4e05d19fc50b9080525712e5
 ---
 
 当应用需要智慧多窗的能力时，可以通过在[module.json5配置文件](module-configuration-file.md)中对应标签添加相关字段声明支持。
@@ -261,23 +261,23 @@ struct Index {
 
 图1 启动左侧分屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/dDSFKtNeQK6Q9Qfk-LNScg/zh-cn_image_0000002817506563.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=8574D30782972A33C40AB1A9D5C41A61EF6919277DA7308002D404E94A60EE6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/H7nA9lp3Siy9cRD5Xv9UcQ/zh-cn_image_0000002820525413.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014659Z&HW-CC-Expire=31536000000&HW-CC-Sign=E147BA6E60ED95171BCC8AFB3D1A3A64F28A33B7B2FFBB9F6458F6E4387D8DB7)
 
 图2 启动右侧分屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/jftMnTFPTX21wX-0NhQY1A/zh-cn_image_0000002788307134.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=C76F86A21BC1D6AD95FB54C0BFBFCB349DCA8A2E5DCC291A8763F7FEB90D5428)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/G6sUAhuMTJKJJ3kdvo-kBw/zh-cn_image_0000002820405413.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014659Z&HW-CC-Expire=31536000000&HW-CC-Sign=31ABA352D42ABDAC220629853466C2564746674553E9575BD6D0BFEC143E70FD)
 
 图3 以左分屏占较大比例启动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/uXwV4KYBRnafkKfKHYy5DQ/zh-cn_image_0000002817426497.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC1547F685D751A5AA2C5F8A962CAD78324CCBDDB2A3C3C558777CA5FFA54ED0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/bFz9x8P0R9mG_29Ujed_Dw/zh-cn_image_0000002791725434.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014659Z&HW-CC-Expire=31536000000&HW-CC-Sign=5ECA1789FC271B86E55D311D8B286B1EB916834A80B323EDB2E349E48727E3EE)
 
 图4 以右分屏占较大比例启动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/81tnZylGRe6ik0EHi8DPOQ/zh-cn_image_0000002788467078.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=E86B1558A6951356B3FB671B58CDDE0BDE000A6FBC257413BD16271B17765549)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Y7tRFiV4Q-yOpMmGydhCLQ/zh-cn_image_0000002791565462.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014659Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC1FF721FD5F55D622DFBBC30154214BBA5A5A53430425AA798B1B1E03598067)
 
 图5 从二分屏拉起应用内分屏，形成三分屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/2YhwfNgDSTqJjZs6EbBgbQ/zh-cn_image_0000002817506565.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=9095B75E74AD983CB7814B16935A6E72315B6C9B9618D23C419EE6EEB14978FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/2FeHZGfbTQm7XQKzIobf7g/zh-cn_image_0000002820525415.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014659Z&HW-CC-Expire=31536000000&HW-CC-Sign=C09C3B16E3A9038442EC42A77A6C4E39E966B9A21F26EC7C90FD3FC724CC1642)
 
 ## 应用内多窗
 

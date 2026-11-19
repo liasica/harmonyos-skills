@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-migrati
 title: ArkTS语法适配背景
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 从TypeScript到ArkTS的适配指导 > ArkTS语法适配背景
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:56+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:bd4c785a937c932e2ecb5e83f41fb947fa7728eb83d1f266f2556008f067a771
+scraped_at: 2026-11-19T09:47:24+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:247583a9b1954f282cd7203da04246d315b06fae9552927af383e71600439c44
 ---
 
 ArkTS在保留TypeScript（简称TS）基本语法风格的基础上，进一步通过规范强化了静态检查和分析，使得开发者在程序开发阶段能够检测出更多错误，提升程序的稳定性和运行性能。本文将详细解释为什么建议将TS代码适配为ArkTS代码。
@@ -165,11 +165,11 @@ foo(c);
 
 **应用环境限制**
 
-1. 强制使用严格模式（use strict）
-2. 禁止使用eval()
-3. 禁止使用with() {}
-4. 禁止以字符串为代码创建函数
-5. 禁止循环依赖
+1. 强制使用严格模式（use strict）。
+2. 禁止使用eval()。
+3. 禁止使用with() {}。
+4. 禁止以字符串为代码创建函数。
+5. 禁止循环依赖。
 
    循环依赖示例:
 

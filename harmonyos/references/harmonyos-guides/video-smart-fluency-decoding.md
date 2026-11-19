@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-smart-f
 title: 智能流畅倍速解码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 智能流畅倍速解码
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:05+08:00
-doc_updated_at: 2026-10-16
+scraped_at: 2026-11-19T09:48:34+08:00
+doc_updated_at: 2026-11-18
 content_hash: sha256:3af500645c84490ed7cb7da9e963430cfc700f99f486ccef12009cdf9c51e026
 ---
 

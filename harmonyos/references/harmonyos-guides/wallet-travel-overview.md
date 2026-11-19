@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-travel
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 出行凭证 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:34+08:00
+scraped_at: 2026-11-19T09:49:15+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:3c1d08aff2eb168562712ef797a2202179f223385d25d945e95a42c783bb2d7c
+content_hash: sha256:b51e5c1f85e619861d9061a31ee8e5ef374b890ca64cbc9e49bfee70574af53e
 ---
 
 出行凭证即在用户购买机票或车票后所产生的电子乘车凭据，用户可在华为钱包中方便查看。
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ql8ZtEQrQ7eV2eD--_z5TA/zh-cn_image_0000002817427729.png?HW-CC-KV=V1&HW-CC-Date=20261114T004834Z&HW-CC-Expire=31536000000&HW-CC-Sign=46A9EF9B43E23F6BD2D58A65C9B610151732805D951C04D18DE64FD764A287D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/7Q-6ZwndRNyh3_1MG20-hA/zh-cn_image_0000002791726668.png?HW-CC-KV=V1&HW-CC-Date=20261119T014915Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0CE17E0AB4FD44E4E3C2014D792CCF0341335890979F05628BFB32691CEB0D5)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -27,15 +27,15 @@ content_hash: sha256:3c1d08aff2eb168562712ef797a2202179f223385d25d945e95a42c783b
 
 ### 出行凭证开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/_k1oYtA3S3apXsmdkmkWNw/zh-cn_image_0000002788308380.png?HW-CC-KV=V1&HW-CC-Date=20261114T004834Z&HW-CC-Expire=31536000000&HW-CC-Sign=D460F7014D3142C6449917A33C817891F0A87AB77749A7D910DB5FD1C29995F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/EfjqEAewQz2H1YOA9BvvAA/zh-cn_image_0000002820406661.png?HW-CC-KV=V1&HW-CC-Date=20261119T014915Z&HW-CC-Expire=31536000000&HW-CC-Sign=83197AAE49C671E7BA36B37675F695D3971FA303AAAFF89AA1B1419FBA28DD43)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/zFpHDiesRL-KXzLO0T-l-A/zh-cn_image_0000002817427743.png?HW-CC-KV=V1&HW-CC-Date=20261114T004834Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DA2E8628265A5A9286FF4B694C40A5764081487612DD384F41FE9D36AB861B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/rvx_FYblTua3bhOwRLHiBw/zh-cn_image_0000002791726682.png?HW-CC-KV=V1&HW-CC-Date=20261119T014915Z&HW-CC-Expire=31536000000&HW-CC-Sign=A06A0172FEAFD96AC389B47C34998669BE6C0ED969DC838BF633B4C50E390192)
 
 ### 出行凭证展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/NKBvjrC4Qj6US_SVg_5NLQ/zh-cn_image_0000002788468324.png?HW-CC-KV=V1&HW-CC-Date=20261114T004834Z&HW-CC-Expire=31536000000&HW-CC-Sign=B71B0016B62BD8BFA9E1C6573C59C6A627B7C1A68FECE0EA42492919E35D2471)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/lsjTrOPbQmOhCpdGAhih9g/zh-cn_image_0000002791566710.png?HW-CC-KV=V1&HW-CC-Date=20261119T014915Z&HW-CC-Expire=31536000000&HW-CC-Sign=25A2F055B9102B3BF72A93D99BD02524BC3FC6E8FF833E639DC930C8C1EB08C5)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/LGFi_eWdRseTl1OvRpSwFw/zh-cn_image_0000002817507813.png?HW-CC-KV=V1&HW-CC-Date=20261114T004834Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5F509076893A96D3A91D81C8081017BA410E6EB462E75C85C1298C871915AFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/CUh7NlxtSjmEGIaqPXo54g/zh-cn_image_0000002820526663.png?HW-CC-KV=V1&HW-CC-Date=20261119T014915Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D33C1ACBFEA07EE5E0EDC62E48A78A7E00AC32090CD675EFEA02382E2276CA9)
 
 ## 接入流程
 

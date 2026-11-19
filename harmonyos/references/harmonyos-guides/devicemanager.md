@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicemanager
 title: USB设备管理（ArkTS）
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB设备管理（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:48+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-19T09:48:18+08:00
+doc_updated_at: 2026-11-18
 content_hash: sha256:9d2c71631da34bb57d1faef6d8cd0937f1e4da5a22760648448db5dec9d811a2
 ---
 

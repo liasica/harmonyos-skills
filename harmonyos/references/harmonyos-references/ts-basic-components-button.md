@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Button
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Button
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:12+08:00
+scraped_at: 2026-11-19T09:51:00+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:f61afef0adb1b6656fac3a18d79a1a325150b69a7efa402d7fb6177a998b9e18
+content_hash: sha256:6bf8be864368e715c3a8d82ffc33e7b4af78f65be59d8958fdffcf74126f5730
 ---
 
 按钮组件，可快速创建不同样式的按钮。
@@ -553,7 +553,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Dz5PwZ7LTN-Je-W-HBla-A/zh-cn_image_0000002788308944.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005011Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7200565CF57E5465003BEC6CE8CB4B931A7771C2E972BF9DC5FC163C60891A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/LUzU_50XR8yoqwDkAjJi0g/zh-cn_image_0000002820407227.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=E60C60DFDAD194FFFAA7C3509538C22E765FA7041F7E3371E91BF10A1F046BDA)
 
 ### 示例2 （为按钮添加渲染控制）
 
@@ -585,7 +585,7 @@ struct ButtonRenderControlExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/NgK06ofuTmm3NhreXAOnkA/zh-cn_image_0000002817428307.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005011Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF027EFA954EA849E52D3692B1AE78714898BFE21C407CD6EA2B24F14AA64DB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/HY6rdzfXTUyIoYxmlAkrYg/zh-cn_image_0000002791727246.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C96021445E63E76FCBB66F762FCA8998C2BDE3E4469C0D59B3CF1EBEA705DAF)
 
 ### 示例3 （设置按钮文本样式）
 
@@ -627,7 +627,7 @@ struct ButtonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/iR3CjX4wQPm8zwuXCBm_lA/zh-cn_image_0000002788468888.png?HW-CC-KV=V1&HW-CC-Date=20261114T005011Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D7DA5D7887BC9B215CC1BA9819249E12E4449A9D6E3B91729CBCF38A7835346)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/F-WmI775QIiY3AlKd1-zWQ/zh-cn_image_0000002791567274.png?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A70D3AE1757277713730A53D4C1DF1A2EFFC71D66E19184A1A48D253AD3CF62)
 
 ### 示例4（设置不同尺寸按钮的重要程度）
 
@@ -666,7 +666,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/BTHEbj9jS3mV8G_-TZGy0Q/zh-cn_image_0000002817508377.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T005011Z&HW-CC-Expire=31536000000&HW-CC-Sign=A919ECAA63CEF35C59B5E15F34D2507421768E6608D30E943D68501A81C791E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/qTGKEVk_QzCLKoy79mmYhQ/zh-cn_image_0000002820527227.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=52A1BC1658B0D1AE346D67154C0F50ED3F289A100B755DAE4A952DB48FEE001A)
 
 ### 示例5（设置按钮的角色）
 
@@ -696,7 +696,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/YaEpci9tTCyYK7hiQhyJWA/zh-cn_image_0000002788308946.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T005011Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3BB653254005FC0D783E2260267B5F9EF07EEC7F3092840A2B36ED692322C07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/sb6iijuWSyi-cxZgLznRzg/zh-cn_image_0000002820407229.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DCB1934F3EBA6C2B3C3FD0B9538E09EDE8BAC7DA84FB75BFAAC651716ED5478)
 
 ### 示例6（设置自定义样式按钮）
 
@@ -765,7 +765,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/IHzfyBRQRc2ipwdvTOgjPA/zh-cn_image_0000002817428309.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005011Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F40505EAB7E3A8640D936962CF2E5FBE33042B3ABA68AA6722C54139151F771)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/xdzlyI9dQauCwjkWkOjM5w/zh-cn_image_0000002791727248.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B26EFE19D162287FDD0CD3A9795FDC044C7C4C67C738F31EA8D33E82915F8D5)
 
 ### 示例7（设置圆角矩形按钮）
 
@@ -807,7 +807,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/dBr5oBTnRYyPNe1DgdE3Lg/zh-cn_image_0000002788468890.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T005011Z&HW-CC-Expire=31536000000&HW-CC-Sign=25CABAA05A6430F20E345A438C66AA9A5928BAC8853C30CB8BB6FBF251CD0E0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/USDVcXCZRayfUpwckIWYuQ/zh-cn_image_0000002791567276.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FCFC404C3CF40BB1DFED7AF0716E3481B98320C9A33179C050A8DBC6D4573D8)
 
 ### 示例8（设置label文本水平对齐方式）
 
@@ -833,7 +833,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/-gZocQuVRkiPbKagPEhUQw/zh-cn_image_0000002817508379.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T005011Z&HW-CC-Expire=31536000000&HW-CC-Sign=B68FC1DF632A7297D90A63AB0050E2C3376A47043462A3582D102DE8E61B1B56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/oWbDVhTiQjKtxJQFaFbghA/zh-cn_image_0000002820527229.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A4916454E276F6D9EC9E0626B43FFDC8D7083137BD2BE6EF12246BB336F4742)
 
 ### 示例9（设置按钮的沉浸光感效果）
 
@@ -909,8 +909,8 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/I1pglt5hQ6OUgl73LXnd5Q/zh-cn_image_0000002788308948.png?HW-CC-KV=V1&HW-CC-Date=20261114T005011Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFD2F85EA07F72681E1E4260D8D927EB43A2458E617DA99BEFC82A3736EDFCBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/tT7y-B59RrKTFM2sNCI2rw/zh-cn_image_0000002820407231.png?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=9198EAEA15B83F0540F722CC069F0BDDBD109DD7C75DD8929B9D8B64083FEB22)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/eYY6FTW1Qlal20xkBqDSjQ/zh-cn_image_0000002817428311.png?HW-CC-KV=V1&HW-CC-Date=20261114T005011Z&HW-CC-Expire=31536000000&HW-CC-Sign=069440CF5D0E0A014F5F95FFD955F0D88B5BC87FCA5CBA975192099D06A2FC1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/9sKHMgknQGqOCzjBrCO6Mw/zh-cn_image_0000002791727250.png?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5A699CDDD57AAFE85DA2B26E966B3B32D519E08A103BFD91AA5E7C7537D0944)

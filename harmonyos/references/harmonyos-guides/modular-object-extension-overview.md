@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/modular-objec
 title: 模块化对象模型概述 (C/C++)
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 基于ModularObjectExtensionAbility的模块化对象开发指导 (C/C++) > 模块化对象模型概述 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:50+08:00
+scraped_at: 2026-11-19T09:47:27+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:edcc25f48f52be16294bda4816a132ed960a3c6333b0b7860ecb9dee30276d96
+content_hash: sha256:a4a8275bae498de60f49dfa56407a4a500f81e9a776c4bab359335d74c728fc0
 ---
 
 模块化对象是一种跨应用的能力开放方式。应用通过ModularObjectExtensionAbility（相关C API定义见[modular\_object\_extension\_ability.h](../harmonyos-references/capi-modular-object-extension-ability-h.md)）组件将特定功能封装为独立的功能模块并对外暴露Proxy对象，其他应用获取Proxy对象后，即可跨进程调用这些能力。例如，文档编辑类应用可以提供文档处理能力，其他应用可调用该能力实现文档协同编辑；邮件类应用可以提供邮件发送能力，其他应用可调用该能力实现邮件群发等。
@@ -25,7 +25,7 @@ content_hash: sha256:edcc25f48f52be16294bda4816a132ed960a3c6333b0b7860ecb9dee302
 2. 服务端返回Proxy对象：连接成功后，系统会加载服务端对应Ability的so库，并调用OnNativeExtensionCreate入口函数。然后系统会依次触发服务端的OnCreateFunc和OnConnectFunc回调，开发者在OnConnectFunc回调中返回Stub对象。系统将Stub转换为Proxy对象返回给客户端。
 3. 客户端通过Proxy与服务端通信：客户端在OnConnectCallback回调中收到服务端返回的Proxy对象后，通过该对象与服务端通信。当不再需要通信时，客户端可以通过Disconnect断开连接。连接断开后，系统会依次触发服务端的OnDisconnectFunc回调和OnDestroyFunc回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/3oe-quOxSYOoH_4YQgQ6Pw/zh-cn_image_0000002817425529.png?HW-CC-KV=V1&HW-CC-Date=20261114T004513Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4EEEA676D5AD12A4D47B9DF9DE0642541E05CCD845C4F8E5DE230D5C4438FF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/mB0-Oa1qTfyetKMac2hstA/zh-cn_image_0000002791724466.png?HW-CC-KV=V1&HW-CC-Date=20261119T014637Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EF74309DCA2BBDE3B300AEE096654AC37C6365EBE6CE408B9AC687CF128B17C)
 
 上述步骤中涉及的简写与完整接口名称的对应关系如下表所示：
 

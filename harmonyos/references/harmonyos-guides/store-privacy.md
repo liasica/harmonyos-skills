@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy
 title: 隐私管理服务
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 隐私管理服务
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:13+08:00
+scraped_at: 2026-11-19T09:48:53+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:66bc81d8e625430c432e3eade20530e9c6d52a2e967e30304da20a9c1591cc46
+content_hash: sha256:b874a9b67ae3ffebd6100940bb099be91e30d8f9d49ad611cb6af861120bcf03
 ---
 
 隐私管理服务为使用[标准化隐私声明托管服务](../app/agc-help-privacy-policy-0000002316794885.md)的应用/元服务提供查询隐私链接、查询隐私签署状态、撤销同意记录和拉起标准化隐私弹框请求用户同意功能。
@@ -31,7 +31,7 @@ content_hash: sha256:66bc81d8e625430c432e3eade20530e9c6d52a2e967e30304da20a9c159
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/3BXl5aEAQGm3sC92FGQLyA/zh-cn_image_0000002817427277.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F8DEF94000C1830A0016EDAFDFC2A6722AD2EC5BA124FDA3F527444D1B241A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/QEAzvnyfTvK9jjs74gxZLA/zh-cn_image_0000002791726216.png?HW-CC-KV=V1&HW-CC-Date=20261119T014852Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADC60D54460906AE5E0C115A4B54733FB5C1FC569BC1A4397816265A56280E93)
 
 ### 查询隐私链接信息
 
@@ -181,7 +181,7 @@ content_hash: sha256:66bc81d8e625430c432e3eade20530e9c6d52a2e967e30304da20a9c159
 
 弹框样式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/KIXyhg3lR12_OjYN3PRb1Q/zh-cn_image_0000002788467858.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=A125B33A73463538DF5D34D86A8AE198071995F255B1A82257ACDA3C8B7E16CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/-ECUPqvQTxmVjwktiyhheA/zh-cn_image_0000002791566244.png?HW-CC-KV=V1&HW-CC-Date=20261119T014852Z&HW-CC-Expire=31536000000&HW-CC-Sign=F75CDE8D0A349601EADCD1EFFC528F7DB8C236E01BE96EF656B0366E6397A289)
 
 用户点击同意隐私弹框，应用市场会发送隐私弹框签署结果公共事件。应用可通过监听该事件，感知用户隐私签署结果。
 

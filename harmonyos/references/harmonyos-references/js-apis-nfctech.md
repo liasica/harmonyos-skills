@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: nfctech (标准NFC-Tag Nfc 技术)
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > tag > nfctech (标准NFC-Tag Nfc 技术)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:35+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:15d2ca8a37a370239fd03159cf0be9ec5b792a2af0578517ebb88994bcb52c68
+scraped_at: 2026-11-19T09:52:32+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:9684a36c6fcda16763040a7682594ef70fc4fd6c12283e6078718b8e041a1cd7
 ---
 
 本模块主要用于采用不同Nfc技术的Tag的读写操作。
@@ -436,7 +436,7 @@ function nfcTechDemo() {
     try {
         isoDep.isExtendedApduSupported((err: BusinessError, response: boolean) => {
             if (err) {
-                console.error(`isoDep isExtendedApduSupported AsyncCallback Code: ${err.code}, message: ${err. message}`);
+                console.error(`isoDep isExtendedApduSupported AsyncCallback Code: ${err.code}, message: ${err.message}`);
             } else {
                 console.info("isoDep isExtendedApduSupported AsyncCallback response: " + response);
             }

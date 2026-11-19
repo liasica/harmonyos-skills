@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-s
 title: 应用启动流程
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动 > 应用启动流程
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:49+08:00
+scraped_at: 2026-11-19T09:47:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3feee2fdc622ffdc391a88b09b09c5b3154347afbbe662981fd1b9c1768229bf
+content_hash: sha256:49fd98c6c514223c983bcf0a7bf4ab7cf85cf45bd9b68031309de82c10f9d96a
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:3feee2fdc622ffdc391a88b09b09c5b3154347afbbe662981fd1b9c1768
 
 进程、AbilityStage与UIAbility生命周期的关系如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/ohFWSEPfT8yJ5v1fpCUi_g/zh-cn_image_0000002788306136.png?HW-CC-KV=V1&HW-CC-Date=20261114T004512Z&HW-CC-Expire=31536000000&HW-CC-Sign=B618E2574828106D96FC6FD5F5E568366DE7EEB886D27E66E9CEB2F4A113871B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/UGcU_A06RM6LjzLHz7MT-w/zh-cn_image_0000002820404413.png?HW-CC-KV=V1&HW-CC-Date=20261119T014726Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E485699A72D834555D8EC96C6FCB84E2DF69A0AA48A274FF226481E59CDC264)
 
 | 阶段 | 触发时机 | 主要职责 |
 | --- | --- | --- |

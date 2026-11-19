@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-hotel-
 title: 更新酒店房卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 酒店房卡 > 开发场景 > 更新酒店房卡
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:34+08:00
+scraped_at: 2026-11-19T09:49:15+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:5194bc017aaa43437e04933be2c4a8aa5ab827a7f25a3da4855aee217a82664c
+content_hash: sha256:b7034faad61133934fcc0c56c1c3fa566c6121eb66217b67da23dc4115b1f586
 ---
 
 当用户更换房间时，更新钱包中的房卡数据，自动同步为新房间号，无需重新开卡。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/8d5rHhD5SAGU4Dmxj8t-MQ/zh-cn_image_0000002788468322.png?HW-CC-KV=V1&HW-CC-Date=20261114T004649Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC0712461E7D80BD5736DF73C33E5C03D9A081F52FDC85C9DB5F118BFD3B121D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/rYscwFnPSrqCycAg_1tAnQ/zh-cn_image_0000002791566708.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=1730B07BD93E1B792804D6190959B92E5F9DC20E3E11B8A29769ABF8C1B84CAB)
 
 ## 服务端开发
 

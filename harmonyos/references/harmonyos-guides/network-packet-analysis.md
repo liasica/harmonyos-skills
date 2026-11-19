@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-packe
 title: 使用网络报文分析功能实现tcpdump抓包
 breadcrumb: 指南 > 系统 > 网络 > 网络调试调优 > 使用网络报文分析功能实现tcpdump抓包
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:39+08:00
+scraped_at: 2026-11-19T09:48:17+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:5b46ba868fd70c6711b4031648d107a5da1b347c06967fdf49bca7e50041e542
+content_hash: sha256:8e2b10c988807f05167276ef18080ebb99e655d18098b57d6affda1151ae3f1b
 ---
 
 ## 网络报文分析简介
@@ -79,7 +79,7 @@ USB连接后系统自动识别设备并创建以太网卡，无需手动安装�
 2. 点击开关弹窗确认允许后将其开启。
 3. 开启后胶囊实况窗会提示"报文分析运行中"，设备网络报文会被抓取到Windows PC Wireshark。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/fFpkN5s4TPyJkMEPh73EUw/zh-cn_image_0000002817506913.png?HW-CC-KV=V1&HW-CC-Date=20261114T004738Z&HW-CC-Expire=31536000000&HW-CC-Sign=8929D442C12A5377C0B3D0CCB74C4BC118CFBD949CC8BFB090D991A4E001EBB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/SUAWfW1JRjq2wtXLFm-bwQ/zh-cn_image_0000002820525761.png?HW-CC-KV=V1&HW-CC-Date=20261119T014725Z&HW-CC-Expire=31536000000&HW-CC-Sign=52019FD4D4C6EFED2DFB165EA79E4A8738852B43788EB103CB50444CC2CD1388)
 
 **说明** 
 
@@ -97,7 +97,7 @@ USB连接后系统自动识别设备并创建以太网卡，无需手动安装�
 2. 在网卡列表中查找功能开启后新增的以太网卡，通常显示为"以太网 x"（如"以太网 2"）。
 3. 记录该以太网卡的名称。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/O8u00LKqSciPbkLRy2riBQ/zh-cn_image_0000002788307482.png?HW-CC-KV=V1&HW-CC-Date=20261114T004738Z&HW-CC-Expire=31536000000&HW-CC-Sign=5292ABCD4F47BF28FBFBA898237C43EBC0484DC42B1EFA3D8333E2056521E98E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/LX_YL5N7RRGkW7OBR4IfXg/zh-cn_image_0000002820405761.png?HW-CC-KV=V1&HW-CC-Date=20261119T014725Z&HW-CC-Expire=31536000000&HW-CC-Sign=54FB6842212B99C8FC3733B0DB63FB78FA1C72344E8C5ABACD32FB0F893F350C)
 
 **说明** 
 
@@ -112,7 +112,7 @@ USB连接后系统自动识别设备并创建以太网卡，无需手动安装�
 1. 在Wireshark网卡列表中，双击选中的以太网卡，开始抓包。
 2. 报文数据会显示在抓包窗口中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/bBFH6bPYRvmoHHcr0ax4xw/zh-cn_image_0000002817426845.png?HW-CC-KV=V1&HW-CC-Date=20261114T004738Z&HW-CC-Expire=31536000000&HW-CC-Sign=4192804410C6F4A2CB55025B27DD2C852C459150DE0913D2E957F934A9065B1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/9Qj2E3UMT4yNnvvz3pfJNQ/zh-cn_image_0000002791725782.png?HW-CC-KV=V1&HW-CC-Date=20261119T014725Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C6721C3CAC6A61322C678BE999FD4C3083A4F85C2B6B765CEB08F8E8A7815BA)
 
 步骤三：解读抓包结果
 
@@ -166,7 +166,7 @@ Wireshark通过颜色区分不同类型的报文：
 2. 使用Ctrl+Shift+S保存抓包文件。
 3. 选择保存路径和文件名。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/m-CLPV3xQe-Q94F2fNlisw/zh-cn_image_0000002788467426.png?HW-CC-KV=V1&HW-CC-Date=20261114T004738Z&HW-CC-Expire=31536000000&HW-CC-Sign=323D1A19EA620026505C2AA9F53DE1C8ADD4BD356A76FB1002A684D5CA847DA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/n60BvvaiRg6Ei_TsIWASfQ/zh-cn_image_0000002791565810.png?HW-CC-KV=V1&HW-CC-Date=20261119T014725Z&HW-CC-Expire=31536000000&HW-CC-Sign=475B44D18BE1423E436F51CE34CB951DFF569314C3AF09715036DE8F14722C34)
 
 ### 关闭网络报文分析步骤
 
@@ -212,7 +212,7 @@ Phone或Tablet设备的网络报文分析功能已开启，但Wireshark网卡列
 * 重新开启Phone或Tablet的网络报文分析功能。
 * 重启Wireshark并在Wireshark中点击刷新网卡列表按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/nLHxSvwhRVKEAiQmqLjCEA/zh-cn_image_0000002817506915.png?HW-CC-KV=V1&HW-CC-Date=20261114T004738Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A2D89AAF6DB3848FF1D45BE24EF4AF7E38BBA01B7A3DCC3ACE6E46BA127F230)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/aEb3fSYEQNyXJDVhU4jIqg/zh-cn_image_0000002820525763.png?HW-CC-KV=V1&HW-CC-Date=20261119T014725Z&HW-CC-Expire=31536000000&HW-CC-Sign=338B0582820BEB7B8B46DE8854F551E30328D4399740A75D515303695B81898B)
 
 ### 抓包数据为空或很少
 
@@ -232,7 +232,7 @@ Wireshark过滤器设置过于严格，例如限制特定IP、端口等。
 * 检查Wireshark过滤器是否设置正确，尝试清除所有过滤器。
 * 确认以太网卡是否在接收数据（查看Wireshark底部状态栏的包统计）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/upe5CFXzRHOiXHMWngkbWA/zh-cn_image_0000002788307484.png?HW-CC-KV=V1&HW-CC-Date=20261114T004738Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E7EC8F1E6FFAB2D552A53676BC80C79AFD8F61E8C3A73127CBE2C62E389D109)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/1kMirmJwRmm5n20kqTGa9A/zh-cn_image_0000002820405763.png?HW-CC-KV=V1&HW-CC-Date=20261119T014725Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C8D83CA1593AEEA239E4423768F182AE64C78D5A1A3D378922342AF6CB45943)
 
 ### 功能使用期间出现中断
 

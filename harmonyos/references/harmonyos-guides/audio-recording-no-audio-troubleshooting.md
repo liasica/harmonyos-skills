@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-recordi
 title: 录音无声定位指导
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > Audio Kit常见问题 > 录音无声定位指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:01+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:7bd6b811ac78375515cdf21568f78124c2f096dda65254ba58159907c4d3bc85
+scraped_at: 2026-11-19T09:48:33+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:4395d5ff3e608d7cf89ec0821c69ef318a78329beb592e117f4c5b435aa095f7
 ---
 
 开发者在实现音频录制功能时，可能会遇到录音启动失败、没有录音数据回调、录音文件无声等问题。本文将介绍录音无声场景的常见现象、相关背景知识以及定位方法，并给出可直接对照的示例代码和定位流程。
@@ -139,7 +139,7 @@ SourceType会影响录音通路、算法处理、并发打断策略以及输入�
 
    ```typescript
    import { BusinessError } from '@kit.BasicServicesKit';
-   import { fileIo as fs } from '@kit.CoreFileKit';
+   import { fileIo } from '@kit.CoreFileKit';
    import { common, abilityAccessCtrl, PermissionRequestResult } from '@kit.AbilityKit';
 
    // ...
@@ -153,7 +153,7 @@ SourceType会影响录音通路、算法处理、并发打断策略以及输入�
       pendingRecordingWrite = Promise.resolve();
       let path = context.cacheDir;
       let filePath = path + '/S16LE_2_48000.pcm';
-      recordingFile = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+      recordingFile = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
       onReadData = (buffer: ArrayBuffer) => {
         let recordingBuffer = buffer.slice(0);
         let writeOffset = writtenBytes;
@@ -163,7 +163,7 @@ SourceType会影响录音通路、算法处理、并发打断策略以及输入�
           length: recordingBuffer.byteLength
         }
         pendingRecordingWrite = pendingRecordingWrite.then(async () => {
-          await fs.write(recordingFile.fd, recordingBuffer, options);
+          await fileIo.write(recordingFile.fd, recordingBuffer, options);
         }).catch((error: BusinessError) => {
           console.error(`${TAG}: Write recording data failed, code: ${error.code}, message: ${error.message}`);
         });

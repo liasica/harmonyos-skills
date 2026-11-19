@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-encodin
 title: 图片编码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(依赖JS对象)(不再推荐) > 图片编码
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:59+08:00
+scraped_at: 2026-11-19T09:48:40+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:88b52bcece3381ff7c7dc67bd26fb88370af7fa91d2511211579f57a9b13234f
+content_hash: sha256:131e6e96a1e6bc9994750b5040a63efb47cb9467570b954f3a19c728d6bc9649
 ---
 
 **说明** 
@@ -39,7 +39,7 @@ content_hash: sha256:88b52bcece3381ff7c7dc67bd26fb88370af7fa91d2511211579f57a9b1
 
 如下为图片编码调用关系图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/MSnb0_zLRrmPI1i0gSx5eg/zh-cn_image_0000002788307672.png?HW-CC-KV=V1&HW-CC-Date=20261114T004617Z&HW-CC-Expire=31536000000&HW-CC-Sign=4631B9B2CF665094FB72017260B6B1E39E562EFB107355753F3124687F6FCA26)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/fsiPx_2rQ52lrkB7jYedCQ/zh-cn_image_0000002820405953.png?HW-CC-KV=V1&HW-CC-Date=20261119T014839Z&HW-CC-Expire=31536000000&HW-CC-Sign=8742B9B8406E9F3F84131B6EC351C5D69836EFDCB564AA2C9768C37194A749D7)
 
 ### 在 CMake 脚本中链接动态库
 

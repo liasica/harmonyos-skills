@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-un
 title: 文本展开折叠
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 文本展开折叠
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:03+08:00
+scraped_at: 2026-11-19T09:47:40+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:14de5e0fbef7596f103f0840a0b0c30cb5953134fbd0cc963eb41106ed7519ff
+content_hash: sha256:f4fd183fb166732892ddd259d88d4fcd4c7fd3883948486ae3a721ac1d6a12b5
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:14de5e0fbef7596f103f0840a0b0c30cb5953134fbd0cc963eb41106ed7
 
 本文将介绍解决这一问题的基本逻辑和解决方案，帮助开发者使用系统自带模块，更简洁的解决问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/nkxMvk4lTpy1a1-XEFhM8w/zh-cn_image_0000002817426081.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=899EFEC4CFA9E20AFFDF19B938DD0BD3CA066DD10B5AC137E57A8442E9DE93A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Sz7faUtrS9q7Rkbi2uEmgg/zh-cn_image_0000002791725018.png?HW-CC-KV=V1&HW-CC-Date=20261119T014740Z&HW-CC-Expire=31536000000&HW-CC-Sign=D94C47E536496F0B66EB925EB0AEFA068BA2D2831AD483C09E3699AAC55D8599)
 
 ## 纯文本展开折叠
 
@@ -25,13 +25,13 @@ content_hash: sha256:14de5e0fbef7596f103f0840a0b0c30cb5953134fbd0cc963eb41106ed7
 1. 文本中只有文字。
 2. 超出2行要能显示"...展开"，展开后显示收起。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/hE10SuHJR82waVtaoShK8g/zh-cn_image_0000002788466662.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0BF0B06C713012DC5D5E0A9AE8B3DA3996929F7EC9F4005C50B755B431B8CF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/C1OYhZRpQa-hqRQ2-z9kRg/zh-cn_image_0000002791565046.png?HW-CC-KV=V1&HW-CC-Date=20261119T014740Z&HW-CC-Expire=31536000000&HW-CC-Sign=00D7EBF4133DD5CE6BCB52A7446646BE59E0A95EE63D501277D6B9D4048C9266)
 
 ### 实现原理
 
 需要计算出“...”前最后一个文字的索引和显示行高，以确定“收起”“展开”按钮的位置，其原理如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/KNApNUFQTMCURYW9uugFhA/zh-cn_image_0000002817506149.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=919534ADD03CA863F09871A955C40548E5D5AFE7F2D562E52F4DD8F0EAC85F8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/z4JX0VLCTHWSa2u5pqBxfg/zh-cn_image_0000002820524999.png?HW-CC-KV=V1&HW-CC-Date=20261119T014740Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8FFBADC5854D6F092D5B4CABAC856D337BD7D282CB6C6B4021FBF2682CBC98A)
 
 计算文本高度，结合按钮和“...”的宽度，计算收起文本最后一个文字的坐标，换算为对应内容索引，截断显示相应的内容。
 
@@ -145,13 +145,13 @@ content_hash: sha256:14de5e0fbef7596f103f0840a0b0c30cb5953134fbd0cc963eb41106ed7
 
 当前展示内容需要针对整个文本做截断并最终显示...和"展开"字眼，例如图片中的文本就比较长，需要在"潮声与你"的位置截断。该场景由于文本中有图片和不同字号的限制，使得计算截断文本的位置比较困难。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/CTpncpLcQHylwvyJukIsMQ/zh-cn_image_0000002788306720.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BEDEE4AEFD1765987E23A063CAB14BEB3E65CC24FC130D7B635EBA7F32A11B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/M68rjt56QkqtXtybSqBhQQ/zh-cn_image_0000002820404997.png?HW-CC-KV=V1&HW-CC-Date=20261119T014740Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBEAD9C724E66C4EF9030D97651EA09FE8023CC2EF165314D7F80D3297E019D8)
 
 ### 实现原理
 
 需要计算出“...”前最后一个文字的索引和显示行高，以确定“收起”“展开”按钮的位置，其原理如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/XnTc-OXtRlakCbwichV57A/zh-cn_image_0000002817426083.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB9367B7F23DA9D0EE99647E647E55C5A13CC22CDE0B77CF819797BB3CF0A159)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/-rMfMjHTSVyaeXZirzz5dw/zh-cn_image_0000002791725020.png?HW-CC-KV=V1&HW-CC-Date=20261119T014740Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAEA9C41E267144C5931A6D722ACB418E56019C19C1318B1C17FB5CA952E1094)
 
 使用排版，计算实际需要收起内容的高度，结合按钮和“...”的宽度，计算收起文本最后一个文字的坐标，换算为对应内容索引，截断显示相应的内容。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Flex
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > Flex
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:08+08:00
+scraped_at: 2026-11-19T09:50:55+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:bda5062d7f2625c6b9cde6800180b9c92823f0138eff3be5356542cb4ab5edd6
+content_hash: sha256:cb8902505afb5535003ac7865785a253f92d1e0bd2c429ac0c4102fee5d61046
 ---
 
 Flex是以弹性方式布局子组件的容器组件，能够高效地排列、对齐子元素并分配剩余空间。
@@ -147,7 +147,7 @@ struct FlexExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/KLjefalDQo2ASM7uQVPPJw/zh-cn_image_0000002817508259.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=F298B1E2D03043C2936AAABA320BF970775D2CEB3556DB95E3EE1F89BF76CB5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/-v833U2bQRmEJhoXddohxg/zh-cn_image_0000002820527109.png?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=7367F1C3FCAAD28A998B7A5A2A70A5397F57E83F844A2DEA0C174093091AD213)
 
 ### 示例2（子组件单/多行排列）
 
@@ -197,7 +197,7 @@ struct FlexExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/BTssLle8Q4WZb4BoWaWiWw/zh-cn_image_0000002788308828.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=921E3105FC6A694E834662138A101BB6EDC6FAA0D1EA223692D163D94AE39867)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ZEY2SBvoRjK250fBpuKEPw/zh-cn_image_0000002820407109.png?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=53D1D673FB9AABF39AFD960638BFE36B5630E6804133A8BCE4AFB61FBE8CDB5D)
 
 ### 示例3（子组件在主轴上的对齐格式）
 
@@ -250,7 +250,7 @@ struct FlexExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/0bU8CNJbSBCsr5tHoPJUHg/zh-cn_image_0000002817428191.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=0185C8EDD454D697AECC450C5ECF21FD168C8E54CBBE1F37ACC38AF1150F4EFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/BX7je798RQaj3LokCbHXgg/zh-cn_image_0000002791727130.png?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=8143D3E46B457A1C6736FB40B8F7B8D540808E6DE6C105CFA02A0DCC69C129D9)
 
 ### 示例4（子组件在交叉轴上的对齐方式）
 
@@ -303,7 +303,7 @@ struct FlexExample4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ss0s2m1BT2CD7ycEEdZydw/zh-cn_image_0000002788468772.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=779659124B211F33D4EB8574B174F5BD93D18DC0358325F17B0E34EC7DE7FD3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/MP06pqmfSG65JPBd9tAw_w/zh-cn_image_0000002791567158.png?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=626EB90830480EF0AF31A796ECFF4CA6AF9A3D04FB9540CA0B6495BC09D1DA5C)
 
 ### 示例5（多行内容的对齐方式）
 
@@ -368,7 +368,7 @@ struct FlexExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/c_Q4JqVCSC-6mEyX41rUFw/zh-cn_image_0000002817508261.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5043CD2EE544072E47E580DA976849BE0DD4BCD1E896BC3C20396FF7D6518E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/HmxwrVv6TqafKi9crsJCYg/zh-cn_image_0000002820527111.png?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=3300ED5A5B876577EE37F3DA7CC544E2F3D5C2580762DE3B4DCCA344FE7A45AB)
 
 ### 示例6（子组件单/多行排列时的主/交叉轴间距）
 
@@ -419,7 +419,7 @@ struct FlexExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/8qYeAyZdSuGAXSCoDj4Obg/zh-cn_image_0000002788308830.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A07446BD7FC4E9B9EE156F4A311F84558FD117A192AA6C951F8BFC3A4253D81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/7X8qVicaTLqMMs5Yr771Eg/zh-cn_image_0000002820407111.png?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=A81DEBAEDDAF6D0522E852A255CE15399361054F8DC9B6605F57EF814BFAA749)
 
 ### 示例7（宽度自适应的Flex容器）
 
@@ -475,4 +475,4 @@ struct FlexExample7 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/9F6Oi3LTQKS8zsbv7uQBow/zh-cn_image_0000002817428193.png?HW-CC-KV=V1&HW-CC-Date=20261114T004809Z&HW-CC-Expire=31536000000&HW-CC-Sign=F59CEFA233E3FB305A1FCBAB74AF542A4AE7F34DB5A920959064599197270A4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/32C_m786Qxmka_P8kzeo8Q/zh-cn_image_0000002791727132.png?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=18328E114DBB41D7749C49822DF55507095DC8D19CE0D3B3403ED1FFD0427D3D)

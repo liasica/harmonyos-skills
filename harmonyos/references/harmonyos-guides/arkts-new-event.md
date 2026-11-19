@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-eve
 title: "@Event装饰器：规范组件输出"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Event装饰器：规范组件输出
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:59+08:00
+scraped_at: 2026-11-19T09:47:37+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:9cf3b81a06622e3a68e0dae37619e494fb00f328b31bf9fd461d440bb34ba0e6
+content_hash: sha256:d4db0f32a6464ab9c1fc1e40c8b58b1c7137f34880823d419977a228421602ab
 ---
 
 为了实现子组件向父组件要求更新@Param装饰变量的能力，开发者可以使用[@Event](../harmonyos-references/ts-state-management-event.md#event)装饰器。使用@Event装饰回调方法是一种规范，表明子组件需要传入更新数据源的回调。
@@ -120,7 +120,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/eQ3IvKjoSmmwzVYfoZHN8Q/zh-cn_image_0000002788306356.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=1153B0B6BD1B751625AB19F6F9169905DA199FDA23322524466ECE24432860D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/hQbgxpZTRXeuSclXCXbZ1g/zh-cn_image_0000002820404633.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5446D416E0EFFFB25E383D356B1F44AEA769631BE66FEAFE74B960F9FDF83C5)
 
 值得注意的是，使用@Event修改父组件的值是立刻生效的，但从父组件将变化同步回子组件的过程是异步的，即在调用完@Event的方法后，子组件内的值不会立刻变化。这是因为@Event将子组件值实际的变化能力交由父组件处理，在父组件实际决定如何处理后，将最终值在渲染之前同步回子组件。
 
@@ -168,7 +168,7 @@ struct Index2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/2dWdB1UySwavokUV4qxY8g/zh-cn_image_0000002817425719.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004522Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B9332037654C70074F13030F4DEA2F5A27E4A5B72795828BE048A39F9F64352)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/wJbkEj2wR3-InCqm18eE7g/zh-cn_image_0000002791724656.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=46349DDC9234A778EB5162E913084925C8982DDCE97489D20493079087B2575B)
 
 在上面的示例中，点击文字触发@Event函数事件改变子组件的值，打印出的日志为：
 

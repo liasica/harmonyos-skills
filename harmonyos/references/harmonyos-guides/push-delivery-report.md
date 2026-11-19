@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-delivery
 title: （可选）推送报告
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > （可选）推送报告
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:29+08:00
+scraped_at: 2026-11-19T09:49:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2771168bbad531997f8d58cafea1c5738b076c13f6250726d356534b83152eb0
+content_hash: sha256:8e649b7f410f74fac5e26d5ec22c87cbb43e1fcb743ce6c816de8e8ae477d557
 ---
 
 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，点击“开发与服务”，在项目列表中找到您的项目，通过“增长 > 推送服务 > 推送报告”，您可以在“推送报告”中查看推送消息详情和推送用户详情。
@@ -18,13 +18,13 @@ content_hash: sha256:2771168bbad531997f8d58cafea1c5738b076c13f6250726d356534b831
 
 您可以查看推送消息的详情，场景化消息的统计图和对应表格，同时可以按照通道维度进行查看，有“通过AGC控制台”、“通过API方式”和“全部通道”；也可以按照消息类型维度进行查看。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/ImqhIx-XS_ymXa9UDGrkMg/zh-cn_image_0000002817507713.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7E4196FE552795F440C696FD294AFFDDFBB779876C0D852F8AD9E5321B8DA09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/h0QYYJYjR4-3hGYMl2dEwA/zh-cn_image_0000002820526563.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=1442CF9DCB92CB7A64EB8E2D1C698A445F9E9FAC8E43E4047CE21CF4E9B0E06E)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/400iOgedSqyQ2QOICyKPlA/zh-cn_image_0000002788308282.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=C237CF4F4A664CD43E81D19254424B7B8C22C6F7ACA2163BA7A05E2BECA2B065)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/NZS20JRdS0au_sjzX7dPWA/zh-cn_image_0000002820406563.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=91A42EDA84F439A37A2806E7A359C19C60285373CA1E7BEE9A3C7F5A5182F8B1)
 
-点击自定义后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Vq12rZu_TiCGlnUlwELEzA/zh-cn_image_0000002817427645.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5977BE8E721BF55B42311C1BB176E2B0D5904C43136A66FBF72D6A741285917)，可自定义推送消息报表展示的表格列，默认展示的表格列有：日期、消息类型、请求量、发送量、到达量、显示量、点击量、到达率（%）、点击率（%）、沉默设备丢弃、应用被卸载、无效TOKEN、通知关闭。全选可展示全部表格列，重置则恢复默认表格列。
+点击自定义后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/gzff6r5FTBeWRIkZOItkBg/zh-cn_image_0000002791726584.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=634E3C65B1597E5B0A37B4CA35FD01B51EB01F12756F1096344C7E38DE046FB3)，可自定义推送消息报表展示的表格列，默认展示的表格列有：日期、消息类型、请求量、发送量、到达量、显示量、点击量、到达率（%）、点击率（%）、沉默设备丢弃、应用被卸载、无效TOKEN、通知关闭。全选可展示全部表格列，重置则恢复默认表格列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Omviuwq7SOCMaXNm6dTa3w/zh-cn_image_0000002788468226.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F50026569D823589CB34D1783154C7FE518BF5958B481E0CC0018BECEE64373)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/JuAASMnCSpCfOSkMR_LG_A/zh-cn_image_0000002791566612.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4E815BCBDB40EEFD0489DBE827E3C61E48EBE55526149E65C8C96390BF5384A)
 
 报表数据条目说明：
 
@@ -54,7 +54,7 @@ content_hash: sha256:2771168bbad531997f8d58cafea1c5738b076c13f6250726d356534b831
 
 您可以查看推送用户的详情，根据时间维度查看活跃用户、新增用户和总用户的统计数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/JjN4JRv5QGe-EGppkVoNzQ/zh-cn_image_0000002817507715.png?HW-CC-KV=V1&HW-CC-Date=20261114T004829Z&HW-CC-Expire=31536000000&HW-CC-Sign=52C488C6CEB4171E7C174449496B96A3109D526BEE4B76CFF43D878D82B1E4D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/6n8V6Ky6RGuZ9woM4NqOSg/zh-cn_image_0000002820526565.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDE2964AAC2B856300723903EB3E45B7BD32876857CBBC73B9D4A5013E6CA666)
 
 报表数据条目说明：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component
 title: Web组件在不同的窗口间迁移
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > Web组件在不同的窗口间迁移
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:15+08:00
+scraped_at: 2026-11-19T09:47:52+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:90b91d48e7659245d592f0eea90b0538dd3fef913ecc204d0ce931b787cf7f77
+content_hash: sha256:98578ab1eb853dc4c08bf74960ebdf023a3ffedc65a41843d58871d358eb83d3
 ---
 
 Web组件能够实现在不同窗口的组件树上进行挂载或移除操作，这一能力使得开发者可以将同一个Web组件在不同窗口间迁移。例如，将浏览器的Tab页拖出成独立窗口，或拖入浏览器的另一个窗口。
@@ -14,7 +14,7 @@ Web组件在不同窗口间迁移，是基于[自定义节点](arkts-user-define
 
 在以下示例中，主窗口Ability启动时，通过命令式的方式创建了一个Web组件。开发者可以利用common.ets中提供的方法和类，实现Web组件的挂载和移除。Index.ets则提供了一种挂载和移除Web组件的实现方法。通过这种方式，开发者能够实现Web组件在不同窗口中页面的挂载与移除，即实现了Web组件在不同窗口间的迁移。下图是展示了这一迁移过程的示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/5jiz-2KRTLmon61xjBu3gw/zh-cn_image_0000002788467124.png?HW-CC-KV=V1&HW-CC-Date=20261114T004715Z&HW-CC-Expire=31536000000&HW-CC-Sign=4512CF9E4F1958E92F7CBEEC135AA27771A01A75642E6A7E41BDCBC8005F1892)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/d-E5HYLxQASBgfIa2bSjoA/zh-cn_image_0000002791565508.png?HW-CC-KV=V1&HW-CC-Date=20261119T014701Z&HW-CC-Expire=31536000000&HW-CC-Sign=806880743EB9A1486C77D4A6CD18BBDACF8538B8367FB7252DE64A17EB0E87BE)
 
 **说明** 
 

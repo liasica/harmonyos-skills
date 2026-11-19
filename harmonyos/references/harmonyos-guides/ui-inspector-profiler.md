@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-inspector-
 title: UI调优
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI调优
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:12+08:00
+scraped_at: 2026-11-19T09:47:49+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3034a325518311918b7bf12ec4359768cfce41bbc9f54051ebceb79c0e2ec397
+content_hash: sha256:bef1c49d7f8a5eb4dd84ae84ed7a2fd9e623d5d92e303db1d0b32644908ea17b
 ---
 
 本章节主要介绍UI的dump和调优能力，用于提高开发效率和优化开发者体验。
@@ -226,13 +226,13 @@ DevEco Studio的Profiler工具可抓取状态变量的变化打点。在Profiler
 
 **图1** 录制ArkUI State泳道流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/EbK1vLU-Tcyx_eUsfNw5rg/zh-cn_image_0000002817506529.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=85296C105886838E242615C469371007669CE74286BBDDE7242097AC380C6DBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/rmx0CtktQTSPcdWJH3Fo7A/zh-cn_image_0000002820525379.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=51243BCE650A0EF74970DF8322D4C642E2109C733FE3C3DA75348149B27C5008)
 
 步骤3：选中状态变量变化的打点，将显示当前状态变量更新触发了哪些组件的刷新，以及对应组件的创建、测量和布局的耗时。
 
 **图2** ArkUI State泳道图示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/_v-KCmXXQeudvnB91cJlfA/zh-cn_image_0000002788307100.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8E49138146416563B2734F22E3EDBA918A4FAA6CF827260139E95D79D1B77FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/J_mVpOy6S8mF82FsiU0kxA/zh-cn_image_0000002820405379.png?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DE14B9B1E09B273F680E53DE8269514FEE74CB5CA1FF4778F99C16AD8364C64)
 
 **说明** 
 
@@ -255,7 +255,7 @@ DevEco Studio的ArkUI Inspector可以显示当前页面自定义组件内的状�
 
 **图3** ArkUI Inspector显示状态变量相关信息
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/qDT4j8xnRX6WyaUyTTZGpA/zh-cn_image_0000002817426463.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=A98461AB40F7A7EB8CCE90E9C57CD613B59011FE0F2959FE3F94597BC5443A48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/v9ZMghO1Sia8ZeQU-hO5dA/zh-cn_image_0000002791725400.png?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B01A7924761F02ED76C8E8F2C76EBB3D53524825E76CCCB1121A10B71EAEC1D)
 
 **说明** 
 

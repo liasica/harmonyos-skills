@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 概述
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 应用访问限制 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:32+08:00
+scraped_at: 2026-11-19T09:49:13+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:8ff1746b959824c416787c4daceea7aa920461275bdeacb65e4c744e3f84a066
+content_hash: sha256:631f29349a32d4cd5ca7bbd0815ca665bb0e4b4ac9b29bffcba0ae70b7773975
 ---
 
 Screen Time Guard Kit中的应用访问限制功能，支持根据接口传入的应用token，实现对指定应用设置访问限制或解除访问限制。
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/wxMW3hnVT8Welrxlva9pvA/zh-cn_image_0000002788308322.png?HW-CC-KV=V1&HW-CC-Date=20261114T004832Z&HW-CC-Expire=31536000000&HW-CC-Sign=895320E2BB38E196139F891D6D3963F4D44EB155AB68E31C4CDF75E2D037FF76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/oXHFtIgBQd-O21AyTL7b3Q/zh-cn_image_0000002820406603.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=C391DFEFA7D752948B1B895BC49F1A1A7A9E5B53ED09AEB311DE75A99244B9A0)

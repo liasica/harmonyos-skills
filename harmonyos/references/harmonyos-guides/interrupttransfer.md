@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/interrupttran
 title: USB中断传输（ArkTS）
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB中断传输（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:47+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-19T09:48:18+08:00
+doc_updated_at: 2026-11-18
 content_hash: sha256:18848ea222b0846cd1033d978441494b7fd736b0a5beb8699ba9a0f9d9af3900
 ---
 

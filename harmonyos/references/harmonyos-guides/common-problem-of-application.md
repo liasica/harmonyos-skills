@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-proble
 title: 应用程序包常见问题
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:47+08:00
+scraped_at: 2026-11-19T09:47:24+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f6c8e58f66df3e1613e5bdef1827b74021fafde0f640195c64741f9fdea76fc1
+content_hash: sha256:ec369118ba4a5e476f3ba919c1b7a17bd81d8fad5e8b30f0b22af99afec1effb
 ---
 
 ## 如何获取签名信息中的指纹信息
@@ -40,7 +40,7 @@ hdc shell
 bm dump -n com.example.myapplication | grep fingerprint
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/4wN8kQEKQ0-MYBX4p2qkfw/zh-cn_image_0000002817505545.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB78824959620227A5652EEA89494C932CC0E20D7B512ED30128BE1AFC666AB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ReUoYKTvQ6-6qqPIotTg-A/zh-cn_image_0000002820524393.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE2037196283B313B6E801865804DC49B4CE88FDF2A53B2E66EF12DF3462CA63)
 
 * 通过.cer证书文件获取，可以参考[APP备案FAQ](../app/50130.md)中HarmonyOS应用/元服务如何获取公钥和签名信息，指纹信息使用哈希算法SHA-1生成。
 * 通过keytool工具获取，详情参考[生成签名证书指纹](../AppGallery-connect-Guides/appgallerykit-preparation-game-0000001055356911.md#section147011294331)，使用哈希算法SHA-256生成。
@@ -84,7 +84,7 @@ hdc shell
 bm dump -n com.example.myapplication | grep appIdentifier
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/hNBzyqkoSTKxwHR4ofhTXg/zh-cn_image_0000002788306116.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=D72FFEE06DF082566C55D6DC206391902206449A180D2BFD5D77A6A5C732A8DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/exXmAfQBT2CTULq9eBqUsA/zh-cn_image_0000002820404393.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8F2D344136F1B0A9229D851AD7212674179C061117C0F73296273CCB548AB1E)
 
 **说明** 
 
@@ -124,7 +124,7 @@ hdc shell
 bm dump -n ohos.app.hap.myapplication |grep '"appId":'
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/k-viBRCaTB6WSmj-iurLUQ/zh-cn_image_0000002817425479.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0F3F091C7CF27ADC3D2244E8C193C93F2FE5C993EB5FD370D1916605E00F11D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/WX1Tz71xTDmduIFfKlZkKg/zh-cn_image_0000002791724416.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=703F5D97A74946EC2C8AB9B3EE48823A92AD36E46AFF159ABF5220C91EA0822C)
 
 ## 应用的uid
 
@@ -142,7 +142,7 @@ hdc shell
 bm dump -n ohos.app.hap.myapplication |grep uid
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/51PkPnesQVaD4xDwbqVl3g/zh-cn_image_0000002788466060.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=52D6DA0B7DE9CA2556934868CAF6966F745AEEF0FB6237B87552A86A887B60C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/HDAq8XsPTnyhBXgKsR__aQ/zh-cn_image_0000002791564444.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=2225C511CDF6625B3083C6752029713D26B556543FEBCF3D642F2619589A537C)
 
 * 可以调用[bundleManager.getBundleInfoForSelf](../harmonyos-references/js-apis-bundlemanager.md#bundlemanagergetbundleinfoforself)获取自身的BundleInfo应用包信息，示例代码可以参考[如何获取应用信息中的appId](common-problem-of-application.md#如何获取应用信息中的appid)，取值方式为bundleInfo.appInfo.uid。
 
@@ -154,7 +154,7 @@ HSP模块和HAR模块被调用时，主要的区别在Module2（HSP/HAR）模块
 
    如图所示，编译构建后，HAR模块被打包到各个模块之中，所以其入口模块仍然是HAP模块，napi\_load\_module\_with\_info中第2个参数的模块名称要填HAP模块中oh-package.json5中定义的依赖HAR的名称，而不是HAR模块的实际名称。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/sva2ob7vTau-QQx81GqUxQ/zh-cn_image_0000002817505547.png?HW-CC-KV=V1&HW-CC-Date=20261114T004647Z&HW-CC-Expire=31536000000&HW-CC-Sign=B383B1561599AC8BF82A8910558F7D4DC55A675049C1E1856ED0F004F55E7426)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/lduSxOIiQgKll64TwkrKvw/zh-cn_image_0000002820524395.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=951398A46D407CB3176C0A7616CF59F591CCD2C097977C41FC22D2B03A6725AE)
 2. 被调用模块Module2是HSP
 
    当被调用模块Module2是HSP，HSP是独立的模块，其入口模块就是HSP本模块，所以napi\_load\_module\_with\_info第2个参数的模块名就是它自己的模块名。

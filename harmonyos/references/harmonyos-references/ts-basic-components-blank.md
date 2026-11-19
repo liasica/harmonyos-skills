@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Blank
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 空白与分隔 > Blank
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:18+08:00
+scraped_at: 2026-11-19T09:51:07+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:40f227be4ef1c45a07561935b232562402c9ad436b791f450390aadcb8ec0a14
+content_hash: sha256:ed9c15a41732495d3a434c1628fa96b1e7f31dda3f82dd882bad91f1f1085c2b
 ---
 
 空白填充组件，在容器主轴方向上，空白填充组件具有自动填充容器空余部分的能力。仅当父组件为[Row](ts-container-row.md)/[Column](ts-container-column.md)/[Flex](ts-container-flex.md)时生效。
@@ -93,11 +93,11 @@ struct BlankExample {
 
 竖屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Cdc-rYepQXuG4S0DDPPvuA/zh-cn_image_0000002817428565.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=68D840B4AD0C4562005848001B1C27BBEF9A876761E513D3C38EA6BBA2801379)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/aQrLYalMQryBSzBNXugTDw/zh-cn_image_0000002791567532.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=C06CF2F9F3D574F1A0487D811A30D232A088158EEE8ED5DD027C5CC5704311E6)
 
 横屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/EWXP3OUvTXyoy2AGhYwLkw/zh-cn_image_0000002788469146.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5BD2BCBA3D4F887AE8A156B4070E3EAA5470158C85AF45B0795E44E4A166C75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/LKHYFan-Ro-Tt-viNdCQSw/zh-cn_image_0000002820527485.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BBE327D2AB855DE31BDB6E418D0B4F03D4D00B6AC9E6CD1B560A25B5CC4C19D)
 
 ### 示例2（填充固定宽度）
 
@@ -131,4 +131,4 @@ struct BlankExample {
 
 Blank父组件未设置宽度时，子组件间无空白填充，使用min参数设置填充尺寸
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/cqA-7NHfQfqrorE_sncp0g/zh-cn_image_0000002817508635.png?HW-CC-KV=V1&HW-CC-Date=20261114T005018Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA5270EA7AE59CA3239C9ABFD1B5518559BFF67AF21AC4AF1B002D7D58C5455F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/IGzRzvmgQUabQZ6vwoo7Gg/zh-cn_image_0000002820407487.png?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=F02F57A463704A003FE17313E3374547DCDDF30EC6D31AF0E6B334A17BF7796A)

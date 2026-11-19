@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/savebutton
 title: 使用保存控件
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 > 使用保存控件
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:22+08:00
+scraped_at: 2026-11-19T09:48:00+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1a13b7b647d0f5eb3957f8c09020a3583c7cfdcf2cdc652b5e93a884e243f6c0
+content_hash: sha256:235b98ec061b31b2624e7057a88cf804f378131a4de5d6f26b55de178abac585
 ---
 
 保存控件允许用户通过点击按钮临时获取存储权限，无需权限弹窗确认。
@@ -16,7 +16,7 @@ content_hash: sha256:1a13b7b647d0f5eb3957f8c09020a3583c7cfdcf2cdc652b5e93a884e24
 
 保存控件效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/OZ02ORRZTOWHWKHdaH7ojw/zh-cn_image_0000002788307364.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=18405C040F1F2B07429F51AC842CD7695A1F4493AD0E7F5DE50A5819EFDC1609)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/LHvLtTNVR2u-z-r8SzU-NQ/zh-cn_image_0000002820405643.png?HW-CC-KV=V1&HW-CC-Date=20261119T014800Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D3D9F73C70AE0A355905F114D8370957B08713B16131BE8ED4B0EB1BBE5B483)
 
 ## 约束与限制
 

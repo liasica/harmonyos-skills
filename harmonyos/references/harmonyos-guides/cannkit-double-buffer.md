@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-doubl
 title: 如何使用double buffer优化性能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 附录 > 如何使用double buffer优化性能
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:38+08:00
+scraped_at: 2026-11-19T09:49:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b7198c2b53c3ca197e1c3b9926142b2beda238a91f3d5a064e29562ff8c67e30
+content_hash: sha256:8257ead457a8fa706c9af3034d5fe1d8a261abd4669ba752846059d1273eeb0f
 ---
 
 执行于AI Core上的指令队列主要包括如下几类，即：Vector指令队列（V）、Matrix指令队列（M）和存储移动指令队列（MTE2、MTE3）。不同指令队列间的相互独立性和可并行执行性，是double buffer优化机制的基石。
@@ -16,7 +16,7 @@ content_hash: sha256:b7198c2b53c3ca197e1c3b9926142b2beda238a91f3d5a064e29562ff8c
 
 **图1** 数据搬运与Vector计算过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/RuvMCH8XRBGPtac2wpcVFA/zh-cn_image_0000002817507869.png?HW-CC-KV=V1&HW-CC-Date=20261114T004838Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAAEA21F61E9317891761944BDF7D152E4264814A0CA4477B1375D0A13FE5A74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/l29Z70mjRPGBo7-VFwOZrw/zh-cn_image_0000002820526719.png?HW-CC-KV=V1&HW-CC-Date=20261119T014919Z&HW-CC-Expire=31536000000&HW-CC-Sign=4873369541606F5581AF98B53C9DC24664CFEC711FF75B613CF3F68BD76874D0)
 
 在此过程中，数据搬运与Vector计算串行执行，Vector计算单元无可避免存在资源闲置问题。举例而言，若CopyIn、Compute、CopyOut三阶段分别耗时\_t\_，则Vector的时间利用率仅为1/3，等待时间过长，资源利用率严重不足。
 
@@ -30,7 +30,7 @@ pipe.InitBuffer(inQueueX, 2, 256);
 
 **图2** double buffer机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/PqGQapuGQrSRg2rkLdsDsA/zh-cn_image_0000002788308438.png?HW-CC-KV=V1&HW-CC-Date=20261114T004838Z&HW-CC-Expire=31536000000&HW-CC-Sign=63D5E2EACCDEF32A87B6A7A8BC3C7EDACA54C766123132C51DB88C3C64D5AAA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Kprd3ELMSvmrgbmUKzyvPw/zh-cn_image_0000002820406719.png?HW-CC-KV=V1&HW-CC-Date=20261119T014919Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC8D82C2B30C3A3C1CE737DD07394A0FE993D4ACAA57DEF7E34F4DFBAE6CFA6A)
 
 多数情况下，采用double buffer能有效提升Vector的时间利用率，缩减算子执行时间。然而，double buffer机制缓解Vector闲置问题并不代表它总能带来整体的性能提升。例如：
 

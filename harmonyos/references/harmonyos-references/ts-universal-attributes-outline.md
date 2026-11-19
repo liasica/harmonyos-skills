@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 外描边设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 外描边设置
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:05+08:00
+scraped_at: 2026-11-19T09:50:51+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0417e18570c7ebf6c8e384d684d09110e11b5d496b0467659d43bc902304d4f8
+content_hash: sha256:e63c1f24a86296bdd9cb94a6028dd3478677f6fc9f05245c7e7262d2132ddd4f
 ---
 
 设置组件外描边（outline）样式。外描边绘制在组件的外侧，不影响布局，不会占用组件本身大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/RWNMJbCYTIu59c_zuodc_w/zh-cn_image_0000002788468690.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF468D24A1CF2B3E1857E040A6352BAF32C948E24212D6AA85EF7E47046426ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/bjMAZFQfSTKqRLpvkhb5oA/zh-cn_image_0000002791567076.png?HW-CC-KV=V1&HW-CC-Date=20261119T015051Z&HW-CC-Expire=31536000000&HW-CC-Sign=3368DBF0C7EFB944F9E2E32F9A95B19511CF7BC30A6E64FE9271496C58118E9E)
 
 **说明** 
 
@@ -320,7 +320,7 @@ struct OutlineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/62KHx8apRuCIMYP13GCymA/zh-cn_image_0000002817508179.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C4F4B077BD9AAB56FB746323F156755A3DCECD9E818F5424B9867EE78302747)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/bXSbr7xORpqpRyWKpz7H7g/zh-cn_image_0000002820527029.png?HW-CC-KV=V1&HW-CC-Date=20261119T015051Z&HW-CC-Expire=31536000000&HW-CC-Sign=447FC20E7FACA60C2B148CF36B99C9C9410C27549A609B27CC7E871CA517F96C)
 
 ### 示例2（使用LocalizedEdgeColors类型）
 
@@ -371,8 +371,8 @@ struct OutlineExample {
 
 从左至右显示语言示例图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/LTf_54Z-S-a7NQGERfXmfw/zh-cn_image_0000002788308748.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD62EEE803026F851C64165098639E787CDD24509FF195F32EC825F8750C328D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/v5S4ftwJQgKbuuF89ip37g/zh-cn_image_0000002820407029.png?HW-CC-KV=V1&HW-CC-Date=20261119T015051Z&HW-CC-Expire=31536000000&HW-CC-Sign=40F030DD3E543B5CC176ECE4B8411E5F01D0B85B96CE5717DF1A48681B04B021)
 
 从右至左显示语言示例图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/F-Pkyp_mTF-wh338jac7vg/zh-cn_image_0000002817428111.png?HW-CC-KV=V1&HW-CC-Date=20261114T004807Z&HW-CC-Expire=31536000000&HW-CC-Sign=E256CDA9B232FDBC6D1F5F2F74B1B16B1D1CDE45814077C323DF269AED40DA69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/W0wgjjiHRnyj5ENJTxOn0Q/zh-cn_image_0000002791727050.png?HW-CC-KV=V1&HW-CC-Date=20261119T015051Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E7C0591D45D5406A027CF96CB46142474B4668C166D896077E83D8EA67A1505)

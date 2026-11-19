@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: 开发准备
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:38+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:d8cfe36ce505c920342c2306f3970f5e1ef822f71745c64f1bb0bc108bf728cd
+scraped_at: 2026-11-19T09:48:09+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:d70eedfa5ab0fb0640a50001ee079890d9363258dbeefd0638d8b3c8fbb95ac3
 ---
 
 ## FIDO开发准备
@@ -27,7 +27,7 @@ content_hash: sha256:d8cfe36ce505c920342c2306f3970f5e1ef822f71745c64f1bb0bc108bf
   | 应用能力 | 需要权限 |
   | --- | --- |
   | 通行密钥 | ohos.permission.ACCESS\_FIDO2\_ONLINEAUTH |
-* FIDO2协议基于应用的网址域名开通应用的通行密钥，开发者的应用需要关联网址域名，才可使用通行密钥服务。接入需完成四步：[开通App Linking服务](applinking-enable-applinking.md) > [建立域名与应用关联关系](app-linking-startupapp.md#建立域名与应用关联关系) > [在AGC为应用创建关联的网址域名](app-linking-startupapp.md#在agc为应用创建关联的网址域名) > [在module.json5中配置关联的网址域名](app-linking-startupapp.md#在modulejson5中配置关联的网址域名)。
+* FIDO2协议基于应用的网址域名开通应用的通行密钥，开发者的应用需要关联网址域名，才可使用通行密钥服务。接入需完成四步：[开通App Linking服务](applinking-enable-applinking.md) > [建立域名与应用关联关系](app-linking-startupapp.md#建立域名与应用关联关系) > [在HarmonyOS 开发者中心为应用创建关联的网址域名](../doccenter-capabilities/app-linking-startupapp.md#在harmonyos-开发者中心为应用创建关联的网址域名) > [在module.json5中配置关联的网址域名](app-linking-startupapp.md#在modulejson5中配置关联的网址域名)。
 
 ## DID分布式数字身份开发准备
 

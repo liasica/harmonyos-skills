@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 时域可分层视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 时域可分层视频编码
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:54+08:00
+scraped_at: 2026-11-19T09:48:34+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:b234163023bad311dedb072d5426f2b8868c52ac1165b5de907e8a4f1e75f455
+content_hash: sha256:493d75e2e4e4939b886f834f0c6f0b4f42d9d6bc68946ba57009f5aebe9dfeb0
 ---
 
 ## 基础概念
@@ -18,13 +18,13 @@ content_hash: sha256:b234163023bad311dedb072d5426f2b8868c52ac1165b5de907e8a4f1e7
 
 **时域可分层视频编码**，是指能编码出时域分层码流的视频编码，下图展示了通过参考关系构建的4层时域分层码流结构。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Qv00q0MvQq2jwfM0uTsYbQ/zh-cn_image_0000002788467540.png?HW-CC-KV=V1&HW-CC-Date=20261114T004612Z&HW-CC-Expire=31536000000&HW-CC-Sign=E54668E5F20815BAA264C2612280BA3E2DD3829ADAED7C40A4446642D29D2298)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/DMJsBlwwQ-iGuQEjvv833w/zh-cn_image_0000002791565926.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=F31CF4E3767AD8C14637437F57B5B9BC4442AD8B7681DD22AD38DE0375B92B7A)
 
 从高到低逐层丢弃部分层级的码流（丢弃顺序L3->L2->L1），能实现不同程度的帧率伸缩，以满足传输和解码能力的变化需求。
 
 如下图所示，这是上述4层时域分层码流结构丢弃L3后组成的新的码流结构，能在解码正常的情况下实现帧率减半的效果。其他层的丢弃同理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/2kTzE_Z1QNibDDkDv_lkqQ/zh-cn_image_0000002817507029.png?HW-CC-KV=V1&HW-CC-Date=20261114T004612Z&HW-CC-Expire=31536000000&HW-CC-Sign=5484D701E3F90D08161E686A5F5F03EC0836CEDE5CC6052C0DE8443174772485)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/MuggsgWJSsy3TM9Lm0T_5g/zh-cn_image_0000002820525879.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6C5FC3757853D5F58BF6702748FC1E06E4330BD542F78F0CD7FF96B903FC2E9)
 
 ### 时域分层码流结构介绍
 
@@ -93,15 +93,15 @@ content_hash: sha256:b234163023bad311dedb072d5426f2b8868c52ac1165b5de907e8a4f1e7
 
 使用举例1：TGOP=4时的相邻参考模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/TNtq8zmRQRqIdAhZv_dY8A/zh-cn_image_0000002788307598.png?HW-CC-KV=V1&HW-CC-Date=20261114T004612Z&HW-CC-Expire=31536000000&HW-CC-Sign=39D3F27B32226048AFE437F74527B1F87E1F0C187CBD616E1421919CEB78349D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/d7hezCnBRYqkQAG48RVGQg/zh-cn_image_0000002820405879.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDA3B2CE819B98A39549EE10CBC8C3413EC0344ECA8F00B029A2049AEB4416D1)
 
 使用举例2：TGOP=4时的跨帧参考模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/vkI37BwPRKa2sFYFdp2RWw/zh-cn_image_0000002817426961.png?HW-CC-KV=V1&HW-CC-Date=20261114T004612Z&HW-CC-Expire=31536000000&HW-CC-Sign=E48DCEB4D93F9EBED8C27FA97167578A6E55CB3F69C6926A4903AD73F603808E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/pHWqtzh7QaOoon_HmZsBAw/zh-cn_image_0000002791725900.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7470098A31883CF3F54D978F9363718735B12DF877D762547D2DF8FE243D147)
 
 使用举例3：TGOP=4时的均匀分层模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/wM0ggffUSMq_a7ghb5imFA/zh-cn_image_0000002788467542.png?HW-CC-KV=V1&HW-CC-Date=20261114T004612Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F9E2178FDF5843BFB964AF03639EAA376374DA9C3277BB1F6EC248842B7BF63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/6Y_0jPECS5mlT-AaJmbSKQ/zh-cn_image_0000002791565928.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B2061FE792AC07F8790A0DBD5DC939CE92A959C29FBA196083E1AB7B4AC4159)
 
 ### 开发指导
 

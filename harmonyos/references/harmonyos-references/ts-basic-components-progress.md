@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Progress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Progress
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:18+08:00
+scraped_at: 2026-11-19T09:51:07+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:044049fe946629e3001c88b281212cad5493fc947f031781030a07b962de35ae
+content_hash: sha256:25af921bf9af3c7686a4bc01d0a92c1333a0e3c34b212f58d15c67020c7b2ece
 ---
 
 进度条组件，用于显示内容加载或操作处理等进度。支持线性、环形、圆形、胶囊等多种样式，可自定义颜色、渐变效果和动效，适用于文件下载、数据加载、任务处理等需要展示进度状态的场景。通过丰富的样式与动效配置，可快速实现进度可视化，提升用户体验。
@@ -439,7 +439,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Lm-EG9_hRpqq0BKtWCMViw/zh-cn_image_0000002817508623.png?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4C0AE85D633EBA786C1D2626CE55A79320F7F978FF133D5A99B9D3AFFD737A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/y04j3aCrRFa-vHuaZpma4g/zh-cn_image_0000002820407475.png?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EA1A458FD4B755BA785D54885A9AEC8629015A6D74D801248AE25B5DCBC1D95)
 
 ### 示例2（设置环形进度条属性）
 
@@ -469,7 +469,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/L2VW48TaQdS28JwONnFXxA/zh-cn_image_0000002788309192.png?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8C449F62B608CF34DEAFA3D7B33D289F3EC2020015FEE3306A83A611E244E2D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/eImWv9daRueLqQ8WLQDA7Q/zh-cn_image_0000002791727494.png?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AC82C07B1B935D82F2DE89A82EB7E8E84C033CD2F0E8E521F4A3B7FB81205B5)
 
 ### 示例3（设置环形进度条动画）
 
@@ -496,7 +496,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/V52qEOruT1yU8AbjEQg3Mg/zh-cn_image_0000002817428555.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=56A9FB0A955964FBB7F8068B1A8C1EF8525D274001029BBD409A3667CE43FC10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/mFnOYNqoQba2lK923ZDajw/zh-cn_image_0000002791567522.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=86CA196A3D58D4CABDEF9582DD7B514F65E908F8A9BB14373551A146E3A9A322)
 
 ### 示例4（设置胶囊形进度条属性）
 
@@ -526,7 +526,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/xqbSQUd7TIWDcRyvQgTMbQ/zh-cn_image_0000002788469136.png?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB8EF8F24B99CF61835211D4B93E3C4D410795B5B317E62AAAAD31C8FE5FF3D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/OBYGi4ubQyqbceJFYkKmpw/zh-cn_image_0000002820527475.png?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=478851F1F57483BB086F68C5EB3E6024493A50E627DA2C758E7F9E113F5FE572)
 
 ### 示例5（设置进度平滑动效）
 
@@ -568,7 +568,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/JipWhbBTTj2Y4mec5NojJg/zh-cn_image_0000002817508625.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1E01B554B5AF4588F4DF8554D76D0828B46B9009170D694C3F5B01869C2AB32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/qeMMDTc7QyOKjx8miQ7bzQ/zh-cn_image_0000002820407477.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC3CF596388F673428E8C333051176ED26B77A0DD7B3E80320CDC9CDA83B1C0E)
 
 ### 示例6（设置定制内容区）
 
@@ -648,7 +648,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ao8x77gqQRS-gfCujnNQLA/zh-cn_image_0000002788309194.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=F623B95EA85241E363FF7075CB438DE9568187F3E44CB23484B4ED4C007152DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/4ftvipzEShmAJRplFxgZpA/zh-cn_image_0000002791727496.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5406030E7AF9FF95D527AEA84CCE2ED716E948BCB8FAE4DD36BB26F126C6FCB)
 
 ### 示例7（设置隐私隐藏）
 
@@ -685,7 +685,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0jGYg4cMRwC8Xq_WOQ6-5A/zh-cn_image_0000002817428557.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D4318879E9503A71244091B7899E941964EB0F5FC038D5641E3F2D521B21A3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/fHFx0YktS_eucyEwPmmZHg/zh-cn_image_0000002791567524.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=C03C7219115E4EF723EB2886D3CF75D173BE4C82D5F9D97A226DC6F87288405A)
 
 ### 示例8（设置Capsule进度条圆角半径）
 
@@ -722,7 +722,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/q2HJc8vqQQ6-x5uwwTFGQw/zh-cn_image_0000002788469138.png?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F604685CC67B8D83A7B7774E87C695D0F8BAD159C290E719B183AACE53F3DBD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/U6p6Abd1T4q85K06t9ONDg/zh-cn_image_0000002820527477.png?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E29B5C861F4D74D48F03D7766E5C84C727E27FBA49B8654707A2CDB8C71C134)
 
 ### 示例9（设置线性进度条和胶囊进度条属性）
 
@@ -754,4 +754,4 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/I3-9MU39Q-uhcK6U--PfRQ/zh-cn_image_0000002817508627.png?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCF57900CAE6A884063674C3B7A6653DE86E7FBC24F1C625E75770527F4B7F11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/K4lypxHvQIibxAkyvlLQ8w/zh-cn_image_0000002820407479.png?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9A969C608445DD04163DA8BBE78278F22AB6C658C5306CB76336E04940ED2F8)

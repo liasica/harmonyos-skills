@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: picker开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > picker开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:10+08:00
+scraped_at: 2026-11-19T09:47:48+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:bb570e464d007fff6b223f8ff17f37c4bc92bcf57c95e2e508c2cd75f2ebb684
+content_hash: sha256:8f76656c08f7024c747e866456d8ac33aa8d41e341ab09a3bd568e360a176afa
 ---
 
 picker是滑动选择器组件，类型支持普通选择器、日期选择器、时间选择器、时间日期选择器和多列文本选择器。具体用法请参考[picker](../harmonyos-references/js-components-basic-picker.md)。
@@ -33,7 +33,7 @@ picker是滑动选择器组件，类型支持普通选择器、日期选择器�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/UcsZoMkWQbG0KuvhRYC1Bg/zh-cn_image_0000002788307044.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E9EF20A7310568750E4F219E33A1318F47411868CC128DC4D36FB73A22A131B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/TQvDOqVlTGmg5dO56RvxDQ/zh-cn_image_0000002820405323.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E51DC5DAB75695688647CBF27A745AA0D997E8D8081D83183E1918B6C05A56E)
 
 ## 设置picker类型
 
@@ -73,7 +73,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/-73UFb8YRe6bWWYD56H4Kw/zh-cn_image_0000002817426407.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6EFC1B8537EBDEF14F654CAB65C9427AF1F3846328FC9634924AF172E8E4B34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/XuZGHynRRempfr-95PXvrg/zh-cn_image_0000002791725344.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8D851A51618AC24F50690D5780E004E13F3C3FB89A11916CA61AD28B941B9DB)
 
 **说明** 
 
@@ -108,7 +108,7 @@ picker组件的hours属性用于设置时间显示格式，支持12小时制和2
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/N7hUw129TpasVWzHW3irKA/zh-cn_image_0000002788466988.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=148DDEC493B555F83C620027C183FDA34473D682B0D5ED9CD9902AA0E342EE01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/2Jw6J1-QTaeGVTreriTv9g/zh-cn_image_0000002791565372.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0D6AE00CF3AFE89D6F6AE92A612E4E74F1E27D69357664D10426FB89824AC3B)
 
 **说明** 
 
@@ -165,7 +165,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/HP--G2iQQCGqYeRO-3uZzQ/zh-cn_image_0000002817506475.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A69343A90117BBC46883EB9BAC21525DA128CDD6030B21FC5C457800E3DACCE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Qs6GVVUwT-qiENagQ7DHPA/zh-cn_image_0000002820525325.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDB696FF6F42BD92F018131079C5F4056FA65E38C492E9E99E19BBF3F5EC6AEC)
 
 ## 场景示例
 
@@ -292,4 +292,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/LYi101SUQWyyEY0TTXaLIQ/zh-cn_image_0000002788307046.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF329B1298C59AC3914057A7817F740B441AE8B51A0B3FDA9303D1E19FD0F04B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/eTRy5yN-RZa2gKokSOQ3iQ/zh-cn_image_0000002820405325.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF08FD5425DAD6189550687CCA3668D4B7D801FE975BBBD8FA8326E402BED569)

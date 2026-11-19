@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-window-
 title: 应用布局适配智慧多窗
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 智慧多窗应用开发指导 > 应用布局适配智慧多窗
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:12+08:00
+scraped_at: 2026-11-19T09:47:50+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3d18d0317a0880bf0842b02ca68a1a28fe47445a0b35439afcae8abe3b54258d
+content_hash: sha256:1d1c0500df2d7e5b59b9e1a72b965f07830ae224e09c5d5334551494e629293e
 ---
 
 ## 应用布局适配智慧多窗的意义
@@ -36,7 +36,7 @@ content_hash: sha256:3d18d0317a0880bf0842b02ca68a1a28fe47445a0b35439afcae8abe3b5
 
 目前支持两种分屏样式：“上下分屏”和“左右分屏”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/-wEYhxfBRzaGe-_JxIaOOA/zh-cn_image_0000002788307136.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=72C840364F2BC19B1C2995E8D64902385FE866586DBF3FF73ECB54682F00E0C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/dJ5j5eOaTEOAhL7rhgTMuQ/zh-cn_image_0000002820405415.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=F99532DC0F9131943670D67C7519CC1FEAB8A32262353EC08F37C8E073A6AA57)
 
 分屏比例指的是分屏下两应用间尺寸的比例，调整分屏比例会调整应用窗口的大小。
 
@@ -119,4 +119,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/YNWfPkRHQSeFYFFmLbiDvg/zh-cn_image_0000002817426499.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0E9B1CDC4268961CE9A61D9BDC3F1BB429D08FDAE304E66213B0653EFEFD9AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/YlFe5ataTsSOX4wHdTn4VA/zh-cn_image_0000002791725436.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB4E08F7CAE81FCBB5103D9EBA3DDD05F0453C09004825BCF76F99530192030F)

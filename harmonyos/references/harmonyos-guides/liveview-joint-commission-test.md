@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-join
 title: 接入联调测试
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > 开发准备 > 接入联调测试
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:22+08:00
+scraped_at: 2026-11-19T09:49:03+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:4ff2e90b771abd18f5523f8847579aa6b7e81e721cdd1b45ba5bca5e8fdc4c75
+content_hash: sha256:eaa1b2912087c61ef2040f782f7bb5a0e82f997a5ffd80979ef873dfe44d7ed9
 ---
 
 若开发者需要在设备上调试、验证实况窗，可通过“调测设备管理”入口，添加设备进行调测。添加到调测名单中的设备，不做本地构建实况窗权限的校验。
@@ -24,6 +24,6 @@ content_hash: sha256:4ff2e90b771abd18f5523f8847579aa6b7e81e721cdd1b45ba5bca5e8fd
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，点击“开发与服务”，在项目列表中找到开发者的项目，通过“增长 > 推送服务 > 配置”导航到“配置”页签。
 2. 选择开发者的应用，点击实况窗-调测设备管理，根据[Push Token](push-get-token.md)添加调测设备后即可进行接入调测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/vycYvPWuRgaulFAawbFP0g/zh-cn_image_0000002817507539.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=77A18957225F941D55AB3D94E2B44E722D54B040E7039931248C7D83F672A827)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/JOyQ-ixITcCf3gcp8IFUXQ/zh-cn_image_0000002820526389.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=E447EF5EC1DDFD94A70D83036B03DD252F848C4E24C2F993E176E1896F27BE24)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/EZ1CJWRVQaKVSmOrAmN5Vw/zh-cn_image_0000002788308108.png?HW-CC-KV=V1&HW-CC-Date=20261114T004639Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C07837A7C87F84B8576F3181B070ED26740185A72DEB7E59CCDC5D1E3A649F0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/yorUtcy1Rb6ucRn-lhGmGA/zh-cn_image_0000002820406389.png?HW-CC-KV=V1&HW-CC-Date=20261119T014903Z&HW-CC-Expire=31536000000&HW-CC-Sign=00597313ABEF006621A465FD4CBB7C7B74551F69FD8B1274CF40AF5A12053CCF)

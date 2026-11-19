@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-concepts
 title: 本地密钥管理基础概念
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 本地密钥管理基础概念
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:31+08:00
+scraped_at: 2026-11-19T09:48:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:808d84538c2c1d6e2ba8a6af2d5f72709d8b3356d97e5b0cc0bea9c4886eeec7
+content_hash: sha256:918b17329a25e5104779909b0bbed2c97035274c6fe266a515b923af8966951b
 ---
 
 在使用通用密钥库完成应用开发前，开发者需要了解以下相关概念，以下概念将贯穿整个开发过程。
@@ -26,7 +26,7 @@ content_hash: sha256:808d84538c2c1d6e2ba8a6af2d5f72709d8b3356d97e5b0cc0bea9c4886
 
 下图以RSA密钥材料内存结构为例，其他算法格式见样例下方表格。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/tzwXJSNsRRuk65CkeLEl5w/zh-cn_image_0000002817426791.png?HW-CC-KV=V1&HW-CC-Date=20261114T004730Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B5BCBF125AA8F76D87FE1B3CA69AD470ADD0CE6DFC4D7C3C69D0C54373EE6C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/tLHE5lxeQsqv0AX7nk08fQ/zh-cn_image_0000002791725728.png?HW-CC-KV=V1&HW-CC-Date=20261119T014718Z&HW-CC-Expire=31536000000&HW-CC-Sign=693F17B9BF72CB6BFFB3B1266A140E1B04954CE610A2ACC4E2738F5550D0626A)
 
 其中，密钥算法的值取自枚举类[HuksKeyAlg](../harmonyos-references/js-apis-huks.md#hukskeyalg)。
 
@@ -127,7 +127,7 @@ let eccP256PubKey = new Uint8Array([
 
 以RSA私钥材料为例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/2JmK3qHMT6u4-KgHQUy-xQ/zh-cn_image_0000002788467372.png?HW-CC-KV=V1&HW-CC-Date=20261114T004730Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7AA4B7EF7E71EABB41DD05A083C653B0E3A2C4AAE92CD9B90C8CA2DB0EB0BC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/lr1jGOUYTjKEuYptPE8LVQ/zh-cn_image_0000002791565756.png?HW-CC-KV=V1&HW-CC-Date=20261119T014718Z&HW-CC-Expire=31536000000&HW-CC-Sign=46353C98489877D5FD32D26338966107614C72EE4C3024D67832A3045427384B)
 
 ```ts
 let rsa2048PrivateKeyMaterial = new Uint8Array([

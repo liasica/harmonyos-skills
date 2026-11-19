@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义事件拦截
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互事件分发控制 > 自定义事件拦截
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8f01ccf74b886caa24f5c0bcf26c308fe180d255695517d11ddb2def8bae7faa
+scraped_at: 2026-11-19T09:50:50+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:3ffc10476996c85308b927a73ce3be99825823bb33d9f663d8ef4d1b23fb6090
 ---
 
 为组件提供自定义的事件拦截能力，适用于需要根据事件在控件上按下时的位置、输入源等事件信息动态决定控件HitTestMode属性的场景，用于控制组件的触摸测试和事件响应行为。
@@ -73,7 +73,7 @@ struct Index {
       })
       // 调用onTouchIntercept修改该组件的HitTestMode属性
       .onTouchIntercept((event: TouchEvent) => {
-        console.info('OnTouchIntercept + ' + JSON.stringify(event));
+        console.info('onTouchIntercept + ' + JSON.stringify(event));
         // 使用touches时需要先校验是否为空
         if (event && event.touches) {
           let touches = event.touches;

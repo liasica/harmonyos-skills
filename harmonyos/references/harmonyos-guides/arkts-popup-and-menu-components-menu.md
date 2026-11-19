@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-a
 title: 菜单控制（Menu）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 菜单 > 菜单控制（Menu）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:04+08:00
+scraped_at: 2026-11-19T09:47:42+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:087cba4c918220d4517e534e398d5f0c08a41882fd96df6e8e4ec83ecfc4ec04
+content_hash: sha256:7760435cf999ec00815e42855e06675a0af7fac4f6a2d2516521b012856a3d2c
 ---
 
 Menu是菜单接口，一般用于鼠标右键弹窗、点击弹窗等。具体用法请参考[菜单控制](../harmonyos-references/ts-universal-attributes-menu.md)。
@@ -30,7 +30,7 @@ Button('click for Menu')
   ])
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Jnn0g7IfR9qn09_O4pYt9w/zh-cn_image_0000002817506229.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=A41999358DF3D9EC6A17F79AE822D2504DEB874963004EF65A02960A96EFB2FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/03Uew1VGTMC_VBDY9n59sA/zh-cn_image_0000002820525079.png?HW-CC-KV=V1&HW-CC-Date=20261119T014651Z&HW-CC-Expire=31536000000&HW-CC-Sign=58D3DC2D2CD4CB925BF0B0B58CE4555E1EA1873379F7ECB8787FB7F5F9365527)
 
 ## 创建自定义样式的菜单
 
@@ -129,7 +129,7 @@ Button('click for Menu')
   .bindMenu(this.MyMenu)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/LfGkn_mwTL-Gvj533w3OVw/zh-cn_image_0000002788306800.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=04B1CD072F46164AE2E28E9DD3CAE6D5B62A3EECA95E0A17145C9EA0481EB843)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/-dvEhyYAQ_mJCpMW_aWoRg/zh-cn_image_0000002820405079.png?HW-CC-KV=V1&HW-CC-Date=20261119T014651Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB449C17350F36A31096A0A613178936C48E8C66EC28F6A4AD774B9446006956)
 
 ## 创建支持右键或长按的菜单
 
@@ -245,7 +245,7 @@ export struct SupportAvoidCentralAxisMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/AFjVbMdhT52DcLD91lMk0g/zh-cn_image_0000002817426163.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B330DBEAD347D15E117F7B336781C8C41CC290EC277488EAD9BB2D5199553CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/_QWQV8qvTIu2GuFLb6idtQ/zh-cn_image_0000002791725100.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014651Z&HW-CC-Expire=31536000000&HW-CC-Sign=08386D2A3D697288E24867F9953AC9EB0C80CCC19FBC8CA275A35BB9288B02B9)
 
 ## 控制子窗菜单的事件透传
 
@@ -285,7 +285,7 @@ export struct EventTransSubWindowMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/hm-A9RWzQh6ldN5t0w7rgg/zh-cn_image_0000002788466744.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=964753C024A3E1BBC3B98FA643D684BE36A1660FBC618075AA0D8FD34154F0F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/IG9zD4XvS9qbykiIAdiopw/zh-cn_image_0000002791565128.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014651Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAD2F7F1ABAB5EA5EE106873A49CE937694E65FE84F72BEA8E9BCDA4BF06457B)
 
 ## 基于绑定组件指定位置弹出菜单
 
@@ -342,4 +342,4 @@ export struct BindComponentMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/1yZAvgfNRFCbqi7oS_WBIg/zh-cn_image_0000002817506231.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=9574B5A034A462AE1120AE864FA5FB2B3F3136D257F9886B5DA2D28001291EC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/sQhm40uVRbKw4rTvRVjdHQ/zh-cn_image_0000002820525081.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014651Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF73CED82D0BECC91B1E7B3833E72EE1B6B393DCAE7E3D29A8444409EDC92AAF)

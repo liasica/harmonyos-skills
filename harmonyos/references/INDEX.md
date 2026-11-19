@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 16661 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 16662 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1311 篇
 
@@ -1316,7 +1316,7 @@
 - [应用升级适配指导——向26.0.0升级](harmonyos-releases/upgrade-adaptation.md)
 - [版本号格式调整说明](harmonyos-releases/version-number-26.md)
 
-## 指南（`harmonyos-guides`）— 5568 篇
+## 指南（`harmonyos-guides`）— 5569 篇
 
 - [24h功耗器件分解统计事件](harmonyos-guides/24-hour-battery-usage-event.md)
 - [aa工具](harmonyos-guides/aa-tool.md)
@@ -2911,6 +2911,7 @@
 - [绘制效果](harmonyos-guides/drawing-effect.md)
 - [Driver Development Kit（驱动开发服务）](harmonyos-guides/driver-development-kit.md)
 - [Driver Development Kit简介](harmonyos-guides/driverdevelopment-overview.md)
+- [外设驱动访问权限](harmonyos-guides/driverextensin-permission-request.md)
 - [开发无UI界面基础驱动](harmonyos-guides/driverextensionability.md)
 - [数字版权保护(ArkTS)](harmonyos-guides/drm-arkts-dev-guide.md)
 - [基于AVCodec播放DRM节目(C/C++)](harmonyos-guides/drm-avcodec-integration.md)
@@ -6580,7 +6581,7 @@
 - [使用音频模板](harmonyos-guides/using-avsession-avmusictemplate.md)
 - [媒体会话控制方](harmonyos-guides/using-avsession-controller.md)
 - [媒体会话提供方(ArkTS)](harmonyos-guides/using-avsession-developer.md)
-- [使用AVTranscoder实现视频转码(ArkTS)](harmonyos-guides/using-avtranscoder-for-transcodering.md)
+- [使用AVTranscoder实现音视频转码(ArkTS)](harmonyos-guides/using-avtranscoder-for-transcodering.md)
 - [使用Node-API实现ArkTS/JS与C/C++语言交互](harmonyos-guides/using-napi-interaction-with-cpp.md)
 - [使用AVImageGenerator获取视频帧(C/C++)](harmonyos-guides/using-ndk-avimagegenerator-for-video.md)
 - [使用AVMetadataExtractor获取元数据(C/C++)](harmonyos-guides/using-ndk-avmetadataextractor-for-media.md)
@@ -6589,7 +6590,7 @@
 - [使用AVPlayer播放视频(C/C++)](harmonyos-guides/using-ndk-avplayer-for-video-playback.md)
 - [使用AVRecorder录制音频(C/C++)](harmonyos-guides/using-ndk-avrecorder-for-audio-recording.md)
 - [使用AVRecorder录制视频(C/C++)](harmonyos-guides/using-ndk-avrecorder-for-video-recording.md)
-- [使用AVTranscoder实现视频转码(C/C++)](harmonyos-guides/using-ndk-avtranscoder-for-transcodering.md)
+- [使用AVTranscoder实现音视频转码(C/C++)](harmonyos-guides/using-ndk-avtranscoder-for-transcodering.md)
 - [使用LPP播放器播放视频 (C/C++)](harmonyos-guides/using-ndk-lpp-for-playback.md)
 - [使用MediaAssetManager请求媒体资源(C/C++)](harmonyos-guides/using-ndk-mediaassetmanager-for-request-resource.md)
 - [推荐使用OHAudio开发音频播放功能(C/C++)](harmonyos-guides/using-ohaudio-for-playback.md)

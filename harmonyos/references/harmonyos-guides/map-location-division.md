@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location-
 title: 区划选择
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > 区划选择
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:25+08:00
+scraped_at: 2026-11-19T09:49:06+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d9d7d0c09f15bb34f1724834110ad92244d7e823699fa5773b9cb8977f83d1d2
+content_hash: sha256:7a6d467e615017546ababa8215492cf7bce6e447eb5c8fb52bf42cd9ac43cc4c
 ---
 
 ## 场景介绍
@@ -22,19 +22,19 @@ content_hash: sha256:d9d7d0c09f15bb34f1724834110ad92244d7e823699fa5773b9cb8977f8
 
 **图1** 选择国家
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/XVTZ3VHCQumqF_egaS8XWA/zh-cn_image_0000002788468130.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=601C56162ECDCAFF1AE0F730AF2EB7546DB0215B5216A5DC382C5068E2229289 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/td4tk3-VSG-PKKkZPw4kWA/zh-cn_image_0000002791566516.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=8904C99C0D19EA043D3CC27EC04BC07D50EC5121C160D1BFFBD3ECBB9B86F45F "点击放大")
 
 **图2** 选择省市
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/0e8u-vbOSZG0f4fMXnRK0Q/zh-cn_image_0000002817507619.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB5BE1EA619977EEFEE00E886FC39CE70A1BC86D222F1AB0D445B75FDEFFC97A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/Vi5kQxN5RjeJ7hIYzQ2xJA/zh-cn_image_0000002820526469.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=690A5D5C54FD48A55929AC3A7B507339056B09F85556D8EE42AB5FB51DCC7957 "点击放大")
 
 **图3** 搜索地区
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/dsfpazJlSWKWfNkLYdhavw/zh-cn_image_0000002788308188.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=598885E38DB798ABED8BD7D05A84864B4956D1DE45C836A7E70B050E5B58B0F8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/aE5vEDoZT-GRrlVH3FcZ0w/zh-cn_image_0000002820406469.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EC996281F30F759B539A028A388479C03D6280231EE2FA0B1E7949A9CB2FEE6 "点击放大")
 
 **图4** 子窗拉起区划控件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/LSiJA7xhQI2RcqBpYSvkKQ/zh-cn_image_0000002817427551.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9B47BED54B240D36D98339EC8D1B563E3B384279F45846110381EE0454265C9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/N7JvHBODTpS25ohx42LATg/zh-cn_image_0000002791726490.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=8686A01A77E22A8C4E0BFA17C1DB24B196B7D89EA5912F8485FFD61B9A12D1F2 "点击放大")
 
 ## 约束与限制
 

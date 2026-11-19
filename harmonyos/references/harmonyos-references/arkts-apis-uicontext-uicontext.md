@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (UIContext)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (UIContext)
 category: harmonyos-references
-scraped_at: 2026-11-14T08:49:56+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:c3f3a05c9f911eea7b59512adf1455e034d0c5b270d17f191e8333cfd6c160ed
+scraped_at: 2026-11-19T09:50:42+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:24f1e58550a01debe8abc39163fe64093864f3788ca432657fa9a43e9c702834
 ---
 
 UIContext实例对象，用于提供与当前UI实例关联的上下文能力，支持获取UI相关控制器、管理弹窗与动画、查询节点和窗口信息、进行像素单位转换等，适用于在指定UI实例中管理页面、组件和交互行为的场景。
@@ -13,16 +13,32 @@ UIContext实例对象，用于提供与当前UI实例关联的上下文能力，
 **说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
-* 本模块接口仅可在Stage模型下使用。
 * 示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
 * 以下API需要通过对应的UIContext实例调用。获取UIContext分为三种方式，第一种是使用ohos.window中的[getUIContext()](arkts-apis-window-window.md#getuicontext10)方法获取UIContext实例，第二种是通过自定义组件内置方法[getUIContext()](ts-custom-component-api.md#getuicontext)获取UIContext实例，第三种是通过UIContext类的静态方法如[getCallingScopeUIContext](arkts-apis-uicontext-uicontext.md#getcallingscopeuicontext22)获取UIContext实例。本文中UIContext对象以uiContext表示。
 
 **示例：**
 
-以下示例展示了三种获取UIContext实例的方法。
+以下示例展示了三种获取UIContext实例的方法，三种方法获取到的UIContext没有差异。三种方法分布在两个文件中，因此由两个互相独立的示例脚本承载：示例脚本一须完整拷贝到UIAbility文件EntryAbility.ets中，示例脚本二须完整拷贝到页面文件index.ets中，请勿将两个脚本拷贝到同一个文件。
+
+**示例脚本一（EntryAbility.ets）：**
 
 ```ts
-// 三种方法获取到的UIContext没有差异
+// EntryAbility.ets
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+
+export default class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    // 第一种：通过ohos.window中的getUIContext()方法获取UIContext实例
+    windowStage.getMainWindowSync().getUIContext();
+    // 其他运行逻辑
+  }
+}
+```
+
+**示例脚本二（index.ets）：**
+
+```ts
 // index.ets
 import { UIContext } from '@kit.ArkUI';
 
@@ -33,25 +49,13 @@ struct Index {
     Column() {
       Button('Button')
           .onClick(() => {
-            // 通过自定义组件内置方法获取
+            // 第二种：通过自定义组件内置方法getUIContext()获取UIContext实例
             this.getUIContext();
-            // 通过UIContext类的静态方法获取
+            // 第三种：通过UIContext类的静态方法（如getCallingScopeUIContext）获取UIContext实例
             let uiContext = UIContext.getCallingScopeUIContext();
             // 其他运行逻辑
           })
     }
-  }
-}
-
-// EntryAbility.ets
-import { UIAbility } from '@kit.AbilityKit';
-import { window } from '@kit.ArkUI';
-
-export default class EntryAbility extends UIAbility {
-  onWindowStageCreate(windowStage: window.WindowStage): void {
-    // 通过ohos.window获取
-    windowStage.getMainWindowSync().getUIContext();
-    // 其他运行逻辑
   }
 }
 ```
@@ -69,6 +73,8 @@ constructor()
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **示例：**
 
@@ -154,6 +160,8 @@ static getCallingScopeUIContext(): UIContext | undefined
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -200,6 +208,8 @@ static getLastFocusedUIContext(): UIContext | undefined
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -248,6 +258,8 @@ static getLastForegroundUIContext(): UIContext | undefined
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -294,6 +306,8 @@ static getAllUIContexts(): UIContext[]
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -355,6 +369,8 @@ static resolveUIContext(): ResolvedUIContext
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -392,6 +408,8 @@ isAvailable(): boolean
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -459,7 +477,7 @@ struct UIContextCompare {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/xNPEGb_VRPyBaweC9_R-qA/zh-cn_image_0000002817427979.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004759Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B53213F71439B0D9A7F8E6FCF292029FE8220251C904981F45BF43307617B69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/OeQpp5YsTcmIF8S1qODW1Q/zh-cn_image_0000002791726918.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1859A2E69C92004B71187656CD36B9C17C9AB20B1336763DEC4CDCDFB9E1A73)
 
 ## getFont
 
@@ -470,6 +488,8 @@ getFont(): Font
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -491,6 +511,8 @@ getComponentUtils(): ComponentUtils
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -511,6 +533,8 @@ getUIInspector(): UIInspector
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -530,6 +554,8 @@ getUIObserver(): UIObserver
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -595,6 +621,8 @@ getId(): number
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -628,6 +656,8 @@ getMediaQuery(): MediaQuery
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -648,6 +678,8 @@ getRouter(): Router
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -667,6 +699,8 @@ getPromptAction(): PromptAction
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -712,6 +746,8 @@ getOverlayManager(): OverlayManager
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -731,6 +767,8 @@ setOverlayManagerOptions(options: OverlayManagerOptions): boolean
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -758,6 +796,8 @@ getOverlayManagerOptions(): OverlayManagerOptions
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -777,6 +817,8 @@ animateToImmediately(param: AnimateParam, processor: Callback<void>): void
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -846,7 +888,7 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/IgKgGHIESdePg0ZHxqHEYQ/zh-cn_image_0000002788468560.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004759Z&HW-CC-Expire=31536000000&HW-CC-Sign=B17C1C389CED896B137BFDFF2E9B7D71EE6775A43D79A904BB7C478A4F1E4AA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/7LIcpYjqSyCmxauZcUys0w/zh-cn_image_0000002791566946.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=71BBF50F3DB53FC70EE275275DAC5C9EE6C8E83719C6EBEA2B483D8EDE4D2A02)
 
 ## animateTo
 
@@ -857,6 +899,8 @@ animateTo(value: AnimateParam, event: () => void): void
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **说明** 
 
@@ -1072,6 +1116,8 @@ getFrameNodeById(id: string): FrameNode | null
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -1101,6 +1147,8 @@ getAttachedFrameNodeById(id: string): FrameNode | null
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -1163,6 +1211,8 @@ getFrameNodeByUniqueId(id: number): FrameNode | null
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -1211,6 +1261,8 @@ getPageInfoByUniqueId(id: number): PageInfo
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -1284,6 +1336,8 @@ getNavigationInfoByUniqueId(id: number): observer.NavigationInfo | undefined
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -1313,6 +1367,8 @@ showAlertDialog(options: AlertDialogParamWithConfirm | AlertDialogParamWithButto
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -1357,7 +1413,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/yfm-_viaSQSQJVZHTfr2Qg/zh-cn_image_0000002817508049.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004759Z&HW-CC-Expire=31536000000&HW-CC-Sign=D825AB647DD8F2F4FD92AA366418E92E491E035E85C51B6CB97980F99BB43C2C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/_d_eiSaoQq-4xLaZm4jm3w/zh-cn_image_0000002820526899.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2D37D97606BD2CC412A58B1BF40F638705837C0EF5942A29FFCB409C40FD0F3)
 
 ## showActionSheet
 
@@ -1368,6 +1424,8 @@ showActionSheet(value: ActionSheetOptions): void
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -1429,7 +1487,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/6RAQLevjR86YFAgshEIZnw/zh-cn_image_0000002788308618.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004759Z&HW-CC-Expire=31536000000&HW-CC-Sign=3859B9335BF5DD3AAD672D725BB5A684C1203A15DC2A9433CD27316EAC91E183)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/DXVR61nSRoG-ogPMyN8AMQ/zh-cn_image_0000002820406899.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=030321F41CC314425C8E70EB07D20C22E1E53EC36C3F3B378C475F1F7AD7C167)
 
 ## showDatePickerDialog
 
@@ -1444,6 +1502,8 @@ showDatePickerDialog(options: DatePickerDialogOptions): void
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
@@ -1506,7 +1566,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/aYzBfTRBTHOf-KBXYsi_lw/zh-cn_image_0000002817427981.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004759Z&HW-CC-Expire=31536000000&HW-CC-Sign=C58458E5B15179B2678C31405A600357E63A3B727747261E26409FA4B89145E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/tdC22GNXQBaEnrVIqNmMPg/zh-cn_image_0000002791726920.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=07DDDCB3D8314CB3DA6102C83B330E78654BC35365087C42F122FE8C3751C7F8)
 
 ## showTimePickerDialog
 
@@ -1521,6 +1581,8 @@ showTimePickerDialog(options: TimePickerDialogOptions): void
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
@@ -1589,6 +1651,8 @@ showTextPickerDialog(options: TextPickerDialogOptions): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 **参数：**
@@ -1652,7 +1716,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/zhoM7xScTy-sEMvYgD5u9g/zh-cn_image_0000002788468562.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004759Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BB97C3283B3E82F880B3B7C1BE9AF2E7B6CB1B4636048198DF0CDABF8046DE9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Ryh1BmN5TyatYlawV8jxeQ/zh-cn_image_0000002791566948.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=E87EF509BC452E99BDB59BBC3E02F93F1636C242744F38B2C815F7735D518BDA)
 
 ## showTextPickerDialog20+
 
@@ -1667,6 +1731,8 @@ showTextPickerDialog(style: TextPickerDialogOptions|TextPickerDialogOptionsExt):
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
@@ -1685,6 +1751,8 @@ createAnimator(options: AnimatorOptions): AnimatorResult
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -1751,6 +1819,8 @@ createAnimator(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -1807,6 +1877,8 @@ runScopedTask(callback: () => void): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -1844,6 +1916,8 @@ setKeyboardAvoidMode(value: KeyboardAvoidMode): void
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -1892,6 +1966,8 @@ getKeyboardAvoidMode(): KeyboardAvoidMode
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -1927,6 +2003,8 @@ getAtomicServiceBar(): Nullable<AtomicServiceBar>
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -1968,6 +2046,8 @@ getDragController(): DragController
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -1987,6 +2067,8 @@ keyframeAnimateTo(param: KeyframeAnimateParam, keyframes: Array<KeyframeState>):
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -2065,6 +2147,8 @@ getFocusController(): FocusController
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -2084,6 +2168,8 @@ getFilteredInspectorTree(filters?: Array<string>): string
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -2181,6 +2267,8 @@ getFilteredInspectorTreeById(id: string, depth: number, filters?: Array<string>)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -2260,6 +2348,8 @@ getCursorController(): CursorController
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -2279,6 +2369,8 @@ getContextMenuController(): ContextMenuController
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -2320,6 +2412,8 @@ getMeasureUtils(): MeasureUtils
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -2341,6 +2435,8 @@ getComponentSnapshot(): ComponentSnapshot
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -2370,6 +2466,8 @@ vp2px(value : number) : number
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -2427,6 +2525,8 @@ px2vp(value : number) : number
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -2486,6 +2586,8 @@ fp2px(value : number) : number
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -2544,6 +2646,8 @@ px2fp(value : number) : number
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -2597,6 +2701,8 @@ lpx2px(value : number) : number
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -2652,6 +2758,8 @@ px2lpx(value : number) : number
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -2699,6 +2807,8 @@ getWindowName(): string | undefined
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -2754,6 +2864,8 @@ getWindowId(): number | undefined
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -2798,6 +2910,8 @@ getWindowWidthBreakpoint(): WidthBreakpoint
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -2847,6 +2961,8 @@ getWindowHeightBreakpoint(): HeightBreakpoint
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -2898,6 +3014,8 @@ postFrameCallback(frameCallback: FrameCallback): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -2945,6 +3063,8 @@ postDelayedFrameCallback(frameCallback: FrameCallback, delayTime: number): void
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -2994,6 +3114,8 @@ requireDynamicSyncScene(id: string): Array<DynamicSyncScene>
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -3072,6 +3194,8 @@ openBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>, sheetOpti
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -3203,6 +3327,8 @@ updateBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>, sheetOp
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -3330,6 +3456,8 @@ closeBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>): Promise
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -3451,6 +3579,8 @@ isFollowingSystemFontScale(): boolean
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -3484,6 +3614,8 @@ getMaxFontScale(): number
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -3522,6 +3654,8 @@ bindTabsToScrollable(tabsController: TabsController, scroller: Scroller): void
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -3627,7 +3761,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/SjMFbiD3TwqK1BR0jHTmNw/zh-cn_image_0000002817508051.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004759Z&HW-CC-Expire=31536000000&HW-CC-Sign=70DB18E60D7016046F915D91A1505C1C7D0DBC20CFDBE48156F10D2D396A38AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/UyFsEEXTRjumNs2CkXZ6XQ/zh-cn_image_0000002820526901.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=2ED84211830FA0802EC33359AB41979179AABA0578F712CC2D16F118F3CA3C2C)
 
 ## unbindTabsFromScrollable13+
 
@@ -3638,6 +3772,8 @@ unbindTabsFromScrollable(tabsController: TabsController, scroller: Scroller): vo
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -3660,6 +3796,8 @@ bindTabsToNestedScrollable(tabsController: TabsController, parentScroller: Scrol
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -3681,6 +3819,8 @@ unbindTabsFromNestedScrollable(tabsController: TabsController, parentScroller: S
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -3741,6 +3881,8 @@ getTextMenuController(): TextMenuController
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **返回值：**
 
 | 类型 | 说明 |
@@ -3764,6 +3906,8 @@ static createUIContextWithoutWindow(context: common.UIAbilityContext | common.Ex
 **元服务API：** 从API version 17 开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -3814,6 +3958,8 @@ static destroyUIContextWithoutWindow(): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **示例：**
 
 ```ts
@@ -3842,6 +3988,8 @@ dispatchKeyEvent(node: number | string, event: KeyEvent): boolean
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -3908,6 +4056,8 @@ setPixelRoundMode(mode: PixelRoundMode): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -3940,6 +4090,8 @@ getPixelRoundMode(): PixelRoundMode
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -3977,6 +4129,8 @@ static setResourceManagerCacheMaxCountForHSP(count: number): void
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -4033,6 +4187,8 @@ setImageCacheCount、setImageRawDataCacheSize和setImageFileCacheSize并不灵�
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -4077,6 +4233,8 @@ setImageRawDataCacheSize方法需要在@Entry标记的页面，[onPageShow](ts-c
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -4118,6 +4276,8 @@ getMagnifier(): Magnifier
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
 
@@ -4258,7 +4418,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/BlVGen7IQj6mwGY_QMVqPg/zh-cn_image_0000002788308620.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004759Z&HW-CC-Expire=31536000000&HW-CC-Sign=89E691512CD43C694203CB4532763A4C3B64AA7D6E4CECF68C64041573F8DE2D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/uUZQq4mISzG8rzkVIgcSFg/zh-cn_image_0000002820406901.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=83238A1FFD3CAFA38A4F63408436BE3F2D45F71B88A416C0DDB4AF2FC1FE87B3)
 
 ## getPageRootNode24+
 
@@ -4269,6 +4429,8 @@ getPageRootNode(): FrameNode | null
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口可在Stage模型和FA模型下使用。
 
 **返回值：**
 
@@ -4411,7 +4573,7 @@ export struct PageThree {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-k5bVqYsSoutD1VLlSDV4Q/zh-cn_image_0000002817427983.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004759Z&HW-CC-Expire=31536000000&HW-CC-Sign=805AC870243EE856907FF29B856D08118F5C8DB8290FD34BD0436CB72A02D4C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ONYeGx2dQKKE7aqkBhGfkg/zh-cn_image_0000002791726922.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D595C2AF253C7592C8CD7F5F1357D7FE64BE39083761C26177C97F37A6E0463)
 
 ## isEasySplit24+
 

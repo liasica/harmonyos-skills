@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-polygon
 title: 多边形
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 多边形
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:24+08:00
+scraped_at: 2026-11-19T09:49:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2d72f90b91bc5a14a127a00956fb470f4b455b93bf113cfbe45ffd59f2cf7e29
+content_hash: sha256:e055ecc77c3878dc24a82e4ec27f0b47841d7cb046197be7e6eb401aa597d2fb
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:2d72f90b91bc5a14a127a00956fb470f4b455b93bf113cfbe45ffd59f2c
 
 多边形主要用于标识小区、学校、商圈等封闭区域范围，同时可呈现省、市、区县等行政区域边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/pKePOOmDQ5ePxme90wqSrQ/zh-cn_image_0000002817427537.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=730A270624985833B07176F70A0AE25BD9AD0D5881E1C67A2EB98EDF918A7D46 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/n-F-ZHRsRd2EvBkZiB2mKA/zh-cn_image_0000002791726476.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2A8CCB5DCE30B036B2EE50AA5A8EFCF8FF3F45348796FC794A00ED85795498C "点击放大")
 
 ## 接口说明
 
@@ -102,4 +102,4 @@ content_hash: sha256:2d72f90b91bc5a14a127a00956fb470f4b455b93bf113cfbe45ffd59f2c
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/uzWFsaTKQYixsnymz5rHZw/zh-cn_image_0000002788468118.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3A1B07B58704FC11AD8D5376FA89131F7565BE9BFDF32E1F90FDFC6960D5D54 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/a5mvLiSxQl-V6RNxR6GRWw/zh-cn_image_0000002791566504.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CD9378B6458051EDCD93A182ADCA515A0E253DFFDE553A83CDC2A6610B543B4 "点击放大")

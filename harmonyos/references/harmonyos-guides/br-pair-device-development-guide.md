@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/br-pair-devic
 title: 配对与连接设备
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 传统蓝牙 > 配对与连接设备
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:34+08:00
+scraped_at: 2026-11-19T09:48:13+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:67a4108fe4d09f0c3dbf084bdbce35f1967c3f8e4e1facef9f2d7f642a292b92
+content_hash: sha256:a45b4e91e4d6f9efc9591385cc3fa4c8e50e25469cc5a8843c57e98a02429719
 ---
 
 ## 简介
@@ -55,7 +55,7 @@ try {
 
 配对过程中，系统会弹出对话框。不同配对类型，对话框样式可能不一样，其中“确认配对密钥（Confirm Passkey）”模式如下图1。若用户同意授权，才能配对成功。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/9kpn5uPIQqSvoUCXTAX3oQ/zh-cn_image_0000002788467384.png?HW-CC-KV=V1&HW-CC-Date=20261114T004554Z&HW-CC-Expire=31536000000&HW-CC-Sign=701EF07C962D9D2570AD439CE03E040F043FF72235FA95F2920F95EE4F950DEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VDnA9p5TTtGTKbDVnca96A/zh-cn_image_0000002791565768.png?HW-CC-KV=V1&HW-CC-Date=20261119T014812Z&HW-CC-Expire=31536000000&HW-CC-Sign=50036F87F23C8DE2784534D22CEF4130323B774E57774E0AC1C6D6972BC4C004)
 
 **图1** 蓝牙配对请求对话框
 

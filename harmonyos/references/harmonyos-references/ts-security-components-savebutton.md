@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-securi
 title: SaveButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 安全 > SaveButton
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:22+08:00
+scraped_at: 2026-11-19T09:51:11+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:72e8279f6ffc9f6f818340396463ca737acc017a4d3e6adf82190c7b0c3eff8d
+content_hash: sha256:761e06a9222b7211f9871e638a4476f6d3b5f952ab42f44b68818eed3cf2ad3d
 ---
 
 安全控件的保存控件系统接口，适用于应用需要临时获取媒体库访问权限以保存图片或视频的场景，例如图片保存到相册、媒体内容导出等。
@@ -385,7 +385,7 @@ symbolRenderingStrategy(strategy: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/SkyHedM-Qne23VbklVd4_A/zh-cn_image_0000002817428451.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC1737E2D1AB0CED3B53B348F84667A3C9DC3D84C30CBC335B227CD0F01D4EAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/qwFtlkZTSRCAYy0BS7XcpA/zh-cn_image_0000002791567418.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=20D9E88800FE764D0B54916F5F8E51B954654BCAD8F2A96D0FCA0A979C0F7E43)
 
 ## 事件
 
@@ -486,7 +486,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/7qKwuDCJRdmTLHO2QsTbEw/zh-cn_image_0000002817428703.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=1485FB98C1CC500C52C534657AE815279B6736CA37F6549BA906FD8876947BCA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/_sCEtn8MRKa6R_k_3zlwlA/zh-cn_image_0000002791567670.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8FC93EF85878CBE25CD256A7092A46C8596A2F741BCF7E09C81B54A776E30BB)
 
 ## 示例2
 
@@ -561,7 +561,7 @@ struct SetIcon {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/v40_O6x1RrGmp2NbdMNL9A/zh-cn_image_0000002788469284.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FF3603487B86AD7687929A0A84414BEB2F2EECD02B5F8B1284927E903F90C78)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/7MVEZUnsS2iij-NZ3TtWgA/zh-cn_image_0000002820527623.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E6E48AE4952F293394316662C114C8931D2A9FD6B50B40CCA31B3250CB951B6)
 
 ## 示例3
 
@@ -625,4 +625,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/KszyxJ5FToeb3SDMQ24Qrw/zh-cn_image_0000002817508773.jpeg?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBC2B5FB84CC64B06490CD35BBADFDDE27D3FD07DC3BC6AE64C211DD71885075)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/KtUnrr7hQga_5-0BIorYNQ/zh-cn_image_0000002820407625.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E2A0069B88567AC21371370C639459CF81F6E71A4BC866B2CD37BD73251EEA3)

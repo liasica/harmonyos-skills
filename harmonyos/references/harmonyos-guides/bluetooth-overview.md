@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bluetooth-ove
 title: 蓝牙服务开发概述
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 蓝牙服务开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:34+08:00
+scraped_at: 2026-11-19T09:48:13+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:687176fc2eca8a23afc299be90bf4a4e6ae711f0ab0f2e31cc222d3962424760
+content_hash: sha256:99b37f6661a45bb017629c515030efda8509601f66a1d21f2900fd6fd4644f7f
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:687176fc2eca8a23afc299be90bf4a4e6ae711f0ab0f2e31cc222d39624
 
 在蓝牙服务开发过程中，涉及两种维度的地址类型定义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/AhwyHijZSpq0eE9OB2EZFg/zh-cn_image_0000002817506871.png?HW-CC-KV=V1&HW-CC-Date=20261114T004554Z&HW-CC-Expire=31536000000&HW-CC-Sign=440975D08D34ABA5360A7E90E7CD7217FD262B732C741A73A30C9C84AA76A00B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/840HcV9dTnapt5tJdwkN2w/zh-cn_image_0000002820525719.png?HW-CC-KV=V1&HW-CC-Date=20261119T014721Z&HW-CC-Expire=31536000000&HW-CC-Sign=C539FB8197D11A6EF4B16314275F455976D4F696A2FBE6F40FC74F399FE23488)
 
 **图1** 蓝牙设备地址类型
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-debugger
 title: JSVM-API调试&定位
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API典型使用场景指导 > JSVM-API调试&定位
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:45+08:00
+scraped_at: 2026-11-19T09:49:26+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:fc04ff7c888189e8e602520fc66993bc573ed10f8d60ea34955c2bc9674af7d6
+content_hash: sha256:3af3fcd333c298b82252894a03ebb9ca478bd7535c4cb7b39b28c912b987bbad
 ---
 
 JSVM，即标准JS引擎，是严格遵守ECMAScript规范的JavaScript代码执行引擎。详情参考：[JSVM](../harmonyos-references/capi-jsvm.md)。
@@ -184,19 +184,19 @@ static void EnableInspector(JSVM_Env env) {
 
 1. Chrome浏览器中打开 chrome://inspect/#devices，勾选以下内容：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/X4ZoXRLsS_mrQvws4_ac6Q/zh-cn_image_0000002817427903.png?HW-CC-KV=V1&HW-CC-Date=20261114T004659Z&HW-CC-Expire=31536000000&HW-CC-Sign=77432220EF3A9B0FFBA4F91905CF82B95BACA35B9D3B0134FF8158114021AA85)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/LCy5GAGYSEuTwjHgxDS8iA/zh-cn_image_0000002791726842.png?HW-CC-KV=V1&HW-CC-Date=20261119T014831Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7465241ABA87395B590677A49726B61CE158069187F39731651A9F6507E45F8)
 2. 执行端口转发命令：hdc fport [开发者个人计算机侧端口号] [端侧端口号]
 
    例如：hdc fport tcp:9227 tcp:9226
 3. 点击Port forwarding按钮，左侧输入开发者个人计算机侧端口，右侧输入端侧端口号，点击done。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Ydb-mEppSXuuv4QatOdmuw/zh-cn_image_0000002788468484.png?HW-CC-KV=V1&HW-CC-Date=20261114T004659Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8BCA43E16881B2F5B8CAD483C71A669166A506D6522181ED9DFD4040127459F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/GKwRgoTXQ_igm2Mm_QMR_g/zh-cn_image_0000002791566870.png?HW-CC-KV=V1&HW-CC-Date=20261119T014831Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3CF33FDE8BA1A017173EEF0B2A66D8B4DB389F056F68310E161FDDBB7281E9B)
 4. 点击Configure按钮，输入开发者个人计算机侧的端口号，如localhost:9227。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ZiXVhiIMQDCmGiUNgPiSqA/zh-cn_image_0000002817507973.png?HW-CC-KV=V1&HW-CC-Date=20261114T004659Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B1C7752840F4062A8C91B70F928C10C05A326EDD1D0AE0D49B34B0E15DFA152)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/6p4sEWlfS9adetdfwzaMow/zh-cn_image_0000002820526823.png?HW-CC-KV=V1&HW-CC-Date=20261119T014831Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5389B377A4FBCF787596505A5C30C68E12B21EEE367F1372FD50DE46211BE12)
 5. 稍等片刻，会在target下出现调试的内容，点击inspect即可调试。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/UhWv5wx7QBajUWX6ykuUKg/zh-cn_image_0000002788308542.png?HW-CC-KV=V1&HW-CC-Date=20261114T004659Z&HW-CC-Expire=31536000000&HW-CC-Sign=503AD0846B4E2F64679480B37B65B085F4C74AF14BC4984AC577544A0949D76F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/NTISEP2dRROj1lTfd_Dkig/zh-cn_image_0000002820406823.png?HW-CC-KV=V1&HW-CC-Date=20261119T014831Z&HW-CC-Expire=31536000000&HW-CC-Sign=4ECD2A419C114CEE45A8938F6829703D411A5C86318C5F9E65DB120F40533F44)
 
 ### 使用 websocket 端口进行调试
 

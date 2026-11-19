@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-menu
 title: 使用Web组件菜单处理网页内容
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 使用Web组件菜单处理网页内容
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:16+08:00
+scraped_at: 2026-11-19T09:47:53+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:cace9ab61b90b566a747696647f550f7d3ad67f50ba59f5e81ef462cea3127e6
+content_hash: sha256:1fd5dc21a4791b912641876e6526ef13a2ef5d3c5fee077eec514b1eaadfddb5
 ---
 
 菜单作为用户交互的关键组件，其作用是构建清晰的导航体系，通过结构化布局展示功能入口，使用户能够迅速找到目标内容或执行操作。作为人机交互的重要枢纽，它显著提升了Web组件的可访问性和用户体验，是应用设计中必不可少的部分。Web组件菜单类型包括[文本选中菜单](web-menu.md#文本选中菜单)、[上下文菜单](web-menu.md#上下文菜单)和[自定义菜单](web-menu.md#自定义菜单)，应用可根据具体需求灵活选择。
@@ -108,7 +108,7 @@ struct WebComponent {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Vy6TEzxxRg2JlZKVR2xWgw/zh-cn_image_0000002788467132.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=84DDACF490EEB7F618DF0FF30E590DE7AA82E2B93F9298AC37AA1E9D0429BA94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/0zEM01GFQfyWNmeIc3YKew/zh-cn_image_0000002791565516.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FF524ACC67A36CF998BD4323C4D2D7AE04CC80684F074A3D12BD6343BFCE537)
 
 ## 上下文菜单
 
@@ -256,7 +256,7 @@ struct WebComponent {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/PNZ2Gs2XTsS5lA134KK0iQ/zh-cn_image_0000002817506619.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=5364677E79EEDEC5D256A465E2C820AF481F7BFF169DE404DD16DA30C9873F94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/_F7siyiVQf-W5dZnaByrQw/zh-cn_image_0000002820525469.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF794697809C795AD33E2EFCF9B5B4CF8A716151ECD67A15CEC9A791EF466F96)
 
 ### 关闭上下文菜单
 
@@ -369,7 +369,7 @@ struct WebComponent {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/tpJwgzB3Rz-c5ibS6ssKdA/zh-cn_image_0000002788307190.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AB707F63B7EC6609E3A01832D790733AA71B949B17EC2956DCF479E31AB51AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/KT0vX9Z9T9CoSf1i21_D-Q/zh-cn_image_0000002820405469.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=803CC7C90CF47B1393FAADC8D55EE2B21E3B8DDAD4F8B80DD8EDABA5199EDF4E)
 
 自API version 20起，支持绑定长按超链接菜单。可以为图片和链接绑定不同的自定义菜单。
 
@@ -568,7 +568,7 @@ html示例
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/ABy4rZWMQ92jtEhOy6AtJg/zh-cn_image_0000002817426553.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBDA6D52CA3E034E68F68972D3D8F3543E4D1EC1B6410ECCE80C47B886B68DC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/g1q61X7xRKaTBV_SUZb_iw/zh-cn_image_0000002791725490.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AD6F7F80790D8246C73EBC5A21E80E1C94C7C5102E58C59E82FBAA96D001402)
 
 ## Web菜单保存图片
 
@@ -724,7 +724,7 @@ struct WebComponent {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Yl0YTX1iRxqG2LgK7M3wDg/zh-cn_image_0000002788467134.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5517A82FBC5C23A774A6F95F34F52A27A7FBE44F976C8462D4FC0DF1E89C0CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Ia2PuTNfS5aUAUPagCtIGA/zh-cn_image_0000002791565518.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A6D1BDAC5B12D223448368455A7D4694F8B100882CE1C864464A3E75161C69B)
 
 ## Web菜单获取选中文本
 
@@ -821,7 +821,7 @@ struct WebComponent {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/N0IgtcYyTXurxsBj3mS__w/zh-cn_image_0000002817506621.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=20FBAE5BA20D33FB611D319512F16891663D60BE653583909C7DF9373DCD2198)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/UoNCCgO5SnKEFB1VCsYxbw/zh-cn_image_0000002820525471.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E7A03A7F519A220671AD240B9BB2AE5C40E9B28BCBCF67DB83F9A9E74ECD203)
 
 ## 常见问题
 
@@ -874,7 +874,7 @@ struct WebComponent {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/AmU_kLq3S-yUpoG7sHpxdA/zh-cn_image_0000002788307192.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=192FCCA1AA1C243E5FB9CDFED4990E799C9DBFC33402293AAB4D2EB63AD762B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/LZZD4Zd8Su6Ad4amvCthmw/zh-cn_image_0000002820405471.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=312DA0B21F324A4257FCD26F747F8EA3B46EF942FD806AA853E5CB8AEB506DF3)
 
 ### 出现选区时手柄菜单不显示
 
@@ -1025,4 +1025,4 @@ struct WebComponent {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/hwqN_vxzREe6qGc5F7Q6LQ/zh-cn_image_0000002817426555.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004536Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FFC7AD5EEFA994B73C20AD048169A260EA07345E424AEF0D4AF9895BD6FC7C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/S_7sC-T3Q4aDzR9-oCJ92A/zh-cn_image_0000002791725492.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=0677FF22D75C3198B23D5D35D88A907413B53D9811DCA9B23708337C6C9A1081)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-p
 title: 概述
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与PC/2in1碰一碰分享 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:33+08:00
+scraped_at: 2026-11-19T09:49:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7b8098c6a88df5389c32a21e11ba03ddfc6f9aa3bd8222e5a9c39ff252de52b8
+content_hash: sha256:9c26a2e2219a684daa0c4867b89e9a4e22d12704f8394fa29941ccc004e0610f
 ---
 
 ## 场景介绍
@@ -14,16 +14,16 @@ Share Kit支持Phone和PC/2in1之间的碰一碰分享。利用PC/2in1设备的�
 
 **从6.1.0(23)版本开始，支持Phone与Tablet设备之间的碰一碰分享。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/i_t9XoXOScS5M3GN3gZdFQ/zh-cn_image_0000002788468268.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE3E1977DE9787C9E8CDDAFBB363703509E50E2291A1CF5FCB3F07EFB55F1E58)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/mcossPRYQcy_acaSA0oOzQ/zh-cn_image_0000002791566654.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=35D9FB80E28E73F8AB2EC262914AB733B87BFD681FFD2215F4B1497B84830BAC)
 
 ## 业务流程
 
 * PC/2in1设备作为数据接收端
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/68whRrlZSmqv1p6F6gnLQw/zh-cn_image_0000002817507769.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=065D90C5AD251FE70EE88EB53104ED1657CABAABB9A73A406F03FDB9D81B17DA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/vow6CyebSCOgR-RlRj6LRw/zh-cn_image_0000002820526619.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=F16051B6352D726E45C300AACE8E680532BE624C53CC192EC72D7E7175E21710)
 * PC/2in1设备作为数据发送端
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/B9__zQjlTyKeih0byiClKg/zh-cn_image_0000002788308338.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=25C8364381AA403ADA8AEF99F4646384187161A5922E81995349D2E03FDD3733)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/IoVco_2FRWafo7YDg_GKKQ/zh-cn_image_0000002820406619.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=A453094D08A913E68005D0E080407427FC6881B117E94641BD155DF002868AE7)
 
 ## 双向分享限制
 
@@ -40,21 +40,21 @@ Share Kit支持Phone和PC/2in1之间的碰一碰分享。利用PC/2in1设备的�
 * 手机与PC/2in1设备间碰一碰分享需登录相同的华为账号。
 * 仅支持直板手机或折叠手机直板态与PC/2in1屏幕碰一碰分享。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/VmVfzWljSjG8ACOdLMOr3w/zh-cn_image_0000002817427701.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=4362F2B2DDE2E6D836F8D56FFF6BE43BB61F6F0968E381932AE3AB2CB8D90478)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/vF4-O7s6RziDK8smoZWy5A/zh-cn_image_0000002791726640.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=21678A5BAF50359F19B67D43CA78F0BE7B8EDAC66B0E6FF59B98522C261AB515)
 * 轻碰屏幕交互约束：
 
   + 手机与PC/2in1屏幕俯视夹角应≤5°。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/5LPsVx5eTXmpSrzEZFC_vQ/zh-cn_image_0000002788468282.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBFC698184801EBC233061D2A5104EB33533F7B437247FDB4E10C27B36421015)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/7jJyrrkIRJigohB6c1T7vA/zh-cn_image_0000002791566668.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=81B0584A819311EB42AB039FA6229FBF1389028358DEB2C7C6B53AA06E3E4947)
   + 手机与PC/2in1屏幕侧视夹角应＞35°。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/JHuaKy-KQFGiUDr8joMBQQ/zh-cn_image_0000002817507771.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=95FB5FEDFF29123992A37CDC12F82AD973C7DA75521DD34E724EE7965449BD24)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/NL3MOhJDTeeqBBLl5wiIXw/zh-cn_image_0000002820526621.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=49A2735A2FB4A53BD417117CAD7C8E2D77CEE8D5685D3490F9BEE8C501378B12)
   + 手机与PC/2in1屏幕正视夹角应≤25°。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/e7CLMqRrS9GBfRswYJqvTA/zh-cn_image_0000002788308340.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B8FF34943627E33C8F0F79C9C5C39D8677A38AE788E19C9E266677573503CE8)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/vXD50bymQCGQUiVMc56bYg/zh-cn_image_0000002820406621.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=0902533E6E0469BBC486566E7D5F5A9DB3E1857231E69A7D9A05AF402D0D4440)
   + 手机不能超出PC/2in1设备屏幕。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/FKBQ4EJJRD23e4nmT9DBNg/zh-cn_image_0000002817427703.png?HW-CC-KV=V1&HW-CC-Date=20261114T004648Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3346A658B867EAEA633ABB44B859F1E641CF171CBCB64BBA69DD763AA72E4B5)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/jg4J0XIcRJKG0qRgjHxkCw/zh-cn_image_0000002791726642.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BD7C6252BEE8CD4648475DAC4AE3EB9C7ADF43B60C265E96AE357C9683F35B5)
 * 支持官方手机保护壳，不支持过厚的手机外壳。
 
 ## 环境要求

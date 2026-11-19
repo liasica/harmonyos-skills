@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-med
 title: 自定义播控中心控制按钮显示布局
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 自定义播控中心控制按钮显示布局
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:56+08:00
+scraped_at: 2026-11-19T09:48:36+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:0ad8266b160e13902c9d00875900a56654a8678a1da248f4a06f3df7675ec3dd
+content_hash: sha256:1f4be9b77c346008209bcd646d1f069f2da8c9e180982e4fbfcf1022e00aec61
 ---
 
 从API版本26.0.0开始，系统支持自定义播控中心控制按钮的显示布局。本文档介绍播控中心控制按钮的默认显示规则，以及应用如何自定义控制按钮的显示。
@@ -16,11 +16,11 @@ content_hash: sha256:0ad8266b160e13902c9d00875900a56654a8678a1da248f4a06f3df7675
 
 * **五元组**：显示五个控制按钮，如播控中心二级界面会使用五元组进行显示。如下图所示，五元组从左到右显示的位置分别称为4号位、2号位、1号位、3号位、5号位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/cv-TB02JSvSs6LDsihvaVw/zh-cn_image_0000002788467576.png?HW-CC-KV=V1&HW-CC-Date=20261114T004756Z&HW-CC-Expire=31536000000&HW-CC-Sign=61964F09D979170977E9746358829DA562B5786DC551302FCE45AA240FBC5195)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/vfrG2aAPTyyNEq24qvh4aw/zh-cn_image_0000002791565962.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=5278EDB79E08542B9F7E82C882A1EC0BCA4A01E81452D9C225CE7B8ED41AFE00)
 
 * **三元组**：显示三个控制按钮，如播控中心一级界面会使用三元组进行显示。如下图所示，三元组从左到右显示的位置分别称为2号位、1号位、3号位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/5sMutuSmQGSmvUI5YyhtVQ/zh-cn_image_0000002817507065.png?HW-CC-KV=V1&HW-CC-Date=20261114T004756Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C37211E579A67AD5ABA38583093F95730603C70E72AFDB45728ACA4B8D68DB1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/h3agOBKcRpugL99ERS94CQ/zh-cn_image_0000002820525915.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=D61FAB0C54CC0E38751FEFA8F8254ACF686BD33C75DBE4D730EDC1363D131B31)
 
 播控中心根据应用设置的[AVSessionType](../harmonyos-references/arkts-apis-avsession-t.md#avsessiontype10)会话类型（本文提到的会话类型均指应用设置的AVSessionType）决定三元组/五元组控制按钮的显示：
 

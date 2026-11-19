@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 通知类客户端信息查询场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 通知类客户端信息查询场景
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:28+08:00
+scraped_at: 2026-11-19T09:48:07+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5ed00423ca30683ba393debd6df6b60c7983f4dc9d28531d8501144508ff2f13
+content_hash: sha256:f07b4d43055c3099769ba04d46d2433b4fb53eaa4e303ee4ab4db25ca3dc4f86
 ---
 
 从26.0.0开始，支持开发者应用获取设备上全量的安全审计通知类客户端信息。
@@ -21,7 +21,7 @@ content_hash: sha256:5ed00423ca30683ba393debd6df6b60c7983f4dc9d28531d8501144508f
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/KCToQbPURUKzutI2XZPF-w/zh-cn_image_0000002788307414.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FAFFF3F4586EF6BF6C60D24D2CAC1EB8574F87C1B7BE1E0B984B1C20E1D805E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Rsv8jzZDTEuSBobnFz3iUQ/zh-cn_image_0000002820405693.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=71AA9DFE6B55A7CF9C2A8A32BD5458528B9D6BBEECDEB95EC057223A70084EDB)
 
 **流程说明：**
 

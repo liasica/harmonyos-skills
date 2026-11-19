@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-at
 title: 管理归因策略
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 开发准备 > 管理归因策略
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:12+08:00
+scraped_at: 2026-11-19T09:48:52+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:e42e55b8a6bf4bf77bb4276c05d2e8d0d6e1b4092a41a05cc499772ca6158158
+content_hash: sha256:7d0d14466813e19830884ed7625ece61bd756f1ba2bc60709b82b9a6d1e45811
 ---
 
 通过归因策略管理，支持开发者在应用归因云端管理台维护可归因的分发平台及归因优先级、归因窗口期、归因节点设置，从而提升归因能力拓展性，适配开发者多样化归因诉求。
@@ -16,7 +16,7 @@ content_hash: sha256:e42e55b8a6bf4bf77bb4276c05d2e8d0d6e1b4092a41a05cc499772ca61
 
 点击左侧归因策略管理菜单栏，进入归因策略管理页面，开发者基于推广应用、转化事件等维度进行归因策略的维护，所有的归因策略都是基于开发者下具体某个推广应用配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/41hlixF6RgeQFEmk7mDExw/zh-cn_image_0000002788307912.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=98253A030C695E4F580B4D5D97B74C234CDAEA118D8F2939100553A3B94B3A0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/U05iEkjnRyaYNudGEMp1Qw/zh-cn_image_0000002820406193.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=84B9D465565003338D27B9641C8C7D3598ADA1F66FDF89FFA769A57AC1C242B2)
 
 **说明** 
 
@@ -26,7 +26,7 @@ content_hash: sha256:e42e55b8a6bf4bf77bb4276c05d2e8d0d6e1b4092a41a05cc499772ca61
 
 在归因策略管理页面点击“新增”按钮，进入“新增归因策略”页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/UA-PAvp_QNaiMeeHiOLBsA/zh-cn_image_0000002817427275.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=66AA108073BA49D9138788D7979245077DE467456BEEF60B7E5DA9F339D79991)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/fHl45UqGRrCeSzDzTChP0A/zh-cn_image_0000002791726214.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E36984F305242C5EBB9FB80F86E44D58D706023D02459F5443F35C1FE44434F)
 
 参数填写说明如下：
 
@@ -52,7 +52,7 @@ content_hash: sha256:e42e55b8a6bf4bf77bb4276c05d2e8d0d6e1b4092a41a05cc499772ca61
 
 在归因策略管理页面点击右侧“编辑”按钮，弹出窗口期维护页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/hF45CuTyQZeS76qKVcz0TA/zh-cn_image_0000002788467856.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1EE328C187C15B3FBC2A780389A390842DE9A7296F223B1407EBC59DAE61F7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/gIp_CVz3TqiGrSAHD7ZLCA/zh-cn_image_0000002791566242.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=C31FEF5F77E46AEEDC5CEA7FAE03E9205EE4581B1AEF1FF3EC5A444783077CBB)
 
 维护完成后，点击“确认”即可生成有效记录，若点击“取消”，则不创建相应记录。
 
@@ -60,7 +60,7 @@ content_hash: sha256:e42e55b8a6bf4bf77bb4276c05d2e8d0d6e1b4092a41a05cc499772ca61
 
 在归因策略管理页面点击右侧“查看”按钮，弹出归因策略查看页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/isPg7sIKTlai1TfquYs83Q/zh-cn_image_0000002817507345.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FCA8F94DD2C484AB6E26210EC2FB969B902C932C984AC6DBE7BB73148EEE05E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/GMAMPWHZSDqg253XY5RyrQ/zh-cn_image_0000002820526195.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=19215C768014BF33A7862BF5D7C23B67CCA14DB76EA3A53D9FC9E838DB393380)
 
 可点击“编辑”按钮进入编辑页面，或点击“取消”关闭当前页面返回列表页面。
 
@@ -68,7 +68,7 @@ content_hash: sha256:e42e55b8a6bf4bf77bb4276c05d2e8d0d6e1b4092a41a05cc499772ca61
 
 在归因策略管理页面点击右侧“删除”按钮：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/0Xt867E4QS60QOTFJneFpA/zh-cn_image_0000002788307914.png?HW-CC-KV=V1&HW-CC-Date=20261114T004812Z&HW-CC-Expire=31536000000&HW-CC-Sign=79344C6FFD9E1D03CF1E77A4DEA6FC271C3CE2ED95B03ACE72290EAC14614A69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/NHLmgfM-SsyfV6mjyUWbdQ/zh-cn_image_0000002820406195.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=1973C14E5C20DBA840CBA59A2C1996515B279889F2EDFB798824340493664BFE)
 
 点击确认该记录状态变为“删除”，删除状态的记录仅可查看。
 

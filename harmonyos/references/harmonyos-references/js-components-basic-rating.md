@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: rating
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > rating
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:31+08:00
+scraped_at: 2026-11-19T09:51:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:74a423c5a41acd72ecfd31b3e2c7a1df3df2f3073bc8711cae8c7f6636c82836
+content_hash: sha256:66e7ea53b2c4b8887521fd99ec2439653779b5648025127e8f6e91039e36937a
 ---
 
 **说明** 
@@ -96,4 +96,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/IYE49K7XQWCSLCufGJEmFA/zh-cn_image_0000002788309492.png?HW-CC-KV=V1&HW-CC-Date=20261114T004828Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1EE069E3BB17E2C1EA17730D6AEBA0C8605D781A742DD8B4D40DB02B4366D45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/r4Q2p3-6Q5e6PKl1R7xKQA/zh-cn_image_0000002791727794.png?HW-CC-KV=V1&HW-CC-Date=20261119T015026Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AA05107D8BAF2AD81328E92B08539065079F52A52BF34E69D8DC43FD90D0FF8)

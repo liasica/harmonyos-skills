@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 模拟点击检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 业务风险检测 > 模拟点击检测
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:02baf65da53410f9341cdfe0b92a621681e6ec23ed5c6d868919435015477db7
+scraped_at: 2026-11-19T09:48:07+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:be8e17df406a237168b7a29a194bff45868e062b3fd6883c7451e7fe7d23b30e
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ content_hash: sha256:02baf65da53410f9341cdfe0b92a621681e6ec23ed5c6d8689194350154
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/_iByIdapQnW-HA5SVDSxIg/zh-cn_image_0000002817506847.png?HW-CC-KV=V1&HW-CC-Date=20261114T004549Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFFD111E66FEB4C2F8B0CE09D26C3F660C1B1FCE45F94CA1D67DD0DA8EEDD17A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/DJ0IN0XrQFya6_KeYWUoBA/zh-cn_image_0000002820525695.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DE529FA7685C8D1B7D28FF519B19428199B6B04F383EFC7CC795D1F3D687B83)
 
 **流程说明：**
 
@@ -78,7 +78,7 @@ content_hash: sha256:02baf65da53410f9341cdfe0b92a621681e6ec23ed5c6d8689194350154
    ```
 3. 开发者应用可以根据模拟点击检测结果进行业务处理。
 
-   模拟点击检测结果是一个格式为JSON格式的字符串，内容示例如下
+   模拟点击检测结果是一个格式为JSON格式的字符串，内容示例如下：
 
    ```json
    {

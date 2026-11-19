@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-promo
 title: 选券场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 运营工具 > 平台券 > 选券场景
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:27+08:00
+scraped_at: 2026-11-19T09:49:08+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d919a12863bbe09633f38b2086e0c8f8150590ab81f62bff9c6ab3c3814e1e09
+content_hash: sha256:3cbc77044faf75d5ee26ff5c8117b0018f549e5f15d85806180405886377d23e
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:d919a12863bbe09633f38b2086e0c8f8150590ab81f62bff9c6ab3c3814
 
 选券场景效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/dKcc1veSSa6XUNVNb7odkg/zh-cn_image_0000002788308242.png?HW-CC-KV=V1&HW-CC-Date=20261114T004827Z&HW-CC-Expire=31536000000&HW-CC-Sign=E047FD2E7986C3D758FBB370221867BFD82F2BAE81B957ABDF12CEBC59DB0D6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/US5zoiDuQaywBoB_0q0bng/zh-cn_image_0000002820406523.png?HW-CC-KV=V1&HW-CC-Date=20261119T014813Z&HW-CC-Expire=31536000000&HW-CC-Sign=B42866B69E082700E5E1DF171FF91C1C176914665BABA80FDA8E9BC616F94979)
 
 ## 接入流程
 
@@ -33,7 +33,7 @@ content_hash: sha256:d919a12863bbe09633f38b2086e0c8f8150590ab81f62bff9c6ab3c3814
 
 关于选券场景的业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/eKBS5Z7QS1KQp5LYIzTr_Q/zh-cn_image_0000002817427605.png?HW-CC-KV=V1&HW-CC-Date=20261114T004827Z&HW-CC-Expire=31536000000&HW-CC-Sign=2170CC51FE5FC0829B03B098985028A8A9A0547477B7C688D39D29E191DFA848)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/RtYg2qw0SQer8DGxjqmV5g/zh-cn_image_0000002791726544.png?HW-CC-KV=V1&HW-CC-Date=20261119T014813Z&HW-CC-Expire=31536000000&HW-CC-Sign=93DDC5161F99FF676959B0A5F896A9EFF9B36CBE435BC7780332A74710573B31)
 
 1. 用户选好商品后进入商家服务结算页。
 2. 商户客户端请求Payment Kit客户端查询用户可用券。

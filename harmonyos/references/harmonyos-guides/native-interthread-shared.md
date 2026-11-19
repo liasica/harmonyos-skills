@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-intert
 title: C++线程间数据共享场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > C++线程间数据共享场景
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:04+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:e42095b2fb1b0556b2195dc484fc4757f67e2363d73c287fbba69e4bc0a8238e
+scraped_at: 2026-11-19T09:47:33+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:5de63a514eb7986bb126be078b4bc6d0483204ba4d165bff3350443fb3a4bea5
 ---
 
 在C++层进行多线程并发计算时，需要在每个C++线程上创建ArkTS执行环境，直接调用API。这样可以避免在非UI主线程回调时等待UI主线程的API调用结果。同时，还需要在C++线程之间共享和操作Sendable对象。
@@ -93,7 +93,7 @@ static void* CreateEnvAndSendSendable(void*)
 
 在C++中调用ArkTS能力后，需要通过序列化和反序列化跨线程传递。napi\_value不是多线程安全的，不能直接在多线程之间操作和共享。
 
-下面代码例子说明了如何序列化和反序列化传递对象，注意因为Sendable共享对象是引用传递，所以序列化不会产生另外一份拷贝数据，而是直接传递对象引用到反序列化线程，所以在性能上相比非Sendable对象的序列化和反序列化更为高效。
+以下示例演示了如何序列化和反序列化传递对象，注意因为Sendable共享对象是引用传递，所以序列化不会产生另外一份拷贝数据，而是直接传递对象引用到反序列化线程，所以在性能上相比非Sendable对象的序列化和反序列化更为高效。
 
 ArkTS文件定义。
 

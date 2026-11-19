@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 时间滑动选择器弹窗 (TimePickerDialog)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 时间滑动选择器弹窗 (TimePickerDialog)
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:22+08:00
+scraped_at: 2026-11-19T09:51:11+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:5cfb64345a603d54400a9008fad10e1d712e19800e964d1157d23342b2a3b13a
+content_hash: sha256:37812817b03e3db96e4ff34bf1e3fdfac064d661427d546cc08d15df24ffa5aa
 ---
 
 以24小时的时间区间创建时间滑动选择器，展示在弹窗上。适用于需要用户选择时间的场景，如设置闹钟、日程安排、预约时间等。该组件提供直观的时间选择交互，支持12小时制和24小时制切换，并可自定义样式和布局，帮助应用快速实现时间选择功能，提升用户体验。
@@ -157,7 +157,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/52opQxf-TX-rfhHATDeSLw/zh-cn_image_0000002788469264.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=6817819975A2A549526E78AC5D167BE93A6C8BF2658935FB4E3420AD194C2E21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/T-gK1pZyRwaxG3C4hvx0xQ/zh-cn_image_0000002820527603.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=5926BF246D973E5E95BA25FF400B0469F6460D8C45166083486E18395A34907C)
 
 ### 示例2（自定义样式）
 
@@ -216,7 +216,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/oIi6pqInS-GKsJWThCw8mg/zh-cn_image_0000002817508753.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8ADD5A2D52DF1368E5FA64C2DD94A7510DF066541E716D5F0D523AA3B189BF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/mS_DpSx4Rt2dJ5bOE4DDWQ/zh-cn_image_0000002820407605.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DD521020C9B667CAA7C4817DFDADBE532DE2A6E8B2A51E6899235A969397622)
 
 ### 示例3（悬停态弹窗）
 
@@ -272,7 +272,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/QmGqNKadSaah58o1zihB9w/zh-cn_image_0000002788309322.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F83113BE2FFBDE04EC85567737BABE1736A5253187BA2C86C7EAF266496AD9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/BjfoWB-RRlmqh9FSVSesvw/zh-cn_image_0000002791727624.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=54C9FC06A7EC92C37A1CA979990FB39604F1A62A866BDCDA67DC232AC8292265)
 
 ### 示例4（设置弹窗位置）
 
@@ -307,7 +307,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/aQzBNny1QNKdUNnK158wKw/zh-cn_image_0000002817428685.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1DE64A74BF44F1E772DE26149F1F45FBA0E2D1D39C17FBECD911196F85CE029)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/KW-JPEDPRU-xe7t0v5bD5w/zh-cn_image_0000002791567652.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=54AD6D50948D1E293C1199ABB3D5698AE87099A07F4DF064E490E86B25DAB5AD)
 
 ### 示例5（设置遮蔽区）
 
@@ -341,7 +341,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/MtBdPlffT2KqS9NK_5mGHQ/zh-cn_image_0000002788469266.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=E49BC01CFD900398978491C318760B272AD545C27EB581284514CCEBEBE519DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/pprYyO7IQeWWkfqQxZgoDw/zh-cn_image_0000002820527605.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB758800BCB4354A1A9C4DB0311AEB2219F13FA32C3F920DB73E66EA6B2F2301)
 
 ### 示例6（设置弹窗背板）
 
@@ -377,7 +377,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/ZSojNJT7TVmeh-n-KBgx2Q/zh-cn_image_0000002817508755.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=C271194091E8AABB8B037091DBFF1D0DBEA65082CD2054FCD05BE31B987A6ED2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/cD_-ZRWjTECvGFz3ZAxX8Q/zh-cn_image_0000002820407607.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA0B6BD168834BC6618DCB7F356E92AC9D1152040A318D7445223E03007D1D59)
 
 ### 示例7（设置时间滑动选择器弹窗的起始时间）
 
@@ -414,7 +414,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/6TFu6u1vSXuov_wuSD469g/zh-cn_image_0000002788309324.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2A599CFB4A2315C74D2E0D96DE534C77D1DFEE23380BF9FE755C2C1571C2DE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/XbMcOpBYT32trhA5_QTWfw/zh-cn_image_0000002791727626.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A40580863A773C52C21914D9A8831EBB3BCE6E7564E926FE4529D5B071DF1B3)
 
 ### 示例8（设置时间滑动选择器弹窗的结束时间）
 
@@ -451,7 +451,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/QredXYXGRq671KeYFDJd1A/zh-cn_image_0000002817428687.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EC9427AD60480C46583C591AE27E872E83F18D52F0709B08AE2260A61521288)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/mwrb3_WVS-iAnBI-7IpUjA/zh-cn_image_0000002791567654.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1989C8F5A98591FA4CEECF169910687BE034A725DBB655770025C5568459202)
 
 ### 示例9（设置上午下午跟随时间联动）
 
@@ -487,7 +487,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/HQ2MJxm8Svicm04SE8Lrgw/zh-cn_image_0000002788469268.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AED05A06E9021DEAEABF9C7DBEB806EEE5AA58105971AA275C67AF64A9B151F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/YdV01WdSTmiYMcS7Z3v_Og/zh-cn_image_0000002820527607.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FD9260ED999CD5715E8F1E0ED9837493B2F6518DCFE6808FEE49C058900D676)
 
 ### 示例10（自定义背景模糊效果参数）
 
@@ -522,7 +522,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/TSOwQb67SDmaPHFuOFnpYw/zh-cn_image_0000002817508757.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=718F3BB2C4D56AAF5635B75B9BDF92B037153600C13E4C9B54C71694468FE19F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/MgciYnNkRNODAepdlz1-uQ/zh-cn_image_0000002820407609.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=391F0934C1E39775BEFF723520F36676F9545E1EB2ABB1F1F592E9E87AC4CC6E)
 
 ### 示例11（自定义背景效果参数）
 
@@ -558,7 +558,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/A4XSfOuZQCmcLjxeTbGSXQ/zh-cn_image_0000002788309326.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=0497EFED425278A6169CF4322FD25D683F467EC5A6C7B7FBA062538971B18E65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/C8slpOo3STGzCabMqemFmQ/zh-cn_image_0000002791727628.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=29E266AE2545A6980AD02A020F8B1FA71E441D5E363E6DFF64B16777E70EE28F)
 
 ### 示例12（设置沉浸光感）
 
@@ -593,4 +593,4 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/POO9AvzXQdOyKhbyq13i7A/zh-cn_image_0000002817428689.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=E12B6DF52BDF254FFD939E51E98FD05F96EC74A1C0B90F5DAB2FD571C1235789)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/vqo_eJn0TgGDWMognIqt2w/zh-cn_image_0000002791567656.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CFD0816A0245FA168567E5F4BFB6E89D9362D6B156B9B3C419B0F2CAA057DE7)

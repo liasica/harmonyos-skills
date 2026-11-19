@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: ArkGuard字节码混淆原理及功能
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > ArkGuard字节码混淆原理及功能
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:58+08:00
+scraped_at: 2026-11-19T09:47:35+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:61bf08ea94ab11036f7e4eaa41c9579cb781607fa7fd3d2500dbcc356fb88884
+content_hash: sha256:c0905d728712a8b32687131ecb33854f02322c2dd0096243cf8b61846a198e76
 ---
 
 ## 术语清单
@@ -99,7 +99,7 @@ test(a2);
 
 下图为应用编译的简要流程图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/HX5iKYydQm2NiELtKOIckA/zh-cn_image_0000002817505643.png?HW-CC-KV=V1&HW-CC-Date=20261114T004519Z&HW-CC-Expire=31536000000&HW-CC-Sign=37B5AD60752D5AAEE7E547FF50004B7FA832D9B47947012161096FEAC12BD2B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/1GjDacFeQ7GSWePmTzwKhw/zh-cn_image_0000002820524491.png?HW-CC-KV=V1&HW-CC-Date=20261119T014643Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FB4EEDDCCC1AE3C56DFE5483ABAAD3A6C3DDF1DF6D04974EB722F2BC9669D96)
 
 开发者可以在模块的build-profile.json5配置文件中开启混淆功能，详细参考[字节码混淆开启指南](bytecode-obfuscation-guide.md)，从而在编译打包的过程中自动对abc进行混淆处理。
 

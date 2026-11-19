@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/rendering-vid
 title: 渲染视频画面
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > 渲染视频画面
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:55+08:00
+scraped_at: 2026-11-19T09:48:35+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:03d96a5edfce4b1c604c3e2042a1291627f0122287896e3f5cacd0111ef74064
+content_hash: sha256:5afe2a7f1ed051023a1dfd1b918f27aae89d970123bb1485b77b8438429228b0
 ---
 
 ## 概述
@@ -34,13 +34,13 @@ content_hash: sha256:03d96a5edfce4b1c604c3e2042a1291627f0122287896e3f5cacd0111ef
 2. 初始化视频解码的环境，包括初始化解封装器、初始化解码器。
 3. 启动解码器、解码输入子线程、解码输出子线程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/LTKCa_5ISQe9S0QCrDUfuw/zh-cn_image_0000002817507041.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0CF567EF541FDD1926E6A45128AE75F706AA93C4F44835113360A915B3D8968)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/aMtVUdA4TBe011VGp1eEMQ/zh-cn_image_0000002820525891.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014834Z&HW-CC-Expire=31536000000&HW-CC-Sign=D61268F45D85E3151C7FAE978F1B592FF25DC9F3D67184213556148D9DCA6B25)
 4. 通过OnNeedInputBuffer获取可用的AVBuffer（参考：[native\_avbuffer.h](../doccenter-references/api/capi-native-avbuffer-h.md)）后，在解码输入子线程中，将解封装器读取视频数据填充到AVBuffer中，并提交给解码器进行解码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/KxX_pTNjSomZVGfSBJvgzA/zh-cn_image_0000002788307610.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E8F9BC3CE697E09E1C0D5C1744D6E62F8B3A90A595932FAB580FB582C21C0B8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ep7nJQHmT8OYnJRh6_obEg/zh-cn_image_0000002820405891.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014834Z&HW-CC-Expire=31536000000&HW-CC-Sign=B580F18D2738001E78F40CEB5F4F55708E1574EC9A2BEB38D9308AEC77E5D26A)
 5. 通过OnNewOutputBuffer获取解码的视频数据后，在解码输出子线程中，将解码后的视频数据提交给输出Surface（即XComponent的NativeWindow）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/c_1bOEp5ROSZwOC_ITyzhQ/zh-cn_image_0000002817426973.png?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=218117F97304F3F7F941FF23CBBCCF6C5E482BFFD6D5CFDB63C458206FF86333)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/kZRfJQFdRcOIJVtCzqLM5Q/zh-cn_image_0000002791725912.png?HW-CC-KV=V1&HW-CC-Date=20261119T014834Z&HW-CC-Expire=31536000000&HW-CC-Sign=167082669A28D0229B8E21212D333CBE33CF621B69016F1ED4A62FFAD9E1F5EF)
 
 ### 开发步骤
 
@@ -413,7 +413,7 @@ OpenGL(Open Graphics Library)是一种跨语言、跨平台的应用程序编程
 2. 创建NativeImage对象，并根据NativeImage获取NativeWindow对象。
 3. 获取XComponent的NativeWindow对象，并根据XComponent的NativeWindow对象创建EGLSurface。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/DJa1KmIiRYKi7Es5uU7SEw/zh-cn_image_0000002788467554.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E3C12D4536EBA3C45D375BE08610D244B58C0A9C03E63F28346D6D45A74C185)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Jvmeis3oTb-vcbg_GGYUFQ/zh-cn_image_0000002791565940.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014834Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8621CCA6BE07C561EA3C79C9CC48239944D81A6D1FB13F92B1F22D241068CB4)
 4. 初始化视频解码的环境，包括初始化解封装器、初始化配置解码器。
 
    **说明** 
@@ -421,15 +421,15 @@ OpenGL(Open Graphics Library)是一种跨语言、跨平台的应用程序编程
    在初始化配置解码器时，与直接使用XComponent渲染的方案不同，解码器设置Surface的入参是NativeImage的NativeWindow对象，而不是XComponent的NativeWindow对象。
 5. 启动解码器、解码输入子线程、解码输出子线程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Ca3x3M1ESh6tAl5-skuLpQ/zh-cn_image_0000002817507043.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=8351BC932B6B8299B39597BB09A5D8CC020C732C9B4B246E44F8D505F22AD303)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Z0xJBC1pR-SwLfTP3bsRxQ/zh-cn_image_0000002820525893.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014834Z&HW-CC-Expire=31536000000&HW-CC-Sign=C387EF782E525A80A707CE22569FD1DCFF88778C1D348677623952173F1A9664)
 6. 通过OnNeedInputBuffer获取可用的AVBuffer后，在解码输入子线程中，将解封装器读取视频数据填充到AVBuffer中，并提交给解码器进行解码。
 7. 通过OnNewOutputBuffer获取解码的视频数据后，在解码输出子线程中，将解码后的视频数据提交给输出Surface（当前Surface为NativeImage的NativeWindow对象）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Wg-OTdZBS6-mK20CEJRyGQ/zh-cn_image_0000002788307612.png?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=53A1B64C7DB2B0ECD49FB5F1F3DD1290FAADAF51FEF55C04565F8151B8F70801)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/LQpECZe2SueVG3pRILWkfA/zh-cn_image_0000002820405893.png?HW-CC-KV=V1&HW-CC-Date=20261119T014834Z&HW-CC-Expire=31536000000&HW-CC-Sign=D63C9E637843406095D958176FFB0A57E604299EEE07985FDD7A1EA26C48BC3E)
 8. 通过NativeImage，将视频图像缓存更新至OpenGL的纹理上。
 9. 通过eglSwapBuffers交换前后缓冲区的内容，并将渲染结果显示在屏幕。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/fo2C1ApnTcyj_VMP2bkebg/zh-cn_image_0000002817426975.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=47E7DF797612B6D93508487F055E4BF7568EFCBC732C5687607826B8AE252243)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/bTsdyqhoT3mN1jjg1Tx3GA/zh-cn_image_0000002791725914.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014834Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EE2143EEA14744A2639C6054C05C79C1B61BF03E0F37FF175077E4FFC048486)
 
 ### 开发步骤
 
@@ -769,7 +769,7 @@ NativeImage是提供Surface关联OpenGL外部纹理的模块，表示图形队�
 2. 创建NativeImage对象，并根据NativeImage获取NativeWindow对象。
 3. 获取XComponent的NativeWindow对象，并根据XComponent的NativeWindow对象创建Vulkan的Surface用于显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/_eDycqXRTx6vJBr1V53cww/zh-cn_image_0000002788467556.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=98F243AD3D1E2CF793EA988D9F18CF7C7C4DAA676067A439034BEDA7AD021EC8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/WC-fNaALTYOGhfJPOqFwLg/zh-cn_image_0000002791565942.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014834Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D71D54FB251A0A6DBB5FD6BBA155F0C714EA3BA3DB11B518997E15911D16C1D)
 4. 初始化视频解码的环境，包括初始化解封装器、初始化解码器。
 
    **说明** 
@@ -781,7 +781,7 @@ NativeImage是提供Surface关联OpenGL外部纹理的模块，表示图形队�
 8. 在NativeImage的回调onFrameAvailable()有可用数据后，通过OH\_NativeImage\_AcquireNativeWindowBuffer()获取视频数据，并通过OH\_NativeBuffer\_FromNativeWindowBuffer()转化为NativeBuffer的类型。
 9. Vulkan根据NativeBuffer创建对应的ImageView用于采样，同时，创建对应格式的采样器，通过采样器将YUV格式的图像转化成rgba的图像，最后，通过渲染管道进行显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/VJr06-kbTWquoKOwsQpn9A/zh-cn_image_0000002817507045.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004613Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C9DF824B74FBD1EA6C3099534AB1E88B593322A3DC3FF84A2423619F373B1C3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/XZhBAF97Qb2LmI3zstkbwg/zh-cn_image_0000002820525895.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014834Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE81D378DBCBE5C4D8C7096CA311EE2DDBEF0DD0F673E738268E974E47A6D362)
 
 ### 开发步骤
 

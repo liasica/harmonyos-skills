@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rotatio
 title: 旋转屏动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 旋转屏动画
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:06+08:00
+scraped_at: 2026-11-19T09:47:44+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ad5a89a7745bf771dc4573cb2dfb0c131d3db36fba367f5b009f8c68b75d4e66
+content_hash: sha256:0cc6a052ff3d7188e6e5fea0b4260fbba477854ff7c7028b6bdde12bba76d8a6
 ---
 
 旋转屏动画主要分为两类：[布局切换的旋转屏动画](arkts-rotation-transition-animation.md#布局切换的旋转屏动画)和[透明度变化的旋转屏动画](arkts-rotation-transition-animation.md#透明度变化的旋转屏动画)，旨在实现屏幕显示方向变化时的自然过渡。布局切换的旋转屏动画实现较为简便，例如在module.json5中配置自动旋转（或设置窗口显示方向）即可实现。而透明度变化的旋转屏动画则需在module.json5配置的基础上，预备两套视图，在屏幕旋转时，通过视图切换，使消失的视图呈现渐隐效果，新出现的视图则渐显，从而营造流畅的视觉体验。
@@ -44,7 +44,7 @@ struct RotationTest {
 
 布局切换的旋转屏动画，会对同步旋转的窗口与应用视图做大小和位置的过渡。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/vZDilTEASN6Xh9GqYZKKww/zh-cn_image_0000002817506327.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004706Z&HW-CC-Expire=31536000000&HW-CC-Sign=11D978EB88917D4F7FEECDAC93D7892466C7921C6C1D22712CE50EA4C77A22ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/V-17kiXAS7qE2DC6MT7rxQ/zh-cn_image_0000002820525177.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C0ECAF0859DFC6A042D194ED767B86B60D19DF53D18CB7E547FCAF4F21995E8)
 
 ## 透明度变化的旋转屏动画
 
@@ -147,4 +147,4 @@ const TAG: string = 'EntryAbility';
 
 透明度变化的旋转屏动画，会对窗口做大小和位置的过渡，并同时对应用视图做切换过渡，且为消失隐藏的应用视图做渐隐效果，对新出现的视图做渐显的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/23_OswBhQNmNocfWzH8cVg/zh-cn_image_0000002788306898.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004706Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9274EC40804D5D330809F07F89A73576EE2499457A91C8243C7DC087BB4098C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/Ek3NKOuvR1iWSTEyH7vm7Q/zh-cn_image_0000002820405177.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3BD60099721C1B32AA460BEAD2520CBE6EEC900F0D845A3797EE59305CC2C57)

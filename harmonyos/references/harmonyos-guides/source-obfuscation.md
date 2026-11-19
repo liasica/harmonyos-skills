@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆原理
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆原理
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:57+08:00
+scraped_at: 2026-11-19T09:47:34+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ca2c98e72b8822c351692effa879db8ae93b38baa3160f3a18dd60c78ab8ec2a
+content_hash: sha256:29cf5b9698afde0f29aed27d55884a02f94784a7b1a20ca63954d21ba5e909f4
 ---
 
 ArkGuard在编译时读取模块的build-profile.json5配置文件，解析并合并当前模块与依赖模块的混淆规则，然后对中间文件进行混淆处理，最终将结果输出至build目录。
@@ -86,7 +86,7 @@ test(a2);
 
 下图为应用编译的简要流程图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/PXZVCCFCSm2aDlbJKUJfvg/zh-cn_image_0000002788466152.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=88BEE0D495F6B9591D10DEA6CE3E52F6C6AFCD2A53A139EC170873E85C5B2C40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/U4UGt238TdqkGWnZ2vRo2g/zh-cn_image_0000002791564536.png?HW-CC-KV=V1&HW-CC-Date=20261119T014734Z&HW-CC-Expire=31536000000&HW-CC-Sign=36B5C064B47C3610DAA7BB1A141660207EF2322F816DBCFC2FF7AC0FCBC3E430)
 
 开发者可以在模块的build-profile.json5配置文件中开启混淆功能，详细参考[ArkGuard混淆开启指南](source-obfuscation-guide.md)，从而在编译打包的过程中自动对源码进行混淆处理。
 

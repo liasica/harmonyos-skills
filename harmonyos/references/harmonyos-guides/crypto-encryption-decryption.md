@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-encryp
 title: 加解密
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b888f001b2b7ed79c3ca1939b5c7186496d5cbace37bba1183b1c3213533f191
+scraped_at: 2026-11-19T09:48:03+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:e96ec286975592dedc27717e54c9b9e1bb35d8a4d0994992bff7bb4531ee256d
 ---
 
 在数据存储或传输场景中，可以使用加解密操作保证数据的机密性，防止敏感数据泄露。
@@ -247,8 +247,6 @@ CBC、OFB、CFB模式需传入IV，IV长度为8字节，对应[IvParamsSpec](../
 ### CAST
 
 从API版本26.0.0开始，支持分组密码算法[CAST](crypto-key-generation-conversion.md#cast)，分组长度为8字节，密钥长度支持40位～128位，且该值须为8的倍数。
-
-[CAST](crypto-key-generation-conversion.md#cast)为分组密码算法，分组长度为8字节，密钥长度支持40位～128位，且该值须为8的倍数。
 
 算法库当前提供了CAST加解密常用的分组模式：ECB、CBC、OFB、CFB。不同的加密模式适用的加解密参数不同，具体请参考[ParamsSpec](../harmonyos-references/js-apis-cryptoframework.md#paramsspec)。
 

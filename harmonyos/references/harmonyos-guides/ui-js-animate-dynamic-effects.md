@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: 动画动效
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > JS动画 > 插值器动画 > 动画动效
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:11+08:00
+scraped_at: 2026-11-19T09:47:49+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8370eee0e78878a47685bb2e82c050064602380e1701cee0bde5475f69cc237b
+content_hash: sha256:eae344bc80fd08aca196ca33b9bafab211a27468d5d2c8b70b2ceef1ebadb04f
 ---
 
 通过设置插值器来实现动画效果。
@@ -78,7 +78,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/062TIu1CTamSuZaub36VwA/zh-cn_image_0000002817506517.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C614F7057322900021A9809AF738397932A6EF7D9FD65020CC0E6DC66E045B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/JlNrNitdS5y9xn1G9f8riA/zh-cn_image_0000002820525367.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014749Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2FB0D12BD641291B532276C8414194C60431151945DD588EC00AEF9FEF7A2BF)
 
 **说明** 
 
@@ -230,7 +230,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/UyTIoZSKQnmoJsUwa_EV_w/zh-cn_image_0000002788307088.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004532Z&HW-CC-Expire=31536000000&HW-CC-Sign=19BDCF1DC3985DDC8E9ACEBFD45C0E6B1C4FB8538BA38B7CB3903386D5024872)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/mDZQ4pTYThKWTQnABI6iTA/zh-cn_image_0000002820405367.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014749Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CFA6DF5496CF7F0C659665BD3A82F2002C1CE82AFFFCF22703424C564879A77)
 
 **说明** 
 

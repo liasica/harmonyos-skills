@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Menu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 菜单 > Menu
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:21+08:00
+scraped_at: 2026-11-19T09:51:09+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9d4e32da5a00297ead399c84e4ee32c84e0cec2fa3b10c360a7c3cb6abae1ff9
+content_hash: sha256:c9132ff564ab0016d43984adcc352aae97602927c926ac53b20d928c6ece29ce
 ---
 
 以垂直列表形式显示的菜单。Menu组件支持配置菜单项、子菜单、图标、分隔线等内容，可用于展示操作选项、功能入口等场景。
@@ -275,7 +275,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/05WIuwsoSaKON2VrjSJe-g/zh-cn_image_0000002788309278.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=A94BC2E4DDED4E7D4BB99F07235013D3203F3D4BDC219649FBC6D1A464AA9B92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/617NFxpPQrWstDg37g7pyQ/zh-cn_image_0000002791727580.png?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA3B83CF2669D6987B46C2C0080039BD5892942DD372BB19B9B03508294C6DD0)
 
 ### 示例2（设置symbol类型图标）
 
@@ -349,7 +349,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/h_MWimVkQQeCisI_wIrWfw/zh-cn_image_0000002817428641.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E9812F9F5F2B48BA2E0043A80D08CF90F067C6D3504CE4697C049C65F56DFFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/rodK1itoTGmzRzInzqd7Ig/zh-cn_image_0000002791567608.png?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8A56891C7FFBC62E293D7DE3D009F8E8FF8948196FAA47875D00783C361237A)
 
 ### 示例3（设置Menu子菜单展开符号）
 
@@ -415,7 +415,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/AtZRpqz3TQm6DzHSOrptFw/zh-cn_image_0000002788469222.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=B29B23B777537C9E0DF2C45AD3DEE368834F07011D146181260BC5C988DBDE48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/QNnf34b_SzWgdkKsBEpnNw/zh-cn_image_0000002820527561.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DA33E61FDE65D1544B75F880F28917573106477827F7CD9E52D353FF760DB17)
 
 ### 示例4（设置分割线样式）
 
@@ -465,7 +465,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/EfGn9LeeR0-ePAlGpqMSqA/zh-cn_image_0000002817508711.png?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=465388018332365F9086139389FEF5716CE223A312FFCE7539772107EB809094)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/6z3vl4_4Tm-H-6SFa7uq9A/zh-cn_image_0000002820407563.png?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFE380161ADB39B08CEF1A2C90F8A9BB94920D5BD391B3AD81F7506EFBCAB8A5)
 
 ### 示例5（设置自定义菜单项的多级菜单）
 
@@ -522,4 +522,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/ouHUh3WzRDWVmhvBSB77qg/zh-cn_image_0000002788309280.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005020Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A810602CA31C71E75EC317F519C7FC999690665D0E21EEE410AE3FA0212BB52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/myQ6CkXjSdK0SoYb3RsiNg/zh-cn_image_0000002791727582.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=314DCC5E556C8EC6923309D9BF86F0A5A3020CB1B55296C1173062AC2D6C53E5)

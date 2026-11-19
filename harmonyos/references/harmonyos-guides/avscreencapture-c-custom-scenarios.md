@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: AVScreenCapture录屏自定义场景
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 使用AVScreenCapture录屏取码流(C/C++) > AVScreenCapture录屏自定义场景
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:08+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-19T09:48:41+08:00
+doc_updated_at: 2026-11-18
 content_hash: sha256:9f7e12a737472018ef4e1b3305924de1deff8d175cbd572af9c94f4ab97c537f
 ---
 

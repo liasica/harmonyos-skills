@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-real-
 title: （可选）用户身份验证服务接入准备
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发准备 > （可选）用户身份验证服务接入准备
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:27+08:00
+scraped_at: 2026-11-19T09:49:07+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1a7cb46dc564cb935927ba63d43828caf4c88fbdbeb92567a00ea185fa99d0c0
+content_hash: sha256:124432c451073bcb6693023d854cbff7a56cc6b43fc61688e3ea9b02cc8b9a58
 ---
 
 如不涉及身份验证服务接入，可跳过该章节。
@@ -18,17 +18,17 @@ content_hash: sha256:1a7cb46dc564cb935927ba63d43828caf4c88fbdbeb92567a00ea185fa9
 
 开启身份验证服务相关权限开关时，开发者需签署一份“开发者协议”，开发者同意协议并提交申请资料后需要等待审核（审核周期一般在1-3个工作日）通过后才能使用相关服务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/QqwnLn_TSnSUizBzCIX60A/zh-cn_image_0000002817427589.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B9139FB9F7A7CD96971D6EEB788C3A2B49BF81EEF2B09459E8063D275E7BBEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/3iuG1TzjSCaYNewf1sbE1A/zh-cn_image_0000002791726528.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F5A9FFD301816A7633C8D577BD631391D211D74A3D2452EC838F54524C895EF)
 
 ## 上传开发者公钥及下载华为公钥
 
 开发者可登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，在“鸿蒙支付服务 > 身份验证服务”菜单中的“公钥管理”页签下完成开发者证书的上传以及华为公钥证书下载。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/UZbb29-VQhaKxyQbYIRKkA/zh-cn_image_0000002788468170.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EAF08790A45202B7C2F7DFE907EE74344E22F7A55EA09C7EBFC635B4AF5083F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/u-IXr_ZWS1qyjvUtc0eHMg/zh-cn_image_0000002791566556.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DE60B8601F1B93D9DF76A9D5FEDC4B51584F159904C9CFA17AD048E253E16B8)
 
 证书使用如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/MnTdAiaaQHG-P1G96CuURA/zh-cn_image_0000002817507659.png?HW-CC-KV=V1&HW-CC-Date=20261114T004826Z&HW-CC-Expire=31536000000&HW-CC-Sign=52ADBE796D7A899078494C0055F618BF822625728E75D843B45E885B7A2EC29D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/vR9dHr7aQuaKugS72PGQAg/zh-cn_image_0000002820526509.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBAC3DF9C3F43D3AE373BAAF354E7C1BA7442FA10F002F84700E41971B99289E)
 
 证书说明如下：
 

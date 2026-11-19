@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SelectTitleBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SelectTitleBar
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:26+08:00
+scraped_at: 2026-11-19T09:51:15+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:02b3f5c3ce81e1d83ff6d71ec432f4f5a0b0417ac403c26e3422ac248ef8e8ef
+content_hash: sha256:7c622cda0e6cf11d7505c6354d7724e831356b0c80f47253d609bf56ad13c09c
 ---
 
 下拉菜单标题栏包含一个下拉菜单，可用于页面之间的切换；可用于一级页面、二级及其以上界面（配置返回键）。
@@ -188,7 +188,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/wIe3F8-DTVO7rIqNMQylAg/zh-cn_image_0000002817508845.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=18306688C50B325514C6339E7D98582377CA444EA8B59ADBC8BBF715801AC64A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/k2sxxdM3Tf2Qk3LgoSDZXg/zh-cn_image_0000002820407697.png?HW-CC-KV=V1&HW-CC-Date=20261119T015115Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C25EE55D5A244A391D2B2BE614C493E4A4A8DFB0411DE125A07A8EFD16422C0)
 
 ### 示例2（右侧自定义按钮播报）
 
@@ -319,7 +319,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/sp-SxqevTPiTYjZdshmKMw/zh-cn_image_0000002788309414.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=32F051A86CF56E92589E5B47A7992D7C291D806917F259150453A3BF77E811EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/FKhqOogTSw6NjwBIrOsNgQ/zh-cn_image_0000002791727716.png?HW-CC-KV=V1&HW-CC-Date=20261119T015115Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A65F87F2A1BDBF8A4E62EAA0B3649D3273BC1344D0204E835AC2197733D3BFA)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -456,4 +456,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/CRAfTDHwQBux_AlLPvBpvQ/zh-cn_image_0000002817428777.png?HW-CC-KV=V1&HW-CC-Date=20261114T004824Z&HW-CC-Expire=31536000000&HW-CC-Sign=C27B9F7851268802E42E91823B67CA0B761F174D6F6384DDAF5A563F176E0384)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/AGn0D9BbRa2XeyugHcnvVg/zh-cn_image_0000002791567744.png?HW-CC-KV=V1&HW-CC-Date=20261119T015115Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C160EF35A0B912AA51629B6A67C0752281860826CAB6CC52CF21B5DA974433C)

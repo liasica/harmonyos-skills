@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-select-
 title: 按钮与选择组件常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 按钮与选择组件常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:11+08:00
+scraped_at: 2026-11-19T09:47:49+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:33736af94bdeb886c1cda1c4b734e7f727ae2422f27ce6921dfb600e90189c39
+content_hash: sha256:1972f25cc8e4ef88031755cd40bbb8fb5807c33f83f60c7ed461e5747fed8da3
 ---
 
 本文档介绍按钮与选择组件的常见问题并提供参考。
@@ -16,11 +16,11 @@ Slider的滑块与滑轨显示样式[SliderStyle](../harmonyos-references/ts-bas
 
 SliderStyle.OutSet模式下，滑块的中心与滑轨的端点对齐，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/HXQNAwEnT3u9KtlSTQqf0A/zh-cn_image_0000002817426465.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF4A7F2455A07FF0A7A450A3F945248833D25E934753AAE364616430A8898AA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Es9WCRyTQJWVBp1Agy-XGw/zh-cn_image_0000002791725402.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014749Z&HW-CC-Expire=31536000000&HW-CC-Sign=420F228A7DEA5FC9D15485AB25A41AC5701E2967651C3F47901DE89930C0A394)
 
 SliderStyle.InSet模式下，滑块与滑轨的中心对齐，即距离端点滑轨高度的一半的位置，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/lT1lFqwlQdObR6y4rAGYwQ/zh-cn_image_0000002788467046.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E427E475CBE53ED31CC5977EA0B82F8CDE411A72BED92BCBD01F5D1474B70C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/lxuYBFzTSiOqqvVGfF-STQ/zh-cn_image_0000002791565430.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014749Z&HW-CC-Expire=31536000000&HW-CC-Sign=02C11D1D69C1216FBB3D77C4822229E060D80666204906EA4C1222D38FEABA07)
 
 **示例**
 
@@ -117,7 +117,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/pRgG2pQ2TTy9h1a_YpM8PQ/zh-cn_image_0000002817506533.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=82176E1BE3C1248CD1A175D7687F35B9A01AAAEE96C938C8E9C2D4FA8698074D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/1d9G8d84RpyL5onNJGARDw/zh-cn_image_0000002820525383.png?HW-CC-KV=V1&HW-CC-Date=20261119T014749Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AAB47A3BFBF0F5CC3F71780922A10C9D179DB75FB531C0F052965AB89D6FEEF)
 
 ## Button组件设置type时，ButtonType枚举值与数字值不一致
 
@@ -186,4 +186,4 @@ struct ButtonTypeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/t8tg2-zHSi6y3R9r34oGAw/zh-cn_image_0000002788307104.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F0B827008272F08DFE461B776F2C9B25247F58BFF7A901FD4862FE43D7832D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/_15zcf1kQeq0dmg8aqapcg/zh-cn_image_0000002820405383.png?HW-CC-KV=V1&HW-CC-Date=20261119T014749Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C75EA9A9E436E826FB5FEB216C6B24EF59562E422BFA55E709956553A24116D)

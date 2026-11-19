@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.wifiManagerExt (WLAN扩展接口)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.wifiManagerExt (WLAN扩展接口)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:50+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0bfd4db072526c599426f1c2f9589ba51272f6bc3656bd22065f907b2c0c8efe
+scraped_at: 2026-11-19T09:52:31+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:d8433cade9a0f5380870f0eccde0d3c5e6c19cc0c2a440d86294595ccf26a6eb
 ---
 
 该模块主要提供Wi-Fi扩展接口，供非通用类型产品使用。
@@ -249,16 +249,10 @@ getPowerMode(callback: AsyncCallback<PowerMode>): void
 
   wifiManagerExt.getPowerMode((err, data:wifiManagerExt.PowerMode) => {
       if (err) {
-          console.error("Failed to get linked information");
+          console.error("get power mode info failed");
           return;
       }
       console.info("get power mode info: " + JSON.stringify(data));
-  });
-
-  wifiManagerExt.getPowerMode().then(data => {
-      console.info("get power mode info: " + JSON.stringify(data));
-  }).catch((error:number) => {
-      console.error("get power mode error");
   });
 ```
 

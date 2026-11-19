@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: div
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > div
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:30+08:00
+scraped_at: 2026-11-19T09:51:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a3309afca3d69cf7f9a11e10e53e22c8d2f48e8b2fe115858ee6c3671bbb6c9d
+content_hash: sha256:5f26145fa49435e69bfe35ccb7c60a89f9f3c4fd464a44f143b097100d8ff06a
 ---
 
 **说明** 
@@ -130,7 +130,7 @@ content_hash: sha256:a3309afca3d69cf7f9a11e10e53e22c8d2f48e8b2fe115858ee6c3671bb
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/msISfB3wTkiSqs7UooJo5w/zh-cn_image_0000002788309472.png?HW-CC-KV=V1&HW-CC-Date=20261114T005030Z&HW-CC-Expire=31536000000&HW-CC-Sign=08C30C56A9F1F272C648962ADD23447AE8999A37D759276DD411A4DDF0BE6DF0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/A_mtWH66T2WCGF6kZ4i-qQ/zh-cn_image_0000002791727774.png?HW-CC-KV=V1&HW-CC-Date=20261119T015024Z&HW-CC-Expire=31536000000&HW-CC-Sign=31B0E4C1AFE118523B896999DEFB0A74C3F194872AF722DF3A5D60E643761AE0)
 2. Flex Wrap样式
 
    ```html
@@ -177,7 +177,7 @@ content_hash: sha256:a3309afca3d69cf7f9a11e10e53e22c8d2f48e8b2fe115858ee6c3671bb
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/tsGFd1rDQZeXOqmRcUeBHA/zh-cn_image_0000002817428835.png?HW-CC-KV=V1&HW-CC-Date=20261114T005030Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE8658ED05DC060E3F865FFD7CED60EB026F07DF9D397185344D73262A30676B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/-0f3XF8ISrS_M2WRj3igxA/zh-cn_image_0000002791567802.png?HW-CC-KV=V1&HW-CC-Date=20261119T015024Z&HW-CC-Expire=31536000000&HW-CC-Sign=61598EAF100B078750315ECB9AA384AFEC80FADFC92167A210AAB5565E7B6EA5)
 3. Grid样式
 
    ```html
@@ -242,7 +242,7 @@ content_hash: sha256:a3309afca3d69cf7f9a11e10e53e22c8d2f48e8b2fe115858ee6c3671bb
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Dzt_jgh9RkyGNoPpkiuNMg/zh-cn_image_0000002788469416.png?HW-CC-KV=V1&HW-CC-Date=20261114T005030Z&HW-CC-Expire=31536000000&HW-CC-Sign=31E0ADDA64E4E0FD7BD03B95EDE20B919AC510091F0D0999F71AD24CC0CC292D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/8hsla8-OSm-LKc79jJGQ3A/zh-cn_image_0000002820527755.png?HW-CC-KV=V1&HW-CC-Date=20261119T015024Z&HW-CC-Expire=31536000000&HW-CC-Sign=301443FB9D194CFEEC579137C0BEE09F0655609AA8B22DD94D6131901DC1AB59)
 4. 拖拽7+
 
    ```html
@@ -292,7 +292,7 @@ content_hash: sha256:a3309afca3d69cf7f9a11e10e53e22c8d2f48e8b2fe115858ee6c3671bb
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/vzbBJY-CRH6UhdACmcJWYg/zh-cn_image_0000002817508905.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005030Z&HW-CC-Expire=31536000000&HW-CC-Sign=A39C627348EE10B5745287E3A8056D2DAF94065CA4AD93347C59429C098D4EFB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/MxbibBD9Rtmzjek99bMLFw/zh-cn_image_0000002820407757.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015024Z&HW-CC-Expire=31536000000&HW-CC-Sign=81F1163D18EE7AA3C0165D2C4BBF1F974A6AC206393642B1DB27A18E7D0F2DE3)
 
    ```html
    <!-- xxx.hml -->
@@ -355,7 +355,7 @@ content_hash: sha256:a3309afca3d69cf7f9a11e10e53e22c8d2f48e8b2fe115858ee6c3671bb
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/agQbZm9bS9e0xo59pD0EOg/zh-cn_image_0000002788309474.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005030Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6DA503918B3B9E0D9179B89625785CBCF058C4A7E3820F72CC368F60B0D60F3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/G5pAXRhARamiuGcu57XSOA/zh-cn_image_0000002791727776.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015024Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF695E766146D0607DBEF6987D426D4E1F6EC33C0E6EFB7D4933CCC3C6ECFF80)
 5. 手指捏合7+
 
    ```html
@@ -411,4 +411,4 @@ content_hash: sha256:a3309afca3d69cf7f9a11e10e53e22c8d2f48e8b2fe115858ee6c3671bb
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/KyLu6qpqRyexnAGE-rXY5g/zh-cn_image_0000002817428837.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005030Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A0CD290136478F0BE1492244D6BF1130188570EB5572289916A270A149D4C36)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/bOWdsvQITgCCSQLk5Ux-dQ/zh-cn_image_0000002791567804.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015024Z&HW-CC-Expire=31536000000&HW-CC-Sign=A399AF3A14878109D602C93DE3CD1631FF4EB79E98E65C206C81EE74F71C6B7F)

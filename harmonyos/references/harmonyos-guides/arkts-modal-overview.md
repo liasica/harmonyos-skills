@@ -3,19 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-modal-o
 title: 绑定模态页面概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 绑定模态页面 > 绑定模态页面概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:04+08:00
+scraped_at: 2026-11-19T09:47:42+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8a0a99b48da59e38f061330365930a2b8602ab50e70be65da89a79970f58512e
+content_hash: sha256:9c8fbb0faa3b1ac45083059a72e0e7a80aab67c75274278269674e14f322c668
 ---
 
 模态页面是一种大面板交互式的弹窗，和其他弹窗组件一样，通常用于在保持当前的上下文环境时，临时展示用户需关注的信息或待处理的操作。相比于其他弹窗组件，模态页面的内容都需要开发者通过自定义组件来填充实现，可展示的视图往往也很大。默认需要用户进行交互才能够退出模态页面。ArkUI当前提供了**半模态**和**全模态**两类模态页面组件。
 
 * **​半模态：​**开发者可以利用此模态页面实现多形态效果。支持不同宽度设备显示不同样式的半模态页面。允许用户通过侧滑，点击蒙层，点击关闭按钮，下拉关闭半模态页面。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/zW8HPe-XQ4OBZEcLuvDQFw/zh-cn_image_0000002788466750.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0A4ECD0C3FA39F5E52EFCBF289214819C9A521423DC406E319C7B0371317D1C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/hX8wSdjVTa2_ZqD5Bq0Lyw/zh-cn_image_0000002791565134.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=59C9F7E36A72243AA59D555597ED3076C7FD2A2896A5E7E89D3087E15C69E5EB)
 * **全模态：​**开发者可以利用此模态页面实现全屏的模态弹窗效果。默认需要侧滑才能关闭。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/GES5FHVkRH6Z1Rz4ofG1wQ/zh-cn_image_0000002817506237.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004526Z&HW-CC-Expire=31536000000&HW-CC-Sign=43FC08591EC6522303D9879D49ADD6AC55A4633BB6AED5ADB1EEE4C65AE733B2)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/wXBJK04sRhOf-o3wMihDog/zh-cn_image_0000002820525087.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=D90EBDD28FF717FE6A8B21BC3FA5F64C6248240D8256547099EE201C1355AEA5)
 
 ## 使用场景
 

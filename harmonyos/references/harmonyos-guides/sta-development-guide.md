@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sta-developme
 title: STA模式开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > WLAN > STA模式开发指南
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:13+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:ba721884017e3679b010ede92fc51faae4350938af2329ee6ddf452ebabafc7d
+scraped_at: 2026-11-19T09:48:13+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:db1bf2fea00e38f1c504b83082a35d39543b785b9454a25f503604dcb7af9fb1
 ---
 
 ## 简介
@@ -43,7 +43,7 @@ Wi-Fi STA模式（Station Mode，站点模式）是无线设备作为客户端�
 1. 导入需要的Wi-Fi模块。
 2. 需要SystemCapability.Communication.WiFi.STA系统能力。
 3. 需要申请权限ohos.permission.GET\_WIFI\_INFO。
-4. 开启设备Wi-Fi。
+4. 开启设备Wi-Fi，开启之前您可以调用[wifiManager.isWlanSupported](../harmonyos-references/js-apis-wifimanager.md#wifimanageriswlansupported)查询设备是否支持Wi-Fi。
 5. 示例代码：
 
    ```ts
@@ -93,7 +93,7 @@ Wi-Fi STA模式（Station Mode，站点模式）是无线设备作为客户端�
 ### 建立Wi-Fi连接
 
 1. 导入需要的Wi-Fi模块。
-2. 开启设备的Wi-Fi。
+2. 开启设备Wi-Fi，开启之前您可以调用[wifiManager.isWlanSupported](../harmonyos-references/js-apis-wifimanager.md#wifimanageriswlansupported)查询设备是否支持Wi-Fi。
 3. 需要SystemCapability.Communication.WiFi.STA系统能力。
 4. 需要申请权限ohos.permission.GET\_WIFI\_INFO，ohos.permission.SET\_WIFI\_INFO。
 5. 示例代码：

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/transferabled
 title: Transferable对象 (NativeBinding对象)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Transferable对象 (NativeBinding对象)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:55+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:a32e8fe6c9ac03bb973de8207116b51cc3ca2aa6312ec5ac9b03ff9282ab16f4
+scraped_at: 2026-11-19T09:47:32+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:cb0f45bd02931510b028553fe8cd5867bccb7bb03c97891a3e80d82f5941e6ee
 ---
 
 Transferable对象，也称为NativeBinding对象，是指绑定C++对象的JS对象，其主要功能由C++提供，JS对象壳则分配在虚拟机的本地堆（LocalHeap）中。跨线程传输时复用同一个C++对象，相比JS对象的拷贝模式，传输效率更高。因此，可共享或转移的NativeBinding对象被称为Transferable对象。开发者可以自定义Transferable对象，详细示例请参考[自定义Native Transferable对象的多线程操作场景](napi-coerce-to-native-binding-object.md)。
@@ -14,7 +14,7 @@ Transferable对象，也称为NativeBinding对象，是指绑定C++对象的JS�
 
 如果C++实现能够确保线程安全性，则NativeBinding对象的C++部分支持跨线程共享。NativeBinding对象跨线程传输后，只需重新创建JS壳即可桥接到同一个C++对象上，实现C++对象的共享。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/fAr5zK7LS42Jlq0FJrikrg/zh-cn_image_0000002817505621.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=B273DD6DAFBFCFC4EC23226A649C16B86DF40930BE61FBC50BD71F1444FB17F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/nDrBEmnATLaiLMTyIzkL-Q/zh-cn_image_0000002820524469.png?HW-CC-KV=V1&HW-CC-Date=20261119T014731Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C2FC658B4BE267C630D98FC52FE99AD7299C7550886C8EC0D02533AC7B0EACC)
 
 常见的共享模式NativeBinding对象包括：应用上下文（[ApplicationContext](../harmonyos-references/js-apis-inner-application-applicationcontext.md)）等Context类型对象。这些上下文对象封装了应用程序组件的上下文信息，提供了访问系统服务和资源的能力，使得应用程序组件可以与系统进行交互。获取Context信息的方法可以参考[获取上下文信息](application-context-stage.md)。跨线程共享使用上下文的示例可参考[使用TaskPool进行频繁数据库操作](batch-database-operations-guide.md#使用taskpool进行频繁数据库操作)。
 
@@ -22,7 +22,7 @@ Transferable对象，也称为NativeBinding对象，是指绑定C++对象的JS�
 
 如果C++实现包含数据且无法保证线程安全性，则NativeBinding对象的C++部分需要采用转移方式传输。NativeBinding对象跨线程传输后，重新创建JS壳可桥接到C++对象上，但需移除原JS壳与C++对象的绑定关系。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/u9dXckghRuywA_mfHeVyJg/zh-cn_image_0000002788306192.png?HW-CC-KV=V1&HW-CC-Date=20261114T004655Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3AAAEC938AAF95F313439E8407E345DA4C983C3115A4E2C3533A799F7CCF5F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/gsmv0_nfRi2366pkME2SLQ/zh-cn_image_0000002820404469.png?HW-CC-KV=V1&HW-CC-Date=20261119T014731Z&HW-CC-Expire=31536000000&HW-CC-Sign=844318E28E9BA2BF3A794111FE64A41A4BCD5C7F3E5FFFF6D24C71DD38C26B43)
 
 常见的转移模式NativeBinding对象包括[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)对象，它可以读取或写入图像数据，获取图像信息，常用于显示图片。
 
@@ -42,7 +42,7 @@ struct Index {
 
   private async loadImageFromThread(): Promise<void> {
     const resourceMgr = this.uiContext?.getHostContext()?.resourceManager;
-    // 此处‘startIcon.png’为media下复制到工程中的resources/rawfile文件夹中，请开发者自行替换，
+    // 此处的‘startIcon.png’需要开发者自行从resources/base/media下复制到工程中的resources/rawfile文件夹中，
     // 否则imageSource创建失败会导致后续无法正常执行（日志中会打印Failed to get RawFd）。
     await resourceMgr?.getRawFd('startIcon.png').then(async rawFileDescriptor => {
       await taskpool.execute(loadPixelMap, rawFileDescriptor).then(pixelMap => {
@@ -58,7 +58,7 @@ struct Index {
         }
       }).catch((e: BusinessError) => {
         this.message = 'failed';
-           console.error(`taskpool execute loadPixelMap failed. Code: ${e.code}, message: ${e.message}`);
+        console.error(`taskpool execute loadPixelMap failed. Code: ${e.code}, message: ${e.message}`);
       });
     }).catch(() => {
       this.message = 'failed';
@@ -101,10 +101,10 @@ export async function loadPixelMap(rawFileDescriptor: resourceManager.RawFileDes
   imageSource.release();
   // 使pixelMap在跨线程传输完成后，脱离原线程的引用。
   try {
-       pixelMap.setTransferDetached(true);
-     } catch (err) {
-       hilog.error(0x0000, 'testTag', 'Failed to set transferDetached. Cause: %{public}s', JSON.stringify(err));
-     }
+    pixelMap.setTransferDetached(true);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', 'Failed to set transferDetached. Cause: %{public}s', JSON.stringify(err));
+  }
   // 返回pixelMap给主线程。
   return pixelMap;
 }

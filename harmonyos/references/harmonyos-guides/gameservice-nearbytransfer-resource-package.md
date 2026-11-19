@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 传输资源包
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发指导 > 传输资源包
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:18+08:00
+scraped_at: 2026-11-19T09:48:58+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:93cfd7fc06e4e1aa42086aafb51378480ece0bb52feb53e15502de25d3a1d796
+content_hash: sha256:5b371e62224c0c8961106de5635ba8105da7f58ea115d02c03d209b7dd1b1150
 ---
 
 从API版本26.0.0开始，资源包传输接入流程更新，开发者无需手动绑定设备，可直接通过碰一碰开启传输，并通过want参数内的信息确认设备为接收端或发送端。
@@ -18,7 +18,7 @@ content_hash: sha256:93cfd7fc06e4e1aa42086aafb51378480ece0bb52feb53e15502de25d3a
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/nTN0dxvnQdeNT6IchaFZ4g/zh-cn_image_0000002788308034.png?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C2F17347D527DA9D4D08A2EF074F81107AB3EC6867C1614D835B73FAAAE533B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/cZr1XU2URjeRLOFI07rQtw/zh-cn_image_0000002820406315.png?HW-CC-KV=V1&HW-CC-Date=20261119T014804Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EB25D700BDA56AFA3CB0FA721DB3DF745EC37AEFBF42D34200515112EFB33CF)
 
 1. 发送端游戏调用以下接口注册监听。
 

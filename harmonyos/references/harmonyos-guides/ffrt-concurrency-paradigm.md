@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurre
 title: Function Flow Runtime并发范式
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime并发范式
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:41+08:00
+scraped_at: 2026-11-19T09:48:20+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:73e9c301ce4e343e09662e6140fcee3a93fe12b78c9e26eac4a4fd99c2e654d9
+content_hash: sha256:a82fe5c93e5b60210427d9b25417d8a5ba6d090d9125dc45a441d45756d89422
 ---
 
 为了应对实际业务中，任务执行顺序固定、灵活优先级调度以及复杂的任务依赖关系等场景，FFRT支持串行队列、并发队列和图依赖三种不同的并发范式。
@@ -20,7 +20,7 @@ content_hash: sha256:73e9c301ce4e343e09662e6140fcee3a93fe12b78c9e26eac4a4fd99c2e
 4. **简化开发**：相较于手动管理锁和同步机制，串行队列的使用更加简洁明了。开发者只需将任务添加到队列中，系统会自动处理任务的调度和执行顺序，减少了开发和调试的复杂性。
 5. **资源管理**：在某些情况下，限制并发任务的数量可以避免资源争用和过载。串行队列可以控制并发任务的数量，优化系统资源的使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/WybVinNvTzSpAg0yGrjVxQ/zh-cn_image_0000002788467438.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8C69BD4BA2809A25006F3B05D3DB4B65FD317431243F412FB328AFDE8D9029C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Hh7u7juDSJeBZBHY57__rA/zh-cn_image_0000002791565822.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=06DEEB0991354A91E6E4AAF39EEFC4557137D9C3645F69A3EEEF8FF8EE1D01AD)
 
 串行队列并发范式开发样例可以参考[串行队列(C)](ffrt-concurrency-serial-queue-c.md)/[串行队列(C++)](ffrt-concurrency-serial-queue-cpp.md)
 
@@ -33,7 +33,7 @@ content_hash: sha256:73e9c301ce4e343e09662e6140fcee3a93fe12b78c9e26eac4a4fd99c2e
 3. **任务调度灵活**：并发队列允许任务按照不同的优先级（Priority）和QoS进行调度，确保关键任务能够及时执行，提高系统的响应速度。
 4. **避免资源冲击**：并发队列允许设置最大并发度，避免任务并发过多对系统资源造成的冲击，从而保证系统的稳定性和性能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/y6Z9cnQ8S9adVo_ECG6E_A/zh-cn_image_0000002817506927.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=F65A5D16A4AB25348A626BBCB2583AB931B11537D67BF4CFF8163D5473898222)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/H20P3tVGQ3GyD9d85OhL6g/zh-cn_image_0000002820525775.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=74CB4EDB5E9D7832CC563F495C411DB5AB718E2880C46D1FC31A2C30ADAC54EB)
 
 并发队列并发范式开发样例可以参考[并发队列(C)](ffrt-concurrency-concurrent-queue-c.md)/[并发队列(C++)](ffrt-concurrency-concurrent-queue-cpp.md)
 
@@ -46,7 +46,7 @@ content_hash: sha256:73e9c301ce4e343e09662e6140fcee3a93fe12b78c9e26eac4a4fd99c2e
 3. **并行任务执行**：图依赖并发范式允许多个不相互依赖的任务并行执行，从而最大化利用系统的计算资源，提高并发度和执行效率。
 4. **结构化并发**：图依赖并发范式中可以通过明确的任务生命周期和依赖关系，确保并发任务的创建和完成在代码结构中清晰可见，减少并发编程的复杂性和错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/OKLnECOwRFiGVXktSOhTGw/zh-cn_image_0000002788307496.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=419BEA56B831F63035A441A673035CD5F2892C54FAFF65DA8C058C5D0A2855D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/o0UwuzqZSuGRCglRGnOavg/zh-cn_image_0000002820405775.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=05AAE6482ECC6C37A677C9EAF4420B2CE7F6DA01EE7FDCFE1CC4571D7D3A289E)
 
 图依赖并发范式开发样例可以参考[图依赖并发(C)](ffrt-concurrency-graph-c.md)/[图依赖并发(C++)](ffrt-concurrency-graph-cpp.md)
 
@@ -56,10 +56,10 @@ content_hash: sha256:73e9c301ce4e343e09662e6140fcee3a93fe12b78c9e26eac4a4fd99c2e
 
 1. **多线程协作**：在许多实际应用中，某些功能需要在特定环境进行运行，而其他功能可以在任何环境运行，这个时候需要多线程协作，部分功能在A线程运行，然后回到B线程，最后再回到A线程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/7aqb31UpQq2dbZDu1zNhsg/zh-cn_image_0000002817426859.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=E867D44F74E9EF7DD64D918014DDBECD8DD85F4F008DD404D308129AE4E923E0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/vllOT9EIRuO9PuGMFQJxwg/zh-cn_image_0000002791725796.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F6790453643715B3F34EE8F6B41933558B91F0CEA43AC21A8BE784D936433C0)
 2. **动态并发调度**：有些场景并发任务数量动态变化，时多时少，所以可以通过动态调整worker数量来最大提升性能，降低调度开销。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/CoBy2qhkQFmMQdvEcbbq_A/zh-cn_image_0000002788467440.png?HW-CC-KV=V1&HW-CC-Date=20261114T004601Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B1865C79CD834763385C05BA9BC8A34013ABBB20B154AB051CA19F4954D4720)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/tbu6W22uTbCBO5lIozBtmw/zh-cn_image_0000002791565824.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4A165DF469D7C3F1BCB4D09E13AC678F6202315B0098F4FAB103D8B170ECC3A)
 
    图中的参数如下所示：
 

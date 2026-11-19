@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-iap-pro
 title: 数字商品介绍
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 数字商品服务 > 配置数字商品 > 数字商品介绍
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:12+08:00
+scraped_at: 2026-11-19T09:48:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:97e695a24f30d77e5a7c96bc833ec1569796d3af8a303a6b94fae84bcf696a26
+content_hash: sha256:c2fe4137c96bd2cee36083ac75052b3888834d0120f4d6f54dd40995240225f5
 ---
 
 数字商品服务为接入应用内购买的应用提供了[展示数字商品](store-iap-distribute-query.md)、[购买数字商品](store-iap-distribute-purchase.md)、[发放数字商品权益](store-iap-distribute-delivering.md)的功能。
@@ -25,7 +25,7 @@ content_hash: sha256:97e695a24f30d77e5a7c96bc833ec1569796d3af8a303a6b94fae84bcf6
 
 订阅是指用户在购买自动续期订阅商品后，可以在一段时间访问应用的增值功能或内容，并且会在订阅周期结束后自动续期购买下一期服务的能力。如果期间用户取消订阅，则订阅在当期结束后将不再自动续期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/aEzNSrGRTNucvxISPCYTfg/zh-cn_image_0000002817427255.png?HW-CC-KV=V1&HW-CC-Date=20261114T004629Z&HW-CC-Expire=31536000000&HW-CC-Sign=574DB54288F56D4C0BD4796D7C90245C036F724CD5E20B8C1CBF96EEB7676379)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/eOJVcJxzRouCXHDUYlofEA/zh-cn_image_0000002791726194.png?HW-CC-KV=V1&HW-CC-Date=20261119T014851Z&HW-CC-Expire=31536000000&HW-CC-Sign=963AF3C711C58371BA89C39650EEE41E79AFE098EAB7E6A09F90E38903D368C6)
 
 ## 配置自动续期订阅商品
 
@@ -44,7 +44,7 @@ content_hash: sha256:97e695a24f30d77e5a7c96bc833ec1569796d3af8a303a6b94fae84bcf6
 | 已到期 | 订阅处于失效状态，用户无法享受商品的服务。最近一次的续期扣费没有成功、用户取消订阅、用户不同意涨价或者是扣款账户发生了异常等均可导致订阅进入该状态。  失效的订阅最长有180天的保留期，在保留期内，用户无法享受自动续期订阅商品的服务，但可以在恢复订阅后再次享受应用提供的服务。 |
 | 待生效 | 订阅还未开始生效，用户暂时还无法享受该自动续期订阅商品的服务。  当用户在订阅组内进行切换订阅时，如果切换到一个下周期生效的订阅时，则新切换的商品处于待生效状态，需要等原订阅到期后才生效。在用户的切换操作完成后，原订阅会变为到期状态，而新切换的商品为待生效状态，并且会在原自动续期订阅商品的编辑订阅页内显示新切换商品的开始时间。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/70f7pbPvSkyN_dKVZiA-Pw/zh-cn_image_0000002788467836.png?HW-CC-KV=V1&HW-CC-Date=20261114T004629Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4540062EAC6EC7EFCA137EAA342B6A3DA6539A72CA0A2E4292E97D76E3C1C3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/DrRDqUsDQgGkNGRoQCmsPw/zh-cn_image_0000002791566222.png?HW-CC-KV=V1&HW-CC-Date=20261119T014851Z&HW-CC-Expire=31536000000&HW-CC-Sign=178BE0C7D455AEFBA469BD99492BDE9CBB1341B40B26C3AE9B79F3D247F24BE4)
 
 用户在成功购买自动续期订阅商品后，订阅会变为续期状态。当发生如下操作时，订阅的状态会随之改变：
 
@@ -63,7 +63,7 @@ content_hash: sha256:97e695a24f30d77e5a7c96bc833ec1569796d3af8a303a6b94fae84bcf6
 
 数字商品服务为接入订阅型商品购买能力的应用提供[跳转到订阅页或订阅详情页](../harmonyos-references/iap-iap.md#iapshowmanagedsubscriptions)的能力，让用户管理订阅，包括查看订阅、取消订阅、切换订阅、恢复订阅等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ZwAKFgJfS1Ksq56NYRfe7Q/zh-cn_image_0000002817507325.png?HW-CC-KV=V1&HW-CC-Date=20261114T004629Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9291DB0963563D92727DB046B078D202BE7C449644719C315F028B4851B0B8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/roeq_SGiReeIrze9pgHLpQ/zh-cn_image_0000002820526175.png?HW-CC-KV=V1&HW-CC-Date=20261119T014851Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F12DFE469DDCFC20AA1E97661C67A6C2389A1EC33B835D1DC4467FE405D60DE)
 
 ## 订阅续期处理
 

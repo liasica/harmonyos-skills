@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 涉诈剧本检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 业务风险检测 > 涉诈剧本检测
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:29+08:00
+scraped_at: 2026-11-19T09:48:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5480c0f06b1d81d44fb4d1c6cde3e17b5a58d882a58c47dc4f480dc4cede2282
+content_hash: sha256:90efe7f58e31ea0f7921027aac4accafd6d367098181dd2ce9a40e323f23c4b6
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:5480c0f06b1d81d44fb4d1c6cde3e17b5a58d882a58c47dc4f480dc4ced
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/KfXqp1fsQ4Cp2Q1BbmL9GA/zh-cn_image_0000002788467358.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=0639AB63F18C62806309338648A808A7EE6CB69A6C48236B1576EA74A1B69CE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/QBbTcFs5TkyZiyMOAqsAUw/zh-cn_image_0000002791565742.png?HW-CC-KV=V1&HW-CC-Date=20261119T014716Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAE3FCD04E2E05DB6609F5FC7E890C72F7CFFEC00299EEF43BE4F457AD91DA0B)
 
 **流程说明：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: ArkGuard字节码混淆开启指南
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > ArkGuard字节码混淆开启指南
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:57+08:00
+scraped_at: 2026-11-19T09:47:34+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:9c23f952a67df96589a7f54cfc51002f948fda35ee04802db53fdba38f44e1e4
+content_hash: sha256:f513cad63b7a7f1118b041b7339e7c81e7697eeb776fbcc428dae2ed65c15673
 ---
 
 **注意** 
@@ -181,7 +181,7 @@ content_hash: sha256:9c23f952a67df96589a7f54cfc51002f948fda35ee04802db53fdba38f4
 * origin目录：混淆前的modules.abc文件。
 * 配置信息文件：config.json，该文件记录了混淆的配置项和白名单列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/YjXY9yUDQy2wUb0u9VBqlQ/zh-cn_image_0000002788306214.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=18EFD0C933E1ECD673F1D6BC341EFC01B8DA90EB02F84B6C39963BBD161B7DB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/dZuWdDPYRD-Jj-A_g1BeuQ/zh-cn_image_0000002820404491.png?HW-CC-KV=V1&HW-CC-Date=20261119T014643Z&HW-CC-Expire=31536000000&HW-CC-Sign=79C0059DB1C3BBE87A6D060AC7B63F1B7BE47B5A4701D4832F54CE62AAD8DCD8)
 
 ## 报错栈还原
 
@@ -189,4 +189,4 @@ content_hash: sha256:9c23f952a67df96589a7f54cfc51002f948fda35ee04802db53fdba38f4
 
 反混淆工具需要使用应用编译过程中生成的sourceMaps.json文件以及混淆名称映射文件nameCache.json文件，因此请本地备份它们；为方便问题定位，建议备份release目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/mXy4ekwoSVmxYJa9i52zWg/zh-cn_image_0000002817425577.png?HW-CC-KV=V1&HW-CC-Date=20261114T004657Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CB047B4F0DDA5C94D8F685AC43C2675B686CD548C27C75481A0DFBDAD204EA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/Ih6QIXR9Qyal16Ibgsn2kQ/zh-cn_image_0000002791724514.png?HW-CC-KV=V1&HW-CC-Date=20261119T014643Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A48F2EDB3A711E50084F2FF56FDBB5A7EAA27200F16D72E669D9B8A8866B89E)

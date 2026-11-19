@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-framer
 title: 动态调整预览帧率(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 动态调整预览帧率(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:57+08:00
+scraped_at: 2026-11-19T09:48:37+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:fb371ef4a77b89f90401178b339daf3be1d03fe648abfd2ce49b32a9a8b70379
+content_hash: sha256:0102c4e34b41f1074bc46979f171af877b074a9dd0df850d9b59251291239413
 ---
 
 动态调整帧率是直播、视频等场景下控制预览效果的重要能力之一。应用可通过此能力，显式地控制流输出帧率，以适应不同帧率下的业务目标。
@@ -23,7 +23,7 @@ content_hash: sha256:fb371ef4a77b89f90401178b339daf3be1d03fe648abfd2ce49b32a9a8b
 
 流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/XG91R7Q6S8molry7CNomSg/zh-cn_image_0000002817507091.png?HW-CC-KV=V1&HW-CC-Date=20261114T004757Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EDF0298A335663624D2C05715E6380778EB1FE5BE41889FBEE27DFF6E036E5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/8jV9JPcmTwqDGOBzHkJhqA/zh-cn_image_0000002820525941.png?HW-CC-KV=V1&HW-CC-Date=20261119T014837Z&HW-CC-Expire=31536000000&HW-CC-Sign=370B2B2C138ED67A3EBC7A1DFE937DE33A89EE61CB15F6B612237C08EF0F59C6)
 
 与普通的[预览](camera-preview.md)流程相比，动态调整预览帧率的注意点如图上标识：
 

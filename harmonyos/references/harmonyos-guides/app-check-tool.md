@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-check-too
 title: 扫描工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 扫描工具
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:49+08:00
+scraped_at: 2026-11-19T09:48:28+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:cd04888cf4b24bdb27626e2132c4bb60b0794b5fb5c217e802a5758d2668ae24
+content_hash: sha256:da6115b87d0541b0196f6306dd1a90bd713bdca044191fc5f9b760b81af148fd
 ---
 
 ## 简介
@@ -20,7 +20,7 @@ content_hash: sha256:cd04888cf4b24bdb27626e2132c4bb60b0794b5fb5c217e802a5758d266
 
 扫描工具app\_check\_tool.jar需要从SDK路径下的toolchains目录中获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/qW741dL0TCCQlH-aP2bO5Q/zh-cn_image_0000002817506991.png?HW-CC-KV=V1&HW-CC-Date=20261114T004749Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAC88E49AD7B9481D39D0A119897BEC1E4D10D5A1C4D33FBDB1A2CAC0EDE5916)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/IjeBNZwKTRWfbddPpN7hsQ/zh-cn_image_0000002820525841.png?HW-CC-KV=V1&HW-CC-Date=20261119T014828Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AC6C29202227EC885C61A97BBE5624736C335292B9B43581CDF049FD9F8A9A9)
 
 ## 约束与限制
 

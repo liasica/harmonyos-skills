@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-high-
 title: 高阶API
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 基本概念 > 编程API > 高阶API
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:37+08:00
+scraped_at: 2026-11-19T09:49:18+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1eff33ebfd48f5214461071ec4108963b011b921f47b6ae564f8f235cad1050c
+content_hash: sha256:84cf334ef2e507d7b6e70b899e1ff85d493c022c2c53b155fa769cebdbc6f085
 ---
 
 高阶API一般是基于单核对常见算法的抽象和封装，用于提高编程开发效率，通常会调用多种基础API实现。高阶API当前仅支持Matmul。
 
 如下图所示，实现一个矩阵乘操作，使用基础API需要的步骤较多，需要关注格式转换、数据切分等逻辑；使用高阶API则无需关注这些逻辑，直接传入输入矩阵，调用接口获取输出即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ImtzBksLSF-ACaavIvf6Vw/zh-cn_image_0000002817507855.png?HW-CC-KV=V1&HW-CC-Date=20261114T004652Z&HW-CC-Expire=31536000000&HW-CC-Sign=75CD3661319E71C5EA496DA463612EA610A94F0A1119217E3CA1355B3E3BFC54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/1aVZrFtMSDiIoJlyzVspEg/zh-cn_image_0000002820526705.png?HW-CC-KV=V1&HW-CC-Date=20261119T014823Z&HW-CC-Expire=31536000000&HW-CC-Sign=5288FD1F317CFCE15EFA35413E2DA3461EA543D42DDEBC8101E37D57CB937B90)
 
 注意，在程序中调用高阶API的Tiling接口或者使用高阶API的Tiling结构体参数时，需要引入依赖的头文件，示例如下。
 

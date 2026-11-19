@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avtranscoder-
 title: 创建异步线程执行AVTranscoder视频转码(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 视频转码 > 创建异步线程执行AVTranscoder视频转码(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:00+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:f71704fb04134f09d7ccc9e37dd84fe25aeb143037393b90e38ff11389e52dd9
+scraped_at: 2026-11-19T09:48:40+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:e303a802783d7abaec27f29ff711a9c52c76ebb833e99fdd0c1778134e21d12b
 ---
 
 在开发过程中，应用经常会创建异步线程执行视频转码任务以满足不同诉求，主要包括：
@@ -55,13 +55,13 @@ content_hash: sha256:f71704fb04134f09d7ccc9e37dd84fe25aeb143037393b90e38ff11389e
 
   计算过程：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/UdTR-1pZQaCnKWSyrmS82w/zh-cn_image_0000002788467620.png?HW-CC-KV=V1&HW-CC-Date=20261114T004618Z&HW-CC-Expire=31536000000&HW-CC-Sign=D35370E42ED66776DD6F7DA8657890E50FA1680F91934C86AF54B7B9E3C71087)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/WZY6CHkzRq6ifLBJ65fVlA/zh-cn_image_0000002791566006.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7679B9C7148F67AE3F3C5EE7EAF34854DB106D35748F1B471E8217A3747B070)
 
   分辨率和帧率的系数由以下经验公式计算可得。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Qoz7RA74SEKaGUll_uyumA/zh-cn_image_0000002817507109.png?HW-CC-KV=V1&HW-CC-Date=20261114T004618Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C007251CCFE1282C273541903A1CFD776BD9FA40408C16CF59C5E7DA7C68D9A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/j9DT2AN0RKCA6_xCRaxXMQ/zh-cn_image_0000002820525959.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=4823BBD159FAC36FAAB59508A90FAD7110A5E2803528A85D2C451A96953D2246)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/zR7WkJ_pRiuXWQZLXVuPGg/zh-cn_image_0000002788307678.png?HW-CC-KV=V1&HW-CC-Date=20261114T004618Z&HW-CC-Expire=31536000000&HW-CC-Sign=1282B3DCB73C7B0921D0BB551E9E40479349575275B935E1CEB7B1BFEDA789A1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/hUqwg7muSDyHtiUU3JOrYg/zh-cn_image_0000002820405959.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=2528DE91AB092F9AA45AEB3306A7CB0022848713AF654250306C7CD1398C15FF)
 
   上述计算帧率的公式y=clip(0.5, 2, x)表示：如果x∈[0.5, 2.0]，取y=x；如果x＜0.5，取y=0.5；如果x＞2.0，取y=2.0。
 * **码率计算**
@@ -208,54 +208,57 @@ export class AVTranscoderDemo {
 
 1. 引入头文件，创建worker线程，并注册回调。
 
-   ```ts
+   ```typescript
    import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS'
    import { SendableObject } from '../util/SendableObject';
    import { common, sendableContextManager } from '@kit.AbilityKit';
    ```
 
-   ```ts
-   // 创建Worker对象。
-   private workerInstance?: worker.ThreadWorker;
-   @State currentProgress: number = 0;
+   ```typescript
+   // ...
+     private workerInstance?: worker.ThreadWorker;
+     // ...
+     @State currentProgress: number = 0;
+     // ...
+       this.workerInstance = new worker.ThreadWorker('entry/ets/workers/task.ets');
 
-   this.workerInstance = new worker.ThreadWorker('entry/ets/workers/task.ets');
+       // 注册onmessage回调，当宿主线程接收到来自其创建的Worker通过workerPort.postMessage接口发送的消息时被调用，
+       // 在宿主线程执行。
+       this.workerInstance.onmessage = (e: MessageEvents) => {
+         let data: string | number = e.data;
+         if (typeof data === 'string') {
+           console.info('workerInstance onmessage is: ', data);
+           if (data === 'complete') {
+             console.info('complete: ', data);
+             this.workerInstance?.terminate();
+           }
+         } else if (typeof data === 'number') {
+           this.currentProgress = data;
+         }
+       }
 
-   // 注册onmessage回调，当宿主线程接收到来自其创建的Worker通过workerPort.postMessage接口发送的消息时被调用，在宿主线程执行。
-   this.workerInstance.onmessage = (e: MessageEvents) => {
-      let data: string | number = e.data;
-      if (typeof data === 'string') { // complete事件。
-        console.info('workerInstance onmessage is: ', data);
-        if (data === 'complete') {
-          console.info('complete: ', data);
-          this.workerInstance?.terminate();
-        }
-      } else if (typeof data === 'number') {
-        this.currentProgress = data; // 当前进度。
-      }
-    }
+       // 注册onErrors回调，可以捕获Worker线程的onmessage回调、timer回调以及文件执行等流程产生的全局异常，
+       // 在宿主线程执行。
+       this.workerInstance.onerror = (err: ErrorEvent) => {
+         console.error('workerInstance onerror message is: ' + err.message);
+       }
 
-   // 注册onErrors回调，可以捕获Worker线程的onmessage回调、timer回调以及文件执行等流程产生的全局异常，在宿主线程执行。
-   this.workerInstance.onerror = (err: ErrorEvent) => {
-       console.info("workerInstance onerror message is: " + err.message);
-   }
+       // 注册onmessageerror回调，当Worker对象接收到一条无法被序列化的消息时被调用，在宿主线程执行。
+       this.workerInstance.onmessageerror = () => {
+         console.error('workerInstance onmessageerror');
+       }
 
-   // 注册onmessageerror回调，当Worker对象接收到一条无法被序列化的消息时被调用，在宿主线程执行。
-   this.workerInstance.onmessageerror = () => {
-       console.info('workerInstance onmessageerror');
-   }
-
-   // 注册onexit回调，当Worker销毁时被调用，在宿主线程执行。
-   this.workerInstance.onexit = (e: number) => {
-       // 当Worker正常退出时code为0，异常退出时code为1。
-       console.info("workerInstance onexit code is: ", e);
-   }
+       // 注册onexit回调，当Worker销毁时被调用，在宿主线程执行。
+       this.workerInstance.onexit = (e: number) => {
+         // 当Worker正常退出时code为0，异常退出时code为1。
+         console.info('workerInstance onexit code is: ', e);
+       }
    ```
 2. 创建参数对象，向worker线程发送参数对象。
 
    如下是参数对象模型：
 
-   ```ts
+   ```typescript
    import { sendableContextManager } from '@kit.AbilityKit';
 
    // 发送的参数必须加上@Sendable标注。
@@ -281,23 +284,24 @@ export class AVTranscoderDemo {
 
    如下是发送参数的逻辑：
 
-   ```ts
+   ```typescript
    private context: Context | undefined;
-   // 向Worker线程发送消息。
-   this.context = this.getUIContext().getHostContext(); // 获取当前组件所在Ability的Context。
-   if (this.context != undefined) {
-     const sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(
-       this.context);
-     const sendableObject: SendableObject = new SendableObject(sendableContext, 'some information');
-     this.workerInstance.postMessageWithSharedSendable(sendableObject);
-   }
+   // ...
+     // 向Worker线程发送消息。
+     this.context = this.getUIContext().getHostContext();
+     if (this.context != undefined) {
+       const sendableContext: sendableContextManager.SendableContext =sendableContextManager.convertFromContext(
+         this.context);
+       const sendableObject: SendableObject = new SendableObject(sendableContext, 'some information');
+       this.workerInstance.postMessageWithSharedSendable(sendableObject);
+     }
    ```
 3. worker线程接收参数，并且执行转码的逻辑。
 
    worker线程接收参数：
 
-   ```ts
-   //worker线程接收参数。
+   ```typescript
+   // worker线程接收参数。
    const sendableObject: SendableObject = event.data;
    const sendableContext: sendableContextManager.SendableContext =
      sendableObject.getSendableContext() as sendableContextManager.SendableContext;
@@ -311,11 +315,12 @@ export class AVTranscoderDemo {
 
    执行转码逻辑：
 
-   ```ts
+   ```typescript
    async function doSome(context: common.Context) {
      console.info(`doSome in`);
      try {
        let transcoder = await media.createAVTranscoder();
+       
        // 转码完成回调函数。
        transcoder.on('complete', async () => {
          console.info(`transcode complete`);
@@ -326,8 +331,10 @@ export class AVTranscoderDemo {
          if (transcoder.fdSrc != undefined) {
            fs.closeSync(transcoder.fdSrc.fd);
          }
+         // 向主线程发送转码结束的消息。
          workerPort.postMessage('complete');
        })
+
        // 转码错误回调函数。
        transcoder.on('error', async (err: BusinessError) => {
          await transcoder?.release();
@@ -351,9 +358,8 @@ export class AVTranscoderDemo {
        } catch (error) {
          console.error('Failed to get the file descriptor, please check the resource and path.');
        }
-       // 设置输出文件路径，context.filesDir为应用的沙箱路径。
-       let fdPath = context.filesDir + "/" + "VID_" + Date.parse(new Date().toString()) + ".mp4";
-       let file = fileIo.openSync(fdPath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+       let fdPath = context.filesDir + '/' + 'VID_' + Date.parse(new Date().toString()) + '.mp4';
+       let file = fs.openSync(fdPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
        let fd = file.fd;
        console.info(`file fd ${fd}`);
        transcoder.fdDst = file.fd;
@@ -371,21 +377,28 @@ export class AVTranscoderDemo {
      }
    }
    ```
-4. 监听转码的Complete回调，在转码结束的时候向主线程发送消息。
+4. 监听转码的complete回调，在转码结束的时候向主线程发送消息。
 
-   ```ts
+   ```typescript
    // 转码完成回调函数。
    transcoder.on('complete', async () => {
      console.info(`transcode complete`);
-     fileIo.closeSync(transcoder.fdDst); // 关闭fdDst。
      await transcoder?.release()
+     if (transcoder.fdDst != undefined) {
+       fs.closeSync(transcoder.fdDst);
+     }
+     if (transcoder.fdSrc != undefined) {
+       fs.closeSync(transcoder.fdSrc.fd);
+     }
+     // 向主线程发送转码结束的消息。
      workerPort.postMessage('complete');
    })
    ```
 5. 主线程接收到worker线程转码结束的信息，销毁worker线程。
 
-   ```ts
-   // 注册onmessage回调，当宿主线程接收到来自其创建的Worker通过workerPort.postMessage接口发送的消息时被调用，在宿主线程执行。
+   ```typescript
+   // 注册onmessage回调，当宿主线程接收到来自其创建的Worker通过workerPort.postMessage接口发送的消息时被调用，
+   // 在宿主线程执行。
    this.workerInstance.onmessage = (e: MessageEvents) => {
      let data: string | number = e.data;
      if (typeof data === 'string') {

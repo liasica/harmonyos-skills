@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持游戏手柄输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持游戏手柄输入事件
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:05+08:00
+scraped_at: 2026-11-19T09:47:43+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1e099f99fdf5a0c1cad6f2545edf6ca647c456257fe0beda649489de58cebbd6
+content_hash: sha256:e301fcd466a961e53d7218f93fd2c65e6afd8159a5ee775a590495b31198f908
 ---
 
 从API version 15开始，支持使用游戏手柄作为输入设备。当用户使用手柄进行操作时，系统会识别其输入行为并上报为按键事件或焦点轴事件。开发者可以通过注册相应的回调函数，接收并处理这些事件，进而实现与游戏手柄的交互逻辑。
@@ -14,7 +14,7 @@ content_hash: sha256:1e099f99fdf5a0c1cad6f2545edf6ca647c456257fe0beda649489de58c
 
 下面以常见的游戏手柄为例，说明其按键及操纵杆的常见映射关系：按键通常被映射为离散的键值（方向键有时也可映射为轴值），操纵杆则映射为连续的轴值。[KeyCode](../harmonyos-references/js-apis-keycode.md#keycode)针对游戏手柄提供了可支持的键值，[AxisModel](../harmonyos-references/ts-appendix-enums.md#axismodel15)则提供了可支持的轴值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/8mPG-iRYQpWo4XTklZJHCA/zh-cn_image_0000002817506283.png?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=A975EED133172F28950ED6F8E2B72EC0E4F0F4F30C730920688EAA46256E8E52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Uq3vSXc8Sk6qMB1j43LncQ/zh-cn_image_0000002820525133.png?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=08C11CA0B16CA57D74E228831C597AB22B556C37F981DD40FB704DE66D6C3C88)
 
 ## 处理按键输入
 
@@ -62,7 +62,7 @@ struct CommonKey {
 
 手柄的方向键输入在触发按键事件时也会带来默认的走焦效果。当开发者仅需利用方向键进行游戏内操作（如控制角色移动、旋转视角等）时，这种默认的走焦行为可能会干扰正常操作。使用焦点组可以解决这一问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/jtusAKH6QO6kXhg0RoAlsg/zh-cn_image_0000002788306854.png?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F9C4439C38B132F4796D4D8129C6A1CA943069532D530B59CDE6B57E151FCBD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/7x04O__VQ-OgUdVvMCfL0w/zh-cn_image_0000002820405133.png?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=107FBF36441545ED6016245BB43FAE5CFD13008E6FEF2D439BDB59070124A84B)
 
 如图所示，在没有焦点组的情况下，方向键操作会使焦点在组件A、B、C之间自由移动。当使用焦点组容器将特定组件包裹起来时，就可以在该容器内部独立控制焦点行为。通过[focusScopeId](../harmonyos-references/ts-universal-attributes-focus.md#focusscopeid14)可以设置焦点组，并通过设置arrowStepOut参数为false来限制方向键走焦行为，以下示例展示了如何实现这一逻辑：
 
@@ -197,7 +197,7 @@ struct GamepadSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/66SqZIgVRvWmyxTM6oCtJQ/zh-cn_image_0000002817426217.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004705Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6CA45DB4783B9D736CB24984297E43B5F3FF6B622875E2E43F0E3A6A2BB0C0B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/LK_FM1EMTs-ffUsy9k0C-w/zh-cn_image_0000002791725154.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=A70BD6B87AA615F1C00B76603E1DA9F79A5D359FEB5065E44B3D1C31EE73F59E)
 
 运行示例，分别使用游戏手柄进行以下操作：
 

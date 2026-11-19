@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 星盾机密风控引擎
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 星盾机密风控引擎
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:29+08:00
+scraped_at: 2026-11-19T09:48:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ac76066f35305d6e38527e13dd7cd3df4c24d286e5941e8eb5e24615d5ab0343
+content_hash: sha256:a77e3482da95175ae3d42a6314a996e14fb7a2260b103fbe677febf2334607bd
 ---
 
 ## 场景介绍
@@ -29,7 +29,7 @@ content_hash: sha256:ac76066f35305d6e38527e13dd7cd3df4c24d286e5941e8eb5e24615d5a
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/PIvsOUsZSjKBboLKCuyaOA/zh-cn_image_0000002817426779.png?HW-CC-KV=V1&HW-CC-Date=20261114T004549Z&HW-CC-Expire=31536000000&HW-CC-Sign=E755F18AC341A6C99F858ABF80DD7CE2274A73599ACB58BCBF62C3A0E28EFD6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/tkU4AwI8Ts6miZ5Q47-b8g/zh-cn_image_0000002791725716.png?HW-CC-KV=V1&HW-CC-Date=20261119T014716Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDDBA5F0A10AF873E8DF51D5D7CE8B8407E4ABB8588A1B7A5F9134BFF8E2B4F4)
 
 **流程说明：**
 

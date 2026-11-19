@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 边框设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 边框设置
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:05+08:00
+scraped_at: 2026-11-19T09:50:51+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:bee0c38a1a71a1a59ea1ade520baa1e1cfab1d1df956d8d62fb65de4ba740d4d
+content_hash: sha256:9637b7f73c4ba984948cd85fc2e0266dc42bfcf569304ae0d26ad6b8a20bfbd2
 ---
 
 设置组件边框样式。
@@ -252,7 +252,7 @@ struct BorderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/__3WcJ0vQgSXfFiZJsFEPQ/zh-cn_image_0000002817508159.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDF2EA2935DF58BF34A6054BC168FC00002C6A3C6D60617A9A710A3BBAF46A6B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/gtKGlZ2cRRCHLKT1X3AARQ/zh-cn_image_0000002820527009.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3D187E88C2C9C4038D5A03C4C3D38E1BE7A59BD2B8956C1CFFFC0B5997C1463)
 
 ### 示例2（边框宽度、圆角半径和颜色类型）
 
@@ -331,11 +331,11 @@ struct BorderExample {
 
 从左至右（LTR）显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/wj0vNLL1RBCWVzcUqCzqkw/zh-cn_image_0000002788308728.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5B919D0C54E9D4330648140D9C186EEA6030DE527831AC293F3C92447CD6569)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/2EGp_EVKRPSt2gR4uo_szA/zh-cn_image_0000002820407009.png?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC90CE12E7100F72CCCDD2FFC0728BC085E6BA7605470E7F44C33D3CEF302F14)
 
 从右至左（RTL）显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/4F4OsxVESuaUc6AErt9KTw/zh-cn_image_0000002817428091.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=601E0D11014761F51F89118C52661D0AF61595A8F092D84EDA52ADD1B4E436F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ZThPzfHTQ22U6-w0Jk7hQA/zh-cn_image_0000002791727030.png?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=00AFBCAB78F86E6B586D551C4F5AA672C8062437C33A64467F4345FE9BE3980E)
 
 ### 示例3（设置离屏圆角）
 
@@ -416,7 +416,7 @@ struct RenderStrategyExample {
 
 快速绘制模式（RenderStrategy.FAST）通过GPU硬件加速进行实时绘制，适用于普通圆角场景；离屏绘制模式（RenderStrategy.OFFSCREEN）将组件先绘制到离屏缓冲区再合成，适用于包含模糊、滚动等复杂内容的圆角场景，可避免圆角裁剪异常。设置在线绘制模式（上方）以及离屏绘制模式（下方）的示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/1hV5X27NRZuFBqM5ciFV0Q/zh-cn_image_0000002788468672.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DFFAACA0595DB8B47E332D6B8533BBF16DDAAF227ABD176F1A9A331E8603A4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/v2HZi0jlS3GtgN1IlifDpQ/zh-cn_image_0000002791567058.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D225786AADFEED1F0B254EEE5FCE80B734456093B85BB19B42AE1B4A76893CC)
 
 ### 示例4（设置异形圆角）
 
@@ -450,4 +450,4 @@ struct BorderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/zipmJFl0SOe076do1P_6nA/zh-cn_image_0000002817508161.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BAA9DBF833F308C8851BFFF737F5D8AA1BD08FD9F87A875ABA6A508E63F4AFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/p7GquUz3ToiarB_IF82mcg/zh-cn_image_0000002820527011.png?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=E94F1F9E1806B575F18C41A4861C24FFF7FC047208CD76CB09C1CA925CF1F331)

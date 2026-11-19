@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: MultiWindowEntryInAPP (应用内多窗)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > MultiWindowEntryInAPP (应用内多窗)
 category: harmonyos-references
-scraped_at: 2026-11-14T08:51:18+08:00
+scraped_at: 2026-11-19T09:52:11+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:72654840014fafa6d1c9bc974c322056e4cea65994df72f08814079e12f8a6fa
+content_hash: sha256:f4851bebe3a58ecd7174403b0b938c3ec887f0b67b9f5b55e23175424d87cefe
 ---
 
 **说明** 
@@ -196,4 +196,4 @@ struct MultiWindowEntryInAPPTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/CPzJE8hlQnWIg3kuzDwLYA/zh-cn_image_0000002817429189.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004906Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DAAB6E40F18CA0891DAA06453D02A0481B3E9E0D3ED0D26BAE60CB325339D76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Td3EUNReQM-bdrV5JhjbWQ/zh-cn_image_0000002791568156.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015116Z&HW-CC-Expire=31536000000&HW-CC-Sign=A836EB79732AF2A554D78C0663EEF74E21376DA7415957E7B2A74971571A704F)

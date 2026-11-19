@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义组件节点 (FrameNode)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 自定义组件节点 (FrameNode)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:07+08:00
+scraped_at: 2026-11-19T09:47:45+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b9807485a8a3889762c96a67604da9f7dc4521cd265709bbc5d6e6a8b44d7704
+content_hash: sha256:efb01442b3f8f42d6ce8e500e4c00b88e6f71211c3c30cd9c58b236039a08254
 ---
 
 ## 概述
 
 对于拥有自定义前端的第三方框架（如JSON、XML、DOM树等），需将特定的DSL转换为ArkUI的声明式描述。如下图描述了JSON定义的前端框架和ArkUI声明式描述的对应关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/N4IcgdxqTIu_KweYuyQrEg/zh-cn_image_0000002788306932.png?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=D526F69A2E40E8FA944968720165F26EE9284F7046AB542CAA07C89C15CC937F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/RgZ1PFHuRe-27oEdOB7aiw/zh-cn_image_0000002820405211.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=A098F3208EDDC72D41C480114B36447FDF6B053DC2C273AC9956B3B564E4C09F)
 
 上述转换过程需要依赖额外的数据驱动，绑定至[Builder](arkts-builder.md)中，较为复杂且性能欠佳。这类框架通常依赖于ArkUI的布局、事件处理、基础的节点操作和自定义能力。大部分组件通过自定义实现，但需结合使用部分系统组件以实现混合显示，如下图示例既使用了[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)的自定义方法进行绘制，又使用了系统组件[Column](../harmonyos-references/ts-container-column.md)及其子组件[Text](../harmonyos-references/ts-basic-components-text.md)，通过[BuilderNode](../harmonyos-references/js-apis-arkui-buildernode.md)的方式将其挂载到根节点的FrameNode上混合显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/uT8vVfaTT0KzMZqvjx7INw/zh-cn_image_0000002817426295.png?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=499BB2704B2C35A4FA11C81B42AC9D9D4F901353862D9BE1F9939703FCD4AD65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/n_RiTAsDR6mZOKaVtvFQag/zh-cn_image_0000002791725232.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4285CDEB5FAB8D74E46B137CEA6C29860D38CB6BD1971D5D3A046D374D57E10)
 
 [FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)的设计初衷正是为了解决上述转换问题。FrameNode表示组件树中的实体节点，与自定义占位容器组件[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)相配合，实现在占位容器内构建一棵自定义的节点树。该节点树支持动态操作，如节点的增加、修改和删除。基础的FrameNode具备设置通用属性和事件回调的功能，同时提供完整的自定义能力，涵盖自定义测量、布局和绘制等方面。
 
@@ -435,7 +435,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/kcMbSfq4REq8nonsZddwvw/zh-cn_image_0000002788466876.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=97B123AA334FB8ACA3D234612CB54C9A612CC05A950CAA43FB779FF996480989)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/YnfGhjf2QJKB8EHsOLht7g/zh-cn_image_0000002791565260.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC8C55CC225580F8A0F0EF50FF098AD3B5299BFB3282DA5A067081133B936488)
 
 ## 设置节点通用属性和事件回调
 
@@ -819,7 +819,7 @@ FrameNode提供了查询节点相对窗口、父组件以及屏幕位置偏移�
 
 [getPositionToWindow](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontowindow12)，[getPositionToParent](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontoparent12)，[getPositionToScreen](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontoscreen12)三个接口获取到的位置信息关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/VqQU6qOYTKa1IHJywgIfFw/zh-cn_image_0000002817506363.png?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7DCF0F24D4CB72BAF80CAF4C598C06B020354026FB1CB9E36D1DC0BADE1DFE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/-DreVVq_QC2OLTLYq8odIw/zh-cn_image_0000002820525213.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=D73EEEDA548E84552552815D5528037B8AFF7263DFD180344F78EB45EFAE1D78)
 
 ```typescript
 import { NodeController, FrameNode, UIContext } from '@kit.ArkUI';
@@ -2099,7 +2099,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/-8Z66QQmT8mwF-EQ1OQDMA/zh-cn_image_0000002788306934.png?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9C37464442C773607EE15B53BB58C88BE893E4FBAC5753DFD9638E1D8FD9626)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/fZ_w-4jfTf6Zq-1AFd9YvA/zh-cn_image_0000002820405213.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=19553B7A25447641A115AC568328D3BC7A2C341603987A2E2B178223844C2FAB)
 
 ## 更新当前帧节点
 
@@ -2199,7 +2199,7 @@ struct ListNodeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/vtQPZtv4SmSeEkn47zr9rA/zh-cn_image_0000002817426297.png?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=A56ACAD633769571D3A6CF6F7A4D8F7F08557446C22B22BAF0F0BB487096A484)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/t9ehgSS9RaSr6QDMYFwO-g/zh-cn_image_0000002791725234.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=B56998C02B276FC805FD60FFD55AEF2B15986E2BC05AE8453AB2A11406393943)
 
 ## 判断节点是否处于渲染状态
 
@@ -2270,4 +2270,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/F59r0d0pT8el6kUosYahqg/zh-cn_image_0000002788466878.png?HW-CC-KV=V1&HW-CC-Date=20261114T004528Z&HW-CC-Expire=31536000000&HW-CC-Sign=B443D050405E4EB198FCC39699175013EE0F7E5D59C56967A23C674B497CF23A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/xPuiLskiQ4y7HMB5cIp-uA/zh-cn_image_0000002791565262.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=311C68A330C2A4DA9838402F7B7B2C668A3B9294AFB79316257D6CB78264C66E)

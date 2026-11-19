@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-cate
 title: 资源分类与访问
 breadcrumb: 指南 > 基础入门 > 资源分类与访问
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:46:48+08:00
+scraped_at: 2026-11-19T09:47:24+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b26212ab8eb8f46bf5bf511ad62d515524947e8904149d797a48decaa116c564
+content_hash: sha256:3c2e9046483fc0d5c21deee1412c84d00058e2406edb7721c2899202dd9c463e
 ---
 
 ## 功能介绍
@@ -206,19 +206,19 @@ plural.json文件的内容如下：
 
 创建的目录名自动生成，格式固定为“限定词/资源组”，例如：创建一个限定词为dark的element目录，自动生成的目录名称为“dark/element”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/47C1Dxz4SfmLWY2chV_eyA/zh-cn_image_0000002788306118.png?HW-CC-KV=V1&HW-CC-Date=20261114T004510Z&HW-CC-Expire=31536000000&HW-CC-Sign=589F771D4427EBC29915B38ECAD0A15C0663FB79792FDDD4516D5A4624B35E0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/ZuMv3mJ_SYetybVuVzdfpg/zh-cn_image_0000002820404395.png?HW-CC-KV=V1&HW-CC-Date=20261119T014632Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EE39EAA32082AF39DC28954FFC12D86A1306788CFF828BC4A0F01220599A11F)
 
 ### 创建资源目录
 
 在resources目录右键菜单选择“New > Resource Directory”，可创建资源目录，默认创建的是base目录。如果选择了限定词，则会按照命名规范自动生成限定词和资源组目录。确定限定词后，选择资源组类型，当前资源组类型支持Element、Media、Profile三种，创建后生成资源目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/kaPXhgULRK-bm0OVT95KqQ/zh-cn_image_0000002817425481.png?HW-CC-KV=V1&HW-CC-Date=20261114T004510Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B4862C4A67FC27909EC7D26EAD7B8ED5F93E39E352782B4A0015E0F48ECF55E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/QOvZ0-uLS06yIdEytluyog/zh-cn_image_0000002791724418.png?HW-CC-KV=V1&HW-CC-Date=20261119T014632Z&HW-CC-Expire=31536000000&HW-CC-Sign=826943A3AEA31832943D571FC77EF1B813E0D29458390D7C60B9FE9234D594DF)
 
 ### 创建资源文件
 
 在资源组目录（element、media、profile）的右键菜单选择“New > XXX Resource File”，可创建对应资源组目录的资源文件。例如，在element目录下可新建Element Resource File。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/c7oAlRPqRyegzJctdFEb0g/zh-cn_image_0000002788466062.png?HW-CC-KV=V1&HW-CC-Date=20261114T004510Z&HW-CC-Expire=31536000000&HW-CC-Sign=62994F28D85A183537448CC85751B192ED2C5BD878F1727D05D7B7255A28925B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/rqtF_uvRR9K_R8iazaf9jQ/zh-cn_image_0000002791564446.png?HW-CC-KV=V1&HW-CC-Date=20261119T014632Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DC151368E88FA0D7A01C2F184DB4CD60619A578AE1A22F30D8500DA29162121)
 
 ### 示例
 
@@ -226,12 +226,12 @@ plural.json文件的内容如下：
 
 1. 在resources目录右键菜单选择“New > Resource File”，File name填写为string\_sample，Resource type选择Element，Root Element选择string，Available qualifiers选中Locale，在右侧的语言列表中选择zh，地区列表中选择CN，将会在resources目录下创建zh\_CN/element/string\_sample.json文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/IsHTUiyMTdaXfaNv9PWSVA/zh-cn_image_0000002817505549.png?HW-CC-KV=V1&HW-CC-Date=20261114T004510Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AE3935422293FBE8FBB5C22982CBED48F6DF59C4459C7B5DCD3BA5D1F2618EA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/6nyj0R0JSVWxibLjaEX2Dg/zh-cn_image_0000002820524397.png?HW-CC-KV=V1&HW-CC-Date=20261119T014632Z&HW-CC-Expire=31536000000&HW-CC-Sign=D18EE22891C2FE0B91DECBC14456F0202F42DFA136F71FD3491E941397BD0855)
 2. 同理，语言选择en，地区选择US，创建en\_US/element/string\_sample.json文件。
 
    最终创建的资源文件如下。资源文件创建完成后，如何访问资源文件请参见[资源访问](resource-categories-and-access.md#资源访问)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/jmmS9FMDSZeRKROz2p-VAQ/zh-cn_image_0000002788306120.png?HW-CC-KV=V1&HW-CC-Date=20261114T004510Z&HW-CC-Expire=31536000000&HW-CC-Sign=D56964735113332F996044201743CA6769C10532A2ACC8E1546086E0BF4D8613)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/dM9PHr4UT9WwibjEAyxmzw/zh-cn_image_0000002820404397.png?HW-CC-KV=V1&HW-CC-Date=20261119T014632Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1BF3F6A71279E0FB6064CAF3DA067E5547F631231404F55E85A67D32CE61A26)
 
 ## 资源可翻译特性
 
@@ -364,7 +364,7 @@ string资源配置attr属性示例如下，其中string1字符串被标记为不
 
 1. 在entry的oh-package.json5文件中添加依赖。如"dependencies": {"library": "file:../library"}。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/V5DJv522QzOP1e7VHz3ZRw/zh-cn_image_0000002817425483.png?HW-CC-KV=V1&HW-CC-Date=20261114T004510Z&HW-CC-Expire=31536000000&HW-CC-Sign=4192374834CFC5A50F4932E4DDF14C0456AC93524CDBD3EB638D3529BB68C6C8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/2IllcFs9R1yUEZptISZHeQ/zh-cn_image_0000002791724420.png?HW-CC-KV=V1&HW-CC-Date=20261119T014632Z&HW-CC-Expire=31536000000&HW-CC-Sign=A251322B3E08D1CC4D0F9CDE8E3BF22896908E07839D68C0B471F90E4EE91384)
 2. 获取资源。
 
    ```typescript

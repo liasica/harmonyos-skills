@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 数字盾签名密钥备份与恢复
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 数字盾签名密钥备份与恢复
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:28+08:00
+scraped_at: 2026-11-19T09:48:07+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:8cd5d46e06a1fd854389f32205e3a9df468f434ff5d8f49911add24e0f6c7aa1
+content_hash: sha256:10af7749a1641c12000a424eb3b5ef711713f9cbc1b79f20f35472a614df520f
 ---
 
 ## 场景介绍
@@ -33,7 +33,7 @@ content_hash: sha256:8cd5d46e06a1fd854389f32205e3a9df468f434ff5d8f49911add24e0f6
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/xsreirLITIGHWa4rtf7N_A/zh-cn_image_0000002817426773.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCFB208A8C811F045B07A732DF71E3CE75C8B78A7D798C3888E95DFB559B689E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/r_tqpJi8RG2avUX-KmCEAg/zh-cn_image_0000002791725710.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014715Z&HW-CC-Expire=31536000000&HW-CC-Sign=302999B50CAB27836C892C2C7CBB2AC0EF63CAA39507D0AA7507ECB136A913BB)
 
 ## 接口说明
 

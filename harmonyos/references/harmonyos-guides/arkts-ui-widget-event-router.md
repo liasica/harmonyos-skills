@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 卡片跳转到应用页面（router事件）
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面交互 > 卡片跳转到应用页面（router事件）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:19+08:00
+scraped_at: 2026-11-19T09:47:56+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:7f7d939b9b0bd67c359324ee681304548f7142238be995a3030ae43b994c6b3e
+content_hash: sha256:930d4e4c7b593cf095a3a4731dcaf110964603d6637af3fc2eb229c28a9b59a9
 ---
 
 在动态卡片中使用[postCardAction](../harmonyos-references/js-apis-postcardaction.md#postcardaction-1)接口的router能力，能够快速拉起动态卡片提供方应用的指定UIAbility(页面)，因此UIAbility较多的应用往往会通过卡片提供不同的跳转按钮，实现一键直达的效果。例如相机卡片，卡片上提供拍照、录像等按钮，点击不同按钮将拉起相机应用的不同UIAbility，从而提升用户的体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/FCSs7ec0R_Gs9sJIKvT3KA/zh-cn_image_0000002817506695.png?HW-CC-KV=V1&HW-CC-Date=20261114T004540Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5899E42C9A5532F68C70FD64796757E748E3B557E7DA10CE158772C810600D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/cvNX_-hLRieosFcSn7v19A/zh-cn_image_0000002820525543.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=74D83F808D45C8822E17A23CACC2B082425EC6BA1283B2DB60E6DB58FF4BB81D)
 
 **说明** 
 
@@ -293,4 +293,4 @@ content_hash: sha256:7f7d939b9b0bd67c359324ee681304548f7142238be995a3030ae43b994
 
 ## 运行效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/fLRgVDujQaaHhUVCzjPoaw/zh-cn_image_0000002788307264.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004540Z&HW-CC-Expire=31536000000&HW-CC-Sign=51B66087F6348499FE25FC184830EA163038FEF8623C473955352C33ED887A00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/ZbZmcxccQluiGq3RHpcHWQ/zh-cn_image_0000002820405543.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A8666A1518A2E40F4A706105F07273D03B140E64D408F27C5F6ED9110E80AA3)

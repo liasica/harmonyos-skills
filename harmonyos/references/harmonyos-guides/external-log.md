@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/external-log
 title: external_log日志介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 通用日志 > external_log日志 > external_log日志介绍
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:45+08:00
+scraped_at: 2026-11-19T09:48:24+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ff893b890c9b038921eef4c6e3485d115326677c1783096d948a03ab00c9abe0
+content_hash: sha256:a18808c19dbd104d8a799fe0c2a96daf4880fa452b3af7c4fed2a6a16edac52f
 ---
 
 ## 简介
@@ -25,7 +25,7 @@ external\_log是应用沙箱内的故障日志文件路径，当应用通过HiAp
 
 应用通过订阅系统事件来获取对应系统事件发生时的external\_log故障日志文件内容，其实现原理如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/lM8iUETPTl2pNhyfMl_QIA/zh-cn_image_0000002817506973.png?HW-CC-KV=V1&HW-CC-Date=20261114T004605Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D55BD7052D673DC758FFCF69C7921AC36EB5855A5B073492F1FDE5764544904)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/EQ5nJ326S0WjODp2dRvuwQ/zh-cn_image_0000002820525823.png?HW-CC-KV=V1&HW-CC-Date=20261119T014824Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB90B2A5AAE1862748AE6FCB11A651ADC1CB3C4BB134A9EB863135B9C1D01DD5)
 
 详细步骤如下：
 

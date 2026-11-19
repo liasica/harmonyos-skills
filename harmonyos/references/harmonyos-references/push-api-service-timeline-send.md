@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-api-
 title: 服务动态推送接口
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 服务动态 > 服务动态推送接口
 category: harmonyos-references
-scraped_at: 2026-11-14T08:53:50+08:00
+scraped_at: 2026-11-19T09:54:56+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:61c9e10b0913b5d04db3f94c1939fb0043573a590d891f16ee4fd1fd38192073
+content_hash: sha256:34a0289c4568e2d29e32b8dcd6efb6fa2db16de9c2b8fae1b326e7ac51a0722e
 ---
 
 ## 功能介绍
@@ -462,7 +462,7 @@ user close service.
 
 **处理步骤**
 
-请检查服务动态开关是否关闭，如关闭，需打开开关后再调用接口进行测试。服务动态开关设置路径：桌面主屏从左往右滑进入负一屏，点击头像进入“我的”，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/tEN5mNKcR5GLf5UUC_JQlw/zh-cn_image_0000002817509367.png?HW-CC-KV=V1&HW-CC-Date=20261114T005349Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCF9CA62E98AB33F14D17CDB65F69A2932375D81EBAF2826875C6A86E2BFB591 "点击放大")，再点击“动态管理”，在“服务动态”列表找到对应的场景开关进行操作。
+请检查服务动态开关是否关闭，如关闭，需打开开关后再调用接口进行测试。服务动态开关设置路径：桌面主屏从左往右滑进入负一屏，点击头像进入“我的”，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/_nsxyGEzSwOz_fK7tySubg/zh-cn_image_0000002820408219.png?HW-CC-KV=V1&HW-CC-Date=20261119T015456Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B64335E63580BD0C63043C6C2FB5369782C0FACD57491280A746E31A79017BF "点击放大")，再点击“动态管理”，在“服务动态”列表找到对应的场景开关进行操作。
 
 ### 82600014 非法的图片资源ID
 
@@ -538,8 +538,8 @@ no authorization device.
 
 添加路径：
 
-* 方式一：桌面主屏从左往右滑进入负一屏，点击头像进入“我的”，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/e8wiWNEzRqW2d5fanz3lxg/zh-cn_image_0000002817509367.png?HW-CC-KV=V1&HW-CC-Date=20261114T005349Z&HW-CC-Expire=31536000000&HW-CC-Sign=347E8EA1BC757F9373A5A845DA14AD1E3B8242B002B2EBD42316148A3894D665 "点击放大")，再点击“设置 > 服务数据同步 > 本设备开关打开”，开启设备授权。
-* 方式二：打开任意元服务，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/hVC60fCaSK2TLQYeoPq24Q/zh-cn_image_0000002817509367.png?HW-CC-KV=V1&HW-CC-Date=20261114T005349Z&HW-CC-Expire=31536000000&HW-CC-Sign=56BA31E7014DF0000C912FAAF99CD12C4E23D63F4CC8D6BCB3A99D1516D3033C "点击放大")，再点击“设置 > 服务数据同步 > 本设备开关打开”，开启设备授权。
+* 方式一：桌面主屏从左往右滑进入负一屏，点击头像进入“我的”，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ZDA6QUzuTIerY_GOF4sybg/zh-cn_image_0000002820408219.png?HW-CC-KV=V1&HW-CC-Date=20261119T015456Z&HW-CC-Expire=31536000000&HW-CC-Sign=84913E64DF059695E8888924969E93AEF07DC3D3F923EB9E898537B6E3EC7E0E "点击放大")，再点击“设置 > 服务数据同步 > 本设备开关打开”，开启设备授权。
+* 方式二：打开任意元服务，点击页面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/tkk9MpgxTuWr3BnMKOWjKw/zh-cn_image_0000002820408219.png?HW-CC-KV=V1&HW-CC-Date=20261119T015456Z&HW-CC-Expire=31536000000&HW-CC-Sign=708CBA2BF08A7DD4FE99BE45D6A1C78EA6C1FC1287AC3DA0B976E095FF6FE9B6 "点击放大")，再点击“设置 > 服务数据同步 > 本设备开关打开”，开启设备授权。
 
 ### 82600018 服务动态事件已结束
 

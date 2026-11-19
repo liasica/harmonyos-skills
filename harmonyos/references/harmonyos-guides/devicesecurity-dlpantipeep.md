@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 防窥保护
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 防窥保护
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:29+08:00
+scraped_at: 2026-11-19T09:48:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:722c754995adb0f20a2cbbadc4ef20bd8eaebab01fad8f1a45214e94cf3c652b
+content_hash: sha256:84c774a6b06327e79a8d0939b7ab796236c125adf33d40b0e436146c08b0dcf6
 ---
 
 ## 场景介绍
@@ -29,7 +29,7 @@ content_hash: sha256:722c754995adb0f20a2cbbadc4ef20bd8eaebab01fad8f1a45214e94cf3
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/grQToIraRSGlq8eNAnblcQ/zh-cn_image_0000002817506851.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004549Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF7FB6BAED933B7F81C3BF8492505DB5EACF8D12B352D89250CED115C38E7FAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/I4X23FyFTPWPdyrHgpHtMQ/zh-cn_image_0000002820525699.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=9374E6D9DCD1FD2B62476803535DEC64B54C809A2777545D3BFAAB33DCB35DD6)
 
 **流程说明：**
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-window-
 title: 顶部窗口控制条避让适配智慧多窗
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 智慧多窗应用开发指导 > 顶部窗口控制条避让适配智慧多窗
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:12+08:00
+scraped_at: 2026-11-19T09:47:50+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:d091372ad2dd4c0830c7fd159944019919ed19205b02e3c64e660326aae528ab
+content_hash: sha256:ea100c851fc0dd9c5768f93ece3f05ec0868f67fa06bee2f5d4c0de5e5a3eff9
 ---
 
-顶部窗口控制条是应用窗口处于智慧多窗模式下，应用顶部的操作横条 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/KyGjVOFjRTG5DsNw2yPykg/zh-cn_image_0000002788467080.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=087930E37B7D96CD56C87BB1B4DD81A186D606233271BD41812A6AA703E44638) 。
+顶部窗口控制条是应用窗口处于智慧多窗模式下，应用顶部的操作横条 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/YVr3oUq2Qc6dhJMGClzeDA/zh-cn_image_0000002791565464.png?HW-CC-KV=V1&HW-CC-Date=20261119T014659Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0A70296FF988D2A58BF51771E202086FD29CA52FF24ECD5477D4070D0521193) 。
 
 顶部窗口控制条示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/4vqcky6TS5OdvxX4H-h8xw/zh-cn_image_0000002817506567.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5C8D541A0EB75DB22F5EC7008B36E043E23CDA8587BD7CF2DE0906CD4BD0240)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/H_ZJf7xIQqCrswpGb7yblg/zh-cn_image_0000002820525417.png?HW-CC-KV=V1&HW-CC-Date=20261119T014659Z&HW-CC-Expire=31536000000&HW-CC-Sign=53F0CE584BC2563E292627498501D84C955AC35A711FEFA1349073E239092670)
 
 顶部横条的避让可通过以下两种方式适配：
 
@@ -20,7 +20,7 @@ content_hash: sha256:d091372ad2dd4c0830c7fd159944019919ed19205b02e3c64e660326aae
 
   沉浸式布局是指应用布局不避让状态栏、导航栏以及智慧多窗顶部横条，这可能发生组件与顶部横条的重叠，导致文字遮挡、点击事件冲突等情况。非沉浸式布局是指布局避让状态栏、导航栏以及智慧多窗顶部横条，组件不会与其重叠。因此可设置isLayoutFullScreen值为false使窗口的布局为非沉浸式布局。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/VrV-I5v5SOWx8nIrp_Pd-w/zh-cn_image_0000002788307138.png?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F1E2AECC87BBD112FAB1D891215A054FCB61AB801BFB80294825FE9D9A6C7A2)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/SaP3P0PSSQ6kd4MTwE1uFQ/zh-cn_image_0000002820405417.png?HW-CC-KV=V1&HW-CC-Date=20261119T014659Z&HW-CC-Expire=31536000000&HW-CC-Sign=C18759C1137B10B215399087EFFBD3343487A925FB0C85B1A7B41AE616FD9DBD)
 
   示例：
 
@@ -135,7 +135,7 @@ content_hash: sha256:d091372ad2dd4c0830c7fd159944019919ed19205b02e3c64e660326aae
 
   图1 设置窗口是否为沉浸式布局
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/iPOpIikVT3e95drYtjxzvA/zh-cn_image_0000002817426501.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0DFDEA9329986C605D9E1C33D45313373F1FA4840C4B63DFFFCD50085371078)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/pI1iCKVLSiOJIKmyZNNI3Q/zh-cn_image_0000002791725438.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014659Z&HW-CC-Expire=31536000000&HW-CC-Sign=C699117477BACFAE38BDB6122B6C960B74B33D24B162D73097D67D318BDDBAAC)
 * 应用主动避让：应用不使用窗口避让能力（即设置窗口为沉浸式布局）。首次通过[getWindowAvoidArea](../harmonyos-references/arkts-apis-window-window.md#getwindowavoidarea9)接口可获取屏幕顶部需要规避的矩阵区域topRect，获取到该值后应用可对应做布局避让，并且注册[on('avoidAreaChange')](../harmonyos-references/arkts-apis-window-window.md#onavoidareachange9)监听系统避让区域变化以进行布局的动态调整。
 
   ```ts
@@ -193,4 +193,4 @@ content_hash: sha256:d091372ad2dd4c0830c7fd159944019919ed19205b02e3c64e660326aae
 
   图2 应用主动做布局避让
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/J8b6soqCR46lN4POVeZgGg/zh-cn_image_0000002788467082.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004533Z&HW-CC-Expire=31536000000&HW-CC-Sign=A311669F43F04D1785B47258355EB11F2F69B0730CC18D41893D6D4B5E3E3648)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/KRcxtnIdRe6GKfWkSvQftg/zh-cn_image_0000002791565466.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014659Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADDF060D9E1F1B4B852DE1668EDCDC8A2518AE930CC68C227A226551E3BEB358)

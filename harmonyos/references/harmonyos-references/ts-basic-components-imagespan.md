@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ImageSpan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > ImageSpan
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:14+08:00
+scraped_at: 2026-11-19T09:51:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:df17b24c718ced9d98d8734ab062eb2c85adc8884e38b1c332dac4a2057f70d7
+content_hash: sha256:363a5f65b42bfcee9fc82298432b705d72fbf4362d76d019a19cbd1fa24cdbd6
 ---
 
 ImageSpan是[Text](ts-basic-components-text.md)、[ContainerSpan](ts-basic-components-containerspan.md)组件的子组件，用于在文本中显示行内图片，支持设置图片对齐方式、缩放类型、加载占位图和颜色滤镜等，适用于需要在文本段落中嵌入图片实现图文混排的场景。
@@ -267,7 +267,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/5GcJo8V2RjKa6YBU0rhCWg/zh-cn_image_0000002817428445.png?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CDBD64CB7B4E7DD775F9CCA72A706CFE81A93BD212CCF8E0F9B0CC6118ED12B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/xpT1YqobToW0q1JbisGOMA/zh-cn_image_0000002791567412.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=80537862FC3DAE0B0A809A5CA05F514C41A24EDFBE089C74905F99D6ECB00B3E)
 
 ### 示例2（设置背景样式）
 
@@ -296,7 +296,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/U862wnp6QYGB0PGh95J96A/zh-cn_image_0000002788469026.png?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=02746C6F994EEF78D7DDBA3290BB449448DFABC6A55DAAA511B0B475B2EE6AB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Z-4i8OWCQv2DXZesaFkclQ/zh-cn_image_0000002820527365.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=F89FD2A46C22EB99F17CBF8AD42FA79A1E7E32D173C846934B401A2F9396A69B)
 
 ### 示例3（为图片添加事件）
 
@@ -372,7 +372,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/hizTbBzgR1C8cp6UJELH1w/zh-cn_image_0000002817508515.png?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CA8FF50FD1A63AD7197764B11897509745D27C1029ACD0ED4A5C8A09D6DECC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/wVbyLch6QJaan2M7LGtehg/zh-cn_image_0000002820407367.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAB85BC0B2CC78B2146A4E316605E881015A9CA3FBC013FCDD54E2C7289982E5)
 
 ### 示例5（设置加载占位图）
 
@@ -445,7 +445,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ehc1fqxvR9qdasMwPnbWMA/zh-cn_image_0000002788309084.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B04AC53AD57FBCE74C03F368E7C9E97668E1C84EC52D3F72AFCF596EBD48AAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/eSMOmK4UQ8KkpWpTsujm4g/zh-cn_image_0000002791727386.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5F512D32B8E3A8D11D71E5C843787376D46851F29DFBBE4653272A618318782)
 
 ### 示例6（使用supportSvg2属性时，SVG图片的显示效果）
 
@@ -486,7 +486,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/-k7pPuOIQeKgrN2XttgKGA/zh-cn_image_0000002817428447.png?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=821FE0838AD0F8D9D14CA9ADA7D8D56DE0816151E00AE35F1798476FEB15766A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/CzrUGiETQM-VIii6brrW7g/zh-cn_image_0000002791567414.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF7991024E6634E36728916965AFFCDDBC13F6A97ABE8B76ECF3B98BFD5ADD08)
 
 ### 示例7（设置图片拉伸）
 
@@ -553,4 +553,4 @@ struct ImageSpanResizablePage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/nYpuSvN8Ta2bS56omi3mtA/zh-cn_image_0000002788469028.png?HW-CC-KV=V1&HW-CC-Date=20261114T004814Z&HW-CC-Expire=31536000000&HW-CC-Sign=384C4312B8F29C9ED19D5D8C419D03ED7D8A295CFE9E0D5ECED7AE170DAAE9AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ySe9kT_WTrywfE60HBMlCg/zh-cn_image_0000002820527367.png?HW-CC-KV=V1&HW-CC-Date=20261119T015007Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAE2629BCC43EFFD69C69E4D3EF1ED2595B6DFFE5099F7B3FA8C7E83BD491200)

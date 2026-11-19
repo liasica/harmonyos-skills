@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_node.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:40+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:73cb6989a8c7ced767776b2f674175c3483ea10111ba77e73854c2da0632a6fc
+scraped_at: 2026-11-19T09:51:28+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:58bf96af0ef1a33a4ac74b7c9456549a4829cd44f5052c43ccdebc79bdeec602
 ---
 
 ## 概述
@@ -305,7 +305,7 @@ enum ArkUI_NodeEventType
 | NODE\_TOUCH\_EVENT = 0 | 手势事件类型。事件回调发生时，事件参数[ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md)对象中的联合体类型为[ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)。 |
 | NODE\_EVENT\_ON\_APPEAR = 1 | 挂载事件。触发该事件的条件：组件挂载显示时触发此回调。  事件回调发生时，事件参数[ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md)对象中的联合体类型为[ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)。  [ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)中不包含参数。 |
 | NODE\_EVENT\_ON\_DISAPPEAR = 2 | 卸载事件。触发该事件的条件 ：组件卸载时触发此回调。  事件回调发生时，事件参数[ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md)对象中的联合体类型为[ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)。  [ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)中不包含参数。 |
-| NODE\_EVENT\_ON\_AREA\_CHANGE = 3 | 组件区域变化事件触发该事件的条件：组件区域变化时触发该回调。  事件回调发生时，事件参数[ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md)对象中的联合体类型为[ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)。  [ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)中包含12个参数：  **ArkUI\_NodeComponentEvent.data[0].f32**：表示过去目标元素的宽度，类型为number，单位vp。  **ArkUI\_NodeComponentEvent.data[1].f32**：表示过去目标元素的高度，类型为number，单位vp。  **ArkUI\_NodeComponentEvent.data[2].f32**：表示过去目标元素左上角相对父元素左上角的位置的x轴坐标，类型为number，单位vp。  **ArkUI\_NodeComponentEvent.data[3].f32**：表示过去目标元素左上角相对父元素左上角的位置的y轴坐标，类型为number，单位vp。  **ArkUI\_NodeComponentEvent.data[4].f32**：表示过去目标元素目标元素左上角相对页面左上角的位置的x轴坐标，类型为number，单位vp。  **ArkUI\_NodeComponentEvent.data[5].f32**：表示过去目标元素目标元素左上角相对页面左上角的位置的y轴坐标，类型为number，单位vp。  **ArkUI\_NodeComponentEvent.data[6].f32**：表示最新目标元素的宽度，类型为number，单位vp。  **ArkUI\_NodeComponentEvent.data[7].f32**：表示最新目标元素的高度，类型为number，单位vp。  **ArkUI\_NodeComponentEvent.data[8].f32**：表示最新目标元素左上角相对父元素左上角的位置的x轴坐标，类型为number，单位vp。  **ArkUI\_NodeComponentEvent.data[9].f32**：表示最新目标元素左上角相对父元素左上角的位置的y轴坐标，类型为number，单位vp。  **ArkUI\_NodeComponentEvent.data[10].f32**：表示最新目标元素目标元素左上角相对页面左上角的位置的x轴坐标，类型为number，单位vp。  **ArkUI\_NodeComponentEvent.data[11].f32**：表示最新目标元素目标元素左上角相对页面左上角的位置的y轴坐标，类型为number，单位vp。 |
+| NODE\_EVENT\_ON\_AREA\_CHANGE = 3 | 组件区域变化事件触发该事件的条件：组件区域变化时触发该回调。  事件回调发生时，事件参数[ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md)对象中的联合体类型为[ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)。  [ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)中包含12个参数：  ArkUI\_NodeComponentEvent.data[0].f32：表示过去目标元素的宽度，类型为number，单位vp。  ArkUI\_NodeComponentEvent.data[1].f32：表示过去目标元素的高度，类型为number，单位vp。  ArkUI\_NodeComponentEvent.data[2].f32：表示过去目标元素左上角相对父元素左上角的位置的x轴坐标，类型为number，单位vp。  ArkUI\_NodeComponentEvent.data[3].f32：表示过去目标元素左上角相对父元素左上角的位置的y轴坐标，类型为number，单位vp。  ArkUI\_NodeComponentEvent.data[4].f32：表示过去目标元素左上角相对页面左上角的位置的x轴坐标，类型为number，单位vp。  ArkUI\_NodeComponentEvent.data[5].f32：表示过去目标元素左上角相对页面左上角的位置的y轴坐标，类型为number，单位vp。  ArkUI\_NodeComponentEvent.data[6].f32：表示最新目标元素的宽度，类型为number，单位vp。  ArkUI\_NodeComponentEvent.data[7].f32：表示最新目标元素的高度，类型为number，单位vp。  ArkUI\_NodeComponentEvent.data[8].f32：表示最新目标元素左上角相对父元素左上角的位置的x轴坐标，类型为number，单位vp。  ArkUI\_NodeComponentEvent.data[9].f32：表示最新目标元素左上角相对父元素左上角的位置的y轴坐标，类型为number，单位vp。  ArkUI\_NodeComponentEvent.data[10].f32：表示最新目标元素左上角相对页面左上角的位置的x轴坐标，类型为number，单位vp。  ArkUI\_NodeComponentEvent.data[11].f32：表示最新目标元素左上角相对页面左上角的位置的y轴坐标，类型为number，单位vp。 |
 | NODE\_ON\_FOCUS = 4 | 获焦事件。触发该事件的条件：组件获焦时触发此回调。  事件回调发生时，事件参数[ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md)对象中的联合体类型为[ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)。  [ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)中不包含参数。 |
 | NODE\_ON\_BLUR = 5 | 失去焦点事件。触发该事件的条件：组件失去焦点时触发此回调。  事件回调发生时，事件参数[ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md)对象中的联合体类型为[ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)。  [ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)中不包含参数。 |
 | NODE\_ON\_CLICK = 6 | 组件点击事件。触发该事件的条件：组件被点击时触发此回调。  事件回调发生时，事件参数[ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md)对象中的联合体类型为[ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)。  [ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)中包含8个参数：  **ArkUI\_NodeComponentEvent.data[0].f32**：点击位置相对于被点击元素原始区域左上角的X坐标，单位vp。  **ArkUI\_NodeComponentEvent.data[1].f32**：点击位置相对于被点击元素原始区域左上角的Y坐标，单位vp。  **ArkUI\_NodeComponentEvent.data[2].f32**：事件时间戳。触发事件时距离系统启动的时间间隔，单位微秒。  **ArkUI\_NodeComponentEvent.data[3].i32**：事件输入设备，1表示鼠标，2表示触屏，4表示按键。  **ArkUI\_NodeComponentEvent.data[4].f32**：点击位置相对于应用窗口左上角的X坐标，单位vp。  **ArkUI\_NodeComponentEvent.data[5].f32**：点击位置相对于应用窗口左上角的Y坐标，单位vp。  **ArkUI\_NodeComponentEvent.data[6].f32**：点击位置相对于应用屏幕左上角的X坐标，单位vp。  **ArkUI\_NodeComponentEvent.data[7].f32**：点击位置相对于应用屏幕左上角的Y坐标，单位vp。 |
@@ -617,7 +617,7 @@ ArkUI_NodeHandle OH_ArkUI_NodeEvent_GetNodeHandle(ArkUI_NodeEvent* event)
 
 | 类型 | 说明 |
 | --- | --- |
-| [ArkUI\_NodeHandle](capi-arkui-nativemodule-arkui-node8h.md) | ArkUI\_NodeHandle 触发该组件的组件对象。 |
+| [ArkUI\_NodeHandle](capi-arkui-nativemodule-arkui-node8h.md) | ArkUI\_NodeHandle 触发该事件的组件对象。 |
 
 ### OH\_ArkUI\_NodeEvent\_GetInputEvent()
 
@@ -3200,7 +3200,7 @@ int32_t OH_ArkUI_NativeModule_ConvertPositionToWindow(ArkUI_NodeHandle currentNo
 
 将点的坐标从指定节点的坐标系转换至当前窗口的坐标系。节点的坐标系考虑节点本身的变换，例如，节点A的变换效果为向左平移100，会使得其坐标系中的点的坐标也向左平移100。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/H_id4G0QSnqc00xvYc7-RA/zh-cn_image_0000002788469742.png?HW-CC-KV=V1&HW-CC-Date=20261114T005036Z&HW-CC-Expire=31536000000&HW-CC-Sign=826226ACB31F98A4C6E8128C6B1CAE70651A525EBEF718FFABB621EF8ACC6EB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/FJ_xd1p8Rc6wYtIBskjd0A/zh-cn_image_0000002820528081.png?HW-CC-KV=V1&HW-CC-Date=20261119T015031Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BD535E33287535411982FE6E4F78FEBE55C4B4F02E1FAABF49E2A27874E8BB5)
 
 如上图所示，将指定节点坐标系中的坐标(x0, y0)转换成窗口坐标系的坐标，结果为(x1, y1)。
 
@@ -3230,7 +3230,7 @@ int32_t OH_ArkUI_NativeModule_ConvertPositionFromWindow(ArkUI_NodeHandle targetN
 
 将点的坐标从当前窗口的坐标系转换至目标节点的坐标系。节点的坐标系考虑节点本身的变换，例如，节点A的变换效果为向左平移100，会使得其坐标系中的点的坐标也向左平移100。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/uTIVq8ghSNC3tbBBp8Io4Q/zh-cn_image_0000002817509231.png?HW-CC-KV=V1&HW-CC-Date=20261114T005036Z&HW-CC-Expire=31536000000&HW-CC-Sign=73C88DE45E6F9326ABA7223EE5F07A3275E7DFB886069965ADC9A258E2D855FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/LCB2b3s9T3mJ_egbJvbt3w/zh-cn_image_0000002820408083.png?HW-CC-KV=V1&HW-CC-Date=20261119T015031Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D1024B1D31FEC3E176723ECBA81111119B476A7F03A7B21E20C0133A7F6B11E)
 
 如上图所示，将窗口坐标系中的坐标(x1, y1)转换成目标节点坐标系的坐标，结果为(x0, y0)。
 

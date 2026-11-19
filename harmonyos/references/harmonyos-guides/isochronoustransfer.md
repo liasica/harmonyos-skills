@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/isochronoustr
 title: USB实时传输（ArkTS）
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB实时传输（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:48+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-19T09:48:18+08:00
+doc_updated_at: 2026-11-18
 content_hash: sha256:e4adb13cfe233b73d5c5b096f800cf63cc278d6fd60b68479d3de4f6c8fd6988
 ---
 

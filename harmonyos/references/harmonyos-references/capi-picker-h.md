@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-pick
 title: picker.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > picker.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:20+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cf4b65a8af6c0275b586312d741ab3b8ad03dcc59239fa7038a3d2f99e80304b
+scraped_at: 2026-11-19T09:51:37+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:222f2afb8292a536da75faee07ad2b671ad5b8e4e82d7d0b50b27ac397dfc821
 ---
 
 ## 概述
@@ -154,7 +154,7 @@ ArkUI_TextPickerRangeContentArray* OH_ArkUI_TextPickerRangeContentArray_Create(i
 
 | 参数项 | 描述 |
 | --- | --- |
-| int32\_t length | 指定ArkUI\_TextPickerRangeContentArray数组的长度。取值必须大于0；传入非正整数或创建失败时返回空指针。 |
+| int32\_t length | 指定ArkUI\_TextPickerRangeContentArray数组的长度。取值必须大于0；传入非正整数或创建失败时返回空指针。  **说明：**  建议取值不要超过10000，否则易出现因一次性申请内存过大导致内存不足。 |
 
 **返回：**
 

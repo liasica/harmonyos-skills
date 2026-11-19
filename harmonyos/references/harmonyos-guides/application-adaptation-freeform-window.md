@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-a
 title: 应用适配自由窗口
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 自由窗口 > 应用适配自由窗口
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:13+08:00
+scraped_at: 2026-11-19T09:47:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:701d3f94427c0233baf67cac22456f40d528835e83cdd427123f0dfdd29c6a4a
+content_hash: sha256:99e47f8b6fba8149b769488342b051b2154e36d08b4acef18334dc620bf10efe
 ---
 
 ## 场景介绍
@@ -324,7 +324,7 @@ content_hash: sha256:701d3f94427c0233baf67cac22456f40d528835e83cdd427123f0dfdd29
 
 示意图中，windowRect为窗口尺寸，类型为[Rect](../harmonyos-references/arkts-apis-window-i.md#rect7)；drawableRect为可绘制区域尺寸，类型为[Rect](../harmonyos-references/arkts-apis-window-i.md#rect7)；decorHeight为标题栏高度，类型为number，单位为vp；density为本窗口所处屏幕的系统显示大小缩放系数，类型为number；w为窗口宽度，类型为number，单位为px；h为窗口高度，类型为number，单位为px。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/kwPQpFXLSrmFHNvNDLSamg/zh-cn_image_0000002817426503.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=42F71BD1F09495A88CC134B872267FEA78AF47737F426AFE0D48227A0EB96160)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/92kKCYZtQvmUZWYZPhhNRQ/zh-cn_image_0000002791725440.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE62E3004F915E9A31C9B2A6D050F9953FA3A18D46AC0D0A67D312F089C2E245)
 
 典型场景及对应方案如下：
 
@@ -340,7 +340,7 @@ content_hash: sha256:701d3f94427c0233baf67cac22456f40d528835e83cdd427123f0dfdd29
 
 如果应用希望在窗口内有更大的可绘制区域，可以通过隐藏标题栏，并适配窗口三键的位置和尺寸。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/zGXG-qobR1SQ1-lCi1LeLQ/zh-cn_image_0000002788467084.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD49FF9281DBA12976658ED5E60B33CE61B7F5FD6FDD1A03C127B2871FF6DE3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/hqLZFG6fTQCh7eiBKsZHPA/zh-cn_image_0000002791565468.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0B873A5010A50A9032966F64041931728E926BBE9465FB31846DC983D287518)
 
 典型场景及对应方案如下：
 
@@ -472,11 +472,11 @@ content_hash: sha256:701d3f94427c0233baf67cac22456f40d528835e83cdd427123f0dfdd29
 
 下图表示不隐藏标题栏时，应用最顶部的布局区域（粉色区域）只能在标题栏之下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/nJDqsF2YSZCpNWCw0-6qow/zh-cn_image_0000002817506571.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4D3D212F67835CCA728D8FDBC799B7AC5ACBCB0CA4893A8159AF76E9774B5A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/pd4Ko49NQVC_KGA5NrFXwA/zh-cn_image_0000002820525421.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFB02329A77895BF2EB33A870CC9FD1B8BF2E0DDEF43E2F5F701A42AED13E09F)
 
 下图表示隐藏标题栏时，避让窗口三键后，应用最顶部可用于布局的区域（粉色区域）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/-4AnKVQbQ_6-IzZKs-cG5g/zh-cn_image_0000002788307142.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=12261E82F862E594A93561D84A0CDF56E1B61392EE51F002DD4578E389199CE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/t-RWB7ThRpShqqTitFKvLw/zh-cn_image_0000002820405421.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=7008726BF136B79AA66DAC11713B19E4951614BABDE9BAB569FA469A7D8ED143)
 
 ## 自由窗口状态下窗口进入全屏显示
 

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-wate
 title: ArkUI瀑布流渲染场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > ArkUI瀑布流渲染场景
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:04+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:147d91cad98141a434308255138f09a5b89f88df3ed3119c3ed0c341198a3ce9
+scraped_at: 2026-11-19T09:47:33+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:d7bf9991b310797c04f9abf24026f84c00cdca3905a4668e94b467272963fc65
 ---
 
-此处提供使用任务池[TaskPool](../harmonyos-references/js-apis-taskpool.md)提升[WaterFlow瀑布流](../harmonyos-references/ts-container-waterflow.md)渲染性能的开发指导。UI线程查询数据库数据，并将数据渲染到瀑布流组件，数据过大时会导致UI线程长时间等待，影响用户体验。因此，我们可以将数据查询操作放到子线程中，并通过TaskPool的接口返回数据给UI线程。
+此处提供使用任务池[TaskPool](../harmonyos-references/js-apis-taskpool.md)提升[WaterFlow瀑布流](../harmonyos-references/ts-container-waterflow.md)渲染性能的开发指导。UI线程查询数据库数据，并将数据渲染到瀑布流组件，数据过大时会导致UI线程长时间等待，影响用户体验。因此，可以将数据查询操作放到子线程中，并通过TaskPool的接口返回数据给UI线程。
 
 本示例说明以下场景：
 

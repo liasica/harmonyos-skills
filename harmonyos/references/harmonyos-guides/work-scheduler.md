@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/work-schedule
 title: 延迟任务(ArkTS)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 延迟任务(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:16+08:00
+scraped_at: 2026-11-19T09:47:54+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:a12b257be79549ab7bed9bbf649380af90cc4028ec05014130730a58042e1fd8
+content_hash: sha256:79d1cdd206d80ea3582bdf1a07b81cd2464166127c1a9d349a6640296b6e1c4f
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:a12b257be79549ab7bed9bbf649380af90cc4028ec05014130730a58042
 
 **图1** 延迟任务实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/VX2nPjzOR-OLVeXV8w19Ng/zh-cn_image_0000002788467158.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F8833E004C5C508D19CE8461F3B7A0B7440E162F632321755E361B694B784CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/fbCpqO8HQ5iUyH69Z9srUg/zh-cn_image_0000002791565542.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3BE3BFDAD4431273CF8F18BEE5A0ED912AA474F0D57D07454A4E2CE27AB9721)
 
 应用调用延迟任务接口添加、删除、查询延迟任务，延迟任务管理模块会根据任务设置的条件（通过[WorkInfo](../harmonyos-references/js-apis-resourceschedule-workscheduler.md#workinfo)参数设置，包括网络类型、充电类型、存储状态等）和系统状态（包括内存、功耗、设备温度、用户使用习惯等）统一决策调度时机。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_gesture.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_gesture.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:aa75a8b04352b71ec1843aa2974d52fbd08e266272b0f4c9613e7b7bb95bd202
+scraped_at: 2026-11-19T09:51:29+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:f5bbb325d603b859f611ece22fdfe55868fdbe375db89391c5424baf10f387a6
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ content_hash: sha256:aa75a8b04352b71ec1843aa2974d52fbd08e266272b0f4c9613e7b7bb95
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [ArkUI\_NativeGestureAPI\_1](capi-arkui-nativemodule-arkui-nativegestureapi-1.md) | ArkUI\_NativeGestureAPI\_1 | 提供创建敲击、长按、滑动、捏合、旋转、快滑手势及手势组的接口，并支持绑定手势、移除手势、设置手势打断回调和并行内部手势回调，用于配置和管理组件的触控交互识别与事件处理。 使用该模块配置手势时，推荐按以下流程操作：调用[createTapGesture](capi-arkui-nativemodule-arkui-nativegestureapi-1.md#createtapgesture)等接口创建手势识别器，调用[setGestureEventTarget](capi-arkui-nativemodule-arkui-nativegestureapi-1.md#setgestureeventtarget)注册手势事件回调，再调用[addGestureToNode](capi-arkui-nativemodule-arkui-nativegestureapi-1.md#addgesturetonode)将手势识别器绑定至组件节点；不再使用该手势时，先调用[removeGestureFromNode](capi-arkui-nativemodule-arkui-nativegestureapi-1.md#removegesturefromnode)解除节点绑定，再调用[dispose](capi-arkui-nativemodule-arkui-nativegestureapi-1.md#dispose)释放手势资源。对于手势竞争场景，可通过手势优先级、屏蔽模式或[setGestureInterrupterToNode](capi-arkui-nativemodule-arkui-nativegestureapi-1.md#setgestureinterruptertonode)配置响应策略；对于组件内部手势与外部自定义手势需要并行识别的场景，可调用[setInnerGestureParallelTo](capi-arkui-nativemodule-arkui-nativegestureapi-1.md#setinnergestureparallelto)设置并行内部手势事件回调。 |
-| [ArkUI\_NativeGestureAPI\_2](capi-arkui-nativemodule-arkui-nativegestureapi-2.md) | - | 定义手势模块接口集合，在[ArkUI\_NativeGestureAPI\_1](capi-arkui-nativemodule-arkui-nativegestureapi-1.md)的基础上扩展提供设置手势打断事件回调的能力，用于在手势处理过程中根据回调结果继续或打断手势。开发者可以通过[gestureApi1](capi-arkui-nativemodule-arkui-nativegestureapi-2.md#成员变量)访问基础手势接口，配合[setGestureInterrupterToNode](capi-arkui-nativemodule-arkui-nativegestureapi-2.md#setgestureinterruptertonode)实现完整的手势打断处理功能。 |
+| [ArkUI\_NativeGestureAPI\_2](capi-arkui-nativemodule-arkui-nativegestureapi-2.md) | ArkUI\_NativeGestureAPI\_2 | 定义手势模块接口集合，在[ArkUI\_NativeGestureAPI\_1](capi-arkui-nativemodule-arkui-nativegestureapi-1.md)的基础上扩展提供设置手势打断事件回调的能力，用于在手势处理过程中根据回调结果继续或打断手势。开发者可以通过[gestureApi1](capi-arkui-nativemodule-arkui-nativegestureapi-2.md#成员变量)访问基础手势接口，配合[setGestureInterrupterToNode](capi-arkui-nativemodule-arkui-nativegestureapi-2.md#setgestureinterruptertonode)实现完整的手势打断处理功能。 |
 | [ArkUI\_GestureRecognizer](capi-arkui-nativemodule-arkui-gesturerecognizer.md) | ArkUI\_GestureRecognizer | 提供手势组件实例对象定义，用于在ArkUI手势识别相关接口中表示手势识别器对象，帮助开发者理解和使用组件手势识别能力。 |
 | [ArkUI\_GestureInterruptInfo](capi-arkui-nativemodule-arkui-gestureinterruptinfo.md) | ArkUI\_GestureInterruptInfo | 提供手势打断信息类型对象定义，用于在手势打断场景中表示与打断处理相关的信息。关于手势打断信息的相关接口，请参见[native\_gesture.h](capi-native-gesture-h.md)。 |
 | [ArkUI\_GestureEvent](capi-arkui-nativemodule-arkui-gestureevent.md) | ArkUI\_GestureEvent | 提供手势事件数据类型对象定义，用于在手势事件处理过程中承载和传递手势事件相关数据，支持获取手势事件类型、坐标、时间戳等关键信息；适用于需要处理触摸手势交互的场景，如点击、长按、拖动、缩放等手势识别与响应；开发者可通过相关手势事件接口获取事件信息。 |

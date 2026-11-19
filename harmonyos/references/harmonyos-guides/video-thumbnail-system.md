@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-thumbna
 title: 基于系统能力获取视频缩略图
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 基于系统能力获取视频缩略图
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:01+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:ecf284027067d2d70c56bf98551e799f0f699b82e93c22e4d73634f5205f8261
+scraped_at: 2026-11-19T09:48:41+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:8449ebd0d22cc9a93e4348d738c70131ee25d0b8badcb8ea50b7312f942fd196
 ---
 
 ## 概述
@@ -77,7 +77,7 @@ content_hash: sha256:ecf284027067d2d70c56bf98551e799f0f699b82e93c22e4d73634f5205
 
 ### 实现效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/se_gzpo0Tje1M1NkdxItHQ/zh-cn_image_0000002817427055.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004800Z&HW-CC-Expire=31536000000&HW-CC-Sign=440B4F974BAA46099E39840A7D83EA745CB3088EFB2D3B5C178B24E0D4188D63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Uq-4Krp5T6q_0y6FZUg6aQ/zh-cn_image_0000002791725994.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014747Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E309B72CD574EECC3ADF7B13F50EE466B6DB84CC89FFC6981331EF51D8B92B8)
 
 ## 选取视频帧作为缩略图
 
@@ -140,7 +140,7 @@ HarmonyOS提供视频缩略图获取类[Interface (AVImageGenerator)](../harmony
    async fetchFrameByTime(time: number) {
      this.pixelMap = await this.avImageGenerator?.fetchFrameByTime(time,
        media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC, this.videoSize.photoSize).catch((error: BusinessError)=>{
-       hilog.error(0x0000, TAG, `release catch error, code: ${error.code}, message: ${error.message}`);
+       hilog.error(0x0000, TAG, `fetchFrameByTime catch error, code: ${error.code}, message: ${error.message}`);
        return undefined;
      });
    }
@@ -148,7 +148,7 @@ HarmonyOS提供视频缩略图获取类[Interface (AVImageGenerator)](../harmony
 
 ### 实现效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/vEtTEUvRTyW5amVzmN_2tQ/zh-cn_image_0000002788467636.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004800Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E182F790848A1055BE38FE9500BE740674938C82D2D38FF1DED3CE0E1938F31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/1V0EIkpIT8S73vAQH76zzw/zh-cn_image_0000002791566022.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014747Z&HW-CC-Expire=31536000000&HW-CC-Sign=11DACEA5662A1A490BC5CE13388B694F7488A231831962B2424EED09B0F73181)
 
 ## 常见问题
 

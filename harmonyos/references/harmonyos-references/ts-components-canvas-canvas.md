@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: Canvas
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > Canvas
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:19+08:00
+scraped_at: 2026-11-19T09:51:08+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:89afc1c8a46a02d82f792d106e4444f31f7d223fcc0d847f037598d159688413
+content_hash: sha256:b1f3b38efed2e13bdff65794decaf7257ac3bf4d3f56e641383abfe0f45e62ed
 ---
 
 提供画布组件，用于自定义绘制图形。
@@ -206,7 +206,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/zzjM6BUNRee-kWuCLi5Gbw/zh-cn_image_0000002788469148.png?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=87B172194C79489F44CB92CAD0A447A9333D9B3A43C9F255B3747F918F70A2D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/PlE9j6CeSiSmiAxRpyVs_A/zh-cn_image_0000002820527487.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=682FCCD655614E03E774A9A4F342B0B71B9842D6CCF16712775B37B4BFA7ACD4)
 
 ### 示例2（使用DrawingRenderingContext中的方法）
 
@@ -236,7 +236,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/UHW2c-cCRWWodHYAySVwpA/zh-cn_image_0000002817508637.png?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0B958362315798094E67B9E3241B661F5D9EB1177969ACB550FB1990F2AE955)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/NZBt0RNrSem_IxHmf8puuw/zh-cn_image_0000002820407489.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=791BFC2EC09C6921F8D190C3AEF804CE65994718872B8DE2AFBC3450CD303AEC)
 
 ### 示例3（使用attributeModifier动态设置Canvas组件的属性及方法）
 
@@ -324,7 +324,7 @@ struct attributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/G2AayJjqS8OYtdyDQIP4qQ/zh-cn_image_0000002788309206.png?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=522E7049E7D049B596ADDE28386CA372D8E675EBA23D6BE06A267A7CE5618253)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/F_F0te1gQJeLLlf9_vhNdw/zh-cn_image_0000002791727508.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFB4F45F7BDA4CE7D8008BB44FD18A5DFB41B3BF8F7C8A6490102573F1ED8C29)
 
 ### 示例4（创建不缓存指令Canvas并进行绘制）
 
@@ -372,4 +372,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/EpRpKjA5Q5KStV_hXC6Exg/zh-cn_image_0000002817428569.png?HW-CC-KV=V1&HW-CC-Date=20261114T004817Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D2EA87F71D93603B121217D8C7A1E96BB8C70035FFB7FD8F4A4C444D855ED32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/bxynSXXNSxyeQgmS1Rx31g/zh-cn_image_0000002791567536.png?HW-CC-KV=V1&HW-CC-Date=20261119T015012Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E6505736CFD158C3FDE5B0EFC31427CDB87B27CFF46807B65DD1C1F35FF5E3A)

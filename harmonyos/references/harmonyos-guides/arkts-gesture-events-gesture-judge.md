@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 手势冲突处理
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 手势冲突处理
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:06+08:00
+scraped_at: 2026-11-19T09:47:43+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2ff69f77897a4564f756a2ecb8e239c9d1e75240515c3d1524475f4eadd85695
+content_hash: sha256:61ffc06469452a374fc2a7af0e655070cca643cc881e997a5f8ede6d36e71be0
 ---
 
 手势冲突是指多个手势识别器在同一组件或重叠区域同时识别时产生竞争，导致识别结果不符合预期。常见冲突场景包括：
@@ -22,7 +22,7 @@ content_hash: sha256:2ff69f77897a4564f756a2ecb8e239c9d1e75240515c3d1524475f4eadd
 
 **图1** 自定义手势判定流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/k3wotOhETF6VTTa_im6rQg/zh-cn_image_0000002788306864.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E7ABBE403AA84E0B583779F55630C5F12ADB4E846EDFB35CB5562AED2BA7195)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/lvAMw-p0QaW0QYdN-A9CDw/zh-cn_image_0000002820405143.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=B27A5BC437F585C2494E3C8F319AB29DF1F05387411C1A8E1EC726BD203164CB)
 
 自定义手势判定涉及以下接口。
 
@@ -35,7 +35,7 @@ content_hash: sha256:2ff69f77897a4564f756a2ecb8e239c9d1e75240515c3d1524475f4eadd
 
 **图2** 示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/XuIkb2uZT_ejOc7wBE9AFg/zh-cn_image_0000002817426227.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AE067372EE83AD34F3B8419053FECC8BCEE494CF0B0DD2DDBB0BCB06772BA26)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/yqTuhXgKR0uVdQvujaMDFA/zh-cn_image_0000002791725164.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=69B9175C9FB74EA78ECC88B6E53733FE956B4BB0458BF58205ACC56DF21546C5)
 
 1. Image组件设置拖拽。
 
@@ -163,7 +163,7 @@ content_hash: sha256:2ff69f77897a4564f756a2ecb8e239c9d1e75240515c3d1524475f4eadd
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/UYQTYOSpThGAyX0OWWu1zw/zh-cn_image_0000002788466808.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=57E420D67CC3F84A6C02000F2C3507A763B2B4933574D6E517C2BC1095BB2E1F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/u3rIzpIxRzKYjnIpXxMvhQ/zh-cn_image_0000002791565192.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E306C20243086EE4209C88DFBBDD93118CE0AD6C6E3C21EB289F60FCFBEF235)
 
 ## 手势并行动态控制
 
@@ -171,7 +171,7 @@ content_hash: sha256:2ff69f77897a4564f756a2ecb8e239c9d1e75240515c3d1524475f4eadd
 
 **图3** 手势并行动态控制流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/ZDNsUF5xQbmcRZWpomlHkw/zh-cn_image_0000002817506295.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B5C89B0AF7FC703D3890C1C9D89607F1ED1F87721C292BC9160402BFCEBA4EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/pO2wPPAiRFafqkBWKWl-MQ/zh-cn_image_0000002820525145.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C3F3911A5EF7ADF111DB61795232E629281F9295356C2AD3FC3DB533F2BF305)
 
 手势并行动态控制的前提是手势识别成功，如果手势不成功则不会产生手势回调响应。
 
@@ -962,7 +962,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/QhKcFZ17QBuhF0nPxcWF4g/zh-cn_image_0000002788306866.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=2094E89AD8B7946C7D6B4C77FFF1DFC4D596DE1DE3D7C9ACFCA33C986B6D6515)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/zTDkxmIDQeyij_XfJ_FpvQ/zh-cn_image_0000002820405145.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A14D3385D158490E833DFB84D32F45A6330F6534D3232FB53A8EE1C0D537B7B)
 
 ## 自定义干预事件和手势的收集结果
 
@@ -978,7 +978,7 @@ struct Index {
 
 下面通过示例介绍如何实现自定义干预事件和手势的收集结果。示例中构建了如下组件树。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/9ZAYBLNITJS8Zu_up49bgQ/zh-cn_image_0000002817426229.png?HW-CC-KV=V1&HW-CC-Date=20261114T004527Z&HW-CC-Expire=31536000000&HW-CC-Sign=5081A055A7950301BA9FE95F616C3E7C7AC2A6123BF4BA91F33DDFFC9DB94837)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/clWCZI5YQ5ixUluzcLJIRQ/zh-cn_image_0000002791725166.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=07423BD7F8D842277531ED96C110E1D65B2366A19779C4EF9838981C88ADB5EE)
 
 Button1未绑定点击事件，Button2绑定了点击事件。当用户点击Button2时，innerColumn上的onGestureCollectIntercept回调会对触摸识别器进行干预，阻止触摸事件继续向outerColumn透传；点击Button1时则允许正常透传。
 

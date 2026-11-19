@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotati
 title: 相机旋转角度的术语
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 相机旋转 > 相机旋转角度的术语
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:58+08:00
+scraped_at: 2026-11-19T09:48:38+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c1f40a595a7be717e970fe222d3731179b845c7b3b7e8e4f6a90b016626c23c5
+content_hash: sha256:90f57b09352216d18559f5c2c4966357fee2b081a9c3231d7358ea3f2879f012
 ---
 
 在适配相机旋转角度中涉及设备方向、镜头角度、屏幕显示角度等多个术语，开发者可以了解相关概念，帮助理解框架的运作机制。
@@ -14,13 +14,13 @@ content_hash: sha256:c1f40a595a7be717e970fe222d3731179b845c7b3b7e8e4f6a90b016626
 
 **设备自然方向**指设备默认的使用方向，以手机为例，如图所示，手机的自然方向为竖屏且充电口向下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/CuE20uycTaW_FNfJdJScFw/zh-cn_image_0000002788467594.png?HW-CC-KV=V1&HW-CC-Date=20261114T004758Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BA3187183FF0D16C1B0FE4229BDB533BA6773A0B302333625C57CD7EC7BE265)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/07FQ260vQzCZfGvkwqCu8Q/zh-cn_image_0000002791565980.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=105EBBDFC9FBCC06262B4CCB288D8974B81D4D6CF688FB072C1A0FA61C8B0DEE)
 
 ## 屏幕显示方向
 
 **屏幕显示方向**指当前用户视角下，设备正确的显示方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Z-aF52seTXWhoXX8JAm7Yg/zh-cn_image_0000002817507083.png?HW-CC-KV=V1&HW-CC-Date=20261114T004758Z&HW-CC-Expire=31536000000&HW-CC-Sign=459F02AE3C265B11010172C1E71A322D42ABCB3B64958D115C92BAD624D46DBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/FTSlFs2ITsq-OjXFtlvlPg/zh-cn_image_0000002820525933.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=A14DEC405A519A80AFE68E23AE7E9BD2DD580FB7515872E3468BAEFF04D4FA7B)
 
 ## 屏幕旋转角度
 
@@ -28,7 +28,7 @@ content_hash: sha256:c1f40a595a7be717e970fe222d3731179b845c7b3b7e8e4f6a90b016626
 
 如图所示，图示夹角即为屏幕旋转角度，可通过[OH\_NativeDisplayManager\_GetDefaultDisplayRotation](../harmonyos-references/capi-oh-display-manager-h.md#oh_nativedisplaymanager_getdefaultdisplayrotation)获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/AfR6WMn2QaeBWhPgcVyANg/zh-cn_image_0000002788307652.png?HW-CC-KV=V1&HW-CC-Date=20261114T004758Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCDE86A233C10E4A560EDF11C67C76DAB25AB155563DC03EB8292B3A1767A483)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/bav9AO-YTG2p8fwb-HjsDg/zh-cn_image_0000002820405933.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=89E4A27158B925B16B6273141200A57744F04A80B836429347579FBB44C2C434)
 
 ## 相机镜头安装角度
 
@@ -38,11 +38,11 @@ content_hash: sha256:c1f40a595a7be717e970fe222d3731179b845c7b3b7e8e4f6a90b016626
 
 此时图像需要顺时针旋转90度，才能与设备自然方向保持一致，所以**后置相机的镜头角度为90度**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/JXSBryMaSAiTHH_8SaaAZQ/zh-cn_image_0000002817427015.png?HW-CC-KV=V1&HW-CC-Date=20261114T004758Z&HW-CC-Expire=31536000000&HW-CC-Sign=1615FA963CEC1F673EFAA48DBE58F4F66DD2D3D52213BE37E819D6064150A681)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/3Iu2GAKmSOqTFYxDyfaJcQ/zh-cn_image_0000002791725954.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBBF482532C4D0C5164AC2AF4F14E04085D37C921128491000EB0E2CB3327068)
 
 而手机前置镜头，是朝向使用者的，当手机在竖屏方向使用前置相机镜头拍摄时，出图方向与后置出图方向互为镜像，如下图所示，**前置相机的镜头角度为270度**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/FJNIX5IKQg2fiXm5Rt9SHQ/zh-cn_image_0000002788467596.png?HW-CC-KV=V1&HW-CC-Date=20261114T004758Z&HW-CC-Expire=31536000000&HW-CC-Sign=381BA1AEE598590397944AB9A4BB9B546C2BC991687C83BD9B78D13B1B7592EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/1AV-MoKfQ0S194z5SnvOEQ/zh-cn_image_0000002791565982.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=D920FECAF852B9E784EB3CD907A46068F3B1F90A1252DC29CEE830198CE8E7F8)
 
 ## 预览旋转角度
 

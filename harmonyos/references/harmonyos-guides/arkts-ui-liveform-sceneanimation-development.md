@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-live
 title: 场景动效类型互动卡片开发指导
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 互动卡片开发 > 场景动效类型互动卡片开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:19+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:d975a77239618fc4814a9697ce70c7885a9700993d996ab7e2902d47baaed08f
+scraped_at: 2026-11-19T09:47:57+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:ae53f3177c04f14d7920f4005a0455bc48fd16b3262e82e5681b3848d5925434
 ---
 
-从API version 20开始，场景动效类型互动卡片支持在特定场景下触发互动卡片的特有效果。例如，开发者可以选择将动效渲染区域扩展到卡片自身的渲染区域之外，营造“破框”效果。本文档提供了场景动效类型互动卡片的开发指导，包括场景动效类型互动卡片概念、约束和限制、卡片非激活态、激活态UI界面开发和卡片配置文件开发。
+从API version 20开始，场景动效类型互动卡片支持在特定场景下触发互动卡片的特有效果。例如，开发者可以选择将动效渲染区域扩展到卡片自身的渲染区域之外，营造“破框”效果。本文档提供了场景动效类型互动卡片的开发指导，包括场景动效类型互动卡片概念、约束与限制、卡片非激活态、激活态UI界面开发和卡片配置文件开发。
 
 ## 基本概念
 
@@ -20,11 +20,11 @@ content_hash: sha256:d975a77239618fc4814a9697ce70c7885a9700993d996ab7e2902d47baa
 
 **图1** 互动卡片状态切换说明
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/clCth9NiSzG7HgQi0W_K0g/zh-cn_image_0000002788307282.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EF229FE1096683D2B63A30F516198754D3405BF152578E9CB3EA78F07B20F3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/k73beGjYSqGQsw-JhlEX9Q/zh-cn_image_0000002820405561.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB96D36DE22EF8EC6E6E29A36CA3164C4D5AE8608DD7181B64AB2D4799F09EE2)
 
 **图2** 互动卡片动效触发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/HETm4u3uQ_644KFQrZjq7Q/zh-cn_image_0000002817426645.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=81006D71D9BD5BDCB08C1E4D8061BD89B4747B74F12295304C1BE9DC7D18CD95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/jtC8ItkcR06cy03x1cJecw/zh-cn_image_0000002791725582.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=53DF43697A83D0E5B809883EDB59CBDD4137992E6A16D076360236143DC8DE37)
 
 ## 实现原理
 
@@ -32,17 +32,17 @@ content_hash: sha256:d975a77239618fc4814a9697ce70c7885a9700993d996ab7e2902d47baa
 
 **图3** 点击触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/s600xTI5RfWeLZ6sgztFAw/zh-cn_image_0000002788467226.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3208AFDA3B36A4D336DC1B0899AB35A7FB21EEC2FB5264DC5E4D586A9F5DB69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/DYbPjtagQfu6nBUJSXpzOw/zh-cn_image_0000002791565610.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=F627863B68EED479BEDF1F2764C54ABE0843E05240144CD7CEF4F1B810B0B125)
 
 **图4** 定时定点触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/49vDhKF6QRSV0LXQ0ID1ZQ/zh-cn_image_0000002817506715.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=21F61351C996BC59952DD08F3B76E571A7CF48B365FC48A29B365EDDB0A98018)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/RRIMCrSsQACC1RHr8AFJrw/zh-cn_image_0000002820525563.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E3A69BF2C886ECEB1AB7B0AE5A3590B9C95E648338B77ED3757FA9870D07681)
 
 **图5** 摇一摇触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/qmxctWAJSiidglVOW3aHdQ/zh-cn_image_0000002788307284.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=70BEFD628F4A70415D9AB0BD3EC00160F506A35809140452BE0CCDD41E7267C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/-hLxgA3mSa6evgLKCJHhCg/zh-cn_image_0000002820405563.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=D561C44DEB3D7F530F3E6FE7AF9B7C24AF37AA7F4D622F94EEAB37E765602DB7)
 
-## 约束和限制
+## 约束与限制
 
 ### 支持的场景
 
@@ -65,7 +65,7 @@ content_hash: sha256:d975a77239618fc4814a9697ce70c7885a9700993d996ab7e2902d47baa
 
 **图6** 互动卡片动效区域申请规则说明
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/LQzwh36yT3Kg6JiwFnrK_w/zh-cn_image_0000002817426647.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB7CD4A72A660C7C450BDE6F57A38AD15344325AFBED33EDC91AE91698812F6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/UlhQhaBoQueNkO0_42SlFA/zh-cn_image_0000002791725584.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=5954DD5DFEEB359ABBFBF016D086259A8D4405AFBAE8FDD23277700FB0F2EC4F)
 
 例如：某设备上一个2\*2卡片宽度为158vp，高度为158vp。对应上图则有：
 
@@ -75,7 +75,7 @@ content_hash: sha256:d975a77239618fc4814a9697ce70c7885a9700993d996ab7e2902d47baa
 
 因此，以A点为原点，向右为X轴正方向，向下为Y轴正方向，图6中E点的合法坐标可以是（-20，-20），EF边长合法值可以是200vp，EH边长合法值可以是200vp。
 
-互动卡片可以通过调用[formProvider.getFormRect](../harmonyos-references/js-apis-app-form-formprovider.md#formprovidergetformrect20)接口获取卡片在窗口中的尺寸及相对坐标位置信息。卡片提供方以此计算动效申请范围，坐标计算时，以上图A点为（0，0）点，计算矩形EFGH对应参数，单位为vp。
+互动卡片可以通过调用[formProvider.getFormRect](../harmonyos-references/js-apis-app-form-formprovider.md#formprovidergetformrect20)接口获取卡片相对屏幕左上角的位置和尺寸信息。卡片提供方以此计算动效申请范围，坐标计算时，以上图A点为（0，0）点，计算矩形EFGH对应参数，单位为vp。
 
 调用[formProvider.requestOverflow](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderrequestoverflow20)接口时，[overflowInfo](../harmonyos-references/js-apis-app-form-forminfo.md#overflowinfo20)中描述的互动卡片动效渲染区域（矩形EFGH）需要满足：
 
@@ -509,4 +509,4 @@ content_hash: sha256:d975a77239618fc4814a9697ce70c7885a9700993d996ab7e2902d47baa
 
 以下是按照本文档代码示例开发而成的效果demo，demo执行动效时，点击按钮，将调用 [formProvider.cancelOverflow](../harmonyos-references/js-apis-app-form-formprovider.md#formprovidercanceloverflow20) 接口，打断当前破框动效，卡片切换为非激活态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/HLT1Is5zT6KD3bPckrTgow/zh-cn_image_0000002788467228.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=6987FED5FA1287478DE70D9896C5A0E534ACC559F4BCFDE7091CC9F4B8D2984E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/b2IeKHXDRc6Wz_hX_60v0g/zh-cn_image_0000002791565612.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAC17C9CD08079413FD2FCBFE45C43B9ED9DD0F01061790296E1FB12FF671D53)

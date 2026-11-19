@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_interface_xcomponent.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_interface_xcomponent.h
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:39+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:42fbb3af1b7a4eeedaa1bc324158e8ae756cea2e49659af41c6ecec38cc2f625
+scraped_at: 2026-11-19T09:51:28+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:a57eddb0055ade231f7af56954cd8a84c1876304053e9832f52850b1b1469293
 ---
 
 ## 概述
@@ -135,8 +135,8 @@ content_hash: sha256:42fbb3af1b7a4eeedaa1bc324158e8ae756cea2e49659af41c6ecec38cc
 | [int32\_t OH\_ArkUI\_XComponent\_RegisterOnFrameCallback(ArkUI\_NodeHandle node,void (\*callback)(ArkUI\_NodeHandle node, uint64\_t timestamp, uint64\_t targetTimestamp))](capi-native-interface-xcomponent-h.md#oh_arkui_xcomponent_registeronframecallback) | 为此XComponent组件实例注册帧回调函数，并使能每帧回调此函数。 |
 | [int32\_t OH\_ArkUI\_XComponent\_UnregisterOnFrameCallback(ArkUI\_NodeHandle node)](capi-native-interface-xcomponent-h.md#oh_arkui_xcomponent_unregisteronframecallback) | 为此XComponent组件实例取消注册帧回调函数，并关闭每帧回调此函数。 |
 | [int32\_t OH\_ArkUI\_XComponent\_SetNeedSoftKeyboard(ArkUI\_NodeHandle node, bool needSoftKeyboard)](capi-native-interface-xcomponent-h.md#oh_arkui_xcomponent_setneedsoftkeyboard) | 为此XComponent组件实例设置是否需要软键盘。 |
-| [ArkUI\_AccessibilityProvider\* OH\_ArkUI\_AccessibilityProvider\_Create(ArkUI\_NodeHandle node)](capi-native-interface-xcomponent-h.md#oh_arkui_accessibilityprovider_create) | 基于此XComponent实例创建[ArkUI\_AccessibilityProvider](capi-arkui-accessibility-arkui-accessibilityprovider.md)实例。 |
-| [void OH\_ArkUI\_AccessibilityProvider\_Dispose(ArkUI\_AccessibilityProvider\* provider)](capi-native-interface-xcomponent-h.md#oh_arkui_accessibilityprovider_dispose) | 销毁由Native接口[OH\_ArkUI\_AccessibilityProvider\_Create](capi-native-interface-xcomponent-h.md#oh_arkui_accessibilityprovider_create)创建的[ArkUI\_AccessibilityProvider](capi-arkui-accessibility-arkui-accessibilityprovider.md)实例。 |
+| [ArkUI\_AccessibilityProvider\* OH\_ArkUI\_AccessibilityProvider\_Create(ArkUI\_NodeHandle node)](capi-native-interface-xcomponent-h.md#oh_arkui_accessibilityprovider_create) | 基于此XComponent实例创建[ArkUI\_AccessibilityProvider](capi-arkui-accessibility-arkui-accessibilityprovider.md)实例。仅支持UI线程调用。 |
+| [void OH\_ArkUI\_AccessibilityProvider\_Dispose(ArkUI\_AccessibilityProvider\* provider)](capi-native-interface-xcomponent-h.md#oh_arkui_accessibilityprovider_dispose) | 销毁由Native接口[OH\_ArkUI\_AccessibilityProvider\_Create](capi-native-interface-xcomponent-h.md#oh_arkui_accessibilityprovider_create)创建的[ArkUI\_AccessibilityProvider](capi-arkui-accessibility-arkui-accessibilityprovider.md)实例。仅支持UI线程调用。 |
 | [void OH\_ArkUI\_SurfaceCallback\_SetSurfaceShowEvent(OH\_ArkUI\_SurfaceCallback\* callback, void (\*onSurfaceShow)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder))](capi-native-interface-xcomponent-h.md#oh_arkui_surfacecallback_setsurfaceshowevent) | 为此[OH\_ArkUI\_SurfaceCallback](capi-oh-nativexcomponent-native-xcomponent-oh-arkui-surfacecallback.md)实例设置Surface显示回调，该回调在应用窗口已经从后台回到前台时触发。 |
 | [void OH\_ArkUI\_SurfaceCallback\_SetSurfaceHideEvent(OH\_ArkUI\_SurfaceCallback\* callback, void (\*onSurfaceHide)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder))](capi-native-interface-xcomponent-h.md#oh_arkui_surfacecallback_setsurfacehideevent) | 为此[OH\_ArkUI\_SurfaceCallback](capi-oh-nativexcomponent-native-xcomponent-oh-arkui-surfacecallback.md)实例设置Surface隐藏回调，该回调在应用窗口已经从前台进入后台时触发。 |
 | [ArkUI\_XComponentSurfaceConfig\* OH\_ArkUI\_XComponentSurfaceConfig\_Create()](capi-native-interface-xcomponent-h.md#oh_arkui_xcomponentsurfaceconfig_create) | 创建XComponent组件的[ArkUI\_XComponentSurfaceConfig](capi-oh-nativexcomponent-native-xcomponent-arkui-xcomponentsurfaceconfig.md)对象。 |
@@ -150,7 +150,6 @@ content_hash: sha256:42fbb3af1b7a4eeedaa1bc324158e8ae756cea2e49659af41c6ecec38cc
 | --- | --- |
 | const uint32\_t OH\_XCOMPONENT\_ID\_LEN\_MAX = 128 | ArkUI XComponent的id最大长度。  **起始版本：** 8 |
 | const uint32\_t OH\_MAX\_TOUCH\_POINTS\_NUMBER = 10 | 触摸事件中的可识别的触摸点个数最大值。  **起始版本：** 8 |
-| OH\_NATIVE\_XCOMPONENT\_MAX\_TOUCH\_POINTS\_NUMBER 10 | 触摸事件中的可识别的触摸点个数最大值。  **起始版本：** 8 |
 
 ## 枚举类型说明
 
@@ -1986,7 +1985,7 @@ ArkUI_AccessibilityProvider* OH_ArkUI_AccessibilityProvider_Create(ArkUI_NodeHan
 
 **描述：**
 
-基于此XComponent实例创建[ArkUI\_AccessibilityProvider](capi-arkui-accessibility-arkui-accessibilityprovider.md)实例。
+基于此XComponent实例创建[ArkUI\_AccessibilityProvider](capi-arkui-accessibility-arkui-accessibilityprovider.md)实例。仅支持UI线程调用。
 
 **起始版本：** 20
 
@@ -2010,7 +2009,7 @@ void OH_ArkUI_AccessibilityProvider_Dispose(ArkUI_AccessibilityProvider* provide
 
 **描述：**
 
-销毁由Native接口[OH\_ArkUI\_AccessibilityProvider\_Create](capi-native-interface-xcomponent-h.md#oh_arkui_accessibilityprovider_create)创建的[ArkUI\_AccessibilityProvider](capi-arkui-accessibility-arkui-accessibilityprovider.md)实例。
+销毁由Native接口[OH\_ArkUI\_AccessibilityProvider\_Create](capi-native-interface-xcomponent-h.md#oh_arkui_accessibilityprovider_create)创建的[ArkUI\_AccessibilityProvider](capi-arkui-accessibility-arkui-accessibilityprovider.md)实例。仅支持UI线程调用。
 
 **起始版本：** 20
 

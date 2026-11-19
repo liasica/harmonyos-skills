@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdr-single-to
 title: 单层HDR图片转换双层
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编辑和处理 > 使用ImageProcessing处理图片 > 单层HDR图片转换双层
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:59+08:00
+scraped_at: 2026-11-19T09:48:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6df66409e7c858898ab62e7fc082e7efb7cd8db38edfaf1ea4e90a8d051edbf3
+content_hash: sha256:79d141bb718e0c494bd158e9e9ddb881e74b886646187050e057db6f3c7a3a20
 ---
 
 调用者可以调用本模块提供的[C API接口](../harmonyos-references/capi-imageprocessing.md)，实现Decompose单层HDR图片转双层HDR图片。
 
 该能力常用于图片分享中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/CIRHkXb2SaCH5fSYqE16fw/zh-cn_image_0000002788467614.png?HW-CC-KV=V1&HW-CC-Date=20261114T004617Z&HW-CC-Expire=31536000000&HW-CC-Sign=88E43089765FA0E8E0FEC5C4F5762E29CC7D266A47B65089F5E4E04440680C84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/lOfb-7QtRYmFXd2bslh4oA/zh-cn_image_0000002791566000.png?HW-CC-KV=V1&HW-CC-Date=20261119T014746Z&HW-CC-Expire=31536000000&HW-CC-Sign=87D40E0858C83D0CD150F25F24CFD5ACA2597DB8E7440B0AEC9DBA45F8BA709B)
 
 ## 规格说明
 

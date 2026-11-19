@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-native-s
 title: Native侧实现文件访问
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 文件基础服务开发实践 > Native侧实现文件访问
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:17+08:00
+scraped_at: 2026-11-19T09:47:55+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:491a5c76f4b38c3dace95b8744d7a2066c37e7b1f82041df4c84574d85716273
+content_hash: sha256:6b347ca792cb6a44b6f23b15ee8d24ee61d6d5f679eae1372c2c30b565cad1cc
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:491a5c76f4b38c3dace95b8744d7a2066c37e7b1f82041df4c84574d857
 
 **图 1** ArkTS侧获取沙箱路径传递给Native侧访问文件示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/7cEy0UVbRzCGBS4ZuMYh7Q/zh-cn_image_0000002817426605.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CF3730A7C0806A9F6BC90766686692D4E250BDFD7A77DFEE1F898EAB1E49A69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/07NRfPnfSuaZgynf6dpwZA/zh-cn_image_0000002791725542.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F0E57B2D3BACCBED6BC9CE6D9CFE2EE54D57FF1D14DC5FF410BD8669B09C21E)
 
 **实现方案**
 
@@ -113,15 +113,15 @@ content_hash: sha256:491a5c76f4b38c3dace95b8744d7a2066c37e7b1f82041df4c84574d857
 
 **图 2** ArkTS侧传递沙箱路径到Native侧方案效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/j0ZO8GEGRVC7nbfPVKlmaA/zh-cn_image_0000002788467186.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC277291535E8949D868C2DA404FCB18D1E97D4B998D5EDF8554069BEB45118D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Y5vU1oDOQ9q0WixqHEgfEg/zh-cn_image_0000002791565570.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E902BD06E107B1FBACB050261F65DC2E918F7D1BE456A0813D7B66033B66861)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/0VR2beB9QdCbT14KQVb4Yg/zh-cn_image_0000002817506675.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E25C15D729AA2EE56B9BA454B67CC3C2704DC3F80D2FEF9110928544B52EC8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/3LMZXWPjT6i-rSJCv8QW4A/zh-cn_image_0000002820525523.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=74793CCE3D06D43DD29527CC07164744D542B3431833EB9A989BE8395DC99A9A)
 
 ### 方案二：Native侧直接拼接沙箱路径访问文件
 
 **图 3** Native侧直接拼接沙箱路径访问文件示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/X_MH4232SLCn8IF3DxC0HA/zh-cn_image_0000002788307244.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A7E498DC6D83B89A3CCEB3E014B6075EE2FD462B9D6CC05FE736B17136C895A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/1zllWetLTTa0caX6P_Otgg/zh-cn_image_0000002820405523.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3B5DB8C6FFAFE6EB500947E354C69AAC45ACD3ECFB2F360AA898321882C0DB3)
 
 **实现方案**
 
@@ -206,9 +206,9 @@ content_hash: sha256:491a5c76f4b38c3dace95b8744d7a2066c37e7b1f82041df4c84574d857
 
 **图 4** Native侧拼接沙箱路径方案效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/yIDFNBuDQoG1wfpcde7mPA/zh-cn_image_0000002817426607.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=967C8CF072922A35C33975C790F76C42F0BE51E37808564765513007B4C589F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/p-CxolbxRKq_0LemihZR6g/zh-cn_image_0000002791725544.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=58BD43875476F629C9977727E68F1DB000EC46B5FB27A365CF8CCF947AF4250D)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/CqGDl-a5Rui_NGyP4KPVnQ/zh-cn_image_0000002788467188.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=D308DB09FA01342F0CB3291F838D453B99D7729A0FCC4445A8B77BEE81FA8CD9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/klS_yo_ORw-IgVK5kw3O6g/zh-cn_image_0000002791565572.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=379CF723D92A217F8F6D9BAD8795D471EB9FC6817A68517696C765CD0FF42E60)
 
 ## 访问公共目录文件
 
@@ -225,7 +225,7 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
 
 **图 7** Native侧写入公共目录文件场景示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/gneXkhgvQ-CkbMWAGxjlgQ/zh-cn_image_0000002817506677.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=76A6352B63EBD6B2DFCA8D4EE62B990EEBF416A5CD31DE8E680F2AA8C8058DDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/LHvQsDtiSEuXnXoR5f4sGA/zh-cn_image_0000002820525525.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=95F9F59514C55749D2304888AE8ACC1AAC7512E303EA1E37EEC4F45477AF56D8)
 
 **实现方案**
 
@@ -343,9 +343,9 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
 
 **图 8** Native侧写公共目录文件场景方案效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/cyDGz4qIQbC8cXj9AtPzMw/zh-cn_image_0000002788307246.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B98A225CC4125AAA6C88FCD0B2C5AC5997E49782C9BC0DA988F22BAFCFEBFA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/410k1elyQpuKHiv1nK1LKA/zh-cn_image_0000002820405525.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=007087E7E64F089EF7CE986FEFE7E00BABA947842DA3B7F8163F8ADF65457695)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/OE_vZDV6Q0KSd6iZhOBdtA/zh-cn_image_0000002817426609.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=7242E006DD5035CA0470668702CD7CF5A90856DAB1D839BCC6DFC6BF644E40B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/xeSgzdQER8ebBcrliC2Csw/zh-cn_image_0000002791725546.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=B787B3C2FA1E78DF44A5116D1D626876C0CA4B17DA7BB65365EE0F1FB342F4F0)
 
 ### 场景二：从公共目录文件中读取数据
 
@@ -355,7 +355,7 @@ ArkTS侧通过文件picker选择文件，并传递文件描述符到Native侧，
 
 **图 9** Native侧读取公共目录文件场景示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/MvGNbcdrRyq1oj-fB6N_7g/zh-cn_image_0000002788467190.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CB56C110F64EFEF4BF064BC61D217AC909D2CEE6482F622C9FFF9340D47999B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/_0ZQ9FBCRyKAaj3oOteYvw/zh-cn_image_0000002791565574.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EF2F86ECE76E5CD82217CE2BFA152C907629ECE8B220B385F302AD78136ECC9)
 
 **实现方案**
 
@@ -462,9 +462,9 @@ ArkTS侧通过文件picker选择文件，并传递文件描述符到Native侧，
 
 **图 10** Native侧读公共目录文件场景方案效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/UuMmRwOXRZmOvPgrpzcdMQ/zh-cn_image_0000002817506679.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=F77DC29E74BFC6D05A24B0F1DA35A4C836523699A3ACC190E05DF28FC2A33E7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/bcY3NQZvSnaGxLQG-kSSnw/zh-cn_image_0000002820525527.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=9518F3EF4DFF8AED1BA02875F194916C6674CAEA41E40E5E875F42A9E6530240)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/1ch3ipemQuGaTFY8J6mhCw/zh-cn_image_0000002788307248.png?HW-CC-KV=V1&HW-CC-Date=20261114T004538Z&HW-CC-Expire=31536000000&HW-CC-Sign=D636822B9AE7ADEC9E059CB42504C8555E5FA3BBBB55E22D05CB6933132B5395)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/O1HlCGZrR7-YHSU7wuqpzA/zh-cn_image_0000002820405527.png?HW-CC-KV=V1&HW-CC-Date=20261119T014704Z&HW-CC-Expire=31536000000&HW-CC-Sign=91974C8CA137C18262B499FD0F1040A334B871983FA09309E81AFA5342EEA367)
 
 ## 示例代码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation跨包路由
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation跨包路由
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:02+08:00
+scraped_at: 2026-11-19T09:47:39+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f47c5c995f41dcafac37d97cf2b83f337e3022f79c77fdcd52beebfb317881f3
+content_hash: sha256:a241022ed20ba50e0d9177a12708d0d68664292c292e1b20bd00c0caa0764f24
 ---
 
 Navigation提供[系统路由表](arkts-navigation-cross-package.md#系统路由表)和[自定义路由表](arkts-navigation-cross-package.md#自定义路由表)两种实现方式，通过路由表的配置可以完成本包和跨包的页面跳转。
@@ -348,7 +348,7 @@ export struct pageOneTmp {
 
    **图1** HSP、HAR编译产物示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/dKARHfY4TcGk5hT6-Gy3Tg/zh-cn_image_0000002788466436.png?HW-CC-KV=V1&HW-CC-Date=20261114T004524Z&HW-CC-Expire=31536000000&HW-CC-Sign=3137E7B98C8D3B737796A1773A5CFED8938EE00318044277DDA38EA8423252C0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/TuC7s-xfRGqVaYODTTuaEQ/zh-cn_image_0000002791564820.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B7DB25AF0C18CB6F0C2335E31A0B9763CDD9F4A9A7238ED2BF86D9A01D7970F)
 
    在HAP的oh-package.json5配置文件中配置对HAR与HSP的依赖。
 
@@ -371,4 +371,4 @@ export struct pageOneTmp {
 
    **图2** Navigation跨包跳转示例
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/9rER30b-TZ6IWRR0DZkREQ/zh-cn_image_0000002817505923.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004524Z&HW-CC-Expire=31536000000&HW-CC-Sign=44C0874BE8BAEB68CB966045A8AE7505EB3A2D814E9C8DB67C30481205FC5F35)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/GnzT6JCqTIuCZdqeRlKVnQ/zh-cn_image_0000002820524773.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AEAE608900DD12864EA46D61D61EE71FF7D71DB3F2425B0698660333826AAF1)

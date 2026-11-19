@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: PopupV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > PopupV2
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:26+08:00
+scraped_at: 2026-11-19T09:51:15+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:1988634aa898a67bba43780a683d0606f68528536e200cd9c1be9ccd936d0f25
+content_hash: sha256:82e10be2f289738b660a1a88cbaf33b7a5a3dabe07ad6fb4b2e1cb282ce53547
 ---
 
 PopupV2用于显示特定样式的气泡，适用于提示信息、操作确认或信息通知等需要用户关注或响应的场景。
@@ -137,7 +137,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/EANj2OW6S4m-FYp10zpySg/zh-cn_image_0000002788309402.png?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC9413AD61C57DCE2A53C3E7D79FF9F48695215C053F6F0ED3F3D11516F83BC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/DrWP3oU5T2-V1TPbgRC0Vg/zh-cn_image_0000002791727704.png?HW-CC-KV=V1&HW-CC-Date=20261119T015115Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4CF44BD530C674336268F2EC93A705935FDDDC74CEFB0A6EF80145A7804691E)
 
 ### 示例2（设置布局方向）
 
@@ -192,7 +192,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/UJHZ0GzjQqCD3bF_Kafwtw/zh-cn_image_0000002817428765.png?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=6886C543CC13B4BB09242431480F4360E124941DBD0FFBA514B8FFA31BBF14A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/QeYB8GV3TYKtZ1deFx8avg/zh-cn_image_0000002791567732.png?HW-CC-KV=V1&HW-CC-Date=20261119T015115Z&HW-CC-Expire=31536000000&HW-CC-Sign=961312A3C5ACD8C9BB3CBAE0D38E223B5F6A64C13C2966B6C50FED3F03F77299)
 
 ### 示例3（设置自定义宽度）
 
@@ -248,4 +248,4 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/ZmuQKxKvT1ylPMQu79begw/zh-cn_image_0000002788469346.png?HW-CC-KV=V1&HW-CC-Date=20261114T004823Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F3B3367133D030CCEB9B98C0D25AC3EDE721E76157A21EC2EED35FE663C5016)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/2VDVLD0rTp2jgGzg-ukNsQ/zh-cn_image_0000002820527685.png?HW-CC-KV=V1&HW-CC-Date=20261119T015115Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5EB09A363355E08472B48CBB7E45B89C18593B464AC54E91F223951F6C5E121)

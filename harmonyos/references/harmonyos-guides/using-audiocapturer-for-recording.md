@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-audioca
 title: 使用AudioCapturer开发音频录制功能(ArkTS)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发麦克风录制(外录)功能 > 使用AudioCapturer开发音频录制功能(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:52+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:b631610ef01b754036b1dad9c8072d054d6995972a04afee266125663aeae431
+scraped_at: 2026-11-19T09:48:32+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:20dcbae6c6dc1f4983bfb8c033344ed115698bb15cf1e3ffd46c0396534e4a2d
 ---
 
 AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音频数据，适合有音频开发经验的开发者实现更灵活的录制功能。
@@ -22,7 +22,7 @@ AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音�
 
 **图1** AudioCapturer状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/HLlKctotSWCSl0J8xHg8hg/zh-cn_image_0000002817426941.png?HW-CC-KV=V1&HW-CC-Date=20261114T004752Z&HW-CC-Expire=31536000000&HW-CC-Sign=9942FDEE0964EF401239C895D4E4FED3FDF89F709DACEDB3739D0C6366425010)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/t1ZhF_7mQ7mUWEWgxnMNXg/zh-cn_image_0000002791725880.png?HW-CC-KV=V1&HW-CC-Date=20261119T014832Z&HW-CC-Expire=31536000000&HW-CC-Sign=61BB55C99F47B3E2B645CB6AF3ADA4950CCD1DDFE2F6F4DE5F93C184AA5B37B1)
 
 ### 开发步骤及注意事项
 
@@ -85,7 +85,7 @@ AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音�
 
    ```typescript
    import { BusinessError } from '@kit.BasicServicesKit';
-   import { fileIo as fs } from '@kit.CoreFileKit';
+   import { fileIo } from '@kit.CoreFileKit';
    import { common, abilityAccessCtrl, PermissionRequestResult } from '@kit.AbilityKit';
 
    // ...
@@ -99,7 +99,7 @@ AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音�
      pendingRecordingWrite = Promise.resolve();
      let path = context.cacheDir;
      let filePath = path + '/S16LE_2_48000.pcm';
-     recordingFile = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+     recordingFile = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
      onReadData = (buffer: ArrayBuffer) => {
        let recordingBuffer = buffer.slice(0);
        let writeOffset = writtenBytes;
@@ -109,7 +109,7 @@ AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音�
          length: recordingBuffer.byteLength
        }
        pendingRecordingWrite = pendingRecordingWrite.then(async () => {
-         await fs.write(recordingFile.fd, recordingBuffer, options);
+         await fileIo.write(recordingFile.fd, recordingBuffer, options);
        }).catch((error: BusinessError) => {
          console.error(`${TAG}: Write recording data failed, code: ${error.code}, message: ${error.message}`);
        });
@@ -163,7 +163,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
       console.error(`${TAG}: Capturer release failed, code: ${error.code}, message: ${error.message}`);
     } finally {
       await pendingRecordingWrite;
-      fs.closeSync(recordingFile.fd);
+      fileIo.closeSync(recordingFile.fd);
     }
 ```
 
@@ -174,7 +174,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 ```typescript
 import { audio } from '@kit.AudioKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { fileIo as fs } from '@kit.CoreFileKit';
+import { fileIo } from '@kit.CoreFileKit';
 import { common, abilityAccessCtrl, PermissionRequestResult } from '@kit.AbilityKit';
 
 const TAG = 'AudioCapturerDemo';
@@ -210,8 +210,8 @@ let audioRendererOptions: audio.AudioRendererOptions = {
   rendererInfo: audioRendererInfo
 };
 
-let file: fs.File;
-let recordingFile: fs.File;
+let file: fileIo.File;
+let recordingFile: fileIo.File;
 let onReadData: Callback<ArrayBuffer>;
 let writeDataCallback: audio.AudioRendererWriteDataCallback;
 let pendingRecordingWrite: Promise<void> = Promise.resolve();
@@ -223,7 +223,7 @@ async function initRecordingResources(context: common.UIAbilityContext): Promise
   pendingRecordingWrite = Promise.resolve();
   let path = context.cacheDir;
   let filePath = path + '/S16LE_2_48000.pcm';
-  recordingFile = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  recordingFile = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
   onReadData = (buffer: ArrayBuffer) => {
     let recordingBuffer = buffer.slice(0);
     let writeOffset = writtenBytes;
@@ -233,7 +233,7 @@ async function initRecordingResources(context: common.UIAbilityContext): Promise
       length: recordingBuffer.byteLength
     }
     pendingRecordingWrite = pendingRecordingWrite.then(async () => {
-      await fs.write(recordingFile.fd, recordingBuffer, options);
+      await fileIo.write(recordingFile.fd, recordingBuffer, options);
     }).catch((error: BusinessError) => {
       console.error(`${TAG}: Write recording data failed, code: ${error.code}, message: ${error.message}`);
     });
@@ -245,7 +245,7 @@ async function initRender(context: common.UIAbilityContext) {
   let path = context.cacheDir;
   // 此处仅作示例，实际使用时需要将文件替换为应用要播放的PCM文件。
   let filePath = path + '/S16LE_2_48000.pcm';
-  file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+  file = fileIo.openSync(filePath, fileIo.OpenMode.READ_ONLY);
   writeDataCallback = (buffer: ArrayBuffer) => {
     let options: Options = {
       offset: bufferSize,
@@ -253,7 +253,7 @@ async function initRender(context: common.UIAbilityContext) {
     };
 
     try {
-      let bufferLength = fs.readSync(file.fd, buffer, options);
+      let bufferLength = fileIo.readSync(file.fd, buffer, options);
       bufferSize += buffer.byteLength;
       // 如果当前回调传入的数据不足一帧，空白区域需要使用静音数据填充，否则会导致播放出现杂音。
       if (bufferLength < buffer.byteLength) {
@@ -337,7 +337,7 @@ async function releaseRender(updateCallback?: (msg: string, isError: boolean) =>
       if (err) {
         console.error('Renderer release failed.');
       } else {
-        fs.closeSync(file.fd);
+        fileIo.closeSync(file.fd);
         console.info('Renderer release success.');
       }
     });
@@ -474,12 +474,10 @@ async function release(updateCallback?: (msg: string, isError: boolean) => void)
       console.error(`${TAG}: Capturer release failed, code: ${error.code}, message: ${error.message}`);
     } finally {
       await pendingRecordingWrite;
-      fs.closeSync(recordingFile.fd);
+      fileIo.closeSync(recordingFile.fd);
     }
   }
 }
-
-// ...
 
 // ...
 ```

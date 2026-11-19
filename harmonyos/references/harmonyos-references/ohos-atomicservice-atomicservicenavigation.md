@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: AtomicServiceNavigation
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > AtomicServiceNavigation
 category: harmonyos-references
-scraped_at: 2026-11-14T08:50:23+08:00
+scraped_at: 2026-11-19T09:51:12+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:8305fcc477cfe746d8acd567654e556733caf71a370eed2785b300ed62b3f7f8
+content_hash: sha256:eb2f569f7f34b85404c95e81d7d6490af1ff1c5250d6ef47d179c2ae6853042a
 ---
 
 作为Page页面的根容器使用，其内部默认包含了标题栏、内容区。其中，内容区在首页默认显示导航内容，在非首页显示[NavDestination](ts-basic-components-navdestination.md)的子组件，首页和非首页通过路由进行切换。
@@ -329,7 +329,7 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/yonsbUe5TKGi9CMKOuzlzA/zh-cn_image_0000002817508775.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDE6D76AC84885F499C17DB57EAC36D063035F6E110C2A90EC25C482D81FB986)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/yiOZOzO8TdCGFyjPUIewRg/zh-cn_image_0000002820407627.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015017Z&HW-CC-Expire=31536000000&HW-CC-Sign=9958EADF2E5B124EC2422423C7D5D5098E82C01D232EF9A04A212C1E3C8D7FA8)
 
 ### 示例2（抽屉样式，宽屏场景下插入自定义布局）
 
@@ -468,7 +468,7 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/adQc4tWsQROAgtsLHkpB2g/zh-cn_image_0000002788309344.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCE35CD0B348BE3E4869625194AF56434980DFB0EA6F3CF222DFE3381E119F74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/3j3xG206RDKT00gYnJIbMg/zh-cn_image_0000002791727646.png?HW-CC-KV=V1&HW-CC-Date=20261119T015017Z&HW-CC-Expire=31536000000&HW-CC-Sign=985FE145FCFC6FE46F4EC6D5585B6B7997EA11B33EDB486D2C40643AF57DE06C)
 
 ### 示例3（侧边栏使用场景）
 
@@ -608,4 +608,4 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/U_pvlAw8RBaoXObYd5aRpw/zh-cn_image_0000002817428707.png?HW-CC-KV=V1&HW-CC-Date=20261114T004820Z&HW-CC-Expire=31536000000&HW-CC-Sign=E434E5098AC573A186E41B166AC00EFBF2816A45023E2D126EFB0CD5C9538145)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/LmIhe-OdQbmXgTnTcuDs0Q/zh-cn_image_0000002791567674.png?HW-CC-KV=V1&HW-CC-Date=20261119T015017Z&HW-CC-Expire=31536000000&HW-CC-Sign=D01BB440B46F1715E5304C795F67F9938B141FA9CE8BCAD9EEE121FC7D9F4065)

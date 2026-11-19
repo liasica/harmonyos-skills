@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-logo-u
 title: 标志使用规范
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 标志使用规范
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:21+08:00
+scraped_at: 2026-11-19T09:49:01+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:cb08196058c4f31e929cc93056a805ea26f84a18eb293692816a423a701d2704
+content_hash: sha256:d6e6a26f52a3c4d711e9f6089e01a0163714abc419a830216a03cf2f50548833
 ---
 
 开发者应用在面向用户呈现华为运动健康品牌图标时，需要遵循《[HUAWEI Health授权使用规范](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/private/HuaweiHealthLicenseUsageGuidelines/000/001/044/0000100000000001044.20240417160150.64977181324752114137620022856507:20740405160241:100005355:DBEDC693E5482E439BFCDF5A73D1B74F41B5BEABF7F62F4AA2807330B8335543.pdf)》，图标样式请点击[资源下载](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/private/huaweiLogo/000/001/044/1000000000000001044.20231121144534.39714294158320889793671141568467:20731108144750:100005355:F16C5DE4AF6D9AC89675DAD1BB4D12821B5BCC039AFCADFF9ECEA7852757F9AA.zip)获取。
@@ -14,7 +14,7 @@ content_hash: sha256:cb08196058c4f31e929cc93056a805ea26f84a18eb293692816a423a701
 
 标志以“心形”为主要图形元素，并结合了运动跑道元素，凸显了运动健康品牌的专属性和识别性，品牌色用橙色来体现运动的活力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/wW5j-slaQbGJy_Fh9zvZVQ/zh-cn_image_0000002817507477.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B0EFF8436543503AF3707CF25878C5E53373B63951F9C46D0E04B12E5A01F10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/c3kjbpOUQayO0557MTGBIw/zh-cn_image_0000002820526327.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=455B423CA846B8EB46EE73FDDAF9BDB6646CC2305255D1CF54085049F06DBA35)
 
 ## 标志使用
 
@@ -24,16 +24,16 @@ content_hash: sha256:cb08196058c4f31e929cc93056a805ea26f84a18eb293692816a423a701
 
 * 在授权入口展示数据来源、授权状态信息等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/7vr8CUZvSlm86JTA8iCMdg/zh-cn_image_0000002788308046.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=22D1DA99D08653B6F07DED51084D3CD0553BC69E4CC077D6D9F57C4B376D87EA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/V6EK9ijrTXG8sj-LJ7_skw/zh-cn_image_0000002820406327.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=22E1BAC8F11ABBB026F8D876439521815D97B0DF8AC9665D344A114180B30244)
 * 授权连接详情页面，展示应用连接情况。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/_urjMMezTuCaUYRuKeWLig/zh-cn_image_0000002817427409.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2A611BD5C818B6E69DEB27D4895740755BE1528E8974577EF16264CC7B0E5AD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/hPfvg5g2RvOW_D4f98oUPg/zh-cn_image_0000002791726348.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4A9729EC23DF11C4627876A8DD8E6CB5B2F349C0CEC29D6A9ACF7D8E0FBFF80)
 
 ### 使用HUAWEI Health标志
 
 包括英文和中文标志，且有横版和竖版两种版式，需要满足《[HUAWEI Health授权使用规范](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/private/HuaweiHealthLicenseUsageGuidelines/000/001/044/0000100000000001044.20240417151926.42901802932267224964253317308041:20740405152107:100005355:87328F4DFA033BC9DD8B6A03A0E9EB60C11ABA7EF92169AC42A4C205D3EA7514.pdf)》中横版和竖版网格正确比例的要求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/7TaKNq8BTPeT3lRn5EibuA/zh-cn_image_0000002788467990.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A31BE5E12FD105723B5A01A9E40E5FC57DEC48F9D1813E0720D141DD2F34A69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/1u0KsQptT7CvjPFo7TPkTw/zh-cn_image_0000002791566376.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=A61B9A664503F11F5622DA0E6F870C658DA862BA656BCB3A1A31A6EB7CD790DB)
 
 ### 仅使用文本
 
@@ -45,7 +45,7 @@ content_hash: sha256:cb08196058c4f31e929cc93056a805ea26f84a18eb293692816a423a701
 
 除联合品牌使用HUAWEI Health标志外，仅华为运动健康授权的软件生态合作伙伴可以使用Health徽章。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/5eo5VtA-RPqkz-FSs1rBnw/zh-cn_image_0000002817507479.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=72D2D028471C4FD7E8DCCFD3E862497C1CF091C4E23D8B4948C546BAB31D7E07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/NH4IqLCsTtmPJXROdMufFg/zh-cn_image_0000002820526329.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A8EB7A95799FA52350D8CDA27BA93BE65B5DCECBC8ECFB234A679EBCFDC4EE4)
 
 **2.Health 徽章使用场景及示例**
 
@@ -61,7 +61,7 @@ content_hash: sha256:cb08196058c4f31e929cc93056a805ea26f84a18eb293692816a423a701
   + 在方版或者竖版KV中，徽章的高度大小以KV的宽为准，徽章的宽度不超过KV宽度的1/4，取徽章的高度为X，徽章及免责声明距离画面右侧及底部均为X。
   + 在横版KV中，徽章的高度大小以KV的宽为准，徽章的宽度不超过KV宽度的1/6，取徽章的高度为X，徽章及免责声明距离画面右侧及底部均为X。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/OllMiTk4Q6GlzS1GranmLg/zh-cn_image_0000002788308048.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=61BDB4C60AEBC73CEA708204E5AB6EC71757435D50A2CB67D476AFD11905144E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/eEDvYkH6QUa4VUyDo04wdA/zh-cn_image_0000002820406329.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1F0A53C8A399829C880461B9B1D0410AF266C1A7193B586810BD1F68EEDF1D8)
 * Health徽章在已授权的软件生态合作伙伴App下载详情页的使用规范及示例
 
   **核心原则**
@@ -72,7 +72,7 @@ content_hash: sha256:cb08196058c4f31e929cc93056a805ea26f84a18eb293692816a423a701
 
   徽章的宽度为页面宽度的1/3，取徽章的宽度为X，徽章与上方信息内容的间距为0.24X，此间距可根据实际情况适配调整。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/MLypLO2ORVmhykcxwcpJKQ/zh-cn_image_0000002817427411.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBB1C6CCFC5903A51B08B2805499840A77F9227346EFD97E356BDBF75751CFA7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/PxnNmUEjQRO5OFiYLSK0bQ/zh-cn_image_0000002791726350.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0B1F221881FAC383BD9DF9DB9F4C9C6171295CECDE5AEB2BDAC21D1FC038032)
 * Health徽章在已授权的合作伙伴产品宣传视频中的使用规范
 
   **核心原则**
@@ -85,11 +85,11 @@ content_hash: sha256:cb08196058c4f31e929cc93056a805ea26f84a18eb293692816a423a701
 
     **图1** 横版样式参考
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/mRJue3tZRh-WznZmcxGsLQ/zh-cn_image_0000002788467992.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=85035F77CDF2606D25C0179363F46F5933718A87E0B69CF684BE10D4D2823AD0)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/jTvol5u-QLWprltlJ8EIug/zh-cn_image_0000002791566378.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E116BB3DCBF50B3D18C6257F45A5F53882CA5CCDC30B3F3DBE63F733C1C5F73)
 
     **图2** 竖版样式参考
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/lTladguCQ5C-uVb372KTMg/zh-cn_image_0000002817507481.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBF9B9BC4E9180479ED735AF9FC25B6383278AB3BB4971BDEAF01CE2E5FD312D)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/s9NeFgX7QkWe_oK8ZNKVZg/zh-cn_image_0000002820526331.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=C43503E431EAB7276B909623D183D265D8B2A65608DB466987580FA393937C7F)
   + **硬件生态合作伙伴：**
 
     在已授权的硬件合作伙伴的产品宣传视频中，需要提示设备支持连接华为运动健康的功能时，使用文案方式书写为：**支持连接华为运动健康**。
@@ -102,4 +102,4 @@ content_hash: sha256:cb08196058c4f31e929cc93056a805ea26f84a18eb293692816a423a701
 
 HUAWEI Health标志的比例、颜色以及图形在任何情况下都不得改变。以下为常见错误用法示例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/O2sEcsGIQd-UB5KooI-BpA/zh-cn_image_0000002788308050.png?HW-CC-KV=V1&HW-CC-Date=20261114T004821Z&HW-CC-Expire=31536000000&HW-CC-Sign=A575CDFF1E6EE5BABAEAFC85A24DF08153A1719276A4CCD40B6ED036C401B7C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/ecYTNzUvSBeLTxgvg5s1qA/zh-cn_image_0000002820406331.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D85C5FC0428F9BA8E1FA5C6245E4E4273051EB7D81581A63BE7A9A655404579)

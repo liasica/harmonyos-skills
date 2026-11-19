@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-member
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 会员卡 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:34+08:00
+scraped_at: 2026-11-19T09:49:14+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:c10a1a41107dac2d1023eca7eb7a9f6cf53d64907bc8e5fc003ff89c18817326
+content_hash: sha256:ffeb84191c625ff96badcd3a4518878a395acd81f8593c4420c88bfad213ff87
 ---
 
 各类实体会员卡添加至华为钱包后，不仅可随时查看积分、权益和品牌活动，还能第一时间接收商家推送的会员专属信息。这种便捷的触达方式，帮助商家持续与用户保持连接，有效提升会员活跃度与忠诚度。
@@ -14,7 +14,7 @@ content_hash: sha256:c10a1a41107dac2d1023eca7eb7a9f6cf53d64907bc8e5fc003ff89c188
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/9PMBmGgnTOuBg4RJ63meiw/zh-cn_image_0000002817427729.png?HW-CC-KV=V1&HW-CC-Date=20261114T004834Z&HW-CC-Expire=31536000000&HW-CC-Sign=E73811356AEB2E6F5605C2614F23EA121DB907DBB1DE3246187E12D930C5E84E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/uOJbq-V8S5SmuDJiNUycHA/zh-cn_image_0000002791726668.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D193C3883D755781D8FC43006FFA7AA370468A5BAAB2A5EB499FA20B10F0BCB)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -29,11 +29,11 @@ content_hash: sha256:c10a1a41107dac2d1023eca7eb7a9f6cf53d64907bc8e5fc003ff89c188
 
 ### 会员卡开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/_qkLbO5sRPu7Ofq0Jewmew/zh-cn_image_0000002788468310.png?HW-CC-KV=V1&HW-CC-Date=20261114T004834Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FC42B76B0E6591B00CFD54381CDDF947A4A6E6FA97D257BC81BC1676C905AD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/lM2RNe6HTWezmOJwDkgVww/zh-cn_image_0000002791566696.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A5A8E144C14EF371B755A63002B4A4AFF181F14D2547A26FD933F1BD4EE4E57)
 
 ### 会员卡展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/KQDO-JtWTlSVrIQtNwVG6g/zh-cn_image_0000002817507799.png?HW-CC-KV=V1&HW-CC-Date=20261114T004834Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEDCB53134EF0CDA8A476241E563E72B572BD10BB779A0859A3550DDBCC098C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/GKY3WhR5SHKCpkquUdGOfg/zh-cn_image_0000002820526649.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=874B403C37B596C9A8DB0B8846B590C25D1E4D88748B0486366FD523F22AE243)
 
 ## 接入流程
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (PromptAction)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (PromptAction)
 category: harmonyos-references
-scraped_at: 2026-11-14T08:49:55+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:9484377846aac7a00e648a12d49859d018567d555b0658d31c78a37db3806675
+scraped_at: 2026-11-19T09:50:41+08:00
+doc_updated_at: 2026-11-18
+content_hash: sha256:6e4b18c0ca58524db5b10914a80f174746680fd541a9782550550ad9ad8c0a2b
 ---
 
 创建并显示即时反馈、对话框、操作菜单以及自定义弹窗。
@@ -194,7 +194,7 @@ openToast(options: promptAction.ShowToastOptions): Promise<number>
 | --- | --- | --- | --- |
 | options | [promptAction.ShowToastOptions](js-apis-promptaction.md#showtoastoptions) | 是 | Toast选项。用于配置Toast的显示内容和样式，包括message、duration等属性。 |
 
-**返回值**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -268,7 +268,7 @@ closeToast(toastId: number): void
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
-**参数**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -365,11 +365,11 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/U24Gd9uPQoGl687TZFD63g/zh-cn_image_0000002788308612.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004954Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3ECC144E4AAD063594FFB11D46D84D7725561F3DE9B4A9A5B549AFF15FE2CC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/DIbXuZ59QwGHpIqs3gofEg/zh-cn_image_0000002820406893.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B6AB14B0BF82299A2360FFA51936861084631916568861692B34E7280E55A4F)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/jXsiI6ajRWmOgiKL-NheIg/zh-cn_image_0000002817427975.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004954Z&HW-CC-Expire=31536000000&HW-CC-Sign=03820D6CA7FD1847675C0DD12D43867E0747CB38253A9A8BA52BF76364C0DEBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/LCja4ilGRhWeuYRRmKZM_A/zh-cn_image_0000002791726914.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=6424BEBB1B80FF1B716058E6B793F0248726462D287CAE89FE59BA102236391C)
 
 ## showDialog
 

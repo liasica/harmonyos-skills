@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-a
 title: 空域AI超分
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 空域AI超分
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:09+08:00
+scraped_at: 2026-11-19T09:48:49+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:059b9eca15416b0cb562dd12cc649c21fc4080437f12a62c5c42f28478422cdb
+content_hash: sha256:a5d40f239898a9b8a552654d1ce14a01ac2f32ec87a4ad5e0e6592451735243a
 ---
 
 从API版本26.0.0开始，新增支持Vulkan协议。
@@ -47,7 +47,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 
 * 下面是基于OpenGL ES图形API平台集成空域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/RLX-vBNySLGFw8xRy9y81Q/zh-cn_image_0000002817507287.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004626Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC539DE8B1D7D856816AEDFF98DD7FBBB022DB6C004302E33DAA38F7B5FBA589)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/-4lGMFYlSjivq0BnduJdJg/zh-cn_image_0000002820526137.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014849Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCDD35F99A227758FEFBEB793E2655BD875FF24D019D3099614CC47B8644548D)
 
 1. 当用户进入游戏场景时，调用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)接口查询XEngine Kit支持的特性列表。
 2. 检查返回列表中是否包含[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_neural_upscale_extension_name)或[XEG\_NEURAL\_UPSCALE2\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_neural_upscale2_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
@@ -60,7 +60,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 
 * 下面是基于Vulkan图形API平台集成空域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/asbmMtZURqCHbzl6hq40xQ/zh-cn_image_0000002788307856.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004626Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E4E0C32D75E68EDE98EEDE4DF45B15B4D93016FE5B709D95EA5EDA29AF03D7C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/YPOZAd-jS4GDS1WLFF-Xaw/zh-cn_image_0000002820406137.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014849Z&HW-CC-Expire=31536000000&HW-CC-Sign=C101E58EB0BCB943E60B5C1CCAB6B5D890EBA6E1BF307D3708A5CCBDCB8BA325)
 
 1. 当用户进入游戏场景时，调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性列表。
 2. 检查返回列表中是否包含[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_neural_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vibrator-over
 title: 振动开发概述
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 振动 > 振动开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:43+08:00
+scraped_at: 2026-11-19T09:48:22+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ebb15a4b8fab35d8006c882514ec468e9d4aab6096556011063509ff9d817d10
+content_hash: sha256:5a012be2f5746f548ca3a7beceaccf0d14cc8233025c5cbe443d5986b4d76f34
 ---
 
 通过最大化开放马达器件能力，振动器模块服务拓展了马达服务，实现了振动与交互融合设计，从而打造出细腻精致的一体化振动体验和差异化体验，提升用户交互效率、易用性以及用户体验，并增强品牌竞争力。
@@ -16,7 +16,7 @@ Vibrator属于控制类小器件，主要包含以下四个模块：Vibrator API
 
 **图1** 控制类小器件中的Vibrator
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/R-BpV0tCQWqn1FpW0e2djg/zh-cn_image_0000002817426881.png?HW-CC-KV=V1&HW-CC-Date=20261114T004743Z&HW-CC-Expire=31536000000&HW-CC-Sign=7219FCAA173E23D24998D3EA3034C2526D86DA7F561948C9850E00C24DF5851E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/S56UmgISQNe6OtSAAzfyXg/zh-cn_image_0000002791725820.png?HW-CC-KV=V1&HW-CC-Date=20261119T014822Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4AA8897FD2857DB244006EF4DE2AC55BD458245BDD11D1872C673DE9DAFA292)
 
 * Vibrator API：提供振动器基础的API，主要包含振动器的列表查询、振动效果查询、触发/关闭等接口。
 * Vibrator Framework：实现振动器的框架层管理，实现与控制类小器件Service的通信。

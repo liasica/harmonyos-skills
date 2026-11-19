@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-text-
 title: 复杂文本绘制与显示（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 复杂文本绘制与显示（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:07+08:00
+scraped_at: 2026-11-19T09:48:47+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:eca1bf9eab0ebd776370c58af684c787fe2d51bb8e4c991d90bf0ad5d8d163eb
+content_hash: sha256:91fe256264f544346de86ce384c822e286fb5ea352bda1aa4a6a70215c46861a
 ---
 
 在进行文本绘制时，可以通过选择合适的字体、大小和颜色完成简单文本的绘制与显示；此外，还支持通过设置其他丰富的样式、语言、段落等进行复杂文本的绘制。
@@ -78,7 +78,7 @@ OH_Drawing_DestroyTypography(typography);
 
 ### 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/g2JBEwrtRG6cUsqgBpnfMw/zh-cn_image_0000002788467744.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1A477B42ABC29D17B54A1F5E0E4CB3E952A284E743C1D0B73053C799C13F409)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/WDGIyJCJTUyf_5mZjBgnCQ/zh-cn_image_0000002791566130.png?HW-CC-KV=V1&HW-CC-Date=20261119T014846Z&HW-CC-Expire=31536000000&HW-CC-Sign=111F0652367DF91B5334D0824FB494CF4C0FC289E2DD0470E4E435C9A3208A9F)
 
 ## 多行文本绘制与显示
 
@@ -253,7 +253,7 @@ OH_Drawing_DestroyTypographyHandler(handler);
 OH_Drawing_DestroyTypography(typography);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/EmwU4ubPSPmeR_ZZSLnmAw/zh-cn_image_0000002788307804.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC01B71494EC4C667768757BF810285C45A2E722A65DF62D941F3BBD0ADC65E3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/7ggJJZboS_aNrZbRD-rxBg/zh-cn_image_0000002820406085.png?HW-CC-KV=V1&HW-CC-Date=20261119T014846Z&HW-CC-Expire=31536000000&HW-CC-Sign=673590FA1C35EF5CF4586ADCA4B89680B972AC04F617579E59C96932601A7C14)
 
 ### 字体特征
 
@@ -325,7 +325,7 @@ OH_Drawing_DestroyTypographyHandler(handler);
 OH_Drawing_DestroyTypography(typography);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/HNNPRuKHRvKRQWniWnjZpA/zh-cn_image_0000002817427167.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F9C458FCF9195E588BFFFFD2F78935BC8000489B6AA49B0FC7E7E154134002E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/yDd6b7g-RuurLxv8rHrtlw/zh-cn_image_0000002791726106.png?HW-CC-KV=V1&HW-CC-Date=20261119T014846Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8D681A2C54557102F89D6653E87F8839D69CC5D3430F974332A50F5370BFCC3)
 
 ### 可变字体
 
@@ -398,7 +398,7 @@ OH_Drawing_DestroyTypographyHandler(handler);
 OH_Drawing_DestroyTypography(typography);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/0gOupV3lRGy9FishEp7Gwg/zh-cn_image_0000002788467748.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=22926FAD9C406FB0EF42B3BF5EF080B2C352C37844CF634BD811F4BE1CEFA402)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/CnamMY0IQNSTfnlJRqpNNw/zh-cn_image_0000002791566134.png?HW-CC-KV=V1&HW-CC-Date=20261119T014846Z&HW-CC-Expire=31536000000&HW-CC-Sign=997C6FAD29139D52E7674A92FE5473450452C6DBC5A167A7FBDD36F3CBE87A8A)
 
 ### 文本阴影
 
@@ -480,7 +480,7 @@ OH_Drawing_DestroyTypographyHandler(handler);
 OH_Drawing_DestroyTypography(typography);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Wtfx5DoDQUy9Q5DuhNHVhg/zh-cn_image_0000002817507237.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=08B3718C53DF7507EEC85D3FCFBCEC302115CE58B816BBFC7E92943936B81B49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/-pRj0JF0TAO0APg8FNWDzg/zh-cn_image_0000002820526087.png?HW-CC-KV=V1&HW-CC-Date=20261119T014846Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC613A89A8102B5B42946CF0C01FA79575D451DFBA82FA4A1B8A8638C601C30B)
 
 ### 占位符
 
@@ -560,7 +560,7 @@ OH_Drawing_DestroyTypography(typographyWithPlaceholder);
 OH_Drawing_DestroyTypography(typographyNoPlaceholder);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/2g1q2LuEQCOXWFq8ABcG5g/zh-cn_image_0000002788307806.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F5ACD68253CD21D6042396D67AC1186927BDAD7415BF67D9385834D1B61EB3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Il-tXW46SHey9a89ZSULDg/zh-cn_image_0000002820406087.png?HW-CC-KV=V1&HW-CC-Date=20261119T014846Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8F7BE07FB3EC1EFEDFFD243821B86E67975488DCE81AA1C3635E2699B9A5656)
 
 ### 自动间距
 
@@ -689,7 +689,7 @@ OH_Drawing_DestroyTypographyHandler(handler);
 OH_Drawing_DestroyTypography(typography);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/9FKcQ43gT7qDAucnPZ1Tcw/zh-cn_image_0000002817507239.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=F918B9A2CC9D815CBDEEFCF263F034BE756546247005902B8129E2A1255FA05C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/bVUzcbPbQUuBFXMUoLsGfw/zh-cn_image_0000002820526089.png?HW-CC-KV=V1&HW-CC-Date=20261119T014846Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFDB62F901A0819C8A9DCDF9C23198799A074C409BB786295285FE5B5E7F3E02)
 
 ### 垂直对齐
 
@@ -734,7 +734,7 @@ OH_Drawing_DestroyTypography(typography);
 
 效果如下（黑框仅为展示文本绘制区域，实际不绘制）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/vBk0RfehQgmU0FurJJQ6XA/zh-cn_image_0000002817427151.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=03860CF48649CB5591B9351B61DC73FBD2166DBFF3F7C6E5CF8A8EAD1992EC35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/CoKOB2S6Sae5kMd1YpPctQ/zh-cn_image_0000002791726090.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014846Z&HW-CC-Expire=31536000000&HW-CC-Sign=902E121F8021542812B8C510A3F0CCEC8732EAF239B5345A3D9EB75565921709)
 
 ### 上下标
 
@@ -783,7 +783,7 @@ OH_Drawing_DestroyTypographyHandler(handler);
 OH_Drawing_DestroyTypography(typography);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/TdW89BO9Raa-vM-YlKgyjA/zh-cn_image_0000002817507221.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B471C681FAA699E66418EBDC129F59D0324F8D0F2DE15464E03DBD1F8B07FB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/h9-yvv7WRnG5iTEB7c62tA/zh-cn_image_0000002820526071.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014846Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C4517660823B00C17A5DB518FD91C86E41C12D92CEEC2B8F1FF82F9673A1660)
 
 ### 高对比度
 
@@ -1156,4 +1156,4 @@ OH_Drawing_DestroyTextShadow(shadow);
 OH_Drawing_DestroyTextShadow(shadowCopy);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/j17UD84oRgqTGErFTQaiEA/zh-cn_image_0000002817427177.png?HW-CC-KV=V1&HW-CC-Date=20261114T004806Z&HW-CC-Expire=31536000000&HW-CC-Sign=321AA2DA1F3F8AD031DC57E3B6FC818EAF485A7C28E0618EDADFBB2AEF30D0BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/v5tDXPswTcetTMHZKR4-kw/zh-cn_image_0000002791726116.png?HW-CC-KV=V1&HW-CC-Date=20261119T014846Z&HW-CC-Expire=31536000000&HW-CC-Sign=A354CB3604E6677CD56BE42B2542915E78AA35254184B1340AE33FC9B1546E92)
