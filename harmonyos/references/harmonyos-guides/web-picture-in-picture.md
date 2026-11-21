@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-picture-i
 title: Web组件支持画中画
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒体 > Web组件支持画中画
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:53+08:00
+scraped_at: 2026-11-21T09:11:19+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:0681cf3ea2c58b48415fd66430231a324f31c6f11a59829adbbda1dbcc1b085f
+content_hash: sha256:481389e1f30fcd28cb95220f54140332e0542b82203d8f7677fd34699d1c3aab
 ---
 
 Web组件提供画中画功能支持，应用可利用W3C标准的Picture-in-Picture API在网页中创建浮动窗口以播放视频，使用户在浏览其他网页或与其他应用交互时，可通过该画中画窗口继续观看视频。
@@ -102,7 +102,7 @@ videoElement.addEventListener('leavepictureinpicture', function (event) {
 
   播放控制包含暂停，播放，前进/后退（默认显示前进/后退UI控件，若原视频不支持前进后退，单击无响应）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/xItxtC3ST3auF99rpvbJjA/zh-cn_image_0000002820525465.png?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFC770F5AE1C7B2396272A2551C14F0E84220A6CDA5F5033D3DE389705F61AC6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/useCEBFiRPSc3fEswQf0lA/zh-cn_image_0000002793037136.png?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=A40A8B94198981DC94F19C44AD57C71E02AC98ACBEBFE7DC7062587E37B97A46)
 
 ## 完整示例
 

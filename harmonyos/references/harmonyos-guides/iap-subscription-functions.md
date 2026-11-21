@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-subscript
 title: 自动续期订阅说明
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 自动续期订阅商品购买 > 自动续期订阅说明
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:02+08:00
+scraped_at: 2026-11-21T09:12:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:131ede08a1b556fcf3f6decdde83ec67799810bb8136da763fae7f5395ba3b86
+content_hash: sha256:a3e8812dfbaca66201aa0080e86252721914eb2e0909b0a670f17fbb7313ba6e
 ---
 
 订阅是指用户在购买自动续期订阅商品后，可以在一段时间访问App的增值功能或内容，并且会在订阅周期结束后自动续期（自动购买下一期服务）的能力。如果期间用户取消订阅，则订阅在当期结束后将不再自动续期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/D_5NO6iRTVOzEebkEUNhhg/zh-cn_image_0000002820526337.png?HW-CC-KV=V1&HW-CC-Date=20261119T014808Z&HW-CC-Expire=31536000000&HW-CC-Sign=63D028B19DE2CD672800C8AB9233A3E3F4841792780EA95356AB01E6438C1108)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/ktLeFaoIQiOMPnPSBnFqyA/zh-cn_image_0000002793038008.png?HW-CC-KV=V1&HW-CC-Date=20261121T011228Z&HW-CC-Expire=31536000000&HW-CC-Sign=369E48389A7F5E66536C95F3EF446127AC7FF04B3EAC0D442431280FA440756F)
 
 ## 配置自动续期订阅商品
 
@@ -55,13 +55,13 @@ content_hash: sha256:131ede08a1b556fcf3f6decdde83ec67799810bb8136da763fae7f5395b
 
 具体订阅状态的变化如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/TU4RA2e5R8GPszDGNJpPIw/zh-cn_image_0000002820406337.png?HW-CC-KV=V1&HW-CC-Date=20261119T014808Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EFB982573644E19EA179605A91F86C536B0A4849D12887115338E70AC9F166E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/TntTFHqcT1uvz7uPjyhCyg/zh-cn_image_0000002792878038.png?HW-CC-KV=V1&HW-CC-Date=20261121T011228Z&HW-CC-Expire=31536000000&HW-CC-Sign=89232E4A36443B825F791D8F8237A91D1A0FBEE95CEFF789A3F169DA0DDA49FD)
 
 ## 让用户管理订阅
 
 应用可以通过[iap.showManagedSubscriptions](../harmonyos-references/iap-iap.md#iapshowmanagedsubscriptions)接口跳转到订阅页或订阅详情页，让用户管理订阅。用户亦可通过"设置">"华为账号">"付款与账单">"订阅"路径进入订阅页管理订阅。包括查看订阅、取消订阅、切换订阅、恢复订阅等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/djlRfGriTE2FlfpRaA5xVA/zh-cn_image_0000002791726358.png?HW-CC-KV=V1&HW-CC-Date=20261119T014808Z&HW-CC-Expire=31536000000&HW-CC-Sign=63857736C047960642DF26EF100328E6A00526DE1DD3FACDE931CA1A7009D6B7) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/fhUqs805TWGN-9fqanK4dw/zh-cn_image_0000002791566386.png?HW-CC-KV=V1&HW-CC-Date=20261119T014808Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDDC7297ACD3A8E59134D4E9B19C3FFEA4D74A30FFFBE6A8B257C51162E4BA54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/fc5eMrlaTw-_BBP0IVwzXw/zh-cn_image_0000002821837945.png?HW-CC-KV=V1&HW-CC-Date=20261121T011228Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD3814C00C62E707F9AF476960E0041A645A2EB50C536D78CF836E09BEEBEFFD) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/m3RFFiQLQu2VFB8OGdWxQQ/zh-cn_image_0000002821757947.png?HW-CC-KV=V1&HW-CC-Date=20261121T011228Z&HW-CC-Expire=31536000000&HW-CC-Sign=983A3AF52AC01DE8046BE92E57F542E4EF871DF50DE07113B1072AAB48DEA3B9)
 
 ## 订阅续期处理
 
@@ -69,7 +69,7 @@ content_hash: sha256:131ede08a1b556fcf3f6decdde83ec67799810bb8136da763fae7f5395b
 
 在订阅周期结束前24小时，IAP服务器会尝试向用户发起扣款以完成自动续期订阅商品的续期。若扣费失败，IAP服务器会在一定期限内重新尝试扣费，从而恢复订阅。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/8w9wBmZBRu2zENeqPB_s3w/zh-cn_image_0000002820526339.png?HW-CC-KV=V1&HW-CC-Date=20261119T014808Z&HW-CC-Expire=31536000000&HW-CC-Sign=56CF5A7C181E46A261510EFFB630C23BA1D0D4038F15D1E68F788A9E95060DF4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/SQGtYuolRe-pazAiRgM5eg/zh-cn_image_0000002793038010.png?HW-CC-KV=V1&HW-CC-Date=20261121T011228Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB7C6FA892198F4994B9463510E92671D916CBA2633922D442A2F358F1E43D98)
 
 **说明** 
 
@@ -113,7 +113,7 @@ content_hash: sha256:131ede08a1b556fcf3f6decdde83ec67799810bb8136da763fae7f5395b
      2. 用户正在享受或者下周期即将享受挽留促销时，挽留促销不可再次使用。
      3. 开发者设置了商品涨价且用户尚未同意涨价时，挽留促销不可使用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/VP7GF2c0QAiBUicdiZk8NA/zh-cn_image_0000002820406339.png?HW-CC-KV=V1&HW-CC-Date=20261119T014808Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6FE87B5C354757C79FB7FD088835533626D0735EC3D3A8EFAAE835511FFD81E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/aeNnFMb9TY-1Pa1hgDbDzA/zh-cn_image_0000002792878040.png?HW-CC-KV=V1&HW-CC-Date=20261121T011228Z&HW-CC-Expire=31536000000&HW-CC-Sign=74BBCB94AEE437B9675EAC5B88419B2F5F3A09C1EAF8127B9555EED9B8189211)
 
 设置促销时，除了要选择促销类型，还需为每项促销选择以下任一一种付费模式。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-record
 title: 录像(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 录像(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:36+08:00
-doc_updated_at: 2026-11-18
-content_hash: sha256:465c6b928b67d5d39d873a3087cf861379f4c83910dad47176af847d6ad74e2f
+scraped_at: 2026-11-21T09:12:01+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:e9e8bbec5d14576a3d30e6756e556a5c89128020d263e1721ac094752610a350
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -145,7 +145,7 @@ content_hash: sha256:465c6b928b67d5d39d873a3087cf861379f4c83910dad47176af847d6ad
     if (err !== undefined && err.code !== 0) {
       return;
     }
-    console.info('Video frame started');
+    console.info(`Video frame started`);
   });
   ```
 * 通过注册固定的frameEnd回调函数获取监听录像结束结果，videoOutput创建成功时即可监听，录像完成最后一帧时触发，有该事件返回结果则认为录像流已结束。
@@ -155,7 +155,7 @@ content_hash: sha256:465c6b928b67d5d39d873a3087cf861379f4c83910dad47176af847d6ad
     if (err !== undefined && err.code !== 0) {
       return;
     }
-    console.info('Video frame ended');
+    console.info(`Video frame ended`);
   });
   ```
 * 通过注册固定的error回调函数获取监听录像输出错误结果，callback返回录像输出接口使用错误时对应的错误码，错误码类型参见[CameraErrorCode](../harmonyos-references/arkts-apis-camera-e.md#cameraerrorcode)。

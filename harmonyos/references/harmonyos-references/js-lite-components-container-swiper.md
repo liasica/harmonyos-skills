@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: swiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 容器组件 > swiper
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:24+08:00
+scraped_at: 2026-11-21T09:14:25+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c47ad3ff921823f3727a27cbf36f2d91c66d49092b1e15ae3ff5242c99b91a8b
+content_hash: sha256:2b03a65602d9d9525bb73f347c05d5500ff388905ed553b31a26e00ebcba291c
 ---
 
 滑动容器，提供切换子组件显示的能力。
@@ -121,4 +121,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/j5LkxGUuRZW6_oMe7MW_2w/zh-cn_image_0000002820407983.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015028Z&HW-CC-Expire=31536000000&HW-CC-Sign=14B6116FCC0E4A775B2ADFA35F18A6F2284AE4F329774E55D7B1692BC8F771AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/1nV5ByIQQFq2cudyjoNlTQ/zh-cn_image_0000002821759621.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011323Z&HW-CC-Expire=31536000000&HW-CC-Sign=88A299C6E21E786835356F020DC1FF2289F05337093F5BC8A3A76E86049D5D92)

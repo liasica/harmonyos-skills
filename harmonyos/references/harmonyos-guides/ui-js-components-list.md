@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: list开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > list开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:48+08:00
+scraped_at: 2026-11-21T09:11:13+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cd3fcbf6b4c33dd02c665462f656f1d5f21e4ac0bee01493fae6449f360b4cc7
+content_hash: sha256:bbdfd3985972a225c11a5593ff3293df942caf7ee55498ead828c2cf2a0da59a
 ---
 
 list是用来显示列表的组件，包含一系列相同宽度的列表项，适合连续、多行地呈现同类数据。具体用法请参考[list API](../harmonyos-references/js-components-container-list.md)。
@@ -42,7 +42,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/8eSZbY5nSO6BrEkEegUzlw/zh-cn_image_0000002820405303.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B17A2C8E5333571AFB9A355B523CA04AF945597A239527C53BF72E25744AF62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/oSQofhWUTguQcUz9iNPiwA/zh-cn_image_0000002792877004.png?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=72F3C9AE3C53CBA86F45EAFE721093F738EF84994DFF73BB3866E1920BB94942)
 
 **说明** 
 
@@ -85,7 +85,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/MJ8GtX2ZTw2oeKa6SrAm3A/zh-cn_image_0000002791725324.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D02D8D1E13DF7F0E019B4EFEFDD6D83D6215A85F255F4F022D7874707544931)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/26Tog9g6ToWlhTvboDhCSQ/zh-cn_image_0000002821836911.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=9622E896DA34A9F1641266CB6058914886F541715304D061F2820AD04194454F)
 
 ## 添加侧边索引栏
 
@@ -113,7 +113,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/qbAn2HWORD6h2An6BBDP5Q/zh-cn_image_0000002791565352.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=9943FC6A1E87BB122DAA92EF344E23B31505238DB2D5EC6CBEACA55B2828E89E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/B5vWhadtS8qf04MYkO1ZQw/zh-cn_image_0000002821756913.png?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=595FAC9E6BB4A64B0531DD9380FB92DBCC5CDA6E6CA4F54656093E17EA6E1337)
 
 **说明** 
 
@@ -195,7 +195,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/mooQbadnRnOwSjNh-9Xr4w/zh-cn_image_0000002820525305.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=873508A9112AB8C1C399111ABD411F559D2F97A4CF743937573771B862CD9DA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/358al08uSruVvycRlHxsXw/zh-cn_image_0000002793036976.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A6CA40AB2CA0296F15FF43ABA3E41BFF51E235C7D4A896BFF002B3CBC1E3005)
 
 **说明** 
 
@@ -306,4 +306,4 @@ export default {
  }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/WgCArnL0SraIzEXE-3Zz6w/zh-cn_image_0000002820405305.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=77148672734A9154C659AC811B7E0CCA31A70CD567BA5EAF9730E61528640103)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/kXBp37CVTaORl0s8WFezlw/zh-cn_image_0000002792877006.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=29B973EB83C166F7306CCB8F1003980D72BD409B161F3123566903D0716801D9)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: Canvas对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > Canvas开发指导 > Canvas对象
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:48+08:00
+scraped_at: 2026-11-21T09:11:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:bb6f1c4d29105da836bd9bdd106066589204dc866d6082a7e90f9875175ecb4f
+content_hash: sha256:1727f9afa76895612a3714fa052208a37aafc978bccb45e87e2f689bbd597ab0
 ---
 
 Canvas组件提供画布，用于自定义绘制图形。具体用法请参考[CanvasRenderingContext2D对象](../harmonyos-references/js-components-canvas-canvasrenderingcontext2d.md)。
@@ -37,7 +37,7 @@ canvas {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/fof_CYYsQrGAw2zdw2qASw/zh-cn_image_0000002791565396.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E0CA01F8E797F1E68A264F099CA5356DB05850D889D50CF3726BFAA65CEED0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/5U2DjmzdRceaHfYKRLZrnA/zh-cn_image_0000002821756957.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=01D79039FF38486F64E0BF6A86BDA7856931E9390361417391ACEEE9DF0A90C4)
 
 **说明** 
 
@@ -74,7 +74,7 @@ canvas {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/vrHHU5FrS167LDtQ3NUTYg/zh-cn_image_0000002820525349.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=F26FFE5CEA6467580A25FF48E5C101CD135744D042DCEA5A78A9C5A8D70F2A29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/I3D8GiigSM28HGAQ4SYebQ/zh-cn_image_0000002793037020.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=D23C5FE2A9662B7E1FA60E4953E80AB25EC2F7EBC59CA19F06EBEA025E0549FF)
 
 ## 添加事件
 
@@ -143,7 +143,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/U30vtCFnSBKMQf0oNalaCA/zh-cn_image_0000002820405349.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=572F13F475B1D4FD4FB1F17D0267315919BBC20FE31AAC5BF25D3E3751A7B370)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/nRjmpkf6TkaldJlUj0PVIQ/zh-cn_image_0000002792877050.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=E889EA3304FAADD04D8CB8B942C0DA597E64928C0562ECBDBFA2925839298734)
 
 **说明** 
 

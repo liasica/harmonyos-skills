@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-mass-poin
 title: 海量点图层
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 海量点图层
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:05+08:00
+scraped_at: 2026-11-21T09:12:31+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:19b085a6819385ecb9530a6a3c114a457fb847980f2bff7c132c8d5c599e4abf
+content_hash: sha256:3d6514c21032258f244e285dd67c7995c045f10e298c67cc855d49f1c8fe7722
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:19b085a6819385ecb9530a6a3c114a457fb847980f2bff7c132c8d5c599
 
 6.0.0(20)开始，支持海量点图层功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/EzgfAoz_R2eP1i64UF6P5g/zh-cn_image_0000002820406465.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014811Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB48A98D17912A48745CD94137C2F6BEF987666527E9811318800218369F3DEB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/4mcmr2EbSeSCljIaZNKYjA/zh-cn_image_0000002792878166.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011231Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F609816869D52596EACED4A9E9B284903775A8CB49516F744951081BDE8ED20 "点击放大")
 
 ## 接口说明
 

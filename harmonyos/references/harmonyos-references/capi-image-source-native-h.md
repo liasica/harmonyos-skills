@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_source_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_source_native.h
 category: harmonyos-references
-scraped_at: 2026-11-19T09:53:49+08:00
-doc_updated_at: 2026-11-18
-content_hash: sha256:18156d8af9fc77053fafe556b12d56e5c3c051f452e9de73af1dd57832398e8c
+scraped_at: 2026-11-21T09:16:09+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:a46aab325d9d234a23854b8ad84a4342bc0a5a92bac20b194344d52624add13e
 ---
 
 ## 概述
@@ -862,7 +862,7 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromUri(char *uri, size_t uriSize, OH
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。  IMAGE\_BAD\_SOURCE：解码数据源异常。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：uri是空指针。 |
 
 ### OH\_ImageSourceNative\_CreateFromFd()
 
@@ -887,7 +887,7 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromFd(int32_t fd, OH_ImageSourceNati
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：fd无效。 |
 
 ### OH\_ImageSourceNative\_CreateFromData()
 
@@ -921,7 +921,7 @@ data数据应该是未解码的数据，不要传入类似于RGBA，YUV的像素
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。  IMAGE\_BAD\_SOURCE：解码数据源异常。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：data是空指针，或者dataSize为0。 |
 
 ### OH\_ImageSourceNative\_CreateFromDataWithUserBuffer()
 
@@ -1010,7 +1010,7 @@ Image_ErrorCode OH_ImageSourceNative_CreatePixelmap(OH_ImageSourceNative *source
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：source为空。  IMAGE\_SOURCE\_UNSUPPORTED\_OPTIONS：不支持的选项。例如，无法将图像转换为所需的像素格式。 |
 
 ### OH\_ImageSourceNative\_CreatePixelmapUsingAllocator()
 
@@ -1078,7 +1078,7 @@ Image_ErrorCode OH_ImageSourceNative_CreatePixelmapList(OH_ImageSourceNative *so
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。  IMAGE\_UNSUPPORTED\_OPERATION：操作不支持。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：source、options或resVecPixMap为空。 |
 
 ### OH\_ImageSourceNative\_CreatePicture()
 
@@ -1212,7 +1212,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImageProperty(OH_ImageSourceNative *sour
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：source、key或value为空。  IMAGE\_ALLOC\_FAILED：内存分配失败。  IMAGE\_COPY\_FAILED：内存拷贝失败。 |
 
 ### OH\_ImageSourceNative\_GetImagePropertyShort()
 
@@ -1356,7 +1356,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyArraySize(OH_ImageSourceNat
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_SOURCE\_INVALID\_PARAMETER：source、key或value为nullptr。  IMAGE\_SOURCE\_UNSUPPORTED\_MIME\_TYPE：不支持查询当前mimetype的图像属性。  IMAGE\_SOURCE\_UNSUPPORTED\_METADATA：指定的元数据不存在，或者不是数组或字符串类型的值。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_SOURCE\_INVALID\_PARAMETER：source、key、value或size为nullptr。  IMAGE\_SOURCE\_UNSUPPORTED\_MIME\_TYPE：不支持查询当前mimetype的图像属性。  IMAGE\_SOURCE\_UNSUPPORTED\_METADATA：指定的元数据不存在，或者不是数组或字符串类型的值。 |
 
 ### OH\_ImageSourceNative\_GetImagePropertyString()
 
@@ -1428,13 +1428,13 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyIntArray(OH_ImageSourceNati
 | [OH\_ImageSourceNative](capi-image-nativemodule-oh-imagesourcenative.md) \*source | 被查询属性的ImageSource。 |
 | [Image\_String](capi-image-nativemodule-image-string.md) \*key | 被查询的属性。 |
 | int32\_t \*value | 被查询属性的查询结果。输出参数。调用者需要管理内存并释放。 |
-| size\_t size | 字符串长度。 |
+| size\_t size | 数组长度。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_SOURCE\_INVALID\_PARAMETER：source、key或value为nullptr。  IMAGE\_SOURCE\_UNSUPPORTED\_MIME\_TYPE：不支持查询当前mimetype的图像属性。  IMAGE\_SOURCE\_UNSUPPORTED\_METADATA：指定的元数据不存在，或者不是整型数组类型的值。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_SOURCE\_INVALID\_PARAMETER：source、key、value或size为nullptr。  IMAGE\_SOURCE\_UNSUPPORTED\_MIME\_TYPE：不支持查询当前mimetype的图像属性。  IMAGE\_SOURCE\_UNSUPPORTED\_METADATA：指定的元数据不存在，或者不是整型数组类型的值。 |
 
 ### OH\_ImageSourceNative\_GetImagePropertyDoubleArray()
 
@@ -1473,7 +1473,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDoubleArray(OH_ImageSourceN
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_SOURCE\_INVALID\_PARAMETER：source、key或value为nullptr。  IMAGE\_SOURCE\_UNSUPPORTED\_MIME\_TYPE：不支持查询当前mimetype的图像属性。  IMAGE\_SOURCE\_UNSUPPORTED\_METADATA：指定的元数据不存在，或者不是浮点型数组类型的值。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_SOURCE\_INVALID\_PARAMETER：source、key、value或size为nullptr。  IMAGE\_SOURCE\_UNSUPPORTED\_MIME\_TYPE：不支持查询当前mimetype的图像属性。  IMAGE\_SOURCE\_UNSUPPORTED\_METADATA：指定的元数据不存在，或者不是浮点型数组类型的值。 |
 
 ### OH\_ImageSourceNative\_GetImagePropertyBlob()
 
@@ -1512,7 +1512,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyBlob(OH_ImageSourceNative *
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_SOURCE\_INVALID\_PARAMETER：source、key或value为nullptr。  IMAGE\_SOURCE\_UNSUPPORTED\_MIME\_TYPE：不支持查询当前mimetype的图像属性。  IMAGE\_SOURCE\_UNSUPPORTED\_METADATA：指定的元数据不存在，或者不是二进制对象类型的值。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_SOURCE\_INVALID\_PARAMETER：source、key、value或size为nullptr。  IMAGE\_SOURCE\_UNSUPPORTED\_MIME\_TYPE：不支持查询当前mimetype的图像属性。  IMAGE\_SOURCE\_UNSUPPORTED\_METADATA：指定的元数据不存在，或者不是二进制对象类型的值。 |
 
 ### OH\_ImageSourceNative\_ModifyImagePropertyShort()
 

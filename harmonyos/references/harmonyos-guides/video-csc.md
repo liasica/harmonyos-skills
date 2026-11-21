@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-csc
 title: 视频色彩空间转换
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 视频处理 > 视频色彩空间转换
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:42+08:00
+scraped_at: 2026-11-21T09:12:07+08:00
 doc_updated_at: 2026-04-30
-content_hash: sha256:2906924c460d0c9d9090a4a662161cd0e6cb566fb865fbbbe5788266ff821f96
+content_hash: sha256:3c5e60a7290db2e8bdc74f551cc8a46ea08c6cc31032e4e87ca56e05e6524597
 ---
 
 开发者可以调用本模块提供的[C API接口](../harmonyos-references/capi-videoprocessing.md)，实现HDR2SDR、HDR2HDR、SDR2SDR、SDR2HDR的色彩空间转换。
@@ -14,17 +14,17 @@ content_hash: sha256:2906924c460d0c9d9090a4a662161cd0e6cb566fb865fbbbe5788266ff8
 
 * **视频编辑**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/WnxHt_ipQSe5tThlOBMbSg/zh-cn_image_0000002791726002.png?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=424C31E80AF6FEBB05696DB343F1521C51E9289B556537B8ADD00DFFABC043CB)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/jTZDtlGKT1-B-dljOad46g/zh-cn_image_0000002821837589.png?HW-CC-KV=V1&HW-CC-Date=20261121T011040Z&HW-CC-Expire=31536000000&HW-CC-Sign=27EB55C5AE94818727F9BDC68EF5E44B4D4E3320A7D06D6B9199C835A84096E7)
 * **视频分享**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Q2AAyCReRTSivL0f6zwwiw/zh-cn_image_0000002791566030.png?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D90D479E4DB758183F5BEA1CC2A99410B0B800A7A1EBDC0D0D5E97E4CC69859)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/0nxD4_4FQv-mppj5q0MAiQ/zh-cn_image_0000002821757591.png?HW-CC-KV=V1&HW-CC-Date=20261121T011040Z&HW-CC-Expire=31536000000&HW-CC-Sign=82700F4E77B32950D045ECDD03C345D5386549BDBB2FCFF7C25FAA31287CCEB9)
 * **视频直播**
 
   **支持以下场景使用：**
 
   使用HDR Vivid视频直播连麦，且对端不支持HDR Vivid视频录制场景。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/wFeh407LT4auhr4vJuWi-g/zh-cn_image_0000002820525983.png?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=A78EB4D91B1DFBBAE532D6774F9D4958AE6D94CCA7A9C337D7879C2BF4C6FF42)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/E7OBq5QqTDS-L3PqqXlnmw/zh-cn_image_0000002793037654.png?HW-CC-KV=V1&HW-CC-Date=20261121T011040Z&HW-CC-Expire=31536000000&HW-CC-Sign=235A73BF0879F741D340828CE7324F43E77128EC2D1C1129C0ABD1709914DF38)
 
 ## 规格说明
 

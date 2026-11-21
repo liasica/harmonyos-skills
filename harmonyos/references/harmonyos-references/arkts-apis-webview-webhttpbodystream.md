@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebHttpBodyStream)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebHttpBodyStream)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:18+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-21T09:14:43+08:00
+doc_updated_at: 2026-11-20
 content_hash: sha256:c054e937e421e67f207866493cf4f8c02e1ae8da612ded40a41af3274d6a253a
 ---
 
@@ -69,7 +69,7 @@ struct WebComponent {
             let postData = buffer.from(this.htmlData);
             this.controller.postUrl('https://www.example.com', postData.buffer);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
         })
       Web({ src: 'https://www.example.com', controller: this.controller })
@@ -106,7 +106,7 @@ struct WebComponent {
                   console.info("[schemeHandler] onRequestStart has no http body stream");
                 }
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
               }
 
               return false;
@@ -118,7 +118,7 @@ struct WebComponent {
 
             this.controller.setWebSchemeHandler('https', this.schemeHandler);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
         })
         .javaScriptAccess(true)

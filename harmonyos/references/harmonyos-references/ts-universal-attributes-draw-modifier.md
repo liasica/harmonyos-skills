@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义绘制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 自定义绘制
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:53+08:00
+scraped_at: 2026-11-21T09:14:04+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:0e1ca9de06746ba52937213c30c602586fd136e9d198c258e9aabd75db2981a1
+content_hash: sha256:3161a105984d0a3343a944305d64366185bedc3be3bd2f5d6e3d62badcf9e1f1
 ---
 
 当组件本身的绘制内容不满足需求时，可使用自定义组件绘制功能，在原有组件基础上部分绘制，或者全部自行绘制，以达到预期效果。例如：独特的按钮形状、文字和图像混合的图标等。自定义组件绘制提供了自定义绘制修改器，来实现更自由的组件绘制。
@@ -55,7 +55,7 @@ DrawModifier可设置遮罩层（drawOverlay23+）、前景（drawForeground20+�
 
 自定义层级示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Z2-meL1HT0SH8MPgxJow9w/zh-cn_image_0000002791727114.png?HW-CC-KV=V1&HW-CC-Date=20261119T014958Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE79E471AA943956254DA27D188E84C6A581FB2D316F16627687CF8676804154)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/WheK0FOQRkGwPXS-GR0wEQ/zh-cn_image_0000002793038772.png?HW-CC-KV=V1&HW-CC-Date=20261121T011252Z&HW-CC-Expire=31536000000&HW-CC-Sign=72E43354ECA93B990ED0304FC6FB3509F9668DF003190EC08394F06E18F2543C)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -443,7 +443,7 @@ struct DrawModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/SukRor-XSSCgcMCYawmilA/zh-cn_image_0000002791567142.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014958Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB20502F50D24B831EA30B858384A914638BE1C2EC3B3C6D616541D513746E38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/pfdFn09NTd6VpWRV92LyWw/zh-cn_image_0000002792878798.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011252Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CBDE3768A7DA93714C09CABDFD78E40D2C67783F098A6FAE7B60DC68DA93CF2)
 
 ### 示例2（通过DrawModifier对容器的前景进行自定义绘制）
 
@@ -508,4 +508,4 @@ struct DrawModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/X2jXw1fRRJOVmwwCi53jJA/zh-cn_image_0000002820527095.png?HW-CC-KV=V1&HW-CC-Date=20261119T014958Z&HW-CC-Expire=31536000000&HW-CC-Sign=C98475BAF25A3F9D8997072DAF30FE668DB158779B35483DC1EEA7D7575A63D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/fD_DdNARQo2ZfpAwV6poXg/zh-cn_image_0000002821838703.png?HW-CC-KV=V1&HW-CC-Date=20261121T011252Z&HW-CC-Expire=31536000000&HW-CC-Sign=A72DCCE6252B4D2C47DD32E61E1531F98298D48728628D8089D9E6BAFBEBD467)

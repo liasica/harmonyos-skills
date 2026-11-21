@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-partn
 title: 引导用户绑卡场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 引导用户绑卡场景
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:07+08:00
+scraped_at: 2026-11-21T09:12:33+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:492d4124ac232830153e0fee053fc429d2708749f3f6474192263553d483e09b
+content_hash: sha256:5ee017d2f9b9dee5b23ebc2a7a098fa6cab888fc30d0df2d123e639fa75e82a7
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:492d4124ac232830153e0fee053fc429d2708749f3f6474192263553d48
 
 引导用户绑卡页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/5jSZ6Hm4SjKxtONwDYvhZQ/zh-cn_image_0000002820526517.png?HW-CC-KV=V1&HW-CC-Date=20261119T014813Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AD8132BB7ACB66F1DCE930309DED3C61DC4C9F4A9F81AF78A863D8CBAFFA633)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/jc6P4OGoQoG65Zlh3e98NA/zh-cn_image_0000002793038188.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2CBD38FD1DEE8101F476B8C22DF48DE1EBB273C538FC8AD97AA1F9271CE5698)
 
 ## 提供绑卡跳转应用信息
 
@@ -32,7 +32,7 @@ content_hash: sha256:492d4124ac232830153e0fee053fc429d2708749f3f6474192263553d48
 
 开发者接入引导用户绑卡，具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/TFVnbqv5TIyWL9A2gIr5nQ/zh-cn_image_0000002820406517.png?HW-CC-KV=V1&HW-CC-Date=20261119T014813Z&HW-CC-Expire=31536000000&HW-CC-Sign=09B892C451DFDFBAC870D3F162DAAD8A344C048805A6D4F4195BB2796894E7D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/0Vb4y1CkTZqbQZDr3bcY1Q/zh-cn_image_0000002792878218.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=A43B1F12496FEE808CCC4CA9D67672F407CB1CCBE9FD61097721CE5BB11183C0)
 
 **场景1：用户取消绑卡**
 

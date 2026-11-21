@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (GifMetadata)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Class (GifMetadata)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:54+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:50bc19400ecfac58c2b03fd9583697bed8ff33294c222a87e50a390f3b9b1076
+scraped_at: 2026-11-21T09:16:06+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:9d34092748987230dafd46145cdeeacd7550c4ff326bfa0139ae60f443ac10e4
 ---
 
 GifMetadata.
@@ -34,6 +34,6 @@ import { image } from '@kit.ImageKit';
 | unclampedDelayTime | number | 是 | 是 | GIF图片每帧未钳制的延迟时长。  单位为毫秒（ms）。  该值为正整数。 |
 | hasGlobalColorMap | boolean | 是 | 是 | 是否包含全局调色板。  true表示包含，false表示不包含。 |
 | loopCount | number | 是 | 是 | GIF图片循环次数。  取值为0或正整数。0表示无限循环，其他值表示实际循环次数。 |
-| disposalType | number | 是 | 是 | GIF图片的每帧处置方式。  - 0表示未指定。  - 1表示不处置。  - 2表示还原为背景色。  - 3表示还原为前一帧。  该值为正整数。 |
+| disposalType | number | 是 | 是 | GIF图片的每帧处置方式，取值为0、1、2、3。  - 0表示未指定。  - 1表示不处置。  - 2表示还原为背景色。  - 3表示还原为前一帧。 |
 | canvasHeight | number | 是 | 是 | GIF图片的画布像素高度。  单位为像素（px）。 |
 | canvasWidth | number | 是 | 是 | GIF图片的画布像素宽度。  单位为像素（px）。 |

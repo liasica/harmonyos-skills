@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphic-drawi
 title: 图形绘制与显示开发概述
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图形绘制与显示开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:45+08:00
+scraped_at: 2026-11-21T09:12:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7ecfc8e0fefce98f03c3ef79c352c8dcee1d1668e306ff5d3a4e9beafa545b6c
+content_hash: sha256:ed702186aca4aadd42cd40a9554f5fae016d8ef0aa1486b2819faf3fe114ff8e
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:7ecfc8e0fefce98f03c3ef79c352c8dcee1d1668e306ff5d3a4e9beafa5
 
 **图1** 图形绘制主要能力
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/tjquufMMQleBjMIR3488vw/zh-cn_image_0000002791726032.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014845Z&HW-CC-Expire=31536000000&HW-CC-Sign=92FD02CC72F4898DB1A0144BA79FEB6B6861EB2C40270C8D84A0242F3D9F9727)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/LrlaE6AsSoyPwohO8oQV6A/zh-cn_image_0000002821837619.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011210Z&HW-CC-Expire=31536000000&HW-CC-Sign=A83DF2B04BD36725EC6DC2D54D1DA1D47C622E6E195438E545B58C73BDD77963)
 
 ArkGraphics 2D基于2D图像渲染引擎为开发者提供了一系列灵活多样的图形绘制接口。主要分为画布操作、绘制效果、图元绘制几方面，各部分支持能力关键列举如上图所示，后续可能支持更多相关能力，此处不再一一呈现，具体可关注对应API参考文档。
 
@@ -24,7 +24,7 @@ ArkGraphics 2D基于2D图像渲染引擎为开发者提供了一系列灵活多�
 
 **图2** 图形绘制的实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/fZ7R-U6qSyKAQOeJyAOiZg/zh-cn_image_0000002791566060.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014845Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B55CE76A5E7B63895F80F4568838C819D5706E49B86CD1559B0EB4BF6AB58C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/HfKgSsNXSWqp0GOyVmZtzw/zh-cn_image_0000002821757621.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011210Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA8497D9480EB89C2945541BE262165AAF2938CF392ED8F19A2AE2D08C92E8C6)
 
 2D图形绘制过程和实际作画的过程是相似的，上图即以绘制经过旋转的红色填充矩形为例，提供了图形绘制的流程。主要实现流程和步骤如下：
 

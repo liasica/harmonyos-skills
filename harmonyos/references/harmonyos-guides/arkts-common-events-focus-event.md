@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 支持焦点处理
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 支持焦点处理
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:44+08:00
+scraped_at: 2026-11-21T09:11:10+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:df48655066e58396a4492e8b8aa0f7b291171c722306094afc3172efe216a092
+content_hash: sha256:d0d86a7a3179b07d8a36448768d13c65750d47e763ece664f845591f1a168788
 ---
 
 ## 基础概念与规范
@@ -62,11 +62,11 @@ export struct FocusActiveExample {
 
 按下Tab键，焦点激活态显示。点击鼠标退出焦点激活态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/z_wZ9LgLR4iqHfP5CI0qjg/zh-cn_image_0000002820525151.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CD40FD6527EFE6C127D898CFC17820E8739A7D70BDF01C27618DA760BCD6D8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/jvuj5JanQhWdkRA9MuWXIg/zh-cn_image_0000002793036820.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=4542E2045B418EDA6DEB8457F56A3E55E2D4849C33395ED2AF3589C878FA2793)
 
 调用[activate](../harmonyos-references/arkts-apis-uicontext-focuscontroller.md#activate14)接口进入和退出焦点激活态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/5Xvcl-bIT1WNbXKKPsz7WQ/zh-cn_image_0000002820405151.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=D463CE7E072FE7943BDCEDADD2AA134CC3069322083AC958FA0096DCB6B4E0D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Kbr_tbOtSKqThjqcojrEig/zh-cn_image_0000002792876850.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=829116F43728155CAAF75803FC73B4E4E855928DD3857C4F65D8C880E73C5363)
 
 示例操作步骤：
 
@@ -196,7 +196,7 @@ export struct FocusTransferExample {
 
 运行后点击Button1，请求焦点给Row组件，Row组件的第一个可获焦子节点Button2获焦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/U2F-eRT2SVuOs1VDU3ofsA/zh-cn_image_0000002791725172.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=35DF231EFF526C558267DEDBCBC6E8E7F0A25A263A1DE90589F404EA80A947A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/H2y20eEWTRCADqgbO_reIA/zh-cn_image_0000002821836755.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A58863713E377F868A9DED0ED8DB40313524799C58E04926C8D0587B6622C52)
 
 ### 走焦规范
 
@@ -298,15 +298,15 @@ export struct FocusLinerExample {
 
 Tab键走焦：按照子节点的挂载顺序循环走焦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/qQ-8duITTxS_GnXen2eesw/zh-cn_image_0000002791565200.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A12FF10730B6683C1121357FAA92CBADC67D29C923028A0A5ABE8A0DB30C69B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/QAKVLTDSTMClXqGPImzFzA/zh-cn_image_0000002821756757.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FDE4EBC48BF30C7483FFDDF00EB38A7911680E0A21C6A59A4A398EDD8DDBB26)
 
 方向键上下走焦：纵向的Column容器中，可以使用上下键走焦，无法使用左右键走焦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/7gSHgZTgQTCs-L9PrLDgrA/zh-cn_image_0000002820525153.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AF4B7B25A7963DBD7F366BC283CDCDCC46DE023F26B74A491646D870B5E875E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Nls89VViSSWSo9l6V5JpSg/zh-cn_image_0000002793036822.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EC666B98DC33FC9FD9991DA9D96F7AFC88793C26E9F460273B77B1E9AB13B5E)
 
 横向的Row容器中，可以使用左右键走焦，无法使用上下键走焦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/fzC4I9_yTj62DUqGGCiZMA/zh-cn_image_0000002820405153.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=E58F16948802AC66C88988121C64E34AB9FF5D73C1913126FA46A100872D6C72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/ntPtaEIpSYeggxHOFtt0_w/zh-cn_image_0000002792876852.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=8103A63BE5D0AD65567A6DD016B46DD92DBB8B10ED5895E686408D6104AD654E)
 
 **投影走焦算法**
 
@@ -350,7 +350,7 @@ export struct ProjectAreaFocusExample {
 
 Flex多行组件布局，组件大小一致，走焦正常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/ye3c_vXbSBy0R5AkOr1taQ/zh-cn_image_0000002791725174.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5F0310A1AE26347CFB017358F58BF598598103380A333B5473E48166D2BE4E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/CVLMhfzKTpOMVE-STP3cvQ/zh-cn_image_0000002821836757.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=822C54CD41D3033D6A3C134015ADA360676049649ABA15EBE7BF1A8C14FF0BAF)
 
 ```typescript
 @Entry
@@ -381,7 +381,7 @@ export struct ProjectAreaFocusFlexExample {
 
 Flex多行组件布局，组件大小不一且有纵向的交叠关系，无法Tab键走焦至下方4、5按钮组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Enwjz2vsTj6OnnkEg8Qmyw/zh-cn_image_0000002791565202.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6CE3095DCB62B024E8D0FC9CDD27BF47E2302F3B727645EFEFFE041A8FF70DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/20hpPqPUQxaPPP4h8IOiqQ/zh-cn_image_0000002821756759.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=1700D409EC848A1B30B4A0073D3126A92F6C36CE71137FB9BCD60EB00B76A068)
 
 **自定义走焦算法**
 
@@ -463,7 +463,7 @@ export struct OnFocusBlur {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/1yd1mbklR16zJbc1jR9uKg/zh-cn_image_0000002820525155.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=B802344AB31F9B52E7ECA68E841CC330EBBB880B9AC73E37A6B957AD4A97141D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/9ROdOHSTQju2jMzMaKevHg/zh-cn_image_0000002793036824.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E0D1B6E4FE60AFDC5E8924B5D7D9D54ABC6BA4AB0889282D463F9F903739C80)
 
 上述示例包含以下3步：
 
@@ -685,7 +685,7 @@ export struct FocusableExample {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Ks8gmpAORy2YCoea59mSdw/zh-cn_image_0000002820405155.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6B54B44ADD86BE038CFAC7801C468ADBD390318070ED51D87E5FCCE0FB28FE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/jAzrJuFFQHKwsNY4Yphp2w/zh-cn_image_0000002792876854.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=E82108472351391FDA2454FE80F92E2968990ACEC6993DD8766F18513E336202)
 
 上述示例包含以下3步：
 
@@ -751,7 +751,7 @@ export struct ScopeFocusExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/nltIzFUuT-WvKhgmumBNlw/zh-cn_image_0000002791725176.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB35843093184C6D4C3E971D3002A04240F1604CECC25584BDA7BAEFFAE669A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/7X7RmOnvTiCahhP0IoSwBA/zh-cn_image_0000002821836759.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFA055B3D3183C979DE292F96A175E7ECA5915F8813BA2D7C6A75542213535DF)
 
 上述示例包含以下2步：
 
@@ -794,7 +794,7 @@ export struct TabStopExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/-5c-kBmKQMujSpULWLPAFQ/zh-cn_image_0000002791565204.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEF5C65F0C946101F68CDABAD9426AB69F326F42DE194B592ED231D61025F925)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Hi7Wc72gTDaK6mXrKBOwOg/zh-cn_image_0000002821756763.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9AF43BAA8960389970E3DF6285E58D7C0B60A97FD26702B55F9F87543B9D3B8)
 
 上述示例包含以下2步：
 
@@ -873,7 +873,7 @@ export struct DefaultFocus {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/GBSVNe7TQ6Wrdx_Y4uPoKw/zh-cn_image_0000002820525157.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D499B0BFE0C23A0B2C33D3A35609C15FA4163BF9237DEE02764CF70CE316CF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Zxm9qenwTNaSyVZnLL8ruA/zh-cn_image_0000002793036826.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D41BDD57A4E022CDDB508F3A006D738E09AE10826D69CDAC5D591EF281DDD25)
 
 上述示例包含以下2步：
 
@@ -968,7 +968,7 @@ export struct RequestFocusExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Wio7pplCS6eOXt9Rh4WpBA/zh-cn_image_0000002820405157.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=74DA08CA1B801EF0F617BB67BFE9D8F73A22B27A47839B73388197DC8103F91C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/C7pzhpS1SMOuW-OCtlySGw/zh-cn_image_0000002792876856.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=C32B5DE311A331AE7907A06301F94AFBE17B6E5381AF9A26D92BBE91A2139987)
 
 上述示例包含以下2步：
 
@@ -1085,7 +1085,7 @@ export struct RequestFocusExample {
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/WK8NNFsXTAiHQcqcJW0zPQ/zh-cn_image_0000002791725178.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F294DC6F3F642C0DA8E824B4BE519CC4646359E142714C9EE7EB1A694683901)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/dp8BkhxURUG6z6s0eH9P3Q/zh-cn_image_0000002821836761.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=234F8CE31A1C333F0B4E2695B09D32A2B95BC887EF54673B39A7B59FE6D3DAEE)
 
 上述示例包含以下3步：
 
@@ -1153,11 +1153,11 @@ export struct NextFocusExample {
 
 Tab键走焦：未配置nextFocus时，Tab键走焦顺序为A->B->C->D->E->F。配置nextFocus之后，Tab键走焦顺序为A->F->B->C->D->E->A。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/CqBsHHs7T7e8YldvnGTkYQ/zh-cn_image_0000002791565206.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEAAD7F2290A583CD6A07766DFEF743D3C6C57FC564D71A37AB314910AD7EA6D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/v9r12rAFTou769LfhkvUZg/zh-cn_image_0000002821756765.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A175D6C7D1FC151B08B0F7FCD2D37B156C16D658C996D1F6BCBBE0946C049D6)
 
 方向键走焦（以方向下键为例）：未配置nextFocus时，按下Tab键激活焦点态之后，按方向下键走焦顺序为A->D->E->F。配置nextFocus之后，按下Tab键激活焦点态之后，按方向下键走焦顺序为A->B->C->D->E->F->A。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/tbMtFF0HRUiMOfzkwOeVQg/zh-cn_image_0000002820525159.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=51053ACE777DAEB7B2CB4B459A9A9957096DF6E578787DCCA2CAD3BC5FBC9742)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/bu8Ib2rkQ5Su2xOhNGHqNQ/zh-cn_image_0000002793036828.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FF4814C1F9590E412886A673E89740820B4542AA6FA2FA93A06DBA67D62E70C)
 
 ### tabIndex自定义走焦
 
@@ -1209,7 +1209,7 @@ export struct TabIndexExample {
 
 Tab键走焦：只在配置TabIndex的节点间循环走焦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/sLIQdOnAQrOPq1JDwCoOMw/zh-cn_image_0000002820405159.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAC5F01F013C5F311D0F444A67C330C17A5D2BC040B709D63DB507B07D07E84D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/qqmn1DrORie8Lt0oZh7O9w/zh-cn_image_0000002792876858.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E80B9AF804A3FD3606FA4FE98FF83A44AD4733B7238196A1C3EB7BDC34431EB)
 
 tabIndex配置在容器上时，如果容器中的所有组件都没有获焦过，则走到第一个可获焦组件上，否则会走到上次获焦的节点。
 
@@ -1243,7 +1243,7 @@ export struct TabIndexFocusExample {
 
 Tab键走焦：tabIndex配置在容器上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/2bWYDOtzQg2b2fx2fQI82g/zh-cn_image_0000002791725180.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D0CAE6E156D8AA7A01B69BDB8342B8EC4B94F8D9101AA4EB831179013449EBA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/z4X3Y796Q2Wnn6npafyZDw/zh-cn_image_0000002821836763.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8747513EA1C20DBEF77A36C6CB2A13292DA3885FC77EAE23C423E3EAFE2D2F9)
 
 上述示例包含以下3步：
 
@@ -1397,7 +1397,7 @@ export struct FocusScopePriority {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/fuxJUUdiQL-mhUGFTJFqwg/zh-cn_image_0000002791565208.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D40E1912027F21E278C8118B3C0AB22514AACB0109203A7C6CE2B3CD8970EBA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/MZOHPyjNQ6WaXr9BQmkCRw/zh-cn_image_0000002821756767.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=4490E74D99AA2D04863D249E6EAFC6FCBC44804C72BEB693F21D079B71B7F4EF)
 
 上述示例包含以下2步：
 
@@ -1468,7 +1468,7 @@ export struct FocusScopeIdExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/EXDa7tgBRfOV15ncqtoD1g/zh-cn_image_0000002820525161.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9EB768B7B736D01780DF62765BA31A8CB9080E3034E74B68A26494FF93152F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/JTakq9rmRK-kdnlNacnJ4g/zh-cn_image_0000002793036830.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=F41794065E341BE6D9E1A57D428E0032978AE18FD6F0D8298FD5FE545E53E7B3)
 
 上述示例包含以下3步：
 
@@ -1518,7 +1518,7 @@ export struct FocusOnclickExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/_sN82wkQQiSjvrWpOnTQlQ/zh-cn_image_0000002820405161.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=8432A542919D716419DF39F0933899CB9A939A93652208CE9BEF4397DAB211A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/n0m8U4vXSFmRq81dUO5WVw/zh-cn_image_0000002792876860.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=40F7DA4FBECD94EB044A9ADE1FEE96DC53C25B7AE805E3531DD5B93382054B3E)
 
 ## 组件获焦能力说明
 

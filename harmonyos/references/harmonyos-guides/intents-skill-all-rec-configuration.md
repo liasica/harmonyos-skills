@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 任务执行类场景方案（配置文件接入方式）
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 任务执行类场景方案（配置文件接入方式）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:21+08:00
+scraped_at: 2026-11-21T09:12:47+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:6e4718c0331efb06067458b147251e7a17af9230ab09892a16f6295868947f3a
+content_hash: sha256:9aa447583869c662e3c7f148486f4f45b2212086ce6ae548ae6263a42146bd9d
 ---
 
 ## 方案概述
 
 开发者需要按照意图定义，进行意图注册并实现意图调用；用户通过对小艺对话进行自然语言输入，小艺理解语义转换成意图调用（含意图参数），执行意图调用实现对应交互体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/PMr6oORdQN2V2rFr3KFCqw/zh-cn_image_0000002820526751.png?HW-CC-KV=V1&HW-CC-Date=20261119T014826Z&HW-CC-Expire=31536000000&HW-CC-Sign=C991E1FCEF4874367650D8951E2224DC0E9307B20140C99F2EA3942D42626F90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/8KyUjNJqShO6viWzqEl4gA/zh-cn_image_0000002821838359.png?HW-CC-KV=V1&HW-CC-Date=20261121T011247Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A728D7D50D66F1EAE5B3CCB1183E10B9634E631956AD5CC1D2CEBFBE4438F0C)
 
 ## 意图声明
 

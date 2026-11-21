@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-customsc
 title: 自定义界面扫码
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 自定义界面扫码
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:43+08:00
+scraped_at: 2026-11-21T09:12:08+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a7e768f61711365f6b364369c12b76ca96ae4db1159ea117f403be63f4b9d325
+content_hash: sha256:379c823a60c365107680f69e65222ce17ad9c0eced0eded1b9c3fe3b6dd9f389
 ---
 
 自定义界面扫码能力提供了相机流控制接口，可根据自身需求自定义扫码界面，适用于对扫码界面有定制化需求的应用开发。
@@ -22,7 +22,7 @@ content_hash: sha256:a7e768f61711365f6b364369c12b76ca96ae4db1159ea117f403be63f4b
 
 扫码页面UX设计规范：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/bwcgeINaSbiPNI_Z3bpDVw/zh-cn_image_0000002791726012.png?HW-CC-KV=V1&HW-CC-Date=20261119T014842Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D8A2A26060E3F51A746392FAE8F642C13BE371744CD3ABFA5C9619B591394E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/p0AGipMpQjid5PZ5Vf38sA/zh-cn_image_0000002821837599.png?HW-CC-KV=V1&HW-CC-Date=20261121T011207Z&HW-CC-Expire=31536000000&HW-CC-Sign=3ECAAE7F7D603D7E378C858E8B892259F2E64D3D458996545BC9236A8068A359)
 
 **说明** 
 
@@ -37,7 +37,7 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/-AGd4cV0R4SCWv0EY_pIbw/zh-cn_image_0000002791566040.png?HW-CC-KV=V1&HW-CC-Date=20261119T014842Z&HW-CC-Expire=31536000000&HW-CC-Sign=899BA8F25824ED7493BFAEBD9D0F6C3D6DC6E38CD45E979E6EBE17242F8A916A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/FTN4-yKGQ7KKlIl98TJ39Q/zh-cn_image_0000002821757601.png?HW-CC-KV=V1&HW-CC-Date=20261121T011207Z&HW-CC-Expire=31536000000&HW-CC-Sign=71760550F4FF2BC5A52C7985F652FEEFF696F005E1FE01D8DADCD45D497E35E4)
 
 1. **发起请求：** 用户向开发者的应用发起扫码请求，应用拉起已定义好的扫码界面。
 2. **申请授权：** 应用需要向用户申请相机权限授权。若未同意授权，则无法使用此功能。

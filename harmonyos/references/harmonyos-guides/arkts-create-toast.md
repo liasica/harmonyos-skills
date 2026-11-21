@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-
 title: 即时反馈（Toast）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 即时反馈（Toast）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:42+08:00
+scraped_at: 2026-11-21T09:11:08+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:89d0e4f8e0d889cc9018e4c122f0482068e4560d118cf58723cab0316c69cf42
+content_hash: sha256:ba58f0ca3c4f02f77625bfaeb06e80f447bb7cece3a7f05cda198cc0b5c8698e
 ---
 
 即时反馈（Toast）是一种临时性的消息提示框，用于向用户显示简短的操作反馈或状态信息。​它通常在屏幕的底部或顶部短暂弹出，随后在一段时间后自动消失。即时反馈的主要目的是提供简洁、不打扰的信息反馈，避免干扰用户当前的操作流程。
@@ -103,7 +103,7 @@ export struct DefaultAndTopToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/pUcDv22nQ7GteHeCKly0ig/zh-cn_image_0000002820405089.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014651Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2B6ED62B60FD46CDF4B49B1F719F5BD6823D9B48D1025C3A2E380E2CECA6A11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/rJbhQjWrRFSdwvF8bi-wsg/zh-cn_image_0000002792876788.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010944Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B2EE5A74EBAA5DE42933D6DAD7058AB6224BE9DFBA5BD289C1B16CAE3A441CD)
 
 ## 创建即时反馈
 
@@ -144,7 +144,7 @@ export struct CreateToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/60Kw31yzTNKq-MGMd-FgGQ/zh-cn_image_0000002791725110.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014651Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6FCD306809A05BA4ADDDF7B4F7E001C655F351D0B06338DEC46629711835BA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/jd6lkHZqT1iwogHqw87QOQ/zh-cn_image_0000002821836693.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010944Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A367AD5CDBCFDD1BD9CA1C0D19F01B4B8BDAF21C44C4581251D059D330BE9C2)
 
 ## 显示和关闭即时反馈
 
@@ -204,4 +204,4 @@ export struct OpenCloseToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/NOEq1VGfRwGHzFNnKEP1OQ/zh-cn_image_0000002791565138.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014651Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5C6E59F5CF797112B20BFB7A575005F7E560592C06E3ACE3A2EF6AD08B5E346)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/N8DVOPLaSjGFuAJVGqypDw/zh-cn_image_0000002821756695.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010944Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EF0275565E8F2D6643A4163FD2AB33B7A94F211392125C3D94932777D0FCF8D)

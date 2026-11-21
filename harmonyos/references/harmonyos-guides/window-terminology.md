@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-termin
 title: 窗口开发术语
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口开发术语
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:51+08:00
+scraped_at: 2026-11-21T09:11:17+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:b2d3a2d4dd05fb737ae095370c7e80d377d779862336eb27e3da913f89a0c071
+content_hash: sha256:b326f95653e97c001738bd98b0afc4c3dc210da5a9baa55251fbdd948bd1da27
 ---
 
 ## F
@@ -44,7 +44,7 @@ content_hash: sha256:b2d3a2d4dd05fb737ae095370c7e80d377d779862336eb27e3da913f89a
 
 部分Phone设备上，可通过下拉控制中心，点击“自由多窗”按钮开启自由多窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/fa-7PpfhRveypUZMr4tsiQ/zh-cn_image_0000002820405419.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=863BA3E51AFF1BEDE836A03C18D2799E76F106ED4BC84174192FA88494203363)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/alIiN7ivTL-JOpCkX03CeQ/zh-cn_image_0000002792877120.png?HW-CC-KV=V1&HW-CC-Date=20261121T010952Z&HW-CC-Expire=31536000000&HW-CC-Sign=85CA9015B7C75084C83A29D11D65757B2DCC27A644E186E26BD906C13B99DBD8)
 
 ### Freeform Window；自由窗口
 
@@ -58,7 +58,7 @@ content_hash: sha256:b2d3a2d4dd05fb737ae095370c7e80d377d779862336eb27e3da913f89a
 
 自由窗口可以通过拖动窗口边缘调节窗口大小，可以通过拖动标题栏移动窗口位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/FyuuixYtRB-1t9chMpnsgg/zh-cn_image_0000002820525419.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F855BF1C34989C2B68E419AD3C7278798005E1D641AF7EF0121B9686AD88DDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/-1fs2Fi0TwOL4Jk0831mOg/zh-cn_image_0000002793037090.png?HW-CC-KV=V1&HW-CC-Date=20261121T010952Z&HW-CC-Expire=31536000000&HW-CC-Sign=18E7E58738DF3FBFCF5AA0A729635D6FE3F6874F7DBA397BFA22BB32C2633F73)
 
 当前设备支持情况：
 
@@ -74,7 +74,7 @@ content_hash: sha256:b2d3a2d4dd05fb737ae095370c7e80d377d779862336eb27e3da913f89a
 
 在该坐标系中，所有物理屏幕被映射到同一连续的虚拟坐标空间内，各类窗口操作、坐标转换及窗口矩形变化事件均基于该坐标空间进行计算和回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/1JFzzDfHQHeHd7vAMTr_0w/zh-cn_image_0000002820525433.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=7278EC1BDBB713B44C38D1B24DF2981F58A4A727A5893BB15C858AD99E7F8D32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/3xXqi85LRqmYK6QYt0Grnw/zh-cn_image_0000002793037104.png?HW-CC-KV=V1&HW-CC-Date=20261121T010952Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CE2DD9058C5159B168775A02BC850CA12FB7C967092B954426F74A4AA8C650A)
 
 使用场景：
 
@@ -123,7 +123,7 @@ content_hash: sha256:b2d3a2d4dd05fb737ae095370c7e80d377d779862336eb27e3da913f89a
 
   桌面模式适用于折叠屏设备半折叠状态下，窗口铺满整个屏幕并在上下半屏之间适配不同布局的场景，例如视频播放、阅读等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/tpSfAk41RUCsLXnZgOVT5Q/zh-cn_image_0000002820405433.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8F5B923E0F01709A50CCD131BA8551E99B2881CC2A45D409A5D625B7B10A47E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/lK40Vm1uRQuiTVXtcjLz_w/zh-cn_image_0000002792877134.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T010952Z&HW-CC-Expire=31536000000&HW-CC-Sign=43D1CCF1E07506D60DECA758FB5594AF34DBA03C6B41B4F5234AFE1E1F0BD287)
 
 ### Window Privacy Mode；隐私模式
 

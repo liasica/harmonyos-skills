@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-style
 title: "@Styles装饰器：定义组件重用样式"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Styles装饰器：定义组件重用样式
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:36+08:00
+scraped_at: 2026-11-21T09:11:02+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ef6733c6a657c9dd02236d166963edb5771fef647909fddd471b556d483df418
+content_hash: sha256:69b4c45ef405a37c410d6f9744442ba7f6dd697238d1dcfd466ea3101c950a42
 ---
 
 如果每个组件的样式都需要单独设置，在开发过程中会出现大量代码在进行重复样式设置，虽然可以复制粘贴，但为了代码简洁性和后续方便维护，我们推出了可以提炼公共样式进行复用的装饰器[@Styles](../harmonyos-references/ts-custom-component-decorator-styles.md#styles)。
@@ -61,7 +61,7 @@ struct FancyUse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/T-I-ECS6QBOy79PGZcxWZQ/zh-cn_image_0000002791724582.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=72568C447798E132A844040DB854D4B8F76FB0DBD77AD675D5A9D11F0679EBE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/4-Us473FR_ObIl9z5qcHaw/zh-cn_image_0000002821836165.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=D289D217558B8CBD656FCAFD1E1258899033F508890E1672B33D17A0D3DB331D)
 
 ## 限制条件
 
@@ -148,4 +148,4 @@ struct GlobalFancy {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/i6Q1ziChTASar85ODNm5hw/zh-cn_image_0000002791564610.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=822A82A0B46B1726EFF07ECF7A685A7ECB901A21D0FA68B3377537716F8340D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/dWRoBFANQ-mjLQ5aJYVNAw/zh-cn_image_0000002821756165.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F65A278B0DAC210376FA712C4F970643F279D000B3404EB4D049114ECA6CEE7)

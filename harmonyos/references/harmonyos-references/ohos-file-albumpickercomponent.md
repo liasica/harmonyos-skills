@@ -3,26 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file
 title: "@ohos.file.AlbumPickerComponent (Album Picker组件)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.file.AlbumPickerComponent (Album Picker组件)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a6166f2a66e9d1da112110d59e3e9dc972abede3aa8b3d3e7aea74c0c8b90019
+scraped_at: 2026-11-21T09:16:17+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:8282767d97161e9256d7d2dd2d5f7eb347e8123d8def61c88c59dd06db28f0f8
 ---
 
-应用可以在布局中嵌入AlbumPickerComponent组件，通过此组件，应用无需申请权限，即可访问公共目录中的相册列表。
+AlbumPickerComponent是相册选择组件，相册选择组件适用于需要在应用内展示相册列表让用户选择相册浏览图片或视频的场景，例如社交媒体应用中让用户选择相册进行照片上传。通过此组件，应用无需申请相册访问权限即可访问公共目录中的相册列表，做到了简化权限申请流程、降低开发成本，从而提升了用户体验。
 
-请注意AlbumPickerComponent不支持嵌套，且不应在其上覆盖设置overlay属性或更高层级组件，以免导致手势事件失效。
+相册选择组件需配合图片选择器组件一起使用。当用户选择相册后，系统触发onAlbumClick回调并将AlbumInfo（包含相册URI和名称）传递给应用。应用需通过PickerController将URI传递给图片选择器组件以刷新显示对应相册的图片和视频。详细协作机制请参见文档[@ohos.file.PhotoPickerComponent (PhotoPicker组件)](ohos-file-photopickercomponent.md)。
 
-需配合[PhotoPickerComponent](ohos-file-photopickercomponent.md)一起使用，用户通过AlbumPickerComponent组件选择对应相册并通知PhotoPickerComponent组件刷新为对应相册的图片和视频。
+相册选择组件不支持嵌套，且不应在该组件上覆盖设置overlay属性或更高层级组件，以免导致手势事件失效。
 
 **说明** 
 
-* 该组件从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 该组件不支持[同层渲染](../harmonyos-guides/web-same-layer.md)。
 
 ## 导入模块
 
 ```ts
-import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo, photoAccessHelper, EmptyAreaClickCallback } from '@kit.MediaLibraryKit';
+import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo, PickerColorMode, photoAccessHelper, EmptyAreaClickCallback } from '@kit.MediaLibraryKit';
 ```
 
 ## 属性
@@ -31,34 +31,34 @@ import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo, photoAccessHelper,
 
 ## AlbumPickerComponent
 
-AlbumPickerComponent( {albumPickerOptions?: AlbumPickerOptions, onAlbumClick?: (albumInfo: AlbumInfo) => boolean, onEmptyAreaClick?: EmptyAreaClickCallback, albumPickerController?: AlbumPickerController })
+AlbumPickerComponent({albumPickerOptions?: AlbumPickerOptions, onAlbumClick?: (albumInfo: AlbumInfo) => boolean, onEmptyAreaClick?: EmptyAreaClickCallback, albumPickerController?: AlbumPickerController })
 
-应用可以在布局中嵌入AlbumPickerComponent组件，通过此组件，应用无需申请权限，即可访问公共目录中的相册列表。
+应用可以在布局中嵌入相册选择组件，通过此组件，应用无需申请权限，即可访问公共目录中的相册列表。
 
-**装饰器类型**：@Component
+**装饰器类型：** @Component
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| albumPickerOptions | [AlbumPickerOptions](ohos-file-albumpickercomponent.md#albumpickeroptions) | 否 | AlbumPicker的配置信息。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
-| onAlbumClick | (albumInfo: [AlbumInfo](ohos-file-albumpickercomponent.md#albuminfo)) => boolean | 否 | 用户选择某个相册时产生的回调事件，将相册uri给到应用。不对返回值做特殊处理。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
-| onEmptyAreaClick13+ | [EmptyAreaClickCallback](ohos-file-albumpickercomponent.md#emptyareaclickcallback13) | 否 | 点击相册组件空白区域时产生的回调事件，并将该次点击通知给应用。  **元服务API**：从API version 13开始，该接口支持在元服务中使用。 |
-| albumPickerController20+ | [AlbumPickerController](ohos-file-albumpickercomponent.md#albumpickercontroller20) | 否 | 应用可通过AlbumPickerController向组件发送数据。  **元服务API**：从API version 20开始，该接口支持在元服务中使用。 |
+| albumPickerOptions | [AlbumPickerOptions](ohos-file-albumpickercomponent.md#albumpickeroptions) | 否 | AlbumPicker的配置信息。若不传入此参数，则使用默认配置。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| onAlbumClick | (albumInfo: [AlbumInfo](ohos-file-albumpickercomponent.md#albuminfo)) => boolean | 否 | 用户选择某个相册时产生的回调事件，将相册信息（AlbumInfo，包含URI和albumName）作为参数传递给应用，应用可通过此回调通知图片选择器组件刷新。若不传入此参数，则不监听相册选择事件。返回值无实际作用，可返回true或false。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| onEmptyAreaClick13+ | [EmptyAreaClickCallback](ohos-file-albumpickercomponent.md#emptyareaclickcallback13) | 否 | 点击相册组件空白区域时产生的回调事件，并将该次点击通知给应用。若不传入此参数，则不监听空白区域点击事件。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
+| albumPickerController20+ | [AlbumPickerController](ohos-file-albumpickercomponent.md#albumpickercontroller20) | 否 | 应用可通过AlbumPickerController向组件发送数据。需在相册选择组件创建时传入AlbumPickerController实例，若不传入此参数，则无法通过控制器控制组件。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 
 ## AlbumPickerOptions
 
 Album Picker配置选项。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| themeColorMode | [PickerColorMode](ohos-file-photopickercomponent.md#pickercolormode) | 否 | 是 | 相册页主题颜色，包括跟随系统、浅色模式以及深色模式，默认为跟随系统。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
-| filterType13+ | [photoAccessHelper.PhotoViewMIMETypes](arkts-apis-photoaccesshelper-e.md#photoviewmimetypes) | 否 | 是 | 相册组件过滤参数，可筛选只显示图片、视频或者图片和视频。若未配置此参数，则某个具体相册中显示图片和视频类型的所有资源。  **元服务API**：从API version 13开始，该接口支持在元服务中使用。 |
-| fontSize20+ | number | string | 否 | 是 | 字体大小，取值范围参考[fontSize](ts-basic-components-text.md#fontsize)。  **元服务API**：从API version 20开始，该接口支持在元服务中使用。 |
+| themeColorMode | [PickerColorMode](ohos-file-photopickercomponent.md#pickercolormode) | 否 | 是 | 相册列表主题颜色，包括跟随系统、浅色模式以及深色模式，默认为跟随系统。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| filterType13+ | [photoAccessHelper.PhotoViewMIMETypes](arkts-apis-photoaccesshelper-e.md#photoviewmimetypes) | 否 | 是 | 相册组件过滤参数，可筛选只显示图片、视频或者图片和视频。若未配置此参数，则相册组件显示图片和视频类型的所有资源。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
+| fontSize20+ | number | string | 否 | 是 | 字体大小，取值范围参考[fontSize](ts-basic-components-text.md#fontsize)。若未设置此参数，则使用系统默认字体大小。也可通过[AlbumPickerController](ohos-file-albumpickercomponent.md#albumpickercontroller20).setFontSize动态设置字体大小。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 
 ## EmptyAreaClickCallback13+
 
@@ -68,15 +68,15 @@ type EmptyAreaClickCallback = () => void
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 ## AlbumInfo
 
 相册相关信息。
 
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -87,19 +87,19 @@ type EmptyAreaClickCallback = () => void
 
 应用可通过AlbumPickerController向组件发送数据。
 
-**装饰器类型**：@Observed
+**装饰器类型：** @Observed
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 ### setFontSize20+
 
 setFontSize(fontSize: number | string): void
 
-应用可通过该接口设置相册列表的字体大小。
+应用可通过该接口设置相册列表的字体大小。需要在创建相册选择组件时传入albumPickerController参数。
 
-**元服务API**：从API version 20开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
 
@@ -142,7 +142,7 @@ struct PickerDemo {
     Stack() {
       AlbumPickerComponent({
         albumPickerOptions: this.albumPickerOptions,
-        onAlbumClick:(albumInfo: AlbumInfo): boolean => this.onAlbumClick(albumInfo),
+        onAlbumClick: (albumInfo: AlbumInfo): boolean => this.onAlbumClick(albumInfo),
         onEmptyAreaClick: this.emptyAreaClickCallback,
       }).height('100%').width('100%')
     }

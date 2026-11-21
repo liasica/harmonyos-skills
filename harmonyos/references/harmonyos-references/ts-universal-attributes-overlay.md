@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 浮层
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > 浮层
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:50+08:00
+scraped_at: 2026-11-21T09:14:01+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:907c8329d99a6b7847c8aedfb4f30eaa0c037f8f5d055eefae152b484f49971f
+content_hash: sha256:eb1a411a9ae264e4ee034bc728ce484c33612c9fccd089cac8f98c0d5ef3ea6c
 ---
 
 设置组件的浮层，可用于在当前组件上叠加遮罩文本、自定义组件或ComponentContent，并支持基于当前组件进行定位，适用于提示信息展示、水印等需要在组件上方叠加内容的场景。
@@ -137,7 +137,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/hAbPs0alQiaUpuqaJM39qg/zh-cn_image_0000002791727008.png?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A8BB4A2511F72EF9544CF863E57275D3EE7DA0019EA76D236C722ECE63D2706)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/IbD-CcB1QzOodwJnv5OqSQ/zh-cn_image_0000002793038660.png?HW-CC-KV=V1&HW-CC-Date=20261121T011250Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AFBCA15D35C092357088140E4070E8A3523CAF433DB3841C7B63C56BFBDFC53)
 
 ### 示例2（通过builder设置浮层）
 
@@ -173,7 +173,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/7DmdNfJGTOuEt2lIOLT9ZQ/zh-cn_image_0000002791567036.png?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=578469EBB9032402EBD5B931E559D6EC84BD49DDA7C3BB9100FD1D9A2CE7EFE5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/uigxaz3BQ1C1v8tIOZiIBA/zh-cn_image_0000002792878690.png?HW-CC-KV=V1&HW-CC-Date=20261121T011250Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FDE24BAF85D3DE7072348B0CCDCD80A8EF72BF343998D254365CA30D1A519CD)
 
 ### 示例3（通过ComponentContent设置浮层）
 
@@ -232,4 +232,4 @@ struct OverlayContentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/k7t9b9vzRBOPj0aHYpr8VA/zh-cn_image_0000002820526989.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=412D8EF5BFC35DF2990E32F5499A073BB8601E4E96760A593B760704B05BC019)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/yOcxG11VTmGszrXfLL3_Yg/zh-cn_image_0000002821838597.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011250Z&HW-CC-Expire=31536000000&HW-CC-Sign=F397A82AEB46F4341DFCEEE773C6D1FF829381773F5AA28E4602420320BBF5E9)

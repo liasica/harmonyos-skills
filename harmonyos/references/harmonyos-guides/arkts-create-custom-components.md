@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-
 title: 创建自定义组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 创建自定义组件
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:35+08:00
+scraped_at: 2026-11-21T09:11:01+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:975513b201d51f3bc8db424a5407fd0a5f32742aeec6f7962c0baad1bbaf4742
+content_hash: sha256:dc54224c1acc3277a5685b2ee8d66024e3d53fce3feaa77a95e7be5c1379357d
 ---
 
 在ArkUI中，UI显示的内容均为组件，由框架直接提供的称为系统组件，由开发者定义的称为自定义组件。进行UI界面开发时，不仅要组合使用系统组件，还需考虑代码的可复用性、业务逻辑与UI的分离，以及后续版本的演进等因素。因此，将UI和部分业务逻辑封装成自定义组件是不可或缺的能力。
@@ -69,7 +69,7 @@ struct ParentComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/u43jNPiMTPqzQZiB3svyLg/zh-cn_image_0000002791564546.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6EA69147AFD1A17F5CE9A55FCEF06BDF3DD80552767076FFF94F98AE220AADF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/5hBhD8gfQ1yigF98Cp-Bgw/zh-cn_image_0000002821756101.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011100Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A220E0A9B6998F9F56AE2783B2F2670B0E1C7B25CA7A77B03081E521287605C)
 
 要完全理解上面的示例，需要了解自定义组件的以下概念定义，本文将在后面的小节中介绍：
 
@@ -196,7 +196,7 @@ struct MyComponent {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/0CCK1wj7T7Segxi4oRjOvQ/zh-cn_image_0000002820524497.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=5579FCB0889426497F12416878997F0A31B8F4780CCB623975F3DCB7DC505B4E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/iIw60SFRQsCyC1l1bLIJNg/zh-cn_image_0000002793036166.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011100Z&HW-CC-Expire=31536000000&HW-CC-Sign=23994DC530A820D1EFA7DF2884320E547E396BC115DCECEBA02D4CD295D7EDFC)
 
 除非特别说明，@ComponentV2装饰的自定义组件将与@Component装饰的自定义组件保持相同的行为。
 
@@ -313,7 +313,7 @@ struct ParentComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/QAuKBEgNT5Cr3ANIQWkZLA/zh-cn_image_0000002820404497.png?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A285E724F0A6C2BCFDEAC36FC3D2C8F97EE360171C89434E10DE99591B01856)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/0wxw_jmFQ7KWPJfxIsLRAg/zh-cn_image_0000002792876198.png?HW-CC-KV=V1&HW-CC-Date=20261121T011100Z&HW-CC-Expire=31536000000&HW-CC-Sign=30A2400B3EBE19B2877DC63A79122FC8D107611A29A51D5B262D8DD5D017421C)
 
 以下示例代码将父组件中的函数传递给子组件，并在子组件中调用。
 
@@ -358,7 +358,7 @@ struct Son {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/lo8Q6895RFWirsfyK2Xl9g/zh-cn_image_0000002791724520.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=225726C0D00A282EC13931E08F165C8EEF8C420D59EBA34019AD05905526541C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/7rRglaefSi6UByvIBoMIBQ/zh-cn_image_0000002821836103.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011100Z&HW-CC-Expire=31536000000&HW-CC-Sign=D255F971274206CDEAD8365CF8F5692613844F8A9694FD0DCB8B05EEDB8F4106)
 
 ## build()函数实现规则
 
@@ -549,7 +549,7 @@ struct Son {
 
   在ArkUI状态管理中，状态驱动UI更新。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/u3b8VzSpRXKGITHbOpADVg/zh-cn_image_0000002791564548.png?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=712575A39BEF19A06E0DAED0105DB36BF97968E22E7E4E0367AB6A82E0AE2B9D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/u32MuPC1S3WWN_h34ygLzw/zh-cn_image_0000002821756103.png?HW-CC-KV=V1&HW-CC-Date=20261121T011100Z&HW-CC-Expire=31536000000&HW-CC-Sign=044CA184F9D5E371CC423A2C0421C4EF7DD1EDEFFC185C06A1555CB3D32C7C4F)
 
   所以，不能在自定义组件的build()或@Builder方法里直接改变状态变量，这可能会造成循环渲染的风险。Text(`${this.count++}`)在全量更新或最小化更新会产生不同的影响：
 
@@ -611,7 +611,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/mdj4Ae6zR728WeDSgMpIeg/zh-cn_image_0000002820524499.png?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=F00FA23F736E8D9D192041FCD23FC08BDA7BE656E833DD70311940E63CFC55B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/38MzNF3gRaKTFhLxe1CqgQ/zh-cn_image_0000002793036168.png?HW-CC-KV=V1&HW-CC-Date=20261121T011100Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE0A5D5BDE6F8B8CE8C710950868F12139B61DBF48781AE3257B970BF44D520F)
 
 **说明** 
 
@@ -852,7 +852,7 @@ struct ExtraIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/0nOEhUqUSASZJW2BGmvdIg/zh-cn_image_0000002820404499.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF99B22371CC8C2F4C3685B5A97ECD4CEA4EC17943CA8E09871A66A4E9F8DCD9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/W23LUCmDSCWdAoYRbM26WQ/zh-cn_image_0000002792876200.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011100Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CE9BBE5199A4733005399612C3C541578DDD0A6860E30D5C2C0BB157064B81C)
 
 ## 限制条件
 

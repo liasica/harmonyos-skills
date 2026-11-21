@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.curves (插值计算)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.curves (插值计算)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:42+08:00
+scraped_at: 2026-11-21T09:13:56+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:bdec3969cbeca2fecadf705916bcbe4764d0f45d2a0f470a4ad91e360f901f14
+content_hash: sha256:311e8f78d0b438c243f1bd6bfc42c67d3517dbabf3f846e49ceb9cdd51d20fba
 ---
 
 本模块提供设置动画插值曲线功能，用于构造阶梯曲线对象、三阶贝塞尔曲线对象、弹簧曲线对象、弹性动画曲线对象、弹性跟手动画曲线对象、插值器弹簧曲线对象和自定义曲线对象。
@@ -468,4 +468,4 @@ struct ImageComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/N-vxd5PuQlS65sAwOPXMkw/zh-cn_image_0000002820406917.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=098E79B877295CDAFE15E65090FBC4117D35C9FF247E0858FEDE8E9187FF8991)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/URaBar7FRIixpEOzUmG8dw/zh-cn_image_0000002821758527.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=662EDAFB0A0C196B684E4E3B87421E2C318FEE36B9F31BCEAC29AAD4B11992F0)

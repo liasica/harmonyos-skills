@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: 应用内检查更新实现及常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > 应用内检查更新实现及常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-06
-content_hash: sha256:fdcb195ef4002b1eb4da9a5507e2e4c332761ac4eae37113c239a7b39913c04e
+scraped_at: 2026-11-21T09:19:18+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:bba695bc7957a0233ccd147f47862720eb337d782749b6ac77527b86f9c4c3f3
 ---
 
 **Q：应用上架应用市场后，有新的版本更新时，如何实现老版本用户打开应用能提示更新版本？**
 
 A：业务流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/DkdxJrDWSkiyLrlYJbujlQ/zh-cn_image_0000002792076741.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC3229360389DB71E2F5ED4DA92FA87076BBB8DE66D4438C3E607C5D1153E067 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/kl45oXxLQTGucpJD1addKQ/zh-cn_image_0000002792076741.png?HW-CC-KV=V1&HW-CC-Date=20261121T011917Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA27985D631F910A1A946B152FD7F77C50384DEDD9EE5058C78831F4977B08C6 "点击放大")
 
 1. 应用调用检查更新接口。
 2. 升级服务API返回是否有新版本。
@@ -44,6 +44,29 @@ A：业务流程：
 **Q：应用升级版本号如何定义，是通过versionName还是versionCode来控制的？**
 
 **A**：要实现升级弹窗，更新版本versionCode必须大于老版本versionCode，versionName不做要求。
+
+**Q：应用内版本更新检查如何实现？**
+
+**A**：建议拆成版本检查、更新入口、强制更新、增量更新四部分实现。
+
+1. 版本检查：比较versionCode。本地读取应用的整数versionCode，服务端返回latestVersionCode、minSupportedVersionCode、更新说明等。判断逻辑：
+
+* 本地版本低于minSupportedVersionCode：要求升级后继续使用相关业务。
+* 本地版本低于latestVersionCode：提示可选更新。
+
+versionName用于展示，不要直接按字符串比较大小。
+
+1. 更新入口：优先接应用市场能力。
+
+   已上架的HarmonyOS应用，可以使用@kit.AppGalleryKit的updateManager.checkAppUpdate(context)检查，再调用showUpdateDialog(context)显示升级提醒。要求本地与在架版本签名一致，且本地版本更低；不支持用模拟器验证。
+2. 强制更新：由业务控制最低可用版本。
+
+   当前上述接口没有通用的“强制更新”参数。可以由应用显示升级拦截页，服务端同步拒绝不再兼容的旧版本请求，用户完成更新后恢复业务。这属于业务准入控制，不能强制静默安装。启用强制更新前，应确认新版本已对目标用户实际可下载，避免灰度期间导致用户无法正常使用。
+3. 增量更新：区分安装包和资源包。
+
+   应用升级交给应用市场分发；上述接口没有开放自行配置HAP差分合成的能力，不能承诺每次都走增量。若是图片、模型、离线内容等资源，可以自建“版本清单＋文件哈希”，只下载变化文件，校验完成后切换版本，失败保留旧资源。二进制差分的原理是“旧文件＋补丁＝新文件”，但还需处理基线版本匹配、完整性校验和全量下载兜底。
+
+启动检查建议异步进行并设置超时、调用间隔，普通网络失败不应直接判定为必须更新。
 
 **Q：能否使用邀请测试实现检查更新和升级弹窗功能？**
 

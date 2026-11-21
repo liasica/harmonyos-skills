@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 录像(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 录像(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:05+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:abe2bdc15747521655c81f7fe2cd031643000d4f2e984f65a538bed9c4cde086
+scraped_at: 2026-11-21T09:12:02+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:ffb305c55118b97819734b03bc0f858bb220998c117c672169cba108ed8864e4
 ---
 
 录像是循环帧的捕获，同时也是相机应用的最重要功能之一。对于录像的流畅度，开发者可以参考拍照(C/C++)中的[开发步骤](native-camera-shooting.md#开发步骤)7，设置分辨率、闪光灯、焦距、照片质量及旋转角度等信息。
@@ -39,6 +39,7 @@ content_hash: sha256:abe2bdc15747521655c81f7fe2cd031643000d4f2e984f65a538bed9c4c
    #include "ohcamera/video_output.h"
    #include "napi/native_api.h"
    #include "ohcamera/camera_manager.h"
+   #include "ohcamera/camera_device.h"
    #include <window_manager/oh_display_info.h>
    #include <window_manager/oh_display_manager.h>
 

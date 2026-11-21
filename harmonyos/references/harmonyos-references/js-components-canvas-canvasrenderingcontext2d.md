@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: CanvasRenderingContext2D对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > CanvasRenderingContext2D对象
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:23+08:00
+scraped_at: 2026-11-21T09:14:24+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:db7ebe0231b0a8bf9fcea74368ab598eb9e30d33b21eef934bb4e45a086f527a
+content_hash: sha256:5329428aa0a6bfae71d5ce4bba4969f8d39a3adf28ce2c1ce0057f82e0126383
 ---
 
 **说明** 
@@ -47,10 +47,10 @@ export default {
 
 * 示意图（关闭抗锯齿）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/2VeVO-pJS2G4gH78NF4P5Q/zh-cn_image_0000002791727800.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=B691184FD5316B1536EEE1BF1325DEFACC27C41D723C33FC80ECCA0810FC5F8F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/_qYQEitYT7ytU5b-xHnOFQ/zh-cn_image_0000002793039482.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=96AC3D986A49CEA33ADC5727E7096108E9A5D4C95DBC51169BF5BA3EDD44BE17)
 * 示意图（开启抗锯齿）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/caHJs7iARaCBkjwS_xO_FQ/zh-cn_image_0000002791567828.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCFFD935163CBAA42AFC000EB081B72CD13A0C70CF47E3735EE751DEA444AE5C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/SfrIuXmWQ8qmdOj9sGbvUQ/zh-cn_image_0000002792879508.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2BC1D31CBD08ACB8B06A32A4816580901E93586C900813456889039DA12F38F)
 
 ## 属性
 
@@ -95,7 +95,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/zYC6f9_zQS66Gk3DPLmuDA/zh-cn_image_0000002820527781.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=B200A1794414872EE7D5359C33BF68E037AB095556E96CAC8EA6AF2B26232502)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/x9AZeAvaROGYmfoPij-q5g/zh-cn_image_0000002821839413.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=485F6D2AFD37B130EB829F2C3F05432E4B65F2B72B56C3DB291717E03384A755)
 
 ### lineWidth
 
@@ -118,7 +118,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/xs-w0v2MT62PWAkS-lTAqA/zh-cn_image_0000002820407783.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEC766EC55FEECF58330C7B510E02B6E369C6205702B75BA1AD988D4D42E30B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/kDSwf1MCQr2g4QCKNu0X2A/zh-cn_image_0000002821759415.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=93C84E5346AE704516DCA97112BBEA9B7E260481C804FF43EFFE7D5A99D24100)
 
 ### strokeStyle
 
@@ -142,7 +142,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/fUKqAjZkQW-z2SllpBNExQ/zh-cn_image_0000002791727802.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=574EDDC330605E256DF0AC62A8A95918E54448DA84858D08BAAD8E8B5344A088)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/0yQAr1-dSRK2-lE7OqH83Q/zh-cn_image_0000002793039484.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=934F744466E8C4172DF4E5ADF6FCFE43DEBD7A664070FC80DF030D7D98B46821)
 
 ### lineCap
 
@@ -169,7 +169,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/dQJbxgPpRGGXCU6TwLlmfw/zh-cn_image_0000002791567830.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CAC2465927960D984380DEBB03FDF5D903DC1FC9D09A2926A4A38342B56E5A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/9RZ9hfaKTtO8PFDIECyYDQ/zh-cn_image_0000002792879510.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9CD7FCD10E98BB1A57891690BE133D1CB80ADE4B881CE040CB1718E6472650F)
 
 ### lineJoin
 
@@ -197,7 +197,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/GFwh5TsGQD6Vd3Sg_TTSQw/zh-cn_image_0000002820527783.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2D8B2F9945EF89ADC27CDA83CADF03C94E006DF533721AE741152AD184ECCD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/L1p_b0DVQHqw5M7dqln5Zw/zh-cn_image_0000002821839415.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=735F6BEAE0F90BBEF11DB1103B599833B50C97941FE49D5CC1D69BA40A0F50BC)
 
 ### miterLimit
 
@@ -225,7 +225,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/MpWf7bCgQ5e6ArWRyKstfA/zh-cn_image_0000002820407785.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=D45C4C8C4C88167461E68D75DDDE5C0DE159F36F532EFDEDD6E93F2B0FC25DCD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/yXnw-AAGS8uzWwUrGlmTkw/zh-cn_image_0000002821759417.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BBC85EBFEA6C457AE42384A511F7565771834C5E5B2CC8CC0F9C3179CCF2179)
 
 ### font
 
@@ -248,7 +248,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/nb1pT1v7Ta2oblQVANGfrA/zh-cn_image_0000002791727804.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=794AA82869FF964F798140938A2A2356169F762D53F5EE01F815D5E618768503)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/9CaWiA5PTUuffZdV9VaAdw/zh-cn_image_0000002793039486.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=472AAB69F95FE4CCF997168C15C0D95F998B6E089F5613AD7BBF062FE18954F4)
 
 ### textAlign
 
@@ -285,7 +285,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/pdijJ5PLQAWmyCL4GcVcng/zh-cn_image_0000002791567832.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=E19B98A50E2F92B8F75E952F9BC99303C97654502AE06D3988B8902D89377D07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/xsjLuWSBSfeknduUv7PKig/zh-cn_image_0000002792879512.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=14A0787504ACBF617E189A7B9356C2078D91DA5BF01D5D6E817B53E6AC35C4F8)
 
 ### textBaseline
 
@@ -321,7 +321,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/L_PirmVoR2qSvhSSXU-KVg/zh-cn_image_0000002820527785.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=338C6298B8E743E23A787454DDC65F472927F12FEF63491ACA71DB82F85E4CE3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Br2MttYhR6a9CLE6nF07LQ/zh-cn_image_0000002821839417.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=6115CF0C42F881D6FC70B217B82FFC5F5D9C2D3E7C3319E8F24CE3FF948052A6)
 
 ### globalAlpha
 
@@ -348,7 +348,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/pNyjaTD8T4mHUwrDyf1zzw/zh-cn_image_0000002820407787.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D0B0BD41D0FA9508FC4445695A7C8CB83655E733B40900CA726C2E4D349E73C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/cjdfpHxGT9WVbxucs6Yczw/zh-cn_image_0000002821759419.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9895CA9699FAB457B445812616FC3C8B2581CED3B19939769327E1715369C8E)
 
 ### lineDashOffset
 
@@ -373,7 +373,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/lWiftzAlSRu3T3eTFbLT6Q/zh-cn_image_0000002791727806.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=A99F89E613D9C7B3BA84401977E248436A964B80230BB58586159124BAD04257)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/u1U5smLcQ0ed1GuWz2aeRQ/zh-cn_image_0000002793039488.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA629D4CA6B07C4A0B1F184569BCE32EF7BE353A0E50B4B783D2939012C95614)
 
 ### globalCompositeOperation
 
@@ -423,7 +423,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/PxqdbWQsSjOfaCmH0TJ6WA/zh-cn_image_0000002791567834.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=882A23FFC512CCC544FFF3962FB2DA34C4110644FBE6C1BEB714DAED1BD4ACB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/muyHWt3TS_eauAwv_d8htw/zh-cn_image_0000002792879514.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DDA468E38FE91EF73F03A526D0AF245BC09556123097A7EF22F29EC8DB1FE03)
 
 示例中，新绘制内容是蓝色矩形，现有绘制内容是红色矩形。
 
@@ -450,7 +450,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/PwfFwZqPR1S6GPHqmB3i5A/zh-cn_image_0000002820527787.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F1A792BFF8E535B9F1F96586D830DE416741C9A1D9DBC2B40F61EE26E82BBF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/QDCcJjn5Q46KsRTJ_XBnug/zh-cn_image_0000002821839419.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9D7A1558E69A0505452C47156C2241AB5369BCF6C7E9E8DE8CBF4563A2A66B8)
 
 ### shadowColor
 
@@ -475,7 +475,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Wl8sncI3Tnq4PCLHu9KKGw/zh-cn_image_0000002820407789.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=92A68748BEF910C7A807C7CA40336F3822C51CEC1E90B92B9D5CCBC99EAB14E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/JzIKij_uSOuqyU7rDjCX9g/zh-cn_image_0000002821759421.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3E5D9E6C230AA0B2D7ABC6FAFF4344C0318DC0F9B83490578521418A2DCA83B)
 
 ### shadowOffsetX
 
@@ -501,7 +501,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/IJY9E0AGQ0CMt0AwwzcImQ/zh-cn_image_0000002791727808.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBB713785D2B1DB92A0946967AF52502C7C4A2872132E6CC7BCAF51E14FC99B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/fwzUWT50Svi2G5W21bKjqQ/zh-cn_image_0000002793039490.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=698F7E54D491249420024FBD96BD51CC18E0ECB28E14E29972C3D98C09F3C7BE)
 
 ### shadowOffsetY
 
@@ -527,7 +527,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/1FETWeAnQo--Flrnl073Gw/zh-cn_image_0000002791567836.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DD519F6372DF76560F449AFCE6463480FC07000346DC93EB47F4C793C3933F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/DzbW-3eAT3a4XA7Y7HgJxQ/zh-cn_image_0000002792879516.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=336411BEDD5CDBF30442B08C2684E1A2414F68A6A69600726914C9EA1C3AAD7D)
 
 ### imageSmoothingEnabled
 
@@ -555,7 +555,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/IAPqFy9RTByww_tgM6J-bw/zh-cn_image_0000002820527789.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=50C4ADDAAF811AF949F68B8EB3F6038317A10DE220F72185CD8793A53D69C96D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/qylvxygYQG2iUdDteWr0lg/zh-cn_image_0000002821839421.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2A2DA7DBECF837DFDE44F3886FE8492D1FECFC237590056D86A3354ACB2C0A3)
 
 ## 方法
 
@@ -596,7 +596,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/FYRWE5vSS8SLZJNaHIRXvA/zh-cn_image_0000002820407791.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=3307B8FE96D782CABC5603541F54DAE59C079ACE60525427948EAEA3D8AB71AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/e8KLIDz8RhGpnaOd1-mD7g/zh-cn_image_0000002821759423.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5C52CFE114AFE114C755D22C7667A12FC51DA8D8778E7420FABB6E2AFB6B238)
 
 ### clearRect
 
@@ -637,7 +637,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/UyPzDmqdQL6Wki07dwbaJg/zh-cn_image_0000002791727810.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AFDF8CDA20B45EADAE063CC1F425021919C226B2F0CFC655472FCDF6682E579)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/8rq9UdFFS-219PdOKLSmuw/zh-cn_image_0000002793039492.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5E701DC0543DFF1761475F44D00F245819A4A4B66AA92224810D63567AF8887)
 
 ### strokeRect
 
@@ -676,7 +676,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/FD6it6aFQnmeb3qAbGFI8g/zh-cn_image_0000002791567838.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EE2298D7601E0D897FA7F464352A1E77312616DAE3867FABBB5969B792518F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/tHnmuk4TRj2I5oUOnkmF2g/zh-cn_image_0000002792879518.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4C6E76F857A35740DF2AEC74643F182A3B6414E3DBF25831D8AF34EE3AD5357)
 
 ### fillText
 
@@ -715,7 +715,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Z9Pgzi6yRMGhu5Br6qFQnw/zh-cn_image_0000002820527791.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=68F4413F8C837D3C19C410776D06E5C9F6B05B35EE95F5864DD51BF9FB62C8E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/fvTx6IQMQeeGsoRrApxW5w/zh-cn_image_0000002821839423.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BA7B461AC9F33074F8AC3B7D9376322B6E8989D3A5C474F6B5F967127458785)
 
 ### strokeText
 
@@ -754,7 +754,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/MOl1AihGTNWGYYuREoEbjA/zh-cn_image_0000002820407793.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=9365119098312B2F10AC6A6AB8D0F182AECEDFD65FDEB4F627B778FEF4C41FD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/sCO_6JX-Ql6q97ZACDXZ6g/zh-cn_image_0000002821759425.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=C36862E15FCFA6C61A16EE961ACAC0A79E28DDE66A91B2175BC29C3B3A50C205)
 
 ### measureText
 
@@ -799,7 +799,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/cdNxtF_OQ5izwz3V_t28Bg/zh-cn_image_0000002791727812.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=22FFE1454E9B3D640519C76A329190765BFA7C745090C2DEE8EDCE722FFFBDF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/PhB2oIaPR8C7iqTKcp_eLg/zh-cn_image_0000002793039494.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDA88799A57E9B3F635D17528250C08B414F93F0DC3CEC034D407827BADAD650)
 
 ### stroke
 
@@ -833,7 +833,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/pHMMiNeUSzSq8Z7eS5jdSg/zh-cn_image_0000002791567840.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED64E8173C3E60F71C9D6BA6055BF6E67C103A79531F785E4D15154E2C49ED41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/rsHXgCLfR6i8TkKawfmbEw/zh-cn_image_0000002792879520.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=0163C1043C6F081430BA1618E0001F7615B5F18C2EB1077F9CBFDFB7627AED2E)
 
 ### beginPath
 
@@ -868,7 +868,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/WMr32-_5TOmuKCgXYgf8wA/zh-cn_image_0000002820527793.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5798FA6BAABB5B28E0C961DC56FC256B74376C605A2AF90C626D4C92680A980)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/-SehVCXNQwSslpE7w8MLgA/zh-cn_image_0000002821839425.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DB84AD095D9AA96CF2A27A4ED3314FF96CBF8BED0191A4EA2FF20C0B59E1A2C)
 
 ### moveTo
 
@@ -908,7 +908,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/P5RUClL2SdSfWNkrqAiwgg/zh-cn_image_0000002820407795.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA72AA05BFA261D81CD80AA9A0CF68432D4DEDB3D49CD915728707E117636B5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/5C-O8dkaR7KZbxEvuf7vMw/zh-cn_image_0000002821759427.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=99214B8F87F789F902805A1B69CE7F48276BB78D1A495B1F9943D38DC31A08C2)
 
 ### lineTo
 
@@ -948,7 +948,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/xXr1WKRKT8Kj7mQhhygdsw/zh-cn_image_0000002791727814.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8A18CEA069EB4F2C7602A12CE2F2E8A77D295B19BD3258DCE38ADA476B2E238)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/zkV6rsMiRBueC4Ojsu1Rag/zh-cn_image_0000002793039496.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAC5CA4CD1EED93E1E0B8D68B26FF2A628BB9E8A3F6770B5255D8EE4ADE9E9BF)
 
 ### closePath
 
@@ -983,7 +983,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/WAV58hynSUuAjzIsVwlwJg/zh-cn_image_0000002791567842.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8128FC7799FFE5C519289F4881F3355F927BE9A65640DCAE07F980940570C59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/h1gjoVSlRFuhbywqW9m3Yw/zh-cn_image_0000002792879524.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D0F53732AA8197E14BBC800EA38A6E5B98FC8FE39C8259082F3A68081539C6A)
 
 ### createPattern
 
@@ -1031,7 +1031,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Q_MvX1ZsTSCu1FqqMFb2Lg/zh-cn_image_0000002820527795.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCA71B40C4ADFE130DDBE52AEEE7205D80F791B7437DACA20782C3406580123A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/4_3vAapLQk-wlzMOtd5omA/zh-cn_image_0000002821839427.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=700F34D4B0090DBC61426F6A86B1ED544E36842546A803D8AE94B5CA9400FC5F)
 
 ### bezierCurveTo
 
@@ -1075,7 +1075,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/DsLFpYLQQzGyf5OGIGhMEg/zh-cn_image_0000002820407797.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=E75CE580FB0FE05EFBA12CD11B63A68024E6EC8CAE253657926309585D1797C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/002IUyExQz605LBAaOWIzg/zh-cn_image_0000002821759429.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB5589606C405EF0448868AC9214CD944D944B40F3A69E415568C79C1DFAC4D7)
 
 ### quadraticCurveTo
 
@@ -1117,7 +1117,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/2lTYUnOERb69f2nmMIprrg/zh-cn_image_0000002791727816.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD6CFFBFF3F1F0E9B480A2D4F5FC7A3672FEA93E26CE8B9C79F75346D9E8615C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/iE-CPdVuSdyyTOBQKWdGpA/zh-cn_image_0000002793039498.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7F39E774CD0FFC2B6D942490F41183B1C9BD8B50FA8204C8380FDE679B45F46)
 
 ### arc
 
@@ -1160,7 +1160,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ItCXSR-OQJKzLAjri3st4w/zh-cn_image_0000002791567844.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=0679E85304A3B5A27EE1FBEAB85869AFA97ED55000FA5231B00F0D75B514F0FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/1-wv-ilySQa7QBmZaTjtVw/zh-cn_image_0000002792879526.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB280C4EC26B59A87C7594326567CBCFAC77FE8F8B82767AEB34EEAE730640D4)
 
 ### arcTo
 
@@ -1202,7 +1202,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ZCD8InMxQlyIF4Dmhg_A-w/zh-cn_image_0000002820527797.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDB78B75301A6BB29076285BDA6D28208AA9AE7C00E4D72996986C2CC52BF2E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/nmfS4wA9SKu5VOfX2S_pyw/zh-cn_image_0000002821839429.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=B983BD4E7E51AD2D3A524B6BEFAED145543FA1871A10F0EF0579354D6BD057F6)
 
 ### ellipse
 
@@ -1247,7 +1247,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/TpNj7dm-RgSh9Uv_hmLxzA/zh-cn_image_0000002820407799.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=3862C8D92AD727FE7AEB1525D5A0BEE2FCC9E6D0F4A501B692302B9CF2ECD8CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Z8UD7cRJQMei98XtPstmYw/zh-cn_image_0000002821759431.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=96236BB94435023956C27E10C0DA5C8C3236C4F29E4F30DA88D704A0281EE685)
 
 ### rect
 
@@ -1287,7 +1287,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/YxD-v47_Sk-WA1ZcQwpz5g/zh-cn_image_0000002791727818.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC9E5FBDDDF350F82E401A7FB0E47E1DB53E4D2433A827AD55C7FAC228EDBEDF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/HJfR2h8DQiSrio39FQEVeg/zh-cn_image_0000002793039500.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=17A986185F7E32ADC1FD85B367D10656D5A98203BC301BEFD7D69311084F4D66)
 
 ### fill
 
@@ -1318,7 +1318,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/xk-HxLg8RKarL_zeodu2cw/zh-cn_image_0000002791567846.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AF9905C679FBC2A7A02183D852A8E0C2172C3D777BC20E7E7714EBA318CEB8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/N3TRDe95TFWK0dJ7m6Dz0Q/zh-cn_image_0000002792879528.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F458EBE9FC7FB076AB9CF9F86CA7D319B3B1FDF8E7FD38B526E15C1A35F538B)
 
 ### clip
 
@@ -1353,7 +1353,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/EGwmB5dORWCQCCnY4BGGZA/zh-cn_image_0000002820527799.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=E36993B902F8572C9241CA49B93ED96600C98C04257C524E8E93257F39ACBF77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/mfJuTDOMQ22A0SEDbW1E6w/zh-cn_image_0000002821839433.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=95C4E47259B6E1DFD3EB29D37BDB0FBBE0A0FE13B03715732413A7BD035D7875)
 
 ### rotate
 
@@ -1390,7 +1390,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/HnCXGEfSQFy2MrW7NhcZLw/zh-cn_image_0000002820407801.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE9553E6379CDE7F68958C79B5B62EC7282B72A903F448E6B9FA141619054CAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/6V17Szz-QYGO6d_LcqyWNQ/zh-cn_image_0000002821759433.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=86E8B142FB308C1D90B76B69B73F40E398781848B89B52D11CD5B4CFDB2AAF13)
 
 ### scale
 
@@ -1429,7 +1429,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/OgawVQQ0SlGDz-nyNyiRvQ/zh-cn_image_0000002791727820.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9EE05718F36CFF551896DA526EF01DC5994DEC064035C8F672D059FD0F9C9E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/0J7sDv8bSbilZgOIWBVmJg/zh-cn_image_0000002793039502.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=36364A44CE9615D0BBF03BCBB84F351AF74C261B22B82EEFDE9DA1AD8B194756)
 
 ### transform
 
@@ -1484,7 +1484,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/VONEsaZvTJyXE6Yaftnnog/zh-cn_image_0000002791567848.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=87DD982A95ABDC3F86E602BCA95F16A2576DB713299608623537596C26CB4093)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/49j3EQsLS0C2NGVigqm-Jw/zh-cn_image_0000002792879530.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E95F9E137F0885077529393BA86347EC335FD09FC319E5F59D55C9D3697A187)
 
 ### setTransform
 
@@ -1529,7 +1529,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/BwInQ-4ORvKxeTWlmCJHMw/zh-cn_image_0000002820527801.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=78A8D310D70BADAA27CD1DAAA7F9C5E1B103D5CA8C8C1D1F4A1880B715AD4DB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/5QH7ZVfsRrqagjjqBxS2GA/zh-cn_image_0000002821839435.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD1E8C0C9B2343E1CBB372E952BD0C1CA0F1412C7E3FBB513E7975E7F7B71481)
 
 ### translate
 
@@ -1568,7 +1568,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/0xvIx_FfQe67A9JhErsJkQ/zh-cn_image_0000002820407803.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED0890C560B55437271A61EBCE9D23965C2C10E512A745989738744E3BFB08A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/UCg7IN2vQPWq8m4WrjO0Sg/zh-cn_image_0000002821759435.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=BED234393C28B60A81704CE2FA005929CF3C94FC809423A1A5D1363D4ED4AC7E)
 
 ### createPath2D
 
@@ -1639,7 +1639,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/myJVrJsGSTO-5eqBLKpAsQ/zh-cn_image_0000002791727822.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=FED02DDA3B012045F4C4DDAFDDE2C0D55096788BB8C76B3322788306C76405C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ltMDUJ7xTmCx6JXw6zd4Kg/zh-cn_image_0000002793039504.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0AF0D3C7A5B9F704C757187D0B0EA5AD657A3C9A3B493250F757DFCAA5F0E07)
 
 ### drawImage
 
@@ -1686,7 +1686,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/4-IsGwGDS1SivZUMeRqphw/zh-cn_image_0000002791567850.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA3B3C4994E374496414F68593306905A4C148A9779292E2A314BE3CB276D9DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/AkuIxoE2SLO7lR0Z7xldog/zh-cn_image_0000002792879532.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E16037DCF048F5C9EA65617D2090FEF9F0C705EDE9B9BD860E6BD8751480E41)
 
 ### restore
 
@@ -1796,7 +1796,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/UBp7CzP4RtOgdqPJpPt6xQ/zh-cn_image_0000002820527803.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C0069B85AFCA61C233FA527B19C10BD696A5F3414A36E388B8F72B1BF66C4E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/o3mr3xYHQFiiwBzS6yFFSQ/zh-cn_image_0000002821839437.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B96A911AEC24973F412C29694F778AECD6ECB436B9C748F7C58349052FD97C0)
 
 ### createRadialGradient6+
 
@@ -1852,7 +1852,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/tHTG1FajQuCw5eJxjYBrLA/zh-cn_image_0000002820407805.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDE13A1D65FC1F7580A9D699C10638EB7EC183EA7D0A139D95C38E217E223563)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/9Gz20jPRTKGfg6Zo1fK8jw/zh-cn_image_0000002821759437.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F5B41A40ACD0ED80D87E1766539F984A6819B959096326F45C68C8661E816F5)
 
 ### createImageData
 
@@ -2026,7 +2026,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/c3k5xx2ZRZifGANDe0TJMw/zh-cn_image_0000002791727824.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=68C50859451C0778BDD8DA95AA69A10AAF1EF8CC42905CCBF1F3FD6DBC07CA44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/euBs8H4bTUib-Sv0CtehnQ/zh-cn_image_0000002793039506.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E1A0E4EA6EA741DED8B58FD6F4251C77207D17E2BED2F718A41D3D68E2A1136)
 
 ### putImageData
 
@@ -2071,7 +2071,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/_vehCV4sRBKGPiqgYXAVhQ/zh-cn_image_0000002791567852.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=69DDEE3A32961DF0930310CE44F0E99F20990C50A31FB785985D1B7D0E06B269)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/D4DcBhFgTwq5V4q2D8zB-w/zh-cn_image_0000002792879534.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=659B11B06778C2274519995882FCDC56F7428F16A8BC97AAEED9E1762B18B2B8)
 
 ### getPixelMap9+
 
@@ -2152,7 +2152,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/DMZM-DlxS4OxgCTWCGihKg/zh-cn_image_0000002820527805.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=070306827D80A5FB2DE394A6345AABFD9177CF4BCB5E6FABCE36EA0E8E5FC527)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/Lmo_T89KQLKuuMwmn-jU5g/zh-cn_image_0000002821839439.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=191C147D62FBE9048DE398B71CD07A78814E9525CD79AF5E3CAC0971F9FE3BE5)
 
 ### getLineDash
 
@@ -2228,4 +2228,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/YNmvV0w6Qh2zgrZJck1zxg/zh-cn_image_0000002820407807.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=69AB8FEFFFB20513A8A412CAB437B7C92AA5E981E36973705B0DBA8F781C37C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/QKT8Vp8BSwWB716ZTimwWg/zh-cn_image_0000002821759439.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=D305A95EAC8E3FE1C9DCADF2B254EE5DFA37A2E5D97FD09F14D63F52DF98CA75)

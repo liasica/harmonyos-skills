@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件尺寸变化事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 组件变化事件 > 组件尺寸变化事件
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:50+08:00
+scraped_at: 2026-11-21T09:14:01+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:219a139783be1e34c30e3ff9ee80be662db0b75c2896df774e6767b199731df0
+content_hash: sha256:9399e4db8ecec5a341fe0131fbe88000e468129bab5d9a8d1e692151dd8c9535
 ---
 
 该事件指组件显示的尺寸发生变化时触发的事件，可用于监听组件因布局变化导致的尺寸更新，获取变化前后的宽高信息，适用于需要根据组件实际绘制尺寸处理后续逻辑的场景。
@@ -96,4 +96,4 @@ struct AreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/ViyS8ECFSvidEt-fc56_TQ/zh-cn_image_0000002791567028.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AD29AC5D1A69A518DB29F608736B5C14EF39BAE5DB5EE6E1060CC63F7D85B7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/IVwN0vRUTzqJEIhtB20spg/zh-cn_image_0000002792878682.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011249Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CDEACBBEB407AE1A0F863CC15B91E38F3EEF1527604942A77D7D404B9EB7EB0)

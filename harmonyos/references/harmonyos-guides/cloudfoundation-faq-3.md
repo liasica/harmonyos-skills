@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 运行应用时提示“appid **** is not in white list, to skip”
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > Cloud Foundation Kit常见问题 > 预加载 > 运行应用时提示“appid **** is not in white list, to skip”
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:56+08:00
+scraped_at: 2026-11-21T09:12:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c7ba3ffbe0b781e940839ec1366dbc0e6109d0fb3fd7c3dab7f48ca9b68cd6c8
+content_hash: sha256:bf519e9d858f7fd8b9076965b5b963898abe306276ddd5282b1423c975d97fcf
 ---
 
 **问题现象**
 
 运行应用时提示“appid \*\*\*\* is not in white list, to skip”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/kLcUxQG8R0OB2vBfYGiViw/zh-cn_image_0000002791726308.png?HW-CC-KV=V1&HW-CC-Date=20261119T014856Z&HW-CC-Expire=31536000000&HW-CC-Sign=791B422E1CCA9E3C1D107A512074C32423E8BCB8C42B18B299454DE0165AE0C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/w-9-d5NtR8OW38Hs-nd93w/zh-cn_image_0000002821837895.png?HW-CC-KV=V1&HW-CC-Date=20261121T011222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F99DE21625C27DC18B2001C4198BD46C32BE8946CE19D29BDD6EA06A39924E34)
 
 **解决措施**
 

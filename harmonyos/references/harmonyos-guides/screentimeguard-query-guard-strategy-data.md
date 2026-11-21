@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 查询策略运行数据
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 查询策略运行数据
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:13+08:00
+scraped_at: 2026-11-21T09:12:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b95ee935f915828dec992c23b2e04b673c6477118b4edee234278519d25b1f62
+content_hash: sha256:18308010faae9cd8fe72fa37eb948d209a4972ab99e21145c8ca9bf708cfac2f
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:b95ee935f915828dec992c23b2e04b673c6477118b4edee234278519d25
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/WATjY5sVSleeokOCWcw1nw/zh-cn_image_0000002791566650.png?HW-CC-KV=V1&HW-CC-Date=20261119T014912Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DAF8B42B697A0C8A73E342E879F0DBAD35AB0E1B4EB4EABCFFD5040564B1359)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/EpJHH94TRIqoYuWM5dCXpQ/zh-cn_image_0000002792878304.png?HW-CC-KV=V1&HW-CC-Date=20261121T011239Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA6BFB1D84FF0894D0DFA79C2A90318C23B7C15014E5679B0C528BEB9845352D)
 
 流程说明：
 

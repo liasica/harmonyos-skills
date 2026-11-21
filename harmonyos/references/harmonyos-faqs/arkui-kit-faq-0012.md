@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: ArkUI设置图形效果与颜色渐变的常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > ArkUI设置图形效果与颜色渐变的常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:c0d13d1ff2106a752e4369c96d682f717cbf3e8ac02842cf373226bac80d8eb8
+scraped_at: 2026-11-21T09:17:48+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:eac8f8ddbac00b0e513ded904c1b54dadfb53182c26c072638ad85f08c4b790e
 ---
 
 **Q：组件如何设置模糊效果？**
@@ -81,7 +81,7 @@ struct Page1 {
 
   如下图示例：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/dd0nsNhNTeuWaNOX7YVn3A/zh-cn_image_0000002795434133.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=79A9CCF4EEA65445A4DEE7DA58DE0B4872E8F1792A704780BC314D473513D8C7 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/qEapPSzRTvCsWFqvHlPpZQ/zh-cn_image_0000002795434133.png?HW-CC-KV=V1&HW-CC-Date=20261121T011748Z&HW-CC-Expire=31536000000&HW-CC-Sign=701E339ADAA4D83120082E1CC77524424CF238DB2CD53BCC950F19014B9C585B "点击放大")
 
 **Q：linearGradient如何设置渐变方向和多颜色配置？**
 
@@ -126,4 +126,17 @@ struct Page3 {
     .width('100%');
   }
 }
+```
+
+**Q：手表表盘开发中使用[ArcDotIndicator](../harmonyos-references/ts-container-arcswiper.md#arcdotindicator)组件，设置maskColor为纯透明效果后，无法覆盖系统默认的黑色渐变，如何处理？**
+
+A：该问题是颜色值写法和渐变色类型使用不当导致的，处理方式如下：
+
+* 设置透明使用的颜色值由0x00000000切换成'#00000000'。颜色值0x00000000为16进制number（实际值为0），会被当做RGB颜色处理，导致透明效果不生效。
+* [maskColor](../harmonyos-references/ts-container-arcswiper.md#maskcolor)设置渐变色时，类型应为[LinearGradient](../harmonyos-references/ts-basic-components-datapanel.md#lineargradient10)，而非通用属性linearGradient中的LinearGradientOptions。
+
+修改后的代码如下：
+
+```ts
+.maskColor(new LinearGradient([{ color: '#00000000', offset: 0 }, { color: '#00000000', offset: 1 }]))
 ```

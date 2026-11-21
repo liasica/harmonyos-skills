@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-modal-t
 title: 模态转场
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 模态转场
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:44+08:00
+scraped_at: 2026-11-21T09:11:09+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:081a8e9d5f9cede896e6e947d3e7453fc671ef2fe7405e42a71d34194175244a
+content_hash: sha256:a54d9464e2af2116964827ee2089e3ba5bc3f597a4b9cb597fb183c8e681887d
 ---
 
 模态转场是新的界面覆盖在旧的界面上，旧的界面不消失的一种转场方式。
@@ -257,7 +257,7 @@ struct BindContentCoverDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/0oLOQ9mIR0quGn8rcUyLuw/zh-cn_image_0000002791725186.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014653Z&HW-CC-Expire=31536000000&HW-CC-Sign=A424C4107E963EE3E2F731574DAC67B17CC1CE4B4BFB8A3D05071F3F3C78B870)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/EFFx-_bITvG1s7j6n2oInQ/zh-cn_image_0000002821836769.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F12A8E047A7A55DA683DADD95FF0F8DCEAC5356F36EF48FBC93692872BDFDCF)
 
 ## 使用bindSheet构建半模态转场效果
 
@@ -374,7 +374,7 @@ struct BindSheetDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/kldpMydJRQSVQdoFK19H3Q/zh-cn_image_0000002791565214.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014653Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFE5D7438161CE3462B816C8B93ACE1CFF01F6FDDA0887C638A6A1FA562FFC56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/nOxHyKzuQYeqhM-b6DDJfQ/zh-cn_image_0000002821756773.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA0C5495B67E128CAB38664F8D8E580E68828FD50907451AF996644871BA2EDD)
 
 ## 使用bindMenu实现菜单弹出效果
 
@@ -430,7 +430,7 @@ struct BindMenuDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/LrqaeikWT3a9Mxna-QE7zg/zh-cn_image_0000002820525167.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014653Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1EAF9C5574489EE946AA8795D5CE5C18CA37F43559F43E52FD559A255E4B992)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/qhsnwjypTpGysnmThS2QGA/zh-cn_image_0000002793036836.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=A18AC041F12E7ED935C3C648F2DC440A9F82BE7501531A4EE14D239A73355994)
 
 ## 使用bindContextMenu实现菜单弹出效果
 
@@ -511,7 +511,7 @@ struct BindContextMenuDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/vY1eXRnxSoeIsLjnHC3HHg/zh-cn_image_0000002820405167.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014653Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F412ABD022C06AE3DC7D301C76FEFE125D9A6284B99FDDD7C6F3EFDF6CC12CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/oWaZtHzIRpO5s_a2k4kMuw/zh-cn_image_0000002792876866.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=137988B590BB9AE907752D07292631A6C83FF103D1161F45D577F739C8C4AC57)
 
 ## 使用bindPopup实现气泡弹窗效果
 
@@ -573,7 +573,7 @@ struct BindPopupDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/umEmQhI-Qx-eUZXD1OltlA/zh-cn_image_0000002791725188.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014653Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DBAB22C6C529355445FFF754F96F039426C6287199FB2D6296B751F2B7715F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/saFzRP6ARbqc8dD7YnSBdg/zh-cn_image_0000002821836771.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=EED699BD6D2E95CF6F21B83D1C4B74239466F34BD509E7C5F23C24AF973BD14E)
 
 ## 使用if实现模态转场
 
@@ -779,4 +779,4 @@ struct ModalTransitionWithIf {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/x9tmh1ZgRHSZb0uDeh3Zfg/zh-cn_image_0000002791565216.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014653Z&HW-CC-Expire=31536000000&HW-CC-Sign=D909C0B66290D4BE4621E52367DF9222F6644EA5D664382614042789CA166ECB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/1Q5DMs_jSp6QDvqaCtEOhg/zh-cn_image_0000002821756775.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA193B74AAE7C1748A54DE93F1BC10A0EBFE46ECF24F64BDF63355E8BBC291C2)

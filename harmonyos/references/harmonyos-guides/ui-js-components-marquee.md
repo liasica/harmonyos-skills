@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: marquee开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > marquee开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:48+08:00
+scraped_at: 2026-11-21T09:11:14+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:d50eb8f767414ed4f5b2acaea3548ea945d00979c0cb5eff31d75f5aba3d86d1
+content_hash: sha256:75ceab72716c401d37fc7a44f4fb66970877c49577d1a9a0e064e45183cae140
 ---
 
 marquee为跑马灯组件，用于展示一段单行滚动的文字。具体用法请参考[marquee](../harmonyos-references/js-components-basic-marquee.md)。
@@ -33,7 +33,7 @@ marquee为跑马灯组件，用于展示一段单行滚动的文字。具体用�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/agABeieWRlKxKT3vNU_mkg/zh-cn_image_0000002791725362.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=A89353216ED742825C1F178BB3BB874080FCF2F3A4386A9384CBF1887B26173E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/Pw0BNV-jRBO6Vr9klFMxTQ/zh-cn_image_0000002821836949.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=B93719FDAC1443E7899C276A2ECFDF4DF501EB28FA0698424955DCCC0F55ED5B)
 
 ## 设置属性和样式
 
@@ -70,7 +70,7 @@ marquee通过color和font-weight属性设置跑马灯中文本的颜色和字体
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/5nZgkXyAQoaWDddMBp5Y1A/zh-cn_image_0000002791565390.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC435DE9CE9340DB3001DE8E829E36D3F50F85851004CF9412457FCD7D1553F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/tKPl7NC2TCGKylbCRrYbQg/zh-cn_image_0000002821756951.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=D715483D9075F214D135F5EB8530847D752BDF5F55206C9D5DBB2140F7228827)
 
 通过scrollamount、loop和direction属性实现跑马灯滚动时的移动距离、滚动次数和文字滚动方向。
 
@@ -148,7 +148,7 @@ export default {
 
 当loop的值小于等于零时，跑马灯marquee将连续滚动。如果loop未指定，则默认为-1。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/334L_HKfR8a7vR1k8yvOLQ/zh-cn_image_0000002820525343.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=287C21830A929747D731482EA19BE3567A89DF3BFF9C1ED1469AB8130717414E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/GQADQRkUREeZPiyC65-owg/zh-cn_image_0000002793037014.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=53B305F780B8D977D63D0260CBF35B271E72D677E3BBC784756DC4DF460C462D)
 
 ## 场景示例
 
@@ -229,4 +229,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/FMks_TkoRsOOHGegiOfbQg/zh-cn_image_0000002820405343.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=837F67810DBEDCB8510F8B0CC312C7E0D21E5D60D1643A41389221561AD99E81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/SDlZ3C9HT16aU8V3CqBTyA/zh-cn_image_0000002792877044.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=33FB4E473219583D0D996C91F0CB919A5F5EF2FB5F3D8096EF1598C52C427854)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/apprecovery-g
 title: 应用恢复开发指导
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误管理及应用恢复 > 应用恢复开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:28+08:00
+scraped_at: 2026-11-21T09:11:54+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:de4f2b217e2fdbd4ca78a60abd95fc7705298acbae56d49bc2fdf769fdee68ee
+content_hash: sha256:61d50b9f806f807ce552ff4487285e88cd868f2c73e154bd554d0ecfe2c823a9
 ---
 
 ## 场景介绍
@@ -56,13 +56,13 @@ API版本9以及未使用**setRestartWant**指定UIAbility的场景，会拉起�
 
 应用恢复状态标识会在状态保存接口主动或者被动调用时设置。在应用正常退出或者应用异常退出重启后，该状态会被清理。正常退出目前包括用户按后退键退出以及用户清理最近任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/gAS9r_x8RTaUPtHI1nCOtQ/zh-cn_image_0000002820405827.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=5095E8E63557E453BF8570B81353BFD994E84283A7829ACD01FC618E30D264EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/K4paNOaCQ0Sn10SOJPGCOQ/zh-cn_image_0000002792877528.png?HW-CC-KV=V1&HW-CC-Date=20261121T011154Z&HW-CC-Expire=31536000000&HW-CC-Sign=31B33CB7FE35FC75F0F7EC6B386D2E65C860E6F49346CD46D029438820B69DE8)
 
 ### 应用卡死的状态保存及恢复
 
 API版本10开始支持应用卡死时的状态保存。JsError故障时，onSaveState接口在主线程进行回调。对于AppFreeze故障，主线程可能处于卡死的状态，onSaveState会在非主线程进行回调。其主要流程如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/pdDSGepVSW26SLxhJ-Vzkg/zh-cn_image_0000002791725848.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=359578C7287A3B40ACFB155A541E94D44CDA36A8EBFE5EC8BA7A70D89F7213E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/HFbR6_4iQb6HlkfoZ-jI2Q/zh-cn_image_0000002821837435.png?HW-CC-KV=V1&HW-CC-Date=20261121T011154Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E44B4BE71B38641516F600A7705ED444F17E665B8E2E4EED8BCEF7A11A47485)
 
 由于卡死时的回调不在JS线程上执行，onSaveState回调中的代码建议不要使用import进来的Native动态库，禁止访问主线程创建的thread\_local对象。
 
@@ -76,7 +76,7 @@ API版本10开始支持应用卡死时的状态保存。JsError故障时，onSav
 
 下图中并没有标记faultLogger的调用时机，开发者可以根据应用启动时传入的[LastExitReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#lastexitreason)来决定是否调用faultLogger查询上次的故障信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Cnr7rVFGTYOck_cedAtp0Q/zh-cn_image_0000002791565876.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CF2B61BD8865E8B3186037013A2520E6A3EC17F9905C02CA0EA5DA5046AB392)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/gVBCIPMMQPyF7XvrLC7SKg/zh-cn_image_0000002821757437.png?HW-CC-KV=V1&HW-CC-Date=20261121T011154Z&HW-CC-Expire=31536000000&HW-CC-Sign=4ACF271FFC6E5752E214C9B3C66402F8E854080341C50DF84FF1AAADC8CF4288)
 
 这里建议应用开发者使用errorManager对应用的异常进行处理，处理完成后开发者可以选择调用状态保存接口并主动重启应用。
 

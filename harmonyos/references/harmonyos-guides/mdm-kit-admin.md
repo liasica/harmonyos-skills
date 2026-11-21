@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-admin
 title: EnterpriseAdminExtensionAbility开发指南
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > EnterpriseAdminExtensionAbility开发指南
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:21+08:00
+scraped_at: 2026-11-21T09:11:47+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:8e0c37a9638908e2a63186e999bd48584a29e8b3dcd0131bdf3836ccb181b44e
+content_hash: sha256:2c3bb05110444d00315f89a8c6e1c5b41a9b9da5beb689d611c9203fb457e35e
 ---
 
 ## 概述
@@ -29,11 +29,11 @@ content_hash: sha256:8e0c37a9638908e2a63186e999bd48584a29e8b3dcd0131bdf3836ccb18
 
 新建一个工程后，结构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/6bhm7QqkRaGEpiYC6dLjWQ/zh-cn_image_0000002820525783.png?HW-CC-KV=V1&HW-CC-Date=20261119T014729Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D1331C38BBFB284EF1B82E331BE669F1865B372E793B314C52CE0F8256341F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/7TETyM4ETiCb7tQgtM06bQ/zh-cn_image_0000002793037454.png?HW-CC-KV=V1&HW-CC-Date=20261121T011020Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFDB33A31F7D0F427D1630C98B9B2CA8558568789C3E1659C15201040781BD5F)
 
 首先，创建一个EnterpriseAdmin类型的ExtensionAbility（也就是EnterpriseAdminExtensionAbility）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/DqikleM5R8-aNAUP034JZQ/zh-cn_image_0000002820405783.png?HW-CC-KV=V1&HW-CC-Date=20261119T014729Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E1E7A23AA9CF58C0E6DD289BD21D1FFE4B773191286BFEC6CDE0DC7BBAA7DC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/FGrr-H-ERuyonAUSzCXePg/zh-cn_image_0000002792877484.png?HW-CC-KV=V1&HW-CC-Date=20261121T011020Z&HW-CC-Expire=31536000000&HW-CC-Sign=D800C2761694C84536A0DAA12E398FAEDDC959C4FFDAF2307E1C9A4644FBA2CB)
 
 其次，打开新建的EnterpriseAdminAbility文件，导入EnterpriseAdminExtensionAbility模块，使其继承EnterpriseAdminExtensionAbility并加上需要的应用通知回调方法，如onAdminEnabled()、onAdminDisabled()等回调方法。当设备管理应用激活或者解除激活时，可以在对应回调方法中接收系统发送通知。
 

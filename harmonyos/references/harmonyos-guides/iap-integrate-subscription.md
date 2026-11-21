@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-integrate
 title: 接入自动续期订阅
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 自动续期订阅商品购买 > 接入自动续期订阅
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:02+08:00
+scraped_at: 2026-11-21T09:12:28+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:c8dcefa046d3fb95441c2a2ac8a41e9ab88af221153bbf1d4bc3edb11a1b3d7d
+content_hash: sha256:16872d928fdbef15b0b7fbfb1daf21f2139ce2b65bd5ef563e7ec3a5a6dcc7ea
 ---
 
 ## 约束与限制
@@ -18,7 +18,7 @@ content_hash: sha256:c8dcefa046d3fb95441c2a2ac8a41e9ab88af221153bbf1d4bc3edb11a1
 
 如下业务流程对于单机应用同样适用。在单机应用中，应用服务器和应用客户端的交互放在应用客户端完成，应用服务器和IAP服务器交互的部分可不处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Rc8ruQZPSzC51c19eVKiQw/zh-cn_image_0000002791726360.png?HW-CC-KV=V1&HW-CC-Date=20261119T014902Z&HW-CC-Expire=31536000000&HW-CC-Sign=784C958A29F0AFFCD51B2FD96ED57BF121E9E8F914C2FF71BEDB57F6FA9224FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/WDuAae-PRRWvitpR4Lxqmg/zh-cn_image_0000002821837947.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=77664DE93EF6F0425ED6E6B9D9A8196557B1561B3F2722B1EC6C4FB73623E2E4)
 
 **展示商品**
 

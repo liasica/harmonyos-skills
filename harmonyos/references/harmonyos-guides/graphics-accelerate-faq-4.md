@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: ABR进行Buffer分辨率调整引起其他Pass渲染效果异常，该如何解决
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏渲染加速服务 > ABR进行Buffer分辨率调整引起其他Pass渲染效果异常，该如何解决
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:48+08:00
+scraped_at: 2026-11-21T09:12:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7671d266d95867d24e25ce3c9a45e0e3d5f77e84deba4732ee5b783f51a50a99
+content_hash: sha256:7ee982a89602216dd9a52d0682faf966250c7b118ccbb92f5b586d075401d3ff
 ---
 
 **现象描述**
 
 以团结引擎URP管线为例，ABR对DrawOpaqueObjects绑定的Buffer进行分辨率调整时会引起SSAO shadow效果异常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/blaK-1w3Q-GlrqfaevGpNw/zh-cn_image_0000002791726152.png?HW-CC-KV=V1&HW-CC-Date=20261119T014848Z&HW-CC-Expire=31536000000&HW-CC-Sign=5809197F78A6AA570C251D00487C8FFD255FCA49F59BF7B4CEFE5EAF0E533B14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/G50ZDkLBSlqBYmMNeEJMAw/zh-cn_image_0000002821837739.png?HW-CC-KV=V1&HW-CC-Date=20261121T011213Z&HW-CC-Expire=31536000000&HW-CC-Sign=B23E4E002666F88EFAE871FC70E7C08CD3CE69B6EF0A64B5D77B21458893B5E8)
 
 **原因分析**
 
@@ -26,7 +26,7 @@ content_hash: sha256:7671d266d95867d24e25ce3c9a45e0e3d5f77e84deba4732ee5b783f51a
 
     在URP资产中勾选“After Opaque”：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/q4ji7B7wRAaAn8jq-kdUMQ/zh-cn_image_0000002791566180.png?HW-CC-KV=V1&HW-CC-Date=20261119T014848Z&HW-CC-Expire=31536000000&HW-CC-Sign=97BF49E7395FEE7AF1F9D10E7C068197CFF11C028ECF152F77AE0B9B28148183)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/p2eKKo2bR-eKrMiNALs-mQ/zh-cn_image_0000002821757741.png?HW-CC-KV=V1&HW-CC-Date=20261121T011213Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E7FB9FE8E8E2B9CC7447710546B792B40CEBFC8D8FB06B4BFF72DA149E44314)
   + **方案2**：获取实时的ABR Buffer分辨率因子，并根据Buffer分辨率因子对相关渲染数据进行同步调整。
 
     SSAO的shader会根据scaledScreenParams参数进行计算，该变量与渲染分辨率相关，在集成ABR后，scaledScreenParams需要根据实时的ABR Buffer分辨率因子调整。

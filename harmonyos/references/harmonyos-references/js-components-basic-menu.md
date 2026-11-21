@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: menu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > menu
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:21+08:00
+scraped_at: 2026-11-21T09:14:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:69a4fa9895f53dab603a230f0cddc7e58eacf223d6ad8162bffae6c37fb7f471
+content_hash: sha256:92817f7853a844038164dc336a50597e5aff798218881814e2bd610c466bb63e
 ---
 
 **说明** 
@@ -102,4 +102,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/-QXlvwIHQxCB-Mt5HwqANw/zh-cn_image_0000002820527769.png?HW-CC-KV=V1&HW-CC-Date=20261119T015120Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AAF77451418C3779A06E0C1E64BA401E9E9252190906BD578C671895E09357D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/fBcQ6RFTSgaHXIBqPzQmdA/zh-cn_image_0000002821839401.png?HW-CC-KV=V1&HW-CC-Date=20261121T011320Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B8AE11C6B4FA025DFC069418E00B863A124CD4BB120E78694CB3CD8056F68B9)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localbu
 title: "@LocalBuilder装饰器：维持组件关系"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @LocalBuilder装饰器：维持组件关系
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:36+08:00
+scraped_at: 2026-11-21T09:11:01+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:7f6322f467cbfaf8a790d6c1ecae3ef1707a0e820bc783af7960406b264001ca
+content_hash: sha256:8fb602d6ae9be95bd6912407c7c13c9e95c51930f01bbab320946cb0fa89f6c2
 ---
 
 当开发者使用局部@Builder进行引用数据传递时，需要考虑组件的父子关系。然而在使用.bind(this)的方式更改函数调用上下文后，会出现组件的父子关系与状态管理的父子关系不一致的问题。为了解决这一问题，引入[@LocalBuilder](../harmonyos-references/ts-universal-localbuilder.md#localbuilder)装饰器。@LocalBuilder拥有和局部@Builder相同的功能，且比局部@Builder能够更好地确定组件的父子关系和状态管理的父子关系。
@@ -47,7 +47,7 @@ this.myBuilderFunction()
 
 跨组件传递局部@Builder函数时，会使用.bind(this)更改函数上下文，但这可能会导致组件的父子关系与状态管理的父子关系不一致。而@LocalBuilder无论是否使用.bind(this)，都不会改变组件的父子关系，即@LocalBuilder中定义组件所属的父组件是确定的，无法被改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/QYHpCHV8RfqMJ0n0RuMX9Q/zh-cn_image_0000002820524547.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=11449B0063F404948BBCDE0B0CBF45969FD6C7A54BB3CB2910A6473C625354AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/Opj-8nJtTPuIu9nitkY_AA/zh-cn_image_0000002793036216.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=A65EC8C232864935FCDC2334DFB0F718D3AA00CA669A3808E6C7D93B450A6D43)
 
 **说明** 
 
@@ -103,7 +103,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/InHeh0jqTk6gp2xDS4QMjQ/zh-cn_image_0000002820404547.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B0F7B93E3C05E7DAD805D78965EAC5942CFDECF631AB4836C81E7CCE671B34B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/g8IK1sTjTDWBFVznPFT10w/zh-cn_image_0000002792876248.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBDB9A82DC8AFA18AB94B07E9B814CE1CD4FC7B84A6943D27EC974FD8C89C8DF)
 
 ## 限制条件
 
@@ -158,7 +158,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/E56micofSJ6T1676uDEDVg/zh-cn_image_0000002791724570.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC1BCEA85E0FC08E04F44ED5108A0DAEFBD1DD7E6E6ACC9458D83A4EBCF59133)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/46iE4aTNQbmcSW_9KTTn4A/zh-cn_image_0000002821836153.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=31C2CB49B8AD22AAA11522E9E585A035082722B96FC11FC72C7B7E5ECB742034)
 
 ### 按引用传递参数
 
@@ -205,7 +205,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/TqvCISSeQLOsnmBCmOTqiw/zh-cn_image_0000002791564598.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=993854E7F6EB6D14A78CA3E93DAE35F26781EE52B851578C314E5982E702FCE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/VEPlpbKqSAeakeked5D0Zw/zh-cn_image_0000002821756153.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D58497B59669BF466F4F87E69C15B3035BE8CC5976EC09934EAF7B58F279814)
 
 按引用传递参数时，如果在@LocalBuilder函数内调用自定义组件，ArkUI提供$$作为按引用传递参数的范式。
 
@@ -263,7 +263,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/5i_i1XewRsOiGOUHxe6D6w/zh-cn_image_0000002820524549.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C540311AFC4F8603BF1AEED3724A1D67C7FEBB77A966369826C0E1AA13DB888)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/uP7_wD_ZQ-mhuTCRG36oxw/zh-cn_image_0000002793036218.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=99691C0EC3E286FB49A4B1348FD67EAA730A26BD657388B25062E4C36BA7812C)
 
 当子组件引用父组件的@LocalBuilder函数并传入状态变量时，状态变量的改变不会触发@LocalBuilder函数内的UI刷新。这是因为调用@LocalBuilder装饰的函数创建出来的组件绑定于父组件，而状态变量的刷新机制仅作用于当前组件及其子组件，对父组件无效。而使用@Builder修饰函数可触发UI刷新，原因在于@Builder改变了函数的this指向，使创建出来的组件绑定到子组件上，从而在子组件修改变量能够实现@Builder中的UI刷新。
 
@@ -365,7 +365,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/N4Km17kBQ8W-4tHwr5nJQQ/zh-cn_image_0000002820404549.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=F68FAFED7D7354059CDD2C68926D2B5CEAD2AB9C1C93FE7867393FA9881430EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/CALm0t45RQu4B57rWnJEzQ/zh-cn_image_0000002792876250.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B6AE0C716A004BB9669A5FD9D000E271FC8E0F1856BC7B55AD059CB1D99237A)
 
 ### 按值传递参数
 
@@ -400,7 +400,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/E5SIXmmfSAKvrmr3Hcj9Mw/zh-cn_image_0000002791724572.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9774241C9CFF352BCF791CE7CAE69A5A9E6534529DDA0FD3358BF8ABD1E4DDA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/1ts93WwOTqKoHKXD193VhA/zh-cn_image_0000002821836155.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F3D5D9D9FACA540DDE5137E21084631422416BDE98851C4E740CA9884629AA7)
 
 ## 使用场景
 
@@ -492,7 +492,7 @@ struct ParentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/c-48jLigShGT9fRc7_271w/zh-cn_image_0000002791564600.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=143820A5D47C5C39B5640DE3BB00A27198407D2156B48A14578364ADAE7F1708)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/5jUP263OT-S2INFzcUqpSw/zh-cn_image_0000002821756155.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD4671B0EC418D9D31BEA874D8EB576975172EF7E1B94ACF0954AD45356F5451)
 
 ## 常见问题
 
@@ -596,7 +596,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/I8DNQDTZT1yw2eJl2YzUbQ/zh-cn_image_0000002820524551.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=453F68911610EA7F7B667A267FBF00E8CA8B7819C7A96CFCAD1B44FC3ED463B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/93kwh-pSRQmvnfRzhEk90w/zh-cn_image_0000002793036220.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=B90B7B98016C6A6B398D94DDF1E54DD1FFA79F025936E81A4930717FAB96B3C8)
 
 ### @LocalBuilder函数在参数处直接调用出现布局错乱
 
@@ -636,7 +636,7 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/ZFmIoRqORIOVE054XLDhPg/zh-cn_image_0000002820404551.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=5190465C7DD46BD072523CE057D44441F5875C14B33D6098AE665FFEB37B64FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Uqj1Q0aVR_WWcupXbt-2pA/zh-cn_image_0000002792876252.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BDE601C61FE297D6F3AFB9840402933B6F81AEC22E1F644C7B0F6BBE1E22E96)
 
 【正例】
 
@@ -674,4 +674,4 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/oVJu3PbrQhSDASqYXDHs-A/zh-cn_image_0000002791724574.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE6A52DDCCCB347599A7C91FA0BA3430FF1D707F4399F80F8F01345F14E4EC21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/QSCKU0WvQ-aizFSLgWGM0A/zh-cn_image_0000002821836157.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=352372DE53852EE26A4C6E1C59C876FA889C533C17159ADEC5F729D05786B0AB)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 触摸事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 触摸事件
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:47+08:00
+scraped_at: 2026-11-21T09:13:59+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:8aeb757c4bf57e2fbe4c0a7f75c7afc3c19d5b71d952b49f07acaa42fea4c3a9
+content_hash: sha256:425d2f123b1c33ff3126657c025a824889b2c0bbd015c019898bc8e35c6b70c1
 ---
 
 触摸事件由手指、手写笔或鼠标左键在组件上按下、滑动或抬起时触发，可用于获取触摸类型、触点位置、触点变化和历史点等信息，适用于处理点击、滑动、多指触控等交互场景，帮助应用根据用户触摸行为进行响应。
@@ -228,7 +228,7 @@ struct TouchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/R9OBhCwMR8-y6-kCuSl9PA/zh-cn_image_0000002820406965.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015046Z&HW-CC-Expire=31536000000&HW-CC-Sign=30DA194A0CF950F775A3357C45C6E7735F0F80A65B6F786CF6D01A08334D4DFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/g1IWWBd1RvaNQ7rwV7oyUA/zh-cn_image_0000002821758575.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011358Z&HW-CC-Expire=31536000000&HW-CC-Sign=913379D6F46DA64EA1CB601BB1959623DACF910145DB218EF977F6108595DF66)
 
 ### 示例2（获取组件实时位置）
 
@@ -263,4 +263,4 @@ struct GetCurrentLocalPositionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/4xGG4mb3TyOxue0o2HTdHg/zh-cn_image_0000002791726986.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015046Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D983339415D7C398E9A246871F0578E45F9504640A674D31C12724D99557E4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/vmOekyxSSTWMPgSvK_YD7g/zh-cn_image_0000002793038638.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011358Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1721AF0E8B258C5DE975C9A2B5D7636D268F11534976C81C00409A1B40707E9)

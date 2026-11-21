@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Popup控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 弹窗控制 > Popup控制
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:54+08:00
+scraped_at: 2026-11-21T09:14:03+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:a5427113d7e1ccfd1b9268a09b55af636159c039f3ad66edaa94a20efd9fbf3a
+content_hash: sha256:7a592d86a9f9a331415a13e3c1aff12e11670cb02850b71817da6d6b13cc9742
 ---
 
 为组件绑定Popup气泡，并设置气泡内容、交互逻辑和显示状态。
@@ -406,7 +406,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/ZKPU2WWPS0GpMFaIgPFJeQ/zh-cn_image_0000002820527057.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3654A6A9D24B482C768FFC7FF01FC2C1BA673FE7C62E56E27643E2CE2131DB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/iq979jt3Qh6R1PmcIw8SNQ/zh-cn_image_0000002821838665.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB4AB182D3420128CF7E7DC880ED392B0D639F5D6D16B583BFE4C4EE66C658B7)
 
 ### 示例2（设置气泡的文本样式）
 
@@ -453,7 +453,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/gDxvqvQkQiG7GR6d9pwY9g/zh-cn_image_0000002820407057.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DB090C8701041D1EE47FE6CAB75BD637936A907E38CEE49154B055ED32780D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/lyBDPZZbT8aN1fQwei8Pbw/zh-cn_image_0000002821758669.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=303A4DAA308E38467301BAA97E1E9ACD786316065384F16F16B34D7224876CCB)
 
 ### 示例3（设置气泡的样式）
 
@@ -501,7 +501,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/gROQhgn9RpObBgxAF2E7xg/zh-cn_image_0000002791727078.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=59A8CCB4473CBDFDA54E819BD797375848196D64BA1F56F7F294CBB8DF5808DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/hcAmYR7rSWOpmnLJK1C-pQ/zh-cn_image_0000002793038734.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=562CF4D36A7E2DBB0FF0E035FC82052DF61C5A53361CA94A679563AE8144B603)
 
 ### 示例4（设置气泡的动效）
 
@@ -571,7 +571,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/TQlvnYAjR9qAV11hikZiug/zh-cn_image_0000002791567106.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF9F0C4BBB70FFA7713C8833F07808902E4BA86BE494AD1B1ABF76B6EB669354)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/BtMzmeCxT8WjmfJBSIbCfg/zh-cn_image_0000002792878760.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C22DF0A35151131B2EC4A6EE7C99087EC8E0BD7B5DEAA8A083566FDB68BA7AA)
 
 ### 示例5（为气泡添加事件）
 
@@ -626,7 +626,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/MfGUaPnSRf25VGvJgNZwIw/zh-cn_image_0000002820527059.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=20851E07F7DE42A038EECBAF95207E23AA49C16C71B070D44DD19CD5A21C2778)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/383A-c5iTZilDgcCuTpZ5w/zh-cn_image_0000002821838667.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=08E21F57D093D6D260D343D33ECB111EE62B349C2E4DFAD9D010C6C71E9DA405)
 
 ### 示例6（为气泡拦截退出事件）
 
@@ -684,7 +684,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/rPAgF_T5Q5aqTFd46XZMJQ/zh-cn_image_0000002820407059.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD3B9E2E02FFFEC69EB23A72DD08D630E20287F42977336330CC8A69B74D36F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/wo9bWKBSTB6VrLByoOT3uw/zh-cn_image_0000002821758671.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=7789F49959854D056BD2EEC60A13474616AE50A22A19E49B4AA96F75A4778FDE)
 
 ### 示例7（为气泡内外描边设置线性渐变）
 
@@ -735,7 +735,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/VQsIFzWaTU-cMlmEd_ylPA/zh-cn_image_0000002791727080.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4AF94228EAF71FA3ABBC348A77822BDFA16EDD9BE4C99D0B6F9E2FFAF0724D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/KDdU09gXTnCd1unmiJek2g/zh-cn_image_0000002793038736.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CF1FE45C7FFB26B1DA18E1F16EE87B5C2DF268521E1C2A784DBDDE32B4A4A5D)
 
 ### 示例8（设置气泡避让绑定的组件模式）
 
@@ -768,7 +768,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/7WOqPIlmSUauAHRk7EcetA/zh-cn_image_0000002791567108.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=599F14A1E108653E9463E43CAB6E4746A51B724EF1EC5691349F136ED1A193D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/SAsrrkXWQQCv5mY2roNr_Q/zh-cn_image_0000002792878762.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=459EC0C49828F23FE17E585915EE71DB93201F65E64D9622AE0C8BE9567F2D25)
 
 ### 示例9（设置Popup的沉浸光感视觉效果）
 
@@ -819,11 +819,11 @@ struct PopupExample {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/pbrIXnHTQN-WBkW78dtsdw/zh-cn_image_0000002820527061.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=78CE8C910E01B2000B1F3B737FF6576910F11A55DC3D4B8FE5F644ECAC53F73F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/nDrvoe1GTDe9hTiNK45u_A/zh-cn_image_0000002821838669.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=1047AC51E8677885FCB112E9444A67AA8096044D976E42D988DF18055BC7930B)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/WbZNgci6Tu2rlNhLBeGz8g/zh-cn_image_0000002820407061.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=88D3F3A05B3CE3139C1A3F9626FBD32C15BC6916E83C2FA9435A3097363FE2BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ABDZBGJfS-CYhXnyZ396iQ/zh-cn_image_0000002821758673.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=3106D0AA95A64BBF9B08635C81768C194571C9866A077C10A4D5ACC02F434F29)
 
 ### 示例10（自定义气泡背景效果参数）
 
@@ -895,7 +895,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/r1xFCU3rQduWWH0hTTmnog/zh-cn_image_0000002791727082.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFC89EEFAAC23041E730F92351030E62E5F7F0D51469CC32CD0145ED4F1ACC5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/mAIyXQRVSPizBR67cEMKnQ/zh-cn_image_0000002793038738.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD6AAB95D6EC0714AD61DF62703EC61C095678899FBFD95185F61B07E6FBE057)
 
 ### 示例11（设置气泡的显示层级模式）
 
@@ -957,4 +957,4 @@ struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/QKacPgMgSMCtknnJSqWY5A/zh-cn_image_0000002791567110.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=403E973A5A66B371B49EE32BCC7ECE747C16E250EA3C734CF8B36D697513391B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/cUIgjZhpSnqdjrl79-6hQg/zh-cn_image_0000002792878764.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7D3C0217FDA71E130A8C47A4312BC8F267CC98D2C17B021D0D9835E5E8E08F3)

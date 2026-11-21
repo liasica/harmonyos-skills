@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-in
 title: App Linking Kit简介
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > App Linking Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:54+08:00
+scraped_at: 2026-11-21T09:12:20+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5e0e3436b32cf8a21bc44efb7da534fadaa35258afb6cf4681a8060a32f32435
+content_hash: sha256:b3dd72792903565e93590db695ad820e3e45844bd31aeea8a7bccce6bc0d8d7a
 ---
 
 App Linking Kit（应用链接服务）提供了一系列增强的链接特性。
@@ -30,19 +30,19 @@ App Linking Kit（应用链接服务）提供了一系列增强的链接特性�
 
 随着全场景智慧生活的不断演进，跨设备内容分享已成为用户的核心需求之一。传统分享方式普遍存在操作繁琐（需手动选择设备或应用）、依赖特定网络环境、传输效率低等问题，影响了用户体验。HarmonyOS提供的[Share Kit（分享服务）](share-introduction.md)结合App Linking Kit技术，能够实现内容的快速跨设备分享，直达目标应用，无需依赖第三方应用中转，提供高效、便捷、无缝的分享体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/UHdIlGhATk-_KFOv9SOGoA/zh-cn_image_0000002820406203.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014853Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA384C666D0D17F3AA6E961AF9BD9E58FA87B68435183E23C59610B2FCFAFF0B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/5067GKEMRFuO-MJ-UVaxsQ/zh-cn_image_0000002792877904.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011052Z&HW-CC-Expire=31536000000&HW-CC-Sign=C946DE20BBD7BD29A89A603C1E2FCC7F95A74190032327A5E9EC120DC7E3A24A)
 
 ### 游戏碰一碰快速组队
 
 在《多乐中国象棋》这款组队竞技类游戏中，玩家只需轻轻碰触两台设备，即可实现秒速组队，省去了传统邀请流程中的繁琐操作，一步直达指定页面。与传统的通信软件邀请流程相比，操作步骤大幅减少。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/X2W3io9oR4O4hSzEM38nhQ/zh-cn_image_0000002791726224.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014853Z&HW-CC-Expire=31536000000&HW-CC-Sign=B246366B901FCCF5E72C6CFFE7058CBE969E1CDBB360C3A2CAF9C28A8009C0FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/3kpE2_fCQ_yCsZXR1fhjig/zh-cn_image_0000002821837811.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011052Z&HW-CC-Expire=31536000000&HW-CC-Sign=1081EB8286E442C38DB4687B2DEFDE4375CB214ED322DE3A996A2C7B4F08EE6A)
 
 ### 通过扫码使服务快速触达用户
 
 美团App结合App Linking技术，实现用户无需打开App，通过系统扫码即可直接解锁共享单车。在负一屏、控制中心、系统相机中均可解锁，相比打开App扫码，操作入口增加了3倍，一步扫码直达，操作效率提升了30%以上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/fS36utgDT02oZ3sYtgfzgw/zh-cn_image_0000002791566252.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014853Z&HW-CC-Expire=31536000000&HW-CC-Sign=435F238BDFF5C8D0C6DED0729A849CC727A2CA603BB9B37E1326218371AE7162)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/aPkSzi-GSby5jxsCF15BYA/zh-cn_image_0000002821757813.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011052Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E877F162609705994525A78A3DF0EB27BAA1D98D987FF4E64B1577575F9F008)
 
 ## 约束与限制
 

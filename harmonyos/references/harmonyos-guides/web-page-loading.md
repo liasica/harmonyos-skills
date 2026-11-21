@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-page-load
 title: 定位网页加载问题
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 定位网页加载问题
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:24+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:fc7870f876adcc6cff3bb1555639691f1419283f3df3a3e9cf808dce55a526a6
+scraped_at: 2026-11-21T09:11:19+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:8b030688080965fa5e0f1247e682378b49627000f74db973a8adb8eece40ee15
 ---
 
 Web页面加载失败问题复杂多样，本文详细列举常见问题的排查方法，供开发者快速定位。
@@ -95,7 +95,7 @@ Web页面加载失败问题复杂多样，本文详细列举常见问题的排�
      build() {
        Row() {
          Column() {
-           // 针对本地index.html,使用http或者https协议代替file协议或者resource协议，并且构造一个属于自己的域名。
+           // 针对本地index.html，使用http或者https协议代替file协议或者resource协议，并且构造一个属于自己的域名。
            // 本例中构造www.example.com为例。
            Web({ src: 'https://www.example.com/index.html', controller: this.webviewController })
              .javaScriptAccess(true)
@@ -307,7 +307,7 @@ struct WebComponent {
             let userAgent = this.controller.getUserAgent() + this.customUserAgent;
             this.controller.setCustomUserAgent(userAgent);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
         })
     }

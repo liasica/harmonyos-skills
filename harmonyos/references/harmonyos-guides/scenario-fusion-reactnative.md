@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: React Native框架+H5接入智能填充
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 三方框架+H5接入智能填充 > React Native框架+H5接入智能填充
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:12+08:00
+scraped_at: 2026-11-21T09:12:38+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:e71ef5fca3798aaa1c98d0e793be7f279d96a55f618d1c98b69a66af262d1bc8
+content_hash: sha256:65a1d1e86d7221fc0e5b8bbc820d9c87ca00e3e60e72345069339e09116c0bd1
 ---
 
 **说明** 
@@ -26,7 +26,7 @@ HarmonyOS版React Native环境搭建请参考官方文档[React Native环境搭�
 
 ## React Native输入框效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/WK8u49yFQRe7NUCTBRvlpA/zh-cn_image_0000002820406589.png?HW-CC-KV=V1&HW-CC-Date=20261119T014912Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBE7420D12B5F55124A8962D19D564A0116292FBA65FD5BC8E582409BB6C93A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/t0_DKVyqTqek564oAjHXiQ/zh-cn_image_0000002821758199.png?HW-CC-KV=V1&HW-CC-Date=20261121T011238Z&HW-CC-Expire=31536000000&HW-CC-Sign=228EB4676C1484DA0438F9A17567E43CA7249D244EF4D2F5864BA220FCD96528)
 
 ## 示例代码
 
@@ -106,7 +106,7 @@ export default RNTesterApp;
 
 ## React Native框架中加载的H5页面效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/KX_ugo28QLetVvh3dNknXQ/zh-cn_image_0000002791726610.png?HW-CC-KV=V1&HW-CC-Date=20261119T014912Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3B532C619E40C151F188525A3F1C074425DCE4892CEF5FAA26EC2D60359B650)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/1Wg2pHoIQbKNRcBz-TgjqA/zh-cn_image_0000002793038262.png?HW-CC-KV=V1&HW-CC-Date=20261121T011238Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DE0EB0AD90EA428CB32C5BBEB47C2F2D55178552976A27D2C03DCB91FDE0C31)
 
 React Native框架加载H5页面场景，通过给form表单的input输入框（form表单的子节点）配置[autocomplete](scenario-fusion-mappingrelationship.md#h5-autocomplete和harmonyos的contenttype的映射关系)属性来支持智能填充，代码如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-file-uplo
 title: 使用Web组件上传文件
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页文件上传与下载 > 使用Web组件上传文件
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:53+08:00
+scraped_at: 2026-11-21T09:11:19+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:780066569dbe028d9a54e2e77d9334b480670fb19f13e102da2dd96fd7f27360
+content_hash: sha256:2ee8a768c1904946df7323db585532bed8589bd7763f8d410a916e79ef14cc6b
 ---
 
 Web组件支持前端页面选择文件上传功能，应用开发者可以使用[onShowFileSelector()](../harmonyos-references/arkts-basic-components-web-events.md#onshowfileselector9)接口来处理前端页面文件上传的请求，如果应用开发者不做任何处理，ArkWeb会提供默认行为来处理前端页面文件上传的请求。应用开发者也可以通过获取到的前端数据，自定义拉起Picker。
@@ -68,7 +68,7 @@ struct WebComponent {
   </html>
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/vVlo8JUmRX2cMHcfKAmXcA/zh-cn_image_0000002820525461.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=E344235213E71FB9AE59CC38E2DCC378FBB79CB2223AB587498ADE810CCE3C10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/-_f1UBfHQ9e1doU4ImC_Wg/zh-cn_image_0000002793037132.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=938E712927FDAC854A106D807DF01F1360E1855F5215211D493D9F87C9A52FCA)
 
 ## 使用onShowFileSelector拉起图库
 
@@ -129,7 +129,7 @@ struct WebComponent {
   </html>
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/hjRBbayiSK29fceTuOqrag/zh-cn_image_0000002820405461.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7B1324259A7F22DD4CCBE114BEE15E6D7BBB1EFDFCE0D52660308A1591FF15F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/T5OInWpbRvah0Y1eY3Vp-Q/zh-cn_image_0000002792877162.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9BE5BB0A23B62724CB536B66867ECF6E76B98635EDD69A21B0883A7CE377125)
 
 ## 使用onShowFileSelector拉起相机
 
@@ -227,7 +227,7 @@ HTML页面代码
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Qoe-scwbRWCL12pcFMDorw/zh-cn_image_0000002791725482.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=353BC34A0786D896DBA0D8C2385BFDC9C4317E3F3A5EED5362D7F446AAE49616)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/ZsBRicqJQ0GQ5vRcc3zOqw/zh-cn_image_0000002821837069.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FE880CBE46C6EAEC6B4F76B94A402E6523F9D5E0B10531637F682ACE32E656F)
 
 ## 使用ArkWeb默认的方式处理文件上传请求
 
@@ -322,7 +322,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/R3cNJ0s3Q_mJmYhxR0Df2g/zh-cn_image_0000002791565510.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=739DBB8E0E56838AEDA2DFCA53AD543B30DEAB54D08DA93F1E767734A04F3550)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/IeRRG7b9R1OPmQjGfNlyrA/zh-cn_image_0000002821757071.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=81A1BCB88B75208F0A6095ED360381A86B7C372010EDB94B872ADEBB127A521E)
 
 ## 自定义处理JS接口拉起的文件请求
 
@@ -474,7 +474,7 @@ struct WebComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/PDFuqX_fS1iB1zvQ_F5upA/zh-cn_image_0000002820525463.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9E484F83024C58FBDBEE9637BC07B2D7384B438A8A4474FAC9BE681BF9181C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/xwHY2fKrRpyxahsivYVf0A/zh-cn_image_0000002793037134.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A68F1884B345B848A47E2C6D560FFD4093DDAC48C35A40337B6278A01DF866C)
 
 样例以HTML中的showSaveFilePicker()配合ArkTS中documentViewPicker.save()方法为例。
 

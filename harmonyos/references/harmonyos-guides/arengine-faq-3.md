@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-faq-
 title: 反光、光线暗或者弱纹理场景（输入图像颜色变化小）下无法识别平面
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > AR Engine常见问题 > 反光、光线暗或者弱纹理场景（输入图像颜色变化小）下无法识别平面
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:44+08:00
+scraped_at: 2026-11-21T09:12:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e6d84a28f54f958487c679925a42def21a9775b04e30352852959790bcb139f6
+content_hash: sha256:cb07d22add769fde2ec6fec33f7e17a183e718131ea058520ee6fe6820392510
 ---
 
 ## 现象描述
@@ -16,21 +16,21 @@ content_hash: sha256:e6d84a28f54f958487c679925a42def21a9775b04e30352852959790bcb
 
    **图1** 镜面
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/nVlLTsdpTyuxme-yKC1oow/zh-cn_image_0000002791566054.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=256A82D3EF560DE62DB3DEF7E0B65D2AF8F539A9C0558E58A7680DD25F8019FD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/_WcOTUNETR2FMb4P4hLSHw/zh-cn_image_0000002821757615.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011043Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3C070896F7E51411DC2720F4E9EEC4577F4C11F70B68F4E1305C118DA09FD6E)
 2. 光线暗：夜晚的路面或摄像头遮挡等。
 
    **图2** 夜晚的路面
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/g9os6R5WRlOvrJsIeou30w/zh-cn_image_0000002820526007.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=693846F56DF9127E001853446FDB9EFE2D79641D1127E2F13299C9B19B2B2227)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/5orCTFCHTD6I7y1dWC8-Lw/zh-cn_image_0000002793037678.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011043Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8900F18BFE32236C45DFE9AAD85DAF0FF93C22BB827C48902D2283C9F22CF2A)
 3. 弱纹理：如单色柜子、单色桌面和墙面等。
 
    **图3** 墙面
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/aFQxPVTdQ9iadUPkn5EDgQ/zh-cn_image_0000002820406007.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=A82B6B6D67ADE6853B0730F7AF07D015EAEE62433C6C14E35ACEB28D5B2618B6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/of3A402sTWyLd8ic4hk5PA/zh-cn_image_0000002792877708.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011043Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFA193E86C5A98A1C96495E19A12A341747A5E3B33FB2D23A10DBF7EC082D891)
 
    **图4** 纯色的桌面
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/rF9YqA4IR3e5qA0K9LXT-w/zh-cn_image_0000002791726028.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=C79DE653782F97A20170E5F02FA293C915BE6420344D60EEE712BC9630A42EF0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/_9kRmwDITR2LBIyvTfBjXw/zh-cn_image_0000002821837615.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011043Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDB9E9E09AD0AD2FEFB4831202DF56DB21B9DADFE80732BB8342DB9EC45F3CBA)
 
 ## 可能原因
 

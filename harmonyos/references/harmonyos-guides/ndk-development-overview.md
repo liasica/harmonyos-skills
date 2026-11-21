@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-developme
 title: NDK开发导读
 breadcrumb: 指南 > NDK开发 > NDK开发导读
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:22+08:00
+scraped_at: 2026-11-21T09:12:49+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:517360a3fd08771c2bec3b28c35dc2ecc4e893f122c9cb7f82387cf99b688730
+content_hash: sha256:c56d73ae087487cdfb4619359ae0e30db2e03328e3c312bb5dc08e053b77d555
 ---
 
 NDK（Native Development Kit）是HarmonyOS SDK提供的Native API、相应编译脚本和编译工具链的集合，方便开发者使用C或C++语言实现应用的关键功能。NDK只覆盖了HarmonyOS一些基础的底层能力，如C运行时基础库libc、图形库、窗口系统、多媒体、压缩库、面向ArkTS/JS与C跨语言的Node-API等，没有提供ArkTS/JS API的完整能力。
@@ -53,7 +53,7 @@ NDK（Native Development Kit）是HarmonyOS SDK提供的Native API、相应编�
 
 * build目录：放置预定义的toolchain脚本文件[hmos.toolchain.cmake](build-with-ndk-overview.md#hmostoolchaincmake简介)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Nvyf7UjSQmmW6ZQ9MKyIfg/zh-cn_image_0000002791726816.png?HW-CC-KV=V1&HW-CC-Date=20261119T014922Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB0DB310658D94282AB535CD083F3B3786A8DCEBA2D6E000830B42B5F456011B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/lXQO7zFFRvWDgr1brJ7i4A/zh-cn_image_0000002793038468.png?HW-CC-KV=V1&HW-CC-Date=20261121T011248Z&HW-CC-Expire=31536000000&HW-CC-Sign=A133DA4564DC480323E65E801B01303B21989729B00BBEE54E181376D86C2AB9)
 
   CMake编译时需要读取该文件中的默认值，比如编译器架构、C++库链接方式等，因此在编译时会通过CMAKE\_TOOLCHAIN\_FILE指出该文件的路径，便于CMake在编译时定位到该文件。
 * build-tools文件夹：放置NDK提供的编译工具
@@ -67,7 +67,7 @@ NDK（Native Development Kit）是HarmonyOS SDK提供的Native API、相应编�
   ```
 * llvm文件夹：放置NDK提供的编译器
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/a7yqtW50RcqzUpXZEXQ-YA/zh-cn_image_0000002791566844.png?HW-CC-KV=V1&HW-CC-Date=20261119T014922Z&HW-CC-Expire=31536000000&HW-CC-Sign=368DD799A2E15449EB527BF52C425D7838F6AFAFCA3350C562D91F226C40EDF9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/8in0MuyiTpiIcQlUNfhBRg/zh-cn_image_0000002792878498.png?HW-CC-KV=V1&HW-CC-Date=20261121T011248Z&HW-CC-Expire=31536000000&HW-CC-Sign=664C5B7B0AE97CABA311E7AA9FC6B7E6FD30975EBBB8818502521A936D5B9C12)
 
 ## NDK常用模块
 

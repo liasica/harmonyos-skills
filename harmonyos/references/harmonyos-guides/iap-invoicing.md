@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-invoicing
 title: 开票
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 售后 > 开票
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:02+08:00
+scraped_at: 2026-11-21T09:12:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2f7661da716db08e61b5dd1e58bb27f0f3c6f8bbbbbb506961ba5d672c3c5788
+content_hash: sha256:8fd3ddae83d47b6ddab5d97c4c60abf23f7b8d5145e0d6d33df6a1af91890cce
 ---
 
 ## 用户申请开发票
@@ -16,14 +16,14 @@ content_hash: sha256:2f7661da716db08e61b5dd1e58bb27f0f3c6f8bbbbbb506961ba5d672c3
 
 1. 选择“手机设置 > 华为账号 > 付款与账单 > 发票中心”，点击“开发票”，在需要开发票的订单后，点击“下一步”，进入“开发票”页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/CLUcJle4R0ev9CwwADs8AA/zh-cn_image_0000002791726376.png?HW-CC-KV=V1&HW-CC-Date=20261119T014808Z&HW-CC-Expire=31536000000&HW-CC-Sign=E52C0A0AE6C80D8B0984600F3D3895FD87B9671B573598C2F26F89AE8826A400)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/nTOx08JeR1OIefLpTXXZUg/zh-cn_image_0000002791566404.png?HW-CC-KV=V1&HW-CC-Date=20261119T014808Z&HW-CC-Expire=31536000000&HW-CC-Sign=16584C43F2609D759F8778417C39217DFFE24886F25F385C9CE21ED7B78EDD09)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/mKhFMbtMRwm8as3U8Vr0Eg/zh-cn_image_0000002821837963.png?HW-CC-KV=V1&HW-CC-Date=20261121T011228Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C349C051B072150DBDE9BDE1A5F682906E402B9E611B493D56A910B2782D6B6)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/nWOj_pwMTEu9gX4_QsWrUQ/zh-cn_image_0000002821757965.png?HW-CC-KV=V1&HW-CC-Date=20261121T011228Z&HW-CC-Expire=31536000000&HW-CC-Sign=05A98D27F1E945D0BD0C01DA4173E9046F0F754B00146851F292749B58E65C6E)
 2. 在“开发票”页面，选择发票类型、抬头类型，输入发票抬头、税号和电子邮箱，然后提交开发票申请，提交后等待即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/W1jyzs0-QzesVJmNA-y_dw/zh-cn_image_0000002820526357.png?HW-CC-KV=V1&HW-CC-Date=20261119T014808Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF03423089DD95B86ADD05E44348079D921A7BE1DFAC6FCA0F193BF6CAFD550F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/B2tPvMoQRxGbGjW8W44t8w/zh-cn_image_0000002793038028.png?HW-CC-KV=V1&HW-CC-Date=20261121T011228Z&HW-CC-Expire=31536000000&HW-CC-Sign=432E2B1F0FF7A6FE022FDE217F7700BDFF3C4E20814EA8CAD4B06C438635449D)
 
    用户提交开发票申请后，返回“发票中心”页面，在“我的发票”中查看所有订单的开发票状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/ldx3Mv_dSlSHTpMSgyx2og/zh-cn_image_0000002820406357.png?HW-CC-KV=V1&HW-CC-Date=20261119T014808Z&HW-CC-Expire=31536000000&HW-CC-Sign=906B0B209FB2073E6D95CAE3E5FAD3CA46927F6655C82D04A37DE527AA3FD5F6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/vnngS-QvQOixHVjg1MjsYA/zh-cn_image_0000002792878058.png?HW-CC-KV=V1&HW-CC-Date=20261121T011228Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D96912D7E3877B20F579247A952B30C76E78735FD701A44DCC1DD03620B66FB)
 
 ## 应用内接入开发票入口
 

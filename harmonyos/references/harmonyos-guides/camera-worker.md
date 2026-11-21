@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-worker
 title: 在Worker线程中使用相机(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 在Worker线程中使用相机(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:37+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188c66d0
+scraped_at: 2026-11-21T09:12:01+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:6783cd760db2e82994b56fbbe9602d4583e6b3daa36a688fa508ab286a02c372
 ---
 
 [Worker](worker-introduction.md)主要作用是为应用程序提供一个多线程的运行环境，可满足应用程序在执行过程中与主线程分离，在后台线程中运行一个脚本进行耗时操作，极大避免类似计算密集型或高延迟的任务阻塞主线程的运行。
@@ -16,19 +16,19 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
 
 1. 导入依赖，本篇文档需要用到worker和相机框架等相关依赖包。
 
-   ```ts
+   ```typescript
    import { BusinessError } from '@kit.BasicServicesKit';
    import { camera } from '@kit.CameraKit';
    import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
    ```
 2. 创建相机服务代理类，调用CameraKit方法都放在这个类里执行。
 
-   ```ts
+   ```typescript
    class CameraService {
      private imageWidth: number = 1920;
      private imageHeight: number = 1080;
      private cameraManager: camera.CameraManager | undefined = undefined;
-     private cameras: Array<camera.CameraDevice> = [];
+     private cameras: camera.CameraDevice[] = [];
      private cameraInput: camera.CameraInput | undefined = undefined;
      private previewOutput: camera.PreviewOutput | undefined = undefined;
      private photoOutput: camera.PhotoOutput | undefined = undefined;
@@ -42,18 +42,18 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
          // 获取相机管理器实例。
          this.cameraManager = camera.getCameraManager(context);
          if (this.cameraManager === undefined) {
-           console.error('cameraManager is undefined');
+           console.error(`cameraManager is undefined`);
            return;
          }
          this.cameras = this.cameraManager.getSupportedCameras();
          if (!this.cameras || this.cameras.length <= 0) {
-           console.error("cameraManager.getSupportedCameras error");
+           console.error(`cameraManager.getSupportedCameras error`);
            return;
          }
-         // 创建cameraInput输出对象。
+         // 创建cameraInput对象。
          this.cameraInput = this.cameraManager.createCameraInput(this.cameras[0]);
          if (this.cameraInput === undefined) {
-           console.error('Failed to create the camera input.');
+           console.error(`Failed to create the camera input.`);
            return;
          }
          // 打开相机。
@@ -69,7 +69,7 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
          // 创建预览流输出。
          this.previewOutput = this.cameraManager.createPreviewOutput(previewProfile, surfaceId);
          if (this.previewOutput === undefined) {
-           console.error('Failed to create the preview stream.');
+           console.error(`Failed to create the preview stream.`);
            this.releaseCamera();
            return;
          }
@@ -84,7 +84,7 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
          // 创建拍照流输出。
          this.photoOutput = this.cameraManager.createPhotoOutput(photoProfile);
          if (this.photoOutput === undefined) {
-           console.error('Failed to create the photoOutput.');
+           console.error(`Failed to create the photoOutput.`);
            this.releaseCamera();
            return;
          }
@@ -92,7 +92,7 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
          // 创建相机会话，启动会话。
          let session = this.cameraManager.createSession(camera.SceneMode.NORMAL_PHOTO);
          if (!session) {
-           console.error('session is null');
+           console.error(`session is null`);
            this.releaseCamera();
            return;
          }
@@ -112,18 +112,18 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
 
      // 释放相机资源。
      async releaseCamera(): Promise<void> {
-       console.info('releaseCamera is called');
+       console.info(`releaseCamera is called`);
        // 停止当前会话。
-       await this.session?.stop().catch((e: BusinessError) => {console.error('Failed to stop session: ', e)});
+       await this.session?.stop().catch((e: BusinessError) => {console.error(`Failed to stop session:`, e)});
        // 释放相机输入流。
-       await this.cameraInput?.close().catch((e: BusinessError) => {console.error('Failed to close the camera: ', e)});
+       await this.cameraInput?.close().catch((e: BusinessError) => {console.error(`Failed to close the camera:`, e)});
        // 释放预览输出流。
-       await this.previewOutput?.release().catch((e: BusinessError) => {console.error('Failed to stop the preview stream: ', e)});
+       await this.previewOutput?.release().catch((e: BusinessError) => {console.error(`Failed to stop the preview stream:`, e)});
        // 释放拍照输出流。
-       await this.photoOutput?.release().catch((e: BusinessError) => {console.error('Stop Photo Stream Failure: ', e)});
+       await this.photoOutput?.release().catch((e: BusinessError) => {console.error(`Stop Photo Stream Failure:`, e)});
        // 释放会话。
-       await this.session?.release().catch((e: BusinessError) => {console.error('Failed to release session: ', e)});
-       console.info('releaseCamera success');
+       await this.session?.release().catch((e: BusinessError) => {console.error(`Failed to release session:`, e)});
+       console.info(`releaseCamera success`);
      }
    }
    ```
@@ -133,7 +133,7 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
 
    CameraWorker.ets实现参考：
 
-   ```ts
+   ```typescript
    let cameraService = new CameraService();
    const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
@@ -155,23 +155,23 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
        await cameraService.initCamera(messageInfo.context, messageInfo.surfaceId);
      } else if ('releaseCamera' === messageInfo.type) {
        // 在worker线程中收到宿主线程释放相机的消息。
-       console.info('worker releaseCamera.');
+       console.info(`worker releaseCamera.`);
        // 在worker线程中释放相机。
        await cameraService.releaseCamera();
      }
    }
 
    workerPort.onmessageerror = (error: MessageEvents) => {
-    console.error(`onmessage error is called, ${error}`);
+     console.error(`messageError, error: ${error}.`);
    }
 
    workerPort.onerror = (error: ErrorEvent) => {
-    console.error(`onerror is called, ${error}`);
+     console.error(`onError error: ${error}.`);
    }
    ```
 4. 创建组件，用于显示预览流，在页面相关生命周期中构造ThreadWorker实例，在worker线程中完成相机初始化和释放。
 
-   ```ts
+   ```typescript
    @Entry
    @Component
    struct Index {
@@ -180,7 +180,7 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
      @State imageWidth: number = 1920;
      @State imageHeight: number = 1080;
      // 创建ThreadWorker对象获取worker实例。
-     private workerInstance: worker.ThreadWorker = new worker.ThreadWorker('entry/ets/workers/CameraWorker.ets');
+     private workerInstance: worker.ThreadWorker = new worker.ThreadWorker('entry/ets/sample/cameraByWorker.ets');
      private uiContext: UIContext = this.getUIContext();
      private context: Context | undefined = this.uiContext.getHostContext();
      private mXComponentOptions: XComponentOptions = {
@@ -211,7 +211,7 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
          Column() {
            XComponent(this.mXComponentOptions)
              .onLoad(async () => {
-               console.info('onLoad is called');
+               console.info(`onLoad is called`);
                // 初始化XComponent获取预览流surfaceId。
                this.surfaceId = this.mXComponentController.getXComponentSurfaceId();
                let surfaceRect: SurfaceRect = {
@@ -221,7 +221,7 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
                this.mXComponentController.setXComponentSurfaceRect(surfaceRect);
                console.info(`onLoad surfaceId: ${this.surfaceId}`);
                if (!this.workerInstance) {
-                 console.error('create stage worker failed');
+                 console.error(`create stage worker failed`);
                  return;
                }
                // 宿主线程向worker线程发送初始化相机消息。
@@ -230,7 +230,7 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
                  context: this.context, // 将宿主线程的context传给worker线程使用。
                  surfaceId: this.surfaceId, // 将surfaceId传给worker线程使用。
                })
-             })// The width and height of the surface are opposite to those of the XComponent.
+             }) // Surface的宽度和高度与XComponent的宽度和高度相反。
              .width(this.uiContext.px2vp(this.imageHeight))
              .height(this.uiContext.px2vp(this.imageWidth))
 
@@ -251,8 +251,8 @@ content_hash: sha256:f5d6bbf08fb4869bcffd6769af797d84eb11df206c7e405154519021188
 
 不使用Worker：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/nwoio06KTXSgPSIcxKOHKA/zh-cn_image_0000002791565976.png?HW-CC-KV=V1&HW-CC-Date=20261119T014836Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAE75D439F9E3AC2D04C966FF656DBD627512B54A3ADF873170FE2363BF3C8EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Qm0avXZCQFKuOLMnWV-5qQ/zh-cn_image_0000002821757537.png?HW-CC-KV=V1&HW-CC-Date=20261121T011035Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B923495E1391D3F665325FF2E98BE904CB35066A326F6EFF716C3A06AAAF5E1)
 
 使用Worker：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/6GPEs0rUSvK_1vB6KyJniA/zh-cn_image_0000002820525929.png?HW-CC-KV=V1&HW-CC-Date=20261119T014836Z&HW-CC-Expire=31536000000&HW-CC-Sign=C71EE351D173041CBB2F7AF09FACF3182845B1C626EEC5EA061D16895C9894FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/z1rXhO3eSKSybSdNIPTHwQ/zh-cn_image_0000002793037600.png?HW-CC-KV=V1&HW-CC-Date=20261121T011035Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC43FC99830FD0215B07A055A01C71ABD092AD38166AC12D96E5863001EF5044)

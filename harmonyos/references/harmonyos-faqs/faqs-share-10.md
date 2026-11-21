@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-share-10
 title: 如何隔空传送打开App Linking链接直达应用
 breadcrumb: FAQ > 应用服务开发 > 内容分享服务（Share Kit） > 如何隔空传送打开App Linking链接直达应用
 category: harmonyos-faqs
-scraped_at: 2026-11-13T09:06:35+08:00
-doc_updated_at: 2026-11-12
-content_hash: sha256:bf55223b842be45693748a08f2ce97557fac35d7fda22f36acf0a81e52f545eb
+scraped_at: 2026-11-21T09:19:14+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:afe5b0b2c9ba43afb2f6b0c586f911d28d6aca9735f14a1d8aeb0bd7bc811d56
 ---
 
 ## 问题现象
@@ -20,13 +20,13 @@ content_hash: sha256:bf55223b842be45693748a08f2ce97557fac35d7fda22f36acf0a81e52f
 
 ## 解决方案
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/-zlGM3kyTiee__i2Zycy_Q/zh-cn_image_0000002643336236.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFD7E96B2875538CE8988DF3BD5AB972997861868BD99772D00EAAE541AE5DCE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/rckIo0xqSUW_7iVywzGL6A/zh-cn_image_0000002643336236.png?HW-CC-KV=V1&HW-CC-Date=20261121T011913Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D629BDBCD186A14942530CFE66CE9E43E95FA073195F50986B93ADDE502A11E "点击放大")
 
 实现跨设备链接隔空传送分享流程如上，其中A设备应用为宿主应用，B设备应用为目标应用。需要分别实现目标方和宿主方应用配置。
 
 **目标应用配置：**
 
-1. 关联的网址域名的配置。目标应用侧需要在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上完成关联的网址域名的配置，具体步骤参考[目标方应用配置应用链接能力](../harmonyos-guides/app-linking-startupapp.md#配置应用链接能力)并[在HarmonyOS 开发者中心为应用创建关联的网址域名](../harmonyos-guides/app-linking-startupapp.md#在agc为应用创建关联的网址域名)。
+1. 关联的网址域名的配置。目标应用侧需要在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上完成关联的网址域名的配置，具体步骤参考[目标方应用配置应用链接能力](../harmonyos-guides/app-linking-startupapp.md#配置应用链接能力)并[在HarmonyOS 开发者中心为应用创建关联的网址域名](../doccenter-capabilities/app-linking-startupapp.md#在harmonyos-开发者中心为应用创建关联的网址域名)。
 2. 在应用module.json5的skills中配置应用直达链接域名。App Linking链接格式通常为：scheme://host/path。具体步骤参考[在module.json5中配置关联的网址域名](../harmonyos-guides/app-linking-startupapp.md#在modulejson5中配置关联的网址域名)，代码设置如下：
 
    ```json

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 布局概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 布局概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:39+08:00
+scraped_at: 2026-11-21T09:11:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:befd13d7d941f7d507bf4de6562a01e8f7358692a6d647510abf6d5ebf211a7c
+content_hash: sha256:7b1963dc3a2fb7944e53a943a6be22ad39699d6e7c66ed5993be209098bcd6c3
 ---
 
 组件按照布局的要求依次排列，构成应用的页面。在声明式UI中，所有的页面都是由自定义组件构成，开发者可以根据自己的需求，选择合适的布局进行页面开发。
@@ -22,7 +22,7 @@ content_hash: sha256:befd13d7d941f7d507bf4de6562a01e8f7358692a6d647510abf6d5ebf2
 
 **图1** 常见页面结构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ajBRFQchSseWzfei3VffSA/zh-cn_image_0000002791724802.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E8AFC3B14BCFAF897D89CC245D9D2BF7F8E58072EB5C1F78B38F0859B26805B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/wx68vjocSMudBmBx1a8aOQ/zh-cn_image_0000002821836385.png?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=12590A12CB6085818C68B670921639CA51BBD0B75C91029DED8019C25B74E932)
 
 为实现上述效果，开发者需要在页面中声明对应的元素。其中，Page表示页面的根节点，[Column](../harmonyos-references/ts-container-column.md)/[Row](../harmonyos-references/ts-container-row.md)等元素为系统组件。针对不同的页面结构，ArkUI提供了不同的布局组件来帮助开发者实现对应布局的效果，例如Row用于实现线性布局。
 
@@ -32,7 +32,7 @@ content_hash: sha256:befd13d7d941f7d507bf4de6562a01e8f7358692a6d647510abf6d5ebf2
 
 **图2** 布局元素组成图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/t0JBC9T3T6-GR_vVyXD3EA/zh-cn_image_0000002791564830.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F6B4A427E97DF4146C8618CBE2A2E11B298D6C72DA8CEA1ED1F4368CB96AD54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/LKO85MBSSWmGDcrQ8JS2wQ/zh-cn_image_0000002821756387.png?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E01D4907491BE6E83B6A6444CE1906C114118E7C1B0C85FB6125B59CE5E7FEE)
 
 * 组件区域（蓝色方块）：组件区域表示组件的大小，[width](../harmonyos-references/ts-universal-attributes-size.md#width)、[height](../harmonyos-references/ts-universal-attributes-size.md#height)属性用于设置组件区域的大小。
 * 组件内容区（黄色方块）：组件内容区大小为组件区域大小减去组件的[border](../harmonyos-references/ts-universal-attributes-border.md#border)值，组件内容区大小会作为组件内容（或者子组件）进行大小测算时的布局测算限制。

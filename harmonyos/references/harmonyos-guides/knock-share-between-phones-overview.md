@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-b
 title: 概述
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与手机碰一碰分享 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:14+08:00
+scraped_at: 2026-11-21T09:12:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:acfd7942196c6ddd1e1352d2e824be7925c0efe2aa85d26cc2d9c430216df9ef
+content_hash: sha256:1557be422f105ba297f947ad414940616b95f71ae15688a6d4dc084d2358ec56
 ---
 
 Share Kit推出碰一碰分享，支持用户通过碰一碰发起跨端分享，可实现传输图片、共享Wi-Fi等。
@@ -15,11 +15,11 @@ Share Kit推出碰一碰分享，支持用户通过碰一碰发起跨端分享�
 * 宿主应用进入一个可以分享的界面，比如打开或者选中的一个文件、一条备忘录、一个联系人详情，或个人热点/Wi-Fi等。
 * 宿主应用可以分享多个内容，如选中的多张图片等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mOeB9J-cTqe361D9ciTIOQ/zh-cn_image_0000002791726626.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014819Z&HW-CC-Expire=31536000000&HW-CC-Sign=A14D8D2BFC26B5249113E089CEE1FEC741D318BEE258645E28293110CB9E9FA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/o6woKwn4QuajdcQJRZ5Gdw/zh-cn_image_0000002793038278.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011112Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8472D98AF620F9D8F0FBC8940EAE9BA1C1DF04C013BE5254883B9B14CC8377D)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/p37j01kqQ4OT6BucllyvEQ/zh-cn_image_0000002791726632.png?HW-CC-KV=V1&HW-CC-Date=20261119T014819Z&HW-CC-Expire=31536000000&HW-CC-Sign=813663A0BD1337617CC6ED7295E7DB5CFAA8320F38C0EAC64562291D62E5906F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/tRSgH3qMS9q69aMUhC2jLw/zh-cn_image_0000002793038284.png?HW-CC-KV=V1&HW-CC-Date=20261121T011112Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE5B6BA3AA3E744D030EDC34433FF8C782F8359909E6FAC4BA3A4171E618F4FB)
 
 流程说明：
 
@@ -32,7 +32,7 @@ Share Kit推出碰一碰分享，支持用户通过碰一碰发起跨端分享�
 
 手机应用发起碰一碰分享时，双端设备需要在**亮屏、且解锁**的状态下并且都已开启华为分享服务（系统默认开启），设备顶部轻碰即可触发。如果用户已手动关闭华为分享服务开关，轻碰事件触发时，用户会接收到系统通知提示开启。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/rA6nK0cpRuSsT69CqO-fzw/zh-cn_image_0000002791566660.png?HW-CC-KV=V1&HW-CC-Date=20261119T014819Z&HW-CC-Expire=31536000000&HW-CC-Sign=33AB3C5BF18ECF18192CD6284A93FA5FC03A46376A728D25D2480375974A795D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/FDojYxVmQ0eN3C9wwS9zrQ/zh-cn_image_0000002792878314.png?HW-CC-KV=V1&HW-CC-Date=20261121T011112Z&HW-CC-Expire=31536000000&HW-CC-Sign=C358ECDE0614DDC15CE9A2F021AD1AB4854A951493196EE18F15163CD8F5AF11)
 
 Share Kit的处理机制：
 

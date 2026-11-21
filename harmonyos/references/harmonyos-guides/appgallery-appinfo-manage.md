@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-ap
 title: 通过HarmonyOS 开发者中心动态管理应用图标
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 图标管理服务 > 通过HarmonyOS 开发者中心动态管理应用图标
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:53+08:00
+scraped_at: 2026-11-21T09:12:18+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:a7816fb5f0e88c66b90c361c3a5289b6b71293f4ac415d4bb27dfd15f4a33556
+content_hash: sha256:5b72ced112dcd1f830492b6db33928d48af2e4106ab7a824017b8b65bd302ed7
 ---
 
 图标管理服务支持开发者在应用客户端完成接口适配（查询、切换、恢复默认图标）并发布新版本后，通过HarmonyOS 开发者中心页面动态管理应用的个性化图标，实现应用侧图标动态切换，开发者无需再升级应用版本。
@@ -37,7 +37,7 @@ content_hash: sha256:a7816fb5f0e88c66b90c361c3a5289b6b71293f4ac415d4bb27dfd15f4a
 
 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/index.html#/home/101653523124949886)，在“所有应用”列表中找到并点击已开通图标管理服务的HarmonyOS应用，进入应用管理页面。在左侧导航栏中，依次选择“分发 >更多服务> 图标管理”，进入图标管理页面后，就可以管理HarmonyOS应用的个性化图标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/t1WeM6w9TxWQmHgNLVAwXw/zh-cn_image_0000002820526197.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=4263F1E835B9142A0FF011B9D7FEC826710B4EA28A5360192C358F73FCEBE67F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/gB-ukTZgTdeP6XD6UfuQGA/zh-cn_image_0000002793037868.png?HW-CC-KV=V1&HW-CC-Date=20261121T011051Z&HW-CC-Expire=31536000000&HW-CC-Sign=1246D9905C0AD6E0DBE477C7930BCA8B59AA1638613CA89338FC383E9AB7FBB2)
 
 **说明** 
 
@@ -48,7 +48,7 @@ content_hash: sha256:a7816fb5f0e88c66b90c361c3a5289b6b71293f4ac415d4bb27dfd15f4a
 
 1. 在图标管理页面点击“新增图标”按钮，进入创建图标页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/uih3HLn7Sx6GUsAB29ednw/zh-cn_image_0000002820406197.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A14D45C5E3161FA7339EEBD5025148676E7587469CAD5449923A5DF486306EC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/jMBfoNELTh-JosV9tCjTtg/zh-cn_image_0000002792877898.png?HW-CC-KV=V1&HW-CC-Date=20261121T011051Z&HW-CC-Expire=31536000000&HW-CC-Sign=6120DED1C219CDC1CF7883AF75C3AA4B8CB66F57A3F051E691A59B387DD2B100)
 2. 输入图标ID、图标名称，选择设备类型，上传图标文件，点击“保存”或者“提交”按钮，将图标保存为草稿状态或提交审核。
 
 **说明** 
@@ -60,7 +60,7 @@ content_hash: sha256:a7816fb5f0e88c66b90c361c3a5289b6b71293f4ac415d4bb27dfd15f4a
 
 1. 在图标管理页面选择一个草稿或审核不通过的图标，点击“编辑”按钮，或选择一个审核通过的图标，点击“更新”按钮，进入图标编辑页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/l9wPHv-4STWFi1b40Q5Bmg/zh-cn_image_0000002791726218.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=34901EBCE36758AD329807EFC7DDB84906F2AB81639CC811E33BF823CBA128AF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/qPvZPnlnQ6igpkVPlBlQgw/zh-cn_image_0000002821837805.png?HW-CC-KV=V1&HW-CC-Date=20261121T011051Z&HW-CC-Expire=31536000000&HW-CC-Sign=033F10A46388DB560ACAD8EDAC3A7DD8238A5568A3609A3C7E80802EC4BA9796)
 2. 输入图标ID、图标名称，选择设备类型，上传图标文件，点击“保存”或者“提交”按钮，将图标保存为草稿状态或提交审核。
 
 **说明** 
@@ -72,7 +72,7 @@ content_hash: sha256:a7816fb5f0e88c66b90c361c3a5289b6b71293f4ac415d4bb27dfd15f4a
 
 1. 在图标管理页面选择一个图标，点击“删除”按钮，再点击提示框中的“确认”按钮，就可以删除指定图标。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/0-i4ZOrTTgCd4BwuOCAhSg/zh-cn_image_0000002791566246.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=25ECB1D6C45317557710DDBD82C4E80A7FED391E931C6336EADE3785C29C64D1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/T_o-Qz6ZTFO3x5m1jpEMWA/zh-cn_image_0000002821757807.png?HW-CC-KV=V1&HW-CC-Date=20261121T011051Z&HW-CC-Expire=31536000000&HW-CC-Sign=F97A52BE05F28916CEA424893CB83F2150E7FD07FD2DC98C20C6A3C76333CDE5)
 
 **说明** 
 

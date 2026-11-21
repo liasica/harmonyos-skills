@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-runtime
 title: ArkTS运行时常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS运行时常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:34+08:00
+scraped_at: 2026-11-21T09:10:59+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:44cdcc866ea750d79b194eb1275b1a6f10cd7ccf91a0b77060b5c19e8194d843
+content_hash: sha256:225b0f780999cca8757d8519f73a358c7aeb174033b6270b49734eee194304b7
 ---
 
 ## 正则运算与预期输出结果不一致场景
@@ -274,7 +274,7 @@ let res = str.replace(/^/, 'abc');
 
 然后点击DevEco Studio下方HiLog选项卡，输入过滤条件“Throw error:”，即可查看到Async函数内产生的异常信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Xu3oizocTf2JqmNCcgYWdw/zh-cn_image_0000002820524485.png?HW-CC-KV=V1&HW-CC-Date=20261119T014642Z&HW-CC-Expire=31536000000&HW-CC-Sign=5666BE0AE026CF3B438C16D596D8A08184E45F65E44520A083E91684D96A79F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/mobAzgEIQJSaa7PP_rrztA/zh-cn_image_0000002793036154.png?HW-CC-KV=V1&HW-CC-Date=20261121T010936Z&HW-CC-Expire=31536000000&HW-CC-Sign=44C777778FD549C38DB735C2E7A372BF44FC22B5338A53DB2DA78CB75105AC08)
 
 ## Array.flatMap()接口常见问题
 

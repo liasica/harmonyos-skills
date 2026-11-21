@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: AVScreenCapture录屏基础流程
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 使用AVScreenCapture录屏取码流(C/C++) > AVScreenCapture录屏基础流程
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:41+08:00
+scraped_at: 2026-11-21T09:12:06+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:b1961b0721c1e450e76b36d8b94422c5f60e8dd7a2d9c567a8e9376a543c749c
+content_hash: sha256:48b69b355f73de9b62e0d6eb29383066420a35fbf9350488a6aa1431c8a10aff
 ---
 
 屏幕录制功能支持开发者获取屏幕数据，适用于屏幕录制、会议共享、直播等场景。开发者可通过调用[AVScreenCapture](media-kit-intro.md#avscreencapture)模块的C API，采集设备内外的音视频数据源。该模块需与窗口管理（Window）、图形处理（Graphic）等模块协同工作，以完成完整的视频采集流程。
@@ -23,7 +23,7 @@ content_hash: sha256:b1961b0721c1e450e76b36d8b94422c5f60e8dd7a2d9c567a8e9376a543
 
 基础流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/AMsim9fVRvqHFEVcKSSJCg/zh-cn_image_0000002820525977.png?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4C091C6F45ABE2D4993738C36EB271BE60C20EDD73BB718A95DE85228666361)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/HM9WX7TvSfKUkU-hvSzH6w/zh-cn_image_0000002793037648.png?HW-CC-KV=V1&HW-CC-Date=20261121T011040Z&HW-CC-Expire=31536000000&HW-CC-Sign=21E1C605095EF24A5712A4A230D95B6F29FA84DFA705AE468EFAE6BE51A0E4B5)
 
 录屏采集的内容输出方式如下。
 
@@ -38,7 +38,7 @@ content_hash: sha256:b1961b0721c1e450e76b36d8b94422c5f60e8dd7a2d9c567a8e9376a543
 
   隐私保护弹框：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/BMSr8EcJQTqvoVGFin_NCg/zh-cn_image_0000002820405977.png?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=77E7C959CD8835629F68A3D08B50F750A422BE7E44517B19CACD2F01CFF80BE5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/4oWkM0mAR1ucXiIdZzvIXg/zh-cn_image_0000002792877678.png?HW-CC-KV=V1&HW-CC-Date=20261121T011040Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F319D34AFF2EFF232C93BA6D3BAE89707A0690019C68BA102C52B8B813F0E42)
 
 ## 通用开发步骤
 
@@ -416,7 +416,7 @@ config.videoInfo.videoCapInfo.displayId = 0;
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/nm-9UeF5Q_-vwQgAosvORw/zh-cn_image_0000002791725998.png?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=437AF28627D42501A4B6FF92430E9C598BE475A0AE0E1A7AFD5E1CDF5D30199A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/Y3qK6XQXRBG8vivrsBaSLw/zh-cn_image_0000002821837585.png?HW-CC-KV=V1&HW-CC-Date=20261121T011040Z&HW-CC-Expire=31536000000&HW-CC-Sign=17A0B04BB9479CB7A666A2F7F8F6FFE3E5EBB6553EA359213627659E68E6B19D)
 
 ### 录制主屏幕
 
@@ -476,7 +476,7 @@ config.videoInfo.videoCapInfo.missionIDsLen = static_cast<int32_t>(g_missionIds.
 // 在配置参数结束后执行"g_missionIds.clear()"。
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/fQuCuD_gSpKXMyOrb8EFyg/zh-cn_image_0000002791566026.png?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=9109FCEC314CF92008E95883FF4A7964CC74A8D7B35385CE40A8452DCE85F673)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/3I_bhCUuRZKTpSuVxEiwug/zh-cn_image_0000002821757587.png?HW-CC-KV=V1&HW-CC-Date=20261121T011040Z&HW-CC-Expire=31536000000&HW-CC-Sign=71503B1869912B21922A0D990DC895676757FA6A334D08FFA0E43227B1596B9B)
 
 若期望同时录制多个窗口，需要传入期望录制的窗口ID列表。
 

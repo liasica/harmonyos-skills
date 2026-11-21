@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 属性更新器 (AttributeUpdater)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > Modifier机制 > 属性更新器 (AttributeUpdater)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:44+08:00
+scraped_at: 2026-11-21T09:11:10+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e8413f7275b0f1dfab449c5edb8a6ad96e338fde335f3f2d8ef3a9c93126be91
+content_hash: sha256:4bb6954e919f32d3c47b0193581c52d0a3390cff6517da028ce13f77d0634ec6
 ---
 
 ## 概述
@@ -80,7 +80,7 @@ struct updaterDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/w833GQEaRTm0SWfUvRj3Jg/zh-cn_image_0000002820405241.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C825DDFC2EF83898C6FEEDC78B515F0970563571BC5B888FB8F27C59E699425)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/OcYhzEOVRse8kH6dveuJ4Q/zh-cn_image_0000002792876942.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011110Z&HW-CC-Expire=31536000000&HW-CC-Sign=5154AD88D5E132BF85F883EEAC2C5B27660492F8104AC3D6CDF3A7FD35249ED8)
 
 ## 通过modifier更新组件的构造参数
 
@@ -124,4 +124,4 @@ struct updaterDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/dSmGADH9RSy69NI-QRKuvw/zh-cn_image_0000002791725262.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=58EAD6BC6B90DE47B85CECFD289A50C94C5871D2022B15173B558E529D3C49A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ed9gakFtS4WMcrtrcGPoXw/zh-cn_image_0000002821836845.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011110Z&HW-CC-Expire=31536000000&HW-CC-Sign=57BAB032D424B12653016FB2DE89F3B91AD00CC092F96FBD96CB5F0015EA3E9F)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbui
 title: wrapBuilder：封装全局@Builder
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > wrapBuilder：封装全局@Builder
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:36+08:00
+scraped_at: 2026-11-21T09:11:02+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:0070b6f4e8a7d77dfd6a9e1130d0314bc10029c5e4dfac018472f992e93f6a9a
+content_hash: sha256:93de929a1ca6ecbdfbf653f64fb6ed75c052b920b425f133b4c569e55cbd0279
 ---
 
 当在一个struct内使用多个全局@Builder函数实现UI的不同效果时，代码维护将变得非常困难，且页面不够整洁。此时，可以使用[wrapBuilder](../harmonyos-references/ts-universal-wrapbuilder.md)封装全局@Builder。
@@ -106,7 +106,7 @@ struct TestIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/H7REYQ9xREyYlnaF7o9evg/zh-cn_image_0000002791564606.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=87700D78870762B0AC70DF812012B3462D890256BE9603F1BBEF8EDF21FEC39D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/S1bYvUnFT9SAF2SH4r5dyw/zh-cn_image_0000002821756161.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0AA618EFB1A587B9C2094126B8068FD901AD332874241F5C85A4730A19259C0)
 
 ## @Builder方法赋值给变量在UI语法中使用
 
@@ -154,7 +154,7 @@ struct IndexItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/HUJ8g5mETuawfcbxWUGujA/zh-cn_image_0000002820524557.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=5ED18AD12AAAB112F2A67C2E71761BE425169D950F77FAF625700B38333D340F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/5E1zD67wTKyuospC50OHKg/zh-cn_image_0000002793036226.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=3168355AAC3B6ADFCF5AB5512C3565C2508E4CFB00978EB6181796BCA4A853DD)
 
 ## @Builder方法赋值给类或者接口的属性
 
@@ -199,7 +199,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/w6dY13ooRPSZaNOcUwIgZg/zh-cn_image_0000002820404557.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA0DCAE79EDDDD37251C09EB44D156F86E3FEAA34A6CC0FDA4D00A0C9B7B2D89)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/zY1bYgCvTmWRxoZ8fkF2qA/zh-cn_image_0000002792876258.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD8FE7AE4B2622F2DB23F612E8D2007114F13422995234C36A3BD7ECD6CF270A)
 
 ## 引用传递
 
@@ -243,7 +243,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/_lKyq1ixR-mfvzGjTG4m1g/zh-cn_image_0000002791724580.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=28BC7E25B31058B56FF85511074FB2688586EA0A90E3B69F5C6648B64F860C71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/A2DLmExmSVWcjsFOV9lh2g/zh-cn_image_0000002821836163.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=35CD8C8142ED637CF87283A3DB243DCB2C36A87DCC0FD55E0DD31457E14CCFA7)
 
 ## 常见问题
 
@@ -295,4 +295,4 @@ struct TestBuilderIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/HMYWzxngTYCMfQvV4yr0jw/zh-cn_image_0000002791564608.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCB4D3E0F5EE1443DEB9750DAF26FEC21755F5DC12D5553B4AF146B037A24B66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/zVAKltK8S6ufT2eJTm248A/zh-cn_image_0000002821756163.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=24708E46B3C95C023C092CC24EA72D88FDE7F65B85733342878AA2AD9ED1D0C3)

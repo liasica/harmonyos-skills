@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-ticket
 title: 查看活动/景点门票
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 活动/景点门票 > 开发场景 > 查看活动/景点门票
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:15+08:00
+scraped_at: 2026-11-21T09:12:42+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:9883a60586c24679b47e5bfe31262081c59b9ef29279d7b9736aa08f1cebbd9d
+content_hash: sha256:ddab43f8e152d1d35b13bc8f00847bebc3af856ec5bae19208acf3e39b7020c5
 ---
 
 查询已开通门票的状态并展示，用户可以点击跳转钱包门票详情页，查看和使用更多功能。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/N7VQ-2kJRfGEqQzd2U5MkQ/zh-cn_image_0000002820526653.png?HW-CC-KV=V1&HW-CC-Date=20261119T014915Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D6CC6E3E12CD2039D945BEBB92EE1AA25082E7E6176A5F20D7C1C3B13CF43AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/bHhPIQJETWCis6ygRmWtcQ/zh-cn_image_0000002821838261.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBC24528DCDDDB947EA097A65CD548F82D0879A590BDA4D9CFAD08CE2D7F1E43)
 
 ## 客户端开发
 

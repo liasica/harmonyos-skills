@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pixelmap-draw
 title: 图片绘制（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 图片绘制（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:45+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:182e888fe2d9fff5d9c289f45630d3d22cea24f7ed8f917ea2688cab5694465c
+scraped_at: 2026-11-21T09:12:11+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:218dfe6b717c9d18bebb0835623852702823b16cbb581e254decc0b87d96c8d2
 ---
 
 位图是一种用于在内存中存储和表示图像的数据结构，它是一个未经过压缩的像素集合，而JPEG或PNG等格式的图片是压缩格式的，两者并不相同。如果需要将JPEG或PNG绘制到屏幕上，需要先解码成位图格式，具体可参考[图片处理服务（Image Kit）](image-overview.md)图片解码相关章节。
@@ -89,6 +89,10 @@ content_hash: sha256:182e888fe2d9fff5d9c289f45630d3d22cea24f7ed8f917ea2688cab569
 
    drawImage()函数接受4个参数，第一个就是上文中创建的PixelMap，第二个是绘制图片位置的左上角x轴坐标，第三个是左上角y轴坐标，第四个为采样选项对象，默认为不使用任何参数构造的原始采样选项对象。
 
+   **注意** 
+
+   通过Canvas相关接口绘制PixelMap时，仅支持像素格式为RGB\_565、RGBA\_8888、BGRA\_8888、ALPHA\_8和RGBA\_F16的PixelMap。
+
    ```typescript
    // 为了使图片完全显示，修改绘制起点参数为（0，0）
    canvas.drawImage(pixelMap, 0, 0);
@@ -96,7 +100,7 @@ content_hash: sha256:182e888fe2d9fff5d9c289f45630d3d22cea24f7ed8f917ea2688cab569
 
    绘制效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/jA_SWtMmRaK4Riccg3X7mw/zh-cn_image_0000002820526039.png?HW-CC-KV=V1&HW-CC-Date=20261119T014845Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1DD45329556E81A4AC58802728791791442043A667D3D2723A8BB2F2719ADA9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/VauwXb25TtiANHzyR9__qg/zh-cn_image_0000002793037710.png?HW-CC-KV=V1&HW-CC-Date=20261121T011044Z&HW-CC-Expire=31536000000&HW-CC-Sign=A75D046E0048CB20C9C1B5806A8D4B533D65272F0EB7F23F876356939BDBFBB6)
 
 ## 示例代码
 

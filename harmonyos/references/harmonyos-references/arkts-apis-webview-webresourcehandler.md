@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebResourceHandler)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebResourceHandler)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:57+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-21T09:14:43+08:00
+doc_updated_at: 2026-11-20
 content_hash: sha256:70213720fa10547f4ae338755398c4d52c84f3c12d65fa67d705c544e6ad9ee1
 ---
 
@@ -189,7 +189,7 @@ struct WebComponent {
                   console.info('[schemeHandler] onRequestStart has no http body stream');
                 }
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
               }
 
               if (request.getRequestUrl().endsWith('example.com')) {
@@ -213,7 +213,7 @@ struct WebComponent {
 
             this.controller.setWebSchemeHandler('https', this.schemeHandler);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
         })
         .javaScriptAccess(true)
@@ -272,7 +272,7 @@ struct WebComponent {
               try {
                 console.info("[schemeHandler] onRequestStart url:" + request.getRequestUrl());
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
               }
 
               if (request.getRequestUrl().endsWith("example.com")) {
@@ -293,7 +293,7 @@ struct WebComponent {
 
             this.controller.setWebSchemeHandler('https', this.schemeHandler);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
         })
         .javaScriptAccess(true)

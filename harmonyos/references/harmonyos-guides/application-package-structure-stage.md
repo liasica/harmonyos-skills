@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-p
 title: 应用程序包结构
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础知识 > 应用程序包结构
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:23+08:00
+scraped_at: 2026-11-21T09:10:49+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:d680b6f002ca545cbf98da947f5a696076c64aeef9479be75693dbed0d9f22d2
+content_hash: sha256:19e16d72c56461c480b53de8b16b2c322cb7fea2389ee4e0c83282e00569562f
 ---
 
 为了让开发者能对应用程序包在不同阶段的形态有更加清晰的认知，分别对开发态、编译态、发布态的应用程序结构展开介绍。
@@ -16,7 +16,7 @@ content_hash: sha256:d680b6f002ca545cbf98da947f5a696076c64aeef9479be75693dbed0d9
 
 **图1** 项目工程结构示意图（以实际为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/YkBrn3eTRvOZLzHv_a2CkQ/zh-cn_image_0000002820404381.png?HW-CC-KV=V1&HW-CC-Date=20261119T014631Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3506612427FDBC9D2C11CB6899AEDA01B676BE2F877BC194910DB42A8FCBEE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/MB9j-r6aQfiQyLb1ZmhZ-Q/zh-cn_image_0000002792876082.png?HW-CC-KV=V1&HW-CC-Date=20261121T011049Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B4021AF5A369EF241281871A63E5D4AC30B3D50D6274A658682B87E8C12B138)
 
 **说明** 
 
@@ -38,7 +38,7 @@ content_hash: sha256:d680b6f002ca545cbf98da947f5a696076c64aeef9479be75693dbed0d9
 
 **图2** 开发态与编译态的工程结构视图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/FiFdHuUcScy0QjIf9RZ0yA/zh-cn_image_0000002791724404.png?HW-CC-KV=V1&HW-CC-Date=20261119T014631Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5ABFCAF5377E98CF75DEA7C53A2FA1C8E12FD57B7B2B50AD035B190777885D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/XiARh9D6SwaDRT81fzNVAA/zh-cn_image_0000002821835987.png?HW-CC-KV=V1&HW-CC-Date=20261121T011049Z&HW-CC-Expire=31536000000&HW-CC-Sign=49BBB515B11DC92A23FAD247B75FF40B371437D7ACF444573FD1EA255F261E84)
 
 从开发态到编译态，Module文件变更如下：
 
@@ -59,4 +59,4 @@ content_hash: sha256:d680b6f002ca545cbf98da947f5a696076c64aeef9479be75693dbed0d9
 
 **图3** 编译发布与上架部署流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/jR4bjFJ5QdyJC68EXvvvyQ/zh-cn_image_0000002791564432.png?HW-CC-KV=V1&HW-CC-Date=20261119T014631Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF8F752C5F4CBA941CA8A882043037E2050068AD948E13C051882F1F4BDFF8A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ZLIZMxkGRTqhCAL9dsmzhA/zh-cn_image_0000002821755987.png?HW-CC-KV=V1&HW-CC-Date=20261121T011049Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6F20A3C3AC327DF2D30085F94A3671A02DCBF787D54C5A31F4C7E1F5C688B4C)

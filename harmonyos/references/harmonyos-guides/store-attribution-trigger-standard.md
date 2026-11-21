@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 标准转化事件
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 开发准备 > 管理转化事件 > 标准转化事件
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:52+08:00
+scraped_at: 2026-11-21T09:12:18+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:46e87ef94c01e4031f43ae962f3a9a302a4c79221cdd4b6382d4eb8067b47989
+content_hash: sha256:3e307e008cb58bb16938a94e87b1e4f63461bb1ea7fc5db8da282ad461b50087
 ---
 
 接入应用归因服务前，请先明确转化事件。应用归因支持标准转化事件和自定义转化事件，建议开发者优先选用标准转化事件登记上报。若无法满足业务需求，开发者可自行创建[自定义转化事件](store-attribution-trigger-custom.md)用于后续的归因服务。
@@ -14,11 +14,11 @@ content_hash: sha256:46e87ef94c01e4031f43ae962f3a9a302a4c79221cdd4b6382d4eb8067b
 
 点击左侧“转化事件管理”菜单，点击页面中“标准转化事件”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/c7lLa9u3QtyZiWpXsaOnfA/zh-cn_image_0000002791566236.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=940B5569815CB2A07B2B375679595AECB117FC2B9B66ADAD73D1AB7D122ACA3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/tverb4h1Qmynu8Pd-fQ_GA/zh-cn_image_0000002821757797.png?HW-CC-KV=V1&HW-CC-Date=20261121T011218Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DD4E7C8CA4BC3E9E94CD1D28E201BBB5AEA2814F334BEBA59E845CD9B4769A1)
 
 查看[标准转化事件信息](appgallery-attribution-appendix-triger.md#标准转化事件信息)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/XwvaltzhSh2pGGiCYPAY8g/zh-cn_image_0000002820526189.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=72DC5B8B2B120605FB1E6E833FE633A6556701F5A9885D75F15C1579825A2827)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Ffl2DT_hQjOR0zF04WZkAw/zh-cn_image_0000002793037860.png?HW-CC-KV=V1&HW-CC-Date=20261121T011218Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D46D840FA310CD1BF9E7CBC176CA2E433EF27DF58C87AB5AF3514FA3EF260F2)
 
 **说明** 
 

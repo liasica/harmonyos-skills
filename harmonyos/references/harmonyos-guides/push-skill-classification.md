@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-skill-cl
 title: 通知消息自分类权益推荐Skill
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > （可选）接入Skill > 通知消息自分类权益推荐Skill
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:10+08:00
+scraped_at: 2026-11-21T09:12:36+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:ee5c5aaafa56899912bafcb05190dbaaed4f25c5826018f203c1c2d2b4c69087
+content_hash: sha256:0d7d380ee3586a84b36f7689f92b9b3f8a945925ea4b0132a03bfc973920f811
 ---
 
 ## 概述
@@ -39,4 +39,4 @@ content_hash: sha256:ee5c5aaafa56899912bafcb05190dbaaed4f25c5826018f203c1c2d2b4c
 3. **获取推荐结果**：Skill分析后返回推荐类别和申请材料清单。
 4. **准备材料并申请通知消息自分类权益**：根据推荐结果准备相应材料，在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站提交申请，详情见[申请步骤](push-apply-right.md#申请步骤)。下图为金融应用的示例，描述场景然后通过Skill名称触发调用，AI返回相应推荐结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/_w8ocDlEQVeb3cq1iZvYkA/zh-cn_image_0000002791566616.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED0127308A7B7D6712FE7E45D22AA0C1B66793A7E238171A323FBE9614C358C7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/okKhX6vLTpaoStRI4QYIuw/zh-cn_image_0000002792878270.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=0418DA3DC9CC19DEAEBFDDC513B7B06150E54CDA45B8C9D1D241C24E8BFDD324)

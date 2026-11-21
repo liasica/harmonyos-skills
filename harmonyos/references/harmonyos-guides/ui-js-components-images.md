@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: image开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > image开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:48+08:00
+scraped_at: 2026-11-21T09:11:14+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:ae689de9e39e60a2344b5ee623976797302adc0e9e7872203bdcd62183e580cb
+content_hash: sha256:a554181436717a83a2495e2fbde82ff310a35f59b7995ff84720da710e425102
 ---
 
 image是图片组件，用来渲染展示图片。具体用法请参考[image](../harmonyos-references/js-components-basic-image.md)组件。
@@ -33,7 +33,7 @@ image是图片组件，用来渲染展示图片。具体用法请参考[image](.
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/YMukNyo8R7KtJzp1tETIQw/zh-cn_image_0000002791725346.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=D25E1E568E6CE699FDAB864B11322E1E7554FB0B02EA41E25A62CB6DFC13C7D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/s9uCLQk1R9CJLxr8FV2_tA/zh-cn_image_0000002821836933.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C8FD3B3B3EA6F83A76172752215F8411E2D343287D94724FF8F400D7445A38D)
 
 ## 设置image样式
 
@@ -66,7 +66,7 @@ image{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/2NMtEIK_SheIrgi1XTt_HQ/zh-cn_image_0000002791565374.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=78461A63CC3E4FCB51BDE64221329C348B1BD0B89B3C6804BC571AC20B19C671)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/rlYNttGNT46-EXbwdahGwg/zh-cn_image_0000002821756935.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCA986F79682E664A127AE0453D6D104BEF270C186CE2E2976DDBBED7C8A6134)
 
 ## 加载图片
 
@@ -123,7 +123,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/5poka_HPQni97dakeQYaTw/zh-cn_image_0000002820525327.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8BB898E74F09D71DCE4209C6BD2F9DD0F197DCF19D591835CB5216F7968B3AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/SGmExpwfR4WvZj4LpGFLDA/zh-cn_image_0000002793036998.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD7761097233BE00D5E6F97A986C81BA045BDB5261FE569CA5A6DE282D602D5B)
 
 ## 场景示例
 
@@ -204,4 +204,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/mmBhjehaTKe6R6gwx3dlsw/zh-cn_image_0000002820405327.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AF260EDA5216A4B294E8647001F2A972C30F525270C536E2B0DFC2AB2C36FD0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/j5FT5M-BSyCZxJ5CRWktgA/zh-cn_image_0000002792877028.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=05963CB2AED759B78811F304DC0756FCB62724194D1A7CFE04FC6380AD21A0AD)

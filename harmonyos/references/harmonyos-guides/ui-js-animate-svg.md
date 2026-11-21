@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: svg动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > CSS动画 > svg动画
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:49+08:00
+scraped_at: 2026-11-21T09:11:14+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:38477d971dee77f92ec553aafc45e942aed9bb0b979152e8daa6833490c6b062
+content_hash: sha256:0722e120cb987acb6edfc7b9ea643fbcb21a4bc300b261b3fc7fdcd8482d98e6
 ---
 
 为svg组件添加动画效果。
@@ -40,7 +40,7 @@ content_hash: sha256:38477d971dee77f92ec553aafc45e942aed9bb0b979152e8daa6833490c
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/tUJwXwf-SKaHflIaOB-z3A/zh-cn_image_0000002791725384.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7290932805A4F2F3AC26841BBBE2E8FEBF68907A7BFD329714588E1366209B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/nNNwg2KbRfS-S4wAAkesGA/zh-cn_image_0000002821836971.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=A97A5130176ECF769E4C4261352BE94ED0DDD6A53F90B46189155C2CF81AE208)
 
 **说明** 
 
@@ -64,7 +64,7 @@ content_hash: sha256:38477d971dee77f92ec553aafc45e942aed9bb0b979152e8daa6833490c
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/snvMHJTdQg2sc08-sZLq8Q/zh-cn_image_0000002791565412.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=85223A19858D53236260878B1EE15C44784E96A2D04B9860729C2EF363743229)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/bi0JpnUpSbm8Vux6wBiSFw/zh-cn_image_0000002821756973.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=515379643C9D9DFBF993F7ABD7EEB01974DA22B8944A3A40322E0157D9BC2B8C)
 
 ## animateTransform动画
 
@@ -106,4 +106,4 @@ content_hash: sha256:38477d971dee77f92ec553aafc45e942aed9bb0b979152e8daa6833490c
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/Ek30js67SpKw-GdsAgQWDA/zh-cn_image_0000002820525365.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAECED5A1D3AB40BD5AC44F7E80A5650331D797FD7EA857AA038EF94343771EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/bZNzQqwGQ522P3b-M7-hNw/zh-cn_image_0000002793037036.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B7D837D75DDC0DC894349F5CD81C54C0E15CFD822664132A8695134B0137C7C)

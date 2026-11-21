@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 单客户端订阅场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 单客户端订阅场景
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:07+08:00
+scraped_at: 2026-11-21T09:11:33+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:7aa8b547e023557eb4cc943a29f24588165b129ed6d8b6e3e0b64d3580ac8e97
+content_hash: sha256:6746ee6d4f8d45824d5ea69f77a00c19ba857cad142c2d7577f465a65cca2018
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:7aa8b547e023557eb4cc943a29f24588165b129ed6d8b6e3e0b64d3580a
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/p3L2fMGPR0Oy9tfuTNKDNA/zh-cn_image_0000002820525691.png?HW-CC-KV=V1&HW-CC-Date=20261119T014715Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9ABF24E8042F244EC7E2C6585507779A80407CCCD0BA1CCA2282A0CA9060288)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Dly7O2LgT9ucllUFp7tfLA/zh-cn_image_0000002793037362.png?HW-CC-KV=V1&HW-CC-Date=20261121T011007Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AD2992D4D6E18AFD9766666F61D1A1ECA60224A7CC8CCF58584C38C556128F8)
 
 **流程说明：**
 

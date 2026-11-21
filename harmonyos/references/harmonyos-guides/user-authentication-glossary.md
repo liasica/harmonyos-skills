@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-authenti
 title: User Authentication Kit术语
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > User Authentication Kit术语
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:12+08:00
+scraped_at: 2026-11-21T09:11:39+08:00
 doc_updated_at: 2026-08-14
-content_hash: sha256:ffe809a1b78c4f2ed8eb137653639517a3f00caff8a3d5e17f59d1740b3c8ba1
+content_hash: sha256:17f2f76fea3f4921d905524eae8fa9277dee16246f90ea04dad322698f908e89
 ---
 
 ## M
@@ -16,7 +16,7 @@ content_hash: sha256:ffe809a1b78c4f2ed8eb137653639517a3f00caff8a3d5e17f59d1740b3
 
 示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/oWXUZksjRgSWAJVoL8kAvA/zh-cn_image_0000002820405717.png?HW-CC-KV=V1&HW-CC-Date=20261119T014812Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FC9074C53B87045CAC38C1CEA9626448A4F28394D0FFE83258E4B258DBD6822)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/rD5xCOBiTeGZrYY8vnyfsw/zh-cn_image_0000002792877418.png?HW-CC-KV=V1&HW-CC-Date=20261121T011013Z&HW-CC-Expire=31536000000&HW-CC-Sign=B195505B7F632029FF118CC7D8AB4EE5AD35CA38037C3CC7DE9B9F0E456481CB)
 
 ### 模应用弹窗
 
@@ -24,4 +24,4 @@ content_hash: sha256:ffe809a1b78c4f2ed8eb137653639517a3f00caff8a3d5e17f59d1740b3
 
 示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/_WEoQiYXQKOku3qa19j7eg/zh-cn_image_0000002791725738.png?HW-CC-KV=V1&HW-CC-Date=20261119T014812Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9B16AE7519BFD3DD2F390EF096198AFDB6AAB58AE7686B47F51D53EBB84A642)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/htv2b33MQXim2olMBBuNtw/zh-cn_image_0000002821837325.png?HW-CC-KV=V1&HW-CC-Date=20261121T011013Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1501671E497E328A19802CAAF98F268878CD71EE636794320A860B3578327BE)

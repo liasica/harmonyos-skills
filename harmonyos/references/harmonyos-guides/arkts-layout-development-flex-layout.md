@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 弹性布局 (Flex)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 弹性布局 (Flex)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:39+08:00
+scraped_at: 2026-11-21T09:11:05+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80ff2521
+content_hash: sha256:dc9f60cb06dd4ff2e417c33b6b51a8c03da1557edc2b56e7cfd8fe4c445261cf
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
 
 **图1** 主轴为水平方向的Flex容器示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/gdT0ZT8rRbKFIV1zGdbDEA/zh-cn_image_0000002791724824.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DA85416E880FACA75606B87CB3F41CAD48707294F8BDDC32C21EE18AB9224BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/EkVqOiVrTaetq8BqBdtSmw/zh-cn_image_0000002821836407.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=303939F9A0B89246C9E580C5E0F0E087340F6CAF881B81103AF5262FEFCB1BD7)
 
 ## 基本概念
 
@@ -29,7 +29,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
 
 **图2** 弹性布局方向图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/0PcwDdyoQwqRlLBaPYX0CQ/zh-cn_image_0000002791564852.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED6472FDE5E096C69876633F7CE59898370541439035984EA8671A6770D2CE63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/jgHZVn_KTt6SjJJoaV_Rfw/zh-cn_image_0000002821756409.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1BF2C84B1A279F1C7078D39D7E0E6AC3587F44A8FFF5D21AF787006ACF85369)
 
 * FlexDirection.Row（默认值）：主轴为水平方向，子元素从起始端沿着水平方向开始排布。
 
@@ -45,7 +45,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Fh8duEskR6KEPQ1x8C0gXA/zh-cn_image_0000002820524805.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=B200F7430A9323BD7B0C3857D9E2A7E3552B7E9E7F2A0A4CD7ACF8F0420D6388)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/0KXmC-zpQ-e26U8c2jG8uA/zh-cn_image_0000002793036472.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=0947B793BC391E2C0B54C952BAEAEC86A93E1EB0390F422D7E150605F2E781C7)
 * FlexDirection.RowReverse：主轴为水平方向，子元素从终点端沿着FlexDirection.Row相反的方向开始排布。
 
   ```typescript
@@ -60,7 +60,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/b_2UAKmfSxawh_d3Xmk2gg/zh-cn_image_0000002820404803.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=969C822DC50C5C65D34CC09F9E635C559ADDE0CC4B0D6E943E33616BAB89BE62)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/UUKGEC3nTNm2HLUhtXaE-Q/zh-cn_image_0000002792876504.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=84786B2AEFD1356F79A4FD27A620FF3A69EBF9421F2365DA6823406A06DC6436)
 * FlexDirection.Column：主轴为垂直方向，子元素从起始端沿着垂直方向开始排布。
 
   ```typescript
@@ -75,7 +75,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/v1pJwpSIQVmrWb282SLRbA/zh-cn_image_0000002791724826.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=B89EAD6A27169983BD3BA0C607F96F23433FA9C0C3EAEEF54DD286D6F5D91B88)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/o0D7jVyBQ6C8TJPVykGuWg/zh-cn_image_0000002821836409.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=614DD1AC925B9C8CE2B26F685091F7B55022DA5398D7E802B60EC2AFC0B459EA)
 * FlexDirection.ColumnReverse：主轴为垂直方向，子元素从终点端沿着FlexDirection.Column相反的方向开始排布。
 
   ```typescript
@@ -90,7 +90,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/ofqd69ubRui5rnP6bfUaVg/zh-cn_image_0000002791564854.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=107C631A2490D03481E6114392378A4257D8ACA3FBE0D5D74F940F5561AE8C18)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/SzvEny8jRcquBsx6_yqpvQ/zh-cn_image_0000002821756411.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=83B4A4E06CF5F72B9DA3D4B4F08749B727D7AA7DECB91AC360E4BDD663FFC0EF)
 
 ## 布局换行
 
@@ -109,7 +109,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/rgKvmX-DTBeHQzmCL2vzzQ/zh-cn_image_0000002820524807.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=71075623AA6BF58CFDEE93243DC8E7284D49D81F8BB3038F1267778E3DA3AC01)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/M2BjK3d9QoWoek40xOud0g/zh-cn_image_0000002793036474.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AFD08CA2D2593CF644573F5FDFFCC60A8D3A6529F19880D2CCA76A1470BAB80)
 * FlexWrap.Wrap：换行，每一行子元素按照主轴方向排列。
 
   ```typescript
@@ -123,7 +123,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/sbB0oq1VTj2IKHEoH9P1wg/zh-cn_image_0000002820404805.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=32827BD1CDAB960FB59D0880E7B7D779EE3BCA9B220B05D7166D8736130E7F19)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/gTzEIPRuRZC6Jt7dmEUAlg/zh-cn_image_0000002792876506.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D5090FF29C938A67B9941AD934965B7D09A395864EE83D7B006E2F64974920F)
 * FlexWrap.WrapReverse：换行，每一行子元素按照主轴反方向排列。
 
   ```typescript
@@ -137,13 +137,13 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/79Nss2gGQjKzwYef1chwyQ/zh-cn_image_0000002791724828.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=68321E3827060A15764D1367247F96586B6DFA3E01BFB9CF4C8871646965DA97)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/qgxbsk0oSKmx8a9HrTVn6A/zh-cn_image_0000002821836411.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=9613EB2AEAA7428693A4C6015516685C4B275262FC65B84C2DD29DF674F8437C)
 
 ## 主轴对齐方式
 
 通过[justifyContent](../harmonyos-references/ts-container-flex.md#flexoptions对象说明)参数设置子元素在主轴方向的对齐方式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/9hYOeUN1SE2qTnleBgNurg/zh-cn_image_0000002791564856.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FECD4D27C76B9C318A583B4562BF353F46E3E2FF944792961E5001C65881201)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/fZw5_aqfSRypeCNAF1ephA/zh-cn_image_0000002821756413.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=85B397CE9BA5059B761F160FF4A35591E617151AF1E361EA3215FCBD3B50B3B7)
 
 * FlexAlign.Start（默认值）：子元素在主轴方向起始端对齐， 第一个子元素与父元素边沿对齐，其他元素与前一个元素对齐。
 
@@ -158,7 +158,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/JvfkGsZsQXmi89MJxAphwQ/zh-cn_image_0000002820524809.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=99BE057C073689D4B50D4B93CD692C81E692B0B9C018F3CC2E3947D0841067B6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/8_cZ6oo5T6qLRcXx4UlPKg/zh-cn_image_0000002793036476.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=17826DCF67E50950016DDC5C5E5D23407359C7A61C07ECCBD029F3E1BF9AEBF2)
 * FlexAlign.Center：子元素在主轴方向居中对齐。
 
   ```typescript
@@ -172,7 +172,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/bD23aY0MRlm-v9ZP8Xy_KA/zh-cn_image_0000002820404807.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=93EEC88034CF7E12FFC3DA2CCBC1062CB9B65E9BAEE1AFA6ADE2ACB049747568)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Ci_cvTZWTbOBNU_d1-uflQ/zh-cn_image_0000002792876508.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=A388D7D9B73BEAE41D3805697C19ADC5B5B8E8D85FD4CBD8BF1C5239021D1A39)
 * FlexAlign.End：子元素在主轴方向终点端对齐，最后一个子元素与父元素边沿对齐，其他元素与后一个元素对齐。
 
   ```typescript
@@ -186,7 +186,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/tdvcJ4niSfSgnE1lxHqxUA/zh-cn_image_0000002791724830.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=85D9A57CFBB3A4000F8F209792E7F633730408A7B5B2F520CA74B63EE9B3AC92)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/hFlorBvoTyG-KVdAy4PNjw/zh-cn_image_0000002821836413.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DBA8DCAC7367EF79F21DB8367B843C75959DB940DE93C48621EE48FF5CB27F9)
 * FlexAlign.SpaceBetween：Flex主轴方向均匀分配弹性元素，相邻子元素之间距离相同。第一个子元素和最后一个子元素与父元素边沿对齐。
 
   ```typescript
@@ -200,7 +200,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/41VHQexNQ926P43nx7yhPQ/zh-cn_image_0000002791564858.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=119B7C75C327F1C1DAD9D594BB9B7D61DAF9197F6208285163D75F3817D5AA3B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/igXjx_oDTGK-Uay52nsAlw/zh-cn_image_0000002821756415.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D829E7BE8D1FFEDA2155696BECE320095E8236FB01DF9EA0510B4691906730F)
 * FlexAlign.SpaceAround：Flex主轴方向均匀分配弹性元素，相邻子元素之间距离相同。第一个子元素到主轴起始端的距离和最后一个子元素到主轴终点端的距离是相邻元素之间距离的一半。
 
   ```typescript
@@ -214,7 +214,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/mFp-HRumRFWYlh49ZQ0mkw/zh-cn_image_0000002820524811.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=4147A72DA2DABC7DB9587795D7478937F838299612149FFEE06D889BF988AD22)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/X_tGenpjTNKSIofJVxKJsA/zh-cn_image_0000002793036478.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=36A124BC3A79C02751F1286BFAFD9263B4B2F63BB0ED7345E1DD329A6F7B6F4D)
 * FlexAlign.SpaceEvenly：Flex主轴方向元素等间距布局，相邻子元素之间的间距、第一个子元素与主轴起始端的间距、最后一个子元素到主轴终点端的间距均相等。
 
   ```typescript
@@ -228,7 +228,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/TNibMUpGSrOf5sW_DEy_cw/zh-cn_image_0000002820404809.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=2042BBCFC2F1731902825DFC557B3C12A0E9EDCCF93685489BD0980EA63F21A6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/ZKsV80-pQc2S9UNLkU-v5Q/zh-cn_image_0000002792876510.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBF08AC7BBAD1263BBA1F1EE4C58F0A9D89E52051FEA285E88D151E564B54D81)
 
 ## 交叉轴对齐方式
 
@@ -251,7 +251,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/jqQfIqOmRGifo_maKMXMJw/zh-cn_image_0000002791724832.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=4592811ED4FB0E2C70F70AD9850965BBEA0263FECE51D0D84F9523FB29605FE0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/_rxKWF_5TqCiRk5Ljhwf9A/zh-cn_image_0000002821836415.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=497E669653E6F9EC844F5EDB91372D0FECD0650D641619439079815A5B290FB2)
 * ItemAlign.Start：交叉轴方向首部对齐。
 
   ```typescript
@@ -265,7 +265,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/hhkmlmBcRjeJZKsBHr-5kA/zh-cn_image_0000002791564860.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=DADAC5316C56C0EAA63C70BC8D9F8F53B7565B2FBBEA5B2489A3A8462E0C4546)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/NELlKD81SGS2WTR0aF6QTg/zh-cn_image_0000002821756417.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=8581091DC8F75C70D9BEEE1D8E49921344559059FD4C008124AF218A2CC13E56)
 * ItemAlign.Center：交叉轴方向居中对齐。
 
   ```typescript
@@ -279,7 +279,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ABBQ7HCbRSanb1BllGBexg/zh-cn_image_0000002820524813.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=368F391A9F6D63F323CB0D8D4111F5924A3909571FC82B7CDA1F1E10AB963F14)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/b1qQ3chTQt-SrzCsqosbfw/zh-cn_image_0000002793036480.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=C39D93933050A49EB4DDA4035289039893B241E660E595F5A80A7B80A258626B)
 * ItemAlign.End：交叉轴方向底部对齐。
 
   ```typescript
@@ -293,7 +293,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/LmyV43BpTz2UnmPxmokJ9Q/zh-cn_image_0000002820404811.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=569BF731DC39E29FB6129D779F798F462DBA7E0537A2EA0995A35EB8271412FB)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/W1qmr2_BT9Oqv2bhaT9BNw/zh-cn_image_0000002792876512.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=71F4E164898FF6220476D8D71B0C25730865C0F53BE8F29109D29B54C992431E)
 * ItemAlign.Stretch：交叉轴方向拉伸填充，在未设置尺寸时，拉伸到容器尺寸。元素在Flex容器中，沿交叉轴方向拉伸填充。容器为Flex且设置[FlexWrap](../harmonyos-references/ts-appendix-enums.md#flexwrap)为FlexWrap.Wrap或FlexWrap.WrapReverse时，元素拉伸到与当前行或列交叉轴长度最长的元素尺寸。其余情况下，无论元素尺寸是否设置，均拉伸到容器尺寸。
 
   ```typescript
@@ -307,7 +307,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/3gOYjhY3Q02ek9nIVrsnlg/zh-cn_image_0000002791724834.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=73DB1330ABBA616E44BA5B7FA8F1B6F167B9FB07ECAA2BF56A01CCAC923961D3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/z5L0McqrSLGvncKwEelNOA/zh-cn_image_0000002821836417.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=64242F793F070AD0A9E508DFE88EA0A10F49E78859DB8ED04B7388355167A974)
 * ItemAlign.Baseline：交叉轴方向文本基线对齐。
 
   ```typescript
@@ -321,7 +321,7 @@ content_hash: sha256:8ac81d229413fdd59fd4432d8346bed16ec8fd8f9867e847929da36c80f
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/b6HcK0ECSSG1DsAMQD3ejQ/zh-cn_image_0000002791564862.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DF70747F1AF2D52CE2B60E2DEF2DF7C9B084E8A9472066AEDEC61E56589589A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/-gHkXFdASHe96998c5z7Ew/zh-cn_image_0000002821756419.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFB83A3CBBD9CE3B467024F6D57721E8421D3BFC7A8484F0E083E96E80923F0D)
 
 ### 子元素设置交叉轴对齐
 
@@ -348,7 +348,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
 }.width('90%').height(220).backgroundColor('#AFEEEE')
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/u6HGF4SHTz20T_F7hNtyxw/zh-cn_image_0000002820524815.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=58AA3ADA7193D6FC8DB6EFCCF39D4BA000C6D11CEC71553713DD12EB3BC14104)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Mfp7TPF5SICzvgrFMThXnA/zh-cn_image_0000002793036482.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3FC3FA04576B0346C812316445F75D071D3A6F5C8A2F138B9B082BA64F92EE4)
 
 上例中，Flex容器中alignItems设置交叉轴子元素的对齐方式为居中，子元素自身设置了alignSelf属性的情况，覆盖父组件的alignItems值，表现为alignSelf的定义。
 
@@ -371,7 +371,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/yPN0l9TQSnK58ujDZQfaXw/zh-cn_image_0000002820404813.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=85158D97B868BC6BE5A9A9711D20F7DBC5BC80F71B8082CD8A4379715491BBCE)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/UfxVR3BnTPSFfr5aUBRbAg/zh-cn_image_0000002792876514.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E8D80431BB789470CA104D00C644591430CEE65267DA8AD859C0E08BE6DD702)
 * FlexAlign.Center：子元素各行在交叉轴方向居中对齐。
 
   ```typescript
@@ -387,7 +387,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/VdA2pI7iQBa6Duti_GowVQ/zh-cn_image_0000002791724836.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=A31A666DF999BBECD9518B9E3F03889F60615D9046B7B6A04FE5EBAFBA3EDC42)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/hYy_PW_YT1Snk6VpqLAM6w/zh-cn_image_0000002821836419.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3C23297E167BD87E37DC88F6FBC4936C585A8C8582A37DDEDF0E3D78B71FE9F)
 * FlexAlign.End：子元素各行与交叉轴终点对齐。
 
   ```typescript
@@ -403,7 +403,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/CeFPz7tfTmGisq2h9pXsXg/zh-cn_image_0000002791564864.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7C67D630A4C190A896042C0D4B5188780F4625AF4CD346D474783A696467A1E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/52TLzFKwR92Q3iCssJ4eTQ/zh-cn_image_0000002821756421.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD99E96C3178ADB0C6CFF6B97B59A3A4C7EE986A59C7D5A28F6A7B38D6E0E50A)
 * FlexAlign.SpaceBetween：子元素各行与交叉轴两端对齐，各行间垂直间距平均分布。
 
   ```typescript
@@ -419,7 +419,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/UtEZqlCyT8GrjpiAS395Hw/zh-cn_image_0000002820524817.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=60C8ADE6F998838FF664F390A17EA394D18258B9D73573FDDB7C3F1B1E216E54)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/lctDDWSeQmipyfyWmjPLYw/zh-cn_image_0000002793036484.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=49CE6C6518AF73B948B5221E3D20425F55225CBDAEDEB0ADDC65C7C8F83E628B)
 * FlexAlign.SpaceAround：子元素各行间距相等，是元素首尾行与交叉轴两端距离的两倍。
 
   ```typescript
@@ -435,7 +435,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/IS4FqIkNR2eYdv6BH348pw/zh-cn_image_0000002820404815.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A8C29F6948200B36A37E2B876A5C4E8A4574DFB14536F2BA7E18677C36A5B6D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/_-YaUOJuR0Kro6u6l1OD8Q/zh-cn_image_0000002792876516.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7C7D640AEEACA022A83C698B4D30F70633FCC9280E103128EBC4095BAF06CB8)
 * FlexAlign.SpaceEvenly：子元素各行间距，子元素首尾行与交叉轴两端距离都相等。
 
   ```typescript
@@ -451,7 +451,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/Su9ObTT9SWCVr7uLFrTaCA/zh-cn_image_0000002791724838.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA951B66D4F3FAB4EC7E3A457D21B1D0D17BEDCED336B5C5587908FDC717FF82)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/M5J7gjFjSC-yNKwSTsKsBg/zh-cn_image_0000002821836421.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D20A000A8594F88758B5AB9A4E2667041EEDE7F842E8181876B865C4D890399)
 
 ## 自适应拉伸
 
@@ -484,7 +484,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   }.width('90%').height(120).padding(10).backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/P9UFvAwDQh-UoINxtpnW7g/zh-cn_image_0000002791564866.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=8100C8707D771722275343EB042968D07195F2CFA240507AAF9E7BE226D54D01)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/9TVWTSXSSZyhfwQp8_mzJA/zh-cn_image_0000002821756423.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=92617302E7B06F0F446C9D2AEF318B1189F870E0C7CAFF299D2A42A4415DA8F1)
 * [flexGrow](../harmonyos-references/ts-universal-attributes-flex-layout.md#flexgrow)：设置父容器的剩余空间分配给此属性所在组件的比例，用于分配父组件的剩余空间。
 
   ```typescript
@@ -507,7 +507,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   }.width(360).height(120).padding(10).backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/W9lV_8TvSo686xSFfsxFfg/zh-cn_image_0000002820524819.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B3B296265DD10D7FB66AA7ED6D20024C5469C6163CAA1A97384E91C6515F366)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/0ctY3wD9QRS7KTzVC9ornA/zh-cn_image_0000002793036486.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB007BF4A5E02636911FAF4DBADB43550F4F3C96D8CB3ED5A8DA76F70B26E814)
 
   父容器宽度360vp，三个子元素原始宽度均为100vp，左右padding为20vp，总和320vp，剩余空间40vp根据flexGrow值的占比分配给子元素，未设置flexGrow的子元素不参与分配。
 
@@ -536,7 +536,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   }.width(400).height(120).padding(10).backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/01WGF13gTLWE4JoUQaWZ1Q/zh-cn_image_0000002820404817.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED7DD84BB7D42531E6C3574BCEF074DFC2C6964E5710D86ED4A57C252C16BEA3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/2KJscLvPSGqTjqUMP1iLzw/zh-cn_image_0000002792876518.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC6EBFE6268904A5B1DB71934E57BE8E52C54D08299839B4954A5AF2BBE368A6)
 
   父容器宽度400vp，三个子元素原始宽度为200vp，左右padding为20vp，父容器给子元素的布局空间为380vp，超出父容器空间220vp。
 
@@ -572,4 +572,4 @@ struct FlexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/wzAYOntFR9OqDHQ9RzGfJQ/zh-cn_image_0000002791724840.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA41FE4910AE733C32AE159032836B056D1551EF519C297C39E094D731843B63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/agr25UTKRoWXrSZmzChTlw/zh-cn_image_0000002821836423.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=27C7AA6BCE67D374720D9D3D324EF45892365D705FE5ED63965C07DEE4C0C580)

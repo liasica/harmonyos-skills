@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-utd-lin
 title: 分享链接
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 常见分享场景 > 分享链接
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:13+08:00
+scraped_at: 2026-11-21T09:12:40+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:b18d12b51108ca947876dcfe9774afc2c969c6015043a6f2c0fc76c870f4a372
+content_hash: sha256:a068c3e3fe282fb9aee707d8462b196274b2e8a8b7c9fe7b06b020224265fa61
 ---
 
 ## 分享App Linking直达应用
 
 使用App Linking分享应用，目标设备接收后可直达应用，参见：[使用App Linking实现应用间跳转](app-linking-startup.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/HijjRSh2SlGp_tZJW0D0YQ/zh-cn_image_0000002791726630.png?HW-CC-KV=V1&HW-CC-Date=20261119T014819Z&HW-CC-Expire=31536000000&HW-CC-Sign=27775079471EE5DC208BF096CA06E14794131803BD72E9EE51313D010E6858DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/hWKQRwOFQYmHHw8SQjRkNQ/zh-cn_image_0000002793038282.png?HW-CC-KV=V1&HW-CC-Date=20261121T011112Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBF6564F1FDF706760902117DCD66D45FD116881E2B5BE933161B635B70E875A)
 
 ### 开发步骤
 

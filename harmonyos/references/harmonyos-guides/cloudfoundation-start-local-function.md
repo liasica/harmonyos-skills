@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 启动本地云函数
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云函数 > （可选）通过端云一体化开发工程调试本地云函数 > 启动本地云函数
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:55+08:00
+scraped_at: 2026-11-21T09:12:21+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3fbf464e16623bcc29eecd26f17e5de4fe5d6f7c26b9924819079d70b7c11eb2
+content_hash: sha256:e187a46b57b9d5ff70556cf2cf8cfd51f3ac9ee6220493dcddc17f24525dbd53
 ---
 
 请按照如下步骤启动本地云函数：
@@ -23,4 +23,4 @@ content_hash: sha256:3fbf464e16623bcc29eecd26f17e5de4fe5d6f7c26b9924819079d70b7c
 
    完整示例代码请参见[函数示例](cloudfoundation-develop-function-nodejs.md#函数示例)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Fi2w6Nf9TfSOh_1mCfKNhQ/zh-cn_image_0000002820526267.png?HW-CC-KV=V1&HW-CC-Date=20261119T014855Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0F631C655A20488710CC1B4AD6FE31E8BDD3D1969719CCA0F4A30F2F32C26D8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/rMCXOhQBTqyay2YWGZsVSg/zh-cn_image_0000002793037938.png?HW-CC-KV=V1&HW-CC-Date=20261121T011220Z&HW-CC-Expire=31536000000&HW-CC-Sign=F96603AD2825BB2AB3006119F20712761ABF29CF9F75D4A1C7B6D69CED042F7A)

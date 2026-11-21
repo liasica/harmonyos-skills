@@ -1,6 +1,6 @@
 # 指南（harmonyos-guides）
 
-共 5569 篇文档。
+共 5567 篇文档。
 
 - [24h功耗器件分解统计事件](24-hour-battery-usage-event.md)
 - [aa工具](aa-tool.md)
@@ -743,9 +743,6 @@
 - [管理AR会话](arsession.md)
 - [命中检测](arworld.md)
 - [ASON解析与生成](ason-parsing-generation.md)
-- [Automatic Scene Configuration Kit术语](assessment-glossary.md)
-- [评估管理开发指南](assessment-guide.md)
-- [Automatic Scene Configuration Kit简介](assessment-kit-intro.md)
 - [Asset Store Kit开发指导(ArkTS)](asset-arkts.md)
 - [Asset Store Kit术语](asset-glossary.md)
 - [新增关键资产(ArkTS)](asset-js-add.md)
@@ -832,7 +829,6 @@
 - [Audio Vivid解封装](audiovivid-avdemuxer.md)
 - [Audio Vivid能力介绍](audiovivid-intro.md)
 - [Audio Vivid能力](audiovivid.md)
-- [Automatic Scene Configuration Kit（场景配置服务）](automatic-scene-configuration-kit.md)
 - [音视频投播](avcastpicker.md)
 - [音视频编解码开发实践](avcodec-development-practices.md)
 - [AVCodec Kit简介](avcodec-kit-intro.md)
@@ -1989,6 +1985,7 @@
 - [数据权限总览](health-litewearable-permission-description.md)
 - [匹克球](health-litewearable-pickleball.md)
 - [普拉提](health-litewearable-pilates.md)
+- [管理运动实时数据](health-litewearable-realtime-manage.md)
 - [户外跑步](health-litewearable-running.md)
 - [滑雪](health-litewearable-skiing.md)
 - [足球](health-litewearable-soccer.md)
@@ -2037,6 +2034,7 @@
 - [笼式网球](health-wearable-padel.md)
 - [数据权限总览](health-wearable-permission-description.md)
 - [普拉提](health-wearable-pilates.md)
+- [管理运动实时数据](health-wearable-realtime-manage.md)
 - [户外跑步](health-wearable-running.md)
 - [读取采样数据](health-wearable-samplepoint-manage.md)
 - [采样数据](health-wearable-samplepoint.md)
@@ -4436,7 +4434,7 @@
 - [附录](push-appendix.md)
 - [申请推送场景化消息权益](push-apply-right.md)
 - [推送后台消息](push-background.md)
-- [开通推送服务](push-config-setting.md)
+- [开通推送服务与接入准备](push-config-setting.md)
 - [支持的国家/地区](push-country.md)
 - [（可选）推送报告](push-delivery-report.md)
 - [通知内容管理细则](push-detail-rules.md)

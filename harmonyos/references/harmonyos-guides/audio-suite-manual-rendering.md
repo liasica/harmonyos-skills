@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-m
 title: 离线编辑(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 离线编辑(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:33+08:00
+scraped_at: 2026-11-21T09:11:57+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:4349dd15aa9b79773115ed4c6f8ee288b3867b9c69860d4146312f3d4c3335f4
+content_hash: sha256:8c76a24a7d700e4b091cf71ff18da98aae5ef5bb6ab04fbfb6ae108b9f9fdc0d
 ---
 
 从API version 22开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)给开发者提供音频离线编辑能力，允许在非实时预览场景下对音频数据进行处理，开发者可以组合多个音频节点实现复杂的音频处理流程。
@@ -49,7 +49,7 @@ target_link_libraries(entry PUBLIC libohaudiosuite.so)
 
 **图1**：基础离线编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/uJtvvB_MTKyQBIt6_Ni_dw/zh-cn_image_0000002791565914.png?HW-CC-KV=V1&HW-CC-Date=20261119T014832Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFDB65C0D1206AD0CCCF9BC9534A00F85EAB584F9872B1B8036E2FF6DCC5DD97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/59zKGUKpRh66US0Suej1dA/zh-cn_image_0000002821757475.png?HW-CC-KV=V1&HW-CC-Date=20261121T011031Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C444935CC1E2F11AC7E83436838B375727D3996CFE24E6B6B2C092EA4644754)
 
 1. 创建引擎和管线。
 
@@ -219,7 +219,7 @@ target_link_libraries(entry PUBLIC libohaudiosuite.so)
 
 **图2**：音源分离编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/zFS6e1vUQXyQx4H5tKfhpQ/zh-cn_image_0000002820525867.png?HW-CC-KV=V1&HW-CC-Date=20261119T014832Z&HW-CC-Expire=31536000000&HW-CC-Sign=F905711109D636AAF28C55284F62BA75444433736E361BA9FE4AA49335CEAB01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/lTCmw1RSSJGX-ONojPxB0A/zh-cn_image_0000002793037538.png?HW-CC-KV=V1&HW-CC-Date=20261121T011031Z&HW-CC-Expire=31536000000&HW-CC-Sign=317E10B3A790F307A84A856763F62DACE896A025F5C3C9B2FE314A170750B2E8)
 
 示例代码如下：
 
@@ -409,7 +409,7 @@ target_link_libraries(entry PUBLIC libohaudiosuite.so)
 
 **图3**：级联编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/j4EgR-iaQSGzipqGsQjF5g/zh-cn_image_0000002820405867.png?HW-CC-KV=V1&HW-CC-Date=20261119T014832Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB9FD23FDFF1E8B50F0AEBA33E4847E92B466DBED88E147D52F6C7396BC603B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/7XX0K9g0RDKVj_QUx8mbFA/zh-cn_image_0000002792877568.png?HW-CC-KV=V1&HW-CC-Date=20261121T011031Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B27452CC39FF0699D82AAB055363E0F2ABC8DE53539AD8D3ABC391E31DD4E8B)
 
 示例代码如下：
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/local-avsessi
 title: 本地媒体会话概述
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话 > 本地媒体会话概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:35+08:00
+scraped_at: 2026-11-21T09:12:00+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:46782a3a9cf599cb90b1195305b3d080616bb78fad29ae85387c057ada37d264
+content_hash: sha256:04be38ed5f38914d2f1db95470a9a1f08121e5ceec36ed386b16b87ccb2e5dd0
 ---
 
 ## 交互过程
 
 本地媒体会话的数据源均在设备本地，交互过程如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/gp3G5UQTQXCO_eqTTArJNw/zh-cn_image_0000002820405903.png?HW-CC-KV=V1&HW-CC-Date=20261119T014835Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C76F8E9A1ACE0A17A6B3301E0483CD9D85D9E74668902DEC416780FF923843F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Y1QE2N6JTxqzwYqYT-xEzw/zh-cn_image_0000002792877604.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=C07688898BB1687B96BB3634339B817B00E4CF1ABFD759D04C1C51F22DBCFD28)
 
 此过程中涉及两大角色，媒体会话提供方和媒体会话控制方。
 

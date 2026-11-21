@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 设置应用内多窗
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 设置应用内多窗
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:59+08:00
+scraped_at: 2026-11-21T09:11:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:758754b8dbbd926de3ad24959a2bde19a285df12e736fe5b17fc104037e36981
+content_hash: sha256:1e6fd47025d4ab34d4f601467660e5ac3dcd55145401bc2f3bc9778305f0fe66
 ---
 
 ## 场景介绍
@@ -79,4 +79,4 @@ content_hash: sha256:758754b8dbbd926de3ad24959a2bde19a285df12e736fe5b17fc104037e
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/OTzqI_JPSRqsc9mGeiHfBw/zh-cn_image_0000002820525621.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014708Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5DDE53D9B77320035206BBB18242B62C6AAADE84A89B06F81F393B7C3287D25)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Vsc5BUTXRkWVr0GdE41dHw/zh-cn_image_0000002793037292.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011000Z&HW-CC-Expire=31536000000&HW-CC-Sign=43E04999EF2ED16FC73CD7B9CBA927D8AA5FE1CF1F314D59A803CC08D2036FFD)

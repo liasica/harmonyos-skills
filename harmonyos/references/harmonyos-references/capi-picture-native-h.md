@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-pict
 title: picture_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > picture_native.h
 category: harmonyos-references
-scraped_at: 2026-11-12T09:56:40+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:4a423eb02f22500b4b1af151fb7c01f6f81baef796e3e352fe5b20bd5f0954b7
+scraped_at: 2026-11-21T09:16:07+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:deecfff788b04b01a009fab304860a575884b6ad15cb47cbbb32064bb56c4fa5
 ---
 
 ## 概述
@@ -30,9 +30,9 @@ content_hash: sha256:4a423eb02f22500b4b1af151fb7c01f6f81baef796e3e352fe5b20bd5f0
 | --- | --- | --- |
 | [OH\_PictureNative\_AuxiliaryPictureCopyItem](capi-image-nativemodule-oh-picturenative-auxiliarypicturecopyitem.md) | OH\_PictureNative\_AuxiliaryPictureCopyItem | 此结构体用于在创建PictureNative对象的深拷贝时指定辅助图的拷贝规则。描述如何将辅助图从一种类型拷贝到另一种类型。 |
 | [OH\_PictureNative\_MetadataCopyItem](capi-image-nativemodule-oh-picturenative-metadatacopyitem.md) | OH\_PictureNative\_MetadataCopyItem | 此结构体用于在创建PictureNative对象的深拷贝时指定元数据的拷贝规则。描述如何将元数据从一种类型拷贝到另一种类型。 |
-| [OH\_PictureNative](capi-image-nativemodule-oh-picturenative.md) | - | Picture结构体类型，用于执行picture相关操作。  Picture为多图对象结构体，包含主图、辅助图和元数据。  主图包含图像的大部分信息，主要用于显示图像内容。  辅助图用于存储与主图相关但不同的数据，展示图像更丰富的信息。  元数据一般用来存储关于图像文件的信息。 |
-| [OH\_AuxiliaryPictureNative](capi-image-nativemodule-oh-auxiliarypicturenative.md) | - | AuxiliaryPicture结构体类型，用于执行AuxiliaryPicture相关操作。 |
-| [OH\_AuxiliaryPictureInfo](capi-image-nativemodule-oh-auxiliarypictureinfo.md) | - | AuxiliaryPictureInfo结构体类型，用于执行AuxiliaryPictureInfo相关操作。 |
+| [OH\_PictureNative](capi-image-nativemodule-oh-picturenative.md) | OH\_PictureNative | Picture结构体类型，用于执行picture相关操作。  Picture为多图对象结构体，包含主图、辅助图和元数据。  主图包含图像的大部分信息，主要用于显示图像内容。  辅助图用于存储与主图相关但不同的数据，展示图像更丰富的信息。  元数据一般用来存储关于图像文件的信息。 |
+| [OH\_AuxiliaryPictureNative](capi-image-nativemodule-oh-auxiliarypicturenative.md) | OH\_AuxiliaryPictureNative | AuxiliaryPicture结构体类型，用于执行AuxiliaryPicture相关操作。 |
+| [OH\_AuxiliaryPictureInfo](capi-image-nativemodule-oh-auxiliarypictureinfo.md) | OH\_AuxiliaryPictureInfo | AuxiliaryPictureInfo结构体类型，用于执行AuxiliaryPictureInfo相关操作。 |
 | [OH\_ComposeOptions](capi-image-nativemodule-oh-composeoptions.md) | OH\_ComposeOptions | OH\_ComposeOptions是native层封装的合成HDR选项参数结构体，用于设置合成选项参数。用于指定合成HDR所用的参数，例如目标像素格式。 |
 
 ### 枚举

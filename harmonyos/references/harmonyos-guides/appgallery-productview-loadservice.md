@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 添加元服务卡片至桌面
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 添加元服务卡片至桌面
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:52+08:00
+scraped_at: 2026-11-21T09:12:18+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:124d4e4104ac352aeda26bc5435225dda5f57a23fe127cd65f634d3f46607025
+content_hash: sha256:fbd924ab4b0c738b96ecc6af85ea0a77043f3dc856a267da742a98788e03a5de
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:124d4e4104ac352aeda26bc5435225dda5f57a23fe127cd65f634d3f466
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/qnGgIytWTpWsYLC0hcNVgg/zh-cn_image_0000002820406179.png?HW-CC-KV=V1&HW-CC-Date=20261119T014852Z&HW-CC-Expire=31536000000&HW-CC-Sign=B67DBFB4C84BBA327FA1D7EE8413F82377DC0F54AC5F107F60F2C8E8AFF14F6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/yL8pu53bQwOYs4ArlmVryQ/zh-cn_image_0000002792877880.png?HW-CC-KV=V1&HW-CC-Date=20261121T011051Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADAFFAC06CB79FEA8EF36FC0A6C5606D981BE0EDBAA05563DC68ED4B9E8BB182)
 
 1. 用户使用元服务卡片加桌功能。
 2. 应用调用AppGallery Kit的[loadService](../harmonyos-references/store-productviewmanager.md#productviewmanagerloadservice)接口。

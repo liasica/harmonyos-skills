@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scan-6
 title: 如何自定义扫码组件的扫码区域
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan） > 如何自定义扫码组件的扫码区域
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:2143384100f6ead67ea8540a76b332c018a18d51b22544af0b73e6cb69dce7da
+scraped_at: 2026-11-21T09:19:03+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:950953d243a2237178647e1a677c8b3ed2cfa490bccb59a01166eadf8475d711
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:2143384100f6ead67ea8540a76b332c018a18d51b22544af0b73e6cb69d
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/9yWaLq9BS3-dZtbx2ddT-Q/zh-cn_image_0000002628392620.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E170F3D8E6FB6780145F2E46833300C342BFD2C15D4C3841310900F93E40A4E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/TPtdbWG5Q-exbZorg9QexA/zh-cn_image_0000002628392620.png?HW-CC-KV=V1&HW-CC-Date=20261121T011903Z&HW-CC-Expire=31536000000&HW-CC-Sign=69B75CB36D45F72ADE43846210A642C31D2E9A61BF548A1629DF39AF934DECCF "点击放大")
 
 ## 背景知识
 
@@ -194,11 +194,11 @@ build() {
 }
 ```
 
-若条码在遮盖区域内被扫描结果返回，不符合业务逻辑。可以通过规定扫码区域，将扫码识别区域设置在上方展示区域中，当检测到条码被检测区域完全覆盖时返回扫码结果，否则触发[customScan.rescan](../harmonyos-references/scan-customscan-api.md#rescan)重新扫码，同时可以通过Canvas画布绘制出扫码框区域（与扫码识别区域大小位置保持一致），参考[自定义界面扫码如何实现扫码框](../harmonyos-guides/scan-faq-15.md)。
+若条码在遮盖区域内被扫描结果返回，不符合业务逻辑。可以通过规定扫码区域，将扫码识别区域设置在上方展示区域中，当检测到条码被检测区域完全覆盖时返回扫码结果，否则触发[customScan.rescan](../doccenter-references/api/scan-customscan-api.md#customscanrescan)重新扫码，同时可以通过Canvas画布绘制出扫码框区域（与扫码识别区域大小位置保持一致），参考[自定义界面扫码如何实现扫码框](../harmonyos-guides/scan-faq-15.md)。
 
 示例效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/HAhEbr8KS8m2_JsQ99FhFg/zh-cn_image_0000002658791887.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7DC472A60DB68AED97C42006F7158DC1771FA3260037A1F10969C55CCCC48B4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/UrtHWM0xTRSHzuyQMjn5dg/zh-cn_image_0000002658791887.png?HW-CC-KV=V1&HW-CC-Date=20261121T011903Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D7A8935DA3F801205E138A1579FE097044D3AFB89505E73C009B89E44860CE2 "点击放大")
 
 完整代码如下：
 

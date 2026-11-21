@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:27a6adbc658767a26f8186e91f8394378432dd6346322df21b7e86d0cd050398
+scraped_at: 2026-11-21T09:16:17+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:acb5cdd0be757a4b1bb9506cd19a2b5bb25d97291968177608590f64e032c755
 ---
 
 **说明** 
@@ -45,7 +45,7 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 title参数的规格如下：
 
 * 不应包含扩展名。
-* 文件名的字符串长度为1~255个字符。
+* 文件名的字符串长度为1~255个字节。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -69,7 +69,7 @@ title参数的规格如下：
 
 请求策略。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -95,33 +95,34 @@ title参数的规格如下：
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| text | string | 否 | 是 | 如果需要根据文本（支持250字以内的简体中文）推荐相应的图片，则配置此参数。text默认是空字符串。 |
+| text | string | 否 | 是 | 如果需要根据文本（支持250字数以内的简体中文）推荐与文本内容相关的图片，则配置此参数。text默认是空字符串。 |
 
 **示例：**
 
 ```ts
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+async function example() {
   try {
     let textInfo: photoAccessHelper.TextContextInfo = {
       text: '上海野生动物园的大熊猫'
-    }
+    };
     let recommendOptions: photoAccessHelper.RecommendationOptions = {
       textContextInfo: textInfo
-    }
+    };
     let options: photoAccessHelper.PhotoSelectOptions = {
       MIMEType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE,
       maxSelectNumber: 1,
       recommendationOptions: recommendOptions
-    }
+    };
     let photoPicker = new photoAccessHelper.PhotoViewPicker();
-    photoPicker.select(options).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-      console.info('PhotoViewPicker.select successfully, PhotoSelectResult uri: ' + JSON.stringify(PhotoSelectResult));
+    photoPicker.select(options).then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+      console.info('PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
     }).catch((err: BusinessError) => {
       console.error(`PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
     });
@@ -138,30 +139,30 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| title | string | 否 | 是 | 图片或者视频的标题，不传入时由系统生成。参数规格为：  - 不应包含扩展名。  - 文件名字符串长度为1~255（资产文件名为标题+扩展名）。  - 不允许出现的非法英文字符，包括：. \ / : \* ? " ' ` < > | { } [ ] |
-| fileNameExtension | string | 否 | 否 | 文件扩展名，例如'jpg'。 |
-| photoType | [PhotoType](arkts-apis-photoaccesshelper-e.md#phototype) | 否 | 否 | 创建的文件类型[PhotoType](arkts-apis-photoaccesshelper-e.md#phototype)，IMAGE或者VIDEO。 |
+| title | string | 否 | 是 | 图片或者视频的标题。  不传入时由系统生成，参数规格如下：  - 不应包含扩展名。  - 不允许使用的字符包括：. \ / : \* ? " ' ` < > | { } [ ]  - 文件名由标题 + 扩展名组成，文件名字符串长度范围为[1, 255]字节。 |
+| fileNameExtension | string | 否 | 否 | 文件扩展名。  取值原则：  - IMAGE类型支持'jpg'、'png'、'gif'等。  - VIDEO类型支持'mp4'、'mov'等。  **注意：** 扩展名长度会影响title参数的最大可用长度。 |
+| photoType | [PhotoType](arkts-apis-photoaccesshelper-e.md#phototype) | 否 | 否 | 创建的文件类型[PhotoType](arkts-apis-photoaccesshelper-e.md#phototype)，设置为IMAGE时创建图片文件，设置为VIDEO时创建视频文件。 |
 | subtype | [PhotoSubtype](arkts-apis-photoaccesshelper-e.md#photosubtype12) | 否 | 是 | 图片或者视频的文件子类型[PhotoSubtype](arkts-apis-photoaccesshelper-e.md#photosubtype12)，不传入时默认为DEFAULT。 |
 
 ## CreationSetting23+
 
-保存图片或视频到媒体库时的配置项，包括保存的文件名、文件类型和其他相关参数。
+保存图片或视频到媒体库时的配置项，包括保存的文件名、文件类型。
 
-**模型约束**：此接口仅可在Stage模型下使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| title | string | 否 | 是 | 图片或者视频的标题。  不传入时由系统生成，参数规格如下：  - 不应包含扩展名。  - 不允许出现的非法英文字符，包括：. \ / : \* ? " ' ` < > | { } [ ]  - 由于文件名由标题 + 扩展名组成，文件名字符串长度范围为[1, 255]，因此请注意标题长度不宜过长。 |
-| fileNameExtension | string | 否 | 否 | 文件扩展名，例如'jpg'。 |
-| photoType | [PhotoType](arkts-apis-photoaccesshelper-e.md#phototype) | 否 | 否 | 创建的媒体文件类型[PhotoType](arkts-apis-photoaccesshelper-e.md#phototype)，包含IMAGE或VIDEO。 |
+| title | string | 否 | 是 | 图片或者视频的标题。  不传入时由系统生成，参数规格如下：  - 不应包含扩展名。  - 不允许使用的字符包括：. \ / : \* ? " ' ` < > | { } [ ]  - 文件名由标题 + 扩展名组成，文件名字符串长度范围为[1, 255]字节。 |
+| fileNameExtension | string | 否 | 否 | 文件扩展名。  取值原则：  - IMAGE类型支持'jpg'、'png'、'gif'等。  - VIDEO类型支持'mp4'、'mov'等。  **注意：** 扩展名长度会影响title参数的最大可用长度。 |
+| photoType | [PhotoType](arkts-apis-photoaccesshelper-e.md#phototype) | 否 | 否 | 创建的文件类型[PhotoType](arkts-apis-photoaccesshelper-e.md#phototype)，设置为IMAGE时创建图片文件，设置为VIDEO时创建视频文件。 |
 
 ## PhotoAssetChangeInfo20+
 
@@ -243,26 +244,26 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 ## GridPinchMode23+
 
-picker内宫格的捏合模式。
+picker内宫格的捏合模式。配置后支持通过捏合手势调整宫格显示密度，便于用户在不同场景下快速浏览或详细查看媒体资产缩略图。
 
-**模型约束**： 此接口仅可在Stage模型下使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| gridPinchModeType | [GridPinchModeType](arkts-apis-photoaccesshelper-e.md#gridpinchmodetype23) | 否 | 是 | 宫格捏合模式类型，配置即支持捏合功能，反之不支持捏合功能。 |
+| gridPinchModeType | [GridPinchModeType](arkts-apis-photoaccesshelper-e.md#gridpinchmodetype23) | 否 | 是 | 宫格捏合模式类型。需要支持捏合功能时配置此参数，不传入时默认不支持捏合功能。 |
 | defaultGridLevel | [GridLevel](arkts-apis-photoaccesshelper-e.md#gridlevel23) | 否 | 是 | 拉起picker后宫格档位，默认为STANDARD。 |
 
 ## AssetCompatibleCapability24+
 
 资产兼容能力。
 
-**模型约束**： 此接口仅可在Stage模型下使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -275,9 +276,9 @@ picker内宫格的捏合模式。
 
 **起始版本：** 26.0.0
 
-**模型约束**：此接口仅可在Stage模型下使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

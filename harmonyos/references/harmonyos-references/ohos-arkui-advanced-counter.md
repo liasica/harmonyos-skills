@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: advanced.Counter
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > advanced.Counter
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:17+08:00
+scraped_at: 2026-11-21T09:14:18+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f2e7bf8328c958864ba66ffbc377f8c73441a4073dd2ff1dd2089e6a1236091a
+content_hash: sha256:a60018260dab6c0b874fcf98b44fe805e2ac5ed536c0703a2553b209bb9f5980
 ---
 
 Counter组件用于精确调节数值，支持列表型、紧凑型、数值内联型和日期内联型四种样式，适用于购物数量调节、参数设置、日期选择等场景，具有灵活的样式配置和事件回调能力。
@@ -235,7 +235,7 @@ struct ListCounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/8sUWwnOxRdKhVKccVWw0Sw/zh-cn_image_0000002791727732.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015116Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5872731C3D96F85B19EB63A67123DCBB24944D75A113EF6C1423207FD998F07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/RCy0O308TWCOiq5qmqmTNQ/zh-cn_image_0000002793039414.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=43D5AA0B4B6494B18F45751D0338BAE664F321DD84849930166C6C43D58714FC)
 
 ### 示例2（紧凑型Counter）
 
@@ -267,7 +267,7 @@ struct CompactCounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/nZ3HS2CoSIKQzta62NMECg/zh-cn_image_0000002791567760.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015116Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD002B81042BA2C4DBEAA222A440D954139323E18A9B3684149AFF8F76AB3B14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/afFHybFGSeaul6eaLujRSg/zh-cn_image_0000002792879436.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=20B958D8BF2BE7E75F7B24BA9E1D9561A845D3153371CEE1EFDA38B37C5CAFBB)
 
 ### 示例3（数值内联型Counter）
 
@@ -302,7 +302,7 @@ struct NumberStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/vMTxOqRiQfmhmOmayz-WCQ/zh-cn_image_0000002820527713.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015116Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F24BBABDD4EB486685CD89E4AC064D46A38C468C1331994F706AB179340F2D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/nBKpe7htTtuz_fADRqDE6w/zh-cn_image_0000002821839345.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEA9167F5030953FF10974F1A27080C1121557C0327B82E75167B4CA8FDF216A)
 
 ### 示例4（日期内联型Counter）
 
@@ -333,7 +333,7 @@ struct DateStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/ZCc0x1JgSeOFqo2TEgR_Pw/zh-cn_image_0000002820407715.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015116Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9406FA214B65BCF9FE08E6F2E9E654CC7F2621D4478D898228EDB43783E4B25)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/dvRQ6rQ5QVWLS27FiRIi-g/zh-cn_image_0000002821759343.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F5BF5BA221C6E16C50754658087220C1972D631C5B60858F02BE245084A3432)
 
 ### 示例5（镜像布局展示）
 
@@ -419,4 +419,4 @@ struct CounterPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/9lAjl7B6RceuhO5_BEawAg/zh-cn_image_0000002791727734.png?HW-CC-KV=V1&HW-CC-Date=20261119T015116Z&HW-CC-Expire=31536000000&HW-CC-Sign=31657204CB05BACF5796966673615F949613B0175FD97936834F59C041B99B45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/15IZpG1lRpyFwUrPfDuMkw/zh-cn_image_0000002793039416.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=54CDB89ABBC0C377F53A9BA17B7B1600219347936886AB8F0136782B84959C17)

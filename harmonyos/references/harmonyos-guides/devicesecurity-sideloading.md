@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 侧载安全管控
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 侧载安全管控
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:07+08:00
+scraped_at: 2026-11-21T09:11:33+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:026e7923b724ac90142ea9e3124617dd25653b1080266e3ba935bb3992864610
+content_hash: sha256:830d121443aace01afdb3a23cb8cb71edd4b777583f529e2954fc65407f9cde7
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:026e7923b724ac90142ea9e3124617dd25653b1080266e3ba935bb39928
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/4T2zE6juSQKi7fMNpGikfQ/zh-cn_image_0000002791725718.png?HW-CC-KV=V1&HW-CC-Date=20261119T014716Z&HW-CC-Expire=31536000000&HW-CC-Sign=212A16FCB931C23A1A0600BBEC8D803C956D16372E9EB398E871FE2F731BEF00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/9k9j4lU1TA-xGi0XpZXvHQ/zh-cn_image_0000002821837305.png?HW-CC-KV=V1&HW-CC-Date=20261121T011133Z&HW-CC-Expire=31536000000&HW-CC-Sign=D05993D6197F3FEDD8A16DE5950D212E2DC493A51B3BA9F07EB28C50BC97A4D1)
 
 **流程说明：**
 
@@ -65,7 +65,7 @@ content_hash: sha256:026e7923b724ac90142ea9e3124617dd25653b1080266e3ba935bb39928
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/_B_uB14xSLeaovN0MNP3Ng/zh-cn_image_0000002791565746.png?HW-CC-KV=V1&HW-CC-Date=20261119T014716Z&HW-CC-Expire=31536000000&HW-CC-Sign=A80858BAA8D2653371E3E4EC70A6DD8E83CF2A296BD0293A7E8DF96CC6337211)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/oDbpw5pJT82dD1Rxod4XvQ/zh-cn_image_0000002821757307.png?HW-CC-KV=V1&HW-CC-Date=20261121T011133Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6EB59BB323ACDB9423F93BF0DA35FE5D0F4017E1513C190E86025EF3A287C18)
 
 **流程说明：**
 

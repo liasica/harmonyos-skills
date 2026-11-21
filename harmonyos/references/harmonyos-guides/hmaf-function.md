@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hmaf-function
 title: 通过Function组件拉起智能体
 breadcrumb: 指南 > AI > Agent Framework Kit（智能体框架服务） > 通过Function组件拉起智能体
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:16+08:00
+scraped_at: 2026-11-21T09:12:42+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:bf9d5600e570bf6d6f402cf87c6fbb1c2c8cbad9862164106028aad6d48dba57
+content_hash: sha256:6705f82c1f21184c1f212e1b3ec8391b23cfc9dd9a2b41f1405bebb2f1727d38
 ---
 
 ## 场景介绍
 
 * Function组件分为图标组件和按钮组件，无标题时默认显示图标组件，有标题时默认显示按钮组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/XknkbMAmRACqg0qT_Xx0qA/zh-cn_image_0000002791726694.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A8380AFF01F8F9F536C7C29739F7F211ABC528967E2EB16FAC1FC1CDAC76E1C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/MXeed7z8RISwhfrBj92UFA/zh-cn_image_0000002793038346.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADFFE68ADC816F8F7D2D110FCD2ACD134DE82877DB1C446EAA7B9B2EE31A867F)
 * Function图标组件效果：综合型入口。不带用户意图，可作为应用内智能体主入口。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/fgZeOXVOTo2npeL79QziJw/zh-cn_image_0000002791566722.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D556AE69E56ABD4952BCEA1323626100E26BD441D0F3B9EC02FEFC268634949)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/aCdBdx-QQMCGWS9Q5Hy8UQ/zh-cn_image_0000002792878376.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FA9D12A4239A8A59A6F1935E13816E08F4AD978CDE3EC353E5E39E6C87B1520)
 * Function按钮组件：允许应用自定义功能描述的组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/qats5sUuTYKlA5G7-VNCeA/zh-cn_image_0000002820526675.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=09226655FA4819BA7A23D0E5C06099C029F382BE66A19387849E89715F7B6870)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/pbqPNWEuTvGdj9FJorz_-A/zh-cn_image_0000002821838283.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB14C71550A0810D3EEA84C8AF00F24FC1DB9010DFC7BA182513CF5EC9552047)
 
 ## 开发前准备
 

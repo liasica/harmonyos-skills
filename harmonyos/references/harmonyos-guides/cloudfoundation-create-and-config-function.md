@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 创建函数
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云函数 > 开发云函数 > 创建函数
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:55+08:00
+scraped_at: 2026-11-21T09:12:21+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:72f301fda96597804f0f0ca1e12545f66b16a4c5a2335a701ab75067aae704ee
+content_hash: sha256:2ef83f628a1c5941834047aff3df403dddc3ed688a55053899dd680096546e70
 ---
 
 ## 创建函数
@@ -17,16 +17,16 @@ content_hash: sha256:72f301fda96597804f0f0ca1e12545f66b16a4c5a2335a701ab75067aae
 3. 在左侧导航栏选择“云开发（Serverless） > 云函数”，进入云函数主界面。
 4. 选择“函数”页签，点击“创建函数”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/yrmGUT1ETfiHk3Y3qoczCw/zh-cn_image_0000002791566298.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F3D6D215D5B2E2292F3E549F55D2EA30D33AB16972674013452A4BB76E22268)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/RZKQD-W1QcOAfKmwy1Z9ZA/zh-cn_image_0000002821757859.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF3A26431D92E0B479953FEFA584ECA270607F33B3784DE2E03C11513107D85D)
 5. 页面右侧抽屉式滑出“创建函数”窗口，按照“函数配置 -> 触发器 -> 函数代码 -> 层配置”引导顺序配置函数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/cTjinsvjScyMi522HyXcMQ/zh-cn_image_0000002820526251.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=989724DEEDFB718A8109A503698FD41D733DC9CB1DF5E00F55CDFAA2C706E18E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/XVzZMd2rSt2cP-pDLH3wYg/zh-cn_image_0000002793037922.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=774F05BC90FB496A124D91322B37E573AF3E45FF278E16A2152D89C492C3CC42)
 
 ## 函数配置
 
 1. 在“函数配置”页面，配置“函数名称”、“触发方式”、“超时时长”等函数信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/iaWfTkUQS_e3JYUnWPjiXA/zh-cn_image_0000002820406251.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DDC091AA2643F0C7F71148BBB91EB0F3E19367BDF93A174A78A6128BD7623C9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/tvHb8f1uSxGdD5VG7yrAqA/zh-cn_image_0000002792877952.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DFA5466D62202E11AAA0502B9B3BE0DF6D3F5D6FCB60154C894EBDA13F05EFB)
 
    | 配置项 | **说明** |
    | --- | --- |
@@ -45,21 +45,21 @@ content_hash: sha256:72f301fda96597804f0f0ca1e12545f66b16a4c5a2335a701ab75067aae
 
    * 表单格式编辑
 
-     点击“新增变量”，输入key和value值，如下图中所示，env1为环境变量的key值，test为value值。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/g1RV-PWpRge5hVWy1urnuw/zh-cn_image_0000002791726272.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=92379BDC2D99F0E7360E7308F54CFF996239BF069ABCDA79A8320521AB006DEA)可将变量删除。
+     点击“新增变量”，输入key和value值，如下图中所示，env1为环境变量的key值，test为value值。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/in-TFxntQmumX4vemjWFcA/zh-cn_image_0000002821837859.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=65FFFDDB973E1135E3BE8F688DEC75093BCE5FF0487166BD86B1E55C6473114C)可将变量删除。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/CO-MDWe7ShC8sus501iR9Q/zh-cn_image_0000002791566300.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=35599DDF5FDBCE6BA12B88655A15AC45D04FD452CAE238A34BF8ECF517B0936B)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/YgSP5lLoQUai5BiGpuR4qA/zh-cn_image_0000002821757861.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF050D793E9FC79D3CC5D2500148B4A7723D7FE3F93960575697C9945AE42186)
    * JSON格式编辑
 
      选中“JSON格式编辑”，在文本框中以key-value键值对JSON格式添加环境变量。当添加的环境变量比较多时，为了方便核对，可点击“format”对变量进行格式化排列。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/_NYuBnB2Qfa0H9BBKCPZUQ/zh-cn_image_0000002820526253.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8441CB8708E7E61A498393769389E201F58A2FE435B279CB487D15B537432C4)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/R1QnEsIcTTa1tqpWLCL9Hw/zh-cn_image_0000002793037924.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F6DB066AF4E49D40326723F7C6C2DDA57B8F42DFC7BB500491D7E3F77E3A9E2)
 3. “函数配置”页面配置完成后点击“下一步”。
 
 ## 触发器
 
 进入“触发器”页面，可基于函数触发场景配置需要的触发器，本场景下添加HTTP触发器。“触发器类型”和“请求方式”保持默认选择，并配置“认证类型”，配置完成后点击“下一步”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/4J6C6aTlQzCOPR_mthwc3A/zh-cn_image_0000002820406253.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A83212AEB57DF6B2D0448378BD4CB9386A3B59731DB567BD97E1C03103ABC6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/2c2pYSe_TYS89ih5EzFqJQ/zh-cn_image_0000002792877954.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=10C85194D1F959AE43D23F9A1B40DCB6E03D831277211E9246C2B0F1DFA2D825)
 
 | 参数 | 说明 |
 | --- | --- |
@@ -72,7 +72,7 @@ content_hash: sha256:72f301fda96597804f0f0ca1e12545f66b16a4c5a2335a701ab75067aae
 
 进入“函数代码”页面，配置“运行环境”、“内存配置”、“代码输入类型”等信息，配置完成后点击“下一步”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/HIlPo5r2RceGt3jRo3BJBg/zh-cn_image_0000002791726274.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3B1FAB85DE70A3B6FE344C17B0F2A37C50857296297F710273200499532030E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/vSP6r-RbSrCarftPkHpOyA/zh-cn_image_0000002821837861.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B80B27C19B3052830AEA81AA3AC5CC7C4D6D72A3E315DE96506F7F8B9C615F4)
 
 | 配置项 | **说明** |
 | --- | --- |
@@ -92,7 +92,7 @@ content_hash: sha256:72f301fda96597804f0f0ca1e12545f66b16a4c5a2335a701ab75067aae
 
 WebIDE从左至右分两个部分：目录树、代码编辑器和最大化，如下图所示。编辑完成后平台会生成部署包并上传。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/10r3iUTeQvyiiFvS7BY5kw/zh-cn_image_0000002820526255.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=97D4593DCF0EB1AA2CA3141CE78E43544DDE8C81C26F8825569FE3667BEA6BB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/K2t_F4cMSHOgRV85xFWkxA/zh-cn_image_0000002793037926.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=77155F37CFB5B18DE991D99660879F0280611E1F10144B083C720E4468BBED11)
 
 | 组成 | 说明 |
 | --- | --- |
@@ -108,14 +108,14 @@ WebIDE从左至右分两个部分：目录树、代码编辑器和最大化，�
 
 1. 进入“层配置”页面，点击“绑定层”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/nNcr9JN4TN2J32fAjeuF5Q/zh-cn_image_0000002791726278.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=66ADB47F4841B95A31CBB9EB362DFAD95101B19EA20889AC99A44CB8ABDAF895)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/wjA9z7lMRqmqTpRsGVN8qg/zh-cn_image_0000002821837865.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=E91F99EBF06BE6574EC3029E93FFE4C98D04EB320F7D82CE7E00DB6FC367F4DA)
 2. 在右侧弹出的“绑定层”界面中，下拉框选择“层名称”和“版本”，“层范围”等信息根据层的配置将被自动填充，完成层绑定后点击“确定”。一个函数最多可以绑定5个层。
 
    **说明** 
 
    选择层时，层的兼容运行时需与函数运行环境相符，系统会自动完成过滤。如果无匹配的层，请参考[创建层](../AppGallery-connect-Guides/agc-cloud-function-layer-0000001517762624.md#section11358162018572)创建相同运行环境的层后再进行绑定。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/A0QoY3v4SwmtR4LL5cTpkA/zh-cn_image_0000002791566306.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=C49070DB0D14820C5485E7EFF18E5A3E4FA1D44C659EA9474C44A9FCE6588CCF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/l4-JGLIjTAyIuHmxQsQClw/zh-cn_image_0000002821757867.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=09E929D918E6D1D322E1CDB040DE66CAE9E83C0300F6E30F34B78B87B03A67DC)
 
    | 参数 | 说明 |
    | --- | --- |
@@ -126,7 +126,7 @@ WebIDE从左至右分两个部分：目录树、代码编辑器和最大化，�
    | 层描述 | 层的附加说明，长度不超过1024位。 |
 3. 返回到“层配置”界面，绑定成功的层将展示在层列表中。如果需要解除层与函数的绑定关系，点击“解绑”即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/ck0DT-cQRy2Jth9_FDuL1A/zh-cn_image_0000002820526259.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8E27F93439EC1ABAD2CBC4A093320ED602FAB4500B23FB4487ABD1C33488D28)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/zxOrCENNRjen0XtPvN-RFg/zh-cn_image_0000002793037930.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=401827A2C99A34630A60BAC9A73C09549D37217D26C3BDF996E9207344F78E32)
 4. 按照“函数配置 -> 触发器 -> 函数代码 -> 层配置”顺序配置过程中，如果需要修改前面步骤中的配置，可点击“上一步”进行回退，配置完成后点击“创建”提交函数定义。
 
 ## 更多信息

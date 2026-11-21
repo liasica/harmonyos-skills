@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 自定义组件的基本用法
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 自定义组件 > 自定义组件的基本用法
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:23+08:00
+scraped_at: 2026-11-21T09:14:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:041db1c42aae95611a05176bb760c41e6a20f1e757466b126b51b4dbb63709b9
+content_hash: sha256:339515b0650aad2bb6b2519cf25d6eb60d4ede0d90b828d04e26ce991f4b84e2
 ---
 
 自定义组件是用户根据业务需求，将已有的组件组合，封装成的新组件，可以在工程中多次调用，从而提高代码的可读性。自定义组件通过element引入到宿主页面，使用方法如下：
@@ -151,7 +151,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/fucxAeeCSqOPCrL3xwGGHQ/zh-cn_image_0000002820527831.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015122Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CA7C21C1E460331E0053C095664AAF71E65D0CE6DBFDBADEE3CCA0941341C9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/ST6H_avnT3e3qtr3LzuaoQ/zh-cn_image_0000002821839467.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011322Z&HW-CC-Expire=31536000000&HW-CC-Sign=E821B097DB251936CAFA1CA7D7DBC87CC859B6B8494D5CBC622FDDF8F90B6CFE)
 
 ## 自定义组件数据
 

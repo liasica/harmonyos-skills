@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-embedde
 title: 页面级弹出框
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 页面级弹出框
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:41+08:00
+scraped_at: 2026-11-21T09:11:07+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:36245c741a54339e32ef98c9cfb221f6e950eae53273dcbe87f197d38b26bd23
+content_hash: sha256:e925fb944c729365e9c2e29986b32b9d703ce9c4c0ecd890292dd0bb8691308c
 ---
 
 ArkUI的弹出框默认设置为全局级别，弹窗节点作为页面根节点的子节点，显示层级高于应用中的所有路由/导航页面。当页面内进行路由跳转时，如果应用未主动调用close方法关闭弹出框，弹出框不会自动关闭，并且会在下一个跳转页面上继续显示。
@@ -187,7 +187,7 @@ struct Next {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/uAO7zsXgS7GrVaLVCwbxQQ/zh-cn_image_0000002791565120.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014651Z&HW-CC-Expire=31536000000&HW-CC-Sign=10B1608408A420EC22997CD74480436CE046DE5B298A218D02F7C329807E2E9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/flo_mGtiSF-kdqpuMlR_mg/zh-cn_image_0000002821756677.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=93B458BF68323D5BDCB0D0968776CDC6D0ECE59BDFF5F72523A0C9E7C6E3B4B3)
 
 下述示例为基于Navigation导航模式下的页面级弹出框。使用本示例前需要参考[Navigation使用NavDestination作为导航页](../harmonyos-references/ts-basic-components-navigation.md#示例16navigation使用navdestination作为导航页)文档完成Index首页和router\_map.json的创建与配置。并使用下述示例代码中的PageLevelDialogInNavigation和PageLevelDialogInNavigationTestTwo组件替换Navigation参考文档中的PageHome和PageOne组件。
 
@@ -289,4 +289,4 @@ export struct PageLevelDialogInNavigationTestTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/mX-74iTVQmSA6Bx9ARJvHg/zh-cn_image_0000002820525073.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014651Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CF42C951ADAAECCFA90F8281B80E994B3F7DA6FDAE453007FA1D1E30054C1C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Gf61B4onTI-8r-bprQxyAg/zh-cn_image_0000002793036740.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=732DF17772327682CA62C8270E47BEC472D9691E7DD00196CA4D893F6E697099)

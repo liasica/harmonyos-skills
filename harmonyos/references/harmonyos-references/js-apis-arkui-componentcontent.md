@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: ComponentContent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > ComponentContent
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:45+08:00
+scraped_at: 2026-11-21T09:13:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5744a4e1bdd901e36d09176fcc485a1f7bf2d177f36e1674567041c207bb72c3
+content_hash: sha256:d25e416bfa1748ee8bb4c5db24dd9e79f45752622111574b35b935e9468e5620
 ---
 
 有两种创建实体封装组件的方式。ComponentContent需要通过update接口手动更新内容，主要适用于弹窗等解耦封装场景；ReactiveComponentContent支持响应式数据自动更新、完整生命周期管理和组件复用，适用于长列表等高性能渲染场景。开发者可根据实际需求从以下方式中选择。
@@ -150,7 +150,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/eVU9gyeiRsqShtd7idL0Xg/zh-cn_image_0000002791566988.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=F212285F1AA272A99CFEF5487F78A078F710B3DE9B8E159AFF0567A6E5C6682D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/tk-Ib8UjRyKlrWljXO_bSg/zh-cn_image_0000002792878642.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=F63C64DC05838C784D2A54683A993D1E784FC741A775998D1D83004EC073D712)
 
 ### update
 
@@ -220,7 +220,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/JxmwNppeSPatIIO6qnj2HA/zh-cn_image_0000002820526941.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=3982EDD8A73CE193A30F546F780B7ED503FA69E04389593E9C3263B663EB4263)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Qa1toRW0QM2TmyyHVNvfiA/zh-cn_image_0000002821838549.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC8F39E90DCBC5AF5F898BB24CD26142D44A5A608872C9BC801776071567B12E)
 
 ### reuse
 
@@ -420,7 +420,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/CDGIrfKHRz2zRHTV3JjLNA/zh-cn_image_0000002820406941.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3380BA3E7E6FDC86CBE38139B934F088D4469EB2954D369E222427117496197)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/WtOzCcd-S-601FQitcCkHg/zh-cn_image_0000002821758551.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB61A509DE0A8FBDC62CFCA72249DEEA2D75AE6B9893EFF8FADBD0D5C746FEC8)
 
 从API版本26.0.0开始，ComponentContent中的自定义组件支持V2组件复用。
 
@@ -671,7 +671,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/turHX1V9QVeDD5IajLUrrA/zh-cn_image_0000002791726962.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=05F2902ADDA57CB9058BB0A72A4562E3704B62FCEC52186ED429B56FBF91DFCB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vPv-b92eSpy0T_5fXa34RA/zh-cn_image_0000002793038614.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF4F96F2AAE8A0A29C2A4F900A0113F6FB9CA0668E77A0D0D68241FF6636B8C1)
 
 ### updateConfiguration
 
@@ -787,7 +787,7 @@ struct FrameNodeTypeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/yu-joXJTRyu8syylPeBKTg/zh-cn_image_0000002791566990.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC91F0C6C342704AEB8C6F2E2E6336B6760B66858461A69366C040F26C6E5140)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/n4dWtHFbRUyN9Gq-cmf6yw/zh-cn_image_0000002792878644.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F38EE7ED89F0FD997E5CFF2F808C52031872CB3D9935032CCD87F03998B033E)
 
 ### isDisposed20+
 
@@ -879,7 +879,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/wJ0esCy9SZeLRjIOaVfafA/zh-cn_image_0000002820526943.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D33AE4A62AA85F35559C7A0888D29985AC996A838D97F254B11CBB62155BAA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/GMoEwW5fRiC8Y8MR37Snmw/zh-cn_image_0000002821838551.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=D91B3236B700F0A9AB648880CDAEE77E2043F61DFAE379B599AC0B4C63853DF0)
 
 ### inheritFreezeOptions20+
 
@@ -1089,7 +1089,7 @@ struct TextBuilder {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/1dHm4hfxRW2JHp_-89wyTg/zh-cn_image_0000002820406943.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=1667F968F1566CDC71EE3F47F5AE1C7DBEC84E3F6BF885B1F712457A179C3CB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/1yeeGKljQSqaBd2kXhpgJQ/zh-cn_image_0000002821758553.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=8014152C46E0C240C392063D28FCB606236004884A377C423A53D4E3BF304767)
 
 ## ReactiveComponentContent22+
 
@@ -1180,7 +1180,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/c4zdCfpyRzaPx64gMuFCuA/zh-cn_image_0000002791566988.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=F61572EA8BEF13F73EDDBA54C351402AA160FD1D1602D904A3CE40129D3512BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/mxznXMILRMO6B57TRrxAhA/zh-cn_image_0000002792878642.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4B5DFAFA86A30E9F0DC9540BC36210E6E36A761B6ED45EA5505244BE5B51C0D)
 
 ### reuse22+
 
@@ -1388,7 +1388,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Xkv6f0bORTWy3UWMIHb5nA/zh-cn_image_0000002820406941.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA07D44FBA92FED6A7876ECC0DA4C530B05D1092D82693B5AC1ACD29E10D44C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/FbC5jYH3S0-DIJGiLJw9Tg/zh-cn_image_0000002821758551.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=D93FE49011A0451AB8518C1B48056FE9E35DDEC41690D4ED11F0E8BB38AC878C)
 
 从API版本26.0.0开始，ReactiveComponentContent中的自定义组件支持V2组件复用。
 
@@ -1681,7 +1681,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/Qt4qivWPQYi9NDZT1QF6Ew/zh-cn_image_0000002791726964.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=442A8924C8F967FBDB671E763F6399D183D0786D38549819A30DF253E1B91497)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/2WO3fYkJSGCKdzcKR5xB9w/zh-cn_image_0000002793038616.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=275218C8CE2A18C54C1B18BC1D9DE617656CE54AE679E898F379379179FBF7DD)
 
 ### updateConfiguration22+
 
@@ -1799,7 +1799,7 @@ struct FrameNodeTypeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/qTwkLg2eRYm2EWvy8R6sUg/zh-cn_image_0000002791566990.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=135FC1904F4563AFD3DCA187FFCD95E0D2A5FDC9F0A78AFC5ECA932A953BB9AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/M6K1HeLvSgmblvFNM5VwRw/zh-cn_image_0000002792878644.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F636D6178675E3C75FF49F6F349836D6027C849BE5CA35C63250FA48C2689AF)
 
 ### flushState22+
 
@@ -1923,7 +1923,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/ds2weF7ZRYq0Uvsfg7EhPQ/zh-cn_image_0000002791566992.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C19404C93D3F4498784BA328060D7E3E33E6036AEFD02CBABBBFC0C08EF081B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/9vHj0AmPR0m9epBGK8ciBQ/zh-cn_image_0000002792878646.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=440331E44B369FB258DA7AA78F679019B742B9CAE952083F822C930AE1BAF983)
 
 ### inheritFreezeOptions22+
 
@@ -2129,7 +2129,7 @@ struct TextBuilder {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/xtZ79iJGQM21AgOrOiRSww/zh-cn_image_0000002820526945.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=880D5815297CFC1429218E2A75F0636E391D417AC119DC7022C67C8E1C5B59D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/T9GmnUQHTnOUMvRpsu76pw/zh-cn_image_0000002821838553.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=A51D07D1742FDB3A9CA13C3FC3ECA6D1F233DC8015018E9DF7B740140DF65C2C)
 
 ### isDisposed22+
 
@@ -2271,4 +2271,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/T7MUwOjFS16G3AqizM4QHg/zh-cn_image_0000002820406945.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014948Z&HW-CC-Expire=31536000000&HW-CC-Sign=869868BCCBED5F66979E83BC258FFE280A97B2482DBAB22A0F3F23946F47409F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/_L2cruyCS-mdah0QfQadJA/zh-cn_image_0000002821758555.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011242Z&HW-CC-Expire=31536000000&HW-CC-Sign=345D3BF5B7338DB2EEB4173126623DE26F5075FCAB4459ADE79895A636736FBC)

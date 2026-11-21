@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-page-load
 title: 使用Web组件加载页面
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 使用Web组件加载页面
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:52+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:326340325b5fb6937d499d4fe34c5339e7f532c92e2aa74eada711d31cb39c75
+scraped_at: 2026-11-21T09:11:18+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:cd84a15a6002a3adca4b69ebbd18eee1d59d8d04037a8c43e247e870a712bd2b
 ---
 
 页面加载是Web组件的基本功能。根据页面加载数据来源可以分为三种常用场景，包括加载网络页面、加载本地页面、加载HTML格式的富文本数据。
@@ -43,7 +43,7 @@ struct WebComponent {
             // 点击按钮时，通过loadUrl，跳转到www.example1.com
             this.controller.loadUrl('www.example1.com');
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
         })
       // 组件创建时，加载www.example.com
@@ -72,7 +72,7 @@ struct WebComponent {
 
   **图1** 资源文件路径
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/W9LREOGUQ0uPB63YrPtySA/zh-cn_image_0000002791725474.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=E70D4FB75A0E7421DFF6AF0BB640675EAF46BB6E18BABD6B0AE3F2B394CA8EE6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/X2qnhqVkRx60uNaXbWlyfg/zh-cn_image_0000002821837061.png?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6E55DBC5967185C28AECC3A4CFF9E09EC2A4464418CE83822A186CB2755C0E0)
 * 应用侧代码。
 
   ```typescript
@@ -92,7 +92,7 @@ struct WebComponent {
               // 点击按钮时，通过loadUrl，跳转到local1.html
               this.controller.loadUrl($rawfile('local1.html'));
             } catch (error) {
-              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
             }
           })
         // 组件创建时，通过$rawfile加载本地文件local.html
@@ -229,7 +229,7 @@ struct WebComponent {
               'UTF-8'
             );
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
         })
       // 组件创建时，加载www.example.com

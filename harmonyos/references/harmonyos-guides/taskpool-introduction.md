@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-intr
 title: TaskPool简介
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 多线程并发 > TaskPool简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:31+08:00
+scraped_at: 2026-11-21T09:10:57+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:47193b1e3cc2d2ab37b4ffcdf3c60bf09889799398229ee09322f8d612a58efe
+content_hash: sha256:38c9e744614bcfa901d13aad0cf44aed51e73b36a325b66a50cb1ba0846a37d4
 ---
 
 TaskPool为应用程序提供多线程环境，降低资源消耗并提高系统性能。无需管理线程生命周期。具体接口信息及使用方法，请参见[TaskPool](../harmonyos-references/js-apis-taskpool.md)。
@@ -14,7 +14,7 @@ TaskPool为应用程序提供多线程环境，降低资源消耗并提高系统
 
 TaskPool运作机制示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/OIWR9gcaT2y4EXz8uMSr-A/zh-cn_image_0000002820404459.png?HW-CC-KV=V1&HW-CC-Date=20261119T014640Z&HW-CC-Expire=31536000000&HW-CC-Sign=8568A759D0E2B00283BFE13C3DA6EFA7F596318240A23B4615A1E19996208899)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/7uZZpNOGQUCvZJU1oU9MEQ/zh-cn_image_0000002792876160.png?HW-CC-KV=V1&HW-CC-Date=20261121T010934Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C8C7547D31D02A1ADA5A0DDF2069D89C36B88869BD5BA6F92E5FD15ACD19E8F)
 
 TaskPool支持在宿主线程提交任务到任务队列，系统选择合适的工作线程执行任务，并将结果返回给宿主线程。接口易用，支持任务执行、取消和指定优先级。通过系统统一线程管理，结合动态调度和负载均衡算法，可以节约系统资源。系统默认启动一个任务工作线程，任务多时会自动扩容。工作线程数量上限由设备的物理核数决定，内部管理具体数量，确保调度和执行效率最优。长时间无任务分发时会缩容，减少工作线程数量。具体扩缩容机制请参见[TaskPool扩缩容机制](taskpool-introduction.md#taskpool扩缩容机制)。
 

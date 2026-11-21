@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: NodeController
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > NodeController
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:44+08:00
+scraped_at: 2026-11-21T09:13:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:58114197781472490091be4ed76fb4220c775ced41b74538751fb4698b05c2e1
+content_hash: sha256:b2b5808fdcb531d8aed263787f120cd820432a750b76aa645ea1987b592e6060
 ---
 
 NodeController用于管理自定义节点的创建、显示、更新等操作，并负责将自定义节点挂载到[NodeContainer](ts-basic-components-nodecontainer.md)上，适用于需要在页面中动态创建、更新、复用自定义节点的场景。
@@ -300,7 +300,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/LTskLyAmTGu8FhpMjfQ6Mw/zh-cn_image_0000002791726976.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015043Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B4AA76214AE946581C43D81953DF7ACD18D2921806A0946D02C04523F89F4DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/anXBEVVZQ72mFBIWBclCvg/zh-cn_image_0000002793038628.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=01E8D8C144025B5AB4E8D82C4450F8F94EAD2F45928C55B1DE64AA5461A00341)
 
 ### 示例2（添加节点上下树和绑定解绑前后的生命周期回调）
 
@@ -400,4 +400,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/zdrCfJr4TwGQCB--1MfsHQ/zh-cn_image_0000002791567004.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015043Z&HW-CC-Expire=31536000000&HW-CC-Sign=064EE4617D292129E65372CAADDC0F06C8A07D3A5246C3DD45F41F1FF29F9AF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/5brPtmz3Q1GskV_ltctEzw/zh-cn_image_0000002792878658.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=BECC7EEA1DD9B09BC317599444E1FDCF0ED37B7763E190C02B297C87C7FA5BD1)

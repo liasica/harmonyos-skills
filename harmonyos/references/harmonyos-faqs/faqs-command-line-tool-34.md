@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: ohpm命令常见报错问题汇总
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > ohpm命令常见报错问题汇总
 category: harmonyos-faqs
-scraped_at: 2026-11-13T09:06:54+08:00
-doc_updated_at: 2026-11-12
-content_hash: sha256:0a19db3ff1113f2c9595440e16145de50e3bdaeebdf7525c042b80feab1479fa
+scraped_at: 2026-11-21T09:19:34+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:b60407ca74515dbc61e7d32ba07192c8e64d9efd5553af819f5c956f9f3a8e64
 ---
 
 ## 问题现象
@@ -67,7 +67,7 @@ content_hash: sha256:0a19db3ff1113f2c9595440e16145de50e3bdaeebdf7525c042b80feab1
 
 * 问题一：
 
-  根据错误码可知，[ohpm配置的仓库](../harmonyos-guides/ide-ohpmrc.md#zh-cn_topic_0000001792216397_默认配置项)中未包含依赖包。
+  根据错误码可知，[ohpm配置的仓库](../doccenter-deveco-studio/ide-ohpmrc.md)中未包含依赖包。
 
   根据报错日志分析：仓库是https://ohpm.openharmony.cn/ohpm/，即OpenHarmony三方库中心仓，检索未发现@ohos/system。
 * 问题二：
@@ -104,7 +104,7 @@ content_hash: sha256:0a19db3ff1113f2c9595440e16145de50e3bdaeebdf7525c042b80feab1
 * 问题一：尝试双击shift全局搜索报错包名。
   1. 若未使用依赖包，oh-package.json5中删除即可。
   2. 若使用依赖包，需确认仓库地址：
-     + 存在仓库地址：[更新配置](../harmonyos-guides/ide-ohpmrc.md#zh-cn_topic_0000001792216397_更新配置)，添加仓库地址。
+     + 存在仓库地址：[更新配置](../doccenter-deveco-studio/ide-ohpmrc.md#section14712174019168)，添加仓库地址。
      + 本地仓库：通过相对路径形式配置依赖仓库位置，"xxx": "file:../xxx"
 * 问题二：建议修改依赖名与包名一致，具体参考：[模块级oh-package.json5字段说明](../doccenter-deveco-studio/ide-oh-package-json5.md#section13378134951212)表格后的**依赖名使用要求**。
 * 问题三：

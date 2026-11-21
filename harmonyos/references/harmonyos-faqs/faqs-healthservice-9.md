@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-healthserv
 title: 企业开发者同步运动健康数据指导
 breadcrumb: FAQ > 应用服务开发 > 运动健康数据服务（Health Service Kit） > 企业开发者同步运动健康数据指导
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:35+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:b7787c267ef6aac19ab94427fef24c4423a2702e398d00cfcaf66e318e71326b
+scraped_at: 2026-11-21T09:19:21+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:8efbad108d2fc846439f671914acc5ad5228d007a9631dc119caef5cfc1416b8
 ---
 
 ## 问题现象
@@ -27,15 +27,15 @@ content_hash: sha256:b7787c267ef6aac19ab94427fef24c4423a2702e398d00cfcaf66e318e7
 ## 解决方案
 
 1. 运动健康服务是为华为生态应用打造的基于华为账号和用户授权的运动健康数据开放平台。在获取用户授权后，开发者可以使用Health Service Kit提供的开放能力获取运动健康数据。
-   * HarmonyOS Next应用详情请参考：[接入流程](../harmonyos-guides/health-application-access.md)、[数据开放总览](../harmonyos-guides/health-data-overview.md)，[应用开发者申请资质说明](../harmonyos-guides/health-application-qualifications.md)。
+   * HarmonyOS Next应用详情请参考：[接入流程](../harmonyos-guides/health-application-access.md)、[数据开放总览](../doccenter-capabilities/health-permission-description.md)，[应用开发者申请资质说明](../harmonyos-guides/health-application-qualifications.md)。
    * HarmonyOS 3.x/4.x应用请参考：[面向应用开放服务](../HMSCore-Guides/application_description-0000001418052318.md)。
 2. 产品类型选择HarmonyOS应用，并填写申请信息，勾选产品必需申请的数据权限。需注意：
    * 添加运动健康服务时，遵循权限最小化原则。数据访问权限应与业务相符，不可申请超出业务范围或者暂不使用的权限。
    * 在应用或服务发布后，华为会对权限使用情况进行不定期抽查，抽查形式包括但不限于对已发布的应用进行抽样检查、对API调用情况进行监控、派遣专员核查等。您可以通过在申请运动健康服务前签署的合作协议，了解核查标准以及核查后的处理方式。
    * 数据类型对应的OAuth权限请参见[权限说明](../harmonyos-guides/health-permission-description.md)。
 
-     申请材料注意事项可以参考[申请被驳回的常见问题](../harmonyos-guides/health-apply.md#申请被驳回的常见问题)。
-3. 企业开发者可申请数据权限具体参考[数据开放总览](../harmonyos-guides/health-data-overview.md)，开放等级中，上锁图标表示该数据权限为高阶数据，暂不对个人开发者开放。如需使用，请使用企业账号重新注册并申请权限；开锁图标表示该数据权限为基础数据，个人及企业开发者均可申请查询/使用。
+     申请材料注意事项可以参考[申请被驳回的常见问题](../doccenter-capabilities/health-faqs.md#申请运动健康被驳回的常见问题)。
+3. 企业开发者可申请数据权限具体参考[数据开放总览](../doccenter-capabilities/health-permission-description.md)，开放等级中，上锁图标表示该数据权限为高阶数据，暂不对个人开发者开放。如需使用，请使用企业账号重新注册并申请权限；开锁图标表示该数据权限为基础数据，个人及企业开发者均可申请查询/使用。
 
    申请运动健康服务通过后需[配置Client ID](../harmonyos-guides/health-configuration-client-id.md)。
 

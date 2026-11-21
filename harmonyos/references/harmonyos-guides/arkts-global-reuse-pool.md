@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-
 title: 全局复用：集中化的组件回收与复用
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > 全局复用：集中化的组件回收与复用
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:36+08:00
+scraped_at: 2026-11-21T09:11:01+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2e100d20c0c7342e61f7bffcbfc07fa29b722e2d261841e88173b9d54a877748
+content_hash: sha256:3ca6e9631f2c51b95951b17d24c489172278c578a6b57bd2f375cc93562012b5
 ---
 
 为提升组件回收与复用的性能和内存效率，全局复用池功能允许开发者在任意自定义组件上配置针对指定@Reusable/@ReusableV2复用组件的复用池，该全局复用池优先级高于与父组件绑定的默认复用池。
@@ -56,7 +56,7 @@ content_hash: sha256:2e100d20c0c7342e61f7bffcbfc07fa29b722e2d261841e88173b9d54a8
 
 新增全局复用能力后，在最上层组件Index上声明全局复用池，可以提升子组件的复用效率。在if切换组件时，ChildComponentA下的复用组件ReusableComponent能存入Index上的全局复用池，然后在ChildComponentB中的ReusableComponent创建时从全局复用池中取出并复用，避免重复创建复用组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/l_q560WjTmeuS6VXZKOYDA/zh-cn_image_0000002791724534.png?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=340E29FAA81D87E94B2B27BB55E3DECE86765DB43C8504A89EBD33B333F374AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/XZDh4OFxT-2QYvWgODp9ug/zh-cn_image_0000002821836117.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDCFC0C4276E0FE9548CC2CB5961455D3727161ABD5FAB4D20DD4CC0E3FF516D)
 
 默认复用池实例代码：
 
@@ -187,7 +187,7 @@ struct ChildComponentB {
 
 **"shared"**：拥有@Component/@ComponentV2类的所有实例共享单个复用池实例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/FqI_DqOLR--iw1Q_6dDRmg/zh-cn_image_0000002791564562.png?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=608BCB8B5CF1662513EE1688ED8E20E4105E1691C84C1AC1B30A30FADA6AAFF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/YpkssjegRaa6ox-xvJFt1g/zh-cn_image_0000002821756117.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=43080484B6DD14507108A3A400610F91E73DE4BE9F2A4942187CA90FAEFC6F36)
 
 shared复用池的生命周期：
 
@@ -205,7 +205,7 @@ shared所有权与static类属性不同。全局复用池有跨实例的引用�
 
 **"perInstance"**：拥有@Component/@ComponentV2的每个实例都有自己的复用池实例。复用池的生命周期与其拥有组件实例的生命周期相同。当拥有组件被销毁时，其复用池和其中的所有回收组件也被销毁。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/JzDOhx3XQ52SvqbdQEaP2Q/zh-cn_image_0000002820524513.png?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=09C2B7FFBA2B5B2C0168AD0DCAE91AA0C7AE341A365A116AB7EF49E65DB75415)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/VwkR4N34R5a2F5qU9Qrxlw/zh-cn_image_0000002793036182.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=43D3EC97D532708EDC77382C2DBD8A77916D6BE38F6BB85F438D51EFAA0C4099)
 
 具体perInstance复用池示例代码，参考使用场景：[使用@Provider/@Consumer的独立复用池](arkts-global-reuse-pool.md#使用providerconsumer的独立复用池)。
 
@@ -333,7 +333,7 @@ struct CompA {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/6bEw2ohNQL6OFi3qClKgBQ/zh-cn_image_0000002820404513.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE1A61D124C223983C07981FC49165309FF56361ACD0EECEBFFF765C2E79B419)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/FEJNPsqCQZi6KTmcwneAJg/zh-cn_image_0000002792876214.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=8110E4C024A9B783A7EDAAA5F71946FD9919079C2B35098CF7E5721AF110F3F8)
 
 **启动** — 6个ReusableCompA子组件被创建：
 
@@ -476,7 +476,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/szsleNDVSYe_iSdymbRQmg/zh-cn_image_0000002791724536.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=08D3B21B0386A42953B0EC28E84E2E1F96B2763B9924BA03822F19B11D4C123A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/16gkKAKeTC2YNC2Df6dBIA/zh-cn_image_0000002821836119.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7C92604631B3E39629668D4ED84014A4A2E365A8EBB5EFDEF922C3478658571)
 
 **从ReusableChild切换到Child**：
 
@@ -671,7 +671,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/IMpFxRdGQ6ydIW_Sds30CQ/zh-cn_image_0000002791564564.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F2C294337F536D9F1CE9947A3A8D916EB5226F9BD27CBEA86C729C315D7490B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/YDJ6SbfdQcmon7_JwsvwHA/zh-cn_image_0000002821756119.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D2D45E70B20DD8C11EED826B0FEF24011293A31D51C5C515723A09B06AA74EB)
 
 **启动**（GlobalChild可见）：
 
@@ -830,7 +830,7 @@ struct PoolOwner {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/LonFAzFETyOOmdEIAY1WJA/zh-cn_image_0000002820524515.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBC3EFC26C0A769F166E58BB6196F0AC4CF5EA51D4B789B57072E3BDFF64D8AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/mz0HCxd7RACZuUt-14_7gg/zh-cn_image_0000002793036184.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=05917FD1C3334F57CDB48F4D7883CABA24D1A39FE632C0AE85B92BB2F4B072B9)
 
 当所有3个都被关闭时，getReusableInfo(TestChild)（不带reuseId）返回一个数组：
 
@@ -963,7 +963,7 @@ struct ParentA {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Sr2dJtN5Tw-5sY5D8QtIMg/zh-cn_image_0000002820404515.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=38C7432E13E8F1CF8EB43C75E1F6FA4551051CC684196B56548A48B2B842BEC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/_kl_9HxKSfSWftglOyKnmQ/zh-cn_image_0000002792876216.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=5004BF2311383ADD7A1DDA530C81BC81E30B7298315D9FC3AADEC6A5F23FE640)
 
 * ChildA使用EntryComp上声明的全局复用池，因为EntryComp复用池配置poolAccepts接受ChildA。
 * ReusableLeaf和它的父组件ChildA一起进入EntryComp的复用池中，不会进入ParentA上配置的全局复用池。因为父组件和子组件被一起回收时，父子组件都会进入接纳父组件的复用池，子组件不会脱离父组件存入全局复用池中。
@@ -1069,7 +1069,7 @@ struct CompA {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/EJPggzJRQr6VtcR1zioRPw/zh-cn_image_0000002791724538.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014644Z&HW-CC-Expire=31536000000&HW-CC-Sign=0201479A283A0AE40D262556FD7CAC71965BF6A819D8904C711D751AC3A5F8BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/cbnqTQoyQrCGw53qF4I1Eg/zh-cn_image_0000002821836121.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEDA9A6C9FB1A2A6276D87DCEEF1D0C572F810DA0E5F69A21EDE0594F6C0115F)
 
 执行序列：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 录像实践(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 录像实践(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:37+08:00
+scraped_at: 2026-11-21T09:12:02+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:b6613dd3d11d2d360faf4fb78a393aab80f3a8b296a296bfe953244cff8be021
+content_hash: sha256:fa39a4a274a550353934ea6c7c0512ee512197488e4eee2e3fa7d4e159a3c4bc
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -16,7 +16,7 @@ content_hash: sha256:b6613dd3d11d2d360faf4fb78a393aab80f3a8b296a296bfe953244cff8
 
 在获取到相机支持的输出流能力后，开始创建录像流，开发流程如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/BQG70E6tRbe8YJUnFZ26bw/zh-cn_image_0000002791565992.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB8FD29908535D90303B3F8B2728DABDFD3CDB85ADA8828282677BFCCDC3A56F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/ZIzivN5GSaOXlp4Hic-Lmg/zh-cn_image_0000002821757553.png?HW-CC-KV=V1&HW-CC-Date=20261121T011036Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4BBFA8580C1A22DD80C1C7D9969D0CCD86F3B5884A775149FAED61753CC01B1)
 
 ## 完整示例
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pipwindow-xco
 title: 使用XComponent实现画中画功能开发 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 画中画开发指导 > 使用XComponent实现画中画功能开发 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:50+08:00
+scraped_at: 2026-11-21T09:11:16+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:033c175d13fbb3a2babd7a8afa43bf854fc0d720a37d5aa41a4b7a4db65ad5c5
+content_hash: sha256:2d8f607363476e19d0363028d492d54b19a0433c6e67fb3af91986f045b31589
 ---
 
 本文以视频播放为例，介绍通过XComponent实现画中画功能的基本开发步骤。
@@ -310,4 +310,4 @@ content_hash: sha256:033c175d13fbb3a2babd7a8afa43bf854fc0d720a37d5aa41a4b7a4db65
 
 以上示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/X1zXPYQ1QTaHm61y7DabUw/zh-cn_image_0000002820525401.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014659Z&HW-CC-Expire=31536000000&HW-CC-Sign=057917D810C9624735B39A0101CB914564385532902877DE89DBADCF222A6F9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/weIuAoi1SHaESmhadto_fw/zh-cn_image_0000002793037072.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011115Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA304FEF89B1EE9CF233A13AD1FAEFED7F83606FA8A270CD28644EAD274D9F55)

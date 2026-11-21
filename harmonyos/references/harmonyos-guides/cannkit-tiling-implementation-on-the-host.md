@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tilin
 title: Host侧Tiling实现
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > AscendC算子工程开发 > AscendC算子工程实现 > Host侧Tiling实现
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:18+08:00
+scraped_at: 2026-11-21T09:12:45+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d7e6f38de35c98f0876e527309013e2f026759dc03328cd91c0a6efbc0f3b2a8
+content_hash: sha256:565079ff57dae6850bfc1e4231f79f14eed249185fb126a928a0a90fac8e5aef
 ---
 
 在[算子实现](cannkit-operator-implementation-overview.md)章节已经介绍了host侧tiling核心的实现方法，本章节侧重于介绍接入DDK框架时编程模式和API的使用。
@@ -16,7 +16,7 @@ Tiling实现完成后，获取到的Tiling切分算法相关参数，会传递�
 
 **图1** Tiling实现的输入输出
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/sr3D2mv1R4W9B5cqrD8SAQ/zh-cn_image_0000002791726734.png?HW-CC-KV=V1&HW-CC-Date=20261119T014823Z&HW-CC-Expire=31536000000&HW-CC-Sign=151FE2BECE6E9CB72E956C47F84BCD3296320B929B6BC6C882ED43C6C0DE4DEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/bgfEH2PDTu6JGHaUZMTOSA/zh-cn_image_0000002793038386.png?HW-CC-KV=V1&HW-CC-Date=20261121T011244Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2FAD4416D976DBFE825A3C40CA4A2006126157A61458AB263985A0ABFC0135C)
 
 如上图所示，Tiling实现即为根据算子shape等信息来确定切分算法相关参数的过程，这里的算子shape等信息可以理解为是**Tiling实现的输入**，切分算法相关参数可以理解为是**Tiling实现的输出**。输入和输出都通过Tiling函数的参数（TilingContext\* context上下文结构）来承载。也就是说，开发者可以从上下文结构中获取算子的输入、输出以及属性信息，也就是**Tiling实现的输入**，经过Tiling计算后，获取到TilingData数据结构（切分算法相关参数）、BlockDim变量、用于选择不同的kernel实现分支的TilingKey、算子workspace的大小，也就是**Tiling实现的输出**，并将这些输出设置到上下文结构中。
 
@@ -161,7 +161,7 @@ Tiling实现开发的流程图如下。
 
 **图2** Tiling开发流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/nEbgjmIvQOugQTXWg_bQ7w/zh-cn_image_0000002791566762.png?HW-CC-KV=V1&HW-CC-Date=20261119T014823Z&HW-CC-Expire=31536000000&HW-CC-Sign=78A7C65A3F43C9C351BBB119A62DE63D6CD463743495F284BD297AF49F90B6B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/nJb3DT_-TOmXweHOcU5BeA/zh-cn_image_0000002792878416.png?HW-CC-KV=V1&HW-CC-Date=20261121T011244Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F4F6CA25EA3DDA410997809858A38E7B219515E7BF9B4E1A6054F95F77C6B90)
 
 下面将从一个简单的Add算子为例介绍Tiling的实现流程。本样例中待处理数据的Shape大小可以平均分配到每个核上，并且可以对齐到一个datablock(32B)的大小。
 

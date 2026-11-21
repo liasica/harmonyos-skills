@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-video-s
 title: 音画同步
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > 音画同步
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:35+08:00
+scraped_at: 2026-11-21T09:11:59+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:947d2e81d35bbb8de71c8a1753c140589e7f5e5190265e2f63aca1e952cd6e55
+content_hash: sha256:a990088e57b6d00bfc8ec9e0d9c58ed97430af83b4789fc9597ff4bea5caf874
 ---
 
 ## 概述
@@ -83,7 +83,7 @@ content_hash: sha256:947d2e81d35bbb8de71c8a1753c140589e7f5e5190265e2f63aca1e952c
 
 **连续播放音帧方案示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/4lgP85PBS4Gcz32Fb_m11A/zh-cn_image_0000002791565938.png?HW-CC-KV=V1&HW-CC-Date=20261119T014834Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB8D48E932E5B747AD2908081B659E1E9D3CD6C32477C8D313B8EFE8EE42A332)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/qzK7RcgORcS5CWslARWo2g/zh-cn_image_0000002821757499.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=724E5580E6A874DE011D230CDCFD0A5C7A711AB6ECEDA763D353BDF9AD29B3DA)
 
 音频和视频的管道必须同时以相同的时间戳呈现每帧数据。将音频播放位置用作主时间参考，而视频管道只输出与最新渲染音频帧匹配的视频帧。对于所有可能的实现，精确计算最后一次呈现的音频时间戳是至关重要的。[OH\_AudioRenderer\_GetTimestamp()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_gettimestamp) 接口用以查询音频管道各个阶段的音频时间戳和延迟信息，此信息可用于控制视频管道，使视频帧与音频帧匹配。
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avtranscoder-
 title: 转码常见问题
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 视频转码 > 转码常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:17:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:96bab0ae96ce22bc624e40565be6fbf55f8290de2595ecd00e454d9c9f80debc
+scraped_at: 2026-11-21T09:12:05+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:47d399356f17fa8582edba331d0c0e58b4b833b6e929b788dd2aac43fed545a5
 ---
 
 ## 应用发送视频进行转码，音频编码格式为什么变化
 
-在转码过程中，若未指定音频轨道格式，系统默认将其转换为AAC编码格式。
+在转码过程中，若未指定音频编码格式，系统默认将其转换为AAC编码格式。
 
 ## 转码是否支持HDR转SDR？为什么使用其他系统的设备录制HDR视频转码会失败
 
@@ -36,3 +36,10 @@ content_hash: sha256:96bab0ae96ce22bc624e40565be6fbf55f8290de2595ecd00e454d9c9f8
 
    当前转码能力支持情况：[AVTranscoder支持的格式](media-kit-intro.md#avtranscoder)、[AVCodec支持的格式](avcodec-support-formats.md)、[VPE支持规格](video-csc.md#规格说明)。
 2. 应用在收到error事件后，建议发送原视频；应用在收到complete事件后，建议先调用release再对转码后的视频做发送、上云等操作。
+
+## 转码参数对输出分辨率、画质与文件大小的影响
+
+* 未设置视频分辨率时，输出分辨率与源视频一致。
+* 相同分辨率下，视频码率设置越高，输出画质越清晰，文件体积也越大。
+* 未设置视频码率时，默认码率由视频分辨率决定，详细规格参见[AVTranscoderConfig](../harmonyos-references/arkts-apis-media-i.md#avtranscoderconfig12)。
+* 编码器输出的码率受视频内容影响，存在实际输出码率与目标码率有一定偏差的情况，属于正常现象。

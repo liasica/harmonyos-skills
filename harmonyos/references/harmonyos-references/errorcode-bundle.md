@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 包管理子系统通用错误码
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > 错误码 > 包管理子系统通用错误码
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:18+08:00
+scraped_at: 2026-11-21T09:13:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2f77e4c174f5cbe87dd9c280551aefaf97d5ea3a7005c48ba9be1b378155e9e8
+content_hash: sha256:45b6d00345ec773b2ba635ea7dc5f54c13e67eba732beda57f88dc7a14651c4a
 ---
 
 **说明** 
@@ -247,7 +247,7 @@ Failed to install the HAP since the version of the HAP to install is too early.
    ```
 2. 新安装的应用查看版本，HAP或者HSP用DevEco Studio打开，查看里面module.json文件中的versionCode字段配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/8NY6tahpSaSI_5fAzhryGw/zh-cn_image_0000002791566922.png?HW-CC-KV=V1&HW-CC-Date=20261119T015018Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BC3AB966A4A21BBBD6093463DB5FEB2749DE5820C6171E52DF3C162F45CE0EB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/k_Ntv9r3RHu7YTAErj_0Mg/zh-cn_image_0000002792878576.png?HW-CC-KV=V1&HW-CC-Date=20261121T011217Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D58CF33B1A2BACC4EB5CDA960E20865A8CB7AA12F12D1624F6828F3EE596A9F)
 
 ## 17700021 指定的uid无效
 

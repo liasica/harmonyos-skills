@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.security.cert (证书模块)"
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > ArkTS API > @ohos.security.cert (证书模块)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:28+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:c1c8eb1922ca9c5b0943c2abaed24e724a709b9216a5b0551b1333dfdc8960f3
+scraped_at: 2026-11-21T09:15:10+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:b98fa703ed026777b499c5a6858c8be39eee5a0e2c99155b34161534c84cba33
 ---
 
 证书算法库框架提供证书相关接口。其中，依赖加解密算法库框架的基础算法能力的部分，详细接口说明可参考[@ohos.security.cryptoFramework (加解密算法库框架)](js-apis-cryptoframework.md)。
@@ -360,7 +360,7 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 | REVOCATION\_CHECK\_OPTION\_ACCESS\_NETWORK | 1 | 支持通过访问网络获取CRL或OCSP响应进行吊销状态的校验，默认为关闭。仅支持通过证书中的CDP扩展中获取首个CRL分发点地址以检查证书吊销状态，或通过AIA扩展获取首个OCSP服务器地址以进行吊销状态验证，且仅支持http协议。必须声明ohos.permission.INTERNET权限。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | REVOCATION\_CHECK\_OPTION\_FALLBACK\_NO\_PREFER | 2 | 当ACCESS\_NETWORK选项打开时有效，如果优选的校验方法由于网络原因导致无法校验证书状态，则采用备选的方案进行校验。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | REVOCATION\_CHECK\_OPTION\_FALLBACK\_LOCAL | 3 | 当ACCESS\_NETWORK选项打开时有效，如果在线获取CRL和OCSP响应都由于网络的原因导致无法校验证书状态，则采用本地设置的CRL和OCSP响应进行校验。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| REVOCATION\_CHECK\_OPTION\_CHECK\_INTERMEDIATE\_CA\_ONLINE22+ | 4 | 当ACCESS\_NETWORK选项打开时有效。如果开启了该能力，对终端实体证书OCSP或CRL校验失败，则会继续校验中间证书的吊销情况。默认关闭。  **注意**：当前能力与REVOCATION\_CHECK\_OPTION\_LOCAL\_CRL\_ONLY\_CHECK\_END\_ENTITY\_CERT不能同时开启。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
+| REVOCATION\_CHECK\_OPTION\_CHECK\_INTERMEDIATE\_CA\_ONLINE22+ | 4 | 当ACCESS\_NETWORK选项打开时有效。如果开启了该能力，对终端实体证书OCSP或CRL校验成功，则会继续校验中间证书的吊销情况。默认关闭。  **注意**：当前能力与REVOCATION\_CHECK\_OPTION\_LOCAL\_CRL\_ONLY\_CHECK\_END\_ENTITY\_CERT不能同时开启。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
 | REVOCATION\_CHECK\_OPTION\_LOCAL\_CRL\_ONLY\_CHECK\_END\_ENTITY\_CERT22+ | 5 | 如果开启了该能力，则会拿本地吊销列表校验终端实体证书的吊销情况。默认关闭。  **注意**：当前能力与REVOCATION\_CHECK\_OPTION\_CHECK\_INTERMEDIATE\_CA\_ONLINE不能同时开启。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
 | REVOCATION\_CHECK\_OPTION\_IGNORE\_NETWORK\_ERROR23+ | 6 | 如果开启了该能力，通过访问网络获取CRL或OCSP响应进行吊销状态的校验时，忽略网络不可达错误。默认关闭，默认情况下，网络不可达可能导致证书链校验失败。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 
@@ -13130,7 +13130,7 @@ getName(type: string, encodingType: EncodingType): Array<string>
 | --- | --- |
 | 19020001 | Memory malloc failed. |
 | 19020002 | Runtime error. Possible causes:  1. Memory copy failed;  2. A null pointer occurs inside the system;  3. Failed to obtain the native object or convert parameters. |
-| 19020003 | Parameter check failed. Possible causes:  1. The value of encodingType is invalid. |
+| 19020003 | Parameter check failed. Possible causes:  1. The value of encodingType is not in the EncodingType enumeration range. |
 | 19030001 | Crypto operation error. |
 
 **示例：**

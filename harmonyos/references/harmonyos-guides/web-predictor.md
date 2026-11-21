@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-predictor
 title: 加速Web页面的访问
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 加速Web页面的访问
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:23+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:030ac6e84e089776c81200085428402d02b9c9a7ff5a6e4e48873fc79aed6137
+scraped_at: 2026-11-21T09:11:18+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:973c682b85153787e1664d1db1826026129dc9aef6810fa39add72bd9d162390
 ---
 
 当Web页面加载缓慢时，可以使用预连接、预加载和预获取POST请求的能力加速Web页面的访问。
@@ -218,7 +218,6 @@ export default class EntryAbility extends UIAbility {
    export default class EntryAbility extends UIAbility {
      storage: LocalStorage = localStorage;
      // ...
-     // ...
      onWindowStageCreate(windowStage: window.WindowStage) {
        windowStage.loadContent('pages/Index', this.storage, (err, data) => {
          if (err.code) {
@@ -229,8 +228,6 @@ export default class EntryAbility extends UIAbility {
        });
      }
 
-     // ...
-     // ...
      // ...
    }
    ```
@@ -434,8 +431,6 @@ export default class EntryAbility extends UIAbility {
    export default class EntryAbility extends UIAbility {
      storage: LocalStorage = localStorage;
      // ...
-
-     // ...
      onWindowStageCreate(windowStage: window.WindowStage) {
        windowStage.loadContent('pages/Index', this.storage, (err, data) => {
          if (err.code) {
@@ -445,8 +440,6 @@ export default class EntryAbility extends UIAbility {
          this.storage.setOrCreate<UIContext>('uiContext', windowStage.getMainWindowSync().getUIContext());
        });
      }
-     // ...
-     // ...
      // ...
    }
    ```

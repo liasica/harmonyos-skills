@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 典型场景展示
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 典型场景展示
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:12+08:00
+scraped_at: 2026-11-21T09:12:38+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a5fb333daba0cc8fc2c11cdb15839318bcf050d0a5e9585bd0bf7375cdd9f351
+content_hash: sha256:f3776a9a7de832338026648ce044da43d4b1745f001d7b86da7a8fedacc93138
 ---
 
 如下展示两种智能填充的典型场景。
@@ -18,11 +18,11 @@ content_hash: sha256:a5fb333daba0cc8fc2c11cdb15839318bcf050d0a5e9585bd0bf7375cdd
 
 剪贴板数据源推荐场景目前仅支持中文姓名和中文地址。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/IBtvY2fAQs2tuIKH_Xs0Sw/zh-cn_image_0000002820406585.png?HW-CC-KV=V1&HW-CC-Date=20261119T014817Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DA777E37D566BA64756106BBDD608C4DACF6B46CB40AE9DAB3CF983A9CEF587)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/tm2yTc1dTLqc1x9mOw96Cg/zh-cn_image_0000002821758195.png?HW-CC-KV=V1&HW-CC-Date=20261121T011237Z&HW-CC-Expire=31536000000&HW-CC-Sign=39EAFA11D9B2AF4FC6CAC89E972AE349127E29366766B2EADFB7791B7FEFBA53)
 
 示例二：根据用户输入，智能关联设备上历史表单输入、华为账号等信息提供输入建议，一键填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/j9f87RjmRgKaDtaTCjPROw/zh-cn_image_0000002791726606.png?HW-CC-KV=V1&HW-CC-Date=20261119T014817Z&HW-CC-Expire=31536000000&HW-CC-Sign=6159D85E0FC67753BE0726A230C5C7E1BFC027EDDB404C9A45007E6DADB5183E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ADOofNo1QtWefQF16BS0MQ/zh-cn_image_0000002793038258.png?HW-CC-KV=V1&HW-CC-Date=20261121T011237Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABB86D7F12C85A3342FAE8B6F9DF641118975B53238F85147A277A0D1256DB4F)
 
 ## 填写收货地址场景
 
@@ -32,11 +32,11 @@ content_hash: sha256:a5fb333daba0cc8fc2c11cdb15839318bcf050d0a5e9585bd0bf7375cdd
 
 剪贴板数据源推荐场景目前仅支持中文姓名和中文地址。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/WS4Jv3_wSde5aD7oso6dgA/zh-cn_image_0000002791566634.png?HW-CC-KV=V1&HW-CC-Date=20261119T014817Z&HW-CC-Expire=31536000000&HW-CC-Sign=8265EAACDF173CF91291EF1728A2F051A534B33C6F6B7171F12522D2B1595D75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/ZsmamrPoTHq0763xIk5A5g/zh-cn_image_0000002792878288.png?HW-CC-KV=V1&HW-CC-Date=20261121T011237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E59E3DB4D327C0018CE17F5FDD559D4DF04AAD65086ADEDE93F792DB97720B53)
 
 示例二：根据用户输入，智能关联设备上历史表单输入、华为账号等信息提供输入建议，一键填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/bNO8MGPhTiKxEc0I5B7NJg/zh-cn_image_0000002820526587.png?HW-CC-KV=V1&HW-CC-Date=20261119T014817Z&HW-CC-Expire=31536000000&HW-CC-Sign=1519D8B556551B18D744AAD9477A56EFEE12B25380E12296BDC45BAD437B4BC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/7bx65RRkR1KtRgeas8uAGg/zh-cn_image_0000002821838195.png?HW-CC-KV=V1&HW-CC-Date=20261121T011237Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B472BC8C717D1D74B70B3D3057256C6FE27CC5F870B4262CC53756276494EB5)
 
 ## 示例代码
 

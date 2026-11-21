@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/one-time-auth
 title: 向用户申请单次授权
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 向用户申请单次授权
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:00+08:00
+scraped_at: 2026-11-21T09:11:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5377389cecea9c5443706afaa7eda66187454cb74df57a480ec4a2d0a5b4c187
+content_hash: sha256:23be50f9ec8d6f191cac134eaa372652442381a458d5b76d9da18eee60a92832
 ---
 
 基于授权最小化原则，防止应用获取和滥用用户数据。针对部分应用敏感权限，在弹窗向用户申请授权时，新增“允许本次使用”的授权选项。
@@ -14,7 +14,7 @@ content_hash: sha256:5377389cecea9c5443706afaa7eda66187454cb74df57a480ec4a2d0a5b
 
 授权弹窗如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/3uJrAyzcQb23mZrzOwiTuA/zh-cn_image_0000002820405639.png?HW-CC-KV=V1&HW-CC-Date=20261119T014709Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB60D3B582BE22178411E2507714334D2194CFA56E4B7F5975F4376FB73D72DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/tVNvxzMSQXyQhB20AsYf1Q/zh-cn_image_0000002792877340.png?HW-CC-KV=V1&HW-CC-Date=20261121T011001Z&HW-CC-Expire=31536000000&HW-CC-Sign=63C8864A9027F5868056DCC955A525C4A7E585EBBFBCE8C7B05A3E5DE412BDB7)
 
 同时，用户可以在“设置”中修改授权。修改路径：设置 > 隐私 > 权限管理 > 应用 > 目标应用 > 位置信息。
 
@@ -40,5 +40,5 @@ content_hash: sha256:5377389cecea9c5443706afaa7eda66187454cb74df57a480ec4a2d0a5b
 
     如下图样例所示，小艺建议处于卡片可见状态：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/gjARt2TnSEOMygHmdYh77A/zh-cn_image_0000002791725660.png?HW-CC-KV=V1&HW-CC-Date=20261119T014709Z&HW-CC-Expire=31536000000&HW-CC-Sign=222AA6DEC2D3452E970C1B589CA35F2B0054F683770E368B9760A6B71A1D93D1)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Mqk-XxyfRDS7zWVHkpFm0A/zh-cn_image_0000002821837247.png?HW-CC-KV=V1&HW-CC-Date=20261121T011001Z&HW-CC-Expire=31536000000&HW-CC-Sign=A014F284235B74416CA53F09FA66C1DD84EDBB91B9B8897F77B6A9066BB46809)
 * 当用户在权限设置中选择“每次询问”时，应用将获得模糊位置和位置临时权限。取消临时授权的操作与此相同。

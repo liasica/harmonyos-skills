@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (DialogPresenter)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (DialogPresenter)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:40+08:00
+scraped_at: 2026-11-21T09:13:55+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a2df67887c312055c6043c27eaa8ca929d50fdc958df8166288c49c534fabaeb
+content_hash: sha256:4e93f8a29d8d4bff2141174b4c8ffdc7d8b08865804e4d0b2c188070eba9ab2c
 ---
 
 提供统一的Dialog API，可创建并显示固定样式弹出框、自定义样式弹出框，并支持更新与关闭弹出框。适用于应用中需要弹出提示、确认、选择等弹出框交互的场景。
@@ -105,7 +105,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/fltWPuLiQR-2x_7BUesZEA/zh-cn_image_0000002820526887.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014945Z&HW-CC-Expire=31536000000&HW-CC-Sign=050817F8DAB3A8606B61C4C0B5479E708E4736E4763A221BAC4AF9CB8F927BEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/AVoeV8izSEeMA2JXAn-E1A/zh-cn_image_0000002821838495.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011239Z&HW-CC-Expire=31536000000&HW-CC-Sign=C948C54494DAA891F55488222E2B2BC338C1D51CAFF75944A559DB219473C16B)
 
 ## present
 
@@ -238,7 +238,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Ey9ZEjt9TGGKmtWUqjGybg/zh-cn_image_0000002820406887.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014945Z&HW-CC-Expire=31536000000&HW-CC-Sign=62AD8AD0DE20CFCCCE93C4C0AFDCAA88070D8365360E443911A23B706A46F832)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/-aEdsm4uRnaA67a3NhKW5A/zh-cn_image_0000002821758497.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011239Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9D0CC4BF8A0976E7AB2B1366551C6C86E3607B3A2B79276E9FA456842E36B4D)
 
 ## update
 
@@ -379,4 +379,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/OSx9-c8CTkmqX-WDfE4sHg/zh-cn_image_0000002791726908.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014945Z&HW-CC-Expire=31536000000&HW-CC-Sign=98FFE1FAB55F143254AC6E3A39B0562A46CFBBA34961B2394D8A90D05F45FC05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/BOVaZX0WSa-dvLkG2uXgew/zh-cn_image_0000002793038560.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011239Z&HW-CC-Expire=31536000000&HW-CC-Sign=86D5399D30D40EB9D54DFE87088FED8DCAFADF9005DDBC024027944306C88BA0)

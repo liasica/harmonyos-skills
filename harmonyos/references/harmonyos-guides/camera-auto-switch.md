@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-auto-s
 title: 自动切换摄像头实践(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 自动切换摄像头实践(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:45+08:00
-doc_updated_at: 2026-03-23
-content_hash: sha256:29f22031f611153e87b126bf52f140a7fc2816361c31e8df40570b909cb18060
+scraped_at: 2026-11-21T09:12:02+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:71392bb213f0b6e6c1328130aade06e8879da5b9e7b65a2fbd78e5da9ce65e7d
 ---
 
 应用适配折叠屏时，在简单UX交互场景下，如人脸识别场景推荐使用相机镜头自动切换能力。在有多个前置镜头的折叠设备上，应用使能自动切换镜头能力后，系统能够自动完成镜头切换、会话配置，在不同的折叠状态下，可自动切换到当前可使用的前置镜头，避免前置镜头被折入内部导致黑屏。
@@ -24,7 +24,7 @@ Context获取方式请参考：[获取UIAbility的上下文信息](uiability-usa
 
 ## 导入相关依赖
 
-```ts
+```typescript
 import { camera } from '@kit.CameraKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { abilityAccessCtrl } from '@kit.AbilityKit';
@@ -34,7 +34,7 @@ import { abilityAccessCtrl } from '@kit.AbilityKit';
 
 使用[XComponent](../harmonyos-references/ts-basic-components-xcomponent.md)展示摄像头的预览画面。
 
-```ts
+```typescript
 @Entry
 @Component
 struct Index {
@@ -57,7 +57,7 @@ struct Index {
         })
         .width(this.getUIContext().px2vp(1080))
         .height(this.getUIContext().px2vp(1920))
-      Text('切换相机')
+      Text($r('app.string.switch_camera'))
         .size({ width: 80, height: 48 })
         .position({ x: 1, y: 1 })
         .backgroundColor(Color.White)
@@ -79,8 +79,8 @@ struct Index {
 
 调用[enableAutoDeviceSwitch](../harmonyos-references/arkts-apis-camera-autodeviceswitch.md#enableautodeviceswitch13)接口前需要通过[isAutoDeviceSwitchSupported](../harmonyos-references/arkts-apis-camera-autodeviceswitchquery.md#isautodeviceswitchsupported13)接口查询当前设备是否支持自动切换摄像头能力。
 
-```ts
-function enableAutoDeviceSwitch(session: camera.PhotoSession) {
+```typescript
+enableAutoDeviceSwitch(session: camera.PhotoSession) {
   if (session.isAutoDeviceSwitchSupported()) {
     try {
       session.enableAutoDeviceSwitch(true);
@@ -98,8 +98,8 @@ function enableAutoDeviceSwitch(session: camera.PhotoSession) {
 
 自动切换摄像头期间，禁止调用任何[session](../harmonyos-references/arkts-apis-camera-session.md)相关接口。
 
-```ts
-function callback(err: BusinessError, autoDeviceSwitchStatus: camera.AutoDeviceSwitchStatus): void {
+```typescript
+callback(err: BusinessError, autoDeviceSwitchStatus: camera.AutoDeviceSwitchStatus): void {
   if (err !== undefined && err.code !== 0) {
     console.error(`Callback Error, errorCode: ${err.code}`);
     return;
@@ -107,20 +107,20 @@ function callback(err: BusinessError, autoDeviceSwitchStatus: camera.AutoDeviceS
   console.info(`isDeviceSwitched: ${autoDeviceSwitchStatus.isDeviceSwitched}, isDeviceCapabilityChanged: ${autoDeviceSwitchStatus.isDeviceCapabilityChanged}`);
 }
 
-function registerAutoDeviceSwitchStatus(photoSession: camera.PhotoSession): void {
-  photoSession.on('autoDeviceSwitchStatusChange', callback);
+registerAutoDeviceSwitchStatus(photoSession: camera.PhotoSession): void {
+  photoSession.on('autoDeviceSwitchStatusChange', this.callback);
 }
-function unregisterAutoDeviceSwitchStatus(photoSession: camera.PhotoSession): void {
-  photoSession.off('autoDeviceSwitchStatusChange', callback);
+unregisterAutoDeviceSwitchStatus(photoSession: camera.PhotoSession): void {
+  photoSession.off('autoDeviceSwitchStatusChange', this.callback);
 }
 ```
 
 ## 完整示例代码
 
-```ts
+```typescript
 import { camera } from '@kit.CameraKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { abilityAccessCtrl } from '@kit.AbilityKit';
+import { abilityAccessCtrl, PermissionRequestResult } from '@kit.AbilityKit';
 
 const TAG = 'AutoSwitchCameraDemo ';
 
@@ -141,7 +141,7 @@ struct Index {
   private mCameraInput: camera.CameraInput | undefined = undefined;
   private mPreviewOutput: camera.PreviewOutput | undefined = undefined;
   private mPhotoSession: camera.PhotoSession | undefined = undefined;
-  // One of the recommended preview resolutions.
+  // 推荐的预览分辨率之一。
   private previewProfileObj: camera.Profile = {
     format: 1003,
     size: {
@@ -157,17 +157,20 @@ struct Index {
         return;
       }
       console.info(`${TAG} isDeviceSwitched: ${autoDeviceSwitchStatus.isDeviceSwitched}, isDeviceCapabilityChanged: ${autoDeviceSwitchStatus.isDeviceCapabilityChanged}`);
-  }
+    }
 
   requestPermissionsFn(): void {
     let atManager = abilityAccessCtrl.createAtManager();
-    atManager.requestPermissionsFromUser(this.mContext, [
-      'ohos.permission.CAMERA'
-    ]).then((): void => {
-      this.isShow = true;
-    }).catch((error: BusinessError): void => {
-      console.error(TAG + `ohos.permission.CAMERA no permission, error: ${error.code}`);
-    });
+    atManager.requestPermissionsFromUser(this.mContext, ['ohos.permission.CAMERA'])
+      .then((result: PermissionRequestResult): void => {
+        if (result.authResults[0] === 0) {
+          this.isShow = true;
+        } else {
+          console.error(`${TAG}ohos.permission.CAMERA is denied by the user.`);
+        }
+      }).catch((error: BusinessError): void => {
+        console.error(`${TAG}ohos.permission.CAMERA no permission, error: ${error.code}`);
+      });
   }
 
   initContext(): void {
@@ -185,7 +188,7 @@ struct Index {
   }
 
   aboutToAppear(): void {
-    console.info(TAG + 'aboutToAppear is called');
+    console.info(`${TAG}aboutToAppear is called`);
     this.initContext();
     this.requestPermissionsFn();
     this.initCameraManager();
@@ -196,6 +199,10 @@ struct Index {
   }
 
   async onPageShow(): Promise<void> {
+    if (this.mSurfaceId === '') {
+      console.error(`${TAG}the surfaceId is empty, wait for the XComponent to be loaded.`);
+      return;
+    }
     await this.initCamera(this.mSurfaceId, this.mCameraPosition);
   }
 
@@ -205,7 +212,7 @@ struct Index {
       await this.mPhotoSession?.stop();
     } catch (error) {
       let err = error as BusinessError;
-      console.error(TAG + 'Failed to stop session, errorCode = ' + err.code);
+      console.error(`${TAG}Failed to stop session, errorCode = ${err.code}`);
     }
 
     // 释放相机输入流。
@@ -213,7 +220,7 @@ struct Index {
       await this.mCameraInput?.close();
     } catch (error) {
       let err = error as BusinessError;
-      console.error(TAG + 'Failed to close device, errorCode = ' + err.code);
+      console.error(`${TAG}Failed to close device, errorCode = ${err.code}`);
     }
 
     // 释放预览输出流。
@@ -221,7 +228,7 @@ struct Index {
       await this.mPreviewOutput?.release();
     } catch (error) {
       let err = error as BusinessError;
-      console.error(TAG + 'Failed to release previewOutput, errorCode = ' + err.code);
+      console.error(`${TAG}Failed to release previewOutput, errorCode = ${err.code}`);
     }
 
     this.mPreviewOutput = undefined;
@@ -231,7 +238,7 @@ struct Index {
       await this.mPhotoSession?.release();
     } catch (error) {
       let err = error as BusinessError;
-      console.error(TAG + 'Failed to release photoSession, errorCode = ' + err.code);
+      console.error(`${TAG}Failed to release photoSession, errorCode = ${err.code}`);
     }
 
     // 会话置空。
@@ -265,22 +272,22 @@ struct Index {
     await this.releaseCamera();
     // 创建CameraManager对象。
     if (!this.mCameraManager) {
-      console.error(TAG + 'camera.getCameraManager error');
+      console.error(`${TAG}camera.getCameraManager error`);
       return;
     }
 
     // 获取相机列表。
-    let cameraArray: Array<camera.CameraDevice> = this.mCameraManager.getSupportedCameras();
+    let cameraArray: camera.CameraDevice[] = this.mCameraManager.getSupportedCameras();
     if (cameraArray.length <= 0) {
-      console.error(TAG + 'cameraManager.getSupportedCameras error');
+      console.error(`${TAG}cameraManager.getSupportedCameras error`);
       return;
     }
 
     for (let index = 0; index < cameraArray.length; index++) {
-      console.info(TAG + 'cameraId : ' + cameraArray[index].cameraId); // 获取相机ID。
-      console.info(TAG + 'cameraPosition : ' + cameraArray[index].cameraPosition); // 获取相机位置。
-      console.info(TAG + 'cameraType : ' + cameraArray[index].cameraType); // 获取相机类型。
-      console.info(TAG + 'connectionType : ' + cameraArray[index].connectionType); // 获取相机连接类型。
+      console.info(`${TAG}cameraId : ${cameraArray[index].cameraId}`); // 获取相机ID。
+      console.info(`${TAG}cameraPosition : ${cameraArray[index].cameraPosition}`); // 获取相机位置。
+      console.info(`${TAG}cameraType : ${cameraArray[index].cameraType}`); // 获取相机类型。
+      console.info(`${TAG}connectionType : ${cameraArray[index].connectionType}`); // 获取相机连接类型。
     }
 
     let deviceIndex = cameraArray.findIndex((cameraDevice: camera.CameraDevice) => {
@@ -289,7 +296,7 @@ struct Index {
     // 没有找到对应位置的摄像头，可选择其他摄像头，具体场景具体对待。
     if (deviceIndex === -1) {
       deviceIndex = 0;
-      console.error(TAG + 'not found camera');
+      console.error(`${TAG}not found camera`);
     }
     this.curCameraDevice = cameraArray[deviceIndex];
 
@@ -298,7 +305,7 @@ struct Index {
       this.mCameraInput = this.mCameraManager.createCameraInput(this.curCameraDevice);
     } catch (error) {
       let err = error as BusinessError;
-      console.error(TAG + 'Failed to createCameraInput errorCode = ' + err.code);
+      console.error(`${TAG}Failed to createCameraInput errorCode = ${err.code}`);
     }
     if (this.mCameraInput === undefined) {
       return;
@@ -309,14 +316,14 @@ struct Index {
       await this.mCameraInput.open();
     } catch (error) {
       let err = error as BusinessError;
-      console.error(TAG + 'Failed to open device, errorCode = ' + err.code);
+      console.error(`${TAG}Failed to open device, errorCode = ${err.code}`);
     }
 
     // 获取支持的模式类型。
-    let sceneModes: Array<camera.SceneMode> = this.mCameraManager.getSupportedSceneModes(this.curCameraDevice);
+    let sceneModes: camera.SceneMode[] = this.mCameraManager.getSupportedSceneModes(this.curCameraDevice);
     let isSupportPhotoMode: boolean = sceneModes.indexOf(camera.SceneMode.NORMAL_PHOTO) >= 0;
     if (!isSupportPhotoMode) {
-      console.error(TAG + 'photo mode not support');
+      console.error(`${TAG}photo mode not support`);
       return;
     }
 
@@ -324,18 +331,18 @@ struct Index {
     let cameraOutputCapability: camera.CameraOutputCapability =
       this.mCameraManager.getSupportedOutputCapability(this.curCameraDevice, camera.SceneMode.NORMAL_PHOTO);
     if (!cameraOutputCapability) {
-      console.error(TAG + 'cameraManager.getSupportedOutputCapability error');
+      console.error(`${TAG}cameraManager.getSupportedOutputCapability error`);
       return;
     }
-    console.info(TAG + 'outputCapability: ' + JSON.stringify(cameraOutputCapability));
+    console.info(`${TAG}outputCapability: ${JSON.stringify(cameraOutputCapability)}`);
     let previewProfile = this.getPreviewProfile(cameraOutputCapability);
     if (previewProfile === undefined) {
-      console.error(TAG + 'The resolution of the current preview stream is not supported.');
+      console.error(`${TAG}The resolution of the current preview stream is not supported.`);
       return;
     }
     this.previewProfileObj = previewProfile;
 
-    // 创建预览输出流,其中参数 surfaceId 参考上文 XComponent 组件，预览流为XComponent组件提供的surface。
+    // 创建预览输出流，其中参数surfaceId参考上文XComponent组件，预览流为XComponent组件提供的surface。
     try {
       this.mPreviewOutput = this.mCameraManager.createPreviewOutput(this.previewProfileObj, surfaceId);
     } catch (error) {
@@ -351,7 +358,7 @@ struct Index {
       this.mPhotoSession = this.mCameraManager.createSession(camera.SceneMode.NORMAL_PHOTO) as camera.PhotoSession;
     } catch (error) {
       let err = error as BusinessError;
-      console.error(TAG + 'Failed to create the session instance. errorCode = ' + err.code);
+      console.error(`${TAG}Failed to create the session instance. errorCode = ${err.code}`);
     }
     if (this.mPhotoSession === undefined) {
       return;
@@ -365,7 +372,7 @@ struct Index {
       this.mPhotoSession.beginConfig();
     } catch (error) {
       let err = error as BusinessError;
-      console.error(TAG + 'Failed to beginConfig. errorCode = ' + err.code);
+      console.error(`${TAG}Failed to beginConfig. errorCode = ${err.code}`);
     }
 
     // 向会话中添加相机输入流。
@@ -373,7 +380,7 @@ struct Index {
       this.mPhotoSession.addInput(this.mCameraInput);
     } catch (error) {
       let err = error as BusinessError;
-      console.error(TAG + 'Failed to addInput. errorCode = ' + err.code);
+      console.error(`${TAG}Failed to addInput. errorCode = ${err.code}`);
     }
 
     // 向会话中添加预览输出流。
@@ -381,7 +388,7 @@ struct Index {
       this.mPhotoSession.addOutput(this.mPreviewOutput);
     } catch (error) {
       let err = error as BusinessError;
-      console.error(TAG + 'Failed to addOutput(previewOutput). errorCode = ' + err.code);
+      console.error(`${TAG}Failed to addOutput(previewOutput). errorCode = ${err.code}`);
     }
 
     // 提交会话配置。
@@ -389,7 +396,7 @@ struct Index {
       await this.mPhotoSession.commitConfig();
     } catch (error) {
       let err = error as BusinessError;
-      console.error(TAG + 'Failed to commit session configuration, errorCode = ' + err.code);
+      console.error(`${TAG}Failed to commit session configuration, errorCode = ${err.code}`);
     }
 
     // 启动会话。
@@ -397,7 +404,7 @@ struct Index {
       await this.mPhotoSession.start()
     } catch (error) {
       let err = error as BusinessError;
-      console.error(TAG + 'Failed to start session. errorCode = ' + err.code);
+      console.error(`${TAG}Failed to start session. errorCode = ${err.code}`);
     }
   }
 
@@ -410,7 +417,7 @@ struct Index {
           })
           .width(this.getUIContext().px2vp(1080))
           .height(this.getUIContext().px2vp(1920))
-        Text('切换相机')
+        Text($r('app.string.switch_camera'))
           .size({ width: 80, height: 48 })
           .position({ x: 1, y: 1 })
           .backgroundColor(Color.White)
@@ -418,7 +425,7 @@ struct Index {
           .borderRadius(24)
           .onClick(async () => {
             this.mCameraPosition = this.mCameraPosition === camera.CameraPosition.CAMERA_POSITION_BACK ?
-            camera.CameraPosition.CAMERA_POSITION_FRONT : camera.CameraPosition.CAMERA_POSITION_BACK;
+              camera.CameraPosition.CAMERA_POSITION_FRONT : camera.CameraPosition.CAMERA_POSITION_BACK;
             await this.loadXComponent();
           })
       }

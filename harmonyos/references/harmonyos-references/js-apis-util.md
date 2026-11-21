@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.util (util工具函数)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util (util工具函数)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:07:22+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:2400f450966053e56251c3e9cf356563783664a9f33723ddd1e7e714e5347484
+scraped_at: 2026-11-21T09:13:52+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:2e8e6ae33dc78bd80aadf458b3047fd2662fbae005c949adfae50bed13f468ca
 ---
 
 该模块主要提供常用的工具函数，实现字符串编解码（[TextEncoder](js-apis-util.md#textencoder)，[TextDecoder](js-apis-util.md#textdecoder)）、有理数运算（[RationalNumber8+](js-apis-util.md#rationalnumber8)）、缓冲区管理（[LRUCache9+](js-apis-util.md#lrucache9)）、范围判断（[ScopeHelper9+](js-apis-util.md#scopehelper9)）、Base64编解码（[Base64Helper9+](js-apis-util.md#base64helper9)）、内置对象类型检查（[types8+](js-apis-util.md#types8)）、对方法进行插桩和替换（[Aspect11+](js-apis-util.md#aspect11)）、虚拟机维测能力（[ArkTSVM23+](js-apis-util.md#arktsvm23)）、二进制流解码（[StringDecoder12+](js-apis-util.md#stringdecoder12)）、堆内存阈值配置（[HeapMemoryThreshold24+](js-apis-util.md#heapmemorythreshold24)）等功能。此外还提供获取对象Hash值（[util.getHash12+](js-apis-util.md#utilgethash12)）、获取主线程栈追踪信息（[util.getMainThreadStackTrace20+](js-apis-util.md#utilgetmainthreadstacktrace20)）等工具函数。
@@ -3633,6 +3633,7 @@ encodeToStringSync(src: Uint8Array, options?: Type): string
 **示例：**
 
 ```ts
+import { util } from '@kit.ArkTS';
 // MIME编码
 let base64Helper = new util.Base64Helper();
 let array =
@@ -3650,7 +3651,10 @@ console.info("result = " + result);
 aW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl
 aGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=
  */
+```
 
+```ts
+import { util } from '@kit.ArkTS';
 // BASIC编码
 let base64Helper = new util.Base64Helper();
 let array =
@@ -3666,7 +3670,10 @@ console.info("result = " + result);
 /*
 输出结果：result = TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNzaW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZlaGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=
  */
+```
 
+```ts
+import { util } from '@kit.ArkTS';
 // BASIC_URL_SAFE编码
 let base64Helper = new util.Base64Helper();
 let array =
@@ -3682,6 +3689,10 @@ console.info("result = " + result);
 /*
 输出结果：result = TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNzaW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZlaGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU
  */
+```
+
+```ts
+import { util } from '@kit.ArkTS';
 // MIME_URL_SAFE编码
 let base64Helper = new util.Base64Helper();
 let array =

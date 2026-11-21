@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 拍照(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 拍照(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:05+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:fec368d4a57064a03606675c490184e9525161a59f14fd0cd0d7e24a062a660f
+scraped_at: 2026-11-21T09:12:02+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:a35ae7683da6bd0efbed4c445dc65a15c9e7d1aaf6d212ba4bc6652557b665db
 ---
 
 ## 概述
@@ -46,6 +46,7 @@ content_hash: sha256:fec368d4a57064a03606675c490184e9525161a59f14fd0cd0d7e24a062
    #include "ohcamera/video_output.h"
    #include "napi/native_api.h"
    #include "ohcamera/camera_manager.h"
+   #include "ohcamera/camera_device.h"
    #include <window_manager/oh_display_info.h>
    #include <window_manager/oh_display_manager.h>
 
@@ -303,7 +304,7 @@ content_hash: sha256:fec368d4a57064a03606675c490184e9525161a59f14fd0cd0d7e24a062
              return;
          }
          OH_LOG_INFO(LOG_APP, "BufferCb copyBuffer:%{public}p", copyBuffer);
-         // 使用std::memcpy复制buffer的内容到copyBuffer。
+         // 使用 std::memcpy 复制 buffer 的内容到 copyBuffer。
          std::memcpy(copyBuffer, buffer, size);
          napi_create_string_utf8(env_, "BufferCb", NAPI_AUTO_LENGTH, &asyncResourceName);
          napi_status status = napi_create_async_work(
@@ -374,15 +375,15 @@ content_hash: sha256:fec368d4a57064a03606675c490184e9525161a59f14fd0cd0d7e24a062
        if (ret == CAMERA_OK) {
            OH_LOG_INFO(LOG_APP, "OH_CaptureSession_SetFlashMode success.");
        } else {
-           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetFlashMode failed. %{public}d ", ret);
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetFlashMode failed. %{public}d.", ret);
        }
 
        // 获取当前设备的闪光灯模式。
        ret = OH_CaptureSession_GetFlashMode(captureSession_, &flashMode);
        if (ret == CAMERA_OK) {
-           OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetFlashMode success. flashMode：%{public}d ", flashMode);
+           OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetFlashMode success. flashMode: %{public}d.", flashMode);
        } else {
-           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetFlashMode failed. %d ", ret);
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetFlashMode failed. %{public}d.", ret);
        }
        return ret;
    }
@@ -432,7 +433,7 @@ content_hash: sha256:fec368d4a57064a03606675c490184e9525161a59f14fd0cd0d7e24a062
        if (captureSession_ == nullptr || ret != CAMERA_OK) {
            OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetZoomRatioRange failed.");
        } else {
-           OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetZoomRatioRange success. minZoom: %{public}f, maxZoom:%{public}f",
+           OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetZoomRatioRange success. minZoom: %{public}f, maxZoom: %{public}f.",
                minZoom, maxZoom);
        }
 
@@ -441,15 +442,15 @@ content_hash: sha256:fec368d4a57064a03606675c490184e9525161a59f14fd0cd0d7e24a062
        if (ret == CAMERA_OK) {
            OH_LOG_INFO(LOG_APP, "OH_CaptureSession_SetZoomRatio success.");
        } else {
-           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetZoomRatio failed. %{public}d ", ret);
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetZoomRatio failed. %{public}d.", ret);
        }
 
        // 获取当前设备的缩放比例。
        ret = OH_CaptureSession_GetZoomRatio(captureSession_, &zoom);
        if (ret == CAMERA_OK) {
-           OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetZoomRatio success. zoom：%{public}f ", zoom);
+           OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetZoomRatio success. zoom: %{public}f.", zoom);
        } else {
-           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetZoomRatio failed. %{public}d ", ret);
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetZoomRatio failed. %{public}d.", ret);
        }
        return ret;
    }

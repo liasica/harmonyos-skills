@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audiorenderer.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audiorenderer.h
 category: harmonyos-references
-scraped_at: 2026-11-19T09:53:26+08:00
-doc_updated_at: 2026-11-18
-content_hash: sha256:46066e8fce5b25cfab72d6896adc7a066cf3b715038258b4740ddd0b3974a75c
+scraped_at: 2026-11-21T09:15:53+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:bbab7ca7cdc87b90faa6d1888d57706eb819a3d280746f437d8332a5e60ef6cb
 ---
 
 ## 概述
@@ -1012,7 +1012,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetLoudnessGain(OH_AudioRenderer* rendere
 
 音频流的时延模式必须是普通时延[OH\_AudioStream\_LatencyMode](capi-native-audiostream-base-h.md#oh_audiostream_latencymode).AUDIOSTREAM\_LATENCY\_MODE\_NORMAL。
 
-本接口不支持通过高清通路播放的音频流设置响度。
+从API版本26.0.0开始，本接口支持对通过高清通路播放的音频流设置响度；低于该版本时高清通路音频流不支持设置响度。
 
 由于音频框架与硬件之间存在缓冲区，响度调节实际生效存在延迟，时长取决于缓冲区长度。
 

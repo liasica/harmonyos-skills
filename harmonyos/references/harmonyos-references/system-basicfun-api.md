@@ -3,12 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/system-ba
 title: 基础功能
 breadcrumb: API参考 > 系统 > 基础功能
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:50+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:677a3ce5e56cc06f2a02bcbc617ce6c3dc5fb7440f07823c56e7aea663c41eaf
+scraped_at: 2026-11-21T09:15:26+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:a3db878baf5f9f19ac8e3d21b8498a0679d874b386cd85b478cf12debe01d478
 ---
 
-* **[Automatic Scene Configuration Kit（场景配置服务）](automatic-scene-configuration-api.md)**
 * **[Basic Services Kit（基础服务）](basic-services-api.md)**
 * **[Desktop Extension Kit（桌面拓展服务）](status-bar-extension-api.md)**
 * **[Enterprise Foundation Kit（企业办公开发服务）](enterprise-foundation-api.md)**

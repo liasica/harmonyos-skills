@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ble-developme
 title: 查找设备
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 低功耗蓝牙 > 查找设备
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:43+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:0d451db6324c906dd73da300ba423fecdd7bebcdbf2611d035a2c2ae1f1aeee3
+scraped_at: 2026-11-21T09:11:39+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:966be03670fb58541ffc3bea9bbf061b005d36d17316293a3cb61bc8b32b937b
 ---
 
 ## 简介
@@ -17,6 +17,10 @@ content_hash: sha256:0d451db6324c906dd73da300ba423fecdd7bebcdbf2611d035a2c2ae1f1
 ### 申请蓝牙权限
 
 需要申请权限ohos.permission.ACCESS\_BLUETOOTH。如何配置和申请权限，请参考[声明权限](declare-permissions.md)和[向用户申请授权](request-user-authorization.md)。
+
+### 查询是否支持蓝牙
+
+调用[isBluetoothSupported](../harmonyos-references/js-apis-bluetooth-access.md#accessisbluetoothsupported)接口查询该设备是否支持蓝牙，支持后再进行后续步骤；不支持时，请勿使用相关接口。
 
 ### 导入所需API模块
 

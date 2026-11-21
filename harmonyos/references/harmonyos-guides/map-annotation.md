@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-annotatio
 title: 点注释
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 点注释
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:05+08:00
+scraped_at: 2026-11-21T09:12:31+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f9f7f0df68c24e438ffe00ff7b789e7441fcb0ae1a67d4c6ac2f8a207000d349
+content_hash: sha256:a81ca4d4e94c135e7fe7857b7377da1a8f35b39f8a9bc61da35b02a477a2ea49
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:f9f7f0df68c24e438ffe00ff7b789e7441fcb0ae1a67d4c6ac2f8a20700
 
 [PointAnnotation](../harmonyos-references/map-map-pointannotation.md)有默认风格，同时也支持自定义。由于内容丰富，以下只展示一些基础功能的使用，详细内容可参见[接口文档](../harmonyos-references/map-map-pointannotation.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Itv0cphRRjeDflZdw-_WXg/zh-cn_image_0000002791726478.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=5747931C746E92B6E42CE2A9F4FA70087B830ACA736F570E9535B32A1B7FD7FD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/00Q58wNXTniAEMG1QW056g/zh-cn_image_0000002821838065.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=56F23867FFD0A6F8259F268A6B913B0D4F066A1A3A7CA9C53186ACF6304AED73 "点击放大")
 
 ## 接口说明
 
@@ -136,7 +136,7 @@ content_hash: sha256:f9f7f0df68c24e438ffe00ff7b789e7441fcb0ae1a67d4c6ac2f8a20700
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/VKyeQzWkQwGAfRA2Q5Iflw/zh-cn_image_0000002791566506.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0BE1EEB4F8D02B4671289E2AB01973F9906C5DA30B566CBCB5287FB66E59565 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/j5nf-MbYTZW-ZJEtcOIAGw/zh-cn_image_0000002821758067.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=79BE489F02197C133FC009FFFA2A837DFBBC58B8C4A1D5E7823038E6AB004194 "点击放大")
 3. 在添加点注释之后，修改已经设置的点注释属性。
 
    ```typescript
@@ -187,7 +187,7 @@ this.pointAnnotation.setAnimation(animation);
 this.pointAnnotation.startAnimation();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/42YszUwZQu2CFCnJKXd5sA/zh-cn_image_0000002820526459.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=69FC5542C5FD23B5BED894AE276B0C250890990DCDCA32A949DFC08C3E6F6348 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/6k4YjkcqS-K7a1iyFFsAEg/zh-cn_image_0000002793038130.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=A73E048A9CE0CDB4E52CE7F69D38324D78614A26A31FF55E13962CCAA5F54D03 "点击放大")
 
 ### 点注释标题动画
 
@@ -221,4 +221,4 @@ this.pointAnnotation.setTitleAnimation(animation);
 this.pointAnnotation.startTitleAnimation();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/i2AW8hCNQX6eTJIuMZQ40w/zh-cn_image_0000002820406459.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=65FDB5E547188707380C14F57AAD6A0C9D0BAB31AD664E0AE1DFCC1835F37BE3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/ECgOBs9IRqGe-7nywvEjIg/zh-cn_image_0000002792878160.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B98F176097F2CB98E0D307FE213C6ADA328DF957E6C95163AC39B18D1F36DDF "点击放大")

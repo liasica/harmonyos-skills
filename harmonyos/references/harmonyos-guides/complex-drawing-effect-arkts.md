@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawi
 title: 复杂绘制效果（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 绘制效果 > 复杂绘制效果（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:45+08:00
+scraped_at: 2026-11-21T09:12:11+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b271a42c2b8da2b06543663f5ed89d20cf60ab5d239f201ecc4b86ba20fc8b69
+content_hash: sha256:d03a4e17fc8ac059d84cc2d411486aa445488b242cd6288c7e516a03f3968192
 ---
 
 除了基础填充颜色、描边颜色和一些样式设置的绘制效果外，还支持通过画刷和画笔实现更多复杂的绘制效果。比如：
@@ -53,7 +53,7 @@ function drawRenderNode(canvas: drawing.Canvas) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/PQkOaSptSnWAY6xM7FIGBQ/zh-cn_image_0000002820526023.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=A22501A4E9C0F3F51F02A647E7649F6679D0FC2FC249A14DABFA48139F799FA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/yTnmg3VzScWkn-TscNiqwA/zh-cn_image_0000002793037694.png?HW-CC-KV=V1&HW-CC-Date=20261121T011044Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F1BAFB9F02D3C5C195E62A105E183E87988EDC66836A28778B63138520CFE97)
 
 ## 路径效果
 
@@ -144,7 +144,7 @@ canvas.drawRect(rect);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/BzijsUh5QX-vHqc1Kfljig/zh-cn_image_0000002791566072.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7921BC5EA7019AE3837D99199926B78A3199CA213B9AA55B4E3D9EBCAEA8149)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/c2NKKTGDQum6AFlqe6Wg7w/zh-cn_image_0000002821757633.png?HW-CC-KV=V1&HW-CC-Date=20261121T011044Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1703ACDB2F99E7EF6DA8F19D4209B00C0F08D47FF79D1078CE0E09B01C51AE6)
 
 ### 径向渐变着色器效果
 
@@ -177,7 +177,7 @@ canvas.drawRect(rect);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/tlarmlCLTv2HbhECLbKRdA/zh-cn_image_0000002820526025.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BDE965B1CF704668573EE09251083F034041AFBA96B6AF23A73B9B119110DE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/_5AflIDVReGY-3EroNeuXw/zh-cn_image_0000002793037696.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011044Z&HW-CC-Expire=31536000000&HW-CC-Sign=D73BBB79122AFEA1AABF1D9BA4D82C0706DD0FD2E42DB5F6FF3A45CC21CF824D)
 
 ### 扇形渐变着色器效果
 
@@ -210,7 +210,7 @@ canvas.drawRect(rect);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/gaqBd8IPRD2Hld4N6QbSDQ/zh-cn_image_0000002820406025.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=62D29DE58DB696264B7629EDB15ABC022A4DDD2E35D5DD094FB68B6647EBDB04)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/KIzud3iRQUWDxg_2R0l9hQ/zh-cn_image_0000002792877726.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011044Z&HW-CC-Expire=31536000000&HW-CC-Sign=121B6D2EB423F0F9E5CC8311B3C1FD743CB61BB67D070CC11722645A8821BB43)
 
 ## 滤波器效果
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault
 title: 账号密码保存
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 自动保存 > 账号密码保存
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:00+08:00
+scraped_at: 2026-11-21T09:11:27+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:da4d3017c2b20871eeef9220f5f86d89ca4d0603b2cf4da01e5fb4c221d709cc
+content_hash: sha256:c99a595149a66e8f41a6a3e267b5deafdeaf5780eba755f48324844acee53c14
 ---
 
 密码保险箱在应用的登录、注册、修改密码等场景中具备自动保存用户名和密码的能力。
@@ -14,7 +14,7 @@ content_hash: sha256:da4d3017c2b20871eeef9220f5f86d89ca4d0603b2cf4da01e5fb4c221d
 
 当应用界面触发账号密码自动保存时，若密码保险箱中不存在同应用下的相同账号，系统将弹出账号密码保存提示框，用户点击“保存密码”按钮后，本次使用的账号和密码将被保存至密码保险箱。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/QE7N7PIsQlKymNud6qcjOQ/zh-cn_image_0000002791565692.png?HW-CC-KV=V1&HW-CC-Date=20261119T014710Z&HW-CC-Expire=31536000000&HW-CC-Sign=1278CBDE715460B1E47F62CCA51BD07A82461B18C8C27B7E2684F9AEB94145DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/5XBYT214Q8y9s0WKtO9Arw/zh-cn_image_0000002821757253.png?HW-CC-KV=V1&HW-CC-Date=20261121T011002Z&HW-CC-Expire=31536000000&HW-CC-Sign=068154841EB06C84E3B964566B1364C455AFE29028760E3A5AE7C98F563B65F9)
 
 当应用触发账号登录或注册时，均可触发保存功能，以下分别介绍两种布局的标准适配场景。
 
@@ -37,7 +37,7 @@ content_hash: sha256:da4d3017c2b20871eeef9220f5f86d89ca4d0603b2cf4da01e5fb4c221d
 
 ## 账号密码登录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Cv0zC3PNQHq7edjo3zXEIw/zh-cn_image_0000002820525645.png?HW-CC-KV=V1&HW-CC-Date=20261119T014710Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAFEB6FDF5DF8ECB5FEE723218E9E39E2D58D487C9516A7A10F7205B9B7A6B99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/vgX_fkieR4-JTwEp2CWDnQ/zh-cn_image_0000002793037316.png?HW-CC-KV=V1&HW-CC-Date=20261121T011002Z&HW-CC-Expire=31536000000&HW-CC-Sign=104A7B9667584B3BB8DFA539B45C9D395EB8DD73A2D00DC9ECD4CB8FB9829229)
 
 示例代码如下：
 
@@ -135,7 +135,7 @@ function commonButtonStyles() {
 
 ## 账号密码注册
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/4QvoFv1dRjicBcAEIVtsnQ/zh-cn_image_0000002820405645.png?HW-CC-KV=V1&HW-CC-Date=20261119T014710Z&HW-CC-Expire=31536000000&HW-CC-Sign=532EA3D9A288A0992C5FB9A18854DB6CA2F97F77242CC0543A35432570F640CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/-buIz5dvTl-EGuAXcYo2yw/zh-cn_image_0000002792877346.png?HW-CC-KV=V1&HW-CC-Date=20261121T011002Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AC6C230E7BC4F902B8B60D18365A53E9C61F0C41BEB5AAC9F5DA739F8CAA0EE)
 
 示例代码如下：
 

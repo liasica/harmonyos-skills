@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state
 title: "@State装饰器：组件内状态"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @State装饰器：组件内状态
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:36+08:00
+scraped_at: 2026-11-21T09:11:02+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:66edd5a47d95e745445589af7c73bf7e8b437c3e4c73376e078a27826c265f1d
+content_hash: sha256:7761448cd72508cd9962d8baa39c56de76a5601e450b9046878fec40dc57c64f
 ---
 
 被状态变量装饰器装饰的变量称为状态变量，使普通变量具备状态属性。当状态变量改变时，会触发其直接绑定的UI组件渲染更新。
@@ -48,7 +48,7 @@ content_hash: sha256:66edd5a47d95e745445589af7c73bf7e8b437c3e4c73376e078a27826c2
 
 **图1** 初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/H7GeCbB8SJCZNvKEAktLdw/zh-cn_image_0000002791564622.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=59C9C07080D1187E61DB76ABC617162C7D1F9B2D17E2F7DD5A2CB363AA0E5B02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/-SKRDQFNQACd2RdgQMRY1A/zh-cn_image_0000002821756177.png?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA6B0F167AA338E628BED42C13DD2AEF32941DD89AD9681F6764717B3FE75B10)
 
 ## 观察变化和行为表现
 
@@ -205,7 +205,7 @@ content_hash: sha256:66edd5a47d95e745445589af7c73bf7e8b437c3e4c73376e078a27826c2
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/VhhiGb7QQb2V_KG4f0he-g/zh-cn_image_0000002820524573.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8F23E2B9171ADA708366C5943E82FD90284F2D041FE675118D40A07AE32B103)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/_7YE2PL3T5GE3Kw3Q7v6sA/zh-cn_image_0000002793036242.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DC15F9CDC11242236CE42DEBB9A62126DB5E4341E632127D266836A066278BA)
 
 ### 装饰class对象类型的变量
 
@@ -265,7 +265,7 @@ content_hash: sha256:66edd5a47d95e745445589af7c73bf7e8b437c3e4c73376e078a27826c2
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/-ItYEFTCSNy6jO0eK3-Zsg/zh-cn_image_0000002820404573.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=888067060B4E356E3B341669D24EEBB6E521B92F5562E82FCAAD147CAC195E81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/0C74MPaWRcyMs96ieIIFBw/zh-cn_image_0000002792876274.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC295F9E6FA397D2CDD043577B32BD7E9350F72BFA9EC251858903E5BF4EB3A1)
 
 ### 装饰Array类型变量
 
@@ -336,7 +336,7 @@ struct ArraySample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/piZNeqAQR-yHHXBKauRZpQ/zh-cn_image_0000002791724596.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=87F0442DD145A517BA4F8FC7BB53082C1EAED0E1A3812F6D2818AEF670E59AF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/t79PeZAvQnqQrW_SltHWvA/zh-cn_image_0000002821836179.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=74B456F74E7F726F60B4F2B41513114823EFDF7E81FF1013073192D57B98CA87)
 
 ### 装饰Map类型变量
 
@@ -403,7 +403,7 @@ struct MapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/mQtZHTxaTXWsypKMnFST1Q/zh-cn_image_0000002791564624.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5EE3AA3C57D8F1889A5BBB021C883F69695DC57BCA3140A8404CE252DB4E7B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/wLhBo_EcQCCZGUehUw7TRA/zh-cn_image_0000002821756179.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=96342DE33B1F6EA3B0E816D83F4F01BE688ECD32F755FAFDD9EB2FBFD7C66972)
 
 ### 装饰Set类型变量
 
@@ -463,7 +463,7 @@ struct SetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/R1UOyD9CR26mTki_iEt7zg/zh-cn_image_0000002820524575.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=F899CBE6B86600C8AC51B06979C24A9FD356D51950DB873327A5720F422B2D5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/scWxRPLLSFSR8HNN32GhNA/zh-cn_image_0000002793036244.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=50D691976CA16E2E17C538D2475966E6EF60427422374A2D2E6EF7AD463275BC)
 
 ### 装饰Date类型变量
 
@@ -519,7 +519,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/CB6OosJAT_6jqHUBaocKgA/zh-cn_image_0000002820404575.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=09746E5BDD454F2373C351282644E16F48FFC06EB1D1010AF65EBDB603711F6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/0DX_oVO7Qx23MbwCH8chuQ/zh-cn_image_0000002792876276.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=59FFB31C94059E2E5AC6DC3DB3BE505C1E6970FF05FFB1396666A4C4A40F24EF)
 
 ### @State支持联合类型实例
 
@@ -557,4 +557,4 @@ struct UnionTypeSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ThakvfkDRBqnp_cg5l56Dg/zh-cn_image_0000002791724598.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAFAFEAD78E621E3DB627FE5C918DAAC88CDA82D1B59A72E293B4FF347AABEAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/EiWII8ShQ2KgPk5WOev16g/zh-cn_image_0000002821836181.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=8021F6D22572992ABC2D02FCC3EAEA74A71AFED70434C8052F4DF94FEB89C693)

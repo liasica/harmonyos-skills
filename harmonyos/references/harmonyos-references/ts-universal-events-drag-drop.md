@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 拖拽事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 拖拽事件
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:48+08:00
+scraped_at: 2026-11-21T09:14:01+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8d870e5525309c76d286539b87776a911b720e4877499d23e1a30ab2f203a30c
+content_hash: sha256:5d38a2ad5a8db0a631ddb11e7a6838b67354ed87cb4b22fc1926c87ef3569848
 ---
 
 拖拽事件是指在用户界面中，当用户拖动某个对象（如文件、控件或元素）时触发的一系列事件。这些事件允许开发者自定义拖拽行为，实现诸如拖放、调整位置等功能。
@@ -1153,7 +1153,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/hpgb0B-zRE-Qn174nYtz0w/zh-cn_image_0000002791567018.png?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BF7829F7D9E48E26320F1797B0A1DA0DB179CBAFEE170A9A06D817DE0C5DD8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/EKcOz3c8QGigg3Z5mKzVpQ/zh-cn_image_0000002792878672.png?HW-CC-KV=V1&HW-CC-Date=20261121T011400Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FA66D9BDD8D15C94F765A6AF98DA130BFC07D40332ABEAA8E6A5346C6D2756B)
 
 ### 示例2（自定义落位动效）
 
@@ -1238,7 +1238,7 @@ struct DropAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/82SImFIMTweL_AIuRmZ87g/zh-cn_image_0000002820526971.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=77577F8CFD0B840D392A01150F6C08BBFBC382D71815B00517BE3AD91E4E638C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/esdOtV76TgSwrLgB5dwYUg/zh-cn_image_0000002821838579.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011400Z&HW-CC-Expire=31536000000&HW-CC-Sign=37F5D710680E68BE037E2FC3D5E33305A17FC298F809A427A16D365020020261)
 
 ### 示例3（拖拽异步获取数据）
 
@@ -1539,7 +1539,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/OEzhuSXDQ32_Xxnmd652Vw/zh-cn_image_0000002820406971.png?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F6CA7AEDB3E269DF650843992AF107C7E1DC2F611BF3EE71E7889AA615E1702)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/DhEjoYXMSBWXnsaXd2ysKA/zh-cn_image_0000002821758581.png?HW-CC-KV=V1&HW-CC-Date=20261121T011400Z&HW-CC-Expire=31536000000&HW-CC-Sign=536057CB3702439167EA0B9AAFA5E5062AB1E28F270556CE9C40C2D86598DB86)
 
 ### 示例5（获取包名和是否是跨设备）
 
@@ -1622,7 +1622,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/l6DeyvqBSJeH2LKi7q8v9w/zh-cn_image_0000002791726992.png?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E51C25C896F4FB7EEB3DDF12E7413F400831D2939781BE812D04F8CB99E6ABE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/ZCEbt_voRN66fRk8qf2t9A/zh-cn_image_0000002793038644.png?HW-CC-KV=V1&HW-CC-Date=20261121T011400Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E804DCCB0CB0B99F46FE04FE713471CA537CF8CD34278D70C26F1D1B8897C0A)
 
 ### 示例6（拖拽支持悬停检测）
 
@@ -1706,7 +1706,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/orhhdDnwSDad83DNLY0zZw/zh-cn_image_0000002791567020.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D06ABB669AEB951A449EA82F2D0FCED5D698F5F045989D79DD23A809C4C2A1D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/OJlu4kUYRvyKMAz4V1Gd_A/zh-cn_image_0000002792878674.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011400Z&HW-CC-Expire=31536000000&HW-CC-Sign=600E3657A7BF8D6B97EF3BAF8869B8BA469B503F59183809BFB4C7B4CA359BE0)
 
 ### 示例7（拖起方延迟提供数据）
 
@@ -1861,7 +1861,7 @@ struct VideoExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/_o9n4ctiSoyiuS5rYUsxKw/zh-cn_image_0000002820526973.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=49CB5E791686C8AFA41A5AB2D974A6D5447D18650029D9779F89B715A0BEF50E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/PgVc642vTLufbMgJKZvmyQ/zh-cn_image_0000002821838581.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011400Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB8E410A03B58D747556AC06E0000C3374AE0B3A532784D131FE57E5B659B409)
 
 ### 示例8（拖拽自动隐藏指定组件）
 
@@ -1987,4 +1987,4 @@ struct DragEventAutoHideSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/qWIN1bFeThiExMGy6F4k4g/zh-cn_image_0000002820406973.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A230CABA40DF4A57BCD70EBF4903DA05CD6B198BC9508D43CB9EB7E165232F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/QTqnVJn1RimxDXun2Ecjvg/zh-cn_image_0000002821758583.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011400Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5C8FA1EE91375D441560391DC6156EF22B58B45A4837BB20B6A25A593E50B61)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scan-4
 title: 扫码界面如何监听无操作返回事件
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan） > 扫码界面如何监听无操作返回事件
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:33028457e8f66891c895f4955303c17d59a9f6687187a480ee8cfdd996619097
+scraped_at: 2026-11-21T09:19:03+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:ab48972575fd3409fb8c1836e03d234e4989233d404b42aa1eed18097dba9945
 ---
 
 ## 问题现象
@@ -29,7 +29,7 @@ content_hash: sha256:33028457e8f66891c895f4955303c17d59a9f6687187a480ee8cfdd9966
 
 默认界面扫码效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/g7P1C0vTSQi382l-2JJF3g/zh-cn_image_0000002628552516.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=B213463F3EB3F072010580E5B603C1FB5DAD978D3F930475A1D3B82F15A3052C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/XHSp0_t4SsWPkChP_xdTwA/zh-cn_image_0000002628552516.png?HW-CC-KV=V1&HW-CC-Date=20261121T011903Z&HW-CC-Expire=31536000000&HW-CC-Sign=A732E2FF039C00DD924EFFD20D33457BD4F5A30900870F7648B58EAB4BEAC363 "点击放大")
 
 ## 背景知识
 
@@ -51,7 +51,7 @@ content_hash: sha256:33028457e8f66891c895f4955303c17d59a9f6687187a480ee8cfdd9966
 
 1. 默认扫码页面直接用回调的错误码1000500002判断。
 
-   使用[scanBarcode.startScanForResult](../harmonyos-references/scan-scanbarcode-api.md#startscanforresult)函数，并在回调函数error中判断错误码是否为1000500002，如果是则处理无操作返回事件。
+   使用[scanBarcode.startScanForResult](../doccenter-references/api/scan-scanbarcode-api.md#scanbarcodestartscanforresult-2)函数，并在回调函数error中判断错误码是否为1000500002，如果是则处理无操作返回事件。
 
    ```ts
    import { scanCore, scanBarcode } from '@kit.ScanKit';

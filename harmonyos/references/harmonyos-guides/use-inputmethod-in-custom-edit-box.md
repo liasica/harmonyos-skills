@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-inputmeth
 title: 在自绘编辑框中使用输入法
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 在自绘编辑框中使用输入法
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:57+08:00
+scraped_at: 2026-11-21T09:11:23+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:fc2169ff9518983047c20ac1e88ee996085eb3f42d7d58bb9d9b97d8c1de0695
+content_hash: sha256:c46bed944249a2e6d763702bf6959248c4ccb59b9142f5f21c200d574cbe2782
 ---
 
 在输入法框架中，可以通过[getController](../harmonyos-references/js-apis-inputmethod.md#inputmethodgetcontroller9)方法获取到[InputMethodController](../harmonyos-references/js-apis-inputmethod.md#inputmethodcontroller)实例来绑定输入法并监听输入法应用的各种操作，比如插入、删除、选择、光标移动等。这样就可以在自绘编辑框中使用输入法，并实现更加灵活和自由的编辑操作。
@@ -141,7 +141,7 @@ content_hash: sha256:fc2169ff9518983047c20ac1e88ee996085eb3f42d7d58bb9d9b97d8c1d
 
    在应用的entry/src/main/resources/base/profile目录下创建配置文件easy\_go.json（示例文件名，可自行命名）。在[module.json5](module-configuration-file.md)配置文件中添加easyGo字段，并指向引用的easy\_go.json配置文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Qxydvxc6SienCvud7-vgNA/zh-cn_image_0000002820525597.png?HW-CC-KV=V1&HW-CC-Date=20261119T014757Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE7FE5C484E12BB1C171B123171635B70B695006E7BA2757739191F908991ED8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/p51RfnmfQw-BK9OziEM5DQ/zh-cn_image_0000002793037268.png?HW-CC-KV=V1&HW-CC-Date=20261121T010958Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A137EEA1116F08D9736F258A76B2B8DEBA8BD14FA9710310FC1573896513297)
 2. 增加物理数字键转换配置
 
    在easy\_go.json配置文件中，配置自绘编辑框接收数字物理键盘输入能力相关属性。
@@ -210,4 +210,4 @@ easy\_go.json是一个标准的Object类型JSON文件，整体结构分为两层
 
 ## 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/S_2ylMHzTYev2S6PE3JwTg/zh-cn_image_0000002820405597.png?HW-CC-KV=V1&HW-CC-Date=20261119T014757Z&HW-CC-Expire=31536000000&HW-CC-Sign=5323B2276056D53A52A9CFF2283C76DF2EF8454F98E3BE2305B234C75B630A27)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/a7xJMisYQDaIQz3muvP2Sw/zh-cn_image_0000002792877298.png?HW-CC-KV=V1&HW-CC-Date=20261121T010958Z&HW-CC-Expire=31536000000&HW-CC-Sign=68E82ACCEF3D8E38C22510A8204B363A3F96418CA49B62F958827DF38FF629A2)

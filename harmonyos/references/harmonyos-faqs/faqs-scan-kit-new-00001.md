@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scan-kit-n
 title: 如何获取扫码成功的那一帧图像
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan） > 如何获取扫码成功的那一帧图像
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:cdab215cd9c4e3219362df52a2253800698ae51513606d0c888974a432c6c364
+scraped_at: 2026-11-21T09:19:03+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:1976e236136a2a8962f212b583ee5d82d1ffbecd714e4bf357b0c53cf81d014b
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ content_hash: sha256:cdab215cd9c4e3219362df52a2253800698ae51513606d0c888974a432c
 
 ## 解决方案
 
-当前[customScan.start](../harmonyos-references/scan-customscan-api.md#start-1)支持获取扫码的图像流，但是不能保证获取到稳定清晰的码图图像，因此本文主要介绍的是如何使用双路预览+图像识码的方式来完成码图识别和码图保存。
+当前[customScan.start](../doccenter-references/api/scan-customscan-api.md#customscanstart-1)支持获取扫码的图像流，但是不能保证获取到稳定清晰的码图图像，因此本文主要介绍的是如何使用双路预览+图像识码的方式来完成码图识别和码图保存。
 
 本文主要思路是利用双路预览中用于图像处理的那一路预览流，从中获取图像帧数据，获取数据后调用图像识码的接口，如果成功识别到码值则将解析出来的码值返回以供后续业务处理，同时保留当前的帧图像作为码图留档。
 
@@ -488,7 +488,7 @@ struct Index {
 
 ## **常见FAQ**
 
-Q：如何通过[customScan.start](../harmonyos-references/scan-customscan-api.md#start-1)接口的frameCallback回调去获取扫码成功的那一帧图像？
+Q：如何通过[customScan.start](../doccenter-references/api/scan-customscan-api.md#customscanstart-1)接口的frameCallback回调去获取扫码成功的那一帧图像？
 
 A：当前还无法精准获取识别成功的码图图像，可关注Scan Kit后续的版本迭代。
 

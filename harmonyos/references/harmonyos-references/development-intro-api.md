@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/developme
 title: 开发说明
 breadcrumb: API参考 > API参考概述 > 开发说明
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:07+08:00
+scraped_at: 2026-11-21T09:13:31+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:1091b8141ef55f4964dc360b6ab33c2dada963a094686b59d03bda385ff63026
+content_hash: sha256:83d73bdb3aeee74e2fdb40c5672e5b3746b03b11f1a876d6f9679b8cdf7c21b4
 ---
 
 API参考主要用于开发者查阅应用开发相关的各类API说明。为了方便开发者使用API文档，对文档描述中的常用字段进行说明。
@@ -23,7 +23,7 @@ API参考采用两种方式标记组件或接口开始支持的版本号：
 
 建议开发者同步勾选"只看筛选内容"，查阅当前使用的SDK支持的API接口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/NBaSr4VMQUS9R2EIHWk0xw/zh-cn_image_0000002820526863.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014911Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D30D2AB115BEEB909522F0D3E7266035C2D0A9104314BA52552931F1078B7B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/UtGTJpGxSumK0lElwYXNQw/zh-cn_image_0000002821838471.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011206Z&HW-CC-Expire=31536000000&HW-CC-Sign=16443E0906A9B5CD6B0956F6D83026F1A36283522C0449D9592A733FBCCD4A00)
 
 ## 支持设备说明
 
@@ -37,7 +37,7 @@ API参考采用两种方式标记组件或接口开始支持的版本号：
 
 建议开发者同步勾选"只看筛选内容"，查阅对应设备支持的API接口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/o3A_Q_diRgaREH8s4fm5ng/zh-cn_image_0000002820406863.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014911Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDFA02EFA318A050AF9DA0C2CF0CB6B75C74A9BFC345309B37A1279D0A6535C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/GwdfY7aIS8-dV_67A50fTQ/zh-cn_image_0000002821758473.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011206Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A5DA326299191A1F2CA9BB125707E35B1AD9EA9F96F2C49FB1A795AAF735B2D)
 
 ### 接口在各设备类型的起始版本标记
 
@@ -45,7 +45,7 @@ API参考采用两种方式标记组件或接口开始支持的版本号：
 
 标记示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/tFhYCaA-RoKKvZT_uQaxXA/zh-cn_image_0000002791726884.png?HW-CC-KV=V1&HW-CC-Date=20261119T014911Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0F77EC7B8AA2242C5E4A7C8309BE44845056A092D603A6C8DD3323F7F0ACBD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/Z3PP0VKVQ0i1iz06wBSDvg/zh-cn_image_0000002793038536.png?HW-CC-KV=V1&HW-CC-Date=20261121T011206Z&HW-CC-Expire=31536000000&HW-CC-Sign=52E9EAC554EDD7FD0C76AFF33C40634621BD0E3CE15E0C8FA27A1CBB6E681039)
 
 **标记适用范围说明：**
 

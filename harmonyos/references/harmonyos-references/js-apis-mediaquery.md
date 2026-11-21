@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-m
 title: "@ohos.mediaquery (媒体查询)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.mediaquery (媒体查询)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:42+08:00
+scraped_at: 2026-11-21T09:13:56+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:fe9de7f0474a268e1e474059664850a897720a62f1a69b9d941df7f439201e88
+content_hash: sha256:6e62f26e417754643fc2ebcf83f1e6099bf3fb29028602879ded82cb3d9af937
 ---
 
 提供根据不同媒体类型定义不同的样式。
@@ -197,4 +197,4 @@ struct MediaQueryExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/XFzxSfbzSiKjyj2d4-1_Yw/zh-cn_image_0000002791566970.png?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=447ADE9860F24494153CB5A43846E76F4740F8FF7F29B900E0900870A93BF3B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/41vhSMyMShKzPJQseNOwKA/zh-cn_image_0000002792878624.png?HW-CC-KV=V1&HW-CC-Date=20261121T011241Z&HW-CC-Expire=31536000000&HW-CC-Sign=35D85D50A895F95969CDA7FACF056AAB266E3CE7E3873F2529A15525B63AFF15)

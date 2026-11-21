@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observe
 title: "@Observed装饰器和@ObjectLink装饰器：嵌套类对象属性变化"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Observed装饰器和@ObjectLink装饰器：嵌套类对象属性变化
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:37+08:00
+scraped_at: 2026-11-21T09:11:03+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:6df49387ed75ccf9ef08fb8451323cf4c1402475a494e908928d25aacd20481e
+content_hash: sha256:3cb16ec4938a09101a5980eb771df22ebc499690eccd82f75ae3b3cc1c1ff9b2
 ---
 
 上文所述的装饰器（包括[@State](arkts-state.md)、[@Prop](arkts-prop.md)、[@Link](arkts-link.md)、[@Provide和@Consume](arkts-provide-and-consume.md)装饰器）仅能观察到第一层的变化，但是在实际应用开发中，应用会根据开发需要，封装自己的数据模型。对于多层嵌套的情况，比如二维数组、对象数组、嵌套类场景，无法观察到第二层的属性变化。因此，为了实现对嵌套数据结构中深层属性变化的观察，引入了[@Observed](../harmonyos-references/ts-state-management-observed.md#observed)和[@ObjectLink](../harmonyos-references/ts-state-management-objectlink.md#objectlink)装饰器。
@@ -67,7 +67,7 @@ this.objLink= ...
 
 **图1** 初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/aGWTPHy4TEmrXVs9O7LUOA/zh-cn_image_0000002820404591.png?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BCC97DF032555D6CD33F4A635024BC6BD068E198545F400F6F60BCFAE609D93)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/jn2EOG25TU6M0ZnByBqHOg/zh-cn_image_0000002792876292.png?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD3C1E76D674280A0E9B814AE68CE8267F5EAFDF34BF5DB4400696216C999CFB)
 
 ## 观察变化和行为表现
 
@@ -154,7 +154,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/dJualKkvS8ObrFKPqdeUag/zh-cn_image_0000002791724614.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AEA81E75003EF4B25C3F332298613F74459E1C1EB6323CE01FC467F49BEA9C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/qqy_D0__S3CK3JIF0li2jA/zh-cn_image_0000002821836197.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CBDA38B431BE82AF3CC33FD9DCD45BBB9E950613171AD2CD9E19ED528178EC2)
 
 @ObjectLink装饰继承于Map的class时，可以观察到Map整体的赋值，同时可通过调用Map的接口set, clear, delete 更新Map的值。示例请参考[继承Map类](arkts-observed-and-objectlink.md#继承map类)。
 
@@ -322,7 +322,7 @@ struct Parent {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/LPbTK0qXTrSMmljy4khfcg/zh-cn_image_0000002791564642.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=04829A075FE9E5D1A1710450ACDD82CF0975C6DC6C45A7DAE82AC8B9D9D86488)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/3jPtx_FRTEuH10nYJnCEpw/zh-cn_image_0000002821756197.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE3A5B4D2C3F2A9D1A1AC717FBEAC6D442C17B997640CE2F88835DB76C09678E)
 
 ## 使用场景
 
@@ -375,7 +375,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/DqxPqmiITKmmS38g7-_-uw/zh-cn_image_0000002820524593.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=2623A6BA037781CF2A5688B256818F7C29F9FAAA36D023EEEFF068DBA13B2551)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/uSkG6bqWQe-ThzUr9o0snQ/zh-cn_image_0000002793036262.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=00A4D97455929FF208D16B38C44898331DE12A459A1A0D5C6800431AD888EF6E)
 
 ### 嵌套对象
 
@@ -444,7 +444,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/0wRMN-L_Q_OcjByctLj-pg/zh-cn_image_0000002820404593.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=987E8ACBBB7C9A698C2D934AEDD6C1AD331616FF74B6CFE40B16BAE86A3814A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/DhCHrTGMSRmBINDZ3o8v2g/zh-cn_image_0000002792876294.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=D142E01A87755531B81C6FA38E01F75EEDB13DC5994143A21BA4717D6350D5A8)
 
 上述示例中：
 
@@ -553,7 +553,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/brNKRMlARMyoEnSkLdA1mA/zh-cn_image_0000002791724616.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CD37103CF55A8A3CCC18D220A825477742BE83E74D472F59EDC84D5452CD1CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/RWubX3m9Rp-hC-6JkEJcnA/zh-cn_image_0000002821836199.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=077EE1D163043328FF45A01667AC68AE9BE3034845814A4A19CC9D7BA0EC0925)
 
 * this.arrA[Math.floor(this.arrA.length/2)] = new Info(..) ：该状态变量的改变触发2次更新：
 
@@ -652,7 +652,7 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/9AVS4uqcSTuFVH2aDwxlng/zh-cn_image_0000002791564644.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=31EE3322567AB28B4C4F192E5D02B63C520C5C315C500859520D4A627723D62F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ZfoMM6USRGqORCh_yiwnwQ/zh-cn_image_0000002821756199.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7BCD404F172F80CB724CB6B41F0D5D4857A593FF4158066F96FF0574DCC9972)
 
 API version 19及以后，@ObjectLink也可以被[makeV1Observed](../harmonyos-references/js-apis-statemanagement.md#makev1observed19)的返回值初始化。所以开发者如果不想额外声明继承Array的类，也可以使用makeV1Observed来达到同样的效果。
 
@@ -719,7 +719,7 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/Zst-mYXySX6ZjYRlMj9m2g/zh-cn_image_0000002820524595.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=F29DE3F494B98C1381E96E1FB66F2EC12864F08FBC31BBB4470D666C1A63B7A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/M6bnrAX9Tv-GtI2nmxoYgQ/zh-cn_image_0000002793036264.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=4664D1266D9A3B35656A3C3E870C7653864EECC91A68260FCFF21F914B4A693B)
 
 ### 继承Map类
 
@@ -815,7 +815,7 @@ struct MapSampleNestedChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/kpnTi_LoQYG38Dxf8lp6aw/zh-cn_image_0000002820404595.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F0D5013A4047EA9021DBC1DCC909DA40DBB44D2AA8EE8CE634C89A0753D0599)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/buUeLyOZR8auDEWV7wzYCQ/zh-cn_image_0000002792876296.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=F410294B684675590BCE9674CA62E0D420D8B19D6A724EBE4CAF362FAD81917A)
 
 ### 继承Set类
 
@@ -903,7 +903,7 @@ struct SetSampleNestedChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/nc05ogzIQfG7K06e2c7nWw/zh-cn_image_0000002791724618.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=37E748CC6CB7BED00ACDB17A22AFB4E755359D3F8EC055C23B8A69F937641758)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/pWYyqTYcQnWzradSvgZc0Q/zh-cn_image_0000002821836201.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB3DD8A95453810560D4820A9B8DCC996A44933AE124056D92A3859A27BA2653)
 
 ### @ObjectLink支持联合类型
 
@@ -997,7 +997,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/75EO4FmuRtms3Z_Y-BRlng/zh-cn_image_0000002791564646.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A075E287D48C758CF4CD49FD46584053E321F8F9E22E27A1CDA69F7E176155F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/GDfWWzKeQp-1ywfYfF5pKQ/zh-cn_image_0000002821756201.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BCFE830D2711C6EA9A2C10E89FB73EFC323D969CF34263AF64CC45FB19C33D5)
 
 ## 常见问题
 
@@ -1232,7 +1232,7 @@ struct MyView {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/elLkWRppSy-FuR_YyhUBBQ/zh-cn_image_0000002820524597.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=02CC56198755BE3AD47D44B5A2BE865695B00299847EC51A1FF02B70E92960EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/rr9H_a_JQ5aV0JyC0ZZhCw/zh-cn_image_0000002793036266.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=4708D17FDC283D7F0AE2AD7F96BA2D035C7099B6039D494DBCE621EDD2C2FEBA)
 
 ### 复杂嵌套对象属性更改失效
 
@@ -1414,7 +1414,7 @@ struct CounterChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/EFSH6B_YTYeG9XsN3xIBxA/zh-cn_image_0000002820404597.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=B72369D09210FD203500A76FCF90A1D81427E2CE1354876B153738BE725D6A52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/tKDETzenR_WWuVMIfdxKhg/zh-cn_image_0000002792876298.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=2969C2FB7D2B931D7C78C5DD852EA1AB444D6DADD9ACA33EC84999743ABF35C5)
 
 该方法使得@ObjectLink分别代理了ParentCounter和SubCounter的属性，这样对于这两个类的属性的变化都可以观察到，即都会对UI视图进行刷新。即使删除了上面所说的this.counter[0].incrCounter()，UI也会进行正确的刷新。
 
@@ -1537,7 +1537,7 @@ struct ParentComp {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/BVjpfQcRTGGiFDoEMVk6BQ/zh-cn_image_0000002791724620.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE2C2B5C7384154EFCF58AD4E5481C98D83A1E6FFC339C1152DEFA158996D403)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/9vqIqjdHQhqUFnNkOu1nXg/zh-cn_image_0000002821836203.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E07C0F6C315F5C36CB61638EFF3D2F36B53BE9AD0BF050D39C907694E07B2F2)
 
 ### @Prop与@ObjectLink的差异
 
@@ -1608,11 +1608,11 @@ struct UserChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/y4Az_wteS3mNDDNb_JIgaQ/zh-cn_image_0000002791564648.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=74516BF2BF0A55D47D14055803E5173F091F05327A45587929425EA95BBB04D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/0zMqACegR_-p9oSLmQr0TQ/zh-cn_image_0000002821756203.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD1448EFE82CFEC494EA9BC99B0FADDC142A2F4FC6E3B9991CD6B91961BF53DC)
 
 上面的示例关系如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/18sBz-nnT9Kid4f6VW789A/zh-cn_image_0000002820524599.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D3D0A851848BAB091563E8B97CA3F52388AED38BF5E937A4E804C6D5CB38660)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/341OC6LeT-CTvIcHdLGXhw/zh-cn_image_0000002793036268.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=82BDEBB91BDAAD62D13D85F4CBCFD680E750D8D4DA604AEE9A5C33CE2DC074A3)
 
 ### 在@Observed装饰类的构造函数中延时更改成员变量
 
@@ -1710,7 +1710,7 @@ struct DelayedChangeIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/CKBscbz2R2WGuXW2uhuNrw/zh-cn_image_0000002820404599.png?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DBF5E0610B9C3F78A5E1BC81122EB6270AC189478C1A3FFCBAE232F204114DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/lXca0L7ERuG-CVEgoophtw/zh-cn_image_0000002792876300.png?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D53BE7B913FF7EE6C232B140727BE032DA654567D3B3920C8422111DFA40ADD)
 
 上文的示例代码将定时器修改移入到组件内，此时界面显示时会先显示“The value of renderClass is: false”。待定时器触发时，renderClass的值改变，触发[@Watch](arkts-watch.md)回调，此时界面刷新显示“The value of renderClass is: true”，日志输出“The value of renderClass is changed to: true”。
 
@@ -1805,7 +1805,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/uU6Ayy73Rre0musbtYTbNg/zh-cn_image_0000002791724622.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=4309EDB3658B275C453D9350090D2741CBC0A02DE41F32D4BD366D36B58F8662)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/FG82RYMTQHyPIInCElO6Aw/zh-cn_image_0000002821836205.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D9607DBE5AF0B86037E8C2479112EA4B699BD5414BE5BA8178A3D97A3FE425D)
 
 @ObjectLink的数据源更新依赖其父组件，当父组件中数据源改变引起父组件刷新时，会重新设置子组件@ObjectLink的数据源。这个过程不是在父组件数据源变化后立刻发生的，而是在父组件实际刷新时才会进行。上述示例中，Parent包含Child，Parent传递箭头函数给Child，在点击时，日志打印顺序是1-2-3-4-5，打印到日志4时，点击事件流程结束，此时仅仅是将子组件Child标记为需要父组件更新的节点，因此日志4打印的this.per.name的值仍为Bob，等到父组件真正更新时，才会更新Child的数据源。
 
@@ -1906,7 +1906,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/PFmTcZxxQFyYdHEZbpFbyg/zh-cn_image_0000002791564650.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AB2D66AB800C4D54F620FFBFCEAE45F6329C989C0F465F3F58AD1771DF61BD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/6Bnv_xfURJ-2wF-zYfquMQ/zh-cn_image_0000002821756205.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=51BAE393CF335257D3159C5C9D0C89558901DA2F8CCA9C40DDB7272160FE55BC)
 
 ### LazyForEach和@ObjectLink一起使用时，替换数组数据后UI不刷新
 
@@ -2191,4 +2191,4 @@ struct ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/BLpxv2SURBunCkmYyKDYxw/zh-cn_image_0000002820524601.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014736Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC9C3AE9E87B333EDC27359BF5791E752552513493E242DBCEA94C61B04124FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/lfrSG4YHREOt0tmtvcJOYA/zh-cn_image_0000002793036270.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=325A6804780E80BA8EF1FD51AF5E63B78E5BC4503B971EB2CDDDE486785FEDB5)

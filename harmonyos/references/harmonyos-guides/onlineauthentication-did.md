@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: DID分布式数字身份
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > DID分布式数字身份
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:09+08:00
+scraped_at: 2026-11-21T09:11:35+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:9417976c12857f6d3f86f79c6399c3c92d2998e274f601980199eb72439e22ec
+content_hash: sha256:a2e4595955c77d306e0a055a75adc2dc15b447f3019f1330aff47959878f83b0
 ---
 
 从API版本26.0.0开始，Online Authentication Kit（在线认证服务）新增数字身份特性，提供了基于DID（Decentralized Identifier，分布式数字身份）协议的分布式数字身份在移动端的能力。应用部署符合DID协议的服务器之后，结合移动端的数字身份能力，可实现跨平台互通互认的数字身份业务场景。数字身份服务主要提供了以下能力：
@@ -47,7 +47,7 @@ content_hash: sha256:9417976c12857f6d3f86f79c6399c3c92d2998e274f601980199eb72439
 
 应用需要为用户创建数字身份时，可以使用数字身份服务创建及使用与用户DID关联的密钥、导入用户DID文档等信息至设备。创建数字身份后，应用可基于用户DID标识为用户颁发凭证，并使用用户DID密钥对数据签名授权。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/EdyPfFl-Rd-wVHJ8XpOMvg/zh-cn_image_0000002791725726.png?HW-CC-KV=V1&HW-CC-Date=20261119T014718Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4B1F3CA9C46BDA3537D54A7D3573957A255FCFA3E435AD01AAEC2D9C40E8A91)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Fsc2KXppRZ6pbgk7IHeGIA/zh-cn_image_0000002821837313.png?HW-CC-KV=V1&HW-CC-Date=20261121T011135Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB25AE1BE4151B0DE48065B14F51DF033B9E71E9688CB4BED3AC19CC592CEDA8)
 
 流程说明：
 
@@ -61,7 +61,7 @@ content_hash: sha256:9417976c12857f6d3f86f79c6399c3c92d2998e274f601980199eb72439
 
 应用为用户颁发数字身份凭证（例如教师凭证等），可以使用数字身份服务将数字身份凭证导入至设备安全存储，用于后续便携出示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/V4S-fCEUReivaSSlvltNKw/zh-cn_image_0000002791565754.png?HW-CC-KV=V1&HW-CC-Date=20261119T014718Z&HW-CC-Expire=31536000000&HW-CC-Sign=C844E3BFFF047CE9896730219AE507A48D6D10E92213CFF8DBC1A8CF3EBEB08F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/cr3-ofEiTpqdkchN4TvhlQ/zh-cn_image_0000002821757315.png?HW-CC-KV=V1&HW-CC-Date=20261121T011135Z&HW-CC-Expire=31536000000&HW-CC-Sign=31BDA299F5AC52DD5532D613AFF5853ED254E8A88BBABEE01BF408697EC37898)
 
 流程说明：
 
@@ -73,7 +73,7 @@ content_hash: sha256:9417976c12857f6d3f86f79c6399c3c92d2998e274f601980199eb72439
 
 应用作为验证方，需要请求用户的数字身份凭证用于验证用户身份或者发放相应权益时，可以使用数字身份服务请求获取用户凭证，用户确认出示的凭证及披露的属性字段后，数字身份服务会将凭证出示到验证方应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/rWtrNM5TTJmMFD6dTEbG2w/zh-cn_image_0000002820525707.png?HW-CC-KV=V1&HW-CC-Date=20261119T014718Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E7EA5CE2F39798E17712BA51C0DE4407FAEDC9766BCB0A0528B037D97A21DCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/EWmgQfnAT52VbecG8y2SdA/zh-cn_image_0000002793037378.png?HW-CC-KV=V1&HW-CC-Date=20261121T011135Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7B192010110B84246407AD6D2CD143130683AC4DBCA702271BE90BFFE43BC1A)
 
 流程说明：
 

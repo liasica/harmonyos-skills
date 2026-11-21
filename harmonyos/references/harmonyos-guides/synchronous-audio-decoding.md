@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/synchronous-a
 title: 音频解码同步模式
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 音频解码同步模式
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:34+08:00
+scraped_at: 2026-11-21T09:11:59+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:2d8e4dcc11afd6deb37ef29a2cf7f467d2752b71ab8b4b7385a1ad3078f74ec8
+content_hash: sha256:b1a5718c824513ddbd18d264dbc7b65f0173357efd3e56b842812fef77ce2e24
 ---
 
 从API version 20开始，支持音频解码同步模式。
@@ -39,7 +39,7 @@ content_hash: sha256:2d8e4dcc11afd6deb37ef29a2cf7f467d2752b71ab8b4b7385a1ad3078f
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/KPw5LglYQviFt9GTCJ4dDw/zh-cn_image_0000002791725894.png?HW-CC-KV=V1&HW-CC-Date=20261119T014833Z&HW-CC-Expire=31536000000&HW-CC-Sign=5730459FDBBDDBF17DCB5AB2D42FF40E2D37E2267874B4EFA7D9569DE8D6BAFE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/-CB3E1NmSJywrEzR4-_Nxg/zh-cn_image_0000002821837481.png?HW-CC-KV=V1&HW-CC-Date=20261121T011158Z&HW-CC-Expire=31536000000&HW-CC-Sign=42AD6C827FA2FA31A70EDD75991248C6CB3CC461EF4D214847BE8E5CD9002142)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -156,11 +156,11 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/bz_20ZvwRmOHmZ6Ji8NOwA/zh-cn_image_0000002791565922.png?HW-CC-KV=V1&HW-CC-Date=20261119T014833Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EB6348B8E4AE7AD02E1BB6B8F642DACF8A9F29DD0B8B0CF82F432D23E3B26D8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/BS_o6YOxQ5y3cRzc39INsA/zh-cn_image_0000002821757483.png?HW-CC-KV=V1&HW-CC-Date=20261121T011158Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B555C23EFF86FAB8036E265895305401178A198BF03797D657787EAE4A000F5)
 
    各音频解码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/vIPgOwmrRO-kymf6hPt7Ug/zh-cn_image_0000002820525875.png?HW-CC-KV=V1&HW-CC-Date=20261119T014833Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3A74471EDA876818A1E6674400C2FA46DCD06804EACCDC4AEFC18F580EB37C6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/gBP7JyEWQnG199eYAFjY5g/zh-cn_image_0000002793037546.png?HW-CC-KV=V1&HW-CC-Date=20261121T011158Z&HW-CC-Expire=31536000000&HW-CC-Sign=52B1CC007421D23A350941C15686C24607AEAE4D403F02EFCCE9AC27FBE9EC18)
 
    从API version 20开始，支持通过[OH\_AVCapability\_GetAudioSupportedSampleRateRanges](../harmonyos-references/capi-native-avcapability-h.md#oh_avcapability_getaudiosupportedsamplerateranges)接口进行采样率范围能力查询，以下几种音频解码类型支持对范围内的任意采样率进行解码：
 

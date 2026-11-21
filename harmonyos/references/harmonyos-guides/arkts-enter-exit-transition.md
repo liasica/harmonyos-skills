@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-enter-e
 title: 出现/消失转场
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 出现/消失转场
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:43+08:00
+scraped_at: 2026-11-21T09:11:09+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a521aa31b800e62ee3d79a12e31178bed347647682f760829762b3377a546806
+content_hash: sha256:f1cae06010a7af0a837fbdf3bf89ecae2049454fbc13ace8f02109e78cbbe500
 ---
 
 [transition](../harmonyos-references/ts-transition-animation-component.md)是基础的组件转场接口，用于实现一个组件出现或者消失时的动画效果。可以通过[TransitionEffect10+对象说明](../harmonyos-references/ts-transition-animation-component.md#transitioneffect10对象说明)的组合使用，定义出各式效果。
@@ -137,7 +137,7 @@ struct TransitionEffectDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/AnMqCQv5TduSeoZYIIU9bA/zh-cn_image_0000002820525165.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014653Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1C5383825707F223F2F45A891AD6ED58F94D5FD5C6BD780536FA9328B6C317D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/wifXoHkaTk20YfrqdXKvqA/zh-cn_image_0000002793036834.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B59EEDA0D26D4EEA2D4A3DE396FCBD74DF5DC04CC9F78FFEF96592F0C59B66C)
 
 对多个组件添加转场效果时，可以在[animation](../harmonyos-references/ts-animatorproperty.md#animation)动画参数中配置不同的delay值，实现组件渐次出现消失的效果：
 
@@ -202,4 +202,4 @@ struct Index1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/0jvAUBPkQiWffXwJJJbgtA/zh-cn_image_0000002820405165.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014653Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EE536605BB37A22E18E4F05DC37DD896FD86B001D4C3960C0D008E553E2F3D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/X630Rx2PQhGEpx-lF93A9g/zh-cn_image_0000002792876864.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE6DF5EDE825F816882FFA5944201F803E6C0B8EA6DDCC29BD4F658B800BB47B)

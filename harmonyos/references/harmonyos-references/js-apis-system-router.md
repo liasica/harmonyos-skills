@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.router (页面路由)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 已停止维护的接口 > @system.router (页面路由)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:46+08:00
+scraped_at: 2026-11-21T09:13:59+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:071b0f171e9826d73e2e27d9a64bc1c5be287417711b3aaa0f01834b93417afc
+content_hash: sha256:e35c64f4a9a95f4b15b7ba52ae1e3768ae6b6748d275ae32a22a83a022c37f9a
 ---
 
 通过不同的uri访问不同的页面。
@@ -598,4 +598,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/dVrg4nfRRvqReDptXkaZQQ/zh-cn_image_0000002791567012.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B08D128C1606D272C8F8300681401C9D4EA0EC2E81C821BD7C4004448F44D1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/UQjvcubETziTn8yW10l7iw/zh-cn_image_0000002792878666.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011358Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CCB1275DEC5B5FA982232DC2A75F3C776ED2DAF3BF8DDE48517ECB0DFA199AF)

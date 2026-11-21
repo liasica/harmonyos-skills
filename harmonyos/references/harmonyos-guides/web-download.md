@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-download
 title: 使用Web组件的下载能力
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页文件上传与下载 > 使用Web组件的下载能力
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:23+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-21T09:11:18+08:00
+doc_updated_at: 2026-11-20
 content_hash: sha256:6e602f20a8fea3301d639367651fe80bcc58db950a03ee3ec4c1a65b5ab91bdd
 ---
 
@@ -194,7 +194,7 @@ struct WebComponent {
             })
             this.controller.setDownloadDelegate(this.delegate);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
         })
       Web({ src: $rawfile('index.html'), controller: this.controller })
@@ -221,7 +221,7 @@ function getDownloadPathFromPicker(): Promise<string> {
         const uri = new fileUri.FileUri(uriString);
         resolve(uri.path);
       }).catch((err: BusinessError) => {
-        console.error(`ErrorCode: ${err.code},  Message: ${err.message}`);
+        console.error(`ErrorCode: ${err.code}, Message: ${err.message}`);
         resolve('');
       });
     } catch (error) {

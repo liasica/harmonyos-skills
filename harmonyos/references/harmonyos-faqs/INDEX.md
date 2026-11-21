@@ -1,6 +1,6 @@
 # FAQ（harmonyos-faqs）
 
-共 4428 篇文档。
+共 4426 篇文档。
 
 - [Context功能使用常见问题](ability-kit-faq-0001.md)
 - [Context类型与关系常见问题](ability-kit-faq-0002.md)
@@ -3103,7 +3103,6 @@
 - [DevEco Studio安装后使用过程中常见配置问题](faqs-development-environment-45.md)
 - [DevEco Studio编译慢，模拟器启动慢](faqs-development-environment-46.md)
 - [DevEco Studio的SDK常见环境问题](faqs-development-environment-47.md)
-- [HarmonyOS中DevEco Studio缺少Device Manager入口及模拟器镜像下载报错的解决方案](faqs-development-environment-48.md)
 - [环境准备](faqs-development-environment.md)
 - [HarmonyOS是否支持CFCA证书预置](faqs-device-certificate-1.md)
 - [证书链校验器的参数如何获取](faqs-device-certificate-2.md)
@@ -4391,7 +4390,6 @@
 - [自定义界面扫码黑屏问题排查与解决](scan-kit-faq-0001.md)
 - [故障排查](scan-kit-faq.md)
 - [DevEco Testing安全基础质量测试常见问题](security-basic-quality-test-faq-0001.md)
-- [常见问题](security-basic-quality-test-faq.md)
 - [设备竖立状态判断](sensor-service-kit-faq-0001.md)
 - [常见问题](sensor-service-kit-faqs.md)
 - [系统分享与数据接收常见问题](share-kit-faq-0001.md)

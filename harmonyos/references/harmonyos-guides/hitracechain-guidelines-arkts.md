@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracechain-
 title: 使用HiTraceChain打点（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 分布式调用链跟踪 > 使用HiTraceChain打点（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:48+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:9c837e32ba17f7a57353ebd5d810fcbd9ae1350d272111a0d15bf9640544ebe3
+scraped_at: 2026-11-21T09:11:53+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:e569b03f50e82f742b2045f6e305f40a798c5f640de76cb13bec246392e7aac6
 ---
 
 ## 接口说明
@@ -135,7 +135,7 @@ HiTraceChain在ArkTS中的使用方法参考以下示例，开发者可参考[�
      + hilog日志前附加的[chainId spanId parentSpanId]格式的信息即为HiTraceId信息，例如[a92ab104a53adf0 23e9386 32a835e]表示跟踪链标识chainId值为a92ab104a53adf0，分支标识spanId值为23e9386，父分支标识parentSpanId值为32a835e。
      + 示例得到的跟踪链标识chainId值为a92ab104a53adf0，可使用chainId值过滤日志，查看业务完整的调用链hilog日志。
      + promise/then和async/await异步机制都会自动传递HiTraceId，并生成分支标识，例如示例hilog日志中的32a835e、23e9386、38a1eb2等，均为异步任务自动生成的分支标识，且通过parentSpanId信息可以推断该分支标识的生成链路。
-     + hiTraceChain.end()和hiTraceChain.clear()都可以结束跟踪，跟踪结束后，hilog日志不再携带HiTraceId信息，例如日志“hiTraceChain end in main thread”不再携带HiTraceId信息。
+     + hiTraceChain.end()和hiTraceChain.clearId()都可以结束跟踪，跟踪结束后，hilog日志不再携带HiTraceId信息，例如日志“hiTraceChain end in main thread”不再携带HiTraceId信息。
    * HiTraceId未支持自动传递场景：
 
      点击设备上“testHiTraceIdPassedManually”按钮触发业务逻辑，可在hilog日志中看到以下内容：

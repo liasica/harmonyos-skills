@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 微距能力设置(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 微距能力设置(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:05+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:c2084a5df796104e035f4b44459769aa1449a85fe5a9898404e15f41604ebaae
+scraped_at: 2026-11-21T09:12:02+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:2c020186d58ed43484a81aba6762d625e3221048fb6db6c616b65fd90e0c78bb
 ---
 
 从API version 19开始，支持设置微距能力。微距能力是指通过光学设计与算法优化，实现近距离对焦并清晰捕捉微小物体细节的相机功能。
@@ -39,6 +39,7 @@ content_hash: sha256:c2084a5df796104e035f4b44459769aa1449a85fe5a9898404e15f41604
    #include "ohcamera/video_output.h"
    #include "napi/native_api.h"
    #include "ohcamera/camera_manager.h"
+   #include "ohcamera/camera_device.h"
    #include <window_manager/oh_display_info.h>
    #include <window_manager/oh_display_manager.h>
 
@@ -118,7 +119,7 @@ void MacroStatusCallback(Camera_CaptureSession *captureSession, bool isMacroDete
     OH_LOG_INFO(LOG_APP, "MacroStatusCallback isMacro: %{public}d", isMacroDetected);
 }
 
-// 注册回调函数。
+// 注册微距状态变化回调。
 Camera_ErrorCode NDKCamera::RegisterMacroStatusCallback()
 {
     Camera_ErrorCode ret = OH_CaptureSession_RegisterMacroStatusChangeCallback(captureSession_, MacroStatusCallback);
@@ -128,7 +129,7 @@ Camera_ErrorCode NDKCamera::RegisterMacroStatusCallback()
     return ret;
 }
 
-// 解注册
+// 解注册微距状态变化回调。
 Camera_ErrorCode NDKCamera::UnregisterMacroStatusCallback()
 {
     Camera_ErrorCode ret = OH_CaptureSession_UnregisterMacroStatusChangeCallback(captureSession_, MacroStatusCallback);

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆开启指南
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆开启指南
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:34+08:00
+scraped_at: 2026-11-21T09:11:00+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2029caa84d2455c35e093ab7c5dcb9eac8e3edc8304ecee518e6dbe5b0781822
+content_hash: sha256:e4935d98b2c6f18566a4a448b466817bd3e2015f10474f8a1940468c01742474
 ---
 
 本指南旨在帮助开发者了解和使用ArkGuard源码混淆功能，保护应用代码安全。通过启用源码混淆，开发者可以对ArkTS代码中的变量名、属性名、文件名等进行混淆处理，增加代码逆向难度，提升应用的安全性。文章将详细介绍如何在DevEco Studio中开启混淆、配置混淆规则、适配不同混淆场景，以及如何查看混淆效果和还原混淆后的报错堆栈。
@@ -172,7 +172,7 @@ content_hash: sha256:2029caa84d2455c35e093ab7c5dcb9eac8e3edc8304ecee518e6dbe5b07
   + 名称映射表文件：nameCache.json，该文件记录了源码名称混淆的映射关系。
   + 系统API白名单文件：systemApiCache.json，该文件记录了SDK中的接口与属性名称，工程源码中与其重名的元素不会被混淆。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/QwXafuouTjKjYT-PtSudxw/zh-cn_image_0000002820404487.png?HW-CC-KV=V1&HW-CC-Date=20261119T014734Z&HW-CC-Expire=31536000000&HW-CC-Sign=16E194D400A526DDA71E79CCE598A429C9D40E6922805F659F01F33B2866CF22)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/42krFMEIS6OR8i7rhdrUjw/zh-cn_image_0000002792876188.png?HW-CC-KV=V1&HW-CC-Date=20261121T011100Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B3F3FF790013CCC6896201722C82C895492F95411DBBA044C1A13AE6BD7287C)
 
 ## 报错栈还原
 
@@ -184,4 +184,4 @@ content_hash: sha256:2029caa84d2455c35e093ab7c5dcb9eac8e3edc8304ecee518e6dbe5b07
 
 源代码映射信息文件：sourceMaps.map，该文件记录了压缩/转换后的代码到原始源代码之间的映射关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/AWSD7ZadS9CX0KTKiLE8yA/zh-cn_image_0000002791724510.png?HW-CC-KV=V1&HW-CC-Date=20261119T014734Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE5B19F66F7AE029D30324E763236BCABACEA31993412DA3F1FA295D9C2617BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/eyHCZWd3Qp-0PdNiCP5SFA/zh-cn_image_0000002821836093.png?HW-CC-KV=V1&HW-CC-Date=20261121T011100Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA71FBFEE9CCD8CEFFD7CB3E7A790171002F7C5FCBDB24D93B3717539DA92DE8)

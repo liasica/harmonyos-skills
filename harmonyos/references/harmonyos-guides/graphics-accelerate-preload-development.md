@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 实现游戏预启动
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏启动加速服务 > 游戏预启动 > 实现游戏预启动
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:48+08:00
+scraped_at: 2026-11-21T09:12:13+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b4a0c0169dce386828859a2c4f7e68ea16169fd7b09e453e99563598eacd09b7
+content_hash: sha256:77bcf8aa282e570c9963e5753aa9dcb3d2e7f6ff11112c7c49e79dd994044cb3
 ---
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/xmbs9augRp2ImIyPcCY27w/zh-cn_image_0000002820406129.png?HW-CC-KV=V1&HW-CC-Date=20261119T014754Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2E4D18FEFD39661400C1159BB85342E202904BEE4388BE77BDE4A7A1103B34E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/PrEE5MKlRWS1_bnFzXU4Lg/zh-cn_image_0000002792877830.png?HW-CC-KV=V1&HW-CC-Date=20261121T011046Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5C434E5B210A6378EC4CA2F4C76670AFBC1DD0B8FC89703B3B0F4FA0AE87ED3)
 
 1. 游戏启动加速服务根据用户的使用习惯，在系统资源充足时提前加载游戏。
 2. UIAbility的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)生命周期回调中会通过[want.parameters](../harmonyos-references/js-apis-app-ability-want.md#want)携带启动参数，若参数ohos.params.gamePrelaunch为true，则表示当前UIAbility是由游戏预启动运行的，开发者需记录该启动原因，为后续通知系统游戏启动完成做判断。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilityconnec
 title: 跨设备连接UIAbility开发指南
 breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 应用跨设备连接管理 > 跨设备连接UIAbility开发指南
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:14+08:00
+scraped_at: 2026-11-21T09:11:40+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:4b21d09eb6d98d064a74e95c6a00451884aab7cf91189a926ebb278b392d16f2
+content_hash: sha256:14b57acb2fcc7ec0cc5e06cb125cd0a69ec2afd0e63fe1330e145148dd9b3718
 ---
 
 ## 简介
@@ -37,7 +37,7 @@ content_hash: sha256:4b21d09eb6d98d064a74e95c6a00451884aab7cf91189a926ebb278b392
 
 **图1** 应用跨设备连接运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/PhuUI1VISSCtWNh3h_qL4A/zh-cn_image_0000002791725746.png?HW-CC-KV=V1&HW-CC-Date=20261119T014722Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CDC479E8201E1DACC1B875CDEC2348462DA03D4E91FC423F2F0C26979ECC9AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/ZjnOhdOHQSyaczf-RtRUkw/zh-cn_image_0000002821837333.png?HW-CC-KV=V1&HW-CC-Date=20261121T011140Z&HW-CC-Expire=31536000000&HW-CC-Sign=A23C3A65F8907AB9897E01671C841B3C3E894489581B88D02D0F4B7D73112698)
 
 ### 约束与限制
 

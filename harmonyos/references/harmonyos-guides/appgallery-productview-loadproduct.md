@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 展示应用详情页面
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 展示应用详情页面
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:52+08:00
+scraped_at: 2026-11-21T09:12:18+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:93629b067814256db8088ca3ece387afef72d716c72e2fae95a7e994a04131e3
+content_hash: sha256:184f62420187c43f0371381c1be79f6c2298fce794e6e892a398f08af969c52b
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:93629b067814256db8088ca3ece387afef72d716c72e2fae95a7e994a04
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/HQKgKWexTsKcuXUmPnicVQ/zh-cn_image_0000002820406179.png?HW-CC-KV=V1&HW-CC-Date=20261119T014852Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F524F5BBAE3687893D5AB57B31D816424E51FFD2EB23987412AAD2AC09C73B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/573J04LASjeXSWflmmTHWw/zh-cn_image_0000002792877880.png?HW-CC-KV=V1&HW-CC-Date=20261121T011051Z&HW-CC-Expire=31536000000&HW-CC-Sign=A97A0832250115256B0EBF583F8B80076103A1E70962B5E040F32B809A6289DE)
 
 1. 用户使用打开应用详情页功能。
 2. 应用调用AppGallery Kit的[loadProduct](../harmonyos-references/store-productviewmanager.md#productviewmanagerloadproduct)接口。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inter-applica
 title: 应用间跳转实践概览
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 应用间跳转典型场景 > 应用间跳转实践概览
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:27+08:00
+scraped_at: 2026-11-21T09:10:53+08:00
 doc_updated_at: 2026-05-26
-content_hash: sha256:80bf47eccbe1d98dd736c6c5116e7884a135f519367d55949d3556e963f05cea
+content_hash: sha256:67ea590a6a5ee24e41fce32953957a5e4a970f4d20cb54958deaa75d7ddcc1b0
 ---
 
 ## 概述
@@ -37,7 +37,7 @@ content_hash: sha256:80bf47eccbe1d98dd736c6c5116e7884a135f519367d55949d3556e963f
 
 **图 1** 用户B点击链接跳转到详情页的效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/E_MLzco3T7Sl1NtkmoLQgA/zh-cn_image_0000002791724452.png?HW-CC-KV=V1&HW-CC-Date=20261119T014727Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EB96958D7BB67EB2FF9CF6FE153C8588C01A9F0C93B0DF7FBA77B4BED311B31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/p4tuJv7tS_O-408ByTLzrw/zh-cn_image_0000002821836035.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=71292FAAF7B3C599CF9A4F22935A067C2130CF5936635C5B0C3DEEFBE3BE1E95)
 
 通过系统分享面板，将包含App Linking的链接分享给好友，实现一键直达原内容。详细请参见[社交分享跳转](social-sharing-redirection.md)。
 
@@ -50,7 +50,7 @@ content_hash: sha256:80bf47eccbe1d98dd736c6c5116e7884a135f519367d55949d3556e963f
 
 **图 2** 点击视频应用广告跳转汽车商城应用详情
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/p6xwQJYtSOGn4PprDoY5rw/zh-cn_image_0000002791564480.png?HW-CC-KV=V1&HW-CC-Date=20261119T014727Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB1D59C92F4F3F0D2D82920659E1CE69A5D3935BD38EDBD1E13CE4F56EF6C0B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/08HxN2HqQ8KT5rFe5zlHlQ/zh-cn_image_0000002821756035.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=258A3DEB4E558A1EADB87D67605C8971400841481D2ED4FBD19D8627B68FBC46)
 
 通过App Linking实现从广告链接到应用特定页面的精准跳转，提高营销转化率。详细请参见[广告跳转](ad-redirection.md)。
 
@@ -64,7 +64,7 @@ content_hash: sha256:80bf47eccbe1d98dd736c6c5116e7884a135f519367d55949d3556e963f
 
 **图 3** 点击聊天界面电话号码拉起系统拨号界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/DzoYJqEKQ4awxYODRIVXcA/zh-cn_image_0000002820524431.png?HW-CC-KV=V1&HW-CC-Date=20261119T014727Z&HW-CC-Expire=31536000000&HW-CC-Sign=78384C8C658BC37A0536FE2E9B3662CA5599F1AECC7BBB1468DD6A8F51536925)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/tN07V9LjTZG0P44j7SB42w/zh-cn_image_0000002793036100.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3C667C247A8BA33406CEBAE202B5727480F357ADE04F8B157F902D3C6F3D7CA)
 
 通过系统的文本识别能力，识别其中的特殊文本，从而实现从文本到功能的直接跳转。详细请参见[特殊文本识别跳转](special-text-recognition-redirection.md)。
 
@@ -86,7 +86,7 @@ content_hash: sha256:80bf47eccbe1d98dd736c6c5116e7884a135f519367d55949d3556e963f
 * [直达应用市场](applinking-direct-to-ag.md)：未安装应用时可跳转至应用市场应用详情页。
 * [延迟链接](applinking-deferredlink.md)：支持应用安装后恢复之前的跳转意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/uy1b1IBwTBytf0bJVTM59g/zh-cn_image_0000002820404431.png?HW-CC-KV=V1&HW-CC-Date=20261119T014727Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6BCB627CD5EEF7E25FEDB875180CA66B6D06AC6415BFD57B40E4D83FFB3E959)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/KPIBG0zaSaSjfn893ztxhw/zh-cn_image_0000002792876132.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=15FCF48ED26C1EA92D92C92FE344A2F3F6099BDFACBDF876FEEAA87D852690CD)
 
 基于安全性和用户体验的全面考量，建议优先采用App Linking技术。与Deep Linking相比，App Linking提供了更高的安全性，避免了仿冒风险，并提升了用户在应用间跳转时的整体使用体验。
 

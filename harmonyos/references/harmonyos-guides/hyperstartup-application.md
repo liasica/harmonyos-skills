@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hyperstartup-
 title: 应用快启
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动 > 应用快启
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:26+08:00
+scraped_at: 2026-11-21T09:10:53+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:d9ab2ce5f2350c458187871ed971579834add7f32d06927d3134f4b1ddce102d
+content_hash: sha256:347a90650aa9dcddb4fa1a8430fefc5c3be0517f81df1670e09c252ecc000e94
 ---
 
 ## 概述
@@ -49,7 +49,7 @@ content_hash: sha256:d9ab2ce5f2350c458187871ed971579834add7f32d06927d3134f4b1ddc
 
 快启技术会提前完成启动流程中可复用部分的初始化工作。应用启动时，可复用相关初始化结果，从而跳过这部分启动流程，达到启动加速的目标。如下图所示，快启相较于普通启动可跳过启动过程中的部分阶段，从而减少启动时延：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/vVIvAIF5Sb6Y4UaDi0CI0Q/zh-cn_image_0000002820404419.png?HW-CC-KV=V1&HW-CC-Date=20261119T014635Z&HW-CC-Expire=31536000000&HW-CC-Sign=46AF2CB228B9F2553798360DC82CB7B21DAC9C9C16259F2E189EA8E631C849F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/QoXzXpBeSy2pXwDEA6pA6A/zh-cn_image_0000002792876120.png?HW-CC-KV=V1&HW-CC-Date=20261121T010929Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D9CE00FC8111D7FD8CBD45188DEC3C6DD22F201A072DE442EEB68B8AC7BE74D)
 
 **包含在快启点内的流程有**：AbilityStage模块加载、[AbilityStage.onCreate](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)和UIAbility模块加载。其中，在[模块加载](arkts-module-side-effects.md)过程中将执行部分代码，包括顶层代码（top level）、so的constructor和类静态变量初始化等。
 

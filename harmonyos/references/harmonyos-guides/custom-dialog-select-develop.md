@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/custom-dialog
 title: 自定义弹窗选型与开发
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 自定义弹窗选型与开发
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:43+08:00
+scraped_at: 2026-11-21T09:11:08+08:00
 doc_updated_at: 2026-10-26
-content_hash: sha256:a22da169c54dada92ee4893371b6851beb1a24e97b03e0123d552ece8661171c
+content_hash: sha256:0036c6b81b7914f0be7aa79362374da177cc9248153d5db5b7b946a4bcffa4d5
 ---
 
 ## 概述
@@ -85,7 +85,7 @@ content_hash: sha256:a22da169c54dada92ee4893371b6851beb1a24e97b03e0123d552ece866
 
 图文提示弹窗常用于显示用户操作的结果，如成功或失败提示，也可以在等待系统响应时展示加载动画等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/HMMIh9E2SOCdN4Qh2Hf_rg/zh-cn_image_0000002791565144.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EF5A1F58F28E452605530EAF8B66832137409334CC4A6E95643328A172C03F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/MR9iOP96SOGZLc-ETYNpKQ/zh-cn_image_0000002821756701.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=29EB416DFDD5FB4E0DA63256C0BB13170C6B4E468C6753A65058E6F984974E08)
 
 **实现方案**
 
@@ -148,7 +148,7 @@ PromptActionClass.setOptions({
 
 隐私弹窗主要用于确保法律合规性，要求应用在收集用户数据前必须获得用户的同意。当用户打开隐私弹窗时，可以通过点击弹窗内的超链接跳转至详细的隐私协议页面。返回后，隐私弹窗依旧保持显示状态，确保用户能够在充分了解相关信息的基础上做出选择。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/BmCXh1ubRSGvoFk5jo3b1w/zh-cn_image_0000002820525097.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E656641CF89CAAFD6A7F0EEAA6C062775669C1ED07496E5CD60704F23881FAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/buUyds_cRmiDIENpPEZsLA/zh-cn_image_0000002793036764.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=70752F42AF00F9A418E9E7321BBC2C634DA25ADE56B3445567EEB07CD64E54E3)
 
 在隐私页面中，需要关注的点主要有两个：
 
@@ -269,7 +269,7 @@ API version 16之前的版本，可以使用NavDestinationMode.DIALOG弹窗实�
 
 展示进度条的弹窗是一种常见的弹窗组件，用于在耗时操作中向用户反馈任务进度，此类弹窗中主要涉及的特点在于弹窗与页面之间的数据交互，刷新弹窗的内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/03MGsSdgTsGUiex5A1UKyA/zh-cn_image_0000002820405097.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7F28424835D1408E6977841CAAB424716B3623C9E9F79078882C44822E8E389)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/lYjuIEoaRoypKu3j6QMTAQ/zh-cn_image_0000002792876796.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=1027E0865A52D79F9D82CB705CBAAC9EF3C7F5FE110D482D4E257297C8AABBCF)
 
 **实现方案**
 
@@ -334,7 +334,7 @@ API version 16之前的版本，可以使用NavDestinationMode.DIALOG弹窗实�
 
 操作栏弹窗通常是指在应用界面中，用户点击操作栏（如右上角的“更多”按钮）后触发的半模态菜单，通常具备分享、增删改查类功能。操作列表弹窗的内容主体是列表，分为固定高度，可变高度两种。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/NaNJkmVxSNKKRgGv6JpqWw/zh-cn_image_0000002791725118.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=A22ACE9C7FF4BFE89330CD46C4816C83FA5E197CF33D3D6F999D662D6D4C0429)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/gh3Bm9pISBmmTyXExY95WA/zh-cn_image_0000002821836701.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=967F0F7006E2D63CC1ECFD4148A749FDB3D689399B518098C53F2215DC58F378)
 
 **实现方案**
 
@@ -388,7 +388,7 @@ API version 16之前的版本，可以使用NavDestinationMode.DIALOG弹窗实�
     })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/t80_c3apQXOoaRMHH-LX0Q/zh-cn_image_0000002791565146.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=568F5D30A917BE27547D214A57191BB897F7B1FA526C6C484CDCC7854AC331C1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/_SNX7K6zS-Kc5hRijCiTvQ/zh-cn_image_0000002821756703.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9A0FE93A6DCFF274B93592E9070DA282680F02860302AFE719E14EAA75CD5D0)
 
 ### 实现评论回复弹窗
 

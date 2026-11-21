@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/br-pair-devic
 title: 配对与连接设备
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 传统蓝牙 > 配对与连接设备
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:13+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:a45b4e91e4d6f9efc9591385cc3fa4c8e50e25469cc5a8843c57e98a02429719
+scraped_at: 2026-11-21T09:11:39+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:ca7d27505a51932f4f68cddca9c1b3e79b166ddbd5e85db6cfd06739d350cc00
 ---
 
 ## 简介
@@ -17,6 +17,10 @@ content_hash: sha256:a45b4e91e4d6f9efc9591385cc3fa4c8e50e25469cc5a8843c57e98a024
 ### 申请蓝牙权限
 
 需要申请权限ohos.permission.ACCESS\_BLUETOOTH。如何配置和申请权限，具体操作请参考[声明权限](declare-permissions.md)和[向用户申请授权](request-user-authorization.md)。
+
+### 查询是否支持蓝牙
+
+调用[isBluetoothSupported](../harmonyos-references/js-apis-bluetooth-access.md#accessisbluetoothsupported)接口查询该设备是否支持蓝牙，支持后再进行后续步骤；不支持时，请勿使用相关接口。
 
 ### 导入所需API模块
 
@@ -55,7 +59,7 @@ try {
 
 配对过程中，系统会弹出对话框。不同配对类型，对话框样式可能不一样，其中“确认配对密钥（Confirm Passkey）”模式如下图1。若用户同意授权，才能配对成功。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VDnA9p5TTtGTKbDVnca96A/zh-cn_image_0000002791565768.png?HW-CC-KV=V1&HW-CC-Date=20261119T014812Z&HW-CC-Expire=31536000000&HW-CC-Sign=50036F87F23C8DE2784534D22CEF4130323B774E57774E0AC1C6D6972BC4C004)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/fJznPw9qR-2qZrvV9cRQNg/zh-cn_image_0000002821757329.png?HW-CC-KV=V1&HW-CC-Date=20261121T011013Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F73937A70E8BE7FB8D9E013A975D111CFE6EE6EA91C97672AD0F84ED3F6CE40)
 
 **图1** 蓝牙配对请求对话框
 

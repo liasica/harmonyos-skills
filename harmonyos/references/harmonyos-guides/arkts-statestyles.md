@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-statest
 title: stateStyles：多态样式
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > stateStyles：多态样式
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:36+08:00
+scraped_at: 2026-11-21T09:11:01+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b5d1703d647254f0b307e061365569823a2524e7fe8895ab043c7b09eaaac8ab
+content_hash: sha256:d58dd72aa2f00b3979b787b959070800719681579ee949189a2c73ffb6156437
 ---
 
 @Styles仅应用于静态页面的样式复用，stateStyles可以依据组件的内部状态的不同，快速设置不同样式。这就是我们本章要介绍的内容stateStyles（又称为：多态样式）。
@@ -74,7 +74,7 @@ struct StateStylesSample {
 
 **图1** 获焦态和按压态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/2hNKGCTdQiKCTbgFhlDytw/zh-cn_image_0000002791724584.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=A25A6E89A9FE833499127904BF2EA9DEC9C4E29C9611C5E650FCBAD29F7B70AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/8fo2dWqBR8u8R_Y6dAL2vQ/zh-cn_image_0000002821836167.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=595F4A1668C9F416D635C0E70329A4B97AAB414745F3DFFE672E880FC9413D72)
 
 ### @Styles和stateStyles联合使用
 
@@ -107,7 +107,7 @@ struct MyComponent {
 
 **图2** 正常态和按压态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/y_hGYbsDQOKQRimKXbwgDQ/zh-cn_image_0000002791564612.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=530E9B6DE6E946559E721EE80E4AE738AD4A64AF69AF9C829BCECFF11E7612EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/cIJgCp-wTVunoj90k_6Lcg/zh-cn_image_0000002821756167.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCF932E5743EFF5F6F2395F9D930C1A91B0203B024CF390D7781CBE1833E8E37)
 
 ### 在stateStyles里使用常规变量和状态变量
 
@@ -146,4 +146,4 @@ Button默认normal态显示蓝色，第一次按下Tab键让Button获焦显示�
 
 **图3** 点击改变获焦态样式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/8yIk_F2mR5O9-kdNtlhDGw/zh-cn_image_0000002820524563.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFE4BA107D550D58A66E4209E6EF6F4B71B6836AC85587E216AD15A9B151DCF4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/tN6LokLnSo-V3BUsRIk5RQ/zh-cn_image_0000002793036232.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=C97CFB0A545C47C46798EE5D1A0B68EA23DF8B5676DA1F7F498599A594B45E2B)

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持触屏输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持触屏输入事件
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:43+08:00
+scraped_at: 2026-11-21T09:11:08+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d75f73e1a6112c7ffaf7b5b9e0d6751344fd22da58b70e96ea393593a9f8feda
+content_hash: sha256:0f9c3959dfd21fb7203588d4d0ec6a747602e02ca0d0a9a007d9ee4c5f735f8f
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/AwFY35naRd-sLulgJXr6Vw/zh-cn_image_0000002791565170.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=65268F25B5CFC9FF427B83B0A419D6EC5F880342F98CD76921D386F1241A6912)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Uf9rZ5XhSmGzT4yZolTbBg/zh-cn_image_0000002821756727.png?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3B3E9D0435B88A7689FE0A15C963C16161E354886A61F4F557743F0E65D4C0A)
 
 触屏设备是最常见的输入设备，几乎所有手持类终端设备都支持用户通过触控操作。触摸事件也是应用开发者最常处理的事件类型之一。
 
@@ -76,7 +76,7 @@ struct PreventBubbling {
 
 基础事件的上报频率与具体的输入设备类型有关，但一般频率都是非常高的，如触屏一般每5~7ms即上报一个点，而对于一些高精度鼠标，上报频率最高可达到每1ms上报一次。由于对输入事件的响应是为了UI界面的变化来产生对用户操作的响应，因此将如此之高的基础事件上报给应用，多数情况下是冗余的。为此系统会对两帧之间所收到的基础事件进行重采样，只在帧内上报一次给应用。重采样是针对每个触点单独进行的，不同触点会单独进行重采样。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/UqPAfguRTxWM7mkMSg6veg/zh-cn_image_0000002820525123.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=295F150385BBCF7F2EB3AC27184E1A38DECCE7275446CA5C09E6586331A6FBB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/_DOolhlCSfqY8UZf-Soyhw/zh-cn_image_0000002793036790.png?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB76984F7C95A4B0AA411681E3FD917F93BACECBD5468A9E45C602B8696EB0EC)
 
 * 按下时产生的事件会立即上报给应用；
 * 帧内的move报点并不会立即下发，而是会在送显帧到来时重采样合并后上报；
@@ -180,7 +180,7 @@ struct MultipleFingerInformation {
 
 以下是上面的示例在如下操作序列时产生的日志输出情况：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/rNkEEUwDS7Ok3DjgMiNEOg/zh-cn_image_0000002820405123.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=50E4475EA35A4B3C25732347F11099636AEDA95FAE362C191996343360DD5AAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/9k5Si0GeSim8dE-p64BgtQ/zh-cn_image_0000002792876822.png?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBE0C9D5965B8F9442BAB59C0C0883A14473CD785C649824BB45AE1E1C15CB10)
 
 按下手指① -> 按下手指② -> 按下手指③ -> 抬起手指② -> 抬起手指③ -> 按下手指③ -> 抬起手指① -> 抬起手指③
 

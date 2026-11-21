@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-module-
 title: 模块化调试工具
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 模块化调试工具
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:34+08:00
+scraped_at: 2026-11-21T09:10:59+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:e100656290618818261237ce2583b4e543efd0dc555c3287475a9e1aa952a97b
+content_hash: sha256:f3d145873012785adaf765f17aceaa618c56bcdf9d1b9b98ad615de6951308d7
 ---
 
 ArkTS运行时提供了多种模块化调试工具，帮助开发者快速定位和解决模块化相关问题。
@@ -196,26 +196,26 @@ HiSmartPerf工具完整的介绍可参考指南：[HiSmartPerf](../AppGallery-co
 
    打开HiSmartPerf工具，进入游戏性能分析的CPU Trace页面。虽然标题是游戏性能分析，但分析场景并不仅限于游戏场景。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/TwrMRqsNReK7__27_uNcDQ/zh-cn_image_0000002820404479.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C927F0E1AF7186988D2F1798B45FA7E372C45C8A1228DB2060E200860290D88)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Z9Cbh_iOTVGqRaE3TyNR6w/zh-cn_image_0000002792876180.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=90FF19170E261C66B064D6576CAC0D50C539FD445D51BDDCD1829002D2AB232C)
 2. 配置采集时间并开始采集
 
    采集完成后将提示文件回传，当文件较大时请耐心等待。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Z0b2NovMSmSuyhoXtawXSw/zh-cn_image_0000002791724502.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EC84497BC8BE1DEBB3A414FD60D195C89D43565D6DD8230881D301933D4AE5C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/_hseuUS6QgqIs3F3RVjHZw/zh-cn_image_0000002821836085.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=E44E49606B04F00161C67461F8F20AAE44E4706C5DD2F5C4213D035004692116)
 3. 打开trace文件并选择需要查看的应用
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/a755DcVUS6ePRhBIL2s7mQ/zh-cn_image_0000002791564530.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D4001326EED4ED959D2E9C5C2389C99311FC20E3B0720A05D1A3074889520D3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/91OnT2QSRR-UPYQi_HqeMQ/zh-cn_image_0000002821756085.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFDBDEC876C0B9EC4C44215B4FDB572F7EA0A6325AA5A6B229717C64686D95CB)
 
 ### trace文件分析
 
 实例化的文件以及so在SourceTextModule::Instantiate下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/gGDkBsYzQKGpLK-SNNMOeQ/zh-cn_image_0000002820524481.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0285CE939EEF31C1FAB11A416CC7D3A9C61F5C9089E4B111C58F53FF07CA3BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/nUrjy42yRU6GeTRX1RW3JA/zh-cn_image_0000002793036150.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=AACE0FAC7A2A77E92BF36908CF9DFCB895FC978A3A21A1EAAC5D2E872D53EB0F)
 
 执行的文件以及so在SourceTextModule::Evaluate下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Am90ry4RTsauI7Qd2p5a9Q/zh-cn_image_0000002820404481.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5D5A378B434E7CA3993500C7C1DEDB74388F7C39539A6CEED2A34A03A2AE26C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/GxGnIUwvTEKkQvCg-a4I_g/zh-cn_image_0000002792876182.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AFF2C7C4FE0DA91D420DCE246FC5C0E9B7617D8B3A2602CBA264BF5208684DA)
 
 选中需要分析的区域，会在下方生成表格。可以根据表格数据对耗时长的文件进行性能优化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/3r11nyO3QlCsnj3sR5ZHaQ/zh-cn_image_0000002791724504.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=14F014B43AF84CE6E2871D5E241523B7034338DCE554C9942F097BBF4A1C84F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/mMEun8A-RhuqgqzwvVN3Tg/zh-cn_image_0000002821836087.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=D205C21DB8792CF589DA1D43CA48A33EC99D5F34BA628FE14B2C81414CFD0D06)

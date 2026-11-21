@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-payme
 title: 商户基础支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 商户基础支付场景
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:07+08:00
+scraped_at: 2026-11-21T09:12:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:44ced659be79b62245d44b7f854593ff0f11aa5334d206dfacd16eba27e63527
+content_hash: sha256:d2751c355beb13a3986233ee526edeb608b66d07992863b87615eead984471bd
 ---
 
 ## 场景介绍
@@ -18,13 +18,13 @@ content_hash: sha256:44ced659be79b62245d44b7f854593ff0f11aa5334d206dfacd16eba27e
 
 华为支付收银台展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Gac79NaBQziK8_QiED94uQ/zh-cn_image_0000002820406509.png?HW-CC-KV=V1&HW-CC-Date=20261119T014812Z&HW-CC-Expire=31536000000&HW-CC-Sign=B48510C2CE671067CD4632A9782C2554D3318BD3A5BCD259AFD3F78DFDCCA9D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/wQhxnJb5S5uxZTlBf2CdiA/zh-cn_image_0000002792878210.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FD53E691388C436787C73F7D974E140D761EA17FB907E1F72993A42021E6DB4)
 
 ## 业务流程
 
 开发者通过接入Payment Kit基础支付，可以简便快捷的实现应用的支付能力。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Cf3PZwJ3Ry25NEppfPLVPw/zh-cn_image_0000002791726530.png?HW-CC-KV=V1&HW-CC-Date=20261119T014812Z&HW-CC-Expire=31536000000&HW-CC-Sign=299C331ED6E52DCC5CD5057F7397913C658EACC02223C606E62A90214B48F321)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/T_4oSZByScyEvwTOvrJgQg/zh-cn_image_0000002821838117.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1548EE6EC873732780307AA3B066A6A2AB4BF80E496287FB8B0370E5B70A737)
 
 1. 商户客户端请求商户服务器创建商品订单。
 2. 商户服务器按照商户模型调用Payment Kit服务端[直连商户预下单](../harmonyos-references/payment-prepay.md)或[平台类商户/服务商预下单](../harmonyos-references/payment-agent-prepay.md)接口。

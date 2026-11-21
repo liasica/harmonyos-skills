@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-fa
 title: 使用文本常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 使用文本常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:50+08:00
+scraped_at: 2026-11-21T09:11:15+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f5aded804c6952a3c59bbd8a1ebe7b3b1eca0e5225da5795ffb61c85b88086ce
+content_hash: sha256:487fa937845bd6b061016dcac3791b5c65c64a651b7270e5e2917a1b8b13d1a1
 ---
 
 本文档介绍使用文本的常见问题并提供参考。
@@ -20,7 +20,7 @@ content_hash: sha256:f5aded804c6952a3c59bbd8a1ebe7b3b1eca0e5225da5795ffb61c85b88
 
 在Text组件上未设置宽度，当内容过长时，省略号与组件边缘之间会留有较大空白，且内容更新时省略号的位置会发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/0TCJivLsR6Sv7kHeuOZpxg/zh-cn_image_0000002791565432.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1BBF51834028C7E9F5451F7553293972BEDE102F53A9914283F2F5105B44A9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/HnU55NjWTb-yEzehTXFFdg/zh-cn_image_0000002821756993.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010951Z&HW-CC-Expire=31536000000&HW-CC-Sign=275D04DE447C2F309F76C235BE05E9AD677E53070481EB8AAEFC8713796955A9)
 
 **原因分析**
 
@@ -65,7 +65,7 @@ struct WordBreakExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/qJz9nAAORfOkC3LN-YIaTg/zh-cn_image_0000002820525385.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=83D3A62DF864374F081AA6E95251C202E84E10701AC7A28C987F0108630C077C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/aqrWzfZiSJesPYMR5PdqRA/zh-cn_image_0000002793037056.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010951Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F3BF0122FA16FA389AC62AC928F358974EA0678A955296C427462CC2AD9A640)
 
 ### Text组件如何实现行末展开样式
 
@@ -126,7 +126,7 @@ struct HeightAdaptivePolicy {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/MeNd8Uy6RoOMQpEFabz54g/zh-cn_image_0000002820405385.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC3B46B8080CCDC60DEBD588DAA17FE16A0D233F5E8EAA054D3E9AB478CDAEDA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/5ihQC4sBQTWdRnLvHxd0UA/zh-cn_image_0000002792877086.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010951Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E2A438C6683391503DE725BD6070CE6FB6FE39BF85266696C7D16E44B049DDD)
 
 ### 在文本前后添加自定义标签
 
@@ -251,7 +251,7 @@ struct LengthMetric {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/VBuozh_kRSiBlkoQiNSgnw/zh-cn_image_0000002791725406.png?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=B26E83A73AD19D923A69B28D2EEAEBE6E71A5A90296117AC1D799FF5F9D34A1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/PqCA5uZtQ-ar4Lwj8BnCyg/zh-cn_image_0000002821836993.png?HW-CC-KV=V1&HW-CC-Date=20261121T010951Z&HW-CC-Expire=31536000000&HW-CC-Sign=6814A1835E274A0AD9A18258ED9F1320CF0C22809A4DDA9B079D7F2E70FD07D6)
 
 ### Text组件如何实现表情与文字一起显示
 
@@ -364,7 +364,7 @@ struct DisplayedTogether {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/eIDKioAwTDaqigExtbYN5g/zh-cn_image_0000002791565434.png?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6BE9410B8869DD034D5F0E955BC739B202839044A4C1628F22E301D9477A394)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/7-i9X-0oQLC5Z5ohhXq4hw/zh-cn_image_0000002821756995.png?HW-CC-KV=V1&HW-CC-Date=20261121T010951Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2E084EEF100B345FB5955F05370C88A293688E84EFC6549F3CFA1E0123DC124)
 
 ### 文本超长时如何展示
 
@@ -408,7 +408,7 @@ struct TextLong {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/LpU8XKjlTge-cEhtVE5Ygw/zh-cn_image_0000002820525387.png?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C3D27678706DF997A3AD7C5D5001541638978550B15AA5976CC1506BFF8457A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/zSzQYXgkRkOSyssDAZRTag/zh-cn_image_0000002793037058.png?HW-CC-KV=V1&HW-CC-Date=20261121T010951Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4818FEBBC438930CFA69E28B5BF4E7F661BB90313F1F8CFFA4293D37BDE8E87)
 
 **解决措施二**
 
@@ -445,7 +445,7 @@ struct TextLongTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/1a7xJrisQbOLuDR_8li2IA/zh-cn_image_0000002820405387.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD7D48E479B7818203CEECDF08D29272861B5885550E006247E76F084B8BDABD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/02AmJlvdS_qL8uWEtu8YrA/zh-cn_image_0000002792877088.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010951Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EFE448E03CC697266385ACCC1E8BCC687C956734069527BE81660EBEECD3608)
 
 ### selection如何触发弹出自定义菜单并设置菜单字体大小
 
@@ -515,7 +515,7 @@ export struct HowToSetCustomSelectionMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/tD5nQ_5RRZ67__H27s4jYA/zh-cn_image_0000002791725408.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=4636DB762CE726276C4E0F2DB5F2C9B7AB419555A2B28272BF0894FD71B94341)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/DSmelgWoQgidG3DGoKBFKw/zh-cn_image_0000002821836995.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010951Z&HW-CC-Expire=31536000000&HW-CC-Sign=71A3761ACDAB3FB690C3D351741AAD3A3415860F8AD72185F84F217226B6773B)
 
 ### 如何屏蔽文本的长按手势
 
@@ -634,4 +634,4 @@ export struct CursorPersistsWhenTextInputIsCoveredExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/TftmTQqsTbSF1kLcLMUHUA/zh-cn_image_0000002791565436.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E32546C74FB7287C2F80B13F697ADCFE9CBAFB4FEC2165770C0D706371728F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/-KUaXAUYToiP7f6xKcKaRw/zh-cn_image_0000002821756997.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010951Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DFBC934D8FDCAF6A3BD1050AD371CAAEAFB9A472B31881349FE480660CFC2D4)

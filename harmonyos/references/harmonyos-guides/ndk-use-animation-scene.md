@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-use-anima
 title: 使用动画开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用动画 > 使用动画开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:46+08:00
+scraped_at: 2026-11-21T09:11:12+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1717a95c40d6b18600d305fcd8578bf79868733bb885502f43b93ab276c41863
+content_hash: sha256:1290e31a05d8a2768175e09499e3124489ff3f0462122718791930f2279a9316
 ---
 
 本篇中的所有示例仅提供核心接口的调用方法，完整的示例工程请参考[AnimationNDK](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/ArkUISample/AnimationNDK)。
@@ -120,7 +120,7 @@ content_hash: sha256:1717a95c40d6b18600d305fcd8578bf79868733bb885502f43b93ab276c
    animateApi->animateTo(context, option, update, completeCallback);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/XARZVHN9QCaF6B4U2IDv3Q/zh-cn_image_0000002820525285.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014746Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D2F93B133FD37C80FB230E111912EAAFB90AAD9EB60D07A2ECFA8B95F111444)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/r67kHZvfQcakxvVlGmcZBw/zh-cn_image_0000002793036956.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010948Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA33A58B5338B1E6CD2F54D24A16C7ACC1CD706524C73AF3692CA3EEB1CB4343)
 
 ## 组件出现/消失转场
 
@@ -258,7 +258,7 @@ content_hash: sha256:1717a95c40d6b18600d305fcd8578bf79868733bb885502f43b93ab276c
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/V2VZa3FjTli8ncxn4mkPPA/zh-cn_image_0000002820405285.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014746Z&HW-CC-Expire=31536000000&HW-CC-Sign=69CFEA778906AC84D0D4E52D76F42BDE713488D81A6A0913B568D9DB1D5EB116)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/dT1ttkuNQzaRi9s512MEaw/zh-cn_image_0000002792876986.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010948Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C2B1C502F77C9584CFACF706944BB6F779FBFB24DC623C1B442EB05F267F8DE)
 
 ## 一镜到底转场
 
@@ -406,7 +406,7 @@ content_hash: sha256:1717a95c40d6b18600d305fcd8578bf79868733bb885502f43b93ab276c
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/-a_YZigMSU-di_PDwIH1dw/zh-cn_image_0000002791725306.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014746Z&HW-CC-Expire=31536000000&HW-CC-Sign=04BFDCAA56F27477FAEF10DBD2F65784DB88FDDE289780657D42E099C220E409)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/358da4YwRbadMG9YD1Y5fg/zh-cn_image_0000002821836893.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010948Z&HW-CC-Expire=31536000000&HW-CC-Sign=452BC7B5ACB3A97D5DE5F07EE9DFA311EAD0B3D6DBE5EECB3B62B7794AFB4EB3)
 
 ## 使用关键帧动画
 
@@ -521,7 +521,7 @@ column->AddChild(textNode);
 column->AddChild(button);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/dlce-bgSR46BPKKkTiqWAQ/zh-cn_image_0000002791565334.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014746Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEB6DA13CC900C155A37DFF5A002078A55FCE4E7B9E0211A231F592FD2F0BF88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/kOC87z_VTU-aiVcy-L7nQg/zh-cn_image_0000002821756895.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010948Z&HW-CC-Expire=31536000000&HW-CC-Sign=57F95673CAA77DA1F26F6645DB8EEE668CA82FEA1AF7827FD3E62A28FD406017)
 
 ## 使用帧动画
 
@@ -739,4 +739,4 @@ std::shared_ptr<ArkUIBaseNode> CreateAnimator()
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/yCCnwGZ-SRescm17fuOUsg/zh-cn_image_0000002820525287.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014746Z&HW-CC-Expire=31536000000&HW-CC-Sign=206932B2088FA78529EE749A69FB82D359E5FAB02A0691B155CFF7D8E498BC0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/xogGO2iYQEy3r1OchHBl-w/zh-cn_image_0000002793036958.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010948Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC8F857A81717F107798B89E619B133B768DF3EA3088CF9F1012A92759B56F24)

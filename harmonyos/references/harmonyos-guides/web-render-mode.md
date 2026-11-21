@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-render-mo
 title: Web组件渲染模式
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web渲染和布局 > Web组件渲染模式
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:51+08:00
+scraped_at: 2026-11-21T09:11:17+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:9e1c0eb428e2cf2d47f61f0fb0067c7c9636ef33a94c7ea138b28248984a624c
+content_hash: sha256:09482811d99215fe87332321f0cfff07764f146738a7e6708aa5a8da28876bfd
 ---
 
 Web组件提供了两种可配置的渲染模式，能够根据不同的容器大小进行适配，从而满足使用场景中对容器尺寸的需求。
@@ -21,7 +21,7 @@ Web组件提供了两种可配置的渲染模式，能够根据不同的容器�
 
 **图一 异步渲染模式场景**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/DwdyNmOsSbuTFaDJVw956w/zh-cn_image_0000002820405437.png?HW-CC-KV=V1&HW-CC-Date=20261119T014701Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B6E9F1227340DA2BF8F80F9568A999216D7B5C1E69E59E98659644A20E70362)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/1iCB2tm8Sturm8XIH14F3Q/zh-cn_image_0000002792877138.png?HW-CC-KV=V1&HW-CC-Date=20261121T010953Z&HW-CC-Expire=31536000000&HW-CC-Sign=392A62B5A51A7BD52BF30DD44912445A1603414700EB11EFD27CBA02B6398F60)
 
 ## 同步渲染模式
 
@@ -35,7 +35,7 @@ Web组件提供了两种可配置的渲染模式，能够根据不同的容器�
 
 **图二 同步渲染模式场景**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/MJyR4kADQn-V_T3wV5uk0g/zh-cn_image_0000002791725458.png?HW-CC-KV=V1&HW-CC-Date=20261119T014701Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BE673194C516EB90178714B0D2B35C8C5CCD774D832F4E1A0B06B5038777140)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/PvNCBHwgSgOknZyGKkkjXA/zh-cn_image_0000002821837045.png?HW-CC-KV=V1&HW-CC-Date=20261121T010953Z&HW-CC-Expire=31536000000&HW-CC-Sign=52A22A036BA6AC644D57806C075449B0BD293F805EDE199533D8435512526E47)
 
 ## 示例代码
 

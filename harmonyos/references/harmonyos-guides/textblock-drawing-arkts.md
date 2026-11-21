@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/textblock-dra
 title: 字块绘制（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 字块绘制（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:45+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:4bfc7810a645dfda98ab9944fd806a587ec9eb1988edb1b59f981740b6070678
+scraped_at: 2026-11-21T09:12:11+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:cc5177fbfba8b7228bd0604b7e68f69119d870afd55526f17022adb32ef263e9
 ---
 
 ## 场景介绍
@@ -48,7 +48,7 @@ const textBlob = drawing.TextBlob.makeFromString('Hello world', font, drawing.Te
 canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/MfR7nJ5jSS-qOoTgFXmOjg/zh-cn_image_0000002820406039.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7907F824ED8281BA5BD066A31A364106F339C2ECBDFCE93FC318C69AB00227E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/OhwjCCjaRgmTVPCoOdm3_Q/zh-cn_image_0000002792877740.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011210Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3FFCC3018DE928DCB2A895BD87C67D82E3815544F562D2EC7397E35E7210BFE)
 
 ## 文字描边
 
@@ -83,7 +83,7 @@ canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 canvas.detachPen();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/PU1JhuEzRBmoa2cWi5QbEQ/zh-cn_image_0000002791726060.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=6425A8F48D221EC2DE5AC866CEF32D8AFD69ACB77BBD5267A33F0B2EE99D35E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Z73os3k-RP-v_IP7JhYUtw/zh-cn_image_0000002821837647.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011210Z&HW-CC-Expire=31536000000&HW-CC-Sign=52735A680173CFC5849FD12911F3C285AC9DC730C7F4E9432CF70FA89DBE462C)
 
 ### 中文文字描边
 
@@ -125,7 +125,7 @@ canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/__krmBsoTeqenzOErQZQ8A/zh-cn_image_0000002791566088.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=062B19D229EBBFCE3218C03E142A5C2926D262E7437FF9BD2DA08082276A7447)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/GSFPQxA0TZe0kGFMkgKJ-Q/zh-cn_image_0000002821757649.png?HW-CC-KV=V1&HW-CC-Date=20261121T011210Z&HW-CC-Expire=31536000000&HW-CC-Sign=9844AD4FE4DEF1B86D0CF8848E5A5E5279B193E1919005D26974B7B2EEAB3785)
 
 ## 文字渐变
 
@@ -157,7 +157,7 @@ canvas.drawTextBlob(textBlob, VALUE_100, VALUE_300);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/q9C30GZJRrWY2Nwa8p9M8g/zh-cn_image_0000002820526041.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=C99D1FD172C8D3F31EBAC0DBF1636E11666B5F4675F5F1E746C903C3C49A1400)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Ki3P2GjoQLK5_AtFTNWf4Q/zh-cn_image_0000002793037712.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011210Z&HW-CC-Expire=31536000000&HW-CC-Sign=6951BAE82671AE48E645E7D614F31F5E898CF4665A1699FA45D8E244BD4929B6)
 
 ## 主题字体
 
@@ -211,7 +211,7 @@ for (let s of text) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/5VZPQR1YQBu_ZNnCA8yBOw/zh-cn_image_0000002791566090.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0F8E7A16A0C9AE931EC1F9DFAACCE213EE0981F79E875EB713D371817D4D5AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/lQRcANiYQrCBJSBB_dzeBA/zh-cn_image_0000002821757651.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011210Z&HW-CC-Expire=31536000000&HW-CC-Sign=F718F28D7206E02BD4C5E0BE70D586C4BA57B4BDD1615CDB0B7E80517D240C9D)
 
 进阶场景：绘制带字体特征的字符。
 
@@ -236,7 +236,7 @@ for (let s of text) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Y47gb7g1RbSKzr94gLZ0kw/zh-cn_image_0000002820526043.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A9728752A6D1FA602A745CC4C0889CB45066F4C1A9CB81CD21CDDAE598F0584)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/8SxES95qTNK23Cy1-b4eTQ/zh-cn_image_0000002793037714.png?HW-CC-KV=V1&HW-CC-Date=20261121T011210Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B1A55EA901900CEF9885CF13A9056E6D5B7AC5A28E91DFBDB7E532C2972E9EE)
 
 **说明** 
 

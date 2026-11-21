@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ImagePacker)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interface (ImagePacker)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:649de60ca3b058b09a96f9aec115ffdc24df4d69a47db04d536725d6856c6a0e
+scraped_at: 2026-11-21T09:16:06+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:86fb46238ea9053e67675f3f05a66ae07502c1d4b23436ff087f6fc12dac0de8
 ---
 
 ImagePacker类，用于图片压缩和编码。
@@ -718,9 +718,9 @@ async function PackToFile(context : Context) {
   let packer = image.createImagePacker();
   packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops)
     .then(() => {
-      console.info('Succeeded in packToFileMultiFrames.');
+      console.info('Succeeded in packToFileFromPixelmapSequence.');
     }).catch((error: BusinessError) => {
-    console.error('Failed to packToFileMultiFrames.');
+    console.error('Failed to packToFileFromPixelmapSequence.');
   })
 }
 ```
@@ -768,7 +768,7 @@ import { fileIo } from '@kit.CoreFileKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { image } from '@kit.ImageKit';
 
-const DOMAIN = 0X00000;
+const DOMAIN = 0X0000;
 const TAG: string = 'PackBinaryImageToTiffFile';
 
 async function PackBinaryImageToTiffFile(context: Context) {
@@ -843,7 +843,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { image } from '@kit.ImageKit';
 
-const DOMAIN = 0X00000;
+const DOMAIN = 0X0000;
 const TAG: string = 'PackBinaryImageToTiffData';
 
 async function PackBinaryImageToTiffData() {
@@ -971,11 +971,8 @@ packing(source: PixelMap, option: PackingOption, callback: AsyncCallback<ArrayBu
 
 **说明** 
 
-从API version 8开始支持，从API version 13开始废弃，建议使用[packToData](arkts-apis-image-imagepacker.md#packtodata13)代替。
-
-**注意** 
-
-接口如果返回"PixelMap mismatch"，表明参数异常，可能是PixelMap对象被提前释放了。需要调用方排查，在该方法调用结束后再释放PixelMap对象。
+* 从API version 8开始支持，从API version 13开始废弃，建议使用[packToData](arkts-apis-image-imagepacker.md#packtodata13)代替。
+* 接口如果返回“PixelMap mismatch”，表明参数异常，可能是PixelMap对象被提前释放了。需要调用方排查，在该方法调用结束后再释放PixelMap对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1021,11 +1018,8 @@ packing(source: PixelMap, option: PackingOption): Promise<ArrayBuffer>
 
 **说明** 
 
-从API version 8开始支持，从API version 13开始废弃，建议使用[packToData](arkts-apis-image-imagepacker.md#packtodata13)代替。
-
-**注意** 
-
-接口如果返回"PixelMap mismatch"，表明参数异常，可能是PixelMap对象被提前释放了。需要调用方排查，在该方法调用结束后再释放PixelMap对象。
+* 从API version 8开始支持，从API version 13开始废弃，建议使用[packToData](arkts-apis-image-imagepacker.md#packtodata13)代替。
+* 接口如果返回“PixelMap mismatch”，表明参数异常，可能是PixelMap对象被提前释放了。需要调用方排查，在该方法调用结束后再释放PixelMap对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 

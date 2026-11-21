@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-use-blur-e
 title: 高效使用模糊
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 模糊 > 高效使用模糊
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:44+08:00
+scraped_at: 2026-11-21T09:11:10+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:2bb307821aff3ccb162fa6dd160798fb6878ae167bb32f388d50901fc882048a
+content_hash: sha256:761539e42b24e166467271fb07d459eb49be5568dad5cef5b1bcec7ac5bf0012
 ---
 
 ## 概述
@@ -23,13 +23,13 @@ content_hash: sha256:2bb307821aff3ccb162fa6dd160798fb6878ae167bb32f388d50901fc88
 
 ### 系统渲染工作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/SfUt5zaHQkGvHvZ6IMOhuA/zh-cn_image_0000002791725212.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=84419464A96876D2800DB20456373F3BB042F6D35A9786281A987316E738EAC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/ANgSl_XuQuKZMf-1vZBsKw/zh-cn_image_0000002821836795.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=06AA35DD5DA375E37FC1D6D536348D23C95145BEBB709C1CC8A34C30BC8F5280)
 
 **RenderService (RS)** ：系统渲染服务进程，接收来自于其他系统服务进程（如桌面进程）及用户进程（如应用）的自渲染图层及ArkUI控件绘制指令，进行统一的组合以及渲染控制。其渲染动作会调用CPU/GPU等通用计算器件进行。
 
 ### RS模糊缓存工作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/3ZL4sBYISjWNaglK3gd9Jg/zh-cn_image_0000002791565240.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F9A3472E16AE6ED01C88A1D95E0C9580638089CDBF615F4E6A6B388249939AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/tkFcYj3ZQ4-2P4D78Mqrcw/zh-cn_image_0000002821756799.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C838FE6EEFEF256ACD2151A916C8ED0E3CA927F1A70945DEA4300BEAA66393C)
 
 **RenderThread (RT)** ：渲染线程，RS进程划分为主线程和RT线程，RT线程负责接收各种渲染参数，渲染各种图像效果并上屏。
 
@@ -47,7 +47,7 @@ content_hash: sha256:2bb307821aff3ccb162fa6dd160798fb6878ae167bb32f388d50901fc88
 
 **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/DmXGIscoTVi1jpsP3y_3Cw/zh-cn_image_0000002820525193.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E678909E0AF38999472EAB07C952FE7796CBDD4E7CE3BFF8DB538BDE97E15D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/Voqk4EvjRxmj6snZofbGeA/zh-cn_image_0000002793036862.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=732B3AEA20E5AFF2948D061AF3927405614B44D43E97431B941FE8D026F46EAA)
 
 ### 实现原理
 
@@ -55,11 +55,11 @@ content_hash: sha256:2bb307821aff3ccb162fa6dd160798fb6878ae167bb32f388d50901fc88
 
 （1）方式1：直接设置AdaptiveColor.AVERAGE取色。此方式需要RS在CPU计算阶段，先用GPU绘制一遍取色区域，然后再计算区域平均颜色值。优点：开发方式简单，适合轻负载应用使用。缺点：性能较低。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/GUsIvsh4SH2wVvYJpmVecw/zh-cn_image_0000002820405193.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CE66DD5F3E9A96890DD171B7A88FA30211AEA10FAD4A8A875B61BB57CB560EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/StIJQ8HDTDO3BF3lVFzXIg/zh-cn_image_0000002792876894.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F2A2ECFD0DB51B06DBAFBF05E250EB120DE13B06D593DC43AEABD6909F191BD)
 
 （2）方式2：创建ColorPicker取色。此方式先使用EffectKit接口创建ColorPicker进行取色，再赋值给模糊参数中的color属性。优点：由于绘制取色区域的过程在应用层进行，所以性能有所提升，适合静态模糊场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/SwgjU6q7RXOU0PKxhckpSg/zh-cn_image_0000002791725214.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B4E1366C2E68429D25BD60A7FFBE4BAAF1AA9FDFF0C6CB6E8A40707947F1924)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Pd8QZkwvSeWoIeDBrNcHXA/zh-cn_image_0000002821836797.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=C87469AB0411645D4CF61E8E5E65FBFCACE079C22FE638D141F3A091BA005E83)
 
 ### 开发步骤
 
@@ -173,9 +173,9 @@ export struct ColorPickerMode {
 
 测试使用两种取色方式绘制背景模糊效果的单帧渲染耗时，最终使用DevEco Studio内置的Profiler中的帧率分析工具Frame抓取绘制背景模糊时的性能差异。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Oxjn-4muRHKyZlbunTqinA/zh-cn_image_0000002791565242.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=E60FC2FCB3DA7F6F1D77063BDEA398D708FF3C9947B0D9A39961887A49F042E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ddvGrZIDRj2U9hetX_bZeQ/zh-cn_image_0000002821756801.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=D05DDDA3D8145254EF63CE616ACB9621F67F1388F2CAEC992F856722094D4D14)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/sQVqte02Rl64Pj-gjKpAbQ/zh-cn_image_0000002820525195.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BCB20F8670D56E8AC8B3461B3172F9D381AAE099AB6F613FBF1CECD736CA104)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/9DDVHQ-oSFq9nHVTuy18kA/zh-cn_image_0000002793036864.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F532444906B022BC3BBD2684D7E1E48898DA9BB0E2D0F244528918A1FCF0E84)
 
 如上图所示，通过RenderFrame（执行GPU绘制）标签可以看出，使用ColorPicker取色的单帧平均耗时为5.650ms；而直接设置背景模糊的接口参数为AdaptiveColor.Average的单帧平均耗时为9.400ms。
 
@@ -185,7 +185,7 @@ export struct ColorPickerMode {
 
 如果需要在背景模糊场景使用混合模式，需要结合实际场景选择合适的混合模式，才能得到预期的效果。以下是同一场景下使用两种不同的方式实现的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Ql1q1gBeTvaTn6r0Nhrphg/zh-cn_image_0000002820405195.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=8135FC3442276E8DFD096F0FE05ACBB94D2DC655FFE1AA6D5097B596F964FDE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/VugZAZ2MRBSxTVENeOb5jg/zh-cn_image_0000002792876896.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE0E33150565B83B0F51AEB804870FA3E153CBFECACB0DD2BA055A67AFE0F61A)
 
 ### 实现原理
 
@@ -197,7 +197,7 @@ BlendMode的类型有两种：一种是FAST类型，另一种是OFFSCREEN类型�
 
 两种类型的差异见下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/M5vDBmmLRu6xboFqBr9cRQ/zh-cn_image_0000002791725216.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=E55DBC2ABDBF15F2B7D3BAA6FE66E762390B69AA3FEC72330757570413A3805C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/58gw3LdESjK1AIsM5v1Rsg/zh-cn_image_0000002821836799.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=75B929D27319CB28E8DFC7FFC93E1A90B63AC5D6D2D53F3DC98A4E4599C227DF)
 
 ### 开发步骤
 
@@ -205,7 +205,7 @@ BlendMode的类型有两种：一种是FAST类型，另一种是OFFSCREEN类型�
 
 **预期效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/sgWFwoy6S-SROlPX4amB1Q/zh-cn_image_0000002791565244.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B78D35230EEC1CEAA7A58E88C0DB0B634B2027DEBBC2649C5524CB212FCCD38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/PJwr7tsDR1m4fRKQ8QvTPQ/zh-cn_image_0000002821756803.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=274A94F76511EA418118B8B565BAF5ADBD4F32F2AC30D76836AAB6442215153D)
 
 设置blendMode为FAST类型使各个图层的效果按顺序进行混合，所以可以实现预期的效果。
 
@@ -255,7 +255,7 @@ export struct FastMode {
 
 如果使用OFFSCREEN方式，将得到非预期的效果：背景模糊对背景图片进行模糊，而后与地图的图层进行效果混合。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/1OWwLTx_Qh-fbivATqXJbw/zh-cn_image_0000002820525197.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A7E3707F4E2BCECCC5DE74586FF1FBC25EF83EF609FE366042D20DB6E0CC315)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/I510L0BvTmSGwEJzlRBmLA/zh-cn_image_0000002793036866.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=32CAAC8619E9B4FB9FFAD7C77F672E3E0966CC0AE1390C5D0560711A57A013B3)
 
 设置blendMode为OFFSCREEN类型会创建离屏画布，而模糊处理过程需要对背景进行截图，当离屏画布未完成绘制回到屏幕上时，模糊流程已经进行了背景的截图并绘制，所以混合后的效果非预期。
 

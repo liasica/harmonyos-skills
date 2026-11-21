@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: refresh
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > refresh
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:20+08:00
+scraped_at: 2026-11-21T09:14:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:20285e54714e91dcd0c28c9a521a0b4805ff7af024b4fd30f8ea2b4e4fab8e97
+content_hash: sha256:8634ddc5d7ca9f32b396886a67a68c0f7296b82028d5a220d4d42c46f8551897
 ---
 
 **说明** 
@@ -140,4 +140,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/2iehpBYrRMGhM8w8W6w9LA/zh-cn_image_0000002820407761.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015119Z&HW-CC-Expire=31536000000&HW-CC-Sign=32D46C336A0A0AAAF7DD5CA0ABC5407F9A8E1FD5D6705ADB062E055554DB3A9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/ZL3U8zCMTZmZuQQQ70WXGw/zh-cn_image_0000002821759389.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011319Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BF74983A406B6DC7079C5275CAEE6FC7AA4AF9D976B58F1C5B2E5D6885857AA)

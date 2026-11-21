@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-
 title: net_websocket_type.h
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件 > net_websocket_type.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:55+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d126a2fdec323a04e77632036c19a2eaa3cbe200a13d8c3fbc51078ab55fdc37
+scraped_at: 2026-11-21T09:15:18+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:2c8e9652278d4a19ca8a1c898064180c662a58abdc077b651ad76b588991bedc
 ---
 
 ## 概述
@@ -40,9 +40,9 @@ content_hash: sha256:d126a2fdec323a04e77632036c19a2eaa3cbe200a13d8c3fbc51078ab55
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [typedef void (\*WebSocket\_OnOpenCallback)(struct WebSocket \*client, WebSocket\_OpenResult openResult)](capi-net-websocket-type-h.md#websocket_onopencallback) | WebSocket\_OnOpenCallback | websocket客户端接收open消息的回调函数定义。 |
-| [typedef void (\*WebSocket\_OnMessageCallback)(struct WebSocket \*client, char \*data, uint32\_t length)](capi-net-websocket-type-h.md#websocket_onmessagecallback) | WebSocket\_OnMessageCallback | websocket客户端接收数据的回调函数定义。 |
-| [typedef void (\*WebSocket\_OnErrorCallback)(struct WebSocket \*client, WebSocket\_ErrorResult errorResult)](capi-net-websocket-type-h.md#websocket_onerrorcallback) | WebSocket\_OnErrorCallback | websocket客户端接收error错误消息的回调函数定义。 |
+| [typedef void (\*WebSocket\_OnOpenCallback)(struct WebSocket \*client, WebSocket\_OpenResult openResult)](capi-net-websocket-type-h.md#websocket_onopencallback) | WebSocket\_OnOpenCallback | WebSocket客户端接收open消息的回调函数定义。 |
+| [typedef void (\*WebSocket\_OnMessageCallback)(struct WebSocket \*client, char \*data, uint32\_t length)](capi-net-websocket-type-h.md#websocket_onmessagecallback) | WebSocket\_OnMessageCallback | WebSocket客户端接收数据的回调函数定义。 |
+| [typedef void (\*WebSocket\_OnErrorCallback)(struct WebSocket \*client, WebSocket\_ErrorResult errorResult)](capi-net-websocket-type-h.md#websocket_onerrorcallback) | WebSocket\_OnErrorCallback | WebSocket客户端接收error错误消息的回调函数定义。 |
 | [typedef void (\*WebSocket\_OnCloseCallback)(struct WebSocket \*client, WebSocket\_CloseResult closeResult)](capi-net-websocket-type-h.md#websocket_onclosecallback) | WebSocket\_OnCloseCallback | WebSocket客户端接收close消息的回调函数定义。 |
 
 ## 枚举类型说明

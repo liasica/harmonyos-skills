@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-faq-5
 title: 关于通知消息被频控的问题
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit常见问题 > 关于通知消息被频控的问题
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:11+08:00
+scraped_at: 2026-11-21T09:12:36+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:15cb66c2d1215f695836fe6bcd0f3e2053980dcb1e5f4ef38e7bd6ede7ee97a0
+content_hash: sha256:0d388c75746fcb5c4ba0def280c6f3bf404dcd22ccc2852dbbd5e970385c1a56
 ---
 
 为了给用户提供更好的消息通知体验，营造清朗网络空间，Push Kit设置了多条频控规则。若消息超出规则限制，超出的消息将会被**丢弃**，直到**次日恢复**。
 
 ## 通知消息被频控的可能原因
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/D8cOS977TwKPQ8-yssx-LQ/zh-cn_image_0000002820526569.png?HW-CC-KV=V1&HW-CC-Date=20261119T014816Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DCA12B20AB850B0E86026C9D205770F0E1A02D1976994B3BABBF5AA023F937A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/lWXX-TxfRQCBwqqQJfC7kg/zh-cn_image_0000002821838177.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=C14FE9B9FDA27526DC45C6162FF80860999DF3D73E4DCC00938C341057C5E9F3)
 
 具体规则如下：
 

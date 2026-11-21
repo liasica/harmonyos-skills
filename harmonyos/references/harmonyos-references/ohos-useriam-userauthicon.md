@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-user
 title: "@ohos.userIAM.userAuthIcon (嵌入式用户身份认证控件)"
 breadcrumb: API参考 > 系统 > 安全 > User Authentication Kit（用户认证服务） > ArkTS组件 > @ohos.userIAM.userAuthIcon (嵌入式用户身份认证控件)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:52:26+08:00
+scraped_at: 2026-11-21T09:15:10+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:389d6742c2f8854748a677fa2fecc963ba1ad660c257485d1fad4b62fe2b8921
+content_hash: sha256:826f58480c8987ca339ce4c5976629ff0d914dac1170cd36377702f2adb9d0f7
 ---
 
 **userAuthIcon**模块是HarmonyOS用户身份认证体系（UserIAM）的UI组件模块，提供了一个开箱即用的身份认证图标组件（UserAuthIcon）。该组件用于在应用UI中展示人脸认证或指纹认证的图标，支持自定义图标颜色和尺寸，并可在点击图标时直接启动系统身份认证弹窗组件。
@@ -35,7 +35,7 @@ UserAuthIcon是一个ArkTS自定义组件（@Component struct），封装了认�
 * **onAuthResult**：认证结果回调。
 * **onIconClick**：图标点击回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/IE1tloRpTNeprlMhCVaZfw/zh-cn_image_0000002820528111.png?HW-CC-KV=V1&HW-CC-Date=20261119T015226Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E83365569E57672067255DBD612069D14026DA8D1B786C6A1E0033544CD4D98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/leDwTVzDRGyT6rjikPm5CA/zh-cn_image_0000002821839751.png?HW-CC-KV=V1&HW-CC-Date=20261121T011509Z&HW-CC-Expire=31536000000&HW-CC-Sign=1512414D849A5C49A9203AD02B73DDDF7D20C22595700DABB0F16AE35D6E967F)
 
 ## API组合使用关系说明
 
@@ -167,8 +167,8 @@ struct Index {
 
 **人脸认证图例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/8GbP-ZcKQDW7riZF079_FA/zh-cn_image_0000002820408113.png?HW-CC-KV=V1&HW-CC-Date=20261119T015226Z&HW-CC-Expire=31536000000&HW-CC-Sign=25CBC185EEDFE48A4800C29214B3A3D632819108B513AB34ECD9E3700E7A7735)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/lQML4Qx1TqaHm0it5flUSg/zh-cn_image_0000002821759751.png?HW-CC-KV=V1&HW-CC-Date=20261121T011509Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F0A8EB6F8DDCAF7E895484B33B76022A1BA397BE6AB41C662B604BCE56523DE)
 
 **指纹认证图例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/CYYBAr16Q4C_87LGYcHj7w/zh-cn_image_0000002791728132.png?HW-CC-KV=V1&HW-CC-Date=20261119T015226Z&HW-CC-Expire=31536000000&HW-CC-Sign=452AA9CA58A5E118C502BAE60E07A6A9F6FBB0518D9143CC6CF76F4ADCFD290D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ldOy2Kn1TGGGgt7fN62VFA/zh-cn_image_0000002793039820.png?HW-CC-KV=V1&HW-CC-Date=20261121T011509Z&HW-CC-Expire=31536000000&HW-CC-Sign=C17DEF16B429AC6B6EFBF185405A1F1E997E9D00D8F7DD18339507C6E3D4D08D)

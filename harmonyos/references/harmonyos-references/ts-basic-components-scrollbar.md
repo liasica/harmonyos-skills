@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ScrollBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ScrollBar
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:58+08:00
+scraped_at: 2026-11-21T09:14:06+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2a7a14bfad2d43a14b4e158dddbd6ea6c91dd017573629431445add4ba1786b1
+content_hash: sha256:49bf6e607ef05c2235c4b1c2282c7394b148c3724c0a1e0221b46c920a502838
 ---
 
 滚动条组件ScrollBar，用于配合可滚动组件使用，如[ArcList](ts-container-arclist.md)、[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)、[WaterFlow](ts-container-waterflow.md)，提供可视化的滚动指示和控制能力，支持自定义滚动条样式。
@@ -165,7 +165,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/KpBSB16eQHK7FLBx4CKzOQ/zh-cn_image_0000002791567228.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015056Z&HW-CC-Expire=31536000000&HW-CC-Sign=24EE596AC7FF3D3BDE9E2E9722E8EBBADF803E2FC0C89DE615CEDAF438DBC877)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/ibxkYXPuSGGEfyTpVLFaZg/zh-cn_image_0000002792878888.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011256Z&HW-CC-Expire=31536000000&HW-CC-Sign=34479D4EE8BD617BE0E95AC17A9543C0E0C5551B3D72303EA560F045CC35138C)
 
 ## 示例2（不设置子节点）
 
@@ -212,7 +212,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/z4pmWm6_QBypaI-O8KC3ng/zh-cn_image_0000002820527181.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015056Z&HW-CC-Expire=31536000000&HW-CC-Sign=19DCF071B2366078992C04C5D15827E543DC4BF150473FDA5385B340B23FC36A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/gL7QxvOyTI26XccrrNf6Qw/zh-cn_image_0000002821838793.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011256Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6A5F904D9C32E85AA1CC5FC6E5D1D7B07706894FFE778EB905652ED650D7857)
 
 ## 示例3（支持嵌套滚动）
 
@@ -284,4 +284,4 @@ struct StickyNestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/mwldmmSOQ6e1fwfKWzf1lA/zh-cn_image_0000002820407181.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015056Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE975C233CECD1D8AD5C2D8A1E7EEA681BE493C78177389599E1FF23E6F42FE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/42L4aRu8T7iY5K7nRCgohA/zh-cn_image_0000002821758793.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011256Z&HW-CC-Expire=31536000000&HW-CC-Sign=15B448EFAF0D61BB783A609BB6933D7E38073A53D5283138C604B7ECB13E1B39)

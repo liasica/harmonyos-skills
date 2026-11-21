@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-m
 title: "@ohos.matrix4 (矩阵变换)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.matrix4 (矩阵变换)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:42+08:00
+scraped_at: 2026-11-21T09:13:57+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e648fc45cee6a3abcc85123596d766970ad212adbc471503657dae0a77313ab0
+content_hash: sha256:fd623bbf5774fa5f552fb90cc4d514fa1f16a5d9b71d15676c3868359bed448f
 ---
 
 用于对组件进行[图形变换](ts-universal-attributes-transformation.md)的各种操作，为组件提供矩阵变换能力，支持对图形进行平移、旋转和缩放等。
@@ -211,7 +211,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/FOwEa4dpTxu_AOxUfyiJWw/zh-cn_image_0000002791726938.png?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F311246BBFAEAB1C05B18714CD066846C38D5003AF3B135C099A45EEE187F95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/sbAq2yXlTVOIr4GCWhdmLQ/zh-cn_image_0000002793038590.png?HW-CC-KV=V1&HW-CC-Date=20261121T011240Z&HW-CC-Expire=31536000000&HW-CC-Sign=17169693218839FA8234A6AE84317DBA790E33534F348761FA4BB5BEF3A684BB)
 
 ### combine
 
@@ -267,7 +267,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Kdoo5uLWTamyIlsvsMTC8Q/zh-cn_image_0000002791566966.png?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3F858494A8D849EB7080A2D2D56C2D8CFF8649350E2A5F3148AD5849798168C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/_eAyafdBQD-4X5Rc7F9FrA/zh-cn_image_0000002792878620.png?HW-CC-KV=V1&HW-CC-Date=20261121T011240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F42D2B070109D722A28B9E53C67AADF4E57D08E9D73020FE45D829F3E3F9E961)
 
 ### invert
 
@@ -360,7 +360,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/dVyx-nmtRlWgJQt1geGomw/zh-cn_image_0000002820526919.png?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCA6546722DCAB11E442E4EB3590AD7EA113C03DE8BF93B5681053EA7C621C31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/OvJKxQ4IS1uGEQ9IsPzjcw/zh-cn_image_0000002821838527.png?HW-CC-KV=V1&HW-CC-Date=20261121T011240Z&HW-CC-Expire=31536000000&HW-CC-Sign=78F7D05910DEA1D53266683CCA65DF05FE8326F4511D6FDDD91685AE01B477AB)
 
 ### scale
 
@@ -413,7 +413,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/JtnfsM1QTJmsIys7z1mlWA/zh-cn_image_0000002820406919.png?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=E560E639B9C6E9A47C37AC92A6316B48080F37FA19710CEF322B5DD03ED353DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Al3O2jQRQMCb322L84HLyw/zh-cn_image_0000002821758529.png?HW-CC-KV=V1&HW-CC-Date=20261121T011240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6412000C2073538142A6EA749CC6D25169C3E2908FB29FC56918E1A9F95D73C1)
 
 ### skew12+
 
@@ -466,7 +466,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/utfIGbWPQ6mcdyHHHkQFSA/zh-cn_image_0000002791726940.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=1545A4576FD64DA822AF32D74D7BFFC3DBEDA1B6397676064979AF83747EC8AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/3lae0IFASQWDf2xw1ci8EQ/zh-cn_image_0000002793038592.jpeg?HW-CC-KV=V1&HW-CC-Date=20261121T011240Z&HW-CC-Expire=31536000000&HW-CC-Sign=83D54AF9AE7F4EF4FA9FD658B65247FC6FBF5269D40A76EA3D4F2D2A50F0106E)
 
 ### rotate
 
@@ -518,7 +518,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/si5G5URZRQ2Gl77lZsGwHg/zh-cn_image_0000002791566968.png?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C4394F72EFBC97CC52E1FA296F1CEC3ABD4866F84286A604FD15F807833B871)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/I5TbpXNCTi6soN9zH7DJeg/zh-cn_image_0000002792878622.png?HW-CC-KV=V1&HW-CC-Date=20261121T011240Z&HW-CC-Expire=31536000000&HW-CC-Sign=26F009A09A3B5FB464DD38760C9DEE185EEF433A013D77C3E08EBB9031E944FA)
 
 ### transformPoint
 
@@ -579,7 +579,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/U2Y8w-YKT4uoMvAmtMquQw/zh-cn_image_0000002820526921.png?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6CDDA53A37EF3DBF249875B4D2E565CFBF16D5850F33320A74BECC57A90F619)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/U-5gDx-aQ8mcwwJLt9gMmw/zh-cn_image_0000002821838529.png?HW-CC-KV=V1&HW-CC-Date=20261121T011240Z&HW-CC-Expire=31536000000&HW-CC-Sign=B61AD41884975A63CB27104292CBB98EEC07E9469CA2D137F4F2935ABB535B7F)
 
 ### setPolyToPoly12+
 
@@ -638,7 +638,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/I6NddNRBQ3mHkJQExAFchQ/zh-cn_image_0000002820406921.png?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4212249406E0F024688DAC09CF7D3A78E5A767F020DFBBDEDA5D5F5103DB95A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/WyCdFljmQVSLTT0RtkvgPA/zh-cn_image_0000002821758531.png?HW-CC-KV=V1&HW-CC-Date=20261121T011240Z&HW-CC-Expire=31536000000&HW-CC-Sign=85F2B28C153ADA621B93BB3A467773CEF31AED57B09FB82B3B363B032D8C46C7)
 
 ## TranslateOption
 
@@ -770,7 +770,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/0xddTQCUQi-SPmUwsJWwew/zh-cn_image_0000002791726942.png?HW-CC-KV=V1&HW-CC-Date=20261119T015041Z&HW-CC-Expire=31536000000&HW-CC-Sign=474F9C7571F5C27F0B8AE5B037F0296DDB4B309D17A5DAA23C84B1D39BBE8F1E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/c3l0UcedSGmzT30V0uwiXw/zh-cn_image_0000002793038594.png?HW-CC-KV=V1&HW-CC-Date=20261121T011240Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE227365D88F546CC0D50EF43A8364D9FCCC6551F1A1FC4BF4F7E22DFBA69904)
 
 ## matrix4.invert(deprecated)
 

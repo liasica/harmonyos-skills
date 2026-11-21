@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-app-t
 title: 应用内开启未成年人模式
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 未成年人模式 > 应用与系统实现未成年人模式联动 > 应用内开启未成年人模式
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:50+08:00
+scraped_at: 2026-11-21T09:12:16+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:25c485c19daba3ac16396015c74e8f5e693e862dce985fdbf8004620d7a88945
+content_hash: sha256:def64f9c90079ac463a281229e0ac64bed8d2c01abb66171b719f1e04cae93df
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:25c485c19daba3ac16396015c74e8f5e693e862dce985fdbf8004620d7a
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/2XQT26RcRzaeA387hIQqkQ/zh-cn_image_0000002820406163.png?HW-CC-KV=V1&HW-CC-Date=20261119T014850Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C9EE0C47D3C2DC4C3B259D06C51F87B8FAD84AE432ECD260D8BADB8662C2633)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/X8VizS5mQK2OzhqofoOoEQ/zh-cn_image_0000002792877864.png?HW-CC-KV=V1&HW-CC-Date=20261121T011049Z&HW-CC-Expire=31536000000&HW-CC-Sign=D33F9D3D1CEF00BC137E9FE9C226F76A05F964FD04ACD6488E9BC08F346BA530)
 
 流程说明：
 

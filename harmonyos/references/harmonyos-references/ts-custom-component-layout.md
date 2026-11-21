@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: 自定义组件的自定义布局
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件的自定义布局
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:12+08:00
+scraped_at: 2026-11-21T09:14:16+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:be459f37abc4a1c82a52fc98bea7d46042a04454883c4ea0eaac9cf9885881ad
+content_hash: sha256:4631ff6033beff875bf24548c3db338381b473377a349bfe05ef719fcce82267
 ---
 
 自定义组件的自定义布局允许开发者通过onMeasureSize和onPlaceChildren接口，以数据计算的方式精确控制子组件的位置和尺寸，实现更灵活的布局效果。适用于需要实现复杂非标准布局、内置布局组件无法满足特定排列需求、需要根据动态数据计算子组件位置和尺寸等场景。
@@ -525,7 +525,7 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/XZzTXhLwS8ODNl8vcaA_Pg/zh-cn_image_0000002791727658.png?HW-CC-KV=V1&HW-CC-Date=20261119T015111Z&HW-CC-Expire=31536000000&HW-CC-Sign=532833671DFA8D7C5540BF7B937868083A3B4685152DBAD8D826D43D1205B776)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Blgl7tusSGivbMCqhvwMlg/zh-cn_image_0000002793039332.png?HW-CC-KV=V1&HW-CC-Date=20261121T011312Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B13A5FC3CFDE29E6E1D21A786F8DEEDCC0BDB8A187D35ED23AB63861D2B0E44)
 
 ### 示例2（判断是否参与布局计算）
 
@@ -628,7 +628,7 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/dFeuTOHOS8mS3LXBJlT_ew/zh-cn_image_0000002791567686.png?HW-CC-KV=V1&HW-CC-Date=20261119T015111Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA71C7AEB238EAD23B97ABD70409FD41F46C1C4C0D9251FCA1C66DF96B5D1E5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/WJwjwMJ7SV-KQcJmxKuZNg/zh-cn_image_0000002792879362.png?HW-CC-KV=V1&HW-CC-Date=20261121T011312Z&HW-CC-Expire=31536000000&HW-CC-Sign=02E82691D55CB666F8ABEA31F6C9378B58CBCA99AA7D2D78BEAC17A74602C2EE)
 
 ### 示例3（获取子组件FrameNode并设置相关属性）
 
@@ -705,7 +705,7 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/qFWiReKnQ7SU3FSYGf0Ydg/zh-cn_image_0000002820527639.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015111Z&HW-CC-Expire=31536000000&HW-CC-Sign=860C8A0DDE1C3087B77DD6C8AF005F29B4C7A67648DFF8B1B765C84BB448C68F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/-f9trPOuSs-wA7goBrKZWA/zh-cn_image_0000002821839269.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011312Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E0679B013492AF8E6358DF84976B61CE27636BF83FAF6455B35DA96A146569A)
 
 ### 示例4（子组件超过父组件大小约束）
 
@@ -779,4 +779,4 @@ struct CustomLayoutText {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/1XtLf4uGRCKft3Nkbr922A/zh-cn_image_0000002820407641.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015111Z&HW-CC-Expire=31536000000&HW-CC-Sign=D60FDD8078EB36D5B4B5FC15A570B6C5B48619373740B4EE13A8521766AB3085)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/3ZrqyLTJQ5KjOTX4_jnBtA/zh-cn_image_0000002821759269.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011312Z&HW-CC-Expire=31536000000&HW-CC-Sign=E609A0D0D2F74225A1E9973DADF46728A47E06F015A356041CE991D2C8B07F13)

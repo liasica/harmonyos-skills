@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SubHeaderV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SubHeaderV2
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:16+08:00
+scraped_at: 2026-11-21T09:14:18+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:47d1950371b4499c40afae94c0c33b21737c4f3b20afc464fe708a9daf9d2e31
+content_hash: sha256:d28983c458fac3d882c1fa1042adbba7b068106095870a5331524fe130f9ae10
 ---
 
 子标题，用于列表项或内容项顶部，将该列表或内容划分为一个区块，子标题名称用来概括该区块内容。
@@ -378,7 +378,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/QnHyIHteQwucig_mzl6suA/zh-cn_image_0000002791567748.png?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=B07E78A90120208401164FF60EB854437BB84B5E8C66FDDFFFC9974DF1EF1711)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/xWLeflwVTteCbXvJVJwrVA/zh-cn_image_0000002792879424.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=49E585C16D7827EC5F4924296D292B1E0E940DAC0580EC92DA474358C0713E37)
 
 ### 示例2（双行文本内容型子标题）
 
@@ -430,7 +430,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/satXwOTNTYeLkvZ2b-ETpg/zh-cn_image_0000002820527701.png?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3FB3475EC0E37774801D7158909FCCFEB96D35D4CD3E63E084077ECC49D38A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/o97fCp0oQy6s60LvadBqzQ/zh-cn_image_0000002821839333.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=50F0CC4AC9776AC3A8CDCA379F9DED8E02C850F2D4DE6993B71C8366945E247E)
 
 ### 示例3（spinner型内容型子标题）
 
@@ -508,7 +508,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/trg1OpXNSfSxt2fz8JPlLw/zh-cn_image_0000002820407703.png?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A17E99A7EC3A2CE9D924F7EB6053EED6161CC215BA2EC4AD3E5799E89158132)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/ELeZFYOEToW3dsR--G_scA/zh-cn_image_0000002821759331.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CEC7DEF4A2E1CEBCB4D39FE18F90A2CC44DFC4349E6E9D089A1E2879DF06389)
 
 ### 示例4（设置左侧symbol图标）
 
@@ -552,7 +552,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/HFEpgnJ3TGqIptK1waz3Yg/zh-cn_image_0000002791727722.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=6993E130A56C6A238E4E73DEFB0CC2521283AD7A111A02CDFA4B85BF504E48C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/oTuWBSlSTz2N-BSCamxPKA/zh-cn_image_0000002793039402.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=235D647DD95F1FB2665404C1F0FB33656B89A136D395595B71528207A625AD34)
 
 ### 示例5（设置右侧symbol图标）
 
@@ -638,7 +638,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/cl_yJUxqSLGJTio5XOUZ8A/zh-cn_image_0000002791567750.png?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0C6ADF4280973501061C492046936EF096BB731A76BBDEAE75E81E632064E10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/KhqeJ21WQLeugxjVnwdemA/zh-cn_image_0000002792879426.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8922B00BEDC7A20C26182630A13B6B7B6E28B5EFB96C0FB3AD5C62380884CB3)
 
 ### 示例6（自定义标题内容）
 
@@ -696,7 +696,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/F6lAmPqxRPqZ4Fg_uqHgOw/zh-cn_image_0000002820527703.png?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B6F7DD636B5595AC3A13F06053D5A38831AC6868187CD1633D89BDB93FF7083)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/tz37VbTHRLiFPxxlkPXCDQ/zh-cn_image_0000002821839335.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0B611DA3BDD21FADEAD0015E8226566777A4DD363C5FCEDDDD0F3997A19D9BE)
 
 ### 示例7（自定义标题样式）
 
@@ -747,7 +747,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/21UnBdMgSEqNuwWATYCfuA/zh-cn_image_0000002820407707.png?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CA08B62800EC661A8EAE9CAC29E383157F61E1B3089FAD4BF4EAAEE6C977D7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/a-EX4vK7RUuSq1LTR0gWdg/zh-cn_image_0000002821759335.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDE3B2A81937F4FD66CDC6A3F3DD6F6F5D699E1890C8AEAD79FF2380D2036DCE)
 
 ### 示例8（右侧按钮自定义播报）
 
@@ -847,7 +847,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/6C-FW2VYROOI0Sp8m_QUFw/zh-cn_image_0000002791727724.png?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=E35C3C27EB3FD86B581059D4F1AA52B6FF8EFA453A4A0E20AD404F3F0E9E2273)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/8BgRHAs1SzeuWpqLZSzQJg/zh-cn_image_0000002793039404.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D342D90BF8CB4D43748756823562EFBC53E754FE724E521B9212DE25558248F)
 
 ### 示例9（右侧按钮设置默认获焦）
 
@@ -909,7 +909,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ZQ8W7fbGSomyxCWR_PLgjg/zh-cn_image_0000002791567752.png?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=E380020807A04F0743164CFCDABD0A23697D3408B3FE0BBA3BC47DA7D6362B9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/S4rwoE9cQymlDomIAhFqvQ/zh-cn_image_0000002792879428.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=D73CE6046B09DE53B7F6DB2B9D3B3D0AC81EEC665CEE7D14524B32B477D6F7CE)
 
 ### 示例10（设置子标题尾部图标）
 
@@ -961,4 +961,4 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Om9h_Ay_SkOTQ0ktXfMwkQ/zh-cn_image_0000002791727726.png?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=23BD031311B6297AB049519B0E0D44CEB40738025B9A9C5486395B4E273C4D35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/O9BSSuqHRQyhHmVBcP3mjg/zh-cn_image_0000002793039406.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9B2A69173CA00963948D629192E994624D459037BADDBD3D516D11360CCFB2D)

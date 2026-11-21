@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: textarea
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > textarea
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:21+08:00
+scraped_at: 2026-11-21T09:14:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3b1de8e9bacbf638d251a345d3548672d5eb26c5920a1df8c54c0a4aa72262cd
+content_hash: sha256:f36aa0ad9afefa75fd870e1722e143e3b07a81ed9ca3ebb00e5e44e5a6b7a9e4
 ---
 
 **说明** 
@@ -108,4 +108,4 @@ change(e){
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/uDF9NrBTSEuHhYuDWJA9Fg/zh-cn_image_0000002820407779.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A675706C96A433E623FE941F7A27CDC501DD8FEA8AABA26DF3CA4D9BE379082)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/TjCzWbZ8TwqvpT3C2n8smQ/zh-cn_image_0000002821759411.png?HW-CC-KV=V1&HW-CC-Date=20261121T011321Z&HW-CC-Expire=31536000000&HW-CC-Sign=F15317CF1FE999B5EC8E577EE9D16A393B7F8CF2E7ECED5275FAECCA962109F7)

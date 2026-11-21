@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-open-in-n
 title: 在新窗口中打开页面
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > 在新窗口中打开页面
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:51+08:00
+scraped_at: 2026-11-21T09:11:17+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ea0ae573431c0238538f2444a0747666a25e75303ff1b7f3a0f53a49b1c51a9e
+content_hash: sha256:0d91afb1de4857627c391314c013349058ba49e00b4e827409a9bf6520b11675
 ---
 
 Web组件提供了在新窗口打开页面的能力，开发者可以通过[multiWindowAccess()](../harmonyos-references/arkts-basic-components-web-attributes.md#multiwindowaccess9)接口来设置是否允许网页在新窗口打开。当有新窗口打开时，应用侧会在[onWindowNew()](../harmonyos-references/arkts-basic-components-web-events.md#onwindownew9)接口或[onWindowNewExt()](../harmonyos-references/arkts-basic-components-web-events.md#onwindownewext23)接口中收到Web组件新窗口事件。开发者需要在此接口事件中新建窗口来处理Web组件的窗口请求。
@@ -115,4 +115,4 @@ struct WebComponent {
 
 **图1** 新窗口中打开页面效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/31YCB3_OROC2YYsnHbALBA/zh-cn_image_0000002820525437.png?HW-CC-KV=V1&HW-CC-Date=20261119T014700Z&HW-CC-Expire=31536000000&HW-CC-Sign=25884A31EB4109F78CC87D58A3F0A8BCC58372DCFF8EC8C015EA8077F0676211)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/NjbAzMv6QCC0Nvv3Hd9wHQ/zh-cn_image_0000002793037108.png?HW-CC-KV=V1&HW-CC-Date=20261121T011117Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBA54488F6AEED8838997C7C08B4BD972548FEB7AA1C57788AFE859E67BAE2B3)

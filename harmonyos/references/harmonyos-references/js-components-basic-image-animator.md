@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: image-animator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > image-animator
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:21+08:00
+scraped_at: 2026-11-21T09:14:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6b010f321811a10d99ad941df444116ba113d223bec39d20e0bd1de2df42afbf
+content_hash: sha256:a6b7e93df7c21f288a538956b54710e5b15d816081cbbf7b608df14c5c41e51e
 ---
 
 **说明** 
@@ -193,4 +193,4 @@ export default {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/aepkpecHQeK_QD8Do4TOcQ/zh-cn_image_0000002820407767.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015025Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A16E7F62E99E058E5351DE7D45E5B21AC0D6C7499E58E92E899A10CC3A2D212)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/9ckuOaAkSiSSBK4tQFxnEQ/zh-cn_image_0000002821759399.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011320Z&HW-CC-Expire=31536000000&HW-CC-Sign=C249C537DF456803A9A675BAB2AEBCF8F0AA793D6447E1A70293906AEA09400F)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: TrustedAppService（可信应用服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > TrustedAppService（可信应用服务）
 category: harmonyos-references
-scraped_at: 2026-11-19T09:52:18+08:00
+scraped_at: 2026-11-21T09:15:04+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:a5b80c18888ced9793f3f8dca92f250d34916438bd966c57c6ef56d3e4be6d89
+content_hash: sha256:b13cdf0b47d10edad1727883e71061f68086a898b04cd1c1dfcd992009e82f41
 ---
 
 本模块提供应用数据的安全证明服务，支持创建证明密钥、销毁证明密钥、初始化证明会话、结束证明会话和获取安全地理位置，能够为安全摄像头和安全地理位置功能提供安全证明能力，确保图像或位置数据未被篡改。
@@ -895,7 +895,7 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, procParams).the
 | width | number | 否 | 否 | 裁剪区域的宽度，即横向的长度，取值范围在 0 到 640 之间的偶数，且需满足 x 与 width 的和不大于 640。单位：像素（pixel）。 |
 | height | number | 否 | 否 | 裁剪区域的高度，即纵向的长度，取值范围在 0 到 480 之间的偶数，且需满足 y 与 height 的和不大于 480。单位：像素（pixel）。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/xHhhfbj1QVa6bSKpuMpCEg/zh-cn_image_0000002791728130.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015216Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA5D54D40DF4BFA52A9A3453A29FA2C21E98358E1E318AB7F488295D74242833)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/szaycgOfTxOFlw6koVN4Lw/zh-cn_image_0000002793039818.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011502Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD7EB607EB19261D6A7996D6B460B10CAF23D786CF71252295409C79A67AF0BF)
 
 ## SecImageBuffer
 

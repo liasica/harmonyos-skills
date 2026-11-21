@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch
 title: "@Watch装饰器：状态变量更改通知"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Watch装饰器：状态变量更改通知
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:36+08:00
+scraped_at: 2026-11-21T09:11:02+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:84e0196c26a7e62b50aa00aad4b6017320390168e9ad0765a62218ea257e5367
+content_hash: sha256:8f89855405c7aca65366250deead2032e3c50ca5692f6f87d5b3ba2ffd9e109f
 ---
 
 [@Watch](../harmonyos-references/ts-state-management-watch.md#watch)应用于对状态变量的监听。如果开发者需要关注某个状态变量的值是否改变，可以使用@Watch为状态变量设置回调函数。
@@ -141,7 +141,7 @@ struct CountModifier {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/j4xHUBWYQ62xYaFIb9Q5ug/zh-cn_image_0000002820404601.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=407F4285BA15014A3D8DF7DB675005F72A1622E8702DA47F4EBC283C4A2091AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Q6cNIVz2S1S0Dwju40GBJw/zh-cn_image_0000002792876302.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=42858EA1EBBA66E05940405DDCD6C989C89627261C6CD758F29A787E3A784B02)
 
 处理步骤：
 
@@ -223,7 +223,7 @@ struct BasketModifier {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/9nV0_1R-S3KhM1b-K6ZF8A/zh-cn_image_0000002791724624.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=57B46BE0F7D462F2FD7A8A645C1BEB9C740DEB85F4D63EAE387CBA33AAB76752)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/U-Na2TxjSiarCCR9RSqhtw/zh-cn_image_0000002821836207.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=586DE9AB2EFA09F8CADF3B3E9E67BA1830A6DD96E0E7046D929F41762E387199)
 
 ### @Watch的触发时机
 
@@ -342,7 +342,7 @@ struct ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/36sfqBD9T2ejf-ZM625DJA/zh-cn_image_0000002791564652.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDE1439DD8221D5BBD85077E59DC4B55DF849F9997CF0746BC3E2F84F78071DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/_NTrsBvJTnSP9BvQ3635xw/zh-cn_image_0000002821756207.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=A98F2EC00ED92B22028D5A58881E6766DEE84BD0C2712118D5E40DBB01FA9D95)
 
 处理步骤如下：
 
@@ -406,7 +406,7 @@ struct UsePropertyName {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/hS3zWVRgSpeAd8O8QdJLlg/zh-cn_image_0000002820524603.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=480320A2075567BBA3DCA8BCB688856252778C0C5F38A48A97C9D6B17E0FA6AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/lWhm-xH5TouVk2Cgq9hcsA/zh-cn_image_0000002793036272.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F83051AE1EEBA36933B7DB322ACB8DC70BB30ED583358C8F240D9DE8C85D827)
 
 处理步骤如下：
 

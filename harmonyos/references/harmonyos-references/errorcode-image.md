@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Image错误码
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > 错误码 > Image错误码
 category: harmonyos-references
-scraped_at: 2026-09-25T07:13:17+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:447bc11177b520cc30a95f1e13b7b243fd2c1e013261b17b953042a421c5de1b
+scraped_at: 2026-11-21T09:16:11+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:0421ca810750db4421d9ab6ea545a5e37de24d584d3e738c6aa1ca66267ccc2d
 ---
 
 **说明** 
@@ -297,12 +297,12 @@ Failed to crop the image.
 
 **可能原因**
 
-1. 裁剪参数设置错误。
+1. 裁剪参数设置错误。例如，当解码接口同时传入desiredSize参数和desiredRegion参数时，没有同时设置cropAndScaleStrategy参数。
 2. 图片数据错误。
 
 **处理步骤**
 
-请检查图片数据或修改正确的裁剪参数。
+请检查图片数据或修改正确的裁剪参数。如果解码接口同时传入desiredSize参数和desiredRegion参数，需要同时设置[cropAndScaleStrategy](arkts-apis-image-e.md#cropandscalestrategy18)参数，具体情况根据缩放与裁剪的先后顺序，按需设置。
 
 ## 62980110 图片源数据错误
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_packer_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_packer_native.h
 category: harmonyos-references
-scraped_at: 2026-10-17T06:48:03+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:360384c9d37da2fe94554339c12a806a2be4d2c31b72d7bedb65950a53daef0c
+scraped_at: 2026-11-21T09:16:08+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:dacbb2c67782da56f33177345941400f0d7374635831cec71edacbd19da5bcd6
 ---
 
 ## 概述
@@ -151,7 +151,7 @@ Image_ErrorCode OH_PackingOptions_GetMimeType(OH_PackingOptions *options,Image_M
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：options或format为空。  IMAGE\_ALLOC\_FAILED：内存分配失败。  IMAGE\_COPY\_FAILED：内存拷贝失败。 |
 
 ### OH\_PackingOptions\_GetMimeTypeWithNull()
 
@@ -240,7 +240,7 @@ Image_ErrorCode OH_PackingOptions_GetQuality(OH_PackingOptions *options,uint32_t
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：options或format为空。  IMAGE\_ALLOC\_FAILED：内存分配失败。  IMAGE\_COPY\_FAILED：内存拷贝失败。 |
 
 ### OH\_PackingOptions\_SetQuality()
 
@@ -749,7 +749,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromImageSource(OH_ImagePackerNat
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。  IMAGE\_DECODE\_FAILED：解码失败。  IMAGE\_ALLOC\_FAILED：申请内存失败。  IMAGE\_TOO\_LARGE：数据或图片过大。  IMAGE\_UNKNOWN\_ERROR：未知错误。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：imagePacker、options、pixelmap或outData为空。  IMAGE\_ENCODE\_FAILED：编码失败。 |
 
 ### OH\_ImagePackerNative\_PackToDataFromPixelmap()
 
@@ -783,7 +783,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromPixelmap(OH_ImagePackerNative
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。  IMAGE\_DECODE\_FAILED：解码失败。  IMAGE\_ALLOC\_FAILED：申请内存失败。  IMAGE\_TOO\_LARGE：数据或图片过大。  IMAGE\_UNKNOWN\_ERROR：未知错误。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：imagePacker、options、pixelmap、outData为空。  IMAGE\_ENCODE\_FAILED：编码失败。 |
 
 ### OH\_ImagePackerNative\_PackToDataFromPicture()
 
@@ -815,7 +815,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromPicture(OH_ImagePackerNative 
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。  IMAGE\_DECODE\_FAILED：解码失败。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：imagePacker、options、picture为空或size无效。  IMAGE\_ENCODE\_FAILED：编码失败。 |
 
 ### OH\_ImagePackerNative\_PackToDataFromPixelmapSequence()
 
@@ -850,7 +850,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromPixelmapSequence(OH_ImagePack
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。  IMAGE\_DECODE\_FAILED：解码失败。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：其中一个指针类型的参数是空，或者size/length无效。  IMAGE\_ENCODE\_FAILED：编码失败。 |
 
 ### OH\_ImagePackerNative\_PackToFileFromImageSource()
 
@@ -883,7 +883,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromImageSource(OH_ImagePackerNat
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。  IMAGE\_DECODE\_FAILED：解码失败。  IMAGE\_UNKNOWN\_ERROR：未知错误。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：imagePacker、options、imageSource为空或fd无效。  IMAGE\_ENCODE\_FAILED：编码失败。 |
 
 ### OH\_ImagePackerNative\_PackToFileFromPixelmap()
 
@@ -916,7 +916,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromPixelmap(OH_ImagePackerNative
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。  IMAGE\_DECODE\_FAILED：解码失败。  IMAGE\_UNKNOWN\_ERROR：未知错误。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：imagePacker、options、pixelmap为空或fd无效。  IMAGE\_ENCODE\_FAILED：编码失败。 |
 
 ### OH\_ImagePackerNative\_PackToFileFromPicture()
 
@@ -947,7 +947,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromPicture(OH_ImagePackerNative 
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。  IMAGE\_DECODE\_FAILED：解码失败。  IMAGE\_UNKNOWN\_ERROR：未知错误。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：imagePacker、picture为空或fd无效。  IMAGE\_ENCODE\_FAILED：编码失败。 |
 
 ### OH\_ImagePackerNative\_PackToFileFromPixelmapSequence()
 
@@ -979,7 +979,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromPixelmapSequence(OH_ImagePack
 
 | 类型 | 说明 |
 | --- | --- |
-| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。  IMAGE\_DECODE\_FAILED：解码失败。 |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：其中一个指针类型的参数是空，或者length无效。  IMAGE\_ENCODE\_FAILED：编码失败。 |
 
 ### OH\_ImagePackerNative\_GetSupportedFormats()
 

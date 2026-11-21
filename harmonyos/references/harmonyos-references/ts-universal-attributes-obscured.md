@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 隐私遮罩
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > 隐私遮罩
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:50+08:00
+scraped_at: 2026-11-21T09:14:01+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:282753bc313195d5c359b76fb5b57fb09397568380f415facf5f9549cc1671af
+content_hash: sha256:d7ecc468ec12713534647edfe5c1d2d41405d116c2bbbd030ecef3c62d039c25
 ---
 
 用于对组件内容进行隐私遮罩处理。
@@ -81,4 +81,4 @@ struct ObscuredExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/kPaNEDC7TSmUhvMb4AeQrw/zh-cn_image_0000002791567040.png?HW-CC-KV=V1&HW-CC-Date=20261119T014956Z&HW-CC-Expire=31536000000&HW-CC-Sign=17C9D9F0C192B9E993E6F7D73AE5FCCED710057456C8BA0CC48CE907C3254FCE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/x_O9DweVQ5euWKzxGq3kdQ/zh-cn_image_0000002792878694.png?HW-CC-KV=V1&HW-CC-Date=20261121T011250Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE1FB3C9D7A4592E1671731D0BA303C9E2712AF0EC311BF9122A7E9161260DB5)

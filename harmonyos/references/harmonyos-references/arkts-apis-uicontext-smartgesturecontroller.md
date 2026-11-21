@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (SmartGestureController)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (SmartGestureController)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:40+08:00
+scraped_at: 2026-11-21T09:13:55+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4706c818a8e2776c3a9e62e3e10437b46914f5f098c88dfcf73e048fd790dad8
+content_hash: sha256:261623973a5c487c54e4cc59113c617b0a3884abc4dde0d0ff246e9590ad8ff3
 ---
 
 提供智慧手势使能、监听、选中态控制，以及动态决策智慧手势行为的能力，适用于应用接入智慧手势、监听系统默认手势处理意图并自定义手势响应行为的场景，可帮助应用灵活控制智慧手势交互流程。
@@ -82,7 +82,7 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/EpGA9pXETC6Svhs84pXmPQ/zh-cn_image_0000002791566942.png?HW-CC-KV=V1&HW-CC-Date=20261119T014945Z&HW-CC-Expire=31536000000&HW-CC-Sign=79A07F31E0ED69C507C85298ED6460ECC9B306B3326C627BD375FF958CAEF1AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Em06rtpsTbKV9N9ILW9NnA/zh-cn_image_0000002792878596.png?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=E073C8055EA608F79B4BC2CA508D9A8320E96EA02E886F0455A3FE98953A7A8E)
 
 ## registerMonitor
 
@@ -165,7 +165,7 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/zoWhGANURFybofQn2Ur5rA/zh-cn_image_0000002791566942.png?HW-CC-KV=V1&HW-CC-Date=20261119T014945Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A8A2D529D550D4DB5E503E2526C9DB7FEBE83AAAC22C12EB1AD6E6DB0744E85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/exosGr0KTYKYQOJ5dMZjDw/zh-cn_image_0000002792878596.png?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=B56EAD33075C470B50B31BD0077C56C6FEA887BB2CB00A6D954E3885882EBB39)
 
 ## unregisterMonitor
 
@@ -239,7 +239,7 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/QzXZEEQkQdSCGhwWhFF3BA/zh-cn_image_0000002791566942.png?HW-CC-KV=V1&HW-CC-Date=20261119T014945Z&HW-CC-Expire=31536000000&HW-CC-Sign=457D51E86CF667B3A6CD77F2FCC5966E541D01F13E70EE77BAF51F020757FF94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Pys6I5juSGyyNFMNhkVJpg/zh-cn_image_0000002792878596.png?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CAE7834DB3334D5EE41171F8FAB5864BCEB8B12116E9717BC7C7CF2CB2B4FB9)
 
 ## clearMonitors
 
@@ -307,7 +307,7 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/iSqdAMUIRYm9wTOki4spQA/zh-cn_image_0000002791566942.png?HW-CC-KV=V1&HW-CC-Date=20261119T014945Z&HW-CC-Expire=31536000000&HW-CC-Sign=79CE69008E0AE0DE88C702AAD34AF9654A13752E46CF3EC4E153D537435A2E6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/t6A9FQnOQwiWC-BMj2b72w/zh-cn_image_0000002792878596.png?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=20AC73BCC893ABC368760A1D8EC69ED8BFA913769266D2DD4B61C9C48801A867)
 
 ## requestSelected
 
@@ -384,7 +384,7 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/qIl6f0FdTiq9BpKCp-CPng/zh-cn_image_0000002820526895.png?HW-CC-KV=V1&HW-CC-Date=20261119T014945Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2993831FBDA5926D22319159538A6FB8153B6CE8B804C7BC96870FD71E5FFF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/ofeaP64ERambsAdi2nwq7w/zh-cn_image_0000002821838503.png?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=994E76046D84104C4C9AF56747FCC42C4904861EA653964AC8E3BC3AC3960E2C)
 
 ## clearSelected
 
@@ -450,7 +450,7 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/82ROZz--Qey9FYfc4b0pyA/zh-cn_image_0000002820526895.png?HW-CC-KV=V1&HW-CC-Date=20261119T014945Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1E446C930378E7962D0BB99AAE8F3D5E88AA603A7C8FF1D43762D2C2AAF0163)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/wkeXQw-HQN6nhRKYFVLVbQ/zh-cn_image_0000002821838503.png?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D41E743162BADB899F056379F9D20EF87B7A0D1600469734CBB46C9D5E6FDEC)
 
 ## 示例
 
@@ -613,4 +613,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/k_1JqVbNRASftYQJYvf8Sg/zh-cn_image_0000002820406895.png?HW-CC-KV=V1&HW-CC-Date=20261119T014945Z&HW-CC-Expire=31536000000&HW-CC-Sign=750226104A7024678BF85851D49781008818D3FDE6187D864C027E40353E17F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/e0yPfkwVS_60_C2Wqujdng/zh-cn_image_0000002821758505.png?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=C667125297B9E3AB3E9483CCE3163CFA87F8A02AE117633011EB66B08841068A)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-29
 title: 应用已同意相机授权，点击扫一扫按钮调不起相机
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 应用已同意相机授权，点击扫一扫按钮调不起相机
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:41+08:00
-doc_updated_at: 2026-08-19
-content_hash: sha256:828a6573a31b9b23af5fec834d3ef179c637c2edbd584c65488f6f9047ac13c4
+scraped_at: 2026-11-21T09:19:00+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:53b2a3c8003eae80edd1d810d8db1cfc3510c486082ec0f0f1cc4ed213a7c691
 ---
 
 ## 问题现象
@@ -14,8 +14,8 @@ content_hash: sha256:828a6573a31b9b23af5fec834d3ef179c637c2edbd584c65488f6f9047a
 
 ## 背景知识
 
-* [customScan.init](../harmonyos-references/scan-customscan-api.md#init)：初始化自定义界面扫码。
-* [customScan.start](../harmonyos-references/scan-customscan-api.md#start)：启动扫码相机流。
+* [customScan.init](../doccenter-references/api/scan-customscan-api.md#customscaninit)：初始化自定义界面扫码。
+* [customScan.start](../doccenter-references/api/scan-customscan-api.md#customscanstart)：启动扫码相机流。
 * [ViewControl](../harmonyos-references/scan-customscan-api.md#viewcontrol)：相机控制参数。
   + width：XComponent组件的宽，默认使用单位为vp，支持px、lpx和vp。
   + height：XComponent组件的高，默认使用单位为vp，支持px、lpx和vp。

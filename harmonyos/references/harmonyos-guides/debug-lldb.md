@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/debug-lldb
 title: LLDB高性能调试器
 breadcrumb: 指南 > NDK开发 > 调试和性能分析 > LLDB高性能调试器
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:28+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:9de9ddfaf7fe65836ce8250efadd962b837470fc26e7e29c6f15a62c647cc00d
+scraped_at: 2026-11-21T09:12:53+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:511f88eaaa83e5d17318da100dc1115becdbf4949619ad18aa03a0a3ac065442
 ---
 
 ## 概述
@@ -224,7 +224,7 @@ lldb-server在运行时会对自身进行数字签名验证，只有通过华为
       ```
     - PC上准备lldb，如windows系统则使用**lldb.exe**, 稍后将使用lldb与OH设备上的lldb-server远程连接进行调试。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/OrAiOpWVQYusQa00-p3oKQ/zh-cn_image_0000002791566906.png?HW-CC-KV=V1&HW-CC-Date=20261119T014832Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEE277953EADCB0872D00A0AFB795BFCE7366287F775389C0B4759398A24727A)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/iCGxWWq_RRSIwiMhd3pIng/zh-cn_image_0000002792878560.png?HW-CC-KV=V1&HW-CC-Date=20261121T011125Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0642EB91ABDCA57A6CF53DFA7AAB37F625E11138680D746438D3632D08B4838)
   + 设备状态与调试支持矩阵（分三种情况）：
 
     | 设备状态 | 调试支持范围 | lldb-server部署路径 |
@@ -388,7 +388,7 @@ int main() {
 **说明** 
 
 * 远程调试是指使用lldb进行跨端调试。本章节主要针对开发者跨平台调试HarmonyOS设备的应用进行说明。
-* 基于DevEco Studio的远程调试参考[官方调试指导](../harmonyos-guides-V5/ide-debug-native-enable-V5.md)。
+* 基于DevEco Studio的远程调试参考[官方调试指导](../doccenter-deveco-studio/ide-debug-native-enable.md)。
 * 远程调试时需要lldb-server和lldb配合使用。
 * Windows，Linux x86\_64和Mac远程调试步骤一致。
 

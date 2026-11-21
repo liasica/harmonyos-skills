@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/quick-playbac
 title: 快捷播放
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 应用接入播控自检 > 应用接入播控检查项详细说明 > 快捷播放
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:36+08:00
+scraped_at: 2026-11-21T09:12:00+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:ddea5f0444cef2d7f30d3b998c865da2b3e4514b14cc240eef350e74f7803cc9
+content_hash: sha256:be9d989d0498f2c8a02d1fea9f08fbc24c6675a02076d53453594bc6486f9235
 ---
 
 针对音乐/听书类应用，播控中心提供一系列快捷播放能力，包括一键启动冷启动续播以及历史歌单与推荐歌单功能，其中歌单功能中支持显示的音频媒体内容有：音乐歌单、有声书专辑、播客专辑等。视频媒体内容、直播类媒体内容暂不支持歌单。应用选择PlayMusicList意图（音乐类应用）或者PlayAudio意图（听书类应用）其一，注册并适配[意图调用](intents-habit-rec-access-programme.md)，即可实现接入上述三个功能，具体实现参考[历史歌单](avsession-access-scene.md#历史歌单)。
@@ -25,7 +25,7 @@ content_hash: sha256:ddea5f0444cef2d7f30d3b998c865da2b3e4514b14cc240eef350e74f78
   3. 未播放过的且未销毁的应用信息
   4. 最近播放过的且已销毁的应用信息（应用已接入冷启动）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/otXiOYV3QXCvP3J3wk4kwQ/zh-cn_image_0000002791725932.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A316C218DD64422813A48D1CECD2D75C36DEAEE2C7B3967C5D3B69C0A3664C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/ctLaWyrUQ26F_q1KX5aMDg/zh-cn_image_0000002821837519.png?HW-CC-KV=V1&HW-CC-Date=20261121T011200Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDE5FB733669E995CA385228F4313D289B51133C586C4C2A0085EF57363E059F)
 
 ## 历史歌单/歌单推荐
 
@@ -47,4 +47,4 @@ content_hash: sha256:ddea5f0444cef2d7f30d3b998c865da2b3e4514b14cc240eef350e74f78
 
   如果用户开启了 “[播控推荐服务](avsession-recommendation.md)”，歌单列表展示 “为你推荐”。最多可展示 8 个基于算法推荐的歌单。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/WKmUlegxT92TTGFstAr7Cw/zh-cn_image_0000002791565960.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=278FFD469F32457D935C1052ADC3C9E5033C91580C3627533894DA452E9D6ED4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Y2d2FKpwTGaGlclN0NFyfg/zh-cn_image_0000002821757521.png?HW-CC-KV=V1&HW-CC-Date=20261121T011200Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F23B60ECAA58FF206512EE370AB1EA657C86A3BF293ABA86E8ECA036189D245)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SwipeRefresherV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SwipeRefresherV2
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:15+08:00
+scraped_at: 2026-11-21T09:14:18+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:81169e055c2c9ff38b7b539d090511787df36f20b482c905c5b707de3505d496
+content_hash: sha256:fd992a8d145b0889dc1d3d987703cd1bfc6bd40dac319ea1cef655f16e85ed76
 ---
 
 SwipeRefresherV2组件用于内容加载，内容加载指获取内容并加载出来，常用于衔接展示下拉加载的内容。
@@ -81,4 +81,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/lKl0NuM_R8KIonfAylKdmw/zh-cn_image_0000002820527707.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015115Z&HW-CC-Expire=31536000000&HW-CC-Sign=56CB34E4E6C54E34D397E54E50D6B68A74759F93F152FB804350BC415CD1135A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/bJPfElbDS_a_vC-LZ6eM7A/zh-cn_image_0000002821839339.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F2689ACB50667B134043D54C79CC4E2C7E7944A93B1A1E9D3D0D31A513A13C3)

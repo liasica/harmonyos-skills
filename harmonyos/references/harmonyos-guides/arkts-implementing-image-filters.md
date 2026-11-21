@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-impleme
 title: 基于colorFilter实现图片滤镜效果
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 媒体展示 > 基于colorFilter实现图片滤镜效果
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:41+08:00
+scraped_at: 2026-11-21T09:11:07+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:305b6a406dfac57990a8690afdf662f84dd8d0add933b4af765d81d3e5627ed4
+content_hash: sha256:8c624f862dc1d78a5c5e88006ff089341fac0fbc745a45118efd9c0ebb750c96
 ---
 
 ## 概述
@@ -32,7 +32,7 @@ ArkUI框架在[Image](../harmonyos-references/ts-basic-components-image.md)组�
 
 在图形学中，像素由RGBA（红色、绿色、蓝色以及透明度）四个通道组成。颜色转换矩阵的定义公式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Kroi6o9eTiKJH48eZq4xPw/zh-cn_image_0000002791725042.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=6261F95B3F04DFF1815231334B1239EE6A3E8C041BAA310FA7226BBC19476920)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Q0Mm83ihSnm04kDuGqCyTw/zh-cn_image_0000002821836625.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F80608F56D66FBC5EF76FB87D54613E786AD3E79F486998C7D8668A0DBE42C1)
 
 其中：
 
@@ -132,7 +132,7 @@ export const ORIGINAL_MATRIX: number[] = [
 
 **效果图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/KgUEfp6QSli9DsJ0ix81dA/zh-cn_image_0000002820405029.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=10E2917E331B38BB6F12AB57663B39446BADCA70280B0B2802EE1B1B61625503)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/iXNm9L7-SUqhd1Ch0MpvKQ/zh-cn_image_0000002792876728.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EFCBFD4F8982E2569D3A33720CDAD0127F0B2BA8EA699D800552E98819D7A23)
 
 ### 实现复古灰度滤镜功能
 
@@ -151,7 +151,7 @@ const RETRO_COLOR_MATRIX: number[] = [
 
 * RGB三通道使用相同的权重系数（0.213, 0.715, 0.072），这是标准的灰度转换系数，源自ITU-R BT.709国际标准（高清视频色彩空间标准）中的亮度计算公式，具体公式如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/fUZRILDxRPq9co8IvhRVDQ/zh-cn_image_0000002791725050.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=23CC8F79A95CA4487BA4A6C809894A802C94CB2B77CF16F2DD4C2FF4656402DA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/fktPRydAR06b7YAGHpISnA/zh-cn_image_0000002821836633.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4F045CCB30F3FD4C19CC266B5896F9520C0DFAC081A3F091843F049AF9F7254)
 
   灰度图的特点是每个像素的R、G、B值相等，因此通过转换矩阵使R' = G' = B'时，图片颜色将失去色相，仅保留亮度。基于此原理，使用上述灰度值转换公式，将R'、G'、B'均设置为L即可实现复古灰度滤镜效果。
 * 每个通道都基于相同的亮度值，产生单色调的灰度效果。
@@ -175,11 +175,11 @@ A' = 0 \* 255 + 0 \* 255 + 0 \* 0 + 1 \* 255 + 0 \* 255 = 255（透明度）。
 
 转换后的像素颜色分量（取整后）为：rgba(237, 237, 237, 255)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/ygWDsMJjQIea94jKo7lZsw/zh-cn_image_0000002791565078.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=24F7FC16D5F94345E9B7F435CA96A688FD1324B8E6E0E4780F93F82D7A8E25E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/KbU5lVOaT-uOflRuKb5prg/zh-cn_image_0000002821756635.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D792DBF837E358318C4AE0BD43723C1017515F5B86024BF7AD6F3F9C601F667)
 
 **效果图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Bxf9JfiaSnCumEc5kxGSWg/zh-cn_image_0000002820525031.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=B535A3DF2A8E284C18A94DBC28CB715A1CABF7D198C7E7B33D80DD0761B661F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/h2NMVGznSjOaXp5zzWA-8w/zh-cn_image_0000002793036698.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE7F43562146ABC6EFCAB18BB8BFD236EE55FCDCC4AFC89890161A626885C33E)
 
 ### 实现反色滤镜功能
 
@@ -202,7 +202,7 @@ const REVERSE_COLOR_MATRIX: number[] = [
 
 **效果图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/1nu3qMkcQfmE0PtZ0LB0qA/zh-cn_image_0000002820405031.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B6E2583A3445F9385B5E012647C47C12A672188DF94D0DEF51C45C4B5965875)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/WR4Ey03-SBi64TSoWsXiew/zh-cn_image_0000002792876730.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A74BE69FE52BCCAAF828C031CFF64322A59065C8B0818719435CC1B070DF29A)
 
 ### 实现饱和度增强滤镜功能
 
@@ -229,21 +229,21 @@ const ENHANCE_COLOR_MATRIX: number[] = [
 
 * **核心算法**：基于线性插值原理，在“灰度图像”与“原图”之间进行加权混合。公式为：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/GqbMR347RoWSiO7mdn2MGg/zh-cn_image_0000002791725052.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=20C8910A1E58A95535130936A3E24399D99DB30B5B705C8A8248FB890236B5C4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/qndhD-5DSjmFqA4YDZqYQg/zh-cn_image_0000002821836635.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=6632467A13D5E008875DBE43B6E2B74EA47483D63B24C660F4BA3DC09B630FD4)
 
   其中，S表示饱和度系数，本例中S ≈ 1.8，即提升饱和度约80%；Gray表示像素的亮度值，基于ITU-R BT.709国际标准（高清视频色彩空间标准）中的亮度计算公式，具体公式见上文[实现复古灰度滤镜功能](arkts-implementing-image-filters.md#实现复古灰度滤镜功能)中的原理解析。
 * **系数推导**：以红色通道的主对角线元素（1.63）为例：
   + 公式展开：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/h2A0HJZFSZiRuW226QMhpA/zh-cn_image_0000002791565080.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=02EA00D44386BC2880592136040D5E8C278A8DCE4B9F198181EDFA8D7EA10973)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/pSsvIMzmTiyoZkfPDNKr9Q/zh-cn_image_0000002821756637.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=63DA585B9D9EE23A18A25D11682ABC66ADC0C834BDC0AAAB0177AADC5533B19A)
   + 合并系数：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/XVc9rmDhSjmxWtjvyUrYuA/zh-cn_image_0000002820525033.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EBD654BC4AA60E9A902C327F3D8773F55E7A784DB2CFA976B916CB9DDCD5099)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/O8hYSyIuQv2mGcG4IVRA_A/zh-cn_image_0000002793036700.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A3A7FBEB6898CAA0C1BA8FCD89D2028377C9763787BD0CDFF99FC9634DEE553)
 * **效果**：通过公式计算出的矩阵，既保留了图像的亮度信息，又显著增强了RGB通道的差异，从而实现色彩鲜艳通透的效果。
 
 **效果图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/K_JPPcxjRLqyo4vCe9PpPA/zh-cn_image_0000002820405033.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAB6DB90DB6E38ACF2C308DFEBF7738B9681C43F9BC9BF341217DA855813F519)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/uY6HlDFHRgq-bo5QBTDO8A/zh-cn_image_0000002792876732.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDD9F9E4375399237D7C3FFDD46A3C36EA5F7E43D822098BD82E5462851B9AA2)
 
 ### 实现美白滤镜功能
 
@@ -270,7 +270,7 @@ const WHITENING_COLOR_FILTER =
 
 **效果图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/iI_R15IoTWiBIARQD61vgA/zh-cn_image_0000002791725054.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=77EB0AE2D48E30E0405D3257696565A65C1F1B1A1DFB56BA720F75C4AAF34FE5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/5rClShjNQWKFRpIhK0U9Aw/zh-cn_image_0000002821836637.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=982CD772EE255EC19051C77E17C1A3A9D16E55F3F84003067558B49EC8AF0F34)
 
 ## 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 会话管理(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用必选能力(C/C++) > 会话管理(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:932f4d95792160402bb50612cbed231826c7ce4fa19e5f06f8015e64c9572795
+scraped_at: 2026-11-21T09:12:02+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:c57ff7b4ac52d7175aa23e9f83c47285c1b5f0e4778ce95e159a870753da84d3
 ---
 
 相机使用预览、拍照、录像、元数据功能前，均需要创建相机会话。
@@ -46,7 +46,7 @@ content_hash: sha256:932f4d95792160402bb50612cbed231826c7ce4fa19e5f06f8015e64c95
 3. 调用[OH\_CameraManager\_CreateCaptureSession()](../harmonyos-references/capi-camera-manager-h.md#oh_cameramanager_createcapturesession)方法创建一个会话。
 
    ```
-   Camera_CaptureSession* CreateCaptureSession(Camera_Manager* cameraManager)
+   Camera_CaptureSession* NDKCamera::CreateCaptureSession(Camera_Manager* cameraManager)
    {
        Camera_CaptureSession* captureSession = nullptr;
        if (cameraManager == nullptr) {
@@ -63,7 +63,7 @@ content_hash: sha256:932f4d95792160402bb50612cbed231826c7ce4fa19e5f06f8015e64c95
 4. 调用[OH\_CaptureSession\_SetSessionMode()](../harmonyos-references/capi-capture-session-h.md#oh_capturesession_setsessionmode)方法配置会话模式。
 
    ```
-   Camera_ErrorCode SetSessionMode(Camera_CaptureSession* captureSession)
+   Camera_ErrorCode NDKCamera::SetSessionMode(Camera_CaptureSession* captureSession)
    {
        Camera_ErrorCode ret = OH_CaptureSession_SetSessionMode(captureSession, NORMAL_VIDEO);
        if (ret != CAMERA_OK) {
@@ -75,7 +75,7 @@ content_hash: sha256:932f4d95792160402bb50612cbed231826c7ce4fa19e5f06f8015e64c95
 5. 调用[OH\_CaptureSession\_BeginConfig()](../harmonyos-references/capi-capture-session-h.md#oh_capturesession_beginconfig)方法配置会话。
 
    ```
-   Camera_ErrorCode BeginConfig(Camera_CaptureSession* captureSession)
+   Camera_ErrorCode NDKCamera::BeginConfig(Camera_CaptureSession* captureSession)
    {
        Camera_ErrorCode ret = OH_CaptureSession_BeginConfig(captureSession);
        if (ret != CAMERA_OK) {
@@ -89,7 +89,7 @@ content_hash: sha256:932f4d95792160402bb50612cbed231826c7ce4fa19e5f06f8015e64c95
    调用[OH\_CaptureSession\_CommitConfig()](../harmonyos-references/capi-capture-session-h.md#oh_capturesession_commitconfig)和[OH\_CaptureSession\_Start()](../harmonyos-references/capi-capture-session-h.md#oh_capturesession_start)方法提交相关配置，并启动会话。
 
    ```
-   Camera_ErrorCode StartSession(Camera_CaptureSession* captureSession, Camera_Input* cameraInput,
+   Camera_ErrorCode NDKCamera::StartSession(Camera_CaptureSession* captureSession, Camera_Input* cameraInput,
        Camera_PreviewOutput* previewOutput, Camera_PhotoOutput* photoOutput)
    {
        // 向会话中添加相机输入流。
@@ -131,7 +131,7 @@ content_hash: sha256:932f4d95792160402bb50612cbed231826c7ce4fa19e5f06f8015e64c95
 7. 会话控制。调用[OH\_CaptureSession\_Stop()](../harmonyos-references/capi-capture-session-h.md#oh_capturesession_stop)方法可以停止当前会话。调用[OH\_CaptureSession\_RemovePhotoOutput()](../harmonyos-references/capi-capture-session-h.md#oh_capturesession_removephotooutput)和[OH\_CaptureSession\_AddVideoOutput()](../harmonyos-references/capi-capture-session-h.md#oh_capturesession_addvideooutput)方法可以完成会话切换控制。以下示例代码以移除拍照流photoOutput，添加视频流videoOutput为例，完成了拍照到录像的切换。
 
    ```
-   Camera_ErrorCode ReloadSession(Camera_CaptureSession* captureSession, Camera_PhotoOutput* photoOutput,
+   Camera_ErrorCode NDKCamera::ReloadSession(Camera_CaptureSession* captureSession, Camera_PhotoOutput* photoOutput,
        Camera_VideoOutput* videoOutput)
    {
        Camera_ErrorCode ret = OH_CaptureSession_Stop(captureSession);

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-live
 title: 场景动效类型互动卡片开发指导
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 互动卡片开发 > 场景动效类型互动卡片开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:57+08:00
+scraped_at: 2026-11-21T09:11:23+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:ae53f3177c04f14d7920f4005a0455bc48fd16b3262e82e5681b3848d5925434
+content_hash: sha256:d2dd55706176f790b808838ec857c619607af2edb82d5055375eb2572cdf195c
 ---
 
 从API version 20开始，场景动效类型互动卡片支持在特定场景下触发互动卡片的特有效果。例如，开发者可以选择将动效渲染区域扩展到卡片自身的渲染区域之外，营造“破框”效果。本文档提供了场景动效类型互动卡片的开发指导，包括场景动效类型互动卡片概念、约束与限制、卡片非激活态、激活态UI界面开发和卡片配置文件开发。
@@ -20,11 +20,11 @@ content_hash: sha256:ae53f3177c04f14d7920f4005a0455bc48fd16b3262e82e5681b3848d59
 
 **图1** 互动卡片状态切换说明
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/k73beGjYSqGQsw-JhlEX9Q/zh-cn_image_0000002820405561.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB96D36DE22EF8EC6E6E29A36CA3164C4D5AE8608DD7181B64AB2D4799F09EE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/nSLLhBHqS0OewsKahBHL-A/zh-cn_image_0000002792877262.png?HW-CC-KV=V1&HW-CC-Date=20261121T011123Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B0422505C539E2008BADB95636A76FE3F959BC9716427331C416DFADBE729BF)
 
 **图2** 互动卡片动效触发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/jtC8ItkcR06cy03x1cJecw/zh-cn_image_0000002791725582.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=53DF43697A83D0E5B809883EDB59CBDD4137992E6A16D076360236143DC8DE37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/FhCLu7S1RJSt0EYMCxYoxQ/zh-cn_image_0000002821837169.png?HW-CC-KV=V1&HW-CC-Date=20261121T011123Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DE1CE77831DFFD241FE165ADA18F2EBD0A68F896BD118F1F9DB3B11B84FFB15)
 
 ## 实现原理
 
@@ -32,15 +32,15 @@ content_hash: sha256:ae53f3177c04f14d7920f4005a0455bc48fd16b3262e82e5681b3848d59
 
 **图3** 点击触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/DYbPjtagQfu6nBUJSXpzOw/zh-cn_image_0000002791565610.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=F627863B68EED479BEDF1F2764C54ABE0843E05240144CD7CEF4F1B810B0B125)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/cjQ0gkaiQliOr0cIthXPtg/zh-cn_image_0000002821757171.png?HW-CC-KV=V1&HW-CC-Date=20261121T011123Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6A1651842D6959C904093B800C3E139C087B4056D8D9B30A3AFB02684859625)
 
 **图4** 定时定点触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/RRIMCrSsQACC1RHr8AFJrw/zh-cn_image_0000002820525563.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E3A69BF2C886ECEB1AB7B0AE5A3590B9C95E648338B77ED3757FA9870D07681)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/nE7aGuuBRgOPNJMWcn_CCw/zh-cn_image_0000002793037234.png?HW-CC-KV=V1&HW-CC-Date=20261121T011123Z&HW-CC-Expire=31536000000&HW-CC-Sign=88DFDE08D83752D111766E2842D663283405DF130C9E9C005E06D8DE04E80BA7)
 
 **图5** 摇一摇触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/-hLxgA3mSa6evgLKCJHhCg/zh-cn_image_0000002820405563.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=D561C44DEB3D7F530F3E6FE7AF9B7C24AF37AA7F4D622F94EEAB37E765602DB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/IUz6L888RSe5MFLKSZWsug/zh-cn_image_0000002792877264.png?HW-CC-KV=V1&HW-CC-Date=20261121T011123Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2B6F8BE4BA05F25A818077A3C46E5E839AF70206B39459765B39C93A4DB64FE)
 
 ## 约束与限制
 
@@ -65,7 +65,7 @@ content_hash: sha256:ae53f3177c04f14d7920f4005a0455bc48fd16b3262e82e5681b3848d59
 
 **图6** 互动卡片动效区域申请规则说明
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/UlhQhaBoQueNkO0_42SlFA/zh-cn_image_0000002791725584.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=5954DD5DFEEB359ABBFBF016D086259A8D4405AFBAE8FDD23277700FB0F2EC4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/y7DuJaH-Rsy0xp21stI28g/zh-cn_image_0000002821837171.png?HW-CC-KV=V1&HW-CC-Date=20261121T011123Z&HW-CC-Expire=31536000000&HW-CC-Sign=03160B12F49BEF8277F3B18BADEBE3E03C6BB2722726C56F7F8339A30BF0DDF5)
 
 例如：某设备上一个2\*2卡片宽度为158vp，高度为158vp。对应上图则有：
 
@@ -509,4 +509,4 @@ content_hash: sha256:ae53f3177c04f14d7920f4005a0455bc48fd16b3262e82e5681b3848d59
 
 以下是按照本文档代码示例开发而成的效果demo，demo执行动效时，点击按钮，将调用 [formProvider.cancelOverflow](../harmonyos-references/js-apis-app-form-formprovider.md#formprovidercanceloverflow20) 接口，打断当前破框动效，卡片切换为非激活态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/b2IeKHXDRc6Wz_hX_60v0g/zh-cn_image_0000002791565612.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAC17C9CD08079413FD2FCBFE45C43B9ED9DD0F01061790296E1FB12FF671D53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/qpgoBRHgRjyhWRQAPC04mA/zh-cn_image_0000002821757173.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011123Z&HW-CC-Expire=31536000000&HW-CC-Sign=F795588DF7D779276AC81D449C9DD34806143D74CD089F616E0CD714EED9D415)

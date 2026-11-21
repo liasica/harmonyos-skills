@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 鼠标事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 鼠标事件
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:47+08:00
+scraped_at: 2026-11-21T09:13:59+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:a2cec136c149400eab31329d32fcd0690292007ea936061fd2bbbfd505a425fa
+content_hash: sha256:9b0c0517e3febb03b73f9be1e18e69a55099b072be7a0cf35e875cce0ba9bec4
 ---
 
 鼠标事件用于监听组件上的鼠标点击、移动等交互，可获取鼠标按键、动作、坐标、历史点等事件信息，适用于需要处理鼠标交互、绘制轨迹、手势识别或优化输入响应体验的场景。在鼠标的单个动作触发多个事件时，事件的顺序是固定的，鼠标事件默认冒泡。
@@ -240,7 +240,7 @@ struct MouseEventExample {
 
 鼠标点击时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/P6OFCx2TTwKBmSIgeeAS4Q/zh-cn_image_0000002791567014.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=34E72504C1C2B1112648E645DE8B6CA11007FC42EB862D073AF07D940F8D6573)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/ofuLS6xjRlKdKBsyXhXo0Q/zh-cn_image_0000002792878668.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011248Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AF472695103EFD0597009E328D8733CA3933B65B9A18997CB0D04522877BC0E)
 
 ### 示例2（获取当前帧历史点）
 
@@ -321,4 +321,4 @@ struct GetCurrentLocalPositionExample {
 
 鼠标触发事件时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/0fQ0inxUSEmJfZqF8n8ELw/zh-cn_image_0000002820526967.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=03F10D2BF5E46EDBAA8364EF95B56D92C8F53ED2F52082492E3FE7CF55E8DFE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/LAHBCz2bRSCU89ib0FCT5g/zh-cn_image_0000002821838575.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011248Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D1C4D1E335C6AEAFADAA267360D9BA85E70BBD1D01658358B83CD852B1C1A15)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-introduc
 title: JSVM-API简介
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:25+08:00
+scraped_at: 2026-11-21T09:12:51+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:12658301fdb28760581f28bd9f2f1b4aaf8e6581125308a5d56c66d55c6742a7
+content_hash: sha256:15c11e3f59240e6d2941a2abf270dd505478df020cdf7efa3979d5ad1e7f0364
 ---
 
 ## 场景介绍
@@ -28,7 +28,7 @@ JSVM-API仅支持JS与C/C++的交互，如果需要实现ArkTS与C/C++的交互�
 
 **图1** JSVM-API的组成架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/VILdlMbcQyy8Nv3Q-shT5g/zh-cn_image_0000002791566868.png?HW-CC-KV=V1&HW-CC-Date=20261119T014830Z&HW-CC-Expire=31536000000&HW-CC-Sign=34B835A12EC2495D05A170086D82D124E2B009848EFF3C25D171935B90828CF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/w16mBQNFRQu6WlTf0Gny9w/zh-cn_image_0000002792878522.png?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED05A846270CAD30CA19B887CEF404D0C27172CE42C3298FC2C95C2D825CD575)
 
 * Native Module：开发者使用JSVM-API开发的模块，用于在Native侧使用。
 * VM Life Cycle Manager：管理JSVM\_VM的生命周期。
@@ -49,7 +49,7 @@ JSVM-API仅支持JS与C/C++的交互，如果需要实现ArkTS与C/C++的交互�
 
 **图2** JSVM-API的关键交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/5343XinaQQ-tWUPYJ5__gg/zh-cn_image_0000002820526821.png?HW-CC-KV=V1&HW-CC-Date=20261119T014830Z&HW-CC-Expire=31536000000&HW-CC-Sign=80F5338CD9E38D6F3CE2F6D41056CAD3EBB752C9EB8F93A8ACF81B0E397D3AA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/RnJGgohvTWiEmVIyEWG0mA/zh-cn_image_0000002821838429.png?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5890E11CBA23DEB956DA6C7254E9C852DB8746A880E2C8EAA47E65BCD19D556)
 
 JSVM-API与Native模块之间的交互流程主要分为以下两步：
 

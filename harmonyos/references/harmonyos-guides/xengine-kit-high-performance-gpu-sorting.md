@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-h
 title: 高性能GPU排序
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > Maleoon API > 高性能GPU排序
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:49+08:00
+scraped_at: 2026-11-21T09:12:15+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c7b011923874b7e2be72fe9f837b4472db5bc1ea3d68356e4b9d1e39908eaef2
+content_hash: sha256:a237d26722792744a800a8508daa9b5874202115dfd2ab7791ff5d019d8b0f4c
 ---
 
 从6.0.0(20) 版本开始，新增高性能GPU排序特性。
@@ -32,7 +32,7 @@ XEngine Kit高性能着色器(High Performance Shaders，HPS)特性提供GPU排�
 
 * 下面是以Vulkan应用程序渲染为例，说明使用高性能GPU排序的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/5F5vDssbTBuG-LE5BG2Ieg/zh-cn_image_0000002791566190.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014849Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F300FEC944197AF20D4E4179C1EA5D47B452409B61F1F3C92B8E4C3666F3D85)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/_vDomw3ITKOSOry2wKMAcA/zh-cn_image_0000002821757751.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011048Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A9B2B4279B22FA0766C595FF21CA0DF2F0AA5352C6C0C40DECA857B6148F50A)
 
 1. 应用调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口获取XEngine Kit支持的扩展属性列表。检查返回列表中是否包含[XEG\_HPS\_RADIX\_SORT\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_hps_radix_sort_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 应用准备HPS相关资源（keyBuffer、valueBuffer等）。

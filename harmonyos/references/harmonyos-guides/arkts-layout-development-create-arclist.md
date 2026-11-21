@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 弧形列表 (ArcList)（圆形屏幕推荐使用）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 弧形列表 (ArcList)（圆形屏幕推荐使用）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:40+08:00
+scraped_at: 2026-11-21T09:11:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ac8c1933b7c93f2e3b65213c6c8c52174cffdc0d8cc7e33df0d0db56614b6758
+content_hash: sha256:cc2c85795a7dd6654a7d00884637de34d602d581b3b84dc01389e475cb617268
 ---
 
 从API version 18开始支持弧形列表。弧形列表是一种专为圆形屏幕设备设计的特殊列表，它能够以结构化、可滚动的形式高效展示信息。具体用法可参考[ArcList](../harmonyos-references/ts-container-arclist.md)。
@@ -153,7 +153,7 @@ export struct ArcListShow {
 
 **图1** 显示弧形列表数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/xKi-Vm2tRviHBNbLEg4K2Q/zh-cn_image_0000002820404873.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=63E2D65326B9107DDD34A5721EF10E29AF8F4432E6FD2EEE9BA653EF0A725575)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/l9jPzYLMQsKWbNIQRensJg/zh-cn_image_0000002792876574.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF5DE8BF9C607EF3D143FF5F4BF5B518B69AF4CAFABD42418FAA9BCFC8380081)
 
 ## 迭代弧形列表内容
 
@@ -231,7 +231,7 @@ export struct ArcListContents {
 
 **图2** 迭代弧形列表内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/H-6TOLdaTcqxoX_q5vhyXQ/zh-cn_image_0000002820404889.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=50E8961351528F92BD9414715B2198C1F09DFE7F357508AC6869F88EBA9FA6F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/k9tuuxIdSXiw3mrYcOjOTA/zh-cn_image_0000002792876590.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA448CA2E51DA59E1C92AACB94471DA47F29EEAC4430660EA7CF164F433C2C63)
 
 ## 自定义弧形列表样式
 
@@ -275,7 +275,7 @@ export struct ArcListContents {
 
 **图3** 自定义弧形列表标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/Evdd5lQLT7WYlgHQ0Z63Rw/zh-cn_image_0000002791724912.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=841883C5AFA4A7073AE4DAFC8A79F520DCBA7F9DEB9DC35D9E2C63F36E4AE240)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/fgGPjH7QRLi75-R7g2bX4A/zh-cn_image_0000002821836495.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3CC169E02A07DC464732B2427540B87459A480872E983787C3B13A9B01D3640)
 
 ### 设置弧形列表项间距
 
@@ -290,7 +290,7 @@ ArcList({ initialIndex: 2 }) {
 
 **图4** 设置弧形列表项间距
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/6bCPVHnUTqijl_TxSWtX2A/zh-cn_image_0000002791564940.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=221115473DACE5FFD4568BD444834BCB48085E68E209F086309389E061A85804)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/YXJhZXVxSA2inUF5gFVR7Q/zh-cn_image_0000002821756497.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=6942F88803F144B04BB871D55CD5390539F57CB61405F8FD1B60BBEC2270E984)
 
 ### 列表项关闭自动缩放
 
@@ -305,7 +305,7 @@ ArcListItem() {
 
 **图5** 列表项关闭自动缩放
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/rolVTq-lSsilIkRYPp3M7A/zh-cn_image_0000002820524893.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=E54B17D6F4D7708BA43DD1FDC02271D5CCEB7B7370AE7E2254936BB5B1873082)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/JW7Y739jQhaV-ukDN-HjPg/zh-cn_image_0000002793036560.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=E330DB30FECB9A5818E8ABD82E5B0B69530DB8FE80B4BA282AD0298350EEEEBD)
 
 ### 添加内置滚动条
 
@@ -324,7 +324,7 @@ ArcList({ header: this.arcListHeader }) {
 
 **图6** 弧形列表的内置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/aosvPauVQOeHN3PNEI_b7g/zh-cn_image_0000002820404891.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=537714D9CB38A6C7AB192F955D9BAF57829FE525078A909A890A286B911994F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/IugePu2-SHKjfRY9EftXsg/zh-cn_image_0000002792876592.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3642AD5F74D01CA7C1C8EEA67AADC698F52272A683C84BF0ABBC1478BD28BCF)
 
 ## 添加外置滚动条ArcScrollBar
 
@@ -352,7 +352,7 @@ ArcList({ header: this.arcListHeader }) {
 
 **图7** 弧形列表的外置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/6O7EWxc2RwyO45qmBoETDw/zh-cn_image_0000002791724914.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=586820DC8D3DBB5AE4FC80F0B7DC3CAAFDF9BC3D84A761B32356BC5B88BB105B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/eijE7ORhSYq6VVIrSh23Fw/zh-cn_image_0000002821836497.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=94997544DF50066EF6C34DAFDB106B2B44F47F7D4B91DFAE892987023AF43961)
 
 **说明** 
 
@@ -432,7 +432,7 @@ export struct ArcListArcIndexerBar {
 
 **图8** 弧形列表与弧形索引条联动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/0Xmtz7nnQfa3KNnrHr6FYA/zh-cn_image_0000002791564942.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=184DD4D159494F6666A9A3357EA696B08A6CC1C91670582BFF50D8CED6A921C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ScGL-3BbTz2WND_vS83ujg/zh-cn_image_0000002821756499.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=F20AD76630968FDDFD655A5AB0459110088A4E591B86E47B1B20DD5E4C07139D)
 
 ## 响应列表项侧滑
 
@@ -488,7 +488,7 @@ export struct ArcListArcIndexerBar {
 
 **图9** 侧滑删除列表项
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/KvYEbNWgQUykfHGQqOxb3w/zh-cn_image_0000002820524895.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=38F0E5D55CF901E338E932AEEDEC7F1381B2EC095AE18A70DA364B51008D7C3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/rrzij8k4Ss6lDCurYwNfiQ/zh-cn_image_0000002793036562.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF1FAE7EEFC010C7D4AFDB418999C3C512B6F57522D27A53413B3AB33AE575C8)
 
 ## 处理长列表
 

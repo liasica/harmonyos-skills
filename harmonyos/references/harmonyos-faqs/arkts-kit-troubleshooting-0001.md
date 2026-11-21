@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkts-kit-troub
 title: 页面上展示的日期与实际时间不符
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 故障排查 > 页面上展示的日期与实际时间不符
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:4c92111aa1faa0f483366652368ca1a3c4c7d3ed0e8d10add07e711dc2033dc6
+scraped_at: 2026-11-21T09:17:40+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:689597a71a19eefad65a67109fde3305f8e7df7c2ff047e7af3eed163cb3b1b3
 ---
 
 ## 问题现象
@@ -27,8 +27,6 @@ const nowDate = nowTime.getDate();
 this.newTime = ((((nowYear + "年") + nowMonth) + "月") + nowDate) + "日";
 // ...
 ```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/APW4Pc5dT0K74e_HnCtf6Q/zh-cn_image_0000002766015488.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=4075FA4CB0A2BCD45FC4FD419D3DF5C5D568F20AB27DF6926973DAD17623718C "点击放大")
 
 ## 定位过程
 

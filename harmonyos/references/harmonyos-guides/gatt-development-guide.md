@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gatt-developm
 title: 连接和传输数据
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 低功耗蓝牙 > 连接和传输数据
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a80038707dbfa716500352328c6b1a53c450d801437bc4b836626cc73d5977a3
+scraped_at: 2026-11-21T09:11:39+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:9ff8c5c89d85ee1ad92eb760eacdde87270cea81553372a83de918f04c3ce311
 ---
 
 ## 简介
@@ -27,6 +27,10 @@ GATT是低功耗蓝牙（BLE）的核心协议，定义了基于服务（Service
 ### 申请蓝牙权限
 
 需要申请权限ohos.permission.ACCESS\_BLUETOOTH。如何配置和申请权限，请参考[声明权限](declare-permissions.md)和[向用户申请授权](request-user-authorization.md)。
+
+### 查询是否支持蓝牙
+
+调用[isBluetoothSupported](../harmonyos-references/js-apis-bluetooth-access.md#accessisbluetoothsupported)接口查询该设备是否支持蓝牙，支持后再进行后续步骤；不支持时，请勿使用相关接口。
 
 ### 导入所需API模块
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 卡片跳转到应用页面（router事件）
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面交互 > 卡片跳转到应用页面（router事件）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:56+08:00
+scraped_at: 2026-11-21T09:11:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:930d4e4c7b593cf095a3a4731dcaf110964603d6637af3fc2eb229c28a9b59a9
+content_hash: sha256:da2314bb4b0b12fb60cb1b7cddf67da2064a692701e1022d0ae99af286d6c77b
 ---
 
 在动态卡片中使用[postCardAction](../harmonyos-references/js-apis-postcardaction.md#postcardaction-1)接口的router能力，能够快速拉起动态卡片提供方应用的指定UIAbility(页面)，因此UIAbility较多的应用往往会通过卡片提供不同的跳转按钮，实现一键直达的效果。例如相机卡片，卡片上提供拍照、录像等按钮，点击不同按钮将拉起相机应用的不同UIAbility，从而提升用户的体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/cvNX_-hLRieosFcSn7v19A/zh-cn_image_0000002820525543.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=74D83F808D45C8822E17A23CACC2B082425EC6BA1283B2DB60E6DB58FF4BB81D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/eZirpTkhTo6oTmN02OZoBQ/zh-cn_image_0000002793037214.png?HW-CC-KV=V1&HW-CC-Date=20261121T010958Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1A2713744BD5317A4D93C3740E24A7BD5934108DECCE32C4BE99CC77712B6BE)
 
 **说明** 
 
@@ -293,4 +293,4 @@ content_hash: sha256:930d4e4c7b593cf095a3a4731dcaf110964603d6637af3fc2eb229c28a9
 
 ## 运行效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/ZbZmcxccQluiGq3RHpcHWQ/zh-cn_image_0000002820405543.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A8666A1518A2E40F4A706105F07273D03B140E64D408F27C5F6ED9110E80AA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Etd2oT8QQe-Z6FeaRlYcgQ/zh-cn_image_0000002792877244.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010958Z&HW-CC-Expire=31536000000&HW-CC-Sign=98DD0BD9A1C70B3B0010B0F17CFEBD99D99A9726205D8341EA4B50A769D64809)

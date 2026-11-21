@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: Tabs组件切换与显示问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > Tabs组件切换与显示问题定位
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-29
-content_hash: sha256:aae51c5be0de4404227e96a5459f4383d7dcfe5076af7abb4d5efc21e8485193
+scraped_at: 2026-11-21T09:18:17+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:454e82db46e254094035530fc44dd5bb02f0be9fc472323bd002c5b34a6b326e
 ---
 
 ## Tab页切换视频未暂停播放
@@ -109,7 +109,7 @@ struct onChangePause {
 
 Tabs页面切换时，tabBar切换动画发生的比较慢，需要等到Tabs页面完成切换时，tabBar才发生切换。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/iAEjGMrOQzOy6H2VJGVJMA/zh-cn_image_0000002804456473.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=078E80FC28B530EC994D45D1A83CEF77F182ED56E023DBF4375EF41B67B32569 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/zeIGxmBuToyjNoTguD4vWA/zh-cn_image_0000002804456473.png?HW-CC-KV=V1&HW-CC-Date=20261121T011816Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2406D1DD2FE2D771371F238D9F41EE185D3E4B1B4E7D4DD9836CF9AB771E5D7 "点击放大")
 
 ### 定位过程
 
@@ -270,15 +270,15 @@ struct TabsExample {
 
 ### 问题现象
 
-返回主页面时标签栏跳转到到第一个标签的位置，而非当前页面所在标签的位置。
+返回主页面时标签栏跳转到第一个标签的位置，而非当前页面所在标签的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/T4wv2U7yQIqzLaQetpWKKg/zh-cn_image_0000002804458285.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AB62419E9199FB5C6E72A66A237D9655250F3B683E387456759F99F7FC67F5D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Dh_967lZTRuVY6YrjrrZAQ/zh-cn_image_0000002804458285.png?HW-CC-KV=V1&HW-CC-Date=20261121T011816Z&HW-CC-Expire=31536000000&HW-CC-Sign=37F5DA1C883B1A5A57D4F1DB020C2E0688C76616ECAAD3DBB2AD4E8EB8D2472C "点击放大")
 
 ### 定位过程
 
 1. 使用DevEco Testing查看页面布局，确认页签实现基于Tabs组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/n9_GeAoDRk6NcW5UgkYgBw/zh-cn_image_0000002804299223.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A67EDD9A9F208D1356D0C4076D3AE4495009FCC303F5D0511ED02978C07B5BB "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/a9E_3uZATNe6dKykEKbd2g/zh-cn_image_0000002804299223.png?HW-CC-KV=V1&HW-CC-Date=20261121T011816Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A8FF821012C1E322EE8B18F708ED261D56DE966508682CD727A97DB433F9A2B "点击放大")
 2. 继续排查，是否将Tabs的index值设置为0。
 
    第二个页面点击返回时将Tabs的index值设置为0：
@@ -355,13 +355,13 @@ struct TabsChange {
 
 点击页面上的Tab标题，当前页签未停留在点击的Tab标题上，而是返回至第一个Tab标题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/mA8FjwcfSTu_cfTIJAVakw/zh-cn_image_0000002775300968.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE50F2A560C3A7EDA2E419C44CEE841EF75456DBA62102CFA8D33A23C7B197A3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/2Xz5LQOLSFuEj7QTrbp0KA/zh-cn_image_0000002775300968.png?HW-CC-KV=V1&HW-CC-Date=20261121T011816Z&HW-CC-Expire=31536000000&HW-CC-Sign=E23307AAEEEF67CE24EFB8910D6604D282BC9D8DFF0FD65812BC9356E472A193 "点击放大")
 
 ### 定位过程
 
 1. 使用DevEco Testing查看页面布局，确认页签实现基于Tabs组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/7zMB47bVRf-kGjGTWn29oQ/zh-cn_image_0000002804460687.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=91F8F5D69E997FF3D0BA02ABF602BF8A26E061A8B090E87927970034F6C4EDC4 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/OO1z4DPNTTu7DPtcloGUjA/zh-cn_image_0000002804460687.png?HW-CC-KV=V1&HW-CC-Date=20261121T011816Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B9E02BE72A8655C28585018B876D933C239CEE86B690D97E708E41FE9D29A3E "点击放大")
 2. 排查Tabs组件中在改变页签时，是否在动画结束后，重置了Tabs的索引值为0。
 
    ```ts

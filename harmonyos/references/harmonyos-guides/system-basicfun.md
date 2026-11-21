@@ -3,12 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-basicf
 title: 基础功能
 breadcrumb: 指南 > 系统 > 基础功能
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:47+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:58d0e6ccbc65dea57428e62b4e57f334aff4db7a2f12e9e39c09a6cf776e48db
+scraped_at: 2026-11-21T09:11:44+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:16d8f54368f974c7ce37407df4b565a3e631b5817c76c613172f724ec2435a1e
 ---
 
-* **[Automatic Scene Configuration Kit（场景配置服务）](automatic-scene-configuration-kit.md)**
 * **[Basic Services Kit（基础服务）](basic-services-kit.md)**
 * **[Desktop Extension Kit（桌面拓展服务）](status-bar-extension-kit-guide.md)**
 * **[Enterprise Foundation Kit（企业办公开发服务）](enterprise-foundation-kit-guide.md)**

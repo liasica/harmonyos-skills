@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-hard-cod
 title: 避免硬编码与拼接
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用本地化 > 提升可翻译性 > 避免硬编码与拼接
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:58+08:00
+scraped_at: 2026-11-21T09:11:24+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:fc7513abc10f87e51a868a5b04fcd5e268b14678134649c16450ada8eb01d7bb
+content_hash: sha256:dcd60c51208d9088c8e1b41c9438bb8513668b064ea1efd6f6f4e500c6d9ee5e
 ---
 
 ## 使用场景
@@ -14,7 +14,7 @@ content_hash: sha256:fc7513abc10f87e51a868a5b04fcd5e268b14678134649c16450ada8eb0
 
 例如，下图中将“Rain tomorrow”和“Bring an umbrella”两句直接拼接在一起，造成语句大小写问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/_wpuFzcyQbGTnqgH00L6RQ/zh-cn_image_0000002820405605.png?HW-CC-KV=V1&HW-CC-Date=20261119T014758Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBEEFC8A68F7D1032A1812F8F3C46FE3B76ECE377AE0F3492551DF232841F83A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/ZfNgZF7DRIKl_HBZK5IGJA/zh-cn_image_0000002792877306.png?HW-CC-KV=V1&HW-CC-Date=20261121T010959Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CDBBF020DF8DF5E29431E899AE72D04560D492ADE9AB0DE724A9D7C3CE5860D)
 
 ## 约束与限制
 

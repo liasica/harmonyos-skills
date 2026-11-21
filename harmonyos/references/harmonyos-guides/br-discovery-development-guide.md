@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/br-discovery-
 title: 查找设备
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 传统蓝牙 > 查找设备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:33+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:b75db1046daed97bfaf3e621cd491279564825e5d5d3212e4a7baf9a10b117e3
+scraped_at: 2026-11-21T09:11:39+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:46197ef2d77e13a207ec5292c5c1c96aeb4a610051eb74c6139df7945b61981e
 ---
 
 ## 简介
@@ -17,6 +17,10 @@ content_hash: sha256:b75db1046daed97bfaf3e621cd491279564825e5d5d3212e4a7baf9a10b
 ### 申请蓝牙权限
 
 需要申请权限ohos.permission.ACCESS\_BLUETOOTH。如何配置和申请权限，具体操作请参考[声明权限](declare-permissions.md)和[向用户申请授权](request-user-authorization.md)。
+
+### 查询是否支持蓝牙
+
+调用[isBluetoothSupported](../harmonyos-references/js-apis-bluetooth-access.md#accessisbluetoothsupported)接口查询该设备是否支持蓝牙，支持后再进行后续步骤；不支持时，请勿使用相关接口。
 
 ### 导入所需API模块
 

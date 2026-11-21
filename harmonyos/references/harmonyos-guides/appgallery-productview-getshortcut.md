@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 查询应用内快捷方式
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 应用内快捷方式 > 查询应用内快捷方式
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:52+08:00
+scraped_at: 2026-11-21T09:12:18+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:337a8a90a5cb25fae0d15fe880f568efb0e7c713aa9b5c20ecc3232cc0505b1a
+content_hash: sha256:80cbe17eb942c3ee2f2caf3b0d21280a6bfd65869315e1a80abe5d7a11be4f4d
 ---
 
 **说明** 
@@ -18,7 +18,7 @@ content_hash: sha256:337a8a90a5cb25fae0d15fe880f568efb0e7c713aa9b5c20ecc3232cc05
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/EmPUqKj9SFeVwnQEESvCiw/zh-cn_image_0000002791566228.png?HW-CC-KV=V1&HW-CC-Date=20261119T014852Z&HW-CC-Expire=31536000000&HW-CC-Sign=46C74E395F33135DBFC3EF8F8048E50154D824F6C699E69A5D144D7320E52756)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/uvPA_GZqTZC5ch920ySHBA/zh-cn_image_0000002821757789.png?HW-CC-KV=V1&HW-CC-Date=20261121T011051Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CFA493907637E73F651417103E52F02EF8875A9A673B3858DBFEA43EDFE0327)
 
 1. 用户需要查询当前应用的快捷方式。
 2. 应用调用[getPinShortcutInfos](../harmonyos-references/store-productviewmanager.md#productviewmanagergetpinshortcutinfos)接口获取快捷方式信息。

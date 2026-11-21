@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-fileio
 title: 应用文件访问(C/C++)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用文件访问与管理 > 应用文件访问(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:25+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:4b906469ba182eaa3629f06664868afbf2b10f495066632f0cc82cf6afac8a36
+scraped_at: 2026-11-21T09:11:20+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:8cc68f16df426705775d0510e59a54d7b8106c486361ef491db78b4c3b946010
 ---
 
 ## 场景介绍
@@ -33,15 +33,7 @@ FileIO模块提供了部分文件基础操作能力，其他能力请参考[libc
 CMakeLists.txt中添加以下lib。
 
 ```txt
-target_link_libraries(sample PUBLIC libohfileio.so)
-```
-
-**添加头文件**
-
-```
-#include <cstdio>
-#include <cstring>
-#include <filemanagement/fileio/oh_fileio.h>
+target_link_libraries(entry PUBLIC libohfileio.so)
 ```
 
 调用OH\_FileIO\_GetFileLocation接口获取文件存储位置。示例代码如下所示：

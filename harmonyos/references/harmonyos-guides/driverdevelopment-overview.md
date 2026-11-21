@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverdevelop
 title: Driver Development Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > Driver Development Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:22+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:d6049d0b6c6406d343381e599c0250116c1d298157fccfdad119158cc85040cb
+scraped_at: 2026-11-21T09:11:48+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:24e8aa5016440fcdcbc0a330d91a6bed05fa566a95a099aaf6159558c45b7ddc
 ---
 
 Driver Development Kit（驱动开发套件）为外设驱动开发者提供高效、安全、丰富的扩展外设驱动开发解决方案ArkTS-API和C-API，支持外设驱动开发者为消费者带来外设即插即用的极致体验。
@@ -46,7 +46,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图1** 扩展外设驱动原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Kt9EIikxQriVRab1zaqPcA/zh-cn_image_0000002791725808.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=1296C0517EA26654E48BD74E3AA268B4DA03F7868A3C45D366F424E7C435CA48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/JuRAVrlfTKS0iaxYWRhMrg/zh-cn_image_0000002821837395.png?HW-CC-KV=V1&HW-CC-Date=20261121T011021Z&HW-CC-Expire=31536000000&HW-CC-Sign=10ED75591CB10ABCC1EB947CD00969726834430787C35222518695D3D19E1A94)
 
 ### 运作流程
 
@@ -54,13 +54,13 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图2** 非标外设与对应扩展外设驱动应用匹配的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/q5usKHwOSa-cc06fDhybAA/zh-cn_image_0000002791565836.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=910C74A2E8C7D7934137B9A84A9EDB451D0B2E3FF03C69B76D5B30AB14BFBA67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/pekxSxWhQ_mHXe7aCoNzfw/zh-cn_image_0000002821757397.png?HW-CC-KV=V1&HW-CC-Date=20261121T011021Z&HW-CC-Expire=31536000000&HW-CC-Sign=D91A464C052FE9288513828C384D6162368DB32C1ED8579ED762B1B7458B12A2)
 
 用户使用扩展外设驱动客户端时，扩展外设驱动客户端与扩展外设驱动的绑定流程如图3所示。
 
 **图3** 扩展外设驱动客户端与扩展外设驱动绑定的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/UJjoKJucQMmnSAOm81IvOw/zh-cn_image_0000002820525789.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=1698342FBBCC5E9AD5779ED9AA63A85552FC7682D333B07D3B218DD74607F459)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/DRDRDreoRq2AmcCg-pY7Dw/zh-cn_image_0000002793037460.png?HW-CC-KV=V1&HW-CC-Date=20261121T011021Z&HW-CC-Expire=31536000000&HW-CC-Sign=B01425825E0B0D04AE3DF723EA3D71F4CD558F367DFDEEC152B13DB6FFE5B423)
 
 ## 约束与限制
 
@@ -120,4 +120,4 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
    * 基于驱动开发安全约束及驱动开发业务场景，在DriverExtensionAbility中不支持访问其它ArkTS API，以防止恶意行为和数据泄露。
    * DriverExtensionAbility受限访问ArkTS API方案说明：
      + ArkTS API受限原理：在初始化和创建Extension进程时，会根据Extension配置的受限访问ArkTS API名单加载系统模块。在运行时，如果在DriverExtensionAbility中调用受限ArkTS API，由于初始化和创建阶段未加载相应系统模块，API会调用失败。
-   * DriverExtensionAbility具体受限ArkTS API名单，请参考[frameworks/native/ability/native/etc/extension\_blocklist\_config.json · HarmonyOS/ability\_ability\_runtime - AtomGit | GitCode](https://gitcode.com/openharmony/ability_ability_runtime/blob/master/frameworks/native/ability/native/etc/extension_blocklist_config.json)中DriverExtension配置。
+   * DriverExtensionAbility具体受限ArkTS API名单，请参考[extension\_blocklist\_config.json](https://gitcode.com/openharmony/ability_ability_runtime/blob/master/frameworks/native/ability/native/etc/extension_blocklist_config.json)中DriverExtension配置。

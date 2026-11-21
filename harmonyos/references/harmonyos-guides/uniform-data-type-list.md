@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-
 title: UTD预置列表
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 标准化数据定义 > UTD预置列表
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:44+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:03c5134e09f35b23dc236bf30e582c913223203d313bef6122b5bcdf846bab46
+scraped_at: 2026-11-21T09:10:56+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:0a88e2ff27baa32e28ded0f94294706a379df7e4ba1a9e17716f7f07dff7b851
 ---
 
 标准化数据类型（Uniform Type Descriptor，简称UTD）用于解决系统中的类型模糊问题，即针对同一种数据类型，存在不同的类型描述方式：MIME Type、文件扩展名等。例如描述jpg/jpeg类型图片时，可以使用image/jpeg、.jpg、.jpeg或image/picture等方式进行描述，详情可见[UTD基础类型](uniform-data-type-list.md#基础类型)表格。
@@ -220,6 +220,17 @@ content_hash: sha256:03c5134e09f35b23dc236bf30e582c913223203d313bef6122b5bcdf846
 | com.apple.iwork.pages.pages | general.composite-object,com.apple.iwork | .pages | application/vnd.apple.pages | iWork Pages文档文件。从HarmonyOS 6.0.2开始支持此类型。 |
 | com.huawei.hmos.musiccreate.gofile | general.archive | .gomusic | - | musiccreate文件格式。从HarmonyOS 6.1.0开始支持此类型。 |
 | com.apple.coreaudio-format | general.audio | .caf | audio/x-caf | CAF音频数据文件。从HarmonyOS 6.1.0开始支持此类型。 |
+| general.3d-content | general.object | - | - | 表示3D内容的基类型。从HarmonyOS 7.0.0.115开始支持此类型。 |
+| general.gltf | general.3d-content | .gltf | model/gltf+json | 基于JSON的glTF 3D场景和模型格式。从HarmonyOS 7.0.0.115开始支持此类型。 |
+| general.glb | general.3d-content | .glb | model/gltf-binary | glTF二进制容器格式。从HarmonyOS 7.0.0.115开始支持此类型。 |
+| general.obj-model | general.3d-content | .obj | model/obj | 基于文本的3D模型类型。从HarmonyOS 7.0.0.115开始支持此类型。 |
+| general.mtl | general.object | .mtl | model/mtl | Wavefront OBJ 模型的材质库文件类型。从HarmonyOS 7.0.0.115开始支持此类型。 |
+| general.3mf | general.3d-content | .3mf | model/3mf | 3D制造格式类型。从HarmonyOS 7.0.0.115开始支持此类型。 |
+| general.step | general.cad, general.3d-content | .p21, .stp, .step, .stpnc, .210 | model/step | STEP交换文件类型。从HarmonyOS 7.0.0.115开始支持此类型。 |
+| general.usdz | general.3d-content | .usdz | model/vnd.usdz+zip | 打包通用场景描述资源类型。从HarmonyOS 7.0.0.115开始支持此类型。 |
+| general.usda | general.3d-content | .usda | model/vnd.usda | 通用场景描述数据的可读UTF-8文本类型。从HarmonyOS 7.0.0.115开始支持此类型。 |
+| general.collada | general.3d-content | .dae | model/vnd.collada+xml | 基于XML的数字资产交换格式类型。从HarmonyOS 7.0.0.115开始支持此类型。 |
+| com.mathworks.matlab-code | general.source-code | .m | text/x-matlab | MATLAB脚本类型。从HarmonyOS 7.0.0.115开始支持此类型。 |
 
 ## 系统关联类型
 

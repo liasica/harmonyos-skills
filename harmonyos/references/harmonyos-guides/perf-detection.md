@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/perf-detectio
 title: 性能检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 性能检测
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:24+08:00
+scraped_at: 2026-11-21T09:11:51+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:cd4abe829b3f19551c024e181efce1fb27bad6b42327472182501a3fbfc5fc36
+content_hash: sha256:9aa966c4bdfc681c55e801d059b3dffed85c3076977b0888e742a0f72e08969f
 ---
 
 ## 启动耗时事件检测
@@ -18,7 +18,7 @@ content_hash: sha256:cd4abe829b3f19551c024e181efce1fb27bad6b42327472182501a3fbfc
 
 启动耗时事件统计时间起点为用户点击屏幕，默认结束点为启动动效完成，使用者可调用[reportDrawCompleted](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#reportdrawncompleted10)接口根据实际情况传入定制结束时间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/QTd1508eS9m_ie3khYkh8A/zh-cn_image_0000002820405823.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EA0D712892227670135D47D208F0D0158A0B237147CE8E7D683398C669FD1FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/O1M4u4EvQFqnpfEv5yHLsw/zh-cn_image_0000002792877524.png?HW-CC-KV=V1&HW-CC-Date=20261121T011151Z&HW-CC-Expire=31536000000&HW-CC-Sign=A012F2E353EF984ECBD78FB43A78512D2D1E429DD3598094C36593FE79C35431)
 
 icon\_input\_time：用户点击屏幕时间点。
 
@@ -52,7 +52,7 @@ extend\_time：开发者定制的启动耗时，该时间为手指离开屏幕�
 
    最大单帧耗时超过50ms则为滑动丢帧，具体规则为max\_render\_frametime或max\_app\_frametime超过50ms时会触发该事件上报。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/rexhBgGLTeSUFaQner9cxw/zh-cn_image_0000002791725844.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=3174043630DF8DDA2C98A9C368FBC05D7EFA6BBE59859809188BEDC5D791C6EF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/7mGUvfebR4yGlnsC2vWSHA/zh-cn_image_0000002821837431.png?HW-CC-KV=V1&HW-CC-Date=20261121T011151Z&HW-CC-Expire=31536000000&HW-CC-Sign=95B685A31F46A007A557FA6A6A4D4498F2FD14D1D46F5BE64A44FE46BA2FB4E0)
 
 ### 约束与限制
 
@@ -85,7 +85,7 @@ extend\_time：开发者定制的启动耗时，该时间为手指离开屏幕�
 
 抓栈结果部分示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/2e2XPuMKRZC1QIrLbQSj9w/zh-cn_image_0000002791565872.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=3971D8CD95DD1B871D50CA9F88D8281084B33EB56B956A22019593A88BC928E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/PJv_BxNjSFa51TdyRVqnHQ/zh-cn_image_0000002821757433.png?HW-CC-KV=V1&HW-CC-Date=20261121T011151Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEC06BB79EAA6FAE4939584F695327E90EFB545A17E8E7CA37849A3695EFE4E0)
 
 此采样栈包含在滑动出现超过50ms卡顿时应用主线程调用信息，由于一般滑动卡顿过程较短，因此在出现问题时采集了一次调用栈。可根据同一场景卡顿上报的采样栈数据进行聚类，以判断该场景下滑动卡顿的具体根因。采样栈具体解析方法详见[主线程超时调用栈日志规格](apptask-timeout-guidelines.md#日志规格)。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Circle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Circle
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:08+08:00
+scraped_at: 2026-11-21T09:14:13+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:c2c31b83de7162f5f8a32209fca9fbc0b38b4a07b57f2de4896fced582601a81
+content_hash: sha256:beb64eae6a9d4342e79f3dd6e4967980755ee89accd8a2a655606687413d10f1
 ---
 
 用于绘制圆形的组件。
@@ -143,7 +143,7 @@ struct CircleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/XhQmF38nTH-YhEVPPcCOMQ/zh-cn_image_0000002820527545.png?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED19463A1C86DA9BC9C84AC08CD21F1961E5EA76D5DF9675F11DF9F254AC3E2C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/GlrLW1guSmOPGVxFRFXlng/zh-cn_image_0000002821839171.png?HW-CC-KV=V1&HW-CC-Date=20261121T011308Z&HW-CC-Expire=31536000000&HW-CC-Sign=C55A7580388C3613FA61F8775526A37F216D03231B6C2B20B2033F8392034C59)
 
 ### 示例2（宽和高使用不同参数类型绘制圆）
 
@@ -167,7 +167,7 @@ struct CircleTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/UXDy58UEQK-e1qkd8-GrHQ/zh-cn_image_0000002820407547.png?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDBBE0EEF45C539FEF8C496A7043D4B7F2BBB4AFB796977B5DF8AF21ECC97205)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Ev2Cz_KKQpOnXOhutu3LWA/zh-cn_image_0000002821759173.png?HW-CC-KV=V1&HW-CC-Date=20261121T011308Z&HW-CC-Expire=31536000000&HW-CC-Sign=78002575E42FB65AB569D379544D98809A88DECCDE9D27404BEC2BB9634372C6)
 
 ### 示例3（使用attributeModifier动态设置Circle组件的属性）
 
@@ -205,4 +205,4 @@ struct CircleModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/UyDfT6b8R_ONzJNxddUYNw/zh-cn_image_0000002791727566.png?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=47AD844A13D0506FCFBAFEBE1FFE6E41C51738634972D453B6C37AE3AA369BA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/wUdwkwKAStaZIM6kYkxy9A/zh-cn_image_0000002793039238.png?HW-CC-KV=V1&HW-CC-Date=20261121T011308Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C3A9FB07DF1F22C47BD13863F5668D262F11F45842F87C49B6CABACAA21E818)

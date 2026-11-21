@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Matrix)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Matrix)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:54:07+08:00
+scraped_at: 2026-11-21T09:16:21+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:d32dcc790794e7e2695ea34ae4c0fd7bd75cf919feb0d275039c0c72d0f1ca95
+content_hash: sha256:ee93b06c5a2affbd2b2b826bdab827e877630253dc5d77aa94e6b69606abe6af
 ---
 
 矩阵对象，用于图形的坐标变换，支持平移、旋转、缩放和倾斜等变换操作。通过矩阵变换可实现不同坐标系之间的映射。
 
 表示为3×3的矩阵，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/d-3M37VqR-uLi_8j8INuUQ/zh-cn_image_0000002791728180.png?HW-CC-KV=V1&HW-CC-Date=20261119T015310Z&HW-CC-Expire=31536000000&HW-CC-Sign=B46807F8CCA9557012E9C541A4FB9F3C1AE1B0019BB6F007E07E2A8E999CFC4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/L_yf3y8pRhCYpi8M_W8Q9A/zh-cn_image_0000002793039870.png?HW-CC-KV=V1&HW-CC-Date=20261121T011620Z&HW-CC-Expire=31536000000&HW-CC-Sign=892007E0D35E01A6E9B393953E10EA6566EC073CE01AAE621F5125C78A619403)
 
 矩阵中的元素从左到右，从上到下分别表示水平缩放因子、水平倾斜系数、水平位移系数、垂直倾斜系数、垂直缩放因子、垂直位移系数、x轴透视系数、y轴透视系数、透视缩放因子。
 
 设(x1, y1)为源坐标点，(x2, y2)为源坐标点通过矩阵变换后的坐标点，则两个坐标点的关系如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/NfodIGWlTNWx8mt4rYTUPQ/zh-cn_image_0000002791568208.png?HW-CC-KV=V1&HW-CC-Date=20261119T015310Z&HW-CC-Expire=31536000000&HW-CC-Sign=9812D3AD853110DCDA2DDB09B0550C5A14AB9B696D4ECCCFA09102CA01B4D869)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Eg8ZALKkQsu0R2yDs4Hbcg/zh-cn_image_0000002792879896.png?HW-CC-KV=V1&HW-CC-Date=20261121T011620Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFDDAD63B5FEB92D0431CFC9F00C31F3A4287CAC59AD196A35EB7BD02C70BDE7)
 
 **说明** 
 
@@ -977,7 +977,7 @@ mapRect(dst: common2D.Rect, src: common2D.Rect): boolean
 
 将目标矩形设置为源矩形通过矩阵变换后的图形的外接矩形。如下图所示，蓝色矩形为源矩形，假设黄色矩形为源矩形通过矩阵变换形成的图形，此时黄色矩形的边不与坐标轴平行，无法使用矩形对象表示，因此，将目标矩形设置为黄色矩形的外接矩形，即黑色矩形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/_e02aE_2S5qFfb61AG44hA/zh-cn_image_0000002820528161.png?HW-CC-KV=V1&HW-CC-Date=20261119T015310Z&HW-CC-Expire=31536000000&HW-CC-Sign=55B2C367E4E003550BB5DA3DACE87797F62C7EA6889FFB01CCABCEFCF1033D6D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/XNE5jmjASSGfvpDS4ZEjEg/zh-cn_image_0000002821839801.png?HW-CC-KV=V1&HW-CC-Date=20261121T011620Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1C78F44805373BB0070900C4E23114D4BD692C3A803B3CCFE2119016392CC6D)
 
 **系统能力：** SystemCapability.Graphics.Drawing
 

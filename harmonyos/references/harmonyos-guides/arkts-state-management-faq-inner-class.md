@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 数据对象状态管理常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理常见问题 > 数据对象状态管理常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:38+08:00
+scraped_at: 2026-11-21T09:11:04+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:e249854ee3ddf569dfaf0427e3c9473c8e7e8021fe3a0a2e2d4a70df9ff24590
+content_hash: sha256:93b07b51bc5fa0dc6fed5dc3084a084389be34eccacb0826ada29df6804d956b
 ---
 
 大型应用中需要封装大量的数据对象，数据对象内部状态变量的使用极大地影响开发者的开发效率，本文将介绍数据对象状态管理的常见问题及解决方案。
@@ -312,7 +312,7 @@ struct Index {
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/62u-vpYQTkKEU7edtvxINA/zh-cn_image_0000002820524715.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=96FC5BA6E1824A18C038D83EAAF3AC32EA29DCEC2150FAF0A900B34058036EA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/fjGU3go6Q2unXYRLp_uVbQ/zh-cn_image_0000002793036382.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FE8AA30564E15B5B9CEA5B5CDE34DFDD96CBAEC7872831CE4E2998590D66BEB)
 
 页面内通过ForEach显示了20条信息，当点击某一条信息中age的Text组件时，可以通过日志发现其他的19条信息中age的Text组件也进行了刷新(这体现在日志上，所有的age的Text组件都打出了日志)，但实际上其他19条信息的age的数值并没有改变，也就是说其他19个Text组件并不需要刷新。
 
@@ -433,7 +433,7 @@ struct Page {
 
 上述代码的运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/YO3x0Kp6RVWgPq7DI_VSeg/zh-cn_image_0000002820404713.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE3488829A3982B16184FBCC88496E9BF27C4E92A8D1D5454C2FAB014430D907)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/NrAN_EYhQoaVUKtagFktJg/zh-cn_image_0000002792876414.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC61B64E630A4B276B30638020E77F7558C89146EDBB8E11A5F6BF724618E35A)
 
 修改后的代码使用对象数组代替了原有的多个属性数组，能够避免数组的“冗余刷新”的情况。这是因为对于数组来说，对象内的变化是无法感知的，数组只能观测数组项层级的变化，例如新增数据项，修改数据项（普通数组是直接修改数据项的值，在对象数组的场景下是整个对象被重新赋值，改变某个数据项对象中的属性不会被观测到）、删除数据项等。这意味着当改变对象内的某个属性时，对于数组来说，对象是没有变化的，也就不会去刷新。在当前状态管理的观测能力中，除了数组嵌套对象的场景外，对象嵌套对象的场景也是无法观测到变化的，这一部分内容将在[使用多属性类对象导致冗余刷新](arkts-state-management-faq-inner-class.md#使用多属性类对象导致冗余刷新)中讲到。同时修改代码时使用了自定义组件与ForEach的结合，这一部分内容将在[ForEach和对象数组结合使用导致UI不刷新](arkts-state-management-faq-inner-component.md#foreach和对象数组结合使用导致ui不刷新)讲到。
 
@@ -620,11 +620,11 @@ struct Page {
 
 上述代码的运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/z9LDyK4fTByHU6lxt4__1Q/zh-cn_image_0000002791724736.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A7362849D0CD0E2A63E00241318E22CFC7112BF31C588C2D865D3881B715019)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/57auOQPpQ_y6kelFyRiD3A/zh-cn_image_0000002821836319.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3223987C7349A628792C8182F7E897FC6872E2B5B5DEB7AF23DB895AC634938)
 
 优化前点击move按钮的脏节点更新[耗时](ui-inspector-profiler.md#trace调试能力)如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/2WpHp_GhStaFniq3xsBrHA/zh-cn_image_0000002791564764.png?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=205DD3C4612814FF3C91B1E350C8A890980D9815F622726D8BD5618F431BBD9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/JkmY3esRQduh3-WPho_3XA/zh-cn_image_0000002821756319.png?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D73E8B95B0EE31418361919129B60D8CA13971403AE3BC4794497D5C2DF142F)
 
 在上面的示例中，UiStyle定义了多个属性，并且这些属性分别被多个组件关联。当点击任意一个按钮更改其中的某些属性时，会导致所有这些关联uiStyle的组件进行刷新，虽然它们其实并不需要进行刷新（因为组件的属性都没有改变）。通过定义的一系列isRender函数，可以观察到这些组件的刷新。当点击“move”按钮进行平移动画时，由于translateY的值的多次改变，会导致每一次都存在“冗余刷新”的问题，这对应用的性能有着很大的负面影响。
 
@@ -870,11 +870,11 @@ struct Page {
 }
 ```
 
-上述代码的运行效果如下。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/EIqrdLLDTN-Q6X684VYxbQ/zh-cn_image_0000002820524717.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=D645CE9DFB7F0C49B9FABD27CBD2B176CEDCDFA82C19E278AA6E04253775A66B)
+上述代码的运行效果如下。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/N5u4WJSMT1ayMJtVCq5pkw/zh-cn_image_0000002793036384.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=85FB8BB5CDA18A316EBBBB5495E8EA085F377655521C54365CE214A1826BE667)
 
 优化后点击move按钮的脏节点更新耗时如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/plydmRawQ12q6zSpC0aNPg/zh-cn_image_0000002820404715.png?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=B32749527853A324C7B873AF22F14067D57E873159EA96F4716294391D401FBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/PfAL6825SYmX8h4ZIgSS_Q/zh-cn_image_0000002792876416.png?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6992B45A0902FF136F44248FE7B0F535A73B38F1A7EA2CD72F8C0D3EEF4CDC5)
 
 修改后的代码将原来的大类中的十五个属性拆成了八个小类，并且在绑定的组件上也做了相应的适配。属性拆分遵循以下几点原则：
 
@@ -1214,7 +1214,7 @@ struct Page {
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/teYLtAa-QzeA-8JVBVR0Ag/zh-cn_image_0000002791724738.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED672BE60EC47A01754A30491D918512FF08B60A194FC1625CB922712ABE9101)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/_IWKiDmrTdWIjNRucEf-OQ/zh-cn_image_0000002821836321.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFC83309522F1F9BB351C84B3E6B4429D1872A6AB61B2EEDC6A7B0938F0CDBEE)
 
 上述代码维护了一个ChildList类型的数据源，点击"X"按钮删除一些数据后再点击Recover进行恢复ChildList，发现再次点击"X"按钮进行删除时，UI并没有刷新，同时也没有打印出“CompList ChildList change”的日志。
 
@@ -1395,7 +1395,7 @@ struct Page {
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/AsGkOyHCTd6PqmMzGnQoFg/zh-cn_image_0000002791564766.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=29B127DA29C5BC0D2A4118452B50E7877B8F24D01AEAAF839C6CDDB1CA0926FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/3Oq075BiReintV_7bdxMXg/zh-cn_image_0000002821756321.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=8981374BD95C4E3D83897EEEAA7DDB05ACB46B5FA2713E0558B526F5658E021C)
 
 核心的修改点是将原本Child[]类型的tempList修改为具有被观测能力的ChildList类。
 

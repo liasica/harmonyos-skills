@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 布局优化指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 布局优化指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:40+08:00
+scraped_at: 2026-11-21T09:11:06+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:66c60e5c744cd9da3b166922f6000276854d957bbe68e9fd4f99f17b97f5a10d
+content_hash: sha256:1db9a1a48f7f9b79d6c9ddf1d9d8c241b1587482268930c219f051715b181f5f
 ---
 
 ## ArkUI框架执行流程
 
 在使用ArkUI开发中，我们通过布局组件和基础组件进行界面描述，这些描述会呈现出一个组件树的结构，基础组件在其中为叶子节点，布局组件则是中间节点，可以把这棵树称之为应用组件树。当用户执行交互（滑动，点击等行为）时会触发界面修改，界面的修改本质上是通过触发这棵组件树的重新渲染，来实现应用界面更新的过程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/n5KC9gu1TT2_buFSYqOF5A/zh-cn_image_0000002791564918.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=9058781D17237864270EF677239E5101E571BBF7C8DAF19C99BEC3C2D364E441)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/appZwtHbRIeOZipKmlTU0w/zh-cn_image_0000002821756475.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBCA8E8A03E3D15FC4177B84E565343063AFCFBED7F9DA66089F193C4F652FAD)
 
 应用界面更新的过程主要分为两个过程：**数据处理过程和UI更新过程**。
 
@@ -34,11 +34,11 @@ UI更新过程包含组件标脏及布局计算。初始加载阶段，所有组
 
 一般来讲，如果一个组件设置了固定的宽高尺寸，那这个组件就是布局边界。其内部组件布局的变化，不会影响到此布局边界外部的布局情况，那么在查找的时候，只需要在布局边界内部判断哪些组件的布局会受到影响，可以避免在整棵树结构的查找过程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/l_H4HH_2S-ex_6A20B9eJg/zh-cn_image_0000002820524871.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1A87E6BCDC9906DEE0E988BDAB989D8A436BC434B48D23B13ACC66585F26623)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/dFHU0wMNQRae9szE62r4UQ/zh-cn_image_0000002793036538.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E9097A3C6318875490D814BADA2227A5C1CE33E75C4CE5E8648ABB5FBB23A42)
 
 确定实际的脏节点数组后，根据脏节点数组来拿到对应的脏节点对象，通过递归遍历children进行Measure过程，如果该对象布局参数没有发生变化，就会跳过对应的Measure阶段。当Measure执行完成后，进行layout阶段。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/UaZik0UcSjyHo6EhdSprlQ/zh-cn_image_0000002820404869.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=498F650726919479F792EBB46DFEF1DBA5940A7734F585939A50B86A16366D31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/zLM9MI83TEyjkHDRIxpwkw/zh-cn_image_0000002792876570.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=49731DA5BEC1F1B1EE1EBA289E625731FC8F34246D315510D8AD107651E02DEA)
 
 从以上的过程可以看出，影响UI更新过程的主要因素是参与更新的节点数量。
 
@@ -89,7 +89,7 @@ UI更新过程包含组件标脏及布局计算。初始加载阶段，所有组
 
 以上数据来源均为版本DevEco Studio 4.0.3.415、SDK 4.0.10.9条件下测试得到，不同设备类型数据可能存在差异，测试数据旨在体现性能优化趋势，仅供参考。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NDuXu6wRREe883QqKC1Uaw/zh-cn_image_0000002791724892.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CC594611B936C90228AB2B9CE4A27EA1ADE0879A3A6062A3B8A95E24304B9FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Fway7UkPTleg4ezoM19XkQ/zh-cn_image_0000002821836475.png?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=F34A2377465521D9CC1D5EF49121D9AC6CAB3685FA6126B72928F7DBF12F2030)
 
 根据以上数据对比发现，组件平铺和嵌套在相同组件个数的情况下，其性能差异不大，并且整体上趋势保持一致，随着组件数量增加呈现线性增长的劣化，由此可以得到结论，真正影响布局性能的因素是参与布局的节点数量。所以在进行布局时，应该尽量减少整体的节点数，来减少布局的性能劣化。
 
@@ -132,7 +132,7 @@ Row() {
 
 **图 1** 扁平化布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/4JZJQottQriqlI2do_7UPA/zh-cn_image_0000002791564920.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=60EE16DF92762B32A847E2417B980E8522E29A7E12D1DA97B65B4CA06A146AFF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/kROyiGKaT4-T6UgDHw4Ugg/zh-cn_image_0000002821756477.png?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FB7B6F13BD5E3E44948D883E9237556BE0D230D8CE9BB8D9CA227BC6938E32E)
 
 这种方式对于布局的影响主要体现在：
 
@@ -530,11 +530,11 @@ struct SetHeightTestPage {
 
 **图 2** List宽高不固定
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/jV9mD98dQnKPufu0Rr8zUg/zh-cn_image_0000002820524873.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=891C06CCCACBBE3D61F24B908C542C1BC7C807171895FF3E4D5FBF9453303A19)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/guyzYCfITmWqiAjXQJSOXQ/zh-cn_image_0000002793036540.png?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A1DB913725D328DCDACDB4BA6B8075D6CBDA357841B7A5C8ABB1ECD00E20857)
 
 **图 3** List宽高固定
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/jDAS8pwuR3SftWoh4z9Atw/zh-cn_image_0000002820404871.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFCECA1BF5C823CAD32178B3633A370A1F1959B9E5A888D2EB9AC94D8EAA359B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/XOEifc4SSAqNItzvUz2erw/zh-cn_image_0000002792876572.png?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B8401F29F5F8E621C70CF8BF52825AD1FCDCE8A391A980897B7B984042D4936)
 
 **表 9** 不设置List宽高与设置宽高对比数据
 

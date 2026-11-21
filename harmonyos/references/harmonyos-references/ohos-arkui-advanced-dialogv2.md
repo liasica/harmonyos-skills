@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: DialogV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > DialogV2
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:15+08:00
+scraped_at: 2026-11-21T09:14:17+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:1e058611a1be2ac49f90118cd3c86634a7793b145dc18bbd86d86882d15bc877
+content_hash: sha256:57b067ad3f71e8b32e7a29fc609ea0eb84a0bf09fd91dddc70d74ff97891e295
 ---
 
 弹出框是一种模态窗口，用于在保持当前上下文环境时，临时展示用户需关注的信息或待处理的操作，用户在弹出框内完成交互。模态弹出框需要用户进行交互才能够退出模态模式。DialogV2提供了提示、选择、确认、警告、加载等多种类型的弹出框，适用于确认删除、显示加载进度、用户选择项、重要提示等场景，帮助开发者简化模态对话框的实现，提供一致的用户交互体验。
@@ -355,7 +355,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/VtB2pK1HRa-DjJzVnv07DA/zh-cn_image_0000002820527661.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1DDAD983BDC239CC8FB1A471E62C4CB349973F357C025AD3D715BBEB1F2F408)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/e3FQtnaSQO6P6YqYYJozqQ/zh-cn_image_0000002821839293.png?HW-CC-KV=V1&HW-CC-Date=20261121T011416Z&HW-CC-Expire=31536000000&HW-CC-Sign=12846647F24050566BB0CC24F6A9F3899608D3F37DAAB18AFEDDD6227D1E1F73)
 
 ### 示例2（纯列表弹出框）
 
@@ -425,7 +425,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/rZyQ451sROaGYFHj3Ya05Q/zh-cn_image_0000002820527615.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=04E5A04C142845B686F85D9F6A247790529DE41E7C1376464D5646CD05D6B668)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/wy4MEP3FQ8mdgtZ8T1fX6A/zh-cn_image_0000002821839243.png?HW-CC-KV=V1&HW-CC-Date=20261121T011416Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D971E885C0315EB72E6EA298C02B000B110267B0E0540331448B9B9BF92C6B4)
 
 ### 示例3（文本与勾选弹出框）
 
@@ -493,7 +493,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/nF3TsuhTT1GxFkV3Ozrvjw/zh-cn_image_0000002820407617.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=55D450EA365ED39C0021F9E8B2107077BFF48F54BC00580CA5CDEF1FDFB7A2F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/BbWEUGRAR3-V8c2GGP4KeA/zh-cn_image_0000002821759243.png?HW-CC-KV=V1&HW-CC-Date=20261121T011416Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC5979B5463F22DC4EB9E6140396F68E2DE0371DD3BC75EC24407765BC67F320)
 
 ### 示例4（纯文本弹出框）
 
@@ -553,7 +553,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/mmlzhaG2RPmPsD__VtM4rQ/zh-cn_image_0000002791727636.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=46F8C902F5E81A0BD97C13D5CC0E958F2C9D66534BE1410C6426038F2E68C7CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/GvF24tzoSWWT2hQtIUpp4A/zh-cn_image_0000002793039310.png?HW-CC-KV=V1&HW-CC-Date=20261121T011416Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DCBBD806ED45176090593CA4F3A8208B222D44D0CCA4454B1D08895C74A6B18)
 
 ### 示例5（进度加载类弹出框）
 
@@ -598,7 +598,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/KxD9_GpWSPmPFLAZFxF6yw/zh-cn_image_0000002791567664.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1D17BAE33908B906D9454B02DE5FCC31F531DC928592E8C174615DA5E86D7F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/Cygp3CyZSEqr-dd7Ljd1JA/zh-cn_image_0000002792879340.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011416Z&HW-CC-Expire=31536000000&HW-CC-Sign=661ED094F03D6289CFE30A5671AD5F02082320B9FF277FFDDA3A9A493B2EB0CC)
 
 ### 示例6（使用WithTheme自定义主题的弹出框）
 
@@ -657,7 +657,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/dUSRJd6WQZ-KpY6gNsgqyQ/zh-cn_image_0000002820407663.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=82766A10AEF89844447A50BE3F7521CD0E1BA5BCD2D64A9D5E8BB55B7A1F7954)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/2X_I9K_CQeuI4UJUtUtw4Q/zh-cn_image_0000002821759291.png?HW-CC-KV=V1&HW-CC-Date=20261121T011416Z&HW-CC-Expire=31536000000&HW-CC-Sign=D292D487D359923722BD6D72E841EC103B9DB222CA18A1F6EB26952154DB2AA7)
 
 ### 示例7（自定义内容弹出框）
 
@@ -718,7 +718,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/qB5sc4eySNSTD1C3kbqjpA/zh-cn_image_0000002791727682.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5033998DFA7AC3144E9CDA1358E8E525CD18F2AE7384B944CE61D30F02DB64A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Mlvk0PKvQeS4LwO-At6cYA/zh-cn_image_0000002793039358.png?HW-CC-KV=V1&HW-CC-Date=20261121T011416Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9D97E3987A61D0509CD28D9B84F3F266E9183E77CAE43344BD73541A72631A9)
 
 ### 示例8（跟手弹出框）
 
@@ -776,4 +776,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/MdEoPmcdTYWcntaNJJVuyQ/zh-cn_image_0000002791567710.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB7D151100EC43465E6B475C16C8C41CF680FB6D54EF4DB942E303AD9A0F4272)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/3g4BccozSh6mRr0JabwZfw/zh-cn_image_0000002792879386.png?HW-CC-KV=V1&HW-CC-Date=20261121T011416Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A9338F917FCE79401A69A86900B99E364922FEEE3A55165FEACCD2ED1F3DE94)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 布局约束
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 布局约束
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:51+08:00
+scraped_at: 2026-11-21T09:14:01+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d40547ef7afad1a3fc6b0f5920c721ecfc0263d0678f81a323eb538b8378df50
+content_hash: sha256:15b57af6cd98d595d5e663dde8cd403c2e34dcde3354d32c8f5a888e622deb0b
 ---
 
 通过组件的宽高比和显示优先级约束组件显示效果，支持固定宽高比设置和响应式优先级控制两个核心特性，可解决组件变形、布局错乱等问题，提升界面显示质量。
@@ -136,11 +136,11 @@ struct AspectRatioExample {
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Lpe8vmarTNmt3oFaz0fpJA/zh-cn_image_0000002820527001.png?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FE83287588218DB9B4FA76C85CD8977FA66C92338801F28ED9B6036D7BE6A1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/IIFimDWWQoyZyOzQ0z8xaw/zh-cn_image_0000002821838609.png?HW-CC-KV=V1&HW-CC-Date=20261121T011250Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD53F5453B517D9301ABA28E22C00CFDA367C99AF7A69D1A56D66C4AB12B32DE)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/RGIgNA60TEmfxe8g2CdS1A/zh-cn_image_0000002820407001.png?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA7AB509B55E204C4FE11E50E15406D94F01D133878DF9A30496CAA3B61B55BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Iyny_JlfRgG0Hman_RYQKA/zh-cn_image_0000002821758611.png?HW-CC-KV=V1&HW-CC-Date=20261121T011250Z&HW-CC-Expire=31536000000&HW-CC-Sign=626F3CCDFC4E181F37D1AEA5014E9A3186A1575E8701389DFB18EC094100D882)
 
 ### 示例2（设置组件显示优先级）
 
@@ -204,4 +204,4 @@ struct DisplayPriorityExample {
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/N2HVzHrGQmae6TdsuYyDtA/zh-cn_image_0000002791727022.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCC4DB047E935D68A47C2C41D191415830D28480CF1D291178C8ED2E709DB0F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/ZBjVMuk4QxySqe7l_rmRfw/zh-cn_image_0000002793038674.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011250Z&HW-CC-Expire=31536000000&HW-CC-Sign=99CDA5BAED3A055533D3971A9740BC4B6D26B6A17C52FA43D6F70948DB1D74B9)

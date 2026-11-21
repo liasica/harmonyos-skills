@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inputmethod-i
 title: 输入法应用沉浸模式
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 输入法应用沉浸模式
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:57+08:00
+scraped_at: 2026-11-21T09:11:23+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d1fa9202f60787aa87c8d3bf735e622ec111b93d66f1cab9e57fa507f75b7079
+content_hash: sha256:05f885195bd68bc74ad8e016969e00a703e3f32b7f791fc50664495713a012e0
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:d1fa9202f60787aa87c8d3bf735e622ec111b93d66f1cab9e57fa507f75
 
 ## 框架原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/v8eNhu5LQoGYdDR-aJzu-Q/zh-cn_image_0000002820405601.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EE4E51E4F74837DC0C782C0A3AFAAB2DAFB4601F642E6830E79D3FB90BA62B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/2f5RRHG-QmKMeCDyMtUSYg/zh-cn_image_0000002792877302.png?HW-CC-KV=V1&HW-CC-Date=20261121T011123Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FA37E96571C428AC52F58C705D343E2302F1EA844ACE90253869F4A31A81874)
 
 * 前台应用根据应用场景，设置应用期望的沉浸模式。
 * 输入法框架在拉起输入法应用时会将前台应用期望的沉浸模式传递给输入法应用。

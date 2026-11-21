@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aa-tool
 title: aa工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > aa工具
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:29+08:00
+scraped_at: 2026-11-21T09:11:55+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d77ca93821be1caefec850a25767366ae53c1bf5bda0772823b4d67f880abd88
+content_hash: sha256:393769d9c15bcb5380c92bf33f31b45742b5756061cc97565d4f766011e4c9ba
 ---
 
 Ability assistant（Ability助手，简称为aa），是用于启动应用和启动测试用例的工具，为开发者提供基本的应用调试和测试能力，例如启动应用组件、强制停止进程、打印应用组件相关信息等。
@@ -267,21 +267,21 @@ aa dump命令从API version 7开始支持，从API version 9废弃，替换命�
 aa dump -a
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/ZZQ5bftcQ4aVFHFqeh3tUA/zh-cn_image_0000002820405831.png?HW-CC-KV=V1&HW-CC-Date=20261119T014828Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEA60ABC610DDF80BFB22CBEB46974C8A7CAE496D84D40977E044B52C3023B42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/qAMHwnmXRpqvz2IehTpH2w/zh-cn_image_0000002792877532.png?HW-CC-KV=V1&HW-CC-Date=20261121T011154Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E5D26A2CDB711BAB2FA7F98FAAFB475C8EFAB88EEFDD485BFF9FF1059994846)
 
 ```bash
 # 打印所有任务链
 aa dump -l
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/_e3z0I_qSpiAc0KiT5-zlw/zh-cn_image_0000002791725852.png?HW-CC-KV=V1&HW-CC-Date=20261119T014828Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF992B26D21A2E10F0CD89D29DCB128B79D41FEDC165A884197074A54F3DE840)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/tFLDiiDzSzqiUbaMwtlcMQ/zh-cn_image_0000002821837439.png?HW-CC-KV=V1&HW-CC-Date=20261121T011154Z&HW-CC-Expire=31536000000&HW-CC-Sign=82D45BD8A4CAE2A3B8AC96899380E4DC6EA062A910FCDE24E2CD806F18B2781E)
 
 ```bash
 # 打印指定应用组件详细信息
 aa dump -i 105
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/vXvt32e0RnWzKYvzAxA54A/zh-cn_image_0000002791565880.png?HW-CC-KV=V1&HW-CC-Date=20261119T014828Z&HW-CC-Expire=31536000000&HW-CC-Sign=13B1CC6EA5A711DB4DAC81CE6733DACD1C1696B8728FDDC519E5A91FE15C11B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/rI1nRfVoRR6Zvb5IwjhAOA/zh-cn_image_0000002821757441.png?HW-CC-KV=V1&HW-CC-Date=20261121T011154Z&HW-CC-Expire=31536000000&HW-CC-Sign=66D81D098E8DBAD1B5801057C9BD78BAD42E3FB122B7F08CC63745551E161C81)
 
 ## 强制停止进程命令（force-stop）
 

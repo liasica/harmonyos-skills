@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/continuous-ta
 title: 长时任务(ArkTS)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 长时任务(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:24+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:d640898c81f4910f0950a46c282686497014d640bb1da58351cf6abf5e89126f
+scraped_at: 2026-11-21T09:11:20+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:c27ea9721b779dac3b3953d63e352f56c219bfcbf91646e1e1b7a55c3b87f393
 ---
 
 ## 概述
@@ -37,6 +37,7 @@ content_hash: sha256:d640898c81f4910f0950a46c282686497014d640bb1da58351cf6abf5e8
 | MODE\_AV\_PLAYBACK\_AND\_RECORD | 多媒体相关业务。  **说明：** 从API version 22开始支持。  从API版本26.0.0开始，支持在元服务中使用。 | avPlaybackAndRecord | 音视频播放，录制，音视频通话时退后台。在上述三种场景下，选择本类型或对应类型的长时任务均可。例如：音视频播放场景下，选择AUDIO\_PLAYBACK或者MODE\_AV\_PLAYBACK\_AND\_RECORD任意一个即可。 |
 | MODE\_SPECIAL\_SCENARIO\_PROCESSING | 特殊场景类型（仅对Phone、Tablet、PC/2in1设备开放）。  **说明：** 从API version 22开始支持。 | specialScenarioProcessing | 在后台进行导出媒体文件，使用三方投播组件在后台进行投播，应用在后台有室内运动场景。 |
 | MODE\_NEARLINK | 星闪业务。  **起始版本：** 26.0.0 | nearlink | 通过星闪传输文件时退后台。 |
+| MODE\_USB\_CONNECTION | USB业务（仅对Phone、Tablet、PC/2in1、TV设备开放）。  **起始版本：** 26.0.1 | usbConnection | 通过USB设备进行音频播放时退后台。 |
 
 关于DATA\_TRANSFER（数据传输）说明：
 

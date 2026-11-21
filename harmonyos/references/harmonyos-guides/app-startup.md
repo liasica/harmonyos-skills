@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup
 title: 应用启动框架AppStartup
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动 > 应用启动框架AppStartup
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:27+08:00
+scraped_at: 2026-11-21T09:10:53+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:81a5cb60645ca5a611290fe9990b41beddd2c6815d68526bbe31b7482f28b879
+content_hash: sha256:7f747eee29ee32f778777a060078e077c1211ab5e624a8087651a03b02d7664a
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图1** 启动框架使用场景
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/S3RBF0cYRSS36jXpvdpCxQ/zh-cn_image_0000002791724436.png?HW-CC-KV=V1&HW-CC-Date=20261119T014635Z&HW-CC-Expire=31536000000&HW-CC-Sign=77AAF4DBB1A1EF50FDCE9EEFCBF536D7A8BAB8048BC28BC53EC52E992FF31743)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/O2uVJAnKQeWnlRKtRKVmcQ/zh-cn_image_0000002821836019.png?HW-CC-KV=V1&HW-CC-Date=20261121T010929Z&HW-CC-Expire=31536000000&HW-CC-Sign=379DD04AEB205D6A297D67694B0327DF5466D2053007AB46BB454425C0951FEF)
 
 ## 运行机制
 
@@ -24,13 +24,13 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图2** 启动框架自动模式执行时机
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/bdDRdeBLRUaq2MQpsHtE0w/zh-cn_image_0000002791564464.png?HW-CC-KV=V1&HW-CC-Date=20261119T014635Z&HW-CC-Expire=31536000000&HW-CC-Sign=F204BF9C2F646231E8B4484664C8AF16098F5F026FCDF031F8CD4365E4446A2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/pfBlvl8mSquZkfeS2cI8EQ/zh-cn_image_0000002821756019.png?HW-CC-KV=V1&HW-CC-Date=20261121T010929Z&HW-CC-Expire=31536000000&HW-CC-Sign=C35BFBC7FF0002835617BB862490BF7A11B6FB5C35D7705017AB21040D2A22AF)
 
 开发者也可以在AbilityStage创建完后调用[startupManager.run](../harmonyos-references/js-apis-app-appstartup-startupmanager.md#startupmanagerrun)方法，执行手动模式的启动任务。
 
 **图3** 启动框架手动模式执行时机
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/0_uVji17RaebjYjINfe0XA/zh-cn_image_0000002820524415.png?HW-CC-KV=V1&HW-CC-Date=20261119T014635Z&HW-CC-Expire=31536000000&HW-CC-Sign=7994D609DCFAAE2422EDCFFCE797981AAD904720CB153C44726A0F830ADE7AF2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/-BytdTIPS3q-Mm6Dqz6Rzw/zh-cn_image_0000002793036084.png?HW-CC-KV=V1&HW-CC-Date=20261121T010929Z&HW-CC-Expire=31536000000&HW-CC-Sign=03571B123F9436A1D443BC9A17E65115A48A6BD9DE03D6C47EED5284222FFDFC)
 
 ## 支持的范围
 
@@ -117,7 +117,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图4** 启动任务依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/adAXS6X-QrSIUHzvmVgw_A/zh-cn_image_0000002820404415.png?HW-CC-KV=V1&HW-CC-Date=20261119T014635Z&HW-CC-Expire=31536000000&HW-CC-Sign=88ABA2F509A6D4CC7256DD3521BE8FFF6B04ED7B1CD21B05C950C7C15CFC4550)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/UKTi-h1wSnCybHEON-WIJA/zh-cn_image_0000002792876116.png?HW-CC-KV=V1&HW-CC-Date=20261121T010929Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BA8E027C2048D1F54B490C926F339F5B7194233460CE5B095E64F1200D0C718)
 
 1. 在“ets/startup”路径下，依次创建6个启动任务文件。文件名称必须确保唯一性。本例中的6个文件名分别为StartupTask\_001.ets~StartupTask\_006.ets。
 2. 在启动框架配置文件startup\_config.json中，添加启动任务配置。
@@ -206,7 +206,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图5** so预加载任务依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/U9O4QgCZRFO0aN4JDjnIeg/zh-cn_image_0000002791724438.png?HW-CC-KV=V1&HW-CC-Date=20261119T014635Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDEA76C683E6984F9AE046B9C82E0C96D1A459BDF4709D727330DF132EDBF86F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/fAwy7eBCT96BnhL2wVoX3g/zh-cn_image_0000002821836021.png?HW-CC-KV=V1&HW-CC-Date=20261121T010929Z&HW-CC-Expire=31536000000&HW-CC-Sign=68FB39AAF5AA53F18B08FA858F345F33A6E8DE10459A83C26B78268473475156)
 
 1. 参考[Node-API](use-napi-process.md)创建so文件。本例中的6个so文件名称分别为libentry\_001.so~libentry\_006.so。
 2. 在启动框架配置文件startup\_config.json中，添加预加载so任务配置。
@@ -372,7 +372,7 @@ export default class StartupTask_001 extends StartupTask {
 
 **图6** 启动任务与so预加载依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/e93DgTSwQMWqvBi3Jp_-8Q/zh-cn_image_0000002791564466.png?HW-CC-KV=V1&HW-CC-Date=20261119T014635Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE162161E8AC8476D5C66E729B4093879FA85C2B3EAE44D6F002813AD06B8B0B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/q16Oi9a0QNytUWRlGmT00w/zh-cn_image_0000002821756021.png?HW-CC-KV=V1&HW-CC-Date=20261121T010929Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9030A50D04F28322900FF8DCFBE5FA23927D3BC5602F0D0CADFAE07472C8D6B)
 
 开发步骤如下：
 
@@ -574,7 +574,7 @@ struct Index {
 
 **图7** 启动任务设置匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ud28f-ZVQpaFWMxRf_un2Q/zh-cn_image_0000002820524417.png?HW-CC-KV=V1&HW-CC-Date=20261119T014635Z&HW-CC-Expire=31536000000&HW-CC-Sign=866A8FE6EC950AA893E4DE2A171496E0B1FCCDCC904BDC27B7F4CC47F764C233)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/eR_b3jPRT7e2OkO_B4MyWw/zh-cn_image_0000002793036086.png?HW-CC-KV=V1&HW-CC-Date=20261121T010929Z&HW-CC-Expire=31536000000&HW-CC-Sign=30DA094F613CEA47D74A869412441B543DF50304C19B9A0B4A40930AA89F0D7D)
 
 可以通过以下两种方式添加匹配规则：
 
@@ -688,7 +688,7 @@ struct Index {
 
 **图8** 设置启动任务提前调度
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/Fq7ZmDBUT169qnyHXerbdQ/zh-cn_image_0000002820404417.png?HW-CC-KV=V1&HW-CC-Date=20261119T014635Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CE0465EDB20A749D0B51C37D74832FD4D72E6745646CC9FFDE48CA453089B4D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/cKbQYc4WTfmT_dvQ2Q918Q/zh-cn_image_0000002792876118.png?HW-CC-KV=V1&HW-CC-Date=20261121T010929Z&HW-CC-Expire=31536000000&HW-CC-Sign=30A053B261BB8EBC9E8617AB69A56768659C2D936D35898757D00B60E2590333)
 
 例如，应用首页需要通过网络请求获取Feed流数据，且希望该任务能在异步线程中与AbilityStage模块加载并发执行。假设网络请求任务为[定义启动任务配置](app-startup.md#定义启动任务配置)步骤中的StartupTask\_004，开发步骤如下：
 

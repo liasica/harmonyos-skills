@@ -3,10 +3,52 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-stud
 title: 新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 6.1.1(24) > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-11-01T07:09:58+08:00
-doc_updated_at: 2026-10-31
-content_hash: sha256:521a045add7b539c17d55aad48ab48f915f2ad0a86d98dbb188402cce5e12f82
+scraped_at: 2026-11-21T09:10:07+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:8aa6d5fe8fbf292dca6e0b87b282f05b87a7bca6b22d5f78ca3e73621e53d6fc
 ---
+
+## DevEco Studio 6.1.1 Release（6.1.1.460）
+
+### 兼容性配套关系
+
+DevEco Studio 6.1.1.460携带的工具列表、支持的API范围及开发态版本号信息如下：
+
+**表1** DevEco Studio
+
+| 组件 | 版本 | 说明 |
+| --- | --- | --- |
+| HarmonyOS SDK | HarmonyOS 6.1.1 Release SDK | - |
+| HarmonyOS Emulator | 6.1.1.360 | 模拟器。 |
+| Hvigor | 6.24.7 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
+| ohpm | 6.1.2.285 | OpenHarmony三方库的包管理工具。 |
+| Node.js | 18.20.1 | Hvigor、ohpm等工具的运行时环境。 |
+| modelVersion | 6.1.1 | 开发态版本号。 |
+| [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
+| [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.1(24) | 标识编译应用/元服务所使用的SDK版本。 |
+| [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~6.1.1(24) | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
+
+DevEco Studio 6.1.1.460配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
+
+**表2** 命令行工具
+
+| 组件 | 版本 | 说明 |
+| --- | --- | --- |
+| Command Line | 6.1.1.460 | 命令行工具集版本。 |
+| codelinter | 6.0.240 | 执行代码检查与修复的工具。 |
+| hstack | 5.1.0 | 将release应用混淆后的crash堆栈还原为源码对应堆栈的工具。 |
+| hvigorw | 6.24.7 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
+| ohpm | 6.1.2.285 | OpenHarmony三方库的包管理工具。 |
+| Node.js | 18.20.1 | codelinter、hvigorw、hstack、ohpm等工具的运行时环境。 |
+| sdk | HarmonyOS 6.1.1 Release SDK | - |
+| modelVersion | 6.1.1 | 开发态版本号。 |
+| [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
+| [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.1(24) | 标识编译应用/元服务所使用的SDK版本。 |
+| [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~6.1.1(24) | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
+
+### 新增和增强特性
+
+无新增和增强特性。
 
 ## DevEco Studio 6.1.1 Release（6.1.1.440）
 
@@ -14,7 +56,7 @@ content_hash: sha256:521a045add7b539c17d55aad48ab48f915f2ad0a86d98dbb188402cce5e
 
 DevEco Studio 6.1.1.440携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表1** DevEco Studio
+**表3** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -30,7 +72,7 @@ DevEco Studio 6.1.1.440携带的工具列表、支持的API范围及开发态版
 
 DevEco Studio 6.1.1.440配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表2** 命令行工具
+**表4** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -56,7 +98,7 @@ DevEco Studio 6.1.1.440配套使用的命令行工具列表、支持的API范围
 
 DevEco Studio 6.1.1.418携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表3** DevEco Studio
+**表5** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -72,7 +114,7 @@ DevEco Studio 6.1.1.418携带的工具列表、支持的API范围及开发态版
 
 DevEco Studio 6.1.1.418配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表4** 命令行工具
+**表6** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -98,7 +140,7 @@ DevEco Studio 6.1.1.418配套使用的命令行工具列表、支持的API范围
 
 DevEco Studio 6.1.1.300携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表5** DevEco Studio
+**表7** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -114,7 +156,7 @@ DevEco Studio 6.1.1.300携带的工具列表、支持的API范围及开发态版
 
 DevEco Studio 6.1.1.300配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表6** 命令行工具
+**表8** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -140,7 +182,7 @@ DevEco Studio 6.1.1.300配套使用的命令行工具列表、支持的API范围
 
 DevEco Studio 6.1.1.290携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表7** DevEco Studio
+**表9** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -156,7 +198,7 @@ DevEco Studio 6.1.1.290携带的工具列表、支持的API范围及开发态版
 
 DevEco Studio 6.1.1.290配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表8** 命令行工具
+**表10** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -182,7 +224,7 @@ DevEco Studio 6.1.1.290配套使用的命令行工具列表、支持的API范围
 
 DevEco Studio 6.1.1.280携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表9** DevEco Studio
+**表11** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -198,7 +240,7 @@ DevEco Studio 6.1.1.280携带的工具列表、支持的API范围及开发态版
 
 DevEco Studio 6.1.1.280配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表10** 命令行工具
+**表12** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -230,7 +272,7 @@ DevEco Studio 6.1.1.280配套使用的命令行工具列表、支持的API范围
 
 DevEco Studio 6.1.1.268携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表11** DevEco Studio
+**表13** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -246,7 +288,7 @@ DevEco Studio 6.1.1.268携带的工具列表、支持的API范围及开发态版
 
 DevEco Studio 6.1.1.268配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表12** 命令行工具
+**表14** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |

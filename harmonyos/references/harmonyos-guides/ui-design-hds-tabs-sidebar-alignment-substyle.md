@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds
 title: 设置侧边栏半屏居中对齐样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部页签 > 设置侧边栏半屏居中对齐样式
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:59+08:00
+scraped_at: 2026-11-21T09:11:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:32d5bd4048beaa73c924191eccf255281719cb7e5dd88e2d29c4cb59abf533e6
+content_hash: sha256:88225c4dca1a3a260b442de70b2092db05726631099e087df67224b132543e51
 ---
 
 ## 场景介绍
@@ -16,12 +16,12 @@ content_hash: sha256:32d5bd4048beaa73c924191eccf255281719cb7e5dd88e2d29c4cb59abf
 
 * 半屏居中对齐布局
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/dH5GAeopRbG3xKljj5IiFg/zh-cn_image_0000002820405627.png?HW-CC-KV=V1&HW-CC-Date=20261119T014708Z&HW-CC-Expire=31536000000&HW-CC-Sign=909A75DE02B8E866C50BB41109BFF3A9606B66C58FC94A57F9C9460604DDF545)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/gf71nJ9vQbGY4CVT6Wy1iw/zh-cn_image_0000002792877328.png?HW-CC-KV=V1&HW-CC-Date=20261121T011000Z&HW-CC-Expire=31536000000&HW-CC-Sign=60D7CBF37BCF01FA05DA5F8075CEE19B0194ED3FE59B661D406D2AC94BF1B181)
 * 默认横向和纵向布局
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/s1zoqpN8T3KOhvLXA28rxQ/zh-cn_image_0000002791725648.png?HW-CC-KV=V1&HW-CC-Date=20261119T014708Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD2B0382F45E7526CFFDD73220C98AC1FCB22FB36C2D041EFDF76DF3C1F77669)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/az1S-1KnQouTh37ShdtT0w/zh-cn_image_0000002821837235.png?HW-CC-KV=V1&HW-CC-Date=20261121T011000Z&HW-CC-Expire=31536000000&HW-CC-Sign=362238B4BC4868F6767B61F6A66314B1E45390CD129009775E75384B1036C3B1)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/05XNpvSbR_OOcbpn-EUoTg/zh-cn_image_0000002791565676.png?HW-CC-KV=V1&HW-CC-Date=20261119T014708Z&HW-CC-Expire=31536000000&HW-CC-Sign=061F8C914E88027CB7A72BC38B78F40FA290BDE10B7933766AB21FA0D3D2641F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/z0GMD1LATtKjrE8mry6gTQ/zh-cn_image_0000002821757237.png?HW-CC-KV=V1&HW-CC-Date=20261121T011000Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB02CA0A54BE84ABEC0E2583D325E2A2330511C0F013AE55ED6932C49439420A)
 
 ## 约束条件
 

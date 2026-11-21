@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-status-i
 title: Node-API接口返回状态码介绍
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API接口返回状态码介绍
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:47+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:955a9c0a2f5759452290da6043da270d5997e8d899e7b6a9dd4bc5414a14c8d3
+scraped_at: 2026-11-21T09:12:51+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:928c70ed2947174b8f8825df80dab9145a22ef435d21c490afb3d19345aa7623
 ---
 
 ## 概述
@@ -299,11 +299,11 @@ content_hash: sha256:955a9c0a2f5759452290da6043da270d5997e8d899e7b6a9dd4bc5414a1
 | napi\_get\_element | 获取给定Object指定索引处的元素。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
 | napi\_get\_element | 获取给定Object指定索引处的元素。 | napi\_object\_expected | 入参object不为ArkTS Object类型 | 确保入参正确 |
 | napi\_get\_element | 获取给定Object指定索引处的元素。 | napi\_pending\_exception | 调用该接口前或调用过程中出现未捕获的ArkTS异常 | 根据异常信息（hilog/crash栈）处理异常 |
-| napi\_has\_element | 若给定Object的指定索引处拥有属性，获取该元素。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_has\_element | 若给定Object的指定索引处拥有属性，获取该元素。 | napi\_invalid\_arg | 入参object为nullptr | 确保入参正确 |
-| napi\_has\_element | 若给定Object的指定索引处拥有属性，获取该元素。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
-| napi\_has\_element | 若给定Object的指定索引处拥有属性，获取该元素。 | napi\_object\_expected | 入参object不为ArkTS Object类型 | 确保入参正确 |
-| napi\_has\_element | 若给定Object的指定索引处拥有属性，获取该元素。 | napi\_pending\_exception | 调用该接口前或调用过程中出现未捕获的ArkTS异常 | 根据异常信息（hilog/crash栈）处理异常 |
+| napi\_has\_element | 判断给定Object在指定索引处是否存在元素。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
+| napi\_has\_element | 判断给定Object在指定索引处是否存在元素。 | napi\_invalid\_arg | 入参object为nullptr | 确保入参正确 |
+| napi\_has\_element | 判断给定Object在指定索引处是否存在元素。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
+| napi\_has\_element | 判断给定Object在指定索引处是否存在元素。 | napi\_object\_expected | 入参object不为ArkTS Object类型 | 确保入参正确 |
+| napi\_has\_element | 判断给定Object在指定索引处是否存在元素。 | napi\_pending\_exception | 调用该接口前或调用过程中出现未捕获的ArkTS异常 | 根据异常信息（hilog/crash栈）处理异常 |
 | napi\_delete\_element | 尝试删除给定Object的指定索引处的元素。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_delete\_element | 尝试删除给定Object的指定索引处的元素。 | napi\_invalid\_arg | 入参object为nullptr | 确保入参正确 |
 | napi\_delete\_element | 尝试删除给定Object的指定索引处的元素。 | napi\_object\_expected | 入参object不为ArkTS Object类型 | 确保入参正确 |

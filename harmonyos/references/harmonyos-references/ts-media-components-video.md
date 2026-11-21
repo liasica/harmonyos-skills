@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-
 title: Video
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > Video
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:05+08:00
+scraped_at: 2026-11-21T09:14:11+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:caa0af82dacf272919dca10528a51d4db70f7cf59bc1a22eec97875f2f98671a
+content_hash: sha256:45311adb1be2cbf6f66d5024b8966d10c6919229fc4d64abcc1e6498f12a2080
 ---
 
 Video组件用于播放视频文件并控制其播放状态，支持播放、暂停、进度控制、倍速播放、全屏切换等功能。
@@ -953,7 +953,7 @@ interface FullscreenObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/beee9rm7Q2aAEnOjW1WP-Q/zh-cn_image_0000002820527405.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015008Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3FF04E6EFE70C5FA1E79EABA9E39EB2C3B4B26A6D009DD72E039D2E07CB1243)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/ipH6w5P6RoqDAW8U8lTIaQ/zh-cn_image_0000002821839027.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011304Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9CDF6DE0B65EA4AF4E5728F3CF7F6E8D8001CF43D22B04B7B8676DA58358D7E)
 
 ### 示例2（图像分析功能）
 
@@ -1111,7 +1111,7 @@ struct VideoObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/u1Sqyx2nStKRmwJ6PoTghA/zh-cn_image_0000002820407407.png?HW-CC-KV=V1&HW-CC-Date=20261119T015008Z&HW-CC-Expire=31536000000&HW-CC-Sign=87378DB6016B45B9F8D93905577E1F2EE8BD5D1DD6A9C0A2713FD8D1A44E2BD2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/FP_Jl85ySYe_v04_mgCBJQ/zh-cn_image_0000002821759023.png?HW-CC-KV=V1&HW-CC-Date=20261121T011304Z&HW-CC-Expire=31536000000&HW-CC-Sign=189EB498B7C0D3510A6A2D68B62BBEDA98E8C33D41F7839B6369E15740EDF092)
 
 ### 示例5（onError事件上报错误码）
 
@@ -1154,7 +1154,7 @@ struct VideoErrorComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/aUtODmb6TCasFRgMhVcKhg/zh-cn_image_0000002791727426.png?HW-CC-KV=V1&HW-CC-Date=20261119T015008Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA1FB15467F201D636768F0FAD67C43374D425D529007404B7360923CFEC0A13)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/0Ss242qySemgVvtCyiTToA/zh-cn_image_0000002793039096.png?HW-CC-KV=V1&HW-CC-Date=20261121T011304Z&HW-CC-Expire=31536000000&HW-CC-Sign=67CB99D848BBAF42BF54BFADC6E19CBB05753FA2B913B604B50BA4A9A1DB3333)
 
 ### 示例6（使用attributeModifier动态设置Video组件的属性及方法）
 
@@ -1276,7 +1276,7 @@ interface FullscreenObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/vaPbFilqQZCX0nZlIY-XVg/zh-cn_image_0000002791567454.png?HW-CC-KV=V1&HW-CC-Date=20261119T015008Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCFE3C6B122033E6C3EAF28CF04C9C5D30132F6C21727F7E5DD87350D9BCC539)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/nbcidBBpSFivIXOt_mIrGA/zh-cn_image_0000002792879122.png?HW-CC-KV=V1&HW-CC-Date=20261121T011304Z&HW-CC-Expire=31536000000&HW-CC-Sign=71F876D38F8072C0B99B618656F2C8FCAC2C68492E2AE4CC1C3F1FCC3432F220)
 
 ### 示例7（VideoControllerAsync用法）
 

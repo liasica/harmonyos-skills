@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-genera
 title: 查看通用凭证
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 通用凭证 > 开发场景 > 查看通用凭证
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:15+08:00
+scraped_at: 2026-11-21T09:12:42+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:da4e496ea008c337e729e6f5ba8189066b98358c537e0c1ad5b39b3bc3e85de4
+content_hash: sha256:d2046009bd2a062dc3f27f365c5e9131bcb8dadcb524a5e20906212797445285
 ---
 
 查询已开通通用凭证的状态并展示，用户可以点击跳转钱包通用凭证详情页，查看和使用更多功能。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/lmKOf7JlTumlBSgJn3L2gg/zh-cn_image_0000002820526653.png?HW-CC-KV=V1&HW-CC-Date=20261119T014915Z&HW-CC-Expire=31536000000&HW-CC-Sign=05F83591150112DB3EE3D7C8BA5FAB3F5294079B87BAB1CD0DF94E19CEAAA2A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/qRgTgroPTReChUc6_QXjYw/zh-cn_image_0000002821838261.png?HW-CC-KV=V1&HW-CC-Date=20261121T011241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A88A30DA8B1CBDFA124065F2B013628B567471049154509272628722A988F761)
 
 ## 客户端开发
 

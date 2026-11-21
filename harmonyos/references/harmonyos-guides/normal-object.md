@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/normal-object
 title: 普通对象
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > 普通对象
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:32+08:00
+scraped_at: 2026-11-21T09:10:57+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:fa022ea587ac08f54969657cc1ef5932a4a6e4a8b541eae0568a48fcdd553ee3
+content_hash: sha256:26d5e24237f09b948435b85d1ada9cf4c3785dc1e8983a503d61e4f02f1829e0
 ---
 
 普通对象跨线程时通过拷贝（序列化）形式传递，两个线程的对象内容一致，但指向各自线程的隔离内存区间，被分配在各自线程的虚拟机本地堆（LocalHeap）。序列化支持类型包括：除Symbol之外的基础类型、Date、String、RegExp、Array、Map、Set、Object（仅限简单对象，比如通过"{}"或者"new Object"创建，普通对象仅支持传递属性，不支持传递其原型及方法）、ArrayBuffer、TypedArray。通信过程如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/ahMI_n4ORJ24O-Q6zt6dsg/zh-cn_image_0000002820524467.png?HW-CC-KV=V1&HW-CC-Date=20261119T014641Z&HW-CC-Expire=31536000000&HW-CC-Sign=75697BEBE757D2EEFAA17251107C3338D82AD5BC562888C2654A1FBA0F445257)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Z5lKODP0SYuunvzz34vD2A/zh-cn_image_0000002793036136.png?HW-CC-KV=V1&HW-CC-Date=20261121T011057Z&HW-CC-Expire=31536000000&HW-CC-Sign=538C476435E2FB7448595E753F7572977178B8311F62C2B0C9B4855AF1AB7618)
 
 **说明** 
 

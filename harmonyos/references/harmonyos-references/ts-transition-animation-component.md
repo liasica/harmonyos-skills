@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transi
 title: 组件内转场 (transition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 组件内转场 (transition)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:10+08:00
+scraped_at: 2026-11-21T09:14:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e739b8685ea59d33550e7fad6573d7b2b093437a751595e2adb53fb386a831c9
+content_hash: sha256:a4908491f903d223aafaabe179d898ec919a10ce210aaa354774dc1eab9b5602
 ---
 
 组件内转场主要通过transition属性配置转场参数，在容器组件的子组件插入和删除时显示过渡动效，以提升用户体验。组件内转场详细的使用方法请参考[转场动画开发指导](../harmonyos-guides/arkts-enter-exit-transition.md)。
@@ -445,7 +445,7 @@ struct TransitionEffectExample1 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/fSVCPk_oTgmZC68FCKaSow/zh-cn_image_0000002820527567.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015015Z&HW-CC-Expire=31536000000&HW-CC-Sign=015DE44BC43198B62CC2D9AFB334EFA29D71EDE13E1132371E8FC300B8282E00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/OcQaKGoQTYakIIPn2D0itQ/zh-cn_image_0000002821839193.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011309Z&HW-CC-Expire=31536000000&HW-CC-Sign=E00BFC1194BBD7069F918F09E594D97B108E072B35CF4A31AE05CDA9F81318AA)
 
 ### 示例2（使用不同接口实现图片出现消失）
 
@@ -508,7 +508,7 @@ struct TransitionEffectExample2 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/TP6bCSmGS5iKx9ykvdTfnQ/zh-cn_image_0000002820407569.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015015Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BADDB9BDB77202AD0535ECBE2CAE27AA51BE81BC23FD1637E084295E268E75D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/KZPlvzQeTeK3xTTNEjKt5w/zh-cn_image_0000002821759195.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011309Z&HW-CC-Expire=31536000000&HW-CC-Sign=C11D8F738C6491E47C4F127B4AAC655259E23E5F451206FF71038840C645CFC2)
 
 ### 示例3（设置父子组件为transition）
 
@@ -569,7 +569,7 @@ struct TransitionEffectExample3 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/md-cy0c8RASEo9NcPvo4Fw/zh-cn_image_0000002791727588.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015015Z&HW-CC-Expire=31536000000&HW-CC-Sign=9ADC9AC8AE7CE4DB93C1CE3F4A824938B2D0E92E066FC43D4B2749CEB5B30DBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/UW0o-cRHREKcE9tkVX_hBA/zh-cn_image_0000002793039260.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011309Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FF2DF5213D0A3526255E1E9C25076EDA4975CCBA0A7F3E31C480C8CBCE79A0F)
 
 ### 示例4（visibility切换时的双动画复合效果）
 
@@ -608,4 +608,4 @@ struct TransitionVisibilityExample {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/351O40Z1QrCAP-jGCCPHCA/zh-cn_image_0000002791567616.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015015Z&HW-CC-Expire=31536000000&HW-CC-Sign=36D61963B66A79F697CA3A614A32896D600AAFC80DE432067CD8FC9F2889BB55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/LtmZeKdERn6gaQ6FAzPYWg/zh-cn_image_0000002792879290.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011309Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B5120B88885A90B6F927A640DBC94E759B84919D0B017A3383C6038E21E89CA)

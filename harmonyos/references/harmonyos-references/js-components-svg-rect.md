@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: rect
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > rect
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:22+08:00
+scraped_at: 2026-11-21T09:14:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:554c301216ebe0d3ca5379f167e85e833ab7355cfa7a03475a48891f59645714
+content_hash: sha256:fe077005f5e77518b94eda450900fd83b93867bb8089dfc5b05c513f237dc780
 ---
 
 **说明** 
@@ -51,4 +51,4 @@ content_hash: sha256:554c301216ebe0d3ca5379f167e85e833ab7355cfa7a03475a48891f596
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/u3Z_9EWPRfWIvO223y_SOA/zh-cn_image_0000002791727836.png?HW-CC-KV=V1&HW-CC-Date=20261119T015122Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAF9B2ED8A48B41882E54BA503E0A805D4CE6116AFCD84F59E4271CE6D1B2793)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/OusbCaQVSwKhtkc3QFX9-w/zh-cn_image_0000002793039520.png?HW-CC-KV=V1&HW-CC-Date=20261121T011423Z&HW-CC-Expire=31536000000&HW-CC-Sign=753FB2CF40E2B1AEF1E3D73A25925B9B73E8DECA9ECFD68F5B6890E0E9EFA921)

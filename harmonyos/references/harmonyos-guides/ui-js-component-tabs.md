@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: tabs开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > tabs开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:48+08:00
+scraped_at: 2026-11-21T09:11:14+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:2dc8cdae0525b203da812e597b1ce8604ba7878bb3e52a9c4217c4dd18c84667
+content_hash: sha256:20f0cf857bf534c83d7d50183fd5115419c1b0bbf3caca04c0f387d2d3c5cd58
 ---
 
 tabs是一种常见的界面导航结构。通过页签容器，用户可以快捷地访问应用的不同模块。具体用法请参考[tabs API](../harmonyos-references/js-components-container-tabs.md)。
@@ -54,7 +54,7 @@ tabs是一种常见的界面导航结构。通过页签容器，用户可以快�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/dspzgXKzRKSWgeXtuK8Q1g/zh-cn_image_0000002791725332.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=77AB8ABEC6E473603ACB51C1F49485407D7FF34F41583D957C9D0D411CB8754D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/kqMynAM4Th-08DXbvsYNlA/zh-cn_image_0000002821836919.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=733D55FAEB96EA74B5EDA49623BF1789E6B8E9FEBE6F8C716B5F6BAAB676413E)
 
 ## 设置样式
 
@@ -108,7 +108,7 @@ tabs是一种常见的界面导航结构。通过页签容器，用户可以快�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/k9W_s4DeSlKaHNxHOacskQ/zh-cn_image_0000002791565360.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=07039108065BC5D0EACBA178837BF54436F39D19F50A4B89245C10C430051E2F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/s44LvRtrSDaJNVPqY7uCMw/zh-cn_image_0000002821756921.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=360648D9B0A8862D06FB6607DFBDBC2A9FBD8CB60FB721481855915B5F89DE5A)
 
 ## 显示页签索引
 
@@ -146,7 +146,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/R6D25y1qQRqHV1IQHB063A/zh-cn_image_0000002820525313.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE79221C5BB46D7FDED416E459592B448D5CFA8A5C4EA1433CD0198901DEF858)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/dYcDBKvuSjWd7ojcA6z6BA/zh-cn_image_0000002793036984.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=2537011788B88E8EAED3AC5184B10B5BA41E2F0C785C4B1108182E04E9235E62)
 
 **说明** 
 
@@ -264,4 +264,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/I_eIH2WSSNuDyf4PEV9fLA/zh-cn_image_0000002820405313.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DACC70666D61F6FF3F48A4B36CA312EFD2C56A43D0249114C9D8CEF908344C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/muuUnWoMSMmtNElnqC_wbQ/zh-cn_image_0000002792877014.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CD4D924FF97E6C0C54FFB940C728468F05DA62F1589693E263B6DAF8119F9A0)

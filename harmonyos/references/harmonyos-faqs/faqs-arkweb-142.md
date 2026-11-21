@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-142
 title: 如何实现长按识别H5页面的二维码图片
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何实现长按识别H5页面的二维码图片
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:06+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:918018a0fe4f8d545596c8e224cf946a252c9201f926010cfe6d9820ffa61326
+scraped_at: 2026-11-21T09:18:44+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:6f331b4c3d400455fe81c741c9c72f779f829fbf566950878afd8d393006d2e0
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:918018a0fe4f8d545596c8e224cf946a252c9201f926010cfe6d9820ffa
 
 * [应用侧调用前端页面函数](../harmonyos-guides/web-in-app-frontend-page-function-invoking.md)：应用侧可以通过runJavaScript()和runJavaScriptExt()方法调用前端页面的JavaScript相关函数。
 * [onContextMenuShow](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)：长按特定元素（例如图片，链接）或鼠标右键，弹出菜单。
-* [detectBarcode.decodeImage](../harmonyos-references/scan-imagedecode.md#decodeimage)：通过配置参数调用图像数据识码能力，使用Promise异步回调返回识码结果。
+* [detectBarcode.decodeImage](../doccenter-references/api/scan-imagedecode.md#detectbarcodedecodeimage)：通过配置参数调用图像数据识码能力，使用Promise异步回调返回识码结果。
 
 ## 解决方案
 

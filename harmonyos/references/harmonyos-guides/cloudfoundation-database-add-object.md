@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 新增对象类型
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云数据库 > 新增对象类型
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:55+08:00
+scraped_at: 2026-11-21T09:12:21+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b7323cf2275cfd07d1eba2ae9f3d15f17fbd22ed9ffa59408be9759f11d51b30
+content_hash: sha256:f4f08b1859d6862e9ce666e6fdc5ab20923bffb6ce378d64e93095c46b614f93
 ---
 
 开发者需要基于AGC控制台创建对象类型。
@@ -21,10 +21,10 @@ content_hash: sha256:b7323cf2275cfd07d1eba2ae9f3d15f17fbd22ed9ffa59408be9759f11d
 3. 在左侧导航栏选择“云开发（Serverless）> 云数据库”，进入云数据库页面。
 4. 点击“新增”，创建新的对象类型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/8eUmjvzYQvC0o4e8mukHcQ/zh-cn_image_0000002791726288.png?HW-CC-KV=V1&HW-CC-Date=20261119T014855Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA1B8229036AC63728C0A143A37F5D8ED9B02E9BA04DF051D3C53BDEDCF7A705)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/evBDAOOeS82Td4bDSZSe3g/zh-cn_image_0000002821837875.png?HW-CC-KV=V1&HW-CC-Date=20261121T011220Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA9A72892B7A886040AFDEBEE96555D2A7927F00B284D2CB495BAE43C64A3A12)
 5. 输入“对象类型名”为“BookInfo”后，点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/9VR5DYr1RUyMldiGb_R5Eg/zh-cn_image_0000002791566316.png?HW-CC-KV=V1&HW-CC-Date=20261119T014855Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD1BC664302A2FF17F4DC0A62BF065FD7B3BCFDE0BEC6A3F9767DE1842ACF454)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/0mbgMuNFROGZOth_GWTmYQ/zh-cn_image_0000002821757877.png?HW-CC-KV=V1&HW-CC-Date=20261121T011220Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BBB449A6C45AE32349E60E178065169C8A6ED26595F338A10571EA52ED2D414)
 6. 点击“+新增字段”，新增如下表字段后，点击“下一步”。
 
    | 字段名称 | 类型 | 主键 | 非空 | 加密 | 默认值 |
@@ -38,7 +38,7 @@ content_hash: sha256:b7323cf2275cfd07d1eba2ae9f3d15f17fbd22ed9ffa59408be9759f11d
    | borrowerTime | Date | – | – | – | – |
 7. 点击“+”新增索引，设置“索引名”为“bookName”，点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/reGqt7H5TQyYi7L-v5ovKg/zh-cn_image_0000002820526269.png?HW-CC-KV=V1&HW-CC-Date=20261119T014855Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E93C812107829023F25817148002F6B13535937E4681F9C1E601000445B52BC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/8_N35o_bT1We9HXQbtoWLQ/zh-cn_image_0000002793037940.png?HW-CC-KV=V1&HW-CC-Date=20261121T011220Z&HW-CC-Expire=31536000000&HW-CC-Sign=CABE36AC27F98777B1AC219A94A52447626744E6090D4459791381E10D8252EA)
 8. 按照如下要求设置各角色权限后，点击“确定”。
 
    | 角色 | query | upsert | delete | 说明 |
@@ -50,7 +50,7 @@ content_hash: sha256:b7323cf2275cfd07d1eba2ae9f3d15f17fbd22ed9ffa59408be9759f11d
 9. 创建完成后返回对象类型列表，可以查看已创建的对象类型。
 10. 勾选创建的BookInfo对象类型，点击“导出”。若不勾选对象类型，默认导出所有对象类型。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Y8nsXlxURNSpZb4wREdE9w/zh-cn_image_0000002820406269.png?HW-CC-KV=V1&HW-CC-Date=20261119T014855Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD449B25E00F6E26D9F8D20DA7EAA5F3EF19F0359E534F90A3F13CC451707BFE)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/7WoMTej3RkOj6NRqXEdTvA/zh-cn_image_0000002792877970.png?HW-CC-KV=V1&HW-CC-Date=20261121T011220Z&HW-CC-Expire=31536000000&HW-CC-Sign=C27019FCE6428B671914E1126F283BC056202E6EAF8826B53C4AA33A30D69C70)
 11. 导出“json格式”文件，点击“确定”。后续[引入对象类型文件](cloudfoundation-database-add-file.md)时，需要使用此文件。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/rh_dvQ8wTm-6G5df5iWIVg/zh-cn_image_0000002791726290.png?HW-CC-KV=V1&HW-CC-Date=20261119T014855Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD6C07FFE7927B60AD93510E922DF1C74FD89DF5AB2E4A0B77D378ADB2010351)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/0xFLaCi6RUSksCu8aAEouQ/zh-cn_image_0000002821837877.png?HW-CC-KV=V1&HW-CC-Date=20261121T011220Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD6D9520007EA8E5726DDE6E65F780A4C94F189FCB42A47C356FE5C46C26529D)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.theme(主题换肤)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.theme(主题换肤)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:39+08:00
+scraped_at: 2026-11-21T09:13:54+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:164586079c27584a1c32be2e858ee014eef28256ae3b797b67fd2508e0ae368c
+content_hash: sha256:9da2ed291251c6f034b91920ab7156c9348fbab0cc81a3a664b3224de376ca38
 ---
 
 支持自定义主题风格，实现App组件风格跟随Theme切换。
@@ -219,9 +219,9 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Lm3NaQfFTDm8JbgG0Wgomg/zh-cn_image_0000002820526883.png?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF0939577415C7EB2CA82822BE2B50E1BB7AD827F7E4EAE6BDB1747E34BF7BB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/C4IcYY2KTbGbeJR13owivQ/zh-cn_image_0000002821838491.png?HW-CC-KV=V1&HW-CC-Date=20261121T011354Z&HW-CC-Expire=31536000000&HW-CC-Sign=90B69747424553636F31539A360E2EAB556E3113E678459C612417B9B92847E8)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/0Dku_i3fQBeyNSbEpcAFsw/zh-cn_image_0000002820406883.png?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=7ADA2EF3C82B932C7190B4B69C36CD13F92B5268AA9B418236F385ECA6B73CD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/F52EqGwpSJSWpAgS-NHkkQ/zh-cn_image_0000002821758493.png?HW-CC-KV=V1&HW-CC-Date=20261121T011354Z&HW-CC-Expire=31536000000&HW-CC-Sign=46650F72878D150678105BC2C230A4D7977D4FCA5686F9163B570D6DB64F432A)
 
 ### 示例2（设置组件主题色）
 
@@ -283,4 +283,4 @@ struct TextPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/JGi_ZdmRRQyhwqAIZ9V3XA/zh-cn_image_0000002791726904.png?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8745CE700FF591A84B12ACD39C70593EABB4BB2F049C5520F71DB1C2FBE5A8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/wvJZr409QbubS1xm_JLs1A/zh-cn_image_0000002793038556.png?HW-CC-KV=V1&HW-CC-Date=20261121T011354Z&HW-CC-Expire=31536000000&HW-CC-Sign=A60CFCC2905C22F2E856A4852A7773CA8891B3534C383DAEAD4E22786A659368)

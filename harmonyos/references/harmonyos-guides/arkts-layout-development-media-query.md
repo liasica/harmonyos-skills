@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 媒体查询 (@ohos.mediaquery)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 媒体查询 (@ohos.mediaquery)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:46+08:00
+scraped_at: 2026-11-21T09:11:11+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:421ce9f24d07eec6a8f511c258aa0340280f4e68a8c0019b7444e2bbe666a76e
+content_hash: sha256:e7d9a56fd76d659515bc8618fb1d324d7ce919950ca7058fc8e9552aee9c4657
 ---
 
 ## 概述
@@ -217,11 +217,11 @@ struct MediaQueryExample {
 
 **图1** 竖屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/JuOlBiERThCPWn-qFXPodw/zh-cn_image_0000002820525271.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014745Z&HW-CC-Expire=31536000000&HW-CC-Sign=917AA3C2DC146BD1929CF0F211EA26E1BC6D476D44905260E42AC590F9712495)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/BluueT5zRfaToWlPprC4QQ/zh-cn_image_0000002793036942.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011111Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5D10AF0A495B7B5268D82A23323E2759AA4DE19EA74AE26475D3E8EB26A5E78)
 
 **图2** 横屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/upJ8814yRJSre1vT8WHwMg/zh-cn_image_0000002820405271.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014745Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4E64FD58E56167AB600AF677EF0A07B5D83190505B5C24ABA2AF4463CB7626E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/hqfMyFRERCCrGcd6fihFjg/zh-cn_image_0000002792876972.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011111Z&HW-CC-Expire=31536000000&HW-CC-Sign=88845A3B4417CDB69EFC39DCB6B6CC8E15DA7D8409E7D9E59F82BABE5E0EB94B)
 
 示例二使用媒体查询实现屏幕横竖屏切换时Flex组件的不同布局，竖屏时Flex采用垂直方向布局，横屏时采用水平方向布局。
 
@@ -324,8 +324,8 @@ struct ObtainMediaQueryFlex {
 
 **图3** 竖屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/3XTBcRm7QIm2-Ym-W7nK2A/zh-cn_image_0000002791725292.png?HW-CC-KV=V1&HW-CC-Date=20261119T014745Z&HW-CC-Expire=31536000000&HW-CC-Sign=7783A9C615D871162A16B70F92FA8383579BEF658AD1E054F5ACC4BFF2327BD3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/UHisHGRtRXmPl48RcSRjIA/zh-cn_image_0000002821836877.png?HW-CC-KV=V1&HW-CC-Date=20261121T011111Z&HW-CC-Expire=31536000000&HW-CC-Sign=85F499DFC4E96913525E3D3CBD5491C6FBEA7746E5246DC44F9047AA2473B66C)
 
 **图4** 横屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/EhfDjDg6TIOjkQ27R5awOw/zh-cn_image_0000002791565320.png?HW-CC-KV=V1&HW-CC-Date=20261119T014745Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4B7FD19B52FC77357B2D22CE28255A00849996B7C3A1782F0C7E14DDFC0FEB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/iAfW6YIJQHaZNBVhC2uc7g/zh-cn_image_0000002821756881.png?HW-CC-KV=V1&HW-CC-Date=20261121T011111Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B5104448855402A8647C986CE230CC782B1D90067083C1A4053AFE33D5BBA1F)

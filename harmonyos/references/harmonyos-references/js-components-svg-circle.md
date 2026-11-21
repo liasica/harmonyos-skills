@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: circle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > circle
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:22+08:00
+scraped_at: 2026-11-21T09:14:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:46836bf5179a7042c7350d10c7e9d13ba965b9e084b186f25ac2d17ae538145a
+content_hash: sha256:faba77bf66e1e3340bb9df3d25b6616aaacaa49c5903dc88b1a73772560ff7c2
 ---
 
 **说明** 
@@ -45,4 +45,4 @@ content_hash: sha256:46836bf5179a7042c7350d10c7e9d13ba965b9e084b186f25ac2d17ae53
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/elqKvthFRcuqoaXb9sYzDQ/zh-cn_image_0000002791567864.png?HW-CC-KV=V1&HW-CC-Date=20261119T015122Z&HW-CC-Expire=31536000000&HW-CC-Sign=14C8888B0E607E12F81F8D54037E626169A6E75BE5DF4DBD864663823C38DD90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/mLJJlzy7Sxaswtckowdj5A/zh-cn_image_0000002792879546.png?HW-CC-KV=V1&HW-CC-Date=20261121T011423Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9BCD182D679A6E12ACE02082E6347B4A4C31778F8F4D8E7FA318A4D3E6DC1DC)

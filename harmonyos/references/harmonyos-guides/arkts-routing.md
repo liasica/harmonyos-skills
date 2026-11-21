@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-routing
 title: 页面路由 (@ohos.router)(不推荐)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 页面路由 (@ohos.router)(不推荐)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:40+08:00
+scraped_at: 2026-11-21T09:11:05+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:abf8effb2d64acb10d9b2ea11394eef2e9f15364be501ec1afd5de08b7c1531d
+content_hash: sha256:11f05ee257509d43bd4d4c21619ca72865e8e684b7e8231a3c30ef9e26b5e3ed
 ---
 
 页面路由指在应用程序中实现不同页面之间的跳转和数据传递。Router模块通过不同的url地址，可以方便地进行页面路由，轻松地访问不同的页面。本文将从[页面跳转](arkts-routing.md#页面跳转)、[页面返回](arkts-routing.md#页面返回)、[页面返回前增加一个询问框](arkts-routing.md#页面返回前增加一个询问框)和[命名路由](arkts-routing.md#命名路由)这几个方面，介绍如何通过Router模块实现页面路由。
@@ -20,7 +20,7 @@ content_hash: sha256:abf8effb2d64acb10d9b2ea11394eef2e9f15364be501ec1afd5de08b7c
 
 **图1** 页面跳转
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/YoFx5Iw4TUOlBFsmsnEGwQ/zh-cn_image_0000002820524779.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=B518B930571726798D9A90B37D2DAE4A5B6D4A06BF4D861C6003E1909974A677)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/WxcnAtq0SGOKEqtWiusa5g/zh-cn_image_0000002793036446.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=22DBC77ED36703D0551B0B84540F6B24A0E06A613AFE454C80CC8FE3A187DF98)
 
 Router模块提供了两种跳转模式，分别是[pushUrl](../harmonyos-references/arkts-apis-uicontext-router.md#pushurl)和[replaceUrl](../harmonyos-references/arkts-apis-uicontext-router.md#replaceurl)。这两种模式决定了目标页面是否会替换当前页。
 
@@ -227,7 +227,7 @@ private age: number = this.params.info.age; // 获取age属性的值
 
 **图2** 页面返回
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/sJ0IBeUvQOGkop0vN1u3Uw/zh-cn_image_0000002820404777.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BBA932785818D4EAFDC88A9AE26069E84B4C43171B95A1195C73DD99EBB7C21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/KjoxqBOhSvesgsBwv7xkbw/zh-cn_image_0000002792876478.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=193166C50715E9D93A8CE63FDB7C4677AC309412FC1AD5FB8498D999B72C4738)
 
 直接使用router可能导致[UI上下文不明确](arkts-global-interface.md#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)实例，并使用[getRouter](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getrouter)获取绑定实例的router。
 
@@ -411,7 +411,7 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/GGq1n_vGT2uWoPXe7o7xiQ/zh-cn_image_0000002791724800.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0F1F29ADC6A716CD9E65A7178F4BB2807A592D9D68D3CAA0820D7D00382A7E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/zLFlIT3GRiedB2YNBWqzMw/zh-cn_image_0000002821836383.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=82F8121DB8A941985969A7F4B3B4F9FFF62F9CD4A9D54001B4FD6481A36C763F)
 
 ## 自定义转场
 
@@ -425,7 +425,7 @@ router自定义转场可以通过[pageTransition](../harmonyos-references/ts-cus
 
 **图3** 页面返回前增加一个询问框
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/8n1ZuD-7RHu9WUcwJHDHvQ/zh-cn_image_0000002791564828.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=2206A1E7D2007FEE860535D09B673800FB2E3DAC4DD3748924856084ED37F905)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/BDEPfegESXSi2StDAfLZ6Q/zh-cn_image_0000002821756385.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC1C4A0FC7BF33F9AD2B42B70984B5A468F9F4A564BD52FFBD53E875599D6CEE)
 
 ### 系统默认询问框
 
@@ -531,7 +531,7 @@ onBackClick() {
 
 **图4** 命名路由跳转
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/hybaJbrrTEGBruMelIGwCw/zh-cn_image_0000002820524781.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A3B8012D4BB5F543723BA082ED41A7B2466783785ED54EF43D1338A4AD94057)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/ko0C0vOtT72LYXoFihu7qQ/zh-cn_image_0000002793036448.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011105Z&HW-CC-Expire=31536000000&HW-CC-Sign=C172FD92BB2D4D774E96376E6A49B58F02410B571CF827610F4A1D64A0D91192)
 
 在想要跳转到的共享包[HAR](har-package.md)或者[HSP](in-app-hsp.md)页面里，给[@Entry](arkts-create-custom-components.md#entry)装饰的自定义组件EntryOptions命名：
 

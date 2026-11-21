@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ProxyController)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (ProxyController)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:18+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-21T09:14:43+08:00
+doc_updated_at: 2026-11-20
 content_hash: sha256:f2316e267884881e916c53a6554567fabef276553eaefa5b454b1bb3db4d54cd
 ---
 
@@ -96,24 +96,24 @@ struct WebComponent {
           try {
             proxyConfig.insertProxyRule("https://proxy.XXX.com", webview.ProxySchemeFilter.MATCH_ALL_SCHEMES);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
           try {
             proxyConfig.insertDirectRule(webview.ProxySchemeFilter.MATCH_HTTP);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
           try {
             proxyConfig.insertBypassRule("*.example.com");
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
           proxyConfig.clearImplicitRules();
           proxyConfig.bypassHostnamesWithoutPeriod();
           try {
             proxyConfig.enableReverseBypass(true);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
           let bypassRules = proxyConfig.getBypassRules();
           for (let i = 0; i < bypassRules.length; i++) {
@@ -131,7 +131,7 @@ struct WebComponent {
               console.info("PROXYCONTROLLER proxy changed");
             });
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
         })
         Button("loadUrl-https").onClick(()=>{
@@ -146,7 +146,7 @@ struct WebComponent {
             console.info("PROXYCONTROLLER proxy changed");
           });
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
         })
         Web({ src: 'www.example.com', controller: this.controller})

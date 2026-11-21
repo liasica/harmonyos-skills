@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/makeobserved-
 title: ArkUI数据更新场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > ArkUI数据更新场景
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:04+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:aa25a3725cd9e2f9fa1fb5e932a96fe9a71a5b8150ed7282ac6b3383c43234ca
+scraped_at: 2026-11-21T09:10:59+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:a6fadaec75ce474ce30a55a065b6df47bf2def110d337f815f49399ccc464ac5
 ---
 
 当需要网络下载或者本地生成的数据需要发送到UI线程进行展示时，由于ArkUI的标注和[@Sendable装饰器](arkts-sendable.md#sendable装饰器)不能同时修饰变量和对象，因此需要使用[makeObserved](arkts-new-makeobserved.md)在ArkUI中导入可观测的Sendable共享数据。
@@ -64,7 +64,9 @@ struct Index {
         taskpool.execute(threadGetData, this.send.name).then(val => {
           // 和@Local一起使用，可以观察this.send的变化
           this.send = UIUtils.makeObserved(val as SendableData);
-        })
+        }).catch((e: BusinessError) => {
+          console.error(`taskpool execute error, code: ${e.code}, message is: ${e.message}`);
+        });
       })
         .id('task')
     }

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder
 title: "@BuilderParam装饰器：引用@Builder函数"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @BuilderParam装饰器：引用@Builder函数
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:36+08:00
+scraped_at: 2026-11-21T09:11:02+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:8385dafe38cae94e9374ac10393be7867fe430e7054527660ef34cf181a5ba64
+content_hash: sha256:6826bb46de2bbab4c7e8f87dd192062fb49638ceb2ee878871f4b5586e43bbf8
 ---
 
 当开发者创建[自定义组件](arkts-create-custom-components.md)并需要为其添加特定功能（例如[Navigation](../harmonyos-references/ts-basic-components-navigation.md)功能）时，如果直接在组件内嵌入事件方法，会导致所有该自定义组件的实例都增加此功能。为了解决此问题，ArkUI引入了[@BuilderParam](../harmonyos-references/ts-universal-builderparam-dynamic.md#builderparam)装饰器。@BuilderParam用于装饰指向@Builder方法的变量，开发者可以在初始化自定义组件时，使用不同的方式（如参数修改、尾随闭包、借用箭头函数等）对@BuilderParam装饰的自定义构建函数进行传参赋值。在自定义组件内部，通过调用@BuilderParam为组件增加特定功能。
@@ -85,7 +85,7 @@ content_hash: sha256:8385dafe38cae94e9374ac10393be7867fe430e7054527660ef34cf181a
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Qn9hGhbsTiWW18R5T8aBQw/zh-cn_image_0000002791564602.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=870ADDB877056A5F792551530C06936104C7F950EE1D92D376836E675C5384DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/1Hza2o2mRGCY5OGtOE5KIw/zh-cn_image_0000002821756157.png?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6A4107482EF523AAD6701CAB6785D6CC6B94E1C6C67BCABCF18BC8CDA123100)
 
 * 需要注意this的指向。
 
@@ -145,7 +145,7 @@ content_hash: sha256:8385dafe38cae94e9374ac10393be7867fe430e7054527660ef34cf181a
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/I6oSh-TZR72bl6gjcD4HDA/zh-cn_image_0000002820524553.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=503F4204EA6FA5EF0EBFB0F6492C060C3B9F75E35EB0503392182EA546FB3BC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/XJqIHGQbRe6zdaCBAQUBzg/zh-cn_image_0000002793036222.png?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=384E89BE4227AFD42CB855072241C668E137B77FA93BE67B46B8AEB9214B1801)
 
 ## 限制条件
 
@@ -214,7 +214,7 @@ struct Parent {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/dmg8qb9kRwymorKmDEGWHA/zh-cn_image_0000002820404553.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=F064BA89C7317032AA0A2FFB640ADCAA73670E1098AF0436A6D821D96918579F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/QZoA2DL3Sc2wEdFCqPyBtw/zh-cn_image_0000002792876254.png?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=32F107AF738C047DCCD1FBC2BE21ED6ED4FD98D734BB8F7E684C901EEA65E2A8)
 
 ### 尾随闭包初始化组件
 
@@ -284,7 +284,7 @@ struct CustomContainerUser {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/tR8FrMnYQh-QhfauO-jUDg/zh-cn_image_0000002791724576.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BD8238A140997B4A43AD8DD4FABBD42FECFBFDC1A920226078D38EAA0D93C9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/fvx72pcNRKKk8SXHzlwfeA/zh-cn_image_0000002821836159.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1903549DFB657947433B7EA031AA4B3CE29EE9E8703263018C2F692C9750ACE)
 
 可以使用全局或局部@Builder通过尾随闭包的形式对[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件中的@BuilderParam装饰的方法进行初始化。
 
@@ -360,7 +360,7 @@ struct ParentPage {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Z3KKR0DhSNuVq1YsFsFoTg/zh-cn_image_0000002791564604.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BB2874F179B2EBA7636851A0EE1CB993A9EB82FFC54F84B230BAAA1FC6E6F2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/oFaJM1yuR4mLt3eKV9Fu4A/zh-cn_image_0000002821756159.png?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB616029E819FA45494F301AC5DCD7AEBA8F74855888E5E47AB6C17B6F70D21A)
 
 ### 使用@BuilderParam隔离多组件对@Builder跳转逻辑的调用
 
@@ -479,7 +479,7 @@ struct HelloWorldPage {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/5SSW5Xr8SVmu5v96SEhd5Q/zh-cn_image_0000002820524555.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E89E02D0DFB11938F69C63AD7A84F4F2C5CA7B504CF53F2476E4451662CCEBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/UoGVfC_qTDqyjM9QHtSo2g/zh-cn_image_0000002793036224.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDCD0D6581EF342A3C7162BF1BF580E23EE97CFA7710884B717D1CE01C1A0F79)
 
 ### 使用全局和局部@Builder初始化@BuilderParam
 
@@ -565,7 +565,7 @@ struct ParentPage {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/hiN0nWTWR4GOQKUC8xqOrg/zh-cn_image_0000002820404555.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AAFFAFD8E844952F05719472944F373ABD96E3894505A6BEFE6F5487BF83AA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/33PsKSygSbmgsi3XeYI_aA/zh-cn_image_0000002792876256.png?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=E688540515EB6643ACAEBDAAC048CA33931593677D0878AD3C14D07B499BD3D2)
 
 ### 在@ComponentV2装饰的自定义组件中使用@BuilderParam
 
@@ -651,7 +651,7 @@ struct ParentPage {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/t7zOuH7SQf2UxlkR4eNMeQ/zh-cn_image_0000002791724578.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=4744FD2F636AB4C51474B2E033CE8665708AA8BF9A2C14D0261F49424321E5A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Lz7GSdcdSmy6_2nCiRUbVQ/zh-cn_image_0000002821836161.png?HW-CC-KV=V1&HW-CC-Date=20261121T010938Z&HW-CC-Expire=31536000000&HW-CC-Sign=9059884A882725113B564E25AB6C486B67CA9B790359EAE4BB63D8EA6A7DBA71)
 
 ## 常见问题
 

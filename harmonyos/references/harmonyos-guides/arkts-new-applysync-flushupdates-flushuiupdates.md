@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-app
 title: applySync/flushUpdates/flushUIUpdates接口：同步刷新
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口 > applySync/flushUpdates/flushUIUpdates接口：同步刷新
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:38+08:00
+scraped_at: 2026-11-21T09:11:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:09820aa288972a3fe23dc99ecad765d0562ad544d006e496496a13b3167793ec
+content_hash: sha256:798894920a9ca73ef52cf12764de7ef944b56cbb93c14f766b245a277a5bb8b4
 ---
 
 为了实现状态管理V2与[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)等动效的同步刷新，开发者可以使用[applySync](../harmonyos-references/js-apis-statemanagement.md#applysync22)、[flushUpdates](../harmonyos-references/js-apis-statemanagement.md#flushupdates22)或[flushUIUpdates](../harmonyos-references/js-apis-statemanagement.md#flushuiupdates22)接口。
@@ -77,7 +77,7 @@ import { UIUtils } from '@kit.ArkUI';
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/qXgXZkz3Rnuv2mlE0jbOXw/zh-cn_image_0000002820524685.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=61D7C89EAD058F12EEA4BAF6C4C3FC772056DC67504516EFBB703DC9C8A38DE9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/1EZ9T3pkQM2ejWWhDYtJCA/zh-cn_image_0000002793036352.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=43F426B57512E1067466EAE80163CDB921450349D9ADC0CE0E16206FDC011933)
 * flushUpdates接口用于同步刷新在调用该函数之前所有的状态变量修改，包括更新@Computed计算、@Monitor回调以及重新渲染UI节点。
 
   ```typescript
@@ -128,7 +128,7 @@ import { UIUtils } from '@kit.ArkUI';
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/u54yXJvjSCaeypVhmSYviw/zh-cn_image_0000002820524685.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2D130D5A5A7671F9E111C8A1EC9F4828F1D91807ADDB91B593695F2FFE42F48)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Wj-8W06qTfeVO5o6aA87nQ/zh-cn_image_0000002793036352.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=A61C2F00EF29E4B9005E1FB751F40C3E06791F1F84FCB0583A410F7421F66737)
 * 上述的applySync、flushUpdates接口都会同步执行@Computed计算和@Monitor回调，这会使得在上述示例代码中，一次点击事件里触发了两次@Monitor回调，这可能会与开发者的预期不符，因此引入了flushUIUpdates接口，该接口仅用于同步刷新在调用该函数之前所有的UI节点，不会执行@Computed计算和@Monitor回调。
 
   ```typescript
@@ -390,7 +390,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Pps0a5mtSfi9PXvKgwomVg/zh-cn_image_0000002820404683.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=B61D54873E86FD7F8FA8DE7BAE99F7120B4C4C5A7ABE10B2670422CFDCD0C73F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/YLqNEZJ6SY-1-1Q2mEf6DA/zh-cn_image_0000002792876384.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=2346959268796EF6D834FCC61088DF716FEBD0B8ACF65F07E329CAB842F8C24A)
 
 ### 路由场景
 
@@ -464,4 +464,4 @@ struct PageBExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/YZH34R4XQUSCSl_cjIpc3A/zh-cn_image_0000002791724706.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BF6138F16D3042A692BB0F8554A042B16DFA5C6ADE6EBF921DE994F29B68222)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/0qpRilxIS62I3oZ32Zq-2w/zh-cn_image_0000002821836289.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=95216E7E35C6111A7B62F4625504E9CEBA4FA4BDD6E15FDE69B6284C6F5BAA0E)

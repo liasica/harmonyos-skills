@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/special-text-
 title: 特殊文本识别跳转
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 应用间跳转典型场景 > 特殊文本识别跳转
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:27+08:00
+scraped_at: 2026-11-21T09:10:53+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:e9599ccf1fab6a38d0d8226cfa79593517eb746355f692733534c28091ffcf9e
+content_hash: sha256:c9a27f0f6937868c502f38b375ea10db302eb74b42ecd9dfe18967a77fc07712
 ---
 
 ## 概述
@@ -114,7 +114,7 @@ Text组件提供了[enableDataDetector](../harmonyos-references/ts-basic-compone
 
    实现效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/hGGJ6sXTRHiBfPHwBoH4ZQ/zh-cn_image_0000002820524441.png?HW-CC-KV=V1&HW-CC-Date=20261119T014727Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BF64000AED07E57A4ADB3F7217FE6AA73F88BA51C141C188B446A8A453CBB0E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/AJ2ZujJeReiG0Te78JkHvQ/zh-cn_image_0000002793036110.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E3800F2F9B6BFB802D7F68F20A99A08E8C28F576CEBB7CB3B13E74FEE5DEFD3)
 3. 启用特殊文本识别。
 
    在Text组件上启用[enableDataDetector](../harmonyos-references/ts-basic-components-text.md#enabledatadetector11)属性，即可实现对一段文字中的链接、日期、电话号码、地址、邮箱等特殊文本进行自动识别并标记。
@@ -127,7 +127,7 @@ Text组件提供了[enableDataDetector](../harmonyos-references/ts-basic-compone
 
    分别传入包含标准HTTP/HTTPS链接、App Linking链接、日期、电话号码、地址、邮箱等文字内容到TextLink组件中，均以可交互形式显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/VmoOZyRmSJqflixhE4-GHA/zh-cn_image_0000002820404441.png?HW-CC-KV=V1&HW-CC-Date=20261119T014727Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7C2312EA2DAC2C29FBBCC26AD1A1844E44D714060487050E15B4FA6F240F4E1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/sp_0rPwmTDiV4EOMtJoNHw/zh-cn_image_0000002792876142.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=8134BDB925EFDBF6D0AD9235771FEBD07C0715899FF1A3792485BD04B76DF62B)
 
 ## 示例代码
 

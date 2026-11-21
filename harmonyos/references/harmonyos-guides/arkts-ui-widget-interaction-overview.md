@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片页面刷新概述
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面刷新 > ArkTS卡片页面刷新概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:56+08:00
+scraped_at: 2026-11-21T09:11:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:453adb5fae973bacc8878fb1353cec0c77d9d2596a67ba15b9d9aea904b80397
+content_hash: sha256:61e90dbfc9185a25d7f28389d710593a18bcea8f2fd097ef5939a09ee42647be
 ---
 
 卡片使用方（例如：桌面）和卡片提供方均可主动触发卡片页面刷新。此外，卡片管理服务会根据开发者声明的定时信息，按需通知卡片提供方进行卡片刷新。因此，卡片刷新方式包括：卡片提供方主动触发刷新、卡片使用方主动触发刷新以及卡片定时定点刷新。这些刷新方式均需由卡片提供方推送需要刷新的卡片数据。
@@ -26,13 +26,13 @@ ArkTS卡片管理服务支持卡片提供方（例如：应用）和卡片之间
 
 **图1 卡片提供方主动刷新卡片流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/s4q4d6mTS56YnQ59YKE4Sg/zh-cn_image_0000002791565588.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC82780938633410B66BFC2E35E37002C86623C5B663FC4015ED323883A399EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/56ZhOgkeSrWVAvKgTr9ylQ/zh-cn_image_0000002821757149.png?HW-CC-KV=V1&HW-CC-Date=20261121T010958Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F7E72FAF12B31FFF33484EBE0ADAB7C027FD65E47861FB48A86F1E2E1AC659D)
 
 卡片提供方应用运行过程中，如果识别到有要更新卡片数据的诉求，可以主动通过formProvider提供的[updateForm](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderupdateform)接口更新卡片。
 
 **图2 卡片使用方主动刷新卡片流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/fdsjiCHgQbCoLzhxG3QC7Q/zh-cn_image_0000002820525541.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E838450C6A41FF8F3EC17B189DB1CC50D850CE6FFC76A286FBCEF8194C5D84B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/OYtfD9hISgO0peiVJMV0pA/zh-cn_image_0000002793037212.png?HW-CC-KV=V1&HW-CC-Date=20261121T010958Z&HW-CC-Expire=31536000000&HW-CC-Sign=1069AC5E9810782E38604C08E30F7B81C2572D2031B62EFC6A6CC0E0966933D9)
 
 当卡片使用方检测到系统语言或主题模式（如深浅色）发生变化时，可以主动通过formHost提供的requestForm（仅支持系统应用使用）接口请求更新卡片，卡片管理服务会进而通知卡片提供方完成卡片更新。
 
@@ -46,7 +46,7 @@ ArkTS卡片管理服务支持卡片提供方（例如：应用）和卡片之间
 
 **图3 卡片管理服务通知卡片提供方定时定点刷新卡片流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/KIwyKeHOQzanUdxGsq88kA/zh-cn_image_0000002820405541.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AFCB41A1A933925529DAB5A110E68B33D61498CF270FE4E9DF13EA7559E1C54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/ONjySSPwTqm84ZFMnat5iQ/zh-cn_image_0000002792877242.png?HW-CC-KV=V1&HW-CC-Date=20261121T010958Z&HW-CC-Expire=31536000000&HW-CC-Sign=81F20897F6372BC8BE9304D4D2FBCDB6C411EB0C82DFE4656569D537EA85640B)
 
 根据卡片提供方开发者提前配置声明的定时刷新信息，卡片管理服务会根据定时信息、卡片可见状态、刷新次数等因素综合判断是否需要通知卡片提供方更新卡片。
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebSchemeHandlerResponse)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebSchemeHandlerResponse)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:58+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-21T09:14:44+08:00
+doc_updated_at: 2026-11-20
 content_hash: sha256:b66d567ed9dcc4fe3217f72f2e9327d5075b462fd2288b385056be9343527f94
 ---
 
@@ -67,7 +67,7 @@ struct WebComponent {
           console.info("[schemeHandler] getCustomErrorCode:" + response.getCustomErrorCode())
 
         } catch (error) {
-          console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
         }
       })
       Web({ src: 'https://www.example.com', controller: this.controller })

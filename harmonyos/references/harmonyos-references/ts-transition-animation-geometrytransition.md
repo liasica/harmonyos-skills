@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transi
 title: 组件内隐式共享元素转场 (geometryTransition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 组件内隐式共享元素转场 (geometryTransition)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:10+08:00
+scraped_at: 2026-11-21T09:14:14+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:3853cb0d79dd5e9c21b1fb884a2241b1b41810358c1e6057f4c95ed1efec12cc
+content_hash: sha256:a46d4c0f517b9b6cbca3985c0dbf5fdb852ffd0a972365cdf71e285fa3d8f9d0
 ---
 
 在视图切换过程中提供丝滑的上下文衔接过渡。通用transition机制提供了opacity、scale等转场效果。geometryTransition通过安排绑定的in/out组件（in指新视图、out指旧视图）的frame、position，使得原本独立的transition动画在空间位置上发生联系，将视觉焦点由旧视图位置引导到新视图位置。in/out组件需要配合transition使用，以保证组件离场不被立即析构并提供转场效果；若不配合transition使用，out组件离场时将被立即析构，共享元素转场动画可能无法正常呈现。
@@ -139,7 +139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/wxGIga6zRDu577gV5l8n-Q/zh-cn_image_0000002820407571.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=271D4EA301C817F988B95A3A7E430AA9BD8ED9092653262F1CEF6B87A1CC7C98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/r7FF8xNHQU-rXNbFxci4XA/zh-cn_image_0000002821759197.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011309Z&HW-CC-Expire=31536000000&HW-CC-Sign=730F47D8E150A0306A7B6C875E7E7EC4784EE5775F0B4A0BDED07F5DFB9225DA)
 
 ### 示例2（if范式下使用follow实现跟随效果）
 
@@ -225,4 +225,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/OkQDF81tQ8C-3eJe_9-hxA/zh-cn_image_0000002791727590.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AC0F6B50A7E2F26C89364C43DE168ED5D5F79B0BD68F8B324C1B8CAC9C613FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/Q84JrIGuQ4GKEPoNa70wNA/zh-cn_image_0000002793039262.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011309Z&HW-CC-Expire=31536000000&HW-CC-Sign=F33AA8F62C8E72BB9D2ED50BD2CAB00DFC440CF5CD34E3462F0B8969712D8A75)

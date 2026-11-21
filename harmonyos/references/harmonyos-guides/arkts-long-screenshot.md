@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-long-sc
 title: 长截图
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 长截图
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:45+08:00
+scraped_at: 2026-11-21T09:11:11+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:d91ebe7af28e2c2641b9cefeb6caa18a8674c6bb7d26187d7dcd5e616b3821b1
+content_hash: sha256:8f16f254b50d3ccca26ab2795b31471f26598f7c8f87623098be2a2806bed041
 ---
 
 ## 概述
@@ -22,13 +22,13 @@ List组件可以通过模拟用户滚动行为，然后使用getComponentSnapsho
 
 **图 1** 长截图拼接原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/3l-3RniJT-2USVHIk7tJTQ/zh-cn_image_0000002820525269.png?HW-CC-KV=V1&HW-CC-Date=20261119T014745Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A091ED0810E1F0CE3EA423D16876DAF595AE6291AA5E376344F0CCF5719A0DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/flvpw6YmTamVhaBciSl8uQ/zh-cn_image_0000002793036940.png?HW-CC-KV=V1&HW-CC-Date=20261121T011111Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FB8D2B4CFD0B7A7F2507527F504DB7AD8D4BA70C9A01C826AAC59FD2BE41ACD)
 
 长截图主要流程如下：
 
 **图 2** 滚动长截图流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/joHiE_1LTeiPioXQa3uuKg/zh-cn_image_0000002820405269.png?HW-CC-KV=V1&HW-CC-Date=20261119T014745Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9219752AF5860DED1A34DA28F60AFE1D5677C6B6C8AAB9BB3AC1235DB018FDE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/nBsVD9KKTK6El5lyGUJWUg/zh-cn_image_0000002792876970.png?HW-CC-KV=V1&HW-CC-Date=20261121T011111Z&HW-CC-Expire=31536000000&HW-CC-Sign=3148A521FE3C54504CB3C9FA71FA68E341F0A6E9DF4FE1EBCCE0B1B23D9906D8)
 
 **说明** 
 
@@ -48,7 +48,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
 
 点击“一键截图”，会生成整个列表的长截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/4g4tOhkHTwO1A3AahtloUQ/zh-cn_image_0000002791725290.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014745Z&HW-CC-Expire=31536000000&HW-CC-Sign=02BB918A2DC90300F85F91ABD5C533A18D740F604217302CE9F1CAA9772DAF43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/cUNbqowuQdW-twfjbnw5NQ/zh-cn_image_0000002821836875.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011111Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF753A3002DAB29E9D86C024A470780AB1DB4B6A029AF39BFFFB21061ACC23AC)
 
 **开发流程**
 
@@ -516,7 +516,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
 
 点击“滚动截图”按钮后，列表将自动滚动。点击列表中的任意条目时，滚动会立即停止，并开始截取从滚动开始到停止这段时间内的数据截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/W7i5QnZZQGeV6vkOvZH6RA/zh-cn_image_0000002791565318.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014745Z&HW-CC-Expire=31536000000&HW-CC-Sign=7ECA968CDBC5EF8F87A67B590AB2AAF8CA14A4CCB7020E9B8C0800108BF79469)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/nLDye1WuTHSI4r0OVbijiA/zh-cn_image_0000002821756879.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011111Z&HW-CC-Expire=31536000000&HW-CC-Sign=A23287E62317B15A562A16AA48C5D5A774CDFAFA412EA6F28EC3B2A1078EF382)
 
 **功能实现**
 

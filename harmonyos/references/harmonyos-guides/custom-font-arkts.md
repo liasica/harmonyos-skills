@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/custom-font-a
 title: 自定义字体的注册和使用（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 自定义字体的注册和使用（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:46+08:00
+scraped_at: 2026-11-21T09:12:11+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:7549bb291c497e721d08215c3802dca638f29cf88a072c0bf034db1cc8c3ff93
+content_hash: sha256:5c7ffd075b3ac11de19c593361ef4c95040aeabc69f8e331621955ac86f9b63a
 ---
 
 ## 场景介绍
@@ -105,6 +105,6 @@ content_hash: sha256:7549bb291c497e721d08215c3802dca638f29cf88a072c0bf034db1cc8c
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/NmgafiRXQ3Wt_ipExj08pQ/zh-cn_image_0000002791566106.png?HW-CC-KV=V1&HW-CC-Date=20261119T014846Z&HW-CC-Expire=31536000000&HW-CC-Sign=429DB20D79865F2D4211FA4383091A5A95A8B1680BA0BE45521AB6334605A1D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/RbP42fc-Q7a4HDOz_5_giQ/zh-cn_image_0000002821757667.png?HW-CC-KV=V1&HW-CC-Date=20261121T011211Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BF0D479AE0E05BCD4C7EA1560C2670EBA714C49A3CA39A9EE351A8B98456CFD)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/O0qDWCXNRYaIQ5NXwerVsA/zh-cn_image_0000002820526059.png?HW-CC-KV=V1&HW-CC-Date=20261119T014846Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CC87B7FBFDA6AC65DDF02C858A87D6FE40EBECCC582877B208293A53653D227)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/g4e6rWFGTYqSr4yCjAF88g/zh-cn_image_0000002793037730.png?HW-CC-KV=V1&HW-CC-Date=20261121T011211Z&HW-CC-Expire=31536000000&HW-CC-Sign=45014A9C7F30FF0094398B910119ED58183A8F1837DB8004F5428F3B41B397D7)

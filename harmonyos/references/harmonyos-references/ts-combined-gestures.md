@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-combin
 title: GestureGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > GestureGroup
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:54+08:00
+scraped_at: 2026-11-21T09:14:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:12a9108b9904848d7be8e706f6d48e06a9bcd02b64a99bfeb9bab4e9b7a73e86
+content_hash: sha256:74319f3dc900db20c5e059efec11296493ee747dc829546b4da8bf3683b40d07
 ---
 
 手势识别组合，即两种及以上手势组合为复合手势，支持顺序识别、并发识别和互斥识别，适用于需要在同一组件上组合多个基础手势并控制其识别顺序、并行关系或互斥关系的场景，可帮助开发者实现更复杂的手势交互逻辑。
@@ -129,8 +129,8 @@ struct GestureGroupExample {
 
 按顺序首先触发长按事件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/xgbMm24yRTOTe9gBP5piIg/zh-cn_image_0000002820527103.png?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BFE1C181527806296251491AB0C878CB260B4F96C81CB333D95AEC58B182765)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/5GRNR6uRSGWx1j8F63Oi6w/zh-cn_image_0000002821838711.png?HW-CC-KV=V1&HW-CC-Date=20261121T011254Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F834A2D56963EA86B9339E64F477B508DFFD39DF6517192DA34AF5947F320FD)
 
 按顺序首先触发长按事件，长按事件识别结束之后，触发拖动事件，向右下方拖动：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/deCOFDmUQquAxlIFxh3DKw/zh-cn_image_0000002820407103.png?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=A25E602E349F2939CCE9D0043D39EC885506400BF118BD5D60D4BCCE9A003154)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/NEet5x78TXqIbSLEGcJHoA/zh-cn_image_0000002821758715.png?HW-CC-KV=V1&HW-CC-Date=20261121T011254Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5C22B2832415FDA463562C214A76E3C5955ECEB963DDA69F2DA57EEF59781BC)

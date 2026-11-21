@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-time-co
 title: 使用TaskPool执行多个耗时任务
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信场景 > 使用TaskPool执行多个耗时任务
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:03+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:0afffa72d5736068fc7954bc926b1ddf396f6b6467788f5887ccdd19d4c0e68f
+scraped_at: 2026-11-21T09:10:58+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:aa44ef3ab141445d8792898b1da2ce40b1fc2ff46da8b8d63d9c2836d64794cf
 ---
 
 多个任务同时执行时，由于任务复杂度不同，执行时间和返回数据的时间也会不同。如果宿主线程需要所有任务执行完毕的数据，可以通过[TaskGroup](../harmonyos-references/js-apis-taskpool.md#taskgroup10)的方式实现。
@@ -74,5 +74,7 @@ content_hash: sha256:0afffa72d5736068fc7954bc926b1ddf396f6b6467788f5887ccdd19d4c
      }
      // The length of iconItemSourceList is 360
      console.info('The length of iconItemSourceList is ' + (iconItemSourceList?.length ?? 0));
-   })
+   }).catch((e: BusinessError) => {
+     console.error(`taskpool execute error, code: ${e.code}, message is: ${e.message}`);
+   });
    ```

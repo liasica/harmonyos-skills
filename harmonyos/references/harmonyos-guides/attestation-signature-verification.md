@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/attestation-s
 title: 签名验签识别真实请求
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明 > 签名验签识别真实请求
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:11+08:00
+scraped_at: 2026-11-21T09:11:37+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:50603ae450ce79cfd33b678f3165824b22f232e41af042b2f5f8aa0d4663d990
+content_hash: sha256:3dd74bdcd47b15b92873a0e614ad3d71fa15ecb2c36536aeeb1f35183ed2738a
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:50603ae450ce79cfd33b678f3165824b22f232e41af042b2f5f8aa0d466
 
 **图1** 签名验签识别真实请求流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/7c-i0VyUQsmMPVmPvTLtJQ/zh-cn_image_0000002791565760.png?HW-CC-KV=V1&HW-CC-Date=20261119T014811Z&HW-CC-Expire=31536000000&HW-CC-Sign=416621472DF2076EE91BD0B3AA211AC7532EA2C1D97628198F5F72AEF88CE02C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/zjVUpmMYSNiN8m6NSL-8uA/zh-cn_image_0000002821757321.png?HW-CC-KV=V1&HW-CC-Date=20261121T011011Z&HW-CC-Expire=31536000000&HW-CC-Sign=B24E48D4A01F2B9DE11AEE19907ACC97134B9E2829702CA547F5551B5B0FDC1A)
 
 ### 签名验签识别真实请求流程
 

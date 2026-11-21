@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义内容
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 自定义内容
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:53+08:00
+scraped_at: 2026-11-21T09:14:03+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:08b7ec0149349e59dfa1f90048ee6f8fdfeb20f404b3a2ac428996c17357d055
+content_hash: sha256:caa90e812ac692bff42b8d072484ac16d8bf1c7cc0e30a3cf496b63a64cea43b
 ---
 
 支持通过样式builder自定义特定组件的内容区。
@@ -138,4 +138,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/d673pptlRvi8aNa1D2pD-g/zh-cn_image_0000002820407095.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FDB08F356BA3090E80974072D7CA703090C925152AC4BB6D34F42282FA4A7AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/erq0gmQsSpSsL3pyVnxbag/zh-cn_image_0000002821758707.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011252Z&HW-CC-Expire=31536000000&HW-CC-Sign=76928A36E3EBA383ABEC9A396156AAA8F8E8F7327321BF3264B89FD5EB59A013)

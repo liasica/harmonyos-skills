@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: menu开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > menu开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:48+08:00
+scraped_at: 2026-11-21T09:11:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2a31ef34adc2e6bf00da12b8bbd3f7a74e8fda2a48104acb5b7c42c5bcdaa97e
+content_hash: sha256:12c528de56460821ba8ecddec8b87a0db237140d23da514e8b061607300271bd
 ---
 
 提供菜单组件，作为临时性弹出窗口，用于展示用户可执行的操作，具体用法请参考[menu](../harmonyos-references/js-components-basic-menu.md)。
@@ -42,7 +42,7 @@ content_hash: sha256:2a31ef34adc2e6bf00da12b8bbd3f7a74e8fda2a48104acb5b7c42c5bcd
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/IaIkp0doQUinjmqZ8e34HQ/zh-cn_image_0000002791565388.png?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5E9506FF958AA943B4E62D2D6C7F445FE1DA7FD8FA3F2E89EF564A18DB255E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/RBnGruYSSHW94j3wBQskAg/zh-cn_image_0000002821756949.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAFED537DF75D0B1B0C091F102726F7731C5736F7681CB2DFB5746E68741ED0D)
 
 **说明** 
 
@@ -96,7 +96,7 @@ option{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/lrwACl_xQfmuDN19rV9oRw/zh-cn_image_0000002820525341.png?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=463562281CCDB2559AAF185200F058D2673576A5F1BDCF64334C3A0D64241B72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/vLMWYm9mSe2fHWIRBn6fmw/zh-cn_image_0000002793037012.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=73678EAC32771D39E8D004975EE03BCE0744D74C53FEA2630735FE03FCB8707B)
 
 ## 绑定事件
 
@@ -159,4 +159,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/klc07c0ERj-zJIBy3XCeGw/zh-cn_image_0000002820405341.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=EED0CC2EF588C26C41617F199816EBCC751D5766F2B5A216C5738BEF10A4A1B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/gqBwnJlvRCGxjzpsdHDE1w/zh-cn_image_0000002792877042.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=C34C259F40574C03950B122F4738408779663CBB06B156B0DCACAD7AD7425000)

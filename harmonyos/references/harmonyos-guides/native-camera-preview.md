@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 预览(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 预览(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:05+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:2e3be081c04a7fd2e652c7dc651818f2831eacfa5f59b2f99ebd2ac7c262a280
+scraped_at: 2026-11-21T09:12:02+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:865a32961c3dcd9172a680022addd70baaed5db7825f102c62a2772d310efa88
 ---
 
 预览是启动相机后看见的画面，通常在拍照和录像前执行。
@@ -39,6 +39,7 @@ content_hash: sha256:2e3be081c04a7fd2e652c7dc651818f2831eacfa5f59b2f99ebd2ac7c26
    #include "ohcamera/video_output.h"
    #include "napi/native_api.h"
    #include "ohcamera/camera_manager.h"
+   #include "ohcamera/camera_device.h"
    #include <window_manager/oh_display_info.h>
    #include <window_manager/oh_display_manager.h>
 

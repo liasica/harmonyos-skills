@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.animator (动画)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.animator (动画)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:39+08:00
+scraped_at: 2026-11-21T09:13:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6e3d0512b63da25af54a45fdf94261831306e1a08e40399a2c9a5b3b3d56b0df
+content_hash: sha256:e7524a87a402fc391ff4fde803b4642e97cf4b446e79e64a239aced2d085b09f
 ---
 
 本模块提供组件动画效果，包括定义动画、启动动画和以相反的顺序播放动画等。
@@ -963,7 +963,7 @@ class AnimatorState {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/4nOZ_NC1Q-GohIEKz1Aw9A/zh-cn_image_0000002820406875.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD53C9177E912F5802E1DB1862D0A67B7F87060EE2F5A58FD435CE5780F9E52A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Ege7SalfReug32OYNv5EJA/zh-cn_image_0000002821758485.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011353Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BFEB52EE3E105483AA38B940396F7768A78D5709B57E631CE02B476B1023AAC)
 
 ### 基于ArkTS扩展的声明式开发范式
 
@@ -1135,7 +1135,7 @@ struct AnimatorTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/jgrjNYyUR-ifx2jmsCtRjw/zh-cn_image_0000002791726896.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=092B3BB9D94CF71339A7A2E528C8247EB011328E5273194DFAB7B7EF7B821EA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Em7DcdcFQAmoNrUTUmqhHw/zh-cn_image_0000002793038548.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011353Z&HW-CC-Expire=31536000000&HW-CC-Sign=431B4ED9FC077BCC85357060DA56E12E1419728405EAD7DA3A59F924F6BD501A)
 
 ### 位移动画示例（简易入参）
 
@@ -1236,4 +1236,4 @@ struct AnimatorTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/FEXIJwWrQCmI1-HvqW08Cg/zh-cn_image_0000002791566924.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=9224DC3D8CF8EF51CCA648A262E97785EF1150EDC83905F02FC5D5851F0BF11D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/UGKD6cxpTQOfEo8DJEyE3A/zh-cn_image_0000002792878578.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011353Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCA7B9B0CF49420CA987A250E04130161038F199906F227A1A2D64C223F3115D)

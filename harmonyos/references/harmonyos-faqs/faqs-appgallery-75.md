@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何动态设置应用图标
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何动态设置应用图标
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:46+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:90963a320670be1afa5ab495c01cb0f7b0301a2e0def332ee5a55771242a7505
+scraped_at: 2026-11-21T09:19:19+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:75d83cfdaa250caa6b3af0128a2aa3f8c972b1eda9e4ca4be668c793b662df30
 ---
 
 ## 问题现象
@@ -27,7 +27,7 @@ content_hash: sha256:90963a320670be1afa5ab495c01cb0f7b0301a2e0def332ee5a55771242
 1. 开发前准备：
 
    使用图标管理服务之前，请先[申请开通服务](../harmonyos-guides/appgallery-appinfo-manage.md#申请开通服务)。
-2. [通过HarmonyOS 开发者中心配置应用图标](../harmonyos-guides/appgallery-appinfo-manage.md#通过appgallery-connect配置应用图标)：
+2. [通过HarmonyOS 开发者中心配置应用图标](../doccenter-capabilities/appgallery-appinfo-manage.md#通过harmonyos-开发者中心配置应用图标)：
 
    登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，点击“APP与元服务”，在应用列表中选择已经开通图标管理服务的HarmonyOS应用，选择“分发 > 服务 > 图标管理”，进入图标管理页面，就可以管理HarmonyOS应用的个性化图标，包括[创建图标](../harmonyos-guides/appgallery-appinfo-manage.md#创建图标)、[编辑和更新图标](../harmonyos-guides/appgallery-appinfo-manage.md#编辑和更新图标)、[删除图标](../harmonyos-guides/appgallery-appinfo-manage.md#删除图标)。
 3. 实现应用图标动态切换：

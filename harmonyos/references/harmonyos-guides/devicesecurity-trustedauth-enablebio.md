@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 开通生物特征认证能力
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 生物特征绑定、认证与解绑 > 开通生物特征认证能力
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:07+08:00
+scraped_at: 2026-11-21T09:11:32+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:e2be276b9222fcf42e77a97c652796dc6d1e2b0ca2437253eb08ca6d273c7ea0
+content_hash: sha256:82dbcea7135cddac6a2dd8f98e72f7df1127527bfbd6995fc4fb59a3eaf56bc7
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:e2be276b9222fcf42e77a97c652796dc6d1e2b0ca2437253eb08ca6d273
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/cCGEgJtWQpuenHeUf3J6qA/zh-cn_image_0000002820405687.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014715Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F4316F7628C8351299DABE3F46CF94BC9601CCBFCD96F56719B2A81E71CDDBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/XA_JbiVXRyOHqQFMsbCEfQ/zh-cn_image_0000002792877388.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011132Z&HW-CC-Expire=31536000000&HW-CC-Sign=FECF858C10CB687ACA7A9B95CE2D67A096761940597A4CFCBACDC562FADBFCA8)
 
 ## 接口说明
 
@@ -35,7 +35,7 @@ content_hash: sha256:e2be276b9222fcf42e77a97c652796dc6d1e2b0ca2437253eb08ca6d273
 
 如图表示开通人脸认证时对应的UI界面示例，当密码认证通过后，则会拉起系统人脸认证界面进行人脸信息绑定。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Ljoc5s_MRaGKrlSLoCnYUw/zh-cn_image_0000002791725708.png?HW-CC-KV=V1&HW-CC-Date=20261119T014715Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEA24354E2420E9F594E9AF9CF7A266E4E44B5FCE9ED720E030FCB9099AA7A38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/lhonQjrgQJSuQG2Q8rbFNQ/zh-cn_image_0000002821837295.png?HW-CC-KV=V1&HW-CC-Date=20261121T011132Z&HW-CC-Expire=31536000000&HW-CC-Sign=E68A1BA7025809A72054050B70A57D2E41D03B5784F8B90744AE80A61303A279)
 
 ## 开发步骤
 

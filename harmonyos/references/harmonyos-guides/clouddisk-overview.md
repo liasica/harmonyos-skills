@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/clouddisk-ove
 title: 网盘服务底座概述
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 网盘服务底座 > 网盘服务底座概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:55+08:00
+scraped_at: 2026-11-21T09:11:21+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:82ed0c384a9dd9a437fa9ae2adfddcf168647f77e7884d61474e82efa308c8a8
+content_hash: sha256:208d32def230cdd5707874d80da350907262c9b3d5501c2231e9d794f9ed6548
 ---
 
 网盘服务底座为网盘接入方应用提供云端文件在本地文件系统中的映射能力。应用将网盘目录注册为同步根后，即可通过网盘服务底座的开放API（[oh\_cloud\_disk\_manager.h](../harmonyos-references/capi-oh-cloud-disk-manager-h.md)）将云端文件以占位符文件形式映射到本地，本地仅保留文件名、逻辑大小、修改时间等元数据，真实内容按需下载。
@@ -61,4 +61,4 @@ content_hash: sha256:82ed0c384a9dd9a437fa9ae2adfddcf168647f77e7884d61474e82efa30
 * **CloudDiskService（数据面）**：负责注册/解注册/监听同步根、文件变化通知、操作记录查询、设置/查询文件同步状态等数据面逻辑。
 * **内核文件系统**：负责文件目录树访问、文件增删改查与占位符文件处理，为占位符文件提供受保护的文件系统语义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/JVjPKMxXRumJwxh6jEoGSw/zh-cn_image_0000002820525521.png?HW-CC-KV=V1&HW-CC-Date=20261119T014755Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7EC54BDD3879F28BE8AEFF224333837059B09B4A114BB02B7F234D777FCF17E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/--GZjwVvQOa98J62SPxjow/zh-cn_image_0000002793037192.png?HW-CC-KV=V1&HW-CC-Date=20261121T011121Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BBC1E29F078B630DA725C25BBE1C300F0BB4645D26C270F4D99743F3735A221)

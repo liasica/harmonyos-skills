@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-stop-for-
 title: 应用退出（PC/2in1）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用退出（PC/2in1）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:27+08:00
+scraped_at: 2026-11-21T09:10:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:37faccadb6156661186d4f3a1560645d64b9fb8c474b13bf4b838472c41e00f3
+content_hash: sha256:741f406db95aeb2e45ac386023713add093663628d57a0712e952805bcfb6e79
 ---
 
 ## 概述
@@ -16,16 +16,16 @@ PC/2in1设备上常见的应用退出场景主要包括：
 
 * **关闭按钮退出**：用户点击主窗口三键区中的关闭按钮，关闭当前应用窗口。这是最常见的窗口退出方式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/b9EQRGN0QBqMnPhyMBifZQ/zh-cn_image_0000002791724442.png?HW-CC-KV=V1&HW-CC-Date=20261119T014726Z&HW-CC-Expire=31536000000&HW-CC-Sign=B447F7F2C1015F3306FB58013AAEE3DCE8F55D026D67728B4329AD30809CC939)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/xEcwzNcYSLujJqjeGQNahw/zh-cn_image_0000002821836025.png?HW-CC-KV=V1&HW-CC-Date=20261121T011052Z&HW-CC-Expire=31536000000&HW-CC-Sign=68F06A5B6AEF664788A97DD179BCCD674C14C6AEA5E8B399F3CFFCFC9DD0D47F)
 * **快捷栏退出**：用户在快捷栏右键点击应用图标，并选择“退出”或“关闭所有窗口”，触发应用级别的关闭流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/5wF0x2d5Seyh72WDlgslYg/zh-cn_image_0000002791564470.png?HW-CC-KV=V1&HW-CC-Date=20261119T014726Z&HW-CC-Expire=31536000000&HW-CC-Sign=D598C65BC561E5B7DA28008CB1BF7A4EED1611929CC1CB0CFB3F5C26FD968A6F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/GLrNgtHKRO-yAS2A7X6-2A/zh-cn_image_0000002821756025.png?HW-CC-KV=V1&HW-CC-Date=20261121T011052Z&HW-CC-Expire=31536000000&HW-CC-Sign=9199B114577118BB4BDB9A441889C7B529344B01F13AACBD132DFAB95FD9C761)
 * **托盘退出**：用户在系统托盘区域右键点击应用图标，并选择“退出”，触发应用级别的关闭流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/m8-8AvCxSxCkPovsZfLERg/zh-cn_image_0000002820524421.png?HW-CC-KV=V1&HW-CC-Date=20261119T014726Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2948994D4B1A15C115CF425089B5EEA570A84D37CE79A4AB31DD90197D86FBF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/vjX_mZdFRr2aBRnIvM5Pcg/zh-cn_image_0000002793036090.png?HW-CC-KV=V1&HW-CC-Date=20261121T011052Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD3634D9EC661AF051D127B33417599DA0903F5927A10B6092DABBA7A519366C)
 * **关机退出**：用户执行系统关机、重启等操作时，系统会依次关闭所有应用，并触发应用退出流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/efRfIH_5S3CX5kh9RUz8gA/zh-cn_image_0000002820404421.png?HW-CC-KV=V1&HW-CC-Date=20261119T014726Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBB76DFB88069D559D48B43A483798904E433477D9A5AF7F2FE3B4B3DCFD3990)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/q9DB4TETTJagEvUExlI-cw/zh-cn_image_0000002792876122.png?HW-CC-KV=V1&HW-CC-Date=20261121T011052Z&HW-CC-Expire=31536000000&HW-CC-Sign=352D4022060CE0457013AA164A0D67643579AD97DF76390985871F7D1AE029E3)
 
 不同退出场景触发的回调机制存在差异。开发者可根据应用需求选择合适的监听方式。本文将介绍单主窗退出、应用进程退出以及预关闭机制，帮助开发者了解PC/2in1设备上的应用退出开发方式。关于应用退出流程的通用机制，请参见[应用退出流程](app-stop.md#应用退出流程)。
 

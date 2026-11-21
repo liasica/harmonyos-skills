@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-moving
 title: 动态照片拍摄(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 动态照片拍摄(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:04+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:7753fe61070f32fca3d46d2c55fd99aa5d456309a2384f9462308e2ff23b35eb
+scraped_at: 2026-11-21T09:12:01+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:0064b914852e758d0cc086a20877ab9f117f97d991e7e1be3cab8707428e11cb
 ---
 
 相机框架提供动态照片拍摄能力，业务应用可以类似拍摄普通照片一样，一键式拍摄得到动态照片。
@@ -41,7 +41,7 @@ content_hash: sha256:7753fe61070f32fca3d46d2c55fd99aa5d456309a2384f9462308e2ff23
      cameraOutputCapability: camera.CameraOutputCapability): camera.PhotoOutput | undefined {
      let photoProfilesArray: camera.Profile[] = cameraOutputCapability.photoProfiles;
      if (!photoProfilesArray || photoProfilesArray.length === 0) {
-       console.error('photoProfilesArray is null or []');
+       console.error(`photoProfilesArray is null or []`);
      }
      let photoOutput: camera.PhotoOutput | undefined = undefined;
      try {
@@ -107,10 +107,10 @@ content_hash: sha256:7753fe61070f32fca3d46d2c55fd99aa5d456309a2384f9462308e2ff23
 onPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput, context: Context): void {
   photoOutput.on('photoAssetAvailable', (err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset) => {
     if (err) {
-      console.error(`photoAssetAvailable error: ${err}.`);
+      console.error(`photoAssetAvailable error: ${err.code}.`);
       return;
     }
-    console.info('photoOutputCallBack photoAssetAvailable');
+    console.info(`photoOutputCallBack photoAssetAvailable`);
     // 开发者可通过photoAsset调用媒体库相关接口，自定义处理图片。
     // 处理方式一：调用媒体库落盘接口保存一阶段图，二阶段图就绪后媒体库会主动帮应用替换落盘图片。
     let accessHelper: photoAccessHelper.PhotoAccessHelper =

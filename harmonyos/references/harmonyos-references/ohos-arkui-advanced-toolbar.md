@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ToolBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ToolBar
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:17+08:00
+scraped_at: 2026-11-21T09:14:18+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:beb05934d0409c1dbb81d3139b2fc03c0da2b0f92d5ed26163b30f389dbd1b81
+content_hash: sha256:15a200d3e5b8be45420e39138a91a80d6381908e39881e32e754485ff18e3f8d
 ---
 
 工具栏组件，用于展示针对当前界面内容的操作选项，在界面底部显示。底部最多显示5个入口，超过则收纳入“更多”子项中，在最右侧显示。
@@ -293,7 +293,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/TRVRwcHhTcS3GMsqzgk4aw/zh-cn_image_0000002820527709.png?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=538299CE353B7AE3A288F1AB00B5DCE21CF82AAD60126BE4F9F219E11EF93A20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/xTLk7aywRFi8W5O_hu_slA/zh-cn_image_0000002821839341.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=B023194C3DA6E35342DBE6D44D7C983052B41636D69220EC0208F5992E2FEBAE)
 
 ### 示例2（设置工具栏自定义样式）
 
@@ -393,7 +393,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/o1JaUvpxSN27vJQq4HBxeA/zh-cn_image_0000002820407711.png?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0A0E255453F0E5EFFD93C7A1E477F8C400ED6ED2AB942218A800AE3BCB21CF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/tbemcTRlR028Kf1kWFA-8A/zh-cn_image_0000002821759339.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=F678040F7C0D887D83909F7F202669D625124A1CCF89A3C2EEC7461ECE66C3C4)
 
 ### 示例3（设置工具栏自定义播报）
 
@@ -471,4 +471,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/tdDng52JQ5GCe8TJC2ARAg/zh-cn_image_0000002820527709.png?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=E81EB5069960E10DA1B9E66D177C705840B606894C9C4A4AD3C3B4E7D474B015)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/omh14FQGQUOZqP6HUjoHgA/zh-cn_image_0000002821839341.png?HW-CC-KV=V1&HW-CC-Date=20261121T011418Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC6A6340E790AE1737FD3D3915DA023587E1ED422BF9746AA40039E139755B57)

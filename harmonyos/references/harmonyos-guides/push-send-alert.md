@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-send-ale
 title: 发送通知消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送通知消息 > 发送通知消息
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:10+08:00
+scraped_at: 2026-11-21T09:12:36+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:709ccaea71ddbc554e2b7700bf7c4a94bcfc2616af7872539fa1205df651ed7b
+content_hash: sha256:e19754fa14401e05cfe5660fd2e3daa3866dc4470c06ef0ee72fff312ccb9cc1
 ---
 
 ## 场景介绍
@@ -421,7 +421,7 @@ Push Kit提供了多种通知消息样式，您可以自定义其中内容来吸
 
 您在发送通知消息时[notification](../harmonyos-references/push-scenariozed-api-request-param.md#notification)参数中必须携带**title**与**body**字段，来设置应用收到通知消息后展示在通知中心的标题与内容。文本内容最多显示3行，超出3行以“...”截断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/tT-t34Y4SK6kkdld_-cNVw/zh-cn_image_0000002791726566.png?HW-CC-KV=V1&HW-CC-Date=20261119T014815Z&HW-CC-Expire=31536000000&HW-CC-Sign=866F7365228D10AB82C7EF497F76AC441D623405DF6A8225F02490A7281190FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/JzbKNarcT1S6EE4x-9uZHA/zh-cn_image_0000002793038218.png?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F55F3100FC9C836DDC8C55659265A9FEDDEE079FAD6E8ED07CCEC90A1E0D08D)
 
 消息体示例：
 
@@ -454,7 +454,7 @@ Wearable、TV不支持此通知样式。
 
 您可以发送通知消息时携带[badge](../harmonyos-references/push-scenariozed-api-request-param.md#badge)字段来设置应用收到通知消息后以数字的形式展示角标，提醒用户查看消息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/hUl-A0OrRcycBf5aNWxT-g/zh-cn_image_0000002791566594.png?HW-CC-KV=V1&HW-CC-Date=20261119T014815Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1E8D02A5ED6A0E9775673E384617BAC64ED10205250C5EFB713CACCD90D3B6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/FPK_XbQSQ7-uColShe28PA/zh-cn_image_0000002792878248.png?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA6A05AD6E393124D39BAAFB37A171AB384AFE5F94DD04ECC4A5E43DB85D5964)
 
 消息体示例：
 
@@ -500,7 +500,7 @@ Wearable、Car不支持此通知样式。
 
 您可以发送通知消息时携带[image](../harmonyos-references/push-scenariozed-api-request-param.md#notification)字段设置消息大图标内容，提醒用户查看消息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/RZClDs_9TKWq8YLpGgzyNQ/zh-cn_image_0000002820526547.png?HW-CC-KV=V1&HW-CC-Date=20261119T014815Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDFB7CAD636D08D4338DC4E2A53B858398F28402D069369CB150B8A42C17D025)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/bOPQPLH4Rc-rhFdr_XyNtQ/zh-cn_image_0000002821838155.png?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=692C243A3D5F2C9EF16CF232D78E4EF9BCB52F83A8089E08BF6B9650ECB87EAC)
 
 消息体示例：
 
@@ -534,7 +534,7 @@ Wearable不支持此通知样式。
 
 您可以发送通知消息时在[notification](../harmonyos-references/push-scenariozed-api-request-param.md#notification)中携带**inboxContent**和**style**字段设置通知消息为多行文本样式。最多可展示3行内容，每行内容无法完全展示时以“...”截断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/P_s4ZIPUQSCzUopfpVfVwA/zh-cn_image_0000002820406547.png?HW-CC-KV=V1&HW-CC-Date=20261119T014815Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D89381CE604834B44098155CF38B64DB8F2F83BA0FC1B53DCDB84DBEA2D4642)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/F5X2sjIsTnCiwWpiXJ_52g/zh-cn_image_0000002821758157.png?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=08CC5CFD67801215A5B065724387BE4715D900CE38E7F33081C56C7E9A09EEEC)
 
 消息体示例：
 

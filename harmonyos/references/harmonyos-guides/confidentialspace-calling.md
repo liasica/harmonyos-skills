@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/confidentials
 title: 运行数据应用处理数据
 breadcrumb: 指南 > 系统 > 安全 > Confidential Space Kit（机密空间服务） > 运行数据应用处理数据
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:02+08:00
+scraped_at: 2026-11-21T09:11:28+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:cd19e0d7db3024f8afe8af6e641371fc79a2085b6d1dba4c243539eb4631add9
+content_hash: sha256:5f9c62c98ab38d4932c8c5dd4eb3708f70f73b24dd3f623ebf9f0ce3cc153cba
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ content_hash: sha256:cd19e0d7db3024f8afe8af6e641371fc79a2085b6d1dba4c243539eb463
 
 应用在机密空间中运行数据应用（以下简称DA）的业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/9fyYyfYTRjaG2balGrkLfg/zh-cn_image_0000002791565708.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=86F159012615D6BA37CC8A89FD1FF7F346EA4FF2D7574664E418425FFBB6F83F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/TVLrB1iiQCSB10VdKR-YVQ/zh-cn_image_0000002821757269.png?HW-CC-KV=V1&HW-CC-Date=20261121T011003Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2BA2E4F82135467FB1EAA74F574C98A96624ECE5C77CC657E719C737AA1BC84)
 
 1. 应用调用[runApp](../harmonyos-references/confidentialspace-confidentialspace.md#confidentialspacerunapp)，异步发起运行DA请求：
 
@@ -71,7 +71,7 @@ content_hash: sha256:cd19e0d7db3024f8afe8af6e641371fc79a2085b6d1dba4c243539eb463
 2. 在“选择应用”列表中选择您需要开通机密空间服务的应用。
 3. 找到机密空间服务，点击右侧“申请”链接。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/RGVornEOSQuu7cM53yll7g/zh-cn_image_0000002820525661.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=A553F8EDFBB68E3B0C508572C5F8147C290C342CC4334B091163F7DF303C5090)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/zRb6stUGQueJHSBH3LiEoQ/zh-cn_image_0000002793037332.png?HW-CC-KV=V1&HW-CC-Date=20261121T011003Z&HW-CC-Expire=31536000000&HW-CC-Sign=43FA5A33C404B70A9A8BB4699A53C6A9885EE608F8D5C5A1D7A32EB615214E7E)
 4. 参照申请页面中的说明，检测应用是否满足申请条件。
 
    **说明** 
@@ -80,17 +80,17 @@ content_hash: sha256:cd19e0d7db3024f8afe8af6e641371fc79a2085b6d1dba4c243539eb463
    2. 应用类型仅限银行、商城、移动支付行业的应用，请参考[配置应用分类、标签](../doccenter-submission/agc-help-release-app-class-tag-0000002271695234.md)。
    3. 机密空间服务仅面向注册地在中国大陆地区的开发者开放，请参考[配置发布国家或地区](../doccenter-submission/agc-help-release-app-area-0000002313510997.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/b03QljZRT3uOYod5_Wazpg/zh-cn_image_0000002820405661.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D2433236C38EE9EB76FFD4322953DC5A1A014548D6EB320B0208D38362D03CA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/jq_E27uKTUO2F_Cy_vpNNQ/zh-cn_image_0000002792877362.png?HW-CC-KV=V1&HW-CC-Date=20261121T011003Z&HW-CC-Expire=31536000000&HW-CC-Sign=91C191E1B5A0AEB320ACCF508C98B45DD6593C6C9405A630BB9B2108D8D4B379)
 5. 选择机密空间的使用场景，参考模板填写“申请原因”，在“举证材料”附件中提交安全报告说明和场景流程说明。填写完成后，点击“提交”按钮。
 
    **说明** 
 
    提交申请后，HarmonyOS开发者中心运营将审核相关材料，审核周期为1-3个工作日，请耐心等待。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/9dT6C0NDQOSnQ9OBYDk00Q/zh-cn_image_0000002791725682.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D621C391C36E9876E1A78358CB94D7337E996D5751D6FFB85AAE2611A38612D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Tb4_jh0kQhm5xfy47DQW-A/zh-cn_image_0000002821837269.png?HW-CC-KV=V1&HW-CC-Date=20261121T011003Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBCA77FDDA49415EC82C2B2FF85413985F81CC92F6025EA8E6C2FFF1FE956E46)
 6. 审核通过后，在“开放能力管理”标签页中勾选机密空间服务并点击“保存”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/jz46rMLoR9S9waJX360kKA/zh-cn_image_0000002791565710.png?HW-CC-KV=V1&HW-CC-Date=20261119T014801Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7000C9864F00429EAEA160AB4FAB8BA29ECC513B03A42D7136E9380EB2EB6B4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/5vI3ToirTW-NSX7gvZgxew/zh-cn_image_0000002821757271.png?HW-CC-KV=V1&HW-CC-Date=20261121T011003Z&HW-CC-Expire=31536000000&HW-CC-Sign=68E87349FE62F0129020EF2D523162CD2FDED0DBC7D4A11E2EE7F27963F4FE26)
 
 ## 开发步骤
 

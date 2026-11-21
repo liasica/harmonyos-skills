@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/certmanager-c
 title: CA证书开发指导
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书管理服务 > CA证书开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:06+08:00
+scraped_at: 2026-11-21T09:11:32+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:eddd1c3de95916eddb5137516160841284b7d9c3174930719b1a9e6b00f97ea4
+content_hash: sha256:e317210bc4b73795156cdff6b401c8118b73de40df4dc1f43079d61ea3b9a000
 ---
 
 在对其他实体（设备、服务器）的证书凭据进行校验时，您的应用需要使用CA证书。例如您的应用使用预置的CA证书对应用服务器的HTTPS证书链进行可信校验。根据通信实现方式的不同，证书信任的配置方案也存在差异，下面分两种典型场景说明：
@@ -14,13 +14,13 @@ content_hash: sha256:eddd1c3de95916eddb5137516160841284b7d9c3174930719b1a9e6b00f
 
 您的应用可以参考[Network Kit配置证书校验](http-request.md#配置证书校验)内容，利用Device Certificate Kit的系统CA证书、用户CA证书，对HTTPS证书链进行校验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/KGyit6EfTmSvM8CX5w7k_A/zh-cn_image_0000002820405667.png?HW-CC-KV=V1&HW-CC-Date=20261119T014714Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA2D887A46BC24DF6192D028829C02FF569FD6E0C8DB8884AA3C32E75FD69BA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/QoWtPesSRlWkTwgs2jgs7w/zh-cn_image_0000002792877368.png?HW-CC-KV=V1&HW-CC-Date=20261121T011131Z&HW-CC-Expire=31536000000&HW-CC-Sign=79AD2FD7798DCA12E1A37E388B381E37D8263B2A8E98937992DB922036373F78)
 
 场景2：采用底层或自定义的安全协议进行通信。
 
 如果您的应用需要采用底层或自定义的安全协议与应用服务器进行通信，则您的应用可能需要从Device Certificate Kit读取系统CA证书和用户CA证书对服务器的证书链进行校验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/R38I8avNTgO0sZc3lRLvcQ/zh-cn_image_0000002791725688.png?HW-CC-KV=V1&HW-CC-Date=20261119T014714Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E55101DEA77A7559429B39E24D8E4D35B415D565B27121B1F3C83A170B82563)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/xUBts4oMTEicJ_SVKI6_qQ/zh-cn_image_0000002821837275.png?HW-CC-KV=V1&HW-CC-Date=20261121T011131Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE921F20C15C716993FBCB2B5A939FAA8D6B00357FB7A2DAA0284815993D6CB9)
 
 Device Certificate Kit的CA证书管理功能包含如下能力：
 

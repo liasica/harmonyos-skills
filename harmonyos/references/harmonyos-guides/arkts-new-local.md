@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-loc
 title: "@Local装饰器：组件内部状态"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Local装饰器：组件内部状态
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:37+08:00
+scraped_at: 2026-11-21T09:11:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:75e4bf0084c0f042364c67aa17fdbdc8deda013091ad616bc8e249b377ba3f59
+content_hash: sha256:000ba114dd9e02b72a37c870aff5567494c4a697689cae6dda311aec1d74bd03
 ---
 
 为了实现对@ComponentV2装饰的自定义组件中变量变化的观测，开发者可以使用[@Local](../harmonyos-references/ts-state-management-local.md#local)装饰器装饰变量。
@@ -362,7 +362,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/dlxE-ZQoSOigxOdc_e8_yw/zh-cn_image_0000002820524623.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=E317CF7032CD123CCA86BDD4E55A8D419A85DE1382092EE52C058D94A9F9747F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/B7997r6zSheqjHWt7_sGiQ/zh-cn_image_0000002793036292.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B1F8894C567B2A6C0DE1085E9E6C01789CFD0F30BA4B758559830A9AACACF3A)
 
 ### 装饰Array类型变量
 
@@ -426,7 +426,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/aFu3idN5RCqhnvCDVkl-pQ/zh-cn_image_0000002820404623.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=244C1125A8D4710F751947B0708F03884554AFC95C0209C79BFF6F246EEE9C86)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/27PpU-_CRe6t1JmbXFTKfw/zh-cn_image_0000002792876324.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8789D723370B2943462785B81641F96578D3333714BA2FCF6F5EA80C9A8492E)
 
 ### 装饰Date类型变量
 
@@ -482,7 +482,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Lhq_WZKvRBqE4-NIOz_xSQ/zh-cn_image_0000002791724646.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=0141BD2C33E99FC3BAEC597655F81AD0F1A8D1A3DE8705F1E9ECC78981482A5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/UZe9Xp8lQFSuFQwA8Vg6Qg/zh-cn_image_0000002821836229.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=F524A96FC8E615ECA6140B2B6C3BD706B1D55AF8429201C86EA48A6AD64D388D)
 
 ### 装饰Map类型变量
 
@@ -545,7 +545,7 @@ struct MapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/zk1srUjXQ4y7MVGcQYxYlQ/zh-cn_image_0000002791564674.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=98A67B83B57B3F7823689B6E6A5FD7DDF4007309667B26BA9E967498DB89F737)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/uDEj4DeQSXS5SAXpg4ojUg/zh-cn_image_0000002821756229.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=B956E433E5FB5667D52EF6C5418661FE199E842DB696125EAF36EC3560A895D0)
 
 ### 装饰Set类型变量
 
@@ -601,7 +601,7 @@ struct SetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/PSPrlYhPQJWZ9Jn7DRra9w/zh-cn_image_0000002820524625.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B1A1BC72F1DEF38F38820EFAABC61121BD4FA22227F692C938BA3131C58764F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Pymn1vTPTBK969yyQ4u1Yg/zh-cn_image_0000002793036294.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D19979BCF597AB29A0956A256B38D451D41CF71058106FB3BCB267D24F77E2D)
 
 ### 联合类型
 
@@ -639,7 +639,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/iSYTPd6jSlKQSsSN5ncEwA/zh-cn_image_0000002820404625.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF50310FDB267B510FF3115154B8E7ED717232D867A964BA634968CE3F395B64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Duex7BKPS7621NENkrcMPw/zh-cn_image_0000002792876326.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=12D117224B0B6B19557EAC3069BE39E680D4E406C6203FEBC70FFE4603C42668)
 
 ## 常见问题
 
@@ -685,7 +685,7 @@ struct Index {
 
 上述代码中，开发者预期的动画效果是：绿色矩形从长宽100变为200，字符串从Hello World变为Hello ArkUI。但由于当前animateTo与V2的刷新机制不兼容，执行动画前的额外修改未生效，实际显示的动画效果是：绿色矩形从长宽50变为200，字符串从Hello变为Hello ArkUI。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/nAfnVUkCS22NXNqo4EHTHQ/zh-cn_image_0000002791724648.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A0418AD693DA085736D561386F4B2DB123AB7B86433A7AD7DCF3C16B8571600)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/BrTAjDu4Ta2TZVEpIXeA-Q/zh-cn_image_0000002821836231.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=D96AABA7FBC5F8EA9E9D8CF8310AF982D16A44C57616EA8B4FFC91E9B0EDEEF6)
 
 从API version 22开始，可以使用[applySync接口](arkts-new-applysync-flushupdates-flushuiupdates.md)实现预期的显示效果。
 
@@ -731,4 +731,4 @@ struct Index {
 
 原理为使用applySync接口同步刷新闭包函数内的状态变量变化，再执行原来的动画达成预期的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/5aERhGFHSYap01NkpGL-jw/zh-cn_image_0000002791564676.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=784DC0CB89A9F6B9B268D52F5A3E177FC78A494F79EB537E5C5992E0C51A9037)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/DmlHmjBsTM6YAZVHDdTABA/zh-cn_image_0000002821756231.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=F73D6BCE9C6CD1FA8AA82EACF09A23FD53C1F63911F704C29B3A688C72D3D369)

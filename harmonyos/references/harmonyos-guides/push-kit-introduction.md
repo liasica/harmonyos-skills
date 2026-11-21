@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-kit-intr
 title: Push Kit简介
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:09+08:00
+scraped_at: 2026-11-21T09:12:36+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:585ab0f33b044e6df03fab3155874ba2cf4c304b6b68cce7c5195a101b4a73c6
+content_hash: sha256:2e5ead0d978071721422bbb7279309e14fa3a7fac69cfe588a489d8a2c06d9f9
 ---
 
 Push Kit（推送服务）是华为提供的消息推送平台，建立了从云端到终端的消息推送通道。所有HarmonyOS应用可通过集成Push Kit，实现向应用实时推送消息，使消息易见，构筑良好的用户关系，提升用户的感知度和活跃度。
@@ -30,7 +30,7 @@ Push Kit（推送服务）是华为提供的消息推送平台，建立了从云
 
 推送消息指的是应用**通过Push Kit发送的**，在华为终端设备上显示的通知消息。显示场景主要包括通知中心、锁屏、横幅、桌面图标角标与通知图标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/GYOgzpfkQyapAPf0ZXeupw/zh-cn_image_0000002791566578.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014815Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DC8479A46C60086623898191A60D79AA3A9BC32FA2AFD725A3C57AA205D7F75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/H6nSa7EyTEeQ3q2W1QwPPg/zh-cn_image_0000002821758139.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011235Z&HW-CC-Expire=31536000000&HW-CC-Sign=75994B3D9565FED377F9B750E7A1248E6210EB38D44AFB8703DB1B938F1A288A)
 
 有关各场景的详细说明请参见[通知提示场景](../design-guides/system-features-notification-0000001793074217.md#section162699204401)。
 
@@ -51,7 +51,7 @@ Push Kit支持以下消息类型：
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/tWQlcyeEQOifAzNazVc_lA/zh-cn_image_0000002820526531.png?HW-CC-KV=V1&HW-CC-Date=20261119T014815Z&HW-CC-Expire=31536000000&HW-CC-Sign=1210937DB95D0FEBCB07FF12DAF2DFB329624BD4BD86B3A10C765A23C1FCBF4D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/JunymNInRb2Eu3Fif8nPbA/zh-cn_image_0000002793038202.png?HW-CC-KV=V1&HW-CC-Date=20261121T011235Z&HW-CC-Expire=31536000000&HW-CC-Sign=495193CE454357DF4EB2ACE4306E4A8D72ED86DAFC7D17955DF467E16385AA4A)
 
 使用Push Kit的主要业务流程如下：
 

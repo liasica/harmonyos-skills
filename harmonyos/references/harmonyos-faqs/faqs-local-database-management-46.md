@@ -3,9 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: "@ohos.data.distributedKVStore接口中的deleteKVStore，第一个参数appId需要传递什么值"
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > @ohos.data.distributedKVStore接口中的deleteKVStore，第一个参数appId需要传递什么值
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:58+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:848aa1cededf785177ff0ae8c24cf9db1f83002cd6fcabde74f6f6a29fc9ae0b
+scraped_at: 2026-11-21T09:18:37+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:a26365d637207368c72419c8dd63dc141cbc8645c67a014e241f06c036d82002
 ---
 
-appId是应用的唯一标识，由包名、下划线和证书公钥的Base64编码组成。可以调用[bundleManager.getBundleInfoForSelf](../harmonyos-references/js-apis-bundlemanager.md#bundlemanagergetbundleinfoforself)获取自身的BundleInfo应用包信息，应用包信息中包含signatureInfo签名信息，签名信息中包含appId信息。示例代码可参见：[如何获取应用信息中的appId](../harmonyos-guides/common-problem-of-application.md#如何获取应用信息中的appid)。
+在 @ohos.data.distributedKVStore 接口中的[deleteKVStore](../doccenter-references/api/js-apis-distributedkvstore.md#deletekvstore)方法中，第一个参数 appId 需要传递的是应用的BundleName。
+
+[BundleName](../doccenter-getting-started/app-configuration-file.md#配置文件标签)为应用的Bundle名称，用于标识应用的唯一性，在工程 AppScope/app.json5 配置文件的 bundleName 标签中声明。

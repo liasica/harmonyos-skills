@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-message-
 title: （可选）测试消息分析
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > （可选）测试消息分析
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:10+08:00
+scraped_at: 2026-11-21T09:12:36+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:56725c8ef574d2bdb9bc90d5866a720c57f9a34b8d794f4d7ec821735a362f2e
+content_hash: sha256:1a7b90850518a96248090420b33ac2c4b753e8e0dee09ad92baa4a5b38f33cd9
 ---
 
 ## 场景介绍
@@ -54,7 +54,7 @@ content_hash: sha256:56725c8ef574d2bdb9bc90d5866a720c57f9a34b8d794f4d7ec821735a3
    * 发送category：开发者调用REST API发送通知消息或语音播报消息时，在请求体中传入的category参数值，用于标识消息的业务分类。
    * 实际下发category：消息下发时真正生效的category值。该值可能与发送时指定的category不同，参考[典型场景](push-message-analysis.md#典型场景)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/vb10uIvaT-KkPLlWHjtk1g/zh-cn_image_0000002820406565.png?HW-CC-KV=V1&HW-CC-Date=20261119T014816Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B9F56F035733A0B3B72F6A6894BD8B7114A6381FE4DE35D5EE5937CB4E05EED)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/xMmK39BfTO-5f8Y0fNrSYQ/zh-cn_image_0000002821758175.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=14E4BEC24102DA0C057BABDA7530F2FCAB8E672C7B93409EF543119F7A8ECADE)
 
 ## 典型场景
 
@@ -62,4 +62,4 @@ content_hash: sha256:56725c8ef574d2bdb9bc90d5866a720c57f9a34b8d794f4d7ec821735a3
 
 因此，当您的请求体中需要使用某个category值时，请提前确认该category对应的权益已开通。如未开通，请前往申请对应[推送场景化消息权益](push-apply-right.md#申请通知消息自分类权益)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/GroF-h0GSfSd7s6xgvKvEA/zh-cn_image_0000002791726586.png?HW-CC-KV=V1&HW-CC-Date=20261119T014816Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A3682A95DB947C0FF2C7922D44C56BCC1F34CA1D1148B23B432A7CE5AB4CB74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/VT-d7fTZQfur0S3A98VSSQ/zh-cn_image_0000002793038238.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=F349741B8193533197AC3BC58E471A9DCDD526AD100F8DBED0B276AC5C896986)

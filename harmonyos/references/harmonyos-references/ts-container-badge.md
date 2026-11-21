@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Badge
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Badge
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:07+08:00
+scraped_at: 2026-11-21T09:14:11+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b3beaa95a4a4fa3a355beea83bbdb6f7a9a474fe3f02fdbaae1ec341b71de675
+content_hash: sha256:e596ccd42842268c2b34bbc69ba4b1c6c8c9790252cdd057c3016d71b9e1cdf2
 ---
 
 信息标记容器组件，可以附加在单个组件上用于信息提醒。支持数字、字符串和圆点三种标记形式，可自定义标记样式（文本颜色、大小、标记颜色和大小）和显示位置。适用于需要提示用户有新消息或未读消息的场景，例如未读消息计数、新功能提示等，帮助用户快速识别和关注重要信息，提升用户体验。
@@ -313,7 +313,7 @@ struct BadgeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/dKXKJXblTo6dgOONqViZEQ/zh-cn_image_0000002820407463.png?HW-CC-KV=V1&HW-CC-Date=20261119T015010Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B6A15FDA20D05F51559EF89BE778E7B8CDFBB8FF03892D3C9344BDFBBB9E0D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/QYLEj6QgT-Wr8Sow7XqIzw/zh-cn_image_0000002821759081.png?HW-CC-KV=V1&HW-CC-Date=20261121T011305Z&HW-CC-Expire=31536000000&HW-CC-Sign=38B8DB04275EA12795ADC49C88F3DC187EB732E4A6BA10D34E63454ED4BFABD1)
 
 ### 示例2（设置数字控制标记显隐）
 
@@ -350,7 +350,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/fGA_MeO6S86APWuwLKJX6A/zh-cn_image_0000002791727482.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015010Z&HW-CC-Expire=31536000000&HW-CC-Sign=93A0F8AFAE0BD8E50EE8588775DDB11E79DF2AE7B06A0DC3B0EBE3D71D02795C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ckf_KyYPQJeC-YKYIOEfhA/zh-cn_image_0000002793039152.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011305Z&HW-CC-Expire=31536000000&HW-CC-Sign=634EE268F052E07E5B992A6A7825FB92B1769F1F057A3D32EEBD2B491C337B68)
 
 ### 示例3（设置外描边和文本延伸方式）
 
@@ -400,4 +400,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/zXLnKaw9S_-MmxApjR7GOg/zh-cn_image_0000002791567510.png?HW-CC-KV=V1&HW-CC-Date=20261119T015010Z&HW-CC-Expire=31536000000&HW-CC-Sign=313F96CEC7BDEFDBE7685AA15D1FE00A93EA30C7C40633D0A780E952FA124BDE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/1fDdWgzERn-eYuuMfciiZA/zh-cn_image_0000002792879182.png?HW-CC-KV=V1&HW-CC-Date=20261121T011305Z&HW-CC-Expire=31536000000&HW-CC-Sign=26BDFA8016065AB7BBBAA70D07593D6505583D423062BC353E19DE95F466AD6C)

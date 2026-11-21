@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: Cloud Foundation Kit简介
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > Cloud Foundation Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:55+08:00
+scraped_at: 2026-11-21T09:12:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:030e950b5f90766c8b9ccc7d285de7f53d230ba5b39a4039ad4d1d1637f42eab
+content_hash: sha256:a0ba9aae4f7fd652e31fe5907049b2e3c98bbd97d42af001d87672bcd1f0d67a
 ---
 
 Cloud Foundation Kit（云开发服务）可以按需为应用提供云函数、云数据库、云存储、预加载等云端服务。应用运行所需的服务器和环境均可由云端平台提供，开发者只需关注应用的业务逻辑，而无需关心基础设施（例如：服务器、操作系统、容器等）。
@@ -33,7 +33,7 @@ DevEco Studio中还提供了[端云一体化开发](agc-harmonyos-clouddev-overv
 
 便捷操作云函数、云数据库、云存储、预加载服务，简化应用/元服务开发与运维相关的事务，快速构建应用/元服务的后端服务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/MqAla3-6RqCAA-QyqxxUeQ/zh-cn_image_0000002820406243.png?HW-CC-KV=V1&HW-CC-Date=20261119T014854Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0F69B3DAE3BB810657973111CBFC85DC0A9CB0E543BD9A3905030814E712BED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ZjpolaQcQTeRZF9s31EkZw/zh-cn_image_0000002792877944.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=29D2AA97A640550E094564AF45D4FCEFF4D16BC0AE858669FC57F5101D1E10C9)
 
 ### 计算密集型任务
 
@@ -47,7 +47,7 @@ DevEco Studio中还提供了[端云一体化开发](agc-harmonyos-clouddev-overv
 * 对数据的同步，例如数据的抽取、转化或者加载。
 * 对视频或者图像的处理，例如生成不同分辨率的视频或者图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/uxXa9efPTLuTDnsS0sVCag/zh-cn_image_0000002791726264.png?HW-CC-KV=V1&HW-CC-Date=20261119T014854Z&HW-CC-Expire=31536000000&HW-CC-Sign=B19958C12AA31824C4D9A6EEBE346D0BF073C9023E24EEF637080BDCBEA302A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/w0brpl_VRBupV6WyA37-PA/zh-cn_image_0000002821837851.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=E706A4CF72A655E06C7F5F5D5C940CF9BBFCE7571EBB63640C723483C278F04F)
 
 ### 协议适配和转换场景
 
@@ -55,7 +55,7 @@ DevEco Studio中还提供了[端云一体化开发](agc-harmonyos-clouddev-overv
 
 例如：可以将数据存储、身份验证、消息队列、推送通知、定时任务等功能切片通过云服务实现胶水层的链接、转换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/2Sb4xF4yT_aA_xRbAUe9sA/zh-cn_image_0000002791566292.png?HW-CC-KV=V1&HW-CC-Date=20261119T014854Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCF11A64D88592866902138B70593A9ADBAE870461600BDAD6A3FA49EE51F14E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/yxlNOmVoTkyiiYiKLZlLmQ/zh-cn_image_0000002821757853.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=1137809BD8E6F4FC6D34326828928A119062150565AFEFBAC1CF387F08968571)
 
 ### 浪涌式访问场景
 
@@ -63,7 +63,7 @@ DevEco Studio中还提供了[端云一体化开发](agc-harmonyos-clouddev-overv
 
 Cloud Foundation Kit能根据业务访问量快速自动扩容，规避业务高峰时系统异常的风险，度过业务流量高峰期，使应用从容应对诸如秒杀、节日活动等业务场景；并发量骤降时，弹性伸缩的特性亦支持自动缩容，释放闲置资源，避免浪费。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/C9fXpOYTS0iefUeDq8RbcA/zh-cn_image_0000002820526245.png?HW-CC-KV=V1&HW-CC-Date=20261119T014854Z&HW-CC-Expire=31536000000&HW-CC-Sign=A87D4DA7C91DB7888CB163A19967073EC01F7CEA2A4F85ECB6A22E5CF4F740CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/ntjbm3aMTLSpCC55N1meRQ/zh-cn_image_0000002793037916.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B4C1A72F34E00A3D53EA841D83A548A3334925C2999B443A57C9B325DE2E2D3)
 
 ## 约束与限制
 

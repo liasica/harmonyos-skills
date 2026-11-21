@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ExifMetadata)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Class (ExifMetadata)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:416dc126b139ca7f4d83979628e6dce1829bef438eb79342ac79b4ebf09b3260
+scraped_at: 2026-11-21T09:16:06+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:e5b3533518e724aa0ee24fab2cd2ef0f0b1ab5a23da298aed01487a49a26e29e
 ---
 
 ExifMetadata implements Metadata
@@ -312,11 +312,11 @@ async function exifMetadataSetProperties(context: Context) {
   let imageSource = image.createImageSource(fd);
   let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
   if (metaData != undefined && metaData.exifMetadata != undefined) {
-    let setkey: Record<string, string | null> = {
+    let setKey: Record<string, string | null> = {
       "ImageWidth": "200",
       "ImageLength": "300"
     };
-    await metaData.exifMetadata.setProperties(setkey).then(async () => {
+    await metaData.exifMetadata.setProperties(setKey).then(async () => {
       console.info('Succeeded in setting properties.');
     }).catch((error: BusinessError) => {
       console.error(`Failed to set metadata Properties. code is ${error.code}, message is ${error.message}`);

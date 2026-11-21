@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-q
 title: 查询结算账单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 账单 > 查询结算账单
 category: harmonyos-references
-scraped_at: 2026-11-19T09:54:49+08:00
+scraped_at: 2026-11-21T09:16:53+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1812910612c58914db83985ef29c50177ce5f56d63487ccd3b89a6695549e4cc
+content_hash: sha256:068578dbb5e63f965a27b04366be56168522811d6f098dfe62275006d97576c7
 ---
 
 ## 功能介绍
@@ -16,7 +16,7 @@ content_hash: sha256:1812910612c58914db83985ef29c50177ce5f56d63487ccd3b89a669554
 
 1. 获取结算账单API接口能力需要管理员先在“[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)”的“功能设置”中开启“结算单接口获取开关”，开启后**次日开始生成**前一日的账单。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/rM4e2vbVT9aA9tbgx0Sf5Q/zh-cn_image_0000002791568256.png?HW-CC-KV=V1&HW-CC-Date=20261119T015354Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6642212C11292F83EDDC46E797DE86397A856766DA7B423AD081C2C8F901228)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ohhygU-_RDma7UO1SZnaUg/zh-cn_image_0000002792879944.png?HW-CC-KV=V1&HW-CC-Date=20261121T011652Z&HW-CC-Expire=31536000000&HW-CC-Sign=52FDFB828F356345363A51877B4A25C3D3904D30C975D7AB0B6C4E8E2EECDB62)
 2. 无论是否产生交易，每日自动生成账单。如果查询日期超限或未生成，则不返回文件下载信息。其他情况会返回。
 3. 账单下载后，建议遍历附件目录以获取“.csv”后缀的文件进行解析。
 4. 解析表单内容时，需考虑表单更新，如新增列等场景。

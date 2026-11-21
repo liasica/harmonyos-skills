@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-s
 title: Subpass Shading
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > Subpass Shading
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:49+08:00
+scraped_at: 2026-11-21T09:12:15+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:c40329116dde5c6d3d5553068ec2cd233f76dcf3828850f4856ed755e00e5ac6
+content_hash: sha256:af5f91dc8ac02645ba48cd7512e2b3e07a69db64cbc582ba37065159e8e70945
 ---
 
 随着游戏场景的复杂化，越来越多的光照效果被应用到游戏场景中，随之也带来大量的光照计算以及带宽消耗。目前通过Tile-Based Deferred Rendering（TBDR）和Forward+等方法可以解决大量光照的渲染时间消耗，但是大量带宽的占用问题还是没有解决，Subpass Shading（子通道着色）能力主要减少计算过程中的读写从而减少带宽的占用。
@@ -14,11 +14,11 @@ content_hash: sha256:c40329116dde5c6d3d5553068ec2cd233f76dcf3828850f4856ed755e00
 
 **图1** Forward+读取过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ZEysw5-_TgeUGrPwRKFr1g/zh-cn_image_0000002820526139.png?HW-CC-KV=V1&HW-CC-Date=20261119T014849Z&HW-CC-Expire=31536000000&HW-CC-Sign=3778AC80ED5F739E6C6B0B3D2320A4263962042755D050DE335F3599E67E93C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/jpBX9ArGTm-VG1lSuqiZUA/zh-cn_image_0000002793037810.png?HW-CC-KV=V1&HW-CC-Date=20261121T011214Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2DBA1F1F31D60CAB5ED11881846BE088143A2FC7ED28621B9C247E33EC0560C)
 
 **图2** Subpass Shading读取过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/B1bo1P3ySx6AK599dvVQ2A/zh-cn_image_0000002820406139.png?HW-CC-KV=V1&HW-CC-Date=20261119T014849Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4E7379FEA034BCD720A5E98964D790AC3D15FB1C39F0A7F9C8D4560FC543935)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/HsA7txU1S5WgfJ416kt4Yw/zh-cn_image_0000002792877840.png?HW-CC-KV=V1&HW-CC-Date=20261121T011214Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FBDE7855B2EC10483B148E0BE3D1F055DE864FD8BF13B62D3B29B12B2EC7A7C)
 
 ## 约束与限制
 

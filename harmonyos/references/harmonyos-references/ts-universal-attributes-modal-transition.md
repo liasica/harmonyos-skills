@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 全屏模态转场
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 模态转场设置 > 全屏模态转场
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:54+08:00
+scraped_at: 2026-11-21T09:14:03+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ccad3aac7c8dd6da6b9cf00a7005887b846b0064b1e34f86c792e868a5acdf27
+content_hash: sha256:757430ce8cbf510f99cca016729454dd5448817f19ae5870ae0e0ced83062fa8
 ---
 
 通过bindContentCover属性为组件绑定全屏模态页面，在模态页面显示和隐藏时可通过设置转场参数（ModalTransition或TransitionEffect）显示过渡动效。
@@ -197,7 +197,7 @@ struct ModalTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/g7Dm-2tpTbi9D3cchh1tsQ/zh-cn_image_0000002791567126.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=E51D29D85EB446A9C8EBD84C0A19CF48A6BC5EF6716424FD15316A3E5FED6C0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/gxsTL1-dR4O8zWTou5jcPA/zh-cn_image_0000002792878782.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=140E66C6A6063FDF67F42D6681FC142F06EF3B177CEBF32DC07AB097F1C0A356)
 
 ### 示例2（自定义转场动画）
 
@@ -311,7 +311,7 @@ struct ModalTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/aNd_8nuISDmvHhcL6Xpm1A/zh-cn_image_0000002820527079.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC282A42EAF0CE50EA55407AE93BE2643A6838F399270138667E729555148652)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Hd9ohFsdRaq1z8m79tu8hw/zh-cn_image_0000002821838687.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=04BD33D729A9E7CEAD3651852AD80DA55C92C3B39EBA10528023A65100DA4B07)
 
 ### 示例3（上下切换转场）
 
@@ -409,7 +409,7 @@ struct ModalTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/ythHHi7cTfe9hL3xLVhhGQ/zh-cn_image_0000002820407079.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=E81E363AE895ABD85F7833B405E2D6BC236FA45D79AF070445A43B42C16B2CD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/4DVBz2nuTPSWno6_7opIug/zh-cn_image_0000002821758691.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=3800F874C08A96E8EAEF8E9BA6265E8B5E0927F4A0AEC12CDB6F314E50D8FE98)
 
 ### 示例4（透明度渐变转场）
 
@@ -508,7 +508,7 @@ struct ModalTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/cZbMiH3wQq2gEIPGINHOLQ/zh-cn_image_0000002791727100.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=84EF68513411B3DF982DCF0AB7EE716187077F9C944BF0E5D9C4A15A9A4FAB77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/iwWyhtLTTh-y-L8DSEc7Pg/zh-cn_image_0000002793038756.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6475BA369833BC66E7F757D33C815119205441CB4E98FF280BD97B14CF64F08)
 
 ### 示例5（设置不同效果的自定义转场）
 
@@ -626,7 +626,7 @@ struct ModalTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/uZz3t61PTnaMQe0t97ALLQ/zh-cn_image_0000002791567128.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBD8DC9FA0178529B845E9D5FA3306630116AE50EE62028F389EFA60CBE618B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/LV5GOKSlQKa14xlKX_p-Cw/zh-cn_image_0000002792878784.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF7D03F802678C657C3C3FB24DE997DE3FF6ADFFF0929DA89EBE5CB7938686FB)
 
 ### 示例6（设置全屏模态适配安全区）
 
@@ -689,4 +689,4 @@ struct SafeAreaController {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/hJyrO2EvTACTsjZWLlqtzQ/zh-cn_image_0000002820527081.png?HW-CC-KV=V1&HW-CC-Date=20261119T015052Z&HW-CC-Expire=31536000000&HW-CC-Sign=1951F726725EF1F213923014BE64B91FE8170D42C67D93F221363ADA9F7EE8A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/9P9X_LC4Ts-FeJoU-wYOdQ/zh-cn_image_0000002821838689.png?HW-CC-KV=V1&HW-CC-Date=20261121T011251Z&HW-CC-Expire=31536000000&HW-CC-Sign=B24A014F3A264F0EDB5215838D41C93FAD994D6640BBB0AC2C33D414585D3EF9)

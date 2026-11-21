@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: App加固与代码混淆配置常见问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > App加固与代码混淆配置常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T09:06:44+08:00
-doc_updated_at: 2026-11-12
-content_hash: sha256:5463f55c5ca99b14d376ca7cce0bccfe0cee729674faa3bb0a3d53d72feb09ac
+scraped_at: 2026-11-21T09:19:24+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:db9b106184605f7b7fa74080d0aa3896792eb69cfc1327fab9c02ebaade2a711
 ---
 
 **Q：开发的过程中，为了保护开发的App不被恶意破解，如何对App进行加密，混淆操作？**
@@ -14,7 +14,7 @@ content_hash: sha256:5463f55c5ca99b14d376ca7cce0bccfe0cee729674faa3bb0a3d53d72fe
 
 * 代码混淆：代码混淆是一种软件安全技术，旨在增加代码的复杂性和模糊性，从而增加攻击者分析和理解代码的难度。
   1. 开启混淆能力：Stage模型的工程在Release编译模式下[使能混淆](../harmonyos-guides/ide-build-obfuscation.md#section18326541833)，从DevEco Studio NEXT Developer Beta3（5.0.3.600）版本开始，默认不开启混淆。
-  2. 混淆配置能力：混淆配置文件obfuscation-rules.txt默认开启了四项推荐的混淆选项：-enable-property-obfuscation、-enable-toplevel-obfuscation、-enable-filename-obfuscation和 -enable-export-obfuscation，开发者可以根据需要进一步修改混淆配置。如果存在多个混淆规则文件，则可以参考[混淆规则合并策略](../best-practices/bpta-app-code-ob.md#section1842224516252)。
+  2. 混淆配置能力：混淆配置文件obfuscation-rules.txt默认开启了四项推荐的混淆选项：-enable-property-obfuscation、-enable-toplevel-obfuscation、-enable-filename-obfuscation和 -enable-export-obfuscation，开发者可以根据需要进一步修改混淆配置。如果存在多个混淆规则文件，则可以参考[混淆规则合并策略](../doccenter-capabilities/source-obfuscation-apply-code.md#混淆规则合并策略)。
   3. 配置保留选项：代码中可能有部分字段，方法不希望被混淆，这个时候可以通过配置混淆白名单，参考[保留选项](../harmonyos-guides/source-obfuscation-keep-options.md)。混淆常见案例汇总可以查看[扫描任务](../harmonyos-guides/ide-build-obfuscation.md#section18125192133818)中的混淆示例。
 * 应用加密：为了保护应用代码安全，保护开发者的核心资产，HarmonyOS提供了端到端的应用代码保护机制，该机制以系统安全为基础，构建内核级应用生命周期内的代码安全保护能力。 开发者向应用市场提交上架申请，上传应用包后可选择是否加密。选择加密的应用，在经过应用市场审核后，应用市场会对上架应用做代码加密。 应用在设备上安装时，安装文件落盘后仍是处于加密状态，有效的保护应用程序；当应用程序启动时按需解密。应用加密采用标准AES加密算法，解密后的明文只存在于内存中，不会存储到设备。
 
@@ -32,7 +32,7 @@ content_hash: sha256:5463f55c5ca99b14d376ca7cce0bccfe0cee729674faa3bb0a3d53d72fe
 
 **Q：App中依赖了其他自研so库，如何对so进行加固？**
 
-**A**：在HarmonyOS开发场景下，应用的代码分为C/C++等实现的代码，最终的编译产物主要为.so文件。其中.so文件由于反编译难度较大，代码逆向困难。so的加固可以使用三方提供的应用安全加固保护，部分[三方安全厂商](https://developer.huawei.com/consumer/cn/market/prod-list/a97c5f2de7df49f49c139a32125fa4c8/categoryL2_202404220005?categoryIdL3=categoryL3_202403120002)已支持HarmonyOS系统，具体方法请参考[使用第三方加固](../best-practices/bpta-app-code-ob.md#section4564113173012)。
+**A**：在HarmonyOS开发场景下，应用的代码分为C/C++等实现的代码，最终的编译产物主要为.so文件。其中.so文件由于反编译难度较大，代码逆向困难。so的加固可以使用三方提供的应用安全加固保护，部分[三方安全厂商](https://developer.huawei.com/consumer/cn/market/prod-list/a97c5f2de7df49f49c139a32125fa4c8/categoryL2_202404220005?categoryIdL3=categoryL3_202403120002)已支持HarmonyOS系统，具体方法请参考[使用第三方加固](../doccenter-capabilities/source-obfuscation-apply-code.md#使用第三方加固)。
 
 **Q：使用三方加固包加固签名后，App上传解析失败，报错993，如何处理？**
 
@@ -60,7 +60,7 @@ content_hash: sha256:5463f55c5ca99b14d376ca7cce0bccfe0cee729674faa3bb0a3d53d72fe
 
 **Q：开启代码混淆后，安装包解压仍能看到配置文件中的明文内容，如何处理？**
 
-**A**：代码混淆主要针对JS/TS代码生效，无法对配置文件中的明文内容进行混淆。若需进一步提升代码安全性，建议使用第三方安全厂商提供的高级混淆与加固能力，具体可参考[使用第三方加固](../best-practices/bpta-app-code-ob.md#section4564113173012)。
+**A**：代码混淆主要针对JS/TS代码生效，无法对配置文件中的明文内容进行混淆。若需进一步提升代码安全性，建议使用第三方安全厂商提供的高级混淆与加固能力，具体可参考[使用第三方加固](../doccenter-capabilities/source-obfuscation-apply-code.md#使用第三方加固)。
 
 **Q：是否支持单独对HAP包进行加密？**
 
@@ -68,7 +68,7 @@ content_hash: sha256:5463f55c5ca99b14d376ca7cce0bccfe0cee729674faa3bb0a3d53d72fe
 
 **Q：In-house模式的应用如何进行代码保护？**
 
-**A**：In-house模式应用不通过应用市场上架，无法使用应用加密能力。可以使用代码混淆进行代码保护，参考[混淆加固](../harmonyos-guides/ide-build-obfuscation.md)和[不同包类型的源码混淆建议](../harmonyos-guides/source-obfuscation-practice.md)。如需更高等级的安全保护，可使用第三方安全加固，具体参考[使用第三方加固](../best-practices/bpta-app-code-ob.md#section4564113173012)。
+**A**：In-house模式应用不通过应用市场上架，无法使用应用加密能力。可以使用代码混淆进行代码保护，参考[混淆加固](../harmonyos-guides/ide-build-obfuscation.md)和[不同包类型的源码混淆建议](../harmonyos-guides/source-obfuscation-practice.md)。如需更高等级的安全保护，可使用第三方安全加固，具体参考[使用第三方加固](../doccenter-capabilities/source-obfuscation-apply-code.md#使用第三方加固)。
 
 **Q：文档说API12开始默认开启四项混淆选项，又说从Developer Beta3（5.0.3.600）版本开始默认不开启混淆，以哪个为准？**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 实现游戏伴随
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏伴随服务 > 实现游戏伴随
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:48+08:00
+scraped_at: 2026-11-21T09:12:13+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:f4b52d09573dde0481a84dda18ad953743b2ece166088940cad2cbcd70e80299
+content_hash: sha256:0092d84edd207a8dc8b8a02957108b7978f16a7aa0952c36d7b46c70af6d35cd
 ---
 
 从API版本26.0.0开始，新增游戏伴随服务。游戏伴随服务为游戏陪玩类的应用提供游戏应用状态感知、游戏应用截图等基础能力。
@@ -20,7 +20,7 @@ content_hash: sha256:f4b52d09573dde0481a84dda18ad953743b2ece166088940cad2cbcd70e
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/_IVR3wWdQYWH7Orb7W1S1g/zh-cn_image_0000002791726150.png?HW-CC-KV=V1&HW-CC-Date=20261119T014848Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E36770342B6B1CFE2424438043A3876AA6D2A39B0D1CDBD82D5C003C3492FCF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/MiwR7zl7RXensYwt8F844w/zh-cn_image_0000002821837737.png?HW-CC-KV=V1&HW-CC-Date=20261121T011047Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C6CC4DCE7B426096408550F09F1F25A28897EC8840235DF739D0EF0249719CB)
 
 1. 用户启动游戏陪玩类应用。
 2. 用户启动游戏。

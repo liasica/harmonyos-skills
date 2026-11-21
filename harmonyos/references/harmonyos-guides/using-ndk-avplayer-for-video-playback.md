@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avp
 title: 使用AVPlayer播放视频(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用AVPlayer播放视频(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:41+08:00
+scraped_at: 2026-11-21T09:12:06+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ebe6ce00d2742cb3e5ffd4bf3f1be92a5d5051dbd966c0aac63fc0db19553bba
+content_hash: sha256:4e48ac9748349099e1ec08bf2c3507a9a96464560d45fc75c51e3387e1f6b2d6
 ---
 
 使用[AVPlayer](../harmonyos-references/capi-avplayer.md)可以实现端到端播放原始媒体资源，本开发指导将以完整地播放一个视频作为示例，向开发者讲解AVPlayer视频播放相关功能。
@@ -16,7 +16,7 @@ content_hash: sha256:ebe6ce00d2742cb3e5ffd4bf3f1be92a5d5051dbd966c0aac63fc0db195
 
 **播放状态变化示意图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/uLpsEe0US926p7gJg0mPgg/zh-cn_image_0000002791725996.png?HW-CC-KV=V1&HW-CC-Date=20261119T014747Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0944E5B921311EB69A24E37C7332C61C0C90F09D39FBE9A1C55AFBBAF6C4F3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/f1O6vkOFRB6J2B3hNozFZA/zh-cn_image_0000002821837583.png?HW-CC-KV=V1&HW-CC-Date=20261121T011039Z&HW-CC-Expire=31536000000&HW-CC-Sign=1961D82FBE58C8C5B9CA17CA84980E932988DD317D473DC72E7F74E26E0E2BD5)
 
 状态的详细说明请参考[AVPlayerState](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)。当播放处于AV\_PREPARED/AV\_PLAYING/AV\_PAUSED/AV\_COMPLETED状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源利用。
 

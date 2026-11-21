@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-transfo
 title: 使用PixelMap完成图像变换
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片编辑和处理 > 使用PixelMap完成图像变换
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:39+08:00
+scraped_at: 2026-11-21T09:12:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:dd20da5bfcc5d0d723350e91e2b63ae717cb2d5435a2b266b94b08e997c0d431
+content_hash: sha256:1f23f837fe5bd899b63b2d632d57e24c599dfff3649c3ed41d6af7d9f6d65abb
 ---
 
 图片处理指对PixelMap进行相关的操作，如获取图片信息、裁剪、缩放、偏移、旋转、翻转、设置透明度、读写像素数据等。图片处理主要包括图像变换、[位图操作](image-pixelmap-operation.md)，本文介绍图像变换。
@@ -31,7 +31,7 @@ content_hash: sha256:dd20da5bfcc5d0d723350e91e2b63ae717cb2d5435a2b266b94b08e997c
 
    原图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/9PA0usv8RaCNdwnEwPQhRQ/zh-cn_image_0000002820525947.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T014838Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6F2E6564E059736EA63A8191C2C66C905963D68DF9AFB4A7BBFDD0D68677FB3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/6vi1EH3DQJu0LTpBBibGiw/zh-cn_image_0000002793037618.jpeg?HW-CC-KV=V1&HW-CC-Date=20261121T011203Z&HW-CC-Expire=31536000000&HW-CC-Sign=495B677A4B8299D19EF745442EC5B2600B0CC24A41035B0FC1236D22DBC014B2)
 
    * 裁剪
 
@@ -48,7 +48,7 @@ content_hash: sha256:dd20da5bfcc5d0d723350e91e2b63ae717cb2d5435a2b266b94b08e997c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Qv3-5DF0QmCIAW8OrDtjDg/zh-cn_image_0000002820405947.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T014838Z&HW-CC-Expire=31536000000&HW-CC-Sign=397AD08083AF57431EF3FCFD5D79F2D4B6031EBFAC528B19E17C68B0A5829044)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/1VraI6pCT1-D0td2VswhNQ/zh-cn_image_0000002792877648.jpeg?HW-CC-KV=V1&HW-CC-Date=20261121T011203Z&HW-CC-Expire=31536000000&HW-CC-Sign=A23AD0EC676A63510495772A81F2245F67009BB752BE52CB8A3FE40D707732BD)
    * 缩放
 
      ```typescript
@@ -59,7 +59,7 @@ content_hash: sha256:dd20da5bfcc5d0d723350e91e2b63ae717cb2d5435a2b266b94b08e997c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/8BjMK5u6QHq1Yt9pRbu5Kw/zh-cn_image_0000002791725968.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T014838Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6EDC6DD62B8EE2675677B9829B8AC43E13C2B28D792A5E38C61F812E0E955E5)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/3xsCCE50Tvi5NYBiq01HEg/zh-cn_image_0000002821837555.jpeg?HW-CC-KV=V1&HW-CC-Date=20261121T011203Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B3ACD61322112D1102F0D422893C04F57A6D3019565FF4A6E217DE849417DB6)
    * 平移
 
      ```typescript
@@ -69,7 +69,7 @@ content_hash: sha256:dd20da5bfcc5d0d723350e91e2b63ae717cb2d5435a2b266b94b08e997c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/eAFnqHIgTt6GAAHZutSdeA/zh-cn_image_0000002791565996.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T014838Z&HW-CC-Expire=31536000000&HW-CC-Sign=5061917FDB371E570B39D51C74718A359B1C24CAAAF841BF797959C9F8177C81)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/1XmxbDYdRA2C-pco3tknZQ/zh-cn_image_0000002821757557.jpeg?HW-CC-KV=V1&HW-CC-Date=20261121T011203Z&HW-CC-Expire=31536000000&HW-CC-Sign=A12533A18A3E6BB06068581A0CEB070F2EAF9214FCD6638AE3DFD1E540FB7E3A)
    * 旋转
 
      ```typescript
@@ -79,7 +79,7 @@ content_hash: sha256:dd20da5bfcc5d0d723350e91e2b63ae717cb2d5435a2b266b94b08e997c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/tVHunOrYR1KRsIMtdcWC5w/zh-cn_image_0000002820525949.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T014838Z&HW-CC-Expire=31536000000&HW-CC-Sign=031BABDECF63C0F9E65BF9535148BC035AC04A88DD40D997ACF4FE37638F660A)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/QX328LG2QAGY-OK26LFw1Q/zh-cn_image_0000002793037620.jpeg?HW-CC-KV=V1&HW-CC-Date=20261121T011203Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E46347BB21AE8793F4366A745935BCCD744B36F2C2BB82E15D98EFE265FD750)
    * 翻转
 
      ```typescript
@@ -89,7 +89,7 @@ content_hash: sha256:dd20da5bfcc5d0d723350e91e2b63ae717cb2d5435a2b266b94b08e997c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/wAWIer4nRA6EKUZHiTvPHQ/zh-cn_image_0000002820405949.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T014838Z&HW-CC-Expire=31536000000&HW-CC-Sign=97C9A9645EAEA08BD81F5D76B06A693FC60801B85D5C2E1215AF5681B92B2A3B)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/a-ur-MRYTxa5qtUdryzyJA/zh-cn_image_0000002792877650.jpeg?HW-CC-KV=V1&HW-CC-Date=20261121T011203Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB8226D598DC988C82A1A7EC2BDAE3FFAED5AD5ED657470F99B0789E1BCA96EB)
 
      ```typescript
      // 水平翻转。
@@ -98,7 +98,7 @@ content_hash: sha256:dd20da5bfcc5d0d723350e91e2b63ae717cb2d5435a2b266b94b08e997c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/BLvkbHBfRH2XMcdXSQ5yHA/zh-cn_image_0000002791725970.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T014838Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1B7C3AD5D9DE4555CA544FA6B75635094E9736B815185A7CD12B6ACE84C8F8C)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/198CsRNrTDKzloqXW7gaxw/zh-cn_image_0000002821837557.jpeg?HW-CC-KV=V1&HW-CC-Date=20261121T011203Z&HW-CC-Expire=31536000000&HW-CC-Sign=9628D6A0869C438E1BE983681004A8A9BAC2E2E8DE47DAF0539CEA8B79077290)
    * 透明度
 
      ```typescript
@@ -108,4 +108,4 @@ content_hash: sha256:dd20da5bfcc5d0d723350e91e2b63ae717cb2d5435a2b266b94b08e997c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/Zos5TNSHQZGptl-tQVBbFg/zh-cn_image_0000002791565998.png?HW-CC-KV=V1&HW-CC-Date=20261119T014838Z&HW-CC-Expire=31536000000&HW-CC-Sign=645EADBB47D121A72CE7BF27CBB06A68CF99618DBA5734F73ABE9CD9231115A4)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/jTvLNj92SBWQYQ4LDC7UPQ/zh-cn_image_0000002821757559.png?HW-CC-KV=V1&HW-CC-Date=20261121T011203Z&HW-CC-Expire=31536000000&HW-CC-Sign=737ADB69710C560380AAC73E1C9000A3BBC2B2C07E9C1C643B563C4A4197F5DE)

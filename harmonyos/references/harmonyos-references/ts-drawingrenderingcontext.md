@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: DrawingRenderingContext
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > DrawingRenderingContext
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:08+08:00
+scraped_at: 2026-11-21T09:14:12+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:0e41254f7075b374839a7cdde21da4d493586b57a1d9c39d7f5d5e4f790ca2fd
+content_hash: sha256:09ac0bd1c6c184ce2d82ffef38712e96b071feb5bcad409c939c94b9206f380d
 ---
 
 DrawingRenderingContext对象与Canvas组件绑定后，可在Canvas组件上进行绘制，绘制对象可以是形状、文本、图片等。绑定方式：通过Canvas组件构造函数传入DrawingRenderingContext对象建立绑定关系。绘制流程：通过canvas属性获取DrawingCanvas对象，调用drawing模块接口执行绘制操作，最后调用invalidate()方法触发重新渲染。适用于需要高性能图形绘制、自定义图表、图像编辑等场景，相比CanvasRenderingContext2D提供了更灵活的绘制接口。
@@ -169,11 +169,11 @@ struct CanvasExample {
 
 图1 绘制圆心为(200, 200)，半径为100的圆，填充色为RGBA(39, 135, 217, 255)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/daLcsZlhR1acoO3UN_TaPw/zh-cn_image_0000002791567542.png?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8BAC53F9EFBF58268F95D6BDB68728E64E29AF0C4B8E86563DCB2A720FE26F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/u0V1AK2uSwKe42t819aHTg/zh-cn_image_0000002792879214.png?HW-CC-KV=V1&HW-CC-Date=20261121T011307Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E783F66A2B154393A2CE8773FB881E718E3EEC3852B5CA3D6B4004A2F09C7BA)
 
 图2 点击Clear按钮清空画布
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/gXFn_JBNQb6URoxplrgocA/zh-cn_image_0000002820527495.png?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9A54313F511D43C9A743EA5DB8BD17535F1D52029260230EF23A7533E796426)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/27HSNBcDSd-kk9D-TCIBUA/zh-cn_image_0000002821839119.png?HW-CC-KV=V1&HW-CC-Date=20261121T011307Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B658B5055008AE0D0531EDAAACFDC4EDBAA9BFDDEEC4E9C78755C4E3CE7D597)
 
 ### 示例2（绘制文本）
 
@@ -215,4 +215,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/KHnte2FoRAyaKAeuF06ZuA/zh-cn_image_0000002820407497.png?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=02A10E66144A41D802D16D75C088AC92786654AEC07C26D13372D4A0DC4EE459)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/nhy_7MDRQs6LVnhZH-a-1g/zh-cn_image_0000002821759119.png?HW-CC-KV=V1&HW-CC-Date=20261121T011307Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3F1BDC32C4C4E5BDD93625FF3F119078F4ACE66828C56A1355BC2A34FF08B4C)

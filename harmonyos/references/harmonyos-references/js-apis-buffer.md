@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.buffer (Buffer)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.buffer (Buffer)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:53+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:5567a79c8e6a998a04815b9441e1ff865bf181b56ef9e7739b8ad9c805337c69
+scraped_at: 2026-11-21T09:13:51+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:e37bc1367ff477608038b318b85ec9df14773a8bdd22af0897262ac851e52a64
 ---
 
 Buffer对象用于表示固定长度的字节序列，是专门存放二进制数据的缓冲区。
@@ -24,7 +24,7 @@ import { buffer } from '@kit.ArkTS';
 
 ## BufferEncoding
 
-type BufferEncoding = | 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'base64url' | 'latin1' | 'binary' | 'hex'
+type BufferEncoding = 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'base64url' | 'latin1' | 'binary' | 'hex'
 
 表示支持的编码格式类型。
 
@@ -1050,13 +1050,16 @@ import { buffer } from '@kit.ArkTS';
 
 let buf = buffer.from([0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x70,
   0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78]);
-console.info(buf.readBigUInt64LE(0).toString());
+let buf0 = buf.readBigInt64LE(0);
+console.info(buf0.toString());
 // 输出结果：8100120198111388771
 
 let buf1 = buffer.allocUninitializedFromPool(8);
-let result = buf1.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+let result = buf1.writeBigInt64LE(BigInt(buf0), 0);
 console.info("result = " + result);
 // 输出结果：result = 8
+console.info(buf1.readBigInt64LE(0).toString());
+// 输出结果：8100120198111388771
 ```
 
 ### readBigUInt64BE
@@ -1141,13 +1144,16 @@ import { buffer } from '@kit.ArkTS';
 
 let buf = buffer.from([0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x70,
   0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78]);
-console.info(buf.readBigUInt64LE(0).toString());
+let buf0 = buf.readBigUInt64LE(0);
+console.info(buf0.toString());
 // 输出结果：8100120198111388771
 
 let buf1 = buffer.allocUninitializedFromPool(8);
-let result = buf1.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+let result = buf1.writeBigUInt64LE(BigInt(buf0), 0);
 console.info("result = " + result);
 // 输出结果：result = 8
+console.info(buf1.readBigUInt64LE(0).toString());
+// 输出结果：8100120198111388771
 ```
 
 ### readDoubleBE
@@ -2343,9 +2349,9 @@ console.info("result = " + result);
 
 writeBigUInt64BE(value: bigint, offset?: number): number
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
-
 在Buffer对象的offset偏移处写入无符号的大端序64位BigUInt型数据。
+
+**元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 

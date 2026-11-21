@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/want-overview
 title: Want概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 信息传递载体Want > Want概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:25+08:00
+scraped_at: 2026-11-21T09:10:52+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:7bc29bebd41e950003596547e8f0f21304d50bcf5832176b5e3bf6a2cb9410d9
+content_hash: sha256:bb03646fab3056cb11edde90fc4f3564d8089f8dea0b28af7013ec1e7156b83d
 ---
 
 ## Want的定义与用途
@@ -16,7 +16,7 @@ content_hash: sha256:7bc29bebd41e950003596547e8f0f21304d50bcf5832176b5e3bf6a2cb9
 
 **图1** Want用法示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/CRFP5Di4S7-4ThiXHXB38g/zh-cn_image_0000002791724428.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=03DA0CC1342AC8086B5A647CC32F38B5A3CD56049C9AE5E0ED65DEC687A336B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/KHuiraVpRC-iwAZtAivTWA/zh-cn_image_0000002821836011.png?HW-CC-KV=V1&HW-CC-Date=20261121T011051Z&HW-CC-Expire=31536000000&HW-CC-Sign=9784017FB5E21D4379407CF42EA465526F65C8E8DE384A65EF86F3D2EBD2BABF)
 
 ## Want的类型
 

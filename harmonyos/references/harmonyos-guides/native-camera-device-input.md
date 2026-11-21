@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 设备输入(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用必选能力(C/C++) > 设备输入(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:04+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:72b796b4052c4115865c43fef89d93057ab6e1e4b0d63214feb53f51e1b38c67
+scraped_at: 2026-11-21T09:12:02+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:45d0309e5b2541152b619209d9b6e166bb2dc3ccf45d89032b863ee904f4a1b4
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -42,38 +42,34 @@ content_hash: sha256:72b796b4052c4115865c43fef89d93057ab6e1e4b0d63214feb53f51e1b
 
    ```
    // 监听cameraInput错误信息。
-   void OnCameraInputError(const Camera_Input* cameraInput, Camera_ErrorCode errorCode)
+   void OnCameraInputError(const Camera_Input *cameraInput, Camera_ErrorCode errorCode)
    {
-      OH_LOG_ERROR(LOG_APP, "OnCameraInput errorCode: %{public}d", errorCode);
+       OH_LOG_INFO(LOG_APP, "OnCameraInput errorCode = %{public}d", errorCode);
    }
 
-   CameraInput_Callbacks* GetCameraInputListener(void)
+   CameraInput_Callbacks *NDKCamera::GetCameraInputListener(void)
    {
-      static CameraInput_Callbacks cameraInputCallbacks = {
-         .onError = OnCameraInputError
-      };
-      return &cameraInputCallbacks;
+       static CameraInput_Callbacks cameraInputCallbacks = {
+           .onError = OnCameraInputError
+       };
+       return &cameraInputCallbacks;
    }
-   ```
 
-   ```
    // 监听cameraStatus信息。
-   void CameraManagerStatusCallback(Camera_Manager* cameraManager, Camera_StatusInfo* status)
+   void CameraManagerStatusCallback(Camera_Manager *cameraManager, Camera_StatusInfo *status)
    {
-       OH_LOG_INFO(LOG_APP, "CameraManagerStatusCallback is called");
+       OH_LOG_INFO(LOG_APP, "CameraManagerStatusCallback");
    }
 
-   CameraManager_Callbacks* GetCameraManagerListener()
+   CameraManager_Callbacks* NDKCamera::GetCameraManagerListener(void)
    {
        static CameraManager_Callbacks cameraManagerListener = {
            .onCameraStatus = CameraManagerStatusCallback
        };
        return &cameraManagerListener;
    }
-   ```
 
-   ```
-   void CreateAndOpenCamera()
+   void NDKCamera::CreateAndOpenCamera()
    {
        Camera_Manager* cameraManager = nullptr;
        Camera_Input* cameraInput = nullptr;
@@ -92,11 +88,11 @@ content_hash: sha256:72b796b4052c4115865c43fef89d93057ab6e1e4b0d63214feb53f51e1b
            OH_LOG_ERROR(LOG_APP, "OH_CameraManager_RegisterCallback failed.");
        }
        // 获取相机列表。
-        ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &size);
-        if (cameras == nullptr || size == 0 || ret != CAMERA_OK) {
-            OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameras failed.");
-            return;
-        }
+       ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &size);
+       if (cameras == nullptr || size == 0 || ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameras failed.");
+           return;
+       }
        // 创建相机输入流。
        ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[cameraDeviceIndex], &cameraInput);
        if (cameraInput == nullptr || ret != CAMERA_OK) {
@@ -122,32 +118,37 @@ content_hash: sha256:72b796b4052c4115865c43fef89d93057ab6e1e4b0d63214feb53f51e1b
 4. 通过[OH\_CameraManager\_GetSupportedSceneModes()](../harmonyos-references/capi-camera-manager-h.md#oh_cameramanager_getsupportedscenemodes)方法，获取当前相机设备支持的模式列表，列表中存储了相机设备支持的所有模式[Camera\_SceneMode](../harmonyos-references/capi-camera-h.md#camera_scenemode)。
 
    ```
-   bool IsSupportedSceneMode(Camera_Device camera, Camera_SceneMode sceneMode)
+   bool NDKCamera::IsSupportedSceneMode(Camera_Manager* cameraManager, Camera_Device camera, Camera_SceneMode sceneMode)
    {
        Camera_SceneMode* sceneModes = nullptr;
        uint32_t sceneModeSize = 0;
        Camera_ErrorCode ret = OH_CameraManager_GetSupportedSceneModes(&camera, &sceneModes, &sceneModeSize);
-       if (sceneModes == nullptr || ret != CAMERA_OK) {
+       if (ret != CAMERA_OK || sceneModes == nullptr) {
            OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedSceneModes failed.");
            return false;
        }
+       bool isSupported = false;
        for (uint32_t index = 0; index < sceneModeSize; index++) {
            OH_LOG_INFO(LOG_APP, "scene mode = %{public}u ", sceneModes[index]);    // 获取相机指定模式。
            if (sceneModes[index] == sceneMode) {
-               return true;
+               isSupported = true;
+               break;
            }
        }
-       return false;
+       // 使用完毕后释放场景模式列表，防止内存泄漏。
+       OH_CameraManager_DeleteSceneModes(cameraManager, sceneModes);
+       return isSupported;
    }
    ```
 5. 通过[OH\_CameraManager\_GetSupportedCameraOutputCapabilityWithSceneMode()](../harmonyos-references/capi-camera-manager-h.md#oh_cameramanager_getsupportedcameraoutputcapabilitywithscenemode)方法，获取当前设备在当前模式下支持的所有输出流，如预览流、拍照流等。输出流在[Camera\_OutputCapability](../harmonyos-references/capi-oh-camera-camera-outputcapability.md)中的各个profile字段中。根据相机设备指定模式[Camera\_SceneMode](../harmonyos-references/capi-camera-h.md#camera_scenemode)的不同，需要向Session中添加对应类型的输出流，请参考会话管理[开发步骤](native-camera-session-management.md#开发步骤)中的第6步。
 
    ```
-   Camera_OutputCapability* GetSupportedCameraOutputCapability(Camera_Manager* cameraManager, Camera_Device &camera)
+   Camera_OutputCapability* NDKCamera::GetSupportedCameraOutputCapability(Camera_Manager* cameraManager,
+       Camera_Device &camera)
    {
        Camera_OutputCapability* cameraOutputCapability = nullptr;
        // 示例代码以NORMAL_PHOTO模式为例，查询NORMAL_PHOTO在camera中是否支持。
-       bool isSupported = IsSupportedSceneMode(camera, Camera_SceneMode::NORMAL_PHOTO);
+       bool isSupported = IsSupportedSceneMode(cameraManager, camera, Camera_SceneMode::NORMAL_PHOTO);
        if (!isSupported) {
            OH_LOG_ERROR(LOG_APP, "NORMAL_PHOTO is not supported.");
            return cameraOutputCapability;

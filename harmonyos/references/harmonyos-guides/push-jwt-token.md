@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-jwt-toke
 title: 基于服务账号生成鉴权令牌
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > 基于服务账号生成鉴权令牌
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:10+08:00
+scraped_at: 2026-11-21T09:12:36+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:268f502bcb66ec4fb2e35f5a547d84d801bfb05cec20b0f299c29b4ad6224ef8
+content_hash: sha256:c3b63195874612da7c8dc205e9f5691b96cda38f291455ac60045b8fe19b67db
 ---
 
 ## 概述
@@ -36,7 +36,7 @@ BRNss*****7az5oU7-Zp5g9X2WJVXXX
 
    在华为开发者联盟的[API Console](https://developer.huawei.com/consumer/cn/console/api/myApi)上选择所在项目，创建“服务账号密钥”凭证，并下载推送服务API的服务账号密钥文件。相关创建步骤请参见[API服务操作指南-服务账号密钥](../start/api-0000001062522591.md#section3554194116341)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/gbE5CplSThysuUczed7bgQ/zh-cn_image_0000002791726574.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=29571E18E5A0F745DDBE53C63193C4666903816C0AF54BD416FF6E594B9B6D6B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/sysTro6QSIuQbl8vChM4Qw/zh-cn_image_0000002793038226.png?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=0706F8205F22DCD2C6FC55D66E9B03DD312274B4648621B54C6842D4A2C2923D)
 
    您申请后的服务账号密钥样例文件形式可参考（文件内容已经经过脱敏处理）：
 
@@ -56,7 +56,7 @@ BRNss*****7az5oU7-Zp5g9X2WJVXXX
 
    您的应用所属项目ID查看方法：登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”，在该页面获取。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/UJKAe_GQTH2OigCtADwd_w/zh-cn_image_0000002791566602.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=422B56A6958CEFD2DACAF2BD6B6B7DEDCE39B3181DD7BE5FBE586A6A9B1C74F1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/lti3qZ1CRCunPIY-Ou8gyg/zh-cn_image_0000002792878256.png?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=D549A7D2116484E6E22E9A344DB1009C95F4AD969EBE0D4102064CBFB54D2DD8)
 3. 生成JWT Header数据。
 
    根据服务账号密钥文件中的key\_id（对应示例中的kid）字段拼接以下JSON体，对JSON体进行BASE64编码。
@@ -133,7 +133,7 @@ Authorization格式：Bearer后面拼接空格，再拼接获取的鉴权信息�
 
 1. 完成上述[开发步骤](push-jwt-token.md#开发步骤)中的步骤1创建服务账号密钥文件后，从华为开发者联盟的[API Console](https://developer.huawei.com/consumer/cn/console/api/myApi)上创建并下载推送服务API的服务账号密钥文件（.json文件），格式如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/hZjHANezRp60qvsZjzSEKw/zh-cn_image_0000002820526555.png?HW-CC-KV=V1&HW-CC-Date=20261119T014910Z&HW-CC-Expire=31536000000&HW-CC-Sign=570CDA334476F592582188CEB2763554E9E17FACCD5C451B46E1E316AB22E1AB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/WSF-vNiHRDq4GbKaR05Xgg/zh-cn_image_0000002821838163.png?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=D91BF6A7623ED3D35AE833409C887438A7276A25C4E13D719653164739D72C89)
 2. 以上json文件复制至工程中，参考如下代码进行解析（以private.json为例，本示例基于io.jsonwebtoken:jjwt 0.11.5版本开发，该库各版本API差异较大，请根据实际依赖版本自行适配）。
 
 Java：

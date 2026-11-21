@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建弧形轮播 (ArcSwiper)（圆形屏幕推荐使用）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 媒体展示 > 创建弧形轮播 (ArcSwiper)（圆形屏幕推荐使用）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:41+08:00
+scraped_at: 2026-11-21T09:11:06+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e883224e1c44e5e0db34d11751fcf7b728e10af05d516c6c97c27662bdd2ca61
+content_hash: sha256:33772e2c595fe564c9c5d4bf30381275804013bc28e01d920a122b17029f9129
 ---
 
 ArcSwiper是弧形轮播组件，在圆形屏幕场景下使用，提供弧形轮播显示能力。具体用法请参考[ArcSwiper](../harmonyos-references/ts-container-arcswiper.md)。
@@ -55,7 +55,7 @@ ArcSwiper提供了默认的弧形导航点样式，导航点默认显示在ArcSw
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/cE4TDk_bT-SnjvqNVd3GuA/zh-cn_image_0000002820525019.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=03CFA01CDD02DE7EE4561BDF550C65634846AA4FE17463A9A62B8E2838F00C32)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/xxCpIW7CRumV0CHuzdA41g/zh-cn_image_0000002793036686.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=227E1668A022BBC7683E836B9E16E5F01B33B68CDE64EEA1510521F7C87BD2E4)
 * 自定义导航点样式
 
   导航点位于ArcSwiper组件6点钟方向，导航点颜色设为红色，被选中导航点颜色为蓝色。
@@ -72,7 +72,7 @@ ArcSwiper提供了默认的弧形导航点样式，导航点默认显示在ArcSw
   )
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/b-64N3QfQVuE-obGrZVIbw/zh-cn_image_0000002820405019.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC3183FCE2A48F03544E97593EA78240178DED4AC8EF0521873B14E914D59F53)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/seiYK5ZbRl68ZAs-TuXTNw/zh-cn_image_0000002792876718.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D5F0D3F23672A3B1157F2D163B9F71DE99F68FD4D9E3D95423E2D2384050860)
 
 ## 控制页面切换方式
 
@@ -149,7 +149,7 @@ ArcSwiper支持滑动手指、点击导航点、旋转表冠和控制控制器�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/LFwBRcK0SH-YpZacn2S2Mw/zh-cn_image_0000002791725040.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=95C9459BC069ADC9C9D2F0B97F876392989B344BAD76E578805982187B2DB2A2)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/gDQIybZiQfqgB_IDiTo-Jw/zh-cn_image_0000002821836623.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=42B253C12ED6BF45869A03B3AD85E62AA146CF82DCE1A9496BCCE461107A9CD1)
 * 旋转表冠翻页。
 
   ArcSwiper在获得焦点时能够响应旋转表冠的操作，用户可以通过旋转表冠来滑动ArcSwiper，从而浏览数据。
@@ -196,7 +196,7 @@ ArcSwiper支持水平和垂直方向上进行轮播，主要通过[vertical](../
   .vertical(false)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/PcwpeMVyRseFZBw6Jt3b6w/zh-cn_image_0000002820525019.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=005EAE6C6D2314D8D5F3BA781E3F8C6C02A542161BA3F801B0A41ADE2EB5BC6F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/QRIv22VDRS2hFukQ1jcwqQ/zh-cn_image_0000002793036686.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDE68E4A08AFEA718BD0FF1BD97AC1B7B55B951BBE48F5D3EF20B65DA6CB418E)
 * 设置垂直方向轮播，导航点设为3点钟方向。
 
   ```typescript
@@ -208,7 +208,7 @@ ArcSwiper支持水平和垂直方向上进行轮播，主要通过[vertical](../
   .vertical(true)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/JXvuP20ZSyW3q1Sg_b_utw/zh-cn_image_0000002791565068.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9944DE6794115F382FFBB0A360BA25A15364B6C03AB0E30B00277770962C078)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/J7Q-bTyoSvuLdnSu0eOz-A/zh-cn_image_0000002821756625.png?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=E29A9F7296121914B68630D5C5B451623E7449991C3DAF0E7F17ECD471245B24)
 
 ## 自定义切换动画
 
@@ -277,7 +277,7 @@ export struct ArcSwiperAction {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/uLIlMQWLQvOfq5B5uA0XGg/zh-cn_image_0000002820525021.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8519C31C1112F776CAF7AFA2367D9F8E8F150EF4A00981E159206348807C694)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/26R68T8cRt2lPsjX6gOXMg/zh-cn_image_0000002793036688.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=E346EC0DC5AD142AD693549E2F428D4709C0C61DE01402727F4E5C6B8A13A7D2)
 
 ## 实现侧滑返回
 
@@ -339,4 +339,4 @@ export struct ArcSwiperSideSlip {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/wee7nu-SSheM5ceL7dpKUQ/zh-cn_image_0000002820405021.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7E315640CAC5243EB2F12BE8FEBCA5F2BCCD7404B4EDF2032E1693F5F9D8BD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/_9s8KVlmTtCMR0YYDjqWCA/zh-cn_image_0000002792876720.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011106Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B91FC4BEB57B32124F1B8F17D4D27BD2900D28B90377AF486157D84FA9F92C2)

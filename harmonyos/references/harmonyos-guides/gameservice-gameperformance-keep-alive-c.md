@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 设置游戏实况窗后台保活（C/C++）
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选） > 开发指导（C/C++） > 设置游戏实况窗后台保活（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:58+08:00
+scraped_at: 2026-11-21T09:12:24+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:86a05fc1ac2fcf1c759a3039ed44dabba22bca919812db2e6f66285c1c13bf16
+content_hash: sha256:c4b9ec0d82e1c74d71802de1ba91b9c480e3559b18764a96c87b8d3a87498271
 ---
 
 从API版本26.0.0开始，游戏场景感知服务支持实况窗后台保活能力；从API版本26.0.1开始，游戏场景感知实况窗后台保活能力支持本地调试。当游戏切换到后台时，游戏继续运行并上报当前游戏场景信息，通过对应场景ID配置的实况窗内容展示当前游戏状态。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/GhOKCtO_TaaBH450doYXFg/zh-cn_image_0000002791726334.png?HW-CC-KV=V1&HW-CC-Date=20261119T014857Z&HW-CC-Expire=31536000000&HW-CC-Sign=74AABA83E104621CCFC02E3819D01C90A3A6C8DBE065E3266B102D9D1E9AB10D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/R1KnRxJaSe2_lo6sV2tksg/zh-cn_image_0000002821837921.png?HW-CC-KV=V1&HW-CC-Date=20261121T011056Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED674811B22F420912A409FD4F6D8F6326FEA4594A036C525B2C1A21BCA384C0)
 
 1. 游戏启动后调用[HMS\_GamePerformance\_Init()](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_init)接口对游戏场景感知进行初始化。
 2. 初始化成功后，游戏调用[HMS\_GamePerformance\_UpdateSceneInfo()](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_updatesceneinfo)接口向游戏场景感知上报游戏场景信息。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片主动刷新
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面刷新 > ArkTS卡片主动刷新
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:57+08:00
+scraped_at: 2026-11-21T09:11:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:40d64c3b7e82d6a5a4b29c80afa1f96c4e36805905f17a53a0ff7932a39d6564
+content_hash: sha256:474b0a19aa25cefe51d4895c541aeeeb9b406c545744be7d5a322f588c5835db
 ---
 
 本文主要提供主动刷新的开发指导，刷新流程请参考[主动刷新概述](arkts-ui-widget-interaction-overview.md#主动刷新)。
@@ -189,7 +189,7 @@ content_hash: sha256:40d64c3b7e82d6a5a4b29c80afa1f96c4e36805905f17a53a0ff7932a39
 
 ### 运行结果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/rNthlLGBTzW660eim7Y5fA/zh-cn_image_0000002791725562.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA7568B41F4EDC2BE7C6543033E44E17E7D80A8C5DBB7E261BF08741E7BE7C4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/T2RVka_PTGOcas7NALrcGQ/zh-cn_image_0000002821837149.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010958Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F22091A6CFEAFEBA5B2D9C385BD80A970B02653C4E0045805F930825ADE0B47)
 
 ## 卡片提供方批量请求刷新卡片内容
 
@@ -354,4 +354,4 @@ content_hash: sha256:40d64c3b7e82d6a5a4b29c80afa1f96c4e36805905f17a53a0ff7932a39
 
 ### 运行结果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/XeEIukDcSkGZuxIi-lHyQA/zh-cn_image_0000002791565590.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=643BAD0A0D17FA7421F72DCB55E307C3169815D365CFF15BFD79ACB44CB41CA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/nqdOx8gTTsyxfchO7IrtEg/zh-cn_image_0000002821757151.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010958Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E269AF6C96C61BF4BE9F6B4A7724450ED7285B78D45B3DAD78D4E4FAB6BE02F)

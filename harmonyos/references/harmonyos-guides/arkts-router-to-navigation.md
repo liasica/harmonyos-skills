@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-router-
 title: Router切换Navigation
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > Router切换Navigation
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:39+08:00
+scraped_at: 2026-11-21T09:11:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:25e5920da3b7c887c5a0734290dd33dee1e64f0a6da7476784e44b7393862e15
+content_hash: sha256:1ff399a0cb7ccf237b8e323ea114c294980117174b60483c7f5ac9badecfa2e4
 ---
 
 鉴于组件导航（[Navigation](../harmonyos-references/ts-basic-components-navigation.md)）支持更丰富的动效、一次开发多端部署能力和更灵活的栈操作。本文主要从页面跳转、动效和生命周期等方面介绍如何从Router切换到Navigation。
@@ -411,7 +411,7 @@ onPageHide(): void {
 
 其生命周期时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/U6ZGchneQ5OrTmMCVzxlsw/zh-cn_image_0000002820404779.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=50F5AE72FD6828DF2489F23DB64B3D04F79484DCF8D778FBB32DEA4E6F6636E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/UMK5SPX1RBmiWlVnBJW8Ng/zh-cn_image_0000002792876480.png?HW-CC-KV=V1&HW-CC-Date=20261121T010941Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F6094D69FB3F645B0718DA09B80C979B87E0535DF7EB9A51139E1402387087E)
 
 Navigation作为路由容器，其生命周期承载在NavDestination组件上，以组件事件的形式开放。
 

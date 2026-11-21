@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: input
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > input
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:21+08:00
+scraped_at: 2026-11-21T09:14:22+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:82b7763d6ee945f8a1acedd7966783bcaf44a1c86a94433a15c4834537fcb409
+content_hash: sha256:e296f9fc400df8f400ae3fcd9fe016a15faba5ca192ac899079bdf5181fc14c9
 ---
 
 **说明** 
@@ -152,7 +152,7 @@ content_hash: sha256:82b7763d6ee945f8a1acedd7966783bcaf44a1c86a94433a15c4834537f
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/ZuQO6RQpRmiF2c7-rhy1iA/zh-cn_image_0000002791727786.png?HW-CC-KV=V1&HW-CC-Date=20261119T015120Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB0CB8BF698DFE81C57A1199CE8684D60F884DE9351FC90C5095AC0F8E445B33)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/7_6L-0igQV6HZnKqsKe7pQ/zh-cn_image_0000002793039468.png?HW-CC-KV=V1&HW-CC-Date=20261121T011421Z&HW-CC-Expire=31536000000&HW-CC-Sign=4861860A5AB1EE6193F3E8DC5EDDD4766B78260BB7A1BB787AA3CF57E0466D7E)
 2. type为button
 
    ```html
@@ -174,7 +174,7 @@ content_hash: sha256:82b7763d6ee945f8a1acedd7966783bcaf44a1c86a94433a15c4834537f
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/Us3mZMQwRoixgePyhVaQig/zh-cn_image_0000002791567814.png?HW-CC-KV=V1&HW-CC-Date=20261119T015120Z&HW-CC-Expire=31536000000&HW-CC-Sign=E64B4B877BB20D6F34E67E8CA13B903ABDE2601B1E66ACE4B78A92CEFF1137EC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/GDZAGPj3TjSsOqhdZtY-1g/zh-cn_image_0000002792879494.png?HW-CC-KV=V1&HW-CC-Date=20261121T011421Z&HW-CC-Expire=31536000000&HW-CC-Sign=65EDFF74B96F13AAF85B92195BE811F561BF4998597830380A8E7ED27696CF1C)
 3. type为checkbox
 
    ```html
@@ -207,7 +207,7 @@ content_hash: sha256:82b7763d6ee945f8a1acedd7966783bcaf44a1c86a94433a15c4834537f
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/5AP-CEJIRFulCO3rc2E5nw/zh-cn_image_0000002820527767.png?HW-CC-KV=V1&HW-CC-Date=20261119T015120Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F787C498A756CE8E39492750309341FBD32274F4068B56D5AE79E120A1A591B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/BE9oWKN3Ryeepvb6a6Y9Ow/zh-cn_image_0000002821839399.png?HW-CC-KV=V1&HW-CC-Date=20261121T011421Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C788AFD33DE58A4E7AE09DDB667C36C81FCF121A2841B119A66CA3E79DB999F)
 4. type为radio
 
    ```html
@@ -244,4 +244,4 @@ content_hash: sha256:82b7763d6ee945f8a1acedd7966783bcaf44a1c86a94433a15c4834537f
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/uR60dkeZSViPQC8u5JgCKg/zh-cn_image_0000002820407769.png?HW-CC-KV=V1&HW-CC-Date=20261119T015120Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF27D4289236FD3E4C390838BBEA50B693417EFACE5B423B9711C14A3D5F38AD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/dJcTfaiSRvOvaH46W5Q1nA/zh-cn_image_0000002821759401.png?HW-CC-KV=V1&HW-CC-Date=20261121T011421Z&HW-CC-Expire=31536000000&HW-CC-Sign=6ADEB2A47875DCB0BC9E9245DB1BB601A87360BC23B05B977C25C009804B10BB)

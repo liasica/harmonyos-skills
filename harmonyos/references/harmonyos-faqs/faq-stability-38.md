@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-3
 title: 打开扫一扫，扫描二维码时应用闪退
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 打开扫一扫，扫描二维码时应用闪退
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:49+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:c2945ac66a7b2c5c5de344c768447a7d31aab51ca2cbbe71bfc37b6133573821
+scraped_at: 2026-11-21T09:17:30+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:4eb9ab4addc8e0e72109818b05fd1762c528ef6df4e72f0c8e912b3a956b2321
 ---
 
 ## 问题现象
@@ -32,7 +32,7 @@ content_hash: sha256:c2945ac66a7b2c5c5de344c768447a7d31aab51ca2cbbe71bfc37b61335
    #07 pc 000000000006b1b0 /system/lib64/ndk/libffrt.so(ffrt::CPUWorker::WrapDispatch(void*)+28)(9322025bdb3c2fcf4efadf8730f620e8)
    #08 pc 00000000001bade8 /system/lib/ld-musl-aarch64.so.1(start+236)(e9ff207f4340aee156e36fdd8af0ab22)
    ```
-2. 排查hilog日志中customScan接口的调用情况，可以看出应用调用时序有问题，[customScan.init](../harmonyos-references/scan-customscan-api.md#init)->[customScan.stop](../harmonyos-references/scan-customscan-api.md#stop)->[customScan.release](../harmonyos-references/scan-customscan-api.md#release)->[customScan.start](../harmonyos-references/scan-customscan-api.md#start)同步调用，start创建完相机会话被release接口释放了，导致scan is not initialized。
+2. 排查hilog日志中customScan接口的调用情况，可以看出应用调用时序有问题，[customScan.init](../doccenter-references/api/scan-customscan-api.md#customscaninit)->[customScan.stop](../doccenter-references/api/scan-customscan-api.md#customscanstop)->[customScan.release](../doccenter-references/api/scan-customscan-api.md#customscanrelease)->[customScan.start](../doccenter-references/api/scan-customscan-api.md#customscanstart)同步调用，start创建完相机会话被release接口释放了，导致scan is not initialized。
 
    ```shell
    // requestCameraPermission请求相机权限

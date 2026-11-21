@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 组件复用迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 组件复用迁移
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:38+08:00
+scraped_at: 2026-11-21T09:11:04+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:f3ef16ef64bfa3336ac313257a3c0c54a14afe0460d5543368d357f5783c6835
+content_hash: sha256:091b93559df5d853e0f22edbbb44ec9d2901bbc54f77c0882e28f685c277c2bd
 ---
 
 本文档主要介绍组件复用从V1向V2的迁移，涉及如下装饰器。
@@ -177,7 +177,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ZJGkKvSvT7mXZeJqWPVgPg/zh-cn_image_0000002791724716.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED04C51F01B8F01A2CF831C25F8E1E6EA36638E1827D4D11568578AB96BB8342)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/X0PHclLdSH2PjBAyaR54YQ/zh-cn_image_0000002821836299.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CB1385580F68E73A76462DB9E8E717EA7CECE67EF6E858A26E2FBF68C3489CB)
 
 ### 列表滚动-Repeat使用场景
 
@@ -258,7 +258,7 @@ export struct CardViewV2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/RZFmkL8rTne2MsonjZYGGQ/zh-cn_image_0000002791564744.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A3E690B2806BBD3353B83E1762CB3EDC1699A8860C9B9C3FAD54E86EA1AD91D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/HAya4VPRSEqoC3R4UD6oEg/zh-cn_image_0000002821756299.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=15A707C688026FA6BB6A8E9E86B73D2577A36606881480D638AE42860B0E5FE4)
 
 ### 列表滚动-if使用场景
 
@@ -365,7 +365,7 @@ export struct OneMoment {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/0R1ssapAR2i_9OoFWGPYQw/zh-cn_image_0000002820524697.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=3691C9A2D286199B95E1CA7AF724E03817BED0C0C6739C44C1539604EBE38C2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/1vmvAcTsSimWqpPzmIWdMQ/zh-cn_image_0000002793036364.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA8D92E76C924661506DAEF36589985ED20E81A76B55D5D80B3CF9E21F16C91F)
 
 ### 列表滚动-Repeat全量加载使用场景
 
@@ -486,7 +486,7 @@ class ListItemObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/p0IVddIKTG-A7QDu1w66Dw/zh-cn_image_0000002820404695.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=99304740A3DADD79DC6F8241758E8B8F4CA612B25286257A879D363CCC0486F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/_1Ll1225R42AYeKQpSR6nQ/zh-cn_image_0000002792876396.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5040CBA3954DFAFF26D6AFC819314984DC4D725D5CA7CA85BD6D0B53D977FD6)
 
 ### Grid使用场景
 
@@ -556,7 +556,7 @@ struct ReusableV2ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/nAmGLl6XRuiLcex5sl7tdQ/zh-cn_image_0000002791724718.png?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=0ED1E6B13441F89BB2DBA18153DFEAC26D879E6F4B03AF018BFAB2670C8364D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/8o9qE8XnQ8GlEOtxI61i7w/zh-cn_image_0000002821836301.png?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=373504DA610B0CC1C69467FF945738D431B0694D918851145B6C92402E932028)
 
 ### WaterFlow使用场景
 
@@ -661,7 +661,7 @@ struct ReusableWaterFlowScene {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/cxmQvpuqTk-zAg_pKt9U2g/zh-cn_image_0000002791564746.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD3C62A4570E490D4A23846B3A42276BE505DC5649DEE7323E880AADCA3A072D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/kPmJWGZZRGGpYy6AvEQIkQ/zh-cn_image_0000002821756301.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A3EC8043A883A17D40941F873BB23C00A54E213B6BA885393B8BD67C7175982)
 
 ### Swiper使用场景
 
@@ -767,7 +767,7 @@ struct QuestionSwiperItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/q7lFiCdhTz2SZE2WgU8wow/zh-cn_image_0000002820524699.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E474DE05CD9A15CB380BE5963B59A6C8A1CD312F896A9B92FB4E743B9D97994)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/FO0wIlrfSxePYyjgiD6XAw/zh-cn_image_0000002793036366.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DF1852DA268B525B21FFC6D1E76373C779F047E1DDD922EC252C542F4AB005A)
 
 ### 列表滚动-ListItemGroup使用场景
 
@@ -848,7 +848,7 @@ class DataSrc {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/qlz1uBERQfeuILwqW4JhWg/zh-cn_image_0000002820404697.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=F695CD23FD6C228A12CEC1BCE94BBB29EE18720A658E34E00C15FF4EB5FD5C7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/waqscfccS_K0XJ0OV0P8pw/zh-cn_image_0000002792876398.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=168AD705C6C0B68B8AAAA18FA92520AFE79B847CA6B9CB0181F49A0D9FCDB917)
 
 ### 多种条目类型使用场景
 
@@ -934,7 +934,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/O-ot_9ABRNWm36X9bgj5jQ/zh-cn_image_0000002791724720.png?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BE84F9437833D4B31B949752EA38353B7DB8F7E526D998B84BF58C35E2A0744)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/YDy7QAAdR8236Lwr1dMQjA/zh-cn_image_0000002821836303.png?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D5D2C55B7E27460E0A8DF989498A03DE597B4F4D4BEE48AB5476719A9522CEC)
 
 **组合型**
 
@@ -1110,4 +1110,4 @@ struct ChildComponentD {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/tCUlvurkQI2kjtebOiftEQ/zh-cn_image_0000002791564748.png?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C5FBD355E4CD9537BCF62F80DD95D99D2CD0192B3C5B8FE9CF5D6625C3FEC62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/x8BiXYuUS4OKoeDR9lVTMg/zh-cn_image_0000002821756303.png?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FA061E66FFA49BE0D96D47BE819B8E3D108B6A5C990A099674EA9723DCA1BA0)

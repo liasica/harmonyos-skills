@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 循环渲染迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 循环渲染迁移
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:38+08:00
+scraped_at: 2026-11-21T09:11:04+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:053fdc6c44cf032da343d246e3eae47f61f33262dc9c1700713bd047bedf06b2
+content_hash: sha256:0cf6ff220691297d5e4b00964ca0c1f48b772603b98996f8c6cbe99eb8f98070
 ---
 
 本文档主要介绍组件循环渲染从V1向V2的迁移，涉及如下渲染控制组件。
@@ -339,7 +339,7 @@ export struct MyComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0ITMgN2ZRX2Pjt9I85qEdg/zh-cn_image_0000002820524701.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=13D0668E52191D30F93E8A66A3FE7D0C3B681D30B7DD822C617A26A49D542A1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/dxOwK0mLRYSVLjk_2wjfgw/zh-cn_image_0000002793036368.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=04E40FCBAEC4CE421DA723B1A7AA1339F22F56434CB059F2D5EBE6086D49946E)
 
 ### 数据更新操作
 
@@ -554,7 +554,7 @@ export struct MyComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/_4vU0qcnSYSXsNsFPxoYlg/zh-cn_image_0000002820404699.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A2D4BE308E960F727D8F91557613187A06CA58AC909E41AC960BDD7735CF12F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/E6u1Gi9kTUSjzjcXjFu4Ig/zh-cn_image_0000002792876400.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=E797D6E767D5B7B3856200EA7078C7121A7D2505E41BD707C35FE1BFD2852E66)
 
 ### 修改数据子属性
 
@@ -695,7 +695,7 @@ export struct MyComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/zZGWj-f0SaOga2ZU_Q5jlg/zh-cn_image_0000002791724722.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA48B6AB046022815E150A0A9F42A342341589445D7D7B6F4BBE0E0DEFB6FC3F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/ynRuh4iCRaSUcyZHcp8Pag/zh-cn_image_0000002821836305.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D3947751DD4C0A3A6DA588A1AFF872FAAED6E2F42E5FFBF745D5D3FDA407CA9)
 
 ### 状态管理V2观测组件内部状态
 
@@ -850,7 +850,7 @@ export struct ChildComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/t1dQA2zaRmafWSEua81HCQ/zh-cn_image_0000002791564750.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=F82751978F6A6C427D9145BD1D87A0729AC9122E0FF0D551CD9745E054E043C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/4vuXSk01QpGqj7SyGsDoew/zh-cn_image_0000002821756305.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=F358257C31AE151EE4F1BB878A058E175CBDB8F0C9EE664B3B81E32EE3F8C4DF)
 
 ### 状态管理V2观测组件外部输入
 
@@ -989,7 +989,7 @@ export struct ChildComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/OXVbHBvlRJmOup5f1rr7Sw/zh-cn_image_0000002820524703.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=281E3E5D14C0E1B750BC84D40BBC0B8B2C4353427A6927933556E9ABB198CF0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/HEJtSUMjT6ubVMb8rLsW0A/zh-cn_image_0000002793036370.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=C751E4D2C16CC6419C5BF8ECDAAAA0B24D20E55132BDCCA8FBDE12096C97793F)
 
 ### 拖拽排序
 
@@ -1122,7 +1122,7 @@ export struct Parent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/FqswFWYXR1q_FXZyeg_9PQ/zh-cn_image_0000002820404701.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=027B9D70290DE55D1A0E584CD1C1753D33799DB2754FB75FCCECC1D9AF42FE76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/ebzmtbBfS5OJPyFUiqhZ3A/zh-cn_image_0000002792876402.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A2015BED7F0C92C2B605103C96524FFAD370B7C698B1F959D71B363FF7763DA)
 
 ### 组件复用
 
@@ -1349,7 +1349,7 @@ export struct ChildComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/OmO2KL3GRJCo2ZRYMhy6fg/zh-cn_image_0000002791724724.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=F71895DD7B1D0B66C005EB1C2C2391B7C7EB90DE5900B86E6B2EC796379F46E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ZLw_lWtNQTGVEiHtWkj4iA/zh-cn_image_0000002821836307.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C351268B4176BB2EB504978D989BF4B55364766B8B37106BE57601EB2F2EFA3)
 
 ### 模板渲染
 
@@ -1683,7 +1683,7 @@ export struct ChildComponentB {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/L65ZYuTmTHOAzCEJ4U2rCg/zh-cn_image_0000002791564752.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014647Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AB5DE888EA779FAA0BF50BD3AAFBBFADAEE02C199150B31C20E003E4DAFAA24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/nEMI71aQS-GFObNATbliqw/zh-cn_image_0000002821756307.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3B2F1D2E27B018130CA78C9CB91025D01D9AECE0388E11BD500B4AB43516047)
 
 ## BasicDataSource示例代码
 

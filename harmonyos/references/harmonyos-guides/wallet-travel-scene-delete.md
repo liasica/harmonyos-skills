@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-travel
 title: 删除出行凭证
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 出行凭证 > 开发场景 > 删除出行凭证
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:15+08:00
+scraped_at: 2026-11-21T09:12:41+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e0fd461cb99e14c77638f5383f7523aa6278141ca2ea6f582d29f83f46445011
+content_hash: sha256:a19231fdb40a18c04b43f1b307b5699d0857fa83441d40bf8ae739e6fc26cd43
 ---
 
 用户主动删除，将出行凭证从钱包中移除。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/5us0esBqS5GIdPboPd3jug/zh-cn_image_0000002791726674.png?HW-CC-KV=V1&HW-CC-Date=20261119T014915Z&HW-CC-Expire=31536000000&HW-CC-Sign=843C6DC533373F11068934291F4D9D53C7127D968928008CA5C2B4AB4BC5A5EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/YX4YNxDcSVuYZ-I340Ab9Q/zh-cn_image_0000002793038326.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCD749D96DC528863BEDB969739FC59D475B774D4E7FA3BDCC288DFE7B3DEA02)
 
 ## 服务端开发
 

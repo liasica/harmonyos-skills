@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-faq-4
 title: 设置地图Logo始终显示
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > Map Kit常见问题 > 设置地图Logo始终显示
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:06+08:00
+scraped_at: 2026-11-21T09:12:32+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f47f8bdcbf08e373cde501342f3bc7f23bb05484e664576e81cb6fb627df269e
+content_hash: sha256:d2d3361107c2e359e6aa735f1c2d9e57a938a6c93b5920507084a04e87036025
 ---
 
 **现象描述**
 
 Map Kit地图Logo不可见。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/tFR0Tpc6S3GZntpoXF7GeQ/zh-cn_image_0000002820526477.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014811Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBD037BD47D676FF837C5897BBC27C65BAB43E31EF73C8F54D272E8652B5FFFB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/NlBMInr0RiysCJRhmKX9-w/zh-cn_image_0000002793038148.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011104Z&HW-CC-Expire=31536000000&HW-CC-Sign=E63CF68A4005794E76AAF5667CB60C18E250064AB212C35E4FB4E58DA49988D0 "点击放大")
 
 **可能原因**
 
@@ -148,4 +148,4 @@ struct MapKitAppDemo {
 
 展示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/uQTlINfSS6WgBIF6u1Xwqg/zh-cn_image_0000002820406477.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014811Z&HW-CC-Expire=31536000000&HW-CC-Sign=F284BF5424D6614767AF6F1DC78D6A4D70D01F3DA6FF9693543DA9A05F3D2519 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/gQr7NHU8SKe6JUjajy4W9Q/zh-cn_image_0000002792878178.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011104Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B9B19520DA0A7270AF49CEFA24809C69AFD2F49B8A0CB3DA0A5B73BF404355E "点击放大")

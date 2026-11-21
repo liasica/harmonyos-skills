@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: rag（检索增强生成）
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > ArkTS API > rag（检索增强生成）
 category: harmonyos-references
-scraped_at: 2026-11-19T09:52:00+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3f010d07b3866a2c12ffaa80439ce3eb00c3f2934cb12f9bbb9873bc8bf8035c
+scraped_at: 2026-11-21T09:14:53+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:aa561b0c7c436ed58507105ef7b6c13aad438e20dc1049b3482fe7e832d17e7f
 ---
 
 本模块提供创建和关闭会话（[RagSession](dataaugmentation-rag-api.md#ragsession)）、流式请求大语言模型（[ChatLLM](dataaugmentation-rag-api.md#chatllm)）以及流式问答（[streamRun](dataaugmentation-rag-api.md#streamrun)）的能力。
@@ -37,7 +37,7 @@ RAG（Retrieval-Augmented Generation，检索增强生成）模块提供基于�
 
 ### UML类图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/xocz8MN4QIWKz5BVO5Rt9A/zh-cn_image_0000002820408093.png?HW-CC-KV=V1&HW-CC-Date=20261119T015159Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FF6371F60288FBD947A602C929A4B2F530961C1EE7ABE2847D9D3E3E48ACB8E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/4uIq1ARvQPq8kAM6qTQMDA/zh-cn_image_0000002821759731.png?HW-CC-KV=V1&HW-CC-Date=20261121T011400Z&HW-CC-Expire=31536000000&HW-CC-Sign=60CEDBC423C5A5107F5BC33950032815BB10CC85DF991A0CFAB2443EE8E8131C)
 
 ## 导入模块
 
@@ -264,8 +264,8 @@ let config: rag.Config = {
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| chunk | string | 否 | 否 | 表示问题摘要的答案。长度上限为8192字节。 |
-| data | Array<[retrieval.ItemInfo](dataaugmentation-retrieval-api.md#iteminfo)> | 否 | 是 | 表示检索的匹配结果。最多返回600个chunk。 |
+| chunk | string | 否 | 否 | 表示大模型生成的流式答案内容。长度上限为8192字节。 |
+| data | Array<[retrieval.ItemInfo](dataaugmentation-retrieval-api.md#iteminfo)> | 否 | 是 | 表示检索的匹配结果。最多返回600条匹配结果。 |
 
 ## StreamType
 
@@ -297,7 +297,7 @@ let config: rag.Config = {
 | --- | --- | --- | --- | --- |
 | type | [StreamType](dataaugmentation-rag-api.md#streamtype) | 否 | 否 | 表示答案的数据类型。 |
 | answer | [Answer](dataaugmentation-rag-api.md#answer) | 否 | 否 | 表示答案的数据。 |
-| isFinished | boolean | 否 | 否 | 表示流输出是否结束。true表示本轮问答已结束，false表示本轮本轮问答还有后续回答。 |
+| isFinished | boolean | 否 | 否 | 表示流输出是否结束。true表示本轮问答已结束，false表示本轮问答还有后续回答。 |
 
 ## RunConfig
 
@@ -358,7 +358,7 @@ streamRun(question: string, config: RunConfig, callback: AsyncCallback<Stream>):
 | --- | --- | --- | --- |
 | question | string | 是 | 表示本次提出的问题。长度上限为1000字节。 |
 | config | [RunConfig](dataaugmentation-rag-api.md#runconfig) | 是 | 表示本次提问的配置。 |
-| callback | AsyncCallback<[Stream](dataaugmentation-rag-api.md#stream)> | 是 | 回调函数。当流式问答成功，err取值为BusinessError，data为获取到的数据內容；否则为错误对象。 |
+| callback | AsyncCallback<[Stream](dataaugmentation-rag-api.md#stream)> | 是 | 回调函数。当流式问答成功，err取值为BusinessError，Stream为获取到的数据内容；否则err为错误对象。 |
 
 **返回值：**
 
@@ -507,6 +507,8 @@ close(): Promise<void>
 **示例：**
 
 ```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { rag } from '@kit.DataAugmentationKit';
 
 let session: rag.RagSession | null; // 需要先使用createRagSession接口创建session
@@ -516,7 +518,11 @@ function WindowStageDestroy(): void {
   hilog.info(0, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
 
   if (session != null) {
-    session.close();
+    session.close().then(() => {
+      hilog.info(0, 'testTag', 'close successfully');
+    }).catch((e: BusinessError) => {
+      hilog.error(0, 'testTag', `close failed. code is ${e.code}, message is ${e.message}`);
+    });
   }
 }
 ```

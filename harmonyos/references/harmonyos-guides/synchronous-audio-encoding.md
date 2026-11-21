@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/synchronous-a
 title: 音频编码同步模式
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 音频编码同步模式
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:33+08:00
+scraped_at: 2026-11-21T09:11:59+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:f89e7f0ad15e8e092960f3dc61d990671294725aa3759841fdcaaff940accd0c
+content_hash: sha256:7d18753f839e219e3b0b005e87a9db01c5d0e8b8e06de1811674700c06010abe
 ---
 
 从API version 20开始，支持音频编码同步模式。
@@ -47,7 +47,7 @@ content_hash: sha256:f89e7f0ad15e8e092960f3dc61d990671294725aa3759841fdcaaff940a
 * 虚线表示可选。音频编码不涉及解密，无需调用OH\_AudioCodec\_SetDecryptionConfig。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/e_37kiEzS36ytSWw3wYA1g/zh-cn_image_0000002791725894.png?HW-CC-KV=V1&HW-CC-Date=20261119T014833Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A05EB195983C6D663F57DF53539EE537711C91359785C12B0CA56111ADDEA12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Mz9wdlKESoOqB9ZMBTylZg/zh-cn_image_0000002821837481.png?HW-CC-KV=V1&HW-CC-Date=20261121T011032Z&HW-CC-Expire=31536000000&HW-CC-Sign=9039C61F8AE549ECBE10461A8D7AA6EFAA2F77F1B68FBBD6A1C8EA68E95DA472)
 
 ### 在CMake脚本中链接动态库
 
@@ -112,11 +112,11 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/X71RwGx9SPCn3_hIVmArKw/zh-cn_image_0000002820525873.png?HW-CC-KV=V1&HW-CC-Date=20261119T014833Z&HW-CC-Expire=31536000000&HW-CC-Sign=F86D378E544C942E7922F41FE34CD943AC03483B1C68B09BB51C91E2B29E3502)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/qOnMRgvNRRWfAw1_ILTKLQ/zh-cn_image_0000002793037544.png?HW-CC-KV=V1&HW-CC-Date=20261121T011032Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B4380DDA0E4A884D36159055892676DA1BA4E364BF34998548C8E55780F8249)
 
    各音频编码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/YAyqIdJ_TvCdZDgLq87F6A/zh-cn_image_0000002820405873.png?HW-CC-KV=V1&HW-CC-Date=20261119T014833Z&HW-CC-Expire=31536000000&HW-CC-Sign=056CB711871E04503D964C89B408060AEDF81CCD6F4A4D84B21EB9F91DFD3FFE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/OIfZD6sxTDOO64cejUk8jQ/zh-cn_image_0000002792877574.png?HW-CC-KV=V1&HW-CC-Date=20261121T011032Z&HW-CC-Expire=31536000000&HW-CC-Sign=C97A0EBD0E12FF711290DBE57F1ADA0B4203D58BE82BC5A29943E0109FE198A3)
 
    例如，对44100Hz采样率、2声道立体声、SAMPLE\_S16LE采样格式的PCM音频，以32000bps的码率进行AAC编码的调用流程如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 创建ArkTS卡片
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 创建ArkTS卡片
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:56+08:00
+scraped_at: 2026-11-21T09:11:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:49a8d6efc16a32585e3d975aba218209747c15af2514945a3321d8e88676e62e
+content_hash: sha256:700006c2ece6ca18783a97f0d0d9bb5c5ce4fb6708f62fdf244171fb56be6b10
 ---
 
 ArkTS卡片有两种创建卡片包的方式。开发者在开发过程中任选其一即可。
@@ -24,7 +24,7 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 
 在DevEco Studio中，选择创建Application或Atomic Service工程，这两种都支持创建卡片。工程创建指导具体请参考[创建一个新的工程](ide-create-new-project.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/e367slbHQtaDwJ--fZRA_A/zh-cn_image_0000002791565580.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC5B829FBF6957F790FC391FA13DC4290A69BB2959945824E9D7BF13D8C948BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/EwJJtLUDStuJKhFzWjN2dw/zh-cn_image_0000002821757141.png?HW-CC-KV=V1&HW-CC-Date=20261121T010957Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB2642E913869E5A66A9138E7E9302A971A5012F1764F364B27BF0F5F4AE49D0)
 
 **说明** 
 
@@ -36,23 +36,23 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 
 * 选中entry目录单击右键选择【New】->【Service Widget】->【Dynamic Widget】。在API 10及以上 Stage模型的工程中，开发者可通过Service Widget菜单直接选择创建动态卡片（Dynamic Widget）或静态卡片（Static Widget）。创建卡片后，也可在卡片的[form\_config.json配置文件](arkts-ui-widget-configuration.md#配置文件字段说明)中，通过isDynamic参数修改卡片类型：isDynamic置空或赋值为“true”，则该卡片为[动态卡片](arkts-form-overview.md#动态卡片)；isDynamic赋值为"false"，则该卡片为[静态卡片](arkts-form-overview.md#静态卡片)。静态卡片和动态卡片切换之后用户交互实现也需要修改，具体参考ArkTS卡片概述中的[动态卡片](arkts-form-overview.md#动态卡片)和[静态卡片](arkts-form-overview.md#静态卡片)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/801G_93PRlel20CupTVs1g/zh-cn_image_0000002820525533.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E9FC794CDA9BAD0AAF3B80F1F64D555865A98E7D9A9E77AFF6D9003E39927F9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/8nNzsuB0TrKSpwv1Gl9hYg/zh-cn_image_0000002793037204.png?HW-CC-KV=V1&HW-CC-Date=20261121T010957Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D4A43B2E90F8EE68C7861BFC6A7AE8C9878E0409BEDCF8915911C3EB0CD203F)
 * 选择模板后，点击【Next】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/vmbhpJV8QNWsaYyVGzYmOA/zh-cn_image_0000002820405533.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=475F0EEE1B8A50CCC8FF281652BA77688361FA8B87D5407E3EFC2E01AA392BC6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Uc42Ly6PQ0iFdOYnRWd8Nw/zh-cn_image_0000002792877234.png?HW-CC-KV=V1&HW-CC-Date=20261121T010957Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEE35E5B79657DB01198FA47D650CA165513D2F05C9E0A56D5A20A46D28F0ACA)
 * 在选择卡片的开发语言类型（Language）时，选择ArkTS选项。选择卡片支持的外观规格（Support dimension）时，选择期望的卡片尺寸，然后选择默认的外观规格（Default dimension），最后点击“Finish”，即可完成ArkTS卡片创建。详细的卡片外观规格可参考[form\_config.json](arkts-ui-widget-configuration.md#配置文件字段说明)配置文件，后续也可以在form\_config.json配置文件中修改卡片规格。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/vIMkxesCSfewTZSN_0KiHw/zh-cn_image_0000002791725554.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA3195537D19BF9FFCB1BEBE9D405877B2340955A4283835C330EF020D25A6DC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Dq6GOAtpSLSz5TMnS92AZw/zh-cn_image_0000002821837141.png?HW-CC-KV=V1&HW-CC-Date=20261121T010957Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA31471D05F2BF651658064413AB731F344B88A112390AA222AC890FD7963C81)
 
   建议根据实际使用场景命名卡片名称，ArkTS卡片创建完成后，工程中会新增如下卡片相关文件：卡片生命周期管理文件（EntryFormAbility.ets）、卡片页面文件（WidgetCard.ets）和卡片配置文件（form\_config.json）。填写卡片配置之后点击【Finish】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ATPvK8e5SdOFvrN7CbC-mw/zh-cn_image_0000002791565582.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1171BB5724EB8602DD7CCE69B21D1FEBC7FEA392C1733D293EBF92927E0E822)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/rwx_WXU9RwKAYo9MCiHpWQ/zh-cn_image_0000002821757143.png?HW-CC-KV=V1&HW-CC-Date=20261121T010957Z&HW-CC-Expire=31536000000&HW-CC-Sign=204CED4CB7DF199D3A95991900DD0994CDC2F34C682F9650060879CA09663572)
 
 ### 工程结构介绍
 
 **图1** ArkTS卡片工程目录、相关模块
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/ThAiwfSHSTC4-nkpR0k-_A/zh-cn_image_0000002820525535.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFAB727333281AA379A05C1EAEAA9C43EA4A631770716535EF9A174020B41C5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/A6yXrqvLSmuv60f9T1Ui9A/zh-cn_image_0000002793037206.png?HW-CC-KV=V1&HW-CC-Date=20261121T010957Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A0411A903B72EE5DD24D96B746B1EDCF238CD95389FC6673AC0CE57213C31C4)
 
 * [FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)：卡片扩展模块，提供卡片创建、销毁、刷新等生命周期回调。
 * [FormExtensionContext](../harmonyos-references/js-apis-inner-application-formextensioncontext.md)：FormExtensionAbility的上下文环境，提供FormExtensionAbility具有的接口和能力。
@@ -76,7 +76,7 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 
 在DevEco Studio中，选择创建Application或Atomic Service工程，这两种都支持创建卡片。工程创建指导具体请参考[创建一个新的工程](ide-create-new-project.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/nzngxt5pRNSr2BQN0aAIjw/zh-cn_image_0000002791565580.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4351846291476243E67A557BE18B251DCC56C4BDC0EEBC0919A3C7118757B54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/5pIy3Qe-TxWrCO2ksWAyeA/zh-cn_image_0000002821757141.png?HW-CC-KV=V1&HW-CC-Date=20261121T010957Z&HW-CC-Expire=31536000000&HW-CC-Sign=B131660E42E3151F2AD09B36E3F9E88BBFA3EF425B8E1A50299455153BDC991F)
 
 **说明** 
 
@@ -86,13 +86,13 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 
 * 选中entry目录单击右键选择【New】->【Service Widget】->【Dynamic Widget(Standalone)】。在Service Widget菜单可直接选择创建独立包的动态卡片（Dynamic Widget(standalone)）或静态卡片（Static Widget(standalone)）。创建服务卡片后，也可以在卡片的[form\_config.json配置文件](arkts-ui-widget-configuration.md#配置文件字段说明)中，通过isDynamic参数修改卡片类型：isDynamic置空或赋值为“true”，则该卡片为[动态卡片](arkts-form-overview.md#动态卡片)；isDynamic赋值为"false"，则该卡片为[静态卡片](arkts-form-overview.md#静态卡片)。静态卡片和动态卡片切换之后用户交互实现也需要修改，具体参考ArkTS卡片概述中的[动态卡片](arkts-form-overview.md#动态卡片)和[静态卡片](arkts-form-overview.md#静态卡片)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/N8X0qqosRM2mD-d53CXTqA/zh-cn_image_0000002820405535.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=146972C53A52C184981EFF15DB7C612927D1ADABB008A576A786AA0300E34C4E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Rdkp7m9DTNeKBkj2ACcZzQ/zh-cn_image_0000002792877236.png?HW-CC-KV=V1&HW-CC-Date=20261121T010957Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C21AE3097245BB69E309E18870B613EE43F8C427F09312E6456A5B4553399D0)
 * 选择模板后，点击【Next】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/4SjLfoD_SNKU-EaJITqygA/zh-cn_image_0000002820405533.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=A681D9806277C039AE82B514877D04035DD74E0DA361EA4BEA2DB1FC07C76498)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/pgjrtgvKRoK9yRNkpgr9jg/zh-cn_image_0000002792877234.png?HW-CC-KV=V1&HW-CC-Date=20261121T010957Z&HW-CC-Expire=31536000000&HW-CC-Sign=0773A7A13C55E40BE9E264DE7BBF02240C8F65E48D5BCBEBFDCDE184E388962D)
 * 填写卡片配置之后点击【Finish】。卡片创建成功后，entry包中包含应用和卡片后端能力；library包中包含卡片UI侧能力。entry模块下的module.json5配置文件中的formWidgetModule字段需关联library模块，library模块下的module.json5配置文件中的formExtensionModule字段需关联entry模块，以实现卡片包和应用包相互关联。创建完成后，会自动生成配置文件并配置，后续也可以按照[卡片配置文件](arkts-ui-widget-configuration.md)修改配置。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/eMFe4UJpRrOARjgimVdhVA/zh-cn_image_0000002791725556.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=28F6B809B8ED7F2E72F38D5A5E7E5130419F438E7F14670160693D0196AA2CA5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/3Oq7QEoNTgaYiUj3dkeM5w/zh-cn_image_0000002821837143.png?HW-CC-KV=V1&HW-CC-Date=20261121T010957Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF577EAED66CDC686E6C68A5CCF98D5F71FEEBB04AF35B75A642C299E6C9BF49)
 
 ### 工程结构介绍
 
@@ -100,7 +100,7 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 
 **图2** 独立卡片包工程目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/TZnEy6oER1iJrTwzngVTsw/zh-cn_image_0000002791565584.png?HW-CC-KV=V1&HW-CC-Date=20261119T014705Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0A924ECD082BD129D178E9FDDFDDEDCB7C6D464FABD3D3A3450DDF775D7E1E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/4i2ZgyBGSPqFcv5jyW5SMg/zh-cn_image_0000002821757145.png?HW-CC-KV=V1&HW-CC-Date=20261121T010957Z&HW-CC-Expire=31536000000&HW-CC-Sign=99DCA11DD86EECD4F69E083F7820FE963DBD7B2B1EE30B4FF3EBCD863C056355)
 
 **说明** 
 

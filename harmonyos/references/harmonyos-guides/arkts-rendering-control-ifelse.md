@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-renderi
 title: if/else：条件渲染
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式渲染控制 > if/else：条件渲染
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:39+08:00
+scraped_at: 2026-11-21T09:11:04+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3b9b5c6c3b15493d31212cd06f81e28dac86da1d0cf167ba96f6a5649e8bebad
+content_hash: sha256:89f3fea5bb06e1090edef8fdfe7c4148a95f65a39c88a5ff6863fec24824a118
 ---
 
 ArkTS提供了渲染控制能力。条件渲染可根据应用状态，使用if、else和else if渲染相应的UI内容。
@@ -65,7 +65,7 @@ struct IfExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/_L2UlbvBSvSbHqzcEnkiLg/zh-cn_image_0000002820524721.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5468BB9166AA9C14CBCEADEF0EAF692BFB1E48B4B3D8863ED434F0114A2D1AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Y745IYShT2q6zFDGm8NwBg/zh-cn_image_0000002793036388.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E7C568C34D9919AC4002F60F602737249CBE7F5C8589741D2BC2EAE365BE2BE)
 
 if语句的每个分支都包含一个构建函数。此类构建函数必须创建一个或多个子组件。在初始渲染时，if语句会执行构建函数，并将生成的子组件添加到其父组件中。
 
@@ -123,7 +123,7 @@ struct MainView {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/gv333b-hQpaYxjdLzoBbbQ/zh-cn_image_0000002820404719.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=07BC237ED6279ADEBF578453CBEEA6EBED9C5B7105AFB2561D907C23A6203783)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/rst6ggKHQG2JRi8olxwhBg/zh-cn_image_0000002792876420.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=354AA2672310514FE6BC41375C024157B9F52534DDD8C934DE2BFC08402806C1)
 
 **初次渲染**：创建CounterView子组件（label为 'CounterView #positive'），其状态变量counter初始值为0。
 
@@ -185,7 +185,7 @@ struct KeepMainView {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/LGhRscLwQEe-4LgDDKLSPw/zh-cn_image_0000002791724742.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B81DB1F34E5551CDF42ADFF0645F2B94FD9F7C52E5FF82379F6E3F91072E756)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/_UGENbmdS9OB7iT5lgRWpA/zh-cn_image_0000002821836325.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B82ED28699F25308E6257CDACA3631B762E9DA5764FB8DC32CB2F612BB85931)
 
 此处，@State counter变量归父组件所有。因此，当KeepCounterView组件实例被删除时，该变量不会被销毁。KeepCounterView组件通过[@Link](arkts-link.md)装饰器引用状态。状态必须从子级移动到其父级（或父级的父级），以避免在条件内容或重复内容被销毁时丢失状态。
 
@@ -243,4 +243,4 @@ struct NestedIf {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/bko5gXBHQJG8et5nfppRpA/zh-cn_image_0000002791564770.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE5B7E1837B9AF67412C59133C573ED86CE28DF3CB51E6562860BAB8F9CDD94A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/65kVFJqCT9-3ZAAAS9kFyA/zh-cn_image_0000002821756325.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=191D8CE7C4967C12AB4F420240445E7E8D44B8FEEEEA9D51C662FE88480E6383)

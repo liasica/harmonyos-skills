@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-previe
 title: 相机预览花屏解决方案
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 相机预览花屏解决方案
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:37+08:00
+scraped_at: 2026-11-21T09:12:02+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:b09ad6fce5e0157effd4c031b359ffbf47b6320d39808cefd8f9f687be588d4d
+content_hash: sha256:7e9c39b16ea52862159b935d3d3505f65d4aa46bc60d2e489c9890cc12e66ab6
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ stride在不同的平台底层上报的值不同，开发者需根据实际业�
 
 **图 1** 需正确处理stride
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/xCutbMjqSOiUjDYPX_lOdQ/zh-cn_image_0000002791725962.png?HW-CC-KV=V1&HW-CC-Date=20261119T014837Z&HW-CC-Expire=31536000000&HW-CC-Sign=5545896606E3EACCF4BC5A35318D331D39E648A3417D0B53B3436AAE78662636)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/yeHObTW8R3m4bHZrSHxhiw/zh-cn_image_0000002821837549.png?HW-CC-KV=V1&HW-CC-Date=20261121T011036Z&HW-CC-Expire=31536000000&HW-CC-Sign=24AB38CDB726BE719765741DB88414C6097614A48B57A7ED0210DAFF09FCDD65)
 
 如果开发者根据width和height数据去处理像素数据，即把0x00-0x09地址的数据当做像素去处理，就会出现解析了错误的像素数据的问题，并且使用了无效的像素0x03，0x07，会导致图片无法正常显示导致“相机花屏”现象。因此，要根据stride值处理预览数据流，去除无效的像素后送显，才能获取正确的预览流图像。
 

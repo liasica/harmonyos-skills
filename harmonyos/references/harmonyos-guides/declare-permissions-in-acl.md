@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permi
 title: 申请受限权限
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 申请受限权限
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:00+08:00
+scraped_at: 2026-11-21T09:11:26+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:97352993c18f7a35efafbeb420a912ce112524c6e4b2ed3b69fa91d7decf7bda
+content_hash: sha256:b39efcf1a9da655c4723285f5be97a709d2e591da1fdb6e0c5622848c1a69cc7
 ---
 
 受限开放的权限通常是不允许三方应用申请的。如果有特殊场景需要使用，请提供相关申请材料到[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)（简称为AGC）申请相应权限证书。
@@ -20,7 +20,7 @@ content_hash: sha256:97352993c18f7a35efafbeb420a912ce112524c6e4b2ed3b69fa91d7dec
 
 ## 申请步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/09zmIEkZSgadVAXVoNGFqQ/zh-cn_image_0000002791725662.png?HW-CC-KV=V1&HW-CC-Date=20261119T014800Z&HW-CC-Expire=31536000000&HW-CC-Sign=D51C9FDB22B0E8C713FA455464B1A7DE103170A2726D4A0E35581ACF7441F718)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/3A0Q-Zm1S_eUNqz5mxE6vg/zh-cn_image_0000002821837249.png?HW-CC-KV=V1&HW-CC-Date=20261121T011126Z&HW-CC-Expire=31536000000&HW-CC-Sign=27D7903B3AA1773BD4D982032964E4DE2851659FE62D0311129052898DC01CE8)
 
 针对上图中的数字标注，补充说明如下：
 

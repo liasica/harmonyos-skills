@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyVGridLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyVGridLayout
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:56+08:00
+scraped_at: 2026-11-21T09:14:06+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:6812199a30a1660a598da765b134e0c818fb585f0030e0b6fe9d5b0058055939
+content_hash: sha256:2982b15af95213052257a3d4fa708246727b8faa047ed53cae8bb6482d54a747
 ---
 
 该组件用于实现支持懒加载的网格布局，适用于在滚动容器中按需渲染大量网格项的场景，可减少首帧渲染时间和内存开销。
@@ -430,7 +430,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/RUvTQ25BQWiTie-9amNatQ/zh-cn_image_0000002791727196.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=300A5BC357182EC793EE0AA7E72501F97E8DEC59E751E1C26B2A117F2C0453D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/4FDsvbCrSNKngloRUVfQMA/zh-cn_image_0000002793038856.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011405Z&HW-CC-Expire=31536000000&HW-CC-Sign=05B5A1D58CF458877DBA63B5D9A8D061778186B2838DAFAF6477412951E9180D)
 
 ### 示例2（设置头部组件或尾部组件及吸附效果）
 
@@ -510,7 +510,7 @@ struct LazyVGridLayoutStickyDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/BnyBFzoeQx-iCeO7uPrgOQ/zh-cn_image_0000002791567224.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=7965862D46371F9496486A519924A7DE48C279EC319486990F3C11D2C6484737)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/fvDbdAXVQBeLy3eM7nJL9g/zh-cn_image_0000002792878884.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011405Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFCEF676B843A7F9D23713436CABB54FC2669CB28268B151A6A38C0CAE61A633)
 
 ### 示例3（设置自适应列数）
 
@@ -644,4 +644,4 @@ struct LazyVGridLayoutColumnsTemplateDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/DCEdIm0KQc-wXDm6knepIw/zh-cn_image_0000002820527177.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=32A27FB62B38F6623484988CB49A280E95E327309F70D06CE9C6127763F69FB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ENx1-xFhRA2hDdtpi2dy-A/zh-cn_image_0000002821838789.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011405Z&HW-CC-Expire=31536000000&HW-CC-Sign=84FCE48F70BCC36EC5BBBBD71B454814950FFE8BD6322B9B4453E061A4D2AD0E)

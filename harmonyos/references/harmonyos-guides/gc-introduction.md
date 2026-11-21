@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gc-introducti
 title: GC垃圾回收
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > GC垃圾回收
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:34+08:00
+scraped_at: 2026-11-21T09:11:00+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3c2be469c648b950e0b9e677d27541d3b9a719fc3c1191494ade39aac75e01ad
+content_hash: sha256:ed39980bd4aead0e861cbf05f10787abb625e6e374167af0815731d4e509a95f
 ---
 
 GC（全称 Garbage Collection），即垃圾回收。在计算机领域，GC是指识别并释放内存中的不再使用的对象，以回收内存空间。目前广泛使用的编程语言实现的GC算法主要分为两大类：引用计数和对象追踪（即Tracing GC）。
@@ -48,7 +48,7 @@ function main() {
 
 **对象追踪**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/aMjmZHbCTMGkfs6SMvXNEg/zh-cn_image_0000002820404471.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1A5BD65E5074A5EB4F2CE069B5CF46B0704D05A4C2330444D7D3790A697953D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/JkTTznGESI6kY_iMZ3sMqA/zh-cn_image_0000002792876172.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=51D13A73211D5F58BCC239C83B5B8A16E3560BF895C5C7A0BC6DD06EDE7D45CB)
 
 根对象包括程序运行中的栈内对象和全局对象等当前时刻一定存活的对象。从根对象开始，通过引用链可以访问到的所有对象（可达对象）也是存活的。通过遍历可以找到所有存活对象。如图所示，从根对象开始遍历，所有可达对象标记为蓝色，即为活对象。剩下的不可达对象标记为黄色，即为垃圾。
 
@@ -63,7 +63,7 @@ function main() {
 
 **标记-清扫回收**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/G98LKCYYRb2oJVdXODT1aQ/zh-cn_image_0000002791724494.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABEA4974893A3A61D297A936798BF8DA9BAA7B9D0F4B8BC07547471759882322)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/xPVIHVIERhOX2eZajEpAYg/zh-cn_image_0000002821836077.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=E69DFA3387592F8E126EF3760D7C578FDC1953995C87A9403C05B0E513FD1774)
 
 完成对象图遍历后，删除不可达对象内容，并将其放入空闲队列，以便下次对象分配。
 
@@ -71,7 +71,7 @@ function main() {
 
 **标记-复制回收**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/NMFjvp4fTNOpuJuUYJ8gQQ/zh-cn_image_0000002791564522.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6B92D4863C32D47C8B8CE32B263F58C41D03999FD2BEFA1B2B5653C0A30B1A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/_V0F6YD-RtC7bfI03BX-NA/zh-cn_image_0000002821756077.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=54F546EDA35D4ECD8A6CDEFEC59315B483E0F7EEC8F32E939C3AFBC89505CE52)
 
 遍历对象图时，将可达对象复制到新内存空间。遍历完成后，回收旧内存空间。
 
@@ -79,7 +79,7 @@ function main() {
 
 **标记-整理回收**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/o7oL3ZbCTvO8IOOSlFAO4A/zh-cn_image_0000002820524473.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=F637239A32FA996B608FD01552570B8D052A462B96C5B2E8C43B3C3BEB6E348D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/VtptN1TNQaaWOzurzVTTOg/zh-cn_image_0000002793036142.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA0B9612C77158ED5DB4DA3BA00F017AFA94FBD1ACD017302A64CED1555EB349)
 
 完成对象图遍历后，将可达对象（蓝色）复制到本区域或指定区域的头部空闲位置，然后将已复制的对象回收整理到空闲队列中。
 
@@ -94,7 +94,7 @@ HPP GC（High Performance Partial Garbage Collection），即高性能部分垃�
 
 ArkTS运行时采用传统的分代模型，将对象进行分类。大多数新分配的对象会在一次GC后被回收，而大多数经过多次GC后依然存活的对象会继续存活。ArkTS运行时将对象划分为年轻代和老年代对象，并分配到不同空间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/eOj-nRYvRJ6BAf-y6lkDXA/zh-cn_image_0000002820404473.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=505D2D675E256BAA3D9F70F1CF94F33291CF1B3A036ADD54082AA5460A8256C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/U_oTkUa0QGS2CZB345fEtw/zh-cn_image_0000002792876174.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=B685263CDB2E1DC6308E1B07BE3D9AF522C25D07F3DD30EAE50C0B7F92EA1B86)
 
 ArkTS运行时将新分配的对象直接分配到年轻代（YoungSpace，又称SemiSpace）的From空间。经过一次GC后依然存活的对象，会移动到To空间。经过再次GC后依然存活的对象，会被移动到老年代（OldSpace）。
 
@@ -124,7 +124,7 @@ HPP GC流程中引入了大量的并发和并行优化，以减少对应用性�
 
 ## GC流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Sp9tPQAOQSen9opuo9n8sA/zh-cn_image_0000002791724496.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F1B09093C5108A715935533AA66B7D83CE5F9B35359702F962DFD3AC9744ACC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/xQdni1HMQXCIKX1Rm853Wg/zh-cn_image_0000002821836079.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4828D1CCE4FF4A17037346C0151F1FF877579E3E352BEC78447C11117198D4F)
 
 ### HPP GC的类型
 
@@ -219,7 +219,7 @@ Heap包含两种类型：LocalHeap和SharedHeap。LocalHeap是应用进程中每
 
 ### LocalHeap结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/aPJOnRj4QvO5C_fqet_WEA/zh-cn_image_0000002791564524.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CDFA766B1C9ED95F9A11D5949D4CFDB742E173FCC4711F3C4902543F4ECC93F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/tG1lSCglQlC1F47B_hEiiA/zh-cn_image_0000002821756079.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D77DF341F7B584E042AA470EA85C731435E02359F142641EBD44F36D8FEA1EA)
 
 * YoungSpace：年轻代（Young Generation），又称SemiSpace，存放新创建出来的对象，存活率低，主要使用半空间复制算法进行内存回收。
 * OldSpace：老年代（Old Generation），存放年轻代多次回收仍存活的对象会被移动到该空间，根据场景混合多种算法进行内存回收。
@@ -312,7 +312,7 @@ Heap中生成两个SemiSpace，供复制使用。
 
 ### SharedHeap结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/ox5qHJhZSqGiIbomRx9ecw/zh-cn_image_0000002820524475.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=8423A5428B60E0BD514070FC6E030B6EFA430838F7C4A3B94F2C5B39BB9BAA51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/gjZps-SFQt-VE3doOlGwjQ/zh-cn_image_0000002793036144.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=E874B39F69C6A654A50956BDF2033DABBF13A172A46D2423221C7EE2331D1FA3)
 
 * SharedOldSpace：共享堆老年代空间，存放一般的共享对象。
 * SharedHugeObjectSpace：共享堆大对象空间，使用单独的Region存放一个大对象的空间。
@@ -369,7 +369,7 @@ Smart GC是一种智能GC抑制机制，在冷启动场景和性能敏感场景�
 
 **交互流程**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/X1t2p_1_RIaXQXMG-AisOA/zh-cn_image_0000002820404475.png?HW-CC-KV=V1&HW-CC-Date=20261119T014733Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1AE13454E21D3165A369996FBC2309BE94134858FD694EB3BE5F5A8D76A77AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/tKWR3jx4SZioiv2u2I8AoQ/zh-cn_image_0000002792876176.png?HW-CC-KV=V1&HW-CC-Date=20261121T011059Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF0559E1DBA94BF6769E3179F87AC2E599AA347468DC69EE471BBAF250BFD3D9)
 
 ## 日志解释
 

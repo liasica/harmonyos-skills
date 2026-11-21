@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interna
 title: UI国际化
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI国际化
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:45+08:00
+scraped_at: 2026-11-21T09:11:11+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c6c2e185e9ab61aceafd979b7aff542d42b9d3e1f8363030910f1f8fd5971915
+content_hash: sha256:64ebd21bde50ab252121319f77637c09559d4d4ffe72b29db969ffb63e3bf38d
 ---
 
 本文介绍如何实现应用程序UI界面的国际化，包含资源配置和镜像布局，关于应用适配国际化的详细参考，请参考[Localization Kit（本地化开发服务）](i18n-l10n.md)。
@@ -170,7 +170,7 @@ struct CustomizeCanvasComponentDrawing {
 
 在LTR与RTL文本混排时，如一个英文句子中包含阿拉伯语的单词或短语，显示顺序将变得复杂。下图为数字和维吾尔语混合时对应的字符逻辑顺序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/hjred3kZT02x8o5yW1LbLQ/zh-cn_image_0000002791565292.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF7C402977349247CEA52EAA5E96114B3255BE45EC51F1420F09668EEC705BED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/2aAmJE5JSLCWv3tjwn4wqg/zh-cn_image_0000002821756853.png?HW-CC-KV=V1&HW-CC-Date=20261121T010946Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8C7F835ED12EE2CBF5DD79395A0A2C246596B84AF2FF888E1F3B77F7C14739D)
 
 此时，文本渲染引擎会采用名为“双向算法”或“Unicode双向算法”（Unicode Bidirectional Algorithm）的方法来确定字符的显示顺序。下图展示了LTR与RTL文本混合时对应的字符显示顺序，确定字符方向的基本原则如下：
 
@@ -178,4 +178,4 @@ struct CustomizeCanvasComponentDrawing {
 2. 弱字符的方向性：弱字符不具备明确的方向性，这些字符不会影响其周围中性字符的方向。
 3. 中性字符的方向性：中性字符无固定方向性，它们会继承其最近的强字符的方向；若附近无强字符，则采用全局方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/49CIyuzsSIKbgjDg1ETWig/zh-cn_image_0000002820525245.png?HW-CC-KV=V1&HW-CC-Date=20261119T014744Z&HW-CC-Expire=31536000000&HW-CC-Sign=6008850DC11AB53D833A21B7CE2F950F296E2092097BD2558EE2286298E0709E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/aG4Ch8G9RLGN3r8s1KPCrA/zh-cn_image_0000002793036916.png?HW-CC-KV=V1&HW-CC-Date=20261121T010946Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD5E9E6F1061F751523C0CC918F38DC2F0BB595034542311AF508D8E87BFD110)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: RPC错误码
 breadcrumb: API参考 > 应用框架 > IPC Kit（进程间通信服务） > 错误码 > RPC错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:37+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:38895792797bbe7d14a0c070f4810cb19426be83b41401b846129624be8f6515
+scraped_at: 2026-11-21T09:14:56+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:25d71fa2e200a462d6498be6f6c257dfb6137a645a5720113e64a6de1ae4a5d6
 ---
 
 **说明** 
@@ -14,7 +14,7 @@ content_hash: sha256:38895792797bbe7d14a0c070f4810cb19426be83b41401b846129624be8
 
 ## 概述
 
-RPC（Remote Procedure Call）错误码用于标识IPC通信过程中发生的各类异常情况。本模块提供了IPC/RPC通信相关的标准错误码定义，帮助开发者快速定位和解决通信问题。
+RPC（Remote Procedure Call）错误码用于标识IPC/RPC通信过程中发生的各类异常情况。本模块提供了IPC/RPC通信相关的标准错误码定义，帮助开发者快速定位和解决通信问题。
 
 ## 1900001 系统调用mmap失败
 
@@ -96,7 +96,7 @@ Failed to read data from the shared memory.
 1. 请检查当前从共享内存读取的内容是否已经超过了映射的总大小。
 2. 请检查是否设置了PROT\_READ保护权限。
 
-## 1900005 IPC对象权限错误
+## 1900005 IPC对象权限错误（仅RemoteProxy对象允许）
 
 **错误信息**
 
@@ -114,7 +114,7 @@ Operation allowed only for the proxy object.
 
 请检查是否在RemoteObject对象上调用了只有RemoteProxy对象支持的方法。
 
-## 1900006 IPC对象权限错误
+## 1900006 IPC对象权限错误（仅RemoteObject对象允许）
 
 **错误信息**
 
@@ -206,7 +206,7 @@ Failed to read data from the message sequence.
 
 **处理步骤**
 
-请检查读取的顺序和写入的顺序保持严格一致。
+请确保读取的顺序和写入的顺序保持严格一致。
 
 ## 1900011 内存分配失败
 
@@ -220,7 +220,7 @@ Memory allocation failed.
 
 **可能原因**
 
-写入的数据过大，数据取决于当前堆上还有多少可以连续分配的内存。
+写入的数据过大，实际可写入的数据大小取决于当前堆上还有多少可以连续分配的内存。
 
 **处理步骤**
 

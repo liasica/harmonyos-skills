@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-pro
 title: "@Provider装饰器和@Consumer装饰器：跨组件层级双向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Provider装饰器和@Consumer装饰器：跨组件层级双向同步
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:37+08:00
+scraped_at: 2026-11-21T09:11:03+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:75e82464c5da4cc5a5a78c64b83a9b52556d5ebcbd04eab287d0977cf1980823
+content_hash: sha256:69ff8a7d216fba632b9364e59be981aad692d74bae91d97ea6cb48389ee80476
 ---
 
 [@Provider](../harmonyos-references/ts-state-management-provider.md#provider)和[@Consumer](../harmonyos-references/ts-state-management-consumer.md#consumer)用于跨组件层级数据双向同步，可以使得开发者不用拘泥于组件层级。
@@ -30,7 +30,7 @@ content_hash: sha256:75e82464c5da4cc5a5a78c64b83a9b52556d5ebcbd04eab287d0977cf19
 
 @Consumer，即数据消费方，可以通过绑定同样的key获取其最近父节点的@Provider的数据，当查找不到@Provider的数据时，使用本地默认值。图示如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/yQb1PRguTg-w3EEMQDvcXw/zh-cn_image_0000002791564684.png?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BAD84AFE3BE6B7B9FAD72EDFEE8DD4F967F467FAF47221BDFA1B579FC63876D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/TmjZuT_2Rw-k8_r2aCttRA/zh-cn_image_0000002821756239.png?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=18A8C7C907DEAFE65313EC3C48EF86C5D17E49414C9A623FE0529EA1D5990463)
 
 @Provider和@Consumer装饰的数据类型需要一致。
 
@@ -201,7 +201,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/8z5dsVeAQXmGkt8L4MnMUA/zh-cn_image_0000002820524635.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BA8A1A1BBD1281EE89A53CEA4CE758322AA269ACAC87E61AE89E6F71BC070AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/w1cvX0etTbiHeETJuLu0tw/zh-cn_image_0000002793036304.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=448AA453AE56491A9C1C136080A63E5E4C073C2640DBAE18D1EC616A24C6B005)
 
 **未建立双向绑定**
 
@@ -253,7 +253,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/3FFbi8PpSiW4kjZSR-iJvQ/zh-cn_image_0000002820404635.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CA3F01E209BCFFFF5899D26ECFE508890254DAC274F0565B071B4E53015383D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/UrWhRjjdSQOPjqYXHNkn_A/zh-cn_image_0000002792876336.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=27B0477D39F18101D9E39B7AD918ACDF3014396DF1731F20443BA50213E6F006)
 
 ### 装饰Array类型变量
 
@@ -338,7 +338,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/9CYTH7HKT-u8ClbW6krF3g/zh-cn_image_0000002791724658.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DDB9E36BBDD115FCDC795DC5B7752541126C46C9E2AA88591E5E9AA9706560A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/qgS9jCqISEybL3ReS5W84A/zh-cn_image_0000002821836241.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=443F259ED07D4849A2085AD9E65C18C59DBC9ECA2FD84228D5E35DF76E61A713)
 
 ### 装饰Date类型变量
 
@@ -426,7 +426,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/KLgpZTxWRGSZYVZqHJwRRg/zh-cn_image_0000002791564686.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7DD08482B57276C98103DA67E7530E280971805CBFD3E9F96E28149605088A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/znhrNGITQbePV6jk514T9A/zh-cn_image_0000002821756241.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=76F34CC33F6E64E14F7A874EFF5E3E1AFA7488F9840EF983FAFDB0E67AA92E75)
 
 ### 装饰Map类型变量
 
@@ -540,7 +540,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/o3NjrvJKQe2S_7Wt7w_PRg/zh-cn_image_0000002820524637.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=76BFA811A087B957298499CAE576075EF3DB5D1BF5D145C14786CA8E72591F74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/6B6N61FsRwWp23FonsCb4w/zh-cn_image_0000002793036306.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=09FECB992A6E9A439F4EAC5B54BEA6769F1046E3765B1CAEA8BCB2522274D2C5)
 
 ### 装饰Set类型变量
 
@@ -640,7 +640,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/MGGjo-jaSj2ICn3RvqFnZA/zh-cn_image_0000002820404637.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD8FF81020FA8F1444414F14AD8D4C568B29640AA48487D2AC3516A1E7ABF8AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/2VG5SGQ4Q8eVkwKxYHs0Xg/zh-cn_image_0000002792876338.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FA04D2F290B0687261DDCCD3B4A2F440B8C35EE697A367277D1A85979F84B4D)
 
 ### @Provider和@Consumer装饰回调事件用于组件之间完成行为抽象
 
@@ -688,7 +688,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/STFIYkI0Qiyt9PLBOJ5Czw/zh-cn_image_0000002791724660.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=7708FE12373C784B1B5D11BE0B4ED6BCD9091A155AF709530D2EAC9030F1A9E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/gqrsqLIWSl-tvABJjoFvGQ/zh-cn_image_0000002821836243.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=25E26542C99577397A963B310641F601C7EE3ACF21D4D705049B61857A219F21)
 
 ### @Provider和@Consumer装饰复杂类型，配合@Trace一起使用
 
@@ -763,7 +763,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/LjCCBy-9QyWQYqLSsdSP-w/zh-cn_image_0000002791564688.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F51C2BCFFF0B0AE3E5CD50D51C8F3A09A4BE8A47D3504802A0DA808FFFE4994)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/ZeK9RY8nSoSULd55w8MCfg/zh-cn_image_0000002821756243.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=99AE65AF7C768CDBE3EF332D3EA78B861DABD249BC3B69732BA4D43EE199F6A6)
 
 ### @Provider重名时，@Consumer向上查找其最近的@Provider
 
@@ -814,7 +814,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/UairTh7zSeGkzO8xdnQwQQ/zh-cn_image_0000002820524639.png?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=9598720719B5B511258D5619EBFDD8CF12FFF89C6D6B14BE7CDD01E9D2D37F99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/ngV22SyhRnKHOBsQivxUHg/zh-cn_image_0000002793036308.png?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B553E4355AEB25B3D2EA323FC6AAED39DE6659FF1858233908ED30A2914CAEF)
 
 上面的例子中：
 
@@ -887,7 +887,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/l_oKZw7zQwuN9rJ9B2RXHg/zh-cn_image_0000002820404639.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E1A32D66F455B2DAFAEA21948A5C2765322348B30DBAA6948C43823EC52BA3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/fjfl44P4RV20GZWoGSIhdg/zh-cn_image_0000002792876340.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=E79CC830EC5466CEACDA591EF32C740C46C68A691B4976D8F55EF097E2E9141D)
 
 上面的例子中：
 
@@ -1044,7 +1044,7 @@ struct TestRemove {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/sID_oi_mR-eh71gtktFPXQ/zh-cn_image_0000002791724662.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014737Z&HW-CC-Expire=31536000000&HW-CC-Sign=A35A7105697A1C54EBDE418987601E874963916213762B05D0703F592746A390)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/nQ-EGo_7RvWjzz0egXIKeA/zh-cn_image_0000002821836245.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=516396B0A7F4C30BFCC02159BC6195CB2A47192EA60E04BC623A06172174FEF9)
 
 上面的例子中：
 

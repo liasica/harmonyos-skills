@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-plug-
 title: Transformer插件式量化
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > Transformer结构量化 > Transformer插件式量化
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:17+08:00
+scraped_at: 2026-11-21T09:12:43+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:dd4b79f387d3013e7ef194b0efa6f32260bd0dd1e8ac1450df7a63a465e74650
+content_hash: sha256:0356040cb7eeb5ba85675838c12f6e3a975406053666b796e4cd4ba5639ad34d
 ---
 
 ## 简介
@@ -16,9 +16,9 @@ content_hash: sha256:dd4b79f387d3013e7ef194b0efa6f32260bd0dd1e8ac1450df7a63a465e
 
 PTQ和QAT是两种量化参数优化策略，PTQ使用推理工程即可完成量化校准，QAT需要结合训练工程来进行量化感知训练。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/3xoPVPJTSYS40Dw8Ppc-zg/zh-cn_image_0000002791726702.png?HW-CC-KV=V1&HW-CC-Date=20261119T014916Z&HW-CC-Expire=31536000000&HW-CC-Sign=45FCD1A6C46B2B5540800C0FC6D66A090FD8950CF2821E3BD34F3A03B8FE99DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/5t3nvzOrSZeORM78JGPCiw/zh-cn_image_0000002793038354.png?HW-CC-KV=V1&HW-CC-Date=20261121T011243Z&HW-CC-Expire=31536000000&HW-CC-Sign=A07FDF32C16FE9B40972A1A2B98D46F8D7E5541B6079F2F4CAA79B209331C28A)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/6bAg7PDkSoa0PKBistSBpw/zh-cn_image_0000002791566730.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014916Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F08CFB936E259AD6444909E3D1CBDF54C76FC863B2357B4759C4D085D7CD121)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/iIREShScRe2xUpOnJ6d3BA/zh-cn_image_0000002792878384.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011243Z&HW-CC-Expire=31536000000&HW-CC-Sign=C34D37CEF8EE256FBB35643EBF7044BB555E429053428303181AA3C768AFDAC3)
 
 ## 接口使用说明
 

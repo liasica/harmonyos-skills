@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-color-e
 title: 色彩
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 色彩
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:44+08:00
+scraped_at: 2026-11-21T09:11:10+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f3482866e3128ff237114598352f996f426884790646e2a554905fc2e0d361a7
+content_hash: sha256:c1a85aab89d6a55bf98106b38846eb72ef37431feb14b64a84630238f540c1dc
 ---
 
 通过颜色渐变接口，可以设置组件的背景颜色渐变效果，实现在两个或多个指定的颜色之间进行平稳的过渡。
@@ -105,7 +105,7 @@ struct LinearGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/78fsY4pKSt6x85bRBF_aLA/zh-cn_image_0000002820405185.png?HW-CC-KV=V1&HW-CC-Date=20261119T014653Z&HW-CC-Expire=31536000000&HW-CC-Sign=1971E2D7C31807D4ACCEBC7F4385290CE1A15DE067843872CBA3618A29814255)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/LtevsxKJSaml0GBiful6PQ/zh-cn_image_0000002792876886.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5262B97603369B37371F61A3DDBF25D93113D6A1A2016090AB672BA6F2D808F)
 
 ## 为组件添加角度渐变效果
 
@@ -218,7 +218,7 @@ struct SweepGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/thScuau1TpyQAINRLhWokA/zh-cn_image_0000002791725206.png?HW-CC-KV=V1&HW-CC-Date=20261119T014653Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C2CA30BD838073FDD64580CCC2E2A7FEFC4DA3D6E3ADD17F1322C48D703836E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/eCO7z0CnRDeigb-gQjC1wg/zh-cn_image_0000002821836789.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AE259E9818D3B5951F9B14F1C3306CA0EA1D21680634D086BF95FCDDAB3DCD1)
 
 ## 为组件添加径向渐变效果
 
@@ -325,4 +325,4 @@ struct RadialGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/bjl9X4KYQMGlrz_8HtbGuA/zh-cn_image_0000002791565234.png?HW-CC-KV=V1&HW-CC-Date=20261119T014653Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B7E3F8CCE49DA47B59DEF3B69BC93E5E8F7AB9D707FA51AACCC6C0C492066B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/E_eZaKSoTJ265EhIrgpTTQ/zh-cn_image_0000002821756793.png?HW-CC-KV=V1&HW-CC-Date=20261121T011109Z&HW-CC-Expire=31536000000&HW-CC-Sign=60D192E70B430AB54B9CD4C943A740405D8BAB5AD40BF70385832F9041A40D53)

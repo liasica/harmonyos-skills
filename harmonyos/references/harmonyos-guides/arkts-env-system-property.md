@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-env-sys
 title: "@Env：环境变量"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习响应式环境变量 > @Env：环境变量
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:39+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:d3a683e7aed877510abe093c981a7f641538866d2ceadb083ac80ef43c3320e5
+scraped_at: 2026-11-21T09:11:04+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:5b34468e3b15f3f8fc14aaddeace2523d5f7ef51ce03b7fa22526607d03d71ec
 ---
 
 在多设备开发的场景中，开发者可以使用[@Env](../harmonyos-references/ts-env-system-property.md)装饰器监听系统环境变量的改变，并根据系统环境变量来进行相应的场景判断，以减少不同设备间的适配逻辑和重复开发。
@@ -31,8 +31,8 @@ content_hash: sha256:d3a683e7aed877510abe093c981a7f641538866d2ceadb083ac80ef43c3
 * [ReadonlyEnvKey.WINDOW\_SYSTEM\_DENSITY](../harmonyos-references/ts-env-system-property.md#属性-1)，用于获取窗口所在屏幕的系统显示大小缩放系数，从API版本26.0.0开始支持。
 * [ReadonlyEnvKey.WINDOW\_IS\_FOCUSED](../harmonyos-references/ts-env-system-property.md#属性-1)，用于获取当前自定义组件所在窗口是否处于获焦状态，从API版本26.0.0开始支持。
 * [ReadonlyEnvKey.WINDOW\_IS\_HIGHLIGHTED](../harmonyos-references/ts-env-system-property.md#属性-1)，用于获取当前自定义组件所在窗口是否处于高亮状态，从API版本26.0.0开始支持。
-* [WritableEnvKey.FONT\_SCALE](../harmonyos-references/ts-env-system-property.md#writableenvkey)，用于为后代组件提供局部字体缩放比例，从API版本26.0.0开始支持。
-* [WritableEnvKey.DIRECTION](../harmonyos-references/ts-env-system-property.md#writableenvkey)，用于为后代组件提供布局方向，从API版本26.0.0开始支持。
+* [WritableEnvKey.FONT\_SCALE](../harmonyos-references/ts-env-system-property.md#writableenvkey)，用于获取局部字体缩放比例，从API版本26.0.0开始支持。
+* [WritableEnvKey.DIRECTION](../harmonyos-references/ts-env-system-property.md#writableenvkey)，用于获取局部布局方向，从API版本26.0.0开始支持。
 * 系统环境变量改变时，通知@Env装饰的变量更新，并触发@Env关联组件刷新，以实现界面内容的同步更新，@Env的参数为WritableEnvKey.FONT\_SCALE和WritableEnvKey.DIRECTION时，父组件可通过[WithEnv](../harmonyos-references/ts-container-with-env.md)中的[.env](../harmonyos-references/ts-container-with-env.md#env)方法向子组件中的@Env传值。
 * @Env装饰的变量不允许开发者初始化。
   + 当@Env装饰的类型是复杂类型时，@Env会返回给开发者可观察的环境变量类（由[@ObservedV2](arkts-new-observedv2-and-trace.md)装饰，且其属性由[@Trace](arkts-new-observedv2-and-trace.md)装饰）的实例。开发者如果想监听环境变量的变化，可以使用[addMonitor](arkts-new-addmonitor-clearmonitor.md)，具体示例见[在@ComponentV2中使用@Env](arkts-env-system-property.md#在componentv2中使用env)。
@@ -220,11 +220,11 @@ content_hash: sha256:d3a683e7aed877510abe093c981a7f641538866d2ceadb083ac80ef43c3
 
 流程图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/KSia76_USn6zorC0Geg4yQ/zh-cn_image_0000002791724774.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=559CBD9248ECF324A716B8843ADEEF262DDCEEDAE5E3857AE32D1F8171FD0D9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/z9XQUnoDQoG5QLjJCIUaYA/zh-cn_image_0000002821836357.png?HW-CC-KV=V1&HW-CC-Date=20261121T010941Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6999236C80996263D68AEF803CF20BFBDEDD51EC356B7ED91147F4B92DBFDF0)
 
 基于上面流程，下面的示例中以@Env使用SystemProperties.BREAK\_POINT为例，各个组件中的初始化如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/hvnJ7aQyRCmKsX_g4z8vVg/zh-cn_image_0000002791564802.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=873B201D53773A3366E622A7A254AF27D480AD4041FD2FBBB8ECC4B1A48C459A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/UYR12sl9RAGG_xo_nf4Bxw/zh-cn_image_0000002821756357.png?HW-CC-KV=V1&HW-CC-Date=20261121T010941Z&HW-CC-Expire=31536000000&HW-CC-Sign=E29B4281C2500C4DA20F8F3A95C20E0455531E777ED91BB6E71D915D78222E8B)
 
 1. Child1初始化@Env(SystemProperties.BREAK\_POINT)：
    * 递归查找直到父组件为空：向上查找父组件Index，没有@Env对应的SystemProperties.BREAK\_POINT实例。
@@ -733,7 +733,7 @@ struct SubWindow {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/BIyXTb_STgOZxeAY42b_mA/zh-cn_image_0000002820524755.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=A506B76229BE4A0EFC6BC120916E011D901DEDF5B689EFCF228AB3CC068BBA31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Jc7yVBHGTaerHWyv9Fj1Lg/zh-cn_image_0000002793036422.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010941Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D6EDE5E639563ADD1CE4AB8825100D5EE9FCE27A77927B435DE44BD05DD917B)
 
 可以使用lambda闭包函数将ComponentUnderBuilderNode中的@Env向下传递。通过这种方式ComponentUnderBuilderNode中的@Env可以收集到子组件Comp内组件的依赖，在切换窗口实例的时候触发Comp内组件的刷新。
 
@@ -773,7 +773,7 @@ struct Comp {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/tJRv0L5VTICkWSprHvH83A/zh-cn_image_0000002820404753.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2EDED43506A54EA30FBE643C64A23ADDE690C2FADD6003FEA128DB826A08BA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/NVPKAqZmQgSs1WjTLEyUBg/zh-cn_image_0000002792876454.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010941Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B6D2B320FA899E43328FE9B11E64F880161E74AE36B5647F60504856FFD8FD6)
 
 ### @Watch与@Monitor监听@Env装饰的变量
 
@@ -824,7 +824,7 @@ struct ChildV1 {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/YySnLOAPSYyFRh8DYqx2pQ/zh-cn_image_0000002791724776.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=88EA8EFD9A58D06A78568BF6971CDDF048233942C74498313873B6FEC9357620)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/WC2GaKlOSKaZNAr3TEv4WQ/zh-cn_image_0000002821836359.png?HW-CC-KV=V1&HW-CC-Date=20261121T010941Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF3CD8C74B8925F1292DFF5BE719A5C5CF42592DB9DF5AEC077C59BE91E9AFBB)
 
 在@ComponentV2中，可通过@Monitor监听@Env装饰变量的变化。需要注意的是，仅当@Env装饰的变量被整体赋值时才会触发@Monitor监听回调，其内部属性的变化不会触发回调。
 
@@ -877,4 +877,4 @@ struct Child {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/FLDk6k-QSKCfBh0_Ez_cNA/zh-cn_image_0000002791564804.png?HW-CC-KV=V1&HW-CC-Date=20261119T014648Z&HW-CC-Expire=31536000000&HW-CC-Sign=1694AC1F71F043A7B992D2E557A2C5ED2FC34FE5E14F232F6E12A5E6DBC6F07C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/CwazBtvPTWGf9s8DdswcFQ/zh-cn_image_0000002821756359.png?HW-CC-KV=V1&HW-CC-Date=20261121T010941Z&HW-CC-Expire=31536000000&HW-CC-Sign=B503DF423AFBDD95B7CEE820EBBE545C0C21754B63D18B4B7885FC2FB9FB79B6)

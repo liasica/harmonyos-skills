@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Enums
 category: harmonyos-references
-scraped_at: 2026-11-12T09:56:52+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:d2434c37ff775bd0046092bede1d294f0e62d535fd38c958b9e0bfa314ed5b5c
+scraped_at: 2026-11-21T09:16:18+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:b76e71de81f408505ad735c5ae1c5812979459af638d8638af72b13dc4ec0e4b
 ---
 
 **说明** 
@@ -138,7 +138,7 @@ PhotoSubtype是不同[PhotoAsset](arkts-apis-photoaccesshelper-photoasset.md)类
 
 枚举，相册关键信息。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -164,7 +164,7 @@ PhotoSubtype是不同[PhotoAsset](arkts-apis-photoaccesshelper-photoasset.md)类
 
 枚举，图片保存类型。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -175,7 +175,7 @@ PhotoSubtype是不同[PhotoAsset](arkts-apis-photoaccesshelper-photoasset.md)类
 
 枚举，通知事件的类型。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -213,39 +213,46 @@ PhotoSubtype是不同[PhotoAsset](arkts-apis-photoaccesshelper-photoasset.md)类
 
 枚举，推荐的图片类型。
 
+**说明** 
+
+* 扫码应用中推荐二维码或条码类型的图片。
+* 身份认证应用中推荐身份证或护照类型的图片。
+* 用户头像设置场景中推荐人像类型的图片。
+
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| QR\_OR\_BAR\_CODE | 1 | 二维码或条码。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| QR\_CODE | 2 | 二维码。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| BAR\_CODE | 3 | 条码。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| ID\_CARD | 4 | 身份证。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| PROFILE\_PICTURE | 5 | 头像。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| PASSPORT12+ | 6 | 护照。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| BANK\_CARD12+ | 7 | 银行卡。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| DRIVER\_LICENSE12+ | 8 | 驾驶证。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| DRIVING\_LICENSE12+ | 9 | 行驶证。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| FEATURED\_SINGLE\_PORTRAIT12+ | 10 | 推荐人像。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| QR\_OR\_BAR\_CODE | 1 | 二维码或条码。设置后系统会优先推荐二维码或条码类型的图片供用户选择。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| QR\_CODE | 2 | 二维码。设置后系统会优先推荐二维码类型的图片供用户选择。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| BAR\_CODE | 3 | 条码。设置后系统会优先推荐条码类型的图片供用户选择。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| ID\_CARD | 4 | 身份证。设置后系统会优先推荐身份证类型的图片供用户选择。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| PROFILE\_PICTURE | 5 | 头像。设置后系统会优先推荐头像类型的图片供用户选择。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| PASSPORT12+ | 6 | 护照。设置后系统会优先推荐护照类型的图片供用户选择。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| BANK\_CARD12+ | 7 | 银行卡。设置后系统会优先推荐银行卡类型的图片供用户选择。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| DRIVER\_LICENSE12+ | 8 | 驾驶证。设置后系统会优先推荐驾驶证类型的图片供用户选择。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| DRIVING\_LICENSE12+ | 9 | 行驶证。设置后系统会优先推荐行驶证类型的图片供用户选择。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| FEATURED\_SINGLE\_PORTRAIT12+ | 10 | 推荐人像。设置后系统会优先推荐人像类型的图片供用户选择。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 **示例：**
 
 ```ts
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+async function example() {
   try {
     let recommendOptions: photoAccessHelper.RecommendationOptions = {
       recommendationType: photoAccessHelper.RecommendationType.ID_CARD
-    }
+    };
     let options: photoAccessHelper.PhotoSelectOptions = {
       MIMEType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE,
       maxSelectNumber: 1,
       recommendationOptions: recommendOptions
-    }
+    };
     let photoPicker = new photoAccessHelper.PhotoViewPicker();
-    photoPicker.select(options).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-      console.info('PhotoViewPicker.select successfully, PhotoSelectResult uri: ' + JSON.stringify(PhotoSelectResult));
+    photoPicker.select(options).then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+      console.info('PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
     }).catch((err: BusinessError) => {
       console.error(`PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
     });
@@ -276,7 +283,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -294,7 +301,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 该模式适用于分段式拍照或分段式视频。如果当前设备不具备分段式能力，则以下三种分发模式无区别，直接返回请求的图片或视频资源。请求的结果通过[onDataPrepared](arkts-apis-photoaccesshelper-mediaassetdatahandler.md#ondataprepared11)回调返回。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -306,7 +313,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 配置转码模式。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -317,19 +324,21 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 配置完成按钮显示内容。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| TEXT\_DONE14+ | 0 | 显示“完成”。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| TEXT\_SEND14+ | 1 | 显示“发送”。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| TEXT\_ADD14+ | 2 | 显示“添加”。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| TEXT\_DONE14+ | 0 | 显示“完成”。不填写时默认显示此文本。 |
+| TEXT\_SEND14+ | 1 | 显示“发送”。 |
+| TEXT\_ADD14+ | 2 | 显示“添加”。 |
 
 ## NotifyChangeType20+
 
 枚举，媒体资产（图片/视频）或相册变更事件的通知类型。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -341,7 +350,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 枚举，图片或者视频数据的来源类型。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -355,7 +364,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -382,11 +391,11 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 枚举，是否支持动态照片自动播放。
 
-**模型约束**：此接口仅可在Stage模型下使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -399,7 +408,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 视频入库后，系统会异步判断其是否为log模式。判断完成前，取值为DEFAULT；判断完成后，log模式视频的取值会更新为LOG\_VIDEO。由于取值可能变化，不建议将VideoMode作为查询条件。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -426,8 +435,8 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 | LESS\_THAN\_OR\_EQUAL\_TO | 6 | 小于等于，取value数组的第一个元素与谓词匹配。超出长度取第1个。 |
 | AND | 7 | 逻辑'与'，相当于数据库查询语句的'and'。无需传入field和value。 |
 | OR | 8 | 逻辑'或'，相当于数据库查询语句的'or'。无需传入field和value。 |
-| IN | 9 | 匹配在指定范围内的字段，value长度限制10个。 |
-| NOT\_IN | 10 | 匹配不在指定范围内的字段，value长度限制10个。 |
+| IN | 9 | 匹配在指定范围内的字段，value长度限制10个，超出长度时仅取前10个元素进行匹配。 |
+| NOT\_IN | 10 | 匹配不在指定范围内的字段，value长度限制10个，超出长度时仅取前10个元素进行匹配。 |
 | BEGIN\_WRAP | 11 | 用于向谓词添加英文左括号，相当于数据库查询语句的"("，必须和英文右括号一起使用。无需传入field和value。 |
 | END\_WRAP | 12 | 用于向谓词添加英文右括号，相当于数据库查询语句的")"，必须和英文左括号一起使用。无需传入field和value。 |
 | BETWEEN | 13 | 匹配指定范围内的字段。  包含两端边界值，为左闭右闭区间。取value数组的前两个元素与谓词匹配，超出长度取前2个，分别表示左右边界。例如：[1, 2, 3, 4]中取前两个，1表示左边界，2表示右边界。 |
@@ -435,18 +444,24 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 ## GridLevel23+
 
-枚举类型，用于设置拉起picker后的宫格列数档位。
+表示设置拉起picker后的宫格列数档位的枚举。
+
+**说明** 
+
+* 大屏设备应用中使用紧密档位以显示更多图片。
+* 小屏设备应用中使用宽松档位以便于选择操作。
+* 根据应用界面布局动态调整图片选择器显示效果。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
-**模型约束**： 此接口仅可在Stage模型下使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SPACIOUS | 0 | 宽松宫格档位。该档位为标准宫格的列数减1。 |
-| STANDARD | 1 | 标准宫格档位。不同设备尺寸对应的标准宫格列数各不相同，当未配置标准宫格列数时，系统将使用默认列数。 |
+| STANDARD | 1 | 标准宫格档位。不同设备尺寸对应的标准宫格列数各不相同，当未配置标准宫格列数时，系统将使用默认列数。默认列数由系统根据设备尺寸自动确定，适用于开发者未主动设置宫格列数的场景。 |
 | COMPACT | 2 | 紧密宫格档位。该档位为标准宫格的列数加1。 |
 
 ## GridPinchModeType23+
@@ -455,9 +470,15 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
-**模型约束**： 此接口仅可在Stage模型下使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
-**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**说明** 
+
+* 在图片选择器中，用户可通过双指捏合手势调整宫格显示密度。
+* 捏合缩小后宫格显示更多图片，便于快速浏览和选择。
+* 捏合放大后宫格显示更少但更大的图片，便于精确查看。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -509,7 +530,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DEFAULT | 0 | 根据系统的资产兼容性配置自动判断是否执行转码。如果当前设备不支持资产的原始格式，则会自动转码为兼容格式。 |
+| DEFAULT | 0 | 根据系统的资产兼容性配置自动判断是否执行转码。如果当前设备不支持资产的原始格式，则会自动转码为兼容格式。不填写时默认采用此模式。 |
 | CURRENT | 1 | 不进行转码。资产将以其原始格式返回。 |
 | COMPATIBLE | 2 | 所有资产都被转码为最广泛兼容的格式（如JPEG）。 |
 

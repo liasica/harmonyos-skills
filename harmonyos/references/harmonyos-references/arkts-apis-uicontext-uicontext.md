@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (UIContext)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (UIContext)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:42+08:00
+scraped_at: 2026-11-21T09:13:57+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:24f1e58550a01debe8abc39163fe64093864f3788ca432657fa9a43e9c702834
+content_hash: sha256:391f8ac8c484f3491b9151e505222442b32847c035618331f0739f3c755d92c2
 ---
 
 UIContext实例对象，用于提供与当前UI实例关联的上下文能力，支持获取UI相关控制器、管理弹窗与动画、查询节点和窗口信息、进行像素单位转换等，适用于在指定UI实例中管理页面、组件和交互行为的场景。
@@ -477,7 +477,7 @@ struct UIContextCompare {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/OeQpp5YsTcmIF8S1qODW1Q/zh-cn_image_0000002791726918.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1859A2E69C92004B71187656CD36B9C17C9AB20B1336763DEC4CDCDFB9E1A73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/yKgXs7LXSGiyTNSbsCj2aw/zh-cn_image_0000002793038570.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D8E81EA0C1EF1A30147156538CB20DDED81A9138F6A25B2770494BE9080D4A1)
 
 ## getFont
 
@@ -888,7 +888,7 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/7LIcpYjqSyCmxauZcUys0w/zh-cn_image_0000002791566946.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=71BBF50F3DB53FC70EE275275DAC5C9EE6C8E83719C6EBEA2B483D8EDE4D2A02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/fdPkEhE9SfeGZaC6Wza15w/zh-cn_image_0000002792878600.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=100D6688CB77708EA96723EBB1C90D8A991D9ED66998803CB7A18517417EDF11)
 
 ## animateTo
 
@@ -1413,7 +1413,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/_d_eiSaoQq-4xLaZm4jm3w/zh-cn_image_0000002820526899.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2D37D97606BD2CC412A58B1BF40F638705837C0EF5942A29FFCB409C40FD0F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/16oJgdI3RRChSNedbr4DJg/zh-cn_image_0000002821838507.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=81FB5672DBAD5782A8AECFBF6D13112A31151006B80CED84D6F59DF993738B1C)
 
 ## showActionSheet
 
@@ -1487,7 +1487,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/DXVR61nSRoG-ogPMyN8AMQ/zh-cn_image_0000002820406899.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=030321F41CC314425C8E70EB07D20C22E1E53EC36C3F3B378C475F1F7AD7C167)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xAcNmNpJQ8eQJLSLMLZ5Bg/zh-cn_image_0000002821758509.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9A0D0DA840947B1E798CDC30A1895C74D38A4929E7D91C8D0795E2298D1C3C1)
 
 ## showDatePickerDialog
 
@@ -1566,7 +1566,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/tdC22GNXQBaEnrVIqNmMPg/zh-cn_image_0000002791726920.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=07DDDCB3D8314CB3DA6102C83B330E78654BC35365087C42F122FE8C3751C7F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/wE0adJBDSRmnldCxD90qyg/zh-cn_image_0000002793038572.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD8009CAE8261D541FE2364B0B4EE4CE668816DC05455F00FEDCA0FE165FB88A)
 
 ## showTimePickerDialog
 
@@ -1716,7 +1716,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Ryh1BmN5TyatYlawV8jxeQ/zh-cn_image_0000002791566948.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=E87EF509BC452E99BDB59BBC3E02F93F1636C242744F38B2C815F7735D518BDA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/fKag_OJDTEGU4o-s2PFMZA/zh-cn_image_0000002792878602.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=A471F5069BEBBDEA92C0DDC38617166D6A0B303CA6735DA4EB65D500BD9057DF)
 
 ## showTextPickerDialog20+
 
@@ -3761,7 +3761,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/UyFsEEXTRjumNs2CkXZ6XQ/zh-cn_image_0000002820526901.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=2ED84211830FA0802EC33359AB41979179AABA0578F712CC2D16F118F3CA3C2C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/QNe_5DkTQCWKG3P9eBMPbg/zh-cn_image_0000002821838509.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=70309022D1D32F88C26D8EA51ED3EBBDB5DD7ADF047298DE87469A0207839967)
 
 ## unbindTabsFromScrollable13+
 
@@ -4418,7 +4418,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/uUZQq4mISzG8rzkVIgcSFg/zh-cn_image_0000002820406901.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=83238A1FFD3CAFA38A4F63408436BE3F2D45F71B88A416C0DDB4AF2FC1FE87B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/06U6Cce5RcKcpwLLi-Bycw/zh-cn_image_0000002821758511.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=364971EBBC74C8A0059FF2E58BB5431830D9FDE07A35F9CBF09C8D031B47CCE3)
 
 ## getPageRootNode24+
 
@@ -4573,7 +4573,7 @@ export struct PageThree {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ONYeGx2dQKKE7aqkBhGfkg/zh-cn_image_0000002791726922.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D595C2AF253C7592C8CD7F5F1357D7FE64BE39083761C26177C97F37A6E0463)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/HRt9TdV-QDSSC0STiNGwLQ/zh-cn_image_0000002793038574.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2C3D1DFCE4807CEB66E826E7DB9FD729EA7BC7E36A500C8F29395A85A425708)
 
 ## isEasySplit24+
 

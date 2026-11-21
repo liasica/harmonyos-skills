@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: select
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > select
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:21+08:00
+scraped_at: 2026-11-21T09:14:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f0765ad72baf193f70f0679de2af0a2580ebde8c47a6106b6092d159b0a62611
+content_hash: sha256:53640af7cce41d5b7a5716cf6d0a61642ba0c8b61702b0301fe43a388a72dedb
 ---
 
 下拉选择按钮，可使用下拉菜单展示并选择内容。
@@ -92,4 +92,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/avrBtKMWRNWBL2XUKDXDPA/zh-cn_image_0000002820527775.png?HW-CC-KV=V1&HW-CC-Date=20261119T015026Z&HW-CC-Expire=31536000000&HW-CC-Sign=7353D82F49F78AE4FEFCA4A9DCF99404484E478CB5595F1D0356F724B5B8BEC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/9NmX4P_lR1yegRl0XWYXGA/zh-cn_image_0000002821839407.png?HW-CC-KV=V1&HW-CC-Date=20261121T011321Z&HW-CC-Expire=31536000000&HW-CC-Sign=256A8BE73F503452C183081CB32A145DEA00799199051A5D0167357A1EE3A30E)

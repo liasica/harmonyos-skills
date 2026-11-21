@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avmetadataext
 title: 使用AVMetadataExtractor提取音视频元数据信息(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体信息查询 > 使用AVMetadataExtractor提取音视频元数据信息(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:07+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:50fe72aac227fcfb3062869f91d4825f2a3896bdd7cc76729ddfe057cd07cde6
+scraped_at: 2026-11-21T09:12:05+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:4db2a938f6c56778fb3cb62502c424717585d4141b0ab3db5a2de936d8eaeb4f
 ---
 
-使用[AVMetadataExtractor](media-kit-intro.md#avmetadataextractor)可以实现从原始媒体资源中获取元数据。本指南将以获取一个媒体资源的元数据作为示例，向开发者讲解AVMetadataExtractor元数据相关功能。
+使用[AVMetadataExtractor](media-kit-intro.md#avmetadataextractor)可以实现从本地或网络媒体资源中获取元数据，如编码格式、分辨率、音频专辑封面和视频缩略图等。本指南将以获取一个媒体资源的元数据作为示例，向开发者讲解AVMetadataExtractor元数据相关功能。
 
 获取音视频资源的元数据的全流程包含：创建AVMetadataExtractor、设置资源、获取元数据、获取音频资源的专辑封面或获取视频缩略图、释放资源。
 

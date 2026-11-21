@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-playbac
 title: 使用AVPlayer播放视频(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 播放 > 使用AVPlayer播放视频(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:40+08:00
+scraped_at: 2026-11-21T09:12:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:311204345cd8c7f64aae6f6a228c886f32a67bc5c2224523c91cb047efbad1cb
+content_hash: sha256:f3a10856c7b3c95ff01568d232bc24ed076cda244ac95fee41fa697ca8976676
 ---
 
 当前提供两种视频播放开发的方案：
@@ -19,7 +19,7 @@ content_hash: sha256:311204345cd8c7f64aae6f6a228c886f32a67bc5c2224523c91cb047efb
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/QksVL4TzRzq88_0c-tf_1w/zh-cn_image_0000002820525957.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=B569D8655599AA6D4E934A2B78777837EFAB5319FD0C5D30AA83EA5557985EA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/7m577IFHS32gieEig5Kcmw/zh-cn_image_0000002793037628.png?HW-CC-KV=V1&HW-CC-Date=20261121T011205Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE9C8C7A3450A4BF22E810B8E89D91466B4353905FE0FF025D743B6983AB9EB0)
 
 状态的详细说明请参考[AVPlayerState](../harmonyos-references/arkts-apis-media-t.md#avplayerstate9)。当播放处于prepared / playing / paused / completed状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源释放。
 

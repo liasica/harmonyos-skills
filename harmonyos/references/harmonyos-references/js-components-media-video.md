@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: video
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 媒体组件 > video
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:22+08:00
+scraped_at: 2026-11-21T09:14:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3b76db306741ea51d3bbb26f805b03d06944d43c19d80e48fa150affbba558b3
+content_hash: sha256:365ac96225139b0381349df50a93826530fa42956f54439dbbacc68ab4fe7937
 ---
 
 **说明** 
@@ -142,4 +142,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/qt9dFyBnQN6Ue9rJKBbFPw/zh-cn_image_0000002820527779.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015026Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DEF76C51C3F5BD003D5B9533BB42603D11431F01770AE62048F2ED4D35E199F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/hU6W-IqSQz6Uu_1V3GG0Zw/zh-cn_image_0000002821839411.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=61F70D613AE8AD8885473D2682559A8E243FAB2F32CC51932283F494B5D5A908)

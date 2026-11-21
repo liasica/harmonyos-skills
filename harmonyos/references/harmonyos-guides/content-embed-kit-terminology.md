@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/content-embed
 title: Content Embed Kit术语
 breadcrumb: 指南 > 应用框架 > Content Embed Kit（内容嵌入服务） > Content Embed Kit术语
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:54+08:00
+scraped_at: 2026-11-21T09:11:20+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:a54f6a8856f7f56f6ca80bf2ddfd4970cf412bb400f7c790238e570732f79558
+content_hash: sha256:6e48e200e8d0f3bd7745ec2667c24f9362b3bd094ae7098f008903909582fb6f
 ---
 
 本文介绍Content Embed Kit相关术语。
@@ -26,7 +26,7 @@ OE是Object Editor（对象编辑）的缩写，代表HarmonyOS提供的对象�
 
 OE文档是一种采用结构化存储的复合文件，结构化存储定义了如何将单个文件视为由两种类型对象（存储对象和流对象）组成的层次化集合，这两种对象分别表现为目录和文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/pxeY3HgwTAaAblX8AVr2qg/zh-cn_image_0000002820525499.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014754Z&HW-CC-Expire=31536000000&HW-CC-Sign=069AC17EE8FF61B54EA45A3EAF06A13728DFCB4FAC5AB80D89DDCA01E4E52D50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/xAEb5MwHThKJMS8KFVy2NQ/zh-cn_image_0000002793037170.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T010955Z&HW-CC-Expire=31536000000&HW-CC-Sign=161AADA0FFB4CB37CA48491F4DCBA211E04D0A10269B75D06DC8AC2257DD108F)
 
 * root storage对象：在复合文件中，这个特殊的存储对象扮演着“根节点”的角色。它不仅是storage对象和stream对象层级结构的**最顶层父对象**，在访问任何子存储对象或流对象之前，必须先访问它。
 * storage对象：复合文件中的一个对象，类似于文件系统中的目录。storage对象的父对象必须是另一个storage对象或root storage对象。

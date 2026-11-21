@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-renderi
 title: 渲染控制概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式渲染控制 > 渲染控制概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:38+08:00
+scraped_at: 2026-11-21T09:11:04+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:fdad7ac7246d152c61d6f26b674103b0c438360db186633102339f5b78bc574b
+content_hash: sha256:c2575a9db637ab58e86144808823ad6fc6cc5e25397b44ab68c6dbf764c48cdf
 ---
 
 ArkUI通过[自定义组件](arkts-create-custom-components.md)的[build()函数](arkts-create-custom-components.md#build函数)和[@Builder装饰器](arkts-builder.md)中的声明式UI描述语句构建相应的UI。在声明式描述语句中开发者除了使用系统组件外，还可以使用渲染控制组件来辅助UI的构建，这些渲染控制组件包括控制组件是否显示的条件渲染组件和基于数组数据快速生成组件的循环渲染组件。
@@ -25,7 +25,7 @@ ArkUI通过[自定义组件](arkts-create-custom-components.md)的[build()函数
 
 循环渲染数组数据，通常有以下两种方式：全量加载和懒加载（配合滚动容器组件）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/3HuYudQYQb2_RniE53DGGw/zh-cn_image_0000002791564768.png?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD713CC3AFF4D3FBB7247A88CA56FC6E54E1C0AE150650D5F7122574948E33AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/n4cyxZF3SnOunnYnIxV3Rw/zh-cn_image_0000002821756323.png?HW-CC-KV=V1&HW-CC-Date=20261121T010940Z&HW-CC-Expire=31536000000&HW-CC-Sign=943F83BF3738B61735881CDB8963254D1BD2784493B859B70441FA255F50345C)
 
 全量加载场景下，组合（Composition）阶段会一次性将所有子组件节点都挂载到UI树上，后续渲染（Rendering）阶段绘制全部子组件。长列表场景下，加载所有节点会导致页面卡顿、高内存占用，尤其是当列表数据高频刷新时，非常影响页面使用体验。首次加载耗时长，但滑动时性能较好，适合数据较少的场景。
 

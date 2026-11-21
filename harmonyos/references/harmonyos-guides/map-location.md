@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location
 title: 显示我的位置
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 显示我的位置
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:05+08:00
+scraped_at: 2026-11-21T09:12:30+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ba7c20962fa8c82a0a86ee89956a546c1c39046b8b3e8c24b3c045416d74b980
+content_hash: sha256:599f4ad27926de6039703a6ace63091bd1c5d178ddd74a452708af98ebfeccf5
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:ba7c20962fa8c82a0a86ee89956a546c1c39046b8b3e8c24b3c045416d7
 
 本章节将向您介绍如何开启和展示“我的位置”功能，“我的位置”指的是进入地图后点击“我的位置”显示当前位置点的功能。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/ErcguQXKSmykAij5PXJGFg/zh-cn_image_0000002791566474.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=46A47E7D5514A830450DC0FF31FFD86FAD665AE5F0A55F6A752BBFA98427462B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/YL4hI9h0TBWSIDy98nyILw/zh-cn_image_0000002821758035.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED8DC27C27A89B8B4E59028FF30B30E46E946852BE10E8E54F001FBF6BAE9DA8 "点击放大")
 
 ## 接口说明
 
@@ -181,9 +181,9 @@ content_hash: sha256:ba7c20962fa8c82a0a86ee89956a546c1c39046b8b3e8c24b3c045416d7
    ```
 3. 检查“我的位置”功能是否成功启用。
 
-   “我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/0StyeW2KQLWmdcf2MYsQ-A/zh-cn_image_0000002820526427.png?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=01776CB2A6DB120DF7372D3F3790F0C48644D7427E122A947A2BC08E8DA6D4A0)默认显示在地图的右下角。点击“我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Teuz7iVwTPW3Ubomo8hGmA/zh-cn_image_0000002820406427.png?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=04F3CBF794C481AD8471A2FE79F99DC2DCD34883EF22680931748A750DD4D93B)，将会在屏幕中心显示当前定位，以蓝色圆点的形式呈现，效果如下图所示，效果根据获取到的用户位置会有变化。
+   “我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/0mvdLCSXSgOaRwYDaZmPXw/zh-cn_image_0000002793038098.png?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=D44AFBB4E3266033F347261CF72C27A565051ACEFC9427F065F4F43C988122C6)默认显示在地图的右下角。点击“我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/sD3CtbcgTouO72VSIRk5MQ/zh-cn_image_0000002792878128.png?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=E72702BC3F1AAAEF61BB8C03F1EED830860289EFC0E1E93C3B73C83F93F3576E)，将会在屏幕中心显示当前定位，以蓝色圆点的形式呈现，效果如下图所示，效果根据获取到的用户位置会有变化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/lmWe9fkWS6iXj-C-v4gR2w/zh-cn_image_0000002791726448.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=720DE5611EE8D80AED6C47BBF1E8A124277C1E0B953278A175D1F866A8582CA8 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/0aLN4lSYTOuujJLq5Yo12Q/zh-cn_image_0000002821838035.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1F3591C3226C1DD2A9680BA9461327E5E617DECD487678E789BABDE01EAA2A0 "点击放大")
 4. 获取用户位置坐标并设置用户的位置。
 
    Map Kit默认使用系统的连续定位能力，如果您希望定制显示频率或者精准度，可以调用[geoLocationManager](../harmonyos-references/js-apis-geolocationmanager.md)相关接口获取用户位置坐标（WGS84坐标系）。注意访问设备的位置信息必须申请权限，并且获得用户授权，详情见[geoLocationManager](../harmonyos-references/js-apis-geolocationmanager.md)。
@@ -237,7 +237,7 @@ let style: mapCommon.MyLocationStyle = {
 await this.mapController.setMyLocationStyle(style);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/oPj_i9q3QPiUv4ejINSFcQ/zh-cn_image_0000002791566476.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DA7AFACE57945E4240DF71E450E6903A6EF31E83D1DFD9E26E264B8907956E3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/2cuJbY93S922yt-JFcHioA/zh-cn_image_0000002821758037.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7B0523D3F62880D3951FFC3F59D02ED4FEEF068FE30E848C1433496846BDCB7 "点击放大")
 
 ### 更改我的位置图层相对于覆盖物的压盖顺序
 
@@ -248,4 +248,4 @@ await this.mapController.setMyLocationStyle(style);
 this.mapController?.changeMyLocationLayerOrder(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/nHakpgLAQkauWqqYb10rfA/zh-cn_image_0000002820526429.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014810Z&HW-CC-Expire=31536000000&HW-CC-Sign=634FBB7C2A12F832CEF65FA61AB9AAE4D5DEA400ACD50E8181545440D03CFDEF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/zIHq5-N8SwuDqdGMHIDWmg/zh-cn_image_0000002793038100.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=791E216306636F60653CD8A51F0A2B91E299691939C1AC0B908F9ED91BF67909 "点击放大")

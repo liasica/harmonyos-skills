@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inputmethod-a
 title: 实现一个输入法应用
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 实现一个输入法应用
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:57+08:00
+scraped_at: 2026-11-21T09:11:23+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1b5fb7e1f5518212e64f28797539360ea51c53f21af444eab8e1ff09da85919d
+content_hash: sha256:d218824d6674b446845c8c5d8107f93e9813039b337feacf00856907edab257d
 ---
 
 [InputMethodExtensionAbility](../harmonyos-references/js-apis-inputmethod-extension-ability.md)提供了onCreate()和onDestroy()生命周期回调，根据需要重写对应的回调方法。InputMethodExtensionAbility的生命周期如下：
@@ -71,7 +71,7 @@ content_hash: sha256:1b5fb7e1f5518212e64f28797539360ea51c53f21af444eab8e1ff09da8
    ```
 2. KeyboardController.ets文件。KeyboardController中除创建输入法窗口，设置输入法事件监听，实现文本插入、删除之外，还可以使用Panel对象的[getSystemPanelCurrentInsets](../harmonyos-references/js-apis-inputmethodengine.md#getsystempanelcurrentinsets21)获取输入法键盘与系统面板的偏移区域，输入法系统面板在不同设备上存在差异，当设备有系统面板时，输入法软键盘相对系统面板的偏移区域如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/TtKymiKySVSmqmKMbllL-g/zh-cn_image_0000002791725616.png?HW-CC-KV=V1&HW-CC-Date=20261119T014757Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA421ED3F372849CE2FF66AF235E405BFB00C5C2B01214F5912185E687077FD9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/BNt_HKMRRvaNyWCn1BJyhg/zh-cn_image_0000002821837203.png?HW-CC-KV=V1&HW-CC-Date=20261121T010958Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC4E3E286A53B771AAC7375CB219768E6F33613D14B2E95F09B91C46C685E2E6)
 
    ```typescript
    // 定义输入法的两个子类型
@@ -954,4 +954,4 @@ content_hash: sha256:1b5fb7e1f5518212e64f28797539360ea51c53f21af444eab8e1ff09da8
 
 ## 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/fTveVhJ9QtyaMV5cC6wiEg/zh-cn_image_0000002791565644.png?HW-CC-KV=V1&HW-CC-Date=20261119T014757Z&HW-CC-Expire=31536000000&HW-CC-Sign=75DAC4801DC4A0637F6A41FE3DE62651F8F2F6B62DEC8B2FD248AB2191B31999)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/m1yRry_-SNGzAPrT8moBzw/zh-cn_image_0000002821757205.png?HW-CC-KV=V1&HW-CC-Date=20261121T010958Z&HW-CC-Expire=31536000000&HW-CC-Sign=38843A76CB9EA4687C9E5FBF36CBCB4B8CACD8FFEC009B89B8947954551AD75E)

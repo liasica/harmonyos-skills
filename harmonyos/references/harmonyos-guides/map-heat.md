@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-heat
 title: 热力图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 热力图
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:05+08:00
+scraped_at: 2026-11-21T09:12:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2f90a9706aae9b9d28815f587e6b6c515186f9ade0b1d240f65f0a0fb7e21b14
+content_hash: sha256:8a48639d1bf268a6da974169d1c2e68ebd7f9ca4be9fe85f6eca162efccadebf
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:2f90a9706aae9b9d28815f587e6b6c515186f9ade0b1d240f65f0a0fb7e
 
 6.0.0(20)开始，支持热力图功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/fNNPCB6YQ1ub82W0-7RCBQ/zh-cn_image_0000002791726484.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=8133F47DEEF893E65BE23F462261263092C748F6E41ED87EDEB85B6AFC11AC0A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/nxF8plRHQPqQK5AECoW28Q/zh-cn_image_0000002821838071.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011104Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC7CD6BC4C2C14442425FC2FDA9B71199F4558857445F6AC42BE88C3FE56B963 "点击放大")
 
 ## 接口说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (PngMetadata)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Class (PngMetadata)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:55+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:bbd3a0fd40068b66c8031e20e8912c58e1dadde35387ca9c7a3fe043710d7d3e
+scraped_at: 2026-11-21T09:16:06+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:1b5fc5c2c73e01294b85e414745d51d8cf9db98b2620f8059c3c467ab6881b5c
 ---
 
 PngMetadata.
@@ -42,7 +42,7 @@ import { image } from '@kit.ImageKit';
 | modificationTime | string | 是 | 是 | PNG图像最后一次修改时间。 |
 | gamma | number | 是 | 是 | PNG图像的伽玛值。 |
 | yPixelsPerMeter | number | 是 | 是 | PNG图像Y方向每米像素数。  该值为正整数。 |
-| sRGBIntent | number | 是 | 是 | PNG图像的sRGB（standard Red Green Blue，标准红绿蓝）渲染意图。  - 0表示感知意图。  - 1表示相对比色意图。  - 2表示饱和度意图。  - 3绝对色度意图。 |
+| sRGBIntent | number | 是 | 是 | PNG图像的sRGB（standard Red Green Blue，标准红绿蓝）渲染意图，取值为0、1、2、3。  - 0表示感知意图。  - 1表示相对比色意图。  - 2表示饱和度意图。  - 3表示绝对色度意图。 |
 | title | string | 是 | 是 | PNG图像的标题。 |
 | warning | string | 是 | 是 | PNG图像的警告信息。 |
 | chromaticities | number[] | 是 | 是 | PNG图像中白点和三原色在1931 CIE xy色度空间中的坐标值。  例如，sRGB色彩空间对应的色度坐标可表示为：[0.3127, 0.3290, 0.6400, 0.3300, 0.3000, 0.6000, 0.1500, 0.0600]，依次表示白点、红色、绿色和蓝色的x/y坐标。 |

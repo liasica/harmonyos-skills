@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-add-pe
 title: 管理用户授权
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Phone/Tablet应用开发 > 管理用户授权
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:00+08:00
+scraped_at: 2026-11-21T09:12:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2478cc4fd97dd6f997d890cdc00beebb5e020cb7fff7f73943d1c7255a585f3e
+content_hash: sha256:bd5b2642dd9b4a3fd9e3216e7f444887b1a43e9d7d6d3af707c61db9c4e648d1
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:2478cc4fd97dd6f997d890cdc00beebb5e020cb7fff7f73943d1c7255a5
 
 应用所能操作的用户数据，是用户授权和运动健康服务审批通过的数据权限的交集。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/o-Y4ErAuQ8WEWRROfUxNHw/zh-cn_image_0000002820406325.png?HW-CC-KV=V1&HW-CC-Date=20261119T014805Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED214DE9322FB39F726BB588D93947678A8A482AD7542410E3EACAB435D2BE8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/6j19Ljd7TP26Al0EKKMipA/zh-cn_image_0000002792878026.png?HW-CC-KV=V1&HW-CC-Date=20261121T011225Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2583685FB937661BE0D16F18C6C1A495361EF13837D29F61BB160ECEEDF03EA)
 
 ## 接口说明
 

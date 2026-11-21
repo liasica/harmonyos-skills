@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 小游戏登录（必选）
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 小游戏 > 小游戏登录（必选）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:57+08:00
+scraped_at: 2026-11-21T09:12:23+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5cd84faaeb08d73d30e8bbf197cc4041294a59cf66a56197543de6a2c7b98c90
+content_hash: sha256:c0714e75ec8607e4a69104eb47deb6371613a2a4948d8e5235c3b360d516e7f0
 ---
 
 小游戏接入基础游戏服务的小游戏登录API后，支持玩家使用华为账号快速进入游戏，且小游戏的华为账号实名认证、未成年人防沉迷功能由基础游戏服务实现。
@@ -16,7 +16,7 @@ content_hash: sha256:5cd84faaeb08d73d30e8bbf197cc4041294a59cf66a56197543de6a2c7b
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/QV0CTNnOQ5qlcpIWcppPhg/zh-cn_image_0000002820526307.png?HW-CC-KV=V1&HW-CC-Date=20261119T014803Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1AAE935A2D96AD02A68596F84F5795BA67B60E7BA483D2A6714035F008C9EF2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/PiyJppU2SYiDozzYg5QS2Q/zh-cn_image_0000002793037978.png?HW-CC-KV=V1&HW-CC-Date=20261121T011055Z&HW-CC-Expire=31536000000&HW-CC-Sign=B48E95C29AD560277A4093189954DB16D70608D8214218712C716243AAF5A950)
 
 1. 玩家启动小游戏。
 2. 小游戏调用[init()](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。初始化后，弹出华为隐私协议窗口，玩家确认同意后，可继续往下执行。

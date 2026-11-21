@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-healthserv
 title: 申请运动健康权限被拒问题排查定位
 breadcrumb: FAQ > 应用服务开发 > 运动健康数据服务（Health Service Kit） > 申请运动健康权限被拒问题排查定位
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:e424acca550d6508e6c372d0a3ed6c46e9dfe1598131cf38fdd2c24b1cfca94e
+scraped_at: 2026-11-21T09:19:21+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:4a1ac2a4ac442d3252a4cfa7758c1466d054bf3cb795a8d848a76154c29dc4ab
 ---
 
 ## 问题现象
 
 1. 申请运动健康权限被驳回，驳回原因：“应用类型包括其他平台，技术自检中接入方式麻烦增加Cloud API，请修改申请资料后重新提交”，问题该如何排查处理？
-2. 申请华为运动健康权限，提交应用信息时，上传开发者申请资料清单失败，提示“上传失败，点击重新上传”，如何排查原因？![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/uCZ3KcxzTt-ZaOEySHO4uw/zh-cn_image_0000002628554628.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8BA6217DC837ADBA2028C03CF1A1CEF0B089AF78011B27FF94AB048F5CD4083 "点击放大")
+2. 申请华为运动健康权限，提交应用信息时，上传开发者申请资料清单失败，提示“上传失败，点击重新上传”，如何排查原因？![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/sEUm6_PbTdCg7P_f_akpVQ/zh-cn_image_0000002628554628.png?HW-CC-KV=V1&HW-CC-Date=20261121T011921Z&HW-CC-Expire=31536000000&HW-CC-Sign=2429A179A16B5BE261BE67CF033DA1EAF8584875AED9CA064C23BE0132CD2A74 "点击放大")
 
 ## 背景知识
 
 * [Health Service Kit（运动健康服务）](../harmonyos-guides/health-service-kit-guide.md)是为华为生态应用打造的基于华为账号和用户授权的运动健康数据开放平台。在获取用户授权后，开发者可以使用Health Service Kit提供的开放能力获取运动健康数据，基于多种类型数据构建运动健康领域应用与服务，为用户打造丰富、便捷、专业的运动健康场景体验。
 * 开发准备接入：[申请运动健康服务权限](../harmonyos-guides/health-apply.md)。
-* 常见申请驳回场景参考：[申请被驳回的常见问题](../harmonyos-guides/health-apply.md#申请被驳回的常见问题)。
+* 常见申请驳回场景参考：[申请被驳回的常见问题](../doccenter-capabilities/health-faqs.md#申请运动健康被驳回的常见问题)。
 
 ## 解决方案
 

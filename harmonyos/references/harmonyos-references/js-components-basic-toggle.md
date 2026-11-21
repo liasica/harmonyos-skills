@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: toggle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > toggle
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:21+08:00
+scraped_at: 2026-11-21T09:14:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:454dba61eda6a1bc704958e9a2f4e216edc3f32f18188674f99802c19f050985
+content_hash: sha256:dbbcc9cedf224c071efe1b7071e24ef9e9f23c06658ad4a43f4cceca354629b5
 ---
 
 **说明** 
@@ -131,4 +131,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/nuhSN_lLQoSeIgOqXoLfNw/zh-cn_image_0000002791567826.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=490CFFEECCD9BACC8FA4C4368E15BEB84B1D8E994A2738712D5EF7121AEDD705)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/st2VUINsSgeQTatzzdXUhQ/zh-cn_image_0000002792879506.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBDE34A7F8CB11F92E5E3FCBC28E015E74BBC41C2ECF32FCC27F0957A13CED88)

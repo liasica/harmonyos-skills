@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-kerne
 title: 核函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 基本概念 > 编程模型 > 核函数
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:18+08:00
+scraped_at: 2026-11-21T09:12:44+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5ddc186194498c95bc0b62839d5a042b11b92683e07cd8a37d7f8c2db216d53e
+content_hash: sha256:bc1d7d1c460479a5227f9cad285c6ecc5a7b3473c99c57edd86c95a3bda37487
 ---
 
 核函数（Kernel）是在设备侧并行执行的C/C++函数。它由主机端代码调用，调用时被实例化为多份并行副本，分别调度到多个AI Core上运行（每个AI Core被抽象为一个Block）。这些Block利用AI Core的计算能力，协同完成某一算子的计算。
@@ -36,7 +36,7 @@ extern "C" __global__ __aicore__ void add_custom(__gm__ uint8_t* x, __gm__ uint8
 
   **图1** 核函数（device侧执行）、host侧执行函数、device侧执行函数（除核函数之外的）调用关系
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/X6Z6CDw7R42d0FaK1-xpUg/zh-cn_image_0000002820406695.png?HW-CC-KV=V1&HW-CC-Date=20261119T014823Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1D8D3197883B18BD2BE7B8BD6C39FA1F4E0446E8DED25D1E806AC5D845406C5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/bJh5E1UJQy-jRxg4eVhfvQ/zh-cn_image_0000002821758305.png?HW-CC-KV=V1&HW-CC-Date=20261121T011116Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F1EB1C8928BA4081BBAE8A2E668C570313B2C646221F320C8171E8E6DF62F0C)
 * **使用变量类型限定符**
 
   指针入参变量需要增加变量类型限定符\_\_gm\_\_，表明该指针变量指向Global Memory上某处内存地址。

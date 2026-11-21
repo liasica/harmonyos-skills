@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc
 title: hdc
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hdc
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:30+08:00
+scraped_at: 2026-11-21T09:11:56+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:43d1c15821ae86ddb6f184b8fd25d39afed14368e7615a3bfd5910ad17b18439
+content_hash: sha256:4e94109524aa520350b28e26042681ba5701eec1b55fdc069a95b8f4a906b57d
 ---
 
 hdc（HarmonyOS Device Connector）是提供给开发人员的命令行调试工具，用于与设备进行交互调试、数据传输、日志查看以及应用安装等操作。该工具支持在Windows/Linux/MacOS/HarmonyOS系统上运行，为开发者提供高效、便捷的设备调试能力。
@@ -20,7 +20,7 @@ hdc包含三部分：
 
 如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/uP3k2hFORPa25rcbB0ifDA/zh-cn_image_0000002820405829.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB3D3E5334816DF2244FAE91F366C8C06928F46D8A2C3BB712BF0D664A540738)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/XKxdgZM_S32M8kL-o4j1eQ/zh-cn_image_0000002792877530.png?HW-CC-KV=V1&HW-CC-Date=20261121T011154Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E850AD2CF7506E278576C7498609BA0EC993DDDD5707DF39B014FDBAF8A28D8)
 
 **说明** 
 
@@ -401,7 +401,7 @@ TCP调试功能尚未稳定，建议仅在测试环境中使用。
 
 远程连接场景指客户端（通常是开发者使用的本地电脑）通过网络与服务器（通常是连接了调试设备的服务器或开发机）建立连接，实现客户端对目标设备的远程调试，控制和管理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/OTLQITYMRWuGN_w1erXxng/zh-cn_image_0000002791725850.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBDB36B3222BB81DCA04D6F196246B118441CD0276EFA5E976B82E2C8FE34054)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/WzY_HdSIQAKoMHoYGTdCmg/zh-cn_image_0000002821837437.png?HW-CC-KV=V1&HW-CC-Date=20261121T011154Z&HW-CC-Expire=31536000000&HW-CC-Sign=086B907F4B26A9AA911D7ACF727592EB2F6EC86531CB3E20FD877D81EA696A4B)
 
 远程连接使用-s参数来指定服务器的网络参数，包括地址和端口号，该设置只在当前命令执行期间有效，命令格式如下：
 
@@ -1870,7 +1870,7 @@ Linux和MacOS系统非管理员角色运行hdc后，使用USB方式连接设备�
 
 hdc文件传输命令执行出现乱码，如使用file recv从设备端发送带有中文名称的文件到本地，报错提示[Fail]Error opening file: no such file or directory, path:XXXXX，其中path显示中文乱码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/KlMnzIeETLGuBoSnUWqbVQ/zh-cn_image_0000002791565878.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=572EEB2F874F1CBA78CEFFFC9D4B5857841C7CB8B7DC40D592AEC1D75CDB308C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/-diR2cI5QLyENNuzAMUTYA/zh-cn_image_0000002821757439.png?HW-CC-KV=V1&HW-CC-Date=20261121T011154Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B1C142F94A38FBDE376637E43CE8AE8D4AD5CB32D9AA4564A618618AC342308)
 
 **可能原因&解决方法**
 
@@ -1884,7 +1884,7 @@ API版本12开始，文件传输命令支持参数路径中包含中文，版本
 
 使用hdc list targets命令查询已连接设备，连接设备标识后显示Unauthorized。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/lh8rr9gQTzW0uP5jxfd04Q/zh-cn_image_0000002820525831.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=E70DD72C1BAE6D6FD5506048218C905F6FDE0D0433D195B904CDA54EA6A30476)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/kTR5I6njQ8mSOQmyVIO9GA/zh-cn_image_0000002793037502.png?HW-CC-KV=V1&HW-CC-Date=20261121T011154Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAB9EC01B3795D4EFF82F23C8C28F1622C21DF82542F7C9A66FFBBE8C68BA83E)
 
 **可能原因&解决方法**
 

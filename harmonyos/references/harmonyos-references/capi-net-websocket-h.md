@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-
 title: net_websocket.h
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件 > net_websocket.h
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:42+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:4765338946f5ff59aa6c2322442811b165fecdc526a842493364baa92ce6917d
+scraped_at: 2026-11-21T09:15:18+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:613f75213185da4e78e4d44a1ea3676b468a96720c748616d50ef27f76697c0d
 ---
 
 ## 概述
@@ -91,7 +91,7 @@ int OH_WebSocketClient_AddHeader(struct WebSocket *client, struct WebSocket_Head
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看OH\_Websocket\_ErrCode。 |
+| int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看[WebSocket\_ErrCode](capi-net-websocket-type-h.md#websocket_errcode)。 |
 
 ### OH\_WebSocketClient\_Connect()
 
@@ -121,7 +121,7 @@ int OH_WebSocketClient_Connect(struct WebSocket *client, const char *url, struct
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看OH\_Websocket\_ErrCode。 |
+| int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看[WebSocket\_ErrCode](capi-net-websocket-type-h.md#websocket_errcode)。 |
 
 ### OH\_WebSocketClient\_Send()
 
@@ -151,7 +151,7 @@ int OH_WebSocketClient_Send(struct WebSocket *client, char *data, size_t length)
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看OH\_Websocket\_ErrCode。 |
+| int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看[WebSocket\_ErrCode](capi-net-websocket-type-h.md#websocket_errcode)。 |
 
 ### OH\_WebSocketClient\_Close()
 
@@ -180,7 +180,7 @@ int OH_WebSocketClient_Close(struct WebSocket *client, struct WebSocket_CloseOpt
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看OH\_Websocket\_ErrCode。 |
+| int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看[WebSocket\_ErrCode](capi-net-websocket-type-h.md#websocket_errcode)。 |
 
 ### OH\_WebSocketClient\_Destroy()
 
@@ -215,4 +215,4 @@ int OH_WebSocketClient_Destroy(struct WebSocket *client)
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看OH\_Websocket\_ErrCode。 |
+| int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看[WebSocket\_ErrCode](capi-net-websocket-type-h.md#websocket_errcode)。 |

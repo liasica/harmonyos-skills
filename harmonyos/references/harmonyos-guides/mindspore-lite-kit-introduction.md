@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lit
 title: MindSpore Lite Kit简介
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > MindSpore Lite Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:21+08:00
+scraped_at: 2026-11-21T09:12:48+08:00
 doc_updated_at: 2026-10-26
-content_hash: sha256:c9785a128b6045c70f6c45253a6313534dccf656fb6b00498d12c38890c11687
+content_hash: sha256:44f22f1202a00ea42366df68de9d09653021570afd871bb9d564560ef5080b81
 ---
 
 ## 使用场景
@@ -35,7 +35,7 @@ MindSpore Lite提供面向不同硬件设备的AI模型推理能力，使用Mind
 
 **图 1** 使用MindSpore Lite进行模型推理的开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/S_swJpBMSmyg0_sJ2F15Pw/zh-cn_image_0000002791566834.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014851Z&HW-CC-Expire=31536000000&HW-CC-Sign=E691577CD851F22B5F51EEB92ADA74270B5A8356429BFA498530FF9B59423360)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/9euOO_bPQsGMsKFf43ryfg/zh-cn_image_0000002792878488.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011120Z&HW-CC-Expire=31536000000&HW-CC-Sign=006BCA8AC312C5F4CB25099165B5A7C05557E24237A82BEE705CB41DB40C4317)
 
 MindSpore Lite开发流程分为两个阶段：
 

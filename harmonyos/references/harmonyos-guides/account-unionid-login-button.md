@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-union
 title: 使用“华为账号登录”按钮登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 华为账号登录（获取UnionID/OpenID） > 使用“华为账号登录”按钮登录
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:50+08:00
+scraped_at: 2026-11-21T09:12:16+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a5956184942437718fed824c89d316e3bf179d6c3997e9e401dfdb5131659bd1
+content_hash: sha256:a440ee6a449f3e164021396138f1cc18519076931e356e8ffe10c96e4fac5add
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:a5956184942437718fed824c89d316e3bf179d6c3997e9e401dfdb51316
 
 华为账号登录按钮包含文本、标志和文本、标志三种样式，以满足应用对界面风格一致性和灵活性的要求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/JlIzIXXJQOm1mGrL44X50g/zh-cn_image_0000002791566200.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=1588AA09DF5C884FA4553134A37BF8D42E8B7FD5897F1B71B41BF671C2E8E3D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Oz3BELocSvewenPf0n5c8g/zh-cn_image_0000002821757761.png?HW-CC-KV=V1&HW-CC-Date=20261121T011215Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A7FDEF9B0A38D71DE5B39BF503BC1858B84FDE31B355789F6D9F055519BC1BD)
 
 ## 约束与限制
 
@@ -22,13 +22,13 @@ content_hash: sha256:a5956184942437718fed824c89d316e3bf179d6c3997e9e401dfdb51316
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/zOdjxwPdQ1CqJmTz88mKig/zh-cn_image_0000002820526153.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=876066FEA59A930F29203493C4DC9220177D9C24E7C6A225E53B3760402308CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/tUatRt96TcWSkY681xU_5w/zh-cn_image_0000002793037824.png?HW-CC-KV=V1&HW-CC-Date=20261121T011215Z&HW-CC-Expire=31536000000&HW-CC-Sign=913C356CE4452135E912A630E605C974BA15E0B37E0FEE285A9E7B07445BA70A)
 
 账号登录按钮的用户体验和UX设计需符合[【华为账号登录】按钮](../design-guides/id-0000001880001344.md#section2624430102713)规范，不符合规范的UX设计可能会对应用上架和用户体验带来影响。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/lL0T0Ao-Rp6uWPSoN94fyQ/zh-cn_image_0000002820406153.png?HW-CC-KV=V1&HW-CC-Date=20261119T014756Z&HW-CC-Expire=31536000000&HW-CC-Sign=724C707F77B019F5F262F3D127FA239684A6DDE078B0884FA56AAD4F4FD1F97C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/dEJ7Og7BTXaSx7jvaZ7Y7Q/zh-cn_image_0000002792877854.png?HW-CC-KV=V1&HW-CC-Date=20261121T011215Z&HW-CC-Expire=31536000000&HW-CC-Sign=05D994FB93D2F5B08B0498CBDA967129D533E0B1FE320E6DDB4F14C64EE2BD99)
 
 流程说明：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 尺寸设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 尺寸设置
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:51+08:00
+scraped_at: 2026-11-21T09:14:02+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0c88306703ecd7051fbdcb85baed26a44f3e875dd7896b3f8baaf8115377457c
+content_hash: sha256:50f81e41a7965e47a473ef6616ecddac8b98a48f634afe98aaa28f774ac9b985
 ---
 
 设置组件的宽高、边距。通过设置组件尺寸相关属性，可以实现灵活的页面布局和响应式设计，常见场景包括固定组件大小、按比例分配布局空间、设置组件内外边距、实现安全区域适配等。
@@ -434,7 +434,7 @@ struct SizeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/GrgbPW2OTZ6439rBSr8YHA/zh-cn_image_0000002820406993.png?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAB21BDD6FC3E471298F982E52CA48D5B44968E2C152F3931D66A45CEADA6F07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/iSrg91xHQreIK5GBdMg7Gg/zh-cn_image_0000002821758603.png?HW-CC-KV=V1&HW-CC-Date=20261121T011401Z&HW-CC-Expire=31536000000&HW-CC-Sign=628BDF16FE0AE1630BE161C2A2E42EB40BD2DD85103D3DB2CD45805EFBD2EE9B)
 
 ### 示例2（LocalizedPadding和LocalizedMargin类型的使用）
 
@@ -486,11 +486,11 @@ struct SizeExample {
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/XZ1GNOfJThC_fUAwBNLUkA/zh-cn_image_0000002791727014.png?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=940E28F4FEF2A5F22BCA49658FAB06D6C9A6223D451B2C0F41040F137D4E1411)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/QoKqDtU_QiuwGW6Ig5NN9A/zh-cn_image_0000002793038666.png?HW-CC-KV=V1&HW-CC-Date=20261121T011401Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A5D8D22E36EC2C036F354E8A1C8742A8E91BDCD54D9C4082D3F5A26C0B8D357)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/jTxU-poPTXKZt10uMIPEHg/zh-cn_image_0000002791567042.png?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=06C07E307D9FDD57D1064A05C3E420E400AB564F91A209276A29C8F74E3C0133)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/2iNQxIYNTOaWLUKrht4XsQ/zh-cn_image_0000002792878696.png?HW-CC-KV=V1&HW-CC-Date=20261121T011401Z&HW-CC-Expire=31536000000&HW-CC-Sign=99118DDEA969B9B0C7841F44B20B0E1BE55FCD3C8BB7968F99C2D717279332E8)
 
 ### 示例3（设置组件级安全区）
 
@@ -524,7 +524,7 @@ struct SafeAreaPaddingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/hJHU_y8xRjesT0MZEeRMBw/zh-cn_image_0000002820526995.png?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=1665B832947CB6F96082733DAAF9555CCA3ACF933172FF879C02F270C68E63A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/Qf1sYTBpRGaR2k7w93vZJA/zh-cn_image_0000002821838603.png?HW-CC-KV=V1&HW-CC-Date=20261121T011401Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F6596FA930981886D22643C74B62EBB0E7C59392D85CE739C892CB0CEB114D3)
 
 ### 示例4（使用attributeModifier动态设置安全区）
 
@@ -569,7 +569,7 @@ struct SafeAreaPaddingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/fNDTVd8LS3GyexqdazXDWw/zh-cn_image_0000002820406995.png?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=938F817D5A3590CBFFBDAE4BB453BB99F33627BDDB600B13718322160478573C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/iLOugdeiTeuyw4cP9wrIEg/zh-cn_image_0000002821758605.png?HW-CC-KV=V1&HW-CC-Date=20261121T011401Z&HW-CC-Expire=31536000000&HW-CC-Sign=893B68BE49E339FC939446243A9D195414DCFBB3EDFBD17DE1884E0455EA446C)
 
 ### 示例5（设置布局策略）
 
@@ -626,7 +626,7 @@ struct LayoutPolicyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/bp1oiv9uT46D3UQS-xwFKg/zh-cn_image_0000002791727016.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015050Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DB601002966742F40B6723215C0F0F45BABE0C1DB975A3060484E05029D48D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/rBO_9t9wSIu6t84hxw1y7w/zh-cn_image_0000002793038668.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011401Z&HW-CC-Expire=31536000000&HW-CC-Sign=052841D43BDA3C5EFD59A87EB10774C43A8A3605ACB25A825BDFC6FF38FA72E0)
 
 ### 示例6（子组件单方向设置matchParent效果）
 

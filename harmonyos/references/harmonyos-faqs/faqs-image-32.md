@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-32
 title: 使用PixelMap完成图像变换及常见问题
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 使用PixelMap完成图像变换及常见问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:42+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:5b733dea56e7f2b569dad0e9734374cf41c4ead5f03c7154fada1fb4898cf4da
+scraped_at: 2026-11-21T09:19:03+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:b334ec770a48525b51dba603eea54bb1efd30281ad7f9ab9753dda27e320eb3e
 ---
 
 ## 问题现象
@@ -85,7 +85,7 @@ content_hash: sha256:5b733dea56e7f2b569dad0e9734374cf41c4ead5f03c7154fada1fb4898
    }
    ```
 
-更多[图像变换示例效果](../harmonyos-guides/image-transformation.md#示例代码)。
+更多[图像变换示例效果](../doccenter-capabilities/image-transformation.md#示例代码)。
 
 ## 常见FAQ
 

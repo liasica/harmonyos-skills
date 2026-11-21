@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: ArkGuard字节码混淆开启指南
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > ArkGuard字节码混淆开启指南
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:34+08:00
+scraped_at: 2026-11-21T09:11:00+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f513cad63b7a7f1118b041b7339e7c81e7697eeb776fbcc428dae2ed65c15673
+content_hash: sha256:2db3fdc399d0157c31a7fcab86e82f9869b08e163c8c0a8c2f9c710e2505198c
 ---
 
 **注意** 
@@ -181,7 +181,7 @@ content_hash: sha256:f513cad63b7a7f1118b041b7339e7c81e7697eeb776fbcc428dae2ed65c
 * origin目录：混淆前的modules.abc文件。
 * 配置信息文件：config.json，该文件记录了混淆的配置项和白名单列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/dZuWdDPYRD-Jj-A_g1BeuQ/zh-cn_image_0000002820404491.png?HW-CC-KV=V1&HW-CC-Date=20261119T014643Z&HW-CC-Expire=31536000000&HW-CC-Sign=79C0059DB1C3BBE87A6D060AC7B63F1B7BE47B5A4701D4832F54CE62AAD8DCD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Kesa7qW4RkiWhqGwkNqlSg/zh-cn_image_0000002792876192.png?HW-CC-KV=V1&HW-CC-Date=20261121T010936Z&HW-CC-Expire=31536000000&HW-CC-Sign=EADC3A2EBF1D21981525D790F2EB0A9C29C74EE9781A0621C49D74499976CC19)
 
 ## 报错栈还原
 
@@ -189,4 +189,4 @@ content_hash: sha256:f513cad63b7a7f1118b041b7339e7c81e7697eeb776fbcc428dae2ed65c
 
 反混淆工具需要使用应用编译过程中生成的sourceMaps.json文件以及混淆名称映射文件nameCache.json文件，因此请本地备份它们；为方便问题定位，建议备份release目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/Ih6QIXR9Qyal16Ibgsn2kQ/zh-cn_image_0000002791724514.png?HW-CC-KV=V1&HW-CC-Date=20261119T014643Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A48F2EDB3A711E50084F2FF56FDBB5A7EAA27200F16D72E669D9B8A8866B89E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/eAEUD-yfQVqhwXctwo0tNg/zh-cn_image_0000002821836097.png?HW-CC-KV=V1&HW-CC-Date=20261121T010936Z&HW-CC-Expire=31536000000&HW-CC-Sign=22FFB11CF0009BA76D4017CEF5265F5316231A7D8C8379D31340C2059953A3C2)

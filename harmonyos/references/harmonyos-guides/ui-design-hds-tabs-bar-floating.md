@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds
 title: 设置页签栏的悬浮样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部页签 > 设置页签栏的悬浮样式
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:59+08:00
+scraped_at: 2026-11-21T09:11:25+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:65eae34c52a5999213fec7d98580c94e988879e95bce09344431c44de6156358
+content_hash: sha256:6489ff3a5411d1ab0e8bf2ba2dc332bc68f10f3a0d4e3938ecca038da1c17331
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:65eae34c52a5999213fec7d98580c94e988879e95bce09344431c44de61
 
 页签栏悬浮样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/9nUQ-svWSB6vcoHdykQdoQ/zh-cn_image_0000002820525629.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C325F15D2A5A84AF60F8F64E97C75E1B6A9A491ED838012FAC461C43C00A3A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/CVYIkdJVQ3iqF8WNN6aNYw/zh-cn_image_0000002793037300.png?HW-CC-KV=V1&HW-CC-Date=20261121T011000Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DC11087C48558F2D1AA3F6740378361931A3500A02C469CFAA5A886F9A51D21)
 
 ## 迷你栏
 
@@ -24,11 +24,11 @@ content_hash: sha256:65eae34c52a5999213fec7d98580c94e988879e95bce09344431c44de61
 
 迷你栏的折叠样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/u17d-eNSTeakzK9jXXxLpw/zh-cn_image_0000002820405629.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=43F4B3FD9CCFCB24400E8CB67D50B5B5AC8E1CD7D37FE0B139513B64C07910DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/KDR4DsyARwuBYuDB-PVwBg/zh-cn_image_0000002792877330.png?HW-CC-KV=V1&HW-CC-Date=20261121T011000Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD208FBAF63CA7FBDFDC65592B573664901D50A1C56322CAF6A3BAA9A4477004)
 
 迷你栏的展开样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/xjVXl9IST7-mHU0Mmu8C8Q/zh-cn_image_0000002791725650.png?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6CB961AFC058947B2141680B0247F1014182D96CBF884B29648531B19B6C0DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/yETjhyE1THmbm7PDbsJtKQ/zh-cn_image_0000002821837237.png?HW-CC-KV=V1&HW-CC-Date=20261121T011000Z&HW-CC-Expire=31536000000&HW-CC-Sign=7662AE2E824C83B51521AC803EBF12FD208FBDDA7DBB6B35CF7509A5522E8939)
 
 ## 约束条件
 

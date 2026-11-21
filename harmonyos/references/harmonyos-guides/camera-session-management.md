@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-sessio
 title: 会话管理(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用必选能力(ArkTS) > 会话管理(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:03+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:d0142757489c8c16a6c5bbca871a6b97583602f8268cee8a1ef99b2214f5d1bb
+scraped_at: 2026-11-21T09:12:01+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:2621040dbc3dd7bd559f58b1f3f3df45d051364d9af884615aaca975503198a9
 ---
 
 相机使用预览、拍照、录像、元数据功能前，均需要创建相机会话。
@@ -30,28 +30,29 @@ content_hash: sha256:d0142757489c8c16a6c5bbca871a6b97583602f8268cee8a1ef99b2214f
    ```
 2. 调用[cameraManager](../harmonyos-references/arkts-apis-camera-cameramanager.md)中的[createSession](../harmonyos-references/arkts-apis-camera-cameramanager.md#createsession11)方法创建一个会话。
 
-   ```ts
+   ```typescript
    // 此处以videoSession为例。
-   function getSession(cameraManager: camera.CameraManager): camera.VideoSession | undefined {
+   createSessionFn(cameraManager: camera.CameraManager): camera.VideoSession | undefined {
      let videoSession: camera.VideoSession | undefined = undefined;
      try {
        videoSession = cameraManager.createSession(camera.SceneMode.NORMAL_VIDEO) as camera.VideoSession;
      } catch (error) {
        let err = error as BusinessError;
-       console.error(`Failed to create the session instance. error: ${err.code}`);
+       console.error(`Failed to create session instance. err code: ${err.code}`);
      }
      return videoSession;
    }
    ```
 3. 调用[VideoSession](../harmonyos-references/arkts-apis-camera-videosession.md)中的[beginConfig](../harmonyos-references/arkts-apis-camera-session.md#beginconfig11)方法配置会话。
 
-   ```ts
-   function beginConfig(videoSession: camera.VideoSession): void {
+   ```typescript
+   // 此处以videoSession为例。
+   beginConfigFn(videoSession: camera.VideoSession): void {
      try {
        videoSession.beginConfig();
      } catch (error) {
        let err = error as BusinessError;
-       console.error(`Failed to beginConfig. error: ${err.code}`);
+       console.error(`Failed to beginConfig. err code: ${err.code}`);
      }
    }
    ```
@@ -65,15 +66,17 @@ content_hash: sha256:d0142757489c8c16a6c5bbca871a6b97583602f8268cee8a1ef99b2214f
 
    相机输入流cameraInput创建流程请参考[设备输入](camera-device-input.md)，相机预览输出流previewOutput和拍照输出流photoOutput创建流程请分别参考[预览](camera-preview.md)和[拍照](camera-shooting.md)。
 
-   ```ts
-   async function startSession(videoSession: camera.VideoSession, cameraInput: camera.CameraInput, previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput): Promise<void> {
+   ```typescript
+   // 此处以videoSession为例。
+   async startSession(videoSession: camera.VideoSession, cameraInput: camera.CameraInput,
+     previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput): Promise<void> {
      try {
        videoSession.addInput(cameraInput);
      } catch (error) {
        let err = error as BusinessError;
        console.error(`Failed to addInput. error: ${err.code}`);
      }
-     let canAddPreviewOutput : boolean = false;
+     let canAddPreviewOutput: boolean = false;
      try {
        canAddPreviewOutput = videoSession.canAddOutput(previewOutput);
      } catch (error) {
@@ -90,7 +93,7 @@ content_hash: sha256:d0142757489c8c16a6c5bbca871a6b97583602f8268cee8a1ef99b2214f
        let err = error as BusinessError;
        console.error(`Failed to add previewOutput. error: ${err.code}`);
      }
-     let canAddPhotoOutput : boolean = false;
+     let canAddPhotoOutput: boolean = false;
      try {
        canAddPhotoOutput = videoSession.canAddOutput(photoOutput);
      } catch (error) {
@@ -112,7 +115,7 @@ content_hash: sha256:d0142757489c8c16a6c5bbca871a6b97583602f8268cee8a1ef99b2214f
      } catch (error) {
        let err = error as BusinessError;
        console.error(`Failed to commitConfig. error: ${err.code}`);
-      return;
+       return;
      }
 
      try {
@@ -125,8 +128,9 @@ content_hash: sha256:d0142757489c8c16a6c5bbca871a6b97583602f8268cee8a1ef99b2214f
    ```
 5. 会话控制。调用VideoSession中的[stop](../harmonyos-references/arkts-apis-camera-session.md#stop11)方法可以停止当前会话。调用[removeOutput](../harmonyos-references/arkts-apis-camera-session.md#removeoutput11)和[addOutput](../harmonyos-references/arkts-apis-camera-session.md#addoutput11)方法可以完成会话切换控制。以下示例代码以移除拍照流photoOutput，添加视频流videoOutput为例，完成了拍照到录像的切换。
 
-   ```ts
-   async function switchOutput(videoSession: camera.VideoSession, videoOutput: camera.VideoOutput, photoOutput: camera.PhotoOutput): Promise<void> {
+   ```typescript
+   async switchOutput(videoSession: camera.VideoSession,
+     videoOutput: camera.VideoOutput, photoOutput: camera.PhotoOutput): Promise<void> {
      try {
        await videoSession.stop();
      } catch (error) {
@@ -147,14 +151,18 @@ content_hash: sha256:d0142757489c8c16a6c5bbca871a6b97583602f8268cee8a1ef99b2214f
        let err = error as BusinessError;
        console.error(`Failed to remove photoOutput. error: ${err.code}`);
      }
+     let canAddVideoOutput: boolean = false;
      try {
-       videoSession.canAddOutput(videoOutput);
+       canAddVideoOutput = videoSession.canAddOutput(videoOutput);
      } catch (error) {
        let err = error as BusinessError;
        console.error(`Failed to add videoOutput error: ${err.code}`);
      }
      // 向会话中添加视频输出流。
      try {
+       if (!canAddVideoOutput) {
+         return;
+       }
        videoSession.addOutput(videoOutput);
      } catch (error) {
        let err = error as BusinessError;

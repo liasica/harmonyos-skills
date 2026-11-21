@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-env-sy
 title: "@Env：环境变量"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 响应式环境变量 > @Env：环境变量
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:30+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:d4ce148f682c22720f8da7310aa53d94d668b747194250d71809f6809b5ce853
+scraped_at: 2026-11-21T09:14:20+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:ae6d6a2fa74e460070f268d902344d1fbd9179601de76254fad649e5315a669d
 ---
 
 @Env装饰器用于获取系统环境变量，帮助开发者感知系统环境变化并动态调整UI显示。
@@ -176,8 +176,8 @@ protected constructor()
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| DIRECTION | [WritableSystemEnvKey](ts-env-system-property.md#writablesystemenvkeyt)<Direction> | 是 | 否 | [@Env](ts-env-system-property.md#env)变量参数，通过@Env(WritableEnvKey.DIRECTION)可获取[Direction](ts-appendix-enums.md#direction)枚举类型的值。  当该装饰器声明在[@Component](../harmonyos-guides/arkts-create-custom-components.md#component)或[@ComponentV2](../harmonyos-guides/arkts-create-custom-components.md#componentv2)中时，用于获取窗口所在屏幕的布局方向。 |
-| FONT\_SCALE | [WritableSystemEnvKey](ts-env-system-property.md#writablesystemenvkeyt)<number> | 是 | 否 | [@Env](ts-env-system-property.md#env)变量参数，通过@Env(WritableEnvKey.FONT\_SCALE)可获取number类型的值，取值无上限，小于等于0的值按0处理。  当该装饰器声明在[@Component](../harmonyos-guides/arkts-create-custom-components.md#component)或[@ComponentV2](../harmonyos-guides/arkts-create-custom-components.md#componentv2)中时，用于为后代组件提供局部字体缩放倍数。 |
+| DIRECTION | [WritableSystemEnvKey](ts-env-system-property.md#writablesystemenvkeyt)<Direction> | 是 | 否 | 布局方向系统环境变量参数，可作为[WithEnv](ts-container-with-env.md)的[env](ts-container-with-env.md#env)方法和[@Env](ts-env-system-property.md#env)的参数用于指代布局方向的系统环境变量。 |
+| FONT\_SCALE | [WritableSystemEnvKey](ts-env-system-property.md#writablesystemenvkeyt)<number> | 是 | 否 | 字体缩放倍数系统环境变量参数，可作为[WithEnv](ts-container-with-env.md)的[env](ts-container-with-env.md#env)方法和[@Env](ts-env-system-property.md#env)的参数用于指代字体缩放倍数的系统环境变量。 |
 
 ## ReadonlyEnvKey
 

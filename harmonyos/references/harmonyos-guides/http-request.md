@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/http-request
 title: 使用HTTP访问网络
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用HTTP访问网络
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:47:36+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:ab9aab5d3035642f5240ac8d7f00ae21a16459d3109e629015573b0fe7a74c29
+scraped_at: 2026-11-21T09:11:41+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:5ef192da180ee864e05c4ed6da01e66c445d5e1bd7fb18e078e75d789bd24c66
 ---
 
 ## 场景介绍
@@ -652,7 +652,7 @@ struct Index {
 
 如果不知道服务器域名的证书，可以通过以下方式访问该域名获取证书，注意把www.example.com改成想要获取域名证书的域名，www.example.com.pem改成想保存的证书文件名：
 
-```ts
+```shell
 openssl s_client -servername www.example.com -connect www.example.com:443 \
     < /dev/null | sed -n "/-----BEGIN/,/-----END/p" > www.example.com.pem
 ```
@@ -677,7 +677,7 @@ openssl s_client -servername www.example.com -connect www.example.com:443 \
 
 域名证书的公钥哈希值可以用如下的命令计算。假设域名证书是通过上面的OpenSSL命令获得的，并保存在www.example.com.pem文件。#开头的行是注释，可以不用输入：
 
-```ts
+```shell
 # 从证书中提取出公钥
 openssl x509 -in www.example.com.pem -pubkey -noout > www.example.com.pubkey.pem
 # 将pem格式的公钥转换成der格式

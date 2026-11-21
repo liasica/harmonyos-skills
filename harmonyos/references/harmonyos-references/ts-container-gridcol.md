@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: GridCol
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > GridCol
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:56+08:00
+scraped_at: 2026-11-21T09:14:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:377b6acb776c17ac44f78d680ca1d5676d03f5b73270a218d034e0cd248c3217
+content_hash: sha256:07e890de0a6b71a25e94b10a75719c8d347bfe0a73900511b2d2d1e29c016df3
 ---
 
 栅格布局系统中的列组件，必须作为栅格容器组件([GridRow](ts-container-gridrow.md))的子组件使用。适用于响应式布局、多设备适配等需要动态调整列宽的场景。支持响应式断点配置、跨列布局、偏移和排序功能。使用GridCol组件可以快速实现响应式布局，简化多设备适配的开发工作。
@@ -197,4 +197,4 @@ struct GridColExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Irj5hmjsSfaeEo8lylpxZw/zh-cn_image_0000002820407123.png?HW-CC-KV=V1&HW-CC-Date=20261119T015000Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C0E17B066A704A282AB65C07BCAF5446629936FEDE00FDC1407B0F6B0DCCDB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Wu72GnvZR66zkywOZRaONQ/zh-cn_image_0000002821758735.png?HW-CC-KV=V1&HW-CC-Date=20261121T011254Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7E4B1F70835F0208147440396BD0B933723EF729EFABD59EA0931C05BF722B4)

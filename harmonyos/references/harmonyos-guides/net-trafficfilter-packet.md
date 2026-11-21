@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-trafficfi
 title: 过滤网络报文(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 管理网络 > 过滤网络报文(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:45+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-21T09:11:41+08:00
+doc_updated_at: 2026-11-20
 content_hash: sha256:7b8b90031c843da89c40b8cfb6321b113bbf8ef9728edcca9cc9abec2641a265
 ---
 

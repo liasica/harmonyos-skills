@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/right-click-m
 title: 配置应用右键扩展菜单（PC/2in1）
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 配置应用右键扩展菜单（PC/2in1）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:23+08:00
+scraped_at: 2026-11-21T09:10:50+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:00e8d409efe97edd431f8727a25943ef401f6b6bc302cd17593e9cd887440960
+content_hash: sha256:844437726ca09c85e51a3a1e0a28d776057df1d916862703deeaaebe471c0c30
 ---
 
 应用通过配置右键菜单，可以在桌面、文件管理器的右键菜单中注册自定义菜单项，用户点击后拉起应用执行对应的操作，从而将应用的能力便捷地融入系统的文件操作流程中。典型场景如下：
@@ -202,4 +202,4 @@ resources/base/profile路径下的menu.json配置文件示例如下：
 
 效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/x8ISZVf8SS6huQPHbmlcPw/zh-cn_image_0000002820524387.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=55101612941A339558694CE0E9AD74A863522DB1357F020DA4CC35CC9BE16D6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/PCyrMpYxQNeHHuR3LLukog/zh-cn_image_0000002793036056.png?HW-CC-KV=V1&HW-CC-Date=20261121T011050Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8BFEF9D67AC15A2FB10587F9BDA5FA83D0691726806C7382A52DAC6EB6610B6)

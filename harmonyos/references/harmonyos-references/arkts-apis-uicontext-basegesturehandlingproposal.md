@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (BaseGestureHandlingProposal)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (BaseGestureHandlingProposal)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:40+08:00
+scraped_at: 2026-11-21T09:13:55+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c441ab8971be53aa033ce741ba452afac9ad18f6bd588b57a1375b03221b4b30
+content_hash: sha256:b985348c773079fbc5d18c259bd0df45db57245d6b7dcf13dd914983d84d0bc6
 ---
 
 智慧手势处理基类。当通过[registerMonitor](arkts-apis-uicontext-smartgesturecontroller.md#registermonitor)接口动态自定义智慧手势行为时，其回调参数类型为具体的子类类型实例。
@@ -79,4 +79,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/FR4r95ZRRTS_7A_38pC5Cw/zh-cn_image_0000002791566942.png?HW-CC-KV=V1&HW-CC-Date=20261119T015040Z&HW-CC-Expire=31536000000&HW-CC-Sign=A749302C9293E3444333C5C6903E02C8AFF88AAAD3573297A7D2112EF483E695)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/gnmIpM4OTCmkiONFuLSLZw/zh-cn_image_0000002792878596.png?HW-CC-KV=V1&HW-CC-Date=20261121T011355Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1E8A932E85E9AB0E72028DA0DF6E7240D07D8765ABE1A02DCE0F83BFC558F7B)

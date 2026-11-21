@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频编码
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:34+08:00
+scraped_at: 2026-11-21T09:11:59+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f1e1c75279074625e2fe2c1680f2acbfa73c4a9bbeb05a5eafb308be5b6fd8d4
+content_hash: sha256:9d6cf4f7403ad11aa2e50fd8647d95bba564a9a53b65b7ec58e0e5854175ca83
 ---
 
 视频编码是多媒体处理流程中的重要环节，功能是将未压缩的视频数据压缩成视频码流，旨在降低原始视频数据的大小以便存储或传输。视频编码支持同步模式与异步模式两种运行机制，两者主要区别为buffer获取方式的同异步之分，开发者可根据自身业务选择适合的接口调用模式。
@@ -53,7 +53,7 @@ AVCodec支持的视频编码格式请参考[视频编码](avcodec-support-format
 
 **图1** 状态机调用关系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Pri820gkTFyhjSOeHjw_og/zh-cn_image_0000002820405875.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B1E88FE460AE0812210DE5DB181E03E644600249F1517092CA3D9FBCE5D4B43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/jUnuREmJST6M50bC0Gy3DQ/zh-cn_image_0000002792877576.png?HW-CC-KV=V1&HW-CC-Date=20261121T011158Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E2884BAAF03ECBD910A183B47C0EEDA5EA00ACEE99D2E7C75545535AD0EEB1B)
 
 ## 开发指导
 
@@ -64,7 +64,7 @@ AVCodec支持的视频编码格式请参考[视频编码](avcodec-support-format
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/cZZe6c5xTVGt52PLTN1aVg/zh-cn_image_0000002791725896.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=065D6039550D26AE10F5C8B5889631178F47FB8FBA0BEC24D1DB29F58CD3B2D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ewHg_Y4cRiqrtIC9LFre_Q/zh-cn_image_0000002821837483.png?HW-CC-KV=V1&HW-CC-Date=20261121T011158Z&HW-CC-Expire=31536000000&HW-CC-Sign=F12310FB78AB9E3007531C702377E2238CCB9CD2D9C70B5ED41EB7F93B00AF7C)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -873,7 +873,7 @@ target_link_libraries(sample PUBLIC libnative_media_venc.so)
 
    **图3** NV12图像排布示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/4MwyffisR9WZyvlrCH16xg/zh-cn_image_0000002791565924.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=91A9101DC201F1FEFB83150370A4DBFA5E6AD333592BB5C1EFABD54F02CF8934)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/weWC0hxgSV-hB6r0bDnN6A/zh-cn_image_0000002821757485.png?HW-CC-KV=V1&HW-CC-Date=20261121T011158Z&HW-CC-Expire=31536000000&HW-CC-Sign=80475AF28CB1F51AE81AEB188C7E4E4FD45537A90E9607B6BB7A3DA8B34E571A)
 
    添加头文件。
 
@@ -948,11 +948,11 @@ target_link_libraries(sample PUBLIC libnative_media_venc.so)
 
    **图4** YUVI420图像排布示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ifcdkfH6SwOL0Znt0ycVbQ/zh-cn_image_0000002820525877.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=98EA004EC3C87D50AB0EBA10926163528F4DA1B718715D6ACA199877753FF3E6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/KEJy7X2vQ3ujw-ZEFzJcQg/zh-cn_image_0000002793037548.png?HW-CC-KV=V1&HW-CC-Date=20261121T011158Z&HW-CC-Expire=31536000000&HW-CC-Sign=8708A5965E4DB7A152CDBFEB0EC7DB86F5E3530205CD2AFBEE3C77549234383D)
 
    **图5** RGBA1010102图像排布示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/DebsFHG8Q_uJJ_I368ES3Q/zh-cn_image_0000002820405877.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AD861CE699AA1B9526341DDC889A888BE356206B28C6C4CAA48B4BCEAA4AB2B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/sLLXj3D0S8agvqArJrabww/zh-cn_image_0000002792877578.png?HW-CC-KV=V1&HW-CC-Date=20261121T011158Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6CE0CAEE2E10FBADDFB511E52D5EB1ECFC39645B5F4A985071EE0CD097067A3)
 9. 通知编码器结束。
 
    在编码过程中，当最后一帧数据被送入编码输入队列时，需要设置bufferInfo的flag标识为AVCODEC\_BUFFER\_FLAGS\_EOS，通知编码器输入结束。

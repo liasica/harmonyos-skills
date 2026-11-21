@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-intent-
 title: 拉起指定类型的应用概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起指定类型的应用概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:27+08:00
+scraped_at: 2026-11-21T09:10:53+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:bdc79d2522a5f8fd9eacd21061fc0a6708397208532cfb0038167d80fa9c56a7
+content_hash: sha256:b52adfa4aa69b9f06be85251b1c036a3f315492e683e1204f17758a1b5a5744a
 ---
 
 本章节主要介绍拉起方应用如何通过指定应用类型、而非某个具体的应用，来实现应用跳转。通常有以下几种方式：
@@ -22,10 +22,10 @@ content_hash: sha256:bdc79d2522a5f8fd9eacd21061fc0a6708397208532cfb0038167d80fa9
 
 * 如果当前设备已安装应用中存在匹配的应用，选择框中将展示已接入的垂类应用，由用户选择打开指定应用以实现相应的意图。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/L7KuNG8TQxWES6xnKvLX4g/zh-cn_image_0000002791564474.png?HW-CC-KV=V1&HW-CC-Date=20261119T014726Z&HW-CC-Expire=31536000000&HW-CC-Sign=A198D3D5F82602DCD3D8F19BA6EE6FA12015D6C7B9A963E089A139B6B7739B86)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Fs4QcAZGTmSFFa6U2uCM8A/zh-cn_image_0000002821756029.png?HW-CC-KV=V1&HW-CC-Date=20261121T010929Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BD8D7E64837DCBE6DA335CEE31BBDC9967F07B789D60059E8EF883FC8F2CB5F)
 * 如果当前设备已安装应用中没有匹配的应用，系统将自动弹窗提示用户没有相关应用（下图以导航类应用匹配失败为例）。无需开发者适配。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/m51KV5gpRJuveg2Tq1CGpQ/zh-cn_image_0000002820524425.png?HW-CC-KV=V1&HW-CC-Date=20261119T014726Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDAE40810D15034506FB2917E140386CD4EFB5092258948B22D6A4A35E3E6602)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/3Uvx7Z8wQbOU29JuzzYKcQ/zh-cn_image_0000002793036094.png?HW-CC-KV=V1&HW-CC-Date=20261121T010929Z&HW-CC-Expire=31536000000&HW-CC-Sign=870A4C4FDAC4525064F669D92B6153C66128A3DC549849F910FC0079574F1E01)
 
 这种方式可以为调用方提供统一的安全、可信的目标方应用，同时降低调用方的接入成本。
 

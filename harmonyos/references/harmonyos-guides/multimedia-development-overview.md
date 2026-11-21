@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multimedia-de
 title: 媒体开发概览
 breadcrumb: 指南 > 媒体 > 媒体开发概览
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:32+08:00
-doc_updated_at: 2026-11-18
-content_hash: sha256:9e66b8b7227c187aee0bd07055404663b1809d8a69bd7558a276558db69b058b
+scraped_at: 2026-11-21T09:11:56+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:9301ebd635fd65d40ae02109b8563c4db9178f4a27b0e9c7bce718cb4e963e4d
 ---
 
 HarmonyOS提供丰富的一站式媒体业务开放能力，开发者能够在系统上快速开发主流的媒体业务，满足常规高频使用场景，并提供优秀的性能表现。
 
 ## 媒体系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/QZzOUn5EQmaUbrfSWhcOng/zh-cn_image_0000002791565902.png?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=82D46169CE038BEE666968319A213B7A1842EB415C1ABB5B5032E77D9246003D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/l6IaN0zvR8i4uJLpZolAHQ/zh-cn_image_0000002821757463.png?HW-CC-KV=V1&HW-CC-Date=20261121T011155Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA66F724474FC4B9F72D4ABC673CE683B2B0774BAE808991F62967C6AA183D38)
 
 媒体系统架构提供用户视觉、听觉信息的处理能力，例如音视频信息的采集、编码存储、解码播放等。操作系统实现中，根据不同的媒体信息处理内容，将媒体划分为不同的模块，包括音频、视频、图片等。
 
@@ -314,7 +314,7 @@ AVRecorder提供音频录制的能力，帮助开发者录制纯音频文件。
 | 分类 | 资源链接 |
 | --- | --- |
 | 音频编解码 | - 开发指南：[音频编码](audio-encoding.md)  - 开发指南：[音频解码](audio-decoding.md)  - 示例代码：[AudioEncoder（音频编码）](https://gitcode.com/HarmonyOS_Samples/AVCodecVideo/blob/master/entry/src/main/cpp/capbilities/AudioEncoder.cpp)  - 示例代码：[AudioDecoder（音频解码）](https://gitcode.com/HarmonyOS_Samples/AVCodecVideo/blob/master/entry/src/main/cpp/capbilities/AudioDecoder.cpp)  - C API参考：[AudioCodec（音频编解码）](../harmonyos-references/capi-native-avcodec-audiocodec-h.md) |
-| 视频编解码 | - 开发指南：[视频编码](video-encoding.md)  - 示例代码：[VideoEncoder（视频编码）](https://gitcode.com/openharmony/applications_app_samples/blob/master/code/BasicFeature/Media/AVCodec/entry/src/main/cpp/capbilities/video_encoder.cpp)  - C API参考：[VideoEncoder（视频编码）](../harmonyos-references/capi-native-avcodec-videoencoder-h.md)  - 开发指南：[视频解码](video-decoding.md)  - 示例代码：[VideoDecoder（视频解码）](https://gitcode.com/openharmony/applications_app_samples/blob/master/code/BasicFeature/Media/AVCodec/entry/src/main/cpp/capbilities/video_decoder.cpp)  - C API参考：[VideoDecoder（视频解码）](../harmonyos-references/capi-native-avcodec-videodecoder-h.md) |
+| 视频编解码 | - 开发指南：[视频编码](video-encoding.md)  - 示例代码：[VideoEncoder（视频编码）](https://gitcode.com/openharmony/applications_app_samples/blob/master/code/DocsSample/Media/AVCodec/AVCodec/entry/src/main/cpp/capabilities/video_encoder.cpp)  - C API参考：[VideoEncoder（视频编码）](../harmonyos-references/capi-native-avcodec-videoencoder-h.md)  - 开发指南：[视频解码](video-decoding.md)  - 示例代码：[VideoDecoder（视频解码）](https://gitcode.com/openharmony/applications_app_samples/blob/master/code/DocsSample/Media/AVCodec/AVCodec/entry/src/main/cpp/capabilities/video_decoder.cpp)  - C API参考：[VideoDecoder（视频解码）](../harmonyos-references/capi-native-avcodec-videodecoder-h.md) |
 | 更多 | [AVCodec Kit开发指南](avcodec-kit.md)  [AVCodec Kit API参考](../harmonyos-references/avcodec-api.md) |
 
 **AVSession Kit**

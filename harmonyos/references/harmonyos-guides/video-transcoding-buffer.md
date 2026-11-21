@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-transco
 title: 基于Buffer模式进行视频转码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > 基于Buffer模式进行视频转码
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:35+08:00
+scraped_at: 2026-11-21T09:12:00+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:0aed060a0199188ff9c7f86d55dd68b495dba42501438ec2b20f672c59bea0e3
+content_hash: sha256:97ec6642e52f9e5b998712b25e2042b59905aef33f9e77d44ead19c9a0a35467
 ---
 
 ## 概述
@@ -20,11 +20,11 @@ content_hash: sha256:0aed060a0199188ff9c7f86d55dd68b495dba42501438ec2b20f672c59b
 
 视频文件格式是视频保存的格式，常见的格式有MP4、AVI等。在视频文件（以MP4文件解码为例）解码时，首先需要将视频进行解封装，解封装会将一个封装好的音视频文件（如MP4、FLV等）中的音频和视频数据流分离出来。然后，从数据流中取出视频的媒体样本sample，通过视频解码器将媒体数据解码成YUV数据，流程如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/5kUX7iO_Q8WfDoOvkefkrg/zh-cn_image_0000002791725918.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=89ECC69F4ED8F83E55D340B5335FA67AC2B945EF5957F82050AB7031E7FDF548)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/M4VU7xxUTi-pzM_WyMcDHw/zh-cn_image_0000002821837505.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAB7DFF6F04CC2713D7890F5F2F1BCD9D3611259D550BD9BD7619878BAF21142)
 
 在视频文件编码（以MP4文件编码为例）时，首先会通过视频编码器对YUV数据进行编码，将未压缩的视频数据YUV压缩成视频码流H.264，然后，将编码后的媒体数据按一定的格式封装存储到MP4文件里，流程如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/HH3msCG6SJqAfWsXWcTazQ/zh-cn_image_0000002791565946.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CC019E78E168573DF6086FDE69746AC614FDF9A9E93848F0EEAB3E793EEF1A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/cVZ_Kn3YRJmktRem3OnZyA/zh-cn_image_0000002821757507.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=18AD9FB87B4A9224DB81C3894A87EFBEB4E65F299DA4193CB87C7DCDC841A39F)
 
 关于视频文件编解码支持的格式，详情请参考[AVCodec支持的格式](avcodec-support-formats.md)。
 
@@ -36,7 +36,7 @@ YUV是一类真彩色（true-color）颜色空间（color space），Y'UV、YUV�
 
 以I420格式为例，其跨距对齐后的格式如下所示。其中，w\_stride是数据填充后的宽跨距，h\_stride是数据填充后的高跨距，height是实际的高度，width是实际的宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/nZAj7u-gTq6Whgj3HOXgIw/zh-cn_image_0000002820525899.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9AA25177D0E2D75543DF3C8C7C65E4B30F7531C3ECF3DC3EAA467A6CCF67F58)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/LEzy4hSpQ3qdMtJn-Y2Ftw/zh-cn_image_0000002793037570.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA012A847171613965D9B8AB1874D187F86F1A865DF3E6CD2E19F6BEAC4A3260)
 
 ### 视频编解码原理
 
@@ -44,7 +44,7 @@ YUV是一类真彩色（true-color）颜色空间（color space），Y'UV、YUV�
 
 在视频解码的过程中，主要包含两个部分，分别为输入数据流转和输出数据流转。开发者需要通过输入数据流转将需要解码的数据填充给解码器，解码器再进行解码处理。在输出数据流转中，解码器会将解码完成的数据返回给开发者使用，在开发者使用完毕后，需要通知解码器释放视频数据，从而实现整体的Buffer循环，详细原理流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/8lQP5OuVTEWgpwATQuNyCg/zh-cn_image_0000002820405899.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=D37C2B762B07EE8C520538F36CE30F55D6194266CCA4021423487BE213D89D65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/2R3m1RzwT4CRDPoKZJkDhg/zh-cn_image_0000002792877600.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDBECB591A38441663EFF4A3D8DA9C883DB53463BD0FFB51D9DE8AB3304BC6A5)
 
 输入数据流转的步骤如下所示。
 
@@ -72,7 +72,7 @@ YUV是一类真彩色（true-color）颜色空间（color space），Y'UV、YUV�
 
 在视频转码的场景中，视频文件会经历解封装、视频解码、视频编码和视频封装的步骤，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/xuwEQQeuR82Vy706Ph3LpQ/zh-cn_image_0000002791725920.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B94F1256D23DFFE2275FCE073114A6762AC42963786E8651C1AA8FF87B88A41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/oK3Oe7Z0TSG6U7X5gjDaMw/zh-cn_image_0000002821837507.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B3B794B0907446C693F141B661E81F734CE91E34B484709F61C72F53367E058)
 
 其主要包含三个大步骤。
 
@@ -91,7 +91,7 @@ YUV是一类真彩色（true-color）颜色空间（color space），Y'UV、YUV�
 
 在视频文件解码中，主要包含两个步骤，输入缓存处理、输出缓存处理。在OnNeedInputBuffer()回调函数中，维护了一个空Buffer的缓存队列，在实现输入缓存处理时，需要解封装、填充视频数据。在OnNewOutputBuffer()回调函数中，维护了一个已解码视频数据的缓存队列，在实现输出缓存处理时，需要处理视频数据，其调用顺序如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/vLqzPYl-RX2pFrTG6taNdw/zh-cn_image_0000002791565948.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B8948C84DB564BC68E5907E2DB3A63BFC528427A6E10155A29AFC91EDF2D06F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/3P_5Rv3lQ9ie7JIsrUIksA/zh-cn_image_0000002821757509.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FE9B66477CE52BD7540258E05CF98FAB73D62B392EE3E319795ABE02CFB60CD)
 
 **视频文件解码**开发步骤如下所示。
 

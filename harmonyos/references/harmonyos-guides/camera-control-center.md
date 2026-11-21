@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-contro
 title: 相机控制器(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 相机控制器(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:94dc519baa35b7e78aa1f84a884ac304f4f473fba325c8e02cde0e11f974e3f8
+scraped_at: 2026-11-21T09:12:01+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:1955154d8e37a781295f810a7f8396d39fdc2089ed9342ff079a5927d26eb2b0
 ---
 
 从API version 20开始，相机框架通过相机控制器，为应用在直播场景提供美颜、虚化等能力。
@@ -24,25 +24,25 @@ content_hash: sha256:94dc519baa35b7e78aa1f84a884ac304f4f473fba325c8e02cde0e11f97
    ```
 2. 通过[isControlCenterSupported](../harmonyos-references/arkts-apis-camera-controlcenterquery.md#iscontrolcentersupported20)接口，查询当前设备及当前场景是否支持相机控制器。
 
-   ```ts
-   function isControlCenterSupported(videoSession: camera.VideoSession): boolean {
+   ```typescript
+   isControlCenterSupported(videoSession: camera.VideoSession): boolean {
      let isSupported: boolean = videoSession.isControlCenterSupported();
      return isSupported;
    }
    ```
 3. 通过[getSupportedEffectTypes](../harmonyos-references/arkts-apis-camera-controlcenterquery.md#getsupportedeffecttypes20)接口，查询当前设备及当前场景下，相机控制器支持的效果类型。
 
-   ```ts
-   function getSupportedEffectTypes(videoSession: camera.VideoSession): Array<camera.ControlCenterEffectType> {
-     let effectTypes: Array<camera.ControlCenterEffectType> = [];
+   ```typescript
+   getSupportedEffectTypes(videoSession: camera.VideoSession): camera.ControlCenterEffectType[] {
+     let effectTypes: camera.ControlCenterEffectType[] = [];
      effectTypes = videoSession.getSupportedEffectTypes();
      return effectTypes;
    }
    ```
 4. 若设备及场景支持相机控制器，使用[enableControlCenter](../harmonyos-references/arkts-apis-camera-controlcenter.md#enablecontrolcenter20)接口可启用或关闭控制器。
 
-   ```ts
-   function enableControlCenter(videoSession: camera.VideoSession, enable: boolean): void {
+   ```typescript
+   enableControlCenter(videoSession: camera.VideoSession, enable: boolean): void {
      let isSupported: boolean = videoSession.isControlCenterSupported();
      if (isSupported) {
        videoSession.enableControlCenter(enable);
@@ -51,10 +51,10 @@ content_hash: sha256:94dc519baa35b7e78aa1f84a884ac304f4f473fba325c8e02cde0e11f97
    ```
 5. 使能相机控制器后，可以在状态栏看到新增的视频效果图标。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/FUaI3LJMRmiVBJoOv5OHag/zh-cn_image_0000002791725950.png?HW-CC-KV=V1&HW-CC-Date=20261119T014837Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E1652B924A786524E17A5215C1C6034AE6A1D9EEC1FDAE58B7121E9AAFC7C01)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/0HcIBLjMTgOijZtKF_8dnw/zh-cn_image_0000002821837537.png?HW-CC-KV=V1&HW-CC-Date=20261121T011201Z&HW-CC-Expire=31536000000&HW-CC-Sign=25B4493581C337961374F4C0F627D25680444E0FA42A52A9D362A1A95438CC43)
 6. 点击视频效果图标，在弹出的二级页面中，用户可调节控制器支持的效果，如图所示为美颜和背景虚化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/cw_BVqimQ9GpwkMCocIHRA/zh-cn_image_0000002791565978.png?HW-CC-KV=V1&HW-CC-Date=20261119T014837Z&HW-CC-Expire=31536000000&HW-CC-Sign=7999761BC03508E2218F354F0B34CE7DD40CD884C97E97F2B586760228DA3A3E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/t7hdqxcVRqyOMWBXRiV37w/zh-cn_image_0000002821757539.png?HW-CC-KV=V1&HW-CC-Date=20261121T011201Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCA29243BB11FD5972F26E847D82BDA6F17DC166FD1E0AC7B9EE242B68B176A3)
 
 ## 状态监听
 
@@ -64,11 +64,8 @@ content_hash: sha256:94dc519baa35b7e78aa1f84a884ac304f4f473fba325c8e02cde0e11f97
 
 当控制器中某效果使能状态发生变化时，callback返回[ControlCenterStatusInfo](../harmonyos-references/arkts-apis-camera-i.md#controlcenterstatusinfo20)参数。
 
-```ts
-import { camera } from '@kit.CameraKit';
-import { BusinessError } from '@kit.BasicServicesKit';
-
-function callback(err: BusinessError, status: camera.ControlCenterStatusInfo): void {
+```typescript
+controlCenterEffectStatusChangeCallback(err: BusinessError, status: camera.ControlCenterStatusInfo): void {
   if (err !== undefined && err.code !== 0) {
     console.error(`Callback Error, errorCode: ${err.code}`);
     return;
@@ -76,7 +73,7 @@ function callback(err: BusinessError, status: camera.ControlCenterStatusInfo): v
   console.info(`controlCenterEffectStatusChange: ${status}`);
 }
 
-function registerControlCenterEffectStatusChangeCallback(videoSession: camera.VideoSession): void {
-  videoSession.on('controlCenterEffectStatusChange', callback);
+registerControlCenterEffectStatusChangeCallback(videoSession: camera.VideoSession): void {
+  videoSession.on('controlCenterEffectStatusChange', this.controlCenterEffectStatusChangeCallback);
 }
 ```

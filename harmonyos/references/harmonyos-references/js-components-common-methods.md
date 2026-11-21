@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 通用方法
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 通用方法
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:19+08:00
+scraped_at: 2026-11-21T09:14:21+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:da44f1d903d0abf0b9330b0f290ff1a025e7217722d7d1def684048f970bb819
+content_hash: sha256:f2e89c69cc362518efa3801490d5d2fbef10e34a52929a5cbff1d66959f92765
 ---
 
 **说明** 
@@ -189,7 +189,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/vzwX_t0pRgOEi6bGoAvnQg/zh-cn_image_0000002791727766.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015118Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB6CB3CE1497DA4F5C31577613885BD36AE2884FC89A3C9AD020BC1119B48BA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/QuryKXEqQbOan1AkFMUWBA/zh-cn_image_0000002793039448.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011318Z&HW-CC-Expire=31536000000&HW-CC-Sign=75790AA107E089EB7FE6691549D5328DF05F5B97CA3D29B4BD53974402BF7A23)
 
 ## getBoundingClientRect
 

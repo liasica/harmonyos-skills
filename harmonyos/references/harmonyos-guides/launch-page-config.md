@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/launch-page-c
 title: 配置应用启动页
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 应用启动页的配置与使用 > 配置应用启动页
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:51+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:8fd65655d8025d016c60d2e5f55b749f940545cc01d3516bc4ac5ac7be0530a7
+scraped_at: 2026-11-21T09:11:17+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:5a51f58c35913824484ecbd5cc5fefbc71af947d421e47d491828174413c968d
 ---
 
 ## 启动页的分类和实现方式
@@ -38,7 +38,7 @@ content_hash: sha256:8fd65655d8025d016c60d2e5f55b749f940545cc01d3516bc4ac5ac7be0
 
 **图1** 默认启动页示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/6gMopD2xTHaK5B62jmooYQ/zh-cn_image_0000002791725452.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A590462B2A11AEA92EB38E75CFB3F52CE9F05591779F455891CF5DA52119BCA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/zuTa49lQSe-iihl3OGa8jg/zh-cn_image_0000002821837039.png?HW-CC-KV=V1&HW-CC-Date=20261121T011116Z&HW-CC-Expire=31536000000&HW-CC-Sign=7739053FC6108FD6923ACB28BB08BE62EC5E0158D43B4029DA9E51E2F0ACAA3E)
 
 开发者可以根据应用需要，配置使用自定义设计的图标资源和颜色资源。
 
@@ -70,14 +70,14 @@ startWindow字段提供了增强的启动页配置能力，可用于元素更复
    | startWindowAppIcon | string | 是 | 标识当前UIAbility组件增强启动页面图标资源文件的索引，取值为长度不超过255字节的字符串。  在窗口上部分展示，资源由系统侧进行缩放，使其完全显示在展示区域内，宽高比保持不变。  图标资源展示区域的尺寸由系统侧根据窗口尺寸选取，取值为128vp\*128vp、192vp\*192vp或256vp\*256vp。  与插画资源startWindowIllustration同时配置时，仅展示图标资源。  从API version 19开始支持该字段。 |
    | startWindowIllustration | string | 是 | 标识当前UIAbility组件增强启动页面插画资源文件的索引，取值为长度不超过255字节的字符串。  在窗口上部分展示，如资源尺寸超出其展示区域，将由系统侧保持宽高比缩小，使得资源完全显示在其展示区域内；否则其尺寸保持不变。  插画资源展示区域宽高比为1。  与图标资源startWindowAppIcon同时配置时，仅展示图标资源。  从API version 19开始支持该字段。 |
    | startWindowBrandingImage | string | 是 | 标识当前UIAbility组件增强启动页面品牌标识资源文件的索引，取值为长度不超过255字节的字符串。  在窗口下部分展示，如资源尺寸超出其展示区域，将由系统侧保持宽高比缩小，使得资源完全显示在其展示区域内；否则其尺寸保持不变。  如果窗口高度不足300vp，此资源将被隐藏。  从API version 19开始支持该字段。 |
-   | startWindowBackgroundColor | string | 是 | 标识当前UIAbility组件增强启动背景色资源文件的索引，取值为长度不超过255字节的字符串。  背景色填充整个窗口，显示层级最低，不建议采用透明色。  如未配置该字段，则启动页增强配置文件不生效，采用简易启动页配置。  从API version 19开始支持该字段。 |
+   | startWindowBackgroundColor | string | 否 | 标识当前UIAbility组件增强启动背景色资源文件的索引，取值为长度不超过255字节的字符串。  背景色填充整个窗口，显示层级最低，不建议采用透明色。  如使用启动页增强配置文件，该字段不可缺省；否则应采用简易启动页配置。  从API version 19开始支持该字段。 |
    | startWindowBackgroundImage | string | 是 | 标识当前UIAbility组件增强启动背景图片资源文件的索引，取值为长度不超过255字节的字符串。  以整个窗口为容器，填充方式由startWindowBackgroundImageFit字段指定。  从API version 19开始支持该字段。 |
    | startWindowBackgroundImageFit | string | 是 | 标识当前UIAbility组件增强启动背景图片的填充方式，当前支持取值为：  - "Contain"：保持宽高比进行缩小或者放大，使得图片完全显示在显示边界内。  - "Cover"：保持宽高比进行缩小或者放大，使得图片两边都大于或等于显示边界。  - "Auto"：图像会根据其自身尺寸和组件的尺寸进行适当缩放，以在保持比例的同时填充视图。  - "Fill"：不保持宽高比进行放大缩小，使得图片充满显示边界。  - "ScaleDown"：保持宽高比显示，图片缩小或者保持不变。  - "None"：保持原有尺寸显示。  如未配置该字段，默认采用Cover填充方式。  从API version 19开始支持该字段。 |
    | startWindowColorModeType | string | 是 | 标识当前UIAbility组件启动页深浅色模式，仅作用于同进程间拉起场景。  不同取值含义如下：  - "FOLLOW\_SYSTEM"：启动页颜色模式跟随系统深浅色。  - "FOLLOW\_APPLICATION"：启动页颜色模式跟随应用深浅色。  - 如未配置该字段，默认取值为"FOLLOW\_SYSTEM"，即启动页颜色模式跟随系统深浅色。  从API version 20开始支持该字段。 |
 
 **图2** 增强启动页示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/TETbAJTgTn69HKciD9vEEA/zh-cn_image_0000002791565480.png?HW-CC-KV=V1&HW-CC-Date=20261119T014750Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB9F78C7B33457A851605A1D3A14EA7BC91392D155201C456B8E075DC6A6D7C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/PmMu4z5uThC8Ig3WY8JEWA/zh-cn_image_0000002821757041.png?HW-CC-KV=V1&HW-CC-Date=20261121T011116Z&HW-CC-Expire=31536000000&HW-CC-Sign=668CF12EEB9FE8DBB99086C77D659AD182AC590E54DCADA5807FC277BD821711)
 
 示例如下：
 

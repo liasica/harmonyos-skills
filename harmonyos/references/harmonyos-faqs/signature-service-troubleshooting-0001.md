@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/signature-servi
 title: 自动签名报错问题定位
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 故障排查 > 自动签名报错问题定位
 category: harmonyos-faqs
-scraped_at: 2026-11-13T09:06:50+08:00
-doc_updated_at: 2026-11-12
-content_hash: sha256:5b48871c64983079f688b9e1ef1b0ef14ecbf6aa2b88c1b5f3b7607f5b0412bb
+scraped_at: 2026-11-21T09:19:29+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:2d97a7ef9d6c9e72790de85a35eae17a2f6521e2fb76cc304b3d8c025714e9f9
 ---
 
 ## 签名配置名称超长或含特殊字符
@@ -86,7 +86,7 @@ HarmonyOS 开发者中心平台对自动化签名使用次数有限制，同一�
 
 签名时在DevEco Studio的build-profile.json5文件中无法生成签名信息或出现如下报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Sr9P0Q7wSxSam-f8R17cqQ/zh-cn_image_0000002770285108.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=220468F08DF34F6421E24DDC50F81BE661172921B252AAF00B64F73E6C68F209 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/1U9cE9-BQmmIhJ78A5UydA/zh-cn_image_0000002770285108.png?HW-CC-KV=V1&HW-CC-Date=20261121T011928Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B69AFA49C317061DE26CC8F2A81B3F09FD536447037DD56EAF8349DEAA3A8ED "点击放大")
 
 ### 定位过程
 
@@ -155,13 +155,13 @@ material文件损坏，删除签名文件所在地的material文件后重新签�
 1. 关闭自动签名弹窗；
 2. 右键点击电脑右下角时间，选择（调整日期、时间）；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Q4LPrzFiSP6_Wqb6kk1rLA/zh-cn_image_0000002799525267.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=0640ED7580C93B275C92E65EBA9CC7D4C8968FCE1DDC9DC4EA3B57280D56D787 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/_kOX77r4SdKnkVsYjJ3hbw/zh-cn_image_0000002799525267.png?HW-CC-KV=V1&HW-CC-Date=20261121T011928Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D9A82EF071F638097FD9BDF9BFD4F6263BAE24A3BCDC47DB782A9EBB6F72F0C "点击放大")
 3. 点击立即同步；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/lw0hruilQX-Y_QhBRN1uyQ/zh-cn_image_0000002770125392.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4E10D35E131E5D4FFC558C90F23E72DC331546158B9CBE9C5EA24EB2671F249 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/aUSOy7qQSrOMA9qerkOp9w/zh-cn_image_0000002770125392.png?HW-CC-KV=V1&HW-CC-Date=20261121T011928Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAB334422CDC42ADFB7BB351A8BDEFB55D8F19D81EECD3475C2D297F98389E5F "点击放大")
 4. 同步完成后会有√。此操作需要电脑联网。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/i21SnJ-zTYuoTmN_xpwoPA/zh-cn_image_0000002770125394.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F07EAC028CED862C504C113A1A5B1155467A51BED6EECD5FF382C3FCD75164A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/-BdaP_HDQOqVRU-at8_xmw/zh-cn_image_0000002770125394.png?HW-CC-KV=V1&HW-CC-Date=20261121T011928Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A3B76725B37E379B235A2EA57E4FECFBF647E2606C3E08DC703CD3EC3052BBF)
 5. 重新自动签名即可。
 6. 使用Mac电脑开发时，如果以上方法仍未解决问题，需关闭自动同步时间，手动修改系统时间与北京时间一致，精确到秒。
 7. 如果重置时间后仍不能正确签名，有可能是因为VPN把系统时间覆盖了。请检查是否打开或打开过VPN。若有，请重置一下VPN或把VPN的节点设置到国内IP。
@@ -194,7 +194,7 @@ material文件损坏，删除签名文件所在地的material文件后重新签�
 
 自动签名失败，无法生成密钥：Error occurred while generating the key. Unable to generate the key.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/JtAxEO7pRW-oHv59PzMQ_A/zh-cn_image_0000002799525637.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8DF25FA328C1586ABEA1264F59917CDE3B9130147C1E73413CB5AE740925C56 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/h5mXQuxWQh200S7NPBgypQ/zh-cn_image_0000002799525637.png?HW-CC-KV=V1&HW-CC-Date=20261121T011928Z&HW-CC-Expire=31536000000&HW-CC-Sign=515A14E27FE447F73EE94467F3F2F73E902BB40F96687E17FEF359CC5E01D2C8 "点击放大")
 
 ### 定位过程
 
@@ -215,7 +215,7 @@ material文件损坏，删除签名文件所在地的material文件后重新签�
 签名报时间戳问题，且已经设置了时间同步，但多个项目中存在某一项目无法自动签名，报错信息如下：
 
 ```txt
-  The signature does not take effect or has expired. It may be the current system time is inaccurate, please calibrate the system time and sign again.
+   The signature does not take effect or has expired. It may be the current system time is inaccurate, please calibrate the system time and sign again.
 ```
 
 ### 定位过程
@@ -237,21 +237,21 @@ signingConfigs.name与products.signingConfig匹配，同时检查文件路径是
 签名报错，报错信息如下：
 
 ```txt
-  Unable to create the profile due to a lack of a device. Connect a device via IP or USB first.
-  Skip this step if you are installing a HAP on the emulator.
+Unable to create a configuration file due to a missing device. Please ensure the AGC device has a UDID or connect a device. Skip this step if you are installing a HAP on the emulator.
 ```
 
 ### 定位过程
 
-检查IDE是否[识别调试设备](faqs-app-debugging-3.md)。
+检查IDE是否[识别调试设备](faqs-app-debugging-3.md)、[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/index.html#/home/9249519184596237893)是否可以查询到设备信息。
 
 ### 分析结论
 
-当前报错代表签名工具无法通过hdc查询到调试设备的udid，有多种可能会导致IDE[无法获取调试设备的udid](faqs-app-debugging-3.md)。
+当前报错代表签名工具无法通过hdc查询到调试设备的udid并且在AGC上无法查询到设备信息，有多种可能会导致IDE[无法获取调试设备的udid](faqs-app-debugging-3.md)。
 
 ### 修改建议
 
-在项目根目录下local.properties里SDK路径下的toolchains文件夹中（确保有可执行的hdc工具）手动执行hdc shell bm get --udid，确认下是否能够正确获取设备udid，若获取不到则重新刷设备镜像或更换设备。
+1. 执行hdc shell bm get --udid，确认下是否能够正确获取设备udid，若获取不到则重新刷设备镜像或更换设备。
+2. 确认[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/index.html#/home/9249519184596237893)存在设备信息。
 
 ## 签名材料校验失败文件损坏
 
@@ -307,7 +307,7 @@ signingConfigs.name与products.signingConfig匹配，同时检查文件路径是
   > hvigor DEBUG MessageCenter:Signhos_hap 12-17 14:46:45 INFO  - sign-app failed
 
   > hvigor DEBUG MessageCenter:Signhos_hap ERROR: command = java -jar /Applications/DevEco-Studio.app/Contents/sdk/default/openharmony/toolchains/lib/hap-sign-tool.jar sign-app -mode localSign -keystoreFile xxx.p12 -keystorePwd *** -keyAlias xxx -keyPwd *** -signAlg SHA256withECDSA -profileFile xxx.p7b -appCertFile xxx.cer -inFile /xxx/build/cache/default/integrated_hsp/@xxx+xxx@1.3.6/@xxx
-  +xxx.hsp -outFile /xxx/build/cache/default/remote_hsp/@xxx+xxx@1.3.6/@xxx+xxx-signed.hsp
++xxx.hsp -outFile /xxx/build/cache/default/remote_hsp/@xxx+xxx@1.3.6/@xxx+xxx-signed.hsp
 ```
 
 根据-inFile /xxx/build/cache/default/integrated\_hsp/@xxx+xxx@1.3.6/@xxx +xxx.hsp查看对应文件夹，确认缺失@xxx+xxx@1.3.6，存在@xxx+xxx@1.4.2。
@@ -334,7 +334,7 @@ signingConfigs.name与products.signingConfig匹配，同时检查文件路径是
 
 ### 定位过程
 
-参考错误码：[9568320 签名文件不存在](../harmonyos-guides/bm-tool.md#section9568320-签名文件不存在)，检查工程级build-profile.json5是否正确配置签名。
+参考错误码：[9568320 签名文件不存在](../harmonyos-guides/bm-tool.md#section9568320-)，检查工程级build-profile.json5是否正确配置签名。
 
 ### 分析结论
 
@@ -389,3 +389,28 @@ HarmonyOS 开发者中心对自动签名数量存在限制，30天最多150次�
 ### 修改建议
 
 相同BundleName的HAP只需通过devecocli signature generate命令申请一次签名材料，无需反复生成。申请签名材料后，通过脚本调用hap-sign-tool.jar工具实现批量签名，避免重复消耗自动签名次数。
+
+## HarmonyOS PC上Documents目录写权限被拒导致密钥生成失败
+
+### 问题现象
+
+HarmonyOS PC上DevEco Studio自动签名时无法生成签名文件，报错密钥生成失败。
+
+### 定位过程
+
+分析IDE日志instance.log，日志信息如下：
+
+```txt
+[file_util:54] Failed to create the directory:
+Os { code: 1, kind: PermissionDenied, message: "Operation not permitted" }
+```
+
+自动签名流程需要先在/storage/Users/currentUser/Documents/ohos/config/目录下创建签名材料目录，该操作被系统以EPERM（Operation not permitted）拒绝，导致密钥生成失败。
+
+### 分析结论
+
+HarmonyOS PC上应用沙箱对Documents目录的写权限未授予或被回收，自动签名创建签名材料目录时被系统拒绝，导致密钥生成失败。
+
+### 修改建议
+
+打开HarmonyOS PC的设置＞隐私和安全＞文件和文件夹，配置IDE的可访问路径。

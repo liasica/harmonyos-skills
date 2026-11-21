@@ -3,24 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "执行命令卡在起daemon的日志上或编译报错“ReferenceError, TransformStream is not defined in hvigorfile: XXX”"
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 执行命令卡在起daemon的日志上或编译报错“ReferenceError, TransformStream is not defined in hvigorfile: XXX”"
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-06-15
-content_hash: sha256:ab719be206f59d420d16ee214801981d432e35bf68bc03dcd3d618c4c3989ff8
+scraped_at: 2026-11-21T09:19:27+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:fe53d015dd40b6e6a1de7c171b7dfa941bbfc053df1d3c5e56be25419bce0748
 ---
 
 **问题现象**
 
 流水线或命令行中执行命令后在起daemon的日志上：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/BIsiGW--QiiJaO7G6eUC8A/zh-cn_image_0000002654798019.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E97DEDE5C1B0871E7E3F26FED36A6D273A22D3B0C484F1D0BC269510DD2E10B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/6-u43z6xSk2ZhKvHYR5_Bg/zh-cn_image_0000002654798019.png?HW-CC-KV=V1&HW-CC-Date=20261121T011927Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A1F84884CCC3569E0D1D47F3DBE568220E4BAC78D1E25864ABC77F38F96B09C)
 
 或者是流水线或命令行中编译报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/NteCcvMaSFGVsFvsqEW5Lw/zh-cn_image_0000002624638572.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9CA62E7DBA4BB09606B6838E1C27DE55D13E003E96092E93F8E21C8EA37480B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/OyCfjscsT0etxynGxOTdSg/zh-cn_image_0000002624638572.png?HW-CC-KV=V1&HW-CC-Date=20261121T011927Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBC4348F6BE7B145053D8B6F0F5A0CCC6ED739D5A68A5B5379C95489D6C900A4)
 
 **问题原因**
 
-编译不支持低于v18.0.0的Node.js版本。相关配置查看[配置Node.js环境变量](../harmonyos-guides/ide-command-line-building-app.md#section159168531288)。
+编译不支持低于v18.0.0的Node.js版本。相关配置查看[配置Node.js环境变量](../doccenter-deveco-studio/ide-command-line-building-app.md)。
 
 **解决措施**
 
@@ -34,24 +34,24 @@ node -v
 
 查看输出：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/bPn0GBx9Tb-D7Yo4N2Ky2Q/zh-cn_image_0000002654837991.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0891EF330DDA75D433E4B7FF7D3D949BABA86347D48FB71E54482CC5C2EC48E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/zaKvZckHRRmhXRbRDMVKqw/zh-cn_image_0000002654837991.png?HW-CC-KV=V1&HW-CC-Date=20261121T011927Z&HW-CC-Expire=31536000000&HW-CC-Sign=C59DC692AB83625EF40DE3C62D471EF2A4826A4BD44466C9C45AE129DF13C604)
 
 2.如果流水线或计算机配置的Node.js的版本低于v18.0.0，推荐使用DevEco Studio或Command Line Tools自带的Node.js包来配置系统变量。
 
 Windows系统打开环境变量的配置，将DevEco或Command Line Tool自带的Node.js包的路径添加进系统变量的Path中。如果是通过NODE\_HOME配置的，可以直接修改NODE\_HOME配置的路径。若系统中已存在其他Node.js版本，需将工具自带的Node.js路径添加至Path变量的最前端，确保优先使用该版本；通过NODE\_HOME配置时，需检查Path中是否包含%NODE\_HOME%/bin（Windows）或$NODE\_HOME/bin（Mac/Linux）以确保生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/TWLwepfoRauX_cMfkI9O7g/zh-cn_image_0000002624478680.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED730B27560CE0BCB6DFF7B52CDF8B350C82B4B9CB594EDB9A74E1AAD9E83D9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/wfp-sXlsSsCEB-rjT_MdaQ/zh-cn_image_0000002624478680.png?HW-CC-KV=V1&HW-CC-Date=20261121T011927Z&HW-CC-Expire=31536000000&HW-CC-Sign=921FD17A09E3CF44F0CC18D4D1AD8AB8D1E9A87504E3BD19E769FFC2FD086010)
 
-Mac或Linux系统参考[配置Node.js环境变量](../harmonyos-guides/ide-command-line-building-app.md#section159168531288)。
+Mac或Linux系统参考[配置Node.js环境变量](../doccenter-deveco-studio/ide-command-line-building-app.md)。
 
 DevEco Studio的自带的Node.js的路径为DevEco Studio安装目录/DevEco Studio/tools/node。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/ge6jyJr-TMKGzSCW459RaA/zh-cn_image_0000002654798043.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA7A693F01C326DD85456EFE4ACA0FFBF5C7B28431FDF0F2D07B1607FDB788FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/irTbKT_SRx-rPe3udGreAQ/zh-cn_image_0000002654798043.png?HW-CC-KV=V1&HW-CC-Date=20261121T011927Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD19E22C46E05B8EB8007E359E364AF7C48AC07DFB9A76AA0DD2871778D5F9E6)
 
 Command Line Tools自带的Node.js的路径为Command Line Tools安装路径/command-line-tools/tool/node。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/B63MaejKRtCf82LJNzLdGg/zh-cn_image_0000002624638594.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=506C440F7DA4C3AF9CA015F674B6FF5B763F89BC39F171FF695F17E5EC3D3A61 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/2nmQTZBbRgiC7Ghjsk1jfw/zh-cn_image_0000002624638594.png?HW-CC-KV=V1&HW-CC-Date=20261121T011927Z&HW-CC-Expire=31536000000&HW-CC-Sign=07C4726AFD1DB8C0813445C2CE3C05C0801FD10F14479C6AA5878D7515087311 "点击放大")
 
 3.将自定义的Node.js版本升级为与DevEco Studio或Command Line Tools自带的Node.js版本一致。通过上述路径运行node -v查看版本，然后在Node.js官方网站中下载对应版本。下载地址为：https://nodejs.org/dist/v18.20.1/。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/TL0niUe9TFCvPEWXqZJ2mw/zh-cn_image_0000002654838001.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=B436C89E61D8B837D8AB098A1DB8CCC113A79D906BCF4E85780EEF5DEC2BD50A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/BCaYC2ZkRvibmh0RjoAOpg/zh-cn_image_0000002654838001.png?HW-CC-KV=V1&HW-CC-Date=20261121T011927Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AE8724447A08023BFA1132106CBED2DC5E8426918EAC6D25201291C7A21EBD4)

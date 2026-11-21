@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: slider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > slider
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:24+08:00
+scraped_at: 2026-11-21T09:14:25+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:537234a2c7408159f5c0df11f8ceffef75abbd5d0ba3073fdb3add0c36d62e00
+content_hash: sha256:6ba27ff143762789786816e234bb439187d78e88f500e0bdf048296184f0557f
 ---
 
 滑动条组件，用来快速调节设置值，如音量、亮度等。
@@ -116,4 +116,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/L02d9SqzRsCpYdaU823oAg/zh-cn_image_0000002820407989.png?HW-CC-KV=V1&HW-CC-Date=20261119T015029Z&HW-CC-Expire=31536000000&HW-CC-Sign=20F2E7611B2B3069B8556C971821A2D621392B5DBF53302B9E1A3E6D2FD0C391)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/zjUAVlvNS_SeWLgpYVMTfQ/zh-cn_image_0000002821759627.png?HW-CC-KV=V1&HW-CC-Date=20261121T011323Z&HW-CC-Expire=31536000000&HW-CC-Sign=A705C9210A333DB9A3A3A959DCE120FE33E3199255FDAD56D6DFEB4CE3CA2A25)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-third
 title: 三方自定义身份认证
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 三方自定义身份认证
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:21+08:00
+scraped_at: 2026-11-21T09:11:47+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ea592890b112a5e949ecf119d273021911c8d3cd25bcfe647ebc10e8216c9aff
+content_hash: sha256:b9777e64c21186db3dd90c66979ccf346eb588f780a1d2ec42f3408fd2dd02ec
 ---
 
 从API版本26.0.1开始，系统支持扩展三方自定义认证能力，用于设备解锁登录。锁屏提供USB Key解锁登录界面，支持三方自定义的USB Key身份认证。
@@ -92,7 +92,7 @@ MDM（Mobile Device Management，移动设备管理）应用支持为账号添�
 4. MDM应用调用closeSession关闭会话，凭据添加完成。
 5. （可选）调用setUnlockPolicy配置设备解锁策略。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/EA1f9KuuRWK9ZQyBMSnYOA/zh-cn_image_0000002791725804.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBD77864F00A26FE4F44A244CDE4A109307DA2B472F6C457507CBF77219F0739)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/hRwDgiIGQOWOdsE4d4_P2g/zh-cn_image_0000002821837391.png?HW-CC-KV=V1&HW-CC-Date=20261121T011147Z&HW-CC-Expire=31536000000&HW-CC-Sign=60CD43C38B46131AC474C3F9D1BF382FCE5C83D08256B081CA15868FA2A13FEA)
 
 **说明** 
 
@@ -195,7 +195,7 @@ export async function bindUsbKey(uiContext: UIContext): Promise<string> {
 5. MDM应用调用closeSession关闭会话，凭据删除完成。
 6. （可选）调用setUnlockPolicy将设备解锁策略重置为系统内置认证方式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/TdxzBx-0RLSLFOZVKfDqmw/zh-cn_image_0000002791565832.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5C2AF2DC22E976C9B19A63636FFC0B85928BD68F6799DFEB6F4AAA7864E30ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/yHC51vb9Qy-A25TNCJDg3w/zh-cn_image_0000002821757393.png?HW-CC-KV=V1&HW-CC-Date=20261121T011147Z&HW-CC-Expire=31536000000&HW-CC-Sign=47B67B3C0FE8E50DB7291D475F9F46AFF376C6CF9A3CEEB706E738AC3C5ECFA4)
 
 **说明** 
 

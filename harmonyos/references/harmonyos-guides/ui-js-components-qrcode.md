@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: qrcode开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > qrcode开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:48+08:00
+scraped_at: 2026-11-21T09:11:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c6f8bf971a3ee2aef10196b88ef2c1d01cce5231600ccac3ed09770a737d4a6c
+content_hash: sha256:b28c8a538e6ecc6674e75e3ae26bfec13d4da71d688f61466e2eacc489fd6160
 ---
 
 生成并显示二维码，具体用法请参考[qrcode](../harmonyos-references/js-components-basic-qrcode.md)。
@@ -33,7 +33,7 @@ content_hash: sha256:c6f8bf971a3ee2aef10196b88ef2c1d01cce5231600ccac3ed09770a737
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/KmNdChkGSvel20E0hQrP8A/zh-cn_image_0000002791725364.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=446E7265CC0E6AFEEDFA34A69D38C68B6E2FBEE9E348A351C56396EF9659A4CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/juO04xu5RBGLzQMpZqZIQQ/zh-cn_image_0000002821836951.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8E98B81C9B9BEF9BB2E0235E163E2ADA852CBC5BCBEEE6C4DB4868B1C790F5A)
 
 **说明** 
 
@@ -82,7 +82,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/A-WcrVapSz-rPrLautZCOw/zh-cn_image_0000002791565392.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0E119E3D92FC8ED930F821395BF3A4A63C1A1C89CFF44A4A13C3C5EA51CAB92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/3-mDuZjWSHGpv28l8gBPoQ/zh-cn_image_0000002821756953.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=16E3C81556E3226D9041ADA54F7A05C9D362CBA561ACF05FFE8B10B83E74D268)
 
 ## 设置样式
 
@@ -112,7 +112,7 @@ qrcode{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/9zLA0OY-T9qUE42ysxwUCQ/zh-cn_image_0000002820525345.png?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4E782B07650812DC0C9B574F80B967AC758FF46C5BDAF01D7184175BF3C006F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/hhUEHPuBRfaXDllEf5m_pA/zh-cn_image_0000002793037016.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=9008D86C4385D424605218D379A425921FCD77A932EC6418DACE3D0298163166)
 
 **说明** 
 
@@ -159,4 +159,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/dXZiXVa6SCCMDiM06BvOwQ/zh-cn_image_0000002820405345.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=4958157358AD1A5BBC28EDD33F29B9B1CD834EE53FC4FE158A919BDA4403A3F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/Upk4LoPoS4yBH16Tsjk82A/zh-cn_image_0000002792877046.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=EECA938643C8DA03AAC4853C175A90BD3A0060407F7F8C4B1722CE3B1BC57B37)

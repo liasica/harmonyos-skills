@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-circle
 title: 圆形
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 圆形
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:05+08:00
+scraped_at: 2026-11-21T09:12:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:275aca78ec457cb1d92796eec10eca986f329cab3fd8aee63a1352f0de9f54d0
+content_hash: sha256:583fa89d60ad93988163aa923a8b0a5364a3fd669bec322a14f4c353db297342
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:275aca78ec457cb1d92796eec10eca986f329cab3fd8aee63a1352f0de9
 
 圆形通常用于表示特定区域的服务覆盖范围、地理围栏或兴趣点的影响区域。通过设置中心点和半径，可以直观地展示某一地点周边一定距离内的范围。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/mLxeMUKASvGS_1njfKaTZA/zh-cn_image_0000002820526457.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=328AC0B5C126F9DCD115F4D7ADC9C81BA7DC33750C04F217DC6CFB2DF7305FFF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/qV5sMDrOTBq2QXeP6f0nIA/zh-cn_image_0000002793038128.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011230Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FCCA6C90EF1DA3BA884654E6EF3FF8ED897CE7C2D83DA2D5FCEB73A2BA023CD "点击放大")
 
 ## 接口说明
 
@@ -96,4 +96,4 @@ content_hash: sha256:275aca78ec457cb1d92796eec10eca986f329cab3fd8aee63a1352f0de9
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/wA8fyy45TNyRbnMKzOeESQ/zh-cn_image_0000002820406457.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014905Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BF19613DDD35298F8E87F2261106DC0E0CBEC7B5A44F2F2F6FA76400FB82E32 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/RpGceDzkQUKb3hiURLTJ3Q/zh-cn_image_0000002792878158.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011230Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0BA33FA75CA243CCF49C6CFA8DECC1F47112EE9ECBEA40B295890BBFE714AEF "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 列表选择弹窗 (ActionSheet)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 列表选择弹窗 (ActionSheet)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:10+08:00
+scraped_at: 2026-11-21T09:14:15+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:9cff3ecb334676f67732438f7d000310c4337d51b377cc0aa5731383ad7cf2b0
+content_hash: sha256:5a8532712bebffae1cafd28bb747ec59eac7d57e4a5e08ef837a7387943b7bd3
 ---
 
 用于显示列表选择项的弹窗组件。
@@ -259,7 +259,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/-2tYQX8FRyuVYiKc0w9zgg/zh-cn_image_0000002791567628.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=C274FAC2DAB4469F0696443378887D36FD3FAFBA910038D9F1C8BC22EAA16151)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/BnLjUervRJaEuSYm_lKRag/zh-cn_image_0000002792879302.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011310Z&HW-CC-Expire=31536000000&HW-CC-Sign=57273FE2D0CCED0892601121394D9B81015EC0588D05867350AE46CB52CD5F03)
 
 ### 示例2（可在主窗外弹出的弹窗）
 
@@ -331,7 +331,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/pLGA2wvpTdS4eJzPYPf5Wg/zh-cn_image_0000002820527581.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=25F4BE05BE418E24A3F85863D447248464CECA720E90FD55878AEAB0E995D8DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/l6-Uvmq1QEGDvYICWCILtQ/zh-cn_image_0000002821839209.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011310Z&HW-CC-Expire=31536000000&HW-CC-Sign=263F88593AA2F577B8379B1E663BCF3B452E06BC87AC33029A40B86A30BF8F96)
 
 ### 示例3（设置弹窗的动画）
 
@@ -393,7 +393,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/dqsx8m48SK-S_D83cOrCkA/zh-cn_image_0000002820407583.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=F753C7513751601B5B113C684F4FB7A69F20BD1FD6666F633D1F209AFF36AFB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/_NOhRvybQLWsu6csEnUOng/zh-cn_image_0000002821759209.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011310Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CDC42B6A9B7527F93427D34CC0CC96528D549920E9ED54EE841A9BD9FB5B927)
 
 ### 示例4（设置弹窗的样式）
 
@@ -475,7 +475,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/P3qUdpZuSgeKG2s2NM4QSQ/zh-cn_image_0000002791727602.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0B2581393B714DB71D67EF603B5A8B4732DB0492477857DC3C09011CDD0BD90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/UlIGq2zgSU2VhNLzY-D9YA/zh-cn_image_0000002793039274.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011310Z&HW-CC-Expire=31536000000&HW-CC-Sign=81737B3A98631367D2B163625F7DCF3EEC64481C61869E14511AAB6057611AE0)
 
 ### 示例5（悬停态弹窗）
 
@@ -547,7 +547,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/cXiVA_b9ROWdx0xjXOOfrg/zh-cn_image_0000002791567630.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC2F7D2B96B87ED0D43EBB2EDE20AF57EBD1822DEA906828230C032CA890162A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/KrYOhAlPR8u86ivGY_1q8Q/zh-cn_image_0000002792879304.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011310Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4B716E4960DEE944C7C0766BD5E8C729211F5E2232DEBAD3D9A20A5ADEE34BD)
 
 ### 示例6（弹窗生命周期）
 
@@ -625,7 +625,7 @@ struct Example1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/2E5dai_0SHiJYd4GbVmtsg/zh-cn_image_0000002820527583.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=92AA071377DAE47A753E9B55119195493F8B3204585178EF25433A723DFE9438)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/JqxDTSfuRvOjmKGbo3gMVg/zh-cn_image_0000002821839211.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011310Z&HW-CC-Expire=31536000000&HW-CC-Sign=1072D629970FF994C684667866309AA7C00B421B13FCBFFCF39A265D253D53AE)
 
 ### 示例7（自定义背景模糊效果参数）
 
@@ -685,7 +685,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/d4RCtY63RVSnBWRYCtC5qQ/zh-cn_image_0000002820407585.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAC33BB6D33FE4EFE079838F5C83FD88792DA385A070E55168ABB7CADA39FAED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/wNtZrD_lS7uHDXDSkvhSHg/zh-cn_image_0000002821759211.png?HW-CC-KV=V1&HW-CC-Date=20261121T011310Z&HW-CC-Expire=31536000000&HW-CC-Sign=A07AB00BABEF7DA7C689F27AFD423216858C4E780F43A256D3E2D001797AFC64)
 
 ### 示例8（自定义背景效果参数）
 
@@ -746,7 +746,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/hcBfy_0TTS2YlCo_ja-iIQ/zh-cn_image_0000002791727604.png?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED8070B176AB6B33FAF35D0CF9ABDD721D1465CAD83387B2C15BF56C2D2C721A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/twPfCxCaTfSnWDUPR_YBZA/zh-cn_image_0000002793039276.png?HW-CC-KV=V1&HW-CC-Date=20261121T011310Z&HW-CC-Expire=31536000000&HW-CC-Sign=188485F49761D202B9381D0AF4D4F86F6C97AD8C49F0BBFBB22C13188AC1FE87)
 
 ### 示例9（设置弹窗的沉浸光感效果）
 
@@ -809,8 +809,8 @@ struct ActionSheetExample {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Lf-qMwpqTgOjMTqHoY3gKA/zh-cn_image_0000002791567632.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=93AC6E8507D2378745B28172A227E48C656EA25B2EA55B0C336C448EFB34F74D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/t_wZNIesR_a-DlFZ0OLhDw/zh-cn_image_0000002792879306.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011310Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D7532B4F597FE6B1D3078A5FC60CE9701E927C5CE916622E0B683AD5EECC2F1)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xYcdZp0vSU-sIfsfK7EOiQ/zh-cn_image_0000002820527585.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015110Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFE539AB5D7980D7A8CF67359BFBE2C81739F317173D9B5F92DD590AF864F3D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/p3JbnmTNTxuIhiXO-nZ5Eg/zh-cn_image_0000002821839213.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011310Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8BE9B528429DF004710ACB3E26B3349B1D8C61AAE451445463C87FC5236FF16)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TapGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > TapGesture
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:54+08:00
+scraped_at: 2026-11-21T09:14:04+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:1e7d071ff2284a7779aa6b8729bc17ef993b2abd39f3e85469a95d1e754d28e8
+content_hash: sha256:230d4e7a5a9b8e375fb674c963d2e2d0e54dfc8c7dc3822a637ecadc44c6dd26
 ---
 
 支持单击、双击和多次点击事件的识别，适用于为组件绑定点击交互、区分不同点击次数并触发对应业务逻辑的场景。
@@ -153,7 +153,7 @@ struct TapGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/LUQw0HXrRzWRSy5K7lT9_w/zh-cn_image_0000002791567146.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE9E550573D87806F396876253D7B04141585751253CE20C9CD23B4A5E69C760)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/cW_5Nh_jSlamt5m7jy1caA/zh-cn_image_0000002792878802.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011404Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AC8A74590783731E15B998223DC2CDE546700E562A4C4DE2ABC16B4CF79245A)
 
 ### 示例2（获取单击手势坐标）
 
@@ -194,7 +194,7 @@ struct TapGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/ip7-lWClRkayhqbYpATlhQ/zh-cn_image_0000002820527099.png?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=B91D9D86DECEC4516959BDB5A9078FFBD0BB4512C6B27022C956F813F775BDC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/SxXTK4TiQz6Wq7nHZZm2Yw/zh-cn_image_0000002821838707.png?HW-CC-KV=V1&HW-CC-Date=20261121T011404Z&HW-CC-Expire=31536000000&HW-CC-Sign=682E14CCF6000E94DFEA885B52E928840610F3C4FB8AB7980BAB0AAF4A788151)
 
 ### 示例3（获取组件实时位置）
 
@@ -233,4 +233,4 @@ struct GetCurrentLocalPositionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Lt3bL0JKTv2l607e4twiZQ/zh-cn_image_0000002791726986.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015054Z&HW-CC-Expire=31536000000&HW-CC-Sign=B273AD4A783F77A9F0B65613080D3703FBBA4E78C45D551CF173613BE8FA5BB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/FSBZpj9HQ8mIV7wq4cBVGw/zh-cn_image_0000002793038638.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011404Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D427935E2319A743A64AFBFA0BABE9F2704229583D1223254761EA5C782F477)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/medialibrary-
 title: 设备升级继承媒体文件访问权限
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 设备升级继承媒体文件访问权限
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:42+08:00
+scraped_at: 2026-11-21T09:12:07+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:864a3080eaf30f1f8fc44e40cee06c5d0d25dde1290503ecf5f829ead3bff2e1
+content_hash: sha256:4e328d0edb99d44247f622dc32869e80aa00df828810b0fd087754c693fe66b1
 ---
 
 应用在HarmonyOS 3.1 Release API 9及更低版本运行时，有图片/视频访问权限，并在应用内记录对应的图片/视频文件路径或uri，在进入应用特定界面时，可实时访问图片/视频显示内容。
@@ -14,13 +14,13 @@ content_hash: sha256:864a3080eaf30f1f8fc44e40cee06c5d0d25dde1290503ecf5f829ead3b
 
 本指南将帮助开发者了解如何在升级后，继承媒体文件的访问权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/0XNY5bR-SnaLaWPugy3WGA/zh-cn_image_0000002791726008.png?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F1355F74ADBCCA58D5417DE478D00F818444257D3DA111D851C86F67EDEF80B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/xt6ZfSaHQhqnjAhGLk0DCw/zh-cn_image_0000002821837595.png?HW-CC-KV=V1&HW-CC-Date=20261121T011041Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B857E6B708D4A04968233A012F30FE618E02A0B95F914E6F388B42D131BA2CE)
 
 应用在启动或是进入对应的业务界面之后，从应用数据中获取在HarmonyOS 3.1/4.0版本的应用上已有权限且需要继承权限的媒体文件uri，调用Scenario Fusion Kit的接口[convertFileUris](../harmonyos-references/scenario-fusion-fileuriresult.md#convertfileuris)，获取转换后的HarmonyOS 5.0可访问的uri。再调用Media Library Kit的接口[requestPhotoUrisReadPermission()](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#requestphotourisreadpermission14)，输入需要继承访问权限的媒体文件uri，拉起授权界面。在授权界面，根据应用输入的uri，将显示对应图片/视频缩略图。用户可以勾选对应的图片/视频，并同意授权，此时应用将获取该图片/视频的访问权限。
 
 在用户界面的效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/S_Bc8bYrTkSlUTYxxiP-Og/zh-cn_image_0000002791566036.png?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=B02579D347E39B911A31F57BA8DF63D1182FD148BC987EEBE5E20184B6618167)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/D0vC14fORNiGuFJsTZUl4A/zh-cn_image_0000002821757597.png?HW-CC-KV=V1&HW-CC-Date=20261121T011041Z&HW-CC-Expire=31536000000&HW-CC-Sign=C54301FD7C97BE79A31F64B2C4D45373E137BF296E9CD2DE5FB22E1182C1AB0B)
 
 ## 开发步骤
 

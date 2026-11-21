@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-docking-s
 title: Web组件对接软键盘
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web组件对接软键盘
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:52+08:00
+scraped_at: 2026-11-21T09:11:18+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:870ac7369a1366b3019fa8244b7bbfe7ba0aa69384046184a691e91fa08aa612
+content_hash: sha256:ea3b60e1205ddcdd1347e96c7881e993915dc3091b5d0ceca773e5161fd0498a
 ---
 
 开发者能够通过Web组件对接软键盘，来处理系统软键盘的显示与交互问题，同时实现软键盘的自定义功能。主要有以下场景：
@@ -191,11 +191,11 @@ struct WebComponent {
 
    **图1** Web组件网页默认软键盘避让模式
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/lbku-hTjTrOMZGsO8ocDGA/zh-cn_image_0000002791565492.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=502F1524EC702E57C8293FCC87019249BCF4BFCEB2C3DFAC3755B9278B4E9580)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/4gzjn_VyT1KCLaKsSRNt2w/zh-cn_image_0000002821757053.png?HW-CC-KV=V1&HW-CC-Date=20261121T011117Z&HW-CC-Expire=31536000000&HW-CC-Sign=B56432D0DFECDFCF92ACF00FB1E3902E7C059D5CB14FB9045A4B62AF54D5FA6E)
 
    **图2** Web组件网页跟随ArkUI软键盘避让模式
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/S5WrrXdDQUSucfUQRcTuqA/zh-cn_image_0000002820525445.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=C20830767829C1BCA4B62D6C97A8AD039058CD1B256785D132E8DE2BEBFA3E09)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/eGzQSwjeS4a4V8az4Oa-Xw/zh-cn_image_0000002793037116.png?HW-CC-KV=V1&HW-CC-Date=20261121T011117Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8E2DCBC13B1F8C0585361902E96B22175586668942D735D8BBF3EB5DC9EE396)
 2. 在UIContext的键盘避让模式为Offset模式时，应用可通过[WebKeyboardAvoidMode()](../harmonyos-references/arkts-basic-components-web-e.md#webkeyboardavoidmode12)设置ArkWeb组件的键盘避让模式。Web组件的[WebKeyboardAvoidMode()](../harmonyos-references/arkts-basic-components-web-e.md#webkeyboardavoidmode12)接口优先级高于W3C侧virtualKeyboard.overlayContent。
 
    * RESIZE\_VISUAL：仅调整可视视口的大小，而不调整布局视口的大小。
@@ -237,7 +237,7 @@ struct WebComponent {
 
    **图3** Web组件网页自身软键盘避让模式
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/2PaLiAahRCCnT5G_PLnDDg/zh-cn_image_0000002820405445.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC2EE20FB43B33D469F9867C0195871FAD608E9DA6E12D27AD646A3FFE753BFA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/_uIqkgE8Rsis78CHZ5l_Aw/zh-cn_image_0000002792877146.png?HW-CC-KV=V1&HW-CC-Date=20261121T011117Z&HW-CC-Expire=31536000000&HW-CC-Sign=504D6928B9E259A53670BA68F16448EBAECDB74DB0361E21977FC2DB67DB6DD7)
 3. 在软键盘弹出时，为使Web组件不发生避让行为，可通过调用[expandSafeArea()](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)设置Web组件扩展安全区域。更多详细示例可参考[网页中安全区域计算和避让适配](web-safe-area-insets.md)。
 
    ```typescript
@@ -443,12 +443,12 @@ ArkWeb自定义键盘的示例效果如图4、图5和图6所示。
 
 **图4** ArkWeb自定义键盘数字键盘
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Xgz1zEoaSY-bQ4FLWDRx8w/zh-cn_image_0000002791725466.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=184EE7FCBF7D1C1AF9200F47946E8E7D01921A75332CF54C6B2EDF28A4D9E037)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/fxWgbtKuS7e9CBu2As1SrQ/zh-cn_image_0000002821837053.png?HW-CC-KV=V1&HW-CC-Date=20261121T011117Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2567DFE59136D04997975B1948802DA379A4FE5132F0DCF7173E808E393EE7A)
 
 **图5** ArkWeb自定义键盘字母键盘
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/u-Pd3jJBSb2x8iOzXkVBvg/zh-cn_image_0000002791565494.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=E27005FE1411DB916A09DC2D544A622705F91F2092A421B78AB5B3CFC3E9395A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/K78KISTUTx-82_pdA9X96w/zh-cn_image_0000002821757055.png?HW-CC-KV=V1&HW-CC-Date=20261121T011117Z&HW-CC-Expire=31536000000&HW-CC-Sign=188E08B263E89258362632B63FCAD9B3368289A12CC41BEBDD4009F79639585F)
 
 **图6** ArkWeb自定义键盘符号键盘
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/4pgsL0D5RIyTrGJ7yjy37w/zh-cn_image_0000002820525447.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=A945904F8F55EF8DDC3FC9E2EBF3DD28128A8858680B5E7C74DBFC5C27B92AD0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/jZ4kgxpWS2qGdkOQzMANWg/zh-cn_image_0000002793037118.png?HW-CC-KV=V1&HW-CC-Date=20261121T011117Z&HW-CC-Expire=31536000000&HW-CC-Sign=F95381ED143FFBA8F597D19551B04061039534B8BB3E19EEAC9708B0DE271D13)

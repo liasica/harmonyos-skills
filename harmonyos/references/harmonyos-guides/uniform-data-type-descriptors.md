@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-
 title: 标准化数据类型 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 标准化数据定义 > 标准化数据类型 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:29+08:00
+scraped_at: 2026-11-21T09:10:55+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:ba73a7a44c1749a4f5af4d930ee014437b908bdeb6ff905d59abcdc7d4159229
+content_hash: sha256:3c7d4ca8a0a9ce8216a398c51a4ccb390264c626277d36cab8659d93d7691b73
 ---
 
 ## 场景介绍
@@ -39,11 +39,11 @@ UTD中定义的标准化数据类型在设计原则上按物理和逻辑分为�
 
 **图1** 物理标准化数据类型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Ur_jY63mRnm4C5WTl57ikw/zh-cn_image_0000002820524451.png?HW-CC-KV=V1&HW-CC-Date=20261119T014728Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D5F4E6E03A4D930C8357268BFC9D35B1491C3C4FA537CC3843F1AC74AF6A5C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Er4qjrqWSgOpB2eolHVnfw/zh-cn_image_0000002793036120.png?HW-CC-KV=V1&HW-CC-Date=20261121T011055Z&HW-CC-Expire=31536000000&HW-CC-Sign=65E54A508DCF8B076FD1F7A79AE17C10C7F42547F1A10AC96F4D3879ACBCEBEB)
 
 **图2** 逻辑标准化数据类型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Aw2rwudpSzaV-_mqfBNVxA/zh-cn_image_0000002820404451.png?HW-CC-KV=V1&HW-CC-Date=20261119T014728Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0399DBBD93650F1181CEC2C0984BC727ADA999E46AAB11D201A22C8E37279F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/V4ZyE19yR3-fQibRXGZIpQ/zh-cn_image_0000002792876152.png?HW-CC-KV=V1&HW-CC-Date=20261121T011055Z&HW-CC-Expire=31536000000&HW-CC-Sign=79AD8800AEF13FE20FF365DFD284F0680D43A9F1471C79A761FCAC53F0B0B12D)
 
 ## 标准化数据类型的定义
 

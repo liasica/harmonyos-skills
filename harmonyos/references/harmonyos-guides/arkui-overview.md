@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkui-overvie
 title: ArkUI简介
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > ArkUI简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:35+08:00
+scraped_at: 2026-11-21T09:11:01+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:cbc405ff0c8ff156986b8215121669e51cff70187453b67a54b3b3ee6cb23d74
+content_hash: sha256:eb7a6b68f06a449d5f00a7fd323e5e76c2fbedf25611a0110a4998cf3e373eda
 ---
 
 ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，包括简洁的UI语法、丰富的UI功能（组件、布局、动画以及交互事件），以及实时界面预览工具等，可以支持开发者进行可视化界面开发。
@@ -30,7 +30,7 @@ ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，�
 
   **图1** 方舟UI框架示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/2rimYfoGSZ6sinNrjiTRSQ/zh-cn_image_0000002791564544.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=81DB3808B4E0D92AC6075A27773FC96A00DDA63F3EDC3FED4AA36C8A2BC5D7B0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/4gRECVmRTRCloR4soZTr2w/zh-cn_image_0000002821756099.png?HW-CC-KV=V1&HW-CC-Date=20261121T010936Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA1C24614BBD7773F9E433DEDE610BCE33FE27F138F2165E484DCA2E621BE7B1)
 
 ## 不同应用类型支持的开发范式
 

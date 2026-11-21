@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-utd-vid
 title: 分享视频
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 常见分享场景 > 分享视频
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:13+08:00
+scraped_at: 2026-11-21T09:12:39+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:c67e1f9b00985f6f6567d6a1e8640db2af60b5b010e9679f4bc8c46d5d39ff84
+content_hash: sha256:71aed38bf6b038dcca15a03bab64ae4f293f5b001f64d999f14bfeac510f14d1
 ---
 
 视频类型分享支持将一个或多个视频分享到目标设备/目标应用。
@@ -13,7 +13,7 @@ content_hash: sha256:c67e1f9b00985f6f6567d6a1e8640db2af60b5b010e9679f4bc8c46d5d3
 * 目标设备接收时，视频会保存到图库中。
 * 目标应用接收时，可便捷地处理视频内容。例如：将一个视频分享给畅连，发送给畅连好友。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/aPmJcNNITTiCcYC5xCy5lg/zh-cn_image_0000002820526611.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEC428E74B3AF0B89F1D426FA3BAEDF86A6FF10CCF3CFF3C68330C29CC0B7EBF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/3EChzFKhQayB4iZ80PI1vA/zh-cn_image_0000002821838219.png?HW-CC-KV=V1&HW-CC-Date=20261121T011112Z&HW-CC-Expire=31536000000&HW-CC-Sign=93730D0A772D87C7EBC7AE010792A19D238A24A32B53728C54BF058BAACA8F6D)
 
 ## 开发步骤
 

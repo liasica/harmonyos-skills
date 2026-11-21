@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/same-layer-re
 title: 同层渲染原生组件
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 同层渲染 > 同层渲染原生组件
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:53+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:b2295edc0ef912be84b1c4e6d359767678ecf60de41751ad04995768e4c0e4cf
+scraped_at: 2026-11-21T09:11:19+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:197283abe38a1b3b5afabc356bd4f4e6a50c4a62eea44f1a602c34a21153a366
 ---
 
 ## 概述
@@ -35,7 +35,7 @@ content_hash: sha256:b2295edc0ef912be84b1c4e6d359767678ecf60de41751ad04995768e4c
 
 **图1** 同层渲染和非同层渲染区别
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/duaiXi47QV-nznC8MwQzzA/zh-cn_image_0000002820405479.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=83588B4FCEE1FAF5E52DAB1EF57A2E0EC8C0D14E523327AD3F68E62783CAE095)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/RQ6RxfYcT0m3lXODMsHvCA/zh-cn_image_0000002792877180.png?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CBB8D1EC3B45A6C58C1C635929FDF9614BE714CA86147C0E569A1D54E5B4A6D)
 
 ## 场景示例
 
@@ -43,7 +43,7 @@ content_hash: sha256:b2295edc0ef912be84b1c4e6d359767678ecf60de41751ad04995768e4c
 
 **图2** 页面效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/idsOf78SQh-gSJsUJR9vKA/zh-cn_image_0000002791725500.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=81D1931235BB58CB7526F55107CE15F7B8200BFBE09DBE1F6A6A58F54C8FB07C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/z2l0qdv0TGWByTZxfaSpkQ/zh-cn_image_0000002821837087.png?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=06FFBEE7E4FCDCFAE5EED74B2CF8F80171CB6EB78DDF8033A5EB5B4A81A650D1)
 
 提供承载的H5页面代码如下：
 
@@ -189,6 +189,8 @@ function getEmbedSize() {
 ```ts
 import { PRODUCT_DATA } from '../mock/GoodsMock';
 import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 @Entry
 @Component
@@ -205,16 +207,22 @@ struct NonSameLayerRendering {
         .onPageEnd(() => {
           this.browserTabController.runJavaScript(
             'getEmbedSize()',
-            (error, result) => {
+            (_error, result) => {
               if (result) {
                 interface EmbedSize {
                   width: number,
                   height: number
                 }
-                let embedSize = JSON.parse(result) as EmbedSize;
-                this.searchWidth = embedSize.width;
-                this.searchHeight = embedSize.height;
-                this.isWebInit = true;
+                try {
+                  let embedSize = JSON.parse(result) as EmbedSize;
+                  this.searchWidth = embedSize.width;
+                  this.searchHeight = embedSize.height;
+                  this.isWebInit = true;
+                } catch (err) {
+                  let error = err as BusinessError;
+                  hilog.error(0x0000, 'NotSameLayerRendering',
+                    `Parse result failed, errorCode = ${error.code}, errorMessage = ${error.message}`);
+                }
               }
             });
         })
@@ -537,7 +545,7 @@ struct SearchComponent {
 
 \*\*图3 \*\*非同层渲染的Trace图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/c3p3SoFTSZ2QSlwi8BDxiA/zh-cn_image_0000002791565528.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=216C7E50F10D318B7862DD5CA2D55FAE7C9D3F57D9F173F39337CDAFD247345C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/jyoYE7uFQRWmXZRo0xK_ig/zh-cn_image_0000002821757089.png?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC9078F79277EBE9EDFD0F717E3A1F3F37F4682CA5FCD2662C9ACB9669358C1D)
 
 非同层渲染的分析：
 
@@ -548,7 +556,7 @@ struct SearchComponent {
 
 **图4** 同层渲染的Trace图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/pEmlI8KcSNaj9CZU9EPuwA/zh-cn_image_0000002820525481.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D4EF052E512BF31C9D7BFF27B866F836EA654ED3622744F7D765791515A9004)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/5N9Z1CgxTDWVD_ujxQtGiA/zh-cn_image_0000002793037152.png?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FCF89E7DE8C5D164D30C1FD06C6CF1782F04FA694283F83BFB8549903A952A2)
 
 同层渲染的分析：
 
@@ -559,7 +567,7 @@ struct SearchComponent {
 
 下表为各种方法完成原生组件加载（蓝线）前后几帧render\_service侧的耗时对比（-1为完成前一帧，1为完成后一帧，以此类推）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/9Ze0ppAwRM67md-RXITvfw/zh-cn_image_0000002820405481.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB38DCBDFCD0EDFC4807744F53B4F66FC83A75C9E4D3FA7F953616A24ADC6797)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/tduCG4abTQiD6Iew99npxQ/zh-cn_image_0000002792877182.png?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=61F5360F1A095C79A2FBE4FC6C14BB1DA6270578F812908283D8003FC5CD2C28)
 
 从此表格可以看出，非同层渲染会导致render\_service侧每帧耗时大幅提升，同层渲染相比起非同层渲染，并不影响render\_service侧的每帧耗时。
 
@@ -571,7 +579,7 @@ struct SearchComponent {
 
 **图5** 非同层渲染滑动时单帧图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/5iTgG4V1T3C3iuHM3TSiMA/zh-cn_image_0000002791725502.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E284D93F2E3F105ADD1F0E8A46342993EE0C1B5B432B64D538B1FE784B5A1BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/2waDLbtfQY6s_EFu_EguTQ/zh-cn_image_0000002821837089.png?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=272D64C0A649907AD7CD33B1E1D1D537015C6C8689C5CB128E1184F62A26BF58)
 
 非同层渲染的分析：
 
@@ -582,7 +590,7 @@ struct SearchComponent {
 
 **图6** 同层渲染滑动时单帧图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/K3iMyzQDQVmZo1yGMovPCQ/zh-cn_image_0000002791565530.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=429E6488A7B5840779AC79A62DD99118EEE447C177AF1E929AA66C7E4C4FFD72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/zXUgb037Q36Sn99M6xmbng/zh-cn_image_0000002821757091.png?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BD6DACD783FA95E6D833668344E515F0BB765241E7C76345DB493DD6A8213AD)
 
 同层渲染的分析：
 

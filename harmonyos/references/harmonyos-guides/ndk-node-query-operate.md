@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-node-quer
 title: 查询和操作NDK节点
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 查询和操作NDK节点
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:47+08:00
+scraped_at: 2026-11-21T09:11:13+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:44aa494ba2cb3e235bf5235f8bff5982b4f699428a2cf1bff312766bd1ae6b01
+content_hash: sha256:fd42e2c276a7fabbdde545a0d99f942a6a5f54891632a6fcee4d915ded3890d8
 ---
 
 NDK提供一系列节点查询、遍历、操作能力，通过使用以下接口，开发者可以高效地访问和操控节点。
@@ -479,7 +479,7 @@ const unsigned int VALUE_3 = 50;
    ```
 4. 运行程序，点击按钮，Stack节点会移动到目标位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/6i85qcUISEKrpraRAUw1_Q/zh-cn_image_0000002820525291.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014656Z&HW-CC-Expire=31536000000&HW-CC-Sign=80117C0674DDF005CD3EB5BFCCB39DA13F5868B7EF8C47442A4494F939BEE539)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/jkepeOj6TnG_xAGsm9OZFw/zh-cn_image_0000002793036962.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011113Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCC90D807CB61C07727516A1DD5617425461ACFFC45597AD64EBB4D10DA2ADC5)
 
 ## 在当前即时帧触发节点属性更新
 
@@ -671,7 +671,7 @@ const unsigned int VALUE_3 = 50;
    ```
 4. 运行程序，点击按钮，切换图片正常展示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/kwN6JGFBRi-DrdjeMMUl7A/zh-cn_image_0000002820405291.png?HW-CC-KV=V1&HW-CC-Date=20261119T014656Z&HW-CC-Expire=31536000000&HW-CC-Sign=39FBC8EEAFEC8948158606BDFF0C86CBF1FC7A39BB119EEE0774DC9C28E85663)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/t32gYZLpRNyzVKe7DMvmOw/zh-cn_image_0000002792876992.png?HW-CC-KV=V1&HW-CC-Date=20261121T011113Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EA0AC856A53D8E6F1F78E077334537B99D86129B22D74FD8A25782970D17E48)
 
 ## 用不同的展开模式获取对应下标的子节点
 
@@ -1140,4 +1140,4 @@ NDK支持通过不同的展开方式获取目标节点下的有效节点信息�
    ```
 4. 运行程序，点击change text visibility后打印text是否在渲染树上。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/t47hsjjCQHKte3iBAldvqw/zh-cn_image_0000002791725312.png?HW-CC-KV=V1&HW-CC-Date=20261119T014656Z&HW-CC-Expire=31536000000&HW-CC-Sign=5370DD4284338680D9F799D170B3C2CF02E7FDA70746263BEEAC042529A26498)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/dJwU4t1ZTuu2kAax1F85Dg/zh-cn_image_0000002821836899.png?HW-CC-KV=V1&HW-CC-Date=20261121T011113Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C9C30EBFA3A811A6220979FDB2491333B58B1C605117606D067679C3B5850B4)

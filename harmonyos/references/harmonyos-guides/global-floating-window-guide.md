@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/global-floati
 title: 全局悬浮窗开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 全局悬浮窗开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:20+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:86d2a67c03ce2bba79b2f745dc991f7c4bb603a4a082d7dec352ba692bce15b7
+scraped_at: 2026-11-21T09:11:15+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:02f283e119978f836b5478347d39263f645ebe55eb2cb928594631bd32f3ea5d
 ---
 
 ## 场景介绍
 
-全局悬浮窗具有在应用主窗口退后台时，继续在前台显示的能力，适用于如多人视频通话、屏幕共享等场景。
+全局悬浮窗具有在应用主窗口退后台时，继续在前台显示的能力，适用于多人视频通话、屏幕共享场景。
 
 全局悬浮窗的层级比所有应用主窗口、子窗口的层级高。
 

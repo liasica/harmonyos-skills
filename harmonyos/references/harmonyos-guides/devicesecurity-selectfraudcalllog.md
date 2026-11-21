@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 获取诈骗通话记录
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 反诈选择器 > 获取诈骗通话记录
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:07+08:00
+scraped_at: 2026-11-21T09:11:33+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d65a7f63b9cdde7580d19fde98860eaf8c1b739f910ae501d3bc797520a27ee0
+content_hash: sha256:e21afe82f7d195eb53e483f77f1f163a23183d33d4592efd33817c8286b179c7
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:d65a7f63b9cdde7580d19fde98860eaf8c1b739f910ae501d3bc797520a
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/cVlltBnzTISPSdQE0ZhceA/zh-cn_image_0000002820525697.png?HW-CC-KV=V1&HW-CC-Date=20261119T014716Z&HW-CC-Expire=31536000000&HW-CC-Sign=36572038FADBA5F1AC82A910B6A125D36164053B59D4A32F8FD0F34EDCFD6836)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/KMDuUJYMQJKuEs8RXC2Y2w/zh-cn_image_0000002793037368.png?HW-CC-KV=V1&HW-CC-Date=20261121T011133Z&HW-CC-Expire=31536000000&HW-CC-Sign=027DCCB161B90CF12775204CBA1AD58735B88190D9AA52E975EFEE7073FCD9BE)
 
 **流程说明：**
 

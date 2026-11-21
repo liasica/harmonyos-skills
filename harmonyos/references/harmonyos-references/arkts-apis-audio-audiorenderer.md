@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioRenderer)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioRenderer)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:53:25+08:00
-doc_updated_at: 2026-11-18
-content_hash: sha256:bc03939fd40c873c935362f5bdeb9448b0cd4bb5a1638264fc7b43fb0e0c6d69
+scraped_at: 2026-11-21T09:15:51+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:e09edc6918e63114760f9f2acabdb361951950d6457374e86ef0f1fca889d63b
 ---
 
 提供音频渲染的相关接口。
@@ -2721,7 +2721,7 @@ setLoudnessGain(loudnessGain: number): Promise<void>
 **说明** 
 
 * 该接口仅支持类型为[STREAM\_USAGE\_MUSIC](arkts-apis-audio-e.md#streamusage)、[STREAM\_USAGE\_MOVIE](arkts-apis-audio-e.md#streamusage)或[STREAM\_USAGE\_AUDIOBOOK](arkts-apis-audio-e.md#streamusage)的音频流。
-* 该接口不支持高清通路的响度设置。
+* 从API版本26.0.0开始，该接口支持高清通路的响度设置；低于该版本时不支持。
 * 由于音频框架与硬件之间存在缓冲区，响度调节实际生效存在延迟，时长取决于缓冲区长度。
 * 建议在不同音频开始播放前预先设置响度，以实现最佳均衡效果。
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-ticket
 title: 删除活动/景点门票
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 活动/景点门票 > 开发场景 > 删除活动/景点门票
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:15+08:00
+scraped_at: 2026-11-21T09:12:42+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:63cad2049a84adf727992073d9f4af4e4ebb594141eb8951790b05e06b559f3b
+content_hash: sha256:dc5197c8430211e5098d40edd6a09c209936aca5863dea49ec248e8a4bd8ac0c
 ---
 
 用户主动删除，将门票从钱包中移除。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/UerOvbxET3GqClFuILOjuA/zh-cn_image_0000002791726674.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=F50EB479B82B7BF1D431CB5A914FEB08BC9FFA60213817B81C42F9D1523D6378)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/q0LB8t6vTz6AMGtAFrUZDA/zh-cn_image_0000002793038326.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C4D45FA33C22E93ABDFB7B38674800331FBF0C469A929C1CA4B33B638D0EB85)
 
 ## 服务端开发
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-dir-p
 title: 获取并使用公共目录
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 获取并使用公共目录
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:25+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:7cc98bc89ab58b0c4e4f524b9d6570c990fdd55f99d8fc30b55c2f6902394bc0
+scraped_at: 2026-11-21T09:11:21+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:09c2b7687917c82abf915f9b59df0f826630bf015994f4d13b249986d89ac282
 ---
 
 ## 通过 ArkTS 接口获取并访问公共目录
@@ -30,11 +30,6 @@ content_hash: sha256:7cc98bc89ab58b0c4e4f524b9d6570c990fdd55f99d8fc30b55c2f69023
 
 1. 获取公共目录路径。
 
-   ```ts
-   import { BusinessError } from '@kit.BasicServicesKit';
-   import { Environment } from '@kit.CoreFileKit';
-   ```
-
    ```typescript
    function getUserDirExample() {
      try {
@@ -49,16 +44,6 @@ content_hash: sha256:7cc98bc89ab58b0c4e4f524b9d6570c990fdd55f99d8fc30b55c2f69023
    }
    ```
 2. 以Download目录为例，访问Download目录下的文件。
-
-   ```ts
-   import { BusinessError } from '@kit.BasicServicesKit';
-   import { Environment } from '@kit.CoreFileKit';
-   import { fileIo } from '@kit.CoreFileKit';
-   import { common } from '@kit.AbilityKit';
-
-   // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-   let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   ```
 
    ```typescript
    function readUserDownloadDirExample(context: common.UIAbilityContext) {
@@ -87,12 +72,6 @@ content_hash: sha256:7cc98bc89ab58b0c4e4f524b9d6570c990fdd55f99d8fc30b55c2f69023
    }
    ```
 3. 以Download目录为例，保存文件到Download目录。
-
-   ```ts
-   import { BusinessError } from '@kit.BasicServicesKit';
-   import { Environment } from '@kit.CoreFileKit';
-   import { fileIo } from '@kit.CoreFileKit';
-   ```
 
    ```typescript
    function writeUserDownloadDirExample() {
@@ -138,22 +117,10 @@ content_hash: sha256:7cc98bc89ab58b0c4e4f524b9d6570c990fdd55f99d8fc30b55c2f69023
 CMakeLists.txt中添加以下lib。
 
 ```txt
-target_link_libraries(sample PUBLIC libohenvironment.so libhilog_ndk.z.so)
+target_link_libraries(entry PUBLIC libohenvironment.so libhilog_ndk.z.so)
 ```
 
-**添加头文件**
-
-```
-#include <filemanagement/environment/oh_environment.h>
-#include <filemanagement/fileio/oh_fileio.h>
-#include <hilog/log.h>
-```
-
-1. 调用OH\_Environment\_GetUserDownloadDir接口获取用户Download目录沙箱路径，在接口中使用malloc申请的内存需要在使用完后释放因此需要free对应的内存。示例代码如下所示：
-
-   ```
-   #include <cstdlib>
-   ```
+1. 调用OH\_Environment\_GetUserDownloadDir接口获取用户Download目录沙箱路径，在接口中使用malloc申请的内存需要在使用完后释放，因此需要free对应的内存。示例代码如下所示：
 
    ```
    void GetUserDownloadDirExample()
@@ -169,11 +136,6 @@ target_link_libraries(sample PUBLIC libohenvironment.so libhilog_ndk.z.so)
    }
    ```
 2. 调用OH\_Environment\_GetUserDownloadDir接口获取用户Download目录沙箱路径，并查看Download目录下的文件。示例代码如下所示：
-
-   ```
-   #include <cstdlib>
-   #include <dirent.h>
-   ```
 
    ```
    void ScanUserDownloadDirPathExample()
@@ -207,10 +169,6 @@ target_link_libraries(sample PUBLIC libohenvironment.so libhilog_ndk.z.so)
    }
    ```
 3. 调用OH\_Environment\_GetUserDownloadDir接口获取用户Download目录沙箱路径，并保存temp.txt到Download目录下。示例代码如下所示：
-
-   ```
-   #include <fstream>
-   ```
 
    ```
    void WriteUserDownloadDirPathExample()

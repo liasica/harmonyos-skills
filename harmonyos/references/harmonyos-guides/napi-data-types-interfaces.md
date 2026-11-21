@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-data-typ
 title: Node-API支持的数据类型和接口
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API支持的数据类型和接口
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:47+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:870f7fd813955441fb908b4b5aed8b7fae00aee2e6bcf0d4a0c759ff68478c6a
+scraped_at: 2026-11-21T09:12:50+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:01c6a336a2875f28883fb4386c027ed60437db100e146e634dfa145c6165d33b
 ---
 
 ## Node-API的数据类型
@@ -40,8 +40,9 @@ typedef enum {
     napi_arraybuffer_expected,
     napi_detachable_arraybuffer_expected,
     napi_would_deadlock, /* unused */
-    napi_no_external_buffers_allowed,
-    napi_cannot_run_js
+    napi_create_ark_runtime_too_many_envs = 22,
+    napi_create_ark_runtime_only_one_env_per_thread = 23,
+    napi_destroy_ark_runtime_env_not_exist = 24
 } napi_status;
 ```
 
@@ -207,10 +208,6 @@ napi\_async\_complete\_callback用于异步操作完成后的回调。当需要�
 **napi\_threadsafe\_function\_call\_js**
 
 函数指针，在事件循环线程中执行，可与ArkTS/JS交互，从而实现更加复杂的功能，用于napi\_create\_threadsafe\_function(napi\_env env,…,napi\_threadsafe\_function\_call\_js call\_js\_cb,...)接口。
-
-**napi\_cleanup\_hook**
-
-函数指针，用于napi\_add\_env\_cleanup\_hook接口，当环境销毁时会被执行。
 
 **napi\_async\_cleanup\_hook**
 

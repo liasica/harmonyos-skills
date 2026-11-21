@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-get-toke
 title: 获取Push Token
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 开发准备 > 获取Push Token
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:34+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:f87a588167ee0e9be859aa12ed77f403cfb3096a41e95f0829aae478b8c98cf8
+scraped_at: 2026-11-21T09:12:36+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:882bc8cda9033d12f46151227f4d9399cb2c441c7599c647f2ba55e7ff7aa0fe
 ---
 
 ## 场景介绍
 
 **说明** 
 
-Push Kit对Push Token进行了权益校验，请在进行开发前先阅读[开通推送服务](push-config-setting.md)章节，完成相关配置。
+Push Kit对Push Token进行了权益校验，请在进行开发前先阅读[开通推送服务与接入准备](push-config-setting.md)章节，完成相关配置。
 
 Push Token标识了每台设备上每个应用，开发者调用[getToken](../harmonyos-references/push-pushservice.md#pushservicegettoken-1)接口向Push Kit服务端请求Push Token，获取到之后使用Push Token来推送消息。
 
@@ -48,7 +48,7 @@ Push Token一般情况不会变化，仅下列场景会导致之前的Push Token
 
 ## 获取Push Token
 
-1. Push Kit对Push Token进行了权益校验，请在进行开发前先阅读[开通推送服务](push-config-setting.md)章节，完成相关配置。
+1. Push Kit对Push Token进行了权益校验，请在进行开发前先阅读[开通推送服务与接入准备](push-config-setting.md)章节，完成相关配置。
 2. 导入pushService模块及相关公共模块。
 
    ```typescript

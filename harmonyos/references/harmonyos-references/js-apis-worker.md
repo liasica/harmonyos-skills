@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.worker (启动一个Worker)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.worker (启动一个Worker)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:44:31+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:02c31c6e885b0551d28837b71c054c05c81fa38272a61c27f8522c94d84cbfcf
+scraped_at: 2026-11-21T09:13:54+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:f6bbb77982b175c2a8f4a45cf28ae6682fcb4d6f7526b0a02f51b495a6358a88
 ---
 
 Worker是与宿主线程并行的独立线程。创建Worker的线程称为宿主线程，Worker自身的线程称为Worker线程。创建Worker时传入的URL文件在Worker线程中执行，可以处理耗时操作，但不能直接操作UI。
@@ -986,7 +986,7 @@ Worker线程用于与宿主线程通信的类。ThreadWorkerGlobalScope类继承
 
 ### postMessage9+
 
-postMessage(messageObject: Object, transfer: ArrayBuffer[]): void;
+postMessage(messageObject: Object, transfer: ArrayBuffer[]): void
 
 Worker线程通过转移对象所有权的方式向宿主线程发送消息。
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-member
 title: 删除会员卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 会员卡 > 开发场景 > 删除会员卡
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:15+08:00
+scraped_at: 2026-11-21T09:12:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:19875aa0978c5a717d34602ccf7c87a96932b58411066e760a41e1753c35dd32
+content_hash: sha256:402c670e36933f3ae1c9bd3a4751049d72fa74590f871c168f3b1b08796c94b0
 ---
 
 用户主动删除，将会员卡从钱包中移除。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/STWJdQ28TMuBJTtxmT7n5A/zh-cn_image_0000002791726674.png?HW-CC-KV=V1&HW-CC-Date=20261119T014914Z&HW-CC-Expire=31536000000&HW-CC-Sign=C45DF3A3FD2669CDC8E60554EDC0218541B42373449AE7E0BFC97CDCE75788CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/v-byiozESiWrui2YeRTM_Q/zh-cn_image_0000002793038326.png?HW-CC-KV=V1&HW-CC-Date=20261121T011241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C80D2736EED863CE88D8279E3248185598CAB29A0821CE3AF8CE9EAC7320610)
 
 ## 服务端开发
 

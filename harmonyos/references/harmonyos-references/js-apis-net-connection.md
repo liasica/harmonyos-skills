@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.connection (网络连接管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.connection (网络连接管理)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:39+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:5f4de168dd009affa476ae59b060fe4250e5f71415c29629c67a6500ebb62da4
+scraped_at: 2026-11-21T09:15:18+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:d6d71f59ebaf0820370012448f11ca37677d7ff8e5b9b407c6fbce6b558bdff1
 ---
 
 网络连接管理提供管理网络一些基础能力，包括获取默认激活的网络、获取所有激活网络列表、获取网络能力信息等功能。
@@ -2564,7 +2564,7 @@ import { connection } from '@kit.NetworkKit';
 
 let result = connection.getDnsAscii("www.示例.com", connection.ConversionProcess.NO_CONFIGURATION);
 console.info("Succeeded to getDnsAscii: " + result);  // 预期结果：www.xn--fsq092h.com
-let result = connection.getDnsAscii("www.example.com", connection.ConversionProcess.NO_CONFIGURATION);
+result = connection.getDnsAscii("www.example.com", connection.ConversionProcess.NO_CONFIGURATION);
 console.info("Succeeded to getDnsAscii: " + result);  // 预期结果：www.example.com
 ```
 
@@ -2606,7 +2606,7 @@ import { connection } from '@kit.NetworkKit';
 
 let result = connection.getDnsUnicode("www.xn--fsq092h.com", connection.ConversionProcess.NO_CONFIGURATION);
 console.info("Succeeded to getDnsUnicode: " + result);  // 预期结果：www.示例.com
-let result = connection.getDnsUnicode("www.example.com", connection.ConversionProcess.NO_CONFIGURATION);
+result = connection.getDnsUnicode("www.example.com", connection.ConversionProcess.NO_CONFIGURATION);
 console.info("Succeeded to getDnsUnicode: " + result);  // 预期结果：www.example.com
 ```
 

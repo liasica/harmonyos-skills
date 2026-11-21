@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-skinnin
 title: 设置应用内主题换肤
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 主题设置 > 设置应用内主题换肤
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:45+08:00
+scraped_at: 2026-11-21T09:11:11+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2328162fcbfee2f9037abe853777aeb731ffac44c1d05484f7b95dd550341a1c
+content_hash: sha256:605b472d48c034bf137ca56e61cc2ee91d5ac0408490b50eec565b9a98366bcd
 ---
 
 ## 概述
@@ -201,7 +201,7 @@ export let gAppTheme: CustomTheme = new AppTheme();
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Qr_-cuMcQa6FOQkceZN35w/zh-cn_image_0000002791565296.png?HW-CC-KV=V1&HW-CC-Date=20261119T014654Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D5D1D473736045FC36583B8760DAE627D57ABE646DB8AF228E4A21A71CB404E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/5WtvTuAoRXeT2qovIn6m6w/zh-cn_image_0000002821756857.png?HW-CC-KV=V1&HW-CC-Date=20261121T011111Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D15F51FFAC753E93A501BFF0615C5D45BD2B294433E421B462B7A15A51BB912)
 
   **说明** 
 
@@ -283,7 +283,7 @@ struct DisplayPage1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/5UFeq8c5RLy5IXu0oy2T-Q/zh-cn_image_0000002820525249.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014654Z&HW-CC-Expire=31536000000&HW-CC-Sign=7805789FEF123BC3D413501363A1C41AD41C4FB55C92209D95E7A3A3B4686CA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/YklyRshPROGprOQGBJElYw/zh-cn_image_0000002793036920.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011111Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCD1B779162352F0061F2242FDF891910C7ABE773D76ED25F285E23CCF70DEC5)
 
 ## 设置应用页面局部深浅色
 
@@ -295,7 +295,7 @@ struct DisplayPage1 {
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/dQGhzD43TIqhT2kAeK9rVA/zh-cn_image_0000002820405249.png?HW-CC-KV=V1&HW-CC-Date=20261119T014654Z&HW-CC-Expire=31536000000&HW-CC-Sign=3576316E9A3BF0BD6415DEB3D421A2AEF543C6B47AB90291DF270A7D3C3901B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/acwHYY9GRSmryjsABluLzw/zh-cn_image_0000002792876950.png?HW-CC-KV=V1&HW-CC-Date=20261121T011111Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFD2199AC80777696C68720D379DDC80D41021AC1DCECBFD4DDC6BBDB1E5E8DC)
 
 dark.json数据示例：
 
@@ -348,7 +348,7 @@ struct DisplayPage3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Ehi7unz8QgKklLgdZGH2GA/zh-cn_image_0000002791725270.png?HW-CC-KV=V1&HW-CC-Date=20261119T014654Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AA2331309E4ED715A197FBF8446DDF824E7FD5F83AB91DCD9FF74774CE7958C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/5A5P0f-OSB2led8gm5FXwg/zh-cn_image_0000002821836853.png?HW-CC-KV=V1&HW-CC-Date=20261121T011111Z&HW-CC-Expire=31536000000&HW-CC-Sign=C26DE3BE72A4FF6787FE24F35151642D07A74FF9C1B183AE78FB26F55549FE07)
 
 ## 系统缺省token色值
 

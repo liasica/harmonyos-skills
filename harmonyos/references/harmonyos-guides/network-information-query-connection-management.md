@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-infor
 title: 网络信息查询与连接管理
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 连接网络开发实践 > 网络信息查询与连接管理
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:15+08:00
+scraped_at: 2026-11-21T09:11:41+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ff48ab97e5e39843148e776b359f5aaa3a18063ae4a17ecded8a3040a8aac6ed
+content_hash: sha256:b9079dcf49a11fe107dfaba93236b5bac4258aeec5db42ac32554ec713634cbc
 ---
 
 ## 概述
@@ -26,13 +26,13 @@ content_hash: sha256:ff48ab97e5e39843148e776b359f5aaa3a18063ae4a17ecded8a3040a8a
 
 **图 1** 连接到指定网络效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ZsibNjyJTHO35nwbp_a1wg/zh-cn_image_0000002791565788.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AE6FF3F635064C116907C0D29CF0AEC76A880363596382ED69C8C136091D647)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/zWUkbtDxQeWsITTszs6hVQ/zh-cn_image_0000002821757349.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011141Z&HW-CC-Expire=31536000000&HW-CC-Sign=84C662466EAF69659A11D1BBB072F57194C6153AEE5D3FC1DF80A4072A4A4E2F)
 
 ### 实现方案
 
 连接到指定Wi-Fi场景主要通过[@ohos.wifiManager (WLAN)](../harmonyos-references/js-apis-wifimanager.md)模块结合[@ohos.net.connection (网络连接管理)](../harmonyos-references/js-apis-net-connection.md)模块相关API来实现。通过@ohos.wifiManager模块检查Wi-Fi是否启用，获取系统扫描的Wi-Fi列表，选中指定Wi-Fi后发起连接请求；通过@ohos.net.connection模块检测网络连通性，判断是否需要进行登录认证（如 Portal 认证）才能正常访问网络。流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/QTm8eTRDQRGSBtuSMfkIeA/zh-cn_image_0000002820525741.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1D194639E21638F636B0185FBE1FAB51742F83E29DA11AE6A16BCC9D8CD97DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/pL6GOubcQSK2NqVeq9e8BQ/zh-cn_image_0000002793037412.png?HW-CC-KV=V1&HW-CC-Date=20261121T011141Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7EBC105353B6F5ABAF01E1FBB00874004A0EA027B6B09F9384B66EAC6428273)
 
 ### 开发步骤
 
@@ -274,7 +274,7 @@ content_hash: sha256:ff48ab97e5e39843148e776b359f5aaa3a18063ae4a17ecded8a3040a8a
 
    从Wi-Fi切换为蜂窝网络后视频播放场景效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/RjYSFg3IQLOOeoiXHUIylw/zh-cn_image_0000002820405741.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=328ADE8D18F49F205A5BD5E4BD4E95802BB7A8655A7A61AE1500EC048998ECC8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/gZUJvihmSK2yw42LuFH1SA/zh-cn_image_0000002792877442.png?HW-CC-KV=V1&HW-CC-Date=20261121T011141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3A2385C699854061F793FF6089F47E7695284A5D0E5DB0EA74341C24FDC85F8)
 3. 订阅网络丢失事件。
 
    通过[on('netLost')](../harmonyos-references/js-apis-net-connection.md#onnetlost)方法可以订阅网络丢失的事件通知，使用Toast提示用户网络已断开。
@@ -290,7 +290,7 @@ content_hash: sha256:ff48ab97e5e39843148e776b359f5aaa3a18063ae4a17ecded8a3040a8a
 
    网络断开时效果图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/2bw3wMW7SCyEHy-o7HoNyw/zh-cn_image_0000002791725762.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=E33DBE57ACBADC7CF2F16C141107AE4387B2413871A8EBA795EE35F20E579928)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/jOMX0MpFSFqJQm34nskKsA/zh-cn_image_0000002821837349.png?HW-CC-KV=V1&HW-CC-Date=20261121T011141Z&HW-CC-Expire=31536000000&HW-CC-Sign=25D337B72FCF69704EF538A7CD0F2F64D5FD8386AE76014A1423EB3985881C62)
 
    当网络断开时，将继续播放视频缓存；缓存播放完毕后，将触发Video组件的onError方法。若此时网络仍未连接，需提示用户检查网络。
 
@@ -309,7 +309,7 @@ content_hash: sha256:ff48ab97e5e39843148e776b359f5aaa3a18063ae4a17ecded8a3040a8a
 
    播放错误时效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/MXhlfWztSyGu9qjBEXefRA/zh-cn_image_0000002791565790.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E6E067FE6D9139033705723385724786C6ABBCE4F6C926A5A9F4A7D4FED9858)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/iGzMR5fSSjuPUGlqEO2iCw/zh-cn_image_0000002821757351.png?HW-CC-KV=V1&HW-CC-Date=20261121T011141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D878CBB1E105A27E7A8451492F44111D017FE43D199DCAB6040374E6F234BFE5)
 4. 订阅网络状态变化通知。
 
    接下来需要调用[register()](../harmonyos-references/js-apis-net-connection.md#register)接口，用来订阅指定的网络状态变化通知，该接口需在on()方法调用之后使用。例如，若指定的网络可用，将触发on('netAvailable')、on('netCapabilitiesChange')回调；若超时时间内网络不可用，将触发on('netUnavailable')回调。若断网，将触发on('netLost')回调。
@@ -371,7 +371,7 @@ content_hash: sha256:ff48ab97e5e39843148e776b359f5aaa3a18063ae4a17ecded8a3040a8a
 
 **图 2** 获取Wi-Fi MAC地址效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/LsD_m-A2TiyZi4R0KvsmfQ/zh-cn_image_0000002820525743.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7FAE505C519542EEE5A08BA561501B45D0A014879641AED95F174B21F459AD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/_GmimgowTVOxzyHuQXHk-Q/zh-cn_image_0000002793037414.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF47469006B174BC0E84423AB671D75D9C9402708C46ACDC3B04CCDD792D1412)
 
 ### 实现方案
 
@@ -523,7 +523,7 @@ content_hash: sha256:ff48ab97e5e39843148e776b359f5aaa3a18063ae4a17ecded8a3040a8a
 * 蜂窝网络信号强度
 * 网络时延
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Ly1muUDKSaiU0is5O_0Vpw/zh-cn_image_0000002820405743.png?HW-CC-KV=V1&HW-CC-Date=20261119T014723Z&HW-CC-Expire=31536000000&HW-CC-Sign=520BAB0863F2057D171D85255CBCE6CA2BE5F60BE3D579F2A421FB95D4A9BD77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/MO41EQF2SyaElqhcrWu_4Q/zh-cn_image_0000002792877444.png?HW-CC-KV=V1&HW-CC-Date=20261121T011141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C59051D0B12C643061F9FA304EF450C0454ED20CC7DDE33C84D6A93682E6388)
 
 ### 实现方案
 

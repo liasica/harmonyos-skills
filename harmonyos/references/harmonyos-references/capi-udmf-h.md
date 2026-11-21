@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf
 title: udmf.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > udmf.h
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:46+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:e2f5569b91fee0fdc589e6bd038e44256f97c470ccd6fac146b742b117b6a24f
+scraped_at: 2026-11-21T09:13:47+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:6690abd216074a51588604a4ac8d928c07df193d827c02cf410de85cc23fc170
 ---
 
 ## 概述
@@ -2324,7 +2324,7 @@ OH_UDMF_Summary *OH_UDMF_CreateSummary(void)
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md) | 如果操作成功，返回一个指向[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)实例的指针，调用者拥有该实例的所有权。 |
+| [OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md) | 如果操作成功，返回一个指向[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)实例的指针，否则返回nullptr。调用者拥有该实例的所有权。 |
 
 ### OH\_UDMF\_DestroySummary()
 

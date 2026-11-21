@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-erro
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-11-14T08:53:49+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:39e645df52ad819e109f76412211236a1b3b62ab0e32e70164f60158499884dc
+scraped_at: 2026-11-21T09:16:57+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:61976a0cbca5bc4cc39647ab926610e47d723440c51f27267f1c582db53a51aa
 ---
 
 **说明** 
@@ -193,8 +193,8 @@ Illegal application identity.
 * 应用配置错误：
 
   + 应用在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上创建时未选择HarmonyOS应用类型。
-  + 在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)的“项目设置 > 开放能力管理”中未启用“推送服务”。请参见[开通推送服务](../harmonyos-guides/push-config-setting.md#操作步骤)步骤5、步骤6完成对应阶段的签名。
-  + 在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)的“项目设置 > 开放能力管理”中已启用“推送服务”，但未重新申请Profile文件。请参见[开通推送服务](../harmonyos-guides/push-config-setting.md#操作步骤)步骤5、步骤6完成对应阶段的签名。
+  + 在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)的“项目设置 > 开放能力管理”中未启用“推送服务”。请参见[开通推送服务与接入准备](../harmonyos-guides/push-config-setting.md#开通步骤)中的[开发调试](../harmonyos-guides/push-config-setting.md#开发调试)、[应用发布](../harmonyos-guides/push-config-setting.md#应用发布)完成对应阶段的签名。
+  + 在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)的“项目设置 > 开放能力管理”中已启用“推送服务”，但未重新申请Profile文件。请参见[开通推送服务与接入准备](../harmonyos-guides/push-config-setting.md#开通步骤)中的[开发调试](../harmonyos-guides/push-config-setting.md#开发调试)、[应用发布](../harmonyos-guides/push-config-setting.md#应用发布)完成对应阶段的签名。
 * 网络不可用。
 * 华为服务端异常。
 * 不支持云真机调试。
@@ -239,7 +239,7 @@ Push rights are not activated.
 
 **处理步骤**
 
-请在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，打开项目，在左侧导航栏选择“增长 > 推送服务”开通推送服务，详情参考指导[操作步骤](../harmonyos-guides/push-config-setting.md#操作步骤)第3点。
+请在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，打开项目，在左侧导航栏选择“增长 > 推送服务”开通推送服务，详情参考指导[开通步骤](../harmonyos-guides/push-config-setting.md#开通步骤)第3点。
 
 ## 1000900013 不允许跨区申请Token
 

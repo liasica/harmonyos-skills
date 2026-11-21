@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-f
 title: 人脸检测
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 人脸检测
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:20+08:00
+scraped_at: 2026-11-21T09:12:46+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:4808ba19e10f602a798943d1210c89cb06f869b0b2ac9145dd3f1425fc2767d1
+content_hash: sha256:927a2d8aa84d00c54d768aac1de77b32eada8719daad74420749c39e23d69412
 ---
 
 ## 适用场景
@@ -14,13 +14,13 @@ content_hash: sha256:4808ba19e10f602a798943d1210c89cb06f869b0b2ac9145dd3f1425fc2
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/RHrulEH_RmqyYvyy0oCnHg/zh-cn_image_0000002820526735.png?HW-CC-KV=V1&HW-CC-Date=20261119T014825Z&HW-CC-Expire=31536000000&HW-CC-Sign=217D76C8C7F88688843F245DD987429FB8E36DC0F7F43A5B06F314F9D990BA25)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/cM3Uo6IJQDm2B2dikfW9cg/zh-cn_image_0000002821838343.png?HW-CC-KV=V1&HW-CC-Date=20261121T011246Z&HW-CC-Expire=31536000000&HW-CC-Sign=10E81A11DBDC975AAA7379F22385958B6C831286B384C3566981223E6468728A)
 
 ## 世界坐标系
 
 以下方图片指示坐标系辅助表示人脸朝向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/zf-F9RHnQHqCvOKXrHKFfA/zh-cn_image_0000002820406735.png?HW-CC-KV=V1&HW-CC-Date=20261119T014825Z&HW-CC-Expire=31536000000&HW-CC-Sign=46646F640B5132EE5702256C6EBCEEAEE695388F0EA1DBAD48DC7AEDB520A62F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Ru5qzZ6BSeOkRoLI7OFRoA/zh-cn_image_0000002821758345.png?HW-CC-KV=V1&HW-CC-Date=20261121T011246Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD5C9B08EFF7D9CF00B59B5275A6DBAF0CA3A9785FA0AA2C79A84EE453CC6239)
 
 ## 开发步骤
 

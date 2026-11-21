@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 自动补全地址表单所在地区
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 自动补全地址表单所在地区
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:12+08:00
+scraped_at: 2026-11-21T09:12:38+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:500ef224fe37140f709c12500e1edf117c81d68cf4fbbddd033ba0d434ce74f1
+content_hash: sha256:83afb1ea4512b1e99bdc9f1a693b03ae9e2a543c57649c4e82f11fb8ad4cfbdb
 ---
 
 在填写地址表单场景时，当应用使用了所在地区的省市区选择器，需要开发者对表单中的地址字段进行开发。
@@ -20,7 +20,7 @@ content_hash: sha256:500ef224fe37140f709c12500e1edf117c81d68cf4fbbddd033ba0d434c
 
 地址表单中的所在地区能根据详细地址内容自动补全，当补全内容不符合预期时，可通过地址选择器进行修改。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/FeGMsZuWQmyJkr0ooHmlfw/zh-cn_image_0000002791726608.png?HW-CC-KV=V1&HW-CC-Date=20261119T014911Z&HW-CC-Expire=31536000000&HW-CC-Sign=1580B6CD00FCE98CBC67726AF6A2B3D8A7445E0D4E0FD89F8AF736819CF28C0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/EDp-kz3PS5Gxy0fac_4NWQ/zh-cn_image_0000002793038260.png?HW-CC-KV=V1&HW-CC-Date=20261121T011238Z&HW-CC-Expire=31536000000&HW-CC-Sign=52458A9DBF9736B8FE3A7EE6413FC465588F6F7C34656E05D5435F093F62A408)
 
 ## 示例代码
 

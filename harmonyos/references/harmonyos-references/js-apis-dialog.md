@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.arkui.dialog (弹出框)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.dialog (弹出框)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:39+08:00
+scraped_at: 2026-11-21T09:13:53+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:4201efdf14c1e5186602f210ec33dac46b341b9c88c7e84ee848a91100b54231
+content_hash: sha256:1da74a554915a2161768e428d9e49c8c6de2595e46d65282f6c0e2c40434cdcf
 ---
 
 为满足应用中灵活配置与管理弹出框的需求，本模块提供统一的Dialog类型声明能力，包括弹出框选项、按钮配置、工作表项以及弹出框控制器、对齐方式、状态等枚举。具体接口调用请使用UIContext中的[DialogPresenter](arkts-apis-uicontext-dialogpresenter.md)对象。
@@ -300,7 +300,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/cSufGMZNSRW7qLdO3MYsIQ/zh-cn_image_0000002820526879.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014943Z&HW-CC-Expire=31536000000&HW-CC-Sign=061F5251BDE33BF4E4877C4682D00B94D664F7E653692A9B7AF7503768217FF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/7jCyc6b1R92u6un8nfv5-w/zh-cn_image_0000002821838487.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011353Z&HW-CC-Expire=31536000000&HW-CC-Sign=007BF1F72B71249E73A24C3ADBAA9E3AD344F26BF178971D9CCED06333206546)
 
 ## DialogResult
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 开发实例
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 开发实例
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:59+08:00
+scraped_at: 2026-11-21T09:11:25+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:d634fcdc15969951967ad71dd5c5fa616f3b4fab2010f9b4b2b47b6406dc8074
+content_hash: sha256:3e1e8b2155cdf71895299978ffcd1a17e57200ceef1f113c84d3322855936ae2
 ---
 
 1. 在首页创建一级导航，适用于需要构建具有导航结构的主界面，支持动态标题栏样式切换与页面跳转功能。通过titleBar接口设置导航栏的内容和样式，包括标题、菜单项、返回按钮等元素。通过pushPath路由方法跳转至二级导航页面。
@@ -364,4 +364,4 @@ content_hash: sha256:d634fcdc15969951967ad71dd5c5fa616f3b4fab2010f9b4b2b47b6406d
    }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/JgOAqVaMRKSII-4qApDORQ/zh-cn_image_0000002820405621.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014759Z&HW-CC-Expire=31536000000&HW-CC-Sign=917B50C20507318F7C796F987722B1C885AB37D3DF17E92ED3F654042C00E1CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/gpHGvOeJQLG-rsMzToNIKA/zh-cn_image_0000002792877322.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011000Z&HW-CC-Expire=31536000000&HW-CC-Sign=05A351857B9742CFAC9D3028EECC92418492377836B887457B157365F14CF9A1)

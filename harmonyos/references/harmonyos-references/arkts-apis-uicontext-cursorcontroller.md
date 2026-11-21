@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (CursorController)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (CursorController)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:40+08:00
+scraped_at: 2026-11-21T09:13:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c5916fc390e8e351d4e4e73cb4d6a575a4afc95444d6be49db6d461d414ee60d
+content_hash: sha256:67133822b8ee5afb399a30ba975dbcd099789daea780e255d9d694a60bf4087b
 ---
 
 提供鼠标光标样式设置的能力，支持恢复默认鼠标光标样式、设置系统鼠标光标样式以及设置自定义鼠标光标样式，适用于需要根据界面交互状态动态调整鼠标光标显示效果的场景，有助于提升界面交互提示的清晰度。
@@ -58,7 +58,7 @@ struct CursorControlExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/BHkDYDC7QHOZNIqHwHVH6Q/zh-cn_image_0000002820406885.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015039Z&HW-CC-Expire=31536000000&HW-CC-Sign=59DC156F8FF5109C2DC94916C02D54F7D959CF0DD1C028814F5D49B42828DF60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/WYodK_s6Qwq9ewDhKcTmfA/zh-cn_image_0000002821758495.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011238Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2934BDC179C854F60684EFD3FCABE00699AE25B6A5A12A550959B52FB316050)
 
 ## setCursor12+
 
@@ -111,7 +111,7 @@ struct CursorControlExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/s5b7qpGcQ3aFOwp3I0tXoQ/zh-cn_image_0000002791726906.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015039Z&HW-CC-Expire=31536000000&HW-CC-Sign=519736B7E7DEF50FFF139C9471E86559C9F24736522A103BD33356A2296FE458)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/VsHz0H7PTz6cJqfA6kxrCw/zh-cn_image_0000002793038558.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011238Z&HW-CC-Expire=31536000000&HW-CC-Sign=379104B57639144BA0E91CDB88C752D30B5878A5B006B0609A02B19A94480A47)
 
 ## setCustomCursor
 
@@ -232,4 +232,4 @@ struct CustomCursorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/sOLfxn9fQIWmNni8iwlFdQ/zh-cn_image_0000002791566934.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015039Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FA882F6DCDA44D2111C4A6D81F33B673F1EB40F5566B72B780306C3C8AEF164)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/GRjoLAv9QAusJ5OKcWnxLw/zh-cn_image_0000002792878588.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011238Z&HW-CC-Expire=31536000000&HW-CC-Sign=D75E9E9DA41F8982A6CD981E08B01517BC89D8691A8E051AB53BDFB61C5EE68E)

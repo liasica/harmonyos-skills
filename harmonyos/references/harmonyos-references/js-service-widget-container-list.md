@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: list
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > list
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:26+08:00
+scraped_at: 2026-11-21T09:14:26+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6a46f0b538d49e52c19453c0c0d5e7337aed897c3654d354d1274ece6bd37874
+content_hash: sha256:198fd509b1ce6ddb97903b689818bafd2c24d173dc8ceea87f949b10b2130112
 ---
 
 列表包含一系列相同宽度的列表项。适合连续、多行呈现同类数据，例如图片和文本。
@@ -116,4 +116,4 @@ content_hash: sha256:6a46f0b538d49e52c19453c0c0d5e7337aed897c3654d354d1274ece6bd
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/6ni2QKQpRd6s3QsS2aR5nw/zh-cn_image_0000002791568048.png?HW-CC-KV=V1&HW-CC-Date=20261119T015125Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DF5054053DD002A09927BE8B0914C139F6F4C83C0FD29B91F3E60BB54412386)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/AYou_3l0TTSzKRhOIMkd6g/zh-cn_image_0000002792879734.png?HW-CC-KV=V1&HW-CC-Date=20261121T011324Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBBC982C05A6423D3F18017CFB5C649FC1E7676722463298AFF881DF7677113C)

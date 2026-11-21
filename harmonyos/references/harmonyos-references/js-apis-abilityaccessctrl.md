@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.abilityAccessCtrl (程序访问控制管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.abilityAccessCtrl (程序访问控制管理)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:11+08:00
+scraped_at: 2026-11-21T09:13:35+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1e6cf883dca6d2d6e0a4bda86085d5a1abc712a11a2d737de5225fa2d3450f34
+content_hash: sha256:2158fa3c622981faf91968392ea43bce822362c7622fd8995662fa9900e52afc
 ---
 
 程序访问控制提供应用程序的权限校验和管理能力，支持应用在访问受保护资源前进行权限状态判断、运行时授权申请、设置页授权引导和权限状态变化监听。权限分为system\_grant（系统自动授权）、user\_grant（需用户手动授权）和[manual\_settings](../harmonyos-guides/app-permission-mgmt-overview.md#manual_settings手动设置授权)（手动设置授权）三类，应用需在配置文件中声明所需权限。权限管理机制详见[应用权限管控概述](../harmonyos-guides/app-permission-mgmt-overview.md)。
@@ -40,7 +40,7 @@ content_hash: sha256:1e6cf883dca6d2d6e0a4bda86085d5a1abc712a11a2d737de5225fa2d34
 
 * **[AtManager](js-apis-abilityaccessctrl.md#atmanager)：** 程序访问控制管理类，提供权限校验、权限弹窗申请、设置页授权引导和权限状态监听等能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Mj1ucatKRUCSwyAvlSubYg/zh-cn_image_0000002820526871.png?HW-CC-KV=V1&HW-CC-Date=20261119T015010Z&HW-CC-Expire=31536000000&HW-CC-Sign=698B7F0B6FB5740060B1396501ACB15BEED7F02F28B218C1B3DB4371063A92F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/3frvuEXvQqiWKHPdXYOMrw/zh-cn_image_0000002821838479.png?HW-CC-KV=V1&HW-CC-Date=20261121T011208Z&HW-CC-Expire=31536000000&HW-CC-Sign=8927F2ACB7FAF93A117CE8D96891E53FFEF396A45F431FCB0231D912C2CB5E9C)
 
 ### API组合使用关系说明
 
@@ -391,7 +391,7 @@ requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>,
 
 如果用户拒绝授权，将无法通过此接口再次拉起授权弹窗。开发者可引导用户前往系统设置界面手动授权，或调用[requestPermissionOnSetting](js-apis-abilityaccessctrl.md#requestpermissiononsetting12)拉起权限设置弹窗，引导用户完成授权。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/h6fvrA8uQO60J8kO_tSlog/zh-cn_image_0000002820406871.png?HW-CC-KV=V1&HW-CC-Date=20261119T015010Z&HW-CC-Expire=31536000000&HW-CC-Sign=6562ADD1DCD77B85E2F634D9758FD68AA78391DDED812CBEC619DF4F14BCBF31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/_pzp3dtpQ7WQSqG8cJwRbw/zh-cn_image_0000002821758481.png?HW-CC-KV=V1&HW-CC-Date=20261121T011208Z&HW-CC-Expire=31536000000&HW-CC-Sign=6540EA3E75A9A750CBF8D896060646941AB3F005815013AD86441CE9A78FE523)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -520,7 +520,7 @@ requestPermissionOnSetting(context: Context, permissionList: Array<Permissions>)
 
 在调用此接口前，应用需要先调用[requestPermissionsFromUser](js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)。如果用户已在首次弹窗中授权，则调用当前接口不会拉起授权弹窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/cxzDJyWqT0GJzmSu_Vh_gg/zh-cn_image_0000002791726892.png?HW-CC-KV=V1&HW-CC-Date=20261119T015010Z&HW-CC-Expire=31536000000&HW-CC-Sign=90FB3DCC5AE69D81D6483C9CEBB4258E11DF0EE3725BA823B93378B5C0EBEF74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/21wARCsjTN2HgrH05b7Plw/zh-cn_image_0000002793038544.png?HW-CC-KV=V1&HW-CC-Date=20261121T011208Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F41BA670EFE31A8A0033D941CDC9A38F17A1ED477056071703F15C5820B09E7)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -584,7 +584,7 @@ requestGlobalSwitch(context: Context, type: SwitchType): Promise<boolean>
 
 当应用需要使用相机、麦克风或定位等需要全局开关管控的功能时，如果对应的全局开关被关闭，应用可拉起此弹窗请求用户开启对应功能。如果当前全局开关的状态为开启，则不拉起弹窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/NNFnYz7-TIa1F9fJaCASuQ/zh-cn_image_0000002791566920.png?HW-CC-KV=V1&HW-CC-Date=20261119T015010Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FE6DC2D84D9A71BD2A753D74E99E959AFAF712EB2C154E0D5E1FA6C2968A956)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/AEYDDH5BT8Ggdcrc7AL83A/zh-cn_image_0000002792878574.png?HW-CC-KV=V1&HW-CC-Date=20261121T011208Z&HW-CC-Expire=31536000000&HW-CC-Sign=C002461D6EF8C707DB9B2525411FD436EC2475E7ED53BC021ECA19510AF03396)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

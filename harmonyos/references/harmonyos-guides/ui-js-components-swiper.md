@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: swiper开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > swiper开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:48+08:00
+scraped_at: 2026-11-21T09:11:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:e32edf2591aaed382447645ab47eeba4dd4e5aa85789b1e50a4eb7d949ddc8d4
+content_hash: sha256:f6e1bc3b2a344dbd7a8fbcd3273c4cac53e5807648177cd914a582fd9c4bbf74
 ---
 
 swiper为滑动容器，提供切换显示子组件的能力。具体用法请参考[swiper](../harmonyos-references/js-components-container-swiper.md)。
@@ -58,7 +58,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/p5Dt7EnESICVqjlRFBFbPA/zh-cn_image_0000002791725334.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=2749F8D2671E98BFA0D49B7DF6D97DEB10BFD9AE988B041716767B871C2EDAAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/DQVasZJATcSMLPbT2Z9UWw/zh-cn_image_0000002821836921.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C86C6012AF553E07B32A4FA574C480AFE730CA0125260347B9E48602A681B94)
 
 **说明** 
 
@@ -115,7 +115,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/D-PNP3kYQ3KQxiDE2lJXNw/zh-cn_image_0000002791565362.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF162AABFB9D465FA442B4153626F9576C3DD9F254C23C54F36CE9E1A1152B90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/nF_dd5itTUeRijl9fXn2XQ/zh-cn_image_0000002821756923.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=16505D0AFB39327081E4CD06F17194A48DAFD46EF0EC58F988B5177F5A1FE375)
 
 **说明** 
 
@@ -177,7 +177,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/wb9UK6aeSqemavgFHAQf7w/zh-cn_image_0000002820525315.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DAB02D08DF30F3EB170AD122EF573D78D5219895AD2BA4D442513E746E5CA00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/jlnauvvpRsKDqcAbCAatnA/zh-cn_image_0000002793036986.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=97C459E074E953C97911097B627025C1F0E7DD881FF2665D0C718E7EDA7440F0)
 
 ## 绑定事件
 
@@ -275,7 +275,7 @@ export default{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/NWrFy56zTq21D5gEUJCWLw/zh-cn_image_0000002820405315.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D379439CF6935A8DC8EB36104A04938801F959BEF1C8DD1B172162B3BC44B2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/EbWD9GtIRA24MF31JUNVTA/zh-cn_image_0000002792877016.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=01F1600218E40B36D73C6BC8B48ED79DCECF76B62ECC3C8D413ECE45EC873D80)
 
 ## 场景示例
 
@@ -352,4 +352,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/isXVG0uJTA67j7hHKrcfDA/zh-cn_image_0000002791725336.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCFEE229EE728C15B9E1D7B9005C2C4443FBCDD81D28D5D6BC9F0CB8631F149F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/edSQNbtTRfyB4_3GRpMQlA/zh-cn_image_0000002821836923.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=967342AB2561F8E0CB67579D884826503042345059F11E66E3260915F628B96C)

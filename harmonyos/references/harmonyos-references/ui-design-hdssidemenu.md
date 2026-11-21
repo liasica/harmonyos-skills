@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsSideMenu (侧边菜单)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsSideMenu (侧边菜单)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:52:11+08:00
+scraped_at: 2026-11-21T09:14:59+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9323070230575d5828cdead84a8e500d50594af7f77e5255b72ac2d0b6dd7611
+content_hash: sha256:640604edd23e610b47e4f2ccca7362f669a7717c04a8ca24ab87467ceca626ff
 ---
 
 本模块提供一种菜单栏样式组件。设置侧边栏对应的一级菜单和二级菜单，并显示其新消息数量。
@@ -360,4 +360,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/qYk48y1vSP29M2sVkqNvCA/zh-cn_image_0000002791568150.png?HW-CC-KV=V1&HW-CC-Date=20261119T015116Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA66D004054BC1DED6ADD4B5DA372DC668517ADDC45386FF7AE607B434DD7776)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/BQtjeuT8Rga_NgLbK2vI4g/zh-cn_image_0000002792879838.png?HW-CC-KV=V1&HW-CC-Date=20261121T011410Z&HW-CC-Expire=31536000000&HW-CC-Sign=960CD09796A0E1A91A422F6F97AD86E2F7102C81C70956015FBEB3D445B482AA)

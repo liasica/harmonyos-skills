@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: ROI视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > ROI视频编码
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:34+08:00
+scraped_at: 2026-11-21T09:11:59+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:bdefa1c18fb11fe83bf960b16c7ea09970c7191b3b6c47855fc24003b432d8f0
+content_hash: sha256:3983ecbfd66b3a98f7d4606b58b5228b52e41f2736cc1612aef49fde168be1c0
 ---
 
 ## 基础概念
@@ -83,7 +83,7 @@ ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在
 
 **图1：ROI坐标和最大允许面积占比示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/6AUlnVcfQjKwhhsWzQw52A/zh-cn_image_0000002820525881.png?HW-CC-KV=V1&HW-CC-Date=20261119T014833Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A7CBAC886F405197EF861595B318AC5B4C29DCAAC2A49B0EE0BB9DA1E8DFA41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/f3XMd134TNeCLZoxWiaKOg/zh-cn_image_0000002793037552.png?HW-CC-KV=V1&HW-CC-Date=20261121T011158Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCB50BCD12300A7F7D8B75E8DF9DEB07138A4705A5D2193318239724715C330D)
 
 ## 生效机制说明
 
@@ -124,7 +124,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
 **图2：NativeBuffer元数据接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/3YqmlBKNQSiO-EUpncHoQA/zh-cn_image_0000002820405881.png?HW-CC-KV=V1&HW-CC-Date=20261119T014833Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F341320ECDBBB36AB2608070B69995A94D2DB938CF973132E9F852C9493B3AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/5foaR0PHS4Odwo8pNEyqBQ/zh-cn_image_0000002792877582.png?HW-CC-KV=V1&HW-CC-Date=20261121T011158Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0A1650179FC49F41E3C7D90C5632F471FED849FCFF27C948ED7F3934DC9A9D2)
 
 详细开发步骤如下：
 
@@ -278,7 +278,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
 **图3：编码输入参数回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/uvDPMiCSRMiyQBSxtlgxBg/zh-cn_image_0000002791725902.png?HW-CC-KV=V1&HW-CC-Date=20261119T014833Z&HW-CC-Expire=31536000000&HW-CC-Sign=6585BBDEBA2DBA491406BF2BC1AAD5989529B258E7D73359569624ACBAA02ABD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/XiaGAQSmQzCUdIP_X0InCQ/zh-cn_image_0000002821837489.png?HW-CC-KV=V1&HW-CC-Date=20261121T011158Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4339FF888F8561FDE6DA6BDF70EFE9C5CD462DA7F8FC74E8E87BD3D0585D02D)
 
 详细开发步骤如下：
 
@@ -384,7 +384,7 @@ Buffer模式下，视频帧通过OH\_VideoEncoder\_PushInputBuffer送入编码�
 
 **图4：编码输入Buffer回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/AtMg2-m5RrGLTFzI8U6xqQ/zh-cn_image_0000002791565930.png?HW-CC-KV=V1&HW-CC-Date=20261119T014833Z&HW-CC-Expire=31536000000&HW-CC-Sign=8910766B44AC37CFE5165081B9DD4D1CE35CA8ED0BAE0F5D7CE4CB594B6CE0DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/2sedtN67QCCmmfvAun7akg/zh-cn_image_0000002821757491.png?HW-CC-KV=V1&HW-CC-Date=20261121T011158Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD1C6E6AF015C7FC9072AB63C6D2B56CBAC965BC0EA1B359016EC5D5748D142D)
 
 详细开发步骤如下：
 

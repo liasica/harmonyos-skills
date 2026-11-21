@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-custom-
 title: 自定义组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 自定义组件
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:49+08:00
+scraped_at: 2026-11-21T09:11:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:82e2d57548f18ce8690fa0731e5f668e5dcb0fcceded48d84b72ac9db33115bb
+content_hash: sha256:62792901645b6d014cb240727150630b05199356b9212d90729fb384e0f085ae
 ---
 
 使用兼容JS的类Web开发范式的方舟开发框架支持自定义组件，用户可根据业务需求将已有的组件进行扩展，增加自定义的私有属性和事件，封装成新的组件，方便在工程中多次调用，提高页面布局代码的可读性。具体的封装方法示例如下：
@@ -103,4 +103,4 @@ content_hash: sha256:82e2d57548f18ce8690fa0731e5f668e5dcb0fcceded48d84b72ac9db33
 
 **图1** 自定义组件的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/pLnqzSlMTB6Iz-cUR5Zutw/zh-cn_image_0000002820525369.png?HW-CC-KV=V1&HW-CC-Date=20261119T014749Z&HW-CC-Expire=31536000000&HW-CC-Sign=C974F90CE2EBC4244771E89F846C6D4FA5D0DF4B85E709CE74D2D0F6BE857C72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Sk5AapEyTAewA9tjJbFjkA/zh-cn_image_0000002793037040.png?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFC07D1271FB223B5FB60F857111E43AB0D83E52AA872081C8247C40958E966B)

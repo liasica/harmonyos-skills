@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-attribu
 title: 动态属性设置常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 动态属性设置常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:49+08:00
+scraped_at: 2026-11-21T09:11:15+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:e6bd10b3ee11018c55891805afe93fd5769ad9e504681d795c7f5729469ad08a
+content_hash: sha256:2032ad12bcee29457bc88ce8f80f916ed063a24f11e5f2569a3e6efefd883549
 ---
 
 本文档介绍动态属性设置的常见问题并提供参考。
@@ -16,7 +16,7 @@ content_hash: sha256:e6bd10b3ee11018c55891805afe93fd5769ad9e504681d795c7f5729469
 
 使用AttributeModifier对组件进行[动态属性设置](../harmonyos-references/ts-universal-attributes-attribute-modifier.md)，设置某些属性后出现[JS Crash](jscrash-guidelines.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/qF-mYeRGQjSqhtwmR0iGIw/zh-cn_image_0000002820525389.png?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=B50458373A9BDF808D51EB01A1E027928EDD5B3A657E77F2494666B089BACAAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/f12T_q-BTmCiAyNo-cMfCw/zh-cn_image_0000002793037060.png?HW-CC-KV=V1&HW-CC-Date=20261121T011115Z&HW-CC-Expire=31536000000&HW-CC-Sign=05469518524709AEACE6F68B99224B8BFBB51654028F5CF709805135F98E3FD7)
 
 **解决措施**
 
@@ -55,4 +55,4 @@ struct AttributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/SVLviteTRIqM8e-GqBARMA/zh-cn_image_0000002820405389.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D4FDADAE627C290FA36282FA5A67345C6B6FD6FB0CFE46F7F374AA9C2E3D2C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/w7usw3AiQIWBcvx5XYKwMQ/zh-cn_image_0000002792877090.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011115Z&HW-CC-Expire=31536000000&HW-CC-Sign=F62CA73CC06BB311CA0E89596708A321C3F51C835DD389C13D47D65BB60D0216)

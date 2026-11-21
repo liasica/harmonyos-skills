@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-tran
 title: Sendable对象改造实践
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > Sendable对象改造实践
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:33+08:00
-doc_updated_at: 2026-11-18
-content_hash: sha256:fbf325a947c784e721f53a553981657184ed4b50d8f4fdb3590d45b2ee8a1646
+scraped_at: 2026-11-21T09:10:59+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:be050aa70c5068c67c4ae7035c9782cd0ac14fd871f7cffa9dc87cfa3a3edd91
 ---
 
 ## 简介
@@ -342,7 +342,9 @@ runTests()中通过taskpool.execute()执行并发任务，拿到返回的Sendabl
 runTests() {
   taskpool.execute(observeJSON1).then((res) => {
     this.layout = UIUtils.makeObserved(res as LayoutS);
-  })
+  }).catch((e: BusinessError) => {
+    console.error(`taskpool execute error, code: ${e.code}, message is: ${e.message}`);
+  });
 }
 ```
 
@@ -352,7 +354,9 @@ runTests() {
 runTestsPb() {
   taskpool.execute(observeProtobuf).then((res) => {
     this.pb = UIUtils.makeObserved(res as test_pb);
-  })
+  }).catch((e: BusinessError) => {
+    console.error(`taskpool execute error, code: ${e.code}, message is: ${e.message}`);
+  });
 }
 ```
 

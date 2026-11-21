@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/qos-guideline
 title: QoS 开发指导
 breadcrumb: 指南 > 系统 > 基础功能 > Kernel Enhance Kit（内核增强能力） > QoS 开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:21+08:00
+scraped_at: 2026-11-21T09:11:47+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:d293588417b803501238cf07df24ab5cea6100c1d0df578357f55c550a7f26cf
+content_hash: sha256:f485dac049ef70461c7d78f681e91d616137014f654ba5097047ca4dfbab61b4
 ---
 
 ## 场景介绍
@@ -76,7 +76,7 @@ QoS等级更高的任务相对等级更低的可能被分配更多的CPU时间�
 
 **优化前**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/OTye1rEHTOigmholtqtW5Q/zh-cn_image_0000002820525785.png?HW-CC-KV=V1&HW-CC-Date=20261119T014729Z&HW-CC-Expire=31536000000&HW-CC-Sign=E899BE0CD463FC49ED0984B4400005FB53DAF156371B0755C485E4480E43DB6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/auYX5JbXQfuQOIlfjmNi1A/zh-cn_image_0000002793037456.png?HW-CC-KV=V1&HW-CC-Date=20261121T011021Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC69F3C7DF44AB3E37836FF84449900CE647376D519C033FDD3C013167EAC905)
 
 线程1和线程2是某程序的两个关键线程，线程1在运行时会触发新任务线程2，等线程2执行完后会唤醒线程1继续执行。在未标记这两个线程的QoS等级之前，其优先执行顺序低于线程3和线程4；此时线程1和线程2的执行效果如上图所示：
 
@@ -86,7 +86,7 @@ QoS等级更高的任务相对等级更低的可能被分配更多的CPU时间�
 
 **优化后**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/EA9VuvmJQmCEYKHoBIYVXQ/zh-cn_image_0000002820405785.png?HW-CC-KV=V1&HW-CC-Date=20261119T014729Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0D5A6D1164E5219F0420218C5CF3EE47DBDA1228A753C968C9565F94E1D3964)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/N_DzTaAmQ-GkUcl-DUEpMA/zh-cn_image_0000002792877486.png?HW-CC-KV=V1&HW-CC-Date=20261121T011021Z&HW-CC-Expire=31536000000&HW-CC-Sign=12520ED5FE822316BA3D6DBDAF6A0A1D230BB14F4E267B11D4AA6597AFC3E49F)
 
 合理标记线程1和线程2的QoS等级后，两个线程的执行优化效果如上图所示：
 

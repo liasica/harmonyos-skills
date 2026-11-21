@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-with-n
 title: 创建NDK工程
 breadcrumb: 指南 > NDK开发 > 创建NDK工程
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:22+08:00
+scraped_at: 2026-11-21T09:12:49+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b37a3e59c22a44c14da871538d74118636d05c92c35f4a075778f5d8e6d8abd8
+content_hash: sha256:3ca33383741532c0829df52fd6000a633830fea744be5bf01729d8c457839a98
 ---
 
 下面通过DevEco Studio的NDK工程模板，来演示如何创建一个NDK工程。
@@ -20,9 +20,9 @@ content_hash: sha256:b37a3e59c22a44c14da871538d74118636d05c92c35f4a075778f5d8e6d
    * 如果已经打开了工程，可以在菜单栏选择**File > New > Create Project**来创建一个新NDK工程。
 2. 根据工程创建向导，选择Native C++工程模板，然后单击**Next**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/jwRMJ-NFSJOIKAKnoDvQoA/zh-cn_image_0000002820526797.png?HW-CC-KV=V1&HW-CC-Date=20261119T014828Z&HW-CC-Expire=31536000000&HW-CC-Sign=5278CB7A7A21DF5B11B343DB07FDED1758161BB536C6151A551540810B34509B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/pgdrVonCQ-euNQWJsoQkZA/zh-cn_image_0000002821838405.png?HW-CC-KV=V1&HW-CC-Date=20261121T011249Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9848500F97886C8B8E53C39DCBC18CB1CD7EF7447690ED69735BF79CD1732DF)
 3. 在工程配置页面，根据向导配置工程的基本信息后，单击**Finish**，工具会自动生成示例代码和相关资源，等待工程创建完成。
 
    在工程entry/src/main目录下会包含cpp目录，该目录文件的详细介绍请参见[C++工程目录结构](ide-project-structure.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/dXdhHhw1RC-L2OFvszHukA/zh-cn_image_0000002820406797.png?HW-CC-KV=V1&HW-CC-Date=20261119T014828Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EE253DBAD7E0AFCF25638A67286A246B373A7812BE20E74EBCD9C0675381049)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/J9re1X68QXW11DoHtGr5gw/zh-cn_image_0000002821758407.png?HW-CC-KV=V1&HW-CC-Date=20261121T011249Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDB7F0F2CBE3888468298AC8833E7A18ABBAE225AA3DD94D2E7C062A6C3C109F)

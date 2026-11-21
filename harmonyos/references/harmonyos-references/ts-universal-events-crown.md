@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 表冠事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 表冠事件
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:47+08:00
+scraped_at: 2026-11-21T09:14:00+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:14d1881f5dac02b73255d29c55d4d540734c0a79f37deb64dc98f343934b767c
+content_hash: sha256:11698439b17bad20b15278ad27cde45feec061b7dd9f9cdcfdb0b58305ec16c5
 ---
 
 指旋转表冠时触发的事件，事件的分发依赖于应用焦点，开发者可以通过[焦点事件](ts-universal-focus-event.md)自定义事件处理。
@@ -100,4 +100,4 @@ struct CityList {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/R-6rkCd4QH6fBiOmvV7EAw/zh-cn_image_0000002791565182.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=51F4CB82756DDB45C8FF6478B9912513338505214D270C8652084C7C71A70853)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/d03XDgtyQVWKA8iAdxd1oQ/zh-cn_image_0000002821756739.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011248Z&HW-CC-Expire=31536000000&HW-CC-Sign=844EB7E029E7D4C03E8828E1BD6AAFBD967A00C31CC4FF78EA19E46AEDC2AEB4)

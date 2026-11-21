@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audio_session_manager.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audio_session_manager.h
 category: harmonyos-references
-scraped_at: 2026-11-12T09:56:22+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:7e422a31eb027f871c643ceb08553258050e406a4e4fce7747fa86bffc8dc37b
+scraped_at: 2026-11-21T09:15:53+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:f2b7b81c6b0106d1c06bad8c26fd3d6f475ee870ff8fc99cff106a0baa8654cf
 ---
 
 ## 概述
@@ -945,7 +945,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetCaptureMuteHint(OH_AudioSessionM
 
 | 类型 | 说明 |
 | --- | --- |
-| OH\_AudioCommon\_Result | AUDIOCOMMON\_RESULT\_SUCCESS：函数执行成功。  AUDIOCOMMON\_RESULT\_ERROR\_INVALID\_PARAM：参数audioSessionManager为nullptr。  AUDIOCOMMON\_RESULT\_ERROR\_ILLEGAL\_STATE：操作状态异常，当前进程不存在运行中的录音流。  AUDIOCOMMON\_RESULT\_ERROR\_SYSTEM：系统异常，例如系统服务异常退出等。 |
+| OH\_AudioCommon\_Result | AUDIOCOMMON\_RESULT\_SUCCESS：函数执行成功。  AUDIOCOMMON\_RESULT\_ERROR\_INVALID\_PARAM：参数audioSessionManager为nullptr。  AUDIOCOMMON\_RESULT\_ERROR\_ILLEGAL\_STATE：操作状态异常，当前进程不存在运行中的录音流。 |
 
 ### OH\_AudioSessionManager\_IsOtherMediaPlaying()
 

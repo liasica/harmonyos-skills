@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-scheme-ha
 title: 拦截Web组件发起的网络请求
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 拦截Web组件发起的网络请求
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:23+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-21T09:11:18+08:00
+doc_updated_at: 2026-11-20
 content_hash: sha256:c6c483abbf2ed896540564e33610064d7d6ed4e16e9b00c48ff00e58d30e3350
 ---
 
@@ -136,7 +136,7 @@ aboutToAppear(): void {
     try {
     webview.WebviewController.customizeSchemes([this.scheme1, this.scheme2, this.scheme3]);
     } catch (error) {
-    console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+    console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
     }
 }
 
@@ -209,7 +209,7 @@ this.schemeHandler.onRequestStart
       console.info('[schemeHandler] onRequestStart has no http body stream');
     }
   } catch (error) {
-    console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+    console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
   }
 
   // ...

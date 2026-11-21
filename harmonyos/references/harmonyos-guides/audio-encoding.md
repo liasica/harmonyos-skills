@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-encodin
 title: 音频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 音频编码
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:33+08:00
+scraped_at: 2026-11-21T09:11:58+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:36d299322a0f270c2caf863552ac93f1535abd67991638151a81fff7920a9f01
+content_hash: sha256:ca31412d63fdbd7ff830de83b7dd881aab389cfae08cf7c14064d6700fd98c74
 ---
 
 开发者可以调用本模块的Native API接口，完成音频编码，即将音频PCM编码压缩成不同的格式。
@@ -43,7 +43,7 @@ content_hash: sha256:36d299322a0f270c2caf863552ac93f1535abd67991638151a81fff7920
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/q5JR6iV3TgexucXH2RU9YA/zh-cn_image_0000002791565920.png?HW-CC-KV=V1&HW-CC-Date=20261119T014740Z&HW-CC-Expire=31536000000&HW-CC-Sign=66C95389463DDDF77E10ABF65EE78A614AC38DD51C8F43856716FF9AE87581D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/8a4riRHcQX6_S2SU6eWYvA/zh-cn_image_0000002821757481.png?HW-CC-KV=V1&HW-CC-Date=20261121T011032Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5CDD73C19D75F8995BCD7A6E50A9CE477F510E03BC9360914F7B459ACE23E7B)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -205,11 +205,11 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/yqkSKCSJSn-89t2gquD-tQ/zh-cn_image_0000002820525873.png?HW-CC-KV=V1&HW-CC-Date=20261119T014740Z&HW-CC-Expire=31536000000&HW-CC-Sign=9607956E9C48BAEB41612BF8C0B6F145E4AD84633C1DCED82145CE650A4E768D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/QbVR5XGjQGaA-pZlfTkjWg/zh-cn_image_0000002793037544.png?HW-CC-KV=V1&HW-CC-Date=20261121T011032Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D2452E7D298EF4DFEF32EE79978C2B14F52A336241D8E7C54CB7A8D2DE3EE6B)
 
    各音频编码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Z1R30MQhSNSJOH6UqD_FLA/zh-cn_image_0000002820405873.png?HW-CC-KV=V1&HW-CC-Date=20261119T014740Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D4F24C820930E6653492EE78E765528FC69671C23CB4B8343F4EB1B0CF49BE6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/7AfrEth-QiO_KG1nor_W_g/zh-cn_image_0000002792877574.png?HW-CC-KV=V1&HW-CC-Date=20261121T011032Z&HW-CC-Expire=31536000000&HW-CC-Sign=D65CCCBECAA42CE4189D275A57471885ABE112AC7C4177511BB4456B46F0A9BB)
 
    例如对一个44100Hz采样率、2声道立体声、SAMPLE\_S16LE采样格式的PCM音频，以32000bps的码率进行AAC编码的调用流程如下：
 

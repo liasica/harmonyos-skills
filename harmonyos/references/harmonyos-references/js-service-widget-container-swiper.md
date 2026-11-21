@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: swiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > swiper
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:25+08:00
+scraped_at: 2026-11-21T09:14:26+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ebb7e7356291c373325e55efe732a438374165a51c2b75874c75c21b8ada88ec
+content_hash: sha256:c3ae53a64035c2621f7c6b5c4a69d01fe7689d3cf977b3b607ea3b857fa5a457
 ---
 
 滑动容器，提供切换子组件显示的能力。
@@ -94,4 +94,4 @@ content_hash: sha256:ebb7e7356291c373325e55efe732a438374165a51c2b75874c75c21b8ad
 
 **4×4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/-6O1SXf6Qx6y3OH13MxGdQ/zh-cn_image_0000002820408003.png?HW-CC-KV=V1&HW-CC-Date=20261119T015030Z&HW-CC-Expire=31536000000&HW-CC-Sign=86252E3C08B2CBE6DDFD412F8AE6F57E97E9EA3BA6376FA939BB9DB65D23F01C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/3Y1c9Nb3RyqscOICw1BOOw/zh-cn_image_0000002821759641.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7A5470D6AF149746A9FDE5ECA07FE6CF7699A93E4A5542939EB8CE28780E568)

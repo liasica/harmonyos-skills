@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: stack
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > stack
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:25+08:00
+scraped_at: 2026-11-21T09:14:26+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:91ed46966a64b0cd1647a18628567f30f4d984c8fd295204b10563e9a048a780
+content_hash: sha256:e33e2d58d9418dae287fc6419522b82495082adf215fc602808d348f72198ce2
 ---
 
 堆叠容器，子组件按照顺序依次入栈，后一个子组件覆盖前一个子组件。
@@ -75,4 +75,4 @@ content_hash: sha256:91ed46966a64b0cd1647a18628567f30f4d984c8fd295204b10563e9a04
 
 **4×4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/QIlw_1nwT7OaDYNxIKuqSQ/zh-cn_image_0000002820528001.png?HW-CC-KV=V1&HW-CC-Date=20261119T015030Z&HW-CC-Expire=31536000000&HW-CC-Sign=5997A3871C949132E10F6219384C4D4CCA89F69A3434B61124AA2E0A6A466B03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/gPHxANgAR8OCkolMYO5amw/zh-cn_image_0000002821839639.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=24941A9E1F32CF36639759AB0518182B15D01E5E9793D70640C9364674815D7D)

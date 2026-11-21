@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_receiver_mdk.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_receiver_mdk.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:31+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5a36f9e07fac27226a452df15e4ef22e7fe9b5c0d5ccca4b52080c9aa3990f99
+scraped_at: 2026-11-21T09:16:09+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:3850e849e50d2b105aa0735939be2056bbeb0ebd7972ae3e97e0de30ab007e5a
 ---
 
 ## 概述
@@ -85,7 +85,7 @@ int32_t OH_Image_Receiver_CreateImageReceiver(napi_env env, struct OhosImageRece
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_CREATE\_SURFACE\_FAILED：创建surface失败。  IMAGE\_RESULT\_SURFACE\_GRALLOC\_BUFFER\_FAILED：surface分配内存失败。  IMAGE\_RESULT\_GET\_SURFACE\_FAILED：获取surface失败。  IMAGE\_RESULT\_MEDIA\_RTSP\_SURFACE\_UNSUPPORT：媒体rtsp surface不支持。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。  IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT：媒体类型不支持。 |
+| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_SURFACE\_GET\_PARAMETER\_FAILED：从surface获取参数失败。  IMAGE\_RESULT\_CREATE\_SURFACE\_FAILED：创建surface失败。  IMAGE\_RESULT\_SURFACE\_GRALLOC\_BUFFER\_FAILED：surface分配内存失败。  IMAGE\_RESULT\_GET\_SURFACE\_FAILED：获取surface失败。  IMAGE\_RESULT\_MEDIA\_RTSP\_SURFACE\_UNSUPPORT：媒体rtsp surface不支持。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。  IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT：媒体类型不支持。 |
 
 ### OH\_Image\_Receiver\_InitImageReceiverNative()
 
@@ -140,7 +140,7 @@ int32_t OH_Image_Receiver_GetReceivingSurfaceId(const ImageReceiverNative* nativ
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_INVALID\_PARAMETER：从surface获取参数失败。  IMAGE\_RESULT\_GET\_SURFACE\_FAILED：获取surface失败。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。  IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT：媒体类型不支持。 |
+| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_SURFACE\_GET\_PARAMETER\_FAILED：从surface获取参数失败。  IMAGE\_RESULT\_GET\_SURFACE\_FAILED：获取surface失败。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。  IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT：媒体类型不支持。 |
 
 ### OH\_Image\_Receiver\_ReadLatestImage()
 
@@ -167,7 +167,7 @@ int32_t OH_Image_Receiver_ReadLatestImage(const ImageReceiverNative* native, nap
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_INVALID\_PARAMETER：从surface获取参数失败。  IMAGE\_RESULT\_CREATE\_SURFACE\_FAILED：创建surface失败。  IMAGE\_RESULT\_SURFACE\_GRALLOC\_BUFFER\_FAILED：surface分配内存失败。  IMAGE\_RESULT\_GET\_SURFACE\_FAILED：获取surface失败。  IMAGE\_RESULT\_MEDIA\_RTSP\_SURFACE\_UNSUPPORT：媒体rtsp surface不支持。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。  IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT：媒体类型不支持。 |
+| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_SURFACE\_GET\_PARAMETER\_FAILED：从surface获取参数失败。  IMAGE\_RESULT\_CREATE\_SURFACE\_FAILED：创建surface失败。  IMAGE\_RESULT\_SURFACE\_GRALLOC\_BUFFER\_FAILED：surface分配内存失败。  IMAGE\_RESULT\_GET\_SURFACE\_FAILED：获取surface失败。  IMAGE\_RESULT\_MEDIA\_RTSP\_SURFACE\_UNSUPPORT：媒体rtsp surface不支持。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。  IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT：媒体类型不支持。 |
 
 ### OH\_Image\_Receiver\_ReadNextImage()
 
@@ -194,7 +194,7 @@ int32_t OH_Image_Receiver_ReadNextImage(const ImageReceiverNative* native, napi_
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_INVALID\_PARAMETER：从surface获取参数失败。  IMAGE\_RESULT\_CREATE\_SURFACE\_FAILED：创建surface失败。  IMAGE\_RESULT\_SURFACE\_GRALLOC\_BUFFER\_FAILED：surface分配内存失败。  IMAGE\_RESULT\_GET\_SURFACE\_FAILED：获取surface失败。  IMAGE\_RESULT\_MEDIA\_RTSP\_SURFACE\_UNSUPPORT：媒体rtsp surface不支持。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。  IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT：媒体类型不支持。 |
+| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_SURFACE\_GET\_PARAMETER\_FAILED：从surface获取参数失败。  IMAGE\_RESULT\_CREATE\_SURFACE\_FAILED：创建surface失败。  IMAGE\_RESULT\_SURFACE\_GRALLOC\_BUFFER\_FAILED：surface分配内存失败。  IMAGE\_RESULT\_GET\_SURFACE\_FAILED：获取surface失败。  IMAGE\_RESULT\_MEDIA\_RTSP\_SURFACE\_UNSUPPORT：媒体rtsp surface不支持。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。  IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT：媒体类型不支持。 |
 
 ### OH\_Image\_Receiver\_On()
 
@@ -219,7 +219,7 @@ int32_t OH_Image_Receiver_On(const ImageReceiverNative* native, OH_Image_Receive
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_INVALID\_PARAMETER：从surface获取参数失败。  IMAGE\_RESULT\_GET\_SURFACE\_FAILED：获取surface失败。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。  IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT：媒体类型不支持。 |
+| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_GET\_SURFACE\_FAILED：获取surface失败。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。  IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT：媒体类型不支持。  IMAGE\_RESULT\_REGISTER\_LISTENER\_FAILED：注册监听器失败。IMAGE\_RESULT\_REGISTER\_BUFFER\_FAILED：注册缓冲区失败。 |
 
 ### OH\_Image\_Receiver\_GetSize()
 
@@ -320,4 +320,4 @@ int32_t OH_Image_Receiver_Release(ImageReceiverNative* native)
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。 |
+| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。 |

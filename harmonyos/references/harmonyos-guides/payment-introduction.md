@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-intro
 title: Payment Kit简介
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > Payment Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:07+08:00
+scraped_at: 2026-11-21T09:12:33+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ba30e20aad54a67342e1d7f9d02b6118769c70118255a58580fd62664347915e
+content_hash: sha256:4b5fa8c9d21b83dd603651756c8afdcaf56b788f33c6eba4816f7ce3039602b0
 ---
 
 Payment Kit（鸿蒙支付服务）提供了方便、安全和快捷的支付方式，助力开发者在商户应用/元服务中快速实现支付功能。
@@ -83,23 +83,23 @@ Payment Kit支持的支付能力如下：
 
 华为支付接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/RIh5OkZZRuqsyfawQ1kwWQ/zh-cn_image_0000002820406493.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=5972B57021F22CEE338E0E5118DFD268A65B86325D2456403772089146A3A35E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/DU9GmFVDRNCr088WHnFUFQ/zh-cn_image_0000002792878194.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FAC685E9727CB1CBE74B8251ED4F858E8236280B57AC3242F486E6B6883A7CA)
 
 [数字人民币支付](payment-digital-cny-pay.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/s_Vz2q0aTwuZbT525pHXVg/zh-cn_image_0000002791726514.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FFCA2E5A99B4FAA749ADE45D14E2344DD9B7381B35E59403699DB4C173F413F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/Uo5eOCFHTLG31C2p_XenoQ/zh-cn_image_0000002821838101.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCFA9BE4E5ABA9C08E56BA2C497DA82BAC60CDB3AD0D10CCC76ECE507488DD7E)
 
 通用收银台[混合支付场景](payment-common-pay-mix.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/EB7-bj2GS3a5MCnyyGvlqQ/zh-cn_image_0000002791566542.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBDC0E9E2D27B266948ABE856BE03E64EE91B5875969DAD3A38FAED9674E374C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/WFhg1iHfSfmgqY4E4-gQQA/zh-cn_image_0000002821758103.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE543AF2485428672C41910383EF5CF44DC9B116E92C1EAEF9088A4248C94A4E)
 
 通用收银台[纯外部支付场景](payment-common-pay-external.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/JL3eXFHCQE-UQpDSm7tfsQ/zh-cn_image_0000002820526495.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F51337F5FDE87EA20F295A01E9532AC7D682A5993F701A16F08E0DDCC6C0C1E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/kUAP6WByRGOiKqnZgmb_Xg/zh-cn_image_0000002793038166.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=61FB8B4AFC82DB1727A237E1A7D865F8B9C0B2573894157E0B433DD5F5A13860)
 
 用户身份验证服务、人脸核身实人验证接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/iX2QKcD2RAexaPF5oC6bcg/zh-cn_image_0000002820406495.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=91F183557B7C6E2F80A85837B8D85BC66E3A0CBB1E2A687A4CAF78AB0737A34F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ZSgPLMR9T36OutcqQfx3fw/zh-cn_image_0000002792878196.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=95F47B90EDFF153478E46830A1F177686D7F660062429D1AF985594FD6CEB200)
 
 ## 约束与限制
 

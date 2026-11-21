@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: EditableTitleBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > EditableTitleBar
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:14+08:00
+scraped_at: 2026-11-21T09:14:17+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:442436d89a19882902c53c71cc5038b56c8b55ce29b8fc1155773bc91a0bb6f9
+content_hash: sha256:4a71580446be471543140dadb03cc89972edbbebf75b3bf27b1ced3e63bca03d
 ---
 
 编辑型标题栏，适用于多选界面或者内容的编辑界面，一般采取左叉右勾的形式。
@@ -174,7 +174,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/tUR1cEwjQLmAIBWlJaZ2sw/zh-cn_image_0000002820527663.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BBBD44BF27FD2692786B989D689B4F667F776B4266EF1E3B520E5624B492290)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/oO2BHOWuS6SUvOkQleBnWg/zh-cn_image_0000002821839295.png?HW-CC-KV=V1&HW-CC-Date=20261121T011313Z&HW-CC-Expire=31536000000&HW-CC-Sign=8546000C1DBB79FB8C9147F4705C1DAD7ACF73045B27AB4AEB6D2ABE28328D50)
 
 ### 示例2（头像与背景模糊标题栏）
 
@@ -279,7 +279,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/hNZ148O9Rb2ZeYDqmWzmJA/zh-cn_image_0000002820407665.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA6938409B29A8EF6481C3C996553A200BF0D84374848950816282504AC5CF43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/EqalTuWLSqKoc9a77rN8Qg/zh-cn_image_0000002821759293.png?HW-CC-KV=V1&HW-CC-Date=20261121T011313Z&HW-CC-Expire=31536000000&HW-CC-Sign=992916E78F3F7510A394AEDD98B24C89335A4A0D569811ACDABC2D4666025603)
 
 ### 示例3（右侧自定义按钮播报）
 
@@ -342,7 +342,7 @@ struct Index1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/RySVtj__T5uxy7-Tzv5iSQ/zh-cn_image_0000002791727684.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F72A6A35F4F33D73D309810B5D7826C11E8F9123C8E043CDB469E3613461D59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/QU8qtsx9QfaBz462bDEQ0A/zh-cn_image_0000002793039360.png?HW-CC-KV=V1&HW-CC-Date=20261121T011313Z&HW-CC-Expire=31536000000&HW-CC-Sign=518E706EBF1BD298FA94970868AE9E1010C85832117D62B661C1EF4BE674D71D)
 
 ### 示例4（左侧图标设置为默认焦点）
 
@@ -374,7 +374,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/PiMGMHFkTNSqLgXkjzZIhg/zh-cn_image_0000002791567712.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=0273AD389A32BF8B645644594657C4B6ED450510DB91E5872DA4058630F3B743)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/U141p52HQH6-GNXfxsKjVw/zh-cn_image_0000002792879388.png?HW-CC-KV=V1&HW-CC-Date=20261121T011313Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A3520969ED35D694C5E654C743F75FC29C7E6F14B0FC6C0C97FE59DCAF8617B)
 
 ### 示例5（右侧自定义图标设置为默认焦点）
 
@@ -423,7 +423,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/aUgfyCSwTG6kOTE9VZSNDw/zh-cn_image_0000002820527665.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B18FCBB3BC09F1818E6C554AB8E3435CBF16C3B15C077BBFC91CE4950F6678B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/jHqI2eOZQNin0CEkLJZ9Xg/zh-cn_image_0000002821839297.png?HW-CC-KV=V1&HW-CC-Date=20261121T011313Z&HW-CC-Expire=31536000000&HW-CC-Sign=81A81AD0E1696D26233781FE3AB219492ED956824D252C469EC414FE0C6C0C8D)
 
 ### 示例6（设置Symbol类型图标）
 
@@ -492,4 +492,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/qMroeJeXRBKBxqBNZjCmxw/zh-cn_image_0000002820407667.png?HW-CC-KV=V1&HW-CC-Date=20261119T015113Z&HW-CC-Expire=31536000000&HW-CC-Sign=2247857CE691E5FB7B14D89CBFF2A40FEB0664A8956E0298AE079ACBCBEFB304)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ut9xupznTa2FWUazeeMo4w/zh-cn_image_0000002821759295.png?HW-CC-KV=V1&HW-CC-Date=20261121T011313Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFC0109676FA09A4C5DE7244E3D63ADE0DCCFC020B2EEDC2266AB89E08BF1DFE)

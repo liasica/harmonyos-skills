@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkweb-ndk-js
 title: 应用侧与前端页面的相互调用(C/C++)
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 应用侧与前端页面的相互调用(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:52+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:aeeb985549424fba592e69273d6d074926b44fa1a551ba0c311cf51418e5d40c
+scraped_at: 2026-11-21T09:11:18+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:67991a01d48bf5c3a45488f97ecd557f8c3b57bac034c02097e3033123ce272a
 ---
 
 本指导适用于ArkWeb应用侧与前端网页通信场景，开发者可根据应用架构选择使用ArkWeb Native接口完成业务通信机制（以下简称Native JSBridge）。
@@ -16,13 +16,13 @@ content_hash: sha256:aeeb985549424fba592e69273d6d074926b44fa1a551ba0c311cf51418e
 
 应用使用ArkTS、C++语言混合开发，或本身应用架构较贴近于小程序架构，自带C++侧环境，推荐使用ArkWeb在Native侧提供的[ArkWeb\_ControllerAPI](../harmonyos-references/capi-web-arkweb-controllerapi.md)、[ArkWeb\_ComponentAPI](../harmonyos-references/capi-web-arkweb-componentapi.md)实现JSBridge功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/UDo4HRFgRgOGP3984tbj4g/zh-cn_image_0000002820405441.png?HW-CC-KV=V1&HW-CC-Date=20261119T014701Z&HW-CC-Expire=31536000000&HW-CC-Sign=A947252E8699A693ADEA6F959F48C41EA13977B0E8A7EAEC84F51BFB844DC33D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/GTtJ3jX0SRWRe9HDjuRYhg/zh-cn_image_0000002792877142.png?HW-CC-KV=V1&HW-CC-Date=20261121T010953Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FA63E0882E6FF98C44791F379F2E955D36214D84CC9342F206A0AD48E5C0972)
 
 上图展示了具有普遍适用性的小程序的通用架构。在这一架构中，逻辑层依赖于应用程序自带的JavaScript运行时，该运行时在一个已有的C++环境中运行。通过Native接口，逻辑层能够直接在C++环境中与视图层（其中ArkWeb充当渲染器）进行通信，无需回退至ArkTS环境使用ArkTS JSBridge接口。
 
 左图是使用ArkTS JSBridge接口构建小程序的方案，如红框所示，应用需要先调用到ArkTS环境，再调用到C++环境。右图是使用Native JSBridge接口构建小程序的方案，不需要ArkTS环境和C++环境的切换，执行效率更高。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/UI2n-iGnQ0WgTfNZfC0SaA/zh-cn_image_0000002791725462.png?HW-CC-KV=V1&HW-CC-Date=20261119T014701Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F6CE492B2BE6D4F2327750C90EA11224B15361E0FB10C56F20EDD2A1943695D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/m5x876kbTOagvDTV9MS1oQ/zh-cn_image_0000002821837049.png?HW-CC-KV=V1&HW-CC-Date=20261121T010953Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAF4BA889AC5C7700CF9FC181860BC0D94BC64BB22A448609731DAC032C2A5B2)
 
 Native JSBridge方案解决了ArkTS环境的冗余切换，同时允许回调在非UI线程上运行，避免造成UI阻塞。
 
@@ -423,7 +423,7 @@ controller->runJavaScript(webTagValue, &object);
       }
   }
 
-  // 示例代码 ，注册了1个对象，2个方法
+  // 示例代码，注册了1个对象，2个方法
   static ArkWeb_JavaScriptValuePtr ProxyMethod1(
       const char *webTag, const ArkWeb_JavaScriptBridgeData *dataArray, size_t arraySize, void *userData)
   {

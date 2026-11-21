@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: BuilderNode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > BuilderNode
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:44+08:00
+scraped_at: 2026-11-21T09:13:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9ad3e643a90589a5dc67415ca0913dffcaa10fd760607ab5f947048c2728e8d2
+content_hash: sha256:8e3e02eda38c9a1878f2e3844fc5d872d789afaae25d97a7bace96800598d256
 ---
 
 提供能够挂载系统组件的自定义节点BuilderNode。BuilderNode仅可作为叶子节点使用，支持通过@Builder生成组件树、实现组件复用与回收、跨节点事件分发以及状态同步，适用于在应用内动态创建和管理自定义组件节点的场景。使用方式参考[BuilderNode开发指南](../harmonyos-guides/arkts-user-defined-arktsnode-buildernode.md)。最佳实践请参考组件动态创建-[组件动态添加、更新和删除](../harmonyos-guides/arkts-ui-component-dynamic-creation.md#组件动态添加更新和删除)。
@@ -607,7 +607,7 @@ postTouchEvent是从组件树的中间节点往下分发，需要变换到父组
 
 offsetA为builderNode相对于父组件的偏移量，可以通过FrameNode中的[getPositionToParent](js-apis-arkui-framenode.md#getpositiontoparent12)获取。offsetB为触点相对于builderNode的偏移量，可以通过[TouchEvent](ts-universal-events-touch.md#touchevent对象说明)获取。offsetC为offsetA与offsetB的和，是传给postTouchEvent的最终结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/OEGBZa1kRJ2g8MlsMIYjdA/zh-cn_image_0000002791726950.png?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9C2F11F5C97CDF9F046B035FDF5933947FE98954D6512431092A70DC2CB450A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/497L48dvT8uk6uJojoTtEA/zh-cn_image_0000002793038602.png?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=71B76E2D53DAD35D16ED5A54F24F33353CC6883A6DDC4CFA911F6DE270233EF2)
 
 **说明** 
 
@@ -1518,7 +1518,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/i3A1KJjKTjarQpXPynW6ZA/zh-cn_image_0000002791566978.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=1651F4E5DA074EE783A3A9D0DE1478DC424CFCF4BB0DDC39C781503E72D7A195)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/7ulS4MOqRLu7uqaMcps0YA/zh-cn_image_0000002792878632.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=76F92475ABDC589139E447388B77AAF91A7C24E8C2186542FCE68FCF414719AA)
 
 ### postInputEvent20+
 
@@ -1528,7 +1528,7 @@ postInputEvent(event: InputEventType): boolean
 
 offsetA为builderNode相对于父组件的偏移，offsetB为命中位置相对于builderNode的偏移，offsetC为offsetA+offsetB，最终输入给postInputEvent中的window信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/BylD47MWQ1uR5laF7I5iQw/zh-cn_image_0000002820526931.png?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB0F1253DC7129BA91E26DC3AD7ED7581D560F322F56C68758DF3DAAC26D3ADF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/syVF8UEVTJiqnRQwJ9yikQ/zh-cn_image_0000002821838539.png?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=B56E3DA06A06D446CBEFA71576736EA96368DF70AFE32C3C0B938EC6FBC382A8)
 
 **说明** 
 
@@ -1569,7 +1569,7 @@ postInputEventWithStrategy(event: InputEventType, competitionStrategy?: Competit
 
 接口调用前需要将event转化为对应的事件，并对event中的window参数的坐标进行转化：offsetA表示builderNode相对于父组件的偏移量，offsetB为命中位置相对于builderNode的偏移量，offsetC是offsetA与offsetB之和，最终作为event中的window参数，传递给postInputEventWithStrategy方法，具体请参考示例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/FNiGILd_T_WdopPbaeDOKA/zh-cn_image_0000002820526931.png?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=1297BCA4C6CAE8A57F31DDD16EBE950DC013DC5CF71024DAF282105355B5E75B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/h5wVbsZOQyasfxrbFZZU9Q/zh-cn_image_0000002821838539.png?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E94E3E7683D58242B4BA5F87A1148D02C731F88C8C6F4C0D0740EC3A8D13DCC)
 
 **说明** 
 
@@ -1828,7 +1828,7 @@ struct TextBuilder {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/889W4fGCTDubSFHecvdZRQ/zh-cn_image_0000002820406931.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3DAB3DE0B171A689057E184126998C55FED0DC3DC2EE53450D2F63984FEFE4D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/jXe7fQ6RSMGrI0zpzx1DdQ/zh-cn_image_0000002821758541.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EC7F28F167DC6A092FE01AA2E498154E1EF5465EEA77DDD81FDF6DC56E69042)
 
 ## ReactiveBuilderNode22+
 
@@ -1941,7 +1941,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/Zpm5zPJmT7W_8sHOjgv35A/zh-cn_image_0000002791726952.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB5A29E6539BDAF8C3476D7BB7D206437BAC631D46B9BCA851CFDA29160DBEBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/GraI47zeQMShAbpxlbWFsQ/zh-cn_image_0000002793038604.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE6A2578E79E760FA4CC192B49429CA14DE887C9922BFD11814F2E8BA89CD96D)
 
 ### getFrameNode22+
 
@@ -2054,7 +2054,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ud3AKNW4TvCrZVizBXTUOw/zh-cn_image_0000002791566980.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D09AC8D6EF4914FBB4C4B2A45B30C75018B6E5B491F3164A56382EE1596274D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/vBZrm-u5Q56_zDtLBDUxtA/zh-cn_image_0000002792878634.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9C3DBED35E5ABAFEB09172F48F0900B8835B3753C5219CE12EAD99C5DE79413)
 
 ### postTouchEvent22+
 
@@ -2066,7 +2066,7 @@ postTouchEvent是从组件树的中间节点往下分发，需要变换到父组
 
 offsetA为builderNode相对于父组件的偏移量，可以通过FrameNode中的[getPositionToParent](js-apis-arkui-framenode.md#getpositiontoparent12)获取。offsetB为触点相对于builderNode的偏移量，可以通过[TouchEvent](ts-universal-events-touch.md#touchevent对象说明)获取。offsetC为offsetA与offsetB的和，是传给postTouchEvent的最终结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/kWB5zrpWSomBUNvHqVWsiQ/zh-cn_image_0000002791726950.png?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=E043CB7EF55108384FCECAED6CD3941E6800CC234CE04AE92186339D38B4445A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/UEElyTN5S5-R1hbCCxrhFQ/zh-cn_image_0000002793038602.png?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=0438A3F0D094E19644945307C5070CE7C51896B425218D1F9A36FAE13F75282F)
 
 **说明** 
 
@@ -2186,7 +2186,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/I8yTkbOTQeWQIM8JgvrVaw/zh-cn_image_0000002820526933.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=B07492D485D30D1E5322EE644288AC644902C65CC32F933F8154E3F2CA711397)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/s7IINcesQviqUr6TH5k0sA/zh-cn_image_0000002821838541.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EABE4B38A73209079D789B08722E2314382060FE48D9FDC809C7BCB364765A0)
 
 ### dispose22+
 
@@ -2299,7 +2299,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/aPT1YSGDQtCUrGb_3v8tXg/zh-cn_image_0000002820406933.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E322452F58AF1A923D7F153A27F013C5A95A5C3ABF5C1A89E6D6BFFF27113F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/UayTw993QqSVQ20EAaxgBw/zh-cn_image_0000002821758543.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=20E51F55446BFA19980255E78C2FA7078A961730BFE5A1FE3F032ACC487DA4B5)
 
 ### reuse22+
 
@@ -2525,7 +2525,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/5QdM2WtFT_u0FbaTtJIsQg/zh-cn_image_0000002791726954.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C8FE4CCF07795C67FAA740AE9B88D4086C71A47AAEF750AEA940E1846811891)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/_JfSUfUcSFO2gPLAYWC4Rg/zh-cn_image_0000002793038606.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1CA2339F2F58213BECCE8AD5D263779DFA969D6D383C3D1032E527FADAAE358)
 
 从API版本26.0.0开始，ReactiveBuilderNode中的自定义组件支持V2组件复用。
 
@@ -2879,7 +2879,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/3HFRMhcMTEm_BZGw3t38VQ/zh-cn_image_0000002791566982.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=271C1AEFF68EA6C60E65AC4E7468543320A1DF0B349BB41852B01805EB5EAE59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/RyDFKMU7T0m5VNsF6XXt3w/zh-cn_image_0000002792878636.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3BA254DF81E7DB3B5DD0B374E06E5F09EB6FDBE046D201BB1FB540AE170ED91)
 
 ### flushState22+
 
@@ -2989,7 +2989,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/WvLWLBxtSqSUvx_Om4VQew/zh-cn_image_0000002820526935.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF02F4184AE6A7C601DCF8C4A20CDD8C9963580E7EB6A4C55D4A259C03395F63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/NKUpVsEjQGm1bMRFi9m2AQ/zh-cn_image_0000002821838543.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=6136F757A52D32A429DFE841F3E18FAAE2F97D8F7AAE04C059CD41DD8A035F21)
 
 ### postInputEvent22+
 
@@ -2999,7 +2999,7 @@ postInputEvent(event: InputEventType): boolean
 
 offsetA为builderNode相对于父组件的偏移，offsetB为命中位置相对于builderNode的偏移，offsetC为offsetA+offsetB，最终输入给postInputEvent当中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/i1KTF_LeRkWr6zkrtMAlLQ/zh-cn_image_0000002820526931.png?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=49844935F3B8251444E35577971386A6624C417AB894C33A7067DAB18ADEBC75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/ofkCgAm2QB6DyvFtLVE6aw/zh-cn_image_0000002821838539.png?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E30AF2822CB20C46B86E7975026327548D0C856304EA10E7ED4CD3578224FA6)
 
 **说明** 
 
@@ -3047,7 +3047,7 @@ postInputEventWithStrategy(event: InputEventType, competitionStrategy?: Competit
 
 接口调用前需要将event转化为对应的事件，并对event中的window参数的坐标进行转化：offsetA表示ReactiveBuilderNode相对于父组件的偏移量，offsetB为命中位置相对于ReactiveBuilderNode的偏移量，offsetC是offsetA与offsetB之和，最终作为event中的window参数，传递给postInputEventWithStrategy方法，具体请参考示例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/UGyPQ6T4Qcu_K6MepO_M4g/zh-cn_image_0000002820526931.png?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=64AF2C4BAB39B405C25FF454F57D54BA559C2179342E704C942564955C95C517)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Gt-GvWkAT0ywa6CblpiH7w/zh-cn_image_0000002821838539.png?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8683816D6EE94BBAD3BA73B53173F726CB4AD1C16920EF8E9D10871627820F7)
 
 **说明** 
 
@@ -3328,7 +3328,7 @@ struct TextBuilder {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/1qhJc9qrTKKqp7NFKHWo9A/zh-cn_image_0000002820406935.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C49E801B6C53115CFC575D2156D10FE8939364F323B30ED4FF7B12ED64E5EFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/taVD-nB9RqeGMjUDm5GOSg/zh-cn_image_0000002821758545.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AD71BD7DBBCD912725E0DF53F384DF2DCE9CF8E8AC0606CE65E3E366D699AA6)
 
 ### isDisposed22+
 
@@ -3465,7 +3465,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/eYvB5ffeSLe4mwYmk6ko8Q/zh-cn_image_0000002791726956.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=85EABB3B823D2DDE9ADC84CD2B25D03C1ED9C92901F944DF3B3C0A891546F909)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/RT9avO7bRSWtvCcENHF9gA/zh-cn_image_0000002793038608.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AE09512AAFB3AB12B64B774FEA9DB2093A1D736BBC642984491BC45C9D616B9)
 
 ## 示例
 
@@ -3609,7 +3609,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/GbcETj5oSWiYNG83vrg05g/zh-cn_image_0000002791566984.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=3551259CB98636F819FBD9E4E3AAB291AEECE6D7C24D8AE2A5207DD0CD6612DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Z76012puTciij_LAI-J6Jg/zh-cn_image_0000002792878638.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F7FD6857ACAD6F3298BBC6FDE72E787F7D6B426F7BB5A0A7F672DCC381B988B)
 
 ### 示例2（BuilderNode中触摸事件）
 
@@ -3723,7 +3723,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/mz1Oa3tZRF2RR-gxVMzwCQ/zh-cn_image_0000002820526937.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C716EDB052B17081F4846604FC4AD0DACF137825BEDF2D21751FA13E9EB5E2F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/kRv1vR-HQl6HMbCWq6LHkQ/zh-cn_image_0000002821838545.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BAD546EEB1C92209155969BB47B38A990B6DE920DF893F9275CEE54001BE6A4)
 
 ### 示例3（BuilderNode中轴事件）
 
@@ -3823,7 +3823,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/1zeBU8ggQimGxWBuKAGgxg/zh-cn_image_0000002820406937.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=080BCCE6D4AD97BF9AF94EB20E729575CCA5AD6084ED2ED9067328BAAC17C2FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/gs4Sc9mgTTy4bhP2Vk0W6g/zh-cn_image_0000002821758547.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7E2E1C1A6248CF51D0EEDA374FE13BE628F3234F7DC7DF7FC662865F9E25462)
 
 ### 示例4（BuilderNode共享localStorage）
 
@@ -3986,7 +3986,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/P7naDyEOSpeVD-ahtnNhbQ/zh-cn_image_0000002791726958.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=B252EF4E43BE4B49D5B1A4E128DB1C9B5FE4226C7C2AD97E5B3F0952B2DAAB7B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/MFssmmfOSU2zrekGGtmdjg/zh-cn_image_0000002793038610.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E950CE8899B5D463386AF68040A9C04D956781ED6AFA2B6519B40C7170A35BC)
 
 ### 示例6（BuilderNode支持内部@Consumer接收外部的@Provider数据）
 
@@ -4077,7 +4077,7 @@ struct AddChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/9NxeGEhDTBOwYUS80jQJXw/zh-cn_image_0000002791566986.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1732A4AB7185EE209119A3081BFF403BBDB4D31B5075EBA46071AAA06EB476E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/aQNgUbU8Qnq9BX4Nr5cX3A/zh-cn_image_0000002792878640.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7963CE640094759C5D6CF9ED4CE778B82BC10FFC538AFE47D55AD3678B9C397)
 
 ### 示例7（BuilderNode上下树时的同步关系变化）
 
@@ -5093,7 +5093,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/AN--Aw_qQwezXYDu94nHsw/zh-cn_image_0000002820526939.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=C76FC7B386D1E2EA097D9928494D5B114092D7E3EBC9E34151096052D42862D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/xKJDUYtuQYCFHs0H85JixA/zh-cn_image_0000002821838547.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=4515AF79D1DE53305A05B2764BD9ABD9FB1D2AB3A87893A9D2FA92C28CE67738)
 
 ### 示例14（ReactiveBuilderNode中触摸事件）
 
@@ -5207,7 +5207,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/sX0iAE_WQgqEYHHDXV3YLA/zh-cn_image_0000002820406939.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1C7F1FAE4EB9B2058FA3554001F8E40F4B8FB4FE6FE156A58111CE5F217BDEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/5Ml4Qhy0S5iWDqw1JvXjEw/zh-cn_image_0000002821758549.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F228C3C84EAA551D600E83AA04262FB3B89C94241B26A4BD23E01A74F60F36A)
 
 ### 示例15（ReactiveBuilderNode中轴事件）
 
@@ -5308,7 +5308,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/kw3wu7FkS-evi4EWojA7dQ/zh-cn_image_0000002791726960.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015042Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5C0AEFA946BF43944F03949726FB153479D470F575AE51FD4E69EEF822D1D10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/xX3_Y02hS4605d5dL8a0DA/zh-cn_image_0000002793038612.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011356Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB090F1F41BCB5DD163E62250FE1342658725A0FEC3CE316743F6DBF3C1BE98F)
 
 ### 示例16（BuilderNode中带竞争策略的鼠标事件）
 

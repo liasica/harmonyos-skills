@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: picker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > picker
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:21+08:00
+scraped_at: 2026-11-21T09:14:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:fd457e5f05ffd36a7d13de38a94ecb318d91c252d06e82f6764d2c1636a38504
+content_hash: sha256:5f6014c59aacf9a39a034f951d2c967c6a97d5e11ee82cf378bfaf971eaf35f4
 ---
 
 **说明** 
@@ -309,4 +309,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/fChecHjCTtOeU-m1lTO5Bw/zh-cn_image_0000002820407771.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015026Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0736AAFAD2F9129B72D3CF9C596C1A97A0FF40F371DF335D5603A1787D5EDA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/_sqceCkDSYyBbJvAamry9Q/zh-cn_image_0000002821759403.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011421Z&HW-CC-Expire=31536000000&HW-CC-Sign=207AA5802969FCAB890128B4DB5105EA66A2A70C1C32B40C04DF9AF07EC18B67)

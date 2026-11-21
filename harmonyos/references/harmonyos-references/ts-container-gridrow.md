@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: GridRow
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > GridRow
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:56+08:00
+scraped_at: 2026-11-21T09:14:05+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0d6286f20d72baa11ffab0eec44be3e021117eee501a2203f35400c3ee2d396f
+content_hash: sha256:69f884f30255cc4d8977c67aaf613e8537f78255222b422c0c9edef5c89f1fcb
 ---
 
 栅格布局可以为布局提供规律性的结构，解决多尺寸多设备的动态布局问题，保证不同设备上各个模块的布局一致性。
@@ -179,7 +179,7 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 * 新一行的offset加上子组件的span超过总列数时，将下一个子组件放在新一行。
 * 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/cBIEej-9S32MURR-3LqRkA/zh-cn_image_0000002820527123.png?HW-CC-KV=V1&HW-CC-Date=20261119T015000Z&HW-CC-Expire=31536000000&HW-CC-Sign=5373BF20FD8F24CF2D629F635639948683069F3F6B283089573123AA396FE94F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/nAiyjjobR7uHoq3CKmGI1Q/zh-cn_image_0000002821838733.png?HW-CC-KV=V1&HW-CC-Date=20261121T011254Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0BDEE7E58E52837D32A57AF9136E4D2CEA07AB1E49C553DA58B62782C67A535)
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -280,7 +280,7 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/M928UmD8Qs6uxSpkml37MA/zh-cn_image_0000002820407123.png?HW-CC-KV=V1&HW-CC-Date=20261119T015000Z&HW-CC-Expire=31536000000&HW-CC-Sign=06D852F47D80B3B3A4FD214496608B8BB360DF8C24821E4BA92F90564F759EAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/orjYz0F0ShOzZ-Ae9bQ_XA/zh-cn_image_0000002821758735.png?HW-CC-KV=V1&HW-CC-Date=20261121T011254Z&HW-CC-Expire=31536000000&HW-CC-Sign=64BCA7EEE3C9FBBEE3B04D68DFB379C828A98D0E3CEE4DFBEB697F16AA52BECF)
 
 ### 示例2（AlignItems的基本用法）
 
@@ -348,4 +348,4 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Ixojp6tyT8qKxXn8uTUP3g/zh-cn_image_0000002791727144.png?HW-CC-KV=V1&HW-CC-Date=20261119T015000Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5E02EBFF8B5EC7432CE64E91D555B498DBA16C2A9613B26582A956B35A10302)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/KU81jx0iRLWih3oML52HpA/zh-cn_image_0000002793038802.png?HW-CC-KV=V1&HW-CC-Date=20261121T011254Z&HW-CC-Expire=31536000000&HW-CC-Sign=D788A5B0694BC4CD1AA1FE281967DC5B9767A47C9882B001336E00F07C619417)

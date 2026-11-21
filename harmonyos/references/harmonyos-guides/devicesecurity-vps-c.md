@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 病毒防护服务管理(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 病毒防护服务管理(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:08+08:00
+scraped_at: 2026-11-21T09:11:34+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5f44d122e468b907c0444c9b91ca7afd2b9812808221943e436c20e51f1f77ae
+content_hash: sha256:0ab07eb4a3c11a17e84d9028ae8453174979484d711c934184f30172c7f03d0c
 ---
 
 ## 场景介绍
@@ -19,11 +19,11 @@ content_hash: sha256:5f44d122e468b907c0444c9b91ca7afd2b9812808221943e436c20e51f1
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/85zT8c69RN-bbVbOWq_P2Q/zh-cn_image_0000002820405699.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=8165BDB7D5261ED386ABB6DE3369F9ADE77D2B9F3AEF629ED4366DFC3DFD9E6B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/vEdbb8pkQYq6H0BQRxYhYQ/zh-cn_image_0000002792877400.png?HW-CC-KV=V1&HW-CC-Date=20261121T011008Z&HW-CC-Expire=31536000000&HW-CC-Sign=110312AD672171B5F4EC2B78CF6DDB9AF01A7FBCD09D5593FC44835E5C6878E8)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/JizfklZ3RHmSQepYzixy7Q/zh-cn_image_0000002791725720.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4F00BC2BF08FE17DDCD40D0FAE0E1DED4E09996847B9E0F3AA83F7A6C4A1637)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/bTZhrn9ERruqHLfufOgeMg/zh-cn_image_0000002821837307.png?HW-CC-KV=V1&HW-CC-Date=20261121T011008Z&HW-CC-Expire=31536000000&HW-CC-Sign=31F388A99EB1FFBC7E86E368B5E408A3593B37B5A5CF2DAB2AE8377C5ED595EF)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/g6fa2zj7SP6p4HuNTpWMww/zh-cn_image_0000002791565748.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=5024640060D67FC2D8374B44164DF3FA33291592C5A2493D6C987445E2740DDD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/gNaITSYZRCKe7At_0bsElw/zh-cn_image_0000002821757309.png?HW-CC-KV=V1&HW-CC-Date=20261121T011008Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3F7EFEDF845839D2EB6E41452E5335B6FB447C11DE54419147785F8EDAB700F)
 
 **流程说明**：
 

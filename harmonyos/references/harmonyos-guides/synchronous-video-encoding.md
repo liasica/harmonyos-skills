@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/synchronous-v
 title: 视频编码同步模式
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频编码同步模式
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:34+08:00
+scraped_at: 2026-11-21T09:11:58+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5eea867061aa54071bdedf2e7c3bc1de70b4e696724ccd1890f1f781c96584db
+content_hash: sha256:06081bf3f2979fbc2d9c145b053b871b71607dff3360d4a22d72cbfd8ec0b52f
 ---
 
 从API version 20开始，支持视频编码同步模式。
@@ -26,7 +26,7 @@ content_hash: sha256:5eea867061aa54071bdedf2e7c3bc1de70b4e696724ccd1890f1f781c96
 
 详细的API说明请参考[VideoEncoder](../harmonyos-references/capi-native-avcodec-videoencoder-h.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/NebnVuhxSVWHAQlRZVYOHA/zh-cn_image_0000002791725898.png?HW-CC-KV=V1&HW-CC-Date=20261119T014834Z&HW-CC-Expire=31536000000&HW-CC-Sign=114B13F5D50CCF9A956BBB3B2AF1A5CC7FC760C2EE90E7C9597120D01FF68A69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/0FJagOfbRVmyOWr4u45r2g/zh-cn_image_0000002821837485.png?HW-CC-KV=V1&HW-CC-Date=20261121T011033Z&HW-CC-Expire=31536000000&HW-CC-Sign=230CE3658EDA2D4327F38A011CBAB501E7132D4EB73A56106B840D06832A9206)
 
 ### 在CMake脚本中链接动态库
 

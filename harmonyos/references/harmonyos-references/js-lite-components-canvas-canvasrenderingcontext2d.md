@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: CanvasRenderingContext2D对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 画布组件 > CanvasRenderingContext2D对象
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:24+08:00
+scraped_at: 2026-11-21T09:14:25+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:2cc946b91251a050f548f0220af0d5d99e7f0d17f01ed191fffc20c007832ed5
+content_hash: sha256:3d7705b560035925bd55e26c8e8a381ef5df513eb7eab6d921dbe6363ddfe09e
 ---
 
 使用CanvasRenderingContext2D在canvas画布组件上进行绘制，绘制对象可以是矩形、文本。
@@ -38,7 +38,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/FzDt76YySh-ALMakSj-1gQ/zh-cn_image_0000002820527989.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=63873F8F9E2E83C551A3ECD029B8D678B3849F2BF466459B92FE67D11B66A219)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/8dlN9ESMRDGQwISSxZlObA/zh-cn_image_0000002821839627.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=211C403DB3291C2B77AD37F8EBB4D5C8C2CB4A0E9222A8176980FFD6963D9D9A)
 
 ## fillRect()
 
@@ -55,7 +55,7 @@ export default {
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/QcjeVQ65RLKBMTHoSsuDhg/zh-cn_image_0000002820407991.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D5C0E0317A21F689745BC16EF1B69D90C285CC2A704D6BF5EFD9F4B3EE73ECC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/poureZPPRJaHn6VJYn5z7Q/zh-cn_image_0000002821759629.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=462644D95F8EB950EE9386E98A66BC66783F3418491DD04123F692FF8F5D6483)
 
 ```javascript
 ctx.fillRect(20, 20, 200, 150);
@@ -73,7 +73,7 @@ ctx.fillRect(20, 20, 200, 150);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/k4NuWIKrScOeU_y_j56jJw/zh-cn_image_0000002791728010.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=C832895FDC6E386C9FD4EFAF612F45DC38908DCA534BEA5F5C8C3252914DE4DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/I-Z1lj4ETkqHOPxIcU4hgA/zh-cn_image_0000002793039696.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=70CB7A43A27267306C4C8F64ED1E91BD2CF9DAC62AE8CCB067B74E603B3AA338)
 
 ```javascript
 ctx.fillStyle = '#0000ff';
@@ -95,7 +95,7 @@ ctx.fillRect(20, 20, 150, 100);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/qQ1YCLxRSS60cPlm6jg-dQ/zh-cn_image_0000002791568038.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=62D1E0ACFD795C782B3BCE6D8897D8686F3750E62184B5CB7A6661F94782D105)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/8OvzMroXQFC-nsWmFX6udQ/zh-cn_image_0000002792879724.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FC94B564CEA91C4E311E8CFE9B6B634221A0E1B269A378C69DCD27D442B9A48)
 
 ```javascript
 ctx.strokeRect(30, 30, 200, 150);
@@ -115,7 +115,7 @@ ctx.strokeRect(30, 30, 200, 150);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/x-iCYMq7QfmM1xpC4hBYoA/zh-cn_image_0000002820527991.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=234BFAD216E643828A6766CA0F621E025407D91CFAF605FB42A50B90CC1626E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/2PZRlXY8Se6B0k59RTnpGQ/zh-cn_image_0000002821839629.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=0962777E87975C98ACCD8684D162517F5789D943A3EA4E5432B19491DC7D2836)
 
 ```javascript
 ctx.font = '35px sans-serif';
@@ -134,7 +134,7 @@ ctx.fillText("Hello World!", 20, 60);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/vAkMvJNIRoe5kMpMBE2D8w/zh-cn_image_0000002820407993.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4F116B43C715B2DC518497D53178F1917ECFD5225B38A63C7E924A10B137681)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/vmfoCON1SXGK6BhajQHvbw/zh-cn_image_0000002821759631.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=E52A8B09AE0DAFB0478855DEC6607AFD711A8EEF1DB84A42F3D0C5A637E92D06)
 
 ```javascript
 ctx.lineWidth = 5;
@@ -153,7 +153,7 @@ ctx.strokeRect(25, 25, 85, 105);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/1zNhbNVQRVWmaYoOegcSHA/zh-cn_image_0000002791728012.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A81B368D84B663484436EBEF27720B94EC04DBCB331F3891A19886FA0C08596)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/xIPH7jVVQZ-G2PiQFhjRGw/zh-cn_image_0000002793039698.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=84BFC32476E96204428992EEAF538249F88AEF431481E9141D8049140CB29526)
 
 ```javascript
 ctx.lineWidth = 10;
@@ -167,7 +167,7 @@ ctx.strokeRect(25, 25, 155, 105);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CncXywyiQ7uB7zZ6tii8Gg/zh-cn_image_0000002791568040.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=3ABB0F5290ACEFE466ACBEE9CDE0A13E8067E87BEC8A5C596F63A2138EAFD4A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/k9-gvWT8TuCYASBk1haUZA/zh-cn_image_0000002792879726.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=69E985E23EFCB51686782E3FDC2781DDFFF5ACD764DC8FF0AFEBA154939220D6)
 
 ```javascript
 ctx.moveTo(25, 25);
@@ -182,7 +182,7 @@ ctx.stroke();
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/8-UZraSRTd-Tp9aTgNLbXA/zh-cn_image_0000002820527993.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAFFB81A7C96F51BEBE50192831266F03A30739AA542127CC2EA728A400BAF31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/AnYMuZ6tQQmxEljfknj3AA/zh-cn_image_0000002821839631.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=464A0D8E02E3450126C5F174A53C934D2C8A2E30FCB6D835A34597DCFA7D5E0C)
 
 ```javascript
 ctx.beginPath();
@@ -206,7 +206,7 @@ ctx.stroke();
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/tPEI93FvSm6M0MzKFl55ZQ/zh-cn_image_0000002820407995.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A3BC999C7995B824079459E953F15187DFAB2D1D827520C6B530FD7CE5EB647)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Lnm6ib0oSyGUDIJlZexrsA/zh-cn_image_0000002821759633.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B047EFBC5730536DCBA44486100F41C6DD13D3B43F2BC152B36888E7D816621)
 
 ```javascript
 ctx.beginPath();
@@ -228,7 +228,7 @@ ctx.stroke();
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/kT7Gq7TJQyWDgxUXGMW-wQ/zh-cn_image_0000002791728014.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A2D09D2CB78A6D55E5D4DD32161CAFD9B0131CEA4518CB512275BBD4238A760)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/SyiYBcgnQIyTQUivobhQwQ/zh-cn_image_0000002793039700.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=00E1B728C7CDE30AE426FDEE67666D406AE6C1DC629F187E9205D13A0DB6F5B4)
 
 ```javascript
 ctx.beginPath();
@@ -243,7 +243,7 @@ ctx.stroke();
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/bqaPFWBsSzy82u49URNnhA/zh-cn_image_0000002791568042.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9B526E3F4094630A05C87624F652A5890B538C1DE0947D4A8144AB168E9741A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/A38DN36lQnmIwszIBKxyZg/zh-cn_image_0000002792879728.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=5480F692EF64028D06BF6CFFA7623F061AE2AF8A7E1287A6524818E80215B5B4)
 
 ```javascript
 ctx.beginPath();
@@ -266,7 +266,7 @@ ctx.stroke();
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/dGhJzF_XRFyFftNkloweLg/zh-cn_image_0000002820527995.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=78BC133B91F00239C55AD5A931E100697719F525D89CCD7F56D6E6910C2FD10C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/yFNCQ0knQluOqTtKGpRqUA/zh-cn_image_0000002821839633.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D87D407ECD9BA6F245B1A5398DE3E274740ED90D7340D20FB6DDBCF234A83E2)
 
 ```javascript
 ctx.font = '30px sans-serif';
@@ -285,7 +285,7 @@ ctx.fillText("Hello World", 20, 60);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/EEEJaK3CR0aIOA-Ps7EDMA/zh-cn_image_0000002820407997.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=8199C8C2E99BC327B3F9DD9A97386DF30ABDB0E274FC2DF5809E2F47E521AFA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/JMCVKld_SLuUnE1xQEJmDA/zh-cn_image_0000002821759635.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=27C4FF81F825EE063B38D74042C14E747684FAED006F7570EECD1112156B8A91)
 
 ```javascript
 ctx.strokeStyle = '#0000ff';
@@ -321,7 +321,7 @@ ctx.fillText('textAlign=right',140, 140);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/8w1_VzcJR2q5XsHGq2oWGg/zh-cn_image_0000002791728016.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F3570B9EEDC149ABEC3D6856D78B03FEF62CA701AF880565E72075513325D18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/XauZcd5FTGaOibwtMtq9sQ/zh-cn_image_0000002793039702.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=E13D5F547D21FE1C96C3EBB3E61A5455231BBC2B2C754D223970E7E58D477910)
 
 ```javascript
 ctx.beginPath();
@@ -344,7 +344,7 @@ ctx.stroke();
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/oydB_IPmRlW1BYcVAt3tLw/zh-cn_image_0000002791568044.png?HW-CC-KV=V1&HW-CC-Date=20261119T015124Z&HW-CC-Expire=31536000000&HW-CC-Sign=1390E3491B0B9A960E8E5DE472012E0A9ABA71B5A3E31B5E9B9DBEBCA1251F3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/X_JjEfeHSc2KlkkXpuaBAw/zh-cn_image_0000002792879730.png?HW-CC-KV=V1&HW-CC-Date=20261121T011425Z&HW-CC-Expire=31536000000&HW-CC-Sign=9394D5A0EDFFF9D88E7A307F41DFC84E4DEC72B05BF74E47C218FD8735C0298F)
 
 ```javascript
 ctx.rect(20, 20, 100, 100); // Create a 100*100 rectangle at (20, 20)

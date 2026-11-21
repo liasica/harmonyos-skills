@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-file-acce
 title: 应用文件访问(ArkTS)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用文件访问与管理 > 应用文件访问(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:25+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:4675b83e8a8e223863b78c6306c4eddfab323278f45bb05d3f230eef82485cd9
+scraped_at: 2026-11-21T09:11:20+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:765836433bd1317cd184d57828cbd63ad1f551536d27fad1e0bd65bf650e18b8
 ---
 
 应用需要对应用文件目录下的应用文件进行查看、创建、读写、删除、移动、复制、获取属性等访问操作，下文介绍具体方法。
@@ -54,16 +54,6 @@ content_hash: sha256:4675b83e8a8e223863b78c6306c4eddfab323278f45bb05d3f230eef824
 
 以下示例代码演示了如何新建一个文件并对其读写。
 
-```ts
-// pages/xxx.ets
-import { fileIo, ReadOptions } from '@kit.CoreFileKit';
-import { common } from '@kit.AbilityKit';
-import { buffer } from '@kit.ArkTS';
-
-// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-```
-
 ```typescript
 function createFile(context: common.UIAbilityContext): void {
   let filesDir = context.filesDir;
@@ -103,15 +93,6 @@ function createFile(context: common.UIAbilityContext): void {
 ### 读取文件内容并写入到另一个文件
 
 以下示例代码演示了如何从一个文件读写内容到另一个文件。
-
-```ts
-// pages/xxx.ets
-import { fileIo, ReadOptions, WriteOptions } from '@kit.CoreFileKit';
-import { common } from '@kit.AbilityKit';
-
-// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-```
 
 ```typescript
 function readWriteFile(context: common.UIAbilityContext): void {
@@ -171,15 +152,6 @@ function readWriteFile(context: common.UIAbilityContext): void {
 
 以下示例代码演示了如何使用流接口读取test.txt的文件内容并写入到destFile.txt文件中。
 
-```ts
-// pages/xxx.ets
-import { fileIo, ReadOptions } from '@kit.CoreFileKit';
-import { common } from '@kit.AbilityKit';
-
-// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-```
-
 ```typescript
 async function readWriteFileWithStream(context: common.UIAbilityContext): Promise<void> {
   let filesDir = context.filesDir;
@@ -234,14 +206,6 @@ async function readWriteFileWithStream(context: common.UIAbilityContext): Promis
 
 以下示例代码演示了如何查看文件列表。
 
-```ts
-import { fileIo, Filter, ListFileOptions } from '@kit.CoreFileKit';
-import { common } from '@kit.AbilityKit';
-
-// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-```
-
 ```typescript
 function getListFile(context: common.UIAbilityContext): void {
   let listFileOption: ListFileOptions = {
@@ -269,15 +233,6 @@ function getListFile(context: common.UIAbilityContext): void {
 ### 使用文件流
 
 以下示例代码演示了如何使用文件可读流，文件可写流。
-
-```ts
-// pages/xxx.ets
-import { fileIo } from '@kit.CoreFileKit';
-import { common } from '@kit.AbilityKit';
-
-// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-```
 
 ```typescript
 function copyFileWithReadable(context: common.UIAbilityContext): void {
@@ -351,15 +306,6 @@ function copyFileWithData(context: common.UIAbilityContext): void {
 ### 使用文件哈希流
 
 哈希流是一种数据传输和存储技术，可以将任意长度的数据转换为固定长度的哈希值来验证数据的完整性和一致性。以下代码演示了如何使用文件哈希处理接口（[ohos.file.hash](../harmonyos-references/js-apis-file-hash.md)）来处理文件哈希流。
-
-```ts
-// pages/xxx.ets
-import { fileIo, hash } from '@kit.CoreFileKit';
-import { common } from '@kit.AbilityKit';
-
-// 获取应用文件路径，请在组件内获取context
-let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-```
 
 ```typescript
 function hashFileWithStream(context: common.UIAbilityContext) {

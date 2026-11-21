@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 切换按钮 (Toggle)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 按钮与选择 > 切换按钮 (Toggle)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:41+08:00
+scraped_at: 2026-11-21T09:11:07+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:219d3511394cc47cc6790428a45cf1491b3e2d3e4c0b87dbfc98e05ca76d92b9
+content_hash: sha256:22595b803cf24895c0c289c5e49b695ad0d067abedd17b80995dfc2735bad309
 ---
 
 Toggle组件提供状态按钮样式、勾选框样式和开关样式，一般用于两种状态之间的切换。具体用法请参考[Toggle](../harmonyos-references/ts-basic-components-toggle.md)。
@@ -33,14 +33,14 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
   Toggle({ type: ToggleType.Checkbox, isOn: true }).id('toggle2') // 请开发者替换为实际的id
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/8Hl6kn1xSIyb2zWDWVsczA/zh-cn_image_0000002820405049.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=F58CB0EF322B074C33C57D926D4D75A7908986C02992583BAE7505F37A371B73)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Q4YyAec-TXmP25uY7_OaXQ/zh-cn_image_0000002792876748.png?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=655025A88CAB02194235FAB9CF1B1CA6253D3BF73A08CF51493AEF48DF04934E)
 
   ```typescript
   Toggle({ type: ToggleType.Switch, isOn: false }).id('toggle3') // 请开发者替换为实际的id
   Toggle({ type: ToggleType.Switch, isOn: true }).id('toggle4') // 请开发者替换为实际的id
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/-Cj9b-jTRjeaC4drCP0bcg/zh-cn_image_0000002791725070.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A28E7C0E74D5B7B3369F12EEC812383793B5C28A8F3F76CE7779E7523A546FA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/5stlU7P3QD-6pX63XZyaWw/zh-cn_image_0000002821836653.png?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE5779DBDF7B92939D876D02D1A606DA63E977C14076DE896452E07FB3578796)
 * 创建包含子组件的Toggle。
 
   当ToggleType为Button时，只能包含一个子组件，如果子组件有文本设置，则相应的文本内容会显示在按钮上。
@@ -59,7 +59,7 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
   }.width(100).id('toggle6') // 请开发者替换为实际的id
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/cdIS-AYFTyyEOYXeAObq6w/zh-cn_image_0000002791565098.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=712217763E3FCB971053D66C610B634E5E6FF898CD361C0132B6CDF1F1379126)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/eRT30KmNR7uN_WNXImV-rQ/zh-cn_image_0000002821756655.png?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=34BA8B33E44961F7EEEFA1F8CA609AAFEA0BC5EACD408085897E511B346EF47B)
 
 ## 自定义样式
 
@@ -82,7 +82,7 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
       // ···
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/JsQMVVjIQ5SQqbDvDklw0w/zh-cn_image_0000002820525051.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB149842564A30486F932ED547A6A14F299E4558EA73CC2A60492EFD614B0B48)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/-EVht0QuTyuGzh7bcGmerQ/zh-cn_image_0000002793036718.png?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2689C71E86CBA8ADB1555FFBC47C3745483B28ACF6CD6A7EC7715A5B72A2289)
 * 通过switchPointColor属性设置Switch类型的圆形滑块颜色，仅对type为ToggleType.Switch生效。
 
   ```typescript
@@ -94,7 +94,7 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
     // ···
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/XHpHBEMaQT2eHR7EXZbmyQ/zh-cn_image_0000002820405051.png?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=83D2C372531BE3AD6C4F0E8B4646E790D2D5F67DB45BDD71E29934C181C3349C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/xGfWRxaQRd6Ko6ceye40LA/zh-cn_image_0000002792876750.png?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0E5E1C4B89EFFA180D131B382BD21A04205B1BAA39C545C21D421CF69BDC0B9)
 
 ## 添加事件
 
@@ -163,4 +163,4 @@ export struct ToggleSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/I1Xa1QtCQO-Mj-z-Ec-8RQ/zh-cn_image_0000002791725072.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014650Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FBC3B7779BDB2465836EBA5B46A5FE6F93F9E2C77D6726737D5D95691030FC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/tbE7HTZzSFyTaEHNHHaedA/zh-cn_image_0000002821836655.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8A24CFB0E1B1A7BE2EDD5EB3F04E08850E7EBA44E5D79BFC33583CE04E09A45)

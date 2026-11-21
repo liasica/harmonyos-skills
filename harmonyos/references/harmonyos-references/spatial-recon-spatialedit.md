@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/spatial-r
 title: spatialEdit
 breadcrumb: API参考 > 图形 > Spatial Recon Kit（空间建模服务） > ArkTS API > spatialEdit
 category: harmonyos-references
-scraped_at: 2026-11-12T09:57:08+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:54537c5d7379e83cc6293aab1c0fdf363f266007a4fb17d4e97d69733e4719a8
+scraped_at: 2026-11-21T09:16:32+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:57065c35ee62aa38f0e6f395a59d59922f5f076086b93444016b17c6565d5499
 ---
 
 spatialEdit模块提供了编辑3DGS（3D Gaussian Splatting）模型的能力，支持选择、变换、上色和删除高斯点等操作。
@@ -797,6 +797,12 @@ function SaveToPLY(context: Context) : void {
 extract3DMainBody(pressPoint: Vec2): Promise<boolean>
 
 根据按压的点集提取3D主体,调用完成后，抽取结果会覆盖内存中的GSNode数据，使用Promise异步回调。
+
+仅支持单接口调用，不能和saveToPly、paint等其他Edit的接口搭配使用。
+
+依赖输入模型中的相机参数信息，目前仅支持GLB格式的模型文件。
+
+成功调用后会自动重新渲染模型，无需手动调用重绘制接口，否则可能会导致绘制失败。
 
 **系统能力：** SystemCapability.Graphics.SpatialEdit
 

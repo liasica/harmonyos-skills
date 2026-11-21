@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pixelmap-draw
 title: 图片绘制（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 图片绘制（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:45+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:75ebc55a65a67f04df520b3a2b4ed667f8b6784cc41a4cfa89ec9d511d2af39e
+scraped_at: 2026-11-21T09:12:11+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:69fb12fc08e60658e8193bb4d9797762ba6876e9d4ec9e1cc1802cb3737995d5
 ---
 
 位图是一种用于在内存中存储和表示图像的数据结构，它是一个未经过压缩的像素集合，而JPEG或PNG等图片是压缩格式的，两者并不相同。如果需要将JPEG或PNG绘制到屏幕上，需要先解码成位图格式，具体可参考[图片处理服务（Image Kit）](image-overview.md)图片解码相关章节。
@@ -78,6 +78,10 @@ content_hash: sha256:75ebc55a65a67f04df520b3a2b4ed667f8b6784cc41a4cfa89ec9d511d2
 
    其中采样选项对象（OH\_Drawing\_SamplingOptions）表示了从原始像素数据（即Bitmap）中采样以生成新的像素值的具体方式，具体可见[drawing\_sampling\_options.h](../harmonyos-references/capi-drawing-sampling-options-h.md)。
 
+   **注意** 
+
+   通过Canvas相关接口绘制PixelMap时，仅支持像素格式为PIXEL\_FORMAT\_RGB\_565、PIXEL\_FORMAT\_RGBA\_8888、PIXEL\_FORMAT\_BGRA\_8888、PIXEL\_FORMAT\_ALPHA\_8和PIXEL\_FORMAT\_RGBA\_F16的PixelMap。
+
    ```
    // PixelMap中像素的截取区域
    OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, 600, 400);
@@ -103,7 +107,7 @@ content_hash: sha256:75ebc55a65a67f04df520b3a2b4ed667f8b6784cc41a4cfa89ec9d511d2
 
    绘制效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/I0wlZCYES6yYUrr_0caO9g/zh-cn_image_0000002820406049.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014845Z&HW-CC-Expire=31536000000&HW-CC-Sign=5833C2457E4CCB690C76A539CBC576D0AD87F910F2D01EAA35037B1008A57D40)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/On42TaA8RZaDC2y2eIcfbg/zh-cn_image_0000002792877750.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011211Z&HW-CC-Expire=31536000000&HW-CC-Sign=6857CD7DC4AD4D268135EAE18A46A39940BE82205D78BB1691AE4D0A80A75E0A)
 
 ## 示例代码
 

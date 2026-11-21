@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configura
 title: app.json5配置文件
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用配置文件 > app.json5配置文件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:56+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-21T09:10:51+08:00
+doc_updated_at: 2026-11-20
 content_hash: sha256:20bd104d3b5580a1e05aa68aeab80fe69ac13668fd042d7ccc765df11d806955
 ---
 

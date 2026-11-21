@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 生物特征认证交易
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 生物特征绑定、认证与解绑 > 生物特征认证交易
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:07+08:00
+scraped_at: 2026-11-21T09:11:32+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:da264fd494ce06754bf7eea253b2347372bf9063c2e3cdcf25090c59b23ac268
+content_hash: sha256:13bfe732a47a5bb1bfa5290c80af97bd7f9b866ad7acc44e480e5e2d9793cfda
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:da264fd494ce06754bf7eea253b2347372bf9063c2e3cdcf25090c59b23
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/MweVNmohRGeg_McQz8mJCw/zh-cn_image_0000002791565736.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DD3889631BE7F5858706B3AB582FFFAEE85E686FE7E4FC896536FC4DB3AAEBF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/K4toLTk2QyyfniASItLBww/zh-cn_image_0000002821757297.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011132Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED04817EEB4053514756FF4989AB4D176EE4BEC943178B3D2C9D70211632008E)
 
 ## 接口说明
 
@@ -35,7 +35,7 @@ content_hash: sha256:da264fd494ce06754bf7eea253b2347372bf9063c2e3cdcf25090c59b23
 
 如图表示使用人脸进行交易认证对应的UI界面示例，当用户确认交易信息内容后，则会拉起系统人脸认证界面完成对应生物特征认证交易。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/v4nq7KKNQgWu6bk0GMEsCg/zh-cn_image_0000002820525689.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=740672C868F806A5F6DBB60ABE8C557218A038B99A9A4C05391F841310C2711C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/RTNIAPG1S6OTAb-JjGrAPw/zh-cn_image_0000002793037360.png?HW-CC-KV=V1&HW-CC-Date=20261121T011132Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF2F6B460D63A783A519A98CA29532E2BA9D88B54233A89034B7D50B64871EE3)
 
 ## 开发步骤
 

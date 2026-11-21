@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/distributed-p
 title: 播控特性简介
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 分布式媒体会话 > 使用投播组件 > 播控特性简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:35+08:00
+scraped_at: 2026-11-21T09:12:00+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:67c2128ad9626e7bd1ece3d4fae3b637ae5acb3d5b9e8c8979f2bb7cf8c7e068
+content_hash: sha256:d7dca55e0d8539e231c855d1f1e9d91c13804df6546f6b78228b7256bc3a73e0
 ---
 
 使用媒体播控，可以简单高效地将音视频投放到其他HarmonyOS设备上播放，如在手机上播放的音视频，可以投到PC/2in1设备上继续播放。
@@ -35,7 +35,7 @@ HarmonyOS提供了统一的应用内音视频投播功能设计，通过使用�
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/H_tel2LET02aySIuJL77SA/zh-cn_image_0000002791725924.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F3E8C4C9BD829ED7544450B178D79CD39523751BA4BDF440420701B07BC1C39)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/W37fDXfdTdqaEwDKSbwW3Q/zh-cn_image_0000002821837511.png?HW-CC-KV=V1&HW-CC-Date=20261121T011200Z&HW-CC-Expire=31536000000&HW-CC-Sign=6263C4F8B9FEB404ECC64AC8DBEA51E1C91F774D1C8354C0CC9B7D4F9C01268A)
 
 * **发现和连接设备**
 

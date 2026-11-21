@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建网格 (Grid/GridItem)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 创建网格 (Grid/GridItem)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:40+08:00
+scraped_at: 2026-11-21T09:11:06+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2506750b97268d1989f4a595a4fa86c3b683a8ab5fab1195b77f5d81dbe40895
+content_hash: sha256:ec88fff705b7bf7a4a22e0785d98d97a9bd1f55029af0bf72724202f458fe536
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ Grid组件为网格容器，其中容器内各条目对应一个GridItem组件�
 
 **图1** Grid与GridItem组件关系
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/4AXmk-uORwqaZd1mh3VFwA/zh-cn_image_0000002820404893.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AEC0CD892B8A5FAF9CB604BBA9D8C3D15F490C6D3026B5C51CA8CD5057EBE79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/zmxr7Z2FSua0q8_dqY7XLA/zh-cn_image_0000002792876594.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=F668665F7DAA2AFE798959DBDB7C460476373AD7264F2CCC958A9A7792DD28D9)
 
 **说明** 
 
@@ -34,7 +34,7 @@ Grid的子组件必须是GridItem组件。
 
 **图2** 网格布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/QH6iR4p5QSKoLOl6dWd6Ag/zh-cn_image_0000002791564922.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=C45DF9D7C4E11BAA1A550201849D43179DF9423BE15CAAD831B3534E6E559DF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/RoCSIQbUScywwpWqahYhHQ/zh-cn_image_0000002821756479.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EECEBB5438E7B285766D729682879762BCEE229587917571F78D6A50D4012B9)
 
 如果Grid组件设置了宽高属性，则其尺寸为设置值。如果没有设置宽高属性，Grid组件的尺寸默认适应其父组件的尺寸。
 
@@ -54,7 +54,7 @@ rowsTemplate和columnsTemplate属性值是一个由多个空格和'数字+fr'间
 
 **图3** 行列数量占比示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/D2aldQn5RUmC-3e2oiZKMw/zh-cn_image_0000002791724916.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=07DE979CD8046AD20C4453474FFA687C4A3DB6B13407A97BB0E33F48703DFD6B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/fqmiUXQWTQagamPw6j_1qQ/zh-cn_image_0000002821836499.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F36E18AD0B1CF00DC4A30D7BB070FD2D1957604744259F728C97EA2CC790DA2)
 
 如上图所示，构建的是一个三行三列的网格布局，其在垂直方向上分为三等份，每行占一份；在水平方向上分为四等份，第一列占一份，第二列占两份，第三列占一份。
 
@@ -78,13 +78,13 @@ Grid() {
 
 **图4** 不均匀网格布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/mA4L3A4dRxer8HA_Rfop4w/zh-cn_image_0000002791564944.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=4589FD95036D74630BE38C534E8BBEBA6E616BE47468A9E133B59463F1962797)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/4F88FdsMSYmRjb4f5KmmWQ/zh-cn_image_0000002821756501.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EF753536A5408A9C0A102457160E778CEAB0053C7C7675FAD6EF0CAE9F56C80)
 
 例如计算器的按键布局就是常见的不均匀网格布局场景。如下图，计算器中的按键“0”和“=”，按键“0”横跨第一、二两列，按键“=”横跨第六、七两行。使用Grid构建的网格布局，其行列标号从0开始，依次编号。
 
 **图5** 计算器
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Oxi-slkuR2m1EGcuW3i6Kg/zh-cn_image_0000002820524897.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=F47672DE3753BDB47D63DAE0C26A5458910C24D94540A567EF9C5BF21D4577AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/LszDExNmT2Od-u8Ui7voBw/zh-cn_image_0000002793036564.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=8753F7DE08EBFB1DB984BF84889B0D5B32755867BB00312CA9FC28532CD3EB20)
 
 在网格中，可以通过onGetRectByIndex返回的[rowStart,columnStart,rowSpan,columnSpan]来实现跨行跨列布局，其中rowStart和columnStart属性表示指定当前元素起始行号和起始列号，rowSpan和columnSpan属性表示指定当前元素的占用行数和占用列数。
 
@@ -118,7 +118,7 @@ Grid(undefined, this.layoutOptions) {
 
 **图6** 主轴方向示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/8oGUZCMSQYWt7SYWtN8Hrg/zh-cn_image_0000002820404895.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=E25EC6284AA9738633231CAEDF09B680A35AAF01F2367C17F843959942317EBD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/mtPeDZelQXid9c57Wrx3dw/zh-cn_image_0000002792876596.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBD2F7468AAA1F5AFEF42487D0F38C200BE391243C99DBB974CAAADF40E024CD)
 
 当前layoutDirection设置为Row时，先从左到右排列，排满一行再排下一行。当前layoutDirection设置为Column时，先从上到下排列，排满一列再排下一列，如上图所示。此时，将maxCount属性设为3，表示主轴方向上最大显示的网格单元数量为3。
 
@@ -142,7 +142,7 @@ Grid() {
 
 **图7** 通用办公服务
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/IRcHh4j1RiSEhilh35tEZA/zh-cn_image_0000002791724918.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=1076507BF2A12DDF8399D4AD2F14668079C66D41D8ABAE35EC37F88E41F807AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/SykLAh5mRSafTg_fsXlecQ/zh-cn_image_0000002821836501.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=6233CF7A278ADFF08B8D9D15FE9D3B2A578981890D6D605EABADB68A7D622A2D)
 
 Grid组件可以通过二维布局的方式显示一组GridItem子组件。
 
@@ -224,7 +224,7 @@ export struct DataInGrid {
 
 **图8** 网格的行列间距
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/4_vE2gHPTQeq6vvh1JkZZQ/zh-cn_image_0000002791564946.png?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=F90004C91CAD239BAB6D42936D1C06626DE6732D552A21D5784E1B726841C379)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/4lCOGjv0RWu_4Bw2hcasXw/zh-cn_image_0000002821756503.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B463B15E8F41E0B6C204DE24BCFED5305968A7F0ADD7BBC41DD6971AA7076A4)
 
 通过Grid的[rowsGap](../harmonyos-references/ts-container-grid.md#rowsgap)和[columnsGap](../harmonyos-references/ts-container-grid.md#columnsgap)可以设置网格布局的行列间距。在图5所示的计算器中，行间距为15vp，列间距为10vp。
 
@@ -242,7 +242,7 @@ Grid() {
 
 **图9** 横向可滚动网格布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/k_63Ea3sSsWzIJMoX2wUCQ/zh-cn_image_0000002820524899.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE6B70511DFEF26AEDD062B32F2BCD96AD5FDE488D5E6BA2DC8165C4FC4AA835)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/GGsdIFlJQjGmJSB83JYpeg/zh-cn_image_0000002793036566.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA1D1E775CA1008D48C1FC849B09B1C227B5618986843068680ABB02A3DF9F65)
 
 如果设置的是columnsTemplate，Grid的滚动方向为垂直方向；如果设置的是rowsTemplate，Grid的滚动方向为水平方向。
 
@@ -291,7 +291,7 @@ export struct ScrollableGrid {
 
 **图10** 日历翻页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/4OjsXyzFSWSQM_s80AqjRg/zh-cn_image_0000002820404897.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BCBBB208F79D522792AC49B78F438A0174F121B0F5922647BE1A4F8873AF062)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/gPht46bhSSKNxaVejFOwiw/zh-cn_image_0000002792876598.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC522098D53CCAA7E7D2330F1A50540168F02697329B458A45E4A92FD71437CC)
 
 Grid组件初始化时，可以绑定一个[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)对象，用于进行滚动控制，例如通过Scroller对象的[scrollPage](../harmonyos-references/ts-container-scroll.md#scrollpage9)方法进行翻页。
 
@@ -353,7 +353,7 @@ Column({ space: 5 }){
 
 **图11** 网格的外置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/idra13u_TvyIMBLNv2rREQ/zh-cn_image_0000002791724920.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=B72762305FFC3F518747D5EFE096E2725DE62A10DFBAC7AB3B346B1030ABC0A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/QsVFQQvlTQulzx5UfBa76Q/zh-cn_image_0000002821836503.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD571B6BB2651225897301AC36A20B7225E39CDC69520D413FCF50B6EA23663D)
 
 **说明** 
 
@@ -366,7 +366,7 @@ Column({ space: 5 }){
 
 **Grid手指滑动多选示例效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/5byXZm3tRQeQPg6gHTriGQ/zh-cn_image_0000002791564948.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014649Z&HW-CC-Expire=31536000000&HW-CC-Sign=23E807295853A8236DEE4D92EF094D5962C6049991FDE273B675C7B7ED617CBA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/UcW2CMfASMqi3uDIvbEF3A/zh-cn_image_0000002821756505.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=9835D374E3CD16566F29B7B466CF2AF4180970D8730F211D8EE70B9F69889A65)
 
 ### 设置编辑模式
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-
 title: liveViewManager
 breadcrumb: API参考 > 应用服务 > Live View Kit（实况窗服务） > ArkTS API > liveViewManager
 category: harmonyos-references
-scraped_at: 2026-11-19T09:54:38+08:00
+scraped_at: 2026-11-21T09:16:45+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:b6d13e867eb303443e9021c67e92fef85ce00e900c730f8dd6bf64df4a2292ab
+content_hash: sha256:a2f62d2819b7c838226fdd76ef9a692d1302f338662e120b73fc30d6876fd615
 ---
 
 ## 模块概述
@@ -1159,7 +1159,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **辅助区元素对应的API字段：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Ks3zXFdYR4CZE9JWjeFX2g/zh-cn_image_0000002791568244.png?HW-CC-KV=V1&HW-CC-Date=20261119T015436Z&HW-CC-Expire=31536000000&HW-CC-Sign=02DFB0BA3E5351D3FA86285D704FC558C4B9D7D9AF1F59C884A29FC3B901B3A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/XrAGsIL4Tvm5U_hWU0hB2Q/zh-cn_image_0000002792879932.png?HW-CC-KV=V1&HW-CC-Date=20261121T011644Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB6D77862BCD2B18ADD06CF3024462C2E5A98BAE82A036E4C571CDC7F3FD94CA)
 
 * 1 实况卡片辅助区类型，对应type字段:
   + 当辅助区类型为ExtensionType.EXTENSION\_TYPE\_COMMON\_TEXT时，辅助区显示普通文本，使用API字段text传入文本内容。
@@ -1306,7 +1306,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **卡片元素对应的API字段：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/N7XxSK0BRvCJQ-b5hWjhYw/zh-cn_image_0000002820528197.png?HW-CC-KV=V1&HW-CC-Date=20261119T015436Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A9BAE8E85BE8AC67F3AF8173E9905400EBF37FCF6E8B6BAE7EF9CAE7528BCED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/WeGRzjJyTsGgWUsEFblEuA/zh-cn_image_0000002821839837.png?HW-CC-KV=V1&HW-CC-Date=20261121T011644Z&HW-CC-Expire=31536000000&HW-CC-Sign=99A068AEF75F5EAB1D52A7470038FF1E12B3919156A6B6CD4BE58A1FFA6CA796)
 
 * 1 进度百分比，对应progress字段。
 * 2 进度条进度的颜色，对应color字段。
@@ -1338,7 +1338,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **卡片元素对应的API字段：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/yNWtIdHMTPunBAujf9Al0A/zh-cn_image_0000002820408199.png?HW-CC-KV=V1&HW-CC-Date=20261119T015436Z&HW-CC-Expire=31536000000&HW-CC-Sign=7215C289714C258979142291153D4F2C20470F621AF4AA3432AF7CB0E6C8562A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/ywoESMzoR8uKzSLDBp_0_A/zh-cn_image_0000002821759839.png?HW-CC-KV=V1&HW-CC-Date=20261121T011644Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B7CD316D8309561F46CAF27C54DD06DB8F6B52C927750092FB2A311CFB5D371)
 
 * 1 扩展区标题，对应title字段。
 * 2 扩展区内容，对应content字段。
@@ -1366,7 +1366,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **卡片元素对应的API字段：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/XP0RpaXgRsCR1-IHBS_h1Q/zh-cn_image_0000002791728218.png?HW-CC-KV=V1&HW-CC-Date=20261119T015436Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF1A88CEF42985BAD31A6F3938F47CF5699F0F12E9588D6E91C8ED36F7C32C75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/i9zMMuwsS1eQKq3BaTskqA/zh-cn_image_0000002793039910.png?HW-CC-KV=V1&HW-CC-Date=20261121T011644Z&HW-CC-Expire=31536000000&HW-CC-Sign=991D9C13E0D856692542698DC11550191549C062236F534DE82BD78D5373C6BC)
 
 * 1 左侧文本标题，对应firstTitle字段。
 * 2 左侧文本内容，对应firstContent字段。
@@ -1408,7 +1408,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **卡片元素对应的API字段：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/XdTCid6mRuu9msSxqwkfQw/zh-cn_image_0000002791568246.png?HW-CC-KV=V1&HW-CC-Date=20261119T015436Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C6754783C2A480321EDDF97DB0F1B52F8F4B1F1CE1E57814145019A31AB6103)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ss6DMuSvTSeCqP01v7Qh-g/zh-cn_image_0000002792879934.png?HW-CC-KV=V1&HW-CC-Date=20261121T011644Z&HW-CC-Expire=31536000000&HW-CC-Sign=24D603FBC8365A80E84A4662483749F1684D72CEA6AEC811765759283EB0A72E)
 
 * 1 左侧主队名称，对应hostName字段。
 * 2 左侧主队图标，对应hostIcon字段。
@@ -1446,7 +1446,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **卡片元素对应的API字段：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/t4m7ZnEGSEmCNof4FW7hQA/zh-cn_image_0000002820528199.png?HW-CC-KV=V1&HW-CC-Date=20261119T015436Z&HW-CC-Expire=31536000000&HW-CC-Sign=699C6271044E05DE0BFAA88E38D5DBC197B26174784B4D0C85A2C7C3B0331B4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/WAFzxM0-Rz6KEt-Vs-MA1A/zh-cn_image_0000002821839839.png?HW-CC-KV=V1&HW-CC-Date=20261121T011644Z&HW-CC-Expire=31536000000&HW-CC-Sign=14E97DA6111AEA15EA57B45C4C95D60CE32F08E349689E43682991E047273041)
 
 * 1 当前导航方向，对应currentNavigationIcon字段。
 * 2 导航方向的箭头集合图片，对应navigationIcons字段。
@@ -1489,7 +1489,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **胶囊元素对应的API字段：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/6rKzHrIuRRCnCKA72ptAtQ/zh-cn_image_0000002820408201.png?HW-CC-KV=V1&HW-CC-Date=20261119T015436Z&HW-CC-Expire=31536000000&HW-CC-Sign=417DB81645EA3D8FF4275CC9CD4665DDF5E55630BDE93CDDE2EAABF547CA2B12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/GIh7lilxTaG8aNKygT6Seg/zh-cn_image_0000002821759841.png?HW-CC-KV=V1&HW-CC-Date=20261121T011644Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAC349FC350CAA1E2019FA24F06DB31E25CC0DA8A057B2BA38F017E585C205F8)
 
 * 1 实况胶囊类型，对应type字段。
 * 2 实况胶囊的图标，对应icon字段。
@@ -1521,7 +1521,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **胶囊元素对应的API字段：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/QQkwiR--RkqGAHaiXjn0Nw/zh-cn_image_0000002791728220.png?HW-CC-KV=V1&HW-CC-Date=20261119T015436Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2A9B956400F22A31B05A7917C5D7976E32A931A1689B506A3B038146670C203)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Bn_0qXo2QMSu_IKljN1ZAw/zh-cn_image_0000002793039912.png?HW-CC-KV=V1&HW-CC-Date=20261121T011644Z&HW-CC-Expire=31536000000&HW-CC-Sign=15ED53E3B5C19FA6CD5A445F2D39AB12FEA05359186DE972A4354313FE5FEB00)
 
 * 1 实况胶囊主文本，对应title字段。
 * 2 实况胶囊副文本，对应content字段。
@@ -1545,7 +1545,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **胶囊元素对应的API字段：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/2VTA9j0PS4qJzPPjI1XLZA/zh-cn_image_0000002791568248.png?HW-CC-KV=V1&HW-CC-Date=20261119T015436Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AF614B91BA62A003F94DFD5DF62666F8F9673530DE83D528779341333AADF7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/9Arz99bPQAybc-6QiKAXFQ/zh-cn_image_0000002792879936.png?HW-CC-KV=V1&HW-CC-Date=20261121T011644Z&HW-CC-Expire=31536000000&HW-CC-Sign=B652AB37137BDD6FFE71E8476F87F4890473FD66643355B6915FE492379EB340)
 
 * 1 实况胶囊副文本，对应content字段。
 * 2 实况胶囊计时器初始值，对应time字段。计时器正计时或倒计时，由isCountdown字段控制。计时器是否暂停，由isPaused字段控制。
@@ -1571,7 +1571,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **胶囊元素对应的API字段：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/nTmChMVvTPOEHFU07m3oNA/zh-cn_image_0000002820528201.png?HW-CC-KV=V1&HW-CC-Date=20261119T015436Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5250B6DB248E27543FBEA473854FC0E8BEA2CEEAF7BD5ABCC71E7A89AA07173)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/GfO33raxRqqgdP4X4ffNbA/zh-cn_image_0000002821839841.png?HW-CC-KV=V1&HW-CC-Date=20261121T011644Z&HW-CC-Expire=31536000000&HW-CC-Sign=64B2C6B734D8FE577FD32BC5371BE335BC2DE7DE2A28B68D92B277A329C0A6A1)
 
 * 1 进度值显示数值占比或百分比，由indeterminate字段控制：
   + indeterminate为false：展示数值占比，格式为x/y（x对应progress字段，y对应max字段）。
@@ -1599,7 +1599,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **外屏元素对应的API字段：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/q7bxwmOeSuSt-krIsAY6hw/zh-cn_image_0000002820408203.png?HW-CC-KV=V1&HW-CC-Date=20261119T015436Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB715602CC12D4FF93020F567B8932F69E00673915408C99F91D62CE26EC8DB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Gkrvn-QgTEu65TAKD5JyxQ/zh-cn_image_0000002821759843.png?HW-CC-KV=V1&HW-CC-Date=20261121T011644Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFC16A62EA29A64421115EE1445733CE3E6BD249E96EABAF0BFBD29BB8F86B69)
 
 * 1 外屏标题，对应title字段。
 * 2 外屏内容，对应content字段。

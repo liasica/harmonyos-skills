@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-permis
 title: 开放数据和权限总览
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发 > Phone/Tablet应用开发 > 开放数据类型 > 开放数据和权限总览
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:59+08:00
+scraped_at: 2026-11-21T09:12:25+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:05796dac98eb92c0d66b7c5108a91de1f04ac51bbcbc67fa788062cda6af2aa5
+content_hash: sha256:4f770f34c87e44e0daf0e1ebe1151448677eead09c7cb10fc3e6b7beef1a8b41
 ---
 
 ## 开放数据总览
 
-当前提供如下Health Service Kit数据，开发者可申请对应数据权限进行应用开发。开放等级中，![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/yyjuqCJPSXCsLKeDGGI7tw/zh-cn_image_0000002791726344.png?HW-CC-KV=V1&HW-CC-Date=20261119T014858Z&HW-CC-Expire=31536000000&HW-CC-Sign=B868D1336A35B9C568C6D43BCF25A61D6A043E963F33CF22ADBD77E96669768C)表示该数据权限为高阶数据，暂不对个人开发者开放。如需使用，请使用企业账号重新注册并申请权限；![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/z6QkJVvCRQGA4Lc3xo-m_g/zh-cn_image_0000002791566372.png?HW-CC-KV=V1&HW-CC-Date=20261119T014858Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F91C2CC06DA7757D1B0B84DFA5A978B52D9B1CE1C1421F7886F44ABEC571815)表示该数据权限为基础数据，个人及企业开发者均可申请查询/使用。
+当前提供如下Health Service Kit数据，开发者可申请对应数据权限进行应用开发。开放等级中，![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/sdBqONQMS9aA30r6vYEAOw/zh-cn_image_0000002821837931.png?HW-CC-KV=V1&HW-CC-Date=20261121T011057Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9C8EF945EFECBA1170C7D7A22B4286A7EB392B3698F80111664E9E5F6AEEC82)表示该数据权限为高阶数据，暂不对个人开发者开放。如需使用，请使用企业账号重新注册并申请权限；![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/nQrVKJxNRVyvdoE9I36wRQ/zh-cn_image_0000002821757933.png?HW-CC-KV=V1&HW-CC-Date=20261121T011057Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C9597D7CC0F91292C3E09C2182CF7714DBC267E9B1B80C1ECF2A18DB0917C16)表示该数据权限为基础数据，个人及企业开发者均可申请查询/使用。
 
 **说明** 
 

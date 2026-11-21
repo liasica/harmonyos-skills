@@ -1,6 +1,6 @@
 # API 参考（harmonyos-references）
 
-共 4854 篇文档。
+共 4849 篇文档。
 
 - [ABR_CameraData](_a_b_r___camera_data.md)
 - [ABR_Vector3](_a_b_r___vector3.md)
@@ -595,8 +595,6 @@
 - [头文件](arkweb-headerfile.md)
 - [模块](arkweb-module.md)
 - [结构体](arkweb-struct.md)
-- [错误码](assessment-arkts-errcode.md)
-- [ArkTS API](assessment-arkts.md)
 - [Asset Store Kit（关键资产存储服务）](asset-store-api.md)
 - [错误码](asset-store-arkts-errcode.md)
 - [ArkTS API](asset-store-arkts.md)
@@ -615,7 +613,6 @@
 - [模块](audio-module.md)
 - [multimedia](audio-multimedia.md)
 - [结构体](audio-struct.md)
-- [Automatic Scene Configuration Kit（场景配置服务）](automatic-scene-configuration-api.md)
 - [AVCodec Kit（音视频编解码服务）](avcodec-api.md)
 - [已停止维护的接口](avcodec-arkts-dep.md)
 - [C API](avcodec-c.md)
@@ -2592,7 +2589,6 @@
 - [ArkTS API错误码](errorcode-appgallery.md)
 - [AR Engine错误码](errorcode-ar-engine.md)
 - [编译错误码](errorcode-arkui-compile.md)
-- [评估管理错误码](errorcode-assessment.md)
 - [关键资产存储服务错误码](errorcode-asset.md)
 - [动态属性设置错误码](errorcode-attributemodifier.md)
 - [Audio错误码](errorcode-audio.md)
@@ -3209,7 +3205,6 @@
 - [@ohos.security.CryptoExtensionAbility (密钥扩展能力)](js-apis-cryptoextensionability.md)
 - [@ohos.security.cryptoFramework (加解密算法库框架)](js-apis-cryptoframework.md)
 - [@ohos.curves (插值计算)](js-apis-curve.md)
-- [@ohos.customization.assessment (评估管理)](js-apis-customization-assessment.md)
 - [@ohos.customization.customConfig (定制配置)](js-apis-customization-customconfig.md)
 - [@ohos.data.dataAbility (DataAbility谓词)](js-apis-data-ability.md)
 - [@ohos.data.cloudData (端云服务)](js-apis-data-clouddata.md)

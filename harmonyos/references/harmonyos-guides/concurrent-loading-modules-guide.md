@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/concurrent-lo
 title: 业务模块并发加载场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > 业务模块并发加载场景
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:04+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:9e0c90c0423bfd4b99fd72e088275f345bd841312f2a28c1501a16ccde4353fc
+scraped_at: 2026-11-21T09:10:58+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:b39f341e9183c262408726a404d7cb96b6e0f3286cc8d408b36be37f624b4a2e
 ---
 
 在应用启动时，多个业务模块需要加载，例如地图应用中的定位、打车、导航等模块。如果全部在UI主线程初始化，会严重影响应用冷启动时间。此时，应在不同子线程中并行加载这些模块，以降低启动耗时。
@@ -133,10 +133,14 @@ content_hash: sha256:9e0c90c0423bfd4b99fd72e088275f345bd841312f2a28c1501a16ccde4
      aboutToAppear(): void {
        taskpool.execute(initCalculator).then((ret) => {
          this.calc = ret as Calculator;
-       })
+       }).catch((e: BusinessError) => {
+         console.error(`taskpool execute initCalculator error, code: ${e.code}, message is: ${e.message}`);
+       });
        taskpool.execute(initTimerSdk).then((ret) => {
          this.timer = ret as TimerSdk;
-       })
+       }).catch((e: BusinessError) => {
+         console.error(`taskpool execute initTimerSdk error, code: ${e.code}, message is: ${e.message}`);
+       });
      }
 
      build() {

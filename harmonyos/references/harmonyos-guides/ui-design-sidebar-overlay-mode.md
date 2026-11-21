@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-sid
 title: 设置overlay模式的侧边栏
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 侧边栏样式 > 设置overlay模式的侧边栏
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:59+08:00
+scraped_at: 2026-11-21T09:11:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a6f077f7db2e177b37d7655bf376731bcc3cbbcf6eb822be9a29d283f3d98071
+content_hash: sha256:a1dfb201e2ce13a3222f619d57995a57d7e4bd08608500f1e3a5872e6a3a552c
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:a6f077f7db2e177b37d7655bf376731bcc3cbbcf6eb822be9a29d283f3d
 
 [HdsSideBar (侧边栏)](../harmonyos-references/ui-design-hdssidebar.md)提供可以显示和隐藏的侧边栏容器，通过子组件定义侧边栏和内容区，第一个子组件表示侧边栏，第二个子组件表示内容区，通过设置[sideBarContainerType](../harmonyos-references/ts-container-sidebarcontainer.md#sidebarcontainertype枚举说明)的值为SideBarContainerType.Overlay，使得当前HdsSideBar为悬浮样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/QKngj6Z-SFeNNZCj09zAsA/zh-cn_image_0000002791725642.png?HW-CC-KV=V1&HW-CC-Date=20261119T014708Z&HW-CC-Expire=31536000000&HW-CC-Sign=538A99E289BAC1807D94240F19F267D603E1A561FEED6E0CFC678A69FDDF9C94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/pMy6IyrUSQuCujz8jBcDJg/zh-cn_image_0000002821837229.png?HW-CC-KV=V1&HW-CC-Date=20261121T011125Z&HW-CC-Expire=31536000000&HW-CC-Sign=F044903464483EE775D7C5037491AF8597285F80B2B8FE79AC6B411B9673D7B4)
 
 ## 开发步骤
 
@@ -27,7 +27,7 @@ content_hash: sha256:a6f077f7db2e177b37d7655bf376731bcc3cbbcf6eb822be9a29d283f3d
 
    将图片资源，放到entry/src/main/resources/base/media下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/8ebKcq5DS2Co-h8Bw-Vt7Q/zh-cn_image_0000002791565670.png?HW-CC-KV=V1&HW-CC-Date=20261119T014708Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A1BF5231897BADAEBDDA43C2822AFD924C1FAC21699CE7D69EF9FA51A356758)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ij5jVVYNRiS7s1kZadeimg/zh-cn_image_0000002821757231.png?HW-CC-KV=V1&HW-CC-Date=20261121T011125Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1465DCFC99F587B8C025340AE86B26FCDA8ED1227FF4B5B7A5628657E928177)
 3. 创建HdsSideBar侧边栏组件，设置展开模式为overlay。
 
    ```typescript

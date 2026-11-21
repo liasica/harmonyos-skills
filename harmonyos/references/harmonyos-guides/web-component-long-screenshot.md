@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component
 title: Web组件长截图
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > Web组件长截图
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:53+08:00
+scraped_at: 2026-11-21T09:11:19+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:6aa1b5afabe28eb71a1e455df18e092f5248a6662dafa44c759f898fc8a3ea4d
+content_hash: sha256:54d0769a5810860c735033c07863dda28a5522311f70e6207328164da9625dc9
 ---
 
 ## 场景描述
@@ -16,7 +16,7 @@ Web组件的长截图功能可以对网页内容进行截图，旨在为用户�
 
 点击“一键截图”按钮即可完成整个网页的长截图，并可将截图保存至相册。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/34l5hFgTRDqPfdzE5L0n0w/zh-cn_image_0000002820405475.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=85CC615FDE7A94171A4A0BFB550BC172A8299447EC9BCFECDCF8F93DD3D78FA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/62l9AyuxR7C-wSeq5G-RnA/zh-cn_image_0000002792877176.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=435B633D7F0D8F3BAA80F0F4CDA846684900A0A396704EE27337E4EDB74ECA33)
 
 ## 功能实现
 

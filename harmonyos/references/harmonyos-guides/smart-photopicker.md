@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/smart-photopi
 title: 使用PhotoPicker推荐图片
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 使用PhotoPicker推荐图片
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:42+08:00
+scraped_at: 2026-11-21T09:12:07+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b56befcff7df1cb5c2a338e1921b40ec3a6baa988ec24de2a317f80895e4050c
+content_hash: sha256:135507eec646a630708ac85af177f6357abe9909dee6c634292e0e4325e7d4d9
 ---
 
 应用在调用PhotoPicker接口时，如果配置了PhotoPicker图片推荐参数，当设备中有满足图片推荐参数的图片，且设备中的图片已经分析完成时，PhotoPicker界面除了展示全量的图片外，还会展示符合条件的推荐图片供用户参考选择，从而缩短用户筛选图片的时间。
@@ -14,14 +14,14 @@ content_hash: sha256:b56befcff7df1cb5c2a338e1921b40ec3a6baa988ec24de2a317f80895e
 
   以指定图片类型为二维码为例，PhotoPicker界面上将出现“二维码”的Tab页，展示图库中的二维码图片。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/cmjDdY2RRgOdOcmWaKnfeQ/zh-cn_image_0000002791566034.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=6359B8A9E3C5D98BC614F8A56E93ABF6195CBB039FBC42552BBEE6C66BBCFA34)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Xo00zOZ1QEa2YcX8hXBhag/zh-cn_image_0000002821757595.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011041Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1CF5BB7A0B7775197275209BB2B72B04DA5151135FDD907798FA7A220A90B0E)
 * 在图文编辑时选择图片，系统可以根据应用传入的文本信息，提取出时间、地点、事物或活动，并根据提取的信息，推荐对应的图片展示在PhotoPicker中。
 
   举例说明，如设置的推荐参数文本是“国庆节，带着女儿去了上海野生动物园，看到了凶猛的大象，漂亮的火烈鸟，还有她心心念念的大熊猫，小家伙可开心了。”
 
   而且手机中有相应的图片，图片分析完成时，会在“推荐”的Tab页中展示出时间是国庆节，地点是上海野生动物园的大熊猫、火烈鸟、大象的图片。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/Itgm3voTRF2O-DgqKI88sw/zh-cn_image_0000002820525987.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7C2ACB9AD483A6F5A9CA24797D7017A397E7819ACF7027C5369E9A9243F15B9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/cGTocDeOTgGNDlDypd4Ksw/zh-cn_image_0000002793037658.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011041Z&HW-CC-Expire=31536000000&HW-CC-Sign=08F00DD6DE7AEAFE5FB0C0C897716463E21E08FE9856C8E1A44B07FCE0A4206B)
 
 ## 约束与限制
 

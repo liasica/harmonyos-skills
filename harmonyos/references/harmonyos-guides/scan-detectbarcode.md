@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-detectba
 title: 识别本地图片
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 图像识码 > 识别本地图片
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:42+08:00
+scraped_at: 2026-11-21T09:12:08+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c54a16bf5c205e8c223fb50ee3a6de0b4016ebe1a519b3e2acbadb1d7e88c828
+content_hash: sha256:ef6dcdcc45ed2d0f7c490067695155ceb01d4d4cc9fccf9fbca1baab2f4e25c0
 ---
 
 图片识码能力支持对图库中的码图进行扫描识别，并获取信息。
@@ -16,7 +16,7 @@ content_hash: sha256:c54a16bf5c205e8c223fb50ee3a6de0b4016ebe1a519b3e2acbadb1d7e8
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/qAZ-LrVAR_uapEC8CvMZnA/zh-cn_image_0000002820525993.png?HW-CC-KV=V1&HW-CC-Date=20261119T014842Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C9F8DC8A8D00303E063234D7012E9E563265BB03B048483DD9884CE8DF8820E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/oaPGYyrmR9-xRZ_7eJnPMQ/zh-cn_image_0000002793037664.png?HW-CC-KV=V1&HW-CC-Date=20261121T011041Z&HW-CC-Expire=31536000000&HW-CC-Sign=388736368636CB8AA4EE48740583FAD601E49D4C60175FC303557A444A9218C2)
 
 1. 用户向开发者的应用发起图片识码请求。
 2. 应用通过调用Scan Kit的decode()接口启动图片识码。

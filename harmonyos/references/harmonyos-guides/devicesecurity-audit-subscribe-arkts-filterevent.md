@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 订阅通知类事件
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 多客户端订阅场景 > 订阅通知类事件
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:07+08:00
+scraped_at: 2026-11-21T09:11:33+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c8494477a137e1b42031674469045ea7f4daa3fd725072ae626afa69b7bc115b
+content_hash: sha256:abeffe5ae4586d5ab10f1e05f493fee88bcd93476dbc590bffbb9e84a2f1492a
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:c8494477a137e1b42031674469045ea7f4daa3fd725072ae626afa69b7b
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/B2_7UCU_RcyqfYvcEAH2Ng/zh-cn_image_0000002820405691.png?HW-CC-KV=V1&HW-CC-Date=20261119T014807Z&HW-CC-Expire=31536000000&HW-CC-Sign=F324E429550B5FAF48000D52C24C4DA2D8C71D17F5B6FDC2AA1909B53E40413E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/c_UWCoqFSSWn1s85F_DZqA/zh-cn_image_0000002792877392.png?HW-CC-KV=V1&HW-CC-Date=20261121T011007Z&HW-CC-Expire=31536000000&HW-CC-Sign=A05C915BD8C6BB351897FD5718A5C4A05BB4C363ED6E528316262ADED3BF3548)
 
 **流程说明：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotati
 title: 相机旋转角度的术语
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 相机旋转 > 相机旋转角度的术语
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:37+08:00
+scraped_at: 2026-11-21T09:12:02+08:00
 doc_updated_at: 2026-06-16
-content_hash: sha256:c597945818b58cfa898e89ba09c6f36bd688caa58c0562ef660b40ca23caa7a8
+content_hash: sha256:301b6762fa0a2b252d81c912d67121baf60fdeef746e7c1acac5de866503adc6
 ---
 
 在适配相机旋转角度中涉及设备方向、镜头角度、屏幕显示角度等多个术语，开发者可以了解相关概念，帮助理解框架的运作机制。
@@ -14,13 +14,13 @@ content_hash: sha256:c597945818b58cfa898e89ba09c6f36bd688caa58c0562ef660b40ca23c
 
 **设备自然方向**指设备默认的使用方向，以手机为例，如图所示，手机的自然方向为竖屏且充电口向下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/JLBICRuuSIW51LO-HQqmQQ/zh-cn_image_0000002791565980.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=8ED0D620C80854760C95D43E76FFE60ABAD65CD1886FD1813D896CC6CFC63359)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Ndxsx_jOQq6hbcbG1tQRJQ/zh-cn_image_0000002821757541.png?HW-CC-KV=V1&HW-CC-Date=20261121T011201Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D040DE12AE49E3F06B3EBE4C13CF44B14C744010DA3412D4D6F89B518306FAB)
 
 ## 屏幕显示方向
 
 **屏幕显示方向**指当前用户视角下，设备正确的显示方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/kpIogJKiQK66IJNZnCNxog/zh-cn_image_0000002820525933.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=C88A9BE2937687C9C429018F4261A5C7DD446D7B0383F817DF6DE3BE5769737A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/mwPsly9NRkerow0rTrPxWQ/zh-cn_image_0000002793037604.png?HW-CC-KV=V1&HW-CC-Date=20261121T011201Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DD674A717E8A1B0D1B802BB49AE6D9EFBE06B201CB69AE39837FC2561016DE8)
 
 ## 屏幕旋转角度
 
@@ -28,7 +28,7 @@ content_hash: sha256:c597945818b58cfa898e89ba09c6f36bd688caa58c0562ef660b40ca23c
 
 如图所示，图示夹角即为屏幕旋转角度，可通过[Display.rotation](../harmonyos-references/js-apis-display.md#属性)获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/VvG_DFBjTtOgNQBeEMYW9w/zh-cn_image_0000002820405933.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=8107D8B9CDF9FF3F903A573CEBB456F1FE22B36BB66A9BE47E80FE62F3293559)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/khJC_Sk6QI2N30s4u3_czQ/zh-cn_image_0000002792877634.png?HW-CC-KV=V1&HW-CC-Date=20261121T011201Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5F9A08A0CFF63AC7239AA25B22B541A42440E5792B65DBA5AB387D45A337DF1)
 
 ## 相机镜头安装角度
 
@@ -38,11 +38,11 @@ content_hash: sha256:c597945818b58cfa898e89ba09c6f36bd688caa58c0562ef660b40ca23c
 
 此时图像需要顺时针旋转90度，才能与设备自然方向保持一致，所以**后置相机的镜头角度为90度**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/l0lvoeUWTLSbgaANem27Tg/zh-cn_image_0000002791725954.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC644D63ED70131B535960D4AA58408D8379636C69CAB0546670463A24B3BE1A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/YeZYLCCJR3SG6ojWDcHEnA/zh-cn_image_0000002821837541.png?HW-CC-KV=V1&HW-CC-Date=20261121T011201Z&HW-CC-Expire=31536000000&HW-CC-Sign=25B3F6F641AE216060D785DC2CD2AACD29D43CE931D391CCE3C345201C480669)
 
 而手机前置镜头，是朝向使用者的，当手机在竖屏方向使用前置相机镜头拍摄时，出图方向与后置出图方向互为镜像，如下图所示，**前置相机的镜头角度为270度**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/GWKCwYVYSF-GRw0YRvi9HA/zh-cn_image_0000002791565982.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=07503739BC3170FC31445FBBA45F49819ED5FE6316C2B1191462309C57B9B094)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/E8wJpmxBQyqOfcq8VNPxTg/zh-cn_image_0000002821757543.png?HW-CC-KV=V1&HW-CC-Date=20261121T011201Z&HW-CC-Expire=31536000000&HW-CC-Sign=49F76EC4E4E10AB1CBBAE3721D4A42F01B038BB546125C1ACF1E27A9508C90CA)
 
 ## 预览旋转角度
 

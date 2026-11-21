@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_node.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:28+08:00
+scraped_at: 2026-11-21T09:14:30+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:58bf96af0ef1a33a4ac74b7c9456549a4829cd44f5052c43ccdebc79bdeec602
+content_hash: sha256:efd25e93c49735fdecd3ce1914a114c89a3195e4dd85298808970607ccb99bea
 ---
 
 ## 概述
@@ -3200,7 +3200,7 @@ int32_t OH_ArkUI_NativeModule_ConvertPositionToWindow(ArkUI_NodeHandle currentNo
 
 将点的坐标从指定节点的坐标系转换至当前窗口的坐标系。节点的坐标系考虑节点本身的变换，例如，节点A的变换效果为向左平移100，会使得其坐标系中的点的坐标也向左平移100。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/FJ_xd1p8Rc6wYtIBskjd0A/zh-cn_image_0000002820528081.png?HW-CC-KV=V1&HW-CC-Date=20261119T015031Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BD535E33287535411982FE6E4F78FEBE55C4B4F02E1FAABF49E2A27874E8BB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/wlrzZHokTQCEPZMbMW4Rbw/zh-cn_image_0000002821839721.png?HW-CC-KV=V1&HW-CC-Date=20261121T011427Z&HW-CC-Expire=31536000000&HW-CC-Sign=436CCD83EB204EC889360187CACD142E0413FA0A8647DE197DB2E4097CB0B6BB)
 
 如上图所示，将指定节点坐标系中的坐标(x0, y0)转换成窗口坐标系的坐标，结果为(x1, y1)。
 
@@ -3230,7 +3230,7 @@ int32_t OH_ArkUI_NativeModule_ConvertPositionFromWindow(ArkUI_NodeHandle targetN
 
 将点的坐标从当前窗口的坐标系转换至目标节点的坐标系。节点的坐标系考虑节点本身的变换，例如，节点A的变换效果为向左平移100，会使得其坐标系中的点的坐标也向左平移100。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/LCB2b3s9T3mJ_egbJvbt3w/zh-cn_image_0000002820408083.png?HW-CC-KV=V1&HW-CC-Date=20261119T015031Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D1024B1D31FEC3E176723ECBA81111119B476A7F03A7B21E20C0133A7F6B11E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/cRdRpIobRaqO_BFN7m80Cw/zh-cn_image_0000002821759721.png?HW-CC-KV=V1&HW-CC-Date=20261121T011427Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7F9067E35AB5D6B4FDBF6F580CD781E2EBE94D7DAEA8C2FDA416F58FEA7663F)
 
 如上图所示，将窗口坐标系中的坐标(x1, y1)转换成目标节点坐标系的坐标，结果为(x0, y0)。
 

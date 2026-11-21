@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-diagnos
 title: 组件复用问题诊断分析
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > 组件复用问题诊断分析
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:35+08:00
+scraped_at: 2026-11-21T09:11:01+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:ef599e0214fcd680b978797a01b1d89ec18b2cab612bafa76998dab92240289e
+content_hash: sha256:45a9d18c3581cae690abfc65462e97054c14a8cbbf349298b43608f60208d528
 ---
 
 ## 概述
@@ -27,13 +27,13 @@ content_hash: sha256:ef599e0214fcd680b978797a01b1d89ec18b2cab612bafa76998dab9224
 1. 在DevEco Studio中启动AppAnalyzer工具，详细请参见[AppAnalyzer](../best-practices/bpta-performance-detection.md#section135451444171)。
 2. 本文展示的[正反例代码](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/tree/master/ComponentReuse)分别位于positive和negative模块中，检测时需选择相应模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/F_gGpt4sQKOg3n9-JqPrbw/zh-cn_image_0000002820524521.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=570BE45F3DF601308A6AAAAD24C9D7D8318A9D1377299AA05E359A413021F404)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/0bwrVJ8FTJ64wd9ugjbG3A/zh-cn_image_0000002793036190.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=A687CF55FF2DE62D3A4512987B0FC4D7ADA9C20F019ABC34ABFD1EC864CB669C)
 3. 点击工具“手动性能页面滑动体检”，按照提示进行检测操作。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/4ag8rmSuQauVclFmz_ErZw/zh-cn_image_0000002820404521.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3A2E4B9816BB792216C1CE202BC105379EB0A901C6A819B45995348EB6D947E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/1wRxs2y7THqQsxu24z5Zbg/zh-cn_image_0000002792876222.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=85E325FC473A6B7F544E7CAB3C1577D1AE570EF9B3FCC89CC298518EB6B4525A)
 4. 通过分析检测结果，结合滑动过程中列表卡片的创建次数，可以分析出当前列表的组件未使用复用或者复用未生效。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/nk_ZtLNHReyd1-y4Tuy7LQ/zh-cn_image_0000002791724544.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFFCAF67CF004C76A13C631435FD0FBD821781FB226B96DCE1BE621D4E501D9E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/yxz0WUsJSiOj2eA3k3SPiw/zh-cn_image_0000002821836127.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB262DCF16163FDD46413CD0D2A4E086AD661255C3EA83141DB3A70FC95FE152)
 
 以下将介绍几种复用场景问题，通过代码分析和优化建议对组件复用问题进行修复。
 
@@ -43,7 +43,7 @@ content_hash: sha256:ef599e0214fcd680b978797a01b1d89ec18b2cab612bafa76998dab9224
 
   ListItem的根组件只有一个，且根组件整体结构组成不变。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/l_-i4betRr23jclHHxlwjw/zh-cn_image_0000002791564572.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=68F9EE5BCF8048000453DCCB1217C9896473BA360D73E929C09374569D6B8ADA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/8bWDhuN2QgK0a6jaXBxY-w/zh-cn_image_0000002821756127.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=643BCD3AEDA8E358EC3C67CA6201F5AE8E544A9B95CCE28B46AE8742E883646A)
 
   例如以下示例中，NewsContent是新闻列表的内容组件，其内部包含三个子组件：顶部的文本，中部的图片以及底部的发布时间。
 
@@ -100,7 +100,7 @@ content_hash: sha256:ef599e0214fcd680b978797a01b1d89ec18b2cab612bafa76998dab9224
 
   **①"总-分式"子组件可变结构**：ListItem的根组件只有一个，且根组件整体结构组成不变，局部子组件进行替换。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/gOhRCwkYShaM1T0jBdE9ZQ/zh-cn_image_0000002820524523.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB9F159245543F9AA718873097BE4B198E3C372198BD4E3E0FBAB0B9C21439F3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/XoqSgOs-RQKRHcFtG1lDZA/zh-cn_image_0000002793036192.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=E30F0585655BAF4D3C65839D9C70C6539FA8BA0031BEE79D5C1FA0ADA20ADE18)
 
   如以下示例中，NewsContent是新闻列表的内容组件，其内部包含三个子组件：顶部文本、底部发布时间，根据展示类型不同，中部可展示单张图片、三张图片或视频。
 
@@ -166,7 +166,7 @@ content_hash: sha256:ef599e0214fcd680b978797a01b1d89ec18b2cab612bafa76998dab9224
 
   **②分类组合式结构**：ListItem的根组件有多种类型，不同类型的根组件布局组成不同。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/eruPVfdOSCOeVyptGI-oBg/zh-cn_image_0000002820404523.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=0800C5FE5128DA058C96C82FF027ADCAC287D49D36A453087E3CB463E75C25D1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ByJXvjRQSEStKcrqHlVhIw/zh-cn_image_0000002792876224.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=20D53C66F24AFAD49B37273DFC2696BDE97DC915DDDCF28F0349A2C041A61CAD)
 
   例如以下示例中，新闻列表的内容列表页，根据展示类型的不同，可分别展示包含单张图片、三张图片、视频的内容NewsContent。
 
@@ -236,7 +236,7 @@ content_hash: sha256:ef599e0214fcd680b978797a01b1d89ec18b2cab612bafa76998dab9224
 
   ListItem没有根组件，通过不同子组件相互组合，形成多种布局形态。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/1Ce69Ag-TD29RzlWFMsQRQ/zh-cn_image_0000002791724546.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C3A05CD8595AB8D738C32B6C6D8D5B3657A06E9FB2B129926BA7EE789675933)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/LdDz53xkQTCTehYqr6tlow/zh-cn_image_0000002821836129.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB226CEC8AA78BB1BE546A6C29C01607930B7EA182097B93A81D715534B5A595)
 
   例如以下示例中，ListItem列表项根据type的不同，其子组件包含了顶部文本元素、底部的文本元素，根据展示类型的不同，中间可分别展示单张图片、三张图片、视频。
 
@@ -326,7 +326,7 @@ content_hash: sha256:ef599e0214fcd680b978797a01b1d89ec18b2cab612bafa76998dab9224
 
 * **场景一：父组件未使用复用，子组件使用复用**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/kPYK8PtPSvq3984b6M3s8Q/zh-cn_image_0000002791564574.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE92B12BAFF3809672CDC903ED6809CFD6184675FA4C96D0A92FB4DE64276DC1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/EIBAiCeYRh6uE-DslUA1Fw/zh-cn_image_0000002821756129.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E08BFD132A4DFD52C2DA8A582FADBEA102885214CAC0F096E42C887C7C13BFA)
 
   例如以下示例中，NewsContent是新闻列表的内容组件，其内部包含三个子组件：顶部的文本，中部的图片以及底部的发布时间。
 
@@ -378,7 +378,7 @@ content_hash: sha256:ef599e0214fcd680b978797a01b1d89ec18b2cab612bafa76998dab9224
   ```
 * **场景二：复用嵌套**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/cFqXjP0DRdmgiZv3GZJZtQ/zh-cn_image_0000002820524525.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=14B34794AEF084F6A6BAC0E47DF189C0BF63253DA3C488D271150CB0852D7F03)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/evFDp5OzTCiOQLjKLTY9ww/zh-cn_image_0000002793036194.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B07856A192009BE339C6FE95903EC62DDAFB5EC88F0170C255B9AD695F202DD)
 
   例如以下示例中，NewsContent是新闻列表的内容组件，其内部包含三个子组件：顶部的文本，中部的图片以及底部的发布时间。
 
@@ -442,7 +442,7 @@ content_hash: sha256:ef599e0214fcd680b978797a01b1d89ec18b2cab612bafa76998dab9224
   ```
 * **场景三：reuseId分类过粗**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/cQdUaNCvToag9JfzWBlvBw/zh-cn_image_0000002820404525.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD992FB348E0C576E79449050E72FC2E458FF2ECE768CF7F7499F6C0726F5DB1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/4Vj_T-ChS6-J-souN-Ahjw/zh-cn_image_0000002792876226.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=431BF6E4A6A7C3648EEF1D4862BA1D861B0CA8B9562DAF266B12B6576DFE8130)
 
   如以下示例中，NewsContent是新闻列表的内容组件，其内部包含三个子组件：顶部文本、底部发布时间，根据展示类型不同，中部可展示单张图片、三张图片或视频。
 
@@ -503,7 +503,7 @@ content_hash: sha256:ef599e0214fcd680b978797a01b1d89ec18b2cab612bafa76998dab9224
 
 下图中简单示意了常见的列表效果，显示区域中有三种不同类型的列表项，真实场景中还会有更多类型的列表项，复杂场景可能会多达几十种，此时如果严格按照列表项类型分类，会造成分类过细，滑动时不断有新的类型元素进入可视区，创建新的类型列表项，此时就容易发生滑动卡顿。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/qSBtBuV6RgOOyOEXI6rkww/zh-cn_image_0000002791724548.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=46F8785C30B92DE201A6F937C648060F1D73B7F4DDD840DEC7176EF42513FF62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/vl-ctjPsSpK9Lo-EXXmFbQ/zh-cn_image_0000002821836131.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2097A44B904B5658F468E64F69806DB9B1D686E701A8A95809BFC3630F016C4)
 
 例如以下示例中，NewsContent是新闻列表的内容组件，其内部包含多种子组件：顶部文本、底部发布时间，根据展示类型不同，中部可展示文本、单张图片、三张图片、视频等。
 
@@ -609,11 +609,11 @@ struct MiddleTextView {
 
 **典型Trace分析**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/YPKRZL-pQUy93Um8cv1-Eg/zh-cn_image_0000002791564576.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5951E05572FDDCA48D5D5FCE961885A03AF8F0F28348CC8BF44D2D9CC181E1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/2Dt-pOEsSlmAB-9HzFnkZw/zh-cn_image_0000002821756131.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAFB807AB27E8CED54E5E6DB36B1933F289125EEB06E6C8509B5B0FF6F74B5DF)
 
 上述案例中，BuildRecycle是典型的复用成功回调，此处执行耗时过长造成了应用丢帧，虽然当前操作在帧间，但是长耗时仍然会影响下一帧的执行。通过耗时函数检测，可以定位到具体的耗时方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Hsbl008kSuab-3mjHsUGdg/zh-cn_image_0000002820524527.png?HW-CC-KV=V1&HW-CC-Date=20261119T014735Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2EBA1B918ADC7ABD1780EE5784ED721F60B8377190CE832548D854BF7A8A183)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/4yoRdGG-S6qnIt5adfN8fA/zh-cn_image_0000002793036196.png?HW-CC-KV=V1&HW-CC-Date=20261121T011101Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB199433BE46E1FD0CE53BDA64B11557D21A847E357C46EB7DBA53E08435D589)
 
 这个场景下识别到Index文件中有stringify耗时长，此时可迅速定位到问题点，通过逻辑优化或者异步方案进行优化。
 

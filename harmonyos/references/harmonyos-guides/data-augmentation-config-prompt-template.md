@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-augmenta
 title: 配置提示词模板
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > RAG > RAG配置 > 配置提示词模板
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:79850b7437360aa268e0036db4953b6e9f0a13af7d612bd13da022faeaab4ffd
+scraped_at: 2026-11-21T09:11:21+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:ae00c3ac75290b6d940081efb3034e6d0a821227def616a55a2c27082eec71e2
 ---
 
 ## 功能介绍
@@ -48,7 +48,7 @@ RAG支持三个自定义提示词模板组，并提供占位符，用于替换�
 ```typescript
 {
     "coreferencePrompt": {
-        "system": "This is a coreference system prompt."，
+        "system": "This is a coreference system prompt.",
         "user": " This is a coreference user prompt.\nPrompt history: {history}; Prompt input: {input}."
     },
     "extractionPrompt": {

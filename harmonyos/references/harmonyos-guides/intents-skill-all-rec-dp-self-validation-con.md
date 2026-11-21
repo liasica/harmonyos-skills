@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 配置文件接入方式自测试方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 开发者测试 > 配置文件接入方式自测试方案
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:21+08:00
+scraped_at: 2026-11-21T09:12:47+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:83f8ca8c80b0884c3c7dc9080002430802be0c0f7e5cc5fcd3e054f57a335d38
+content_hash: sha256:eb16f5107f5f9eed5cd55dd2990adc0196ca1e4dd9287a4d382295658c7ee54f
 ---
 
 Intents Kit向开发者提供意图调用调试能力。开发者完成代码开发之后，功能正式上架应用市场前，可以在HarmonyOS 5及以上的设备上面进行自验证，调试分为三个步骤：基础信息提供，环境准备，联调验证。
@@ -30,13 +30,13 @@ Intents Kit向开发者提供意图调用调试能力。开发者完成代码开
 2. 安装开发完成并携有意图声明文件的应用。
 3. 打开开发者调试模式：进入“设置 > 机型 > 关于手机”，连续点击软件版本7次，弹出“开启开发者选项”弹窗，点击“确认开启”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/kBZXuYV0SCq4Z6REUDpq5g/zh-cn_image_0000002791566792.png?HW-CC-KV=V1&HW-CC-Date=20261119T014921Z&HW-CC-Expire=31536000000&HW-CC-Sign=50E4A5DDDA134CD60BD7ED63CC202B6294065CEB0CF2B5CFB1574DC21316162A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/lT6mSSFaS7qP1oK-UJvuqg/zh-cn_image_0000002792878446.png?HW-CC-KV=V1&HW-CC-Date=20261121T011247Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4664AFC07B41576163B83DD2F535F7E98AA598832ED3A8AB142BAE1107D4CBD)
 4. 长按电源键唤醒小艺，将半屏态小艺向上拉升至全屏态，点击左上角返回上层，返回后点击右上角的头像，进入“设置”，找到并进入应用网络设置，打开“WLAN下自动更新”开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/Cat_yV67TOOEjF51MPKyLw/zh-cn_image_0000002820526745.png?HW-CC-KV=V1&HW-CC-Date=20261119T014921Z&HW-CC-Expire=31536000000&HW-CC-Sign=84237E1843E2E7EE80182E5BE53810419BFE1C1EE10FA11B431585D0676F50DB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/6hpd4qp_QmufeJkI7vmUjQ/zh-cn_image_0000002821838353.png?HW-CC-KV=V1&HW-CC-Date=20261121T011247Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C5AD9A5D65E123DDF508C6051F6AE1DBD527AF5157B70862C6CF8DE3E78B6DC)
 5. 进入“设置 > 系统 > 开发者选项 > 意图框架调试”，打开意图框架调试开关，如果下方显示“已切换至真机模式”，则代表真机模式切换成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/koiBlIgnTBO88ZLZVuvgJA/zh-cn_image_0000002791726766.png?HW-CC-KV=V1&HW-CC-Date=20261119T014921Z&HW-CC-Expire=31536000000&HW-CC-Sign=C937C0E717F343622B1B32E8976FBCA3EADE3B8F2BBF7FCEE31967B577D9AA2F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/5p44m27uRumAYY5vIkPQNA/zh-cn_image_0000002793038418.png?HW-CC-KV=V1&HW-CC-Date=20261121T011247Z&HW-CC-Expire=31536000000&HW-CC-Sign=616FC09BCEF743D1ABB0C9785268390B06E9F91C339BE493B452E8667E103260)
 
    【提示】如果出现意图框架调试开关打开后，设备长时间无法出现“已切换至真机模式”时，可以尝试以下操作：
 
@@ -44,6 +44,6 @@ Intents Kit向开发者提供意图调用调试能力。开发者完成代码开
    * 在小艺对话中点击右上角头像，点击“设置 > 服务管理 > 注销服务 > 注销服务”，然后返回桌面重新点击小艺建议的卡片，将展示“欢迎使用小艺建议”的卡片刷新成有服务推荐的卡片，最后重新开启意图框架调试开关。
 6. 打开意图调试助手：进入小艺App，返回主页面，切换“发现”页签，在搜索框内搜索“意图调试助手”，点击进入意图调试助手。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/DuAm1WU_Q0CzRrbYLG6x9g/zh-cn_image_0000002791566810.png?HW-CC-KV=V1&HW-CC-Date=20261119T014921Z&HW-CC-Expire=31536000000&HW-CC-Sign=1159FBDD836DA5EA3DCB929AB36A238B3594ACA602C7EB7526916FF59E22D074)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/2lyg-y-FSdO2602fYwMHfw/zh-cn_image_0000002792878464.png?HW-CC-KV=V1&HW-CC-Date=20261121T011247Z&HW-CC-Expire=31536000000&HW-CC-Sign=6708C08369AEE01A372717FFF5405CF623414F1944AF72676F4BE9B61286D3CD)
 
 完成以上所有步骤，即可进行联调。

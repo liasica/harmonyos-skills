@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-decodin
 title: Surface模式解码视频的播放控制
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > Surface模式解码视频的播放控制
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:35+08:00
+scraped_at: 2026-11-21T09:12:00+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:e8aca115a341cccddd791f1249ce6a3902aa3728efcff5e4eb04652e1e2ce230
+content_hash: sha256:de0e12188fb6a80f91e9a239ffac871e10349e7747e84eb849ba901660d9348d
 ---
 
 ## 概述
@@ -41,13 +41,13 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 3. 初始化解码器，设置NativeWindow等参数后启动解码器。
 4. 创建解码输入和输出子线程，启动解码播放流程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Kiq0XjX4TXyk7vP2kkIwMA/zh-cn_image_0000002791725906.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=59B48BBA04494545B7FC101F165557DEA64541BC6793007F8D664C0F7F53F341)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/thTbyVlGS_6FdF6E2XnSYg/zh-cn_image_0000002821837493.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=299E3A34F364A10A19917EC027BA93D880A4D27497716A62CEE4C34B2B650AF4)
 5. 输入子线程通过[OH\_AVCodecCallback](../harmonyos-references/capi-codecbase-oh-avcodeccallback.md)中的OnNeedInputBuffer异步回调函数指针获取可用的AVBuffer后，从解封装器中读取视频数据提交给解码器；实现向解码器输入待解码的视频数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/1zBaDFlsRiK0lgWBnXXfmA/zh-cn_image_0000002791565934.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD71614BA3DD6630BF584421A20F45C0A27C11C0563D817C33BE48B560547AD8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/QNirPp5OS4itnUeW7r2dYA/zh-cn_image_0000002821757495.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3799D5BB27E353DA591A2D742E5CDCFD68A42260DBD51A2A1A6BC7FB80B925E)
 6. 解码输出子线程通过OnNeedOutputBuffer拿到解码后的帧数据，进行[音画同步](audio-video-synchronization.md)处理后，通知解码器在Surface上完成渲染。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/sSgr0dbAQQS-yHQZVAISFQ/zh-cn_image_0000002820525887.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=C09725F2C35F81E06FDA411B83CDF1F4ED0CA5584BC38AC510C42735996704CF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/pU4ApVvvSei-v7D8T128ow/zh-cn_image_0000002793037558.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=D672E18C0E8A8D4255B4A62D76C3AB753D0C42AC8A5B01D0E4DEFBA7ED730A41)
 
 ### 开发步骤
 
@@ -196,7 +196,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 
    在Native侧可通过[OH\_NativeWindow\_NativeWindowSetScalingModeV2()](../harmonyos-references/capi-external-window-h.md#oh_nativewindow_nativewindowsetscalingmodev2)接口设置XComponent的画面渲染缩放模式，通过设置[OHScalingModeV2](../harmonyos-references/capi-external-window-h.md#ohscalingmodev2)参数可选择按视频比例缩放画面播放或拉伸缩放以匹配视频窗口大小。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/_Q4jLo7bQzS5e03SUFlgJg/zh-cn_image_0000002820405887.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=1025BF9E472FBDF70F12FD430F718F2C6C25FE1206BB095465379A06D50316EF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/62HAWJLhSh-Oms4w27FlTg/zh-cn_image_0000002792877588.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDB11360D338BB809D96BB2BCCC1ABBF12C08251DB551CA1519621FFC27E7055)
 
 ### 开发步骤
 
@@ -247,7 +247,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 
 暂停播放通过阻塞输入和输出子线程实现。阻塞后输入子线程停止提交数据到解码器，输出子线程停止向Surface提供视频帧数据，达到暂停播放的效果。继续播放则是取消输入和输出子线程的阻塞状态，从而恢复播放状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/_qeFM5b5QQK7vT1qKzTKEQ/zh-cn_image_0000002791725908.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A4376151CE0B0E76C5EB540683DA2EFA86D43BC79730AFCC9ADDA10183FDCBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/nTnCaO8XSVeVWGeBWttIyw/zh-cn_image_0000002821837495.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5F45A1D96B917BD3579F88A6589EC2EB7F76C67AB0415DF604AD09754702A22)
 
 ### 开发步骤
 
@@ -323,7 +323,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 
 除跳转到指定时间的上一个关键帧外，也可以选择其它跳转模式（例如跳转到下一个关键帧），具体可参考[OH\_AVSeekMode](../harmonyos-references/capi-native-avcodec-base-h.md#oh_avseekmode)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/IXHzoOoXRi2XdAeFDvg-0g/zh-cn_image_0000002791565936.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=17C57B7FC91F9F406158EAEBFC5EBB62EF95FD92E252DF08294D44C21CA1A8CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/LsYCjCcmQWes5A6sqnWXGA/zh-cn_image_0000002821757497.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=65904856D596CBA1A4B1C4A300CC9DAA18D9DEA270064A4AC36C011813F865F9)
 
 ### 开发步骤
 
@@ -396,7 +396,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 2. 使用解封装器seek到首帧，即时间点为0的位置。
 3. 从解封装器中拿到首帧数据，实现循环播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/T6vgBk9iSo6YehTB6ZFZhw/zh-cn_image_0000002820525889.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D276BE348945148E3FBE5B4608F57A6EE004E1DFEF674E1EE27EF3E9851A84B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/PIceaJAORtyzwkRmsD4xlA/zh-cn_image_0000002793037560.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=86633D284F53E5D320B515D24883EBDBF0B235B3268A00CBE0D2E97310222CF7)
 
 ### 开发步骤
 
@@ -450,7 +450,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 
 先设置音频播放速度，音频帧渲染速度变化后，视频帧根据[音画同步](audio-video-synchronization.md)功能，进行同步追帧，实现倍速播放效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/iko0PvEASLCq72UXVtyQLg/zh-cn_image_0000002820405889.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=D63E74FBBE86B93750E51FD5894F673A91BB4B64BF1FDF62F06D00ADB39FD2E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/WsCniyecTi26NwdPpJUIRQ/zh-cn_image_0000002792877590.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=38C772F71AEDB710F067418C85D766DF736A9ABBC66F6134CC702EA8DEA888A7)
 
 ### 开发步骤
 
@@ -506,7 +506,7 @@ Surface模式视频解码播放是通过调用系统AVCodec模块的能力实现
 2. 释放当前视频的解码资源，包括解码器和解封装器。
 3. 使用切换后的视频重新创建解码资源和解码子线程，具体请参考视频播放章节的[实现原理](video-decoding-play-remote.md#视频播放实现原理)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/d5LIwa3mRiq399PiyJ8RIg/zh-cn_image_0000002791725910.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0B19957E4BA740B41475437ED21330B368334C914355F428309C96AF4FFDF36)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/hu6V6k8PRWGKMzqXpgv33w/zh-cn_image_0000002821837497.png?HW-CC-KV=V1&HW-CC-Date=20261121T011159Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC20ECD486B05C3D4AB224F61873A00BFC3CC5C8C9C3C8762E3E57535342BEC9)
 
 ### 开发步骤
 

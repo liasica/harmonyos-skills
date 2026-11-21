@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-erms
 title: 生态查询服务
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 生态查询服务
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:52+08:00
+scraped_at: 2026-11-21T09:12:18+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:9c1efccde93a20fc15d1eb712017cb0556a6809eef38f46335976d39cb518df4
+content_hash: sha256:38f8dcdc2818b77c15319b525cde2bebfc164ae7e4ee63f684bd7f06482ea33d
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:9c1efccde93a20fc15d1eb712017cb0556a6809eef38f46335976d39cb5
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/mgSyFOVAQECF5v8NdahyAA/zh-cn_image_0000002820526185.png?HW-CC-KV=V1&HW-CC-Date=20261119T014758Z&HW-CC-Expire=31536000000&HW-CC-Sign=69DC9372D0ACA3F46EC2FCBAD32353FACED7F0E24A40D13E0708A0C02A7E3AB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Sw4FVUMcT5KD4fmgwgBPCw/zh-cn_image_0000002793037856.png?HW-CC-KV=V1&HW-CC-Date=20261121T011218Z&HW-CC-Expire=31536000000&HW-CC-Sign=A67A56E90E828F689933EC8468A78141B9B79E07116CB83236C522E86E3FD054)
 
 1. 用户需要查询应用/元服务自身场景值或者查询广告验签版本。
 2. 应用调用[getSelfSceneCode](../harmonyos-references/store-scenemanager.md#scenemanagergetselfscenecode)接口和[getAdsVerificationVersion](../harmonyos-references/store-scenemanager.md#scenemanagergetadsverificationversion)接口分别获取自身场景值和广告验签版本。

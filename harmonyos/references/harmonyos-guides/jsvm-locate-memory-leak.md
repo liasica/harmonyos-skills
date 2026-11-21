@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-locate-m
 title: JSVM 定位内存泄漏问题指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API典型使用场景指导 > JSVM 定位内存泄漏问题指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:26+08:00
+scraped_at: 2026-11-21T09:12:52+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2e063ff15a79282856e5cd9412469012dfb187bd8caa3a36f60e4d5c9c4a0db0
+content_hash: sha256:beaaf50a35f7a89171cb50e30b7923c0a32a80b700c2800be1a5f277384e7dd3
 ---
 
 JSVM的内存占用包括Native内存占用(C/C++侧的内存占用)和底层的JS引擎的堆内存占用，JS引擎会维护一个堆来管理其生成的JS对象，其生命周期由JS引擎维护，除此之外的内存我们归为Native内存。用户在使用JSVM时，可能碰到这两种内存异常增长的情况。
@@ -20,7 +20,7 @@ JSVM的内存占用包括Native内存占用(C/C++侧的内存占用)和底层的
 hidumper --mem $(pidof dest_app)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/DO8zwNTlSvSRcYHLGhUcLw/zh-cn_image_0000002791726844.png?HW-CC-KV=V1&HW-CC-Date=20261119T014926Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C0E815056ED601ADEF9141FE2E7DFEDCC913BAAE0B4F1D737E56D76F230DA25)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/vRRLolsLRCaVTOJs7LdT5w/zh-cn_image_0000002793038496.png?HW-CC-KV=V1&HW-CC-Date=20261121T011124Z&HW-CC-Expire=31536000000&HW-CC-Sign=19595D627AA35396BB3CDF4AF338F8F916A851FF228AFF2667A200AD79688F72)
 
 ## Native内存泄漏定位
 
@@ -49,10 +49,10 @@ OH_JSVM_GetReferenceValue(env, reference, &result);
 
 1. 使用Profiler的Allocation模块记录一段时间内的Native内存信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/zyU8z0HQTeOQPZPaawrhoQ/zh-cn_image_0000002791566872.png?HW-CC-KV=V1&HW-CC-Date=20261119T014926Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D705D10250E79EA62B0E66239C4FDE5261D2615BB8253B6699775047210562B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/YnclhDlWSIC_VRaLYeanIQ/zh-cn_image_0000002792878526.png?HW-CC-KV=V1&HW-CC-Date=20261121T011124Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1FE0235B9429B8CB2B1A9C8FD87BF1F32721457A6991804425D1D5EB5C8DB8B)
 2. 比较这段时间内"Created & Existing"的内存变化情况，如果存在占比较大且Count较大的未释放内存，则怀疑存在内存泄漏，展开进一步查看调用栈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/b5enwnNZRLu_wSivZjV3fA/zh-cn_image_0000002820526825.png?HW-CC-KV=V1&HW-CC-Date=20261119T014926Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F009FBEA83F702AEE699D9060A2A0F0870DA31E2DF3820F8DDA17D25F4105A9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/CYrUM319S6yTKJkyYb_7CQ/zh-cn_image_0000002821838433.png?HW-CC-KV=V1&HW-CC-Date=20261121T011124Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4A845C5CB9F5828FE918BBE122A77AC600D3A052DED4C8198C04D719EAA1C35)
 
 ## JS引擎堆内存泄漏定位
 
@@ -77,7 +77,7 @@ JSVM目前提供了OH\_JSVM\_OpenInspector开启inspector，参考[使用OH\_JSV
 
 通过使用DevTools工具，对目标场景内的堆内存进行快照（快照前先点击上方的垃圾回收按钮进行垃圾回收），利用快照对比功能，找到未释放的JS对象和其所在源码中的位置，进一步指导定位堆内存未释放的原因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/-IodTChDSv-9PQPgRi1eIg/zh-cn_image_0000002820406825.png?HW-CC-KV=V1&HW-CC-Date=20261119T014926Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB0A54F0DB4E1BA6D6B13B7F34D92D7C727086E019A57201A5AAE9CBE22C9F9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ndPr-iEdRCWT3LAhkL6bYA/zh-cn_image_0000002821758435.png?HW-CC-KV=V1&HW-CC-Date=20261121T011124Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E0989C8E3C218D12B5E3B68C24F8036DA403E57366D4B3356E29511628768DF)
 
 ### 通过 --heap-dump-on-oom 在OOM时自动导出堆转储
 

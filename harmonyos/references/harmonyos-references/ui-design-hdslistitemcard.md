@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsListItemCard (列表卡片)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsListItemCard (列表卡片)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:52:12+08:00
+scraped_at: 2026-11-21T09:15:01+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:16184ab3c0d295be425277cc4c7fd5adc8338fac0bba44164c849c2ae64a1bb2
+content_hash: sha256:6ee3e2ce80e125c6755a991efd4d3ba08731d63421d1d96c39f74fd447e3326c
 ---
 
 本模块提供一个HdsListItemCard组件，提升视觉体验，统一组件风格样式，应用使用HdsListItemCard组件实现多设备上的系统列表样式。
@@ -1729,4 +1729,4 @@ struct HdsListItemCardExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/WBXWA-afR_GML1cMS_oaDw/zh-cn_image_0000002820408109.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015116Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA1A9D22FE298175416803C6A2F20E55FC7721D5B7D6095B26CF656D7F15842E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/v533UUoYSuSfdMXy9EPugA/zh-cn_image_0000002821759747.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011410Z&HW-CC-Expire=31536000000&HW-CC-Sign=302DE8AB41EACA8410040AFB13AFB458A8FD2FAD4446C7B02D333E9BA7BAD173)

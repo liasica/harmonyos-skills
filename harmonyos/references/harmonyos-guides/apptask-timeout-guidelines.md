@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/apptask-timeo
 title: 任务超时检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 任务超时检测
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:24+08:00
+scraped_at: 2026-11-21T09:11:51+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1587081d63d3f10701a7666d71e7d337c440171b1f56deb8c4b8ef782db1fc74
+content_hash: sha256:9f75bfea4e45c0e3bd2e5f649fb3969840842afebc7b45a9a54cc2d08e413a26
 ---
 
 ## 简介
@@ -43,26 +43,26 @@ content_hash: sha256:1587081d63d3f10701a7666d71e7d337c440171b1f56deb8c4b8ef782db
 
    （1）第1轮检测到主线程处理超时（主线程处理时长 > 150ms），开始执行堆栈采集，每隔150ms采集1次堆栈，共采集10次堆栈，第11轮收集堆栈并上报事件，结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/Q0-zjmOEQvSMyp8ySfqrmQ/zh-cn_image_0000002820405819.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB0981494382E34278E862D516768D61274360DCF40F095D0FEF25B877C8B493)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/06xUe67-QuCCumQ_j_JYSA/zh-cn_image_0000002792877520.png?HW-CC-KV=V1&HW-CC-Date=20261121T011024Z&HW-CC-Expire=31536000000&HW-CC-Sign=38EA6C683F6C82395E2CF8AD128B8A117AAF4A9EFD725621CD1CB6D384A50566)
 
    （2）第1轮未检测到主线程处理超时（主线程处理时长 < 150ms），第2轮检测到主线程处理超时（主线程处理时长 > 150ms），开始执行堆栈采集流程，每隔150ms采集1次，共采集10次堆栈，第12轮收集堆栈并上报事件，结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/dwYuB8VvS6OYAdQtd1hidQ/zh-cn_image_0000002791725840.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=A37F62FDB290F7CADD3339E42E39D2E12152DD210EDF7B08C9150AB889D51BAB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Wqt-s35LT1ORJCP9W_SxAw/zh-cn_image_0000002821837427.png?HW-CC-KV=V1&HW-CC-Date=20261121T011024Z&HW-CC-Expire=31536000000&HW-CC-Sign=342D98D081AD59F9046843FE5D443939F725A0BE50518E6EFE3B6CD41843B9BD)
 
    （3）前2轮均未检测到主线程处理超时（主线程处理时长 < 150ms），结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Ze3me6czTDGfIBqqL_1FJw/zh-cn_image_0000002791565868.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5FE9B755602EE66547B47148D8BEA14FD873DBC81D0DD0C0C7AB15B5D5413D8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/wDlLB_IOTXuMjARRayFEBw/zh-cn_image_0000002821757429.png?HW-CC-KV=V1&HW-CC-Date=20261121T011024Z&HW-CC-Expire=31536000000&HW-CC-Sign=E18B1A5A4A7C08E504DEF1A9D0B733AB4D462849ED20743B0C2392D27C659DF9)
 2. trace采集流程
 
    当主线程处理超时（主线程处理时长 > 450ms），调用开启trace采集接口，启动周期性检测，每隔150ms检测主线程处理时长超过150ms（检测轮数 = 20）。分两种情况：
 
    （1）20轮均未检测到主线程处理超时（主线程处理时长 < 150ms），无trace文件生成，结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/lGL-bIUrRFSO25ZDaG7kng/zh-cn_image_0000002820525821.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1778F6237FB32EB952E2458EA2167FA8929FA4B37780068DEE3ADCD75449A85)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/822f7rblQPKlNG4UF37cXA/zh-cn_image_0000002793037492.png?HW-CC-KV=V1&HW-CC-Date=20261121T011024Z&HW-CC-Expire=31536000000&HW-CC-Sign=67B0BDB44F6FF27588AF1AF842D407B56F841DAE8A133C4329AD24DA5CC527DD)
 
    （2）20轮检测至少有一轮检测发生主线程处理超时（主线程处理时长 > 150ms），生成trace文件并上报事件，结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/4fDORYmQSh-vzc-1pzTyrg/zh-cn_image_0000002820405821.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2B4C40E558D47E35DE50F6AFB6B382D85637CEBF7FA085093976D0FC479D96D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/_CdPnUypQjOVDpmdsMg7-Q/zh-cn_image_0000002792877522.png?HW-CC-KV=V1&HW-CC-Date=20261121T011024Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD6B869113292FA3B83FD902DCE7D1C64F4959BB1EF911BDA4CD635C55D22BBD)
 
 ### 日志获取
 
@@ -179,7 +179,7 @@ HiAppEvent给开发者提供了故障订阅接口，详见[HiAppEvent介绍](hia
 
 检测原理如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/hon834YjSF6sd0Wb1n55bw/zh-cn_image_0000002791725842.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6EB301BE6525847DC672DE50887D367A4A577080D78096A4F760C8B3B67DF53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/2I6B0oP7TT2WMqDdf2E9Yw/zh-cn_image_0000002821837429.png?HW-CC-KV=V1&HW-CC-Date=20261121T011024Z&HW-CC-Expire=31536000000&HW-CC-Sign=088AB9C7FC03ABAE656EFD26D7A6BC9ECD7E1ADD4596C8BEB41ABA5A5341A113)
 
 ### 日志获取
 

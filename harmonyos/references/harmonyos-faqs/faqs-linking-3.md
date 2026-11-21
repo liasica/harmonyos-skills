@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-linking-3
 title: 如何在上架之前测试AppLinking导向自己App的链接
 breadcrumb: FAQ > 应用服务开发 > 应用链接跳转服务（App Linking Kit） > 如何在上架之前测试AppLinking导向自己App的链接
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:43+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:3ddb0d25a49e690cf366855125e29d008d6239b4fc67f2b59b4dd6cd02cbc297
+scraped_at: 2026-11-21T09:19:17+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:4f47f207e0de28d4a0a825c72443ef5224d318d90d9abaae3a49cb00c84e7fd4
 ---
 
 ## 问题现象
@@ -15,7 +15,7 @@ content_hash: sha256:3ddb0d25a49e690cf366855125e29d008d6239b4fc67f2b59b4dd6cd02c
 ## 解决方案
 
 * **App Linking应用链接按角色分为三种类型：**
-  1. 云端开发：[开通App Linking服务](../harmonyos-guides/applinking-enable-applinking.md)、[建立域名与应用关联关系](../harmonyos-guides/app-linking-startupapp.md#建立域名与应用关联关系)、[在HarmonyOS 开发者中心为应用创建关联的网址域名](../harmonyos-guides/app-linking-startupapp.md#在agc为应用创建关联的网址域名)。
+  1. 云端开发：[开通App Linking服务](../harmonyos-guides/applinking-enable-applinking.md)、[建立域名与应用关联关系](../harmonyos-guides/app-linking-startupapp.md#建立域名与应用关联关系)、[在HarmonyOS 开发者中心为应用创建关联的网址域名](../doccenter-capabilities/app-linking-startupapp.md#在harmonyos-开发者中心为应用创建关联的网址域名)。
   2. 客户端开发：[在module.json5中配置关联的网址域名](../harmonyos-guides/app-linking-startupapp.md#在modulejson5中配置关联的网址域名)、[处理传入的链接](../harmonyos-guides/app-linking-startupapp.md#处理传入的链接)、[验证应用被拉起效果](../harmonyos-guides/app-linking-startupapp.md#验证应用被拉起效果)。
   3. 前端开发：开发链接对应的H5网页，应用未安装时呈现Web版内容。
 * **App Linking链接类型能力不同对上架应用市场的要求不同：**

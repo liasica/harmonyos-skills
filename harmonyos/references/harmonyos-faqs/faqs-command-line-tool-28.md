@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: ohpm-repo获取最近下载量失败
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > ohpm-repo获取最近下载量失败
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:58+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:ee98a424f0d3967ad0930eae96abf342563707bc49a2171c4f6aa5659792d24a
+scraped_at: 2026-11-21T09:19:34+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:8b207b1448ea1215308c73ca9f27c1c0b14b6ed73a4ba443dc3952a4efeb8666
 ---
 
 ## 问题现象
@@ -18,7 +18,7 @@ ohpm-repo私仓工具的概念、相关命令和如何部署可参考：[ohpm-re
 
 ## 问题定位
 
-1. 查看服务器日志，[运行日志](../harmonyos-guides/ide-ohpm-repo-log.md#zh-cn_topic_0000001745217286_运行日志---runlog)和[错误运行日志](../harmonyos-guides/ide-ohpm-repo-log.md#section165144485914)均可，[日志具体路径](../harmonyos-guides/ide-ohpm-repo-log.md#zh-cn_topic_0000001745217286_日志存储路径)。查阅日志可以看到有“写入下载量文件失败”（该文件是ohpm-repo运行过程产生的用户信息，运行状态等数据存储配置，支持本地磁盘存储和mysql存储）。
+1. 查看服务器日志，[运行日志](../doccenter-deveco-studio/ide-ohpm-repo-log.md#section04683211278)和[运行错误日志](../doccenter-deveco-studio/ide-ohpm-repo-log.md#section159105911275)均可，[日志具体路径](../doccenter-deveco-studio/ide-ohpm-repo-log.md#section168321625192717)。查阅日志可以看到有“写入下载量文件失败”（该文件是ohpm-repo运行过程产生的用户信息，运行状态等数据存储配置，支持本地磁盘存储和mysql存储）。
 2. 开发者的下载量是记录在本地的json文件中（db的type为filedb，默认路径为./db），查看json文件，发现json文件格式错误，最终导致写入文件失败，表现出获取下载量数据失败以及无法下载ohpm包。
 
 ## 分析结论

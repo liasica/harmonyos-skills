@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-local
 title: 场景体验
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 位置推荐方案 > 场景体验
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:20+08:00
+scraped_at: 2026-11-21T09:12:47+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f85a6a2494a135864da496375675540dd343242e1a628065c9216b1ce061185e
+content_hash: sha256:c51404a1b03343e5cfc8effa49787e1773f4836f94b62a074fd266982c8383e2
 ---
 
 ## 典型场景
 
 华为意图框架位置感知推荐能力主要支持室内位置推荐、室外近场位置推荐、跨域位置推荐等高确定性场景，结合华为智慧决策能力，在小艺建议入口推荐更贴心、更及时、更满足用户诉求的场景卡片。场景示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/1aIY74xPTu6T_3Vxx_B27Q/zh-cn_image_0000002820526749.png?HW-CC-KV=V1&HW-CC-Date=20261119T014825Z&HW-CC-Expire=31536000000&HW-CC-Sign=602C49D79E8E68CECF75A9271B1F4E07276B3F29FC79C333D075AC7FEFF5673D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/u7GsyVBpQO6pSpJXOlJrwA/zh-cn_image_0000002821838357.png?HW-CC-KV=V1&HW-CC-Date=20261121T011247Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC514CB33A3E2BECC741852E489254B169F42423299BB6992A70C691E0F02752)
 
 | 推荐类型 | 能力概述 | 适用场景 |
 | --- | --- | --- |
@@ -28,4 +28,4 @@ content_hash: sha256:f85a6a2494a135864da496375675540dd343242e1a628065c9216b1ce06
 
 **卡片模板参考：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/GqGAoWs6REaTaCggp1wnUA/zh-cn_image_0000002820406749.png?HW-CC-KV=V1&HW-CC-Date=20261119T014825Z&HW-CC-Expire=31536000000&HW-CC-Sign=9346176A3A6F08F8CA1C9FC222FFAAA11AE038C89ABA6AB44D9539864CB7521D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/6XX7wokrQLuJa2jA2GsjHg/zh-cn_image_0000002821758359.png?HW-CC-KV=V1&HW-CC-Date=20261121T011247Z&HW-CC-Expire=31536000000&HW-CC-Sign=8136174D11DFD1533836D4900585B163FC952C0E36F082706D7705A370F2EA84)

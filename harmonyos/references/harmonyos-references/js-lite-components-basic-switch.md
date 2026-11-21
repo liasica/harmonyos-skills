@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: switch
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > switch
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:24+08:00
+scraped_at: 2026-11-21T09:14:25+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4d4ba4769cdc8c80fc28bead8fe2cc1b799f3cc7403d5d1d2a76609729f69d38
+content_hash: sha256:fdb737db3b0f071957777900eb67c9c71f315b0c4d9ee02d223a4d4eca3ef2d7
 ---
 
 开关选择器，通过开关，开启或关闭某个功能。
@@ -100,4 +100,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/G3fA5hYSQWavRFxjeGp8Ng/zh-cn_image_0000002791728008.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015029Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE0BE3D5E69AB716E26881860EE91B5D9D36B9E2673C5D4F53A0E8B026793183)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/3on9waXcS9aZotROyPN9Xg/zh-cn_image_0000002793039694.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011323Z&HW-CC-Expire=31536000000&HW-CC-Sign=C61AEA8B41AF30DAC90982A0EF115CAEB36C54EBB341044A184CC406B26EB774)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-provide
 title: "@Provide装饰器和@Consume装饰器：与后代组件双向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Provide装饰器和@Consume装饰器：与后代组件双向同步
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:36+08:00
+scraped_at: 2026-11-21T09:11:03+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:fc8e2e6093e2b1e2ea0bf48df4901dd4d42445faa9b88056ed0f0194f5563042
+content_hash: sha256:d72feb53a287ab755000d79c797299ecc5a3c9a6648e1d51d378fb3210329133
 ---
 
 [@Provide](../harmonyos-references/ts-state-management-provide.md#provide)和[@Consume](../harmonyos-references/ts-state-management-consume.md#consume)，应用于与后代组件的双向数据同步、状态数据在多个层级之间传递的场景。不同于上文提到的父子组件之间通过命名参数机制传递，@Provide和@Consume摆脱参数传递机制的束缚，实现跨层级传递。
@@ -66,7 +66,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
 
 **图1** @Provide初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Xd743Py7QS6k6J6UIuv_RQ/zh-cn_image_0000002820524583.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=98C223C1E578D5F6D07E70D848C89B912EE7A9731808F02F01B8A4E4D4097F36)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/Skpd_GHkRmS00NGOPLxtGg/zh-cn_image_0000002793036252.png?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=A939EDEFD89DF6246D8A6A6502A9A9DCE4E9CA32B1688E0A1078E7D3F4580934)
 
 | @Consume变量装饰器 | 说明 |
 | --- | --- |
@@ -78,7 +78,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
 
 **图2** @Consume初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/omiZQAjhSf-K7UmGhWDHcg/zh-cn_image_0000002820404583.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA6B819BD0D465D3BCB21249F6E5811206869305ABEBA6E9E4D849048221E4A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/kBz69JM5T5-UG3K74UTLgA/zh-cn_image_0000002792876284.png?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=86136AA859510D213E524B9B0568FDF7EFEFFA5C50C14F793F81FE55C214CDFF)
 
 ## 观察变化和行为表现
 
@@ -107,7 +107,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
 
    通过初始渲染的步骤可知，子组件@Consume持有@Provide的实例。在@Consume更新后调用@Provide的更新方法，将更新的数值同步回@Provide，以此实现@Consume向@Provide的同步更新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/y3MRI6oITqyoRqf8Z5jMOQ/zh-cn_image_0000002791724606.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=15B07E7901E6B1A87BB6C44818479B5C6549A8BC3AEFDC84D2B90B412BB960C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/P4Gc4HyAQMuIPy0RcRhvPg/zh-cn_image_0000002821836189.png?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AFFD4C7D5915C8C5E95184DBBAE75ADA4FC564602B6A8C5FEF5668805D6E176)
 
 ## 限制条件
 
@@ -181,7 +181,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/i_Zr_XBjSUOmJuie4JqhLg/zh-cn_image_0000002791564634.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA5C2E9CB9D8600EBB57D84ECDB8199901309A2AF8F6D05D03ECDE3B9C8D9A78)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/BeMYP6rjROOe5Eqh8jaUaA/zh-cn_image_0000002821756189.png?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=9047DAD786BC1BE2EF62F3B558EB327FF4F2A9C086A9614DF0DD1EDC8C09CB35)
 3. @Provide的key重复定义时，框架会抛出运行时错误，从API version 23开始，将返回错误码[140114](../harmonyos-references/errorcode-statemanagement.md#section140114-声明重复key的provide)，提醒开发者重复定义key。如果开发者需要重复key，可以使用[allowOverride](arkts-provide-and-consume.md#provide支持allowoverride参数)。
 
    ```ts
@@ -256,7 +256,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ocO1TqGfQsOXwHJBDZlN5g/zh-cn_image_0000002820524585.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=AED8E24014ADBE9E2544DFFA140F4AD8B0D5AE1E1B262F2AF744055B8339FF48)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Bg5szZW7Qy-WuOBsfxGJKA/zh-cn_image_0000002793036254.png?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8D7405F2B53457A1680C47B160A2B293EA1FEDE40890C194893EBAD81B3AB34)
 5. @Provide与@Consume不支持装饰Function类型的变量，API version 23之前，应用在运行时会出现错误。
 
    从API version 23开始，在应用编译时添加了相关校验，@Provide与@Consume装饰Function类型变量会提示ERROR，应在代码中删除Function类型变量的@Provide或@Consume装饰器。
@@ -336,7 +336,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/vMLVNiBkSnqQt3WkGQzYUQ/zh-cn_image_0000002820404585.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=17F1B48B7573FEF308EAAD91FB98E067D7D00788A619593B728919ABABE8C8AD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/yMLTKGb3RpmxOEKAM_HdQw/zh-cn_image_0000002792876286.png?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=D13B6F7FDDA74499E2F089066043462E44251501968DA48629BC12D11960B5DC)
 7. 父组件传入undefined时，@Provide装饰的变量仍使用本地默认值进行初始化。
 
    ```typescript
@@ -370,7 +370,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/f-IVMHtaTn6iLvSpJ9U0jw/zh-cn_image_0000002791724608.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=E990DC15C517CCA240F4A0BC363AF0AFB0F95588DAE14B5154E2227015CE941F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/y1hX83qRTQeO8OC_G72w_A/zh-cn_image_0000002821836191.png?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BA403115EC3343AD8B1188C7662E8D6D32D19EB3D8AB69B8905FCFA4CF2DD27)
 
 ## 使用场景
 
@@ -434,7 +434,7 @@ struct ToDo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/sEybRlNFTlmcc_PmnsysCg/zh-cn_image_0000002791564636.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDD3EB0BC2B3EE3EAD9C8D3494BA34E77C4CC15C5B3183675AF6487ECA22DEAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/J2qiiCy_TkSX7e-NCoXHyg/zh-cn_image_0000002821756191.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=A46BEA118252CDD0FF6871B6E3B54005BCB47F23FCD0EA9C616E8F18EBF0203F)
 
 ### 装饰Array类型变量
 
@@ -506,7 +506,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/domFNw-DRJSUr7Wbg-U5zw/zh-cn_image_0000002820524587.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=80C3E65C647B26735A5064715FFB47B397AE08E2E2F17D761DA560E813B716A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/pYr1TmpVQ56fpYqHERreeg/zh-cn_image_0000002793036256.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B74534A6965620D3E4E24915A3994E30C6B6CB03DB0C370067E24C840CC7C89)
 
 ### 装饰Map类型变量
 
@@ -591,7 +591,7 @@ struct MapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/W6vVnRQISBazwDJh7a34Ww/zh-cn_image_0000002820404587.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D0E481518DF907469046A8E8469C096B0B5B16115F505E4ECB680A7DACF592D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/wNh_Zl6UTPKxv31gqk-iKQ/zh-cn_image_0000002792876288.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=A89551AA457A7A1551DE576CED2F8AB0F1155A9B8A41464A61BD3F14941D4CAA)
 
 ### 装饰Set类型变量
 
@@ -667,7 +667,7 @@ struct SetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/0EnbS-QHRGCIyNWaBzL-aw/zh-cn_image_0000002791724610.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1202CF26A69BF398445410F650C1EC91635865905D7AAF9988799EBB1A4406D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/gdQdKSrNQ8WcEMsGgPtr4A/zh-cn_image_0000002821836193.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=C794C8EFAC04B7D1AC771769609FBD0EC5B21116FE04ECD31FEEAF003AFD0E2E)
 
 ### 装饰Date类型变量
 
@@ -735,7 +735,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/pWGt0FnGTDOAJAwwjsuBnw/zh-cn_image_0000002791564638.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=87AFF81C85467B46B852E186194CF95805870CCAF29B5518F1AB1F6994E9F813)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/tzeGk50BRyOwrgnFwxJo1Q/zh-cn_image_0000002821756193.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=D780EC1DA0B13B91F2CC862EEEF38F6BF00987D4A6D7AADCDC0904107B2A7C1D)
 
 ### @Provide和@Consume支持联合类型实例
 
@@ -789,7 +789,7 @@ struct Ancestors {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/YlJekr84Qc6eaCryVF1w-A/zh-cn_image_0000002820524589.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AB4736182FE3B68B272A589211B7710EFFBBD1CC460D712210BD65852FF7A99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/LSN-9lOmR8CX1SxVQ6Efcw/zh-cn_image_0000002793036258.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=79936692869318695CE4A40834E0AE17676C0B38C8EEA3298D8631CF73053FC1)
 
 ### @Provide支持allowOverride参数
 
@@ -875,7 +875,7 @@ struct GrandParent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/2bPvJXovTdiOk8lUQv6EPw/zh-cn_image_0000002820404589.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BD7B23F62E15DE4E134DA7CD5648159080FED54201E604840145EDFCBACFAB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/o5aPYkP7QXqIHAdiRGwzvg/zh-cn_image_0000002792876290.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=99885966E23C34679A008E3FEF514426C383E5A9E8CA30885EFB0BA9089AA5DD)
 
 在上面的示例中：
 
@@ -995,7 +995,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/woiEYc6BTHukgxmTdzyoIg/zh-cn_image_0000002791724612.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA02B0853E73A75735A5A7D6FE2FF4A40CA3440CCE365061A737503E570B4E3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/1tvm70B0QrCWHKhJB0zSfQ/zh-cn_image_0000002821836195.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=71E6F22E463D27AF95D684525FAD9EB946EFFCB4D4938549B0DF930B8FCDB7EE)
 
 在上面的示例中：
 
@@ -1172,7 +1172,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/BjucewcYRemlCW7qZjJcjQ/zh-cn_image_0000002791564640.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FC959251F7573C3608A5C42EF46E3CF08CF85F677AE7C71FDDE6FB71FCA901C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/BGz8Hv48QZWcAFEhetGKJg/zh-cn_image_0000002821756195.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=A948DBBE85DE3CAB559BC548D284F5858E61E0370965DFA4A8C07D15CEF44D19)
 
 ## 常见问题
 
@@ -1311,4 +1311,4 @@ struct CustomWidgetChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/33GHimPwQ5Kb6OszKAERYg/zh-cn_image_0000002820524591.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=174886EFAA89CBDEEBD5DF8DFBB160C77C0BC775C9515599D4B0BA14D4A059AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/RSBiiUasTKeGBbzKI_VvTQ/zh-cn_image_0000002793036260.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010939Z&HW-CC-Expire=31536000000&HW-CC-Sign=50E46508763317AB4C48FC3C5FC546F2F8A981FAB1067FE69E63F3E7366D6539)

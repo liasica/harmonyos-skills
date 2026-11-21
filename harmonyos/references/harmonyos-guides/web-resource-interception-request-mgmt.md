@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-resource-
 title: 自定义页面请求响应
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 自定义页面请求响应
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:52+08:00
+scraped_at: 2026-11-21T09:11:18+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c132a7c7efe499a682e1a8ebe92dcc6c713752521c242d17481e0caa2ba2274e
+content_hash: sha256:79703a3cecb4ba5c5eea1ce4e70fa7beb43c51a98c64fa1bf9c4d5f9fa27df5d
 ---
 
 Web组件支持在应用拦截到页面请求后自定义响应请求能力。开发者通过[onInterceptRequest()](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)接口来实现自定义资源请求响应。自定义请求能力可以用于开发者自定义Web页面响应、自定义文件资源响应等场景。
@@ -74,7 +74,7 @@ Web网页上发起资源加载请求，应用层收到资源请求信息。应�
   ```
 * 被拦截后的页面
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/q2fbOBM4ShO0S8JssKh6Hw/zh-cn_image_0000002820405459.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CF405B11030C7E0354ED4C3795BD33B78819716BB18390A0A9ED2691FD6E28C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/MQSFh1unSqi-L0242HeJ2g/zh-cn_image_0000002792877160.png?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=090DF9DAF989264125597204992BC7CB342B4641EA3DE7808A63BB7D39938A86)
 
 为自定义的JavaScript请求响应生成CodeCache：自定义请求响应的资源类型如果是JavaScript脚本，可以在响应头中添加“ResponseDataID”字段，Web内核读取到该字段后会为该JS资源生成CodeCache，加速JS执行，并且ResponseData如果有更新时必须更新该字段。不添加“ResponseDataID”字段的情况下默认不生成CodeCache。
 
@@ -168,4 +168,4 @@ Web网页上发起资源加载请求，应用层收到资源请求信息。应�
   ```
 * 被拦截后的页面
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/3RLybSl5SaON2rS8MsKIWw/zh-cn_image_0000002791725480.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=16EFCC0F1A3E762B0974D675B4CED50D6282C5E956EF504E7FCFDFEF6692C025)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/hlgPmSioQcGGqwsZUda5Yg/zh-cn_image_0000002821837067.png?HW-CC-KV=V1&HW-CC-Date=20261121T010954Z&HW-CC-Expire=31536000000&HW-CC-Sign=4031EFAEC4D21CBB2E5C78699BE200498D4994DD93EACC0853B23FCC331D61C4)

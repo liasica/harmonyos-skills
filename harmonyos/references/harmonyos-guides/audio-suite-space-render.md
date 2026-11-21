@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-s
 title: 空间音频渲染(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 空间音频渲染(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:33+08:00
+scraped_at: 2026-11-21T09:11:58+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:897b4258ce40ea32a6c4bcc6be9ae459865dace1e1e424f1a13dfd52d3d44035
+content_hash: sha256:878fdc1b98f72aaa7976ea53c09a7f4b0a7edc4b24b892198fc9be24ef14982e
 ---
 
 从API version 23开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)给开发者提供空间渲染效果节点[EFFECT\_NODE\_TYPE\_SPACE\_RENDER](../harmonyos-references/capi-native-audio-suite-base-h.md#oh_audionode_type)，用于实现三维空间音频渲染能力。空间渲染效果节点提供固定摆位、旋转及扩展三种[工作模式](audio-suite-space-render.md#工作模式)，将音频源在三维空间中进行定位、旋转和扩展处理，助力开发者高效构建沉浸式空间音频体验。
@@ -30,19 +30,19 @@ content_hash: sha256:897b4258ce40ea32a6c4bcc6be9ae459865dace1e1e424f1a13dfd52d3d
 
 固定摆位模式用于将音频源放置在特定空间的固定位置，适用于需要固定音源位置的场景，用户可通过调用[OH\_AudioSuiteEngine\_SetSpaceRenderPositionParams](../harmonyos-references/capi-native-audio-suite-engine-h.md#oh_audiosuiteengine_setspacerenderpositionparams)对空间渲染节点进行参数配置。固定摆位示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/eS4nxlYpRvax-jYhd6eqPg/zh-cn_image_0000002791565916.png?HW-CC-KV=V1&HW-CC-Date=20261119T014832Z&HW-CC-Expire=31536000000&HW-CC-Sign=831EE9A9FAA12045609DBC19AAB4DA341DF499259B6AF313EB576769C7B19BEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/PgrXmcofQCKFBSW61HFW0A/zh-cn_image_0000002821757477.png?HW-CC-KV=V1&HW-CC-Date=20261121T011032Z&HW-CC-Expire=31536000000&HW-CC-Sign=D394837BCD15A98B92757953C92F58A655580FE452157CF4CD75198BED17C51E)
 
 ### 旋转模式
 
 旋转模式让音频源在指定位置设定单周环绕时间与时针方向进行动态渲染，用户可通过调用[OH\_AudioSuiteEngine\_SetSpaceRenderRotationParams](../harmonyos-references/capi-native-audio-suite-engine-h.md#oh_audiosuiteengine_setspacerenderrotationparams)对空间渲染节点进行参数配置。旋转模式示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/ysc9KGKnRXKRRNPt5nofXA/zh-cn_image_0000002820525869.png?HW-CC-KV=V1&HW-CC-Date=20261119T014832Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E4FFFC6D60CAB8DE8F044E0744C4781E6F83ADAFDC8FB158AB2C1CC8361C6D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Y3liFgexQLSDoHHaQYPB8w/zh-cn_image_0000002793037540.png?HW-CC-KV=V1&HW-CC-Date=20261121T011032Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D95E1D90E8C2695969F224AD2A51531834C30034F5100E5C223F23235E7EA5B)
 
 ### 扩展模式
 
 扩展模式将音频源按照半径和角度进行扩展，用户可通过调用[OH\_AudioSuiteEngine\_SetSpaceRenderExtensionParams](../harmonyos-references/capi-native-audio-suite-engine-h.md#oh_audiosuiteengine_setspacerenderextensionparams)对空间渲染节点进行参数配置。扩展模式示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/rX3x4ukySp6Qjh_9RVgwmg/zh-cn_image_0000002820405869.png?HW-CC-KV=V1&HW-CC-Date=20261119T014832Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAF390967CC7A868488ED561FE93852161B02699A923CAD9985D14E0D52F0791)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/JWSWP-D_TRaj5j4DGQJd0A/zh-cn_image_0000002792877570.png?HW-CC-KV=V1&HW-CC-Date=20261121T011032Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A0C7E62A3232F7533C7AA39D0083F461B7FEF3983D839261C1F4B7944214B5F)
 
 ## 开发基础配置
 

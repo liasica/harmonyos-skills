@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/process-model
 title: 进程模型概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 进程模型 > 进程模型概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:26+08:00
+scraped_at: 2026-11-21T09:10:52+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:94a30fc34def04d2eb55bae005a795406e019854583f95d6501da86a2099dc76
+content_hash: sha256:a8b303542aaa931bfd13a3f51b0d2bf29b11239a6f42bc5e6e4e6e5d65cf3cdb
 ---
 
 进程是系统分配资源的基本单位，也是操作系统运行结构的重要基础。下面从应用全局视角介绍系统的进程模型。
@@ -32,7 +32,7 @@ HarmonyOS的进程模型则以组件为中心，大多数情况下应用并不�
 
 **图1** 基本进程类型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/rNB22kqvRRmUUluyirv5fg/zh-cn_image_0000002820524411.png?HW-CC-KV=V1&HW-CC-Date=20261119T014726Z&HW-CC-Expire=31536000000&HW-CC-Sign=A824C821DD6465F190789EE829F6A9475ECA35CF6D683109EBB9F276AA5B0E4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/3DoxEB1vSh6T_e2RmJ2jIQ/zh-cn_image_0000002793036080.png?HW-CC-KV=V1&HW-CC-Date=20261121T011052Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEA5F90E7184C16B8E8E6F6D5D4CCFADBAAB5505E22253FEB06CEBCE78596F1F)
 
 **说明** 
 
@@ -53,4 +53,4 @@ HarmonyOS的进程模型则以组件为中心，大多数情况下应用并不�
 
 **图2** 独立进程配置和子进程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/TpQgTvz7TQ-zLYPfuNiRBA/zh-cn_image_0000002820404411.png?HW-CC-KV=V1&HW-CC-Date=20261119T014726Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9D10E17C1DFB719CBB934587B3FA57B74C60B0F8539E38BA98A8AF5176F3780)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/JVAdWRYnQAOlyuRIIEdnDA/zh-cn_image_0000002792876112.png?HW-CC-KV=V1&HW-CC-Date=20261121T011052Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E4EA77B9F2AD6B45C6E646C8FDA8C63DB95106946ACADC2AC9D6E482BA4B504)

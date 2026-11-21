@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: OH_NN_QuantParam
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 结构体 > OH_NN_QuantParam
 category: harmonyos-references
-scraped_at: 2026-11-19T09:55:04+08:00
+scraped_at: 2026-11-21T09:17:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b3fc0245ee36a5027f3ef77dca5473438c5d5b15482a39da39c75cb7477cadc9
+content_hash: sha256:7563a6c9a49ad4bf167974909f162c4fddd66cd05eb454f3ca84a1b5ef54467c
 ---
 
 ```c
@@ -18,17 +18,17 @@ typedef struct OH_NN_QuantParam {...} OH_NN_QuantParam
 
 在量化的场景中，32位浮点型数据根据以下公式量化为定点数据：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/6KTjGpUbS_CyQOzxL3vgRA/zh-cn_image_0000002820408221.png?HW-CC-KV=V1&HW-CC-Date=20261119T015408Z&HW-CC-Expire=31536000000&HW-CC-Sign=24141E6FCA9635C4BD938F2D792DB5FC4BD1B6BD88BAF19B7295E53448A89BC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/kh7IZHO9TvaPN08tKTjxmw/zh-cn_image_0000002821759861.png?HW-CC-KV=V1&HW-CC-Date=20261121T011703Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F55C4EA40DBF06974418A4EF34AE3419035E44C3F616029191136F0824B0319)
 
 其中s和z是量化参数，在OH\_NN\_QuantParam中通过scale和zeroPoint保存，r是浮点数，q是量化后的结果，q\_min是量化后下界，q\_max是量化后的上界，计算方式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/XIWwd4wFR9-9iaWVO23NEQ/zh-cn_image_0000002791728240.png?HW-CC-KV=V1&HW-CC-Date=20261119T015408Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF9F5C9846535CDEE151571AF65F39B2193695D52B5666F1DDD99AA430E23043)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/qmC7RgtpR3ekyoMIV4Gqsg/zh-cn_image_0000002793039932.png?HW-CC-KV=V1&HW-CC-Date=20261121T011703Z&HW-CC-Expire=31536000000&HW-CC-Sign=94F683664FF62D80B7EB861E0EB9A5D34F523EB3A2E8D4C02D148CDC687D269F)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/lFadatDMS7KUCkYNarQYqA/zh-cn_image_0000002791568268.png?HW-CC-KV=V1&HW-CC-Date=20261119T015408Z&HW-CC-Expire=31536000000&HW-CC-Sign=106501BAB4C83EE5BB9647F90F1AF4F4A140F513EE58EB847075C1A92983A7CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/w_e0rc3uS92UVaGkknnUTg/zh-cn_image_0000002792879958.png?HW-CC-KV=V1&HW-CC-Date=20261121T011703Z&HW-CC-Expire=31536000000&HW-CC-Sign=9933AC8C72A1C7EA2EE6BD795D7633FEDC025BDDEB11C0AD760F04F9F90BED7E)
 
 clamp函数定义如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/tEEzrtxLQIuVwCGcXJ7sLA/zh-cn_image_0000002820528221.png?HW-CC-KV=V1&HW-CC-Date=20261119T015408Z&HW-CC-Expire=31536000000&HW-CC-Sign=04EF56823DDA69201E7A690B027224B53B5F1FD2926582B143114FCD213202B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/9ay3OMD9Qs-JE64377mINQ/zh-cn_image_0000002821839861.png?HW-CC-KV=V1&HW-CC-Date=20261121T011703Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5E5C07E9D1BE8F2587387E53F6C5971B134EF472C73AD7FD86A52162AF3901B)
 
 **起始版本：** 9
 

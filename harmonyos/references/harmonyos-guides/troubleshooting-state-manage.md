@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/troubleshooti
 title: 状态变量改变不触发组件刷新问题常用定位方法
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理常见问题 > 状态变量改变不触发组件刷新问题常用定位方法
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:38+08:00
+scraped_at: 2026-11-21T09:11:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:95f8be41e875ee935c905b55e03a0f2f959dbe64c1d406d2429ddfced30a1d4d
+content_hash: sha256:4b580733a8082d941ee600c988847415a3841f7474682a1469c36770d106cd5c
 ---
 
 在声明式UI编程框架中，状态管理的主要职责是：当状态变量改变时，触发其关联组件的刷新。所以在使用状态变量的过程中，最常见的问题就是组件不刷新。本文主要针对开发者在使用状态变量时遇到的不刷新问题，阐述以下两个方面。
@@ -141,7 +141,7 @@ struct Child {
 * 日志提示inner is not observed object。
 * ArkUI State泳道没有状态变量变化的上报信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/JUBPNtBWRNmf1KQhASFJyw/zh-cn_image_0000002820524719.png?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=F588F0574EE616402520A1B1CC00565519A6853E332C87B17720E0DCC92C582E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/56aSvdOwTaqdvehv09y4Yw/zh-cn_image_0000002793036386.png?HW-CC-KV=V1&HW-CC-Date=20261121T011104Z&HW-CC-Expire=31536000000&HW-CC-Sign=E700A7C48EB9B51ECF92CB256C1ABA53E39FB78F86795810BC9E1255B2ED06E6)
 
 需要注意，并非所有的类对象都需要被@Observed装饰。[@State](arkts-state.md)装饰器会默认对复杂对象包装第一层代理，而对嵌套对象，则需要在内层对象的类声明上增加@Observed装饰。
 
@@ -208,7 +208,7 @@ struct InnerDisplay {
 * 日志提示inner is observed object。
 * ArkUI State泳道有状态变量变化的上报信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/7C5W-aCKS36zdrEx7J9fKw/zh-cn_image_0000002820404717.png?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE39AA67DF82051AA533FB1D7FE5B95D339C08CE11A7062AD2E386D1A0C503B9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/PaPIy8MbQ-a1UaPvtev2gQ/zh-cn_image_0000002792876418.png?HW-CC-KV=V1&HW-CC-Date=20261121T011104Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF1EAD9FD46F1A13918E5E6C58127060DC0DC7491657519CA3FAC5AAAF057F8B)
 
 **状态管理V2**
 
@@ -276,7 +276,7 @@ struct ObservabilityV2Page {
 
 基于上面的示例，观察ArkUI State泳道，有两次状态变量的变化上报，即this.info.value和this.info.numberArr。count不是@Trace装饰的，所以不会被观察到变化，也不会在Profiler上报状态变量的变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/yHdM8kXRREyRXq3NWkSWZg/zh-cn_image_0000002791724740.png?HW-CC-KV=V1&HW-CC-Date=20261119T014738Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BB6A188534A57AD631341C63CD0F5148C980942B9AE0409F9E9E210369270B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/_rSE_FoKQMC0Xt-fz5SFkQ/zh-cn_image_0000002821836323.png?HW-CC-KV=V1&HW-CC-Date=20261121T011104Z&HW-CC-Expire=31536000000&HW-CC-Sign=96A7498F6A186355CBBBCC52C2252D8A93C362F99FB451802A7711E6674C72A5)
 
 ### 第四步：数据源和被同步的对象是否有关联关系
 

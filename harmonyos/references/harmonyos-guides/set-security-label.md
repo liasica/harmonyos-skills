@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/set-security-
 title: 设置分布式文件数据等级
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 分布式文件系统 > 设置分布式文件数据等级
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:25+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:4ae7d1d86ff64f3355be15142035190641d15ba91e56993fb0b53ec3204dae17
+scraped_at: 2026-11-21T09:11:21+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:9854c9c357f2e73790825aae7fbe6a78d950eaa506c24ee14fe22240ce1a8b15
 ---
 
 不同设备本身的安全能力差异较大，一些小的嵌入式设备安全能力远弱于平板等设备类型。用户或者应用不同的文件数据有不同安全诉求，例如个人的健康信息和银行卡信息等不期望被弱设备读取。因此，HarmonyOS提供一套完整的数据分级、设备分级标准，并针对不同设备制定不同的数据流转策略，具体规则请参见[数据、设备安全分级](access-control-by-device-and-data-level.md)。
@@ -29,12 +29,6 @@ API详细介绍请参见[ohos.file.securityLabel](../harmonyos-references/js-api
 ## 开发示例
 
 获取通用文件沙箱路径，并设置数据等级标签。示例中的context的获取方式请参见[获取UIAbility的上下文信息](uiability-usage.md#获取uiability的上下文信息)。
-
-```ts
-import { fileIo, securityLabel } from '@kit.CoreFileKit';
-import { BusinessError } from '@kit.BasicServicesKit';
-import { common } from '@kit.AbilityKit';
-```
 
 ```typescript
 // 获取需要设置数据等级的文件沙箱路径，请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext

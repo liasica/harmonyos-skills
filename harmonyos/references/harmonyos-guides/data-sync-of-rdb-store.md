@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-
 title: 关系型数据库跨设备数据同步 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用跨设备数据同步（分布式） > 关系型数据库跨设备数据同步 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:30+08:00
+scraped_at: 2026-11-21T09:10:56+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:4ece5da99ec692df0910986c83424b39158f2db7ae8c10ededb1fb4afd713f3d
+content_hash: sha256:390f9d6f49be4140671d3f5131ce9aa3f05e451eeec64fe7becbbe9b05ff5665
 ---
 
 ## 场景介绍
@@ -26,7 +26,7 @@ content_hash: sha256:4ece5da99ec692df0910986c83424b39158f2db7ae8c10ededb1fb4afd7
 
 ### 数据跨设备同步机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/m0nKg6YAT4246m_Z_txSSQ/zh-cn_image_0000002820524455.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014639Z&HW-CC-Expire=31536000000&HW-CC-Sign=A22E6D756292F8E78A4CAD2FC934FA5415166669F4A622B76BE6F774A4F0DEF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/YWsKSfW4TFKUvkunlaNDIA/zh-cn_image_0000002793036124.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T010932Z&HW-CC-Expire=31536000000&HW-CC-Sign=254459DCD6C66A855AD3B8950C6D963A70EF48AF0F1EF41B49A01325D1AE913B)
 
 业务将数据写入关系型数据库后，向数据管理服务发起同步请求。
 
@@ -51,7 +51,7 @@ content_hash: sha256:4ece5da99ec692df0910986c83424b39158f2db7ae8c10ededb1fb4afd7
 
 需要注意的是，该模式下不支持对其他设备同步过来的数据进行修改。这一限制旨在保障数据一致性与同步逻辑的稳定性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/rhM_MmxdQkukA6lsabsVhA/zh-cn_image_0000002820404455.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014639Z&HW-CC-Expire=31536000000&HW-CC-Sign=22FE1C7EFFC858ACE75FA00AACF737A34228FBDC0F845A654706908ED3883F71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/E6nLj-W-TkGD4LB3vykUwQ/zh-cn_image_0000002792876156.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T010932Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FC91D483D1D7882BB89216B434178ECAC655B3AAF4E1A627A62E68EB70535CC)
 
 **单版本表模式**
 
@@ -59,7 +59,7 @@ content_hash: sha256:4ece5da99ec692df0910986c83424b39158f2db7ae8c10ededb1fb4afd7
 
 使用单版本表模式跨设备同步，需要配置schema文件，指定所需同步列以及解冲突列；单版本表模式同步数据支持修改对端设备同步过来的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/gL8uexS-RRy5R5GKRQCe0g/zh-cn_image_0000002791724478.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014639Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F246F858BCF866E02B2A8B3C377626082613B5E59C36E009044CBF6CF51CE00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Yiczw8tJQveRjtAMufQYjw/zh-cn_image_0000002821836061.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T010932Z&HW-CC-Expire=31536000000&HW-CC-Sign=002109A24DA1EA9A3E7F34F652201B29CF24CD9328455720408EBEF2C9575C9A)
 
 ## 约束限制
 

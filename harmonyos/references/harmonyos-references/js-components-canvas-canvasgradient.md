@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: CanvasGradient对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > CanvasGradient对象
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:22+08:00
+scraped_at: 2026-11-21T09:14:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:fb12a024ed5408d2dd32eb7738de4775c715ed942a3379d76e5bcdf934bb9f46
+content_hash: sha256:98014e824eff5ce9c7cdb1e573a7b9ce48707d71f99e4dc4796122b65c055427
 ---
 
 **说明** 
@@ -52,4 +52,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/MLEpww_CTsaGi7-mbaO-wA/zh-cn_image_0000002791567854.png?HW-CC-KV=V1&HW-CC-Date=20261119T015027Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CA5C8FF3766F9FEBF0FFE6C33F78E0F41B1426D41C50A7097263CFAEC6481D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/nuYDqGd5RJC4xIwB2VMojA/zh-cn_image_0000002792879536.png?HW-CC-KV=V1&HW-CC-Date=20261121T011422Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D985765B06248515CE9815FED3BFE39D6FF825CEFFA5DE18A31FADECFAB395B)

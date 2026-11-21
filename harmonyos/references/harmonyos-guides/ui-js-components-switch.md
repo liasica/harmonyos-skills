@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: switch开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > switch开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:48+08:00
+scraped_at: 2026-11-21T09:11:14+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:ee245a9db7cf699e9555ca9fe78620cedb1de1abce2ef801f25604d4db66f482
+content_hash: sha256:ae7690b6cb6c7faa4abbb5163630e0b56a4528af2a21c7d39257cc4662cbf44d
 ---
 
 switch为开关选择器，切换开启或关闭状态。具体用法请参考[switch](../harmonyos-references/js-components-basic-switch.md)。
@@ -29,7 +29,7 @@ switch为开关选择器，切换开启或关闭状态。具体用法请参考[s
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/o-YGTeV9SZyAFvfPnqC1Dg/zh-cn_image_0000002791565384.png?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=A491FE0BF75FBA1F69356DDC47C3299079CBE498C280E649F0B212785AB03B03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/6RNVHGXfQjydb42AflytlQ/zh-cn_image_0000002821756945.png?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0890E2AD91D07E3B0009EB731484C9E1A91F431E33D24C860C04CE397D352E3)
 
 ## 添加属性和方法
 
@@ -77,7 +77,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/vlfb9pz_QESQ02I2CMu0EA/zh-cn_image_0000002820525337.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=C75BEA624D301BA6BC0D41E239ABEA8B2FDFA84C59A9E11A29C1255606A658D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/4PQI5qKlQHWkYAEbNyVxbA/zh-cn_image_0000002793037008.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB3299CBB3CD5E5D7C27E8152C4A7A85CF9F087140124A1E2F66F1A9405A0C43)
 
 **说明** 
 
@@ -186,4 +186,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/vLOMaG3ISK6FgANveb7zuQ/zh-cn_image_0000002820405337.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014748Z&HW-CC-Expire=31536000000&HW-CC-Sign=D069BA984153A9CA5B564879A75D1F00E5A122FEDDF2F1EBDB0D98CB4D3219CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/M9tr03VRQl6h-Kyx1kwu_Q/zh-cn_image_0000002792877038.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E2E746B83044B05B03096A7232DEFE9E7B2FC0B0B3AA39349D2CF6F9B55B065)

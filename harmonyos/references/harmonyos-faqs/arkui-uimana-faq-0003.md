@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: ArkUI动画效果实现与控制常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI动画效果实现与控制常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:a1c460bdc9c1250041d1faedfe79dd42bd8abbca9784cc52dfeb6fb4738041a5
+scraped_at: 2026-11-21T09:18:16+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:42fe5be2916ce5158ec589c26622888c7b00e24f36e027bc2272c166800991c0
 ---
 
 **Q：如何实现影视类app首页的内容推荐功能？具体演示如下：**
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/8pwcz4ikScmqFaDyfQFS8w/zh-cn_image_0000002793395103.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=075CAEAA51F21BEC9B14437DA7F23F415EED1891B8E5E184CE126959FB5B39FC "点击放大")
 
 **A**：实现方式如下：
 
@@ -323,10 +321,6 @@ struct RotatingLoadPage {
 }
 ```
 
-运行效果如下：
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/LYCUtOFsREWNNAoVIhC4HA/zh-cn_image_0000002793395489.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=39A51DFD53CB28CAAD87BC49EE10531B14F323F6A656682401E6F5B59E296EE9 "点击放大")
-
 **Q：如何为组件添加180°镜面翻转的动画效果？**
 
 **A**：实现方案如下：
@@ -403,13 +397,9 @@ struct ReversalIndex {
 }
 ```
 
-效果如下：
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/WrHGyJK7SHykfxNaEgwq0Q/zh-cn_image_0000002763997146.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6FF0957FF7401BFBE9D0798F935778AB4AFB2B126AB794C7333D5E68DAF63C8 "点击放大")
-
 **Q：图片可以进行镜面翻转吗？**
 
-**A**：请参考[使用PixelMap完成图像变换](../harmonyos-guides/image-transformation.md#示例代码)。
+**A**：请参考[使用PixelMap完成图像变换](../doccenter-capabilities/image-transformation.md#示例代码)。
 
 **Q：如何给点击事件添加动画效果，以提升用户的使用体验？**
 
@@ -616,7 +606,9 @@ struct Problem {
 
 **A**：实现组件的水波纹效果有以下两种方案：
 
-* 方案一：点击后实现波纹动效。通过onClick回调获取手指点击的位置用于为圆形组件的位置赋值，然后通过组件内转场实现圆形出现并逐渐透明的效果。
+* 方案一：点击后实现波纹动效。
+
+  通过onClick回调获取手指点击的位置用于为圆形组件的位置赋值，然后通过组件内转场实现圆形出现并逐渐透明的效果。
 
   ```ts
   @Entry
@@ -666,10 +658,6 @@ struct Problem {
     }
   }
   ```
-
-  效果预览：
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/7WMgi4x0Qf6nBnjJWVtOEg/zh-cn_image_0000002793480175.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=C18A90170AB20B97718FA4698D8EFD928493A6E2A3AB27E4D5EA2A5863D0B568 "点击放大")
 * 方案二：控件自主产生动效。
 
   ```ts
@@ -731,10 +719,6 @@ struct Problem {
   }
   ```
 
-  效果预览：
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/4_7zxSIJSY-2HAUDu4snKA/zh-cn_image_0000002793480829.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EB053DF6D664DD9F2579808ABDAB9BD701D5A4AC2496CB03F3A1B7A4C431084 "点击放大")
-
 **Q：在HarmonyOS系统中，如何实现红包雨的动画效果呢？**
 
 **A**：实现红包雨动画效果的步骤如下：
@@ -788,110 +772,110 @@ struct Problem {
          });
    ```
 
-   完整示例参考如下：
+完整示例参考如下：
 
-   ```ts
-   import { AnimatorOptions } from '@ohos.animator';
-   import { AnimatorResult, window } from '@kit.ArkUI';
-   import cryptoFramework from '@ohos.security.cryptoFramework';
-   @Observed
-   class RedPacketModel {
-     x: number = 0;
-     y: number = -90;
-     imageWidth: number = 0;
-     delay: number = 0;
+```ts
+import { AnimatorOptions } from '@ohos.animator';
+import { AnimatorResult, window } from '@kit.ArkUI';
+import cryptoFramework from '@ohos.security.cryptoFramework';
+@Observed
+class RedPacketModel {
+  x: number = 0;
+  y: number = -90;
+  imageWidth: number = 0;
+  delay: number = 0;
 
-     constructor(index: number, imageWidth: number, delay?: number,) {
-       this.x = 10 + (imageWidth) * (index - 1) + 10 * index;
-       if (delay) {
-         this.delay = delay * 1000;
-       }
-     }
+  constructor(index: number, imageWidth: number, delay?: number,) {
+    this.x = 10 + (imageWidth) * (index - 1) + 10 * index;
+    if (delay) {
+      this.delay = delay * 1000;
+    }
+  }
 
-     static getRandomNumber(min: number, max: number) {
-       let rand = cryptoFramework.createRandom();
-       // 设置生成随机数的字节长度为1
-       let randData = rand.generateRandomSync(1);
-       // 自定义范围(0-10之内)
-       let numRan: number = Math.fround(randData.data[0] * 10 / 2550);
-       let num = Math.floor(numRan * (max - min + 1)) + min;
-       return num;
-     }
-   }
-   @Component
-   struct RedPacket {
-     @ObjectLink model: RedPacketModel;
-     @Link imageWidth: number;
-     animatorResult: AnimatorResult | undefined = undefined;
+  static getRandomNumber(min: number, max: number) {
+    let rand = cryptoFramework.createRandom();
+    // 设置生成随机数的字节长度为1
+    let randData = rand.generateRandomSync(1);
+    // 自定义范围(0-10之内)
+    let numRan: number = Math.fround(randData.data[0] * 10 / 2550);
+    let num = Math.floor(numRan * (max - min + 1)) + min;
+    return num;
+  }
+}
+@Component
+struct RedPacket {
+  @ObjectLink model: RedPacketModel;
+  @Link imageWidth: number;
+  animatorResult: AnimatorResult | undefined = undefined;
 
-     aboutToAppear(): void {
+  aboutToAppear(): void {
 
-       let animatorOption: AnimatorOptions = {
-         duration: 2000 + (RedPacketModel.getRandomNumber(0, 255) % 250 / 100) * 1000,
-         delay: this.model.delay,
-         easing: 'linear',
-         iterations: 1,
-         fill: 'forwards',
-         direction: 'normal',
-         begin: -90,
-         end: 840
-       };
-       // 创建一个帧动画
-       this.animatorResult = this.getUIContext().createAnimator(animatorOption);
-       // 接收帧回调，并设置红包的纵坐标
-       this.animatorResult.onFrame = (progress: number) => {
-         this.model.y = progress;
-       };
-     }
+    let animatorOption: AnimatorOptions = {
+      duration: 2000 + (RedPacketModel.getRandomNumber(0, 255) % 250 / 100) * 1000,
+      delay: this.model.delay,
+      easing: 'linear',
+      iterations: 1,
+      fill: 'forwards',
+      direction: 'normal',
+      begin: -90,
+      end: 840
+    };
+    // 创建一个帧动画
+    this.animatorResult = this.getUIContext().createAnimator(animatorOption);
+    // 接收帧回调，并设置红包的纵坐标
+    this.animatorResult.onFrame = (progress: number) => {
+      this.model.y = progress;
+    };
+  }
 
-     build() {
-       Stack() {
-         Image($r('app.media.startIcon')); // 此处仅为样例，请开发者更换为可用图片
-       }
-       .width(this.imageWidth)
-       .height(this.imageWidth)
-       .position({ x: this.model.x, y: this.model.y })
-       .onAppear(() => {
-         this.animatorResult?.play();
-       });
-     }
-   }
+  build() {
+    Stack() {
+      Image($r('app.media.startIcon')); // 此处仅为样例，请开发者更换为可用图片
+    }
+    .width(this.imageWidth)
+    .height(this.imageWidth)
+    .position({ x: this.model.x, y: this.model.y })
+    .onAppear(() => {
+      this.animatorResult?.play();
+    });
+  }
+}
 
-   @Entry
-   @Component
-   struct RedPacketRain {
-     @State redPacketModels: RedPacketModel[] = [];
-     @State imageWidth: number = 0;
+@Entry
+@Component
+struct RedPacketRain {
+  @State redPacketModels: RedPacketModel[] = [];
+  @State imageWidth: number = 0;
 
-     aboutToAppear(): void {
-       window.getLastWindow(this.getUIContext().getHostContext()).then((data) => {
-         let properties = data?.getWindowProperties();
-         let w = this.getUIContext().px2vp(properties.windowRect.width);
-         this.imageWidth = (w - 12 * 4) / 4.0;
-         for (let index = 0; index < 30; index++) {
-           this.redPacketModels.push(new RedPacketModel(1, this.imageWidth, index));
-           this.redPacketModels.push(new RedPacketModel(2, this.imageWidth, index));
-           this.redPacketModels.push(new RedPacketModel(3, this.imageWidth, index));
-           this.redPacketModels.push(new RedPacketModel(4, this.imageWidth, index));
-         }
-       });
-     }
+  aboutToAppear(): void {
+    window.getLastWindow(this.getUIContext().getHostContext()).then((data) => {
+      let properties = data?.getWindowProperties();
+      let w = this.getUIContext().px2vp(properties.windowRect.width);
+      this.imageWidth = (w - 12 * 4) / 4.0;
+      for (let index = 0; index < 30; index++) {
+        this.redPacketModels.push(new RedPacketModel(1, this.imageWidth, index));
+        this.redPacketModels.push(new RedPacketModel(2, this.imageWidth, index));
+        this.redPacketModels.push(new RedPacketModel(3, this.imageWidth, index));
+        this.redPacketModels.push(new RedPacketModel(4, this.imageWidth, index));
+      }
+    });
+  }
 
-     build() {
-       Stack() {
-         ForEach(this.redPacketModels, (model: RedPacketModel) => {
-           RedPacket({
-             model: model,
-             imageWidth: this.imageWidth
-           });
-         });
-       }
-       .height('100%')
-       .width('100%')
-       .clip(true);
-     }
-   }
-   ```
+  build() {
+    Stack() {
+      ForEach(this.redPacketModels, (model: RedPacketModel) => {
+        RedPacket({
+          model: model,
+          imageWidth: this.imageWidth
+        });
+      });
+    }
+    .height('100%')
+    .width('100%')
+    .clip(true);
+  }
+}
+```
 
 **Q：如何实现多张图片组成动画组，并实现其向右循环移动的效果？**
 
@@ -1140,8 +1124,6 @@ struct Problem {
 
 **Q：如何实现下图的点击'+'号展示导航栏，点击'X'号关闭导航栏的效果？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/IFdofBhITKictz2KR61jyw/zh-cn_image_0000002793403439.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA6D33CFBAED9C0793F42EDC9F7E0CFB42AC90C65E6732B0CA285BCDC57903F7)
-
 **A**：通过animateTo方法实现全局的显示动画效果，结合其他属性实现动画过程中水滴融合、组件位移以及透明度变化等视觉效果。
 
 1. 采用Stack布局方式，利用Column组件创建四个圆形元素，并通过Image组件创建四张图片，将每对圆形和图片进行组合。
@@ -1282,10 +1264,6 @@ struct Problem {
    }
    ```
 
-   效果图：
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/IHDXRZnATnqKVkDVH8IqUg/zh-cn_image_0000002793406387.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2EF7A2F95CEC641867497177EF62733F4AFF7F080BA4132017AE1C7BF86F40D "点击放大")。
-
 **Q：如何实现播放中的动画暂停的功能？**
 
 **A**：方案一：通过[lottie](https://gitcode.com/openharmony-tpc/lottieArkTS)动画三方库来实现动画播放暂停，详情参考：lottie[使用示例](https://gitcode.com/openharmony-tpc/lottieArkTS#使用示例)。
@@ -1352,11 +1330,9 @@ struct PageOne {
 }
 ```
 
-注意：此方案点击暂停时动画不会立即停止，而会等当前的动画执行完毕，可能会存在体验问题。
+**说明** 
 
-效果图如下：
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/G1A98RZtQICYgiQPO1pZWQ/zh-cn_image_0000002793407685.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=F63F3F57514D1C4F5064035E02B55F6A0D8C623482AB393059394E02F09D8ECF "点击放大")
+此方案点击暂停时动画不会立即停止，而会等当前的动画执行完毕，可能会存在体验问题。
 
 方案五：控制多个动画的播放和暂停。实现方法与方案三类似，区别在于当使用setInterval方法播放一个动画时，用clearInterval方法清除掉另外一个动画。
 
@@ -1434,10 +1410,6 @@ struct PageTwo {
   }
 }
 ```
-
-具体演示如下：
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/TvpGQ7n6T3eyG_mPFuW-iw/zh-cn_image_0000002764009188.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=B888586FC878F4420018E2B7987ADC2C8629409311FA694005F847DDB133856B "点击放大")
 
 方案六：在显式动画、关键帧动画中新增一个duration为0的动画，即可停止该状态变量所关联**属性的**之前的所有动画，并停止在最终设置的状态变量所对应的状态上。
 

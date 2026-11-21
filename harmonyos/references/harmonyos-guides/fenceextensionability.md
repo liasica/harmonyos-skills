@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fenceextensio
 title: 云侧围栏开发指导
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 地理围栏开发指导 > 云侧围栏开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:04+08:00
+scraped_at: 2026-11-21T09:12:30+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:3571c6abb211172819ab40de8a8206f802c2ac70a2fb556c3ce542e2aacf1e23
+content_hash: sha256:e426e4027924d5a7b913be9788684f43f6ba7e5805e67cafd1136e77e9ce6b67
 ---
 
 ## 概述
@@ -24,26 +24,26 @@ content_hash: sha256:3571c6abb211172819ab40de8a8206f802c2ac70a2fb556c3ce542e2aac
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/HfHDnQlET_ykLRaf-bQnLA/zh-cn_image_0000002820526411.png?HW-CC-KV=V1&HW-CC-Date=20261119T014809Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C3E242EBF596B7967D55E6CB352845EF97A964B842C88B14EDAFFB6A78D0BFC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/ePxSWSC5T0CnX1kmOkqNCQ/zh-cn_image_0000002793038082.png?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FA25A798F391C82C66CD9D77C22268A006921A54D39772B6F14A47C2F7FBFB8)
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要配置定位服务参数的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/WC-F7H7jQrur3uOF3_ylWQ/zh-cn_image_0000002820406411.png?HW-CC-KV=V1&HW-CC-Date=20261119T014809Z&HW-CC-Expire=31536000000&HW-CC-Sign=549D42EE5E9E7D6E52A813289130E729B6332FE6C25BC20501489CF256C22317)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/i_QO-az_T9Gl-xEYSDdvAA/zh-cn_image_0000002792878112.png?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=40F96150D5912E3469DFF6F71A1C055C1750E08FEAE2A7CF96583C7949B48F7E)
 3. 在左侧导航栏选择“定位服务”，并点击收藏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/muTQFVUASAOP3owq4TF5CA/zh-cn_image_0000002791726432.png?HW-CC-KV=V1&HW-CC-Date=20261119T014809Z&HW-CC-Expire=31536000000&HW-CC-Sign=C675F4B05C14ACDB733BC7D87A77A78C69EEC3DE906F0204AC0E0E34A9BEB5F9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/VS4tCA_pSxS0HtA_5rViQw/zh-cn_image_0000002821838019.png?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD4FA9C7C8DA1B4B1CEDA2715AFB619AFAC5E316D0565795C978673FE49EF82A)
 4. 在左侧导航栏选择“构建 > 定位服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Ghw6Rch8QUCn3hBTJDXnuw/zh-cn_image_0000002791566460.png?HW-CC-KV=V1&HW-CC-Date=20261119T014809Z&HW-CC-Expire=31536000000&HW-CC-Sign=93691B5436CEF49155AD51E4A702393E3DDA235321B70B7E72F5B09F16F7B1A1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/98oITB8IT1OttMzKYFqloA/zh-cn_image_0000002821758021.png?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=96F844B8B8A3F91A27464BFA3F22FC79D15E9668A0B475A05686FD40749979A0)
 
 ## 使用场景
 
 1. 开发者可以通过该围栏扩展能力来使用云侧公共围栏。
 2. 开发者首先需要在AGC（AppGallery Connect）平台定位服务选择右侧“添加围栏组触发”开始创建地理围栏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/c3a6NTqXTpeeKcEERf5tvA/zh-cn_image_0000002820526413.png?HW-CC-KV=V1&HW-CC-Date=20261119T014809Z&HW-CC-Expire=31536000000&HW-CC-Sign=71E0B21887232BE129F709CCDD2E7C74D780B4D8113559CDD281BA4AFA7DA878)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/JV8IbpfJQsW87Cx9bnz-ZQ/zh-cn_image_0000002793038084.png?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=152E1678A97A7B43D55B3C47F65F90A5DC2A390BFA9A6E0B7254A0A9B4437A11)
 3. 可以根据商圈、景点等类别，配置围栏组下发围栏策略。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/IOpnz_WeQF2mp04YTA5omw/zh-cn_image_0000002820406413.png?HW-CC-KV=V1&HW-CC-Date=20261119T014809Z&HW-CC-Expire=31536000000&HW-CC-Sign=F62EA2978FBE181A69A41C5B194CE3F4D8F0C47FD697AED541ABDA6EDE157144)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/a4HQG-8dR_WX8cjhpnP1bQ/zh-cn_image_0000002792878114.png?HW-CC-KV=V1&HW-CC-Date=20261121T011103Z&HW-CC-Expire=31536000000&HW-CC-Sign=3ABBA359CBF5E447A561302A09AB961F2E4C5496E46F592FE3A6773EC97527A5)
 4. 定位服务在满足围栏触发条件后，通过FenceExtensionAbility把围栏事件通知给APP，APP接收到围栏事件后完成相关的业务处理。
 
 ## 接口介绍

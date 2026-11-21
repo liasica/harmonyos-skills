@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link
 title: "@Link装饰器：父子双向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Link装饰器：父子双向同步
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:36+08:00
+scraped_at: 2026-11-21T09:11:02+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:98da18a525a16cc378fe3275b7868a092f2447805069f29de31b989f96606eb8
+content_hash: sha256:9cef5edc29f9cf0f40e21e5bd71709d13d9361633bfad4772fcd63e821572864
 ---
 
 子组件中被[@Link](../harmonyos-references/ts-state-management-link.md#link)装饰的变量与其父组件中对应的数据源建立双向数据绑定。
@@ -42,7 +42,7 @@ content_hash: sha256:98da18a525a16cc378fe3275b7868a092f2447805069f29de31b989f966
 
 **图1** 初始化规则示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/br2gH6b6QzSKx9RGwanMBA/zh-cn_image_0000002791564628.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=51FDF0D1A6F3F3B55F427512200E4376C84EC33127BE54460D934CF55EB6A200)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/Riho-ShVRBymy09XYXWE5Q/zh-cn_image_0000002821756183.png?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=520935E4BE71F9CF58FF282454B36E352BEF9C472BF6F408BD0FAED4467C43C6)
 
 ## 观察变化和行为表现
 
@@ -170,7 +170,7 @@ content_hash: sha256:98da18a525a16cc378fe3275b7868a092f2447805069f29de31b989f966
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/k_vgKCgtSr218YFC6gmWfA/zh-cn_image_0000002820524579.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D6A31AB604EA8DDBF881914136205CD89D898406A2802347151AE8696291023)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/8HnYGTkGQSOkLLtTVIlgyA/zh-cn_image_0000002793036248.png?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBE0675147667B14AEC3BA145D4CEBF68834093A29BF9860A15C12A4D0277B01)
 4. @Link装饰的变量仅能被状态变量初始化，不能使用常规变量初始化，否则会编译报错。
 
    【反例】
@@ -225,7 +225,7 @@ content_hash: sha256:98da18a525a16cc378fe3275b7868a092f2447805069f29de31b989f966
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/elj7Ob4NSnSTrq7aPcJypQ/zh-cn_image_0000002820524579.png?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=15879527329830F1EB4305A2FE13E1D41D90A6582099199280374BF87E135461)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/i-9_51EKS_-4icDoMven2w/zh-cn_image_0000002793036248.png?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F9420D4EBB568EADD76AA1FA73C6550145A172EC69A0D4FA4F1283CB74AF039)
 5. @Link不支持装饰Function类型的变量，API version 23之前，应用在运行时会出现错误。
 
    从API version 23开始，在应用编译时添加了相关校验，@Link装饰Function类型变量会提示ERROR，应在代码中删除Function类型变量的@Link装饰器。
@@ -325,7 +325,7 @@ struct ShufflingContainer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/RZ2lJ_ABTAWmt4ZeO3ntmg/zh-cn_image_0000002820404579.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3E143263857B38A25DF220EF667B33E516221C9B0565CBAD43D920F20D78F0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/nsqZo2mvQZaCLMhZc3R7vQ/zh-cn_image_0000002792876280.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=F392C66389323BD5919CA59B1EA88F88288A1D3FE06FFFBC719513E264CCC94E)
 
 ### 数组类型的@Link
 
@@ -382,7 +382,7 @@ struct ArrayTypes {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/n2X4xYhYQBSbzXbEMTstDw/zh-cn_image_0000002791724602.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CCBD25F392097AAF66F2176D7114F139D2FA6776560A32DFD56D163FC3166CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/ncvnMQJHT8eFlqVZu_7lIA/zh-cn_image_0000002821836185.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=C47784802D4FE09635A3D656E574F95F9DA94557F4C9CF03548FD67F692A5F6D)
 
 状态管理框架可以观察到数组元素的添加、删除和替换。在该示例中，@State和@Link的类型均为number[]，不支持将@Link定义成number类型（@Link item : number），并用@State数组中的每个数据项在父组件中创建子组件。如需使用这种场景，可以参考[@Prop](arkts-prop.md)和[@Observed](arkts-observed-and-objectlink.md)。
 
@@ -463,7 +463,7 @@ struct MapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/pTVILutfTDuRPla5Pj4SGQ/zh-cn_image_0000002791564630.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=492294011A5E9ED81781812BF035C826DB908255F676BA5E20A10B50390749F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/q2B3BYaZTL6R1UGIAOed9Q/zh-cn_image_0000002821756185.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFB720F750E499A6AA31CFAFC96376098DF94882C69D07A7551091300273D066)
 
 ### 装饰Set类型变量
 
@@ -533,7 +533,7 @@ struct SetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/-Pra_4z1TQ-j0BVyL8lPrA/zh-cn_image_0000002820524581.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=721EBBA75EB5732FDB9F886B41558E17BE53D84C021399FA131EB967268772E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/iUDF27ZHTgOaj7wrttCRDA/zh-cn_image_0000002793036250.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=F52A4EEF54089A152F8CF283E38DE8764DE754426A73E70ACABC6F95656FB158)
 
 ### 装饰Date类型变量
 
@@ -601,7 +601,7 @@ struct ParentComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/3klrFPbFSv6_A_9dprpBMQ/zh-cn_image_0000002820404581.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A3137C481E6DFE8517C2C5F82E725418637C01F89EBB3DB03327548F5282793)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/I3FsDINsTVCUHKNmNcz7MA/zh-cn_image_0000002792876282.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=35110E61985F6A6AAB46053BEF1EF8B090B91252552B85D3ACF0906E9347F70A)
 
 ### 使用双向同步机制更改本地其他变量
 
@@ -663,7 +663,7 @@ struct ChangeVariablesChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/-YgQbhAGQVGOfsdbtxw7RQ/zh-cn_image_0000002791724604.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8469014F22055DC2D9CCAE7CE6B7F9290B074025F41F4B2ABA7665CC77A7AFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/o6-BmrkDQkGaIlf9EpWfSw/zh-cn_image_0000002821836187.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=C700DEB31B80B65D1D3C412EB9B11F6B79C04713AB36810AB44BE3AEE09FC1FB)
 
 ### @Link支持联合类型实例
 
@@ -728,4 +728,4 @@ struct UnionTypes {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/HHV_t0rVQ02rYaaSHXcHXQ/zh-cn_image_0000002791564632.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014645Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B40F6FD6914AA6329AAEBC78EE69DCA14E0B3748D2E53461268CBAA9AFE4A14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/3C5sEVIsT4iZDzxfbW9bDQ/zh-cn_image_0000002821756187.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=790C7D368D79EAB178E4BB5F956FA8C3FEB9BF1F663F75861736F2680243E63D)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-thread-
 title: 多线程取消TaskPool任务场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > 多线程取消TaskPool任务场景
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:04+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:b18f64b634a374227b4acc30ae7ba77dcb36bbc6afe4cb53db750e9eece4361e
+scraped_at: 2026-11-21T09:10:59+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:616e84af48c4599c02ac35feff5918e077fc371fc940d8abefe6aca74df702b9
 ---
 
 由于任务池[TaskPool](../harmonyos-references/js-apis-taskpool.md)的任务对象[Task](../harmonyos-references/js-apis-taskpool.md#task)不支持跨线程传递，无法在子线程中直接取消任务。从API version 18开始，Task新增了任务ID[属性](../harmonyos-references/js-apis-taskpool.md#属性)，支持通过任务ID在子线程中取消任务。开发者可将已创建任务的任务ID存储在[Sendable对象](arkts-sendable.md)中，需要取消任务时，通过Sendable对象在子线程中取消任务。详情可参考以下示例。
@@ -76,6 +76,8 @@ content_hash: sha256:b18f64b634a374227b4acc30ae7ba77dcb36bbc6afe4cb53db750e9eece
                taskpool.execute(cancel, send).then(() => {
                  this.returnMessage = 'Taskpool canceled!';
                  this.promptAction.showToast({ message: this.returnMessage });
+               }).catch((e: BusinessError) => {
+                 console.error(`taskpool execute cancel error, code: ${e.code}, message is: ${e.message}`);
                });
              })
            // ...

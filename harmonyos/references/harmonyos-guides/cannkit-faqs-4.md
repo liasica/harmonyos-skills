@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-faqs-
 title: 如何处理ATC离线模型输出算子类型错误？
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > CANN Kit常见问题 > 如何处理ATC离线模型输出算子类型错误？
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:19+08:00
+scraped_at: 2026-11-21T09:12:46+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f7dc7e268882cf01f29b49b8f56bddb5634ce2e72538bed4f8deb29710abe0fe
+content_hash: sha256:af99875a8eeb0fe64f6a61081e1217273c2d8bb5bcc5113c7e3e35c9d1b56d37
 ---
 
 Caffe网络中具有相同类型名但计算功能不同的层。比如DetectionOutput层，需要使用算子映射指明为FSRDetectionOutput、SSDDetectionOutput等检测算子类型，否则ATC生成离线模型会执行失败。为了避免出现错误，以下两种方案二选一即可。
@@ -15,4 +15,4 @@ Caffe网络中具有相同类型名但计算功能不同的层。比如Detection
 
   **图1** 输出算子类型修改前（左）和修改后（右）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Bl074mUqRA2InMsHQPg7_A/zh-cn_image_0000002791726742.png?HW-CC-KV=V1&HW-CC-Date=20261119T014919Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1CE04F84803A987311F048E241E07F5B43E13770F25795902812B0DFAA83851)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/53OP-0pdQdW2tanFUoHoXA/zh-cn_image_0000002793038394.png?HW-CC-KV=V1&HW-CC-Date=20261121T011246Z&HW-CC-Expire=31536000000&HW-CC-Sign=5945A128208F5ED145F4A10B071937FB589CA95D7DE5F30752C076EDECAC63CE)

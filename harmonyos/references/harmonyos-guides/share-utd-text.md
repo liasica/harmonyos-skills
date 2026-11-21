@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-utd-tex
 title: 分享文本
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 常见分享场景 > 分享文本
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:13+08:00
+scraped_at: 2026-11-21T09:12:40+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:9a6d777a232b1515b9769609a196bf7e9a8612b589ca91b82fa6f10c74a62297
+content_hash: sha256:b4f803103101ad6e551921593cf6ba4b8ba21b469839956473c5c64bb7de6f9a
 ---
 
 纯文本类型分享支持将一段文字分享到目标设备/目标应用。
@@ -13,7 +13,7 @@ content_hash: sha256:9a6d777a232b1515b9769609a196bf7e9a8612b589ca91b82fa6f10c74a
 * 目标设备接收时，文本会转化为.txt文件保存在文件管理中。
 * 目标应用接收时，可便捷地处理文本内容。例如：将文字分享给备忘录，可新增一条备忘录内容。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/CZZWxV9wSoq-ooZEqmKWCg/zh-cn_image_0000002820406611.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9DE523C55F733BE3739FD423FF3973C82EAAF49D5FA3F74AEAD376F5D74E512)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/P2J6Fe_gQOqmdcYeQM4HkQ/zh-cn_image_0000002821758221.png?HW-CC-KV=V1&HW-CC-Date=20261121T011239Z&HW-CC-Expire=31536000000&HW-CC-Sign=19837754D19755622E7D0A79304D8F85EF4AA2BA3F4B406237538CDE3F73E85A)
 
 ## 开发步骤
 

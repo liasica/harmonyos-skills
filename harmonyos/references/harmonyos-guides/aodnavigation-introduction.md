@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aodnavigation
 title: AOD Navigation Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > AOD Navigation Kit（熄屏导航服务） > AOD Navigation Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:24+08:00
+scraped_at: 2026-11-21T09:11:50+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:27e63aa0d603bfcbcee7183714dc8e43f437b71cc04741b92550c725c71bf273
+content_hash: sha256:96264f2e219ad272c1a65c1ff5dd18b8376783d367aea0e1f9dfd5b471bce8f4
 ---
 
 从API版本26.0.0开始，新增AOD Navigation Kit（熄屏导航服务）。
@@ -31,7 +31,7 @@ AOD（Always On Display，熄屏显示）界面实时显示当前导航状态和
 1. 此种接入方式下，熄屏导航场景功耗对比设备解锁亮屏场景下应用导航功耗预计收益50%。
 2. 能力约束：熄屏导航时不支持联网功能、无法连接wearable设备数据、仅提供固定范围数据项代理能力。当前代理数据能力支持：里程、步数、步频、全程耗时、运动耗时、累计爬升、累计下降、当前速度、全程平均速度、运动平均速度、当前配速、平均配速。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/CIYGsQ2JR_apv039wZyMIA/zh-cn_image_0000002791565858.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C64D7C411F67FE955FBC419CC0641E35B5F347C3C9EE971AE7E22BC3EEC6879)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/yAXFnSZvRMiqKSOCh_yhFA/zh-cn_image_0000002821757419.png?HW-CC-KV=V1&HW-CC-Date=20261121T011150Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AB999DA63DFA83299B28FE9C90D3B1B7079F517D2454780E833AE00C3E6DE88)
 
 说明：
 
@@ -45,7 +45,7 @@ AOD（Always On Display，熄屏显示）界面实时显示当前导航状态和
 1. 此种接入方式下，熄屏导航时应用不进入休眠状态，熄屏导航场景功耗对比设备解锁亮屏下导航功耗预计收益20%。
 2. 无能力约束，熄屏导航数据依旧来源于应用，熄屏导航时开发者仍可支持联网功能、可支持连接wearable设备数据（如步数、心率等）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/2ZjbPQFsTQm71CpXvLLQcg/zh-cn_image_0000002820525811.png?HW-CC-KV=V1&HW-CC-Date=20261119T014732Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CD81A3D8FC093DAB1DC5EEC6C5EA12146AAE66D03968868423E10718F6BBE5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/jcNfOgNzTjO63iumCa901g/zh-cn_image_0000002793037482.png?HW-CC-KV=V1&HW-CC-Date=20261121T011150Z&HW-CC-Expire=31536000000&HW-CC-Sign=92150F6582F60DCE90F9852E1B8C0FA0EB71F4CE268AC7C095E0D597BF3D3D29)
 
 说明：
 

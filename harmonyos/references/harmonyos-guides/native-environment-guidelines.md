@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-enviro
 title: 获取用户目录环境(C/C++)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 获取用户目录环境(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:25+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:6462ba8cf1f3f7baacd4e9404291c0da8bbf88d9855af23565a9e406bb2b0d76
+scraped_at: 2026-11-21T09:11:21+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:5276164e1089d7b5ce07534f4503bc81f36632ddac3f4d8373bd1c1ddeff8174
 ---
 
 ## 场景介绍
@@ -34,16 +34,7 @@ content_hash: sha256:6462ba8cf1f3f7baacd4e9404291c0da8bbf88d9855af23565a9e406bb2
 CMakeLists.txt中添加以下lib。
 
 ```txt
-target_link_libraries(sample PUBLIC libohenvironment.so libhilog_ndk.z.so)
-```
-
-**添加头文件**
-
-```
-#include <cstdlib>
-#include <filemanagement/environment/oh_environment.h>
-#include <filemanagement/fileio/oh_fileio.h>
-#include <hilog/log.h>
+target_link_libraries(entry PUBLIC libohenvironment.so libhilog_ndk.z.so)
 ```
 
 1. 调用OH\_Environment\_GetUserDownloadDir接口获取用户Download目录沙箱路径，在接口中使用malloc申请的内存需要在使用完后释放因此需要free对应的内存。示例代码如下所示：
@@ -92,12 +83,6 @@ target_link_libraries(sample PUBLIC libohenvironment.so libhilog_ndk.z.so)
    }
    ```
 4. 调用OH\_Environment\_GetUserDocumentDir接口获取用户Document目录沙箱路径，使用stat函数判断Document目录空间大小。示例代码如下所示：
-
-   使用前需要引入如下头文件：
-
-   ```
-   #include <sys/stat.h>
-   ```
 
    ```
    void GetUserDownloadDirSizeExample()

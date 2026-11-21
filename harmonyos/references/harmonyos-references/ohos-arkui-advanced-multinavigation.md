@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: MultiNavigation
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > MultiNavigation
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:00+08:00
+scraped_at: 2026-11-21T09:14:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c891b8b2d04e16d1a5d65dfb23760b30ae1f97b5a6b73c62c4ec10f9754e660c
+content_hash: sha256:fa82646b06e3e37650955288964607f242446115006d66282248193195465760
 ---
 
 MultiNavigation用于在大尺寸设备上分栏显示、进行路由跳转。
@@ -1599,12 +1599,12 @@ export struct PagePlaceholder {
 
 分栏效果演示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/c46wE3LNRvO5x2CPk9GaEw/zh-cn_image_0000002791567252.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DDE1CF3ABE957B2FD90432C14DC092B2A84E998E2A7827B7E0E0B85FDFC6B0B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/f6cObhCITOm4Y-xZjvP-7g/zh-cn_image_0000002792878914.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011406Z&HW-CC-Expire=31536000000&HW-CC-Sign=4009C4D88FD3CB1BD7CB1A3F8F22CD85657ADBF6C1D53FCA02477983EC3DA6D1)
 
 主页跳转详情页效果演示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/TI3C7DlxROuWVnmtI18V-w/zh-cn_image_0000002820527205.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=E15591F63AB7F85B93F8C80610F38838C8B694256835E1196311E56BB2B6E6D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/JS6kyfVkTXay3UU6Yk_Pig/zh-cn_image_0000002821838819.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011406Z&HW-CC-Expire=31536000000&HW-CC-Sign=027F5B0C1944651C3A83D0E8C50CDA15C313EA4D616E30B9AF275722C8558DFF)
 
 全屏类型页面效果演示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/wur8dRZnSXyN0Fmku1BicQ/zh-cn_image_0000002820407205.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015059Z&HW-CC-Expire=31536000000&HW-CC-Sign=7355351145DA0DA0D4791BE184A5128630C8F0133B045C57126E21692B22C789)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/x4ViSnWuTd6SLpZpC3o6EA/zh-cn_image_0000002821758817.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011406Z&HW-CC-Expire=31536000000&HW-CC-Sign=24CAEF228165367034D672F5BD8CD93D9C2C7F7D3ABE7D8EF38EBDEF37D8852D)

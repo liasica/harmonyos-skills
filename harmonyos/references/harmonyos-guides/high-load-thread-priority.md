@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/high-load-thr
 title: 高负载场景线程优先级设置
 breadcrumb: 指南 > 系统 > 基础功能 > Kernel Enhance Kit（内核增强能力） > 内存管理 Purgeable Memory 开发指导 > 高负载场景线程优先级设置
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:21+08:00
+scraped_at: 2026-11-21T09:11:47+08:00
 doc_updated_at: 2026-10-26
-content_hash: sha256:a9124c8150133da1d7c3696c6c2b64dca592f907213a51a7a01c790efd0d6048
+content_hash: sha256:9fc3ba8c0904f2672e91a2daa0392cd2568be8ec69f83adc30b1039c4883efd8
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:a9124c8150133da1d7c3696c6c2b64dca592f907213a51a7a01c790efd0
 
 下面是一个在高负载情况下，配置了不同QoS等级的两个关键线程完成相同计算任务所花时间的对比图，从界面的运行结果可以看到在高负载情况下，配置了高优先级的线程执行完计算所花的时间更少一些。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/9aLugO_VTDOMYzueMnnsIw/zh-cn_image_0000002791725806.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=436106183FB5793CD9983B4A5C59ADE5432C8282A09EAF194069C30F683FF71A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/9hzkurANRwmCx3eMBm1sQg/zh-cn_image_0000002821837393.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011147Z&HW-CC-Expire=31536000000&HW-CC-Sign=4412E199BE25FC046108258EF62345CE463B978DE07C905E063CFBC4228358AF)
 
 具体实现步骤如下：
 
@@ -172,7 +172,7 @@ void SetQoS(QoS_Level level) {
 
 计算线程（线程id：39260）设置低QoS等级trace图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Ppqcly4tRfO-N339Ab2bcw/zh-cn_image_0000002791565834.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D8E8871EBAE4A9246072C074C1E8BBA786F7F611DEF7C315399151B6FA157A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/eam4IyZSRP6PcvsnTFIogg/zh-cn_image_0000002821757395.png?HW-CC-KV=V1&HW-CC-Date=20261121T011147Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC1D8422E5DC5A7642C65C70E0C17D92E08DDD51F7B5AB932E9FCE14E2F28F81)
 
 如上图所示，计算线程执行完计算任务耗时726.8ms。
 
@@ -205,7 +205,7 @@ void SetQoS(QoS_Level level) {
 
 计算线程（线程id：39204）设置高QoS等级trace图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/wjQ274QvT6SdIC-nqyy7zg/zh-cn_image_0000002820525787.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBCC747BC9F374A67A78C8C8D0201463046297EE1C61217E9785B4FBDBE86EEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/GLP_N2T5QK6lN8lGrcFNXQ/zh-cn_image_0000002793037458.png?HW-CC-KV=V1&HW-CC-Date=20261121T011147Z&HW-CC-Expire=31536000000&HW-CC-Sign=F547040E7E5692FA60767E7384AB047D14F578DA2F1FF2298242B83470611929)
 
 如上图所示，计算线程执行完计算任务耗时323.9ms。
 

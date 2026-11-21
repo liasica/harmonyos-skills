@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-llm-s
 title: 简介
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > LLM大模型对接 > 简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:19+08:00
+scraped_at: 2026-11-21T09:12:46+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:1e60fb6b1523b62292fa5684d8b77b85bbb07a68cd702dc308aba10afacedf0a
+content_hash: sha256:a0104816da388c01a4802630d20acb535843b652e6933ea31672782c0a2cfd12
 ---
 
 CANN LM Engine是基于CANN Kit的大模型推理解决方案，为大模型业务提供计算链路的加速封装和计算加速服务。
@@ -14,7 +14,7 @@ LLM Engine是其在大语言模型场景下的具体应用，提供的LLM计算�
 
 ## CANN LM Engine 组件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/T05oYBiGS7igy3q2NobcpA/zh-cn_image_0000002820526721.png?HW-CC-KV=V1&HW-CC-Date=20261119T014919Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF22F7B694B6833A36CD9BF6BD6720304CC105F8C682BC78C58E77849E31016D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/lYL0gHSfSmOLLjIIuq9Bgw/zh-cn_image_0000002821838329.png?HW-CC-KV=V1&HW-CC-Date=20261121T011245Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE2D7C12CC080D90F8ED2E9DE2BF1538941BF97BD0FE7F5E417285B3EDDBE6A4)
 
 * CANN LM Engine：CANN LM Engine为大模型业务提供基于[计算加速服务和标准化API接口](../harmonyos-references/cannkit-llm-engine.md)的端到端计算链路加速封装。
 * CANN工具链：提供模型转换、量化、Ascend C等[工具链](https://link.gitcode.com/?target=https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiaifoundation-preparations&from=https://gitcode.com/HarmonyOS_Samples/cannkit_samplecode_lm_engine_cpp&lang=zh&theme=white)。
@@ -34,7 +34,7 @@ CANN LLM Engine基于CANN硬件加速能力，提供高性能，低功耗的运�
 
 开发者可通过本指南按照如下pipeline的顺序完成LLM模型在CANN硬件环境上的集成：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/1O6x5haTRVK5hTD-kLoD3Q/zh-cn_image_0000002820406721.png?HW-CC-KV=V1&HW-CC-Date=20261119T014919Z&HW-CC-Expire=31536000000&HW-CC-Sign=E990F143F80EA1CB8D61F473A3CD5B27A9F8FE6C5E03F39DA3F7D81E83D40A78)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/rTnZ7C7gRJCK8JJyoiTfZQ/zh-cn_image_0000002821758331.png?HW-CC-KV=V1&HW-CC-Date=20261121T011245Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CF3A3451F55CCE9940FFE89DF08D1B3E78AFA3700DB2620213BCE1B12CB6C27)
 
 1. LLM模型量化，输入是用户原始模型，输出是量化后权重和量化系数文件。
 2. 将模型结构导出到ONNX格式，输入是原始模型结构和第一步生成的量化权重，输出是ONNX模型及模型结构NPU亲和适配。

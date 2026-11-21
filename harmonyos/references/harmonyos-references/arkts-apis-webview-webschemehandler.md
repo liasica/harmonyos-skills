@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebSchemeHandler)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebSchemeHandler)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:18+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-21T09:14:43+08:00
+doc_updated_at: 2026-11-20
 content_hash: sha256:95ee0384329d4843bb83aa0a355b1fdea15561a073c8b5b444e67605a034602c
 ---
 
@@ -92,7 +92,7 @@ struct WebComponent {
                   console.info("[schemeHandler] onRequestStart has no http body stream");
                 }
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
               }
 
               if (request.getRequestUrl().endsWith("example.com")) {
@@ -137,7 +137,7 @@ struct WebComponent {
 
             this.controller.setWebSchemeHandler('https', this.schemeHandler);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
         })
         .javaScriptAccess(true)

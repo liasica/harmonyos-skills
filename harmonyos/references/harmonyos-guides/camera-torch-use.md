@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-torch-
 title: 手电筒使用(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 手电筒使用(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:04+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:1216bf63c233470204ae35961ff2663d63e01aa0dbb7c153ac15a772db295690
+scraped_at: 2026-11-21T09:12:01+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:38be3ac3a2dcb1a23c63797985cd8927e45272c76a768cf01715a5448a443df0
 ---
 
 通过操作设备启用手电筒功能，可使设备的手电筒保持常亮状态。
@@ -28,29 +28,29 @@ content_hash: sha256:1216bf63c233470204ae35961ff2663d63e01aa0dbb7c153ac15a772db2
    ```
 2. 通过[CameraManager](../harmonyos-references/arkts-apis-camera-cameramanager.md)中的[isTorchSupported](../harmonyos-references/arkts-apis-camera-cameramanager.md#istorchsupported11)方法，检测当前设备是否支持手电筒功能。
 
-   ```ts
-   function isTorchSupported(cameraManager: camera.CameraManager) : boolean {
+   ```typescript
+   isTorchSupported(cameraManager: camera.CameraManager) : boolean {
      let torchSupport: boolean = false;
      try {
        torchSupport = cameraManager.isTorchSupported();
      } catch (error) {
        let err = error as BusinessError;
-       console.error('Failed to torch. errorCode = ' + err.code);
+       console.error(`Failed to torch. errorCode = ${err.code}`);
      }
-     console.info('Returned with the torch support status:' + torchSupport);
+     console.info(`Returned with the torch support status:${torchSupport}`);
      return torchSupport;
    }
    ```
 3. 通过[CameraManager](../harmonyos-references/arkts-apis-camera-cameramanager.md)中的[isTorchModeSupported](../harmonyos-references/arkts-apis-camera-cameramanager.md#istorchmodesupported11)方法，检测是否支持指定的手电筒模式[TorchMode](../harmonyos-references/arkts-apis-camera-e.md#torchmode11)。
 
-   ```ts
-   function isTorchModeSupported(cameraManager: camera.CameraManager, torchMode: camera.TorchMode) : boolean {
+   ```typescript
+   isTorchModeSupported(cameraManager: camera.CameraManager, torchMode: camera.TorchMode) : boolean {
      let isTorchModeSupport: boolean = false;
      try {
        isTorchModeSupport = cameraManager.isTorchModeSupported(torchMode);
      } catch (error) {
        let err = error as BusinessError;
-       console.error('Failed to set the torch mode. errorCode = ' + err.code);
+       console.error(`Failed to check the torch mode. err code: ${err.code}.`);
      }
      return isTorchModeSupport;
    }
@@ -61,11 +61,18 @@ content_hash: sha256:1216bf63c233470204ae35961ff2663d63e01aa0dbb7c153ac15a772db2
 
    在使用[getTorchMode](../harmonyos-references/arkts-apis-camera-cameramanager.md#gettorchmode11)方法前，需要先注册监听手电筒的状态变化，请参考[状态监听](camera-torch-use.md#状态监听)。
 
-   ```ts
-   function setTorchModeSupported(cameraManager: camera.CameraManager, torchMode: camera.TorchMode) : void {
-     cameraManager.setTorchMode(torchMode);
-     let isTorchMode = cameraManager.getTorchMode();
-     console.info(`Returned with the torch mode supported mode: ${isTorchMode}`);
+   ```typescript
+   setTorchMode(cameraManager: camera.CameraManager, torchMode: camera.TorchMode) : void {
+     try {
+       if (this.isTorchModeSupported(cameraManager, torchMode)) {
+         cameraManager.setTorchMode(torchMode);
+         let isTorchMode = cameraManager.getTorchMode();
+         console.info(`Returned with the torch mode supported mode: ${isTorchMode}`);
+       }
+     } catch (error) {
+       let err = error as BusinessError;
+       console.error(`Failed to setTorchMode, err code: ${err.code}.`);
+     }
    }
    ```
 
@@ -75,15 +82,15 @@ content_hash: sha256:1216bf63c233470204ae35961ff2663d63e01aa0dbb7c153ac15a772db2
 
 注册torchStatusChange事件后，回调会返回监听结果，callback返回TorchStatusInfo参数，参数的具体内容可参考相机管理器回调接口实例[TorchStatusInfo](../harmonyos-references/arkts-apis-camera-i.md#torchstatusinfo11)。
 
-```ts
-function onTorchStatusChange(cameraManager: camera.CameraManager): void {
+```typescript
+onTorchStatusChange(cameraManager: camera.CameraManager): void {
   cameraManager.on('torchStatusChange', (err: BusinessError, torchStatusInfo: camera.TorchStatusInfo) => {
     if (err !== undefined && err.code !== 0) {
       console.error(`Callback Error, errorCode: ${err.code}`);
       return;
     }
     console.info(`onTorchStatusChange, isTorchAvailable: ${torchStatusInfo.isTorchAvailable}, isTorchActive: ${torchStatusInfo.
-      isTorchActive}, level: ${torchStatusInfo.torchLevel}`);
+    isTorchActive}, level: ${torchStatusInfo.torchLevel}`);
   });
 }
 ```

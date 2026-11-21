@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-
 title: JS卡片概述
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > JS卡片开发 > JS卡片概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:57+08:00
+scraped_at: 2026-11-21T09:11:23+08:00
 doc_updated_at: 2026-08-24
-content_hash: sha256:c4f794113cd158a513eb48a218b33caba1512f62fa940fe8f9bef86d9c8d9ff7
+content_hash: sha256:49c3b9615c1fd0f811916eb095025b96f8a4f8261850d4bd785e1455a8f63ab8
 ---
 
 JS卡片是使用类Web范式（HML+CSS+JSON）开发页面的卡片，现在已经支持FA模型和Stage模型两种[应用模型](stage-model-development-overview.md)。开发指导请参见[JS卡片开发指导（Stage模型）](js-ui-widget-development.md)和[JS卡片开发指导（FA模型）](widget-development-fa.md)。在开发新卡片时，推荐采用ArkTS声明式来构建UI，声明式和类Web范式差异点可参考[ArkUI简介](arkui-overview.md)。
@@ -16,7 +16,7 @@ JS卡片实现原理如图1所示。
 
 **图1** JS卡片实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/E3BS6iMTTK6p8w8pD2-G9g/zh-cn_image_0000002791725614.png?HW-CC-KV=V1&HW-CC-Date=20261119T014706Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CE7AD753AE2DDA6A6D98430D5CD0D6C6231E7D90F3D30DD3BCFC27682298D2D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/aI0PeTlUT_O8om43lw4u8w/zh-cn_image_0000002821837201.png?HW-CC-KV=V1&HW-CC-Date=20261121T010958Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A63CD5BEC01B745E54F37BFB2C1CD6007F013B7E4ECE2A9893AE8580BF901C6)
 
 卡片使用方包含以下模块：
 

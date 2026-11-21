@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/code-protect
 title: 应用加密
 breadcrumb: 指南 > 系统 > 安全 > 应用加密
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:01+08:00
+scraped_at: 2026-11-21T09:11:27+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:9503b83d79133ec5a4e6bbe03170da9b57c7f0f2ad38d5e70752b8f37ad657f2
+content_hash: sha256:0099935cda262d6d624264fc089e41191566220b73afc5d69c6949e57485783b
 ---
 
 **注意** 
@@ -16,7 +16,7 @@ content_hash: sha256:9503b83d79133ec5a4e6bbe03170da9b57c7f0f2ad38d5e70752b8f37ad
 
 为了保护应用代码安全，保护开发者的核心资产，HarmonyOS提供了端到端的应用代码保护机制，该机制以系统安全为基础，构建内核级应用生命周期内的代码安全保护能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/SdnPsvagTLWEu_p2psOX-A/zh-cn_image_0000002791725678.png?HW-CC-KV=V1&HW-CC-Date=20261119T014800Z&HW-CC-Expire=31536000000&HW-CC-Sign=C49DFD9294AEA45CF01FBAB70263C5788996FEB57A86B150D3F02FAB28477A01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/pgr_cSM0SIidWeZmEmAcbw/zh-cn_image_0000002821837265.png?HW-CC-KV=V1&HW-CC-Date=20261121T011002Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4BC58CD612274A204E7E5C3D3EC666DF7C96D18CBB71B117AFA0AFD4CC2FE06)
 
 开发者向应用市场提交上架申请，上传应用包后可[选择是否加密](../app/agc-help-release-app-choose-pkg-0000002278981434.md)。
 

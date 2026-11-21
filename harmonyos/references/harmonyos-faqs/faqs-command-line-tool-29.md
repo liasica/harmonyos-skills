@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: ohpm unpublish ${name} -f命令执行失败
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > ohpm unpublish ${name} -f命令执行失败
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:c7332ba2ad289bd49402eb4e999e30c8b10f0d8c3c3acf4edbde884d1d20f6be
+scraped_at: 2026-11-21T09:19:34+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:707ab0cada80b5a5528a257229ccca2a2679876549e3531673cde164b77107c1
 ---
 
 ## 问题现象
@@ -17,13 +17,13 @@ ERROR: HttpCode 400 The OHPM package has been depended on by other components
 ERROR: Unpublish failed, detail: The "Unpublish" request to url "https://ohom.openharmony.cn/ohpm/XXX" has failed
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/HNMlX58DQEms9aHXKZ55HQ/zh-cn_image_0000002658928949.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C62601F4696A8F20D863282F890C00049C91D9CB22EA59F886ADE526C5A52DA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/m5l8ALgCSs2TiapNiTXROg/zh-cn_image_0000002658928949.png?HW-CC-KV=V1&HW-CC-Date=20261121T011934Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D425D39CFCC5F39C2EB997AF1614B95F825E01830AE22E5BBB90F19640BF6DE "点击放大")
 
 ## 背景知识
 
 * [ohpm unpublish](../harmonyos-guides/ide-ohpm-unpublish.md)：下架已发布的三方库。
-* [命令格式](../harmonyos-guides/ide-ohpm-unpublish.md#zh-cn_topic_0000001745217274_命令格式)：ohpm unpublish [options] [<@group>]<pkg>[@<version>]。
-* [功能描述](../harmonyos-guides/ide-ohpm-unpublish.md#zh-cn_topic_0000001745217274_功能描述)：
+* [命令格式](../doccenter-deveco-studio/ide-ohpm-unpublish.md#section973179101415)：ohpm unpublish [options] [<@group>]<pkg>[@<version>]。
+* [功能描述](../doccenter-deveco-studio/ide-ohpm-unpublish.md#section91441522111416)：
   + 从OpenHarmony三方库中心仓下架已经发布并审核通过上架的三方库。
   + 若不指定版本，则默认下架三方库的所有版本，并且需要加上-f配置参数；全部版本均下架后，在24h内则不允许重新发布相同名称的三方库。
   + 若下架了某个版本，该版本号不允许再次使用，后续发布必须使用新的版本号。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-screenman
 title: 如何获取与设置屏幕亮度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 常见问题 > 如何获取与设置屏幕亮度
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:27+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:6f06859d3c0fe0bda0699ef4facb1eee5ca474bb484d75b8acd176c2031931db
+scraped_at: 2026-11-21T09:18:12+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:47fb77bccc377c29374cfc8410de75d93928c25d9d7519157da8fa3b7dac6dcb
 ---
 
 **Q：如何获取与设置屏幕亮度？**
@@ -28,6 +28,17 @@ content_hash: sha256:6f06859d3c0fe0bda0699ef4facb1eee5ca474bb484d75b8acd176c2031
         })
       ```
    2. 通过使用[settings.setValue()](../harmonyos-references/js-apis-settings.md#settingssetvalue10-1)方法可设置屏幕亮度，传入应用上下文与数据项的名称（屏幕亮度为settings.display.SCREEN\_BRIGHTNESS\_STATUS），以及设置值，即可设置当前屏幕亮度。需要注意的是，settings.setValue()方法仅系统应用可用。
+   3. 使用[brightness.setValue](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/reference/apis-basic-services-kit/js-apis-brightness-sys.md)实现屏幕亮度调节，注意该接口仅系统应用可用。
+
+      ```ts
+      import { brightness } from '@kit.BasicServicesKit';
+      try {
+        // Set the system screen brightness.
+        brightness.setValue(128);
+      } catch (err) {
+        console.error(`Failed to set brightness. Code: ${err.code}, message: ${err.message}`);
+      }
+      ```
 2. 通过使用[window模块](../harmonyos-references/js-apis-window.md)实现屏幕亮度的获取与设置：
    1. 在EntryAbility.ets的onWindowStageCreate方法中设置一个AppStorage，保存window实例。
 
@@ -95,8 +106,8 @@ content_hash: sha256:6f06859d3c0fe0bda0699ef4facb1eee5ca474bb484d75b8acd176c2031
 
       该接口设置的屏幕亮度仅在应用内生效，不影响系统本身屏幕亮度。
 
-      参考链接：[@ohos.settings (设置数据项名称)](../harmonyos-references/js-apis-settings.md)。
+参考链接：[@ohos.settings (设置数据项名称)](../harmonyos-references/js-apis-settings.md)。
 
 **Q：如何获取屏幕的宽度、高度、分辨率和横竖屏等信息？**
 
-**A**：引入屏幕属性模块，通过调用[display.getDefaultDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)方法获取display对象后，可获取到屏幕的宽度、高度、分辨率和横竖屏等信息。
+A：引入屏幕属性模块，通过调用[display.getDefaultDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)方法获取display对象后，可获取到屏幕的宽度、高度、分辨率和横竖屏等信息。

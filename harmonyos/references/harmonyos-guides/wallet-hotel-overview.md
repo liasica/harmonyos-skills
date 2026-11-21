@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-hotel-
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 酒店房卡 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:15+08:00
+scraped_at: 2026-11-21T09:12:41+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:7adca61270c33e5ad27503add0e8b759a66a89a39f76ed77049c4b5d0d917da5
+content_hash: sha256:0d08e7996b503295f1ae4c138282c6ed9bbba7a9afe20a9364c359f4cb410ecf
 ---
 
 华为钱包将酒店房卡与会员卡合二为一。用户在线上领取会员卡，办理入住后自动激活房卡，手机轻碰门锁即可通行电梯、房门、洗衣房及健身房等场景。
@@ -17,7 +17,7 @@ content_hash: sha256:7adca61270c33e5ad27503add0e8b759a66a89a39f76ed77049c4b5d0d9
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/RRbXEMPcQmibimkup4yBuA/zh-cn_image_0000002791566702.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=020EB0C3458C04993CC83EAC48D8DFBCCBDC000794A2E7A1AF6E1D36834F4111)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/Rr8SV_98Qmio7I1i1ZU3Gw/zh-cn_image_0000002792878356.png?HW-CC-KV=V1&HW-CC-Date=20261121T011241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BE5A19594C6F3BB1CE9390CB3B2FEC2D6FB701D64730B36DCDA9DDB33FBCB71)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -35,15 +35,15 @@ content_hash: sha256:7adca61270c33e5ad27503add0e8b759a66a89a39f76ed77049c4b5d0d9
 
 ### 酒店房卡开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ex3H0ivFSxKdGAkPIj0KGg/zh-cn_image_0000002820526655.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF5A1F50ECFE3E99B41712292DCBB468C2613951D6AA687D8E33561E762F8B1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/38ce0dtGTyOy7HvdUgs2MA/zh-cn_image_0000002821838263.png?HW-CC-KV=V1&HW-CC-Date=20261121T011241Z&HW-CC-Expire=31536000000&HW-CC-Sign=02F619117B84E86428F232A0D71845466D78858461976479C1485F3F14593724)
 
 ### 酒店房卡展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/pn7W_KFuRHmLdRqTeb2xQQ/zh-cn_image_0000002820406655.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=836A6E284767E5828797947E6028B1C1001530E6B6DED1E614F7A7B520DA707D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/YsprGudgSwe9RD9972UJrA/zh-cn_image_0000002821758265.png?HW-CC-KV=V1&HW-CC-Date=20261121T011241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A4B1FC8999A18D0C08C7C98D6E8C8AC1B459D6EF6F6BED526EFFF490A8D14B5)
 
 ### 酒店房卡更新
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/kytJq9-URHu948LV4DwYsg/zh-cn_image_0000002791726676.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=8916ABAD963A88FE5EEC353D5325F175B4E354C937B9E1C262B8BD4A76B44A45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ynSNh95-TM-914sz0ZEbUQ/zh-cn_image_0000002793038328.png?HW-CC-KV=V1&HW-CC-Date=20261121T011241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1B760E5B21F6408BB6D5706FABDFA61F3A06899E20072F2EDEBFC80A98549CB)
 
 ## 接入流程
 

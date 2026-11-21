@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ArcAlphabetIndexer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > ArcAlphabetIndexer
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:07+08:00
+scraped_at: 2026-11-21T09:14:11+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9249fc28ff004a06b69d26473bb288ba7392c621a3d0943c1078dd4cc053c4fc
+content_hash: sha256:d0e6b3c83e55a4303a7a40f0a2378d5080bcfec76fb70f5e5e0f1bd8b0129653
 ---
 
 弧形索引条是一种弧形的、可按字母顺序排序进行快速定位的组件，可以与容器组件联动，按逻辑结构快速定位至容器显示区域。
@@ -426,7 +426,7 @@ struct ArcListAndIndexer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/n7NLA5coS3qY5nirteRViQ/zh-cn_image_0000002791567508.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB46CF014C0EAE0CD390BF9B2F93B4CB3CC519511E44966E4BA57FD78B3D6683 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/8p1LlykjTyOBaNYq_jYxfg/zh-cn_image_0000002792879180.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011305Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A9DAAE6199E8326D2D6A52B6BF7C1F050C2D25E68A13D2F4B14D920C72BD015 "点击放大")
 
 ### 示例2（设置弹窗显示）
 
@@ -524,4 +524,4 @@ struct ArcListAndIndexer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/KBZlD0zmQtqPa4Ab282twg/zh-cn_image_0000002820527461.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015107Z&HW-CC-Expire=31536000000&HW-CC-Sign=E489C1E576AA0FEECE3B574F3FB27328C1CF9472D52012C07391EE6C4486712C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/4eXruvX_TDeMUEcIJ87Wsw/zh-cn_image_0000002821839083.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011305Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DDFB47111AABB45DD7922371AE081A905B9806AB2D4E27790FE94657671984B "点击放大")

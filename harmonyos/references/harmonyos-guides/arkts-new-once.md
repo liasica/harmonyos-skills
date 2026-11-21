@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-onc
 title: "@Once装饰器：初始化同步一次"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Once装饰器：初始化同步一次
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:37+08:00
+scraped_at: 2026-11-21T09:11:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2c4fc1554e8dc0e7a04356c7d6286307304b6d83ff8cb59313a8b685e283be70
+content_hash: sha256:1c172242eea07a6057d27c0fcbce188d5bcfc20a7b5651a61ecb9fabdfc9399c
 ---
 
 想要实现仅从外部初始化一次且不接受后续同步变化的能力，可以使用[@Once](../harmonyos-references/ts-state-management-once.md#once)装饰器搭配@Param装饰器。
@@ -107,7 +107,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/bOqY0GnVRV2CormfPTT7jg/zh-cn_image_0000002791564682.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0BEC92E1A15C4ACD7C5279F1A787006F04EAE3DD95618919A5A05DE3FFBF772)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/gJeTxeCZQnO5aSNWCwx1cg/zh-cn_image_0000002821756237.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=94C1E4207C221E672AC662BD9F253021FB196A3A0913F2FE2CD55DC708FDABDE)
 
 ### 本地修改@Param变量
 
@@ -187,4 +187,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/fZaNG92oQBWvwjoAnqebnw/zh-cn_image_0000002820524633.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014646Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B5BD6FD9E26259AE8E2BA8CE9E7D44671DDC08FEC11903B2F796368D7576076)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/nA8iYrfuSwiCBkZtiXcc1g/zh-cn_image_0000002793036302.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011102Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D41D1D35BA54E3C7241A685DCFA2782E78F4B85D5B169B33954D73EFCFAED10)

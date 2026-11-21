@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-native-me
 title: 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:53+08:00
+scraped_at: 2026-11-21T09:11:19+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:834b84c565f2bc069636759d02e5170d519fdbbb504b245094060f657c42359a
+content_hash: sha256:79ef476e2ff17bc2bdab830cd5bf525e2dc83cdb7966753c7c5e5ee31b0e9e24
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:834b84c565f2bc069636759d02e5170d519fdbbb504b245094060f657c4
 
 浏览器扩展通过[WebExtensions runtime API](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions/API/runtime)连接WebNativeMessagingExtensionAbility，双方通信是通过共享pipe文件描述符后调用IO接口实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/uEIdZWhiRyq86-ZTdkkpdA/zh-cn_image_0000002791565532.png?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=40FE0E74701C3FA36353106A318598CF235FAEFF3345E72FB1753F2E75DF8AC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/6yZghE-IQOi3NruwnkGqFQ/zh-cn_image_0000002821757093.png?HW-CC-KV=V1&HW-CC-Date=20261121T011119Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B059F5DA255522B3043B64EAF53E67A812BC43861A088296DDE72B50EB8D950)
 
 **说明** 
 
@@ -44,7 +44,7 @@ NativeMessaging面向两类开发者：应用开发者和浏览器应用开发�
 
 ### 整体流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/3CWN8IaUQXupDp7IGourDA/zh-cn_image_0000002820525485.png?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3177810D7B09EAF2AA76EC1DAAD9858AC98B3F499A75A2A6544F2BE7A76E9D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/m1xjQMG_Q-OkueNeT5DE1A/zh-cn_image_0000002793037156.png?HW-CC-KV=V1&HW-CC-Date=20261121T011119Z&HW-CC-Expire=31536000000&HW-CC-Sign=72CFFEC898BA57B2B6F527556B9F037E4ED5EE613F74CDF9C4B10F75FF2CB707)
 
 * **流程：**
 

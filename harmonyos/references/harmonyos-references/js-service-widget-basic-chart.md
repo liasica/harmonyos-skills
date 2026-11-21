@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: chart
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > chart
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:25+08:00
+scraped_at: 2026-11-21T09:14:26+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f09cc6c79396a531a9a589c3a6af60740721bbb7a9acd7f3601f87f07b7c625c
+content_hash: sha256:91c832c6f0cafe0c18e2efd36242ec5e8afce08397db13265d1992c4f7fa97ca
 ---
 
 图表组件，用于呈现线形图、柱状图、量规图、进度类圆形图表、加载类圆形图表、占比类圆形图表界面。
@@ -253,7 +253,7 @@ content_hash: sha256:f09cc6c79396a531a9a589c3a6af60740721bbb7a9acd7f3601f87f07b7
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/7SkQXXmxT1-jOH1ml8LNGA/zh-cn_image_0000002820528003.png?HW-CC-KV=V1&HW-CC-Date=20261119T015125Z&HW-CC-Expire=31536000000&HW-CC-Sign=68425CD313EF858E123E754B5CE24EBCC71931ACEFFE841EF0C6B9BF77CD97AA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/5I-MnH39TBKaL8h7VQONWA/zh-cn_image_0000002821839641.png?HW-CC-KV=V1&HW-CC-Date=20261121T011324Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AEEEAFD4901A836E1FC61363BC572BF036E890237CBFC079CE6A85E437FB7CC)
 2. 柱状图
 
    ```html
@@ -320,7 +320,7 @@ content_hash: sha256:f09cc6c79396a531a9a589c3a6af60740721bbb7a9acd7f3601f87f07b7
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Z157kPNgTlSP6CaE6y8ffg/zh-cn_image_0000002820408005.png?HW-CC-KV=V1&HW-CC-Date=20261119T015125Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CE709EF9AA113A889940404C79863FBAE7FABEBD876B18DAD9F3D1522D4BA3F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/mEf9J54qTjOEYqk5R5MKGA/zh-cn_image_0000002821759643.png?HW-CC-KV=V1&HW-CC-Date=20261121T011324Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B5B443B844D9AB545926AB4CFFF222CD28AF581257E5084AC2FC2C771DA5CB8)
 3. 量规图
 
    ```html
@@ -349,4 +349,4 @@ content_hash: sha256:f09cc6c79396a531a9a589c3a6af60740721bbb7a9acd7f3601f87f07b7
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/9QQlQf8KSlWtQp4XU2C-XA/zh-cn_image_0000002791728024.png?HW-CC-KV=V1&HW-CC-Date=20261119T015125Z&HW-CC-Expire=31536000000&HW-CC-Sign=55C61A47DBCF1CD92BCBB58740238475B49405003544BD86429855AD6AD5085D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/_-IzcJ00RFCwZIxK5DJ_5A/zh-cn_image_0000002793039710.png?HW-CC-KV=V1&HW-CC-Date=20261121T011324Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D4274DDBFE62C871F393AAA62E718957EE529359A0FE451A4A0C9C620725242)

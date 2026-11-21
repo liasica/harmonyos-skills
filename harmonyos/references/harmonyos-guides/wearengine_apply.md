@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wearengine_ap
 title: 申请接入Wear Engine服务
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 接入准备 > 申请接入Wear Engine服务
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:23+08:00
+scraped_at: 2026-11-21T09:11:49+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:ee86390be7f8292afe3a3b2e927d9b9b5e1b77f8af29ad19e4103578f06c6ad1
+content_hash: sha256:1f007306d421dc3cbc0aabc937e27ef8de320acb0164ef1422ceb17df13bfbbb
 ---
 
 申请Wear Engine服务前，请先参考[应用开发准备](application-dev-overview.md)（开发者需实名认证为个人开发者或者企业开发者，认证前，请先了解二者的[权益区别](../start/dbiae-0000001336403980.md)），确认开发环境并完成创建项目、创建HarmonyOS应用等基本准备工作，再继续进行以下开发活动。
@@ -13,13 +13,13 @@ content_hash: sha256:ee86390be7f8292afe3a3b2e927d9b9b5e1b77f8af29ad19e4103578f06
 1. 登录[HarmonyOS开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/)，进入“开发者管理 > ID、证书和Profile > APP ID > 开放能力管理”页面，在应用列表下选择需要申请的应用。
 2. 点击“Wear Engine”对应的“管理”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/nkgkwyrMQ4ai-X4qlmbH_A/zh-cn_image_0000002791725824.png?HW-CC-KV=V1&HW-CC-Date=20261119T014823Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F476D68BB36CDC7CBCAF9144ADFC40E9860ADFA5AD354D1D5DC890E023824F3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/N7T53goETbqoJEdip8NZmg/zh-cn_image_0000002821837411.png?HW-CC-KV=V1&HW-CC-Date=20261121T011149Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E8A1F51AF0FBDA0B0F72B1AC3780A7ADEF792BA6D13EF29A19FBFD0CB9926AD)
 3. 点击“申请Wear Engine服务”，同意协议后，进入权限申请页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/HlQl4liwSwGm12KN-iNsfw/zh-cn_image_0000002791565852.png?HW-CC-KV=V1&HW-CC-Date=20261119T014823Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DAAEB119A712A29B898DB867BC0419AA031BF34FFFB4496C0C787B0474BE2C2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/3a8lRC_oR8itBQK1H6fAIQ/zh-cn_image_0000002821757413.png?HW-CC-KV=V1&HW-CC-Date=20261121T011149Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F5C14E931D3C712B1BF54B3003E5044FC3E74F9A22DA8BC45E728823C4B43C9)
 4. 点击“HarmonyOS应用”并选择产品后，勾选必需申请的权限（个人开发者当前只可申请设备基础信息、消息通知两个基本的权限）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/cs3QtIWXQc2bir-AQ44rdQ/zh-cn_image_0000002820525805.png?HW-CC-KV=V1&HW-CC-Date=20261119T014823Z&HW-CC-Expire=31536000000&HW-CC-Sign=F75D6E07D284CEED067F752950FF53A0ECD3F83962FBD8539C7FD5B565D15DAC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/jY-pIejOTwyekcWWGOIzsQ/zh-cn_image_0000002793037476.png?HW-CC-KV=V1&HW-CC-Date=20261121T011149Z&HW-CC-Expire=31536000000&HW-CC-Sign=88B008F5CA2FA834E240903C4370508BA5E6E4279E78EA7492AD1C374F5F20F7)
 
    **说明** 
 

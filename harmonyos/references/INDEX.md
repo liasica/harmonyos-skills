@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 16662 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 16653 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1311 篇
 
@@ -1316,7 +1316,7 @@
 - [应用升级适配指导——向26.0.0升级](harmonyos-releases/upgrade-adaptation.md)
 - [版本号格式调整说明](harmonyos-releases/version-number-26.md)
 
-## 指南（`harmonyos-guides`）— 5569 篇
+## 指南（`harmonyos-guides`）— 5567 篇
 
 - [24h功耗器件分解统计事件](harmonyos-guides/24-hour-battery-usage-event.md)
 - [aa工具](harmonyos-guides/aa-tool.md)
@@ -2059,9 +2059,6 @@
 - [管理AR会话](harmonyos-guides/arsession.md)
 - [命中检测](harmonyos-guides/arworld.md)
 - [ASON解析与生成](harmonyos-guides/ason-parsing-generation.md)
-- [Automatic Scene Configuration Kit术语](harmonyos-guides/assessment-glossary.md)
-- [评估管理开发指南](harmonyos-guides/assessment-guide.md)
-- [Automatic Scene Configuration Kit简介](harmonyos-guides/assessment-kit-intro.md)
 - [Asset Store Kit开发指导(ArkTS)](harmonyos-guides/asset-arkts.md)
 - [Asset Store Kit术语](harmonyos-guides/asset-glossary.md)
 - [新增关键资产(ArkTS)](harmonyos-guides/asset-js-add.md)
@@ -2148,7 +2145,6 @@
 - [Audio Vivid解封装](harmonyos-guides/audiovivid-avdemuxer.md)
 - [Audio Vivid能力介绍](harmonyos-guides/audiovivid-intro.md)
 - [Audio Vivid能力](harmonyos-guides/audiovivid.md)
-- [Automatic Scene Configuration Kit（场景配置服务）](harmonyos-guides/automatic-scene-configuration-kit.md)
 - [音视频投播](harmonyos-guides/avcastpicker.md)
 - [音视频编解码开发实践](harmonyos-guides/avcodec-development-practices.md)
 - [AVCodec Kit简介](harmonyos-guides/avcodec-kit-intro.md)
@@ -3305,6 +3301,7 @@
 - [数据权限总览](harmonyos-guides/health-litewearable-permission-description.md)
 - [匹克球](harmonyos-guides/health-litewearable-pickleball.md)
 - [普拉提](harmonyos-guides/health-litewearable-pilates.md)
+- [管理运动实时数据](harmonyos-guides/health-litewearable-realtime-manage.md)
 - [户外跑步](harmonyos-guides/health-litewearable-running.md)
 - [滑雪](harmonyos-guides/health-litewearable-skiing.md)
 - [足球](harmonyos-guides/health-litewearable-soccer.md)
@@ -3353,6 +3350,7 @@
 - [笼式网球](harmonyos-guides/health-wearable-padel.md)
 - [数据权限总览](harmonyos-guides/health-wearable-permission-description.md)
 - [普拉提](harmonyos-guides/health-wearable-pilates.md)
+- [管理运动实时数据](harmonyos-guides/health-wearable-realtime-manage.md)
 - [户外跑步](harmonyos-guides/health-wearable-running.md)
 - [读取采样数据](harmonyos-guides/health-wearable-samplepoint-manage.md)
 - [采样数据](harmonyos-guides/health-wearable-samplepoint.md)
@@ -5752,7 +5750,7 @@
 - [附录](harmonyos-guides/push-appendix.md)
 - [申请推送场景化消息权益](harmonyos-guides/push-apply-right.md)
 - [推送后台消息](harmonyos-guides/push-background.md)
-- [开通推送服务](harmonyos-guides/push-config-setting.md)
+- [开通推送服务与接入准备](harmonyos-guides/push-config-setting.md)
 - [支持的国家/地区](harmonyos-guides/push-country.md)
 - [（可选）推送报告](harmonyos-guides/push-delivery-report.md)
 - [通知内容管理细则](harmonyos-guides/push-detail-rules.md)
@@ -6888,7 +6886,7 @@
 - [XML概述](harmonyos-guides/xml-overview.md)
 - [XML解析](harmonyos-guides/xml-parsing.md)
 
-## API 参考（`harmonyos-references`）— 4854 篇
+## API 参考（`harmonyos-references`）— 4849 篇
 
 - [ABR_CameraData](harmonyos-references/_a_b_r___camera_data.md)
 - [ABR_Vector3](harmonyos-references/_a_b_r___vector3.md)
@@ -7483,8 +7481,6 @@
 - [头文件](harmonyos-references/arkweb-headerfile.md)
 - [模块](harmonyos-references/arkweb-module.md)
 - [结构体](harmonyos-references/arkweb-struct.md)
-- [错误码](harmonyos-references/assessment-arkts-errcode.md)
-- [ArkTS API](harmonyos-references/assessment-arkts.md)
 - [Asset Store Kit（关键资产存储服务）](harmonyos-references/asset-store-api.md)
 - [错误码](harmonyos-references/asset-store-arkts-errcode.md)
 - [ArkTS API](harmonyos-references/asset-store-arkts.md)
@@ -7503,7 +7499,6 @@
 - [模块](harmonyos-references/audio-module.md)
 - [multimedia](harmonyos-references/audio-multimedia.md)
 - [结构体](harmonyos-references/audio-struct.md)
-- [Automatic Scene Configuration Kit（场景配置服务）](harmonyos-references/automatic-scene-configuration-api.md)
 - [AVCodec Kit（音视频编解码服务）](harmonyos-references/avcodec-api.md)
 - [已停止维护的接口](harmonyos-references/avcodec-arkts-dep.md)
 - [C API](harmonyos-references/avcodec-c.md)
@@ -9480,7 +9475,6 @@
 - [ArkTS API错误码](harmonyos-references/errorcode-appgallery.md)
 - [AR Engine错误码](harmonyos-references/errorcode-ar-engine.md)
 - [编译错误码](harmonyos-references/errorcode-arkui-compile.md)
-- [评估管理错误码](harmonyos-references/errorcode-assessment.md)
 - [关键资产存储服务错误码](harmonyos-references/errorcode-asset.md)
 - [动态属性设置错误码](harmonyos-references/errorcode-attributemodifier.md)
 - [Audio错误码](harmonyos-references/errorcode-audio.md)
@@ -10097,7 +10091,6 @@
 - [@ohos.security.CryptoExtensionAbility (密钥扩展能力)](harmonyos-references/js-apis-cryptoextensionability.md)
 - [@ohos.security.cryptoFramework (加解密算法库框架)](harmonyos-references/js-apis-cryptoframework.md)
 - [@ohos.curves (插值计算)](harmonyos-references/js-apis-curve.md)
-- [@ohos.customization.assessment (评估管理)](harmonyos-references/js-apis-customization-assessment.md)
 - [@ohos.customization.customConfig (定制配置)](harmonyos-references/js-apis-customization-customconfig.md)
 - [@ohos.data.dataAbility (DataAbility谓词)](harmonyos-references/js-apis-data-ability.md)
 - [@ohos.data.cloudData (端云服务)](harmonyos-references/js-apis-data-clouddata.md)
@@ -12235,7 +12228,7 @@
 - [多设备地图导航界面](best-practices/multi-travel-navigation.md)
 - [多设备长视频界面](best-practices/multi-video-app.md)
 
-## FAQ（`harmonyos-faqs`）— 4428 篇
+## FAQ（`harmonyos-faqs`）— 4426 篇
 
 - [Context功能使用常见问题](harmonyos-faqs/ability-kit-faq-0001.md)
 - [Context类型与关系常见问题](harmonyos-faqs/ability-kit-faq-0002.md)
@@ -15338,7 +15331,6 @@
 - [DevEco Studio安装后使用过程中常见配置问题](harmonyos-faqs/faqs-development-environment-45.md)
 - [DevEco Studio编译慢，模拟器启动慢](harmonyos-faqs/faqs-development-environment-46.md)
 - [DevEco Studio的SDK常见环境问题](harmonyos-faqs/faqs-development-environment-47.md)
-- [HarmonyOS中DevEco Studio缺少Device Manager入口及模拟器镜像下载报错的解决方案](harmonyos-faqs/faqs-development-environment-48.md)
 - [环境准备](harmonyos-faqs/faqs-development-environment.md)
 - [HarmonyOS是否支持CFCA证书预置](harmonyos-faqs/faqs-device-certificate-1.md)
 - [证书链校验器的参数如何获取](harmonyos-faqs/faqs-device-certificate-2.md)
@@ -16626,7 +16618,6 @@
 - [自定义界面扫码黑屏问题排查与解决](harmonyos-faqs/scan-kit-faq-0001.md)
 - [故障排查](harmonyos-faqs/scan-kit-faq.md)
 - [DevEco Testing安全基础质量测试常见问题](harmonyos-faqs/security-basic-quality-test-faq-0001.md)
-- [常见问题](harmonyos-faqs/security-basic-quality-test-faq.md)
 - [设备竖立状态判断](harmonyos-faqs/sensor-service-kit-faq-0001.md)
 - [常见问题](harmonyos-faqs/sensor-service-kit-faqs.md)
 - [系统分享与数据接收常见问题](harmonyos-faqs/share-kit-faq-0001.md)

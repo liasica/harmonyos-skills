@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/media-kit-int
 title: Media Kit简介
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > Media Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:40+08:00
+scraped_at: 2026-11-21T09:12:05+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:45920f37e05650607c67071496baecb8cab69b0bdb2552ef7fa540feb059dc0b
+content_hash: sha256:ae04d598794b9d565a3846444d01bfa5b8385c380899800e890b961afd60f2e8
 ---
 
 Media Kit（媒体服务）用于开发音视频播放或录制的各类功能。在Media Kit的开发指导中，将详细介绍音视频多个模块的开发方式，指导开发者如何使用系统提供的音视频API实现对应功能。比如使用SoundPool实现简单的提示音，当设备接收到新消息时，会发出短促的“滴滴”声；使用AVPlayer实现音乐播放器，循环播放一首音乐。
@@ -55,7 +55,7 @@ AVPlayer提供功能完善一体化播放能力，应用只需要提供流媒体
 
 当使用AVPlayer开发音乐应用播放音频时，AVPlayer与外部模块的交互关系如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/m7ajC8RoTiuXLjrRB8aIlQ/zh-cn_image_0000002791725974.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=4103077F68889364F0F85894456FEA341D9016F14FC1C4930134A0C45D63BE57)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/oKslMyGpQwqR-cLAWglvFQ/zh-cn_image_0000002821837561.png?HW-CC-KV=V1&HW-CC-Date=20261121T011039Z&HW-CC-Expire=31536000000&HW-CC-Sign=B64C7EB1631C00799451070153B22BAC267E93D848A715F9941F27DF096A6100)
 
 音乐类应用通过调用JS接口层提供的AVPlayer接口实现相应功能时，框架层会通过播放服务（Player Framework）将资源解析成音频数据流（PCM），音频数据流经过软件解码后输出至音频服务（Audio Framework），由音频服务输出至音频驱动渲染，实现音频播放功能。完整的音频播放需要应用、Player Framework、Audio Framework、音频HDI共同实现。
 
@@ -68,7 +68,7 @@ AVPlayer提供功能完善一体化播放能力，应用只需要提供流媒体
 
 当使用AVPlayer开发视频应用播放视频时，AVPlayer与外部模块的交互关系如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/1zjEaOvzQUex2Me2zLU6KA/zh-cn_image_0000002791566002.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=7452BEDB7751FA8C96B146D6316AFD55BE7A04CD02099880BBCAF978A04CAEEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/M8slRW_pTcOWidlBoGvsvg/zh-cn_image_0000002821757563.png?HW-CC-KV=V1&HW-CC-Date=20261121T011039Z&HW-CC-Expire=31536000000&HW-CC-Sign=B72A5404C49B2A1570170519753B10D9877D8934ECF3D458874B72940AF6C8FA)
 
 应用通过调用JS接口层提供的AVPlayer接口实现相应功能时，框架层会通过播放服务（Player Framework）解析成单独的音频数据流和视频数据流，音频数据流经过软件解码后输出至音频服务（Audio Framework），再至硬件接口层的音频HDI，实现音频播放功能。视频数据流经过硬件（推荐）/软件解码后输出至图形渲染服务（Graphic Framework），再输出至硬件接口层的显示HDI，完成图形渲染。
 
@@ -135,7 +135,7 @@ SoundPool提供短音频的播放能力，应用只需要提供音频资源来�
 
 当使用SoundPool开发应用播放音频时，SoundPool与外部模块的交互关系如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/veQD9ScZQmSzP504PlOR8w/zh-cn_image_0000002820525955.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=522C389D6DADD6406FEFD43DF568DA365DF4B92AE8D73BDF9D5D858D0887E3E3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/xK5R6fQuQzOnJBcZDiWMtA/zh-cn_image_0000002793037626.png?HW-CC-KV=V1&HW-CC-Date=20261121T011039Z&HW-CC-Expire=31536000000&HW-CC-Sign=D489924FA225158CBA13FA4D18B5FFF652B8D7A4D751997529C87B496392CE17)
 
 音乐类应用通过调用JS接口层提供的SoundPool接口实现相应功能时，框架层会通过播放服务（Player Framework）将资源解析成音频数据流（PCM），音频数据流经过软件解码后输出至音频服务（Audio Framework），由音频服务输出至音频驱动渲染，实现音频播放功能。完整的音频播放需要应用、Player Framework、Audio Framework、音频HDI共同实现。
 
@@ -170,7 +170,7 @@ AVRecorder主要工作是捕获音频信号，接收视频信号，完成音视�
 
 当使用AVRecorder开发应用录制视频时，AVRecorder与外部模块的交互关系如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/5JilTccYShCQXc1q62oprA/zh-cn_image_0000002820405955.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=452AF4BDB66F43941387CB88D5B40E1A6AECED7EAE732EC7A422293104128DB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/WTNXuB3-STGTJW92de7z9w/zh-cn_image_0000002792877656.png?HW-CC-KV=V1&HW-CC-Date=20261121T011039Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAB84D83338AF856097519AC58ACDE824B77A817BEBA7365C11F56163A668889)
 
 * 音频录制：应用通过调用JS接口层提供的AVRecorder接口实现音频录制时，框架层会通过录制服务（Player Framework），调用音频服务（Audio Framework）通过音频HDI捕获音频数据，通过软件编码封装后保存至文件中，实现音频录制功能。
 * 视频录制：应用通过调用JS接口层提供的AVRecorder接口实现视频录制时，先通过Camera接口调用相机服务（Camera Framework）通过视频HDI捕获图像数据送至框架层的录制服务，录制服务将图像数据通过视频编码HDI编码，再将编码后的图像数据封装至文件中，实现视频录制功能。
@@ -228,7 +228,7 @@ AVScreenCapture主要工作是捕获音频信号、视频信号，并通过音�
 
 当使用AVScreenCapture开发应用录制屏幕时，AVScreenCapture与外部模块的交互关系如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/7N2gsoQQS8W8PXZpxuY2og/zh-cn_image_0000002791725976.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB3F543C7250512349DE1F67F51EA640F6625122D2972B795F0814F6FD046DE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/xAR9SAf4REKmNYxMyndu3A/zh-cn_image_0000002821837563.png?HW-CC-KV=V1&HW-CC-Date=20261121T011039Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAC63D66E1758CDE1D0847CD52170733A00D6BAEB03E316B4B479F913529AECE)
 
 * 音频录制：应用通过调用JS/Native接口层提供的AVScreenCapture接口实现音频录制时，框架层会通过录屏框架，调用音频服务（Audio Framework）通过音频捕获音频数据，通过软件编码封装后保存至文件中，实现音频录制功能。
 * 屏幕录制：应用通过调用JS/Native接口层提供的AVScreenCapture接口实现屏幕录制时，框架层会通过录屏框架，调用图形图像服务通过视频捕获屏幕数据，通过软件编码封装后保存至文件中，实现屏幕录制功能。

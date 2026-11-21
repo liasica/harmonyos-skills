@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-focu
 title: 重新设置新焦点位置
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 重新设置新焦点位置
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:28+08:00
-doc_updated_at: 2026-11-18
+scraped_at: 2026-11-21T09:10:54+08:00
+doc_updated_at: 2026-11-20
 content_hash: sha256:616d8cabfb06ca7a6546a8b2d93a428437f508675009fdf39e9f7937d4bef9f8
 ---
 

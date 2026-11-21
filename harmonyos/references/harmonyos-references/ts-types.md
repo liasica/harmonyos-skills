@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types
 title: 基础类型定义
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 公共定义 > 基础类型定义
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:19+08:00
+scraped_at: 2026-11-21T09:14:21+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3eeb39a2190ffa27b7c618977ca850724b05edd4418e2668116aa2e1fef921f8
+content_hash: sha256:22640552b3598738ecb90c5d4eec81007f915ecd865c30cfc705cc944860cc5b
 ---
 
 **说明** 
@@ -1039,11 +1039,11 @@ type ResponsiveFillType = PresetFillType
 
 以水平方向Bias为例，其值为组件到左锚点的距离 Dstart与组件到水平方向锚点间总距离 Dstart + Dend的比值。镜像语言下，Dstart为组件到右锚点的距离。下图中Dwidth表示组件宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/s5t2ERe1Tn-J7Vrcp6h6iA/zh-cn_image_0000002820407719.png?HW-CC-KV=V1&HW-CC-Date=20261119T015023Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1C0821F38B62F22DB85CF4A35C2B985313D990FDD3D7475CA2B6558144F1621)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/qMhUaAL6QBeP6YZ6xgQNWQ/zh-cn_image_0000002821759347.png?HW-CC-KV=V1&HW-CC-Date=20261121T011419Z&HW-CC-Expire=31536000000&HW-CC-Sign=977DD33DA79C7A51A468E0EB916B56EE446AE5C1EB84147941C5419FD6D6BFB9)
 
 竖直方向同理，其值为组件到上锚点的距离Dtop与组件到竖直方向锚点间总距离Dtop + Dbottom的比值。下图中Dheight表示组件高度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/4skKY1suTJmJ3xJkpHnDmw/zh-cn_image_0000002791727738.png?HW-CC-KV=V1&HW-CC-Date=20261119T015023Z&HW-CC-Expire=31536000000&HW-CC-Sign=496022A3254D85D38973C49BD5E9E48CB6056C22DF75FCC2BC94A916CB404412)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Pp54vEERSb6EGNjfREUKWg/zh-cn_image_0000002793039420.png?HW-CC-KV=V1&HW-CC-Date=20261121T011419Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFA1E388B70ED0AB10E7CE2F18BA0C6155A0EFF9BE78D1A553853B729C2B8B38)
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (JfifMetadata)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Class (JfifMetadata)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:54+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:dfc68da47a5ce6990b7165fea441c1486b9aea115ae8e3db692f7010ae5e236d
+scraped_at: 2026-11-21T09:16:06+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:932cf40b3719fd9dd39dc731acb44b681775c0077a94b37b3e3479fafe2310e5
 ---
 
 JfifMetadata.
@@ -30,7 +30,7 @@ import { image } from '@kit.ImageKit';
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| densityUnit | number | 是 | 是 | 用于定义Xdensity（水平像素密度）和Ydensity（垂直像素密度）的物理度量单位。  - 0表示无单位（仅像素宽高比）。  - 1表示每英寸像素数（DPI）。  - 2表示每厘米像素数（DPC）。  该值为正整数。 |
+| densityUnit | number | 是 | 是 | 用于定义Xdensity（水平像素密度）和Ydensity（垂直像素密度）的物理度量单位。取值为0、1、2。  - 0表示无单位（仅像素宽高比）。  - 1表示每英寸像素数（DPI）。  - 2表示每厘米像素数（DPC）。 |
 | xDensity | number | 是 | 是 | JFIF图像X方向密度。  该值为正整数。 |
 | yDensity | number | 是 | 是 | JFIF图像Y方向密度。  该值为正整数。 |
 | isProgressive | boolean | 是 | 是 | 图像是否采用渐进式编码，即图像在加载过程中按多次扫描逐步提升清晰度。true表示采用，false表示不采用。 |

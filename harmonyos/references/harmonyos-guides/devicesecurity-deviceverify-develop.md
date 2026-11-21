@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 应用设备状态检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 应用设备状态检测
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:06+08:00
+scraped_at: 2026-11-21T09:11:32+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:56ccc0c3116be59a91d8f9de8e587290e95629da1cbd711ccd26ea721563c799
+content_hash: sha256:c33e54d751529bb54624b09e0e9e5b40c31cc71d6634e87f63145066710a4de6
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:56ccc0c3116be59a91d8f9de8e587290e95629da1cbd711ccd26ea72156
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Tbvdd08xQvCXMVrFTxiG4A/zh-cn_image_0000002791725696.png?HW-CC-KV=V1&HW-CC-Date=20261119T014714Z&HW-CC-Expire=31536000000&HW-CC-Sign=7480F1C7FB756C05B6FBC598288ED76A4B3FCEDD411A20F8715E5E9D40DBD0AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/QbkO2wQHRqa9rH0fuVm15A/zh-cn_image_0000002821837283.png?HW-CC-KV=V1&HW-CC-Date=20261121T011007Z&HW-CC-Expire=31536000000&HW-CC-Sign=008A5C4DC9BD4E6BEFCC24EFAA302BEA9198AEBC1751CE234C9DFA20D7674FD8)
 
 流程说明：
 

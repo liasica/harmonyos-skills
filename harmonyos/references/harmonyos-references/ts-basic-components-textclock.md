@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TextClock
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > TextClock
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:07+08:00
+scraped_at: 2026-11-21T09:14:12+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:46ec63cc751e79a50471a5209561af7c43845e8e29ce33302cbd3666ed04726d
+content_hash: sha256:885e5789592bbcf03d9565175d94742a3eba72d14260a716dfcb9384e40c68eb
 ---
 
 TextClock组件通过文本将当前系统时间显示在设备上，支持不同时区的时间显示和时间格式自定义，最高精度到秒级。适用于需要在应用界面上实时展示系统时间、支持多时区显示的场景，可帮助开发者快速实现时间文本展示功能，无需手动计算和更新时间。
@@ -469,7 +469,7 @@ struct Second {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/x3TtsrNMQ1SafARckPM6Ug/zh-cn_image_0000002820527479.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=59F7F89ED7ED7F8DD5B80F9922CEDF13DEDD5300B86B2D679363BC77DE0C09FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/o-3egbSKRW6ekyO8C6D48A/zh-cn_image_0000002821839101.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011412Z&HW-CC-Expire=31536000000&HW-CC-Sign=A44EBEC32F7001E0E52BFA71A5E3B6C6D885D1414EC4DC51D4524866985EE3B0)
 
 ### 示例2（设定文本阴影样式）
 
@@ -514,7 +514,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/vdsPa4uDS2eTGwZWQ0MIsw/zh-cn_image_0000002820407481.png?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8D26C3E610F7B3654CF2B90617C3FD1FB1CE2109DFBACBFF84BA53116F57F78)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/F30msPxATkKdJVoLeaqjtA/zh-cn_image_0000002821759103.png?HW-CC-KV=V1&HW-CC-Date=20261121T011412Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F6AC4F0969E86FDD418CAB8AFF37238AC2ACB00B0A98558271F29D35EA47565)
 
 ### 示例3（设定自定义内容区）
 
@@ -601,7 +601,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/0xTI_JsDQKmR7B4mJbXy0A/zh-cn_image_0000002791727500.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F9EF61A4C59AA9CF935F34EF27E03AF15383B6FA0D8A1FA7021C98AC950D3F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/J9hbiWFPRsmKXsH1lMh0Cg/zh-cn_image_0000002793039170.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011412Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E37C8F2CD72392EB806CBB4827E5F42429D1A182676D5D52431383B325B3666)
 
 ### 示例4（设置前导零）
 
@@ -636,7 +636,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Qlt9Fq9_SkWmlw0eIs0vww/zh-cn_image_0000002791567528.png?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=007DCE1C9AF59CC7E8324B35D0F5769B7BE9623FFD55B0459F9D552B97C735D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/eKSNNUgCRf6oZLS24FA2GQ/zh-cn_image_0000002792879200.png?HW-CC-KV=V1&HW-CC-Date=20261121T011412Z&HW-CC-Expire=31536000000&HW-CC-Sign=A68EC9AAEAD6DC67FD41082151F0B42D2D5760E8D8459561BD62BD800784E0F5)
 
 ### 示例5（设置文字显示样式）
 
@@ -691,4 +691,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/4SGTKnFPS-CHQjjsHTQ9bg/zh-cn_image_0000002820527481.png?HW-CC-KV=V1&HW-CC-Date=20261119T015106Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC1992942CFF7C3DC7FD808344F01A7140DEF8CF7C0CFAAA12FE249585676876)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/qn1TRERMSL2O6rujmg_ZSg/zh-cn_image_0000002821839103.png?HW-CC-KV=V1&HW-CC-Date=20261121T011412Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE45698AEDDC43BCE3205307308CADB98E10B9824BF7422671F620148D809ED2)

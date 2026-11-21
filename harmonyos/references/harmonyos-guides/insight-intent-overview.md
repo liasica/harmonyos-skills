@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/insight-inten
 title: 意图框架概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 意图框架开发指导 > 意图框架概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:27+08:00
+scraped_at: 2026-11-21T09:10:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c0d5ef0cfccdc74d038d363e5af7c198688eda3e460064c6adbc9272ea182727
+content_hash: sha256:1b9c03ed8170b7cbff2d18ad0901867e792801f2d42df452b71c2f4c86152992
 ---
 
 ## 场景介绍
@@ -34,7 +34,7 @@ content_hash: sha256:c0d5ef0cfccdc74d038d363e5af7c198688eda3e460064c6adbc9272ea1
 * 意图查询：系统入口可以查询注册到意图框架的意图及其定义。
 * 意图执行：系统入口根据用户请求匹配到相应意图后，触发该意图的执行，并将必要的参数传递给应用。应用执行对应功能并返回执行结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ynESNlQJRXSnvW84d4FNNQ/zh-cn_image_0000002820524443.png?HW-CC-KV=V1&HW-CC-Date=20261119T014636Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA1300B726AFFBEE68A15C40F7F5980CD550CFB9138069CE0E47499D71958E5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/qOqAALjFRLizD1kI72ImJg/zh-cn_image_0000002793036112.png?HW-CC-KV=V1&HW-CC-Date=20261121T011053Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAB0B5C31D777C2F018089A950FC7AB9B03447D322AAE2B107C6AF3D0877A9FD)
 
 ## 意图开发方式
 

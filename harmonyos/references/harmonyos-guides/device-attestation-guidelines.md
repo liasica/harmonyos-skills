@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-attest
 title: 创建密钥确立可信凭证
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明 > 创建密钥确立可信凭证
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:11+08:00
+scraped_at: 2026-11-21T09:11:37+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:a024d185876e0706a98535a6bbf6e1c450f31eed10cdf6b54de229b6db780243
+content_hash: sha256:b2daa14b5026741414bc8af715940ad7b498a57c9da69bc5cd41ab761825e82b
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:a024d185876e0706a98535a6bbf6e1c450f31eed10cdf6b54de229b6db7
 
 **图1** 创建密钥确立可信凭证流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/c2CDGStcRDmhkrhuzz_Jew/zh-cn_image_0000002820525711.png?HW-CC-KV=V1&HW-CC-Date=20261119T014719Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D66A521AA32B07C02E2DFB6A36F7F82A97C2BCB3B3C83354017635CC84AA26E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/soqaTkukTFOxpBQxSopr5Q/zh-cn_image_0000002793037382.png?HW-CC-KV=V1&HW-CC-Date=20261121T011137Z&HW-CC-Expire=31536000000&HW-CC-Sign=460E3B0BFF62CAEF2DF9F0DA7F965C019FEF2AC6862E3518311E644715F5A6B7)
 
 ### 创建密钥确立可信凭证流程
 

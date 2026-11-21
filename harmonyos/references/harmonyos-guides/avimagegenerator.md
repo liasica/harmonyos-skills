@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avimagegenera
 title: 使用AVImageGenerator提取视频指定时间图像(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体信息查询 > 使用AVImageGenerator提取视频指定时间图像(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:07+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:e8e4b0205c423157ca066ee36cae08e53c14b4a918e148231a0424e4005e0928
+scraped_at: 2026-11-21T09:12:05+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:82902aec88ad050a1a759b9c74c10c25f53e298e914eeceb6a5afd22351c0d9e
 ---
 
-使用[AVImageGenerator](media-kit-intro.md#avimagegenerator)可以实现从原始媒体资源中获取视频指定时间的缩略图，本开发指导将以获取一个视频资源的缩略图作为示例，向开发者讲解AVImageGenerator相关功能。
+使用[AVImageGenerator](media-kit-intro.md#avimagegenerator)可以实现从本地视频资源中获取指定时间的缩略图，本开发指导将以获取一个视频资源的缩略图作为示例，向开发者讲解AVImageGenerator相关功能。
 
-获取视频资源的缩略图的全流程包含：创建AVImageGenerator对象，设置资源，获取缩略图，销毁资源。
+获取视频资源的缩略图的全流程包含：创建AVImageGenerator对象、设置资源、获取缩略图、销毁资源。
 
 ## 开发步骤及注意事项
 

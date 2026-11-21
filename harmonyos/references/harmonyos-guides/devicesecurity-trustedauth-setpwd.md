@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 设置数字盾密码
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 数字盾密码管理 > 设置数字盾密码
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:07+08:00
+scraped_at: 2026-11-21T09:11:33+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:8256747afa54c95ecc8f4d5885eebb5a442a46315a0ea2a4c3b7460d66954de7
+content_hash: sha256:1846f89c62599bbca071f3c9680eb99e81c55127fd27c1cdb473993388218259
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:8256747afa54c95ecc8f4d5885eebb5a442a46315a0ea2a4c3b7460d669
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/jla29MZcRs26ihuNEb7izw/zh-cn_image_0000002820405681.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014806Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFE77E1D6C63C39CA49DC505F00B5F76D37A2A82ABB79FB78EA1E71ECC228036)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/WVIVZlpkSDGqoCX_RGzQPA/zh-cn_image_0000002792877382.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011132Z&HW-CC-Expire=31536000000&HW-CC-Sign=F09E2FF068D1F0922DD421902AF64B6DAF53382C3BF3EE0EBD4182AE9FE50650)
 
 数字盾开通时，需由应用服务器、应用客户端、Universal Keystore Kit和Device Security Kit共同协作完成。流程如下：
 
@@ -46,7 +46,7 @@ content_hash: sha256:8256747afa54c95ecc8f4d5885eebb5a442a46315a0ea2a4c3b7460d669
 
 下图为开通数字盾服务时对应的TUI（Trusted User Interface）界面示例，其中密码长度、对应TUI应用图标以及当前应用场景说明均由开发者调用接口时传入，当设置盾密码长度不符合要求、密码强度低、两次密码设置不一致时，均会有对应失败报错提醒。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/DyocBxtkRhiJgard7xNnvg/zh-cn_image_0000002791725702.png?HW-CC-KV=V1&HW-CC-Date=20261119T014806Z&HW-CC-Expire=31536000000&HW-CC-Sign=E705D465C0FCE9126AED22AB0BBE87C6203CD232DBAEEE4CA8FE75BD7A3EBE49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/ZlbFq4GtRv6kRkI5JD6urw/zh-cn_image_0000002821837289.png?HW-CC-KV=V1&HW-CC-Date=20261121T011132Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B49B067E0416AD00A2303CC1414E47F53C2D2C0A50637546D3B2821F0D7086B)
 
 ## 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-co
 title: 应用评论服务
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用评论服务
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:53+08:00
+scraped_at: 2026-11-21T09:12:19+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:ec695d1f6064cc0304a4ae84522d3aae334d3530ac7d0bce086b01129e9a5c34
+content_hash: sha256:d8d6673289d67b97f4f15045a219dedf90d652812f42816510aaec05505d66db
 ---
 
 通过应用评论服务，用户无需进入应用市场应用详情页，可以直接在应用内进行评论。
@@ -18,11 +18,11 @@ content_hash: sha256:ec695d1f6064cc0304a4ae84522d3aae334d3530ac7d0bce086b01129e9
 
 开发者可以通过该接口拉起应用评论弹窗对应用进行评分及评论，无需进入应用市场应用详情页进行评论。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/x6CsI5d_QiKCwKBYTZgmFw/zh-cn_image_0000002820406199.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014852Z&HW-CC-Expire=31536000000&HW-CC-Sign=15C2BA88A0C9119A656F501479040694CA43CC815A7BA6EFFED98347E1272730)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/5rO0hB-WQ_2h4Y-ss1Tmmg/zh-cn_image_0000002792877900.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011051Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CA443AE8D29A9F16CC619C65CD002FB982D5A6AB6ABB3C4BB5C747AEEE8ABA4)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/jBGwaYecSAGaMI_qk-Jxsg/zh-cn_image_0000002791726220.png?HW-CC-KV=V1&HW-CC-Date=20261119T014852Z&HW-CC-Expire=31536000000&HW-CC-Sign=231823FA4D04006C236BE5137CC414CA2995F7D15767CA99668DF3C62F8CE1C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/u3Oqylo-SECiKJLQ7cL5rg/zh-cn_image_0000002821837807.png?HW-CC-KV=V1&HW-CC-Date=20261121T011051Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F89852C1A026C44DD73CE46FD65406002FD22318828D53D5CEA84B8C67AEA4A)
 
 1. 用户需要在应用内评论应用。
 2. 应用调用[showCommentDialog](../harmonyos-references/appgallery-commentmanager.md#commentmanagershowcommentdialog)接口拉起应用评论弹窗。

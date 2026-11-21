@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/overdraw-dfx-
 title: 过度绘制调试使用指导
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 过度绘制调试使用指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:45+08:00
+scraped_at: 2026-11-21T09:12:10+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:3fed190d51ad3890b61db213f3f7362b9344d4e5248be172ec874f29a4c08a9a
+content_hash: sha256:851ee6f12e79bf00898da3b78493ec73fe59953fb65c2cbeefdd1a8dfaf5b5a9
 ---
 
 当应用页面布局的嵌套程度过深时，应用渲染阶段会存在一些组件的绘制指令被其他组件的绘制指令部分或完全覆盖遮挡的情况，造成冗余的CPU、GPU等计算资源的使用。这种一个屏幕上的像素点被重复绘制了多次的情况被称为过度绘制（Overdraw）。开发者可通过系统提供的过度绘制调试指令，查看引起过度绘制的组件位置及其层级，从而减轻应用渲染时的负载。
@@ -23,14 +23,14 @@ content_hash: sha256:3fed190d51ad3890b61db213f3f7362b9344d4e5248be172ec874f29a4c
   param set debug.graphic.overdraw true
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Pnh_hoAgRuy8TN-aT3AyNw/zh-cn_image_0000002791726030.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=572821AD01324A49E50B439D6E3D42ED1B1BACC4077B5D701063CE3E25A910CA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/fth6XkP7SbeI_fAhiSsl5w/zh-cn_image_0000002821837617.png?HW-CC-KV=V1&HW-CC-Date=20261121T011044Z&HW-CC-Expire=31536000000&HW-CC-Sign=755F779ED25464A26BBBEA50D49E8820DA8CF08B8AEF54CD6EF09C4E71922B76)
 * 关闭过度绘制调试功能：
 
   ```screen
   param set debug.graphic.overdraw false
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/n6KuEh4fRGCbPYpzmjPsTA/zh-cn_image_0000002791566058.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=278F0B344C501F7D6E16C75FC27F16BB51C8363CA5DCB30189501BEA78F519D5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/HUIPk5-kQkWv52WVOL9Pmg/zh-cn_image_0000002821757619.png?HW-CC-KV=V1&HW-CC-Date=20261121T011044Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DADAFBF0EEBA2D204CD661F8513E005433F05436FCEC48AC404A7054A478F35)
 * 查看是否开启了过度绘制调试功能：
 
   true表示开启了过度绘制功能，false则表示未开启。
@@ -39,7 +39,7 @@ content_hash: sha256:3fed190d51ad3890b61db213f3f7362b9344d4e5248be172ec874f29a4c
   param get debug.graphic.overdraw
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/wQ6-rxmZSqCRiMEhDfdBzA/zh-cn_image_0000002820526011.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=54783FF0817DF94EF80DA4429A205FAB40B30223EAAF063A1DE73AE667878D39)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/3WbNbzbARUC7ozqMEGLMsQ/zh-cn_image_0000002793037682.png?HW-CC-KV=V1&HW-CC-Date=20261121T011044Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1CA9EC15B290D99948957AD9C39ED338E6AA18F056709D7E582894639472CD5)
 
 ## 过度绘制组件分析
 
@@ -91,7 +91,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/VRW92jlyQFC5jLfG5iuLEA/zh-cn_image_0000002820406011.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=68D5C9EC68D98DC3F3A3BFCBD8819D4B4EF9122E4D15CA728E729E7DE1CF31C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/ZA0TsvOiQH-6df-umsviDg/zh-cn_image_0000002792877712.png?HW-CC-KV=V1&HW-CC-Date=20261121T011044Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF7601C5066AF584D91449A8D5324B3AE8BA23B6F66EBE83FC3B9888F443912A)
 
 编译安装后打开过度绘制调试功能，应用界面如上图所示。
 

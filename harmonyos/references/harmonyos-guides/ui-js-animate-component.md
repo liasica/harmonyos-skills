@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: 组件动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > JS动画 > 组件动画
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:49+08:00
+scraped_at: 2026-11-21T09:11:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:328a8a715ac8fb7197645f07291aee67723f6897ee55b7d0505ccf9cc76d35ad
+content_hash: sha256:0ef466d328b7499b4e04cf645d5e8a595487afb03dcbe60560a80f9e429e491c
 ---
 
 在组件上创建和运行动画的快捷方式。具体用法请参考[通用方法](../harmonyos-references/js-components-common-methods.md)。
@@ -65,7 +65,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/BKkaNAJaTOy1d9eUPGdq0A/zh-cn_image_0000002820405365.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF4554851E06D17985C500B3E2EFC0624F5AAE560271BA6CCAFF4A3732CE092B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/XTSPu4zUTse6ha7JiqT3qA/zh-cn_image_0000002792877066.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E1ABCD8192DFDF8D8CCC088AED6EAACF5808279E458DB38233151D268CAD0E5)
 
 **说明** 
 
@@ -144,7 +144,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/0Pvma0HMSj2fx3WZJiMGOw/zh-cn_image_0000002791725386.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=036F37D2D8047902CD3610DD6906F3526F310885E108F4253B4FD579429676D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/fJH50OjyQ_qvdbCAgI74MQ/zh-cn_image_0000002821836973.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=37361C1069F2C92512C9F239464B1F87B6B896D856E42C11839CFCFD4FC094E8)
 
 **说明** 
 
@@ -212,7 +212,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Lq0UX2QDSweX-rELBclHkQ/zh-cn_image_0000002791565414.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014658Z&HW-CC-Expire=31536000000&HW-CC-Sign=3103D1F002392667913E74D47FD3330BE4393934692A068BC974438AE934FEB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/zwk6pO8RRa2hPCVi4BrS2w/zh-cn_image_0000002821756975.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010950Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E25F33B6C7BE69DC25AEA21BC272AD4F42A390C627C43C4CFE5F88215D927FC)
 
 **说明** 
 

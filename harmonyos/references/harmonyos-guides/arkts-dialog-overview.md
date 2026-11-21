@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dialog-
 title: 弹窗概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹窗概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:41+08:00
+scraped_at: 2026-11-21T09:11:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1f87b18079b3faa5c3ab216ea81524c4032ff2f1c8162f313abde1157c39683d
+content_hash: sha256:0b865e06f1d1a9bf02530aba3ae00a878fcfc3059555138ad63b3996ab92da17
 ---
 
 弹窗一般指打开应用时自动弹出或者用户行为操作时弹出的UI界面，用于短时间内展示用户需关注的信息或待处理的操作。
 
 从ArkUI组件树层级上来看，Overlay浮层、弹窗、模态、带Order的Overlay浮层都挂载在Root节点下。弹窗、模态、带Order的Overlay浮层根据设置的层级（数字大小）进行逐层显示，并且全部显示在Overlay浮层上面。如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/90FpmKCMQpa1nuadnGu1Fg/zh-cn_image_0000002820405059.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD5C1BA1519E06A8FA150C6FFD544061B26AB77773EFAE697FFF559F6F48B56A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/j1MHeeApTVySTr7zkjTeXw/zh-cn_image_0000002792876758.png?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7ACC13FC9F2989CBE7BC53FF5F9E85F1C05011E1C86EF107D66EB6B52DEEFC8)
 
 对于一个多页面应用，基本树结构如下所示。多个Page页面之间使用[Router](../harmonyos-references/js-apis-router.md)的接口进行跳转。[NavBar](../harmonyos-references/ts-basic-components-navigation.md#navbar12)和[NavDestination](../harmonyos-references/ts-basic-components-navdestination.md)组成的页面可以通过[Navigation](../harmonyos-references/ts-basic-components-navigation.md)接口进行跳转。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/6h-4mFN-S4msCoBhdWEAIg/zh-cn_image_0000002791725080.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FD3538B29961622718732D3B811FE3FA929607DED16DC3547AFC73A94E6E1C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/vg2BqdLPQuO4k5GJU2i8OA/zh-cn_image_0000002821836663.png?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=218A18A9ABC6B497F57DA505C35255C0088EDD9E534D592AE6D40F9637433EBF)
 
 而[Dialog](arkts-base-dialog-overview.md)、[Popup](arkts-popup-overview.md)、[Menu](arkts-menu-overview.md)、[OverlayManager](arkts-create-overlaymanager.md)、[Toast](arkts-create-toast.md)、[bindSheet](arkts-sheet-page.md)以及[bindContentCover](arkts-contentcover-page.md)的组件在结合路由、导航使用时存在如下几种显示模式。
 
@@ -24,7 +24,7 @@ content_hash: sha256:1f87b18079b3faa5c3ab216ea81524c4032ff2f1c8162f313abde1157c3
 
   如下图所示，触发弹窗显示时，弹窗层级要高于Page页面和Navigation页面，即如果弹窗组件没有被关闭的话，页面切换前后，弹窗组件都会显示在页面上方，而不会出现新的路由/导航页面覆盖在弹窗之上的情况。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/hpmqUYbqRyq6PGhYIVlcqg/zh-cn_image_0000002791565108.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FCD60BF1F5509129D9F6592ABB02C0A2259BB0735C3665738D3719126093FC9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/sa9mkKftR8WCPZfCAU9zyg/zh-cn_image_0000002821756665.png?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7F273B2A40D3878745BF9835318C76805DE5145BA603221CE356539C4208205)
 
   **说明** 
 
@@ -33,14 +33,14 @@ content_hash: sha256:1f87b18079b3faa5c3ab216ea81524c4032ff2f1c8162f313abde1157c3
 
   当开发者期望弹窗是一个页面内的弹窗，即当路由/导航切换页面时，弹窗会被跳转的页面覆盖，随着页面切回原页面，弹窗仍然正常显示。此时弹窗层级如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/vY71waZaQ7yazHFx4TuFTQ/zh-cn_image_0000002820525061.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B0C664676969ECA94F1B9AFDE73473C461D62AE381515D6D788B3CF87B3840C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/J8NRqadbQQmS0OvhL5gqUw/zh-cn_image_0000002793036728.png?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=7452DCD3A508724B08FD6D630F5BCCD63E10901FDD040E460D27FCE06E655A09)
 
   页面级弹窗功能需要结合弹窗组件的页面级能力使用，当前支持页面级能力的有[Dialog](arkts-base-dialog-overview.md)和[bindSheet](arkts-sheet-page.md)。
 * 弹窗显示在独立窗口内，窗口层级高于应用所在窗口。
 
   在PC/2in1等设备上，开发者常期望弹窗的显示在应用窗口之外，此时需要借助子窗的能力。例如自定义弹窗可以通过[CustomDialogControllerOptions](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)中的showInSubWindow属性控制是否使用子窗功能。基于子窗显示的弹窗效果如下图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/IunigEmJS2C93XctDfo3NQ/zh-cn_image_0000002820405061.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=F30E8A8124EF8A8E2EB29D8B3D9ADCE36ACB7A6BCB4C6EAEBDC9CCADB2D1A451)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/1tuwXPi9Rie-0_ZfZG6iwA/zh-cn_image_0000002792876760.png?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C82ACA71C891A0A3133E406E8EE82E9210B907234111F76EE5CA1006BE2DD86)
 
   此时弹窗组件的显示层级受窗口的层级管理控制，会高于当前应用所在的窗口，低于系统窗口（如系统输入法、系统弹窗等）。
 
@@ -81,4 +81,4 @@ content_hash: sha256:1f87b18079b3faa5c3ab216ea81524c4032ff2f1c8162f313abde1157c3
 * 多个弹窗组件先后弹出时，后弹出的组件的层级高于先弹出的层级，退出时按照层级从高到低的顺序逐次退出。
 * 在移动设备中，子窗模式的弹窗当前无法超出主窗口。而在2in1设备上，使用模态类弹窗时，会出现需要超出主窗口显示的场景，开发者可以通过设置showInSubWindow为true实现超出主窗口的显示效果。如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/W3LcszCdQv2IF0lKciUVZA/zh-cn_image_0000002791725082.png?HW-CC-KV=V1&HW-CC-Date=20261119T014741Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A928063E13E67A8BEF83D70B4BA49C85247FD99D0D8855266795695B0BBCD51)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/GLP8XqxZSoKGh0cyhfNvcA/zh-cn_image_0000002821836665.png?HW-CC-KV=V1&HW-CC-Date=20261121T010943Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B27B00204F7D20BC2D74A787FBB3F51D2F53253DD03AA48EEC06FF9DC1F14D6)

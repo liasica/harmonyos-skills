@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 如何通过应用侧日志定位预加载问题
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > Cloud Foundation Kit常见问题 > 预加载 > 如何通过应用侧日志定位预加载问题
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:56+08:00
+scraped_at: 2026-11-21T09:12:22+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f1173aca60261b814ac5421e9a8a2b53ad35e41d98713db481d4146a4d8fd625
+content_hash: sha256:133e4d27ca49588196bc79f9253bb1fd1b132fe3c8a00d2205edb3247305da3c
 ---
 
 预加载的日志进程为“clouddevelopproxy”，日志过滤选择“No filters”。
@@ -14,17 +14,17 @@ content_hash: sha256:f1173aca60261b814ac5421e9a8a2b53ad35e41d98713db481d4146a4d8
 
 * 场景一：系统服务在应用安装期间预加载数据成功
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/sLa-b68wTN-82ErwVONw7A/zh-cn_image_0000002791566334.png?HW-CC-KV=V1&HW-CC-Date=20261119T014802Z&HW-CC-Expire=31536000000&HW-CC-Sign=775492C58C8AB5ECF10467530FCA1CF4BB3EDF6A80C028D79FDBB1E6C4DAFEB7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/OhSWLxY2T6W0v0YsaR4gXw/zh-cn_image_0000002821757895.png?HW-CC-KV=V1&HW-CC-Date=20261121T011222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B289A2BFF051FD4EEF75E084BAE640E2290D0F124376A3FE2867D6A02BA08AA8)
 
   预加载数据成功时日志会提示：http onSuccess code: 200，并且提示预加载的数据大小：get rsp data, len 47（单位为字节）。
 * 场景二：应用调用getPrefetchResult接口获取预加载数据成功
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/HLE0M18CSmOKV_zi2F4SSA/zh-cn_image_0000002820526287.png?HW-CC-KV=V1&HW-CC-Date=20261119T014802Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C00664F93F0FBD5E27F0C15223DFA4F15071E55A6DB65ECDB09A056C6F4035E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/6WWeHB_KQbq_wjROYH0APA/zh-cn_image_0000002793037958.png?HW-CC-KV=V1&HW-CC-Date=20261121T011222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2810C941C43444ED22BD45AD1A2C48B2DC5F5518639F35AD86D68AB2482D6817)
 
   数据获取成功时，无Error级别日志，会提示OnGetPreloadCache: end status:0。
 * 场景三：应用调用getPrefetchResult接口获取预加载数据失败
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/fq4bvP9SQXqJbgJIvKlDfw/zh-cn_image_0000002820406287.png?HW-CC-KV=V1&HW-CC-Date=20261119T014802Z&HW-CC-Expire=31536000000&HW-CC-Sign=1729AD4777DCBBD0B414413CA5FBB7B11DFCBEFA50D5F9D79483EBB32087125B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/1Gq2dAVZTzaXG6tSVXrwHA/zh-cn_image_0000002792877988.png?HW-CC-KV=V1&HW-CC-Date=20261121T011222Z&HW-CC-Expire=31536000000&HW-CC-Sign=1311E2A6259F36A25950D6F5A105DEEFA778D09654B209BD5F4CB418B12A8747)
 
   **问题现象**
 

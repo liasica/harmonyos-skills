@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/libuv
 title: libuv
 breadcrumb: API参考 > 标准库 > libuv
 category: harmonyos-references
-scraped_at: 2026-11-19T09:55:09+08:00
+scraped_at: 2026-11-21T09:17:07+08:00
 doc_updated_at: 2026-10-30
-content_hash: sha256:bc25264ccc8a84cfcae2e803b7dd9656ea079b3e0cc659152b0006791300dd3d
+content_hash: sha256:83d8715114f0b6c27483387ef42322cc650af0441d4c06c2ab925743c1f771ce
 ---
 
 ## 简介
@@ -1255,7 +1255,7 @@ handle：线程间通信句柄。
 1. uv\_async\_t从调用uv\_async\_init开始后就一直处于活跃状态，除非用uv\_close将其关闭。
 2. uv\_async\_t的执行顺序严格按照uv\_async\_init的顺序，而非通过uv\_async\_send的顺序来执行的。因此按照初始化的顺序来管理好时序问题是必要的。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/l-wSbZXvTKaMFUwJl3wY3Q/zh-cn_image_0000002791568272.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015412Z&HW-CC-Expire=31536000000&HW-CC-Sign=728830DF348DD9AC2A6745619EB51BEBD174BB89B02082A8557168553B108017)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/X0t1AbaNRpGq36FzIovYCA/zh-cn_image_0000002792879962.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011706Z&HW-CC-Expire=31536000000&HW-CC-Sign=81AF6A87D5311C530AA888A7228BF14F1A0720998D2DF4C49E1ED87D08D35927)
 
 示例代码：
 
@@ -1352,7 +1352,7 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
 下图为原生libuv的线程池工作流程，图中流程已简化，默认句柄的pending标志为1，worker线程个数不代表线程池中线程的真实数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/YLvOTBGtSt2DZMM6mDwdzw/zh-cn_image_0000002820528225.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015412Z&HW-CC-Expire=31536000000&HW-CC-Sign=B26DFB784A99316F642A7C1DA5A1BE7B24545341D4DAB4A4867DCAC01743F60E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/r1xXCA7qRGetb-DI_VIK1A/zh-cn_image_0000002821839865.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011706Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F5D7642EAF4BE6464789D6D53DC2675C504F0473F4A506543E7A059BFA02794)
 
 **2. 异步任务提交注意事项**
 
@@ -1372,7 +1372,7 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
 另外，在应用主线程中，所有的异步任务尽管最终都是通过libuv得到执行的。但是在当前系统中，libuv的线程池已经对接到了FFRT中，任何抛向libuv的异步任务都会在FFRT的线程中得到调度。应用主线程的回调函数也通过PostTask接口插入到eventhandler的队列上。这就意味着FFRT线程上的异步任务完成后不再通过uv\_async\_send的方式触发主线程的回调。过程如下图:
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ph75espDRhqAIfn0x3itmg/zh-cn_image_0000002820408227.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T015412Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE71596221B9695BF8E732AAEDBB8D97CC3C12EA71CAE23FD948E99EB485BBF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/BeFGESDcRn2ZRpAH61L2_A/zh-cn_image_0000002821759867.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011706Z&HW-CC-Expire=31536000000&HW-CC-Sign=C44614230C1F02617ABDCE42590227C010A5CE6359061831A0999AD04C83681F)
 
 我们总结了五种类型的请求任务是直接可以按照正常用法在应用主循环中生效的：
 

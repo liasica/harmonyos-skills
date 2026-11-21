@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 获取诈骗应用
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 反诈选择器 > 获取诈骗应用
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:07+08:00
+scraped_at: 2026-11-21T09:11:33+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:778afa64ea4d68d5f668a08b491b240f59907f975d526bf751304d80be496bb1
+content_hash: sha256:2e64aa6c64ffeb7a6d3e67b9834d057927c0d84705bd88e9f4054bd68498bce9
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:778afa64ea4d68d5f668a08b491b240f59907f975d526bf751304d80be4
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/wbRc8peiT8S6b-jU-v9STA/zh-cn_image_0000002820405697.png?HW-CC-KV=V1&HW-CC-Date=20261119T014716Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0299B7CA2F44FD187079F5456C94E9D3715FEEC90D34CD18A021978055571E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/_r9nWZJLSReM58rm6DESkw/zh-cn_image_0000002792877398.png?HW-CC-KV=V1&HW-CC-Date=20261121T011133Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D2151AFB28AF1D3726C3380C9DE232028E0471CFFA649E1FEC14CDF007CC25D)
 
 **流程说明：**
 

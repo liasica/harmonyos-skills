@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-introdu
 title: Share Kit简介
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > Share Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:13+08:00
+scraped_at: 2026-11-21T09:12:39+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f0bcd6cab285398919eae86e134b0612f912c05fbd810848d4731c960792b5fc
+content_hash: sha256:69f30e80a3c928917d441e9526b26b7df51b0353bd4932fa2b36c932a8dce8c7
 ---
 
 Share Kit（分享服务）为应用提供文本、图片、视频等内容跨应用、跨端分享能力。
@@ -21,15 +21,15 @@ Share Kit提供的[SampleCode示例工程](https://gitcode.com/harmonyos_samples
 
 **图1** 手机分享面板效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/YPvxyYY2QXG00x7WHVHXmw/zh-cn_image_0000002820406605.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2C37D48879A78A6D034FBBEAAC724DF3FFB0F038EACAD5FC408C47399BDEEAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/lSoYcKhHTSeLPtKkGMxEpQ/zh-cn_image_0000002821758215.png?HW-CC-KV=V1&HW-CC-Date=20261121T011112Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E62C13BAD60EDB9E5361E6919C47E51F971F6AB17E5F5989E833015F05AE47F)
 
 **图2** 手机碰一碰跨端发起华为分享效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/9WL8LM8hSv-PoWhP_7FNPg/zh-cn_image_0000002791726626.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=9985DE97D340DCD16337592725702797A3354814A432EAEB062EB37A6D9FA1B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Az-l9pnTQP-PP41g7H3ctQ/zh-cn_image_0000002793038278.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011112Z&HW-CC-Expire=31536000000&HW-CC-Sign=0581D39E692031394EC4EBAB6F1F27C13CE080886F7179550FDCD99B5CDF6A1D)
 
 **图3** 手机与PC/2in1设备碰一碰分享效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/jJmqzvUeRie_Cu0vQDxcUw/zh-cn_image_0000002791566654.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=4683D38CA9A2CB90FE5704DB49BB792E576B243090A53D1D15953CE9120A18BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/ChKyydbNSsuFbQ2G14EN3A/zh-cn_image_0000002792878308.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011112Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D8094A5E35B3CDC5FB90910D3259B653775907718696EABC9D90574E37860C1)
 
 ## 基本概念
 
@@ -62,7 +62,7 @@ Share Kit提供的[SampleCode示例工程](https://gitcode.com/harmonyos_samples
 
 **图4** 分享运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/u3boYM0mRlKBaeTCObIcuQ/zh-cn_image_0000002820526607.png?HW-CC-KV=V1&HW-CC-Date=20261119T014913Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECFC3E1B1358D5C458D132BAEDA3F737F184EEAD0FE518A9CB539664AADBF3FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/bAyCKkfZSiCXtJ-uFs-4uQ/zh-cn_image_0000002821838215.png?HW-CC-KV=V1&HW-CC-Date=20261121T011112Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F350C0C5E75953DEBD5122133003DB52BF71DC432FE576539C721F936F20EA3)
 
 | 应用类型 | 相关逻辑 |
 | --- | --- |

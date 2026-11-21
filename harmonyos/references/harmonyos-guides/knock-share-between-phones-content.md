@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-b
 title: 内容分享
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与手机碰一碰分享 > 内容分享
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:14+08:00
+scraped_at: 2026-11-21T09:12:40+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:7c27e5405501643f26eb3d203565296e0d09df511fb334687be5936b814485ef
+content_hash: sha256:50254b49d20d408b8e3421c6fd3599601c0d6c39543d1c0365d536c040f30e9c
 ---
 
 ## 注册碰一碰事件
@@ -16,10 +16,10 @@ content_hash: sha256:7c27e5405501643f26eb3d203565296e0d09df511fb334687be5936b814
 
 * 文本提示**可碰一碰分享至 HarmonyOS 5 及以上版本手机**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/y_VreRNRRgW7a-trRr1LQA/zh-cn_image_0000002820526613.png?HW-CC-KV=V1&HW-CC-Date=20261119T014819Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BAE7F5BAEA927C107A8E44D381AE926250BBF4814D5659ED0DF6B8CA2D61E4B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/y2AV-XWPQCiLttge3rCapg/zh-cn_image_0000002821838221.png?HW-CC-KV=V1&HW-CC-Date=20261121T011112Z&HW-CC-Expire=31536000000&HW-CC-Sign=310D6AB9C93A8035E78643B0522C00E10E61328F9CBD6E6EAD736C79496F45A7)
 * 动图提示**可碰一碰分享**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Mg0Pqu4oSEm8D3q8U2E-Lw/zh-cn_image_0000002820406613.png?HW-CC-KV=V1&HW-CC-Date=20261119T014819Z&HW-CC-Expire=31536000000&HW-CC-Sign=03ED403E0CCA1C2FD3402B5F447C005A3B212D4EACC8D2336B58A3EFE62DC4A1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/TLVdfRARSb-hYbwLX3lPJw/zh-cn_image_0000002821758223.png?HW-CC-KV=V1&HW-CC-Date=20261121T011112Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E07C56C08CF01B19216C148E89F68F5CBD095449E2A2AC3275BDFC2473DA692)
 
   Share Kit提供统一的动图资源文件以方便应用接入。
 
@@ -208,7 +208,7 @@ export default struct Index {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/DddYKmZpSwm-nvCXZeracg/zh-cn_image_0000002820406617.png?HW-CC-KV=V1&HW-CC-Date=20261119T014819Z&HW-CC-Expire=31536000000&HW-CC-Sign=89DB1204526182F6E4776367241A925CF39E4F9E8AAAD2BC47F42A9F4FBDE308)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/SG9bd73mSJ-MjBZsNvuYOw/zh-cn_image_0000002821758227.png?HW-CC-KV=V1&HW-CC-Date=20261121T011112Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE937E4286F11EB8ED52F45C06D5A4A113B1219367FE3F01EB2CA031BBD3AC75)
 
 示例代码：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-overvi
 title: Camera Kit简介
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > Camera Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:36+08:00
+scraped_at: 2026-11-21T09:12:01+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7264f1dbf8218ec1134b618093bc53437fd86aaaa80701331441e24b461d9066
+content_hash: sha256:c303e9533bfd9393acdcc90afbcb186eb2ddeb2516429ffadcf39289aa64fe73
 ---
 
 开发者通过调用Camera Kit（相机服务）提供的接口可以开发相机应用，应用通过访问和操作相机硬件，实现基础操作，如预览、拍照和录像；还可以通过接口组合完成更多操作，如控制闪光灯和曝光时间、对焦或调焦等。
@@ -28,7 +28,7 @@ content_hash: sha256:7264f1dbf8218ec1134b618093bc53437fd86aaaa80701331441e24b461
 
 **图1** 相机工作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/_EibraDiTh2MNJwA-1KlBg/zh-cn_image_0000002820405915.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=014DE4ABE19648187ABDAF59472EEFFFBC4ECDBFE3B1042BF78F2FE4237E1B9C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/GvM349hlQPCXuDF5cDGzzw/zh-cn_image_0000002792877616.png?HW-CC-KV=V1&HW-CC-Date=20261121T011035Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2153133E7002D87F8289C516FFE971CAD6635C86A92BC52FDF4B43AA8B73505)
 
 为便于开发者更好地开发相机应用，建议先了解相机开发工作流程，再了解相机的开发模型（如图2所示）。
 
@@ -38,7 +38,7 @@ content_hash: sha256:7264f1dbf8218ec1134b618093bc53437fd86aaaa80701331441e24b461
 
 **图2** 相机开发模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ihDRUJy8Tu-wWd5OLskHHw/zh-cn_image_0000002791725936.png?HW-CC-KV=V1&HW-CC-Date=20261119T014743Z&HW-CC-Expire=31536000000&HW-CC-Sign=19405B7D83F00C68D131396B2EBEE479519449E45634D14A1DEA8D9D35C679A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/SuFuDLJiQiCwQ2XtGC9Wjg/zh-cn_image_0000002821837523.png?HW-CC-KV=V1&HW-CC-Date=20261121T011035Z&HW-CC-Expire=31536000000&HW-CC-Sign=57A6F2A8E64CC859554584EA3981F37ED5CE9FCFD1D4454177BA76749709159B)
 
 ## 模拟器支持情况
 

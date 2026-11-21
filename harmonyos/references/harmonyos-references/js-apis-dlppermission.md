@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.dlpPermission (数据防泄露)"
 breadcrumb: API参考 > 系统 > 安全 > Data Protection Kit（数据保护服务） > ArkTS API > @ohos.dlpPermission (数据防泄露)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:52:17+08:00
+scraped_at: 2026-11-21T09:15:03+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:edf8dffea9b268475b94d3b50e9fd9089a1d1ff9c7cf863468f69291980de1a0
+content_hash: sha256:336db687b9a1e9ce77bcdad8c7fbb19cc317daee41fde58f487f4e5573eacfd9
 ---
 
 数据防泄露（Data Loss Prevention，简称为DLP）是系统级的数据防泄露解决方案，提供跨设备文件的权限管理、加密存储、授权访问等能力。DLP通过加密技术对敏感文件进行保护，生成.dlp格式的加密文件。当打开DLP文件时，系统会自动创建隔离的DLP沙箱环境，确保文件内容不会泄露到非授权环境。企业级DLP文件支持细粒度的权限控制，包括查看、编辑、复制、打印、截屏等操作权限的管理。
@@ -49,7 +49,7 @@ content_hash: sha256:edf8dffea9b268475b94d3b50e9fd9089a1d1ff9c7cf863468f69291980
 
 * **DlpConnManager**：是数据防泄露系统的核心管理类，在SA（System Ability）中注册或注销回调能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/dSwekFWWSVSaGdwRIS7I4w/zh-cn_image_0000002820408111.png?HW-CC-KV=V1&HW-CC-Date=20261119T015121Z&HW-CC-Expire=31536000000&HW-CC-Sign=91C4DFC657C5AF1E28675153CA12E2B3524F499D9C0AE809C3F802001717EE26)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/vGEcgqCnTQ2sH0qeDOtkpg/zh-cn_image_0000002821759749.png?HW-CC-KV=V1&HW-CC-Date=20261121T011415Z&HW-CC-Expire=31536000000&HW-CC-Sign=43D22D8DE206AB714B2D08435201B6995CD62522C9E90306AFA48978385A8B90)
 
 ## API组合使用关系说明
 

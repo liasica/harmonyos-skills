@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avt
 title: 使用AVTranscoder实现音视频转码(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 视频转码 > 使用AVTranscoder实现音视频转码(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:41+08:00
+scraped_at: 2026-11-21T09:12:07+08:00
 doc_updated_at: 2026-11-18
-content_hash: sha256:11c896272855dc53f5489007cd39d351a190d7894b678960e396e48879b3c85e
+content_hash: sha256:027b4d7c00de4c120742b8cf25ede12b92f55cbd8439678b14ab934c5d5724a6
 ---
 
 从API version 20开始支持使用NDK接口（C/C++）实现音视频转码。
@@ -16,7 +16,7 @@ content_hash: sha256:11c896272855dc53f5489007cd39d351a190d7894b678960e396e48879b
 
 **图1** 转码状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/yBcl-TZ8Qvms-8SxLgKnXg/zh-cn_image_0000002820525981.png?HW-CC-KV=V1&HW-CC-Date=20261119T014841Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5999DE2024A86E07B7DFA5D901D84D3C5CC7F2D9F25020261BD59D347A16E13)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/wZoW7uxyTfK_a5FFLjL08w/zh-cn_image_0000002793037652.png?HW-CC-KV=V1&HW-CC-Date=20261121T011040Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE307930104A185E3C66F47705AA7783A1283AD74ADB0594D270E4293E310EFB)
 
 状态的详细说明请参考[OH\_AVTranscoder\_State](../harmonyos-references/capi-avtranscoder-base-h.md#oh_avtranscoder_state)。
 

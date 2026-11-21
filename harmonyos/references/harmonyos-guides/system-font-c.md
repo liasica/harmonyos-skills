@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-font-c
 title: 系统字体的信息获取和使用（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 系统字体的信息获取和使用（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:46+08:00
+scraped_at: 2026-11-21T09:12:11+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:cf5f14db92b300b3eebc268f34e955f77f6b132280dc2925ace6321476f30a48
+content_hash: sha256:26b6aa9a7dea381ad26b65f4c0bb8e34d3187fa687a4badbd1e3e8cf18d4827f
 ---
 
 ## 场景介绍
@@ -95,7 +95,7 @@ content_hash: sha256:cf5f14db92b300b3eebc268f34e955f77f6b132280dc2925ace6321476f
 
    以下打印的示例为应用设备系统对应的部分系统字体配置信息情况，不同设备系统配置信息可能不同，此处仅示意。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/_8jyudTCSKaGFC9FQF9Dmw/zh-cn_image_0000002820406061.png?HW-CC-KV=V1&HW-CC-Date=20261119T014752Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DDD3ED707DA0E7306C9F55E001BE221D1B6A2EF6FF5C3DDE2610A3FC35C0400)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/6rtkRC48ROOklvASYOqYtg/zh-cn_image_0000002792877762.png?HW-CC-KV=V1&HW-CC-Date=20261121T011211Z&HW-CC-Expire=31536000000&HW-CC-Sign=55E6520BB49C83423EA319680834A12A7FD76CE1B34BCE9C19BEEA46819A2565)
 5. 如若后续不再需要系统字体的系统配置信息时，则释放其占用的内存。
 
    ```

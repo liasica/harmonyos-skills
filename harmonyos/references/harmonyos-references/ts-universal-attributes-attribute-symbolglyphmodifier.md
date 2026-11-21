@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 动态SymbolGlyphModifier属性设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 动态SymbolGlyphModifier属性设置
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:53+08:00
+scraped_at: 2026-11-21T09:14:03+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:665a6447683fd915d23ed562d484826a407b622ad0a16346632aa2abf31d20f4
+content_hash: sha256:582afad60090b9f9e89b04b64c23c35ae00ac5caff8cb5c6e1506e4a36be6ef8
 ---
 
 SymbolGlyphModifier用于动态设置SymbolGlyph组件的属性和样式，支持使用if/else语句根据条件动态调整组件样式，适用于需要根据应用状态或用户交互动态改变图标外观的场景。[SymbolGlyph](ts-basic-components-symbolglyph.md)是一个用于展示图标符号的组件。
@@ -83,4 +83,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_k6_s_GrRgWybaxC-J1lcw/zh-cn_image_0000002791567144.png?HW-CC-KV=V1&HW-CC-Date=20261119T015053Z&HW-CC-Expire=31536000000&HW-CC-Sign=2ED7C9F40EC48B66DD228EB99EC12680A903CAD86399A198B9BC820F4DCE2866)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/WZLGzghtSKCrZKDBmpo8bQ/zh-cn_image_0000002792878800.png?HW-CC-KV=V1&HW-CC-Date=20261121T011403Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE546E0A9F44723311683A79DAB4739BCE4B77BA3EB8C68A3649215CF4D1E8A4)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-white-scr
 title: 定位与解决Web白屏问题
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 定位与解决Web白屏问题
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:53+08:00
+scraped_at: 2026-11-21T09:11:19+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:c0ceb31e8968b3d94f48c0491ab6afef31a9e090e491cd3fae905ffefd51d654
+content_hash: sha256:ae6e4b4385327b585b4ed570119261608a5afdff08c527a715da1958b71f8740
 ---
 
 Web页面出现白屏的原因众多，本文列举了若干常见白屏问题的排查步骤，供开发者快速定位。
@@ -103,7 +103,7 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
 
    （3）网络里面是否有资源加载时间特别长等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/MBgDmx5kSlyRgnp7VM9cjg/zh-cn_image_0000002791725512.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=B40A4FFBC3BAF69AF1B819AD6FFB2F4E09A40B6993B756C7DB1539D56FBB02AD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/j7vK8xicTdOvyXaG6ZQHQA/zh-cn_image_0000002821837099.png?HW-CC-KV=V1&HW-CC-Date=20261121T010955Z&HW-CC-Expire=31536000000&HW-CC-Sign=776B780A56A16AB721D73C34AFE802D46C161CCA69503C891C5C09DFB9B8A33C)
 2. 检查控制台，确认是否存在因MixedContent策略或CORS策略导致的异常，或JS错误等。可参考[解决Web组件本地资源跨域问题](web-cross-origin.md)。为了提高安全性，ArkWeb内核禁止file协议和resource协议访问跨域请求。因此，在使用Web组件加载本地离线资源的时候，Web组件会拦截file协议和resource协议的跨域访问。Web组件无法访问本地跨域资源时，DevTools控制台会显示报错信息：
 
    ```txt
@@ -414,7 +414,7 @@ Web组件提供了自适应页面布局的能力，详情见 [Web组件大小自
 
 下面说明一下Web组件网络加载过程中的关键日志，正常情况下一个Web组件的加载过程应该包含这些关键节点：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/bJaJjAimSJSw-SBEQixHPw/zh-cn_image_0000002791565540.png?HW-CC-KV=V1&HW-CC-Date=20261119T014753Z&HW-CC-Expire=31536000000&HW-CC-Sign=3121A9B211E04E48A8616B05291E98842F94AAA299D6AF14ED5577DAD2C84E1A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/-eRyFiFJTVabVhAQYVconw/zh-cn_image_0000002821757101.png?HW-CC-KV=V1&HW-CC-Date=20261121T010955Z&HW-CC-Expire=31536000000&HW-CC-Sign=05D7669A18765109A0BF066F8FAFFE58A0BB156523826D47ADE9ECEC30FAD658)
 
 | 日志关键字 | 说明 |
 | --- | --- |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 颜色渐变
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 颜色渐变
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:52+08:00
+scraped_at: 2026-11-21T09:14:02+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:6e66e9041298c8af0380920903abe1c843705b37b42b954d40471dadb821e08f
+content_hash: sha256:86636f17512f0dbc755aa4f4878e6ebab948554d6440ee2ef9a6b8df84fe91e2
 ---
 
 设置组件的颜色渐变效果。
@@ -288,7 +288,7 @@ struct ColorGradientExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/DJU61CLvQMaT_Y6tDhNNzQ/zh-cn_image_0000002820527025.png?HW-CC-KV=V1&HW-CC-Date=20261119T015051Z&HW-CC-Expire=31536000000&HW-CC-Sign=27695CDA82D934CB2E5C92454681CCB953A2F5EFC75CEE8DEBB230F4C42054EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/gH4R4Gm8S--J5qN2asrqXQ/zh-cn_image_0000002821838633.png?HW-CC-KV=V1&HW-CC-Date=20261121T011250Z&HW-CC-Expire=31536000000&HW-CC-Sign=5815E2A884578F1A230E621508FA7D7967200AB6DF47E1236428FB5A5D15C917)
 
 ### 示例2（颜色按旋转角度渐变）
 
@@ -351,7 +351,7 @@ struct ColorGradientExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/69N9ydXbQ_6jPOC8Rjv9DA/zh-cn_image_0000002820407025.png?HW-CC-KV=V1&HW-CC-Date=20261119T015051Z&HW-CC-Expire=31536000000&HW-CC-Sign=B00B0A588A445E63C7C51C3CA7F70E9FCF76E55DE6C63527B16579CE66304A54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/PxOGAp3cRnmtDYKm6W-QGQ/zh-cn_image_0000002821758637.png?HW-CC-KV=V1&HW-CC-Date=20261121T011250Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E20606ECEA795011D4A4ED21EFEAD74CB443395EB7D8A0F3C2BCDE46E31F036)
 
 ### 示例3（颜色按径向渐变）
 
@@ -390,4 +390,4 @@ struct ColorGradientExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/AGU7SJYFR82A5yV1LyULBg/zh-cn_image_0000002791727046.png?HW-CC-KV=V1&HW-CC-Date=20261119T015051Z&HW-CC-Expire=31536000000&HW-CC-Sign=448825B629C212728F51A38711371C3EDA1E4590FB6132EEE4EE908165D0569F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/p8eTrV8ATCaFjt3zvnJN5w/zh-cn_image_0000002793038698.png?HW-CC-KV=V1&HW-CC-Date=20261121T011250Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAFDCE11A0776A5334E9673E54ABE0EBA4D507EAAF3B43D2ECEADB49735E812B)

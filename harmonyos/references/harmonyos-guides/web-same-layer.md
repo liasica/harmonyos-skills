@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-same-laye
 title: 同层渲染
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 同层渲染 > 同层渲染
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:54+08:00
+scraped_at: 2026-11-21T09:11:20+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:56a60f1d2aaff23cab8b08263bad263d2c1c33e0bbc35f71e403c8ac912abec2
+content_hash: sha256:589d6b1c29318b484f82543ebb6144c19d1030127ace3c05f5c57a2e8dfe2d1f
 ---
 
 在系统中，应用可以使用Web组件加载Web网页。当非系统框架的UI组件功能或性能不如系统组件时，可使用同层渲染技术，通过ArkUI组件渲染这些组件（简称为同层组件）。
@@ -35,7 +35,7 @@ ArkWeb同层渲染特性主要提供两种能力：同层标签生命周期和�
 
 **图1** 同层渲染整体架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/V1OTvQpsTouImhV3lh2J5A/zh-cn_image_0000002791725496.png?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC8237619DCAB8C51EA20E621BD9F4A4F96423E8BFD9C271ADED53079DD27F41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/fOYta_VZSqqtmSBeRRw38g/zh-cn_image_0000002821837083.png?HW-CC-KV=V1&HW-CC-Date=20261121T011119Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD70114A914C4A5DF7E076D3DED164A459E9C3CAD24D93C3B9178A08CD5F38FA)
 
 ## 规格约束
 
@@ -115,11 +115,11 @@ display，position，z-index，visibility，opacity, background-color，backgrou
 
   **图2** 未使用Stack包裹，TextInput的位置错位
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/43Vjo2J-TOGis32bXbnUqg/zh-cn_image_0000002791565524.png?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCAD079340656ED211700588D5F2C81F7E6EF2B31EBD4433BD824AB0E1BF5449)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/4kVsHXXqT2SBge2vUqFzJQ/zh-cn_image_0000002821757085.png?HW-CC-KV=V1&HW-CC-Date=20261121T011119Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E7C9421EC05908A243BC56C77BDF6671F49355D0A8B398D569A750D9F8816CD)
 
   **图3** 使用Stack包裹，TextInput的位置正常
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/8zaFuCYhS7q5yBcneVy-ZQ/zh-cn_image_0000002820525477.png?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=43A41C49211FAA72EF51038556A669A3D1B8EECADD4B9AB83198BFF9A4A6EE6C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/YczHKXgzQG2_dpIFfSPpVA/zh-cn_image_0000002793037148.png?HW-CC-KV=V1&HW-CC-Date=20261121T011119Z&HW-CC-Expire=31536000000&HW-CC-Sign=214ECC5E01565E9DA5421ABD04FFE293D3C2ED1ECEF7D2A4181D5CCC4B60DA72)
 
 ## Web页面中同层渲染输入框
 
@@ -127,7 +127,7 @@ display，position，z-index，visibility，opacity, background-color，backgrou
 
 **图4** 同层渲染输入框
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/x6p6-SOYRBykOCKRT3-EWw/zh-cn_image_0000002820405477.png?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCB63B2064E2992B5D14659D255225CB950801203EC6ADE12F5E1A6985A77EFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/IPA-i_OlSV6vphLf3QKijg/zh-cn_image_0000002792877178.png?HW-CC-KV=V1&HW-CC-Date=20261121T011119Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CCAE62A7A4B28871A038456E0C4AE6FF69039C57D7C7B81E8F9E1F15B7CB7DA)
 
 1. 在Web页面中标记需要同层渲染的HTML标签。
 
@@ -1054,7 +1054,7 @@ struct Page{
   ```
 * 实现效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/pGLp6WcdTgiDMHxuDlL8Vg/zh-cn_image_0000002791725498.png?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C92A17A5C9CAFE9873A042F60036289E89AAB9666194662359A4CB9BF1262AC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/0F6dnTgHTeeu422ahdXKuw/zh-cn_image_0000002821837085.png?HW-CC-KV=V1&HW-CC-Date=20261121T011119Z&HW-CC-Expire=31536000000&HW-CC-Sign=7335DDD85A9D5BCBA5E678A7BF4561A4E54149C1C609C889B1A639102F43345F)
 
 ## 同层标签设置为最高层级
 
@@ -1350,11 +1350,11 @@ struct Page{
 
   未设置arkwebnativestyle的display属性：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/pcXUhB6GQ6eMAptEzRLwAA/zh-cn_image_0000002791565526.png?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=269D139D54E13ED4C91CF2292E3BC8E5636DD8BB8E1F47770E3E699DB74889BF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/lWAWnB3eQkiAuX-qekZIFQ/zh-cn_image_0000002821757087.png?HW-CC-KV=V1&HW-CC-Date=20261121T011119Z&HW-CC-Expire=31536000000&HW-CC-Sign=0191D7827220B5EBCCAF575665CE6E78517B532EE30FC9F0BB2C6BB6DF8DEA51)
 
   设置arkwebnativestyle的display属性：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/47ITbWwQQaiVcwMXKUDWcA/zh-cn_image_0000002820525479.png?HW-CC-KV=V1&HW-CC-Date=20261119T014702Z&HW-CC-Expire=31536000000&HW-CC-Sign=24E7207B60971E49B40FD9714CBBD268166CE602729E932293142A0D58AC6709)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/tLXFOjEYRF6ReLuA8KUkGQ/zh-cn_image_0000002793037150.png?HW-CC-KV=V1&HW-CC-Date=20261121T011119Z&HW-CC-Expire=31536000000&HW-CC-Sign=36BEE76E823F35877AF51FD8B0DBFE460EA0E494E861E0CF6CB5D9ABB8570E12)
 
 ## 同层渲染纹理贴图对齐方式
 

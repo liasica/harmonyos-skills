@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-si
 title: 使用RSA密钥对签名验签(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > 使用RSA密钥对签名验签(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:04+08:00
-doc_updated_at: 2026-11-18
+scraped_at: 2026-11-21T09:11:30+08:00
+doc_updated_at: 2026-11-20
 content_hash: sha256:a6dd5596e534d31f3586a2520de957104ed1f5bb7d0999a05260b8178e1869aa
 ---
 

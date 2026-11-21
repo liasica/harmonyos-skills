@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ImageAnimator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > ImageAnimator
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:03+08:00
+scraped_at: 2026-11-21T09:14:10+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ae23947b265a355938703b3f6fb8829232b263482463ceb565625f4ed801b077
+content_hash: sha256:f98bb7a8c3cb0876bd726eb2976a282388820141e97a672727f1226fd3931aaa
 ---
 
 提供帧动画组件来实现逐帧播放图片的能力，可以配置需要播放的图片列表，每张图片可以配置时长。
@@ -411,7 +411,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/h-eNC6vJTTiiHzeLn6ngmQ/zh-cn_image_0000002820407405.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015008Z&HW-CC-Expire=31536000000&HW-CC-Sign=E336E1E54AF5686005E8B247B169BEA2334DC51C7C6DC361D0F24C184968D72B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/dQSjziqDSVmhbVmNii0iYw/zh-cn_image_0000002821759021.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011304Z&HW-CC-Expire=31536000000&HW-CC-Sign=2090A7D17D65D4E01D7063942D2AA848E879EBF47B8167F7011BADB214019D8B)
 
 ### 示例2（播放PixelMap动画）
 
@@ -511,7 +511,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/7-HJCQEdTPu9tuMezH6DmA/zh-cn_image_0000002791727424.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015008Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A6D03BF443C8DA7701564A7B3C89EFBA444AAE841A4588537D61C6B9E5EF972)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/Y0MS3UwtQr6592dgxqogDw/zh-cn_image_0000002793039094.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011304Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1DD6E7CA05F225CEC3B7537A208B280D7DE86AC8B8F388B4E6C4E1669A28814)
 
 ### 示例3（设置不可见自动停播）
 
@@ -614,4 +614,4 @@ struct ImageAnimatorAutoPauseTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/bd8uZ782SqmUTMvbqbcwcQ/zh-cn_image_0000002791567452.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015008Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAAE287CB9DCB7210B192734B22C2DB4BC857AD67C982C4CF4A907BEB69F5E2F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/NpsNly-FSxqAeord_FuE0A/zh-cn_image_0000002792879120.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011304Z&HW-CC-Expire=31536000000&HW-CC-Sign=488C3A0A4A900D4B75386F250B00DB4E677878BD01ED2CC65E8A226CB92702B7)

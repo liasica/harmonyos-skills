@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-11-19T09:54:41+08:00
+scraped_at: 2026-11-21T09:16:47+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:635c444619887f7fc01b7ab77705f1342172e7ee38fb227f4c1029ca09622dc2
+content_hash: sha256:7ffb24317db60027b73e7f908912382d198a3081667aa4c685022fe57b8b182f
 ---
 
 **说明** 
@@ -50,9 +50,9 @@ Failed to connect to the Map Kit server.
 1. 检查设备网络状态，选择“设置 > 移动网络 > 流量管理 > 应用联网”，点击右上角四个点，在“显示系统程序”中找到“地图服务”，开启应用联网权限。
 2. 清除旧证书配置后，重新自动签名，并配置client\_id和证书指纹；从HarmonyOS 5.0.2(14)版本开始，可参考[开发准备](../harmonyos-guides/map-config-agc.md)进行配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/u0456vM3RHKt7iIboIEZDA/zh-cn_image_0000002791568250.png?HW-CC-KV=V1&HW-CC-Date=20261119T015441Z&HW-CC-Expire=31536000000&HW-CC-Sign=827AF24FFDADB1F53678C83F32B116BA056FA6E4BBC8098694EE2F064D49DEAB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/8uU2Gmz0QzGB9i4dHTWqWg/zh-cn_image_0000002792879938.png?HW-CC-KV=V1&HW-CC-Date=20261121T011643Z&HW-CC-Expire=31536000000&HW-CC-Sign=3ABB3459FA55543B11B61A3EF9201A574691B44198029E902C9702A450411394)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/35n4UzSjSJqcSLgm0hKZTA/zh-cn_image_0000002820528203.png?HW-CC-KV=V1&HW-CC-Date=20261119T015441Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7631C7028ABFF5609C2434EFA1E6139E1ABA3605481960FE486DEA3CAD9BD47)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/7udnJnHiSDS5kmJvLT4iKg/zh-cn_image_0000002821839843.png?HW-CC-KV=V1&HW-CC-Date=20261121T011643Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD9DB3612F276107AD333AC372B6AC7BEAF4BA02BF7F2E90F96C5DF5AE2A0876)
 3. 如未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1002600003 应用身份校验失败
@@ -78,9 +78,9 @@ App authentication failed.
 
 1. 检查module.json5文件中配置的client\_id与AGC上是否一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/z6VCiK5ARMOayWzYJDkX7w/zh-cn_image_0000002820408205.png?HW-CC-KV=V1&HW-CC-Date=20261119T015441Z&HW-CC-Expire=31536000000&HW-CC-Sign=39982AE02C1961A721C6526A757FEA7E8FBFC0DB8A632A013E451941ECA3758E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/KKo-T4jYRxa3KDgK_hulBQ/zh-cn_image_0000002821759845.png?HW-CC-KV=V1&HW-CC-Date=20261121T011643Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D89C6513794D3312F5527510390804C824A9E2086CBDE6ECE50F0CD1CE0564F)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/wi9vJZU9Quaqwn8pBnGHmg/zh-cn_image_0000002791728224.png?HW-CC-KV=V1&HW-CC-Date=20261119T015441Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EF25299EF01D3079B66D0E836D40E944531EB2DDEF69DC45C0B2FAF2DFF825E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/bds0sgUCTAigDoKDJCIhCg/zh-cn_image_0000002793039916.png?HW-CC-KV=V1&HW-CC-Date=20261121T011643Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9E30D18DECBEB03298B6CED7074CF92E212F4976AE355B5068BE3DCBBE22275)
 2. 重新生成公钥指纹（[自动生成签名证书指纹](../app/agc-help-signature-info-0000001628566748.md#section958212134217)/[手动生成签名证书指纹](../app/agc-help-signature-info-0000001628566748.md#section2049119231438)），然后在AGC上[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
 3. 检查设备网络状态后重新尝试。
 4. 将设备的系统时间往后调整1天。
@@ -91,33 +91,33 @@ App authentication failed.
 
    自动签名默认已生成的csr签名在如下图路径下，马赛克部分为用户名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/tgNVII_qQH-tGgZarK4qTg/zh-cn_image_0000002791568252.png?HW-CC-KV=V1&HW-CC-Date=20261119T015441Z&HW-CC-Expire=31536000000&HW-CC-Sign=20DDBEE67D24DFD5F81A099BFC54BA56B9CC992323FBE41819FAB985CE12D018)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Zte20kmlQu2aaytgNH0DnA/zh-cn_image_0000002792879940.png?HW-CC-KV=V1&HW-CC-Date=20261121T011643Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCB27AC03A067BA1EE5E7FFA5E5BC66D75C62D34B823D22C8C31256245CC3889)
 
    在AGC上新增证书，将上述所选csr文件选中并生成新的调试证书。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/XoV9efbEQTyEQfq0kfdqkw/zh-cn_image_0000002820528205.png?HW-CC-KV=V1&HW-CC-Date=20261119T015441Z&HW-CC-Expire=31536000000&HW-CC-Sign=A64D0F47B1D6EE919C45831EB4538541394070FDDFFA1DFB3B2F4CA4D4A3520E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/uQxmQuJTRRq2nZSqsy9Njw/zh-cn_image_0000002821839845.png?HW-CC-KV=V1&HW-CC-Date=20261121T011643Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BC5E04B5839B823B0E95702C14EA10DB7C3AC99CE28FC294F7CE9D55F5FE542)
 
    然后添加公钥指纹，选中刚才自己生成调试证书即可。（需注意，配置完成后由于鉴权缓存，可能还是无法马上显示地图，须清除缓存或者将设备的系统时间往后调整1天，才能立刻显示地图。）
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/ixsjedFATJGdDI7t20ouFA/zh-cn_image_0000002820408207.png?HW-CC-KV=V1&HW-CC-Date=20261119T015441Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C221B4818A1A2E68748C210FD97E8E5360CBBB31EEF02F483824F2311E4CDB1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/yOMXWG11TGOb3ddShLiyBg/zh-cn_image_0000002821759847.png?HW-CC-KV=V1&HW-CC-Date=20261121T011643Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C28A658C7F4CF7E0928901E64911F578B2049B31F6D371F9B09AE084045A076)
 
    方案二：将本地配置自动签名证书和AGC上调试证书全部删除，重新生成新的自动签名，调试证书会自动生成，并用新的调试证书生成公钥指纹。
 
    将build-profile.json5文件下signingConfigs参数删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/UD9a6s0cRZGcWR-9zYQj8Q/zh-cn_image_0000002791728226.png?HW-CC-KV=V1&HW-CC-Date=20261119T015441Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE61FF9AE7ADB8C9B783656E8D25DE115BB194DEC52AB0AA37E6D6A6AD543095)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/lfosOp5sSvWUgBSWgpJOXw/zh-cn_image_0000002793039918.png?HW-CC-KV=V1&HW-CC-Date=20261121T011643Z&HW-CC-Expire=31536000000&HW-CC-Sign=168F8154A230678C4F14EB2C128281B06B78ACDE15DEA439F08C535CB628ADF0)
 
    将config文件夹下所有内容删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/7VpmspVBSM6kmpwdGemlkA/zh-cn_image_0000002791568254.png?HW-CC-KV=V1&HW-CC-Date=20261119T015441Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B20F2A3A24EE7B2A41E273CF8A252D53013D1DD06AA3ABE81E5C8A964948AC2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/KU4X3DYtSJaUBAKrL9IS-w/zh-cn_image_0000002792879942.png?HW-CC-KV=V1&HW-CC-Date=20261121T011643Z&HW-CC-Expire=31536000000&HW-CC-Sign=25FD5ED35D3369C4DCE70F4226166F2418126704B3034BE383EF0C5F116D19C8)
 
    将AGC上自动签名生成的调试证书删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/pypNMy-hSZGXtAmg5Ja6hQ/zh-cn_image_0000002820528207.png?HW-CC-KV=V1&HW-CC-Date=20261119T015441Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2AB68956D6878DD6AE19DC24ACF64CCCA3CD533921CC90358091B4CF7EA4468)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/X6e80GcvT7iRdlV2iI6VeA/zh-cn_image_0000002821839847.png?HW-CC-KV=V1&HW-CC-Date=20261121T011643Z&HW-CC-Expire=31536000000&HW-CC-Sign=2209806788E6E826CD8BF44D9F75CADF59C47403AA04D601818BE9B5C4246C3B)
 
    将旧证书删除后生成新的自动签名，调试证书会被同步创建，然后用新生成的调试证书生成新的指纹即可。（需注意，配置完成后由于鉴权缓存，可能还是无法马上显示地图，须清除缓存或者将设备的系统时间往后调整1天，才能立刻显示地图。）
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/-GshBUaKQYKB6-fekw8uSw/zh-cn_image_0000002820408209.png?HW-CC-KV=V1&HW-CC-Date=20261119T015441Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B8B82FBF47A74A0A36CD2474BEFB34319EE5D324CBB3B63C0EE549A6F3D6EC5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Jh4ujdPYTIOfAHAW2dPUpQ/zh-cn_image_0000002821759849.png?HW-CC-KV=V1&HW-CC-Date=20261121T011643Z&HW-CC-Expire=31536000000&HW-CC-Sign=285378984F5B9A96A67B44FCEE5AF61D7EDCD736FD0BCC8E1B1268C64C6A5316)
 7. 如未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1002600004 应用没有开通地图服务权限
@@ -140,7 +140,7 @@ The Map permission is not enabled.
 1. [开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)。
 2. 配置client\_id。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/TeVWZZR3QHSxRkH8j5viYQ/zh-cn_image_0000002791728228.png?HW-CC-KV=V1&HW-CC-Date=20261119T015441Z&HW-CC-Expire=31536000000&HW-CC-Sign=190378B03C30421CFDE0C18F571D82ABCF58E6A5346695C49609BE2A888CE7B1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/axw0z8anS5arsTqtlYYDcQ/zh-cn_image_0000002793039920.png?HW-CC-KV=V1&HW-CC-Date=20261121T011643Z&HW-CC-Expire=31536000000&HW-CC-Sign=C817E2051421E133CF7F5030754137F5A5D721037428EF50309BEE1C8C56D1C9)
 3. 如未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1002600005 网络不可用

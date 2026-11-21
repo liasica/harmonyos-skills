@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: dialog开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > dialog开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:48+08:00
+scraped_at: 2026-11-21T09:11:13+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:cac72874cdc27d8239c46c7a55d39a22936da28fab9c0da5130b402a5b9d0e08
+content_hash: sha256:39160fb2c886350091b07ae1b3aa40a5241fb5bd5d1dedd4fd12272e746e7365
 ---
 
 dialog组件用于创建自定义弹窗，通常用来展示用户当前需要或用户必须关注的信息或操作。具体用法请参考[dialog API](../harmonyos-references/js-components-container-dialog.md)。
@@ -69,7 +69,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Wjd0JpsNREynKrziKV1MLQ/zh-cn_image_0000002791725326.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=90FCFEB960BF6A89C8990054A34CA79C091C7BC9E83D8EE15577E0AF1D0F6EFF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/og5bczZaS06cnAISpajdeQ/zh-cn_image_0000002821836913.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010949Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C409E38C3F256D85715418A3342DBE54A58D6B7304D2FD16E548E17D748FC1A)
 
 ## 设置弹窗响应
 
@@ -145,7 +145,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/R_Ft4ozFRBuGE7s-YU69NA/zh-cn_image_0000002791565354.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=312FE79E7A8505975058AE38E5755315F968F967329E64DD0C4372E1C4AE67D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/B7mU_arxQqm0g9BAt81_UA/zh-cn_image_0000002821756915.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010949Z&HW-CC-Expire=31536000000&HW-CC-Sign=A416886C9EC750BE7177C43A67E50735FF69A339DCDD071AE543E24CA44CE7FB)
 
 **说明** 
 
@@ -308,4 +308,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/LpGZinrDRoSr5E0kW3WDbQ/zh-cn_image_0000002820525307.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014657Z&HW-CC-Expire=31536000000&HW-CC-Sign=0103E87D32EE5F4D6D0366745802D6AB35E6C32AC09DD1FF0ACE8B1293D45009)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/tfKBtxqrSO-SXJtipvN9mA/zh-cn_image_0000002793036978.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010949Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B029B1BE0482BE76D27C3F5296183346F229CECCF0E816AA0DAD0B25991A6E2)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-json
 title: JSON扩展库
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > JSON扩展库
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:03+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:2c32914dca2489e33654b2e9757556269e6409c089d03a36936dde9330903728
+scraped_at: 2026-11-21T09:10:57+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:94c0c6eb1f84cd889dc6b8a70e352237af1443bc26cf2a549101f0fc573f6c62
 ---
 
 ## 场景介绍
@@ -125,10 +125,16 @@ interface TestStr {
    * 修改为`{"info": {"name": "zhangsan", "age": 18}}`。
    * */
   let jsonStr = `{"info": {"name": "zhangsan", "age": 18}}`;
-  let obj1  = JSON.parse(jsonStr) as TestObj;
-  console.info(JSON.stringify(obj1));    // {"info":{"name":"zhangsan","age":18}}
-  // 获取JSON字符串中的name信息
-  console.info(obj1.info.name); // zhangsan
+  try {
+    let obj1  = JSON.parse(jsonStr) as TestObj;
+    console.info(JSON.stringify(obj1));    // {"info":{"name":"zhangsan","age":18}}
+    // 获取JSON字符串中的name信息
+    console.info(obj1.info.name); // zhangsan
+    // ...
+  } catch(err) {
+    console.error('Parsing1 error:', err);
+    // ...
+  }
 ```
 
 方式2：将JSON字符串中嵌套的引号进行双重转义，恢复JSON的正常结构。
@@ -154,11 +160,17 @@ interface TestStr {
    * 修改为`{"info": "{\\"name\\": \\"zhangsan\\", \\"age\\": 18}"}`
    * */
   let jsonStr = `{"info": "{\\"name\\": \\"zhangsan\\", \\"age\\": 18}"}`;
-  let obj2 = JSON.parse(jsonStr) as TestStr;
-  console.info(JSON.stringify(obj2));    // {"info":"{\"name\": \"zhangsan\", \"age\": 18}"}
-  // 获取JSON字符串中的name信息
-  let obj3 = JSON.parse(obj2.info) as Info;
-  console.info(obj3.name); // zhangsan
+  try {
+    let obj2 = JSON.parse(jsonStr) as TestStr;
+    console.info(JSON.stringify(obj2));    // {"info":"{\"name\": \"zhangsan\", \"age\": 18}"}
+    // 获取JSON字符串中的name信息
+    let obj3 = JSON.parse(obj2.info) as Info;
+    console.info(obj3.name); // zhangsan
+    // ...
+  } catch(err) {
+    console.error('Parsing2 error:', err);
+    // ...
+  }
 ```
 
 ### 解析包含大整数的JSON字符串场景
@@ -169,22 +181,27 @@ interface TestStr {
 import { JSON } from '@kit.ArkTS';
   // ...
   let numberText = '{"number": 10, "largeNumber": 112233445566778899}';
+  try {
+    let numberObj1 = JSON.parse(numberText) as Object;
+    console.info((numberObj1 as object)?.['largeNumber']);    // 112233445566778900
 
-  let numberObj1 = JSON.parse(numberText) as Object;
-  console.info((numberObj1 as object)?.['largeNumber']);    // 112233445566778900
+    // 使用PARSE_AS_BIGINT的BigInt模式进行解析，避免出现大整数解析错误
+    let options: JSON.ParseOptions = {
+      bigIntMode: JSON.BigIntMode.PARSE_AS_BIGINT,
+    }
 
-  // 使用PARSE_AS_BIGINT的BigInt模式进行解析，避免出现大整数解析错误
-  let options: JSON.ParseOptions = {
-    bigIntMode: JSON.BigIntMode.PARSE_AS_BIGINT,
+    let numberObj2 = JSON.parse(numberText, null, options) as Object;
+
+    console.info(typeof (numberObj2 as object)?.['number']);   // number
+    console.info((numberObj2 as object)?.['number']);    // 10
+
+    console.info(typeof (numberObj2 as object)?.['largeNumber']);    // bigint
+    console.info((numberObj2 as object)?.['largeNumber']);    // 112233445566778899
+    // ...
+  } catch(err) {
+    console.error('ParsingContainingBigInts error:', err);
+    // ...
   }
-
-  let numberObj2 = JSON.parse(numberText, null, options) as Object;
-
-  console.info(typeof (numberObj2 as object)?.['number']);   // number
-  console.info((numberObj2 as object)?.['number']);    // 10
-
-  console.info(typeof (numberObj2 as object)?.['largeNumber']);    // bigint
-  console.info((numberObj2 as object)?.['largeNumber']);    // 112233445566778899
 ```
 
 ### 序列化BigInt对象场景

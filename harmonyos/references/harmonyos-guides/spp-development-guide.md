@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/spp-developme
 title: 连接和传输数据
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 传统蓝牙 > 连接和传输数据
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:33+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b2b5da34b4c9aa96601dca27f97097869a651bfd28c64005bd3a86c616ec7658
+scraped_at: 2026-11-21T09:11:40+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:c0c46f5f114e1aebf867418ffb2fd6d7797d1b127d9d82bc64a0d49296bce8d7
 ---
 
 ## 简介
@@ -25,6 +25,10 @@ content_hash: sha256:b2b5da34b4c9aa96601dca27f97097869a651bfd28c64005bd3a86c616e
 ### 申请蓝牙权限
 
 需要申请权限ohos.permission.ACCESS\_BLUETOOTH。如何配置和申请权限，请参考[声明权限](declare-permissions.md)和[向用户申请授权](request-user-authorization.md)。
+
+### 查询是否支持蓝牙
+
+调用[isBluetoothSupported](../harmonyos-references/js-apis-bluetooth-access.md#accessisbluetoothsupported)接口查询该设备是否支持蓝牙，支持后再进行后续步骤；不支持时，请勿使用相关接口。
 
 ### 导入所需API模块
 

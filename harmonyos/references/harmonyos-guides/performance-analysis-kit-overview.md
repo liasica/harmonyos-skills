@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/performance-a
 title: Performance Analysis Kit简介
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > Performance Analysis Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:10+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:2cf66eee481a2173f9fc2e0ce83e24a1c25ff2d0d3efd07a84d6b2eed36c2b12
+scraped_at: 2026-11-21T09:11:50+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:d1729993b9655d40fd7bb6dd0407f5f212ce5bf321f1e0b84c21a82160c5d99c
 ---
 
 Performance Analysis Kit（性能分析服务）为开发者提供应用事件、日志、跟踪分析工具，可观测应用运行时状态，用于行为分析、故障分析、安全分析、统计分析，帮助开发者持续改进应用体验。
@@ -32,7 +32,7 @@ Performance Analysis Kit承载着HarmonyOS DFX子系统面向应用开发者提�
 * [业务线程超时检测](hicollie-guidelines-ndk.md)，提供开发者检测业务线程任务执行超时并上报超时事件的能力。
 * [错误管理](errormanager-guidelines.md)与[应用恢复](apprecovery-guidelines.md)，提供开发者捕获应用运行时异常能力，以及应用非预期退出后启动状态和数据的自恢复能力。
 * [应用灰度采集](hiretrieval-intro.md)，提供开发者应用灰度采集能力，可以选取少量设备打开全量日志采集获取更详细的故障日志，帮助开发者更好的定位故障。
-* 调试命令提供包含[hdc](hdc.md)、[hilog](hilog.md)、[hidumper](hidumper.md)、[hitrace](hitrace.md)、[hiperf](hiperf.md)等工具用于调试系统和应用。
+* 调试命令提供包含[hdc](hdc.md)、[hilog](hilog.md)、[hidumper](hidumper.md)、[hitrace](hitrace.md)、[hiperf](hiperf.md)、[hiprofiler](hiprofiler.md)等工具用于调试系统和应用。
 
 ## 亮点/特征
 

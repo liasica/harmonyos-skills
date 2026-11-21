@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/online-video-
 title: 在线视频播放卡顿优化
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 在线视频播放卡顿优化
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:41+08:00
+scraped_at: 2026-11-21T09:12:06+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:061f16f8d4f38b31d57294a8c8ad730d930cd323fbb36432f2bd14a43862a37f
+content_hash: sha256:19b569d9a5b25b75545f6d4f997a5ee1161aa3d57104558af7ce0bb0947a1d72
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:061f16f8d4f38b31d57294a8c8ad730d930cd323fbb36432f2bd14a4386
 
 **图 1** 缓冲区原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/8v3FwdwqTySvF9p30BA1Vw/zh-cn_image_0000002791725992.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1088F0CD5D3F1CF6DA626445F3AE4222030201287ADECC3F7B5BD8EB56A8D37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/hE9iKJ11TTikqjTAsuACCw/zh-cn_image_0000002821837579.png?HW-CC-KV=V1&HW-CC-Date=20261121T011205Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4F6C861552691D68503F6B44DEA73C20608190E16371809A3526E607EF5FAD7)
 
 如上图所示：
 
@@ -59,7 +59,7 @@ AVPlayer的缓冲区工作原理如下：
 
 **图 2** 多码率流切换示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/JL5k3gE5Toa_wi0G4EKxmA/zh-cn_image_0000002791566020.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BF69E18F32C73B4D22242772B4B03DD50E311A02DD1D1D57F5D931BA8243141)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/O9jGlPrORW6HCgaIhtGl-Q/zh-cn_image_0000002821757581.png?HW-CC-KV=V1&HW-CC-Date=20261121T011205Z&HW-CC-Expire=31536000000&HW-CC-Sign=9890D5A1E343E3C39CED34360FA939AA5CAE2BC09605D166CBBA2F43FA6375AA)
 
 如上图所示：
 
@@ -144,7 +144,7 @@ public async initAVPlayer(id: string, source: media.MediaSource, strategy: media
 
 **图 3** 视频卡顿率折线图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/rfd1YeY_QVG9VzehxS-x6Q/zh-cn_image_0000002820525973.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8EAACFA1F87BA95325010D9E4563B4091F4A9D7555E2F19790786D2848C42DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/G9C007AhRAW1lGaCa63c4g/zh-cn_image_0000002793037644.png?HW-CC-KV=V1&HW-CC-Date=20261121T011205Z&HW-CC-Expire=31536000000&HW-CC-Sign=67EC546A9394C27741D73D94926D67836CB809ECC739891FA595C9AA2947FC08)
 
 从实验数据可以看出，当媒体文件大小超过可设置的缓冲区最大值时，缓冲区越大，视频卡顿率越低，将缓冲区设置为最大值20MB，可最大程度减少视频卡顿。
 
@@ -166,7 +166,7 @@ AVPlayer当前默认支持HLS/DASH视频流的码率自适应调节，但此功�
 
 **图 4** 码率调整策略示例流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/WaEDID-kTCaRZ43aQCmm8Q/zh-cn_image_0000002820405973.png?HW-CC-KV=V1&HW-CC-Date=20261119T014840Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2ADA334D05EA9419D60C97B9F63F4B80C60D0B6599A0509EE5477EC31BDA36A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/DKjhedajRmCBEvKhw3i9dA/zh-cn_image_0000002792877674.png?HW-CC-KV=V1&HW-CC-Date=20261121T011205Z&HW-CC-Expire=31536000000&HW-CC-Sign=B76A6AD7A72D954042C1730268DF15B4CA6E762B7DDF2F5F20DE88C547B052B5)
 
 1. 注册码率信息相关回调，包括on('availableBitrates')、on('bitrateDone')、on('videoSizeChange')。
 

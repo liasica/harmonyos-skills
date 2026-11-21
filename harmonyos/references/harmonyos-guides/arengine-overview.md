@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-over
 title: AR Engine简介
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > AR Engine简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:43+08:00
+scraped_at: 2026-11-21T09:12:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9ee5007e0306a3e4015480411e861715c671ccbbc9740bd048dee29227dd1050
+content_hash: sha256:18836de5ab434d9644be4116180c46a3dcb3abe9eee3e53ebbf3d9c517d770a5
 ---
 
 AR Engine（AR引擎服务）是一个用于在HarmonyOS上构建增强现实应用的引擎，提供了运动跟踪、环境跟踪等空间计算能力。
@@ -50,7 +50,7 @@ AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体�
 
 **图1** 重力对齐世界坐标系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/eTC99QfHRqiSXLTkYymGYA/zh-cn_image_0000002820405995.png?HW-CC-KV=V1&HW-CC-Date=20261119T014843Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E993F1A56A4190C961D2572E144EBB2935761AF9D03DFB59E595AB65CA885DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/8lYd0fmvSIiEyO6bGz1qkA/zh-cn_image_0000002792877696.png?HW-CC-KV=V1&HW-CC-Date=20261121T011042Z&HW-CC-Expire=31536000000&HW-CC-Sign=27F1B7209BF6FA5F407E5BDB010D869A1D6FD3A002A6338823F216C1376753CC)
 
 ### AR Engine重力对齐北向坐标系
 
@@ -62,7 +62,7 @@ AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体�
 
 **图2** 重力对齐北向坐标系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/qnxFSMCaSsWCTbUKqZqc9A/zh-cn_image_0000002791726016.png?HW-CC-KV=V1&HW-CC-Date=20261119T014843Z&HW-CC-Expire=31536000000&HW-CC-Sign=193F9853DAE9F83E65B73B10EE0F79AFEA9D14DE28D62E575D801992C7E70CA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/HF-l06c-Tcm5JYdxMVSk5w/zh-cn_image_0000002821837603.png?HW-CC-KV=V1&HW-CC-Date=20261121T011042Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1AB9FE0A3DBD26783022978EBBADAA1AEE9AEAA4AE47DBB4BA4AB42340A23D9)
 
 ### AGP世界坐标系
 
@@ -73,7 +73,7 @@ AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体�
 
 **图3** AGP世界坐标系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/wQEKuH90QQeOXoXO7akJzw/zh-cn_image_0000002791566044.png?HW-CC-KV=V1&HW-CC-Date=20261119T014843Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F24C5396973382A334B4E0197D6FD86249B083442D72AF8B5D5AF94DB2ECEB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/88CWJmqvTiqfM0nM0Wc4Jw/zh-cn_image_0000002821757605.png?HW-CC-KV=V1&HW-CC-Date=20261121T011042Z&HW-CC-Expire=31536000000&HW-CC-Sign=76F3BCD015EF63BFF9E926C6F7BA74BEF0BAEF7FA923460EB0B2B7AD9BD3FF33)
 
 ## 约束与限制
 

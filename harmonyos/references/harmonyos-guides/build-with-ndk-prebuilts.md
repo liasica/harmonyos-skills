@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/build-with-nd
 title: 在NDK工程中使用预构建库
 breadcrumb: 指南 > NDK开发 > 构建NDK工程 > 在NDK工程中使用预构建库
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:22+08:00
+scraped_at: 2026-11-21T09:12:49+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:5d9cf9ae9cc784198b879aa585b31d3e2822a76e576532dbded264da5084713f
+content_hash: sha256:c5bb248484d48e8f09ecf199dbc4ce86945e59b6599e7e49db2a98f63c358cfb
 ---
 
 在NDK工程中，可以通过CMake语法规则引入并使用预构建库。在引用预构建库时，模块libs目录中的预构建库，以及在CMakeLists.txt编译脚本中声明的预构建库都会被打包。
@@ -19,7 +19,7 @@ content_hash: sha256:5d9cf9ae9cc784198b879aa585b31d3e2822a76e576532dbded264da508
 
 可以通过直接将预构建的库文件复制到项目文件中，来使用预构建库。例如在项目中需要使用预构建库libavcodec\_ffmpeg.so，其开发态存放路径如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Isi2vhGmT4awP2qidakxBw/zh-cn_image_0000002791726822.png?HW-CC-KV=V1&HW-CC-Date=20261119T014922Z&HW-CC-Expire=31536000000&HW-CC-Sign=6946C7D177E7592E173F10A0FD7262FEC4D99D525E72B80589D3322456153551)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/DT68HdQ0RfWu8hulxprjsA/zh-cn_image_0000002793038474.png?HW-CC-KV=V1&HW-CC-Date=20261121T011249Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3B86D39F9A2EA527DD13B37ABD12126B5732C6DD2B8BB04DA97A9D8CE882F10)
 
 在模块的CMakeLists.txt编译脚本中通过add\_library添加所需的预构建库，并声明预构建库路径等信息后，可以在target\_link\_libraries中声明链接该预构建库，脚本示例如下所示：
 
@@ -45,7 +45,7 @@ include_directories(
 
 当在HAR中使用预构建库时，当前编译的库和链接所需预构建库会打包到HAR中的libs目录下，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/2jn1y5IBQA24bhZoKkMlOw/zh-cn_image_0000002791566850.png?HW-CC-KV=V1&HW-CC-Date=20261119T014922Z&HW-CC-Expire=31536000000&HW-CC-Sign=84B3080250966978F5E249E902771A7CB626873D690C15256728AB60769BC423)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/C4_XYJR9TfaZ0Igj2FeHrQ/zh-cn_image_0000002792878504.png?HW-CC-KV=V1&HW-CC-Date=20261121T011249Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C381D5A94D1FECEEF5FC8EE8782197EC1394D5A88511FDE167E146D988EC7C4)
 
 ### 预构建库的SONAME问题
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/br-developmen
 title: 蓝牙设置
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 蓝牙设置
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:13+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:89c647cfb00f2235a3eda99debf810d6d2a515716d51a72f50736a4df131207f
+scraped_at: 2026-11-21T09:11:39+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:6de1aac6d0ea830d8005e50d691f2b0fa20a753c7a2072a6f47f142b7dcaf8c0
 ---
 
 ## 简介
@@ -17,6 +17,10 @@ content_hash: sha256:89c647cfb00f2235a3eda99debf810d6d2a515716d51a72f50736a4df13
 ### 申请蓝牙权限
 
 需要申请权限ohos.permission.ACCESS\_BLUETOOTH。如何配置和申请权限，具体操作请参考[声明权限](declare-permissions.md)和[向用户申请授权](request-user-authorization.md)。
+
+### 查询是否支持蓝牙
+
+调用[isBluetoothSupported](../harmonyos-references/js-apis-bluetooth-access.md#accessisbluetoothsupported)接口查询该设备是否支持蓝牙，支持后再进行后续步骤；不支持时，请勿使用相关接口。
 
 ### 导入所需API模块
 
@@ -80,7 +84,7 @@ try {
 
 系统弹出对话框并提示应用“想要开启蓝牙”，如下图1。若用户同意授权，将开启蓝牙。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/EyFeayqVQtmtlR8WHscA9A/zh-cn_image_0000002820405719.png?HW-CC-KV=V1&HW-CC-Date=20261119T014812Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F8AEB17F7F17EAD897A95AA14A9CF7B676BE031E9255D3EB25A93B782CA6C51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Xb3ItusTS62M4nBla4WnRA/zh-cn_image_0000002792877420.png?HW-CC-KV=V1&HW-CC-Date=20261121T011139Z&HW-CC-Expire=31536000000&HW-CC-Sign=43596B5C10537C9AF68C62DB151882835A6DCCF5F9303B8AAA76E3E45B4D78E6)
 
 **图1** 开启蓝牙对话框
 
@@ -103,7 +107,7 @@ try {
 
 系统弹出对话框并提示应用“想要关闭蓝牙”，如下图2。若用户同意授权，将关闭蓝牙。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/HspfxFBkSUe6UB0GgFvI7g/zh-cn_image_0000002791725740.png?HW-CC-KV=V1&HW-CC-Date=20261119T014812Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE9A3228D9D44E2E5DBEB0F58FF91DF1117AB92176C30B7E7FF218CB48C4ADB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/Zg5ox461T8OKpwYkrUzfnw/zh-cn_image_0000002821837327.png?HW-CC-KV=V1&HW-CC-Date=20261121T011139Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE3D84B6002E657CDA36F7075E7EA5DB8FA42BE73CF41C6519523542BC67940C)
 
 **图2** 关闭蓝牙对话框
 

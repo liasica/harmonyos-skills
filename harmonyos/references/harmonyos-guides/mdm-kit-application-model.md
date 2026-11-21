@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-appli
 title: 应用模型
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 应用模型
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:21+08:00
+scraped_at: 2026-11-21T09:11:47+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:aa7a46ee5c06ee9b16b132fd52a568a8ea68cb2a30137d3163e718f0a947d9ef
+content_hash: sha256:48b702b5dd5582a25108a439f03f499bfde6114e62767c74fd653f06af92ff92
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ MDM应用进程模型继承于普通应用[进程模型](process-model-overview.
 
 **图1** MDM应用进程模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/bAI1DT8DQ06nrFcsW4FrNg/zh-cn_image_0000002791725800.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=567D98A74E937F17D70C045FDFE118772D3AA5651E51274A527CD4DD85B3673F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/zY1ninPMR6OL8tnaRlokvQ/zh-cn_image_0000002821837387.png?HW-CC-KV=V1&HW-CC-Date=20261121T011147Z&HW-CC-Expire=31536000000&HW-CC-Sign=59D90C9B687ECEC9C994FCEBE68DF98AE6B2503CB7A1C7DC4236C348EEF19838)
 
 ### EnterpriseAdmin进程的生命周期
 
@@ -30,19 +30,19 @@ Admin组件被激活后有独立的进程，支持系统状态变更回调。与
 
 **图2** MDM应用处于前台并且已经激活时
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/oLWXhuYNR06TAqDjootw9w/zh-cn_image_0000002791565828.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=7725962BD5363BEF7974504A209048D6C56D3CAF19ED039409516F3C8E37E0E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/lI4kV4CMQxu5sgaxeffY4A/zh-cn_image_0000002821757389.png?HW-CC-KV=V1&HW-CC-Date=20261121T011147Z&HW-CC-Expire=31536000000&HW-CC-Sign=E691CDA844452962DFCFD7D5D0ADA1194C07F7598349F7B45B941BA6B66B928D)
 
 **图3** 存在MDM应用的前台进程和EnterpriseAdmin进程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/YHVXAyAGQXSJ0sVfn5qaGA/zh-cn_image_0000002820525781.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=439D5E29FF60E8AF12E20DE27E0D11EE0C012B2F8BA6D9CD6DF7E55AAC53F69C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/RWwkirF1QwiHcu-inEU49Q/zh-cn_image_0000002793037452.png?HW-CC-KV=V1&HW-CC-Date=20261121T011147Z&HW-CC-Expire=31536000000&HW-CC-Sign=92091955097E876B96D3F8B9B10DF274764ABCBC42E3210D7DE5371446915F58)
 
 **图4** 应用主进程停止时，EnterpriseAdmin进程仍然运行
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/mBMgR3YwR-uCZIhdRAROCg/zh-cn_image_0000002820405781.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=603F41110830464574EBD3784C5D2FEF1C6B65B9155F878BCD8103C72EA721B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/jMJ7p_ZZTiKubSOgffoPUQ/zh-cn_image_0000002792877482.png?HW-CC-KV=V1&HW-CC-Date=20261121T011147Z&HW-CC-Expire=31536000000&HW-CC-Sign=03F8402826887BEBE93F261538802A8FFA1339B9FF0AEEF4D984D3F38F3C25F2)
 
 **图5** EnterpriseAdmin进程支持系统事件回调
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/8KHTs_SWQvez6ZNiqLbbYA/zh-cn_image_0000002791725802.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4E8BF0105D5847009C0EA66FC957E5B35167795C47B3A03257493EAAD493569)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/rhgxUv2ATPq9UDv0cGRuHA/zh-cn_image_0000002821837389.png?HW-CC-KV=V1&HW-CC-Date=20261121T011147Z&HW-CC-Expire=31536000000&HW-CC-Sign=383CDC62B2FB60E222CA2EF26655FE5387DCBCD86E3D20D9024E4FA4CF1CD9EA)
 
 * onAdminEnabled：当MDM应用的Admin组件被激活时的事件回调。
 * onAdminDisabled：当MDM应用的Admin组件被取消激活时的事件回调。
@@ -77,4 +77,4 @@ MDM管控接口使用[ACL授权](app-permission-mgmt-overview.md#权限机制中
 
 **图6** EDM服务校验逻辑
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/qxsEgU3OQ3GbKzfwvMliFA/zh-cn_image_0000002791565830.png?HW-CC-KV=V1&HW-CC-Date=20261119T014821Z&HW-CC-Expire=31536000000&HW-CC-Sign=09C5B437E2A58F469903E47D4FDB33E633DB3C31E29616BFF2933AA4BB23D1EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/UKo2iGyxTvWb_-eKlJdcjQ/zh-cn_image_0000002821757391.png?HW-CC-KV=V1&HW-CC-Date=20261121T011147Z&HW-CC-Expire=31536000000&HW-CC-Sign=107854FCC4B487477ED99C86B28C04C90C021AA7E61AB856F67156DF2F0DCE4A)

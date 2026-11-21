@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 设置游戏负载自适应（ArkTS）
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选） > 开发指导（ArkTS） > 设置游戏负载自适应（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:57+08:00
+scraped_at: 2026-11-21T09:12:24+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:770742c1798845a79791a4e58f7de1ce0ef9618810585cc38d475ecc2d96c500
+content_hash: sha256:8c027a007e99ca1758776846f590d4c28540fbac4c5acce790381a782b0ecc3a
 ---
 
 从5.0.0(12)版本开始，游戏场景感知服务支持负载自适应能力。
@@ -15,7 +15,7 @@ content_hash: sha256:770742c1798845a79791a4e58f7de1ce0ef9618810585cc38d475ecc2d9
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/e1oL4Qy4R9m1S5LgVQVCow/zh-cn_image_0000002791566356.png?HW-CC-KV=V1&HW-CC-Date=20261119T014803Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9EF8E9AA009392B7F133FF632E0EA6FE6D7263A7E5C242715C462F7FD2D6B14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/2gHQAry_Q_WK45NbAqPJeA/zh-cn_image_0000002821757917.png?HW-CC-KV=V1&HW-CC-Date=20261121T011223Z&HW-CC-Expire=31536000000&HW-CC-Sign=59E76BCCB733CE2A22CA9FD3225CFFC393E4DB54EF3A3BCFA1EA9A67074FA7DA)
 
 1. 游戏启动后调用[gamePerformance.init()](../harmonyos-references/gameservice-gameperformance.md#gameperformanceinit)接口对游戏场景感知进行初始化。
 2. 初始化成功后，游戏调用[gamePerformance.on()](../harmonyos-references/gameservice-gameperformance.md#gameperformanceondevicestatechanged)接口注册设备状态变化事件监听，订阅设备状态变化通知。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: ContextMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 菜单 > ContextMenu
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:09+08:00
+scraped_at: 2026-11-21T09:14:14+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ca137563af25b5b383dd6763329ec8a25484e7ac028463ac85bad2e5027a1231
+content_hash: sha256:97a7a797c3e60ade35e1500f395cf7fcdbcc68835216b186ec06920a06ede9cf
 ---
 
 在页面范围内关闭通过[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu12)属性绑定的菜单。
@@ -77,4 +77,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ZYXN62lZQMGtm1gJ83dTzQ/zh-cn_image_0000002791567610.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E314045C7DAB2700D508AFBC486F9C588B629722E5992EE9FACD96DFA7F6BBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/HnUzJfjxR9ue_ugcLw8mPA/zh-cn_image_0000002792879284.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011413Z&HW-CC-Expire=31536000000&HW-CC-Sign=3438600F62582C2E1E8ACD13B6C86F7312A1E000BE09C93B4422F107217BE6A3)

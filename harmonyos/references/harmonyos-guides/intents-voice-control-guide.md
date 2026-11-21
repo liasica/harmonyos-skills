@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-voice
 title: 可视可说接入方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 可视可说接入方案
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:21+08:00
+scraped_at: 2026-11-21T09:12:48+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e5bee9f1bc416439cd7c2dd1b0b3c7935b8e792e0e79713e488a574ffad8c95d
+content_hash: sha256:80d3c64d755e218cba771cec0e5933474d08fba03ba4fd8a09ab682441d45379
 ---
 
 ## 概述
@@ -39,7 +39,7 @@ HarmonyOS可视可说能力分为系统级和接入式两种方案，开发者�
 
 可视可说适配的整体交互流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Dwdn0MOkQmW-AwZuf6Zm8g/zh-cn_image_0000002791566820.png?HW-CC-KV=V1&HW-CC-Date=20261119T014826Z&HW-CC-Expire=31536000000&HW-CC-Sign=1959F671C63F18B0F28E7126580D41B9EB5CD0AD040D6E325A8E5718C580A47D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/jBmyqBKbTNqQ5G-DQb6QEA/zh-cn_image_0000002792878474.png?HW-CC-KV=V1&HW-CC-Date=20261121T011119Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F7DBB8A70B724944D72144472A4A7E807B62E8FCB625A51E044AE0199D193A1)
 
 1. **初始化**：用户唤醒语音助手后，语音助手通过Intents Kit向应用建立连接。
 2. **查询支持状态**：语音助手通过Intents Kit向应用查询当前页面是否支持可视可说。

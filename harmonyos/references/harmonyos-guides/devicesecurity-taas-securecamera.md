@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 安全摄像头场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 安全摄像头场景
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:07+08:00
+scraped_at: 2026-11-21T09:11:32+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:7a431562f5ee4629220197a71d201ddd6418202f62254f3e246cb9f8271291a9
+content_hash: sha256:927130a3bb8325a68c398800708ba73b858e770eb14a18c23e18123b3b79b2ca
 ---
 
 ## 场景介绍
@@ -43,7 +43,7 @@ private getSecureCameraDevice(cameraManager: camera.CameraManager): camera.Camer
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/DRem-cU1R92ZO5Vv-GYNrQ/zh-cn_image_0000002820525679.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014806Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EBB4933657B90A9C22B4FEB2EF7AEE75B8DB66C6F8E8C42BA0CE0EE907B4887)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/_s5ApLBDRDKnb6PofkS43A/zh-cn_image_0000002793037350.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T011132Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6B916A6697758084CD1F3E7DB8285F411DC61898C1E65E9F62C7610FB7A03C1)
 
 ## 接口说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scan-5
 title: 如何解决自定义扫码只能扫描一次-无法持续扫码的问题
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan） > 如何解决自定义扫码只能扫描一次-无法持续扫码的问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:c9602778988565d5fc2cab4a8177ddab30ed20aebe4fc6294c0482c05e342da8
+scraped_at: 2026-11-21T09:19:03+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:18816d8f8810dbda8ff42667e6a64d778bf295a476b6759e9c8e688d87799b7d
 ---
 
 ## 问题现象
@@ -26,11 +26,11 @@ content_hash: sha256:c9602778988565d5fc2cab4a8177ddab30ed20aebe4fc6294c0482c05e3
 
 ## 背景知识
 
-* [customScan.start](../harmonyos-references/scan-customscan-api.md#start)：启动扫码相机流，使用Callback异步回调获取扫码结果、相机预览流（YUV-图像格式NV21基于4:2:0采样）。
-* [customScan.rescan](../harmonyos-references/scan-customscan-api.md#rescan)：触发一次重新扫码。如果扫描结果不是预期结果，可以调用此接口触发下一次扫描。本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出内部错误的异常。仅对start接口的Callback异步回调有效，Promise异步回调接口无效。
+* [customScan.start](../doccenter-references/api/scan-customscan-api.md#customscanstart-1)：启动扫码相机流，使用Callback异步回调获取扫码结果、相机预览流（YUV-图像格式NV21基于4:2:0采样）。
+* [customScan.rescan](../doccenter-references/api/scan-customscan-api.md#customscanrescan)：触发一次重新扫码。如果扫描结果不是预期结果，可以调用此接口触发下一次扫描。本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出内部错误的异常。仅对start接口的Callback异步回调有效，Promise异步回调接口无效。
 * 自定义持续扫码时序图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/2h-Ep0uNQvGRtB_r_6EwJw/zh-cn_image_0000002658911829.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=F793F29D7C6C0DFFD3CE21D281D124EC826FF11FBC7183D03AD4D4388BB0C007 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/y4OOxGBjRem9dj1DE8nctQ/zh-cn_image_0000002658911829.png?HW-CC-KV=V1&HW-CC-Date=20261121T011903Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED4630805C0C233ABF5144D64EE311689B70D32941073C420829EFD83DC2F71C "点击放大")
 
 详情请参考：[自定义界面扫码](../harmonyos-guides/scan-customscan.md)。
 

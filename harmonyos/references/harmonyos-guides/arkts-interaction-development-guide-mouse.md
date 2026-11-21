@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持鼠标输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持鼠标输入事件
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:43+08:00
+scraped_at: 2026-11-21T09:11:09+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:63944f5b1a67ab24b280d0d335fe2d39e0af0210401427d73af337991f0532f0
+content_hash: sha256:c6b3730de30970cb7bb4eea804163cb6d2eb99a58a116264526502c9c0557046
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/bZyRhQjXQHmo_U8rhxu8zA/zh-cn_image_0000002791725144.png?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=7312F966DB3D1DA293480B3E6A585075A942D429181C64B689FC7E6041FC5C8E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/4psedW97Sui5jrekLf9iFA/zh-cn_image_0000002821836727.png?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=32BB94D465A305F79D904500AEBBC65DCBB1A85922D049EE689ED17C1FF3F8FF)
 
 鼠标设备是PC/2in1、Tablet类型设备必不可少的输入设备，其特点是可以通过按键达成点击或滑动操作，也可以通过滚轮触发滑动，另外还有一些按键，这些分别通过[MouseEvent](../harmonyos-references/ts-universal-mouse-key.md#mouseevent对象说明)及[AxisEvent](../harmonyos-references/ts-universal-events-axis.md#axisevent)上报给应用。
 
@@ -99,7 +99,7 @@ struct MouseMove {
 
    右键点击时：button = 2（MouseButton.Right的枚举值），按下时：action = 1（MouseAction.Press的枚举值），抬起时：action = 2（MouseAction.Release的枚举值）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Gc4ihqFgTB-xh4-70pBD1w/zh-cn_image_0000002791565172.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CE918B7531E383B3A542F6F70BE2E4579E1BA469F3A6F68C8448A00118E1655)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/jsRHv9gsQlKP1jyrD-spog/zh-cn_image_0000002821756729.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3FEE33B33577F51E06995C0DDE278B257F8AC0BA653BCE61551B47886E8FB3E)
 
 如果需要阻止鼠标事件冒泡，可以通过调用stopPropagation方法进行设置。
 
@@ -155,7 +155,7 @@ struct StopPropagation {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/SOyEI2rTTla3A_bwOG12fA/zh-cn_image_0000002820525125.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA3CE7461D70D4E2EBBBB045C61CD4CBB4B78968CDC757B5D2D06A8846A148BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/OwQ3g_WJTOKDGQmH0Jsxlw/zh-cn_image_0000002793036792.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=1ACC76DAF76F4010CF89C892289837040BD5C031A76CD36033EB5B465B54452F)
 
 在子组件（Button）的onMouse中，通过回调参数event调用stopPropagation回调方法（如上）即可阻止Button子组件的鼠标事件冒泡到父组件Column上。
 
@@ -203,7 +203,7 @@ struct OnHover {
 
 当鼠标从Button内移动到Button外的瞬间，回调响应，isHover值等于false，又将组件变成了初始的样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/070I2G2ASFqd-MRdOiKR9w/zh-cn_image_0000002820405125.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FE399AD226C3C08E4FD10CAE11BEAC4A4FBB3F365E33136B9B21377AF9F5C76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/K7Wyg84mQY-EFha9fjbusg/zh-cn_image_0000002792876824.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0ECD6C9F5FB276356B85A69FD3CA37EFC4598AC8EBC7E08AB0B51E888C61111)
 
 ## 处理鼠标按键
 
@@ -343,7 +343,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/jLaQD93FSRSIzZMUo5mpFg/zh-cn_image_0000002791725146.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=D96F3FF2C4F12797D9EEDAF482AEB26A24DAF526AAF37E57E91456D895E2B33E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/UkFPsY2VSJq8jS8B5aSFlw/zh-cn_image_0000002821836729.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC8F74162FF247CCAAE77068E28C54C2D62FB1B6A1505F384DD45D90D7320417)
 
 ## 处理滚轮
 
@@ -487,7 +487,7 @@ struct MouseWheel {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/XaxO7_vIQxioV68qxlU4Yg/zh-cn_image_0000002791565174.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC36CDBB4A0D249F99CAAE9855C60D7F54652C7A95E6E073E800941B025AC1D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/RkO13l2fTEe8_WH97Ct-lA/zh-cn_image_0000002821756731.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9925679E639522684F38932A071D70E06B1F6FB26F46635376893F56B17BE30)
 
 ## 鼠标事件转换
 
@@ -497,7 +497,7 @@ struct MouseWheel {
 
 在应用的entry/src/main/resources/base/profile目录下创建配置文件easy\_go.json（示例文件名，可自行命名）。在[module.json5](module-configuration-file.md)配置文件中添加easyGo字段，并指向引用的easy\_go.json配置文件。easy\_go.json是一个标准的Object类型JSON文件，整体结构分为两层。第一层配置[鼠标事件转换生效的设备类型](arkts-interaction-development-guide-mouse.md#配置鼠标左键或轴事件转触摸)；第二层可在对应设备类型下配置[鼠标左键或轴事件转触摸](arkts-interaction-development-guide-mouse.md#配置鼠标左键或轴事件转触摸)、[鼠标右键转长按](arkts-interaction-development-guide-mouse.md#配置鼠标右键转长按)的相关参数。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/0A-c8P4yThONLVH0AyTARw/zh-cn_image_0000002820525127.png?HW-CC-KV=V1&HW-CC-Date=20261119T014652Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E31EA488CE4A3D5FEDE37267B9104A401209E19F2A717CB92E8D68B62B59ECC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/AjjhM9KOSi2JA0S3XvIcaA/zh-cn_image_0000002793036794.png?HW-CC-KV=V1&HW-CC-Date=20261121T011108Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EB9DDED6C2CE13B316055E44035B6C51EE1FB29CB6136183E653ECCA357AB30)
 
 ### 配置生效设备类型
 

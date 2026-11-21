@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-ticket
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 活动/景点门票 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:15+08:00
+scraped_at: 2026-11-21T09:12:41+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:fd64c5b406decc98a3415802278715f5381d62ba3d0fa409df119299a88466fb
+content_hash: sha256:fc5605394cb85421c7d6b3db96899e470ccde1c5cc0cef5f51f37b2237a28d6f
 ---
 
 活动/景点门票即为特定活动（如比赛，演唱会等）或景点所制作的电子入场凭证，用户通过活动/景点门票可以在手机上进行快速验票，以提升验票体验、活动运营效率及服务满意度。
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/BDwBNVJCTWa2ncE4AAsbaA/zh-cn_image_0000002791726668.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=82E97F579CBAFAF3FEDEFD57ABC654953A0AE99C571DDB4A5C4856C06A2EB3DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/6RDf3ITETZ6rizPF9WWZKw/zh-cn_image_0000002793038320.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F6352AAE01C628DD786D6BBE5CE8401C984E4016AFC2B69C456D74D17D86ED4)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -27,11 +27,11 @@ content_hash: sha256:fd64c5b406decc98a3415802278715f5381d62ba3d0fa409df119299a88
 
 ### 活动/景点门票开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/gGP0wIzzTiS463N01sxSUw/zh-cn_image_0000002791726688.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E6E447D2DC4D41ED86462E3C7CE07CA821A627C5F71D41A648C4B9A7D915643)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/8Y4wK76-QLeVguK86HiXOw/zh-cn_image_0000002793038340.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=9155722A12F84640103A512AEA1F13B8AD381094EA936441B9545341FF2B3111)
 
 ### 活动/景点门票展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/kUYx9fDDQkqIZQjer6SvuQ/zh-cn_image_0000002791566716.png?HW-CC-KV=V1&HW-CC-Date=20261119T014820Z&HW-CC-Expire=31536000000&HW-CC-Sign=76CE18D2300FA1E2E1DDE6D8D0730FC46FCEDEE8D14996A644817F16DFA541DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/SA60HFW5RVmOt1Wd35dFVw/zh-cn_image_0000002792878370.png?HW-CC-KV=V1&HW-CC-Date=20261121T011114Z&HW-CC-Expire=31536000000&HW-CC-Sign=F03E3B34A5BEAE8ADCCAC0905900551AE92E56C31B393E1262B96B24087F6FB5)
 
 ## 接入流程
 

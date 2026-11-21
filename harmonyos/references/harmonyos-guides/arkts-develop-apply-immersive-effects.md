@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-develop
 title: 开发应用沉浸式效果
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 开发应用沉浸式效果
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:40+08:00
+scraped_at: 2026-11-21T09:11:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ff1033a4fcdfdc8299ab60a4a6d90db14874a85f6b1dd4679989ffa74e6aee21
+content_hash: sha256:7a0ee3a63121827d0dcd4a0641c2a6f71e977c0ee894cad0f89b603f7b9cf9e4
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:ff1033a4fcdfdc8299ab60a4a6d90db14874a85f6b1dd4679989ffa74e6
 
 **图1** 界面元素示意图（此处以导航区域表现为导航条为例给出示意）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/-QyKyeRfRLWlgcT5Xig2HQ/zh-cn_image_0000002820404861.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3C3CDBE9DF2EEB0BEAE0396484B5E99F3F9183014F252107D529565DB26E3DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/MokBCLt7Td2QwsPKAS1b5g/zh-cn_image_0000002792876562.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=9ECAF9293CBCB205ECAD07B9D8E116C19CD9A278961C87849DE4FDD0F42DF95B)
 
 开发应用沉浸式效果主要要考虑如下几个设计要素：
 
@@ -157,17 +157,17 @@ content_hash: sha256:ff1033a4fcdfdc8299ab60a4a6d90db14874a85f6b1dd4679989ffa74e6
 
    **图2** 布局避让状态栏和导航区域（此处以导航区域表现为导航条为例给出示意）
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/oGJGxXDLSKSAzuNlcACfZw/zh-cn_image_0000002791724884.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7D537C0256C4B7E896503280A7CC5295B1325606BE2C9A1116BDD3358564D2C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Fmz6DkQLRpe6_dYxZg_1QA/zh-cn_image_0000002821836467.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEE92892E44A3516A97FE9ED62FA6DDBD8CA95D27A3A00944E87E12C20EC530C)
 
    **图3** 布局未避让状态栏和导航区域，UI元素重叠（此处以导航区域表现为导航条为例给出示意）
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/10A5jKwfTbq4H2yb8r-pPg/zh-cn_image_0000002791564912.jpg?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6B3F8D28EC8680A054CA0A1D108B3E677C0A50889D52F81256963BFD28C7802)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/VZSCiTidQE6n4AhsXfhhrg/zh-cn_image_0000002821756469.jpg?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=519012824C0B5C916C274B332A16B4B37A78EF876209C90FDD7A4F557A61E04D)
 
 ### 应用扩展布局，隐藏避让区
 
 此场景下状态栏和导航区域需要隐藏，适用于游戏、电影等应用场景。用户可以通过从底部上滑唤出导航条或三键导航。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/s7z5Vw4eRxaNFlG3bzOeCA/zh-cn_image_0000002820524865.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F2FC74BEC096757B4A9D68ABE4E8B2604611CB6C1C3F81787632B40066E494C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/71fEiVWPTaiY54bn00eU5Q/zh-cn_image_0000002793036532.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=2ACF1245AF83B3CC5C29CD9FCF78AF2A350AA457DE4A39324FC6E3A5323E228D)
 
 1. 调用setWindowLayoutFullScreen()接口设置窗口全屏。
 
@@ -268,7 +268,7 @@ content_hash: sha256:ff1033a4fcdfdc8299ab60a4a6d90db14874a85f6b1dd4679989ffa74e6
 
 **图4** 界面元素自动避让状态栏和导航区域示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/nxUvcHt8SAyMOvqS6ge_gw/zh-cn_image_0000002820404863.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBB2F29864AA44C743AD603D269B11D84BAD19DDE28574887D7402C007DA9DCF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/i9RuKD10TmyFwkXc-9i6Lw/zh-cn_image_0000002792876564.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=01AAE9CA804FDD786169730F0D82A9B386A7696DB9D6A55D2B4F908FBAFAF519)
 
 针对状态栏和导航区域颜色与界面元素颜色不匹配问题，可以通过如下两种方式实现沉浸式效果：
 
@@ -335,7 +335,7 @@ content_hash: sha256:ff1033a4fcdfdc8299ab60a4a6d90db14874a85f6b1dd4679989ffa74e6
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/8IytoqpgQdKE2o6w_luENg/zh-cn_image_0000002791724886.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=85E5D9891AC18453CA4415BA10549E7B46D5ACDE4FA389F692DAF105C6A12387)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/VJD85-KET7yVb75PUiWL5w/zh-cn_image_0000002821836469.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=195976060FDB602B3FA81265803065374F3ABE8F5BCABBCC01A3595FE22AA510)
 * 状态栏和导航区域颜色不同时，可以使用[expandSafeArea](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)属性扩展安全区域属性进行调整。
 
   ```ts
@@ -381,7 +381,7 @@ content_hash: sha256:ff1033a4fcdfdc8299ab60a4a6d90db14874a85f6b1dd4679989ffa74e6
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/JwyXILPARdCGb282sjJtLA/zh-cn_image_0000002791564914.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=398AB5755CAB417B1C018997CDD755C1AF1ECEC940987B956CFA239E205B99EC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/lA2jKpH4TmGsTyVDLX8vAQ/zh-cn_image_0000002821756471.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FFF7F3A4C8FB5F45E8F4F9FC8CF377B5E7AF3916933560FBE9E8445760C941D)
 
 ### 扩展安全区域属性原理
 
@@ -395,7 +395,7 @@ content_hash: sha256:ff1033a4fcdfdc8299ab60a4a6d90db14874a85f6b1dd4679989ffa74e6
 
   + safeAreaPadding位于原有的padding内侧。容器自外向内各层分别为border、padding、safeAreaPadding、内容区。当border和padding确定后，若容器可用空间不足以满足safeAreaPadding的设置，则优先分配给左侧和上侧safeAreaPadding、其次分配给右侧和下侧safeAreaPadding。safeAreaPadding实际尺寸确定后，余下空间为内容区。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/-b6KnLTES2GaelG8IhxByQ/zh-cn_image_0000002820524867.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6B29829AE1628FADBA29E9EB0EE894B645B6E3A415EE8EF5F73D10911DF8E4B)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/FTbHL1F7R6SWoUFdtVMkGg/zh-cn_image_0000002793036534.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=938B5EA73E10486DCED207C468DE30059E98B88648FC6A3C283D9E25943F4E49)
   + 系统组件如Navigation、List、Scroll、Tabs等可以利用外层或容器自身safeAreaPadding实现扩大裁剪范围等能力。
 
 ### 背景图和视频场景
@@ -421,7 +421,7 @@ struct SafeAreaExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/_1udTQgmQHSbq9BJaYAyZQ/zh-cn_image_0000002820404865.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEC6D0A051570A1D9673D49EC55B60835333616A87547CF2CADDFBE609A69A3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Q38dGYTDSW6t9nPa2Ng2hA/zh-cn_image_0000002792876566.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6DF00C98A33C25A6AB81DD3DCB676AC121149005FA4F7B4510632299A7D7F56)
 
 ### 滚动类场景
 
@@ -458,7 +458,7 @@ struct SafeAreaExample1 {
 
    **图5** 滚动类容器设置expandSafeArea属性实现沉浸式效果
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/TdxZLqxaSFaEo7LGAzx-JA/zh-cn_image_0000002791724888.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCECBE5A9410C2BE39F4C9DFC6FEBA5A62597DF5DA07D7881BA0F003F1DE220D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/IjTXnq0ES2Cg3RAWj_JSFA/zh-cn_image_0000002821836471.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=C846DC21B9CFF570E3EB2657C9A99D17C5D2C5D48F0B975E023BE97430512ADB)
 2. 设置父组件滚动容器和子组件相同的背景色，设置滚动容器的内容裁剪属性clipContent(ContentClipMode.SAFE\_AREA)，将内容层裁剪区域扩展至避让区。
 
    ```ts
@@ -489,13 +489,13 @@ struct SafeAreaExample1 {
 
 **图6** 滚动类容器设置clipContent属性实现沉浸式效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/flp-FucIQsuBzMcU2kZmOw/zh-cn_image_0000002791564916.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D50E7B8FAFAE720F71C7E7493946D237D81A700435951DFF75E6F4D6D7C8932)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/hDNhDUPkRzmu5EECxRPOzg/zh-cn_image_0000002821756473.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE36020F1CA33E318584F9D06EA19A93BE16FB88642082C1FFD5711C860EC565)
 
 ### 底部页签场景
 
 要求页签背景色能够延伸到导航区域（此处以导航区域表现为导航条为例给出示意），但页签内部可操作元素需要在导航区域之上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/be4eKeIkTKCjtOHf2UAflQ/zh-cn_image_0000002820524869.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BC99E33117A7EAB2027132C0FB1C8CE55436CAF9AD3D006C130B500EC8E337A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/wlJ6DtsjSL2sUtQ6PjQUGw/zh-cn_image_0000002793036536.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7E4F584955A1A98B6C35A13571D283315752EBAD3A72E3636304490B2858BD0)
 
 针对底部的页签部分，Navigation组件和Tabs组件默认实现了页签的延伸处理，开发者只需要保证Navigation和Tabs组件的底部边界和底部导航区域重合即可。若开发者显式调用expandSafeArea接口，则安全区效果由expandSafeArea参数指定。
 
@@ -503,7 +503,7 @@ struct SafeAreaExample1 {
 
 **图7** 顶部和底部UI元素未设置和设置expandSafeArea属性效果对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/QrJlk99BSguj2Qb6LZczNA/zh-cn_image_0000002820404867.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEC25E16807FD6C589DFDC1F6E7245B62A67F194E00822DB83E8A52CE3732DF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/q5WsVejJQCOq9i8bngTzzg/zh-cn_image_0000002792876568.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=E054E3AB448FB3287D3EAA2AAAA01A09C07B2A325CE35B81054D2BE71DD7BA7D)
 
 ```ts
 // xxx.ets
@@ -552,7 +552,7 @@ struct Example {
 
 当状态栏元素和底部导航区域元素不同时，无法单纯通过窗口背景色或者背景图组件延伸实现，此时需要对顶部元素和底部元素分别配置expandSafeArea属性，顶部元素配置expandSafeArea([SafeAreaType.SYSTEM],[SafeAreaEdge.TOP])，底部元素配置expandSafeArea([SafeAreaType.SYSTEM],[SafeAreaEdge.BOTTOM])。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/lr-nsfdxSb-gsJkldfQZig/zh-cn_image_0000002791724890.png?HW-CC-KV=V1&HW-CC-Date=20261119T014739Z&HW-CC-Expire=31536000000&HW-CC-Sign=6818AACB4747B2119C2230C7602AFD61610A9403DB37184E02C0772326083306)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/l00EPYQaSmaGY7JLA2EHtQ/zh-cn_image_0000002821836473.png?HW-CC-KV=V1&HW-CC-Date=20261121T010942Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F8F8087CBC5667BF3764C32B4ECA4776628DFDBFA6C47609B21640AB6DCD205)
 
 ```ts
 @Entry

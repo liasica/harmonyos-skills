@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-digit
 title: 数字人民币支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 数字人民币支付场景
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:08+08:00
+scraped_at: 2026-11-21T09:12:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:093749094ea3c07fb76521ec62630b2d507dfe85d49e7889bab50e9b12aafb89
+content_hash: sha256:68c8ee06d06dba0402c2c68b6090723c49c9e9613657647091ce3dd3ac518c7c
 ---
 
 **说明** 
@@ -23,7 +23,7 @@ content_hash: sha256:093749094ea3c07fb76521ec62630b2d507dfe85d49e7889bab50e9b12a
 
 数字人民币收银台展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/EVc8Qb1ORXG7YtUUafQLVw/zh-cn_image_0000002820406513.png?HW-CC-KV=V1&HW-CC-Date=20261119T014813Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEA89A9F57D81D96A25208D0B07FFA6F8F06781C9C490C8F1D9F3E00C6320AAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/7SBtiR33SgKRYJJtrXBnqQ/zh-cn_image_0000002792878214.png?HW-CC-KV=V1&HW-CC-Date=20261121T011233Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8E71105233BF562C30548A8152289B164F7E15A720D5BFA5DACF1F7BD2AFC43)
 
 ## 接入流程
 
@@ -38,7 +38,7 @@ content_hash: sha256:093749094ea3c07fb76521ec62630b2d507dfe85d49e7889bab50e9b12a
 
 开发者接入数字人民币支付服务，可以快速实现应用的数字人民币支付能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/3QCMs0NdTFSxEHVGrJLkcQ/zh-cn_image_0000002791726534.png?HW-CC-KV=V1&HW-CC-Date=20261119T014813Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD8E362DCA976D93DAB96734600C57A845298C0D3ACF704C67259DD8503C1F6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/YCByiOYoSISriX10AQpWOw/zh-cn_image_0000002821838121.png?HW-CC-KV=V1&HW-CC-Date=20261121T011233Z&HW-CC-Expire=31536000000&HW-CC-Sign=03B803CDD19E890061F72975D950D8937D973B38969D7ACB2791D7420EF25BAD)
 
 1. 商户客户端请求商户服务器创建商品订单。
 2. 商户服务器按照商户模式（运营机构商户或受理服务机构商户）调用运营机构或受理服务机构提供的下单接口到数字人民币服务端下单，接口详情请参照商户合作的[运营机构或受理服务机构提供的开发指引](payment-faq-27.md)。

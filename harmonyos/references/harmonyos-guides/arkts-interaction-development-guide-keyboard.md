@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持键盘输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持键盘输入事件
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:43+08:00
+scraped_at: 2026-11-21T09:11:09+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:6bfd4cfd1dbd35b91a46661c5d09ae8f2ec5c32d109259f30bae084d8684627c
+content_hash: sha256:a1d5656825c67ffe824b3c91a1e5715d04372724734a86c051adadfdf931c38d
 ---
 
 物理按键产生的按键事件为非指向性事件，与触摸等指向性事件不同，其事件并没有坐标位置信息，所以其会按照一定次序向获焦组件进行派发，大多数文字输入场景下，按键事件都会优先派发给输入法进行处理，以便其处理文字的联想和候选词，应用可以通过[onKeyPreIme](../harmonyos-references/ts-universal-events-key.md#onkeypreime12)提前感知事件。
@@ -16,7 +16,7 @@ content_hash: sha256:6bfd4cfd1dbd35b91a46661c5d09ae8f2ec5c32d109259f30bae084d868
 
 ## 按键事件数据流
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/rlNmcdBTT0ybz5dOuhaFng/zh-cn_image_0000002820405129.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DF1D89253DAC74223A89D83D18285D52225CF47875A58F3DEA24378AD60BE4A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/MJMvUogmSqijxo_X7aHxnQ/zh-cn_image_0000002792876828.png?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D7BBD68D6DEB0BE70FE2E4C60045F42A44E9175617DF41068DE8E83F0882D9A)
 
 按键事件由外设键盘等设备触发，经驱动和多模处理转换后发送给当前获焦的窗口，窗口获取到事件后，会尝试分发三次事件。三次分发的优先顺序如下，一旦事件被消费，则跳过后续分发流程。
 
@@ -98,7 +98,7 @@ struct KeyEventExample {
 
 上述示例中给组件Button和其父容器Column绑定onKeyEvent。应用打开页面加载后，组件树上第一个可获焦的非容器组件自动获焦，设置Button为当前页面的默认焦点，由于Button是Column的子节点，Button获焦也同时意味着Column获焦。获焦机制见[支持焦点处理](arkts-common-events-focus-event.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/bD--JFwzRY-SN4o0hFeTZg/zh-cn_image_0000002791725150.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=6859105AA049B82498040FB8AB09FDC445CF70C2019958679BBEF78F27A08FF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/rWH8kd8pQKiEvPx2swY6yQ/zh-cn_image_0000002821836733.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D155A88EAF24BE96191E339B0788B043D793F5368F81AEA23AEA313DDB5DFCC)
 
 打开应用后，依次在键盘上按这些按键：空格、回车、左Ctrl、左Shift、字母A、字母Z。
 
@@ -164,7 +164,7 @@ struct KeyEventPreventBubble {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/0QCbcJYIRzSYKSqlD_FfJg/zh-cn_image_0000002791565178.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=A063F6BC60C74BD1062DCA4248F382950556BABEAD545DECAFF2CF851284DDE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/_EKh5Ax6SdW5nw1_xM-DUA/zh-cn_image_0000002821756735.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=03C749F7E84DC3D159A2DAA1463C2D8902EB28994F58202E925ACA31DC813062)
 
 使用onKeyPreIme屏蔽在输入框中使用方向左键。
 
@@ -198,7 +198,7 @@ struct PreImeEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/2Pc7JPp0RBudr59MITASdQ/zh-cn_image_0000002820525131.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=97BE0A02411917701F1597B90BB613967F00DC1F166921759CAEF929FFD54942)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/GiUE_to6RMm-XaP-d2pI7g/zh-cn_image_0000002793036798.gif?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=883C29686176C00B70426404C6D1AB5F389F25470066E494D24F5DA0F6896F5F)
 
 使用onKeyEventDispatch分发按键事件到子组件，子组件使用onKeyEvent。
 
@@ -253,7 +253,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/2gl7KSPzS36IVoHLOYnFcw/zh-cn_image_0000002820405131.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8145DF87235041A4A6E5F80DC7F130F4FD44FA79D307BA2A1FCF3622CF9F681)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ZrvQNS5pTkGJcyKfRLlYoQ/zh-cn_image_0000002792876830.png?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0D869028D5452C9DD34AC7120CAED4BB8C52B6621A5048B74541957A623F0E3)
 
 使用onKeyPreIme实现回车提交（建议使用物理键盘）。
 
@@ -300,8 +300,8 @@ struct TextAreaDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/qq9adqrxTbKrugu_ce_0-g/zh-cn_image_0000002791725152.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=441E16E73168BB0F564021A0958C28F0173D70277198A569A74BBF8CC5641B34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/rFjmKF6pSBuXJu1MpT4iig/zh-cn_image_0000002821836735.png?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC1C4911DA6A22A5E4CDDB4AB845FD643E55C0DE29C010FEE38BD4AC298939FD)
 
 在输入框中输入内容后回车。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/AWXW07W_TqajFRIOj96CfA/zh-cn_image_0000002791565180.png?HW-CC-KV=V1&HW-CC-Date=20261119T014742Z&HW-CC-Expire=31536000000&HW-CC-Sign=83E6D53A0A84ADEB71D7838680B0C21B21E13C78F216813F910B984D2D7D3754)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/4lAJyPF_SlWO4iJPwUCNFQ/zh-cn_image_0000002821756737.png?HW-CC-KV=V1&HW-CC-Date=20261121T010945Z&HW-CC-Expire=31536000000&HW-CC-Sign=C63723FC1D3E33748306B45FE6021D75944B3BE55E2C93403326B002E13F5222)

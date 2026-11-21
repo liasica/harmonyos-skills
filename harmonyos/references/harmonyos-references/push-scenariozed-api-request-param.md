@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scen
 title: 请求体参数说明
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息推送 > 请求体参数说明
 category: harmonyos-references
-scraped_at: 2026-11-19T09:54:57+08:00
+scraped_at: 2026-11-21T09:16:58+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:5cb8caf6ab7d7cc0c5814d0d2acb338e6ea83b4aa65822a8a532cde237e187ed
+content_hash: sha256:c9c236d2dc4ae0191e98e2278e61f143beef78efcefc8788d19ca2982c676b72
 ---
 
 ## pushOptions
@@ -327,7 +327,7 @@ content_hash: sha256:5cb8caf6ab7d7cc0c5814d0d2acb338e6ea83b4aa65822a8a532cde237e
 
 ### Extend
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ePX0oiVrQ72wS3Y1zmoOGw/zh-cn_image_0000002791568258.png?HW-CC-KV=V1&HW-CC-Date=20261119T015456Z&HW-CC-Expire=31536000000&HW-CC-Sign=4311EC8E3CD42CF5F514623C5E5B8D2F74A2FEF36875EA7A046FA86045603347)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/lbXSxYQuQsS6DivpD9aiNw/zh-cn_image_0000002792879946.png?HW-CC-KV=V1&HW-CC-Date=20261121T011657Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6701945E0FF43B90B44FB1387D9864B2C554CAE22E93C62035A38A446EFAE5A)
 
 * 1 实况卡片辅助区类型，对应type字段：
   + 当辅助区类型为1时，辅助区显示普通文本，使用API字段text传入文本内容。
@@ -346,7 +346,7 @@ content_hash: sha256:5cb8caf6ab7d7cc0c5814d0d2acb338e6ea83b4aa65822a8a532cde237e
 
 ### Game
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/UJQsjq3OQkGsl9cZt0LjEQ/zh-cn_image_0000002820528211.png?HW-CC-KV=V1&HW-CC-Date=20261119T015456Z&HW-CC-Expire=31536000000&HW-CC-Sign=9706E853E86B565B9470EBC2E52FA237BD1FB6A7A6DFB648A8C1B76B658A9600)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/-ncxuuxKQ_eW4vUl4PfMHw/zh-cn_image_0000002821839851.png?HW-CC-KV=V1&HW-CC-Date=20261121T011657Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A8089BDC157E77FA8C8DF1C83EB9E7E1C9EFA8AB10FD9DD62B3BBAF07151CF5)
 
 * 1 左侧队伍名称，对应host中的[name](push-scenariozed-api-request-param.md#team)字段。
 * 2 左侧队伍图标，对应host中的[icon](push-scenariozed-api-request-param.md#team)和[iconUrl](push-scenariozed-api-request-param.md#team)字段。
@@ -425,7 +425,7 @@ content_hash: sha256:5cb8caf6ab7d7cc0c5814d0d2acb338e6ea83b4aa65822a8a532cde237e
 
 ### SingleTextBlock
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/-tou_kESTwuHaJ6LR6_Zsw/zh-cn_image_0000002820408215.png?HW-CC-KV=V1&HW-CC-Date=20261119T015456Z&HW-CC-Expire=31536000000&HW-CC-Sign=02A7E82FAEF2FB5FE91A48B54846B39169FFA7EC0EAB99E593140F11E5D33B24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/ztaCMNbDTNuiAPv-4UWu2Q/zh-cn_image_0000002821759855.png?HW-CC-KV=V1&HW-CC-Date=20261121T011657Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E4B998A5887AD9C037A1E00C23469CDE3A87D8E0E217C05207E0F2076672D90)
 
 * 1 辅助标记文本，对应firstLine字段。
 * 2 强调文本内容，对应secondLine字段。
@@ -440,7 +440,7 @@ content_hash: sha256:5cb8caf6ab7d7cc0c5814d0d2acb338e6ea83b4aa65822a8a532cde237e
 
 ### FirstTextBlock
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/LAmFpHt5SVC2HcqoFOERIg/zh-cn_image_0000002791728234.png?HW-CC-KV=V1&HW-CC-Date=20261119T015456Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB0E5899981C0A20C146D23E5FABD7E3FAD55F08B18CFA03017F3790DAC972CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/SKOqiR-GR5WInw3Wiocs5Q/zh-cn_image_0000002793039926.png?HW-CC-KV=V1&HW-CC-Date=20261121T011657Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF9510B33EF8DF379B9D4065EE9DF56679B0DD19A083EEAF17EAE42B2101EC61)
 
 * 1 左侧首行文本，对应firstLine字段。
 * 2 左侧次行文本内容，对应secondLine字段。
@@ -455,7 +455,7 @@ content_hash: sha256:5cb8caf6ab7d7cc0c5814d0d2acb338e6ea83b4aa65822a8a532cde237e
 
 ### LastTextBlock
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/i1XozFawREq4_bMV_xf5LQ/zh-cn_image_0000002791568262.png?HW-CC-KV=V1&HW-CC-Date=20261119T015456Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BE6964FEE249722F76BA7985F130E5E9F64672B28AF92FBE24587F3484A75BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/WS8lGr5sTum_QkJZrfb5Uw/zh-cn_image_0000002792879952.png?HW-CC-KV=V1&HW-CC-Date=20261121T011657Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EA9CAB48D7DA20F29C959E34178201636EE9E7712ED9D7551E4EB71BA55FFE1)
 
 * 3 右侧首行文本，对应firstLine字段。
 * 4 右侧次行文本内容，对应secondLine字段。
@@ -475,7 +475,7 @@ content_hash: sha256:5cb8caf6ab7d7cc0c5814d0d2acb338e6ea83b4aa65822a8a532cde237e
 
 ### RichProgress
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/JGDYzgHHQ9uLZEdQou24tw/zh-cn_image_0000002820528215.png?HW-CC-KV=V1&HW-CC-Date=20261119T015456Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5628B763C84A82308C54052AC5D158B3117E3214512957E95501924165FFF38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Vy7dUvhgQJml7rDs5AlSUg/zh-cn_image_0000002821839855.png?HW-CC-KV=V1&HW-CC-Date=20261121T011657Z&HW-CC-Expire=31536000000&HW-CC-Sign=847818AA6DFA96A29578B5B2862CDF499B938F3DC9CC58EC726A623349F01773)
 
 * 1 进度百分比，对应progress字段。
 * 2 进度指示器左侧的进度点及节点图标的颜色，对应color字段。
@@ -503,7 +503,7 @@ content_hash: sha256:5cb8caf6ab7d7cc0c5814d0d2acb338e6ea83b4aa65822a8a532cde237e
 
 ### ExternalData
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/dV61F0S3SEOuNxHDApqinA/zh-cn_image_0000002820408217.png?HW-CC-KV=V1&HW-CC-Date=20261119T015456Z&HW-CC-Expire=31536000000&HW-CC-Sign=096B46B1C820B6031C70C7B3BA1B1CFCC12A5C44115BBC41C13A73C3FBB987AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/FsUZR5O1R16xKqT3r9gHIw/zh-cn_image_0000002821759857.png?HW-CC-KV=V1&HW-CC-Date=20261121T011657Z&HW-CC-Expire=31536000000&HW-CC-Sign=189F188337B7BED796842369747FBA85F72A33CF4AE35200BCEC72D52431C05B)
 
 * 1 自定义的外屏通知标题，对应title字段。
 * 2 自定义的外屏通知内容，对应body字段。

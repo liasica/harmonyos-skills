@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ListItemGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ListItemGroup
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:56+08:00
+scraped_at: 2026-11-21T09:14:06+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:40dbe2be9dd5da1fa01a613fcce9d98a0434f8149ee8f871c8f993d790edef93
+content_hash: sha256:5a12047128a207c459c43ff2669ffa5600851785820e8751704f6f11bc28a0d1
 ---
 
 ListItemGroup用来展示列表项分组，支持自定义分组头部和尾部区域、卡片样式、分割线、懒加载与预加载等能力，适用于需要对列表项进行逻辑分组展示的场景。宽度默认充满[List](ts-container-list.md)组件，必须配合List组件来使用。
@@ -301,7 +301,7 @@ struct ListItemGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/l_BpYlChQWimD8yPeVmSLg/zh-cn_image_0000002820527139.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF499D8BAAD003AA3F4CD8A681F3A72C0FEF23E281C92D1715FCED0CD355AC6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/bb27YkiRQUOUCn-Y6Vwotw/zh-cn_image_0000002821838749.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011255Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF2242CEEADEA4784BFD69F6527EAF6EA02B7A5EEF33687EA26F2C5F17DD9C45)
 
 ### 示例2（设置卡片样式）
 
@@ -363,7 +363,7 @@ interface ArrObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/6E8dZk88Qfmnxhv-MAflQw/zh-cn_image_0000002820407139.jpeg?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC6CE81D404D63EB97C426857D513E71EC43033EAD95EADD06709A3FE2E9B4A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/fa69dqPeS6CcBP2FeSOw0g/zh-cn_image_0000002821758751.jpeg?HW-CC-KV=V1&HW-CC-Date=20261121T011255Z&HW-CC-Expire=31536000000&HW-CC-Sign=E995144D628637AF8E8F1D5C61A1AB8FA623FA79CE577FADB4891FA36169BA7C)
 
 ### 示例3（设置Header/Footer）
 
@@ -501,7 +501,7 @@ struct ListItemGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/47UMiti1TZGUFL09FL24RQ/zh-cn_image_0000002791727160.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=A23BCE9B6E8FB1F32698D37925583990EC1A748A2C8B9D168AE1C42635BE8D6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/spPboMefSrGNQojWmCBeGg/zh-cn_image_0000002793038820.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011255Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4BADD7DB5A8525AC14C52AB10836AE1211462A6426621C04A2A1B52317014D3)
 
 ### 示例4（设置多列布局）
 
@@ -665,7 +665,7 @@ struct ListItemGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/L4shN4MBTF-213G8p9NRVw/zh-cn_image_0000002791567188.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=B390D01D4277E09E1ED8D87944D956D8295314983EC4F2225F9288BE8C6D50CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/6QP23ZEwTem3GQ75967wCQ/zh-cn_image_0000002792878846.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011255Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7C755FC32B34D8D4FEFD356444EACF201F5D5D5BADCE1ADBEC8E00122AFA149)
 
 ### 示例5（设置悬浮态）
 
@@ -740,4 +740,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/A6Fc_YPCT3OANFQ9Tha-lg/zh-cn_image_0000002820527141.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015001Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0910AF176E128FB52A56B0ADF0E076AAD528BA2994798A91F4D97C70FB01DDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/bO4GM-YuTIe63ZPdfhuqpA/zh-cn_image_0000002821838751.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011255Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7A8D1AFD717E7FFA007E9F2983B5EF3AE032A4062BE3089B340EAF0523B129E)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-cro
 title: 通过Call调用实现多端协同
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > 通过Call调用实现多端协同
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:25+08:00
+scraped_at: 2026-11-21T09:10:52+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:84b37b4d9303d553423ee015c4480f7bdd8e03cf173139976bba381676aeb3c7
+content_hash: sha256:5d6b518336a8cf403ac797225668d01f697ea96941b005155a5a0c73b2ecb952
 ---
 
 Call调用是[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)能力的扩展，它为UIAbility提供一种能够被外部调用并与外部进行通信的能力。Call调用支持前台与后台两种启动方式，使UIAbility既能被拉起到前台展示UI，也可以在后台被创建并运行。通过建立跨进程通信（IPC）链路，它在调用方与被调用方间构建起数据通道。当在分布式场景下使用时，Call调用可以跨设备发起，使得一个设备上的应用能够将任务迁移至另一个设备上的UIAbility继续执行，从而完成跨端迁移。
@@ -37,7 +37,7 @@ Call调用示意图如下所示。
 
 **图1** Call调用示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/h8Zvl9CuQnivsz57kzZrMQ/zh-cn_image_0000002820404403.png?HW-CC-KV=V1&HW-CC-Date=20261119T014634Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7526679D49684269A60D0973B2BC056DADD496BDFF6C2016DD25651AC44949F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/M4SIQ-rCSCWP8_sPeof_pQ/zh-cn_image_0000002792876104.png?HW-CC-KV=V1&HW-CC-Date=20261121T011051Z&HW-CC-Expire=31536000000&HW-CC-Sign=307D733395007383135F67AC63E799E7E14209F467383CE11AB1C9D9E8E30FFE)
 
 * CallerAbility调用[startAbilityByCall()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startabilitybycall)接口获取[Caller](../harmonyos-references/js-apis-app-ability-uiability.md#caller)，并使用Caller对象的[call()](../harmonyos-references/js-apis-app-ability-uiability.md#call)方法向CalleeAbility发送数据。
 * CalleeAbility持有一个[Callee](../harmonyos-references/js-apis-app-ability-uiability.md#callee)对象，通过Callee的[on()](../harmonyos-references/js-apis-app-ability-uiability.md#on)方法注册回调函数，当接收到Caller发送的数据时将会调用对应的回调函数。

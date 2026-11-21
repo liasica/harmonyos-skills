@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-trafficfi
 title: 重定向网络流量(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 管理网络 > 重定向网络流量(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:45+08:00
-doc_updated_at: 2026-11-11
+scraped_at: 2026-11-21T09:11:41+08:00
+doc_updated_at: 2026-11-20
 content_hash: sha256:9f5135869ffd637855449fa181df7f2377304ad3546ee1f8541515a718535f6b
 ---
 

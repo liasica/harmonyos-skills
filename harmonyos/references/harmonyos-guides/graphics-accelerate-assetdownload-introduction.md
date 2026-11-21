@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 业务概述
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 业务概述
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:48:47+08:00
+scraped_at: 2026-11-21T09:12:13+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:eee70df65744cf4f2390f169450dd765bb21274742f764125b24f19df82b7cf1
+content_hash: sha256:3c1309dcd9ba516bba98bb0aec400e0d81a88613e065ea74b331877471d67a98
 ---
 
 资源包后台下载是将资源文件（例如关卡包、3D角色模型、纹理等）静默下载到用户设备中，减少游戏启动后等待资源包下载的时间，解决游戏启动慢的问题，为用户提供即开即玩的游戏体验。
@@ -23,24 +23,24 @@ content_hash: sha256:eee70df65744cf4f2390f169450dd765bb21274742f764125b24f19df82
 
   用户在应用市场安装游戏后、或在应用市场更新游戏后，在游戏未启动状态下，若检测到该游戏有资源包需要更新，将自动触发资源包下载。用户下拉通知栏，实时查看资源包下载进度。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/sHRP5OYkTeWEyyod2QPVmg/zh-cn_image_0000002791566160.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=925B291CD8450F05B47E8DC5483E38D65CF1E84478916F5E9B759B6555281B65 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/amtWR09mSY6o86kXWwmytg/zh-cn_image_0000002821757721.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011046Z&HW-CC-Expire=31536000000&HW-CC-Sign=F293166AAF191A0EB67378B124107A43608F1ECC39FC6A3D43C306AC6069CB89 "点击放大")
 * 场景二
 
   待用户设备满足闲时条件时，在游戏未启动状态下，若检测到上次更新资源包未完成，或该游戏有新的资源包需要更新，将自动触发资源包下载。用户下拉通知栏，实时查看资源包下载进度。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/YLvJJm90TjG0yI3NdtSorg/zh-cn_image_0000002820526113.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=3777380F708EDE855AB6B904579E132D0D8959DE9C5E2B63E1644BD4A050CE8C "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/mN35nmQzQNCG9jepzZ4k2g/zh-cn_image_0000002793037784.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011046Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A2CA60D2D59E984C4D418138C81017E04C167D38A639C28691B53CEE0BBBF6F "点击放大")
 
 ### 系统后台切应用前台接续下载资源包
 
 用户在应用市场安装游戏后、或在应用市场更新游戏后，在游戏未启动状态下，若检测到该游戏有资源包需要更新，将自动触发资源包下载。用户下拉通知栏，实时查看资源包下载进度。在下载过程中点击游戏App，游戏接管未完成的下载任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/TcQa-zN0TbmNF-ttz6OHCQ/zh-cn_image_0000002820406113.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=51DA79CAC340A38FD6E89E877BD2F721047DF57A9DBED2B4F39CAB2C48216EE7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/jkbbfdIQRq6AyZJgz0DaQQ/zh-cn_image_0000002792877814.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011046Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7797426CF7081E198CCA74140A05AFD921FB695657CC7338C9FF97BA6C6F514 "点击放大")
 
 ### 应用前台下载资源包
 
 用户点击游戏App，若检测到上次更新资源包未完成，或该游戏有新的资源包需要更新，游戏将接续执行未完成的下载任务或提交新的下载任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/roDdoZptRQqR60TlHRmcHg/zh-cn_image_0000002791726134.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=97444F2DC076B68F97A34E766DAEBD50CB6279EC953D5237ED87E73DEA55AD0C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/g0OAMx05RxK0uzdSgo7DVQ/zh-cn_image_0000002821837721.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011046Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E64F3D106E5A51CEB57D539DFE73C281E36DE80143A44203D1830974C58FBB3 "点击放大")
 
 ### 应用前台切应用后台下载资源包
 
@@ -50,7 +50,7 @@ content_hash: sha256:eee70df65744cf4f2390f169450dd765bb21274742f764125b24f19df82
 
 应用前台下载资源包的过程中，将游戏切至后台，资源包下载任务不中断。用户下拉通知栏，实时查看资源包下载进度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/q-934D5eR9uc1R00PJrJcw/zh-cn_image_0000002791566162.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014847Z&HW-CC-Expire=31536000000&HW-CC-Sign=C15660083EB3EA4000E6E1EA26897692E588F6E696684222086C49E30774F1F9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/L1v6R-uJRDa0OOukKVMYMA/zh-cn_image_0000002821757723.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011046Z&HW-CC-Expire=31536000000&HW-CC-Sign=05D05DF5E77D86F93AAAE6F2B579D8A6BC38B23ABCA72F92AAD85FE6AF2205A9 "点击放大")
 
 ## 实现流程
 

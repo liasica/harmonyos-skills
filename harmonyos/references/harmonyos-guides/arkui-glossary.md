@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkui-glossar
 title: ArkUI术语
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > ArkUI术语
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:47:51+08:00
+scraped_at: 2026-11-21T09:11:17+08:00
 doc_updated_at: 2026-07-09
-content_hash: sha256:6ef6a6fa5127246d29f59da22dc818357324d1abb75e65c97b53011db0fe3b0e
+content_hash: sha256:0495f2c0fd9faa6110e8c2ee3040c8e26a4ed0cfdcbe90f4d888d6267fe39371
 ---
 
 ## A
@@ -196,4 +196,4 @@ UI实例的抽象运行环境，UI操作在该上下文中执行并最终反映�
 
 以组件左上角为坐标原点的坐标系，其中向右为x正轴，向下为y正轴。如果为三维坐标系，则由屏幕向外为z正轴。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/b5i7gY0uSpqJOKPckTGjmA/zh-cn_image_0000002791725454.png?HW-CC-KV=V1&HW-CC-Date=20261119T014751Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3206CD6516F307B93A1A944E1213F5FA0B87932B82ABEF684A1D1E750FEB051)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/XXruQOSATOeqRou3FZJ2fA/zh-cn_image_0000002821837041.png?HW-CC-KV=V1&HW-CC-Date=20261121T011117Z&HW-CC-Expire=31536000000&HW-CC-Sign=44101AB320CC3D9892EEA62A1FAA5297207DB4EE24AAE0352137076DD4623DD0)

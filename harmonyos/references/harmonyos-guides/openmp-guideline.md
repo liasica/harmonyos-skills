@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/openmp-guidel
 title: OpenMP应用构建和运行指南
 breadcrumb: 指南 > NDK开发 > 代码开发 > OpenMP支持 > OpenMP应用构建和运行指南
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:27+08:00
+scraped_at: 2026-11-21T09:12:52+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ddd5e99e4b0dd9fbc87db401fe506e99a7180b6e01e4a0facfb80961a8e8618c
+content_hash: sha256:f9a395b0d3b369a1df1bf41670c62bcab3ea2593f7872f5d27fb20cb3cc16c5a
 ---
 
 HarmonyOS NDK中提供了OpenMP的动态库和静态库文件，支持开发者在Native应用中使用OpenMP。本文用于指导开发者在[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/)中调用库文件使用OpenMP的并行化能力，更详细的使用示例和API标准请查看官方文档[clang-OpenMPSupport](https://clang.llvm.org/docs/OpenMPSupport.html)。
@@ -155,10 +155,10 @@ struct Index {
 
 运行前请检查设备连接并配置好[Signature](../doccenter-deveco-studio/ide-signing-auto.md)信息。直接点击右上角运行按钮，应用启动后设备进入“Hello OpenMP”界面，点击“Hello OpenMP”标签，打开DevEco Studio下方“Log”查看页面，即可看到并行打印的“Hello OpenMP！”消息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/paBF1ZUFSlmrO1SYm2kjJg/zh-cn_image_0000002820526833.png?HW-CC-KV=V1&HW-CC-Date=20261119T014927Z&HW-CC-Expire=31536000000&HW-CC-Sign=4ED2121051C35F86FC4F0C55533C7AF866748DC9B62FFD28F23C36BD1A14E03B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/W94q99ZCRmixHz6q4oVRug/zh-cn_image_0000002821838441.png?HW-CC-KV=V1&HW-CC-Date=20261121T011252Z&HW-CC-Expire=31536000000&HW-CC-Sign=4059A615E59F888BA4E6B10B64B4DFA73C53E9998F6E9D1C8BDD3619F23A6BAA)
 
 **注意** 
 
 OpenMP程序运行时，HiLog中会输出“dlopen\_impl load library header failed for libarcher.so”的报错信息（如下图）。该报错信息中提到的libarcher.so，在OpenMP程序开启Tsan检测时才需要使用。目前HarmonyOS未支持OpenMP程序的Tsan检测能力，因此该错误信息可忽略，不影响程序正常运行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/bApBnV2FRAK42CmlSTLSHg/zh-cn_image_0000002820406833.png?HW-CC-KV=V1&HW-CC-Date=20261119T014927Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F55AC605FF40C396AB9FF081560BD941914C36BAF0E31FDAE17FD7F38003C46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/htquSR7EQq6vnCWXvvZ5YQ/zh-cn_image_0000002821758443.png?HW-CC-KV=V1&HW-CC-Date=20261121T011252Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C6EDAACB1D5EE11C23D69FC1FE10E7FB97A395AD3C2CF4C0F0A286FFB5E3CE7)

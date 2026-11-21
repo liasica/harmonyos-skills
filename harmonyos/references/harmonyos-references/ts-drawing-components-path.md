@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Path
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Path
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:08+08:00
+scraped_at: 2026-11-21T09:14:13+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b6c6c287d8ed818d70ad32dd21e98043c74a1566a41749a43edb985f60c1b215
+content_hash: sha256:bbd37cbcdc2422c3eb786f0e22c4379957097d64273b95e254cbb61f28745ee0
 ---
 
 路径绘制组件，根据绘制路径生成封闭的自定义形状，支持通过SVG路径描述规范定义复杂的几何形状。
@@ -206,7 +206,7 @@ struct PathExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/P9qqQlgXTKKhKprXfs8mew/zh-cn_image_0000002820527553.png?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4B041B803F2925C33E54161C004A6483B91FCEA5CEB98DF040FD87726FB5A3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/INyuY4dqTRe0xlbj_TWqAQ/zh-cn_image_0000002821839179.png?HW-CC-KV=V1&HW-CC-Date=20261121T011413Z&HW-CC-Expire=31536000000&HW-CC-Sign=5642024FF12015957CFD420F5CE5B8EE4CCFF02E11D1758EAA76B0731B786D7F)
 
 ### 示例2（使用不同参数类型绘制路径）
 
@@ -243,7 +243,7 @@ struct PathTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/v1Y9e33-T565ohLEsqemfQ/zh-cn_image_0000002820407555.png?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFBD4E66BE30628177F1458C1FCB59DF7B59731A30D386200C1A41701A1A0238)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/b7B_qy4HTt-DJwQoHadU3g/zh-cn_image_0000002821759181.png?HW-CC-KV=V1&HW-CC-Date=20261121T011413Z&HW-CC-Expire=31536000000&HW-CC-Sign=20A23180717CC2F69D0D2DE30D29B0A4E8ED15410BFF3F73E2431A3976BC14AA)
 
 ### 示例3（使用attributeModifier动态设置Path组件的属性）
 
@@ -284,4 +284,4 @@ struct PathModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/YDWY3zRFQcajtNfZpyZnnQ/zh-cn_image_0000002791727574.png?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=28620D90E9E624AB040CF668163355DFDBE21BB51B1929A05A0BBA0D37FFC288)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/x-bjNPpjQJSQSqCsG7ts0w/zh-cn_image_0000002793039246.png?HW-CC-KV=V1&HW-CC-Date=20261121T011413Z&HW-CC-Expire=31536000000&HW-CC-Sign=73D103FB85AA3C52B7D48DD32470A88DB1681841CB9256752BA08975BF742AAE)

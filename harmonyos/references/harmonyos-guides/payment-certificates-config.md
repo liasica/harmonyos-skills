@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-certi
 title: 准备证书
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发准备 > 准备证书
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:07+08:00
+scraped_at: 2026-11-21T09:12:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ba0f8d7263fbd5fa9ae242290d8dd284ed264298cc4863e7ec31514602bc6648
+content_hash: sha256:d97319b04d156c564d160a12ad45d826b3d72130b322e578e7c36516b095fc91
 ---
 
 开发者接入华为支付开放API接口，需要通过证书来对请求内容及响应内容做签名和验证签名，以保证请求的安全性和可靠性。
@@ -18,7 +18,7 @@ content_hash: sha256:ba0f8d7263fbd5fa9ae242290d8dd284ed264298cc4863e7ec31514602b
 
 证书使用如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Eig3M42hRomAX0yi_wBBnA/zh-cn_image_0000002791566552.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E77B8F32D39E26C320B61809F1D844C28B351EE77C19EDBA854883E7A0995DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/5Xn4-ORhSnya2Dg-4yZ7cQ/zh-cn_image_0000002821758113.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDE41764FF57A15AD942F07364984D57223F1BB075F6EB93EA013DEE15C2D369)
 
 ## 商户证书
 
@@ -42,7 +42,7 @@ content_hash: sha256:ba0f8d7263fbd5fa9ae242290d8dd284ed264298cc4863e7ec31514602b
 * 商户需将生成的证书公钥上传到[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)来获取证书ID，证书ID为请求华为支付开放API接口时请求头鉴权信息[PayMercAuth](../harmonyos-references/payment-model.md#paymercauth)对象中的authId字段以及订单信息参数[orderStr](../harmonyos-references/payment-model.md#orderstr)中的auth\_id字段。
 * 证书上传（参见[上传商户证书](payment-certificates-config.md#上传商户证书)）后，可以在“商户中心 > 证书管理 > 上传商户证书 > 证书ID”处获取。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ivkZNFlnQJqQnxhSFVzChg/zh-cn_image_0000002820526505.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=849D680BCE140EC112D3B4BC260FFB1AF5DDC00C015E326D56E3480DA3478388)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ddNgqq6xRaCjjNCwiscukg/zh-cn_image_0000002793038176.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEF2360DB82FB5F568E42F8199E1DAFD2D38BB4221EC10193A9FEA2386F89BA7)
 
 ### 生成商户证书
 
@@ -52,7 +52,7 @@ content_hash: sha256:ba0f8d7263fbd5fa9ae242290d8dd284ed264298cc4863e7ec31514602b
 
    登录[Node.js](https://nodejs.org/en/download/)官方网站，下载Node.js软件包。请选择LTS版本，并根据电脑操作系统选择对应的软件包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/ANRe8StLRnagY4QvE6d0mw/zh-cn_image_0000002820406505.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F81499835FBF5D3DEEDC51A93F0EE065E6373FEA561433D45D736D11B5568B2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/45V3-Pi0Q_KM0XOJgFk9-Q/zh-cn_image_0000002792878206.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=7ADDEE847D0464CBEEA890B46BCAE10B4CB81B3E7A54D0570E54F112932A1CB3)
 
    双击下载后的软件包进行安装。全部按照默认设置点击“Next”，直至“Finish”。安装过程中，Node.js会自动在系统的path环境变量中配置node.exe的目录路径。
 
@@ -62,7 +62,7 @@ content_hash: sha256:ba0f8d7263fbd5fa9ae242290d8dd284ed264298cc4863e7ec31514602b
 
    打开命令行工具，输入**node -v**命令，能正常查询Node.js的版本号，说明Node.js执行环境配置完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/eKfZKxL0QmSvSiasXVHfNw/zh-cn_image_0000002791726526.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=6231F7EF1FCC6A9D19CCFB9D78C9B128EE33A18835FED5A999C9F6780B0BEDEE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/yT1W1stJQWyUFZUV0aEiVQ/zh-cn_image_0000002821838113.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=21FE2D811A21E394EDCD1D84696109EC4817E00D12DB58B60DAAF8F0020832CF)
 2. 使用文本编辑器新建文件（编码为UTF-8），拷贝以下代码到文件中并保存命名为“generateKeyPair.js”。
 
    ```typescript
@@ -87,7 +87,7 @@ content_hash: sha256:ba0f8d7263fbd5fa9ae242290d8dd284ed264298cc4863e7ec31514602b
 3. 打开命令行工具，进入generateKeyPair.js所在目录，执行**node generateKeyPair.js**命令。
 4. 从结果中拷贝生成的公私钥并保存。结果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/zQEzh7XWR123qxeG8h6K3g/zh-cn_image_0000002791566554.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=A419C7A9ECA677D2A64EA0411025BD9036827D193C87798736CFDE19BB367D8A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/KsGqTwQ_R6CkbZQ0pbh1Gw/zh-cn_image_0000002821758115.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=22CD43CAD1E83F5692388632A5A4AF42531C199D9E60CED93A4F2A65ED7E482E)
 
 **方式2：使用在线工具生成**
 
@@ -138,4 +138,4 @@ DQIDAQAB
 
 登录[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)后，通过“商户中心 > 证书管理 > 华为支付证书”页签进行华为支付证书下载，该证书用于校验华为支付给商户业务系统发送的信息，如支付结果信息等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/srSL81mPS3mhyGH3KBnBrg/zh-cn_image_0000002820526507.png?HW-CC-KV=V1&HW-CC-Date=20261119T014907Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FA0DA3A3B3D9ED5F9BCE955CF936C5DE3C57989F84C1236B1462B0ABD8A1AB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/H5g8tXqEQ4G1fcSi3pYcKg/zh-cn_image_0000002793038178.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5688D1641F2E94D52EE120C587D54BED3BF1021E8760C87D97C175D21A4D6DF7)

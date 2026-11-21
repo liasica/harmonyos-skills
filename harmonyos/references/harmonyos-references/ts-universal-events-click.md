@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 点击事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 点击事件
 category: harmonyos-references
-scraped_at: 2026-11-19T09:50:47+08:00
+scraped_at: 2026-11-21T09:14:00+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:7a45120365f58864d11d2eac74d5fb1938055e6014246d6d6f54f4c6370e1833
+content_hash: sha256:d6127581130565ab4344de9b5b9a0a8fc72540f7fe9ac5b9aa4743e33821ab7b
 ---
 
 点击事件用于监听组件被点击时触发的交互行为，开发者可通过该事件获取点击位置、触发来源等点击事件信息，并可在支持的接口中设置点击手势移动阈值，适用于处理组件点击响应、区分触发来源和控制点击识别范围的场景。
@@ -257,7 +257,7 @@ struct ClickExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/onPRt0myToWxLSie1eLJyg/zh-cn_image_0000002791726990.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5047B83408954269ECAFBA85BAC8DBD0F8FA72376CC8ADFA581A615ED7C1401)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/NkW9xG1rTxqqS-_g-86bsA/zh-cn_image_0000002793038642.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011248Z&HW-CC-Expire=31536000000&HW-CC-Sign=85338F1DCF60B019DB8BA6F96219C64D850507213EA78002D4D6182F5D42A5B3)
 
 ### 示例2（获取组件实时位置）
 
@@ -293,4 +293,4 @@ struct GetCurrentLocalPositionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/31gL-W5zQaiucVl4W4F1fQ/zh-cn_image_0000002820526967.gif?HW-CC-KV=V1&HW-CC-Date=20261119T014954Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1776C2AE51DCC6D0D90D57476487534ADC34BB7916EF5B7FE1CC8663DB973AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/DJ5DSObuT5G_Xf15hyBhIw/zh-cn_image_0000002821838575.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011248Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F8D307AD6673F9C507C855BE0F05FA74CBF556329BEA07DB52852EBCA583258)

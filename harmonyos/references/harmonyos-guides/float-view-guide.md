@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/float-view-gu
 title: 闪控窗开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 闪控窗开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:20+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:5c38c8dbe9356574f0385bba51e71fc0c955ba0b27d5685f2e5ea618723d170e
+scraped_at: 2026-11-21T09:11:16+08:00
+doc_updated_at: 2026-11-20
+content_hash: sha256:a46c01f191bfb4852b0785b680ae35d865836ef25d17d87aedc59162822f0551
 ---
 
 ## 场景介绍
@@ -23,6 +23,7 @@ content_hash: sha256:5c38c8dbe9356574f0385bba51e71fc0c955ba0b27d5685f2e5ea618723
 ## 约束与限制
 
 * 基于安全考虑，仅允许应用在前台时启动闪控窗，并且需要具有ohos.permission.FLOAT\_VIEW权限。
+* 应用需支持跨应用悬浮显示关键信息，如直播类应用的游戏直播、金融类应用的实时盯盘等场景可申请此权限。
 * 同一个应用只能启动一个闪控窗。在启动多个闪控窗时，会返回错误码1300033。
 * 同一个应用已启动闪控球或画中画窗口时，无法启动闪控窗，需先停止闪控球或画中画悬浮窗口。
 * 仅支持在Stage模型下使用闪控窗相关能力。
@@ -48,7 +49,7 @@ content_hash: sha256:5c38c8dbe9356574f0385bba51e71fc0c955ba0b27d5685f2e5ea618723
 
 ### 模板类型
 
-闪控窗支持的模板类型可见[FloatViewTemplateType](../harmonyos-references/js-apis-floatview.md#floatviewtemplatetype) ，不同模板类型效果可见闪控窗[视觉规格](../design-guides/floatview-0000002624640357.md#section910624871013) 。
+闪控窗支持的模板类型可见[FloatViewTemplateType](../harmonyos-references/js-apis-floatview.md#floatviewtemplatetype)，不同模板类型效果可见闪控窗[视觉规格](../design-guides/floatview-0000002624640357.md#section910624871013)。
 
 ## 前提条件
 
@@ -142,7 +143,7 @@ content_hash: sha256:5c38c8dbe9356574f0385bba51e71fc0c955ba0b27d5685f2e5ea618723
      console.info(TAG + 'Float view started in unbind state');
    }
    ```
-7. （可选）通过[onLimitsChange()](../harmonyos-references/js-apis-floatview.md#onlimitschange)监听闪控窗尺寸限制变化，动态调整窗口尺寸, 通过[onStateChange()](../harmonyos-references/js-apis-floatview.md#onstatechange)监听闪控窗状态变化，绑定状态变化回调。
+7. （可选）通过[onLimitsChange()](../harmonyos-references/js-apis-floatview.md#onlimitschange)监听闪控窗尺寸限制变化，动态调整窗口尺寸，通过[onStateChange()](../harmonyos-references/js-apis-floatview.md#onstatechange)监听闪控窗状态变化，绑定状态变化回调。
 
    ```typescript
    // 注册闪控窗尺寸限制变化回调函数
@@ -566,7 +567,7 @@ content_hash: sha256:5c38c8dbe9356574f0385bba51e71fc0c955ba0b27d5685f2e5ea618723
    ```
 4. 创建并启动闪控窗。
 
-   使用[floatView.create()](../harmonyos-references/js-apis-floatview.md#floatviewcreate)创建控制器，通过[setUIContext()](../harmonyos-references/js-apis-floatview.md#setuicontext)、[getFloatViewLimits()](../harmonyos-references/js-apis-floatview.md#floatviewlimits)、[setWindowSize()](../harmonyos-references/js-apis-floatview.md#setwindowsize)、[start()](../harmonyos-references/js-apis-floatview.md#start)完成页面内容设置与启动，并通过[onStateChange()](../harmonyos-references/js-apis-floatview.md#onstatechange)、[onRectChange()](../harmonyos-references/js-apis-floatview.md#onrectchange)、[onLimitsChange()](../harmonyos-references/js-apis-floatview.md#onlimitschange)注册状态与尺寸限制变化回调。
+   使用[floatView.create()](../harmonyos-references/js-apis-floatview.md#floatviewcreate)创建控制器，通过[setUIContext()](../harmonyos-references/js-apis-floatview.md#setuicontext)、[getFloatViewLimits()](../harmonyos-references/js-apis-floatview.md#floatviewgetfloatviewlimits)、[setWindowSize()](../harmonyos-references/js-apis-floatview.md#setwindowsize)、[start()](../harmonyos-references/js-apis-floatview.md#start)完成页面内容设置与启动，并通过[onStateChange()](../harmonyos-references/js-apis-floatview.md#onstatechange)、[onRectChange()](../harmonyos-references/js-apis-floatview.md#onrectchange)、[onLimitsChange()](../harmonyos-references/js-apis-floatview.md#onlimitschange)注册状态与尺寸限制变化回调。
 
    ```typescript
    // 启动闪控窗

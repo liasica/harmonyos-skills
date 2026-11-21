@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-cust
 title: customScan (自定义界面扫码)
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API > customScan (自定义界面扫码)
 category: harmonyos-references
-scraped_at: 2026-11-19T09:54:03+08:00
+scraped_at: 2026-11-21T09:16:19+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a85acd13d9c3007466b37e81c967f95dbd6e63058dc361c5405b6aeb9609b7cd
+content_hash: sha256:8c3f86bf2e7cb245c3b1ad60e11cdcd3ef98ea8e42b2da77e8923debd951ef3d
 ---
 
 ## 模块概述
@@ -58,7 +58,7 @@ await customScan.release();
 
 customScan模块的扫码全流程包含：初始化（init()）、启动相机流扫码（start()）、暂停相机流（stop()）、释放资源（release()），状态图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/t4pMt6dQTrW4YwkUwh8ijw/zh-cn_image_0000002820528153.png?HW-CC-KV=V1&HW-CC-Date=20261119T015401Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA197BC0BDACCF196B8CE6B7F6C688A17266FF922AD03A82807906CA02B65B6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/jsGHCEllQxWNpiYE4GKQFw/zh-cn_image_0000002821839793.png?HW-CC-KV=V1&HW-CC-Date=20261121T011618Z&HW-CC-Expire=31536000000&HW-CC-Sign=4652E9367CCBF5CA641EE3E052A5A1EFEBEC7505DD270D401C755FF0A1497E64)
 
 **状态说明**
 

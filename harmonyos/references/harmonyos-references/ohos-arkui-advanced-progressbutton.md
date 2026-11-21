@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ProgressButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ProgressButton
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:15+08:00
+scraped_at: 2026-11-21T09:14:17+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:694eea04282ed7f4bfeee875bce19c08400073f4ff59963dba0fe0d406add166
+content_hash: sha256:706a8ba86f9a1ef678165bd9c9c8e8152cb2c5b942d954ba208d2c81acfd907e
 ---
 
 文本下载按钮，可显示具体下载进度。
@@ -115,7 +115,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/5SLKj0nnSlGuqN0K7ndOew/zh-cn_image_0000002820407687.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEC174B014C94EA527259BCCCD369F706127317C7C1CCD0CAD24F56FAEEF0AEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Af8Z6JfQQyuLE6zWyRtK3w/zh-cn_image_0000002821759315.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011315Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B9DD9CFFB49E437883354AC8F63DFE79DAE4E11FDD5EA04E7836C58E9D9E265)
 
 ### 示例2（自定义颜色按钮）
 
@@ -178,7 +178,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/fAnY112LTamkSW5DSerIZQ/zh-cn_image_0000002791727706.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=13FC692BA864135B724EB6EF6E7FDD9CF45BB41F19A72DEEAC9D6B4A4BBE89C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/aEdXE6e9RqyxD-gTZ0Wf2A/zh-cn_image_0000002793039384.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011315Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0485A4547276DCB1F8733B9E9CE0E2F9A88BF78AF3AAE402CEBC30BF49CAF5B)
 
 ### 示例3（自定义圆角按钮）
 
@@ -235,4 +235,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/8BzVDNykSYWzo1oaz-gw1A/zh-cn_image_0000002791567734.gif?HW-CC-KV=V1&HW-CC-Date=20261119T015020Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F305F479C430A1FA2ED3C746A1BCCF6C610239B311BE38CF2533C579226631F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/S_wi2LSORcu6OJQ00_EV6w/zh-cn_image_0000002792879410.gif?HW-CC-KV=V1&HW-CC-Date=20261121T011315Z&HW-CC-Expire=31536000000&HW-CC-Sign=442A21B1BCE33B704342CC630BD475B0D8FE0C031462A63559617C3AE8E0F226)

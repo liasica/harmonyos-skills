@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: Notification Kit简介
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > Notification Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-19T09:49:06+08:00
+scraped_at: 2026-11-21T09:12:32+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:180cf91e351c01a52323b45c2a54fcdbc54f72cc1f870264c0a3cff1c5059b29
+content_hash: sha256:ee62450cb5d8558ba077a2b71f0af3bfc9a0e27bbe64bba208648348d92dfcb5
 ---
 
 Notification Kit（[用户通知服务](notification-glossary.md#notification-kit用户通知服务)）为开发者提供[本地通知](notification-glossary.md#local-notification本地通知)发布通道，开发者可借助Notification Kit将应用产生的通知直接在客户端本地推送给用户，本地通知根据通知类型及发布场景会产生对应的铃声、振动、横幅、锁屏、自动亮屏、状态栏图标和[通知中心](notification-glossary.md#notification-center通知中心)的显示。
@@ -27,11 +27,11 @@ Notification Kit支持的能力主要包括：
 * 查询应用自身通知开关状态。
 * 应用通知用户的能力默认关闭，开发者可拉起授权框，请求用户授权发布通知。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/xcL8gVKZS2CSBWDgZnHArQ/zh-cn_image_0000002820526479.png?HW-CC-KV=V1&HW-CC-Date=20261119T014906Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C84FB37E7FF215A2DB3DA8B287E7A410A198246056EDFA3CF064BD337FA4530)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zrHZeQ9xS7GvVVSmjmJQ3g/zh-cn_image_0000002793038150.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=95A67BD4E76952E7357779BA7ED71305C6226D954CD47EBBCADD5658FD2B296D)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/5H7cCX_3TiOm5lDF6m-YxQ/zh-cn_image_0000002820406479.png?HW-CC-KV=V1&HW-CC-Date=20261119T014906Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB1787434AC7C364972AB0D3F9454F34B5B0017FAA2EA670CBC1DBA83E9A4FB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/2CVYWhwZT52wJ4GKi-ItTQ/zh-cn_image_0000002792878180.png?HW-CC-KV=V1&HW-CC-Date=20261121T011232Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A6988F3FBE879D7F20F9ABCFC4F3748863CD8275622EF6565043310F991B2A9)
 
 使用Notification Kit的主要业务流程如下：
 

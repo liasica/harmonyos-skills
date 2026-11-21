@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Polyline
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Polyline
 category: harmonyos-references
-scraped_at: 2026-11-19T09:51:09+08:00
+scraped_at: 2026-11-21T09:14:13+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9d0837d5dda29df88abccd585e5d8abf9c620bf82c77afbd68d5f408c2d65f8a
+content_hash: sha256:ab18585efc96d766459802956ac216a2cf31703b523266b410e5b19e968123d4
 ---
 
 折线绘制组件。
@@ -137,7 +137,7 @@ struct PolylineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/1nnWmGFKTEyxuKsDLlqIJA/zh-cn_image_0000002791727570.png?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC520BD8182154F3878390DE821B1E6F443F58D956328830F59A0B8C0A8FAB99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/c69ijAUWQqKIYFedIk7dpg/zh-cn_image_0000002793039242.png?HW-CC-KV=V1&HW-CC-Date=20261121T011413Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B81FC8B717F914838D70A09A6479DD4591B0CA38AAA01A626154E7914B76CB6)
 
 ### 示例2（宽和高使用不同参数类型绘制折线）
 
@@ -171,7 +171,7 @@ struct PolylineTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/s-dskD-CRbqy_EIkMJGIDA/zh-cn_image_0000002791567598.png?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=754280D3847ED65F656E3B4D84E9389DCABD65D54AA3E146794E82828D3E5719)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/uVkZjECFSHKD1xvMlz5QAA/zh-cn_image_0000002792879270.png?HW-CC-KV=V1&HW-CC-Date=20261121T011413Z&HW-CC-Expire=31536000000&HW-CC-Sign=A10E13B9F4AEA4F7114596A890FDB139F28DDFA056FE7D6DD510FFDAE2D6A22F)
 
 ### 示例3（使用attributeModifier动态设置Polyline组件的属性）
 
@@ -214,4 +214,4 @@ struct PolylineModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/YQJ_V-pkSpyr1yaNzYGq4A/zh-cn_image_0000002820527551.png?HW-CC-KV=V1&HW-CC-Date=20261119T015014Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F8F8EB42ADA3B84C481CC9B00CCD405EA5B45DE9D3E716C652C03EEAF329673)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/VDrbvGjlRTSWfKQkJp_qqA/zh-cn_image_0000002821839177.png?HW-CC-KV=V1&HW-CC-Date=20261121T011413Z&HW-CC-Expire=31536000000&HW-CC-Sign=BED16812D4AF6B338574B14F4C8CA4D40BD5C967C72F4ECD0091B8640F25846F)
