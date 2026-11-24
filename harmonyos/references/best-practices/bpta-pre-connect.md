@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pre-connec
 title: 冷启网络预建链
 breadcrumb: 最佳实践 > 技术创新 > 通讯 > 冷启网络预建链
 category: best-practices
-scraped_at: 2026-11-14T08:54:04+08:00
+scraped_at: 2026-11-24T12:47:43+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:b03135c06939f87eb666c4f2d84dc84ddeb1ed32e1cf4346ee1e227b2ed25338
+content_hash: sha256:6b66fc9380365f54e20633669e8f194b6fc445d6047c79344988991cb5b476a5
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ content_hash: sha256:b03135c06939f87eb666c4f2d84dc84ddeb1ed32e1cf4346ee1e227b2ed
 
 使用预建链请求与未使用预建链请求时序对比图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/b1x__jZ-Q3SBvLJoaGASog/zh-cn_image_0000002594079346.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=78CFE5FEFE2D4839612E7592DF241563343047E1DA9BFB005F9577113B99E097 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/CcTb9UrISPGvPqy1wssDvw/zh-cn_image_0000002624518875.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=140C51E5EF32069FA31A156D2FAD3412B884D1C3DE1561692E0405590A74D0B5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/fZmdevULRE6LZRsxDeQR_w/zh-cn_image_0000002594079346.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF200D7ED861BC0AECEDD2088429BF2634B0BB4C21A484DA06198DA398DA07F0 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/skEl-TFWRs-569JXPooTNA/zh-cn_image_0000002624518875.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=D40EA48BB3E22BB600AD0ABF83E1534438942A281D6534DBA76686757C0AB292 "点击放大")
 
 ## 冷启动网络预热
 
@@ -66,7 +66,7 @@ try {
 
 在应用启动时，使用预建链请求与非预建链正常请求对比：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Ixi8AFSVRZqJDZH6G_xc2w/zh-cn_image_0000002594239264.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6393F4FDC36AAD7432A7349FC34C0B1A08D8C0FC98049EA238CB31A3FF34F71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/AP6TOtirQK6BhZE3P5z3Jw/zh-cn_image_0000002594239264.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=C71EE551919540BC81F3ED6D170487C42B83D91C4780C9967626CC4004E0F349)
 
 2.连接复用获取数据：当实际数据请求发起时，直接复用预建链阶段已建立的连接，跳过连接建立过程，实现向目标服务器动态预取数据，以优化资源加载。
 
@@ -95,7 +95,7 @@ try {
 
 从应用启动到发起请求获取数据内容，使用预建链技术与正常请求对比：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/yE5SRKx0QI-AjUVjvX6L5w/zh-cn_image_0000002624638731.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEC71A93B21B13B785BE834BBC0DA75575153F3A459FE2A1F307FBED75C16AC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/dNx_zKCaQfq7SxVAGuqW2Q/zh-cn_image_0000002624638731.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=E00DB846F7AF6CC760301BEF777F096FFF8AE50C12BCAE41B7F6ECA4E88BF7EF)
 
 ## 常见问题
 

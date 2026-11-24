@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 碰一碰链接分享
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 碰一碰链接分享
 category: best-practices
-scraped_at: 2026-11-14T08:54:04+08:00
+scraped_at: 2026-11-24T12:47:43+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:72e157e86f86341f8233a07fcd15a4903be81fafbcab5d392143dc4224e85f5b
+content_hash: sha256:7633fd1969f198b64c134165b675c757882a72ae2c9a1b878b8d40a65a8aa3a9
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:72e157e86f86341f8233a07fcd15a4903be81fafbcab5d392143dc4224e
 
 本文以视频分享场景为例，详细介绍碰一碰快速分享视频的原理与开发步骤。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/4/v3/gScImHKmSxCw2kz_tuo3hA/zh-cn_media_0000002306538056.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8348C371026FFFA1960BCD0242D7DA02FF9987BBCDFB8327828F70CF7AFEA44)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/6d/v3/UNBoWRX_SE2Vh-d98TOlEA/zh-cn_media_0000002306538056.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044742Z&HW-CC-Expire=31536000000&HW-CC-Sign=581078AB4C1B55E5317ED0B38812BEBD667B39D7E269879F694DA39B55A6348B)
 
 ## 典型场景
 
@@ -24,19 +24,19 @@ content_hash: sha256:72e157e86f86341f8233a07fcd15a4903be81fafbcab5d392143dc4224e
 
 系统直接拉起目标应用视频播放页面播放视频，无需经过浏览器中转，实现一键直达，极大提高便捷度和转化率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/QrUcwmWlSj23bwW6i3_C_Q/zh-cn_image_0000002307668620.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=8183C446745B3B9E62971571AB9605E87849791D3F32C6535017356E76814972 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Qp2DootXTZaegRfmn9pEhQ/zh-cn_image_0000002307668620.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044742Z&HW-CC-Expire=31536000000&HW-CC-Sign=159A7B33E2ABF03C0BEC1FC02BFE71255CBEBD308E376BD307FF3EA6A42B350A "点击放大")
 
 ### 场景二：目标应用未安装，已配置直达应用市场
 
 当对端未安装目标应用且开发者配置了直达应用市场功能时，将直接跳转到应用市场的应用详情页。安装完成后，首次打开应用将[通过延迟链接跳转至应用详情页](../harmonyos-guides/applinking-deferredlink.md)功能自动跳转到视频播放页面，无需用户重新搜索或操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/XXlaCHxOT3qSGqkgvC1whw/zh-cn_image_0000002340377337.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=80046B8EAE4B76B1DB90714A23FD53D48AD26CD1F1704F96E7C56B0270B923D4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/pahY4dPPRZeHM-PqSeuhvA/zh-cn_image_0000002340377337.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044742Z&HW-CC-Expire=31536000000&HW-CC-Sign=A493964A9526B9DD2ED32B03B531E7166880DD8AC18C07B77DEBC236A8A5FA59 "点击放大")
 
 ### 场景三：目标应用未安装，未配置直达应用市场（有Web页面）
 
 对端收到分享的视频链接之后，系统通过浏览器打开Web页面，用户可直接查看内容。在Web页面可提供“下载”按钮，引导用户安装应用获取更佳体验，安装后仍可通过[延迟链接](../harmonyos-guides/applinking-deferredlink.md)直达原内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/wsPIEV23TLiX5oJhcKBJaQ/zh-cn_image_0000002341667937.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=3068743D74267D7BD48C0544F0B6E5A97B2AEF84AC29A45CE5C629DCB5034654 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/CenHURm4QxSiZYG9JgN15Q/zh-cn_image_0000002341667937.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044742Z&HW-CC-Expire=31536000000&HW-CC-Sign=17B6A3DABA0A53514D12960F86D95E495A8D9B17FE7354591158549E4B0CC9F5 "点击放大")
 
 **说明** 
 
@@ -48,11 +48,11 @@ content_hash: sha256:72e157e86f86341f8233a07fcd15a4903be81fafbcab5d392143dc4224e
 
 碰一碰视频分享后对端跳转目标应用的流程图如下，对端无论是否安装视频应用，用户都能获得连贯流畅的体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/FUVdLiTZRzyVCNjwa4P_Ng/zh-cn_image_0000002306538072.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=78CF33933F5310607176D2A4742BD171951ECA5DE7BFC93A3D00B715B75F25F4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/EIXMd88SQJKvYaeMYgu4IQ/zh-cn_image_0000002306538072.png?HW-CC-KV=V1&HW-CC-Date=20261124T044742Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E318BB408AE2B9731C87205EA7FB8ED7E794AFE371C16D462C0A606FCDC416A "点击放大")
 
 碰一碰视频分享时序图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/lgo_4FHwROWQudIoNn3A1w/zh-cn_image_0000002306378348.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DF66FBB3B590D808A11F85BEA8FCB44A6E6BC2057803B58AFC77D3D4E7E6D59 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/kLn2hA9JSrOFle-NQpOw3A/zh-cn_image_0000002306378348.png?HW-CC-KV=V1&HW-CC-Date=20261124T044742Z&HW-CC-Expire=31536000000&HW-CC-Sign=23AF2E05D82AFE42E6E2F8D9C84E0A021932AD1C689D81248C416A6A1C4A6C72 "点击放大")
 
 **说明** 
 
@@ -362,7 +362,7 @@ export class ImageUtil {
 
 卡片效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/dEQY3ENvQrqESF5VKDZmVg/zh-cn_image_0000002340377341.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2B7CF0FF0522CB57ADB57C8A530F22C0E6D6E63F559D62CC09D5100696A2B52 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/L6kvEm48TzqNsHoskwCUUQ/zh-cn_image_0000002340377341.png?HW-CC-KV=V1&HW-CC-Date=20261124T044742Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2F4D685338B282DF81EDABC1C14DB6F9A003EC58C97EA4BE9A5E5AFF8304011 "点击放大")
 
 ### 对端跳转处理
 
@@ -496,11 +496,11 @@ export class ImageUtil {
 
    为提升用户未安装应用时的体验，可配置直达应用市场功能，引导用户下载安装应用，具体可参考：[通过直达应用市场能力跳转至应用市场下载详情页](../harmonyos-guides/applinking-direct-to-ag.md)。配置完成后，当对端收到源端分享的App Linking链接时，若设备未安装目标应用，系统将直接跳转至应用市场的应用详情页，支持一键下载安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/ZaUd_7OQQwWPgI3kdJCFzA/zh-cn_image_0000002340497529.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=E91C634ED3250B550EAF4BEFDD455416C2B30525C3DF3BD5E4C7CFED3F361986 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/kok0TxbOSsyw-wSJ2opjuw/zh-cn_image_0000002340497529.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044742Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8581BC17AD363375464D200F7E520B85DE72BD9A3FD021F4DDE0A26FDC1411C "点击放大")
 
    同时，需要实现[延迟链接](../harmonyos-guides/applinking-deferredlink.md)功能，确保安装后首次启动可直达内容。安装完应用之后，开发者可以在用户首次打开应用时，使用延迟链接，直接跳转到视频播放页面，这一流程不仅优化了用户体验，还有助于提升链接的转化率。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/0tLYU9AkTdahsVEriKszIg/zh-cn_image_0000002306538076.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=75B8327E12A28A1D1F0B33B24F4B3C46F28F623CE7C563F6587C420E1F1BE1DB "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/RTv92ZagReCs8TUU0zgmcQ/zh-cn_image_0000002306538076.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044742Z&HW-CC-Expire=31536000000&HW-CC-Sign=F59ADB50382195AA7991315819A19236B5DF514BF6762B2D70366C49A342D8C1 "点击放大")
 
    通过deferredLink.[popDeferredLink()](../harmonyos-references/applinking-deferredlink-api.md#popdeferredlink)接口获取原始App Linking链接，并根据解析该链接直接跳转至视频播放页面。
 
@@ -533,7 +533,7 @@ export class ImageUtil {
 
    当应用未安装且未配置直达应用市场时，系统会打开浏览器加载视频播放Web页面来播放视频，保证应用在未安装的情况下也能体验播放视频功能，特别是与[通过延迟链接跳转至应用详情页功能](../harmonyos-guides/applinking-deferredlink.md)结合使用，详细请参见[Web页面开发与部署（可选）](../harmonyos-guides/social-sharing-redirection.md#web页面开发与部署可选)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/yxXexOmzQ5C7sQt9Wf5NVw/zh-cn_image_0000002306378360.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=94421B7CE28E0EE4F33AFA4EDF53BC23ECAD51A95DE9287848AD8D7F18074490 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/6H0XbqBWQY2lfBsR7WIImw/zh-cn_image_0000002306378360.png?HW-CC-KV=V1&HW-CC-Date=20261124T044742Z&HW-CC-Expire=31536000000&HW-CC-Sign=380D4762FC6BE7273BFB74D5CB8AAFE183ED47E5F95B27304AE0468E82DB895D "点击放大")
 
 ## 常见问题
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-implement-
 title: 基于Canvas实现录像回放时间轴
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于Canvas实现录像回放时间轴
 category: best-practices
-scraped_at: 2026-11-14T08:54:12+08:00
+scraped_at: 2026-11-24T12:47:50+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:455cbb2f3fa6bee3e6fe173ac42c9eb1945193494f1fe98d1e744167d6db951a
+content_hash: sha256:f619d1fc61fbe604fdc149337a2ae874efc9ffc419c9dff18f299c9ee0fcda61
 ---
 
 ## **概述**
@@ -30,7 +30,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
 刻度线绘制主要将时间戳转换为Canvas像素坐标。例如，开发者自定义刻度间隔的宽度为intervalWidth（如intervalWidth = 10vp），相同长度的时间间隔对应10分钟，实现“固定时间对应固定像素”的精准映射，确保任意时间戳均能通过公式计算出唯一的画布坐标。
 
 **图1** 时间-像素映射示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ST9itLBpSvCiyB3lgnRzgw/zh-cn_image_0000002478758526.png?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBDA09CE83EF7A28D4A147E68466CB23333E8B8B35B14D3399B176EF1ABC1CD1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/gPxmQ1KrSGuwdhWA53Shtw/zh-cn_image_0000002478758526.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=5895EDFECD458D8D5362FDED814047482E830E9C63C69D61BA495C38962F45BB "点击放大")
 
 ### 开发流程
 
@@ -215,7 +215,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
    * 边界限制：设置最小（10vp）和最大（180vp）缩放阈值，避免过度缩放。
 
    **图2** 缩放时间轴示意图  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Am1GAi2sR--P9MDUDDn-3g/zh-cn_image_0000002478598550.png?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EDB19620E3021C9E1F38289FD39E38C144C7F65A6FCCB49F108ED0F3D0BEB18 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/7m3U2xLVTmOibYNFaQMTIA/zh-cn_image_0000002478598550.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B349C1EAE800DF0FADAB7617FCBDCB58FD858F22B537EC28D22C371527B84E9 "点击放大")
 
    ```screen
    // Update per-division width
@@ -305,7 +305,7 @@ TimeBarView时间轴与视频播放联动，滑动时间轴可快速定位至目
 滑动停止时，若时间轴中线对应的时间点在录像片段有效时间内，视频立即跳转并继续播放；若处于两端录像间的空白区域，系统自动跳转至最近的录像起始时间点，避免无画面时段，提高效率。时间轴滑动存在硬性边界限制，用户试图将时间轴向右滑动至所有录像片段的最末端（即最新一段录像的结束时间）时，将无法继续拖动，防止超出录像数据范围导致播放异常。
 
 **图3** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/GUuBAR9MRTagud65xx26CQ/zh-cn_image_0000002510798495.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=A379811D4653B5A53FD2CE89E98F87E080CC5469DB49F70EFA022A417FF29668 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/AWH83AmrSG6896XFRq8GCA/zh-cn_image_0000002510798495.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6418F30E0E40AEDD63CB34D1B629BA51F2334FF476D31D10F1C26246735CD1E "点击放大")
 
 ### 开发步骤
 

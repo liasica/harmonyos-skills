@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: DMA内存泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > DMA内存泄漏故障模式说明 > DMA内存泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-11-14T08:54:20+08:00
+scraped_at: 2026-11-24T12:47:57+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:a6100a1ce6c25eab7fc1602b9968247e558d198fc6667ff261310e96521bb239
+content_hash: sha256:9fc7e9a4a4b5d7e9100f89ba10d398d290b4a8f0b082b53abee61d36d14e9ab5
 ---
 
 ## 概述
@@ -182,7 +182,7 @@ com.example.dfx_test  28812   	67      	130965504	7899    	28812   	xample.dfx_t
 5. 找到异常申请的内存及其调用栈，如下图5、6处框选的内容。这里建议将Bytes从大到小排序，按照申请大小顺序排查内存调用栈，分析可疑的内存泄漏点。
 6. 结合调用栈对代码进行分析，找到泄漏根因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ERAWa3n2Q9SHgoVfIb96Cg/zh-cn_image_0000002729491141.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD57B670507C5D4F0841015AD2476CBFB81A41A512360B734843C26CC2D1A808 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/4z0UH4EiTGyKoSxKBx2ULg/zh-cn_image_0000002729491141.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2805E0199B0CB2001C938BFA8C8FD54098DAF9E0987A739ABBD8CC90E3F5879 "点击放大")
 
 ## 开发态问题分析方法
 
@@ -258,12 +258,12 @@ hidumper命令行工具更多用于实时观察应用的内存占用和DMA内存
 
 开发者在调试过程中，如果遇到应用闪退或者后台冷启问题，可以在DevEco Studio中找到日志组件如下图1处，再选择应用终止如下图2处，单击3选择应用进程名，筛选出调试应用的历史退出原因，如果原因为“ResourceLeak(IonLeak)”如下图4所示，说明应用在调试过程中发生了DMA内存泄漏故障。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Gp-O4WxyRLGO_l8mko4uYw/zh-cn_image_0000002729611101.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF0B71E093DCADA325CE72F67B31671377F7115E0AA7A7A5015B834563476653 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/XCqxz4IoSv-7FB7rski1Kw/zh-cn_image_0000002729611101.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC337EF5AE9B4B30D19ED7881AFD26F7DBE818E370FF057C0A6C6DC60C0556D9 "点击放大")
 
 确认问题为DMA内存泄漏后，推荐开发者使用DevEco Studio的Profiler工具中的Allocation功能进行分析，使用方法可参考[基础内存：Allocation分析](../harmonyos-guides/ide-insight-session-allocations.md)。具体分析步骤如下：
 
 1. 启动录制前先在Allocation的配置页中执行如下图所示的准备工作：单击下图1处录制设置按钮，单击下图2处打开JS栈记录开关，单击下图3处打开异步回栈开关。由于NativeHeap的Malloc频率非常高，可以单击取消勾选4处的Malloc复选框，不抓取应用Malloc内存分配栈，减少对DMA内存分析的影响。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/4oBfCCi3T2y7GcbWv8oURw/zh-cn_image_0000002699891774.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA246C02C71CE3C91C6B030F63C592FCEEB5A3B24797FC75BCC7FFACC31AD404 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/9B2p8hxrS6yJromK-GbuoQ/zh-cn_image_0000002699891774.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B512D728DD8FC39C3BE6A7D0E8E733C7F62AF98ECFE2818803FE1BEB71A4B67 "点击放大")
 2. 启动抓取后，可做正常的用户操作，遍历可疑的泄漏场景。
 3. 抓取完成后，结合[内存栈日志分析方法](bpta-stability-dmaleak-fault-mode-overreview.md#section94641340515)定位内存泄漏点。

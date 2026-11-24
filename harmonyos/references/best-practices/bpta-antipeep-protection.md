@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-antipeep-p
 title: 防窥保护
 breadcrumb: 最佳实践 > 技术创新 > 安全 > 防窥保护
 category: best-practices
-scraped_at: 2026-11-14T08:54:03+08:00
+scraped_at: 2026-11-24T12:47:41+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:9e962e6bd72c4aed32d4ad030c271e672f830141fac2932ec3cf11fe798ea397
+content_hash: sha256:e647fbecb55838bc9eab9faa62d552aa82c85719371e570a4335934cd33672f0
 ---
 
 ## 概述
@@ -28,13 +28,13 @@ HarmonyOS自发布以来持续深化安全与隐私能力体系建设：从早�
 
 1. 金融类应用汇集了大量的财务敏感信息——账户余额、收益曲线、持仓明细，每一项都是不希望被他人知晓的隐私数据。在地铁、咖啡厅等人流密集的公共场所，用户往往无暇顾及身旁是否有人窥视屏幕。接入dlpAntiPeep能力后，应用可在检测到窥视的瞬间自动将敏感数字替换为 \*\*\*\*，并可选触发系统级防窥蒙层，让用户在任何环境下都能放心查看财务信息，效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/FeIZ51s4TRSPTgkn-TWX_Q/zh-cn_image_0000002624454639.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005119Z&HW-CC-Expire=31536000000&HW-CC-Sign=9500383084271D62BA6E0EB35491E271F2D33E9E72FA7256DB8DF7F6F3D81D82 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/zlD6DRHXS5OneQUcjESqbA/zh-cn_image_0000002624454639.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044740Z&HW-CC-Expire=31536000000&HW-CC-Sign=4460BDEE0A43889570BEE8A42EA7380778EE19BE0337787A7160A39C93039061 "点击放大")
 2. 短视频内容往往折射出用户的个人偏好、生活习惯乃至私密时刻，这些信息在公共场所被他人看到，会带来不同程度的隐私不适感。接入dlpAntiPeep能力后，应用可在检测到窥视时暂停定制化推送内容的展示，或对关注列表进行模糊隐藏，待窥视解除后自动恢复，在不打断用户使用节奏的前提下，为内容浏览筑起一道隐形屏障，效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/dLfw95YIQ4agY0sUAKjjcw/zh-cn_image_0000002594175038.png?HW-CC-KV=V1&HW-CC-Date=20261114T005119Z&HW-CC-Expire=31536000000&HW-CC-Sign=274CB72AA12A6A280FEA8E1E9F494B2775E9E6F53CD38A9E0A65F61A8F355CF2 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/wjoom5kWR3i5ooSdQ1Yfbg/zh-cn_image_0000002594175038.png?HW-CC-KV=V1&HW-CC-Date=20261124T044740Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AF1070EA12898A72D2F58072074A3022486E08606B6A3C9528F0E0A5D0BEDEB "点击放大")
 3. 即时通讯是隐私敏感度最高的应用场景之一——消息列表中的联系人姓名、消息预览，聊天详情中的情感交流、商业沟通，任何一条信息被旁观者读取都可能造成难以挽回的隐私损失。接入dlpAntiPeep能力后，应用可在检测到窥视时将消息内容隐藏或替换为自定义不敏感内容，确保私密对话只属于对话双方，效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/IP_v-7xFRvmpkLx0UsdeXA/zh-cn_image_0000002624574493.png?HW-CC-KV=V1&HW-CC-Date=20261114T005119Z&HW-CC-Expire=31536000000&HW-CC-Sign=13DE70D18308B9DA16092329321B6B689ED3CD053A694631D6642CCB87321957 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/ZYfsz46BRdq3Mkq5DeqNiA/zh-cn_image_0000002624574493.png?HW-CC-KV=V1&HW-CC-Date=20261124T044740Z&HW-CC-Expire=31536000000&HW-CC-Sign=7474E39CA8C695635EFA7B96663244098B25D357C3BE11E8FA8BF7A4620C1370 "点击放大")
 
 ## 案例实现
 
@@ -46,7 +46,7 @@ dlpAntiPeep能力属于[Device Security Kit（设备安全服务）](../harmonyo
 
 整体实现流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/pukcv8WUQFqTOuzWPhPTGQ/zh-cn_image_0000002594015116.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005119Z&HW-CC-Expire=31536000000&HW-CC-Sign=B60DC2A92986A7BB58F3339BF47F3DB336F750098A59E5A4B0C298181AC02613 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/eGIRINzLTFGOUqwbaawRsw/zh-cn_image_0000002594015116.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044740Z&HW-CC-Expire=31536000000&HW-CC-Sign=88474854ED849BA8B60B60B4F35A04FCE985637A469D58626B601FA77009688D "点击放大")
 
 ## 开发前置条件
 

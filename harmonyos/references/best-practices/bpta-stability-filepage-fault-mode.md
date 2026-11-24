@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 文件映射过大导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > RSS内存泄漏故障模式说明 > 文件映射过大导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-14T08:54:19+08:00
+scraped_at: 2026-11-24T12:47:57+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:92504bcd7bb94bc63b24ee0a0339b7e134c860b1f3c1b60ccffc8ac614b653fa
+content_hash: sha256:c332c22fa380bcf0412142be6f66138bbe72203208ddfbb00ce58fb4f288c136
 ---
 
 ## 概述
@@ -76,10 +76,10 @@ content_hash: sha256:92504bcd7bb94bc63b24ee0a0339b7e134c860b1f3c1b60ccffc8ac614b
 4. 根据上述信息可初步定界当前RSS内存泄漏故障为文件映射-HAP包过大。
 5. 参考[内存栈日志获取方法](bpta-stability-rssleak-fault-mode-overreview.md#section18531162841113)获取内存栈日志后，将日志导入DevEco Studio，参考[内存栈日志分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section94641340515)选中All Anonymous VM泳道，按照Bytes从大到小排序找到异常申请的内存及其调用栈，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ar0fmgrNTmSp7lB9_qDELQ/zh-cn_image_0000002729611089.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD6C8328305417197B0D7F435959BA871FCA6796E184AABC8E4BE9AA82B2855F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/_6MBp4m8QqGah1kav_HvzQ/zh-cn_image_0000002729611089.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=7858D91FD4926BD42B749EACFAA08B0ECFE02821191994152BE416A490214898 "点击放大")
 6. 分析内存调用栈指向的代码段，发现应用在CreateMultipleSmallMappingsLeak()函数中反复mmap()映射，且未解映射。内存调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/pIF8Q1obR8GMvFTKNUiQQg/zh-cn_image_0000002699891762.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=A16D35D89C1FCDB5C55602A9F4BFA67F77DE67E3288E69ECD86AE985F6E5F196 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/pp7k1MGQQLuuAzAWBcqFmg/zh-cn_image_0000002699891762.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AAF95149C6B0991DEDD1C1B0C1EB9970FF1293E463B5B6034645934117A7ED2 "点击放大")
 
 **开发态分析思路**
 
@@ -88,10 +88,10 @@ content_hash: sha256:92504bcd7bb94bc63b24ee0a0339b7e134c860b1f3c1b60ccffc8ac614b
 1. 启动录制后，遍历可疑的泄漏场景以复现RSS内存泄漏问题。
 2. 单击下图1处选择All Anonymous VM泳道，单击下图2处Call Trees查看内存申请调用栈，找到异常增长内存点及其申请调用栈如下图3处所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/_3W38qXiQPeKbiE8_8psnQ/zh-cn_image_0000002699731876.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=E35129440A92011E2FE55502C5ED592F24299B932E771999BA53107EC6F5A78F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/dwOTa0hlR3yTA1gG9YcN1A/zh-cn_image_0000002699731876.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=8640904C0B1B282AB707273AD24260728F255337E2BFD9B6C78DCAB8356C8948 "点击放大")
 3. 分析内存调用栈指向的代码段，发现应用在CreateMultipleSmallMappingsLeak()函数中反复mmap()映射，且未解映射。内存调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/BF8NObmeREOUZBwme64XwQ/zh-cn_image_0000002729491131.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=72F964F28524E58C609335C5B9344843A5AADA8A99B8B5B2369C77E44DE0BC9E "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/tb26KYBqRmWFKMZ9QRpLrA/zh-cn_image_0000002729491131.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F39694BD4F528FCC40C0F4C6E8615FF3B6B84BD420FA3E1714B781126BEDE32 "点击放大")
 
 **修复建议**
 

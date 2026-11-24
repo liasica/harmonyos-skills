@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-distribute
 title: 跨设备拖拽
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 跨设备拖拽
 category: best-practices
-scraped_at: 2026-11-14T08:54:04+08:00
+scraped_at: 2026-11-24T12:47:42+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:11b4e9e8057162ad739a009d602a87835903336117094e15a50f26cd212ea0f4
+content_hash: sha256:ed3c532463c54a82a757d7c6420ebc94e7ecc403f8d6ff38b40c040fe23a411e
 ---
 
 跨端拖拽提供跨设备的键鼠共享能力，支持在平板或电脑类型的任意两台设备之间拖拽文本、图片、视频、PDF文档等文件。
@@ -19,11 +19,11 @@ content_hash: sha256:11b4e9e8057162ad739a009d602a87835903336117094e15a50f26cd212
 
 开发者可以根据实际需求，实现组件的拖入或拖出，即可接入跨设备拖拽。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/QcpOdIWLSN2vEfZZnPgJ5A/zh-cn_image_0000002593676861.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005403Z&HW-CC-Expire=31536000000&HW-CC-Sign=63C2C0A6F20F66F89DA347EACF5F6E4C1950470045CC97964F39CDA3706EA401 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/gjVSTpecQjKkwDdlonTEMA/zh-cn_image_0000002593676861.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B2029DD3539E23C3FD4791F9FEFFF27D71A42426A11EEAB5F5E955525A24ACA "点击放大")
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/-xE69Xm7Qr-P26Mp1MXTKg/zh-cn_image_0000002563037188.png?HW-CC-KV=V1&HW-CC-Date=20261114T005403Z&HW-CC-Expire=31536000000&HW-CC-Sign=64D0DA579C7645CD9CB768EB6BE31F2EC47E6C24F8CA8A2F336339F205BF81F2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/-UxOO5BjT-C1FfDwjFZHOw/zh-cn_image_0000002563037188.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAA8A4FFC8804A78C3AE4379159E56779E496165A9B24AED3C00D0D6AC7C5DE6 "点击放大")
 
 1. 用户使用鼠标点击组件，触发拖拽事件。
 2. 应用设置拖拽数据。

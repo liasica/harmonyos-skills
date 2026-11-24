@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-c
 title: 基于PixelMap与Canvas实现图片编辑
 breadcrumb: 最佳实践 > 行业场景解决方案 > 拍摄美化 > 基于PixelMap与Canvas实现图片编辑
 category: best-practices
-scraped_at: 2026-11-14T08:54:12+08:00
+scraped_at: 2026-11-24T12:47:51+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:f25fa2045a8034189cc29bcfc80da654279ef49b081f3d5fa797edb63abec1d8
+content_hash: sha256:831e45c48f363717891a16df040f0d8e7d0ffee6444003b5d7749bb508224d13
 ---
 
 ## 概述
@@ -46,7 +46,7 @@ content_hash: sha256:f25fa2045a8034189cc29bcfc80da654279ef49b081f3d5fa797edb63ab
 
 获取图片信息展示在页面中。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/U5-Q1EJGRBWIoAVenC-LIg/zh-cn_image_0000002701055813.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0D66A5F04E0BACA57D69BBEF5316C44F3438166F92EF881F8F6E62CAB3991F2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/i8zFyXwORfact4pmQQHd3w/zh-cn_image_0000002701055813.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE1A42333AB4B1491C38FCC5768932A2C6E12297D50F63AA678C052963E37232 "点击放大")
 
 ### 实现原理
 
@@ -62,7 +62,7 @@ content_hash: sha256:f25fa2045a8034189cc29bcfc80da654279ef49b081f3d5fa797edb63ab
 
 将图片按照1:1、4:3或16:9进行裁剪。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/GYWnC1zCTTqACDmPbFHd1A/zh-cn_image_0000002671336004.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8308ED26E32EB0E5F79E20E61EF3574C6D5466494956F47236C30EB1705367F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/rPAV72gOTB-n6nZVhQwLNg/zh-cn_image_0000002671336004.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=967F0516190876DA5D3F9EEDF7359AB1999ECCD2E695BAF987BE3B732CAC9E68 "点击放大")
 
 ### 实现原理
 
@@ -78,7 +78,7 @@ content_hash: sha256:f25fa2045a8034189cc29bcfc80da654279ef49b081f3d5fa797edb63ab
 
 通过滑动[Slider](../doccenter-references/api/ts-basic-components-slider.md)，在横向/纵向调节图片位置。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/8iMul7oyScG1saE0AHOGLA/zh-cn_image_0000002671176148.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=9896C939F3D38DB568F0B53899E2921E9440197473D4934B28935FD455F54293 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/oeHvsEE3RVixDzNr5l9Bew/zh-cn_image_0000002671176148.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBDF98F16CE1A34E387162835352392387536004C7A405BD62888709099A1AA3 "点击放大")
 
 ### 实现原理
 
@@ -166,7 +166,7 @@ content_hash: sha256:f25fa2045a8034189cc29bcfc80da654279ef49b081f3d5fa797edb63ab
 
 点击图片旋转按钮，改变图片显示方向。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/t8qVUxX3QqGbsgzqYNVmQw/zh-cn_image_0000002701095735.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=E87B3573110C0C055831DDB545C618EA5D46D58C7CFD04C529F252AC0ADB6AC1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/1Oy5aO2GRfmyReXrTw4u1w/zh-cn_image_0000002701095735.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5B0A7DDE06251C57DAE86792793D399182D28A3159722972C06A54DCC9BE53E "点击放大")
 
 ### 实现原理
 
@@ -346,7 +346,7 @@ content_hash: sha256:f25fa2045a8034189cc29bcfc80da654279ef49b081f3d5fa797edb63ab
 
 点击镜像翻转按钮，使图片进行水平翻转。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/DC_w5wuWQyiSWtlKr7r09w/zh-cn_image_0000002701055815.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FA68B550C1CBB86431CCA4D2BF4E4A2D1D69B5DAEDF6576C3C639D9EDB70DFA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/bkxFWLoYSzyX6ry0qHOdDQ/zh-cn_image_0000002701055815.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=8230378DCFF6DA25B04AE8BDB2020DD98E57E08F9535F6403BAC378C2025B650 "点击放大")
 
 ### 实现原理
 
@@ -389,7 +389,7 @@ content_hash: sha256:f25fa2045a8034189cc29bcfc80da654279ef49b081f3d5fa797edb63ab
 
 滑动Slider，图片按照比例进行缩小或放大。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Ebs7q-vnTPqe3kU6zdz3uQ/zh-cn_image_0000002671336006.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=09414F82D0E8C64634D4796662DB5BB5046037BFEC17172E9E944685071BE7AD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/hN9fWxgDSwmhg0mZrig_jA/zh-cn_image_0000002671336006.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=A217E1674BE506EF438BE57FB4D097C88D1981DE4783981ABE1F47BD5BDDDBEB "点击放大")
 
 ### 实现原理
 
@@ -473,7 +473,7 @@ content_hash: sha256:f25fa2045a8034189cc29bcfc80da654279ef49b081f3d5fa797edb63ab
 
 滑动Slider，调节图片显示亮度。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/TK8BOZdiT5WEQHlkLvvS6g/zh-cn_image_0000002671176158.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DC17FF83732264E9191A75CE12B34A31B883D502B73261324975A849668FA04 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/KGhsg8k0TAOl4qtPBBl7og/zh-cn_image_0000002671176158.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=A04D02A5F50900FF8CC5244A2755B5F7D573FD6D7890032CC6F9EC5BD0AF919E "点击放大")
 
 ### 实现原理
 
@@ -619,7 +619,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 滑动Slider，调节图片透明度。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/XKHNWiAmR7iHd0rP6sCwnQ/zh-cn_image_0000002701095807.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABA858E2B3CE25C1F11B8A598BEFB22E4E1AD1C5159C1B0C9DA1F629E477B3B8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/IUJ8dKTPS_-Iy6HyAz1eeQ/zh-cn_image_0000002701095807.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=7414FCDF3820496C5833C75AD436489270820A18DFEDBDE7D86C51AE2D33129F "点击放大")
 
 ### 实现原理
 
@@ -635,7 +635,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 滑动Slider，调节图片饱和度。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/pp3RnYW9RKKQlpWP9-exaA/zh-cn_image_0000002701055983.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=85A817EFB53CDA750E3FE68EB5D9D0D7ED2776A008F418A91E2A32725EEF3AF3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/1Hl6lYr5QxeTYv50zh-Bdg/zh-cn_image_0000002701055983.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=5347FCBA3C88E2DE7C8AD839B2294955AC5CCEF87D9F168721087D75DB50F31B "点击放大")
 
 ### 实现原理
 
@@ -745,7 +745,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 选中黑白滤镜，图片显示黑白效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/VHRuIwCoT020PvKjpVoMtw/zh-cn_image_0000002671336186.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA919E71DB5A3FA0028A95DE53368284BD6C0390CCE9364008FAF926D60F2797 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/IVTNqQZ6SCOkj7Tho2lvUw/zh-cn_image_0000002671336186.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC7385077AD96525E6E1CA4F02B9166F47BBA9620DD5C385B679612398A0C664 "点击放大")
 
 ### 实现原理
 
@@ -814,7 +814,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 选中高亮滤镜，图片显示高亮效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/LQzMoid6QsSXE0jzwp8AKQ/zh-cn_image_0000002671176350.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=F796891BD2C0625A25691AF89A512F1CAC9A226542F7628351DA0F27075E59B1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/1Id5BGPQTlePhHS3Un3gKw/zh-cn_image_0000002671176350.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=87B54A747BEF83E1C0804A5B2F6354784B6CA70D30A9571D71618309B497EAE0 "点击放大")
 
 ### 实现原理
 
@@ -830,7 +830,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 选中反转滤镜，图片显示反转效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/3l3v8e9BSkmvE6-6H83uKA/zh-cn_image_0000002701095969.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1E1C6DBA118E218560F651B1DC7873E31CADB29097EC2F90ADB13D3ED9B7538 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/gkikGjsYQCq5evhcthTM3g/zh-cn_image_0000002701095969.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=A243310370B15715C337F3225F3331E2050CE1098238F851CF16071BD884912A "点击放大")
 
 ### 实现原理
 
@@ -846,7 +846,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 选中模糊滤镜，图片显示模糊效果。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/P3b4STvVTue04nIcD3c3-A/zh-cn_image_0000002701056087.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7D9BF678EAD48F15AA52C6F9276477BE318508E814B8B6DD4E35B588F254529 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/QIU_mVlESwiQdefZ7apZXQ/zh-cn_image_0000002701056087.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC9219D8FEF76FD57AFBF79C860188C59BD888797041AD0A83F41CBD6984B0A7 "点击放大")
 
 ### 实现原理
 
@@ -862,7 +862,7 @@ B\_new = B\_original \* factorfactor = 当前调节值 / 100
 
 点击水印编辑，在弹窗中输入水印内容为图片添加水印，同时可以调整水印的位置、大小、透明度、旋转角度、选择是否重复等。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/FBJNpp16RBiUmwAk7sYE9w/zh-cn_image_0000002671336272.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DF28FC15CB2EBA20812F039C5A252B231640B003FBBC736E8E01FCD46934F34 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/EkJO4E_oR0qX0WvEJKhtJw/zh-cn_image_0000002671336272.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BA204212AD3AA887A4C083FD0627B51F607780CB7AAC25D9B83E838E625A864 "点击放大")
 
 ### 实现原理
 

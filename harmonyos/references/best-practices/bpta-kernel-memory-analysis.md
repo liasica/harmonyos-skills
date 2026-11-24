@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-kernel-mem
 title: 分析内核态内存
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 分析内存占用问题 > 分析内核态内存
 category: best-practices
-scraped_at: 2026-11-14T08:54:13+08:00
+scraped_at: 2026-11-24T12:47:51+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:99d855ecfa4b1db54efbab34248f2ef0aab7e9698a222115fccec1e1704bbd14
+content_hash: sha256:84ae4fc56353573681541c4dff9d650728c4a948173cad4aa2d6ccd485b93399
 ---
 
 **DevEco 工具堆内存抓栈功能说明**
@@ -18,16 +18,16 @@ DevEco Studio Profiler插件Allocation模板可以帮助用户分析堆内存分
 2. 点击Allocation选项。
 3. 点击Create Session创建录制会话。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/0n6uGyNCSw6_LI6J5XjgKQ/zh-cn_image_0000002370565340.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F6ABFC5DBF7255E149BB4EDE1AA036EC4A04A3A6123603D3B8A1C5B6DA69F0E "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/dkJ-ZNApQ76RGnVGyBAfZA/zh-cn_image_0000002370565340.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=16EF0C13E21FB0D4221D5B634A2769949081133DD790FC7D1B905C9D6FA282CE "点击放大")
 4. 在筛选中勾选Memory。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/sT-Rlh3zSBCRQYpkB2l8Wg/zh-cn_image_0000002404125005.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=906FCEC7D8664520990CE2F027CFCC43475351A3B4DEB3A25ED3833ADD95EECF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/paAMiYRbQ7WTLqjuAAUvEA/zh-cn_image_0000002404125005.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=21AF65173CA224C723B0365C331557D7B142826DC5F8B5F4046DB8BC2A37940C)
 5. 点击按钮开始抓栈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/qrq0AzStSFqk-YV5SKKWmQ/zh-cn_image_0000002370405452.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACFB08266EBEFFA7D39BF117F72519900C05C5BE48131D2BA57E4E7EC8C46D84)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/5XFMT9f0SX6FT6wWWHcM4w/zh-cn_image_0000002370405452.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=98EF09FD705DEBAE9622AAC5793AFF5123AADDAF2FF1E8BC8FA094ACA251C80F)
 6. 录制完成后点击录制的结果，分析Memory中各内存的增长趋势。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/N_6ti6_GQteyT-tPY9IL-g/zh-cn_image_0000002404045177.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3AC8790F6196425DD40A544FDD4814BAEF34388D6DA42F5A16371025F9A3383 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ztd6ouCWTtSQJdCabvmslg/zh-cn_image_0000002404045177.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D88262E94408F3FFEB1E2B3DAF1E84F01BBE4BF2394C60731BE15AD976CF913 "点击放大")
 
 ## 内存类型说明
 

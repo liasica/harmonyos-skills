@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audiobook
 title: 听书解决方案
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 听书解决方案
 category: best-practices
-scraped_at: 2026-11-14T08:54:12+08:00
+scraped_at: 2026-11-24T12:47:50+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:0ac1e8945c89f71e2df414e4baf51911db54c6d785352655532d1aa05ccde20a
+content_hash: sha256:38d31ec3aa049f40a1c4f42fa96a00041494a354d1252a7066f8c53952d24166
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:0ac1e8945c89f71e2df414e4baf51911db54c6d785352655532d1aa05cc
 
 应用采用分层架构设计，分为三层：UI层、业务逻辑层、原生播放层，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/tCIvHE_gRtS37fS43f-bcg/zh-cn_image_0000002723216979.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE2D9CE107FAB8DA6543BD02D459DA439A7D22424F7E7C78DEAEEBEAD05C162A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/iefGyFLUSVWPRnf1vODcdg/zh-cn_image_0000002723216979.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF01E40E3696DF6867BD7C62D945F4707FBE85AE09E3FD6FC3E95A0E64CF740C "点击放大")
 
 **UI层**：负责界面展示和用户交互，包括播放器页面、章节列表、歌词显示、控制按钮等组件。
 
@@ -37,7 +37,7 @@ content_hash: sha256:0ac1e8945c89f71e2df414e4baf51911db54c6d785352655532d1aa05cc
 
 音频播放是听书场景的基础功能，支持播放控制、进度拖拽跳转、设置倍速等操作，播放效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/2_3sq181Sh-64WkQNHlIHQ/zh-cn_image_0000002723336889.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB6C00577F8CD4C6BD205F43C6CAC55253D74C8E528BEEA60456AC7D36CA7D45 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/q-zMz4pcTYelNnKfssSpVg/zh-cn_image_0000002723336889.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB7A44AB881FAA102743928B8184433FD6518BFB78C912ED7690768110E3CE05 "点击放大")
 
 ### 实现原理
 
@@ -221,7 +221,7 @@ void OHAudioPlayer::ReleasePlayer() {
 
 在音频跳转时，需要同步刷新内容页面，使页面的内容与音频播放的内容保持一致，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/BC-8rRhBTH-fahVFO7xZzw/zh-cn_image_0000002693697414.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=24F5CFF395CD28E343466DB132BA138F198E192BE9B3CE176468A15D991FC4A9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/t_9fP1pjSDK7Ev0yCX-Vxg/zh-cn_image_0000002693697414.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=11E3E87262F1FB763DF731D33C0DA6B14B538A5803B8C2AB84A0859DD827E435 "点击放大")
 
 ### 实现原理
 
@@ -960,7 +960,7 @@ public async stopCasting(): Promise<void> {
 
 用户在应用内播放后，上滑结束应用进程，再进入播控中心，点击播放键正常拉起应用播放。冷启动效果如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/UpW-p0GISryahIN_p-nutA/zh-cn_image_0000002693537546.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D4324540B5C53953432AE55C27AF65B121CFAB603133C7887AC3E4EC1A17A5B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/EnxMyJCtTb69dDI9S5hXQg/zh-cn_image_0000002693537546.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=81F01F0CC38DF15CD1CF10601250CCD4D4712F02B2216D28F0D093484088D26D "点击放大")
 
 ### 实现原理
 

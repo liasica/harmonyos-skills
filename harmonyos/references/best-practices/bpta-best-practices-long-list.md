@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-best-pract
 title: 长列表加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 长列表加载丢帧优化
 category: best-practices
-scraped_at: 2026-11-14T08:54:15+08:00
+scraped_at: 2026-11-24T12:47:53+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:fbe17b1e5c026a6ff0096be90a27acc6e5d7e9a82bd007731d1d93643a45138a
+content_hash: sha256:98414b86c23dde52244fd915997ebf3e33118eab6d786bed9bb0ace1afef14d1
 ---
 
 ## 概述
@@ -31,10 +31,10 @@ content_hash: sha256:fbe17b1e5c026a6ff0096be90a27acc6e5d7e9a82bd007731d1d93643a4
 测试表明，使用LazyForEach懒加载技术后，与ForEach加载方式相比，在列表数据量较小（100条以内）且数据一次性全量加载不是性能瓶颈时，两者各项性能指标差异不大。但当列表数据量达到10000条时，ForEach的各项性能指标显著劣化，滑动会出现明显卡顿，甚至可能导致应用崩溃；而LazyForEach通过懒加载、缓存列表项和组件复用等技术，能够明显减少首屏完全显示所需时间，降低应用的独占内存，提高页面滑动帧率，从而带来更好的性能。具体对比效果如下所示：
 
 **图1** 10000条数据量下ForEach和LazyForEach最佳实践启动对比   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/uxyvf9miQEWz7PIIDAdrKQ/zh-cn_image_0000002229450381.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=452EF55788980FF64862F58EE0B365EAAB15BBCD13DF196A1F5131537D414064 "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/ag8KUrLWQTikHzvHjrSsZg/zh-cn_image_0000002229450381.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=04C7E49C614D239258B80E53C48C857B8648FA13302944BCB706A7B274295497 "点击放大")
 
 **图2** 10000条数据量下ForEach和LazyForEach最佳实践滑动对比   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/FXXcqPyGR3GHnkenrH7Ryg/zh-cn_image_0000002229335845.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EE5EF2F6BB8FE433F871ED2C54B8D52B23DAA117331FFEA29947F709A3CA863 "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/DqnFLO2-SUSxkfFJacnLnw/zh-cn_image_0000002229335845.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=690933CEF5B9C315B3E93A75A7BBC2286EBD863D4103FE759E05D884AD960143 "点击放大")
 
 ## 懒加载
 
@@ -91,7 +91,7 @@ ForEach循环渲染的过程：
 其数据加载、组件树挂载和页面渲染的示意图如下所示：
 
 **图3** ForEach渲染过程示意图   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/EjgdGO5-RgCwruuKGX8BLQ/zh-cn_image_0000002229335841.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C82666B624E04EEB263E93FFB08BC3BFECAF74A9A36F9B6E5E80B8261834E9B "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Ffw52--fQ12YaPzg1GNHwQ/zh-cn_image_0000002229335841.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=49DA9261EA9231830D046659A75B8CCBA600991FE62539CDEC7DFF4B4F4FDC6F "点击放大")
 
 当列表数据量不大，一次性全量加载不会成为性能瓶颈时，可以直接使用ForEach。然而，当数据量较大且组件结构复杂时，ForEach会出现性能瓶颈。这是因为需要一次性加载所有列表数据，创建所有组件节点并完成组件树的构建，这在数据量大时会非常耗时，导致页面启动时间过长。此外，屏幕可视区外的组件虽然不会显示，但仍然会占用内存。在系统负载较高时，更容易出现性能问题，极端情况下可能导致应用异常退出。
 
@@ -109,7 +109,7 @@ LazyForEach懒加载的原理及渲染过程如下：
 
 **图4** LazyForEach渲染过程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/bOgTR_vdQKG8B09Hv-YEjg/zh-cn_image_0000002229335869.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6F8586B603FAEC9DE6A90AAE925C8D045FC2E7A8638DA29867BD2820E450879 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/AT0-BMIWT5i6_IuU9eucBw/zh-cn_image_0000002229335869.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=D04DE273BEC5CD11DD0DC5DB02D18EA7AA2AD0896AE35839B144BE82D8B2371D "点击放大")
 
 LazyForEach实现了按需加载，适用于列表数据量大、列表组件复杂的场景。它减少了页面首次启动时一次性加载数据的时间消耗，降低了内存峰值。然而，在长列表滑动过程中，由于需要根据用户的滑动行为不断加载新内容，会增加滑动时的计算量，从而影响性能。通过在滑动停止或达到某个阈值时才进行加载，可以减少不必要的计算和请求，提高性能，提升用户体验。在实现按需加载时，需要综合考虑性能和用户体验的平衡，合理优化加载逻辑和渲染方式，以提升整体性能表现。
 
@@ -245,7 +245,7 @@ LazyForEach的数据源需要实现IDataSource接口，具体实现可参考“H
 
 **图5** ForEach和LazyForEach在不同数据量下的指标对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Uch5hW0-TamBSutmBIHFnA/zh-cn_image_0000002229335821.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=65761A28C427705B6293327CEFC0D2F59BCB0B5FCFB3EE3A4F335FF424FF75AA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Om79rBsqTvmz_NwWN1BSKg/zh-cn_image_0000002229335821.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=73B33937AF21F6F6D50AFE5241DB618BE6E31F6487C2370A0455DC7317BB3938 "点击放大")
 
 从测试数据可以看出：
 
@@ -274,7 +274,7 @@ LazyForEach的数据源需要实现IDataSource接口，具体实现可参考“H
 数据加载、组件树挂载、页面渲染的示意图如下所示：
 
 **图6** 缓存作用区域与渲染过程示意图   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/LHYzPWPIRgy3lFbm-osvsg/zh-cn_image_0000002229335857.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F51B5A2052A90046892FB063602151F903E5655ED9C7B4A5626CE54A53E355F)
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/tUMmmilCQROnIT7FwVBJfA/zh-cn_image_0000002229335857.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1F45DB961FCCDE192119DCD1212E62460430E4F519E439539CCBDFB1B97F9DD)
 
 ### 使用场景和规则
 
@@ -338,7 +338,7 @@ export struct LazyForEachListPage {
 
 **图7** 10000条数据量下不同cachedCount对列表滑动帧率的影响
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/aKSHY2jcRpeqpwfDMbMUwQ/zh-cn_image_0000002194010084.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=B99C1D264D042FB5EA6A4440C914E36CBF156984D9FE65B90816E81365316469 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/xmf1IyUcQKSZ0R0K6SbfHA/zh-cn_image_0000002194010084.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5B01B1720C4680287323251136F994976D2299F5DA2DF8D2785C4B82D51EB58 "点击放大")
 
 在缓存设置中，建议将cachedCount设置为n/2（n为一屏显示的列表数）。实际开发中，应根据具体场景合理调整缓存数量。例如，如果列表项需要显示网络数据，而网络数据加载较慢，为了提升列表信息的浏览效率和浏览体验，可以将cachedCount设置为大于n/2。如果列表中需要加载大图或视频等占用较大内存的数据，为了减少内存占用，可以将cachedCount设置为小于n/2。因此，实际场景中需要不断尝试和验证，以找到合适的缓存数量，平衡用户体验和内存占用。
 
@@ -362,7 +362,7 @@ LazyForEach懒加载可以通过使用Prefetcher来预取和预渲染数据。�
 
 **图8** 动态预加载渲染过程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/8vEJaO2eTS2XgDRfOHgpjw/zh-cn_image_0000002229450385.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F7DEC19A2060F8D6D0DC305164AFA79FCAE5EDFEF427A354D39BE27794F7BE9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/nQUukDZhQDu3tuArGI1Avw/zh-cn_image_0000002229450385.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=E070DB208E966B45A9912496019AEB6BB6B73E5A5FC6CAB66540948C6F609614 "点击放大")
 
 ### 使用场景
 
@@ -530,19 +530,19 @@ export struct LazyForEachListPage {
 
 **图9** CPU占比trace图（cachedCount=5）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/_T5JbiD5ToGPPYPTjt-QQg/zh-cn_image_0000002229335833.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2BB68518CF5D69A971076640BB14C4B399469E33F0179E2C3F3FA707334B10C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/JVjCQ-vCTWykglK6yocayg/zh-cn_image_0000002229335833.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=37845C97654175F18E65F13B7B74BAEE97225AB9704792DA1F6193C0B358827F "点击放大")
 
 当cachedCount设置为5时，CPU占比为3.96%。
 
 **图10** CPU占比trace图（cachedCount=40）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/kKqf9P_aRhO9eUM6_XuJ5g/zh-cn_image_0000002229450353.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=753F8D8B3FC96A99B01E8CBAF1636FE9A2715D3DD77DD97838A3A86A5E872C78 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/--TUF_swQoW0nmIUPVzWyw/zh-cn_image_0000002229450353.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=E882299C1F3D4F097B7FE170B159B3B4334AD22A97FE36C28E7187A14FB7EB45 "点击放大")
 
 当cachedCount设置为40时，CPU占比为5.04%。
 
 **图11** CPU占比trace图（动态预加载）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/--bP3lfKS7G_UrshRNzfrA/zh-cn_image_0000002229335837.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AB646C213174F68020C2CB0B8D8F33509497D9B7D7FAF9DA3927D4245B7E263 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/TZkcJuL7QDOaOgMivbHvYQ/zh-cn_image_0000002229335837.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CB62A16E557B1AEC501DE5B9B180AEFF026128254885BB873589D87761C49A6 "点击放大")
 
 动态预加载CPU占比为4.12%。
 
@@ -558,19 +558,19 @@ export struct LazyForEachListPage {
 
 **图12** 首屏加载时长trace图（cachedCount=5）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/32efreNpSjKAY9Q0IxmLeQ/zh-cn_image_0000002229450357.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5A8BA23BADA95EFADE210D26B837F2178636FAF8A0282FA27E06D343141ACE7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/5JMi8xJyREmvcHT0vAjwPQ/zh-cn_image_0000002229450357.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8198C63F1D3C461CB8376D38FA896113DE96F72E5B9832F3D9936EFEFFD2A5D "点击放大")
 
 当cachedCount设置为5时，首屏加载时长为530.4ms。
 
 **图13** 首屏加载时长trace图（cachedCount=40）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Ge0AHCyeRFuerWHKwENTXg/zh-cn_image_0000002194010048.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D8686379EDE5D012930B35FCF94ACE765EC7196ECABF13D47D7FA6152EE7D8C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/USBlG7E6T8esllljC0s9dw/zh-cn_image_0000002194010048.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F4E999AACC099531A8A40729C6093330740EF419E5EC251AB11624C49FD3B94 "点击放大")
 
 当cachedCount设置为40时，首屏加载时长为1.8s。
 
 **图14** 首屏加载时长trace图（动态预加载）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/M5ELKB4HSvGEOAUyCFW8dg/zh-cn_image_0000002229335897.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2B7DF71BB9B6A46A25D33F0F7C24529D04527604CC3B08F2ED21D516D490144 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Pa0xz0ZQQ-e_q3v-LYKHAQ/zh-cn_image_0000002229335897.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3E151DF94432005BB9AF8AA5BD1318F6E94C6BBC35B7FBBF3A797165C6F408F "点击放大")
 
 动态预加载使首屏加载时长为545.5ms。
 
@@ -608,7 +608,7 @@ HarmonyOS应用框架支持组件复用。当复用组件从组件树中移除�
 
 **图15** 组件复用原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/pTV0UNRiS0yFAeeec4nTOQ/zh-cn_image_0000002194010072.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5747F32E16CA304DCAFA93235F23E3D6B7B94EF121A07019E3127F42A8B4EC1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/P8W-wbzkSe6NfYGIUmtE-Q/zh-cn_image_0000002194010072.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=597BD7A9FF1FF8578F5846B8EAA8D68E4D4240D19D94A746C5D5A782E7F47FA1 "点击放大")
 
 组件复用生效的条件如下：
 
@@ -734,16 +734,16 @@ export struct LazyForEachListPage {
 
 **图16** 未进行组件复用（均匀丢帧）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/RfoLVfRLT_2j3nwBDcaTOg/zh-cn_image_0000002229335881.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=629C4E3A3FF456A5125B2EC7453724E39163205FA98D57533A0DC541DF8229F3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/4JBJHezhQuSYvaAeRJzfkw/zh-cn_image_0000002229335881.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=703FACBE79B2AC3423ECB44A993E2226D6866CF5DC171108EB54DC1CDC282449 "点击放大")
 
 从图中可以看见，泳道中红色和绿色间隔出现，其中红色区域表示丢帧，绿色表示正常，对红色丢帧区域进行耗时分析：
 
 **图17** 丢帧耗时分析   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Ch5lI5wwRGGE7dgX4YdABQ/zh-cn_image_0000002229335825.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=C30674A06071D5D9CF84236D3FD9338360CCC7D443CE99600B1E8EB404F54D39 "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/4YcS2fGAQMCOM14BbtQC6A/zh-cn_image_0000002229335825.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D6E4E5B78F26CF7D66EB046763BB9104FDEF30495495C6E42328B1721CA3C36 "点击放大")
 
 **图18** 对丢帧部分的放大分析（整体耗时13.430ms）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/xvmyTi7tQQuC9anFCDGEhQ/zh-cn_image_0000002194010100.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=32BE2BDA4CDF49FFCC07CB6F6EEABE33D82DB86250CE03B999A33CC646B7AB6C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Pli_eXYzQvG3FFaLHi9zhQ/zh-cn_image_0000002194010100.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC6CEA2294833A9805A1DF3C65411D0631D7CA0A788FD0E5D8CF2AA6C129E7A0 "点击放大")
 
 图中红色区域出现丢帧，缓存区中的最上面一个ListItem渲染时，BuildLazyItem操作耗时10.277ms，导致本帧总体耗时13.430ms，超过11.1ms而丢帧。
 
@@ -753,13 +753,13 @@ export struct LazyForEachListPage {
 
 **图19** 组件复用后（无丢帧）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/w4xSfQbzQx6PhBhWYHnAEw/zh-cn_image_0000002229335861.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECEB898DCC9F9A363867351DC5935CEA4A58405D629C0B55689FCC4E6D30AC62 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Q4zJ4Pd5Qj6rAp0P6L0e1g/zh-cn_image_0000002229335861.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=34C59E01394148CCE8F4E9BCC334EDAECDB1DE1AE1D3D73D3C7A347AD3B1E1B4 "点击放大")
 
 上图显示列表快速滑动15.8秒，泳道全绿表示无丢帧，丢帧率为0%。放大分析某帧，如下图所示：
 
 **图20** 组件复用后某帧耗时分析
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/SC97wzGJSAm9AygFZs8-vg/zh-cn_image_0000002229335853.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CC52965C16754325B1018909C854C7BED25760E2969951646B532797C0D37F6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/1sayKKHJQ6WpFm1JipVWEw/zh-cn_image_0000002229335853.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C5E97D4DE0B86FB9E778854D12853EC1A1D551820C1E61319DCEBDB76EA8CD3 "点击放大")
 
 BuildLazyItem的耗时为0.749ms，远低于未进行复用时的10.277ms。复用前后的耗时数据如下表所示：
 
@@ -787,7 +787,7 @@ BuildLazyItem的耗时为0.749ms，远低于未进行复用时的10.277ms。复�
 针对“HMOS世界”中的首屏长列表，可以将ListItem的线性布局修改为相对布局，从而将最大嵌套层级从5层减少到2层。在列表循环渲染时，特别是在数据量较大时，这种改动可以显著提升页面性能。虽然这个例子较为简单，优化空间有限，但当列表元素较为复杂时，减少布局嵌套层级和避免过度绘制可以带来显著的性能提升。
 
 **图21** 布局优化前后的层级变化   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/tPvhIFhfQo-yN4gFGqTciQ/zh-cn_image_0000002229450369.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=84791491A2F1736435B14CFDA5C569C083A4FEE1F429CCD4EA8558E9D2A9C27B "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/qjLfCYp9S3C96sBalE63hw/zh-cn_image_0000002229450369.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=884A56DFC4257B304AA9362F8B4316B6CDBFF14AE09F53E1A463AEF2B40383FD "点击放大")
 
 ### 场景案例
 
@@ -867,7 +867,7 @@ BuildLazyItem的耗时为0.749ms，远低于未进行复用时的10.277ms。复�
 本文案例分析了正常情况和过度嵌套情况下应用独占内存、页面滑动帧率、丢帧率的对比。使用DevEco Studio中的ArkUI Inspector查看页面嵌套层级，如下所示：
 
 **图22** 额外嵌套后的布局层级   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Mupijm-TRrqbbozqcpCWmw/zh-cn_image_0000002229335829.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C44BDB5C9BADED67C1CBC44FBFE231BC3885B912A5433F975C6C417EAA63E19 "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Rn89taxURjiQl3xFHA-wgQ/zh-cn_image_0000002229335829.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=5138A875F31E74A8268D7C8641CA3556B639E90236D82E9077494F3A78630495 "点击放大")
 
 快速滑动10000条数据后，得到布局嵌套层级对列表性能的影响对比，如下所示：
 

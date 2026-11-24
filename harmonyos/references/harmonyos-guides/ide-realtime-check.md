@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-realtime-
 title: 代码实时检查及快速修复
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > 代码实时检查及快速修复
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:50+08:00
+scraped_at: 2026-11-24T12:42:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:eb59536d42610af969e7536e0cf04868dc84d9a287df15ffa30869e7f5d7f369
+content_hash: sha256:9755c4b24139010d9483dadea463a60849b628c5623d3cceb1fdb2c8715e8a15
 ---
 
 ## 实时检查
@@ -14,7 +14,7 @@ content_hash: sha256:eb59536d42610af969e7536e0cf04868dc84d9a287df15ffa30869e7f5d
 
 对于ArkTS代码，从DevEco Studio 4.0 Release版本开始，当compileSdkVersion≥10时，编辑器代码实时检查支持ArkTS性能语法规范检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/4kgvdDfjR6OSzYni_l3_ww/zh-cn_image_0000002808766455.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C021C03B521E5BABCD1B01AE073D4164921F26A4D42E75378B1662D93067CCE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/a0Adc0UrRva9e17SoA5_OQ/zh-cn_image_0000002808766455.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EB0FD03BFDABF3D991E096E6BF6DD372D96925DABB5C82B2529FAC3DB00A7BF)
 
 **说明** 
 
@@ -30,7 +30,7 @@ DevEco Studio支持代码快速修复能力，辅助开发者快速修复ArkTS�
 
 **快速修复：**将光标放在错误告警的位置，可在弹出的悬浮窗中查看问题描述和对应修复方式；单击**M****ore actions**可查看更多修复方法。或是在页面出现灯泡图标时，可点击图标并根据相应建议，实现代码快速修复。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/RH1KmsgGSRimyfrkN24YQg/zh-cn_image_0000002779406900.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=5062283DAAE601C0A25AD53EEE76120CF03312588CB77356F6AEE19F985591DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/Eg8QYVX3RByZvk4Z9DZ_sg/zh-cn_image_0000002779406900.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=099D87F08D1FDB657E4637F707806F3A79E0348984D0760FB4B1237BAA9D4391)
 
 **C++快速修复使用演示**
 
@@ -38,7 +38,7 @@ DevEco Studio支持代码快速修复能力，辅助开发者快速修复ArkTS�
 
 * 光标悬浮在switch表达式的条件变量处，点击灯泡图标，在下拉菜单中选择**Create missing switch cases**，完成缺失的case条件补充。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/yqy0mXLNRKSjYtCy_XfPHg/zh-cn_image_0000002779566874.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC06A0DB05B16DFA70EA981B7F36447AEEAFADD7F2AC9E275EC46C6A50D4039F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Li-_DzV6T6W_HDk9Q3Xs0w/zh-cn_image_0000002779566874.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B9940E36B4A25FFB8E7F5EA158CFB1C629C409A708679512C15736EB696FF4A)
 * 点击构造函数名称，左侧出现红色灯泡后，点击灯泡图标选择**Create new constructor 'xxx'**生成构造函数。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/SnPPzvMmQ4KO3FRHeHKjAw/zh-cn_image_0000002808886539.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=41837502F7810CF665D2E4EEED664DCEDAB2CFCDCC468B009869B8A5ECE72379)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/0wty776ERKKeGMQyrr4whQ/zh-cn_image_0000002808886539.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=09AB7C8E5C3D04C3813D3047ABC980D095032B067F8F0F2E4CDBAA52E65197D3)

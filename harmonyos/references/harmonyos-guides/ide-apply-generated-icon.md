@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-apply-gen
 title: 生成单层图标
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 生成单层图标
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:48+08:00
+scraped_at: 2026-11-24T12:42:20+08:00
 doc_updated_at: 2026-04-30
-content_hash: sha256:fd32e81bea3f887db63dc32d6350de0c4e5d4a95913c564c4bf978b3fcad19ab
+content_hash: sha256:90f84bb883af6c5ce4a4ff54c73f50fd43e64b33e078a9f8bb89e56f48c91072
 ---
 
 DevEco Studio支持Image Asset功能，帮助开发者生成适应不同设备、不同屏幕密度的图标，并展示图标在目录中的具体位置。Image Asset支持生成以下两种类型图标：
@@ -20,7 +20,7 @@ DevEco Studio支持Image Asset功能，帮助开发者生成适应不同设备�
 
 1. 在工程中选中模块或文件，右键单击**New > Image Asset**，进入图标配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/bLWUoUjPQvyeHNtx9guw-g/zh-cn_image_0000002808766149.png?HW-CC-KV=V1&HW-CC-Date=20261114T004848Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A66724C1ACD62C0106ED1D37ED3BA432F0D2A349D21082C1B7946D6F2F5C59D "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/wqzuWnhJRDW0fQqIEwezrg/zh-cn_image_0000002808766149.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEE9320BFAB8291DD45DE3125901E3D5C65DCEEE4FEC3675587ABCFDD1E14BC5 "点击放大")
 2. 需要根据向导配置图标样式、大小等基本信息。
    * **Device**：选择当前配置的图标生效的设备类型。
    * **Icon Type**：展示当前图标的类型。
@@ -30,7 +30,7 @@ DevEco Studio支持Image Asset功能，帮助开发者生成适应不同设备�
      + **Trim**：选择Yes，将调整图标图形与边框之间的距离，同时会去除图片周围多余的透明空间。
      + **Resize**：拖动滑块，设置图形的缩放比例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ttcM_-KkSF22dbg9ttT4OQ/zh-cn_image_0000002808766145.png?HW-CC-KV=V1&HW-CC-Date=20261114T004848Z&HW-CC-Expire=31536000000&HW-CC-Sign=A017AC128A1214AD4A08E1686DA459EC313B13A95FB7302B11FABAA820E8F9D7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/9VRE-9pESSqHoLmE6EJabQ/zh-cn_image_0000002808766145.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=0733CFA71BBFF77B34B1CB1BA0B95EEB44EE21F2B3FEF588ED01B2C855B36C8B)
 
    * **Background Layer**：分层图标资源背景层。请配置下列字段信息：
      + **Asset Type**：设置图标背景类型。可以选择颜色（**Color**）或图像（**Image**）。
@@ -39,7 +39,7 @@ DevEco Studio支持Image Asset功能，帮助开发者生成适应不同设备�
      + **Trim**：选择Yes，将调整图标图形与边框之间的距离，同时会去除图片周围多余的透明空间。
      + **Resize**：拖动滑块，设置图形的缩放比例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/lkamiQ5wRBqoCYwh2TnuOw/zh-cn_image_0000002779566570.png?HW-CC-KV=V1&HW-CC-Date=20261114T004848Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEEA7CB30406F2BD62779CE85E02D1758EF521467AB0BFEB271E73E8C21108A8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/ne60maL6SnKp3PndK5D9Jg/zh-cn_image_0000002779566570.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=241CF07680090249B65FE9252FBB99B109BF60FAF82FDB6582C24C8D2CA24D3A)
 3. 点击**Next**，确认图标的存储路径和相应的尺寸信息，图标将默认存放在**resources** 目录下。点击**Finish**完成图标生成。
 
    icon.png为桌面图标，icon\_start window.png为启动页图标，Size为图标的尺寸信息，不同尺寸对照关系如下：
@@ -50,7 +50,7 @@ DevEco Studio支持Image Asset功能，帮助开发者生成适应不同设备�
    * xxldpi：表示超大规模的屏幕密度（Extra Extra Large-scale Dots Per Inch），适用于dpi取值为(320, 480]的设备。
    * xxxldpi：表示超特大规模的屏幕密度（Extra Extra Extra Large-scale Dots Per Inch），适用于dpi取值为(480, 640]的设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/cEr32w7rQBCm42QglLoEHg/zh-cn_image_0000002808886229.png?HW-CC-KV=V1&HW-CC-Date=20261114T004848Z&HW-CC-Expire=31536000000&HW-CC-Sign=C044DA31C5BBC745EA6485DECD679D39BE361BF259E3433ACDAAE8D4C58DB33F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/RM8BQ0elRci-U_tBk5TF3w/zh-cn_image_0000002808886229.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=244C16F4108EE0DC120BA3023049250296F50CD3CF888B6737094CCE2F6A7590)
 4. 如需配置桌面或设置页面出现的应用图标，可将module.json5文件中icon字段修改为新生成的图标名称；如需修改启动页的icon图标，可将module.json5文件中startWindowIcon字段修改为新生成的图标名称。
 
    **说明** 

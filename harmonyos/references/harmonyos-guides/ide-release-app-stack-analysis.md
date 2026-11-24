@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-release-a
 title: 堆栈轨迹分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 堆栈轨迹分析
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:00+08:00
+scraped_at: 2026-11-24T12:42:31+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:ff9e7905e3dadb820066e3d88c52b3907af00c21129803529103403da662be24
+content_hash: sha256:18650ef8eb647a82190f67760141c19cbd3f83b9bc3101658ba1f456c9fcbb28
 ---
 
 对于发布的应用（Release应用），为减小应用程序大小，提高运行效率，会对代码进行优化，去除其中的调试信息。因此无法直接通过Release应用的堆栈信息定位到源码的具体文件和行位置，不易于开发者快速定位解决问题。
@@ -16,17 +16,17 @@ Release应用堆栈解析功能操作方法如下：
 
 1. 单击菜单栏**Code > Analyze Stack Trace**，或在FaultLog页面异常堆栈信息处右键选择**Analyze Stack Trace。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ZTmxGzlFRr-ZL_m3dmfZYA/zh-cn_image_0000002808766007.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7BD6AAD967E6039BF53D8EC2F4B46CCC47AE718E402DFEDBDAF22DE51A93D6D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/C6ItxZ-2QUe1OZM4iCLuOg/zh-cn_image_0000002808766007.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=536DC3F600528CC146D38E199975CFF196637D13716A4E4F97E0EABC7FF763BC)
 2. 在弹出的**Analyze Stack Trace**对话框中，粘贴Release应用的异常堆栈信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/MmGEScwZRb6RK_kXR90eOw/zh-cn_image_0000002779406450.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=11CC26A50B8BF9F86FACF88D8E22593F67B69A4A61F02958DEC7F5606750E493)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/JBnxoUzFTs-Wuh4s-S7Z3g/zh-cn_image_0000002779406450.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=671D6260C360904970F77A61B011F2B0B40128448E83AA1140BD2B08845CA0A1)
 3. 如果当前工程为堆栈所在应用对应的工程，且存在Release构建产物，点击**Start Analyze**即可进行解析。
 
    如果当前工程不是堆栈所在应用对应的工程，则需要配置应用对应构建产物：勾选**Unscramble stack trace**, 在下方的文件选择框中，分别添加应用对应的sourceMap文件、so文件以及nameCache文件，点击**Start Analyze**进行转换。
 
    DevEco Studio将解析后的堆栈信息显示在右侧的输出框中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/2hwCjQSSQMeFgsK9CuRnWg/zh-cn_image_0000002779566426.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F7E6621D7A0420B2CEA649DB1CA53C1D45FD83779E1D54D1256CC00C65EE416)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/rnXe6T-QS66unAFxtM4AbA/zh-cn_image_0000002779566426.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F6A8C38BC58C8A8C1B49E5A22D357D7C37BCB648676A2FC444B934AEF572B7B)
 
    在构建Release应用时，so文件是默认不包含符号表信息的，如果需要在构建Release应用时生成包含符号表的so文件，需要在工程的[模块级build-profile.json5](ide-hvigor-cpp.md)文件的buildOption属性中，配置如下信息：
 

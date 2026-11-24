@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 16653 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 16655 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1311 篇
 
@@ -11738,7 +11738,7 @@
 - [XEngine](harmonyos-references/xengine-kit-xengine.md)
 - [zlib](harmonyos-references/zlib.md)
 
-## 最佳实践（`best-practices`）— 487 篇
+## 最佳实践（`best-practices`）— 489 篇
 
 - [电脑异形窗口](best-practices/bpta-2in1-window-shape.md)
 - [基于AbcKitTS实现字节码插桩](best-practices/bpta-abckitts-implements-instrumentation.md)
@@ -11881,6 +11881,7 @@
 - [自渲染图层未使用硬件合成问题分析](best-practices/bpta-hwc-self-rendering-layer-analysis.md)
 - [图片合成视频开发实践](best-practices/bpta-image-to-video-synthesis.md)
 - [Image白块解决方案](best-practices/bpta-image-white-lump-solution.md)
+- [新闻小说应用沉浸阅读开发实践](best-practices/bpta-immersive-reading.md)
 - [基于Canvas实现录像回放时间轴](best-practices/bpta-implement-timeline-based-on-canvas.md)
 - [运行效率提高](best-practices/bpta-improve-running-efficiency.md)
 - [Grid组件加载丢帧优化](best-practices/bpta-improve_grid_performance.md)
@@ -11962,6 +11963,7 @@
 - [运维态高效处理Native泄漏](best-practices/bpta-native-leak-in-operation.md)
 - [分析native内存](best-practices/bpta-native-memory-analysis.md)
 - [导航定位场景低功耗规则](best-practices/bpta-navigation-scenarios.md)
+- [网络性能问题定位指导](best-practices/bpta-network-performance-issue-localization.md)
 - [网络资源低功耗建议](best-practices/bpta-network-resources.md)
 - [新闻阅读](best-practices/bpta-news-reading.md)
 - [首页信息流体验优化](best-practices/bpta-news_homepage.md)

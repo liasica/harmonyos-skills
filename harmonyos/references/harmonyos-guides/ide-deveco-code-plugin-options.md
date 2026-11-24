@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 斜杠命令
 breadcrumb: 指南 > DevEco Code > DevEco Code Plugin > 斜杠命令
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:25+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:4f67c88b3b7b93872a9cb6e87b34ad0072854d5c98f737bee6eb79dc9d24183f
+scraped_at: 2026-11-24T12:42:51+08:00
+doc_updated_at: 2026-11-23
+content_hash: sha256:2efe88b2b053fa43af396ce3c22460fe3577ba9876a04a58f566702241ef8905
 ---
 
 ## new
@@ -82,6 +82,8 @@ ArkTS运行时调试命令。以粘滞模式（sticky mode）运行调试专用�
 ## analyze
 
 支持通过该命令触发DFX（HarmonyOS应用问题定位定界）诊断，对[AppFreeze](appfreeze-guidelines.md)、[Cpp Crash](cppcrash-guidelines.md)、[JS Crash](jscrash-guidelines.md)三类故障类型的日志进行根因分析。用户指定日志文件路径后，DFX诊断将自动完成日志类型识别、符号解析、堆栈解析等处理流程，定位故障根因，输出分析报告并提供修复建议。若本地有日志对应源码，工具可给出源码级别的修复建议。
+
+鸿蒙电脑版DevEco Code不支持该命令。
 
 **命令格式：**
 

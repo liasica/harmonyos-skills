@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 适配常见问题
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 适配常见问题
 category: best-practices
-scraped_at: 2026-11-14T08:54:17+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:e14dfe812783965276629ec5c8701d320c3e96e24a11c50b97e4edbf4e146d1c
+scraped_at: 2026-11-24T12:47:54+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:6f0dceb10f4b71623c2e7079db42ab17541c150496af9b64ce55bf80e551e912
 ---
 
 ## HWASan napi int64转换时存在精度丢失
@@ -35,15 +35,55 @@ Thread: T0 0x005a00002000 stack: [0x007ed30ba000,0x007ed38b9000) sz: 8384512 tls
 
 开启HWASan后，使用BinXO对无源码C/C++动态库进行插桩时，编译日志中可能出现BinXO相关告警，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/1zHyiAaKRlawCzawh97g9g/zh-cn_image_0000002797298753.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=0298C8B89034BBADB1ACCDFEFF0AC7F5084AFFCB66D45F39B6683AAA5C9DBE57 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/HFk-BuKVRSiS3irHQeHtBg/zh-cn_image_0000002797298753.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=589A9FEE4604A8CAEB62CB2375DCB5DD7A41F57FCC6B1AE01E3B0BECFD121186 "点击放大")
 
 此类告警不会直接阻塞编译。对于无法完成插桩的动态库，工具会自动跳过该文件，不影响其他符合条件的动态库继续插桩。具体告警说明如下：
 
 | 错误码 | 错误描述 | 处理建议 |
 | --- | --- | --- |
-| 0x11801002 | 输入文件大小超过规格限制 | 输入文件大小超过BinXO支持的128M限制，无法完成插桩。建议拆分strip减小文件大小后再进行插桩或者通过excludeSoFromBinXO（参考[nativeLib](../doccenter-deveco-studio/ide-hvigor-cpp.md#section15889929155720)）跳过该文件。 |
+| 0x11801002 | 输入文件大小超过规格限制 | 输入文件大小超过BinXO支持的128MB限制，无法完成插桩。建议拆分strip减小文件大小后再进行插桩或者通过excludeSoFromBinXO（参考[nativeLib](../doccenter-deveco-studio/ide-hvigor-cpp.md#section15889929155720)）跳过该文件。 |
 | 0x11801003 | 输入文件损坏或缺少相关 ELF 信息 | 无需关注，或者通过excludeSoFromBinXO跳过该文件。 |
 | 0x11801004 | 输入文件不是 C/C++ 编译而来 | 无需关注，非BinXO规格内的输入文件，或者通过excludeSoFromBinXO跳过该文件。 |
 | 0x11801007 | 输入文件不是标准 ELF 文件 | 无需关注，或者通过excludeSoFromBinXO跳过该文件。 |
 | 0x1180100A | 生成输出文件处理失败 | 无需关注，该文件无法被BinXO处理，通过excludeSoFromBinXO跳过该文件。 |
-| 0x1180100B | 输出文件的临时文件被占用 | 删除或重命名entry\build\default\intermediates\binxo目录下对应的<输出文件名>.temp文件后重新编译。 |
+| 0x1180100B | 输出文件的临时文件被占用 | 删除或重命名entry/build/default/intermediates/binxo目录下对应的<输出文件名>.temp文件后重新编译。 |
+
+针对0x11801002错误码（输入文件大小超过规格限制），处理建议如下：
+
+**含义**：BinXO对输入文件有128MB的大小限制，超过限制的文件会被拒绝处理。
+
+**常见原因**：发布版so本身不大，但编译时默认带上了完整的调试信息（.debug\_\*段），导致文件膨胀到几百MB甚至1GB以上。这些debug段对插桩没有用处，清除后，文件大小如果小于128MB即可正常处理。
+
+**判断是否带debug段**：readelf查看段表。
+
+```screen
+readelf -SW libxxx.so | grep -E '\.debug|\.zdebug'
+```
+
+* 有输出：带debug段
+* 无输出：不带debug段
+
+**带debug段**：用strip清除debug段。
+
+```screen
+# 备份原文件
+cp libxxx.so libxxx.so.bak
+# 清除debug段
+strip libxxx.so
+```
+
+**strip后验证**：先确认debug段已删除。
+
+```screen
+readelf -SW libxxx.so | grep -E '\.debug|\.zdebug'
+```
+
+再确认文件大小。
+
+```screen
+ls -lh libxxx.so
+```
+
+文件已无debug段，请确认文件大小小于128MB后，再重新进行BinXO插桩。
+
+**不带debug段或strip后仍超过128MB**：说明文件过大不是debug段导致的，而是代码/数据本身很大。超过BinXO的硬性限制。

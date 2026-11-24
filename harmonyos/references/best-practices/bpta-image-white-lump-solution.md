@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-image-whit
 title: Image白块解决方案
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 专项问题解决方案 > Image白块解决方案
 category: best-practices
-scraped_at: 2026-11-14T08:54:15+08:00
+scraped_at: 2026-11-24T12:47:53+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:0e31efd8bd964715a7a034793c1c82a118cc9776e7db1c811e33f3c1f1aff359
+content_hash: sha256:871f37bfc5ca0f85bc53bbde6995c12977cf10224f1f6e2f0939d8c3250da4ff
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:0e31efd8bd964715a7a034793c1c82a118cc9776e7db1c811e33f3c1f1a
 * 缓存复用阶段：当Image组件加载时，首先检查应用沙箱是否存在缓存。若存在，则直接读取缓存数据；若不存在，再发起网络请求。非首次请求时，该机制可避免重复下载，从而缩短白块持续时间。
 
 **图1** Image加载网络图片两种方式对比  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/utKd8rDDT-2JDuNb9fN3uA/zh-cn_image_0000002429762245.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=81BA0CF97AFB6451D650A54614BB985889AB314ED2D1868306DC349AD0825135 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/nDxAUqREQfa8ycvq8SXfRQ/zh-cn_image_0000002429762245.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FC0CE5F9930F2563CCE26489DB9DD1A151A8D8E59141B5823348469F8F49F6C "点击放大")
 
 **说明** 
 
@@ -81,7 +81,7 @@ export struct PageOne {
 
 **图2** 使用预下载的方式，由开发者灵活地处理网络图片，减少白块出现时长
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/sK_LNOYWQwmYO7FTwd0c-g/zh-cn_image_0000002651406702.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C6DD8C633FD58590C7027CA84569B1C2AAB22A636238A986FAB4DABC7217439 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/c99TlvG7QYOFfProp9g86A/zh-cn_image_0000002651406702.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2B5BF24161452DD27D8760B855995664363636F9994B769D3B70851ECB50DB1 "点击放大")
 
 1. 在父组件里aboutToAppear()中提前发起网络请求，当父页面点击按钮跳转子页面PageOne，此时触发读取应用沙箱中已缓存解码的网络图片请求并存储。非首次点击时，不再重复调用getPixMap()，避免每次点击都从沙箱里读取文件。
 
@@ -267,7 +267,7 @@ export struct PageOne {
 
 **图3** 直接使用Image加载网络数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Ai4vTXLPQkWOzLMNnsvnqA/zh-cn_image_0000002681606227.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=9691E14740CC38266EEB509D4F811F792CC8D067F1DD35245AAF62DB3A580DBA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/eGl2SV0TSyaSiBKF8g4wvA/zh-cn_image_0000002681606227.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=03993348E44993C5A83F3F80DD229DDEAD7C117621B65818B1F4269849526787 "点击放大")
 
 【优化后】
 
@@ -275,7 +275,7 @@ export struct PageOne {
 
 **图4** 使用预下载的方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/U6h1IyroQuak1bB1ZfJNZQ/zh-cn_image_0000002651566612.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=711C17B2FF634BCF374146D65C3474D24027C8C69D5FBB7F7FA0C43E775324F9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/MXm-LcIVQv-S9343jyjXEQ/zh-cn_image_0000002651566612.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=05314D0F6E6DACA776F3DF8BE21C3259AC2FF96AC34CDA511150018B51613B7B "点击放大")
 
 **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm convert错误码
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm convert错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:38+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:7d2e65bdb410038cec833bd72a47838cd4c98f5be9d5819140f6704950de856c
+scraped_at: 2026-11-24T12:42:51+08:00
+doc_updated_at: 2026-11-23
+content_hash: sha256:c2858b8bd93b031fa562b64f605becf405ff7776230e0cc5d77d4de75a0a3797
 ---
 
 ## 00636001 无子目录
@@ -56,7 +56,7 @@ Invalid Rule Type.
 
 **可能原因**
 
-在验证配置时，未找到 attrName属性对应的ruleType规则。
+在验证配置时，未找到attrName属性对应的ruleType规则。
 
 **处理步骤**
 

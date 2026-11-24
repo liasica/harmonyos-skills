@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 调试云对象
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云对象 > 调试云对象
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:49+08:00
+scraped_at: 2026-11-24T12:42:21+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:e0f5e77f292aa7d16f9f1a545e1762fb22825f5f6703168c05ac892b61464451
+content_hash: sha256:f926716a2f7d7291aeb3f166081c9b94de7e4a6ab4c2e08ec9ee5a446adf0364
 ---
 
 云对象开发完成后，您可以对其进行调试，以验证云对象代码运行是否正常。
@@ -35,18 +35,18 @@ content_hash: sha256:e0f5e77f292aa7d16f9f1a545e1762fb22825f5f6703168c05ac892b614
 
    * 如需批量调试多个云对象，右击“cloudfunctions”目录，选择“Debug Cloud Functions”，即可启动该目录下所有云对象。如“cloudfunctions”目录下同时存在云函数和云对象，将会启动所有的云函数和云对象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/0trj5CDvQdmF2a7Ns5A7Cw/zh-cn_image_0000002179338428.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CD6B8AC7F43047E3D8FA3698EF743F83AB0B2834D3FD6BC88AB0BC458BB24BE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/drO-93CTS8a1CtuueJ6fEg/zh-cn_image_0000002179338428.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B0DBE4118A4AD30EA3AD18144FE090D3AAB2508062F68031658847999670372)
 2. 在下方通知栏“cloudfunctions”窗口，查看调试日志。如果出现“Cloud Functions loaded successfully”，表示云对象已成功加载到本地运行的HTTP Server中，并生成对应的Function URI。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Qj8XEHZwQB6RYHzXT6dNtA/zh-cn_image_0000002179498092.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE93AF8A9C34A845AB978C717F023CDFCD3240E7E039CB96B3F74D4352BA7C4C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/C6GnVWY5QV2IZ_ft23RQDQ/zh-cn_image_0000002179498092.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=33B5671B1960DB47BB5395C88829822720904A3E097D1A5D61F9DDE8EE8599FB)
 3. 如需设置断点调试，在函数代码中选定要设置断点的有效代码行，在行号（如下图行3）后单击鼠标左键设置断点（如下图的红点）。
 
    设置断点后，调试能够在断点处中断，并高亮显示该行。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/MGn2KeMNREKTa757OACz2A/zh-cn_image_0000002179498088.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=51F37C07CC35152D207ACDAB8FDA55BB6D8302B3AD2752A8510851F8C023FC72)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/wssfpbLfRcChkVzdsnJyGA/zh-cn_image_0000002179498088.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0BFCECCED4D5009A341A15DFF7748C65BFC31800E10B9BFFC90F6C0A59C5395)
 4. 在菜单栏选择“View > Tool Windows > Cloud Functions Requestor”，使用事件模拟器（Cloud Functions Requestor）触发云对象调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/jDA9bb1gR7WuZDwh78aUGg/zh-cn_image_0000002214704325.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4D6B171515253D777528816EF75A94A047840A3803F0C1F94D887620C223753)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/P5yjRf1eQEiMQK6Z2Nl6NQ/zh-cn_image_0000002214704325.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=664E693335E7D3FB13F5036182308C188A435CC1801B8F4B8855FA2071511D4F)
 5. 在弹出的“Cloud Functions Requestor”面板，配置触发事件参数。
    * Cloud Function：选择需要触发的云对象，此处以云对象“my-cloud-object”为例。
    * Environment：选择云对象调用环境。此处选择“Local”，表示本地调用。
@@ -57,23 +57,23 @@ content_hash: sha256:e0f5e77f292aa7d16f9f1a545e1762fb22825f5f6703168c05ac892b614
 
      如果Method的入参中的某一个是数组[]类型，那么Event中将至少包含两层方括号，如'[[1, 2], 3]'，外层的方括号表示参数列表。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/UN1NbJJlTzGVU802RnvnDQ/zh-cn_image_0000002214858713.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=10297A3B47763ECE877A8C7B726FEF4886A5E6269022D257187DC0F61A4A6A6E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/1hsY5gvXSSSTxTnWun6YkA/zh-cn_image_0000002214858713.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C99F302D377CF8642652665028675DD17FE73612CB1C2BB8216AFB073FA56A83)
 6. （可选）点击“Save”，可保存当前触发事件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/tH9aCE-yR5-2u5Chkd9dgw/zh-cn_image_0000002214704333.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0673F8C4214867E560E8A3B6B3F0813D540EBE053494586C9D89A443BAF6DC1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/SnZwrQSmREWj1ULfyXvk3w/zh-cn_image_0000002214704333.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=52E4A5B355F7C0259DF7D94501A25B7480D1A78F362EF0A60291C1AF4A700D37)
 
-   点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/xfSM2eH3RFCwdl4RiEB0Fw/zh-cn_image_0000002179498084.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA5034259BFAC90501E2CC0D086D4E0726E6B8E6A37E6B342EA85364F9A37CC0)可展开保存的触发事件，后续可直接点击“Load”加载事件。对于不需要保存的触发事件，也可以点击“Delete”删除。
+   点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/w8MDqelLQAqBmdLWzfVdsg/zh-cn_image_0000002179498084.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8674B4EA90A01DE86FD394607E7892F4DDB07E1F62C8433D816040760450181)可展开保存的触发事件，后续可直接点击“Load”加载事件。对于不需要保存的触发事件，也可以点击“Delete”删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/e618schuQ2SJSDlnf60dHA/zh-cn_image_0000002179498080.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7DA0E1F543184AABE6839316312393DF8FE7E8908E3C2A91A2907CEBBA3EE6F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/1TdAOzvPSEOsNX3bzpbVPw/zh-cn_image_0000002179498080.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F83627B01DA8D42F20FC5F146A6282DC33818374F06B7B49DDB54182C4B1EB65)
 7. 点击“Trigger”， 将会触发执行云对象的方法，执行结果将展示在“Result”框内。
 
    **说明** 
 
    “Result”框右侧的“Logs”面板仅用于在[通过远程调用方式调试云对象](agc-harmonyos-clouddev-debugcloudobj.md#section123191549587)时查看日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/IHhXCzvAQiWHHyiIQfLO8w/zh-cn_image_0000002214704357.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=3883E32952EC7DD928AD516B9420132DDD53A814F10C49FDB3147188042024CA)
-8. 点击菜单栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/LGhkWO4lSRqKBFdiEeZR6Q/zh-cn_image_0000002214704361.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8B121E616B0D8168D17C3F127AE511E8721DDC781B12A455C367C4B454A06D4)，可停止调试。
-9. 根据调试结果修改云对象代码后，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/cJmRtrOaR72yrsGwuhU6ww/zh-cn_image_0000002179338408.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=058DC4C51D17F68B27E350E511D10F08C555B492F70387D557ECEF99A4CD4D34)重新以Debug模式启动调试，直至没有问题。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/voRgXsWESai_dfnjQGJdkA/zh-cn_image_0000002214704357.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C080D7ECE40C3F2C782F1FA7F0B3F9EF6288D1CBC6FC99A1EA83ACAD2857608)
+8. 点击菜单栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/IUHf1HyOR-SZOAWkGZfA6A/zh-cn_image_0000002214704361.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=13030E17574B4FD8C1D2D6D47EF7DFBF815B354BC06D41E1AC4D9B2FE428CAB3)，可停止调试。
+9. 根据调试结果修改云对象代码后，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/AgCfC5OgRZiK5STchfyYjQ/zh-cn_image_0000002179338408.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=40D0F3E4E6E63C4E4B085210BF71DE81872BAE0074E8798356BB5A723BEACF8F)重新以Debug模式启动调试，直至没有问题。
 10. 参考步骤5~9，完成云对象其他方法或其他云对象的调试。
 
 ## 通过远程调用方式调试云对象
@@ -83,7 +83,7 @@ content_hash: sha256:e0f5e77f292aa7d16f9f1a545e1762fb22825f5f6703168c05ac892b614
 1. 参考[部署云对象](agc-harmonyos-clouddev-deploycloudobj.md)将需要调试的云对象部署至HarmonyOS 开发者中心。
 2. 在菜单栏选择“View > Tool Windows > Cloud Functions Requestor”，使用事件模拟器（Cloud Functions Requestor）触发云对象调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/fub5PQ-pR8Ge0zn8vRwU9w/zh-cn_image_0000002179338432.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=46A4C2058A3FA1D732301DDE04C98418779F9124D57C36FDFB8BBC382A5BF16C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/d2WfzE5gQViv2_cMiEe1Iw/zh-cn_image_0000002179338432.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=30D4CE2E3708AC38C494CB2E2B9FCD04AA62EC679E98F5673FB663DBACA436C9)
 3. 在弹出的“Cloud Functions Requestor”面板，配置触发事件参数。
    * Cloud Function：选择需要触发的云对象，此处依然以“my-cloud-object”为例。
    * Environment：选择云对象调用环境。此处选择“Remote”，表示远程调用。
@@ -94,9 +94,9 @@ content_hash: sha256:e0f5e77f292aa7d16f9f1a545e1762fb22825f5f6703168c05ac892b614
 
      如果Method的入参中的某一个是数组[]类型，那么Event中将至少包含两层方括号，如'[[1, 2], 3]'，外层的方括号表示参数列表。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/h672v56GScm9jMYxbLobsA/zh-cn_image_0000002214704353.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=853170DBB9892CA17228D67EE266A661C582391FB958814153405A6D8CBC2476)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/kebk4agTQwuN_sulffkS6w/zh-cn_image_0000002214704353.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D565C8428514AEAE7CDF1EFCE59D79E73B1E1666216FB43F95791569FDD65CF5)
 4. 点击“Trigger”， 将会触发执行云对象方法，执行结果将展示在“Result”框内。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/TxMBsm0vQOC0wLPZpeOFDA/zh-cn_image_0000002314529249.png?HW-CC-KV=V1&HW-CC-Date=20261114T004849Z&HW-CC-Expire=31536000000&HW-CC-Sign=22AD3E74E0A89195C47D0A74B02FBCD90E2962E3C2D1FF2AE87DF033B831B143)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/jiJaDl3zSXCIifzeyp_7qw/zh-cn_image_0000002314529249.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=15B0012F6F67BEBBC628AF73FB7E477F5223EDEC24D72EE4A9531C791BA274C1)
 5. 点击“Logs”页签，还可查看打印的日志定位问题。修改云对象代码、重新部署云对象后再次执行远程调用，直至没有问题。
 6. 参考步骤1~5，完成云对象其他方法或其他云对象的调试。

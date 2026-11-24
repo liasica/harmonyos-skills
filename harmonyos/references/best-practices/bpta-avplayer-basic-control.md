@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-avplayer-b
 title: 基于AVPlayer基础播控实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于AVPlayer播放视频系列开发实践 > 基于AVPlayer基础播控实践
 category: best-practices
-scraped_at: 2026-11-14T08:54:07+08:00
+scraped_at: 2026-11-24T12:47:45+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:5086b3bfad3e56f58149062d139c19aa0d8bc80164ce5e2a034ed6e19bc4e6d8
+content_hash: sha256:36ab537388e0950d1ea01fda93066afc3e255102137b8d15115f779bf7df36bc
 ---
 
 ## 概述
@@ -61,7 +61,7 @@ content_hash: sha256:5086b3bfad3e56f58149062d139c19aa0d8bc80164ce5e2a034ed6e19bc
 
 进度条是视频应用的一个基础能力，可以通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ViVF4L5mSoK02jMcuTQ0mw/zh-cn_image_0000002453067562.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=B70CCBBE4558AB26A5038C94282FBF269950B5C75BB9C41E3A3EBCE87792309E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/HpMcvAjzTRaWXKECBUsyYA/zh-cn_image_0000002453067562.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB22F37915328DC22AF821E1473A196E08E83D9E69E1E65CB848843B19287AC6 "点击放大")
 
 ### 实现原理
 
@@ -107,7 +107,7 @@ Slider({
 
 通过界面按钮快捷切换视频播放静音状态，实现一键开启或关闭静音，提升媒体播放的交互便捷性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/a9ppfLefSw2_RM2VCoZHig/zh-cn_image_0000002486107325.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F843E50312138FC8FD2FC171B489E862850BC5CA56AA0A9F4DD91442E2B9E34 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/0aTRJxOISk2WVeX8lowvJg/zh-cn_image_0000002486107325.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCF586D49D3C065ADD98674F98CF2FFE55F5284F6DA5911A2B00CE484D6CE104 "点击放大")
 
 ### 实现原理
 
@@ -196,10 +196,10 @@ this.avPlayer.on('stateChange', async (state) => {
 点击按钮即可弹出设置弹窗，可选择"拉伸至与窗口等大"模式，视频拉伸至与窗口等大，适合需要充分利用显示区域且对比例变化不敏感的场景；选择"缩放至最短边填满窗口"模式，视频将保持原始宽高比并以最短边为基准进行缩放，适合需要保持画面比例不变的场景。
 
 **图1** 拉伸至与窗口等大模式  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/G-MIS5fxQbWBbrKHhjuH7g/zh-cn_image_0000002452907970.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C68AE1317F32CFB1919A91755F17F7AF3A98945E939474D2F1737DF65E339F9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/mLWlXFk1TM2TzCSUniGH6Q/zh-cn_image_0000002452907970.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F6F17CF8BD13E78C5B32E8B530BEE20491544357727A8B994FDE59843556031 "点击放大")
 
 **图2** 缩放至最短边填满窗口  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/tsyhnz4dSyGD3I2gfTESnw/zh-cn_image_0000002485947349.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=29757FEFC04435998F7776511AF030F11E94795C72A73A3E475922C72BCCCC88 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/CrcCm2leQKWPaZykHTWH1w/zh-cn_image_0000002485947349.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=24A22561CF8C0DC8D50538BADC549528F34B40BF36BA5C72313126C977A1F50B "点击放大")
 
 ### 实现原理
 
@@ -284,7 +284,7 @@ this.avPlayer.on('stateChange', async (state) => {
 
 通过点击按钮选择预设倍速实现倍速设置，为用户提供灵活的视频播放速率控制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/hRG5cN9YREatxi7ByxDODA/zh-cn_image_0000002453067566.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=40FACDFE00B8150BE03A6E790129B07E371E1ECB350110275996856D0A02FA72 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/A44AnA-1RVm25v0APzzoJA/zh-cn_image_0000002453067566.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=7ED72C7EE05D54D4F3BDDD80CCBFD4AECAAA4720D90C7AA4414E3B2BC398F295 "点击放大")
 
 ### 实现原理
 
@@ -398,7 +398,7 @@ this.avPlayer.on('stateChange', async (state) => {
 
 滑动调节音量是一项非常实用的功能，它允许用户在不离开视频播放界面的情况下快速调整音量，以获得更好的观看体验。该功能位于窗口左侧，通过上下滑动手势即可调整音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/-ThH_MO6QRG8Q7c_mev1mA/zh-cn_image_0000002486107329.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAF9ED38C9ACE1E1C66B82A4155818B26CE3FEDEA38F0E6611EC68476789D769 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/PznWFmQaSOKdCTYAv8edzw/zh-cn_image_0000002486107329.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=762FC1A6CB93141D9F307C639F367730AE217719ED61CC803F0271792D4297FB "点击放大")
 
 ### 实现原理
 
@@ -460,7 +460,7 @@ this.avPlayer.on('stateChange', async (state) => {
 
 在视频播放前，用户可设置外挂字幕文件，字幕将精准同步显示于视频画面下方，并可以通过按钮切换字幕语言，提升观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/lAn8-5TCS22e1rNnGUrfKw/zh-cn_image_0000002452907974.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CD8384E4E833266A68F9D1997F9DA94CC93451499781ECB8410E0D0A2398D27 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/hF-bjg6pSC63nwlcQySElQ/zh-cn_image_0000002452907974.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D9F289AEA712B8DE858E2AB3C853FC90E5E3FB5A4057D609B40DE5A07247D0D "点击放大")
 
 ### 实现原理
 

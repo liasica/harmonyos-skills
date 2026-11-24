@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hadss_dial
 title: 基于DialogHub的通用弹窗
 breadcrumb: 最佳实践 > 布局与弹窗 > 基于DialogHub的通用弹窗
 category: best-practices
-scraped_at: 2026-11-14T08:54:06+08:00
+scraped_at: 2026-11-24T12:47:43+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:29d3e8117b3b5424b3ed0821f5c7861cdfc5ca2a7657e2452677e8ef1ec8d5d2
+content_hash: sha256:411110f5521ce400e35721aba0ea921598481d0def42fe1e69e88942dd1c0036
 ---
 
 ## 概述
@@ -195,7 +195,7 @@ DialogHub.getToast()
   .show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/zwucy7t2R9qbR7EjLmNFCA/zh-cn_image_0000002656422016.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CFF4EBDFE29A6543D603F04043939EE826AD375C547ADE92EB2620CA59ED43D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/I76dECgYTw-iIRvBzFHs1w/zh-cn_image_0000002656422016.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D382DF7893331FE0822C8C9723424C6086C1C30E83E7D5696C0A2FCBC549DA8 "点击放大")
 
 ### 指定位置弹窗的非模态弹窗
 
@@ -224,7 +224,7 @@ this.specifiedLocationDialog = this.specifiedLocationDialog ?? DialogHub.getCust
 this.specifiedLocationDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/lEaZn2TKQpCID4kR_CVKrw/zh-cn_image_0000002686503539.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=759A856E4599BEF476734EE948107FC53C39103583F5E67E5C27408BDF8EF587 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/nJansUe0Sxm-GyDRXcxATQ/zh-cn_image_0000002686503539.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=02E05A44EB39CFFFDC34A5BD62A9E1AFD80EC3513D2B05E7561EC5D57A21AFA1 "点击放大")
 
 ### 会定时消失且带弹出动效的弹窗
 
@@ -268,7 +268,7 @@ this.specifiedLocationDialog.show();
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Im6p74TYRiOBYhxheEGppQ/zh-cn_image_0000002686623461.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D58D65A9126BE88A9F5C80BEB049F2A45F88828D31CD66CEA97141BBEA686C0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/MNGdQbW1Q7eMDqz2ZbCqHw/zh-cn_image_0000002686623461.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A71C40D21C60D6964F078CC35574D48D7BA5B695CDB7A8A6E00867BC0D0EE59 "点击放大")
 
 ### 会避让键盘的弹窗
 
@@ -299,7 +299,7 @@ if (forceFresh || this.avoidKeyboardDialog === null || this.avoidKeyboardDialog 
 this.avoidKeyboardDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/f4Asq5tTSGmukrVA0Wsl4w/zh-cn_image_0000002656424912.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=57A32F60A783766CBB37574536595EE47B8D620985EFBECB09DD2AFB7AB37ACC "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/w6RPBsERS8-zKSUinVWvag/zh-cn_image_0000002656584862.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=04EF9B732D70E7C628FA3281CB6CE1CAA0DBB7821976013CC7DE2748A37A9C3F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/eGIFBBcURsGrmXhQDBLQKQ/zh-cn_image_0000002656424912.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=909179040A73CD733E8FB00EEF3F7E1240F0B84705D512A84B2DF1948B190D3C "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/wjDcz5HUR6mwRIkyBVRc2w/zh-cn_image_0000002656584862.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=D28AC088635DCD7BF7620EF730240C6712848676AA6A637DF454E41A77293C54 "点击放大")
 
 ### 指向选定组件的带箭头弹窗
 
@@ -327,7 +327,7 @@ this.arrowPointingPopup = DialogHub.getPopup()
 this.arrowPointingPopup.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/GyRPDzWEQDCvLJhyyzRC8g/zh-cn_image_0000002656427622.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=3372DEBCFF1FECC9678F5197A8C2CD3E08939073757ED54A21E0D7E903F200D3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/-avC3qatQhugxyC_RdS5gQ/zh-cn_image_0000002656427622.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=D29E84E51401DFEA447C24B3D68469936C60B95C34EA91A3A694BC39DA46A238 "点击放大")
 
 ### 点击蒙层自动关闭的弹窗
 
@@ -341,7 +341,7 @@ this.maskCloseDialog = this.maskCloseDialog ?? DialogHub.getCustomDialog()
 this.maskCloseDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/BLXDbh11T6-LecsrATProA/zh-cn_image_0000002657633398.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=5934964C7E190364D0038A92E4FFA15BAB2D16B8B65FAC4D77F40B7F248A6B66 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/vu5cPelLSkGJ4lOOSVNFdg/zh-cn_image_0000002657633398.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=A49CF16FC49A7D9DD3E36289239EE30F1D007C247C1A40E62F131243DA7212EF "点击放大")
 
 ### 可主动关闭的弹窗
 
@@ -370,7 +370,7 @@ this.activelyCloseDialog = this.activelyCloseDialog ?? DialogHub.getCustomDialog
 this.activelyCloseDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/NtiEq_fjSgCdEqa6uz5zVA/zh-cn_image_0000002687673109.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=25024B9B5F8CF24A32F628127B4C952DA4DE3DE6A283337E2AD60526C46FA258 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/zg5pkH8BR_qToy3ZS7CxAg/zh-cn_image_0000002687673109.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E352A8F4C069CDF3877F6A1574A5F67F474CFE9B87C9120881D8BA662FCEB0D "点击放大")
 
 ### 能够动态调整高度的底部弹窗
 
@@ -415,7 +415,7 @@ sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级�
 
 当前示例主要面向直板机等窄屏场景使用。因此对于如电脑、三折叠展开态等屏幕宽度大于600vp的场景，会自动隐藏对应入口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/EenH6i9IQTWIuJm8p1Ifgg/zh-cn_image_0000002686507285.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=474E7AE58EC0679AD082A6144877F38FD0C445368DD217CB89DA99812E48FAD1 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/pp6A1BBNRIeqkbmTEtYQYA/zh-cn_image_0000002656587618.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BA884706FD65D380BE838A9881728C77AE01ECE9665993AE440506127A9B980 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/MABXqoVWTw6F7rfQk21UEA/zh-cn_image_0000002686507285.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=48AEF895B014831AC5DE3FB27AE016BC43E3EB33002CBAD3DB7BF5BF2D410DB5 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/PUS7rCWrT_OaXKM5yEPN8A/zh-cn_image_0000002656587618.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEFF8EDAA997DCD62686EE6F6EEB0831349BE69F6347E710DD3C4CD09FA61CD3 "点击放大")
 
 ### 应用感知弹窗的打开、关闭
 
@@ -440,7 +440,7 @@ sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级�
   this.sensorDialog?.getStatus();
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/77lGjwbVRIOogdL-aFW1PQ/zh-cn_image_0000002686627183.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=E92725024E06A307DB11A14CB5126C453F19A1D0F8738C77B45E21CB36C8AB8F "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/8qIz42FPRIGqdJsSfO1ovg/zh-cn_image_0000002656587700.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BDCA327DA4CB71EAB01937F766D185F671DE85AB718F824692CA15C797D58BD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/pwsu-5_aTs6NIoiSBUhxoA/zh-cn_image_0000002686627183.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC1E660BB2E5C69A7F3FF5547376A39CB5A74105D7D22A9F9792F9ED479090CA "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Uh8EM2sqSFyePyI9y8eohA/zh-cn_image_0000002656587700.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5800A4B5251AE7EA83795CDA6F565A07FB6E33283F0E4975619466C10914F49 "点击放大")
 
 ## 弹窗与周边的交互
 
@@ -495,7 +495,7 @@ DialogHub.createCustomTemplate(CommonConstant.CUSTOM_TEMPLATE_SIMPLE)
   .setConfig({ dialogBehavior: { passThroughGesture: true, isModal: false } })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/I62Gd-iiQw6yGkhz5lcM3g/zh-cn_image_0000002656427846.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=621F12530174A7F54F9D969A98CAFC22847638DFF4247F1510BBE9821306C4BA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/OaoYEHJhT6-XN7-pkp9Ttg/zh-cn_image_0000002656427846.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=40C62674B3EA319AF35F7A3430FCD29F30E1B21B5618C3393CE86080FEBE9A12 "点击放大")
 
 ### 需要向页面返回数据的弹窗
 
@@ -523,7 +523,7 @@ this.returnDataDialog = DialogHub.getCustomDialog()
 this.returnDataDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/pzKPtk1bSY6DbXas28Bb3A/zh-cn_image_0000002686507517.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EB7226411B54E48521D68DA6B6C08B0CE3B36B53EC819180044498B330AF64F "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/kz9ITXsBQ2myoHNR66kddg/zh-cn_image_0000002656428000.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F403B8DC08D49D0BDBDF6631673855C9F36716D0C4E65AE5414F02AE3FED5C5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/NQX3BQCkQE2xFlaXrK4O2A/zh-cn_image_0000002686507517.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBCD26F06D5FB6B7CD0C388B617A1679261DD80B1D89081B739726CBA186ADCD "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/lAhJOUFhSaS5mijmX6_v5g/zh-cn_image_0000002656428000.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C7BAE83B3191E2CA36EF1C8C597827ACB623CF0CEFC0D67B86EF950A53E0B88 "点击放大")
 
 ### 父页面刷新正在展示的弹窗内容
 
@@ -553,7 +553,7 @@ this.intervalID = setInterval(() => {
 }, CommonConstant.Interval_20);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ITFW10KxTb6rmancceAf2g/zh-cn_image_0000002686627433.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=86D0922A98241966542F3DDA26F6E40C95B0B5A5F65D6CE03317CF3E28F404DF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/gIpiCvzISpac2JW5NryKAg/zh-cn_image_0000002686627433.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=834FA6BF88A66C50C3A9E26D2F8EB925C3B4D39B7EFA6704991F2DA3DD500DEB "点击放大")
 
 ### 页面需要感知当前页面是否存在弹窗
 
@@ -582,7 +582,7 @@ this.skipDialog?.updateConfig({
 this.skipDialog?.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/nhYHTlk_S1edT8RH5OaPow/zh-cn_image_0000002686507615.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=845B2FCB3D351C6F7CD0044775B2F245C665C71D63D2609E3E20BEA0F2F3EF59 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/RlDCZetAQnC0P-3BWuqysw/zh-cn_image_0000002686507615.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=1262D30A0735698FD449CBC65C0DE1E25ECD5C34263366212E7DE5FFAAB67CE8 "点击放大")
 
 ### 折叠屏展开态不同位置的弹窗
 
@@ -601,7 +601,7 @@ this.skipDialog?.updateConfig({
 this.skipDialog?.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/rTu9VcpWR0SEwKaidKEZSw/zh-cn_image_0000002656588412.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA73BEBC83BD610C0BCA7BC0876A2A63BCA3E76505EAC3B1F389AC0CC5274C47 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/qtxur3UHRt-506YHO8R0KQ/zh-cn_image_0000002656588412.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D16740A694AFC8827DFDC897AD5031602F480DD470046980AFD7798359DF0C7 "点击放大")
 
 弹窗在右半屏：
 
@@ -616,7 +616,7 @@ this.skipDialog?.updateConfig({
 this.skipDialog?.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/kdKTkcAeTSOVg8FUjcQJxw/zh-cn_image_0000002656428632.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F2DB5672AB2C5039B5F8863A4056CC4103FEC6575AE548A2F53C47A74171893 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/h4B6PTXqT6iLkomZQXCgiA/zh-cn_image_0000002656428632.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=922DC66B8FD08309087AE79D9D662B2BB21652776E4C04515B98F08177E9390A "点击放大")
 
 ## 弹窗内容复用场景
 

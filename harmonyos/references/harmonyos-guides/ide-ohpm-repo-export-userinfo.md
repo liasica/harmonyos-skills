@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo export_userinfo
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo export_userinfo
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:47+08:00
+scraped_at: 2026-11-24T12:42:20+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:73ad2699c4f4d110a6f33da41cfa8b6520d3dab3c94e1f2c28991386c4d447ae
+content_hash: sha256:2c9303bdb843cbd81686b4e03ceda4e6ac09c6e12e7b5b8512805fcfd6da7226
 ---
 
 导出用户的DB数据。
@@ -41,7 +41,7 @@ ohpm-repo export_userinfo
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/S38mxsq7Sa-bJvZh-dQ8Fw/zh-cn_image_0000002808884823.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=A877C290DF1D230EEE84C3ECA8D3FEA8209348DAC6FEDB919257DA9A2479AAC0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/n6Nx1yDRRHW545FRNW3syg/zh-cn_image_0000002808884823.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D7D7C0C9040217D307D691DDD05FD3FDC33ECBB8918FB970AFC4AA75A67DE5E "点击放大")
 
 ```screen
 PS D:\> ohpm-repo export_userinfo

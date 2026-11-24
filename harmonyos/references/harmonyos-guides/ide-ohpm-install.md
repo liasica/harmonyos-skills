@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-inst
 title: ohpm install
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm install
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:07+08:00
+scraped_at: 2026-11-24T12:42:37+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:839c6ec4926b3b022620d50447dd0246738951453a3d9de42f091ad5bce772a0
+content_hash: sha256:50285ef6d7eb1e5c4bb1707cffba73bfea97663be5377602009ba13f5d4e2266
 ---
 
 安装三方库。
@@ -262,7 +262,7 @@ ohpm install @ohos/lottie
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/rYrWinfOSDuxrgi66P7sCA/zh-cn_image_0000002808766853.png?HW-CC-KV=V1&HW-CC-Date=20261114T004907Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0D543049401AB4F92FD3BD2CF52DD97BE0C7733E31C57A7976CA7CC7D91F4D6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/1kqbeGLcS-m8jJTxPdfBlA/zh-cn_image_0000002808766853.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9E038C477CE28E9E080A0181801212D2A76325A0EBFEAE6E5DE0A4D6878B495 "点击放大")
 
 ## oh\_modules
 

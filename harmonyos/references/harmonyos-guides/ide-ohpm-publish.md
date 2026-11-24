@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-publ
 title: ohpm publish
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm publish
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:08+08:00
+scraped_at: 2026-11-24T12:42:38+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:42cd9a78b3cc4a29b7a50b7e2547bf970e1e93aa2896213be4d282e0926aaae8
+content_hash: sha256:2f0b63425245623ba5c8be89d14ab6f2a91693959941e51a8a0028641a9b5329
 ---
 
 发布一个三方库。
@@ -177,4 +177,4 @@ ohpm publish publish_test.har
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/3xKcJNeMT7aHs3eL3UH1Pg/zh-cn_image_0000002808766099.png?HW-CC-KV=V1&HW-CC-Date=20261114T004907Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6786AAD5B88EA955AC0F865AB0F14D419E4BB35FEC4E495C971A24396B3ECB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/umwQY5XtQ6GELFeGl0YLAw/zh-cn_image_0000002808766099.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6A5E6EFB50503FB9344D856085815711C10884F269F028EE84BEE2F04754752)

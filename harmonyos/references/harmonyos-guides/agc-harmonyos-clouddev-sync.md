@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: （可选）同步云端代码至DevEco Studio工程
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > （可选）同步云端代码至DevEco Studio工程
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:49+08:00
+scraped_at: 2026-11-24T12:42:22+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:121388638d48713450e709c5b47a9a0ec56306ff7332f0de427a406d3dbeaa11
+content_hash: sha256:3b2807dc025d087073206f6e6fa6c9b539871a9692b620e56921122be231cbe0
 ---
 
 DevEco Studio还支持您将HarmonyOS 开发者中心当前项目下的代码同步至本地工程，包括之前从本地部署到HarmonyOS 开发者中心的代码、以及在HarmonyOS 开发者中心编写的代码，以保证云端和本地的版本一致性，方便您的日常开发。
@@ -24,17 +24,17 @@ DevEco Studio还支持您将HarmonyOS 开发者中心当前项目下的代码同
 
 1. 右击云对象目录，选择“Sync '*云对象名*'”。下文以云对象“id-generator”为例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/_vP8McIbTxqyDvJ8VhBcUQ/zh-cn_image_0000002214704461.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B4BB29651A809CFE7B21D781DD55092049ABBAD7254D6C03B3DD898798ADF01)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/kb1bGgQeQ9GzyePBtwfHnQ/zh-cn_image_0000002214704461.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E8347D3F3DE4508820E74F455940AE66481274C653EC9214CA9205C9AFA1F4E)
 2. 在确认弹框中点击“Overwrite”，HarmonyOS 开发者中心的云对象“id-generator”将覆盖更新本地云对象“id-generator”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/XsUCcpPkTA-2SrmeqIO7jA/zh-cn_image_0000002214704477.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=0069C56F185A241037419B5B107360A411EAA45C1D5AFEFE6A420ABA995DA9A6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/DXaCSsTWQcWytmxdJTc_ig/zh-cn_image_0000002214704477.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=30AAE51BD4B125DE733C1AB19B06A83241F21A8D3DFE26E1986F902D7EC7A957)
 3. 等待同步完成，“cloudfunctions”目录下将生成从云端同步下来的云对象“id-generator”，同时将本地原云对象“id-generator”备份在同路径下。
 
    **说明** 
 
    后续如执行部署或调试，DevEco Studio会自动跳过备份数据。但出于精简包的考虑，建议您在对比代码差异后，及时将无用的备份数据删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/y6Qa9QcmRxqKt_ZXQkDUEg/zh-cn_image_0000002179498228.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BD1B7898791C23ABCE9ED77F714576C2A8400BAAAFE0FDC23C517B19BCF0962)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/6PrGP_-VTzy8_2Gbpw3Nqg/zh-cn_image_0000002179498228.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3B581C8CC957E8507687B484D9237393B66425D2B5B63702A86989782286D2C)
 
 ### 批量同步云函数/云对象
 
@@ -42,17 +42,17 @@ DevEco Studio还支持您将HarmonyOS 开发者中心当前项目下的代码同
 
 1. 右击“cloudfunctions”目录，选择“Sync Cloud Functions”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/P-RN7OBJQIuIdrvEl6CSqw/zh-cn_image_0000002179338512.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=6956182304911AFA2991CED3B48D7001BBDFE9415AC3F9D542D53AFEA2773006)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/8GZhwEZ7RbSGk3bzQZUPEA/zh-cn_image_0000002179338512.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BDB5357305E78431ED213AD6346199EDC50C7B379892FC5B79808DB4F522725)
 2. 弹窗提示您本地工程下存在同名云函数/云对象。
    * 选择“Skip”，同步时将跳过本地同名云函数/云对象。
    * 选择“Overwrite”，HarmonyOS 开发者中心的云函数/云对象将覆盖更新本地同名云函数/云对象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/UWkYuC1ZSvqMV5Q9qou2Ew/zh-cn_image_0000002214704441.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=C152455866EB0A9ADB22FC0142B4D51454A8B3037865069B6C6D6FFA1AFB418B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/DEFQ3AkPTs60lPQAX-afMQ/zh-cn_image_0000002214704441.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D6F77A388EDBD607AF9A14D424B02BD47ABD33AA82952DED7A8052A693156AC)
 3. 如选择“Skip”，等待同步完成后，“cloudfunctions”目录下将生成从云端同步下来的本项目下所有云函数/云对象，本地已存在的不同步。
 
    如下图，“cloudfunctions”目录下新增了云端同步下来的“test-cloud-function”，上图中本地已存在的云函数/云对象未被覆盖更新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/m50HHt2IS4GwR3jwxMABLw/zh-cn_image_0000002214704485.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=D75D6B7BDBD95BE835A68EA85F321D310ABD4AD3758FD492E86EEF2DA6D763BA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/KoHuUKMtSWaztx6Ah1DwxQ/zh-cn_image_0000002214704485.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F90AFFA8F9B0B42C169106A80EF8A37C76B5F88B37950EAF3F93CDD14B7D10D)
 4. 如选择“Overwrite”，等待同步完成后，“cloudfunctions”目录下将生成从云端同步下来的本项目下所有云函数/云对象；本地同名云函数/云对象也被覆盖更新，同时更新前的原云函数/云对象会备份在同路径下。
 
    如下图，“cloudfunctions”目录下新增了云端同步下来的“test-cloud-function”，本地已存在的几个云函数/云对象也被覆盖更新，并且均生成了备份文件“xxxx-*备份时间*.backup”。
@@ -61,7 +61,7 @@ DevEco Studio还支持您将HarmonyOS 开发者中心当前项目下的代码同
 
    后续如执行部署或调试，DevEco Studio会自动跳过备份数据。但出于精简包的考虑，建议您在对比代码差异后，及时将无用的备份数据删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/8BnSM51JR1ONFJPTGD5S8Q/zh-cn_image_0000002179338508.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=1892155949D5D28ECBEF0AB0106B015D02DB268915AD1DFB99501FAC56E5178A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/lMLBBa5kTxu_Do9tqaEFmw/zh-cn_image_0000002179338508.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1633421DCA5EF4053289A863D1DB983C1784E4A6682A37A82C9A6E3896F4A29)
 
 ## 同步云数据库
 
@@ -75,10 +75,10 @@ DevEco Studio还支持您将HarmonyOS 开发者中心当前项目下的代码同
 
 1. 右击对象类型JSON文件（以“objecttype1.json”为例），选择“Sync 'objecttype1.json'”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/xF1ecemHRpOkBHXHYB-MQQ/zh-cn_image_0000002179498216.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACB1700639E2668A7B3CA2D01AD1F7D6FF433336068C0A5C9CB267B76975B8C1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/HFxvza2RTN24290eGGqnPg/zh-cn_image_0000002179498216.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A5E0D41C0A054F809D3BC4FC95729557C38F6AE70713D24F57C4950BFFDE084)
 2. 在确认弹框中点击“Overwrite”，HarmonyOS 开发者中心的对象类型“objecttype1.json”将覆盖更新本地对象类型“objecttype1.json”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/-zMQArIGQ5eHFh7c0TS7zg/zh-cn_image_0000002214704465.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=94C64D9A826EE943BDF910664C42956AABD3E9029B698EE94988341AB7831212)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/hEhPSRZ7QNGEae7qkXlJjw/zh-cn_image_0000002214704465.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD728490569687B2898F84AE3B35B093D3F01BD60788AA2DC20F62EEE396DFA2)
 3. 等待同步完成，“objecttype”目录下将生成从云端同步下来的对象类型“objecttype1.json”。
    * 如果云端和本地的同名对象类型内容存在差异，则还会将本地原对象类型备份在同路径下。
    * 如果云端和本地的同名对象类型内容完全一致，则不生成备份。
@@ -87,7 +87,7 @@ DevEco Studio还支持您将HarmonyOS 开发者中心当前项目下的代码同
 
    后续如执行部署，DevEco Studio会自动跳过备份数据。但出于精简包的考虑，建议您在对比代码差异后，及时将无用的备份数据删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/OCg5jhMwR9qztVBzyn2zpw/zh-cn_image_0000002214704445.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA09EA3E8E4EEC86042B0AC5548EC2D8A0C8088B057BEC7A576A06B1E404BB03)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/lGUfVwFQSWurDYkWaAKpfQ/zh-cn_image_0000002214704445.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B9A6D069DF62EB27E4D8720464704B4D5EE657573DEB3C0BB97F5E9C68E1A27)
 
 ### 批量同步对象类型
 
@@ -95,18 +95,18 @@ DevEco Studio还支持您将HarmonyOS 开发者中心当前项目下的代码同
 
 1. 右击“objecttype”目录，选择“Sync Object Type”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/FJG-WkLwRgKAOqyx-vBcBw/zh-cn_image_0000002179338532.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EFEFDF6448D965F6EE1F8A2FF67869D7117C242A953F5D526ACDED179EF3CD9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/kSJvW0Z9QuWXWN89gMr62Q/zh-cn_image_0000002179338532.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE00353AE035E6435D43EFD70462DC4CE6491E362D3355DFCC8A357C81F6ED76)
 
 2. 弹窗提示您本地工程下已存在同名对象类型，如下图“Post.json”与“objecttype1.json”。
    * 选择“Skip”，同步时将跳过本地同名对象类型。
    * 选择“Overwrite”，HarmonyOS 开发者中心的对象类型将覆盖更新本地同名对象类型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/KbO2HGgQSl2n3Ny8_E0iLA/zh-cn_image_0000002179498208.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A5D95B6A63472329862EBC0DCE516A47A42A899F3D98C69DCC76D11E803A6AE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/RYZ_YdQbSQahSXVJSQ5StA/zh-cn_image_0000002179498208.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=49DA8A8D439D522108A9C0AF6BE0E66CF2CB7328442CDE0406503301F5867EF2)
 3. 如选择“Skip”，等待同步完成后，“objecttype”目录下将生成从云端同步下来的本项目下所有对象类型，本地已存在的不同步。
 
    如下图，“objecttype”目录下新增了云端同步下来的“test\_object.json”，本地已存在的“Post.json”与“objecttype1.json”未被覆盖更新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/PhPKfQeuRA6T6q285dK9JA/zh-cn_image_0000002179498196.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EC4082AB4FD05A4E75776ADE81BF89D9D768B5819BB1A38980A4AEC58FF7210)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/d7x1zOSpSdmiCBQE82ti8w/zh-cn_image_0000002179498196.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C12C2F4893DF84A6A36C7DCF5BE6B288DD6254AFCC486E3249B4F1FF57AC3650)
 4. 如选择“Overwrite”，等待同步完成后，“objecttype”目录下将生成从云端同步下来的所有对象类型，本地已存在的对象类型也被覆盖更新。
    * 如果云端和本地的同名对象类型内容存在差异，则还会将本地原对象类型备份在同路径下。
    * 如果云端和本地的同名对象类型内容完全一致，则不生成备份。
@@ -117,7 +117,7 @@ DevEco Studio还支持您将HarmonyOS 开发者中心当前项目下的代码同
 
    后续如执行部署，DevEco Studio会自动跳过备份数据。但出于精简包的考虑，建议您在对比代码差异后，及时将无用的备份数据删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/MtNqklryQzyt5Xo8lATH1w/zh-cn_image_0000002214704489.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=31FB454D55510F6F912B9BE788A1D07D8800EED2EE35FE116C7CB90473BE3798)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/pOLMWEoPQ2Woca-xzXFH6Q/zh-cn_image_0000002214704489.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4803BBA9BEE3F31EC5C44A3E6F290CB5B5C07A003A29652C0694CC9600071B1)
 
 ## 一键同步云侧代码
 
@@ -127,12 +127,12 @@ DevEco Studio还支持您将HarmonyOS 开发者中心当前项目下的代码同
 
 1. 右击云开发工程（“CloudProgram”），选择“Sync Cloud Program”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/E4G-B9cRTsqEebV_8Gbhfg/zh-cn_image_0000002214858849.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B1AF145A1BE4AE6C5019852D84E172E1296EF8FF892A1114D295CDE1B0F54DA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/1clT5O_aRLSwumhBzJvbTg/zh-cn_image_0000002214858849.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E6DA19DB41ABBE4C8D2380477130CDE64165CC394F4F97C5219D3C0B2A19D77)
 2. 弹窗提示您本地工程下已存在同名对象类型/云函数/云对象。
    * 选择“Skip”，同步时将跳过本地同名对象类型/云函数/云对象。
    * 选择“Overwrite”，HarmonyOS 开发者中心的对象类型/云函数/云对象将覆盖更新本地同名对象类型/云函数/云对象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/LkkDIo7jQbS_I66HkT7WxA/zh-cn_image_0000002214858861.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=2366175E8EB1B50CF0E74FD0AF4878B8EEF023CA67DF827EFCED68339426A178)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Lj8_e2pHRjC9J_bLXm7NZw/zh-cn_image_0000002214858861.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=82DF4374B594B2E62527E9D5D698DB9DCB6F060AF133449194D1DC2F495B63C8)
 3. 如选择“Skip”，等待同步完成后，“objecttype”目录下将生成从云端同步下来的本项目下所有对象类型，“cloudfunctions”目录下将生成从云端同步下来的本项目下所有云函数/云对象，本地已存在的云函数/云对象/对象类型均不同步。
 
    如下图：
@@ -140,7 +140,7 @@ DevEco Studio还支持您将HarmonyOS 开发者中心当前项目下的代码同
    * “objecttype”目录下新增了云端同步下来的“test\_object.json”，本地已存在的“Post.json”与“objecttype1.json”未被覆盖更新。
    * “cloudfunctions”目录下生成了从云端同步下来的“test-cloud-function”，本地已存在的“id-generator”、“my-cloud-function”与“my-cloud-object”未被覆盖更新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/EQ-ovrgVRrG7Q483yofx_Q/zh-cn_image_0000002179498236.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=B65CC9439DF507C599E29BABD970A1C8122D8B7E0F4DEBBE6659B79CFC84BA9C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Vl7c5sXVSDed5erk4QPYAA/zh-cn_image_0000002179498236.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=65052A9004EA28F5AEA041643CD9AA2B209BB2957984D529FFD435B2889DE366)
 4. 如选择“Overwrite”，等待同步完成后，“objecttype”目录下将生成从云端同步下来的本项目下所有对象类型，“cloudfunctions”目录下将生成从云端同步下来的本项目下所有云函数/云对象，本地已存在的云函数/云对象/对象类型也被覆盖更新。
    * 如果云端和本地的同名对象类型内容存在差异，则还会将本地原对象类型备份在同路径下。
    * 如果云端和本地的同名对象类型内容完全一致，则不生成备份。
@@ -155,4 +155,4 @@ DevEco Studio还支持您将HarmonyOS 开发者中心当前项目下的代码同
 
      后续如执行部署或调试，DevEco Studio会自动跳过备份数据。但出于精简包的考虑，建议您在对比代码差异后，及时将无用的备份数据删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/tFd4aT98Sm-YfA2mqA0CLA/zh-cn_image_0000002179338516.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=E72FC356F1D8512264F150AC44FE415B585A7879F72DDD717FBDF26E86E3A55A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/utG6VXivSMOntCz6ZeGESw/zh-cn_image_0000002179338516.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C59F9BAD4C35F53B8C356691D24633DA0824C1AD6ADBF1F8AA581E69D1EDF398)

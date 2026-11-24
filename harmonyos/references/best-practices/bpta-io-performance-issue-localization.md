@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-io-perform
 title: 文件IO性能问题定位指导
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 文件IO性能问题定位指导
 category: best-practices
-scraped_at: 2026-11-14T08:54:14+08:00
+scraped_at: 2026-11-24T12:47:51+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:1bd18493af43da22ffbdae6362ecd22d424c2840038b22d7364a9fc5f2df1ed9
+content_hash: sha256:4d86bdff2a5fd8a0eec46a373ae2c98c44b1d43b79917c6eb213d9926866918b
 ---
 
 ## 概述
@@ -40,7 +40,7 @@ FileSystem模板自DevEco Studio 26.0.0版本起支持，低版本DevEco Studio�
 
 下图展示了标准化定位流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/nFzJ49imTpKw57eiTNGE8Q/zh-cn_image_0000002818072979.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=E76F3CF07A37DFE6BA1822B581577D5C9935A31C7789F91F9CC91E31213CB0EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/vujPWTddQ2K2E2m5NfA40g/zh-cn_image_0000002818072979.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F6B8DA36E87ACB27D29A38FF0B097D8844E768A1614E21ECC2C98EDE3394208)
 
 ## 文件IO性能问题分析案例
 
@@ -52,26 +52,26 @@ FileSystem模板自DevEco Studio 26.0.0版本起支持，低版本DevEco Studio�
 
    连接设备并启动应用后，打开DevEco Studio的Profiler，按以下路径操作：选择Profiler → 选择设备与应用进程 → 选择FileSystem模板 → Create Session（创建Session） → 启动录制。录制开始后，在设备上复现问题场景。随后停止录制，等待工具解析并生成IO耗时数据。Profiler录制与Session创建界面如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/g_X-dLXATN-RmdhaLlMc3A/zh-cn_image_0000002788913638.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6C1080658245574568F6924AACC0D973FE225B052940E679036A4FB176DBA89)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/3BcCp0OUSaifABcqUwxNdw/zh-cn_image_0000002788913638.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC70E4C6F62144F1504E05904607F9EF5738EB2EEC2B8D47638F426552A2BC2E)
 2. **问题分析**
 
    查看应用IO耗时数据，框选应用IO主泳道，可以看到在一段时间内，逻辑写80000次，逻辑读80000次。Profiler采集到的应用IO耗时数据如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/giGaQXffReuH7w8JTlB5Gg/zh-cn_image_0000002817953053.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=399F3063F3306B0AF68FCD85FA4074C2EB2EBC470ACF5039F4727974AC95DF55)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/Zs2gqS_NSyiMfDOcmKAabA/zh-cn_image_0000002817953053.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8FFFA2CF2B5BC95AFDC5B2C5AAEE814CE472D2A70F8B6DDEDF75B2353E6E645)
 
    查看应用IO子泳道，Logical Writes展示应用逻辑写的详细数据，Logical Reads展示应用逻辑读的详细数据。可以看到IO条块呈现“先大量逻辑写，再大量逻辑读”的集中分布，这段区间的IO耗时占比明显偏高。应用IO子泳道耗时数据如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/SfD7QybzQhqWpGD2sFdEVw/zh-cn_image_0000002789073570.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=96AE5C9F6E766F0772C2A8D3B2356342C075FC6D49A18C8FEE7FD6FCC88FB239)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/gVLQtLtYRr2z_Tknw_1F9A/zh-cn_image_0000002789073570.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A8868402DD98D315C550E4CCC64C10FFF94E749E230EA17A2CD1157DAD250F3)
 
    以逻辑写耗时为例，选中Logical Writes泳道，框选Logical Writes泳道数据，滚动Details区域列表数据，发现所有线程号都是26477，记录下该线程号。Details详情如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/9z577RjoQDKJrbT72bpfyQ/zh-cn_image_0000002818072981.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=03598DD0B1B1255AE7664CCC14D067FC3E316EBA4A1C211B6748D954DE5234ED)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/kE2Y9M3KRhyOYHdnTNiE_w/zh-cn_image_0000002818072981.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF1EC86FBC7EF2AC6C796572D0CBBA43E49EF7011824C549C62BF14CBC738061)
 
    各泳道采集数据的含义可参考[IO耗时：FileSystem分析](../harmonyos-guides/ide-profiler-filesystem.md)。
 
    展开Callstack泳道，找到对应的子泳道。在底部详情区选择Top Down页签，查看对应的代码文件。单击Call Trees按钮，在弹出的浮层中勾选Hide System Libraries。双击应用堆栈，即可跳转到对应代码位置。Callstack泳道与调用栈详情如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/VLHKtGflSt-D-kaMbOfRTg/zh-cn_image_0000002788913640.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B54C14506C5605FDF8FA6955600324A31D59D3492690E6C5DC124A70B6940F0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/LyowCCAmTASWt2LJi9Ik3Q/zh-cn_image_0000002788913640.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=21930BEAA67F468AF7A98F61AABCFA5A67C1D4330D88330DA719CF0FFAF9B870)
 3. **修复与验证**
 
    结合源码分析，主线程上循环批量读写文件导致了该问题。
@@ -116,7 +116,7 @@ FileSystem模板自DevEco Studio 26.0.0版本起支持，低版本DevEco Studio�
 
    代码优化后，重新触发原异常场景，使用FileSystem模板录制。可以看到应用逻辑IO次数与耗时均恢复正常：逻辑写与逻辑读各1次，最大耗时1.09ms。优化后的IO耗时统计数据如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Rrk3sH62QreA3Ae2aXP70w/zh-cn_image_0000002817953055.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=2214BD4C7961B8CC6E5CD60AFEBD6DF74EFF55BC8129CDC52884C68BA2B41462)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/R_2a2PzyR5CJOqcqNq-MtA/zh-cn_image_0000002817953055.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=765AA64FD4201916CDC7F73F9390C91249E52F2704E3CFA5F86C66E10EDE887B)
 
 ### 并发资源耗尽
 
@@ -129,15 +129,15 @@ FileSystem模板自DevEco Studio 26.0.0版本起支持，低版本DevEco Studio�
 
    查看应用IO耗时数据。可以看到在一段时间内，逻辑写599979次。并发场景下泳道的Statistics区域详情如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/4wDK_0Z1RzaKlk34IhuTHQ/zh-cn_image_0000002789073572.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E7465B9A4A1293A007FB24DA25029FE8B70FCC19EFBF5FE1CAFD994F2B7D69F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Ypc8MxivRqG-ewDTRU7Pdw/zh-cn_image_0000002789073572.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=491943EA48CC020BA52043E562B921563390BCE391BE648B97135E1BE02DE919)
 
    框选Logical Writes泳道。该区间的IO耗时占比明显偏高，且同一时刻应用发起的逻辑IO最多达到5次。滚动Details区域列表数据，寻找线程号占比较多的IO数据并记录线程号。并发场景Logical Writes泳道的Details详情如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/7fGhPC1KTXaR_YTF6vFH8g/zh-cn_image_0000002818072983.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=95F3E295DEF72E64149E1172A5F4BEA7525A76B62137F239D77BF33554909535)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/QAqZaRtxQlC_JJO4EE1izA/zh-cn_image_0000002818072983.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEC8E327F75286D963BD35AE7523FD6F0158D0BF380A171D67053053ED2B0AE1)
 
    展开Callstack泳道，按上述案例的方法找到对应线程的子泳道，在底部详情区选择Top Down页签并勾选Hide System Libraries，双击应用堆栈即可跳转到对应代码位置。子泳道所对应的应用堆栈如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/bMt0GRyKTXKV-lfQ08d4aw/zh-cn_image_0000002788913642.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=B33FE411C4F7A93DC0C277453B9359689FE39678A11D860CE7C2B07B4290BB45)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/Z03KGmrDTR-wAEQ-HJ0fag/zh-cn_image_0000002788913642.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=7125BFF605D228E9A234231E1A0E5B4783F161ED0E885FB0E8ABCB95AF23B0F4)
 3. **修复与验证**
 
    结合源码分析，一次性无限制地提交大量IO任务，占满全部TaskPool工作线程。后续任务因此长时间排队等待，造成资源饥饿和响应延迟。
@@ -183,7 +183,7 @@ FileSystem模板自DevEco Studio 26.0.0版本起支持，低版本DevEco Studio�
 
    优化代码后，重新触发原异常场景，使用FileSystem模板录制，可以看到同一时刻仅有3个IO任务在OS\_TaskWorker线程上执行，不再占满其余工作线程。受控并发后的执行结果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/YlO4fsdDSJygH5znJImWuA/zh-cn_image_0000002817953057.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=71AAA7DC8E4E459895F38FF5D544A8F1AD5E34B2C71526ABC60E71CCF774EB4B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/0iaXb9pcTRKXpY9mN7Lcsw/zh-cn_image_0000002817953057.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F2D2D6D9931866DBF87CE2FD5523DF643E076C97A50768D99CBBB5A5B6BE754)
 
 ## 总结
 

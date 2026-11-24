@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-li
 title: 构建系统生命周期
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 概述 > 构建系统生命周期
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:02+08:00
+scraped_at: 2026-11-24T12:42:32+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:0987ef2af10d78d5495ef7477a1de6ef533f486589606cbee9c492b022e3a4bd
+content_hash: sha256:0734a6e8ae9bc1fca711a71d41f85f1e0a7563602ef22aeff2959b86bad0f937
 ---
 
 本文档对Hvigor编译构建系统结构及生命周期进行简要讲解，首先介绍Hvigor对工程结构模型的定义，随后介绍什么是任务（Task），最后会介绍Hvigor的构建生命周期以及它是如何依赖hvigor-ohos-plugin完成自动化编译构建流程的。
@@ -14,7 +14,7 @@ content_hash: sha256:0987ef2af10d78d5495ef7477a1de6ef533f486589606cbee9c492b022e
 
 Hvigor将工程解析为一个树形结构，项目为树的根节点，项目中的每个模块为树的叶子节点，树最多为两层，模块中不能包含其他模块，在Hvigor的定义中统称项目或模块为一个node(节点)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/wunH5f-dRYiUcWI95z0PSA/zh-cn_image_0000002779406830.png?HW-CC-KV=V1&HW-CC-Date=20261114T004902Z&HW-CC-Expire=31536000000&HW-CC-Sign=54E8C85C032FEEAD39A617FC51049C1192BC4E2AE571C89BF94AE258662E4B32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/VB4LbVgLTG2y8yYAl17QpA/zh-cn_image_0000002779406830.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=89DCFF48F70F8C38A38FA9E041BBB6C23FCE5CE441D9EB1377CD87193D142DB5)
 
 在构建最开始的[初始化阶段](ide-hvigor-life-cycle.md#section19246144681710)，会通过[hvigorconfig.ts文件](ide-hvigor-life-cycle.md#section810245135914)以及工程级build-profile.json5文件中的配置来构造出一个树形结构存储项目的工程结构，工程级build-profile.json5文件和hvigorconfig.ts文件均可以[配置多模块](ide-hvigor-multi-module.md#section99251918477)。
 
@@ -31,7 +31,7 @@ Hvigor是基于任务对您的项目进行自动化构建的，任务（Task）�
 
 需要注意的一点是，任务是存在依赖关系的，Hvigor在执行任何任务之前会构建任务依赖图，所有任务会形成一个有向无环图（DAG），如下示例图，任务之间的依赖关系用箭头进行表示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/1epPEpcyRWimwUYOS_56Dg/zh-cn_image_0000002779406834.png?HW-CC-KV=V1&HW-CC-Date=20261114T004902Z&HW-CC-Expire=31536000000&HW-CC-Sign=59EC74A5B70DAF8F8465A839448176A3C5D4310267DC56089965C2EB90E8BD10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/GTxRGya1R4uN5DrZSmGdKQ/zh-cn_image_0000002779406834.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD209E4C415A9D2519E79E36293F87B4519568D466834B1519F78D18C5027AE2)
 
 hvigor插件（hvigor-ohos-plugin）和hvigorfile.ts文件中的构建脚本都将通过任务依赖机制对任务依赖图做出影响。
 
@@ -47,7 +47,7 @@ Hvigor和hvigor-ohos-plugin的关系可以通过下图来说明，Hvigor接受�
 
 在Hvigor执行构建的过程中，hvigor-ohos-plugin会向Hvigor进行任务的注册，Hvigor会根据构建的[任务依赖图](ide-hvigor-life-cycle.md#section194191858161220)依次调用对应的插件来执行相应任务，在完成编译、打包、签名等一系列任务后，Hvigor也就正式完成了构建。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/WZ22HH7-Qf6ZPqiZfJVF9g/zh-cn_image_0000002779566808.png?HW-CC-KV=V1&HW-CC-Date=20261114T004902Z&HW-CC-Expire=31536000000&HW-CC-Sign=73805880055E7D54097F6903186CCAFD49CE3B59D63BBA7CCEF98B3F9AACEDC1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/youzRMtqSfK0nQzm4p_QMA/zh-cn_image_0000002779566808.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4F40F6CFDB8CBA77D4BB170BEB748D5FB5ED57907425E94E0EBBE4752B5F24D)
 
 ## Hvigor生命周期
 
@@ -87,4 +87,4 @@ Hvigor和hvigor-ohos-plugin的关系可以通过下图来说明，Hvigor接受�
 
 在下图中所有绿色标记的线框为可以使用的hook点。每个hook点的使用方式请参考[基础构建能力](ide-hvigor-api.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/6voPhucLRXOsScZX-MsB6Q/zh-cn_image_0000002808886473.png?HW-CC-KV=V1&HW-CC-Date=20261114T004902Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAB718A73BE1BBA2193CFE6168DED941A47716A7C9767D3D5FCEABCEF57E3836)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/9xQOuQOUR7atiUqqYRuK6A/zh-cn_image_0000002808886473.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=A16C9E6DB7F421062B9F19C36036159042E0D9F5A478F44A5403209170CE9973)

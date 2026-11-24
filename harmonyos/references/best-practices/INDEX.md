@@ -1,6 +1,6 @@
 # 最佳实践（best-practices）
 
-共 487 篇文档。
+共 489 篇文档。
 
 - [电脑异形窗口](bpta-2in1-window-shape.md)
 - [基于AbcKitTS实现字节码插桩](bpta-abckitts-implements-instrumentation.md)
@@ -143,6 +143,7 @@
 - [自渲染图层未使用硬件合成问题分析](bpta-hwc-self-rendering-layer-analysis.md)
 - [图片合成视频开发实践](bpta-image-to-video-synthesis.md)
 - [Image白块解决方案](bpta-image-white-lump-solution.md)
+- [新闻小说应用沉浸阅读开发实践](bpta-immersive-reading.md)
 - [基于Canvas实现录像回放时间轴](bpta-implement-timeline-based-on-canvas.md)
 - [运行效率提高](bpta-improve-running-efficiency.md)
 - [Grid组件加载丢帧优化](bpta-improve_grid_performance.md)
@@ -224,6 +225,7 @@
 - [运维态高效处理Native泄漏](bpta-native-leak-in-operation.md)
 - [分析native内存](bpta-native-memory-analysis.md)
 - [导航定位场景低功耗规则](bpta-navigation-scenarios.md)
+- [网络性能问题定位指导](bpta-network-performance-issue-localization.md)
 - [网络资源低功耗建议](bpta-network-resources.md)
 - [新闻阅读](bpta-news-reading.md)
 - [首页信息流体验优化](bpta-news_homepage.md)

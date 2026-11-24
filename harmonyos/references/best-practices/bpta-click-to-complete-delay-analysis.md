@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-click-to-c
 title: 点击完成时延分析
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 点击完成时延分析
 category: best-practices
-scraped_at: 2026-11-14T08:54:13+08:00
+scraped_at: 2026-11-24T12:47:51+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:6c25ba4923a44abfd39b1aa60334cc25fab8ee179adfe2878575ba48c6c12ee5
+content_hash: sha256:275c0afd3f954a7ccf79462908e9d1cb2467c9daf26aebbb55204f781f3946d3
 ---
 
 ## 完成时延优化概述
@@ -18,10 +18,10 @@ content_hash: sha256:6c25ba4923a44abfd39b1aa60334cc25fab8ee179adfe2878575ba48c6c
 
 **图1** 点击完成起止点示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/SZXvb_28Soq6xFnW14F5Yg/zh-cn_image_0000002229450665.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F612060300DC6F870AABBAA28330C5801A8DF7038B67AB4BAE9C86276601DD9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/akbv0VVaSI-XwbHXNjo2Eg/zh-cn_image_0000002229450665.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0F7D25A42957EED74BA92AB7783FED7753A23FE91D65F8543E82F3098C26CDC "点击放大")
 
 **图2** 页面转场过程解析  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/tpVCg8h2SzWDQHCKSXpN5A/zh-cn_image_0000002420747058.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=82EB87DC18708C02DAED310FB3669BC2ADFAEA5790C7AD3C86BAA550404CE9D8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ppXvuRWXTIurvZoHCVnFyg/zh-cn_image_0000002420747058.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=646FFAECA3A0577DC67D36D9F4A4F4019993096446F445A86305E47CDC53D860 "点击放大")
 
 ## 完成时延检测工具
 
@@ -46,7 +46,7 @@ content_hash: sha256:6c25ba4923a44abfd39b1aa60334cc25fab8ee179adfe2878575ba48c6c
 
 **图3** 问题定位流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/6ZRNv-FQT0ujvIVK7Kbwsg/zh-cn_image_0000002455895496.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=043D1B676DD998EFBD6CF87418BBF2BE8C4FE914CDF26DA034A75C196DD965AB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/lruSyluiRz-6c1IlwYrlGg/zh-cn_image_0000002455895496.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=8517B043E19A3E42D3E4E4E4409472DB51548417F3E7D1F87F58C750E65B1FB6 "点击放大")
 
 如上图所示，分析点击完成时延问题通常需要以下步骤：
 
@@ -64,13 +64,13 @@ content_hash: sha256:6c25ba4923a44abfd39b1aa60334cc25fab8ee179adfe2878575ba48c6c
 1. 在DevEco Studio中启动AppAnalyzer工具，详细参见[AppAnalyzer](bpta-performance-detection.md#section135451444171)。
 2. 点击“手动性能页面间转场体检”按钮启动检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/bRBichW9TOCO1fdoQmrKsw/zh-cn_image_0000002480207908.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDE4E031066422F2369C6BF3F043FA5FCBC88539291E755B714485FC77178DD1 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/OoneV5dnQ5Gh_TGBivPsZw/zh-cn_image_0000002480207908.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=D27751A37C4EB4E6C003892A35D44CDE259153B4B972AEF249BBDF543BB987E9 "点击放大")
 3. 开发者需根据提示，在应用中找到待检测页面，点击工具中的开始按钮，然后在应用中手动执行转场，操作后点击停止完成本次检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/qyH1HxJqTuqY4Xk93FH1Vg/zh-cn_image_0000002482580170.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA681C82676292AAF16B76EB52B62A2A0044A731ADB201C6D63AC5C39647BF67 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/8vfl-ehFRte-bcJS3ZF4wQ/zh-cn_image_0000002482580170.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FC0858FD6CA9D74FE385C38E10CD1E696CC8C4190080B0969D63C6FD83050D1 "点击放大")
 4. 检测结果分析，点击完成时延应小于或等于900ms。如果存在大于900ms的点击完成时延，判断为存在性能问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/EoA4ghaEQDuw73kojjYZBQ/zh-cn_image_0000002512327777.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=32D4C8B8EF4E1D0A99F5235CC5925D4D56E3DE5239C0866103ABC87E8972C8A6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/tlG9g8H_RIqrlgxgBDwWVA/zh-cn_image_0000002512327777.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=70D9520686BEEFD96B136C884319CAB98B8672F26FA90B4715E04792BD10C410)
 
 检测出的点击完成时延报告中，可能会存在以下五种影响性能的故障原因。
 
@@ -84,7 +84,7 @@ content_hash: sha256:6c25ba4923a44abfd39b1aa60334cc25fab8ee179adfe2878575ba48c6c
 
 1. 获得检测结果后，点击详情报告中的“点击完成时延”，可以查看UI线程应用自身方法耗时长的检测结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Rr46Lu-bQtatm2-uL-QniQ/zh-cn_image_0000002480480340.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C6408A0B5F27FF1F86090E9C32028678DA5AD4FCDE756AF80D516CC5D98A6DF "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/hdfuW0_vSR6Ja3827blFAA/zh-cn_image_0000002480480340.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=D846646C2C327516EEC4FB13DF3522F86F88FF7DF3F3AE237DB3843FE23509C9 "点击放大")
 
    检测结果中，可以根据方法总耗时的大小来判断该方法是否为耗时方法。如上图中，aboutToAppear[PageJumpSceneUseCase3.ets, 29]表示PageJumpSceneUseCase3.ets页面中的aboutToAppear()方法，其执行耗时较长。
 2. 点击方法名，可跳转定位至PageJumpSceneUseCase3.ets页面中的耗时方法处。
@@ -105,7 +105,7 @@ content_hash: sha256:6c25ba4923a44abfd39b1aa60334cc25fab8ee179adfe2878575ba48c6c
 
 1. 获得检测结果。点击详情报告中的“点击完成时延”，可以查看UI线程应用自定义组件创建耗时检测结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/6Hj6X3KfT-GLaQLEoPM_4w/zh-cn_image_0000002512328271.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3C2E83694AECC6F43164BF56A371D2C1F3FBD58368E6AFE237F6A7BEE049C36 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Hlk95Sx4RlGjIXZlgUyILQ/zh-cn_image_0000002512328271.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=763AB63F24E65F67C32BCED0442A834FF4B18DF5C9AD0EB6F49D6748D413CD90 "点击放大")
 
    检测结果中，可以根据总耗时列来判断自定义组件创建是否耗时。上图中，TestResponseLatency组件创建总耗时40.933ms，耗时过长。如下图，TextItem在页面中自定义组件被创建多次，导致创建耗时过长。
 
@@ -136,7 +136,7 @@ content_hash: sha256:6c25ba4923a44abfd39b1aa60334cc25fab8ee179adfe2878575ba48c6c
    ```
 2. 点击源文件定位到创建耗时的UI组件，根据提供的可能故障原因，对UI组件进行相应的优化，还可参考静态检测结果中的优化建议，来对组件创建耗时进行优化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/HQV_3kW6Rway7fZs7zXr8A/zh-cn_image_0000002512368293.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=E50EEC831316AB7D367714F605398E8094C1874D5E294C3092188F0B9C11B9D1 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/2CUpiGN8SEOFPXTtFm1zGg/zh-cn_image_0000002512368293.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=5366739058E9C795F49A2973DD72BB535280A1D901CEB3136440A7044E52A0E2 "点击放大")
 
 ### 网络请求耗时长
 
@@ -144,14 +144,14 @@ content_hash: sha256:6c25ba4923a44abfd39b1aa60334cc25fab8ee179adfe2878575ba48c6c
 2. 根据检测结果中的请求耗时和点击离手到请求发起间隔可进行如下判断。
    * 网络请求本身耗时长
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/udTmSYQoTVGVkIuvfoCE2g/zh-cn_image_0000002480208772.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4B769725F240A04DC8A193CB5CD21EC2811BBE64688E979C5E0DB9049F7CBC4 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/MZ545_ghRlq6CHSZPcTyKA/zh-cn_image_0000002480208772.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=9041B14B9D9985A43A6E8ACA3037B0CEA20E9A156FBE92260D17A24AB7B72B86 "点击放大")
 
      网络请求本身是否耗时可通过检测结果中的请求耗时时长来进行判断，时间越长，则网络请求本身耗时越久。详细分析请参考：[网络诊断：Network分析](../harmonyos-guides/ide-profiler-network.md)。
 
      网络请求本身耗时长，可对该URL请求进行预连接和预解析来优化网络传输速度，提前完成DNS查询和TCP/TLS握手，即在应用启动或空闲时提前建立并维护一个持久的连接池；还可以使用CDN来优化网络传输速度，将静态资源部署到CDN上。
    * 网络请求发起太晚
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/OrB4eM2QTNepL5SHng0keg/zh-cn_image_0000002512368655.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=BED506F64884FF65D395D312990BB9BA3354F4B4AC7896AE82279A312C4D630E "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ZfJAYHxOT26qnYV90equ6g/zh-cn_image_0000002512368655.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEBECD44FEC23E7F43A4BB7D5AE722730EBB9D765BC981B948634F253ABBF300 "点击放大")
 
      点击离手到请求发起间隔则表示用户进行点击操作后，到真正向服务器发起网络请求的那一刻止，这中间所经过的时间。可通过检测结果中的点击离手到请求发起间隔时长来进行判断，时间越长，则表示网络请求发起的越晚。可通过提前发起网络请求，来进行优化。可参考：[网络请求提前发送](bpta-application-cold-start-optimization.md#section199911250658)。
 
@@ -161,7 +161,7 @@ content_hash: sha256:6c25ba4923a44abfd39b1aa60334cc25fab8ee179adfe2878575ba48c6c
 
 1. 获得检测结果。点击详情报告中的“阻塞主线程的任务”，可以查看主线程长时间被阻塞的检测结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/-qLFMqypSxuep03v6qCD_g/zh-cn_image_0000002512328837.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7C6A1AAA04493C1F3DD408A4CF8C5F6EBF5904997597EB3B56E80BA8D645659 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/gJw0HtsOTFS07DmPZ62MJg/zh-cn_image_0000002512328837.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFDD229E6DA80A4C9C0F20E80346E111885AD79066F35CCB5597862D78F060DB "点击放大")
 
    通过关键线程识别技术，体检工具能够基于唤醒关系算法精确构建线程间依赖链路，同时结合传统调度分析方法，全面检测可能阻塞主线程的子线程任务。检测结果中，可以根据实际空闲时间判断主线程是否长时间被阻塞：空闲时间越长，则阻塞时间可能越久。通过识别并定位阻塞主线程的关键任务，可以快速找到对应的耗时代码位置。任务耗时代表诊断出的阻塞主线程任务本身的执行时长；主线程等待耗时表示任务结束点到主线程上一个 Running 结束点之间的时间，用于衡量该耗时任务对主线程造成的阻塞程度。
 2. 可能存在以下5种诊断结果。
@@ -231,13 +231,13 @@ content_hash: sha256:6c25ba4923a44abfd39b1aa60334cc25fab8ee179adfe2878575ba48c6c
    * [存在大量等待时间无法诊断](bpta-click-to-complete-delay-analysis.md#section1563932810516)
 3. 可参考优化建议中的文章，来对主线程长时间被阻塞导致完成时延不达标的问题进行优化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/sF91xb32SQiV1U_gmOutZQ/zh-cn_image_0000002480368946.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7105B657CB9555FE424BBBD241E2117368A260360E35A8A198EECB2363C3641)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/MXREVWrFRliTDReDjxaozw/zh-cn_image_0000002480368946.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B42B3A8A5901FBD8D0A0C5D8BD309D297BB48B7D7CF22208B72F6CF41E4C1E8)
 
 ### 图片大纹理
 
 1. 获得检测结果。点击详情报告中的“点击完成时延”，可以查看图片大纹理的检测结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/g7vSHGGFTqSjdQ0GNCX8Sw/zh-cn_image_0000002512368913.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=B16EAA900075A9C460F25820C2195EC04D1A7C0BA702829BCF04B74C1430106C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/aD7GOKnSSCOPQy0rgA9g-g/zh-cn_image_0000002512368913.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C3301F83231DE2F787AB7DA9214F3D24F8DA6C568FEE56EFE1ED2C0548085FC "点击放大")
 
    检测结果中，可以根据超出尺寸占比来判断是否需要优化。
 2. 可通过图片组件所在源码文件进行定位，找到包含图片的源码文件。检测结果可以看出，源图尺寸与目标尺寸不同，超出尺寸占比较大。建议源图尺寸不要超过目标尺寸大小的10%。
@@ -292,11 +292,11 @@ DevEco Profiler工具分使用方式可以参考[Frame分析](../harmonyos-guide
 1. 搜索"H:DispatchTouchEvent"标签，找到type=1的那个DispatchTouchEvent，就是点击离手起点，将该时间戳设为起点。
 
    **图4** 确认Trace起点  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/3TaSc3NCSGKxv3fsMy2mFw/zh-cn_image_0000002456058024.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=7879D77E3851C59157EFBA62E2CAD75DC2FBD70244EC0E06ECC983F871BAE20D "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/x5u4AV_bRRStCENBL2cAFg/zh-cn_image_0000002456058024.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6FF8A3BA5C1D8AA93EDE41798064EC7045430DB9A4CAC8D0DBC40BD7B58F31B "点击放大")
 2. 点击操作完成时延的终点位置在泳道图中没有明确的Trace点，需要通过录屏工具计算出完成时延的耗时时间。从起点往后拉相同的时间找到终点位置。
 
    **图5** 确认Trace终点  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/ETqkac4WTCuKM9R8e_EFqw/zh-cn_image_0000002489137641.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0D48FDF8CF5B1F85B0D3C956425AADDD56CF36BFB4C7370A430B3B6EDF5C97F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/dxviAVDqSiygWmh2puS5JQ/zh-cn_image_0000002489137641.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=80EC27BE31C4B93B421055E82F6F445DCA649148AE4CC75135B3015C773EE669 "点击放大")
 3. 使用Profiler工具标记Trace起点与终点。
 
 ### ArkTS Callstack泳道分析ArkTS侧耗时函数
@@ -304,12 +304,12 @@ DevEco Profiler工具分使用方式可以参考[Frame分析](../harmonyos-guide
 在ArkTS Callstack子泳道中，ArkVM是需要优先查看耗时情况的泳道，可以观察ArkTS侧方法的耗时。优先分析耗时最长的调用栈（program除外，program表示程序执行进入纯Native代码阶段，该阶段无ArkTS代码执行，也无ArkTS调用Native或Native调用ArkTS的情况，需要切换到Callstack泳道查看具体的调用栈信息，通常难以通过这里分析出有效信息）。逐级展开，可以看到具体耗时的文件。基于 [“HMOS世界”](https://gitcode.com/harmonyos_samples/hmosworld)切换tab页场景，抓取Trace信息。
 
 **图6** ArkTS Callstack泳道图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/o15hzMsqS0S6uhhWpdTKjw/zh-cn_image_0000002455898360.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=71526BCD623C2DA7AB5B184D26B6B146DE939370DF69C41FB71E568C5031E852 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Y3Dn5muqTuam73LfM_UwXw/zh-cn_image_0000002455898360.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0B3A9F0A1E1674C76B231A421FC1F6553740EEC370B151B8A7B1E805AECAC56 "点击放大")
 
 观察发现MainPage文件中匿名函数耗时350ms，展开该节点。
 
 **图7** ArkTS Callstack泳道耗时函数详情  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/q1WOk8vdR7654RoZk6vmCA/zh-cn_image_0000002489177673.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=56C704AD11BB86B29B2D0DFE496E5CEC6E7D5570FDB9247385E7652F836323F4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/bIYSFdaPQRu3E51md_q_og/zh-cn_image_0000002489177673.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=C231E9343675DEF16BAB64731DD5C6066E1C4AE95BCDC685811C0BB9777C91B2 "点击放大")
 
 展开节点后发现函数调用链中AudioPlayerService中getInstance函数调用耗时327ms，接下来定位源代码。
 
@@ -411,7 +411,7 @@ export class AudioPlayerService {
 如下图所示的第145帧
 
 **图8** 超长帧Trace信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/2DuePw7yTOuK2HH-zKh6Xw/zh-cn_image_0000002489140921.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=3177E6FEB126FD0CC998D70E1F8D53CDB0E0E56085FFBF4F5D0C416076FBDD35 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/KJbRUfnERu2d0t-OfMp_fw/zh-cn_image_0000002489140921.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A291B676CBF63C834E655D2F2DAA435C9EDCDC97C2217555EB014EE447BAC4F "点击放大")
 
 每帧的预期耗时（ms） = 1000ms / 帧率。如上图所示，选中超长帧后，可以看到该帧的预期耗时Expected Duration为 8ms 330μs，说明帧率是 120。实际耗时为 92ms 571μs，远超预期耗时，因此被识别为超长帧。超长帧的长时间渲染会直接影响用户体验，导致点击完成时延不达标。
 
@@ -426,7 +426,7 @@ Callstack泳道，该泳道显示Native函数调用泳道，也可以看到Nativ
 下图展示了超长帧案例中Callstack的主线程子泳道。
 
 **图9** Callstack主线程泳道图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/phXaBhLxTyuGDzpt9vQ6Dw/zh-cn_image_0000002489180945.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D6D11419E101B41CD85F6682B422CE234861B0C2304144D590F860D183FFB04 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/OLCkmOsJS1CpYNNFlqoPqw/zh-cn_image_0000002489180945.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=10A1643E17EA4E058FED72975E4F9F7B3E2CBDDC9B76454C3BFC1EFD967B13AC "点击放大")
 
 滑动查看右侧权重最高的函数调用栈，定位到MainPage.ets文件第203行代码为主要耗时原因。
 
@@ -435,19 +435,19 @@ Callstack泳道，该泳道显示Native函数调用泳道，也可以看到Nativ
 ArkUI Component泳道记录了自定义组件以及系统组件的绘制次数、耗时等信息，重点关注相对于其他组件耗时比较久的组件。
 
 **图10** ArkUI Component泳道泳道图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/s5aOXv3jSJa5RO9CJa3UaQ/zh-cn_image_0000002456061300.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F93ECB7151BCF254F7540E9F2004FE28AFED01910D456398DE972F233F61404 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/X1DtChanQK2MCLAy1a5fCg/zh-cn_image_0000002456061300.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=810D5043EB119A5C2DD219901EA85FF7B6E31781C6CB431B88EBBFFEC2C0C2DE "点击放大")
 
 然后可以在详情（Details）中使用下图中被框选的按钮过滤目标组件，查看组件在刷新过程中不同阶段的耗时情况。结合函数调用栈和ArkUI Inspector工具，定位目标组件绘制耗时过长的具体原因。
 
 **图11** ArkUI Component泳道图Details信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/-LrW9cR0QVKUs9-97qwJuw/zh-cn_image_0000002455901644.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE380A6B4CD7709057ECA242DF7D2AB40C3FF242383F17865217F14829BC983B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/mRAJQVw1T--S_jeMc0In0A/zh-cn_image_0000002455901644.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=F83A6DC79D663DB822DFE89B09ABCE3BA9EB67B385346FDB98F0DCA18F2767A8 "点击放大")
 
 ### H:Animator泳道分析动画时长
 
 在页面切换过程中，如果存在加载的 loading 动画，出于用户体验考虑，可将动画停止与网络请求的完成相关联。例如，展示“加载中”状态，直到数据加载完成。通过 H:Animator 泳道，可以观察到动画的耗时。
 
 **图12** H:Animator 泳道图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/N0z_JK2pTsW5z3Eu66njFQ/zh-cn_image_0000002489140945.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=392260BD660916DBDA798F4170B3FFDA47757110541A17E73A0513CAA4199B3F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/5HW5_8SVS3-NjtzkWPPjbQ/zh-cn_image_0000002489140945.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=05041A19C85A534DBD11D87D264D5A7D82D11D812370D2DFE41896EBE3089B3F "点击放大")
 
 ## 完成时延解决方案
 
@@ -463,7 +463,7 @@ ArkUI Component泳道记录了自定义组件以及系统组件的绘制次数�
 
 由于ArkTS单线程EventLoop特性，异步调用的执行时机会被延迟到同步逻辑之后。如果将Http请求接口放在异步函数中，网络请求可能会被UI绘制阻塞，等待第一帧UI绘制结束才开始。如果页面首帧较复杂，这会导致网络请求的延迟时间显著增加。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/cAafrhTIRiWSGiAcbn477w/zh-cn_image_0000002194010436.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=39ACC44007FFF9B851BCF82CC18A4DFCEDAA01CBDCC6B7FF133134BCF0A83ACF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/OdVhAmv5RYKEK_f0BYqyag/zh-cn_image_0000002194010436.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=047207C3F96C0522212B4ECE935D20B7D2FCCB88CE62C060EE6D23F135B9898F "点击放大")
 
 **避免在页面子组件中发起网络请求**
 
@@ -471,7 +471,7 @@ ArkUI Component泳道记录了自定义组件以及系统组件的绘制次数�
 
 如下图情况，应用页面结构分为Header和Tabs两部分，如果将Tabs内容数据的Http请求放在Tabs组件中发起，由于Tabs组件在UI结构上依赖Header部分，则需要先创建Header，同时又因为Header内容的渲染也依赖网络请求，所以最终导致Tabs的数据请求严重延后。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/o0YNYfBhTtm7cV0pYgRbkg/zh-cn_image_0000002193850836.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=6307A083433D883AC2FDDAB5CA6ED996537129ADA24C095C0301584FC413AD4A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/9kFxFBmpSeGDBX8pOt0rbQ/zh-cn_image_0000002193850836.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=3695BAA587916AA595F4BB06D7495AF4E74B908B3DA50A46CB1008B68B2F9C21 "点击放大")
 
 ### 动画时延耗时
 
@@ -546,7 +546,7 @@ struct TabsPositiveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/vcim6BjJSXy7XP_FTAUZeQ/zh-cn_image_0000002194010416.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=40047BAE0FF441A6214FE5F11572865DE5F419E2429151087C61E98C37C20BAB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/jn_mxwMhSPe7WZrQLII59Q/zh-cn_image_0000002194010416.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=A49EB2D4CCDF0F83F677ECD5B3C8315EF6039080C04AB02A4DCF051053BC277B "点击放大")
 
 实验二：设置animationDuration为1000ms
 
@@ -573,7 +573,7 @@ struct TabsNegativeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/R0RxlDqUTsWJbfWFG8_2CA/zh-cn_image_0000002193850820.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=3037A5B00FC8D54E2D19A194C64BD5F8A0A1FA061F8737F96B6BB74593776795 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/4Za4NnMvTEWOPp_cakgf7w/zh-cn_image_0000002193850820.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=70F635F4E3207489C177BDB6F7F88695DE5F4623F697FDDB8F5396EFB7838714 "点击放大")
 
 **表1** 运行效果图
 
@@ -604,40 +604,40 @@ struct TabsNegativeExample {
 
 在主线程长时间被阻塞的检测结果中，点击“存在大量等待时间无法诊断，请您确认”，打开Profiler工具，加载完成trace数据后，会框选主线程运行空闲的区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/1YQNG1zVQ_aE5zUWLaJBdg/zh-cn_image_0000002480446276.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CA10053EE123872B312EB4294DBC4CDD004E6EFF2DEAD4E847B889CB6B908AF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/99F9YDucRjisSj6Xu_FIDQ/zh-cn_image_0000002480446276.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B727C326BD1482978DA3DF5DEF5D2547CC5A7FC011EC9860A89462FBB718873 "点击放大")
 
 可以看到框选的397ms中，主线程主要处于空闲状态。放大该选中区域，并从框选的范围内，从后往前找Running前面的Runnable，点击查看Runnable详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/WFr-xtU2Qle3aRPUIEualg/zh-cn_image_0000002455902388.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DC93F8DFF35E1160CB20DA519F02E8E4E0E3B056C5D66086291AC9B79B6C0F5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/DJAZ1Jg2SM6PCZkNxMj2_w/zh-cn_image_0000002455902388.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DE073E788F622EB0D442CE7CEF05FB1F8D3D54811525735B719AF87B0F5E2A4 "点击放大")
 
 通过Runnable详情中的WakeUP From Tid，可以看到是VSyncGenerator唤醒的主线程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/vsLeuynISYajaPNrzhj8FQ/zh-cn_image_0000002489181689.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2DBDAFA1DAA36355A88C431E304F64BFEF8387BB3F68BCABE0460637D076E6A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/7yEaNDTYSkW2-iuBbIimmg/zh-cn_image_0000002489181689.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=881FB80C80C5FCBD0E3D40667DB996C41C381A1F0A480CE7E90BCBFEC777BE50 "点击放大")
 
 点击该线程名后面的跳转按钮，跳转到VSyncGenerator线程的Running详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/XlnHL50xTrivHrJBl4XPpQ/zh-cn_image_0000002456062016.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=587A05E2B9DAFF2F085B5BD2135DF675E3DF4162952E4014ADE09378C25B4BE3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/Dsanw5d7T76jVHl3s5_myw/zh-cn_image_0000002456062016.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=495DA02BADE38A5D4836F9190944491682C288AC8EC8D9DF69005BFA28606165 "点击放大")
 
 放大该区域，并点击该Running前面的Runnable，可看到详情中没有WakeUP From Tid，表示该线程此刻Running不是被其他线程唤醒的，且上一个状态是Sleeping，说明这条唤醒链路就断了。若该链路断掉，则需要回到主线程运行空闲的区域中，从后往前，继续上述查找步骤。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/u1Cj7c9CSGy_aMnbI7nIvA/zh-cn_image_0000002489141661.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=308FBDF673DF55D355F4728567D1D31BAF2C68B9D13A6D4ED3FC3CB35DCF0B9B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/thvXIpFuQsmteA2V9XujBw/zh-cn_image_0000002489141661.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=584528100B063EA247D28C8F1BD48D00825B739C985BD650E17AF92508A9F1F3 "点击放大")
 
 再次点击“存在大量等待时间无法诊断，请您确认”，回到主线程的空闲范围内，从后往前，继续找到上一个Running前面的Runnable，查看详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/YGz4wVmHT-uOHXsK_4HOdQ/zh-cn_image_0000002455902392.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FCDEFF6036F89F6586E89D5432151005C1D48CC6CE92D2E2D481B5466B8201D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/ta7myWZtTWWZIqUNjtZa2A/zh-cn_image_0000002455902392.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=87AF0749D96366313D4F02ACCDE68743F8DC8A1AAB56F0B92076242629EE51BE "点击放大")
 
 通过WakeUP From Tid，可以看到是OS\_FFRT\_2\_1线程唤醒的主线程，点击后面的跳转按钮，跳转到对应线程的运行泳道。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/R8malG0rRbq7vrJ8DeMNzQ/zh-cn_image_0000002489181693.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=545633B8B6CF2709CBB11B128EAF12320A1640A1CDFFEB62E7507488E4FC3F01 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/PF5cnbDKReqqol9SADzk6g/zh-cn_image_0000002489181693.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FB892C8CB3CDEF0C08E0C853B658CEF31C499FD402336A76123C4D641A3EA40 "点击放大")
 
 可以看到上一个状态是Runnable（Preempted），可能是CPU的时间片调度用完了，可继续查看该状态的前一个线程状态是否为Running。如果是，则缩小该区域，观察该线程是否连续在Running，并找到连续Running的开始时间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/hMN6bc1BTjqdcVWAcyUxWg/zh-cn_image_0000002456062020.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E1203941FD07F8D032506F91C5E01ACAC946889DC061A0D674BA26D146A16E2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Q_MuzHsMRi68pVVVTYDXKQ/zh-cn_image_0000002456062020.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=175CD8D50536CDCCAACF7555E12AEFF7A5B5F2883A4526067BDC0C87B9EC19E7 "点击放大")
 
 通过连续Running的开始时间的第一个Running前面的Runnable，继续找线程唤醒关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/pxmBynhDT-Kmqs5NttznGA/zh-cn_image_0000002489141665.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EF9157640B8A61C5D68F608A80EFB56433F00A3F8134E75686591D6FAF74C2A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/52iK6dTFTraT_Rvk6xyxHA/zh-cn_image_0000002489141665.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=03F5AE5791863AD38703163CE761BFED5CBC30D455AC8318DEF7789FBF95F932 "点击放大")
 
-查看Runnable详情中的WakeUP From Tid，可发现此刻Running的线程是主线程的唤醒的，将该子线程泳道收藏，并通过跳转按钮找到主线程唤醒该子线程的位置。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/3FjUob0RT4C7B8IzL7a7PA/zh-cn_image_0000002455902396.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=7495D37DD85C03F581F319D10B0B3D8553A5908680EC80825B82F4DC6074FFC0 "点击放大")
+查看Runnable详情中的WakeUP From Tid，可发现此刻Running的线程是主线程的唤醒的，将该子线程泳道收藏，并通过跳转按钮找到主线程唤醒该子线程的位置。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/QTsatHXuTTO-BGb6zH6grg/zh-cn_image_0000002455902396.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C91D24C4800DA03F0E5A455105FBEEA159228CEAC21B718B607443939C2C70D "点击放大")
 
 可以看到该空闲时间段，主要是在等待子线程OS\_FFRT线程执行耗时任务导致，需要开发者判断主线程是否依赖子线程的返回，如果主线程依赖子线程返回，需要优化子线程的函数耗时，或者将耗时任务提前执行。

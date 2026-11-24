@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-pc
 title: 基于OHAudio播放PCM音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于OHAudio播放PCM音频
 category: best-practices
-scraped_at: 2026-11-14T08:54:07+08:00
+scraped_at: 2026-11-24T12:47:45+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:d1a7904bd5a824f2982adf48bc272f2ac0d018b208177145dbd941142e88ce6b
+content_hash: sha256:801eb1e519bd3a95e84a7479e297b06b2607c0b4c3a2a630e981f08d24430b30
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ OHAudio是用于音频播放的Native API，仅支持PCM格式的音频。指导
 
 本文是音频播放系列文章的第2篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/5CNCSLvQRBiLA_UZ0F5-og/zh-cn_image_0000002524057588.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC3506675FCDD4D9E4274F373F116A310345980EB659230B987FF4842640C892 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/zYPvJjtHTl2ZZ1iSuEmkcA/zh-cn_image_0000002555217487.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=582751F3A4F54D46BB7C69797941D8FDD315589ED7DBE8340EB85BF305CEC87B "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/vXbTYQHBQDykv67PKZ04mA/zh-cn_image_0000002524217594.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C84151DF2E8EFB09A13242B6C4B8491FA9B690D21AF73C3CCFBCF24B70E7DBB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/S0qyCX03Q2W8OR5wzpCxWQ/zh-cn_image_0000002524057588.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE0093ACC7792B33A9CF8F859E5B860ED0774E9D0A72E50D9D1403652E407682 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/GCshSyOwSnOQ-xgGqUtGzw/zh-cn_image_0000002555217487.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1696A0BA97B6C859DD041D05DD5026914848A360FE5F32829716ACDA08A5E5D "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/kiY4Ci0jSzuboelVD-NXtw/zh-cn_image_0000002524217594.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=99EAAE780D2D6F83E9C9CA369248EC22FC896214F63721EB9262B1B4A018C63D "点击放大")
 
 ## 场景分析
 
@@ -37,7 +37,7 @@ OHAudio是用于音频播放的Native API，仅支持PCM格式的音频。指导
 
 通过[OHAudio](../harmonyos-references/capi-ohaudio.md)接口实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CyIPmEJKRQGQhsIYCL3rEg/zh-cn_image_0000002555337465.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E00B67ABBED5A4441502DF0944A57BBE5A1E94DD539A18F036EB4E3883A1B47 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/xCC7HavgRl2iJgTixkoWRw/zh-cn_image_0000002555337465.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD8C257402E3F0D892381C050D469B2A0EBC67BA6FB77107866288488DF21143 "点击放大")
 
 ### 实现原理
 
@@ -251,7 +251,7 @@ void OHAudioPlayer::ReleasePlayer() {
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/CKYfgDuEQR-aHw0UASAnoQ/zh-cn_image_0000002524057598.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A3220C6430497234E9C0C46C490C492A9B8FF56656327CAAFDB8EB5D737BDF6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/yeWrSEHCQ46VpZb1rfs1QA/zh-cn_image_0000002524057598.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=B15CE972E7D325AA3A58390798D496E8C99CA2CEAF0A83811FB79F86544C1122 "点击放大")
 
 ### 实现原理
 
@@ -367,7 +367,7 @@ static OH_AudioData_Callback_Result OnAudioRendererWriteDataEvent([[maybe_unused
 
 通过界面按钮切换音频播放静音状态，实现一键开启或关闭静音。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/ZYQUcohoRCuHRcahcPVL5Q/zh-cn_image_0000002555217499.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=509AA69DE2FF5A7797035B05245EA87BC9D25636DC8417242FBBDB3611751559 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Sc3duXlfTb6BGoOOnqcTDQ/zh-cn_image_0000002555217499.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E7CFC0001E6005A20706EBA71A64B3B16C3AF8AC3759208CA06A22F45AACD18 "点击放大")
 
 ### 实现原理
 
@@ -400,7 +400,7 @@ void OHAudioPlayer::SetSilentMode(bool isSilentMode) {
 
 点击上一首、下一首或歌单列表中的其他歌曲来进行切换歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/NRamqidfSFyt9o-U9ANXQQ/zh-cn_image_0000002524217620.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B3A70B5FA2034CC0271A8861D528AE4FE087F07C25B460C58BB455E0D2BA16A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/yV8_7rv0TBWZrlMwZMcXoA/zh-cn_image_0000002524217620.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FA60BA8B65794B27C5AD969D9DAD1AE72896A7C2AF7723CF60DDED89B0FF91D "点击放大")
 
 ### 实现原理
 
@@ -497,7 +497,7 @@ static OH_AudioData_Callback_Result OnAudioRendererWriteDataEvent([[maybe_unused
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/UBbNbQgDSEWiaq8h6Bbq3A/zh-cn_image_0000002555337493.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D3FDB048991D25CAD94F85C8588E57EF07FFCCC08D97A52973D9A80D8EA0465 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/O5vSV8fUQPS_ouQDTFa8Sg/zh-cn_image_0000002555337493.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=7723037BCDEE0BDA9192C7938B9191E1B3CA2D218673ADB0688D84320145A6D0 "点击放大")
 
 ### 实现原理
 
@@ -549,7 +549,7 @@ void OHAudioPlayer::SetPlayingSpeed(float speed) {
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/EukwYWITRxGK8oWqotf9DA/zh-cn_image_0000002524057630.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=A04B6C2E578D1D7FE7BDA43284073EBB441443F23EA7C6CAB184AF2C68CF1995 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/pbIaB7MLTt-JYv_DhCqX6g/zh-cn_image_0000002524057630.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6587088DB8DA66F7926FDE0F22B75544035FC5E290F0ED320D4B51E55B7FFE1 "点击放大")
 
 ### 实现原理
 

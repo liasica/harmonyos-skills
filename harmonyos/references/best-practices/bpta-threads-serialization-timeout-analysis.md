@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-threads-se
 title: 跨线程序列化耗时问题分析
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 跨线程序列化耗时问题分析
 category: best-practices
-scraped_at: 2026-11-14T08:54:13+08:00
+scraped_at: 2026-11-24T12:47:52+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:cf7d30e6ff3c97fb77be8582c93fcc794699e1d26d0c0aaab649afc116a7c579
+content_hash: sha256:9ff987a43400edad5ce57cca00f7f7a7c19219e4824269c73f6687d7639bb375
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ DevEco Studio新增主线程序列化和反序列化检测能力，支持配置�
 
 **图1** 主线程序列化/反序列化开销检测流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/QLpfRo18RUKg9KnUzHrYMg/zh-cn_image_0000002193850160.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=408E2E1A67B4530DA0623F5411C04E60BFC197C7A333611064C9B0D634ABB1D8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/EFML5h48QYy41iBxbBpGAA/zh-cn_image_0000002193850160.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=F003957E8E6825B423EC8C9AB25A99698AC727EE5492D0FFB74C20B9C40C2EE0 "点击放大")
 
 超时检测的使能和关闭通过方舟Profiler提供的CDP协议控制，默认关闭。使用DevEco Profiler录制时会自动开启：
 
@@ -64,15 +64,15 @@ DevEco Studio新增主线程序列化和反序列化检测能力，支持配置�
 2. 启动应用，点击Profiler，选择Frame模板，选择当前应用进程，点击Create Session，然后开始录制Frame insight场景数据，录制过程中可正常操作应用。
 
    **图2** 录制Frame insight场景数据  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/MxPkdy3KQ2m4x8Vs8EtZ5A/zh-cn_image_0000002194009752.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BE7D3499E73DE80EACFFFB8509CBBE76AB2DF883C7B6A9A08C1FD26C17FBCA0 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/OYvrQlutRFGn_ib5bSN2CA/zh-cn_image_0000002194009752.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=75E895A3426699F7C3D34F26BBC7DA4D04541DEE15B0E718889BC349A035CAE5 "点击放大")
 3. 停止录制，待录制结果显示后，如有检测到主线程序列化和反序列化超时的情况，Anomaly泳道会显示序列化和反序列化耗时打点检测结果，提示信息包含线程id、startTime、duration、操作类型等。
 
    **图3** 主线程序列化/反序列化超时情况  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/lckmfiCaQo6twdlygu-38Q/zh-cn_image_0000002229450021.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CB1BE723F7F38FD8C48622E8D19973E19BB999CFD22AEEAE23A15794916BE52 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/qAHBe8KCTmWVh_J5Ad_00g/zh-cn_image_0000002229450021.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBCFBE770B971A999048BCDAADB5A9BE04AB89E7EFB5C8C71758BB4FFC68FE4B "点击放大")
 4. 框选这段序列化和反序列化超时时间段，点击ArkTS Callstack，会显示这段时间内的调用栈信息，通过查看其中的Symbol Name信息可以定位到当前耗时的调用栈，双击对应调用栈即可跳转到对应源码。
 
    **图4** 序列化/反序列化耗时阶段调用栈  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/j8-ksqeSTAWKDre8U9RU_g/zh-cn_image_0000002229335541.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=41098ED9F8BEF5F176E74EFF295F0D03F9A73B6C0E835AA779B9B9CA27E653D8 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/O74lBzJYT6eo_E0HDTK12g/zh-cn_image_0000002229335541.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=5978FFF8733D084EFACBB46ECAAFD4DCA10A03DC79ABC0BF86A93478C55B9F81 "点击放大")
 5. 开发者通过上述第4步的方式可以更快定位序列化/反序列化耗时长的源代码，并参照Sendable改造或通信数据改造的方式进行优化，从而提升应用性能。
 
 **序列化/反序列化阈值配置**
@@ -81,7 +81,7 @@ DevEco Studio新增主线程序列化和反序列化检测能力，支持配置�
 2. 启动应用，点击Profiler，选择Frame模板，点击Anomaly泳道中的options，在弹出的输入框中输入超时检测阈值。
 
    **图5** 序列化、反序列化阈值配置  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/qgvomzrfT3SaG5bWTFaL8w/zh-cn_image_0000002229335537.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=E91039CB3D6BA97B92FAE5327D6B73A84A8DBAF7CA8B6A00DB44D782A7472FF5 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/DFRvOWD2S4a1JRoCrzmU7g/zh-cn_image_0000002229335537.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=754ED5A160A0750B4421F93AA962751599D07B9D635DCF8EA29CBBCFBBFC3D61 "点击放大")
 3. 参照上述序列化/反序列化性能检测步骤开始录制，此时新设置的超时阈值已经被成功设置和使用。
 
 ## 案例分析
@@ -142,19 +142,19 @@ function doDBOperations(info : BookDBInfo) {
 通过序列化超时检测工具检测后，在Anomaly泳道可以看到序列化耗时超出默认阈值（8ms），达到260ms。
 
 **图6** 未使用Sendable时序列化耗时结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/rKZbFlMSSxKbVQ1Z6y1Zxw/zh-cn_image_0000002229450025.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=582C89FCDC04193612F9329AE2657BE82AA35C830391C277289CAC7E76F7B86E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/2I4BqB7CS6GI6IQ0SXRxew/zh-cn_image_0000002229450025.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2B2ACF29DB124A8280051A98AE51B4F8C0768B57D13E071D5EDDE92B499428C "点击放大")
 
 通过点击下方ArkTS Callstack泳道，选取这个序列化和反序列化超时发生的时间段后，可以通过下方的Callstack信息定位到此时正在执行Index.ts文件中的prepareBooksInfo()方法，由上方伪代码可知该方法内调用了taskpool.execute()方法，向子线程中传递对象dbInfo，触发了主线程序列化和反序列化过程。
 
 **图7** 未使用Sendable时序列化超时阶段ArkTS Callstack调用栈  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/rp-IDUxYSlS21qpGOH1NLA/zh-cn_image_0000002229450013.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=22AFC39FA67DD5C7FB6221F84E8C4CC7DD9CB7A844E010E9A5178A6E02C23590 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/Hks1keEHRPWHY7Hnksut_A/zh-cn_image_0000002229450013.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBF71A00CC40E7DAC75C4794B5AF517B62BE63317FD18783B2C9EB6EEFFBEBE4 "点击放大")
 
 为了解决该场景的序列化超时问题，将上述示例中dbInfo相关的class进行[Sendable改造](../harmonyos-guides/arkts-sendable.md)，将单个书本信息的类型定义为Sendable类型，并改造内部成员属性类型为Sendable类型。
 
 优化后，使用序列化超时检测工具再次检测录制，发现序列化耗时已小于默认阈值8ms，在Anomaly泳道中已无对应超时的Trace点。
 
 **图8** 使用Sendable方式优化后序列化耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/7e-UEFitTJigMhjpe-4g1Q/zh-cn_image_0000002194009756.png?HW-CC-KV=V1&HW-CC-Date=20261114T005129Z&HW-CC-Expire=31536000000&HW-CC-Sign=832EE1372AD33F3FC7FD07653C27F2559DF06A33A99D90230A31850295549451 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/f-y66SRHTJu87cqA8gUUhA/zh-cn_image_0000002194009756.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=A840AF5D01B8D9411251CD920397F5D5DBB77254EA66B31B6454E58AA153103C "点击放大")
 
 **表3** 序列化耗时对比
 

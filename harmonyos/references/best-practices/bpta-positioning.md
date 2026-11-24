@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-positionin
 title: 位置定位
 breadcrumb: 最佳实践 > 应用服务 > 位置定位
 category: best-practices
-scraped_at: 2026-11-14T08:54:07+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:f74842550f51fbf9c5ff326ad7ac9cb44e199af03bbdc7660a398d7da9cf83fb
+scraped_at: 2026-11-24T12:47:45+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:39a3593a160ad12a15d2efa68fe025f85fb6d4a57d62a02d4044367235ada105
 ---
 
 ## 概述
@@ -71,7 +71,7 @@ content_hash: sha256:f74842550f51fbf9c5ff326ad7ac9cb44e199af03bbdc7660a398d7da9c
 5. 运行效果如下图所示
 
    **图1** 获取当前位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/04gHAl0XRne_ecWEqjFBog/zh-cn_image_0000002193852028.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=01E32031DBCF24E6B395BE314CBF2BE77B262DFDF0237BF45789AEEAD37375A0 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/e9XQiaxHSUGmMrcR0vr16w/zh-cn_image_0000002193852028.png?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B67C0B0B8BFE6FB178589C955F88DD14F397D64BE3E7251A45E3039E36061B2 "点击放大")
 
 ## 实时位置定位
 
@@ -122,9 +122,9 @@ content_hash: sha256:f74842550f51fbf9c5ff326ad7ac9cb44e199af03bbdc7660a398d7da9c
 6. 运行效果如下图所示
 
    **图2** 持续获取实时位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/VsKBsuU_QyipkEdFxCujJQ/zh-cn_image_0000002194011616.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEB6E8E58C2280D3AB75E5CF50B02D93E226C143BE8008A07582701D01CD3BD3 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/2XcFgYhBSaKadZ0riD0XVQ/zh-cn_image_0000002194011616.png?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDF1AFF2EC9D2CC65F588BD078CC4DFFBBF3B03F6F9A472E7BAA3F1C8402ECFF "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/X6cxvlxnQYmojNjSJCJ5TQ/zh-cn_image_0000002229451909.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=525CD15F0CCB2CA505482F3B7E5111B0D4FB5F294C29947FE5D4D4588C79AB7C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/pjBcGAirQ9WN5-MegHCCHA/zh-cn_image_0000002229451909.png?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=58D7821209DD0FBC496E01E30E786F9434E9610CF2CDA7E088FC4560631477AA)
 
 ## 应用后台定位
 
@@ -268,9 +268,9 @@ content_hash: sha256:f74842550f51fbf9c5ff326ad7ac9cb44e199af03bbdc7660a398d7da9c
 6. 运行效果如下图所示
 
 **图3** 在应用后台持续获取位置信息效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/uEBCSomSQAOs7S_z5iFxZA/zh-cn_image_0000002229337413.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=12F57C9326BBBC69D2A48259DED131338B30A4076A9702A5020EA1379DB47DAA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/AseVOKktSo-Y5vvhtZP1Pw/zh-cn_image_0000002229337413.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A0BE476C5441E9F107C3959F32BE4BF4347B8B04FC7FE988B2AE4CC8B269F6C "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/d19s2QQBQJaCVj9zD2JhUQ/zh-cn_image_0000002229451897.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=354EF4018C3CE9AC7365F49123B652BC7914C9A6996679F73D51F957016247D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/pokY5Y5NSPi9lktXSyjh-g/zh-cn_image_0000002229451897.png?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=075FB0C5B32707E1254C61E7042F47E77E9414D35A7CC4DAD8A15E69F5F6D52C)
 
 ## 历史定位获取
 
@@ -285,8 +285,14 @@ content_hash: sha256:f74842550f51fbf9c5ff326ad7ac9cb44e199af03bbdc7660a398d7da9c
 1. 申请定位权限，具体内容可参考[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)或[应用权限申请](bpta-permission-application.md)。
 2. 调用getLastLocation()接口获取系统缓存的最新位置信息。
 
-   ```typescript
-   let location = geoLocationManager.getLastLocation();
+   ```screen
+   try {
+     let location = geoLocationManager.getLastLocation();
+     // ...
+   } catch (err) {
+     hilog.error(0x0000, TAG, `getPreLocationPosition failed, code: ${err.code}, message: ${err.message}`);
+     this.locationFailedAlert(err.code);
+   }
    ```
 3. 调用[geoLocationManager.getAddressesFromLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation)接口进行逆地理编码转化，将坐标信息转换为对应的地理位置描述。
 
@@ -304,7 +310,7 @@ content_hash: sha256:f74842550f51fbf9c5ff326ad7ac9cb44e199af03bbdc7660a398d7da9c
 4. 运行效果如下图所示
 
    **图4** 获取缓存位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/LwZGfAwURCeVa6QhyGOaQA/zh-cn_image_0000002193852040.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E08F7F54A59E976D2FD479D29CA66BC489111E69AE89ED20BE3DC5147F38924 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/X-A8O-O_Qkutfz-MUET_WA/zh-cn_image_0000002193852040.png?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=07FEAEE06C3032F669127EC798FC62177D41DC8640AC1A80CEAC3C885F78655D "点击放大")
 
 ## 常见问题
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-root
 title: ohpm root
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm root
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:07+08:00
+scraped_at: 2026-11-24T12:42:38+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d573619e1ecf58c16aa98755d0f0bbb6a9a530abfaa7275c0729694d7fd8c0e8
+content_hash: sha256:77b8db6340ba06498c23c2809d25845d9e44df6cd484da9a14a3daf6639ebd52
 ---
 
 在标准输出中打印有效的 oh\_modules 目录路径信息。
@@ -47,7 +47,7 @@ ohpm root
 
 项目结构为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/oUCgwOtcRq6sJYAl2Y8nhA/zh-cn_image_0000002779406480.png?HW-CC-KV=V1&HW-CC-Date=20261114T004907Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C1DD1C1D12C8364952785E2572EC72A27B36DA79EC71A2B9015CE965ABB16C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/p2ChCdRSR-SnAiz-uYR9NA/zh-cn_image_0000002779406480.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D1FCC199668C7927EC653D1B4A90C7A7A3189637F5AC1164616A9519738D1AB)
 
 在entry模块的src目录下执行：
 
@@ -57,4 +57,4 @@ ohpm root
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/LTWpOmQ5R6mMAQAXbCA_Sw/zh-cn_image_0000002779566456.png?HW-CC-KV=V1&HW-CC-Date=20261114T004907Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFC2A0B0B2054FE65EB50E280DB8848180A0AE11C2DD3B52FBAE3758828E8A4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/iv-UJzzySdOsC8dOB0PsJw/zh-cn_image_0000002779566456.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=22C49C769E58452C560840EAD48F397081BF2105CA9642BAC4B3612C149ADC2E)

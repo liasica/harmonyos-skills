@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 内存释放地址异常故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 地址越界故障模式说明 > 内存释放地址异常故障模式说明
 category: best-practices
-scraped_at: 2026-11-14T08:54:18+08:00
+scraped_at: 2026-11-24T12:47:55+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:9479d17485bddbdac811f435850f4aef0d991f005974883e91bab04f9b747482
+content_hash: sha256:2481ae6f3fad1343649306b57907b1d3a59187dd9cc00e1327db366ca9419337
 ---
 
 内存释放要求传入有效的堆内存对象起始地址，若传入偏移后的地址、未初始化指针、野指针或非堆内存地址，将导致非法释放。此类问题可能直接在释放接口中触发崩溃，也可能破坏堆内存管理结构，随后在其他模块的内存分配或释放过程中暴露，导致故障现场难以追溯。开启检测能力后，可在非法释放时检测异常并记录现场调用栈。
@@ -90,7 +90,7 @@ content_hash: sha256:9479d17485bddbdac811f435850f4aef0d991f005974883e91bab04f9b7
 
    通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）或者DevEco Studio自带的堆栈跟踪分析等工具，完成调用栈#1的符号解析，定位到具体业务代码行。如下图所示，XsanTest.cpp第236行代码触发异常，结合代码确认为执行free((int \*)ptr + 1)时触发的异常。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/C4DdpzS5Ssam6Dhz3lS77g/zh-cn_image_0000002693605640.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB306B6D0C3478863B7B7CBC482C78988DA53C38AAD0EAA03D131EF1CE7E808A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/S-iF16JPRmarYr-ihQZG-Q/zh-cn_image_0000002693605640.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=470C8D08F1CE213FA076956830AB52F5B617FD0453D9AB3D27C52598F810EB7F)
 3. 分析分配栈，确认非法地址所在已分配内存对象。
 
    证据3：日志显示，待释放地址0x00260102d044位于一个100字节的已分配内存对象[0x00260102d040, 0x00260102d0a4)内部，相对于对象起始地址向右偏移4字节。
@@ -107,12 +107,12 @@ content_hash: sha256:9479d17485bddbdac811f435850f4aef0d991f005974883e91bab04f9b7
 
    通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）或者DevEco Studio自带的堆栈跟踪分析等工具，完成调用栈#1的符号解析，定位到具体业务代码行。解析结果如下图所示，可以确认该内存的申请位置位于代码第235行。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/hUNiBgIsRRmIiHjf-29n4A/zh-cn_image_0000002723285071.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C13F0044167A008D56250F28FC6E740D42BF2CD30034D716506DA7BD4DE5466)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/deDxEHv6T627dpsrKtdCSQ/zh-cn_image_0000002723285071.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=DED2642C96EF7A16C05A1DA0BB91E2E9477F701112F8B4CA90638FB065A855D5)
 4. 分析堆内存释放地址非法的控制流路径，如下图所示：
    1. 在函数内定义局部指针对象ptr，并申请100字节内存，并将地址赋值给ptr。
    2. 释放ptr+1指向的非法地址，导致ASan分配器检测到异常。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/TF8HjxOESCmFlLsdBPIGUg/zh-cn_image_0000002693765526.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=022883F94634FD0C649F5E4C202F27DBD1B61859035FE6F907B061A6FC87E8DC "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/64em-D4wQhWB0AGUBCB7lg/zh-cn_image_0000002693765526.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=28EEF563AEAF004623F8F09AC1D66CA2904630DF11DF251AB5001D004CC02CD9 "点击放大")
 
 **问题结论与总结**
 
@@ -212,7 +212,7 @@ GWP-ASan是一种用于检测堆内存错误的轻量级检测机制。堆内存
 
    通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈得出。如下图所示，1号位置为内存分配栈顶，2号位置为非法地址释放栈顶。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/H2AsE5RJRf687hj-qvxM_A/zh-cn_image_0000002723404997.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=D971CA7DD98DB155CBC3A7E9E702272A19747DBBA2C70C41BAADCDE4A8D2FAE8 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/HUFlIcKlTMy5SqZD3adnnA/zh-cn_image_0000002723404997.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=73654AE2E1FAFC1FE2F476EE25DC3EB7A145C96BB38BF6A39D83779E533D7BC8 "点击放大")
 4. 还原内存对象生命周期，确认问题根因。
 
    解析代码后确定，p申请了一块16字节的内存，起始地址为0x5bb1c18ff0，但释放的是p起始地址左侧偏移1字节的非法地址，即0x5bb1c18fef，并非返回的原始地址。

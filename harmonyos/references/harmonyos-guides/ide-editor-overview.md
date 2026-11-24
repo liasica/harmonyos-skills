@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-editor-ov
 title: 代码阅读
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码阅读
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:50+08:00
+scraped_at: 2026-11-24T12:42:22+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:c768410c18ac73e6a84bf227e898c59ba70961c1ae655a2656790ce3fce3b7c4
+content_hash: sha256:c120693600306a1487c09b23c92de77cb092a39e8cfda698b704611910796799
 ---
 
 DevEco Studio支持使用多种语言进行应用/元服务的开发，包括ArkTS、JS和C/C++。在编写应用/元服务阶段，可以通过掌握代码编写的各种常用技巧，来提升编码效率。
@@ -14,25 +14,25 @@ DevEco Studio支持使用多种语言进行应用/元服务的开发，包括Ark
 
 支持对代码关键字、运算符、字符串、类、标识符、注释等进行高亮显示，您可以打开**File >** **Settings**（macOS为**DevEco Studio > Preferences/Settings**）面板，在**Editor > Color Scheme**自定义各字段的高亮显示颜色**。**默认情况下，您可以在**Language Defaults**中设置源代码中的各种高亮显示方案，该设置将对所有语言生效；如果您需要针对具体语言的源码高亮显示方案进行定制，可以在左侧边栏选择对应的语言，然后取消“Inherit values from”选项后设置对应的颜色即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/paZEc9GrREC0Z19-wdD8ww/zh-cn_image_0000002808766939.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=1492C25E02D5DF09ED89E1F4305D1AA77CFAD4BC8673000D4D6775EE368264CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/DI6UyABxS5aqD8rOrfMs5A/zh-cn_image_0000002808766939.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9FD6E35D54DC6FDF0E17CE926720C87EB530D001A54C961412B1BB6657259B8)
 
 ## 代码跳转
 
 在编辑器中，可以按住**Ctrl**键（macOS为**Command**键），鼠标单击代码中引用的类、方法、参数、变量等名称，自动跳转到定义处。若单击定义处的类、变量等名称，当仅有一处引用时，可直接跳转到引用位置；若有多处引用，在弹窗中可以选择想要查看的引用位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Lg2wJuf9QwGtFGNdBIIZdg/zh-cn_image_0000002779567358.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=48AF87999FE4484F13916C5344589C430845D281D8ABB1BE2D0A51E77768708E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/_rH6DQ9gQDa3LO99ztDVKQ/zh-cn_image_0000002779567358.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=99D0DA529F331188087A6AC68E470530F6465C433B9B5468199ED6C457CDBCC3)
 
 ## 跨语言跳转
 
 DevEco Studio支持在声明或引用了Native接口的文件中（如d.ts）跨语言跳转其对应的C/C++函数，从而提升混合语言开发时的开发效率。您可以选中接口名称单击右键，在弹出的菜单中选择**Go To > Implementation(s)**（或使用快捷键**Ctrl+Alt+B**，macOS为****Command**+Option+B**）实现跨语言跳转。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/rjnPyyjIQFGIzUC6OL4poA/zh-cn_image_0000002779407400.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=44F482EB27765F60A90BA73A98CBFD9493CF07330CBFCD15DEE31BCFFD997200)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/yXVloQl2TQO4hI9he7qhMQ/zh-cn_image_0000002779407400.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=790E208E0718EB58309F457872A9241867BC8582F661C2642EF4B2B32E235253)
 
 ## 代码格式化
 
 代码格式化功能可以帮助您快速地调整和规范代码格式，提升代码的美观度和可读性。默认情况下，DevEco Studio已预置了代码格式化的规范，您也可以个性化的设置各个文件的格式化规范，设置方式如下：在**File > Settings > Editor > Code Style**（macOS为**DevEco Studio > Preferences/Settings > Editor > Code Style**）下，选择需要定制的文件类型，如ArkTS，然后自定义格式化规范即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Xicbv3gxQnyGg-IHBSBSIg/zh-cn_image_0000002779567386.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF2EF1C32FFA2C84E74F183C099DC15893CBC358095A781FBBBADD17A32B9E2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/wXaN5nAqR9eLS1JQ4CMG-Q/zh-cn_image_0000002779567386.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1DB2034613211714FD365261B7645D41DC430AE65C9777CCCE691441ED63827)
 
 在使用代码格式化功能时，您可以使用快捷键**Ctrl + Alt + L**（macOS为**Option+Command +L**） 快速对选定范围的代码进行格式化。
 
@@ -40,40 +40,40 @@ DevEco Studio支持在声明或引用了Native接口的文件中（如d.ts）跨
 
 1. 在**File > Settings >Editor > Code Style**（macOS为**DevEco Studio > Preferences/Settings > Editor > Code Style**），单击“Formatter”，勾选“Turn formatter on/off with markers in code comments”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/8huH8nM6SwuwBEiOff_1vA/zh-cn_image_0000002808887035.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=50BD1413AD18E280B0D08EAD9ACB43F3BFBEC033E96FD4E319F92B50BDB96808)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/WJ87oekqQ8qJYvkl7IypHQ/zh-cn_image_0000002808887035.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E20FF563BDF5E730FDD16151976E8EC201584D34E75B82958A7944FC30C7B57B)
 2. 在不需要进行格式化操作的代码块前增加“//@formatter:off”，并在该代码块的最后增加“//@formatter:on”，即表示对该范围的代码块不需要进行格式化操作。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/0h5pnRiUQXi4QOxNpCVXNw/zh-cn_image_0000002808887013.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=C79E0E46A6A3C8B32B15C440ED80449C0CB49914ACF78D6DCB72298A93FFA2D8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/uWCIwvszRZCzY2zmyncmaw/zh-cn_image_0000002808887013.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E851338175676B84A423A903E81B28DB89E022C183CB41D8DCF68917248610A)
 
 若工程已配置code-linter.json5文件，选中code-linter.json5文件右键选择**Apply CodeLinter Style Rules**，代码格式化规则将与已配置的code-linter.json5文件中相关规则保持一致。code-linter.json5文件配置请参考[配置代码检查规则](ide-code-linter.md#section19310459444)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/JCiYoiwGQFGgZc4JfVrBuw/zh-cn_image_0000002779407422.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4354C131BEF1275A8DE0DDAE6A61666C2325DC8CB04D8839B3E96883CAD64CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/u5DfSX_8SUmVqcvUWD0mUg/zh-cn_image_0000002779407422.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=56236FF3263C473F5DB9A871B74DE1764102E2CE58F764D668F573DC07423F2C)
 
 ## 代码折叠
 
 支持对代码块的快速折叠和展开，既可以单击编辑器左侧边栏的折叠和展开按钮对代码块进行折叠和展开操作，还可以对选中的代码块单击鼠标右键选择折叠方式，包括折叠、递归折叠、全部折叠等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/mD7d_wQxQkSyKcsy-009sA/zh-cn_image_0000002779407412.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=78C72471505FBDC8FE8B73A0B4BA90F943E06FD9C68B6A60F14604BC6C812405)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/YYWkCFaaRumZ2BefiwiEfg/zh-cn_image_0000002779407412.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=88437EF8EF6F20E9740BA8135BF237728D46617FCE7E79F6ADA00374B724E49A)
 
 ## 代码快速注释
 
 支持对选择的代码块进行快速注释，使用快捷键**Ctrl+/**（macOS为**Command+/**）进行快速注释。对于已注释的代码块，再次使用快捷键**Ctrl+/**（macOS为**Command+/**）取消注释。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/7JkAE-OIRF-piAXVBwDADw/zh-cn_image_0000002808766955.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD4CB9AE6F148F9390755D03A38A00A78C6ABA4792060363BEC0CB94D696DE46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/a0i_vhyrTTyEblFqBDvvxw/zh-cn_image_0000002808766955.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7F4DA68BE567408072346D274B74BBD91E0A6DB397E8CE6FABEB4873118E81B)
 
 ## 代码结构树
 
 使用快捷键**Alt + 7 / Ctrl + F12**（macOS为**Command+7**）打开代码结构树，快速查看文件代码的结构树，包括全局变量和函数，类成员变量和方法等，并可以跳转到对应代码行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/EVDtCckATdyYwoZIihW5Gg/zh-cn_image_0000002779567396.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=6167C0376DCA9FBCD047C1BB7823481F9F4AF21384605D450CF06475C0CFF28C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/b1FBge_MR8OqHN-QpOCGjQ/zh-cn_image_0000002779567396.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E536DDED65E86E67A338D2D094F2B775A5253A2288D8607BEDAE68505817BED7)
 
 ## 代码引用查找
 
 提供Find Usages代码引用查找功能，帮助开发者快速查看某个对象（变量、函数或者类等）被引用的地方，用于后续的代码重构，可以极大地提升开发者的开发效率。
 
-使用方法：在要查找的对象上，单击鼠标**右键 > Find Usages**或使用快捷键**Alt +F7**（macOS为**Option +** **F7**）。可点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/SfnHNQycTMuht-DyxZ6b6Q/zh-cn_image_0000002808766935.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DDFA870767CB09309E3FA362EE3B20F3450BBF9177E7B0B794368C1327DD60F)图标查看变量赋值位置，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/asyBl2a9QLuK_YhB-L3r8Q/zh-cn_image_0000002808887015.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=674F37CC8CD08611E4B5BD86636243A3B9DFF890390418F063DCF7180C8450F0)图标查看变量引用情况。
+使用方法：在要查找的对象上，单击鼠标**右键 > Find Usages**或使用快捷键**Alt +F7**（macOS为**Option +** **F7**）。可点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/D5m-UFrnSH6Cv9-2H5rRAg/zh-cn_image_0000002808766935.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D43732ADBB025BB889EC608C04A76453DFDC789DB21C1A8168AE00A5AB3CDFA9)图标查看变量赋值位置，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/0he4RCtLTpqqvI57VWbpAw/zh-cn_image_0000002808887015.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=78134F69212CD8B5FF4CCF44F7E18AF9B72C7002D37AC39DC991303CF8167BC7)图标查看变量引用情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/jnvrPTujSRqqrDcyoANlqQ/zh-cn_image_0000002808887019.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADD46D902DEF721A2AF7E7A67E1C469E1F24217B71438BA3A48B9514E2C7AAA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/LSrrXxjbQny6wMY3Ipq-Fw/zh-cn_image_0000002808887019.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=1506F379A4D11C976AD1FE22668CA01FDAA1A8A448157D30F68780173E4B2C99)
 
 ## 函数注释生成
 
@@ -83,13 +83,13 @@ DevEco Studio支持在函数定义处，快速生成对应的注释。在函数�
 
 C++文件同时支持使用**“//!”+回车****键**快速生成注释。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/jGUlw67fSsKeSd54bOx71A/zh-cn_image_0000002779567404.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD36DA38675525401925C841064A085A9E639F8DBC6FEC26F6353FFF4C229A8E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/TmkK7hFQRi6VmjULk5JbdQ/zh-cn_image_0000002779567404.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=104040BE7ECA86243D268DE3F04445290A648FAF9F99D2CD1F493C28E52B52D7)
 
 ## 代码查找
 
 通过对符号、类或文件的即时导航来查找代码。检查调用或类型层次结构，轻松地搜索工程里的所有内容。通过连续点击**两次****Shift**快捷键，打开代码查找界面，在搜索框中输入需要查找内容，下方窗口实时展示搜索结果。单击查找的结果可以快速打开所在文件的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/PVEaMPljQOqB7aXc2oP7OQ/zh-cn_image_0000002808887065.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=739E1135B7E7A31EC671FEE457AB2E19B6351EFC37D6B995FE9A7C07A117E3A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/zHtwcvewTn-lZKo6gOErhg/zh-cn_image_0000002808887065.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=75AD77C1C5E35CE13322B726B477BDCC8A3E552C5D16E4BF81AF62816DBF94FD)
 
 ## 快速查阅API接口及组件参考文档
 
@@ -103,24 +103,24 @@ C++文件同时支持使用**“//!”+回车****键**快速生成注释。
 
 DevEco Studio集成了离线版API参考类文档，最新版本请参考官网[HarmonyOS API参考](../harmonyos-references/development-intro-api.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/mYE22JJiTQi82OkLhMKylQ/zh-cn_image_0000002808766937.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=7987BA65BB423C9E86344F410A57CFE6D1146E9DB4F6E0BE3D6DA3650F324CCC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/nUPtZgrIQpawxQaMNzF06A/zh-cn_image_0000002808766937.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A58B54C2E3745D96698F8F43E10D36847B5EBE9BD55B0939682A2774D912A8DA "点击放大")
 
 在弹窗中可以查看：
 
 1. 使用的API是否涉及权限申请或仅支持在测试框架下使用。
 2. 使用的接口状态。**deprecated**标签表示即将废弃的API接口，可使用**useinstead**标记的API进行替代，请开发时关注。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/vLif1lJ8Qxae7BdQUrT0ow/zh-cn_image_0000002808766947.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=30ED94E20C154E9182A1ED3D8BCC85F82E3A79DD482C271147A78B9E1C53721B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/rqm5irY4TW2-TKfteUNegw/zh-cn_image_0000002808766947.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=66563206F2BFD820ED3A462C2143C6DB5605EACC1F7F06AE6C81DF68A0E38706)
 
 ## Optimize Imports功能
 
 使用编辑器提供的Optimize Imports，可以快速清除未使用的import，并根据设置的规则对import进行合并或排序。选择文件或目录，使用快捷键**Ctrl+Alt+O**（macOS为**Control+Option+O**），或单击菜单栏**Code > Optimize Imports**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/LM8zTQfXS7udF1Chn8qwNQ/zh-cn_image_0000002779567400.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B8C37E255980B97BAB586119F202F5E71192585023A90A275F5AE82A01F488E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/9ethNev7Qym3b6qwAYgW4Q/zh-cn_image_0000002779567400.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=42A1F146FE964716CED173DFC185000AF734AA17FB519217F95F55E6443C216A)
 
 如需修改优化配置，进入**File > Settings**（macOS为****DevEco Studio > Preferences/Settings****） **> Editor > Code Style**，选择开发语言（当前以ArkTS为例），在**Imports**标签页中，可选择在优化时是否需合并来自同一模块的import，是否需要对同一条import语句导入的元素进行排序，或对多条import语句按模块排序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/sO3Gr0mPReieVvUMHR-edg/zh-cn_image_0000002808766973.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=F422F2F1D5839102CF65E866BFC072F2F6DD728FA2C1B9671CD65A0EF4353E3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/My5vVqKgRR6EeflUfUpy9A/zh-cn_image_0000002808766973.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E028C26286BA7A6BFD14798A50A5AAA09C712764A400EE6BF4D0A89BC357304)
 
 ## API变更查询
 
@@ -180,8 +180,8 @@ DevEco Studio集成了离线版API参考类文档，最新版本请参考官网[
 
    API变更查询以选择的起始版本为基线，查询当前工程中所使用的API是否存在行为变更。如选择的SDK版本为5.0.0(12) Release 到 6.0.0(20) Release，查询的是5.0.1(13) Beta3到6.0.0(20) Release版本相比5.0.0(12) Release的API变更。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/oJ3gDMg_Tcu4eLeD3rXXFQ/zh-cn_image_0000002779567382.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=83215CE4DBFC007C43EC84900660EEB0674AB88DC1434C6F7927F1AAAD545CCD "点击放大")
-2. 点击扫描结果中的代码地址，跳转到相应的代码编写位置；点击蓝色高亮的变更描述，跳转至版本说明文档中查看详情；修改完后可点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/n1mzIW0CS0GwYqfIucl81g/zh-cn_image_0000002808766951.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=182EDCE86AB43DCE406506932471BEC855D9D37A03424A149C29708E00986F64)图标，标注已修改。同时，可通过如下入口搜索或筛选API变更扫描结果、导出扫描结果数据等。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/qgI0J3QoTaOjT7Uh1EANMA/zh-cn_image_0000002779567382.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBC12B9078DEC7A81895B024090008A1AC0E03026B718DA5440F4F5E3F0456AD "点击放大")
+2. 点击扫描结果中的代码地址，跳转到相应的代码编写位置；点击蓝色高亮的变更描述，跳转至版本说明文档中查看详情；修改完后可点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/K7Eo6ArkTk-RaU-HElJBGQ/zh-cn_image_0000002808766951.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=25433A0282422D5A323E0BB6906171BF0E8B86D047ACFA2F10DD725A5F9C5D81)图标，标注已修改。同时，可通过如下入口搜索或筛选API变更扫描结果、导出扫描结果数据等。
    * **Search**：支持在Search框中输入API名称或文件路径，对扫描结果搜索。
    * **API Version**：通过选择API版本，对扫描结果筛选。
    * **Language**：通过ArkTS或C语言，对扫描结果筛选。
@@ -197,7 +197,7 @@ DevEco Studio集成了离线版API参考类文档，最新版本请参考官网[
 
    通过Quick Ask打开CodeGenie后，仅支持使用HarmonyOS Ask智能体进行快速问答。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/6hAmAFpjQGiwfiatIeDCrg/zh-cn_image_0000002808766975.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=05BDC1D11EBF46EE4CCD0525BD9120D25C728042D66C687B3AB8DD7B9339F532 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/qWONRJsbRxm8qOueOel3ow/zh-cn_image_0000002808766975.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5FC64F9838B31079C932F3F9AD8AD3F88A0897F7817EEA45DA3DEC15C7903D7 "点击放大")
 
 **使用DevEco Studio 6.0.0 Release以下版本，按以下步骤操作：**
 
@@ -207,34 +207,34 @@ DevEco Studio集成了离线版API参考类文档，最新版本请参考官网[
 
    API变更查询以选择的起始版本为基线，查询当前工程中所使用的API是否存在行为变更。如选择的SDK版本为5.0.0(12) Release 到 6.0.0(20) Release，查询的是5.0.1(13) Beta3到6.0.0(20) Release版本相比5.0.0(12) Release的API变更。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/iztDKe17Qpi1SmtnnB3lgA/zh-cn_image_0000002779567380.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DF585AE201E9AA14A36468683B73EB5376FDC7DD314B98F01F2895BED01C8C4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/7AFui92gRyiNaOPgU8KABQ/zh-cn_image_0000002779567380.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=0490BE52FEF2590E8A7FF168F45011E5195C10F633A92F250D69F5393D746983)
 2. 点击Code Location中的代码地址，跳转到相应的代码编写位置；如需更多指导，可点击Guidance link中的链接，跳转至版本说明文档中查看详情。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/PbG5d212R9aS7XUhYGiFMA/zh-cn_image_0000002808887017.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAC542AEFB312CBF3CB38A4F945E64F3D91584229F71291A21E00F40413E176E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/H-bMJ06BSji42x-NsTF2xw/zh-cn_image_0000002808887017.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D07C6E9531896D7D02DB99F65FC516C3989CE63656FA171A7CE3A904E884DC3)
 3. 点击**Export**，选择API变更的存放位置后导出变更数据；点击**Scan Again**可重新进行扫描。通过右侧**Settings**按钮，可以设置在扫描API时，可使用的最大堆内存的大小，默认值为3072MB，当工程代码量较大导致扫描缓慢时，可以调整该参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/O8WvxdINTTaf_hSBXHZM-w/zh-cn_image_0000002779407424.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC7CBC7D3AC0C7EB725F7F96CCD3DA0CCFB1D7C3BCB80B8B49B8CEAD743983D2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/oTgePOA0QdGnwQWfyuiACw/zh-cn_image_0000002779407424.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A75D6629DAFF036FC5888163DF3E8567BA10F1FFC44C730264EC6A95B083E630)
 
 ## 父/子类快速跳转
 
 编辑器支持快速跳转至当前接口、类、方法、属性的子类/父类。点击代码编辑区域左侧的Gutter Icons（装订线图标）可以跳转到对应的父/子接口或类。如有多个继承关系，在弹窗的文件列表中选择需要查看的接口/类即可。
 
-* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/UGCKhgq-SASf9CSrP4RWHg/zh-cn_image_0000002808887055.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C42EC280B3EB8CFD1E4B851F72A046ED552451BBD099FC073F536F8B1A418F4)Implemented：支持跳转到对应的实现类或子接口及其对应的属性/方法。
-* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/wnUjdAmLTaOJDLLzjXRaRQ/zh-cn_image_0000002808766985.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=94785C4EB854FBB7573E5B703B04958AC09A0BA7A99E7905BEC9BBE88A0A7DBC)Implementing：支持跳转到对应的父接口或父接口的属性/方法。
-* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/u-xlgYR1SfiSBrQ2Uln-qw/zh-cn_image_0000002808766933.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=369DBCC69998443EC8DED867DCACD6C657E178F2A9B1B112F6378507800D36A2)Overridden：支持跳转到对应的子类或子类的属性/方法。
-* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/EwJCGmwoT9-GXt4bvten5Q/zh-cn_image_0000002779407418.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=3299D1AA729EEA370B632E856C887CAFB4B0E08AA20D7258C988184A1B2F09DF)Overriding：支持跳转到对应的父类或父类的属性/方法。
+* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/A53P8eAGRkGIzNAqOrDPtg/zh-cn_image_0000002808887055.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=38C212C57CDB6656F832365022F20CE93F27939B8CCE7E958FB0AC93FED27E2E)Implemented：支持跳转到对应的实现类或子接口及其对应的属性/方法。
+* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/eRvjgVASQNi2XcRJRrV0Mg/zh-cn_image_0000002808766985.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=616B44EF98A69A41C9A33A98B755F31694410721A95A3C7C62C70D18680A1607)Implementing：支持跳转到对应的父接口或父接口的属性/方法。
+* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/2K9qPl4DQreTnhRVX_nw_g/zh-cn_image_0000002808766933.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=62B77311B075EA5BB5E42471E8BAB11DCF31C726FC3E7669260C5DE82630299A)Overridden：支持跳转到对应的子类或子类的属性/方法。
+* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/UUjW6B8aSJ-RtHUEeE8Dsg/zh-cn_image_0000002779407418.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=60DC148E3373C0DB5219CDC68C5A1D30D7F10D841C7A04446B65C2218717E56A)Overriding：支持跳转到对应的父类或父类的属性/方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/3ISEPKBlRcaHUTUAqEME7g/zh-cn_image_0000002779407404.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3F069F9FD595C144B7C85184B487114AE1232156C403BC97D8B071D831E7799 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/r7aHgabUSpuHoCvYlaQvlg/zh-cn_image_0000002779407404.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=931F77477CF08C73329F31657204AA52E6191A8CF3F37E07C6126DDB450AEB50 "点击放大")
 
 本功能默认开启，可以通过菜单栏进入**File > Settings**（macOS为****DevEco Studio > Preferences/Settings****） **> Editor > General > Gutter Icons**，通过勾选或取消勾选Implemented、Implementing、Overridden、Overriding四项可以开启或关闭该功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/LiNmfbc8R-O65N0zSR69Fg/zh-cn_image_0000002808887063.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=A52ABFBE9B9FBE9DEB4FBFDB45E67072C57131E21045E0DB4A10A07A24B48B77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/IZQiMBvkSTuIEM8Au5WAuQ/zh-cn_image_0000002808887063.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=802FAA80C23899D03459785F9387E8F15A2503F8F696BEC16025BED5CDFDD654)
 
 ## 查看接口/类的层次结构
 
 编辑器支持查看当前接口/类父类或子类的层次结构。选中或将光标放置于类/接口名称处，使用**快捷键Ctrl+H**（macOS为**Control+H**），或在菜单栏**Navigate**页签下选择**Type Hierarchy**，在弹出的Hierarchy窗口中查看接口/类的继承关系结构。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/1SXzbOzCQh26WaG4NVGDRQ/zh-cn_image_0000002779567398.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=92757C50939A79A796DF1FA9CF890D73A768170845FA564DE7B939FDFA5520C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/g2cy5xmySPe4Cr8IksgwAA/zh-cn_image_0000002779567398.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C096DAB1F28EC74012EC612E2BB89AC16E0B7FE90606DBC19F0644DF63357CAC)
 
 Hierarchy窗口按钮功能：
 
@@ -268,7 +268,7 @@ Hierarchy窗口按钮功能：
 * V1的状态变量传递给V2的自定义组件状态变量时的绑定关系。
 * V2的状态变量传递给V1的自定义组件状态变量时的绑定关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/_jc3N5zASvOPYz08nhDHtQ/zh-cn_image_0000002808887033.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=E809AE1157792488F8556A2B54B6C6E5AB7005093720E4BE250C5361DCF3BF92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/yw9cP6iBRYCBIb0jJ_TkLA/zh-cn_image_0000002808887033.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1C526E6B66548E2825CBC9C5144A453C3FC8B5B48BF25C7248166024FD97B4D)
 
 State Variables窗口按钮功能：
 
@@ -283,14 +283,14 @@ State Variables窗口按钮功能：
 
 从DevEco Studio 6.0.0 Beta2 版本开始，在编辑时启用Inlay Hints嵌入提示功能，可以提供有关参数名称、类型等代码说明信息，提升代码可读性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/GZiNRNjESxeyHxLtS42Dfw/zh-cn_image_0000002779407408.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=3ACE5199594A3BC5458B4B3ED167D26806D751453926312B34CC20FEA70632A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/7QBRW5FWR3q0sKF-6KjaNQ/zh-cn_image_0000002779407408.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBCE392A0E2AE06BD3DD8D21236D2E9E925A9875543AAF8AF302589C8D47AC03)
 
 进入**File > Settings**（macOS为**DevEco Studio > Preferences****/Settings**） **> Editor >** **Inlay Hints**，配置勾选希望展示的变量名称、属性、参数、返回值类型，点击**OK**后生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/niU6ykhESU6cRNKGtoTkJg/zh-cn_image_0000002808766949.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=B85AD7B35A2F800BC59A3FB7F010B89BEDE0A4513A301307AD3C0C9600E83555)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/YviGhDnEQxC8flR7glEYgA/zh-cn_image_0000002808766949.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EE13E8EE70AE54DD9194469C3939D3FD7BE77A035FE645F53079A11BF6329CE)
 
 ## Copy Reference
 
 从DevEco Studio 6.0.0 Beta2 版本开始，在编辑页面选中代码行或类、方法、参数、变量等名称，右键选择**Copy / Paste Special > Copy Reference**，将自动复制定义处的地址。复制成功的地址可以在双击**Shift**弹出的搜索框中进行搜索，帮助开发者快速找到该接口的定义位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/n0LGi8P-S22E-cCC7sOjwg/zh-cn_image_0000002779567388.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=F65924E6AE78D9CB60EE316CB06E34CF09F74CF117C392C500D26FEC8D57988D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/caZJivHCSQ-eHvKW0i8fdA/zh-cn_image_0000002779567388.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=367DBBECCC5DC5E6A9478DC2F3F82F933AF2F81F3EF928F31CB4F6DE17D1A380)

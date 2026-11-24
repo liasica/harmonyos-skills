@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-matetv-gui
 title: 智慧屏应用开发
 breadcrumb: 最佳实践 > 多设备体验进阶 > 智慧屏 > 智慧屏应用开发
 category: best-practices
-scraped_at: 2026-11-14T08:54:11+08:00
+scraped_at: 2026-11-24T12:47:49+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:851cf54569637de0676a1b68f55b2df04eaf0e36ed58ba9006fec8b3649d2b96
+content_hash: sha256:6420110f42e1afbaad5c7847b550f8a4b0a21fdc359bf18add3c021036ddf481
 ---
 
 华为智慧屏作为家居场景下的核心设备，致力于为家庭用户带来更加智慧、沉浸、无缝的娱乐体验，是HarmonyOS 1+8设备全场景一体化体验中不可或缺的部分。具有以下突出特点：
@@ -65,7 +65,7 @@ Mate TV的屏幕不支持旋转，屏幕旋转角度为0°，屏幕方向为横�
 
 采用光标指向交互时，使用的是灵犀指向遥控器，相比传统的焦点导航遥控器，点选方式更加轻松自如。操控方式如同激光笔，可精准指向并选中目标，无需逐级切换图标，所指即所得，高效便捷、操控流畅。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/LWjoL9xOQjCMVLyMO5q2cw/zh-cn_image_0000002585626848.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFCDA05C99FF0FC921BA5FAD1F29D4968A362841F80ED375FC7B902B2C709320 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/EdJR1wS0RBiHcDrDOXNc4A/zh-cn_image_0000002585626848.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=13EC3323E63A7B0A1AE6084B8985DF6A1CAD4CD4F9965AA4401A3212CE9A146C "点击放大")
 
 以下是对灵犀指向遥控按键的说明：
 

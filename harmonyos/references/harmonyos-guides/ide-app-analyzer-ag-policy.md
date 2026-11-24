@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 上架合规体检
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 上架合规体检
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:01+08:00
+scraped_at: 2026-11-24T12:42:32+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:7dd33df3212277847af7d7fde979f6f0b88e4bd9538759860802ec87b0a8ac03
+content_hash: sha256:264d5bbfa5da0b3390693630efd4d3727b6442231853d33b7d0a0f0aeeea4801
 ---
 
 从DevEco Studio 6.1.0 Beta1版本开始，AppAnalyzer新增上架合规体检，针对AppGallery应用的上架合规要求进行检测，提前发现需要重点关注的合规事项，了解应做和不应做的事项，避免常见误区。
@@ -15,19 +15,19 @@ content_hash: sha256:7dd33df3212277847af7d7fde979f6f0b88e4bd9538759860802ec87b0a
 1. 确保[DevEco Studio与真机设备已连接](ide-run-device.md)，并对应用进行[签名](ide-signing.md)。
 2. 通过以下任意一种方式，打开AppAnalyzer。
    * 点击菜单栏**Tools >** **AppAnalyzer**，打开AppAnalyzer页面。
-   * 在编辑窗口右侧的工具栏，点击**AppAnalyzer**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Zp6FKTL8QM6ka1TdFvCtHA/zh-cn_image_0000002808886563.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=10948E1E20E81E4E69768F5ED3B5B6E691A68FE1DAC7958C17CBBA86A1F537DC)，打开AppAnalyzer页面。
-3. 点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/RF0KyWHQRZWD_BlMC8p5dg/zh-cn_image_0000002808766477.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=436927E884DD24C2DB35A8B9007C2BB316F5FE5B2F9104A2F2C14D06AF1E986D)图标选择Product、Target和构建模式，点击**Apply**后，在AppAnalyzer的首页中可查看对应的编译产物和构建模式。关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
+   * 在编辑窗口右侧的工具栏，点击**AppAnalyzer**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/f__ie3gTT12VjlvhoWAM8w/zh-cn_image_0000002808886563.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DE448719D924944B36D7D40B496CD4DC8227E8CD4E37DB852E2D9E2E9D1FE0B)，打开AppAnalyzer页面。
+3. 点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/FHDMVxJTR8yGioxcyRa4sA/zh-cn_image_0000002808766477.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=93563C3A0F67B5B5B9E678AAA7E435653FED7F7CD727E5BE4742273E820BA98F)图标选择Product、Target和构建模式，点击**Apply**后，在AppAnalyzer的首页中可查看对应的编译产物和构建模式。关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/1jAEYw0TSB6lSzsXuqJnrA/zh-cn_image_0000002779406916.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF28D846B7A7A6D428037EE038D53AF7FBA2FD740FE740D4E160170367A5732F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/yP7lOlhqTQSnlnCHScV1Yw/zh-cn_image_0000002779406916.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=F10D300D9A47E71B712F1771327D7B353F87DC1CF1A6A60A4CD2D8AF4C3E5575)
 4. 在**AppAnalyzer**页面，选择**上架合规体检**，选择预置的体检卡片，或根据需要自定义卡片。
-   * 点击预置的体检卡片开始体检，如需查看卡片包含的体检规则，请点击卡片右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/IsY6A6EsTS-KUYp51iG1QA/zh-cn_image_0000002808886555.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=F01A04BD1894B7F2CEEB7FE43C8FAD26518BC9CD5F41402E9F4862ADD97B7ADF)按钮，规则详情请参考[体检规则](ide-app-analyzer-ag-policy.md#section63875091019)。
+   * 点击预置的体检卡片开始体检，如需查看卡片包含的体检规则，请点击卡片右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/sJqzKhGiSAuThnY5LckHyA/zh-cn_image_0000002808886555.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=95C6274BB3C2E300CD199F66D6D3F95A05E55099E88E88246C6053912FE2377B)按钮，规则详情请参考[体检规则](ide-app-analyzer-ag-policy.md#section63875091019)。
    * 如果需要自定义体检规则，点击**+**，选择体检规则。
-5. 开始体检后，请等待AppAnalyzer完成构建、签名、安装等操作，并根据界面提示，登录应用账号后点击继续按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/2WW27U5ySAGKCPL-oKqD0A/zh-cn_image_0000002779406924.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=40EF268F20522DFAB3607EBA71AA73E77FF290AD989B454AAFBF9354282BB383)，继续测试；或者无需登录账号，直接点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/gu70OmqFSOyp7odvHRLARg/zh-cn_image_0000002808766479.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=7701BCD0E7535CCBC71BBE9933A55EE12CE896FA8AFFA79920A86784AB5E0A5C)按钮继续测试。在测试过程中，请保持连接的设备为解锁亮屏状态。
+5. 开始体检后，请等待AppAnalyzer完成构建、签名、安装等操作，并根据界面提示，登录应用账号后点击继续按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/mv1IwJ5oTFq_7tcPm09C8A/zh-cn_image_0000002779406924.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CA548F6B086B5CE22F2E17BFB9DEB2458A3FF93020985D575A94A51411602AE)，继续测试；或者无需登录账号，直接点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/brLuvgYQQVGG_6ED3v94IA/zh-cn_image_0000002808766479.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=2656C6A60AA06E85222C7ABE1746DA6D0650EBBDB52A4B60E72939DFAB4422D3)按钮继续测试。在测试过程中，请保持连接的设备为解锁亮屏状态。
 6. 测试完成后，查看测试报告，针对测试不通过的规则，AppAnalyzer会给出应该做和不应该做的事项，以及对应的优化建议。
 
    如果在体检中遇到问题，可点击报告右上角的**User Feedback**向我们反馈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/bwZEo7aBQYSRhLiP4QWEIw/zh-cn_image_0000002779566898.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9710B71625D1D5B3B080720C1BA3692B12BE0131DD5BD0772A6CDF52786B230)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/uNC2zz-OTACME6UynKibHQ/zh-cn_image_0000002779566898.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=02F1DA8FD58BE244069E23B55CBCDBA063AEB79645A69527B5C1709E12BCA91A)
 
 ## 体检规则
 

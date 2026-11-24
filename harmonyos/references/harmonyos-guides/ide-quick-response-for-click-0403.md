@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-quick-res
 title: 点击操作响应快
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 点击操作响应快
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:01+08:00
+scraped_at: 2026-11-24T12:42:32+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:0caf161f32e3cb3142c176e0621685e2d987e8f57f4b7895d31453038dc026df
+content_hash: sha256:7b3dc94d0fab0a9e778197a0e7ccacc0b22e8705cdd0183b38ce3e42af410a7e
 ---
 
 ## 规则详情
@@ -30,7 +30,7 @@ content_hash: sha256:0caf161f32e3cb3142c176e0621685e2d987e8f57f4b7895d31453038dc
   H:APP\_TABS\_FLING
 * 备注：由于trace的响应时延小于用户实际感知的时延，所以目前点击类算法会补偿20ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/j7_8jGTcQ_a4va4rlrqV9g/zh-cn_image_0000002779567046.png?HW-CC-KV=V1&HW-CC-Date=20261114T004901Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F1E95A59AF3F97EA8A208C67B25F787C37D631E6E6376EE90F4158A90C7D9AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/N6lGwIDKRxO2AyZnsPs4BQ/zh-cn_image_0000002779567046.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=A03C8C111DDA93D9503D972EAF2BF96351C6985FCBCE0F76B76F11B56F7EA7EA)
 
 ## 计算逻辑
 

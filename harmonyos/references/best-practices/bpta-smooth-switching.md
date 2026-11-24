@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smooth-swi
 title: 在线短视频流畅切换
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 在线短视频流畅切换
 category: best-practices
-scraped_at: 2026-11-14T08:54:12+08:00
+scraped_at: 2026-11-24T12:47:49+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:e210b4d16e6ab71a0baa56cd1008f5e8bcaad08b1e7325ac71ea454ed87affbf
+content_hash: sha256:819193a63ee4b3e111f63016e9194284a7c12f4d7a9b0d48d3cce9285e4848aa
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:e210b4d16e6ab71a0baa56cd1008f5e8bcaad08b1e7325ac71ea454ed87
 
 **图1** **在线短视频滑动切换效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/eNf9VtlvTD6QxEOTKCifGA/zh-cn_image_0000002229336849.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=B950B2D0DCB2C28CE1DAC46B6A52BA2C6DBD024B0959967C4EDA22906774FCF8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/RKAExL13RLqT0Ck1gb6JNw/zh-cn_image_0000002229336849.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA899923DECE01BD2F7810024224FA95622D5FCB3004C5CA13C150ACB31C67C9 "点击放大")
 
 ## 场景说明
 
@@ -97,13 +97,13 @@ AVPlayer：
 
 **图2** **功能时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/NO5jEZuSSUilx7xAQp_68w/zh-cn_image_0000002193851456.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D969191C76D82A190A79300DEAF8B541FF1F345284CC538AD60737DED0B71DF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/MMK0s3QaTvO5An2vprPFnw/zh-cn_image_0000002193851456.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF57E6182F0A4CAA0D696292F51B83FFE8268447B1A9C0147DDD45684C858186 "点击放大")
 
 ### 在线短视频快速切换
 
 **图3** **实现流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/yN70v93GSrWEiCKvT3Dy6w/zh-cn_image_0000002229336837.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=D99E6779F444BCAB3C3EB3BFBF1053896EF705B52E3EF0222874E19B7FA54181 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/kiuUtfctRCOS39u0f-CqKg/zh-cn_image_0000002229336837.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=64F9BE5732CB08B01C206ACDE830B2F44474E772AFA2C4659339596B4FD2758E "点击放大")
 
 **关键点**
 
@@ -120,7 +120,7 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量，�
 在通过Swiper切换时，会根据当前轮询滑动的窗口索引index到缓存池中找到对应的视频（prepared阶段），直接进行播放，从而提高切换性能。
 
 **图4** **视频懒加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/R16K6QEcRf2Jg7AJxwDvew/zh-cn_image_0000002229451329.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC8B9BCE485EAD216FCEBF6306DA950A59CD968054FDE0891F3279FE0AEAA3FB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/r3l3GiBAQoGM2y3XUTkVKQ/zh-cn_image_0000002229451329.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=E952014E8B80353E0CAC7AA7D977978892804F18849D3055B0D66E85BD3E5A63 "点击放大")
 
 **异步视频预加载**
 
@@ -129,12 +129,12 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量，�
 （1）本地播放一个短视频的耗时。
 
 **图5** **单视频加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/uTSR1FYwReG7PZbGt7tC8g/zh-cn_image_0000002229336853.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B9524992D02B6E6CDF2D136F95359A1279AA87FB64666C482346282DF82E3A5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/-bFn8HOSRXeANHnwVN7GRw/zh-cn_image_0000002229336853.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC6C8F07AA47DF195F014BA408537F9AE3A4BBC290794EFA5B205EB1B9E9A5B2 "点击放大")
 
 （2）播放视频A时，提前预加载视频B。切换短视频时，可以立即播放已预加载的视频B，从而减少切换时间，提升切换性能。
 
 **图6** **异步视频预加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/7tKuNB1PQYeL8U5YojiiNw/zh-cn_image_0000002229451333.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=71873E723A90D2BE80D1362F2E9F0C56E7A766459BEC4AE5493C6CC8591EFA2D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/76g2fG62Qvi6Beyzah972w/zh-cn_image_0000002229451333.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D63353AF8A8580784BB02238E126E66046031CF02CE9CAE74D8DFD7B82C35B9 "点击放大")
 
 **视频播放预启动接力**
 
@@ -147,7 +147,7 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量，�
 视频播放预启动接力：这种预加载机制的工作方式类似于接力赛跑。为了尽快完成接力，当第一个选手接近终点时，第二个选手会提前起跑并与第一个选手完美交接接力棒，从而减少整个接力赛的时间。短视频切换也是如此，如下图所示：
 
 **图7** **视频播放预启动接力****示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/h2ui_YrtTqCuBmDrIzAYzQ/zh-cn_image_0000002229336841.png?HW-CC-KV=V1&HW-CC-Date=20261114T005127Z&HW-CC-Expire=31536000000&HW-CC-Sign=87C33F15635EE70A6571BB6FDAB7A5EB45A424CF2F5252B0477AED3902E55284 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/4ST2f6K2RNyczEaCsVEsKQ/zh-cn_image_0000002229336841.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=445573326602AC0C863FD9F9D08E260F3878EA05550EBB6AE7DC4E3A1255948B "点击放大")
 
 **开发步骤**
 

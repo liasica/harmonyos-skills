@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-screen-fli
 title: 应用闪屏解决方案
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 专项问题解决方案 > 应用闪屏解决方案
 category: best-practices
-scraped_at: 2026-11-14T08:54:15+08:00
+scraped_at: 2026-11-24T12:47:52+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:9fa77def52c57e44cdfaf42e6731506cf1b62e0c0b0f1e69cd9ea85d53053a24
+content_hash: sha256:7734c8ec3bbc0318045772cf3965c088b94c74e476eda1d06a79ef96af154f0e
 ---
 
 ## 概述
@@ -25,7 +25,7 @@ content_hash: sha256:9fa77def52c57e44cdfaf42e6731506cf1b62e0c0b0f1e69cd9ea85d530
 
 连续点击后，图标大小会异常变化，导致闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/CMmo1pmBQiyAchXdDMGIkw/zh-cn_image_0000002229337129.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=273272A5A1F17287F14678876F3CCDCFB71C9B9ACF0B516D7131942D787290E3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/vgFLDhsqToeaCQkAwGHx3w/zh-cn_image_0000002229337129.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FA3101F5F69A50175A113501599B7A1B0480F6A3AB120687BE6049F306D6A09 "点击放大")
 
 ```screen
 @Entry
@@ -151,7 +151,7 @@ struct ClickError {
 
 运行效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/O3w7hcunRWaNYUABk6HyNQ/zh-cn_image_0000002229337141.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=E965C7DE7D7CC95C6CE74655AB3DB43E640B555CF203447C4E2FE36147BAC443 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/RScs0CCkTPyGRMN8sWcfyg/zh-cn_image_0000002229337141.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B3F86EFF0FC0F7B83A0CDAC26A325E4D829B0CA2E562AE235166662A94951A7 "点击放大")
 
 ### 动画过程中，Tabs页签切换场景下的闪屏问题
 
@@ -159,7 +159,7 @@ struct ClickError {
 
 滑动Tabs组件时，上方标签不能同步更新。下方内容完全切换后，标签闪动跳转，产生闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/mSw1sL5PTpeqaY7dHty92w/zh-cn_image_0000002229451637.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3DE836D5847BE3270079B2B951B9FEBF75090E82913711AEC7A9F3B3D9F35E8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/M1Q_OZwkTZW-BCGLYgsLJA/zh-cn_image_0000002229451637.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E2957B511C0AEE2AC50632A0A08B870FB904C22D70CE27057DD4A17FB38743B "点击放大")
 
 ```screen
 @Entry
@@ -370,7 +370,7 @@ private startAnimateTo(duration: number, leftMargin: number, width: number) {
 
 运行效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/Ke0Fj4S2Tou8kbWcNluyQw/zh-cn_image_0000002229337133.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEF4989CD983EE94FDEE64989E6B83BB94C1374C841D05BC0B9F4D1227349A73 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/9g2J52hBS7GzAeGff4xg1w/zh-cn_image_0000002229337133.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=2215F7478871C6D16BE206FB00927418148FA595438D82566C83AEE8FBBEE59A "点击放大")
 
 ### 刷新过程中，ForEach键值生成函数未设置导致的闪屏问题
 
@@ -378,7 +378,7 @@ private startAnimateTo(duration: number, leftMargin: number, width: number) {
 
 下拉刷新时，应用卡顿，出现闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/inxlvLSOSryFV_JaM59KdQ/zh-cn_image_0000002229337137.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCF1EFF7C91B2132CF8B396469E060C1E49A21461B7A0DB77567DC4B0EAF520E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/6s7x6atsQ42TYM7Z9TMgzQ/zh-cn_image_0000002229337137.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD0D5628F0163B6651370BB4D1921E3DCE855F706A89D12249A38A5552EA1969 "点击放大")
 
 ```screen
 @Builder
@@ -448,7 +448,7 @@ private getListView() {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/VEY1WfNkSXWd8YW-EuBRTA/zh-cn_image_0000002194011344.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CAC7CC758E41A0E2D74F05EDA6601FFBB2932404921AD8A698B6278FAA8D6F6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/zubT-90ZT5G78A7cXr7Krw/zh-cn_image_0000002194011344.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=D66530C68A8853E73899B5E067173191B35D95C426E3D49A05CA00C8A77B4787 "点击放大")
 
 ## 总结
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 调试Native子进程
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 调试Native子进程
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:59+08:00
+scraped_at: 2026-11-24T12:42:30+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ac8277a20ab398b2ded81029cb2c97a089d207652e65758af1a940fdeb504c6b
+content_hash: sha256:7e1c0dcefd28ef5d06e4fd3995f3a32ba0e093e207dfc479f40e21d1a99bdcfc
 ---
 
 从26.0.0版本开始，DevEco Studio支持调试Native子进程，包括[扩展进程（C/C++）](capi-nativechildprocess-development-guideline.md)和[应用程序包集成bin文件开发的子进程](../doccenter-getting-started/hap-bin.md)。
@@ -38,7 +38,7 @@ content_hash: sha256:ac8277a20ab398b2ded81029cb2c97a089d207652e65758af1a940fdeb5
 settings append target.exec-search-paths "<符号文件所在文件夹路径>"
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/OJ7Iv0lRSyeIJnAc_HKpUw/zh-cn_image_0000002808766233.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2DAD93DA2A33987F7AED09EEB7ACC56AC1626B8188C119B7EADADADE702B0F2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/aqg3cQPNQKep3Q-AM1eHew/zh-cn_image_0000002808766233.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=771BD242BA99D2B593E20C10CB32E48ECF576B1C785E5D8808F84B021FB9C2AE "点击放大")
 
 ### 添加源码映射
 
@@ -53,7 +53,7 @@ settings set target.source-map "<编译时路径>" "<本地源码路径>"
 * 编译时路径：符号文件中记录的源码路径，可通过dwarfdump或LLDB image dump symfile查看。
 * 本地源码路径：本地对应源码文件的实际路径。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/tGz3cevUT_CVXXhe9JvOag/zh-cn_image_0000002808766239.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A7976348F48869B92CFC37C39B40EE479CDCDA2B09FA31CD86B49C21BA0A0DC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/MiwNHH70TB2rf-tkWonfMA/zh-cn_image_0000002808766239.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD8036DD8D39AE91DB8D95C8755E82B1275444DFA4C0F2AD6D7C06BBEC10EDB3 "点击放大")
 
 调试过程中如果找不到源码文件，DevEco Studio也会在反汇编窗口顶部弹出通知，点击后可直接选择本地文件完成映射。
 
@@ -61,11 +61,11 @@ settings set target.source-map "<编译时路径>" "<本地源码路径>"
 
 通过attach方式对Native子进程进行调试，在attach窗口中直接选择子进程进行调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/BYePFEF3TGSaDvPU_oWWkA/zh-cn_image_0000002808886317.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEEEE9FA31A11FFE4EEC81EA4E7D80A6002F174E60EBDF3438EE58804ADA0E37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/b4RMut9-RUqq_gj-0qFZ7w/zh-cn_image_0000002808886317.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7805DF22F5AEDAF5DF251B7B9EB70B8D423EFE64A2952E0ED8704F43245CAF8)
 
-或者先attach调试主进程，再点击调试面板的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/-vEyh31-SgObsSYq2EgRJQ/zh-cn_image_0000002808886313.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC7FF2F814C4E6150C98E3879011B9A24FDE2E15DB26A508BDEA2AE9C8EF19C0)，打开attach窗口选择子进程进行调试。
+或者先attach调试主进程，再点击调试面板的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/dJUCXPRcTtyo8NlASslDOg/zh-cn_image_0000002808886313.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3A2A5A1930D7873B5712E1736AD06EB3D934FCC19B13D549B480BBD96CDAD6E)，打开attach窗口选择子进程进行调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/qF3eEIESQayoaEuv83Gh6Q/zh-cn_image_0000002779406670.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AE18F0E98636BC910932E00F8F7AC27AFE1757C349058D78B90C0C1519A9EF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/SpIbIUCEQ6KwGBQE0VqxoQ/zh-cn_image_0000002779406670.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A5CF3B3408206CC4873970B8E6F51AAAE0D1DB24351D1B6B8B01C80C7EC5CF5)
 
 ## 常见问题
 

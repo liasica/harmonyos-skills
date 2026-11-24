@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用埋点
 breadcrumb: 最佳实践 > 应用架构 > 应用埋点
 category: best-practices
-scraped_at: 2026-11-14T08:54:05+08:00
+scraped_at: 2026-11-24T12:47:43+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:5909a66ef771f42824d8c640d1ca86fcf4c4c44f9177020d3bce5f0f74fe1084
+content_hash: sha256:472ddead0fd4bbe241a18922497b894a7d81249ffdce8d69e586756ab1ae4247
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ content_hash: sha256:5909a66ef771f42824d8c640d1ca86fcf4c4c44f9177020d3bce5f0f74f
 
 接下来会从（1）组件动态绑定埋点数据；（2）点击埋点方案；（3）曝光埋点方案；（4）页面埋点方案四部分介绍。整体方案使用全局无感监听能力[Class (UIObserver)](../doccenter-references/api/arkts-apis-uicontext-uiobserver.md)和[setOnVisibleAreaApproximateChange](../harmonyos-references/ts-uicommonevent.md#setonvisibleareaapproximatechange)属性实现埋点功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/_C6J2nc9TdelbQFFKYQqXg/zh-cn_image_0000002194010920.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CABB412CB167C56BD18100E18D3CDCCBA147A1C7D80FCDE584BBD0686C3DF8E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/BOdDtwedRAqBZ3ajz7cfpw/zh-cn_image_0000002194010920.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=97480E68386E674487A37774EDD2974D4EF1097AFF1A637CB2F61A14BBCB46F6 "点击放大")
 
 ### 绑定埋点数据
 

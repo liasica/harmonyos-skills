@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-concur
 title: 应用并发设计
 breadcrumb: 最佳实践 > 应用架构 > 应用并发设计
 category: best-practices
-scraped_at: 2026-11-14T08:54:05+08:00
+scraped_at: 2026-11-24T12:47:44+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:40dba0097e75fb74a3a881da7114ed7dea37d1dba2c6e70e5fc1210f7cd62c51
+content_hash: sha256:81c4dc4248709cb7321ce3cfe48d40a5c20d2270429ba1cb932ffce18941f98a
 ---
 
 ## 概述
@@ -42,7 +42,7 @@ ArkTS是HarmonyOS APP的开发语言，它在保持TypeScript（简称TS）基�
 
 并发能力框架如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/T6QewrNdQkKluugd7KP79A/zh-cn_image_0000002194011076.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C43FA29E7ACB0FB905E429F9E581E0E7C33BB9E58B926B41F8E589316AC3CBD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/LjJGEjZvSZ6zpCY7cPArJw/zh-cn_image_0000002194011076.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9F806AB5BC33B1D894337F8137B095B51B2169AF39D7D8BE29FD42B25C7A63C "点击放大")
 
 * **主线程：**执行UI业务、不耗时操作、单次I/O任务，与其他ArkTS线程共享系统I/O线程池，不阻塞ArkTS线程。
 * **TaskPool****高并发任务池：**执行耗时任务，封装任务入口，统计模块负载，开发者无需管理线程生命周期。
@@ -56,21 +56,21 @@ ArkTS是HarmonyOS APP的开发语言，它在保持TypeScript（简称TS）基�
 
 ### 共享内存并发模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/C6-7ps2bQeSeI2XoWjZ9Pw/zh-cn_image_0000002194011072.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF08D0C3EE40D71775054B3BE6EFCEFE2C7E4E7CD0AE6B7BC49F6D86BC9CA40B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/AWgdeCOjTHe0GvPLbjJn-g/zh-cn_image_0000002194011072.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EFB6BDEDF5BBA8ABF1AADCD8F14BB0E5C154BEC69BF0DE25D995973FA2B6D5B "点击放大")
 
 共享内存模型采用线程和锁的并发机制，不同线程共享内存并通过锁保护临界区。对于包含I/O操作或锁的业务，为防止阻塞，需开启多个线程执行不同业务。线程情况如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/he2QPewAQpikdUw453VDjQ/zh-cn_image_0000002194011068.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=B826A6B12EEA8E2C737210AF57D4ED616420AF45410793ED441FA2C6ECB9F743 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/KlMXFaIsR1S1CaQUHpn_Ww/zh-cn_image_0000002194011068.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC7A606A6EC86F6CCED40052F0094BB95CEE2B0DCD7EFFE743A10ECE865CB43E "点击放大")
 
 因此，应用经常存在几百个线程，增加调度开销和内存占用。
 
 ### ArkTS并发模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/JB6gdSCFTXihLi2wcDkYjA/zh-cn_image_0000002194011084.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EE921C4290B1CCE66F53C968DED8F77C9219FF854256D717F4C2844BC1C8E9A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/AWYFr-57SBGxfYSX9HnQ_w/zh-cn_image_0000002194011084.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F86931D282BAA389F4E23566A726B25F0EEC40FABE4CE718CCD7C7E3F32123E "点击放大")
 
 ArkTS采用内存隔离的线程模型，不同线程间通过消息通信，线程内无锁化运行。业务内部的I/O操作由系统分发到后台的I/O任务池，不阻塞ArkTS上层逻辑，线程情况如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/u0H5JHgSQIWFLxRzF83PVg/zh-cn_image_0000002229336865.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDF0907B73BCEC97A76CE8490628E7F2F990AE8BD52A8B03204629EE18B0D5F4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/WtV4i18jQB66ZcVqYYsCZw/zh-cn_image_0000002229336865.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=A196637214A6FBBB31C7BC20AD44640DED12719BF183F67E66BAF0E7B2AB7ACB "点击放大")
 
 异步I/O不阻塞ArkTS线程，TaskPool及I/O线程池由系统管理，提升能效。
 
@@ -860,7 +860,7 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
 
   步骤二：初始化完成后通知主线程，主线程导入并使用该单例对象。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/ZBZ_Te0VRHmHFxcHuwNIcg/zh-cn_image_0000002194011080.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=D04EF58BCB67CFC43FB8F51A7D00B61CF3B05ECFCE250980691D59DA0EB3B08D "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/zbpOd_U6SnOzbEmUsZgXMg/zh-cn_image_0000002194011080.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=482B84A4CBE6E5B3195C5CBB34BBDC7AE5F443A40F405AE824C230B2ACA1D8EF "点击放大")
 * **业务实现中的关键点**
   1. JS模块对象
 

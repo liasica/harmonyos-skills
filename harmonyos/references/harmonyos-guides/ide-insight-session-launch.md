@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-s
 title: Launch模板基本操作
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 冷启动：Launch分析 > Launch模板基本操作
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:06+08:00
+scraped_at: 2026-11-24T12:42:36+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:703c0153c951e4a7419e2298ca9a27dfd5e67c788244a44c8154fe0b0c5e00f6
+content_hash: sha256:d9a56282a78cd30be2a87642fe9cbbbb93e77d7f4d2361112d0d18e8810602b6
 ---
 
 ## 功能介绍
@@ -30,7 +30,7 @@ Launch模板支持的泳道包括：Launch、Frame、ArkTS Callstack、Callstack
 
 ## 启动模式介绍
 
-录制前应用的启动模式分为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/KjbhiGa7SgWpu_6HC9KWhQ/zh-cn_image_0000002808766361.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=E217182A751017F735528BA29D3AAC17AC8FCF1E4AD08ACA0947CBD215DB6669 "点击放大")自动启动和![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/2n0bKtOzTNaU-1PFdWLThQ/zh-cn_image_0000002808886445.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA38E7E3BC623658D78743C8B60B71C9D184C65ABB84CBF1AC4311479BFC9B7A "点击放大")手动启动，可点击图标切换两种不同模式：
+录制前应用的启动模式分为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Ljfu0B5PRAm1JevCTyAzrA/zh-cn_image_0000002808766361.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=E68E63C8A33B68D66007F54742C099AFBA50937BDBB776E5AE2263AD0E4A09B8 "点击放大")自动启动和![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/TkPC6nYcTIm3CGtp7ZG9oQ/zh-cn_image_0000002808886445.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF40964BD1D46FC78E9347E2C95E142CCACD3AE4E7327BD9824B2611DAB61F9B "点击放大")手动启动，可点击图标切换两种不同模式：
 
 * 若选择自动启动模式，当用户使用Launch模板并开始录制时，将自动重启所选应用。
 * 若选择手动启动模式，在开始录制时，只会自动终止所选应用，等待界面出现弹窗提示启动应用后，开发者需要手动启动应用。
@@ -41,7 +41,7 @@ Launch模板支持的泳道包括：Launch、Frame、ArkTS Callstack、Callstack
 
    展开各阶段的统计信息折叠表，可以看到各个任务的具体耗时信息，单击跳转按钮，可直接跳转至相关线程打点任务中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/PLUmT64RS26YyI7wmDVBiQ/zh-cn_image_0000002779566784.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5A93F8957CD2BE51493A77BAF104A1E9AF4A7D034EC2C88BEAEF67BABF9B927 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/Ib5QLifLRw2YPT9b3GtSvg/zh-cn_image_0000002779566784.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B8641E9CEBA5772104441C9ADF00AB096633C86083D431D263AC742B7DA978A "点击放大")
 2. DevEco Studio 6.0.0 Beta1版本新增**Load ETS Files**区域，支持查看冷启动过程中.ets文件的加载情况。各字段含义如下：
    * Category：该.ets文件在应用启动过程中是否被使用。
    * Weight**：**该.ets文件加载子节点文件（不包括自身）的总耗时。
@@ -50,10 +50,10 @@ Launch模板支持的泳道包括：Launch、Frame、ArkTS Callstack、Callstack
    * File Name：该.ets文件的名称。
    * Path：该.ets文件构建产物的路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/8VlaFzO5TSCnKft5c5AUcQ/zh-cn_image_0000002808766367.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EFD0A2481EF0490E1DE84D0B80E6BC643AD4332B3762EC5AC20594189907289 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/CTD4cQojTAGb_mAJzD7JFA/zh-cn_image_0000002808766367.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=A779280A0CA89EA33E51FCFC55CCAB9E5D9F5597D6746A5F71510D47EE7B3098 "点击放大")
 3. 切换到**TOP Redundant**区域，可查看冷启动过程中TOP 100冗余ETS加载文件信息。若File Name字段显示为蓝色，双击可快速跳转至对应工程源文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/-4SWM9K9TXGoLRoDOFu8HQ/zh-cn_image_0000002808766363.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=472B318C84C403C319FB2FAC627E321082C5BF498A4536DC2E54B3BCC1C5D809 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/ljwlgZStSgmMr8l6jfTo3A/zh-cn_image_0000002808766363.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=21659E12B95474179C5ABA303A2976D6A719DA196D4C1045E6D5A12C40299821 "点击放大")
 
 **说明** 
 
@@ -66,14 +66,14 @@ Launch模板支持的泳道包括：Launch、Frame、ArkTS Callstack、Callstack
 
    针对耗时超过预期的加载任务，可单击跳转按钮，跳转至相关线程打点任务中进行深度分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/w_wGKXwCR0-9Yn8COOiiqQ/zh-cn_image_0000002808886449.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=A426AEB11DB7F7B794ED892E2D0B145B26C3EAFDE152671F6443F22FF367A454 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/PyPYUI7ZRjCd4j8RgVMYLQ/zh-cn_image_0000002808886449.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5751337008C5FC0B5C0D7259E21834D6B663D1870BBF17F93756D956548786E "点击放大")
 
 ## 查看核心线程在CPU Core的运行情况
 
 1. 展开**Launch**泳道，其中的**Running CPU Cores**子泳道展示启动过程中的关键线程具体运行在哪个CPU核心。
 2. 单击单个进程色块或框选多个进程色块，下方的**Details**区域展示所选对象的运行情况统计信息，单击CPU的跳转按钮，可跳转到CPU Core泳道查看详细的调度信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/h6ruChXGSzuMFtVDmCBljA/zh-cn_image_0000002779566780.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=90C2826ED0604AB9C62B99AEBE2E4DA08DF8FA5801E1CEED7EAC860020E4D707 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/jVA-h40RT-y8j8HXNlR4mA/zh-cn_image_0000002779566780.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=59EE65A0C8ED3970275B6FA33631B520FF5FDFDF38453991467C971C03E8A9FA "点击放大")
 
 ## 查看启动过程相关的线程Trace数据
 
@@ -85,4 +85,4 @@ Launch模板支持的泳道包括：Launch、Frame、ArkTS Callstack、Callstack
    * **Slice List**区域展示所选对象的切片统计信息。
    * **Load Statistics**区域展示所选对象的中载和重载信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/PLqJdiamT-OSkpUpO69QVQ/zh-cn_image_0000002779566782.png?HW-CC-KV=V1&HW-CC-Date=20261114T004718Z&HW-CC-Expire=31536000000&HW-CC-Sign=87C26537E9038C4A5D7805F98882542DA04B9E35C232173BC321A7CF90BD10C2 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Ru0vwzKwT1CUeVYECt8U6w/zh-cn_image_0000002779566782.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9F30283B3117A787F81615F53D5261CE69FEC9D5E09B2B62A78DE428A88528E "点击放大")

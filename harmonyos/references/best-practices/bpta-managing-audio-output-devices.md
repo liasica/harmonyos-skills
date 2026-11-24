@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-managing-a
 title: 管理音频输出设备开发实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 管理音频输出设备开发实践
 category: best-practices
-scraped_at: 2026-11-14T08:54:07+08:00
+scraped_at: 2026-11-24T12:47:46+08:00
 doc_updated_at: 2026-09-02
-content_hash: sha256:2920353a1a2109189e3ec02cfe982ad9ae60bd5567d22be91119e3b9f2e2af88
+content_hash: sha256:5b60d2a985af79e84f906d2fae9210c62f80283494de508f653dbd6baefd8e04
 ---
 
 ## 概述
@@ -27,7 +27,7 @@ content_hash: sha256:2920353a1a2109189e3ec02cfe982ad9ae60bd5567d22be91119e3b9f2e
 
 在开始播放音频前，获取系统的输出设备信息并展示。当设备发生变化时，同步更新设备列表。例如，当蓝牙耳机上线时，将蓝牙耳机添加到设备列表中；当蓝牙耳机下线时，将蓝牙耳机从设备列表中移除。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/d_yJKi-0R16SIKX7sF6PYw/zh-cn_image_0000002548392057.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA94ABD4EC16866055A2F987F679392D93FF536A2B8E2CCC655B3B24047BFE7A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/ZwQGJKGYRySaSAp5cZUbDg/zh-cn_image_0000002548392057.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB1FA779EE1E22D84CE65B1E1ABC1A0A0A591970F6D5BB0AC6AE3D9E472C896A "点击放大")
 
 ### 实现原理
 
@@ -35,7 +35,7 @@ content_hash: sha256:2920353a1a2109189e3ec02cfe982ad9ae60bd5567d22be91119e3b9f2e
 
 整体流程如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/qD0SuY-gQVyQQF4gJJk1dQ/zh-cn_image_0000002548512059.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD86314E4195C0669F8121BC6F168C5B07BD395E5650DAEF39FBA20F113607A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/bL6-xF11RMWt_kdo0TsfCA/zh-cn_image_0000002548512059.png?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EAF08F6B93C78963BB740B359CF09485643D51F395A12F3F7C2478411D16CD6)
 
 ### 开发步骤
 
@@ -183,7 +183,7 @@ content_hash: sha256:2920353a1a2109189e3ec02cfe982ad9ae60bd5567d22be91119e3b9f2e
 
 音频流类型对输出设备的选择具有决定性影响，对于不同类型的音频流，系统会自动选择相应的输出设备。例如音频流类型是STREAM\_USAGE\_VOICE\_COMMUNICATION时，系统使用听筒作为音频输出设备。为了提升交互的灵活性，应用可以提供主动切换播放设备的交互入口。下图中底部右侧的按钮，用于展示系统组件的使用方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/gOwJU4yFTKS2mDfIxURrsw/zh-cn_image_0000002516872178.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6BBE30D5642FF11A4FD755A7FC02568730A5CFFF880B070997A37AA75D7C177 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/pT-9hqcYSYOlVyEnJ6iY4g/zh-cn_image_0000002516872178.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F33D1A9B2CED301E378C4A92B81720D6AF877E8FEA75B99651753F39A82962F "点击放大")
 
 ### 实现原理
 
@@ -222,7 +222,7 @@ content_hash: sha256:2920353a1a2109189e3ec02cfe982ad9ae60bd5567d22be91119e3b9f2e
 
 当应用不希望用户通过系统组件手动切换输出设备时，可以使用AudioRenderer API实现设备的切换。例如在应用需要根据使用场景自动切换输出设备或自动设置不同的默认设备时。下图中底部右侧的按钮，在不选择AVCastPicker系统组件时，用于展示AudioRenderer API的使用方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/bt_r5yVLQ22ZpGcRP52kcQ/zh-cn_image_0000002516712260.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=16C10DCB54DED4A212A2AB7EF268B629112CBCD5B7914105692A9F9485ECD3FE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/BP4Qoop6Te6dzJ3vcZ5HHA/zh-cn_image_0000002516712260.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=84A9A90690E807336DBE0AA2D45D251F704515A20FBE5431E50CFFDFF5BE36D2 "点击放大")
 
 ### 实现原理
 
@@ -250,7 +250,7 @@ content_hash: sha256:2920353a1a2109189e3ec02cfe982ad9ae60bd5567d22be91119e3b9f2e
 
 当系统出现音频输出设备的上下线、用户主动切换设备、设备抢占或设备选择策略变更等场景，导致音频流输出设备变更时，应用可以根据需要做出对应的处理。例如，在音乐播放过程中摘下耳机，输出设备将从蓝牙耳机切换至手机扬声器，此时应暂停播放，以避免音乐外放。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/J3Ne1xb9SUGThdyfeoqOkQ/zh-cn_image_0000002548392059.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CF26761FD4BF50F05F3726C3E4845F55FF2324C8981D4996258E8FDA01B7713 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/EPna3iTWSiiePEloyz8ojw/zh-cn_image_0000002548392059.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D4935A489277C6D42402628B2F4A525E84D8D94DFEE137AF60BF3410EBBA056 "点击放大")
 
 ### 实现原理
 
@@ -306,7 +306,7 @@ AudioRenderer的[on('outputDeviceChangeWithInfo')](../harmonyos-references/arkts
 
 当应用直接持有AudioRenderer对象时，可以[通过API切换输出设备](bpta-managing-audio-output-devices.md#section914181801319)；当应用不直接持有AudioRenderer对象，但需要通过API接口切换输出设备时，可以使用[Interface (AudioSessionManager)](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md)管理音频输出设备。例如在使用播放器的SDK播放音频流或使用[Interface (AVPlayer)](../harmonyos-references/arkts-apis-media-avplayer.md)/[SoundPool (音频池)](../harmonyos-references/js-apis-inner-multimedia-soundpool.md)播放音频流时。下图中设备列表的“设置”按钮便是基于AudioSessionManager的能力实现输出设备的切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/pAFaqG5ySGKRWT0Klb_6_Q/zh-cn_image_0000002548512061.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=A38E8360E99F65B4BCE4D8B72F8ABEF2F0F1D069436CDB14F05AABB53829D324 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/nXhuhYtWQiGaA4K2IfOG6Q/zh-cn_image_0000002548512061.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=48122886FEC5DA2E822AC51EFF1844DA08AF5A885FBAA87D8CCB3C7FFD861F6C "点击放大")
 
 ### 实现原理
 

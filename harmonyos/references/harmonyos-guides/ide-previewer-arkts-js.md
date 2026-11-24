@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer
 title: 查看ArkTS/JS预览效果
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 界面预览 > 查看ArkTS/JS预览效果
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:57+08:00
+scraped_at: 2026-11-24T12:42:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:e4264033123b6afe278500bf4f4109daeb18c1c6ab91b1a0dc416299d4a219b1
+content_hash: sha256:e8847165a577b364e04ea29d1696553b7eefe4eb65b4ee8ac770fd17f81132fa
 ---
 
 预览器支持ArkTS/JS应用/元服务“实时预览”和“动态预览”。
@@ -23,16 +23,16 @@ content_hash: sha256:e4264033123b6afe278500bf4f4109daeb18c1c6ab91b1a0dc416299d4a
 * 不支持调用C++库的预览。
 * HAR在被应用/元服务使用时真机效果有区别，真机上实际效果应用不显示menubar，元服务显示menubar，但预览器都以不显示menubar为准。若开发HAR模块，请注意被元服务使用时预览器效果与真机效果的不同。
 
-* **实时预览**：在开发界面UI代码过程中，如果添加或删除了UI组件，您只需**Ctrl+S**进行保存，然后预览器就会立即刷新预览结果。如果修改了组件的属性，则预览器会实时（亚秒级）刷新预览结果，达到极速预览的效果（当前版本极速预览仅支持ArkTS组件。支持部分数据绑定场景，如@State装饰的变量）。实时预览默认开启，如果不需要实时预览，请单击预览器右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/WUNdie2WQd2Nsbx2g3zS5g/zh-cn_image_0000002779406840.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=88ABBB8B873032BF91B6A1CECB3854EDE24F22288BEBADE484804D0BCEF670AA)按钮，关闭实时预览功能。
+* **实时预览**：在开发界面UI代码过程中，如果添加或删除了UI组件，您只需**Ctrl+S**进行保存，然后预览器就会立即刷新预览结果。如果修改了组件的属性，则预览器会实时（亚秒级）刷新预览结果，达到极速预览的效果（当前版本极速预览仅支持ArkTS组件。支持部分数据绑定场景，如@State装饰的变量）。实时预览默认开启，如果不需要实时预览，请单击预览器右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/CmYlMSG8RpOsYhB8iRbXqw/zh-cn_image_0000002779406840.png?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=79B6CD8F2C1222CDF9848AE20D400C873FB31C462FE1F8EE6EEF7DAB4D126D1A)按钮，关闭实时预览功能。
 
   **说明** 
 
-  开发者修改resources/base/profile目录下的配置文件（如main\_pages.json/form\_config.json），不支持触发实时预览，开发者需要点击重新加载![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/fRf8MsYQTRqjL4KSl36rHg/zh-cn_image_0000002779566816.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=87B3297EA2E4532D1E139F222E4AD307B2C3ED21C7539A3C7A8A1C2B24835E99)。
+  开发者修改resources/base/profile目录下的配置文件（如main\_pages.json/form\_config.json），不支持触发实时预览，开发者需要点击重新加载![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/edJr4AXTQQaIjKzHyFveIA/zh-cn_image_0000002779566816.png?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA3A529AA3C9AF6C6F6F21CC5FCBAAA54371868501BF42FE2117EA57DCC02ECC)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/rTJ8xcvFTCS8pFPHhXqZCw/zh-cn_image_0000002779566818.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A6CB84C6679D61C27883CEC9B37E6B5B19217708B2CB05D6F31FC1461E5809E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/PbbbHMokT8KKudL3molGkw/zh-cn_image_0000002779566818.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BD1ABF667089AFEF50604A7D428CBC9F2C331FF9F013E05E5C1CD5A91FFE499 "点击放大")
 * **动态预览**：在预览器界面，可以在预览器中操作应用/元服务的界面交互动作，如单击、跳转、滑动等，与应用/元服务运行在真机设备上的界面交互体验一致。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/ef1dwAXgRyO8IwhDQDMKBA/zh-cn_image_0000002808766401.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A16AC9E63FF131DDC7D39551A4180B9275F2D2E68BD57C6BE04765CD48460FF "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/jeYc_Iv6QUW_rUR4nVWiow/zh-cn_image_0000002808766401.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=96AAAFA8ED2BC3FC93693919DC8E58B9568BC4D38163A3FCA7475E7C53B5C13D "点击放大")
 
 以ArkTS为例，使用预览器的方法如下：
 
@@ -42,5 +42,5 @@ content_hash: sha256:e4264033123b6afe278500bf4f4109daeb18c1c6ab91b1a0dc416299d4a
    * 通过菜单栏，单击**View > Tool Windows > Previewer**打开预览器。
    * 在编辑窗口右上角的侧边工具栏，单击**Previewer**，打开预览器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/zBRvVyIzS1OoUkTabut_ig/zh-cn_image_0000002808886481.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=A132C988E42401404329E8724ED4CCB10EF09659DE1714223B6D8BCAA27C95CF "点击放大")
-4. 点击按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/V34veSC4SVuFP05SCiHSkg/zh-cn_image_0000002779406842.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED74CF00B049E9D67155642335092BD72A6085F9FC0B9FB0E2088F9914B130BB)，停止预览。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/XcpRuCAlTYSWRpDIiInTcQ/zh-cn_image_0000002808886481.png?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA82F9EEF0CE36E2A8AB110B945EF27440C758DFC5111D63B188C85D71555AE5 "点击放大")
+4. 点击按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/P14IuQd1TJymg1E8JinDDA/zh-cn_image_0000002779406842.png?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=37ECBDA4FBE8013D8B3270DEAD57AB4D1AA007E0F9FAA52A1659E8A1E885B178)，停止预览。

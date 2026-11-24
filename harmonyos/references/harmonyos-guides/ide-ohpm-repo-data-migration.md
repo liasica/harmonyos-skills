@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 数据迁移
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 数据迁移
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:48+08:00
+scraped_at: 2026-11-24T12:42:20+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:21132af4451203c9795e49d84e1a910e645bc0d89892265daf94c3f84d3a77c4
+content_hash: sha256:baf8b8822a86d48229d29f02295b026c3c7646217db82aa2253d069d8f5be908
 ---
 
 ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文件中，db是元数据存储的配置项，store是文件存储的配置项，db和store不能随意搭配，需要符合下面表格中的匹配规范。如果需要改变db和store的存储方式，需要进行数据迁移操作。
@@ -125,7 +125,7 @@ ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文�
 ohpm-repo install --config <配置文件路径>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/4FrEzdwaTZuzMEhQBkgcZg/zh-cn_image_0000002779565386.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=15954CF5493F56344FA04E1A7252AF5AACC151EC5CD13CF359C341E24327E76B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZZZOHlxpTI2PzWdxJKR2Qg/zh-cn_image_0000002779565386.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A10DBE26CE2306A51DA6ABBC3C39A833D5651DF795B6F1552055C85DF03C1C0 "点击放大")
 
 根据提示信息刷新环境变量，然后重新启动ohpm-repo。
 
@@ -133,7 +133,7 @@ ohpm-repo install --config <配置文件路径>
 ohpm-repo start
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Ojm-Uz6OTdqVEnP2JqUcyQ/zh-cn_image_0000002779405420.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=6312C53D0D2A7B2086BE28007CE618C363DEF4AE1534E0FCC285618DA1D4D02C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/beWqqTlVTAKbtyAFLsaDLw/zh-cn_image_0000002779405420.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=E079D8433D397FFE85A443F154140BA2B6E655EA2ADE7AAF449B02F954FF0B4D "点击放大")
 
 ## 使用迁移命令导入数据
 
@@ -172,7 +172,7 @@ ohpm-repo start
 
    数据导入成功后，可启动ohpm-repo服务并登录管理页验证。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Jp5bUGg6QuOTWwwlPoI2zg/zh-cn_image_0000002779405412.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=37F671C264AD24D963F4586E8D18937F3E815DB6E0BF8F3CDDA14200D96256A7 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/d62tsl8CQBWIn4Oq0W1n4g/zh-cn_image_0000002779405412.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=C685FA9D1A4E06998A8A6FBD9FEDEADC886692BBEF630221A287C64D3D78B232 "点击放大")
 3. 批量上传包到ohpm-repo配置的store目录。
 
    使用[batch\_publish](ide-ohpm-repo-batch-publish.md)命令，将批量下载生成的batch\_download\_xxx.zip中的包依次发布到ohpm-repo。

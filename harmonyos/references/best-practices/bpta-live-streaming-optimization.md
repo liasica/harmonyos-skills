@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-live-strea
 title: 弱网直播优化
 breadcrumb: 最佳实践 > 技术创新 > 通讯 > 弱网直播优化
 category: best-practices
-scraped_at: 2026-11-14T08:54:05+08:00
+scraped_at: 2026-11-24T12:47:43+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:bdc23db8edc9716678e1bee7025da8c447f21b5751c6bc8408dff51b6b27f93e
+content_hash: sha256:6edb0cd783c3126d557fa9322e9987e0bdb5cdd07e1b9862554e7b78b73f630e
 ---
 
 ## 概述
@@ -32,7 +32,7 @@ QUIC协议通过多路复用和拥塞控制等核心特性，在高并发、移�
 
 FFmpeg层QUIC传输的适配主要包含创建连接、终止连接、创建数据流、数据读写、关闭数据流等核心操作。整体流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/dayO2ctFRqyBuSYpAiEXKw/zh-cn_image_0000002594078330.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=350980276BEED57F3EC300056660E2542F341791AA4103FE4AE8919A38FB3C81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/TwkEcFLgS8imoLuPeIgqhQ/zh-cn_image_0000002594078330.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A96C1AA495AA02E91DDAC7B9BB360276E987C962A05D3BF3F05A3EBE0AB061A)
 
 ## 实现流程
 
@@ -48,7 +48,7 @@ FFmpeg层QUIC传输的适配主要包含创建连接、终止连接、创建数�
 6. 使用[HMS\_Rcp\_QuicConnStreamSend](../harmonyos-references/remote-communication-overview.md#hms_rcp_quicconnstreamsend)()通过数据流发送数据。
 7. 传输完成之后使用[HMS\_Rcp\_QuicConnDestroy](../harmonyos-references/remote-communication-overview.md#hms_rcp_quicconndestroy)()销毁连接对象，关闭所有流并释放连接资源；使用[HMS\_Rcp\_QuicDestroySession](../harmonyos-references/remote-communication-overview.md#hms_rcp_quicdestroysession)()销毁会话对象，释放全局资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/v_Beld5dQz2fZMy3Z9xgXw/zh-cn_image_0000002594238244.png?HW-CC-KV=V1&HW-CC-Date=20261114T005404Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C110664492D894176F19CBD5A6395687C0BBE930610BF2A28AD9BCE8816715A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/dxWFZJCfTY6h0-9_vbB0vQ/zh-cn_image_0000002594238244.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FC5C9B0AEB060741250B92FE8F48147FBCC69EA41B0F54FABF843CB0E128310 "点击放大")
 
 ## FFmpeg支持QUIC传输
 

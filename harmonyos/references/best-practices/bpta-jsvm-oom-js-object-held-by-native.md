@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-jsvm-oom-j
 title: JS对象被Native持有导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > JSVM OOM故障模式说明 > JS对象被Native持有导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-14T08:54:20+08:00
+scraped_at: 2026-11-24T12:47:58+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:4da895383e1a16d56b4c0fe64df1f7497099a44439f21703b51dc2f14e532550
+content_hash: sha256:29159bb04b082343405c9a7b43972116e63f7a537586c14397fd1ccda349eed6
 ---
 
 JSVM-API允许开发者通过创建引用、作用域等方式管理JS对象的生命周期，应合理使用这些接口，避免应用运行过程中产生过大的内存峰值。本文列举了五种JSVM-API错误使用的场景，分析JS对象被Native侧引用导致内存未及时释放的问题，并通过堆快照文件展示这些场景的堆内存特征。
@@ -128,15 +128,15 @@ static napi_value RunTestJsvmReference([[maybe_unused]] napi_env env, [[maybe_un
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/JNsVT76GR3iK1behEjo6gQ/zh-cn_image_0000002677658546.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=68F6559EB4187AB30E5376CFF7FF68C92967D99EA21708401EE25A6051C117C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/3WtyEnqVSv-GzZHZKPmq3A/zh-cn_image_0000002677658546.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2DB4474B86EC20B2A08EB5F2E8C59D8FB90C321269AD3724F3DABDA8D66E17D)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见68%的内存分布在Array对象中，Array中包含大量字符串元素，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/2E6tSo9oS-m2Gby90fZvcQ/zh-cn_image_0000002707458407.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=D082A5C276655405DB2BB31B898B49ACDBCCB7EAA0EA27671B9D0BF41E2C34DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/mjkewvVKTk2qs9h57hhXgg/zh-cn_image_0000002707458407.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FA7248D55517DD6DCF933E77A874EA836641FC9C4E59DFE2CE16EB2FEB2C4E0)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/tCZWQzFEQeCIx-N9g3zP-g/zh-cn_image_0000002677818396.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B63BFADA9F3092DF4F4865EC41C2711D077DAD311BDC6F39C7464901022108A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/06XkuaP-QKmYMnOhafy-YQ/zh-cn_image_0000002677818396.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=51EB10875FAB5DFDC10D11062DC3D306F0DD95CAB2AEF688FA07286B748F9C08)
 
 可见大量内存被Global handles引用，这是Native侧对JS对象的引用。
 
@@ -236,15 +236,15 @@ HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在�
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/n1PY75ezTUi61U-tkE14_g/zh-cn_image_0000002707578257.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=E21AD01C15375B3426AB5F6CB694264B6276382F86BF2D22E6184E9807A6901F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/9wflzUtvRvKhaTpyuPq4Ow/zh-cn_image_0000002707578257.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=D94866A0FD9FB6881656092F426046DCF94075290490FCBE2325FAD8838F4D49)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见68%的内存分布在Array对象中，Array中包含大量的字符串元素，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/MV--m0vwRH-svd0uvuwL2g/zh-cn_image_0000002677658548.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=8288029C3A2AD4E966242993CB1A609819A05D0987B2B627279F32D30649DDF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/W9SIJ4-UQiecmlHwR9_mNA/zh-cn_image_0000002677658548.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=B92C75A6A224AAF04C353CC38A15AFC4390D680498F78A4D109FE7EC1274A3AE)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/EIS0lLH6TtaGi7p4yWTz7A/zh-cn_image_0000002707458409.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=773BB970C008ECC13DFAB67C5D4D8F3C647D016587D7EAE1E88DC3679573830C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Am-2vTNBTB6FfRqVoLFi4A/zh-cn_image_0000002707458409.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=056A614634A047558BEC1DE4BEA3418D7C4C13154A7B82E742BD26EFE69816BC)
 
 可见大量内存被Global handles引用，通常情况下这是Native侧对JS对象的引用。
 
@@ -333,15 +333,15 @@ HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在�
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/ii7tk1HARn2xHD45-2F_Lg/zh-cn_image_0000002677818398.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0BB678FA185B86F92EA7CAB36BF99CE7BEBE44F1F857CD1ECF5BBAB488D3EAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/w7WkGO0-RtSsbHb42HYHQw/zh-cn_image_0000002677818398.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=29E1E59DB55D4AAE216345A2F65AA9760DBCC9C2F2D8DF7F5F12AE0A3B124D3F)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见66%的内存分布在(string)类对象中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/2oaBdsshSh6l_IQDJ-IvnA/zh-cn_image_0000002707578259.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DE5C20169DA064A578D0C2F7AD34848584ADF829898D67208ED47D21621D0F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/7ZJpbg14SSaFhzE3DzKaOg/zh-cn_image_0000002707578259.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=D01C2E33A7214A9B41C8F1BA86A239F011E42872AF1FC2CD869DC704CB24BFF9)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直到无法进一步拆解，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/cZp2BnEuTZW5NrCsrCOinQ/zh-cn_image_0000002677658550.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3F351E75FB088AE75A50164B70E8E50FCFEB9D0E067833FED4B3DB1DC149D22)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Z3ubxeQTSs615fqd-9lkHA/zh-cn_image_0000002677658550.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E5C347DE8EA7B829041A434F84348AEEB7C59B442823C39B1E559BC4342DCBD)
 
 可见大部分内存被Handle scopes引用，这是创建在作用域内的JS对象。
 
@@ -431,15 +431,15 @@ HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在�
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/tSrYTqn0TVC8tnbEGZrgwQ/zh-cn_image_0000002707458411.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=0128C2595DD38A0C459E1A545CE3857CD1DDEF007DCD97F2A120126B0D5608B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/WlLBeT2ARGuG_zVBflNsmg/zh-cn_image_0000002707458411.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=13ECCD37EA0AB0819009B0A79DFBA048A7C88E865E1DFD7E9EADEB0DD31162CC)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见66%的内存分布在(string)类对象中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/g0lCLhXySKGcQ71lBVCk8w/zh-cn_image_0000002677818400.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6B49283D44F71C52B6CF95A24123FB3D3F8956AC1D34DA8B738AC320B5D5480)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/NS0SSiOzQ1OpIcuqYm8reQ/zh-cn_image_0000002677818400.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7EC915FB1542523F1F12AB750544EACEC80626CD67664FEE22DB77432BB7C3E)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/8qscy-prSN68oiTliIqBJA/zh-cn_image_0000002707578261.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=E062E7207825F635DD8840DB490A446AD50EC8D73610A28A3C980B38B824F14F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/HLEn40mZSkC1tlwALLZ2ZA/zh-cn_image_0000002707578261.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=75D0FE077F482A8CE28B3375203DDFBB127BBFC88688D7943DDD8A522C8002C4)
 
 可见大量内存被Handle scopes引用，这些是创建在作用域内的JS对象。
 
@@ -525,15 +525,15 @@ HeapMgmtTest()函数封装了OH\_JSVM\_TakeHeapSnapshot()的调用细节。在OH
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Q0_WYoPRRT2NjdlWaFvfnA/zh-cn_image_0000002677658552.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE319AE4C7A72BA8CFC7EFEAB43A2A46D3718D3CEF5CC03A98A53ECD3CCE21EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/PIMCzolWR2SnvFIlm4W3sg/zh-cn_image_0000002677658552.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=31381A2EBCD1C9B0541BBFF1322A07CA80DF499FE7333558DEEF582CC3A58769)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见100%的内存分布在global\_object中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/u3VViE96SRq5pkRp_tTaKQ/zh-cn_image_0000002707458413.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEDA3B316CD211C0FB054A1231B106F07A136F8E3A173B45D0344230CD8DC2B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/zuvGPWtsQQ-YG80Z75mW_Q/zh-cn_image_0000002707458413.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E0459FA02EF1A4B644B36F45592BA08453972D42677C8D3E3DDD11A111CA38D)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/gZvQ4kVhQz6D75xVWnwnMw/zh-cn_image_0000002677818402.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=6690D5EC610E5A187CE99C27A49608921E53AC85CC3A6AE6AEDC634FB100B3B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/CWX4zkPdQpuyLBj5uGPOVQ/zh-cn_image_0000002677818402.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACDAE78F15E5D7CA2835EB703FFA180D35B298E6E367E25D0EAFF7B64334B122)
 
 可见大量内存被global\_object引用，内存占用集中在全局对象。
 

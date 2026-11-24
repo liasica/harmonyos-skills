@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-har-
 title: 发布共享包
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布与管理共享包 > 发布共享包
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:11+08:00
+scraped_at: 2026-11-24T12:42:41+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:6abfdafbe74aaf01c7d4320e404abe4803e98a2b61eebce9c6050a4aea0d53c9
+content_hash: sha256:36399fa3e5858c91f4a9cfb0f4bb73c91e7866ed1f03b0016b9a1ce4de1297c8
 ---
 
 ## 发布HAR共享包
@@ -34,7 +34,7 @@ OpenHarmony三方库中心仓仅支持HAR共享包发布，不支持HSP共享包
    3. ohpm包管理器只支持加密密钥认证，请在生成公私钥时输入密码。
 4. 登录[OpenHarmony三方库中心仓](https://ohpm.openharmony.cn/#/cn/home)官网，单击主页右上角的**个人中心，** 新增OHPM公钥，将公钥文件（mykey.pub）的内容粘贴到公钥输入框中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/2lRfLk56RIqQawQHAvbXWg/zh-cn_image_0000002781311146.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D82704C8F26FB2C5872FF8439ABC15049C77CC76DF5071EE82E2653190DDFBE "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/E4u4kCWiTHibkvOHG8bLLw/zh-cn_image_0000002792000978.png?HW-CC-KV=V1&HW-CC-Date=20261124T044241Z&HW-CC-Expire=31536000000&HW-CC-Sign=97580923F1FB5D14666253BAA3EABF859F8E140F81BFC2436626B7F8060F3BF3 "点击放大")
 5. 打开命令行工具，将对应私钥文件路径配置到 .ohpmrc 文件中 key\_path 字段上，可执行以下命令进行配置：
 
    ```screen
@@ -55,14 +55,14 @@ OpenHarmony三方库中心仓仅支持HAR共享包发布，不支持HSP共享包
 
 如需在应用内共享HSP，需编译生成\*.tgz包后，将HSP共享包上传至私仓。
 
-1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/qAUXSWhCSWe0igplIKrTAg/zh-cn_image_0000002810630633.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=A405CE51436DF8A49789E90672464FA034F77D999E0C32E88C3E366B4B51D0CF)图标，在下拉菜单中选择**Product配置**，将**构建****模式**切换成**release**模式。更多请参考[指定构建模式](ide-hmos-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
+1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/OPjS2kQkRcOSV5tGZhiIqA/zh-cn_image_0000002792000980.png?HW-CC-KV=V1&HW-CC-Date=20261124T044241Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7700F41BC0B7A64D82DA8FA404203C3830D7D4C854A6C71074E08BAA4FF7DD5)图标，在下拉菜单中选择**Product配置**，将**构建****模式**切换成**release**模式。更多请参考[指定构建模式](ide-hmos-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/N2iQpLSfRDuLnIVYGu8oTw/zh-cn_image_0000002781311148.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=48B7E14F1F98A9AB981C2D644A545E40FFEF8923D3432F36F86B1E280C0BCAD4 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/s7BavSpISaq8ER3sOZOeRA/zh-cn_image_0000002820720943.png?HW-CC-KV=V1&HW-CC-Date=20261124T044241Z&HW-CC-Expire=31536000000&HW-CC-Sign=33D9D530C567532B930DE9AF074057E1978B0F6CB4ECCCF1B9D98EEAB1959563 "点击放大")
 2. 选中HSP模块的根目录，鼠标右键点击**构建模块**，启动构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/oCrz3o_jTe6UIT09ARosZA/zh-cn_image_0000002781471078.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=C181055F5BACB2099747C7FD75CFCC25DB854A37258AC04FACB764562D91D626)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/TBOhAJwDS4CXP6jtktmm-g/zh-cn_image_0000002792000974.png?HW-CC-KV=V1&HW-CC-Date=20261124T044241Z&HW-CC-Expire=31536000000&HW-CC-Sign=73A244D9B9EA50C8477609E6DA0E0FAFE1CCF8488322369A902BD0E62C67708E)
 
    构建完成后，build目录下生成HSP包产物，其中.tgz用来上传至私仓。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/K8ee3uvnRCiirBesq_WE9A/zh-cn_image_0000002810630637.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=146DFE48B2B464B312E021A01244FD877C2EC86FBF659F8E0E8D64BB03B29CFA "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/ecZkctFmRJyZUNiRzRS5BA/zh-cn_image_0000002820720947.png?HW-CC-KV=V1&HW-CC-Date=20261124T044241Z&HW-CC-Expire=31536000000&HW-CC-Sign=598B512B3E204B5D920AAF9A328B81DD4B6A0AE02050DB95C39C23CC592F2EB0 "点击放大")
 3. 将HSP共享包上传至私仓，具体参考[将三方库发布到 ohpm-repo](../doccenter-deveco-studio/ide-ohpm-repo-quickstart.md#section1710514092415)。

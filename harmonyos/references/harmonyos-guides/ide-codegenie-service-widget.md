@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-codegenie
 title: 万能卡片生成
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 万能卡片生成
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:09+08:00
+scraped_at: 2026-11-24T12:42:39+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:58ec7082adf93a2ce16d116ce6b2e06484628c9bb555212b21b41ace58557176
+content_hash: sha256:f9e2d1b7d573f78034da8f2c01ea9632bc69d79d08623be530f07f5ddc610949
 ---
 
 基于AI大模型理解开发者的卡片需求信息，通过对话式的交互智能生成HarmonyOS万能卡片工程。
@@ -29,14 +29,14 @@ content_hash: sha256:58ec7082adf93a2ce16d116ce6b2e06484628c9bb555212b21b41ace585
    * 在对话区域输入"/"调出命令，选择**Service Widget**。从DevEco Studio 6.1.0 Beta2版本开始不支持。
    * 在输入框左下角的下拉框选择**Service Widget**。DevEco Studio 6.0.1 Beta1版本新增。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/WU7soE5fRSeJ1lB732UKhA/zh-cn_image_0000002808886407.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF479FC00A28C9DD2F009232F1F48A1292C0AE40940E9BECE9130291A2A53F05)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/P9sFwN-tQMiVntS3uqX5bQ/zh-cn_image_0000002808886407.png?HW-CC-KV=V1&HW-CC-Date=20261124T044238Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B29E8A56BF4F09FF2443B5EAF8782D2C5BB9E429B0EB7B6AB263C723556C444)
 2. 需求描述完成后，可以根据提示信息进一步细化卡片尺寸、用途、展示元素等，以及预览卡片效果图。生成效果示例**：**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/8GY-DVKtSFuanV6DmywYPg/zh-cn_image_0000002779566734.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1091AD850F31DDDFB32C61F2D8BAB192578180426D7FBC35EB200595AE9628F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/-eMlVvDhRbiyTIQC8nOoMA/zh-cn_image_0000002779566734.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044238Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5EA6D1579ED43BC5BB31E5932E8D73CA033C5F14E20E831CFED7D80685E8737 "点击放大")
 
 ## 万能卡片保存
 
-1. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/VD-Ow5hCS0u3F7eDBojhsA/zh-cn_image_0000002808766323.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=370249EE02A7395654D9510069AD9A8F51203D670A75CA935B9F8FEAA04B5EB3)，可查看生成卡片的UI代码、配置信息和下载静态资源文件。
+1. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/qbQMbpdXTqeWl7pYOwSQNw/zh-cn_image_0000002808766323.png?HW-CC-KV=V1&HW-CC-Date=20261124T044238Z&HW-CC-Expire=31536000000&HW-CC-Sign=76284B7C62712370107B3167D842BB4B02CB90D940A71718FFE3400EFB7DB255)，可查看生成卡片的UI代码、配置信息和下载静态资源文件。
 2. 保存卡片工程有两种方式：
 
    方式一：使用代码/配置查看窗口的“复制”、“插入”或“创建文件”等按钮，手动保存卡片代码和配置信息。
@@ -45,11 +45,11 @@ content_hash: sha256:58ec7082adf93a2ce16d116ce6b2e06484628c9bb555212b21b41ace585
 
    **流程示例：**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/dvK1UZwLS8ymgmsqYGssMg/zh-cn_image_0000002808766321.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=97EEDE96510059EFED28E1573D11341BB4B391C89D2787A792E2B332CB24AD2A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/siZ5d_dXTOG-DacsTS2Jag/zh-cn_image_0000002808766321.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044238Z&HW-CC-Expire=31536000000&HW-CC-Sign=695BDA79AB4CC137A0D67146FEE68CCFADC789A3C2164CDB0B08F760AA290A17 "点击放大")
 
    工程保存完成后，工程中会新增如下卡片相关文件：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Go7HYkmES_y-fnDMKdYefg/zh-cn_image_0000002779566736.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=15737AE58A593C775A82C5999DCCDF16FAE2943DBD9A3EB7B9D6BECF69C49CD6 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/WgbyVgaXQDKGRXOnGDcwNQ/zh-cn_image_0000002779566736.png?HW-CC-KV=V1&HW-CC-Date=20261124T044238Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CA32D756599FBABB9D7ACD5BC3BFE1C068D95A75AE56E096F21FA8936FA4691 "点击放大")
 
 ## 自定义配置逻辑代码
 
@@ -62,7 +62,7 @@ content_hash: sha256:58ec7082adf93a2ce16d116ce6b2e06484628c9bb555212b21b41ace585
 
 在module > src > main > ets 路径下， formcommon目录用于存放生成卡片的逻辑代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/21dNCZ6eSDmqec2vH_Ilsg/zh-cn_image_0000002808766313.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FBB7BEAD9CE087347E6D5D1EAA851C799863BF0969BDB94105BE06306285E84 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/l8G_VaQGTX-5AD8Kic20Ng/zh-cn_image_0000002808766313.png?HW-CC-KV=V1&HW-CC-Date=20261124T044238Z&HW-CC-Expire=31536000000&HW-CC-Sign=B78ABBEC8AE24F9EA22B28C55D634EF37A0534BB256317CBB20C6D507F2FD9F7 "点击放大")
 
 * formsetting：存放用户可配置的文件。
   + formsetting > formdbsetting：自定义配置以数据库方式进行卡片刷新的相关参数。
@@ -80,12 +80,12 @@ content_hash: sha256:58ec7082adf93a2ce16d116ce6b2e06484628c9bb555212b21b41ace585
 
 ### 自定义配置卡片事件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/8T5C6ZPBTbe3Km4T3GGZLA/zh-cn_image_0000002808886393.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=434616882F447A7F917655D0D0413489B69A92CEDB275BF33B66D4D3C154DBB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/022fx11QQJKjG_mgovr-Mg/zh-cn_image_0000002808886393.png?HW-CC-KV=V1&HW-CC-Date=20261124T044238Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEC6AF76542DC3E5EA088B0C23FC20F1F45EBC44944A82D3A5726AB31C250EA8)
 
 1. 在FormAction.ets文件中，配置触发卡片router事件时具体的页面分发规则。
 
 2. 在EntryAbility.ets文件的onWindowStageCreate方法中，会插入页面分发接口的调用，示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/qwO9Upb_RxiJn9JqJylipg/zh-cn_image_0000002808886403.png?HW-CC-KV=V1&HW-CC-Date=20261114T004908Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D6D07817217BC11E604BFD4B6A12DAC399CDD192814052B67E93898DE380DB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/_UhlVVWfTbqN19PiGUQJmg/zh-cn_image_0000002808886403.png?HW-CC-KV=V1&HW-CC-Date=20261124T044238Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C4065B01A374F8E9A627172D708DFB8BB64EAE23681C3E5B95B75EF8FFC2B2C)
 
 此接口默认插入到方法开头，开发者可根据当前工程onWindowStageCreate逻辑来将此接口移动至合适的位置，保证页面能正常跳转。

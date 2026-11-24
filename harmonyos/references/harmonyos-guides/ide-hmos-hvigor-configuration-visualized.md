@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 可视化配置
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 配置文件 > 可视化配置
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:17+08:00
+scraped_at: 2026-11-24T12:42:47+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:a3f0f50114ff4d9783b7cfb798b86c5f1ab58664b98d5337435837155e0bbd33
+content_hash: sha256:b5cee0d5f20b591662acec40278ff8e605366b6da6fd446f5c2d69ebdb3e4cdb
 ---
 
 鸿蒙电脑DevEco Studio为开发者提供配置文件的可视化操作，在可视化配置界面中配置相关字段后，会自动同步到对应配置文件中。可视化界面支持对工程级[app.json5](app-configuration-file.md)、[build-profile.json5](ide-hmos-hvigor-build-profile-app.md)、[oh-package.json5](ide-hmos-oh-package-json5.md)文件和模块级[module.json5](module-configuration-file.md)、[build-profile.json5](ide-hmos-hvigor-build-profile.md)、[oh-package.json5](ide-hmos-oh-package-json5.md)文件部分字段的可视化配置。
 
 点击菜单栏**文件** **> 项目结构**进入配置文件可视化界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/86KDA2fUT4qBQkI44TIfsA/zh-cn_image_0000002810630855.png?HW-CC-KV=V1&HW-CC-Date=20261114T004917Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B64D42B9411E6AA59D4A722A85E33447A4C144966BAFA0343529FC57EC09B37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/2WB2BzveRxeqcTAugw9Ecw/zh-cn_image_0000002791841110.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4C235BF533FCBAB0513B59CE11302E3EDBDCF25C3151240CBA82EE34BD3201B)
 
 ① Project可视化配置：配置应用信息，包含基础信息、构建信息等。
 
@@ -24,7 +24,7 @@ content_hash: sha256:a3f0f50114ff4d9783b7cfb798b86c5f1ab58664b98d5337435837155e0
 
 在可视化配置界面，点击文件名称跳转至对应映射文件查看配置字段。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/UxM1d26wSPCXPR-JRsaD8A/zh-cn_image_0000002781311368.png?HW-CC-KV=V1&HW-CC-Date=20261114T004917Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EF746549402FB10AED95B5B910F0BE5A1D842B31704AB41B2D5375B9F20C842)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/I9dwpEsTRbaY8jh7ZyKrRg/zh-cn_image_0000002820721049.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=868DF1AD99A0B834C04D2A05809AA2A9BB462EC3190B5FF48D907D563D4E75C8)
 
 可视化配置内容及映射文件如下表所示：
 

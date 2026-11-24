@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-collaborat
 title: 办公编辑全场景协同
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 典型全场景协同开发案例 > 办公编辑全场景协同
 category: best-practices
-scraped_at: 2026-11-14T08:54:05+08:00
+scraped_at: 2026-11-24T12:47:43+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:5b1744df7b9dc819cada61b4103f642f002d106b4feaf0b068504c99ed7daac7
+content_hash: sha256:46903be062040bd6c25611303eb1b43adf67f0a57ee8c887cf9aa62ffba41587
 ---
 
 ## 概述
@@ -32,13 +32,13 @@ content_hash: sha256:5b1744df7b9dc819cada61b4103f642f002d106b4feaf0b068504c99ed7
 
 |  | 特性 | 特性体验 | 体验视频 |
 | --- | --- | --- | --- |
-| 插入其他设备图文 | 跨设备互通插入图片 | 1、用户使用平板/电脑打开应用。  2、点击应用跨设备互通按钮。  3、弹窗选择设备拍照/图库。  4、用其他设备拍照/选择插入的图片。  5、插入图片到文档中。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/97/v3/wpmPMcbMQxSWWqCifsNNuw/zh-cn_media_0000002525619044.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9342BA12C07C11250E61CBFE239902F377969A65B914148CCF0A51E0903B423) |
-| 插入其他设备图文 | 碰一碰文件/图片插入 | 1、用户在电脑上打开应用。  2、通过手机碰PC窗口触发，手机向电脑传输图片/文件。  3、文档接收文件，图片直接展示，文件形成链接。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/9e/v3/ThpUVJN9TwiFUZtRcmcZ5w/zh-cn_attachment_0000002525621244.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B14E2BAC3D19C1D83B0FAD24677195411F08930D5444D4D2DFBBC4DCA574EC2) |
-| 插入其他设备图文 | 跨设备剪贴板 | 1、用户使用两台/多台设备（至少包含一台电脑），均打开键鼠穿越，选择共享的设备。  2、复制图文。  3、粘贴选中图文到另一台设备的应用，图文正常落入。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/2b/v3/vnary3CDQ6yHIacIBlv9IQ/zh-cn_media_0000002525779012.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=A73634A3B310BEC23D764F8A5AAAB6C3CB4F3558803DB7F2BDD8B684B723AC9A) |
-| 插入其他设备图文 | 跨设备拖拽 | 1、用户使用两台/多台设备，均打开键鼠穿越，并链接鼠标。  2、拖拽图文到另一台设备的应用窗口。  3、图文正常落入。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/40/v3/VRcU94HwS16BTRmzOFXx5Q/zh-cn_media_0000002556898897.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=182DBCB60795B1B30E5508ACCFD8690317050A886D7BF85BB03FF11063C07E54) |
-| 切换设备继续编辑 | 应用接续 | 1、应用在源端设备打开，想切换到对端设备继续编辑。  2、点击对端设备docker栏应用图标。  3、对端设备正常打开文档。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/bb/v3/igjiuurlSlyTiKJBl2K-9g/zh-cn_media_0000002525619050.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=820CFFB5B1EAD8E4347DA4F89FCCDF8052EF8F7947033F025B57A12C3EDD4AF2) |
-| 分享协作 | 碰一碰邀请协同 | 1、用户A打开应用。  2、A的设备和B的设备之间相碰。  3、用户B的设备打开文档。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/de/v3/AIoBTUp8R_-HtK4yHMrKiA/zh-cn_media_0000002556778941.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=81AC5FA332332E930FEBEFFAD5A8739F16C4E0FC45E25E038D14EB8572684EB8) |
-| 分享协作 | 隔空传送邀请协同 | 1、用户A打开应用。  2、用户A做隔空传送手势到用户B的设备，手势见[场景介绍](../harmonyos-guides/gestures-share-overview.md#场景介绍)。  3、用户B的设备打开文档。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/9c/v3/DKwjMQkdRneUL4wGPZiI0g/zh-cn_media_0000002525779026.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=64FD9841AEDAF261A6401CF01B65E0EADFF5677DFD09323EC68508B07764DB35) |
+| 插入其他设备图文 | 跨设备互通插入图片 | 1、用户使用平板/电脑打开应用。  2、点击应用跨设备互通按钮。  3、弹窗选择设备拍照/图库。  4、用其他设备拍照/选择插入的图片。  5、插入图片到文档中。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/62/v3/ptVMdTsuQtGqvUx1E68yig/zh-cn_media_0000002525619044.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E525F883169CDB620469F5060407C2B35864745C88AAACC8433794D6B6F0A0A) |
+| 插入其他设备图文 | 碰一碰文件/图片插入 | 1、用户在电脑上打开应用。  2、通过手机碰PC窗口触发，手机向电脑传输图片/文件。  3、文档接收文件，图片直接展示，文件形成链接。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/e7/v3/Q1Sw8lO4QlmBgoq90jaQ7w/zh-cn_attachment_0000002525621244.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=D71A3A96BAEA0D739A336A3F63BFDE8695A0590CBD43CEA91741C52ADD4F9C83) |
+| 插入其他设备图文 | 跨设备剪贴板 | 1、用户使用两台/多台设备（至少包含一台电脑），均打开键鼠穿越，选择共享的设备。  2、复制图文。  3、粘贴选中图文到另一台设备的应用，图文正常落入。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/51/v3/9qfde8MiQU-FyBMf-g8ekQ/zh-cn_media_0000002525779012.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=0466B7F4FA54F8775235D7F2853B83ADA26D3B2A328016ECD4562B4BDAA94C51) |
+| 插入其他设备图文 | 跨设备拖拽 | 1、用户使用两台/多台设备，均打开键鼠穿越，并链接鼠标。  2、拖拽图文到另一台设备的应用窗口。  3、图文正常落入。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/fe/v3/SMEDLs5-RM2Is9k8KTmBtw/zh-cn_media_0000002556898897.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=1865D1E49A67F0CFAB6EAE2A048676DC2F444214B35D628B910A2636DB26B21C) |
+| 切换设备继续编辑 | 应用接续 | 1、应用在源端设备打开，想切换到对端设备继续编辑。  2、点击对端设备docker栏应用图标。  3、对端设备正常打开文档。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/6d/v3/c-5n7UsRQH-sUKm1Ar-_Tg/zh-cn_media_0000002525619050.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=50878781656199A4D8D4EDA1056E8A4DB6DCF9F3798902719EAF4A0614401BFB) |
+| 分享协作 | 碰一碰邀请协同 | 1、用户A打开应用。  2、A的设备和B的设备之间相碰。  3、用户B的设备打开文档。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/9d/v3/dSBBfuAQQ6urpdXo0hCWqg/zh-cn_media_0000002556778941.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA9DCE409327FF7C31ED4B3B07E55681573F37AFD41F7FF431253719B78650EE) |
+| 分享协作 | 隔空传送邀请协同 | 1、用户A打开应用。  2、用户A做隔空传送手势到用户B的设备，手势见[场景介绍](../harmonyos-guides/gestures-share-overview.md#场景介绍)。  3、用户B的设备打开文档。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/0e/v3/rpErwnPwRKyzAXQX2MkmaQ/zh-cn_media_0000002525779026.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=D16323BDE27F2414A6651BB9E48D261421B3385B53C6CEDD910950D9D95301EF) |
 
 ### 使用限制
 
@@ -64,7 +64,7 @@ content_hash: sha256:5b1744df7b9dc819cada61b4103f642f002d106b4feaf0b068504c99ed7
 
 通过同层渲染在Web页面中嵌入按钮，点击后调用[createCollaborationServiceMenuItems()](../harmonyos-references/servicecollaboration-collaborationservice.md#createcollaborationservicemenuitems-1)创建设备选择菜单。使用对端设备执行操作（如拍照）后，通过[onState()](../harmonyos-references/servicecollaboration-collaborationservice.md#onstate)回调返回数据（Buffer或URI）。应用根据数据类型上传到服务器，再通过[runJavaScript()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascript)将图片插入Web编辑器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/uTxaHA5pQVqjF3CfPtvaUw/zh-cn_image_0000002556898911.png?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=16C02033EEE0E097B0CF915529B9D1EBD8C4F7C2A60C68294AEEF7D609692FF0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/DxLDYBQuRI-tp89ycszwrQ/zh-cn_image_0000002556898911.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A448261EAF35A8452D3BBCC5A7132B63D0141A72936262CE833E8887B5CAF75 "点击放大")
 
 **开发步骤**
 
@@ -386,7 +386,7 @@ content_hash: sha256:5b1744df7b9dc819cada61b4103f642f002d106b4feaf0b068504c99ed7
 
    拖拽落入时序图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/5birZuPoSaitnVteZGlAQg/zh-cn_image_0000002525619066.png?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F142EA566AD88BDD7A47F62EE14B6D78AB36EAA9361DB53C1BC7D9002E3AD72 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/XSCB5GmwQLC0S9raXkaklw/zh-cn_image_0000002525619066.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6B8E938E60FB20666029CE2A395D15E8CE60F91D0447C0B4E6965B8E31C5A5A "点击放大")
 
 拖拽拖出：
 
@@ -559,7 +559,7 @@ content_hash: sha256:5b1744df7b9dc819cada61b4103f642f002d106b4feaf0b068504c99ed7
 
 首先获取剪贴板权限，通过[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)显示上下文菜单，使用[hasDataSync()](../harmonyos-references/js-apis-pasteboard.md#hasdatasync11)检查剪贴板是否有数据。用户点击粘贴后调用[paste()](../harmonyos-references/arkts-basic-components-web-webcontextmenuresult.md#paste9)，系统自动将剪贴板内容插入WebView。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Dh_tr10_R_qxllVz3cI7Fg/zh-cn_image_0000002556778943.png?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=43B18C330A90EE12795BE559BDAC31446B3011F9E1ED37430ED7E11ED54A1AEA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/2Ns5fTybQQSuPYO2PvYdbw/zh-cn_image_0000002556778943.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BC57CAEA205B47FAE93D6CBA3CDA8365D019126F0F19A84CE12717D2A6BC791 "点击放大")
 
 **开发步骤**
 
@@ -690,7 +690,7 @@ content_hash: sha256:5b1744df7b9dc819cada61b4103f642f002d106b4feaf0b068504c99ed7
 
 编辑页加载时注册[on('dataReceive')](../harmonyos-references/share-harmony-share.md#ondatareceive)监听，支持指定MEDIA和FILE类型。电脑端通过碰一碰发送文件后触发回调，调用[receive()](../harmonyos-references/share-harmony-share.md#receive)接收数据。解析[getRecords()](../harmonyos-references/share-system-share.md#getrecords)获取文件URI，上传到服务器后通过[runJavaScript()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascript)插入编辑器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/fDCBfojiRW2KdbEQ-kOiiQ/zh-cn_image_0000002525779028.png?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=D660745445C8CA60667A5C1AEE627BCE01403E36011F5EE6F97577BB296DE6EB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/fraPACXzTpS_3S9LRBOaQg/zh-cn_image_0000002525779028.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF84215921558219B1D96E00F0710F6DA7229948C7B10B693D7B92C8B955E143 "点击放大")
 
 **开发步骤**
 
@@ -813,7 +813,7 @@ content_hash: sha256:5b1744df7b9dc819cada61b4103f642f002d106b4feaf0b068504c99ed7
 
 源端在[onContinue()](../harmonyos-references/js-apis-app-ability-uiability.md#oncontinue)中获取当前WebView的URL并保存到wantParam.webUrl，系统传输到目标设备。目标设备在[onCreate()](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)/[onNewWant()](../harmonyos-references/js-apis-app-ability-uiability.md#onnewwant)中检测launchReason.CONTINUATION，从want.parameters获取URL，设置给continuationUrl静态变量。页面加载时检查continuationUrl，若为编辑页则调用loadUrl加载接续URL。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/M70l0DkWTxeAu4oi7fG9iQ/zh-cn_image_0000002556898917.png?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=44F74A903C6E589414929ECB393B15B28EC2A7C5CDF220235F696B677B337BA2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/oPstQCIdS8-7Wq3zIKFrrA/zh-cn_image_0000002556898917.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D1C4CE4E25C0AA9E754E8BD765F83BDD1B363C1D2DD372BD682DA15341260AB "点击放大")
 
 **开发步骤**
 
@@ -921,7 +921,7 @@ content_hash: sha256:5b1744df7b9dc819cada61b4103f642f002d106b4feaf0b068504c99ed7
 
 初始化时注册[on('knockShare')](../harmonyos-references/share-harmony-share.md#onknockshare-1)事件监听。用户触发分享时保存当前文档URL和docId。设备碰一碰或执行手势后触发事件，优先使用预保存缩略图，创建SharedData对象（类型为HYPERLINK）并调用[share()](../harmonyos-references/share-harmony-share.md#share)分享链接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/6zQmIEyhRoerKKCaj8E1jA/zh-cn_image_0000002525619068.png?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=425FABDC36A5D04E302FC760341299A6217AC3591F3067CA0E50A1AB8CE45938 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/b05IzoTjQ3OAG-xxA9XQsA/zh-cn_image_0000002525619068.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A948737A9C71DF5DDB206180589EAE7A7DA0228FCDA6265D27AD9191BD11795 "点击放大")
 
 **开发步骤**
 
@@ -1106,7 +1106,7 @@ content_hash: sha256:5b1744df7b9dc819cada61b4103f642f002d106b4feaf0b068504c99ed7
 
 初始化时注册[on('gesturesShare')](../harmonyos-references/share-harmony-share.md#ongesturesshare-1)事件监听。用户触发分享时保存当前文档URL和docId。设备检测到隔空手势后触发事件，构建[SharedRecord](../harmonyos-references/share-system-share.md#sharedrecord)对象，并调用SharableTarget.share()分享链接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/yYFGN75mSNmPlB2Kfekfaw/zh-cn_image_0000002556778947.png?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=6332A045CC2205F2451A350CB6F7B6B5D685B1D36820BB7413B38D29652600AD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Je55koMjQHCo94bT8_4IBw/zh-cn_image_0000002556778947.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FDA778EE6C7BD4CB2ED17949867A68394F9C0E4C67671D767A79A0FC73DFF0E "点击放大")
 
 **开发步骤**
 

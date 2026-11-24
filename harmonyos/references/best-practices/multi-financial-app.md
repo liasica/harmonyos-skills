@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-financial
 title: 多设备银行理财界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备银行理财界面
 category: best-practices
-scraped_at: 2026-11-14T08:54:10+08:00
+scraped_at: 2026-11-24T12:47:48+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:d34f59f185e4c80bc810be213567de042216c79d05d15481e6c8b4baf3180c51
+content_hash: sha256:99d6a8082b965064b2854ac9a340e5af5f9a291a4ea8fe88a20d22760e860a7f
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:d34f59f185e4c80bc810be213567de042216c79d05d15481e6c8b4baf31
 
 应用的UX设计可参考[金融理财类](../design-guides/responsive-design-examples6-0000001793536905.md)的多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/vZW2PnPtRMysJztgQQwoMg/zh-cn_image_0000002619248557.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=48E8EC1185BD36A42DE39E500E0CA8A4357260CF5DEF400CFBA06E1C3CB2D2D5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/y_ezGidCRaSx-d4DTLA64w/zh-cn_image_0000002619248557.png?HW-CC-KV=V1&HW-CC-Date=20261124T044747Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B50253771B44122D0FAAEAB499B5DF76C65E657D86396D58E061BBE1D663910 "点击放大")
 
 ## 工程管理
 
@@ -212,7 +212,7 @@ content_hash: sha256:d34f59f185e4c80bc810be213567de042216c79d05d15481e6c8b4baf31
 
 银行理财应用首页主要承担业务入口、消息公告、卡片内容和财富推荐的聚合展示。根据功能设计，应用首页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/H5gt-1jHTvC6n8Yg--cVJw/zh-cn_image_0000002610026103.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3EB8838D89FBDABF2634643213B5DF56E36E3C80AFF9B479C5160730D7559D2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/NDr6Ic9HRdC63Dd5bxgdyg/zh-cn_image_0000002610026103.png?HW-CC-KV=V1&HW-CC-Date=20261124T044747Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE9EBE43928192694C939D953CC74CA5778C0592C5ED9824E1BDAD942EBBDCD2 "点击放大")
 
 **界面开发**
 
@@ -231,7 +231,7 @@ content_hash: sha256:d34f59f185e4c80bc810be213567de042216c79d05d15481e6c8b4baf31
 
 账户总览页用于展示用户总资产、昨日收益概览，及活期、投资、负债等资产模块的分区信息。根据功能设计，应用账户总览页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/CFMatnV9QhGz8TI38K8ynQ/zh-cn_image_0000002579426308.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=393F7CE766EC4EE3B6B0FBFC75E20D5A5147B44EF2881D92DE176C6F1E998FBF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/NL9DRN4OQqak1N5Ai9yliA/zh-cn_image_0000002579426308.png?HW-CC-KV=V1&HW-CC-Date=20261124T044747Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8D43B45939A3BF3264025217AD1862C1F9DC13C5035071B8F38E0369AFEAB65 "点击放大")
 
 **界面开发**
 
@@ -250,7 +250,7 @@ content_hash: sha256:d34f59f185e4c80bc810be213567de042216c79d05d15481e6c8b4baf31
 
 理财详情页用于展示单个理财产品的关键信息、交易时间线及产品亮点，并提供“关注/买入”的底部操作入口。根据功能设计，将理财详情页相关内容划分为5个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/D3Z4vDaeSimbdFbIhnO92w/zh-cn_image_0000002609946203.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=115BB17377EAE052C0A7EEB30C168CBD33F4CB4FA7BF82827E338B1AB1670677 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/TQ_b8IERTTucuHoqB7omFw/zh-cn_image_0000002609946203.png?HW-CC-KV=V1&HW-CC-Date=20261124T044747Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE27D03421CD5523D2232501E49D90A6D33F06FC7FC2EC4F7D87F3F71583895F "点击放大")
 
 **界面开发**
 
@@ -268,7 +268,7 @@ content_hash: sha256:d34f59f185e4c80bc810be213567de042216c79d05d15481e6c8b4baf31
 
 购买页用于完成理财产品的申购确认，用户在此确认金额、选择付款方式并核对产品信息。根据功能设计，将购买页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/uNAVYZpOTHSWkqefrjEIgQ/zh-cn_image_0000002579586218.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB1D79E9B460E5FE3EF5DE48C9D5FEE82F8ADF0A99B2898F36164D49106E4CD3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/kXKA0z6TRYS9hrPrKrPMhg/zh-cn_image_0000002579586218.png?HW-CC-KV=V1&HW-CC-Date=20261124T044747Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8FF64470AABD8FA3D5FF0B15938FE51958B761A8AA9E615B1F209B0CBC87CB4 "点击放大")
 
 **界面开发**
 

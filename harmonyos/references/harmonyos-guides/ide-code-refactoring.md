@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-refa
 title: 代码重构
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码重构
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:57+08:00
+scraped_at: 2026-11-24T12:42:28+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:6abcd1fe247d04bc85e928567e70d88915ccb8845647d2f58dfac464b3413d37
+content_hash: sha256:809bd893794fae5c2d723191bc9ec96db401a43c4b8c251c8fe43187a908c22f
 ---
 
 ## ArkTS/TS代码重构
@@ -20,25 +20,25 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 方法/函数（Method）支持选中代码块或完整语句进行提取：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/_rH47VOzQDSU3KrY-XRvvg/zh-cn_image_0000002808887091.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A05853AAE29EF44675965367B26EF77E0D99656CBD77C2404B43C7164DEC7C1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/2hdw-HDCRISRxqihTmJwXQ/zh-cn_image_0000002808887091.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=421E537C19DFEFD03111A857F1A9CB901F16DB80D7533B7E428669BCC84EB35B "点击放大")
 
 在ArkTS语言中，支持将组件调用代码块提取为@Builder装饰器装饰的方法，组件属性调用表达式可提取为@Styles或@Extend装饰器装饰的方法。
 
 **使用方式**：选中需要提取的组件或属性，右键单击**Refactor**，选择**Extract Method...**，组件私有属性可提取为@Extend装饰的方法，通用属性可提取为@Styles或@Extend装饰的方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/VLb-VcI0RJ2w1BqH1v_tbA/zh-cn_image_0000002808887087.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A7AA2157703F9C867FFA28798F984B6DE1840F1AD6BBE28B8DBA76002D53C7A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/LmYYMjVDQZevTxgc9Uip1g/zh-cn_image_0000002808887087.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=63A157051B8792989E808638DBE77317B7EC534562AC87EC29397EBEE94D5761 "点击放大")
 
 常量（Constant）支持选中单行表达式进行提取：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/ycD2Yi21RlCfvN_Sb_8MJQ/zh-cn_image_0000002808767011.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2A008061DB9921DACA029E2349799E4B9CE423B0B40F89D6FB7DD8C36948C90 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/yakQTB7wTQeUvwNv4hPbjw/zh-cn_image_0000002808767011.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=53847EC21E007A03354274201C2275DB0206309A4A590A556DA93F9FE53401BC "点击放大")
 
 接口（Interface）支持选中对象自变量进行提取：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/cMUh_ORfSZGAGZmDE1tT2g/zh-cn_image_0000002779407450.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C3B5338AA1DCBE58AF685D989BF0069CB95471774F289840411811129443199 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ubuy2r7eT9K2euqshM-_tA/zh-cn_image_0000002779407450.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=49BC3D955FB9877172D255111A40EEA7EBF15FB8861DBD07F3423FB13AACAD8E "点击放大")
 
 支持选中表达式提取为变量（Variable）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/jvzkwfsDQluE_OmgmMLL_Q/zh-cn_image_0000002779407458.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B2236D971245534ED3B372505FC0AC0259770A35658B4CCF0C5D23F7D35E5C4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/WYdYtNKtQSGM0KVE3psPtA/zh-cn_image_0000002779407458.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=3ACDD31D76688BCFCB56850BBADF5519FBAF072D0CCD1BCDD654CFE3178FCE8B "点击放大")
 
 ### Refactor-Convert代码转换
 
@@ -65,11 +65,11 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 **使用方式**：选中需要重新命名的标识符（变量、类、接口、自定义组件等），右键单击**Refactor**，选择**Rename...**（或使用**快捷键Shift+F6**），在弹框中输入新的标识符名称，并在**Scope**中选择替换的范围，点击**Refactor**完成重新命名。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/SlT_gjEETv-ru2utF9DqOw/zh-cn_image_0000002808887093.png?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=2714C780376C76F2ADC9A0E3554651C60B034A2DBED8564CEB1E7D3AE37AE4CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/RwO6q0JKR1qEVfa6FtF1Mg/zh-cn_image_0000002808887093.png?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAEFD9D19C8FFC57B4DE60FCADE26021C5D58A7DD7BF9BF3FE53F80A67413E8F)
 
 代码编辑支持筛选并过滤不需要rename的引用位置。在**Rename...**弹窗中点击**Preview**，在弹出预览窗口中，用户选中无需Rename的选项，单击右键菜单**Exclude****/Remove**进行过滤/删除，完成筛选后点击左下角**Refactor**，重新执行Rename操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/RsaSM45ASL-HzFsZFKtYvg/zh-cn_image_0000002808887083.png?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=BADC14140073D9E2E62EFDA616B7ACA9D0BD0AA329844EA184C7D07B97FC3A24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Q88hHoo6SHiPSOOt3jEm4Q/zh-cn_image_0000002808887083.png?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=D429FDB4980BFED3AA867B0ED2546F691BC03CB41BB5119A67D8E181A7F15366)
 
 **说明** 
 
@@ -81,7 +81,7 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 从26.0.0版本开始，针对跨模块移动文件场景优化了移动符号的导入方式，移入、移出模块时Index.ets会适配改动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/gwR9T0u6Tr2S-0oaViZmEw/zh-cn_image_0000002779567424.png?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=160660D04BFB8BA19C7D01F11A3C40BF7E90111E8C91CBD10B14728091B0EBE5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/6KrX5SKCST2j1EODkkvC-w/zh-cn_image_0000002779567424.png?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2A3A26ED37296ACA0921215A8E64DC5C3A962E095A9A726417D6FF7A14CA78F)
 
 ### Safe Delete
 
@@ -89,7 +89,7 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 **使用方式**：在编辑器内选中需要删除的标识符对象或在工程目录选择待删除的文件，右键单击**Refactor**，选择**Safe Delete**，单击**OK**将自动检查当前对象在代码中被引用的情况，点击**Open in Find Window**可查看具体使用的代码内容，点击**Refactor** **Anyway**将直接删除该对象的定义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/knB1XBaDTRWVRQYoNfVEUw/zh-cn_image_0000002808887079.png?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B9EB81B345259FAF9FB3C969B3834C2C09FFD03D2BFE4B0EB2415F951B264D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/oB8PzU3xSFGRG0CVxLFdxg/zh-cn_image_0000002808887079.png?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=926730A5BEAC4B3CEC02A59CEC042D139E01DE8596D3F4CE5BB2260F203C11B9)
 
 ## C++代码重构
 
@@ -99,7 +99,7 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 支持在当前宏引用处展开宏。将光标移动至需要展开的宏，右键单击**Refactor**，选择**Inline**，展开此处引用的宏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/2CuHGRugThGwhadw2cMgDg/zh-cn_image_0000002779567420.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC145F4ED4A4400C6E594C81D89C44E2F44674C32575A02188A751E7716C01E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/sGBFKFPnSF2M1PKs59QL8Q/zh-cn_image_0000002779567420.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=A04F3A1066489159CFB4D6B0C46BAC885E1D242BA641184935C356F6CF416B82)
 
 ### 交换if分支
 
@@ -115,19 +115,19 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 编辑器内选择需要转换的代码区域，右键单击**Refactor**，选择**Swap If Branches**，对原有if条件取反，并交换if-else原代码块顺序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/iEjHvOfASDKT3ezt1fJkqw/zh-cn_image_0000002808767009.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4FD35F85EB3A85225B893DC6444CE341A0D6E3C94A15E9E3C6652D43C36353A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/vO_aO-jGRRaorpHNl-He8g/zh-cn_image_0000002808767009.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=596AA42BAC355FDEF1CA5947FBF7B1FE681F68D8C2C8D4ABDB6617779B9250E8 "点击放大")
 
 ### 移动函数体到声明处
 
 编辑器支持将函数体从源文件移动到头文件中，提高代码可读性。编辑器内选中函数名，右键单击**Refactor**，选择**Move to Declaration**，源文件中的函数实现将移动至头文件中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/wNxGbfrHTTWdAbLpJIhkQw/zh-cn_image_0000002779407456.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=10050D645E3468AFE509CD0DBD9AD0FC9D3CCAB72C6D4F9D47B981642071FFFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Nh39JiqTQ0eAQi52Mr8LKA/zh-cn_image_0000002779407456.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=34EAF752D7B4D72E10EC5FF38622A6D1A48EE1D6CDF6013D6CB8F2CEB5EF6703)
 
 ### 移动函数体到实现处
 
 在编辑器内将光标放在或选中函数名，右键单击**Refactor**，选择**Move to Implementation**，选择移动到的文件，将函数定义移动到该文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/SclhXDRBTDuCa9C3R0_YfQ/zh-cn_image_0000002779567434.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=2403F690B1D6720AEA52A5623C7DE0B172C8139D18CA8E4EE38D28B1E03F6862)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/I3LGLfX9Q6-cpaO_AopL3A/zh-cn_image_0000002779567434.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF8235001065EA63645D0AB4CD17ACDA94C5C6805FC2D00A9885192F2C59720B)
 
 ### 将语句转为原始字符串
 
@@ -135,7 +135,7 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 在编辑器内选择字符串代码区域，右键单击**Refactor**，选择**Convert To Raw String**，将语句转换为原始字符串。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/BN5jyw0sT8Gyb8VECBGjtg/zh-cn_image_0000002779567438.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E16D8AF5DF9683A6BF1D00ED27470A9140D462FBAD77508FB28E35E53A52C52 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/2GDnbDfVQjWyIt8b-yTMNw/zh-cn_image_0000002779567438.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=747888927C05B962ACFF409D016D5FE45F3ED659801AC95EE6FA7A95A78BB419 "点击放大")
 
 ### 定义构造函数
 
@@ -149,34 +149,34 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 **使用方法：**在类的定义的类名处，右键单击**Generate****...**，选择**Constructor**，在弹框中点击**Define**，为成员变量定义一个构造函数。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/QrQAylxdRhG8UNEff1rqnQ/zh-cn_image_0000002779407442.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BB9C66263551DA1C8F902E7252FC58B312B9CD006B0BA467B625E7A1517AB44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/O02PVBejQJiPZ_0WUGZcJA/zh-cn_image_0000002779407442.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=3630F0EEEABD5CCD42A25F28C8CFC22A93030FBB07E63A0F243579BB8C01D1FB)
 
 ### 提取表达式到变量
 
 在编辑器内，选中需要提取的表达式范围，右键单击**Refactor**，选择**Extract Variable**，支持提取表达式到变量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/HB6pTuo5Q3KLYoLepXfzzg/zh-cn_image_0000002779567418.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=22558D8E8E9E80AAD255220DBA7F42BE2EA6596D8611CDE1188CB018FF4205C8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/5CcQ3y0wSHKwQFJ5tXWJqg/zh-cn_image_0000002779567418.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=1308FC17F1154F5F73D2F219314117B4BA972226012FB1BE7946A9240743CB6C "点击放大")
 
 ### 移除namespace
 
 光标停留在需要移除的namespace处，右键单击**Refactor**，选择**Remove Using Namespace**进行移除，可以避免命名冲突，提高代码可读性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/J8ZSqgQSSWOAdYBkPQ4Hiw/zh-cn_image_0000002779407440.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3A8CE384723EBA723E60289EF183D5E30614783B83A89901E416AAF6256129B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/9Cal7WuLSdefbjlMmKMXZg/zh-cn_image_0000002779407440.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9A49CE5848DF4B4D4148F7F99C4F178A7E6C1362EB4CB1C584F48EA226FAD00)
 
 ### 添加using声明
 
 编辑器内，光标停留在需要添加using声明处，右键单击**Refactor**，选择**Add Using**完成使用using定义类型别名。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/d1cllZaKTliSWngsDKjqOg/zh-cn_image_0000002808767003.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=B09EC3FEE80826F21C989BCE2DA665A8A695E40579B068282D0D32FC0A384DD2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Nw8IP-mxSPOmriOaEaeIoA/zh-cn_image_0000002808767003.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=C188ECD48BA3060E9613CABBC6D543B383D27F9767EC270DB0D250929326E5BA)
 
 ### auto自动展开
 
 在auto关键字处右键单击**Refactor**，选择**Expand Auto Type**，可以使用推断类型替换auto类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/8P8Uj8mwTWWhmliX2h6iPQ/zh-cn_image_0000002808767017.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=A548D1B4D1C8684EC1DC34896F1787D763D40DAEE51B783E063544B759FF1DC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/nXGxpDR-T8CvfyR6BCenkQ/zh-cn_image_0000002808767017.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=E45B81F904D5BD9AA92C36AF361DB90FDF3934E8CD7AA640A5A821B142929E89)
 
 ### 声明隐式成员
 
 编辑器支持在类中声明隐式复制/移动成员。光标停留在需要生成的类处，右键单击**Generate**..., 选择**Copy/Move Members**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/_o3zTrfzQtqjNOmm1buiUQ/zh-cn_image_0000002808767013.gif?HW-CC-KV=V1&HW-CC-Date=20261114T004710Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BE586C0F8BF655D0B9EAEE6D7DFA6EEE5ACD9D395C534933061B725C3F0A83B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/UbkmFO2oQImVVKY6FkFF0A/zh-cn_image_0000002808767013.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044228Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD27B8124E9DAD4C9B12C3A651E2B3F46A2B8CC8B0FF2441EB8982273346DF7D)

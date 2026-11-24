@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: UX设计稿生成代码
 breadcrumb: 指南 > DevEco Code > DevEco Code Plugin > 操作指南 > UX设计稿生成代码
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:22+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:7cbf8070fd0f4a8882916034c1efac8e7a66573db52dd3499902dc4319afcecd
+scraped_at: 2026-11-24T12:42:51+08:00
+doc_updated_at: 2026-11-23
+content_hash: sha256:5a33e61a21698086550c9efb3f11b8514e856d077db8354eba7faa94d70bc275
 ---
 
 DevEco Code插件支持将UX设计稿一键生成ArkTS代码。开发者仅需提供Pixso设计稿链接，工具即可自动将其转换为可构建、可运行的ArkTS代码。该能力以内置 Skill（hmos-design-to-arkts）的形式提供，随DevEco Code插件安装即生效，开发者无需手动安装或配置。
@@ -13,6 +13,10 @@ DevEco Code插件支持将UX设计稿一键生成ArkTS代码。开发者仅需�
 生成代码过程中，Agent会自动完成设计稿解析、工程理解、方案设计、页面实现、交互补全、HDS（HarmonyOS Design System）组件适配、质量审计与多轮视觉校准等环节。其中，多轮视觉校准持续进行，直至代码评分达标或达到校准轮数上限，评分阈值和轮数上限均支持通过自然语言修改，当前默认评分为 80分，轮数上限为5。
 
 hmos-design-to-arkts内置完整工作流与精简工作流两种模式：完整工作流包含多轮视觉校准，适合对页面还原度要求较高的场景；精简工作流跳过视觉校准环节，生成速度更快，适合快速验证设计稿效果。开发者可根据实际场景选择不同模式。
+
+## 约束与限制
+
+* 鸿蒙电脑版DevEco Code不支持该功能。
 
 ## 操作步骤
 
@@ -40,7 +44,7 @@ hmos-design-to-arkts内置完整工作流与精简工作流两种模式：完整
    }
    ```
 2. 选择Agent模式，建议使用Goal或Build模式。选择Goal默认执行完整工作流，Build默认执行精简工作流；同时，开发者也可以在输入框中指定完整工作流或精简工作流。
-3. 在对话框中输入Pixso设计稿链接和生成代码需求描述后，按**Enter键**或者点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/L5NCSAhORP-wlj25epPHqw/zh-cn_image_0000002779406572.png?HW-CC-KV=V1&HW-CC-Date=20261114T004733Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B057E2E470F3A5243C038315368884802D686C427843FC384F747AACCF04E06)发送。例如：
+3. 在对话框中输入Pixso设计稿链接和生成代码需求描述后，按**Enter键**或者点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/IKktXZkFSE22CKInLZj_SQ/zh-cn_image_0000002779406572.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=E250ACDCE1A078A57B93315FED2EC85B478720BE01D91F8C8D4F7EDE1EAB8768)发送。例如：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/1e8yunE8RXKZjh57sLMvKg/zh-cn_image_0000002779566550.png?HW-CC-KV=V1&HW-CC-Date=20261114T004733Z&HW-CC-Expire=31536000000&HW-CC-Sign=00F0E5554223641BC8E0050B307EFE4526C9B02947D1F7B5F349DEE2AC13A2E3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/iI3k19n3RNOgJO5erWEaxw/zh-cn_image_0000002779566550.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F9B2EC0213F069B2D940CA6415A5076DA562AF5409BAFA8FE86093D2A7B2375)
 4. 等待Agent自动完成设计稿解析、工程理解、方案设计、页面实现等流程。

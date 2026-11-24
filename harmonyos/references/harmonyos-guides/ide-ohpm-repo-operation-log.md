@@ -3,26 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 操作日志
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 操作日志
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:47+08:00
+scraped_at: 2026-11-24T12:42:20+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:1f4bcdfa1711e0e7a0f5b05ad645865df246337ec96ca996e0f041dfa9089f45
+content_hash: sha256:52b6494c9a206a6aeb138b225eda5d764f847ec5caef8955df18ef49c979fdf3
 ---
 
 操作日志界面显示用户通过ohpm-repo管理界面进行的所有操作，以及通过ohpm命令行工具执行publish，unpublish和dist-tags等相关命令所记录的日志。操作日志界面分为两个部分：第一部分为筛选条件，第二部分是展示符合筛选条件的数据。
 
 操作日志的数据每隔一天会定时清除，默认保留100天内的操作日志数据，数据保留时间可通过config.yaml中配置项[operation\_log\_retention](ide-ohpm-repo-configuration.md#li38847353322)设定。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/nEx4lwa2Tvmc5E74T_KS-A/zh-cn_image_0000002808764727.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=386868352B83744B03BB3D1BE866CAC067825781A30F84EB5FB30DA197736A7A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/AUMJNid0QOenijOTy8bwPw/zh-cn_image_0000002808764727.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D908D1C14E84C8B6ADDBAD0B1D6175BAD1A0A005751AACE2B59C975B05A11BD "点击放大")
 
 数据筛选：操作日志的数据筛选类别有五类，分别为：用户类型，事件类型，操作类型，操作时间区间和操作对象的用户名。
 
 * 用户类型：分为系统管理员用户和普通用户，当选中普通用户时，只会显示普通用户的操作日志信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/d0dxdKsYSTiUd7fhM8dqGw/zh-cn_image_0000002779405216.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EBC2CB4047CA7BED7BB3C142C9406D3973BF36DA2B0ED787E65B9E923F5A0BF "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/hcIY2z5nSR2YIk-KcaHrAQ/zh-cn_image_0000002779405216.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=C24966E0614B28C8638E1B93EB132900448FF19D645A9FD3F3E4EE04F3E6A904 "点击放大")
 * 事件类型：六种事件类型包括用户管理、仓库管理、包权限管理、认证管理、组织管理、系统设置。通过选择事件类型进行日志的筛选。
   + 例如当事件类型选择用户管理中的新增用户时，操作日志界面仅显示事件类型为新增用户的日志信息。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/kDPYI_aeS3qKAKMFYTFLng/zh-cn_image_0000002779405196.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=C066D30C568D969664C4DE04429222CB25EE63A3986344B8CFF51DA7D8CA61D4 "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ZHQC2IwvRneZ7_KfS2jalg/zh-cn_image_0000002779405196.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6C0EA8F36D1A2ED0FF4F3F757D9D7339473673753AC2F1B8D06BBF8F0439910 "点击放大")
   + 事件类型具体内容见下表：当选择一级事件类型时，将自动包含所有二级事件类型和三级事件类型；当选择二级事件类型时，自动包含所有三级事件类型。
 
     | 一级事件类型 | 二级事件类型 | 三级事件类型 |
@@ -70,10 +70,10 @@ content_hash: sha256:1f4bcdfa1711e0e7a0f5b05ad645865df246337ec96ca996e0f041dfa90
     | 更新系统安全配置 | - |
   + 操作结果：选择成功/失败进行筛选。如操作结果选择失败，操作日志页面结果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/0kGoyHgKT7aRlhMMsd8VQg/zh-cn_image_0000002779405178.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=67FE97250E024282FDFA4A1D25FC3E791FD54431786D8616E161EACBEF3A71C0 "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/ptea-pS2RaWRgF21Is4n4w/zh-cn_image_0000002779405178.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=62570C542A2941CF3B11D2AB18205272B0B05E8783BA934A6ED4664A87B4932B "点击放大")
   + 操作时间区间：选中操作时间的区间进行筛选。如区间时间选择在2026.6.27到2026.7.4，操作日志页面结果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/2IefFzFmQrm0iXS-uRvf9Q/zh-cn_image_0000002808884863.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=23DB26A96189B915E3032BB1BE96A358C06BEEB0BD304C168637C7A95D0FB9CD "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/0padzHQUQFKxtnGA5zBlxg/zh-cn_image_0000002808884863.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=966AC4F525DD35A6C727AF89DB1BE69826A097C2233D4EB4589D6E2A58EB6E58 "点击放大")
   + 操作对象用户名：输入操作对象用户名进行筛选。如输入用户名为user，操作日志页面结果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/zi14qQtkQZC70m3Uk4sBkg/zh-cn_image_0000002779565178.png?HW-CC-KV=V1&HW-CC-Date=20261114T004702Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BC78387041DA9108B17275A95F4F62D31F2F4CE90C288162AEE47F68E600D65 "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/uU3SD9NhQM2MWoKXCjyMEw/zh-cn_image_0000002779565178.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=03DBFF81030078246CDB3DDBA9E5A374E7C8A4C88C500BE430244049EF707641 "点击放大")

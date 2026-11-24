@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备工程部署与发布
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备工程部署与发布
 category: best-practices
-scraped_at: 2026-11-14T08:54:11+08:00
+scraped_at: 2026-11-24T12:47:48+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:16a9874b95f98463017c0d58b2d80fd986a0a4addb1ea56debbfe5335d024af8
+content_hash: sha256:cc332e5012e06914d5aeac978e1691e62c995f069cb3868c7bc893cc26cc2cf6
 ---
 
 ## 概述
@@ -39,11 +39,11 @@ content_hash: sha256:16a9874b95f98463017c0d58b2d80fd986a0a4addb1ea56debbfe5335d0
 
 建议使用DevEco Studio直接创建出三层架构的新工程。在编译器创建工程弹框中选择Flexible Layout Ability工程模板，该模板可以创建跨设备应用开发的三层工程结构。更多工程模板介绍内容可参考[工程模板介绍](../harmonyos-guides/ide-template.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/QtXAi_oPSyicHhYxX4ycvw/zh-cn_image_0000002489379062.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB73AB3A74F7AB053FFCEBC244CCD97EE04B8C0754318CCE72FAD7E37F63DD95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/97RRNrU0TOaUgcYrtZ7YUg/zh-cn_image_0000002489379062.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBC3E3932FAE9B9E93D4FDD6C427E0BFADAD4586DF58694706EB1E4C37F4839E)
 
 配置工程名称、包名等基本信息，选择目标支持设备，完成设置后即可创建项目。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/uXoYPxfvRHaKdpPgfcU8yA/zh-cn_image_0000002521538859.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=99EE7B8958618D233FE15E699FF8DD2C8244F0EB1FC2D681B4950B76EF976626)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/3FrVILKuTzylR_uU86b6Qw/zh-cn_image_0000002521538859.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=4918FE4D71E58D700734F7BF6E52EE5098E548A659CD556245C102054527054F)
 
 创建后的工程目录如下图所示：
 
@@ -51,7 +51,7 @@ content_hash: sha256:16a9874b95f98463017c0d58b2d80fd986a0a4addb1ea56debbfe5335d0
 * features层默认创建两个HAR类型的Module，用于封装独立的功能模块与业务逻辑，提升模块化程度与复用性；
 * products层创建一个entry类型的[HAP](../harmonyos-guides/hap-package.md)（Harmony Ability Package）Module，作为应用的主入口模块，承载设备与场景差异化的个性化配置和启动逻辑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/Oq3VyXLeR_uUEzhVQDXpDg/zh-cn_image_0000002489539042.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB18AD974E1649CB3FFB1E7D49C46C7970104C5E0E2606655DEE88098E4E0633)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/pVRJu-VRQpKaj7vkhm2RsA/zh-cn_image_0000002489539042.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=BACFC7BE646B76BCC8BD731769D30D1B2C8A73CCFF5867E8E1EA2E9EA9CBB920)
 
 根据业务需求，应用可以灵活规划新增或删除Module，具体操作步骤可以参考[添加和删除模块](../harmonyos-guides/ide-add-new-module.md)。
 
@@ -65,13 +65,13 @@ content_hash: sha256:16a9874b95f98463017c0d58b2d80fd986a0a4addb1ea56debbfe5335d0
 
 在新增Module时，可选择不同类型的Module进行创建。若需修改已创建Module的类型，只需编辑其module.json5配置文件中的"type"字段即可。"type"支持"entry/feature/har/shared"四个取值，分别表示应用的主模块、动态特性模块、静态共享包模块、动态共享包模块，开发者可参考[应用程序包开发与使用](../harmonyos-guides/application-package-dev.md)，根据具体使用场景来选择或修改Module的类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/SSmexEr_QbWNv4Zb3hU4nA/zh-cn_image_0000002521658841.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=92E81E57F98E0A5165EE3140D72330B1859117DB6B17583686CB04FEC0DDF2AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Jox1Tkt2RLGMPs_wZQq-iw/zh-cn_image_0000002521658841.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=83C1350293269065D2FC2325AF7DF553256D7D421A0063A9756A211A44CF9BF3)
 
 **修改设备类型**
 
 在新增Module时，可指定该Module支持运行的设备类型；对于已创建的Module，可通过修改其module.json5配置文件中的[deviceTypes标签](../harmonyos-guides/module-configuration-file.md#devicetypes标签)，修改支持运行的设备类型，支持"phone/tablet/2in1/tv/wearable/car"，分别对应手机、平板、电脑、智慧屏、智能穿戴、智能座舱设备。修改后需要点击右上角的"Sync Now"，否则改动不会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/4ir9NbxpRV6WQ_1ga3DcTQ/zh-cn_image_0000002489379064.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=A42323CBD956EBCFF74305DF10DD980993E61B50150FEC56DEB79E05D14E13F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/BRioGrm4SxC3RelRs20DLg/zh-cn_image_0000002489379064.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=01AA8ABCF50A00698A8D8EC20A35F3913295890FDC0AA0471091C87949A23E7A)
 
 **说明** 
 
@@ -89,7 +89,7 @@ module.json5配置文件中定义了Module的各项基本配置信息，更多�
 
 修改oh-package.json5文件后，请点击右上角的"Sync Now"，否则改动不会生效。更多详情参考[引用及管理共享包](../harmonyos-guides/ide-har-import.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/bIMAlH8yRUaGFPlbqdqzhQ/zh-cn_image_0000002521538863.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=59E775491D3B92D2025FB866E6AA0182B50AC93024A4350A4723F1F94D7B24F4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/tcGZbZ3-SASVVToUYXQTXQ/zh-cn_image_0000002521538863.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8CBEE7A059D970314C7EC0963F3149FAAF7CB26FD3D94DB495ABD068B8E0EDB "点击放大")
 
 ## 配置增强启动页
 
@@ -111,11 +111,11 @@ module.json5配置文件中定义了Module的各项基本配置信息，更多�
 
 发布一多应用时，可以配置应用分发至多种设备。默认分发设备为创建项目时所选的设备类型，但可根据实际需求调整。只需发布一次，用户即可在所有支持的设备上安装和使用您的应用。详细的发布流程可参考[发布HarmonyOS应用](../app/agc-help-release-app-0000002271695230.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/nBxvziwgShW521EBikAmGg/zh-cn_image_0000002489539046.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7C791315560721C95016CFE1C52FD4AFAC8AD832D81CDE02B49228170CD8F09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/jrSADPESSua6JAZC2KhluQ/zh-cn_image_0000002489539046.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E95660E2B5849C05762917B89118ECDF4331BC7D2E8BAA1BAFFD50222638053)
 
 构建的一多工程若包含多个根据设备区分的HAP，且在[配置支持设备](../app/agc-help-release-app-devicetype-0000002271592112.md)时一并勾选了相关设备，应用程序（.app文件）在流水线或应用市场上被解包为N个Entry类型的HAP，根据HAP中的deviceTypes声明的设备类型，分发到不同设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/LDSF2ig8SoGZN7pyQVsdBQ/zh-cn_image_0000002521658845.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A7B0B0A610714DD5AEE41E263C245750494FF34E8400D74EA2666FDD808BFCD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Vk9zxZewQ2mo5Iln1rZT4Q/zh-cn_image_0000002521658845.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE17BE0F191CE59C2D8A0E114E4A13C02EE946F4BB7CC88768FFD683130555BE "点击放大")
 
 **说明** 
 

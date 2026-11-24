@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVRecorder录制格式化音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVRecorder录制格式化音频（C++）
 category: best-practices
-scraped_at: 2026-11-14T08:54:07+08:00
+scraped_at: 2026-11-24T12:47:45+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:17965f7738255b094fe1ac75e8cd0f4f7eeb5fb921d89c007ed4ad46bace0df0
+content_hash: sha256:34c2192df4afe24d3902b54f23b23c8d811f6aa316f69772e16f1171ed9983d6
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:17965f7738255b094fe1ac75e8cd0f4f7eeb5fb921d89c007ed4ad46bac
 
 基于[AVRecorder](../harmonyos-references/capi-avrecorder.md)录制格式化音频（C++）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/LM0VQ-xeTrOTpCASKBm-GQ/zh-cn_image_0000002524221070.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC2BEE354C9440CC11EFC508C19F274BE09A7E1F61DACBEEF28A8A837AF021F6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/-LrI5ziWQa6Dh7of5WUZjg/zh-cn_image_0000002524221070.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1AC56517C0E14043465051F43DABAC347EFD8EFE751A7A9EA318420289C5E18 "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ content_hash: sha256:17965f7738255b094fe1ac75e8cd0f4f7eeb5fb921d89c007ed4ad46bac
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/0QtREUI9RUekOqHeipu2Rw/zh-cn_image_0000002555340939.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A057EB796809C49051F457987B2D7BF53DEA3EA88F088D44C17DDE7E54A51EA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/WoIZblsOQ5KeU1x368mL8w/zh-cn_image_0000002555340939.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=158418E149D1B922D368563BCD7EA0F5A713969B430F5929A3FB2A0C342824EA "点击放大")
 
 ### 开发步骤
 

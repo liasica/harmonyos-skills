@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-dma-leak-i
 title: 开发态快速定位DMA泄漏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 资源泄漏类问题分析 > 开发态快速定位DMA泄漏
 category: best-practices
-scraped_at: 2026-11-14T08:54:21+08:00
+scraped_at: 2026-11-24T12:47:58+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:f5a76a3307ca0d023fad351614a4d995d1adb15f51ebe84eee7698b8cf6a8af3
+content_hash: sha256:599ee13ff8486204a94a02ae952bf967d49b16bf69354dde61f9d3a373f8ab95
 ---
 
 ## 概述
@@ -51,7 +51,7 @@ content_hash: sha256:f5a76a3307ca0d023fad351614a4d995d1adb15f51ebe84eee7698b8cf6
 
 标准化排查流程整体流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/94m1MqSTTZe_OVco5fPUUA/zh-cn_image_0000002675100563.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=950478714B85FCF0CAE48D22CBD13FFA2C6A6FC8656BA2E626AA41FA874026A0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/z49wkJ9HQn-GYgKCaTFpZw/zh-cn_image_0000002675100563.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F5ED2E85A3E8FC241CE164B5302F2668F2174B7D063950A8643C0101E96A816 "点击放大")
 
 ## DMA内存泄漏分析案例
 
@@ -63,9 +63,9 @@ content_hash: sha256:f5a76a3307ca0d023fad351614a4d995d1adb15f51ebe84eee7698b8cf6
 
 * **Graph子泳道**：应用使用的DMA内存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/mcrS23tdRJm9ExpGRMdwpw/zh-cn_image_0000002675020711.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=00D77E5C592DB7327129E17AAFFE8D77A22F72D1E1F822BF03808D8CC11E00E1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/LN1QW10TRpyhoszENdwy5g/zh-cn_image_0000002675020711.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EA5C576B31BB9CC58FD3198B651C738487FDC18F3EFE724E1B655ED809D8F0C "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/DwJDEq33QziN7B-G_j_SHw/zh-cn_image_0000002645100760.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=F482CDF4E4ACFE517C511A578FCFC657539C069223E181A53CB481A92180BB8D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/sxYygJ0QRymr29K9UAdFHA/zh-cn_image_0000002645100760.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE586238251CB390B1ABEA4D57047BB4CB7ED42A3033B7AED47B19A1EDDFC34E "点击放大")
 
 ### 分析流程
 
@@ -73,15 +73,15 @@ content_hash: sha256:f5a76a3307ca0d023fad351614a4d995d1adb15f51ebe84eee7698b8cf6
 
    1. 基于DevEco Studio Profiler插件的Allocation模板分析堆内存分配、释放的信息以及调用栈信息。堆内存信息中包括已释放内存和未释放内存。操作步骤如下：启动应用进程，选择Profiler工具 → 选择设备与应用进程 → 选择Allocation模板 → 创建Session → 配置录制选项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/X3q2NAifTHKUxwGR43EJ0w/zh-cn_image_0000002644940858.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=59F99A06D7A714436E5D4A3671925B2EA47ADF62F228296F6F00CB252B5FECB0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/gM4a-k-xSOCM6lA1LcFbuw/zh-cn_image_0000002644940858.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBAF9F062A0482A6226B1831DF95407A29D94EB6654669F9356B4507C7D13A5A)
 
    2. 开启统计模式，可以打开JS栈记录和异步栈记录开关。由于DMA内存的分配频率相比于NativeHeap的Malloc更低，因此可关闭Malloc采集，减少对DMA内存分析的影响。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/KpsVJNB3TJCTxVoiDjmkWA/zh-cn_image_0000002675100565.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=714C3A17D335C60513CC8774635D61AA1527BE21D8E3807405A8F71F8AE53651 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/tFCZ-VdkQJi_HEf2feegOw/zh-cn_image_0000002675100565.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4B6A7DB1976C2FB321E4D13CEC02CFC9BC46DAF9CF0E6888C55D094BB98087B "点击放大")
 
    3. 点击按钮启动录制并复现问题场景。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/GfjXpkAaQzyAwbg9mujddQ/zh-cn_image_0000002675020713.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA57B0734F6CD54A3F2570E35C6BE20FB4346AB52B1924A1E94F939FF610D823 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/JXf4N1IQQBCnLKueCwomPw/zh-cn_image_0000002675020713.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=51DC5185B60ED07B327189C7C64258C22359DF91E5AEF0B46AC69323D47EBCA9 "点击放大")
 2. **查看DMA内存调用栈**
 
    1. 框选All Anonymous VM中的VM:ION子泳道。
@@ -94,16 +94,16 @@ content_hash: sha256:f5a76a3307ca0d023fad351614a4d995d1adb15f51ebe84eee7698b8cf6
    * Created & Existing：默认选中，在框选范围的起点之后分配的，且在框选范围的终点之前没有释放的内存数据。
    * Created & Released：在框选范围的起点之后分配的，且在框选范围的终点之前已经释放的内存数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/QKOLxqG9SwGavufMpXoHZQ/zh-cn_image_0000002645100762.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE7B792A924B5F30967B858079711D0335E7131D86EE80850CD06BC6A17FE7B3 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/G8znRbiAQziqf9LoPSmTqA/zh-cn_image_0000002645100762.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFFEC12F2870359D64BAF2280F60019A818987774F2D48C29DD8F0C21EFB17CA "点击放大")
 
    3. 切换到“Call Trees”页签，该部分数据展示了详细的内存分配栈信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/qIVMDZStRcWv6d3MgvYZCg/zh-cn_image_0000002644940860.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFBC8C87C56B6FA5FAF5820CC44815F48B79B1E94C31A2F7EB3C3F40504E1241 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/ekeBQO81TXGx-HPDrqbeNA/zh-cn_image_0000002644940860.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=011157DF6707BBCA78D7E5CDEEF869D80FF4A6C6A30A6C76ED8B4BB911D66B2B "点击放大")
 3. **分析DMA内存调用栈**
 
    优先在内存分配栈信息中寻找占比较高且与业务代码强相关的Symbol Name，即Category中为亮色。根据调用栈分析相关代码（双击跳转源码），排查内存未释放原因。可以看到业务代码中缓存了PixelMap，但未调用release()方法释放内存。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/3o8xoZrgTCGRrKCTwHRRpQ/zh-cn_image_0000002675100567.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F30AC5358CBD7199D6CAC0F42C586AFD83411B26E5EBA4E5B5ED534AC8C914C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/iwmif9bmTUebjdmwf-92XQ/zh-cn_image_0000002675100567.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1C309C8DDB3E23191D8E5B701525A4E1FC38580B0279B7D108C90FF6864250F "点击放大")
 
 ### 优化修复
 
@@ -114,16 +114,16 @@ content_hash: sha256:f5a76a3307ca0d023fad351614a4d995d1adb15f51ebe84eee7698b8cf6
    * 每次页面退出后，内存曲线回落至基线。
    * 泄漏问题已修复。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/0PrgzqE6QeGXuttN7YHURg/zh-cn_image_0000002675020715.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=E16D7D8B23D96F0A048A31DA5864E7BA7DEA573DBFB935D875C43FEF7C22776E "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/TEmaFFWtRJacmcf3F1iP4Q/zh-cn_image_0000002675020715.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE474C394BA2626806116180A3F97ED8A728D9EB8C5725DC18E7A96152763EB9 "点击放大")
 
 ## 附录：查看进程中DMA内存信息
 
 1. 查找进程pid。启动应用进程，选择Profiler工具 → 选择设备与应用进程，即可看到进程pid。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/u4IxJaCjRS-HAyY58GsbIw/zh-cn_image_0000002645100764.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3F87578F80EE2D6D422ED65DA13B76DE006DE799FE130223A3F72F33C50D935 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/3Fn8D37-QySiuF7SyvIuig/zh-cn_image_0000002645100764.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=C300E0A820EF8D4AF9526AAEDE98523CC208E11AC0F61AC4C330E4BD48B24710 "点击放大")
 
 2. 获取到pid后，在终端中执行hdc shell，然后执行命令hidumper --mem pid --show-dmabuf（[查询进程内存](../harmonyos-guides/hidumper.md#查询进程内存)）对比出现DMA泄漏前和DMA泄漏后的DMA内存数据。根据buf\_name和leak\_type排查相关组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/gePaHPupSs2TCu5dFKTBtA/zh-cn_image_0000002644940862.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EAE631902B0ED0EF54CDC5A7C2DFECF760F569E9838F1D38E26CFA354695148 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ejoA1qhTQgeZriSi0LD84w/zh-cn_image_0000002644940862.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8D8AE24C9B6D4ECC2C2F99BBBA2A7E75D4FB57073D319E7420331D2DC396317 "点击放大")
 
 获取指定pid的DMA内存详细信息，开发者可以根据DMA内存信息中的buf\_name、leak\_type等列定位可疑泄漏组件。

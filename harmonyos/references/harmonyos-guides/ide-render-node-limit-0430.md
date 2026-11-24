@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-render-no
 title: 节点数超过500过多
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 节点数超过500过多
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:01+08:00
+scraped_at: 2026-11-24T12:42:32+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:c9414a56ed78fecc9672612dc371e95a71eeb0309621e4a9016db6c10f44ba66
+content_hash: sha256:ecd494cc97a325dece73dd7a6fb2b4e5d97c71e7b6a7349d149b744de9a8c8c4
 ---
 
 如果使用DevEco Studio 6.0.1 Beta1以下版本，规则名称为：图形渲染服务处理节点数小于500。
@@ -41,7 +41,7 @@ content_hash: sha256:c9414a56ed78fecc9672612dc371e95a71eeb0309621e4a9016db6c10f4
 
   在泳道时序范围内，每一个RenderFrame为一帧，找到这一帧所有的ProcessedNodes字段，提取节点数累加求和（每一帧可能对应多个ProcessedNodes，所以需要累加求和），即每帧渲染的节点数 = Σ ProcessedNodes。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/UbUQ_QenR_CaqSOiR-_mrQ/zh-cn_image_0000002808766801.png?HW-CC-KV=V1&HW-CC-Date=20261114T004901Z&HW-CC-Expire=31536000000&HW-CC-Sign=15A9954FBE907694151AAE428D0B8FE3B782A3C04C8831FCAFA619BCF456AAF5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/zPow_qPySkWgJ9MnltTlNA/zh-cn_image_0000002808766801.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF8F865E0FAE74F28FC7C4D30F26A4FF7C8E1AD94950BD3B99DC9AE5AEA1C2A7)
 
 ## 计算逻辑
 

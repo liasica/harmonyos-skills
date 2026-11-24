@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-vdeocast
 title: 视频投播
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 视频投播
 category: best-practices
-scraped_at: 2026-11-14T08:54:04+08:00
+scraped_at: 2026-11-24T12:47:42+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:4dea941fe7c366cf993dddb5ca192b9d8f83f77f744aa782ee2b089b44490ffb
+content_hash: sha256:317c7c1838e3298e79c1033d70621dc0ed0dab0c8a9ffffbf97750c33b161a25
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ content_hash: sha256:4dea941fe7c366cf993dddb5ca192b9d8f83f77f744aa782ee2b089b444
 
 **体验视频**
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/89/v3/f2JTq4K2SA6Fnkd2yVufEw/zh-cn_media_0000002311894292.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4763F30778B8E430502B9D0CD60279FDDEB03460F132A37628D134FC0C72765)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/78/v3/w09cxQ9fR5GHP9NtTbtynw/zh-cn_media_0000002311894292.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=68F5E5D3D25ADA5C1C1C439768D25E7041BB60C58C35D1C0177D6E00F79AC850)
 
 **用户体验路径**
 
@@ -52,7 +52,7 @@ content_hash: sha256:4dea941fe7c366cf993dddb5ca192b9d8f83f77f744aa782ee2b089b444
 
 投播功能通过AVSession建立设备连接，由AVCastController控制远端播放。详见[运作机制](../harmonyos-guides/distributed-playback-overview.md#运作机制)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/qE72hIEmT0mH4oSeywBWcw/zh-cn_image_0000002345973089.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADC5B4BFE619C4EAF33DC6600D9C8B5DF1BEDF47D2880C191D3E4D88EAAB5CA5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/k0wvpC_TRrGxWamjLYhCNg/zh-cn_image_0000002345973089.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=384E16BE18F55CB7C857055811B3DA44A74F8E784CD2D1117927FDA38A6CD1EA "点击放大")
 
 ## 模块设计
 
@@ -64,13 +64,13 @@ content_hash: sha256:4dea941fe7c366cf993dddb5ca192b9d8f83f77f744aa782ee2b089b444
 
 完成投播功能，建议参考如下流程接入，其中本端视频显示和控制可参考[视频播放（Video）](../doccenter-capabilities/arkts-common-components-video-player.md)组件、[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)、[使用AVPlayer播放视频(C/C++)](../harmonyos-guides/using-ndk-avplayer-for-video-playback.md)等视频实现方案根据功能诉求自行实现，本文从接入播控中心进行介绍。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/lidMfXZKT5OmhcHGv-uSlw/zh-cn_image_0000002345853277.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3D6E026DB5922ABFB8FF10BCC2174A045B9B05E18A1586EE35224FE13B61020 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/U_xXqhwAR8ujtVPvga9NNQ/zh-cn_image_0000002345853277.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=D11F78F154823CC37E389959CA5BBE594AADBC188B6496AF68CAC0D8C883A562 "点击放大")
 
 ## 接入播控中心
 
 投播功能依赖于播控中心，因此必须接入播控中心才能实现投播功能。播控中心不仅能够控制本端设备的播放，还能控制远端设备的播放。本章节将简要介绍应用接入播控中心的开发流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/ageryTomRHy7_aPy5Ii8hA/zh-cn_image_0000002346524017.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=935956360F002B809872C3677C9B4A542395D8E24A1C91EC7FD938BA620105D3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/WxJSlu7-TbGeNeGKqEUCng/zh-cn_image_0000002346524017.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE78B5BF61376C36C3F2124F9B961FECE23C6315D69658E4AB8355F8E6E0F7CB "点击放大")
 
 ### 媒体会话初始化
 
@@ -149,13 +149,13 @@ this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
 
 在完成创建投播后，远端设备即可正常播放视频，本端会停止播放并页面跳转。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/64/v3/89SbMMAmQHe92sCRpPaj-Q/zh-cn_media_0000002311894304.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A62CCEB8161D57337639408C637AB5F77A8C40269335F9CC10C418765386897)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/29/v3/COHKqI-2SSqESaTQYbTpNg/zh-cn_media_0000002311894304.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=396DD1834AEBB72F57FC6BADED05D123175BC6C19A1A40C7BD517AA405E3DEE4)
 
 创建投播时需要setExtras()告知系统可投播、绘制AVCastPicker、videosession监听设备改变事件，用户点击AVCastPicker组件后会弹出设备选择半模态，在选择设备后，应用需要设置投播媒体信息，调用prepare、start启动播放。时序图如下，具体实现见开发步骤：
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/kb86GFq6QQyKn12_7I5SMA/zh-cn_image_0000002345973101.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=540B9D40AA7387FF7E5E68E019861D7DC09F9E5AFCC0488586F358B8BA361CB2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/b9o7QL84RTi2axQablDsiA/zh-cn_image_0000002345973101.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=797A436E8D81B157A75433C9DF4C5C49680F7EC696B63ACB9F65B0BC07EC288B "点击放大")
 
 **开发步骤**
 
@@ -168,7 +168,7 @@ this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
    ```
 2. 绘制AVCastPicker，AVCastPicker是投播组件，点击后系统会弹出设备选择半模态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/C6CDqoBLRjGa34BXjg_djw/zh-cn_image_0000002473018785.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=6135D78DF5589B5ED70C7607536E7260B96ADB009B48CE2DC88D726313B10AE9 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/vlsFty41R9qJuO9vDbR0vw/zh-cn_image_0000002473018785.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=655FB3CBA6734B8B81AA7295E48577CE7F9563F85FEBF89C0C734A9F04B927FF "点击放大")
 
    ```typescript
    AVCastPicker({
@@ -289,13 +289,13 @@ this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
 
 ### 设备切换
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/9f/v3/RuVG030zQlerQPdxdGrMRw/zh-cn_media_0000002312054100.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=253DD771800115737B33F524C37BDDC4618352561738D4B175EDAD4EB03FF444)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/12/v3/oebY2tvcSZ-kyL39tLLZ5g/zh-cn_media_0000002312054100.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAD93A00BBFB31E8B3D55D9EC3EBBD2FD6B400D33072A12A562F693B18CB7472)
 
 设备切换依赖于videosession监听设备改变事件，可以通过stopCasting终止投播切换设备，也可以通过[avCastPicker.select()](../harmonyos-references/arkts-apis-avsession-avcastpickerhelper.md#select14)进行切换。均会触发[videoSession.on('outputDeviceChange')](../harmonyos-references/arkts-apis-avsession-avsession.md#onoutputdevicechange10)事件，当切换到远端设备播放，本端应该跳转到遥控器界面，当切换回本端设备播放，应当停止投播并跳转到视频播放页面。应用时序图如下，具体实现见开发步骤。
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/HpVTK46ASgGHJn9qwDfRJA/zh-cn_image_0000002311894312.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFB904A12DC249AC76E0D8A1C6AB0F1D47CCBD93C061202C499A024F211DE65F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/dksLWLMYSpmNFAKFKTVb0A/zh-cn_image_0000002311894312.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D2C3EB4B76A05241600F9F70FB0B6AFEBAD23559BE1AFC38A67FC9454B49F1C "点击放大")
 
 **开发步骤**
 
@@ -354,13 +354,13 @@ try {
 
 ### 远端视频状态回传本端
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/45/v3/MttXVahwRZK_eTjKgxkJcg/zh-cn_media_0000002345973105.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=940F1B104452EAD56EAEE8E3F74A924947B5C0240ABEB3309D4CDA0B08C359D7)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/d8/v3/vf2GwwNIRMGjltNNcrbLhA/zh-cn_media_0000002345973105.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B14DACB1BA53FB4341AA2A396E80ACD8729A7BFC08F9C71F410FD80AD62C571)
 
 当视频在远端设备播放时，为了控制远端视频的播放，应用需要监听远端视频播放状态并同步显示本端，通过远端设备或本端播控中心控制，都会直接改变远端设备的播放状态，并触发[avCastController.on('playbackStateChange')](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#onplaybackstatechange10)。应用时序图如下，具体实现见开发步骤。
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/CTeQCTvlQTe-XwLdfIDvkA/zh-cn_image_0000002345853289.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=500EEAAEB294BEFA1CEE6B03872080AA23C646FB3E01F45FD5BEC347A30F331C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/qnup-_yjTHuNMoUbcgLjWQ/zh-cn_image_0000002345853289.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=D49D9B913E3C65C036F9DAE203DD4176D48D2BBECBE45B5BCF6904AB6CE95DE9 "点击放大")
 
 **开发步骤**
 
@@ -392,11 +392,11 @@ export class VideoCastController {
 
 ### 本端控制远端设备状态
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/1a/v3/OYFcZKPQTqa6a-Ia9qSfAA/zh-cn_media_0000002312054104.mp4?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=650CD8FBEF85A70212F22B7DD4F4FC2D21D3FD6DC1D976873402545A43BE19FF)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/15/v3/LuKaBDmJQNCwStLGN6w7Eg/zh-cn_media_0000002312054104.mp4?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=41088B33480F57FC8F4778E378928889C62D4EA11208551F6583C78FD5D5C5F8)
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/oonPQZKSTiGuDVXfoSjXIg/zh-cn_image_0000002311894316.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=0ADADABA04B4D3B488302B902E705030AB8BD816F7FCF9A8C433C1949C2024FA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ltz-3YVKRQOzP8XYU1vtqQ/zh-cn_image_0000002311894316.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4279290205A7564C6093E3B8D25C8118D90581E18C6B405F3C73A0E4D4B9CC8 "点击放大")
 
 **开发步骤**
 
@@ -460,7 +460,7 @@ public async setAVCastSpeed(speed: media.PlaybackSpeed) {
 
 建议应用集成悬浮球快捷控制功能，便于用户快速返回投播页面进行操作控制，实现效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/xHpPKWzaSYa02mENLaXwjA/zh-cn_image_0000002346644421.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=19AFC0B1827A505C9FF9A9A40A32FC3BA44C1456C2A7922516CE9C3CDEBA7525 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/oe1ESeo2SBS0fI_SrRDJmw/zh-cn_image_0000002346644421.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=C12B3CFFB4CBC1482136C692C233820DC0E7CA9F71B970EEA11122463AE5E380 "点击放大")
 
 可以通过为页面设置浮层实现。
 

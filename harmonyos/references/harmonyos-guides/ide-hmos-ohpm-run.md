@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm run
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm run
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:21+08:00
-doc_updated_at: 2026-11-06
-content_hash: sha256:2ad53be126589fd8d93431881505e913639bbddf6363f9f75c98c5e278cb5d24
+scraped_at: 2026-11-24T12:42:50+08:00
+doc_updated_at: 2026-11-23
+content_hash: sha256:f7c7d160b48f69652e26c17c33c29296f639f3b994bd9d16683cbe959c07128c
 ---
 
 执行用户自定义脚本。
@@ -58,7 +58,7 @@ ohpm run [options] <script_name> [-- <args...>]
 
 | 约束项 | 说明 |
 | --- | --- |
-| scriptKey 命名约束 | 合法的 scriptKey 的名字可以包含字母（包含大小写），数字，ASCII 冒号 :，ASCII下划线 \_ ，ASCII链接符 -，首字母必须是小写字母 |
+| scriptKey 命名约束 | 合法的 scriptKey 的名字可以包含字母（包含大小写），数字，ASCII 冒号 :，ASCII下划线 \_ ，ASCII连接符 -，首字母必须是小写字母 |
 | scriptContent 约束 | 合法的scriptContent不能引用除ohpm run以外的其它ohpm命令 |
 | scriptContent 中使用 ohpm run 的约束 | 1、ohpm run 依赖的其它script别名必须在同一 oh-package.json5 中存在  2、ohpm run 引用关系是一个有向无环图，不支持递归或循环引用 |
 
@@ -124,7 +124,7 @@ ohpm run testSuc
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/3chlhSwkSQiRAA10yHaokA/zh-cn_image_0000002810630799.png?HW-CC-KV=V1&HW-CC-Date=20261114T004731Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0AC143AC6465CBE9A6FAC5CB97720BAE271FDF7CCE8102008A595BB3D857B75 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/aQOuebHIT8qmtBB-edB3OQ/zh-cn_image_0000002820721099.png?HW-CC-KV=V1&HW-CC-Date=20261124T044250Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCADA3D8862D793FEF83A99DFF9965D5C0E2D036862E188F1F403CA87938FC5F "点击放大")
 
 ### 失败示例
 
@@ -160,7 +160,7 @@ ohpm run testLogic
 ohpm run testLogic
 > script alias: test1, cwd: /storage/Users/currentUser/Documents/DevEcoStudioProjects/MyAppLication01/entry
 > test1
-/bin/sh: test1: inaccessibLe or not found
+/bin/sh: test1: inaccessible or not found
 > script alias: echo, cwd: /storage/Users/currentUser/Documents/DevEcoStudioProjects/MyAppLication01/entry
 > echo hello
 hello

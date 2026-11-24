@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-redundancy
 title: 组件冗余刷新解决方案
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 组件冗余刷新解决方案
 category: best-practices
-scraped_at: 2026-11-14T08:54:15+08:00
+scraped_at: 2026-11-24T12:47:52+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:8dfc6e4589a9620024b89409e782b85694acf1d5709c3429c546ba608ac9b123
+content_hash: sha256:a0a7aa44dcd9a0d26e6172e3c015f2371e3b3928e0b6f61a85cf0defa8ec822c
 ---
 
 ## 简介
@@ -154,7 +154,7 @@ struct DFXStateBeforeOptimization {
 
 **图1** 修改代码前点击Scale按钮和Move按钮时运行动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/TMeTdDktTe25rrnb-bXoWg/zh-cn_image_0000002229451917.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=E550980E8CDAFFE13444959E30006E93FC103C4F35BD3484EC14223FA47564D4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/-_TjYhpRRrKe7e8K-H8N2Q/zh-cn_image_0000002229451917.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C162BD7CBCB69887B63B5F26282760D5F0B1502DC6CB8ED17AD81447CCBBE42 "点击放大")
 
 点击Move按钮的时候SpecialImage组件却发生了旋转动画，这就造成了冗余刷新。
 
@@ -172,7 +172,7 @@ hdc shell "hidumper -s WindowManagerService -a '-a'"
 
 **图2** 命令行获取应用窗口Id运行界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/LLHj9kK8T22MhqDvr_pJ5A/zh-cn_image_0000002194011628.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B75ABE9C85579A9D87ECD6241F2D04A7FE73DC1AF67961D789C4172ECAD6EC6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/oWnhuFMITKSOqmlAo9ZF6A/zh-cn_image_0000002194011628.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=C853D36FB74F9175DBE362518957CE5BE7E20C023C0802A701E4B9DD2C60EA94 "点击放大")
 
 3. 基于上一步获取的窗口Id 11，使用-viewHierarchy命令携带-r 参数递归打印应用的自定义组件树。
 
@@ -385,7 +385,7 @@ struct DFXStateAfterOptimization {
 
 **图3** 修改代码后点击Scale按钮和Move按钮时运行动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/d8BB_ZpITdK10MZ3mHZ33A/zh-cn_image_0000002193852044.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF9676A27EB27625CA506C342ABBCDEFAEDC78DF2AE7A512D36FCC8041F3AB26 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/RX64KAU2Qo-WCS4XMlH43g/zh-cn_image_0000002193852044.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=304F1B93D910EAF2BC786C3F26634A7612287E4B009AD5641C015FC11B3241E9 "点击放大")
 
 可以使用上文步骤再次获取ComponentA组件的状态变量信息如下，可以看到ComponentA中状态变量scaleStyle影响组件SpecialImage[8]和Image[18]，状态变量translateStyle影响组件Column[9]，translateStyle的变化不会再导致SpecialImage的刷新。
 

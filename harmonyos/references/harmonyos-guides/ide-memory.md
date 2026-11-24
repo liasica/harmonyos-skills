@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-memory
 title: 记忆（Memory）配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 记忆（Memory）配置
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:09+08:00
+scraped_at: 2026-11-24T12:42:39+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:488a95069d278ca5728329710541ffefc38b499c780846f0e203391c5701465e
+content_hash: sha256:a4c3c106ae08bcf7b798a44c80bb3427fedaf4cf98ac0f2a9980356d6bbaf007
 ---
 
 ## 功能介绍
@@ -27,12 +27,12 @@ content_hash: sha256:488a95069d278ca5728329710541ffefc38b499c780846f0e203391c570
 
 ## 操作步骤
 
-1. 点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/gLbOY2BsTBSgHh1vbkZxyg/zh-cn_image_0000002779566788.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D46CFE9A745F92808935D9C61DB1A78E446E974041D4F6C8DD6BD478B5E731B)按钮，选择**Memory**，进入配置页面。
+1. 点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/blhsP8dMTG6d_u7TX3Yhmg/zh-cn_image_0000002779566788.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F3BA36342301693179A976E9F84E07BB9720A875FCF5FAD0410EE1180CBD882)按钮，选择**Memory**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/airjfADcQEqPQQk01Fca0Q/zh-cn_image_0000002808886451.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=957BFA01B1AB3E9B70C75C5CC37CB1B2C6D5F023D2EF7894EDFD5CBB4A40F0EC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/fliR5xdDR7KNSrmlL-WYrw/zh-cn_image_0000002808886451.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=61E65EFAE3CACE123484AE77CA6E2D05EAAA3104833E8C35EAE58E88D5B8A77F)
 2. 点击Memory后开关，开启和关闭记忆。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/GPU8TXzETxOHWdFEd6UvVg/zh-cn_image_0000002808766371.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8A0170EC313F221DAD75CE95F9EC346CC0F8D1873CA26EA32CAF8D67A020AD5 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/crbPhAIsRqy9CqBp8Z7fdg/zh-cn_image_0000002808766371.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=38C44A93F19B0207CBC4220E942EEBC8CA2DFA20C90DE1C040D873F32C5CCBE3 "点击放大")
 3. 在**Memory List**（记忆列表）下展示所有记忆，包括**Global**（记录用户相关信息）、**Project**（记录项目相关信息）。将鼠标悬浮在记忆上会显示具体信息，以及出现编辑、删除按钮，方便开发者管理记忆。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/QDpGW_AzSty64lkFv9Ij3Q/zh-cn_image_0000002808886453.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=79CCEC0F2D0282E338422AD93E35B4A1FA87495FBFC1B1FA5853879111396576 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/acV5H_bhQbKkCVM0YaXedg/zh-cn_image_0000002808886453.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=2935587F72F566680DBFCB2D39DFE09A69E2CFAEB7613272BF5ADFF64CE4AC8C "点击放大")

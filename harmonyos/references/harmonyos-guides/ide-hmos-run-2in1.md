@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-run-
 title: 使用本机运行应用
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 使用本机运行应用
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:16+08:00
+scraped_at: 2026-11-24T12:42:45+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:bf4a8e6dd7999e329ce5e0f3ed603a2ddddc14dc8b313dbf09a7f3836c60a492
+content_hash: sha256:3faae26e5f9ff8b61e733d2a2e65728145c534981e38e796cfa98b79a2986c17
 ---
 
 鸿蒙电脑DevEco Studio允许开发者直接在本机上运行或调试应用/元服务。
@@ -18,4 +18,4 @@ content_hash: sha256:bf4a8e6dd7999e329ce5e0f3ed603a2ddddc14dc8b313dbf09a7f3836c6
 
 打开DevEco Studio，无需其他操作，在顶部设备选择框中显示**此电脑**，说明已自动连接本机。连接后可将应用推送到本机运行或调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/BKc7gzU9R26tKny4Kk409w/zh-cn_image_0000002810630523.png?HW-CC-KV=V1&HW-CC-Date=20261114T004916Z&HW-CC-Expire=31536000000&HW-CC-Sign=47C6D781C5F86738DEBA7E8C0B8A46A17B5406024CE7DD045A40E2036DDB21E0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/cJSzeHk5S2mHSgKCDatwhA/zh-cn_image_0000002820681201.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=45F55D2D6D278DBED2C52F1828B2C0B26F9ACF1AB4E5FF6D062323176E65DC54 "点击放大")

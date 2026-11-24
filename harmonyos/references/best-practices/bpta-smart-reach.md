@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smart-reac
 title: 智感握姿
 breadcrumb: 最佳实践 > 技术创新 > 智能化 > 智感握姿
 category: best-practices
-scraped_at: 2026-11-14T08:54:04+08:00
+scraped_at: 2026-11-24T12:47:43+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:3a70da878737cd3f8338a11a20ff03863d7d34036b87694476e73ee770dfeab4
+content_hash: sha256:d50f795c26d85af5353f9ad61e55f15a3e1696487bc27d186b132c74e7e25c39
 ---
 
 随着大屏和折叠屏设备的普及，用户单手握持设备时，拇指难以覆盖整个屏幕区域，尤其是位于屏幕顶部与侧边的交互元素往往难以触及。为有效解决这一痛点，HarmonyOS系统提供了[智感握姿](../design-guides/smart-reachability-0000002556657823.md)能力。该能力能够实时识别用户与设备的交互姿态，应用可据此将核心高频组件动态调整至拇指的可达范围内，从而显著提升单手操作的便捷性。智感握姿示例图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/bllyOMrZSsefbNvxbaYZpg/zh-cn_image_0000002594053134.png?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F7FF0E40AB7E8B09F0757C7163E0B9DE81D71BD92EB944A426EE7F76AA8CF2A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/dKjo5hBzRm6mjMQvGE9aXg/zh-cn_image_0000002594053134.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A43D1E372FCCF14F1343703D112F7DD7926B29F0B213E8D426686231084E026 "点击放大")
 
 本文将从智感握姿的概念与适用场景出发，结合新闻阅读应用示例，详细讲解如何在HarmonyOS应用中接入智感握姿能力，具体包括组件原生适配与自定义交互感知两种方案。
 
@@ -73,7 +73,7 @@ content_hash: sha256:3a70da878737cd3f8338a11a20ff03863d7d34036b87694476e73ee770d
 
 本示例通过配置HdsTabs的[barOverlap](../harmonyos-references/ui-design-hdstabs.md#baroverlap)属性开启底部悬浮模式，同时启用[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性中的adaptToHandedness参数实现智感握姿自动跟随功能。效果图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/2NrU73hiQZuKShdU0tt80A/zh-cn_image_0000002624492661.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=52074AA51CAE0A46256579736AC214CECB94DDF74D598FA514D77BB78081D6E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Chb5LFKoSy6gzThnOe2fig/zh-cn_image_0000002624492661.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=16D3ED914D965325904E97E29EB39E20986995B842C5395BB050BD638761DD81)
 
 具体适配方式如下：
 
@@ -119,7 +119,7 @@ HdsTabs({ controller: this.controller }) {
 
 本示例中侧边按钮通过自定义感知握持状态实现智感握姿。效果图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/qfzmW9O-Td2UyUHcdxL5Tw/zh-cn_image_0000002690301446.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E1CDD05A1603B17582796575567A2774EAF87EB8730BCEF1D76FEE74D092C50 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/4qtzvefpS--_LsGRRjzV3g/zh-cn_image_0000002690301446.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4A2FA7BBD040E6487AB09EF0C1D74D6A09BAF54F3107CDC2CD40DC78552DCD9 "点击放大")
 
 具体适配步骤如下：
 

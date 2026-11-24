@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-bluetooth-
 title: 低功耗蓝牙基础使用
 breadcrumb: 最佳实践 > 网络 > 低功耗蓝牙基础使用
 category: best-practices
-scraped_at: 2026-11-14T08:54:07+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:238950fca13d269487002e5761c06900935e899f1c5c58fd1f11e188bcd8232a
+scraped_at: 2026-11-24T12:47:45+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:adb018c9f0cdb3a056ecf5aad46936faffe22b34f5d6efb35300efc5165a2f86
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:238950fca13d269487002e5761c06900935e899f1c5c58fd1f11e188bcd
 3. 数据传输阶段：服务端订阅描述符写请求事件，准备数据（如心率值），通过特征通知机制向已连接客户端发送数据；客户端监听特征值变化事件，接收并解析数据内容，根据业务需求更新用户界面或执行相应逻辑。
 4. 断开连接阶段：服务端在连接状态回调中处理断开事件，可以停止广播并清理资源；客户端主动断开连接，关闭GATT客户端，注销监听器，重置连接状态，可选择将设备ID持久化以便后续自动重连。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/kp1-HiDaRsyWY8K2Qqj5kQ/zh-cn_image_0000002492448638.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=8787CF4448FE8A4B94E7C7EB19BADA6C460C0810A45999CEB6FC4AAFE1B85A0B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/qB_sMAMQRj-oYtlUqOywOA/zh-cn_image_0000002492448638.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=C37188A30BB3FE6F383C12426CABB9412664C4CB9FFCA218EC84783EE23AACD2 "点击放大")
 
 ### 关键技术
 
@@ -83,7 +83,7 @@ content_hash: sha256:238950fca13d269487002e5761c06900935e899f1c5c58fd1f11e188bcd
 
 这种协同工作机制大幅提升了BLE连接效率。服务端的精准广播与客户端的智能过滤形成互补，避免了传统全量扫描带来的资源浪费。当用户在应用中看到设备列表时，背后已完成多层筛选：硬件层过滤掉非BLE设备，协议层过滤掉不匹配服务的设备，应用层进一步通过制造商数据确认目标设备身份。这种分层过滤策略不仅加速了设备发现过程，也显著降低了系统功耗，为后续的连接与数据传输奠定了高效基础。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/oLUtKJ6ORl6LEDBh7WmKTA/zh-cn_image_0000002524568343.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005406Z&HW-CC-Expire=31536000000&HW-CC-Sign=360AE4F09BC9A27C2AA93E4E0555A1D6DE77A2AE19A7FB924EEF7A12677B2158 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/QexHrymOTiusmSIX-chusA/zh-cn_image_0000002524568343.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BC9BD6D8D62AB6E748FD6ADE3879B0ED8B29852BF3A989B6F375A7FDDF51F65 "点击放大")
 
 **关键技术**
 
@@ -751,7 +751,7 @@ content_hash: sha256:238950fca13d269487002e5761c06900935e899f1c5c58fd1f11e188bcd
    }
    ```
 
-   ```typescript
+   ```screen
    /**
     * Subscribe to connection state changes on the current GATT client device.
     */
@@ -791,23 +791,24 @@ content_hash: sha256:238950fca13d269487002e5761c06900935e899f1c5c58fd1f11e188bcd
        const services: ble.GattService[] = await device.getServices();
        // Perform filtering operations to precisely locate target characteristic values and their configuration descriptors within the GATT service structure
        // ...
+
+       await new Promise<void>((resolve, reject) => {
+         device.setCharacteristicChangeNotification(characteristic, true, (err: BusinessError) => {
+           if (err) {
+             reject(err);
+           } else {
+             resolve();
+           }
+         });
+       });
+
        const descriptorObj: BLEDescriptor = {
          serviceUuid: descriptor.serviceUuid,
          characteristicUuid: descriptor.characteristicUuid,
          descriptorUuid: descriptor.descriptorUuid,
          descriptorValue: CommonUtils.byteArray2ArrayBuffer([0x01, 0x00])
        };
-       device.setCharacteristicChangeNotification(characteristic, true, (err: BusinessError) => {
-         if (err) {
-           Logger.error(`NotifyCharacteristicChanged callback failed, error info: ${JSON.stringify(err)}`)
-         } else {
-           device.writeDescriptorValue(descriptorObj).then(() => {
-             Logger.info(`The descriptor for the BLE peripheral device has been successfully written.`);
-           }).catch(() => {
-             Logger.warn(`Failed to writes the descriptor of a BLE peripheral device.`);
-           })
-         }
-       });
+       await device.writeDescriptorValue(descriptorObj);
        Logger.info('[BluetoothClientModel.enableHeartRateNotification] Notification enabled successfully.');
      } catch (error) {
        Logger.error(`BluetoothClientModel, enableHeartRateNotification failed, error info:${JSON.stringify(error)}`);

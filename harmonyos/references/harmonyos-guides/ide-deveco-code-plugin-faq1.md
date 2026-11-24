@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 迁移CodeGenie数据至DevEco Code常见问题
 breadcrumb: 指南 > DevEco Code > DevEco Code Plugin > 常见问题 > 迁移CodeGenie数据至DevEco Code常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:22+08:00
+scraped_at: 2026-11-24T12:42:52+08:00
 doc_updated_at: 2026-10-31
-content_hash: sha256:776b0c255251114b8a41ad406f98c3e056e0cc468498e4fd8ec1c574e6828adb
+content_hash: sha256:6b7676cc431ebe28bb311a73e662fc3b93e23beb8822f7301132c63a45991fe4
 ---
 
 ## CodeGenie数据迁移使用到的数据路径
@@ -28,7 +28,7 @@ content_hash: sha256:776b0c255251114b8a41ad406f98c3e056e0cc468498e4fd8ec1c574e68
 
 未配置CodeGenie数据，安装和打开DevEco Code插件后，出现迁移窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/G6pGSP7LQSuh9I_0DP5n1Q/zh-cn_image_0000002808766025.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6C65832E105A319AE0201E7192E7D7A9505A469B6859376A594BC21219B5B8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/IpwjIfIJQACAUbOujmyLew/zh-cn_image_0000002808766025.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF5772C9312C29590F2F79139AFDE6228EEA184CF316FD5FC1743F0F508D9D0E)
 
 **解决措施**
 
@@ -40,7 +40,7 @@ content_hash: sha256:776b0c255251114b8a41ad406f98c3e056e0cc468498e4fd8ec1c574e68
 
 迁移窗口提示中的DevEco Studio版本与本地打开的DevEco Studio版本号不一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/1ERNiYPmQDSt3NqYcUeAMQ/zh-cn_image_0000002779566446.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D6D4E9D35B268BD1301BB3FC29779ECB6B9FA294FE593CFCB39DC13F9C31E77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/jVDTl1B-SWqAvp9M5bVEbA/zh-cn_image_0000002779566446.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=530FB92C5042B90450722A1FDE69DEADF52799F79FB9263A17B49BB1541AFFC2)
 
 **解决措施**
 
@@ -58,7 +58,7 @@ content_hash: sha256:776b0c255251114b8a41ad406f98c3e056e0cc468498e4fd8ec1c574e68
 * 情况二：显示一个版本号（如Global configuration from DevEco Studio 26.0）
 * 情况三：显示两个版本号（如Global Skill from DevEco Studio 26.0，MCP from DevEco Studio 6.1）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/HeZzIVmPQce5jR4XTn0-Cg/zh-cn_image_0000002808886109.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=A67A39FC95844D86B0E539F68A7FD4E925159CD1BB7612D0AABDDD7D4768437E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Qh8g76ZxS5qR96vlFSA3LA/zh-cn_image_0000002808886109.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9A6D22E73BB6E874738B2FFE31C31ED2EDA6363F34614410B7FF1A865B880B2)
 
 **可能原因**
 
@@ -104,7 +104,7 @@ Skill和MCP是两类独立的数据，迁移时独立判断数据来源，可能
 * macOS：~/Library/Caches/Huawei/DevEcoStudio<版本>/deveco-code/v1/config/codegenie-migration.json
 * Windows：C:\Users\<用户名>\AppData\Local\Huawei\DevEcoStudio<版本>\deveco-code\v1\config\codegenie-migration.json
 
-删除迁移标记文件，以及在工具左侧边栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/AHfJL7kkQiqWm1Qjhxq2ag/zh-cn_image_0000002808886097.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=64724E5897A473B17005EFC028188044A9BDCE8E934FFE4F047CE5708F0A554C)按钮，折叠再展开DevEco Code，迁移窗口会重再次出现。
+删除迁移标记文件，以及在工具左侧边栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/mvjpvCn3R0-hNL7kRdaXAw/zh-cn_image_0000002808886097.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=B29F6D78AADA0065BB4C5AEA110C489CAC10D532BF720496E61EFA6A324CDCE5)按钮，折叠再展开DevEco Code，迁移窗口会重再次出现。
 
 删除该文件不会影响已经迁移的数据。
 
@@ -114,7 +114,7 @@ Skill和MCP是两类独立的数据，迁移时独立判断数据来源，可能
 
 未配置MCP，迁移报告中有MCP解密失败、数据库不可读等相关报错，迁移失败，迁移窗口会再次出现，提示再次迁移。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/i9truHaISG62_fXpbQjuSQ/zh-cn_image_0000002808886113.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AEAC234243585AFE4DF9156E07301EEBF69F0BBA656E7135976AA1217978FC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/RSkP02v0Q9OpkexOGRECEA/zh-cn_image_0000002808886113.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DF3CDD44D26100B7733914ABE4B1A87C0834890D45F985229EF60869634CB45)
 
 **可能原因**
 
@@ -128,7 +128,7 @@ CodeGenie把MCP配置加密存储在数据库中，解密需要本机的密钥�
 
 方式二：在失败项详情页确认不需要迁移失败条目，则点击**Ignore Failed Items**，以及点击**Retry Migration****/Don't remind me**关闭迁移提示窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/IdhrUmfZS9OOdW0cPigeEA/zh-cn_image_0000002779406460.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=16CCE93DB10BFF14EC9D2C7DE94B7C6AC882E15C1417936507F69ED5E7555440)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/dHHmW_qzRSuWVf6Q3r1low/zh-cn_image_0000002779406460.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=91FDEB5BCCB1FC6FA860AFB8CE32C04B879663E3D047A85DF215E084184E55E4)
 
 ## 迁移结束后，迁移窗口再次出现
 
@@ -136,11 +136,11 @@ CodeGenie把MCP配置加密存储在数据库中，解密需要本机的密钥�
 
 现象一：已经完成迁移，打开另一个工程项目时，迁移窗口再次出现，提示Start Migration。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/nKnduRFIRgG7vVXkIXAMdA/zh-cn_image_0000002779406470.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=348619B68D67C6B26964AE8382ED7C1E89F1BA83C3C90F3719F31FF0B6AB7920)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/LnHZQzF8SuOGTm7a8MACbA/zh-cn_image_0000002779406470.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA9D282868EAB323FADF1E4436DCEA85419A4ACD2A4B54EEEDC40C039C39B422)
 
 现象二：迁移出现失败项，迁移窗口再次出现，提示Retry Migration。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Z0M_-Fj8RHOi8UL1kHAHsw/zh-cn_image_0000002779406468.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B8788112DBA10DE084D8C4DFD3E073DF8E2AC87CADB783E13840D8F158B238D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/oUZjA7PhRYqVGts8RncIyQ/zh-cn_image_0000002779406468.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=D415767C4A2B33EFD49F90D286F7547F3F9D4BAD0A2FD3F1F6F1FA2E94525A0E)
 
 **可能原因**
 
@@ -154,7 +154,7 @@ CodeGenie把MCP配置加密存储在数据库中，解密需要本机的密钥�
 
 现象二：对于失败项，可以在迁移详情窗口中选择忽略失败项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/ozvtGg6DSTmOcuD-wVPI9g/zh-cn_image_0000002779566432.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=49DE6CE8992B8638E347E95D8F2BE5A63C9386A2001E7BAB340AA5F11FD091FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/kXiQtYhgQP-UgAY_dWQJfg/zh-cn_image_0000002779566432.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4336DE1594AA34AF4E8A38DECD6573466356881D27366372CE46935A3414BF3)
 
 ## 迁移后，Skill和MCP在哪里查看和管理
 
@@ -170,13 +170,13 @@ Skill与MCP都存储在[DevEco Code 存储根](ide-deveco-code-plugin-faq1.md#se
 
    全局Skill在<[存储根](ide-deveco-code-plugin-faq1.md#section1772610318144)>/config/skills/<技能名>
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/-wV2_TYTTqa5EDX2A9y3Ng/zh-cn_image_0000002808766021.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=D72BB7CD84D18CDF1DFFEE92324FBDF6D08F4D1888AC3E6DAF41C8066C44E6D2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/_QJFATPGQa-vc0IF9NRPSA/zh-cn_image_0000002808766021.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D05EDFB762F9A15097648CDB3C5CD813A4B42F490DC88916E5DA24E6C1DCD6F)
 
    工程Skill在<[存储根](ide-deveco-code-plugin-faq1.md#section1772610318144)>/config/projects/<工程Hash>/.deveco/skills/<技能名>
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/mwPW8TikTHKuT70YnkUZlw/zh-cn_image_0000002808886093.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=221A7EAF7AAA5AB8703C06D5247795DE545D080358B0132DBAC56310ABA2D2CA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/RtSO8fJsQy-e3vUWEgH8Gw/zh-cn_image_0000002808886093.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B90FC1577930ED393F7FCDB40E88ED174A951DE21934FA530DFE617467786A5)
 2. MCP 配置
 
    MCP配置信息存储在<[存储根](ide-deveco-code-plugin-faq1.md#section1772610318144)>/config/deveco.jsonc的mcp字段中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/GOUaN_8nTou5qJi2KsQWaw/zh-cn_image_0000002808886105.png?HW-CC-KV=V1&HW-CC-Date=20261114T004922Z&HW-CC-Expire=31536000000&HW-CC-Sign=F73408FFAD5172D559351D9280D5EB1AF86ED1EC0F72BB83FB89B903703E2397)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/F4-955JkRLCGmR9MTYglgA/zh-cn_image_0000002808886105.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C2201DAF9ACE2275864D5F7BD68424B4CFBADDD6E1E6C23A29B840D47F39F5A)

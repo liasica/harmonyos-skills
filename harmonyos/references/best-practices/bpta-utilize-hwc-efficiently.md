@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-utilize-hw
 title: 高效利用HWC的低功耗设计
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 高效利用HWC的低功耗设计
 category: best-practices
-scraped_at: 2026-11-14T08:54:16+08:00
+scraped_at: 2026-11-24T12:47:54+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:98b8ef0b7eaf08eca868873bbafed1402f7dd64e8a956b91a83eca6fea6889ce
+content_hash: sha256:7bf71275edb755242bba224fa74a5475c2ac5f1bbea7c7771f4e54395e9080b6
 ---
 
 ## 概述
@@ -62,7 +62,7 @@ content_hash: sha256:98b8ef0b7eaf08eca868873bbafed1402f7dd64e8a956b91a83eca6fea6
 
 下图介绍了图形渲染系统从应用界面内容到最终屏幕显示的工作流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/K4zIKDGsQdGC6PVJT1SaAQ/zh-cn_image_0000002194011600.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=22B0C61A94AC016C66E59842241D3123F5E831DF2BA9CF5B17C85253E0F2CF8F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/OGjYUk3rR0qTe3v5kXUtDA/zh-cn_image_0000002194011600.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=A76045D0AFA2F27B58B9BA9B3BF148AE6ACF70B1B231D3C47C93F3F795CD9A62 "点击放大")
 
 * **RenderService (RS) ：**系统渲染服务进程，接收来自于其他系统服务进程（如桌面进程）及用户进程（如应用）的自渲染图层及ArkUI控件绘制指令，进行统一的组合以及渲染控制。其渲染调用CPU/GPU等计算器件，能力灵活，兼容性强，但功耗和性能开销较大。
 * **Hardware Composer (HWC)：**HWC基于专用硬件构建，主要用于多图层叠加送显。接受RS绘制的图层和应用自渲染图层，将多个图层叠加后传递至屏幕。相对于GPU，HWC功耗和性能优势明显，但不具备复杂渲染能力。
@@ -123,7 +123,7 @@ RS进程将ArkUI控件统一绘制到UI图层。UI内容来自应用定义的Ark
 
 **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/UvbAgsVlTL2rCIsSHrZTTA/zh-cn_image_0000002775096927.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA7DD97AE8402B08CD801701ED6C0D44793FEE1718FD2E3ACAFC710CFD33D72A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/qZUSAz3iRA2XE2yMeklrDA/zh-cn_image_0000002775096927.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=155AD284AF15D3C26F65DA40DAED7F3A891E1FBCAB8503EBF5ADFC16113220F3 "点击放大")
 
 如上图，视频区域左上角的返回按钮控件带有模糊效果，需要进行视频图层采样，无法使能HWC叠加。可以通过移除控件的模糊效果或将其移动到非视频区域来使能HWC。
 
@@ -232,13 +232,13 @@ struct NormalVideo {
 
 去除模糊后的效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/ZzgytUdFTv2opK2Nf9qp0g/zh-cn_image_0000002745497866.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=A66C48EFC342FED493BB1CAC729C132D1F3EA872FF0B94135D023DD47027F04C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/zBm1Ym03SsawAXIOMaDjKw/zh-cn_image_0000002745497866.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F6E30FC133ECF9DB90B0CE81A279ADE573D1992E2BC39F0791924D4C22BA545 "点击放大")
 
 **功耗对比**
 
 同一界面下，测试视频区域上方控件去除模糊效果前后的CPU模块、GPU模块的功耗，以及设备总功耗。测试方式为视频播放30s，以3s为一个节点，取设备从6s运行到21s5个节点的平均功耗。最终，使用DevEco Studio的Profiler工具检测得到的数据如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/NaW5ebetTx-M2TfjZ-WINA/zh-cn_image_0000002194011620.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DA3206AEE0C436B39F873F17FAA24B8844EA7F2E4488F843681566921E8F107 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/pu-aTHERRZWsu2LHd4roYQ/zh-cn_image_0000002194011620.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B59AD91C7B67EED9E2616EE94ECBC3666CCA10FAA4DC671A2E8F6BF80F44BCC "点击放大")
 
 从测试数据可以看出：
 
@@ -251,7 +251,7 @@ struct NormalVideo {
 
 **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/-SftHpT7TDeSqo8eQkrULQ/zh-cn_image_0000002229337409.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=8998A6695F22C8907908BA9CAA3437F3B47CBA8B1A7C0272AACAFC75087150DE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Ks68yeErT0qv5at9ZP-doQ/zh-cn_image_0000002229337409.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=34E22B2F748478283F4BFA4F9BC4322C82D833FF184235C139503C8F9A4390AE "点击放大")
 
 在该场景下，底部TabBar区域使用模糊，且背景区域使用Web类组件或者Native XComponent组件导入自渲染内容，同样导致UI图层与自渲染内容无法使能HWC叠加。对此开发者可以通过去除TabBar区域的模糊视效或者裁剪组件区域避免Web内容与模糊控件相交两种方式进行修改，以达到使能HWC降低功耗的目的。
 
@@ -330,13 +330,13 @@ struct NormalWeb {
 
 去除模糊后的效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/10AEz1abQ8S3wIl7yKLU8Q/zh-cn_image_0000002229451905.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=A20736952F52B52AB265E4CBF21F60B26B9EC9C0F1EF5A172D0C5BB01CEDF932 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/v2gcKmpyQVOShdKEphBVMg/zh-cn_image_0000002229451905.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=84996054DF18DFD234A839DBE488C6229FA026F3DC9083135CB5350B9BFABA9E "点击放大")
 
 **功耗对比**
 
 同一界面下，测试Web组件上方控件去除模糊效果前后的CPU模块、GPU模块的功耗，以及设备总功耗。测试方式为同样频率滑动界面30s，以3s为一个节点，取设备从6s运行到21s5个节点的平均功耗。最终，使用DevEco Studio的Profiler工具检测得到的数据如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/QX19dOQuTs2cnNMvpHcd_w/zh-cn_image_0000002229451901.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C01AB3241EC3C23AA56CA1742CDCC2BC308AB528AD6D83C20D5844B522B7C41 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/cTYaEgzCQ-akGtzGkbfMgg/zh-cn_image_0000002229451901.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E6215AF40B563B70BE5EBA775D0D336A1E1608D1A61B2411E7756B8E0F0AF78 "点击放大")
 
 从测试数据可以看出：
 
@@ -349,7 +349,7 @@ struct NormalWeb {
 
 **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/jThX_eAgT4aQS6yvFzHPEA/zh-cn_image_0000002775217029.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B860CCCB23BDB170FB4BA610FA79ABFD41700A8F7B6A40B79CBB0718A64AF7D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/11NAHwuoRWW_uxq0Y_lYJg/zh-cn_image_0000002775217029.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4071A4ECC5395C198FDAC09A473D400BADD9B38A86800E5CEF8D10E9E8486CE "点击放大")
 
 视频图层设置透明度后，可以透视底部UI控件，但需要GPU进行额外处理，无法使能HWC叠加。建议评估透明度设置的必要性，考虑调整视频图层为不透明。若必须设置透明度，可将UI控件置于视频图层上方或使用自绘制方式实现UI控件，以支持HWC。
 
@@ -437,13 +437,13 @@ struct OpaqueVideo {
 
 设置视频不透明后的效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/NFLKnZ0CTZy4g_a473_obg/zh-cn_image_0000002775097021.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=27C64B6A800B9986A5B7D890EC56716DCC0B4B96218DA46259C447A55DCF02FE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/-dFpF4BPRvKoVxK8OCSyYQ/zh-cn_image_0000002775097021.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=45CFE0B43D230E0579CBB41E189EF3D5A6211456B26110EEF935EB9F47ED31E6 "点击放大")
 
 **功耗对比**
 
 同一界面下，测试视频图层设置不透明前后的CPU模块、GPU模块的功耗，以及设备总功耗。测试方式为视频播放30s，以3s为一个节点，取设备从6s运行到21s5个节点的平均功耗。最终，使用DevEco Studio的Profiler工具检测得到的数据如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/DDvA5ZPhS0Kg4wwXwsWBkA/zh-cn_image_0000002193852016.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD0A46DB43EEA4305AD5CB90F259830DFD1C7FE3E0D47F215DB23C368A6621FC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/bXP0O3orT9-IzC5vgcUMFQ/zh-cn_image_0000002193852016.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=72050C1C2F7F49BDBC3A22A77E0528CE4F8FC62732F3FD383787D894F9D4FF03 "点击放大")
 
 从测试数据可以看出：
 

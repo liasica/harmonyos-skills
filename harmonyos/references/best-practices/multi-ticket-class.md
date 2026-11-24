@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-ticket-cl
 title: 多设备股票类界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备股票类界面
 category: best-practices
-scraped_at: 2026-11-14T08:54:09+08:00
+scraped_at: 2026-11-24T12:47:47+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:cdd4b56ff35cbb836037476d41ef0ada7db9a7adbfc2d26fef9362adec185f2f
+content_hash: sha256:e17b2464a1efccda2d6c3234bac28d1d2a36855551fcd67a9e0f7d544102a3db
 ---
 
 ## 概述
@@ -36,7 +36,7 @@ content_hash: sha256:cdd4b56ff35cbb836037476d41ef0ada7db9a7adbfc2d26fef9362adec1
 
 股票类应用的UX设计可参考金融理财类多设备响应式设计指南的[自选股](../design-guides/responsive-design-examples6-0000001793536905.md#section0732192812391)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/4uHTUpMkQPiBoqbQJncBoQ/zh-cn_image_0000002579631774.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF812C2EA904646079AB43B67E78E696041FF00D496C87CDC3A334963C37B4EF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/m72DZvKxRzSuOxz_ihxnIQ/zh-cn_image_0000002579631774.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0453A6ECC1FB17F5DA87FF32FAD46312D7A4533B1216EE3F75303E9B9D9C655 "点击放大")
 
 ## 工程管理
 
@@ -424,7 +424,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 * 将电脑端自选股页划分为四个部分，效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/NBS7CCS3TkKgLgQh9wd-jQ/zh-cn_image_0000002610071557.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=356EF7E05FC642BD6FADB3537A5EA90A1B390B7BADCFE2F894DBA6EF54FBF21B "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/02KnEWgeQHq9dEFeZPES2Q/zh-cn_image_0000002610071557.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=11CBC5E91A54769AF23DE1EF234DF0C73FECED3E21673543AB0C2305DF64EF8A "点击放大")
 
 * 对各个区域使用的多种能力进行分析，实现方案如下表：
 
@@ -441,7 +441,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 * 将电脑端股票详情页划分为五个部分，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/CAk7U5B0S_-5l0p1qEXZdQ/zh-cn_image_0000002579631780.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=D975B41FEE4261C763269B484FFF65EEF51983751F3831A70044544063A2C7E7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/8feFEdEuSiSspfopJnv1ig/zh-cn_image_0000002579631780.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=099ED980C81DE980B58AE1100CDCDE1DCF514A9565E60E1DE6ED6B861A8E8C9A "点击放大")
 
 * 对各区域使用的能力进行分析，实现方案如表所示：
 

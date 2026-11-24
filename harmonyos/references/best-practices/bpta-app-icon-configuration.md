@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-icon-c
 title: 应用图标配置与开发
 breadcrumb: 最佳实践 > 应用框架 > 程序包结构 > 应用图标配置与开发
 category: best-practices
-scraped_at: 2026-11-14T08:54:06+08:00
+scraped_at: 2026-11-24T12:47:44+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:8b025ebc65bbc14b39e405b790abb2adefa543611dde33a44ca792673eb39ce1
+content_hash: sha256:5ec5f8e302999fca70b1ffe7c3548cf1a45d0a99617c743f8b52aa693b714341
 ---
 
 ## 概述
@@ -219,8 +219,8 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和分层图�
 
    app.json5文件：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/eLqYb-oWSOCw3i24w5gKOA/zh-cn_image_0000002548066135.png?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C7599046B0FD0D4A80A2928DF2DC28633A46B78B7443894790FF4BF9E388956)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/wZkRd3d-TUWGUMFw8V1-HA/zh-cn_image_0000002548066135.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=B56D0A2853ABD7C1B13D4E4EF8E11A920964F52EA2AD958A2801968A550A4991)
 
    module.json5文件的abilities标签：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Ur7WEgbCTYuWTPYvG2U-Yw/zh-cn_image_0000002516546242.png?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=28C02A678A32C915695E2AF35F9179E353D9348113A29F11BE23AF3F44F8AE7C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/NWcwuwEGSj-xojdMMhQkAg/zh-cn_image_0000002516546242.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=C99A30D2DE4D7B90C388075DC8BC11241869AFDC7CDA1F16D238C5352E7FCA67)

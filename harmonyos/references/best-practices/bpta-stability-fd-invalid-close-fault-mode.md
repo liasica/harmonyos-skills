@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 文件句柄非法关闭故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 地址越界故障模式说明 > 文件句柄非法关闭故障模式说明
 category: best-practices
-scraped_at: 2026-11-14T08:54:18+08:00
+scraped_at: 2026-11-24T12:47:55+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:694f1c5750085bf13196cd34f6450ff2a9a25d205ae66e2f74bf76a7269c663b
+content_hash: sha256:e2269672b98bc483d5f0efa363f0d52b4b6666b8be388fa7678b1f94e1b87efe
 ---
 
 ## 根因描述
@@ -96,7 +96,7 @@ content_hash: sha256:694f1c5750085bf13196cd34f6450ff2a9a25d205ae66e2f74bf76a7269
 
    说明3：由于fd被double-close触发fdsan检测，代码如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/H53vhu_SQLirqaWZb4TvpQ/zh-cn_image_0000002729491387.png?HW-CC-KV=V1&HW-CC-Date=20261114T005133Z&HW-CC-Expire=31536000000&HW-CC-Sign=C49F066A25EA9D9561122544A4A62005AAD0FC07D18A25074E03DE519D70330B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/_iYznHcZTwKUhpuRuVqN1Q/zh-cn_image_0000002729491387.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EDEAB22A09D12E582EDF69251330E8AA5E0ED817FA354697A47E2E2DF5399FC)
 
 **问题结论与总结**
 

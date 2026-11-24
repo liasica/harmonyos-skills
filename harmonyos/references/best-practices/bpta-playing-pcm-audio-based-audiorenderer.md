@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-pc
 title: 基于AudioRenderer播放PCM音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于AudioRenderer播放PCM音频
 category: best-practices
-scraped_at: 2026-11-14T08:54:07+08:00
+scraped_at: 2026-11-24T12:47:45+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:da6fbbda033c2a89ec85aa92bcb21e3269ed96e4508f136d8a4b416a04f1d805
+content_hash: sha256:769e447505b579e2b71c0119e30cf203c22fa261c119e21f78593dd510d40c7a
 ---
 
 ## 概述
@@ -14,9 +14,9 @@ AudioRenderer是用于音频播放的ArkTS API，仅支持PCM格式的音频。�
 
 本文是音频播放系列文章的第1篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/KTDnaGRYREO_CB_Hi7x_7A/zh-cn_image_0000002555217465.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F7D9D8349F596BA741136DEB7D496295FE7C962354A5175F1289E6096EA15D4 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/Sfrw41VcQpeV-8D25SUEzw/zh-cn_image_0000002524217568.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EB7408B68077425C2D8F9464687C7EA385C28F2062623079C16B068C96DEC95 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/h3Mj1QOYRUSm7Jz2I4Sr1Q/zh-cn_image_0000002555217465.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CA817D1DDE149D93942AEB1F2AA6627E8FEF42E36EB0265FF584F4AF2C0FEE2 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/qfIVTngZTBa3yuqkhNwXzQ/zh-cn_image_0000002524217568.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EF59C46AC72A324D494A4A412DB194AECE962EA814D4856468F6B4C2D66E969 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/7GH5JMgtTJ6UtyM4RufNVw/zh-cn_image_0000002591983530.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE37551B06E8720DE328527586AC46BC0DA8B32CA84EFA38EC7EE51FCBAA8691 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/eVlGd8DNQPypkUE-8T66ug/zh-cn_image_0000002591983530.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAC0B4A2F968242B93952648351E458BF1055F3965613C8C0037760B9059C5B2 "点击放大")
 
 ## 场景分析
 
@@ -39,7 +39,7 @@ AudioRenderer是用于音频播放的ArkTS API，仅支持PCM格式的音频。�
 
 通过[Interface (AudioRenderer)](../harmonyos-references/arkts-apis-audio-audiorenderer.md)实现基础的音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/qUsm3oQcQjC2DWg-VHph5g/zh-cn_image_0000002524057574.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EC2D0E3E38286A3A808E43EF7708A14B92E2C02A181D0D944BB2D85EDA052A6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/e9zUH3CnRNCSWiki3m8dXA/zh-cn_image_0000002524057574.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=64D3AC877AD294BF88D3849993D569DD4312599F80188EB4A103A3D1CCB25A56 "点击放大")
 
 ### 实现原理
 
@@ -260,7 +260,7 @@ public async release() {
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/5EeQMoHvS5miyjJYSYLlrw/zh-cn_image_0000002555217467.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=6859D84945FA3E6BAA84BD1DF3525139DBF94536A35A34ADD0E1E42762DC3C5D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/60FMgszbSISir1R2WTyMQg/zh-cn_image_0000002555217467.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8C6001663816918EFFEB563C406361626910FD64A2CCC0069EB0EA328B3C027 "点击放大")
 
 ### 实现原理
 
@@ -384,7 +384,7 @@ private setWriteDataCallback() {
 
 通过界面按钮快捷切换音频播放静音模式，实现一键开启或关闭静音模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/uqqjT_fDRhSI0qAH-PYkYw/zh-cn_image_0000002524217570.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=894A3DA799C5D1E05292D4AE55328CF3129B80DE39F088AE25EA0FE165991E1B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/91r1om7cRb-MSUjppuBc5A/zh-cn_image_0000002524217570.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=339B571D10A49EFE11946B60491003311D7916A5B8B85CDA0ECDB26584905D92 "点击放大")
 
 ### 实现原理
 
@@ -411,7 +411,7 @@ public setSilentMode(isSupportSilent: boolean = false) {
 
 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/u96BMJFXTqGY14k3YqOzoA/zh-cn_image_0000002555337439.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AE62404ED5654139F34BD4662FC0E57C24D34E67F47BA110E1BCE41FFD859AF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/isoLvO6yQBW0y02ovFCWPQ/zh-cn_image_0000002555337439.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=74D2E5DAE511F0AB36189F8D4563FACC04126FF3964F46F41F9EE78F8EEA2915 "点击放大")
 
 ### 实现原理
 
@@ -485,7 +485,7 @@ public async playNext() {
 
 选择不同档位调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/9jUU-fQ_RkmswVuQxKsTtQ/zh-cn_image_0000002622303659.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=93E8A6C9F496A5DC143C7FE3D88E9867BE61F6689316FC83B583BF2B0B6A8A4A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/0IfGdiAKTziv6sTambGjYw/zh-cn_image_0000002622303659.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=110670B0EA36AB217003BA5BC9D0472DFE07F7DF468D8759FAC5A3909F888BF0 "点击放大")
 
 ### 实现原理
 
@@ -544,7 +544,7 @@ public setSpeed(speed: number) {
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/nRXJgzzoTvGj4nRbKiJkmw/zh-cn_image_0000002555217469.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6280816BFDAD6F2D8E7939C608AB34D8ECA9034D3D7B5DB2513B0B3FD937D04 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/bK3ls50aQYSKp7WtRntXAw/zh-cn_image_0000002555217469.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=96C89844598AA143179816B8D23CAEAFFEEF359855543EFB23A8CB149FE5D4F5 "点击放大")
 
 ### 实现原理
 
@@ -597,7 +597,7 @@ public setVolume(volume: number) {
 
 通过播控中心，控制播放、暂停、切换上一首或者下一首音频。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/J4PpSpykRhqYFPw9fgCABA/zh-cn_image_0000002524217572.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=119E2C90F4AF19CD72567BC9240BA8BF16D7873215EAD1F592CDC046592E50BB "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/19NtceHVSTOntdPneRSUhQ/zh-cn_image_0000002555337441.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=24F5C382F4266CCCA813759BC8A9EB4A76A6EE43B301E5837F99B9A75C718F89 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/KEnua_zrThqQ7W3wqVoHJA/zh-cn_image_0000002524057578.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=543F2A26D75AEC30D20C6D37DC9975FEA9A1A1980BEDEFE6A52092015736180F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/BWrvxvnzQQSQCOS7SShftw/zh-cn_image_0000002524217572.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=62F7D0A95E0580975C01057F2212E27AFE998424F4EDBC7F014F8750028442B5 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/v6ShWrU0T6Wk0I5U2TL1NQ/zh-cn_image_0000002555337441.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D86E30D25AE04CCDC1B0DDB935A61C3EB2BE0AA19B893DFBA943B70DA00A933 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/-kDfu3zTSYi-O1yAyscIVg/zh-cn_image_0000002524057578.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=F18948A412D48F08C4019A05818A3B09CD181B760322A42720CF4B6C94F822B4 "点击放大")
 
 ### 实现原理
 
@@ -797,7 +797,7 @@ public setPlayState(isPlay: boolean) {
 
 音频切换到后台播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/Y8cDauSzQmuhI3t8QiYBuw/zh-cn_image_0000002624787553.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D560EA6D635BCCAA5A40C28283E44F2A3DC92C5999362A857F9BFE3AEA0D7A3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Jd1XOd6dTDmuBGvQpD0VMw/zh-cn_image_0000002624787553.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C2D92B35E4E2EC848D8589EA4FB9892CDA1FAA1FE8CF5A7CE814A2667AF830A "点击放大")
 
 ### 实现原理
 
@@ -922,7 +922,7 @@ public pause() {
 
 用户在应用内播放后，上滑结束应用进程，再进入播控中心，点击播放键拉起应用播放，或者点击历史歌单拉起应用播放，播控中心正确显示当前播放信息及播放状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/HJvYGYTuSh2Vt7tb04rn9w/zh-cn_image_0000002524217574.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1DEC56CEC31C2E02D9D36712A71AB3FC9D1614C0317C232800493F2076473E7 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Qm473xCySmuKeFMuFubpew/zh-cn_image_0000002624867455.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C1437A9A2C620DEF4494DDB1D663D0AE2C78C51DD68D25A3AD3209CDEBD5315 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/T9DnYjriTkCHPpD74JILeA/zh-cn_image_0000002524217574.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=8001FCBEA8BC1272321BF8774D410695A4387EC20297D884C78FB6E862F79E62 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/UO0xveDoTaGL-pVYlblQvA/zh-cn_image_0000002624867455.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=84EE6462A9D7CD336876DCEC9DB08F52E850C729F5080FCE83C11DBDEA112E95 "点击放大")
 
 ### 实现原理
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-run-devic
 title: 使用本地真机运行应用
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用本地真机运行应用
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:58+08:00
+scraped_at: 2026-11-24T12:42:29+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:070ffd3400d8a8dc88ec88ddcb2b3416211e33ffe9dd66d211a36d3e42ed36f8
+content_hash: sha256:01ad9f81bb07f6703f909cdaa2e7f57397adb73dd2fb05881a1fc8f62986ca6f
 ---
 
 在本地真机中运行HarmonyOS应用/元服务，可以采用USB连接方式或者无线连接方式。
@@ -26,10 +26,10 @@ Wearable设备仅支持无线连接方式（Lite Wearable设备不支持）。
 2. 在**设置 > 系统 > 开发者选项**中，打开**USB调试**开关（确保设备已连接USB）。
 3. 在真机设备中会弹出“允许USB调试”的弹框，单击**允许**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/8bms-2uzTUCnt4N65_g3qQ/zh-cn_image_0000002808887023.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F7C9A2AB45D5D5056DADCBE7A6C879FA06E8D25C7C47D89B62F6C9AA93F26DC)
-4. 在菜单栏中，单击**Run>Run '模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/JlH6oDyrSWm8OHvukIEVbg/zh-cn_image_0000002808766941.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=1351F136811093D6EF49DC6317CD04AC066D2B1070DCB49538FE923E22BA3901)，或使用默认快捷键**Shift+F10**（macOS为**Control+R**）运行应用/元服务。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/SjeKGEwrS3ut-PY2hOO2mA/zh-cn_image_0000002808887023.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=0458667A4AD11571C3876D1CF994E2EEC0EE16F943B6FADEB574F22487E9C1BB)
+4. 在菜单栏中，单击**Run>Run '模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/GHzWqIC-T4OrkGU1lFuYrg/zh-cn_image_0000002808766941.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A9B06D157272FBE598DCA4E63523B27BBA3998CE2A2C3BACECA2182C5F79CCE)，或使用默认快捷键**Shift+F10**（macOS为**Control+R**）运行应用/元服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Mbb3I7tbRzaMFjg4VQxyow/zh-cn_image_0000002779567370.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2CF8765FC7D6FB4CB1A16DFF78A17FFF607C887BF9D59C77ACEF187119356A7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/_MCrRYwoQ-OuKUZmpZnLRw/zh-cn_image_0000002779567370.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=69E8A7610D1E72A4FE47C049D7CED6A98E9DA18040DF58B22B9A0F1EEA277AC6)
 5. DevEco Studio启动HAP的编译构建和安装。安装成功后，设备会自动运行安装的HarmonyOS应用/元服务。
 
 ### 使用设备连接助手排查问题
@@ -44,7 +44,7 @@ Wearable设备仅支持无线连接方式（Lite Wearable设备不支持）。
 
 如果重启后仍识别不到设备，请参考[真机设备识别常见问题](../harmonyos-faqs/app-debugging-faq-0012.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/rV3P38ncQsKuAgXmwwjuDA/zh-cn_image_0000002779567368.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=830933E5AFB3B8C6674C9C8E6A90C881B70F612ADC37B7AFB96168A0D2E4D446)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/Hdl1jkI3QUO6zSEuMnXAMw/zh-cn_image_0000002779567368.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9BE157077890E54F5DD2FB8B8C9195BCBABE0E726A22EA38805557449DA607A)
 
 **DevEco Studio 6.1.1 Release****以下版本**
 
@@ -59,7 +59,7 @@ Wearable设备仅支持无线连接方式（Lite Wearable设备不支持）。
 1. 将真机设备和PC连接到同一WLAN网络。
 2. 在**设置 > 系统 >** **开发者选项**中，打开**无线调试**或**通过WLAN调试**（Wearable设备）开关，并获取设备端的IP地址和端口号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/6i8ZQPvWTXixZMVd023yNQ/zh-cn_image_0000002779567366.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=38D8B76016077E64DC3CB692FF7108399F8431589C50713778E87AF80A093017 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/i6ogdcvWTeGvxMa0gewxUQ/zh-cn_image_0000002779567366.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F5D99E26B854F9CECAE02949B266A0BEE5224B836C16EADC39E167C779F4FA5 "点击放大")
 3. 连接设备，有两种方式。
    * 通过DevEco Studio连接。
      + **6.1.1 Release及以上版本：**单击菜单栏**Tools > IP Connection**，或者在设备下拉列表单击**IP Connection**，按照IP:port格式输入设备的IP地址和端口号，单击**Connect**连接设备，连接成功后会显示在列表中，默认开启屏幕常亮。
@@ -73,18 +73,18 @@ Wearable设备仅支持无线连接方式（Lite Wearable设备不支持）。
 
        退出后，DevEco Studio将停止发送亮屏指令，设备可正常进入休眠。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/adQQuDLLRo6djkt8CVj41A/zh-cn_image_0000002779407388.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=A797C108ADD841C55C6155CBA0C9D155696926B70AE7110C4DF5BA3292664C56)
-     + **6.1.1 Release以下版本：**单击菜单栏**Tools > IP Connection**，输入连接设备的IP地址和端口号，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/-ONBxwFDSSCUTY_xZ0Plhw/zh-cn_image_0000002808887021.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D0D6B8B9223301ED2253199CF0D369285E83F204B000360AE1BF107D410155F)，连接正常后，设备状态为**online**。
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Fzt1jJ4KS1Gv1ig_jzz1Gg/zh-cn_image_0000002779407388.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=C93CD6E86FFCA2DD348BA370DE3EAB5E4093A6F74BCF8A9D4C54CBA1E1538126)
+     + **6.1.1 Release以下版本：**单击菜单栏**Tools > IP Connection**，输入连接设备的IP地址和端口号，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/_LIPRZvXQtyHU1z05vkM6Q/zh-cn_image_0000002808887021.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BFE56210A3AAB2A6C00B2975A64CBDB793481849BD547B3ED95C2F7768874B4)，连接正常后，设备状态为**online**。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/-Ab5ulCYTN6khcJT7hfTEg/zh-cn_image_0000002808766943.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD871C0FAAACA487654BC1A4BDFFA00AB01A594896484FBF2848C93277B4011B)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/NJr7803mQc2HokkLP3fFEg/zh-cn_image_0000002808766943.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A0FD51FDB06E2BBA3901C06A2AEC7940D6CCB29BDB1B8CF09C82CEA7C3600FB)
    * 通过hdc连接，关于hdc工具的使用指导请参考[hdc](hdc.md)。
 
      ```bash
      hdc tconn 设备IP地址:端口号
      ```
-4. 在菜单栏中，单击**Run>Run'模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/pkHcZ4N9RjewKVcmAao7wQ/zh-cn_image_0000002808887025.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B313E65F26D1A1E7CFFF261520E368DF91D8189BF53F3549097B79F6DC36FCC)，或使用默认快捷键**Shift+F10**（macOS为**Control+R**）运行应用/元服务。
+4. 在菜单栏中，单击**Run>Run'模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/K8z5Kc-_S9yDSecKbLc3Rg/zh-cn_image_0000002808887025.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC4A638480E4E9B17EC02FE92F9459B27407794627637873024919BD7AC9821B)，或使用默认快捷键**Shift+F10**（macOS为**Control+R**）运行应用/元服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/2S6mvFkxTzyGLRJN9nv6Bg/zh-cn_image_0000002808766945.png?HW-CC-KV=V1&HW-CC-Date=20261114T004711Z&HW-CC-Expire=31536000000&HW-CC-Sign=6863B2B43E8973B166FD8A6DB691CA2C165C49A5D9A091D0BB685294F42AF1CF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/57Ud3bb2Twm9wfRrY0EeWA/zh-cn_image_0000002808766945.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4929EB8BE8E65E51EC4D415DCD10B9AD3A93B3D2C884A81A2E7E6E646572C05)
 5. DevEco Studio启动HAP的编译构建和安装。安装成功后，设备会自动运行安装的HarmonyOS应用/元服务。
 
 ### 使用Wearable设备运行Lite Wearable应用

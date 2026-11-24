@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hwasan
 title: 使用HWASan检测内存错误
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用HWASan检测内存错误
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:00+08:00
+scraped_at: 2026-11-24T12:42:31+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:fd07c624ab7235952928aa20e35854ccac4b7b424e7d4ac39f5425219550c760
+content_hash: sha256:360213582b6dca37e929fb3dda9becf506e13df3c7b648c188338eb2cf160b5a
 ---
 
 HWASan（Hardware-Assisted Address Sanitizer）是一款类似于[ASan](ide-asan.md)的内存错误检测工具。与ASan相比，HWASan使用的内存减少很多，因而更适合用于整个系统的检测。关于HWASan的检测原理请参考[HWASan检测原理](../best-practices/bpta-stability-address-sanitizer-principle.md#section187526511146)。
@@ -29,7 +29,7 @@ DevEco Studio 6.1.0 Beta1之前的版本，仅支持对C++源码开启HWASan。
 
    从DevEco Studio 6.1.0 Beta1版本开始，可以同时勾选**BinXO check**，开启无源码的so文件的HWASan检测插桩。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/WfA80VUqSLWLNDcjCxgyBg/zh-cn_image_0000002808886719.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=19CCF69AF74B6FFEBF62705C5FF23166718E89395BBCE506215303B98FABA382)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Hf2cfIDkRZGGBTHd64865A/zh-cn_image_0000002808886719.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCECD44AE1F698D49A176E558ACC25EB3BC094598F0EE371CD57614B6F66C31A)
 2. （可选）如果部分无源码so不需要进行HWASan检测插桩，可以在工程级或模块级build-profile.json5文件中，配置excludeSoFromBinXO字段，填写需要忽略的so列表，支持正则匹配。
 
    ```json5
@@ -48,7 +48,7 @@ DevEco Studio 6.1.0 Beta1之前的版本，仅支持对C++源码开启HWASan。
    "hwasanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/7AyrOsFYR7Spk5g6MN029A/zh-cn_image_0000002808766637.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=F26B2B1B9928CD1A6541E53EA04B8A223A575513CC9C3E0616EECCA997B2D9CB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/gKDbb9C5SPG08GaIdHX30g/zh-cn_image_0000002808766637.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=C95826C0D1B71FA24C326FA0120193B58902593F3AC5A476F2D2B99D4C2A7115)
 2. 在需要开启HWASan的模块级build-profile.json5中，添加构建参数开启HWASan检测插桩。
 
    ```json5
@@ -84,10 +84,10 @@ DevEco Studio 6.1.0 Beta1之前的版本，仅支持对C++源码开启HWASan。
 
    为确保正确解析堆栈，需保留代码中的调试信息，具体请参考[注意事项](ide-hwasan.md#section1665820539148)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/JJIAVeGZTlesbGwxNYDbgg/zh-cn_image_0000002779407080.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=12BD6C6B5E94A372153F5656BE0FA7CAB418012463C2086D655566B86EE894C0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/BKDS3TRORWmagVOlr8TOIg/zh-cn_image_0000002779407080.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=64240F9F9557DCBC232167789AEEC77B719EEE8816B35B181C3B19B203FFC419)
 3. 如果是release应用，本地无工程代码，可以使用AnalyzeStackTrace功能，提供要解析堆栈的so，解析结果为源码地址。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Xu7mysedQEKCrRdTOURvaA/zh-cn_image_0000002779407078.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=44F060113CEA053DADCBBFDB99E427F9D290AEB9E823260F6A907F686796C75F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/vHsjNMlrRlGJogzivQ06rg/zh-cn_image_0000002779407078.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=0439CC92E8D1D356CF4F5DD6C3F68118211DD3A0C9D58F128FD4167078D1860A)
 
 ## 注意事项
 

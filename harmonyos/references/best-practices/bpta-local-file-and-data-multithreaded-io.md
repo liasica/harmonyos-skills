@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-local-file
 title: 多线程操作密集型关系型数据库和文件读写
 breadcrumb: 最佳实践 > 应用框架 > 数据和文件 > 多线程操作密集型关系型数据库和文件读写
 category: best-practices
-scraped_at: 2026-11-14T08:54:06+08:00
+scraped_at: 2026-11-24T12:47:44+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:73b32238fe1d927b334cd08142445d0dbe14db1aa66a5e03bbee2dea5b13e50b
+content_hash: sha256:72fef28bc8e94b265b75a38bf367d8fb4c8607f6dca197eb3cae80a72f4adea1
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:73b32238fe1d927b334cd08142445d0dbe14db1aa66a5e03bbee2dea5b1
 
 任务池（TaskPool）作用是为应用程序提供一个多线程的运行环境，降低整体资源的消耗、提高系统的整体性能，且开发者无需关心线程实例的生命周期。更多原理请详见[TaskPool简介](../harmonyos-guides/taskpool-introduction.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/GqmPmwTcT0KA2N7kW-9w1A/zh-cn_image_0000002229337461.png?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A19C062790A32226F9FF6F2F24AFEB75ACB26B4B72CBBBF6FDF684C67D74223 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/zzgGObYQSuOmuh9zolF1pA/zh-cn_image_0000002229337461.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BFB4D53CFE1522E4E1931F72574DD7FA996221F3715F7544FC205F2555466E2 "点击放大")
 
 TaskPool在执行密集型I/O读写方面具有以下优势：
 
@@ -181,7 +181,7 @@ TaskPool在执行密集型I/O读写方面具有以下优势：
 
 共享堆（SharedHeap）是进程级别的堆空间，与虚拟机本地堆（LocalHeap）不同的是，LocalHeap只能被单个并发实例访问，而SharedHeap可以被所有线程访问。一个Sendable共享对象的跨线程行为是引用传递。因此，Sendable可能被多个并发实例引用，判断Sendable共享对象是否存活，取决于所有并发实例的对象是否存在对此Sendable共享对象的引用，更多原理请见[Sendable的实现原理](../harmonyos-guides/arkts-sendable.md#sendable的实现原理)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/1RgtBhHYS_eoASPtgQxRyQ/zh-cn_image_0000002229451953.png?HW-CC-KV=V1&HW-CC-Date=20261114T005123Z&HW-CC-Expire=31536000000&HW-CC-Sign=87BFC02625CDE10A99672C183392FAC086D472F35A39FBDB590F16B281452836)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/TYXwzkAcR0K-brcs9QNnlw/zh-cn_image_0000002229451953.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=9108587496DBC45DD5E03FCD90F399F2BC7522D2006D690A40D31187FF084271)
 
 在密集型I/O处理场景中，文件读写会涉及大量数据的传输，而数据库读写则通常被封装成class进行传递，Sendable用引用代替拷贝，可以有效地降低序列化时间，从而提升性能，Sendable主要可以解决两个场景的问题：
 

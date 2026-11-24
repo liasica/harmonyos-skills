@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 日志
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 日志
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:47+08:00
+scraped_at: 2026-11-24T12:42:19+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:378dedfeda27567273ae72e6648f0ceb82b577ac3f7451fe940a6016e2f339c8
+content_hash: sha256:d66149591ae3f84ed40355fddbd6bd90c4d5a803b296a2dd82a800ef823cfc3d
 ---
 
 与任何Web应用程序相同，ohpm-repo有一个内置的日志记录器，其定义了四种日志类型。
@@ -18,7 +18,7 @@ content_hash: sha256:378dedfeda27567273ae72e6648f0ceb82b577ac3f7451fe940a6016e2f
 
 操作日志中主要包含操作时间、日志级别、操作人id（userId）、终端IP（ip）、操作资源（resource）、操作方法名（event）以及操作结果（result），其文件保存个数最多为180个。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/VLFk13HoTqSDQm5O4lD0kA/zh-cn_image_0000002808884785.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=17F8DB0B8D9EA4F8EBCEB19A371D20516AC4614890580117095A497FD8EAA61C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/NO9SbPBSSk2DZSKYemlvfQ/zh-cn_image_0000002808884785.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=326BC61D515EE0DEC7C949C1C0ED2B0ED08588BC3E91A34ADBDC362719C27274 "点击放大")
 
 **说明** 
 
@@ -58,7 +58,7 @@ content_hash: sha256:378dedfeda27567273ae72e6648f0ceb82b577ac3f7451fe940a6016e2f
 
 运行日志中主要包含操作时间、日志级别以及日志信息，其文件保存个数最多为30个。运行日志定义了日志级别：all，trace，debug，info，warn，error，fatal，mark和off。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/FdCzJA57RmKtYjJmGRBXFg/zh-cn_image_0000002808764693.png?HW-CC-KV=V1&HW-CC-Date=20261114T004701Z&HW-CC-Expire=31536000000&HW-CC-Sign=51B18B31D766A308B284966A99893B1D076E94AA1DC2B1CF39242ED3BDB6598C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/iqMmcCwbRZuRC7dFMRkdfA/zh-cn_image_0000002808764693.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA0E964E912518E0F7611F32AA57AA9D4666E169E41A88BC842315DFD76E1B1D "点击放大")
 
 ## 运行错误日志 - repoError.log
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: AI辅助多设备应用开发
 breadcrumb: 最佳实践 > 一次开发，多端部署 > AI辅助多设备应用开发
 category: best-practices
-scraped_at: 2026-11-14T08:54:10+08:00
+scraped_at: 2026-11-24T12:47:48+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:2959cb7ed04666793c35c29c162e39ff75d4970a62608f694c4f1cd1de0119f8
+content_hash: sha256:e30a481cd0e5d4218a197dfb44b433b86697062a15af301763963a28649a6957
 ---
 
 ## 概述
@@ -63,7 +63,7 @@ HarmonyOS多设备适配Skill集是由1个总入口、6个专属场景Skill和1�
 
 1、使用DevEco Code作为AI工具，启动DevEco Code并选择[Agent模式](../doccenter-deveco-studio/ide-deveco-code-agent.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/zsg0tCiWTXqff9NDd7HS2w/zh-cn_image_0000002789073558.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EA2CD71E080D211E2BACA3E249787083CDC554D438BB7782B0D3340FDA73584)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/V1Za_4aHTFSmvv6O04BMrA/zh-cn_image_0000002789073558.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0A85D5AB3F03D3F2714664F1373855E9BCF36B8443A0663E1C6D206140FA19E)
 
 对于刚接触多设备适配的开发者，建议选择Build模式，通过自然语言描述需求，由入口Skill自动路由到对应的场景Skill进行处理，快速完成适配。
 
@@ -80,7 +80,7 @@ HarmonyOS多设备适配Skill集是由1个总入口、6个专属场景Skill和1�
 
 具体放置流程可参考[创建自定义Skill](../doccenter-deveco-studio/ide-deveco-code-common-configure.md#section4684243316)，通过在DevEco Code对话框输入\*\*/skills\*\*可查看所有Skill，下图为多设备Skill配置成功的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/cjmUmQyMSLS5JoS9HhbMVA/zh-cn_image_0000002818072971.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=B38395450378F4D2595239620EA42D4821F2FC41D3C9B4AC4C4993609CD101C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/cK7EQQmESaqzHP0ryx3R9Q/zh-cn_image_0000002818072971.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4303CF9CBCB1816D7CC96CCC608CF325894F3D55F279E6407E12D6FCBD433C8)
 
 3、在DevEco Code中用自然语言描述多设备适配需求。
 
@@ -92,19 +92,19 @@ HarmonyOS多设备适配Skill集是由1个总入口、6个专属场景Skill和1�
 * 所有设备应当实现窗口沉浸，并合理避让顶部状态栏和底部导航条。
 * 所有设备应当选择合理的窗口旋转策略。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/LdyxwZ44Tku2eQUEDpOlIQ/zh-cn_image_0000002788913630.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=0877015567D333098EB0A7884D92C553AEDBD69E6B51A63486F682F54518B4BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/MsRaqI4sRXeZEcRbv3Ip7g/zh-cn_image_0000002788913630.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E3823B809197B268099A11E945E60FD7D56D556500DD050B61591E7E982AED7)
 
 4、由AI自动完成多端适配代码的编写与修改。
 
 入口Skill自动分析需求，判定适配阶段，路由到对应的场景Skill，由场景Skill结合源码完成适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/KHg8pgb8QsS3AgNp44Asmw/zh-cn_image_0000002817953045.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A3C634996D7B4879071740F9654A02F56B55A19C6C92050AA16E98916479033)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Ya9hbMjRQXiel1e5P0C15Q/zh-cn_image_0000002817953045.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CCD57117CBCBE62CDF3BDB20EE65867E8DA999165FE28C0BC881F147FA49D9F)
 
 5、由AI自动执行多端适配测试并预返工。
 
 多端批量检测布局适配问题、编译问题、开合问题等，提前修复。涉及折叠屏开合的内容，会连接至多设备验证指南，对折叠态、展开态、三屏态、悬停态进行额外的布局适配验证。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/WyNV_pYYSU6jLYDFmV1i5Q/zh-cn_image_0000002789073560.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=81B3A6F30FE012C25434345AAF8577AABE7A5E59FBBD3643CC585C840C17E851)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Um06MAg4SbCxFSF0uIrvAg/zh-cn_image_0000002789073560.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FE06F3C0FD216388A7BAEF2F92C437325082E0F56C0A273DA8FE3D6953DC35E)
 
 ## 示例代码
 

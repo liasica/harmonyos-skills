@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-lazyforeac
 title: 懒加载优化性能
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 懒加载优化性能
 category: best-practices
-scraped_at: 2026-11-14T08:54:14+08:00
+scraped_at: 2026-11-24T12:47:52+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:f499a5a6ad9835eae94bf542a05ab023021df158908b8e68375aa731297a5124
+content_hash: sha256:5e3ccc39bd580c0446988067c137d534d5bba2e175b436ed1d09cf9afc2cb8e5
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ content_hash: sha256:f499a5a6ad9835eae94bf542a05ab023021df158908b8e68375aa731297
   其数据加载、组件树挂载、页面渲染的示意图如下所示：
 
   **图1** ForEach渲染过程示意图  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Y9z-CNcFSke57jEyyMfu6w/zh-cn_image_0000002194010368.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=98FEFE309D203DF3C0475440AE16FBD146DE68CDD39E83A56C053A77C7FB892A "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/IboBinyJQDWo1IJvYRqxSw/zh-cn_image_0000002194010368.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=926F63E74B47B11632145692D99DE4A8085AA4BAD8C86BD998D5772E7035DD23 "点击放大")
 
   如果列表数据较少，数据一次性全量加载不是性能瓶颈时，可以直接使用ForEach；但是当数据量大、组件结构复杂的情况下ForEach会出现性能瓶颈。这是因为要一次性加载所有的列表数据，创建所有组件节点并完成组件树的构建，在数据量大时会非常耗时，从而导致页面启动时间过长。另外，屏幕可视区外的组件虽然不会显示在屏幕上，但是仍然会占用内存。在系统处于高负载的情况下，更容易出现性能问题，极限情况下甚至会导致应用异常退出。
 * 数据懒加载
@@ -44,7 +44,7 @@ content_hash: sha256:f499a5a6ad9835eae94bf542a05ab023021df158908b8e68375aa731297
 
   **图2** LazyForEach渲染过程示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/sEFe7iM7Rdu_AfLdBE0EJA/zh-cn_image_0000002229450649.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFA8EFF51724A90E7287EE2196B76E3F3B9F6AE03406E6D3992A39E7493D6D91 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/OoreaSBLQDyS1zkmTRov4g/zh-cn_image_0000002229450649.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD3554E7F2570BE3806ACFCF779311FA55EF071292D4CB4303868E5C96CD95AA "点击放大")
 
 LazyForEach实现了按需加载，针对列表数据量大、列表组件复杂的场景，减少了页面首次启动时一次性加载数据的时间消耗，减少了内存峰值。不过在长列表滑动的过程中，因为需要根据用户的滑动行为不断地加载新的内容，这需要进行额外的数据请求和处理，会增加滑动时的计算量，从而对性能产生一定的影响。然而，合理使用LazyForEach的按需加载能力，通过在滑动停止或达到某个阈值时才进行加载，可以减少不必要的计算和请求，从而提高性能，给用户带来更好的体验。总之，在实现按需加载的场景中，需要综合考虑性能和用户体验的平衡，合理地优化加载逻辑和渲染方式，以提升整体的性能表现。
 
@@ -164,7 +164,7 @@ List() {
    ```
 2. 通过Profiler调优工具抓取Trace，可以判断子组件创建的次数。如下图所示，在该帧中出现大量的BuildLazyItem切片，每一次BuildLazyItem对应一次子组件的创建，对比数量可知LazyForEach按需加载失效。关于调优的内容可参考[性能分析](bpta-optimization-tool-practice.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/741xtf39Rra2IHLavVqskQ/zh-cn_image_0000002194010376.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C98DC03E849EADF9D257A1A31D37E7CCF9A506A6CE6E01855EF06A811839E03 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/h8YP_G8HQQ2Mp7f_DkVhLw/zh-cn_image_0000002194010376.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA65C0A66113C043FCDC45DE446680DCAE5A348AA88074A9C5901D3410CC758A "点击放大")
 3. 通过HiDumper查看组件信息，判断组件的渲染情况。关于HiDumper的内容可参考[hidumper](../harmonyos-guides/hidumper.md)。
 
 ### 混合布局中懒加载失效场景

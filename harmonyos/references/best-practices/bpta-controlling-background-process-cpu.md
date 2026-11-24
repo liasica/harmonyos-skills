@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-controllin
 title: 控制后台进程CPU使用率
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 后台任务低功耗 > 后台硬件资源合理使用 > 控制后台进程CPU使用率
 category: best-practices
-scraped_at: 2026-11-14T08:54:16+08:00
+scraped_at: 2026-11-24T12:47:54+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:7a43f5156a49639373639fb4a1248a2857c29483e318cdd0de1ab7e181630354
+content_hash: sha256:87bb2eb10157b8197b7af07d1221cf019ffdfc12206c00a5c7961fd2e6d2ef65
 ---
 
 CPU使用率表示进程在CPU上的运行时间占总时间的百分比，计算公式为：CPU使用率 = 运行时间 / 总时间。单核CPU使用率的最大值为100%，多核CPU使用率的最大值为核数乘以100%。例如，8核CPU使用率的最大值为800%。
@@ -22,10 +22,10 @@ CPU使用率表示进程在CPU上的运行时间占总时间的百分比，计�
 
 1. 连接设备，打开命令行窗口，输入hdc shell进入设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/elBXpdD6RRGqOumnzYsgZA/zh-cn_image_0000002229450601.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=C66318898C779311B18EB0A9F2373A1D3EE02E0FA23E4891719A6E0376E2C8F7 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/-1kPbRDeSKarz4XZlxRUbA/zh-cn_image_0000002229450601.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4A63CF07C7A83BA779F41DCC5232E6F4AF29C7F8EB5439508009903562B7F63 "点击放大")
 2. 输入ps -ef | grep bundleName，查询应用使用率的进程号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/e5dxj_X5QJCAvXJIBY4mBw/zh-cn_image_0000002229336117.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C2021B8955D39A7880B47FDDB0300473E4C1079B35D4A46E4C4D3FB486DFB29 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/qtvyRSk3SBOOwx-5zXDP8g/zh-cn_image_0000002229336117.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=75C93B40B910C4479DE5FF590A071A1B0D0BF2EC7A45BD7444E5613904B32BAA "点击放大")
 3. 输入：top -p xxx，查看对应进程的使用率。查询结果中，CPU列显示进程的实时使用率。其中，xxx是进程ID(PID)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/aJ93F6B7S46TCyL70ySqJw/zh-cn_image_0000002194010320.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=B00ED31AD4DC440F4DB3A81843EAB0337DC01BCF224554609196B54802669169 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/EB6fh4V2R9ivKRz2FlYGmg/zh-cn_image_0000002194010320.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BB865009855C8502F2BF535B3E22BE75CF8867C747381AB06EDC3AF4B07ACD3 "点击放大")

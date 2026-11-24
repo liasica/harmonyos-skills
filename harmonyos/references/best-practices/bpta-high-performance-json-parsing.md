@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-high-perfo
 title: 高性能JSON解析
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 对象序列化性能优化 > 高性能JSON解析
 category: best-practices
-scraped_at: 2026-11-14T08:54:15+08:00
+scraped_at: 2026-11-24T12:47:53+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:c0634d62c995397acf1f61725f055a9b9459e8f39fea28530c15050d9d7d4641
+content_hash: sha256:84411638c78dcc23e7574f2d6191695553a106267b84314c022541ac13be3bbe
 ---
 
 ## 概述
@@ -240,7 +240,7 @@ TurboTransJSON库在大文件解析方面采用了以下技术：
 | large json | 52.06MB/s | 9.51MB/s | 44.36MB/s |
 | huge json | 86.40MB/s | 18.90MB/s | 116.10MB/s |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/vYPe5AK0R-yeB_ICYXy9dQ/zh-cn_image_0000002501490386.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C43BCFEE507655F2D1B79FE7F9D46B8745B0A03B4E9DF9A6D7F80DA306519B5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/GpZEo0hKRhSTqc4B-zlw6w/zh-cn_image_0000002501490386.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=C16C53647B7012D6795DF8E5B283B939CD8003EF6FD09FD49EFEBAC543B1923C "点击放大")
 
 **反序列化性能对比**
 
@@ -251,7 +251,7 @@ TurboTransJSON库在大文件解析方面采用了以下技术：
 | large json | 82.39MB/s | 57.49MB/s | 68.81MB/s |
 | huge json | 170.10MB/s | 140.40MB/s | 207.90MB/s |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/J-r6UhVYTrWYTTQ1nmaflg/zh-cn_image_0000002501330544.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=00B9C9BC16CF69AFFE9FF6DC092C14392B2761550F898BBB60C7FD6522BF216A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/uelVCNCFQcG3utlZjwgY1A/zh-cn_image_0000002501330544.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=A61F72D0B5B1C15F730CF0342F1734F30432448B38ED836B04D62A1CE6774B53 "点击放大")
 
 通过上述比对数据发现：
 

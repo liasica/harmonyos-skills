@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-shared-bic
 title: 快捷骑行体验
 breadcrumb: 最佳实践 > 行业场景解决方案 > 出行导航 > 快捷骑行体验
 category: best-practices
-scraped_at: 2026-11-14T08:54:12+08:00
+scraped_at: 2026-11-24T12:47:50+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:5b6b8f595510938fd9b8f8cbb7d498050aa33a2386ed00cd01562fbf29d7fb52
+content_hash: sha256:da6dabaccd6a71a8bb15b3dfa84d4173b6d129a56d7efb798173d78c1849858a
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:5b6b8f595510938fd9b8f8cbb7d498050aa33a2386ed00cd01562fbf29d
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/4dY4Ff8oSICMzh_B2xoxcQ/zh-cn_image_0000002229450033.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C49D9F7F9C8996DD8B0377CC9C42E87221E2E0CF9DF16BD9CD4690129F3C776)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/6STBMOxtTgi6N3TAUlfXUQ/zh-cn_image_0000002229450033.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=5844E94E76FEC16E413819A1023327F7CCC810D9E0A496988F3499DAD10407CD)
 
 ## 场景说明
 
@@ -53,15 +53,15 @@ content_hash: sha256:5b6b8f595510938fd9b8f8cbb7d498050aa33a2386ed00cd01562fbf29d
 
 左图展示了当前骑行场景的流程，右图展示了优化后的流程。优化后，省去了在应用间切换和寻找功能入口的步骤，简化了用户操作，提升了用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/kCarfhCqRs69HeDCL3JhYA/zh-cn_image_0000002193850172.png?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE8E01ACF13EDC993B07ACD4FCE2B6DC3B97D436AA8CFA3BD481B7A31553C205)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/i4zgn01mT_KoXgbbdXsHtQ/zh-cn_image_0000002193850172.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=96224AFE6BE7E3B8D0CC7F0072051E066152B06E59449E8947B4A37603E65FD8)
 
 ### 骑行状态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/8WzWvbQQS0ufZKFsEuWp5Q/zh-cn_image_0000002194009740.png?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=39A723476C7D347D6030CB7B64D321D0E973A8C67F79C353DEC00384AE83879D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/g_LeBVimRLawgF1lP8Aqaw/zh-cn_image_0000002194009740.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA0DB2EC73052C7C963758CFA7B5E36012C72F481E292C17D7C8C900E84CFA2D)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/EscPGOBMRnCxqoAa91uB9Q/zh-cn_image_0000002193850156.png?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1FFDEF093B40FE09A9CFF9018B6F05A48A0156166C27F2F8E2BEE3E6BA427A3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/H72aCisTTiClDzyFvGkLkA/zh-cn_image_0000002193850156.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EAD4705E078F1230A3E27FB4E5897059AF9E75B59CD2A79D03EA50C4DE61CEC "点击放大")
 
 ## 扫码解锁
 
@@ -69,13 +69,13 @@ content_hash: sha256:5b6b8f595510938fd9b8f8cbb7d498050aa33a2386ed00cd01562fbf29d
 
 在首页或者共享单车页面，点击扫码进入扫码界面，可以使用后置摄像头进行扫码，也可以点击图库选择二维码图片进行扫码。“扫码直达”相关的使用请参见[接入“扫码直达”服务](../harmonyos-guides/scan-directservice.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/cmhh1HumR0S9zv8sEK7o_Q/zh-cn_image_0000002229335549.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=1808A2359CB35E45CFD2748E3EC826C5FEBEB6F590DDA0FF5296DD9437132609)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/-gZWcYyHSKyqIEE-dqQwvA/zh-cn_image_0000002229335549.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=C04F64DF73996AF92A128EC03FC33E7C69FA642D4783C39DB7F886E96B5E1183)
 
 ### 时序图
 
 主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/K8tXDv4ETbGg146HvJkNJg/zh-cn_image_0000002193850148.png?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE2C3F05812E534D0D2214D1BB81605046E1E31497AD990601D1A1D69BF73D12 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/q4pdbHK9QYuw0wnXREBnPg/zh-cn_image_0000002193850148.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=13F48E594C117EFAF246A9534619A0CB7A20C37120036037276AE819DF729846 "点击放大")
 
 ### 关键点说明
 
@@ -140,11 +140,11 @@ export class ScanUtil {
 
 进入找车页面后，可以点击任意位置模拟自行车的所在地，地图将进行步行路线规划并增加标记点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/nz7ZM5slRyi4P_a4TptTqQ/zh-cn_image_0000002193850168.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=F86480AA3D38E4C095BD8ADF0A782794411D2F6E4BE100CB3F7E647BE83F7C4D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/e9ibworyRt2QkcRka4o0pw/zh-cn_image_0000002193850168.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=02E6E497735A93782650A898B763800D4314C31BD39BF1EC47DC19A3E02A107E)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/U0i-xFdGRGGmbswkjtlcuQ/zh-cn_image_0000002194009744.png?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1DA5F55FC5B1136ED5A3C990C0697B290D8263952C45296E82596642C136AD4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Cp4p6q83QR6FcZnvOP3agA/zh-cn_image_0000002194009744.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=904BEBFD88F67E77E32A5F4AE8FECAF54156DEE10377F209095B5EECC4C81511 "点击放大")
 
 ### 关键点说明
 
@@ -351,11 +351,11 @@ public static async paintRoute(routeResult: navi.RouteResult, mapPolyline?: map.
 
 点击解锁后，实况窗显示骑行状态。完成还车、支付等操作后，实况窗的状态实时更新。支持在锁屏、通知中心显示卡片，状态栏显示胶囊形态。点击状态栏的胶囊后，展开悬浮卡片，方便用户查看骑行状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/FcCq8TkKT0aQQQlNcAUxxw/zh-cn_image_0000002229335553.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=76D96875ECE635B0B91A6BE344F96219D00C9C486F1C2AA8A6651D8C0B7D62E3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/FIj65DMESQyIZlkMLcAdyw/zh-cn_image_0000002229335553.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=21E2579807E3DEE8F1F99512F0E145CE717563BAA5F1B1DCA77F37B8021FD9D1)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/M_d7Sgo_Q-25dWaUSYgH-Q/zh-cn_image_0000002194009760.png?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B4E1C297F2EC35491282EEBF45035DBE2B88A39674C0CF43140FCC1827C564C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/xQVEM9IcQTGX-G8tQUzQoQ/zh-cn_image_0000002194009760.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=A33792F4BCFA4F585353E157EB7218E8886C562D2FA6C4DA72654D57E4102D11 "点击放大")
 
 ### 关键点说明
 

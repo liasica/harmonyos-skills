@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-
 title: 瀑布流加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 瀑布流加载丢帧优化
 category: best-practices
-scraped_at: 2026-11-14T08:54:14+08:00
+scraped_at: 2026-11-24T12:47:52+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:e0dfbbe01dd6a6c69ff943166a6d63a1e605f88fa00be2f8cd7f2b89c1e16d73
+content_hash: sha256:331b3ee2b07b86655c48fe9c286f6a0326fc66204b534e8706581f3b92510e28
 ---
 
 ## 概述
@@ -85,7 +85,7 @@ build() {
 
 **瀑布流组件加载流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Tngbb6CTRfy2rn175WASzQ/zh-cn_image_0000002194010900.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=A997A5F757945E5B219BBCFF4C782197BDCA2F626BC9C06C3408FEB68563C3CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/LDNoJ-nXQuuJt8p3UBMJ1w/zh-cn_image_0000002194010900.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FDFC7BD5838E4B13669F81F754EE55680F7C81830BB7C89F5F2209A0CAA3B90)
 
 示例如下：
 
@@ -135,7 +135,7 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 
 **图1** 瀑布流页面卡片宽高计算逻辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/1kl5Z1aYQdCZFddf-7Z4EA/zh-cn_image_0000002194010908.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D55D9DC4369AA42C8F29D0CC22F11FC56D5342394D856AE48C3EBB1DEDFA41B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/N22puUlhSP-vE_dB0m0OXQ/zh-cn_image_0000002194010908.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=594B91E06209D4CD5C3BE4E7736EFF8678DFA36A7CA0DA4F9D9FF52C9BD5E80D "点击放大")
 
 如上图所示，两列瀑布流卡片的宽度 = （屏幕宽度 - 2 \* 组件外边距（margin） - 瀑布流组件内边距（gap））/ 2。
 
@@ -162,7 +162,7 @@ getTitleHeight(title: string): number {
 
 **整体效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/i40UW6oFQWq9ITWPFXlmDQ/zh-cn_image_0000002194010904.png?HW-CC-KV=V1&HW-CC-Date=20261114T005130Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C45B99696E77B4CF42A793B6F9F09B9BE6C56D6379AF4BFDEA295E479CE80AA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/lZUwI7rkQI2sqXvS5ZAFyA/zh-cn_image_0000002194010904.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=50355A2E71478F88432781C50ACBB78EF74A396D92A267BE57F0D8FA0B690773 "点击放大")
 
 下表为通过网络请求500条数据加载渲染，测试获得的数据（数据测试方式采用技术从左向右累加测试的）：
 

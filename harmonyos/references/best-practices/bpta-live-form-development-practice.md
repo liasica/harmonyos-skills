@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-live-form-
 title: 互动卡片
 breadcrumb: 最佳实践 > 技术创新 > 多窗 > 互动卡片
 category: best-practices
-scraped_at: 2026-11-14T08:54:05+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:f0e940c02c0831686ce758f88c3b0b0e761101a18289eab0f81c2a4321dac51d
+scraped_at: 2026-11-24T12:47:43+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:88596314782725cbd3fc92dfa91acdbdc76e1f7a61c95c1428645c12401377d9
 ---
 
 ## 概述
@@ -41,7 +41,7 @@ content_hash: sha256:f0e940c02c0831686ce758f88c3b0b0e761101a18289eab0f81c2a4321d
 
 **效果预览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/HBW1wmNvSSidNcuI_XXQLw/zh-cn_image_0000002623694219.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DF2479C9896E176A3FD285D853898820CD905830A498551D1DEF1C3038D42FA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/l5IqEuVcRZ6wlS2I-N6gEw/zh-cn_image_0000002623694219.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC703D146FA5B7C4A9C825E099F2AAF3D25CF6879C5EC4573AFD2B65645F967D "点击放大")
 
 ### 快递卡片
 
@@ -55,7 +55,7 @@ content_hash: sha256:f0e940c02c0831686ce758f88c3b0b0e761101a18289eab0f81c2a4321d
 
 **效果预览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/sU8yPjbTRIiNiKAoTDOl9g/zh-cn_image_0000002623534345.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=1232F7BD6DEBF7794D98C0ABC8DA5BB095F5714F65C0021E0F9C699B7B16B561 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/EJjs62u_TESIPtcRKTO9Rg/zh-cn_image_0000002623534345.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=B168EFE46AC3031E687F394A772931BFF9C5A8225F2A04DFDD49BE7C19861E2A "点击放大")
 
 ### 运动卡片
 
@@ -72,10 +72,10 @@ content_hash: sha256:f0e940c02c0831686ce758f88c3b0b0e761101a18289eab0f81c2a4321d
 
 * 开始运动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/XcMdmzpARn2uvQ-dPEqTiA/zh-cn_image_0000002593094810.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=B78712163E8746B577B653E379032AB622E264986A2B7C7C58549969CF51D15E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/ZC-_rG5fSR-hwoZfM78lkw/zh-cn_image_0000002593094810.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF9487E9E76EC4918AAE0C89B908C456BC8B78C63E5966DA462957099200B431 "点击放大")
 * 结束运动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZdQkYnB5Qt6bHKkgDHfebQ/zh-cn_image_0000002593254736.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E7BAEC133E63D3E852622E725F20D4DFEFF7956EBF74334A7F87AC05A39040E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/mflGRbQfSSySLhXxA46Wfg/zh-cn_image_0000002593254736.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=2963F0669EC35C77783FA81FF7167EDAD0C59B7D38FD8D969BB0F399790A89B0 "点击放大")
 
 ### 音乐卡片
 
@@ -92,10 +92,10 @@ content_hash: sha256:f0e940c02c0831686ce758f88c3b0b0e761101a18289eab0f81c2a4321d
 
 * 播放：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/7Z_w7_ceQsa2YIvCQ7q5KQ/zh-cn_image_0000002623694221.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=412B2176E189E1431560B3046BB1D8CB568263D29229D16915224ADFDA3814F6 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/zvyoBe3yRbmYcdSreWE_zA/zh-cn_image_0000002623694221.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A57E8C3DF4F2821B811097FAFE7367FB2F8B247271C41E68DCAD6A79CDBAF46 "点击放大")
 * 切歌：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/BJAIjikCR9SdLxqWlrSJaA/zh-cn_image_0000002623534347.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B6BD46FBB8330931E2C7782C18DDF04771DAD23BF6173DC75ADCE9B13475766 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/qNAhHIbMTk6r5ucXQv7Rqw/zh-cn_image_0000002623534347.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=70C82664FEDCCD70901EC1EF0DC7496109EEC6D839EBE4C623043BD4107EA4D5 "点击放大")
 
 ## 整体方案
 
@@ -175,7 +175,7 @@ content_hash: sha256:f0e940c02c0831686ce758f88c3b0b0e761101a18289eab0f81c2a4321d
 
 以快递卡片为例，演示完整的互动卡片开发流程。快递卡片需要实现点击触发出框动画、陀螺仪交互驱动憨憨移动、摇一摇激活等功能。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/1DSEhgsmTQG-F6MyY3-bug/zh-cn_image_0000002593094812.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=841AF381886828207DC650AB936A3298C67616A49E08AF3F85E431E7817D0B51 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/XMO41df1TsO24y8E08FjbA/zh-cn_image_0000002593094812.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE88BD5056DB842305D33ECDD5E6193687CBDFE7BDD199983B137765D91D0F4E "点击放大")
 
 ### 实现原理
 
@@ -250,8 +250,7 @@ struct DeliveryCard {
           .height(this.formHeight * 0.2 + 'px');
         Text($r('app.string.delivery_in_transit'))
           .fontSize(16)
-          .fontColor('#646166')
-          .fontFamily('HarmonyOS Scans SC');
+          .fontColor('#646166');
       }
       .justifyContent(FlexAlign.SpaceEvenly)
       .alignRules({

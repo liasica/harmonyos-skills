@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-overview-o
 title: ArkTS内存泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ArkTS内存泄漏故障模式说明 > ArkTS内存泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-11-14T08:54:19+08:00
+scraped_at: 2026-11-24T12:47:56+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:f2a9462e472ac344829507f456408224af1c61e81a089731d0c30602f18f439e
+content_hash: sha256:a40336f7fbcad400d495bc4fff5878c863da5c0cb3b5b364d6ab9a5876665166
 ---
 
 ## 概述
@@ -160,7 +160,7 @@ Snapshot是方舟虚拟机在运行时完整导出虚拟机内存堆中ArkTS对�
 
 在Snapshot内存快照中，虚拟节点handle包含四种RootType的虚拟节点信息，对应四种[ArkTS根节点类型](bpta-overview-of-arkts-memory-leaks-overview.md#section14558183832315)。RootType虚拟节点仅代表Root节点类型，Root节点被何种RootType虚拟节点持有，即代表该Root类型。四种RootType虚拟节点中，LocalHandleRoot类型和GlobalHandleRoot类型在API24及之后版本的内存快照中可以查看，VMRoot和FrameRoot在API26及之后版本的内存快照中可以查看。四种RootType虚拟节点如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/mpnAvNtvSw-l0xjTd3W9Lg/zh-cn_image_0000002729464439.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2DC59A0C9D784A261CA9219E267118532213317070CA330876B2B846CE11624)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/hF3TxHe_RxqGa3FKBrjXAA/zh-cn_image_0000002729464439.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E8AC09CCAC4064E6B7E773D9EDE071FE70A48D691720892A5ECC533752FDA3A)
 
 3. **进一步确认泄漏根因或堆栈**：
 
@@ -177,7 +177,7 @@ Snapshot是方舟虚拟机在运行时完整导出虚拟机内存堆中ArkTS对�
 3. 单击3处设置录制配置项。
 4. 在设置中关闭统计模式，打开录制异步栈，选择如下图4所示LocalHandle/GlobalHandle。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/DKhmYuJiSX63aVzmUA9HmA/zh-cn_image_0000002699865068.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=A90417DCA62F9654C75BA4FE7730E748E3E9BF96F540550D61E508A6A78AE86B "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/iCmzI2FRSOaCgoNEN5Gfnw/zh-cn_image_0000002699865068.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACDB89D332F47217C6CCCC863E04725A9A3AB87E12211C80FA66EF4214FB97D9 "点击放大")
 
 2. 开始录制Allocation会话，操作应用的泄漏场景。
 
@@ -189,7 +189,7 @@ Snapshot是方舟虚拟机在运行时完整导出虚拟机内存堆中ArkTS对�
 4. 下图4处显示的Category代表调用栈类别，GlobalHandle会标注Native(G)，LocalHandle会标注Native(L)。
 5. 选中下图5处ArkTS Object List，可以看到该调用栈申请的ArkTS对象，单击对应的跳转按钮可以跳转回2处内存快照中对应的ArkTS对象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/MoesSJIJQ0WgQx9wDaeHbg/zh-cn_image_0000002729584399.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DFBC74B8F2CFBCE870B7FFD08AC265FD80BCBBB73C3F4B8DF8A01C0A8443820 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/9VgJDf8TQru54DDHZ9gMMA/zh-cn_image_0000002729584399.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FD4142670633C8E521DEDAB56982E338389EDC4D2C442CA514823B253CAAF19 "点击放大")
 
 ## 运维态内存泄漏分析
 
@@ -204,7 +204,7 @@ Snapshot是方舟虚拟机在运行时完整导出虚拟机内存堆中ArkTS对�
 
 应用OOM时会产生崩溃日志，重点关注[日志规格](../harmonyos-guides/jscrash-guidelines.md#日志规格)中的几个关键字段。日志中Error name显示故障类型，OOM时显示OutOfMemoryError；Error message显示错误信息，里面会有导致崩溃的申请内存的大小，崩溃的堆类型等信息；Stacktrace表示导致崩溃的故障堆栈信息。崩溃日志示例如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/GIUCsXxfQP-tde8KKXjI7g/zh-cn_image_0000002699705180.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A186058E47ADE49F727CE0311124B77CB9CAAC0B84E6BAA89C4A53BEDDFCDE3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/aC_ZYHIASN-m_m6Hl6DIhA/zh-cn_image_0000002699705180.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=4749A6B50B742C31BB47EA9528C8D812888A978C79ED1101E345D12B7291D32F)
 
 **rawheap文件**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-modular-de
 title: 模块化设计
 breadcrumb: 最佳实践 > 应用架构 > 模块化设计
 category: best-practices
-scraped_at: 2026-11-14T08:54:05+08:00
+scraped_at: 2026-11-24T12:47:43+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:a47e1119ba716b2d4ed7f85301f1f74fd1286e4edf9f0da2b18e1ed1f66e1aba
+content_hash: sha256:e67446bf0d85505ddd0bad1c954d843a86f16e5e6fcdbc9742d10b65e6d36060
 ---
 
 ## 模块化设计理念
@@ -61,7 +61,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件概述](../harmonyos-g
 对于大型软件，不同业务和基础能力由多个团队开发，各团队之间需要代码仓隔离。如果某个或若干个HAR工程模块由某个团队负责，又想代码仓隔离，可以在独立工程中开发这些HAR，并通过公司私有的OHPM仓发布和集成编译产物。如下图所示。
 
 **图1** 多工程合作模式  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/ojxuqTnSSS6iQJrfhzXhfg/zh-cn_image_0000002462347089.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1C09CC41436744F9862163A9FA878B0DF4AFF45CC49873320D51028D529EB2B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/O5oRFxpWRAGAw4hSEHBdSQ/zh-cn_image_0000002462347089.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BF5C60E66DAAAFE36746FFA428859EAF6EA714FEC77F3746048849C5BE6FEC9 "点击放大")
 
 这部分可以发布到OHPM仓的模块，叫做共享模块，可以将公共能力共享给多个应用使用，如公司内部多个应用使用某个公共能力网络库；或者也可以将该公共能力封装成库贡献给社区，给其他应用集成使用，这样的话这个模块也只能是HAR模块。
 
@@ -89,7 +89,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件概述](../harmonyos-g
 在多HAP/HSP引用相同HAR包时，由于共享包的动态和静态差异，HAR包中的单例可能失效，影响应用冷启动性能。
 
 **图2** HAP包和HSP包分别引用相同HAR包  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/AMTvrADvQs6Ug4cTuT4f6A/zh-cn_image_0000002428868504.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=14AA615497971B6361BE4D71494E96D3D0B638F6B89608033000676BC7BF2EAC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/LSFGGSVnTt-J4Ax5bEyzdw/zh-cn_image_0000002428868504.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0E01EE5A23D6927C5D3997259CC82094F3922374E3ACD9B3CADF60C557DECBC "点击放大")
 
 如上图所示，工程内包含三个模块：HAP包作为应用主入口模块，HSP包作为应用主界面显示模块，HAR\_COMMON集成了所有通用工具类，其中funcResult是func方法的执行结果。
 
@@ -98,7 +98,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件概述](../harmonyos-g
 仅从性能角度考虑，可以采用以下方式进行修改，以缩短冷启动阶段的耗时。
 
 **图3** 切换为HAP包和HAR包分别引用相同HAR包  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/yyyEsp8kQBe4UKlrh3Nd-A/zh-cn_image_0000002462467345.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FBEBD70EB57ACC3F31238C8FFE0E6D8E26050D015A0A964AF6C1959A1CD903A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/mfu5Jr7XS1uXnIFwPDgATQ/zh-cn_image_0000002462467345.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=7036B120E8A945012E5D07F15DFFF4903431DC82A28312ACD024A32BFD1D93B6 "点击放大")
 
 **说明** 
 
@@ -161,11 +161,11 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件概述](../harmonyos-g
 
 **图4** 优化前，使用HSP包
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/63t_VgtqT42bjPPWOzkC2g/zh-cn_image_0000002194010360.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=46A3ABB39C5A1AF9350E61823731C976F3C6EC27AB63C54A9A1136542D2982F9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/_pl-fa6kRkaH5Wrz0mDwqw/zh-cn_image_0000002194010360.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=70B045E9DA92AC2F75A96058840B192861E897215B96D0F1F637E4CC3D89C316 "点击放大")
 
 **图5** 优化后，使用HAR代替HSP
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/QP72SyzLRMumcyqEMlMnEA/zh-cn_image_0000002229336161.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC68C2D4DEFF762E9C68340BE4C71FF0DEEBB40E7962A04069FC6E694646BF58 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/WwFRecqHSUOVNG2fHh4y5A/zh-cn_image_0000002229336161.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=417B08CD64918F723E37A82D9F936DE5177D905392AA59FAEB7D0ECC32D4FA44 "点击放大")
 
 优化前后的对比数据如下：
 
@@ -195,7 +195,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件概述](../harmonyos-g
 这里提到的“仅有一个HAP”是指一种设备类型仅包含一个HAP，而不是指.app文件包中仅有一个HAP。.app文件包可以包含其他设备的HAP包，例如手表和大屏设备的HAP包，以支持多设备分发。
 
 **图6** 非按需加载工程模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/VlXGSFSVRlCKc0xzViL-nA/zh-cn_image_0000002428709052.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDC43DF5C074D07C5F402FBE1834E5D27EB7B8CD83C4857EEF9B16840C374C80 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/S1jMGSPQQwWxPEGlK4jdRA/zh-cn_image_0000002428709052.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEBC089B2063B110731987D063E7BA81602E5A9101578E933CFB7CAF2377ADF7 "点击放大")
 
 上图工程架构中，除了产品模块层中与设备相关的HAP外，其他模块均为HAR。这些被依赖的HAR最终都会被编译进HAP中。
 
@@ -218,7 +218,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件概述](../harmonyos-g
 对于App Size优先的，可以考虑将公共依赖的模块封装在一个HSP模块壳中，如下图所示：
 
 **图7** 公共依赖模块通过HSP模块壳承载  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/mvceq9_CTEeV9CX3-Kvycw/zh-cn_image_0000002428709172.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB550FA1963436FBDE06C9403892EE7F87FB9489A5B176460B895908D345ACE3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/7Z3lwW_fTPicvangcsomxQ/zh-cn_image_0000002428709172.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCC38A10D5F571733FCD020255A951B29211873A5CA5459D4ED177D1DCBFB054 "点击放大")
 
 hap\_A依赖于独有的共享库har\_A，同时需要依赖于har\_C和har\_D；而按需加载模块hsp\_B依赖于独有的共享库har\_B，同时需要依赖于har\_C和har\_D。
 
@@ -233,7 +233,7 @@ hap\_A依赖于独有的共享库har\_A，同时需要依赖于har\_C和har\_D�
 对于性能优先的，则不需要再封装一个公共的HSP模块，直接依赖公共HAR包：
 
 **图8** 公共依赖模块使用HAR模块承载  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ExTglUB_R2uv8HxoB8nxwQ/zh-cn_image_0000002428869404.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7CBBD8A38EE4975B45C7D98EC28D9A34BBE608BEC902B7135BC9D9B9116A744 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/E8muKaWISfySUcdJ9JyT9A/zh-cn_image_0000002428869404.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=437BFF2806E8321F329126B14ECF4B5B5E5EEAD6AEAE662B73C603DC9BD0F8B8 "点击放大")
 
 因为公共HSP包需要安装和加载，所以会有一些性能损耗。对于启动性能敏感型的应用，则将hap\_A和hsp\_B直接依赖于har\_C和har\_D。最终编译产物里面有2个，hap\_A.hap和hsp\_B.hsp，但是这两个编译产物里面均会包含har\_C和har\_D，App Size会比采用公共HSP模型大。
 
@@ -250,7 +250,7 @@ hap\_A依赖于独有的共享库har\_A，同时需要依赖于har\_C和har\_D�
 一般多HAP应用架构普适性采用以下模型，除了产品组件中存在HAP包之外，其余的均是HAR包，如下图所示：
 
 **图9** 多HAP工程模块示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/7fTEqHh7R_CTPmzb3K0lSg/zh-cn_image_0000002462468177.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FE7B5D65388A56EC32A100116FB257F6B47EB5130A0FA2DF723B53EB48B3C7B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/6y1BVb50SaimxiPkFq8JAw/zh-cn_image_0000002462468177.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB2B58861AAC7246DA865FC41C4F2ED29AECE7D0C5568A8BC6003C787AF2AE21 "点击放大")
 
 编译产物中，多个HAP之间存在相同的HAR包（如har\_2、har\_3、har\_C、har\_D、har\_E）。这种情况下，App Size可能会增大。如果App Size不是应用的瓶颈，或者HAR包的大小较小，对App Size的影响可控，可以采用这种模型，从而减少动态加载的性能损耗。
 
@@ -259,7 +259,7 @@ hap\_A依赖于独有的共享库har\_A，同时需要依赖于har\_C和har\_D�
 上述问题的本质在于如何在HAP和HSP之间分布HAR包，以最小化App的大小并减少HAR的重复编译和打包。主要思路是将公共能力模块封装为公共HSP，从而最小化App Size。如下图所示：
 
 **图10** 多HAP工程模块示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/RmJv7ysaSnCXdKPaU13E0g/zh-cn_image_0000002428869664.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD6B7A817C66C963390D00866DA8D91B1912AE84D18F01565D1BCC1F081A6A47 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/dNkEsX3cS7WHHf2R8geK0A/zh-cn_image_0000002428869664.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4589CBC20C5E1B9164513359124BC3862B4FA230B18613D3FF42D645C3383EA "点击放大")
 
 **说明** 
 

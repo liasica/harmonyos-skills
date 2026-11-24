@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 栈内存过大导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > RSS内存泄漏故障模式说明 > 栈内存过大导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-14T08:54:20+08:00
+scraped_at: 2026-11-24T12:47:57+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:cf5ba2c4c40654490ed39932eaba769c319a553c5480092b1fb842909e4ab35c
+content_hash: sha256:6ec3282d84f2f1ad7cefe82e66470c6ead0cac04d2c033586e77e63bcd885c9f
 ---
 
 ## 概述
@@ -68,10 +68,10 @@ content_hash: sha256:cf5ba2c4c40654490ed39932eaba769c319a553c5480092b1fb842909e4
    4. 单击下图4处选择Created & Existing，筛选申请并且未释放的内存及其调用栈。
    5. 筛选出线程个数申请异常的线程及其调用栈，如下图5处框选的内容：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/tyoRWwB6QIiqXeeCdnZ-vQ/zh-cn_image_0000002729611091.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECA4AFDB1B804642BB4900210C85DFCF46089DB2B9A28B49D0959E222112BD5F "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/VI_gsFHLQziaU_jR2zglGw/zh-cn_image_0000002729611091.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FAA762AF5DC4A37BA1CAC324B6E73720CAFA99F10DF99C1CE462613F5CA154E "点击放大")
 5. 分析调用栈指向的代码段，发现应用循环申请线程，且该线程一直运行未释放，最终导致了RSS内存泄漏：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/_YfHFppHTLuPB926Q1lXaA/zh-cn_image_0000002699891764.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=17A3BD3AA6F81F4A9E9BB0B5637E69A36F4FB3651120C2667CC91AB92F94D76A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/T4V1Qf1hTRmCx2aSl4DIDw/zh-cn_image_0000002699891764.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=808E99DA56D69CAB8BC7ABEB7EC4102E11B19BD50AABFA185B985276CA3D50C1)
 
 **开发态分析思路**
 
@@ -108,10 +108,10 @@ content_hash: sha256:cf5ba2c4c40654490ed39932eaba769c319a553c5480092b1fb842909e4
 3. 录制完成后，单击System Resources下的Threads泳道，发现线程数异常增长。
 4. 先单击下图1处Call Trees按钮，再单击下图2处筛选Created & Existing，找到异常的线程申请调用栈如下图3处框中所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/DSi4KE5KS0KxEa2GfYGiOg/zh-cn_image_0000002699731878.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BB194AEBF4EEAD494AC96D0B6144BD7EBD7AD1A4E9BB422B7AD83724A3FF894 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/N4mhdzTDQ_auFfott8WcyA/zh-cn_image_0000002699731878.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF24D46A70BF25B0730EF64BE30DB8AA0CD62D29923C4DCEBE636E6E7B0768C0 "点击放大")
 5. 分析调用栈指向的代码段，发现应用正在循环申请线程，且该线程一直运行未释放，最终导致了RSS内存泄漏：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/UsZccqowQ0e8-ZOSlIBJig/zh-cn_image_0000002729491133.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F712D29DD73AA27485211DC7559F58BF0C09157E02A7A216CF292E17471CC4D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/ysHIMJZ1S5eN40wyVZJUiQ/zh-cn_image_0000002729491133.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=6ADF86D52A6489BBB03470E2C2C798FB4AE7394097699DF6C0C34C6EB9B76717)
 
 ## 修复建议
 

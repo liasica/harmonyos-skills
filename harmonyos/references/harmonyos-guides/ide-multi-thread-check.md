@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-multi-thr
 title: 方舟运行时检测
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 方舟运行时检测
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:01+08:00
+scraped_at: 2026-11-24T12:42:31+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:b3dd07cc8cc8cdfa6a10eb87f9ac1cdda02a2ca7f92782a29ca606641a3d3893
+content_hash: sha256:78413b38967c0948fef32bce0c2e08fbcdb43710742397a2033805b7df2970fa
 ---
 
 ## 方舟多线程检测
@@ -22,7 +22,7 @@ content_hash: sha256:b3dd07cc8cc8cdfa6a10eb87f9ac1cdda02a2ca7f92782a29ca606641a3
 
   点击**Run > Edit Configurations >** **Diagnostics**，勾选**Multi Thread Check**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/vaCPhRcRQm-b65n2FXz-cA/zh-cn_image_0000002779567500.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=13CF7356CE205500DBC97401FBCB0D47E5CF08AAEBC277D50ECF12E327839605)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/gLSumM_qQkyHpeqoRcQSgg/zh-cn_image_0000002779567500.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D8082318FAAC013E768ACB5ECAD4AE123B05516BC57FC9654C5502920EC0AC2)
 
 * **方式二**
 
@@ -43,7 +43,7 @@ content_hash: sha256:b3dd07cc8cc8cdfa6a10eb87f9ac1cdda02a2ca7f92782a29ca606641a3
 
    如果是通过方式三调用setMultithreadingDetectionEnabled接口开启，发生多线程安全问题时，该接口支持应用崩溃和不崩溃两种场景。若设置为崩溃，则应用退出并生成cppcrash日志；若设置为不崩溃，应用不会退出，同时生成arktsenvsan日志，此时应用可通过[hiAppEvent订阅地址越界事件](hiappevent-watcher-address-sanitizer-events-arkts.md)来感知多线程安全问题，并生成hilog日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/YdirOZTTS_WspRzWxWcPvg/zh-cn_image_0000002808767079.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=594EA745885B15F70F8796A07DB8E2B87321B5CB95F9ECD3CD8AC0430426A4D7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/1LbX2WJTRZilemccMPqANw/zh-cn_image_0000002808767079.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=44E2ADF84DF88DED77D43E278986427E4B03E2CA3D8BCD1FA26738709B7BF2DF)
 
 ## 方舟native模块加载异常信息增强
 
@@ -57,7 +57,7 @@ content_hash: sha256:b3dd07cc8cc8cdfa6a10eb87f9ac1cdda02a2ca7f92782a29ca606641a3
 
   点击**Run > Edit Configurations >** **Diagnostics**，勾选**Enhanced Error Info**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/SNaa0OCAQ42wDnHpCvSkRw/zh-cn_image_0000002808887161.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=903CF705E5726B11AF107A3B6C3536BF70E67F343167F0F65C3CAF57423C1DB8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/dmHVjNBYRMmiqzU1eTFpEg/zh-cn_image_0000002808887161.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=B00D30F066FC99D83A3CB5D2113C2DEF0F422AEDE843420418E412E65B44BC84)
 
 * 方式二
 
@@ -72,4 +72,4 @@ content_hash: sha256:b3dd07cc8cc8cdfa6a10eb87f9ac1cdda02a2ca7f92782a29ca606641a3
 1. 运行或调试当前应用。
 2. 当程序出现因native模块加载导致的报错信息时，会显示更详细准确的错误信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/fZL6KywwRWKxN7PZ7GHjmw/zh-cn_image_0000002779407524.png?HW-CC-KV=V1&HW-CC-Date=20261114T004713Z&HW-CC-Expire=31536000000&HW-CC-Sign=864DA92142CA2F6C183FE8C618412A28E02D8B82568DFA10A18CEAD498055175)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/CCGz6BddQhyLawWy7K0_5Q/zh-cn_image_0000002779407524.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=D68B917F34B3B356FE6F52F80CE239E00844AEC2962C8EBC86C33F2887814C73)

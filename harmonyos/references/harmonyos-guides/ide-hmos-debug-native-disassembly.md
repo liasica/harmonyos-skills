@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: 汇编调试
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 汇编调试
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:16+08:00
+scraped_at: 2026-11-24T12:42:46+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:2fe98170c3adf25ade6f48d885b44e7240ddcf44eddf96a898ffafed5fb90cbf
+content_hash: sha256:619d74b8417be874d52833a1b7fcca1a325ae8574657dd005e6b1a36dd286974
 ---
 
 鸿蒙电脑DevEco Studio支持查看汇编代码并进行调试，此外，当程序中断到没有源码的位置时（如step into到一个没有调试信息的函数中），DevEco Studio会打开汇编视图，让您了解程序当前停住的地址及对应的汇编码。
@@ -14,14 +14,14 @@ content_hash: sha256:2fe98170c3adf25ade6f48d885b44e7240ddcf44eddf96a898ffafed5fb
 
 在某一个堆栈处右键，在弹出菜单中选择**打开反汇编视图**，可以查看该栈帧对应的汇编码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ZBTLSO9DTAW23i6Y0XpJYA/zh-cn_image_0000002781311068.png?HW-CC-KV=V1&HW-CC-Date=20261114T004916Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EE6D905CFAB0103DADAC184DDD13294158DD87595DC1E45DD4CC10355876182)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/4HbVWHJAR0KJRMXJlmDkEA/zh-cn_image_0000002820681167.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=83C397211129B5A4DDA6A8DD7E7E3D055B896BCB3AE060664668FA89352D9A59)
 
 汇编视图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/OpAoSlZbReiPl988BhYLwA/zh-cn_image_0000002781471002.png?HW-CC-KV=V1&HW-CC-Date=20261114T004916Z&HW-CC-Expire=31536000000&HW-CC-Sign=542617311244392AC7BF31BDAB512EF43AF536C99CD0EF457685A02279FFB6AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/iVD9nt9pSnCQIE7aGOKC7w/zh-cn_image_0000002792001204.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=453CAD3EE4316F0B7B662F5FEF7C5F47C96F98C3AEC6C5B7844B9C04C8584BE4)
 
 ## 单步调试
 
 汇编视图下，单步按钮默认以汇编指令级别进行单步调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/YkkjSL9OSxK8u48DwnDOPQ/zh-cn_image_0000002810750665.png?HW-CC-KV=V1&HW-CC-Date=20261114T004916Z&HW-CC-Expire=31536000000&HW-CC-Sign=3442C81890F904A926F54817BD46E1E20CC616925BCE57D3709D80FD304A4CED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/BVtaOhQKR7qSySA6MdUh2w/zh-cn_image_0000002791841230.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0C593AD49DE4146E5B8082DCFEE042445757447B77CDEE7372C4621885D68CF)

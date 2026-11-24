@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-common-lis
 title: 常见列表操作
 breadcrumb: 最佳实践 > 布局与弹窗 > 常见列表操作
 category: best-practices
-scraped_at: 2026-11-14T08:54:05+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:4fd5e98b068226ab3e04e4211d44c4aa51fc14a1a9721d3e08fea588369986bc
+scraped_at: 2026-11-24T12:47:44+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:9dc187eee363d4ae1ed47f4a77a6d55fda3e04f02844ced1eb33d81ae5e404df
 ---
 
 ## 概述
@@ -103,13 +103,13 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 ### 嵌套滚动
 
-嵌套滚动是指多个滚动容器相互嵌套，并能协同工作的滚动机制。例如：在移动端应用中，一个页面整体可以垂直滚动，而其中某个子组件（如Tab内容、评论区、图片列表）也只支持独立滚动。根据滚动对象的不同，嵌套滚动主要分为Scroll组件嵌套List组件、Web组件嵌套List组件、List组件嵌套List组件等。
+嵌套滚动是指多个滚动容器相互嵌套，并能协同工作的滚动机制。例如：在移动端应用中，一个页面整体可以垂直滚动，而其中某个子组件（如Tab内容、评论区、图片列表）也支持独立滚动。根据滚动对象的不同，嵌套滚动主要分为Scroll组件嵌套List组件、Web组件嵌套List组件、List组件嵌套List组件等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/YrjAnxTuTnGzeyEt9Llskw/zh-cn_image_0000002361711474.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AAF1FC27594D78EBF4E4CA2B51CC617AE635156FBEA2A1090E0F2B9D7AB517D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/aIFg0_fiQaSlpBMcm5B4Bw/zh-cn_image_0000002361711474.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3E937C1DD8C3472B7629F65909F948FD3EE70AE786EB387CB6681EC793F692E "点击放大")
 
 * List组件与Scroll组件的嵌套滚动：[示例2（嵌套滚动实现方式一）](../harmonyos-references/ts-container-scroll.md#示例2嵌套滚动实现方式一)
 * Web组件与List组件嵌套：[Web组件嵌套滚动](../doccenter-capabilities/web-nested-scrolling.md)
-* List组件与List组件嵌套滚动：[双层嵌套list,如何使用LazyForEach起作用](../doccenter-dev-faq/faqs-arkui-337.md)
+* List组件与List组件嵌套滚动：[双层嵌套List中LazyForEach如何正常生效](bpta-common-list-operations.md#section19211347152113)
 
 **说明** 
 
@@ -149,7 +149,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 当List组件内容大小小于组件自身时，默认不开启滚动效果，可以设置[edgeEffect](../harmonyos-references/ts-container-scrollable-common.md#edgeeffect11)(EdgeEffect.Spring, { alwaysEnabled: true })开启滚动效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/w02vK2efTgCYNg5kHjXkyw/zh-cn_image_0000002395231413.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DB697338AD003A9542979A729D0D35DA571C40979BC7C84176C3F779F7BE4CF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/iso7YHygRZqf8kjcR0as5A/zh-cn_image_0000002395231413.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=909561B10A5523C5809C00A0210BEC7736803E0FDA7237AF24A14F7C6DBCB46F "点击放大")
 
 **滚动过程中禁用滚动：**可以通过enabled(false)关闭滚动使能，但是如果是惯性滚动触发的，List仍然能依靠惯性滚动一段距离。如果想要实现禁用滚动及惯性滚动，可使用以下2种方式：
 
@@ -180,7 +180,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/Hi6O4XFgR7y-PGIPsTf33w/zh-cn_image_0000002361871362.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A5559021CF52142F7368EF5BA5033E5188854E23BAD07295C1C14443D88FD07 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/MlT7ffTAQriemHcUqA-WHg/zh-cn_image_0000002361871362.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9C48402D0B3D7093AB8148F234F64392CABB9FF737431D48282B75A9401E534 "点击放大")
 
 ## 列表排版
 
@@ -229,7 +229,7 @@ build() {
     .overlay(this.overlayBuilder())
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/2cMsU9GBS7yj39LqAOnIyQ/zh-cn_image_0000002395391277.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=02E190818C9BF876D22910DAA672FB1E10A61C7F3F2C503B708B3846DA8242B8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/27XiwqzbRtCncXFg0M6YaA/zh-cn_image_0000002395391277.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABD78609C347EB84DAECCF6A05F116069CDB3BE9FAB0F8AC29B10D916878D67A "点击放大")
 
 **折叠展开：**列表项的折叠与展开用途广泛，常用于信息清单的展示、填写等应用场景。通过改变ListItem的状态，来控制每个列表项是否展开，并通过animation和animateTo来实现展开与折叠过程中的动效效果。具体请参见：**[折叠与展开](../harmonyos-guides/arkts-layout-development-create-list.md#折叠与展开)**
 
@@ -335,7 +335,7 @@ Column() {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/MUo3FfZ-TFiJeDnXwKIxdA/zh-cn_image_0000002361711486.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD9E5CB7FA21CD1C0E2A488AE5753BAA3288E2D9601B3265BD8CCD5DE5CE77EB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/I6cuCy3dQhOQb_S73xoQtg/zh-cn_image_0000002361711486.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4A060EF91CB406EBEA72A3A5F19B180BEFCC381BABBB0D4AA458E6F2E2AA914 "点击放大")
 
 **局部数据刷新：**通过直接修改单一ListItem的数据源即可实现。
 
@@ -388,9 +388,51 @@ List({ space: 3 }) {
 .maintainVisibleContentPosition(true)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Ue_UYc8PTMq6ihtdKdJ2iA/zh-cn_image_0000002395231433.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=941BB94EF248658F47A699E73E9CFC78EA9B05B89E046C23398AADEBA3D3240E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/3_vvmU6JQHOQGKoeHM7UcQ/zh-cn_image_0000002395231433.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9904430A2BCE493105D88DF451615345B0F782448A61C2E0AE9C9693EB8B193 "点击放大")
 
-**方案二：**可以给List添加scroller控制器，将列表跳回至原先所在位置this.scroller.scrollToIndex，具体请参考示例：[List的下拉加载如何回滚到当前展示位置](../harmonyos-faqs/faqs-arkui-268.md)
+**方案二：**可以给List添加scroller控制器，将列表跳回至原先所在位置this.scroller.scrollToIndex，示例代码如下：
+
+```screen
+@State isRefreshing: boolean = false;
+@State arr: String[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+// Used to control the scrolling position of the list and maintain consistency of the view after refreshing
+private listScroller: Scroller = new Scroller();
+@StorageProp('topRectHeight') topRectHeight: number = 0;
+
+build() {
+  NavDestination() {
+    Column() {
+      Refresh({ refreshing: $$this.isRefreshing }) {
+        List({ scroller: this.listScroller, space: 10 }) {
+          ForEach(this.arr, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('100%')
+                .height(100)
+                .textAlign(TextAlign.Center)
+                .backgroundColor(Color.Grey)
+            }
+          }, (item: string) => item)
+        }
+        .width('100%')
+        .height('100%')
+      }
+      .onRefreshing(() => {
+        setTimeout(() => {
+          this.isRefreshing = false;
+        }, 2000)
+        let originalCount = this.arr.length;
+        this.arr.unshift('11');
+        this.arr.unshift('12');
+        this.listScroller.scrollToIndex(this.arr.length - originalCount);
+      })
+    }
+  }
+  .width('100%')
+  .height('100%')
+  .padding({ top: this.getUIContext().px2vp(this.topRectHeight) })
+}
+```
 
 ## 列表拖拽
 
@@ -416,13 +458,13 @@ List({ space: 3 }) {
 * 支持下拉加载历史聊天记录
 * 实时新增并展示最新聊天内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/tQEG-GiRTYevBZEAgAD7aw/zh-cn_image_0000002361871382.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=54AA62DA761202258D87EDDA7894BBE2D49FAC0C04E874EAE0CDEEB1A81E534F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/oxguPLZoTtGWndgTAouCXA/zh-cn_image_0000002361871382.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9EED8133AB861029510085A1F29D422779A8695D31FEC5A82C8261623EAAD34 "点击放大")
 
 **消息气泡**
 
 在ListItem中使用[Badge](../harmonyos-references/ts-container-badge.md)组件可实现给列表项添加标记功能。Badge是可以附加在单个组件上用于信息标记的容器组件。例如，在消息列表中，若希望在联系人头像右上角添加标记，可在实现消息列表项ListItem的联系人头像时，将头像Image组件作为Badge的子组件。在Badge组件中，count和position参数用于设置需要展示的消息数量和提示点显示位置，还可以通过style参数灵活设置标记的样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/oHKszWXAStuLtOjRuEh9dQ/zh-cn_image_0000002395391281.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFDE1E7EA191CB803E29AE399174C282A54CB01AF9CACEFB5E184977F577A747 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/RS-VehawQh23UoFUPBCB5w/zh-cn_image_0000002395391281.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=896D5B14DBEF9244F371009BC230C77FC7DEAE36F85CF0D0978FD66D50B0D7BB "点击放大")
 
 **实现方案**
 
@@ -451,7 +493,7 @@ if (item.isNewMessage) {
 
 **左滑删除/置顶**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/DonFOz1MSvmOjnSl_FoHNA/zh-cn_image_0000002361711502.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD0257C827DAF930ECC2F02CE1267C17D22CDB244AE007428A2DA902A7512711 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/N0gn1IYbS2SYIl-YHPcTpQ/zh-cn_image_0000002361711502.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DFE54000C71AC7CC541C10848317395E994049BF2AA241C4025B47D7294B660 "点击放大")
 
 **实现方案**
 
@@ -506,7 +548,7 @@ itemEnd(item: Item, index: number) {
 
 **滚动后跳转到指定位置**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/1WAJNxmCQkScRjlY08ExTA/zh-cn_image_0000002395231445.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=79A01018166F79D304F2BCEF88F948EE6AC8D7035A877842E9356146DAD99C7E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/LhnmPrCzTBSN-XqGqZ7FpQ/zh-cn_image_0000002395231445.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=A371E6319FF5B641AA8936170A58A6B098D816069EE3BF2A4A21545CB1737848 "点击放大")
 
 **实现方案**
 
@@ -539,7 +581,7 @@ if (this.isFlag) {
 
 **消息列表拖拽排序**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/CqG0KWX5QGWYFfwBP7Vm5w/zh-cn_image_0000002361871390.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DC545A6A10626493505D12CDC87385775CBD519C12D79DCA1222EB1F9355404 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/iZD0VHiYRae0MmTz3pWJ7g/zh-cn_image_0000002361871390.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9256AD7F6352D3915A0A9292996CD8BBC97FF1F3E127CF200E2C12A33A8B3DB "点击放大")
 
 **实现方案**
 
@@ -627,7 +669,7 @@ if (this.isFlag) {
 
 **初始化显示到底部**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/bY-KZQIZTPmX5VXDhoQavA/zh-cn_image_0000002395391293.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F08CDBBE6DB419CC31E0C8004D3570CA477BF5761CC532170940AF5F3B258B7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/VMr0U6hwR8-Vv_Xy3zqnLw/zh-cn_image_0000002395391293.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=828BBEF62D7871C3CD644CD568FF2FDCC38BB4D1CC949E455AA8432AA8BB487D "点击放大")
 
 **实现方案**
 
@@ -693,7 +735,7 @@ List({ space: 10, scroller: this.scroller, initialIndex: this.itemInfo.message.l
 
 **下拉加载更多聊天记录**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/h5M4_zrnRoOhEWkgVuCQTw/zh-cn_image_0000002361711514.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AC0053412CF8F77710B5F8B3B146925261D74D741A4770FAF5C1AC8AA2FAE55 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/odT_B6pTR9yU-b3k0HP90A/zh-cn_image_0000002361711514.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=3419542B93610F8FA8DBCDB360BF53A5E9B55BEFA79F9701EEAADD823D491041 "点击放大")
 
 **实现方案**
 
@@ -775,7 +817,7 @@ Refresh({ refreshing: $$this.isRefreshing }) {
 
 **新增聊天记录**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/L8lArmk1SJ-GT2k12RYaSg/zh-cn_image_0000002395231449.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE80BBD20B1942FB522440D3DD14FFE608A4A5E8A8CBE31F962EA1ECF09D3FAB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/wWYOTO3pRfy-hlh53AJ8xg/zh-cn_image_0000002395231449.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC21BFB373556EF67F32F7D264F8BB713D0C684B2F8469341A0ACED1E2F676D8 "点击放大")
 
 **实现方案**
 
@@ -822,6 +864,134 @@ Image(this.inputMessage === '' ? $r('app.media.send_off') : $r('app.media.send_o
 ### 案例二：常见列表流场景
 
 列表流是采用以“行”为单位进行内容排列的布局形式，每“行”列表项通过文本、图片等不同形式的组合，高效地显示结构化的信息，当列表项内容超过屏幕大小时，可以提供滚动功能。具体场景介绍请参见：[常见列表流](../harmonyos-guides/arkts-common-list-flow.md)。
+
+## 常见问题
+
+### 双层嵌套List中LazyForEach如何正常生效
+
+**问题场景**
+
+在外层ListA中，每个ListItem包含一个内层List，内层List使用LazyForEach实现懒加载效果。设置外层ListItem高度会导致内层LazyForEach失效（所有项一次性加载），而不设置高度时虽可正常懒加载，但可能导致内层列表数据显示不全。
+
+**解决措施**
+
+固定内层List高度。参考如下代码：
+
+```screen
+import { NestedListItemDataSource } from '../utils/DataSource';
+
+const bgColors: ResourceColor[] = [Color.Blue, Color.Gray];
+
+/*
+ * Header component for nested list items
+ * @param title - Display text for header
+ */
+@Component
+struct PageHeader {
+  title: string = '';
+
+  build() {
+    Column() {
+      Text(this.title)
+        .width('100%')
+        .height(40)
+        .fontSize(14)
+        .backgroundColor(Color.Yellow)
+        .fontColor(Color.Blue)
+        .textAlign(TextAlign.Center)
+    }
+  }
+}
+
+@Component
+struct ItemComponent {
+  title: string = '';
+  @Prop listData: string[];
+
+  generateDataSource() {
+    let datasource: NestedListItemDataSource = new NestedListItemDataSource();
+    for (let index = 0; index < this.listData.length; index++) {
+      const element = this.listData[index];
+      datasource.pushData(element);
+    }
+    return datasource;
+  }
+
+  build() {
+    Column() {
+      PageHeader({ title: this.title })
+      List() {
+        LazyForEach(this.generateDataSource(), (data: string, index) => {
+          ListItem() {
+            Text(data)
+              .width('100%')
+              .fontSize(14)
+              .backgroundColor(Color.White)
+              .fontColor(bgColors[index % bgColors.length])
+              .textAlign(TextAlign.Center)
+          }
+          .height(60)
+        }, (data: string, index) => {
+          return data + ' - ' + index.toString();
+        })
+      }
+      .width('auto')
+      .height('auto')
+      .layoutWeight(1)
+      .scrollBar(BarState.Off)
+      .cachedCount(10)
+      .friction(1.25)
+      .edgeEffect(EdgeEffect.None)
+    }
+  }
+}
+
+function generateData(pre: string, count: number) {
+  let data: string[] = [];
+  for (let index = 0; index < count; index++) {
+    const element = pre + '-' + index.toString();
+    data.push(element);
+  }
+  return data;
+}
+
+@Component
+export struct DoubleNestedList {
+  private scroll: Scroller = new Scroller();
+  @StorageProp('topRectHeight') topRectHeight: number = 0;
+
+  @Builder
+  private mainListView() {
+    List({ scroller: this.scroll }) {
+      ListItem() {
+        ItemComponent({ title: 'A', listData: generateData('A', 200) })
+      }
+
+      ListItem() {
+        ItemComponent({ title: 'B', listData: generateData('B', 20) })
+      }
+    }
+    .divider({ strokeWidth: 10, color: Color.Gray })
+    .height('100%')
+    .width('100%')
+    .scrollBar(BarState.Off)
+    .edgeEffect(EdgeEffect.None)
+  }
+
+  build() {
+    NavDestination() {
+      Column() {
+        this.mainListView()
+      }.width('100%')
+      .height('100%')
+      .backgroundColor(Color.White)
+    }
+    .width('100%')
+    .height('100%')
+    .padding({ top: this.getUIContext().px2vp(this.topRectHeight) })
+  }
+}
+```
 
 ## 示例代码
 

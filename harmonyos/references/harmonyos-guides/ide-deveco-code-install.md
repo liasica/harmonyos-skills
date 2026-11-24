@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 下载与安装
 breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 下载与安装
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:22+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:2b8d5d7cb23f7f050287b3aaf6e985ae330d96b0caf94096163c8c8fc862d68d
+scraped_at: 2026-11-24T12:42:51+08:00
+doc_updated_at: 2026-11-23
+content_hash: sha256:c226d9990b506c6239678c7aaeeffada979db428fee52317dcebe514fcc8576e
 ---
 
-DevEco Code支持通过npm包管理器进行分发，开发者可以在系统命令窗口或PowerShell中全局安装后，独立调用相关命令，灵活性高。同时，DevEco Code也支持在DevEco Studio的集成终端中直接使用，开发者无需额外配置即可在DevEco Studio终端调用相关命令，操作便捷。
-
-Windows/macOS版DevEco Code支持通过npm安装，鸿蒙电脑版DevEco Code支持通过npm安装和在DevEco Studio中安装。
+DevEco Code支持通过npm包管理器进行分发，开发者可以在系统命令窗口或PowerShell中全局安装后，独立调用相关命令，灵活性高。
 
 ## 通过npm分发安装和启动
 
@@ -193,42 +191,4 @@ deveco upgrade
 ```shell
 deveco uninstall   // 卸载运行时数据和安装包，适用于彻底清除所有数据的场景
 npm uninstall -g @deveco/deveco-code   // 保留运行时数据，只卸载安装包，适用于保留配置项卸载重装的场景
-```
-
-## 在DevEco Studio中安装和启动
-
-**说明** 
-
-当前仅鸿蒙电脑版DevEco Code支持在DevEco Studio中安装和启动。
-
-### 安装
-
-在鸿蒙电脑版DevEco Studio的菜单栏点击**安装DevEco Code**，等待完成安装。
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/lQ5IS6oOQ82qDBPm5-zluA/zh-cn_image_0000002779407184.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=C362CFD12480B078B3CA2D6120C58D3C9BA3573C2668D7CF8115A62C9B0B5590 "点击放大")
-
-### 启动与登录
-
-1. 安装完成后，点击**新对话**新建并开启一个会话。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/png1vA53Tqm98FgghHi3tA/zh-cn_image_0000002779567160.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=46077927F091415253DFF5C8C97EF6EDAB3E5C168E6B9501E5984CE2E7661283)
-2. 选择信任当前文件夹，并点击链接登录华为账号。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/P-m94FuFRVaI-mW-Irqp9A/zh-cn_image_0000002779407182.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=80A4F7170ADF92C8DF6A5BE47F91949A640218CF363C7FC9F4777ACC35F73F2C)
-3. 登录完成后，在终端开始体验DevEco Code。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/YHanyrdHS8i2KJL5lLDoOw/zh-cn_image_0000002779567162.png?HW-CC-KV=V1&HW-CC-Date=20261114T004732Z&HW-CC-Expire=31536000000&HW-CC-Sign=B447ACCCAF77AAAB5A42D39B6C9E646DA11A7A5AA8CAB88776F6E434758A25DD "点击放大")
-
-### 更新与卸载
-
-卸载命令
-
-```shell
-deveco uninstall
-```
-
-更新命令
-
-```shell
-deveco upgrade
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-inte
 title: 多设备交互
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备交互 > 多设备交互
 category: best-practices
-scraped_at: 2026-11-14T08:54:09+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:74747f649b2ff7bdaa9fd068051a0ae17fd7165cb9dbd643218938a305c90597
+scraped_at: 2026-11-24T12:47:47+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:023db563106b5c51578f887758859fe15285a07ab927477e52ce8cc10929e90b
 ---
 
 ## 概述
@@ -39,7 +39,7 @@ content_hash: sha256:74747f649b2ff7bdaa9fd068051a0ae17fd7165cb9dbd643218938a305c
 交互归一是一种面向多设备输入的响应框架，通过将不同输入设备的交互行为抽象为同一事件，来简化开发逻辑，例如：触屏点击、触控板点击、鼠标左键单击、遥控器OK键确认等统一抽象为点击事件；遥控器功能键、键盘快捷键抽象为按键事件。交互归一实现对多样化输入源的统一处理，确保组件在不同交互场景下具备一致的行为逻辑与用户体验。
 
 **图1** 输入设备  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/DSiMweffROWQGZkhEqFxnQ/zh-cn_image_0000002499409917.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=2403CDDAF9D61FE0C9CE7A0CFC126EFC1B9531F40D3EC062B9BB4BD0A51CFBE4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/w57w1GOmQd6C-9lELmWZHA/zh-cn_image_0000002499409917.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4DEF8DFF8EACC5E4D4CF95B56F55AD87FEFD017B05CA5AC1926DEBD5720D1EF "点击放大")
 
 交互归一并非将所有输入方式简单合并为单一事件或通过一个API处理，而是通过对不同设备的几十种底层交互事件进行语义抽象与归类，在保证交互差异可控的前提下，大幅减少事件类型数量。最终形成的是一组标准化的交互API集合，开发者仍需根据具体场景选择并适配相应的抽象事件，以实现跨设备的一致性与灵活性兼顾的交互体验。
 
@@ -55,8 +55,9 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 
   场景案例：使用手写笔在屏幕上书写，当手写笔在屏幕的某个位置第一次点击的位置（例如画板），当前画板组件就是交互的目标。
 
-  **图2** 手写笔套件效果图  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/kDghc4SFSUGDXUtr9YBRbw/zh-cn_image_0000002513308069.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD5CF01DCF0EA4A14201BD17B7471DEC2000A38966B087DE116E3F313052802F "点击放大")
+  **图2** 手写笔套件效果图
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/5I4z-QTpSCa42V9e0GT6ZA/zh-cn_image_0000002821317037.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=6948BC67229A896B5DA234148FB05C986C8EC2F997E4C314D67A2171AFE47CBA "点击放大")
 
   手写笔套件的示例代码如下所示：
 
@@ -109,7 +110,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
   下图为常见基础输入事件，在不同输入设备上的触发方式。
 
   **图3** 输入设备基础输入事件触发方式一览表  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/DFbfQJR8QJqUD9h10Q7nYg/zh-cn_image_0000002545929217.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=D070BA89B4ADABDA75FC2CD3DD7CCD3DFEC5CBBC971F6D6C5B49B9E67BAF82A9 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/9_z1oCF_TG6agbpELpcEkA/zh-cn_image_0000002545929217.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=A450AD04AA3D6F1A501B1E57AA40AA6F90D91E121BA4DD278CC2A86565581C12 "点击放大")
 
   **说明** 
 
@@ -130,7 +131,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 下图为常见手势事件在不同输入设备上的触发方式。
 
 **图4** 输入设备手势事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/QbhOAkmISIyxhWGTF7yU7w/zh-cn_image_0000002518761840.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=C918DC7CA2F8BBE651AF844660DA9BD9418D0C77AF15D343795F6BA4B430D654 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/-s_ogA1VQ1KS63Nbnb3JGw/zh-cn_image_0000002518761840.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FC9D55AE15F794803EAFB3ADACED5A34E1490A462E50CDF4DE33B79E0D6B137 "点击放大")
 
 如下是旋转手势的示例代码：
 
@@ -210,10 +211,10 @@ Grid() {
 * 走焦：触发走焦时，系统遍历组件树中可走焦的组件。当前焦点框架支持三种走焦算法：线性走焦，按照子节点在节点树中的挂载顺序进行焦点导航；投影走焦，适用于容器内子组件尺寸不一的场景，通过空间位置关系计算最佳焦点目标；此外，开发者还可通过 [tabIndex](../harmonyos-references/ts-universal-attributes-focus.md#tabindex9)和[nextFocus](../harmonyos-references/ts-universal-attributes-focus.md#nextfocus18)灵活自定义走焦逻辑，满足复杂交互需求。详情可参考[走焦规范](../harmonyos-guides/arkts-common-events-focus-event.md#走焦规范)和[走焦算法](../harmonyos-guides/arkts-common-events-focus-event.md#走焦算法)。
 
   **图5** 使用键盘走焦  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/FwWB1qVDTIGiSWiFRH6ZeA/zh-cn_image_0000002728977626.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EFE70A2CEE8DC4DBC038A8D1C909435D3AB24C97F82F043D654A34B383D565C "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/kxUn3P5NQ_C-Lbs5nBBVZw/zh-cn_image_0000002728977626.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6E94E6EBB1031F4C25BD4F90234F1B0091974AEA6A6BF2338FB32BE0C0A40BD "点击放大")
 
 **图6** 走焦样式指引案例  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/OVhkJ0BETSKN5NhCMpD_YQ/zh-cn_image_0000002499449901.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8F249276DD7851F588F291FE56FEE26C05D35A89AEDD4E3327A678C1DD27587 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/7IRd1holR9StzHoj1ei86Q/zh-cn_image_0000002499449901.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CD37E8D4970B410C1A3EE89A34F43BEEB1876CDA43C0BAC76A7322B66256D3A "点击放大")
 
 更多焦点事件的能力和规范请参考[支持焦点处理](../harmonyos-guides/arkts-common-events-focus-event.md)。
 
@@ -230,7 +231,7 @@ Grid() {
 下图为不同输入设备上支持触发焦点事件的方式。
 
 **图7** 输入设备焦点事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/YyyhnS3NSkegUNTG3xiScA/zh-cn_image_0000002545901089.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC648444A52FC2A6B2ED059087F36165FC38E1D853F96D90B6325CFEC829B9E0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/0T7SxC77Q9CGNhDVIk5mgw/zh-cn_image_0000002545901089.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=8805EDC881FE8C913BF431701D0F4E75D9C34ECED8D68BA67BBC7833C6DB4019 "点击放大")
 
 ### 拖拽事件
 
@@ -256,7 +257,7 @@ Grid() {
 下图为不同输入设备上触发拖拽事件的方式。
 
 **图8** 输入设备拖拽事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/J80y7BzYTMinMYqjJ_W1lA/zh-cn_image_0000002545813259.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DD53846902AD992C2D6DA596AA3863A5D0905F275BB94B93EA098E2CBA9F9F4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/AruFEphrQRmEL9k9XfheMQ/zh-cn_image_0000002545813259.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=26D38268159B19BF7668C47F7081DF3160B2848300DD08B50AB25907AB438254 "点击放大")
 
 如下是图片拖拽的示例代码：
 

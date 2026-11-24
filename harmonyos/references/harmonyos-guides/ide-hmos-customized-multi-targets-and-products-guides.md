@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-cust
 title: 能力说明
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 配置构建流程 > 配置多目标产物 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:18+08:00
+scraped_at: 2026-11-24T12:42:47+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:52508d8e4303f484b2132097a8bb1c24bc28b4b4c8f16c6d5c1a3e1c4f033fb3
+content_hash: sha256:50882d647b347545fbbde74dd5dba8579ac242633177615182a21834233687bc
 ---
 
 通常情况下，应用厂商会根据不同的部署环境，不同的目标人群，不同的运行环境等，将同一个应用定制为不同的版本，如国内版、国际版、普通版、VIP版、免费版、付费版等。针对以上场景，鸿蒙电脑DevEco Studio支持通过少量的代码配置以实例化不同的差异版本，在编译构建过程中实现一个应用构建出不同的目标产物版本，从而实现源代码、资源文件等的高效复用。
@@ -941,7 +941,7 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
 
 通常情况下，您首先需要在签名配置界面或工程的build-profile.json5文件中配置签名信息。例如在**文件 > 项目结构 > Project/Product**界面，分别配置default、productA和productB的签名信息，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Amf-fJ77SCGZ-5K-AkYehQ/zh-cn_image_0000002810630915.png?HW-CC-KV=V1&HW-CC-Date=20261114T004729Z&HW-CC-Expire=31536000000&HW-CC-Sign=907034D31CAEE1803F4C93DFFB93A71B8A5FD5742C5ACBC324C052BCE397F630)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/uDOK1xkGS9e0vA-PD7PmtA/zh-cn_image_0000002791841028.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0704733EF5FF03441B6F702204912CC611ADEE0455AFEBDD6E62E7166B3FBDE)
 
 签名信息配置完成后，再添加各个product对应的签名文件，示例如下所示：
 
@@ -1101,13 +1101,13 @@ products中的icon和label字段在编译时会替换[app.json5](app-configurati
 
 每个target对应一个HAP，每个product对应一个APP包，在编译构建时，如果存在多product或多target时，您可以指定编译具体的包。
 
-单击界面上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/5YuFi9LvSIa75TvkfcZZQw/zh-cn_image_0000002781311432.png?HW-CC-KV=V1&HW-CC-Date=20261114T004729Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD4AD7283071E4B3C489D7F2A55C3F74C5892EE5C3F18BA2B42AB88DAA08340C)右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Ux7caY6tQNW4ZSKbjeJ1PQ/zh-cn_image_0000002781311428.png?HW-CC-KV=V1&HW-CC-Date=20261114T004729Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC121E7599C3464A786FC536CB32797BB7A1F35D543B45765898ADDC95BC1296)，选择**Product配置**，指定需要打包的**Product**及**Target**，然后单击**应用**保存。例如选择"ProductA"中，entry模块对应的"free" Target。
+单击界面上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/JRrdQm4tQgOop6vaPM3XGQ/zh-cn_image_0000002792001000.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=3526AA4187A87D068A2A799C03CECA1B02457F4A77EE08CCD45A990327F19B10)右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/JiGFSJcfR9iNwmeoeKMqow/zh-cn_image_0000002791841026.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B04BDF34EAFB998B7CEF7107996FF68C1237F7F66B7C12013E8CE232E6761EA)，选择**Product配置**，指定需要打包的**Product**及**Target**，然后单击**应用**保存。例如选择"ProductA"中，entry模块对应的"free" Target。
 
 * **Product**：选择需要构建的APP包。
 * **构建模式**：选择[构建模式](ide-hmos-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 * **Target****选择**：选择各个模块的Target，该Target需要包含在定义的Product中才能选择，如果未包含则显示"No Target to apply"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/EVpbO1oPT-WE0yoCFPVChA/zh-cn_image_0000002781471372.png?HW-CC-KV=V1&HW-CC-Date=20261114T004729Z&HW-CC-Expire=31536000000&HW-CC-Sign=55CF9714F9406F7640C2A71EE40C5E5371128E188D64C34700323A35946F0F4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/V5B1OHQVST2Cy3UZlRLWvA/zh-cn_image_0000002820720969.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBF57AE03BE6EE49C54C1DA693799405D8BAA0A350106C53B69632F090506F3C)
 
 然后执行编译构建APP/HAP的任务：
 
@@ -1116,17 +1116,17 @@ products中的icon和label字段在编译时会替换[app.json5](app-configurati
 
 如果想将某个模块下的指定target打包生成HAP，可以在工程目录中，右键点击模块，选择**构建模块**，此时DevEco Studio将构建生成模块下指定target对应的包。例如，按照上述配置，此时DevEco Studio将构建生成entry模块下free的HAP。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/A-P_dzSpTM2c-CR8D4svTg/zh-cn_image_0000002810630921.png?HW-CC-KV=V1&HW-CC-Date=20261114T004729Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BD59AE913FDE3668CEB825C6533586402CE6EEDAA8E250CC43C42D5C8FF1820)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/brTXLwwjQIewMIQBHfLoQA/zh-cn_image_0000002820680963.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE9FEFCCE3C4D7B6DB9F96892F2723B338CCC9F47146EAC202F0CFB7C02E5E5B)
 
 ## 调试和运行指定的Target
 
-使用DevEco Studio调试或运行应用/元服务时，每个模块只能选择其中的一个target运行，可以通过单击界面上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/kf1KcSVlTwK6yPxGofI1tQ/zh-cn_image_0000002810751027.png?HW-CC-KV=V1&HW-CC-Date=20261114T004729Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBCA50D2CC00E1B9BCE4DE98F13D3FC4BF8F4BD6387060ED4CB0F78BB9255499)右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/wZx3yxJBSvWI3mFeSEGXTw/zh-cn_image_0000002781471368.png?HW-CC-KV=V1&HW-CC-Date=20261114T004729Z&HW-CC-Expire=31536000000&HW-CC-Sign=64D242A38C4F0C246D9F3C56DB43B947D2FAC5E125084AE027E8EDCAF9BFF456)，选择**Product配置**，指定需要调试或运行的**Product**下对应的模块**Target**。
+使用DevEco Studio调试或运行应用/元服务时，每个模块只能选择其中的一个target运行，可以通过单击界面上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/le8qByfoR7aemh1xOCyRNA/zh-cn_image_0000002820680957.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=7164C8BBBFCBD15116BF34F541C34456A99090F5803A02E003DD0DBBB8246CAA)右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/DJq5oVF6QKig5ljMocU6-w/zh-cn_image_0000002820720963.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AC659883DDFE8130018238EC25FF19756930BD08520C0FF7ECCDCE108948AED)，选择**Product配置**，指定需要调试或运行的**Product**下对应的模块**Target**。
 
 **说明** 
 
 在选择需要调试或运行的target时，需要注意选择该target所属的Product，否则将找不到可调试和运行的target。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/WAQam4QyQ5-r49Hqfndj5Q/zh-cn_image_0000002810751029.png?HW-CC-KV=V1&HW-CC-Date=20261114T004729Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBD4EE4B0456CB19509D21518AB0DFE53C7382CD92A35C4F268C735EAC5AA8CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/cBofrbUeSxShhiSkeR8JMQ/zh-cn_image_0000002792000998.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=E535440016EBAD1559EE214D4B9940BB621FEF11CD7165908EADB0E81F42ED9A)
 
 ## 多产物构建target
 
@@ -1172,7 +1172,7 @@ products中的icon和label字段在编译时会替换[app.json5](app-configurati
 
 多个target的优先级顺序为：align target > 命令行指定模块target > 父级模块target > fallback target > default。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/ARwhuSK7SVivAQvlh8pX_A/zh-cn_image_0000002810630917.png?HW-CC-KV=V1&HW-CC-Date=20261114T004729Z&HW-CC-Expire=31536000000&HW-CC-Sign=91998B7AA2C4730FF37EE0C0D2D99EC76705DD234F4C60636BAA6EFEBAD97C02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/X3sUWFH4T72FMLVGPIDrpQ/zh-cn_image_0000002820680961.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F6BBC59F4A5CABF0638D3C85751DE4E8C1EDB14D0695CE26260DF42C6E78312)
 
 举例说明：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-link-betwe
 title: 应用间跳转实践概览
 breadcrumb: 最佳实践 > 应用框架 > 程序框架 > 应用间跳转实践概览
 category: best-practices
-scraped_at: 2026-11-14T08:54:06+08:00
+scraped_at: 2026-11-24T12:47:44+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:26ae1ac476f1c68e75bdf211b54cf45380cf92f68d1774fdd2b30f61b48d295a
+content_hash: sha256:864d943279fc90210b2b2616bcf53a40f154c9fee8cc7fa90d7c12b1ad2f021d
 ---
 
 ## 概述
@@ -36,7 +36,7 @@ content_hash: sha256:26ae1ac476f1c68e75bdf211b54cf45380cf92f68d1774fdd2b30f61b48
 2. 好友B点击链接后，直接打开社交应用并定位到该篇文章，而非应用首页。
 
 **图1** 用户B点击链接跳转到详情页的效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/jfA0FbUrSsOJmZywP9iK-A/zh-cn_image_0000002284820634.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EC72F697C657B75664F0E8AA2A3F9044FE6B79BAE946D447A51E85CE0C76FFD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/3t_EFi8dSxmUpm3quDTU9A/zh-cn_image_0000002284820634.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BEEA857E97356EA0EDFB6DBAD8E4D7A619D44FAFCCD210BB9929AABE59177EA "点击放大")
 
 通过系统分享面板，将包含App Linking（请参考[App Linking Kit简介](../doccenter-capabilities/applinking-introduction.md)）的链接分享给好友，实现一键直达原内容。详细请参见[社交分享跳转](../harmonyos-guides/social-sharing-redirection.md)。
 
@@ -48,7 +48,7 @@ content_hash: sha256:26ae1ac476f1c68e75bdf211b54cf45380cf92f68d1774fdd2b30f61b48
 2. 点击广告后直接打开电商应用并跳转至促销活动页面，用户无需在应用内搜索或导航，大幅提升下单转化率。
 
 **图2** 点击视频应用广告跳转汽车商城应用详情  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Ik4fUD1mQdekzNp90oNhAA/zh-cn_image_0000002319316925.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=B55820F183B64F4B8CE634CD0D350DFDCF5F665E42202163760C4B1B0959B3D9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/vF1Vkcn3SKqJm-ByG72UvQ/zh-cn_image_0000002319316925.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=87A4CB691F2A507F4BCE3C6EF8F89FFACC0A19AF335F24241E100B431E00A58D "点击放大")
 
 通过App Linking实现从广告链接到应用特定页面的精准跳转，提高营销转化率。详细请参见[广告跳转](../harmonyos-guides/ad-redirection.md)。
 
@@ -62,7 +62,7 @@ content_hash: sha256:26ae1ac476f1c68e75bdf211b54cf45380cf92f68d1774fdd2b30f61b48
 
 **图3** 点击聊天界面电话号码拉起系统拨号界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/yd7zIEA2Re2oBc1tXzrGCQ/zh-cn_image_0000002314187250.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=C86B9C04A57F14B21D525C21F7B82CDB803C4FD0406F62525018FCA79D9F8EAD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/l6HSUeeGRGS8In8ODLpJCQ/zh-cn_image_0000002314187250.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DAD85CD24DED58D358EECDF654004A23460984A4913F829DC4CE0CAD33B893C "点击放大")
 
 通过系统的文本识别能力，识别其中的特殊文本，从而实现从文本到功能的直接跳转。详细请参见[特殊文本识别跳转](../harmonyos-guides/special-text-recognition-redirection.md)。
 
@@ -84,7 +84,7 @@ content_hash: sha256:26ae1ac476f1c68e75bdf211b54cf45380cf92f68d1774fdd2b30f61b48
 * 直达应用市场：[通过直达应用市场能力跳转至应用市场下载详情页](../harmonyos-guides/applinking-direct-to-ag.md)，未安装应用时可跳转至应用市场应用详情页。
 * 延迟链接：[通过延迟链接跳转至应用详情页](../harmonyos-guides/applinking-deferredlink.md)，支持应用安装后恢复之前的跳转意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/pPJkd8WCQ-arZhIHslKAUA/zh-cn_image_0000002319469989.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=C60559E79AB6B58ADB78065737A4EA31061C7E6B8BFEAF888769288D367F10AE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/B_WCdrxGRWqHnSO7vAqoOg/zh-cn_image_0000002319469989.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D870B8508CF2D2F314B53EE7A6F29C0EC0C12DF3843E32438D50A550187C49C "点击放大")
 
 基于安全性和用户体验的全面考量，建议优先采用App Linking技术。与Deep Linking相比，App Linking提供了更高的安全性，避免了仿冒风险，并提升了用户在应用间跳转时的整体使用体验。
 

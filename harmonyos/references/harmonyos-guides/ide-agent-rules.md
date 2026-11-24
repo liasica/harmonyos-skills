@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-agent-rul
 title: 规则（Rules）配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 规则（Rules）配置
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:09+08:00
+scraped_at: 2026-11-24T12:42:39+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:1a7d9e3ab981d0de2309e64759d28388516a67b33372abb60c529a8039d57e70
+content_hash: sha256:d2339ae18c80a7418e5bdc12eae2607821baf2b72b9fbdafa6290f93187c9bbf
 ---
 
 从DevEco Studio 6.0.2 Beta1开始，CodeGenie支持用户配置规则（Rules）。在自定义智能体模型下，智能问答时可生成更加符合Rules规范的代码。规则包括全局级别规则（Global Rules）和工程级别规则（Project Rules）。
@@ -20,31 +20,31 @@ content_hash: sha256:1a7d9e3ab981d0de2309e64759d28388516a67b33372abb60c529a8039d
 
 ## Global Rules配置
 
-1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/uMVMNWqCQi2lMI5tOFbrbw/zh-cn_image_0000002779406532.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EDFAE4AFFCEA9AE09FA06E0F3C8B5688E22ACF2563869192CB9F55B3BC4BFCE)按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/q7YPjKBdRs-cjyGYrd5GKQ/zh-cn_image_0000002779566500.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B21206D93DA37D2FAD5EA3BABB57D7FEE82DC764DBEC2A7C036E6C1343EDF91)按钮，选择**Rules**，进入配置页面。
+1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/6LmFr6eoSYSCT7pFNTrCAw/zh-cn_image_0000002779406532.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B5487311A8E038ECF8AA18D2E79D1858025E982153F9E53E132F42C8464EE2A)按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/QxF6bf0BRPOxNsPMZhBfGw/zh-cn_image_0000002779566500.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF3657D6663A2F82845796D2EAA258098C33F8806C5C68FE08C6033AFEDBA6B1)按钮，选择**Rules**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/rumTxbKZTVKxq9lbhDTw8Q/zh-cn_image_0000002779406524.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=029C4012BF0BE247C92D6DD65EA58A4D22FCCC92192BA081895CE87708AC051A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/V0OkfVgPSaSxgHmTEc6xlQ/zh-cn_image_0000002779406524.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=C09323AE96650480F6C443BBFDEAD214907C6B90C6A017D14F368D07EF607531)
 2. 选择规则长度限制，包括**Quality first**、**Token efficiency first**，默认为Token efficiency first。DevEco Studio 6.1.0 Beta2版本新增。
    * Quality first：生成代码时遵循更多规则，帮助AI获取更准确答复。
    * Token efficiency first：生成代码时优先考虑Token长度，节省Token数量。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/M5DMX2UtQX-d7Oba_TA7lg/zh-cn_image_0000002779566494.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE926F735CE03D44235878399F2B4C28A2A357FD240BC1ABF2E39A8D94DE11E0)
-3. 以有网络环境为例，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/0DqvON32RLen3sZmxuzhUg/zh-cn_image_0000002779566512.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=C82FACF2F95EE154564DC7BB430944750FC05532C3D84051D2792BE849B5F81E)图标导入规则文件。无网络时操作界面可能存在差异，以实际为准。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/w1zRTCCaSmmc93UnPTXYHg/zh-cn_image_0000002779566494.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C411EDD60F42723406BF92D887E8CA4FFDA71A245C02D89E5B5B062122DB45E)
+3. 以有网络环境为例，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/d2FDNPYzRbeaY_viFx3gjA/zh-cn_image_0000002779566512.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9287CF8409A7DD344A48266CF183F3FE6336015E4ACC2CA86DB88C19A2AFEB8)图标导入规则文件。无网络时操作界面可能存在差异，以实际为准。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/dkE8V13ZRwe4mFnU8rRnkg/zh-cn_image_0000002779566508.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AE283898FF152ED6F9B4A8C6C8FACC2C8F3246595CDD547314A6B92439CAEFC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/sJEE7VC8TGG76dPiftIg4Q/zh-cn_image_0000002779566508.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=3988F8ED01FE2EF4D5E4A9CFD68BC8FD0830C00463697A60F2A615C6C4F8AF1E)
 4. 选择和管理规则文件。Global Rules列表全量展示了默认规则（Default rule）、自定义规则（Custom rule）和无规则（No rules），当前仅支持选择其中一个规则。若选择No rules，则全局规则不生效。
-   * 将鼠标悬停在默认规则上，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/fNpMcJE5QVOqZeNhO_HIZg/zh-cn_image_0000002779406520.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1A071949B3444F530F087969A7794545B1727727EB0BD22429ECB1A0E3643E4)编辑图标，开发者可查看具体规则内容。
+   * 将鼠标悬停在默认规则上，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/t_oJUcfeRSSDCHo3QMJttQ/zh-cn_image_0000002779406520.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=6415CB31A6B86A20BCCC049B55C6E8FC389BF03D11857F4AF6F93254B1D25A1F)编辑图标，开发者可查看具体规则内容。
    * 将鼠标悬停在自定义规则上，会出现编辑和删除按钮，方便开发者管理自定义规则。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/43Oxh9cRQzqrpOVeQK4L9g/zh-cn_image_0000002779406536.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=A35C8B5D1F1B93C62B0921361D44BBEE6C7A815A0F0D6A77FB72FDC1C7827576)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/c8CL7VgwSRWH44dzXHMkWA/zh-cn_image_0000002779406536.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F1C1DEB0EBE1B19D4D95FCE9069B5FCB83B4859979937253CA3C1B687BCC56D)
 
 ## Project Rules配置
 
-1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/6aN7m8LsQkKvRpqMyCc8aA/zh-cn_image_0000002808766077.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BBF9972506280E91DB4631CE7F75C076EFACD742EF3FD1630463B4282AD74D0)按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/AGEV9jxgQASCAXvc-0KMyw/zh-cn_image_0000002779566504.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8F93C12A2E23C5EA60C963CD9FAB1B9BD45ED59D7E54FF5135202B118DD1E37)按钮，选择**Rules**，进入配置页面。
+1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/A_sT8aorTRujSaZ_wFDeZw/zh-cn_image_0000002808766077.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EFC410AD27383C7A3770738016C855C1A402D29F505748CACC674F04BEF3716)按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/h57v5G0_TM-uas4NNSpc-Q/zh-cn_image_0000002779566504.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=F938668049CD5CCFED70AAD3E9877FE0F9A27ED96EBF725E20E2684E0D035E8D)按钮，选择**Rules**，进入配置页面。
 2. 创建或导入Rule文件。
    * 创建Rule文件方法：点击**Create Rule**，工程目录中会新增/.codegenie/project\_rule.md文件，在project\_rule.md文件中输入规则内容。
    * 导入Rule文件方法：点击**Import Rule**，工程目录中会新增/.codegenie/project\_rule.md文件，project\_rule.md文件内容即为导入的规则文件内容。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/9p9QW3wQRcaLgX-Nx_hwoQ/zh-cn_image_0000002779406516.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=87AE403733253DB7B66471F7038B7F620175F4228CDAFE841D015C46AEEE3A15)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/_x_H-aK3TaGPEhJKl_-wiQ/zh-cn_image_0000002779406516.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FB3A482864BF16E69171667ADA3FF03DF0EF5E5E384466FDC17585E925E309D)
 3. 管理规则文件。将鼠标悬停在工程文件上，会出现编辑和删除按钮，方便开发者管理工程规则文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/A6tFfh5cT_GV556sWq0Iwg/zh-cn_image_0000002779406528.png?HW-CC-KV=V1&HW-CC-Date=20261114T004909Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F315F1ED238831A12FB53B84BB19272272E8839B29FFA1CFEC0C4717BCFDC86)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/1NBMCMBMTui9FvAnspfdNA/zh-cn_image_0000002779406528.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5EF900E426B9A16D678524C90DAC258F4C886EAD52131BA012ADAF455E0682F)

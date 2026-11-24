@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-temp
 title: 工程模板介绍
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 工程模板介绍
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:10+08:00
+scraped_at: 2026-11-24T12:42:41+08:00
 doc_updated_at: 2026-11-06
-content_hash: sha256:de4185637781781e4bf55c308ac08593b7ed53fb395d25cb43c16e965385276e
+content_hash: sha256:a32cd049c5015c405eff6a0e34976fddc084bd4f53285e828fd99d940194e3cf
 ---
 
 鸿蒙电脑DevEco Studio支持多种品类的应用和元服务开发，预置丰富的工程模板，可以根据工程向导轻松创建适应于各类设备的工程，并自动生成对应的代码和资源模板。同时，DevEco Studio还提供了多种编程语言供开发者进行应用/元服务开发，包括ArkTS和C/C++。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/-tmeGZQhQAaz7voVtwQfmw/zh-cn_image_0000002781311128.png?HW-CC-KV=V1&HW-CC-Date=20261114T004722Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E40F47C453E19F09C41819B7E0A4B657DB4E8EC75D59A5C0923347F639AD250 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/HR_hwlXGRj26H53uf3mK9Q/zh-cn_image_0000002820720833.png?HW-CC-KV=V1&HW-CC-Date=20261124T044240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1BF16822BA41B3A05F65E9BE9618F679864DAD1592EECBB73124F9FE2E55682 "点击放大")
 
 应用工程支持的开发语言及模板说明如下表所示：
 

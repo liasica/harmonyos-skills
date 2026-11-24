@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pc-guide
 title: 电脑应用开发
 breadcrumb: 最佳实践 > 多设备体验进阶 > 电脑 > 电脑应用开发
 category: best-practices
-scraped_at: 2026-11-14T08:54:11+08:00
+scraped_at: 2026-11-24T12:47:49+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:9862a497fdf2bb060f45217456635570933b32c2f2056a05d9c59f9a45ff5a4c
+content_hash: sha256:517754aa76ebb5026089d915d9375bb94ec7b2006b0d4b517935d4541fd1613f
 ---
 
 ## 概述
@@ -210,10 +210,10 @@ content_hash: sha256:9862a497fdf2bb060f45217456635570933b32c2f2056a05d9c59f9a45f
 
 * 若应用支持横屏，将以固定大小的横屏窗口展示（窗口高度为屏幕高度的2/3，宽高比为1:1）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/s7jbUxTBTAmI_pr8brRzEQ/zh-cn_image_0000002789073566.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0A6C1001AED71B006A56177CF33614308F0B4B2E5E30099AB017EB1A91E7221)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/I9mQxlfFSjeTEZOpzl4FPQ/zh-cn_image_0000002789073566.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2B82505BEC7F033ED8940F1B0BCE0EA4A485540F17751D9053C680D2F06495F)
 * 若应用仅支持竖屏，则以固定大小的竖屏窗口展示（窗口高度为屏幕高度的2/3，宽高比为9:18）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/3Wh0tfCiT9iUoV5YVC_yZg/zh-cn_image_0000002818072977.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9D62E76BE75CC584910AA5ED8186F50652FD87E0A365F9141154E77499378D9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Ko6bGfUwR-K3KHFpCvsgcw/zh-cn_image_0000002818072977.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=85BDAD433351D4CD84C578D932FB7607B032FEFABC0C002A8935F35319E43EFE)
 
 **说明** 
 
@@ -245,13 +245,13 @@ Entry Module所依赖的module同名配置文件也需要同步修改。
 
 应用安装后，可进入设置->显示和亮度->应用显示布局，将应用显示比例调整为原始比例，即可退出兼容模式，方便开发者调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/fUQziR5DTvKWwRGcVGnrmQ/zh-cn_image_0000002788913636.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=5746D2F64F8A48BD7EEADE046987616502900918CA877B3521140FCC90EFF829)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/nSsMpEykTUWBmY4x0P8Bpg/zh-cn_image_0000002788913636.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=172528F0607F35FE3D8C7C18EB04FB701D62963E96B4EFF2918A9CFBFD6D78FF)
 
 ### 兼容运行上架配置
 
 应用上架时，在基本信息中勾选“兼容分发到PC/2in1的AppGallery”选项，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/yjYWxnpzSdaqEWViNJrL1g/zh-cn_image_0000002817953051.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD4F984CA140023BA7F8D323513E1C7D4696E96E46538EC4D541939A8546109B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/8nTU_qFDSayhxGPsuhA1Dw/zh-cn_image_0000002817953051.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=A204819FF36DA9952B0F7E643E9C4AECE48C18AC16281448B36C9D2991B3076C)
 
 **说明** 
 
@@ -283,7 +283,7 @@ Entry Module所依赖的module同名配置文件也需要同步修改。
 
   由于手机与电脑操作方式存在差异，部分页面未提供返回按钮：手机端可通过屏幕边缘向内滑动返回上一页，电脑端无该手势操作。为此电脑系统在应用窗口界面增设返回键，模拟边缘侧滑返回的交互效果，效果如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/nHbXoVHBSO2ynkey9xiSBA/zh-cn_image_0000002789073568.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=93CCDB32EE0A83717B4D4CA99359C9B2F5019F1FF729B7D438A5D3EDA7DF3C18)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/IYuU4Op1QqCoulB4-8abfw/zh-cn_image_0000002789073568.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDE9A2186E03ADD3062294E3EF01C930C7659A1C969E7206D4C5623B9D7006EB)
 * 安全键盘的差异
 
   电脑设备自带物理键盘，在安全登录场景中，若应用基于私有安全键盘SDK开发，用户通过物理键盘输入密码时，可能出现密码明文显示、无法输入、输入后无法提交等问题。对于上述情况，建议采用如下方案进行优化。

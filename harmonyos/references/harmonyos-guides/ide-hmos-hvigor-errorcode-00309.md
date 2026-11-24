@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: ArkTS编译错误码
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 构建报错排查 > 编译构建错误码 > ArkTS编译错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:36+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:e8ccae5904f65c0e10002e49824cf3d8555d637b313181b6e4a7cc1f567e06e1
+scraped_at: 2026-11-24T12:42:48+08:00
+doc_updated_at: 2026-11-23
+content_hash: sha256:945256ebb4d95c9d1c9854e68c86eb90c250f1b6020de3907417c32940df3b6d
 ---
 
 ## 00309001 禁止使用相对路径导入模块以外的文件
@@ -48,7 +48,7 @@ Avoid absolute paths in imports. Import statement: XXX. At file: YYY.
 
 **错误信息**
 
-Cannot resolved import statement XXX.
+Cannot resolve import statement XXX.
 
 **错误描述**
 

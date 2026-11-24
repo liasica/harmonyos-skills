@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 检查变量
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 检查变量
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:59+08:00
+scraped_at: 2026-11-24T12:42:30+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:3a863a38bdc81cfddb45d8314b5628662a3f2330778ff117de7d4bc7d3262871
+content_hash: sha256:aa2321be5ea2b0c348d6754e6e7928343a26166ad98e4091cf70ca20348e1024
 ---
 
 调试时，在“Variables”页面查看变量，支持查看全局/静态变量、寄存器变量和局部变量。
@@ -20,27 +20,27 @@ content_hash: sha256:3a863a38bdc81cfddb45d8314b5628662a3f2330778ff117de7d4bc7d32
 
 ## 变量监视
 
-在"Watches"列表中输入表达式，然后点击Add to Watches 图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/7f8rFgXVS02zay_G1D2yjg/zh-cn_image_0000002808886967.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=C67B75CBEF1C95C066D33FB24AF2112C612807B7D2385CEF0DA48F54DFD8977D)，或在某个变量右键菜单中的“Add to Watches”添加监视的表达式，在每次程序停住之后会计算表达式的值。
+在"Watches"列表中输入表达式，然后点击Add to Watches 图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/sWaEl1PLThiWxHJ9hVtX1Q/zh-cn_image_0000002808886967.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B1D5F7E952A0D62B8BFDE514042656037577E7B946BC478807199DBB65E392A)，或在某个变量右键菜单中的“Add to Watches”添加监视的表达式，在每次程序停住之后会计算表达式的值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/fDAvny8WQLaII9c89O5sJw/zh-cn_image_0000002779407324.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=919E39E4AD979C6A5B2EA10B6401EFBBAE4611056A0DD58EACD94038DE132B01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/utIfUJ2xRsKWLuUIyKBDjQ/zh-cn_image_0000002779407324.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=041334CE36064FE5E4DA78B951772453DD788806C0164295720024BADE7F3556)
 
 ## 表达式求值
 
 通过点击“Evaluate Expression...”按钮，或Watches 页面中的输入行中，输入表达式进行计算。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/ktCPfpVGQRG2FdIhVKgASw/zh-cn_image_0000002779567304.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=18A676FE6C3AAED661AD318480AE01092CD6370CBDE5520C8DE9035DC6C28A54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/mk5c3QixS1ew4b0Y56vD2w/zh-cn_image_0000002779567304.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=B18A0B439B0548CF54B25980DCC723999508BFAF4BAEF8452F6F007816806F3A)
 
 ## 查看十六进制视图
 
 在“Variables”页面点击鼠标右键，弹出框中选择“Show As Hex Values”，此时页面中的整型变量会以十六进制进行展示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/9fz6SVDFRyWH_3-FGfLbJA/zh-cn_image_0000002808766881.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=1266B53FB1196230B00A9D3D3639F9DAFAA6E2AFE03C7557E214521E83A35B49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ek9ACZXuS3GSQyc9GAY8-w/zh-cn_image_0000002808766881.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E87B96EDA7DCC724B353598C69F24CD35A538B106D67E4B2CA843BB7EBAF36D)
 
 ## 查看函数返回值
 
 当使用“Step Out”从一个函数内步出后，变量列表中的“ReturnValues”会展示所步出函数的返回值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/nCXTGuJiQFKvlGUBN8L2LA/zh-cn_image_0000002779567302.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=90C529DB855DC6327BD8AE97A05670AC57748C70F6131607023FB4FE9816B3B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/D39Eae4fR5uS_x3pn35n1A/zh-cn_image_0000002779567302.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=71F86812663C4DE1FA1ED145E9829C52CB5CA273C4FF5918F4273DA3FD04189A)
 
 **说明** 
 
@@ -56,4 +56,4 @@ content_hash: sha256:3a863a38bdc81cfddb45d8314b5628662a3f2330778ff117de7d4bc7d32
 
 * ...View：支持展开查看较长的字符串。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/enpw2UBuQKWpPcMVooyW0w/zh-cn_image_0000002808766885.png?HW-CC-KV=V1&HW-CC-Date=20261114T004712Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF3D5C4EF551B08DCAAEE9577E1571C6F2B44FDBBFCF7D58CCAEE2BBAD049A63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/6ysDkDdyQU6_4G0AtieU1g/zh-cn_image_0000002808766885.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEFBB13FF75A627B05B06447F10DF051EA9DB5F8522E48701E64927E6DE67004)

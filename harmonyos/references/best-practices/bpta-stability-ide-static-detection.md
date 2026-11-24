@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用DevEco Studio静态检测编码规范
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 稳定性编码规范 > 使用DevEco Studio静态检测编码规范
 category: best-practices
-scraped_at: 2026-11-14T08:54:21+08:00
+scraped_at: 2026-11-24T12:47:59+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:58f05570a52ed2e44d00350da4ed79b9ce0da7d160403fd3a369156a8ee00b3c
+content_hash: sha256:d0113152b6728f8afa52ab6807a1f2aee5ad7f913b1ad4fb6f98d0ef7000acc3
 ---
 
 ## 使用Clang-Tidy检测
@@ -16,11 +16,11 @@ DevEco Studio集成了开源的Clang-Tidy。
 
 1. 开发者可以在Setting -> Editor -> Inspections页面，选择CPP -> clang-tidy的配置页进行Clang-Tidy checks配置，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/4kUnuA9iSe6XZ16eKhKs3Q/zh-cn_image_0000002194009836.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=67A383FBAD178A37900E05146A4470747B404D349009D36DF1718DE41D3E9806)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/vpvKEmZ3S6CJ_N9DJxQgvw/zh-cn_image_0000002194009836.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=C73BD581BEA19B0D9C20680A5BC8B8521D04EB208FA6DA854A71B1D4DFF6434B)
 
 2. 开发者可以在Setting -> Languages & Frameworks -> C/C++中进行Clang-Tidy Checks配置，勾选“Use clang-tidy via clangd to enable the following checks”，然后配置规则，如下图所示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/VKFY4gqeTn2QHRnsDLAuCA/zh-cn_image_0000002229335633.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9F94562ADF7FB25C4BF9A3A49D0812242537369AAB09A83F3C8B89A85CE1529)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/-OJzS6BpQxKgoae6D-T0Kw/zh-cn_image_0000002229335633.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B93203A8416836D61DA49B87506EE880A978EE480012777BA18D44CF51813E1)
 
 配置参考文档：
 
@@ -31,25 +31,25 @@ DevEco Studio集成了开源的Clang-Tidy。
 1. 需触发按钮Code -> Inspect Code -> Analyze
 
 **图1**   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/U-flbYuTRgeo9wXAhn1ReA/zh-cn_image_0000002797413431.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=B18084E3BC108D30400F5A1FCC586009B941C6136F5087236DB533A4FDC5592D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/h96akT1mT5yKPqVfHf5ngg/zh-cn_image_0000002797413431.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=57EC94A9B6EAFEC727BFBCADA2BF564BE492FBD8CAF4753540D83B22B7CFF348 "点击放大")
 
 默认检查规则如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/0yfb5O3GRAeWpBOYBBq6Ug/zh-cn_image_0000002229335613.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EBCACF75FBAB59E62CC2C54F7652898907EAEB70FD83F16FB715BB74E3AEB38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/Fw8vK-75Q2ChmX7i2o5Qhg/zh-cn_image_0000002229335613.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F59E9D31B7EB58E87DA516F817D39CD40D110DD8E807FB5A9E225947FB9D85A)
 
 2. 实时触发的规则如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/w7IuVMmtRcS68cYRgNkquQ/zh-cn_image_0000002229450133.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=D55153492CC7E3C45A6210E2FE478927FBCC5A8951A34E1E05B70F07D6A17F26)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/HhYO4edXRhiT4ttQrvBbeA/zh-cn_image_0000002229450133.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=744597DC6FB50A31CE6607FE3D61D7DAAD0821176AEF434867717AA07988D820)
 
 **DevEco Studio默认检查规则检查示例**
 
 1. 手动检查代码，示例中不符合检查规则“clang-analyzer-huawei-InfiniteLoopChecker”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Cvtj4bxRTP-urDRMj-2NgA/zh-cn_image_0000002193850236.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCAD90E217382D2E39A3074A542AEED5B742B15399CA7632FD6EAE89C98F0486)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/qjcC4RIfTN2O-irrd1QcCw/zh-cn_image_0000002193850236.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=11BA43450554423D643D0C8D8616BDB8926E90B3484499DE50F569075DFD0A54)
 
 2. 实时检查，示例中不符合检查规则“misc-unused-local-variable”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/7VQN2k53SQKp0Wfr0lcUSw/zh-cn_image_0000002194009820.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=58A419CFD76F16F63545BCDA8B933EA1D53032AB428258E5270B6C8B7B606DC9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/GydCRO2aQ5KHJ_EAQ-6J6A/zh-cn_image_0000002194009820.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA161D0FDC151C18CDC34D5BF6AD719EB082C506AA196B0B9CA4B548E0081722)
 
 **默认配置检查内容**
 
@@ -82,11 +82,11 @@ DevEco Studio集成了Code Linter，用于针对ArkTS/TS代码进行最佳实践
 
 在已打开的代码编辑器窗口中，单击右键选择Code Linter，或在工程管理窗口中选中单个或多个文件/目录，右键选择Code Linter > Full Linter执行全量代码检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/fopaFBiVSBWz3e9r0WmA5w/zh-cn_image_0000002194009856.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=E654C88A73F91C6466EE518FC8FF8E579A90541033DF36072AFE5385D3425BDE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/6wTNrcteSjWSYCKWBCRElw/zh-cn_image_0000002194009856.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=607E48F6B5525DB96952FBEF05A3DE031C92FE76B3B73D8CFA55E84826CC9C9C)
 
 如需对Git工程中的增量文件（新增、修改、重命名）进行检查，可在commit界面右下角点击齿轮图标，选择Code Linter - Incremental Check执行增量检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/LwX-7uqiRrqXUtKMh8lBAg/zh-cn_image_0000002193850228.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=45C492D40D37EB29FB842625245E5A2600B93845979EAA098043B43C91EF3CD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/LgMxW4LjQwWrbKz8NxFdkQ/zh-cn_image_0000002193850228.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C386A3FDBA2A52B3A24CB48C78C692A6F1C403B0A5E4AFCF1F8EA2E832DA1E1)
 
 **说明** 
 
@@ -186,21 +186,21 @@ overrides：针对工程根目录下的部分特定目录或文件，可以配�
 
 扫描完成后，在底部工具面板查看检查结果。勾选Defects中的告警等级，查看对应告警信息。双击告警结果，跳转到代码缺陷位置。选中告警结果时，右侧Defect Description窗口显示规则详细说明。搜索规则时，可设定全词匹配和大小写敏感。
 
-单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/kFIKKxXyTuKINdPedLQBbw/zh-cn_image_0000002194009816.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A3C6BFAB0A4261EF67B489CAABADF54A3867CC609518FF57D31E79CDF75A745)图标，查看可修复的代码规则，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/ry0d1mU6QYiRgwwsfLwdWg/zh-cn_image_0000002229335641.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CE4D49EEB42B5AE1051402D417066B93E438C902381B65647211E9DF6CB1470)代码修复图标，可以一键式批量修复告警，并刷新检查结果。
+单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/vzy8HUEuQF66UB66D741Og/zh-cn_image_0000002194009816.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=A43182B639E65CE820D4AF94091BD03C298E20B6FE49812A6E33D262BEFF71FC)图标，查看可修复的代码规则，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/VlG_UTecSRG2NvrfYBR8gg/zh-cn_image_0000002229335641.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F7F33E0C518E1E02C939F4EA8715642B5AF67D655BB4697E13F1A145FD773BC)代码修复图标，可以一键式批量修复告警，并刷新检查结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/9UBaNa2GTG6pfh3VEP2YqA/zh-cn_image_0000002194009860.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=4520C5C0ABB4D84AC6CFE47DABC742FA4226415AECD44E6383F9BF7022446ED9)屏蔽告警信息：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/1I3a5QGuRgaNl2iNutVZKg/zh-cn_image_0000002194009860.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3D4C570F5656A748769677AE402DE0F7D4B2E2F0D7EF19607543EEABC631CF8)屏蔽告警信息：
 
-* 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/eWhZcSyVQlSR9-w2iFnfjA/zh-cn_image_0000002193850240.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=23077A0D0E67D7928AF18CA5DA5CE192F6328E1C853E771E4F29F77C6FD8AECC)Ignore图标，可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板Ignore图标批量执行操作；
+* 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Q07e8rStShywyAT_CZsbCQ/zh-cn_image_0000002193850240.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DA47A4CD172EE153BF59D5B952AA5A670214936F4428180A4E9E2EE120E30C7)Ignore图标，可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板Ignore图标批量执行操作；
 * 在文件顶部添加注释/\* eslint-disable \*/可以屏蔽整个文件执行code linter检查，在eslint-disable后加入一个或多个以逗号分隔的规则Id，可以屏蔽具体检查规则；
 * 在需要忽略检查的代码块前后分别添加/\* eslint-disable \*/和/\* eslint-enable \*/添加注释信息，再执行Code Linter，将不再显示该代码块扫描结果；在待屏蔽的代码行前一行添加/\* eslint-disable-next-line \*/，也可屏蔽对该代码行的codelinter检查。
 
 如需恢复忽略的报错信息，删除该行上方的注释，然后重新执行Code Linter检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ZMu26MPPSu29gMeXSyqz4Q/zh-cn_image_0000002194009844.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C8FBF72513E495C9F2B1AF0228D8401EC8E4FFF1E9BE844F5DA934ADF1A9208)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/2sUk-Z6wQRO2pnZkyF5vsw/zh-cn_image_0000002194009844.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=78CA7E8833F93CE813FB8743D6B15B12BB535F05F0736FFD9B78233170EC0A59)
 
-导出检查结果：点击工具面板左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/o0FEN6NLRpermw8Q3_w5QA/zh-cn_image_0000002229450101.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C9F20AFA18DF068B58E79497EA83307FDD7F53FB1CC79697284BCD236C76E3F)导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
+导出检查结果：点击工具面板左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/r-aJCOhERVGpzK3m9ckiqQ/zh-cn_image_0000002229450101.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=765A459247887713FADFDB3A47F184232D909A59EA5E91E13352482FAD3CFA52)导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/ULs2AcgJSBOSsAS4xXtqZg/zh-cn_image_0000002229450125.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA324FA53152B285CA45F0CD7C001901183AE1681CAE6F952AD5188C4534E1A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/C77uDbbfRUKa4CtEtjTXpQ/zh-cn_image_0000002229450125.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D0D76045C9898DA530C564EB31BA7596F24A5B67E19F8DC09D57882C6D50A00)
 
 **实践说明**
 
@@ -250,7 +250,7 @@ Foo.bar();
 
 对pages/Index.ets文件进行代码检查，结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ez1PG6i-RGqAEjQ9X2X_Lw/zh-cn_image_0000002194009852.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC22FD56971D8AB023BE9900D6A266C8205AEB05D55A72BBD7298FCAB1733534)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/la4rP8LfRimqbfYPeJQf3g/zh-cn_image_0000002194009852.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDC61F291C04F8A8FB7FA0CDD08E1483C2C865846D2B41190EEBE6768F7503FE)
 
 **示例2：对类名Foo的命名风格校验**
 
@@ -310,7 +310,7 @@ class foo {    //Here is an example of a naming style error, where foo is the in
 
 对pages/Index.ets文件执行代码检查，显示检查结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/QHs1QdYsS2mNIeAl80NNTw/zh-cn_image_0000002229335649.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=478B0C83B6D678EF51AA3CFDD53E75305B3922CC7A236013988AE19700CDF64D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/o28-qZLoQdCop3cAXYgkBA/zh-cn_image_0000002229335649.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD1BCD9091702D7FA2AFFBB909A5C75F738E6768554B0EF2C49B50FF23F25ACD)
 
 **示例3：检查代码文件的命名风格**
 
@@ -345,4 +345,4 @@ class foo {    //Here is an example of a naming style error, where foo is the in
 
 对pages/test.ets文件执行代码检查，显示检查结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/FMpL0H8eQGaKPkpdG7YEew/zh-cn_image_0000002229450117.png?HW-CC-KV=V1&HW-CC-Date=20261114T005136Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC7D445EA096D90DA777C81556578799044F20C3DA1CC0CACE461F6E2959110B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/v1qPtHsiQHy6uMQ3zu5GSg/zh-cn_image_0000002229450117.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AEED64F629C2FD5C19A01CF526893762852643A4E2A8205C1D2C930DC824980)

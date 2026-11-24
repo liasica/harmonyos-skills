@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-managing-a
 title: 管理音频输入设备开发实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 管理音频输入设备开发实践
 category: best-practices
-scraped_at: 2026-11-14T08:54:07+08:00
+scraped_at: 2026-11-24T12:47:45+08:00
 doc_updated_at: 2026-09-02
-content_hash: sha256:5ba0e8fefab53898903995415cb4a86733ef2933fec3f9d23d9d68b22fbe44c1
+content_hash: sha256:0512de0eb8a7e5b09a95d445c19c998bfdf804a29ac780bd6cdf9633f36decc0
 ---
 
 ## 概述
@@ -27,7 +27,7 @@ content_hash: sha256:5ba0e8fefab53898903995415cb4a86733ef2933fec3f9d23d9d68b22fb
 
 在开始录制音频之前，获取系统的输入设备信息并展示；当设备发生变化时，同步更新设备列表。例如，当蓝牙耳机上线时，将蓝牙耳机添加到设备列表中；当蓝牙耳机下线时，将蓝牙耳机从设备列表中移除。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/h_36ExGjSTS0_q9wzGm1KA/zh-cn_image_0000002513603472.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=263234360A69D53C11F71FA6C1B00E7D09F78B3AC543DF19566AD6AE7DE29208 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/wYS494-_Su6H-wItj45gng/zh-cn_image_0000002513603472.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF704AADB12398BE6A39B75181532F30A3215F47648D04FEB8B9D88E06EE7983 "点击放大")
 
 ### 实现原理
 
@@ -178,7 +178,7 @@ content_hash: sha256:5ba0e8fefab53898903995415cb4a86733ef2933fec3f9d23d9d68b22fb
 
 音频流类型对输入设备的选择具有决定性影响，对于不同类型的音频流，系统会自动选择相应的输入设备。例如音频流类型是SOURCE\_TYPE\_MIC时，系统使用内置麦克风作为音频输入设备。如果默认的输入设备不符合使用需求，应用可以调用相关接口进行修改。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/NufkJHb_RTeIDKvDSspMYA/zh-cn_image_0000002545043447.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF2D3D613DDF1F152487055D9C46DC73C607A7F892C2E0D8F50085E0FA7746A0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/LtB6Z2qBRN6rvQqaE_cIKw/zh-cn_image_0000002545043447.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=D795421E696796B513AFFF9A0ABB8451A2D4A9F31F1010447718220B5A480214 "点击放大")
 
 ### 实现原理
 
@@ -186,7 +186,7 @@ content_hash: sha256:5ba0e8fefab53898903995415cb4a86733ef2933fec3f9d23d9d68b22fb
 
 整体流程如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/xy0W5PqsRGa9Ry_KrrITlQ/zh-cn_image_0000002545123443.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=741ED766116CB07C390D4F826EA7F085E51620029B40ABF26C830DA8071893F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/ZViJ2MK1R6WPkOJ3geuZ9w/zh-cn_image_0000002545123443.png?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFC28FFFCCCDED16BAD6C2C360F78531A0FA8C0C84BBDEAF577B1E14D5036F1C)
 
 **说明** 
 
@@ -275,7 +275,7 @@ content_hash: sha256:5ba0e8fefab53898903995415cb4a86733ef2933fec3f9d23d9d68b22fb
 
 在PC设备上，通过系统提供的录音设备选择组件[AVInputCastPicker](../harmonyos-references/ohos-multimedia-avinputcastpicker.md#avinputcastpicker)切换音频输入设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/VgGpFpN7SXm5-oZSZYO3Ng/zh-cn_image_0000002513443564.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC50826E76D6F1819CDCA2FB27226B74BDB60112FE716CBAAFC329629F7A3608 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/L2SJhT8pTdyHf7Qvr6RjxQ/zh-cn_image_0000002513443564.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FD2664060D94A2AE3729BE2225AE0A355588F0D0BC015CBA5DC3EB1BE8C171F "点击放大")
 
 ### 实现原理
 
@@ -308,7 +308,7 @@ content_hash: sha256:5ba0e8fefab53898903995415cb4a86733ef2933fec3f9d23d9d68b22fb
 
 当系统因音频输入设备上下线、用户主动切换设备、设备抢占或设备选择策略变更等导致音频流输入设备变更时，应用可以根据需要做出对应的处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/66rtJ_CnRnyr0mpb6UuUEQ/zh-cn_image_0000002513603474.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=48E0A2C03F14D42EA87EA8AAB54E2DBD95498B234AFDFEA0407670DA6E992AA1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ApdL_K6eQQOBDQrOswbCEw/zh-cn_image_0000002513603474.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=6456D913C4A9D546F84224DFFF6F26BBD7C473E621BFED6A4A07E6A063749598 "点击放大")
 
 ### 实现原理
 

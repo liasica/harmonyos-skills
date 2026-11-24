@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-custom-hvi
 title: 定制hvigor插件
 breadcrumb: 最佳实践 > 编译构建 > 定制hvigor插件
 category: best-practices
-scraped_at: 2026-11-14T08:54:22+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:ace2415aa722178e100ba7d064382be6e9ea7c69e748247dbda2b6f4829d1769
+scraped_at: 2026-11-24T12:47:59+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:79249532f3185ec18a3e10e91535a53c14e961f55860f3fdd0c858cc0c3e9177
 ---
 
 ## 概述
@@ -41,7 +41,7 @@ content_hash: sha256:ace2415aa722178e100ba7d064382be6e9ea7c69e748247dbda2b6f4829
 
 定制hvigor插件，就是在编译构建的过程中插入开发者需要的自定义任务，将这些自定义任务抽象后封装成可复用的部分，通过输出plugin插件的目标形式，实现编译构建个性化逻辑的复用和共享分发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/dWYW8jv_TletaWX-TBTbeA/zh-cn_image_0000002229335981.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=D493C0A36821B063D940FEB09F0CF84ECFAF64BC35B0A383DCC30EAD9B6019EB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/9zewm-0uRyuh8djnAHN_gg/zh-cn_image_0000002229335981.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=88CE1C0D90A035632C1C29006691E24A2715E3C831E4FE405DEABD650690F1BD "点击放大")
 
 如上图所示，hvigor插件的工作原理：
 
@@ -93,7 +93,7 @@ hvigor主要提供了两种方式以实现插件的开发：
 
    插件代码示例如下：
 
-   ```typescript
+   ```screen
    import fs from 'fs';
    import path from 'path';
 
@@ -114,10 +114,17 @@ hvigor主要提供了两种方式以实现插件的开发：
            run: (taskContext) => {
              // Read oh-package.json5 and parse the version
              const packageFile = path.join(taskContext.modulePath, 'oh-package.json5');
-             let fileContent = fs.readFileSync(packageFile, 'utf8');
-             const content: OhPackage = JSON.parse(fileContent);
-             const version = content.version;
-             const author = content.author;
+             let version: number = 0;
+             let author: string = '';
+             try {
+               const fileContent = fs.readFileSync(packageFile, 'utf8');
+               const content: OhPackage = JSON.parse(fileContent);
+               version = content.version;
+               author = content.author;
+             } catch (err) {
+               console.error(`Failed to read or parse ${packageFile}: ${(err as Error).message}`);
+               throw err;
+             }
              const sourceFile = path.join(taskContext.modulePath, 'build/default/outputs/default', `${taskContext.moduleName}.har`);
              const targetPath = path.join(taskContext.modulePath, 'build/default/outputs/target');
              const targetFile = path.join(targetPath, `${taskContext.moduleName}-${version}-${author}.har`);
@@ -156,4 +163,4 @@ hvigor主要提供了两种方式以实现插件的开发：
    ```
 5. 执行Build -> Make Module编译，编译产物的文件名被修改为“name-version-author.har”的组成形式，同时生成路径从default目录改到了target目录下。结果如下图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/PJnTGsauTgSKAfc2EgS4lQ/zh-cn_image_0000002229335985.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=B156D2AE17CB57BF4B0453A4A40A3EA64C1A9FFB839662F5C70EC29B681F8503 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/YZuy-stcQgOg5fJfEy0TXg/zh-cn_image_0000002229335985.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EDAE47ED37FC92D4D840045090C3D6C4FC7B95066B0C6096A7949FA3205947C "点击放大")

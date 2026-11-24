@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-news-read
 title: 多设备新闻阅读界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备新闻阅读界面
 category: best-practices
-scraped_at: 2026-11-14T08:54:09+08:00
+scraped_at: 2026-11-24T12:47:48+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:4cc3b9378df39a575445d4dd474120f2b66f203576e852395501bdc6ce87fb2d
+content_hash: sha256:2ddd35f7fad017f00fe6cf78094e7065230aa51528afe7e8a5e80ec4e1855087
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:4cc3b9378df39a575445d4dd474120f2b66f203576e852395501bdc6ce8
 
 新闻阅读应用的UX设计可参考[新闻阅读类](../design-guides/responsive-design-examples4-0000001746657290.md)设计指南。应用在直板机上采用单列纵向布局，在折叠屏和平板上以双列栅格展示，在电脑上采用侧边栏加内容区的分栏布局。多设备新闻阅读界面在不同设备形态下的效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/95MLgtYyQEerZXgr0SoH3w/zh-cn_image_0000002693047956.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=A13ACB27928A2B8E9833D6BACC22CA59ECDD9A2ED6BA7B9026189498D88C573D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/QIwKUV2TTBm9c18n-1NB7w/zh-cn_image_0000002693047956.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=554C385C4F91462E210EFADD2244EF95A4C588EBBD87FA3DBB22FF761D1D4DC2 "点击放大")
 
 ## 工程管理
 
@@ -164,7 +164,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端首页推荐页的页签栏展示在左侧，右侧承载内容区。效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/yc-MPuBFSxOh7RsZN35Lcg/zh-cn_image_0000002722887399.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=85C1D61001279896AC939076AE5ED8DBC70D23878157FC470D9F2619BB6BC541 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/naCTbQ8iSfOA2hit14VtTA/zh-cn_image_0000002722887399.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B12ECB038AD7210B37795C9E963788AE80E1CBB2167B8A85C75F2711B3B4804 "点击放大")
 
 **界面开发**
 
@@ -180,7 +180,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端新闻详情页左侧为新闻内容、右侧展示评论区，底部嵌入工具栏。运行效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/BXziVz_uQLWGKWe6i5M8-g/zh-cn_image_0000002693207824.png?HW-CC-KV=V1&HW-CC-Date=20261114T005126Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A99208C74FF445E820510C70760B2336A2DB3C3A64C47F76BA0E095A0DF03AA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/AzEIDbchT8qBwRJs1RxnEQ/zh-cn_image_0000002693207824.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=E31EC53A3F33FBA475807DB019F006D4D09D20439F4F2DAC9087E5F17653C87F "点击放大")
 
 **界面开发**
 

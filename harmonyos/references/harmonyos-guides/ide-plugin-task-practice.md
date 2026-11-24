@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-plugin-ta
 title: 性能优化：自定义插件和任务优化实践
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实践说明 > 性能优化：自定义插件和任务优化实践
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:04+08:00
+scraped_at: 2026-11-24T12:42:34+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:1115b9d793ca08465ad0980994c0c801983afe76f47025092d7da3d03d53f0c5
+content_hash: sha256:7835ab43d58957232b0d0e45c892da00e0d88e2d4051cc224d879bd97d2feab5
 ---
 
 ## 概述
@@ -49,11 +49,11 @@ export default {
 
 点击ReBuild Project构建工程，构建窗口输出日志如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/dnN0599fTfK6VrFfU7ssOQ/zh-cn_image_0000002808886469.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=16B00DB9C91FC9D7E5AB5DFAC05C538255A272ABF995CD3B7990AF57F1AC914B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/1mAHti55SyeptNnQzS0PwA/zh-cn_image_0000002808886469.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE9329DFE50032F19AC6E8B982354ABB4228B325A4825E91B144EBF5A5F8DFB8)
 
 执行Sync时，也会触发下载操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/HZvnZXvAQbqAe7zBkCBR9g/zh-cn_image_0000002779566802.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=539A50F31DCB62080B74958322BF667DFB326A4BAFF352B23D7222DBD34EDA84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Ji1z5ZpSS0OToxht42fzWA/zh-cn_image_0000002779566802.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=3825153FA4AC64B809A0B5032A0EAE926D7657CFD1CC6239894493E8308FDD26)
 
 ### 问题分析
 
@@ -110,11 +110,11 @@ export default {
 
 改造之后，Sync流程不会触发下载操作：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/vy_4mzGpQKSOBy3vVZG-uw/zh-cn_image_0000002779406818.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=36C294663F3F4179CFA3D94602D0F7FC7EE2BB95F4FA7DE15B3C365ED2B2CB87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/HcrLOsHGSt-HBIw5EiNW8A/zh-cn_image_0000002779406818.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E8EB33B822B786EAF36BDCA6D8F722C6B26296D943DF6E9D59F509146B744A0)
 
 用户的业务逻辑在任务执行阶段执行：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/Cyn85mgQQF6MbXPk4ZuOag/zh-cn_image_0000002779406824.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E93BBEEAE375EEFD1921D754A1879B07AA35059C8C505BBBE01B862BC690DE5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/lyTMvHdGQJizCIEl7Dewww/zh-cn_image_0000002779406824.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=822A566F828368D2AC8F7CF4C98338839F77EE411BD07864779B212B9AC0F12F)
 
 还可以进一步利用任务的增量机制优化增量构建场景，请参考下文介绍。
 
@@ -180,7 +180,7 @@ export default {
 
 点击ReBuild Project构建工程，构建窗口输出日志如下，端到端全量构建约15s。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Of0LQr8ZQCCt875tRkvziw/zh-cn_image_0000002808886463.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3FE85848465B654262BB4EDF0E5C07E85ED4429400477DC3B7828D25F1E8D41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/KrwBuUrCTtuoI6YTLl7UjA/zh-cn_image_0000002808886463.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3AA3C7D6B9D016BE974C0DEE9EA5F062FB0641F906F0E41BA4B7AD3406D0EF4)
 
 ### 问题分析
 
@@ -190,12 +190,12 @@ export default {
   + 现象：两个自定义任务每次构建都会重新执行，即使源码未发生变化。表现为连续两次构建耗时基本相同，自定义任务显示为“Finished”状态，表示任务已执行完成。
   + 影响：每次构建都执行自定义任务，影响开发效率。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Jzu1KEwyRXS4cyv8R42LQQ/zh-cn_image_0000002779406826.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF84CCE701C94910875E88A59CCB9A1239EA9FED1764BC0B237AB50D11A028E0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/4aZlFndYQUWrK86TfZZeMA/zh-cn_image_0000002779406826.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=CABCAA6C7EC99EFC77D3F906200786AC5B68B9162B8099AB62BAA71635557CEB)
 * **问题二：串行构建**
   + 现象：两个自定义任务没有相互依赖关系，但Build Analyzer显示CustomTask0和CustomTask1任务串行执行，并且在主线程中执行，阻塞主线程执行其他任务。
   + 影响：构建总耗时是多个任务耗时总和，构建时间长，且无法充分利用CPU。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/aYGDkMgEQLiew37eWquO0A/zh-cn_image_0000002808766379.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=90988CBE6F2A7DD13853525852E27B2EA72D9365B9909F08E2A9AC15549B7D2A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/Kbuqm8qFTl-SjNIrV3X_PQ/zh-cn_image_0000002808766379.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9832DFCE6C5F3551F46728EEA6BCD670F6FB54FA51358E4E7BEB3C197FF16F0)
 
 ### 优化方案
 
@@ -276,7 +276,7 @@ export default {
 
   无代码变更时，重复构建，结果如下，自定义任务显示为“UP-TO-DATE”状态，表示任务被跳过。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/JbM_e6ACREOJDl_Y9yF1BQ/zh-cn_image_0000002779566798.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3AD095693F1B312A3142A2635FF0606DB32C1365A67E3D4BA3E728BF31E49A3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/clO1KAefRF6J3ZNxQsVngg/zh-cn_image_0000002779566798.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C7B00C7E2A842A1BF298108B8550E698ABE043A382BE13760F9CFC9E2E05796)
 * **优化二：并行执行**
 
   对于耗时较长的任务，可通过[submitWorker](ide-hvigor-api.md#section94763341419)接口将任务分发到worker线程中执行，实现并行处理。
@@ -377,10 +377,10 @@ export default {
 
   1. 通过Build Analyzer观察，CustomTask0和CustomTask1呈并行执行状态。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/7Q2-dClKSQaRpMnKZUe6jA/zh-cn_image_0000002808886467.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=65D4B17CDB8CFE44750FB53AD89B5A3CC7F231FF8171E0248B0635FE66F2F0A0)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/5r446__PREuvlgLv1Fl_Wg/zh-cn_image_0000002808886467.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAC45459E6D465EE07BF51358AECB461F4EAF9F07DC32E5C4F48528887CE5255)
   2. 编译构建耗时也得到优化，从一开始的端到端全量构建15s降到10s左右。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/4r6UAvN9Si-qJpTQi4GVFg/zh-cn_image_0000002808766387.png?HW-CC-KV=V1&HW-CC-Date=20261114T004716Z&HW-CC-Expire=31536000000&HW-CC-Sign=F25392C7F57407A7A0C68410A29730207F150B6BC5496F7B4948EA8EE5E2955D)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/x5FD3L9jQXiiU4PV5RNYvw/zh-cn_image_0000002808766387.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=297C68530E313A535E12935C9966E70DD82BC5A676628EF1B9CB6BEFC0EE7B1E)
 
 ## 总结
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-lock-scree
 title: 锁屏沉浸实况窗
 breadcrumb: 最佳实践 > 行业场景解决方案 > 出行导航 > 锁屏沉浸实况窗
 category: best-practices
-scraped_at: 2026-11-14T08:54:12+08:00
+scraped_at: 2026-11-24T12:47:50+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:3a6ae6ea740f4bd998f6225b91880ba74679a2bb79665e1e40ea6080f2e5098c
+content_hash: sha256:dd479aeaf2450a17a57c11bf0b37dec288ef40c9c3b7e1e64cefaaf606c0b1b8
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:3a6ae6ea740f4bd998f6225b91880ba74679a2bb79665e1e40ea6080f2e
 
 **图1** 用户获取实时信息界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/3Lr5hxfGQM2rCEWxeDD9YQ/zh-cn_image_0000002484414413.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=D12C881CEDE6A4F44AE9DC5CD9309B3C96A1D4BEB842BF388178DF8BBB9C1A72 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/WmGMViL3TXWH_uZU1HGvtQ/zh-cn_image_0000002484414413.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=56FFD096E76E178A2AE3365A91FBB4FC106BADF5F3B933FC2B70E489AA1E5071 "点击放大")
 
 当用户退出主界面操作后，可通过下拉通知栏或点击胶囊态实况窗快速获取导航概要；当设备进入锁屏状态时，将进一步展示沉浸式锁屏实况窗界面。这种设计可实现实时获取当前信息，既保证了核心业务流的持续可视化，又实现了用户注意力资源的智能分配。
 
@@ -24,7 +24,7 @@ content_hash: sha256:3a6ae6ea740f4bd998f6225b91880ba74679a2bb79665e1e40ea6080f2e
 
 **图2** 在锁屏页面点击实况窗打开锁屏沉浸实况窗
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/RQWY5B3MTa6U9-fBH_6a5Q/zh-cn_image_0000002484415005.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=075C44C700BDB3469F3DBF23183309272E88E5349F68C45CF1B7D3E7AF97221D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/XhLp72g4QlyZmrfdofrOMg/zh-cn_image_0000002484415005.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=1938FD674BA571A2245650B73E2AFC9800470807D2763BAA3FD6187F5E514A71 "点击放大")
 
 锁屏沉浸实况窗的创建依赖于实况窗功能，用户需要点击实况窗展开完整锁屏沉浸实况窗卡片。因此创建锁屏沉浸实况窗的应用需要申请实况窗权限和锁屏沉浸实况窗权限，详情请参考Live View Kit（实况窗服务）的[开发准备](../harmonyos-guides/liveview-preparations.md)。
 
@@ -34,7 +34,7 @@ content_hash: sha256:3a6ae6ea740f4bd998f6225b91880ba74679a2bb79665e1e40ea6080f2e
 
 **图3** 车道级导航锁屏沉浸实况窗
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/LGgyDxE6QSiX__r2oVyysQ/zh-cn_image_0000002484291273.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D35DE8DCF520261D452EB2DD4361EB370BFE448970A3F4FB174E0CC82199C3F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/kTvawXMZQoqBqSW3RnwkRw/zh-cn_image_0000002484291273.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCE7BF1A1BA9E7BE439A98E4A240E1B1B35CD284DA237C6A8BC9D47CCFA8183E "点击放大")
 
 由于锁屏状态的特殊性，锁屏沉浸实况窗通常为被动更新，因此需要有合理的更新策略。以车道级导航为例，当用户的车辆所在车道发生变化时，应更新车道信息，并定期更新导航信息，以保持锁屏沉浸实况窗内容的新鲜感和实时性，确保用户能够持续获取信息并合理分配注意力资源。
 
@@ -42,7 +42,7 @@ content_hash: sha256:3a6ae6ea740f4bd998f6225b91880ba74679a2bb79665e1e40ea6080f2e
 
 **图****4 锁屏沉浸实况窗架构图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/nGhE8U-0SsaC-AtyvhA-Kg/zh-cn_image_0000002309310946.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=267FD087215B8304E77974AB398C0045339AFA40E1BEE8C93406FA53C4940F77 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/DPVbamPRTqaRdGWObl8Tyg/zh-cn_image_0000002309310946.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=18BCB0862315B75D924269539E2E2296E929DFBE41B4BAB92DFDD9EF68A1795A "点击放大")
 
 锁屏沉浸实况窗的创建和更新依赖于[Live View Kit（实况窗服务）](../harmonyos-guides/live-view-kit-guide.md)，具体流程如下：
 
@@ -134,7 +134,7 @@ content_hash: sha256:3a6ae6ea740f4bd998f6225b91880ba74679a2bb79665e1e40ea6080f2e
 
 **图5** 锁屏沉浸实况窗实时更新
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/233csI78SoKq8lafevIBRQ/zh-cn_image_0000002484410785.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC5172499F84FFAB5B914B464D103410C8879E65DB4471EC1E71F52F53B2C6C8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZB1T6CkdSnCqu5W79WHsHQ/zh-cn_image_0000002484410785.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D3D992C97BDF478955E973EF1F59E92939569A3BA006DD432ABB8F6428273B8 "点击放大")
 
 ### 开发步骤
 
@@ -156,7 +156,7 @@ content_hash: sha256:3a6ae6ea740f4bd998f6225b91880ba74679a2bb79665e1e40ea6080f2e
 
 **图6** 锁屏沉浸实况窗实时更新时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/CRfjDpU0QxmwweB858o-9A/zh-cn_image_0000002343349997.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFFB4121A0CD88F61F36785ED4BC560F69DE5F1AEF34B8A80FA00DAB38BEFA9D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/IdAznuxuR-6yQOSm4YPIEw/zh-cn_image_0000002343349997.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=04B8DAD978B0370AE22F66C32D385704F1C0C65668426593D1390E2A89751D93 "点击放大")
 
 1. 申请后台长时任务，确保在后台能够发布公共事件以传递更新数据。
    * 在申请后台长时任务之前，需确认应用已在module.json5中声明后台运行权限。
@@ -352,7 +352,7 @@ content_hash: sha256:3a6ae6ea740f4bd998f6225b91880ba74679a2bb79665e1e40ea6080f2e
 
 **图7** 手机折叠态和展开态锁屏沉浸实况窗对比图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/r5GmvBliRACyUnuLPOtWtw/zh-cn_image_0000002451295374.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=33D438C7DB2AECF88CDC8F39C8C877DE46B7E1A23E4B8C56D9176C8731CD6B40 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ZF2evjFbSk-kE-U_9EuhuQ/zh-cn_image_0000002451295374.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=24D345F92C04C4650833F797E29DEAF9AC508A9856DF58C1DAA824B4FFF69DAA "点击放大")
 
 为了适配不同尺寸的实况卡片和多样化的设备形态，沉浸式实况展示应采用自适应的多断点布局方案，以确保在各种产品上能够实现自适应布局。可以参考[断点](bpta-multi-device-responsive-layout.md#section1532120147301)。
 

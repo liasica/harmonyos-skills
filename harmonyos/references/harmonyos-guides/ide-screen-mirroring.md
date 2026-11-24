@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-screen-mi
 title: 设备投屏
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 设备投屏
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:00+08:00
+scraped_at: 2026-11-24T12:42:30+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:7f0ebc500ee5562e3b8b2211958dd9bc0428a00ada7f5f819cae80ff1afa57fe
+content_hash: sha256:924747c274bf66ce7408e0506074f299808e47105451d84f95f4dd23301f0e7d
 ---
 
 从26.0.0版本开始，新增设备投屏功能，支持对已连接的设备进行投屏操作，方便查看设备屏幕内容并进行设备操控，提升开发调试效率。
@@ -19,25 +19,25 @@ content_hash: sha256:7f0ebc500ee5562e3b8b2211958dd9bc0428a00ada7f5f819cae80ff1af
 
 1. 在DevEco Studio下方点击**Screen Mirroring，**或点击菜单栏**View > Tool Windows >** **Screen Mirroring**，打开设备投屏窗口。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/UiBpF30vTpKqieq7n8u8zA/zh-cn_image_0000002779566970.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E204A0E5E4E5ECEC7F6317371CD96AFBAC2A9537383716DBB808C9C317F9B7C)
-2. 从设备下拉列表中选择设备（设备需已连接），点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/pJ1ZWJUXR46Cxq6oQ9mvjg/zh-cn_image_0000002779406994.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=00806C7378C64861346511133C2F8D4549F832562B7735BAE47387422D6CEFAE)按钮开始投屏。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/2YTEg6sCRPilBZhqT-5Mwg/zh-cn_image_0000002779566970.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=3683A0AE3DBB3BBD872A214AB27AB74B7B320C8B5046EB20B9F6FFA98BB9428C)
+2. 从设备下拉列表中选择设备（设备需已连接），点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/bSwvtsKDQ8Cgz-FsN02fdQ/zh-cn_image_0000002779406994.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=57D0F3AF25159D238902A8324DEA8F9EBB5C16A4E5C7020E0EED9D4DD0A743D6)按钮开始投屏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/YhOTWWhvSNWm2YmwzIdwgQ/zh-cn_image_0000002779406992.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=43B54C4A3DB150B16450D77DEF92F290B49308E0FFC45DFF41D71B898D29E56E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/62sjCl3oTAKxPBh9Q-Wa9w/zh-cn_image_0000002779406992.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C7F845D148B0972906D80486447AF84A34F8105ADFC0765A20DFAF9DBA27939)
 3. 设备投屏后，支持对设备进行如下操作：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/TlTaPSWAQWGM9C79xaWBjQ/zh-cn_image_0000002779566972.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=6541E30A0CA6923ABACBCDDECF832013256A78B9E9C189500A867822A969BF8A)：停止投屏。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/4thRxhvkRFe7Z_qA9nR0XA/zh-cn_image_0000002779566972.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C71EE128FB322B394464728D3DB5DE3B270C5C7AE3A7111F4B9091A80BC5053)：停止投屏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/GeBGwrGpTcSNR9NMDUDx_A/zh-cn_image_0000002808886623.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B9427C41FA351ADEEC66FBFC322E2710B62651888B4532713F2146D2994A231)：刷新重连设备。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/Fn_fiaZ3RM6yFAPR2VrzIg/zh-cn_image_0000002808886623.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EEE0DB36765D0E4D36CF10A8E908E3521BF3ED97FBBE3B212A423A515C7AB3F)：刷新重连设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/Ho2ikGOXQtmeAvMVimo7RA/zh-cn_image_0000002808886625.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC2BF7A3A37D3FDEDEA5F3DF8B31F62ED2FA44FAA7926F3B6BC82B825670B176)：对应设备返回键，返回上一屏幕或退出应用等。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/hW9r9aaKRVORUs4OxkwOGA/zh-cn_image_0000002808886625.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=94C6F531FD72DA405FC35257AF25B0F35B426F3315550519FD0475EE86BFC426)：对应设备返回键，返回上一屏幕或退出应用等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/vJ4yjT_sTtezMcNs6Fy3bQ/zh-cn_image_0000002808766549.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=375CA79F45CEBF2F48C9CD3510F1353B932632ABFEE56E08B5F9C21CBE1CDA8B)：查看最近使用的应用列表。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/h86p9yUAR1iQ8KHDJ8xTDg/zh-cn_image_0000002808766549.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4A59E61916D307B41D0BE081BCD5E01F3A23B9A30711604D1257BED5209929C)：查看最近使用的应用列表。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/OBkGFjO1Q7m-ia4WpuBOWA/zh-cn_image_0000002808886627.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C06C4DF0EFB6FA9904D5F3B6084B46A2F7B1FFD237A4BCE7EF424C3D2D6CC04)：对应Home键，返回主屏幕。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/SATbovOPQQSYifCyGk2qOw/zh-cn_image_0000002808886627.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EB5EACBF2ADD85909CB8548F744DC19D61B28E7D068B6F40C1D5F04CFDD7BB7)：对应Home键，返回主屏幕。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/GAo2Qn8YR8K3JnCKcy6cNg/zh-cn_image_0000002808766543.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=F36AAD462D1FB44F5DFDE1ECBE8706D5E81BC6F24C09273D683CEC60EC11C4B3)：对应电源键，可以锁屏和亮屏。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/6lv9M-d6RQKGkdmX3F1ytQ/zh-cn_image_0000002808766543.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=508A8B780248F9FD7F5D81FA3E1D29DD88E128D51A68FC8B733F8548A02EF80F)：对应电源键，可以锁屏和亮屏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/JHvGWCVATJygqhP6SmY0dg/zh-cn_image_0000002779406988.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4FA2BA5526B6BCC85E8CA85712170556B46A0DAA9C0917A50FC0A65676AD995)：屏幕点击模式，默认为鼠标模式，点击按钮后切换为触摸屏模式，同时图标切换为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/4c1JidJQS_yPeL3a3Uk--w/zh-cn_image_0000002808766545.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=D24B3DFF72FD82B0AF6B27258ACBAA6015DC5F2A00C1B0BED7011A4F636B4AB6)。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/JYO9rqSXQvCfT3FNu_ENXw/zh-cn_image_0000002779406988.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C606D307418F9E9DC2F8F68907EC4C1DBE380EFCBA7990778D9399BE7C64E49)：屏幕点击模式，默认为鼠标模式，点击按钮后切换为触摸屏模式，同时图标切换为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/yTymdYn4TRWOzqDn0SpU_A/zh-cn_image_0000002808766545.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AEDCF5176B32E8A87186D58B07E9D3EC857EB7DA84C5B7A1CAB40BC468EC138)。
 4. 支持使用鼠标操控屏幕、使用键盘输入等，具体参考下文介绍。
 
 ## 操控屏幕

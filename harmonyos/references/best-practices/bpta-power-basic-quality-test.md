@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-power-basi
 title: 功耗基础质量测试
 breadcrumb: 最佳实践 > 功耗 > 应用功耗检测 > 开发态功耗检测 > 功耗基础质量测试
 category: best-practices
-scraped_at: 2026-11-14T08:54:15+08:00
+scraped_at: 2026-11-24T12:47:53+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:6d6129c613f00838b4102662e6c9d0bee3d528ddf2bb0851a3de9858f90f0c64
+content_hash: sha256:562a3c7b751e8e9ede2cb2b965927e90b604c1bab4f6fd77b2dd6efb98f55d01
 ---
 
 功耗基础质量测试用于保障HarmonyOS应用功耗质量和体验满足商用要求，识别应用存在的明显功耗异常。应用上架时，应用市场也会进行功耗基础质量测试，以避免应用上架后因高耗电导致设备快速发热、续航缩短等严重问题。常用的工具包括DevEco Studio开发工具中Tools->[AppAnalyzer](../doccenter-app-quality/bpta-performance-detection.md#section135451444171)、[DevEco Testing](../harmonyos-guides/deveco-testing.md)。建议开发者在应用上架前自行进行基础质量测试，以提高上架效率。
@@ -24,11 +24,11 @@ content_hash: sha256:6d6129c613f00838b4102662e6c9d0bee3d528ddf2bb0851a3de9858f90
 
 测试完成后，功耗测试报告如下图所示，客观呈现了前后台功耗管控规则整体达成情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/xngeUmkrQbCJ0uSWeHYeww/zh-cn_image_0000002370565348.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=67562257E214F89B0338483C9F6C390A5CBFB0A325701DE5D22DFE126F673B34 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/4brsuQ51S46qNGicXeIDYw/zh-cn_image_0000002370565348.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC4C9F1BBA8480E56E8EC3CC8581971932CC9C49EF87D74640E8928518E05C76 "点击放大")
 
 其中，检测未通过项和异常项可以进一步查询详细的测试数据与日志，用户可通过测试过程截图进行问题复现，查看日志进行问题分析定位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/QdyM42_PT4yt0FCjJBJczQ/zh-cn_image_0000002372036910.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CB4A762003046CA789627E224CEFA4730CF9F60C7416963DC07C83F0A89CC19 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/9JeK9cIPSoGCksvzwhkDBw/zh-cn_image_0000002372036910.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=A520C96648311D36C7CD2AE38780E051E5B321CB6B6CECDDE3F8F3A43B438956 "点击放大")
 
 **注意** 
 

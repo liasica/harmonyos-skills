@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-continue-c
 title: 应用接续概述
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 跨端迁移 > 应用接续概述
 category: best-practices
-scraped_at: 2026-11-14T08:54:04+08:00
+scraped_at: 2026-11-24T12:47:41+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:7dd752ff880de5d86ad537f976b5c5f3583593c4b5f90c7a2d926a63eb472f6d
+content_hash: sha256:5e56dab18df0f6aca9d59135e0acb358f387efff03c719fd6cd46b4bed9ebd73
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:7dd752ff880de5d86ad537f976b5c5f3583593c4b5f90c7a2d926a63eb4
 
 如图所示，在手机上编辑备忘录，到办公室后切换到电脑上继续编辑，完成任务的无缝衔接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/cl3k9yKJT32V_qM8M-uYZQ/zh-cn_image_0000002591861418.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0605DFE4D55BB4716E67433D5DB3B8EF674C8C1C2F93A4ABFAB851256571B3F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/m8csj_TqQPe_XcNNztYSsw/zh-cn_image_0000002591861418.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=8548D9C53B3D7E391164221EBC0F9EB29518B27ED6D892FBE9909D7C9205EB42 "点击放大")
 
 HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等过程繁琐的开发难点，应用在接入时仅需关注数据的传输和恢复，参考如下章节完成开发：
 
@@ -76,7 +76,7 @@ HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等�
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/wkCNd00DSOGfagWtbQA9Cg/zh-cn_image_0000002610187449.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C3F4AE7EF2639C78F0281999D2AB76B45A025641C2AF9E3FE7F0AC0CB2D9552 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/lej4J1i0ShOzhKCK8IIYEw/zh-cn_image_0000002610187449.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=C51B69A4DACAC224DA0CCC1A552B5C34D23BA269EF90806992E90B000A64AB7F "点击放大")
 
 1. 在源端，通过[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md#uiability)的onContinue()回调，开发者可以保存待接续的业务数据。
 
@@ -182,7 +182,7 @@ HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等�
 
 在Stage模型中，应用在不同启动模式下将调用不同的接口，以恢复数据、加载界面。不同情况下的函数调用如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/JzDnHJKPRAOUzBUjXEFyAg/zh-cn_image_0000002579667558.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=F61B6F9E9C3100DED3B9AA33360B137B364F9BF6D9B718E2230D8FC5F34066E5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/hDFL4NcST9qTkZ26nsUPvg/zh-cn_image_0000002579667558.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=00208AB0921B621C88B066E6A5F46D48C339CE9966E64BC14B30EE149E3F75FA "点击放大")
 
 **说明** 
 
@@ -344,7 +344,7 @@ HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等�
 2. 为应用A申请接续服务。
    1. 进入A应用详情页找到接续服务，点击“申请”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/dGx1GSSoSF696y5h11qzuw/zh-cn_image_0000002579827480.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7B64DC115E66732EF9557AED5BECFE4FC33B5DACEEE1F3B8E0C6C6A0572FC64 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/wwAQ0nb6Tw-fewAVYeg2IQ/zh-cn_image_0000002579827480.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C8436F3C0CDDF0DA31F9D4E0CE0A24C888E488BDD5594DA11BD90BFE6377B31 "点击放大")
    2. 在“新建业务申请”页面填写如下字段，填写完成后点击“提交”。
       * “接续应用AppID1”：填入“APP ID\_B”
       * “接续应用AppID2”：填入“APP ID\_A”。
@@ -361,16 +361,16 @@ HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等�
       | TV端 | PC端/移动端 | ① PC版A应用AppID  ② TV版A应用AppID  ③ 移动版A应用AppID |
       | PC端 | TV端/移动端 | ① TV版A应用AppID  ② PC版A应用AppID  ③ 移动版A应用AppID |
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/2d9UFrHQSc6hGt2cRrGcQg/zh-cn_image_0000002610107361.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E05E9C3FC4B64BB38C346AA4232C2B610722FC0A3658170392516142F8B0CD9 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/SkDLkuaUR5yLeiA_KVptmw/zh-cn_image_0000002610107361.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=A35D588631B95947C198F75CDB148B22D1C6377B65EA8041FEDBD2A1A0E67B34 "点击放大")
    3. 进入互动中心页面，可看到申请已提交的消息。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/OzISW8eSSYO7gmi7NLtvLA/zh-cn_image_0000002610187451.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F1A1FDE837AC37F3B308FE5385C926F0695C88D91837E9FE70A40C62D57863D "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/XetsYhMSSfC-9CnsVp5lJQ/zh-cn_image_0000002610187451.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=882377D3D18B5396285E8B05243D050D1DD1D7A772B82044A8ACB912D9A004A3 "点击放大")
    4. 返回“开放能力接入”页面，原“申请”按钮变为“申请中”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/QGVguyzmSHGh35WM47QEHQ/zh-cn_image_0000002579667560.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FD136C97201815775A10C7A493C4E40C597281B687FE2DC10DE10E841214866 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/jwtBMiZlTG2UArWv2EnT4Q/zh-cn_image_0000002579667560.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=36B9AA7762F64B9E5DFACDE8148B1236F960C87CF5CABDE1734D8CD88D097EAE "点击放大")
    5. 申请审批通过后，互动中心会发送通知消息给您。“申请中”按钮会变为“申请”，同时对应的能力开关会为您自动开启。至此，您的应用已成功接入接续服务能力。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/sw1A6PekQgaKp3Y74tIAoQ/zh-cn_image_0000002579827482.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E631DF4585559D407130EBA9AA00A697586FD5CD4FBEF0337F2E6EFBE9F009F "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/P9eRhy83TXqZB7O-n3SQlg/zh-cn_image_0000002579827482.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EDE80A88399457C964D3CAA672C959FC4CCA82F29E433DDEB25F0EF6A1D21C3 "点击放大")
 
 3. 为应用B进行接续服务申请，详细步骤同第2步。
 4. 重新分别申请并下载对应的Profile文件以供后续打包使用。
@@ -439,7 +439,7 @@ HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等�
 | 第一次启动请求 | onCreate (冷启动)  或 onNewWant (热启动) | AbilityConstant.LaunchReason.PREPARE\_CONTINUATION |
 | 第二次启动请求 | onNewWant | AbilityConstant.LaunchReason.CONTINUATION |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/SGflujAwQsS_q-NauuYp3A/zh-cn_image_0000002610107363.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0FBC74C7CA5C697B3B5E82D14B4993DD0D5208CD6E98AB21EB0171EE9DFA4D7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/L5fSTOnnTVOv-CubYM9oFg/zh-cn_image_0000002610107363.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=89DBFEA32961D4D6B13DD776E32FCEB4B33F36504407F630ECE7F094FAFF7801 "点击放大")
 
 如果没有配置快速启动，则触发迁移时只会收到一次启动请求：
 
@@ -692,7 +692,7 @@ onContinue(wantParam: Record<string, Object>) {
 
    执行完成后，RemoteDeviceInfo中列出的设备即为已成功与当前设备组网的设备。如下图所示，该设备已与两台其他设备成功组网。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ZakVIm9ETZy9J2hcd08ZHQ/zh-cn_image_0000002610187453.png?HW-CC-KV=V1&HW-CC-Date=20261114T005402Z&HW-CC-Expire=31536000000&HW-CC-Sign=B295CF44519B7446BEA9E18B029B477E2DBA6B584E04EB36110B0E4DBD3F6083)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/S1QDRSSITI2svwBnwgB2FA/zh-cn_image_0000002610187453.png?HW-CC-KV=V1&HW-CC-Date=20261124T044741Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDB88648A0F71BB8C3DE71D715DBFD968D8B900BB97626C9B2CD7A5181F5C162)
 
 ### 1分钟以上无任何操作，图标将自动消失；再次操作应用时，图标将重新出现
 

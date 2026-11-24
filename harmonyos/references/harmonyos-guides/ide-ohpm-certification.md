@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-cert
 title: 认证管理
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 认证管理
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:48+08:00
+scraped_at: 2026-11-24T12:42:20+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:960621d10245ed12d88eb7d4eddafe63d9d595baee296b90804f159df3117524
+content_hash: sha256:f3f4874bb2d76273d02132c9499d6ab88d5e091535f1a07661ee5462729aa9ff
 ---
 
 当前ohpm-repo的认证方式有证书认证和AccessToken两种方式：
@@ -18,17 +18,17 @@ AccessToken认证：将ohpm-repo生成的AccessToken配置到ohpm客户端配置
 
 使用ohpm发布包时，需要先在配置文件.ohpmrc文件中配置publish\_id和key\_path。publish\_id对应发布码，key\_path对应私钥的地址，其详细发布流程见[使用命令行工具发布](ide-ohpm-repo-quickstart.md#section182904013257)。认证管理主要是管理私钥对应的公钥信息，在用户使用ohpm发布包时进行校验。认证管理页面效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/1gMngP7_To-IKV5uqh3opQ/zh-cn_image_0000002779565276.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFD86728E217C9FB4C3554F6C209D9217C186EF5D0B5EDFDEA2B1918DDAB9D2B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/N2Rkgp4RSgyqFYiJW1EB5Q/zh-cn_image_0000002779565276.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=580D5EBEABAD2CED875928E13F12210975FDCCB79B29B385E48F8FA483A196C8 "点击放大")
 
 1. 点击新增，弹出添加公钥面板，可以添加公钥信息。一个用户最多可以添加十条公钥信息。通过配置不同的公钥信息，可以实现多人共享该用户使用ohpm进行发布包操作。页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/AqXG7LSlRmC9IZ66_Ix8dQ/zh-cn_image_0000002779565268.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EB52420D7478B2952CBB86A1BAF0E2398C4463DE8BB45893A4005249477A327 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/ZhhbMfu7Rr6TjMq9I9raDA/zh-cn_image_0000002779565268.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF9301D2A645254303C902A65ADC62559BB4465664CA6EE2526AEF0640CCA2F6 "点击放大")
 2. 点击如何生成公钥，可查看公钥生成的说明，页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/5P79EiRLR524XCFb_UHHlA/zh-cn_image_0000002779565294.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=883ED502510BB45381866DA186DB4AA8E787C7768CE6C35BA6A1997452CF2890 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/8OjyTC1BQsyim5A4A63jmA/zh-cn_image_0000002779565294.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A1460617634A1964BD2F6B6D5170B82958663F3592CC776AD4CBE46C8B0D601 "点击放大")
 3. 点击删除，可以删除已经存在的公钥信息，页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/J7rSwDOvSoaLuv2qSZvzjA/zh-cn_image_0000002779405298.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=3819C3342CE9827D739155A6D61AD787781576512E48C1E0079341DEFBA06433 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Bgr7uKd4Tm2HjUsB4rUUlQ/zh-cn_image_0000002779405298.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=9892941C02D8393CEFDE0C2FF3DAF60A8BE8CAB0C5D3F860C193FD107497019D "点击放大")
 
 ## AccessToken
 
@@ -36,20 +36,20 @@ AccessToken是ohpm-repo 2.1.0版本新引入的认证机制（需配套使用1.6
 
 该Token分两种权限等级：只读Token允许执行info和install操作；读写Token除了包含只读权限外，还支持publish，unpublish和dist-tags相关操作。每位用户每种权限类型的Token最多可生成10个，首次生成时系统自动复制到剪贴板，后续不再显示完整Token内容。AccessToken页面效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/qn3CliAPR8uRoQE6YXJAIQ/zh-cn_image_0000002779405326.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EBC6EFCFE1E54066482D3A46380AA31B915ADA7517529825B0313933DF6C56F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/rUiSzV1GRV-uO9lE8tNF_w/zh-cn_image_0000002779405326.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=15C1C85F7430DCF93836897903A567C3FF32AC9FB199C35875B34BCDB7C0820F "点击放大")
 
 1. 点击生成只读Token，ohpm-repo将自动生成一个专用于ohpm客户端进行包信息查询（info）和安装包（install）操作的认证Token，页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/T0KIDyIySQGWF0J3dVSpMw/zh-cn_image_0000002779565304.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=55B9EA7F1199059ADAAC4CF36B6F1FA82F8429B4F2EC4FBBA53F387B8A9278A2 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/OC3XUOiCSF6GTdEv7g3Qww/zh-cn_image_0000002779565304.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=56EF591C0CD2F2108E9066CE13D49AB84925F9D8E3DB2CDF7817A36B0F9325D2 "点击放大")
 2. 点击生成读写Token，ohpm-repo将自动生成一个专用于ohpm客户端进行包信息查询（info）、安装包（install）、发布包（publish）、下架包（unpublish）和版本标记（dist-tags）操作的认证Token。页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/JwTXOKSdTr2e4YagG3874g/zh-cn_image_0000002779565288.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DBEEAF045E52C8A78C41D6B315136E7F44AA62B86C14689A0764D10DEB0E083 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/SS2q8h_PQLavgkk7-7NhiQ/zh-cn_image_0000002779565288.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2AFB388644A48DAFE46BC8BC9D36DE64E7DA79F7CE0341EBC5B75619E2482C6 "点击放大")
 3. 点击AccessToken指南，随即显示使用教程，指导如何有效使用和配置AccessToken。页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/bM8Ps4vfTWSvBNdTEjegnQ/zh-cn_image_0000002779405318.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0778E3459A06ECD8EB875751EC53414675103C9E29873D319B7BECBA412D13F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ueDjhNt6SCm2B4mj-Gpc-Q/zh-cn_image_0000002779405318.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=A43AB4FCEC57492F968DB05DCBBE68D2C16D060134AF941A73E6B69E1F4BEC35 "点击放大")
 4. 点击删除，删除对应的Token。页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/A7nWF5gPSLmeMtr7D_lBNg/zh-cn_image_0000002779405314.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E07DFA42AF7926561BCCACF8837923EA46F58BBF89A5266430B4CDBB207B50A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/RpoKDbu3T4GXT_J8YEO1TQ/zh-cn_image_0000002779405314.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=7311FD3DDD080683409CBA5C59F23A688946B66C988F03E1231D1532E48DB0D8 "点击放大")
 5. AccessToken的使用：
    1. 通过ohpm-repo页面生成Token。
    2. 将Token配置在ohpm客户端的.ohpmrc配置文件中，配置示例如下所示：

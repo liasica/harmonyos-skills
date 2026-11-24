@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-ripp
 title: 基于AudioRenderer和AudioCapturer实现音频波形动画
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于AudioRenderer和AudioCapturer实现音频波形动画
 category: best-practices
-scraped_at: 2026-11-14T08:54:12+08:00
+scraped_at: 2026-11-24T12:47:50+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:9d710fdb292cc52cb2baffa29c094e7ef98b74f1dbbbc53e3fe803c40d504fa3
+content_hash: sha256:6ddc1c6b349751fe1d1d253a114c9106097ae25ef05606038bc14b954baf3f57
 ---
 
 ## 概述
 
 音频波形动画是音频数据的线性波形显示，其中，水平X轴用于衡量时间，垂直Y轴用于衡量振幅，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/gjJZQ65KSViN2KMB7eJB8w/zh-cn_image_0000002507968404.png?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A252AF35DB725ABF4FB608F5E84FF1256DDDAA7CFCB50A987E0DC27A95A5D06 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/BC7ceHR4TjareEDGKnWz2Q/zh-cn_image_0000002507968404.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4A5EF7C668107CD32690BC20EDAD549E7E2DF8E607A5A0FAD4805E6F2EEAF54 "点击放大")
 
 由于音频波形可以清晰地显示振幅变化，因此非常适合于直观显示声音、音乐等的音量大小变化，常用于用户在录音或播放录音过程中实时展示音量大小的场景。
 
@@ -25,7 +25,7 @@ content_hash: sha256:9d710fdb292cc52cb2baffa29c094e7ef98b74f1dbbbc53e3fe803c40d5
 
 dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示中，通常使用dBFS衡量数字音频中的信号强度。其计算公式如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/lkUsAwI3RzWou95ovhvoDA/zh-cn_formulaimage_0000002539808087.png?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=754E4B3D3FB9DADA40465AC045AF8C1E34E29C7F8AB400F838A7EF1484A07717 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/X6CErbM8SOCH8jGHsi76lg/zh-cn_formulaimage_0000002539808087.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFD2F2E7227C34741B06EB2D4D0562316A5520FCC794D51D2074A2F01027C7D1 "点击放大")
 
 其中，A表示当前采样点的振幅值（即该时刻音频数据的瞬时数值）。Amax表示在当前位深下，系统所能表示的最大振幅值。
 
@@ -37,7 +37,7 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
 
 开发者在开发录音播放等场景时，为了体现当前播放音量的大小，需要实现音频播放波形，下面将介绍如何基于AudioRenderer实现音频播放波形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/VxXwU2CmTYelCYZqfdaLbw/zh-cn_image_0000002539688123.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F3ECB956660706ABD8F1640AE97F9F083A2EB765A37F30BC512E4FA8ED3C606 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/GKxCCdOHS3qfyldcUJJZYA/zh-cn_image_0000002539688123.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=C24194CE4CA927DC8C66AE4C63665522C9D6AC89708CD56D2FAC01E3F49A4823 "点击放大")
 
 ### 实现原理
 
@@ -125,7 +125,7 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
 
 开发者在开发通讯软件的语音录制发送、音乐录制等场景时，为了体现当前录制音量的大小，需要实现音频录制波形。下面将介绍如何基于AudioCapturer实现音频录制波形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/8E2qMAUBRRSO10la-zATnQ/zh-cn_image_0000002507968406.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=76A5541F57FCD32F0DD7438F61B8E9B65B8ABC3096F0BC463D20B92E8870B5D5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/hamUlgS4QOKwbXIF0-iZLg/zh-cn_image_0000002507968406.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A0C4BF871FD6B5AB3A8CFEBA04D706C644F53210551C43939C32E4202759555 "点击放大")
 
 ### 实现原理
 

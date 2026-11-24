@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 管理体检报告
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 管理体检报告
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:01+08:00
+scraped_at: 2026-11-24T12:42:31+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:56648c73655972addf665262a8120a39c8ee92bf7570b8ee7df7cc386d3a84eb
+content_hash: sha256:d09a004884c55a2b2a2d6777b4f361998856705fa8c04c6743c68694f925ece8
 ---
 
 AppAnalyzer支持查看、导出、导入体检报告，具体如下。
@@ -17,14 +17,14 @@ AppAnalyzer支持查看、导出、导入体检报告，具体如下。
 1. 在DevEco Studio中，点击菜单栏**Tools >** **AppAnalyzer**，弹出AppAnalyzer页面。
 2. 点击底部**History**按钮，可查看体检报告卡片，点击卡片可跳转至详细的体检报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/ugj1EgIWRl6IIY7nWZ4tWQ/zh-cn_image_0000002808886733.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB398306AD90115E4860B079953A5FF1BD6B07B71D0F727B0A0C39512963D0EB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/CzuOg9LyTY2bHPacGuN2hw/zh-cn_image_0000002808886733.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=1636F6A11B4ADD2435E839A9BD7ABF5EE91DFD09034D6D6787FA2657FDF27AE9)
 
 ### DevEco Studio 6.0.1 Beta1以下版本
 
 1. 在DevEco Studio中，点击菜单栏**Tools >** **AppAnalyzer**，弹出AppAnalyzer页面。
 2. 点击底部**历史记录**按钮，可查看最近15次的体检报告记录，点击时间戳可跳转至详细的体检报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/G_s5DlrLSMiwdk-oDsQFhg/zh-cn_image_0000002808886737.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=572ED2685BBAC71865435DC6AC983899276C9FA6FDC22B97F1201DA2641DA36C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/E1AZXUJEQKG4wY8Hhj8yLg/zh-cn_image_0000002808886737.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=C45F6FA839B4C08D1D696BAE6768F2E596188A7C7D04802E2D9B4EA5BD8B4FF4)
 
 ## 导出报告
 
@@ -37,10 +37,10 @@ AppAnalyzer支持查看、导出、导入体检报告，具体如下。
 
 1. 点击AppAnalyzer底部的**History**按钮，选择符合条件的报告卡片进入报告页面，点击右上角的**Export**按钮，选择需要保存的路径，点击**OK**后，等待报告导出。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/wbgGlJ_DSCa1dTdCM5X_ig/zh-cn_image_0000002808766657.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AD4087C351A00B9A4976F6EA317CBEE6C31410B8CFA47C9AFCAF636F4E7D549)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/lPdHZrx3QyW_D1igH7LXwQ/zh-cn_image_0000002808766657.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=001411E9F905B39A4AEA8889CBE66FA61BC4403A6998AC68FA0C56C45D9F0FB0)
 2. 报告导出成功后，在DevEco Studio右下角会弹框提示，点击**View the report**可打开报告保存的路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Y9V7Ul0cTd6UmTaffBZzGw/zh-cn_image_0000002808766653.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=E137EB35D1F04FCC6C692FAEB133F5F86B491817DC01041AB0722AF06692F647)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/mfaL1OPuRhyFPSQn_y159A/zh-cn_image_0000002808766653.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=457A4483620A7A6F17B996DC5700CE7A46DF880DC41C9830E5954A08B5138198)
 
 ## 导入报告
 
@@ -53,7 +53,7 @@ AppAnalyzer支持查看、导出、导入体检报告，具体如下。
 
 1. 点击AppAnalyzer底部的**History**按钮，点击右上角的**Import** **> Analyzer Report**，根据界面提示，确保即将导入的报告满足相关要求。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/N13QVuz9TmOYBHhPLWouxw/zh-cn_image_0000002808766655.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=175ED0BBD8A255D6DD9ACEF842E334F325660261159034034BD43ED8A3DAE618)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Z0xcEqK6Q8SMqtJvwUghsg/zh-cn_image_0000002808766655.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EC9366F98660E51FDFB7D28562ECD40B84ACABF60B55BAF0D33D95796F2F64E)
 2. 选择本地的体检报告zip文件，点击**OK**后，等待报告导入。导入成功后，AppAnalyzer会自动打开报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/B6uxNUe_TKGiSf2x2rcYmQ/zh-cn_image_0000002808886735.png?HW-CC-KV=V1&HW-CC-Date=20261114T004714Z&HW-CC-Expire=31536000000&HW-CC-Sign=72BBE849B8151026956BB8380375F9AB9EADB190AE9C8D4D83BE7DAA67E2E097)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/pPhTmlSoTl6k42T4nFHVPg/zh-cn_image_0000002808886735.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FC7E1AF8001785D5F851489DE10AB6773AC781ED3D0D59E6304BF8A5254D624)

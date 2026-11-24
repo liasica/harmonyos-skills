@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/low-power-consu
 title: 不可见组件低功耗建议
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 不可见组件低功耗建议
 category: best-practices
-scraped_at: 2026-11-14T08:54:16+08:00
+scraped_at: 2026-11-24T12:47:54+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:408b88fab5acc4433f27da4165a74ae6156175607e54e01c9e9e2527bd8a1607
+content_hash: sha256:7e837b16456b12498097b5aeed774ecebb6888c28ca3c537cd62a44ade1759f5
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:408b88fab5acc4433f27da4165a74ae6156175607e54e01c9e9e2527bd8
 
 为了帮助开发者定位到存在空跑问题的组件，在当前系统中已经开放了[前台不可见动效问题分析](bpta-frontend-invisible-animation-analysis.md)。本文将着重介绍Vsync冗余信号、UI刷新问题以及Buffer自绘制三类问题中的UI刷新问题。开发者可进一步通过[布局分析](../harmonyos-guides/ide-arkui-inspector.md)较为直观且方便的查看ArkUI组件树结构以及关键的变量信息，勾选打开第四项，Show Hidden Components，可以使得开发者找到更多隐藏但未被析构的组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/KYQxEhjOR1u3-Act6eMcUQ/zh-cn_image_0000002375069378.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=E42D9BFE49E303BCB3070B1393E2ABAB777B3DA6AFAB8EBFEA5E17CE02D240E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/6cz9mK6VQIGwn8Yk_U2DnQ/zh-cn_image_0000002375069378.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=52A8EA7A7374D08F1DF73E449446B622442C0CB89A06E3D13A33392601272F0B)
 
 以下是一些常见的引起空跑的情况。
 
@@ -44,7 +44,7 @@ content_hash: sha256:408b88fab5acc4433f27da4165a74ae6156175607e54e01c9e9e2527bd8
 
 ### 概述
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/-eyGoValR7WajmtT10_uMw/zh-cn_image_0000002374909522.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=979D8E2B875746D104E5251896B6C81151906DC8044B1680126871486545DEE9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/PLlXB9DKTWKZMkkDIVqH6g/zh-cn_image_0000002374909522.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D99D88B8AA35943A7BE67D3780A8B97E953F94B87175D2BB9FE9930CA2A4E23 "点击放大")
 
 对于一个动效组件而言，会影响组件可见与否的属性有以下几种：
 
@@ -58,15 +58,15 @@ content_hash: sha256:408b88fab5acc4433f27da4165a74ae6156175607e54e01c9e9e2527bd8
 
 **组件位置**：如下图，“1”处所示的Button组件是视频竖向播放时的点赞组件进入Hidden状态的组件，当用户点击视频全屏时，页面会切换为横屏，原本处于屏幕内的点赞组件变成屏幕外。由于此时该组件依然位于该页面的前台，开发者可能仍有业务需要运行，且组件依然可能在下一个时机重新显示，故而系统并不会因此阻止该组件正在进行的行为。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/2SAm8ChyQEq7Nl1pUMSk6A/zh-cn_image_0000002408589053.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=51BF1F5A91FE60E1BD3DEC1B3F50ABF07315DAA365E92FCCC4D2F646CF55C71E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/3JifDQ7KQRqiyTh_SUFkZQ/zh-cn_image_0000002408589053.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=1678A89AE36A0FF918C720997CE5EEE855633B5EAD78AEAD7AAF0A89C9FBABBA "点击放大")
 
 **visibility**：当组件或其所属的根页面的visibility属性设置为Hidden时，该组件实际上被视为不可见。如图所示，“1”处标注的组件位于应用的首页（非当前页面），此时ArkUI会提示该组件不在屏幕显示范围内。进入Hidden状态后，大多数系统组件会因系统限制而停止刷新，但对于具有独立动画控制器的动效组件，仍需第三方主动控制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Tvl9nM4eTX6Ks3G8LsSqTg/zh-cn_image_0000002408628893.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D3ED62066CA66D6172FB9C24842F0E12FF57A7FC7431DEA5CA8A296ABC1118B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/3MFwki6USZCE6AqjWaEhmA/zh-cn_image_0000002408628893.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=C20151F72FDAFB4A96FD9F5399BDF2646B719283651F1C471B48D90012451F74 "点击放大")
 
 进一步查看该组件对应的NavDestination，可以发现该页面的visibility属性已被置为Hidden，这是由于Navigation跳转后，会将非栈首的页面视作不可见，后续该页面下所有的组件，在遍历可见性时，均可以感知到其根页面已进入Hidden状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/8uhshTo6TEmkewSgsPeO6Q/zh-cn_image_0000002375069394.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7BF09FF549312F7E7E8562AE2246BDD31F0F33057926059B2E10AC37D2B9666 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/k1gDcXd8SRu9tutbafCdIQ/zh-cn_image_0000002375069394.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=031068FC30B41E4DE62A84D61239D8664F8658574874BE15FFF633A4F008824D "点击放大")
 
 ### 开发参考
 
@@ -162,21 +162,21 @@ ArkUI Inspector不仅可以帮助开发者分析组件的详细信息， 也可�
 
 [Navigation](../harmonyos-references/ts-basic-components-navigation.md)是当前HarmonyOS中常见的跳转页面方式，用户每进入新页面时，都会将页面以NavDestination页面结构形式入栈，从页面返回时最先销毁退出栈顶页面。开发者可在组件结构的NavigationContent下查找并列的NavDestination子页面查看栈关系。如下图，“1”处NavBarContent对应首页，“2”处为首页点击推荐后进入的二级页面，“3”处为当前界面。Navigation在进入新页面时，上一级页面不会析构，但visibility将进入Hidden状态，页面内组件可通过不可见回调感知到不可见行为。由于用户可能通过返回到上一级页面继续执行逻辑，系统允许上一级页面逻辑继续执行。但开发者需通过可见性感知，停止动效组件的刷新行为。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-tBJlKsmQmK5UE7fVZWFSg/zh-cn_image_0000002374909538.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=774A880A17A93A8BD7DDFF8FA8B44F61B7FCD37F1F00BD7862EE64E4D3FF50B9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/lbAyQAsrQVOl28VTY6a-3Q/zh-cn_image_0000002374909538.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDD5CFB8351E1F91064EDD88270D266360BA95F36A3AA6398D40F1B789E3F915 "点击放大")
 
 ### Tabs
 
 与Navigation的栈结构不同，[Tabs](../harmonyos-references/ts-container-tabs.md)是一种平铺的列表结构，由一个Swiper串联起各个平级的TabContent。默认情况下，Tabs只会Build第一个TabContent实例，如下图所示，“1”处的TabContent下方组件已成功Build，但另外3个TabContent此时处于空壳状态，下方并无ArkUI组件实例挂载。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/nOCW6_VRRymnKFRVEbuRhQ/zh-cn_image_0000002408589073.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=121B148AFD5C146F66408F5169FB41D1D488B940EAB523930E713E6358EB5E8E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/_pdBxHikTNGxEQW7PwlHVA/zh-cn_image_0000002408589073.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=35F3BACF749C83747406C801BEE69CF2F4E5E6005CCDF52F306D37D4A647D552 "点击放大")
 
 逐个点击Tab，切换页面至“yellow”，可以发现此时前面两个TabContent页面的组件实例已创建，上一个TabContent的组件会因Tab的默认滑动动效而在挂载在屏幕侧面。值得注意的是，Tab默认开启的切换动效会构建路径中的所有TabContent，例如在从第一个Tab点击最后一个Tab时，中间的两个TabContent也会完成构建的操作。除此之外，Tab可通过[preloadItems](../harmonyos-references/ts-container-tabs.md#preloaditems12)预加载指定TabContent，开发者需留意在build预加载的TabContent时，需要确保预加载页面的动效、动画等组件初始状态为不播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/Cc-HjZhyQ0eqCWIXR4mfiA/zh-cn_image_0000002408628913.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=79D4B4BB64437856389420B793656BB4B51BA97B5433B30353D1B0E1920CD031 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/p0WqxTA6QyK8E_sFyT7SJw/zh-cn_image_0000002408628913.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCE21DF048F76AC9DFF60150CF3AD9DF8C4522B0A9866D83560105CF51360132 "点击放大")
 
 ### Refresh
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/SHA69paVQwmOQJ2w9LOX5g/zh-cn_image_0000002375069410.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=6ABA385E43AB25E6DAACCE7A2DDF5BAA349B3DED93E59C2D126303114E321250 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/aWJYs7rkQXCQ_5JZPJ7BXQ/zh-cn_image_0000002375069410.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=E300810B5BAB581059FAE5B88769F7C36E0733D8EC0AB107247400977E11BE38 "点击放大")
 
 Refresh是一种较为特殊的页面结构，许多开发者会通过[示例3自定义刷新区域显示内容-builder](../harmonyos-references/ts-container-refresh.md#示例3自定义刷新区域显示内容-builder)来实现自定义的刷新显示效果，通常而言，被创建好的动效组件大小可能会大于其父组件所在范围。如上图所示，通过Builder创建的apng动图，外侧的容器与动图本体Canvas不相交，Canvas实例被下层列表组件遮挡，仅在下拉列表后才会显现。在此情况下，用不可见回调等可见性方法将难以准确判断，推荐开发者使用Refresh自身的状态监听回调[onStateChange](../harmonyos-references/ts-container-refresh.md#onstatechange)，当监听到Refresh的下拉状态[RefreshStatus枚举说明](../harmonyos-references/ts-container-refresh.md#refreshstatus枚举说明)为1、2、3时，表明Refresh处于下拉中或回弹中的状态，可以让动画播放，其余时间动画均需控制停止。下面给出了一个常见的控制写法，确保自定义的动画控制器状态与RefreshStatus绑定，且初始状态为不播放。
 
@@ -212,7 +212,7 @@ Refresh是一种较为特殊的页面结构，许多开发者会通过[示例3�
 
 [懒加载优化性能](bpta-lazyforeach-optimization.md)广泛用于List、Waterflow、Grid等列表结构，通过懒加载挂载显示的组件们无需一次性全量构建，而是在一定可视范围内动态按需构建组件，搭配组件复用优化方法，浏览时延表现会更好，功耗也收益显著。但开发者需谨慎处理离线动效组件的动画状态控制，预防通过懒加载生成的离线组件产生额外负载。如下图，在一个使用了LazyForEach实现懒加载的列表结构中，当CacheCount不为0时，意味着除了当前的ListItem外，还会额外离线创建一些ListItem用于加载。这些离线加载的列表项不会显示在ArkUI Inspector中，但会在需要显示时挂载上树。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/tMUIsMskS4Glk44YjF8cJQ/zh-cn_image_0000002408589085.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDBBC3833FAB70833FBB5E02A21CFCEC8D2693E05160053AA09CF95CD1C145A2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/RuDl8imTTE-q0RuYvrR9Ew/zh-cn_image_0000002408589085.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0ADB3454D61A66C17AA41EA91DF14577BC2689C14A1A8B5FE83609EF3108244 "点击放大")
 
 在上图所示的页面中，设置LazyForEach的CacheCount为10，此时一共有7个列表项位于屏幕内，分别对每个列表项的aboutToAppear()、onDidBuild()以及onVisibleAreaChange()进行监听并输出log，结果如下图：
 
@@ -220,7 +220,7 @@ Refresh是一种较为特殊的页面结构，许多开发者会通过[示例3�
 * “2”处信息表明：列表项Build完成后，将对7个ListItem注册onVisibleAreaChange()回调，返回结果为组件可见于屏幕
 * “3”处信息表明：位于CacheCount的10个离线ListItem完成aboutToAppear()和onDidBuild()，但因为此时节点并未挂载在ArkUI树上，不会产生可见性的回调
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/WLSaqeN1S7-fu727dXDYfg/zh-cn_image_0000002408628921.png?HW-CC-KV=V1&HW-CC-Date=20261114T005131Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C1C41FCB2F291484C880FA37B0450794F6FB909A85FC2F532BFE818E8E28747 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/tckGkBLTRuKMGaaB4PIDBg/zh-cn_image_0000002408628921.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA1FE3D30190E2AEBC0B1BD606EF33378649211D481BAF5759860ED5C18DD6B3 "点击放大")
 
 这一结果可以表明，离线组件在完成build时，组件由于没有任何相关的父子关系作参考，onVisibleAreaChange()回调函数不会返回结果，开发者在控制离线组件的动效启停需通过其他方式来进行。建议开发者将懒加载组件中的动画初始状态设置为不播放，当组件挂载上树并进入可见状态时，通过可见性回调让其正常播放。
 

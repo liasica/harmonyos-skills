@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-vsync-powe
 title: Vsync低功耗优化
 breadcrumb: 最佳实践 > 功耗 > 功耗场景优化案例 > Vsync低功耗优化
 category: best-practices
-scraped_at: 2026-11-14T08:54:17+08:00
+scraped_at: 2026-11-24T12:47:54+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:1a08c9cba89cdb8a78fbff4cdd51f1dd2387b4a74087f0013c7b3c668ffbdcd3
+content_hash: sha256:6de624aba6e3cc20f8eb346977e1f7a3d0a1495111bc21a66d1b71302822af96
 ---
 
 ## 概述
@@ -18,15 +18,15 @@ content_hash: sha256:1a08c9cba89cdb8a78fbff4cdd51f1dd2387b4a74087f0013c7b3c668ff
 
 * 关键字“H:SendVsyncTo conn: xxx”：通常可以在VsyncGenerator进程中找到，显示该次发车的乘客数量。开发者可以在Profiler中搜索该trace点，以获取一定时间段内所有绘制请求者的信息。如下图所示，表明该次Vsync信号将发送给TaroAnimation、UITicker和Nweb\_5754三个接收者。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/091KOazKSou1OUmVBiB7xA/zh-cn_image_0000002411758680.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=490C063A59FD8C63E8BE57C93B2B3C837F00AB1B1180FA95D6A5E5EE42ED446A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/1Fc55uaiRuuB7Xaxh39vew/zh-cn_image_0000002411758680.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8B6B8487F4507A8A0770D0DFC7D3B89BFAE386A04F424F5F0381B68791108F3)
 
 * 关键字“H:xxx\_RequestNextVsync”：表明申请者xxx请求了下一帧的Vsync车票，这一信息通常由其他绘制业务进程生成，并传递至RS的OS\_IPC线程中。在实际应用中，除了ArkUI组件和第三方框架会申请Vsync外，一些帧回调函数也可能发起Vsync请求。例如，在一个应用静置场景中，请求者UITicker以60Hz的频率持续请求Vsync，而WM\_31284（负责启动应用主进程）和RS（负责启动RS）的实际请求次数较少。实际上，这一请求行为源于React Native框架代码中默认存在的onUITick帧回调函数，该问题在[react-native-harmony 0.72.70](https://gitcode.com/openharmony-sig/ohos_react_native/blob/5.1.0.404SP1-0.72.70/docs/zh-cn/release-notes/react-native-harmony-v5.1.0.404SP1.md)后续版本中得到了修复。此外，一些开发者还会使用[DisplaySync](../doccenter-references/api/js-apis-graphics-displaysync.md#displaysync)、[postFrameCallback](../harmonyos-references/arkts-apis-uicontext-uicontext.md#postframecallback12)等方法实现帧回调效果。建议开发者尽可能避免在所有场景下使用此类帧回调函数，而应选择性地动态开启或关闭，在页面内容长时间无变化时停止回调，当有滑动或动画效果时再重新开启。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/3QQTGzSlTsu-vjyyTF86mw/zh-cn_image_0000002411918548.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=60DB0ABFA30651F73302C81DE7B1E45D871A75D2642F947DDD217EB517CCAF79 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/dRupoZNjSF2J7WqVi8Kh1g/zh-cn_image_0000002411918548.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A086FC03F306774196F5012934C112EC2ABC4FE3D9D0867D189587AE27F4C7A "点击放大")
 
 * 关键字“H:ReceiveVsync name:xxx”：表明一个名为xxx的申请者消费了一帧Vsync的检票证明，这一进程通常会在之后拉起更多绘制逻辑，如下图中Vsync\_webview、OS\_VsyncThread、前台应用主线程以及Render Service均有被拉起的行为。其中前台应用进程的ArkUI组件刷新往往对应着ReceiveVsync name：WM\_[进程号]，而对于一些非ArkUI的绘制组件，例如React Native、Flutter等组件往往依赖进程下的OS\_VsyncThread来接受Vsync。开发者在进行Vsync分析时，可以按照下图所示的结构将VsyncGenerator与所有被拉起的进程置顶排列在一起，根据ReceiveVsync name来匹配到绘制对象，不同来源的绘制对象可能接收到的Vsync周期不同，表现为各自按需取用互不干涉。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/GaIFyLISSTiJn2Ggq41V1Q/zh-cn_image_0000002445437741.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD00268F596E09EEED307AE0ABE5EC66441D5AE89D08967B1320594440ADA802 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/9YtT92g6QgGyz_kdlg3e-Q/zh-cn_image_0000002445437741.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B3149CDDD52BC1848C26BE47A2018FADC8BB31D7CAACD011C055E051DF06BE6 "点击放大")
 
 在理解了Vsync的基础作用后，开发者需认识到Vsync的主要用途是保证绘制信号的垂直统一，对于开发者而言，需尽量避免在静置或单一组件刷新的页面中使用冗余的Vsync信号。从实际开发的角度上来看，[DisplaySync](../doccenter-references/api/js-apis-graphics-displaysync.md#displaysync)和[NativeVsync](../harmonyos-references/capi-nativevsync.md)两种接口可能会对场景下的Vsync对象产生实质性的影响。对于使用了React Native、Webview、Flutter的应用，开发者可以通过Vsync的分析方法挖掘潜在功耗问题，不仅可以避免发生Vsync“发空车”导致带来冗余功耗，还可以规避实际没有显示的冗余绘制内容。下面给出了一些Vsync合理使用的低功耗建议。
 
@@ -43,7 +43,7 @@ displaySync方法支持让开发者以特定的帧率[请求UI绘制帧率](../h
 * 该UI帧整体表现为左大右小，其中与ArkUI脏区组件刷新相关的FlushRenderTask下并无Trace点，表明并无任何一处ArkUI脏区在该帧中进行了脏区任务。
 * FlushMessage下并没有H:MarshRSTransactionData送出，表明该段绘制内容在UI侧被拦截并没有成功SendCommand，不会将该指令下发给RS，仅造成UI空跑。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/QY81JXFQSaiwZ9Gr-ZW5zA/zh-cn_image_0000002445517801.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=88234600E4C633B4C5A926956F00E07512A295510DD40F1DE9C6AC05D8233DE2 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/CcJVlaK-S0GqCRQfYr9F0w/zh-cn_image_0000002445517801.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=17B1A5DA8EA07DE9E4E6F84B22D7442916F86C42800FD859AC9C63D01A6A37C0 "点击放大")
 
 进一步展开DisplaySync下方的Trace信息可以发现，其中包含了大量的CanvasRenderingContext2D业务，其中，H:ViewPU.viewPropertyHasChanged位置，会打印出对应的ArkUI组件名称，帮助开发者定位到正在执行业务的组件。锁定可能造成问题的组件后，开发者可找到displayVsync对象的create、start以及stop三个关键状态控制的对应代码。
 
@@ -53,7 +53,7 @@ displaySync方法支持让开发者以特定的帧率[请求UI绘制帧率](../h
 
 如下图所示，DisplaySync对象在回调函数中有动画相关的业务执行，但实际上并未对组件变量产生变化，也没有形成需要脏区绘制指令，仅带来冗余负载。开发者可以通过调用栈锁定冗余的函数以及对应的执行代码段。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/OhKtDUaURjaPM3Op6JEIwA/zh-cn_image_0000002411758684.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB357F6F910EA4CC1A27C13477A38BEC922243C05D5511E5F9E473855281FECE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/20dcI6xfS02xyzg5SZKi0w/zh-cn_image_0000002411758684.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F354F86F04B9DCC4BB478E61CBB4C11936AB43E3AD5127C6D4ED2753147AB91 "点击放大")
 
 ### 优化思路
 
@@ -93,7 +93,7 @@ aboutToDisappear() {
 
 ### 修改效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/-13MJtQ-TXC2KLzez_y9vQ/zh-cn_image_0000002411918552.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A541F5766869A4BEB70DC6E4D951324D1B75944CF035C2166B1D2F5E216AB1B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/MGBvMLT4QyS6o3N8mYhuKw/zh-cn_image_0000002411918552.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=75FF6ADAC5CD8020EF3BC5FB7C56ED1E8152C3EDEF03B1706659B9BA532E79E0 "点击放大")
 
 如上图所示的Trace中，原始页面中，存在一个对Index组件添加的displaySync对象。用户在“1”处所示的位置点击tab进行了页面的切换，并在“2”处所示的位置，解注册了页面中存在的displaySync对象，UI帧率降至0Hz，达成了功耗优化的效果。
 
@@ -103,14 +103,14 @@ aboutToDisappear() {
 
 [NativeVsync](../harmonyos-references/capi-nativevsync.md)可供开发者获取系统vsync回调，可用于实现应用的绘制帧率与系统帧率同步。NativeVsync被广泛用于React Native以及C-API开发的应用中，这些开发框架中有多种回调函数接口，会通过持续请求Vsync来拉起应用自定义的业务内容。如下图是一个静置页面下的Trace，“1”、“2”均是来自应用进程下的OS\_VsyncThread线程，H:ReceiveVsync name分别是TaroAnimation和dirty。从“3”中的trace信息可以发现，FlushRenderTask并未打印需要刷新的ArkUI组件，但FlushMessage下有H:MarshRSTransactionData送出，这表明该帧依然有绘制效果通过UI帧将绘制指令递交给RS。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/TafOh64dQCaBWjLZkbEBkQ/zh-cn_image_0000002445437745.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AAD1A2EEA6E62C8EED7DF76A0BF66AFFC0B27997FAC7FB0DBE9EB5644D07D18 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/YFJQZbWGSv2kcDyZTZEu3g/zh-cn_image_0000002445437745.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=A280FA2470A2E2D042AE057E2CCE42E88D172570DD2087F91791D2AA8D7FDCC0 "点击放大")
 
 随后Render Service和RSUniRender会继续处理持续性的绘制指令，但由于DisplayNode并无实际需要显示的内容，最终在RSUniRender上打印DisplayNode skip跳过。该场景下，应用存在UI、Render Service冗余负载类型的空跑现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/B2FQn_ejRzCNLPeSz6gMaw/zh-cn_image_0000002445517805.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=E50239590E81560DBF5F8BCD54CDBE4B8ED7C2B801E1B0E1256ADA35BF664F86 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/OHVBBBgYTPW0nJmp6MNotw/zh-cn_image_0000002445517805.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=883176C7D46ABE2874064914D6D4605F270E70FF46468C52EB70AFB71BDEDE3C "点击放大")
 
 ### 分析思路
 
 在定位这类问题时，由开发者自定义的NativeVsync对象通常都会由VsyncGenerator下发给应用进程下的OS\_VsyncThread子线程，开发者可以根据Vsync申请者的名称，找到对应的Vsync申请对象。开发者可利用Profiler工具抓取的Callstack来查看对应的Vsync回调内执行的业务内容，如下图所示，开发者在VsyncListener的监听回调中有一小块rnoh的Animate的调用栈，可能正在执行一块动画业务。对于NativeVsync对象而言，系统仅提供回调，并不会约束开发者在回调函数内的业务实现，故而如果开发者在NativeVsync中有较多绘制相关的业务时，需额外留意该绘制业务的启停时机，并且减少不必要Vsync监听器的使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/tmjmDUr3Q6KxLyBZ4Zuu9Q/zh-cn_image_0000002411758692.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=520EB32F8CC3EED6E02DEF345094C9CC5398EACD0C962635C1A872DAED6489EA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/E1W7h_5zSwCMm8iy5vz8Dg/zh-cn_image_0000002411758692.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7FE86CD4A1F0E7F857DB367548A309A2B185856155B44DFD4587234C0A74ACC "点击放大")

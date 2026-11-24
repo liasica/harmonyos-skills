@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 数据竞争异常访问故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 地址越界故障模式说明 > 数据竞争异常访问故障模式说明
 category: best-practices
-scraped_at: 2026-11-14T08:54:19+08:00
+scraped_at: 2026-11-24T12:47:56+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:7204c5effecdca5532c8379fb2b11c5940365835b86fa8571c4c0f2ef5136cfe
+content_hash: sha256:b0820e5ddaccc920a148c311944c17592978fce57c1f9a819151e3867a0f6089
 ---
 
 多个线程在未正确同步的情况下同时访问共享资源，可能引发数据竞争和并发访问异常。多个线程对同一数据进行读写操作时，可能导致数据状态异常或程序运行结果不确定，严重时甚至引发应用崩溃。由于线程执行时序导致该问题通常具有偶现性，难以稳定复现。[使能TSan](bpta-stability-tsan-detection.md#section14181102916475)（ThreadSanitizer）后，可记录冲突访问线程及其调用栈。本文结合典型案例，展示此类问题的日志特征与定位方法，具体包括：
@@ -97,7 +97,7 @@ content_hash: sha256:7204c5effecdca5532c8379fb2b11c5940365835b86fa8571c4c0f2ef51
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，分别对日志中线程T56和线程T58的调用栈帧（重点关注各线程调用栈中的 #0、#1 帧）地址信息进行符号解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/P94uw3aFQamm6Hz1hwVZRw/zh-cn_image_0000002699732134.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=A14CFEAAF28B3046AA630B9E4E006FB6E9008E5667799FA9294BE99E5CD024E4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/o_yn132-RQOF32n48pV3RA/zh-cn_image_0000002699732134.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=D179EA4A5CB239609DC3114E8CC6945F76F281062349154A64534FE3FB6205E6)
 
    a. 代码第143行：创建多个线程共享访问全局变量DataRaceGlobal。
 
@@ -197,7 +197,7 @@ content_hash: sha256:7204c5effecdca5532c8379fb2b11c5940365835b86fa8571c4c0f2ef51
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/U3b3NWOGT3SZ5mTdbps4Hw/zh-cn_image_0000002729491391.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCB8AC21503960C3B8A7E1375F9E7847870A5D1D10EC4D324EB9F45BC5187956 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/tjix8gDlSEmERCzwyVwbZA/zh-cn_image_0000002729491391.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C6B28D6E9EF2718ABF34107B933BC4F2F63BED2A16539ACD8786C002018489A "点击放大")
 
    a. 代码第126行：线程1执行obj->F()，通过基类指针调用派生类虚函数。由于虚函数调用依赖对象内部的 vptr，需要读取对象内存中的虚函数表指针信息。
 
@@ -268,7 +268,7 @@ obj->F()和delete obj并发执行时，一个线程可能在调用虚函数，�
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/aDOvt9wFQFmzEf84vD966g/zh-cn_image_0000002699892018.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=23D69AD51513E3C977358FEB6CC5F03154C14545D9736A2F4FBD9409063B5B1C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/4PTzsFfaT3C_eE3_DQlcKw/zh-cn_image_0000002699892018.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=3521D033AA58917617FD20096FE21F292942700F9D2A302FA8C52230A6E4B67C "点击放大")
 
    a. 代码第236行：线程1调用非线程安全容器std::vector的读写操作push\_back()。
 
@@ -339,7 +339,7 @@ obj->F()和delete obj并发执行时，一个线程可能在调用虚函数，�
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/X4VkRwZiTnetT-51_BDGTA/zh-cn_image_0000002729611345.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A6BA2A11B4C40ABFE48A2A04F5D04D28ABF8710F841D420F587A728D9341F2C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/jrzGbXJrRHS17YohoKJI2g/zh-cn_image_0000002729611345.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A8402FFEBF33203110F8623D1F8AED17CA10E9EB89ECFB5766BFC17B53AAAC6 "点击放大")
 
    a. 代码第279行：线程1依赖容器迭代器进行读取。
 
@@ -440,7 +440,7 @@ obj->F()和delete obj并发执行时，一个线程可能在调用虚函数，�
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/J1z0dGBpTsKaM58v8OWzDg/zh-cn_image_0000002699732136.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE126C57C212DF5AEA28949EE6178784644729E1242ADE4F85D8B6725D6CEC82 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/b4ASXYkyQnqdABVH6hyZBQ/zh-cn_image_0000002699732136.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=B057563CA0819734FA09DFC82A926DE0D1C1F337A90364290303784B15F4A42F "点击放大")
 
    a. 代码第88行：Previous write of size 8栈顶位置。
 
@@ -514,7 +514,7 @@ obj->F()和delete obj并发执行时，一个线程可能在调用虚函数，�
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，对调用栈中的#0、#1和#2栈帧信息进行符号解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/pcmu96nuSma8bQuXdw0Pvw/zh-cn_image_0000002729491393.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E1BDC165BB8AFDCE583E4FFF112565608ED690E0E8B775A313393199B838CEA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/7OX42e-ySQe7mgMzproNog/zh-cn_image_0000002729491393.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4908CAE824238B1B16FF2E75556930C9BF30FD37E9DC7D136C03EB605A2AAB2)
 
    第63行代码表示信号处理函数破坏主程序原本的errno状态，errno是用于保存最近一次系统调用或库函数失败原因的错误码。如果信号处理函数修改了errno，会覆盖主程序原本有效的错误信息。
 
@@ -585,7 +585,7 @@ MyHandler中errno = 1的赋值破坏了错误码errno的设计用途，导致被
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析#1，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/_BhhYDSUSBm9YXlNeiJoOA/zh-cn_image_0000002699892020.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE6C859341B770882C5D407A8D37B85CD79D8F30BA72EC83DCF851575EE1E327 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/dP1j3VeYTTyAEcTPjeIF2g/zh-cn_image_0000002699892020.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CCA571D88C20D531FD22BE4DE2B190E068A5400947155C6A84E444B90C20974 "点击放大")
 
    a. 代码第56行：调用了malloc()函数。
 
@@ -671,7 +671,7 @@ MyHandler中errno = 1的赋值破坏了错误码errno的设计用途，导致被
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析#1，#2定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/vxQqB5sMQxywT_1KEDBCdw/zh-cn_image_0000002729611347.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E6C2E3488A90524761DDC5CC91E6AAFD586A80AAF5D6375190E82055DCC6297 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/w07lz5KNTHiRLY_6eIuDmw/zh-cn_image_0000002729611347.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCE336228020D7420BF8BBCD64B7C8DBF8AB61FA68AF0837B4F16280C6B90A30 "点击放大")
 
    a. 代码第43行：执行第一次local\_lock.unlock()后，互斥锁已处于未锁定状态。
 

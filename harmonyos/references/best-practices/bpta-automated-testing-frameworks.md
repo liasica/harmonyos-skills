@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-automated-
 title: 自动化测试框架开发实践
 breadcrumb: 最佳实践 > 测试框架 > 自动化测试框架开发实践
 category: best-practices
-scraped_at: 2026-11-14T08:54:22+08:00
+scraped_at: 2026-11-24T12:47:59+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:0aa4cc76517826f31d9b7ba420272eeefda2cc61fd0c276150fa715893024f9a
+content_hash: sha256:c91145c81bdc9fa1217c0b78f2561ecd530272bc30e4c83b54612c4bd3587210
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:0aa4cc76517826f31d9b7ba420272eeefda2cc61fd0c276150fa7158930
 
 本文介绍了单元测试框架和UI测试框架的实现。旨在帮助开发者了解和掌握自动化测试框架的开发流程与实现细节。关键步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/by0o1wB7S0SrgNSHr0VU7Q/zh-cn_image_0000002515546966.png?HW-CC-KV=V1&HW-CC-Date=20261114T005137Z&HW-CC-Expire=31536000000&HW-CC-Sign=738C098CB7DC47A823670F3C845333664503BDF91401DC7EB0B33D2C912CCB06 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/jjaJy5NIS3WXEVQzz_-uCQ/zh-cn_image_0000002515546966.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEAE8A85692B55C85E41839E0B9A691EAE1F496E267590EB675597EA2528C202 "点击放大")
 
 ## 场景案例
 
@@ -55,7 +55,7 @@ content_hash: sha256:0aa4cc76517826f31d9b7ba420272eeefda2cc61fd0c276150fa7158930
 
   UI测试流程图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/_KplaUl0SxKK7H0fahT2MQ/zh-cn_image_0000002515387058.png?HW-CC-KV=V1&HW-CC-Date=20261114T005137Z&HW-CC-Expire=31536000000&HW-CC-Sign=0622BA90B96E415A26460287E968101571DF8D47019584FA1733D146B7F065D6 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Wfgxlk_7QtCInwXZX7Yo3g/zh-cn_image_0000002515387058.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=3820D998B3F55FD333102C6D2D1D3AC634560CB18D9F1A9A1B90D3D9F974EB65 "点击放大")
 
 ### 开发步骤
 
@@ -77,14 +77,14 @@ content_hash: sha256:0aa4cc76517826f31d9b7ba420272eeefda2cc61fd0c276150fa7158930
      ```
    * 方案二：在应用工程的[oh-package.json5](../harmonyos-guides/ide-oh-package-json5.md)文件的devDependencies中配置版本号，然后点击编辑器窗口上方的“Sync Now”同步工程，即可使用对应版本的框架功能。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Y2odWEnUTRmR_eEVYbr4gQ/zh-cn_image_0000002554811799.png?HW-CC-KV=V1&HW-CC-Date=20261114T005137Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CEA7516596BFC763116BC50E4D57B71DF6958D06CC333F57E5854837FDB9BC9)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/ySVE2zWTQO-ulB1uc2sDIA/zh-cn_image_0000002554811799.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4C4EB6627CA5826E434CE1F750BB5D9056543521B8E67EC82E0BD3B38341658)
 3. 新建测试脚本
 
    参考[创建ArkTS测试用例](../harmonyos-guides/ide-instrument-test.md#section36049271219)，导入所需的单元测试框架能力（[单元测试框架能力使用说明](../harmonyos-guides/unittest-guidelines.md#单元测试框架能力使用说明)）及其他测试脚本中依赖的接口，[编写单元测试脚本](../harmonyos-guides/unittest-guidelines.md#编写单元测试脚本)。
 
    启动被测试页面，检查设备显示的页面是否为预期页面。流程图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/_JMyn3YIQFaARNcfubiaFA/zh-cn_image_0000002547066887.png?HW-CC-KV=V1&HW-CC-Date=20261114T005137Z&HW-CC-Expire=31536000000&HW-CC-Sign=447C15704E5BA383C15FB5955A7EBBB52ABB80DCCE06CC8039780EFFF5D5B98A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/6L3utbPVQpGbzXARiM62AA/zh-cn_image_0000002547066887.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=83A209A64626B29295F2500C3D29348BB7D206A60CC1855E1E88CF3210D483FF "点击放大")
 
    在自动化测试中，常用[基础流程能力](../harmonyos-guides/unittest-guidelines.md#基础流程能力)的it定义测试用例，其参数如下：
 
@@ -213,7 +213,7 @@ content_hash: sha256:0aa4cc76517826f31d9b7ba420272eeefda2cc61fd0c276150fa7158930
 
      数据驱动需要使用Ability能力，可参考[自定义Ability和Resources](../harmonyos-guides/ide-instrument-test.md#section760061533)。文件内容示例可在[运行测试用例](../harmonyos-guides/ide-instrument-test.md#section14415226122419)后，在对应模块的build/{productName}/intermediates/src/ohosTest下查看。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/kYdLVrMZSX6AXa2xd05xAw/zh-cn_image_0000002504491476.png?HW-CC-KV=V1&HW-CC-Date=20261114T005137Z&HW-CC-Expire=31536000000&HW-CC-Sign=53250780F08D34E5ED24BA67370D68CE1334E04FE3F8785BEAF57A1270349856)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/-bWo0-ixTUSg-RLZJyFhHw/zh-cn_image_0000002504491476.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7FE717F57F4763DE7D38822BF3B47975BB59F25CAED63D3539229D634FE6C52)
 
      定义Ability后需要在module.json5文件中补充配置字段mainElement、pages和abilities。关于字段的具体说明，请参考[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)。
 
@@ -414,7 +414,7 @@ content_hash: sha256:0aa4cc76517826f31d9b7ba420272eeefda2cc61fd0c276150fa7158930
 
 自动化测试实现效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/th_sRjBKQjODOpjC-uh7uQ/zh-cn_image_0000002536291283.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005137Z&HW-CC-Expire=31536000000&HW-CC-Sign=15420E0F4D4DBA2AAA0CB1F131C9B40DBBAF034FDD5851EBE9049C8195F896E5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/gRaMJRBpQaefOOBBl20IUQ/zh-cn_image_0000002536291283.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=88E7C2E2824719F39A3E272A6616C23033B01709BBAFB53A17B07CA342FD39EE "点击放大")
 
 ## 常见问题
 
@@ -424,7 +424,7 @@ content_hash: sha256:0aa4cc76517826f31d9b7ba420272eeefda2cc61fd0c276150fa7158930
 
 使用[assertInstanceOf()](../harmonyos-guides/unittest-guidelines.md#断言能力)检验自定义数据类型，脚本运行时报错“Error in getFirstGridData, [object Object] is [object Object]not ItemData”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Y4SISv6bQqePji3mkYPKhw/zh-cn_image_0000002536411247.png?HW-CC-KV=V1&HW-CC-Date=20261114T005137Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB4B975D7BBBCB7A655DA6EEFEC146A4CD6BE3471D56F8F1647821CC40FFA443)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/r-92jqanRSG5V-4CYNJ1BA/zh-cn_image_0000002536411247.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=C74E30B6AE721BDBD30EB0A0313B3463DBA2EBD43DBEAFA3EDCFE64F7369A30F)
 
 **可能原因**
 

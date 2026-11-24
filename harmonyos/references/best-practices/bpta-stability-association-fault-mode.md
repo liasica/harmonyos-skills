@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 组合使用过大导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > RSS内存泄漏故障模式说明 > 组合使用过大导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-14T08:54:20+08:00
+scraped_at: 2026-11-24T12:47:57+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:b7cc6e6e08385cf06bfdf594def1740e15800d00a394f21d0087b6ec3a0c3160
+content_hash: sha256:d790ffac8c61b77c56744bc0f786e0206bb1334f6acaf79e8c8583f433d68981
 ---
 
 ## 概述
@@ -111,17 +111,17 @@ NativeHeap过大、匿名映射过大、文件映射过大等单类问题各自�
     ```
   + 参考[内存栈日志分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section94641340515)选中Native Heap泳道并找到内存申请异常的内存及其调用栈如下图所示。从图中可以看出这份内存栈共申请了12次402653184字节大小的内存块，总共申请了4.5GB内存，恰好与分析NMD维测日志得到的结果一致，进一步证实此调用栈为泄漏的内存栈。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/uX349kfVQ_mENTmMLZcdSg/zh-cn_image_0000002729611093.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EA8E41B01CABC37809FBD50EA3CF9E267DC29F01D50FE671B235A90AC7DE453 "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/2QiqCn8ATK6m42MiiQR35A/zh-cn_image_0000002729611093.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=A74E8FE1D04A42D93299CD232B593BF86B79DEB47C19076432A017F97B7B6B5C "点击放大")
   + 分析内存调用栈指向的代码段，发现应用正在循环申请超大内存但是未释放，最终导致NativeHeap内存占用过大。内存调用栈指向的代码段如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/hNK7MmskRkWf1YBQQwnuSQ/zh-cn_image_0000002699891766.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E1A9332271EB0B09505F436144C24FCD59A3EAA24407CA4C9AD8A09E12A037C)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/_t6ISQM0Souoc7r9Y_EN2g/zh-cn_image_0000002699891766.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=F80AC962C743B0CF8181851476CCED09A00FEA8E60EDBC2994F5A5E324B444C1)
 * 再分析占用第二大的匿名页内存，并找到匿名映射过大的原因，具体步骤如下：
   + 参考[内存栈日志分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section94641340515)选中VM:others泳道并按Bytes列从大到小排序，找到内存申请异常的内存及其调用栈如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/NgULfxIlSze8u_oz0BRIiQ/zh-cn_image_0000002699731880.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B3BBD4B32BD0A5D4EB44D567246A3D3E42353C204F4ACD262F2FCACB284AE3B "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/-JI6LvWVSHKdAUwPwZHA0w/zh-cn_image_0000002699731880.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=975F96E8857D8BD54F5810FDE22916CE9E8800944E699F332531821CD07783CC "点击放大")
   + 分析内存调用栈指向的代码段，发现应用通过Native层MmapMemoryLeak()函数申请一次超大匿名页内存且未释放。累计申请过多导致匿名页内存过大。内存调用栈指向的代码段如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/8HM-zLhWSJqlg6uI9RSuvQ/zh-cn_image_0000002729491135.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=8059D72323AB25277E022D934E46E93B38411BEF9BE6D0C8E564666356314BE4 "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/0Rr1BBu6Rq2-tl3xqQjreA/zh-cn_image_0000002729491135.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F84C72BAF5033B4857103FAC2EF3618D226B4359B3223D4AB58872E61B2E3FB "点击放大")
 
 **开发态分析思路**
 
@@ -129,23 +129,23 @@ NativeHeap过大、匿名映射过大、文件映射过大等单类问题各自�
 
 * 完成录制后，单击下图1处Memory的options按钮展开观察内存类型，并在下图2处选择除了GL、Graph外的所有内存复选框。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Tst8PWAfRRedpmXo500f8w/zh-cn_image_0000002729611095.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4346A232950DCD24002962C8E3E4A950168687472511DB188F0BDB22A11128E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/jSi-1_UnSAmkJ8XKVvkcCg/zh-cn_image_0000002729611095.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E42911AC508C0B9CD5C437AE7AB8A97740F9874856E897FAF5ED5F8452439C4)
 * 展开Memory泳道，观察每个时刻各子类型内存占比与增长趋势如下图：Native Heap和AnonPage Other两个泳道存在明显增长趋势，应该优先排查这两处内存是否存在泄漏。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/kvNtoLHEQymKayGB4PiAwg/zh-cn_image_0000002699891768.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=61CA480BF81EA5C7B6555F80A805FC415C4FB5B398894ABEF5DAC2CCE51DD774)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Lbl7zE2kTOaaxRXlwfHQbw/zh-cn_image_0000002699891768.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=688BA51530EF8091F5CB49A423AB8978FF6DDC63C3373581CBE550BADEF02522)
 
 * 选中Native Heap泳道并找到内存申请异常的内存及其调用栈如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/3Hq2e_k4R5uWajL10OMTmw/zh-cn_image_0000002699731882.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=74644F0593AC1F22816EA0D0EFCBA26B3BF17E88839B138E4DBB4B6532E80B88 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ZJ19NaLCQY-xZOvC3lljsA/zh-cn_image_0000002699731882.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=21F39018CD8ABD8A717B0C3F80CAEE60F75AED2511F811699871F90AEA1B76FE "点击放大")
 * 分析内存调用栈指向的代码段，发现应用正在循环申请超大内存但是未释放，最终导致NativeHeap内存占用过大。内存调用栈指向的代码段如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/CcgSX0QNR960zS9l_ZmOCQ/zh-cn_image_0000002729491137.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=59E8FB12E9781A3994C6BB1136B173628F1E8C92DECB44C86724052EE7EFC8AB)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/JQsu2ynFTliB_fEKbPVh5A/zh-cn_image_0000002729491137.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BF4F088400BE1A89B41AA860F58DA09F234C7325678C8C8264D8247E3E08000)
 * 选中VM:others泳道并按Sizes列从大到小排序，找到内存申请异常的内存及其调用栈如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/UWw9u8D6QASWX21tvdaUmQ/zh-cn_image_0000002729611097.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=505E8BE44F237EAA7857D3EACC0282E84FCA4FB15B2BF0AFAF888BBE33620770 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/oJ2Bv5hpQ-CusWs8wiyFqA/zh-cn_image_0000002729611097.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=24E81749E158C696B3EF7B8DFCE1E4BF234522CC24E9E199CA7F886FD00E8300 "点击放大")
 * 分析内存调用栈指向的代码段，发现应用通过Native层MmapMemoryLeak()函数申请一次超大匿名页内存且未释放。累计申请过多导致匿名页内存过大。内存调用栈指向的代码段如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/wH2nGebOSo-ciN4E9fgxag/zh-cn_image_0000002699891770.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0E53BEC29C1C111077207C7FF80BCB9C625ABC88FF26F0F52D5DF8524543C2D "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/24CCuOTxQXOg5mT6ZUoppg/zh-cn_image_0000002699891770.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F36DBB2A86A770854C99CFB448B292F019D4E86109842C13F692E0C2980C32B "点击放大")
 
 **修复建议**
 

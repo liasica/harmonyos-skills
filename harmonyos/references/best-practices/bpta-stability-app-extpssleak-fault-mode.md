@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 应用泛PSS内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > 泛PSS内存泄漏故障模式说明 > 应用泛PSS内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-14T08:54:20+08:00
+scraped_at: 2026-11-24T12:47:57+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:61c642ea478be5ed9c764091174174ad95fef865234ca9770ea225b27054ba42
+content_hash: sha256:db666df8398ce32cb91d8cbdd7ee664b95c65789d355f9b63b19fbf9d831d56d
 ---
 
 ## 概述
@@ -131,10 +131,10 @@ content_hash: sha256:61c642ea478be5ed9c764091174174ad95fef865234ca9770ea225b2705
       ```
    2. 将内存栈日志导入DevEco Studio中Profiler工具，并按照[运维态问题分析思路](bpta-stability-nativeheap-fault-mode.md#section151162273105)找到异常申请的内存及其调用栈如下图所示。从筛选出的内存调用栈可以看出这份内存共申请了12次，总共申请了4.5GB内存，单次申请内存约402653184字节，恰好与分析NMD维测日志得到的结果一致，进一步证实此调用栈为泄漏的内存栈。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/CHG6xPLxQgmDKXAKOh2rZA/zh-cn_image_0000002699731884.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE4043F8016A7331A234BBCE94EE89BF178CD08BE3929E1BF82839E32C1AD8D4 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/syRMrgFOTIeMAkjm39p_gQ/zh-cn_image_0000002699731884.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB51C1CD7072B2B7EF1B5333AC01892717805FC4E5D94285DE9669778B466F6C "点击放大")
 4. 分析内存调用栈指向的代码段，发现应用循环申请超大内存未释放，最终导致了泛PSS内存泄漏：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/baigKnldQku9uhONc3MVEA/zh-cn_image_0000002729491139.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DABB798E09E3341E1072016A55AD49AB272E7571B88F9F1037432E310ACCA51 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/ZGvkaT3jSvyw7apBevafmg/zh-cn_image_0000002729491139.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7746BB82F4F8C54B579B26685F0A9FC746F8F0F9D158E940C1BD69E2C8C8E78 "点击放大")
 
 **开发态分析思路**
 
@@ -143,13 +143,13 @@ content_hash: sha256:61c642ea478be5ed9c764091174174ad95fef865234ca9770ea225b2705
 1. 启动抓取后，遍历可疑的泄漏场景复现泛PSS内存泄漏问题。
 2. 录制完成后，单击All Heap中的Native Heap泳道，发现NativeHeap内存异常增长：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/if-jOtkcS5mkNnRmwgg3zw/zh-cn_image_0000002729611099.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=70ACFF69EBF59120E58D3CCA34E49C69BA2A81A44FFFE0753950ACA70B54BAAC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/BAAPF4gJQwGm0TnylaBawg/zh-cn_image_0000002729611099.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=06427278B1697785F1C1732152B8E55A7A9CB28BBDD5718BEBA0DCCB21942966)
 3. 参考[内存栈日志分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section94641340515)点击Native Heap泳道，找到可疑的内存调用栈如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Kd-PAhI6SruqXxLqMXkASA/zh-cn_image_0000002699891772.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1EA389ACAD7B8A7DC05CA587DB64548ADC9CD0E609A3DDA8A7F6F28648873F2 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/1haU9xcBR5Ot2KuntNUE6g/zh-cn_image_0000002699891772.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=778EAA56BF0202B6C1AB5D64B860A11EC0B1DFAA3CAB635CC4A2CB83357EE23C "点击放大")
 4. 分析内存调用栈指向的代码段，发现应用正在循环申请超大内存未释放，最终导致了泛PSS内存泄漏：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/dZtLiCCnSS27WrMrgfI8hQ/zh-cn_image_0000002699731886.png?HW-CC-KV=V1&HW-CC-Date=20261114T005134Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE4E381D00627457E40C04E173EC61FA4DDCDA1E401668D4B15A08591FC999EB "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/nqs934EORlWohfKMprZP4A/zh-cn_image_0000002699731886.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5364EAF56EF98A9D8DAE17095BED98BFDEC525F45CA61C5A5C9AD15B8B6DD2B "点击放大")
 
 **修复建议**
 

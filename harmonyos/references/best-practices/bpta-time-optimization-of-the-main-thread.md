@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-time-optim
 title: 主线程耗时操作优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 主线程耗时操作优化
 category: best-practices
-scraped_at: 2026-11-14T08:54:14+08:00
-doc_updated_at: 2026-11-09
-content_hash: sha256:d5cc041263987a61defdeb88624648776527d2eb6254ff9368423f3897e9f30d
+scraped_at: 2026-11-24T12:47:52+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:9dff3d7a6cdc5f09b401f286b6dd2fdb621cb2725a4065a48ae170fe18babe6b
 ---
 
 ## 概述
@@ -182,7 +182,7 @@ struct NoRedundantOperation {
 ```
 
 **图1** 反例标签"H:ScrollSlide"Trace图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/t4QENsKZQFK4Rc5g8gu0tA/zh-cn_image_0000002193850140.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C24FCD02F56495395D5ADFFDBA4254A24A41076AE3D3EF4DD829E6831168C7F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/XbjvUfasTNSgId48XdveRA/zh-cn_image_0000002193850140.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=70150264FC19ECE8D032E3AEB50D326A96062740D6FE69EF2DB98AAD0E91C331 "点击放大")
 
 通过上图可知，在3.5s的滑动过程中，总计触发了424次日志打印以及Trace追踪，打印一次日志的平均耗时为84μs，由此可以计算出冗余的debug日志浪费了35.616ms。release版本建议删除无效日志的打印。
 
@@ -367,21 +367,21 @@ struct PositiveOfOnScroll {
 * 耗时对比
 
 **图2** 案例一onWillScroll事件回调耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/9ryJquhgT3ylsO_QwJmcWQ/zh-cn_image_0000002194009712.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=4686342789BE61C6C987095E76B329136DFCB2F733D035CFC466B0E78AFF3CCE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/wXIn_lXWTw6LQcyhjySDFw/zh-cn_image_0000002194009712.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=67A8148B0CD6B1211C4735A0D92E8EAC30264C67390443706F9F022612E78BCA "点击放大")
 
 **图3** 案例二onWillScroll事件回调耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/HtkOCYFUR9C25QxK7UTlOw/zh-cn_image_0000002194009728.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=96934019FF889AB0CC6C8C1152058982827DE1EFF69CC4E319EBA96AE493E0E2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/5QdzRUu9SJmhhRDlhHZ1Lw/zh-cn_image_0000002194009728.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=35DD91C347A3F68B6376A658535649C29EEA601C8F3831E2DCA0B824631DAF20 "点击放大")
 
 * 帧率对比
 
 **图4** onWillScroll执行耗时操作的丢帧率  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/rTh5bzxdS0yHv0h90xXYgg/zh-cn_image_0000002194009704.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D46070A8FF36440921DD94E9269C2AC62AD67124561DE84D8276660864E8782 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/zPhEDQjdRVq8HnPWskoO3Q/zh-cn_image_0000002194009704.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C548172812EC5456745A43AAE9F2FB19A28DA7796156C2AB2AA1236F55D0984 "点击放大")
 
 **图5** onWillScroll不执行耗时操作的丢帧率  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/R3-CjyLESF2DIjFwyQHTtQ/zh-cn_image_0000002193850112.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BA285143C5142C84183ACC239298E111253825624FB18701EEE4DA4BE95BC5D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/UYFoBeCgS2K353QT20z6xg/zh-cn_image_0000002193850112.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AA03E57C3751B14474748D459FB3CB6AB25BD00DD3A152FE759A48C801EBEA8 "点击放大")
 
 **图6** 首帧Trace详细信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/6ywrinPgSL-ieenvr4-EzQ/zh-cn_image_0000002231669457.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=1813B5B800000D2AB9ECAED6242C1D172BB6B53FAD86558D61EF8AF0588BA297 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/298hVRJYRrGgrdNaABhQ3Q/zh-cn_image_0000002231669457.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A3C6639A21F7E87950F73F203692D021ECDA765AA6D60176BDD5F80D506BEF6 "点击放大")
 
 通过图2、图3可知，onWillScroll事件回调中带有耗时操作，会占用主线程20ms左右的时间。由图4可知在具有耗时操作的滑动过程中，丢帧率高达87.5%。观察图6卡顿首帧Trace的详细信息发现，原本期望完成时间为8.3ms。因为onWillScroll中耗时操作的影响，使得实际处理时间为25ms，远超期望时间，短时间内连续触发该回调就会导致发生连续丢帧现象。因此在开发过程中，开发者应该尽量避免在高频事件回调中处理耗时操作，否则将导致应用性能大幅下降。
 
@@ -437,10 +437,10 @@ aboutToReuse(params: Record<string, number>): void {
 **结果对比**
 
 **图7** 反例滑动时单个aboutToReuse耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/ICkZgl9rTB-IM81SUXc4kQ/zh-cn_image_0000002194009716.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=108C0F5214F40C86ACD242DD90C2985CA050ABA6738BAEB160B81AC1EB3A0060 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/-1PxrmkTRLWp_UYDCKg2bw/zh-cn_image_0000002194009716.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F3AC0F7051C7FCB442F97B6CF7D051D29A1CB0C0CD9BB5A49B4A01559CCFF57 "点击放大")
 
 **图8** 正例滑动时单个aboutToReuse耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/A-jikCrAT4CcNOSjZRCpoA/zh-cn_image_0000002231555137.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=060B15E1330A2878826BA7C0D2277765F3023ED391B946349D5AC9DC004DE88B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/xjbifvobQWO-CIV5rD8tiQ/zh-cn_image_0000002231555137.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=E445C547C46373C468879075AE950AEB018138201C076E1A66420299F7F386F3 "点击放大")
 
 如图7所示，从反例Trace中“H:ReuseOfGrid”标签可以看出，单个aboutToReuse执行耗时20ms。而从图8正例Trace中“H:ReuseOfGrid”标签看，单个aboutToReuse执行耗时仅56μs。带有耗时操作的单个aboutToReuse执行耗时远超期望时间8.3ms，在Grid滑动高频调用aboutToReuse的场景中，将会导致应用连续丢帧卡顿，性能大幅下降。因此，组件复用时应避免在aboutToReuse中执行耗时操作。
 
@@ -658,10 +658,10 @@ build() {
 **结果对比**
 
 **图9** itemGenerator中执行耗时操作的滑动效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ubuMT3FeRzqvN5IVjjgaqA/zh-cn_image_0000002229335521.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AB0326FE3256F82E2BE1FFDD86B5FC707625A2BD1A3149819641D77FD307F51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/jnL0mGY6TT-LTOg8NRnsAw/zh-cn_image_0000002229335521.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=7699760CB1C31195655878E949E1566BC0C3F4F2154D2233931EDF85C3523555)
 
 **图10** itemGenerator中不执行耗时操作的滑动效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/RqQAv_W4Q7uEgiQncOMroQ/zh-cn_image_0000002194009708.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=70D5DE3322CD107A597E7F3206F859D9477E8C62C8AE2260053A9BB46A8B1A56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/kNb9Vd_BSAmWpE_W4qZOEg/zh-cn_image_0000002194009708.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=B55DDB7FD6313799885D1F17CC23D076725A0675AAE4A93DFA4066722E72EDE0)
 
 图9是在itemGenerator入参函数中执行耗时操作的滑动效果，可以明显看出滑动时存在卡顿，item节点刷新慢等问题。图10是在aboutToAppear中执行耗时操作，把耗时操作计算的值timeConsumingValue传入itemGenerator的滑动效果，可以看出滑动效果流畅，无卡顿问题。
 
@@ -979,10 +979,10 @@ ResourceManager通过getXXXSync接口同步获取资源的方式有两种，1、
 **结果对比**
 
 **图11** 通过资源对象获取数据的耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Sy170k8OStCMEIGv0YI2AQ/zh-cn_image_0000002229335497.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=318C5DF1E89F7F914E9E6387D5FFC3381703E18C24E17B84CC9B8A9148F5BA12 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/baNkLHfAQa-NGMdu9yXZ3g/zh-cn_image_0000002229335497.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=86B08A1CF7C3C41D3FE2FF8AB89E2A3E3C339A2B8CED259686779CC44D83116C "点击放大")
 
 **图12** 通过资源id获取数据的耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/OEj3Ek6RQhSsrWXroEsajQ/zh-cn_image_0000002193850108.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=570E07A7993D0C4ADA8067D8F582E54342683DE40A3CC5D16F25CF3D8D6D59F5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/4Tdi0YDyStq5DnEqtnFCmQ/zh-cn_image_0000002193850108.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA6C868D8FC55BF201268972168E148F395C8C9B3D306A2847DA9E9C62CE64E0 "点击放大")
 
 getStringSync参数为资源信息时（1.956ms）比参数为资源ID值时（0.071ms）耗时更多，因为通过resource对象获取资源时，获取的是拷贝对象，获取过程中发生了一次深拷贝，而通过资源ID获取子元素，直接获取原对象的引用。所以当需要使用类似方法时，使用资源ID值作为参数更优。
 
@@ -1016,7 +1016,7 @@ getStringSync参数为资源信息时（1.956ms）比参数为资源ID值时（0
 
 以[示例1（使用基本瀑布流）](../harmonyos-references/ts-container-waterflow.md#示例1使用基本瀑布流)为基础进行代码改造,得到如下代码,瀑布流在即将触底时调用异步函数mockRequestData获取新数据，并将新数据写入数据源。异步函数mockRequestData用于模拟耗时的网络请求，从rawfile目录下读取数据，将数据处理后返回。
 
-```typescript
+```screen
 build() {
   Column({ space: 2 }) {
     Row({ space: 5 }) {
@@ -1058,7 +1058,9 @@ build() {
               for (let i = 0; i < data.length; i++) {
                 this.dataSource.addLastItem();
               }
-            })
+            }).catch((error: BusinessError)=>{
+              hilog.error(0x0000,'',`mockRequestData failed. code=${error.code}, message=${error.message}`);
+            });
           }
         })
         // ...
@@ -1079,7 +1081,7 @@ async mockRequestData(): Promise<Item[]> {
     try {
       let str: string = buffer.from(data).toString();
       res = JSON.parse(str);
-    } catch (error) {
+    } catch(error) {
       hilog.error(0x0000,'',`buffer.from failed. code=${error.code}, message=${error.message}`);
     }
   }).catch((error: BusinessError)=>{
@@ -1101,11 +1103,11 @@ export class Item {
 使用profiler工具抓取Trace：
 
 **图13** 不使用多线程的Trace信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/83IJYzNeQPm48BPQoTUFZA/zh-cn_image_0000002229450001.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6819C507676740BF5544A9E3601CFA7C8A96CE05DFE54E088DFF68108242B7D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/9RPle-cxRxCt7lw-e-uJOg/zh-cn_image_0000002229450001.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9C808425A0B764A9BDA26E47DDE1EFBEA432AB8536747A3FC0C9B9192BBEFFD "点击放大")
 
 从图中可以看到，在主线程中出现了大块的耗时，直接导致用户在滑动的时候能感受到明显的卡顿。异步回调函数最后也由主线程执行，所以应该尽量避免在回调函数中执行耗时操作。可以使用系统自带的[@ohos.taskpool（启动任务池）](../harmonyos-references/js-apis-taskpool.md)多线程能力，将耗时任务交由子线程执行，避免主线程的长时间阻塞，以下为使用TaskPool优化后的代码：
 
-```typescript
+```screen
 build() {
   Column({ space: 2 }) {
     Row({ space: 5 }) {
@@ -1147,7 +1149,9 @@ build() {
               for (let i = 0; i < data.length; i++) {
                 this.dataSource.addLastItem();
               }
-            })
+            }).catch((error: BusinessError)=>{
+              hilog.error(0x0000,'',`taskPoolExecute failed. code=${error.code}, message=${error.message}`);
+            });
           }
         })
         // ...
@@ -1195,12 +1199,12 @@ async function mockRequestData(context: Context): Promise<Item[]> {
 ```
 
 **图14** 使用多线程的Trace信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/wN8pl8onTZ654LSCHTVIIw/zh-cn_image_0000002229335505.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=47B4DD5DA8E171C5A71F616EFEC088847BAE2E3972F994612A9241C84512A41D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/Qq_bGeAhRG2gGne0Lz95HQ/zh-cn_image_0000002229335505.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=973C76C7BF879C3577E521D1C1D0632704C1F619E0A780CF43E91103F9DF1AF1 "点击放大")
 
 通过上图可以看出，使用多线程能力TaskPool后，将原先在主线程中的获取资源的任务getRawFileContent转移到了TaskWorker线程，避免了获取资源导致的主线程长时间阻塞，但是TaskWorker将结果返回给主线程，主线程反序列化数据的过程中依然会消耗一定时间，接下来在泳道图中搜索"H:Deserialize"标签查看主线程反序列化耗时。
 
 **图15** 主线程反序列化耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Oz8mnjpPQAKXa0NPFmFcXQ/zh-cn_image_0000002229335525.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=307D528CE30D18DF0C5CA02FB66556E09FFABC07D627853DE78F0FC6DEAD6E70 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/tQa6uHjsSSO3vXWYorAm4w/zh-cn_image_0000002229335525.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CAE5163E7388245D29E959E33058463875DC9CDEA807CFDA8E323738D0AA103 "点击放大")
 
 从图中可以看出主线程在反序列化TaskWorker线程返回的数据依然存在12ms的耗时，超过当前测试设备的Vsync周期（8.3ms），应用可能会因此引起卡顿。针对跨线程的序列化耗时问题，系统提供了@Sendable装饰器来实现内存共享，可以在返回的Item类上使用@Sendable装饰器，继续优化性能。
 
@@ -1222,7 +1226,7 @@ export class Item {
 上述示例代码中在TaskWorker线程返回的Item对象上使用了@Sendable，系统会使用共享内存的方式处理使用了@Sendable的类，从而降低反序列化的开销，抓取Trace图如下：
 
 **图16** 使用@Sendable装饰器后主线程反序列化耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/jm8zY92BSpWJTvEO86X4Vg/zh-cn_image_0000002229449973.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=847711F8A37B6B93EEAEDFF0239A879FB285A89DC99267D8AE10475DBA5B93D8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/4s6Pg24BRNaSsleemSkhhw/zh-cn_image_0000002229449973.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3FB7D5C2DE2B341BA545E1527E0F8AB3ABFBDC917730B42B71011FE6E403AD9 "点击放大")
 
 从图中可以看出反序列化的耗时由12ms减少到1.6ms，明显减少了主线程的阻塞时间，所以当主线程需要反序列化其他线程返回的大量数据时，可以使用@Sendable装饰器减少主线程的时间消耗。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-dispose-hi
 title: 高负载场景分帧渲染
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 高负载场景分帧渲染
 category: best-practices
-scraped_at: 2026-11-14T08:54:14+08:00
+scraped_at: 2026-11-24T12:47:52+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:05687464243537f86923e59865c795c2a904b96e913955c97b5d0568f181a003
+content_hash: sha256:69962d0bc581e0e9cd74fcc98d1db527722afdd4471c4ec54665b6ef3d0641cd
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:05687464243537f86923e59865c795c2a904b96e913955c97b5d0568f18
 
 单帧内绘制多个特点各不相同的组件时，会同时创建数量较多的Graphics Pipelines，引发后续整个Flush阶段的耗时延长，从而导致单帧耗时超长。对于这种单帧内组件负载重、加载数据多和绘制耗时长的问题场景，开发者可以根据实际的业务逻辑、应用页面布局和数据量，提前计算规划出需要通过多少帧完成加载以及每帧具体加载的数据。应用页面实际加载绘制的时候，结合页面的布局，使用帧回调监听修改状态变量或补充数据到数据结构等方式，对每一帧需要处理的渲染数据进行计算和设置，保证每一帧内只处理提前设置好的数据。通过预先设置的帧回调监听，组件加载时可直接基于状态变量或数据结构实现分帧加载。这样就达到了原本在一帧中加载的数据分到多帧加载的目的，有效减少了首帧的耗时，避免首帧卡顿现象的出现。如下图所示，将一帧数据拆分到三帧示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/oSW6hdg_Thq0P3mJbvoPhQ/zh-cn_image_0000002229450329.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=50DDC33C961A1DD00165388576A35B37547523C33AECC65F5E8543400501A3BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/9e-ntpUHTcWO7-1GJnxdBg/zh-cn_image_0000002229450329.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=84FBF82A7942D2EEAA6A44A363ECEB3626982D5335E8949317F52EC383820B72)
 
 ### 具体实现
 
@@ -35,13 +35,13 @@ content_hash: sha256:05687464243537f86923e59865c795c2a904b96e913955c97b5d0568f18
 
 具体操作流程如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/mx-91VEjRImyrtxN-H9xfg/zh-cn_image_0000002651423328.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=0069E3C87170A82E513A0DFDA47A1E45905A20BB05D93720B121592EC0A5CFE6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/vtPl4fe8T7mSS9r_f2aaRA/zh-cn_image_0000002651423328.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3ABC3E19D3BA327B9DFD721429EA6CCF4540B5456071C0C5389A32A6B71E7D0 "点击放大")
 
 ## 转场场景
 
 由于业务需求，从当前页面进入一个新页面时，会有转场动画播放，并且在动画首帧中加载新页面所需要的数据。如果数据量较多，那么动画首帧的响应时延就会变长，导致后面动画帧延迟播放的情况。从一个页面到新页面转场流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/3H_IDytNRDyGtbYpDVIlOw/zh-cn_image_0000002229450337.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=528630EB97775FCA34737C94850B86C465949C85820EEE2DD75A0EAE0CE7A18C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/OdPP4Pa-T82OxDQjb43itQ/zh-cn_image_0000002229450337.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E4F4F24B88828EB578483DB7FB6324ECE559548F0F662605048FD8ECC2F6564 "点击放大")
 
 ### 解决思路
 
@@ -51,11 +51,11 @@ content_hash: sha256:05687464243537f86923e59865c795c2a904b96e913955c97b5d0568f18
 
 转场场景效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/RwpklFL0SYO4HvJEbgBEDA/zh-cn_image_0000002681782837.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=A14C31352C7339E6407E912976DA1D70433650A2FFE57EDB38D60F305F0C4C63 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/EH49OEQ7RValNdxZycwk1Q/zh-cn_image_0000002681782837.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F00A5EB55D3D154EC5187E899BDA3890D659DBED2D3545E78480E228825BFE0 "点击放大")
 
 在分帧前会在转场动画的首帧将层叠组件和列表可见区域与缓存区域的数据全部加载，而分帧后在首帧加载层叠组件和列表前两项的数据，在第二帧加载缓存区域的列表数据。分帧前后示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/OL9pL8OyRdu3i9q3G2n22w/zh-cn_image_0000002229450333.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AEC4B060DE93456BE39732A2CD5D5A799F3AE0A96E54B48F615D9184E0E04F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/BPVDXeG5QqSB2ZWzucn-XQ/zh-cn_image_0000002229450333.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=978578CDB92B76B40D8E152FC24AF59E3B56F9A3AAA57E05F6255B05024F1663)
 
 ### 常规代码
 
@@ -85,7 +85,7 @@ export struct TransitionScene {
 
 这段代码里，在组件即将出现时回调aboutToAppear()接口，将数据放入productData中，并通过瀑布流加载。编译运行后，可以通过Trace图看到，转场动画的首帧耗时21ms左右，这是因为在点击进入页面时将数据全部放入瀑布流，在235970帧中需要计算每个子组件的尺寸，导致了响应时间增长。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/2p8flbyISpWQvE-EzACa9g/zh-cn_image_0000002681623015.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B4B193BE4EC57DC66536DDDAB1A41FE9FD4D9FBCF3FD91C0D5BD7B81CFCBD46 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Fr7IktnOSgWfx1Dz1ug_fg/zh-cn_image_0000002681623015.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=6742040F1ED4237A2C454566C68CD500AE93991612A289F3BD089CDAD3C4B0DE "点击放大")
 
 **说明** 
 
@@ -173,7 +173,7 @@ struct TransitionScene {
 
 在这段代码中，aboutToAppear()接口中并没有一次性加载全部数据，而是将数据拆分，在帧回调中分成2次进行加载，编译运行后，通过Trace图可以看到，动画首帧的耗时是12ms。相较于优化前的代码，不再是首帧占据大量的时间，而是将耗时分摊到了后面的动画帧中。当数据量更大时，可以将数据进行更多次拆分，将不会直接出现在屏幕上的数据放到第二帧或者第三帧中进行加载，降低首帧的响应时延。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/RCJSLNBDTde6_hujlvufSw/zh-cn_image_0000002651583242.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=0161ABBC162D68181E46007B9AE5EB1F0C103531E57D1CD08BBF13C9168B0924 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/H9l882gzRdGRaX9oT6vH4g/zh-cn_image_0000002651583242.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=94C5A8C94127BA4EB5AF46108771EC772BC0F3C9987F3030B657AD0BE66DF823 "点击放大")
 
 对使用分帧前后进行分析，得到的数据如下表所示：
 
@@ -198,11 +198,11 @@ struct TransitionScene {
 
 滑动场景效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/jVIIz-BfTu2IEEg5qrIEkQ/zh-cn_image_0000002651423330.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED54A9A051B050460134837DFDADAC3A1A8E05C9CD20272417B9B765A5FAC154 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/gzfH94TqTYudx9XeyjEzdA/zh-cn_image_0000002651423330.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=85E28C11464953F118426D7F904BA433051D49C33C96B3C2CE2FEA52C1DECA13 "点击放大")
 
 分帧前后示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Nb5LQMCUSK2TmIMrKQjS_Q/zh-cn_image_0000002229450313.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5BB902772461AB133BAB10264DDA84F09CFD65FF720E67401FC3585DFA4F602 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/RCfoK7_7Qi6GG-VJTzcHHg/zh-cn_image_0000002229450313.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF905B839BF1844B23EA9DAD08CD232C7DD0E97DF0BA9F9F575A62D102668BF4 "点击放大")
 
 ### 常规代码
 
@@ -240,7 +240,7 @@ export struct DateItemView {
 
 在上面的代码中，通过组件复用，在ItemView的aboutToReuse()接口中，将一个月的数据直接设置到状态变量monthItem中，这样下面的Flex就会收到状态变量变更的消息通知，从而刷新组件中的数据。编译运行后，进入日历页面，然后滑动列表到最底端，分析下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/5ngTrxCnTyagNhcvTgzAJg/zh-cn_image_0000002681782839.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=5209AC3113B75716E052423671513886545E5DAA197FB4382A374D6F9E9E9935 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/VKUSGqCWQPGOndLuatZyJA/zh-cn_image_0000002681782839.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=80F3315D14FE45EF6F6917B392190B76D3CC6E8833AD6AEE174DC118D71E63C2 "点击放大")
 
 * 选中Actual Timeline（render\_service）标签中的146272后，可以看到它所关联到的位置是Actual Timeline（example.display）标签中的209136和209137，即RenderService层出现的异常情况是由应用层中前面两帧里面的操作引起的。
 * 通过标记2的标签可以看到，在209135中调用了aboutToReuse接口，此时系统开始了组件复用的绘制操作，在aboutToReuse接口将一个月的所有数据全部放入了当前被复用的组件中，并更新了所有用于显示日期的Text组件中的数据（标记3，diffIndexArray.length：35，表示有35个不同的元素），这就导致209136需要计算35个子组件的尺寸（标记1），从而引起146272的绘制时间延长。
@@ -325,13 +325,13 @@ aboutToReuse(params: Record<string, Object>): void {
 
 结合代码可以看到，在211620中放入了5天的日期数据，由于前一帧（211619）只是设置了2条数据，并且只有1条会更新，所以这一帧的绘制时间也不会超时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/62nnCZjMSeKW2h6fcG75bw/zh-cn_image_0000002229450345.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AA681D4AC59293AFDE66050785E45BAD22B972CA5AE4339CFFF50D7FEE6770F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/H5fDKurfTpqdCgecDif7sQ/zh-cn_image_0000002229450345.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CF60FE6F68553315161DC4DEE25ACA151813D00612329624AA2509BAB645B90 "点击放大")
 
 和前一帧（211620）一样，此帧（211621）中更新了5天的日期数据，并且会重新测量上一帧中更新数据的5个Text组件尺寸（标记1），而其余的组件由于数据并没有变动，所以测量被略过了（标记2）。
 
 后面的帧是类似的，每次只会放入5天的数据，并且更新上一帧中设置的数据所关联的Text组件。由于每次更新的组件数量较少，每帧基本上都能在规定的时间内（1秒120帧，即8ms一帧）绘制完成，所以延长帧就会较少。这样不论列表中数据多还是少，都不会引起掉帧现象的发生。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/QAcBFm3VS7GXBeHC2wyKqw/zh-cn_image_0000002681623017.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=3868BD2B1BA9B1CA2F6E81272B227B0A8DF554FDE8C9A879E2E177A57F99DDB8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/XA8U3v01TGytWa4-bsuctA/zh-cn_image_0000002681623017.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B0789166FBF1CFC0702542AD92EC137ADB7616AE604DBD965096CCCCD100E5F "点击放大")
 
 **表2** 使用分帧前后对比
 

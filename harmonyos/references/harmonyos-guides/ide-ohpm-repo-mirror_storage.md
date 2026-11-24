@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo mirror_storage
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo mirror_storage
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:47+08:00
+scraped_at: 2026-11-24T12:42:19+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:7a14cb86b311f672fb859e87846ede0bbf6751e8254555707acff06b412d8b36
+content_hash: sha256:d8286510a471b36fa3696e6ffcdddce156b681a820a5d2a172609ea8cda55cd0
 ---
 
 同步sftp存储的包。
@@ -71,4 +71,4 @@ ohpm-repo mirror_storage test_one_sftp test_two_sftp repo_sftp2_mirror_gxy07056@
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/NlPb23DWSNuMj0iijsAkCQ/zh-cn_image_0000002779565402.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=68C294704CA2A3F70B5671CE970FAC090F7F3BC2F991575E754A9BD8B08E82DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Mojml-gAQmScMifPr46v5g/zh-cn_image_0000002779565402.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=76C09F040690FB9F000BC2DB372778982D60075C9526636208433B43557C4E51)

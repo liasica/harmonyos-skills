@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-communica
 title: 多设备即时通讯界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备即时通讯界面
 category: best-practices
-scraped_at: 2026-11-14T08:54:10+08:00
+scraped_at: 2026-11-24T12:47:48+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:6bea7aaab6f02cc38026e49156589694179c665d05651b38df4a3198806e42fd
+content_hash: sha256:4f7fb691a685cbd3e28c5cb7475c17c1c2dd730fa0a1817e2b979ff3956a7405
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:6bea7aaab6f02cc38026e49156589694179c665d05651b38df4a3198806
 
 即时通讯应用的UX设计可参考社交通讯类多设备响应式设计指南的[社交通讯类](../design-guides/responsive-design-examples2-0000001793536901.md)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/eiOpwdWtTr-EpzqzQyuhJQ/zh-cn_image_0000002579689282.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=F94DC249A9A2102151F288C7D5067F1053F1FBA562C83200F50408F34D36CDD9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/qoeE1_EoRWSx8vHMooZSRw/zh-cn_image_0000002579689282.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7A2E0ABBD7E64E0C6763DD31987FD10C8603249F1F442801CB0246EFBD27B7A "点击放大")
 
 ## 工程管理
 
@@ -186,7 +186,7 @@ content_hash: sha256:6bea7aaab6f02cc38026e49156589694179c665d05651b38df4a3198806
 
 即时通讯应用消息页主要用于展示消息列表、消息详情，满足用户聊天需求。根据功能设计，将消息页相关内容划分为5个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/aCHv3E9MSb2FNHH5Vt-DOA/zh-cn_image_0000002610129075.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=18843DC4DD3B71CF5D42CCAA460B3A4A7033CC9A8B95ACA81AE55A50E49095CE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/R0hf8iDDSouq235CLD8cUg/zh-cn_image_0000002610129075.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=B656B477C54D300743E12864E229DE13B207054BBC41367FA2A05C05B7AD6C72 "点击放大")
 
 **界面开发**
 
@@ -204,7 +204,7 @@ content_hash: sha256:6bea7aaab6f02cc38026e49156589694179c665d05651b38df4a3198806
 
 即时通讯应用通讯录页主要用于展示通讯录列表、联系人主页，满足查看联系人需求。根据功能设计，将通讯录页相关内容划分为5个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/TbV1Iy6PS-K9mvo0DsOqJA/zh-cn_image_0000002610209169.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=44AE0CA8B24A1F66C2BBDD392636BAA7E616553ACAF2158B6ACE432F79A08F1B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/uizOPmZ1TxeLv7nmlJ06pg/zh-cn_image_0000002610209169.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC1416D79F4514D4B976BEACABF39AEDC7C5713CE895208D81C88EE4379D6AC6 "点击放大")
 
 **界面开发**
 
@@ -222,7 +222,7 @@ content_hash: sha256:6bea7aaab6f02cc38026e49156589694179c665d05651b38df4a3198806
 
 即时通讯应用朋友圈页主要用于展示朋友圈列表，满足查看朋友动态分享的需求。根据功能设计，将朋友圈页相关内容划分为4个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/hb4HA4q3QpWz__4oEAN7KA/zh-cn_image_0000002579689290.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=92A732A7574C0260BB15EAD518809918D9657F1988B9F77A5E97ABBFDD7C6C8C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/2idBBMY8SgG5bQ2dSl9eoQ/zh-cn_image_0000002579689290.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A8EA4C440CCFA06808124BB82F0BFF6E47FEA92E0F8A288E0461135083863D4 "点击放大")
 
 **界面开发**
 

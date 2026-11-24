@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-performanc
 title: 开发态性能检测
 breadcrumb: 最佳实践 > 性能 > 性能检测 > 开发态性能检测
 category: best-practices
-scraped_at: 2026-11-14T08:54:13+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:a639fa93885f145a1232e7e7bedf4983cce026cc06386cd65de5e645ac4b42e6
+scraped_at: 2026-11-24T12:47:51+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:6f922cf5ad5be191d7ddfad6a66f793cfaf9d865e3594368bfb042a704ef6c83
 ---
 
 ## 简介
@@ -18,7 +18,7 @@ content_hash: sha256:a639fa93885f145a1232e7e7bedf4983cce026cc06386cd65de5e645ac4
 
 本文将介绍调优的方法和常用工具，帮助开发者更好地分析和解决应用程序中的性能问题，提升用户体验，实现应用程序的高效稳定运行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/zh_pnBw1Ss2omd0_NGZqTQ/zh-cn_image_0000002416519594.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6379BE35B3480B03F448D5B92D332AB65FC8D95BC868FA1A1F797F4C73B907A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/oSF5xIEOT4OFc_5ey3v28g/zh-cn_image_0000002416519594.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=29D42BC78A730680925794782BC9CA8021EA9F55AC3CC9D1671F1C154DCEA745 "点击放大")
 
 性能调优贯穿于HarmonyOS应用开发的整个生命周期中，开发前有性能最佳实践和指南等赋能套件让开发者快速上手学习，开发过程中有性能工具开发套件覆盖应用开发各阶段，应用开发完成上架后有专业的性能测试工具检查测试应用性能指标。目前DevEco Studio主要集成了四种性能工具，在不同的开发阶段各有侧重，主要分为性能问题检测类工具和性能问题分析类工具。本文重点介绍使用**性能问题检测类工具**来检测应用性能问题。
 
@@ -34,7 +34,7 @@ content_hash: sha256:a639fa93885f145a1232e7e7bedf4983cce026cc06386cd65de5e645ac4
 
 在已打开的代码编辑器窗口单击右键点击Code Linter，或在工程管理窗口中鼠标选中单个或多个工程文件/目录，右键选择Code Linter > Full Linter执行代码全量检查。如图所示输入@performance，过滤性能检查结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/5BpDDKD-RUCwWJemslkoug/zh-cn_image_0000002404124977.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=902F2BDF44BC5ECF9321BEA8C44E6A63D27C7781EA64960D90C341F26401C8D3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/YQsqHARDTBG4aad-iBDIFA/zh-cn_image_0000002404124977.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4CF06BFE0F77B2E16AAED354F1D7D08DE94BBD0AD6DD155B604FFD0202ECE46 "点击放大")
 
 详细使用指导见：
 
@@ -73,29 +73,29 @@ content_hash: sha256:a639fa93885f145a1232e7e7bedf4983cce026cc06386cd65de5e645ac4
 
 4、将编译模式Build Mode设置为release。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/TUKb1-rTQ9G9ob-8_FQ7xw/zh-cn_image_0000002474188572.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=7497B9498C3C06C5BBB508E3CA49C49AD41F1E7DFA4C164FB8C734B8DBD6F888)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/P1XWbOUuTfervJI6x-7hug/zh-cn_image_0000002474188572.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=29FECBD176F4C43C94E313D7576C91C8C1DDAE723463A5EEAA7EFC93401D9DFA)
 
 1. 点击菜单栏Tools，选择AppAnalyzer进入AppAnalyzer页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/67F1lUQISd-DZ-tU131ofA/zh-cn_image_0000002510905945.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF6DB7770F254E581F8C6E74CAA34BA721B226DC8915C7006E8DB2769CDC45DB "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/SLk2wbpOSfyRg1_F3gUpiw/zh-cn_image_0000002510905945.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=C28EF76042D35B3CAEBCF8603C98F53715B1ECECDB783530B3B15E62EEA39841 "点击放大")
 2. 在AppAnalyzer页面，默认选择场景化体检。以页面间转场场景为例，点击“手动性能页面间转场体检”即可进入体检界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/5sK50sS6QUeVjUG-MVuTxw/zh-cn_image_0000002510868387.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE947EBB5DB5F5A2F2EC5D1687975A626A48E92F4A405A909C682AF7149E0542 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/uGYi1nWGSMmZx7OVYUCfPg/zh-cn_image_0000002510868387.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=A75CEBE0ED939A01620A78A0F986678AC08ABB1A651F01C08BFE408E05992BF3 "点击放大")
 3. 在准备体检时，开发者需要保持手机解锁状态，待被检测应用自动安装并运行后，即表示准备完成。然后操作手机至检测页面，点击开始按钮开始体检。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/z0BX5lDcSG2EgjCbByrocg/zh-cn_image_0000002478830250.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CDA7FDE56508FFFEEA9B96B16EABF3B5751C7CA4859982E76B67415B3EB2081 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Yrx-R1LKRJyaQhlb_CcrlA/zh-cn_image_0000002478830250.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=6637F32F3390856253F3E8FC9A3E517205E11CE587F693594738BD64977EA08A "点击放大")
 4. 等待界面出现“体检中，请操作手机”时，开始操作手机，等待体检工具录制和分析。操作完成后，可以点击结束按钮结束体检。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/SbxUiUZFROqAwPh-BSKgWg/zh-cn_image_0000002510870683.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=941F47A425D6675AC34CE4E4B4BAB6738A873F928236E517487EE157AC2971E4 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/R5KTcjRJRD-WCTvLPfiV8w/zh-cn_image_0000002510870683.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE0A95C9BE2B431D3242361245FD226CA5384F14C80CC679D5E40C6F506F7AB2 "点击放大")
 5. 等待体检工具生成报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/vPjo0bvFTrmHMwNxOZrAlA/zh-cn_image_0000002478830890.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=9004AB4C59998D426FB26CE8700DF5BB4C791F39F06B58FA5AEE67C8F6514EF9 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/DEBSe3XlRa23NptpNOYC7Q/zh-cn_image_0000002478830890.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5CABD5046F41A2AA3C0C228B1865CF986B2FC5A8475211F633264118C6DB8F8 "点击放大")
 6. 查看检测结果报告，点击展开检测报告中的“页面间转场”，如果体检不为满分100，点击展开体检检测结果，若显示诊断异常（如下图中出现黄色、红色警告），则表示存在页面间转场的性能问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/CexLaOi6Ri-Fh5wIRqZIfA/zh-cn_image_0000002478831568.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=38B72F755B96D877D6972FEDBAA8D8E1A44639A9A912DD245976B009A9B5506B "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Qew08j9lTiuqmZ07wwmb3w/zh-cn_image_0000002478831568.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=169810774C47740B1B8776C34E4FB72A73A6A80C0105CD3B2A5EF18B4E23495D "点击放大")
 7. 检测存在故障时，开发者可通过点击“可能故障原因”，查看详细测试结果及优化建议。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/EnPPFBSCSDWWBhAeee0YwA/zh-cn_image_0000002510871505.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=975249FD87906E0CBC80D63F1BC33D4CCB3EACDCC8CC2261362062B3BDCE080C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ta2Ig9kGRPqh-HBfZeRjhA/zh-cn_image_0000002510871505.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=08978D729EAF32EBB48EA6F9EB317614E775417A827D817D4E436762B1C68458 "点击放大")
 
 详细使用指导见：
 
@@ -111,7 +111,7 @@ content_hash: sha256:a639fa93885f145a1232e7e7bedf4983cce026cc06386cd65de5e645ac4
 
 **图1** Testing测试报告导入体检工具分析流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Lrl-VD-uSc2946Q98EDv6w/zh-cn_image_0000002416522370.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AD525B14D7433A0E2A12A50DFA144F96A4686A3B51E45E31F280A56ADA910D1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Mn4VV8FLQ6mi95Znhx17jw/zh-cn_image_0000002416522370.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E572D360447B17012A1230F3ED6CFCE2B34635CB333F65094C05DDBF0016243 "点击放大")
 
 Testing测试报告导入体检工具分析的过程主要包括以下步骤。
 
@@ -119,32 +119,32 @@ Testing测试报告导入体检工具分析的过程主要包括以下步骤。
 
    使用DevEco Testing进行场景化性能测试，支持编写测试脚本和自定义测试场景对应用性能进行评估。具体使用方法和指导请见：[场景化性能测试](../harmonyos-guides-V13/perf-testing-V13.md#section12324184817324)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/hDVNDhxLSieulQiVH6yvnA/zh-cn_image_0000002416681522.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7A84BE501DAB1BA53F8D9F1D9E9ABAC8874DEF8AAB76CEED54EC455A6A413C4 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/1KoDWoE3TeW32v63xpVyHA/zh-cn_image_0000002416681522.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=99519CBBA12EBF7C8D9EA9EC8A05B32D242031B84D6AFF91298A480C481B3C6F "点击放大")
 
    **查看测试结果**
 
    根据DevEco Testing检测结果，查看是否存在页面间转场等场景不达标的问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/wu8a5Q-GSZOx57N08Miw2g/zh-cn_image_0000002450160661.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=A366ADABFD029213269DDFA7E0B06119159F39D43C415ECDC51F05E584A96248 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/tv44Rl2fRHClYHExqzdNTw/zh-cn_image_0000002450160661.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E3D95B37A004105A1795C46BC319E5B9FEEA8AC17018E57E6C09D3B203A075C "点击放大")
 
    **获取测试报告**
 
    点击导出IDE体检文件按钮，跳转至报告文件本地路径，获取DevEco Testing体检测试报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/bTV5AcXiQtaO5ZIB7YS0KA/zh-cn_image_0000002416521718.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DFA2B5B25A0C6BF0A44AD028EA1CB1ECF8818D2F0D93CE7A0912D864595DE47 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/ts-b-iFTRRKlbewsUqatKg/zh-cn_image_0000002416521718.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF2FA3E769167449241D7B669D912972314F1D5991704799B434BC058B909F99 "点击放大")
 2. **体检报告导入AppAnalyzer**
 
    通过DevEcoTesting发现问题后，为深入分析问题，可将获取的体检报告导入体检工具AppAnalyzer进行具体定位和优化。打开DevEcoStudio，点击AppAnalyzer图标进入AppAnalyzer页面，随后点击“体检历史”按钮，跳转至历史记录页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/tpQe4fknREuiquXfnoBY0w/zh-cn_image_0000002478836312.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFCF6EFC2A2D29772C4976A54CE6F84D8DB6CED0C3AD7E213464A93DDB94129A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/KPPNDX48SYeUn3g4iMXRaA/zh-cn_image_0000002478836312.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CA83FAAA3DAA2589D955C705599FC4D689AC63469DA96FE97AB7CAF7D6C008D "点击放大")
 
    点击“导入报告”，即可将Testing测试诊断出的体检文件导入体检工具进行解析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/z0425p4pTQKXE8JNZaa65A/zh-cn_image_0000002478833510.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=67C0F6DF8BE0DCDAFD800F9B724DEC46312116A9B03482E16773B46D8B030F17 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/4CwkB9DUQjimqHWbYwClrQ/zh-cn_image_0000002478833510.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C282A4D591C05A4D7255C3F8B1E77CD087383062691DE728623033FEE9A2456 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/UdlcSKcCRUe0LOgCZwErEg/zh-cn_image_0000002478838010.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=8345341C46757E95B422FC65051186EF5E85B2A64DBF14378DD8B220914F786D "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/AWFIxqk0RmSlydYi_B9uGQ/zh-cn_image_0000002478838010.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7A9F6CC3B81B258427399DB42F7E3F1168CABF917EB6A6FA421E5CA730E18EA "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/GbS56F3QRPK59sxvnWklIQ/zh-cn_image_0000002510917261.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C29AFB34CFC3D8D2118E4CD34C939B3B635240B87331241156C87873EF2EF25 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/bnnn_Fv1R5Kv-sNqQD1N0A/zh-cn_image_0000002510917261.png?HW-CC-KV=V1&HW-CC-Date=20261124T044750Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB6E0BAD348183154F89ECF26CA0A9F067CB904A3B14C5147949934A72220013 "点击放大")
 
    **说明** 
 
@@ -178,8 +178,8 @@ Testing测试报告导入体检工具分析的过程主要包括以下步骤。
 | @performance/hp-arkui-no-state-var-access-in-loop | 丢帧-通用丢帧 | warn | [在for、while等循环逻辑中频繁读取状态变量导致性能下降](../doccenter-capabilities/arkts-state-management-faq-inner-component.md#在forwhile等循环逻辑中频繁读取状态变量导致性能下降)。 |
 | @performance/hp-arkui-use-local-var-to-replace-state-var | 丢帧-通用丢帧 | warn | 建议查看[状态管理常见问题](../doccenter-capabilities/arkts-state-management-faq.md)。 |
 | @performance/hp-arkui-use-row-column-to-replace-flex | 丢帧-通用丢帧 | suggestion | 建议[合理使用布局组件](../doccenter-capabilities/arkts-layout-optimization-guidance.md#合理使用布局组件)。 |
-| @performance/hp-arkui-combine-same-arg-animateto | 丢帧-动效丢帧 | warn | 建议[多次animateTo时统一更新状态变量](../doccenter-capabilities/arkts-animation-usage-guide.md#多次animateto时统一更新状态变量)。 |
-| @performance/hp-arkui-no-func-as-arg-for-reusable-component | 丢帧-滑动丢帧 | warn | [避免使用函数作为复用的自定义组件创建时的入参](https://developerlf.hwcloudtest.cn/consumer/cn/doc/best-practices/bpta-component-reuse#section18721184816136)。 |
+| @performance/hp-arkui-combine-same-arg-animateto | 丢帧-动效丢帧 | warn | 建议[参数相同时使用同一个animateTo](../doccenter-capabilities/arkts-animation-usage-guide.md#参数相同时使用同一个animateto)。 |
+| @performance/hp-arkui-no-func-as-arg-for-reusable-component | 丢帧-滑动丢帧 | warn | [避免使用函数方法作为复用组件的入参](../doccenter-capabilities/arkts-component_reuse.md#避免使用函数方法作为复用组件的入参)。 |
 | @performance/hp-arkui-set-cache-count-for-lazyforeach-grid | 丢帧-滑动丢帧 | suggestion | 建议在Grid下使用LazyForEach时[设置合理的cacheCount](bpta-best-practices-long-list.md#section11667144010222)。 |
 | @performance/hp-arkui-use-object-link-to-replace-prop | 丢帧-通用丢帧 | warn | 建议[使用@Link/@ObjectLink替代@Prop以减少深拷贝](../doccenter-capabilities/arkts-component_reuse.md#使用linkobjectlink替代prop以减少深拷贝)。 |
 | @performance/hp-arkui-use-reusable-component | 丢帧-滑动丢帧 | warn | 建议复杂组件的定义，尽量使用[自定义组件复用开发实践](../doccenter-capabilities/arkts-component_reuse.md)。 |
@@ -200,7 +200,7 @@ Testing测试报告导入体检工具分析的过程主要包括以下步骤。
 | @performance/hp-arkui-use-transition-to-replace-animateto | 丢帧-动效丢帧 | warn | 建议[转场动画](../doccenter-capabilities/arkts-animation-transition.md)。 |
 | @performance/hp-arkui-remove-redundant-state-var | 丢帧-通用丢帧 | suggestion | 建议[学习UI范式状态管理](../doccenter-capabilities/arkts-state-management.md)。 |
 | @performance/hp-arkui-use-taskpool-for-web-request | 完成时延-应用内点击完成时延 | warn | 建议[网络资源的请求和返回使用taskpool线程池异步处理](bpta-time-optimization-of-the-main-thread.md#section32971936174416)。 |
-| @performance/hp-arkui-remove-unchanged-state-var | 丢帧-通用丢帧 | suggestion | 建议查看[学习UI范式状态管理](../doccenter-capabilities/arkts-state-management.md)。 |
+| @performance/hp-arkui-remove-unchanged-state-var | 丢帧-通用丢帧 | suggestion | 建议[学习UI范式状态管理](../doccenter-capabilities/arkts-state-management.md)。 |
 | @performance/hp-arkts-no-use-any-export-current | 完成时延-冷启动完成时延 | warn | [避免使用export \* 导出当前module中定义的类型和数据](bpta-application-cold-start-optimization.md#section584818173141)。 |
 | @performance/hp-arkts-no-use-any-export-other | 完成时延-冷启动完成时延 | warn | [避免使用export \* 导出其他module中定义的类型和数据](bpta-application-cold-start-optimization.md#section584818173141)。 |
 | @performance/hp-arkui-suggest-cache-avplayer | 音视频播放-启播速度 | warn | 建议[缓存AVPlayer实例減少起播时延](bpta-smooth-switching.md)。 |

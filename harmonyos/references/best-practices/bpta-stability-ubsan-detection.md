@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用UBSan检测未定义行为
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 使用UBSan检测未定义行为
 category: best-practices
-scraped_at: 2026-11-14T08:54:17+08:00
+scraped_at: 2026-11-24T12:47:55+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:de0ea7e02c0333a54d8f99f63379126f649bbe66306ef0de04c1a5c5e037258a
+content_hash: sha256:4bfda31908f7fdb24dc4a61f5ab8a6e8e2a3276eaabeb78428ee3221b8d93077
 ---
 
 ## 原理概述
@@ -28,7 +28,7 @@ ASan、TSan、UBSan 和 HWASan 不能同时开启，只能启用其中一个。
 
 点击**Run > Edit Configurations > Diagnostics**，勾选**UndefinedBehaviorSanitizer**开启检测。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/kFfPekWhQBOsSbZfhaO-ew/zh-cn_image_0000002193851168.png?HW-CC-KV=V1&HW-CC-Date=20261114T005417Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EA1A47FB1FFEC8B2FB347977CA86CF3C7E2A97A597CAC94236B7B434A3E5F81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/SaHh_I_pRBioTfaG4J_uNA/zh-cn_image_0000002193851168.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA3B1515021FE9FF0AA5CFD6EF3BF7E2D8194E9FC52FE08165B6CE9F7EF2C05C)
 
 **流水线场景**
 
@@ -48,7 +48,7 @@ hvigorw [taskNames...] ohos-enable-ubsan=true  <options>
 "arguments": "-DOHOS_ENABLE_UBSAN=ON"
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/0m24VlhmQU2jeqeDLKiv7g/zh-cn_image_0000002193851164.png?HW-CC-KV=V1&HW-CC-Date=20261114T005417Z&HW-CC-Expire=31536000000&HW-CC-Sign=711677813D3620B179C8D8A5E0A98A2EBE0EF317ACAB6C186CC1A8C23F8B6B90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/_p1V4djMT4-k7L6MrT4d9g/zh-cn_image_0000002193851164.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=543B2D2E8486158EB116136E67411AA3F84047172A1B3CE85EFFB96F1866AC73)
 
 **流水线场景**
 

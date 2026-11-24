@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: APM能力建设
 breadcrumb: 最佳实践 > 稳定性 > 稳定性运维 > APM能力建设
 category: best-practices
-scraped_at: 2026-11-14T08:54:22+08:00
+scraped_at: 2026-11-24T12:47:59+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:ac851883a585e9389b1d82502a62c5c41caa27ad466a03e0fce2693c378c1c32
+content_hash: sha256:7b2a889e78b7fcb9705a60e60cbc40249ca40499c54ce7d4b6a3ee199b3d6bde
 ---
 
 APM作为应用性能管理平台，可线上监控应用质量。系统提供采集质量数据的能力，开发者可以收集这类数据构建APM平台。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/HTFVTi8USj2szCimUcJGiA/zh-cn_image_0000002404125277.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD4BFD7B25F110A7B78B6F243DA58D541222EE5CFEA9A43B0F97FAB66E665F3E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/lBX-oOnbT0yIxJDvpbKIzw/zh-cn_image_0000002404125277.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=8998E50A02E5CD46710DCF8B43ACC8438A4460CE921BBCE44B4B4B3BACA9A6DA "点击放大")
 
 本文主要介绍如何通过[@ohos.hiviewdfx.hiAppEvent (应用事件打点)](../doccenter-references/api/js-apis-hiviewdfx-hiappevent.md)订阅接口采集系统事件。其中，系统事件是指应用运行期间，应用进程发生的性能、功耗、稳定性等故障，HiAppEvent会将这些故障通过事件返回给开发者。
 
@@ -52,7 +52,7 @@ external\_log返回的路径是沙箱目录，非真实物理路径，应用有�
 
 原理如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/pYGKLuBKQuajGiH37ERk4w/zh-cn_image_0000002382129722.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEA4431774013F0C0B3161167245119AA8B715CE2530D6C5EB60029160E7D186 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/e8L3ymx6Smah81iAe4iQgA/zh-cn_image_0000002382129722.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=98EF2410BD6FFAB0653DE69CA9FD6839AA3EF8D8221ECF557BBDC991B9FC98C9 "点击放大")
 
 **说明** 
 
@@ -103,7 +103,7 @@ hiAppEvent.setEventParam(params, hiAppEvent.domain.OS, hiAppEvent.event.APP_CRAS
 
 以崩溃采集为例，可参考如下设计：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/G1M8WR7UTEaSXXTrTP17kA/zh-cn_image_0000002404045473.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=89931FE7B1F8AC38CB205853F59FC32BFCD95268035273E11C07A93B5CE4BBFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/X-B_5A22TkSCdc_bU6McMw/zh-cn_image_0000002404045473.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EF0FACB4E2C98E2F2873C02154612C87E80EFE48730A566E13E2E3C6F555656)
 
 1. APM代码早于业务代码。
 2. 应用启动阶段注册ErrorManager()，可以捕获JS异常，发生JsError崩溃时进程不会退出。参考[如何使用ErrorManager捕获异常](../harmonyos-faqs-V5/faqs-arkts-81-V5.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hot-
 title: Hot Reload
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > Hot Reload
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:17+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:556cb368aaf4c519b1b32f51053a5eb08f6526778f43451aa5de9d35b197dd61
+scraped_at: 2026-11-24T12:42:46+08:00
+doc_updated_at: 2026-11-23
+content_hash: sha256:dd5ed4b13bf6b6b911be87832d8f6ca6ef5564a2f5c058928c8c53b843c29360
 ---
 
 鸿蒙电脑DevEco Studio提供Hot Reload（热重载）能力，支持开发者在真机或多设备预览器上运行/调试应用时，修改代码并保存后无需重启应用，在真机或预览器上即可使用最新的代码，帮助开发者更快速地进行调试。
@@ -21,7 +21,7 @@ Hot Reload不支持卡片，不建议在hotReload模式下执行与卡片相关�
 ## 热重载、热重启、完全重启的区别
 
 * **热重载**：不重启应用，可保留应用状态，但整个过程会重新运行入口文件内的逻辑。
-* **热重启**：在运行流程上，与热重载相比，主要区别在于会重启应用，不保留应用状态，支持更广泛的ArkTs代码修改快速生效。一旦执行了热重启，后续热重载流程均会被热重启取代。
+* **热重启**：在运行流程上，与热重载相比，主要区别在于会重启应用，不保留应用状态，支持更广泛的ArkTS代码修改快速生效。一旦执行了热重启，后续热重载流程均会被热重启取代。
 * **完全重启**：会完全重新运行应用，该任务较为耗时，因为它会重新全量编译代码和资源文件。
 
 ## 使用约束
@@ -82,29 +82,29 @@ Hot Reload不支持卡片，不建议在hotReload模式下执行与卡片相关�
 
 ## 开启热重启/冷重载（可选）
 
-如果需要使用热重启或冷重载的能力，先打开对应开关：点击菜单栏点击**文件 > 设置** **>** **扩展 > 热重载**，勾选以下选项。
+如果需要使用热重启或冷重载的能力，先打开对应开关：点击菜单栏**文件 > 设置** **>** **扩展 > 热重载**，勾选以下选项。
 
 * **启用热重启**：热加载并重启应用。
 * **启用冷重****载**：增量构建并重启应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/85F1UHxfTVq5Qmd42l3puQ/zh-cn_image_0000002781471188.png?HW-CC-KV=V1&HW-CC-Date=20261114T004916Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E743D835615D8DE848D8A86D09FA002A14D27200E2DE3640CCE62E78343C577)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/mxaQ_i3iT5Gk6PILm3aLEA/zh-cn_image_0000002820681175.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E76065E469761B91FE002A67BB6A7893A2626492DB53F05645446992C625E55)
 
 ## 操作步骤
 
 1. 连接真机设备或多设备预览器。
-2. 在下拉菜单中，将运行/调试配置切换为**Hot Reload**的配置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/fTRS6vlFTa6el6jA0UjCkg/zh-cn_image_0000002810630743.png?HW-CC-KV=V1&HW-CC-Date=20261114T004916Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EA4A7105E65CD693F201004FDD0B8418AB8F132450E3C6942C73B2416934FDF "点击放大")。
+2. 在下拉菜单中，将运行/调试配置切换为**Hot Reload**的配置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/w-3jNN7VSj6f7whZjXsMdg/zh-cn_image_0000002792001218.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=72457ED1A4DA26E43BD53B659DFD270669AD166C61F7BF3B628A7511958D26CB "点击放大")。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/JVyMaQvrTQKs9X8XZ4YvMw/zh-cn_image_0000002810750849.png?HW-CC-KV=V1&HW-CC-Date=20261114T004916Z&HW-CC-Expire=31536000000&HW-CC-Sign=B75E7C26A3FD692889839E017A353A98C6CBC54980B5292B88DE9CA7B2920EAD "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/uHO0hU9WSPK2XvFdfhUg0A/zh-cn_image_0000002820681177.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=3000C4B8676C61E0A21A5E40C33F92CF5D54F66CD16812A46DDB74051E754BB1 "点击放大")
 3. 运行/调试应用，请参考[使用本地真机运行应用/元服务](ide-hmos-run-device.md)或[使用多设备预览器运行应用/元服务](ide-hmos-run-previewer.md)。
 4. 修改代码后，可以通过如下操作，查看设备上修改后的显示效果。
-   * 方式一：点击热重载![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/z_MMtn_nTQCsFHU0v8yCVQ/zh-cn_image_0000002781471190.png?HW-CC-KV=V1&HW-CC-Date=20261114T004916Z&HW-CC-Expire=31536000000&HW-CC-Sign=07C4CBC09426F02A081BFF8BC55CD5BCE1459AFEB5AC7B75EC481ABB7B60AC9B)按钮：
+   * 方式一：点击热重载![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/fj7hFaCzTm2jIZOzRRRD_A/zh-cn_image_0000002820721185.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C6574964B4DFC049A5C54A802D5FCE0190D12C2827B4FA4DFDF140BCFBDE71B)按钮：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/PMU4S446TOeFb5hsXcO6TA/zh-cn_image_0000002781311258.png?HW-CC-KV=V1&HW-CC-Date=20261114T004916Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFBCFE36963C202DD605FA862F029500BC03E459573F4FBD1DC2FB359987E534)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/T3Z3KjmVRDeKYkPrbszMsA/zh-cn_image_0000002791841240.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBFCED2BD9EC2A303401E602F8F07E9E0004B4F0D737BA7245C119CB06759CAB)
    * 方式二：通过快捷键方式触发热重载：需要先在菜单栏点击**文件 > 设置** **>** **扩展 > 热重载**，勾选**保存时执行热重载**。修改代码后通过快捷键**Ctrl + S**或**失焦**即可触发热重载。
 
      方式二不支持冷重载，如需使用冷重载功能，请使用方式一。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/B_s1MeDaRK-SZ6Tq5NsHKw/zh-cn_image_0000002810750851.png?HW-CC-KV=V1&HW-CC-Date=20261114T004916Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CB1B32F4F5F3C78442E68EE24206DFD58C5152342B93522B5CBECF5376B409C)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/IMotUunHRneyJ-niyZepKw/zh-cn_image_0000002820721181.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=1998977006573BB7B9A453C8173F949C8D999DED08EBEF70F19618AEF81E4472)
 
    成功执行热重载后，控制台会打印以下内容：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 窗口方向
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备窗口形态 > 窗口方向
 category: best-practices
-scraped_at: 2026-11-14T08:54:08+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:ffbbabfa7b1a75a7e81d73dbea134dcffe44c10db148d5ea65c1bf7b25a1d576
+scraped_at: 2026-11-24T12:47:47+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:0881943d88116f330659e116a729740d0e16eeb4c987b6a8dc5f878f6924f6be
 ---
 
 ## 概述
@@ -35,7 +35,7 @@ content_hash: sha256:ffbbabfa7b1a75a7e81d73dbea134dcffe44c10db148d5ea65c1bf7b25a
 
 目前HarmonyOS系统中设备的显示方向有以下四种，对应真机实际状态如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/kDzNYbyDRxa5csBoiJ4MeA/zh-cn_image_0000002566756945.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCDBFF5DB2B45CEA8E7FA37C8FE4C99FEAF196A0A21E9B13B5701EEF9F867136)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/c-gVRLN8RYKO0yBpg2URcA/zh-cn_image_0000002566756945.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A9DC9DB711813B63F6B737EED2FD316390E95135F4FD4B13CF3B4705A2203B7)
 
 **基本定义：**
 
@@ -189,19 +189,19 @@ content_hash: sha256:ffbbabfa7b1a75a7e81d73dbea134dcffe44c10db148d5ea65c1bf7b25a
 
 上述表格也可以抽象为如下的决策逻辑，如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/w7HMxJIwR_uvPJeXlRLTBg/zh-cn_image_0000002572763022.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B8763CE1CD03CECA2F349875DCD52BF0F8A2AAA7C8AF565486AC11B8EB884EA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/JUA4hh9PRJemNvBWM8jADA/zh-cn_image_0000002572763022.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0C62F21213E5ECFB4079479053BE352D396E5681CF3F7150E832C58FE78677B "点击放大")
 
 **说明** 
 
 不推荐使用不受控制中心限制的自动旋转策略，故未将其列入表格。如特定场景需要，可直接使用[自动旋转策略](bpta-multi-device-window-direction.md#section180611396137)中的该策略。
 
-**窗户策略工具类**
+**窗口策略工具类**
 
 为提升开发者窗口旋转策略选择的易用性，结合上述策略决策逻辑图，我们提供了一套窗口旋转策略选择工具类，支持三种使用形式。
 
 1. 通过链式属性访问直接获取策略值
 
-   若开发者需要在代码的中硬编码策略值，可通过工具类中的OrientationPresets常量，采用三层递进的链式调用获取旋转策略枚举，示例如下：
+   若开发者需要在代码的中硬编码策略值，可通过工具类中的presets常量，采用三层递进的链式调用获取旋转策略枚举，示例如下：
 
    ```typescript
    @Component
@@ -466,7 +466,7 @@ content_hash: sha256:ffbbabfa7b1a75a7e81d73dbea134dcffe44c10db148d5ea65c1bf7b25a
 
 以备忘录应用为例，当系统关闭旋转锁定后，应用页面会随手机旋转自动切换横竖屏；打开旋转锁定时，则不会发生旋转行为，此时需配置为AUTO\_ROTATION\_RESTRICTED。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Z80vbqHpQOKyS9S2R38uyA/zh-cn_image_0000002693704626.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1DCFE6467249833D5B7E09D73E4641624C95D9F164D9C85DB0B467A3F53BEBE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/NSFxRW2USRuQSS_zdDD_pA/zh-cn_image_0000002693704626.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A052932B8E8134E88BA2AB891F9E2061034FFBDE611305A1C44E13F98595DF2 "点击放大")
 
 ### 窗口级配置
 
@@ -502,7 +502,7 @@ aboutToDisappear(): void {
 
 视频播窗横竖屏切换
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/f_FCAzwHRt2ZpAZViO-Hzg/zh-cn_image_0000002566916979.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DD5DD0ACE12A2BF63BFF71A1C98204FBB992F4910FEBCD094C7E49C7F0071CA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/4-w8aWw5RQOOlsM1opvZ5Q/zh-cn_image_0000002566916979.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCA52BEA24454C07D89595A3C3865BF7A8813EFFE60E5CB89A343AA3A2A08796 "点击放大")
 
 ### 页面级配置
 
@@ -647,11 +647,11 @@ aboutToDisappear(): void {
 
 例如：视频或者游戏类应用在横屏模式下开启悬浮窗后，页面没有适配横屏，导致内容显示不全或者观看体验不好。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/8YAMb7y3S2WVIokpRgtFRQ/zh-cn_image_0000002566757003.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=045A9956C1BBC14752A7E49B8CBB2D92E10E9E41026D56E5146E1CC711E0809A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/C2IA6D5FTsSZrjyGE0ctGQ/zh-cn_image_0000002566757003.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB9620FB3BA89FC172E3147FC62DB715647ADA8D498E32A4FF9EFCB76E41C74E "点击放大")
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/aZ4aY3T-Skm8JATPLdmvtQ/zh-cn_image_0000002535837220.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D352D3832343773BA08059B27404DCF844E13184B40D5237D7FC58CDD2982E9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/8y69UOh5Ss6Dj0G4b2QOPQ/zh-cn_image_0000002535837220.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=C08426357A253F231550FA70F0738CE83A48CAA5CBF43E6D12B37678FA6A6F2E "点击放大")
 
 ## 为多设备配置旋转策略
 
@@ -915,7 +915,7 @@ function ImageItem(imageSrc: ResourceStr) {
 
 下图展示了应用层、多设备工具模块与系统层之间的整体协作流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/4oViAQ4FTb-M65V-MZuJrw/zh-cn_image_0000002723850036.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CFE9A7F3E00DF3E7F9F2B0F12BEBFDB323F364EE65FD292CDF8F8FF9A4CADD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/ZgytpOzrR1agzm6P_041wA/zh-cn_image_0000002723850036.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1914B8C8B2C5481877E280C2C237CF2BA23699C85EE5DFD746192ABE34E5D4C)
 
 **响应式规则引擎**（responsiverule目录模块）
 
@@ -1226,8 +1226,8 @@ OrientationStrategy的三种模式如下：
 
    适用场景：
 
-   * 长视频详情页 / 图库应用：autoRotate(AutoRotationRange.ALL\_ORIENTATIONS)，全方向自由旋转。
-   * 竖屏游戏（也支持反向竖屏）：autoRotate(AutoRotationRange.PORTRAIT\_ONLY)，仅竖向旋转。
+   * 长视频详情页 / 图库应用：autoRotate(AutoRotateRange .ALL\_ORIENTATIONS)，全方向自由旋转。
+   * 竖屏游戏（也支持反向竖屏）：autoRotate(AutoRotateRange .PORTRAIT\_ONLY)，仅竖向旋转。
 3. followDesktop（跟随桌面策略）
 
    跟随桌面策略将旋转行为完全委托给系统桌面，应用窗口的方向随桌面方向自动变化。
@@ -1544,7 +1544,7 @@ aboutToAppear() {
 
 具体如下：通过getContext获取对应的UIAbilityContext，并通过context获取对应的windowStage实例，然后通过windowStage.getMainWindowSync同步方法拿到对应的窗口实例win，然后调用[setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)方法设置窗口方向。
 
-```typescript
+```screen
 @Component
 export struct Home {
   windowObj: window.Window | undefined = undefined;
@@ -1555,7 +1555,7 @@ export struct Home {
     try {
       this.windowObj = (this.getUIContext().getHostContext() as common.UIAbilityContext).windowStage.getMainWindowSync()
     } catch (err) {
-      Logger.error(`Invoke set preferred orientation failed, code is ${err.code}, message is ${err.message}`)
+      Logger.error(`Invoke get main window failed, code is ${err.code}, message is ${err.message}`)
     }
 
     // Use the WindowOrientationHelper tool to directly obtain the rotation strategy enumeration through chained calls.
@@ -1658,7 +1658,7 @@ export struct StockDetail {
 
 在K线图页的aboutToAppear()和aboutToDisappear()生命周期中调用window.setPreferredOrientation()，设置K线图页显示时窗口旋转策略为AUTO\_ROTATION\_LANDSCAPE\_RESTRICTED，K线图页返回时恢复窗口旋转策略为FOLLOW\_DESKTOP。
 
-```typescript
+```screen
 aboutToAppear(): void {
   try {
     this.windowObj = (this.getUIContext().getHostContext() as common.UIAbilityContext).windowStage.getMainWindowSync()
@@ -1837,7 +1837,7 @@ export struct VideoDetail {
 
 rotation的取值有4种，分别对应下图所示的4个方向（以直板机为例）。如果需要更精准的角度信息，则需要配合设备sensor获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/0qOWtkRtSimijvLPBtsylw/zh-cn_image_0000002535837336.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=236A95FDA5BF5D7BC7B82F4E9367CF42F4C904AF6C7E4B22571267883F23677D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/zjmJD6wqRuO2AbOtuRCGLA/zh-cn_image_0000002535837336.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7BFAFFCE4336F6BE863CB7DBD52B82ED3B3C0FF51F844CAF11B3769725537DC "点击放大")
 
 | 值 | 含义 |
 | --- | --- |
@@ -1857,7 +1857,7 @@ rotation的取值有4种，分别对应下图所示的4个方向（以直板机�
 
 display.Orientation 为屏幕当前的朝向状态，display.rotation 为屏幕相对自然方向的物理旋转角度。display.Orientation 和 display.rotation 均为只读属性，且用于描述屏幕当前旋转状态，但二者定义逻辑不同，在各类设备形态下不存在固定对应关系，开发过程中不可相互替代。若混用接口，在折叠屏等多形态设备适配场景中极易引发兼容性问题。以三折叠设备为例：当 display.rotation 取值为 0° 时，display.Orientation 既可能为竖屏状态，也可能为反向横屏状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/lzNEhmAPTtKTTtLPjEDxSw/zh-cn_image_0000002622960129.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=77483E5DCC610B43D8B68B6451C40EBC1B4CFFE368AB017442534021BF2AA0AB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/c47lHoPiSHeQv6JUfsAV8w/zh-cn_image_0000002622960129.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=886CBD877C197D9D2B44AF25D28FA6A40384BA347A0E53CC2282B97ABAD29AFE "点击放大")
 
 ### window.getLastWindow的方式获取窗口出现延迟
 
@@ -1902,7 +1902,7 @@ aboutToDisappear(): void {
 2. 打开Log页面，依次在筛选框中选择“当前的连接设备”、“No filters”、“当前的调试应用”、“Debug”或“Info”，最后在关键字栏填写“SetRequestedOrientation”。
 3. 操作问题页面后，在日志中查看系统日志，找到应用包名一行的日志，lastReqOrientation表示应用最后的窗口旋转策略，target表示目标窗口旋转策略，后面的数字可参考下方对照表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/d-1ShQSCTFGQaonBIFz6Ug/zh-cn_image_0000002593796295.png?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=F37C1BF4303BEEB5253F563C60659C8BB6BF6C4754694FC3B33FB5B2C7BDBCCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/LBofn6iKTyeQfTLP7QKcFQ/zh-cn_image_0000002593796295.png?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC7EFC5813F80748A20A2AAF72058C88D130FB7A8D7DE37488A5A93F81D230C5)
 
 日志中查看窗口方向对照表
 

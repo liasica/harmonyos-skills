@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-freeze
 title: 开发态快速定位AppFreeze冻屏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用冻屏类问题分析 > 开发态快速定位AppFreeze冻屏
 category: best-practices
-scraped_at: 2026-11-14T08:54:21+08:00
+scraped_at: 2026-11-24T12:47:58+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:6525f3cb2e1a1019cb014bc982bee673a3e19d754e23482f41b2184edb36aa3b
+content_hash: sha256:841a5759f42b700ae30e14d3f2dee0175aeaa88b8bc590cf631f4e010d14c464
 ---
 
 ## 概述
@@ -48,13 +48,13 @@ content_hash: sha256:6525f3cb2e1a1019cb014bc982bee673a3e19d754e23482f41b2184edb3
 
 通过DevEco Studio的底部FaultLog模块或触发冻屏现象时DevEco Studio右下提示框直接跳转至FaultLog。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/_ENqM67dT-Sp2M_N5Aaw_Q/zh-cn_image_0000002644940872.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EC3E88D235BE0A3841C81E52022CAF8286DE005A533CB9466974FCB8EF7A5B0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/7K3x0bj_ToaIZGaqIhN0eA/zh-cn_image_0000002644940872.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCAA7623E8306E9F85B7C21C7158884ED79913856388BE5050AF71B498D4F337 "点击放大")
 
 2. **查看信息分析故障类型**
 
 进入Fault Analysis页签查看Freeze type。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/XP5EdU93Rri_bO5irBr1jg/zh-cn_image_0000002675100579.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=5660E830620FD0A55AE03D6C612EBEBC148510274EE0D93D7333C4DAAAAEDD7F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/JVBAv1LpS6-npiYd3VRPGA/zh-cn_image_0000002675100579.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D6AF30A26D8B4A75AFB915A4C6B5CA275669882E05D729442385E71EB29C51E "点击放大")
 
 * THREAD\_BLOCK\_6S：应用主线程冻屏超时（前台6秒，后台21秒）。
 * APP\_INPUT\_BLOCK：用户输入响应超时。
@@ -73,7 +73,7 @@ content_hash: sha256:6525f3cb2e1a1019cb014bc982bee673a3e19d754e23482f41b2184edb3
 
 冻屏问题的标准化排查流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/XmiJpMnSRG-HD-VwodtLjg/zh-cn_image_0000002675020727.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1D8BE23578A0B8958138FD82D2F444AE7BDC239524133C75C40C4944F6CD197 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/RNBhgQNgSnS_sB_uNgfnvQ/zh-cn_image_0000002675020727.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=20968F6324A5319092B7584DFFA1F06BF3E04E780E315B148E5528A32FED590A "点击放大")
 
 ## 冻屏分析案例
 
@@ -101,7 +101,7 @@ content_hash: sha256:6525f3cb2e1a1019cb014bc982bee673a3e19d754e23482f41b2184edb3
 
    如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/oQOOaHEeQeiR8JnY-uofNw/zh-cn_image_0000002645100776.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6C57450F73963DA1D03CCA9EE311D9BE5F8414B5EABD02DF486A1EADFB4811A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/oWpFiiguTr2y3aeiF5LC3A/zh-cn_image_0000002645100776.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=50E5F04C48B2C0709D945E274A91186852DC189D02245194E721BF5208C716A8 "点击放大")
 3. **查看****Fault Analysis**
 
    Fault Info右侧会出现Fault Analysis页签，点击Fault Analysis页签，会展示结构化的日志信息。
@@ -110,22 +110,22 @@ content_hash: sha256:6525f3cb2e1a1019cb014bc982bee673a3e19d754e23482f41b2184edb3
 
    如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/eYza0pE1Qs653Par0IT_2A/zh-cn_image_0000002644940874.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=919AF33B8AA506D7E51DF437C06BA9DFBD649B372D3BE6185E0AB0716E4B59DF "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/KgI2XzQJQSCkDzookBDG4w/zh-cn_image_0000002644940874.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=6194B966F2220FCD0506F20C3EC2119B7CD1D5E1D509CC24E4D405BA379B328B "点击放大")
 
    **对比3秒（Warning）和6秒（Error）的堆栈**
 
    * 3秒和6秒的栈不一致：说明线程仍在执行业务代码，可能是任务过重导致主线程繁忙，需结合采样栈进一步确认。如下图所示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/tyRxEhJCTQiYt0O6VhuGNQ/zh-cn_image_0000002675100581.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=474A6F4FC3D8259200FD878216324B8C00348478C05158D8B42EBAC5612FD1F5 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/0pK-4kzGRD61nGQc9tDCpA/zh-cn_image_0000002675100581.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=B470CC9191F905BDBE525788E9C0854CBCEC5A019D362ED1C3A8C61D212E6994 "点击放大")
 4. **分析Sampling Stack**
 
    Sampling Stack页签展示应用堆栈（绿色标识）和系统堆栈（蓝色标识）。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/s3rZ-EL1Sy6uB7kl-4LhoQ/zh-cn_image_0000002675020729.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1C80BEBF49D3EBD233665A15667AB1E8850F42BE9CAD33987ADFD0C4062DB26 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/5agIA2PfQweS2_tmOBisoA/zh-cn_image_0000002675020729.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=E06A679804948E0F20DB2929E3174826DAEA2915C8AB8D5EEFF455DF7586D3DA "点击放大")
 
    点击切换图表类型按钮，可切换到堆栈火焰图，并通过不同颜色标识堆栈类型。其中红色代表异常堆栈，图中异常堆栈指向业务Page，结合前面步骤3s/6s堆栈不一致的场景，此时需要定位Page中导致主线程繁忙的业务逻辑。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/omGGlXQaR8SJqt5U4JWcaQ/zh-cn_image_0000002744118231.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F2CF8DBF45AE12964BF3BDB7992FA29BA7F1CD7A85539E1E8E06DB065C358C6 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ths-l7NaT42tBK3fcFWv4g/zh-cn_image_0000002744118231.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=08E1B061FA13D76B660D8EA9C55DF0A0E69F7BB157F3A73BD2FBBFD83F348B9B "点击放大")
 
    开发者检查对应业务代码后，可发现两处导致主线程繁忙的严重问题。
 
@@ -135,9 +135,9 @@ content_hash: sha256:6525f3cb2e1a1019cb014bc982bee673a3e19d754e23482f41b2184edb3
 
    如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/0LgGPjKrQM-f5yupRsFhbw/zh-cn_image_0000002644940876.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C75B7A3AB3ADAAFF927DC0B662732D6E00CE067CE815001F2CC4ECF891A3EC9 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/-wfu--cMSyG2ENXURByeQg/zh-cn_image_0000002644940876.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=D131E780B79F845F0FD4BA9CE83DFBDA26CEA0EB606756EADE978C503A211258 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/HqVfzkWeSROucFfFrVkxKg/zh-cn_image_0000002675100583.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=3126169C981AF48282DAB95EF7F001EC3387BA3CEE730183C937E29648F94B9D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/6QsnzAeXRg6OOhFX3l73jw/zh-cn_image_0000002675100583.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A7DCE140B6D7C93D67D601DC424DCE83ED441124DBF2E63345AC1520FF26F04)
 
 ### 优化修复
 
@@ -149,7 +149,7 @@ content_hash: sha256:6525f3cb2e1a1019cb014bc982bee673a3e19d754e23482f41b2184edb3
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/OOcF2YO8RIaa_emANLqaLA/zh-cn_image_0000002809059393.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=5644D22FF303BD8E9AB0E539BCF55DBFD58FC55040D1D103C5A5F11F518BF97F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/UKW-lJjPTbSEpY3ESi4Fjg/zh-cn_image_0000002809059393.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=272B312BC11E3891847C67EEAC2FD42F246CF4DB25D93ACC7409136042B41DA6 "点击放大")
 
 ## 常见修复建议
 

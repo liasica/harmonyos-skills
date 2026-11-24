@@ -3,15 +3,15 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用DevEco Testing进行稳定性测试
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 稳定性测试 > 使用DevEco Testing进行稳定性测试
 category: best-practices
-scraped_at: 2026-11-14T08:54:17+08:00
+scraped_at: 2026-11-24T12:47:55+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:ad40c9d0a059cb401681b7d16e2bf2e2520aa47be6c2839d77dce80d9ba42f3e
+content_hash: sha256:9142016bdae55522af0d35b0768e326371156b84c6e8e0a97268f78f18e47e36
 ---
 
 本文介绍DevEco Testing为HarmonyOS NEXT应用开发者提供的稳定性测试服务，涵盖稳定性基础质量测试和应用探索测试。稳定性基础质量测试依据HarmonyOS NEXT稳定性测试建议，提供应用稳定性基础检测能力，帮助开发者快速上手稳定性测试。应用探索测试采用基于专家经验的智能遍历方法，驱动测试高效执行，构建应用专属测试模型，帮助开发者有效识别应用故障。
 
 **图1**   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/DhImc4rJR2GJ8uA7QwdvVA/zh-cn_image_0000002792090977.png?HW-CC-KV=V1&HW-CC-Date=20261114T005417Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA064ACE8DF26F5B2396F6643B398B9A20CE9829C11834703B7A0A202B909C53 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/7zejIumtQxmUk_FgyiKDPA/zh-cn_image_0000002792090977.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C169807D97AD12D569D8BC2EBC25FFD8D8A514778F64E170D980BF094144C24 "点击放大")
 
 ## 稳定性基础质量测试
 
@@ -21,7 +21,7 @@ content_hash: sha256:ad40c9d0a059cb401681b7d16e2bf2e2520aa47be6c2839d77dce80d9ba
 
 进入DevEco Testing客户端，在左侧菜单栏选择“测试服务”，点击“稳定性基础质量测试”服务卡片，即进入任务创建界面。按需配置任务参数，点击创建任务即开始测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/XD2p89x8TVeDMkoF3WS2Cw/zh-cn_image_0000002475040597.png?HW-CC-KV=V1&HW-CC-Date=20261114T005417Z&HW-CC-Expire=31536000000&HW-CC-Sign=30CFF49677C4E2EFE3A43AA7B3D9A34620F8006D90F29C338ECB4C0ABC411488)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/DNp-CarNRWqHUNp7vKGyDQ/zh-cn_image_0000002475040597.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=A42F108BDDDA4782976352A7D360418B51F05934A29689A2268F07A71C0ACDCE)
 
 任务名称：用于标识任务，工具会根据时间生成默认任务名，支持自定义修改。
 
@@ -45,7 +45,7 @@ content_hash: sha256:ad40c9d0a059cb401681b7d16e2bf2e2520aa47be6c2839d77dce80d9ba
 
 创建任务后，将会跳转到执行页，进入测试环境初始化阶段。待测试环境初始化完成，待测应用被启动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/p4jUYUVLQK2ap77K9LOlIw/zh-cn_image_0000002475126385.png?HW-CC-KV=V1&HW-CC-Date=20261114T005417Z&HW-CC-Expire=31536000000&HW-CC-Sign=B96867EADE44FAE1CF73A3704083E297AB7E6B7E7DAB1D6DCF38D54F05B5CBB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/I9rYvASbRfSIaK4I_4p8Pg/zh-cn_image_0000002475126385.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=7832FEA914C59BFAE917677EE40487A78B430C6FE64B17B58524C07333BBEDD6)
 
 测试过程中，在测试页面可以看到测试进度、检测状态、实时投屏及执行日志。
 
@@ -55,13 +55,13 @@ content_hash: sha256:ad40c9d0a059cb401681b7d16e2bf2e2520aa47be6c2839d77dce80d9ba
 
 任务信息中，可查看当前应用信息、任务执行时长及详细的环境参数（配置信息及环境信息），点击打开目录按钮支持导出HTML的报告文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/t8jTqZ9MQaWSUBQOzYHFcA/zh-cn_image_0000002475127285.png?HW-CC-KV=V1&HW-CC-Date=20261114T005417Z&HW-CC-Expire=31536000000&HW-CC-Sign=22D82F7F3790148ECA170E4180D399C160172701E0A35D6EAC3E3167E293B51A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/hUCq4JJ3SqWmTLfrIxfAxg/zh-cn_image_0000002475127285.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=972FE6569B434F067A586FAD2CBDFDA2F87D53605099C61B398D41677D240598)
 
 测试概览中，包含结果统计及检测规则，可直观查看本次任务中，测试项检测结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/_-dtnTW6RXeLhNaF2Oe7IA/zh-cn_image_0000002441728014.png?HW-CC-KV=V1&HW-CC-Date=20261114T005417Z&HW-CC-Expire=31536000000&HW-CC-Sign=F78ECC221949C3A36CFF68D25BF1700485D9776ACF4639377C01F98DE32EF328)检测不通过或检测异常的规则项，点击查看详情即可查看异常问题详情，包含检测项概览、测试截图、问题列表。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/F_ly31RJRM2MGN7qu5zQXw/zh-cn_image_0000002441728014.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=512247E7B6D51C3FD2586FE891B01495F6669DB6080CC15EA655BBC24D0518EB)检测不通过或检测异常的规则项，点击查看详情即可查看异常问题详情，包含检测项概览、测试截图、问题列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/LuybUCCZTISl9suwnF5qEg/zh-cn_image_0000002475048409.png?HW-CC-KV=V1&HW-CC-Date=20261114T005417Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6E589F1D2A0E6C0F7350776B2970EAEB0262E9679BC1F09A8E847A9C4A454AE)点击查看按钮，支持查看测试过程中的日志，用户可结合问题描述及日志详情进一步分析。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/0yfNXkGOQByRV-a83AbdNA/zh-cn_image_0000002475048409.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B8216F54E13350CAC585001AE49CD84FE90D816C8C7DE2E7DFAB381EB6EB90B)点击查看按钮，支持查看测试过程中的日志，用户可结合问题描述及日志详情进一步分析。
 
 **说明** 
 

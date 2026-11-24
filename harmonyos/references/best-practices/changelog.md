@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/changelog
 title: 最佳实践文档变更说明
 breadcrumb: 最佳实践 > 文档变更说明 > 最佳实践文档变更说明
 category: best-practices
-scraped_at: 2026-11-14T08:54:23+08:00
+scraped_at: 2026-11-24T12:48:00+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:5cd6d3fb575fdc3e41810cc96ac181bc955f17b122db7e589d465224e2b3a5a0
+content_hash: sha256:c7595d22c923a25b26906d53ee1e0c432c1a65648caa9ba6ddd019ac4c2cdb97
 ---
 
 ## 2026年9月
@@ -910,7 +910,7 @@ content_hash: sha256:5cd6d3fb575fdc3e41810cc96ac181bc955f17b122db7e589d465224e2b
 **变更效果**
 
 **图1** 最佳实践目录变更前后对比   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/tr6nUiRQQAmHURrHBYgQIA/zh-cn_image_0000002307192376.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=E81409BE5B3C6E7556B5B1CD8C103E1AABA2CD0C0E7EB412E36E6E0C4EB24C23 "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/RS4IxXu2RzmxbUSgwyWLAw/zh-cn_image_0000002307192376.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=60765BA74FEF0B6652C57E3268CA322B4C565853BBFA2A2835A13837062F6C7F "点击放大")
 
 ### 新增文档
 
@@ -1107,7 +1107,7 @@ content_hash: sha256:5cd6d3fb575fdc3e41810cc96ac181bc955f17b122db7e589d465224e2b
 
 **图2** 最佳实践目录变更
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/A5zVH3esSAWENOoQ1-rzsA/zh-cn_image_0000002318291885.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4ED347A6284E7C62CBF8E8C16053CBAB39B5C352F6C246F0458FCB479D37A85 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/iIQUk-lMQlK5oawTOrCGzA/zh-cn_image_0000002318291885.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=D691B3A7FD292609825941E207F1C03E70C28960A8EB3974E2D75F54AB86E73A "点击放大")
 
 ### 新增文档
 
@@ -1259,7 +1259,7 @@ content_hash: sha256:5cd6d3fb575fdc3e41810cc96ac181bc955f17b122db7e589d465224e2b
 * 原“常见性能优化场景”章节更名为“性能场景优化案例”，修改文档标题，提升查找的准确性和效率。
 
   **图3** 最佳实践性能目录变更对比   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/tqES4VscR3qgYpotaPHaHw/zh-cn_image_0000002283692304.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=139A95534FCF222428CD6C8535FFFC98DD85FD6F460A82BFF260E3F8CADFFED2 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/uznLoEhHSd26HhnaGZMY4A/zh-cn_image_0000002283692304.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD9B8B12299984A287890F83BCD709BE0AD09BFA72AB13B913F12EFC17F58868 "点击放大")
 
 ### 新增文档
 

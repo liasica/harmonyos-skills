@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-vers
 title: ohpm version
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm version
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:07+08:00
+scraped_at: 2026-11-24T12:42:38+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:e4ac126c892eae5cf52b57f9a739e4ea0e074b2149dc4f14da1b17ce21d91aec
+content_hash: sha256:6ee02e12bc817fe396b17fc9ef52cea3cc42d6f6f75111c31a049dcbf3bbd586
 ---
 
 管理模块版本。
@@ -96,7 +96,7 @@ ohpm version
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/INa-5BvgSV6lQvViQLsV5Q/zh-cn_image_0000002808886359.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=81CA949A483F87413EBB548DD39FCD73CDFA780BA5D96439DFF8EFA2B7B21BE3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Hfhdgk01TIKg-Luaw0YZPw/zh-cn_image_0000002808886359.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A39787860EB9D3530EF704A5F9DCE0405097E74358FF50AEB4F351BE59EC0C8 "点击放大")
 
 接着执行：
 
@@ -106,7 +106,7 @@ ohpm version 1.0.1-beta.1
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/vh8OgltET86TAy1o8EZXEg/zh-cn_image_0000002808886355.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F097A95259A765697FD81C08F5F8B0C5F42FE65EFA95C03DB868DA1CFFDD597 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Ziw9VDW1SS-ezHa9wy-zpQ/zh-cn_image_0000002808886355.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB9B6FB77047A9ABAF0CFC076A6F2005E18CBD9EB85DFB768D3526958A22EA51 "点击放大")
 
 接着执行：
 
@@ -116,4 +116,4 @@ ohpm version major
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/_svJc7VrTuiAOaj1T0EQCg/zh-cn_image_0000002808766275.png?HW-CC-KV=V1&HW-CC-Date=20261114T004719Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3E99D1243BF95AA03220AFC69ACFDB56D706FF335630A371F34D3B7E709D646 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/jDa7xt-aTZCluVntDz0KNQ/zh-cn_image_0000002808766275.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=865B2FBAA78337D60B9EB82ECD8C503F45DEB09F89E87974A6ED878DA67824A9 "点击放大")

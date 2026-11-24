@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-play
 title: 音频播放无声问题定位指导
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 音频播放无声问题定位指导
 category: best-practices
-scraped_at: 2026-11-14T08:54:12+08:00
+scraped_at: 2026-11-24T12:47:49+08:00
 doc_updated_at: 2026-09-02
-content_hash: sha256:2f7dce19b2906400c3bf3432f53c26a092d67de728cbdd168655e057a59a7590
+content_hash: sha256:06b4dc0b02f6717142d12e5fd88ed3e49087363694f2172c5e3dc1da91fd9a61
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:2f7dce19b2906400c3bf3432f53c26a092d67de728cbdd168655e057a59
 
 音频渲染流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/WrbWNL39QZybRosXccmeww/zh-cn_image_0000002703506142.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=3287EC32150EE05AD120EB7DC7BDB4F6130612CDCA031D3B7EF85355B3103025 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/5VLxoqw6SC2p1WDTRKF6tg/zh-cn_image_0000002703506142.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CE0639942CC3DC1FD891235D7C7518D82292FC3655A6B1B43A7DB82C07E7986 "点击放大")
 
 * 应用（Application）：用户或上层软件发起音频播放请求的起点。
 * AudioRenderer：应用层的音频渲染接口，负责将音频数据传递给下层模块。
@@ -226,7 +226,7 @@ pause
    ```
 3. 针对数据读取异常的情况，可通过可视化PCM dump数据来进行佐证，发现应用给过来的数据有问题。如下图所示PCM音频数据中确实有一段无声：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/S4sKrvGZRMKizm6WklVC4g/zh-cn_image_0000002733345335.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=79FCB1F3ABFFE779FCF2BDC69E1D400BF761DDCC6CBC75494F62F5883E32F412 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/j8c2RDrUSEqY4epsesyj_Q/zh-cn_image_0000002733345335.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CD154BC2F3CAE38B8F2DE4086CBD9977ABB0E52FC4737AEB817EF4AE50321A6 "点击放大")
 
 ### AudioRenderer异常释放导致播放无声
 
@@ -252,7 +252,7 @@ pause
    ```
 2. 同时，可以通过trace日志进一步佐证AudioRenderer实例异常释放（可选操作）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/5dVd2yTIRpazapZRixfa-g/zh-cn_image_0000002703666060.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D52CFCC30AE90BBD55C02D650AE0E0EA4318E0E637186A07B88F51F1DBC71DD "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/mOQPdxmuTQiOCrzh5xlDsQ/zh-cn_image_0000002703666060.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=93C76F3874826400A784F25E8F99489C3CFA32E54FF08B1D3B2A3E9200C27475 "点击放大")
 
 ### 焦点冲突导致设备切换后无声
 

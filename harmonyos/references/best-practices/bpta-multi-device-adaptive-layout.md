@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 自适应布局
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 界面元素自适应变化 > 自适应布局
 category: best-practices
-scraped_at: 2026-11-14T08:54:09+08:00
+scraped_at: 2026-11-24T12:47:46+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:7e571465e4d51334788069bb2107c61b7c902127f7f3c1ae5a198620cc2df7f2
+content_hash: sha256:583185318c38e80e5109fb7272e1f63a7374b78b91d18306252be358e6be7e54
 ---
 
 针对常见的开发场景，方舟开发框架提炼了七种自适应布局能力，这些布局可以独立使用，也可多种布局叠加使用。
@@ -54,7 +54,7 @@ content_hash: sha256:7e571465e4d51334788069bb2107c61b7c902127f7f3c1ae5a198620cc2
 * 当父容器的尺寸大于600vp时，父容器中多余的空间全部分配给中间内容区。
 * 当父容器的尺寸小于600vp时，左右两侧的留白区按照“1:1”的比例收缩（即平均分配父容器的不足空间）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/_j-UfLW8RHSKKb_Tm7XZew/zh-cn_image_0000002768365066.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=528E690DFA60AF1BD43B9F16E1820516B00348DF6392740CCD58318A9672D69E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/R8J0WdoVTNios4Lh1rrBaA/zh-cn_image_0000002768365066.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=4696CBB44A2103B5060B948036CC2A3315242B61988801BA6440346AA9897D38 "点击放大")
 
 ```typescript
 @Entry
@@ -115,7 +115,7 @@ struct FlexibleCapability1 {
 
 文字和开关的尺寸固定，仅有中间空白区域（Blank组件）随父容器尺寸变化而伸缩。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/A9vjV9q1QfK1W9pYaJaGtw/zh-cn_image_0000002768205236.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCB53DAA5F7E286D512891BDEAF6D8B0F4BCC08FC7ACFF933C7EC10CC3EF6476 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/-X9JsZi6Tkiym5tFcQTJLA/zh-cn_image_0000002768205236.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE392204F95A2E12A83BFE3587EE80E27F4E60E7F27B371070B386182DE72922 "点击放大")
 
 ```typescript
 @Entry
@@ -182,7 +182,7 @@ struct FlexibleCapability2 {
 
 父容器尺寸变化过程中，图标及文字的尺寸不变，图标间的间距及图标离左右边缘的距离同时均等改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/gOGgXGDFQz-ip1zoLuPS3w/zh-cn_image_0000002797525223.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=B711F5C6D05E2AC060A7CFC86B24A2E8AA272B9C8759610DFE895B0D31D3879A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/1ConHSaQRUWgxAsY6n2opg/zh-cn_image_0000002797525223.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F81F80A9731065B0B8F55BD8CD60253AB0BC2982BEB6DBD92C25AB23EE08104 "点击放大")
 
 ```typescript
 @Entry
@@ -285,7 +285,7 @@ layoutWeight存在使用限制，所以实际使用过程中大多通过将子�
 
 将三个按钮的.layoutWeight(1)分别替换为.width('33%')、.width('34%')、.width('33%')，也可以实现与当前同样的显示效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/R7SDsKtPQhmPXlnl5UKJqg/zh-cn_image_0000002797525315.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCB0E77D10956E66F800A27F365428DAA790D69B06B646C07ACB4DFEC0A71728 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/CAgBrVKQR_y6hjfBTH3qyA/zh-cn_image_0000002797525315.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=419C999BE4C6CD3BFD3F94A14D632AD601DEF6DBA88E9423455473EEE12CD15E "点击放大")
 
 ```typescript
 @Entry
@@ -370,7 +370,7 @@ struct ProportionCapability {
 
 为方便查看效果，示例中特意给Column组件加了边框。可以看到Column组件随着其Flex父组件尺寸变化而缩放的过程中，始终保持预设的宽高比，其中的图片也始终正常显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/FsloYy_MSDuZG8eREAoo5A/zh-cn_image_0000002768205538.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EA599403E321B1872D150CBAB8C2662CCF9007E02D1CE50453BD17B790C5672 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/6erUmQkKSpeF-vM5XF-Xnw/zh-cn_image_0000002768205538.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=48FAA65009BEAD7558CA375E624ECF7218A8537C307BED798B1BDC55BBF1E62D "点击放大")
 
 ```typescript
 @Entry
@@ -461,7 +461,7 @@ struct ScaleCapability {
 
 分别通过List组件实现及通过Scroll组件配合Row组件实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/_GURvXMkRfiQ__2noDFTuA/zh-cn_image_0000002797525681.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=20932162F314E41E51BFB7BBDF262DD135B975F39F0340D56D62C7AF0C71CF6B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Yd_EQwW6Shqh60y3KNIV-A/zh-cn_image_0000002797525681.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=09FF86B57B94AE6660E95334D6D461630F81259B11E64289B062978A5667EDD4 "点击放大")
 
 （1）通过List组件实现。
 
@@ -610,7 +610,7 @@ struct ExtensionCapability1 {
 
 父容器尺寸发生变化时，其子元素按照预设的优先级显示或隐藏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/NzfPKixySYSSVeViG4P3dQ/zh-cn_image_0000002768365876.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D70741BADE5AE7DDACEBFADC3D858617F44FA82F3276EE959F61E50BA1C9120 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/PITvOQ_URr-3w5m-XyVTuw/zh-cn_image_0000002768365876.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAFAFD4D5DBA2FCADBD57D496DCA547C7144AE238703EAE0E24505B3192B1D6E "点击放大")
 
 ```typescript
 @Entry
@@ -716,7 +716,7 @@ struct HiddenCapability {
 
 父容器中的图片尺寸固定，当父容器尺寸发生变化，其中的内容做自适应换行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/KrQV71OMTleyjxhGlD-DGg/zh-cn_image_0000002797528317.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005124Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F0C1C9929F810A3E7427DFCC896C19CC66EE05B16EB5D2282837D110296B5B8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Rqw_zSSORfmtjWhgvavqgQ/zh-cn_image_0000002797528317.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044746Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9093172B27FC1D2607689FA62927448F722972C0308C965761D73F817E14499 "点击放大")
 
 ```typescript
 @Entry

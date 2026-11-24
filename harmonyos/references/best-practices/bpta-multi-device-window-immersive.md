@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 窗口沉浸式
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备窗口形态 > 窗口沉浸式
 category: best-practices
-scraped_at: 2026-11-14T08:54:08+08:00
+scraped_at: 2026-11-24T12:47:46+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:0d0c3738b2d360ea3e01454d979b4d5e7c5d2e10100fc44ed22512f251ef4757
+content_hash: sha256:2c9c9eff06cc40932fb2814621e19067302f6a34601c11643a46f8c43d5b747d
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:0d0c3738b2d360ea3e01454d979b4d5e7c5d2e10100fc44ed22512f251e
 * 布局扩展：充分利用屏幕可视区域，使页面内容延伸到状态栏和导航条区域（即“安全区”之外的避让区），获得更大的布局空间。
 * 沉浸体验：在游戏、视频等场景中隐藏系统元素，提供无干扰的全屏体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/qtULJ4wjQMO855UYGg0ykQ/zh-cn_image_0000002499414192.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=E83B354443A8EDC42D29D6662E839A169F10CE76B808815C3208E5E6B532253D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/56F95hGXTemz29cpp-vUtQ/zh-cn_image_0000002499414192.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=3059CAB5DBF2732345B185CC94A35784695549ADC39438AF25DB2FE2D07D7EC5 "点击放大")
 
 本文将介绍沉浸式原理、实现方案，并提供常见沉浸式页面开发场景下适配问题的解决方案。
 
@@ -124,7 +124,7 @@ content_hash: sha256:0d0c3738b2d360ea3e01454d979b4d5e7c5d2e10100fc44ed22512f251e
 * 使用[getTitleButtonRect()](../harmonyos-references/arkts-apis-window-window.md#gettitlebuttonrect11)获取窗口标题栏上的三键区位置和大小，用于不同场景下的页面布局避让。
 * 使用[on('windowTitleButtonRectChange')](../harmonyos-references/arkts-apis-window-window.md#onwindowtitlebuttonrectchange11)注册右上角三键大小变化监听。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/gKLqYQ5FSsOwy5N9xyD2hw/zh-cn_image_0000002531334143.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F727F7EE35DB2864081A823AC1BCC675BDF1520E07BD2966C62308F2D9FADD3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/IcuFODz5TIW2j7em2fsXdw/zh-cn_image_0000002531334143.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BE170B2E148F8A12560B4ADF2FA1FA4E792685D78006F7ACFB9759132DC7FAB "点击放大")
 
 ## 顶部或底部背景延伸案例
 
@@ -319,7 +319,7 @@ content_hash: sha256:0d0c3738b2d360ea3e01454d979b4d5e7c5d2e10100fc44ed22512f251e
 
 自由窗口模式下，需隐藏默认标题栏，保留关闭、最小化、最大化三键区，使页面延伸至原标题栏区域，实现窗口沉浸式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/eh-nVJpqQdKMMqQXs7SavA/zh-cn_image_0000002531334153.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=17C3506E4770A7DAE43B39BBC7137DDACDD27793426355E81AA4AE11DF7E77D3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/j9RUN7_zSMWgbvwKQ7Pzfg/zh-cn_image_0000002531334153.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=52305A93959183E24F4DA2633DC5320F1C8E78CE83AA5C55F6ECF711A0E60BB4 "点击放大")
 
 ### 开发步骤
 

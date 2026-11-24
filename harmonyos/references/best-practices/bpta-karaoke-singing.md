@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-karaoke-si
 title: K歌解决方案
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > K歌解决方案
 category: best-practices
-scraped_at: 2026-11-14T08:54:12+08:00
+scraped_at: 2026-11-24T12:47:50+08:00
 doc_updated_at: 2026-09-02
-content_hash: sha256:3a436f76c3c08ff6110fd751100cd62e6b7e9a116e6008ba34602c38a1fe1b4d
+content_hash: sha256:58249dd23c93a2604fd0e161a452d269e36bf362ba393a9cb903f4ed634f11f2
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ K歌各功能的实现方式如下表所示：
 
 在K歌时，单击首页中的原唱和伴奏按钮，可以实时选择播放带人声的原版音乐或者播放纯伴奏音乐。单击首页面底部的音量按钮，弹出音量设置面板，通过设置伴奏音量可以调整播放器的音量。伴奏音量设置如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/UaV77y9ISoOJ0lyBQmXBRw/zh-cn_image_0000002654119836.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=134BA5F5C4FCECA505148F4F898502FCF5BA223FADB05E8B093B9E704CED9C92 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Wsyqh6TBR6a_MQFCbysusA/zh-cn_image_0000002654119836.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD3484658ADEF9073B28CED6DB2690B7CC79F118FE6BA8506367FF0705F84284 "点击放大")
 
 ### 实现原理
 
@@ -110,7 +110,7 @@ g_position = position;
 
 K歌过程中需要录制麦克风采集的音频数据，用于后续人声和伴奏的混音合成、耳返以及K歌文件的保存。单击首页面底部的录制按钮，开始录音采集。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/FhstdjHwSYewi_5udCyqkg/zh-cn_image_0000002653959926.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB43B7BF9B0C4ED0A5BD7967D78DB36EFD193EDDE1FD32D65A7D5317940A9567 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/7D6deaTyRKKsF77zbIpnEA/zh-cn_image_0000002653959926.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C6B0F982CEFE300CECA9B5FFEE6EE7802252D4991D2E8921F7C5DE31B83D949 "点击放大")
 
 ### 实现原理
 
@@ -182,7 +182,7 @@ await this.audioCapturer.start();
 
 录音后将人声和伴奏混音并合成一个文件，文件可以直接预览、导出或发布。单击首页面底部的音量按钮，弹出音量设置面板，打开混录模式，可以启用混音合成功能。混录模式设置如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/cl5lrHNtSLG2Grx9uriiWw/zh-cn_image_0000002684119549.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=B750EA84BB174AE453BC5533653D68591F6239911861CA82740D031EAE59CA61 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/4jF7qiL1TaSJSSDB6idxRg/zh-cn_image_0000002684119549.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=837B090526093B54E06F6E65FFBC3A6B6EE6851FCD721DCFED41B75656742A35 "点击放大")
 
 ### 实现原理
 
@@ -294,7 +294,7 @@ for (size_t i = 0; i < mixSize; i += DEFAULT_BITS_PER_SAMPLE / SIZE_8BITS) {
 
 耳返是指通过耳机系统将音频实时传输到耳机中，让使用者能够听到自己的声音、伴奏或其它需要的信息。在K歌类应用中，将录制的人声和背景音乐实时传输到耳机中，使用户通过反馈即时调整，获得更好的使用体验。单击首页面底部的音量按钮，弹出音量设置面板，可以在耳返模式中设置硬件耳返、软件耳返，可以调节耳返音量。耳返设置如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Mh6G-W41Tzm-TA2sNR6X1A/zh-cn_image_0000002684279371.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=D69E99B92EE07849230F75CD5E6A25ABC98F20CAB579B01F8CC992737ECA3CED "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/1XDScTDKQqq88Daet1qGsA/zh-cn_image_0000002684279371.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C45DEF5EE0A821BD38FBC36C196A81AD9BD0DB792D0093AD7273A2E020E2509 "点击放大")
 
 ### 实现原理
 
@@ -418,7 +418,7 @@ for (size_t i = 0; i < mixSize; i += DEFAULT_BITS_PER_SAMPLE / SIZE_8BITS) {
 
 混响是K歌核心音频美化功能，通过模拟不同的环境效果，让声音更饱满通透。单击首页面底部的音效按钮，弹出音效设置面板，可以选择不同的混响音效。音效设置面板如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/23wB1ul3TR2_sid74KD8nA/zh-cn_image_0000002654119838.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=552D6C151B6A5738DA540168E6C1076FE99C67B1E720D512AFCCDFB4525112A0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/duG6qvp8TU6D-f6M8WfQfQ/zh-cn_image_0000002654119838.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=F17FC8F95C8F775BF2BAE6C51BF31854E1B0AF89BFB0A116956FD8BC63377BFC "点击放大")
 
 ### 实现原理
 
@@ -466,7 +466,7 @@ setReverbEffect(preset: audio.AudioLoopbackReverbPreset): void {
 
 单击首页面底部的设备按钮，弹出设备面板，用于显示设备连接状态。设备面板如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/RwB0gG4JTniQAYOgxMk_wg/zh-cn_image_0000002653959928.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=632349D1960454FFD6B6288A347EDCDE8FEB7A5FFBDC450F00486719590D4F04 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/_py9zrZeQy69jzWvpisCUg/zh-cn_image_0000002653959928.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C4AF9C06CEE6D0132A134A8AE141F13DC666E74D79508744608452CF6028EB3 "点击放大")
 
 ### 实现原理
 

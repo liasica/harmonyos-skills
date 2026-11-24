@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVScreenCapture录制音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVScreenCapture录制音频
 category: best-practices
-scraped_at: 2026-11-14T08:54:07+08:00
+scraped_at: 2026-11-24T12:47:45+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:84d418a48ee31246dca007e1c6568c7fd0458e09b46a2fd7037d702b8c9f772c
+content_hash: sha256:8d2dff086763e490aa34916ea8a285b2c1573a58e51401b93ad9427dfa66e78e
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:84d418a48ee31246dca007e1c6568c7fd0458e09b46a2fd7037d702b8c9
 
 基于AVScreenCapture录制音频实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/_-2jXzOZTRCjilC6ukTAEg/zh-cn_image_0000002524061076.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1497850078EDFAB407C004F456F451182AD44F93EA05AA914F2AF50234E685C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/peHYUxbdTcmOuZ9-YmIYfA/zh-cn_image_0000002524061076.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=64176784A9D21F9FDC408CFED1E6FE5BBCE5B6C739F5137CB4516437B291A956 "点击放大")
 
 本文的主要内容如下：
 

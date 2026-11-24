@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-grid-based
 title: 基于ScrollComponents实现网格
 breadcrumb: 最佳实践 > 布局与弹窗 > 基于ScrollComponents实现网格
 category: best-practices
-scraped_at: 2026-11-14T08:54:06+08:00
+scraped_at: 2026-11-24T12:47:44+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:52892a0c7a43acb66d72b3fc1e8d13eb6e9726cb91218d51cf5422a8899e0eb8
+content_hash: sha256:11943f5c2ab6058f7aac618bb2daf0b4f81292a40fc855249af96ea23e0f4c29
 ---
 
 ## 概述
@@ -35,7 +35,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 如图1是RecyclerView整体流程图，当节点从可视区移除时，NodeAdapter会通知视图管理器将组件回收，经NodeFactory回收处理之后，组件最终被存入到组件复用池。当节点需要创建时，NodeAdapter通知视图管理器开始创建，NodeFactory会向复用池请求复用节点，获取到节点之后经过一系列更新组件、组件拼接之后返回，最后由NodeAdapter将节点添加到可视区。
 
 **图1** RecyclerView整体流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/dC0nLBT0RB-sTXjnMp9UTg/zh-cn_image_0000002390335989.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=56D8B297803A2FECFF67429A5822979173DB462D87954565AC4831E62EA56161 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/cVefSc-mS5Krp0crGIT97Q/zh-cn_image_0000002390335989.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=1814748E0EFA0824421A6616F6B508BF95BC22DF9278C190FB14D3409EFBADBC "点击放大")
 
 ### 开发流程
 
@@ -189,12 +189,12 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
       如果复用的单元格组件结构基本相同，存在部分差异，差异的部分会复用失效。ScrollComponents提供了PartReuse来保证命中组件复用。
 
       **图2** 可拆分组件复用创建流程图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/jeqUtlBDRsmI7YQRmH85sQ/zh-cn_image_0000002356815874.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7213B252D7BFCC83D6A5199ADF45871E8419DC646CA8D71975848CDEC978270 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/YUdKcxqESlycb_NvdfC4uw/zh-cn_image_0000002356815874.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCBA3A7E050513216928A4C6BCE9D3F69B60FC02B623F1BC5FA312C2DFF15A81 "点击放大")
 
       开发者可参考图3日志打印"generateItem reuse "表示复用，检验是否复用成功。
 
       **图3** 日志效果图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/f1LHOxGcSrO3DCMxWZVkow/zh-cn_image_0000002390415913.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=8697FFC58EB1FA3128F95EF1CDDB2E5BF3A1EEA8DBACA3E634AFBF13D21494F5 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/SmQkMaOdQ8mpGJTGsEB9vw/zh-cn_image_0000002390415913.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F5F61E3ECC82DAE5FED839D272103C9CAE2E90145D791287515580973F6BF57 "点击放大")
 
       子组件1：
 
@@ -469,12 +469,12 @@ public aboutToAppear(): void {
 @Reusable：网络请求期间主线程大段空闲，请求结束后首屏组件绘帧耗时较长
 
 **图4** @Reusable测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/F0zT_cTJTtOGLW-TBpPGpw/zh-cn_image_0000002356655986.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=B65FF529F5601382A733AD87DE59C7DB1D7C77176BDBB3611891BF3E50379C99 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/xy_4eCSOTH-MgE4pu1o3tw/zh-cn_image_0000002356655986.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=18A91EC74BDEF6A8000550DE8ED3F3A058A6953B89E8BF83602A7B9999591F73 "点击放大")
 
 ScrollComponents：网络请求期间主线程空闲较少，请求结束后首屏组件绘帧耗时较短
 
 **图5** ScrollComponents测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/Ds5tfFgeQIuKZjTceB2EKw/zh-cn_image_0000002390336069.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=262CA8506268922C5F9D4994BCAB844B003D3BCE85A6A81E638044176B23F962 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/aYzGCPkTReq4TQHImc6FKA/zh-cn_image_0000002390336069.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDDC825E114C8A9EBA2465A58FE3F2CDE78D48AE0A50BCA4E4614614ADBF6440 "点击放大")
 
 **表1**
 

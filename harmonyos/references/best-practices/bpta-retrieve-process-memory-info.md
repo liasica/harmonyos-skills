@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-retrieve-p
 title: 获取进程内存信息
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 分析内存占用问题 > 获取进程内存信息
 category: best-practices
-scraped_at: 2026-11-14T08:54:13+08:00
+scraped_at: 2026-11-24T12:47:51+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:bfe6d35ea3b6089666b7f6c226f1c4cf4a8248f0ebf6c094a1e794765e7cba0d
+content_hash: sha256:85e4591c490b04b971d75d6aa30935cd58fa3c4d929c3159b4a88c446d8b822a
 ---
 
 ## 通过HiDumper查看内存信息
@@ -14,12 +14,12 @@ content_hash: sha256:bfe6d35ea3b6089666b7f6c226f1c4cf4a8248f0ebf6c094a1e794765e7
 
 1. 打开示例应用，运行 hdc shell "hidumper -s WindowManagerService -a '-a'"获取到当前应用的pid。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/daLQEWY3THeU0pPPlyuorQ/zh-cn_image_0000002404045153.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=68BDD8D8DC526DC346BCA6C11DEF3457F47762484AF0C55CA5DDA0259072E313 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/uf3P3ApiSjuP15JqDzdTUg/zh-cn_image_0000002404045153.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=F61834E76017420ECDDCAD39A11DC3062201D29DD3B2285AA617071DF89525E1 "点击放大")
 2. 输入 hdc shell "hidumper --mem [Pid]" ，并将命令中的 [Pid] 换成当前应用的Pid，就可以获取到示例应用的内存信息了
 
 一般情况下，开发者只需要关注PSS （Proportional Set Size，实际使用物理内存）Total一列的数据，即示例应用实际使用的物理内存。如下图所示，应用总共占用了26279KB的内存，主要包括ArkTS Heap（ArkTS堆内存）的4712KB以及Native Heap的13164KB。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/wb4w2n1xQ0-g_SsZq3HSQg/zh-cn_image_0000002370565324.png?HW-CC-KV=V1&HW-CC-Date=20261114T005413Z&HW-CC-Expire=31536000000&HW-CC-Sign=2441B012BCECD4849E47EB7F8A683EC382069ABB707E73B1FCFE9B7BBB8090C7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/y0zn1tbaRIGVTTXhpmUMzw/zh-cn_image_0000002370565324.png?HW-CC-KV=V1&HW-CC-Date=20261124T044751Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3CED93866FB8995A56B3DF27A50A37CAFB0BF3441D75B3F561ECE51504CF145 "点击放大")
 
 ## 通过代码获取应用内存信息
 

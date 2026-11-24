@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-image-to-v
 title: 图片合成视频开发实践
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 图片合成视频开发实践
 category: best-practices
-scraped_at: 2026-11-14T08:54:12+08:00
+scraped_at: 2026-11-24T12:47:50+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:fc98b7385ec9b713624b8789a01b7ce19f0397463fb53ab4ee8c0c1a72d41dc4
+content_hash: sha256:2a250135cc33525f375f1a1f0357450a5252b3b749819e832b2a6f8897d0909d
 ---
 
 ## 概述
@@ -24,13 +24,13 @@ content_hash: sha256:fc98b7385ec9b713624b8789a01b7ce19f0397463fb53ab4ee8c0c1a72d
 
 以将图库中的图片转换为MP4文件为例，本场景展示使用图片和编解码的基础能力来实现图片合成视频的功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/hKnjc8A5TQysJLJS_-q_cg/zh-cn_image_0000002770178894.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=869C34344B33EE3FB08DE43BE97999AD572E422B5FB87C43DD2E16DF19A0F384 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/zDtT1ZyuTGqM58lQ1BRueg/zh-cn_image_0000002770178894.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=A368988A02AB289ACE1697C4024136E65F807D9CF5D94C63F44CB73AD8096F42 "点击放大")
 
 ### 实现原理
 
 [Image Kit简介](../harmonyos-guides/image-overview.md)中的[Interface (PixelMap)](../harmonyos-references/arkts-apis-image-pixelmap.md)是用于读取或写入图像数据以及获取图像信息的图像像素类。在图片合成视频的过程中，首先将图片解码为PixelMap，然后使用[Buffer模式](../harmonyos-guides/video-encoding.md#buffer模式)编码，将PixelMap中保存的图像数据复制到编码器的输入buffer中，未压缩的YUV输出成已压缩的视频码流H.264，编码完成后封装成视频文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/mZUOBLFRRL2ZXBNlsAovfQ/zh-cn_image_0000002497593680.png?HW-CC-KV=V1&HW-CC-Date=20261114T005128Z&HW-CC-Expire=31536000000&HW-CC-Sign=B88C081DEA0679FEB77FA18CDE57FE1C06549025B811A1BF5DC9BEBA449B53F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/19RN0ovsRF-m6_vN9rR3ag/zh-cn_image_0000002497593680.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD1AE6B0F8080C66A5823EDC5515B548D526EF88A76D414B9CE67A6F3275637F)
 
 如果需要使用[Surface模式](../harmonyos-guides/video-encoding.md#surface模式)编码，将图片解码成PixelMap后，需要先从编码器的NativeWindow申请buffer，然后将PixelMap中保存的图像数据复制到申请的buffer中并提交buffer，编码完成后再封装为视频文件，具体实现可以参考[NativeWindow开发指导 (C/C++)](../harmonyos-guides/native-window-guidelines.md)。
 

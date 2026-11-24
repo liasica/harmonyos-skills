@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-carousel-g
 title: 使用Swiper组件实现轮播图
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 使用Swiper组件实现轮播图
 category: best-practices
-scraped_at: 2026-11-14T08:54:12+08:00
+scraped_at: 2026-11-24T12:47:50+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:14da7c88ab4ff04729332829e6c4bb3b840d95dc0c54e5df54c78a98d70b0ba5
+content_hash: sha256:38a05b8e22b305af2a649845c3a2d95640891b0df4478031a0552ee62394f996
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ content_hash: sha256:14da7c88ab4ff04729332829e6c4bb3b840d95dc0c54e5df54c78a98d70
 
 效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ZRpmkXEhRKeP3Yn2M-Uf1A/zh-cn_image_0000002396390305.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C6C4227D994222C19E38BB503ADF43CBFD483544AA3DCC57A35258582B6438B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/7I17PKFfQ-GDJO-I5XzH6w/zh-cn_image_0000002396390305.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=C72A5C27561D3D391AD60F4C433EDA618C69D359F6AABA1857EF258B012A5CC6 "点击放大")
 
 ### 实现原理
 
@@ -68,7 +68,7 @@ content_hash: sha256:14da7c88ab4ff04729332829e6c4bb3b840d95dc0c54e5df54c78a98d70
 
    示意效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/dKxIJHb6TVOEUQwulg3RsA/zh-cn_image_0000002362872296.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AB8604F02EC95FF72EA9CA3BBEB775F85152DC79EBD51672EC829534488A14F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/juTfmYrDQDec0_HyPWXkUA/zh-cn_image_0000002362872296.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=02B3ED5FC2F2E50F5A7A8900D752A4E0942E81B396F20BDDB3D9ACACB8895BE2)
 2. 创建进度条自定义组件progressComponent。代码中，this.progressData为图片集合的数组，this.currentIndex为当前播放的图片在图片集合数组中的索引，index为进度条对应的图片在图片集合数组中的索引。当this.currentIndex > index时，表示图片集合数组中索引0-index的进度条都是已完成状态。
 
    ```typescript
@@ -104,7 +104,7 @@ content_hash: sha256:14da7c88ab4ff04729332829e6c4bb3b840d95dc0c54e5df54c78a98d70
 
    示意效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/sZkvFThgTbaUnou4D4ELWg/zh-cn_image_0000002396272325.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=33AB51B01632A33FD7D7FC014C0CBD22B6A0AE750BA42B1B28552EA5A8E47C0D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/8pd6CChJTZWdefbOYI88zw/zh-cn_image_0000002396272325.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9F85DE7EC12C89554E20C1A245D3EE7A6D7BAA78E5D2589368BF41AE1AFA8EB)
 3. 设置autoPlay属性为.autoPlay(this.slide ? false : true)，滑动切换图片后，关闭自动轮播与循环轮播。此时，开发者需要给Swiper组件添加[onGestureSwipe](../harmonyos-references/ts-container-swiper.md#ongestureswipe10)事件，来判断页面是否跟手滑动。其中slide为布尔值，用来判断页面是否跟手滑动。默认值为false，当页面跟手滑动时，slide的值为true。当进行滑动切换时，autoPlay、loop属性的取值为false，即关闭自动轮播与循环播放功能。若想实现滑动图片后仍自动循环轮播，直接去掉slide相关代码片段即可。
 
    ```screen
@@ -121,7 +121,7 @@ content_hash: sha256:14da7c88ab4ff04729332829e6c4bb3b840d95dc0c54e5df54c78a98d70
 
    示意效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/F_Ls678GTXeo3NMZlj0Kbw/zh-cn_image_0000002362712392.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6210AF62EB98A1892C25EA976F058D53AF2EE81AF7332CF65FD2EAAE93CAEC8 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/bafW4z9VTh-nsRKZJ9M8kA/zh-cn_image_0000002362712392.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=733F8A2AE65E2F177D547E10D5246C83306AD670D583272871196D053C679B92 "点击放大")
 4. 适配折叠屏，在aboutToAppear生命周期函数中获取设备是否可折叠，并且同时获取折叠状态，通过设备类型以及折叠状态设置Swiper的宽高值。同时绑定change回调事件，当页面变化时，触发回调实时刷新折叠状态值。
 
    ```typescript
@@ -166,7 +166,7 @@ content_hash: sha256:14da7c88ab4ff04729332829e6c4bb3b840d95dc0c54e5df54c78a98d70
 
 效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/aE1vTce4RR6lXVvn11N9Cg/zh-cn_image_0000002362716188.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005412Z&HW-CC-Expire=31536000000&HW-CC-Sign=359F899B809C663734CEFB91E617DECCBDDF27617F9515C40BBDEF6EC7FA1126 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/8xmS5nb8SHa2dLOC8BXXSg/zh-cn_image_0000002362716188.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EB8EE9092B69A84787DF06B99AE6CA747430F09881CCBA55426759D89DFF554 "点击放大")
 
 ### 实现原理
 

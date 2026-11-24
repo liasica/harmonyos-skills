@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-navigation
 title: 导航定位场景低功耗规则
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 导航定位场景低功耗规则
 category: best-practices
-scraped_at: 2026-11-14T08:54:16+08:00
+scraped_at: 2026-11-24T12:47:53+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:054cf00d7d5738a4012167bb472aa2cbe4aa30f557bb9dcd19bce78b11e0d271
+content_hash: sha256:62cc924e74a4e409aff63ff8186604c54423d26d67aa9d6ecd684371f1ae20cc
 ---
 
 ## 规则
@@ -56,14 +56,14 @@ audio.createAudioRenderer(audioRendererOptions, (err, data) => {
   ```
 * 执行效果如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/QYz701amSSGLzO3J1P_i9g/zh-cn_image_0000002229450993.png?HW-CC-KV=V1&HW-CC-Date=20261114T005415Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0CFE4314F82EC3DDB37FD69238B7DDBE244E63C19B93DC776132B12E4313530 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/KiIjkGBeQ-msLi3EpxGw3w/zh-cn_image_0000002229450993.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=26FB875E3AEA07DD9AC91AFCBB48F1A8B93784AE3B166F968164706EBA88E68F "点击放大")
 
 ## 结果对比
 
 * 优化前：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/i3B05ZFZSie357v-2DqJ9A/zh-cn_image_0000002193851136.png?HW-CC-KV=V1&HW-CC-Date=20261114T005415Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4EEBB01EE62B4E220768C7FAB0A47927709C8F571C350DF7D7B15B41AD08341 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ZH52sG_BTGGNyRs8-R43Gw/zh-cn_image_0000002193851136.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D0EF093B10B6DFDAC149BEB9CC263CA59743D214B96174DD44513B5D6136E1F "点击放大")
 
 * 优化后，图中字段证明系统低功耗方案使能成功（根据实验室测试功耗，功耗负载降低约43.89%。）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/2FufNFodRXqovFBsshjlVQ/zh-cn_image_0000002194010716.png?HW-CC-KV=V1&HW-CC-Date=20261114T005415Z&HW-CC-Expire=31536000000&HW-CC-Sign=046203D66052603FB07732C6F3E6CB525E3AE89B9ABEFC144153702BAAEB3654 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/WBNEz0OHT9GG6N4rTsfVLQ/zh-cn_image_0000002194010716.png?HW-CC-KV=V1&HW-CC-Date=20261124T044753Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9CD0C811179DDC762A69A545CD37E96E86D98B619E5C07D1106582910C24465 "点击放大")

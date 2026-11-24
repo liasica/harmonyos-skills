@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-locate-app
 title: 开发态快速定位应用崩溃
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析 > 开发态快速定位应用崩溃
 category: best-practices
-scraped_at: 2026-11-14T08:54:21+08:00
+scraped_at: 2026-11-24T12:47:58+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:96aecb689dbd91db40c5bc178e31c33e87821c11a4039245d5b6a41b58f52348
+content_hash: sha256:fed8e33cea2ff80f140dc519731faccbc17576059bb60fb06a8d48f2d71d68bf
 ---
 
 ## 概述
@@ -48,7 +48,7 @@ content_hash: sha256:96aecb689dbd91db40c5bc178e31c33e87821c11a4039245d5b6a41b58f
 
 通过上述流程，HWASan与BinXO可高效定位内存越界等底层崩溃，为复杂崩溃问题的排查提供标准化操作路径，详细流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/glAEHbl9Qx6vBj2BjWRlZw/zh-cn_image_0000002701362583.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=53745DD49D7EEE62F53FC50C6B5DD6DFD67DD507DB2E68BBC7BFD9F75202E874)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/OvXmwH6NQZqcWOrQ0D4DXg/zh-cn_image_0000002701362583.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C0BD632BA9A8910EE04763205C2BEB34B4AE05D7138C9CF26DA5131CD215782)
 
 ## 数组越界案例
 
@@ -65,15 +65,15 @@ content_hash: sha256:96aecb689dbd91db40c5bc178e31c33e87821c11a4039245d5b6a41b58f
 
    1、设置Build Mode为debug模式打开DevEco Studio，以debug模式运行示例工程，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/qy91AnyMTdOfw3Dczj9nSw/zh-cn_image_0000002671482890.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A567B8E5874973E85B84F3201753605D9197589AF5E6F1317AE32B6B9039F47)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/SsLIMcBpSFKl3il3QVYY3g/zh-cn_image_0000002671482890.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=48D18084B4290753ABCCD535E97D60D33891DDF5906BE2594B72EF8C35FA2416)
 
    2、运行应用，反复滑动图片触发索引值超出范围，索引值大于7或者小于0的时候会低概率使应用崩溃产生CppCrash日志，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Pn_17QEdRJCuMJzxxF886g/zh-cn_image_0000002671642752.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=243E286D1EB69E60CB1DB5062CA63BDE2D1E184ADE52B0CDC8703C629C61C1C3 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/0JGcLvz0RtWexOMEFMcrow/zh-cn_image_0000002671642752.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB51621F0B9B852D8A2C3F3F1D7C8593364CB69D00311CF08AA647D7C23B183D "点击放大")
 
    3、分析CppCrash日志，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/WMLDMKFWRs-zrgMKTAF4Ag/zh-cn_image_0000002701242495.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE9E67CFFB322F95DC2182E50F2F03C7267462225960652B523457F4028A0246 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/5sb5jfPfRQuBSpJSQsEKyQ/zh-cn_image_0000002701242495.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BB339FE5122B3167AB1F5997637DA6E16DF94E64E32B5097DF657012A1226DF "点击放大")
 
    应用出现“SIGSEGV(SEGV\_MAPERR)”信号，表示访问了无效内存地址。该类崩溃通常由以下内存操作错误引发：
 
@@ -87,36 +87,36 @@ content_hash: sha256:96aecb689dbd91db40c5bc178e31c33e87821c11a4039245d5b6a41b58f
 
    1、开启HWASan工具，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/jxouigPoQ7qiyMaijp5Weg/zh-cn_image_0000002701362591.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=62904A5407B9DB808416BF45BF573B05B6D3900CED60CD2DFABA34F9D703C8AA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/JjHBckztTCKJGb1Papr0RA/zh-cn_image_0000002701362591.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=B94A59E4FA9A4920F2DF24086CB9D8314EA3113BDA6D9420331AED551C78BBAE)
 
    2、运行应用，左滑图片超出索引（>7），应用必崩溃（HWASan工具会立即捕获本地代码数组越界访问），触发HWASan日志，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/F53oj1skQIyJ6VAmfE4Ktg/zh-cn_image_0000002671482902.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAD2BACDD2BD2CD711546DA580F879BB88AEFAFB0332AC15C5DF6D3B9E48A7E0 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Br9O9XMvSBWVS6twi8Yuvw/zh-cn_image_0000002671482902.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9645F911D5E7979F5CCD56AAB2E6A97F6208BCDF2046F2F6AFB7BDD864DC6C5 "点击放大")
 
    3、分析HWASan日志，日志中显示堆栈信息，并且蓝色链接单击跳转到具体踩内存的方法中，方便开发者定位修改，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/c13Q_k1jS7Ka4c6iOomBPg/zh-cn_image_0000002671642766.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A9C06C5D755CA4A5A71052DCE447E3BE73C08DB175706CC0FD78CBB6B9CB20E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/4pKa-hmKRcG5cLEkFvtYIw/zh-cn_image_0000002671642766.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=824116A637677BB8C16F9D43D1C69290E6B68E30A31B015D8C60C84777B69EE8)
 
    4、重新运行应用，右滑图片超出索引（<0），应用低概率崩溃（HWASan工具不会立即捕获三方库so中的数组越界访问），崩溃产生HWASan日志，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/8I4NcwxXTsa1VB71Vv02zg/zh-cn_image_0000002701242503.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F5E46A15475E752543C71C30E56A4829008C98C2AA95DF3C9BF8C1CF122E65D "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/tYG1wNn4RyqeCbrDuc96Aw/zh-cn_image_0000002701242503.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCF26969EDD9CE13CE022B247B2B42860350FDFDD88B69DFD949652505E9DBDB "点击放大")
 
    5、分析HWASan日志时发现，其输出的堆栈信息无法有效定位到具体的越界访问代码行。原因在于，HWASan工具对第三方动态库（so）中的数组越界错误，往往不能即时捕获；即便捕获到异常，生成的日志也因堆栈信息不完整或缺乏符号解析，难以协助开发者追溯问题源头，具体现象如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/XVyIbszeTjqLl3ldVKBBUg/zh-cn_image_0000002701362603.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=6ED92CF41122B0B9879BF24EB52AB0F3FE990F7045FA9DFB7634C18395DC578C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/nRZNygTkTw6do8awTP-xDw/zh-cn_image_0000002701362603.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=458894D93E64372A38161BC67E85E2C21FE793CE30EECFDCE2E275945E9CA1FB "点击放大")
 3. 使用BinXO工具分析
 
    1、在HWASan基础上打开BinXO开关，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Oq3URZ-AQ7uJgupTvIr1pg/zh-cn_image_0000002671482910.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D9DE0825FFE631C5B133404E0E63B72A8014D1BD42FBC2DBD32068E88E719E0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/mGtKM1q1TgO0ahjIQ6Zvbw/zh-cn_image_0000002671482910.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=379B3578BA8BAA775BEF5290A5BD51B5E0725B99DD8FCB24BD767B67EC151EB8)
 
    2、重新运行应用，右滑图片超出索引（<0），应用必崩溃（BinXO工具会立即捕获三方库so中数组越界访问），触发HWASan日志，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Iz3s_g30QX6yvS4RLKFNlA/zh-cn_image_0000002671642770.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAD3D96EF114C1BF115F51834899725F102F79931BE54B2E3905D0AA34608C28 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ckGLXk4FR7eWR5y4LC0HiA/zh-cn_image_0000002671642770.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=619038883608A1C23FBC2D4FBB662748BD4FE85D613F202734851DD64DE69166 "点击放大")
 
    3、分析HWASan日志，日志中显示堆栈信息，并且蓝色链接单击跳转到具体踩内存的方法中，方便开发者定位修改，堆栈第0帧是调用的三方库so信息，第1帧蓝色链接单击跳转到具体踩内存的方法，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/LcnzY1OKSPO6tsP7xYt3dA/zh-cn_image_0000002701242505.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7C4DC936B93878D808F384BEEE3162BB4BB6A75FFB00109165C3584514DE991)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/qC1lKS_dS1y1oJ6vh8JsJQ/zh-cn_image_0000002701242505.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5E0ABF82C9F16E6EA3367E6BB653660E50417059E0BC961A5F5713F91E1728A)
 
 ## 代码分析与优化
 

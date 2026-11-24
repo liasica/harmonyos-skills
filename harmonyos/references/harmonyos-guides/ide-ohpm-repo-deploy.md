@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo deploy
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo deploy
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:47+08:00
+scraped_at: 2026-11-24T12:42:19+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:7df96905cff5924d6c09289cdeeff09f1682c957715b34c22c45ee309ce54d7a
+content_hash: sha256:7baa7ff7f158a8ef3f2fcb3da273ffc34f3687c2796e7925147a1b08daae0e6f
 ---
 
 使用备份文件部署新的ohpm-repo实例。
@@ -83,4 +83,4 @@ ohpm-repo deploy D:\ohpm-repo\bin\pack_1695805599689.zip --deploy_root D:\new-oh
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/kSLpV8PARvm3gcs31TF5-g/zh-cn_image_0000002808884841.png?HW-CC-KV=V1&HW-CC-Date=20261114T004847Z&HW-CC-Expire=31536000000&HW-CC-Sign=E60607A243D8D8320CBDA091AF0C45B9E4FFB0A967AD5E6D893F42D1E173041D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/xWZcH4xtRfiK9IlPCZbc1Q/zh-cn_image_0000002808884841.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF20925EADA432A869CCC18CA9876951F677EB496DEE7333DAB98BD332897786 "点击放大")

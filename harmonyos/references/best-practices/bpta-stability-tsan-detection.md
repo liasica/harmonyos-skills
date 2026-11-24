@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用TSan检测线程问题
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 线程并发类问题检测 > 使用TSan检测线程问题
 category: best-practices
-scraped_at: 2026-11-14T08:54:17+08:00
+scraped_at: 2026-11-24T12:47:54+08:00
 doc_updated_at: 2026-05-30
-content_hash: sha256:c143549ec64ca28071af0fb7fbe1bba9ca6231b513589393512f2887e0ea7b61
+content_hash: sha256:69876b5a6c800b751fb1ef16d4fc1fe91e1a48002c6e78d585a8c7a0bdfca949
 ---
 
 ## 原理概述
@@ -60,10 +60,10 @@ TSan能够检测出如下问题：
 
 1. 点击**Run > Edit Configurations >** **Diagnostics**，勾选**Thread Sanitizer**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/aaqek80qQ1e_0XdmHnuWuQ/zh-cn_image_0000002370405548.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CA05545D0B004EEBAE6B7B422C5E60ADBF3100E9BE0D71BD9525AB17C983E77)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/lm-KJaK-TPaEocrw7hLZYg/zh-cn_image_0000002370405548.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=13BD6A66499D1D6ABE7AB86677E4DE49B7B1BC99825FA58ADDF63D8BCCA9AEE4)
 2. 如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_TSAN=ON”，表示以TSan模式编译so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/A5LSpViPQqStdzj4zixAxg/zh-cn_image_0000002404045261.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFDE54DAC2A51301A5EF022ECB7B0FDE0EBF5E916A8E35AFCD9D7394EF9BFC1F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Toapl4vqTuODptWCIW0qlQ/zh-cn_image_0000002404045261.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B16CD7B58F72E39FB1F6BAFF73BB6C1FD347508A27D2A250F8F398D976943A7)
 
 **流水线场景**
 
@@ -81,12 +81,12 @@ hvigorw [taskNames...] ohos-debug-tsan=true  <options>
 
 1. 修改工程目录下AppScope/app.json5，添加TSan配置开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/J6W3rCzWQ2m-NDbm-peyPw/zh-cn_image_0000002370565432.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CF0ADBCC20FB9C9E515E9A58E73AB4B2CA2F742584587ED6289024519A79EE9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/w_yVBLeTQSi0ik6bu430Ew/zh-cn_image_0000002370565432.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=67B8AC9F1FD9D0A41B122C8C29D0D9426A0B509AF81D4CEF06345C22644C43B4)
 2. 设置模块级构建TSan插桩。
 
    在需要使能TSan的模块中，通过添加构建参数开启TSan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/5rqj-BABSIepz2pIBOARIA/zh-cn_image_0000002404125101.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=D01B5A785B1F88A9CB44546A8940F54742500EC9CD99B6F328D826CBFA0C5504)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/nb-Ks3OvQ5WL2Xx--wTjTA/zh-cn_image_0000002404125101.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E47E0AB6CF182BD7249A4587093548B4AC458A4DE3D30692F90B93352479EAE)
 
 **流水线场景**
 
@@ -144,7 +144,7 @@ static napi_value Add(napi_env env, napi_callback_info info){
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/gJqAyALLQD2tusybmHtEPw/zh-cn_image_0000002537311043.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6AF22FD65B111C9FD4194A89625AB3DEE7798ECCDE4243B02DBB2A535420C6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/yDoXGutyRBqpWpTepRzAWA/zh-cn_image_0000002537311043.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CBF84520A659C427F38402BA5712536B4D60AA476CCCB8E00803D5B601494EF)
 
 **修改方法**
 
@@ -222,7 +222,7 @@ static napi_value Add(napi_env env, napi_callback_info info){
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/jdCqrpZLQya3sqCMbG6MGQ/zh-cn_image_0000002537431253.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=E990397DA1A185756661FEBDA61AB155F4B570F7E8BFF588601BDAE559E52E43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/I3_pJVVeQJ-ZoP8SuzfV5A/zh-cn_image_0000002537431253.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2BBE35AF0D9F01C5919526B6043CF334AD239F217C54B94E1EA73D971D91129)
 
 **修改方法**
 
@@ -285,7 +285,7 @@ static napi_value Add(napi_env env, napi_callback_info info){
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/BQp8i5PfQfaqtCz6gT9yew/zh-cn_image_0000002537431429.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEF8B5292FAB492B6AA6F5AD08ACCCC88BBFC38F0B84B4ACF3128418C388892A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Ll-wDux8RFuinwBCxYkwGA/zh-cn_image_0000002537431429.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1491C36AB6630C52715A461D81E38B65AE1866D615D79C4D1DF2FE0A76F954B)
 
 **修改方法**
 
@@ -355,7 +355,7 @@ static napi_value Add(napi_env env, napi_callback_info info){
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Cq694wNJTYqTFwvuR3MIZw/zh-cn_image_0000002505631712.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=57AADA58C2F393F8847125F471F9154CBAB5794026839AED8BC67A0650A6DF4D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/DmGufERxSImXnZpru4gJog/zh-cn_image_0000002505631712.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=050369DFD25A2744DC2EF13BF7B1069DAF65C433109122388D84BF1203DA8F8E)
 
 **修改方法**
 
@@ -415,7 +415,7 @@ static napi_value Add(napi_env env, napi_callback_info info)
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置**。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/ncs18YGKQxaBsrn_vmNCXA/zh-cn_image_0000002537311831.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B769FAC0B844CAF5A84C7F02108811CF5A04AFA124BB60CAB7C3E055D2D2586)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/GnINY8iTRpOY--a-MwcDBw/zh-cn_image_0000002537311831.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2675E7F5DD1550F2AD4AC239C09C5E4B7E9D6C41A43E3CF3B5F19B0325DC2F5)
 
 **修改方法**
 
@@ -466,7 +466,7 @@ static napi_value Add(napi_env env, napi_callback_info info){
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/mhP1gmW6RRu0XRXKkTCkdw/zh-cn_image_0000002505472236.png?HW-CC-KV=V1&HW-CC-Date=20261114T005132Z&HW-CC-Expire=31536000000&HW-CC-Sign=C972936F3D6EA352C57C2DEB9DE8BF438B8C5F4FE1F3023FEF5B279A58B5FAA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/QpW_ZH-NQr6UWeTkyv60sQ/zh-cn_image_0000002505472236.png?HW-CC-KV=V1&HW-CC-Date=20261124T044754Z&HW-CC-Expire=31536000000&HW-CC-Sign=59E9DD8DBEC21B750C5662D388504552C906D6369FE437E1E092940AACD6CB59)
 
 **修改方法**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 反向调试
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 反向调试
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:59+08:00
+scraped_at: 2026-11-24T12:42:30+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:c764b515ce259a714090c01624c73304c88f51c1e2ccc97d0f6a6b2285b530dc
+content_hash: sha256:60cd98d69cfc019cc807c9c09119cf766e36f39a305f8c03cf98503451caf56d
 ---
 
 针对C/C++开发场景，DevEco Studio在提供基础调试能力的基础上，同时提供反向调试能力，帮助开发者更好地理解代码和更迅速定位问题。
@@ -21,26 +21,26 @@ content_hash: sha256:c764b515ce259a714090c01624c73304c88f51c1e2ccc97d0f6a6b2285b
 
 在**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build,Execution,Deployment > Debugger > C++ Debugger**设置界面，勾选**Enable time travel debug**开启C++反向调试开关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/k-VKNdY1QOS3EYhnH_a7Ug/zh-cn_image_0000002808886189.png?HW-CC-KV=V1&HW-CC-Date=20261114T004859Z&HW-CC-Expire=31536000000&HW-CC-Sign=391A6DB9C84F779F432C5C9DFA51A10B66849541695A0D9D40098AB6C61F06F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/sfO51oJ2Q6ugu_gsoCV84A/zh-cn_image_0000002808886189.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=9343D863D06FB883AD87AF83C81D01A47EC972F11845DE0458CDA80D0D73070A)
 
 ## 操作步骤
 
 1. 设置断点，进入调试模式。
 2. 开启反向调试开关后，在Debugger中会出现反向调试相关按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/qDXQHi7aShuhXqLXqor8VA/zh-cn_image_0000002808766105.png?HW-CC-KV=V1&HW-CC-Date=20261114T004859Z&HW-CC-Expire=31536000000&HW-CC-Sign=F835AD266A231667DD711CB7D0AC670F8C37C055363E1482A3C5891798D92C2B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/gqfYctOVSJ2Gso_MOO3Jvg/zh-cn_image_0000002808766105.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB653662447E82A2793C4D80B8481A8E423F4EB07DE3CF65348ED6533B9A1085)
 
-   需要查看历史调试信息时，点击“Open Time Travel Debug”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/QSz8KbjPQ0KLrc7qiMolTA/zh-cn_image_0000002808766109.png?HW-CC-KV=V1&HW-CC-Date=20261114T004859Z&HW-CC-Expire=31536000000&HW-CC-Sign=D833E5F3D186ED15D24BA2858620DBC3B718CF01E6CA715EA42B3325A6E29E2C)进入反向调试模式，您可以在此模式下进行调试。
+   需要查看历史调试信息时，点击“Open Time Travel Debug”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/C4BhXS7mRb-V-QUBcl24EQ/zh-cn_image_0000002808766109.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=3448E5F6444F9D74FE2FE5CD37BA8848CD9F4D9782A1931F64985492B5EE5A8E)进入反向调试模式，您可以在此模式下进行调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/MEG9gPqpTaagW1bESRG3AQ/zh-cn_image_0000002779406548.png?HW-CC-KV=V1&HW-CC-Date=20261114T004859Z&HW-CC-Expire=31536000000&HW-CC-Sign=91D21FCD074C07662AC09F88B16D51E08657072E4A121D93DE0638309429DD63)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/44SUk8W6S9WGpwJu0e2GBw/zh-cn_image_0000002779406548.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=25BF23D5552175C61F7526609A582D23D72A5A0585BEAAB1A7909D1FFB1D1C27)
 
    其中，操作按钮说明如下：
 
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/G0rLJDLlRtiH_kNBwDJHnQ/zh-cn_image_0000002779406552.png?HW-CC-KV=V1&HW-CC-Date=20261114T004859Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5F3CB2EDB2FEAB662D5C3B959AC3D65318CD66DE82DD8B08BE9E0A6E8B28100)：退出反向调试模式。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Pwg2uGy1T0qQivu8vIwzEw/zh-cn_image_0000002808886193.png?HW-CC-KV=V1&HW-CC-Date=20261114T004859Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FB25386889E79640910700D4A350495382122D61C73E1C4920ACA2563E5DE77)：切换当前高亮行到下一个历史断点，并显示断点相关信息。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/9t8iX3bPStqepQYMJ4dnJQ/zh-cn_image_0000002779566532.png?HW-CC-KV=V1&HW-CC-Date=20261114T004859Z&HW-CC-Expire=31536000000&HW-CC-Sign=327093FC6FA04EDE2485CF3BD91B7461A01CA83FBD93CB948D9F1F2BA51CB39B)：切换当前高亮行到上一个历史断点，并显示断点相关信息。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Hy7t_HoLQzmzBt8SxBncMQ/zh-cn_image_0000002808886185.png?HW-CC-KV=V1&HW-CC-Date=20261114T004859Z&HW-CC-Expire=31536000000&HW-CC-Sign=32164EE7FB98D6264EE2A933AE27EF2831AD8A80A764CAE9FBA2DE3378D6FBB6)：切换当前高亮行到下一个历史行，并显示历史行相关信息。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/npywIof0SLyz0SvWJ6WHKA/zh-cn_image_0000002779566528.png?HW-CC-KV=V1&HW-CC-Date=20261114T004859Z&HW-CC-Expire=31536000000&HW-CC-Sign=C579FC41247935D28CEA5EE39308014FF334B6788BDCFA705514F27C16808368)：切换当前高亮行到上一个历史行，并显示历史行相关信息。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/vHIYNK1mQYeTh_IZn7NStQ/zh-cn_image_0000002779406552.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B77C82D9B33E950026298FE0F7464E1A4BDCCCFE9AE730112700175C67415E0F)：退出反向调试模式。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/bDLstn-TT4KdJrz9o36Bcg/zh-cn_image_0000002808886193.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=84DC39561E7C2E36785932C550229D19409497AF0E9B4E155BEBFEE56E4A70C8)：切换当前高亮行到下一个历史断点，并显示断点相关信息。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/8XyQS4hIQuKO5ZWIMUe31A/zh-cn_image_0000002779566532.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3E12ABF25262908452E977E72E2EBFAF98AB05DE63C566A35731C4A5DCF7DEC)：切换当前高亮行到上一个历史断点，并显示断点相关信息。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/Tx_-fNlCTP6ya5zEpsuluA/zh-cn_image_0000002808886185.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=35BDA3F9EBB032CF3769155AF24640DF12EA9CFC4CC43E1F12CCBD39FADB183F)：切换当前高亮行到下一个历史行，并显示历史行相关信息。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/sKJ4OBbzQKCiwnMmneZEjQ/zh-cn_image_0000002779566528.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B753F2EE996F4F776A1448F28F64322F0E57CE92491C66981A82F53D3762A31)：切换当前高亮行到上一个历史行，并显示历史行相关信息。
 
 **说明** 
 

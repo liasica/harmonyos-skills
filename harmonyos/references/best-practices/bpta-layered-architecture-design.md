@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-layered-ar
 title: 分层架构设计
 breadcrumb: 最佳实践 > 应用架构 > 分层架构设计
 category: best-practices
-scraped_at: 2026-11-14T08:54:05+08:00
+scraped_at: 2026-11-24T12:47:43+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:6f4e23e86f4bfa710fa4071597646f7656c1c01f65271190ff7870e83697aa02
+content_hash: sha256:4511ff045c5428483b34a857bb47ed3a903f84bcb1b6db38b81c4f7e09e53338
 ---
 
 HarmonyOS 应用的分层架构设计基于一套代码工程，支持华为手机、电脑等1+8全场景设备，实现了“一次开发，多端部署”的开发理念。
@@ -17,7 +17,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 逻辑模型
 
 **图1** 分层架构逻辑模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/qsBq96zESgaNL6LNGEVtjA/zh-cn_image_0000002229336237.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=A95A48584D441BD2C4893849204ED9FF92102F9A60422196A3523F8A848D5820 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/LK-qdpgoSQCV4_pIG65b2w/zh-cn_image_0000002229336237.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=7267E78D5C18C44681D3A88865ED3F17D8A94633B312D2E07B93C203734E6A06 "点击放大")
 
 * **产品定制层**
 
@@ -49,7 +49,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 开发模型
 
 **图2** 分层架构开发模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ZD-CPE34TCGk37uLSKehmg/zh-cn_image_0000002194010440.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=96C46204C48CE96680DF3EFBE473CEEE9079B03B14CFB611E4F3BAF9B5ADDCB2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/78CkGEfhRY27LGklzelKrA/zh-cn_image_0000002194010440.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=44C72DE4E4D6192B712B09C49C8858F7F401382D280A33E20CBBFC6B4727259F "点击放大")
 
 * **产品定制层**
 
@@ -69,7 +69,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 部署模型
 
 **图3** 分层架构部署模型（不同设备的定制）  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/qrrsYZn1TfWiQlyBZhsPhQ/zh-cn_image_0000002229450717.png?HW-CC-KV=V1&HW-CC-Date=20261114T005405Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D84822EA19FA3E0E3269366DEA8F48A1BF735F21E66C0250FA7F748AD31B4B7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/QlszLpGjQs6SI3TFX4izOQ/zh-cn_image_0000002229450717.png?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A4BA7299F03AE20497BA8F3E743895D05FA548128C4629C2EB424C2F98AD1C2 "点击放大")
 
 应用程序（.app文件）在流水线或应用市场上被解包为N个Entry类型的HAP和N个Feature类型的HAP，根据设备类型和使用场景部署到不同设备，实现多端统一用户体验。
 

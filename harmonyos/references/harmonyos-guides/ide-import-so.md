@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-import-so
 title: 批量导入和批量移除so库
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 批量导入和批量移除so库
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:49+08:00
+scraped_at: 2026-11-24T12:42:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:6de0ea50a0a13d38f456673936b047f4c693794dadcac9a5b2251979c39e4185
+content_hash: sha256:99fb0db45eb4ad5400277e08f3a1c9468198a2404663f4c2e5b204578023efce
 ---
 
 从26.0.1版本开始，DevEco Studio支持批量导入和批量移除基于CMake工程构建生成的so库。若当前工程引用了其他工程模块构建的so库，开发者在当前工程中批量导入so库后，可直接查看so库的源码，实现代码阅读、断点调试与问题定位等功能，避免在多个工程间来回切换，提升开发效率。
@@ -47,48 +47,48 @@ CMake工程的构建目录中需包含compile\_commands.json文件、CMake File 
    ```
 5. 构建目录结构如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/DKdzKeTcRm2eFQs1uXHPLA/zh-cn_image_0000002808886457.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE6CF74EB3FD296AC27DB5CFDF4998AF6CADF1DAD2D12470E4CE8DF7FE22D3AB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/IzygmkkmQzKypaJD-_6YFA/zh-cn_image_0000002808886457.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2E433B8FC62EE05538317A408660B80BC3AD3EBA0028BEEAE986EC9728580A3)
 
 ## 批量导入so库
 
 1. 点击左侧导航栏的**Project**展开工程目录，将需要导入的so库文件复制到模块的libs目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/tnldTT2ASla74Ntvo1wcsQ/zh-cn_image_0000002808886461.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F6640546D21C2D58105FA2BDF2B4D432E2FF9275230FA34D4C7F58E426F5FAD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/9Wa-a7-PQ9SiSRmuqoMuzw/zh-cn_image_0000002808886461.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9EFD68D2C465FADB8A2F0385921028324C1B2E4D13A7F710B166AAC475C7410)
 2. 点击**File > Sync and Refresh Project**进行工程同步。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/8P87j1UURMWJ3zK0TAgYwQ/zh-cn_image_0000002808886465.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BA56E510839A91C9310AC2F5C2141FACD7552616E87B2098227DC7802B4A174)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/EQ_VQwvmQLWzQlYNKPVJ6Q/zh-cn_image_0000002808886465.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BB9E31B07CBFFF869F04433C36E5A03C03977DD26887EF0175ABBDEB0ED53E5)
 3. 在**External Libraries**上右键，点击**Import Source Code of .so Library**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/_ePTUSNpSfiLnyLtOQ3beg/zh-cn_image_0000002808766375.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6E50B530892AE4AA2CC6BB8046A5AACDD2144840629FB3B0E1252390C21EC7D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/JiZlIePxQ_W-nh9Exsdt5A/zh-cn_image_0000002808766375.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1846CDB787BF76C725ED3F22B60B58B592DBEA831BBFCD41270A052B0B49276)
 4. 点击**.so Mapping File**尾部的文件夹图标，打开文件资源管理器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/8dbZLyRETz6RdLAncz68lw/zh-cn_image_0000002808766373.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF6196CB85D6FDAAA726912DF5C4E8DBDC53F09ACD15C9B5CFB7FE9916D815F8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/CIeNlWU-R52wMXI5W8NeUw/zh-cn_image_0000002808766373.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=70F422685C38C0748FE65BBA40E4EB7A6903C1D6CAEC972F10B4EB250D2EA923)
 5. 选择CMake项目的配置描述文件codemodel-v2-xxxx.json（文件路径为构建目录路径/.cmake/api/v1/reply/codemodel-v2-xxxx.json），点击**OK**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/_iVmkUqOTQ29rNZovzS5Vw/zh-cn_image_0000002779566790.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=D04882FDCA2149F3DD9EDCE284CCB01DC2FD46D6D095F9C8A6382A12FEF9A4A0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/hiHCgqDETf22daXOc8w0RQ/zh-cn_image_0000002779566790.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=045A193E6B2FEEDEADF55736B9D146C5026C5AD13F463A61A692223D53124593)
 6. 工具自动解析并展示匹配的so库，可选择单个或多个so库，也可在搜索栏输入关键字搜索，勾选后点击**OK**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/uSkPLimoTQumRVnYnrZ3Rw/zh-cn_image_0000002808886455.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF3A82F1040A0B7EB681ED07A5573C0217FC91953B41D7064C64E0D8B66AA91A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/EjlRBgAYQNmFPCxzsDYT5g/zh-cn_image_0000002808886455.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=421E56CAEB6219744AB52F6E300F4792B2019737152C1A2465AC556E64109FFA)
 7. 导入完成后，点击**OK**确认。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/JJv7JYw8QwWPC1dHHILzQQ/zh-cn_image_0000002808766383.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=266289945E43D148FD74926E6E75EC5DD2E47FF533425512533A514DB4B5B1D0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/0W8UrVS2T-yPgtlN3LfkLA/zh-cn_image_0000002808766383.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=984F19C530448617744B1BD7F1AE204AAD34142620DABF651853232CFEDC4930)
 8. 点击**File > Sync and Refresh Project**进行工程同步， 等待索引完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/YAO0ILlIRuCukCUTvWwGjg/zh-cn_image_0000002779566796.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=12F91D91FB8293D2834FC4B614344F10F0EA40D95567EEA8144FA060F527E48E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/G_NUHNEHR_e_i4IlFtZ-ng/zh-cn_image_0000002779566796.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B85F315D0B0677B7EC50AA3FC6DB8D564DEF38AC77794F00186916FEE4B7464)
 
 ## 批量移除so库
 
 1. 点击左侧导航栏的****Project****展开工程目录，在****External Libraries****上右键，点击**Remove SO**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/uW6JajZ_S4id_FOYT7chCw/zh-cn_image_0000002808766377.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=0736B54E936EBA2BED184795AC8D0F69C5A249D9112A2B1A475C96AA3DE6E365)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/u2t7wRojTRKCDPW255lHUA/zh-cn_image_0000002808766377.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B80AE8CD96E1EB8926F8D773211F2E82EE6ED868DF4178A121C9EB58DDEE8CB0)
 2. 在弹出的对话框中，列表仅展示已成功导入的so库，可直接勾选或通过搜索框过滤，选中需移除的so库，点击**OK**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/KmSlAQJFTfazY9ZcElTYdQ/zh-cn_image_0000002779406822.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=175ADD2E84E308F601AF9273593046ADC80878B54C8D1BB7F7086302673DFD18)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/ZmpeEI-pSt6d83yP_NxgYQ/zh-cn_image_0000002779406822.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2BB2DA4D7126FD52086C48733481EDF0F6287B572ED83DE18334C10DA473C81)
 3. 移除操作完成后，点击**OK**确认。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/g325Q2a1RRm-BWKm3fvmSA/zh-cn_image_0000002779406812.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7860F5BAE4EB7D8C8C4C76EA0106043471C9AE4CA95ACB2ABD907584FC55BEC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/Y5Y4_timQoaf_ma5ImedBw/zh-cn_image_0000002779406812.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A22C68AF263A99E6D95C399C31BBDFC4D639889AE0D1B994DDA02D229E10B795)
 4. 同步工程
 
    点击File，选择**Sync and Refresh Project**进行工程同步，然后等待索引完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/E4nTxuE7TTm9aX6VLr7eqg/zh-cn_image_0000002808766385.png?HW-CC-KV=V1&HW-CC-Date=20261114T004703Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BC86A19EAD63FBB3BE889FC40192DC0B63A1AAD3DD35EF8F7B49140180F4BB1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/H1LoNU9PRXqd4n7KC0WfeA/zh-cn_image_0000002808766385.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D21550A1F55308211F8520297F575D81A2B154ECD249FDAD5DEB6CE296CD43B0)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-efficientl
 title: 运维态高效处理FD资源泄漏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 运维态稳定性分析 > 资源泄漏类问题分析 > 运维态高效处理FD资源泄漏
 category: best-practices
-scraped_at: 2026-11-14T08:54:21+08:00
+scraped_at: 2026-11-24T12:47:58+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:c9dce087e829d6aedee6f2325ee0a7f6484fae19e4b2435488a8f4c819a816c7
+content_hash: sha256:0fa6f937269c5677b8a9a49c7b38ecdc559e3c11e7bfbaba279bfe88e617267a
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ FD（全称：File Descriptor，文件描述符）资源泄漏是一种比较常
 
 **整体流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/FbyFdJRkQMCs2auNQCmRxA/zh-cn_image_0000002671650762.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1000780EDDBF21C2B28BCFD469FE46CC1757E6F641201DFD8AFBF88E4DB905E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/atmy-raxQsmNwVB_50uDzA/zh-cn_image_0000002671650762.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBDA73A5A71F62975D93A66ABF0A345E6509B679C8B8068124A7F72F74D23C76 "点击放大")
 
 **排查步骤**
 
@@ -36,7 +36,7 @@ FD（全称：File Descriptor，文件描述符）资源泄漏是一种比较常
 
 如下图所示，页面入口：故障分析->资源泄漏->资源泄漏信息详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/IpSEBX1RRJ6Uv-bD6R0f2Q/zh-cn_image_0000002701370585.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A98DF9A2AF5D35A68F9A2F400A3817952FABAC089870607FE1733C1D7776951 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/_lOW6ruyTfqldSRp67h7PA/zh-cn_image_0000002701370585.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEEDA4E1153DA42525680C9F86F6E6AF00A561AA50E7A952E94B252ECB9F111F "点击放大")
 
 **关键指标说明**
 
@@ -50,7 +50,7 @@ FD（全称：File Descriptor，文件描述符）资源泄漏是一种比较常
 
 通过点击查看按钮，进入到故障详情页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/ep_qENugR7-BoypGGrsdOw/zh-cn_image_0000002701250493.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=42B0C0C733A00B2D4DD8A888F44A0F86C933C967D02F5490ADDE5CC7AF87EAA9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/fuJuZnAPS3aG02CvT1oquw/zh-cn_image_0000002701250493.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CB2DDBF134437F20C7D8964FD96D73A8AFBD9832EC2E09D89C261E0F075985F "点击放大")
 
 故障详情页面可以通过证据链、现场数据、句柄栈信息进一步深入分析泄漏的原因。
 
@@ -58,19 +58,19 @@ FD（全称：File Descriptor，文件描述符）资源泄漏是一种比较常
 
 证据链列表根据泄漏数量的大小排序，优先查看泄漏数量最大的句柄名称。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/fSzmujh-TG61PyigEZjjaQ/zh-cn_image_0000002671490912.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=238613E76091AF521F516A9F2C36391EC6AE69A4C409E25B2844691638F9CEB8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/0oJYYvCpT8ijhCpmHHRpug/zh-cn_image_0000002671490912.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=E055729D93B543CCFB11E5CF7A7C0F5153DD80A74F32C38AA1EA77FD84C23BA4 "点击放大")
 
 **现场数据**
 
 现场数据展示了当前FD泄漏的Top10的句柄名称，可结合代码、日志分析对应的FD泄漏对象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/vNwSqj8hT7m3ODX9Hgqvew/zh-cn_image_0000002671650764.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=E004B182706785781422E97ADF86D475ADA196AD4B8978249AC15A192E6A8D85 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/2NkPC9s3TKa7IQu6T8kEnA/zh-cn_image_0000002671650764.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=191739C0330782059D3E14CB0D098D04E13A7DEAA1880FCBCF8BE891E848DD59 "点击放大")
 
 **句柄栈信息**
 
 句柄栈信息中可查看对应的堆栈信息，以及疑似泄漏点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/IX4h15Q8QEmAqZuFWT1FXA/zh-cn_image_0000002701370587.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2E57299E8872F0B5EBD29DE849D0E670A3A86071215323C63AD42D23F373DC2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/nGtUmd3mQ3KYJwz76H8f6A/zh-cn_image_0000002701370587.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2637A85A1999C88AC7A43B6F5E02A6BF8E1095ECFAF77F8027C72064248D303 "点击放大")
 
 ## APMS平台FD泄漏分析案例
 
@@ -82,11 +82,11 @@ FD（全称：File Descriptor，文件描述符）资源泄漏是一种比较常
 
 在故障预警平台的告警规则页面新建FD泄漏告警。根据实际的业务情况，选择合适监控时段、监控频率、告警触发条件以及其他告警指标，其中FD泄漏对应的指标类型为FD\_LEAK。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/g-ReZ7F_RzeLEbxjuyIm8Q/zh-cn_image_0000002701250495.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=154D8D10403F651BF0731B6388800F57DD96504A7928219F55AFCD099E56DE1F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/evC1QV16QnGI1BqtbxDIOA/zh-cn_image_0000002701250495.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA91A545B892F796625619C219EC8895B0010C92B38D66BFEEADB32AA10376BE "点击放大")
 
 创建告警之后，后台会开始收集数据。当达到设置的告警阈值后，会触发故障预警。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Cw_-u7wUQcSVjmrO2fUszA/zh-cn_image_0000002671490914.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AC2DD20AC2D3282D55597C3FC9EEB0E7DEF96F6571E91D037F1D2738EBEBDE2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/p3xAQsLXRT6EpM__AN1b4g/zh-cn_image_0000002671490914.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DC392D8A76E951F797898A336C906D0C44865C57C97E77091869131E784E784 "点击放大")
 
 ### 问题查看与聚类
 
@@ -100,7 +100,7 @@ FD资源泄漏聚类规则请参考[句柄泄漏聚类规则](../harmonyos-guide
 
 通过故障告警的指引，在故障分析页面筛选出FD\_LEAK的泄漏类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/_ppj7X3-SA2LFv1cAdpMIA/zh-cn_image_0000002671650774.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A4C46B812516B1E439509A3C5C7B1C2AC799B58F9181E7F33ED6670DFB824FF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/zO_nEOQfRja2FQ4cgk8EsA/zh-cn_image_0000002671650774.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1D4CD116850E9C500328134B9F40564F5318AF126E2B63385B79FBB3C2A7544 "点击放大")
 
 点击查看按钮，即可跳转到Top问题查看页签下的FD资源泄漏问题列表。
 
@@ -108,41 +108,41 @@ FD资源泄漏聚类规则请参考[句柄泄漏聚类规则](../harmonyos-guide
 
 在左侧页面APMS菜单下的故障分析菜单中，在资源泄漏页签下选择泄漏类型为FD\_LEAK，点击查询按钮，过滤出此应用的FD资源泄漏问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/SK1YVb_nQBqPDcvaaTUiZg/zh-cn_image_0000002701370625.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DB8E5E8977000AD183A023C2087C7D369409106B727918CFBE6935BA10D2539 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/C1qxWM7qRD2WBYTvtrUt_A/zh-cn_image_0000002701370625.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=79FE65CD06556F78403DB4C9568C24727479903E666E71EE30E8A1B7EA2A41E6 "点击放大")
 
 在资源泄漏信息详情中，可查看当前应用的FD资源泄漏情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/QbIThFVHQkGiLXyFflDPNA/zh-cn_image_0000002701250559.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=B27457DC9C3455C4B9F78CEB3338BDE03DAD67E0D0982C55A146B1EA94EA4064 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/C5mlJl7tSoW82mITF8H3Kw/zh-cn_image_0000002701250559.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=95B7C3C48A8F180E486DC72E0C4984535BD2652BD3A29C090AFAFF33EBC08221 "点击放大")
 
 ### 根因定位与分析
 
 过滤出FD资源泄漏故障列表后，点击查看按钮，进入到问题个例分析详情页，可查看当前故障的分析报告，包含故障发生时间、泄漏句柄、故障模块、版本信息以及修复建议等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/ZMQqMq68Tuy4eYKGqs5XSQ/zh-cn_image_0000002671490976.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=A901622AE1F8491F457FB5570D85B7B1EE87F4E7CB6F79762B9B7E7CEC208ADB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/JjsdpsgTQ564-0nbqzjalw/zh-cn_image_0000002671490976.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=F16AA4CF37AD559ECC3EE85B85F2A1612CBCE56879953748702732CCC8ED51CC "点击放大")
 
 **证据链分析**
 
 证据链列表中按照泄漏数量倒序排序，将FD泄漏的句柄名称展示出来，开发者可根据泄漏数量较大的句柄名称，结合代码分析FD泄漏根因。同时提供了日志下载功能，便于进一步分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/zOWGCAKnQbqS8EGQwyskww/zh-cn_image_0000002671650846.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C8C5251B671679B43A7BA2149B880909BC3FA325807E792970FFD2708812389 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/5TqVWmHrR8KMLFsCJU_Mpw/zh-cn_image_0000002671650846.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=B99617DD4AB74C2E04685A335D3AE7949E8BE4D55F1230DBFEE16A7A9AB88B8A "点击放大")
 
 **现场数据分析**
 
 现场数据页中，将展示Top10的泄漏句柄名称，开发者根据泄漏数量较大的句柄名称，并结合代码分析FD泄漏根因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/wpaFSRoORuSJMRK58q5v-g/zh-cn_image_0000002701370681.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=37FB562C7614ACEE2AEC539EDDC4306201525E62C0CA2703BE4A7B01F7280753 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/uoL6tssJSBuQJ8NraJKoZw/zh-cn_image_0000002701370681.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EFF4EA2D20F2FE1F2E1CFE644B0A5E494568F55747026B9A61F7A1F60EACE38 "点击放大")
 
 **句柄栈信息****分析**
 
 句柄栈信息是发生FD泄漏故障并达到一定条件后，系统从堆栈中抓取的堆栈信息，存在一定的滞后性。开发者可参考堆栈中的疑似泄漏点，进行堆栈还原后，结合代码分析具体的FD泄漏根因，并进行修复。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/t20M6DoSRkKLk0gMZra4HA/zh-cn_image_0000002701250593.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3E249218009D4723058D7169202B23FF3AEA203A59C53E6B90E36BF5E49ECEF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/0PLkEORlQs27G1YARl7jsw/zh-cn_image_0000002701250593.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=D64A5B67A11098C44FD62C763205830FB10CB51BFC2F98D8583841267E792C40 "点击放大")
 
 **下钻分析**
 
 下钻分析的核心逻辑是从一个汇总的指标或表象问题出发，将其拆分成多个组成部分，然后挑出最关键的线索继续向下拆分，不断重复这个过程，直到定位到具体的根因。平台会根据故障特征ID进行聚类并筛选Top应用版本，系统版本以及设备型号。开发者可根据此重点关注问题高发的版本及设备，更精确的定位问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/6r8KQPDHSXKcpSg4qvN3GA/zh-cn_image_0000002671491006.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=9281F1D898C823868D4FD17453A877455D5241C2AC613C33743EA2F96CBA8ABF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/h_lf_1XGTAOkMId_IdKcLA/zh-cn_image_0000002671491006.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF5F3137A7C77FA009ED7B7545A7FD434A293708BF1033E804D0A2519D59B692 "点击放大")
 
 ### 修复建议验证与闭环
 
@@ -152,7 +152,7 @@ FD资源泄漏聚类规则请参考[句柄泄漏聚类规则](../harmonyos-guide
 
 一般来说，开发者需要根据引用链尝试定位并断开应用侧的引用链路，释放对应的可疑泄漏对象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/jRvgPLUhTMG2mBH9GzEVAg/zh-cn_image_0000002671650858.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=50FA86942CACB4277ECB05ACDEFF1FB5A5372333CB32AD647481798546CD9AA0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/mK2rPe3YQUWmKTQAvptCjA/zh-cn_image_0000002671650858.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E3FA8AC1C5BEE2860A23648D92290295FA81DA1466CFEC4903E51D66987B753 "点击放大")
 
 **问题修复与闭环**
 
@@ -176,7 +176,7 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer插件，通过�
 
 打开DevEco Studio后，在Tool Windows栏的Operation Analyzer进入平台，点击后根据包名选择应用，再点击资源泄漏（Resource Leak）即可查看该类故障相关数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/36Q0GjW0Q6ygBD_O7iWJLw/zh-cn_image_0000002701370683.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBDDAEAC9296EC36824DC78AC7B7A8FC79D5BCEA0A4FFFDE1E273857884D5B41 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Rjp45FNFQtG6uV5coT441A/zh-cn_image_0000002701370683.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=407EFE51BA2B8B9572A232624A32BA5277DAC3054F0839E90FDA2A7BAAEFB1A3 "点击放大")
 
 ### 问题分析
 
@@ -184,16 +184,16 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer插件，通过�
 
 证据链列表中按照泄漏数量排序，将FD泄漏的句柄名称展示出来，开发者可根据泄漏数量较大的句柄名称，结合代码分析FD泄漏根因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/cqgzHJoCRka4R7rTakpxzQ/zh-cn_image_0000002701250595.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1BC2013212A3BA08CF0D63946710DD701A73F402A77A95A7D7058A428723592 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/nkFJhfq5QUKuqxyfzu31Wg/zh-cn_image_0000002701250595.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=940F9E0762C7B7A5DA3CDE30914CAFED52B5B5990D200F4EE2429CD68621F324 "点击放大")
 
 **现场数据****分析**
 
 现场数据页面将展示Top10的泄漏句柄名称，开发者根据泄漏数量较大的句柄名称，并结合代码分析FD泄漏根因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/PsemXEFLRrKGo2AKKdlgKw/zh-cn_image_0000002671491008.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C4465317E5F66ABDFE083BFEB521B3622A7FA4193C10D2510B762DB77EC535E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Ko88k7n7QXaXPSWg6Jpbnw/zh-cn_image_0000002671491008.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=3446DF1D82FE58475E6DDD3D5621E72D744AFBE2B78904C3F9B81B7A4EF6EE6C "点击放大")
 
 **句柄栈****信息****分析**
 
 句柄栈信息中将抓取的堆栈信息中疑似泄漏点进行展示，开发者进行堆栈还原后，结合代码分析具体的FD泄漏根因，并进行修复。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/d5rDLpI9S_GaPgbRFSz3sQ/zh-cn_image_0000002671650860.png?HW-CC-KV=V1&HW-CC-Date=20261114T005421Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD8297DCA2CCE25316B1DE5E6B8A42135C36A02D107254981149762A01080B1E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/FBepHSM7Tuy2YOOuv35Cjw/zh-cn_image_0000002671650860.png?HW-CC-KV=V1&HW-CC-Date=20261124T044758Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CA3C94823DC8FAC68C8E02891929B0A7AB8B0C627326C0E5F6131076544C9F0 "点击放大")

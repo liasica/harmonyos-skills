@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 线程泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 线程泄漏故障模式说明 > 线程泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-11-14T08:54:20+08:00
+scraped_at: 2026-11-24T12:47:57+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:1cde4b7b67a38150047877aaa6c5c25bccde242a2b86b2b8d514a3163f9a6934
+content_hash: sha256:1f2f9b179d34fe4aaeb0d3c5cb8802aae3c7c0d9e2127a6b582995eb8f06ea4e
 ---
 
 系统监控应用申请的线程数量，当应用线程数量超过系统阈值时，会抓取维测信息，并对应用进行管控。本文旨在为开发者介绍系统的线程泄漏检测机制，并提供开发态与运维态的问题分析思路。此外，本文还提供线程泄漏问题分析与定位实践系列文章，旨在系统梳理线程泄漏常见根因与问题分析方法，引导开发者在编码中建立良好的线程使用习惯。文章如下：
@@ -180,7 +180,7 @@ HiAppEvent eventInfo={"domain":"OS","name":"APP_KILLED","eventType":2, "params":
 5. 将抓取的线程栈按照Count列排序，筛选出申请次数异常的线程及其调用栈，如下图5、6处框选内容。
 6. 结合调用栈对代码进行分析，找到泄漏原因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/YWY-XucUTbqpTRU7tcS3JA/zh-cn_image_0000002729597777.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=66B13B75F0EA0D45CC363DD16C5E367777282759D7DDCC53220E2584558E9D46 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/lMczS40YRMiDNlLpaW0z1Q/zh-cn_image_0000002729597777.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=240B293203309B23733CC65396D36E844F6C1D35322FDA3E24FB54555032A24C "点击放大")
 
 ## 开发态问题分析方法
 
@@ -230,8 +230,8 @@ HiAppEvent eventInfo={"domain":"OS","name":"APP_KILLED","eventType":2, "params":
    * 单击图6处开始执行录制。
    * 应用执行可能发生线程泄漏的业务，等待业务执行完成，停止录制，获得录制结果。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/mmCeXROQT9-OmlNqH4g9HA/zh-cn_image_0000002699878452.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9E5CCACA1DD59DB941D9D10BE099B92AF776F1D3752BC4A09E13DC59CD3B742 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/aRcxngUsSQWs-PsXyIhv4A/zh-cn_image_0000002699878452.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=F868F45DBF63BD54E4B0D8E7A144A165BC5192AA8A2D693EF544A75F14D3393C "点击放大")
 2. 获得录制结果如下图所示：单击下图1处展开Threads泳道，再单击下图2处的Call Trees，即可在图3中查看线程数量。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/KOVuvD-YR0uBNTD7DBgRRw/zh-cn_image_0000002699718588.png?HW-CC-KV=V1&HW-CC-Date=20261114T005135Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F9CBF0CC50F35BD452930D6EA88AE5904933C3025CB1DB8718F97AA738E9B8A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/WcTlV1tOS3GsfJLoeccbUg/zh-cn_image_0000002699718588.png?HW-CC-KV=V1&HW-CC-Date=20261124T044757Z&HW-CC-Expire=31536000000&HW-CC-Sign=9869DBAEBF7FB9E0DCD66CA753C6EE32760040B726AE90110D6ABC7BF78B955D "点击放大")
 3. 最后，发现线程数量异常，通过结合[线程泄漏调用栈日志分析方法](bpta-stability-threadleak-fault-mode-overreview.md#section19835127163117)定位线程泄漏点。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-horizontal
 title: 基于List和Scroller实现双向滚动列表
 breadcrumb: 最佳实践 > 行业场景解决方案 > 新闻阅读 > 基于List和Scroller实现双向滚动列表
 category: best-practices
-scraped_at: 2026-11-14T08:54:12+08:00
+scraped_at: 2026-11-24T12:47:50+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:9fcebeea7c6b624fc6611ed831b8eac2c6643f72ac2de02160aad7cc7913067d
+content_hash: sha256:eb6aa041a568bd21ce79998ce62b04862134e2e7dc1d0ed7029eb24d32ba4867
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:9fcebeea7c6b624fc6611ed831b8eac2c6643f72ac2de02160aad7cc791
 
 然而，当表格需要同时支持纵向和横向滚动（下文简称为双向滚动）时，单一列表组件无法满足需求。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/klgCZtMVRQ22_zY7rUmo9w/zh-cn_image_0000002683157325.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F25FD8C7411B85C996AA923BF2E0536C81A7EEBCC4D4B511D2E1B1470906AE5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/SrBYZbLtR8GgEkyG32qmlg/zh-cn_image_0000002683157325.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=725D7C238DF44A5B4D7A49FA7FE6DFF2F2994E91E26E1C5A3B55AD3AAB03FAA6 "点击放大")
 
 本文基于List组件和Scroller控制器，封装核心组件[DualScrollTable](https://gitcode.com/HarmonyOS_Samples/DualScrollList/blob/master/tableview/src/main/ets/components/DualScrollTable.ets)（双向滚动列表组件）。提供满足基础功能的双向滚动列表解决方案，助力开发者快速实现表格双向滚动功能。
 
@@ -38,7 +38,7 @@ content_hash: sha256:9fcebeea7c6b624fc6611ed831b8eac2c6643f72ac2de02160aad7cc791
 
 列表整体布局结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/rpSNGkyyQFG4VshzXUEl2Q/zh-cn_image_0000002652957852.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=31194006DA12BFB86D4A24224C5F9A8ED77FC94EF75978546A6666614C50C0B3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/ALzHowggQV2fLYkeNz1G7A/zh-cn_image_0000002652957852.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC07A56D0DBB488F85EAF3D890F9BBDD004A2DD5472A21FDCF97E337743ED38C "点击放大")
 
 ### 关键API和模块介绍
 
@@ -52,7 +52,7 @@ content_hash: sha256:9fcebeea7c6b624fc6611ed831b8eac2c6643f72ac2de02160aad7cc791
 
 同步滚动时序图，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/LCd-lI_4Q_Ks4gQ1wmVk9g/zh-cn_image_0000002653117762.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D57B19A976C138E1BD6A7E4935D224AE0EE3F21EBDA43BAEF3773912AF5A285 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Q_xwkQJZRGOSyRD7DsEF3A/zh-cn_image_0000002653117762.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=19AC6E7AF985E9111FCCB6BB1CD5419B097AD1B8ECC20A520986668BC6C4BF15 "点击放大")
 
 * 横向滚动TopList时，通过[onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)回调方法拦截滚动偏移量，调用RightList的[scrollTo()](../harmonyos-references/ts-container-scroll.md#scrollto)方法同步横向滚动。
 * 横向滚动RightList时，通过[onScrollFrameBegin()](../harmonyos-references/ts-container-list.md#onscrollframebegin9)回调方法拦截滚动偏移量，调用TopList的[scrollTo()](../harmonyos-references/ts-container-scroll.md#scrollto)方法同步横向滚动。
@@ -500,7 +500,7 @@ export class BaseTableViewModel {
 
 在股票行情场景中，多只股票的最新价、涨跌额、涨跌幅等指标需要横向排列展示。该场景不启用分组标题和列分割线，表格布局尺寸更紧凑。股票信息表如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/m3OIhfqzS72z7hMN3y6fcQ/zh-cn_image_0000002682997519.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=50F480A0DA5E77F074B6D59D0151CAA629F8C2B2BE13EAB4C6691522664BF974 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/eTsahZmzQ6G6DHrWWB8uug/zh-cn_image_0000002682997519.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBCA06110B01215E02E38168CE8A39D9BB68C6E9F2F74814936283EC14F6E30C "点击放大")
 
 ### 开发步骤
 
@@ -637,7 +637,7 @@ export class BaseTableViewModel {
 
 左侧参数名称与右侧数据行纵向同步滚动，顶部车型名称与底部数据列横向同步滚动。汽车参数表如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/yFd52DOxQVq_MYArxc0ylw/zh-cn_image_0000002683157331.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=08D3527BFD1BF85B660E8A0F5867ECF5272B7802BEBEF564A3085621975A0027 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/zOKQAtdJSfSBnEmljkfcXA/zh-cn_image_0000002683157331.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=83F64549916A7CA239BC6DFABC88E65820ED9D0E3B5B359ACF79FD1742EE9743 "点击放大")
 
 ### 开发步骤
 
@@ -742,7 +742,7 @@ export class BaseTableViewModel {
 
 本示例通过Frame分析结果显示，卡顿帧数为0，滚动过程流畅，无卡顿或掉帧现象。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/E5-73-hGT4iBZsHDwFoNhA/zh-cn_image_0000002652957856.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=69CD00CD903D0129FA62D89E7A5F440ECF74FCB8EECDF9BDBF0E174E321213E9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/ae0-DHsNQ_-yZ4agbEy7IQ/zh-cn_image_0000002652957856.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=9080F455A47DFF5DC823973FC5B4DB3EC4EF15D1DC7C22E0A489C758640BA083 "点击放大")
 
 ## 示例代码
 

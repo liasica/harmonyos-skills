@@ -3,10 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 版本说明
 breadcrumb: 指南 > DevEco Code > DevEco Code Plugin > 版本说明
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:25+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:22236d23e32749ff3436d4c6d378e7aa574463f5264544bf40ce2e5285af82d6
+scraped_at: 2026-11-24T12:42:51+08:00
+doc_updated_at: 2026-11-23
+content_hash: sha256:8084571a05e76afac566ef7757fd1e03f9cb9db8810d3b5890237387e40618bd
 ---
+
+以下为Windows/macOS版DevEco Code插件的版本说明，鸿蒙电脑版的版本说明请点击[此链接](../doccenter-release-notes/deveco-studio-hmos-new-features-2600.md)查看。
 
 ## DevEco Code Plugin 6.1.1 Release
 

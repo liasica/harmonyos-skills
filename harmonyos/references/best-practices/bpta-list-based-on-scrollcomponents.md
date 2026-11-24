@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-list-based
 title: 基于ScrollComponents实现长列表
 breadcrumb: 最佳实践 > 布局与弹窗 > 基于ScrollComponents实现长列表
 category: best-practices
-scraped_at: 2026-11-14T08:54:05+08:00
-doc_updated_at: 2026-11-13
-content_hash: sha256:ad9602ca6fa4abf86d6864cfefb8ae3d01a81a269f21aa468faa6bdac76ab8a4
+scraped_at: 2026-11-24T12:47:44+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:1ccd8f6f2bd260f6bd7e2c8608f1fba6ad52a774d9ed33eacab521d4efb84e2a
 ---
 
 ## 概述
@@ -36,7 +36,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 如下图所示，当节点从可视区域移除时，NodeAdapter会通知视图管理器回收组件，经NodeFactory处理后，组件最终被存入复用池。当需要创建节点时，NodeAdapter通知视图管理器开始创建，NodeFactory会从复用池请求复用节点，获取节点后经过一系列更新和组件拼接，最后由NodeAdapter将节点添加到可视区域。
 
 **图1** RecyclerView整体流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/yORddxXfS7eTiBTGvUdGKQ/zh-cn_image_0000002356692034.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=C27C05C26E81BA213D6D8F7E0C0DCFCC55DAE5B6551E0E2F6EF0FF3D501A89B0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Bff705ZtRGikhhmugA7Srw/zh-cn_image_0000002356692034.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F0E145F4232EA1BBB21D0C37B1C337A8C690A4E96C6B84651D3CB7397EEDAEE "点击放大")
 
 ### 开发流程
 
@@ -149,16 +149,18 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
       }
       ```
 
-      ```typescript
+      ```screen
       @Observed
       export class SameItemViewModel {
-        @Track dataArray: BlogData[] = [];
-        myListManager: ListManager;
+        @Track public dataArray: BlogData[] = [];
+        public myListManager: ListManager;
         // ...
-        loadData() {
+        public  loadData(): void {
           generateRandomBlogData(300, false).then((dataArray: BlogData[]) => {
             this.dataArray = dataArray;
             this.myListManager.setDataSource(dataArray);
+          }).catch((error: BusinessError) => {
+            Logger.error('Failed to load blog data. Cause:' + JSON.stringify(error));
           });
         }
         // ...
@@ -215,7 +217,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
       当组件即将被销毁时，会从视图容器中移除并进入item复用池。当组件即将被创建时，会从item复用池中获取item节点。如果item节点与目标节点类型存在差异，会先将差异部分，即PartReuse中的组件回收到对应的组件复用池，然后从对应的组件复用池中取出目标组件所需的差异组件，并与item节点拼接，形成目标组件，再进入视图容器中。
 
       **图2** 可拆分组件复用创建流程图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/PKbNcERqSZyoEqRg_sc9Ew/zh-cn_image_0000002390372089.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CDBC69D34EA81A24A7075171D889FA2F18AC4F575BA8CF08832FFF259C9E9A5 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Uzc7llk-TeGfpP9aroaZAQ/zh-cn_image_0000002390372089.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DCC19961896FC2828A573EBDD03D050695FAABEB1741C6E94E170028FB6744A "点击放大")
 
       ```screen
       import { ListManager, type NodeItem, PartReuse, RecyclerView, } from '@hadss/scroll_components';
@@ -300,7 +302,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
       开发者可以参考下图所示的日志打印内容，以检验是否成功复用，“generateItem reuse” 表示复用。
 
       **图3** 日志效果图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/i3GD2mchRWWmFfeEz6fVCA/zh-cn_image_0000002356851962.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB4FF23E17F2982E2DB150A00BE50679BA207EDB643B9D00676D7D75E4A5C9B3 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/JYE1g1-XQ56QVVBFRj-Ojw/zh-cn_image_0000002356851962.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=05A97A532916C16ED50D1E11373F8A79CFBA2D37CA1F2A41BF64920923A9467C "点击放大")
 
       **说明** 
 
@@ -389,7 +391,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 在分组场景中，通常会设置Group的header和footer，用于展示组内统一的头部和尾部信息。
 
 **图4** 商品分类列表展示效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/yiSB_TYwSUS9tnBpP81HMQ/zh-cn_image_0000002390452013.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=B23796D4ABC8B95B66B2E16B9176B2E31D1D062674CE3BAB73497CEDCD56084A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ATir9Ng_QqiVO0ibTxR1jA/zh-cn_image_0000002390452013.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=81B882E3B7727AA46ABE9BF87BC3EBFA686866D18C3B51A7C4F732A29408AB82 "点击放大")
 
 ### 开发步骤
 
@@ -585,7 +587,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 开发者可能需要在多个页面间复用List，例如在Tabs切换时。ScrollComponents提供了全局复用的能力。
 
 **图5** Tabs组件子页面跨页面复用效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/G7e65MPrSlS547PjJXVzTg/zh-cn_image_0000002356692062.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=81464873BC75EA45E05143CE2B46224CE2E54442A6AC83B0C5A998A0BBF324FD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ySMjSZ3CQUu3mSnk3V1MnA/zh-cn_image_0000002356692062.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=69EDAB516C5C4B4B93D22D78BEA630A2CE621C17327F9CD5176EA38430897B63 "点击放大")
 
 ### 开发步骤
 
@@ -684,7 +686,7 @@ ScrollComponents三方库底层封装了NodeContainer+FrameNode，结合NodeAdap
 冷启动后首次打开长列表页面时，由于页面包含大量图片或视频等媒体资源，可能会出现白屏或白块，需要等待几秒内容才会逐渐加载出来。ScrollComponents库支持组件预创建，使用后可以在打开页面后立即看到文字和图片的骨架，从而减少卡顿。
 
 **图6** 加速首屏渲染效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Rg7QAhtPSsa0gKcxJU0nKw/zh-cn_image_0000002390372125.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD409CFA5B1125E245C1588C2835FCA296998A25F0493DB16EFBD49ED9E1D74E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/pJ4zai1wS2GamcsOAv165Q/zh-cn_image_0000002390372125.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5062F41EEEBB808BA5E4A19C6D12BCB6B40F01B93BF9DA5CB87E68993AF52C2 "点击放大")
 
 ### 开发步骤
 
@@ -719,12 +721,12 @@ aboutToAppear(): void {
 @Reusable：在网络请求期间，主线程有大段空闲时间，请求结束后首屏组件的绘帧耗时较长。
 
 **图7** @Reusable测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/FLkwT179Qf6Zut4FGxnGPQ/zh-cn_image_0000002356852002.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABB3CFD567992ABD2B0DEAC31BA047C4EB5F849BA764B018ABB821FD7E975AFC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/2pPiEtP6TYG5G5thWhVFqg/zh-cn_image_0000002356852002.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=781892677D422BEF90DB07B8F071AA63E9BABBDA94721023D13166908B989F32 "点击放大")
 
 在ScrollComponents中，网络请求期间主线程空闲时间较少，请求结束后首屏组件的绘帧耗时较短。
 
 **图8** ScrollComponents测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/hE4wsY2CTn2zfD5nzTAEkA/zh-cn_image_0000002390452049.png?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=72E5B0751330453D8D826CC6A6DCCB950BD7ED5FC6398551EC400F84B3767EAA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/2etpy_TRQeaRkhW2uDwNDg/zh-cn_image_0000002390452049.png?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EBCD5AC9C20A310A132604667F2AF30FDB41CFDEF3E5F31B654C0ED13D91675 "点击放大")
 
 **表1** ScrollComponents与@Reusable性能时延数据对比
 
@@ -742,7 +744,7 @@ aboutToAppear(): void {
 下拉刷新是提升用户体验的关键功能，它既要确保数据无缝加载，又要保持流畅的交互效果。建议采用懒加载方式刷新数据，以避免媒体资源加载导致的UI渲染阻塞。实现逻辑可参考[实现下拉刷新上拉加载更多](../harmonyos-references/ts-container-refresh.md#示例6实现下拉刷新上拉加载更多)。
 
 **图9** 下拉刷新效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/yqCpTpbASGi2pTXfZwFtlA/zh-cn_image_0000002356692086.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=965A378B7C7973D0411DCAA1E15E959AFD42DC0A3E03EB30692B600FAD8001FB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/_uXjKOA0QB-DEWv8cLa26A/zh-cn_image_0000002356692086.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8E136897C334C9C2F82790CC491C894E2B300E9F276C5113E1CAD75994A974A "点击放大")
 
 ### 开发步骤
 
@@ -799,6 +801,11 @@ export class DifferentItemViewModel {
       if (callBack) {
         callBack(true);
       }
+    }).catch((error: BusinessError) => {
+      Logger.error('Failed to load blog data. Cause:' + JSON.stringify(error));
+      if (callBack) {
+        callBack(false);
+      }
     });
   }
   // ...
@@ -812,7 +819,7 @@ export class DifferentItemViewModel {
 在开发涉及大量数据的长列表页面时，需要通过分页请求来加载数据。结合ScrollComponents提供的懒加载功能，可以实现加载更多数据的效果。
 
 **图10** 上拉加载效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/CU_S-rZYS5inHvuNm8N7Fg/zh-cn_image_0000002390372141.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E40725F5533019E277159CD1E0E1386880A1C50F59F8FA54ECFADB9DD448012 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/xpvbe0iiQMulqaKRRHf8_g/zh-cn_image_0000002390372141.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=16355F4D5E0454E51978A14364BA527B1FCAE814FE7A735D6D747450813CF0BE "点击放大")
 
 ### 开发步骤
 
@@ -895,6 +902,12 @@ export class DifferentItemViewModel {
           if (callBack) {
             callBack(true);
           }
+        }).catch((error: BusinessError) => {
+          this.isLoadingMore = false;
+          Logger.error('Failed to load blog data. Cause:' + JSON.stringify(error));
+          if (callBack) {
+            callBack(false);
+          }
         });
       }, this.networkTime);
     }
@@ -915,7 +928,7 @@ export class DifferentItemViewModel {
 以下介绍具体的使用：
 
 **图11** 无限滑动效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/mdVwBzAMTRiqvABgbOBFXA/zh-cn_image_0000002356852014.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2C465DBD6D6D1E49FA4C19C146AA4C82AA5E28C7C34A6A7F392EAA74B1F7DF8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/8hlNMFY7RpCHYlu6x2EvnA/zh-cn_image_0000002356852014.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=64ED8412E81D03D174CA5EB85387F7211EEA4C0FFA67082A1FF7CD5ACB3BA132 "点击放大")
 
 ### 开发步骤
 
@@ -1105,7 +1118,7 @@ export class DifferentItemViewModel {
 侧滑菜单在许多应用中十分常见。例如，在通讯类应用中，通常会为消息列表提供侧滑删除功能，即用户可以通过向左滑动列表中的某一项，然后点击删除按钮来删除消息。
 
 **图12** 侧滑删除效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/0fLuG2VvTiGV4Bq-xRCj3w/zh-cn_image_0000002390452057.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=18021DDF5CF67D6223555F2DBB73B7F0E4E4519252EEE65D51DA94F0E7DC9DF7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/RHhLn9aoRWiYni6-d0I2Ug/zh-cn_image_0000002390452057.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CD8F0483D1A8992F581C5FEB87C314E1BE629E7F42FEB3D0DFF6C185B922897 "点击放大")
 
 ### 开发步骤
 
@@ -1259,7 +1272,7 @@ export class DifferentItemViewModel {
 List组件作为整个首页长列表的容器，通过ListItem对不同模块进行视图界面的定制，常用于门户首页、商城首页等多类型视图展示的列表信息流场景。多类型列表项场景（List+ListHeaderView）参考：[多类型列表项场景](../doccenter-capabilities/arkts-common-list-flow.md#多类型列表项场景)。
 
 **图13** ListHeaderView滑动效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/4Kl_CK50STedDf8bumqEEA/zh-cn_image_0000002356692098.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=D70C78DCF70475AF108439632D519616E8A9C1AD7E592DC64FAC005359125DEF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/PcMp-zbsTCuAOi41f30NKg/zh-cn_image_0000002356692098.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=523E6A01E1F433766C4833EFFDFD46352F9D3D7362FFA2D91A932117DBD9291E "点击放大")
 
 ### 开发步骤
 
@@ -1335,7 +1348,7 @@ ScrollComponents中采用了FrameNode实现并自动管理数据源，可通过S
 Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长列表Tabs吸顶功能参考：[Tabs吸顶场景](../harmonyos-guides/arkts-common-list-flow.md#tabs吸顶场景)
 
 **图14** Tabs的TabBar吸顶效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/R5mvL8kERKSZ3ZpAPp4O8Q/zh-cn_image_0000002390372145.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=150AF06D7012523A02E775C51E0C31DAE40E495B8B9AD6FD387EF841144A6FD2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/rB1UGQSoS8StU6vSfM9Uwg/zh-cn_image_0000002390372145.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=B28F41CA3F79F5A079C0D6665DC42617B7B53A4C7AB386BEBA39F868E643F1BE "点击放大")
 
 ### 开发步骤
 
@@ -1454,7 +1467,7 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
 本案例实现商品分类选择页面列表头部分类吸顶效果，如下图所示。
 
 **图15** 分组布局组头吸顶效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/V5stFNPWTnCi3nJPuXm47g/zh-cn_image_0000002356852018.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A6E06F218F80A00FACA3758B942792C5B76C0A7D5B350DC51EEFE6B6027067A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/S9jBhb49SSqtmUac_6KQ0A/zh-cn_image_0000002356852018.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=17DAC6861B1E2941840A29F8B2AB0CB69494EFB99622423F74C4D967E7BC3010 "点击放大")
 
 ### 开发步骤
 
@@ -1530,7 +1543,7 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
 本场景以商品分类列表页面为例，分别使用List组件展示左侧分类导航和右侧导航内容。进入页面后，点击左侧分类导航，右侧将展示对应的分类详情列表数据；滑动右侧列表内容时，列表标题将吸顶显示，同时左侧对应的导航内容高亮显示。
 
 **图16** 长列表二级联动效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/EbAXo-MBT0e9AbgdY29L8w/zh-cn_image_0000002390452065.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B68E319A7CD403F20E5FCF774C6C0C2AF7F4C931BE96A2C958EF9C8C5A45263 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Dl2OXVsaTmGPvsqs9WKM6A/zh-cn_image_0000002390452065.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=C269F1BCF32482F8CDCB0055BFDB12DAB9300F9DD96E2C28CFAF60A31CEAEB7C "点击放大")
 
 ### 开发步骤
 
@@ -1624,7 +1637,7 @@ Tabs嵌套List的吸顶效果，常用于新闻和资讯类应用的首页。长
 当设备在横屏和竖屏之间切换，或折叠屏在小屏、中屏和大屏状态之间切换时，长列表的显示列数将根据当前屏幕宽度进行调整，以展示更合适大小的Item。
 
 **图17** 动态切换列数效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/FztypilpTbKo4MDIKqYZug/zh-cn_image_0000002356692102.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=936278655DB555032B715AD68E5D2D5B6630929148BF6EFBBA12511BA1F69D79 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/GZqPm6eFQemdC4gC5mL9WA/zh-cn_image_0000002356692102.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C1C422305AF71002A7ED565ECCC554111539713D6CEFFB595EB84CD2659F173 "点击放大")
 
 ### 开发步骤
 
@@ -1689,7 +1702,7 @@ struct SameItemListPage {
 通过设置[fadingEdge](../harmonyos-references/ts-container-scrollable-common.md#fadingedge14)属性来实现边缘渐隐效果，效果如图所示。
 
 **图18** 边缘渐隐效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/9h13CIKyTOKN7mG7iwV7Gg/zh-cn_image_0000002390372153.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005122Z&HW-CC-Expire=31536000000&HW-CC-Sign=64A76DC8B78D2ADC23C9B38915EA2DA3A14897BC7BF7662752A07227B25311A3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/EjHQsoIDQgeRcURQI62tQg/zh-cn_image_0000002390372153.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044744Z&HW-CC-Expire=31536000000&HW-CC-Sign=76720F8503EEF45D80BBAF21106538C050D72921D641452F8CA7448F37425AE3 "点击放大")
 
 ### 开发步骤
 

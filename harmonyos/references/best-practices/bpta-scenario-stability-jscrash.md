@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: JS Crash类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 应用异常退出类问题案例 > JS Crash类问题案例
 category: best-practices
-scraped_at: 2026-11-14T08:54:22+08:00
+scraped_at: 2026-11-24T12:47:59+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:c8fa7200772f98461832b638312c0d684849535d02a1e37d3b426c05a8544db3
+content_hash: sha256:c26cd655b55632d240ccc7426154009e11186904b49ce113c22a4f52ee9f8d84
 ---
 
 本文将基于当前开发者所遇到的高频JS Crash故障进行案例介绍。开发者可阅读[应用崩溃类问题检测方法](bpta-stability-runtime-crash-detection.md)了解系统检测JS Crash问题的原理和机制，阅读[JS Crash类问题分析方法](bpta-stability-app-crash-js-way.md)了解分析JS Crash问题的一般步骤。
@@ -453,7 +453,7 @@ throw new Error("TEST JS ERROR")
 
 通过DevEco Studio的FaultLog工具可收集到此类异常日志，其中JS异常栈信息可直接定位到抛异常的代码位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Ei08SC3vTrqbDmWI5iSyEQ/zh-cn_image_0000002370565640.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=516F163012968AABBB7458E5C157BB5C870ED034C079BA34DF68A0549C532905)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/YweBAeF4SIeyiLSUDan2EA/zh-cn_image_0000002370565640.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=5979792CA822F1256346AC263643C95FDD2E1963D71484B8CE5834AEDE2A70BE)
 
 这类问题可通过故障日志定位到具体的代码行，检视上下文来分析问题即可。
 
@@ -570,13 +570,13 @@ Cannot get SourceMap info, dump raw stack:
 
    在方舟虚拟机采用的是标记清除法回收内存，内存是通过维护一棵树来管理的，这颗树的根节点被称为GC Root，ArkTs对象只要被挂载到这颗树上则说明该对象存活。很多刚接触内存的同学可能会对GC Root产生误解，认为挂在GC Root上的对象是需要被回收的，而根节点之所以叫GC Root是因为标记清楚法在标记阶段，垃圾收集器从GC Root开始遍历。所有从GC Root可达的对象都会被标记为“存活”。在清除阶段，垃圾收集器会扫描内存中的所有对象。如果某个对象没有在标记阶段被标记为存活，那么该对象就是“垃圾”，可以被回收。垃圾收集器会释放这些未标记对象所占用的内存空间。每次GC都是从根节点开始，所以根节点被称为GC Root。该树的快照如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/l6u16XeQS2GML4rMO2k9Xg/zh-cn_image_0000002425122964.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=B155A7B10F4D7FC69524523F325298F2D4A8CC284867341E3A184F6AFA72ECD2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/_REJd1-2QYWdW-m_l850VQ/zh-cn_image_0000002425122964.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0AA3601EA6BFA7A84AEA5058B0FD24EDD1703D67452A06DF1B2AA3553D5D5A9)
 
    ArkTs的对象是存在引用和被引用关系的，图中箭头指向的都是被引用对象，所有存活的对象都直接或间接被GC Root所引用，从GC Root到被引用对象的路径为该对象的引用链。因此，解决内存泄漏的关键就是在于将对象的引用链在合适的地方（结合业务判断）断开。
 
    * 如下图，distance为1的时候为js\_proxy，没有被具体的应用的jsobject对象持有，下面就介绍下这些对象如何分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/UdLQA-1sTzWvq5KEGFY-FA/zh-cn_image_0000002425282796.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=F987190C365093642D55A1563758EED3891D075AD9AEF97AE30E3D1501CA422E "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/y7Hwf4jVRDqiHUcrMKJi2w/zh-cn_image_0000002425282796.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=52E8B5BB29F2F8385AF35EE1B16A2176F9B91FAFD8AC2C8DFE034D621B67AEA4 "点击放大")
 
 **场景构造：**
 
@@ -638,15 +638,15 @@ static napi_value TestLeak(napi_env env, napi_callback_info info) {
 
 demo构造完成后，下面进行堆快照测试，在不点击前拍摄一个堆快照，点击7次后再拍摄一个堆快照，然后对比Snapshot1和Snapshot2看一下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/CNY4uoS6TKOvHhf9jshvkw/zh-cn_image_0000002458681541.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBA51B007AF058122D8307AE1D1CF054E4E763684A2C40635D3A2E783EA4383D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/7TsV2G7gTfiy14uFESsFmg/zh-cn_image_0000002458681541.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=B017C52151DDB92417311BFB1B458822DA3341A5D5B8AC353F9C0DE6E0869E39 "点击放大")
 
 在两个快照对比的结果中，我们可以看到Proxy的Delta（New/Delete）显示为7/0，这表示有7个对象被创建，但均未被释放。再进一步查看Proxy相关的属性，展开它的fields，可以看到它的target是一个叫testYY的function，它的handler是一个JSObject。通过这两个属性，就可以结合应用代码分析这个Proxy在哪创建的，在哪传入native的，再分析native的函数哪里存在内存泄漏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/9qsOGHggTBy1LRmrkr08MA/zh-cn_image_0000002497762978.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2F5EFFC9CBA2736CC6D31061F236963BEFD64BF80D60B41812CD1F6467F9482 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/3v0G4PerSPCyozbe3wWzqw/zh-cn_image_0000002497762978.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE4D4883FAA143CB1CC8AF871F16238BAA67B4C6B78680BF9B8EE52D458D8C8F "点击放大")
 
 下面查看testYY的引用链，testYY被Proxy持有，这与背景中的引用链相符，只是该引用链较长，未在testYY中调用其他方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/rjU8oJQ3TSeQhtbWXd48Aw/zh-cn_image_0000002425122976.png?HW-CC-KV=V1&HW-CC-Date=20261114T005422Z&HW-CC-Expire=31536000000&HW-CC-Sign=B46E682797506DC5AF348136A5C57846532CD224202BD0435B5BB9A912641333 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/8bzf2QLNSwabPwvAgAEvlg/zh-cn_image_0000002425122976.png?HW-CC-KV=V1&HW-CC-Date=20261124T044759Z&HW-CC-Expire=31536000000&HW-CC-Sign=025F3B04FDFC145DF0E1D9D8F5FBDED99E81A0D2FDA6F5FBC9B15EBF0F277DB4 "点击放大")
 
 ### 建议与总结
 

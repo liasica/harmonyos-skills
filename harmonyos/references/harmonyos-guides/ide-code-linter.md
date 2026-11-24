@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-lint
 title: Code Linter代码检查（ArkTS/TS）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查（ArkTS/TS）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:48:50+08:00
+scraped_at: 2026-11-24T12:42:22+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:1eac6cc68fa62a79ef4cf897c11ca525842bfea0005aa1cd982416d19d3f8889
+content_hash: sha256:5c1ff2686898c6d7206d480f3eedbe55ce7247f2f73c9f490dbe8fd3f5b3174b
 ---
 
 Code Linter支持对模块内文件或文件夹中的代码进行最佳实践/编程规范方面的检查。检查规则支持配置，配置方式请参考[配置代码检查规则](ide-code-linter.md#section19310459444)。
@@ -117,11 +117,11 @@ Code Linter支持对模块内文件或文件夹中的代码进行最佳实践/�
 
 在已打开的代码编辑器窗口右键点击**Code Linter**，或在工程管理窗口中鼠标选中单个或多个工程文件/目录，右键选择**Code Linter** **> Full Linter**执行代码全量检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/m4lfkD6ZSZaFMIbwiNcPSA/zh-cn_image_0000002808767015.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB068ABFFC83D7973D4D7EF9D0FEB8C9751D0CB3082C4CAB9679EAD3770EA50D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/i5xOB9NeQOmq6s7AkEd3WQ/zh-cn_image_0000002808767015.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=40AA12F5933EB42D629817DA39A1B792D549295F554FA1FB9105B1485B459F2F)
 
 如只需对Git工程中增量文件（包含新增/修改/重命名）进行检查，可直接右键选择**Code Linter** **> Incremental Linter**，或先点击commit界面右下角点击齿轮图标，勾选**Code Linter****-****Incremental** **Check**后，再点击**Commit**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Wt-Ewk7tSIWFtrf2cElo5w/zh-cn_image_0000002808887103.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=891A3457BFE5E6E8F72F7EAACF22892FE08F8E86F483F9DC56BD57369EE6ED69 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/5cCI2RzcR0GUpVmoInib8w/zh-cn_image_0000002808887103.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=10BF1B2523CD55229BFE82275F6CE938ED3168D2F36AC92361B2CCC93E790D57 "点击放大")
 
 **说明** 
 
@@ -141,23 +141,23 @@ Code Linter支持对模块内文件或文件夹中的代码进行最佳实践/�
 
 扫描完成后，在底部工具面板查看检查结果。勾选**Defects**中不同告警等级，可分别查看对应告警级别的信息。点击**Filter by scene**下拉菜单，可以筛选不同规则的检查结果。双击某条告警结果，可以跳转到对应代码缺陷位置；选中告警结果时，可以在右侧**Defect Description窗口**查看告警对应的规则详细说明，其中包含正向和反向示例，并根据其中的建议修改代码；搜索规则时，可设定是否全词匹配和大小写敏感。
 
-单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/kuq2NYsLQQ-TWceniP4tbA/zh-cn_image_0000002808767021.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CCCEF74983FD23A82FF77F19CD80447BF0E9FCA7A74235C62E2C4C39578AB04)图标，查看可修复的代码规则，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/KZVlE4BjQmS9kjA4rN2oOQ/zh-cn_image_0000002808767019.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7B08805BEB8DC0B64FB3BCDE0730519D36287335038A593337B5C2FD45ED137)代码修复图标，可以一键式批量修复告警，并刷新检查结果。
+单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/mXvFJNiLSSOaxRmgTKcqZw/zh-cn_image_0000002808767021.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=28DE3B6908A9A8242D335C087CF4BBF7E9F540B4D78AF72657106EA8926E9294)图标，查看可修复的代码规则，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Q5fOQ3M7SWW5z3rQB_My6A/zh-cn_image_0000002808767019.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FFE886A1A391F56558E00D566D11EFB3BEC61B2CAB69E46868E05FD7AFB53DA)代码修复图标，可以一键式批量修复告警，并刷新检查结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/PYeNQLypTtWqOuULC3IIyw/zh-cn_image_0000002779567444.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=801C76B8936B1E5C6DB2E15756845874C7B0AD56B30BFC948C0262D8DCBACCD0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/ljHyVNaoSiqoJwpGO8fyuA/zh-cn_image_0000002779567444.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AE60314E56C0E3A3A11833683BF61EE6417CEDA5EC99375582EA08E51C45AE7)
 
 **屏蔽告警信息**：
 
-* 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/GjlIIpoxRneR3DG3KMNT4g/zh-cn_image_0000002808887097.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BA84F8043EE4BC2383EF6CDCD92F146BF22509E46F803DA7BC9A073EF16585B)**Ignore**图标**，**可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板**Ignore**图标批量执行操作。
+* 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/_CNsPp19SDODwCIL0HDaHA/zh-cn_image_0000002808887097.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=62FF59D4302D207A3C4618F67CC032A9E3CC8D28473359849BCA38BE207C92A9)**Ignore**图标**，**可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板**Ignore**图标批量执行操作。
 * 在文件顶部添加注释/\* eslint-disable \*/可以屏蔽整个文件执行code linter检查，在eslint-disable 后加入一个或多个以逗号分隔的规则Id，可以屏蔽具体检查规则。
 * 在需要忽略检查的代码块前后分别添加/\* eslint-disable \*/和/\* eslint-enable \*/添加注释信息，再执行**Code Linter，**将不再显示该代码块扫描结果；在待屏蔽的代码行前一行添加/\* eslint-disable-next-line \*/，也可屏蔽对该代码行的Code Linter检查。
 
 如需恢复忽略的报错信息，可以直接删除该行上方的注释，重新执行**Code Linter**检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/avlIrPy4TdWUMYyE8gnarA/zh-cn_image_0000002779407468.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=619E3DAE1C33A33F84C2AD491606C53260B402DAA8341D4AF73E2F6E676A24DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/gd3KqllRQlS69qbfMOMA9w/zh-cn_image_0000002779407468.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C5C2083CF3D3B1ED1A9B82387B7250F44DE61D8D206470871223F496ACD19F3)
 
-**导出检查结果**：点击工具面板左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/v0WeJ2C2S8WkC7dZK0jtYA/zh-cn_image_0000002779407466.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=341DEBDC3432D5FEE874A61E17D06689BD83456833E5081860AB89624D4B6CD6)导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
+**导出检查结果**：点击工具面板左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/R3zA0LONRj2go26XRkExIQ/zh-cn_image_0000002779407466.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EF729AB151ED32A733FC64672F3E727500479F19BCDFF212E2D64560DADAFC2)导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/vkOTp2lbSV2ZxljX4ygJyQ/zh-cn_image_0000002779407460.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=40E8BF07F708F27405CD77B0971461F489066D4E60039947DC3832340E85A251)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/dj84r3JgSlOQTSBxDJ22rg/zh-cn_image_0000002779407460.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F0863DA3EBF38E3240227674DEB0D06307E930FD54FCF9C6C5E212E94C315F0)
 
 ## 通过命令行进行代码检查
 
@@ -223,7 +223,7 @@ Foo.bar();
 
 对pages/Index.ets文件执行代码检查，检查结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/5vZ5vpaiT8yjoblKAqSX0A/zh-cn_image_0000002808767023.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF5E677472FC2C5D883982B0AA4985E4027BEC4A2DD1BD1297A3D32027238416)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/aWYViistSlepawwcF5F-zw/zh-cn_image_0000002808767023.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F76CCB40D7DA8F13D31D77C3FFA53CC397BC15F50E7C709A00C151B9CD6CA57)
 
 ### 示例2：对类名Foo的命名风格校验
 
@@ -283,7 +283,7 @@ class foo {    //此处构造一个命名风格错误的示例，foo为错误使
 
 对pages/Index.ets文件执行代码检查，检查结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/sS2WE0pMSmyN8mInHc-5hQ/zh-cn_image_0000002808887095.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9D9060E994DB2ABE429E21B30467310A2C540CE68B962CEC4D7CF6BF4646014)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/dlNEONCBRrKHdMVFBxHatw/zh-cn_image_0000002808887095.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5D0C407C51A85B56755ED933C8AA70894BC21D1AB84BCA4CC742F964DA67A92)
 
 ### 示例3：检查代码文件的命名风格
 
@@ -318,4 +318,4 @@ class foo {    //此处构造一个命名风格错误的示例，foo为错误使
 
 对pages/test.ets文件执行代码检查，检查结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/fLAczSrGTxq-tEwv5xiCbw/zh-cn_image_0000002808887101.png?HW-CC-KV=V1&HW-CC-Date=20261114T004704Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BCB5260D24A0E64861CDF616F817562AD8C77FE18E745F73E33311509A6C073)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/XHgujuy0Sy-KjnVw3vTcGg/zh-cn_image_0000002808887101.png?HW-CC-KV=V1&HW-CC-Date=20261124T044222Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FD87109725A9BC7FB1FD112A5BD3137E2517EE2F0CCC31E8F48CED3C802362B)

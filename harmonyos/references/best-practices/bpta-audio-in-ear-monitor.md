@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-in-e
 title: 基于Audio能力实现音频耳返
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于Audio能力实现音频耳返
 category: best-practices
-scraped_at: 2026-11-14T08:54:07+08:00
+scraped_at: 2026-11-24T12:47:46+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:07ee059f6ff3ba8d045c97ff1a8b7d4f1f902a2e04f80a73e7b77fa9a3fa574f
+content_hash: sha256:4cb9dd60e20cb34eb1608e1601ebc287de6ed9bf19ace02c2797515fb7d7eb43
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:07ee059f6ff3ba8d045c97ff1a8b7d4f1f902a2e04f80a73e7b77fa9a3f
 
 点击进入AudioLoopback页面，连接有线耳机，点击录制按钮开启耳返。开启耳返后开发者可通过麦克风在耳机中实时听到自己或周围的声音，同时进行耳返内音频的录制，并且可通过Slider滑块实现耳返音量调节功能。录制完成后进入播放页面，播放录制的音频资源。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/iP1vOIr7RTKlwnzksTtB7g/zh-cn_image_0000002544829543.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=972F826096E768ED5F53321A31ABBCAE7D45FB5138DB13520B9DCA6D0D5CCFCD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/BICIMvDoRj6DRV_ilVR37A/zh-cn_image_0000002544829543.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=02140D571E406213B26735C509DDAD0C6C10750A1ED5D3113C114B6BF13F2BFB "点击放大")
 
 ### 实现原理
 
@@ -39,13 +39,13 @@ AudioLoopback是HarmonyOS提供的音频返听接口，用于实现低时延耳�
 
 AudioLoopback的状态变化如下图所示，在创建AudioLoopback实例后，调用对应的方法可以进入指定的状态实现对应行为。同时需要注意的是，在确定的状态执行不合适的方法，可能导致AudioLoopback发生错误，建议开发者在调用状态转换的方法前进行状态检查，避免程序运行产生预期以外的结果，详细开发指导请参考：[实现低时延耳返](../harmonyos-guides/audio-ear-monitor-loopback.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/tGl2QnNrTpqztnMqAUVY8g/zh-cn_image_0000002513149636.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=3412DDA851374AEBFB4FA76E2FA9E9E3350FD07FED0E96993DB1311C9D08E5E1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/w-i2aH7GTCy-Al3F44jAHA/zh-cn_image_0000002513149636.png?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=976ADD7BC1137B41BC3C1F707A57A3371C15A2CAC7B85140DF93C1A1B7B24281 "点击放大")
 
 ### 开发步骤
 
 使用AudioLoopback控制耳返的开启和关闭，结合AVRecorder（参考[Interface (AVRecorder)](../harmonyos-references/arkts-apis-media-avrecorder.md)）实现音频的录制，将录制的音频保存在应用沙箱目录，并通过[@ohos.file.fs (文件管理)](../harmonyos-references/js-apis-file-fs.md)打开录制的音频文件，再通过AVPlayer（参考[Interface (AVPlayer)](../harmonyos-references/arkts-apis-media-avplayer.md)）实现已录制音频的播放控制，详细流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/7KcjzvwTQEirgsbaSV3w-w/zh-cn_image_0000002513309570.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C7A661A5A08CAE50DCFED91BD7DF58850239A4A46D4D2FAA907889188498CEE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/aQK0-oBbRamBJZ-feGFVrQ/zh-cn_image_0000002513309570.png?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BC712796FFF033571CCC5BB9FAD7D2E5B8F31DACE3105583EBB961304A0B9E1 "点击放大")
 
 具体开发步骤如下：
 
@@ -492,7 +492,7 @@ AudioLoopback的状态变化如下图所示，在创建AudioLoopback实例后，
 
 点击进入OHAudio页面，连接有线耳机或蓝牙耳机，点击录制按钮开启耳返。开启耳返后开发者同样可以通过麦克风在耳机中实时听到自己或周围的声音，并进行耳返音频的录制，以及可以通过Slider滑块实现耳返音量的调节。录制完成后进入播放页面，播放录制的音频资源。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/RYoFklGnRWK4zPuVQYynaw/zh-cn_image_0000002544789547.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0DEC5857142902A0F20DC6DA1971A396B0592F0267058D3492979457386B79F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/tIV-uOVJSoi5-GttfMBdDA/zh-cn_image_0000002544789547.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1DF045DF5D9C1778B518FB8F125A817CFAD0CF555B6004D94FE725A24A29406 "点击放大")
 
 ### 实现原理
 
@@ -501,7 +501,7 @@ AudioLoopback的状态变化如下图所示，在创建AudioLoopback实例后，
 1. 通过native\_audiocapturer采集麦克风数据，并将数据写入到音频录制与播放间的数据中转区，即音频的公共缓存中。
 2. 读取音频的公共缓存，通过native\_audiorenderer播放音频，实现返听。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/_P1w_L9ORXS60ahJSbKMQw/zh-cn_image_0000002544829551.png?HW-CC-KV=V1&HW-CC-Date=20261114T005407Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E8964C8E5A10E24384CBAA460ABA07F3DEE361F370B1AC9B350573444C61A3D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/c2W39uMkS5-pZpeThWRfnA/zh-cn_image_0000002544829551.png?HW-CC-KV=V1&HW-CC-Date=20261124T044745Z&HW-CC-Expire=31536000000&HW-CC-Sign=F97CEBFE2B6F3BAAA056255330285B4CBDBD534EF2E0B6A27C9C6A5826F0FCCF "点击放大")
 
 ### 开发步骤
 

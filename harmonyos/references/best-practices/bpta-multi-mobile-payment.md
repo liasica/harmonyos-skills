@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-mobi
 title: 多设备移动支付界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备移动支付界面
 category: best-practices
-scraped_at: 2026-11-14T08:54:09+08:00
+scraped_at: 2026-11-24T12:47:49+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:7a89eb062192eefa551c8098d8ba37226762ade8c11e47b47f04e7436f6d5d41
+content_hash: sha256:215ea582335a2bcd58d41222ba054bf1933b0820b024eb95d2991323169ec190
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:7a89eb062192eefa551c8098d8ba37226762ade8c11e47b47f04e7436f6
 
 移动支付应用的UX设计可参考[移动支付类](../design-guides/mobile-payment-0000001957421613.md)多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/igAfyeJvQciEWrYq-jmWlA/zh-cn_image_0000002583509660.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=C43B76F44725D5FF7D4C602234467F6054EE67536D81F43CF6CD5F2132EB6822 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/hMmMehuOQCCJyGiW1rflVQ/zh-cn_image_0000002583509660.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A17C3D585D16A7B6B994B98888054A3A5CFB87D4DF83B7BB414BBE5E31686B4 "点击放大")
 
 ## 工程管理
 
@@ -231,7 +231,7 @@ content_hash: sha256:7a89eb062192eefa551c8098d8ba37226762ade8c11e47b47f04e7436f6
 
 电脑端推荐页与移动端推荐页内容基本一致，差异点在于，移动端使用底部页签进行内容视图切换，电脑端使用侧边栏进行切换。按照模块，将推荐页相关内容划分为2个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/pZdn6WstQkiZwT1oyiHtKg/zh-cn_image_0000002614029343.png?HW-CC-KV=V1&HW-CC-Date=20261114T005125Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7E3DADE2AFC88BEE38AC7076920B204294D03E14CF91490B22F9FF36D1DF0FD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/gy_slQzrSBCWlo4gqyk2hQ/zh-cn_image_0000002614029343.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DE85E590317712B74EFEF9F7884E68DD8F1FD36F645012FCDDB49362E86AC95 "点击放大")
 
 **界面开发**
 

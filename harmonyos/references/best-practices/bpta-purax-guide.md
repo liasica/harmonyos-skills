@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-purax-guid
 title: 阔折叠/阔直板应用开发
 breadcrumb: 最佳实践 > 多设备体验进阶 > 手机 > 阔折叠/阔直板应用开发
 category: best-practices
-scraped_at: 2026-11-14T08:54:11+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:0f334a798111d1fac16e122320d87e4a99207b0b2951ec98ebe3d8e099925d7e
+scraped_at: 2026-11-24T12:47:49+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:7531847d08cd390795c83223ec09b0fd7d1e6a8f224cb0f3dda84674cb7b85d7
 ---
 
 ## 概述
@@ -107,7 +107,7 @@ content_hash: sha256:0f334a798111d1fac16e122320d87e4a99207b0b2951ec98ebe3d8e0999
 
 以Pura X Max产品为例，该产品外屏高度小于直板机，在用户滑动浏览内容时，自动隐藏底部导航栏与顶部标题栏，可最大化可视区域，提升有效信息的呈现面积。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/9f7W1WdBSNGusJ6TZ3ZxqQ/zh-cn_image_0000002585466452.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=922E88925565AAFA6A5083F12063B63C531AFDC91B3D2CFE70EB673C435BEA36 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/45KJURXdQL6_iKnX7720vQ/zh-cn_image_0000002585466452.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=26BD5F1DF19D0F8EBEFECD26C0E4E7D9B5CEED00CBBC354738157EC035510B19 "点击放大")
 
 将导航栏与标题栏的高度、透明度设为变量，通过监听滑动动作并根据交互实时改变变量值，即可达到预期效果。详细实现可参考小方形屏[布局设计与实现](bpta-multi-device-screen-layout.md#section13926555601)的沉浸式浏览章节。
 
@@ -124,13 +124,13 @@ content_hash: sha256:0f334a798111d1fac16e122320d87e4a99207b0b2951ec98ebe3d8e0999
 
 **1.智感握姿**：系统提供感知用户当前握持手信息的能力，应用可依据获取的手部信息，自适应调整核心交互组件的显示位置，有效提升用户单手操作便捷性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/jIf2FhCARIK-5mNvaX25Ng/zh-cn_image_0000002585626390.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=58BADB18DC9B470F5AACEC89CFE22962205585E8219B6D48B2483CC9ABB910EE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/g902ahWzTpefVMs4euwjmw/zh-cn_image_0000002585626390.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E0E2993405959B39C6FCFB2C17E2B910F5D2B26A5868126697E2D4AF9ACD2A2 "点击放大")
 
 通过订阅握持手状态变化感知事件[motion.on('holdingHandChanged')](../harmonyos-references/js-apis-awareness-motion.md#motiononholdinghandchanged-20)，获取到握持手信息后，更改组件的显示位置。
 
 **2.跟手弹框**：设备展开状态下，屏幕中间的弹窗组件手指不易触达。采用跟手式弹出设计，让弹窗在点击位置就近唤起，可降低操作难度，提升交互效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/DUTtJhu-Tm-YHlxAVYiJGQ/zh-cn_image_0000002615986115.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=38542FD1307DA1EC465B2530D13C9D37A9B6D0E0BD27595669F707336C3C082B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/wpTD56KYQFu6NwninzeW1A/zh-cn_image_0000002615986115.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB6E2F2BB8E5B10359CD6595A534CE03ECD1965A66CA9BE834D0DBF8A7DDD7FA "点击放大")
 
 构建UI布局时，可通过条件表达式判断：当横向断点为sm时，使用普通居中弹框；否则，使用跟手弹框[PopoverDialog](../harmonyos-references/ohos-arkui-advanced-dialog.md#popoverdialog14)，提升大屏设备的操作效率。
 
@@ -140,9 +140,9 @@ content_hash: sha256:0f334a798111d1fac16e122320d87e4a99207b0b2951ec98ebe3d8e0999
 
 ### 悬停态适配
 
-以Pura X Max产品为例，该产品悬停态支持设备平稳放置于桌面，实现免手持体验，常用于视频通话、视频播放、拍照、听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并对上下两个界面进行悬停态布局适配。
+以Pura X Max产品为例，该产品悬停态支持设备平稳放置于桌面，实现免手持体验，常用于视频通话、视频播放、拍照、听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并对上下两个界面进行悬停态布局适配。开发详情请参考[自定义实现悬停态](../doccenter-multi-device/bpta-folded-hover.md#section4691264319)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/-OsxsPVARxOxGM1QN7L4Qg/zh-cn_image_0000002616066279.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F5359AF95CEC550D2847D23F9698C7732A8D308FD844946DE69A951A84DC293 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/KU_cjt-mTsKsxv8VOasa4Q/zh-cn_image_0000002616066279.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1C10DDB2DF7E4D28B521D333800511F8136CDE04F97902BD07D3A72DCE56EAC "点击放大")
 
 ### 开合适配
 
@@ -154,19 +154,19 @@ content_hash: sha256:0f334a798111d1fac16e122320d87e4a99207b0b2951ec98ebe3d8e0999
 
 借助[HdsTabs(底部页签)](../harmonyos-references/ui-design-hdstabs.md)组件的[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性实现悬浮导航栏，并通过悬浮材质参数[SystemMaterialParams](../harmonyos-references/ui-design-hdstabs.md#systemmaterialparams)配置透明磨砂材质效果，能有效提升可视区域面积。此外，为增强界面的可玩性与功能延展性，可接入[HdsTabsMiniBar](../harmonyos-references/ui-design-hdstabs.md#hdstabsminibar)组件，在导航区增设一个可扩展迷你标签栏。该组件可在不占用过多空间的前提下，提供额外的导航维度或快捷功能入口，丰富用户交互路径，进一步提升界面操作的灵活性和趣味性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/doJ8OczkRWGy6FjY-Cod8Q/zh-cn_image_0000002585466534.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=62D5C9CC289106AEB343B9C34E0115B117AEAD39A398BD6995AFEB8FF35EBD76 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/_WZJx3SiQwmz5u-a47i68A/zh-cn_image_0000002585466534.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=E27F0572AD7F795A43C8E416CEA1A6405DE3287A3A6F1FE8E87AD06B313C1AE4 "点击放大")
 
 ### 视频自适应沉浸
 
 以Pura X Max产品为例，该产品外屏高度小于直板机，为避免视频播放画面出现异常拉伸、过度裁剪等问题，可通过自适应沉浸全屏播放方案，精简界面元素、减少视觉干扰，让用户聚焦视频画面，有效提升观看体验。具体实现方案，可参考[视频适配不同尺寸屏幕](bpta-multi-device-screen-diff.md#section1452572513130)章节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/53kD5tRERy2_mRDID8xgMw/zh-cn_image_0000002585626472.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B45AEFA6C5B8305EA5169994842A2933B0C62741166C919498854A227B74D42 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/a3HKpKFGSlaNGIv8a-xIyQ/zh-cn_image_0000002585626472.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E7037879BCA6F12674691391EB83E2873606E99EB08F155FDE6A642FD6C500C "点击放大")
 
 ### 全景多窗
 
 [全景多窗](../harmonyos-guides/multi-window-intro.md#全景多窗)旨在帮助用户高效处理多个任务。通过全景多窗，用户可以突破物理屏幕局限，在同一屏幕内并行运行多款应用，实现应用间快捷切换，提升操作效率。以Pura X Max产品为例，该产品展开态横屏状态下拥有更大的显示视野，具备更强的信息展示与内容承载能力。该产品可依托全景多窗能力，充分利用大屏空间优势，最高支持三个窗口同屏并行运行，助力用户一边浏览资讯、一边编辑内容、一边沟通办公，多任务同步处理、互不冲突，实现办公、娱乐、日常操作一站式协同。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/BWyRFW0uT-iNHZvtJQd0qQ/zh-cn_image_0000002615986189.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B6A42ADA7CEC44A9E1B04CF7108CFECB8B9E8411BDD6F46781333080FB3844B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/DRKDsYU6R16ZPZmNxlVWgQ/zh-cn_image_0000002615986189.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D389EB316F589F5B37A39ED2705DB9D9DFEA83F7D04773EFCD305039EF70F0D "点击放大")
 
 ### 手写笔适配
 
@@ -178,7 +178,7 @@ content_hash: sha256:0f334a798111d1fac16e122320d87e4a99207b0b2951ec98ebe3d8e0999
 
 以Pura X View产品为例，游戏类应用横屏布局时，需要关注四边圆角变大导致的视野或按钮遮挡问题，如下图所示。推荐使用display.[getRoundedCorner](../harmonyos-references/js-apis-display.md#getroundedcorner23)()方法获取屏幕的圆角信息。应用需要结合UI布局局部遮挡的情况，调整视野/按钮控件与屏幕边缘的边距，避免因圆角变大导致的布局截断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/BspRW60eTzK9Q_3HFv8pUA/zh-cn_image_0000002717779986.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABF40E1FAD705BC92C205E78FF59DB06D81CAABFCADE9A2AE98CBE571B7408A9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/Zrx-twWxSAqZH2r3-UxZjQ/zh-cn_image_0000002717779986.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCF4A1B209B36FA559F9E48CBD3C640586F6F8211EDE9CA9A7E7FF20DE11FC1E "点击放大")
 
 ## 设备常见适配问题
 

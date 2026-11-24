@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-local-tes
 title: 本地测试（Local Test）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 测试框架 > 代码测试 > 本地测试（Local Test）
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:01+08:00
+scraped_at: 2026-11-24T12:42:31+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:1f49439645c2ab832cd3dbd6819c366088de82756dc441774b8304e2bf269621
+content_hash: sha256:516e844214dca7b3b202afd8b875f3913921c32c497aea9d6809cce1d6683d9c
 ---
 
 **说明** 
@@ -16,13 +16,13 @@ content_hash: sha256:1f49439645c2ab832cd3dbd6819c366088de82756dc441774b8304e2bf2
 
 1. 在工程目录下打开待测试模块（支持HAP、HAR、HSP模块）下的ets文件，将光标置于代码中任意位置，单击**右键 > Show Context Actions** **> Create Local Test**或快捷键**Alt+Enter****（macOS为Option+Enter） > Create Local Test**创建测试类。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/2woYNdsjRwCpgyvabLE-7A/zh-cn_image_0000002779567518.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=262D224389AFE24900B0936884C44598579D1F1DE3798B0A6CF379D6F2D626AD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/iXIv4I7GQLOGtmM0KkCqCw/zh-cn_image_0000002779567518.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=49EA795B111E214FCF9E2F19E11E1D6F3617F835AF54FA28D3D590C348225D12)
 2. 在弹出的Create Local Test窗口，输入或选择如下参数。
    * **Testing library**：测试类型，默认为DECC-ArkTSUnit。
    * **ArkTS name**：创建的测试文件名称，测试文件中包含了测试用例。测试文件名称要求在工程目录范围内具有唯一性，仅支持字母、数字、下划线（\_）和点（.）。
    * **Destination package**：测试文件存放的位置，建议存放在待测试模块的test目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/EQdQy89iQUaR4t6caaQl3A/zh-cn_image_0000002808767097.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=040AFDACC67E3563EF38F17E934DD1F33D42BCE86D8C4323B738AE83B410C06B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/MUe61XvfRISM9kjL9I9EkA/zh-cn_image_0000002808767097.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=117AB9EDCF12A6139CF8B364143BAE15CB25250B03DD5527222F6AD2117256C0)
 3. DevEco Studio在test目录下自动生成对应的测试类。在测试类中，DevEco Studio会生成对应方法的用例模板，具体测试代码需要开发者根据业务逻辑进行开发，具体请参考[单元测试框架](unittest-guidelines.md)。
 
    **说明** 
@@ -44,18 +44,18 @@ content_hash: sha256:1f49439645c2ab832cd3dbd6819c366088de82756dc441774b8304e2bf2
 
 以文件级别为例，在工程目录中，选中文件，单击**右键 > Run'测试文件名称'**，执行测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/tmHtChrgSim_AfWK03WdbA/zh-cn_image_0000002808887183.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB0B3D371F19928C8FB0525487669C61FC989A8154256113AFD79887B1E04253)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/zwHiFVcoTUulQHk9WafCaA/zh-cn_image_0000002808887183.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=6944EC345C1A3F6343E5B91CD99540A847496F8453B1BF059B7F6841924EAB0F)
 
 也可以通过如下方式，执行Local Test：
 
 * 在工具栏主菜单单击**Run > Run'测试名称'**。
-* 在DevEco Studio的右上角，选择一项测试任务的配置，然后单击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ifoclDn1R2K6VbeNU8xEvA/zh-cn_image_0000002779407544.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D9AB42E558BC0EDCAD605AFD1E890BBDD0089685A1B0AC98D87FF9A0C10ABBC)按钮，执行Local Test。
+* 在DevEco Studio的右上角，选择一项测试任务的配置，然后单击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/s8GbBglFQYqJvHNnbZHTTA/zh-cn_image_0000002779407544.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=08995404C088FDA81771E89DE92E19D0886A5694F4FA787828FCAF5E0059DD20)按钮，执行Local Test。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/1RtvH_ddSvimOdSOva5xKA/zh-cn_image_0000002779407546.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=C003820C540254BB5DBD2BBD9B63E474FED301FC31357B2E0BC03BF9D874B7A4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/WhdAb6PWQHyJ8j1f2Y__EQ/zh-cn_image_0000002779407546.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DB489694FDA8CA2C6A0F2F00864D2E21417938B82925B2B1D5BD0E30B5F73DD)
 
 执行完测试任务后，查看测试结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/LwcB8ZQJTvGtf5aViC9aFA/zh-cn_image_0000002779567516.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=81925F322AE8127F85D3AFAB2DD1403CB47A202B3D45E3D2A64875167B81572C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/wiERIucEQUG4ParmEbCbTQ/zh-cn_image_0000002779567516.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCBA359BFD24353A162BD8217D2AA74AF7A58FB2C67B224214067E1E0DC57783)
 
 ### 调试模式
 
@@ -63,19 +63,19 @@ content_hash: sha256:1f49439645c2ab832cd3dbd6819c366088de82756dc441774b8304e2bf2
 
 以文件级别为例，在添加断点之后，在工程目录中，选中文件，单击**右键 > Debug'测试文件名称'**，以调试模式执行测试任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/4SrN1kxBQfKol7f64lthkQ/zh-cn_image_0000002779407536.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB97913108A1FCE603CA430F45AEECFE7FD05EF393FEF12CB07B66C472E242E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/GrQ9X1qAQdqnrPzNRWSqkg/zh-cn_image_0000002779407536.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE37865978031A9A7ECB9902F3447D98A28AAA2C47A0E2607F2CACEE96C81E35)
 
 在断点命中时，下方将出现Debug窗口。开发者可在该窗口中进行断点管理与基础调试能力的可视化操作，在断点命中时可查看当前线程的变量和堆栈信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/v4qR05-3Q4W07I2fxu3qYw/zh-cn_image_0000002779567522.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1EC68B7FE8953A193556661CD93215267E64F8AC0319B3CFC0D2503E82975F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/miOax2l2SR-gPgV6SghDmA/zh-cn_image_0000002779567522.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C343B0A0114C36E44FBBE5E31E27E34679A8431F91E6877091E4B2C5997D453)
 
 断点命中时，在代码编辑器窗口单击右键，在弹出的菜单中将出现调试模式特有功能，如计算表达式、添加变量监视等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/y9r0zH1kQLiFlTNUADhwdA/zh-cn_image_0000002808767101.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=02078A99DA6CE7F2AA6D143BC00871A8728CAD41F110D1609ECD8E019AAF1D52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/4FdCSzSURYK1u96ck5qpaA/zh-cn_image_0000002808767101.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FB69EA72276DFDB4020172336072DD13ADE03DB475B44CC27785C87C2BA3664)
 
 在跳出所有断点后，测试结束，与运行模式相同，在测试窗口查看测试结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/woofpithSxqfjrLmM_lkzA/zh-cn_image_0000002808767099.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=A053AC4F2171D1BDADD939E02CC56C7B53FA38A1BAED3CB21EF5775876BD9763)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/E4iQ23CQRmu0L-XvHZXX1g/zh-cn_image_0000002808767099.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D9E12322947AACD79CCBE66AAFA7186EB6FDAFD9503137C19D45CEA2FBD5CA4)
 
 ### 覆盖率统计模式
 
@@ -87,23 +87,23 @@ content_hash: sha256:1f49439645c2ab832cd3dbd6819c366088de82756dc441774b8304e2bf2
 
 * 方式一：在工程目录中，选中文件，单击**右键 > Run '测试文件名称' with Coverage**，以覆盖率统计模式执行测试任务。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/pJ1SlZ-8QL-HxVnPuFbx_w/zh-cn_image_0000002779407542.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AE4F45C40A319D3299F2746CABE909343B55BCDF26B465424CA8E84A1BF942D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/fG52qDMJSnWEUq9hEmc3ww/zh-cn_image_0000002779407542.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=65D6866BC28FCB22F15777919D0189B938C3622670DF27FDC7014B3628F5BA79)
 
-* 方式二：在DevEco Studio的右上角，选择测试任务，然后单击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/pjE_C6VsTjGYWTuf2ubM8w/zh-cn_image_0000002779567514.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=81AB607D7A75481BD6A108225B06064AE61F88503E75EEAED4B33DF599DDD31B)按钮，执行测试。
+* 方式二：在DevEco Studio的右上角，选择测试任务，然后单击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/_xM_KyQJQIW4spkU9W1Dxg/zh-cn_image_0000002779567514.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC40BF9EBE409A290E84603780FCFBEEA0EAF0F318882E45E3698A15136D609F)按钮，执行测试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/q6qQQFduQhW99gTYwjqYBA/zh-cn_image_0000002808887187.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=E65B04EA0316BBD346ADAFCFA92FB7AE6E3CD713893FDD3636645A73D20DD6E3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/SpNs7bYUQXK_TlwH8hMIsg/zh-cn_image_0000002808887187.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=045A0FDDA5DF459950082890BA3928B69B31EC23253C60A8825A4A55F5F3BE07)
 
 启动测试后，进行编译构建，底部将出现Cover窗口，构建结束后自动拉起Cover窗口，测试任务结束后，窗口中会打印测试报告的路径。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/4SF-EB5LT1eLlfz-nhyrrA/zh-cn_image_0000002808767095.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=4581A9E3C7BEE6A5F1A23D0D139849207042F6BF8BEA055F494ADED454CEA284)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/wf3K5ebvSIyrl84viUL-pA/zh-cn_image_0000002808767095.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=596AA01EFBCFB3B1BD4AA367D2C30F81CDB7F90C3F07061BC19E9F2F42816D30)
 
 点击链接可打开报告，查看代码覆盖率详情，关于覆盖率的计算方式请参考[查看覆盖率报告](ide-ui-test.md#section10394362109)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/RoBng4yTREq3afhplbO4jg/zh-cn_image_0000002779407538.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BC6C27E87B2E3C58065C47677350A5D360C72B66E3C1BE3A33F8936DFD00E75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/zaICdg_ZR8qqGHAAt1cGhA/zh-cn_image_0000002779407538.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0ECE580D1418705BF18015F14BE51CB19589B32C851B86A204B3A2AB9201E5D)
 
 在Cover窗口中，单击rerun按钮可以按照之前的设置，重新执行覆盖率用例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/Wh8ZfhRiQ3-4hA1JsUS0SA/zh-cn_image_0000002808887181.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC6AA286D597BFA4ED49F5D0A62AB594975050F45BC790B0E91F234713880BE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/-96LBX5KTIWHhMJhh7nUbg/zh-cn_image_0000002808887181.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=04ACD145B73AD21E4821F4409F9EDB73B1B2ACFF10EFDA90C134A7048FD0D9A5)
 
 ## （可选）自定义测试用例运行任务
 
@@ -112,10 +112,10 @@ content_hash: sha256:1f49439645c2ab832cd3dbd6819c366088de82756dc441774b8304e2bf2
 1. 在工具栏主菜单单击**Run**>**Edit Configurations**，进入Run/Debug Configurations界面。
 2. 在**Run/Debug Configurations**界面，单击**+**按钮，在弹出的下拉菜单中，单击**Local Test**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/erpB0brISeCmmodyq6Fxkw/zh-cn_image_0000002779567512.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=D93419AEC3ECA26AF6129710D7B488768758F03B50588B9E6A6E6C8E31F7AB32)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/giXDTUgqTBSqMRZCQGoUBQ/zh-cn_image_0000002779567512.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7FA2F8EB81B2D449E86E1A47769C359FCD5868AE3C3C26B2A0AE510B97CF7FA)
 3. 根据实际情况，配置Local Test的运行参数。 然后单击**OK**，完成配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/EO_MwR8dTfW4UNaG_-7GEg/zh-cn_image_0000002779407534.png?HW-CC-KV=V1&HW-CC-Date=20261114T004900Z&HW-CC-Expire=31536000000&HW-CC-Sign=9813EE2E7734677E01EC465E1CF59429DBA62581717ADFEBBF2BFE678DEDC528)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/y2QLwMmcQAar9-XI6ClMlA/zh-cn_image_0000002779407534.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB846FE81E3E70E3094FD5DAECFA07A2B266372F6E9128393F8C2171750B71D3)
 
 ## 使用命令行执行测试
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 内存重复释放故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 地址越界故障模式说明 > 内存重复释放故障模式说明
 category: best-practices
-scraped_at: 2026-11-14T08:54:19+08:00
+scraped_at: 2026-11-24T12:47:56+08:00
 doc_updated_at: 2026-11-09
-content_hash: sha256:a80f0c5e5c967328a72d73e6aad1eb1e54587bf0bfda02a9465c27a810016f8a
+content_hash: sha256:6ed1a01f769e76ecbc17089aba3d6cf9ae943bcef2be46f8a592326f0617d415
 ---
 
 同一块堆内存被释放后，若程序再次通过原指针或其他别名指针释放该内存，将导致堆内存重复释放。此类问题可能破坏堆内存管理结构，造成应用立即崩溃或后续在无关位置随机异常，故障现场通常难以追溯。开启地址越界检测能力后，可在重复释放发生时检测异常，并记录内存分配、首次释放和重复释放等调用栈。
@@ -106,7 +106,7 @@ content_hash: sha256:a80f0c5e5c967328a72d73e6aad1eb1e54587bf0bfda02a9465c27a8100
 
    通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）、DevEco Studio自带的堆栈跟踪分析等类似工具，对报错栈中的业务栈帧进行符号化，定位到具体源码位置。相关代码如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/9XGjUVpXQDWw9ehIoLfIjg/zh-cn_image_0000002693765532.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F36C32A95FA4A572435D19BDC15F139B66502D32E1CA1B1F734797C09E046C2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/iLAUtLxUQ06dBs-RRxOarg/zh-cn_image_0000002693765532.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=F88CD93D5AC093CE1473F09EC6B994BA72BF2FC6810D119B7D1539678F872E33)
 
    报错栈定位到XsanTest.cpp:131行。结合源码确认，程序调用free(ptr)时触发invalid-free异常。
 3. 分析分配栈和首次释放栈，确认重复释放内存对象。
@@ -133,12 +133,12 @@ content_hash: sha256:a80f0c5e5c967328a72d73e6aad1eb1e54587bf0bfda02a9465c27a8100
 
    通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）、DevEco Studio自带的堆栈跟踪分析等类似工具，对分配栈和首次释放栈中的业务栈帧进行符号化，定位到对应的源码位置。相关代码如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/F4ziFHGYSjChS67mAR3qpg/zh-cn_image_0000002723405003.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEF9F764C7DF710D1EC85914EFD19A3B899C845A81569269540DB57E2A94736F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/iVjhpE5EQRS8p1VywwmhFQ/zh-cn_image_0000002723405003.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=954D08696418245E012791B8A37DED46EE3AD134ACA5E6D383DABAE91F85809E)
 
    日志显示，重复释放的内存地址0x000400822a80，在相同线程23641中DoubleFree（XsanTest.cpp:128）申请，在相同线程23641中DoubleFree（XsanTest.cpp:130）第一次释放。日志中的异常地址0x000400822a80正好等于100字节内存区域[0x000400822a80, 0x000400822ae4)的起始地址，located 0 bytes inside表示释放操作使用的是该内存对象的首地址，与源码中申请和释放的内存对象一致。
 4. 分析控制流路径，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Ey_mtwHER2WwWxbvJgvTpA/zh-cn_image_0000002693605648.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=237D0B5291635E729D16C0D64ABF7BF15311D029611EACAA3386C6A22E91CB23)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/jNpm200oS42YkF_kgGqQiw/zh-cn_image_0000002693605648.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=81CF35035639C8E35A3512468EFE5474E26159C71C774824C03E9B29E586365D)
    1. 定义函数内局部指针对象ptr，并申请100字节内存，地址赋值给ptr。
    2. 第一次释放ptr，释放后ptr指针未置为nullptr。
    3. 第二次释放ptr，此时ptr所指向的内存块已释放，触发异常。
@@ -218,7 +218,7 @@ content_hash: sha256:a80f0c5e5c967328a72d73e6aad1eb1e54587bf0bfda02a9465c27a8100
 
    通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）、DevEco Studio自带的堆栈跟踪分析等类似工具，对报错栈进行符号化，定位到对应的源码位置。相关代码如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/i9lHnIAcS3GUAX8oumVk9A/zh-cn_image_0000002723285081.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=989F644987EDD59224E6B57C2550293980E025C98E4FE4D0CE99FF1E7AA116D5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Z_cxYEAtSNyU4k8Z3Lw6sw/zh-cn_image_0000002723285081.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=571A92A78FA01D06D1D9EE3F08C4A5C7E9DB67A037582D025668EB20D85E4564)
 
    结合源码分析，程序在执行free(g\_sharedPtr)时触发异常。此时g\_sharedPtr虽然不为nullptr，但其指向的堆内存已经在此前流程中被释放。
 3. 分析分配栈和首次释放栈，确认重复释放内存对象。
@@ -247,12 +247,12 @@ content_hash: sha256:a80f0c5e5c967328a72d73e6aad1eb1e54587bf0bfda02a9465c27a8100
 
    通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）、DevEco Studio自带的堆栈跟踪分析等类似工具，对分配栈和首次释放栈进行符号化，定位到对应的源码位置。相关代码如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/JtJfLzHDQFKeAHIXxtsXog/zh-cn_image_0000002693765534.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=97AE26939EE29D382C4316846921C5B016AED82F4A312B9516E98F1B5D978FDB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/aVBUAihBSz6btbXbECWSMg/zh-cn_image_0000002693765534.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=230846C7B7B7CAD569F620441B03BA9EEFC7CE5E3A1AD08A5146453B2DCC2605)
 
    日志显示，线程12312在sanitizer.cpp:210的DoubleFreeShared函数中申请了100字节内存，并将地址同时保存到局部指针ptr和全局指针g\_sharedPtr。代码在215行通过ptr首次释放内存，但未同步更新g\_sharedPtr，后续流程再次通过g\_sharedPtr释放同一块内存，最终触发重复释放异常。日志中的异常地址0x0004007e0b80正好等于100字节内存区域[0x0004007e0b80,0x0004007e0be4)的起始地址，located 0 bytes inside表示释放操作使用的是该内存对象的首地址，与源码中申请和释放的内存对象一致。
 4. 分析控制流路径，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/772_76kwSWiUADQNg7diag/zh-cn_image_0000002723405037.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D52CE96BCFA2268551E6A3DEF4622DBFB2B999732B2EB3E56B16AD3E713FB91)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/pt2vjtdEQhG_tPXYWekJqA/zh-cn_image_0000002723405037.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=932DCC90185FF52119A1C51DE16626A549603278A326468D6825AA2A5B96EE2E)
    1. 申请100字节堆内存，并将地址赋值给局部指针ptr。
    2. 将ptr保存的地址赋值给全局指针g\_sharedPtr，此时两个指针指向同一块内存。
    3. 通过free(ptr)首次释放该内存，g\_sharedPtr仍保存原地址。
@@ -352,7 +352,7 @@ content_hash: sha256:a80f0c5e5c967328a72d73e6aad1eb1e54587bf0bfda02a9465c27a8100
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）、DevEco Studio自带的堆栈跟踪分析工具或其他类似工具，对报错栈中的业务栈帧进行符号化，定位到具体源码位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/eN8w9ryATd-XYOj1QtHRqg/zh-cn_image_0000002693605716.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=6338959F482EEA03F07A21114E5FB2E6110F219E4BD76C5D97607FD07D11553A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/sN8ElX0qRsW9kUrK4QLHqQ/zh-cn_image_0000002693605716.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDEA19DAFABCD017E90B89822FE7599247C5387F8122625E97CA78ED87F5EEDA)
 
    报错栈定位到sanitizer.cpp:185。结合源码确认，程序在该行第二次调用free(ptr)时触发ASan double-free异常。
 3. 分析分配栈和首次释放栈，确认重复释放的内存对象。
@@ -380,12 +380,12 @@ content_hash: sha256:a80f0c5e5c967328a72d73e6aad1eb1e54587bf0bfda02a9465c27a8100
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等工具对分配栈和首次释放栈中的业务栈帧进行符号化，定位到对应的源码位置。相关代码如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/avxLBjEuTLGMKBRUcxnysg/zh-cn_image_0000002723285185.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=3504A517CDCBACD6720923D3301215A1701B498D40E74FBDE994FCF2D0622902)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ygf0-AYVSTC-AeChTG_-Kw/zh-cn_image_0000002723285185.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BB9B5A270EC411C55C189BDB6A739F0B79F5C411148F28F4ADB1C80BD4C4987)
 
    日志显示，地址为0x0060dbf47d00、大小为100字节的堆内存在sanitizer.cpp:182申请，并在sanitizer.cpp:184首次释放。随后代码在sanitizer.cpp:185 再次通过同一指针释放该内存，最终触发重复释放异常。
 4. 分析控制流路径，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/yQLtOWy5QUSp-LokGxaYag/zh-cn_image_0000002693765672.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=F484CE1D9ECDD5DFD41C540428E3A01B839C0AC46563D2E40C66B41CBC93C884)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/1gE-hOkNTfafTTlGa7QzCA/zh-cn_image_0000002693765672.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7D02A4212CAFEDC29DBC4ED608A9B3EC19B9478842B4B4C641419828C7200A3)
    1. 定义函数内局部指针对象ptr，并申请100字节内存，地址赋值给ptr。
    2. 第一次释放ptr，释放后ptr指针未置为nullptr。
    3. 第二次释放ptr，此时ptr所指向的内存块已释放，触发异常。
@@ -468,7 +468,7 @@ content_hash: sha256:a80f0c5e5c967328a72d73e6aad1eb1e54587bf0bfda02a9465c27a8100
 
    通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）、DevEco Studio自带的堆栈跟踪分析等类似工具，对报错栈进行符号化，定位到对应的源码位置。相关代码如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/iz_F6fpySgGv4SbItKDsIQ/zh-cn_image_0000002723405179.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=915CE64C8D77CEE361CF9DEF08D2FA7212B1B0385F9451547691BA73E1F8E306)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/F0ize84BTKG_AN4nu-xQiw/zh-cn_image_0000002723405179.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4806BF699B0D59CC8FDD8F5ED5CAB100D90BBB434C10A3F6494D4FF6F17ABEC)
 
    结合源码确认，程序在该行第二次调用free(p)时触发GWP-ASan的Double Free错误。
 3. 分析分配栈和首次释放栈，确认重复释放内存对象。
@@ -492,12 +492,12 @@ content_hash: sha256:a80f0c5e5c967328a72d73e6aad1eb1e54587bf0bfda02a9465c27a8100
 
    通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）、DevEco Studio自带的堆栈跟踪分析等类似工具，对分配栈和首次释放栈进行符号化，定位到对应的源码位置。相关代码如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/sjKzqoCHTuG0IrCIv9IBrw/zh-cn_image_0000002693605852.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=649ECB63A3A27CCEA626C1B11C5524D3FC98B34DE5F97F49DF4357DE786B7789)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/0-ZSB4A-T3SkSkHfOJgF4g/zh-cn_image_0000002693605852.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E7463B6ADE430168E9C78097CAD0CE5FE1FF701F472F74C7CD24F85B67FD298)
 
    日志显示，线程28195在sanitizer.cpp:233申请了64字节堆内存，地址为0x5bfb35f000。该内存命中GWP-ASan采样后，在sanitizer.cpp:237首次释放，随后在sanitizer.cpp:238再次释放，最终触发重复释放错误。
 4. 分析控制流路径，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/zciALxXqTLe6ihjaS-VFdA/zh-cn_image_0000002723285319.png?HW-CC-KV=V1&HW-CC-Date=20261114T005418Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A51B3DDCE4B9D2242E27D5FCBEF4397C88A41E0AC55787EC4355D9C9063170E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/wK8zBynnRYu4dnQ3LA5i5g/zh-cn_image_0000002723285319.png?HW-CC-KV=V1&HW-CC-Date=20261124T044755Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C72029D54EE7F06DB7ACE487C7FBD3E54333FF78362DC8EAF4603BF05071876)
    1. 定义函数内局部指针对象ptr，并申请64字节内存，地址赋值给ptr。
    2. 第一次释放ptr，释放后ptr指针未置为nullptr。
    3. 第二次释放ptr，此时ptr所指向的内存块已释放，触发异常。

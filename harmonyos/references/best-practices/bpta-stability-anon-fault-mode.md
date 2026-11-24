@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 匿名映射过大导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > RSS内存泄漏故障模式说明 > 匿名映射过大导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-14T08:54:19+08:00
+scraped_at: 2026-11-24T12:47:56+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:94daa3eab7ad806fa34e1d8ebf9b9ccd03961ecabe5b5030bebf190de47f5f66
+content_hash: sha256:050551582f69ca8990114bb92f8678bea3c3fb8e9960c4a58b89c01eb4fe93e4
 ---
 
 ## 概述
@@ -85,14 +85,14 @@ smaps维测关键字：LOGGER\_MEMCHECK\_SAMPLIFY\_SMAPS\_INFO。
   + 单击④处选择Created & Existing，筛选申请并且未释放的内存及其调用栈。
   + 找到内存申请异常的内存及其调用栈，如下图⑤、⑥处框选的内容。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/P8yF7qTbR3K_URKYHDfwbw/zh-cn_image_0000002680464170.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4B3F68107D32EB346C6E7E053844DD29133AAE2439C7FB040716AC9FD5DB2C1 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/69rA89eDQNS3q5QgPNC-IQ/zh-cn_image_0000002680464170.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCC2254C2AAFF89AA2A36C1C95C348A2E7A247E811B171656FC21D7AEC6E0B4E "点击放大")
 * 分析内存栈指向的代码段，可以得出单次点击“mmap”按钮，会通过Native层MmapMemoryLeak()函数，申请一次超大匿名页内存且未释放：
   + ArkTS层函数如下图所示：响应按钮点击动作，调用Native层的MmapMemoryLeak()函数：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/A_TFV-abR9aXAYZaRIwXEQ/zh-cn_image_0000002710143985.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=C15FE64A5803D3450E876151CE92964B796FA45BC2C2F6E5F31A921EDC2100E2 "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/rMn3jPvoTliZIvWm9ytAwQ/zh-cn_image_0000002710143985.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3749AE4EE48E2BF0F6442EB2BF706EEBF48B4FBF2602EADDEB3609492B1E070 "点击放大")
   + Native层函数实现如下图所示：每次执行都会通过mmap()创建匿名页内存，并且退出前未释放：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/DQjbf0voQ6S0kbPdKFR35g/zh-cn_image_0000002710326177.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=661EAC026C6708CC6793E03D997FE7BAAF024BC6E80BDAA6CDDD39E24831DCC0)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/CKRux2fbRFmZbKgQDOY-_g/zh-cn_image_0000002710326177.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=96380A3F09567B65AD927D2ABF46150DD840CFB8351E235798AAD5816B29A333)
 
 **开发态问题分析思路：**
 
@@ -100,17 +100,17 @@ smaps维测关键字：LOGGER\_MEMCHECK\_SAMPLIFY\_SMAPS\_INFO。
 
 * 完成录制后，在下图①处Memory的options按钮中选择下图②处AnonPage Other复选框，观察下图③处AnonPage Other内存增长趋势，发现AnonPage Other内存的增长趋势最明显：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/9WBgqzeSTzS6lfvpxazIDw/zh-cn_image_0000002710303839.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=B55AB4855BA9894E6BB866D886C60B2925DB0667CB8B654E4A6AC6433AE50FC4 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/idq45IChQb-ISF6Y5h9-Fg/zh-cn_image_0000002710303839.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7357DA9CFB5034D61F696288179B9E91D9146199410F4BCFB279458E3AF8913 "点击放大")
 * 选择①处ALL Anonymous VM中的VM:others泳道如②处，单击③处Call Trees查看内存申请调用栈，单击④处筛选Created & Existing可以找到内存增长点的内存申请调用栈，内存申请调用栈如下图⑤、⑥处框中所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/eF9-3IeoTP-li5rI3aHJrg/zh-cn_image_0000002680464192.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=F04D2729FBFBE87DCB3FEF980AA7EE0D2973BD7BF3602468DB563CA1119A40AF "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Hd16tGQARm6zHttASB5Ydw/zh-cn_image_0000002680464192.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB4FCDD3DA8596A72A51034944BE7FEB07B1896D0006D3D434AF6E0903781047 "点击放大")
 * 根据调用栈能够找到具体的代码行，通过分析代码功能，发现每次点击按钮“mmap”，ArkTS层会响应点击动作，并调用Native层的MmapMemoryLeak()函数去通过mmap申请500MB匿名页内存，连续点击多次按钮后，最终发生了RSS内存泄漏。
   + ArkTS层函数如下图所示，响应按钮点击动作，调用Native层的MmapMemoryLeak()函数：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/TEwUC6i6QDG1dFU-8QFgvg/zh-cn_image_0000002710143999.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=20FD865FD1D8B296DBE169C4A5CC7A6CB156143C214AA30CF53CE9BFB56FB073 "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/DUGyCzW_S5OZ0lQmyuL68A/zh-cn_image_0000002710143999.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B3F67AEC6A430DCB7044A4B79EF53F3E828DDCD4DFA8E412CA92C2017407CC8 "点击放大")
   + Native层函数实现如下图所示，每次执行都会通过mmap()创建匿名页内存，并且退出前未释放：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/6x0o7NcwTSCaVAaKUC_DQw/zh-cn_image_0000002680646400.png?HW-CC-KV=V1&HW-CC-Date=20261114T005419Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E4A39A988D079C121BB8CAADDB24FB2AD99DAB9F0E9717989D8B7A7538DD0DB "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/ZT3qgL_lSUm-k3FjEeunzg/zh-cn_image_0000002680646400.png?HW-CC-KV=V1&HW-CC-Date=20261124T044756Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE5D748C0C3EC6AEAB6A4DE77347AA6A30E2537256B1FF90209B9A8AD1B50547 "点击放大")
 
 ### 预防建议
 

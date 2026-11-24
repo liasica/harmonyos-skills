@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-asan
 title: 使用ASan检测内存错误
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用ASan检测内存错误
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:17+08:00
+scraped_at: 2026-11-24T12:42:46+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:4952b3d3d42457a1830041651adfe72b4a9e52140b09cb22cc259b4560047633
+content_hash: sha256:c2d88fe7974e23cbb9f3a335fba3750258118628a36f62d4d3943011707eee6f
 ---
 
 为追求C/C++的极致性能，编译器和OS运行框架不会对内存操作进行安全检测。针对该场景，鸿蒙电脑DevEco Studio集成ASan（Address-Sanitizer）为开发者提供面向C/C++的地址越界检测能力，并通过FaultLog展示错误的堆栈详情及导致错误的代码行。关于ASan的检测原理请参考[ASan检测原理](../best-practices/bpta-stability-address-sanitizer-principle.md#section159561141247)。
@@ -21,15 +21,15 @@ content_hash: sha256:4952b3d3d42457a1830041651adfe72b4a9e52140b09cb22cc259b45600
 
 ### 方式一
 
-1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/vuodUhieRsiJZCi2HAH4oQ/zh-cn_image_0000002810750961.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B2942382EC45794696A60BABE9A6CCB5DBA1D37F1AF6BBB73149CB2A0960209)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/aKTeUnutRpiL6yax7CF51Q/zh-cn_image_0000002810750959.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B2C247FA19936EA5D3657F7C6E054D95DC12BCC73490EFDF28C08DC6A0CC443 "点击放大")按钮打开配置界面。
+1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/1u0Q_LkVTLG-g7R7QPTD0w/zh-cn_image_0000002791841154.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=20551BE18063A3E9735C436E12F02C1841342CC8B4BA933D54A398AA463FFC99)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/PzAVciCqQdSx7S_hj_ghaQ/zh-cn_image_0000002792001130.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=D49AF8BD90CDE083503428A70C54DB2E37808F8099D60EA1E4A062757DDC0EBD "点击放大")按钮打开配置界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/za4Agd7oS8KW4cWaCJEL5g/zh-cn_image_0000002781311366.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=4776CD47A35F6B5A24FBEE483125BAAB7549FE0ECE926685274495FA2C64F631)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/xGPfroohSSO9VEqUwW5qBg/zh-cn_image_0000002820721095.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAC1AD4E46FE71F88F18B7FF4E619D0F400C0391E664E1432306611C4BD373F6)
 2. 在配置界面点击**故障分析**，勾选**地址越界检测**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/0-Cu0A99QxSgxvgdFRXdxQ/zh-cn_image_0000002810630853.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3A59407357FC9F76030F149E69B1439DA71C665AD3DA2E85E28F93D4AFCE741)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/olKxmsIvRjq1aZUr32w4nw/zh-cn_image_0000002820721097.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=4881CEF6737F89983559536F49028F715529CFD744451AD77EF7BBDBCA0FB93F)
 3. 如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_ASAN=ON”，表示以ASan模式编译so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/bSk6PkVgQya7qLC05D3aGQ/zh-cn_image_0000002781471300.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0975517C5EF046A930F83BA81E6DDB40B84E2C149A2513133357B354D85DE2E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/lJXHj5frTQWwJIxDH1An3A/zh-cn_image_0000002820681089.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FB77499C76EEEAA8FAA350AB325C0FE32DEA01BB637B872C198A62137B1B853)
 
 ### 方式二
 
@@ -39,7 +39,7 @@ content_hash: sha256:4952b3d3d42457a1830041651adfe72b4a9e52140b09cb22cc259b45600
     "asanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/WZGSRIY7Rq6Wpq-dDCvWvw/zh-cn_image_0000002781471304.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=7977B86CD78C5F44BC375C7973E927288C124CAAA8789D9299AEF884CB68A23B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/hAtLNX8WQuam6UdDIl642A/zh-cn_image_0000002791841156.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=D503BF20D5DBAF8B513232409FA191E0DA294FAC65C58E7DD356EC3B26F32F33)
 2. 设置模块级构建ASan插桩。
 
    在需要开启ASan的模块中，通过添加构建参数开启ASan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
@@ -48,7 +48,7 @@ content_hash: sha256:4952b3d3d42457a1830041651adfe72b4a9e52140b09cb22cc259b45600
    "arguments": "-DOHOS_ENABLE_ASAN=ON"
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/21NmYJGwRxOldTrkpJIacA/zh-cn_image_0000002781311364.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=47FA1B1FEAE44496F4474B1F592FE46848389C2B002C83D6597179F5D76EB82C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/GwXRj2RjThCznu-4xJZW7w/zh-cn_image_0000002820681091.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DA950A732D6F859670969BBF1E2428557EC03C9655993B06C87D6ED860405CD)
 
    **说明** 
 
@@ -63,4 +63,4 @@ ASAN\_OPTIONS用于在运行时配置ASan的行为，包括设置检测级别、
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出ASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。日志中各字段的说明请参考[ASan日志规格](address-sanitizer-guidelines.md#asan日志规格)，异常检测类型请参考[ASan异常检测类型](../best-practices/bpta-stability-asan-detection.md#section12508111110451)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/eCvb0uucTkKynSq3zktbGg/zh-cn_image_0000002810630851.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8D04A6A87C3490BB1D8A94D6D02985418C9B8590A9F75CE381DC4E427F20AE9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/4wsWwOmETnCHmNnzL8AHOg/zh-cn_image_0000002792001128.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=D58DB142DF5B5AC4195B789196D013CCCCEC1B3955D7636FDBE712CA0651C687)

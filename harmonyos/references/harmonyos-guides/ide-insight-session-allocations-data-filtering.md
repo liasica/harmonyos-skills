@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-s
 title: 内存分析数据筛选
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 基础内存：Allocation分析 > 内存分析数据筛选
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:06+08:00
+scraped_at: 2026-11-24T12:42:36+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:cea82d815bb2a67e16777c9eca470d90aaeac3e086227f13d6d3d819ce9c9250
+content_hash: sha256:a1ab0ff8f8997c5bdf422ab48f4332f57373f76c3d2f887321839608910564e8
 ---
 
 Allocation分析过程中提供多种数据筛选方式，方便开发者缩小分析范围，更精确地定位问题所在。
@@ -22,7 +22,7 @@ Allocation分析过程中提供多种数据筛选方式，方便开发者缩小�
 * Created & Existing：默认选中，详情区域展示当前框选时间段内分配未释放的内存。
 * Created & Released：详情区域展示当前框选时间段内分配已释放的内存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/yO1Obq-mQneu4oWIVddtsA/zh-cn_image_0000002779567442.png?HW-CC-KV=V1&HW-CC-Date=20261114T004906Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC97658DE9A6C6B639C719B227BD29C6FA1D55343F08F6B64230B9E06EC7FF28 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/15AR84DbT7SZyqQDiXbUOg/zh-cn_image_0000002779567442.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=39AA0A691108E47ED9C911F409AD8060359E667E9576BBF191B72AD235304670 "点击放大")
 
 ## 通过统计方式筛选
 
@@ -31,19 +31,19 @@ Allocation分析过程中提供多种数据筛选方式，方便开发者缩小�
 * Native Size：详情区域按照对象的内存进行展示。
 * Native Library：详情区域按照对象的so库进行展示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/XBDKf72YR3e8v1YpHc_oKQ/zh-cn_image_0000002779567440.png?HW-CC-KV=V1&HW-CC-Date=20261114T004906Z&HW-CC-Expire=31536000000&HW-CC-Sign=C96BCFA3C1C5E9179D6DE8EA159E005FF00105F7CD580D11D1381E9E219FC5E9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/AzWNBhZmSo6TNE3OaiLH8Q/zh-cn_image_0000002779567440.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=76B6754E077139C7E52D11407B35CF1FED842BA7E7AA5809785430F50852BABB "点击放大")
 
 ## 通过so库名筛选
 
 非统计模式下，在All Heap & Anonymous VM泳道、All Heap泳道、All Anonymous VM泳道、System Resources泳道、Graphic Memory泳道的**Allocations List**区域，可以单击**Click to choose**选择要筛选的so库以过滤出与目标so库相关的数据：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/oNWEHlNYTpucLnG_cgr7Ww/zh-cn_image_0000002779407462.png?HW-CC-KV=V1&HW-CC-Date=20261114T004906Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD3B4136E0C5E13E6D44DE007B030BA5CE28B7564CFF975645917E5EA2F68CF3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Lp83PMGMRaqUh52FEC3Kbg/zh-cn_image_0000002779407462.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC4E28FFBA292604C682471864BE39EEAFA6248B45161785A05F3AD50621269B "点击放大")
 
 ## 通过搜索筛选
 
 在All Heap & Anonymous VM泳道、All Heap泳道、All Anonymous VM泳道、System Resources泳道、Graphic Memory泳道的页签中， 根据界面提示信息输入需要搜索的项目，可定位到相关内容位置，使用搜索框的<、>按键可依次显示搜索结果的详细内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/hdhq243eQcemtMD3XGg3Ug/zh-cn_image_0000002808767025.png?HW-CC-KV=V1&HW-CC-Date=20261114T004906Z&HW-CC-Expire=31536000000&HW-CC-Sign=12C098DA219CB4623F0634270FBB95B80F0B85ACC93537F3F11447C2EA30B68D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/g1BvO2B8RImR7PgyTjXIqA/zh-cn_image_0000002808767025.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=427B1022DEC3BFFFB0DA259CDD1D68C79FC99F5F113DCCB2E10B977901E75B23 "点击放大")
 
 ## 筛选内存分配堆栈
 
@@ -66,19 +66,19 @@ Call Trees选择框包含两种过滤条件：
 
   其中每一个类型的亮色和灰色分别代表开发者和系统的代码。其中，亮色代表开发者自定义的代码，灰色代表直接使用系统中代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/K0srZy2URICVY2ldpTVgJQ/zh-cn_image_0000002779567436.png?HW-CC-KV=V1&HW-CC-Date=20261114T004906Z&HW-CC-Expire=31536000000&HW-CC-Sign=73773F19D18A78760FF50B0D79468F4D34D79FEF7E861BCB6E0C226254D3FCB0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/GxPd-XJXQM2wMWzZM0HumA/zh-cn_image_0000002779567436.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EEC70CA7F02C831C946530C859BB23E5936A731EEB1B756751DF410517DC948 "点击放大")
 
 Constraints选择框也包含了两种过滤条件：
 
 * Count：根据指定的内存申请次数过滤内存分配栈信息；
 * Bytes：根据指定的内存申请大小过滤内存分配栈信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/nuC35_WpSreHKGTN8ykyLg/zh-cn_image_0000002808887105.png?HW-CC-KV=V1&HW-CC-Date=20261114T004906Z&HW-CC-Expire=31536000000&HW-CC-Sign=07CE5CE86AEA4FB9E8ADE697D52DB9D192FB72279650ED8EE9C918DD6F7BF4FA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/wYWOLMzsRKaGvumjkP1A6A/zh-cn_image_0000002808887105.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE22A9A0391871352F0570CB5CECBC79D7A382E779C66F3319D2ABF4B0E8117F "点击放大")
 
 在Call Trees页签的More区域，单击**Heaviest Stack**旁的隐藏按钮可以单独控制是否显示More区域最大内存分配栈中的系统堆栈。System Resources泳道中不包含Bytes字段。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/JQdLqxfrR-qaFXjpgtJxZA/zh-cn_image_0000002808887099.png?HW-CC-KV=V1&HW-CC-Date=20261114T004906Z&HW-CC-Expire=31536000000&HW-CC-Sign=50D1CA6A179A6001097E4F98AD623310E2F7C9B6EA3D9CC231A6CE0C08AA0504 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/oHoEwbDIRBCSnNw9zYdDiw/zh-cn_image_0000002808887099.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=A15BD18123B418E883820BF71422F153F8786F3543B8F530568D708868B457D0 "点击放大")
 
 在Call Trees页签，可以通过底部的**Flame Chart**切换到火焰图视图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/HZdol2hoQoGWePdpqKL5-A/zh-cn_image_0000002779407464.png?HW-CC-KV=V1&HW-CC-Date=20261114T004906Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF968330FDEB72F4AA516A89DECE00D5D3DC9E07E32BB6060D5E829B97310CDC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/mpRg4alISnybxMpXWu0-Ng/zh-cn_image_0000002779407464.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=59C99E48584FC02F4D61FC8D4971A266922C6C64C2C12E53D01C0EF23284C90F "点击放大")

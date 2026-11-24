@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-improve_gr
 title: Grid组件加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > Grid组件加载丢帧优化
 category: best-practices
-scraped_at: 2026-11-14T08:54:14+08:00
+scraped_at: 2026-11-24T12:47:52+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:92461f480bf96698a5495f2adabd99568506dc7d5c8c9e040a421cf6087f77c9
+content_hash: sha256:930a0c0e1ebaca06f831bf7116824aefe55126829f129ebe18b57fe8e557390d
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:92461f480bf96698a5495f2adabd99568506dc7d5c8c9e040a421cf6087
 在实现如下图所示可滚动布局效果时，可能会通过columnStart/columnEnd[设置子组件所占行列数](../harmonyos-guides/arkts-layout-development-create-grid.md#设置子组件所占行列数)，实现不规则的布局效果。
 
 **图1** columnStart/columnEnd实现不规则网格布局  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/dTIyaX6OQgCJP0Z7NzHu5A/zh-cn_image_0000002194010632.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF4EA6578BAED2521D33D88E527D05E44005F63B017342F8C4A5846F541B9B5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ouxQAGGVTviKJWJ4R2tIWg/zh-cn_image_0000002194010632.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EEA8B9257F46F1244D2C53920792B3A81944CFD15321E0BE65E99A836D4E296)
 
 在以下使用场景中，使用columnStart或columnEnd可能会导致性能问题：
 
@@ -228,13 +228,13 @@ struct GridExample2 {
 
 1. 打开Profiler工具，连接设备，选择对应的应用进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/-eEG8NI1TiKlF8QLtDwEIw/zh-cn_image_0000002229450913.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=D33269086EE793493F40BA965C71AF8A3DD78A51E70F283B30C9AF960DF8E57D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/P_8qGqG8STeaxlVv4-GuDA/zh-cn_image_0000002229450913.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=886C51197DCD7A67FB5EE29C3640688C9DE944607B9651C861EEC3DB54295AF3)
 2. 选择Frame，点击Create Session以开始数据测量。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/GKDcJZx4QvWFPO9waRutPQ/zh-cn_image_0000002194010628.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5615D174FA9A3CDE783479C27A112122EFF3E70C2322F8B7616FD6AB93C54AE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/SH8IIluKQKee5Q8ppECcXw/zh-cn_image_0000002194010628.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=316F4CD987628592454D5B251F9E3813672DA1E358A2D740C26EE0C3058735ED)
 3. 通过点击按钮，先使用startTrace开始性能打点跟踪，再调用scrollToIndex。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/BKRsieOWTAW2UfchCS5hpA/zh-cn_image_0000002194010644.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7C56F14D17FBF705D1821DA974447F6D5D1ABC09DC35207C4D3988A32DF10C8 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/_P3C_A2vSpqlYxIj7jJbFA/zh-cn_image_0000002194010644.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5EDB6C4FF247B4A2A8EAD27AA932DCA9E4C16167B57BF68EF4FB5760D2D6F12 "点击放大")
 4. 查看对应应用进程下的自定义打点事件，包括反例代码中定义的“useColumnStartColumnEnd”和正例代码中的“useGridLayoutOptions”下的trace图。
 
    **说明** 
@@ -247,23 +247,23 @@ struct GridExample2 {
 
 **图2** 使用columnStart，columnEnd的打点信息
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/uImGlViCTtS6o_hdUwiUZg/zh-cn_image_0000002194010648.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=D13FD594132DBF9E5019C07BE2FF8576EEAAACD9DB7317A0DB5089ED1529F4A8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/x6Q1KpgITCGSe5s-X6A_Cg/zh-cn_image_0000002194010648.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8B39D8AE9BB7B515B18D9D98E04D333298B0D9A426FB9D4F920B087B83A4942 "点击放大")
 
 如图3所示，使用GridLayoutOptions设置GridItem大小的布局方式。从自定义打点标签“H:useGridLayoutOptions”可以看出，从调用scrollToIndex到查找到指定Index并准备构建GridItem节点耗时12ms。
 
 **图3** 使用GridLayoutOptions的打点信息
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/fTaTMdO3R82WmtR-DM5tQg/zh-cn_image_0000002194010620.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=681767430C6B710DB1646568764DAE7D82EC74817EA04704D27C8112F2C21249 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/m4jioSxyRNq_m3o8mg5IIg/zh-cn_image_0000002194010620.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9D7E75D4BF0C3A270E0B94331BE9EE5E62B98E9D28BBF743BE6E6F9935E8D6C "点击放大")
 
 通过详细的trace分析可以发现，在“H:useColumnStartColumnEndGrid”打点标签时间段中，存在大量“H:Builder:BuildLazyItem”标签。这表明Grid在查找指定的Index 1900时，是通过依次遍历Index来实现的。
 
 **图4** 使用columnStart，columnEnd的放大trace标签信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/NmCao-GAQhSsHGzFbtoN9g/zh-cn_image_0000002229450897.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=141E644AF799DA72D7B746FE452C43EE769BF56F90ADD90D840F47F22C78D242 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/EoU6Sds9Q1S5RC1qaKpRgg/zh-cn_image_0000002229450897.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D4BE5C5F400AFC628E4C03DF4142F73FED075D0D08D2DED3E54D726B0ACA29C "点击放大")
 
 在使用GridLayoutOptions的示例中，“H:useGridLayoutOptions”打点标签时间段内仅出现一个“H:Builder:BuildLazyItem”标签。这表明Grid在查找指定索引1900时，能够直接一次性找到指定索引。
 
 **图5** 使用GridLayoutOptions的放大trace标签信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/Ok-W6fjqS7eP2gAkI08zPw/zh-cn_image_0000002229450909.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D4E2FF369959FCCD92583A6CA43800185F61655949636BC8F978D9C75E1D22A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/VLYqdgoXSXmrsMLE9F8SQg/zh-cn_image_0000002229450909.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5878DC28D86AE9AA3B9C7BCDC6EADAA18CCD56C244FEEC402937FDC1A6A7865 "点击放大")
 
 在相同布局情况下，使用columnStart和columnEnd设置GridItem大小时，Grid在使用scrollToIndex查找指定索引时，会依次遍历GridItem节点，导致查找过程耗时较长。而使用GridLayoutOptions设置GridItem大小时，直接一次性计算找到指定索引，查找过程耗时较短。因此，使用GridLayoutOptions设置GridItem大小可以显著减少Grid加载时间，提升应用性能。
 

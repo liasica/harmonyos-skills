@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-cust
 title: 实践说明
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 配置构建流程 > 配置多目标产物 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:17+08:00
+scraped_at: 2026-11-24T12:42:47+08:00
 doc_updated_at: 2026-11-06
-content_hash: sha256:87bf277de2341e89a96f3e4e0671d90e3a119dc3466234e9d8084a2d167e4986
+content_hash: sha256:7c46a0e6df293ca92733d12d73e7a47afa0d77d4fc27e7f0ce2f22abc8aab73c
 ---
 
 某对外发布应用共有两个版本：
@@ -16,7 +16,7 @@ content_hash: sha256:87bf277de2341e89a96f3e4e0671d90e3a119dc3466234e9d8084a2d167
 
 可以看出在Community版本与Ultimate版本之间，部分功能存在重合，同时也存在某些特定功能，因此期望通过一次开发实现差异化，根据不同配置完成多种特定运行环境的开发、预览、打包、调试等功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/pHi7B0AzRl2DuzSwr7jLAg/zh-cn_image_0000002781311050.png?HW-CC-KV=V1&HW-CC-Date=20261114T004917Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EE162B641859AE8497BBA18DE3B881F565550116A3A901103E48EDF1A39DB3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/w4N1DJ-QRjiGgD0dHg98og/zh-cn_image_0000002820681165.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F5DCED85A23491327BEC0E70325A08DA6DA4E1D259A0658934D3F203CA5F009)
 
 1. 两个不同版本的软件，可能存在差异：如不同的应用标题、应用图标、版本声明。我们可以在工程级build-profile.json5->app{}->products[]中，可以对两种不同的外发版本进行差异化定制，新增两个product：Community和Ultimate。根据已支持的字段进行定制修改。
 
@@ -169,4 +169,4 @@ content_hash: sha256:87bf277de2341e89a96f3e4e0671d90e3a119dc3466234e9d8084a2d167
 
    例：用户需要构建Ultimate版本的且具有vip特性的应用，可以选择product：Ultimate，target：vip，构建后查看产物。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/_IqGS1ODQpuaZIbHMU7YgQ/zh-cn_image_0000002810750647.png?HW-CC-KV=V1&HW-CC-Date=20261114T004917Z&HW-CC-Expire=31536000000&HW-CC-Sign=B63C8855BBA4D8F30BB6E55B39088F214348CF79859EEA67C60B85F561232279)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/S7Ntu_5ETN-Y-EUc70h5Fg/zh-cn_image_0000002820721171.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=A285921805735C4FA0934DD52DD01D33DF0A8EAAB421E7C63B78AEB738C56CE4)

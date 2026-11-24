@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-run-
 title: 自定义运行/调试配置
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 自定义运行/调试配置
 category: harmonyos-guides
-scraped_at: 2026-11-14T08:49:16+08:00
+scraped_at: 2026-11-24T12:42:46+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:fae2e7732e652781bbc857dccf7a5a23260555cdc396704651fe415526a7ab93
+content_hash: sha256:35b371cc694fe5da02eee6f257ef7739ca25381012d0cd93ac76e72bb47dca36
 ---
 
 ## 配置应用可调试
@@ -21,13 +21,13 @@ content_hash: sha256:fae2e7732e652781bbc857dccf7a5a23260555cdc396704651fe415526a
 
 ## 设置调试代码类型
 
-点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/vrKMQw_TSWuJcdhkT4Rt3A/zh-cn_image_0000002781471034.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=98C196DC4A7A786F3E6AE9F6F0925791D8EF210E20E05016978797A92DAA48AB "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/xgX4-OHBQCGdtycJGmo3VA/zh-cn_image_0000002781311098.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=D13B2A1DD12670C107C042882980C13D22EDBAFBA23EEA97F0AA92D1090306B1 "点击放大")按钮打开配置界面。
+点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/jKpFR6EeSLa1tN26Nic4uA/zh-cn_image_0000002820681195.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F3BAE7136E5A6F185CDD65BAD9FA5694F876A17A86F303954DFA11E1CD0AC3E "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WXFpKFt_QzWU6aGWW3FEtQ/zh-cn_image_0000002820721199.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=0128C279CFA0A8E480848950F627AE54E81C8F07B9069DEAC87977DCD127F530 "点击放大")按钮打开配置界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/WVB89DnURRGI-Hjt2F2gpQ/zh-cn_image_0000002810750703.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=775A03DBF7B40C189B2AA89A7BD09422E639B4F6D1C09CA6A4E5C7A48050621E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/1EuNcdQeQ-GzoVJGqn7e1w/zh-cn_image_0000002820721195.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=3ECADC484F3AA5D0B955ADF2CF962C2BFDFD6F6A138B1E3379377A7FAF41875B)
 
 在配置界面中点击**调试器**选项并设置**调试类型**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/4SFTz0-fSoqyEBF1whFl4w/zh-cn_image_0000002810750697.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4E38419D5A4C3DD61360EF37F7ECB690ADABD4C93EB76B7A6E4EAD1DD612A03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/sLkIV8cuRDuQpLsR9PHXAw/zh-cn_image_0000002820721191.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF433B31AE05C1B2B4DF9B66AE66FF2D2B54A06742E4F3A0D2A013037099236D)
 
 工程调试类型默认为Detect Automatically，关于各调试类型的说明如下表所示：
 
@@ -51,15 +51,15 @@ content_hash: sha256:fae2e7732e652781bbc857dccf7a5a23260555cdc396704651fe415526a
 
 设置方法如下：
 
-点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/K7KX2KVoRsaVB215b3FBtA/zh-cn_image_0000002810630555.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=A61BE0613D4590B2E1308E8807614FE07E7027555A7531B0303D70197A406022 "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/JlcQPYgqQemIB062ptGLyQ/zh-cn_image_0000002781471044.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=9660EC053B6A07042013EC908CD676A84920BBD471EB3AF8908A0BD4A7DB939A "点击放大")按钮打开配置界面。在配置界面**通用**中设置指定模块的HAP安装方式，勾选**保留应用数据**，则表示采用覆盖安装方式，保留应用/元服务缓存数据。
+点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/5rAxwpzvTpWQS5ggfkOXiA/zh-cn_image_0000002820681193.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=25173A1A6162CA911B706B303EF18FEB9EF6371BD30EF79F5ADF49D2D4C7C828 "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/K4rIobwSQKOj3sjqKF8HMg/zh-cn_image_0000002792001234.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=C282D06E2FD7C1EFF8299198F74B437FB27553C038E5E830087CDF8B48AB457A "点击放大")按钮打开配置界面。在配置界面**通用**中设置指定模块的HAP安装方式，勾选**保留应用数据**，则表示采用覆盖安装方式，保留应用/元服务缓存数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/rXrQ8u7LSBSIiRXm9eh5sA/zh-cn_image_0000002810630557.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8109FB9F12768416968443B118845A134E7649BE32E6911DB6A766F850E41D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/TRH7tdrVShKmDKq1gVs_ww/zh-cn_image_0000002791841256.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D09DF58B55822488BB07F7DAA2059A8E0EFDBC50049FCD6C5CE7A6507EC5D30)
 
 ### 配置自定义调试参数
 
 如果未进行自定义，将按默认配置安装和运行应用。如果开发者需要对应用安装、运行等流程增加参数配置，可在**安装参数**和**启动参数**下进行配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/RBsrM2KOT66pSZHqRkpRWQ/zh-cn_image_0000002781311100.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=53AB7728EC98E8718FBC7FBF8FFB4C457335176244D18E467D4E03F9CF9162B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/gH-WzSFBSRWb15C-pc607Q/zh-cn_image_0000002792001230.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=D70BEB539C34EE0521848CBCDEA09368E6E5973DE031219916C531D2F7A1867F)
 
 * **安装参数**
   + **启用源码行跳转**：勾选**启用源码行跳转**表示在构建产物中系统组件增加debugline属性，用于开启[ArkUI 界面检查器源码跳转功能](ide-hmos-arkui-inspector.md#section44774145517)。
@@ -67,26 +67,26 @@ content_hash: sha256:fae2e7732e652781bbc857dccf7a5a23260555cdc396704651fe415526a
 * **启动参数**
   + **启动**：指定在安装应用后启动的Ability。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/CuL8OYdOR5i8ukDyoAwCYw/zh-cn_image_0000002810630563.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=175663ECF4260351B0EE1C6D00A3EE975E37E0B128B825180438535C2AD9E6B3)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/JKnj00MJRbOxOwyzBhMHkw/zh-cn_image_0000002791841260.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DCD55A8CE49173BDE829AE6D5A588C74030FC2A0A36823DC5DFBD85464A137F)
 
     - **空**：只安装不启动任何Ability。
     - **默认 Ability**：默认的EntryAbility，即module.json5文件中配置了“skills”属性的第一个ability；若无配置“skills”属性的ability，则取“mainElement”指定的ability（该ability需存在于“abilities”数组内）；若“mainElement”未指定，则取“abilities”数组内的第一个ability。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/MZXtCcLYTPeQW68SkDo72w/zh-cn_image_0000002810630585.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBC93DD4A85A8C2C76557A254B821E6CABE83B31D8C1564907FEFE5A92D17B96 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/k9ChcLl5THO5ndG41C_JYw/zh-cn_image_0000002792001236.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6C014A4BBDB9223F3205717E431D5B838F747223D37C3221348055CC961E8F7 "点击放大")
     - **指定 Ability**：工程中的UIAbility或ExtensionAbility。
 
       可以在工程中添加UIAbility或ExtensionAbility，详细请参阅[UIAbility开发指导](uiability.md)或[ExtensionAbility开发指导](extensionability-overview.md)。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/e63qmux3TxiEMY9jwXJNfg/zh-cn_image_0000002781471008.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=027CDE9FD13F0404F96FE9F00F2A4F4CA7209F9218710A8E7FF41FE6E7FE8195)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/zznOtObORZeTS-Bv9meAFg/zh-cn_image_0000002820681189.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3C663B8B494164C6C1B5105C45E2D04D8F7B1EF4DC3B02D6BD50251A31283FE)
   + **启动标志**：输入aa start命令相关的选项，请参见[aa start 参数](aa-tool.md)。
 
 ### 配置环境变量
 
 如果开发者需要配置和管理应用开发环境，以及控制应用程序的行为，可配置环境变量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/YKgE91k4TIGkaoQtvGThgg/zh-cn_image_0000002810630587.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DEDBE893EE91DA298D2861006A1852DA7B3B754466FE0D3FB5E5F4193BDE1AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/6eT3UQg-SmKGN8DEKgkgUg/zh-cn_image_0000002820721201.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBD53CFCB62FDE2F8D7CEBA514322BE663087AEBC7982C39CA211A8CCD185811)
 
-点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/zslOIrNGTN-XBvTJ_JIX_w/zh-cn_image_0000002781471036.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=1779AF8C64DA737542B9CF5AD6AC7B0539CD3044190D8C508E0583CFBF30646E)按钮，新增一行配置项。当前支持以下配置项：
+点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/yQXqWZ0nS2uNWho-DFt0jQ/zh-cn_image_0000002820681197.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DE143E039E4826C9EF09E3100A37C3019F460A60ED66590430F5D9DF82A95E1)按钮，新增一行配置项。当前支持以下配置项：
 
 * ASAN\_OPTIONS：在运行时配置ASan的行为，包括设置检测级别、输出格式、内存错误报告的详细程度等，具体可配置的value请参见[配置参数](../best-practices/bpta-stability-asan-detection.md#section1496994494018)。若开发者未配置log\_exe\_name、abort\_on\_error，DevEco Studio将自动填充。ASAN\_OPTIONS是应用级别的，只在entry和feature模块中配置生效，HAR/HSP模块配置不生效。
 
@@ -104,9 +104,9 @@ content_hash: sha256:fae2e7732e652781bbc857dccf7a5a23260555cdc396704651fe415526a
 
 设置方法如下：
 
-点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/ge_FUXd4SieRf2_quc4dcg/zh-cn_image_0000002781471038.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=15D319445B665F400B09558D69501C5E9D6348B63F07DBE308EABC0485177543 "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/3U25CV1pRkyz6IQbe-pIlA/zh-cn_image_0000002781471026.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=888B2B4359A3AFD64A41D0B7E95CB9E27B24CCBAC592967A072E685454FB68C2 "点击放大")按钮打开配置界面。在配置界面**通用**中，勾选**多包推送**，选择多个模块。
+点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/ij_oCf6cSOiyT-qidKT9Kg/zh-cn_image_0000002820681199.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE4FABF95DC803BEE08A5443812AB7948A0AF91BA9AE5F5C87619D3C8FC221CB "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/6YB-IdQsTTu2t4Y_wy_gwg/zh-cn_image_0000002820721205.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4D30AB56F1E1DE51EEB8E35481718A57B53C7DD8B79D1321471CC575C3F7578 "点击放大")按钮打开配置界面。在配置界面**通用**中，勾选**多包推送**，选择多个模块。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/k0QVfRXsSA2qBpsDJm_Pww/zh-cn_image_0000002810750667.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=9604407480B88F723EE1A6891E7C1093F73AF8492CB7E3D092830885C7D5A568)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/EKU9J_jmRjiY1rQNHjIVzw/zh-cn_image_0000002791841250.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=728F1E154E40B136BF126EFA771238DBD392BA4979E0F3569BDC1DF559067749)
 
 ### 自动安装依赖
 
@@ -114,12 +114,12 @@ content_hash: sha256:fae2e7732e652781bbc857dccf7a5a23260555cdc396704651fe415526a
 
 设置方法如下：
 
-点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/thGx4wndQz-A2BpEEOq5tg/zh-cn_image_0000002810630591.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A762D1C59D3F7A5CC0716A13D1C18C9071FE1AB6768DDF4AAE7E65EF06B99F5 "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/IPjf2rJWRd-iKMwy4ZRRmw/zh-cn_image_0000002781311072.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E0A2D9EF8D9072C96064D731D06187EC7C112C63C92A821D9DAED1807A6F15A "点击放大")按钮打开配置界面。在配置界面**通用**中，勾选**自动依赖。**
+点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/T5fZ7gOGSP6pcItuFnej_Q/zh-cn_image_0000002820721207.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=5697677380148290F2746C699A1E0930A642511CE8AA59FC8A0903FFA845E444 "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/7CxIgeSRRTCuILEl3OrtpQ/zh-cn_image_0000002791841258.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=81C3BB74882B0C0251FFD77CBD8A2D43F7E462CDE1F7CB59077808EC2288F3BD "点击放大")按钮打开配置界面。在配置界面**通用**中，勾选**自动依赖。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/IjMw9ypDR4KOx5txgT7eZw/zh-cn_image_0000002781471004.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E9B7A5FF11C23F74461C9E238409F5A9BFEB5871DF310A94EC8B5A969846C0D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/74jiW-r2QpWFGjIWSdzFRQ/zh-cn_image_0000002791841262.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7CA980377B8711030098D7E57E5C8A95ABAC3751877DD58640634E50A348D43)
 
-在**前置任务**中，可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Bm15tu3qT6OYgFhk2Zixtg/zh-cn_image_0000002781311096.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F20128EC0B2B1D22F2B5719D0A6C9F9D9A3262E211377D131F9A71DE6C2C5E6 "点击放大")添加应用启动前的任务，也可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Y1pf1vBCTHGtMWMvgBOaXA/zh-cn_image_0000002810630593.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9B3A2B87BBABAAD87FF71A79BE0B1B954D6EF8EDADDC4AA3033A74ECBCD0371 "点击放大")移除任务。
+在**前置任务**中，可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/cLCgMM5GTyyfHYWnaKHRBQ/zh-cn_image_0000002792001232.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9265F8E8E8D612934F23F5A1716EAF566AC52C97EC7EDB4BC5686742F2E5A4A "点击放大")添加应用启动前的任务，也可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/QUPtYPFRToqhNK6pGOnSng/zh-cn_image_0000002792001238.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=7121C69F5AE947180584B9B48B872B426734926432DEF51CB4CB883CA2E43ED5 "点击放大")移除任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/0f1m0Ju7RRu8n5e1vZBuGA/zh-cn_image_0000002810750695.png?HW-CC-KV=V1&HW-CC-Date=20261114T004728Z&HW-CC-Expire=31536000000&HW-CC-Sign=D93BDCC80583F4CE3EB529277964741D70149357161B045C8B17C1B90A7D5339 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/p4uRrACpS168DbcHs1MXRw/zh-cn_image_0000002791841264.png?HW-CC-KV=V1&HW-CC-Date=20261124T044245Z&HW-CC-Expire=31536000000&HW-CC-Sign=69BE242D80022FA23A4B9C393A6737FB0359A014FC9F099581FC728F32896538 "点击放大")
 
 在勾选**自动依赖**后，可以同时勾选**多包推送**，从而达到推送所有包的效果。

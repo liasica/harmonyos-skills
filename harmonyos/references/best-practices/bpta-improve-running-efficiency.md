@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-improve-ru
 title: 运行效率提高
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 运行效率提高
 category: best-practices
-scraped_at: 2026-11-14T08:54:14+08:00
+scraped_at: 2026-11-24T12:47:52+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:2384ad27af5c61355afb9f65379024721d5e39d146e3e192c789676bae87dea0
+content_hash: sha256:0e6df461b4f7db84871fa190ae24f3e22c04f676c4b5c44935d3a27bb2189f45
 ---
 
 在开发过程中，优化影响性能的代码片段，以提高运行效率。以下实践总结了一些高性能的写法和建议：
@@ -145,7 +145,7 @@ oh-package.json如下增加模块依赖library包：
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/RxeZIkkiShCsQrYKDHRIkQ/zh-cn_image_0000002515417448.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE9520D2187A59DF54B702176634E92420BE00C60BAC11A4B67E434BAA73F1D3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/WL9wgbmJQ5u561tPYOuDzQ/zh-cn_image_0000002515417448.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2241EC67DEE14CCD4F36CBA16185A541F1F798FDD898CFA032110272171125E "点击放大")
 
 **使用路径展开**
 
@@ -184,4 +184,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/SPCTfbNXQxWZNQaxjUsB0A/zh-cn_image_0000002515577362.png?HW-CC-KV=V1&HW-CC-Date=20261114T005414Z&HW-CC-Expire=31536000000&HW-CC-Sign=681A72C41E6E943658090E5BE502692FFF9B9C64191C5FBC4C8B80061E8598B6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/uf0-hSuXRI2W95fRQR1bVQ/zh-cn_image_0000002515577362.png?HW-CC-KV=V1&HW-CC-Date=20261124T044752Z&HW-CC-Expire=31536000000&HW-CC-Sign=46A19DCF3D58C15BB061F423DB38CC033B879E139A418BE5E5DC371E8393CCBA "点击放大")

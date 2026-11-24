@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smartwatch
 title: 智能穿戴导航协同
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 典型全场景协同开发案例 > 智能穿戴导航协同
 category: best-practices
-scraped_at: 2026-11-14T08:54:04+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:fe1a61ffddeae2b9f1ac4e94ab9da999293b8288b11838c61ed10183cf2c885e
+scraped_at: 2026-11-24T12:47:43+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:0331b17120849138f73dd6b232aff25ba906e8f30121447aebe7329df7de0035
 ---
 
 ## 概述
@@ -47,7 +47,7 @@ content_hash: sha256:fe1a61ffddeae2b9f1ac4e94ab9da999293b8288b11838c61ed10183cf2
 
 ### 实现方案
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/DS5WsvYqRASPoBiLiw02cQ/zh-cn_image_0000002353086117.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=97F32F40B3C1D78C2597CDF7B907DA74180957C3E062C0CD11E4FA48D7D6546E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/JPoaLw9LSEmiZYJyNE365w/zh-cn_image_0000002353086117.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2DECDE3DC411000072FDE01D81B1E84CF4A644DF8BD1C92ED03C497D530BFAF "点击放大")
 
 ## 界面开发
 
@@ -90,7 +90,7 @@ content_hash: sha256:fe1a61ffddeae2b9f1ac4e94ab9da999293b8288b11838c61ed10183cf2
 **地图点击（目的地标记）：**
 
 **图1** 地图点击操作时序图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/yNCwpLFHRWiSd1qg_nn9Cg/zh-cn_image_0000002318967344.jpg?HW-CC-KV=V1&HW-CC-Date=20261114T005121Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA4410F3220BEE3D4F579228AF303CB38F710CB068C00FAAD6A14E6C8C484DBB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/4fQdB1I7S-iIsgIWUFCHig/zh-cn_image_0000002318967344.jpg?HW-CC-KV=V1&HW-CC-Date=20261124T044743Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D80ADBD13CE88E3E3BFA94513DC642588A3BE2B1B5CABBF913A913DD770BA6D "点击放大")
 
 开发步骤如下：
 
@@ -203,7 +203,7 @@ content_hash: sha256:fe1a61ffddeae2b9f1ac4e94ab9da999293b8288b11838c61ed10183cf2
    ```
 2. 通过调用[addPolyline()](../harmonyos-references/map-map-mapcomponentcontroller.md#addpolyline)接口，结合导航路线信息，绘制可视化路径。
 
-   ```typescript
+   ```screen
    /*
     * Draw a navigation route on a map
     * The first parameter needs to be transferred to MapComponentController to operate the map.
@@ -236,14 +236,15 @@ content_hash: sha256:fe1a61ffddeae2b9f1ac4e94ab9da999293b8288b11838c61ed10183cf2
      };
 
      // Use MapComponentController to draw a route on a map
-     mapController.addPolyline(polylineOption).catch((error: Error) => {
+     mapController.addPolyline(polylineOption).then(() => {
+       hilog.info(0X0000, TAG, 'Drawing success');
+     })
+     .catch((error: Error) => {
        let err = error as BusinessError;
        if (err.code) {
          hilog.error(0x0000, TAG,
            `Failed to add poly line. Cause code: ${err.code}, message: ${err.message}`);
        }
-     }).then(() => {
-       hilog.info(0X0000, TAG, 'Drawing success');
      });
    }
    ```
@@ -266,7 +267,7 @@ content_hash: sha256:fe1a61ffddeae2b9f1ac4e94ab9da999293b8288b11838c61ed10183cf2
 
 在对端消息监听（手机端与智能穿戴设备端均使用，监听对方发来的消息）的回调中，会对发送的消息进行转码，并根据TAG标志位进行数据的存储，分别用于不同的逻辑。
 
-```typescript
+```screen
 /**
  * Callback Method for Listening to Peer Communication.
  */
@@ -278,22 +279,28 @@ private onMsgCallback: Callback<wearEngine.P2pMessage> = (data: wearEngine.P2pMe
     str = decoder.decodeToString(data.content);
   }
   // Convert the JSON character string to the CommunicationInformation type.
-  let communicationInformation: CommunicationInformation = JSON.parse(str);
-  // Determine the information type based on the tag.
-  if (communicationInformation.tag === 0) {
-    // When tag is set to 0,Indicates that the transferred information is path description information,
-    // which is stored in AppStorage to refresh the watch navigation page.
-    AppStorage.setOrCreate('route_information', communicationInformation.routeInfomation);
-  } else if (communicationInformation.tag === 1) {
-    // When tag is set to 1, Indicates that the transferred information is destination location information
-    // and is saved to the AppStorage for synchronizing the destination logo of the mobile phone and watch.
-    AppStorage.setOrCreate('destination_Position', communicationInformation.location);
-  } else if (communicationInformation.tag === 2) {
-    // Signal sent from your phone to your watch when navigation starts, indicating that navigation starts.
-    AppStorage.setOrCreate('isStartNavigation', true);
-  } else {
-    // Signal sent from your watch to your phone when navigation ends, indicating that navigation ends.
-    AppStorage.setOrCreate('isStartNavigation', false);
+  try {
+    let communicationInformation: CommunicationInformation = JSON.parse(str);
+    // Determine the information type based on the tag.
+    if (communicationInformation.tag === 0) {
+      // When tag is set to 0,Indicates that the transferred information is path description information,
+      // which is stored in AppStorage to refresh the watch navigation page.
+      AppStorage.setOrCreate('route_information', communicationInformation.routeInfomation);
+    } else if (communicationInformation.tag === 1) {
+      // When tag is set to 1, Indicates that the transferred information is destination location information
+      // and is saved to the AppStorage for synchronizing the destination logo of the mobile phone and watch.
+      AppStorage.setOrCreate('destination_Position', communicationInformation.location);
+    } else if (communicationInformation.tag === 2) {
+      // Signal sent from your phone to your watch when navigation starts, indicating that navigation starts.
+      AppStorage.setOrCreate('isStartNavigation', true);
+    } else {
+      // Signal sent from your watch to your phone when navigation ends, indicating that navigation ends.
+      AppStorage.setOrCreate('isStartNavigation', false);
+    }
+  } catch (err) {
+    let error = err as BusinessError;
+    hilog.error(0x0000, 'CommunicationUtils.onMsgCallback',
+      `Json.parse error,err.code is ${error.code}, messsage is ${error.message}`);
   }
 }
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-news_homep
 title: 首页信息流体验优化
 breadcrumb: 最佳实践 > 行业场景解决方案 > 新闻阅读 > 首页信息流体验优化
 category: best-practices
-scraped_at: 2026-11-14T08:54:11+08:00
+scraped_at: 2026-11-24T12:47:49+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:1e528daf56e4bc487817b02d3019b3a45996210e53388599605181547b3d8ed3
+content_hash: sha256:b5b7ae3acc3af06200a78da2317fdc1ee8e753858f64daed136867a6f40c1197
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:1e528daf56e4bc487817b02d3019b3a45996210e53388599605181547b3
 
 * 应用的运行效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/hOI9JZn-RFWbB_JoLJRQ4Q/zh-cn_image_0000002193851428.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=F49789CA1CC04DCABFC9942AC977C6173CB46481DBAE46B06451FA899002BB2E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/UZtq6xSYQmigi1QgJix0lw/zh-cn_image_0000002193851428.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4D14E98BB8A75DB8C8505A5EA38A5EB0E3151B91FAE7091BE4AED4B6F843F98 "点击放大")
 
 * 操作流程如下：
   1. 获取地理位置的权限；
@@ -65,7 +65,7 @@ content_hash: sha256:1e528daf56e4bc487817b02d3019b3a45996210e53388599605181547b3
 
 通过添加Tab组件的动效触发事件，实现页面内容切换与页签样式切换的同步效果。具体效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/0W0_HGLGTteZ8vzz7cKb3w/zh-cn_image_0000002229336809.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=F243FEAFF574D6DEC1DDE840A3D5421D376A12A27E0636BD63F5A497338878E3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/oHUB6ECLR5urPmZw2ylG9A/zh-cn_image_0000002229336809.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2C84CE2D4BFE2C69669690C220CE32CEAD01A3178ED53E81CD4EC7261F3E8F6 "点击放大")
 
 * 动效触发事件节点
 
@@ -102,11 +102,11 @@ content_hash: sha256:1e528daf56e4bc487817b02d3019b3a45996210e53388599605181547b3
 
 底部页签样式添加lottie动画，使跳转更加精致流畅。效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/AkolQhLwRqSvAxYdNL_9qg/zh-cn_image_0000002229451313.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=63BE7B430983A71D620E0297BA2F8AAD0A1CC89DB1082D131A6F07F6FB374BCD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/qyoKy0hrSp2-blgtguuSIA/zh-cn_image_0000002229451313.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=33B0625AF22A069FAADD6E988FCFD8B7ED3B3718F90F7A49B00E622F6DBEE752 "点击放大")
 
 * 底部页签跳转功能时序图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/4P5P9ppXTGepJdvHZXer1Q/zh-cn_image_0000002194011036.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA3D4FFE762C855329557631886E704A4E403ABD1036EF84570F25CDCDBA4BA3 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/mJrw548rRXScEc5Fri9_Vg/zh-cn_image_0000002194011036.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A7F79F2440316544604AADB8D994AF0413E6146EF1143F8FB9F6F45CF2B5319 "点击放大")
 
 * TabBar集成lottie动画
 
@@ -216,11 +216,11 @@ content_hash: sha256:1e528daf56e4bc487817b02d3019b3a45996210e53388599605181547b3
 
 通过三方库组件PullToRefresh实现下拉刷新页面和上拉加载更多数据的效果。具体效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/FvXe-K8DQYewMora7qsGyA/zh-cn_image_0000002229451321.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=870EC6CA09AD55E730247D3C80050DC7B2CE8EE36BD10E851F2D91AA08E1A4CB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/MUcWrISBQhGhG_LOO0XdXQ/zh-cn_image_0000002229451321.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=6238B58922E4BD1E4C7AA61F99B4D4AA75F632D6E3B87E802681CE000ADC66A1 "点击放大")
 
 * 上拉加载和下拉刷新时序图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/wjbtWyqnTXeO_J-9mgOBPA/zh-cn_image_0000002229336825.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=27583CD6FB526200CE8CF0D82F188AD85E6E4758E3E944BAB016EE669967A9B3 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/w_kXjUIGQpySpRF4aCnd6w/zh-cn_image_0000002229336825.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=904F1B05C4825AF1E0E35CF4C139C139BFB099B058EDDFE09B9065C4B9A2291E "点击放大")
 
 * PullToRefresh组件
 
@@ -274,7 +274,7 @@ content_hash: sha256:1e528daf56e4bc487817b02d3019b3a45996210e53388599605181547b3
 
 使用懒加载实现首页 feed 流的快速渲染和流畅滑动。效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/6Fb6c9uhR7ub7-hu0kouyA/zh-cn_image_0000002194011028.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=2040C7F1A44BDF1BA9A30C59CEC3BD15BA8B60F2F9B973B651FAD7C7E660BAFD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/NPdsoDNJTXKjfBji3sCZRQ/zh-cn_image_0000002194011028.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=E55077E45430647FE11697A33FC913E065CC6271B76F4E3A7FFC0CA143996714 "点击放大")
 
 * 懒加载
 
@@ -315,11 +315,11 @@ content_hash: sha256:1e528daf56e4bc487817b02d3019b3a45996210e53388599605181547b3
 
 使用位置服务实现定位功能，AlphabetIndexer组件实现地址首字母定位导航条。效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/AtCL4DT5Qx6SpJUQKcgLMg/zh-cn_image_0000002229336813.gif?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5A69BD74803C81B6896D31659CFEFEB0BFC793D9188FEA20680A27221B4694B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/9ZDdCnKsQ86sqIp9g3WOyw/zh-cn_image_0000002229336813.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=7570728CB450D9DE6F3ECB635108A7AF37BA48A90B8E4F1FAEBCA2A6B522C505 "点击放大")
 
 * 地址选择页效果功能时序图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/3CwYCv-JS5eToSDlmDyoHw/zh-cn_image_0000002229336833.png?HW-CC-KV=V1&HW-CC-Date=20261114T005411Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD9850E3961AA90FA4859AECBDC360FA8BF9113D61B725412D061F3C523D925F "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/wMsvn1MwT2WGoeSJoEHH2g/zh-cn_image_0000002229336833.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8CD7B522C34A7FFFB082DB30C21D3C465F97E6478E073B468677F5CB0424E81 "点击放大")
 
 * 位置服务与索引条导航
 

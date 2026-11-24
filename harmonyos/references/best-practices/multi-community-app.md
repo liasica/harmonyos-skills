@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-community
 title: 多设备社区评论界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备社区评论界面
 category: best-practices
-scraped_at: 2026-11-14T08:54:10+08:00
+scraped_at: 2026-11-24T12:47:48+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:aff31bd5705e3c07321e5cec2a743a3d2d7f31f44130c6e7803efe4edd635186
+content_hash: sha256:b14c74d0093546ee4850493d0d14ca9136bf23ad4ea023a7d0bb52997b23d54f
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:aff31bd5705e3c07321e5cec2a743a3d2d7f31f44130c6e7803efe4edd6
 
 应用的UX设计可参考[社交通讯类](../design-guides/responsive-design-examples2-0000001793536901.md)的多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ppq6lRlRRgO42y081CkFTA/zh-cn_image_0000002591828652.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=86267C3CC5D8C23EEF68BEEC34671D674563CFA585AF3017C7B34654D9040FD6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/bz6CUReQTX66yJzUPV_95A/zh-cn_image_0000002591828652.png?HW-CC-KV=V1&HW-CC-Date=20261124T044747Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0A5D0F66BACBFE0F696FB83AB5EC8693EB9E7BAB494ABCE20AB76EA9D85EA9C "点击放大")
 
 ## 工程管理
 
@@ -191,7 +191,7 @@ content_hash: sha256:aff31bd5705e3c07321e5cec2a743a3d2d7f31f44130c6e7803efe4edd6
 
 社区评论应用首页作为业务入口，关注页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/GxxQI_cSRkGBynOt21cxwg/zh-cn_image_0000002622348223.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=79AB9EFB6B16AC18C83E64235DB7FE9145C714DD16012CA885103378014BCD14 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/ObrY2EamSl667arxPipTPw/zh-cn_image_0000002622348223.png?HW-CC-KV=V1&HW-CC-Date=20261124T044747Z&HW-CC-Expire=31536000000&HW-CC-Sign=6ADC04A1FF1777DB247A7EB564AFCC9554C213A3BBD64C1B4E492E737D72BA4B "点击放大")
 
 **界面开发**
 
@@ -208,7 +208,7 @@ content_hash: sha256:aff31bd5705e3c07321e5cec2a743a3d2d7f31f44130c6e7803efe4edd6
 
 热点页用于展示当前实时热点内容。根据功能设计，热点页相关内容划分为3个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/JGUL6NXWRtKZ7O15vpP-dQ/zh-cn_image_0000002591988552.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=764AF618BE72D54691F5BE3FB3ABCC0337CC58B8EFA021BFCB0C2C06589BF3F4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/nxsyPmTBQXCfJrDlT1ZCmw/zh-cn_image_0000002591988552.png?HW-CC-KV=V1&HW-CC-Date=20261124T044747Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5D2FF3EE58CC010B0B32A3F6950F7FF4C53AFB2F9C2C766CC9A0A5E30D01E90 "点击放大")
 
 **界面开发**
 
@@ -224,7 +224,7 @@ content_hash: sha256:aff31bd5705e3c07321e5cec2a743a3d2d7f31f44130c6e7803efe4edd6
 
 根据功能设计，社交详情页相关内容划分为5个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/neqeqObyQfCxArA4qggS5Q/zh-cn_image_0000002622308087.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=251DEB3C7E7DA6FA3B13930CEDA2EA5CCADF77A5A9C1650B59E27F6B8C5E748B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/PgmiibpvRlmCMITxVWxaFA/zh-cn_image_0000002622308087.png?HW-CC-KV=V1&HW-CC-Date=20261124T044747Z&HW-CC-Expire=31536000000&HW-CC-Sign=C20B51CC33BEFB773D72FFD82E815A8BE240E8A4566E03EA1C7A922AC293E448 "点击放大")
 
 **界面开发**
 
@@ -242,7 +242,7 @@ content_hash: sha256:aff31bd5705e3c07321e5cec2a743a3d2d7f31f44130c6e7803efe4edd6
 
 图片详情页相关内容划分为1个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/qzP35NYjRqWZtsDEMnlCqA/zh-cn_image_0000002591828660.png?HW-CC-KV=V1&HW-CC-Date=20261114T005409Z&HW-CC-Expire=31536000000&HW-CC-Sign=745AA7917C3B98155AE226C9B95B335DB45E43BFB8698F42A62432D66138C380 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/andNaVOKTkO6zVf9PSVzKw/zh-cn_image_0000002591828660.png?HW-CC-KV=V1&HW-CC-Date=20261124T044747Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE68EF756468AE1F79EB23ECCC9B4134046146044E51961ED1BE380E41B695A0 "点击放大")
 
 **界面开发**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-mate-book-
 title: 折叠电脑应用开发
 breadcrumb: 最佳实践 > 多设备体验进阶 > 电脑 > 折叠电脑应用开发
 category: best-practices
-scraped_at: 2026-11-14T08:54:11+08:00
+scraped_at: 2026-11-24T12:47:49+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:47109299217bfd566032c569ce4e9851bdc47dbcf372fe10bb95b5fc3b49b90b
+content_hash: sha256:ff93971b0e7527397a8a007c7b06ca5946bbd5c8efbfac98be4a3a2deeb3ed78
 ---
 
 ## 概述
@@ -80,7 +80,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
   [Display](../harmonyos-references/js-apis-display.md#display)对象中包含屏幕宽高，屏幕可用区域宽高等重要信息，对应的Display区域如下图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/04AtBCMVRx-rvT6m6yM2kQ/zh-cn_image_0000002585466890.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAF78179AB50231066F1312849AD2F8874199FEA719BFBBF4CAB65E8E5EA9BF1 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/3Yb489uRTGmEScC3t-R2Og/zh-cn_image_0000002585466890.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=381CC240A029385C838724139E576129312AE6C557379B06B66E402C8EB03062 "点击放大")
 
   | API | 说明 |
   | --- | --- |
@@ -150,7 +150,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
 悬停态支持设备平稳放置于桌面，实现免手持体验，常用于视频通话、视频播放、拍照、听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并对上下两个界面进行悬停态布局适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/8oL5pHz-Qi6oEnsb7PZa7Q/zh-cn_image_0000002585626830.png?HW-CC-KV=V1&HW-CC-Date=20261114T005410Z&HW-CC-Expire=31536000000&HW-CC-Sign=7267D290FABCCB6464FF4C149DC3AB0B326C031A824A04072A226D2ED271FFED "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/qWLKDOPzT3-Mqkzl2Ehc_Q/zh-cn_image_0000002585626830.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEB4689CCA5E030D4C6CAA65A93E478C7B13C86D6A2D515FFCFC284BE412926F "点击放大")
 
 ### 开合适配
 
