@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/faq
 title: 常见问题
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:5e06f4dd37b45e0bd0fad929712622ebc654b1e11a6cce4b7ad88767222f9dfc
+scraped_at: 2026-11-25T11:28:43+08:00
+doc_updated_at: 2026-11-25
+content_hash: sha256:3e70f0ff9e0f742116fb7f41553473fd9ae934a29b42a35d9121a01505bdda2a
 ---
 
 **Q1：执行过程中，设备断连重连后，任务能否继续执行？**
@@ -31,7 +31,7 @@ A4：请确认Mac版DevEco Testing客户端是否按照以下步骤安装：
 
 步骤1：DevEco Testing 客户端下载完成后将出现下图弹框。将下载的 DevEco\_Testing\_for\_App 文件拖拽至 Applications 文件夹。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/kMXcnDZPTlKB4MGTOp76iQ/zh-cn_image_0000002633533182.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C2988F521D9DB33D96DDA22B5FE617C8861A45A6ADD8B837DACC07DD5D631AE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/QPrP3gXNQCGsIPvVOZpRIg/zh-cn_image_0000002633533182.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=31D44992FC018BFC100DA45A158E86B3EEAB2D2A629D34297764C2BDD0637273 "点击放大")
 
 步骤2：在启动台找到 DevEco Testing 图标则表示 DevEco Testing 已正常安装。
 
@@ -49,20 +49,20 @@ A6：请先重启电脑，再重新覆盖安装。
 
 A7：如当前电脑仅有C盘，需要在客户端将数据目录设置为 C:\Users\...\AppData\Local\Temp\Deveco Testing 。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/CidcQljVRHqruYHX_UX48A/zh-cn_image_0000002633533180.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=24754239F55AD9B2A5E22C383D3E739D3160E45B43B3E075FB2E8774DDEC4DF4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/hDlvIOI3SOCG-L3BTLlB1g/zh-cn_image_0000002633533180.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4D009561ADF5A870B95097F8D99C654322614EC851289E989EE54709DFA9831 "点击放大")
 
 **Q8：如何通过客户端反馈日志****？**
 
 A8：（1）在客户端导航栏点击设置——选择问题反馈
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/_7wRnmB9SX-gMDTpMEtpOA/zh-cn_image_0000002678748202.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=29CC7B49E8ADA6189E6263FBC8A460AC19F0F33F39901739E4891D2B358127B1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/qjrf1CVLQXStjEtlXWblfA/zh-cn_image_0000002678748202.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=99424D33A172B3E26185134DDA22EED018E58580B4FE3D397CBA77701DDA1DA3 "点击放大")
 
 （2）根据页面提醒填问题反馈的信息，勾选“上传日志”选项；如果想反馈某一个任务的日志及执行情况，在“选择任务”栏点击对应的任务即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/D2Yl-5bfQgO6fmlpqpDM2w/zh-cn_image_0000002708349369.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=49E8BE17C666C9129B42703C0421D0D0316779C035534A6C671F87A039C45DF4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/yi7rRxCnSn6YHpcJf76Gvg/zh-cn_image_0000002708349369.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=1190174496E34C0DB8CCF2D36EF16874B4BBCBDE4561631CF01FA9306EFFA1A6 "点击放大")
 
-**Q9：为什么 DevEco Testing 进行稳定性压测时，相同应用版本包，API25 版本的测试问题相比 API24 变多了？**
+**Q9：为什么 DevEco Testing 进行稳定性压测时，相同版本应用包，使用 7.0 版本 ROM 测试发现的问题比 6.1及以下版本 ROM 变多了？**
 
-A9：API25 及以上版本在获取 layout 命令的底层做了优化，遍历效率更高，遍历场景更多，因此可以触发更多稳定性问题。
+A9：7.0 及以上的 ROM 版本在获取 layout 命令的底层做了优化，遍历效率更高，遍历场景更多，因此可以触发更多稳定性问题。
 
 更多问题详见[FAQ](../harmonyos-faqs/faqs-deveco-testing-faq.md)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-mate-book-
 title: 折叠电脑应用开发
 breadcrumb: 最佳实践 > 多设备体验进阶 > 电脑 > 折叠电脑应用开发
 category: best-practices
-scraped_at: 2026-11-24T12:47:49+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:ff93971b0e7527397a8a007c7b06ca5946bbd5c8efbfac98be4a3a2deeb3ed78
+scraped_at: 2026-11-25T11:33:30+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:0d3d0deae152199e7d80f46ffb7fa302c49fe40611fa3d003b531d4f4579c857
 ---
 
 ## 概述
@@ -20,13 +20,15 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
 **说明** 
 
-当磁吸键盘贴附在下屏时，设备进入半折叠态（唤起全尺寸键盘），此时下屏无法使用。
+* 当磁吸键盘贴附在下屏时，设备进入半折叠态（唤起全尺寸键盘），此时下屏无法使用。
+* 部分折叠电脑产品（如MateBook Fold S）还配有一块背部外屏，可作为辅助信息看板，供用户浏览轻量化信息。
 
-当前折叠电脑产品主要为MateBook Fold系列。
+当前折叠电脑产品主要为MateBook Fold系列和MateBook Fold S系列。
 
 | 产品名称 | 示意图 |
 | --- | --- |
 | **MateBook Fold系列** |  |
+| **MateBook Fold S系列** |  |
 
 **说明** 
 
@@ -34,80 +36,115 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
 ## 产品硬件参数
 
-本章将以MateBook Fold产品为例，介绍折叠电脑的屏幕尺寸、相机、折叠能力等硬件参数信息。
+本章将以MateBook Fold产品和MateBook Fold S产品为例，介绍折叠电脑的屏幕尺寸、相机、折叠能力等硬件参数信息。
 
 ### 屏幕规格信息
 
 折叠电脑在不同折叠状态下，分辨率、屏幕宽度等属性存在差异，具体说明如下：
 
-* 在半折叠态（关闭全尺寸键盘）下，设备拥有上下两个屏幕，其中上屏的displayId为0，下屏的displayId为999；而在半折叠态（唤起全尺寸键盘）和展开态下，仅显示displayId为0的屏幕。
-* 折叠电脑底部工具栏高度固定为118px，但在不同折叠电脑形态下，工具栏占用的宽度和位置不同，屏幕可用宽高（[availableWidth/availableHeight](../harmonyos-references/js-apis-display.md#属性)）也会随之变化。
-* 折叠电脑外接显示器时，会自动进入横向展开态布局，且屏幕方向为反向横屏，此时折叠电脑默认作为主显示器（displayId为0），外接屏幕作为副显示器（displayId与接入的端口有关）。可使用[getWindowProperties()](../harmonyos-references/arkts-apis-window-window.md#getwindowproperties9)方法获取当前窗口的属性[WindowProperties](../harmonyos-references/arkts-apis-window-i.md#windowproperties)，通过其中的displayId字段，判断窗口所在的显示器。
+* 折叠电脑使用时存在一个包含“启动”按钮的底部快捷栏，但在不同折叠电脑形态下，工具栏占用的宽度和位置不同，屏幕可用宽高（[availableWidth/availableHeight](../harmonyos-references/js-apis-display.md#属性)）也会随之变化。
+* 折叠电脑外接显示器时，会自动进入横向展开态布局，且屏幕方向为反向横屏，此时折叠电脑默认作为主显示器，外接屏幕作为副显示器。可使用[getWindowProperties()](../harmonyos-references/arkts-apis-window-window.md#getwindowproperties9)方法获取当前窗口的属性[WindowProperties](../harmonyos-references/arkts-apis-window-i.md#windowproperties)，通过其中的displayId字段，判断窗口所在的显示器。
+* MateBook Fold S拥有一块1:1的方形外屏。
 
 **半折叠态屏幕规格信息**
 
-|  |  |  |  |  |  |  |
-| --- | --- | --- | --- | --- | --- | --- |
-| [屏幕旋转角度（rotation）](../harmonyos-references/js-apis-display.md#属性) | 0(0度) | | | 1(90度) | 2(180度) | 3(270度) |
-| 设备形态 | 半折叠态（唤起全尺寸键盘） | 半折叠态（关闭全尺寸键盘） | | NA | NA | NA |
-| 半折叠态效果图 |  |  | | NA | NA | NA |
-| [屏幕方向（Orientation）](../harmonyos-references/js-apis-display.md#orientation10) | 竖屏PORTRAIT | | | NA | NA | NA |
-| 屏幕ID | displayId：0 | displayId：0 | displayId：999 | NA | NA | NA |
-| 分辨率（px） | 2472\*1608 | 2472\*1608 | 2472\*1606 | NA | NA | NA |
+|  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [屏幕旋转角度（rotation）](../harmonyos-references/js-apis-display.md#属性) | | 0(0度) | | | 1(90度) | 2(180度) | 3(270度) |
+| 设备形态 | | 半折叠态（唤起全尺寸键盘） | 半折叠态（关闭全尺寸键盘） | | NA | NA | NA |
+| 半折叠态效果图 | |  |  | | NA | NA | NA |
+| [屏幕方向（Orientation）](../harmonyos-references/js-apis-display.md#orientation10) | | 竖屏PORTRAIT | | | NA | NA | NA |
+| MateBook Fold | 分辨率（px） | 2472\*1608 | 2472\*1608 | 2472\*1606 | NA | NA | NA |
 | 分辨率（vp）（向下取整） | 1373\*893 | 1373\*893 | 1373\*892 | NA | NA | NA |
-| 屏幕可用宽高（px） | 2472\*1490（底部工具栏高度118px） | 2472\*1608 | 2472\*1488（底部工具栏高度118px） | NA | NA | NA |
+| 屏幕可用宽高（px） | 2472\*1490（底部快捷栏高度118px） | 2472\*1608 | 2472\*1488（底部快捷栏高度118px） | NA | NA | NA |
 | 屏幕可用宽高（vp）（向下取整） | 1373\*827 | 1373\*893 | 1373\*826 | NA | NA | NA |
 | [横纵断点](bpta-multi-device-responsive-layout.md#section1532120147301) | 横向断点lg，纵向断点sm | 横向断点lg，纵向断点sm | 横向断点lg，纵向断点sm | NA | NA | NA |
+| MateBook Fold S | 分辨率（px） | 2160\*1574 | 2160\*1574 | 2160\*1572 | NA | NA | NA |
+| 分辨率（vp）（向下取整） | 1107\*807 | 1107\*807 | 1107\*806 | NA | NA | NA |
+| 屏幕可用宽高（px） | 2160\*1446（底部快捷栏高度128px） | 2160\*1574 | 2160\*1444（底部快捷栏高度128px） | NA | NA | NA |
+| 屏幕可用宽高（vp）（向下取整） | 1107\*741 | 1107\*807 | 1107\*740 | NA | NA | NA |
+| 横纵断点 | 横向断点lg，纵向断点sm | 横向断点lg，纵向断点sm | 横向断点lg，纵向断点sm | NA | NA | NA |
 
 **展开态屏幕规格信息**
 
-|  |  |  |  |  |  |
-| --- | --- | --- | --- | --- | --- |
-| [屏幕旋转角度（rotation）](../harmonyos-references/js-apis-display.md#属性) | 0(0度) | 1(90度) | 2(180度) | 3(270度) | |
-| 设备形态 | 竖向展开态 | 横向展开态 | NA | 横向展开态 | 外接显示器 |
-| 展开态效果图 |  |  | NA |  |  |
-| [屏幕方向（Orientation）](../harmonyos-references/js-apis-display.md#orientation10) | 竖屏PORTRAIT | 横屏LANDSCAPE | NA | 反向横屏LANDSCAPE\_INVERTED | |
-| 屏幕ID | displayId：0 | displayId：0 | NA | displayId：0 | 主显示器：displayId为0  外接显示器：displayId与接入的端口有关 |
-| 分辨率（px） | 2472\*3296 | 3296\*2472 | NA | 3296\*2472 | 3296\*2472 |
+|  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| [屏幕旋转角度（rotation）](../harmonyos-references/js-apis-display.md#属性) | | 0(0度) | 1(90度) | 2(180度) | 3(270度) | |
+| 设备形态 | | 竖向展开态 | 横向展开态 | NA | 横向展开态 | 外接显示器 |
+| 展开态效果图 | |  |  | NA |  |  |
+| [屏幕方向（Orientation）](../harmonyos-references/js-apis-display.md#orientation10) | | 竖屏PORTRAIT | 横屏LANDSCAPE | NA | 反向横屏LANDSCAPE\_INVERTED | |
+| MateBook Fold | 分辨率（px） | 2472\*3296 | 3296\*2472 | NA | 3296\*2472 | 3296\*2472 |
 | 分辨率（vp）（向下取整） | 1373\*1831 | 1831\*1373 | NA | 1831\*1373 | 1831\*1373 |
-| 屏幕可用宽高（px） | 2472\*3178（底部工具栏高度118px） | 3296\*2354（底部工具栏高度118px） | NA | 3296\*2354（底部工具栏高度118px） | 3296\*2354（底部工具栏高度118px） |
+| 屏幕可用宽高（px） | 2472\*3178（底部快捷栏高度118px） | 3296\*2354（底部快捷栏高度118px） | NA | 3296\*2354（底部快捷栏高度118px） | 3296\*2354（底部快捷栏高度118px） |
 | 屏幕可用宽高（vp）（向下取整） | 1373\*1765 | 1831\*1307 | NA | 1831\*1307 | 1831\*1307 |
 | [横纵断点](bpta-multi-device-responsive-layout.md#section1532120147301) | 横向断点lg，纵向断点lg | 横向断点xl，纵向断点sm | NA | 横向断点xl，纵向断点sm | 横向断点xl，纵向断点sm |
+| MateBook Fold S | 分辨率（px） | 2160\*3240 | 3240\*2160 | NA | 3240\*2160 | 3240\*2160 |
+| 分辨率（vp）（向下取整） | 1107\*1661 | 1661\*1107 | NA | 1661\*1107 | 1661\*1107 |
+| 屏幕可用宽高（px） | 2160\*3112（底部快捷栏高度128px） | 3240\*2032（底部快捷栏高度128px） | NA | 3240\*2032（底部快捷栏高度128px） | 3240\*2032（底部快捷栏高度128px） |
+| 屏幕可用宽高（vp）（向下取整） | 1107\*1595 | 1661\*1042 | NA | 1661\*1042 | 1661\*1042 |
+| 横纵断点 | 横向断点lg，纵向断点lg | 横向断点xl，纵向断点sm | NA | 横向断点xl，纵向断点sm | 横向断点xl，纵向断点sm |
 
-**常用接口**
-
-* 获取屏幕对象相关接口
-
-  [Display](../harmonyos-references/js-apis-display.md#display)对象中包含屏幕宽高，屏幕可用区域宽高等重要信息，对应的Display区域如下图所示。
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/3Yb489uRTGmEScC3t-R2Og/zh-cn_image_0000002585466890.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=381CC240A029385C838724139E576129312AE6C557379B06B66E402C8EB03062 "点击放大")
-
-  | API | 说明 |
-  | --- | --- |
-  | [display.getAllDisplays()](../harmonyos-references/js-apis-display.md#displaygetalldisplays9) | 获取所有的Display对象。不同设备形态下对应的Display区域如上图所示。 |
-  | [display.getDisplayByIdSync()](../harmonyos-references/js-apis-display.md#displaygetdisplaybyidsync12) | 根据displayId获取对应的Display对象。具体的displayId可参考[屏幕规格信息](bpta-mate-book-fold.md#section9491153322214)表格中屏幕ID行。  除半折叠态（关闭全尺寸键盘）分为上下两屏，上屏displayId为0，下屏displayId为999，其余状态折叠电脑屏幕的displayId均为0。 |
-  | [display.getDefaultDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9) | 获取当前默认的Display对象。除半折叠态（关闭全尺寸键盘）获取的Display对象为displayId为0的上屏，其余设备形态下获取的Display区域如上图所示。 |
-  | [display.getPrimaryDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetprimarydisplaysync14) | 获取主屏信息。对于折叠电脑，当外接屏幕时，获取的是当前主屏幕的Display对象；当没有外接屏幕时，获取的是设备自带屏幕中displayId为0的Display对象。 |
-  | [display.on('add' | 'remove' | 'change')](../harmonyos-references/js-apis-display.md#displayonadd--remove--change) | 开启显示设备新增、移除、变化的监听。 |
-
-  **说明** 
-
-  display.on('add' | 'remove' | 'change')触发场景如下：
-  + display.on('add')：半折叠态（唤起全尺寸键盘）->半折叠态（关闭全尺寸键盘），展开态->半折叠态，外接显示器。
-  + display.on('change')：涉及Display变化，包括折叠状态、屏幕方向、可用区域变化等。
-  + display.on('remove')：半折叠态（关闭全尺寸键盘）->半折叠态（唤起全尺寸键盘），半折叠态->展开态，取消外接显示器。
-
-### 相机硬件信息
-
-折叠电脑相机已预设默认的[镜头安装角度](../harmonyos-guides/camera-rotation-term.md#相机镜头安装角度)，使用时需结合镜头角度与设备旋转角度进行适配，具体定义可参考[预览旋转角度](../harmonyos-guides/camera-rotation-term.md#预览旋转角度)。当屏幕方向一致时，前置镜头角度与需设置的预览流旋转角度如下，不同设备状态下的相机参数保持一致。
+**折叠态屏幕规格信息**
 
 |  |  |  |  |
 | --- | --- | --- | --- |
-| 屏幕旋转角度（rotation） | 0(0度) | 1(90度) | 3(270度) |
-| 示意图 |  |  |  |
-| 前置相机镜头角度 | 270° | 270° | 270° |
-| 预览旋转角度 | 270°+0°=270° | 270°+90° = 0° | 270°+270° = 180° |
-| 后置相机镜头角度 | 无后置相机 | | |
+| 产品名称 | 屏幕规格信息 | | 效果图 |
+| MateBook Fold S | 分辨率（px） | 980\*980 |  |
+| 分辨率（vp）（向下取整） | 326\*326 |
+| 横纵断点（横向断点\*纵向断点） | sm\*md |
+
+**说明** 
+
+应用页面适配背部外屏的开发场景，请参考[小方形屏](../doccenter-multi-device/bpta-multi-device-screen-layout.md#section1395830175918)。
+
+**获取屏幕对象常用接口**
+
+[Display](../harmonyos-references/js-apis-display.md#display)对象中包含屏幕宽高，屏幕可用区域宽高等重要信息，对应的Display区域如下图所示。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/NlB1sxRrQsStyXaSdF_-kg/zh-cn_image_0000002795858304.png?HW-CC-KV=V1&HW-CC-Date=20261125T033329Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B09569AECD676EEED485DD6A44193DE5139A94F7E88A50DD9BDB6462F3FABEB "点击放大")
+
+| API | 说明 |
+| --- | --- |
+| [display.getAllDisplays()](../harmonyos-references/js-apis-display.md#displaygetalldisplays9) | 获取所有的Display对象。不同设备形态下对应的Display区域如上图所示。 |
+| [display.getDisplayByIdSync()](../harmonyos-references/js-apis-display.md#displaygetdisplaybyidsync12) | 根据displayId获取对应的Display对象。 |
+| [display.on('add' | 'remove' | 'change')](../harmonyos-references/js-apis-display.md#displayonadd--remove--change) | 开启显示设备新增、移除、变化的监听。 |
+
+**说明** 
+
+display.on('add' | 'remove' | 'change')触发场景如下：
+
+* display.on('add')：半折叠态（唤起全尺寸键盘）->半折叠态（关闭全尺寸键盘），展开态->半折叠态，外接显示器。
+* display.on('change')：涉及Display变化，包括折叠状态、屏幕方向、可用区域变化等。
+* display.on('remove')：半折叠态（关闭全尺寸键盘）->半折叠态（唤起全尺寸键盘），半折叠态->展开态，取消外接显示器。
+
+### 相机硬件信息
+
+折叠电脑相机已预设默认的[镜头安装角度](../harmonyos-guides/camera-rotation-term.md#相机镜头安装角度)，使用时需结合镜头角度与设备旋转角度进行适配，具体定义可参考[预览旋转角度](../harmonyos-guides/camera-rotation-term.md#预览旋转角度)。当屏幕方向一致时，镜头角度与需设置的预览流旋转角度如下，不同设备状态下的相机参数保持一致。
+
+**前置镜头**
+
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
+| 屏幕旋转角度（rotation） | | 0(0度) | 1(90度) | 3(270度) |
+| 示意图 | |  |  |  |
+| MateBook Fold | 前置相机镜头角度 | 270° | 270° | 270° |
+| 预览旋转角度 | 270°+0°=270° | 270°+90°=0° | 270°+270°=180° |
+| MateBook Fold S | 前置相机镜头角度 | 0° | 0° | 0° |
+| 预览旋转角度 | 0°+0°=0° | 0°+90°=90° | 0°+270°=270° |
+
+**后置镜头**
+
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
+| 屏幕旋转角度（rotation） | | 0(0度) | 1(90度) | 3(270度) |
+| 示意图 | |  |  |  |
+| MateBook Fold | 后置相机镜头角度 | 无后置相机 | | |
+| MateBook Fold S | 后置相机镜头角度 | 90° | 90° | 90° |
+| 预览旋转角度 | 90°+0°=90° | 90°+90°=180° | 90°+270°=0° |
+
+**说明** 
+
+MateBook Fold S产品由展开态->折叠态后，后置相机镜头会变为前置相机镜头。
 
 ### 设备折叠能力
 
@@ -142,7 +179,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
   | API | 说明 |
   | --- | --- |
-  | [display.getCurrentFoldCreaseRegion()](../harmonyos-references/js-apis-display.md#displaygetcurrentfoldcreaseregion10) | 在当前显示模式下获取折叠折痕区域。返回[FoldCreaseRegion](../harmonyos-references/js-apis-display.md#foldcreaseregion10)对象，即设备在当前显示模式下的折叠折痕区域。具体返回数据可参考[设备折叠能力](bpta-mate-book-fold.md#section627813399360)表中的FoldCreaseRegion行。 |
+  | [display.getCurrentFoldCreaseRegion()](../harmonyos-references/js-apis-display.md#displaygetcurrentfoldcreaseregion10) | 在当前显示模式下获取折叠折痕区域。返回[FoldCreaseRegion](../harmonyos-references/js-apis-display.md#foldcreaseregion10)对象，即设备在当前显示模式下的折叠折痕区域。具体返回数据可参考[设备折叠能力](bpta-mate-book-fold.md#section19816172214286)表中的FoldCreaseRegion行。 |
 
 ## 创新与体验提升
 
@@ -150,7 +187,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
 悬停态支持设备平稳放置于桌面，实现免手持体验，常用于视频通话、视频播放、拍照、听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并对上下两个界面进行悬停态布局适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/qWLKDOPzT3-Mqkzl2Ehc_Q/zh-cn_image_0000002585626830.png?HW-CC-KV=V1&HW-CC-Date=20261124T044748Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEB4689CCA5E030D4C6CAA65A93E478C7B13C86D6A2D515FFCFC284BE412926F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/x8DiO7EoTL2caWyqB3emKg/zh-cn_image_0000002795858314.png?HW-CC-KV=V1&HW-CC-Date=20261125T033329Z&HW-CC-Expire=31536000000&HW-CC-Sign=F62CBFE7F2FAE72F6B9FE424666584C5EE03102AEBDDEBBA93FA2FDF56217EC6 "点击放大")
 
 ### 开合适配
 
@@ -165,6 +202,10 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 折叠电脑上前后台应用需从以下四个方面处理音频焦点问题：[音频焦点抢占流程](bpta-audio-focus-management.md#section1747213761316)，[音频流类型正确配置](bpta-audio-focus-management.md#section2888185819153)，[自定义焦点策略设置](bpta-audio-focus-management.md#section048671914296)，[焦点中断事件正确处理](bpta-audio-focus-management.md#section1664171514332)。
 
 音频焦点的管理机制与其他设备大体相同，主要区别在于系统默认策略不一样，开发者可参考[自定义焦点策略设置](bpta-audio-focus-management.md#section048671914296)查看电脑与其他设备间的差异。
+
+### 手写笔适配
+
+部分折叠电脑搭载手写笔（如MateBook Fold S），支持无感连接与低延迟传输，开盒即用，适用于全局批注、提笔速记及按键遥控等功能场景，实现流畅自然的书写与交互体验。通过系统提供的[Pen Kit简介](../harmonyos-guides/pen-introduction.md)能力，开发者可灵活接入手写套件、全局取色、一笔成形等接口，提升书写交互的扩展性与创作效率。
 
 ## 设备常见适配问题
 
@@ -193,7 +234,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
 **如何实现跨屏幕移动窗口**
 
-问题描述：折叠电脑在半折叠状态（关闭全尺寸键盘）下，上下两块屏幕均可独立操作。如果想将位于下屏的应用跨屏移动到上屏，应该如何操作？
+问题描述：折叠电脑在半折叠态（关闭全尺寸键盘）下，上下两块屏幕均可独立操作。如果想将位于下屏的应用跨屏移动到上屏，应该如何操作？
 
 解决措施：使用[moveWindowToGlobal()](../harmonyos-references/arkts-apis-window-window.md#movewindowtoglobal15)接口实现跨屏幕移动窗口，将窗口从下屏移动至上屏。
 
@@ -220,7 +261,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 * 相机预览旋转角度与屏幕显示旋转角度（[Display](../harmonyos-references/js-apis-display.md#属性).rotation）相关，适配步骤如下：
   1. 调用session.[commitConfig()](../harmonyos-references/arkts-apis-camera-session.md#commitconfig11)完成配流。
   2. 通过[display.getDefaultDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)接口获取[Display](../harmonyos-references/js-apis-display.md#属性)对象并读取其rotation属性值，获得显示设备的屏幕旋转角度。
-  3. 并根据[相机镜头安装角度](../harmonyos-guides/camera-rotation-term.md#相机镜头安装角度)+[屏幕显示旋转角度](../harmonyos-guides/camera-rotation-term.md#屏幕旋转角度)的值计算[预览旋转角度](../harmonyos-guides/camera-rotation-term.md#预览旋转角度)，可参考[相机硬件信息](bpta-mate-book-fold.md#section9425185473318)确认对应数值。
+  3. 并根据[相机镜头安装角度](../harmonyos-guides/camera-rotation-term.md#相机镜头安装角度)+[屏幕显示旋转角度](../harmonyos-guides/camera-rotation-term.md#屏幕旋转角度)的值计算[预览旋转角度](../harmonyos-guides/camera-rotation-term.md#预览旋转角度)，可参考[相机硬件信息](bpta-mate-book-fold.md#section148129226282)确认对应数值。
   4. 再调用[setPreviewRotation()](../harmonyos-references/arkts-apis-camera-previewoutput.md#setpreviewrotation12)接口，设置图像的预览旋转角度。
 
   具体开发指导可参考适配相机旋转角度-[预览](../harmonyos-guides/camera-rotation-angle-adaptation.md#预览)。

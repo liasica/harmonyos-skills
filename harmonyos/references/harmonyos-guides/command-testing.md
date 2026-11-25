@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/command-testi
 title: 命令行执行测试
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 命令行执行测试
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:8f8c67efa37a57538d42986b324df94e564b9ae913201875cfd23f7e2a7ba291
+scraped_at: 2026-11-25T11:28:44+08:00
+doc_updated_at: 2026-11-25
+content_hash: sha256:975426b0820615c9192a7965159ac5187b5a9bcd6daa8b3e88dfcba4fe355cc1
 ---
 
 ## 环境准备
@@ -40,7 +40,7 @@ PS：性能测试对内存消耗比较大，为了避免出现任务执行失败
 
 安装DevEco Testing客户端后，登录进入首页->点击设置，在基本设置页面开启登录状态保活。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/9XMS7AKlRfq21af2_I0quw/zh-cn_image_0000002645378872.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3CE0F4EBA38078373CB25944E46166E56D45DC49383368E3E521EDFAA0799CE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/jvLGtnLGSy665m5tJWB2vQ/zh-cn_image_0000002645378872.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAF5A3C9618920DCDEBE27CFD460C39453245515086826305CC5B0DD3E819C0F "点击放大")
 
 ### 命令行启动测试任务
 
@@ -50,11 +50,11 @@ PS：性能测试对内存消耗比较大，为了避免出现任务执行失败
 
 2、在当前文件路径中输入cmd后点击回车进入cmd命令窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/sMaloz1OTj6GBDNeFOwGnQ/zh-cn_image_0000002645114060.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=C698C1333F9CD1328C1A68A154E1A3176EA4C6ED8C65E77EC3543117104739EB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/AEi9o_eEQdqwhsnz2DECFw/zh-cn_image_0000002645114060.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=F64B7494C661BDD71A27809A11BA508237D9B123CD4F68276E44061C754C965E "点击放大")
 
 3、进入cmd窗口后，输入：DevEcoTestingConsole.bat -params 参数json文件路径。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/H4nsXuU-RECp5hXZ0tazcQ/zh-cn_image_0000002672388211.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9F66DB3D68560B729D72C076C211D4D6EC8426CC596A45800DDD41C468C20C7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/eTUPFfOQQjWRfbmvgQfw6A/zh-cn_image_0000002672388211.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6E82498DA4A1EDEAF7FB5818B68389FF67FFCD489883BA239879E0789D80AF4 "点击放大")
 
 **注意** 
 
@@ -66,7 +66,7 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 1、安装完客户端后，在应用程序中找到DevEco\_Testing\_for\_App.app，选中后control+右键，选择显示包内容进入 DevEco\_Testing\_for\_App.app/Contents/PlugIns/java.jdk/Contents/Home 目录，在该目录下选中bin目录后control + 右键，选择新建位于文件夹位置的终端窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/BJ30mlfeT_ygd29YN03Z0g/zh-cn_image_0000002663950171.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=F80454B56A42BBA12C5948095CA4411C7F7EDE2AF133A5B4E5DBA601D9D0BF4D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/tRIkgG5zSP-VP0t4_FauGw/zh-cn_image_0000002663950171.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E0D8FAEBA946A01DCA2BFA2DA431DAFFFC10920E99AA1319BEFCE62A0831487 "点击放大")
 
 2、执行 ./DevEcoTestingConsole.sh 脚本
 
@@ -74,11 +74,11 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 初次执行可能会有permission denied权限问题，需给./DevEcoTestingConsole.sh脚本添加可执行权限，在终端窗口执行 chmod +x ./DevEcoTestingConsole.sh 。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WOPSZLWyTtSpyiPh4-Bqxg/zh-cn_image_0000002664332745.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDBAF16971FA3312CD1905ED5B4EA450C2210865F7C4430AF6F2914F9018B9AE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/vdZFiYwVS32-Fmemt7y5Hw/zh-cn_image_0000002664332745.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=F282A8B2ADBDB38D186E042587B3CAF9AF7808B31E44C16174CF5BBE09A6CF03 "点击放大")
 
 权限添加完成即可通过命令行方式执行 “./DevEcoTestingConsole.sh -params json文件路径 ”命令启动测试服务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/e1VNmD8xRleKlVHzltvlbA/zh-cn_image_0000002634013774.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=08EE9B3BBA5C0BB316184EE9EEC507C1D8F330B035155FFD066EBE12731BC4BC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ziIoInBlQZiWB3_rbrdniQ/zh-cn_image_0000002634013774.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEE40A6C6755FCFF9DD1EFCD66ADB61F59696E1C00938CFBD1FA2EACD73F82DF "点击放大")
 
 ### 配置 json 文件
 
@@ -88,7 +88,7 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 查看任务状态前需要获取任务的taskId，在任务创建成功后可以在对应的打印日志中获取：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/zBGRa0kaRNyizS-QSHS_4g/zh-cn_image_0000002672530917.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E620C5DE8749348C5375079F5A34B5768D658A15E572CC297FF87BB5ECB1E6B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/q4DE3K20TAq_hVaJhHmVIg/zh-cn_image_0000002672530917.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=68D4E6650E20A4AF6436FC272552FFB9688E204C74678C61976B48B784D77B72 "点击放大")
 
 **Mac查看任务状态** 终端窗口执行命令：./DevEcoTestingConsole.sh -taskIds "f3\*\*\*469eca"
 
@@ -96,7 +96,7 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 查询结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/z_XdrCxARWGgUwozM87Ydg/zh-cn_image_0000002663950173.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC31C8C1188521451007778AD78AF1F94E084ABC0C48AEF40BF872055A169584 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/gOM5KjpBRV-4XkKzTFP-9w/zh-cn_image_0000002663950173.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C14381A1E5341090BAF2359D8CA67A0B6C9C36891552BAE5617744CB39A2B88 "点击放大")
 
 ### 命令行停止任务
 
@@ -106,7 +106,7 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mDdGO-OFQkGxGKSERCg7zg/zh-cn_image_0000002664030217.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=25A0359BC2ACC3FE34B7F73A71C0107E582A506CB9B1D75A843E475138ED6D04 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/wtfT4wo5Se-eelzMjQit4A/zh-cn_image_0000002664030217.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=40EA2340E3805BAF2E0B88A7BDB9C16DEFEFED45E89C2B96EB693395F23738DD "点击放大")
 
 **说明** 
 
@@ -122,7 +122,7 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ### 场景化性能测试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/xPo6FcTORHiJ1jfjVZF1Fw/zh-cn_image_0000002663950223.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=567648C87E596C0E1AE5ADD078A36115668B43EE4ADD4B554F456D4CC5A657E6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/ytVTp9khTnOaEDxwU0_sQQ/zh-cn_image_0000002663950223.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=7843B050FC8A64DB5B65998FAE0BBAD346F46CA9DC5147EBDD60EB6BAAFDABDB "点击放大")
 
 参数说明：
 
@@ -135,7 +135,7 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 | caseList | 是 | 用例工程中用例名称，至少选一条 | 用例名称集合 |
 | perf | 是 | "响应时延",  "完成时延",  "丢帧卡顿",  "音视频",  "黑白块" | 固定值，必填项 |
 | system | 是 | "CPU",  "内存",  "温度",  "网络",  "GPU",  "存储",  "电量" | 指标监控（CPU与内存必选） |
-| std | 是 | "极优体验"  "较好体验"  "一般体验" | 检测标准(较好体验和一般体验建议必选) |
+| std | 是 | "极优体验"  "较好体验"  "一般体验" | 检测标准（较好体验和一般体验建议必选） |
 | saveAllImages | 是 | true/false | 是否保留全部数据，选择“是”会保存测试过程中的所有截图，占用较大磁盘空间 |
 | generateIdeFile | 是 | true/false | 是否生成IDE分析文件 |
 | sn | 是 | - | 设备sn号 |
@@ -188,7 +188,7 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ### 性能基础质量测试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/cZ4piDYzS3er8wNfoYD3Pw/zh-cn_image_0000002670965461.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=C55223BBA533F9AF8A464437CB5908FFF13F83E8BAD3DFA593624BD264EAD761 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/F6rfjgSESVOjQ49mWRvurg/zh-cn_image_0000002670965461.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FF817459D331A2FE4CFFAA655AF2E44F03DCF74FB80D7623302242C4A8217C3 "点击放大")
 
 参数说明：
 
@@ -259,7 +259,7 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ### 稳定性基础质量测试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/daBTl31xTvGra2WCdx0CLw/zh-cn_image_0000002633711132.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=80DC7E12B4BC1485321F68CBD0D7CBB8A1A17C1F2B888D2EE651DDD1F40FF9FD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/R96dPsNWTD6KiE-qxE29dQ/zh-cn_image_0000002633711132.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=E953E4CCA71CD15681144AE99E6C7B8ACA04B1CF5192D46D4DF7435C486932AC "点击放大")
 
 参数说明：
 
@@ -276,8 +276,8 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 | sn | 是 | - | 设备sn号 |
 | taskName | 是 | - | 任务名称 |
 | blackSelected | 否 | - | 应用图谱工具生成的黑名单数据 |
-| deeplinkRollbackProbability | 否 | 0-60(百分比) | deeplink切换概率 |
-| deeplinkRollbackPeriodMin | 否 | 1-10080(分钟) | deeplink切换周期 |
+| deeplinkRollbackProbability | 否 | 0-60（百分比） | deeplink切换概率 |
+| deeplinkRollbackPeriodMin | 否 | 1-10080（分钟） | deeplink切换周期 |
 | deeplink | 否 | - | deeplink切换链接 |
 | appFeaturePath | 否 | - | 应用图谱生成的文件路径 |
 
@@ -335,7 +335,7 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ### 内存泄漏测试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/nReEdMhiRbaP82fBBFwPwA/zh-cn_image_0000002709499739.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=40D87C5C805F7D5387857E915FC9A71530F5913312213655D1534AE6411F8FF0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/CQy3Hr0lQO-HwAq4amTl_g/zh-cn_image_0000002709499739.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=90DB5C44DCE131F2CA28CEE56854EB59D7D26A0A7E9B73E4BD9BECC5D6211EE7 "点击放大")
 
 参数说明：
 
@@ -347,8 +347,8 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 | solutionName | 是 | 内存泄漏测试 | 测试服务名 |
 | package.name | 是 | 应用包名 | 待测应用包名  如：com.hmos.\*\*\* |
 | testDuration | 是 | 10-10080之间整数 | 测试时长，单位：分钟 |
-| deeplinkRollbackProbability | 否 | 0-60(百分比) | deeplink切换概率 |
-| deeplinkRollbackPeriodMin | 否 | 1-10080(分钟) | deeplink切换周期 |
+| deeplinkRollbackProbability | 否 | 0-60（百分比） | deeplink切换概率 |
+| deeplinkRollbackPeriodMin | 否 | 1-10080（分钟） | deeplink切换周期 |
 | deeplink | 否 | - | deeplink切换链接 |
 | appFeaturePath | 否 | 合法路径 | 图谱特性路径 |
 | blackSelected | 否 | 选中的图谱特性和黑名单，校验对应关系，所有关键字不超过30个 | 图谱配置 |
@@ -406,7 +406,7 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ### 应用上架预检（本地）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/QWC__y6MRCy792_ucSH6XQ/zh-cn_image_0000002633871058.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=A616D18D77C207A85A68A9C87B48481EA7A8A571CAC21222AE4009E24AD2F160 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/qHg9CfKZRFG0y-_Y10zkSA/zh-cn_image_0000002633871058.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=C928C540D5F72324BF42114098CA894B4D59263E1063B2D624BC0E40B5F23BA6 "点击放大")
 
 参数说明：
 
@@ -541,11 +541,11 @@ softwareCatagory参数取值说明：
 
 ## 测试服务任务产物
 
-在任务结束信息打印日志中[command task status] taskPath: ……(即为任务数据存储路径)
+在任务结束信息打印日志中[command task status] taskPath: ……（即为任务数据存储路径）
 
 打开任务数据存储目录，任务报告html和任务产物（2d\_report\_data.json）可在 taskPath目录下export文件夹下找到，例如：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/UzIj6CoTQ36yUKbwiURZiw/zh-cn_image_0000002633871884.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=59750A20547186C05DEEEE910618E8B1E1EEAA7128CA768F49FB6987DE3FAB2D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/CrTI0PRvRUKuJvOwU4NIeg/zh-cn_image_0000002633871884.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3CE9D67ED7D1B776DC40B8157694201BD91CD0BC41B97B4F30055AD06FCD6A7 "点击放大")
 
 任务产物（2d\_report\_data.json）说明如下。
 
@@ -577,7 +577,7 @@ softwareCatagory参数取值说明：
 | generalData | JsonObject | 整体信息，包含任务基础信息、应用信息等 |
 | expandData | Jsonarray | 结果详情，包含整体情况、用例详细数据等 |
 
-更多参数详情及完整 json文件示例请点击下载：[场景化性能json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261110184605.02036416119648890942244077595144:50001231000000:2800:BAEF15C2F5D44ACECCFF64FEEB0D0EC986D6CFBCB8FB74B82426BF227C425B4D.zip?needInitFileName=true)
+更多参数详情及完整 json文件示例请点击下载：[场景化性能json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261124171810.42737436574153281581248359921940:50001231000000:2800:DBE097471308A81F0765A6877D4E774E8BF849FD6E0BCB9496E085EB74209CCE.zip?needInitFileName=true)
 
 ### 性能基础质量测试
 
@@ -605,7 +605,7 @@ softwareCatagory参数取值说明：
 | generalData | JsonObject | 整体信息，包含任务基础信息、应用信息等 |
 | expandData | Jsonarray | 结果详情，包含整体情况、用例详细数据等 |
 
-更多参数详情及完整 json文件示例请点击下载：[性能基础json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261110184605.69801632263802498999563324570484:50001231000000:2800:9AEE1ED26EC8AAE02B9331EFA607AA6D66FD711D61B0EC57C614CCBD9CC9B74E.zip?needInitFileName=true)
+更多参数详情及完整 json文件示例请点击下载：[性能基础json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261124171810.71020539077166078139170490778159:50001231000000:2800:E3272220BCB5AD8ADB3799798A2553AD4C94E4A097F8A0BCBB5D47D74C53A103.zip?needInitFileName=true)
 
 ### 稳定性基础质量测试
 
@@ -634,7 +634,7 @@ softwareCatagory参数取值说明：
 | taskPath | string | 报告路径 |
 | taskParams | JsonObject | 执行参数 |
 
-更多详细参数查询可参考以下文档：[稳定性基础质量json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261110184605.31055112298347852287412403502691:50001231000000:2800:C2CAF62062BF9B082E5E8429EAE79A02EE8D58B02A99B7C1FC8C4AC509F1AB22.zip?needInitFileName=true)
+更多详细参数查询可参考以下文档：[稳定性基础质量json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261124171810.35538369356676451714463211541980:50001231000000:2800:EA27B552FA1C148FD9181C8C01E91CDFFBA478C0FC55B124C09C6306F82332CD.zip?needInitFileName=true)
 
 ### 内存泄漏测试
 
@@ -664,7 +664,7 @@ softwareCatagory参数取值说明：
 | taskPath | String | 测试任务存储数据的文件夹路径。 |
 | taskParams | Object | 在创建任务选择的一些执行参数，详见下方文档。 |
 
-更多详细参数查询可参考以下文档：[内存泄漏json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261110184605.57593051408107734097713344606084:50001231000000:2800:4F1200904469DCD01CDF87E42797F1EF638D1C6823AE7759C78CBF4768FCD526.zip?needInitFileName=true)
+更多详细参数查询可参考以下文档：[内存泄漏json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261124171810.21723866799852970873361510207571:50001231000000:2800:B6E601C99A4B7209DEEC68D6FE7F1658745EE2DF1850E51FDD66270632A78CF8.zip?needInitFileName=true)
 
 ### 应用上架预检（本地）
 
@@ -698,7 +698,7 @@ softwareCatagory参数取值说明：
 | taskPath | string | 报告路径 |
 | taskParams | JsonObject | 执行参数 |
 
-更多参数详情及完整 json文件示例请点击下载：[上架预检json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261110184605.53207558142756082178755571361477:50001231000000:2800:B5C8ECEA9C8388626D6C50B480F8AC3EB2C1835C547D5AE43B8BDF573189F335.zip?needInitFileName=true)
+更多参数详情及完整 json文件示例请点击下载：[上架预检json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261124171810.28956713498325403951668778818424:50001231000000:2800:747EF8B58B3B6AB552D185E1A07F04ED7457DF1D9054317E750A2484CD9AC2DC.zip?needInitFileName=true)
 
 ## 支持自动清理报告数据
 
@@ -867,7 +867,7 @@ Error: Could not create the Java Virtual Machine ：命令启动窗口目录错�
 
 ### 任务结束信息
 
-[command task status] taskPath: ……(任务数据存储路径)
+[command task status] taskPath: ……任务数据存储路径)
 
 [command task status]（taskName）…… task state is finish/failed/stop/timeout
 
@@ -875,9 +875,9 @@ Error: Could not create the Java Virtual Machine ：命令启动窗口目录错�
 
 任务报告html可在 taskPath目录下export文件下找到，例如：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/5mvxQo4KThOutU_FKUOCrA/zh-cn_image_0000002663951775.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F4E78861DA62647159ADDE88D9529050ED63F08ECCD0A28125797A60298EEBF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/XaEcaszGREOizv0r-vSM8w/zh-cn_image_0000002663951775.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7301F08DF507D7DCC897A0035466A11CF5EDA96A3DBE5FBD63C62B55A255105 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/zPgqGJ_bQCWJQLAgi1Ef6w/zh-cn_image_0000002664031823.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C20409F60264575A3FA980EBA90395B3FBE6A23ED61B20B88816B965918D3BA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/BoF0jUndRGyFQS_vLoXSqw/zh-cn_image_0000002664031823.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D4DD45DC04A065D6E702500470AE4E6C3B0ED6D2C3818BB84D1313901ED28DF "点击放大")
 
 ## 常见问题
 

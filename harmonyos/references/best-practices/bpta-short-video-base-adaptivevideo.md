@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-short-vide
 title: 全屏短视频自适应缩放和沉浸
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 全屏短视频自适应缩放和沉浸
 category: best-practices
-scraped_at: 2026-11-24T12:47:49+08:00
-doc_updated_at: 2026-09-15
-content_hash: sha256:0456eadff5861c33e4e35c354536b307c95e99be6fb24428dbf52e49197c68df
+scraped_at: 2026-11-25T11:33:30+08:00
+doc_updated_at: 2026-11-24
+content_hash: sha256:58c36fc026dc60993866cb511d74ba42980456be02f9a5ad30d1ca8e0beb07c7
 ---
 
 ## 概述
@@ -28,6 +28,8 @@ content_hash: sha256:0456eadff5861c33e4e35c354536b307c95e99be6fb24428dbf52e49197
 |  |  |  |
 | --- | --- | --- |
 | 设备 | 直板机 | 双折叠展开态 |
+| 实现效果图 |  |  |
+| 设备 | 阔直板 | 大阔折折叠态 |
 | 实现效果图 |  |  |
 | 设备 | 平板 | 电脑 |
 | 实现效果图 |  |  |
@@ -74,7 +76,7 @@ content_hash: sha256:0456eadff5861c33e4e35c354536b307c95e99be6fb24428dbf52e49197
 
 按照上述沉浸规则进行适配后，视频的沉浸效果图如下（红色部分为视频可用区域）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/fZBJfA3eQ2OKpvXOeofTvg/zh-cn_image_0000002724382497.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=33EC4C08B950424296DB0F91FA3E7E25D992DB61256E35EDF66945928D16668B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/Xv-5CEgCR6WyBzmKC10zaA/zh-cn_image_0000002724382497.png?HW-CC-KV=V1&HW-CC-Date=20261125T033329Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A8E816AD097ECE4D0EB34C3BEC3EBE9B9A339D483B7BC41D1EAD2742A133C2C "点击放大")
 
 ### 视频自适应层
 
@@ -106,7 +108,7 @@ OVERSCAN模式中采用了固定的宽度放大系数，使得视频在水平方
 
 视频宽高比处于9:16区间的短视频在不同可用宽高比区域的显示效果图如下（红色部分为视频显示区域，但超出可用区域即灰色区域时，会发生裁剪）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/ZrItHnrHQ76xM3FNZbFlXg/zh-cn_image_0000002724502423.png?HW-CC-KV=V1&HW-CC-Date=20261124T044749Z&HW-CC-Expire=31536000000&HW-CC-Sign=E759CF7B496F7C69FE77DCE936CB2D509A8BA0D22E847AF8B066C924BD759023 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/vrljpyoMQmWMKZ1ngM8vuw/zh-cn_image_0000002724502423.png?HW-CC-KV=V1&HW-CC-Date=20261125T033329Z&HW-CC-Expire=31536000000&HW-CC-Sign=53F58D9049A80640F95348BC7A72B8347F2F6861B9EA5A944D710694BCDFEE7A "点击放大")
 
 ## 短视频自适应旋转
 
@@ -117,6 +119,8 @@ OVERSCAN模式中采用了固定的宽度放大系数，使得视频在水平方
 | 设备 | 竖屏 | 横屏 |
 | --- | --- | --- |
 | 直板机 |  | 非全屏播放    全屏播放 |
+| 阔直板 |  | 非全屏播放    全屏播放 |
+| 大阔折折叠态 |  | 非全屏播放    全屏播放 |
 | 双折叠展开态 |  |  |
 | 平板 |  |  |
 | 电脑 | 无竖屏效果 |  |

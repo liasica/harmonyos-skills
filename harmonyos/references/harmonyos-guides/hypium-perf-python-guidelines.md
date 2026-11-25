@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hypium-perf-p
 title: 自定义性能脚本测试（基于Python）
 breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 自定义性能脚本测试（基于Python）
 category: harmonyos-guides
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:fa82818379b8f86e36b38f1484149f41440af4a3db8f9896fe34a5dc711de480
+scraped_at: 2026-11-25T11:28:43+08:00
+doc_updated_at: 2026-11-25
+content_hash: sha256:60d4af717de6a812a562e1dcb8a65184b4b6fc5e03fa8f77352e72106efbe122
 ---
 
 ## **概述**
@@ -50,7 +50,7 @@ Hypium基本API接口功能介绍，请参考指导：[Hypium框架-API使用方
 
 1）打开DevEco Testing客户端-测试服务-性能测试-场景化性能测试卡片，点击获取安装包，打开安装包目录，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/P4efHjqlS3anCMJQz7pAig/zh-cn_image_0000002633533164.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C9C9BAABF30963C24021B0A1A8FD887FDBD16522E5BA086A96A1D9116562615 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/S7QbCaJDQwuPKC-i0GWxZg/zh-cn_image_0000002633533164.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8985B255CDF9D76A15C137E2B9F4B8D927F12C7FC04E634B2BF821B4D8B10C9 "点击放大")
 
 2）由于存在依赖关系，需要依次步骤1目录下的hypium、hypium-perf、perf\_analyzer等安装包。
 
@@ -66,7 +66,7 @@ pip install perf_analyzer-6.1.0.12b0-py3-none-any.whl perf_collector-6.1.0.12b0-
 
 1、以上命令中安装包的版本仅供示例，具体版本号请参照实际下载版本。
 
-2、若安装 paddlepaddle 失败，请先安装当前目录下提供的 paddlepaddle 的 whl 包，然后再安装其他 Python 包。
+2、若安装paddlepaddle失败，请先安装当前目录下提供的paddlepaddle的wh包，然后再安装其他Python包。
 
 3）安装完成后，可前往查看PyCharm-设置-项目-Python解释器中的软件包与已安装版本是否一致。
 
@@ -78,15 +78,15 @@ pip install perf_analyzer-6.1.0.12b0-py3-none-any.whl perf_collector-6.1.0.12b0-
 
 1）打开DevEco Testing客户端-测试服务-性能测试-场景化性能测试卡片，在测试前准备中，点击创建工程模板按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/vNH0XGpYQWi_VYv1pZfN6Q/zh-cn_image_0000002663932247.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=62ACB10F5CE881CFCC5109B3FF8127FC505E5995E2BD46310DF58D439A23E276 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/g_lKSiEBSlaOfvkjEJzhpQ/zh-cn_image_0000002663932247.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=6749FF4F87A82E9B43DF0FE16C2235C7270E7D4C40D15FF304516EBED0356EC7 "点击放大")
 
 2）填写工程项目名称，选择工程存放路径，点击开始生成按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/61tP4nQ3QIWHEuKTI8OhFg/zh-cn_image_0000002664012301.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=129E534BB0CB3C5435A602796BA6D622CF2BCFAF7AB06F2408B55A3282EEA2D4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/a8t2ug-uQUOflvDHT2-Wcg/zh-cn_image_0000002664012301.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=929F69981BF6AAADD6B048AC26830BA36B110477BE482A1138250135DF764E50 "点击放大")
 
 3）在步骤2中填写的项目路径下，将自动生成用例模板。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/cZERT43wSMWV4V7d0GL5zg/zh-cn_image_0000002664012295.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=004A92CFCE1D727CAA117B9CFDC151C0B447EC86291139106C0E59306C7DC610)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/6JxDLs6RRbK4sZhzvsNQhQ/zh-cn_image_0000002664012295.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF9F7C211C7FE3229EE002D2D472826A28091CD6B760459C77D00DD4C0D838F1)
 
 **注意** 
 
@@ -114,7 +114,7 @@ pip install perf_analyzer-6.1.0.12b0-py3-none-any.whl perf_collector-6.1.0.12b0-
 
 **注意** 
 
-* 1个性能场景用例由1-N个原子用例(Model)组成，1个原子用例对应1-N个测试步骤。
+* 1个性能场景用例由1-N个原子用例（Model）组成，1个原子用例对应1-N个测试步骤。
 * 每个场景用例都需要一个配对的json配置文件。
 * 场景用例包含的步骤数建议在30个步骤以下，步骤数过多可能会导致执行异常，建议进行用例拆分。
 * 原子用例可以放在models目录下，推荐按照APP进行区分。
@@ -185,7 +185,7 @@ class OH_PerfDemoTest(PerfBaseCase):
         PerfBaseCase.teardown(self)
 ```
 
-OH\_PerfDemoTest.json 配置文件示例
+OH\_PerfDemoTest.json配置文件示例
 
 ```screen
 {
@@ -216,11 +216,11 @@ Model对应的是原子用例中的一组操作序列，在脚本编写时对应
 
 （1）命名规范：
 
-一个Model是一个原子用例，Model类命名要有一定业务含义，例如：”视频页面浏览”命名为BrowseHuaweiVideo。
+一个Model是一个原子用例，Model类命名要有一定业务含义，例如：“视频页面浏览”命名为BrowseHuaweiVideo。
 
 （2）继承规范：
 
-Model类必须继承基类ModelBase，ModelBase会负责与采集器的交互，并且处理Model类抛出的异常。
+Model类必须继承基类 ModelBase，ModelBase会负责与采集器的交互，并且处理Model类抛出的异常。
 
 （3）注释规范：
 
@@ -320,7 +320,7 @@ class BrowseHuaweiVideo(ModelBase):  # 原子用例统一继承ModelBase
 
 使用DevEco Testing->实用工具->UIViewer工具，辅助脚本写作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/P7xwhcOQRkGx2F5MRhI4ew/zh-cn_image_0000002663932241.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=60782B10F36436F9D3FA665C42F58788FA7D6F48A57103F7EE09E37F1A87409E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/artfNtdWR0e91X81X31cbg/zh-cn_image_0000002663932241.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3AF8829A273374DF4FFC012596D4854ADE18B2227137AF0220657C3C27A94F3)
 
 ## 测试框架介绍
 
@@ -343,20 +343,20 @@ def create_tag(self, step_name="", scene_type="", tag_id="", pkg_name="", dynami
 | 参数名称 | 参数描述 |
 | --- | --- |
 | step\_name | 必填，测试步骤名字。 |
-| scene\_type | 必填，对应性能tag类型，从SceneType中选择。 |
-| tag\_id | 非必填，指定标签id。 |
+| scene\_type | 必填，对应性能 tag 类型，从 SceneType 中选择。 |
+| tag\_id | 非必填，指定标签 id。 |
 | pkg\_name | 非必填，测试应用相关包名。 |
 | dynamic\_type | 非必填，标记当前操作是否为动态阈值。 |
 | action\_type | 非必填，标记当前操作的类型。 |
-| is\_first\_swipe | 默认False，标记是否为列表页面的首次滑动。 |
-| wait\_time | 默认0，增加采集时长，避免采集未包含全部动效。 |
-| is\_watch | 默认False，不做视频观看操作，设置为True会对页面进行30S观看，在scene\_type为WATCH时生效。 |
-| is\_seek | 默认False，设置为True表示该操作为滑动进度条的操作。 |
-| is\_short\_video | 默认False，在scene\_type字段为PLAY\_VIDEO时生效，标记起播视频为长视频（False）或者短视频（True）。  （时长小于5分钟的视频为短视频） |
-| need\_wait\_scene | 默认True，在执行完perf接口后需要进行预置等待时间，设置为False时，不需要进行等待。 |
-| ad\_monitor | 默认为False，在scene\_type字段为COLD\_START时生效，设置为True时，会进行广告检测。 |
-| cold\_start\_wait\_time | 非必填，在scene\_type字段为COLD\_START时生效，表示冷启动后，需要额外等待的时间。 |
-| pop\_up\_window\_enable | 默认True，在scene\_type字段为COLD\_START时生效，表示冷启动后，是否执行一次弹窗检测操作。 |
+| is\_first\_swipe | 默认 False，标记是否为列表页面的首次滑动。 |
+| wait\_time | 默认 0，增加采集时长，避免采集未包含全部动效。 |
+| is\_watch | 默认 False，不做视频观看操作，设置为True会对页面进行30S观看，在 scene\_type 为 WATCH 时生效。 |
+| is\_seek | 默认 False，设置为 True 表示该操作为滑动进度条的操作。 |
+| is\_short\_video | 默认 False，在 scene\_type 字段为 PLAY\_VIDEO 时生效，标记起播视频为长视频（False）或者短视频（True）。  （时长小于5分钟的视频为短视频） |
+| need\_wait\_scene | 默认 True，在执行完perf接口后需要进行预置等待时间，设置为 False 时，不需要进行等待。 |
+| ad\_monitor | 默认为 False，在 scene\_type 字段为 COLD\_START 时生效，设置为 True 时，会进行广告检测。 |
+| cold\_start\_wait\_time | 非必填，在 scene\_type 字段为 COLD\_START 时生效，表示冷启动后，需要额外等待的时间。 |
+| pop\_up\_window\_enable | 默认 True，在 scene\_type 字段为 COLD\_START 时生效，表示冷启动后，是否执行一次弹窗检测操作。 |
 | extend\_param | 预留字段。 |
 
 **注意** 
@@ -367,7 +367,7 @@ def create_tag(self, step_name="", scene_type="", tag_id="", pkg_name="", dynami
 * 必须带上场景tag。
 * 每个步骤必须是单独的tag，不能多个步骤共用一个tag。
 
-**3、****场景tag类型**
+**3、****场景 tag 类型**
 
 ```screen
 class SceneType(Enum):
@@ -393,9 +393,9 @@ class SceneType(Enum):
 
 **须知** 
 
-以下所有示例代码中driver都是UiExplorerPerf对象。
+以下所有示例代码中 driver 都是 UiExplorerPerf 对象。
 
-**Phone常用接口**
+**Phone 常用接口**
 
 **1、点击****操作**
 
@@ -411,7 +411,7 @@ def touch_perf(self, target: Union[By, UiComponent, tuple], wait_time: float = 0
 
 | 序号 | 参数名称 | 参数描述 |
 | --- | --- | --- |
-| 1 | target | 需要点击的目标，可以为控件（通过By类指定）或者屏幕坐标（通过tuple类型指定，例如（100，200）， 其中100为x轴坐标，200为y轴坐标）， 或者使用find\_component找到的控件对象。 |
+| 1 | target | 需要点击的目标，可以为控件（通过By类指定）或者屏幕坐标（通过tuple类型指定，例如（100，200）， 其中100为x轴坐标，200为y轴坐标）， 或者使用 find\_component 找到的控件对象。 |
 | 2 | wait\_time | 点击后等待响应的时间，默认0.1s。 |
 | 3 | tag | 对应性能场景tag，点击如果进入新界面，需使用WITH\_PAGE\_SWITCH（有界面切换的场景类型）。 |
 
@@ -492,11 +492,11 @@ def swipe_perf(self, direction: str, distance: int = 60, start_point: tuple = No
 
 | 序号 | 参数名称 | 参数描述 |
 | --- | --- | --- |
-| 1 | direction | 滑动方向，目前支持：”LEFT” 左滑；”RIGHT” 右滑；”UP” 上滑；”DOWN” 下滑。 |
-| 2 | distance | 相对滑动区域总长度的滑动距离，范围为1~100，表示滑动长度为滑动区域总长度的1%到100%， 默认为60。 |
-| 3 | start\_point | 滑动起始点，默认为None，表示在区域中间位置执行滑动操作，可以传入滑动起始点坐标，支持使用(0.5, 0.5)这样的比例坐标。当同时传入side和start\_point的时候，仅start\_point生效。 |
-| 4 | swipe\_time | 滑动时间（s)， 默认0.3s。 |
-| 5 | tag | 对应性能场景tag，若该操作不涉及页面切换，需使用NO\_PAGE\_SWITCH。 |
+| 1 | direction | 滑动方向，目前支持：“LEFT” 左滑；“RIGHT” 右滑；“UP”上滑；“DOWN”下滑。 |
+| 2 | distance | 相对滑动区域总长度的滑动距离，范围为1~100，表示滑动长度为滑动区域总长度的1%到100%， 默认为 60。 |
+| 3 | start\_point | 滑动起始点，默认为 None，表示在区域中间位置执行滑动操作，可以传入滑动起始点坐标，支持使用(0.5, 0.5)这样的比例坐标。当同时传入 side 和 start\_point 的时候，仅 start\_point 生效。 |
+| 4 | swipe\_time | 滑动时间（s）， 默认0.3s。 |
+| 5 | tag | 对应性能场景tag，若该操作不涉及页面切换，需使用 NO\_PAGE\_SWITCH。 |
 
 **使用示例**
 
@@ -525,10 +525,10 @@ def slide_perf(self, start: Union[By, tuple], end: Union[By, tuple], slide_time:
 
 | 序列 | 参数名称 | 参数描述 |
 | --- | --- | --- |
-| 1 | start | 滑动起始位置，可以为控件BY.text("滑块")或者坐标（100，200），或者使用find\_component找到的控件对象。 |
-| 2 | end | 滑动结束位置，可以为控件BY.text("最大值")或者坐标（100，200）, 或者使用find\_component找到的控件对象。 |
+| 1 | start | 滑动起始位置，可以为控件 BY.text（"滑块"）或者坐标（100，200），或者使用 find\_component 找到的控件对象。 |
+| 2 | end | 滑动结束位置，可以为控件 BY.text（"最大值"）或者坐标（100，200）, 或者使用 find\_component 找到的控件对象。 |
 | 3 | slide\_time | 滑动操作总时间，单位秒。 |
-| 4 | tag | 对应性能场景tag，若该操作不涉及页面切换，需使用NO\_PAGE\_SWITCH。 |
+| 4 | tag | 对应性能场景 tag，若该操作不涉及页面切换，需使用 NO\_PAGE\_SWITCH。 |
 
 **使用示例**
 
@@ -558,12 +558,12 @@ def drag_perf(self, start: Union[By, tuple], end: Union[By, tuple],
 
 | 序号 | 参数名称 | 参数描述 |
 | --- | --- | --- |
-| 1 | start | 拖拽起始位置，可以为控件BY.text("滑块")或者坐标（100，200），或者使用find\_component找到的控件对象。 |
-| 2 | end | 拖拽结束位置，可以为控件BY.text("最大值")或者坐标（100，200），或者使用find\_component找到的控件对象。 |
-| 3 | area | 拖拽操作区域，可以为控件BY.text("画布")，或者使用find\_component找到的控件对象。目前仅在start或者end为坐标时生效，指定区域后，当start和end为坐标时，其坐标将被视为相对于指定的区域的相对位置坐标。 |
+| 1 | start | 拖拽起始位置，可以为控件 BY.text（"滑块"）或者坐标（100，200），或者使用 find\_component找到的控件对象。 |
+| 2 | end | 拖拽结束位置，可以为控件 BY.text（"最大值"）或者坐标（100，200），或者使用 find\_component找到的控件对象。 |
+| 3 | area | 拖拽操作区域，可以为控件 BY.text（"画布"），或者使用 find\_component 找到的控件对象。目前仅在 start 或者 end 为坐标时生效，指定区域后，当start和end为坐标时，其坐标将被视为相对于指定的区域的相对位置坐标。 |
 | 4 | press\_time | 拖拽操作开始时长按的时间，默认为1s（暂不支持修改）。 |
 | 5 | drag\_time | 拖动的时间， 默认为1s（整个拖拽操作总时间 = press\_time + drag\_time）。 |
-| 6 | tag | 对应性能场景tag，若该操作不涉及页面切换，需使用NO\_PAGE\_SWITCH。 |
+| 6 | tag | 对应性能场景 tag，若该操作不涉及页面切换，需使用 NO\_PAGE\_SWITCH。 |
 
 **使用示例**
 
@@ -595,10 +595,10 @@ def swipe_to_back_perf(self, side=UiParam.RIGHT, times: int = 1, height: float =
 
 | 序号 | 参数名称 | 参数描述 |
 | --- | --- | --- |
-| 1 | side | 滑动的位置，“RIGHT“表示在右边滑动返回，“LEFT“表示在左边滑动返回。 |
+| 1 | side | 滑动的位置，“RIGHT”表示在右边滑动返回，“LEFT”表示在左边滑动返回。 |
 | 2 | times | 滑动次数，默认1次，某些场景可能需要两次才能返回。 |
 | 3 | height | 滑动位置在屏幕中Y轴的比例高度（从屏幕顶部开始计算）。 |
-| 4 | tag | 对应性能场景tag，侧边返回有界面切换时，需使用WITH\_PAGE\_SWITCH。 |
+| 4 | tag | 对应性能场景 tag，侧边返回有界面切换时，需使用 WITH\_PAGE\_SWITCH。 |
 
 **使用示例**
 
@@ -628,7 +628,7 @@ def swipe_to_home_perf(self, times: int = 1, tag: Tag = None)
 | 序号 | 参数名称 | 参数描述 |
 | --- | --- | --- |
 | 1 | times | 上滑次数，默认1次，某些场景可能需要两次上滑才能返回桌面。 |
-| 2 | tag | 对应性能场景tag，返回桌面一般带有界面切换，需使用WITH\_PAGE\_SWITCH。 |
+| 2 | tag | 对应性能场景 tag，返回桌面一般带有界面切换，需使用 WITH\_PAGE\_SWITCH。 |
 
 **使用示例**
 
@@ -654,10 +654,10 @@ def watch_perf(self, watch_time, is_bullet_screen=False, is_full_screen=False, w
 
 | 序号 | 参数名称 | 参数描述 |
 | --- | --- | --- |
-| 1 | watch\_time | 观看时长，防止长时间观看行为导致视频过大，会按照30S对时长进行分割。 |
-| 2 | is\_bullet\_screen | 默认False，设置为True时，对视频播放与弹幕进行卡顿检测。 |
-| 3 | is\_full\_screen | 默认False，设置为True时，表示当前为全屏播放。 |
-| 4 | watch\_tag\_desc | 非必填，填写后会生成步骤操作描述，对于观看时间大于30S的场景，不建议设置。 |
+| 1 | watch\_time | 观看时长，防止长时间观看行为导致视频过大，会按照 30s 对时长进行分割。 |
+| 2 | is\_bullet\_screen | 默认 False，设置为 True 时，对视频播放与弹幕进行卡顿检测。 |
+| 3 | is\_full\_screen | 默认 False，设置为 True 时，表示当前为全屏播放。 |
+| 4 | watch\_tag\_desc | 非必填，填写后会生成步骤操作描述，对于观看时间大于 30s 的场景，不建议设置。 |
 
 **使用示例**
 
@@ -680,15 +680,15 @@ def start_application_perf(self, app_name, scene_type, tag=None)
 
 **接口说明**
 
-基于APP名称，在桌面上滑动查找指定APP，并进行点击。设备预置：需提前下载APP，并放置在桌面，不要放入文件夹中。
+基于APP名称，在桌面上滑动查找指定 APP，并进行点击。设备预置：需提前下载 APP，并放置在桌面，不要放入文件夹中。
 
 **参数说明**
 
 | 序号 | 参数名称 | 参数描述 |
 | --- | --- | --- |
 | 1 | app\_name | 应用名称，与桌面上显示的名称一致。 |
-| 2 | scene\_type | 应用启动方式，为SceneType.COLD\_START或者SceneType.HOT\_START。 |
-| 3 | tag | 非必填，如果没赋值，则会根据scene\_type自动生成。 |
+| 2 | scene\_type | 应用启动方式，为 SceneType.COLD\_START 或者 SceneType.HOT\_START。 |
+| 3 | tag | 非必填，如果没赋值，则会根据 scene\_type 自动生成。 |
 
 **使用示例**
 
@@ -738,9 +738,9 @@ self.driver.touch_perf(BY.text("视频"), tag=watch_tag)
 
 **1、****main.py实现**
 
-**方法一：**在main.py中修改cmd命令，将参数替换为本地调试的场景用例名称。
+**方法一：**在 main.py 中修改 cmd 命令，将参数替换为本地调试的场景用例名称。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/cQWH7IRUSU65c7kA7gp-UA/zh-cn_image_0000002633533170.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=64F6D069A11ACF908844BDD6061352733BCDE031CC7EEC7EFBB9F38D5055A6A7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/_7a8XGIoSOmA8lKdNPXBJQ/zh-cn_image_0000002633533170.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=B90D0B8C7EF750C30C9FA2DD05A6D94996075E2FE487ACF1385AFA9B28C5925A "点击放大")
 
 main.py示例
 
@@ -760,11 +760,11 @@ if __name__ == "__main__":
         print("Task is End")
 ```
 
-**方法二：**在main.py同级目录下，新建一个json文件，命名为action\_testsuite.json，并在main.py中修改cmd命令。
+**方法二：**在 main.py 同级目录下，新建一个 json 文件，命名为 action\_testsuite.json，并在 main.py 中修改 cmd 命令。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/_UzE4y-bQUaJVrtAIZiZsw/zh-cn_image_0000002633693082.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=68162BA67430A554A96ED178B3AE6C0B0CAA37BB6FAD8F7C154F3551534FAA3B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ZzPORFlqQBKxOce8SYiUjQ/zh-cn_image_0000002633693082.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=212E223908D6E55B06F67B51B5C7B5D0A276F516CF3E09CF9FD65BFFDE296701 "点击放大")
 
-action\_testsuite.json示例
+action\_testsuite.json 示例
 
 ```screen
 {
@@ -789,15 +789,15 @@ action\_testsuite.json示例
 
 一个测试任务执行多个场景用例，而不必每个场景用例单独执行，任务会按照顺序依次执行指定的场景用例。
 
-**方法一：**在main.py 的cmd命令中指定多个case，用”;”分割。
+**方法一：**在 main.py 的 cmd 命令中指定多个 case，用“;”分割。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/5GAjH-qmROijoCyPyHPy1A/zh-cn_image_0000002664012307.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B38BD46F7AAFF56073DC172AFC17FACC646647491BE52FCDD710526DDB0B30F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Ji4THDxIQvSerPclJ12Vew/zh-cn_image_0000002664012307.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DA3D31C6CC9A7AB87B3D992AE8815650423B5F37C1B9B710466D742E265009B "点击放大")
 
-**方法二：**在json文件配置，并在main.py的cmd命令参数中指定json文件。
+**方法二：**在 json 文件配置，并在 main.py 的 cmd 命令参数中指定 json 文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/KAa_b_SSQsWAThRl4OvuHA/zh-cn_image_0000002633693088.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F47D2D58C4F2CB8304DECBA52DF3F13D3E1C0F7A02CF92277389171EECA07D7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Dhx1cOAkSrOvUcQKyKrDmA/zh-cn_image_0000002633693088.png?HW-CC-KV=V1&HW-CC-Date=20261125T032843Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB69D5525B8CFC667E61832711B8F75D48610303E9C16EBBA7C9F01466030E7E "点击放大")
 
-action\_testsuite.json示例
+action\_testsuite.json 示例
 
 ```screen
 {
@@ -827,4 +827,4 @@ action\_testsuite.json示例
 
 ## **性能脚本测试执行**
 
-性能脚本本地调试验证成功后，可在DevEco Testing创建性能测试任务，请查看文档：[场景化性能测试-任务创建](performance-testing.md#section8642101711299)。
+性能脚本本地调试验证成功后，可在 DevEco Testing 创建性能测试任务，请查看文档：[场景化性能测试-任务创建](performance-testing.md#section8642101711299)。
