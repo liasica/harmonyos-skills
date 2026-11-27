@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/map-kit-faq-0002
-title: 地图定位功能实现常见问题
-breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 常见问题 > 地图定位功能实现常见问题
+title: 地图定位显示与我的位置问题排查
+breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 常见问题 > 地图定位显示与我的位置问题排查
 category: harmonyos-faqs
-scraped_at: 2026-11-13T09:06:32+08:00
-doc_updated_at: 2026-11-12
-content_hash: sha256:34cdb8e76a015519fc5c54f6ec2ee2cdeb2ddd9a976fa95345b7e176291a4ad2
+scraped_at: 2026-11-27T10:51:39+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:3a2bf7cfa8503ad0cb3d3d6027d6ad811b5fb750b7c3c44b5a9a6c48eb570b09
 ---
 
 **Q：如何在地图上获取当前位置并显示？**
@@ -356,3 +356,123 @@ content_hash: sha256:34cdb8e76a015519fc5c54f6ec2ee2cdeb2ddd9a976fa95345b7e176291
 **Q：如何用代码判断是否启动我的位置图层和我的位置按钮？**
 
 **A**：使用[isMyLocationEnabled](../doccenter-references/api/map-map-mapcomponentcontroller.md#ismylocationenabled)获取“我的位置”图层的开启状态，使用[isMyLocationControlsEnabled](../doccenter-references/api/map-map-mapcomponentcontroller.md#ismylocationcontrolsenabled)获取“我的位置”按钮的启用状态。
+
+**Q：Map Kit地图中，我的位置当前可以通过设置mapCommon.MyLocationDisplayType.FOLLOW\_ROTATE，实现我的位置图标实时指向设备旋转方向。**
+
+如何实现我的位置图标实时指向设备的移动方向，比如在跑步场景，我的位置实时指向跑步的方向？
+
+**A**：前提条件：
+
+* 需要申请"ohos.permission.LOCATION"和"ohos.permission.APPROXIMATELY\_LOCATION"位置权限。
+* 需要[开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)。
+
+1. 设置我的位置图标自定义样式和移动效果，此方案场景，需设置displayType参数为mapCommon.MyLocationDisplayType.FOLLOW（我的位置图标不跟随或设备方向旋转）。
+
+   ```ts
+   let style: mapCommon.MyLocationStyle = {
+     anchorU: 0.5,
+     anchorV: 0.5,
+     icon: $r('app.media.startIcon'), // 此处替换为自定义的我的位置图标
+     displayType: mapCommon.MyLocationDisplayType.FOLLOW
+   };
+   await this.mapController.setMyLocationStyle(style);
+   this.mapController.setMyLocationEnabled(true);
+   ```
+2. 通过[geoLocationManager.on('locationChange')](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanageronlocationchange)监听当前设备的位置信息[Location](../harmonyos-references/js-apis-geolocationmanager.md#location)，其中包括设备的移动方向信息（direction）。在监听回调中通过setMyLocation接口设置地图上我的位置图标的位置信息，其中包括显示我的位置图标方向为direction设备移动方向。
+
+   ```ts
+   let requestInfo: geoLocationManager.LocationRequest = {
+     'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
+     'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+     'timeInterval': 1,
+     'distanceInterval': 0,
+     'maxAccuracy': 0
+   };
+   let locationChange = (location: geoLocationManager.Location): void => {
+     location.accuracy = 0;
+     this.mapController?.setMyLocation(location);
+   };
+   try {
+     geoLocationManager.on('locationChange', requestInfo, locationChange);
+   } catch (err) {
+     console.error("errCode:" + err.code + ", message:" + err.message);
+   }
+   ```
+
+**说明** 
+
+direction设备移动方向只有在使用GPS定位时才返回有效值，请在空旷的室外进行测试验证。
+
+完整代码：
+
+```ts
+import { mapCommon, MapComponent, map } from '@kit.MapKit';
+import { AsyncCallback } from '@kit.BasicServicesKit';
+import { geoLocationManager } from '@kit.LocationKit';
+
+@Entry
+@Component
+struct MyLocationDirection {
+  private mapOptions?: mapCommon.MapOptions;
+  private callback?: AsyncCallback<map.MapComponentController>;
+  private mapController?: map.MapComponentController;
+
+  aboutToAppear(): void {
+    // 地图初始化参数，设置地图中心点坐标及层级
+    this.mapOptions = {
+      position: {
+        target: {
+          latitude: 39.9,
+          longitude: 116.4
+        },
+        zoom: 10
+      }
+    };
+
+    // 地图初始化的回调
+    this.callback = async (err, mapController) => {
+      if (!err) {
+        // 获取地图的控制器类，用来操作地图
+        this.mapController = mapController;
+        let style: mapCommon.MyLocationStyle = {
+          anchorU: 0.5,
+          anchorV: 0.5,
+          icon: $r('app.media.startIcon'), // 此处替换为自定义的我的位置图标
+          displayType: mapCommon.MyLocationDisplayType.FOLLOW
+        };
+        await this.mapController.setMyLocationStyle(style);
+        this.mapController.setMyLocationEnabled(true);
+
+        let requestInfo: geoLocationManager.LocationRequest = {
+          'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
+          'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+          'timeInterval': 1,
+          'distanceInterval': 0,
+          'maxAccuracy': 0
+        };
+        let locationChange = (location: geoLocationManager.Location): void => {
+          location.accuracy = 0;
+          this.mapController?.setMyLocation(location);
+        };
+        try {
+          geoLocationManager.on('locationChange', requestInfo, locationChange);
+        } catch (err) {
+          console.error("errCode:" + err.code + ", message:" + err.message);
+        }
+      }
+    };
+  }
+
+  build() {
+    Stack() {
+      // 调用MapComponent组件初始化地图
+      MapComponent({
+        mapOptions: this.mapOptions,
+        mapCallback: this.callback,
+      })
+        .width('100%')
+        .height('100%');
+    }.height('100%')
+  }
+}
+```

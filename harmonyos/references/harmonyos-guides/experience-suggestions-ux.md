@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/experience-su
 title: 应用UX体验建议
 breadcrumb: 指南 > 应用体验建议 > 应用UX体验建议
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:46+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-11-27T10:45:11+08:00
+doc_updated_at: 2026-11-26
 content_hash: sha256:bf1dacaebcd2662df0a00ba79a360558a203e0ea4e133dec1c982ab13eaf086b
 ---
 

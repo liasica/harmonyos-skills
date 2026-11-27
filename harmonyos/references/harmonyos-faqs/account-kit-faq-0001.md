@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/account-kit-faq
 title: 华为账号登录与授权常见问题
 breadcrumb: FAQ > 应用服务开发 > 华为账号服务（Account Kit） > 常见问题 > 华为账号登录与授权常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T09:06:34+08:00
-doc_updated_at: 2026-11-12
-content_hash: sha256:7dac65b1d17e5e4cfb72fa0e6bfeaaf8fdd8f514ba37c875797220eb44af07a1
+scraped_at: 2026-11-27T10:51:41+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:f8e011b8cd970aeb8e0ee4d32cd47fa90c1fdcd97006929c576085130aeb1cd1
 ---
 
 **Q：华为账号登录报错，常见错误码是1001500001，主要报错信息如下：**
@@ -14,18 +14,18 @@ content_hash: sha256:7dac65b1d17e5e4cfb72fa0e6bfeaaf8fdd8f514ba37c875797220eb44a
 Failed to auth, errorCode=1001500001, errorMsg=Failed to check the fingerprint of the app bundle.Fingerprint verification error.
 ```
 
-**A**：问题一：错误码1001500001的含义为应用指纹证书验证失败。
+**A：**问题一：错误码1001500001的含义为应用指纹证书验证失败。
 
 可能原因：应用的指纹证书未配置或配置错误（HarmonyOS 6.0后不再要求配置公钥指纹）。
 
 检查步骤：
 
-1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)查看[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)：
+1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)查看[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/vmPk5kCkSImziMn7lBqiYw/zh-cn_image_0000002794282667.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF2E37AC18719988E5F596523F31537B98F127942E97EAB46B84D5C0F981483B "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/5gS8P2DKRU-9Mb_q0RSUTA/zh-cn_image_0000002796158892.png?HW-CC-KV=V1&HW-CC-Date=20261127T025140Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AE6EE36ECAF05F66B880E5EEDE0ABE8987E8E6DA29125D465153AFCF7F75015 "点击放大")
 2. 使用DevEco Studio打开项目工程，打开File->Project Structure->Project->Signing Configs界面，不能勾选"Automatically generate signature"进行自动签名，需要手动配置签名。可以按照开发准备里面的说明配置：[配置签名信息](../harmonyos-guides/application-dev-overview.md#配置签名信息)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/UyvSHgImT2CYObUVioe_HQ/zh-cn_image_0000002794282669.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6D0FBFB4D9C596B8743C58DA7990C3B8E182C5CB8C3C492F869629EE746EAE4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/C23xtWwXTqqTbezB2qCEyg/zh-cn_image_0000002795998944.png?HW-CC-KV=V1&HW-CC-Date=20261127T025140Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B73436B230F38F9888EFD91F928FBA5ACD1D7818014295D00753BD7ED795BCA)
 3. 查看应用签名证书指纹，安装应用后执行：
    * Windows系统
 
@@ -47,7 +47,9 @@ Failed to auth, errorCode=1001500001, errorMsg=Failed to check the fingerprint o
 
    检查module type为entry的模块下module.json5中的client\_id是否配置错误，请参考[配置Client ID](../harmonyos-guides/account-client-id.md)。
 
-   注意：此处client\_id的获取路径为：HarmonyOS 开发者中心中应用管理->基本信息->OAuth 2.0客户端ID（凭据)->Client ID。
+   **说明** 
+
+   此处client\_id的获取路径为：HarmonyOS 开发者中心中开发与服务->常规->应用->OAuth 2.0客户端ID（凭据->Client ID）。
 
    在工程中entry模块的module.json5文件中，新增metadata，配置name为client\_id，value为Client ID的值。
 
@@ -65,7 +67,7 @@ Failed to auth, errorCode=1001500001, errorMsg=Failed to check the fingerprint o
 Failed to login, errorCode=1001500003, errorMessage is The scopes or permissions are not supported.
 ```
 
-A：问题二：错误码1001500003的原因是当前登录华为账号或者设备不支持应用请求的数据。
+**A：**问题二：错误码1001500003的原因是当前登录华为账号或者设备不支持应用请求的数据。
 
 可能原因：
 
@@ -89,7 +91,7 @@ A：问题二：错误码1001500003的原因是当前登录华为账号或者设
  Failed to auth. Code: 1001502014, message: The app does not have the required scopes or permissions.no scope permission.
 ```
 
-A：问题三：错误码1001502014的含义为应用未申请scopes或permissions权限。
+**A：**问题三：错误码1001502014的含义为应用未申请scopes或permissions权限。
 
 可能原因和解决方法：[AuthorizationWithHuaweiIDRequest](../harmonyos-references/account-api-authentication.md#authorizationwithhuaweiidrequest)中scopes配置与已申请的账号权限不匹配，具体参照[开发前提](../harmonyos-guides/account-get-phonenumber.md#开发前提)。详细排查步骤参考[1001502014 应用未申请scopes或permissions权限的可能原因和解决方法](../harmonyos-guides/account-faq-2.md)。
 
@@ -99,7 +101,7 @@ A：问题三：错误码1001502014的含义为应用未申请scopes或permissio
 scope not contain quickLoginMobilePhone.
 ```
 
-A：问题四：错误码60180007的含义是通过Authorization Code无法获取到华为账号一键登录手机号。
+**A：**问题四：错误码60180007的含义是通过Authorization Code无法获取到华为账号一键登录手机号。
 
 可能原因：
 
@@ -123,7 +125,7 @@ sub_error=20001, error_description=missing required parameter: client_id, error=
 sub_error=20154，error_description=client_id not match，error=1101.
 ```
 
-A：问题五：错误码1101、1102、1103的含义是使用oauth2/v3/token接口时入参错误。
+**A：**问题五：错误码1101、1102、1103的含义是使用oauth2/v3/token接口时入参错误。
 
 可能原因：
 
@@ -141,7 +143,11 @@ A：问题五：错误码1101、1102、1103的含义是使用oauth2/v3/token接�
 1001502003 Invalid input parameter value.
 ```
 
-A：问题六：错误码1001502003的含义为输入参数值无效。
+```txt
+1001502003 Invalid input parameter value. Invalid clientId or profile.
+```
+
+**A：**问题六：错误码1001502003的含义为输入参数值无效。
 
 可能原因及解决方案：
 
@@ -151,6 +157,7 @@ A：问题六：错误码1001502003的含义为输入参数值无效。
 * 接口传参异常，如调用授权API（[AuthorizationWithHuaweiIDRequest](../harmonyos-references/account-api-authentication.md#authorizationwithhuaweiidrequest)）时scope和permission都未传。
 * 检查应用的签名文件是否配置正确，且需要进行[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)，并使用调试证书而非发布证书。
 * 申请的Profile文件不包含APP ID，需要重新申请Profile文件。
+* 当系统日志显示"check certFinger failed"时，表示应用实际签名证书的公钥指纹与开发者中心已登记的公钥指纹不一致。需要登记的是公钥指纹而非证书指纹，两者计算方式不同，华为账号服务端从签名证书中提取公钥后按内部算法计算SHA-256，用keytool或DevEco对证书本身计算的哈希无法复现。在[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)时，添加方式选择"选择指纹"由平台自动计算并填入，不要选择"输入指纹"手工填写。同时确认module.json5中配置的client\_id与开发者中心"应用信息->Client ID"完全一致。配置保存后等待指纹下发生效，最迟2-5小时；在app.json5中提升versionCode一位可触发提前生效（约10分钟）。重新生成签名材料后公钥指纹会变化，需要重新登记。
 
 **Q：后端一键登录通过token换取手机号调用报错，报错信息如下：**
 
@@ -158,7 +165,7 @@ A：问题六：错误码1001502003的含义为输入参数值无效。
 GOpen.User.getInfo service is not found
 ```
 
-**A**：问题七：后端调用接口通过token换取手机号时报"GOpen.User.getInfo service is not found"。
+**A：**问题七：后端调用接口通过token换取手机号时报"GOpen.User.getInfo service is not found"。
 
 可能原因：调用接口的URL中存在大小写错误，且URL中包含多余的回车符。
 
@@ -170,52 +177,52 @@ GOpen.User.getInfo service is not found
 
 **Q：HarmonyOS 开发者中心和应用的证书指纹已经确认一致还是报错？**
 
-**A**：在HarmonyOS 开发者中心上面，添加公钥指纹（HarmonyOS API 9及以上）后，指纹有一定时间的缓存，不会立刻生效，建议配置完成后等半小时再尝试。检查手机是否有修改系统时间。
+**A：**在HarmonyOS 开发者中心上面，添加公钥指纹（HarmonyOS API 9及以上）后，指纹有一定时间的缓存，不会立刻生效，建议配置完成后等半小时再尝试。检查手机是否有修改系统时间。
 
 **Q：点击《华为账号用户认证协议》无反应？**
 
-**A**：需排查[《华为账号用户认证协议》](https://privacy.consumer.huawei.com/legal/id/authentication-terms.htm?code=CN&language=zh-CN)的链接，目前链接已更改，需在之前的链接后增加&language=zh-CN。
+**A：**需排查[《华为账号用户认证协议》](https://privacy.consumer.huawei.com/legal/id/authentication-terms.htm?code=CN&language=zh-CN)的链接，目前链接已更改，需在之前的链接后增加&language=zh-CN。
 
 **Q：本地使用调试证书可以登录成功，但替换正式证书打包APP后登录失败？**
 
-**A**：发布证书签名的包是不能在本地进行调试安装。利用发布证书及对应的profile所打包的APP，只能用于上架发布，正式包可以通过[邀请测试](../app/agc-help-invite-test-0000002270829393.md)方式验证。
+**A：**发布证书签名的包是不能在本地进行调试安装。利用发布证书及对应的profile所打包的APP，只能用于上架发布，正式包可以通过[邀请测试](../app/agc-help-invite-test-0000002270829393.md)方式验证。
 
 **Q：新增HarmonyOS应用，client\_id和client\_secret和原来的不一样，传入的Authorization Code怎么区分是HarmonyOS还是其他平台？**
 
-**A**：服务端处理Authorization Code时，必须使用对应应用的Client ID/Secret组合换取Access Token。此时：
+**A：**服务端处理Authorization Code时，必须使用对应应用的Client ID/Secret组合换取Access Token。此时：
 
 1. 若使用HarmonyOS应用的Client ID/Secret成功换取Token→判定为HarmonyOS来源；
 2. 若使用其他平台应用的Client ID/Secret成功换取Token→判定为其他平台来源。
 
 **Q：华为账号一键登录获取公钥指纹报错：Failed to login with LoginWithHuaweiIDButton. errorCode=1001500001, errorMsg is Failed to check the fingerprint of the app bundle.Incomplete response information from gateway.？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/dmKOKP1mR32o-kGJwdhaBA/zh-cn_image_0000002765095280.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=762FAE7F9731E83B661AC3862BAAF01D41E760EC3477AC79373859CB5332249E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/-zFGX5VJRKC_WhWJU0_rCg/zh-cn_image_0000002824637095.png?HW-CC-KV=V1&HW-CC-Date=20261127T025140Z&HW-CC-Expire=31536000000&HW-CC-Sign=44B6E53DE1F96CDCA9BB242C9E7E31546D45695CDEBA8CB2E00E34E55AF2A4ED "点击放大")
 
-**A**：首先排查是否企业开发者，个人开发者暂不支持一键登录，再根据当前知识解决方案思路依次排查。
+**A：**首先排查是否企业开发者，个人开发者暂不支持一键登录，再根据当前知识解决方案思路依次排查。
 
 **Q：TV设备在调用executeRequest时报错1001500003根据文档排查无法解决问题？**
 
-**A**：华为账号一键登录支持Phone、Tablet、PC/2in1设备。并且从5.1.1(19)版本开始，新增支持TV设备。需排查TV设备软件版本是否高于5.1.1(19)版本。
+**A：**华为账号一键登录支持Phone、Tablet、PC/2in1设备。并且从5.1.1(19)版本开始，新增支持TV设备。需排查TV设备软件版本是否高于5.1.1(19)版本。
 
 **Q：为什么华为账号一键登录，获取匿名手机号，有些手机可以，有些手机报错误码:1001500001？**
 
-**A**：华为账号一键登录在API>=20以后，不需要配置公钥指纹，而低于API20版本的手机，依旧需要配置公钥指纹。参考[配置签名和指纹](../harmonyos-guides/account-sign-fingerprints.md)。
+**A：**华为账号一键登录在API>=20以后，不需要配置公钥指纹，而低于API20版本的手机，依旧需要配置公钥指纹。参考[配置签名和指纹](../harmonyos-guides/account-sign-fingerprints.md)。
 
 **Q：利用手动签名和调试证书成功登录，如果接下来要发布软件如何发布？软件如何打包？其次发布的时候是不是要正式签名？或者说是正式证书？**
 
-**A**：正式上架需要使用发布证书构建出.app包，打包发布可以参照：[发布应用](../harmonyos-guides/ide-publish-app.md)。
+**A：**正式上架需要使用发布证书构建出.app包，打包发布可以参照：[发布应用](../harmonyos-guides/ide-publish-app.md)。
 
 **Q：为什么使用华为账号登录，使用调试证书或者发布证书，只有当前开发者可以正常登录，其他人报错误码:1001500001？**
 
-**A**：如您的应用当前集成的华为相关服务（如华为账号服务）依赖公钥指纹，您需要在应用调试或上架前将公钥指纹配置到HarmonyOS 开发者中心。调试和发布使用的签名证书不同，因此调试和发布前请分别基于使用的证书配置相应的公钥指纹。发布应用前，需在HarmonyOS 开发者中心中将调试应用的指纹更新为发布证书指纹。具体操作请参见[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
+**A：**如您的应用当前集成的华为相关服务（如华为账号服务）依赖公钥指纹，您需要在应用调试或上架前将公钥指纹配置到HarmonyOS 开发者中心。调试和发布使用的签名证书不同，因此调试和发布前请分别基于使用的证书配置相应的公钥指纹。发布应用前，需在HarmonyOS 开发者中心中将调试应用的指纹更新为发布证书指纹。具体操作请参见[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
 
 **Q：调试证书华为账号一键登录正常，提交上架的版本使用华为账号一键登录失败？**
 
-**A**：调试证书指纹已添加到应用下，发布证书未配置，请登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)检查。
+**A：**调试证书指纹已添加到应用下，发布证书未配置，请登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)检查。
 
 **Q：使用账号登录时，服务端返回ResponseCode：403如何排查？**
 
-**A**：客户端能拉起账号登录流程但服务端返回403，属于服务端鉴权失败，建议按以下顺序排查：
+**A：**客户端能拉起账号登录流程但服务端返回403，属于服务端鉴权失败，建议按以下顺序排查：
 
 1. 确认真机/模拟器里安装包的bundleName/package与HarmonyOS 开发者中心注册应用一致，当前调试或发布证书的SHA-256指纹已配置到同一个应用下。换过签名证书后，要重新下载配置文件并重新打包。
 2. 后端使用的Client ID、Client Secret必须与当前应用属于同一个HarmonyOS 开发者中心项目/应用，避免混用Web客户端、其他包名应用或旧项目的Client信息。
@@ -223,36 +230,36 @@ GOpen.User.getInfo service is not found
 4. 后端换取用户信息时要传客户端刚获取到的authorizationCode，该code只能用一次且有效期较短；重复使用、过期，或和错误Client ID搭配，都可能导致服务端拒绝。
 5. 建议把后端调用接口的完整响应体、错误码以及requestId/traceId一并记录，方便区分是签名指纹校验、scope权限，还是服务端凭据不匹配。
 
-Q：登录授权模拟器时，若提示华为账号需要实名制认证，请在账号中心检查账号状态。若状态显示“已实名”，请核对相关信息。
+**Q：登录授权模拟器时，若提示华为账号需要实名制认证，请在账号中心检查账号状态。若状态显示"已实名"，请核对相关信息。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ZrPnwKyETTahPGzEW27tGA/zh-cn_image_0000002764937408.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=26C70C7923BAF807F15484C604FBDF979BF182514C212525FEBF66989D1D4C67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/b9v7U5XvSNa_Kyqi1T_YBg/zh-cn_image_0000002824518945.png?HW-CC-KV=V1&HW-CC-Date=20261127T025140Z&HW-CC-Expire=31536000000&HW-CC-Sign=B145039578B1277FCC8DE0C68F4541EA91FC5240CBD7480949735D342AF8EAB6 "点击放大")
 
-**A**：华为账号实名分两种，一个是账号实名认证，即上图展示的状态，还有一个是开发者实名认证。这两种实名认证方式是不一样的，模拟器的登录授权是需要开发者实名认证，请根据[实名认证指导](../start/itrna-0000001076878172.md)进行处理。开发者实名认证后的结果如下图所示。
+**A：**华为账号实名分两种，一个是账号实名认证，即上图展示的状态，还有一个是开发者实名认证。这两种实名认证方式是不一样的，模拟器的登录授权是需要开发者实名认证，请根据[实名认证指导](../app/hdc-verification-introduction-0000002752607793.md)进行处理。开发者实名认证后的结果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/xPth11K2S2adssIBNN17Qw/zh-cn_image_0000002794455925.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DC69DD9C6377871FB10ED64DDD5A29807F381D47AECF9CE84E1438F5E022372)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/tIF1E1b0QIa3rPH_L2pg8A/zh-cn_image_0000002824638945.png?HW-CC-KV=V1&HW-CC-Date=20261127T025140Z&HW-CC-Expire=31536000000&HW-CC-Sign=01D4BCA6FE0744AAB3817A4C93BFC3D842FAC5F75ED2FD3EDC678849ED577818 "点击放大")
 
-**Q：使用浏览器登录华为账号后，如果账号已实名认证但未出现授权的“允许”按钮，界面也未跳转或提示，该如何处理？**
+**Q：使用浏览器登录华为账号后，如果账号已实名认证但未出现授权的"允许"按钮，界面也未跳转或提示，该如何处理？**
 
-**A**：该问题由浏览器兼容性问题导致。模拟器登录授权已在Chrome、IE11和Safari浏览器中进行了充分验证，建议将默认浏览器设置为其中一种。
+**A：**该问题由浏览器兼容性问题导致。模拟器登录授权已在Chrome、IE11和Safari浏览器中进行了充分验证，建议将默认浏览器设置为其中一种。
 
 1. 设置或更改默认浏览器。
-   * Windows平台：以Windows 10为例，打开“控制面板 > 程序 > 默认程序 > 设置默认程序”，更改或设置默认浏览器。
-   * macOS平台：以macOS 15为例，打开系统设置，选择“桌面与程序坞”，再选择“默认网页浏览器”，更改或设置默认浏览器。
+   * Windows平台：以Windows 10为例，打开"控制面板 > 程序 > 默认程序 > 设置默认程序"，更改或设置默认浏览器。
+   * macOS平台：以macOS 15为例，打开系统设置，选择"桌面与程序坞"，再选择"默认网页浏览器"，更改或设置默认浏览器。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/QLMAbNWiQTSyvKlObHmLZg/zh-cn_image_0000002764939608.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=A453DD3A55F30B6F033155906F4761C62B0C2CCD46E354DAD0C3323A4AF9E3F5 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/8xTNOvjsTDu6pIBPnr6DGw/zh-cn_image_0000002796158916.png?HW-CC-KV=V1&HW-CC-Date=20261127T025140Z&HW-CC-Expire=31536000000&HW-CC-Sign=3229882EB8CDE33FE56948BE50D4A67F35318492F2AAEA7CAEA85EBEDD8B6586 "点击放大")
 
-     使用Safari浏览器时，点击Safari 浏览器 > 偏好设置>隐私/高级，取消“防止跨站跟踪”和“阻止所有Cookie”设置。
+     使用Safari浏览器时，点击Safari 浏览器 > 偏好设置>隐私/高级，取消"防止跨站跟踪"和"阻止所有Cookie"设置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/O524KfxoSmmfdPVM6jwyDA/zh-cn_image_0000002764940340.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=07B8B76D2601394676CE82D6CA54D0B69DDA89B1C9222CE7B7B4C07F78A3C100 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/jj4vVS6bRn-lbRV5-jD9wQ/zh-cn_image_0000002795998972.png?HW-CC-KV=V1&HW-CC-Date=20261127T025140Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F103BC159C95236170001C9AD97478A8930389C3BA43E46AC1C8F5D26066A3B "点击放大")
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/eHbpbjYzSUeCVQgHIgUtsQ/zh-cn_image_0000002794379077.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=396875327608EEBF0F65078860F951E60D4642FA8742787D0ED58ABB1E720A84 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/vmzF6oWHQ56wVxspjiMYLw/zh-cn_image_0000002824518947.png?HW-CC-KV=V1&HW-CC-Date=20261127T025140Z&HW-CC-Expire=31536000000&HW-CC-Sign=169CF350CCB9DBF011B24DC81EB8FC58E2817D3B2A14FF85A760653A829B5484 "点击放大")
 2. 在DevEco Studio界面，点击Cancel按钮，然后重新登录授权。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/F02BsvRfSROZ8urzV716tA/zh-cn_image_0000002764941134.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BB9FDB75817C7B9FA97936BD2E3B68D8AC2E31FBD12A587B9C5E0A02FDD5F2C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/B14c4rw7RD6mhXDOqe8ODw/zh-cn_image_0000002824638947.png?HW-CC-KV=V1&HW-CC-Date=20261127T025140Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE21944D09D1F41DC1232D403C7DB5A7C79DB9B363D49D0685B6412CF0437678)
 
 **Q：获取匿名手机号只能与openid同时使用。在获取匿名手机号时如何同时获取头像和昵称？**
 
-**A**：获取华为账号绑定的匿名手机号是通过quickLoginAnonymousPhone，该scope只能与openid同时使用，而获取头像昵称是通过profile值获取，quickLoginAnonymousPhone和profile同时使用会报错："1001500003不支持该scopes或permissions"。
+**A：**获取华为账号绑定的匿名手机号是通过quickLoginAnonymousPhone，该scope只能与openid同时使用，而获取头像昵称是通过profile值获取，quickLoginAnonymousPhone和profile同时使用会报错："1001500003不支持该scopes或permissions"。
 
 若需要同时获取匿名化手机号和头像昵称，建议分2个方法调用，不会影响返回结果。示例代码如下：
 
@@ -362,56 +369,56 @@ struct Page {
 
 **Q：使用华为账号一键登录功能时，是以华为账号的UnionID/OpenID还是以手机号作为用户的主要标识？**
 
-**A**：推荐使用华为账号的UnionID/OpenID作为用户的主要标识，并将应用与华为账号绑定的手机号关联。华为账号的UnionID/OpenID不会发生变化，即使换绑手机号，仍然可以使用华为账号登录原来绑定的应用账号。
+**A：**推荐使用华为账号的UnionID/OpenID作为用户的主要标识，并将应用与华为账号绑定的手机号关联。华为账号的UnionID/OpenID不会发生变化，即使换绑手机号，仍然可以使用华为账号登录原来绑定的应用账号。
 
 **Q：Access Token和Refresh Token的有效时长是多久？**
 
-**A**：Access Token的有效时长是1个小时，Refresh Token的有效时长是180天。
+**A：**Access Token的有效时长是1个小时，Refresh Token的有效时长是180天。
 
 **Q：向用户申请获取昵称/头像授权是在华为账号一键登录前还是登录后？**
 
-**A**：同意获取昵称/头像授权包含在[《华为账号用户认证协议》](https://privacy.consumer.huawei.com/legal/id/authentication-terms.htm?code=CN&language=zh-CN)内，用户同意[《华为账号用户认证协议》](https://privacy.consumer.huawei.com/legal/id/authentication-terms.htm?code=CN&language=zh-CN)后才能进入华为账号一键登录流程。
+**A：**同意获取昵称/头像授权包含在[《华为账号用户认证协议》](https://privacy.consumer.huawei.com/legal/id/authentication-terms.htm?code=CN&language=zh-CN)内，用户同意[《华为账号用户认证协议》](https://privacy.consumer.huawei.com/legal/id/authentication-terms.htm?code=CN&language=zh-CN)后才能进入华为账号一键登录流程。
 
 **Q：华为账号登录流程中服务端需要存什么凭据，使用什么字段作为唯一标识？**
 
-**A**：华为账号登录会向服务端返回UnionID 、OpenID 、authorization Code 、ID token，建议都存储，其中UnionID、OpenID是唯一标识。参考[OpenID和UnionID的格式说明](../harmonyos-guides/account-faq-9.md)。
+**A：**华为账号登录会向服务端返回UnionID 、OpenID 、authorization Code 、ID token，建议都存储，其中UnionID、OpenID是唯一标识。参考[OpenID和UnionID的格式说明](../harmonyos-guides/account-faq-9.md)。
 
 * 开发者账号下管理了多个应用时，针对同一个华为账号，不同的应用返回的OpenID值不同，但返回的UnionID相同，所以建议使用OpenID来作为唯一ID。
 * 如果开发者账号下管理了多个应用，并且这些应用需要共享同一个华为账号的用户信息，可以使用UnionID作为用户标识。
 
 **Q：HarmonyOS 4.3及以下版本授权登录使用的是OpenID作为唯一标识，HarmonyOS 5及以上版本设备下获取到的OpenID和之前的不一样，该如何处理？**
 
-**A**：处理方式如下：
+**A：**处理方式如下：
 
 1. HarmonyOS 4.3及以下版本和HarmonyOS 5及以上版本获取的OpenID确实不相同，首先用户OpenID的生成规则是：由用户账号和应用ID加密生成的；在这个基础上HarmonyOS 4.3及以下版本和HarmonyOS 5及以上版本的应用ID是不相同的，所以获取的OpenID是不同的。
 2. 推荐使用UnionID，其生成规则是：由用户账号和应用开发者账号签名而成，如果开发者账号下管理了多个应用，并且这些应用需要共享同一个华为账号的用户信息，可以使用UnionID作为用户标识。
 
 **Q：HarmonyOS 4.3及以下版本和HarmonyOS 5及以上版本获取的OpenID不相同，UnionID相同，如何通过用户OpenID获取UnionID？**
 
-**A**：可调用REST API接口[通过OpenID获取UnionID](../harmonyos-references/account-api-get-unionid.md)。
+**A：**可调用REST API接口[通过OpenID获取UnionID](../harmonyos-references/account-api-get-unionid.md)。
 
 **Q：用户更换绑定华为账号的手机号码，华为账号一键登录返回的UnionID是否会变？**
 
-**A**：用户更换绑定华为账号的手机号码，华为账号一键登录返回的UnionID不会变，可以作为用户的唯一标识。
+A：用户更换绑定华为账号的手机号码，华为账号一键登录返回的UnionID不会变，可以作为用户的唯一标识。
 
 **Q：应用在主体迁移后，UnionID是否会改变？**
 
-**A**：UnionID是同一个开发者账号下的用户唯一标识，当应用转移到另外一个账号主体后，UnionID值也会变化。参考[UnionID介绍](../HMSCore-Guides/unionid-introduction-0000001125697651.md)。
+**A：**UnionID是同一个开发者账号下的用户唯一标识，当应用转移到另外一个账号主体后，UnionID值也会变化。参考[UnionID介绍](../HMSCore-Guides/unionid-introduction-0000001125697651.md)。
 
 **Q：华为一键登录和账号登录获取的UnionID是否是同一个值？**
 
-**A**：华为一键登录和账号登录获取的UnionID是同一个值。
+**A：**华为一键登录和账号登录获取的UnionID是同一个值。
 
 **Q：同一应用在其他平台端和HarmonyOS端分别接入华为账号登录，如何识别是同一个身份？分别使用什么接入方案？**
 
-**A**：接入方案和身份识别方式如下：
+**A：**接入方案和身份识别方式如下：
 
 1. 其他平台端应用接入华为帐号服务，参考[其他平台帐号服务开发指南](../HMSCore-Guides/android-introduction-0000001098842325.md)。HarmonyOS 5及以上版本应用接入华为账号服务，参考[Account Kit开发指南](../harmonyos-guides/account-introduction.md)。
 2. 使用UnionID作为跨平台同一身份的标识。UnionID由用户账号和应用开发者账号签名生成，同一开发者账号下的应用无论在哪个平台，同一个华为账号返回的UnionID相同。参考[OpenID和UnionID的格式说明](../harmonyos-guides/account-faq-9.md)。
 
 **Q：应用接入第三方账号登录时是否必须接入华为账号登录？国家网络身份认证App授权获取凭证登录是否属于第三方账号登录，以及接入该方式是否必须提供华为账号登录选项？**
 
-**A**：为了帮助用户省去多次输入不同应用账号登录的繁琐过程，我们为HarmonyOS应用和元服务提供了使用华为账号快捷登录的能力。提交至华为应用市场的HarmonyOS应用和元服务，需要遵循如下规范：
+**A：**为了帮助用户省去多次输入不同应用账号登录的繁琐过程，我们为HarmonyOS应用和元服务提供了使用华为账号快捷登录的能力。提交至华为应用市场的HarmonyOS应用和元服务，需要遵循如下规范：
 
 如果您的应用支持用户使用第三方账号登录，则该应用需提供华为账号登录选项。用户可通过华为账号快捷地登录您的应用，并获得华为账号的安全配置。
 

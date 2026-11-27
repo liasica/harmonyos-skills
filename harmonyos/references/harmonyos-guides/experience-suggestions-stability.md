@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/experience-su
 title: 应用稳定性体验建议
 breadcrumb: 指南 > 应用体验建议 > 应用稳定性体验建议
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:44+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-11-27T10:45:10+08:00
+doc_updated_at: 2026-11-26
 content_hash: sha256:21e605c7bb8466cd33b62ed96c518508503095b419375992714d430f25ccfbf8
 ---
 

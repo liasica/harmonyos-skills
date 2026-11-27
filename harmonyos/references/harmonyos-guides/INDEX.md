@@ -1,6 +1,6 @@
 # 指南（harmonyos-guides）
 
-共 5567 篇文档。
+共 5572 篇文档。
 
 - [24h功耗器件分解统计事件](24-hour-battery-usage-event.md)
 - [aa工具](aa-tool.md)
@@ -4948,6 +4948,11 @@
 - [系统字体的信息获取和使用（ArkTS）](system-font-arkts.md)
 - [系统字体的信息获取和使用（C/C++）](system-font-c.md)
 - [硬件](system-hardware.md)
+- [应用内存优化](system-memory-manage-and-optimization.md)
+- [整体原则与规范](system-memory-manage-principles.md)
+- [概述](system-memory-manage-standards-overview.md)
+- [系统内存使用与优化](system-memory-manage-standards.md)
+- [系统内存管控](system-memory-managment.md)
 - [网络](system-network.md)
 - [安全](system-security.md)
 - [概述](system-share-overview.md)

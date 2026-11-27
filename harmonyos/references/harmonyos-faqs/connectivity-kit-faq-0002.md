@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/connectivity-kit-faq-0002
-title: 蓝牙BLE扫描与状态监听常见问题
-breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 常见问题 > 蓝牙BLE扫描与状态监听常见问题
+title: BLE扫描过滤连接与状态监听问题排查
+breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 常见问题 > BLE扫描过滤连接与状态监听问题排查
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:889c00b7d274bc1d80b0ba75d091cc8610670ebb565fb973785109ec9ccad0c3
+scraped_at: 2026-11-27T10:51:23+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:f456ebda0e2fe70d31ced0d721ad29b0b6f9859905011efe9122b8924d412924
 ---
 
 **Q：存在较大量的蓝牙设备时（车库场景），低功耗蓝牙连接效率低。当目标设备名称只能模糊匹配时，无法直接使用ScanFilter按名称精确过滤，扫描过程耗时较长。扫描到设备后，通过GattClientDevice订阅服务并匹配特征值的过程也需要额外耗时。**
@@ -494,7 +494,7 @@ this.stopScan();
 
 [ble.startBLEScan](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)发起BLE扫描流程时，可以选择SCAN\_MODE\_LOW\_LATENCY扫描模式，减少蓝牙扫描的时间，提高扫描发现效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/B1LKE0W9QJKN9XteLojGbQ/zh-cn_image_0000002765862042.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A48D0AA6EBE6A56FE1351411E9F3545CB5332DF297802760975C656AF1DC0DA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/znuD0YiGTKm7e16EUUQ1Bg/zh-cn_image_0000002765862042.png?HW-CC-KV=V1&HW-CC-Date=20261127T025122Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B5DF75842AC756459C889CB024B8B03CBE92BCEF30B8D54B9525A2C0B2B0AA7 "点击放大")
 
 方案三：
 
@@ -557,3 +557,40 @@ A：通过蓝牙订阅事件感知状态变化的实现主要涉及以下三类�
        | STATE\_CONNECTED | 2 | 表示profile已连接 |
        | STATE\_DISCONNECTING | 3 | 表示profile正在断连 |
     2. 通过API22提供的[getConnectedState](../harmonyos-references/js-apis-bluetooth-ble.md#getconnectedstate22-1)获取当前与server端设备的连接状态。
+
+**Q：BLE扫描调用startBLEScan报错2900009，应用首次进入可以正常扫描，退出后再进入扫描失败如何解决？**
+
+**A**：错误码2900009表示由于硬件资源不足，无法启动本次扫描。过滤器资源由所有应用共享，建议单个应用的过滤器不超过3个。针对"首次正常，退出再进失败"的情况，需重点检查以下方面：
+
+1. 上一次扫描是否已停止。返回桌面不等于应用销毁，如果只需要前台扫描，应在退后台或离开扫描页时调用[ble.stopBLEScan](../harmonyos-references/js-apis-bluetooth-ble.md#blestopblescan)停止扫描，而非仅在销毁回调中处理。
+2. 是否存在重复启动或重复订阅。首页初始化、页面显示、回到前台可能都触发扫描，需统一管理扫描状态，避免多处同时启动；退出时注销对应的扫描监听。
+3. 过滤器是否累加。每次扫描均应重新构建过滤器数组，禁止持续向全局数组追加元素。
+
+停止扫描和取消监听是两个独立的操作，需分别处理：
+
+```ts
+ble.stopBLEScan();
+ble.off('BLEDeviceFind', onDeviceFound); // 传注册时的同一个回调
+```
+
+**Q：当前有部分蓝牙设备无设备名称，在对这些无设备名称的蓝牙设备进行BLE扫描时，如何获取到想要连接的目标设备？**
+
+**A**：通常蓝牙设备在发送广播时，会携带设备名称、设备服务UUID、特定的制造商标识等一系列标志信息，可根据设备说明书，或联系设备厂家提前获取这类标志信息，然后将HarmonyOS手机扫描获取到的广播包数据进行解析，获取同样的标志部分进行信息匹配，借此确定目标BLE设备。
+
+若只想扫描特定厂商的蓝牙设备，可在BLE扫描时通过以下方案过滤：
+
+方案一：通过serviceUuid过滤。
+
+在ScanFilter中指定目标设备厂商协议文档中定义的服务UUID，前提是该设备的广播包中实际携带了此UUID。
+
+方案二：通过设备名称name过滤。
+
+如果目标设备的蓝牙设备名称固定或具有固定前缀，可通过name字段过滤，该字段仅支持完全匹配。
+
+方案三：通过制造商ID（manufactureId）过滤。
+
+目标厂商的蓝牙制造商ID（Company Identifier）可在蓝牙SIG Assigned Numbers中查询，在ScanFilter中配置该字段可过滤出该厂商的所有蓝牙设备。
+
+方案四：无过滤扫描+代码手动过滤。
+
+不设置过滤条件，调用[ble.startBLEScan](../harmonyos-references/js-apis-bluetooth-ble.md)扫描出所有设备后，在扫描回调中对全部设备进行代码手动过滤，按设备名称或解析广播包中的serviceUuids、manufactureId字段判断目标设备。

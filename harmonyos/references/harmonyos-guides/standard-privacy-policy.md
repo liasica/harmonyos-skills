@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/standard-priv
 title: 通知
 breadcrumb: 指南 > 应用体验建议 > 应用安全隐私体验建议 > 隐私 > 通知
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:45+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-11-27T10:45:11+08:00
+doc_updated_at: 2026-11-26
 content_hash: sha256:19126a743772589593133a129e093987b61cc5420ef79960aa3a61e4cdaf4372
 ---
 

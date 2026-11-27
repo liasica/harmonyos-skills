@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/os-compatible
 title: OS兼容
 breadcrumb: 指南 > 应用体验建议 > 应用基础功能和兼容性体验建议 > 基础兼容性 > OS兼容
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:44+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:9061f6b5586d2028882986fc40618c2b531a8cdde40c6e43a162c0b3a7d533a1
+scraped_at: 2026-11-27T10:45:10+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:0cf880112951a5faa3d67b4d3e2ac170f74c24d12fc414f1189e5ff55a743f4f
 ---
 
 |  |  |
@@ -30,7 +30,7 @@ content_hash: sha256:9061f6b5586d2028882986fc40618c2b531a8cdde40c6e43a162c0b3a7d
 | **类型** | 规则 |
 | **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴，轻量级智能穿戴 |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
-| **说明** | 定位方法请参考：[JS Crash类问题分析方法-应用异常退出类问题分析方法-稳定性分析](../best-practices/bpta-stability-app-crash-js-way.md)  DevEco Testing 自测兼容性请参考：[DevEco Testing-专项测试-稳定性基础质量测试](stability-testing.md) |
+| **说明** | 定位方法请参考：[稳定性分析-JS Crash类问题分析方法](../doccenter-app-quality/bpta-stability-app-crash-js-way.md)。  DevEco Testing 自测兼容性请参考：[DevEco Testing-专项测试-稳定性基础质量测试](stability-testing.md)。 |
 
 |  |  |
 | --- | --- |

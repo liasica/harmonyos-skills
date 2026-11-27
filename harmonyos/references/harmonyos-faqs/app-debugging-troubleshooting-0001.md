@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/app-debugging-t
 title: 真机安装HAP包失败故障排查
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 故障排查 > 真机安装HAP包失败故障排查
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:acc2cd7fb04faadde818f1a8e5aba065ea68541b70e96e61d1174d551e6c0d16
+scraped_at: 2026-11-27T10:51:58+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:6764bcc22008948b7b34ebe0bac857e169e742d16b898eef844cf589b20a925f
 ---
 
 ## 报9568263错误：版本降级安装失败
@@ -37,7 +37,7 @@ content_hash: sha256:acc2cd7fb04faadde818f1a8e5aba065ea68541b70e96e61d1174d551e6
   2. 重新执行hdc install命令。
 * 使用命令卸载工具再重装。
   1. 切换到可执行hdc命令目录下，一般是DevEco Studio工具的SDK目录toolchains中会有hdc.exe的可执行文件。
-  2. 先执行hdc shell bm dump -a <应用bundleName>检查下看是否之前的包还存在，如果存在就执行hdc uninstall <应用bundleName>卸载。
+  2. 先执行hdc shell bm dump -n <应用bundleName>检查下看是否之前的包还存在，如果存在就执行hdc uninstall <应用bundleName>卸载。
   3. 重新执行hdc install命令。
 
 ## 报9568283错误：API版本不兼容
@@ -72,7 +72,7 @@ error: install releaseType compatible not same.
 
 项目配置了多个入口ability，运行项目报错，错误信息如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Jbt8FnksRPmlLpqJUdaMjA/zh-cn_image_0000002797142633.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3924A9B88F3848DABAD3DEADC7E4310A716BC4BD525DA50B270012906951EDF8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ZRGK41EVTeCdT1CUtvVneg/zh-cn_image_0000002797142633.png?HW-CC-KV=V1&HW-CC-Date=20261127T025157Z&HW-CC-Expire=31536000000&HW-CC-Sign=C08D0F7AE350FDBF6631E35FE2AE8DCB423D7B14543F8923DBE7FF1A7B628C22 "点击放大")
 
 ### 定位过程
 
@@ -86,7 +86,9 @@ error: install releaseType compatible not same.
 ### 修改建议
 
 * 在运行报错时，把该命令中对应ability的module.json5中的skills字段去掉，不作为入口ability；
-* 在运行项目前，编辑运行配置，在Launch Options下手动选择项目的正确入口ability。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/n4CzKf-LRTuH_ZkgDiYNxg/zh-cn_image_0000002767982646.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E4593F7857639A6F8595A80B9A979803AA683D3F31A0831C725EA5C0CB49D0A "点击放大")
+* 在运行项目前，编辑运行配置，在Launch Options下手动选择项目的正确入口ability。
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Fcmf_puhRreumj0F8IxmHQ/zh-cn_image_0000002767982646.png?HW-CC-KV=V1&HW-CC-Date=20261127T025157Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6AEFB603EC323BC1BBC47C14FC17A574F158762BFE748AB7904DC521AF303ED "点击放大")
 
 ## 报9568320错误：缺少签名文件
 

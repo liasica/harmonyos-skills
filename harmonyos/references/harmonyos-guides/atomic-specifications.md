@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/atomic-specif
 title: 元服务规格
 breadcrumb: 指南 > 应用体验建议 > 应用基础功能和兼容性体验建议 > 系统特性与基础功能 > 元服务规格
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:44+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-11-27T10:45:09+08:00
+doc_updated_at: 2026-11-26
 content_hash: sha256:f4f3e4fcfd99dbfcf1147b5740b825566065358ab22e74a7b24f03f034765dd5
 ---
 

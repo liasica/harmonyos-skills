@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq
 title: 常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:9ea8d0a9714afa43d670df350028df52da2fbfef1d9a9f5b0647b420a89ce366
+scraped_at: 2026-11-27T10:50:18+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:09179094f501cc75258b788664434bee9279f3b2eff1906289e461687d848b68
 ---
 
-* **[Image组件图片加载与缓存常见问题](arkui-kit-faq-0001.md)**
+* **[图片多场景加载与缓存问题排查](arkui-kit-faq-0001.md)**
 * **[ForEach与LazyForEach区别](arkui-kit-faq-0002.md)**
 * **[页面加载Loading效果实现](arkui-kit-faq-0003.md)**
 * **[Navigation传参与导航栏设置常见问题](arkui-kit-faq-0004.md)**

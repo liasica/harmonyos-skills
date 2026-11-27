@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-faq-0020
-title: ArkUI自定义弹窗功能实现与控制常见问题
-breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI自定义弹窗功能实现与控制常见问题
+title: ArkUI自定义弹窗交互与样式常见问题
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI自定义弹窗交互与样式常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:19c5e6a57e22e69aafa0c8e74a8ba775485dfc8c7912df4dda1415a27fdfa573
+scraped_at: 2026-11-27T10:50:46+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:57f5c0a87f06255940ba7381269ebc63c716c14a2f0a615053a4197ad58a2f49
 ---
 
 **Q：利用this.getUIContext().getPromptAction().openCustomDialog打开自定义弹窗，并且给dialog设置宽高100%依旧无法全屏，问题效果预览：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Sw7qsnzsSn-hbqibQFcwew/zh-cn_image_0000002767995142.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=B96872B6A7A6390638F590A5A83FE893AF0FCF17535C77574F9A570141B951EC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/QaspJHyUT3Sq2wWpqQTY0g/zh-cn_image_0000002796198816.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=45D01C6C015248FE344AE36E656AA551532C398FB0C298EF5AAF02EE8ECEB0E1 "点击放大")
 
-**A**：解决方法如下：
+**A：**解决方法如下：
 
 1. 在EntryAbility中设置窗口全屏：
 
@@ -142,15 +142,15 @@ content_hash: sha256:19c5e6a57e22e69aafa0c8e74a8ba775485dfc8c7912df4dda1415a27fd
    }
    ```
 
-效果预览：
+   效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/FXFkLcK6SgWyf02cuFQeMQ/zh-cn_image_0000002767836862.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=66053DF2E6BDC453BA581CEA04DB83F0608428F34BC7CDE943752353C47D92D7 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/ytAJ1DA1QfOtLN1f7jqQfA/zh-cn_image_0000002824679057.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CF1FD102403E9F96607B0EBF8C5CBB90EED0F8DFAC945B20130583A3C9DC71D "点击放大")
 
 **Q：如何给自定义弹窗使用CustomBuilder，实现下图的功能，且确认取消按钮需要一个带有倒计时的功能，倒计时结束后才能点击。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/ylgylLE_TnOAsXluvi5mFA/zh-cn_image_0000002797157915.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=23D28D983F6086F2FBE719198FC1BEEBBDF33A1E8BCE6935766CBB04AF6E126D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/jW-CQm9XT8GK5WSCp49aEQ/zh-cn_image_0000002824679067.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9F840A888FB34894D864D2E1FFD9B61F1363D87922200FF3625236501BFAD7E "点击放大")
 
-**A**：实现弹窗按钮计时禁用效果步骤如下：
+**A：**实现弹窗按钮计时禁用效果步骤如下：
 
 1. 使用@Builder创建自定义的组件，传入自定义的弹窗组件。
 2. 使用状态变量isEnabled，初始为false，设置按钮是否禁用。
@@ -248,7 +248,7 @@ struct BuildPage {
 
 **Q：PromptAction自定义弹窗如何实现在点击弹窗外围的蒙层时，弹窗不关闭？**
 
-**A**：实现PromptAction弹窗禁用点击蒙层隐藏弹窗功能时，只需要在onWillDismiss内控制关闭信息：在dismissDialogAction.reason !== DismissReason.TOUCH\_OUTSIDE条件下调用dismiss()关闭函数即可，在该条件下除了点击蒙层不关闭弹窗外，其他关闭条件都不影响。
+**A：**实现PromptAction弹窗禁用点击蒙层隐藏弹窗功能时，只需要在onWillDismiss内控制关闭信息：在dismissDialogAction.reason !== DismissReason.TOUCH\_OUTSIDE条件下调用dismiss()关闭函数即可，在该条件下除了点击蒙层不关闭弹窗外，其他关闭条件都不影响。
 
 ```ts
 import { PromptAction } from '@kit.ArkUI';
@@ -303,11 +303,11 @@ struct Index {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/hSd3HGfaQGG1efNjsBGj1Q/zh-cn_image_0000002797281409.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=101C2E1CCA9383DF9860F32A83D9A19B756D8898D94B156C0254EA588E8248C9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Ur8-3BxdTO-PQFFkwnR1Ww/zh-cn_image_0000002824559475.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=13CA04D9CCF622C09D640441B1550A3828B8CF0C51BDC9D68927F82EE03F5211 "点击放大")
 
 **Q：当弹窗内容高度不确定时，如何实现动态高度、最大高度限制以及滚动体验？**
 
-**A**：实现方式如下：
+**A：**实现方式如下：
 
 1. 弹窗外层包裹滚动容器。
    * 使用Scroll作为根容器，设置滚动方向为垂直（ScrollDirection.Vertical）。
@@ -359,7 +359,7 @@ struct customDialogScroll {
       }
       .scrollable(ScrollDirection.Vertical) // 启用垂直滚动
       .scrollBar(BarState.On)
-      .constraintSize({ maxHeight: 100 }) //核心：限制最大高度
+      .constraintSize({ maxHeight: 100 }) // 核心：限制最大高度
       .edgeEffect(EdgeEffect.None); // 禁用边缘效果
       Flex({direction:FlexDirection.Row,justifyContent:FlexAlign.SpaceEvenly,alignItems:ItemAlign.Center}){
         Button('取消')
@@ -418,15 +418,15 @@ struct customDialogScroll {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/-m_bm02vRaaWtOe9AZre5g/zh-cn_image_0000002768004588.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=416B1F453258B0A83721BE1B9134810D92D665687AD11F9AF93EBA62C066D788 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Frjxi5qwRXe6PFi3fk_oJQ/zh-cn_image_0000002796039630.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7850B4E839462A36DE7A0C6498507B20BD2CFB7390B1D50B0475A49B1723C34 "点击放大")
 
 **Q：对于一个弹窗，如何使用非交互方式关闭，即支持使用代码关闭它，不是用户触摸屏幕操作关闭？**
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/mGGWr12gSK6cJoFuiqUbCw/zh-cn_image_0000002797286381.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=65C192FDF87F0A8C7FAAAA948A6E15889AEF6FDF06C0156E186628BD5E75598A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/8iZwmDM_Qk2euIUq9jnMIw/zh-cn_image_0000002796039634.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F4EFE9CCABAF05CB79EC144F54B6160F64892724A427324B75BDE891CB2802B "点击放大")
 
-A：在aboutToAppear生命周期中调用setInterval方法实现一个倒计时功能，在倒计时结束后调用[关闭弹窗](../harmonyos-references/ts-methods-custom-dialog-box.md#close)的方法并清理interval任务。
+**A：**在aboutToAppear生命周期中调用setInterval方法实现一个倒计时功能，在倒计时结束后调用[关闭弹窗](../harmonyos-references/ts-methods-custom-dialog-box.md#close)的方法并清理interval任务。
 
 1. 注册自定义弹窗的onWillDismiss回调函数，并在回调内拦截用户操作关闭弹窗。
 
@@ -600,6 +600,182 @@ struct AutoCloseCustomDialogIndex {
     }
     .width('100%')
     .margin({ top: 5 })
+  }
+}
+```
+
+**Q：如何为自定义弹窗蒙层添加模糊效果，并且不影响点击蒙层关闭弹窗？**
+
+**A：**自定义弹窗暂无内置属性支持设置蒙层背景模糊效果。给openCustomDialog蒙层添加模糊效果，可以在弹窗内容容器外包裹一层空column容器作为蒙层，设置backdropBlur属性，达到为蒙层添加模糊效果的目的，并通过监听onClick事件来关闭弹窗。为防止点击弹窗本身关闭弹窗，可以为弹窗内容容器设置空的onClick事件。
+
+示例代码如下：该示例弹窗蒙层及弹窗开启关闭加了动画效果，仅供参考。
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { ComponentContent, promptAction, UIContext, window } from '@kit.ArkUI';
+import { common } from '@kit.AbilityKit';
+
+export class PromptActionDialogClass {
+  static context: UIContext;
+  static contentNode: ComponentContent<Object>;
+  static options: promptAction.BaseDialogOptions;
+
+  static setContext(context: UIContext) {
+    PromptActionDialogClass.context = context;
+  }
+
+  static setContentNode(node: ComponentContent<Object>) {
+    PromptActionDialogClass.contentNode = node;
+  }
+
+  static setOptions(options: promptAction.BaseDialogOptions) {
+    PromptActionDialogClass.options = options;
+  }
+
+  static openDialog() {
+    if (PromptActionDialogClass.contentNode !== null) {
+      PromptActionDialogClass.context.getPromptAction()
+        .openCustomDialog(PromptActionDialogClass.contentNode, PromptActionDialogClass.options)
+        .then(() => {
+          console.info('OpenCustomDialog complete.');
+        })
+        .catch((error: BusinessError) => {
+          let message = (error as BusinessError).message;
+          let code = (error as BusinessError).code;
+          console.error(`OpenCustomDialog args error code is ${code}, message is ${message}`);
+        });
+    }
+  }
+
+  static closeDialog() {
+    if (PromptActionDialogClass.contentNode !== null) {
+      PromptActionDialogClass.context.getPromptAction()
+        .closeCustomDialog(PromptActionDialogClass.contentNode)
+        .then(() => {
+          console.info('CloseCustomDialog complete.');
+        })
+        .catch((error: BusinessError) => {
+          let message = (error as BusinessError).message;
+          let code = (error as BusinessError).code;
+          console.error(`CloseCustomDialog args error code is ${code}, message is ${message}`);
+        });
+    }
+  }
+
+  static updateDialog(options: promptAction.BaseDialogOptions) {
+    if (PromptActionDialogClass.contentNode !== null) {
+      PromptActionDialogClass.context.getPromptAction()
+        .updateCustomDialog(PromptActionDialogClass.contentNode, options)
+        .then(() => {
+          console.info('UpdateCustomDialog complete.');
+        })
+        .catch((error: BusinessError) => {
+          let message = (error as BusinessError).message;
+          let code = (error as BusinessError).code;
+          console.error(`UpdateCustomDialog args error code is ${code}, message is ${message}`);
+        });
+    }
+  }
+}
+
+class Params {
+  topHeight: number;
+  flag: boolean;
+
+  constructor(topHeight: number, flag: boolean) {
+    this.topHeight = topHeight;
+    this.flag = flag;
+  }
+}
+
+@Builder
+function buildText(params: Params) {
+  Stack() {
+    if (params.flag) {
+      // 蒙层
+      Column()
+        .width('100%')
+        .height('100%')
+        .backdropBlur(30)
+        .borderRadius(15)
+        .transition(TransitionEffect.OPACITY.animation({ duration: 1000, curve: Curve.Ease })) // 蒙层动画
+        .onClick(() => {
+          // 弹窗关闭的时候置为false标识弹窗即将关闭
+          PromptActionDialogClass.contentNode.update(new Params(params.topHeight, false));
+          // 延迟2s关闭动画
+          setTimeout(() => {
+            PromptActionDialogClass.closeDialog();
+          }, 2000);
+        });
+
+      // 实际弹窗内容
+      Column() {
+        Text('这是自定义弹窗')
+          .fontSize(30)
+          .height(100);
+        Button('点我关闭弹窗')
+          .onClick(() => {
+            PromptActionDialogClass.contentNode.update(new Params(params.topHeight, false));
+            // 延迟2s关闭动画
+            setTimeout(() => {
+              PromptActionDialogClass.closeDialog();
+            }, 2000);
+          })
+          .margin(20);
+      }
+      .padding(15)
+      .backgroundColor(Color.Gray)
+      .borderRadius(15)
+      // 弹窗动画
+      .transition(TransitionEffect.move(TransitionEdge.START).animation({ duration: 1000 }))
+      // 加入空的点击事件弹窗就不会关闭
+      .onClick(() => {
+      });
+    }
+  }
+  .width('100%')
+  .height('100%')
+  // 此处margin需要替换为顶部安全区高度topHeight，因蒙层会侵入安全区，所以做假蒙层也要侵入安全区
+  .margin({ top: -params.topHeight })
+  .padding({ top: params.topHeight });
+}
+
+@Entry
+@Component
+struct CustomDialogMaskPage {
+  private ctx: UIContext = this.getUIContext();
+  private windowClass: window.Window = (this.getUIContext().getHostContext() as common.UIAbilityContext)
+    .windowStage.getMainWindowSync();
+  private topHeight: number = this.ctx.px2vp(
+    this.windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM).topRect.height);
+  private contentNode: ComponentContent<Object> =
+    new ComponentContent(this.ctx, wrapBuilder(buildText), new Params(this.topHeight, true));
+
+  aboutToAppear(): void {
+    PromptActionDialogClass.setContext(this.ctx);
+    PromptActionDialogClass.setContentNode(this.contentNode);
+    PromptActionDialogClass.setOptions({
+      alignment: DialogAlignment.Top,
+      offset: { dx: 0, dy: this.topHeight },
+      isModal: false,
+    });
+  }
+
+  build() {
+    Row() {
+      Column({ space: 30 }) {
+        Button('open dialog and update options')
+          .margin({ top: 50 })
+          .onClick(() => {
+            // 弹窗开启的时候设置为true标识弹窗打开
+            this.contentNode.update(new Params(this.topHeight, true));
+            PromptActionDialogClass.openDialog();
+          });
+      }
+      .width('100%')
+      .height('100%');
+    }
+    .height('100%');
   }
 }
 ```

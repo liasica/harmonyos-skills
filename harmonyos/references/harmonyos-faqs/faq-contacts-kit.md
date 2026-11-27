@@ -3,13 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-contacts-ki
 title: 联系人服务（Contacts Kit）
 breadcrumb: FAQ > 应用服务开发 > 联系人服务（Contacts Kit）
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:48+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:d54ad7dfcbbdb7ebfb5dddea2eafe9e151cdb54210d677885972607192305112
+scraped_at: 2026-11-27T10:51:41+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:d4e4ef0e3c0b293281df5ce0855652a47b65dfdd0535632743bc0dba5f7f9bc3
 ---
 
-* **[如何实现联系人管理功能](faq-contacts-1.md)**
-* **[调用queryContactsByPhoneNumber接口异常怎么解决](faq-contacts-2.md)**
-* **[使用ContactsKit中的selectContacts方法报错](faq-contacts-3.md)**
-* **[调用联系人服务（ContactKit）的queryContacts接口导致应用闪退](faq-contacts-4.md)**
-* **[如何通过拉起通讯录添加联系人](faq-contacts-5.md)**
+* **[常见问题](faq-contacts-kit-faq.md)**

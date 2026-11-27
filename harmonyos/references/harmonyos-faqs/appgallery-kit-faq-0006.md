@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-faq-0006
-title: 应用内检查更新实现及常见问题
-breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > 应用内检查更新实现及常见问题
+title: 应用内版本更新实现与问题排查FAQ
+breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > 应用内版本更新实现与问题排查FAQ
 category: harmonyos-faqs
-scraped_at: 2026-11-21T09:19:18+08:00
-doc_updated_at: 2026-11-20
-content_hash: sha256:bba695bc7957a0233ccd147f47862720eb337d782749b6ac77527b86f9c4c3f3
+scraped_at: 2026-11-27T10:51:45+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:fe2fe5aeee3ac4e9a29a552404e03b19a13cfb291dbde9606a3353a991adfb78
 ---
 
 **Q：应用上架应用市场后，有新的版本更新时，如何实现老版本用户打开应用能提示更新版本？**
 
 A：业务流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/kl45oXxLQTGucpJD1addKQ/zh-cn_image_0000002792076741.png?HW-CC-KV=V1&HW-CC-Date=20261121T011917Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA27985D631F910A1A946B152FD7F77C50384DEDD9EE5058C78831F4977B08C6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/29BN4VOQR02VPMkgkq0GYw/zh-cn_image_0000002792076741.png?HW-CC-KV=V1&HW-CC-Date=20261127T025145Z&HW-CC-Expire=31536000000&HW-CC-Sign=897554626EF697ED15873786F1554DBEA697EBBCF50A6B1794CD5F26AE709F9B "点击放大")
 
 1. 应用调用检查更新接口。
 2. 升级服务API返回是否有新版本。
@@ -49,20 +49,21 @@ A：业务流程：
 
 **A**：建议拆成版本检查、更新入口、强制更新、增量更新四部分实现。
 
-1. 版本检查：比较versionCode。本地读取应用的整数versionCode，服务端返回latestVersionCode、minSupportedVersionCode、更新说明等。判断逻辑：
+1. 版本检查：比较versionCode。
 
-* 本地版本低于minSupportedVersionCode：要求升级后继续使用相关业务。
-* 本地版本低于latestVersionCode：提示可选更新。
+   本地读取应用的整数versionCode，服务端返回latestVersionCode、minSupportedVersionCode、更新说明等。判断逻辑：
 
-versionName用于展示，不要直接按字符串比较大小。
+   * 本地版本低于minSupportedVersionCode：要求升级后继续使用相关业务。
+   * 本地版本低于latestVersionCode：提示可选更新。
 
-1. 更新入口：优先接应用市场能力。
+   versionName用于展示，不要直接按字符串比较大小。
+2. 更新入口：优先接应用市场能力。
 
    已上架的HarmonyOS应用，可以使用@kit.AppGalleryKit的updateManager.checkAppUpdate(context)检查，再调用showUpdateDialog(context)显示升级提醒。要求本地与在架版本签名一致，且本地版本更低；不支持用模拟器验证。
-2. 强制更新：由业务控制最低可用版本。
+3. 强制更新：由业务控制最低可用版本。
 
    当前上述接口没有通用的“强制更新”参数。可以由应用显示升级拦截页，服务端同步拒绝不再兼容的旧版本请求，用户完成更新后恢复业务。这属于业务准入控制，不能强制静默安装。启用强制更新前，应确认新版本已对目标用户实际可下载，避免灰度期间导致用户无法正常使用。
-3. 增量更新：区分安装包和资源包。
+4. 增量更新：区分安装包和资源包。
 
    应用升级交给应用市场分发；上述接口没有开放自行配置HAP差分合成的能力，不能承诺每次都走增量。若是图片、模型、离线内容等资源，可以自建“版本清单＋文件哈希”，只下载变化文件，校验完成后切换版本，失败保留旧资源。二进制差分的原理是“旧文件＋补丁＝新文件”，但还需处理基线版本匹配、完整性校验和全量下载兜底。
 
@@ -86,7 +87,7 @@ versionName用于展示，不要直接按字符串比较大小。
 
 **Q：升级弹窗是否能自定义？**
 
-**A**：不可以，检测到有新版本需要更新后，系统弹窗的版本信息和更新说明来源于应用市场客户端应用详情页数据。如果需要修改，需要在上架版本时HarmonyOS 开发者中心页面更新。详情可参考[升级版本。](../app/agc-help-maintain-upgrade-0000002236494386.md)
+**A**：不可以，检测到有新版本需要更新后，系统弹窗的版本信息和更新说明来源于应用市场客户端应用详情页数据。如果需要修改，需要在上架版本时HarmonyOS 开发者中心页面更新。详情可参考[升级版本](../app/agc-help-maintain-upgrade-0000002236494386.md)。
 
 **Q：为什么调用checkAppUpdate接口[UpdateAvailableCode](../harmonyos-references/store-updatemanager.md#updateavailablecode)返回结果为-1？**
 
@@ -141,3 +142,135 @@ versionName用于展示，不要直接按字符串比较大小。
 loadProduct接口不支持穿戴设备。
 
 若后续系统版本及应用市场版本满足要求（系统版本6.1.0.330 SP18及以上，应用市场7.6.1.300及以上），也可通过AppGallery Kit的checkAppUpdate接口检测应用是否有新版本，再通过showUpdateDialog弹出系统升级弹框，或使用自定义弹窗搭配loadProduct跳转应用市场详情页。参考[应用内检查更新实现及常见问题](faqs-appgallery-98.md)和[如何实现应用升级自定义弹窗](faqs-appgallery-43.md)。
+
+**Q：如何实现应用升级自定义弹窗并监控点击事件？**
+
+**A**：实现应用升级自定义弹窗，可保持应用内弹窗样式的统一，或监控“立即更新”按钮。
+
+操作步骤：
+
+1. 调用[updateManager.checkAppUpdate](../harmonyos-references/store-updatemanager.md#section10984155711373)接口，检查到有更新。
+2. 调用自定义的UI更新弹框[CustomDialog](../harmonyos-references/ts-methods-custom-dialog-box.md)。
+3. 用户点击自定义弹框里的“立即更新”按钮，调用[productViewManager.loadProduct](../harmonyos-references/store-productviewmanager.md#section144826162913)接口展示应用详情页，用户在应用详情页里更新应用。
+4. 开发者结合自己的业务来监控“以后再说”或“立即更新”按钮，代码中是通过[hilog](../harmonyos-guides/hilog.md)输出日志体现。
+
+**说明** 
+
+采用这种自定义弹框，需要自己维护新版本的版本号、大小、更新详情描述信息。
+
+**Q：如何实现强制更新功能？**
+
+A：目前系统提供的更新弹窗没有提供强制更新功能，用户可以通过应用升级自定义弹窗的基础上实现强制更新。
+
+目前系统提供的更新弹窗没有提供强制更新功能，用户可以通过场景一中的应用升级自定义弹窗的基础上实现强制更新。
+
+操作步骤：
+
+1. 检查到有版本更新后，仅提供立即更新按钮。
+2. 通过注册[onWillDismiss](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)回调拦截用户执行的点击遮障层关闭、左滑/右滑、三键back、键盘ESC关闭交互操作。
+
+完整代码参考：
+
+```ts
+import { common, Want } from "@kit.AbilityKit";
+import { productViewManager, updateManager } from "@kit.AppGalleryKit";
+import { BusinessError } from "@kit.BasicServicesKit";
+import { hilog } from "@kit.PerformanceAnalysisKit";
+
+@CustomDialog
+export struct BaseComHud {
+  controller: CustomDialogController;
+
+  build() {
+    Column() {
+      Text('有新版本更新，前往应用市场更新~')
+        .fontSize(16)
+        .margin({ top: 10, bottom: 10 });
+      Row(){
+        Button('立即更新')
+          .onClick(() => {
+            hilog.info(0, 'TAG', '用户选择了立即更新');
+            try {
+              updateManager.checkAppUpdate(this.getUIContext().getHostContext() as common.UIAbilityContext)
+                .then((checkResult: updateManager.CheckUpdateResult) => {
+                  hilog.info(0, 'TAG', `Succeeded in checking Result updateAvailable: ${checkResult.updateAvailable}`);
+                }).catch((error: BusinessError) => {
+                hilog.error(0, 'TAG', `checkAppUpdate onError.code is ${error.code}, message is ${error.message}`);
+              });
+            } catch (error) {
+              hilog.error(0, 'TAG', `checkAppUpdate onError.code is ${error.code}, message is ${error.message}`);
+            }
+
+            const wantParam: Want = {
+              parameters: {
+                // 必填，此处填入要加载的应用包名，例如：bundleName:'com.xxx.xx'
+                bundleName: 'com.xxx.xx',
+              }
+            };
+            const callback: productViewManager.ProductViewCallback = {
+              onError: (error: BusinessError) => {
+                hilog.error(0, 'TAG', `loadService onError.code is ${error.code}, message is ${error.message}`);
+              },
+              onAppear: () => {
+                hilog.info(0, 'TAG', `loadProduct onAppear.`);
+              },
+              onDisappear: () => {
+                hilog.info(0, 'TAG', `loadProduct onDisappear.`);
+              }
+            };
+            // 调用接口，拉起应用详情页
+            productViewManager.loadProduct(this.getUIContext().getHostContext() as common.UIAbilityContext, wantParam, callback);
+          });
+      }
+    }
+    .backgroundColor(Color.White)
+    .borderRadius(10)
+    .padding(20);
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  dialogController: CustomDialogController = new CustomDialogController({
+    // 此处直接指定自定义弹窗，不要重新new
+    builder: BaseComHud(),
+    alignment: DialogAlignment.Center,
+  });
+
+  dialogController1: CustomDialogController = new CustomDialogController({
+    // 此处直接指定自定义弹窗，不要重新new
+    builder: BaseComHud(),
+    alignment: DialogAlignment.Center,
+    onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
+      // 参数说明
+      // PRESS_BACK为点击三键back、左滑/右滑、键盘ESC退出。
+      // TOUCH_OUTSIDE为点击遮障层退出。
+      // CLOSE_BUTTON为点击关闭按钮退出。
+      // SLIDE_DOWN为下拉关闭（适用于半模态转场）
+      if (dismissDialogAction.reason === DismissReason.PRESS_BACK) {
+        // ...
+        // 可使用dismiss方法可关闭弹窗，dismissDialogAction.dismiss()
+      }
+    },
+  });
+
+  build() {
+    Column() {
+      Button('更新弹窗')
+        .onClick(() => {
+          this.dialogController.open(); // 打开弹窗
+        });
+
+      Button('强制更新弹窗')
+        .onClick(() => {
+          this.dialogController1.open(); // 打开弹窗
+        });
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.SpaceEvenly);
+  }
+
+}
+```

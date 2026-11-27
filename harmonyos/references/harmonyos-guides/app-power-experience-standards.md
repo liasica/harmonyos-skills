@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-power-exp
 title: 应用功耗体验建议
 breadcrumb: 指南 > 应用体验建议 > 应用功耗体验建议
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:45+08:00
-doc_updated_at: 2026-09-29
+scraped_at: 2026-11-27T10:45:10+08:00
+doc_updated_at: 2026-11-26
 content_hash: sha256:9fc2278fbb1f597bc05e2864232037395dc272e9529d42eed7cfba46cac7d2fa
 ---
 

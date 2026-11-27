@@ -1,23 +1,23 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-troubleshooting-0001
-title: HarmonyOS 开发者中心创建应用包名已存在问题排查与解决
-breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 故障排查 > HarmonyOS 开发者中心创建应用包名已存在问题排查与解决
+title: HarmonyOS 开发者中心平台创建应用包名已存在问题排查与解决
+breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 故障排查 > HarmonyOS 开发者中心平台创建应用包名已存在问题排查与解决
 category: harmonyos-faqs
-scraped_at: 2026-11-13T09:06:38+08:00
-doc_updated_at: 2026-11-12
-content_hash: sha256:190f89c528f34d5785744a575fdb77ed8f893f9e623bc9c27331dc6ef6ac820e
+scraped_at: 2026-11-27T10:51:46+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:87e7540269b4e544d4658f1171e61f491f2017566faa1d1376ca67113796d192
 ---
 
 ## 问题现象
 
-在HarmonyOS 开发者中心平台上创建应用，出现报错，提示“应用包名已经存在”。
+在HarmonyOS 开发者中心平台上创建应用，出现报错，提示“应用包名已经存在”。在该平台上为其他平台应用手动保存包名时，提示“包名已存在，请更换包名”（错误码90202134）；在其他平台版本页面上传使用该包名的软件包时，返回“包名已存在，请更换包名”（错误码9004）。若该包名已用于其他平台应用备案和电子版权证书，需要优先保留该包名。
 
 ## 定位过程
 
 包名重复说明提交的应用内置包名和华为应用市场上的某个应用包名相同，或者与某个正在审核中的应用包名相同。确认思路如下：
 
 1. 确认当前HarmonyOS应用包名与其他平台包名不相同，HarmonyOS应用可以关联一个在架的其他平台的应用，但关联关系建立后不可再变更，后续升级不支持重新编辑关联关系。当用户将其设备上的其他平台系统升级到HarmonyOS 5系统时，其他平台系统上已安装的其他平台应用，将会根据绑定的关联关系，被自动替换为该应用的HarmonyOS版本，以及迁移相关其他平台用户数据至HarmonyOS应用。为防止包名重复导致应用覆盖安装，建议您将HarmonyOS包名与其他平台的包名区分开来。
-2. 确认是否存在同一账号下，重复创建相同包名。
+2. 确认是否存在同一账号下，重复创建相同包名。同账号下已创建的HarmonyOS应用（包括尚未上架的草稿应用）也会占用该包名，导致为其他平台应用绑定该包名时提示“包名已存在”。
 3. 若当前预发布账号为企业账号，需要确认该应用在开发测试过程中，是否在个人开发者账号下创建了相同的包名。
 4. 当前账号及企业账号下均未创建该包名，则考虑该包名是否已被他人抢占。
 
@@ -26,7 +26,7 @@ content_hash: sha256:190f89c528f34d5785744a575fdb77ed8f893f9e623bc9c27331dc6ef6a
 根据上面的问题定位思路，可以分析出创建应用时提示应用包名已经存在的原因可能有以下四点：
 
 1. HarmonyOS包名与其他平台的市场包名冲突，或者与正在审核中应用包名相同。
-2. 同一账号下有相同包名的应用。
+2. 同一账号下有相同包名的应用，包括同账号下已创建的HarmonyOS应用（含尚未上架的草稿应用）。
 3. 个人开发者账号下有相同包名应用。
 4. 包名被他人占用。
 
@@ -34,8 +34,10 @@ content_hash: sha256:190f89c528f34d5785744a575fdb77ed8f893f9e623bc9c27331dc6ef6a
 
 针对包名已经存在的四种情况，可以进行如下操作：
 
-1. 确认当前HarmonyOS应用包名与其他平台的市场应用包名不一致，可以登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)确认其他平台的应用包名。
-2. 确认当前账号下是否存在同包名，可以登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)确认是否存在相同包名的应用。
+1. 确认当前HarmonyOS应用包名与其他平台的市场应用包名不一致，可以登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)确认其他平台的应用包名。
+2. 确认当前账号下是否存在同包名，可以登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)确认是否存在相同包名的应用。若同包名应用为同账号下尚未上架的HarmonyOS草稿应用，且该包名已用于其他平台应用备案和电子版权证书，需要优先保留该包名，可参考如下方式处理。
+   1. AppGallery Connect平台规则不允许HarmonyOS应用与其他平台应用共用包名，无法通过关联、认领或后台处理在保留HarmonyOS应用的同时让其他平台应用使用同一包名。
+   2. 放弃该HarmonyOS草稿应用（不删除，仅搁置），新建一个使用不同包名的HarmonyOS应用。
 3. 当前预发布账号为企业账号，但开发过程中由个人账号创建了相同包名，则参考如下步骤执行：
    1. 在个人账户下[删除应用信息](../app/agc-help-maintain-delete-0000002271413701.md)，包括APP ID。
    2. 在企业账户下[创建新的APP ID](../doccenter-getting-started/agc-help-create-app-0000002247955506.md)，使用原来的包名。

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/experience-su
 title: 体验建议概述
 breadcrumb: 指南 > 应用体验建议 > 体验建议概述
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:44+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:d592b5aabc6489b34efbc222ae4b7f6923764e82d84ef76469f18d22ed2b71aa
+scraped_at: 2026-11-27T10:45:09+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:d939c09c36bde4e7b927f0db28d9bfff504e2de7fc49c5d7a94b1b577254f27f
 ---
 
 本文档介绍应用系统资源管理、基础功能和兼容性、稳定性、功耗、性能、安全和UX的核心质量维度在开发阶段和测试阶段需要关注的体验建议。
 
 | 名称 | 简介 |
 | --- | --- |
-| [应用系统资源管理体验建议](experience-suggestions-resource-management.md) | 存储空间使用与文件生命周期管理。 |
+| [应用系统资源管理体验建议](experience-suggestions-resource-management.md) | 存储空间使用与文件生命周期管理、系统内存使用与优化。 |
 | [应用基础功能和兼容性体验建议](experience-suggestions-compatibility.md) | 应用与OS兼容、应用与设备兼容、应用升级兼容、功能体验相关等。 |
 | [应用稳定性体验建议](experience-suggestions-stability.md) | 长时间运行故障率（崩溃、冻屏等）、长时间运行内存资源异常。 |
 | [应用性能体验建议](performance-experience-suggestions.md) | 时延、帧率流畅体验和内存占用、CPU占用、线程数等资源占用约束。 |

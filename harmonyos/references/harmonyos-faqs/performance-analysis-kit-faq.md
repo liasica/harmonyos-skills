@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/performance-ana
 title: 常见问题
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:43+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:c216363c858e34a5ccf3de90a2eabc483b77000212eefffdffb2c2df5ec0d5f4
+scraped_at: 2026-11-27T10:50:05+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:44a22529f812822634805f8ca2dd5930720dbcd7db9fd16b40d2acd77fb7bb51
 ---
 
 * **[console.log与hilog区别及使用选择常见问题](performance-analysis-kit-faq-0001.md)**
@@ -21,3 +21,4 @@ content_hash: sha256:c216363c858e34a5ccf3de90a2eabc483b77000212eefffdffb2c2df5ec
 * **[通过hdc命令获取设备udid常见问题](performance-analysis-kit-faq-0011.md)**
 * **[如何解决Mac电脑不能识别hdc命令的问题](performance-analysis-kit-faq-0012.md)**
 * **[如何通过hdc命令清除手机中应用的缓存](performance-analysis-kit-faq-0013.md)**
+* **[待机低功耗模式特性常见问题](performance-analysis-kit-faq-0014.md)**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/standard-fore
 title: 前台资源使用
 breadcrumb: 指南 > 应用体验建议 > 应用功耗体验建议 > 前台场景 > 前台资源使用
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:45+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:7e4addd6e374b340b6bfdbc1a95332b6caf883f5b1c0d073f86b2b773ace213b
+scraped_at: 2026-11-27T10:45:10+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:f1b1ba93fd5e7f739d8c9de5d38c5a4ecb7efafc0d5d1f681506b464781cf82a
 ---
 
 ## 视频场景强制建议
@@ -72,7 +72,7 @@ content_hash: sha256:7e4addd6e374b340b6bfdbc1a95332b6caf883f5b1c0d073f86b2b773ac
 
 |  |  |
 | --- | --- |
-| 描述 | 1. 界面完全静止的场景下，三方应用停止请求Vsync，不要随着Vsync信号每帧周期性运行； 2. 界面完全静止的场景下，三方应用进程的CPU负载率应该低于10%(单核负载)。 |
+| 描述 | 1. 界面完全静止的场景下，三方应用停止请求Vsync，不要随着Vsync信号每帧周期性运行。 2. 界面完全静止的场景下，三方应用进程的CPU负载率应该低于10%(单核负载)。 |
 | 类型 | 规则 |
 | 适用设备 | 手机、平板 |
 | 应用形态适用性 | 鸿蒙应用，鸿蒙元服务 |

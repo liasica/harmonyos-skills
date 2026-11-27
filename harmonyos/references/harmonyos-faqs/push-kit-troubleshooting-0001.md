@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/push-kit-troubl
 title: 消息推送后手机未收到消息提示怎么处理
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 故障排查 > 消息推送后手机未收到消息提示怎么处理
 category: harmonyos-faqs
-scraped_at: 2026-11-13T09:06:37+08:00
-doc_updated_at: 2026-11-12
-content_hash: sha256:b413ea0abebeb314e938dea9c179803042f6aa0eaa11aae209bbd3d59e312a9a
+scraped_at: 2026-11-27T10:51:45+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:51c5cc4a1106986548c0ad284fc22fa1c6a9fc6e21144cbf1e867f98134ab1a7
 ---
 
 ## 问题现象
@@ -47,17 +47,17 @@ content_hash: sha256:b413ea0abebeb314e938dea9c179803042f6aa0eaa11aae209bbd3d59e3
 
 * 当收到资讯营销类消息时，由于静默通知仅在通知中心展示，并不会弹框提示，需要去通知中心查看。通知中心如下图，可以查看对应消息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/f2yo-dNkSx27_aMLIkcyFg/zh-cn_image_0000002794653837.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B026BDA3A3B80B6B265161F2A85E2E9D84617CEC7245B5242A67BFDEB30DA84 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Rej4mUmRRKyNRpFW1UD5Iw/zh-cn_image_0000002794653837.png?HW-CC-KV=V1&HW-CC-Date=20261127T025144Z&HW-CC-Expire=31536000000&HW-CC-Sign=E90779C3D2F0A119B93F942C3EAAC3C15AFFF77109FF65C969B1CCB4058F2354 "点击放大")
 * 若终端上的app手动关闭了消息提醒方式，终端收到消息不会有提醒，需要打开所需的提醒方式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/-ZiiOnkST1iKo1Sizcwzgg/zh-cn_image_0000002794653841.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B930CD48BA812F0AD4A247AAA22B9D26B92F29E85DDDE388CF83CF6520FCA6B "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/WwC8lWV4RGa_vMvjBam5Tw/zh-cn_image_0000002794653841.png?HW-CC-KV=V1&HW-CC-Date=20261127T025144Z&HW-CC-Expire=31536000000&HW-CC-Sign=657E2002DB8E4B383791A55AFED602482B33821C843636ACA75B3F31A1222A95 "点击放大")
 * 检查应用的"通知渠道（通知类别）开关"是否被关闭。进入设置>通知和状态栏>找到该应用，除确认顶部"允许通知"总开关外，展开下方"通知类别"列表，逐一确认各类别（尤其服务与通讯/Push相关渠道）开关均处于开启状态。"通知类别"属于独立的子开关，此前确认的应用级总开关不包含子开关。
 * 检查应用或三方SDK是否调用过pushService.turnOffPush()方法，该方法会设置不显示通知栏消息，端侧同样上报"通知栏开关关闭"回执。若存在调用记录，执行pushService.turnOnPush()恢复后重推验证。
-* 打开[HarmonyOS 开发者中心平台](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，按查询路径："开发与服务>增长>推送服务>自助分析"，在自助分析里面输入requestId和token，系统会自动分析消息推送失败的可能原因，注意requestId有效期为三天。
+* 打开[HarmonyOS 开发者中心平台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，按查询路径："开发与服务>增长>推送服务>自助分析"，在自助分析里面输入requestId和token，系统会自动分析消息推送失败的可能原因，注意requestId有效期为三天。
 
   也可能是Push token不是有效的token，建议您在应用启动时调用getToken()接口，若设备的Push Token发生变化，及时上报到您的应用服务器更新Push Token，以防由于Push Token失效导致收不到消息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/XCYXfa0vTfemusxCyedKWA/zh-cn_image_0000002794573613.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=0535E197585070DF62A4AF0761D0FFBD6E7B707107A39091581263A475D42C13 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Ghc84-jyRTK37CjgiD4jLg/zh-cn_image_0000002794573613.png?HW-CC-KV=V1&HW-CC-Date=20261127T025144Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B905389FCBBA3D0B240988C0816E2CBEBD0AFEED33703222F85A3C266E2D2A3 "点击放大")
 * 检查服务端发送请求时是否正确携带Authorization请求头，value为JWT格式字符串，是基于服务账号生成鉴权令牌。可参考：[请求体结构说明](../harmonyos-references/push-scenariozed-api-request-struct.md)。
 * [推送后台消息](../harmonyos-guides/push-background.md)用于内容不频繁更新的场景，不会显示通知、播放铃声或改变应用角标。终端设备接收到后台消息后，如果应用进程在前台则将消息内容传给应用；如果应用进程不在前台则缓存消息，等待应用启动后再传给应用。
 * 如果设备离线，Push Kit会缓存消息，待设备上线后，再将消息推送给设备。
@@ -81,3 +81,7 @@ content_hash: sha256:b413ea0abebeb314e938dea9c179803042f6aa0eaa11aae209bbd3d59e3
 **Q：使用Push Kit发送category=SUBSCRIPTION的消息，设备处于夜间息屏状态且已设置睡眠模式允许打扰，消息被凌晨管控缓存导致延迟收到，能否豁免管控或实现实时送达？**
 
 **A**：Push Kit夜间息屏消息管控是推送服务侧的平台级策略，管控时段为0:00~6:00，设备熄屏30分钟后触发，管控期间消息被云侧缓存，不下发到设备。设备端的"睡眠模式允许打扰"设置控制的是通知到达设备后的提醒方式（响铃、震动等），不影响Push Kit服务端的夜间管控决策，因此无法通过该设置豁免管控。当前仅category=VoIP和应用内通话消息可豁免夜间管控，category=SUBSCRIPTION不在豁免范围内。夜间0点到6点只能通过亮屏的方式触发消息下发，如持续息屏无法下发消息。
+
+**Q：应用在后台运行约十分钟后收不到推送通知，但强制划掉后台应用后可以正常收到，是什么原因？**
+
+**A**：接收Alert消息与应用是否在前台、应用进程是否存在无关，该问题大概率是应用在后台运行时清理了应用的通知，需要排查应用侧清理通知的逻辑。

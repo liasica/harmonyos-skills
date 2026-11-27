@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-specifi
 title: 音频规格
 breadcrumb: 指南 > 应用体验建议 > 应用基础功能和兼容性体验建议 > 系统特性与基础功能 > 音频规格
 category: harmonyos-guides
-scraped_at: 2026-09-30T07:35:44+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:64fa09953e6dcff9d3a16748077c206368658a293da514ada950497d1d339627
+scraped_at: 2026-11-27T10:45:09+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:12645754089ed17f8e63efb84f1d12698bdd1e71dd22f5e535cb219b0ad304f4
 ---
 
 ## 音频流类型与通路配置
@@ -16,7 +16,7 @@ content_hash: sha256:64fa09953e6dcff9d3a16748077c206368658a293da514ada950497d1d3
 | **类型** | 建议 |
 | **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴，轻量级智能穿戴 |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
-| **说明** | 支持的音频流使用类型请参见[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage) |
+| **说明** | 支持的音频流使用类型请参见[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage)。 |
 
 |  |  |
 | --- | --- |
@@ -24,7 +24,7 @@ content_hash: sha256:64fa09953e6dcff9d3a16748077c206368658a293da514ada950497d1d3
 | **类型** | 建议 |
 | **适用设备** | 手机，平板，PC/2in1，智慧屏，车机，智能穿戴，轻量级智能穿戴 |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
-| **说明** | 支持的音频源使用类型请参见[SourceType](../harmonyos-references/arkts-apis-audio-e.md#sourcetype8) |
+| **说明** | 支持的音频源使用类型请参见[SourceType](../harmonyos-references/arkts-apis-audio-e.md#sourcetype8)。 |
 
 |  |  |
 | --- | --- |

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: 故障排查
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查
 category: harmonyos-faqs
-scraped_at: 2026-10-30T07:58:07+08:00
-doc_updated_at: 2026-10-29
-content_hash: sha256:592cbe7894c2277fbc3d4b0ba20150020303dbe7c4a189366e04f8b8e9fb3915
+scraped_at: 2026-11-27T10:50:46+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:e352ef3d64c178f4a412d068e7a37259ee177f2e184f8ab71e831580742c22bc
 ---
 
 * **[ArkUI一多适配布局问题定位](arkui-uimana-troubleshooting-0001.md)**
 * **[ArkUI复杂嵌套对象属性更新失效问题定位](arkui-uimana-troubleshooting-0002.md)**
 * **[使用输入法时无法输入部分字符问题定位](arkui-uimana-troubleshooting-0003.md)**
 * **[ArkUI平板自由多窗挖孔区避让问题定位](arkui-uimana-troubleshooting-0004.md)**
-* **[窗口横竖屏旋转问题排查与解决](arkui-uimana-troubleshooting-0005.md)**
+* **[横竖屏切换异常问题排查与解决](arkui-uimana-troubleshooting-0005.md)**
 * **[ArkUI-Scroll滑动透明度渐变重叠显示问题定位](arkui-uimana-troubleshooting-0006.md)**
 * **[ArkUI-Image组件图片闪烁问题定位](arkui-uimana-troubleshooting-0007.md)**
 * **[页面跳转后弹窗不关闭问题定位](arkui-uimana-troubleshooting-0008.md)**

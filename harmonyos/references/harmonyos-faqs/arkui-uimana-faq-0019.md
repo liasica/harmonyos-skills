@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-faq-0019
-title: ArkUI手势常见问题
-breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI手势常见问题
+title: ArkUI组件手势交互与冲突常见问题
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI组件手势交互与冲突常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:377e4a471c065c929486aa38b6fb519b9c6e35be349974ec2b618fae2ecabb37
+scraped_at: 2026-11-27T10:50:46+08:00
+doc_updated_at: 2026-11-26
+content_hash: sha256:a3c830ede450451a8df325f87b302b7883349b304332f65adec52cfd6e49484a
 ---
 
 **Q：在List组件中，单个ListItem在同时设置拖拽功能与长按功能时，实际运行之后会产生冲突，如何解决单个ListItem拖拽功能和长按功能的冲突问题？**
@@ -315,7 +315,7 @@ struct Page {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/vx3-BkqURCqWrZhU-_nvLw/zh-cn_image_0000002765940926.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=046D983F58F3DA073AD57233FF38287B3AB2E5674569E453216802DC069C6C84 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/7YOO0wINSUesIfZynEmjJQ/zh-cn_image_0000002765940926.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=16AC77BCB5EDA7D66BFD2BCEA8C2D7336A1C9232707632D640EF1780DE729A00 "点击放大")
 
 **Q：Grid上下左右拖拽动画如何实现？**
 
@@ -325,8 +325,12 @@ struct Page {
 
 **A**：实现思路：
 
-1. 旋转和缩放部分：使用矩阵实现，通过构建一个以组件中心为原点的坐标系，初始坐标是从中心指向边框右下角。手指移动时，在初始坐标基础上增加手指移动的向量，即可得到当前手指相对于组件中心为原点的坐标系的坐标。从而可以计算到原点的距离和旋转的角度，该距离除以初始距离即为缩放比例，该角度减去初始角度即为旋转角度。注意：每次计算当前手指相对于中心的坐标时，需要使用初始坐标加上手指偏移距离得到的坐标进行上一次旋转缩放的矩阵映射，否则会有偏差。
-2. 平移部分：使用offset实现，记录上一次移动的终点位置，再加上本次手指移动的距离，即可实现平移。注意：由于平移的手势绑定在旋转缩放的组件上，所以直接使用会有偏差，必须对该坐标也进行一次相同的旋转缩放映射。
+1. 旋转和缩放部分：使用矩阵实现，通过构建一个以组件中心为原点的坐标系，初始坐标是从中心指向边框右下角。手指移动时，在初始坐标基础上增加手指移动的向量，即可得到当前手指相对于组件中心为原点的坐标系的坐标。从而可以计算到原点的距离和旋转的角度，该距离除以初始距离即为缩放比例，该角度减去初始角度即为旋转角度。
+
+   注意：每次计算当前手指相对于中心的坐标时，需要使用初始坐标加上手指偏移距离得到的坐标进行上一次旋转缩放的矩阵映射，否则会有偏差。
+2. 平移部分：使用offset实现，记录上一次移动的终点位置，再加上本次手指移动的距离，即可实现平移。
+
+   注意：由于平移的手势绑定在旋转缩放的组件上，所以直接使用会有偏差，必须对该坐标也进行一次相同的旋转缩放映射。
 
 实现代码如下：
 
@@ -492,7 +496,7 @@ struct ImageMovePage {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/yKxI9wdNSiqGXxQ4gIR69A/zh-cn_image_0000002765940938.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=33ECE63FDE4D4F3A37561D046DC6E19B00116F0305A0609B807A58F724E6CA63 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/WWivS5wZRmyJ-6fJ3NRsSg/zh-cn_image_0000002765940938.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F1C4D566E40B82FCCFEDB969863F889A210851DCD9CDCAC5D90CF59368E3EC4 "点击放大")
 
 **Q：横向的进度条嵌套在Scroll组件中，当触摸进度条时，手指不抬起进行拖动操作，若拖动操作起始为上下，那么后续的拖动只会影响Scroll的滚动。相反，若拖动操作起始为左右，那么后续拖动只会影响Slider进度条的变化，无法影响Scroll滚动。如何实现在单次拖动内Scroll组件和Slider进度条同时响应拖动操作？问题代码如下：**
 
@@ -628,7 +632,7 @@ struct ScrollSlider {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/wO0JmuKJQE2MUXQZoR5qJg/zh-cn_image_0000002795500381.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DE8326F34220B9232002B60A2FCAC7B1119C647FBBA6C537144E12025128EA6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/qJiG8SiuTLmQh7x3HTxuTQ/zh-cn_image_0000002795500381.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=E842F430A2D24594D067A2F6DB84CC2A0B294138C715912240366AC1FBC51994 "点击放大")
 
 **说明** 
 
@@ -715,7 +719,7 @@ struct GestureDragAndSwiper {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/XdsqqkYASoKd0w_AT8w1eg/zh-cn_image_0000002766100870.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEE9EB527BE9EA0449BFDBD1ABA917602CAEFF9A77FE2BEA9CD3742C2A1B115E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/wlpKhmQRQIyNC-Up2nw8qg/zh-cn_image_0000002766100870.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6D02380CF36E21093880988D1A921E9EB411CBFC07F7D19D108515F3777A78E "点击放大")
 
 **Q：场景二中除了使用优先识别手势priorityGesture，还有其他替代方案吗？**
 
@@ -754,7 +758,7 @@ export struct Index {
 
 实际问题：手势操作只在上层D、E、F组件上适配，无法将手势操作透传给下层目标组件B。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/9fbKHPlsSfObpGYvp6uU-A/zh-cn_image_0000002795339639.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=9733D65485A121895A75DBD3BDA73CF3430C72BDD2275FA8D99BD3A3BB3D1419 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/riEYDTRaSyCT69lPlc0eLQ/zh-cn_image_0000002795339639.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=43B142A8A4B0A62E4E7EF0963E935ADB7AE9A6444B00B6178DFF356CE39CC179 "点击放大")
 
 **A**：针对业务场景代码梳理UI层级，预期将上层手势响应事件不作处理透传到下层组件进行处理，根据hitTestBehavior类型说明，选择HitTestMode.None模式，达到上层不响应，传递至子节点响应。
 
@@ -895,7 +899,7 @@ Executing a gesture:ComponentB
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/mZ8E4EE5Te-XHiBncgYxVw/zh-cn_image_0000002766100874.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=101147F89080A790E94D6F7AC332754ED62553D281B9C9CE5D815479B9F0D1CE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/s9cs1dkdT2aZfIGbQvmSiA/zh-cn_image_0000002766100874.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEBEDE5980EA242ACDAA35C386ECD63795F49D376EC834ACD671E9E2E0EB8318 "点击放大")
 
 **Q：页面有多个按钮，其中一个按钮用于控制按钮能否拖动，如何实现按钮可通过滑动手势改变位置，并在退出应用时保存按钮的位置？**
 
@@ -1022,4 +1026,51 @@ Executing a gesture:ComponentB
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/mSdZnDz1Si-mTGClgt2ZlQ/zh-cn_image_0000002795499441.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5D070E5ABE1B9940B1ECA0EF51E121981599279DE2D90C9DC09434E2DA3D0D3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/IRRq3XBmRPyjyFkNg3V8ag/zh-cn_image_0000002795499441.png?HW-CC-KV=V1&HW-CC-Date=20261127T025045Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A0F2BF36D454E9B9EF54642B6D87DE7E823F17DB6EA19A44CF925FE771330CA "点击放大")
+
+**Q：Scroll滚动到顶部时继续下拖和滚动到底部时继续上拖，如何执行自定义方法？**
+
+A：使用PanGesture为Scroll绑定平移事件，在滑动结束即onActionEnd中判断Scroll位置以进行相应处理。
+
+* Scroll滑到顶部继续下拖判断：
+  + 调用currentOffset获取Scroll当前位置，若Y方向小于等于0，则已滑至顶部。
+  + 通过onActionEnd的event判断是否继续下拖，若event.offsetY大于0表示继续下拖，则执行自定义操作。
+* Scroll滑到底部继续上拖判断：
+  + 调用isAtEnd判断Scroll是否已滑至底部。
+  + 通过onActionEnd的event判断是否继续上拖，若event.offsetY小于0表示继续上拖，则执行自定义操作。
+
+  ```ts
+  @Entry
+  @Component
+  struct ScrollDemo {
+    private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.Vertical });
+    private scrollerForScroll: Scroller = new Scroller();
+
+    build() {
+      Column() {
+        Scroll(this.scrollerForScroll) {
+          // 此处'app.media.startIcon'仅作示例
+          Image($r('app.media.startIcon'))
+            .size({ width: 400, height: 1050 });
+        }
+        .width('100%')
+        .height('100%')
+        .edgeEffect(EdgeEffect.Spring)
+        .parallelGesture(
+          PanGesture(this.panOption)
+            .onActionEnd((event: GestureEvent) => {
+              console.info('PanGesture end');
+              // 滑动到底部并且继续滑动
+              if (this.scrollerForScroll.isAtEnd() && event.offsetY < 0) {
+                console.info('执行自定义操作1');
+              }
+              // 滑动到顶部并且继续滑动
+              const offsetRes = this.scrollerForScroll.currentOffset(); // 获取Scroll现在的位置
+              if (offsetRes.yOffset <= 0 && event.offsetY > 0) {
+                console.info('执行自定义操作2');
+              }
+            }), GestureMask.Normal);
+      };
+    }
+  }
+  ```
