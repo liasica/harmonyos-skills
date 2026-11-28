@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-obf
 title: 混淆加固
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 混淆加固
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:35+08:00
+scraped_at: 2026-11-28T10:34:43+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b7f14ca0eef51c99649a8124bb413c079b4f142b96046bc8c5991e6ee0c1b991
+content_hash: sha256:06a1a19099998c5eb773b122574014a6fdd92a626bca863bf070acce21378dec
 ---
 
 DevEco Studio原先默认开启源码混淆功能，会对API 10及以上的Stage工程，且编译模式是release时，自动进行简单的源码混淆，仅对参数名和局部变量名进行混淆。
@@ -81,7 +81,7 @@ DevEco Studio原先默认开启源码混淆功能，会对API 10及以上的Stag
 
    当存在多个混淆规则文件时，规则合并以及合并后的作用范围可参考[混淆规则合并策略](source-obfuscation.md#混淆规则合并策略)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/ZbLQNPVkRYu8gFIg2cfKnA/zh-cn_image_0000002808767139.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AF50E45BDA2B7E43FF53C33BB8FC89DD753D5662558A3B66799616E1B2B5C01)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/5G1_4-l4RRmRV4GWpGOLfg/zh-cn_image_0000002808767139.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E395AD25DE68582F3088D3E2A0A1BA4B47FF560B0A11F8E171368D34FED1A5C)
 
 ### HAR/HSP配置保留选项
 
@@ -116,7 +116,7 @@ DevEco Studio原先默认开启源码混淆功能，会对API 10及以上的Stag
 
    当存在多个混淆规则文件时，规则合并以及合并后的作用范围可参考[混淆规则合并策略](source-obfuscation.md#混淆规则合并策略)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Dl6QQ7UZQYa1AyiZQqZAkw/zh-cn_image_0000002808767127.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C046540AB8A259BB03D4A82FE768718EFA3B9CEF1B2559B5879068AB0995531)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/W9NMzur6Rca94fE_-b2pOA/zh-cn_image_0000002808767127.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=B73AD37DCDE6404342B0671C93943CBFE43D86ECA93D6F2757AB96AC3A43E502)
 
 ## 通过混淆助手配置保留选项
 
@@ -130,19 +130,19 @@ DevEco Studio原先默认开启源码混淆功能，会对API 10及以上的Stag
    * 点击菜单栏**Tools >** **ObfuscationHelper**。
    * 在模块目录上点击鼠标右键，在弹出的菜单中选择**ObfuscationHelper**。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/_qK6b_v4T1KOgf6JtfsuwA/zh-cn_image_0000002779407582.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=FABABE6D856E5220820633B33815C98A4AF542450084C6EFF349B079CE9D836D)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/4Kv3ueoDQfiCOIUYheBp6g/zh-cn_image_0000002779407582.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=775EE293A9F6E94B2BB4B3B77E0BB39C91D9B3702419395F189E67CEFD31E3CC)
 2. 点击模块下拉选择框，选择待扫描的模块。
 3. 如果模块之前被扫描过，并且生成了排查白名单，则会生成相应的历史记录。选择对应的历史记录，在本次扫描完成后，会自动关联历史的排查记录，历史已经排查过的白名单字段无需再重复排查。
 
    从DevEco Studio 6.0.0 Beta1开始支持关联历史记录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/2GDPCFaPSM259p0zRe1Cwg/zh-cn_image_0000002779407574.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=358153CB2EB12000BCF64CBB512D4E8F7B5EDB71E496A64A7B486FAF636822B4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/fX7tsdb4QqCP7go9S_DsIQ/zh-cn_image_0000002779407574.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=75806379E96EA688BA3836ED880104A5A9BF037170215BE7FF870488644D9258)
 4. 根据涉及的混淆场景，选择一个或多个扫描任务，点击**开始扫描**。关于扫描任务的介绍请参考[扫描任务](ide-build-obfuscation.md#section18125192133818)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/b62oMzW4SPiYzgQQIEh_bQ/zh-cn_image_0000002808767143.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BD33F3F78C9815BCD924D8294A6CD83ECCF0A773BD404DC0A41C500ED29B2C7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/W0igH4rJRB-AsExmbQsyuQ/zh-cn_image_0000002808767143.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=51EB8B9C04FF05185F56421F99E78919E6F588716674A6D93B2E8CE8936CFBD5)
 5. 等待扫描成功后，进入[推荐白名单](ide-build-obfuscation.md#section3989185975217)和[待排查白名单](ide-build-obfuscation.md#section42331014105310)配置页面。在扫描的过程中，也可以点击**停止扫描**按钮，结束扫描。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/q9H2c21fQ3Su1JSONaCcCA/zh-cn_image_0000002808767137.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=275B5B886F84D2286E02105A81E381DA1B1D548234E3A9903393441CD1723D89)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/GjOkyR44SEiuNSLZXCv7qA/zh-cn_image_0000002808767137.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=7419B008D8C8521532C7672D97EF29BA5FDEA0C137974A8030CE23781CB8B989)
 
 ### 配置推荐白名单
 
@@ -167,13 +167,13 @@ DevEco Studio原先默认开启源码混淆功能，会对API 10及以上的Stag
 
      + **关键代码**：点击关键代码，可以跳转到代码所在的文件和代码行。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/jC1tZV2VRS-LsgIeo-DK_g/zh-cn_image_0000002808887211.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7876682B96ADC331BBE61126B2A03B6339CB267CAC631AD1D7D5E202320D0BC)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/ve5_NCITTJanv9UEBS-ewQ/zh-cn_image_0000002808887211.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=83C243C5C0A0F5CFCCD2225D99C22E957F7B9478310E5DC1AD540911831A1854)
      + **白名单字段**：点击白名单字段，可以跳转到字段所在的文件和代码行。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/PrRdGYbtQYq2JfpQRGJTOQ/zh-cn_image_0000002808887221.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABB679BC0CC1DB1D3FE9B634B81D86913E00871692C12D82CE869799D0D1A7DE)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/6xHK_MnPQNeHroO-FY0FQA/zh-cn_image_0000002808887221.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=83CC2442A4CCBF1B6D18143966DE1EF42C1FB759B64A3A01D747050507147C51)
   2. 如果需要将白名单文件生成到工程中，可以点击**生成推荐白名单**按钮，ObfuscationHelper会在对应模块下生成推荐白名单文件Hm-recommend-keep-list.txt/Hm-recommend-consumer-keep-list.txt，并提示对应的文件路径。同时在工程根目录下生成对应的白名单Excel表格obfuscation-helper-xxx.xlsx。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/kZOe6_BNSwa9l-YW0Zac9A/zh-cn_image_0000002808887219.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=D16CADBD676E6D621CB6E424EABA793345ADCE945271380B7A381357BF8C07C5)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/-_l69FXzS5-I_m-0y-HcMA/zh-cn_image_0000002808887219.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=593A362F6E9D3B93AC4F0994867FD52D69D3D38878C33EA3022E2FE57D4CDAA3)
 
      + 点击**OK**，会关闭提示框，停留在推荐白名单场景。
      + 点击**跳转待排查**，会关闭提示框，进入到待排查白名单场景。
@@ -182,12 +182,12 @@ DevEco Studio原先默认开启源码混淆功能，会对API 10及以上的Stag
 
      如以下模块下生成推荐白名单文件：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/S9bTMHL4Se6JGsl0HRV7XQ/zh-cn_image_0000002808767123.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FBCFE02CC3B348A6B958504F4C5B32C6682D13F4E8705B18EAFC5B5B5559B8C)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/QtU7vWo1SM6N3dnaiOi92A/zh-cn_image_0000002808767123.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=9426634832956D6AF269ED24244BF9E8716CB4B68B6D96A760C612FA2C90FA11)
   3. 在混淆配置中添加白名单文件，有两种方式。
      + 在各模块的build-profile.json5中，将Hm-recommend-keep-list.txt加入到混淆配置files字段下，将Hm-recommend-consumer-keep-list.txt加入到consumerFiles字段下。关于字段的介绍请参考[字段说明](ide-build-obfuscation.md#section88021016154414)。
      + 将合并后的文件Hm-merge-recommend-keep-list.txt配置在entry模块build-profile.json5的files字段下。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/BJxdxCx8S7mDrG5TZz9O8g/zh-cn_image_0000002779407584.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADBCA4C43003D6800EF197AD7AB50487FA640C1A39ED6C8EAAB6EB0F09C86CBF)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/zeInoPlZRKiKh0C9OvUFCA/zh-cn_image_0000002779407584.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=1533366B7FB602BD9229562BA17F9297DB860E272BC5D278091E284184660DB8)
 * **使用DevEco Studio 6.0.0 Beta1以下版本，按以下步骤操作：**
   1. 在页面上方，按照以下的树状结构呈现扫描结果。
 
@@ -207,23 +207,23 @@ DevEco Studio原先默认开启源码混淆功能，会对API 10及以上的Stag
 
      + **关键代码**：点击关键代码，可以跳转到代码所在的文件和代码行。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/AtvmG9r5SQW_02ZLo2rWbw/zh-cn_image_0000002808767129.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BA73119CAA581FCE365C05A1989DF3EBD45AC96127A70F67A934A2E8E2685F1)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/AWqyaTFJSvidYzzEGB_uiQ/zh-cn_image_0000002808767129.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=573D496D1984F17E2D76D9FB9E0E380B6737E29C1ECE14F69EE6C386D97F58A4)
      + **白名单字段**：点击白名单字段，可以跳转到字段所在的文件和代码行。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/iRULvBVfT1W_m9jF-RstrQ/zh-cn_image_0000002779407580.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B74FA28B22A31532EFD29EE6495D06309DCA4057323EEDFA4EC53D445BC7FF74)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/0Hm2y4akSWeJkghv_DeuOQ/zh-cn_image_0000002779407580.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=8702346D2EEF60ED7AF81C76F0478330710407E8E4F67412B7AA1C987F593146)
   2. 如果需要将白名单文件生成到工程中，可以点击**生成推荐白名单**按钮，ObfuscationHelper会在对应模块下生成Hm-recommend-keep-list.txt文件，并提示对应的文件路径。同时在工程根目录下生成对应的白名单Excel表格obfuscation-helper-xxx.xlsx。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/za2AvSmLTVyuLWgLxfQUZA/zh-cn_image_0000002779567566.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=34D1CABFE77384C13023AA5DA70FDD130B3C9E964D748B14336488D75F865841)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/I7OjwHLhQ9OQkaDU0stRJg/zh-cn_image_0000002779567566.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=99D50937BAEF753AC33F54E3838B3DCEF802525B4C9ED8000BA49D25617451EA)
 
      + 点击OK，会关闭提示框，停留在推荐白名单场景。
      + 点击跳转待排查，会关闭提示框，进入到待排查白名单场景。
 
      如以下模块下生成推荐白名单文件：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/_qrzFVG5SIerMqWki5hTFQ/zh-cn_image_0000002779567562.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=757D6647C1399F6B6571135D540E23376D565A292F044A2F0418C8C3752DFAC4)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/PmjOSMwFSrS92s4G3m3o_w/zh-cn_image_0000002779567562.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2AD96F534ED44D6A422F579C5B9C305151291171E82C8D72E65B494A39A317F)
   3. 在模块下的build-profile.json5中，将模块下生成的推荐白名单文件Hm-recommend-keep-list.txt加入到混淆配置files或consumerFiles字段下。关于字段的介绍请参考[字段说明](ide-build-obfuscation.md#section88021016154414)。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/zZyLmi7fS-6i6-Ub_EU7cA/zh-cn_image_0000002808887213.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E48C807ECA6A9C49566328EA90D26B8F6FF4467CC1FCD2E6FABEC6F57B7AECFF)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/1V3NE3UNRkCu9xRAolk3CA/zh-cn_image_0000002808887213.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=18E2DB60287F5AEBB0966865040B44D33FCB8CA1B4C9D164CBDEDFF5402DF314)
 
 ### 配置待排查白名单
 
@@ -240,28 +240,28 @@ DevEco Studio原先默认开启源码混淆功能，会对API 10及以上的Stag
 
      选中一个扫描任务，在页面下方会显示待排查的代码。点击关键代码，可以跳转到代码所在的文件和代码行。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/VGAm-HmrSn6xjJUXfUBACw/zh-cn_image_0000002779567556.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2F1EECFEB2317FC69F9A573A861A81218E42AFFF4F3C5562259FC88C44D3A84)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/kTSdo-wSRRWSMLIgtqasyQ/zh-cn_image_0000002779567556.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=136F3CCFD264C5D42C04494F338C12E3C73A77994EC518C7AE5332F28D4218D5)
   2. 跳转到关键代码后，根据具体场景识别是否需要配置白名单字段，排查方式请参考[扫描任务](ide-build-obfuscation.md#section18125192133818)。
      + 如果排查后不需要配置白名单，点击**待排查**，选择**已排查**，标记该项已经排查。
      + 如果排查后需要配置白名单，点击**添加白名单**，在输入框中输入保留选项和白名单字段，点击**保存白名单**。保存后该排查项会被标记为已排查。
 
      被标记为已排查的排查项，后续再次扫描该模块和场景时，如果关联本次的排查记录，将不再需要重复排查。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/_yqXYwXtT_y_FzutXy7jtg/zh-cn_image_0000002779407586.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B17F3BB152334081258BBF3D0E158DF6E646B0901444BE71B69877C19755BDC0)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/atsD5SGWQ1aV4YnLRsdliw/zh-cn_image_0000002779407586.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0F777E6FA2228D877C3D681EFBFDCB692DB2102B25D3B833351F752327B09C1)
   3. 排查完成后，点击**生成排查白名单**按钮，ObfuscationHelper会在对应模块下生成排查白名单文件Hm-manual-keep-list.txt/Hm-manual-consumer-keep-list.txt，并提示对应的文件路径。同时在工程根目录下生成对应的白名单Excel表格obfuscation-helper-xxx.xlsx。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/HzOSvu1ZSU6C8fetBq30MQ/zh-cn_image_0000002779407590.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4EA2980843707D4F3C23BA9BD87A5285E4BF769A73D934E253AB98CDEFD5435)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/awh-Rc4yRbeAqRU_d964jA/zh-cn_image_0000002779407590.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=89C23E07483C9088FA8A2C5674787F6D28FFC8E99D04DF4EF3D918003D0FDCC1)
 
      如果勾选**合并白名单文件**，点击**OK**，会在工程根目录下生成合并后的白名单文件Hm-merge-manual-keep-list.txt，该文件会合并entry模块的Hm-manual-keep-list.txt和所有模块的Hm-manual-consumer-keep-list.txt。
 
      如以下模块下生成排查白名单文件：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/gHSOLDIVRhGMIFaQ5ukfrg/zh-cn_image_0000002779407578.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F3ECCDF6FCE4366934380F0176531834E0FE2E31F18B603AFD56141BD86C5DD)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/41yTKjHoR_-GMMmvwjmsNQ/zh-cn_image_0000002779407578.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=EADDF7569FA68BCDA82A727C3BF3FC6065559B7AC363F0DEF079FCE21F1F3DF2)
   4. 在混淆配置中添加白名单文件，有两种方式。
      + 在各模块的build-profile.json5中，将Hm-manual-keep-list.txt加入到混淆配置files字段下，将Hm-manual-consumer-keep-list.txt加入到consumerFiles字段下。关于字段的介绍请参考[字段说明](ide-build-obfuscation.md#section88021016154414)。
      + 将合并后的文件Hm-merge-manual-keep-list.txt配置在entry模块build-profile.json5的files字段下。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/_Ekdy2VDSWSC2is-8EHsTg/zh-cn_image_0000002779407588.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF958B1A868A515067C43F2581417483EA7D09B1470EA84F568C7A041B1C7FB9)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/tbdXw-J6Sue0EvJ137_o0A/zh-cn_image_0000002779407588.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EC9D24847F8B69ADBBCDEF480467EF55B4AE0482FA3AFCDAEDFBDBAC0835D84)
 * **使用DevEco Studio 6.0.0 Beta1以下版本，按以下步骤操作：**
   1. 在页面上方，按照以下的树状结构呈现扫描结果。
 
@@ -273,20 +273,20 @@ DevEco Studio原先默认开启源码混淆功能，会对API 10及以上的Stag
 
      选中一个扫描任务，在页面下方会按照“关键代码 --> 代码所在文件: 代码行”的结构，显示待排查的代码。点击关键代码，可以跳转到代码所在的文件和代码行。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/5cLM0mgLQaipChTPkN84oA/zh-cn_image_0000002808887229.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6684D230C9D983C7D5AA950116626440891435474E9184256AE44F368BAF614)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/nniH9WZFRYyRZwzaWKTQiQ/zh-cn_image_0000002808887229.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=4700D80B9E306DF68D51ADEB0652BE84F6A0707EF93AAA1EE75E00434265A0C2)
   2. 跳转到关键代码后，根据具体场景识别是否需要配置白名单字段，排查方式请参考[扫描任务](ide-build-obfuscation.md#section18125192133818)。如果存在需要配置的字段，在上方的输入框中，输入保留选项和对应的白名单字段。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/aPA_BLbCQy-gL6Esnz8nIQ/zh-cn_image_0000002808767133.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6AF962FDF595B6319ED32F8A8116A26FE059E32D821D0DEEEF260C7F789A16C)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/VneMwpSvSymlhmwuqeNSeQ/zh-cn_image_0000002808767133.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C14F637952DA0C81C99CBB5B3FC34E037520E1E536D84060679CAFF6695DC5E)
   3. 排查完成后，点击**生成排查白名单**按钮，ObfuscationHelper会在对应模块下生成Hm-manual-keep-list.txt文件，并提示对应的文件路径。同时在工程根目录下生成对应的白名单Excel表格obfuscation-helper-xxx.xlsx。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/njqWukGSTgKlRbpvcc2uNw/zh-cn_image_0000002808767141.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BF8C566F3EE09E7E4933BD0771A9F564A2B88F071641D38D72667541D61A445)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/m7vY4P6RQBij0H-QrZ-1rQ/zh-cn_image_0000002808767141.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=63446B0AEDAC3765ABFD021FFF5D613ADD837E986D6DDEBAC59273EFBDAA03FE)
 
      如以下模块下生成排查白名单文件：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/VxbawVmCR0yfHHB9D7jr_Q/zh-cn_image_0000002779407592.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=00917EF409AB16F14D0429A1404F781DEC2CC33980399E28B6FCD9350176807B)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/v7jW0hKvTaWt2bB9Kh-FCA/zh-cn_image_0000002779407592.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD9921A32318BCAA9BCD4ED5CD1516B8911A23BB9C64B5A52A35FD340AB0645E)
   4. 在模块下的build-profile.json5中，将模块下生成的排查白名单文件Hm-manual-keep-list.txt加入到混淆配置files或consumerFiles字段下。关于字段的介绍请参考[字段说明](ide-build-obfuscation.md#section88021016154414)。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/NwitQddETqa4j24PYCq9gg/zh-cn_image_0000002808887217.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AFBE090F6AC5A4E575A4494F2CB2A6EBE8B147F4AE3B4E77BBA6CF720183A9D)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/KcywC_mDTG2wIcsKkYLYAQ/zh-cn_image_0000002808887217.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=4812922E407F9433AEB82F9D679572D5C796873AF920917A456CC06476A5BB2C)
 
 ### 查看历史记录
 
@@ -294,10 +294,10 @@ DevEco Studio原先默认开启源码混淆功能，会对API 10及以上的Stag
 
 在ObfuscationHelper的首页，点击底部的**历史记录**按钮，可查看所有的历史记录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/VCMaNsL-TsCdMaFexDd_hA/zh-cn_image_0000002808767131.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9408B0A1852C925BF4409DC091F89E8E99C225A207A72BDA1C0A8D9732BCF98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/_2H1lcPFR6Gz6MTlWWIxEg/zh-cn_image_0000002808767131.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AD8982CDEF8ABD540C2180ABD5580251C940D1B3C548E06147F90A9E194B794)
 
 * 保存路径是历史记录的缓存文件，鼠标悬停在保存路径上，可以查看白名单文件和Excel表格保存的路径。
-* 点击查看详情图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/NIybIXyJSXyzr_NVGxv8xw/zh-cn_image_0000002808767135.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=09F9DC62D8EAD5A0B56E1CE8278A84899EA3106E22F64934380D1ACBE737D691)，可以跳转到对应的白名单场景配置页面。
+* 点击查看详情图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ItExQFujR4OP_nfTahxZ4w/zh-cn_image_0000002808767135.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDCDEBE94B4C7A3235BB925F41F2A8EBD098E69C8097BBF5AC110427624CC6E0)，可以跳转到对应的白名单场景配置页面。
 * 点击删除图标，可以删除指定的历史记录，以及对应的缓存文件和Excel表格，但是不会删除白名单文件。
 
 ### 扫描任务
@@ -704,4 +704,4 @@ DevEco Studio原先默认开启源码混淆功能，会对API 10及以上的Stag
 
   仅当hap->hsp->har，同时hap->har时，该har会被扫描，其中->表示依赖关系。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/zosD3gI9SeOeM_4HzwIQWA/zh-cn_image_0000002808887227.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7422746D8551F26C930F262E136F1167B63DA9ADEC634CEBB11835ED5092BF5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ds0WkDoBR0eB0l5gj4H6zw/zh-cn_image_0000002808887227.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=649F73D50A5273F065C13D2721AF4384018B807DD96322DD377AA35389343555)

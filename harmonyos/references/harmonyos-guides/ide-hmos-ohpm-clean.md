@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm clean
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm clean
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:26+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:7a950c888261317c0b4037ad856fffc7481c9cb04481a8c27a69848904f28422
+scraped_at: 2026-11-28T10:35:00+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:246d3b3cf106275f8c7e2a118c2e194a335771b82386c569e2d765f81a21c3ec
 ---
 
 清理工程下所有模块的ohpm安装产物。
@@ -27,7 +27,7 @@ ohpm clean|cls
 ### keep-lockfile
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 * 别名：kl
 
 可以在 clean 命令后面配置--kl或者--keep-lockfile参数，执行清理时会保留oh-package-lock.json5文件和oh-package-targetName-lock.json5文件（指定选项--target\_path安装时生成）。
@@ -35,14 +35,14 @@ ohpm clean|cls
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型： string
 
 可以在 clean 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 

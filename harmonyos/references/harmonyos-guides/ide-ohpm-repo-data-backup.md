@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 数据备份
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 数据备份
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:20+08:00
+scraped_at: 2026-11-28T10:34:28+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:d92c310a9104798c0b8d5e5e2fb60030216a8993098fedb7fa61425bf256dedc
+content_hash: sha256:fd62b2fafddead83991ea85585aad4c5a242208d9cad1c3f2f3a7556072c237f
 ---
 
 数据迁移或者版本升级之前请务必进行数据备份，以免重要数据丢失，无法回滚。备份的内容包括**ohpm-repo**中**<deploy\_root**>部署根目录内的数据、db元数据以及store三方包数据。
@@ -23,7 +23,7 @@ ohpm-repo在版本1.1.0之前不支持配置<deploy\_root>，都采用默认值�
 
 如果配置文件中db，storage，logs和uplink的存储路径可配置，且存储位置不在ohpm-repo部署根目录<deploy\_root>中，请找到对应目录进行数据备份。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Bj6iVgxLT1GZW1AVxng-qw/zh-cn_image_0000002808764973.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=2818FAD8634B5E2EB52049665D03374E7E36DB062CE9AAF6424804A3288039AB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/vph8sRohT5aJB7uMQdL_Lg/zh-cn_image_0000002808764973.png?HW-CC-KV=V1&HW-CC-Date=20261128T023428Z&HW-CC-Expire=31536000000&HW-CC-Sign=904621104B1B601B37C386C4409AB2F1C344A4AE72C0BC0AD240F8B94BF330BE "点击放大")
 
 ## 备份<包存储目录>和<mysql>
 
@@ -33,8 +33,8 @@ ohpm-repo在版本1.1.0之前不支持配置<deploy\_root>，都采用默认值�
 
 * 如果您的配置项db使用了mysql存储，请根据配置的数据库名，备份结构和数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/hzs1eie5Sm2i8rLjS2DQeA/zh-cn_image_0000002808885055.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C0C02B8A1D98AA24B3ED8D9C66D9A9A80E6EBFDF13EA039B2FFB03DBF507B99 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/xGCWWIdCTkyf_FjJ4s97mA/zh-cn_image_0000002808885055.png?HW-CC-KV=V1&HW-CC-Date=20261128T023428Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB7A96428E0D42A4DAD51E6DFBAABADF443AE17A20E167B35C23E9E2121D133F "点击放大")
 
 * 如果您的配置项store使用了Sftp存储或自定义存储插件存储，请根据配置的存储目录，进行备份（图片以sftp存储举例）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/6LFflQMiSdGPq0F6MnsXmQ/zh-cn_image_0000002808764967.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B37D9EECE4390F8BF34EBC4AB732A10C200B7F3DE7C0BD65BB66C0F7EFEB23A "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/4-DzlIYWSHWWbJEopqICrA/zh-cn_image_0000002808764967.png?HW-CC-KV=V1&HW-CC-Date=20261128T023428Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7D3A06DEF2EFEB5F3ACFAAB03262CAF2555132589194F5FDC1D84D26A8C0365 "点击放大")

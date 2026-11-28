@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-deep
 title: 性能问题定位：深度录制
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 优化应用性能 > 使用Profiler进行性能调优 > 性能问题定位：深度录制
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:49+08:00
+scraped_at: 2026-11-28T10:34:58+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:4654ded6d735f64da753e1b08e9f57e2d4a564ff70d1740ef72d6755343a8302
+content_hash: sha256:91e5b2b398100a8bd4d0e90b6d1f1819b29412d67058a7ea2446acf84154eb1b
 ---
 
 ## 功能介绍
@@ -25,26 +25,26 @@ content_hash: sha256:4654ded6d735f64da753e1b08e9f57e2d4a564ff70d1740ef72d6755343
 
    方式一：在鸿蒙电脑DevEco Studio图标上右键，选择**调优**，打开DevEco Profiler。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/whG5v8X2To2bxpUC7CrlEQ/zh-cn_image_0000002820721163.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=55458C4D17293A1F2AB1E6FE03E42A7A9F06F2CC3A1DC734360BF9A3C765B097 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/hrW6Y1o7TwqQtwg73bM13A/zh-cn_image_0000002820721163.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=F32CE63F9ABD99B8D312BB25750F315E6011E3842C5C68AABAFEB633C7A37511 "点击放大")
 
    方式二：打开DevEco Studio后，在菜单栏点击**运行** > **调优**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Rl93_6lYTh2Yj58VoFfhuA/zh-cn_image_0000002820681157.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD7B44AE1E5A45F418388F55C1C8CA01E7EF40A55D93E0F6DA5C056D34680B5B "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ssEIvz7sR7OqG2Rl6wL_Hg/zh-cn_image_0000002820681157.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D646B6C70CD8FC1D011EE8F1D9F15C5089E85682748D2F68079B69E5E81A09B "点击放大")
 3. 选择待调优的设备、应用或进程，以及选择实时监控的模板后，点击右下角**立即开始**录制，或点击**打开文件**，导入历史数据。
 
    录制时若设备不止有一个主进程，还存在Extension或者Render进程，那么您需要再手动选择一个您想要监控的进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/in3ajABtSGOs6iw1B6rY4A/zh-cn_image_0000002820721165.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F257D5827F0D4605F16D1404FB29D558F1605A34D9497897214612392644123 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/wn9nDq1_T12V48XVQedoPw/zh-cn_image_0000002820721165.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CA8CE11543ABA6E4AE303A2991ABAF204156BC4D331CFC97368DC89AD05C834 "点击放大")
 4. 配置并确认会话环境，录制前单击任务区域启动录制按钮右侧下拉三角可以配置录制参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/dRldtpJoRWyLxRvWBT5MGw/zh-cn_image_0000002792001198.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC32F8D7EE72288179AADB9D9D1354BE1F3349EF11FEB302037882A7EF73E298 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/srSlOEERSz-x-ralHcCoCQ/zh-cn_image_0000002792001198.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5A13660AC488135A5608D109E6176D400BF332012C3829D00CCECDA170D6DFC "点击放大")
 5. 启动录制，复现性能劣化场景。
 
-   单击任务窗口左上角的 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/eNenfBPISqKGDToYsy7G1w/zh-cn_image_0000002820721167.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=96FA1CB1F10551256B7C4CE1011E1688516B4FDEC23797EE4F26165377105684)按钮启动录制，等待任务状态由**初始化**变为**录制中**，在调优设备上操作应用，执行要验证的操作，复现设备性能问题。
+   单击任务窗口左上角的 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/BeJRcd9XTVO4G7j63YcI7A/zh-cn_image_0000002820721167.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=F25E1629E8F7C2D96A86944943B9F23B85A6194B9D364D32B1FF452D0D279F7D)按钮启动录制，等待任务状态由**初始化**变为**录制中**，在调优设备上操作应用，执行要验证的操作，复现设备性能问题。
 
    录制过程中整个DevEco Profiler不能再点击其他的模板进行操作，如果想录制其他模板，可以结束本次录制重新选择其他模板开始录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Bh3GoMQFTci4T8LF4J6uGA/zh-cn_image_0000002792001196.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EEE6667A73FCDB5243D5C6A1F0422B63188C4D0A9B33D99A794195006DA30AD "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/ZUFZYV4gRLuZ5Z3QdWCI9w/zh-cn_image_0000002792001196.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA86B02C9018AB64BDC95D8AAD5ECA42C5DDA283843739FAC455D0835EB3D2C8 "点击放大")
 6. 录制场景结束，停止录制。
 
-   单击该任务的停止按钮 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/bG-OrbXxRXGwvyEJSupkKg/zh-cn_image_0000002792001200.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=1514F76BDB20950496F1EFDE8E8218678B98086FD06FFB1EC7F00DCDBAFF9B5A)，进入数据解析阶段，所有泳道任务状态由**录制中**变为**解析****中**，解析结束后右侧区域会显示具体调优内容。解析过程可能包含大量的数据，需要等待一段时间，请耐心等待解析完成。
+   单击该任务的停止按钮 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/5aSHkIroR3midefVMIcz4w/zh-cn_image_0000002792001200.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2CAD817681F6719742C45D2C1B230B439F17BD190F1FC30DB4FFCDFEDD15125)，进入数据解析阶段，所有泳道任务状态由**录制中**变为**解析****中**，解析结束后右侧区域会显示具体调优内容。解析过程可能包含大量的数据，需要等待一段时间，请耐心等待解析完成。

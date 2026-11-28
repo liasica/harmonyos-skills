@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 日志
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 日志
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:19+08:00
+scraped_at: 2026-11-28T10:34:27+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d66149591ae3f84ed40355fddbd6bd90c4d5a803b296a2dd82a800ef823cfc3d
+content_hash: sha256:a06c32e7467384ad4efab5ffe534f9ee68e9107d1d4dbe88086b2960b333700b
 ---
 
 与任何Web应用程序相同，ohpm-repo有一个内置的日志记录器，其定义了四种日志类型。
@@ -18,7 +18,7 @@ content_hash: sha256:d66149591ae3f84ed40355fddbd6bd90c4d5a803b296a2dd82a800ef823
 
 操作日志中主要包含操作时间、日志级别、操作人id（userId）、终端IP（ip）、操作资源（resource）、操作方法名（event）以及操作结果（result），其文件保存个数最多为180个。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/NO9SbPBSSk2DZSKYemlvfQ/zh-cn_image_0000002808884785.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=326BC61D515EE0DEC7C949C1C0ED2B0ED08588BC3E91A34ADBDC362719C27274 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/HvtrCJKHRd2QqnD3XOCGGA/zh-cn_image_0000002808884785.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A2BE19288AA1AE1897CC97AE16D9B08946A7AF3DF82EE49731C00870A34BDC8 "点击放大")
 
 **说明** 
 
@@ -58,7 +58,7 @@ content_hash: sha256:d66149591ae3f84ed40355fddbd6bd90c4d5a803b296a2dd82a800ef823
 
 运行日志中主要包含操作时间、日志级别以及日志信息，其文件保存个数最多为30个。运行日志定义了日志级别：all，trace，debug，info，warn，error，fatal，mark和off。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/iqMmcCwbRZuRC7dFMRkdfA/zh-cn_image_0000002808764693.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA0E964E912518E0F7611F32AA57AA9D4666E169E41A88BC842315DFD76E1B1D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/pNred-KpT0SWCEXZPFinkQ/zh-cn_image_0000002808764693.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=F50A792B98A1B29032A84BBD5C3E41F10241D3C220AD4DBD6450759F4F706E9D "点击放大")
 
 ## 运行错误日志 - repoError.log
 

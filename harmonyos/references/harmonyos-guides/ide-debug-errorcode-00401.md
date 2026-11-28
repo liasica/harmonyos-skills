@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-err
 title: 运行配置错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 调试错误码 > 运行配置错误码
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:31+08:00
+scraped_at: 2026-11-28T10:34:40+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:cd6a35c0e96843dcb71e0e35d909cceebf0202c550eac927994945f73ab2ab7b
+content_hash: sha256:e216656410b9ce20c5ad037a5e26d07ea90e6e2be7518238880eda00bc01e2a5
 ---
 
 ## 00401000 获取包名信息失败
@@ -133,7 +133,7 @@ Error running entry : Ability not specified.
 
 打开运行/调试配置面板，在Specified Ability下设置Ability。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/DXAMzAw9Sr-vntZmLMOvcA/zh-cn_image_0000002808886085.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=617ABA24DF3C489E43AD85831B449D6122468025A68C132651C0339872C3B224)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/gVvl0aH9QlqiaOe-rMGDxw/zh-cn_image_0000002808886085.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CF84AADF405AB4B227B2DE8C4D47A32879A473687B42D4BB117AF09EE6BD797)
 
 ## 00401006 预览器不支持以release构建模式进行调试
 
@@ -395,9 +395,9 @@ compatibleSdkVersion and releaseType of the app do not match the apiVersion and 
 
 方法一：请升级设备系统版本以匹配当前工程版本。在系统设置界面升级设备系统。
 
-方法二：降低工程的API版本，点击DevEco Studio右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/BCznbQb_RUWUIXLUwvXUfA/zh-cn_image_0000002779406444.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=983D38000FC331CFBC923017093BC45306EDAC2A00359C1F8EBF56C01618864C)，Compatible SDK选择更低的版本号，以兼容设备的API版本。
+方法二：降低工程的API版本，点击DevEco Studio右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/YKTKRo6dT12isVDPiWz6XQ/zh-cn_image_0000002779406444.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=D456CEAC29D055EE503DBC00C2766934E37D634A6552D6AD6F73EF6F3FFAF6A9)，Compatible SDK选择更低的版本号，以兼容设备的API版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Goercx4UQG6e92-2LmscYw/zh-cn_image_0000002808766001.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B317CE1E223E614CA2EC9D81AB398AB1B5224F73537E6D04B0C7C5FAACF90BEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/jN5_wV9QSM6wnVU1pAwILQ/zh-cn_image_0000002808766001.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=CECAB2819880D9D43D41AE10BCEDE9A5D397BDA88245A57FF9489EA9D4241A1C)
 
 ## 00401020 没有可用的端口号
 
@@ -457,7 +457,7 @@ The local package does not exist.
 1. 点击菜单栏**Build > Clean Project**清理缓存，再重新运行。
 2. 检查运行配置是否取消了构建任务，如果取消就重新添加构建任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/oGXcG_XWSZuFLu5r_tFbJA/zh-cn_image_0000002808886081.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAD09E2B580F6DD496F4C1E8F5137F50D343D8751B67BB30B4102CEA6B642E36)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/R1rY_GYnT7WbIvwB-PxPcA/zh-cn_image_0000002808886081.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=99718FBAD33CD1900A0DB7CEE3F0937F4D66C2DB1E8D111CC3084D03018C9FC5)
 3. 点击菜单栏**File > Sync and Refresh Project**重新同步工程，等待同步成功后再运行。
 
 ## 00401023 hap包中config.json或module.json文件不存在

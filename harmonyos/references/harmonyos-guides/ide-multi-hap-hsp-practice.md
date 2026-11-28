@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-multi-hap
 title: 性能/内存优化：多HAP/HSP工程编译优化实践
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实践说明 > 性能/内存优化：多HAP/HSP工程编译优化实践
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:34+08:00
+scraped_at: 2026-11-28T10:34:43+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:6313d64c520e855199663afbc02abcfc81a391f5b2dda2faeeaff9b016283282
+content_hash: sha256:8f92f9c7dec0bae7272121d0b6a84804b8c3b4b532180d314673c295b3c8cffa
 ---
 
 ## 概述
@@ -29,18 +29,18 @@ content_hash: sha256:6313d64c520e855199663afbc02abcfc81a391f5b2dda2faeeaff9b0162
 
   因此，修改单模块后，建议通过Make Module进行构建，这样可以在多HAP/HSP场景下减少单次修改所编译的安装包数量，从而降低耗时和内存占用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/JPgBDE7JTPOBds_5x3nYdw/zh-cn_image_0000002808766979.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=500B5F784B24FD1E51A413F901A9C3F10A957A34745E8C81D5A6B44B582ADBC7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ylTgP02DTvCF-3qXMqBljQ/zh-cn_image_0000002808766979.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F131629AD4E1AE8314035A75FD7790C086530B94107321443378DB151F3749B)
 * 运行（Run）启动优化
 
   通过推包运行的方式启动编译构建，可以降低某些场景下的耗时和内存占用。例如频繁增量修改某个HSP模块，如果不涉及修改其导出接口，可以优先选择运行该HSP模块，从而避免重新编译和打包其他未修改的HAP/HSP模块。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/tyDT52BsTs-myf-udXtEzQ/zh-cn_image_0000002808766981.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=95638CB93F0AEEFA69A62BC7E007633EEBD129FA50ED38D0C83D61B4B3464AD4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/0hMBfJdIRiK_1YOf2s5kMA/zh-cn_image_0000002808766981.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=87A9AC6BF7CDDE9118C32BF4EC60219E33D699A3C3A475A8362B30E00719EA5C)
 
 ## 优化方案二：HSP改造为HAR
 
 HAP和HSP、HSP之间可能依赖相同的HAR，导致编译、包体积都会有重复的部分。如果模块不需要按需加载特性，将HSP改造为HAR，可以降低编译耗时及内存占用，减小包体积。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/nij7sL4xTKarFRW51HjZ0g/zh-cn_image_0000002808766977.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=41CEF185F430675C56D6CF25B46D156895418FF8C6B96DAC18B79AF11514015A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/DiK6t4qaRKSc6LqMqyJADw/zh-cn_image_0000002808766977.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=5813ED377A9F697C5FF7ACB212B1D325762DB3C391619AD5924E95CF07D74E1D "点击放大")
 
 ### 改造原则
 
@@ -49,7 +49,7 @@ HAP和HSP、HSP之间可能依赖相同的HAR，导致编译、包体积都会�
    * 按照自顶向下的顺序，从依赖链路的顶端HSP开始改造。
    * 原因：如果从底层HSP开始改造为HAR，上层的HSP可能引入重复的HAR依赖，导致构建时间不减反增。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/s9RbKNpPS0GPHWwzFuUhAg/zh-cn_image_0000002808887061.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=8222A09923D8F0E15CA952076DB6CD3C60EB150162494429953499CE02AE5D81 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/deDayVTuQGiyCSYSGuJVjA/zh-cn_image_0000002808887061.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=C93D5DB350B88CA7320550E489B18539682E433849074F25D53E8C6952DB3E93 "点击放大")
 2. 适用对象
    * 工程中不需要使用按需加载特性的HSP模块。
 
@@ -69,7 +69,7 @@ HAP和HSP、HSP之间可能依赖相同的HAR，导致编译、包体积都会�
 
    资源命名规范化，为各模块的资源文件增加唯一标识。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/ycm8FBNZQmKIoD1e66oGAg/zh-cn_image_0000002808887059.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD476D9FA16763B0C1E9BA33F8F4B0F2049F1265793820C4FE25F2C45D505FE9 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/zikq3mInRBudZrZj4bSg5g/zh-cn_image_0000002808887059.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=C008D6F2DFA20F8BF2EE56A512323ECB1163132276AF5F72C6005A2C3C8AF1D6 "点击放大")
 2. Worker线程加载路径变更
 
    **问题现象**

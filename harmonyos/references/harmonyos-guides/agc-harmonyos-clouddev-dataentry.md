@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 添加数据条目
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云数据库 > 添加数据条目
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:21+08:00
+scraped_at: 2026-11-28T10:34:29+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:7ff9966f4c56166473c80bf3181d78368b4b7a9db209ff8f4308c3468661f4cb
+content_hash: sha256:506653ecdd34ff4d7e08915103cde2f38ef16690beebbd56f4b483777a42b332
 ---
 
 创建完对象类型后，您可在对象类型内添加数据条目（DataEntry），并配置数据所在的存储区。
@@ -16,17 +16,17 @@ content_hash: sha256:7ff9966f4c56166473c80bf3181d78368b4b7a9db209ff8f4308c346866
 
 1. 右击“clouddb/dataentry”目录，选择“New > Cloud DB Data Entry”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/PdCi2NkhRKyJWdu-xyO26w/zh-cn_image_0000002416495669.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=9917D537002CA4D0021124B18E428AB2A093CF41108A442580E83CE4E6219637)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/kdj5gopUT9yQJnexspdoiQ/zh-cn_image_0000002416495669.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=E80A0EAA600DF65739340AADBDFFAC85B9E8F9E4AEAF3A058E575A05399EE373)
 
 2. 在“Associated Cloud DB Object Type”栏选择需添加数据条目的对象类型，在“Enter Cloud DB Data Entry Name”栏定义数据条目文件名，完成后点击“OK”。
 
    例如，选择刚刚创建的对象类型“objecttype1”，数据条目文件取默认名“d\_objecttype1”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/SlzaFwVwQYuUJs0_JQhaeQ/zh-cn_image_0000002214858965.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B17C19EC1E912A847785F8E017EFC62B17B6954CBAA6E2B235F4EF6035E5EB9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/zNVONsQtTeaYZ_1H1MJzbg/zh-cn_image_0000002214858965.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=10ADD098209E8C9FC1214403C82E765E024F3E18CD30C8BA870CCFC9F2E5B940)
 
    如下图，“clouddb/dataentry”目录下生成并打开新建的数据条目JSON文件“d\_objecttype1”，该文件中已为您预置好所属对象类型名称（“objecttype1”）与对象类型的字段名（“id”、“bookName”、“author”、“price”、“publishTime”、“shadowFlag”）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/JGKxSmhwTwmYDVUaSvPbIQ/zh-cn_image_0000002214858961.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=82B17EB57725B00624F467FBD0AFAAF534894CA6AE2101C35E39C33FEA351C31)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/n03_qCqsRciAtSKJBB9XbA/zh-cn_image_0000002214858961.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=A31830A4CB6B9109C08977F1C9CF4C8D55C32A89ABE52060D0B67404C8075A53)
 3. 配置存储区和字段的值（即数据）。
    * “cloudDBZoneName”：配置存储区名称。上图示例中的“default”表示添加数据条目至default存储区。支持修改，如下图“cloudDBZoneName1”。另外，在使用API访问云数据库编码时需要引用该字段。
    * “objects”：配置当前对象类型中所有字段的值，即写入数据。一个对象（object）即为一条数据，您可以通过新建一个对象（object）来为字段赋新值，也可以修改某个对象（object）下字段的值（主键或加密字段的值不支持修改）。如下图，写入了两条数据。
@@ -45,7 +45,7 @@ content_hash: sha256:7ff9966f4c56166473c80bf3181d78368b4b7a9db209ff8f4308c346866
      | price | 10.5 | 20.5 |
      | publishTime | 19961007 | 19961007 |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/gq00SC_vTtCsWsWV8cwx0g/zh-cn_image_0000002179338640.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=25A74FD001B4E2856CE47989D94CBC81F6FE798DF53C776E19A6E849394B51B8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/KioR44D4Ty21W4wzYpdLSg/zh-cn_image_0000002179338640.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=40DE2BCD0BD24F94953CDE6F5A8D6E696148D6D280B707B4CF008597968CEC2E)
 
 ## 自动生成数据条目文件
 
@@ -53,15 +53,15 @@ content_hash: sha256:7ff9966f4c56166473c80bf3181d78368b4b7a9db209ff8f4308c346866
 
    依旧以对象类型“objecttype1”为例，其包含了“id”、“bookName”、“author”、“price”、“publishTime”、“shadowFlag”六个字段。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/pSf4iMx4SoKJiU8Dtywghw/zh-cn_image_0000002485251140.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E429FEBD9FCABF3C03CB0AB7630C0833E665E309E8ED1C7B3A5D80A1E70CEAA1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/zQAImSwQRQeKhfyOCBUSeg/zh-cn_image_0000002485251140.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=19D01C098F40C0F1A98818E5670CE284FB8FDC280FF150C5774AFDB76BF289E2)
 
 2. 在弹出的“New Cloud DB Data Entry”框内，为即将生成的数据条目文件定义名称。此处取默认值“d\_objecttype1”为例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/_IFrD6v_SPq5Cxuer1IqUA/zh-cn_image_0000002179498336.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7084042034429242C7043F3BB94FC024C36311F11F179ADCA0D35DA37FC14B3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/oPTINdNaQhClzuGo_UdGcQ/zh-cn_image_0000002179498336.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A0B739194E035CAD70E3CA001A6F20DF7BB173738CF54CF801D469DE264859F)
 
    如下图，“clouddb/dataentry”目录下自动为对象类型“objecttype1”生成数据条目文件“d\_objecttype1”，该文件中已为您预置好所属对象类型名称（“objecttype1”）与对象类型的字段名（“id”、“bookName”、“author”、“price”、“publishTime”、“shadowFlag”）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/DiLuzbxEQq2i-Z3Le4dLOg/zh-cn_image_0000002179338636.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A29F012F41E781DF170494E37ED416AA5341F527E2729CE239662B97456DD88)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/JHd0HI64RC-SDqUCXlqOAg/zh-cn_image_0000002179338636.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE996D4ECD7460A7C7E4C9B7E51234BD9E84B79CFF09FC97385EB3A9E2461B23)
 3. 配置存储区和字段的值（即数据）。
    * “cloudDBZoneName”：配置存储区名称。上图示例中的“default”表示添加数据条目至default存储区。支持修改，如下图“cloudDBZoneName1”。另外，在使用API访问云数据库编码时需要引用该字段。
    * “objects”：配置当前对象类型中所有字段的值，即写入数据。一个对象（object）即为一条数据，您可以通过新建一个对象（object）来为字段赋新值，也可以修改某个对象（object）下字段的值（主键或加密字段的值不支持修改）。如下图，写入了两条数据。
@@ -80,4 +80,4 @@ content_hash: sha256:7ff9966f4c56166473c80bf3181d78368b4b7a9db209ff8f4308c346866
      | price | 10.5 | 20.5 |
      | publishTime | 19961007 | 19961007 |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Nt7iil21TqSF-E8NemJS-w/zh-cn_image_0000002179338640.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=70798EF8E0A68F5249DE77B1D4C332B325143CFCB3213D554819DB24DF97AE41)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/lzLzttEPTFayHIRHMfyeMw/zh-cn_image_0000002179338640.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=D63BFF3EABABC9052A1D24A9225A287E216E262FE4B6F4F2E12DF683A154A061)

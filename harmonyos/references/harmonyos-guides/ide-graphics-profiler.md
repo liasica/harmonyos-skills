@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-graphics-
 title: GPU帧捕获工具：Graphics Profiler抓帧入口
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 附录 > GPU帧捕获工具：Graphics Profiler抓帧入口
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:37+08:00
+scraped_at: 2026-11-28T10:34:45+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:bd6a80690e58317726c186f52078b7d61b6eaabe2bbc41d8e57782872797bab8
+content_hash: sha256:2de88c65727f0b9f03cbbecae9622e8849e700bfd34f81798994d8b807a74e3f
 ---
 
 Graphics Profiler（图形性能调优）是专为GPU分析和优化提供的一种调试分析解决方案，可帮助OpenGL ES游戏或Vulkan游戏提升性能，分析绘制和计算问题。从DevEco Studio 6.0.0 Beta1版本开始，提供Graphics Profiler工具的抓帧入口，该工具用于对HarmonyOS手机设备进行调试，需使用调试证书。
@@ -24,15 +24,15 @@ Graphics Profiler（图形性能调优）是专为GPU分析和优化提供的一
 
    此处为可选配置，配置与否均可直接点击Launch APP拉起应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/dVYbqBLBT-yll5rhY1zALg/zh-cn_image_0000002808767081.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=A46C14E5D8369E9C5E71647F2A48A21A2804B7CCDE88CE5B598718250AF35204)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/cYV2SnCxTG6SLHWH9VqK0A/zh-cn_image_0000002808767081.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDDF65071F37E781C3CCAC4DEAFBA69D7CFD22B332D0ECD95361609DEAD9E73C)
 4. 在帧捕获界面拉起应用，成功建立连接后，Capture按钮点亮。设置抓帧数量，点击Capture按钮，等待帧捕获完成。
    * Scope：不可修改，默认为Frame。
    * Count：抓帧数量设置，范围为1-10帧。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Sf4HLKP8RyWnQlqlPj7BZA/zh-cn_image_0000002779407526.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA718C6AD210FE4ABC55D36933B8A815F9B76AECFF1FE897E997F83E856AB067)
-5. 抓帧完成后，在下方显示界面中选择一条捕获帧，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/naHjOklySL6HfBTaWBmmLg/zh-cn_image_0000002779567504.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=110B3C4173B354CF016A08EAB88CE85AD9DE1DC9F85C5FCC8E56B2574BD49E13)按钮，可自动打开Graphics Profiler工具解析捕获帧信息。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/1qvLJdxgSOOOvBiFna5AsQ/zh-cn_image_0000002779407526.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F6E264610E3899D2C7BA4AA95C1A370E5650D0527ACAF5FD48F0044AF49FD89)
+5. 抓帧完成后，在下方显示界面中选择一条捕获帧，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/0LLluT5-TrG4r0lDfXfEyw/zh-cn_image_0000002779567504.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=33A85FDD60B9F1EE6C12AA26DFB6697C7A801AEC9B139E4C9BF4BEE756432B7F)按钮，可自动打开Graphics Profiler工具解析捕获帧信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/J6FlNDUvRaSrY6Un9yKLTg/zh-cn_image_0000002808887167.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=229CEB26506FFFB03363EDAFBA571DB2BD6D2C5811D5934ED6C9CB819CFF6807 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/9OhFcJEVTvm_tVQcL1I6BQ/zh-cn_image_0000002808887167.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=307F9CA4DC7212806CF6F08146FDE233E5481FDA612F87AFAFEF83580FA7B8D7 "点击放大")
 
    **说明** 
 
@@ -40,4 +40,4 @@ Graphics Profiler（图形性能调优）是专为GPU分析和优化提供的一
    * Graphics Profiler工具一次只能解析一个rdc文件。
 6. 若首次使用，需根据界面提示下载Graphics Profiler执行工具，并在菜单栏**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Tools > Graphics Profiler**中配置工具路径。默认路径为：工具安装路径/frame\_profiler/FrameProfiler.exe（macOS中为工具安装路径/Contents/MacOS/FrameProfiler）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ZNhLVSEoQciczxnWyt72nw/zh-cn_image_0000002779567502.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFB36F252B9A6991635CD7C68C6815752E5308E2BE097B473F1DDF7CA9554A68)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/9qopSID2RH6fGFBur33_5A/zh-cn_image_0000002779567502.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F2F7D3364A89B8FE8AD0C8C10B967D528EB0E7ED43F4DCB3082F7E965490E72)

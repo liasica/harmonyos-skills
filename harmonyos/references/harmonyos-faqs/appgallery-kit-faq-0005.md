@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: HarmonyOS 开发者中心软件包上传与打包签名常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > HarmonyOS 开发者中心软件包上传与打包签名常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T09:06:38+08:00
-doc_updated_at: 2026-11-12
-content_hash: sha256:7d49a1d2881d4ddd9b078b05cb2f61e4196f36da6a60d9e66644433c62a1d70a
+scraped_at: 2026-11-28T10:41:27+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:8eabb386d76fcf98807b2d4f70cd66e2020ad6af3429a30fb0edc0e14a7d7ed6
 ---
 
 **Q：应用开发完成后，打好的app包上传应用市场，经常会遇到软件包报错的情况，阻塞上架流程。报错有错误码和无错误码两种场景：**
@@ -13,7 +13,7 @@ content_hash: sha256:7d49a1d2881d4ddd9b078b05cb2f61e4196f36da6a60d9e66644433c62a
 * 常见的错误码：
   + 上传软件包，提示软件包无效缺少依赖的包，错误码9。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/yWl_s_SjRmylB7zcnKWleg/zh-cn_image_0000002792068633.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6953750B3DAFF7E0F44D03C8DA4CBA8B1F20794725F8B04FE2D818C35AE9FFE "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/88IwWTj4TsGQIRZApx-asQ/zh-cn_image_0000002792068633.png?HW-CC-KV=V1&HW-CC-Date=20261128T024127Z&HW-CC-Expire=31536000000&HW-CC-Sign=E18E3022B81ECADC265093EE55B86869EFFBA5EA5B4D054FDC0FE52B0E4CD2CF "点击放大")
   + 上传软件包，提示非法软件包，错误码991。
   + 使用Profile打包，上传软件包报错误码993。
   + 上传软件包，提示包解析失败，错误码1015。
@@ -33,7 +33,7 @@ content_hash: sha256:7d49a1d2881d4ddd9b078b05cb2f61e4196f36da6a60d9e66644433c62a
 **A**：
 
 * 报错返回错误码。
-  + [错误码9](../app/agc-help-harmonyoserror-0000001651912985.md#section148217589452)：软件包无效，缺少依赖的包。可以根据以下方向排查问题：
+  + [错误码9](../app/agc-help-harmonyoserror-0000001651912985.md#section148217589452)：表示软件包无效，缺少依赖的包。可以根据以下方向排查问题：
     - 压缩软件包时是否压缩掉依赖包？解决措施：如果项目中配置了包依赖，压缩掉依赖包会导致HarmonyOS 开发者中心找不到项目依赖包，上传时可以不压缩依赖包上传。参考链接：[远程三方包](../harmonyos-guides/ide-hvigor-dependencies.md#section0999112011818)。
     - 打app包时使用的DevEco Studio是否不是最新版本，导致打出的包HarmonyOS 开发者中心解析异常？解决措施：安装使用最新版本的DevEco Studio。
   + [错误码991](../app/agc-help-package-errorcode-0000002312513009.md#section522814356119)，表示非法软件包，按照下面步骤排查原因：
@@ -42,7 +42,7 @@ content_hash: sha256:7d49a1d2881d4ddd9b078b05cb2f61e4196f36da6a60d9e66644433c62a
     - hap包的名字与pack.info中name值不同。
     - 在File > Project Structure > Project > Signing Configs窗口中，取消勾选"Automatically generate signature"（如果是HarmonyOS应用，请勾选"Support HarmonyOS"）然后配置工程的签名信息。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/a3udIvz8QomYAIaxnwtfTQ/zh-cn_image_0000002762670042.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5843B7A53AA400ED3B02D19346A1E7E8EAB2E6986CE4ECBDE40CA82F0D5D610F "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/1tM8BO5GQ7CVco0hVYvtig/zh-cn_image_0000002762670042.png?HW-CC-KV=V1&HW-CC-Date=20261128T024127Z&HW-CC-Expire=31536000000&HW-CC-Sign=366C3EAAB6F9BFECF26FD9F000D01D30745698B4EDBFC3CB34A58C9F08EEE099 "点击放大")
   + [错误码993](../app/agc-help-package-errorcode-0000002312513009.md#section411361491513)，表示Profile文件非法，出现此错误涉及多种原因，请根据[官网步骤](../app/agc-help-package-errorcode-0000002312513009.md#section411361491513)排查。若排查后依旧报错，可能有以下原因：
     - 工程级目录build-Profile.json5文件中可能配置了多个签名，需确保打包时使用的签名正确，即products下的signingConfig需为配置了发布证书、发布Profile的签名。
     - build-profile.json5文件中没有配置签名，而是在hvigorfile.ts内overrides重写加载签名。需要将签名写入build-profile.json5文件中。
@@ -87,11 +87,11 @@ content_hash: sha256:7d49a1d2881d4ddd9b078b05cb2f61e4196f36da6a60d9e66644433c62a
 
 **Q：在生成.cer文件的时候，申请说选择25年及以上的有效期，指的是什么的有效期？**
 
-**A**：25年及以上有效期是指CSR文件。cer证书文件有效期为：调试证书有效期是180天，发布证书有效期是3年。证书失效后依赖证书生成的Profile同步失效。
+**A**：25年及以上有效期是指CSR文件。cer证书文件有效期为：实名认证开发者的调试证书有效期是1年，发布证书有效期是3年，未实名开发者的调试证书有效期为14天。证书失效后依赖证书生成的Profile同步失效。
 
 **Q：关于调试证书有效期的问题，是否可以延长调试证书的有效期？**
 
-**A**：证书设置有效期是用于动态验证应用来源合法性。目前实名认证开发者的调试证书有效期为180天，发布证书有效期为3年，未实名开发者的调试证书有效期为14天，证书过期后不可以延期，需要重新申请证书。
+**A**：证书设置有效期是用于动态验证应用来源合法性。目前实名认证开发者的调试证书有效期为1年，发布证书有效期为3年，未实名开发者的调试证书有效期为14天，证书过期后不可以延期，需要重新申请证书。
 
 **Q：上传更新包报错106，根据[版本升级错误码说明](../app/agc-help-update-errorcode-0000002322270833.md#section19598144518319)排查未修改module.json5，还有什么原因会导致该报错？**
 

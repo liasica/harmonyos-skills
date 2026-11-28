@@ -3,23 +3,23 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-faultlog-
 title: 查看Cpp Crash（进程崩溃）日志
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 查看Cpp Crash（进程崩溃）日志
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:31+08:00
+scraped_at: 2026-11-28T10:34:39+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:785b50c5bb36d3374e9197a41e2cd042a20fda627859e66cbd1ea2d95ccbfa6f
+content_hash: sha256:eb9d960f131fcb34e1e0a0ef136268caeba430c81e60ff0d8a1ceb6c96269a43
 ---
 
 从DevEco Studio 6.0.0 Beta1版本开始，支持对Cpp Crash类型的FaultLog，进行结构化展示和日志过滤。
 
 1. 打开FaultLog窗口，双击cppcrash日志，**Fault Info**右侧会出现**Fault Analysis**页签。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/o49HQg2GQh69NFbvqWeUfQ/zh-cn_image_0000002808766393.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C963819C7265AF6E0EB5C5B78731EF856ABE5BF31AF702A665C3E869380E0E7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/eEeLeGPNTTmRZDpnUS494Q/zh-cn_image_0000002808766393.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=10D8F749E5A8632967AC2F7D41D52C8807EB8AD52C28EE1C6E5F564D5DE756E8)
 2. 点击**Fault Analysis**页签，会展示结构化的日志信息。
    * 页面上方的字段对应了FaultLog中的字段，具体对应关系请参考[字段说明](ide-faultlog-cppcrash.md#section4735122283511)。
    * 页面下方包含Stacks和Logs两个页签。
      + **Stacks**：展示线程的堆栈信息，具体请参考[查看堆栈信息](ide-faultlog-cppcrash.md#section145813141354)。
      + **Logs**：展示FaultLog中的HiLog日志，具体请参考[查看HiLog日志](ide-faultlog-cppcrash.md#section656352444818)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ysdTBRxKSLOk3foB01yugA/zh-cn_image_0000002779406832.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FE2D354DEC02D515591744D2C9FD3DB74291729CAC95F21400B4CC456B6FC25 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/OL_a4yL3RpWSR9i4oTFUtw/zh-cn_image_0000002779406832.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=C56DA38E2F880FCC4217886B498C9EC92155594BA4942A509C060D238C70C3B8 "点击放大")
 
 ## 字段说明
 
@@ -44,7 +44,7 @@ content_hash: sha256:785b50c5bb36d3374e9197a41e2cd042a20fda627859e66cbd1ea2d95cc
 
 Stacks页面包含了FaultLog中的堆栈信息，并以线程为单元进行折叠，点击展开按钮，可以展开对应线程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/qyZcXE2FQAaulIB_vh_7RA/zh-cn_image_0000002779406836.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=B81934B692D535AFCA93B11263BB4BDC619AED1B386CED71FA722FDEB1167B9D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/BItmAnRBQBmk2WRxKpFS2Q/zh-cn_image_0000002779406836.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=50BB19098430008B10C9924D639358EAE71A3EE7600153D0DD7A00A574A42F58 "点击放大")
 
 图中标注1的勾选框是展开应用堆栈，标注2的勾选框是展开系统堆栈，两个勾选框一共组成了四种状态，具体如下表。
 
@@ -61,4 +61,4 @@ Stacks页面包含了FaultLog中的堆栈信息，并以线程为单元进行折
 
 Logs页面展示了FaultLog中的HiLog日志，支持日志级别的过滤和搜索。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/NGRu32kfTeGQHaGmQj4poA/zh-cn_image_0000002779566812.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D34D3B99F348510862A36BF881D230ED66CF614CA2E00B0074285CD451E00D3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/VZLKnwUKS_Szh9ebw8WAkw/zh-cn_image_0000002779566812.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F6CAAEA48118C91B6F09B6517EE173C4729E9BCEB940B5897D0ADAA6A0F56FC "点击放大")

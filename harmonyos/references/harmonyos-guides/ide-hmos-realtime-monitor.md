@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-real
 title: 性能问题定界：实时监控
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 优化应用性能 > 使用Profiler进行性能调优 > 性能问题定界：实时监控
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:49+08:00
+scraped_at: 2026-11-28T10:34:58+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:0ae853db78b84035360382a915a4207c6773cc3436b699c4296e2aaf73801be3
+content_hash: sha256:425e67d478949c6770b2c3b0e288821032ed25495a7a39a62ad4b1912d03bdbe
 ---
 
 ## 功能介绍
@@ -22,7 +22,7 @@ DevEco Profiler提供实时监控（Realtime Monitor）能力，可以实时监�
 
 界面左侧为实时数据展示区域，该区域的数据显示了每一项监测内容的瞬时值，并通过饼图或者仪表盘的形式让您更加直观地观察到各项数据的使用占比以及具体数值。界面右侧则是各项数据随着时间推移的变化趋势，通过不同的图像形式（直方图、柱状图、折线图等）来更加清晰的展示某一项资源在一段时间范围内的变化趋势，以帮助您快速判断性能热点区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/ngTtBOBgQwq4MsxjEqAnEA/zh-cn_image_0000002792001038.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=16639F8C93567D42F2C72FCE44D92F057A63E8485605CDE657869298DEB5356C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/e39HQhBkRDSOwZpcZu7bvw/zh-cn_image_0000002792001038.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=329479C45ECCCBFC435DF549F661BECEA7189468B8783C6FCE080773FB6FC801 "点击放大")
 
 ### 泳道介绍
 
@@ -37,12 +37,12 @@ DevEco Profiler提供实时监控（Realtime Monitor）能力，可以实时监�
 
 * 启停控制
 
-  点击会话区实时监控页面上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/Q7bQK7VOSIayEhAyga28vg/zh-cn_image_0000002820680999.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=966C0200E2AC4E36717C8ABE2E7AB566F94BA1DE432F365EBE957A75815D9762)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/YbTHfNFtT7WdcMSgh4vSsA/zh-cn_image_0000002820721007.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7BF94B5CB7F5C8233380B36B4293A5671E78CC59C9DFCE0CC18CAAC62346EFB)按钮来即时控制实时监控界面的录制状态。
+  点击会话区实时监控页面上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Fl2ID-ntTnWUYNikfUmH3w/zh-cn_image_0000002820680999.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD66DB154EB0C0C36DB5703CA66F993C797D75F3910E64B394EFC88D93CD785B)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/eTGUZbx8TGGucbAYomPX3A/zh-cn_image_0000002820721007.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2EA36C556C365CF01A9C09687AA39A292EB07A422FE6EEB93C2EB4562008030)按钮来即时控制实时监控界面的录制状态。
 * 详细数据展示
 
   将鼠标悬浮于所关心的泳道数据上时，界面上会出现当前时间点的时间标线以及含有当前时间点上泳道详细数据的Tooltips。更进一步，当您将鼠标悬浮于时间轴之上时，实时监控页面内的所有泳道均会以Tooltips展示出该时刻的数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/haazEhvpRUiQnXvKS1nn3A/zh-cn_image_0000002820681003.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=04B17073EB26E20391D38387C2DEBC1D3F320F6E2BA0957FD282388445FB8FD5 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/E-IDSL84TySYdqEyOcu2sg/zh-cn_image_0000002820681003.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAFC3EC10EE0CCAC9697DACC7DDF434FB9707F8291EFF42FFBE755DE84B073B5 "点击放大")
 
 * 图例选择
 
@@ -55,14 +55,14 @@ DevEco Profiler提供实时监控（Realtime Monitor）能力，可以实时监�
 
    方式一：在鸿蒙电脑DevEco Studio图标右键，选择**调优**打开DevEco Profiler。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/nJCA8EVpTgqx1UMClJ3ZYw/zh-cn_image_0000002791841064.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=900EC759EF7F5E549A9ED9BACE76731A32BA4A10D8D98604B989E439A6F3CED8 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/xyH4rVKWQG2LCtaZ8T9hJw/zh-cn_image_0000002791841064.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB61233BCC664741A933996C441AE028BDFA6673955770E752DC1DB87CDBCC5D "点击放大")
 
    方式二：打开DevEco Studio后，在菜单栏点击**运行** > **调优**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/VdRPZnsyTCW4o8OL2zUm5Q/zh-cn_image_0000002820721011.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D5137A1A04C963B010C88DA1CD79FEC5CEFF285504628EC5519124B7C1E00EE "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/9dfQC2V9RTaRp20ltypKxg/zh-cn_image_0000002820721011.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=96700F04C4D1E46DF88AD1E9491724E7B8E4810B1130E8C82154186383943DC9 "点击放大")
 3. 选择待调优的设备、应用或进程，以及选择实时监控的模板后，点击右下角**立即开始**录制，或点击**打开文件**，导入历史数据。
 
    录制时若设备不止有一个主进程，还存在Extension或者Render进程，那么您需要再手动选择一个您想要监控的进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/qc115SGHSHOmakQCNUI4Sg/zh-cn_image_0000002792001040.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0D463AB0702ABEA8B720CF756F6CD2192E0F9C9739E478EB80A67D64034B9D1 "点击放大")
-4. 在[数据区](ide-hmos-profiler-data.md#section8296319104115)点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/CL1joB7HTaqlV4pOCk2cSg/zh-cn_image_0000002791841068.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=869289BAFEE20C57826B07F7671177C3E76C6B39A7D73AFC696B7F55864C507D)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/mrJhEnGTSgiLxdcbsRnFhA/zh-cn_image_0000002791841066.png?HW-CC-KV=V1&HW-CC-Date=20261124T044249Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA5E8AF0F73E68276D4C7B3C15F8CFF8E0378D05E8BE80F6078074D75293421D)，开启/停止会话录制。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/G1CfEfB4Qli5874l4OGH6Q/zh-cn_image_0000002792001040.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9E4F9539F635EF4EB0DFA5742AEA7649745CDDC0E3839659A5962312CE8D8EC "点击放大")
+4. 在[数据区](ide-hmos-profiler-data.md#section8296319104115)点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/zbTBey3ZQCylKpzGTVh--g/zh-cn_image_0000002791841068.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BCF639E78510A4EDF6933C79526A46EBDCFF260F01711FF9C4F92810B0CC82E)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/FAv34V-ASfeYgospixkdZA/zh-cn_image_0000002791841066.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=C564946EAF03FF563C3A8AC976691AFAD8174AB7591E7D6C47A01B4F1E243473)，开启/停止会话录制。

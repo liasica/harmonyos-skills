@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm version
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm version
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:38+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:4a3296db04758134e5724dc7b9529c09042de8915db235a64db2359216cc53b7
+scraped_at: 2026-11-28T10:34:59+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:f58e49181acca10e7cb795b85e73a7fe695fb945940653fa1a976736f0465e4a
 ---
 
 管理模块版本。
@@ -77,14 +77,14 @@ newversion 参数应为一个合法的语义化版本，命令会将当前模块
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型： string
 
 可以在 version 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 

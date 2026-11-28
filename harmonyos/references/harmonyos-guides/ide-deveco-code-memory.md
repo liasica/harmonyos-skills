@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 记忆
 breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 记忆
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:51+08:00
+scraped_at: 2026-11-28T10:35:00+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:39b612ef4248edf6d120be446a85ffde19485312171fd289ba0c211e731ef7f1
+content_hash: sha256:1708076c6ca8dc0ffd5028e29d523fc73d1ae930c41721073888531b5da2f2f0
 ---
 
 ## 功能概述
@@ -54,7 +54,7 @@ TTL以记录的最后更新时间开始计算，记忆过期后不会直接删�
 
 通过空格或回车切换启用状态（已启用/已禁用），切换启用状态后需重启生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/aVjzVwmzQVu0UqsFHFIGHg/zh-cn_image_0000002779406802.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=419938289DBD9A1F8FFD138D14D2667E0574DA35B3DF9A2A8C6B87E973D1AB69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/-06RfN2NSgakSg4FuOgowQ/zh-cn_image_0000002779406802.png?HW-CC-KV=V1&HW-CC-Date=20261128T023500Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DCACE6DDD2D8185344ECB1090CB8BB833F9FA46C88164CE548FA80CC6D1A47F)
 
 ## 查看记忆列表
 
@@ -66,7 +66,7 @@ TTL以记录的最后更新时间开始计算，记忆过期后不会直接删�
 
 通过**Ctrl+D**（macOS：**Command+D**）快捷键删除记忆，用户确认后即可删除。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/V_UJbPPHS0ahb7OtbRDB4A/zh-cn_image_0000002808886443.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D150280EE834F0A191F46BF459C15C5DB8D611C2F93B8486CF20019BCE3D018)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Ll8KmAlES4mW3lNC7mtI9g/zh-cn_image_0000002808886443.png?HW-CC-KV=V1&HW-CC-Date=20261128T023500Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D7FBA402CA0DB928840ACF8B16E08605C6C9FF9C2909C1121CBB8CD5C1161BA)
 
 ## 触发记忆
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 加载丢帧：ArkWeb分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 加载丢帧：ArkWeb分析
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:36+08:00
+scraped_at: 2026-11-28T10:34:45+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:aa76c90c0006a3bc6024e12523f8fd08b94c28e48f6805df2fb1e6a83922550f
+content_hash: sha256:28741b943f14e8166de2bf5856df0b914d186feac7ce569ca9075a85115470e9
 ---
 
 ## 功能介绍
@@ -31,7 +31,7 @@ ArkWeb模板支持的泳道包括：ArkWeb、User Events、ArkTS Callstack、Cal
 
 **Details**区域可以跳转关键trace所在泳道，进一步分析加载问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/k0xXMSBaQdeGSKf4uKFOoQ/zh-cn_image_0000002808767169.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=99D1F358A08274682A3C9E0B95539172E8C780246D3514FB7FD9A247D099E61B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/mxI0s1bgQ5OCdfAYIuobvg/zh-cn_image_0000002808767169.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=D87A04AA833B2415F08936CD9CED78C37313F855478BC6CEBE9643C381050A66 "点击放大")
 
 ## ArkWeb丢帧问题分析
 
@@ -45,18 +45,18 @@ ArkWeb模板支持的泳道包括：ArkWeb、User Events、ArkTS Callstack、Cal
    * VizCompositorTh：绘制信号监听线程，向图形请求Web本身的vsync信号，触发系统Web相关绘制或执行。
    * Web应用Render线程：以 :render 结尾的线程，主要用于图形渲染任务，包括html、css解析，进行分层布局绘制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/Wth_OZ-DQUq3dooBYDJw5Q/zh-cn_image_0000002779567594.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=C425F9D6A8889F6B0E216BAE778AB006AB7FA64B0F594CB8DD55836FD59A401A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/0qOXcuCBTxOJyJtIvQQm4g/zh-cn_image_0000002779567594.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=88066C5CFF0C9292D858C0E710DEA383F82D3A266212FC9BB9B7F360B3658B82 "点击放大")
 2. 一般结合**H:RosenWeb**泳道和**PresentFence**泳道来分析是否存在丢帧。
 
    H:RosenWeb上标识有待提交给渲染服务的数据量。正常情况下，每个数据量都会提交给硬件进行上屏，即PresentFence泳道上的H:Waiting for PresentFence trace点。如果某个数据量在PresentFence泳道上没有该trace点，那么很可能是存在丢帧问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Y3LMKBILSbyjK7TGGBx4gg/zh-cn_image_0000002779407618.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=987B907DA6C0E25E215620B30B97859F95374AF84303142C784525B93920302E "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/gKDpqeDyS_CieXmVIWE59A/zh-cn_image_0000002779407618.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E9EA86AD67192831B86CB61F2E4E80D220E5FBB7862E5AFC067F6C01778B1E9 "点击放大")
 
 3. 在ArkWeb的子泳道中，Web应用Render线程提供了分析子资源加载各阶段具体耗时的能力。切换到 **Sub Resource**区域，可查看详细信息。
 
    包括统一资源定位符、缓存类型、是否为本地资源替换、请求资源时间（ns）、队列时间（ns）、停滞时间（ms）、dns解析时间（ms）、连接耗时（ms）、ssl连接时间（ms）、服务器响应耗时（ms）、下载耗时（ms）、传输时间（ms）、请求方法、状态码、编码前资源大小、编码后资源大小以及HTTP版本。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/oxs19y4ORhKKQM-AT7SLeg/zh-cn_image_0000002808887255.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C5316344310BE58BB6794399890106514F32797672851361001073915E28F13 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/ekAE5SndTCO9QH8PJuBKcA/zh-cn_image_0000002808887255.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=418B4E556271FCB14A7E74C5DCC62B2984C1B5C6863259CC60D019BBC4BF307D "点击放大")
 4. 点选某一行，可以查看该URL对应的缓存信息。包括缓存存在时长、最后修改时刻、过期时刻、缓存指令、资源的唯一标识符以及资源是否过期。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/J5729fIKSYKOlO9NJxc8JA/zh-cn_image_0000002779567596.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=693C813EC9CCFF594352FCA4CE04027E83A1E64F9AC52A2919A21B46A4710049 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Slrlx2iqTsupc2pOHfNvlw/zh-cn_image_0000002779567596.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BBB19B526E50148B2946206567D818A9EB47F02B5EC4112F044325251FB3AE4 "点击放大")

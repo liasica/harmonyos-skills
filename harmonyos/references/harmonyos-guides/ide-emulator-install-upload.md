@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 安装应用程序包和上传文件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 使用模拟器 > 安装应用程序包和上传文件
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:29+08:00
+scraped_at: 2026-11-28T10:34:38+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:db66dc9c43e4b6de3a9f1c15a79946d39ba72c934c7a563e2022ce24b8b3829f
+content_hash: sha256:c642545813be1074da2c0f0221f764c5ef88f6af5dfb27464e3afdfbdaeb3d50
 ---
 
 * 安装应用程序包
@@ -21,4 +21,4 @@ content_hash: sha256:db66dc9c43e4b6de3a9f1c15a79946d39ba72c934c7a563e2022ce24b8b
 
   从DevEco Studio 6.1.0 Beta2版本开始，使用API 21及以上的镜像时，上传的图片类文件将保存在图库中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/a9QXME7ISCq6cMsL8HpM4A/zh-cn_image_0000002779405052.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC9FA2721C3FC8B4BFCD0A95B00A81368C050180B79021C498CBA52049E62868 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/7wvBcUm7TAyNCT-IcMoYoQ/zh-cn_image_0000002779405052.gif?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=297E80885A1A346D69082FDBFC2041ADD28C3D198BFB6BEB53447C3B6AC43613 "点击放大")

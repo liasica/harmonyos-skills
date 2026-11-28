@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-depl
 title: 单点部署
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 部署指导 > 单点部署
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:20+08:00
+scraped_at: 2026-11-28T10:34:27+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2acb77adc756a290f76455fbd7f1933693061a5d86ba69fcc0f324cbbe34070d
+content_hash: sha256:97f1836d6fe3ab1e21e0a9bf529096be5c6fb81176f45772f5149ffd8966dc09
 ---
 
 **说明** 
@@ -25,7 +25,7 @@ ohpm-repo私仓不允许在Linux或macOS系统中使用root用户启动，请使
 2. 下载ohpm-repo工具包，[点击链接获取](https://developer.huawei.com/consumer/cn/download/ohpm-repo)**。**
 3. 解压ohpm-repo私仓工具包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Lx5woeApTqWRMpB8DJuedA/zh-cn_image_0000002779565254.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=11F6F693801AC8CD4246F99A738DBB367818B7CDB243E69E3924D63A6BCAFA03)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/JtOHjTdsRZqiu7neKvFrpg/zh-cn_image_0000002779565254.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=99E20B5664607CBA0F2C8910EC4137643B52048A6635FB6A43916A632ACE3825)
 
 4. 请将ohpm-repo工具包解压目录中bin目录的路径配置到[系统环境变量](ide-ohpm-repo-faq.md#section1270373714319)path中，执行如下查询命令:
 

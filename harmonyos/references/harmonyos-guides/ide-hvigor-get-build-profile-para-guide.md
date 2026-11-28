@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ge
 title: 能力说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 定制构建 > 获取自定义编译参数 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:34+08:00
+scraped_at: 2026-11-28T10:34:42+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:94da1b1b83b8645e13b8a5d619fc46a680ec2067595cacd2a29da7ca1942bce3
+content_hash: sha256:5e271679cdf6f2a8c1353367b778b4408f428aeebe63bf1ac1ff86beb249528c
 ---
 
 在编译构建时，Hvigor会生成BuildProfile类，开发者可以通过该类在运行时获取编译构建参数，也可以在build-profile.json5中通过buildProfileFields增加自定义字段，从而在运行时获取自定义的参数。
@@ -30,7 +30,7 @@ buildProfileFields的优先级：模块级target > 模块级buildOptionSet > 模
 
 执行完上述操作后，将在“${moduleName} / build / ${productName} / generated / profile / ${targetName} ”目录下生成BuildProfile.ets文件。示例如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/ZbFF7T2BTaO8QoTosiPNAQ/zh-cn_image_0000002808886837.png?HW-CC-KV=V1&HW-CC-Date=20261124T044233Z&HW-CC-Expire=31536000000&HW-CC-Sign=320570E3AD02784458296C4F6B848014B2793E809B5C780EAC7D66E68CF2218E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Ky6a-y1GTpqVdhULM3ghBw/zh-cn_image_0000002808886837.png?HW-CC-KV=V1&HW-CC-Date=20261128T023442Z&HW-CC-Expire=31536000000&HW-CC-Sign=5737FAB1928F40CDF0390B7797F13CA78F3B04B23CEA72D2CBEC8BE64407A6C4)
 
 ### 在代码中获取构建参数
 
@@ -155,7 +155,7 @@ import BuildProfile from '${packageName}/BuildProfile';
 
 执行完上述操作后，将在模块根目录下生成BuildProfile.ets文件（该文件可放置在.gitignore文件中进行忽略）。示例如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Jr6J30PNQLeR3uejjPRubg/zh-cn_image_0000002808766755.png?HW-CC-KV=V1&HW-CC-Date=20261124T044233Z&HW-CC-Expire=31536000000&HW-CC-Sign=21C3DE1ECBF30B5EA2620A25C8C3A25035D92AA1ED5432F2C71160758B697E42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/mwW_ia32QQamYkogVMuq1g/zh-cn_image_0000002808766755.png?HW-CC-KV=V1&HW-CC-Date=20261128T023442Z&HW-CC-Expire=31536000000&HW-CC-Sign=F555CECA5CDE99D638A9DCBE2A793B0446AD43676D9296211BD7F121AD4507F1)
 
 ### 在代码中获取构建参数
 
@@ -171,7 +171,7 @@ import BuildProfile from './BuildProfile';
 const HAR_VERSION: string = BuildProfile.HAR_VERSION;
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/iqG6KrymQaOPeqvw0k-nsg/zh-cn_image_0000002779567174.png?HW-CC-KV=V1&HW-CC-Date=20261124T044233Z&HW-CC-Expire=31536000000&HW-CC-Sign=01D7F79E420875EF27C88CE77A11EB4D3E70001A51422E0E2FB1B5FD2C887CC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/MSZ6pTaTR0es-F7e8Luj8w/zh-cn_image_0000002779567174.png?HW-CC-KV=V1&HW-CC-Date=20261128T023442Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EFFC1E620DB1A7A2A3F6E5BE3947193680DF190B539F9C530A85CACF478D54B)
 
 ### 默认参数
 

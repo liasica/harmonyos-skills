@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 构建任务说明
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 概述 > 构建任务说明
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:47+08:00
+scraped_at: 2026-11-28T10:34:56+08:00
 doc_updated_at: 2026-11-23
-content_hash: sha256:006554bc3257aac3d56f21dbd66db91a80699540ea10815c07fa545d95151ae8
+content_hash: sha256:9c6cc8519555a55e8b5c364857ebae3e25aa92dfbcba4066a727f12c1e763982
 ---
 
 本章节将对构建的任务进行说明，可以更直观地了解到构建的任务流程。
@@ -14,15 +14,15 @@ content_hash: sha256:006554bc3257aac3d56f21dbd66db91a80699540ea10815c07fa545d951
 
 ### HAP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/zkNxlHEZQEG34vZz9MKgWw/zh-cn_image_0000002792001002.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=11F41B6AEFBB2E475C1471407F30C3B6D7C1891CC4359B42EC84429AEA52DEC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/Jz556R9WSLG8WHcxSHpr6g/zh-cn_image_0000002792001002.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F5D75E7356A943436682DC511ADB446221C0AF924A546CC1E16248DD927DA13)
 
 ### HSP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/3Rc4NnZiSFibF1_BRlAmQA/zh-cn_image_0000002820720971.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7B27529E047C7236E365D5A23BA76A53E1866D8963D30ED44485EF7842BD74B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/VXhfhkkQRX6-xfHZYtPo_g/zh-cn_image_0000002820720971.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=C22B807AA4F07B73B2FB0E78F93C5F8F038401FB946CE08DDCA4C67963D32513)
 
 ### HAR基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/i3dkYT7lQOiMD_-LVXIRWA/zh-cn_image_0000002820720973.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=88BA8703CD2CBC17E8D54661B7302426E78B0B61DC5237D0EE4D9F8DE1CFBBF2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/Zu19qJzbSGufS5TgZvsocw/zh-cn_image_0000002820720973.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD40F3B1E113DCE2C891A3BA47843C09A98597D34F68ACFE2D717672ADF0C38F "点击放大")
 
 ## 使用命令查看任务
 
@@ -34,7 +34,7 @@ hvigorw taskTree
 
 获取任务树时会根据工程中的模块，将模块中注册的任务以下图形式输出：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/AMOMuYoyRbSNpyhvlUgpMg/zh-cn_image_0000002792001006.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D56E8D6F98DC27CA777A7F4586A46F0ACF1C625078DD725855C85FF382E87DE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/eLQwtuLKSEi3rMPE29dWOg/zh-cn_image_0000002792001006.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=56FF4E21568CBEE5837384D0860C2653893C84F04D9054ECB583EE7E60B894A5 "点击放大")
 
 执行顺序举例说明：如图所示，assembleHap依赖SignHap，SignHap依赖于PackageHap；则任务执行顺序则为PackageHap->SignHap->assembleHap。
 

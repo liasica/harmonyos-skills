@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm install
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm install
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:25+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:7a341a7203eb9ec736733dc4a44828d90f9e3b0d76b7f51b42a73a2c19561c5c
+scraped_at: 2026-11-28T10:35:00+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:bdadd1c7a4a1a277d81d9854f95430202147ae76014e9da6af8893e81b53bada
 ---
 
 安装三方库。
@@ -63,7 +63,7 @@ alias: i
 ### install\_all
 
 * 默认值：true
-* 类型：Boolean
+* 类型：boolean
 * 别名：all
 
 可以在 install 命令后面配置 --all或者--install\_all 参数，安装您项目下所有模块在其 oh-package.json5 中配置的全部依赖项。
@@ -71,28 +71,28 @@ alias: i
 ### save-dynamic
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 install 命令后面配置 --save-dynamic 参数，安装的三方库信息将会写入 oh-package.json5 文件的 dynamicDependencies 中。
 
 ### save-dev
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 install 命令后面配置 --save-dev 参数，安装的三方库信息将会写入 oh-package.json5 文件的 devDependencies 中。
 
 ### save-prod
 
 * 默认值：true
-* 类型：Boolean
+* 类型：boolean
 
 可以在 install 命令后面配置 --save-prod 参数，安装的三方库信息将会写入 oh-package.json5 文件的 dependencies 中，这是 ohpm 的默认行为。
 
 ### no-save
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 install 命令后面配置 --no-save 参数，安装的三方库信息将不会写入 oh-package.json5 文件中。
 
@@ -121,7 +121,7 @@ alias: i
 ### fetch\_timeout
 
 * 默认值：60000
-* 类型： Number
+* 类型： number
 * 别名：ft
 
 可以在 install 命令后面配置 --ft <number> 或者 --fetch\_timeout <number> 参数，设置操作的超时时间，如果没有指定，默认超时时间为60000ms。
@@ -129,14 +129,14 @@ alias: i
 ### strict\_ssl
 
 * 默认值：true
-* 类型： Boolean
+* 类型： boolean
 
 可以在 install 命令后面配置 --strict\_ssl true 参数，校验 https 证书；配置 --strict\_ssl false 参数，不校验 https 证书。
 
 ### max\_concurrent
 
 * 默认值：50
-* 类型： Number
+* 类型： number
 * 别名：mc
 
 可以在 install 命令后面配置 --mc <number> 或者 --max\_concurrent <number> 参数，设置最大活动并发请求数（即ohpm操作期间任何时间的最大网络请求数），如果没有指定，默认最大并发请求数为50次。
@@ -144,7 +144,7 @@ alias: i
 ### retry\_times
 
 * 默认值：1
-* 类型： Number
+* 类型： number
 * 别名：rt
 
 可以在 install 命令后面配置 --rt <number> 或者 --retry\_times <number> 参数，设置操作失败前的最大重试次数，如果没有指定，默认最大重试次数为1次。
@@ -152,7 +152,7 @@ alias: i
 ### retry\_interval
 
 * 默认值：1000
-* 类型： Number
+* 类型： number
 * 别名：ri
 
 可以在 install 命令后面配置 --ri <number> 或者 --retry\_interval <number> 参数，设置重试失败前的等待时间，如果没有指定，默认等待时间为1000ms。
@@ -160,7 +160,7 @@ alias: i
 ### experimental-concurrently-safe
 
 * 默认值：true
-* 类型：Boolean
+* 类型：boolean
 
 可以在 install 命令后面配置 --experimental-concurrently-safe 参数，并发安全地安装依赖。这是一个实验性选项。
 
@@ -174,56 +174,56 @@ alias: i
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型： string
 
 可以在 install 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### lockfile\_stable\_order
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 install 命令后面配置 --lockfile\_stable\_order 参数，当oh-package.json5文件未变更时，当前已生成的oh-package-lock.json5各字段内容不变。
 
 ### odm\_r2\_project\_root
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 install 命令后面配置 --odm\_r2\_project\_root 参数。当存在overrideDependencyMap配置，且其配置项对应的配置文件内存在相对路径的依赖配置时，ohpm会基于工程根路径解析和查询相对路径，详情参见[odm\_r2\_project\_root](ide-hmos-ohpmrc.md#section136621053184912)。
 
 ### enable\_cross\_process\_lock
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 install 命令后面配置 --enable\_cross\_process\_lock 参数，由于oh\_modules目录结构限制，ohpm不支持在同一个工程下并行运行多个ohpm install、ohpm update或ohpm uninstall命令。若需要在同一个工程下执行多个ohpm install、ohpm update或ohpm uninstall命令，可将该配置设置为true，使多个命令以串行的方式运行。
 
 ### resolve\_conflict\_strict
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 install 命令后面配置 --resolve\_conflict\_strict 参数，ohpm会按照严格模式处理依赖版本冲突，详情参见[resolve\_conflict\_strict](ide-hmos-ohpmrc.md#section1942983310492)。
 
 ### resolve\_conflict
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 install 命令后面配置 --resolve\_conflict 参数，ohpm会自动处理依赖版本冲突，详情参见[resolve\_conflict](ide-hmos-ohpmrc.md#section368717475562)。
 
 ### cache
 
 * 默认值：无
-* 类型：String
+* 类型：string
 
 可以在 install 命令后面配置 --cache <string> 参数，设置缓存路径。
 

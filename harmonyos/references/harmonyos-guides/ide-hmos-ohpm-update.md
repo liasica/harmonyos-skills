@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm update
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm update
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:38+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:eeccabc97dcfe1dd4c2a63b3a16f2cc887709b3dd37e76d5282776c20b125c03
+scraped_at: 2026-11-28T10:35:00+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:364e356b42f48d59657d9f1c1e637da68f26482bfb3cc224e51b0cd6ae960554
 ---
 
 更新三方库。
@@ -33,7 +33,7 @@ alias: up
 ### install\_all
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 * 别名：all
 
 您可以在 update 命令后面配置 --all或者--install\_all 参数，表示更新当前模块指定依赖成功后同时安装当前工程下的所有模块的依赖。
@@ -48,7 +48,7 @@ alias: up
 ### fetch\_timeout
 
 * 默认值：60000
-* 类型： Number
+* 类型： number
 * 别名：ft
 
 可以在 update 命令后面配置 --ft <number>或者 --fetch\_timeout <number> 参数，设置操作的超时时间，如果没有指定，默认超时时间为 60000 ms。
@@ -56,7 +56,7 @@ alias: up
 ### max\_concurrent
 
 * 默认值：50
-* 类型： Number
+* 类型： number
 * 别名：mc
 
 可以在 update 命令后面配置 --mc <number> 或者 --max\_concurrent <number> 参数，设置最大活动并发请求数（即 ohpm 操作期间任何时间的最大网络请求数），如果没有指定，默认最大并发请求数为 50 次。
@@ -64,7 +64,7 @@ alias: up
 ### retry\_times
 
 * 默认值：1
-* 类型： Number
+* 类型： number
 * 别名：rt
 
 可以在 update 命令后面配置 --rt <number> 或者 --retry\_times <number> 参数，设置操作失败前的最大重试次数，如果没有指定，默认最大重试次数为 1 次。
@@ -72,7 +72,7 @@ alias: up
 ### retry\_interval
 
 * 默认值：1000
-* 类型： Number
+* 类型： number
 * 别名：ri
 
 可以在 update 命令后面配置 --ri <number> 或者 --retry\_interval <number> 参数，设置重试失败前的等待时间，如果没有指定，默认等待时间为 1000 ms。
@@ -80,7 +80,7 @@ alias: up
 ### strict\_ssl
 
 * 默认值：true
-* 类型： Boolean
+* 类型： boolean
 
 可以在 update 命令后面配置 --strict\_ssl true 参数，校验 https 证书；配置 --strict\_ssl false 参数，不校验 https 证书。
 
@@ -94,7 +94,7 @@ alias: up
 ### all-modules
 
 * 默认值：""
-* 类型：Boolean
+* 类型：boolean
 
 可以在 update 命令后面配置 --all-modules 参数，表示同步更新所有模块的依赖关系。
 
@@ -108,49 +108,49 @@ alias: up
 ### experimental-concurrently-safe
 
 * 默认值：true
-* 类型：Boolean
+* 类型：boolean
 
 可以在 update 命令后面配置 --experimental-concurrently-safe 参数，并发安全地安装依赖。这是一个实验性选项。
 
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型： string
 
 可以在 update 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### lockfile\_stable\_order
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 update 命令后面配置 --lockfile\_stable\_order 参数，当oh-package.json5文件未变更时，当前已生成的oh-package-lock.json5各字段内容不变。
 
 ### odm\_r2\_project\_root
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 update 命令后面配置 --odm\_r2\_project\_root 参数，当存在overrideDependencyMap配置且其配置项对应的配置文件内存在相对路径的依赖配置时，ohpm会基于工程根路径解析来查找这些相对路径，详情参见[odm\_r2\_project\_root](ide-hmos-ohpmrc.md#section136621053184912)。
 
 ### resolve\_conflict\_strict
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 update 命令后面配置 --resolve\_conflict\_strict 参数，ohpm会按照严格模式处理依赖版本冲突，详情参见[resolve\_conflict\_strict](ide-hmos-ohpmrc.md#section1942983310492)。
 
 ### resolve\_conflict
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 update 命令后面配置 --resolve\_conflict 参数，ohpm会自动处理依赖版本冲突，详情参见[resolve\_conflict](ide-hmos-ohpmrc.md#section368717475562)。
 

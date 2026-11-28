@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: 反向调试
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 反向调试
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:46+08:00
+scraped_at: 2026-11-28T10:34:55+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:b12136b4356daca65d72a56e5f288034f21ea403796d162eec11a13ab6ec2cc6
+content_hash: sha256:80d885381e21b48e68435747f7096ebb814a11aea000e44ccf6e0ae302cdf7e8
 ---
 
 针对C/C++开发场景，鸿蒙电脑DevEco Studio在提供基础调试能力的基础上，同时提供反向调试能力，帮助开发者更好地理解代码和更迅速定位问题。
@@ -21,25 +21,25 @@ content_hash: sha256:b12136b4356daca65d72a56e5f288034f21ea403796d162eec11a13ab6e
 
 在**文件 > 设置 > 扩展 > C++调试**界面，勾选**开启反向调试**后点击**应用**，开启C++反向调试开关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/T-X30ow0TdSVWJX-6RvlCA/zh-cn_image_0000002820680965.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6B5805F88B31A444A76DE45696EC93A2350FA9D7F202AD9A24AE6F551777BEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/t4Nfsf9RRMKVP5p2Ju_h7g/zh-cn_image_0000002820680965.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=784B27EEE9C9ED0E3DF487B968DB50AE7EB87CF14CD7BFBB39DBB91067CEC150)
 
 ## 操作步骤
 
 1. 设置断点，进入调试模式。
 2. 开启反向调试开关后，在调试器中会出现反向调试相关按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/IYYKeIFnStuw6laJjVcUrg/zh-cn_image_0000002820720977.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=11D606CE1E2DD803EBC470B87DFC2633E5903FF9B30D931CAF1F91718A1F6B24 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/W7d6HIh3SHaGU8o9iXyYwg/zh-cn_image_0000002820720977.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF0529399EBF7DFE68B7DBC82533B05EF729C909A3608936E4F4A87447AAD389 "点击放大")
 
-   需要查看历史调试信息时，点击“Open Reverse Mode”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/23F9Fd_hTZuJwNJSPQH6gQ/zh-cn_image_0000002792001014.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=07C6D89EE0F4188EA36C373990431E6D22A383C88ADCEC017D1803D47849BD85 "点击放大")进入反向调试模式，您可以在此模式下进行调试。
+   需要查看历史调试信息时，点击“Open Reverse Mode”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/4_7syzL6SUWB5vOhhWNI-A/zh-cn_image_0000002792001014.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A4143AE3348EF005E1B0A984A41083F2A529E0CAFE0B2F8BD36B1850ED65175 "点击放大")进入反向调试模式，您可以在此模式下进行调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/f5qgt-lXRkKZTIYQJIEX9Q/zh-cn_image_0000002791841030.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC1F1CCD042BB7216DEA316843930ED8C8912D6ED5B2385FB36CA00AC2A175D3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/udIYWb6WR0Wby01F2lqLsw/zh-cn_image_0000002791841030.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DF92A37BCC9AC49476A9C409EEF5FF07DF27474A47E56EA12BC6FF193E65C67)
 
    其中，操作按钮说明如下：
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/bU2h2z6BRUGTaybV5Ui1dA/zh-cn_image_0000002791841038.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=54C136BE76B28C6C29F299DEF8E9F83349CC01122B3025FBEAC2B5C3D1D87131)：退出反向调试模式。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/CuWEykyoTGCGZw5aa7d0UQ/zh-cn_image_0000002820680967.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=D16936DB54C7AF37903E40813CD5B92979477F69B04BAAF7F6C81C1DBA895C1E "点击放大")：切换当前高亮行到下一个历史断点，并显示断点相关信息。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/p3wkF_-UQMqYab6VPaB3ag/zh-cn_image_0000002791841034.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8B436BE7656F1D7E4FAA50396FF642CF4464FAD00E8E42020AC9660B9C16754 "点击放大")：切换当前高亮行到上一个历史断点，并显示断点相关信息。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ancCC8fHR2OKFrhApIQUMw/zh-cn_image_0000002820680971.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DDFD4060F307FB4CEA42446AEF8DD1F4AE0EBFAF5EB271863EC4E9C9D399840 "点击放大")：切换当前高亮行到下一个历史行，并显示历史行相关信息。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/D507AAZxRoeqEUU8iQKfUA/zh-cn_image_0000002791841036.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FB4D3B70B0A925EF47F1718C61DD8B2600895A99EF263B224CE2C825B995CA9)：切换当前高亮行到上一个历史行，并显示历史行相关信息。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/ZK-B3OZaSe-VuTusUtqNDw/zh-cn_image_0000002791841038.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=91A391F964A0AF269B19ED81371547C7CBB240787762B86F484B110E277F084D)：退出反向调试模式。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ZWLq7mcsRpSKOxub83Unlg/zh-cn_image_0000002820680967.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=21BF86892A8BFCE81DE00F78AE59EA9B9D3EE49B5BF1A69AEEAE2D836AD3D6FD "点击放大")：切换当前高亮行到下一个历史断点，并显示断点相关信息。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/GS9TL2c9TfOQ1O1oaG2qSg/zh-cn_image_0000002791841034.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3CE81F273376B191DECEC25F93C10D001B6B417794EBDCDD9F57B5BD76D65D5 "点击放大")：切换当前高亮行到上一个历史断点，并显示断点相关信息。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/d4HtAlsfTzuTmEqhf-PpHQ/zh-cn_image_0000002820680971.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=E67BEECD1A71865994E2DDF3791BBE70987388FE42E5A3B8751DBB55A085C8C2 "点击放大")：切换当前高亮行到下一个历史行，并显示历史行相关信息。
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/P9kYtqjPTEajSkVvgeyfAw/zh-cn_image_0000002791841036.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCF384E008DE445A4DCB0FE53375BA6565F6861C2C7A6D0B258DABA7047B172C)：切换当前高亮行到上一个历史行，并显示历史行相关信息。
 
 ## 时间线视图
 
@@ -47,4 +47,4 @@ content_hash: sha256:b12136b4356daca65d72a56e5f288034f21ea403796d162eec11a13ab6e
 
 图中的红点表示历史停留过的断点或行，点击跳转到对应断点或行，并显示相关栈帧信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/2MTWBYdzSDKpt6uHDdF8Qw/zh-cn_image_0000002792001012.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=67C872F18162B3B3AF2F01E8A30EF2E0191A4B3080662C8AEEA357D1444C7D2F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/kciaZKTMSyme8f7ug9KAzQ/zh-cn_image_0000002792001012.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=42772B30EB8EC26BEA7D0AA8B35F1D3AD2FF2C50DFC146586D65AAA13A0E65D2)

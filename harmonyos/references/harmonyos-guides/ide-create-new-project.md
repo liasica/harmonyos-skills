@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-create-ne
 title: 创建一个新的工程
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 创建一个新的工程
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:19+08:00
+scraped_at: 2026-11-28T10:34:26+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:e89d0f6d9237d1cbc4729604bc78929468acca2e16ca7a35d4d043f524c578de
+content_hash: sha256:0124fb9418e98832b2d73c5e0f6454f1fbce9b00ffdd2555de57da3a069ceb34
 ---
 
 当您开始开发一个应用/元服务时，首先需要根据工程创建向导，创建一个新的工程，工具会自动生成对应的代码和资源模板。
@@ -29,7 +29,7 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
    * Atomic Service元服务工程暂不支持Native开发。
    * [CloudDev]Empty Ability模板：该功能仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/v8E_ta4SRbGuYl3a_-LQgA/zh-cn_image_0000002808886581.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=3356AADE3F931A603B46BBC4C9818FA5757CE59D16C86171C8B9E63169C82FDB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/ShroEKyRSsq-dG_D8D1AQg/zh-cn_image_0000002808886581.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=866D0C6C8CBF00BD73E705765B707A3880DEA72888926DFE353B279CE4BB7BA6)
 3. 在工程配置页面，需要根据向导配置工程的基本信息。
    * **Project name**：工程的名称，可以自定义，由大小写字母、数字和下划线组成，必须由大小写字母开头，长度为1~200个字符。
    * **Bundle name**：标识应用的包名，用于标识应用的唯一性。
@@ -53,7 +53,7 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
    * 从26.0.0版本开始，除[Lite]Empty Ability工程模板外，其余工程模板新增**View API version distribution**，点击可查看HarmonyOS设备各API版本使用量占比，其中Percentage为设备量占比，Cumulative Percentage为设备量累计占比。Compatible SDK默认显示设备量累计占比超过90%的最高的API版本。
    * View API version distribution功能仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/Uq8Tif3pQbug2k6QJ8m_7g/zh-cn_image_0000002808766503.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3463197294901A37DBEC22FCB4D203862446FCCEDAF85F199337BB22A12AEA2 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/LxhF1Xp6TQGSCGAUS0Hxtg/zh-cn_image_0000002808766503.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=F376420FC2E5AF50D6C8CBE2BFFA4B21D959873776FFF2E8032954D72BA85002 "点击放大")
 4. 单击**Finish**，工具会自动生成示例代码和相关资源，等待工程创建完成。
 
 ## （可选）创建OpenHarmony工程
@@ -114,7 +114,7 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
    ```
 2. 单击Sync Now进行同步。在Sync Check弹窗中点击**Yes**，同意将module.json5/config.json文件中的phone切换为OpenHarmony支持的default类型，并删除在OpenHarmony不适用的其他设备类型，同步成功无其他报错则工程创建完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/AibbZZ9TQiy4SgJJHHkX7g/zh-cn_image_0000002779566918.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=27A2405426658E216E50319E24787E733E3891CF8072D1436560B2DDDF16BAA4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/wfKI4BamSqSANjKGPHeX4A/zh-cn_image_0000002779566918.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3DBD6551DF61E3AED11CB2A941F74C076B984B482EB0F3C6E376298734C268C)
 
 **说明** 
 

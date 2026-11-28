@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ut-genera
 title: 单元测试用例生成
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 单元测试用例生成
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:39+08:00
+scraped_at: 2026-11-28T10:34:48+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:6a38f819ee495efb8576b60b9597d3194c576e5bb23de11bedfbb49352fd9ce9
+content_hash: sha256:c93bb09818ca8f7e2cfab8ba1c4f226bc14e14747d1beb292a1a19e0caa514d0
 ---
 
 根据选中的ArkTS方法名称，CodeGenie支持自动生成对应单元测试用例，提升测试覆盖率。
@@ -20,11 +20,11 @@ content_hash: sha256:6a38f819ee495efb8576b60b9597d3194c576e5bb23de11bedfbb49352f
 
 1. 点击页面右侧菜单栏CodeGenie图标，完成登录后，在ArkTS文档中，光标放置于方法名称上或框选完整的待测试方法代码块，右键选择**CodeGenie > Generate UT**，开始生成单元测试用例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/3t8Zp9AmTKSRu32egfpEig/zh-cn_image_0000002808886177.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=72C127BBD0C4D2D33F9ACFCEA8A8030C155A0114403F673E6D109B3D9A93BDC5)
-2. 在问答对话区生成单元测试用例后，点击Code Genie问答区中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/xmKRQxkzTqWt-kS42Wgf-A/zh-cn_image_0000002808886173.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5307B8FC8D852716B90635BC3D091B108CA2CE994208B3E51B463702542F4BA)可复制生成的代码，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/C-FU32I1TTaXqNrgs2PphQ/zh-cn_image_0000002779566516.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=90C00EFDA9473F3490C81959EC28A543C7E246FF07B47A7AD855EC929D08521F)将生成的代码插入到代码文件，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/n-KdlkZ0TN2FXeGEJsEj2A/zh-cn_image_0000002808886171.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CD3A7FF8577B09099640BAC68C727D8767EB6B9B8D3C631EDF29FFE9112D03A)弹出文件另存为框，填写文件名称后点击**OK**按钮保存。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/wVPMO8luRri2aBubLs9sRw/zh-cn_image_0000002808886177.png?HW-CC-KV=V1&HW-CC-Date=20261128T023447Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D62DE859A0B1CFBA9AFB0B039E5BA54515133003261D3EF0FDC1CD08005C433)
+2. 在问答对话区生成单元测试用例后，点击Code Genie问答区中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/eb3XiDI3SKGBspRqj_Q-zw/zh-cn_image_0000002808886173.png?HW-CC-KV=V1&HW-CC-Date=20261128T023447Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1514126C037FC1E3A731522ECC859D544FAD0C6E257CC699EA0AA67491B4B5A)可复制生成的代码，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/DUU-LRbnQBOXl00B-v6dvg/zh-cn_image_0000002779566516.png?HW-CC-KV=V1&HW-CC-Date=20261128T023447Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C2A55595056CB468D5C76B60E802CED0257F0CA88FE4D667E45C35B903D5E6F)将生成的代码插入到代码文件，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/fsmeEnz3TtSzFMMNAe7xCQ/zh-cn_image_0000002808886171.png?HW-CC-KV=V1&HW-CC-Date=20261128T023447Z&HW-CC-Expire=31536000000&HW-CC-Sign=745B9EE5806C8F12F46CA874AA60E0BDF1AE41FE89FF5C36D20E7FED5AA45DFB)弹出文件另存为框，填写文件名称后点击**OK**按钮保存。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/SzyENo_jRdqNcRw9dSM7xw/zh-cn_image_0000002808766091.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=A51F58A4CEED2A5255CED15179750722E0F2845B7805B8EE02DA53D9D3CD3CF7 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/w2yrLxHlRMqJPNqSLUATAw/zh-cn_image_0000002808766091.png?HW-CC-KV=V1&HW-CC-Date=20261128T023447Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF4B0FDE7EA620631CC3FC242BBC6592764E234100B68D2C24757B2A3033FF7E "点击放大")
 3. 生成的单元测试用例文件被保存在待测函数所在模块下的**ohosTest/ets/test**目录，目录结构和待测函数保持一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/hc3eFj29S16QW6kjUu2A6w/zh-cn_image_0000002808766093.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2C439C3E71C40500A89195AD55F8BC36EEE58B4BDE8DEC7E2FE620089719578)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/fIKAyAWxQDWVxB28uRKasA/zh-cn_image_0000002808766093.png?HW-CC-KV=V1&HW-CC-Date=20261128T023447Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4849814FF9156B9E05C9C5F9AD675DA290F7F8F0BA439CC59426900D9D65BF6)
 4. 运行单元测试用例，具体请参考[运行测试用例](ide-instrument-test.md#section14415226122419)。

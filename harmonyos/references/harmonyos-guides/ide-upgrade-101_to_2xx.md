@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-upgrade-1
 title: 1.0.1升级至2.X.X/5.X.X版本
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 版本升级 > 1.0.1升级至2.X.X/5.X.X版本
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:20+08:00
+scraped_at: 2026-11-28T10:34:28+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:3f2fa8c7091492656ccfc8237e4588e873e61a6b5ab6345b16cf51c1a0c2bfa9
+content_hash: sha256:54de65b73084f0d950a5068b13f06b0030467526d227028d84cbe9b61fe083b8
 ---
 
 升级至2.X.X版本与升级至5.X.X版本步骤一致，本文以升级至2.X.X版本为例。
@@ -26,7 +26,7 @@ content_hash: sha256:3f2fa8c7091492656ccfc8237e4588e873e61a6b5ab6345b16cf51c1a0c
 
 2. 下载并解压工具包：下载版本2.X.X的ohpm-repo私仓工具包，并解压（请解压到一个空文件夹中）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/9AbllyJDQbaj3adGhNGLIg/zh-cn_image_0000002779565096.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=4763D0CAF936A45D428856ED407099E409E7760A91A7539073DF68EAFCE540E3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/rT9EfEf4SXaSPAC1j9nZbw/zh-cn_image_0000002779565096.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F4133AB0263070918DDE96351BC15BFB6849D71CB46EF248B4CF5E5886B2460)
 
 3. 安装完成之后，进入ohpm-repo 私仓工具包解压目录下的bin目录，执行如下命令：
 
@@ -155,7 +155,7 @@ content_hash: sha256:3f2fa8c7091492656ccfc8237e4588e873e61a6b5ab6345b16cf51c1a0c
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ygKhA3uHRzmGSvF9URrSyg/zh-cn_image_0000002808764683.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A570EAA605C816EB343D12BC368B5B52D0F1B14913A438BD274F8DE5766D57B "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/IG8dyTcDTBmp_Thx_V6q3g/zh-cn_image_0000002808764683.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B9549A027D3C84FD3CAA70287624068FACD550AD6B7818BBFC7D5C8FA1E21D6 "点击放大")
    * 刷新环境变量：安装成功后，必须根据给出的提示信息刷新环境变量，针对Windows系统和Linux/Mac系统，有不同处理方式：
 
      **说明** 
@@ -170,7 +170,7 @@ content_hash: sha256:3f2fa8c7091492656ccfc8237e4588e873e61a6b5ab6345b16cf51c1a0c
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/kvNNELQhQOW-N3cefzWUmA/zh-cn_image_0000002779405124.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=FACDE4C03423659F4355907989E5825C161D9B8D6B4C5B18BAE54910F6245B09 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/1uN4N462Q-21vHOutZ0W5Q/zh-cn_image_0000002779405124.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=520CACE2C86B5D7AC34C3CD225E20F1E4DDEBBBBE798F578BD6282599DF99F0F "点击放大")
 
      **说明** 
 

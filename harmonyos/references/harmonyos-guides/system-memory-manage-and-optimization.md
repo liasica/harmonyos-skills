@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-memory
 title: 应用内存优化
 breadcrumb: 指南 > 应用体验建议 > 应用系统资源管理体验建议 > 系统内存使用与优化 > 应用内存优化
 category: harmonyos-guides
-scraped_at: 2026-11-27T10:45:10+08:00
-doc_updated_at: 2026-11-26
-content_hash: sha256:1225aafc8eb2d4ef42e568da305bf6f0e02de9e27968ed887ea153a137a69dc2
+scraped_at: 2026-11-28T10:35:01+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:97999e814bbb7faa7bf6e86b1cf795917066839f1e29f1cb21006b958f37f090
 ---
 
 ## 内存泄漏分析
 
-在HarmonyOS应用开发中，内存泄漏是影响性能和稳定性的关键问题。为帮助开发者系统化治理内存泄漏，最佳实践文档从开发态与运维态两个阶段，分别针对ArkTS（JS/TS）、Native（C/C++）等典型泄漏场景，提供了一整套定位、监控与闭环修复方案。开发态侧重于利用DevEco Studio Profiler 等工具主动探查根因，运维态可使用应用质量管理（Application Performance Management Service，简称APMS）平台实现线上泄漏的告警、聚类和证据链追溯。
+在鸿蒙应用开发中，内存泄漏是影响性能和稳定性的关键问题。为帮助开发者系统化治理内存泄漏，最佳实践文档从开发态与运维态两个阶段，分别针对ArkTS（JS/TS）、Native（C/C++）等典型泄漏场景，提供了一整套定位、监控与闭环修复方案。开发态侧重于利用DevEco Studio Profiler等工具主动探查根因，运维态可使用应用质量管理（Application Performance Management Service，简称APMS）平台实现线上泄漏的告警、聚类和证据链追溯。
 
 参考文档：
 
@@ -20,12 +20,12 @@ content_hash: sha256:1225aafc8eb2d4ef42e568da305bf6f0e02de9e27968ed887ea153a137a
 
 ## 内存优化方法
 
-HarmonyOS应用优化方案按技术方向分为以下几类：
+鸿蒙应用优化方案按技术方向分为以下几类：
 
 * 编译态优化
 * ArkWeb优化
 * ArkUI优化
-* imageknifepro三方库优化
+* ImageKnifePro三方库优化
 
 ### 编译态优化
 
@@ -37,16 +37,16 @@ HarmonyOS应用优化方案按技术方向分为以下几类：
 | --- | --- | --- | --- |
 | 方案编号 | 编译选项/手段 | 作用 | 备注 |
 | 1 | -ffunction-sections -fdata-sections  -Wl,-gc-sections | 让每个函数/每个全局数据符号作为独立的section，链接器对未被使用的非导出的符号进行删除。 | 无。 |
-| 2 | -Oz/-Os | 相比-O3/-O2，让编译器进行更进一步的codesize优化。 | 可能造成性能劣化。 |
+| 2 | -Oz/-Os | 相比-O3/-O2，让编译器进行更进一步的code size优化。 | 可能造成性能劣化。 |
 | 3 | -fvisibility=hidden  -fvisibility-inlines-hidden | 所有未显式声明为公开的符号（如函数、变量等）以及内联类成员函数都会被标记为隐藏的，减少产物中符号段大小。 | 无。 |
 | 4 | -fno-rtti | 禁用C++的RTTI机制。 | 用户不能使用C++的RTTI机制，如dynamic\_cast。 |
-| 5 | -fno-exceptions | 禁用C++的异常机制。 | 用户不能使用C++的异常机制，如try catch、throw。 |
+| 5 | -fno-exceptions | 禁用C++的异常机制。 | 用户不能使用C++的异常机制，如try-catch、throw。 |
 | 6 | -Wl,-z,pack-relative-relocs / -Wl,--pack-dyn-relocs=relr | 使用relr编码格式压缩动态重定位段。 | 无。 |
 | 7 | -Wl,--hash-style=gnu | 为动态符号表仅生成gnu扩展的哈希表。 | 无。 |
 | 8 | -Wl,-icf=all | 在链接阶段对相似代码片段进行合并处理。 | 可能造成性能劣化。 |
 | 9 | -moutline | 在编译阶段对相似代码片段进行合并处理。 | 仅aarch64/arm支持，可能造成性能劣化。 |
 | 10 | -mllvm -inline-threshold={数值} | 设置编译器inline优化时，最大可inline的函数成本阈值。 | 可能造成性能劣化。 |
-| 11 | 在libc++.so中显示实例化stl模板 | 避免在每个动态库中都存在stl模板的实例化副本。 | 可能造成性能劣化。 |
+| 11 | 在libc++.so中显式实例化STL模板 | 避免在每个动态库中都存在STL模板的实例化副本。 | 可能造成性能劣化。 |
 
 ### ArkWeb优化
 
@@ -61,15 +61,13 @@ HarmonyOS应用优化方案按技术方向分为以下几类：
 ```screen
 build() {
          Column() {
-                   Web({ src: ‘www.example.com’, controller: this.controller })
+                   Web({ src: 'www.example.com', controller: this.controller })
                             .onPageBegin(() => {
                                      this.controller.onActive();
                             })
-                                     // 预渲染完成后onFirstMeaningfulPaint
-                                     .onFirstMeaningfulPaint(() => {
-                                     // 调用停止渲染接口onInactive
+                            .onFirstMeaningfulPaint(() => {
                                      this.controller.onInactive();
-                   })
+                            })
          }
 }
 ```
@@ -87,17 +85,15 @@ build() {
 * 释放Web离线组件示例代码
 
 ```screen
-// 自定义释放/回收离线Web组件的接口，可作为释放离线web组件函数使用，释放成功返回true
-// 当离线组件没有webNodeContainer绑定时，允许安全释放，否则节点在不重绘时会显示空白
 export const recycleWeb = (url: ResourceStr, force: boolean = false): boolean => {
-         console.info('recycleWeb, url: ’ + url);
+         console.info('recycleWeb, url: ' + url);
          let baseNode = nodeMap.get(url);
          if (!baseNode) {
-                   console.info('no such node, url= ’ + url);
+                   console.info('no such node, url= ' + url);
                    return false;
          }
          if (force && baseNode.isBound()) {
-                   console.info(‘the node is in bound and not force, can not delete’);
+                   console.info('the node is in bound and not force, can not delete');
                    return false;
          }
          baseNode.rootNode?.dispose();
@@ -123,29 +119,29 @@ export const recycleWeb = (url: ResourceStr, force: boolean = false): boolean =>
 ```screen
 onForeground(): void {
          // Ability has brought to foreground
-         hilog.info(0x0000, ‘testTag’, ‘%{public}s’, ‘Ability onForeground’);
-         restoreNWebS()
+         hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
+         restoreNWebS();
 }
  
 onBackground(): void {
          // Ability has back to background
-         hilog.info(0x0000, ‘testTag’, ‘%{public}s’, ‘Ability onBackground’);
-         recycleNWebS()
+         hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
+         recycleNWebS();
 }
 ```
 
 * 退后台销毁并记录离线Web组件：
 
 ```screen
-export const recycleNWeb = (url: ResourceStr, force: boolean = false): boolean => {
-         console.info('recycleNWeb, url = ’ + url);
+export const recycleNWebS = (url: ResourceStr, force: boolean = false): boolean => {
+         console.info('recycleNWeb, url = ' + url);
          let baseNode = nodeMap.get(url);
          if (!baseNode) {
-                   console.info('no such node, url = ’ + url);
+                   console.info('no such node, url = ' + url);
                    return false;
          }
          if (force && baseNode.isBound()) {
-                   console.info(‘the node is in bound and not force, can not delete’);
+                   console.info('the node is in bound and not force, can not delete');
                    return false;
          }
          baseNode.rootNode?.dispose();
@@ -159,7 +155,7 @@ export const recycleNWeb = (url: ResourceStr, force: boolean = false): boolean =
 * 回前台重新创建恢复离线Web组件：
 
 ```screen
-export const restoreNWebs = (uicontext: UIContext | undefined) => {
+export const restoreNWebS = (uicontext: UIContext | undefined) => {
          if (!uicontext) {
                    uicontext = globalUIContext;
          }
@@ -168,7 +164,7 @@ export const restoreNWebs = (uicontext: UIContext | undefined) => {
                             createNWeb(url, uicontext);
                    }
          }
-         recycledNWebs.clear()
+         recycledNWebs.clear();
 }
 ```
 
@@ -182,7 +178,7 @@ export const restoreNWebs = (uicontext: UIContext | undefined) => {
 
 问题场景：应用使用Navigation组件进行页面导航时，系统对页面栈深度不做限制，应用如果不做控制，可能造成用户使用时栈内存无限增长导致溢出，尤其在低内存设备上更容易出现内存不足的问题。
 
-优化方案：通过Navigation的configuration接口配置stackSizeLimit属性，限制页面栈的最大深度（如3或5）。当栈深度超过限制时，最早的页面节点将按FIFO（先进先出）顺序自动销毁，同时保留NavPathInfo，以支持页面重建。
+优化方案：通过Navigation的configuration接口配置stackSizeLimit属性，限制页面栈的最大深度。当栈深度超过限制时，最早的页面节点将按FIFO（先进先出）顺序自动销毁，同时保留NavPathInfo，以支持页面重建。
 
 * 配置stackSizeLimit示例代码：
 
@@ -192,7 +188,7 @@ build() {
     // 首页内容
   }
   .configuration({
-    stackSizeLimit: 10  // 限制页面栈最大深度为10，超过时自动回收最早的页面
+    stackSizeLimit: 10  
   })
 }
 ```
@@ -207,11 +203,11 @@ build() {
 
 [导航与切换-Navigation](../doccenter-references/api/ts-basic-components-navigation.md#configuration)
 
-### 使用imageknifepro及优化
+### 使用ImageKnifePro及优化
 
-**升级到imageknifepro**
+**升级到ImageKnifePro**
 
-imageknifepro是imageknife的升级版本，95%的接口保持兼容，个别差异点进行了单独说明。建议将imageknife升级到imageknifepro。
+ImageKnifePro是ImageKnife的升级版本，95%的接口保持兼容，个别差异点进行了单独说明。建议将ImageKnife升级到ImageKnifePro。
 
 参考文档：
 
@@ -231,7 +227,7 @@ imageknifepro是imageknife的升级版本，95%的接口保持兼容，个别差
 
 **GIF逐帧解码方案**
 
-Imageknifepro提供了三种动图解码模式，针对GIF等多帧图片的加载进行了优化。通过合理选择解码模式，建议使用逐帧解码，可大幅节省内存。
+ImageKnifePro提供了三种动图解码模式，针对GIF等多帧图片的加载进行了优化。通过合理选择解码模式，建议使用逐帧解码，可大幅节省内存。
 
 参考文档：
 
@@ -239,7 +235,7 @@ Imageknifepro提供了三种动图解码模式，针对GIF等多帧图片的加�
 
 **图片降采样方案**
 
-Imageknifepro提供了11种图片降采样策略，建议应用根据场景使用FIT\_CENTER\_MEMORY/FIT\_CENTER\_QUALITY：
+ImageKnifePro提供了11种图片降采样策略，建议应用根据场景使用FIT\_CENTER\_MEMORY/FIT\_CENTER\_QUALITY：
 
 * FIT\_CENTER\_MEMORY：适用图片列表、缩略图场景。
 * FIT\_CENTER\_QUALITY：详情页大图场景。
@@ -250,15 +246,15 @@ Imageknifepro提供了11种图片降采样策略，建议应用根据场景使�
 
 **修改setCacheLimit内存缓存的大小**
 
-Imageknife默认缓存大小128M，可根据自身使用图片场景修改为指定大小。调用方式为ImageKnife.getInstance().setCacheLimit(CacheStrategy.Memory, 128, 64 \* 1024 \* 1024)，其中第一个参数设置内存缓存，第二个参数设置缓存的最大图片张数，第三个参数设置内存缓存的使用量上限（建议50M以内）。
+ImageKnife默认缓存大小128M，可根据自身使用图片场景修改为指定大小。调用方式为ImageKnife.getInstance().setCacheLimit(CacheStrategy.Memory, 128, 64 \* 1024 \* 1024)，其中第一个参数设置内存缓存，第二个参数设置缓存的最大图片张数，第三个参数设置内存缓存的使用量上限（建议50M以内）。
 
-Imageknife ArkTS版本通过initMemoryCache接口修改内存缓存大小。
+ImageKnife ArkTS版本通过initMemoryCache接口修改内存缓存大小。
 
 |  |  |  |  |
 | --- | --- | --- | --- |
 | 分档 | 场景 | 优化设置 | 预估收益（M） |
 | 档位1 | 缓存大小设置>128M | 设置成128M | 设置的缓存大小-128M |
-| 档位2 | 缓存大小128M | 设置成100M | 28M |
+| 档位2 | 缓存大小设置=128M | 设置成100M | 28M |
 | 档位3 | 缓存大小设置<128M | 不变 | 无 |
 
 ## 内存防劣化检测方法

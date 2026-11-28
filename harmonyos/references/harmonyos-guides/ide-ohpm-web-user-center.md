@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-web-
 title: 个人中心主页
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 个人中心主页
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:20+08:00
+scraped_at: 2026-11-28T10:34:27+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2375c27b4040b4ef5bc364e3a1bee58f420486344249f364b7140a180e859583
+content_hash: sha256:ad9cb42025f0cb4a0d143a4ac7ae20b40dfd9a80c568d6a029aa512e9257dd64
 ---
 
 个人中心主页是ohpm-repo私仓的核心管理页面，整个系统在此进行集中管理和操作，页面效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/in-Q0mVGRa2CXX3X6vt8uw/zh-cn_image_0000002779565248.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=A70AD40A92879C5EE24C797539E72881437CF7CCE710906E58F936E6004F343B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/P2iAoXWDSxS7VqTVF6yqKw/zh-cn_image_0000002779565248.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F1C953624971547BC0D6F7E6D5358FFFA2ACFB333BAA0C1CFB63E380C1821C0 "点击放大")
 
 **区域1**：个人信息区域，显示登录用户的信息。其中有编辑、复制发布码和修改密码三个功能。
 
@@ -30,7 +30,7 @@ content_hash: sha256:2375c27b4040b4ef5bc364e3a1bee58f420486344249f364b7140a180e8
 
 * 管理员菜单：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/OKvIEOu6TOGVuP3-muU35Q/zh-cn_image_0000002779405262.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA505C7E832F48FAAA58BD6EF4D26A26FE5F1E0A2F119CE5FCD4572FC87B4F2E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/e-4AZd5yQHuhCVfQ85EjHA/zh-cn_image_0000002779405262.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=4002800DFE3E6E6AA4FB59C0A01B48ABE0CD2CF0CB6B6768B83E5A42DE79B7B5 "点击放大")
 * 普通用户菜单：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/gH8__j9URiiYtqqYYvqBOQ/zh-cn_image_0000002779405274.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=30E6FE52F42D3CBE321550860BA7315E625197821DAE61F3B32D5F2E4CED80F6 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/z-oqvR8DT9-43vQI2cwLRg/zh-cn_image_0000002779405274.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3E92AE760354413A8A4C18FCE653FA9E9471421EFF053B58278210F6ABD5BE5 "点击放大")

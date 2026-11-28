@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm uninstall
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm uninstall
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:42+08:00
-doc_updated_at: 2026-11-06
-content_hash: sha256:8a867ed8a06ac25ce492d398de90f926948272a0e09fa89259fb7f70922fa38a
+scraped_at: 2026-11-28T10:34:59+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:a1f2328f6bcc4b50ddb41c7495e56ba9e965487cd867410935eb2cde6bf887e5
 ---
 
 卸载三方库。
@@ -35,7 +35,7 @@ alias: un
 ### install\_all
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 * 别名：all
 
 您可以在 uninstall 命令后面配置 --all，或者--install\_all 参数，表示卸载当前模块指定依赖成功后同时安装当前工程下的所有模块的依赖。
@@ -43,7 +43,7 @@ alias: un
 ### no-save
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 您可以在 uninstall 命令后面配置 --no-save 参数，卸载的三方库信息不会从 oh-package.json5 文件中删除。
 
@@ -64,7 +64,7 @@ alias: un
 ### fetch\_timeout
 
 * 默认值：60000
-* 类型：Number
+* 类型：number
 * 别名：ft
 
 可以在 uninstall 命令后面配置 --ft <number> 或者 --fetch\_timeout <number> 参数，设置操作的超时时间，如果没有指定，默认超时时间为60000ms。
@@ -72,14 +72,14 @@ alias: un
 ### strict\_ssl
 
 * 默认值：true
-* 类型：Boolean
+* 类型：boolean
 
 可以在 uninstall 命令后面配置 --strict\_ssl true 参数，校验 https 证书；配置 --strict\_ssl false 参数，不校验 https 证书。
 
 ### experimental-concurrently-safe
 
 * 默认值：true
-* 类型：Boolean
+* 类型：boolean
 
 可以在 uninstall 命令后面配置 --experimental-concurrently-safe 参数，并发安全地安装依赖。这是一个实验性选项。
 
@@ -93,35 +93,35 @@ alias: un
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### lockfile\_stable\_order
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 uninstall 命令后面配置 --lockfile\_stable\_order 参数，会确保在oh-package.json5文件未变更时，当前已生成的oh-package-lock.json5各字段内容不变。
 
 ### odm\_r2\_project\_root
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 uninstall 命令后面配置 --odm\_r2\_project\_root 参数，当存在overrideDependencyMap配置且其配置项对应的配置文件内存在相对路径的依赖配置时，ohpm会基于工程根路径解析来查找这些相对路径。详情参见[odm\_r2\_project\_root](ide-hmos-ohpmrc.md#section136621053184912)。
 
 ### resolve\_conflict\_strict
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 uninstall 命令后面配置 --resolve\_conflict\_strict 参数，ohpm会按照严格模式处理依赖版本冲突，详情参见[resolve\_conflict\_strict](ide-hmos-ohpmrc.md#section1942983310492)。
 
 ### resolve\_conflict
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 uninstall 命令后面配置 --resolve\_conflict 参数，ohpm会自动处理依赖版本冲突，详情参见[resolve\_conflict](ide-hmos-ohpmrc.md#section368717475562)。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ubsan
 title: 使用UBSan检测未定义行为
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用UBSan检测未定义行为
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:31+08:00
+scraped_at: 2026-11-28T10:34:40+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:3bff325337db0bd2386d13add932d6391bee70680e7c796e8dc78bb32857184f
+content_hash: sha256:41efff558b44204e362acd46c18fc898703d9b1202fc71ff9081866cb2728eec
 ---
 
 代码中出现未定义行为，最初可能不会产生任何问题，但是随着代码的复杂度提高，未定义行为可能造成程序崩溃或发生错误，检测出根源会变得更加困难。UBSan（Undefined Behavior Sanitizer）可以检测代码中出现的未定义行为，帮助用户清除未定义行为引起的运行时错误。
@@ -31,7 +31,7 @@ ASan、TSan、UBSan、HWASan不能同时开启，只能开启其中一个。
 
 点击****Run > Edit Configurations >** Diagnostics**，勾选**Undefined Behavior Sanitizer**开启检测。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/fLb295cDQUWk4frmu2WINA/zh-cn_image_0000002808886697.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=732564CFDA38709B5EA861DA7996737DACF65692F9BBC8B273A856C7864432DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/qDqc2OJ4RhW3eVGIBAJjwg/zh-cn_image_0000002808886697.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2E29D60A8AD6874D5B0D817418F14E09BAE5B9C356E3CEAFF7FEEF9BD7D1F7A)
 
 ### 方式二
 
@@ -41,7 +41,7 @@ ASan、TSan、UBSan、HWASan不能同时开启，只能开启其中一个。
 "arguments": "-DOHOS_ENABLE_UBSAN=ON"
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/NyJT8redRLuanKz3CR3Fiw/zh-cn_image_0000002808766617.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9AB491BF4DC1A51390D46B74F6100EAFD24D5CD2637D0C6AC24EA427AC79B26)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/rwO6Mlu9SbqbIkedexC5jQ/zh-cn_image_0000002808766617.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=164223526B584FF13FBB5F9D12AA8B471CB54E3838A3535EA34E0A000D0252F7)
 
 ## 使用UBSan
 
@@ -52,4 +52,4 @@ ASan、TSan、UBSan、HWASan不能同时开启，只能开启其中一个。
 
    无论[编译模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)是debug或release，均有链接可直接跳转至源码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/txNGP9C0T-mZNaHlNrhLUg/zh-cn_image_0000002779567036.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A0DF1F82BBFB33BA5E83B862134DF6940C2DF79A02E5CC15C02A7AB4B5B7B4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/GYih3_EwT525mMCemKRpyQ/zh-cn_image_0000002779567036.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=9693E462F382ADEDCC7F1E3AAA9762A7269991A5018E753F4BFADAD692A768EB)

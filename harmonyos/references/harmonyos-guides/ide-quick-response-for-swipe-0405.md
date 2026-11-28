@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-quick-res
 title: 滑动操作响应快
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 滑动操作响应快
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:32+08:00
+scraped_at: 2026-11-28T10:34:40+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:c9a206fa7df63867501af86eba715b81a51444d593431b6e3e59e0428d31f831
+content_hash: sha256:352ada322439bb7e8b9301fcdd4d03c486fed879027fc9101f90c73c1cc3248a
 ---
 
 ## 规则详情
@@ -26,7 +26,7 @@ content_hash: sha256:c9a206fa7df63867501af86eba715b81a51444d593431b6e3e59e0428d3
   H:WEB\_LIST\_FLING
 * 备注：由于trace的响应时延小于用户实际感知的时延，所以目前滑动类算法会补偿30ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/FBP4iIHkRJG7RrApL7d7yw/zh-cn_image_0000002808886905.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=138F29D18A6F745F90008089AD30D4A4A6199C5A44DB8704CB900D7EECAFFA38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/0u-ZuW6mTsmRsJe9tEZ1nQ/zh-cn_image_0000002808886905.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C061B38F1CC1BB69B1DE80C9670C4B48BF7E90D62B9CF7A239708E3D58F190C)
 
 ## 计算逻辑
 

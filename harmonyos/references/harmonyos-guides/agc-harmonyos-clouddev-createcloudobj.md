@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 创建云对象
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云对象 > 创建云对象
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:21+08:00
+scraped_at: 2026-11-28T10:34:29+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:ff45f184d46dda2c11ab776ae68d6fb765bbfab86e07678228d6ee17acac5cb0
+content_hash: sha256:6a77f0a92de79638e625a2c5aa376ef22b2e572c97fdcd6478355cd9a8662019
 ---
 
 首先您需要在云侧工程下创建云对象。
 
 1. 右击“cloudfunctions”目录，选择“New > Cloud Function”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/9tkgAprFRC61IfsAnohLJA/zh-cn_image_0000002383015456.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EE3CB8BC844933EC03157DA4BEA43B8E62E5EFBFD347BFC2507810D86E43E4B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/7tk42sfBTWKOmeLE6BD0XQ/zh-cn_image_0000002383015456.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9D539DF509AA4B70D9591E18BC4B8DBCD32706E57F1B24A80837C0AB4649CBC)
 2. 在“Select the Cloud Function Type”栏选择“Cloud Object”，输入云对象名称（如“my-cloud-object”），点击“OK”。
 
    与云函数名一样，云对象名称长度2-63个字符，仅支持小写英文字母、数字、中划线（-），首字符必须为小写字母，结尾不能为中划线（-）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/5hewA44_SI6j9-SqmRQuwA/zh-cn_image_0000002179498304.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF1DC4F255595755DD62A984DB1F44ED46897B3BF0A3D74AA3AEE767F5DC8261)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/cNHf7v42Ru642kqDK7sSTw/zh-cn_image_0000002179498304.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=220A52E961370524BF2912E20123108219371CC33798A3F0FF66AF4D6F4DCADC)
 
    “cloudfunctions”目录下生成新建的云对象目录，目录下主要包含如下文件：
    * 云对象配置文件“function-config.json”：包含handler、触发器等信息。
@@ -29,10 +29,10 @@ content_hash: sha256:ff45f184d46dda2c11ab776ae68d6fb765bbfab86e07678228d6ee17aca
 
      云对象的配置文件“function-config.json”不建议手动修改，否则将导致云对象部署失败或其它错误。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/62QdbkznSmqK3Wdtw1gnZg/zh-cn_image_0000002214858949.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8B91A5274B04E97E4D0E7FB71E91D66BC1B4AB9E4F8833079DCB0B0AD9F6E67)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Tmys3Ly7TzudWn37eP6IWg/zh-cn_image_0000002214858949.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0ADEF193E3100DBEAA1AA26CE345BE2257D0D7689497C5D2FBD03002CEAA2E9)
    * 云对象入口文件“*xxx*.ts”（如“myCloudObject.ts”）：在此文件中编写云对象代码。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/SM4VBdCwTo2IdzCcyaiYnw/zh-cn_image_0000002214704565.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A57FE30B2544A544CA664820EEDF3FBFCFBFF35B09498506DEBFF694F8E213B8)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/DcIvnivAQ9mYMG3pirJhRg/zh-cn_image_0000002214704565.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C2607B1C3FC3C8DCDE8AE534F66E8D094A3186A24A5FF2D59971DCA971064E5)
    * 云对象依赖配置文件“package.json”：在此文件中添加依赖。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/CNv2UNHQRJ2-RRKY5evJ6g/zh-cn_image_0000002179338620.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=39E05483AE5D454A24CE4854D2CD02730B021EE1E8167CEC43BEB34C79D60056)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/-1LRk5h_QCSMEr92WpNDVw/zh-cn_image_0000002179338620.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=2993D46A0F74794AC19095E71D4D827034939F0D8052110C2AB827699B7A373F)

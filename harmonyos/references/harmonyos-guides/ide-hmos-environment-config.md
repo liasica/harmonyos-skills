@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-envi
 title: 配置OHPM代理
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 附录 > 配置OHPM代理
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:47+08:00
+scraped_at: 2026-11-28T10:34:56+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:4662d9ac7121a59c534c4efc8d35e118613ed31d59a4ae5f2dbac335e725ce3b
+content_hash: sha256:94108d53bf2702fb9e408b1b71f5454158ca824c687386c1514b3ce21128898d
 ---
 
 鸿蒙电脑DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确保工具的正常使用。一般来说，如果使用的是个人或家庭网络，是不需要配置代理信息的，部分企业网络受限的情况下，才需要配置代理信息。可通过如下步骤进入代理配置。
@@ -28,14 +28,14 @@ content_hash: sha256:4662d9ac7121a59c534c4efc8d35e118613ed31d59a4ae5f2dbac335e72
 
    填写并勾选以上信息后，点击确认。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/JQK98nG2TMmppE9eOENxCA/zh-cn_image_0000002792001076.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFA59313794ED85C30D269B2813EF13CD28A26814E79A0111F57CFC2308477F4 "点击放大")
-3. 代理配置完成后，点击底部![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/6v9hsiZ3QW-LOur6hdSASQ/zh-cn_image_0000002791841102.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=5610B444DF25CB57F29CF9D6170A622AA6F4718B8D0743EE8952ADD4FA058135)终端图标，可执行如下命令验证代理是否配置成功。执行结果如下图所示，则说明代理设置成功。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/4VerkJtWS32Su6eFTXR4pA/zh-cn_image_0000002792001076.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=B59886ADE1BC9526ECBDA0C4DE01A0B28BF9D86C79323DC08D5582715C4FB361 "点击放大")
+3. 代理配置完成后，点击底部![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/V2iq7rERQ5iCYMGxMAyq4g/zh-cn_image_0000002791841102.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7226966224AA7799EAF75ACF7E021E3CBBAB399BB4E2996200183C451C89BA6)终端图标，可执行如下命令验证代理是否配置成功。执行结果如下图所示，则说明代理设置成功。
 
    ```screen
    ohpm info @ohos/lottie
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/l9jcJO4iS2WzQnIrcjSOSQ/zh-cn_image_0000002820721045.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=498CA2B00F4B419FEB1828ABC0027EF5F9755DC9DE160407A7E10FB615D7330C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/E3sOd8lwRUSlxak0Uu6fog/zh-cn_image_0000002820721045.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=623D9A2B0A8E9B3B4613556325F28E88FCAD5FFE24F332E96B45F36D8B8C93BD "点击放大")
 
 **说明** 
 
@@ -80,4 +80,4 @@ ohpm默认校验registry仓库地址证书。如果环境检查中ohpm registry 
 
    执行结果如下图所示，则说明代理设置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/_TjkVnMXSWuVFW47uQqYSQ/zh-cn_image_0000002820721043.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=3337AFF01B4DEE762EADE9AED888B4413D4EA0501C964423BA8ECB2E90E1C6E1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/KJ7uHbiWQ_WUMzyh98xDcQ/zh-cn_image_0000002820721043.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=C84567E825F048A29092B14F92DA7522DFDE2549A48CB52F663AD9098152A506)

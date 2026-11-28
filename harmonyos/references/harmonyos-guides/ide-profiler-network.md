@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 网络诊断：Network分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 网络诊断：Network分析
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:36+08:00
+scraped_at: 2026-11-28T10:34:45+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2667de073d1880176e4bc3e0211666cab31050086372e5414bf25fb4e073c41d
+content_hash: sha256:64494720c14a57f2edf5a0e982a8b7a89bf6a66db6af2f4a8535ef45727e3e79
 ---
 
 ## 功能介绍
@@ -28,8 +28,8 @@ Network模板支持的泳道包括：Network Traffic、Network Request、User Tr
 
 * **Summary**区域可以查看按照网络接口（Network Interfaces）维度统计每个类型的流量消耗，展示信息包含平均下行流量、下行总流量、下行数据包数、网络接口、平均上行流量、上行总流量、上行数据包数。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/sfEk4bqVTcepjOg9aXPWaw/zh-cn_image_0000002808766185.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E936AE55AE6F4AFC20C1AB9E8EE9E6FBF57080C3A2F48D823E44670928DA579 "点击放大")
-* **Details**区域将展示按时间戳排序的周期上报的网络数据，每个网络数据包含上报时间戳、持续时间、下行流量、下行流量包数、网络接口、上行流量、上行流量包数。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/dhB7IBsyTR2rgFX-yyyUXA/zh-cn_image_0000002779566600.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=B82F426C1FD45C2DA56CB88D4E3BEDF6858D159E3720B7133D90F757F6FF09D6 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/k9Nx9I94QDKUZR0FmOGjPg/zh-cn_image_0000002808766185.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=3645D8EB4099435C610040C1881D92628FD6ABC54F371C3AD25B833C5AA36CFF "点击放大")
+* **Details**区域将展示按时间戳排序的周期上报的网络数据，每个网络数据包含上报时间戳、持续时间、下行流量、下行流量包数、网络接口、上行流量、上行流量包数。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/9xhjqDVYSCKa8qHy72r_6g/zh-cn_image_0000002779566600.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=233652543430050AA0A0A3F37DDF1116BFEC99F2773F861F31968DC369D20EA2 "点击放大")
 
 ## 查看网络请求各阶段耗时
 
@@ -37,18 +37,18 @@ Network模板支持的泳道包括：Network Traffic、Network Request、User Tr
 
 * **Summary**区域可查看按照域名（Domain）维度统计展示网络请求耗时，展示信息包含域名、线程名称、数量、平均耗时、最大耗时、DNS解析/TCP连接/TLS连接/等待响应/接收数据平均耗时、DNS解析/TCP连接/TLS连接/等待响应/接收数据最大耗时。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/6nWZMBugSQ-K6DcN1BDk5A/zh-cn_image_0000002808886265.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=550032C3177A41108244EAC69EAB1097ACCD5E7F0618FA6D5CA1AA20417E618E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/yG6cg-3ZTYm92bIFmohMbw/zh-cn_image_0000002808886265.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CE365127B5DA94B5876EA48CD3D759ED85247E798FBBF016B3E22B827F3A943 "点击放大")
 * 选择任意Domain，**Details**区域将展示请求该Domain的所有网络请求耗时，展示信息包含请求ID、线程名称、请求url、重定向url、IP地址、总耗时、DNS 解析耗时、TCP连接耗时、TLS连接耗时、等待响应耗时、接收响应耗时、请求类型、状态码、使用的版本。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/er4jPwDYR4KwJI2fueaq4g/zh-cn_image_0000002808886257.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=27AA9A12F78D3D3658F0D5BA0D557C9F9AD85099BDD276F6752FE2EBCEFD256D "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/lBthtbjjTM6bMiyusL4sOw/zh-cn_image_0000002808886257.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=007CDFBFA5481CA9EDEE68F44AB62556DFFC5806FFBD536502F669BB6CC126CA "点击放大")
 
   选择Details中某条数据，泳道区域将以虚线框展示其耗时方块，右侧**More**区域展示该请求的Request Headers、Response Headers、Response Body。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/bKSSkbJIQim_vd24VA4C7g/zh-cn_image_0000002808766179.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=72110B2FE1898C4F197BFBF953292789DA5C08DF486FAB3F8DE255EBD575CEFD "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/8Pv-BkuqRU26HeV2B_AoKQ/zh-cn_image_0000002808766179.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CBCE3190AA5B33FB9799E49930B75A432F63831626BBF430E86C435CEE7292D "点击放大")
 
   定位到可能造成网络卡顿的网络请求，点选其耗时方块，可以看见该请求各阶段耗时。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/peJonHoHRAaNKUCj5hSATw/zh-cn_image_0000002779406618.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E0E3775B81EF3A2B42487AB2B1478293824AF93144263E73FA9A18477ACF0C0 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/aIQCRknOQLuf83Wutlk-0Q/zh-cn_image_0000002779406618.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=15615CA5880B7D8CE9F760EB2255FBFDACF717E94DAD27C99308988F50ABDDF9 "点击放大")
 
 ## 分析启动过程网络问题
 
@@ -59,6 +59,6 @@ DevEco Profiler的Network分析任务，提供了启动过程网络问题分析�
 * 如选择的是已安装但未启动的应用，在启动该分析任务时，会自动拉起应用，进行数据录制，结束录制后可正常进入解析阶段。
 * 如选择的是正在运行的应用，在启动该分析任务时，会先将应用关停，再自动拉起应用，进行数据录制，结束录制后可正常进入解析阶段。
 
-具体操作方法为：在任务列表中单击Network任务后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/wfyMlYTRTEefSPfiZgVoYA/zh-cn_image_0000002779566592.png?HW-CC-KV=V1&HW-CC-Date=20261124T044236Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D0D8151388BD3D82AF5C7CC2A2FACF8E7FF0DBB0C44C46F02257A494AFABB91 "点击放大")按钮。
+具体操作方法为：在任务列表中单击Network任务后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/1ArIprBlTmCkuip_Rrw_zg/zh-cn_image_0000002779566592.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEE7F30DF9458B9BCF5600AAC301B3B6128E441F8227912E812DB906E5A1F2D8 "点击放大")按钮。
 
 在分析结束后，呈现出的数据类型以及相应的处理方法，与非启动过程的分析相同。

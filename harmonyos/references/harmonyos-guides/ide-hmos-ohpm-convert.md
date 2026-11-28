@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm convert
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm convert
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:51+08:00
-doc_updated_at: 2026-11-06
-content_hash: sha256:a02df7f5052891d4f6f586e042ea4cdf35b193480ad00c62b3b9230cbf30460d
+scraped_at: 2026-11-28T10:35:00+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:77d238312cce994487ea271c083b14ddebbda9b082c7237aa5c8bdd1fb801446
 ---
 
 将npm三方库转换为ohpm三方库。因为语法差异，转换时仅对文件进行格式转换，不修改原npm包的代码逻辑。若HAR包在转换后出现代码不兼容的报错，开发者需修改原npm包的代码做适配。
@@ -59,21 +59,21 @@ ohpm convert命令仅保留npm包中package.json配置文件中的name、version
 ### publish
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在 convert命令后面配置 --publish 参数 ，若指定该参数，执行convert命令前请确认.ohpmrc推包相关配置无误，当所有包转换完成后将根据.ohpmrc中的配置依次进行推包。
 
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型： string
 
 可以在convert命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
@@ -100,13 +100,13 @@ ohpm INFO: A total of 9 packets are converted successfully.
 ohpm INFO: Converted packages are saved to the "/storage/Users/currentUser/Documents/DevEcoStudioProjects/MyApplication01/convert_1774947993178" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/xWH3evf3Scqb2hC2BCM4bA/zh-cn_image_0000002791840938.png?HW-CC-KV=V1&HW-CC-Date=20261124T044250Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1F17776AFEF1A326FFFE621D902F37F703784658D4FE1172449ECE406E1CE08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ynzQemAkQYyKsV9A2RzTNw/zh-cn_image_0000002791840938.png?HW-CC-KV=V1&HW-CC-Date=20261128T023500Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FA36F3711B9E9842845ACC734BE30929C2E7E6D9438753E40B8F8DBCA172BCC)
 
 **转换本地node\_modules目录中的包**
 
 执行npm install uuid后，转换本地node\_modules目录中的包，执行以下命令：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/25dDNvD2Tby9QS84Sg2OVA/zh-cn_image_0000002792000910.png?HW-CC-KV=V1&HW-CC-Date=20261124T044250Z&HW-CC-Expire=31536000000&HW-CC-Sign=478EC0D56D082BB7E486D32F85A4175A0ECD1AD3B395B86AE326231F9AEF9CCF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/ZW8N_KliTj-oRpxQj6v4PQ/zh-cn_image_0000002792000910.png?HW-CC-KV=V1&HW-CC-Date=20261128T023500Z&HW-CC-Expire=31536000000&HW-CC-Sign=70D195B49414710A2C6FCBDB167CA411A4ABB5C32B5517F50F92605664CD5253)
 
 ```screen
 ohpm convert ./node_modules
@@ -122,4 +122,4 @@ ohpm INFO: A total of 1 package(s) are converted successfully.
 ohpm INFO: Converted packages are saved to the "/storage/Users/currentUser/xxxxx/convert_1774948851809" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Nf3-bWEeReSIYNpeEMU30A/zh-cn_image_0000002820720877.png?HW-CC-KV=V1&HW-CC-Date=20261124T044250Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC1E9B2373B403DC51A268018279EA1828822C192111BE09243D0DA4041CB464)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ip3ldtIsQXSpx1n33ZEohQ/zh-cn_image_0000002820720877.png?HW-CC-KV=V1&HW-CC-Date=20261128T023500Z&HW-CC-Expire=31536000000&HW-CC-Sign=727FE040FC1FD744A3629F45A5013956518BD9122C337F99FCA95371450C9450)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-local-tes
 title: 本地测试错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 本地测试错误码
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:31+08:00
+scraped_at: 2026-11-28T10:34:40+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:4f7113f9effb5e8da153393ce983c2ad315b9e0c99d9a3b1beb117c84e7e658a
+content_hash: sha256:395c6c309e49fcd216f41716d8fc21b487f5f5965c45d40b25e6ea74b557c8f1
 ---
 
 ## 00521001 测试用例名称存在非法字符
@@ -155,7 +155,7 @@ The function where the method XXX is located is not registered in the 'List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/mXv7mLdiQD2C-AaFzSGx7w/zh-cn_image_0000002808766571.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEC4FA4AC1F98E92DFFBC432A5BB98E013B865696EDB39CB71F9A955D0A2C4A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/uop670QzQiOmAXivk-S2cA/zh-cn_image_0000002808766571.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E232E5903A7A9397D3E9C536CA1C962479E1C8302138ADF17AA9FC83B1FE546)
 
 ## 00522002 函数未在List.test.ets文件中注册
 
@@ -175,7 +175,7 @@ The function where the suite XXX is located is not registered in the ''List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/zNsgQVn2R7u0wSR9OwW11A/zh-cn_image_0000002779566990.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=89F8062B525DC97DDCB27793554EFD8B6314AE537A3887BE056E51704A058933)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/6h-cClphRzGEczGgPVnRAQ/zh-cn_image_0000002779566990.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F1521074003C9912525B369539CE4B74C5A6C500D27B6C8E1637ED46AF42CAB)
 
 ## 00522005 文件中所有函数都没有在List.test.ets文件中注册
 
@@ -195,7 +195,7 @@ None of the functions in the file XXX have been registered in the 'List.test.ets
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/fUpe3c5IR02vb2y9EoLg8Q/zh-cn_image_0000002808886651.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF88DD3EE410D41E7A2F1122DE26C680FF9B1B2255073FB19D15B927E898106E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/3cR4fDPwQr6E2B7JZQY0Pw/zh-cn_image_0000002808886651.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=57E10289943E5226C5EC02BDEB23C7AC5D443715EC17AA214C512A4EC97B7B74)
 
 ## 00522006 测试文件中找不到测试用例
 
@@ -216,7 +216,7 @@ Current test case XXX not found in the test file.
 * 选择要运行的测试用例，重新运行。
 * 在运行配置窗口修改Method name。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/5Ma2Fio5SkeKXeTICvFiGA/zh-cn_image_0000002779407010.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3477694EF61A586B799949A1B019F67F5B6338C618E614F51D0F746A5394650)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/CsSD0lPuQ_qrnYJKbBetuQ/zh-cn_image_0000002779407010.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F6354A4D7EADB379D1DC8CA78BD1EFD6DBC026A510A9E39A6CCD4F7993D9E33)
 
 ## 00522007 找不到任何测试用例
 
@@ -292,7 +292,7 @@ Failed to start local test, please check the XXX path!
 1. 点击菜单栏**Build > Clean Project**清理缓存，再重新执行测试。
 2. 检查运行配置是否取消了构建任务，如果取消就重新添加构建任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/_IsrqKINRjmIvfUI2sOyeA/zh-cn_image_0000002779407012.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4175AA1F5186A46CD4732F78A2E0F89FE0B8411874531AFE23498380B20C822B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/VRYzMtSuTpuBBnLKPDiEbg/zh-cn_image_0000002779407012.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFCFFF05470832A2AE43775B2990D1EE77E68FAD81314123C8B67CFE0FC7214F)
 
 ## 00523004 内存不足
 

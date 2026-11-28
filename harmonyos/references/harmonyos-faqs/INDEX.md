@@ -1,6 +1,6 @@
 # FAQ（harmonyos-faqs）
 
-共 4428 篇文档。
+共 4427 篇文档。
 
 - [Context功能使用常见问题](ability-kit-faq-0001.md)
 - [Context类型与关系常见问题](ability-kit-faq-0002.md)
@@ -3072,7 +3072,6 @@
 - [测试指南和FAQ无法解决问题时，如何获取在线支持](faqs-deveco-testing-faq-8.md)
 - [DevEco Testing在无网络情况下能否使用](faqs-deveco-testing-faq-9.md)
 - [常见问题](faqs-deveco-testing-faq.md)
-- [流水线场景使用命令行工具sdkmgr下载Linux SDK失败](faqs-development-environment-11.md)
 - [ohpm-repo是否支持对HSP包的管理](faqs-development-environment-12.md)
 - [c++层的crash怎么定位](faqs-development-environment-13.md)
 - [DevEco Studio中如何设置超长日志自动换行](faqs-development-environment-15.md)
@@ -4333,7 +4332,7 @@
 - [下载任务切换到后台下载中断](ndk-development-troubleshooting-0002.md)
 - [故障排查](ndk-development-troubleshooting.md)
 - [WebSocket协议支持问题](network-kit-faq-0001.md)
-- [网络信息获取与状态监听常见问题](network-kit-faq-0002.md)
+- [网络IP与连接状态监听常见问题](network-kit-faq-0002.md)
 - [HTTP请求配置常见问题](network-kit-faq-0003.md)
 - [HTTP请求底层原理与机制常见问题](network-kit-faq-0004.md)
 - [网络抓包调试与防护问题排查](network-kit-faq-0005.md)

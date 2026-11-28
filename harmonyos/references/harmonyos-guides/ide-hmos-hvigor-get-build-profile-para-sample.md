@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 实践说明
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 定制构建 > 获取自定义编译参数 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:48+08:00
+scraped_at: 2026-11-28T10:34:57+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:306ece75ff95ab7ef5faeb539efe6577720d99d95fd6af241f8520110e8b7ccb
+content_hash: sha256:8522beedf0ba2ed19d3ad6c2234732b694e91cd6b1d81ae0cf48e9d6c540c490
 ---
 
 示例：配置工程级和模块级的自定义参数并通过切换product来展示不同的message。
@@ -211,24 +211,24 @@ struct Index {
 
 右键点击har模块，在菜单中点击**生成BuildProfile文件**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/QLXonvZVSNSodWfbRT0WgQ/zh-cn_image_0000002820681047.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=44D7286BDC6E8BF4FB1B59C61B4C0B880907401E0FA5BEAEC7CAC184074B5281)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/5y5FOmryTxGgmV_dz_aomw/zh-cn_image_0000002820681047.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=BED14C9F4F39C173C39CFA464477AD4D3325BA436B2D0735E254B7071A240D14)
 
 default模式下初始化的message为defaultMessage。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/3mR25tq_Sva5iLRyL4BeSg/zh-cn_image_0000002792001092.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2B9D000CE19E2E6DC94EB6C4DB726DA683267E0AEE50E5910E473F999CE905A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/cvNQRwY0QaaiIWRAjVMIFA/zh-cn_image_0000002792001092.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=A018062803DD84F8142AD62C833DA4746ABF4C44787785097444252D1118AAFB)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/ndQ71FqYS1KHa-7pOFBGNQ/zh-cn_image_0000002791841114.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CE517BD32C9389B0530DD9EF200D7B13D26E9547CBD0A13BB72E60FC86A8BC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/OhloG-aUQ76O-4-AfrWaug/zh-cn_image_0000002791841114.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D2DBDAA70B091C3D9F1A145A4BFC5A8776F69E67FE24297148AEE06C0D29F81)
 
 通过切换不同的product，可以使用不同的自定义参数来初始化message。
 
 切换product为mirror，可以观察到初始化参数为mirrorMessage。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/-N60RufuQuih6hsOxzkKuQ/zh-cn_image_0000002820721055.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F6FE9DFCBDDAB1B141D8DAEB9DE658986E4F51BED0F6271BA74FC6E8E59EB2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/-_NtPKtuQdC1hUjUjKPJ3w/zh-cn_image_0000002820721055.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=16FC144CD32787D13FCDBAD67AE0DD27B9A4BF72115D352B0F66EE022B30A14A)
 
 点击不同的Button，message会变为对应的自定义参数：
 
 **图1** 点击Button1  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/3VlMIUakTPOEEk1pMlBqSQ/zh-cn_image_0000002820681049.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EB9DAF9740A8C36CB74603CD511E7A708172CC19ADD114F3EBF286C0CB83674)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/7bxTvWfVQjyp7Ac7otbw9w/zh-cn_image_0000002820681049.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8A7DFFAFD63A69B9C1283FF8103B37D777B14613E53F6B3863C1FA4F861685B)
 
 **图2** 点击Button2  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/RlQ_a5qySOu1s_IsO_1S0w/zh-cn_image_0000002791841116.png?HW-CC-KV=V1&HW-CC-Date=20261124T044247Z&HW-CC-Expire=31536000000&HW-CC-Sign=593C6156CF414968828828327E4173A599DC3FAF4DED58B1DC308A76E0DA25F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/sQs-TuetSNSTH7B3C4hSPg/zh-cn_image_0000002791841116.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=21B20E15E351EE8A42A033420746F7EA6D5712DFB0183E6DD6EBE023371CBD9F)

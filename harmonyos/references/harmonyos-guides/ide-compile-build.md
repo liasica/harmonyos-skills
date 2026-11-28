@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-compile-b
 title: 构建产物说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 概述 > 构建产物说明
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:32+08:00
+scraped_at: 2026-11-28T10:34:41+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:2a19b0d1c7de20b80137918c023ecc193ced8494d52d041687006d7dcb4e4616
+content_hash: sha256:48f280899902fd5264574f27acbf6002d4a4b811a99361fc73ce94ae4bff2066
 ---
 
 ## HAP/HSP构建产物说明
 
 以HAP为例，release模式的构建产物一般包含以下文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/4E2A3LOZTYGjqOuxtJQkaQ/zh-cn_image_0000002779406710.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EFB9FECE10B19A2D4692B01ED3D7BB5A171C37A1EA4757468573B6146115885)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/wViu8jfiT_iKvXsxdoQMGQ/zh-cn_image_0000002779406710.png?HW-CC-KV=V1&HW-CC-Date=20261128T023441Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7BC72E33535165E076E7D2953D74C133F9F7D1021CDF447336D61E7265EF873)
 
 * resources：构建产物中的资源文件目录，如图片、媒体资源、配置文件等。
 * modules.abc：构建产物中通过源码编译出的字节码文件。
@@ -36,7 +36,7 @@ content_hash: sha256:2a19b0d1c7de20b80137918c023ecc193ced8494d52d041687006d7dcb4
 
 APP构建产物如下，其中包名取决于个人项目中的模块名，与下图可能不同：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/_9a5nKH_TRi2u-mSjGmtXw/zh-cn_image_0000002808886351.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DE6CE854EEF69A82BC9859AD92E9414D121CE1856DCD3428B0C8A9F9E1BE62A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/v0YHc0NuRmO4SFx_VvcsHg/zh-cn_image_0000002808886351.png?HW-CC-KV=V1&HW-CC-Date=20261128T023441Z&HW-CC-Expire=31536000000&HW-CC-Sign=4319A02151C152B98D72AF947C32C80AE624515D7EA09B5D5401F86FC388868E)
 
 * entry-default.hap：由字节码、资源、三方库、配置文件等打包生成的entry类型的hap包，是App应用安装和运行的基本单元，application-default.hap是feature类型的hap包。
 * library-default.hsp：由字节码、资源、三方库、配置文件等打包生成的动态共享包，可实现代码和资源共享。

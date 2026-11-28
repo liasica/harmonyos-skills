@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-tsan
 title: 使用TSan检测线程错误
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用TSan检测线程错误
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:46+08:00
+scraped_at: 2026-11-28T10:34:56+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:cbf86f1d277b2e5ddb7b31834b9e0f9e700dcc0a8deb9aa599f990772e6d5f0c
+content_hash: sha256:83bfc5c9ada8b5408778d30597657ae2ff427c238520bf203dbe312abeb6303a
 ---
 
 TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个编译器插桩模块和一个运行时库。TSan开启后，会使性能降低5到15倍，同时使内存占用率提高5到10倍。关于TSan的检测原理请参考[TSan](../best-practices/bpta-stability-tsan-detection.md)。
@@ -21,15 +21,15 @@ TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个�
 
 ### 方式一
 
-1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Z8AWkIKzQEqblv0KducMnA/zh-cn_image_0000002820680899.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=776D0788D11E0D0B23583B7DF598EB4712882B148640FEDBC118807055660FC9)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/TTb88pnQT8WvYnS6PClV8A/zh-cn_image_0000002820680895.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=E31174BE54DAF42C93CC1E1E5585BF755E05CD6610BF15C374F2902C5BDD649C "点击放大")按钮打开配置界面。
+1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/hv-pZc7XRrGsiIOiR6nyFw/zh-cn_image_0000002820680899.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=F53744C976627CCA71520165BCBDC2C33D95F7ABDAD9E1EB666CE42F676E7937)按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/jkG5r_waStywIt4DOc8uYg/zh-cn_image_0000002820680895.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F41B349A224B64C601C1921607C7AD714C2EAB8FE244F5FC2C19F567E4C29DE "点击放大")按钮打开配置界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/jCBCwKj_TOiDBkSI6NPW6g/zh-cn_image_0000002820680897.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=46E4DC16380424C26CA932A80509231E79B62A2826104886931290BA99F33500)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/MZozo8A0SXqEZTSheoOopw/zh-cn_image_0000002820680897.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB82032904D683363BBEDC149A3F5AC5FB1B18685EA8541D0880AD7F0BC88FB9)
 2. 在配置界面点击**故障分析**，勾选**数据竞争检测**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/b2bQlw0UTquSZEDjDCRiOA/zh-cn_image_0000002791840964.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE40631F3B72360D29EBB4FB5CD8C95EEC3BF75DF86A26ECFFEDF074FB7ABA35)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/QSyTacgASNijbSDRB4bkWw/zh-cn_image_0000002791840964.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=D497448239CF0D7AAEA7E036B62DDAFBED4CCA5B76C82EFF64645A6EEE8FAB17)
 3. 如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_TSAN=ON”，表示以TSan模式编译so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/EDbAU78ARHO94OMCFp73vg/zh-cn_image_0000002791840968.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=F11122CF44C68892EB3B2CED321620F3270D1D62E8E63AB28C040A65385F5C51)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/H2bAHb5LTlaFaen2QpUBbQ/zh-cn_image_0000002791840968.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE8CBAED6A831BB2C7BD9412627641322E4CB41D009A3D15AA717115800CAF35)
 
 ### 方式二
 
@@ -39,7 +39,7 @@ TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个�
     "tsanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/H1TxdAGRSAaOKqB2PIsj5Q/zh-cn_image_0000002791840962.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=062A16C10C812902A472CA0BB32948EB4C7E392FF171F94F026B1421348B9F81)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/gGMkzRq1RWeAenMfrJ8hHg/zh-cn_image_0000002791840962.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=082D4DEF5C02DBF2B08F48D847D1803FA4E1DD5E4F39F086BCDCDE637E1700FD)
 2. 设置模块级构建TSan插桩。
 
    在需要开启TSan的模块中，通过添加构建参数开启TSan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
@@ -48,11 +48,11 @@ TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个�
    "arguments": "-DOHOS_ENABLE_TSAN=ON"
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/0ASa817ZT2-6WPSckrtBTQ/zh-cn_image_0000002791840960.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=E07AB0BC4999BCD607694315863E46486EDED7F39500B9272F2C65582794214C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/qFdQ1C8ESvmD9xjIW3w_dQ/zh-cn_image_0000002791840960.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=691DB1AE0E6D46F6DDFD5E06AC9D9DEA196BF4990EF8BAB697F3EBBF4EA0DF94)
 
 ## 使用TSan
 
 1. 运行或调试当前应用。
 2. 当程序出现线程错误时，弹出TSan log信息，点击信息中的链接即可跳转至引起线程错误的代码处。日志中的异常检测类型请参考[TSan异常检测类型](../best-practices/bpta-stability-tsan-detection.md#section1180812915516)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/k9h3SppsTwSRJ7cZMRiFVw/zh-cn_image_0000002820680891.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=374B9D7F8CCC59DAC0C8AE5F6A139CF38723DD91B7D85DA29B37D7DAE42305ED)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Tec9lsafRPeiqRy6ZKS7Iw/zh-cn_image_0000002820680891.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CD3F19F4AE29FD09C559D68FF0C3967257F66513787FA25E44205D87E9F8C65)

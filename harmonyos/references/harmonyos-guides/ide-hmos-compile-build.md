@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-comp
 title: 构建产物说明
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 概述 > 构建产物说明
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:47+08:00
+scraped_at: 2026-11-28T10:34:56+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:c2da92703f0d5a7eee47c18d36cd3db38b383577c441d8e4456b7d8cf1bacaa3
+content_hash: sha256:74b3d721b7d4599d44fb1ed19b211e7c4f5e7566c224727761c6d5e138300616
 ---
 
 ## HAP/HSP构建产物说明
 
 以HAP为例，release模式的构建产物一般包含以下文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/MYfxt8EJRR61QxIglXJJtA/zh-cn_image_0000002792000880.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EA2C3C40D08F0228467DC012573E5824DC3132D5DA3B99580E0AFD93182C2BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/t0LmX_rOSTiBWrGLphCVFA/zh-cn_image_0000002792000880.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=586E8B685C438835728FFC4FD983FA2630493D734828B8D2AA35BBFD7E423502)
 
 * resources：构建产物中的资源文件目录，如图片、媒体资源、配置文件等。
 * modules.abc：构建产物中通过源码编译出的字节码文件。
@@ -35,7 +35,7 @@ content_hash: sha256:c2da92703f0d5a7eee47c18d36cd3db38b383577c441d8e4456b7d8cf1b
 
 APP构建产物如下，其中包名取决于个人项目中的模块名，与下图可能不同：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/DZyHfnwhRcG1m4mZrd27HQ/zh-cn_image_0000002791840908.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=19AA07DD02D783ECBB2C7D8DDF2F5336504E76C34B4B96F7B0E120AA242C5541)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/2J0-AxBfQ72GmzjM68qG5Q/zh-cn_image_0000002791840908.png?HW-CC-KV=V1&HW-CC-Date=20261128T023456Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFD356DA05B7AAC615B4143831F03CFF3D8F3C83D3BDA8C92B2729CC9C5B9D60)
 
 * entry-default.hap：由字节码、资源、三方库、配置文件等打包生成的entry类型的hap包，是App应用安装和运行的基本单元，application-default.hap是feature类型的hap。
 * library1-default.hsp：由字节码、资源、三方库、配置文件等打包生成的动态共享包，可实现代码和资源共享。

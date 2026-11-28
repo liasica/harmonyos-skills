@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 通用云开发模板
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 附录：云开发工程模板 > 通用云开发模板
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:22+08:00
+scraped_at: 2026-11-28T10:34:29+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:a18aa3ad1935aaa6ac1dfa9b0963fd6dbcc279dc69cb5d3f0257e55641cd7318
+content_hash: sha256:a290580563345bf77efcdc330d901e28a41ebe868baad4367b1ee0228f7668ff
 ---
 
 ## 适用范围
@@ -39,7 +39,7 @@ content_hash: sha256:a18aa3ad1935aaa6ac1dfa9b0963fd6dbcc279dc69cb5d3f0257e55641c
    1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，进入“应用管理”页面。
    2. 在左上角的应用列表中点击“切换至项目”，选择您的项目。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/4fsG92B5SqSojl_s1vFZZQ/zh-cn_image_0000002765419093.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=1861032CDFBC2D4A17909F3AE093AB4E58F83B041BCC2FEE763C2C92E6540712)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/c6mcCAY_RtqPKXN0-Mxs6Q/zh-cn_image_0000002765419093.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9D88D623B99C1C6DD2388D84F36C45039B1B0CEFB1244AB98166F46F1D614A1)
    3. 选择“开放能力配置 > 云存储”，进入云存储页面。
    4. 选择“安全”页签，在“配置策略”页面修改默认安全策略为始终可读写后，点击“发布”。
 
@@ -51,7 +51,7 @@ content_hash: sha256:a18aa3ad1935aaa6ac1dfa9b0963fd6dbcc279dc69cb5d3f0257e55641c
       ]
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/sOehGtUxR7yEqXbX4AkRyQ/zh-cn_image_0000002492564672.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BB8D518F712054C30F2E7831024D4E3D29DBB804DA7CA997C73C898AF257150)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/-G_VM6m0TwO0WPhZ3w72eg/zh-cn_image_0000002492564672.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE4E63B233C2278B3C2E99F1A77049EECD42A7BC8A2FDAF46958CCFBAB7FF8F8)
 4. 将模板工程推包到手机上，在手机上开通应用访问数据权限，即可开始体验模板。
 
    **注意** 

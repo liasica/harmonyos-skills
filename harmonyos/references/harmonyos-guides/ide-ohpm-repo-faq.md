@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 常见问题FAQ
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 常见问题FAQ
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:20+08:00
+scraped_at: 2026-11-28T10:34:28+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:19964c18c6df959abdc93b7a2e941b31bd456577f99733db4e0b66322aaa26f5
+content_hash: sha256:300782f8c035e0435435b68e38cf877534dcade49da2da26a1acc94184a4e092
 ---
 
 ## ohpm-repo私仓工具获取与升级
 
 * 从[下载中心](https://developer.huawei.com/consumer/cn/download/ohpm-repo)上获取最新ohpm-repo工具包。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/2oCw_aU6Rp61ip85EXBuwA/zh-cn_image_0000002808764949.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD84D4B1685205BD7645D6333F707C82C16D6EB6C5CDC61E93525632B709FF9C "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/BOshuPUXSSuzpU2lABXg6g/zh-cn_image_0000002808764949.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=F31D1E225629D9FFBF4A826435704A1915ED4643E3A7674EA45C53045A08E1DB "点击放大")
 * ohpm-repo升级指导：在升级之前请务必进行数据的备份，具体的升级指导文档见：[ohpm-repo版本升级](ide-ohpm-repo-upgrade.md)。
 
 ## ohpm-repo启动后如何修改配置文件，并使得修改后配置文件生效
@@ -52,10 +52,10 @@ content_hash: sha256:19964c18c6df959abdc93b7a2e941b31bd456577f99733db4e0b66322aa
 
    * 通过ohpm-repo管理界面的注册按钮新增用户类型：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/grk1v-SDRUaDXdH_tECsIA/zh-cn_image_0000002779565378.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=3738135D09999CA4A57ECBA455DBEA05AAAF7D3F718577B08F5E21091D557EEA "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/0e5qFIvUQVShB2bXddvIvA/zh-cn_image_0000002779565378.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D775B6BF016362AB1D135D222A2473D42878948ED4A25758623BE1FCC62ADB8 "点击放大")
    * 登录任一管理员账户，能够在ohpm-repo的用户管理界面新增用户并管理其他用户（编辑用户信息，删除用户，变更用户类型，重置密码）：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ZtrC86ZRTY2qU619TOZiJQ/zh-cn_image_0000002779565366.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=3355B06A426F4315568E956F5E2BDFC4420AF6DF088DF9EF50E33798C3EA9E33 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/WC0PphC7RZCu7RePksPFMA/zh-cn_image_0000002779565366.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=55AFF2351DDA002FBFBF9EB42765E94D27DFA2DA0B405E079FD9974E5D5709F6 "点击放大")
 2. **账户的权限说明**
    * 系统管理员：允许有多个系统管理员。
      + 用户管理：创建新用户，编辑用户信息，编辑用户类型，修改其他用户类型和重置其他用户密码。
@@ -75,13 +75,13 @@ content_hash: sha256:19964c18c6df959abdc93b7a2e941b31bd456577f99733db4e0b66322aa
 1. **组织创建与组织权限的编辑**
    * 组织的新增和删除：登录系统管理员账户，在组织管理界面，通过新增按钮创建组织，当前系统管理员默认成为该组织的管理员；通过删除按钮删除组织。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/AATnkgEvR8W07Jbyaro5HA/zh-cn_image_0000002779405386.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=B054819D2C048971FCB884E626B33C1CF672A1DA5614381D85DD1EFB9D7A82C8 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Pz81dORmR7ukru0z0zM9-w/zh-cn_image_0000002779405386.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C95AC765F964B28953ABDFC2586BD6350B655D4D5C1F1FD175A1D656A428096 "点击放大")
    * 组织普通成员的添加和删除：登录组织管理员的账户，在组织管理界面，选中需要添加用户的组织的详情按钮，然后在成员界面通过新增按钮添加组织成员，通过删除按钮删除组织成员。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/sFgrPJiIQYm1tcx1B1bm8w/zh-cn_image_0000002808764937.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B99FAB9454FADA231DD3F71C9F03DCBC128D47C7DE2D43A0E5DC204B59B8A8A "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/NLMoh3yXQWqb4DYHICmsIg/zh-cn_image_0000002808764937.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=87F43B397AF1D97A267B08EFE75785FF0873BDB2F2220879907C0E09B34130DB "点击放大")
    * 组织管理员的添加和删除：登录系统管理员账户，在组织管理界面，选中需要添加用户的组织的编辑组织管理员按钮，然后在编辑组织管理员界面通过新增组织管理员按钮添加组织管理员，通过删除按钮删除组织管理员。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/WKbVSKMyQL6E_G6InrZhiA/zh-cn_image_0000002808764943.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=D82D7F5C8203E7D7A0697B094F74FD30C98E2B70139FB1A6953264D331EB7080 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Jzv3RPLxShyuAhboKtOTjg/zh-cn_image_0000002808764943.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2F8C8BAF77A21F96808342A994FB1F994883399C8EBD1EE1658807E1C4D00F2 "点击放大")
 2. **组织的权限说明**
    * 组织用户：允许有多个组织用户。
      + 上传包：能够上传带有该组织的三方包
@@ -115,7 +115,7 @@ ohpm-repo的数据包括两部分：
 
   元数据和三方包数据的存储方法不能够随意搭配，匹配规则和支持的ohpm-repo版本信息见下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Rf53IdBnRHqDFELlgnofoA/zh-cn_image_0000002779565364.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFD9BF7A6C707A4A1681262653ECACEF5C07C5B8BA761ED89A21F5D6143D7A78 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/sww08nLoQbinNaQ8V1wJ3Q/zh-cn_image_0000002779565364.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=A17349EDB0279EB3F289222EEEDEFFCC8D45F8015DD5D504C50BF25B1DADA981 "点击放大")
 
   存储方式的变更：如果元数据和包数据的存储位置需要改变，可以通过数据迁移指导进行完成。
 
@@ -143,7 +143,7 @@ ohpm在执行publish，unpublish和dist-tags等需要修改ohpm-repo数据库内
 
 * **现象**：在git-bash终端下运行ohpm publish命令出现 “The content of private key in the key\_path error”错误，报错截图为：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/VaV_8yxFT7-34_yclOnetQ/zh-cn_image_0000002808885017.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E948C68995271C25900C42A66A4DE5C4F47D80AB87FD872D1BC2E9B9BEDCCCD "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/3MNIT8ONTeyyj8vcO9PpEg/zh-cn_image_0000002808885017.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB806C9C5710A15479D58B770541012FE24121EABB013241AEDAD03E045309DF "点击放大")
 * **原因分析**：使用ohpm publish命令上传包时，此时如果使用ssh证书密码认证，程序需要通过TTY流读取用户输入的密码，git安装的版本过低其携带的git-bash会导致TTY流丢失，从而出现该错误。
 * **解决方法**：
   + 方法一：从git官网下载安装最新版本git，使用最新版本携带的git-bash终端进行操作。
@@ -180,7 +180,7 @@ ohpm在执行publish，unpublish和dist-tags等需要修改ohpm-repo数据库内
 
 ### 在执行ohpm-repo install或者ohpm-repo start的时候报错：server install failed: YAMLException: bad indentation of a mapping entry
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/pQE6jAUcSi-gnPtFyKG7fA/zh-cn_image_0000002779565348.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=11A61F6F27B0D20734D5D5DD756B451D0A7ECD301D4CB2C02B13DB53C8B4CD73 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/NxGcqZqqRJWBoGOpnAQh3Q/zh-cn_image_0000002779565348.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=A18BD71A8A5B6F27F4D3FF4CAC1B19BC4B39ADFD7A463B4A7A496F96F4B8CDFA "点击放大")
 
 ohpm-repo的配置文件config.yaml中配置缩进格式不对，并且在报错信息中会提示出错误的位置。
 
@@ -199,7 +199,7 @@ ohpm-repo的配置文件config.yaml中配置缩进格式不对，并且在报错
 
 * **现象**：报错信息如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/qo8apCK8QvyvoEhfjysOjA/zh-cn_image_0000002779405390.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=F675372CCCF2CE80D9A74314996ED3FB31CAA92177B592A2F5AF435D9FD83A3A "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/MHYMcLTcTXiE_0QLO2KeWg/zh-cn_image_0000002779405390.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=658F0B1099B66D9B6EB576153C0A5AAFAE1E7A5E443EFB4BE19A04E6AC03ED10 "点击放大")
 * **原因分析**：部署ohpm-repo的机器没有配置server，使用的是默认的server，host为localhost，在其他机器中不能访问。
 * **解决方法**：修改部署ohpm-repo机器A的配置文件，添加store.config.server的配置。建议手动修改host为本机的ip/域名，例如listen为0.0.0.0:8088，故server需配置为http://<本机ip/域名>:8088。
 
@@ -207,7 +207,7 @@ ohpm-repo的配置文件config.yaml中配置缩进格式不对，并且在报错
 
 * **现象**：报错信息如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/HA5q8FhCRcyFqHEMNxII8A/zh-cn_image_0000002808885007.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA87DC8BFEB121532A6928D3509C421ECC903B6A71A148CC50E1B7667623082C "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/jcr3JSXuRdepKYFLGHcY_Q/zh-cn_image_0000002808885007.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=06E268DBF3D1F6D898088FCE1C522324314CCBA7E6345A69997314717EBFD5E3 "点击放大")
 * **原因分析**：在ohpm-repo私仓部署根目录deploy\_root中，加密组件meta文件受到损坏，处于失效状态。ohpm-repo私仓中，uplink的代理地址信息和证书认证的公钥信息均通过meta加密组件进行加密存储。
 * **解决方法**：
   + 如果是版本升级导致的问题，请找回上一个版本中meta文件，替换当前版本的meta文件。
@@ -258,7 +258,7 @@ ohpm-repo的配置文件config.yaml中配置缩进格式不对，并且在报错
 
 * **解决方法**：有一些三方包包含组织名，只有发布包的用户在该组织下才具有发包的能力。报错信息表明已经有管理员账户添加了该包组织，但是当前账户没有在该组织的成员里面。在ohpm中包的命名格式为@<group>/<package\_name>，其中<group>为组织名，找到创建<group>组织的负责人账户，然后负责人账户登录ohpm-repo管理界面，进入组织的详情里，添加需要发包的账户为组织的成员，成员即可发布具有对应组织名的包。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/cbFD1KXuT46K4GoqFXjUQA/zh-cn_image_0000002779565354.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=094B956DA2213FB53CA582DAD9A8A0DBA7AACE21D7C9A4663BF22422E328E851 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/iBt40qarSQ6stsb3gdwkrw/zh-cn_image_0000002779565354.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAFE20596B5272951FE5FE64E0BA843A5C1470292A60ADBD21EC6E35E56A7B35 "点击放大")
 
 ### 报错：ohpm ERROR: HttpCode 404 Not Found
 
@@ -277,7 +277,7 @@ ohpm-repo的配置文件config.yaml中配置缩进格式不对，并且在报错
 
 * **现象**：ohpm执行publish命令，命令行报错信息为：Same ohpm package is exists!
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/5NEgV1V1Q8upJoS3durH1A/zh-cn_image_0000002779405380.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=008A52C310A0BBF7BD4B916BC5E0F18FE753EE0B4E6F9614D43560606EF11666 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/XOWEtUgwQPmkW9LFpyhz-g/zh-cn_image_0000002779405380.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=803472DB8967E4805F179F09E371E233BB2784E4EBA67DBE4FA1F0680AF3E9E1 "点击放大")
 * **原因分析**：对没有组织三方库进行升级时，只能由原来发包用户升级，不能变更其他用户升级。
 * **解决方法**：使用原来发包用户可以继续升级上传，不能变更用户对已经上传的包升级；如果需要支持不同用户升级上传包，包名必须带有组织名。
 
@@ -301,10 +301,10 @@ ohpm-repo的配置文件config.yaml中配置缩进格式不对，并且在报错
 
 * 当添加了uplink的时候，首先确认是否在管理仓库的地方，选用了新增的uplink，下图表示新增的uplink没有被选中，uplink处为空：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/ll2uNgZ7SLGcetqbcaxIQA/zh-cn_image_0000002808885023.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA212965D1B08447A15A936FF329FF2C1FDA359BA1459CB6902A3C851B714CA4 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/_DcpxQs2Q1-gILQ_gyj7dQ/zh-cn_image_0000002808885023.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=905EF53B909F7A5FF429F44395222642BE390C60DA6D5A1731A4CE29E43D3936 "点击放大")
 * 如果新增的uplink中存在所需的三方包，但是下载不下来，可能是需要配置uplink的代理信息，配置位置如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/CEirTQtDSVu1Pe_L9yXJWA/zh-cn_image_0000002808764929.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=192B554BC94D3FE6409AC5DDBB78A060D3EADB33AEBB7B0BCF0DA517594B0FD9 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/bjP7dWOxQxSqkzMAaSu8eA/zh-cn_image_0000002808764929.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=6908B03781E794B0654AF2A039233A3AED89F5484CA9DB396F1D12F9F3FADB0F "点击放大")
 
 ## 访问ohpm-repo私仓管理界面报错
 
@@ -312,7 +312,7 @@ ohpm-repo的配置文件config.yaml中配置缩进格式不对，并且在报错
 
 * **现象**：访问ohpm-repo私仓管理界面的页面功能，报错“非法请求”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/sfQ4y9-MRC-oIkWwH4QFUA/zh-cn_image_0000002808885021.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=780D90CFDF4C4FB798E92EA190F1EC58CCF41BF54A86A5DC26870D252BD27401 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/d_DOg3QVQei_cw-iSv9J3w/zh-cn_image_0000002808885021.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AF9921CAC6BA3490910FC6AFD23924F0DB58CEFAEA3696701D8B1DBC61D15A0 "点击放大")
 
 * **原因分析**：从ohpm-repo私仓5.0.2版本开始，新增接口防重放攻击机制，该机制将校验ohpm-repo私仓所有涉及修改数据请求中的时间戳。若请求携带的时间戳与服务器当前时间相差超过1分钟（超前或滞后），系统将拒绝该请求，并返回“非法请求”错误。
 * **解决方法**：为确保系统正常运行，请保持服务器与客户端浏览器时间同步。
@@ -321,9 +321,9 @@ ohpm-repo的配置文件config.yaml中配置缩进格式不对，并且在报错
 
 * **现象**：打开ohpm-repo私仓管理界面，访问仓库管理页面中uplink代理配置页面，或访问认证管理页面中证书认证配置页面，报错“加密组件无效”，且已经配置的信息被清空。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/iF11ImsBQ5Wo-lUrqITfoQ/zh-cn_image_0000002779405372.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E76E7593B343235D20C49F577C601248BEDACA842BB1317D05A317C86C8BDD4 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/bK7SwMpRRwW_mBmiSj790w/zh-cn_image_0000002779405372.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=B261EAF333999BA9FC9BD451A7D5FCA4D0D80ED8B6D36224633E8FF233192B2C "点击放大")
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/fBlxLruAQ6u9mPpQtzCHLA/zh-cn_image_0000002808764955.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=31003AF204C75D064380FB91FC229839AC77CCBB74AB9E190B2428D9F85267D4 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/vvKPwTtvS1OMuE3Kvx80MA/zh-cn_image_0000002808764955.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDB70253695AC91C726E12065EAF604AEC88860E2704D970FF847D24DAD8A888 "点击放大")
 * **原因**：uplink代理的地址信息和证书认证的公钥信息存储均需要加密，加密组件为ohpm-repo私仓部署根目录deploy\_root中的meta文件。如果加密时的meta文件和解密时的meta文件不一致，会导致解密数据失败。
 * **解决方法**：
   + 如果是版本升级导致的问题，请找回上一个版本中meta文件，替换当前版本的meta文件，保证加密组件的一致性。
@@ -338,9 +338,9 @@ ohpm-repo的配置文件config.yaml中配置缩进格式不对，并且在报错
 
 * **现象**：访问ohpm-repo私仓管理界面，在ohpm-repo管理界面报错“非法请求”，在ohpm-repo运行日志报错：“verify reverse proxy usage: set "use\_reverse\_proxy" to false in config.yaml if not used, or refresh "x-forwarded-for" in Nginx if it is.”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/MNUPKV3zQfSgIXT7fwMd1A/zh-cn_image_0000002808764923.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C496DCE58AAA2028B71490AE94E588314F5BA5C3D82AEE54BD51A27AF044AD6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/JvohkcktSbi8lf3IYXjwSw/zh-cn_image_0000002808764923.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=06B055F088F027E46347D5AFD218137989132FDC29C67167ED519E79202C8E6F)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Lc3kG0EsSGeh0SzYiStl9A/zh-cn_image_0000002808885011.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6E171FC16E064A9CACAED1F76AD60A19808E6ABBB314A8140AE2F533F9A8B9E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/pipuYtYtSNuAW2wwZJeZew/zh-cn_image_0000002808885011.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=F629A6D522577855CA38E2602CB44EC463221AC7804E5A29DEFB3A06715EABD7 "点击放大")
 
 * **原因分析**：在ohpm-repo私仓5.0.7版本中，配置文件新增配置项[use\_reverse\_proxy](ide-ohpm-repo-configuration.md#section1074004784011)，用于判断是否已使用反向代理。如果配置use\_reverse\_proxy值为true，但未使用反向代理或者在配置反向代理时未刷新x-forwarded-for值，将导致从请求头获取到x-forwarded-for值为空，报此错误。
 * **解决方法**：只有已使用反向代理，才能够将配置项use\_reverse\_proxy置为true，且需要在反向代理配置时刷新x-forwarded-for值（如果存在多级代理，只需要在最外层代理配置），配置命令为：“proxy\_set\_header x-forwarded-for $remote\_addr”。

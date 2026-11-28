@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-publi
 title: 发布共享包
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布和管理共享包 > 发布共享包
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:19+08:00
+scraped_at: 2026-11-28T10:34:26+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:d4a1cc132ed78c386ef00604bccddf0c393a781e829288f7dc55057e66964597
+content_hash: sha256:23b650df036d999666060c78d5a9abe35f85fa44542f43ad45cacde38f3c76f1
 ---
 
 ## 发布HAR共享包
@@ -38,7 +38,7 @@ OpenHarmony三方库中心仓仅支持HAR共享包发布，不支持HSP共享包
    3. ohpm包管理器只支持加密密钥认证，请在生成公私钥时输入密码。
 4. 登录[OpenHarmony三方库中心仓](https://ohpm.openharmony.cn/#/cn/home)官网，单击主页右上角的**个人中心**，新增OHPM公钥，将公钥文件（mykey.pub）的内容粘贴到公钥输入框中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/b_chdz1xSkWEpZOnoc9Y2w/zh-cn_image_0000002779406494.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=D87A78D3D80206451692935AC01D3A250C65474FCCC163AF220C336FBA9EA1D6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/3dAGtvaVRvGeP7ZKP9QeWw/zh-cn_image_0000002779406494.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=42DEBADCF7EE71FC594313382221A8F162F5F9BE77C0CEA58D48DB5CF669809E)
 5. 打开命令行工具，将对应私钥文件路径配置到 .ohpmrc 文件中 key\_path 字段上，可执行以下命令进行配置：
 
    ```screen
@@ -59,14 +59,14 @@ OpenHarmony三方库中心仓仅支持HAR共享包发布，不支持HSP共享包
 
 如需在应用内共享HSP，需编译生成\*.tgz包后，将HSP共享包上传至私仓。
 
-1. 点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/6Gx6TU9lT_u_QD2-QjM8EA/zh-cn_image_0000002808766049.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=51DBAEE8C9161F37AD584B82492D8CF5A36EF532E4F9BDA7EBC7BFE1340B48BD)图标将编译模式切换成release模式。
+1. 点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/vgM7ezU1Tmed4DuQvsZflA/zh-cn_image_0000002808766049.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=87B6C2001C686BB4849AB0E719CEE262B3D26B822283954DEA3CB2387E9A9346)图标将编译模式切换成release模式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/yn3U_IkERRe8iHbSkrUldg/zh-cn_image_0000002779566470.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=C705C0B4B94DBF216EC9590F5FE2B37AEA6AF4D95E212D70D9F9DE88418EF362)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/mA0ADWncRcK5AY17gRHSJQ/zh-cn_image_0000002779566470.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5D417419CC710BB4E241CE0D72EE2E3C73810EDF787F3F84E43D19A7CD2DE9C)
 2. 选中HSP模块的根目录，点击**Build > Make Module ${libraryName}**启动构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/KEhErh4GTGyThLUZL2vZtg/zh-cn_image_0000002779566464.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C374166E5D8C567B157A35C38F700BD18F2FFC6BB618BECBBE1DF5519DA5D53)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/l_Ei0Y6fRyiCbW461OUdPw/zh-cn_image_0000002779566464.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FE5C2ED332E26B9D1DE0BDBDE10E544AB8BD81620E9F05EBCEC161D35EDA513)
 
    构建完成后，build目录下生成HSP包产物，其中.tgz用来上传至私仓。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/sv8fWTFURsS5d-NbZWUUGw/zh-cn_image_0000002808886129.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=D93B38ECEA466B17E1BDFC5AB14647395F0D06393222EBB94DA74B3797DD56FB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/wacIk4KLQn-Bl9BlvJX4qQ/zh-cn_image_0000002808886129.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=03C44846D9D79F84AC9B84C52DAE592411DF0230FEF57CE0E8651055315F33FA)
 3. 将HSP共享包上传至私仓，具体参考[将三方库发布到 ohpm-repo](ide-ohpm-repo-quickstart.md#section1710514092415)。

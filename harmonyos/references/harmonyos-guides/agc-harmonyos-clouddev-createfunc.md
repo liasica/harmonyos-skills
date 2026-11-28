@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 创建并配置函数
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云函数 > 创建并配置函数
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:21+08:00
+scraped_at: 2026-11-28T10:34:29+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:5be41187691a26bdfbc1b9c9970561e5cb21c30ee8a427551fddb32987638496
+content_hash: sha256:5a014838abf039856eaff0fd98ac4105fbd4ef55a86d84ffae0abbb04f12a998
 ---
 
 您可直接在DevEco Studio创建函数、为函数配置调用的触发器等。
@@ -14,12 +14,12 @@ content_hash: sha256:5be41187691a26bdfbc1b9c9970561e5cb21c30ee8a427551fddb329876
 
 1. 右击“cloudfunctions”目录，选择“New > Cloud Function”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/L0JRVtbHQpayWxTOubAe7g/zh-cn_image_0000002383015060.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8192BC823CBFFFA351A4438302E5249BDEFA0CFE52C6DA9A9C0CF67498D37896)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/eI1fg3xnQjG4V5CIcYWizA/zh-cn_image_0000002383015060.png?HW-CC-KV=V1&HW-CC-Date=20261128T023428Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBD7286DC2B055F5615FCAB1881A422F0BCB02A215BA111E8D8736BB85BEC957)
 2. 在“Select the Cloud Function Type”栏选择“Cloud Function”，输入云函数名称（如“my-cloud-function”），点击“OK”。
 
    函数名称长度2-63个字符，仅支持小写英文字母、数字、中划线（-），首字符必须为小写字母，结尾不能为中划线（-）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/amx1pUY8Qx2wEUhsxLGdVg/zh-cn_image_0000002214858969.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D822A5756CD8746129DC0E091EFD73889B2102E9B7F7791235607BACED28909C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/YeAkbWvoQ4OwWM_FsVEVmA/zh-cn_image_0000002214858969.png?HW-CC-KV=V1&HW-CC-Date=20261128T023428Z&HW-CC-Expire=31536000000&HW-CC-Sign=287B5E5D91EEB00F869A8F02D4BBE429CE5DDCB014DFA1024C78F7C7E72838FF)
 
    “cloudfunctions”目录下生成新建的“my-cloud-function”函数目录，目录下主要包含如下文件：
 
@@ -27,13 +27,13 @@ content_hash: sha256:5be41187691a26bdfbc1b9c9970561e5cb21c30ee8a427551fddb329876
    * 函数入口文件“myCloudFunction.ts”
    * 依赖配置文件“package.json”
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/4I4-882HQDemqYbG27B5pg/zh-cn_image_0000002179338652.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDEA8EAA08017A9FEF11CB8ACC600092C044FF21DB336B93005C469F52808337)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/5V2S_wbWQaaEAFsV5ksPhQ/zh-cn_image_0000002179338652.png?HW-CC-KV=V1&HW-CC-Date=20261128T023428Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5DAB2C8BF14A4935E75CE3CF59977B2D0720B6BE95F6F23291F40AC1D7967ED)
 
 ## 配置函数
 
 函数创建完毕后，您可在配置文件“function-config.json”的“triggers”下配置触发器，通过触发器暴露的触发条件来实现函数调用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/KP37u7o-SVSv1cIQ_Y5DNQ/zh-cn_image_0000002296067548.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=70360CECC0BD9856768DA5690A23308E3138D49F89B9FF53FFD9466DDDB19375)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/LVjBeEOITxiPXT2i1DsJjg/zh-cn_image_0000002296067548.png?HW-CC-KV=V1&HW-CC-Date=20261128T023428Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F7F6E38DBD74256A840A28C8A9C7B07F540D1552DA24A1513AC4F7248EA0516)
 
 **说明** 
 

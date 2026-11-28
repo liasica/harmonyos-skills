@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: so信息可视化
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > so信息可视化
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:30+08:00
+scraped_at: 2026-11-28T10:34:39+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:94c0faa58aaac9733a47e87791d96ab5b95b0e150c72dca35330c2a675794ceb
+content_hash: sha256:a9b78e03b1cf617a063e3979ef760a6d2a8215e9c7421dcd4f59948d96b50499
 ---
 
-在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/V7XMxjWyQMaVlJzQOHe7mw/zh-cn_image_0000002808766791.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B694E825B8CE0334C7174178450E0DFBCD82DD38460169BAECE9E8E2F5514DEA)，勾选**Modules**，打开模块视图。
+在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/T-QXidvgSwKP6rgjz3rcZQ/zh-cn_image_0000002808766791.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=679D84F555F23F917DB9E56D9C56C8962ABDE551EB1CC442D9D89E8695BAEDCF)，勾选**Modules**，打开模块视图。
 
 在native调试期间，**Modules**窗口会列出并显示有关应用使用的so信息。点击各属性可按升序/降序来排序，支持字符串匹配搜索。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/NtGiyYA4TfGFkdM5MEqUzg/zh-cn_image_0000002808886871.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=F089E8632E9E75B4B111437B3488CD7657E739A53EF9B690F926F087B304EE7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/UAOY0rH_RsOUNIb_2W89ow/zh-cn_image_0000002808886871.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=4583B51E46254DA7D2C59616635345E9FAB3A8DA5853E34E0057A1003DCEBD6D)
 
 * 加载符号表文件
 

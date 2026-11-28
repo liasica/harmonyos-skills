@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm init
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm init
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:38+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:42af3869f6fba33dcda88cf02faafdd280d47572a804483b3621ff1b4ce2efb1
+scraped_at: 2026-11-28T10:34:59+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:05e83979f14bf3b82c74d997ed965a9e677a1cd729b213369f8ae460219909c6
 ---
 
 创建 oh-package.json5 文件。
@@ -29,7 +29,7 @@ ohpm init [options]
 ### yes
 
 * 默认值：null
-* 类型：null 或 Boolean
+* 类型：null 或 boolean
 * 别名：y
 
 可以在 init 命令后面指定 -y或者--yes 参数，命令行将会完全跳过交互界面，创建默认的 oh-package.json5 文件。
@@ -55,7 +55,7 @@ ohpm init [options]
 ### group
 
 * 默认值：当前项目的命名空间 或 ""
-* 类型：String
+* 类型：string
 * 别名：g
 
 可以在 init 命令后面配置 -g <group\_name> 或者 --group <group\_name>参数，创建一个 oh-package.json5 文件，其中 name 字段的命名空间为 @group\_name。
@@ -70,7 +70,7 @@ ohpm init [options]
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 

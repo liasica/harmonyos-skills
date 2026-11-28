@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm config
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm config
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:37+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:a4c6d949a91d278913185bdce26d67864a7485c789a5c86ed7b45c6afa235b6c
+scraped_at: 2026-11-28T10:34:59+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:768e4aae743783df9592d91c90986194fad6e035f921abd71fc092dd16197b8b
 ---
 
 设置ohpm用户级配置项。
@@ -235,7 +235,7 @@ ohpm config encrypt [options]
 ### json
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 * 别名：j
 
 可以在 config list 命令后面配置 -j或者--json 参数，以 json 格式输出所有配置项及默认值。
@@ -293,6 +293,6 @@ security:01:61AE9D3219664B7B785XXXXX:201f713d625daddafcb12198ea9d5121xxxxxx
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。

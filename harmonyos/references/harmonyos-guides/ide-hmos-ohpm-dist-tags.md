@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm dist-tags
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm dist-tags
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:42+08:00
-doc_updated_at: 2026-11-06
-content_hash: sha256:a6a02403c04931ed293736d7a1ea41569b15fdf7f538e1a98d6c636668a82120
+scraped_at: 2026-11-28T10:35:00+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:cbbdd7a8cd552efefd57dde3505ad31187fac9b9dae9fe28d2dac6f3d5c6bc6b
 ---
 
 tag可标记一个三方库的某个版本，在install时可用tag代替版本号安装包。
@@ -79,14 +79,14 @@ alias: rm
 ### publish\_id
 
 * 默认值：""
-* 类型：String
+* 类型：string
 
 可以在 dist-tags 命令后面配置 --publish\_id <id> 参数，指定发布码。
 
 ### key\_path
 
 * 默认值：""
-* 类型：String
+* 类型：string
 
 可以在 dist-tags 命令后面配置 --key\_path <p> 参数，指定ssh私钥路径。
 
@@ -107,7 +107,7 @@ alias: rm
 ### fetch\_timeout
 
 * 默认值：60000
-* 类型： Number
+* 类型： number
 * 别名：ft
 
 可以在 dist-tags 命令后面配置 --ft <number>或者 --fetch\_timeout <number> 参数，设置操作的超时时间，如果没有指定，默认超时时间为60000ms。
@@ -115,21 +115,21 @@ alias: rm
 ### strict\_ssl
 
 * 默认值：true
-* 类型： Boolean
+* 类型： boolean
 
 可以在 dist-tags 命令后面配置 --strict\_ssl true 参数，校验 https 证书；配置 --strict\_ssl false 参数，不校验 https 证书。
 
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型： string
 
 可以在 dist-tags 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 

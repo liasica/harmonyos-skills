@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 堆栈可视化
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 堆栈可视化
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:30+08:00
+scraped_at: 2026-11-28T10:34:39+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:1f0d49b59f55fe981e60e085dcbce90c87f5f70378fb4ae0273116bd3dbf000e
+content_hash: sha256:19dd5aefe68aa0951c5bb8b753695ac49061dc2d2d4628b382581cd1964772eb
 ---
 
-在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/awT1eHG2TVCouyPin2NK6g/zh-cn_image_0000002779407004.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=D899F03F04C4B7228A4C5D95337E75A60BCA3AB09AB6F1354FD7135791221ABD)，勾选**Parallel Stacks**，打开并行栈视图。
+在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/I6FZcvnWRbKU7Stc1pciIg/zh-cn_image_0000002779407004.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF2355F2942771EA2FB0383CD4F2E6EA9900800BF9994E331D8C62FAC0891637)，勾选**Parallel Stacks**，打开并行栈视图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/IV0fex1rRwapaP2aHpHg7g/zh-cn_image_0000002779407006.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AEAA87359849259527409E996E3DB68996F9C195D60FF0F173602A5CF85C7E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/W7uRVjrNQjGvdUbFeWQsGw/zh-cn_image_0000002779407006.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5D20097BA16CAC5A925731D8350FC13B9D27E4BD1E4A5D084FC6EF8AB82E000)
 
 在程序停下时，并行栈视图可以同时展示多个线程的调用栈信息，合并重复调用栈，帮助您更好地理解程序的并发执行情况，以及发现潜在的多线程问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/v7W6Bu1ITiei_V7jDsgtJw/zh-cn_image_0000002779566982.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBAE7BB59B3A3AE120B5FCC7BE41B7742B251A6764C07EB0A994D1E3F1946807)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/2JzE0atKSQ6v43TJz-nCBA/zh-cn_image_0000002779566982.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=F39868341175364009E24744FBA3BD3B85AA9614D31E06F986C369735EAD05B0)
 
 ## 调用栈跳转
 
@@ -24,4 +24,4 @@ content_hash: sha256:1f0d49b59f55fe981e60e085dcbce90c87f5f70378fb4ae0273116bd3db
 
 在多个线程合并的位置处悬停鼠标，可以显示这些线程的具体信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/7M8iKhtzQXe7DJA1uHdIxg/zh-cn_image_0000002779566984.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=C946A68124AF2239C325FB95ED2D387EDCC8227F2C69CE02E2598B6C9F990ADC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/vVGxswOkQLeH_SruGiTidA/zh-cn_image_0000002779566984.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=60F68661CC575093DA30DDB4032122B195663042104DA24E0D07CA063E64866C)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm unpublish
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm unpublish
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:38+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:866cda07459e7ac7d9a2fd7dcac87c52b1358105665817c011c3c6e19963fd46
+scraped_at: 2026-11-28T10:35:00+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:da6588bd0903447948973e34be084e2323c0ceced21c11da3ad91bcd8c1cd848
 ---
 
 下架已发布的三方库。
@@ -36,7 +36,7 @@ ohpm unpublish [options] [<@group>]<pkg>[@<version>]
 ### force
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 * 别名：f
 
 强制下架。
@@ -51,21 +51,21 @@ ohpm unpublish [options] [<@group>]<pkg>[@<version>]
 ### publish\_id
 
 * 默认值：""
-* 类型：String
+* 类型：string
 
 可以在 unpublish 命令后面配置 --publish\_id <id> 参数，指定发布码。
 
 ### key\_path
 
 * 默认值：""
-* 类型：String
+* 类型：string
 
 可以在 unpublish 命令后面配置 --key\_path <p> 参数，指定ssh私钥路径。
 
 ### fetch\_timeout
 
 * 默认值：60000
-* 类型： Number
+* 类型： number
 * 别名：ft
 
 可以在 unpublish 命令后面配置 --ft, --fetch\_timeout <number> 参数，设置操作的超时时间，如果没有指定，默认超时时间为60000ms。
@@ -73,21 +73,21 @@ ohpm unpublish [options] [<@group>]<pkg>[@<version>]
 ### strict\_ssl
 
 * 默认值：true
-* 类型： Boolean
+* 类型： boolean
 
 可以在 unpublish 命令后面配置 --strict\_ssl true 参数，校验 https 证书；配置 --strict\_ssl false 参数，不校验 https 证书。
 
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型： string
 
 可以在 unpublish 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 

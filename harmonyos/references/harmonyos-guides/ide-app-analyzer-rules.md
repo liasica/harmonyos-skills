@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 规则体检
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 规则体检
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:31+08:00
+scraped_at: 2026-11-28T10:34:40+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:c21a4fe06d94a9b7541b0a035f671218882b712e44bc161cc44aecf726d833c1
+content_hash: sha256:6527e9d0963ecd31b90022ae2bee260519c1153338a0839350b3d86c898000cb
 ---
 
 规则体检支持兼容性、性能、功耗等多种测试类型，开发者可自主选择不同的规则进行测试。
@@ -18,7 +18,7 @@ content_hash: sha256:c21a4fe06d94a9b7541b0a035f671218882b712e44bc161cc44aecf726d
 
 1. 通过以下任意一种方式，打开AppAnalyzer。
    * 点击菜单栏**Tools >** **AppAnalyzer**，打开AppAnalyzer页面。
-   * 在编辑窗口右侧的工具栏，点击**AppAnalyzer**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/798S8Mh4S7ygHsMobS_Z2w/zh-cn_image_0000002779407000.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=01827615C462ECE5C09A5279E349E3C72063F7A466C520B0DB2FDEAC22D9A35E)，打开AppAnalyzer页面。
+   * 在编辑窗口右侧的工具栏，点击**AppAnalyzer**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/mK0DS27KT-G_elb2raCwww/zh-cn_image_0000002779407000.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=97DB0ABD41A019D731942D7FCC2329986E4DF4ABAE6AAFBEE8CDBFCE86671199)，打开AppAnalyzer页面。
 2. 连接设备或启动模拟器，并对应用进行[签名](ide-signing.md)。
    * 真机：参考[使用本地真机运行应用](ide-run-device.md)连接真机。
    * 模拟器：在AppAnalyzer首页创建或启动模拟器，具体请参考[管理模拟器](ide-emulator-management.md)。
@@ -29,11 +29,11 @@ content_hash: sha256:c21a4fe06d94a9b7541b0a035f671218882b712e44bc161cc44aecf726d
 
 ### DevEco Studio 6.0.1 Beta1及以上版本
 
-1. 点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/PEnELZmKTOSptzjz0V-NDQ/zh-cn_image_0000002779407002.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE6A49E59FD1FB111CD355B5E10C06F2071828F8B9ED8B786EED0C0917743E79)图标选择Product、Target和构建模式，点击**Apply**后，在AppAnalyzer的首页中可查看对应的编译产物和构建模式。关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
+1. 点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/X7nvKr4bT-uRJoDKc5E4dw/zh-cn_image_0000002779407002.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=89D11E4BA5C93DC1F2EFC5C55B480610BD61791C4EC7D2AE7A8D88CDBFDCA917)图标选择Product、Target和构建模式，点击**Apply**后，在AppAnalyzer的首页中可查看对应的编译产物和构建模式。关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/9YO1SAqRSIOOGwkVYUth0A/zh-cn_image_0000002779566978.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=549B823A10C25BA3B002C66B8D21CA9BBEDF988F263AE304D7F7C328E462D2DF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/4YGwV_o4TYeT2SHsF1PFUg/zh-cn_image_0000002779566978.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FB994A64B06EBBDAE6212679534264CD596D541526628EB0D0B1588462C11CB)
 2. 在**AppAnalyzer**页面，选择**规则体检**，选择预置的体检卡片，或根据需要自定义卡片。
-   * 点击预置的卡片开始体检，如需查看卡片包含的体检规则，请点击卡片右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/vJoh5_WAQIuut1YwdwmB6w/zh-cn_image_0000002808766553.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=F61B1560FE47F4D5C6A4425011948D129A9F6EE873A19FA5F0A4AA7C1C3FE295)按钮，规则详情请参考[规则总览](ide-app-analyzer-all-rules.md)。
+   * 点击预置的卡片开始体检，如需查看卡片包含的体检规则，请点击卡片右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/6qR8EZpJSmW_WSlcLwcYGA/zh-cn_image_0000002808766553.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CBFC1A8E1F089E00EAA1885F4F09E2A12D9B298AC1ECE9A63781500BC2AE2B1)按钮，规则详情请参考[规则总览](ide-app-analyzer-all-rules.md)。
    * 如果需要自定义体检规则，点击**+**，选择自动/手动测试和体检规则，部分规则可修改单次录制时长，请根据界面提示进行修改。
 
      如果仅选择稳定性规则，从DevEco Studio 6.0.2 Beta1版本开始，支持录制回放遍历模式，开发者先手动录制在设备上的操作，录制结束后AppAnalyzer会自动保存录制文件，选择录制文件开始体检后，AppAnalyzer会按照设置的回放时长，自动循环执行录制的操作，体检结束后可[查看报告](ide-app-analyzer-rules.md#li22241112508)。
@@ -43,14 +43,14 @@ content_hash: sha256:c21a4fe06d94a9b7541b0a035f671218882b712e44bc161cc44aecf726d
      + 请确保录制过程可循环，例如从B页面开始录制，最后结束录制时要停留在B页面。
      + 录制回放功能仅支持直板机真机。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/wiAOeGQ7Q4aFULwrE33sGQ/zh-cn_image_0000002808886629.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=03214DBAC43536CAAA3D5FF66DBC78E1E27639F3E575D15F7554B93D4F31B0AC)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/peYKrTB5QJ2xB5O-28mVVw/zh-cn_image_0000002808886629.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F2BC903101444257EBF54BA68EA34951ABD6A9D61B4C4D91486FEE4D3C2E096)
 
    **说明** 
 
    以下体检规则不支持在编译模式为release下运行，请把编译模式切换到debug再重新检测：组件树节点数目过大、执行函数耗时过长、渲染界面耗时过长、ForEach中item数量过大。
 3. 开始体检后，请等待AppAnalyzer完成构建、签名、安装等操作。如果本次体检依赖Python三方库并且本地未安装，AppAnalyzer会同步下载安装三方库。在测试过程中，请保持连接的设备为解锁亮屏状态。
-   * 如果是自动测试，根据界面提示，登录应用账号后点击继续按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/GUzGDGdXTTKHQQtZmyo02A/zh-cn_image_0000002779566966.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4162157C06C6916E1515C979E5A09F0BD1BF00FD3B994DD2672E7A31200E723A)，继续测试；或者无需登录账号，直接点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/bTtm0nm6SLupnJt5KLwklQ/zh-cn_image_0000002808766561.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1E6DED2689B82D764C531E409494E4C8E627214C7A0006E6D25126712F1FC46)按钮继续测试。
-   * 如果是手动测试，根据界面提示，点击开始按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/JEH7R6HBQ3CssWDlq-DMLA/zh-cn_image_0000002779566976.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=7843B87B4594B55CD3C084559BD898892A813E866233F6FE4BC46C768DCB9836)开始录制，并手动遍历应用/元服务的功能。如果在录制时间范围内未遍历完成，可继续点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/u9-U7iTNQoyL_MNCw7LJaw/zh-cn_image_0000002808886643.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA0EF23E5308F7462ECD9F4C46C67A71B18DDCD5084F35CE3EE324106808F850)按钮，进行多次遍历，遍历完成后点击结束按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/FzPG6XtZQzGXX3YQltFUzw/zh-cn_image_0000002808766551.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=51D2A02AEC6829537174277853BF9F0A2B6CC4198100423C2165C99F8631ACCD)。
+   * 如果是自动测试，根据界面提示，登录应用账号后点击继续按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/0215ep5-QWimKqGWYyEiEA/zh-cn_image_0000002779566966.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=093B09F5AAB4BF7BA3D3AB33B7EC0BC065ADEC50635D76EE3262F5635061D0F8)，继续测试；或者无需登录账号，直接点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/--xTqhoJSw6Z5utRcfsXEw/zh-cn_image_0000002808766561.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9E9D98E8CA1EEDFECE67816A648F5BB29ACFE06574206E577D4355AE3F49DF9)按钮继续测试。
+   * 如果是手动测试，根据界面提示，点击开始按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/d_g23yo6SXOJkWNAqZ5rJg/zh-cn_image_0000002779566976.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=11DBC6A81ABE9637989F637181C39E64C415A87B0A3B7EAFB221A2815DD1A632)开始录制，并手动遍历应用/元服务的功能。如果在录制时间范围内未遍历完成，可继续点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/z55yC7ZRQ1iwMWRj5Bwdgg/zh-cn_image_0000002808886643.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AA8130FC92BCDE707A7051CFFFAD6615DDDCFE766DE288C1716EC7639AF8126)按钮，进行多次遍历，遍历完成后点击结束按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/_HVIpin7QmG_YIV5VrhJrw/zh-cn_image_0000002808766551.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB3E7AB95A5055F3D8A3B9CE2ED6A350E193A38E232918F6C275843C0EC8C9D3)。
 4. 查看测试报告，包含以下内容。
    * **源文件、调优文件（包含trace文件和调用栈文件）或snapshot文件、时间戳等**：点击源文件可跳转到问题源码，点击调优文件或snapshot文件支持直接拉起性能分析工具Profiler并导入性能检测的问题数据进行调优分析，点击时间戳可以打开Profiler并定位到问题发生的时间范围。
    * **分析文档**：点击链接可跳转至官网文档，参考文档对检测出来的问题进行分析。
@@ -60,11 +60,11 @@ content_hash: sha256:c21a4fe06d94a9b7541b0a035f671218882b712e44bc161cc44aecf726d
 
    从DevEco Studio 6.1.0 Release版本开始，支持导出报告，以实现报告的共享，具体可查看[导出报告](ide-app-analyzer-history-reports.md#section78017171818)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/iAdwKX_STKin8fD51hmK8w/zh-cn_image_0000002779406998.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=93CE50D5D1BEC9E923C60C7DA114313017494E87CEFC33564BB1FEBD95C8A39B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/RJIg_F9DR1Or0pZBb7DlVg/zh-cn_image_0000002779406998.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA8B12B90F0E6E22630343E20DBE9DE6885C4470B05CCB152D66CAC02C67C4A9)
 
 ### DevEco Studio 6.0.1 Beta1以下版本
 
-1. 如果使用DevEco Studio 6.0.0 Beta2及以上的版本，支持在体检过程中自动编译构建打包。点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/x1okz8z5SVCGNfBrkcCuJA/zh-cn_image_0000002779406990.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBF3356548D46A74F0678546364C286FC7953573AAC83EA23BC2E860768CD039)图标选择Product、Target和构建模式，关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
+1. 如果使用DevEco Studio 6.0.0 Beta2及以上的版本，支持在体检过程中自动编译构建打包。点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/qLL3GB_iTM6poxHCsHZfIg/zh-cn_image_0000002779406990.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=86C2F190E4ABBD39B39BBD5208915D8CDD2B33B8051B3CDA2B940FEA9DABE8AF)图标选择Product、Target和构建模式，关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 2. 在**AppAnalyzer**页面，选择**规则体检**，选择自动或手动方式，**模块**选择框选择HarmonyOS应用/元服务工程模块。
    * 自动方式：体检时无需手动遍历，AppAnalyzer会自动检测。
    * 手动方式：体检时需要根据提示手动遍历HarmonyOS应用/元服务的功能。
@@ -74,7 +74,7 @@ content_hash: sha256:c21a4fe06d94a9b7541b0a035f671218882b712e44bc161cc44aecf726d
    * 如果使用DevEco Studio 6.0.0 Beta2之前的版本，只有已经完成签名编译打包的模块才能被选中。
    * 支持同时添加多个模块，要求所有模块的bundleName相同，且只能包含一个entry。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/TzqcG41vRcSKHojGhizsoA/zh-cn_image_0000002808886633.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DFEFFBEBFC592FE313F8CA48BCEBDF7BA44171FA02444C7A3B23900B282A28E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Ws18YFQcT4SUxQ4-DC7fOw/zh-cn_image_0000002808886633.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=7003043B368FD3739B33274CBCEE82F18CBF041C923457419594870A879A4E6D)
 3. 选择待测试的规则，规则详情请参考[规则总览](ide-app-analyzer-all-rules.md)，然后在**AppAnalyzer**页面底部单击**开始**按钮，开始测试。部分测试规则依赖Python，请根据AppAnalyzer的指引，下载Python及三方库。在测试过程中，请保持连接的设备为解锁亮屏状态。
 
    **说明** 
@@ -83,16 +83,16 @@ content_hash: sha256:c21a4fe06d94a9b7541b0a035f671218882b712e44bc161cc44aecf726d
    * 支持Python 3.9~3.12版本，推荐使用Python 3.11.7版本。
    * 部分规则体检会进行投屏，如果测试过程中同时使用其他投屏工具，如DevEco Testing，可能会对UX测试的投屏造成干扰。如果投屏中断或不同步，可点击左上角刷新按钮重新投屏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/73Y5T1gTRuK288eNFcNKjA/zh-cn_image_0000002779406996.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5041D720A9E2CD6B14C5D1EDEE19AA86DB681D5672725E62EEBDF8A7F7A7CDEC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/gyJ_UpW9QL-QNMY21rZwlw/zh-cn_image_0000002779406996.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC5CB354580EED0BB4C3ED3199126DB51A99C403946F9A0401C032DB872A4B78)
 4. 如果是手动方式，在安装应用/元服务完成后，需要根据提示手动遍历HarmonyOS应用/元服务的功能。手动遍历完成后点击**结束**按钮停止测试任务，等待数据解析完成后，查看测试结果如下。
 
    * 测试报告：检测结果的汇总信息，点击**详情链接**可跳转到对应的详情报告。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/2hf8WXnTRlKPGP6nUodspQ/zh-cn_image_0000002779566974.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=35C4C59BC78D536CA1FEFC47AB9B5F411483496D4EF0FF798B6228CD93D3C27C)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/-zdaIfitTtW6XxoPQIbkcQ/zh-cn_image_0000002779566974.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A6878A16ECCE6A4E7459AB2224234B23B675B75378858D8C56FD6206AF5314E)
    * 详情报告：只包含检测失败的规则，给出详细的测试结果、相关的定位文件和对应的优化建议。
      + **源文件、调优文件（包含trace文件和调用栈文件）或snapshot文件、时间戳等**：点击源文件可跳转到问题源码，点击调优文件或snapshot文件支持直接拉起性能分析工具Profiler并导入性能检测的问题数据进行调优分析，点击时间戳可以打开Profiler并定位到问题发生的时间范围。
      + **分析文档**：点击链接可跳转至官网文档，参考文档对检测出来的问题进行分析。
      + **优化建议**：点击链接可跳转至官网文档，参考文档对检测出来的问题进行优化。
      + **Code Linter**：在“最佳实践测试”项目中，可直接在拉起Code Linter的同时，传递有问题的代码文件名，自动执行代码检查。在“快速性能测试”和“性能测试”项目中，因无代码文件名等信息，部分检测规则不支持自动执行代码检查，仅支持拉起Code Linter。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/2IddW6sBR06YttboZr3wTQ/zh-cn_image_0000002808886635.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=B98B7852550FAC46431958CC52A3B893935AB9F71AC9BF986E88522FA784559D)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/CSJ4O9GGRvio-lw9Kw32qw/zh-cn_image_0000002808886635.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=9365D1824D889D824B4983B68C01F37DC7A2047002D529A63BC87BD8FBC6B8CD)

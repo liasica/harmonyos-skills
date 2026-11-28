@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-arku
 title: 布局分析
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 布局分析
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:46+08:00
+scraped_at: 2026-11-28T10:34:55+08:00
 doc_updated_at: 2026-11-23
-content_hash: sha256:db2488422cafd3932c5e576098fd3ef0cdf7ef80ee4a3e18335e70e52c5b9f2b
+content_hash: sha256:ff8197cc5a2875f81efe11ca0ad86f2f583c58517c32cfd6b3eb3c50c8341f66
 ---
 
 开发者可以使用ArkUI 界面检查器，在鸿蒙电脑DevEco Studio上查看应用在真机上的UI显示效果，并通过查看多次操作后的界面状态，快速分析定位UI界面存在的问题。
@@ -35,47 +35,47 @@ ArkUI 检查器支持的功能包括：
 
 ## 操作步骤
 
-1. 在DevEco Studio右侧边栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/5kgTgdgkTLKpobcNyXZn9w/zh-cn_image_0000002792001126.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E1B9C74A854DFCB4A3401D9E9115B4E9CDCB01628EFE0D57F571405FEA2DD38 "点击放大")图标展开ArkUI 界面检查器。
+1. 在DevEco Studio右侧边栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/dq7MaVrxTMCaB2uvJDibxA/zh-cn_image_0000002792001126.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9C00CDAC1FBA898DEBD0E91ABBE0C6260A505CD8F4CEF74409C2337126319FC "点击放大")图标展开ArkUI 界面检查器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/mi0oZq-LScyFeie8Xjf6Vg/zh-cn_image_0000002820681085.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E62460E993E30D5F036B377701B004DEB6E7CF723952BD12E322B255ED6A946)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/iYLA1FnKRBusDlK2ORoZmQ/zh-cn_image_0000002820681085.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF86E7AA3A96D8EF5AC88AB6FB269E1D6438310D51546BF6FFB26223A8D2EEFF)
 2. 在设备应用列表选择要查看的设备和设备上的进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/IABPzS0GTziweDn-xqmRSQ/zh-cn_image_0000002820721089.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCCC1EFE705296345CE352E1A9B361E006BECB131D618867A3091E3635102AA9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/f-es62D_RbuMJRd7wXmr2A/zh-cn_image_0000002820721089.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=7629388E5E47B30BA425C86914C42A71FE913EB7BC106052278D5FCF49FE61E6)
 3. ArkUI 界面检查器上方区域显示当前设备的UI界面，左下方区域为当前的组件树结构，右下方区域为选中组件的属性信息。
 
-   可以在左下方区域组件树上或在上方UI界面点击选择组件。当设备上UI发生变化时，可点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/J-BEoSZ7TzqZYAZNIlZ-rg/zh-cn_image_0000002792001122.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=6079136D25A92678F04464AC1B689E4A4563874BCD3C2B2C5597AF8CA9583EF6 "点击放大")按钮同步设备上的UI效果。
+   可以在左下方区域组件树上或在上方UI界面点击选择组件。当设备上UI发生变化时，可点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/jpAQSzG9QAyMWtx9cUepew/zh-cn_image_0000002792001122.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=C84896D32CA56DE0B0E343F8903ACFCC99038BE5D4D71FAA9583B30FBFA75A48 "点击放大")按钮同步设备上的UI效果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/ZQfcWFNYSsuRyV_08gAeZw/zh-cn_image_0000002792001120.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAB86D1151B02C2D645465ADFB1E8A553E963494543E46FD0CDA6312405F0D26)
-4. 点击右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ObzajXG7TDai66G1cbjsXw/zh-cn_image_0000002791841150.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=61C7D37A33CACDD302D773DA0E4D61F49A5772BA4E457E33A4AE4FE0DC5885EF)按钮，可断开与设备的连接。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/YiAy8G7LRjy7hs9bh6Ye0w/zh-cn_image_0000002792001120.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADC6D89326CAE60CAC4613A2E91E30D87D4E2E0539204960BD57B0189DCE3AE6)
+4. 点击右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/DHyBKg8CTzG4ZhHIcdGWvQ/zh-cn_image_0000002791841150.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=499749C3696B8EBABDE2BC4C856100F780E26BA4C737691FC744003DEB31DB6D)按钮，可断开与设备的连接。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/e7T3J91ES0KARh7VKm-MHw/zh-cn_image_0000002820721091.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=181042F19C3F26F56F1E52C60758B390AE2A2D6531D65EBC341D4E463A4FE436)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/KBR6Ksc6RCaFxUSP8n5jKw/zh-cn_image_0000002820721091.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=36F4ADB46EBC99BC7B6A0C5991DEF5250326ECA56C92B281B0D9CF3CE5C216AD)
 
 ## 显示组件信息
 
-* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/FdFrvqJiSoO6yRrr9aoIZg/zh-cn_image_0000002820721087.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=A73FEA04FB8260A5C3CED25408428ADC87726C0B426AB0AB63F845A8B14F017E)，勾选**显示统计数据**，可显示组件树组件信息。
+* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/80U7dOanQY-3p7-v18-9vA/zh-cn_image_0000002820721087.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CC881EEDEDBE03F39E2567EB148086238A44BD36F281DB9CDEEF64404E8767F)，勾选**显示统计数据**，可显示组件树组件信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/sFy-ofbiTwiEkNKaia12gQ/zh-cn_image_0000002820681079.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=D976C85EDEB5997B36A219ED8BD97F47C80617ACCB9AD6B82FFFF92ED2D4B5AD)
-* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/5KqHD1WSTd6r2IQEwf8IZA/zh-cn_image_0000002820721093.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=C755A7CE196F1F9EE8C46A7FA8FB54E9560AD4D1A975A0A6A96FEF665D2D0D46)，勾选**显示隐藏组件**，可显示隐藏的组件。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/3F_MqLt-S9i22ylQvytYgQ/zh-cn_image_0000002820681079.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E2D3C257B9FF790A034A2CB915ED222B9A2EE8800C8E39B822DBA1BA428426B)
+* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/tVSxzR2kRsmXw9P0D0ttsA/zh-cn_image_0000002820721093.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=182559B4208791C397EC57394AB94B7EB5B9F7EEDD593031AE1EB21A42350FED)，勾选**显示隐藏组件**，可显示隐藏的组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/FfIy6ZOhSdCM1WkVPpo-Eg/zh-cn_image_0000002791841146.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=116EBCFEA12B5E86C698218C081B12DB08BCFE009C16401D456951CB362399F8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/paG0QVMrQDyvlhkj8ooslw/zh-cn_image_0000002791841146.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=27D3F7E97CB969E24D61E82D0C1D91A3540D4D629501B5F18D7361F9A8BE6CBE)
 
 ## UI组件源码跳转
 
-1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/HPXfVuiYRtWbrKoUZ07jdA/zh-cn_image_0000002791841148.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0C68AD1A6B2E78815DE732AA651930F86092B1542D26EE75DC31F132D07F18D)按钮，在菜单中点击**Application**并选择相应模块，点击右侧编辑![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/-MKHmo27RDmxSEv6TR2OPA/zh-cn_image_0000002792001124.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=562891A9FB88E77DEA33C38EBED9E63D8F554A4E9862A96EED525270F0BBFF8F)按钮打开配置界面。在**通用**中，勾选**启用源码行跳转**，重新运行工程。
+1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/0dC4ezmBRDeXZMW8hKoBlw/zh-cn_image_0000002791841148.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=E39BEA5278C8012A3DE5A6918379B1F94702DA16E463B8383402DD308E358D4A)按钮，在菜单中点击**Application**并选择相应模块，点击右侧编辑![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/CwiXSUbqRvOEIghPkExNmg/zh-cn_image_0000002792001124.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4B9E1F77F67F99C11778FEFD9E6597372540B16D554B002264F0E09672398A0)按钮打开配置界面。在**通用**中，勾选**启用源码行跳转**，重新运行工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/hHPknCT3QzCxBTWvyYweug/zh-cn_image_0000002820681083.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=652FB86D8C832D0C33B373EC1F5C47656661E8265E3D8BFCF9D8EF16B52B9B7F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/rNvsZlztTja_MKDqPitiOw/zh-cn_image_0000002820681083.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BBC800CD85E857134E9B5CBF89F91A157664D21B990FB8C0A580220A3990CD1)
 2. 在ArkUI 检查器中，选中要进行源码跳转的UI组件。点击右下方的源码跳转，即可跳转到UI组件源码位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/gCEhwfpOQMawL_hZKdcM5g/zh-cn_image_0000002820721085.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=C68C2AC06DC249D9D1AB404AD1EA6AE381F32DD478148FA35B4E6D6902722A39)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/9oE8XubLQ1W7XGeKCQldAw/zh-cn_image_0000002820721085.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=388707B4281CDD1DB2E76E4D04775D32F34106841CDD8D61539D1355DBE624F6)
 
 ## 显示布局边框
 
-点击组件树上方的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Y025loxTSj--Gjx5GjxtSw/zh-cn_image_0000002820681081.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=97E9D5445005C9A77AA464FF921F273A441A9038D1DF69DD62EE89DB8D69E647 "点击放大")按钮，可显示当前页面组件的布局信息。
+点击组件树上方的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/DNXY62fYRmW9q8CQlh11lg/zh-cn_image_0000002820681081.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=136FB35EE1AB383B961330D8F7C7474345019D89626F46F9C33E087B562B411D "点击放大")按钮，可显示当前页面组件的布局信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/ANXrGHeIRm2N0SrXdTJchg/zh-cn_image_0000002791841152.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF6E69D551D3E1000DD4E7CF50B0B720CF34A39E75D1959C9E1E18A3FF2B2CF4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/BMUiQFS0R82QQ0zuLxjn0g/zh-cn_image_0000002791841152.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=48FE073CF8336891F4F54299D704F08409AA61417529AEB7ACA749D024DE6FEF)
 
 ## 查看UI组件的状态变量
 
 点击组件，可以查看组件的状态变量，以及状态变量影响的下一层组件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/-LUFd1vuR7ad9-jdiEMcrw/zh-cn_image_0000002820681087.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=33CA63EEA92E3D528C32B930023B896CF396F1F2F16BC7B1F68613A0A6E72937)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/qf3youcsS-yE2Q-EPG4m-A/zh-cn_image_0000002820681087.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A9B0BBEFF01A54F16938347032BBCAB73B8DB138B4451469546B10B9D2D1D86)

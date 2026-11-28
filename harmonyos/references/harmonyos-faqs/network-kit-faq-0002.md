@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/network-kit-faq-0002
-title: 网络信息获取与状态监听常见问题
-breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 常见问题 > 网络信息获取与状态监听常见问题
+title: 网络IP与连接状态监听常见问题
+breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 常见问题 > 网络IP与连接状态监听常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:21+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:d4eb2a8b1d0f1c38415bfabc95292b52a0a34c531dccab7d8c681e841dc80c6a
+scraped_at: 2026-11-28T10:41:01+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:14b1229dd300226f8b50e1d679e865e06ad7690b4ab248e5a294308c9f38aa0a
 ---
 
 **Q：如何判断当前网络的IP地址版本是多少？**
 
-**A**：使用[NetAddress](../harmonyos-references/js-apis-net-connection.md#netaddress)类获取当前网络的地址信息，NetAddress类的family属性用于指定IP地址的版本，family属性的值为1表示IPv4，为2表示IPv6 。示例代码如下：
+**A：**使用[NetAddress](../harmonyos-references/js-apis-net-connection.md#netaddress)类获取当前网络的地址信息，NetAddress类的family属性用于指定IP地址的版本，family属性的值为1表示IPv4，为2表示IPv6 。示例代码如下：
 
 ```ts
 import { connection } from '@kit.NetworkKit';
@@ -59,7 +59,7 @@ struct Index {
 
 **Q：如何解决网络连接状态变化的公共事件返回内容为"NetType":1的问题？**
 
-**A**：返回"NetType":1枚举值表示为NET\_CONN\_STATE\_IDLE网络空闲状态。
+**A：**返回"NetType":1枚举值表示为NET\_CONN\_STATE\_IDLE网络空闲状态。
 
 如果是监听网络变化，建议使用@ohos.net.connection的能力，请参考[@ohos.net.connection (网络连接管理)](../harmonyos-references/js-apis-net-connection.md)。
 
@@ -161,7 +161,7 @@ struct NetWork {
 
 **Q：请问设备连接Wi-Fi，或者在蜂窝网下怎样获取本机的IP？**
 
-**A**：场景一，设备连接Wi-Fi后，如何获取当前设备的IP地址？
+**A：**场景一，设备连接Wi-Fi后，如何获取当前设备的IP地址？
 
 使用@ohos.wifiManager模块[getIpInfo](../harmonyos-references/js-apis-wifimanager.md#wifimanagergetipinfo)、[getLinkedInfo](../harmonyos-references/js-apis-wifimanager.md#wifimanagergetlinkedinfo)接口获取当前设备的IP地址，其中ipAddress值为number类型，需要转换为IP常用格式，具体请参考[IP格式转换](faqs-connectivity-4.md)。
 
@@ -173,4 +173,11 @@ struct NetWork {
 
 **Q：connection.getConnectionProperties方法在5.1.5.150下为何无法获取到IPv6的IP地址？**
 
-**A**：目前6.0版本支持fe80，[connection.getconnectionproperties](../harmonyos-references/js-apis-net-connection.md#connectiongetconnectionproperties)可以正常获取IPv6地址。
+**A：**目前6.0版本支持fe80，[connection.getconnectionproperties](../harmonyos-references/js-apis-net-connection.md#connectiongetconnectionproperties)可以正常获取IPv6地址。
+
+**Q：手机和电脑连接同一WIFI网络，使用各自的浏览器访问“XXXXIPv6”测试网址，电脑IPv6检测是正常的，但是手机识别不到IPv6地址。这是什么原因？**
+
+**A：**部分手机设备仅支持通过SLAAC无状态地址分配获取IPv6地址。若路由器设置为DHCPv6有状态地址分配模式，手机将无法获取有效IPv6地址，而Windows电脑则支持两种模式。可采用以下方式排查：
+
+* 登录路由器后台，将IPv6地址分配模式改为SLAAC+无状态DHCPv6（或关闭有状态模式）。
+* 更换其他手机测试，排除单设备故障，使用其他平台设备连接同一WIFI检测IPv6地址是否正常。

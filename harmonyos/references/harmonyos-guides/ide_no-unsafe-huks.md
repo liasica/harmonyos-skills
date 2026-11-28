@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unsafe
 title: "@security/no-unsafe-huks"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security > @security/no-unsafe-huks
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:57+08:00
-doc_updated_at: 2026-11-11
-content_hash: sha256:5c55202b421ca2922c4d7fa0edcfd16036d82a44bc6a60ca730e721befb7b04d
+scraped_at: 2026-11-28T10:34:33+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:170b77cec447c316db201f4daa3c30be3ef772736962f54dc34be184790d5043
 ---
 
 此规则禁止在HUKS中使用不安全的加密模式ECB，不安全的摘要算法MD5、SHA1，填充算法NONE、PKCS1-V1\_5。推荐使用HUKS的AES-GCM算法，详情参见：[对称加解密算法](../AppGallery-connect-Guides/aegis-encryption-and-decryption-symmetry-0000001861247310.md)。
@@ -28,10 +28,11 @@ content_hash: sha256:5c55202b421ca2922c4d7fa0edcfd16036d82a44bc6a60ca730e721befb
 ## 正例
 
 ```screen
-import {huks} from '@kit.UniversalKeystoreKit';  
-let keyAlias: string = 'keyAlias'; 
+import { huks } from '@kit.UniversalKeystoreKit';
+
+let keyAlias: string = 'keyAlias';
 let properties: Array<huks.HuksParam> = [
-  { 
+  {
     tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
     value: huks.HuksKeyAlg.HUKS_ALG_ECC
   },
@@ -42,35 +43,36 @@ let properties: Array<huks.HuksParam> = [
   {
     tag: huks.HuksTag.HUKS_TAG_PURPOSE,
     value:
-       huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN |
-       huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY
+    huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN |
+      huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY
   },
   {
     tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,
     value: huks.HuksCipherMode.HUKS_MODE_CBC
-  }, 
+  },
   {
-    tag: huks.HuksTag.HUKS_TAG_DIGEST, 
+    tag: huks.HuksTag.HUKS_TAG_DIGEST,
     value: huks.HuksKeyDigest.HUKS_DIGEST_SHA256
   },
   {
-   tag: huks.HuksTag.HUKS_TAG_PADDING,
-   value: huks.HuksKeyPadding.HUKS_PADDING_PKCS7
+    tag: huks.HuksTag.HUKS_TAG_PADDING,
+    value: huks.HuksKeyPadding.HUKS_PADDING_PKCS7
   }
-]; 
+];
 let options: huks.HuksOptions = {
-    properties: properties
-}; 
+  properties: properties
+};
 huks.generateKeyItem(keyAlias, options);
 ```
 
 ## 反例
 
 ```screen
-import {huks} from '@kit.UniversalKeystoreKit';  
-let keyAlias: string = 'keyAlias'; 
+import { huks } from '@kit.UniversalKeystoreKit';
+
+let keyAlias: string = 'keyAlias';
 let properties: Array<huks.HuksParam> = [
-  { 
+  {
     tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
     value: huks.HuksKeyAlg.HUKS_ALG_ECC
   },
@@ -81,25 +83,25 @@ let properties: Array<huks.HuksParam> = [
   {
     tag: huks.HuksTag.HUKS_TAG_PURPOSE,
     value:
-       huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN |
-       huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY
+    huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN |
+      huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY
   },
   {
     tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,
     value: huks.HuksCipherMode.HUKS_MODE_ECB
-  }, 
+  },
   {
-    tag: huks.HuksTag.HUKS_TAG_DIGEST, 
+    tag: huks.HuksTag.HUKS_TAG_DIGEST,
     value: huks.HuksKeyDigest.HUKS_DIGEST_SHA1
   },
   {
-   tag: huks.HuksTag.HUKS_TAG_PADDING,
-   value: huks.HuksKeyPadding.HUKS_PADDING_NONE
+    tag: huks.HuksTag.HUKS_TAG_PADDING,
+    value: huks.HuksKeyPadding.HUKS_PADDING_NONE
   }
-]; 
+];
 let options: huks.HuksOptions = {
-    properties: properties
-}; 
+  properties: properties
+};
 huks.generateKeyItem(keyAlias, options);
 ```
 

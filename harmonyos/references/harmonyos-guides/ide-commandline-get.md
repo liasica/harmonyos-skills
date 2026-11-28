@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-commandli
 title: 获取Command Line Tools
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 获取Command Line Tools
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:37+08:00
+scraped_at: 2026-11-28T10:34:46+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:d4f65d72ede57d0fc2ac43ad67f43aa6c43bec4c884e778b36c979fe584e9655
+content_hash: sha256:ff50c847d6b859bc42f4d405f351973c3aab557f4b5478973eeba112bbbc16d7
 ---
 
 Command Line Tools集合了HarmonyOS应用开发所用到的系列工具，包括代码检查codelinter、堆栈解析hstack、命令行构建hvigorw、三方依赖管理ohpm和SDK中包含的一系列工具等，本文主要讲解codelinter、hstack、hvigorw等工具的使用方式，关于SDK中包含的工具的使用指导请参考[SDK命令行工具](command-line-tools-overview.md)。
@@ -28,7 +28,7 @@ HarmonyOS SDK已嵌入命令行工具中，无需额外下载配置。
 
 例如将命令行工具解压到D盘根目录，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/v_rAdiDXTUeN2QlrI9Mlfg/zh-cn_image_0000002779407326.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6E9AFB5C3E53F96CB1ADF42D0643AB80E450E3551C8A696E7057A6F47C2AD9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/48HCHpVsRk-x7WYQcUcD5g/zh-cn_image_0000002779407326.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=83DDA7EC1032DA937700D0DA09DFF80BF4979AD287AB306D2B5FBF0000631F70)
 
 ### macOS/Linux
 

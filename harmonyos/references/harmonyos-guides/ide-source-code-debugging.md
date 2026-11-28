@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-source-co
 title: 三方库源码调试
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > 三方库源码调试
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:30+08:00
+scraped_at: 2026-11-28T10:34:39+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b545f5da21b4885136be8f7cff348ed7978bb692cece647b78f8e4ab9daafaa0
+content_hash: sha256:faf7388be7ccb130cf448a1d89f374d36846dd8b4d87c7a7fbcf04ef7106b881
 ---
 
 三方共享包分为静态共享包HAR和动态共享包HSP，两种共享包的源码调试方式有所区别，具体请查看以下指导。
@@ -17,7 +17,7 @@ HAR包分为字节码HAR和源码HAR，同时满足以下两个条件的是字�
 1. 查看HAR包的ets目录下存在.abc文件。
 2. 查看HAR包的oh-package.json5文件，存在byteCodeHar字段并且值为true。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/niMs2Q0JTvGnqOzDAjB9jg/zh-cn_image_0000002808886335.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5FEFC3F3D77F974026F440F7D1D19FD1E8BEB6507083616F5A2CC111E73939B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/KOX-b4_2Q_aTeXlo-l72-A/zh-cn_image_0000002808886335.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=695BB0CEEC2687F2D96AB7761CFF9245649336F2B660DD320F051386EE8F5CD8)
 
 ## 字节码HAR调试
 
@@ -31,7 +31,7 @@ HAR包分为字节码HAR和源码HAR，同时满足以下两个条件的是字�
 
    在工程级或模块级build-profile.json5中添加strip字段并设置为false，可以生成带调试信息的so文件，具体请参考[配置CPP](ide-hvigor-cpp.md#section2182144382320)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/-hgzxR64Tvi-NimmGg_FQQ/zh-cn_image_0000002808766255.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CA7427498BADDDF8C09336CDCD9F08623E866C431C32F40BDF23E1826F4D9AE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/-9uhlo3eSMud6dFvtVnfWg/zh-cn_image_0000002808766255.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=56BB80640BB645FB3A2A92E104A913B11BC0ADE0FE971B35DD060E9D2A3C5D68)
 2. DevEco Studio调试应用时会优先加载配置的so文件，本地so文件包含调试信息时，可以正常调试源码。由于so的源码文件信息为编译时的文件路径，若与本地的源码文件路径不一致时，需要关联源码文件，有两种方式：
    * 方式一：可以在**LLDB Startup Commands**页签中添加命令做映射，示例如下。
 
@@ -42,10 +42,10 @@ HAR包分为字节码HAR和源码HAR，同时满足以下两个条件的是字�
      + old-path：编译时的文件路径。
      + new-path：本地的源码文件路径。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/1IS6TQ-eTpiMV0U1RSzTbA/zh-cn_image_0000002779566680.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=77CA94DD79C73A8F405F3094224F64B18F40D45A86B255822ABAF5B08D7F5601)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/VLhTO2ECReut4_5q9bpp4w/zh-cn_image_0000002779566680.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=19371AF757048212C9D2EC46B1BCE9F16569E4E15530412BBF903ACDDA46164F)
    * 方式二：当Step Into进入汇编代码后，会弹出源码关联的提示，请点击**Select file**，选择本地对应C++源码进行关联。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/DwGCEyncTOK1mWPWBQeIlg/zh-cn_image_0000002779566666.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=BADC8DBEB42B1A0F49762FAEF601A5FF0E7A1FA220D35C87EBEE141E01733090)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/BgKHZfwuRt2S4dUmCKNn_g/zh-cn_image_0000002779566666.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=95B93B9D45959431D17B954BB61D991A66255747BBD3368DC01BADA1CF64ECD6)
 
 ### ArkTS代码调试
 
@@ -58,7 +58,7 @@ release模式编译的字节码HAR不支持调试。
 * **方式一：在主工程中调试。**
   1. 在主工程中导入字节码HAR对应的模块，确保模块的层级目录与HAR包工程的保持一致，例如HAR模块都在工程根目录下。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/W1AwdTorSbiidwySvoR7hA/zh-cn_image_0000002779406694.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FAB25E72DD43F6D6D9527ADFD372445F0A9A1DA1259FD00A9BF75A3D61C37F9)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/oed6s8CPSiGWsY6ZF-NHQw/zh-cn_image_0000002779406694.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDC0DE8851C9B9F05E9949F27F79BD2280505E8C6728BD4F3C0226030A20D58C)
   2. 导入成功后，由于debug模式编译的字节码HAR中包含[sourceMap](ide-exception-stack-parsing-principle.md)，调试时默认会关联当前工程的源码，此时可以在HAR模块上直接添加断点。
 * **方式二：在HAR包工程中调试，****通过修改前缀配置进行attach调试。**
   1. 在HAR包工程新建一个entry类型的demo主模块，如果主模块已存在则跳过本步骤。
@@ -77,18 +77,18 @@ release模式编译的字节码HAR不支持调试。
   3. 在HAR包工程主模块中调用HAR模块的接口，确保编译后主模块的sourceMap文件中包含HAR模块的相关信息。
   4. 构建HAR包工程，打开主模块的sourceMap，根据HAR的oh-package.json5中的name进行查找，将Index文件的前缀路径记录为localUrl，例如以下的demo|test\_stage\_ets\_library|1.0.0。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/SI7sGJKESmmOKgQWsq7cVA/zh-cn_image_0000002779406688.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AC102B25AA06E232D9DB1A02ECB90394220F655099A7A557CCA8A31F0D4C9E6)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/kHNTBllhRlGJGSE1PO9yhg/zh-cn_image_0000002779406688.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=271D90D026579037CD070470A671A90A639AD7016902D94043F5E76D05BD3AF8)
   5. 主工程应用在设备上运行起来后，在HAR包工程中通过attach方式对该应用进行调试，在Debug窗口获取程序加载时的前缀，记录为remoteUrl，例如以下的entry|@ohos/test\_stage\_ets\_library|1.0.0。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/bOv4WKfCTPyumdKEEG8uTw/zh-cn_image_0000002779566670.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F51974CDA44F178EAA8F7FC86A6D4ACAB4C439E626674DBBC4B402CFB21F08A)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/6PMiha34QQubarV2dWAEeg/zh-cn_image_0000002779566670.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=5077ED357292C91A4D336A84CA3BBCE985DB0FAFE1D1BE35274585BFD764980B)
   6. 点击**Run > Edit Configurations > Debugger** **> ArkTS Source Pairs**，点击**+**，填写前两个步骤获取到的**remoteUrl**和**localUrl**。
      + remoteUrl：应用程序加载HAR包的前缀路径。
      + localUrl：本地生成sourceMap中HAR的前缀路径。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/KZ9CjRhKQAiNR4VhQcBEWQ/zh-cn_image_0000002808766259.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=199E468D8DFDC554A712FFABE416049353191D7C5A20566192942B458BEAABF2)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/ZlzdMwHjRamd4Oapm493QQ/zh-cn_image_0000002808766259.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B90855ABC351A22E8A8C94C830CD7D8145571A66916CC2DC7C9867B02576002)
   7. 在HAR包工程中重新通过attach方式对主工程应用进行调试，此时可以在HAR模块上添加断点进行调试。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/XDDXS_MFSXC_l2792u_0Bw/zh-cn_image_0000002779406692.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=674E7D9529C99F706163099ECECE5467775E712DA64E8D49CC4E1413450D1EA1)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/5fUZcIOzQKqFCg5EpCO7tQ/zh-cn_image_0000002779406692.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=227BD146EA1F75AE4D7D7580EBB405C9563BA61DBFC71D3267D194187C9C925E)
 
   **说明** 
 
@@ -106,12 +106,12 @@ release模式编译的字节码HAR不支持调试。
 
 * 如果HAR包在本地没有对应源码，此时应用构建打包时引用的源码来源是工程级oh\_modules目录下的源码，只能针对oh\_modules下的源码进行调试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/iCs-R4D7SUytINWpOQCJCQ/zh-cn_image_0000002808766253.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF6632BB3F9ACE9EFB63467E72DDDC5016BD64B95C2C8F83246812A3C00B340D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/kivDf1B1SWe8EAvthkHkhQ/zh-cn_image_0000002808766253.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=16AF1C054AD4ED4435B9DF5169B721991D0E09552E8750321E0077EDB1E9BC1C)
 * 如果HAR包在本地有对应源码，调试时可关联本地源码以实现对源码的调试，有两种方式。
   + 方式一：参考[字节码HAR调试](ide-source-code-debugging.md#section1035165781918)。
   + 方式二：当Step Into进入oh\_modules中的ets代码后，会弹出源码关联的提示时，请点击**Choose Sources**，选择本地对应ets源码进行关联。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/YLv0rpqkTMKvs1h_xuAZvg/zh-cn_image_0000002808886339.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA9C0D12A65F6BF34A0D034D808A680B0B35216CE41E4DE4AF72AEEC68F21405)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/h2NzFOnJSIi-g58Ys6RhEQ/zh-cn_image_0000002808886339.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=52EBCA71ED69C8D24D808A64B934478C306A8248457005EBF52EE3375540A9D1)
 
 ## HSP源码调试
 

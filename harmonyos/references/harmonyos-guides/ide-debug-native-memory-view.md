@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 查看内存信息
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 查看内存信息
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:30+08:00
+scraped_at: 2026-11-28T10:34:38+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:70730c32617987f9b8e0099a4e22730b3789ed11137511221752ce765baa47b9
+content_hash: sha256:5d1d6802d75741a96242ab23ed8e7324030b80ab8c0d2132e7e38b438973fa96
 ---
 
 在 native 调试窗口中，点击“Layout Settings”，勾选 Memory View ，打开内存查看窗口。
@@ -14,11 +14,11 @@ content_hash: sha256:70730c32617987f9b8e0099a4e22730b3789ed11137511221752ce765ba
 
 在内存视图中，填写地址，点击“View”按钮，查看对应地址处的内存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/GVappt5XRk-rV1BXc82WFw/zh-cn_image_0000002779567148.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=B58243DE3FBB4228A119A42BAFC22E7C931C7AB805A8C163A1FEB0C99BC09F74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/ijVinVqdQyuU4rrYymORGQ/zh-cn_image_0000002779567148.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F832197355719E3C18595379CF66A39068D14031B5E848B7FBF3BBEA2C05FA0)
 
 点击“Settings”按钮，设置进制、偏移量和展示的内存字节数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/9hN59XqUSvyi1lmNoCVwVA/zh-cn_image_0000002808886811.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=584D597CC6DFF512B50F0EB6B7CAE45D0F48DF51D5FE7B024F77DD36039EFADA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/7GBBXM0GQzidznUcxcdtpA/zh-cn_image_0000002808886811.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4A97DA42D109D94878B4C51434EA020F9C4016E2D7158B1C8149F612D9E24BD)
 
 ## 内存转换
 
@@ -28,7 +28,7 @@ content_hash: sha256:70730c32617987f9b8e0099a4e22730b3789ed11137511221752ce765ba
 
 在“Variables”变量列表中的某一个变量处右键，在弹出菜单中选择“Inspect Memory”，自动跳转到内存视图展示变量存储地址处的内存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/RtwJG5UhTIKakcZWbcEdOg/zh-cn_image_0000002779407172.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2172D38DA3FEE64AAEDAD5F353B3A81F64D0ADADF04A84F6333E952B866B1A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/u_nnI2buRgSZdyDbwKCnyA/zh-cn_image_0000002779407172.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=933FF039C23E03757911672D02A44A76060676EE99B37B71A3152C6DC49455C5)
 
 ## 内存修改
 

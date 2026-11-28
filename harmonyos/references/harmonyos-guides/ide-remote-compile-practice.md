@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-remote-co
 title: 内存优化：远程编译实践
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实践说明 > 内存优化：远程编译实践
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:34+08:00
+scraped_at: 2026-11-28T10:34:43+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:24e80a0d999d9a4f51b8b1e1d9341368a881cdc6d1e299826fb472fa1ebda180
+content_hash: sha256:98ef60b001788923c4d975a6482a4d195c896a218088c5b83e8e8067647f1502
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:24e80a0d999d9a4f51b8b1e1d9341368a881cdc6d1e299826fb472fa1eb
 
 整个过程中，实际编译工作由服务端承担，本地仅负责发起构建和接收结果，无需保留完整的编译中间产物，从而有效释放本地内存资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/YDFf-ykhQ52iaLW5c8S8dA/zh-cn_image_0000002779566844.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D7734BD3BC3784EAAD9CC6CF01C535DB1685A8BA4F2F14B631CE3183C58C5B9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/NvSyxE9LRqyc75hhdOZ5vA/zh-cn_image_0000002779566844.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9CCDEFD3286E9FEEADC20A44B84C79ED3B32948FC84E033B8CA8593B652F410 "点击放大")
 
 ## 使用示例
 
@@ -218,7 +218,7 @@ content_hash: sha256:24e80a0d999d9a4f51b8b1e1d9341368a881cdc6d1e299826fb472fa1eb
 
 启动rsync服务和Python脚本后，在本地启动构建，即可自动转移到远端服务器进行构建。查看日志信息如下说明远程编译启动成功。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/j07qui1oT7ufHVmKWFf9uw/zh-cn_image_0000002808886507.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=520CC4CF1BE3F3775B7E91BB417965411146FF8EB84284933E7475FF9A49DCB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/i9hxXq-uRFev6j9liEIIvA/zh-cn_image_0000002808886507.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=838542290E7B7B4BFF9C13F9A37318505A2577F2784E595F6641EAE2DDA84510)
 
 ### 示例代码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 开发云对象
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云对象 > 开发云对象
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:21+08:00
+scraped_at: 2026-11-28T10:34:29+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:154fd084c1420328cfdc085e98bb51229a04ea3a55b41533d147bc420433e57c
+content_hash: sha256:06c4330f8ad80bcb0dce608c8764eb07ddae28ba7400377d6976c91f2b896c03
 ---
 
 云对象创建完成后，您便可以直接在云对象中编写需要实现的方法。例如，通过云对象实现add与subtract两个方法。
@@ -23,7 +23,7 @@ content_hash: sha256:154fd084c1420328cfdc085e98bb51229a04ea3a55b41533d147bc42043
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/M9F83AcfSkC2zwus-3pRhg/zh-cn_image_0000002179338600.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8387CDAE3C2002B3A7C25499ADAC40850A9CF48B87B30E26749F555EA65342D2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/hyFAP6jnQKuNNGOX7VJMNw/zh-cn_image_0000002179338600.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B888DBB6E888E26287ED0ADFB74AE7060EB787AD68DC56E9F417836A8254521)
 
    **注意** 
 
@@ -41,8 +41,8 @@ content_hash: sha256:154fd084c1420328cfdc085e98bb51229a04ea3a55b41533d147bc42043
 
    右击“package.json”文件，选择“Run 'npm install'”菜单，也可以实现依赖包安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/7w4kqYsTTjWoYees55D-Mg/zh-cn_image_0000002425894173.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=5565642752B01FF68246C0033AFC4A5F4BAFBF70B4238914D8419F7A3AD0FC60)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/oCZDscwxTK2nCFtbaaFspQ/zh-cn_image_0000002425894173.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFEA750D3800EB58B9B4D6F40163559BF949945743C0E255C81D2F7F275F2440)
 
    所有安装的依赖包都会存储在当前云对象的“node\_modules”目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/3ABR5KzxRzKhsUr3ZAN0eA/zh-cn_image_0000002425974957.png?HW-CC-KV=V1&HW-CC-Date=20261124T044221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD170B697F81797357DD7E1EC4B63C8F907BAB7C3D290877E988991E87207CD7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/kzYdXG_4R8m5Ggd9oB8Enw/zh-cn_image_0000002425974957.png?HW-CC-KV=V1&HW-CC-Date=20261128T023429Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4491187626ED18A2F8442C4F738E40156A2425EBB2591D9C09B047F77040E60)

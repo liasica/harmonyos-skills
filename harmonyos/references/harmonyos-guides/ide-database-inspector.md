@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-database-
 title: 数据库调试
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 数据库调试
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:30+08:00
+scraped_at: 2026-11-28T10:34:39+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:bc4ff0deb7a6681ecb5ebf69e78ecc68a4a79139d2ae9303f1318e33c397515b
+content_hash: sha256:ad42cc68d28f6328698dffef8605ff44b28afa98adea48ee79fc36e76f3d9401
 ---
 
 从DevEco Studio 6.0.2 Beta1版本开始，新增Database Inspector，支持在DevEco Studio上执行SQL语句查看、修改应用数据库，无需将应用数据库先导出到本地，提升开发调试效率，当前支持SQLite和向量数据库。
@@ -35,11 +35,11 @@ content_hash: sha256:bc4ff0deb7a6681ecb5ebf69e78ecc68a4a79139d2ae9303f1318e33c39
 
 1. 点击菜单栏**View > Tool Windows > Database Inspector**，打开Database Inspector。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/JColbHBfRT2WRbz4cgTS8w/zh-cn_image_0000002808886583.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B337AC89B2522FAF7ADA7886FFC908232A763EFCB0F19F7A0F087B8193FB0F8E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/_of1xrQtTO-Gjx-hsgrwOQ/zh-cn_image_0000002808886583.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8D4ED307EFDD401AA225D1219BDE5BA5F30E69FC68A5EE2094967C77293DAA2)
 
    Database Inspector打开后，页面各区域作用如下：①选择设备，②选择应用包名，③数据库和表信息展示，④SQL执行和数据查看。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/qVrjvnPKTLGOJeQP_r_3jA/zh-cn_image_0000002808766499.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=11887990A1DE0A74653F15D6BC9FF120EE8C70A3313276F5C86BDC60DD236A02)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/tMTeLHAzTWKbUr1wDutgJA/zh-cn_image_0000002808766499.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CA79BD58CA96932615AB729AEA4DEAEE1A93991CF6187F183F79F939A06E3BF)
 2. 从设备下拉列表中选择设备（设备需已连接）。
 3. 选择包名，点击右侧的**Connect to Databases**按钮，即可查看数据库相关信息。
 
@@ -47,12 +47,12 @@ content_hash: sha256:bc4ff0deb7a6681ecb5ebf69e78ecc68a4a79139d2ae9303f1318e33c39
 
    设备系统版本低于API 22时，Database Inspector会将数据库下载到本地计算机，界面上显示的是本地计算机路径，设备系统为API 22及以上版本时，界面上显示的是设备上的数据库路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/MBwJv1kgS2SPBBPcCcQAxQ/zh-cn_image_0000002779406938.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE280D5267DC6CDEFE9493F2C23E58DD566AC32CB45A508E89309D49B510EFD0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/HDGfe9UFSSKBI6lZQc7GyQ/zh-cn_image_0000002779406938.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=427BE506CD49EB19DF7FF6E7D99B48FD36D8627A53E94F1EC3700DD9E70F3EBB)
 4. 双击数据库表名，右侧区域展示表数据，默认按照20条/页展示。
 
    从26.0.0版本开始，支持可视化修改表中的数据（仅支持常规基础数据类型：字符串、数值、布尔等，不支持二进制数据类型）。双击单元格，输入数据后，按Enter键或点击其他区域提交。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/_pwJM88rQ5eWc4y2xX3mkg/zh-cn_image_0000002808766501.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=F83BC84116A069C8A645930DE9EB407437645C81F406F9AE8CF8E623A5BC336E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/V19zrcYvQs-zxFmUsTInmw/zh-cn_image_0000002808766501.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B3923F38349EB8ED10D1F4E534865AD61AB18027E15F9E9286C323C85B61742)
 5. 左侧区域点击**New Query**后，右侧会出现**SQL Editor**页签，根据需要选择数据库，并输入SQL后，点击**Execute**按钮即可查看或修改数据。
 
    修改数据后，点击SQL输入框下方的**Refresh Table**刷新页面上的数据。
@@ -62,4 +62,4 @@ content_hash: sha256:bc4ff0deb7a6681ecb5ebf69e78ecc68a4a79139d2ae9303f1318e33c39
    * 通过SQL修改数据或应用更新数据后，数据展示页面不支持自动刷新，需要重新执行查询语句或者点击刷新按钮。
    * 数据展示页面不支持可视化修改。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/H55rNWmxSJq2BYY7gt2v9Q/zh-cn_image_0000002779566916.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=134DF8110F72C9C416AE4F9E17997BE3E5EC1BE2A0FE2BB4D3FB4197063BEB48)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/NevAHR0GRJycJE_6SeN75w/zh-cn_image_0000002779566916.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=5925F4A1095BF33AE60A21D247C8B6526733D0EE790C2E77ACEF9A54941D44EC)

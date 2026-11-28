@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-unpu
 title: ohpm unpublish
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm unpublish
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:37+08:00
+scraped_at: 2026-11-28T10:34:46+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:2ad8b57bf627156db35ab6d0b67726d9e09b0acbe2e83f88efef0dd162ffcef1
+content_hash: sha256:1e57c5d6e807a9a21c1cd61b5a5cedb6fffa379f11b063646a86907b4fa94e40
 ---
 
 下架已发布的三方库。
@@ -101,4 +101,4 @@ ohpm unpublish demo@1.0.0 -f
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/pjoz1YhtSV6Jss97oNmzAQ/zh-cn_image_0000002779407356.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE23267BC81666A012B7446521618D256BED5E2D977D9847E47E552AC80AFE01 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/b_Sl6HUSRBm9xu1nMdDddw/zh-cn_image_0000002779407356.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1A138A560E6FE5B426009835A6A5FE7D398861E3820FB2A0F87A7ABDE771953 "点击放大")

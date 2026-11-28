@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-publ
 title: 发布应用
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 发布应用
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:50+08:00
+scraped_at: 2026-11-28T10:34:59+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:aa042219dede1ec3e6027d13c14b7fd59785efb263f90e02c5894dfaf437c4f1
+content_hash: sha256:eddf4f2c86944d9ec7cbd7ba86bdcbae6cd83d2b2d27c015bdec7c39bf25a690
 ---
 
 HarmonyOS通过数字证书与Profile文件等签名信息来保证应用/元服务的完整性，应用/元服务上架到AppGallery Connect必须通过签名校验。因此，您需要使用发布证书和Profile文件对应用/元服务进行签名后才能发布。
@@ -14,7 +14,7 @@ HarmonyOS通过数字证书与Profile文件等签名信息来保证应用/元服
 
 开发者完成HarmonyOS应用/元服务开发后，需要将应用/元服务打包成App Pack（.app文件），用于上架到AppGallery Connect。发布应用/元服务的流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/z9aFWQo0SnChdfN8oFwaKA/zh-cn_image_0000002820721175.png?HW-CC-KV=V1&HW-CC-Date=20261124T044250Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD7BDF63BE6FA236A17384A8BCCDC48FE22394D4A6747A7A050B83D8D5F14FAC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/CToDZ7bBQ8WqZJiRZaadeQ/zh-cn_image_0000002820721175.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D78F13011587AF0BBCA5EDFCD8B157BEF035663E0C56F1429F1F5F5E718F027)
 
 关于以上流程的详细介绍，请继续查阅本章节内容。
 
@@ -34,7 +34,7 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
 1. 在主菜单栏单击**构建** **> 生成密钥和证书请求文件**。
 2. 在生成密钥和证书请求文件界面，可以单击Keystore File后的文件图标选择已有的密钥库文件（存储有密钥的.p12文件）。若没有密钥库文件，单击**新建**进行创建。下面以新建密钥库文件为例进行说明。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/e-oD7DL8SaaLBJvpZNFDlA/zh-cn_image_0000002820721177.png?HW-CC-KV=V1&HW-CC-Date=20261124T044250Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD079946DA4219E70F0805F28D03DAFF8FAA213E6BF06F6FCEE674E631F5BD3C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/K_sJ7_kvTzSelPOCQDVc-A/zh-cn_image_0000002820721177.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=1849D905433E7B2133A541D2F58EB7E8107BCFB5445B8D6FC322F4C2E0C9F76B)
 3. 在**创建密钥存储文件**窗口中，填写密钥库信息后，单击**确认**。
    * **Keystore file(\*.p12)**：填写p12文件名，仅允许包含字母、数字、下划线（\_）、中划线（-）、句号（.）。
    * **Key store path**：设置密钥库文件存储路径。
@@ -42,13 +42,13 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
    * **Confirm Password**：再次输入密钥库密码。
    * **Key alias**：密钥的别名信息，用于标识密钥名称。请记住该别名，后续签名配置需要使用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ReF_mmpeQYWIN8V0cdDJ8w/zh-cn_image_0000002791841234.png?HW-CC-KV=V1&HW-CC-Date=20261124T044250Z&HW-CC-Expire=31536000000&HW-CC-Sign=17FCA0344DBDE1EB47416F95476898793664745991066C58CF64C46A618B0B27)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Xhq5bmvYR2C4KvmmLNQAbA/zh-cn_image_0000002791841234.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=B94969DD3BBD8FDCD94CDF84C107BA0F41FF92630A3ECF48FF41A95D98B8934C)
 4. 在**生成密钥和证书请求文件**界面中，确认信息后点击**生成**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/Vtjq1z7YRBmEiX0eqQ7bcA/zh-cn_image_0000002820681169.png?HW-CC-KV=V1&HW-CC-Date=20261124T044250Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FD1188786E8BE4BA5265C280DEA2E8D91A8D3BEE8BD00B915AB6D8442BEE2F4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/E6j1vZjNS02ofec8xW-1-Q/zh-cn_image_0000002820681169.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D461BE6F723558E8EF86F2F1E1E60314FE8803D4B08FA0453CAE342153CBEC1)
 5. 创建CSR文件成功后，可以在存储路径下获取生成的密钥库文件（.p12）和证书请求文件（.csr）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/441GSmT6QwKzVzNGilrEAw/zh-cn_image_0000002792001208.png?HW-CC-KV=V1&HW-CC-Date=20261124T044250Z&HW-CC-Expire=31536000000&HW-CC-Sign=751E7599B2F598AF4905E03887934CD039060CD3F87C5E10D4B122BEF49E9D14 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/SoDb-h-wTYOnC8GRjoCDyA/zh-cn_image_0000002792001208.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=106596157D6C87B838DCEDD94148718FA0C1D06B1F580F2F852530C5FD1B4131 "点击放大")
 
 ### 申请发布证书和Profile文件
 
@@ -74,7 +74,7 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
 * **Profile File**：选择申请的发布Profile文件，文件后缀为.p7b。
 * **Certpath File**：选择申请的发布数字证书文件，文件后缀为.cer。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/h-_dsDJJTDOkLe6xbc8UDQ/zh-cn_image_0000002792001210.png?HW-CC-KV=V1&HW-CC-Date=20261124T044250Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A6AB3E1777371074A9F8AC0433A83E4A5ECE60AF06022B151248E12209B415D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/VPaQ5p_IRR6pw3soW4PM0g/zh-cn_image_0000002792001210.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0761C316939C13E7CD2660456A6583BE1FCB7F4AF90AFFFCB3E01D674E9FE53)
 
 然后使用DevEco Studio生成APP，请参考[编译构建.app文件](ide-hmos-publish-app.md#section1992513343374)。
 
@@ -93,7 +93,7 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
    当未指定[构建模式](ide-hmos-hvigor-compilation-options-customizing-guide.md#section192461528194916)时，构建APP包，默认Release模式；构建HAP/HSP/HAR包，默认Debug模式。即Build APP(s)，默认构建的APP包为Release类型，符合上架要求，开发者无需进行另外设置。
 2. 编译构建完成后，可以在工程目录**build > outputs > default**下，获取带签名的应用包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/IwVOYekmQ5-KK_jhZUHWXQ/zh-cn_image_0000002791841232.png?HW-CC-KV=V1&HW-CC-Date=20261124T044250Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CA3CA84748DF2D956379B41C8D5CCED2B4D6EB0B9D52DFF3AA1C579413BE965)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/5lRldIVKTqq4kQVPKLl6-Q/zh-cn_image_0000002791841232.png?HW-CC-KV=V1&HW-CC-Date=20261128T023458Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F2495860B5765BA871E4D043B2BFDC681F6CBB7025FD0EE7F632981EE9C6E91)
 
 ## 发布.app文件到应用市场
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-environme
 title: 配置代理
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 附录 > 配置代理
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:32+08:00
+scraped_at: 2026-11-28T10:34:41+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:89100870daf8e84164a730345df845946409e6ec8bbb89d77ed0db2f05839d3a
+content_hash: sha256:1c8803543fa364a40c02ba986d774f2df8500a2ceb1b54ea77324ba5d600bab0
 ---
 
 DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确保工具的正常使用。
@@ -16,7 +16,7 @@ DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确�
 
 为了您开发应用/元服务的良好体验，DevEco Studio提供了开发环境诊断的功能，帮助您识别开发环境是否完备。您可以在欢迎页面单击**Diagnose**进行诊断。如果您已经打开了工程开发界面，也可以在菜单栏单击**Help > Diagnostic Tools > Diagnose Development Environment**进行诊断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/fYfOYbQ-QC2PFhV33MpONg/zh-cn_image_0000002808886397.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=49DDF6CEA9D3D245EFBD82318A17DD0735F12D6FC147D6C203DD8417C7A55C2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/k8aJXfJVTjG6UAtW1oig-A/zh-cn_image_0000002808886397.png?HW-CC-KV=V1&HW-CC-Date=20261128T023441Z&HW-CC-Expire=31536000000&HW-CC-Sign=C56D32097738BACB5AE89254B78DC10BB0BEA905C456F7FB8A5F0E8F5319F7B7)
 
 DevEco Studio开发环境诊断项包括电脑的配置、网络的连通情况等。如果检测结果为未通过，请根据检查项的描述和修复建议进行处理。
 
@@ -32,7 +32,7 @@ DevEco Studio开发环境诊断项包括电脑的配置、网络的连通情况�
      + **Password**：访问代理服务器的密码。
      + **Remember**：勾选，记住密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/TCX_jxsuQqOQzPBhbyQj1A/zh-cn_image_0000002808766319.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC6F80F8B7347A08AA0859F2430B88563330AB55562198512288824F55557420)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/EdFIrpF8SuSLYlhZP5ovLQ/zh-cn_image_0000002808766319.png?HW-CC-KV=V1&HW-CC-Date=20261128T023441Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C0432EBE223B9EF0516387B080F5F1C24C7A70D39B82990226C670AEC512E73)
 2. 配置完成后，单击**Check connection**，输入网络地址（如：https://developer.huawei.com），检查网络连通性。提示“Connection successful”表示代理设置成功。
 
 ## 配置NPM代理
@@ -41,7 +41,7 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
 1. 进入*C:\Users\用户名*目录，打开**.npmrc**文件。如果该目录下没有**.npmrc**文件，请新建一个。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/3BtFpvMdTymX08cv1QUg6Q/zh-cn_image_0000002808886399.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=84206EC3D9844E4B064627BAAFF5F5117B3188965BC4EB409C071449740DE8CF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/1vmiqPr1TNe8Zl3ByrdV_Q/zh-cn_image_0000002808886399.png?HW-CC-KV=V1&HW-CC-Date=20261128T023441Z&HW-CC-Expire=31536000000&HW-CC-Sign=59D6C6348E99D19F1150F9320EC7E359E3EEF9477DA9A0D0368137109747CBD9)
 2. 修改npm仓库信息，示例如下所示：
 
    ```screen
@@ -85,7 +85,7 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
    执行结果如下图所示，则说明代理设置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/021of0RZSeufu50rKNmvgg/zh-cn_image_0000002808766315.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E10CCC8E39DBC7C6B6E305411491D7061F073EEDF9FAB36C2E345B7B3FE064B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/St6daKbaRoq2od72Gk7WKA/zh-cn_image_0000002808766315.png?HW-CC-KV=V1&HW-CC-Date=20261128T023441Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB52AAE346BD395DB8866F204DD58066848F8E6FB7FFAA1603B2A1543C33601D)
 
 ## 配置OHPM代理
 
@@ -111,7 +111,7 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
 **填写**并**勾选**以上信息后，点击**OK**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/poskj6y5RvmqkKQf7EfImQ/zh-cn_image_0000002808886401.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D160B297396F9A9DCE3209F46332A79357C4164250150C57D926AB4C9F555C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/zWB4GYEvQfOiiW2kaN2fwg/zh-cn_image_0000002808886401.png?HW-CC-KV=V1&HW-CC-Date=20261128T023441Z&HW-CC-Expire=31536000000&HW-CC-Sign=385DF9A4023E197DF2FEF63327B88D19B8671F4B16A4809B567333701934B995)
 
 说明：ohpm默认校验registry仓库地址证书。如果环境检查中ohpm registry access出现'SELF\_SIGNED\_CERT\_IN\_CHAIN'或'UNABLE\_TO\_VERIFY\_LEAF\_SIGNATURE'等证书校验错误时，请查看[FAQ](../harmonyos-faqs/development-environment-faq-0005.md)解决证书校验错误问题。
 
@@ -160,4 +160,4 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
    执行结果如下图所示，则说明代理设置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/FnSYrXbHT0ObMch1qG40yw/zh-cn_image_0000002779566740.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D67982E2090B64EAE3C9185C3AC88D5A414911B3FF4EDBB0F279F82157FF0F3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/HccrvnrfRrmnxUCh4aq6MA/zh-cn_image_0000002779566740.png?HW-CC-KV=V1&HW-CC-Date=20261128T023441Z&HW-CC-Expire=31536000000&HW-CC-Sign=32609002A0597C2853FA92595A9E00E69D72180F908525E4ABBAA795CA7F6AF3)

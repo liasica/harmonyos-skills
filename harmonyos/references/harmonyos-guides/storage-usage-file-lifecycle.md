@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/storage-usage
 title: 存储空间使用与文件生命周期管理
 breadcrumb: 指南 > 应用体验建议 > 应用系统资源管理体验建议 > 存储空间使用与文件生命周期管理
 category: harmonyos-guides
-scraped_at: 2026-11-27T10:45:09+08:00
-doc_updated_at: 2026-11-26
-content_hash: sha256:d92b8a5a8602e410fce5e847bf64f0dd463cd3a043524dd4f8099e34a5e36283
+scraped_at: 2026-11-28T10:35:01+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:da03638a65559a860502352148147d4715c18c2a6e2d168f9475f12022f74880
 ---
 
 ## 概述
 
 ### 适用范围
 
-本规范面向HarmonyOS应用开发者，用于应用沙箱目录选择、存储占用管理、文件生命周期管理及常见存储问题排查。 适用范围包括应用自身、小程序容器、插件和第三方SDK产生的数据，宿主应用应对其沙箱内全部数据的存储合规性负责。
+本规范面向鸿蒙应用开发者，用于应用沙箱目录选择、存储占用管理、文件生命周期管理及常见存储问题排查。 适用范围包括应用自身、小程序容器、插件和第三方SDK产生的数据，宿主应用应对其沙箱内全部数据的存储合规性负责。
 
 **适用设备**：手机、平板、PC/2in1。
 
@@ -69,7 +69,7 @@ data/
 
 * EL1（设备加密存储）：设备首次启动后即可访问，用于存放开机后必须可用的数据；
 * EL2（用户加密存储）：用户首次解锁后可访问，应用默认存储级别；
-* EL3～EL5：强化加密级别，满足不同安全访问控制需求，具体行为见[HarmonyOS应用沙箱目录](app-sandbox-directory.md)。
+* EL3～EL5：强化加密级别，满足不同安全访问控制需求，具体行为见[鸿蒙应用沙箱目录](app-sandbox-directory.md)。
 
 **目录用途**
 
@@ -83,7 +83,7 @@ data/
 | database | databaseDir | 存放数据库文件。 |
 | distributedfiles | distributedFilesDir | 存放跨设备共享及协作文件。 |
 
-各目录的详细说明和注意事项见[HarmonyOS应用沙箱目录](app-sandbox-directory.md)。
+各目录的详细说明和注意事项见[鸿蒙应用沙箱目录](app-sandbox-directory.md)。
 
 **目录清理**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-quick-com
 title: 启动加载完成快
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 启动加载完成快
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:32+08:00
+scraped_at: 2026-11-28T10:34:41+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:df1eec1baee7e3666a353f7ad6153fe3e405b1fb7def22b2fac47a263f58033e
+content_hash: sha256:226e69c3f1c4d62970106d5b44b28cf44c460587f5f9f6697097cb38c4c8fc8d
 ---
 
 ## 规则详情
@@ -24,4 +24,4 @@ content_hash: sha256:df1eec1baee7e3666a353f7ad6153fe3e405b1fb7def22b2fac47a263f5
 
 以首帧页面铺满屏幕作为开始时刻，冷启动完成时延等于应用首页加载完成耗时减去广告时间。若冷启动完成时延小于等于1100ms，则检测通过；若大于1100ms，小于等于6300ms，则检测告警；若大于6300ms，则检测失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/xSnI8QIXQKmc5l3kG29lYQ/zh-cn_image_0000002779407366.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=2670CB37D829A13BA2136549AB536EBC6E3D80EDD008850AFAF8169E9F4F2FC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/cTGQgplCTN6yLC_UF5qtaw/zh-cn_image_0000002779407366.png?HW-CC-KV=V1&HW-CC-Date=20261128T023441Z&HW-CC-Expire=31536000000&HW-CC-Sign=4ADB30A4795A3576C5276AAD9AA4C4F7F154975351434180A991A8AA27423AF9)

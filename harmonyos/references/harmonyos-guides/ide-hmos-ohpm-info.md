@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm info
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm info
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:42+08:00
-doc_updated_at: 2026-11-06
-content_hash: sha256:ea60d179ce1e802e5162c6c3d6d93653342a83f54ff1e894d1038c53eb69779c
+scraped_at: 2026-11-28T10:34:59+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:bd18b8c2b6e3a70a190c197bee4d777eaaaea29a593d31c4dd89e74fd3e1388c
 ---
 
 查询指定三方库的具体信息。
@@ -43,7 +43,7 @@ ohpm info [options] [<@group>/]<pkg>[@<version> | @tag:<tag>] [field]
 ### fetch\_timeout
 
 * 默认值：60000
-* 类型： Number
+* 类型： number
 * 别名：ft
 
 可以在 info 命令后面配置 --ft <number> 或者 --fetch\_timeout <number> 参数，用以设置操作的超时时间，如果没有指定，默认超时时间为60000ms。
@@ -51,21 +51,21 @@ ohpm info [options] [<@group>/]<pkg>[@<version> | @tag:<tag>] [field]
 ### strict\_ssl
 
 * 默认值：true
-* 类型： Boolean
+* 类型： boolean
 
 可以在 info 命令后面配置 --strict\_ssl true 参数，校验 https 证书；配置 --strict\_ssl false 参数，不校验https证书。
 
 ### pageNum
 
 * 默认值：1
-* 类型： Number
+* 类型： number
 
 当field设置为versions时生效，可以在field后面配置 --pageNum <number> 参数，取值范围：[1, 10000]，表示在版本以列表分页展示时的页码数，可与pageSize一起使用。
 
 ### pageSize
 
 * 默认值：100
-* 类型： Number
+* 类型： number
 
 当field设置为versions时生效，可以在field后面配置 --pageSize <number> 参数，取值范围：[1, 500]，表示在版本以列表形式分页展示时每页的版本数量，可与pageNum一起使用。
 
@@ -79,7 +79,7 @@ ohpm info [options] [<@group>/]<pkg>[@<version> | @tag:<tag>] [field]
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 

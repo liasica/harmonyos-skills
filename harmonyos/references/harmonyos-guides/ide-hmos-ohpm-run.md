@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm run
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm run
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:50+08:00
-doc_updated_at: 2026-11-23
-content_hash: sha256:f7c7d160b48f69652e26c17c33c29296f639f3b994bd9d16683cbe959c07128c
+scraped_at: 2026-11-28T10:35:00+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:b3afad16015f98c68c8826da77f85075a554c8e4d4fc4c7c1122e6e9822d1d50
 ---
 
 执行用户自定义脚本。
@@ -75,14 +75,14 @@ ohpm run --prefix <path> <脚本别名>
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型： string
 
 可以在命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
@@ -124,7 +124,7 @@ ohpm run testSuc
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/aQOuebHIT8qmtBB-edB3OQ/zh-cn_image_0000002820721099.png?HW-CC-KV=V1&HW-CC-Date=20261124T044250Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCADA3D8862D793FEF83A99DFF9965D5C0E2D036862E188F1F403CA87938FC5F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/0kktThzqS7OwqJQIdgDOGg/zh-cn_image_0000002820721099.png?HW-CC-KV=V1&HW-CC-Date=20261128T023459Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD79A4190753001C1EEC17FC08BCBE33E0B3F9476FA1362E9D6EA0A21283DFC8 "点击放大")
 
 ### 失败示例
 

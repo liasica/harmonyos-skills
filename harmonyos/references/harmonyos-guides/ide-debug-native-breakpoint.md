@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 使用断点
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 使用断点
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:30+08:00
+scraped_at: 2026-11-28T10:34:38+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:ddf203731a54345be8e9663764a00cc14c569a2e8aeadefadf1d15c448688e3d
+content_hash: sha256:5fcd2e105af43c343ef7d7068ea25394a8c66a464f88362f62a3adc54f269274
 ---
 
-点击**View Breakpoints** 图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/tWzTNhmVTD-MERo1SYwEOQ/zh-cn_image_0000002779406742.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0FCE5EF2F9F8FC844DDD8860E9E412EBEC551789F0D3B6FB0DA37691ADCEA23)可以打开断点管理界面，您可以在断点管理界面查看或更改您的断点。
+点击**View Breakpoints** 图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/4j_CUXY8SVG6oVUCPG5q9w/zh-cn_image_0000002779406742.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=B786166DE6C16B96652157FDC466096BF56BB6D12A445F052B7648484B31A716)可以打开断点管理界面，您可以在断点管理界面查看或更改您的断点。
 
 * 勾选 Enable ，使能该断点。
 * 勾选 Suspend execution ，使程序运行到断点时中断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/3Q7wKsnQS6eb5WSLYxcEPw/zh-cn_image_0000002808766307.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=5111403FCC52E840BD68C37F9909A67CBF0E88F8C8128198AF0181318BDF6F59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/gOJYAIn9Rk-xsKvTBzJfzw/zh-cn_image_0000002808766307.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=06F2E39A55FCD5EF821E2849EFF3BACF27520F45714F4A488740997462A1261A)
 
 ## 条件断点
 
@@ -31,7 +31,7 @@ content_hash: sha256:ddf203731a54345be8e9663764a00cc14c569a2e8aeadefadf1d15c4486
 
 未勾选 Enable 的断点不会打印日志，未勾选 Suspend execution 的断点会打印日志，不满足所设置的 Condition 的断点不会打印日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Xkd3VEA5T0uRWRjGx17Osw/zh-cn_image_0000002808886387.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=3993F1994DDC346E92566302F6B8601B8F520F13A3D60BA5773994F08CE328F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/tjkPs18_S_iCkmMKqt2ieg/zh-cn_image_0000002808886387.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=F94D3288291DDA982254B8D2B6B0C187BE330AF0B1BD80DABE851B26C39AE6BA)
 
 ## 临时断点
 
@@ -43,7 +43,7 @@ content_hash: sha256:ddf203731a54345be8e9663764a00cc14c569a2e8aeadefadf1d15c4486
 
 在断点管理界面中点击“+”->“Cpp Symbolic Breakpoints”，在弹出窗口中填写函数名和模块名（模块名可缺省），添加函数断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/wcvIiiQXS9uRuQNekz7aMA/zh-cn_image_0000002779566726.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=C10D8960DCF1A2A890F47AE90673BD2C9825A946671CD46F5E52CB3A115FBF14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/R8qEcf0KSmawSVfgquc89A/zh-cn_image_0000002779566726.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=37511E7BF5BEC4C384E2AEFF3DF5E6E2E412F6CB621A1EC54034FDC5718EBAB9)
 
 ## 异常断点
 
@@ -55,7 +55,7 @@ content_hash: sha256:ddf203731a54345be8e9663764a00cc14c569a2e8aeadefadf1d15c4486
 
 在断点管理界面中点选 “Cpp Exception Breakpoints” 下的 “Any exception”，勾选 Enable 使能异常断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/X5gnXyAIS4a0Qql2eXzgGQ/zh-cn_image_0000002779566722.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C9A09CD1E01D103F7E91F31F4F406EC2CEC74467BB0DE38A530B1EAF6B3D1CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/zUe9mlpmTo63rF8BThL39A/zh-cn_image_0000002779566722.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=4703375AEBA096727E14D172034BB037AE78A16F3D409242584A2AC828D2E57E)
 
 ## 数据断点
 
@@ -63,11 +63,11 @@ content_hash: sha256:ddf203731a54345be8e9663764a00cc14c569a2e8aeadefadf1d15c4486
 
 在变量列表中对某一个变量右键，在菜单中选择添加数据断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/XJi_i5PETOGmbwHgx7e77w/zh-cn_image_0000002779406746.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=78E711BEEF58A6E32B211C414595F2D50717E584CDD0F4E6B87FF15D5A69CFCD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/qavOCFKuRBKctynP9jziTw/zh-cn_image_0000002779406746.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEA37E330D8C158E0F06338A59AA66FD62644D6566070FF90DDE5E22EA0EEE75)
 
 在断点管理界面进行查看和修改。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/bDIODZv6R_a9LxfRasUV5g/zh-cn_image_0000002808766303.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B6E0F37C109F531BA2637E2E7ABC195A512D771BE16D4A1817272A8AD6BC0BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/0tG9aoQ6RBCJILQOMDk96w/zh-cn_image_0000002808766303.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=125611E472160B94E55B69CF5326AD838C49343FAE1FFD164157E0551B6DE52D)
 
 **说明** 
 

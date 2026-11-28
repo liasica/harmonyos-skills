@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm publish
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm publish
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:42+08:00
-doc_updated_at: 2026-11-06
-content_hash: sha256:035da195c0da19c78f739d47d1f613096f76d6edfb71e69abcda83f9f550bb78
+scraped_at: 2026-11-28T10:35:00+08:00
+doc_updated_at: 2026-11-27
+content_hash: sha256:4a0aa7e7f44d62830c29d5590638dcc9a42b583068d14a9fed803f8983e2f0d3
 ---
 
 发布一个三方库。
@@ -62,21 +62,21 @@ ohpm publish [options] <har_or_tgz_file>
 ### publish\_id
 
 * 默认值：""
-* 类型：String
+* 类型：string
 
 可以在 publish 命令后面配置 --publish\_id <id> 参数，指定发布码。
 
 ### key\_path
 
 * 默认值：""
-* 类型：String
+* 类型：string
 
 可以在 publish 命令后面配置 --key\_path <p> 参数，指定ssh私钥路径。
 
 ### tag
 
 * 默认值：无
-* 类型：String
+* 类型：string
 * 别名：t
 
 可以在 publish 命令后面配置 -t <tag\_name>或者 --tag <tag\_name> 参数，给将要发布的三方库打上标签。
@@ -91,7 +91,7 @@ ohpm publish [options] <har_or_tgz_file>
 ### fetch\_timeout
 
 * 默认值：60000
-* 类型： Number
+* 类型： number
 * 别名：ft
 
 可以在 publish 命令后面配置 --ft <number>或者 --fetch\_timeout <number> 参数，设置操作的超时时间，如果没有指定，默认超时时间为60000ms。
@@ -99,49 +99,49 @@ ohpm publish [options] <har_or_tgz_file>
 ### strict\_ssl
 
 * 默认值：true
-* 类型： Boolean
+* 类型： boolean
 
 可以在 publish 命令后面配置 --strict\_ssl true 参数，校验 https 证书；配置 --strict\_ssl false 参数，不校验 https 证书。
 
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型： string
 
 可以在 publish 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型： boolean
 
 可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### use\_stream\_threshold\_size
 
 * 默认值：无
-* 类型： Number
+* 类型： number
 
 可以在 publish 命令后配置--use\_stream\_threshold\_size <number>参数，指定流式上传阈值，取值范围：[0, 300]，单位mb。当publish三方库的文件体积超过阈值时，将使用流式方式上传；如果仓库不存在流式上传接口，则转为Base64方式上传。
 
 ### compability\_log\_level
 
 * 默认值：无
-* 类型：String
+* 类型：string
 
 可以在 publish 命令后配置 --compability\_log\_level <string> 参数，在publish命令时，ohpm会检测oh-package.json5文件中是否配置了兼容性检测需要的所有字段（'compatibleSdkVersion', 'compatibleSdkType', 'obfuscated', 'nativeComponents'）。如果未配置，则会根据compability\_log\_level设置的日志等级（info、debug、warn、error）打印提示或报错。详情请见[compability\_log\_level](ide-hmos-ohpmrc.md#section96369529419)。
 
 ### disallow\_nested\_package
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 publish 命令后配置 --disallow\_nested\_package 参数。在执行publish命令时，会扫描包内是否存在'./'形式配置，且后缀为.har/.tgz格式的依赖。如果存在，则命令执行失败并提示报错信息，详情请见[disallow\_nested\_package](ide-hmos-ohpmrc.md#section1237023983514)。
 
 ### ensure\_dependency\_include
 
 * 默认值：false
-* 类型：Boolean
+* 类型：boolean
 
 可以在 publish 命令后配置 --ensure\_dependency\_include 参数，会开启依赖扫描功能，详情请见[ensure\_dependency\_include](ide-hmos-ohpmrc.md#section1291814578276)。
 

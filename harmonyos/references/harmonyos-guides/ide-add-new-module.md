@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-add-new-m
 title: 添加和删除模块
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 添加和删除模块
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:19+08:00
+scraped_at: 2026-11-28T10:34:26+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e765cef266e6b314beecce93c76028a92f8b48f752b7e64ee0696d27b6a6d153
+content_hash: sha256:527f3611c7b113083d9b863e93f949b46e731dc03017803db2791af6fd650032
 ---
 
 模块（Module）是应用/元服务的基本功能单元，包含了源代码、资源文件、第三方库及应用/元服务配置文件。一个应用/元服务通常会包含一个或多个模块，因此，可以在工程中创建多个模块。模块支持entry、feature（仅应用工程支持创建）、har、shared四种类型，具体请参考[module.json5配置文件](module-configuration-file.md#配置文件标签)。
@@ -24,7 +24,7 @@ content_hash: sha256:e765cef266e6b314beecce93c76028a92f8b48f752b7e64ee0696d27b6a
      当前暂不支持在AppScope、hvigor、oh\_modules、build、以点开头的目录（如：.hvigor、.idea）下通过单击鼠标右键创建模块。
 2. 在**New Project Module**界面中，选择需要创建的模板，单击**Next**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/6f94IM_DRvK-u88CpgqWMQ/zh-cn_image_0000002808886587.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2A2A3F62E34B48A3D6001DC10CD47AA065E97AFD4A07A7E70D0D6B91EDD56B2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/d0rIUO-WQJ20jGZ1ewdTJg/zh-cn_image_0000002808886587.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A054B601350AAB514B6F88EFEA8DC91C748FCA698E738192BA2BFA4DCA47948)
 3. 在模块配置页面，设置新增模块的基本信息，然后单击**Next**。
    * **Module name**：新增模块的名称，**Module name**不可与工程名称/工程中其他模块名称相同。
    * **Module type**：仅在Ability模板存在该字段，可以选择Feature和Entry类型。
@@ -37,7 +37,7 @@ content_hash: sha256:e765cef266e6b314beecce93c76028a92f8b48f752b7e64ee0696d27b6a
    * **Enable native**：仅Library模板存在，将创建一个可以调用C/C++的共享包。
    * **C++ Standard：**C++标准库，取值包括：Toolchain Default、C++11、C++14。从DevEco Studio 6.0.1 Beta1开始支持。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/alTcWD1fQ3mEvYDXkLQ6Jg/zh-cn_image_0000002808766505.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=32AF28850944CD8C9E3A910E3B4E32E50728F58F1204A945B826B906E4994EEE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/uHC4MX3eQRSL0ri9S3aZxA/zh-cn_image_0000002808766505.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=68299B9F2244549B1CE4C8797FEE57BC39C0945186953ED0D53C238C567206B8)
 4. 若该模块的模板类型为Ability，还需要设置新增Ability的**Ability name**和****E****xported****参数，**E****xported**参数表示该Ability是否可以被其它应用/元服务所调用（FA模型下为Visible参数)。
    * 勾选（true）：可以被其它应用/元服务调用。
    * 不勾选（false）：不能被其它应用/元服务调用。

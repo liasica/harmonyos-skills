@@ -3,29 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: 使用断点
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 使用断点
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:46+08:00
+scraped_at: 2026-11-28T10:34:55+08:00
 doc_updated_at: 2026-11-23
-content_hash: sha256:728f8612be911133fac310f34f3528d353cad5e865eefeb063290b245719b982
+content_hash: sha256:d3a21d144145dd8ffbbc285d7c5e6e93d05e6dbcbcbea9e0473b234e6d2afb4a
 ---
 
-点击编辑器左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/YdUiYQDiRCmLRNRxKHqV2w/zh-cn_image_0000002820720955.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=7829227CF73DCB132F9514070DFE58F4446CCA733C8FAE9C0581A10FF56F870C "点击放大")图标，打开断点管理界面进行断点管理。
+点击编辑器左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/v_IHDMs1SaKZOiNG0V6QCw/zh-cn_image_0000002820720955.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3B53F49121225909156C58B2D0F4BDD871F6671132ED68B3F98F2228590B55F "点击放大")图标，打开断点管理界面进行断点管理。
 
 * 勾选复选框，启用该断点。
 * 取消勾选复选框，禁用该断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/L6YbfK79SNWFSv6HDkcIxw/zh-cn_image_0000002791841014.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CE66F06D62AA4B25BDC6130C732E1F4EBB0CDB9A17EDB6F9D1A319D5086097E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/W2BfN1DGTOuIR-nNIqE4bQ/zh-cn_image_0000002791841014.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=36E94064A627720C7AD66BF319E005C9F193C6167284D25F3067C64C534C96B7)
 
 ## 条件断点
 
 在编辑器行号侧边栏单击鼠标右键，选择**添加条件****断点**并在输入框中设置表达式作为条件，使程序运行到断点且满足设置的条件时才会中断进程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Nvf8WVzIQ7GmDVcOB2vRfQ/zh-cn_image_0000002792000990.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3558ACF485E60E868929734005B2EDE4E22C9ECBC8FE032B0B379D708BC93DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/uGaOklgKS82qoW-kr9PFwA/zh-cn_image_0000002792000990.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=22B5A9FFA3E3BAC318537BA713E33DF4F6E28FD594F89EFF6174596FBFB6BD09)
 
 ## 日志断点
 
 在编辑器行号侧边栏单击鼠标右键，选择**添加记录点**设置日志断点，在输入框中添加表达式，可以使进程运行到断点时在console窗口打印相应日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Z5-mSOUGQr2CegnPNbll9w/zh-cn_image_0000002791841020.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0EBEB0C5CDFC7CD2559861884C854E4B1882369250674571B369F3A8B89B2A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/RrT9sGcrS4C3Q5mipwREfg/zh-cn_image_0000002791841020.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C4334B1E9CDE8F9E39D9F45E7DD368E601F2EF02DBB342FAE8D2E11850141F8)
 
 **说明** 
 
@@ -33,9 +33,9 @@ content_hash: sha256:728f8612be911133fac310f34f3528d353cad5e865eefeb063290b24571
 
 ## 临时断点
 
-临时断点允许开发者在光标停留处设置断点，点击调试器![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/oaS7OMAGShi_ZGo6ZMIT2w/zh-cn_image_0000002791841012.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=61205F8947C1329B760D375D44BE2A03B9B9C2C1105ACE9060DF3130B5F33B00 "点击放大")图标，断点运行至光标停留处。该断点只生效一次，生效后该断点会被删除。
+临时断点允许开发者在光标停留处设置断点，点击调试器![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/EYKhwPwjR6eMbDzJrRu9GA/zh-cn_image_0000002791841012.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=906E5496F8F38688308EDD4E2A51F96A447104750D00ED6460EA4770FA263B68 "点击放大")图标，断点运行至光标停留处。该断点只生效一次，生效后该断点会被删除。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/5ycrw_vdRxa-qugO40Oh2Q/zh-cn_image_0000002820680949.gif?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C9564668A40E00DB0C224D42DC10AE438D3ECF1329DEBEE9F89F993E89FD298 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/rpqWIsIdTNKpax4dDLzdcA/zh-cn_image_0000002820680949.gif?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=472156194A7F3AC75BBE3209CF169A5F5379F55A85F558CEF33F1C4C86210641 "点击放大")
 
 ## 函数断点
 
@@ -43,7 +43,7 @@ content_hash: sha256:728f8612be911133fac310f34f3528d353cad5e865eefeb063290b24571
 
 在断点管理界面中点击“+”，在弹出窗口中填写函数名，添加函数断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Vu84cP7ETZ-YkBsFKL6Q0A/zh-cn_image_0000002792000986.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=A865D9D1C7F274C025F22AF2B6BC8D33EF2A287A30CD81EEF60A847635B1EF83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/1JPgdIVnSSuEhG1Ew90zEA/zh-cn_image_0000002792000986.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=A60BCCE2F26342FDEB5E947BBC08564136B7A1374CF1D21EAA2EA07C2CE6A914)
 
 ## 异常断点
 
@@ -55,7 +55,7 @@ content_hash: sha256:728f8612be911133fac310f34f3528d353cad5e865eefeb063290b24571
 
 在断点管理界面中勾选**catch catch**和**catch throw**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/KAZ6UgfrTqCTIpk3A6S6Mw/zh-cn_image_0000002820680947.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=53E46404A79F65046D364DDBC1E0FDC13556371AF7FF588752A4338F47E12E6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/y30Kt0u5SWOzOUdXPvIWYQ/zh-cn_image_0000002820680947.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B1F2095999AD00628EC30B16E87E1FA8E0586A87361784A772022B7330D7EE1)
 
 ## 数据断点
 
@@ -63,11 +63,11 @@ content_hash: sha256:728f8612be911133fac310f34f3528d353cad5e865eefeb063290b24571
 
 在变量列表中对某一个变量右键，在菜单中选择添加数据断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/ppKeTsfzRJOWRGo7CiGe6Q/zh-cn_image_0000002791841016.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8DD6790A05CD6469047C55470959BCFE817DCD454D9338BDF8E0BA570C99417)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vovWm2C9T6Ou298hKSlaiQ/zh-cn_image_0000002791841016.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC2692EF5D05C7CB406E507F2C4ECC8C3DEE6407B9B6F28B81F02B6037366AAC)
 
 在断点管理界面进行查看和禁用/启用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/yqgGV4fmTda7zF7KCFCVHw/zh-cn_image_0000002820680951.png?HW-CC-KV=V1&HW-CC-Date=20261124T044246Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2CA31DB2358A1FCFA477DD96447E174944F595CA19F442C54AAF5655760D9DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/sCoMQ2PuTQirDp0CgIKqyg/zh-cn_image_0000002820680951.png?HW-CC-KV=V1&HW-CC-Date=20261128T023455Z&HW-CC-Expire=31536000000&HW-CC-Sign=6963E344717165F76DE06DD7D3A13B0B916943C6D592557F70E408C109A54FCE)
 
 **说明** 
 

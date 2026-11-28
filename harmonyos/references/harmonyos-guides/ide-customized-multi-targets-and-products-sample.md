@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-customize
 title: 实践说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程 > 配置多目标产物 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:33+08:00
+scraped_at: 2026-11-28T10:34:42+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:8c0bed09b01492972ec1be7a6548b3cf4f8042a5887f7716bd38e0bf03c646ac
+content_hash: sha256:29cd09285699d3b3c3513f97749540e44ff1e1c7b4f9adaf1cf491a0ff6f1944
 ---
 
 某对外发布应用共有两个版本：
@@ -16,7 +16,7 @@ content_hash: sha256:8c0bed09b01492972ec1be7a6548b3cf4f8042a5887f7716bd38e0bf03c
 
 可以看出在Community版本与Ultimate版本之间，部分功能存在重合，同时也存在某些特定功能，因此期望通过一次开发实现差异化，根据不同配置完成多种特定运行环境的开发、预览、打包、调试等功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/z8YTTGNiTSWFDTa0lNsJ8A/zh-cn_image_0000002779567000.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=04F026754CEDFA57BFD5DAA001210CACD4DA923E5EFD6EE17DD0263021DFC769)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/I8UApqw3TQSUZHaf8RKXQw/zh-cn_image_0000002779567000.png?HW-CC-KV=V1&HW-CC-Date=20261128T023441Z&HW-CC-Expire=31536000000&HW-CC-Sign=77D299A41DCF7BB2265CEB95BE898293D9E94CF47C22C58F1C9040462FBDFEDE)
 
 1. 两个不同版本的软件，可能存在差异：如不同的应用标题、应用图标、版本声明。我们可以在工程级build-profile.json5->app{}->products[]中，可以对两种不同的外发版本进行差异化定制，新增两个product：Community和Ultimate。根据已支持的字段进行定制修改。
 
@@ -169,8 +169,8 @@ content_hash: sha256:8c0bed09b01492972ec1be7a6548b3cf4f8042a5887f7716bd38e0bf03c
 
    例：用户需要构建Ultimate版本的且具有vip特性的应用，可以选择product：Ultimate，target：vip，点击**Apply**执行构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/oL4doJMUQjeVNIM7xdQf9g/zh-cn_image_0000002779566998.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC279F69CE6D328E3C199CB24CC7A49D567123D7915245DC07233DB39941B6AA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/PZ5cPIcFRKWZhom8xJSqrA/zh-cn_image_0000002779566998.png?HW-CC-KV=V1&HW-CC-Date=20261128T023441Z&HW-CC-Expire=31536000000&HW-CC-Sign=39879794AEA0D57D87B74A67FC8CA6D184A4505844DDA954F2F53503A4515987)
 
    查看构建产物：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/XPNUemQeSQu1OhAvdQl5pA/zh-cn_image_0000002779407020.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=D29D8283D4C9FB5B647B3045788125508AC974AD6E15DBBF5EBC570F10CBC66B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/68AfErG9SdGYyEfVjh1yOw/zh-cn_image_0000002779407020.png?HW-CC-KV=V1&HW-CC-Date=20261128T023441Z&HW-CC-Expire=31536000000&HW-CC-Sign=C67B91D1080D983FF2E1E74A784B2E0DED34FBA94FDA793E9385A83275923654)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-instrumen
 title: 仪器测试错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 仪器测试错误码
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:31+08:00
+scraped_at: 2026-11-28T10:34:40+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:200272783446e32275860980d656ca8309fa17db0a88f218d6749eb1a8edbbc2
+content_hash: sha256:2d1b2957e9949a3b00a666242b1f2ce84a6707a9ec2e0b45262e10d8b8aa09c5
 ---
 
 ## 00501001 测试套件名称含有变量
@@ -156,7 +156,7 @@ Current test case XXX not found in the test file.
 * 选择要运行的测试用例，重新运行。
 * 在运行配置窗口修改Method name。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/JcitZI5RSzqA728ry3dPQg/zh-cn_image_0000002808886161.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=669DA1C3AC7632131E5FEF7E03458646BEE3F5671CD052533A60CBE24AB6ADE0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/CQLDCfcdRPuL7Nj7YcCVeA/zh-cn_image_0000002808886161.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=D750D918A019988DDCDAF1CAF04B02EB5ED2D85B27AC61C26BFE869889B30CAD)
 
 ## 00502002 找不到测试用例
 
@@ -210,7 +210,7 @@ The current file does not have any function registered in the list file.
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/gEuEBOYHRYOjeJ2pQeZ5Uw/zh-cn_image_0000002808886167.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=D96A86E00A31D3315B4CA890F2694F10B750207EF6802966B00FE9434DFEF9C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/nRkWnNbXSwC_59Nxx2pZKQ/zh-cn_image_0000002808886167.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9E78C69B711C95DAE30323106735F5396D18B92F55D2B83CD68B997F1B264DF)
 
 ## 00502005 测试包中的所有函数都没有在List.test.ets文件中注册
 
@@ -230,7 +230,7 @@ The current package does not have any function registered in the list file.
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/NB69MQODRiKkpGN_GAzF1g/zh-cn_image_0000002808766087.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5509CBF11CADB1A438FA73FAD4771A99E1D31E927792DA964D6BC54EE4054C1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/aU4uTsDmT8y-VrvR7uG5lQ/zh-cn_image_0000002808766087.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=719282EC8D322F7D0A2338A8FD974059C94E004DD616EBEAD0FA0ADCF172BDD2)
 
 ## 00502006 函数没有在List.test.ets文件中注册
 
@@ -250,7 +250,7 @@ The function where the suite XXX is located is not registered in the ''List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/DItJgp3RR4KoooXuEckd-g/zh-cn_image_0000002808766083.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C88E833A85C009B2F10B68D956211E377D08A181AFAAABC157C5F08FB1E299A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/WqjuCh0UTCCwr5JpN8-XTg/zh-cn_image_0000002808766083.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=6ACD403BC5FADD16579FE1253F2AD85DE4782254B2DAC4A637B3026F4110212A)
 
 ## 00502007 测试文件中找不到测试套件
 

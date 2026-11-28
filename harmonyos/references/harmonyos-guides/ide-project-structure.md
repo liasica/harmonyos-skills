@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-project-s
 title: 工程目录结构介绍
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 工程目录结构介绍
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:19+08:00
+scraped_at: 2026-11-28T10:34:26+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:755ca69fdc8963f28a377329a3a4166bd2cbaea5e806e17d73d1140738c35fa7
+content_hash: sha256:9e80fd5c0c502b30108467c5368aedf4b6ce6d40eeeb9d543d778b56b316bed1
 ---
 
 ## ArkTS工程目录结构（Stage模型）
 
 ArkTS Stage模型支持API Version 10及以上版本，其工程目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/73_SP1peS9mUNNccGeCHqQ/zh-cn_image_0000002779406772.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=658362C2136823194D980B90DA7CF00BCF4FF95D585494650870CB61353679DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/uTzjxkeWQ0OL8AZUL6Q2yA/zh-cn_image_0000002779406772.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF65CF324BFFF6147EBD5315BFCA91ED54FB713DBB3530464533E46415EF492A)
 
 * **AppScope > app.json5**：应用的全局配置信息。
 * **entry：**应用/元服务模块，编译构建生成一个HAP。
@@ -46,7 +46,7 @@ ArkTS Stage模型支持API Version 10及以上版本，其工程目录结构如�
 
 C++ Stage模型支持API Version 10以上版本，支持使用ArkTS和C++进行开发，其工程目录结构如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/RxscxVxnSs-hUeGOX3y28A/zh-cn_image_0000002779566746.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=B751D4EBFEB19BAB5FF6B5B54F164861DC59CD3C07E0A1B17BD8A567E7CCAB00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/ngd8PpIvS1GSpXPJY71fQg/zh-cn_image_0000002779566746.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CB290EAD6AF44187A737AEECCCBF4A0AF58F6841EB9661BDC399654E90CB55C)
 
 * **entry**：应用模块，编译构建生成一个HAP。
   + **libs > {abi}**：用于存放.so文件，此目录下.so文件默认打包到产物包中。其中，{abi}为设备CPU架构类型（如arm64-v8a）。
@@ -80,7 +80,7 @@ C++ Stage模型支持API Version 10以上版本，支持使用ArkTS和C++进行�
 
 JS工程只支持FA模型，其工程目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/kvMeFO8qSROKGOgQj2ICaQ/zh-cn_image_0000002779566748.png?HW-CC-KV=V1&HW-CC-Date=20261124T044219Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BE23AAF21AADBF9EDDAA826939F26DFCE872C31602446291715B39A19C3A357)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/h8vTytNDT26W0ocMUGjKqw/zh-cn_image_0000002779566748.png?HW-CC-KV=V1&HW-CC-Date=20261128T023426Z&HW-CC-Expire=31536000000&HW-CC-Sign=30E1174C7D050223E172C00F215D294A80756A4D5B3D4D8930CBDCE14ED3D24F)
 
 * **entry：**应用/元服务模块，编译构建生成一个HAP。
   + **src > main > js**：用于存放js源码。

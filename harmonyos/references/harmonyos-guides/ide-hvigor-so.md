@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-so
 title: 预构建库快速链接
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程 > 预构建库快速链接
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:33+08:00
+scraped_at: 2026-11-28T10:34:42+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:7311d8e6cfd03f15d5986c529dfaab3e848f093d04428db4cce7fe9dfbb9add7
+content_hash: sha256:053b2cf14e628b2bd85431c0131bd3727d50b69b697e357b8ce961345db1d7ad
 ---
 
 在工程中使用依赖模块时，如果希望使用依赖模块中native相关的so库与接口文件（.h/.hpp），Hvigor提供了快速链接功能。
@@ -40,7 +40,7 @@ content_hash: sha256:7311d8e6cfd03f15d5986c529dfaab3e848f093d04428db4cce7fe9dfbb
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/LVWAmDUsTFq2IsDsA3ogBQ/zh-cn_image_0000002808886613.png?HW-CC-KV=V1&HW-CC-Date=20261124T044232Z&HW-CC-Expire=31536000000&HW-CC-Sign=B28F2A3EF9BEA164078D1E895CB6B53C5AB1F90CBA4509BB91EB7AA78F26A061)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/gMM91yKKREWsnU8h-000WQ/zh-cn_image_0000002808886613.png?HW-CC-KV=V1&HW-CC-Date=20261128T023442Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E6811A904176E799297F1DD14F2E1EEF13D0B6842209A978CC743E8C9EEF8DB)
 
 在工程的CMakeLists.txt脚本中声明链接：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-device-fi
 title: 访问设备文件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 访问设备文件
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:30+08:00
+scraped_at: 2026-11-28T10:34:39+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:99ac0fc503cc503e4e923379eecf424157052fb5bc7427705ba0985fce4a3fdd
+content_hash: sha256:8f0ffd318c65eff448b6522943a703dbf8759c1e8add5e73f8b70d8ff7c17d01
 ---
 
 开发者可以使用Device File Browser，在DevEco Studio上如PC端操作一样，对设备文件进行新建、删除、上传、下载等操作，而无需使用命令行，提升开发效率，当前支持普通文件视图与应用沙箱视图两种模式。
@@ -30,7 +30,7 @@ content_hash: sha256:99ac0fc503cc503e4e923379eecf424157052fb5bc7427705ba0985fce4
 
 1. 在菜单栏单击**View > Tool Windows > Device File Browser**，打开Device File Browser。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/i-Vfw5uFRI2WwtOcSQ15Ew/zh-cn_image_0000002808766447.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=F66050697A9385C231729E4EEC730C31949D57549800750AECE953155469B97D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/rKiG0KXKSiOGfzD8Sw7pfA/zh-cn_image_0000002808766447.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=61E35C7E566709CB60FD2EB3D06F944AB27A140C4C513607D42AB88CBABB467A)
 2. 从下拉列表中选择设备（设备需已连接）。
 3. 选择设备后，显示文件/文件夹列表，可进行以下操作：
    1. 右键单击目录或文件，进行新建/删除操作。
@@ -49,7 +49,7 @@ content_hash: sha256:99ac0fc503cc503e4e923379eecf424157052fb5bc7427705ba0985fce4
 
 Device File Browser可访问的文件夹有五种类型：[应用沙箱目录](app-sandbox-directory.md)、一般暂存区目录、日志目录、设备公共目录、媒体库目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/F4YY-O_oS5KAZVhHHKXXZw/zh-cn_image_0000002808886525.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=9202F6B9FC9951CD6D788374BE023F039923B52E7BEA94560A8201FD720DB326)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/L6cUFva3TPS_WXFGgQd1Nw/zh-cn_image_0000002808886525.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC36E88B5B3B6B43B67C37FF7026CDF79A7FC8C79AB3C0F066B55DE582286409)
 
 ### 应用沙箱目录
 
@@ -59,7 +59,7 @@ Device File Browser可访问的文件夹有五种类型：[应用沙箱目录](a
 
   普通文件视图将按照设备的真实物理路径显示当前设备上的文件结构。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/kRoV5DmBRoqgp7FGnyeU8A/zh-cn_image_0000002808886535.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=48597A107C48D3CF31EB6B1D725E2A298184A820A2C6F44AE6741C57BC526EBA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/wgtVDgYITmqyFolWfu1eXg/zh-cn_image_0000002808886535.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9AD9D161B3FC3F45E8A590F9C3A71A2F5B54C97184026FDA3D6D8AE3BB7CA24)
 
   应用沙箱在设备上的物理路径位于/data/app/{el1，el2}/100/{base，database}/{packageName}路径下。
 
@@ -69,13 +69,13 @@ Device File Browser可访问的文件夹有五种类型：[应用沙箱目录](a
 
   应用沙箱视图会展示所有debug类型的应用，按照应用的沙箱文件路径显示应用的沙箱文件结构。
 
-  从DevEco Studio 6.1.0 Beta1版本开始，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/DdG_qV9mRISWO9uM_0B4YQ/zh-cn_image_0000002779406902.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=373BDE0E82CF1066BC222ECAC2C076D7EAE901BB3E2B0F8AA227F68B678D54D9)即可过滤出当前工程对应的沙箱目录。
+  从DevEco Studio 6.1.0 Beta1版本开始，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/EUeIOI2cSCioXF2gAGI_FQ/zh-cn_image_0000002779406902.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=F242D36A0C96F8C03C80FD13C9A33CC560F45D7A3FCF657F6FDDCCB955251B88)即可过滤出当前工程对应的沙箱目录。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/56JlWzdgT3u_DEEugH3KDg/zh-cn_image_0000002808886533.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=8120BCBF8CAAE447B736080607D6269EF0C35F1BE9ECA21D34AF364B1B03D3D3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/x4Ly8dnWSPmtIFaNDwPTXQ/zh-cn_image_0000002808886533.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E3D1AC2FE3265B3C5B24396BCB4FE9AEE154EBE03DFE1B90B1A06FD8302F2B5)
 
   API 15以下的版本，当需要以沙箱视图查看应用的文件结构时，需在module.json5文件内配置ohos.permission.INTERNET开启网络权限，卸载并重新安装应用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/FMY071S0SxGt7Jls3yUQNg/zh-cn_image_0000002779406904.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=0982F6A51B10DAC9989C9D4C25D2D0335A2018E5E286BB7855810A3A539347E8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/a0XreaiiSVSNoa6MsXlr3g/zh-cn_image_0000002779406904.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=628D264DAB6BAB61E318FF389F37F25E5085E82916FF2F0701D3DBCC3416BE40)
 
   对应于物理路径，沙箱路径为/data/storage/{el1，el2}/{base，database}。
 
@@ -87,7 +87,7 @@ Device File Browser可访问的文件夹有五种类型：[应用沙箱目录](a
 
 一般暂存区目录位于/data/local/tmp/路径下，支持新建、删除、上传、下载操作，在DevEco Studio进行调试、测试等操作时，将在此目录下生成相关的文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/7iX4gPvDQ0iHyGRHlrFh3w/zh-cn_image_0000002779566862.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=12520FA02147EEBA4243871589857C9B7E317DD4ADC7087E82F9DF816A66B491)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/b7e3SlV7RIm6pz8MRsgPLg/zh-cn_image_0000002779566862.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4DC1A9F9F7C7B8D35E97C3BE79273D673A1EA1C3F01AB053DFC9E148393E78B)
 
 ### 日志目录
 
@@ -95,13 +95,13 @@ Device File Browser可访问的文件夹有五种类型：[应用沙箱目录](a
 
 当需要查看历史日志时，需要将此目录下的压缩包文件和数据字典压缩包文件hilog\_dict.XXX.zip下载到本地计算机，然后使用[hilogtool工具](hilog-tool.md)解析出对应的日志原文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/fOMxsk4yQOqBMHJLYedIOg/zh-cn_image_0000002808766457.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CAE09962CAD82E836DFFFDBB3ADFE2C34B03FA30A00A3D5BC634837A0BA346B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/BgUJmsD1RkmNnXrR3taZjQ/zh-cn_image_0000002808766457.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=4329E411246FFF8864C3E9C372EA5E6DEC9C2BE5CA222E3C501256D7F62E563D)
 
 ### 公共目录
 
 用户的桌面、文档、下载等公共目录位于/storage/media/100/local/files/Docs路径下，支持删除、上传、下载操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Q0GKsUBjQgONKSKiFEk4dg/zh-cn_image_0000002808886543.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=357107AA6C1D76112A63BEBF50A40E84FC76C4F9B4377402F3C359BD885B4BC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/RloPi2AmSz-pTsUwghWP_Q/zh-cn_image_0000002808886543.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=27B637C4E5B6276E794B11BA6AFE2CBDE779524E5BDE7C9212B842E8824C801B)
 
 ### 媒体库目录
 
@@ -111,7 +111,7 @@ Device File Browser可访问的文件夹有五种类型：[应用沙箱目录](a
 
 Wearable设备不支持媒体库目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/hwY4h1-fSy27G04jEWUKxg/zh-cn_image_0000002779566876.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=023DA69E80036938F44064B22AA2383A14E279090A858F2FC779A6236D4BCCF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/NuprIdPVS9mIlmHosXF41w/zh-cn_image_0000002779566876.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC1520DCF3E8E0DF0C8371CCF4F20DB0A0690A430739170AC0F656C9BA5098CD)
 
 ## 特殊目录
 
@@ -128,28 +128,28 @@ Wearable设备不支持媒体库目录。
      hdc shell hidumper -s 1201 -a "-p Faultlogger"
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/-9vuxgdsT86zpskCcaVxvg/zh-cn_image_0000002808886529.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=7358606F57C9C3D2A819772D759B74D554F05B3E54CA66313E4800E9A7459251)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/86_4yrtTQvmU-WmnjQbzkw/zh-cn_image_0000002808886529.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=9163010FAB652ED8B3EBCF98F72245B0F404A0B75D43947B6FA66C5A893E520C)
    * 设备版本为5.1.0.54及以上时，崩溃日志文件名时间戳新增了毫秒级信息，执行以下命令。
 
      ```bash
      hdc shell hidumper -s 1201 -a "-p Faultlogger %s -LogSuffixWithMs"
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/I_Wuj3mcTYGowNB04OGZxA/zh-cn_image_0000002808886541.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=E41A5694070F3DBA3D1CDFF4C61789374B73BC604AE13051E9AECCF6832A1957)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/fsSa9BYbSLKJSh4osi5W9A/zh-cn_image_0000002808886541.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=18BFA4ADB758759E93B88955B51ADBFF7146CCC907529C88794F939B16AFFF4C)
 2. 执行命令，查看指定的崩溃日志文件的内容。
 
    ```bash
    hdc shell hidumper -s 1201 -a "-p Faultlogger -f {filename}"
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/feVQUBpYQfOE_zLL3Po1Bg/zh-cn_image_0000002808766453.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F6503839926CA9D8C0992DDC597155D0892D5391A7AB9D70AA05A4D0AFEEFD5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/-Z1U5gdGSNeN7ozYYFxyDg/zh-cn_image_0000002808766453.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=10572F84C891CB85107E80C4EB37980910E1FCFE871462CAFF88576320CF82F9)
 3. 执行命令，将文件保存到本地计算机指定的路径下。
 
    ```bash
    hdc file recv /data/log/faultlog/faultlogger/{filename} {path}
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/6wiV3i4xSgaj_uiEPhsOSw/zh-cn_image_0000002808766445.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA355A8CAF4C97DF2796ADA308DFB85A2F89A9813E44182C28B1851E6DBE6B61)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/myZeB8jATza8mkUJAdQBLA/zh-cn_image_0000002808766445.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=72F758691ED5DBD20E89A39BCBC20C16813A16CED0780980F4436D8AA8DD59C3)
 
 ### 图库目录
 
@@ -157,7 +157,7 @@ Wearable设备不支持媒体库目录。
 
 1. 在图库中查看文件名及后缀，例如a.mp4。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/h6Ahf7orSbu3B6TktL6lOA/zh-cn_image_0000002808886531.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA5B7602C1D1B622B3AF04A781FEE834730F9860FF5076EEA6B3C4080EDE7631)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/5TkpU_7aRbaSksxALrzyKA/zh-cn_image_0000002808886531.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDADC40FEDCE27F7B1E207B3C096D688DA7FDF9A15E2DA56FD7D70DD30E00FAD)
 2. 查询文件路径，记录为{FilePath}。
 
    ```bash
@@ -166,7 +166,7 @@ Wearable设备不支持媒体库目录。
 
    * 如果查询的结果中包含uri字段，则返回值第三行对应的文件路径不允许直接下载。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/lqqlMVQ6SySDrMYdLA2uqw/zh-cn_image_0000002808766461.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3286A63995318F28935781C7F9D9A5655A664AE7140A5563C4F19FD44E481A0)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/2SbCMdWHTlCZq97wmCCgAw/zh-cn_image_0000002808766461.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EA724964BF11A7E8C2E719388F70AC24CB8F8C2425C79E5879DB72706958D95)
 
      需要再执行如下命令，指定该uri，将文件复制到有下载权限的路径中（如/data/local/tmp）。
 
@@ -176,10 +176,10 @@ Wearable设备不支持媒体库目录。
 
      命令返回值第二行即为文件路径{FilePath}。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/FTA-rnNZR4SmqZ-K9R1F2A/zh-cn_image_0000002808886527.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=524C9C1C0B439CC451148D45192F1A50190EDB140DFB9B3FC0F794E682D86434)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/FPtYRV_RTKSGSeBptRj1Jg/zh-cn_image_0000002808886527.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F1BC65EA12252946E3DFCD50BEFFAAE8D5B0698E4571295FEFE658532048ED8)
    * 如果查询结果不包含uri字段，则返回值第二行即为文件路径{FilePath}。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/s92bKxF9Q8GrVXQa94xPBw/zh-cn_image_0000002808766451.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C61B0F95B3CE91D3F173736E94834981A6CDFCBBAC1462FDB6B4202D6027D72)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/4eA7APD8TyC9D0gbfvJVMQ/zh-cn_image_0000002808766451.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=6338093E97E6B0B597F24D3B9CD9DD145B8950D7AE3A1AE9585853866001170E)
 3. 指定上一个步骤中获取到的文件路径{FilePath}，下载文件到本地。
 
    ```bash
@@ -258,7 +258,7 @@ Wearable设备不支持媒体库目录。
 
 沙箱视图下，打开沙箱文件夹时报错：[Fail][E003001] Invalid bundle name。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Oow-leyHRP-B-_fgsQ4cRw/zh-cn_image_0000002808766449.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF64245E2BD327DF2CAC18CBF8A3A7C76BF7D8078337599B3930C5F22D47FC47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/wwVO2pRLTVeGsDOf7aueDA/zh-cn_image_0000002808766449.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=54AF44496FCF43431C42D732FAFC2B2ED6DCC07A2A6A25BE29D901662DBE5782)
 
 可能是以下原因：
 

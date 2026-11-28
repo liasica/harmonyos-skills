@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-service-w
 title: 创建服务卡片
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 创建服务卡片
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:21+08:00
+scraped_at: 2026-11-28T10:34:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:be6e2517cd5db4e103e6e9eabf1676b0bae381a1e84391b3348664d2c5582b87
+content_hash: sha256:5f1a49618bf65a7a0f7f06a59f11a42617aa67a1849177569fa5ce29c73a29cf
 ---
 
 ## 概述
@@ -58,7 +58,7 @@ content_hash: sha256:be6e2517cd5db4e103e6e9eabf1676b0bae381a1e84391b3348664d2c55
    * API 11 Stage模型及以上，创建元服务工程或在元服务工程中创建模块时，不再默认创建卡片和EntryCard。
 2. 在**Choose a Template for Your Service Widget**界面中，选择卡片模板，单击**Next**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/L3EvpBuvQYCsxhIueiHODw/zh-cn_image_0000002808766073.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=611E1FB4797430714810275B1D2541A1DCFBA5ADB3675B9E59C84FA4D8DD01C6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/0DRRT3E-RGyk9bP4EiNaTw/zh-cn_image_0000002808766073.png?HW-CC-KV=V1&HW-CC-Date=20261128T023428Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B5FA1C354849057E80B7572B22FAF7FA57A520878015FB4675C79917597C37B)
 3. 在**Configure Your Service Widget**界面中，配置卡片的基本信息，包括：
    * **Service widget name**：卡片的名称，在同一个应用/元服务中，卡片名称不能重复，且只能包含大小写字母、数字和下划线。
    * **Display name**：卡片预览面板上显示的卡片名称。仅API 11 及以上Stage工程支持配置该字段。
@@ -69,7 +69,7 @@ content_hash: sha256:be6e2517cd5db4e103e6e9eabf1676b0bae381a1e84391b3348664d2c55
    * **Ability name：**选择一个挂靠卡片的Form Ability，或者创建一个新的Form Ability。
    * **Module name：**卡片所属的模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/enKrRh0hQ_SimO3sYOpgGA/zh-cn_image_0000002779566492.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=B005D63AFD1E569AFDE940A415F0D0F605F953C3344CC9B65D3DD40C9EB74355)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/GYpqzkBgTLWV27ssZTWYLw/zh-cn_image_0000002779566492.png?HW-CC-KV=V1&HW-CC-Date=20261128T023428Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E785663E4FABE00306DE0BC3965D7E1BFBF59F8423A914720E20C88360536C8)
 4. 单击**Finish**完成卡片的创建。创建完成后，工具会自动创建出卡片的布局文件，并在form\_config.json文件中写入服务卡片的属性字段，关于各字段的说明请参考[配置文件说明](arkts-ui-widget-configuration.md)。
 5. 卡片创建完成后，请根据开发指导，完成卡片的开发，详情请参考[服务卡片开发指南](arkts-ui-widget.md)。
 
@@ -77,6 +77,6 @@ content_hash: sha256:be6e2517cd5db4e103e6e9eabf1676b0bae381a1e84391b3348664d2c55
 
 在开发卡片过程中，支持对卡片进行实时预览。卡片通过ArkTS文件进行布局设计，在开发过程中，可以对布局文件进行实时预览，只要在布局文件中保存了修改的源代码，在预览器中就可以实时查看布局效果。在Phone和Tablet卡片的预览效果中，每个尺寸的卡片提供3种场景的预览效果，分别为极窄（Minimum）、默认（Default）、极宽(Maximum)，开发者应确保三种尺寸的显示效果均正常，以便适应不同屏幕尺寸的设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/RUfpSdNERRuXbK6TFXRnRA/zh-cn_image_0000002808886153.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD1B5EB009718CA64EE13C886C62BA2C447F3E7E78440F11991D4BC56AF507FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/MwT3JzfLTA6E3tvOoo4mrQ/zh-cn_image_0000002808886153.png?HW-CC-KV=V1&HW-CC-Date=20261128T023428Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3BA1EDC0E1B632A737F6371F2AC68D90A2839471CC3D50AE7EF28D441EBC473)
 
 关于预览器的使用详细说明请参考[界面预览](ide-previewer-01.md)。

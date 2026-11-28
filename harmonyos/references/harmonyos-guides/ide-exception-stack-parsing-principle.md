@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception
 title: 异常堆栈解析原理
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 异常堆栈解析原理
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:31+08:00
+scraped_at: 2026-11-28T10:34:40+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:3251c5b84a2adcd00278edbc29778669cccff3741cbb0f35b8eb9d577ac617a4
+content_hash: sha256:51da6953b9a7beaa7abfdbc9f49437527d60363d8698451aa295fe987262aad9
 ---
 
 ## 构建产物介绍
@@ -14,7 +14,7 @@ content_hash: sha256:3251c5b84a2adcd00278edbc29778669cccff3741cbb0f35b8eb9d577ac
 
 release模式编译产物，产物位置：{ProjectPath}/{ModuleName}/build/{product}/cache/default/default@CompileArkTS/esmodule/release/sourceMaps.map
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/U4JLLPQOQYyNBEnPBB3-Dw/zh-cn_image_0000002808886375.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C3B746840117F7B0B5573FA3E54DE8E8F9CB755A4009168E94223968421C4EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/d8aynwneQMWvVaYG9ldVxw/zh-cn_image_0000002808886375.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A6B2259814950A5ABCD42CA0389239E0A4E133B7B136F19CDB1CC2524722641)
 
 ### C++调试产物debug so
 
@@ -22,13 +22,13 @@ release模式编译产物，产物位置：{ProjectPath}/{ModuleName}/build/{pro
 
 配置方式请参考[release编译带调试信息的so](ide-exception-stack-parsing-principle.md#section5147812132)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Q8QyYrlJQlC-76M3TNl2Vg/zh-cn_image_0000002779566718.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF469EC03F6DD10CB1387204DA873820D178277EAAF54BBE4219371C62472A7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/b4-NjhFYQnOlJ9edDlMb6A/zh-cn_image_0000002779566718.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=C87EDDE15FD5D50F887F1B4CDDB6ED84293FCDAD403253D55FF0002C7155BF5C)
 
 ### 代码混淆产物nameCache
 
 反混淆映射表，release模式编译产物，产物位置：{ProjectPath}/{ModuleName}/build/{product}/cache/default/default@CompileArkTS/esmodule/release/obfuscation
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/GawEjqU_QiS72JnmUw2Nbg/zh-cn_image_0000002779566714.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=9999FDB5090EEBBED79053162D6DBF810F7592CC3D60A75505A95FBA2BC2CD1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/XS1CP90ySKKlCM9RdZCY5A/zh-cn_image_0000002779566714.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD49A3F97B0D6BCA09B91F955169A2672691AE602780AC523CDD899A9305B9E5)
 
 ## C++堆栈解析原理
 
@@ -46,7 +46,7 @@ release模式编译产物，产物位置：{ProjectPath}/{ModuleName}/build/{pro
 
 通常release的so中的符号表、调试信息会被移除。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Q4fhn4uCRJikeSXd5P3R8Q/zh-cn_image_0000002808886371.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=F84E3E626DACE1D589A78645282B99985553E628450AA337A995FB06F605B5ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/90nPu3GjQZ-E0gaG13W6Jw/zh-cn_image_0000002808886371.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2E0EC224751F2CF57D6D37C42254D5B3E0891D5F6B6B535507481DD577B41A1)
 
 若需要保留so文件中的符号表、调试信息，需要在build-profile.json5的buildOption/externalNativeOptions中配置参数："arguments": "-DCMAKE\_BUILD\_TYPE=RelWithDebInfo"。
 
@@ -68,7 +68,7 @@ release模式编译产物，产物位置：{ProjectPath}/{ModuleName}/build/{pro
 * libs：带调试信息的so。
 * stripped\_native\_libs：移除调试信息等冗余数据后的so。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Hixq74RvSeKEGRCz7RXnnA/zh-cn_image_0000002779406734.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A550E8CC762C789A7EF9835DF0283A6FF8800E8E89C3FE0462A68AEEDEDC7D94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/CxEqgZjwQMe87Ot2iCR9jA/zh-cn_image_0000002779406734.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=061C805B7300BFDC6D8DEDE4F164AB4D6BA1EDA0F8D8B0B96DCE906B8EA468DD)
 
 ### C++堆栈解析流程
 
@@ -108,23 +108,23 @@ llvm-addr2line 0x00000000004005e7 -e test -f -C -s
 llvm-addr2line -e libapplication.so 00003714 -f -C
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/B2JaRWgfSfOCTfhVGWxJDg/zh-cn_image_0000002779566706.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=E93F8A08F3AA296B415208E431495FEE0B32B46032FD2153290120FFCC3BCE36)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/spXl1M7iR22Vm6NT_YlN3w/zh-cn_image_0000002779566706.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=1582B2718CA07AAAE5E29BC8790E0217DF7E6105E2398F74D040E905F63AD2DB)
 
 ASan堆栈解析：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/8-ex1fLSSH2zORJUJUGFXQ/zh-cn_image_0000002779406738.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EA6C57C8E1C69365DD19A72738795A18613A0AC537BA8D4E88A3F6A0AF78850)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/XFPAbjBZRW2ucWdC-976gQ/zh-cn_image_0000002779406738.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=5939DB6CE2C54C2F5332E8D2D37B7AC734F3AB48021B69A9F149A7EDA15F433C)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/jLLXiaW2Rkqm6iBTwxZYpQ/zh-cn_image_0000002779406740.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2A47C3D4F99879163519E39A6976A66BE354E8E769D0D62B0782E1BAEEC2E1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/VBsabMb6RVGSEt2BZ24hAA/zh-cn_image_0000002779406740.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EA1737E0513BC109FB612C92C930A495887DA7B4C357DE41E28E54322F07998)
 
 ## ArkTS堆栈解析原理
 
 ### sourceMap格式
 
 **图1** 源码  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/3nMNk6DrS-mABmSNFoGDdg/zh-cn_image_0000002779566712.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C30662115DBB5A15133027D2FEB69E4E97534692F3FC6091CD499FEB30099C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/1oW7w-EkRzC6i_KPu5YvTQ/zh-cn_image_0000002779566712.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=13DD36F1F7EFCC9F0A398D679E4D1B916C7A5F22C6610DB3EB8BBD17608520F3)
 
 **图2** 编译后产物  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/oNK04nSWQAe--2qThu4CuA/zh-cn_image_0000002779566716.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=24F44B5676B4A3E951FAA474F5839037860605684429442F0DDAEA7ABC39306B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/nllaR-hzRDazoWJoO55uTA/zh-cn_image_0000002779566716.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4DC3322394C28B3D5D5B4F857303A26A94829E2D0C496597099F3498517F448 "点击放大")
 
 **实际代码行映射关系：**
 
@@ -138,7 +138,7 @@ ASan堆栈解析：
 
 **sourceMap结构：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ntWiN-GPTqC7GW_RwWNt4A/zh-cn_image_0000002779566708.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=D095CF599077AED9A65A6B76AD61BCEA0AEB52C0BBC42B48F35CCFC666B81F2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/gGdyK4W7TKGI7QQsDeAhdw/zh-cn_image_0000002779566708.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=8673163D36CDE53306D388C39027BF0334863FF9037824DC4FAC77E840648799)
 
 单个module构建产物sourceMaps.map为merge文件，实际包含该模块的所有文件的映射关系；每个json中key以编译构建产物的唯一路径作为主键，运行程序的abc中保留了对应的key信息，当运行时异常代码归属到该文件时输出信息为该key，sources为实际源码文件信息，用于异常堆栈还原源码；mappings为编码后的行列号映射表，每个文件有独立的映射关系。
 
@@ -159,7 +159,7 @@ ASan堆栈解析：
 以“|”为分隔符，entry是本模块oh-package.json5中的name，har1|1.0.0是依赖的har1包的oh-package.json5中的name和version（如果没有依赖包，则是本模块oh-package.json5中的name和version），src/main/ets/pages/w.ts是引用的源码文件路径。
 
 **图3** sourceMap中的key结构化处理  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/-KrBM_-uQ7uCkxuEnqEveA/zh-cn_image_0000002779406736.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FAC9B276A819F5A5955487D9857D7D4DDF72DB26CB8494275DCDAD461EC60E3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/2IGsS50MQvy5UaLU5o1JYQ/zh-cn_image_0000002779406736.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=37D257C440B1378D3AF237BAD4C510D68496B96688FBDCFE1214E56984D76BF0 "点击放大")
 
 ## 反混淆解析原理
 

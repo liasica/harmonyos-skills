@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cl
 title: 工具概述
 breadcrumb: 指南 > DevEco CLI > 工具概述
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:51+08:00
+scraped_at: 2026-11-28T10:35:01+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:0e320ac80d00edee2d2a9ee58b6095a1b4896b69fdcc9852c115af5b68b1d785
+content_hash: sha256:b1c9686d135ef3d614e8a7d29854367c1cac30be9e94d6f480fe132b9c392ce1
 ---
 
 随着AI技术的快速发展，AI Agent作为新一代智能开发助手正在成为软件开发领域的重要生产力工具。然而，业界AI Agent在处理HarmonyOS应用开发任务时，往往面临领域知识不足、缺少可被AI调用开发工具等挑战。为解决这一问题，DevEco CLI应运而生，旨在为AI Agent提供HarmonyOS应用开发的专业能力支持。
 
 DevEco CLI是一款面向各类AI Agent使用的AI产品，将HarmonyOS工具集、HarmonyOS知识库和精品Skills封装为适配AI调用的命令行接口，全面开放给各类通用AI开发工具（如Cursor、OpenCode等），使这些工具具备HarmonyOS应用开发能力，显著降低开发门槛，提升研发效率。在开发阶段，开发者可使用自然语言或命令行交互，实现高效协作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/mCRzFptQTYCFcS81dv4nDg/zh-cn_image_0000002779566832.png?HW-CC-KV=V1&HW-CC-Date=20261124T044251Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6CB865B241264E7D49942D6E8F7E18AF62F1400567A7E8587A51C1C2D21D138 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/EX8d26MzSMyY-Pj8lJV-hQ/zh-cn_image_0000002779566832.png?HW-CC-KV=V1&HW-CC-Date=20261128T023501Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE8DDDCD5EA17F1FED5A0F36C218F4863010E067B8F0BD4F5EF7C6B0B8A884DC "点击放大")

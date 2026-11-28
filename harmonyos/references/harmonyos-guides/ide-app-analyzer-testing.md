@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 导入DevEco Testing的检测报告进行诊断
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 导入DevEco Testing的检测报告进行诊断
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:31+08:00
+scraped_at: 2026-11-28T10:34:40+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:d6d256ba3c718fb8fcab43105146de281fddbfcc3f5b7c16b7d8a05a4c20037d
+content_hash: sha256:5c14050052413c57ae17ecc7805c1ce9601166793f01a38ee77563fa8cb840f1
 ---
 
 从DevEco Studio 6.0.0 Beta3版本开始，支持在DevEco Testing中进行性能相关测试生成检测报告后，导入到AppAnalyzer进行诊断和分析，获得可能的故障原因并生成体检报告。
@@ -24,10 +24,10 @@ content_hash: sha256:d6d256ba3c718fb8fcab43105146de281fddbfcc3f5b7c16b7d8a05a4c2
 
 1. 点击菜单栏**Tools >** **AppAnalyzer**，打开AppAnalyzer页面，点击底部**History**，点击右上角的**Import > Testing Report**，根据界面提示，确保即将导入的检测报告满足相关要求。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/SarUIfDVS0Sh0kqqyQ4t9A/zh-cn_image_0000002808766413.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6058DC1E00198000A243CE8F90B81B7298BB6283DFE1E481350DE0E20F5B44B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/KS8L78_6R3eBOQn0jYSnfg/zh-cn_image_0000002808766413.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=D607FFA9B498ED9024BB5D7119EB7BCD1CAFD04FCA63AF81F3C6D56C2AA54B7F)
 2. 选择从DevEco Testing导出的报告（zip文件），点击**OK**后，等待AppAnalyzer导入数据并对问题进行诊断分析。AppAnalyzer仅支持对DevEco Testing中的部分指标进行诊断，具体请参考[检测指标](ide-app-analyzer-testing.md#section16156317171913)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/T5AIydYFSf6S7lHCUC3B7Q/zh-cn_image_0000002779566834.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF7EC6781C6E96F3796A3E09875B6B70D7554AD7F7307440D07B048916D40518)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/mB1ZmLsiTXeIIQk3NwyGpQ/zh-cn_image_0000002779566834.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0DB9B27244718BAEA5F53CD5569AAB97B9C665CC1CC5760C3C03854ADB669EA)
 3. 诊断完成后，查看测试报告如下。
    * **源文件、调优文件（包含trace文件和调用栈文件）或snapshot文件、时间戳等**：点击源文件可跳转到问题源码，点击调优文件或snapshot文件支持直接拉起性能分析工具Profiler并导入性能检测的问题数据进行调优分析，点击时间戳可以打开Profiler并定位到问题发生的时间范围。
    * **分析文档**：点击链接可跳转至官网文档，参考文档对检测出来的问题进行分析。
@@ -35,27 +35,27 @@ content_hash: sha256:d6d256ba3c718fb8fcab43105146de281fddbfcc3f5b7c16b7d8a05a4c2
 
    从DevEco Studio 6.0.2 Beta1版本开始，如果在体检中遇到问题，可点击报告右上角的**User Feedback**向我们反馈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/lnRyueRHT1a9m_dsOyB_XQ/zh-cn_image_0000002808886493.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=73BB72AB1D7E5EF6CF31A4C077FF6948C5B5C300F1AF9AE245759C5B8DBBC94B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/VjptDMQoTiG7cNRwyIHkFQ/zh-cn_image_0000002808886493.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=154CE029B6F223A7C3B081DBA6529C396AA00E03F40F6ADAE15F893F03F4EC6F)
 
 ### DevEco Studio 6.0.1 Beta1以下版本
 
 1. 点击菜单栏**Tools >** **AppAnalyzer**，打开AppAnalyzer页面，点击底部**历史记录**按钮，进入历史记录页面。
 2. 点击右上角的**检测报告导入**按钮，首次测试时，请根据AppAnalyzer的指引，下载Python及三方库，并根据界面提示，确保即将导入的检测报告满足相关要求。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/nth9YIy3QnmUnHEYaepFrw/zh-cn_image_0000002808886495.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F43BA716570F169A7BCD454213FDA3216A1F067D7A4575A85B60AA02750B5CF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Km-XYTPXRBuKhU7B6fL7Uw/zh-cn_image_0000002808886495.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C5C2DC607603A26C60A0DCEC4483FBA9EB92C751F1B900544A68F7E715490C9)
 3. 选择从DevEco Testing导出的报告（zip文件），点击**确认**后，等待AppAnalyzer导入数据并对问题进行诊断分析。AppAnalyzer仅支持对DevEco Testing中的部分指标进行诊断，具体请参考[检测指标](ide-app-analyzer-testing.md#section16156317171913)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/sRJjCWPYSleNzSeNW8PJow/zh-cn_image_0000002779406858.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAD9579CB4FEF89B32C615B34BB699DEEB308E2ECC79EDC616D724E5E00C7F66)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/Y59BWxXeTrGbU5nL58OjaQ/zh-cn_image_0000002779406858.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=C019E96C856E7C1655858A43373B840F12286191BD3ECA028A703494A2D16F9B)
 4. 诊断完成后，查看测试结果如下。
    * 测试报告：测试结果的汇总信息，点击**详情链接**可跳转到对应场景的详情报告。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/8XsLSLVzREakDhyfAdaf_g/zh-cn_image_0000002779406856.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=177BBEBBBEB126A4F67F8DBB07575D3EDF9AB2423DEA367B739BE4F2829DE465)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/LTmal5frRSyWBl-Nw8jsQg/zh-cn_image_0000002779406856.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA978B120A9921A5332C9126D7866BC3FC699656A502B3BE4CF49E48C99B7417)
    * 详情报告：给出详细的测试结果、可能的故障原因和对应的优化建议。
      + **开始/结束页面、时间戳、调优文件（包含trace文件和调用栈文件）或snapshot文件等**：点击开始/结束页面可跳转到问题源码，点击时间戳可以打开性能分析工具Profiler并定位到问题发生的时间范围，点击调优文件或snapshot文件支持直接拉起Profiler并导入性能检测的问题数据进行调优分析。
      + **分析文档**：点击链接可跳转至官网文档，参考文档对检测出来的问题进行分析。
      + **优化建议**：针对可能的故障原因，给出对应的最佳实践，点击链接可跳转至官网文档。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/-BW__iOwTraJovF7NLZ-vQ/zh-cn_image_0000002808766411.png?HW-CC-KV=V1&HW-CC-Date=20261124T044231Z&HW-CC-Expire=31536000000&HW-CC-Sign=43EE9CDC0455F4F42FE8D02D1EDCDD6A98D741CFE55807A8C9E0D57F722B7BF9)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/89tbfxYVS0Wa4tWxS2yCkg/zh-cn_image_0000002808766411.png?HW-CC-KV=V1&HW-CC-Date=20261128T023440Z&HW-CC-Expire=31536000000&HW-CC-Sign=23CCB563E51A646C84E6EE8935786E58492972AA32155E1C5171F4C866FB0D2D)
 
    **说明** 
 

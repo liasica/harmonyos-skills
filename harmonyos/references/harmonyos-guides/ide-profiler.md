@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler
 title: DevEco Profiler调优工具简介
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > DevEco Profiler调优工具简介
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:35+08:00
+scraped_at: 2026-11-28T10:34:44+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:a59998e12347bde9e732e9a8bdcea6761ad6f289cbcb76f32647bb014f586c7e
+content_hash: sha256:10b1e62ffad3f674b73d536ebf493c29393818b3337491cf1f20c79f7cd875fb
 ---
 
 为了帮助开发者更高效地进行性能问题的分析，DevEco Studio提供了场景化调优工具DevEco Profiler，希望为开发者带来高效、直通代码行的调优体验。开发者可以使用DevEco Profiler完成不同应用模型和场景下的完整性能数据采集，通过简单的工具操作即可完成数据采集，这些数据将帮助开发者洞悉应用在相应场景下的运行细节。
@@ -23,7 +23,7 @@ content_hash: sha256:a59998e12347bde9e732e9a8bdcea6761ad6f289cbcb76f32647bb014f5
 * 在DevEco Studio底部/左侧的工具栏中单击“Profiler”。
 * 使用“Ctrl+Shift+A”（macOS中为双击“Shift”）打开搜索功能，搜索“Profiler”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/T3JBa-__TFOHd5JPwVfzow/zh-cn_image_0000002779567416.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=03A3640F8B0F9210A01942D89C797BB45A712CF2E595093D287432C48DDCB30C "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/iYvCoc1LSJurjTtxXmDWBQ/zh-cn_image_0000002779567416.png?HW-CC-KV=V1&HW-CC-Date=20261128T023444Z&HW-CC-Expire=31536000000&HW-CC-Sign=C35F09E9A8F0F01C54926D4BE76E66AA62BAB9EDBC8930634C1E263F5021730F "点击放大")
 
 * **[界面布局](ide-profiler-layout.md)**
 * **[会话区](ide-profiler-session.md)**

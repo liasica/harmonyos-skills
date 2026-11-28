@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-fa
 title: 编译构建常见问题
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:35+08:00
+scraped_at: 2026-11-28T10:34:44+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:b854018de1da0bee53061f032567ce8f787deb6e25a972065a3cc79d1e7796ad
+content_hash: sha256:97bfe318ab5be19e3b3099ba71b5f3b8babd0e44a97ce11952072a73f129e74e
 ---
 
 ## 如何解决编译过程内存过高
@@ -40,7 +40,7 @@ content_hash: sha256:b854018de1da0bee53061f032567ce8f787deb6e25a972065a3cc79d1e7
 * 如果以上修改没有取得明显的效果，可以使用非并行的模式来执行编译。
   + 在菜单栏点击“File > Settings（macOS为DevEco Studio > Preferences/Settings） > Build, Execution, Deployment > Build Tools > Hvigor”，取消勾选“Execute tasks in parallel mode (may require larger heap size)”。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/iiMmjgVKT9OQXfUHadnynQ/zh-cn_image_0000002808766841.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F2B8AD0157DF7923328AE5FA4AFD8FE3E708EE9395239533034BB38A28722BC)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/oohoANeUSju_rpOo5fns5w/zh-cn_image_0000002808766841.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3C44407246B52D4F55EB4B756E0DB6868B9D916F205C87BCE083C7CED02F4E7)
   + 流水线场景中，在命令行最后增加 --no-parallel，示例：
 
     ```bash
@@ -82,7 +82,7 @@ content_hash: sha256:b854018de1da0bee53061f032567ce8f787deb6e25a972065a3cc79d1e7
 
      假设是entry模块的hvigorfile.ts中的代码导致的问题，XXX的有效值就是下图中的“default@SignHap”、“default@CollectDebugSymbol”、“assembleHap”等值。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Ixzau9X-SXaUnF2r4lWXqw/zh-cn_image_0000002808766873.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=06A8B7C4FD403152C6BF17FA339951A2615F32477790689711AE3FDE3AB9DDFB)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/EC7WKPKsQp6K3v7eLxQkvA/zh-cn_image_0000002808766873.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=C14951B63AE47E9120DB98464CC383254A015D04F233F97D7449D1901B763509)
   2. 确保getTaskByName的使用位置是在[Hvigor的配置阶段](ide-hvigor-life-cycle.md#section746253616316)及之后的生命周期里，包括beforeNodeEvaluate、afterNodeEvaluate、nodesEvaluated、taskGraphResolved、buildFinished。
 * **场景二：**
 
@@ -191,7 +191,7 @@ content_hash: sha256:b854018de1da0bee53061f032567ce8f787deb6e25a972065a3cc79d1e7
 
   确认堆栈内容是否如下。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/7wrsebT2QmKSlv9y2t8iGg/zh-cn_image_0000002808886935.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=0381AF0109EE29395FE26C0CF69BE30A84BF684C23DFA9E0929B133CB200860E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/yoyrsk3UT2eKOB1dKlFGwg/zh-cn_image_0000002808886935.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=913BA0ACB6731D281DF25F346102DEE51E511B6D5FFA9D740B6E3DD7D261DC54)
 
   **处理措施**
 
@@ -220,7 +220,7 @@ content_hash: sha256:b854018de1da0bee53061f032567ce8f787deb6e25a972065a3cc79d1e7
 
 问题原因是构建时存在不同版本的同名so文件。比如将har模块产物里的so文件拷贝到entry模块的libs目录下，这时har模块里有一个libhar.so，entry模块里也有一个libhar.so，再配置entry依赖har，构建entry就会出现报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/pI8Cn5kUT1ic4DKkchUZZw/zh-cn_image_0000002779567282.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4454982C145F479A622B16A78B8EE52A421AA6CC79356E6CBAD06B53DFDFA62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/tGsMYe_xQ8mtk1TrigUJBA/zh-cn_image_0000002779567282.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=C35B7BA9090782A3A1840F928BC7D89D214E0C617C9FF56040A71E2BA1836F7F)
 
 **解决措施**
 
@@ -230,7 +230,7 @@ content_hash: sha256:b854018de1da0bee53061f032567ce8f787deb6e25a972065a3cc79d1e7
 
 基于上面的例子，可以在entry的build-profile.json5中添加配置select选中har模块中的so文件，package选中包名为“har”的模块, include选中“libhar.so”文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Ws1Yk91ESLCgTfF2r2PkOg/zh-cn_image_0000002779407286.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=82EDD4C8E243383E53F16C78CA87A61B064F8F6C651259F4258FBA00A5C20E64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/R0LJKfuoQzyYrhq1eASaxg/zh-cn_image_0000002779407286.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=422F8CA4E28D685ECAC16252BB97EF4BDDA0900659F5392ACDB9D2C4369CF2C4)
 
 ## Linux环境下编译报错“JS heap out of memory”
 
@@ -302,12 +302,12 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   1. 在对应cpp目录下新建types/libxxx目录，并在该目录下新增index.d.ts用于声明native的类型符号；新增oh-package.json5配置文件用于校验工具的模块查询。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/dGaDmOfhS1euQFlLf4pDuA/zh-cn_image_0000002779567288.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F575BDC10946C1DC08FF45A8467A75455342823EA6E5229B6515D14B865B5E2B)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/R9CVfFk-SqeYcEORndkh0w/zh-cn_image_0000002779567288.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=237DC3EC67C2A3F3038946D07237D9F7BB83D148D3489A4057F50DBA4845676B)
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/NdFuflevRK6JClFjvxBtyg/zh-cn_image_0000002808766859.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBFBB34A7E9FCDDC9CB7C7080A99BD0D9DF1C9ED73A93A2A0EBCB160916B77AA)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/vDNwJPvFSc-KfN1Gn4DtUA/zh-cn_image_0000002808766859.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=84C60EDA6ACAF26579545791210FEED735AEC703EE31F26E92DE95DCE860AF2F)
   2. 在native引用的模块内的oh-package.json5中添加native模块的本地依赖，并根据提示点击**Sync Now**同步工程，下图以entry模块引用native模块为例。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/DVrKx_6-ShWJPB9qWQx2ew/zh-cn_image_0000002779407268.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F14F867187BE845CFD72F93DF77DD1A076FEAC8428B9604FBECA399659326FD9)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/COniZNHHT4aYHN2sjhCIfQ/zh-cn_image_0000002779407268.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=D819AEF43C2F1464111DD0175F7E2C3A63E471F7AC8AE9EF1DCA87FC8AEAB10B)
 
 * 场景二：
 
@@ -315,7 +315,7 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   引用三方包，构建失败，提示“Cannot find module 'xxx' or its corresponding type declarations”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/D4mDleaKSl2mLS_0lCiM7g/zh-cn_image_0000002779567284.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8585FBEB8BABD4DC72FA174573C55A844D79E50422EEB0F06C60F91DB6E355E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/pb96Nwh5QFexYtyGgdmeAw/zh-cn_image_0000002779567284.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E7ED2E21E1F9A87F39AD55CA8C378821CFFE4C653B4409BD3D27371C959A85B)
 
   **处理措施**
 
@@ -328,30 +328,30 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   例如：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/XtFmYQWlS7Ojo0FPx9rI5g/zh-cn_image_0000002808886937.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=782C455BCF060B05087C0CF137BBEA9BFB294D8D1FB0D7D7444C143D2028C4ED)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/qm1KgqI1RV-dlq-J05BBnQ/zh-cn_image_0000002808886937.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=547AD8B55F3CBED07A886C1A78041017327CDBAE6F298267AF8F475513709F88)
 
   代码中这样引用会找不到模块，导致报错。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/I9vW8Z-RRhiLC3Te3UV-Jg/zh-cn_image_0000002779407298.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=30B822AF571EA98D4C6580C48358D483071EA51B12A4ACD251D787651B6320E6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/dum29PkIRh-e0p-OvgVKVw/zh-cn_image_0000002779407298.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=80E0D91AAC36AA02362CB4F8C477B69B8E1BACD6A72283D7CC222B2117A786EA)
 
   **处理措施**
 
   修改引用方式，改为推荐的引用方式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/n-bp1WBNSOOnZQVzHIAfYg/zh-cn_image_0000002808766829.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=2218D76233D5FDE5F3A1C2744E42EAFF7FF95489C6747C9C7B510B60D9821756)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/blDRRmCcSqOyi9bUQB3UWQ/zh-cn_image_0000002808766829.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECC3152788BBF6ACAFD1B5BBC3137FF30D1BC2FA9BA384DB9953A8D5BA87F662)
 * 场景四：
 
   **问题现象**
 
   被引用模块oh\_package.json5配置有误，执行了ohpm install 并且成功地安装了依赖，但是还报错模块找不到。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/_-01M5dxRzGxejd_FbRenw/zh-cn_image_0000002808886919.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=1642211E600D31BFABBC19881A101A1563EFFF80375F424E801EFD070C6C84D9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/NSkMOIIrSLOwIRSpQU-JyQ/zh-cn_image_0000002808886919.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A250FC58807B073126C8BAAAE37814E3C9413A6173A3CC5C4791563EE6CDE67)
 
   被引用模块的oh\_package.json5中配置了错误的types字段。
 
   该字段优先于main字段。如果types字段配置的不存在，就会报错模块找不到。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/v_Y2Q1aGTIONtqpAnOVr7g/zh-cn_image_0000002808886947.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F31E1D36B28055B3FE00AFE6CD843E3F2A469AFED2D3E47DA8D6D696A5EE5AAD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/7NJY4yy1SZSgQ70q_qef2A/zh-cn_image_0000002808886947.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=A91A09B8569CEB4D7522D1E9994A23F85B479262572B44B1E504F6B4D44D5D3F)
 
   **处理措施**
 
@@ -388,7 +388,7 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   Stage模板工程编译构建失败，提示“Cannot find module '@bundle:rollup\_plugin\_ignore\_empty\_module\_placeholder' or its corresponding type declarations”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/rVYLRunIR-GGHd4XIcG0aA/zh-cn_image_0000002808766867.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F576D51DADFCB09E65D6F69EC6A8FAF77E3072A25A28905088E22CFBC2E27EB)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Y24czxh4SiuGWtGa0_kcQA/zh-cn_image_0000002808766867.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=92E4EFAB0011A4D1F265D6369F415DE30B44191A2EA78EE485C40C814E7A99A2)
 
   **解决措施**
 
@@ -396,21 +396,21 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   1. 通过在build目录中搜索'rollup\_plugin\_ignore\_empty\_module\_placeholder'，找到报错的中间文件，并根据中间文件找到对应工程文件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/PQak4x9HRvmWZBng9GJF0g/zh-cn_image_0000002779567256.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B97B0D3D310BCBF0350323BED3128B5DB5DF6A9A4FA44C10D2812EB22072C1E3)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/j2Y3TtsFSDSeF7fo_B0ewA/zh-cn_image_0000002779567256.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4855F905EEB70F50DD0C1EC4938C7D3E6B29EB8481F014B945539A1FFA856C8)
 
      在输入栏中输入rollup\_plugin\_ignore\_empty\_module\_placeholder，找到问题模块的中间文件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/gf05b7maR-a_fTbltQzi-Q/zh-cn_image_0000002808886953.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=285CCE4BCA80F4C262EF456D811197DA8A66D2EAE6F6839B3C34E9B8E51C91A7)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/ZgkQ2LBKRHWKFmaU0sql4g/zh-cn_image_0000002808886953.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=820B3148309E89C86058455EF78DD1953CDF7ACB6CB618FF384468B8AA981F37)
   2. 在引用类型文件中通过添加type显式声明符号类型引用：
 
      ```ts
      export type {T} from './type';
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/8Hm3meGmTq2kUsaIjJAPoA/zh-cn_image_0000002779567286.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0555CD2D1DAFD68CC3CE23BEC5D4F139FD3C8EB7EF2668E169C98833C456BB4)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/zGSC54kLRrCTb3dBws0Zhg/zh-cn_image_0000002779567286.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C77272395670308B158399905D8B828E19C63F1EB1C66EFAFD4977A879960E7)
   3. 同时排查是否从d.ts/d.ets中引用值类型符号，禁止在声明文件中声明值变量。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/1ejAM6fwQHyMmj59Ouoxyw/zh-cn_image_0000002808886921.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=0295060CA8BAD2BBED7F46BFDD7F4CE1F5BA660492ACEA546F4258B57990FABF)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/JJZP6shISBaOPR3JMSh8EQ/zh-cn_image_0000002808886921.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CB84ADF1CE6DAB610A57B1213CA29B166D7DD46B0543614035617696D11287E)
 
 ## 编译报错“Failed to get a resolved OhmUrl by filepath xx”
 
@@ -420,15 +420,15 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   三方包在配置依赖时，配置到devDependencies，源码中又有引用依赖中的API时，编译失败。如以下示例：三方包@hms-security/ucs-appauth将依赖@network/gr配置在devDependencies中，源码中使用了@network/grs的API时，编译失败，提示“ERROR: ArkTS:ERROR Failed to get a resolved OhmUrl by filepath xxx”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Xr13098dSH6OuspAQcWDJw/zh-cn_image_0000002808886925.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=6552A5804A041F7D29807727841FA642A19710FBC5394C76F40FAB4007F7F538)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/syG_4RoWShCUCGIs4njR4g/zh-cn_image_0000002808886925.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FC046CE37E5D444C5482EA28AB9BC43B0191571E4D2DD8E48D2EC20B5B61DB3)
 
   **问题确认**
   1. 进入上面报黄色的源码文件中，可以看到依赖有红色告警信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/w1c0YoUNR8Woa5CPZRlvWQ/zh-cn_image_0000002779567262.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BB57A154919AB2412E3C2105236994E35E71D6C03DA819726DAC289FCA447CD "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/mtinUfg8T0C4nS1N50tT1w/zh-cn_image_0000002779567262.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DE8FDB6372FC893390058CE795F7CF856494D50F376EA9A3BC65E2D9978B4DD "点击放大")
   2. 进入包下的oh-package.json5文件，查看依赖配置为devDependencies。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/a82aLYYvQqSz_jgBokLNOw/zh-cn_image_0000002779407308.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=87C48BC729E8C71EA2D72D0D7D57FD6C039177FBCD16417B9778415F8B0950BE)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/t31MOTNIS8CCSgYCCdXI8Q/zh-cn_image_0000002779407308.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9DD810AC5A3437F315AE25F6C7DDA09F43C68D5EEF604719B48EF7166D2BB38)
 
   **处理措施**
   + 向此包开发团队提改进建议：运行时的依赖，不能配置在devDependencies中。
@@ -440,7 +440,7 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   DevEco Studio编译失败，提示“ERROR: ArkTS:ERROR Failed to get a resolved OhmUrl by filepath xxx”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/3QL6_qQoRsmbh7XTK485NQ/zh-cn_image_0000002808766835.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEB2F982A8E14F7647D3808B87DFD8524E4C88F25945C13D157C136BFC754A43)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/WIm68HvqT3KuAlkOFHZvwA/zh-cn_image_0000002808766835.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A9D219E31522C60F31018379DC480A324687EB43F88DFF90989E14C827D820C)
 
   **问题确认**
 
@@ -455,9 +455,9 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   工程A以相对路径引用了工程B的模块，这种引用会导致报错。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/XkfMfxs3RNSDPtwSJz9OyQ/zh-cn_image_0000002808766839.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=560F384B71C45217132A51DF990BD0EA91C46A895CC6DD708FE54177F43111E0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/ofUGiOPrTG6PZ_hd5xLh3Q/zh-cn_image_0000002808766839.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=244B403096932DD620364B4B65C841F40A4EAEDEF5FD778377F10C51CB258BE5)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/aWIzxX_3Rx6kA0sM5g2p3w/zh-cn_image_0000002808886913.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9588B0307C23E3112E4E641BCC9CB823D0DDEA1A0FC62CA316545588A4131FAD)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/64lusOTNSoWRlt-21Iqk5w/zh-cn_image_0000002808886951.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=4992EC5B1B5F20D44A76BACB39AB66D1A53213F349D2E0E4408379732A16ABDA)**处理措施**
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/2pCw8Jh1TKGUaAMtfyk0vg/zh-cn_image_0000002808886913.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD3F508E2982E5C9980771B02E751C4739736CDD869FFBD10FD78C6AE7E049FB)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/qBl-l7gwR8iIzzE00q2-YA/zh-cn_image_0000002808886951.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=04E197FBAB338081B137056773199194DCEF4BDC0F4E0A197D9A4559F0F76470)**处理措施**
 
   + 把工程B这种的har转至工程A里，作为A的一个模块引用。
   + 把工程B的har提前打包，在A中以.har的方式引用。
@@ -477,7 +477,7 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   DevEco Studio编译失败，提示“Failed to get a resolved OhmUrl for 'xxx' imported by 'yyy'”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Ugav8btpS1mzszgOdCdblw/zh-cn_image_0000002779567250.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=89A9C9FE2F3DE208966B1B4C107A8734B1EB7AEE29118202931A9F93C3C92EA8 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Ugz0SKGlQbOHTdNbWUdZog/zh-cn_image_0000002779567250.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=A901EDB0040EB21AFD8F8B0E336CF994D2642FF8D7418B384759E259EFEC66F0 "点击放大")
 
   **问题确认**
 
@@ -488,7 +488,7 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   + 将xxx依赖配置到yyy模块oh\_package.json5的dependencies中。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/HPVL2nG2TouWhVKTw6UtEA/zh-cn_image_0000002808766871.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6067FE4684C21E8BF648197EAA334137BA8BCBFB10EF5E1C4099970328BC373 "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/TXGulCjPT2-_7NnD65qOBQ/zh-cn_image_0000002808766871.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=51E981E52CC0737A115E92EDD143F3C7229D62AB4B38071EA3FA392F06FB8120 "点击放大")
   + 将yyy模块改为非字节码har，在模块级build-profile.json5文件中添加byteCodeHar字段并设置为false。
 
     ```json5
@@ -502,7 +502,7 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
   请确认当前使用的DevEco Studio和SDK版本是配套的，点击菜单栏**Help > About DevEco Studio**，**Help > About HarmonyOS SDK**分别查看配套的DevEco Studio和SDK版本。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/IDMg35L_REeggjgydOCd3A/zh-cn_image_0000002779567266.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9C6AEF040A2B5CCE0945FCF2D598EC9B125E2A507A4A8AE0803828BE2DF6C0E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/V4qID7Z4RWaaYBH81QWvew/zh-cn_image_0000002779567266.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B2BC5A9EEFB4DCE9C3F6A00FCDDBC8BF217C672D508468F1B2FB3928579FAD2)
 
 ## 编译报错“Property xxx does not exist on type 'typeof BuildProfile'.”
 
@@ -510,7 +510,7 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
 使用了自定义参数BuildProfile，编译态无异常但编译构建失败，提示“Property xxx does not exist on type 'typeof BuildProfile'.”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/ADJQVVR8SKqVY1cGDGsAPA/zh-cn_image_0000002808766861.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD127D67CA67ED50EB68798B6265487062613FDB860D5511F365310A3D447F04)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/YlBjoXnET7mzvGJWJSxNfA/zh-cn_image_0000002808766861.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C5E97AA099C348E887C8477C3E40B75CA9D8F951DA215D0EAD0488ED6225C9B)
 
 **处理措施**
 
@@ -582,7 +582,7 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
 使用了自定义参数BuildProfile并且编译器标红且构建失败，提示“Property xxx does not exist on type 'typeof BuildProfile'.”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/MHNR9FRPTh-laU4zEVMMhg/zh-cn_image_0000002808886931.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDBA521EBD21140E2DCA030350F05DC57DD670E96A1D7C9B8B591613499535EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/TEyXUViGT-ayDFF3gkr7og/zh-cn_image_0000002808886931.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=12F9CB5B51C022B03011F118C5630BBC69CE6C81E6FC93C81B3F576F69FCD14A)
 
 **处理措施**
 
@@ -871,7 +871,7 @@ hap-sign-tool: error: ACCESS_ERROR, code: 109. Details: java.io.IOException: Der
 
 打包APP时，提示“input module releaseType is different”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Le5-5ZcNQkaWF8r_OTFwHw/zh-cn_image_0000002780681220.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9074AEE097BE0F4FF29786B5C03FF4C1883FCDF924BC2448774855EC3D4E9171)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/hRNdMUd1RVSgBKswZJag_g/zh-cn_image_0000002780681220.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=186357CB52063D770F1CEBBC2461CEE52E3657013EE2022B004E2F35FAA0F452)
 
 **解决措施**
 
@@ -879,7 +879,7 @@ hap-sign-tool: error: ACCESS_ERROR, code: 109. Details: java.io.IOException: Der
 
 该apiReleaseType字段由编译构建工具自动生成，保存在HAP/HSP包的module.json文件中。如下图所示，首先确认各模块间该字段是否一致，如果存在不一致的情况，需要将应用的各个模块，使用相同版本的SDK重新打包，然后打包APP。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/mBuRftKKTces9pqOQnC2Fg/zh-cn_image_0000002810120827.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=67E99E2AC4283C4FDADD77938BBAB63ABE12BFCF7011E765D5C61BBDB003F766)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/OILQ3yBrSqi_ritI65Nrlw/zh-cn_image_0000002810120827.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AF14DE7DE1F7DA039E28F01BE18B9A48EBDB3A45C233DEB1910A0363D44FF31)
 
 ## 构建报错“debug is different”
 
@@ -887,7 +887,7 @@ hap-sign-tool: error: ACCESS_ERROR, code: 109. Details: java.io.IOException: Der
 
 打包APP时，提示“debug is different”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/mv0MnmgESj-UsejTA2m1cg/zh-cn_image_0000002810040731.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F5AE4E4451E3D08FD732D44ECE582CFE412620732F9AE2D4F525F990F6AF13F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/yoxSzhEiRemYqLUBoU3VKg/zh-cn_image_0000002810040731.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4931970EBDBDC5A9E5BC02C5A7AFFD27151A5E2C8FFAA8A302890CABAB4B2C2)
 
 **解决措施**
 
@@ -895,10 +895,10 @@ hap-sign-tool: error: ACCESS_ERROR, code: 109. Details: java.io.IOException: Der
 
 1. 该debug字段由编译构建工具自动生成，保存在HAP/HSP包的module.json文件中，如下图所示，首先确认各模块间该字段是否一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/knotBI3rRsex9wqEvDMBOQ/zh-cn_image_0000002780841182.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FFF62DFC118B6D38C53E48FD2C68375F26E9D304BF2364D451C861492C2F6D0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/8esIAgUuQyieb_NuxUdG3w/zh-cn_image_0000002780841182.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=20483279498B2E70F5BDEBC3BDAD27F2965DD7A495D9228D36EC9C4A1D9EFDB8)
 2. 编译工具根据设置的Build Mode选项生成debug标识，如图所示，可以通过此处进行设置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/egD3D6AORQW7zkTzkoaLzg/zh-cn_image_0000002780681232.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=12388F04B278D1E74DAA23CBF318F4815DC0E5DA1B0A4FD6E52483AD4387D6D9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/9llASVSaRzaYP6BKk6FhGQ/zh-cn_image_0000002780681232.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=33A3112E2BBE593012D6C36F7E258738AA66255F02F0BC4D2B5AC553D75EA8C5)
 
 ## 编译报错 “Unknown resource name”
 
@@ -908,7 +908,7 @@ hap-sign-tool: error: ACCESS_ERROR, code: 109. Details: java.io.IOException: Der
 
 工程中模块A引用了模块B，编译模块A时出现错误，提示 "Unknown resource name 'xxxx'"，找不到模块B的资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/8Valia-OQlWiuI6-9_nDxA/zh-cn_image_0000002810120863.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=7861DDF5D9B57C65D4259A48637A87D53AE706B6C6BB64EDF4B360B05DBD725B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/1MO-MtjQT_2iC2iwzzicMw/zh-cn_image_0000002810120863.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA23FE5EE4ABF028ECBA3194516AC7CE1868659CEC24E0D3FEA03DE994F381AC "点击放大")
 
 **解决措施**
 
@@ -924,7 +924,7 @@ hap-sign-tool: error: ACCESS_ERROR, code: 109. Details: java.io.IOException: Der
 
 引用模块的方式不对，如果引用的是一个其他模块的代码，也会报资源找不到。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/t11Ukwq0TO2b-fK1hlrvvQ/zh-cn_image_0000002810040785.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=70E61719AE3AF6C910821EC46851DE41A2F320F90D62276F26F2CAFD76C60883)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/vxw2CRXFS7y6qzCf_UZvkg/zh-cn_image_0000002780841240.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=596FE202DEE9AAB40267E49C726E5822A636CDA1E1CC1133F9D1D2489433A31C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/zbUV-eIcQ7-qNKItqsZq6g/zh-cn_image_0000002810040785.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=22B5B78051E216078277157087A4153CD85896F90D4F0B3F6846DEA802732E62)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/zwsTN7MoT8mXcl4zePmZUQ/zh-cn_image_0000002780841240.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC2F28092ABA5535913067AF71A0CBD1784058538945CA1A8EB770066CB41FE2)
 
 **解决措施**
 
@@ -932,7 +932,7 @@ hap-sign-tool: error: ACCESS_ERROR, code: 109. Details: java.io.IOException: Der
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/7QpnMceuSvyRyJDgVLNPYg/zh-cn_image_0000002780681286.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B14C333FC72BFF257CB2866532B119C548B1CF7A34D582F62A87A35722F34C65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/91PA4cmzSq2aFiAQw8jcZA/zh-cn_image_0000002780681286.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA9BC758319453DBDDEF141D5B698F70B34784DA37EDB1ACEC2E25484C00C26B)
 
 * 场景三
 
@@ -950,7 +950,7 @@ HSP A 申请了某个权限，这个权限进行了资源的引用，在所有�
 
 编译报错“Error: cJSON\_Parse failed, please check the JSON file”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/-BbZm5SHRAC_GWwBvxN_HA/zh-cn_image_0000002810120895.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AD6D876C2B7FF85722A9236EEDD1FB8F53CA460D974231E0E4E713A4939FC70 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/a0UGiN2sQGqz_6SasgJ9Dg/zh-cn_image_0000002810120895.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=19FE7522F668C1C4A67C65C0365D42F2B91DFDE2978F4A688BBC895E32E228AC "点击放大")
 
 **报错原因**
 
@@ -1046,7 +1046,7 @@ registry=https://repo.huaweicloud.com/repository/npm/
 
 编译报错“Error: the name 'XXX' can only contain [a-zA-Z0-9\_]”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/05cneJBYTiSnC7-HZn2qBg/zh-cn_image_0000002810040795.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=D650795E85150710973EDD03F31634C395393B4B56141E6133527DE6BBF787DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/fZ6KEpHlQ4mvrfM6WsFFDw/zh-cn_image_0000002810040795.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=812E15E4AA848EB3ECEFF749FC40C893CF14B874B18C8ACB5A1D557D84CB9337)
 
 **解决措施**
 
@@ -1072,7 +1072,7 @@ registry=https://repo.huaweicloud.com/repository/npm/
 
 编译卡死，提示“The modules directory at "xxx/workspace/node\_modules" will be removed and reinstalled from scratch. Proceed? (Y/n) > true”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/eBjdBkMyQyKNFDXq1sHDSw/zh-cn_image_0000002779407274.png?HW-CC-KV=V1&HW-CC-Date=20261124T044234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B57B2A0C43A17F662C1A11129F38E17AA5BF93330E7B55B72BCD7C9E11CB62FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/XVOEUG7nS76JH3qBQQCMQA/zh-cn_image_0000002779407274.png?HW-CC-KV=V1&HW-CC-Date=20261128T023443Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE7C78C082BE5B60BA3B32B74CE5F8303EEADC758EF72CF11124C98A54978EB6)
 
 **问题原因**
 

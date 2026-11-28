@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-skills
 title: 技能（Skills）配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 技能（Skills）配置
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:39+08:00
+scraped_at: 2026-11-28T10:34:48+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:928db9115d0bb01f036fc05b50bb0e122139524b075edf1c2dde464cace53dea
+content_hash: sha256:4e081b09a241f97ee6af792e98a37be4e518fae824751a3f1b867a0ed93e4a45
 ---
 
 ## 功能介绍
@@ -26,20 +26,20 @@ Skills实际是一个包含SKILL.md文件（区分大小写）的文件夹，在
 
 ## 操作步骤
 
-1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/IxLfuxwcRfWi4jOkyPozog/zh-cn_image_0000002779567222.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=0005BCE7323AC933EFE791FB060191F0C8DDFE1AED6D1BF1D5837DD0F3FEAA00 "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/nSlQwlJISk-Gp8pFw7LO3Q/zh-cn_image_0000002779407240.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=12D9FAA52419C58328FF56725CA623BC88F83875517AA1E8B8A3AED4718E745F)按钮，选择**Skills**，进入配置页面。
+1. 点击界面右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/HqhPncZtSBqNTljeO-hmRA/zh-cn_image_0000002779567222.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB394E1C35498CD0DA2AAD5461E1FAD32FD53DEF9A1AB38131E752B2394BA66A "点击放大")按钮，或者点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/FkO89nnQRQmi1CKRTudpsg/zh-cn_image_0000002779407240.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF5FDAEC792F6B4B2878758023BD8EFD31CE3B13BC9616C2AFAB1AD2355B8879)按钮，选择**Skills**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/zWCUUv70RqCKd6xHdCRMAw/zh-cn_image_0000002808886883.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C6EF2E72CE927E83F7D2F34B7E35578EDAFCB72A6236104F43E5156766C00C9 "点击放大")
-2. 在**Global Skills**或**Project Skills**下，首次导入时，点击**Import**导入技能文件；若已存在技能文件，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/E3HsDiGbQAuEhl5F9FGlpg/zh-cn_image_0000002808766799.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=76057598D5AAC35156E9AC902C81217D75DD1D4F1062E624484DDEA3B32BF3B8 "点击放大")按钮进行导入。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/rz3U03s8TYS5jLkZDM-OWQ/zh-cn_image_0000002808886883.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CE3F9F7287BB0BB58F67916D4C9C2B248BE7BCB607D0DD8B09C1C1A7DEC2E15 "点击放大")
+2. 在**Global Skills**或**Project Skills**下，首次导入时，点击**Import**导入技能文件；若已存在技能文件，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/aJ7jnqCqT5qDPkamfqS0lg/zh-cn_image_0000002808766799.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=17DA483D23D3BE47F7460A00AACDEF67C8394C50C0B1B45B0C916AE49476366B "点击放大")按钮进行导入。
 
    **说明** 
 
    * 若选择的文件夹中存在SKILL.md，则作为单个skill导入。
    * 若选择的文件夹中不存在SKILL.md，则遍历下一级文件夹，检查下一级文件夹中是否包含SKILL.md，遍历到的SKILL.md将作为skill导入。若下一级文件夹遍历出多个SKILL.md，将批量导入。仅支持遍历所选择文件夹的下一级，不支持更深层级的遍历。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/AQJh_kkZQXucF0XVS_YCSQ/zh-cn_image_0000002808886881.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=714A1A0D82C6AD3557ED15E8F6291FA9809C8D811211446F85D7543D78CACF13 "点击放大")
-3. 在**Global Skills**和**Project Skills**列表中，显示已导入的技能信息，包括技能名称（如openharmony-build）、描述信息、启用状态。同时，将鼠标悬浮在技能信息上会显示编辑和删除的操作按钮，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/9HDGaUXLTtCD73y_-OnRzw/zh-cn_image_0000002779407242.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCD3F27741263AEE55229404C29C22496E489D6E19E15A032C33A4F85067726A)可在代码编辑区打开SKILL.md文件。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/VO6e4BCLRK2S8K54n-VG_A/zh-cn_image_0000002808886881.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=814091C8FBCF46AF5D71202E054141D29E93E100E6C9AD4FD47F664C68128ACA "点击放大")
+3. 在**Global Skills**和**Project Skills**列表中，显示已导入的技能信息，包括技能名称（如openharmony-build）、描述信息、启用状态。同时，将鼠标悬浮在技能信息上会显示编辑和删除的操作按钮，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Q_6W4WpQSlq5Mx6CeYVW2A/zh-cn_image_0000002779407242.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=73C5638AB90BEAE13C93FC9DD64BA9FDD9007C311E026587569FCDAE3A62DBCA)可在代码编辑区打开SKILL.md文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/ntuOH-yuQLesQRN69SOPvg/zh-cn_image_0000002808766803.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=33FCF357EBAAB3EA448A64B0060ABCB4FD0BD1ED396E2ED09035B5BA744ADA24 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Ayvkn75bTX6p_YTZSrmgZA/zh-cn_image_0000002808766803.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB1EA42E2620BFE9B2F41D92D1393B50DAF75CF344720E473C9DC4B8356D5CA3 "点击放大")
 4. 返回CodeGenie对话框调用Skills，在对话框输入时需要带有技能的name（如openharmony-build）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/3o5JETyiRFakh7JD7ISm7Q/zh-cn_image_0000002779567220.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=5906DECE9BD8DF089B87E054EEEFDFB91049B5D2055AFFB68F0612A96610BDF7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/bColCk9pSguA-Kix6Rmjyw/zh-cn_image_0000002779567220.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=70066A3B905630FF48EAE1970846C7C0CCEF9F87254FD81D88A3EACE71B11183)

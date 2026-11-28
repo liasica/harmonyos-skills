@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-ark
 title: attach启动调试
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > attach启动调试
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:29+08:00
+scraped_at: 2026-11-28T10:34:38+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:f29e4264aeb2d4abad979ecf727c203fa8cf7cc232a1b02bfe308bea64b3007e
+content_hash: sha256:da88632c4d62c7f63204cd8a7bc2aa2cdb2c2a2018cdbfd2fc834b08c3188ac4
 ---
 
 开发者也可以通过将调试程序attach到已运行的应用进行调试。
@@ -23,28 +23,28 @@ attach不支持的场景：
 * 本地无源码。
 * bundleName不匹配，将出现提示“The selected process does not match the bundlename of the current project!”，但不阻塞调试过程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/VxVdvNCNRrK1ro53hOnUlw/zh-cn_image_0000002808886807.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DDA65647D2AEF406A52942C011055A7BC9D6E2875716A696D9C5D68F2A685C0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/LiXSJ9DCRPOpTcjsfFDLaQ/zh-cn_image_0000002808886807.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=95B808212A6D7C7DA01EBABFDD7DF393582F7E1861CA6E5B96D9C29254A66CAF)
 
 ## 操作步骤
 
-1. 在工具栏中，选择调试的设备，并单击**Attach Debugger to Process**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/szdZAb-fQTaKMfyMbgXvOw/zh-cn_image_0000002808886801.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=6710539C3FF18CE1031266F2B465E713F0182F9023E65CB9B5547855BABD89FE)启动调试。
+1. 在工具栏中，选择调试的设备，并单击**Attach Debugger to Process**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/WHHAV9DCT-iroHJFImo83A/zh-cn_image_0000002808886801.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C7F5835F35183A5AE961E109B0026E0158AA6E6CE8D85D212DA3A1EC7248FC7)启动调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/33LnFqhHR2-Ivt-JcjGo0g/zh-cn_image_0000002779407166.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D75708756030EE1521889CA590D73B10261837B79728D2C3A787A46B27EC16A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/i1IEG8vVRRCbB5H7wrUGfg/zh-cn_image_0000002779407166.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=7507E84439EEA8277A4CBB355463F4C4C8499EB9DDBAF74AB4120D4E00F43680)
 2. 选择要调试的应用进程，若应用bundleName与当前工程不一致，则需勾选Show all processes。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/QWhIBP7EQkONUMGwpEqyyQ/zh-cn_image_0000002779567142.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED0AD33F43E8A1FBAE2BE86E93B2E40ED8A3389B02089E9CBA35D1EBC358A33A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/1zTGhpoQQSe1qVuVZf7sxw/zh-cn_image_0000002779567142.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E8C6F9990841FAD347FB683C56F686BEC89EF8479F6295C8A2460F80A3E7AA6)
 
    **说明** 
 
    正常情况下，attach调试仅支持debug签名的应用，从DevEco Studio 6.0.2 Beta1版本开始，PC/2in1上的应用，如果使用了release签名并且配置了ohos.permission.kernel.ALLOW\_DEBUG权限，也支持被attach调试。
 3. 选择需要使用的调试配置，或者使用默认配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/8Y23J1tiQyu8avvZ-qHoxw/zh-cn_image_0000002808766719.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C598097EA7A89FD9891A473F5C1A7833FAEF46230706D06DE563D770DFB657F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/HLKroqmeQXKd09st-3uYyA/zh-cn_image_0000002808766719.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=190D74837A905F69041C89B7F0B046491C1C22E619FCAB8F4F67C0B2F907C72A)
 4. 选择需要调试的Debug type，若选择已创建的Run/Debug configuration进行attach调试，此时Debug type不可改变，只可在Run/Debug configuration界面修改。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Rp2ZpMzyRZeJQfJSZZOyXg/zh-cn_image_0000002808766721.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA56E1373BD19C31013DB9B602B2586BD047DC4CA92462B3264AA3BAE7AFB9AD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/CNeZhpnFQlSSr2kTJ_ELtA/zh-cn_image_0000002808766721.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=6466AEC6323F7BD32F7895FC157412A64A091FD8F8063E2CE146906611FEE26F)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Mv_Rfz-tR1CnjUmUnCCIbg/zh-cn_image_0000002779567144.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=5445C22D396D61A495F937C1C3D371CB3BDBB70476A0B62D5425230CAAF88FF4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/0GoDmXt9Tx2psM_HqycfIA/zh-cn_image_0000002779567144.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAC6D311A45907DAB7A519244ACE5B829B9163E440ADB9994D20F071C1D34A4F)
 5. 点击**OK**开始attach调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/KK6-7cYtRJmJDyqmEM79mw/zh-cn_image_0000002779407164.png?HW-CC-KV=V1&HW-CC-Date=20261124T044229Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECD79C77914E0D8EF0EC944EEAEEB725D69A1CB3F48ADA13CF32585CFA21BE9A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/5xFv7YKGSd6GVOJowQ-OxA/zh-cn_image_0000002779407164.png?HW-CC-KV=V1&HW-CC-Date=20261128T023438Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C49D6945EBE4B6C6CBBFFC3DE7AA04DBA9797E29FBB934EA3D4A1D874319249)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-publish-a
 title: 发布应用
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 发布应用 > 发布应用
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:37+08:00
+scraped_at: 2026-11-28T10:34:46+08:00
 doc_updated_at: 2026-11-23
-content_hash: sha256:d578c9e59c55942054c2c57a3f48f37a223cc12ac04d4debaf968e5e79301c49
+content_hash: sha256:c73d05ed4658532f4eee4f0fcfc490666e6ca930b71a9a313bb247cdfd03c506
 ---
 
 HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等签名信息来保证应用/元服务的完整性，应用/元服务上架到AppGallery Connect（AGC）必须通过签名校验。因此，您需要使用发布证书和Profile文件对应用/元服务进行签名后才能发布。
@@ -33,7 +33,7 @@ HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等�
    构建模式是<Default>时，构建APP包，默认Release模式；构建HAP/HSP/HAR包，默认Debug模式。更多说明请参考[构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 2. 编译构建完成后，可以在工程目录**build > outputs > {product}**下，获取应用包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ykPbjmo0T5aL3wocN8safg/zh-cn_image_0000002808887157.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD7DF822FF56260015718E9C80A97403F48B01E33B088CCD15A0F7B758CC3D11)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/s_LnLjipR1qDKk3l6tHG8Q/zh-cn_image_0000002808887157.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=8040677BE8F5138392891F5F1EE19C0A287A1E50C4B18FF73B4ABFC4C9A0B57A)
 
 ### 上传软件包
 
@@ -47,16 +47,16 @@ HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等�
 
 1. 在DevEco Studio菜单栏，点击**Build > Upload Product。**若未登录，请点击**Sign in**登录华为开发者账号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/hlt_GXwVTH-AvyiHoQNayg/zh-cn_image_0000002808887133.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0BCF1FDFB5543BE4754BBD4586B57A0325BFD9FA0630DAE0D2687F13B0659C4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/221UfRf5SHufoJHCK9BQww/zh-cn_image_0000002808887133.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B8815CBC019A250EF311C12B4910961C811C23A95F807814F33DE2F5063F3CD)
 2. 登录成功后，返回DevEco Studio进入软件包上传界面，确认用户名称和团队信息，在当前工程已构建的App包列表中选择需要上传的软件包，点击**Distribute App**开始上传。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/mjypJzsuQIu4kAcfzpnl7A/zh-cn_image_0000002808887149.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=45FC276EDC054A40D591034E33AE3D8C670F7F271F90DBA2210B5003B4CE765C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/aeStRTdeR_6EJD_xNrvj2g/zh-cn_image_0000002808887149.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E0BB6BD15138D5AAEF5883D22E8D44DC366516438853440876BEDB10BA10E71)
 3. 选择所需的上传类型，上传类型包含AppGallery Connect、Testing Only、Custom三种，然后点击**Next**。
    * **AppGallery Connect**：使用云管理证书和Profile，对应用重新签名；将软件包上传到AGC用于测试和发布，同时上传符号表信息。
    * **Testing Only**：使用云管理证书和Profile，对应用重新签名；将软件包上传到AGC用于测试，同时上传符号表信息。
    * **Custom**：自定义上传配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/jdfP0_bcRUmsJzJrEco_iQ/zh-cn_image_0000002808887139.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3981142075B64896FEB02C8C37F30390A79CC0C42603107496E824C769462D9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/jboyo-nOS4GPv_dSrxBzUw/zh-cn_image_0000002808887139.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=66D4B41DE1E1B9A37391A2F6DBBCF1C7DDF9E8E6FBE40F9DC5C2EE956B37B94B)
 4. 检查应用是否已在AGC注册或关联待发布的应用，未注册或未关联待发布的应用可在DevEco Studio中创建或关联。
    * 应用未在AGC注册，在窗口中配置应用名称、应用包名等信息，创建应用和发布应用，点击**Next**。
      + **Project**：项目名称，可创建新项目或选择团队已有项目。
@@ -69,10 +69,10 @@ HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等�
 
      各选项更多说明请参考[创建HarmonyOS应用](../doccenter-getting-started/agc-help-create-app-0000002247955506.md)。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/AS7p0FH8RsuHdblb6_IMoA/zh-cn_image_0000002808767055.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=692BBC7708FDBA40AB675F27F545E2592166EFD85537F5DE34AB25CA5D8CBBCD)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/pgtCW1QwSiSHlIDCb8t4RQ/zh-cn_image_0000002808767055.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE31A7F2CDB58F72BB35E6538A19C43CF13DDB1A77C8DC30B504A5A0B0F2F1CD)
    * 应用已在AGC注册但未关联创建待发布的应用，在窗口中配置**App name**（应用名称）、**App package name**（应用包名）、**Device Type**（设备类型）、**Language**（默认语言），点击**Next**，会同步在AGC上关联创建待发布的应用。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/V9dHQxoZRumCkdaiGfwdNQ/zh-cn_image_0000002808887141.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5E9B48EE51F1F399575B4C4794F8E9C2B926378234BE23BCA3DB31D98CDC2EE)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/-ZZvHnbfT6qjf72b-0qw4w/zh-cn_image_0000002808887141.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAF653A696455248E9B7731C3C55CEFD3CD638633DD605975D4E91E7049718D6)
    * 应用已在AGC注册并且已关联创建待发布的应用，选择**AppGallery Connect**或**Testing Only**的上传类型，会跳转至[步骤8](ide-publish-app.md#li1944219257111)查看软件包上传结果；选择**Custom**上传类型，进入下一步配置软件包的使用场景。
 5. 选择Custom上传类型，点击**Next**，进入签名配置界面。使用场景如下：
    * **Upload to AppGallery Connect for test and publish**：上传的软件包用于测试和发布。
@@ -80,12 +80,12 @@ HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等�
    * **Upload Symbol table**：上传符号表。
    * **Manage Build Version**：自动管理构建版本，Build Version值由AGC计算后更新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/NmrGEfWPSnGda50UbLP2MA/zh-cn_image_0000002808767065.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=14C9EB099053C1DC9552577B42448A80CA4B2A79F1120A9DA79647342E96F88E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/jBYBL1OERU-6lw-BgnUSNw/zh-cn_image_0000002808767065.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E50E5AEBC8CA6D4569BB0B53431FE77844FCD2C042A69FF9C4E966EC4ECD157)
 6. 选择签名管理方式。
    * **Automatically manage signing**：自动管理签名，使用云管理证书和Profile，对应用重新签名。
    * **Manually manage signing**：手动管理签名，开发者自行配置签名信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/THh7XlckRHGEAKzzlBiXyQ/zh-cn_image_0000002808887143.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=8371872F4BBCB3F204249FCB25294713883F0EBF9479E8AC9AEDEF8AF596FFD2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/nMFrCvM1Qa2lccvZOjWEcw/zh-cn_image_0000002808887143.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=3861032DED22AEC438BC24CA6DF560177C49B20B6CF3625BF11EC935FB1950CC)
 
    手动管理签名时，在Distribution Certificate选择**Create Certificate**（创建证书）或**Import Certificate**（导入证书），在Distribution Profile选择**Import Profile**（导入Profile）和**Download Profile**（下载Profile）。
    * **创建或导入证书**
@@ -94,20 +94,20 @@ HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等�
 
      导入证书，则需要导入本地已有的密钥库文件（.p12的密钥库文件）和证书（.cer文件）。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/ly7fGueUSN2tkHJDSjfFMA/zh-cn_image_0000002808767059.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=684D9157CAD9DA25FF941581F600293A61E5AB75860A85425369A8FCE19A499E)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/YJWd7WQHS-2H2VRzFgirmg/zh-cn_image_0000002808767059.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA0F85FF3473119264CDA12A93F39C52BDE30F8CA1BB43D70FD432705BB86EE7)
    * **导入或下载Profile**
 
      导入Profile，在本地选择与证书匹配的.p7b文件，或在AGC下载Profile后导入。
 
      下载Profile，开发者可以选择.p7b文件，选择后会从AGC下载到本地。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/asZAFFHHTruGw0QjIDi8bw/zh-cn_image_0000002808887147.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=46B1C7E6F2C5AC2D0D47F54CD80F8B477FB04219B8FAA2D812042E5F2C7E8090)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/ED5X-xk2Sk-LoFw1t94G4w/zh-cn_image_0000002808887147.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3F1EA3B59E39298A5FEC633067163B206A55855B827A35F4DB290734C3347FD)
 7. 签名成功后，在选择的软件包路径下会生成"re-signed.app"为后缀的软件包，检查软件包信息，点击**Upload**上传软件包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/SoQWS9ZXR6iXPuDkmSbGuw/zh-cn_image_0000002808887155.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=562A72477D80E9D291FCF89D6558821DE45BDE52113C8F29B062F18A6A75005B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/PTZU8RmAS62mygax4SasgA/zh-cn_image_0000002808887155.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=04333BDCD0AFEB40AF9A8C05270C88061B8A783B3D9CCF1F909AF4F79FE24DC8)
 8. 上传软件包成功后，点击**AppGallery Connect**可进入AGC查看软件包上传记录和检测结果，具体请参考[上传软件包](../app/agc-help-release-app-upload-pkg-0000002277983368.md)。点击**OK**，关闭上传页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/QvtlhjwjTLWcFyZGESQHyg/zh-cn_image_0000002808767069.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C874DA698CD50E3B593744A05C7A98FC839FAFB1E2836835896D375E41500D8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/5auTKO6pRqi2pE5IzPspcA/zh-cn_image_0000002808767069.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8E9D8B98BAFE036E5DDE8E2F0878FD6C958FC96E625CF03E18BB137CBA9C8CD)
 
 ### 发布.app文件到应用市场
 
@@ -119,7 +119,7 @@ HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等�
 
 开发者完成HarmonyOS应用/元服务开发后，需要将应用/元服务打包成App Pack（.app文件），用于上架到AppGallery Connect。发布应用/元服务的流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/xVEJnBNFQX-8Da7QEiXbog/zh-cn_image_0000002808767049.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CA19639106CB9E03F29D403C85597B2925391881BBE574FB9E232046758C644)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/br4DYyHiTRqvnZPGrhVXiA/zh-cn_image_0000002808767049.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=3302938ABC1DCBCCD35C138C135C050AEC4F8E9DB92489FD6128A6D2F2F08304)
 
 ### 生成密钥和证书请求文件
 
@@ -149,7 +149,7 @@ CertificateTool生成密钥和证书请求文件的操作界面与DevEco Studio 
    如果本地已有对应的密钥，无需新生成密钥，可以在**Generate Key**界面中单击下方的Skip跳过密钥生成过程，直接使用已有密钥生成证书请求文件。
 2. 填写密钥库文件，若已有的密钥库文件（存储有密钥的.p12文件），单击**Select an existing key**进行选择。下面以新创建密钥库文件为例进行说明。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/xSaSg-MzSnOcvhDLyXfbdQ/zh-cn_image_0000002808767061.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1E428E17AFB600FDD8C86768B5B2BEAE38DC8DCF20EF3795787D64D251678C9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/PJqDaSmxTvOOUuMH5lS4ww/zh-cn_image_0000002808767061.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DDE435F0061EF22342593595502CC3E527A7F4CF2D761815F20967DB6A1E090)
 3. 在**Generate Key**窗口，填写密钥库信息后，点击**Next**。
    * **Keystore Name**：填写p12文件名称，仅允许包含字母、数字、下划线（\_）、中划线（-）、句点（．）。
    * **Select file save path**：设置密钥库文件存储路径。
@@ -169,15 +169,15 @@ CertificateTool生成密钥和证书请求文件的操作界面与DevEco Studio 
 
      First and last name、Organizational unit、Organization、City or locality、State or province填写要求小于64个字符，不可使用双引号（"）、单引号（`）、斜杠（\）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/bcscySv3RNqVmnyvIExJVA/zh-cn_image_0000002808887151.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EC65C35D8644A4A1FE0BBA7F80C6A39CD4CA7241D8A3D2D5642FFCFEA52E2F5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/n7wUSt6LRwaJ_wYLA5jsWw/zh-cn_image_0000002808887151.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EBDF47242C4832981CD9CC2D1A9042AA442E61B49617813E2AD728A326708F4)
 4. 在**Generate** **Certificate Request File (CSR)**窗口，设置CSR文件名和CSR文件存储路径后，点击**Finish**。
    * **CSR File Name**：填写CSR文件名称，仅允许包含字母、数字、下划线（\_）、中划线（-）、句点（．）。
    * **Select file save path**：设置CSR文件存储路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/3JB_Tw5jRt2sfmLw-nMNsw/zh-cn_image_0000002808767071.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AF20620B10BEE90E4C18E210EF77EEB48912AB4DEC6176D7176A3FC97241E52)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/vOkf8fbCSyqeDzd3Q8cTtQ/zh-cn_image_0000002808767071.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BF6049D45BA444331C1C18FB55F7F0616115E9E69AB5E40C52617276A49637F)
 5. 创建CSR文件成功，可以在存储路径下获取生成的密钥库文件（.p12）、证书请求文件（.csr）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/a85VLf6XQ6-8hARySqhsPw/zh-cn_image_0000002808767057.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA0561758C4CEB2676A32DBEC1160B17AF3E643EB49F3865C51D2899B3C4ED4C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/vRgkAvuaTmqA_ae2_AvxBg/zh-cn_image_0000002808767057.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=136DDFCDCAE28CF9AC4F44F3B34A7EA75BC169E9EB88E0D9B2D9AA311A6F3456)
 
 **DevEco Studio 6.1.0 Beta2以下版本**
 
@@ -188,13 +188,13 @@ CertificateTool生成密钥和证书请求文件的操作界面与DevEco Studio 
    如果本地已有对应的密钥，无需新生成密钥，可以在**Generate Key**界面中单击下方的Skip跳过密钥生成过程，直接使用已有密钥生成证书请求文件。
 2. 在**Key Store File**中，可以单击**Choose Existing**选择已有的密钥库文件（存储有密钥的.p12文件）；如果没有密钥库文件，单击**New**进行创建。下面以新创建密钥库文件为例进行说明。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/dFu0VWM4QZC6Y2ocBhqtPA/zh-cn_image_0000002808887153.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=B72218C7C3170A497801903CFE938F34CC28D1F39D07CDA21EA031D67A6C5F8F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/JpiOmPlQRZ-M4CnWaNSmBg/zh-cn_image_0000002808887153.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=90AE8EA5BE03CEE70122CF97A364F170290668032D68B9D69ACCBB9C189E21F5 "点击放大")
 3. 在**Create Key Store**窗口中，填写密钥库信息后，单击**OK**。
    * **Key Store File**：设置密钥库文件存储路径，并填写p12文件名。
    * **Password**：设置密钥库密码，必须由大写字母、小写字母、数字和特殊符号中的两种以上字符的组合，长度至少为8位。请记住该密码，后续签名配置需要使用。
    * **Confirm Password**：再次输入密钥库密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/APd2tpnYSQmS9tvOP4LhDw/zh-cn_image_0000002808767051.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B693A043009B72CCAFC2D85094F041F40C214980E42942931A242EE40DD0063 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/TBNdIylbTsO8GhIEu4rmUQ/zh-cn_image_0000002808767051.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1F1B6C200CBA04097A145B090754F273026857D4FC03E795D9EFF44A0096C21 "点击放大")
 4. 在**Generate Key** **and CSR**界面中，继续填写密钥信息后，单击**Next**。
    * **Alias**：必填，别名，用于标识密钥名称。请记住该别名，后续签名配置需要使用。
    * **Password**：必填，密码，与密钥库密码保持一致，无需手动输入。
@@ -210,13 +210,13 @@ CertificateTool生成密钥和证书请求文件的操作界面与DevEco Studio 
 
    First and last name、Organizational unit、Organization、City or locality、State or province要求：字符长度为（0，64），且不可使用（双引号）"、（斜杠）\、（反引号）`。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/FMNCczz_QAWZyoofT1sf3w/zh-cn_image_0000002808887135.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB32B23641F9040C5E5AB2D0B724899936067D6E61F210B44AE2EDF9F85ADA50)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/W0IB56vvRg2VHlxv0tsw9g/zh-cn_image_0000002808887135.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=68082CFF6ACFDD1EB9076AB3EC152CFF331BA601BF8AD17DF2F9C8FF42A2E067)
 5. 在**Generate Key** **and CSR**界面，设置CSR文件存储路径和CSR文件名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/aR39Jzq5TyKmrrnCwcwdnA/zh-cn_image_0000002808767073.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB25BC9FD371A5F8461AA1579DBB8895E9CF7AC3695B097A27949770D15DF53D "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Idqq6BX4RV2CIQMK-lntvw/zh-cn_image_0000002808767073.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=56483852DC8FB86E36366ACF0159733765BCC28C363CD299F887FD3CB383A41B "点击放大")
 6. 单击**OK**按钮，创建CSR文件成功，可以在存储路径下获取生成的密钥库文件（.p12）和证书请求文件（.csr）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/3mZ9PB5DTk-fnttzdJZ9Eg/zh-cn_image_0000002808767067.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=59436267D3256F25CAFB46DBEDEE14C8FFC0DD77767D001AA4DC19FDFF2DBCEB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/7jvpJEXRRLiOViElTHOHTw/zh-cn_image_0000002808767067.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDF286413A955DA85536A274D0B47AA13BC75C4D4E801E33C2A4F9C0BDBA2ACE)
 
 ### 申请发布证书和发布Profile文件
 
@@ -243,7 +243,7 @@ CertificateTool生成密钥和证书请求文件的操作界面与DevEco Studio 
 * **Profile File**：选择申请的发布Profile文件，文件后缀为.p7b。
 * **Certpath File**：选择申请的发布数字证书文件，文件后缀为.cer。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/zYB527XSRzy8PwDYWmnJqw/zh-cn_image_0000002808887137.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=D54E26BE828A2666D0820659BA381005FF29C7DEBFEDE6630B62634BB0E57A17 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/hS-YNBQ2TrG3MeyQ53pDQw/zh-cn_image_0000002808887137.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=408AC0273042E77495D1AD67EBBE6E6BC5755AA0B958FFA53233DDF020823E1D "点击放大")
 
 设置完签名信息后，单击**OK**进行保存，然后使用DevEco Studio生成APP，请参考[编译构建.app文件](ide-publish-app.md#section212415961214)。
 
@@ -262,7 +262,7 @@ CertificateTool生成密钥和证书请求文件的操作界面与DevEco Studio 
    即**Build APP(s)**时，默认构建的APP包为Release类型，符合上架要求，开发者无需进行另外设置。
 2. 编译构建完成后，可以在工程目录**build > outputs > default**下，获取带签名的应用包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Fp8bBNuVTGGLTlhR05zaug/zh-cn_image_0000002808767047.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AB2928BF83245128E7FA24AEF21DC069C737A4F0FB777F263C80699DD253E71)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/sOFn_BanTHyeg3pGZytCQQ/zh-cn_image_0000002808767047.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7284E0133230A37C44590C1F3F3B82E27D444A641F2DBEB7D77743DE77B0535)
 
 ### 上传软件包
 
@@ -279,7 +279,7 @@ DevEco Studio 5.0.5.200版本开始，支持在DevEco Studio内上传应用软�
 
 1. 在DevEco Studio菜单栏，点击**Build > Upload Product。**若未登录，请点击**Sign in**登录华为开发者账号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/w1NlrHJGR62yETzXcRzLyg/zh-cn_image_0000002808887131.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C277E55FDBE9EA311A604F5017AFA851C435B1332C67ECDEE76D5DD1D9F68D6F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/eMuOIevMSBOLXIm6rQR1mg/zh-cn_image_0000002808887131.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FF80568DE2F3C601173FB1BB71D0AB56011BADFD8CDCC94CB46EABF407F5224 "点击放大")
 2. 登录成功后，返回DevEco Studio进入软件包上传界面。确认当前工程的product信息，选择需要上传的软件包类型，点击**OK**开始上传。
    * 若当前上传的软件包仅做测试发布，请选择**Generate app package and upload it to AppGallery Connect for test**。
    * 若软件包需要在全网正式发布，请选择**Generate app package and upload it to AppGallery Connect for test and publish**。
@@ -287,14 +287,14 @@ DevEco Studio 5.0.5.200版本开始，支持在DevEco Studio内上传应用软�
    **说明** 
 
    * 如需上传符号表信息，请勾选**Upload your app's symbols**选项。
-   * 上传的product可以通过点击DevEco Studio编辑区域右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/42odZHiiT3WTBLsf-3326Q/zh-cn_image_0000002808767063.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4626B7AE8374FD60CFDD2DC1A772B63624F963EFB43D5B56924AF4D227183C3)图标进行查看及切换。
+   * 上传的product可以通过点击DevEco Studio编辑区域右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/mb3f5WuXTq2x87yJW8dfBA/zh-cn_image_0000002808767063.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=836CB04574B6F0629C7753097AC75EDB8EF6735B094E618BA3DA6B3A009F956E)图标进行查看及切换。
    * 可通过app.json5中bundleName/versionName字段修改当前product对应的包名/版本号信息。必须使用当前开发者账号下已在AppGallery注册且真实存在的包名。
    * Build Version值由AGC计算后回传填入。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/D4AOvKXWRq68oxe0vcIRhQ/zh-cn_image_0000002808767053.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCA0392FDC6FFF06830A0878FF9FD100620F5B63E0702D6B925B2FD763F071FA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/3w0aqw4kSDiIZjnx6EdDFg/zh-cn_image_0000002808767053.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=472BF5A6E42F23EA6BCE054B9783781D556F4C200F67054335B7C15F7CF1905C)
 3. 上传完成后，出现云测试的结果，点击**View Full result in AppGallery Connect**可进入AGC查看软件包上传记录和检测结果，具体请参考[上传软件包](../app/agc-help-release-app-upload-pkg-0000002277983368.md)。点击**Close**关闭上传页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/kw2wYZ1MQCagELmbAFlzDw/zh-cn_image_0000002808887145.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF7DBF51FE681838CA69F83C8CC56F458D702F61F0C77F3B3CD1212C5F4F90B4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/7txRx09sQjWgQKZ4rM2-Ww/zh-cn_image_0000002808887145.png?HW-CC-KV=V1&HW-CC-Date=20261128T023445Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF611D1914B8A8CAA5AD5E2078726304FD99AF293D60582D8BA2FB6E07441466)
 
 ### 发布.app文件到应用市场
 

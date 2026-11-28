@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-i
 title: 意图装饰器生成和小艺智能体创建
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 意图装饰器生成和小艺智能体创建
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:39+08:00
+scraped_at: 2026-11-28T10:34:48+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:78588780e65a4066e5269dcfa53cc8d6cc2027810ed14adcf2a6aa7a23382730
+content_hash: sha256:dc4c98d6616367fc06d161dae20c11143cb0e8691a87f8ad7f357e56791b3ecd
 ---
 
 通过装饰类或方法可以将应用的功能定义为"意图"，然后将应用功能以"意图"形式集成至系统入口。用户通过系统入口（如语音助手、智能推荐卡片）触发意图执行，即可便捷使用应用提供的功能。
@@ -33,16 +33,16 @@ CodeGenie提供了几类意图装饰器，开发者可根据业务场景进行�
 
 1. 打开module.json5文件，配置**abilities > skills > uris**字段。uri格式要求请参考[应用链接说明](app-uri-config.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/LkV0pFMiT1OR3OoVF6Bk_w/zh-cn_image_0000002808766593.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=74A106E907D828BF2A6FE1F83B239B5F6868A0BD0688A26A87A851074F4175E4 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/3URmDdywSLuYiYd6zbXDdA/zh-cn_image_0000002808766593.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F878D007F59356F82906C41660B92F6826D4BA83F6B7FEF9617BA4188D03855 "点击放大")
 2. 在class头部或内部位置，右键选择 **CodeGenie > Insight Intent > Link Insight Intent**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/XVddT8_aQeumBzYq1Is9Hg/zh-cn_image_0000002808886677.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3453F507EF38ED454D5E75D066B0C98E3ABE8890EFDB447DEDDAA4B99A88FC5 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/C87Ud7-dSJ-SPKf63zOsgA/zh-cn_image_0000002808886677.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=12AFF8D2978C82404ABCD9D510423E9436D8E49D2E709335E7AA1AA0BA5A283F "点击放大")
 3. 意图装饰器自动添加至CodeGenie对话框中，可选择输入或不输入提示词，CodeGenie根据代码上下文分析输出结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/_I2lC4V9ReqdYuRCLvqsoQ/zh-cn_image_0000002779567014.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4ED8F213398102C000B5F17966B38998364E5AA4A499E6BE995A646169C8479 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/HG19EXDtRrquTlYtDLbvnw/zh-cn_image_0000002779567014.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=B11F87F15316C85C0C4B288C66ED5CB8B4A3EF8B376A850639D0008A0F06BDA5 "点击放大")
 4. 生成结果后，点击对话框中生成代码块右上方的**插入**按钮，在class上方插入生成的代码。开发者可基于结果微调，实现意图调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ua_lebpnRrabun3I6PjCwA/zh-cn_image_0000002779407038.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=01A775BAB88379FEFCCE6B736D3396AA363F77FCA4B6805B9AC043819F6E2C9A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/154JWi0yRwOWS0HR_CcbDQ/zh-cn_image_0000002779407038.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=639DE2ABC1F295734747DAC5C79256B2FC686DDFB713C3A3A493DA3009987853 "点击放大")
 
 ### @InsightIntentPage装饰器
 
@@ -50,61 +50,61 @@ CodeGenie提供了几类意图装饰器，开发者可根据业务场景进行�
 
 1. 在@Component头部\struct结构体内部\选中整个结构体区域，点击**右键 > CodeGenie > Insight Intent > Page Insight Intent**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/TusXR0mZRjuLy09tpsi-jw/zh-cn_image_0000002779567030.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=A794487A8DE23A17ADD1AEACA364879C024BDFBCCA4B2FEEB311BDAE013D96A7 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/oJiGvPghSIOlXMQhHDLdCg/zh-cn_image_0000002779567030.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB88F2809A1C57007A5365B2CD957A2BC7AEE836D2468305F6558CCBF8F3A4E9 "点击放大")
 2. 意图装饰器自动添加至CodeGenie对话框中，可选择输入或不输入提示词，CodeGenie根据代码上下文分析输出结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/lfSjVq8eS2KMEbVNJWfkqg/zh-cn_image_0000002808766609.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=D57434AB58A52443B28740DB50831208C64F51BAC238C247C12DD21B2AABB44F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/g-HEXtV2Sau0PIBihy2dLA/zh-cn_image_0000002808766609.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=95086B6650AE15998CFDBDB324ABB233DC43DDCDF7E1FEDB737B49541B6415BF "点击放大")
 3. 生成结果后，点击对话框中生成代码块右上方的**插入**按钮，在@Entry上方插入生成的代码。开发者可基于结果微调，实现意图调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/yFaIO302QBWLiFITxweK0g/zh-cn_image_0000002779567020.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=D380169C81471348FFD1BA58794D649EE168707FF0C395C5770E58E9E1AECD9B "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/u727FccASGigtc8R5CWnAA/zh-cn_image_0000002779567020.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DB18F3997355CE95475440CBFB6E71BE7CBC093D791F5246D75405DE4FA0D6D "点击放大")
 
 ### @InsightIntentFunction装饰器
 
 1. 在类中静态方法区域，右键选择 **CodeGenie > Insight Intent > Function Insight Intent**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/XzKtERYVQOOd3wmVax3MRQ/zh-cn_image_0000002779567032.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=D664257E134D6CE06D1D66AD837D42E49AE9FADC390D79820ADB584E2FE51DBF "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/gou3EwkJR0i7UrfLkuOgPw/zh-cn_image_0000002779567032.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=F350B5FB2540DCC14E95F9B7297D6AD57ED648CF5980462E40FFC714ABF07931 "点击放大")
 2. 意图装饰器自动添加至CodeGenie对话框中，可选择输入或不输入提示词，CodeGenie根据代码上下文分析输出结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/sZwck0qeQha-qYBKT9KmiQ/zh-cn_image_0000002779407040.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F136640E7E9DD91BCE027A0D6DE068A47D7B4060F42B0D8A497E1268F48A9EF "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/YOU62hwvSM2-Rn817j0xtg/zh-cn_image_0000002779407040.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF84B889BEE1BC25D766DB956D158A38AA5F5EB38898769E151458614E854D25 "点击放大")
 3. 生成结果后，点击对话框中生成代码块右上方的**插入**按钮，在class上方插入@InsightIntentFunction，在class内部插入@InsightIntentFunctionMethod生成内容。开发者可基于结果微调，实现意图调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/C2wtakB4RfeDkj7qA7p0NA/zh-cn_image_0000002808886683.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F75E40D4FAD9D4AD5FEFBA0FA9A1E22243B5AAC9A582116E69E1FF4B1E35E82 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Y8igZ_5TS36hvicMeuGpJg/zh-cn_image_0000002808886683.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E693D2042045DE45CA9D6ECD4F774C80FAAC3878DA799A210659932E8FC721C "点击放大")
 
 ### @InsightIntentForm装饰器
 
 1. 基于FormExtensionAbility使用，在继承FormExtensionAbility的class头部或内部，右键选择**CodeGenie > Insight Intent > Form Insight Intent**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Y0c99_JMTQaNnEYNfAJ1uw/zh-cn_image_0000002808766605.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D6B08DE02C968566D136868F485019C9C49BC59E9FA4ABA5AB00ECE4425FD47 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/M0t1h3SqT1e8EHWj0IjZIQ/zh-cn_image_0000002808766605.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=023B01BD2A725F17788B2B8383B22455481E5FF6F3F23EFB129576852CF63E6D "点击放大")
 2. 意图装饰器自动添加至CodeGenie对话框中，可选择输入或不输入提示词，CodeGenie根据代码上下文分析输出结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/uqgeGSgmQ3qAUdUna4zRvQ/zh-cn_image_0000002779567026.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=B57C8C064E0E364B15D88457ED88514E0B081C87125A666667B5243AEA354594 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/H0NQm817T6SgAy4PUTGH6Q/zh-cn_image_0000002779567026.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=D85087024197006CB739613FC4BA7EEE9112D0209E22994AF6618ED3389081A2 "点击放大")
 3. 生成结果后，点击对话框中生成代码块右上方的**插入**按钮，在class上方插入生成的代码，开发者可基于结果微调，实现意图调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/fiFl29sHT7K49R8VaY7Z4g/zh-cn_image_0000002779407044.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=62390D228FF7AA3646CA8FD444632B713C0E72C4E0E984786A01C224E113F802 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/y8RDwd3TSEiciabAzvJ7oA/zh-cn_image_0000002779407044.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E055053AF41F341FD4F870B7DBAFCDCD7A781E84997D83C1922D0146297B927 "点击放大")
 
 ### @InsightIntentEntry装饰器
 
 1. 基于InsightIntentEntryExecutor使用，在直接继承InsightIntentEntryExecutor的class头部或内部，右键选择**CodeGenie > Insight Intent > Entry Insight Intent**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Djj8TLUBRAyQ_GbKLB69-Q/zh-cn_image_0000002779567034.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CB6992FB628079DB2FC2D8D9D0AF0C741E6FB0422D34B2C52AB191B060DC040 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/5ze8u9NSSdKOQuxtnzPsIA/zh-cn_image_0000002779567034.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=1289707A925F7B8F3A1C77401C882B1FD939BF54A0777AF7C251816E39CD28DC "点击放大")
 2. 意图装饰器自动添加至CodeGenie对话框中，可选择输入或不输入提示词，CodeGenie根据代码上下文分析输出结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/p0O1rdpZST-EnqOSKQ_Hpw/zh-cn_image_0000002808766613.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC051C01BEF7CEAFDEEE2CBC112380ADAFFCD436EDAFC55DEDCBC8C33B2652B3 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/HMjDcMNjQMawQF6-vt7bPw/zh-cn_image_0000002808766613.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBD9EB43A630248E2EA0B5F4796AA119FEC4A5DC5912C113299AC9F702C545BA "点击放大")
 3. 生成结果后，点击对话框中生成代码块右上方的**插入**按钮，在class上方插入生成的代码，开发者可基于结果微调，实现意图调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/Jye1Mp9aTMyeej9EhtCUwg/zh-cn_image_0000002779567024.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=B21478BD8C660FB8034D19F69DB11E9B7D47F750500B216928B32364B8525D4F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/tPzoMoKtTIWBpU6KtiTOdw/zh-cn_image_0000002779567024.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3D7FA6102513EDD0995E39DAFFE084107F7BF32498B9220201CC307557A8415 "点击放大")
 
 ## 生成意图插件和创建小艺智能体
 
-1. 点击DevEco Studio右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/23p2MqzoS_2kydaW3fGUyg/zh-cn_image_0000002808886673.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=424E31AAEBC782B2079979C27C660C453EC130483CCC2B75B33AA2BD8C91F6B9)图标登录个人账号，再切换至个人所在的团队账号。
+1. 点击DevEco Studio右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/wnDq6G1cRYCwFNckf7xFKA/zh-cn_image_0000002808886673.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BC911A5423134166D21B04B113423310DFFF2DB9C66EBC224751ECF30497EAD)图标登录个人账号，再切换至个人所在的团队账号。
 
    **说明** 
 
    * 个人账号需要完成实名认证。
    * 如下企业开发者账号为某团队账号名称，仅供参考。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/EC8DXP1ZT1-JkOhOgbU_hg/zh-cn_image_0000002808766591.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=F116010E02997ECB94C41C9973BBD9BA9136AAADD52DA59F36C462CCBF2E08EA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/818pqSzJTs-w1d1844HTRA/zh-cn_image_0000002808766591.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=14B58C17A4C0FEF6CB6107B794A07C104E5108A46C3DDD491E2040A396BE7A9D)
 2. 在意图注解代码块内部任意位置，右键选择**CodeGenie > Add Intent Plugin**，生成的意图注解插件将注册到小艺智能平台中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/dZbzuFHWTsONYML5P9bigA/zh-cn_image_0000002808886689.png?HW-CC-KV=V1&HW-CC-Date=20261124T044239Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA7B396BCE743AFB85A5ABE00C0543E34A06FDC91541D9CF4692D9BEB8BE9944 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/uAruIY3MRY2JuG2Or9AMEQ/zh-cn_image_0000002808886689.png?HW-CC-KV=V1&HW-CC-Date=20261128T023448Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BADCF783645B265591EF1D949FA6B5E91C820ADB703F3F0AC3B4337B09ACBF4 "点击放大")
 3. 在DevEco Studio菜单栏点击**View > Tool Windows > Application Agent** ，打开内嵌的小艺智能平台新建智能体和添加插件。

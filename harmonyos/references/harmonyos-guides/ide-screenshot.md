@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-screensho
 title: 截屏
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 截屏
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:30+08:00
+scraped_at: 2026-11-28T10:34:39+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:40567d0bdd3aa921b8d0c57553a254651ff803d272b908a356a06f0e692c6834
+content_hash: sha256:13f7058170c7ea92a0a3cb5e8f370af785933168cff0524e0b6ba34a2d792a98
 ---
 
 在调试过程中，可以通过多种方式截取屏幕截图。
@@ -14,14 +14,14 @@ content_hash: sha256:40567d0bdd3aa921b8d0c57553a254651ff803d272b908a356a06f0e692
 
 1. 连接真机设备或模拟器。
 2. 在DevEco Studio底部切换到**Log**页签。
-3. 点击左侧工具栏中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/jbw4Kp_NRSmP_Q26DFldNQ/zh-cn_image_0000002808886869.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE12C4FEF39909554DD2C7138C054B95AD8E80CC189C664CD3CCD47F700E9258)，即可截取屏幕截图。
+3. 点击左侧工具栏中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/DUcdKEbaQuu6zKhfuFRhdw/zh-cn_image_0000002808886869.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=E590C3753C3FDC7677733985190094F1479560B2E16EBBBBFDD7B57BF4E655CF)，即可截取屏幕截图。
 
    截图的图片将直接显示在DevEco Studio中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/q64RDhfERRGelknXKTzUcg/zh-cn_image_0000002808766789.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDD2430CE6517E85FF3C4AA769B946738EA7C03D3DDDDB25C337411D564CB1BE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/BCLfeRvRQp6erAkBJrYUgg/zh-cn_image_0000002808766789.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2AEC3650687FE73163A2522D570A3443B9794181C49B204967D53B589032D8B)
 4. （可选）在图片显示区域右击，选择**Copy Path/Reference...**可以查看截屏的本地存储路径或者在菜单栏下方查看本地存储路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/vZtEZEbpRWWBzhuSNRyf1g/zh-cn_image_0000002779407228.png?HW-CC-KV=V1&HW-CC-Date=20261124T044230Z&HW-CC-Expire=31536000000&HW-CC-Sign=400646F6F5CB3D6A98B9AB5D7D193352667425DA6BCD2DD0AB05C931B0BE140F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/6QaHIXyEQum8-Is7s5uHUw/zh-cn_image_0000002779407228.png?HW-CC-KV=V1&HW-CC-Date=20261128T023439Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3BB80FECE72C5CBAD0FD4521D5F9C1774C5C3C941174F1988D6D4011BBDACBF)
 
 ## 通过命令行方式截屏
 

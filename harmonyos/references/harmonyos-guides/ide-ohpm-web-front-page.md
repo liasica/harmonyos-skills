@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-web-
 title: 前台页面
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 前台页面
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:20+08:00
+scraped_at: 2026-11-28T10:34:27+08:00
 doc_updated_at: 2026-11-13
-content_hash: sha256:3769ea31150532414e32794d812e59ea28de7f0aa7d75ed2755ddea58c32712d
+content_hash: sha256:c37562311d58b97d0ee9777c578013ccce00903743931b7fe27fce6e6ddddef9
 ---
 
 启动ohpm-repo私仓后，可以通过浏览器访问ohpm-repo页面，访问路径为http://<部署机器IP>:<监听端口>或者https://<部署机器IP>:<监听端口>。其中，http或者https是ohpm-repo网络协议，<部署机器IP> 是部署ohpm-repo服务器的IP地址，<监听端口> 是所设置的监听端口，均可在ohpm-repo配置文件[listen](ide-ohpm-repo-configuration.md#zh-cn_topic_0000001745376470_listen)选项中编辑。
@@ -21,17 +21,17 @@ content_hash: sha256:3769ea31150532414e32794d812e59ea28de7f0aa7d75ed2755ddea58c3
 
 首页主要展示当前ohpm-repo私仓存储的包信息，同时提供搜索功能，页面效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/h_Tv2D_0Qyeu1sQHnaROAw/zh-cn_image_0000002779565124.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=E702AA2E4A9432B76BBCF0A64A42005A8FA7C12C590944A4DEBA4B90E78B9B1E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/TTg8CxmPShKHymcBJA-mUA/zh-cn_image_0000002779565124.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD6F3CC35DE650473DA229CCCA946428442E9C8879666B044BCF0FC35FC5CF68 "点击放大")
 
 * 区域1：搜索区域，搜索功能采用两级筛选：先通过下拉菜单选择目标仓库，然后基于所选仓库进行包名的模糊查询。
 * 区域2：登录注册区域，注册和登录后可通过此区域进入后台管理页面。
-* 区域3：包列表区域，全量展示符合查询条件的所有包。点击列表中包的摘要信息可进入包的详情页，查看更多关于该包的信息。若包名前显示![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/OLyF1OhzSsuLzTzxt1oIQQ/zh-cn_image_0000002779405148.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=409FFF0E9C1D2FFEBA499A7900A70B1D3333D38DDA9AFEB0E25BFD8C442FDD07 "点击放大")锁图标，表示您暂无该包的访问权限。
+* 区域3：包列表区域，全量展示符合查询条件的所有包。点击列表中包的摘要信息可进入包的详情页，查看更多关于该包的信息。若包名前显示![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/KKvir1ewQuuj72L-o-AWjQ/zh-cn_image_0000002779405148.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C72B91A3BE4B1550CD2DE75188EB73A259E7FC614C33FA4DBC41D5A90B94206 "点击放大")锁图标，表示您暂无该包的访问权限。
 
 ## 包详情页
 
 包详情页主要展示当前包的详细信息，这些信息主要来源于包的内部文件，同时记录了包的版本信息和下载量数据，页面效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/hxMxNUEHST-JSz8b385XNA/zh-cn_image_0000002779565120.png?HW-CC-KV=V1&HW-CC-Date=20261124T044220Z&HW-CC-Expire=31536000000&HW-CC-Sign=E619B83544EF0A6A4024F82C470EF94511569073214F86DA463C76B96CB52781 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/5o7yiKDCSdKPvldITSiaXQ/zh-cn_image_0000002779565120.png?HW-CC-KV=V1&HW-CC-Date=20261128T023427Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E72C5DF319D515886530D5EA120DF561B6BC17EE3B9C9F437853399169B56BC "点击放大")
 
 * 区域1：包的基本信息区域，取自包的oh-package.json5文件。
 * 区域2：标签页区域，通过选择不同的标签展示包的更多信息。

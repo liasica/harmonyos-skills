@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-commandli
 title: 应用与元服务体检工具（appanalyzer）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 应用与元服务体检工具（appanalyzer）
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:37+08:00
+scraped_at: 2026-11-28T10:34:46+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:5ab969284d7326ed022688aa581003eb0fc8b97104f5e2470b0505fcdbd564b0
+content_hash: sha256:085a74ea357d58efd2456412c7f9c9d9814dc1af7b764fcbc099ee537ac78c87
 ---
 
 从26.0.1版本开始，Command Line Tools集成[应用与元服务体检工具appanalyzer](ide-app-analyzer.md)，用于对应用和元服务进行本地测试体检，并给出体检报告、分析指导以及修改建议，帮助开发者提升应用与元服务质量。
@@ -170,4 +170,4 @@ appanalyzer uxAnalyze -b com.example.demo -p ./demoProject -s D03 -d 127.0.0.1:5
 
 zip报告可以导入到DevEco Studio中的AppAnalyzer进行查看，具体请参考[导入报告](ide-app-analyzer-history-reports.md#section438013151813)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/vQ4WZs6PQ_SdHNPSWLNWxw/zh-cn_image_0000002779407244.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E343C961FC161743E173554509C06C5FCAA09FCAB56BA428F0209F534BBB523A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Xbx6Jb3uSGSVXg1s216yTg/zh-cn_image_0000002779407244.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=4304D4B065B9030A9BC5F1A58CA0CFC43F0B85132EB2598AC10E64E3454789F8 "点击放大")

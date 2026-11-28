@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-operation
 title: 运维分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 发布应用 > 运维分析
 category: harmonyos-guides
-scraped_at: 2026-11-24T12:42:37+08:00
+scraped_at: 2026-11-28T10:34:46+08:00
 doc_updated_at: 2026-11-11
-content_hash: sha256:4fc7ded2a763fc877735d88718fe794816c847c30c55682d26a833906b9840ef
+content_hash: sha256:f6583f27a04dbff2f9ecb4d09a477ce80a7271a39403dbe58c9c514f377ff9fb
 ---
 
 DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃、应用冻屏、OOM、资源泄漏等问题进行定位分析，以及查看崩溃、卡顿、丢帧、能耗等异常问题的趋势和分布情况。
@@ -18,11 +18,11 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 
 在DevEco Studio菜单栏点击**View > Tool Windows > Operation Analyzer**，进入运维服务页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/cB14KMs2Q0S1xjgua1KSog/zh-cn_image_0000002779407610.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D20E285DBFB52BFBFAF4AF9CB9186C16C3287E2A20770C9E948DF1E67D34C28)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/MgUmdKQBT1CjD2RGHSmTzA/zh-cn_image_0000002779407610.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F111B51119DCB08D549C40DD23D62F11E96C6F66F72F164509E30153C866E2B)
 
 点击**Add account**按钮，登录华为账号并授权后，可以查看当前账号下应用异常情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/XUqSKU9tTFe5UFDMeEMLVQ/zh-cn_image_0000002808887235.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F4E4F9210654FDEE647A1D557867ED0A602492607D07AE61140579746E3CEB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/aWuxfvJiRZOf20AmwP8YcQ/zh-cn_image_0000002808887235.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=545FA6BF9BA423441E283B176C430A9231BB9EB6860D82B4A582296239A96F7C)
 
 当前页面共分为两个部分。页面左侧为菜单栏，右侧为数据内容展示区：
 
@@ -38,7 +38,7 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
    5. 手机型号：当前存在异常数据的手机型号。
    6. 发布类型：当前系统的发布类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/bP3WA_6NTAW3A7gYwC9M2g/zh-cn_image_0000002808887239.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=17A31C4E553E29667F9DA7EFD06846D6FC56BBC287CF34A8B8B68647B85EFC32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/1tSRl3ILQ9WXTgcGsCeUAA/zh-cn_image_0000002808887239.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EC93E31D0D15EE8C276844935AF39B657B0EE26E6260BCAFC9CEB92A69FCF78)
 
 ## Reports
 
@@ -56,25 +56,25 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 * 6号区域：上半部分可以通过切换应用版本/设备型号/系统版本来查看崩溃发生的分布情况，下半部分显示该崩溃事件的可能原因和最佳实践链接。
 * 7号区域：展示崩溃事件详情页，请查看下文说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/X7NOyDFhRYa22pYec5L5Tw/zh-cn_image_0000002779567582.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BA8944CD842430468EE4BAF3EEDE9AD21EBB74CE21D0802E4879A6EE3EE8CD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/e1mrDrKMTga195srQ-YYfA/zh-cn_image_0000002779567582.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C3B98CBBF4D8A37FBA9F42D3445A172291A51998F5E1F02E9E906A6007AC450)
 
 * **Stack Info**：展示崩溃的堆栈日志信息，支持堆栈还原，并可跳转到具体的代码行查找问题。
   + **Raw Stack**：展示崩溃的原始堆栈信息，其中蓝色圆点代表系统栈，绿色圆点代表应用栈。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Epu_L1V2Q4OqxgR5ro0cww/zh-cn_image_0000002808767149.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEA956F6D9DC05C1EE613F8455AA7A07A5909A695B331611A8894684DE82B580)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/oUzyGgo2TNic1l_FdnSBRg/zh-cn_image_0000002808767149.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF74B5FA7B25FCE2BD9C593450B102C34E5232C845750FFA5FF248561F97C7F1)
   + **Symbolicated Stack**：展示还原后的堆栈信息，堆栈还原需要先关联本地符号表或将符号表上传到云端进行解析，上传后符号表信息会在**Symbol Table**页签中显示。关联本地符号表或上传到云端成功解析还原后，如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/EdcuZZX4Rye-oQ9NWfs4FQ/zh-cn_image_0000002808767159.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFABEAA4DF279F033AA9F08FE92B16F4A2116932A430CFD62C7C896499DDD516)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/O6jv3PlsQNG9UO2tqJFzZw/zh-cn_image_0000002808767159.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=85ABB7B8F99752BBB67E2880C72833DA6C651742F4766BCFBAA9E7A98F72ED9C)
 
     堆栈还原后，点击右上角的**Select related project**，关联堆栈对应的工程，即可通过堆栈中的超链接跳转到对应的源码。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_LTpn_7ATIe2EFyruddhKQ/zh-cn_image_0000002808767151.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5D4F5EFE349A18518CE53A0BEC85B52EC27612A3EE61332DE5A45BF59197482)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/TTOmcCvsSJWoKJfuy3q_Cg/zh-cn_image_0000002808767151.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1AD0A0CD64839F19525A0BDD653683E0B10549476F0BE62F9E7E9BD10EE6C5F)
 * **Context Data**：崩溃的现场数据，展示栈地址空间、寄存器信息、FD信息、页面跟踪信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/ldXrShmsRGSH9R8IL7VCFg/zh-cn_image_0000002808887233.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E086A680C5A0D8D72AA9C42CB58C268314A244B7143BBB8574E20EA9AADF955)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/IpmgEgoGSduj0CUD96w5Rw/zh-cn_image_0000002808887233.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5621AE522509E2E88E26A5D992EEDF4D052CA9F7F13D9536F7F6E3F0CDD5AF4)
 * **Symbol Table**：展示云端的符号表和本地关联的符号表信息，此处也支持上传符号表到云端和关联本地符号表。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/N0KqocOTTXiRk4IyRAUncg/zh-cn_image_0000002779407604.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2AC5BD2615A2B61574D684E4D2D0CB5682D307C9389FED33F06A759A3C9FFC1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/TlUupZNYT2eDPaBaR-n1aw/zh-cn_image_0000002779407604.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=08D87166DCA3652CFFF1313A95C8C66003610235D9B6A23EC8DF3F8DA777FC76)
 
 **26.0.0以下版本**
 
@@ -89,11 +89,11 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 * 7号区域：展示崩溃日志的CPU以及内存信息。该功能从DevEco Studio 5.1.0 Release版本开始支持。
 * 8号区域：展示故障日志的所有信息。支持[上传符号表](ide-publish-app.md#section4486164416341)后将现有堆栈信息还原为源码的堆栈。该功能从DevEco Studio 5.1.0 Release版本开始支持。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/enSveSZQRtSYsLnQjzlyWQ/zh-cn_image_0000002779567578.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=706C0D14D5558F82FFE19E8834840B0CCE5A313A99E80C81A5A517092D224AC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/-08giuEmSSmMJYPlPqJaNA/zh-cn_image_0000002779567578.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAE4EBDBC41FC5E795FCD23A0B52C4ACF5F4527FBE9F28A4EB09FCAFF10C88F3)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Hqz3dzirQ4iH-1jWsvRnJQ/zh-cn_image_0000002779407596.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D04EEC471B85139F813C7782E72A0B26CD28960DD94DE7A415A802BC0E7FD18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/EB9uLw5JQg-C_wSpofFIhQ/zh-cn_image_0000002779407596.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0BF64D84A92CD5C676213B8C3086DAA0AE45BDF78B3389073450BC6E726DE7B)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/iwPqBsxiRtWso5NLN6hM1A/zh-cn_image_0000002808767161.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=620699116E0256D2261D334553BCDECAE03999C55A9CD1C7D138F7C5E7C0A9FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/ekykzp-4R9-GgOBX0jJYLQ/zh-cn_image_0000002808767161.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=34FF31D17CB6A46DE3F07CBEAF556F4877BA394BCA6AF347ACE66C83B085EB82)
 
 ### OOM分析
 
@@ -107,18 +107,18 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 * 6号区域：上半部分可以通过切换应用版本/设备型号/系统版本来查看内存溢出发生的分布情况，下半部分显示该内存溢出事件的可能原因。
 * 7号区域：展示内存泄漏事件详情页，请查看下文说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/U7z2G96kQRiqCVYNo2dwsQ/zh-cn_image_0000002779407598.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C054F9EAC9510C50CE8A71B8B7E1F8B90FEDE31A5D4149E0E1491B36F1202075)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/aTS1UOi8TVe6x6eXNN_PdA/zh-cn_image_0000002779407598.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=32DC16831FC1D19637512D34B1E1151955E5261BB5867B2C23827BCF04A1B330)
 
 * **Stack Info**：展示内存泄漏事件的堆栈信息，其中蓝色圆点代表系统栈，绿色圆点代表应用栈。支持堆栈还原，并可跳转到具体的代码行查找问题，具体操作方式请参考[Crash堆栈还原](ide-operation-and-services.md#li37692225178)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/EmdH3wIyRzSZWXr7HVrIqw/zh-cn_image_0000002808767153.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA02B3E8D1D25D5AF28CB71698207AD7A0DD142088227F05809A9E1BA29C5A6C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/1XB9aqX-T4OMZYTqHB4jCA/zh-cn_image_0000002808767153.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=3185433D6458AFAEDEF34DAACF98CFCFACE0B6E4175B53CB54A35F69E9E02D59)
 
 * **Context Data**：内存溢出的现场数据，展示页面跟踪信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/QfksemXWSr23fEDKLUvhBw/zh-cn_image_0000002779407608.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=22E31B4EFE2EBF0FFD17D97F91C805156E5EF66A9B852ED055474DC924EFAA37)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/YdDzybA1T9OtInYji8_6BA/zh-cn_image_0000002779407608.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB97B9A866B842D2A060C4BDC1D579F1886003ABE7A65538BCD0A101C43226C6)
 * **Symbol Table**：展示云端的符号表和本地关联的符号表信息，此处也支持上传符号表到云端和关联本地符号表。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Fb31hQ6bS1Sqe7jAkdGvjQ/zh-cn_image_0000002779567572.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=065508257B0E164FAB9DA5F2703013CE9F956590383637A13F58F088C0227175)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/6dsRMC4zTnS_i5w4IDAxwQ/zh-cn_image_0000002779567572.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=B735AB94A316488E92D6E88AB1067446AC8B71DEC3FBBB80575CC66C78DD1A80)
 
 ### APP Freeze分析
 
@@ -132,22 +132,22 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 * 6号区域：上半部分可以通过切换应用版本/设备型号/系统版本来查看应用冻屏发生的分布情况，下半部分显示该应用冻屏事件的可能原因。
 * 7号区域：展示应用冻屏事件详情页，请查看下文说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/DV0RZHlASWunSGlhADpWyQ/zh-cn_image_0000002779567588.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=57D7AB5865B45BEA53381D748D8F57F689B2D101644FE0D7C4A62797F60B3F53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/L_wX681QQVWjaeLM_jMtrw/zh-cn_image_0000002779567588.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=D21CAD1DA9E0DF7B87E339DC95F92AAF7DBF9E1D96A629C71AEC8A442745265B)
 
 不同的冻屏类型对应的详情页存在差异，此处以THREAD\_BLOCK\_6S为例。
 
 * **Evidence Chain**：展示该应用冻屏事件的证据链信息，包括3s和6s的主线程堆栈信息，其中蓝色圆点代表系统栈，绿色圆点代表应用栈。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/fPFKDjbkSD-QCpVjdNGysw/zh-cn_image_0000002808887247.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=F39EAB6064C06B7E94F0F80BF8908CEB526A1A78B98C551A7E6F1DC4CE736A7D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Nze2b10wRWmk1ysRLNROIw/zh-cn_image_0000002808887247.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=E94891C59BD64CD7044633ACEAF614232DD42C893352743472B65EE190DCAF1C)
 * **Context Data**：展示该应用冻屏事件的现场数据信息，包括堆栈信息（原始堆栈和还原堆栈，堆栈还原方法请参考[Crash堆栈还原](ide-operation-and-services.md#li37692225178)）、CPU信息、内存信息、热档位信息、页面跟踪信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/8v1WxS0BQVOuzSN0RadRTg/zh-cn_image_0000002779407600.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=A10B7A69C9F0B5B61267590C460DCED8EF5F7354DA70D9FE434E53723DCC545A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/8Xd5Zu5sTGGZaaTrwHKfaQ/zh-cn_image_0000002779407600.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D9CB77D23C000DEFF9082C7A59D4C54D3707FF4C5674A8459C4739823F29F58)
 * **Sampled Stack Logs**：展示该应用冻屏事件的采样栈日志信息，包括原始堆栈和还原堆栈。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/eS9Cj6lsQmqVZ2z0_1xeMA/zh-cn_image_0000002808887245.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=76591D2824A6AA5E1475D3EEA53CB0BA37B18F77661128D0121E2C13919156B4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/Ym5ECZ9vQNmnaQir9UlfRw/zh-cn_image_0000002808887245.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=690E75C247553999CD1F40DDEB5ADC4368C14599C6C8E22F99B5048F2FA50C19)
 * **Symbol Table**：展示云端的符号表和本地关联的符号表信息，此处也支持上传符号表到云端和关联本地符号表。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/WL_DK9vfRUWdgakuLwFyWw/zh-cn_image_0000002779407602.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DE080CAFD2DAA9EE5992BF459B6954B136E89C2EF01248FC61E68B72E2DD427)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/qEvHJ8hBTkaQZK6_iQlsDQ/zh-cn_image_0000002779407602.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE6BECDE0F475AB4B9C551D49CE3573192543356C6B64C9B37575214127FEF8A)
 
 ### Resource Leak分析
 
@@ -161,7 +161,7 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 * 6号区域：上半部分可以通过切换应用版本/设备型号/系统版本来查看资源泄漏发生的分布情况，下半部分显示该资源泄漏事件的可能原因。
 * 7号区域：展示资源泄漏事件详情页，请查看下文说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Uwk3O1ZXSzmCbyd_-xVhBw/zh-cn_image_0000002779567576.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C28673F0DF306125A953223985F9680ECF9D78AB35C8BD6A2421DB20F59FACAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/0nZOZlGwQkugZgHHuAlKIg/zh-cn_image_0000002779567576.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=B752B8751E0693F14640E37E62904494DB8B27CF71652C6B6205E860BB390C9E)
 
 不同的泄漏类型对应的详情页存在差异，此处以RSS\_LEAK为例。
 
@@ -169,25 +169,25 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 
   堆栈分配详情：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/XyCRnIdPT3KiA1DIbqS7ag/zh-cn_image_0000002808767145.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=627C3074E60F6D511422F25888F21022A896C721C3F127AC757F9A8209486CE4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/GiWB6W4hTEeiSP9WPqhvPA/zh-cn_image_0000002808767145.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D7EE0BECB3D66D2AEE59956DBC29A02C686193F51CE00BF7C2BBE0CED4AB678)
 
   堆栈树分配：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/MXTq2yp_QnGxBfPydtw0vQ/zh-cn_image_0000002779567586.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=18DF4619064DA17F201D4DEF7681420F166ED18DA4CD86D5DA0002FB3D4D918D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/gpEC8z2bRg6AiuwfLP1myQ/zh-cn_image_0000002779567586.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=B507ED3679A91246AF909A62FDABB4B650EF36FC950024230541794353A9FD5F)
 
   火焰树：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/2WR1zka_SO68oBskE5dYvg/zh-cn_image_0000002808887237.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C3765E5FDB0A8CC046975ADBE65426C138FD84A3372477F1A3876083335FD9B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/WIjFwdZqTieI48WjksKhig/zh-cn_image_0000002808887237.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=021E7D11307DC617AB82492256CED0EEF08586D82FB8964D81FAEF4B4B88688F)
 
   原始/还原堆栈（堆栈还原方法请参考[Crash堆栈还原](ide-operation-and-services.md#li37692225178)）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/kCDAMuojQh2kUJGsLKyh0w/zh-cn_image_0000002808887243.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=6558E0ABF473A3F935412E0E988F81F20C20CB29101A22CBCEC422D94631FB4C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/grZTaCWHSFaoiFhOpNVOwg/zh-cn_image_0000002808887243.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=5406BDC17C9F620E64F44CD9A3432C22354BF241E87876B35BADA82EE85C9983)
 * **Context Data**：展示该资源泄漏事件的现场数据信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/iKBzHNfnQ5GyXL-1KHN5xw/zh-cn_image_0000002779567584.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9F097C5D9289126451CF7F36E55250530C38FA817286E6B99EBD84A6AAA3867)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/0qpQMr-2TJufVjhYtO5HwQ/zh-cn_image_0000002779567584.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E4F95329FFF8C06DA9CA9668340BBD26C9BBC15CD7BD70E5E2BB5A13AD9521D)
 * **Symbol Table**：展示云端的符号表和本地关联的符号表信息，此处也支持上传符号表到云端和关联本地符号表。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/uUBY8g_dS5yL6Aa7czq6aQ/zh-cn_image_0000002808887241.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C14D23B9208D069F9D7D14E3B763BB00ACED7F92A0C64F116BA94409D88A5A0A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/se77BEAYR8eBeru664HCaQ/zh-cn_image_0000002808887241.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=35401E53D8F54CF9F749EBD8D18CA18D49347E4D6F66A2E439DBDB1B766B3401)
 
 ## Metrics
 
@@ -199,7 +199,7 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 
 2号区域：通过柱状图展示不同维度在所有的崩溃异常中的占比。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/9qQ4MsE5R9C8oyys94hlFw/zh-cn_image_0000002808767155.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=49E24470194511C059B46DED0D012D63CC32ADF1D5BBC2D3F5C0CCD15CFF64CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/hDC8wue_TTqvyGP3O6hmkw/zh-cn_image_0000002808767155.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C97434DF9420007440997AD82A9396754AF9DD9F118D0E4294DB3DFDEC2D5BB)
 
 **说明** 
 
@@ -217,7 +217,7 @@ ProcessKill将通过柱状图和饼图联动，点击柱状图，通过饼图展
 
 2号区域：按照Page，Scenes两个维度展示丢帧异常率TOP N的页面或者场景。点击饼图上的某个区域，将展示具体页面或者场景的连续丢帧率情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/biaqJxZpQNCoqiq-bwVbLA/zh-cn_image_0000002779567580.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2A3117F59F7F3B01E01946977A14787A70C6B2E5F86CD8AAC495A9DF2AC511E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/QFW2MwhfT_qvu9TV3eVGjw/zh-cn_image_0000002779567580.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AFAEB4C22C371D13F9F831D086BFAFC8CF039EE83422CB83C78D52F3B3E875B)
 
 ### Launch分析
 
@@ -239,7 +239,7 @@ ProcessKill将通过柱状图和饼图联动，点击柱状图，通过饼图展
 
 4号区域：展示启动当前阶段在不同时间段的耗时趋势。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/DTuLqBCZSziEq6cZluuY0A/zh-cn_image_0000002808767157.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=754CF84E69825401A2B9E45395ED354CF08A56BDB65825016CEA43857B889976)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/THrN3fWCQZuGx8Q8_l5GaQ/zh-cn_image_0000002779407606.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=96026D755C79F768B9D1D690ECDFFF986AD3F85247440234D170B35D0A03ABF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/QbZcfCBIR7WfrKokuDjzzQ/zh-cn_image_0000002808767157.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=152F84CFFC9192838C31D848E9668804F768C328692DAF77B7C9996D3472712B)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/qgcav1bnSoa480zLEOlXOQ/zh-cn_image_0000002779407606.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F62EC66F02B395183F3814448459020585E53A899F0E24557DF4BB4545D7A90)
 
 ### Battery Usage分析
 
@@ -251,4 +251,4 @@ ProcessKill将通过柱状图和饼图联动，点击柱状图，通过饼图展
 
 3号区域：展示后台能耗和耗电时长随Top 5设备器件分布情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/QlwgPodwSnCDpQsKQqPSmQ/zh-cn_image_0000002779567570.png?HW-CC-KV=V1&HW-CC-Date=20261124T044237Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D22F1E72BA86184EE3C1B24CF80DF9DCE9BE99E079478AFDC19B1B6FA2E0ACF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/8GjMEo5TSGCra1CsHYDaIw/zh-cn_image_0000002779567570.png?HW-CC-KV=V1&HW-CC-Date=20261128T023446Z&HW-CC-Expire=31536000000&HW-CC-Sign=678A0D40B98ECDF861BC07B8F5FD23894E72716C59357D7442133294E8C03159)
